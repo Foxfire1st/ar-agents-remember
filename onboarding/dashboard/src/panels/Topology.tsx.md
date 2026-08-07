@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Topology.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-15T17:00                                 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ for the wrap to fill its slot.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The imperative renderer (refs + `.style`, no className dep). | `mountConstel` | dashboard/src/topology/constel.ts:59-372 |
+| The imperative renderer (refs + `.style`, no className dep). | `mountConstel` | dashboard/src/topology/constel.ts:408-468 |
 | The pure model adapter. | `buildTopology` | dashboard/src/topology/model.ts:117-221 |
 
 ## Update History

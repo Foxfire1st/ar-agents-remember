@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/DiffPane.tsx`      |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-29T23:00+02:00                             |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`         |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`         |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ fetching — the caller (`ChangeSetPane`) supplies already-fetched content from 
 | The shared CodeMirror theme (chrome + syntax `HighlightStyle`). | `codeTheme` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:49-49 |
 | The lazy language-by-extension map it awaits. | `langExtension` | dashboard/src/panels/file-viewer/langByExtension.ts:8-49 |
 | `split` = MergeView (a=before, b=after, no revertControls); `inline` = unifiedMergeView (mergeControls:false). | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-118 |
-| The column wrapper that mounts it and supplies `mode`/`collapse`. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:51-137 |
+| The column wrapper that mounts it and supplies `mode`/`collapse`. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:177-218 |
 | The `FileDiff` (before/after content) the caller passes through. | `FileDiff` | dashboard/src/data/changeset.ts:34-41 |
 
 ## Update History

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/TaskGroupDisclosure.tsx`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T12:58+02:00                           |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`       |
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -57,9 +57,9 @@ repository tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The parent list computes the descendant-bearing BY REPO condition before rendering the control. | `hasDescendants` | dashboard/src/panels/LifecycleList.tsx:357-360 |
-| The parent list mounts `TaskGroupDisclosure` for the descendant-bearing row. | "<TaskGroupDisclosure" | dashboard/src/panels/LifecycleList.tsx:380-380 |
-| Focused tests verify native button semantics, accessible names, aria-expanded state, and selection isolation. | "defaults hierarchy disclosures to expanded and renders controls only for parents"; "keeps sprint and master collapse independent without changing selection or BY PHASE" | dashboard/src/panels/LifecycleList.test.tsx:884-901; dashboard/src/panels/LifecycleList.test.tsx:903-943 |
+| The parent list computes the descendant-bearing BY REPO condition before rendering the control. | `hasDescendants` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:641-641 |
+| The parent list mounts `TaskGroupDisclosure` for the descendant-bearing row. | "<TaskGroupDisclosure" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:664-664 |
+| Focused tests verify native button semantics, accessible names, aria-expanded state, and selection isolation. | "defaults hierarchy disclosures to expanded and renders controls only for parents"; "keeps sprint and master collapse independent without changing selection or BY PHASE" | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:134-134; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:115-115 |
 
 ## Cross-Repo References
 

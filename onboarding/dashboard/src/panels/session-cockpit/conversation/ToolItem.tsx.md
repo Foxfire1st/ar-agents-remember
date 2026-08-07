@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ reviewed task evidence for any current behavioral claim.
 | The item/block/phase types (`tool-input.summary`, `tool-output`, `diff`) this component narrows over. | "tool-input", "tool-output", "diff" | dashboard/src/data/conversation/types.ts:63-76 |
 | The per-file diff renderer that a `diff` block routes to. | `DiffBlock` | dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx:35-79 |
 | The shared ClampButton, `sourceLineCount`, and `useClampIds`. | `ClampButton`, `sourceLineCount`, `useClampIds` | dashboard/src/panels/session-cockpit/conversation/primitives.tsx:38-68; dashboard/src/panels/session-cockpit/conversation/primitives.tsx:71-74; dashboard/src/panels/session-cockpit/conversation/primitives.tsx:161-164 |
-| The kind dispatcher that routes tool items here. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:68-71 |
+| The kind dispatcher that routes tool items here. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:66-69 |
 
 ## Cross-Repo References
 
@@ -81,6 +81,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=0, citation_source_malformed=3); amended max-reviewer subject binding for all three block types; final scoped citation check clean.
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations that pointed at a

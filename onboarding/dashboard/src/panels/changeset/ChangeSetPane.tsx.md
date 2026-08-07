@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/ChangeSetPane.tsx` |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-29T16:40+02:00                             |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`         |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -65,17 +65,18 @@ path. The per-column `keyPrefix` keeps the code column and the sidecar column's 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Four persisted toggles map onto the change-set / full-file / highlight-off / rendered states. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:51-137 |
-| Highlight-off renders the plain L2 FilePane on the after-content. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:51-137 |
-| Markdown files get a `rendered` toggle that swaps the diff for a `<Markdown>` view. | `rendered` | dashboard/src/panels/changeset/ChangeSetPane.tsx:59-59 |
+| Four persisted toggles map onto the change-set / full-file / highlight-off / rendered states. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:177-218 |
+| Highlight-off renders the plain L2 FilePane on the after-content. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:177-218 |
+| Markdown files get a `rendered` toggle that swaps the diff for a `<Markdown>` view. | "data-testid=\"changeset-rendered-toggle\"" | dashboard/src/panels/changeset/ChangeSetPane.tsx:47-47; dashboard/src/panels/changeset/ChangeSetPane.tsx:86-86 |
 | The markdown renderer reused for the rendered-markdown view. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
 | Otherwise it mounts the DiffPane with mode/collapse. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-118 |
 | The localStorage-backed flag hook it reuses (per-column keyPrefix). | `usePersistedFlag` | dashboard/src/panels/file-viewer/usePersistedFlag.ts:6-25 |
 | The plain read-only pane reused for highlight-off / full-file-plain. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
 | The `FileDiff` shape it renders. | `FileDiff` | dashboard/src/data/changeset.ts:34-41 |
-| The screen that mounts it for the file + partner columns. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:156-365 |
+| The screen that mounts it for the file + partner columns. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:416-478 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T20:58:18+02:00 — 260731-EFA-L6 curator W2-B10: repaired 14 citation findings (7 reference rows); scoped recheck clean.
 

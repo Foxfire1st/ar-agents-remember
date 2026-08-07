@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/EvidencePane.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ No Domain Documentation source is configured.
 | Missing-receipt honesty case. | "keeps missing receipt evidence explicitly absent in the pure detail projection" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:115-127 |
 | Terminate and retire residuals remain inspectable without focus and share dismissal across surfaces. | "keeps terminate and retire residuals inspectable without focus and shares exact dismissal" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:129-177 |
 | A successful terminate residual remains visible after the terminated seat is removed. | "reveals a successful terminate residual after the terminated seat is removed" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:179-201 |
-| Component under test. | "export function EvidencePane({" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:169-169 |
+| Component under test. | "export function EvidencePane({" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:407-407 |
 
 ## Cross-Repo References
 

@@ -25,6 +25,11 @@
       "index": "dashboard/e2e-chats/overview.index.json"
     },
     {
+      "route": "dashboard/scripts",
+      "overview": "dashboard/scripts/overview.md",
+      "index": "dashboard/scripts/overview.index.json"
+    },
+    {
       "route": "dashboard/src",
       "overview": "dashboard/src/overview.md",
       "index": "dashboard/src/overview.index.json"
@@ -55,6 +60,8 @@
     "AGENTS.md",
     "README.md",
     "dashboard/e2e-production/cockpit.production.spec.ts",
+    "dashboard/e2e/cockpit.spec.ts",
+    "dashboard/vitest.config.ts",
     "pyproject.toml",
     "scripts/harness/README.md",
     "scripts/harness/render_starter.py",
@@ -72,9 +79,9 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1212,
-    "fileSidecars": 19,
-    "childRoutes": 8
+    "sourceFilesInScope": 1288,
+    "fileSidecars": 21,
+    "childRoutes": 9
   },
   "routingTerms": [
     "agent",
@@ -82,6 +89,7 @@
     "blame",
     "chats",
     "cockpit",
+    "config",
     "dashboard",
     "design",
     "dev",
@@ -123,6 +131,7 @@
     "sync",
     "toml",
     "types",
+    "vitest",
     "workspace"
   ],
   "hotPath": {
@@ -131,6 +140,7 @@
       "dev-skills",
       "mcp",
       "dashboard/e2e-chats",
+      "dashboard/scripts",
       "dashboard/src",
       "docs/design",
       "docs/reference",
@@ -141,17 +151,16 @@
       "README.md",
       "dashboard/e2e-production",
       "dashboard/e2e-production/cockpit.production.spec.ts",
+      "dashboard/e2e",
+      "dashboard/e2e/cockpit.spec.ts",
+      "dashboard",
+      "dashboard/vitest.config.ts",
       "pyproject.toml",
       "scripts/harness",
       "scripts/harness/README.md",
       "scripts/harness/render_starter.py",
       "scripts/harness/session_start_hook.py",
-      "scripts/harness/shared",
-      "scripts/harness/shared/agents-remember-settings.json",
-      "scripts/harness/shared/render-starter.ps1",
-      "scripts/harness/shared/render-starter.sh",
-      "scripts/harness/shared/session-start-directive.md",
-      "scripts/harness/shared/workspace-directive.md"
+      "scripts/harness/shared"
     ],
     "anchorHints": [
       "git-blame-ignore-revs",
@@ -161,6 +170,10 @@
       "README",
       "cockpit.production.spec.ts",
       "cockpit.production.spec",
+      "cockpit.spec.ts",
+      "cockpit.spec",
+      "vitest.config.ts",
+      "vitest.config",
       "pyproject.toml",
       "pyproject",
       "render_starter.py",
@@ -191,17 +204,13 @@
       "dev-skills",
       "mcp",
       "e2e-chats",
+      "scripts",
       "src",
       "design",
       "reference",
       "l-01-agent-lifecycles",
       "C901",
-      "PLR0911",
-      "PLR0912",
-      "PLR0915",
-      "PLR0913",
-      "max-complexity = 10",
-      "PLR09xx"
+      "PLR0911"
     ]
   },
   "fallback": {

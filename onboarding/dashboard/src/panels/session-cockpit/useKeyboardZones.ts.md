@@ -6,13 +6,18 @@
 | path                   | `dashboard/src/panels/session-cockpit/useKeyboardZones.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:42+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The react-hooks remediation pinned the keyboard-zone effect dependencies to
+`[active, keymap]`; zone behavior is unchanged.
 
 ## Purpose
 
@@ -29,16 +34,16 @@ capture phase, active only while the sessions view is the visible view. Every ha
 - **Composed handlers** (cit:([`handlers`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:36-36); cit:([`defaultPrevented`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:86-94)): one binding string can serve several zones with
   different actions (F6 = chrome region-cycle AND PTY exit-to-chrome), so handlers accumulate per
   chord string and at most one acts per event (`event.defaultPrevented` short-circuits).
-- Chrome/composer chords (cit:([`routeKey`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:43-56)): per event — resolve the zone (`zoneForTarget`), require the
+- Chrome/composer chords (cit:(["routeKey(zone, event, target) !== \"handle\""], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:51-51)): per event — resolve the zone (`zoneForTarget`), require the
   chord's `zones` list to include it, require `routeKey(...) === "handle"` (the generic printable
   suppression), then preventDefault + stopPropagation + dispatch the command id.
-- PTY reserved chords (cit:([`PTY_RESERVED`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:58-71)): only `bound` entries with a `tinykeys` string are installed, the
+- PTY reserved chords (cit:(["for (const reserved of PTY_RESERVED)"], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:61-61)): only `bound` entries with a `tinykeys` string are installed, the
   zone must be `pty`, and `routeKey` stays the authority (reserved.ts data) — an unbound/removed
   entry can never be intercepted by a stale binding.
-- The composer `/` rule (cit:([`slashOpensPalette`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:73-84)): `[Shift]+/` (keeps layouts where `/` needs Shift working, e.g.
+- The composer `/` rule (cit:(["slashOpensPalette(target.value, target.selectionStart)"], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:80-80)): `[Shift]+/` (keeps layouts where `/` needs Shift working, e.g.
   German Shift+7), gated by zone = composer + the pure `slashOpensPalette(value, selectionStart)`
   caret test — the deliberate exception to printable suppression.
-- `tinykeys(window, map, { ignore: () => false, capture: true })` (cit:([`tinykeys`], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:95-95)): the **default ignore
+- `tinykeys(window, map, { ignore: () => false, capture: true })` (cit:(["import { tinykeys, type KeybindingsMap } from \"tinykeys\""], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:7-7)): the **default ignore
   (skip form elements) is disabled** — composer chords MUST fire inside a textarea;
   editable-target suppression is the zone contract's job (printables only, R7).
 
@@ -69,8 +74,8 @@ the reviewed task evidence for any current behavioral claim.
 | The zone/routing contract every handler defers to. | `routeKey` | dashboard/src/data/keymap/zones.ts:54-58 |
 | The chord tables it installs (`CHROME_CHORDS`, `COMPOSER_CHORDS`). | `CHROME_CHORDS` | dashboard/src/data/keymap/chords.ts:20-81 |
 | The reserved set it installs — `PTY_RESERVED` lives in `reserved.ts`, not in `chords.ts`, which is why the old row's second range read out of bounds against the file it named. | `PTY_RESERVED` | dashboard/src/data/keymap/reserved.ts:62-150 |
-| The view that supplies `active` + `dispatch`. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/SessionsView.tsx:940-940 |
-| End-to-end binding coverage (real markers, window tinykeys, preventDefault observation, active=false). | "keyboard zones over the legacy-raw PTY (S4)" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:386-423 |
+| The view that supplies `active` + `dispatch`. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
+| End-to-end binding coverage (real markers, window tinykeys, preventDefault observation, active=false). | "keyboard zones over the legacy-raw PTY (S4)" | dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:256-256 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -89,6 +94,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the pinned keyboard-zone deps fix. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 16 citation findings. Converted the
   six Logic line-cite parentheticals — plus the unflagged composed-handlers pair — to cit form against

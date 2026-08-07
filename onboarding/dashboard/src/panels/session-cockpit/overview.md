@@ -6,13 +6,24 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T14:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [panels overview](../overview.md)
+
+## 260731-EFA-L8 Change
+
+`SessionsView` moved to `sessions-view/` with controller/body/palette/styles
+modules and six behavior-split test files. Shared surfaces gained parts/styles
+modules (`interactionParts*`, `launchFlowParts*`, `sessionRailParts*`,
+`stageLayers.tsx`, `chatsStageStyles.ts`, `conversationSurfaceParts*`). The e2e
+repair fixed a genuine keep-alive defect in `ChatsStageBody` (the PTY layer stays
+mounted through smart-focus handoff) and the Terminal headless-focus delegation;
+the primary Playwright suite now asserts the real DOM order (rail → stage →
+inspector).
 
 ## Purpose
 
@@ -303,12 +314,12 @@ references, not imported governing implementations, so no cross-repository sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Full-route composition and shell ownership. | `SessionsView`, `Cockpit` | dashboard/src/panels/session-cockpit/SessionsView.tsx:1336-1336; dashboard/src/cockpit/Cockpit.tsx:359-383 |
+| Full-route composition and shell ownership. | "import { SessionsView } from \"../panels/session-cockpit/sessions-view/SessionsView\";"; "data-testid=\"sessions-stage\"" | dashboard/src/cockpit/Cockpit.tsx:47-47; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
 | Legacy duty bar. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
-| Role/spawn rail and data derivation. | `SessionRail`, `buildRailModel` | dashboard/src/data/railModel.ts:131-205; dashboard/src/panels/session-cockpit/SessionRail.tsx:487-1102 |
-| PTY/ended continuity. | `PtySurface`, `EndedSessionState` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336; dashboard/src/panels/session-cockpit/EndedSessionState.tsx:35-60 |
+| Role/spawn rail and data derivation. | `SessionRail`, `buildRailModel` | dashboard/src/data/railModel.ts:192-235; dashboard/src/panels/session-cockpit/SessionRail.tsx:149-236 |
+| PTY/ended continuity. | "import { lazy, Suspense, useEffect, useMemo, useRef, useState } from \"react\";"; "import { EndedSessionState } from \"./EndedSessionState\";"; "The PtySurface: the session stage's terminal half. Wraps the"; "export function EndedSessionState({ session }: { session: OpenSession }) {" | dashboard/src/panels/session-cockpit/PtySurface.tsx:1-1; dashboard/src/panels/session-cockpit/PtySurface.tsx:19-19; dashboard/src/panels/session-cockpit/PtySurface.tsx:21-21; dashboard/src/panels/session-cockpit/EndedSessionState.tsx:35-35 |
 | Cleanup authority notice. | `LandedCleanupNotice` | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:48-113 |
-| Effective keyboard contract. | `useEffectiveKeymap`, `useKeyboardZones` | dashboard/src/data/keymap/preferences.ts:329-331; dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
+| Effective keyboard contract. | "export function useEffectiveKeymap(): EffectiveKeymap {"; "export function useKeyboardZones({" | dashboard/src/data/keymap/preferences.ts:329-331; dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97; dashboard/src/data/keymap/preferences.ts:369-369 |
 | Dev end-to-end scenario authority. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:113-207 |
 | The shared builders every cockpit suite seeds wire nodes from (projection side and conversation side). | `SERVED`, `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:228-243; dashboard/src/test/fixtures/wire.ts:66-66 |
 | The cast guard, its first-line mirror-marker discovery rule, and its own list of unmarked blind-spot modules. | `collectWireFixtureFindings` | dashboard/src/test/wireFixtureGuard.ts:484-587 |
@@ -384,6 +395,7 @@ site, `test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `tes
 `snapshot.json` ↔ `observer/projection.py` is maintained by hand.**
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (sessions-view split, parts modules, e2e app fixes). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 10 route-reference rows and 3 prose citation groups, including the contract-test and harness-response evidence; no route behavior claims were changed.
 - 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. "Fixture Contract For

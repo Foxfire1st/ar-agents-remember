@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/collapse.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ reviewed task evidence for any current behavioral claim.
 | The declared pure grouping entry point. | `groupUnknownVendorRuns` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-55 |
 | The unknown-vendor content block type. | `ConversationContentBlock` | dashboard/src/data/conversation/types.ts:63-105 |
 | The `ConversationItem` wire type. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
-| The `ConversationTimeline` feed component. | "function ConversationTimeline" | dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:344-344 |
+| The `ConversationTimeline` feed component. | "function ConversationTimeline" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-56 |
 | The grouping test suite. | "describe(\"groupUnknownVendorRuns" | dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:24-24 |
 
 ## Cross-Repo References

@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/ChatContextBar.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -81,8 +81,8 @@ No task-independent technical debt was identified during MX-FIX-2 review.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical host composition delegates launch through the session view. | `onLaunchChat` | dashboard/src/panels/session-cockpit/SessionsView.tsx:1069-1069 |
-| The server-first leaf operation exposes its result type and assignment action. | `applyLeafAssignment`; `AttachLeafResult` | dashboard/src/data/sessions.ts:171-171; dashboard/src/data/terminal.ts:439-439 |
+| Canonical host composition delegates launch through the session view. | `onLaunchChat` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:66-66 |
+| The server-first leaf operation exposes its result type and assignment action. | `applyLeafAssignment`; `AttachLeafResult` | dashboard/src/data/sessions.ts:171-171; dashboard/src/data/terminal.ts:485-485 |
 | Session changes are broadcast through the catalog notification helper. | `notifySessionCatalogChanged` | dashboard/src/data/sessions.ts:113-126 |
 
 ## 260718-CHATS-L4 Reviewed Candidate Delta (Browse history)
@@ -101,6 +101,7 @@ leaf attach/move—are extracted to `ChatSessionActions` on the stage title row,
 visible. Ineligible actions retain their disabled placement/reason rather than moving unpredictably.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: narrowed claims to positive local ownership and generated final citation ranges with the scoped fixer.
 

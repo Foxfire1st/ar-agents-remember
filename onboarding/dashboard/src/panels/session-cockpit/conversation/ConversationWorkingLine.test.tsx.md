@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash |  `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ No Domain Documentation entries are configured in `system/sources.md`.
 | The fixed-anatomy case pins the live working cue and elapsed value derived from `stateSince`. | "renders the fixed anatomy on a live working turn, ~elapsed derived from stateSince" | dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx:64-73 |
 | The remaining cases pin canonical working states, live/working gating, elapsed omission, stale rendering, and the absence of a line-hosted stop control. | "shows the canonical wire word for the other working-set states — never an invented verb"; "renders ONLY while the stream is live AND the turn state is in the working set"; "omits elapsed when stateSince is null"; "appends the visible stale marker ONLY on a stale freshness block"; "renders NO stop control (F-at: the ⏹ stop lives in the composer beside send)" | dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx:75-85; dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx:87-97; dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx:99-103; dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx:105-114; dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx:116-125 |
 | Component under test. | `WORKING_TURN_STATES` | dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.tsx:45-45 |
-| Controlled stop owner. | "data-disabled-reason" | dashboard/src/panels/SessionComposer.tsx:699-699 |
+| Controlled stop owner. | "data-disabled-reason" | dashboard/src/panels/sessionComposerParts.tsx:328-328 |
 
 ## Cross-Repo References
 

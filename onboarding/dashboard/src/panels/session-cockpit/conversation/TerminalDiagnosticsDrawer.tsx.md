@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,10 +60,10 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The keep-alive PTY surface hosted read-only inside the frame (its additive `readOnly` prop). | "landed"; "terminal-diagnostics-frame" | dashboard/src/panels/session-cockpit/PtySurface.tsx:225-228; dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx:110-111 |
+| The keep-alive PTY surface hosted read-only inside the frame (its additive `readOnly` prop). | "terminal-diagnostics-frame"; "<PtySurface focused={focused} readOnly />" | dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx:110-111 |
 | The session type the drawer targets. | `OpenSession` | dashboard/src/data/sessions.ts:28-83 |
-| The stage body that owns default-off toggling and hides the drawer while the library overlay is up (F8). | "chats-stage-layers"; `TerminalDiagnosticsDrawer`; `setChatsDiagnosticsOpen`; `toggleChatsDiagnostics` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:407-413; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:478-486; dashboard/src/panels/session-cockpit/SessionsView.tsx:287-287; dashboard/src/panels/session-cockpit/SessionsView.tsx:401-413 |
-| The view that captures/consumes the diagnostics focus-return token (F9). | `toggleChatsDiagnostics`; `isConnected` | dashboard/src/panels/session-cockpit/SessionsView.tsx:401-413 |
+| The stage body that owns default-off toggling and hides the drawer while the library overlay is up (F8). | "import { TerminalDiagnosticsDrawer } from \"./conversation/TerminalDiagnosticsDrawer\";"; "const [chatsDiagnosticsOpen, setChatsDiagnosticsOpen] = useState(false);"; "data-testid=\"chats-stage-layers\""; "const toggleChatsDiagnostics = useCallback(" | dashboard/src/panels/session-cockpit/stageLayers.tsx:8-8; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:219-219; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:525-525; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:401-401 |
+| The view that captures/consumes the diagnostics focus-return token (F9). | `toggleChatsDiagnostics`; `isConnected` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:272-272; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:260-260 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/GateResponder.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -64,10 +64,10 @@ without a duplicate notice. The old `Chat` control must stay absent.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Component under test and its response branches. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:217-539 |
+| Component under test and its response branches. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
 | Gate decision client mocked for Yes/No/Dismiss. | `postGateDecision` | dashboard/src/data/actions.ts:14-38 |
-| Session store and attach lookup. | `sessionStore`, `findSessionForLifecycle` | dashboard/src/data/sessions.ts:271-437; dashboard/src/data/sessions.ts:442-446 |
-| Direct delivery seam asserted unused on the durable inbox route. | `deliverToSession` | dashboard/src/data/sessions.ts:650-673 |
+| Session store and attach lookup. | `sessionStore`, `findSessionForLifecycle` | dashboard/src/data/sessions.ts:494-508; dashboard/src/data/sessions.ts:513-517 |
+| Direct delivery seam asserted unused on the durable inbox route. | `deliverToSession` | dashboard/src/data/sessions.ts:736-759 |
 | Operator inbox helper used for ordinary approval/rejection routing. | `postOperatorInbox` | dashboard/src/data/operatorInbox.ts:18-32 |
 
 ### 260713-PHA-L5 Reviewed Hosted Cutover Impact

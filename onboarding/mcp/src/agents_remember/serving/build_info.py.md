@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/build_info.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated            | 2026-08-01T08:30+02:00                          |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`      |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`      |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -167,7 +167,7 @@ is proven by repository source and tests.
 | The two merge points: the SSE snapshot and the `/api/state` body, both now via `served_state_tail` onto a copy of the memoized projection dump. | "payload.update(served_state_tail("; "served_state_tail(build=runtime.build" | mcp/src/agents_remember/serving/app.py:344-344; mcp/src/agents_remember/serving/app.py:994-994 |
 | The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`. | `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:63-78 |
 | `SERVER_VERSION` supplies the wheel version in the daemon restart identity, read from installed package metadata with a source-checkout literal fallback. | "SERVER_VERSION = version(" | mcp/src/agents_remember/mcp/__init__.py:9-9 |
-| The cockpit compares and renders the serving/client identity. | "function ServingBuildStamp()" | dashboard/src/cockpit/Cockpit.tsx:689-689 |
+| The cockpit compares and renders the serving/client identity. | "function ServingBuildStamp()" | dashboard/src/cockpit/Cockpit.tsx:923-923 |
 | The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. | "if not bundle_is_current(fingerprint):"; "FINGERPRINT_FILE.write_text(" | scripts/sync-dashboard.py:147-147; scripts/sync-dashboard.py:157-157 |
 | The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. | "agents_remember/package_data/dashboard/index.html"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:93-94 |
 | `test_resolves_commit_in_a_git_checkout` asserts `dashboardBuild` present-or-omitted rather than indexing it unconditionally, through the shared `_build_wire` helper that names the wire form. | `test_resolves_commit_in_a_git_checkout`; "return build.payload().model_dump(" | mcp/tests/test_serving.py:137-137; mcp/tests/test_serving.py:948-963 |

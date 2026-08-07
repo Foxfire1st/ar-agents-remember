@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/screenWakeLock.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:50Z |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ No Domain Documentation entries are configured in this memory worktree's source 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Visibility, release, and overlapping-acquire handling. | `startScreenWakeLock` | dashboard/src/data/screenWakeLock.ts:34-94 |
-| Cockpit startup owns the returned lifecycle. | `startScreenWakeLock` | dashboard/src/cockpit/Cockpit.tsx:393-393 |
+| Cockpit startup owns the returned lifecycle. | "} from \"react\";"; "import { startScreenWakeLock } from " | dashboard/src/cockpit/Cockpit.tsx:20-20; dashboard/src/cockpit/Cockpit.tsx:9-9 |
 
 ## Cross-Repo References
 

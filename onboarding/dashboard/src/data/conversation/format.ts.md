@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation/format.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,8 +80,8 @@ reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The A1/A4/A5 convention proofs. | "conversation format conventions (developer findings A1/A4/A5)" | dashboard/src/data/conversation/format.test.ts:5-44 |
 | The R6 `shortId` implementation, including the short-value and suffix branches. | `shortId` | dashboard/src/data/conversation/format.ts:83-86 |
-| The live `ServingBuildStamp` and `SupervisorHeartbeatBadge` consumers, plus the removed rail footer (R5). | `ServingBuildStamp`; `SupervisorHeartbeatBadge`; "rail bus footer is REMOVED" | dashboard/src/cockpit/Cockpit.tsx:689-719; dashboard/src/cockpit/Cockpit.tsx:725-752; dashboard/src/panels/session-cockpit/SessionRail.tsx:1097-1097 |
-| The focus-handoff fallback that uses `shortId` when no seat label exists (R6). | "shortId(" | dashboard/src/panels/session-cockpit/SessionsView.tsx:465-467 |
+| The live `ServingBuildStamp` and `SupervisorHeartbeatBadge` consumers, plus the removed rail footer (R5). | `ServingBuildStamp`; `SupervisorHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:923-923; dashboard/src/cockpit/Cockpit.tsx:959-959; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:926-926 |
+| The focus-handoff fallback that uses `shortId` when no seat label exists (R6). | "shortId(" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:868-868 |
 | The ambient-telemetry surface that consumes `joinChips`/`freshnessTone`/`humanizeAge` (F3/F19). | `AmbientTelemetry` | dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:54-106 |
 | The library rows consuming `truncateMiddle`/`humanizeAge`. | `ConversationLibraryList` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:104-205 |
 | The developer visual-findings §A rules this module encodes (task-note pointer: `260720-developer-dashboard-visual-findings.md`). | — | — |

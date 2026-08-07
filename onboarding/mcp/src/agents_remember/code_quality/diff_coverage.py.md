@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/diff_coverage.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -224,7 +224,7 @@ every ordinary negative into a gate crash, which is what
 | `load_coverage_by_path`, `FileCoverage`, and the refusal of a report without branch data, all reused here. | `load_coverage_by_path`; `FileCoverage` | mcp/src/agents_remember/code_quality/crap_calculator.py:41-59; mcp/src/agents_remember/code_quality/crap_calculator.py:113-132 |
 | Unit tests for base resolution order, the four states, the malformed-diff guards, and the named-findings report. `BaseResolutionTests::test_the_three_git_wrappers_agree_on_which_failures_are_this_gate_s_error` drives all three wrappers against a missing root and against a patched `git_command.run_git` raising `TimeoutExpired`; `::test_a_git_that_ran_and_said_no_is_still_an_answer_not_an_error` keeps a missing revision and an absent merge base as `False` / `None`. | `BaseResolutionTests` | mcp/tests/test_diff_coverage.py:81-254; mcp/tests/test_diff_coverage.py:221-255 |
 | `[tool.coverage.run] branch = true`, without which this step refuses to score. | "branch = true" | pyproject.toml:68-70 |
-| The full hook tier that runs the wrapper, and the note telling leaf branches to export `AR_GATE_DIFF_BASE`. | `AR_GATE_DIFF_BASE` | .githooks/_gate.sh:157-172 |
+| The full hook tier that runs the wrapper, and the note telling leaf branches to export `AR_GATE_DIFF_BASE`. | `AR_GATE_DIFF_BASE` | CONTRIBUTING.md:112-112 |
 | CI checkout uses `fetch-depth: 0` so a merge base exists; a shallow clone would silently degrade this step to the empty tree. | "fetch-depth: 0" | .github/workflows/quality-checks.yml:34-34 |
 | The contributor-facing statement of the floor and why it is 100%. | `### The coverage floor is on your diff, not on the tree` | CONTRIBUTING.md:95-131 |
 | `run_git` — the runner `_git` calls — strips `GIT_REPOSITORY_SELECTOR_ENV`, keeps stdin on `DEVNULL`, and bounds every call with the local/remote/metadata timeout classes. | `run_git`; `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:85-151 |

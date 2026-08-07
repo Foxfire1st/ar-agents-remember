@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation-library/`        |
 | doc_type               | `route-local-overview`                                              |
 | lastUpdated            | 2026-08-01T13:28+02:00                                              |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                         |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                         |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                                    |
 
 ## Governing Overview
@@ -128,6 +128,7 @@ cross-repository implementation source governs it.
 | The live renderer whose block grammar the read-only preview reuses. | `# dashboard/src/panels/session-cockpit/conversation/ — Structured Conversation Renderer Overview` | onboarding/dashboard/src/panels/session-cockpit/conversation/overview.md:1-360 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: conversation-library panels changed only by behavior-preserving lint remediation.
 
 - 2026-08-03T02:32:19+02:00 — Curator W3-B02: anchored 3 Repo-Internal onboarding-overview citation
   rows with exact current headings and memory-repository-relative paths; verification metadata and

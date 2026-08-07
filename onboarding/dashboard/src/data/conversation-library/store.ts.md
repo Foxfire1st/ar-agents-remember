@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation-library/store.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,25 +33,25 @@ focus signal ONLY on exact opened-catalog proof.
   `requestId`, `dispatching` (from dispatch until the first response — blocks a double-dispatch, F6c),
   `pollsExhausted` (poll budget spent while non-terminal — offer a manual reconcile, F6a), and
   `openedForFocus` (true ONLY when `phase==="opened" && outcome==="opened"` — the sole focus gate).
-- **`loadLibraryList`** (cit:([`loadLibraryList`], dashboard/src/data/conversation-library/store.ts:98-141)): sets a loading view (preserving prior rows when appending under a
+- **`loadLibraryList`** (cit:([`loadLibraryList`], dashboard/src/data/conversation-library/store.ts:153-169)): sets a loading view (preserving prior rows when appending under a
   cursor), fetches, and either records `history unavailable for this harness` on `null` or merges
   rows and threads `canonicalProjectScope`/`nextCursor`. Append is detected by a non-null cursor on
   the same harness. **Agents note:** the previous view's `agentsNote` is carried
   through the loading and error states; on success the FRESHEST page's note wins (`page.agentsNote
   ?? null`) — it describes the query's current agent availability.
-- **`loadLibraryPreview`** (cit:([`loadLibraryPreview`], dashboard/src/data/conversation-library/store.ts:143-159)): sets `selectedKey`, shows a loading preview, fetches the
+- **`loadLibraryPreview`** (cit:([`loadLibraryPreview`], dashboard/src/data/conversation-library/store.ts:171-187)): sets `selectedKey`, shows a loading preview, fetches the
   historical read page, and DROPS a stale preview if the selection moved on (`selectedKey !== key`).
-- **`applyOpen`** (cit:([`applyOpen`], dashboard/src/data/conversation-library/store.ts:164-177)): folds an `OpenResult` into the tracker — on failure it KEEPS the
+- **`applyOpen`** (cit:([`applyOpen`], dashboard/src/data/conversation-library/store.ts:192-205)): folds an `OpenResult` into the tracker — on failure it KEEPS the
   requestId (F6b, reconcile under the same id) and clears `dispatching`/`openedForFocus`; on success
   it stores the operation and sets `openedForFocus` only for the opened/opened terminal.
-- **`isTerminalOpen`** (cit:([`isTerminalOpen`], dashboard/src/data/conversation-library/store.ts:179-182)): `pending`/`timeout-unknown` keep polling under the same id;
+- **`isTerminalOpen`** (cit:([`isTerminalOpen`], dashboard/src/data/conversation-library/store.ts:207-210)): `pending`/`timeout-unknown` keep polling under the same id;
   every other outcome is terminal.
-- **`beginOpen`** (cit:([`beginOpen`], dashboard/src/data/conversation-library/store.ts:189-223)): sets `dispatching:true` BEFORE the first POST (F6c — a second click
+- **`beginOpen`** (cit:([`beginOpen`], dashboard/src/data/conversation-library/store.ts:229-263)): sets `dispatching:true` BEFORE the first POST (F6c — a second click
   cannot open a second operation into the TOCTOU window), dispatches `openConversation`, folds the
   result, and starts polling only if non-terminal.
-- **`reconcileOpen`** (cit:([`reconcileOpen`], dashboard/src/data/conversation-library/store.ts:229-251)): the poll-exhaustion / transport-retry re-drive — reuses the
+- **`reconcileOpen`** (cit:([`reconcileOpen`], dashboard/src/data/conversation-library/store.ts:269-291)): the poll-exhaustion / transport-retry re-drive — reuses the
   EXISTING requestId and re-enters the poll loop with `reconcileFirst`, never minting a fresh id.
-- **`runOpenPolls`** (cit:([`runOpenPolls`], dashboard/src/data/conversation-library/store.ts:260-294; dashboard/src/data/conversation-library/store.ts:161-162)): the bounded poll loop (`OPEN_POLL_MS`=1200, `OPEN_POLL_LIMIT`=25).
+- **`runOpenPolls`** (cit:([`runOpenPolls`], dashboard/src/data/conversation-library/store.ts:262-300)): the bounded poll loop (`OPEN_POLL_MS`=1200, `OPEN_POLL_LIMIT`=25).
   It escalates `open-status`→`open-reconcile` every 5th poll (or immediately on a re-drive), aborts if
   the tracked requestId is superseded, and on budget exhaustion while still non-terminal sets
   `pollsExhausted` and stops (no dead-end "reconciling…" forever).
@@ -101,6 +101,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 18 citation findings. Converted the
   eight Logic line-cite parentheticals to cit form with exact anchors/ranges (`ConversationLibraryState`

@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/setChips.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786` |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Chip ordering, copy selection, composer hint, and attention gate. | `deriveSetChips`; `queuedComposerHint`; `hasUnackedSetAttention` | dashboard/src/data/setChips.ts:58-216; dashboard/src/data/setChips.ts:219-225; dashboard/src/data/setChips.ts:228-232 |
+| Chip ordering, copy selection, composer hint, and attention gate. | `deriveSetChips`; `queuedComposerHint`; `hasUnackedSetAttention` | dashboard/src/data/setChips.ts:192-229; dashboard/src/data/setChips.ts:232-238; dashboard/src/data/setChips.ts:241-245 |
 | Full chip/pair/route/hint matrix. | "a 503 route error renders alarm with retry; other route errors carry no retry"; "true for unacked ledger entries and finished failed pairs; false otherwise" | dashboard/src/data/setChips.test.ts:158-189; dashboard/src/data/setChips.test.ts:217-232 |
 | Copy source consumed by every chip. | `setWaitingCopy`; `setRouteErrorCopy` | dashboard/src/data/setControlsCopy.ts:19-21; dashboard/src/data/setControlsCopy.ts:60-74 |
 
@@ -70,6 +70,7 @@ No meaningful cross-repo boundary is owned here.
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 3 repo-internal citation rows and preserved verification metadata.
 

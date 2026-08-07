@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/InteractionBar.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T10:40+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -82,8 +82,8 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test (multiplexing fan-out + per-payload bar). | "export const InteractionBar = forwardRef<" | dashboard/src/panels/session-cockpit/InteractionBar.tsx:242-242 |
-| The answer path + cross-slot channel routing the suite exercises end-to-end. | `submitInteractionAnswer`, `answerPendingInteraction` | dashboard/src/data/interactionAnswer.ts:449-481; dashboard/src/data/interactionAnswer.ts:504-618 |
+| The component under test (multiplexing fan-out + per-payload bar). | "export const InteractionBar = forwardRef<" | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-54 |
+| The answer path + cross-slot channel routing the suite exercises end-to-end. | `submitInteractionAnswer`, `answerPendingInteraction` | dashboard/src/data/interactionAnswer.ts:477-509; dashboard/src/data/interactionAnswer.ts:654-702 |
 | The `L6_INTERACTION_*` fixtures (choices / freetext / unrepresentable). | `L6_INTERACTION_CHOICES`, `L6_INTERACTION_FREETEXT`, `L6_INTERACTION_UNREPRESENTABLE` | dashboard/src/test/fixtures/catalogRows.ts:205-221; dashboard/src/test/fixtures/catalogRows.ts:224-240; dashboard/src/test/fixtures/catalogRows.ts:243-255 |
 | The `L7_MULTIPLEXED_INTERACTIONS` fixture (parent in both slots + the `agent agent-t` approval). | `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:414-446 |
 | The copy constants asserted verbatim (honesty hint). | `INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERING`, `INTERACTION_ANSWERED`, `INTERACTION_COMPOSER_MODE` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:72-73; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:75-75; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:78-79; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:82-83 |

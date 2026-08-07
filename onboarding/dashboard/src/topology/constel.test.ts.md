@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/topology/constel.test.ts`    |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-08-01T09:32+02:00                      |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`  |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`  |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                            |
 
 ## Governing Overview
@@ -91,8 +91,8 @@ The suite is the runtime half of a claim the type system already makes, so both 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The three `constelColors` cases cover vocabulary colors, undefined for unknown status, and themed tokens with concrete fallbacks. | "gives every status in the vocabulary a colour of its own"; "declares no colour for a status the vocabulary does not contain"; "asks for a themed token per status and offers a concrete fallback for each" | dashboard/src/topology/constel.test.ts:21-30; dashboard/src/topology/constel.test.ts:32-39; dashboard/src/topology/constel.test.ts:41-57 |
-| `constelColors(cssVar): Record<ConstelStatus, string>` and the `CssVarReader` type are extracted from `mountConstel` for jsdom. | `constelColors`; `CssVarReader`; `mountConstel` | dashboard/src/topology/constel.ts:16-16; dashboard/src/topology/constel.ts:31-39; dashboard/src/topology/constel.ts:59-372 |
-| `col` indexes the palette with no `??` fallback, which makes test 2's `undefined` expectation correct. | `col` | dashboard/src/topology/constel.ts:75-75 |
+| `constelColors(cssVar): Record<ConstelStatus, string>` and the `CssVarReader` type are extracted from `mountConstel` for jsdom. | `constelColors`; `CssVarReader`; `mountConstel` | dashboard/src/topology/constel.ts:16-16; dashboard/src/topology/constel.ts:31-39; dashboard/src/topology/constel.ts:408-468 |
+| `col` indexes the palette with no `??` fallback, which makes test 2's `undefined` expectation correct. | `col` | dashboard/src/panels/changeset/ChangeSetPane.tsx:18-18 |
 | `CONSTEL_STATUSES` is the `as const` tuple from which `ConstelStatus` is derived. | `CONSTEL_STATUSES`; `ConstelStatus` | dashboard/src/topology/model.ts:16-16; dashboard/src/topology/model.ts:18-18 |
 | The topology model maps `LIFECYCLE_STATES` into `CONSTEL_STATUS_BY_STATE` rather than restating the vocabulary. | `LIFECYCLE_STATES`; `CONSTEL_STATUS_BY_STATE` | dashboard/src/topology/model.ts:40-40; dashboard/src/topology/model.ts:48-59 |
 

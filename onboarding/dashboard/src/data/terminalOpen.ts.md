@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/terminalOpen.ts`   |
 | doc_type               | `file-level-onboarding`                |
 | lastUpdated            | 2026-07-18T15:22+02:00                 |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`                                     |
-| lastVerifiedCommitDate |                                        2026-07-18T15:41:39+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                                     |
+| lastVerifiedCommitDate |                                        2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                          |
 
 ## Governing Overview
@@ -77,10 +77,10 @@ callers, and reviewed regression tests are the current evidence.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The result union and exact accepted-response identity checks. | "export type TerminalOpenResult =" | dashboard/src/data/terminalOpen.ts:38-38 |
-| The sole POST plus network, body, HTTP, and harness-failure classification. | "export async function openTerminalSession" | dashboard/src/data/terminalOpen.ts:211-211 |
-| The compatibility import surface re-exports this authority instead of owning a second opener. | "from \"./terminalOpen\"" | dashboard/src/data/terminal.ts:340-340 |
-| The session store mutates and broadcasts only after `outcome: opened`. | "sessionStore.getState().upsert(result.session, true)" | dashboard/src/data/sessions.ts:696-696 |
-| Hosted launch delegates to this opener while preserving its established response grammar. | "export async function openHostedSession" | dashboard/src/data/launchFlow.ts:193-193 |
+| The sole POST plus network, body, HTTP, and harness-failure classification. | "export async function openTerminalSession" | dashboard/src/data/terminalOpen.ts:334-334 |
+| The compatibility import surface re-exports this authority instead of owning a second opener. | "from \"./terminalOpen\"" | dashboard/src/data/terminal.ts:386-386 |
+| The session store mutates and broadcasts only after `outcome: opened`. | "sessionStore.getState().upsert(result.session, true)" | dashboard/src/data/sessions.ts:782-782 |
+| Hosted launch delegates to this opener while preserving its established response grammar. | "export async function openHostedSession" | dashboard/src/data/launchFlow.ts:232-232 |
 | Direct parser and caller regressions cover accepted identity and every failure family. | "POSTs raw metadata and accepts the exact server-owned row" | dashboard/src/data/terminal.test.ts:356-392 |
 
 ## Cross-Repo References
@@ -93,6 +93,7 @@ authority.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 - 2026-08-03T02:57+02:00 — W3-B03 curator: curated 6 table citations for terminal-open result, route, store, hosted-session, and raw-metadata behavior; fixer-generated ranges verified.
 
 - 2026-07-18T15:22+02:00 — Created for FEUI MX-FIX-2 after same-reviewer Round 2 PASS: recorded the

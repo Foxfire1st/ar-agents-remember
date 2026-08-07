@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/commands.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,8 +70,8 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The registry, replace-by-id unregister guard, and the default set with the stub seams. | `createCommandRegistry` | dashboard/src/data/commands.ts:57-81 |
-| The view builds the context and dispatches chord command ids into the registry. | "registry.run(commandId" | dashboard/src/panels/session-cockpit/SessionsView.tsx:935-935 |
-| The palette clears its query when the selected command keeps the palette open. | "if (command?.keepsPaletteOpen)" | dashboard/src/panels/session-cockpit/CommandPalette.tsx:192-192 |
+| The view builds the context and dispatches chord command ids into the registry. | "registry.run(commandId" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:1053-1053 |
+| The palette clears its query when the selected command keeps the palette open. | "if (command?.keepsPaletteOpen)" | dashboard/src/panels/session-cockpit/CommandPalette.tsx:418-418 |
 | The chord tables that carry these command ids per zone. | "palette.open" | dashboard/src/data/keymap/chords.ts:24-24 |
 | The registry suite pins registration order and when-predicate filtering. | "lists commands in registration order and filters by when-predicate" | dashboard/src/data/commands.test.ts:38-44 |
 | The registry suite pins replacement-by-id and stale-unregister behavior. | "replaces by id and unregisters only its own registration" | dashboard/src/data/commands.test.ts:57-67 |
@@ -94,6 +94,7 @@ queue splice. Palette normalization removes the leading slash exactly once so co
 keyboard invocation share one query contract.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
 

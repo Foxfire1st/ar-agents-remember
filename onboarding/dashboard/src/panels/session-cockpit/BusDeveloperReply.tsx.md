@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/BusDeveloperReply.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sender-only reverse request construction and message-kind mapping. | `developerReplyRequest` | dashboard/src/panels/session-cockpit/BusDeveloperReply.tsx:37-59 |
-| Accessible controlled form and the sole operator-inbox POST. | "post to operator inbox" | dashboard/src/panels/session-cockpit/BusDeveloperReply.tsx:154-154 |
+| Accessible controlled form and the sole operator-inbox POST. | "post to operator inbox" | dashboard/src/panels/session-cockpit/BusDeveloperReply.tsx:182-182 |
 | Existing POST client this boundary reuses. | `postOperatorInbox` | dashboard/src/data/operatorInbox.ts:18-32 |
 | Exact request-body and zero-POST regression coverage. | "posts a developer decision to the original sender through /api/operator-inbox only"; "performs zero POSTs" | dashboard/src/panels/session-cockpit/BusPane.test.tsx:146-184; dashboard/src/panels/session-cockpit/BusPane.test.tsx:186-203 |
 
@@ -70,6 +70,7 @@ No meaningful cross-repo boundary is owned here.
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 4 citation items; scoped citation check now passes.
 

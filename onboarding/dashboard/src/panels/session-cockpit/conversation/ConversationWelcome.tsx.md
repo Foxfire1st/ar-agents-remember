@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ None recorded.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The component gates its welcome state on optional `processState`, selecting `UNKNOWN_LINK` when it is undefined and otherwise `LINK_STATES[processState]`. | `processState`; `UNKNOWN_LINK`; `LINK_STATES`; "processState === undefined"; "LINK_STATES[processState]" | dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx:144-150; dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx:152-152; dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx:160-160; dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx:162-162 |
-| The surface supplies harness and current process state only for an empty live timeline. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
+| The surface supplies harness and current process state only for an empty live timeline. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
 | Focused cases cover each readiness wording. | "never claims the link is ready when the process is %s"; "mirrors the uncertainty when the projection has applied no status frame yet"; "says the link is ready — with the mint live dot — only for a connected process" | dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.test.tsx:31-41; dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.test.tsx:43-51; dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.test.tsx:53-60 |
 
 ## Update History

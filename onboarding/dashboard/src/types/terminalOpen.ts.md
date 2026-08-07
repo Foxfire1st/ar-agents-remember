@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/terminalOpen.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`       |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ shapes went to new files.
 ### Invariants And Boundaries
 
 - Every body is rendered VERBATIM by the flow's classifier (`data/launchFlow.ts`
-  `classifyOpenResponse`) cit:([`classifyOpenResponse`], dashboard/src/data/launchFlow.ts:131-179) — no field here may be reworded or synthesized client-side.
+  `classifyOpenResponse`) cit:([`classifyOpenResponse`], dashboard/src/data/launchFlow.ts:182-195) — no field here may be reworded or synthesized client-side.
 - The two `resolvedModel`/`resolvedEffort` carriers mean different things: success = the
   REQUESTED pair, conflict = the LIVE row's retained pair. Confusing them is a provenance
   honesty violation.
@@ -62,8 +62,8 @@ shapes went to new files.
 | The route these mirror (`api_terminal_open`, 200/400/409 bodies). | `api_terminal_open` | mcp/src/agents_remember/serving/app.py:1889-1904 |
 | The synchronous selection gate (partial pair / non-native only). | `resolve_terminal_open_selection` | mcp/src/agents_remember/serving/harness_control_api.py:156-179 |
 | The vocabularies imported instead of re-declared. | `TerminalOpenKind` | dashboard/src/types/terminalCatalog.ts:7-7 |
-| The classifier consuming every body verbatim (`classifyOpenResponse`). | `classifyOpenResponse` | dashboard/src/data/launchFlow.ts:131-179 |
-| The request-side knobs (`OpenTerminalOptions.model/effort`). | `OpenTerminalOptions` | dashboard/src/data/terminal.ts:336-336 |
+| The classifier consuming every body verbatim (`classifyOpenResponse`). | `classifyOpenResponse` | dashboard/src/data/launchFlow.ts:182-195 |
+| The request-side knobs (`OpenTerminalOptions.model/effort`). | `OpenTerminalOptions` | dashboard/src/data/terminal.ts:382-382 |
 | The fixture instances of every body (+ failed rows). | `OPENED_STARTING` | dashboard/src/test/fixtures/openResponses.ts:17-33 |
 
 ## Update History

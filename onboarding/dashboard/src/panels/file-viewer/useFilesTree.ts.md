@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/file-viewer/useFilesTree.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-06-29T09:06+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ re-rooting could collide across scopes.
 | --- | --- | --- |
 | `FileTree` renders this tree and owns the mouse click handler (folder toggle + file open). | `FileTree` | dashboard/src/panels/file-viewer/FileTree.tsx:44-96 |
 | `listDir`, `DirEntry`, and `Scope` come from the L1 files client. | `listDir`, `DirEntry`, `Scope` | dashboard/src/data/files.ts:13-13; dashboard/src/data/files.ts:31-37; dashboard/src/data/files.ts:113-114 |
-| `FileViewer` mounts one tree per side, re-keyed on `{repo}:{scope}:{side}`. | `FileViewer` | dashboard/src/panels/file-viewer/FileViewer.tsx:278-278 |
+| `FileViewer` mounts one tree per side, re-keyed on `{repo}:{scope}:{side}`. | `FileViewer` | dashboard/src/panels/file-viewer/FileViewer.tsx:299-299 |
 
 ## Update History
 

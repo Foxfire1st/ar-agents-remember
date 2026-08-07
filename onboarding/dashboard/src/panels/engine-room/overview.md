@@ -6,13 +6,23 @@
 | sourceRoute            | `dashboard/src/panels/engine-room/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [panels/ overview](../overview.md)
+
+## 260731-EFA-L8 Change
+
+`engineRoomStyles.ts` (1,287 lines) was ruled a split-by-semantic-axis case (R6:
+no exemption list) and divided into `layout.styles.ts`, `stage.styles.ts`,
+`ledger.styles.ts`, `flow.styles.ts`, `remote.styles.ts`, and `backdrop.styles.ts`,
+with `styles.ts` as the re-export barrel. `EnclosureCanvas.tsx` was split into
+`geometry.ts`, `scene.ts`, `badges.tsx`, `engines.tsx`, `ledger.tsx`, `conduits.tsx`,
+`remote.tsx`, and `sceneLayers.tsx`. `fixtures.ts` was trimmed to 1,197 physical
+lines (FL1). The scene model and motion contracts are unchanged.
 
 ## Purpose
 
@@ -231,7 +241,7 @@ The process map keeps stale landing facts inspectable with explicit stale stylin
 | The server composer of the process nodes the client renders. | `build_analytics`; `_start_process_node`; `_process_edges` | mcp/src/agents_remember/observer/reducer.py:627-654; mcp/src/agents_remember/observer/reducer.py:1089-1180; mcp/src/agents_remember/observer/reducer.py:1504-1577 |
 | The served `EngineProcessNode` / `Analytics.engineProcesses` contract. | `EngineProcessNode` | mcp/src/agents_remember/observer/projection.py:832-900 |
 | The honest-motion gate the GSAP/Motion read. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
-| The cockpit shell that hides the rails for the Engine Room view (§4.1). | `fullBleed` | dashboard/src/cockpit/Cockpit.tsx:438-442 |
+| The cockpit shell that hides the rails for the Engine Room view (§4.1). | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:404-404; dashboard/src/cockpit/Cockpit.tsx:443-443 |
 | `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:785-804 |
 | `_seed_edge_state` and `_DECISIVE_SETUP_EDGE_STATES` — the only producers of a seed lane's state, including the `stale` reroute. | `_seed_edge_state`; `_DECISIVE_SETUP_EDGE_STATES` | mcp/src/agents_remember/observer/reducer.py:1591-1595; mcp/src/agents_remember/observer/reducer.py:1598-1614 |
 | The client mirror of the edge, which no longer declares a polarity field. | `EngineProcessEdge` | dashboard/src/types/projection.ts:152-160 |
@@ -287,6 +297,7 @@ payload the server can actually send.
   and lives or dies with `integration`. Delete the lane and its coverage together, or not at all.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (style-domain split, canvas siblings, fixtures trim). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped engine-room citation claims; final exact frozen-snapshot check is clean.
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the

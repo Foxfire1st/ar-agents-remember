@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/reducer.ts`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -94,9 +94,9 @@ reviewed task evidence for any current behavioral claim.
 | The wire page and event-envelope types consumed by the reducer entry points. | `ConversationPage`; `ConversationEventEnvelope` | dashboard/src/data/conversation/types.ts:286-298; dashboard/src/data/conversation/types.ts:327-336 |
 | The reducer's initial and older-page entry points apply typed page baselines. | `applyInitialPage`; `applyOlderPage` | dashboard/src/data/conversation/reducer.ts:168-202; dashboard/src/data/conversation/reducer.ts:205-229 |
 | The reducer's live event entry point applies identity, cursor, dedupe, and gap rules. | `applyEvent` | dashboard/src/data/conversation/reducer.ts:246-286 |
-| The store applies pages/events and consumes the reducer's `recovery` signal. | `activeConversationStore`; `handleRecovery` | dashboard/src/data/conversation/store.ts:84-191; dashboard/src/data/conversation/store.ts:427-435 |
+| The store applies pages/events and consumes the reducer's `recovery` signal. | `activeConversationStore`; `handleRecovery` | dashboard/src/data/conversation/store.ts:207-215; dashboard/src/data/conversation/store.ts:467-475 |
 | The active conversation reducer suite is the focused regression source for cursor, dedupe, gap, revision, identity, replacement, and replay behavior. | "active conversation reducer" | dashboard/src/data/conversation/reducer.test.ts:50-193 |
-| The interrupt hook reads reducer status and ordered item ids for working-turn correlation. | `resolveWorkingTurnId` | dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:61-78 |
+| The interrupt hook reads reducer status and ordered item ids for working-turn correlation. | `resolveWorkingTurnId` | dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:90-97 |
 | The active serving API supplies page and event evidence consumed by the reducer. | `conversation_page`; `conversation_events`; `applyInitialPage`; `applyEvent` | dashboard/src/data/conversation/reducer.ts:168-202; dashboard/src/data/conversation/reducer.ts:246-286; mcp/src/agents_remember/serving/conversation/active/api.py:126-155; mcp/src/agents_remember/serving/conversation/active/api.py:204-247 |
 
 ## Cross-Repo References
@@ -109,6 +109,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: reconciled the frozen-source ledger, split pooled reducer references by source owner, and supplied exact anchors with scoped fixer input for generated ranges. Verification metadata unchanged.
 

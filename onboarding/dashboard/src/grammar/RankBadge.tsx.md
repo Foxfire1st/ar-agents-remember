@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/RankBadge.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T16:02+02:00                           |
-| lastVerifiedCommitHash | `31f58834f86c0d98e26b0896e099a2403a8729ee`       |
-| lastVerifiedCommitDate | 2026-07-18T15:41:39+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -63,8 +63,8 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The gold/purple tier tokens (+dim/ghost) this badge colours by. | `goldGhost`, `purpleGhost` | dashboard/panda.config.ts:48-48; dashboard/panda.config.ts:51-51 |
-| Task rows render the badge at `row` size beside the state dot, keyed by `OperationRow.tier`. | `commandFacts` | dashboard/src/panels/LifecycleList.tsx:572-580 |
-| Import census confirms `LifecycleList` is the sole production consumer; the session rail does not import `RankBadge`. | "../grammar/RankBadge" | dashboard/src/panels/LifecycleList.tsx:38-38 |
+| Task rows render the badge at `row` size beside the state dot, keyed by `OperationRow.tier`. | `commandFacts` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:696-704 |
+| Import census confirms `LifecycleList` is the sole production consumer; the session rail does not import `RankBadge`. | "../grammar/RankBadge" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:38-38 |
 | Glyph-anatomy and both-size tests keep `sm` supported even though production currently uses only `row`. | "keeps the viewBox fixed and shrinks only the rendered box for the sm size" | dashboard/src/grammar/RankBadge.test.tsx:32-43 |
 
 ## Cross-Repo References

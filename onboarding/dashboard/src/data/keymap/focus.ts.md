@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/keymap/focus.ts`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ StatusLine is no longer a region or an F6 stop.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The region cycle, selectors, and the stage-header/PTY landing constants. | `nextRegion`; `regionTargetSelector`; `STAGE_HEADER_SELECTOR`; `PTY_HOST_SELECTOR` | dashboard/src/data/keymap/focus.ts:14-24; dashboard/src/data/keymap/focus.ts:27-29; dashboard/src/data/keymap/focus.ts:32-32; dashboard/src/data/keymap/focus.ts:35-35 |
-| The view wires F6/Shift+F6 through `nextRegion` with collapsed panels filtered out. | `cycleRegion`; "const next = nextRegion(current, direction, available);" | dashboard/src/panels/session-cockpit/SessionsView.tsx:701-719 |
+| The view wires F6/Shift+F6 through `nextRegion` with collapsed panels filtered out. | "const next = nextRegion(current, direction, available);" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:472-472 |
 | The cycle suite: forward/backward wrap, edge starts, collapsed dropout, unavailable-current recovery. | "cycles backward with Shift+F6"; "skips collapsed panels (they leave the cycle)"; "recovers when the current region itself is unavailable" | dashboard/src/data/keymap/focus.test.ts:15-18; dashboard/src/data/keymap/focus.test.ts:25-30; dashboard/src/data/keymap/focus.test.ts:32-34 |
 
 ## Update History

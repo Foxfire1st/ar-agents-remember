@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/interactionAnswer.test.ts`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:38+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test (representation + multiplex helpers, gate fallback, locked submit). | `representPendingInteraction`; `pendingInteractionPayloads`; `findInteractionGate`; `answerPendingInteraction`; `interactionAnswerIsLocked`; `submitInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:136-184; dashboard/src/data/interactionAnswer.ts:208-223; dashboard/src/data/interactionAnswer.ts:258-274; dashboard/src/data/interactionAnswer.ts:449-481; dashboard/src/data/interactionAnswer.ts:484-490; dashboard/src/data/interactionAnswer.ts:504-618 |
+| The module under test (representation + multiplex helpers, gate fallback, locked submit). | `representPendingInteraction`; `pendingInteractionPayloads`; `findInteractionGate`; `answerPendingInteraction`; `interactionAnswerIsLocked`; `submitInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:157-194; dashboard/src/data/interactionAnswer.ts:218-233; dashboard/src/data/interactionAnswer.ts:268-284; dashboard/src/data/interactionAnswer.ts:477-509; dashboard/src/data/interactionAnswer.ts:512-518; dashboard/src/data/interactionAnswer.ts:654-702 |
 | The matcher that decides "open agent-question gate" from `kind` and `state` alone. | `findInteractionGate` | dashboard/src/data/interactionAnswer.ts:258-274 |
 | The local fixture reads the sampled projection into `SERVED`, selects a gate-bearing lifecycle as `SERVED_GATE`, and `BASE_GATE` copies that row's gate fields. | `SERVED`; `SERVED_GATE`; `BASE_GATE` | dashboard/src/test/fixtures/wire.ts:66-66; dashboard/src/test/fixtures/wire.ts:88-91; dashboard/src/test/fixtures/wire.ts:109-117 |
 | The component suite covers exact URL/body handling, in-flight/retry states, structured questions, and multiplexed sub-agent approvals. | `stubDirectRoute`; "round-trip states (F7)"; "structured questions (260718-CHATS-L5I)"; "multiplexed sub-agent approvals" | dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:114-244; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:298-323; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:325-480; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:482-521 |

@@ -6,13 +6,18 @@
 | path                   | `dashboard/src/test/fixtures/catalogRows.ts`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
 
 [dashboard/src overview](../../overview.md)
+
+## 260731-EFA-L8 Change
+
+The fixture pack gained `RAW_TERMINAL_ROW` for the repaired primary e2e suite
+(terminal-continuity and keep-alive scenarios); existing fixtures are unchanged.
 
 ## Purpose
 
@@ -104,6 +109,7 @@ No meaningful cross-repo references found.
 | This file implements a repository-local contract. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the RAW_TERMINAL_ROW fixture addition. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 10 repository-reference citations and normalized 2 prose citations (10/10 anchored and sourced; scoped citation check clean).
 

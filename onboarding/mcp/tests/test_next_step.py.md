@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_next_step.py`              |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -186,7 +186,7 @@ the `lifecycle_start` payload it asserts the rundown on.
 | The next-step engine under test. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
 | The choke point that attaches `nextStep` to every response. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | `lifecycle_start_payload` whose `frontHalfRundown` + `nextStep` are asserted. | `lifecycle_start_payload` | mcp/src/agents_remember/mcp/tools/lifecycle.py:20-21 |
-| The ambient lifecycle installed/started/promoted by the edge tests. | `AmbientLifecycle`; `install_ambient` | mcp/src/agents_remember/observer/ambient.py:90-594; mcp/src/agents_remember/observer/ambient.py:628-630 |
+| The ambient lifecycle installed/started/promoted by the edge tests. | `AmbientLifecycle`; `install_ambient` | mcp/src/agents_remember/observer/ambient.py:112-635; mcp/src/agents_remember/observer/ambient.py:669-671 |
 | The projected `LifecycleState` the pure tests construct. | `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:187-210 |
 | The `EventStore` backing the ambient under test. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | `WorktreeContract` + `write_contract`/`load_contract` used by the gate + edge cases. | `WorktreeContract`; `write_contract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:231-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-470; mcp/src/agents_remember/worktrees/worktree_contract.py:473-477 |

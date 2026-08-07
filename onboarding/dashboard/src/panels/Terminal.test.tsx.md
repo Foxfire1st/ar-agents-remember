@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Terminal.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |                                                  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |                                                  2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash |                                                  `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate |                                                  2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The mocked test replaces xterm (incl. the L6 extensions: `options`, `parser.registerOscHandler`, `onBell`/`onTitleChange`, `focus`, `attachCustomKeyEventHandler`), exposes fake buffer state, and records constructor options / scroll calls instead of mounting the real renderer. | `mocks` | dashboard/src/panels/Terminal.test.tsx:11-33 |
 | The always-named group-landmark case (fallback name + explicit label wins). | "the group landmark is ALWAYS named — explicit label or the sessionId fallback (L6 review finding 6)" | dashboard/src/panels/Terminal.test.tsx:132-143 |
 | The regression assertions pin `scrollback: 5000`, normal-buffer wheel-to-viewport behavior, alternate-buffer PageUp routing, mouse-tracking non-interception, and partial-pixel swallowing. | "enables scrollback on the xterm instance"; "uses wheel events to scroll the xterm viewport instead of terminal input"; "maps wheel events to page navigation when the terminal is in the alternate buffer" | dashboard/src/panels/Terminal.test.tsx:145-156; dashboard/src/panels/Terminal.test.tsx:227-251; dashboard/src/panels/Terminal.test.tsx:253-279 |
-| The component under test enables the xterm viewport, passes the explicit scrollback option, captures wheel input to either `term.scrollLines` or PageUp/PageDown input depending on buffer state, and names the group host. | `Terminal` | dashboard/src/panels/Terminal.tsx:117-459 |
+| The component under test enables the xterm viewport, passes the explicit scrollback option, captures wheel input to either `term.scrollLines` or PageUp/PageDown input depending on buffer state, and names the group host. | `Terminal` | dashboard/src/panels/Terminal.tsx:110-202 |
 
 ## Cross-Repo References
 

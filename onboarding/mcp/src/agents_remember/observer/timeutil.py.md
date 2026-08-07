@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/timeutil.py`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-13T19:30+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -37,7 +37,7 @@ from the producer and reducer layers that consume them.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The write side imports the cadence and TTL, and `_inactive_seconds_locked` ages the last real non-heartbeat event. | "HEARTBEAT_SECONDS,"; "TTL_SECONDS,"; "age_seconds(last, self._clock())"; "def _inactive_seconds_locked"; "last real (non-heartbeat) event" | mcp/src/agents_remember/observer/ambient.py:52-53; mcp/src/agents_remember/observer/ambient.py:551-557 |
+| The write side imports the cadence and TTL, and `_inactive_seconds_locked` ages the last real non-heartbeat event. | "HEARTBEAT_SECONDS,"; "TTL_SECONDS,"; "def _inactive_seconds_locked"; "Seconds since the last real (non-heartbeat) event for the current lifecycle."; "age_seconds(last, self._clock())" | mcp/src/agents_remember/observer/ambient.py:53-54; mcp/src/agents_remember/observer/ambient.py:592-597 |
 | The read side imports the stale/TTL thresholds for the inferred layer. | "STALE_AFTER_SECONDS, TTL_SECONDS" | mcp/src/agents_remember/observer/reducer.py:72-72 |
 | The provider-layer heartbeat/stale idiom with its own separate copy. | `HEARTBEAT_SECONDS`; `STALE_AFTER_SECONDS`; `Clock` | mcp/src/agents_remember/providers/setup_progress.py:21-21; mcp/src/agents_remember/providers/setup_progress.py:25-25; mcp/src/agents_remember/providers/setup_progress.py:27-27 |
 | The design sections describe lifecycle TTL/heartbeat semantics and defer implementation ownership. | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design`; `### 1.5 Fleeting vs persistent; save gate; TTL`; `### 1.6 Ambient attribution and the heartbeat`; `## 8. Deferred to Implementation Phases` | docs/design/observable-lifecycle.md:1-402 |

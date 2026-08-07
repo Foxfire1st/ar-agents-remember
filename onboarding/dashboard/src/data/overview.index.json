@@ -96,6 +96,7 @@
     "dashboard/src/data/streamLiveness.ts",
     "dashboard/src/data/submissionLifecycleClient.test.ts",
     "dashboard/src/data/submissionLifecycleClient.ts",
+    "dashboard/src/data/submissionWithdrawal.ts",
     "dashboard/src/data/submitClient.test.ts",
     "dashboard/src/data/submitClient.ts",
     "dashboard/src/data/submitMachine.test.ts",
@@ -113,8 +114,8 @@
     "dashboard/src/data/useTaskDocumentBody.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 110,
-    "fileSidecars": 85,
+    "sourceFilesInScope": 111,
+    "fileSidecars": 86,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -162,6 +163,7 @@
     "stream",
     "streamliveness",
     "submissionlifecycleclient",
+    "submissionwithdrawal",
     "submitclient",
     "submitmachine",
     "submitretention",

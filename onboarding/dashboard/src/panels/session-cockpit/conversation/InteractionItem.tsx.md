@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,8 +64,8 @@ reviewed task evidence for any current behavioral claim.
 | The item/`choices`-block types this component narrows over (incl. the `item.agent` ref). | `choices` | dashboard/src/data/conversation/types.ts:95-95 |
 | The `agentLabel` precedence (nickname → role → agentPath tail → `agent <first8>`) the badge prints. | `agentLabel` | dashboard/src/data/conversation/agents.ts:30-38 |
 | Streaming-safe Markdown renderer used for the prompt body. | `MarkdownBlock` | dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
-| The LIVE gate-channel interaction authority this timeline copy defers to. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:242-281 |
-| The kind dispatcher that routes interaction items here. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:68-71 |
+| The LIVE gate-channel interaction authority this timeline copy defers to. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-93 |
+| The kind dispatcher that routes interaction items here. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:66-69 |
 | The badge present/absent pinning suite. | "badges the asking agent's label when the item carries an agent ref" | dashboard/src/panels/session-cockpit/conversation/InteractionItem.test.tsx:32-39 |
 
 ## Cross-Repo References

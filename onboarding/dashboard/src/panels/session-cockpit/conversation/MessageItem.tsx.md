@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ vendor-clone skin.
   the markdown/text blocks, `sourceLineCount` counts newlines, and a message is `clampable` only when
   it is an assistant message, `phase === "completed"`, and exceeds `CLAMP_THRESHOLD_LINES` (40, L13).
 - **Clamp by slicing, not by pixels (F12):** a collapsed message renders `sourceText.split("\n").
-  slice(0, 40)` and reports `hiddenLines = totalLines - 40` cit:(["const hiddenLines = collapsed"], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:115-115), so the `+N lines` on the
+  slice(0, 40)` and reports `hiddenLines = totalLines - 40` cit:(["hiddenLines: collapsed ? Math.max(0, totalLines - CLAMP_THRESHOLD_LINES) : 0"], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:169-169), so the `+N lines` on the
   `ClampButton` is EXACTLY what is hidden — never a `maxHeight` visual clamp whose count diverges
   from the pixels actually hidden.
 - The user role gets a distinct left-amber-border wrap and a `>` glyph cit:([`userWrap`], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:16-25); the head row
@@ -68,8 +68,8 @@ reviewed task evidence for any current behavioral claim.
 | The content-block/item types this component narrows over (`image-ref`, `altProvenance`). | `altProvenance` | dashboard/src/data/conversation/types.ts:83-83 |
 | Streaming-safe Markdown renderer used for every prose/code block. | "export const MarkdownBlock" | dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
 | The shared ClampButton (real button, exact `+N`), `sourceLineCount`, `SourceBadge`, `useClampIds`. | "export function ClampButton" | dashboard/src/panels/session-cockpit/conversation/primitives.tsx:38-38 |
-| The kind dispatcher that routes messages here. | "export const ConversationItemView" | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:68-68 |
-| The feed-ARIA/image-alt/clamp assertions covering this component. | "exposes a role=feed and articles keyed to the server globalOrdinal" | dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx:34-52 |
+| The kind dispatcher that routes messages here. | "export const ConversationItemView" | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:66-66 |
+| The feed-ARIA/image-alt/clamp assertions covering this component. | "exposes a role=feed and articles keyed to the server globalOrdinal" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/feedSemantics.test.tsx:8-8 |
 
 ## Cross-Repo References
 
@@ -87,6 +87,7 @@ source badge. The phase is therefore not color-only and follows the same compact
 in-progress conversation evidence.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the superseded `(L…)`
   prose citations and the `n/a` rows with exact anchors and ranges; exact non-fixing check returns

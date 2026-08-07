@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/terminalCatalog.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | --- | --- | --- |
 | The unions, opaque diagnostics keys, and the full row shape (incl. the additive plural pending slot). | `TerminalCatalogRow` | dashboard/src/types/terminalCatalog.ts:24-93 |
 | The Python source of truth (`TerminalCatalogEntry.to_json()`; both pending slots serialized). | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
-| The re-export seam preserving existing import sites. | "TerminalCatalogRow as TerminalSessionInfo" | dashboard/src/data/terminal.ts:323-323 |
+| The re-export seam preserving existing import sites. | "TerminalCatalogRow as TerminalSessionInfo" | dashboard/src/data/terminal.ts:369-369 |
 | The `OpenSession` mapping that carries these fields into the client registry. | `OpenSession` | dashboard/src/data/sessions.ts:28-83 |
 | The sibling hand-mirrored wire type this follows the posture of. | `WorkspaceProjection` | dashboard/src/types/projection.ts:507-518 |
 | The full-wire-shape fixtures built on this type (FLEET + appended packs, incl. the `L7_*` multiplexed seat). | `FLEET` | dashboard/src/test/fixtures/catalogRows.ts:32-172 |

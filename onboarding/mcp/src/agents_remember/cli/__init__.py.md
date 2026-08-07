@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/cli/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ This package marker is documented by the nearest mcp route overview and the real
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package docstring names the CLI adapter role. | "Command-line adapters for the application layer" | mcp/src/agents_remember/cli/__init__.py:1-1 |
-| The nearest route overview documents the umbrella CLI under `cli/`. | "`agents-remember` CLI under `cli/`" | onboarding/mcp/overview.md:803-803 |
+| The nearest route overview documents the umbrella CLI under `cli/`. | — | — |
 | The umbrella entrypoint dispatches subcommands for this package. | `main` | mcp/src/agents_remember/cli/__main__.py:31-33 |
 | The dashboard subcommand adapter registered by the umbrella parser. | `run` | mcp/src/agents_remember/cli/dashboard.py:161-196 |
 | The context-packet CLI adapter peer. | `main` | mcp/src/agents_remember/cli/context_packet.py:17-60 |

@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/QueuePreview.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,8 +46,8 @@ No Domain Documentation source is configured for this repository.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared composer mounts the preview and owns the Alt+Up action. | "withdrawing queued message…" | dashboard/src/panels/SessionComposer.tsx:323-323 |
-| The lifecycle client hydrates only raw-free authoritative status rows. | "invalid submission status" | dashboard/src/data/submissionLifecycleClient.ts:207-207 |
+| The shared composer mounts the preview and owns the Alt+Up action. | "withdrawing queued message…" | dashboard/src/panels/sessionComposerHooks.ts:143-143 |
+| The lifecycle client hydrates only raw-free authoritative status rows. | "if (!isLifecycleState(state)) throw new Error(\"invalid submission status\");" | dashboard/src/data/submissionLifecycleClient.ts:217-217 |
 
 ## Cross-Repo References
 

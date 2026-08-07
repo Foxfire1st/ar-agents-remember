@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/scenarios.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:40+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -122,7 +122,7 @@ server-side model the vocabulary mirrors.
 | The `SCENARIOS` model under test, including the `reindexReroute` timeline whose R4 caption this case matches. | `SCENARIOS`; `reindexReroute` | dashboard/src/dev/scenarios.ts:90-102; dashboard/src/dev/scenarios.ts:260-273 |
 | `EngineProcessEdge.state` — the served vocabulary `SERVED_EDGE_STATES` mirrors, on an `extra="forbid"` model. | `SERVED_EDGE_STATES` | dashboard/src/dev/scenarios.test.ts:284-294 |
 | `_seed_edge_state` — the reducer function that actually emits `stale`; `refused` is not among its answers. | `_seed_edge_state` | mcp/src/agents_remember/observer/reducer.py:1596-1612 |
-| `refusedPolarityOf` derives the amber flash from the edge STATE in the renderer, which is why the edge needs no polarity field and the deleted assertion was fixture-only. | `refusedPolarityOf` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:231-241 |
+| `refusedPolarityOf` derives the amber flash from the edge STATE in the renderer, which is why the edge needs no polarity field and the deleted assertion was fixture-only. | `refusedPolarityOf` | dashboard/src/panels/engine-room/geometry.ts:124-134 |
 
 ## Cross-Repo References
 

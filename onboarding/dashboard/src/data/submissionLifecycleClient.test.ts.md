@@ -6,13 +6,19 @@
 | path | `dashboard/src/data/submissionLifecycleClient.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
 
 [data overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The suite was updated for the validated-narrow replacement (no bare
+`as SubmissionLifecycleState` cast) and the extracted withdrawal module; the tested
+contract is unchanged.
 
 ## Purpose
 
@@ -53,7 +59,7 @@ No Domain Documentation source is configured for this repository.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The system under test owns polling, withdrawal, and draft recovery. | `ensureSubmissionLifecyclePolling`, `withdrawLastQueuedSubmission`, `restoreWithdrawnRecovery` | dashboard/src/data/submissionLifecycleClient.ts:787-799; dashboard/src/data/submissionLifecycleClient.ts:1043-1068; dashboard/src/data/submissionLifecycleClient.ts:1096-1108 |
+| The system under test owns polling, withdrawal, and draft recovery. | `ensureSubmissionLifecyclePolling`; `withdrawLastQueuedSubmission`; `restoreWithdrawnRecovery` | dashboard/src/data/submissionLifecycleClient.ts:949-961; dashboard/src/data/submissionWithdrawal.ts:352-377; dashboard/src/data/submissionWithdrawal.ts:405-417 |
 | The server authority suite proves the corresponding linearization boundary. | `HarnessSubmissionAuthorityTests` | mcp/tests/test_harness_submission_authority.py:230-755 |
 
 ## Cross-Repo References
@@ -72,6 +78,7 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the suite update for the validated narrow. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:30:16+02:00 — W3-B05 curator: anchored 2 Tier-2 table citations with exact source paths; fixer generated all final ranges.
 

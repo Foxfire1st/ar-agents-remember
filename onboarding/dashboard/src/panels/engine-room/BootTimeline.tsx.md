@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/BootTimeline.tsx`    |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-06-27T23:08+02:00                                  |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`             |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`             |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -48,9 +48,10 @@ The `BootTimeline({ node })` component maps the selected steps to `<li>` rows st
 | Consumes the `EngineProcessNode` projection shape (`edges`, `health`, `providers`, `memoryMode`, `codeWorktree`/`memoryWorktree`). | "export interface EngineProcessNode {"; "function steadyState(node: EngineProcessNode): StepState {"; "node.health === \"failed\""; "node.providers.some"; "function bootSteps(node: EngineProcessNode): Step[] {"; "node.edges.find"; "node.codeWorktree.exists"; "Memory (${node.memoryMode})" | dashboard/src/panels/engine-room/BootTimeline.tsx:46-47; dashboard/src/panels/engine-room/BootTimeline.tsx:51-51; dashboard/src/panels/engine-room/BootTimeline.tsx:56-56; dashboard/src/panels/engine-room/BootTimeline.tsx:58-58; dashboard/src/panels/engine-room/BootTimeline.tsx:66-66; dashboard/src/panels/engine-room/BootTimeline.tsx:74-74; dashboard/src/types/projection.ts:162-162 |
 | `EngineProcessEdge.state` is mapped through the known `EDGE_TO_STEP` values. | `EngineProcessEdge`; `EDGE_TO_STEP`; "node.edges.find"; "EDGE_TO_STEP[found.state] ?? \"pending\"" | dashboard/src/panels/engine-room/BootTimeline.tsx:20-30; dashboard/src/panels/engine-room/BootTimeline.tsx:58-59; dashboard/src/types/projection.ts:152-160 |
 | `DISPOSE_PHASES`, `disposeFrontier(node)`, and `teardownSteps(node)` drive tear-down mode. | `DISPOSE_PHASES`; `disposeFrontier`; `teardownSteps` | dashboard/src/panels/engine-room/BootTimeline.tsx:86-93; dashboard/src/panels/engine-room/BootTimeline.tsx:99-112; dashboard/src/panels/engine-room/BootTimeline.tsx:114-148 |
-| `timeline`, `timelineStep`, `timelineMark`, and `sectionLabel` are the state-keyed timeline style recipes declared here. | `timeline`; `timelineStep`; `timelineMark`; `sectionLabel` | dashboard/src/panels/engine-room/engineRoomStyles.ts:110-115; dashboard/src/panels/engine-room/engineRoomStyles.ts:481-487; dashboard/src/panels/engine-room/engineRoomStyles.ts:489-508; dashboard/src/panels/engine-room/engineRoomStyles.ts:510-529 |
+| `timeline`, `timelineStep`, `timelineMark`, and `sectionLabel` are the state-keyed timeline style recipes declared here. | `timeline`; `timelineStep`; `timelineMark`; `sectionLabel` | dashboard/src/panels/engine-room/layout.styles.ts:482-482; dashboard/src/panels/engine-room/styles.ts:3-3; mcp/src/agents_remember/serving/harness_control_ipc.py:47-47; dashboard/src/panels/engine-room/BootTimeline.tsx:3-3; dashboard/src/panels/EngineRoom.tsx:39-39 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: rebound projection, edge-state mapping, teardown,
   and styling references to exact anchors; corrected the edge-state claim to the source's string model

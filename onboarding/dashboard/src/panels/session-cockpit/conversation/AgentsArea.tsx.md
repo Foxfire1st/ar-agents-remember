@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,20 +31,20 @@ renders ONLY from projection roster evidence (`deriveAgents`): no optimistic row
   `lineStatic` span (`0 agents` — nothing to open, so no dead toggle, L59-L62); otherwise a real
   `<button aria-haspopup="listbox" aria-expanded aria-controls>` carrying the count chip
   (`countChip` + `countTone` active/idle by whether anything is running, L64-L77) and, in an agent
-  view, the ellipsized `viewing <label>` note cit:(["conversation-agent-focus-note"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:326-326). The separate `← back to parent
+  view, the ellipsized `viewing <label>` note cit:(["conversation-agent-focus-note"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:286-286). The separate `← back to parent
   conversation` button (L84-L98, L331-L340) renders beside the line while focused — the old
   surface-owned focus bar is gone; the line owns the whole affordance row.
-- **Live-roster state** cit:([`resolvedActiveId`], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:199-202): a stale active id resolves to the first live agent.
-- **Open action** cit:([`openMenu`], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:205-209): opening starts from the focused/first agent.
-- **Selection and focus return** cit:([`closeMenu`, `selectAgent`], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:210-218): selection focuses a changed agent and closes with focus return.
-- **Active-option visibility** cit:(["useEffect(() => { if (!open || resolvedActiveId === null) return;", "[id='", "scrollIntoView({ block: \"nearest\" })", "[open, resolvedActiveId]"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:227-232): the guarded effect scrolls the option resolved from the active id into view whenever either dependency changes.
-- **Line keys** cit:([`onLineKeyDown`], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:238-265): Enter/Space/ArrowDown toggle the menu
+- **Live-roster state** cit:(["{open && resolvedActiveId !== null ? ("], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:190-202; dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:233-233): a stale active id resolves to the first live agent.
+- **Open action** cit:(["const openMenu = () => {"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:199-199; dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:402-402) => {"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:199-199) => {"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:199-199): opening starts from the focused/first agent.
+- **Selection and focus return** cit:(["const closeMenu = (returnFocus: boolean) => {", "const selectAgent = (agentId: string) => {"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:407-407; dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:411-411): selection focuses a changed agent and closes with focus return.
+- **Active-option visibility** cit:(["useEffect(() => { if (!open || resolvedActiveId === null) return;", "[id='", "scrollIntoView({ block: \"nearest\" })", "[open, resolvedActiveId]"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:424-429): the guarded effect scrolls the option resolved from the active id into view whenever either dependency changes.
+- **Line keys** cit:(["onKeyDown={onLineKeyDown}"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:197-197; dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:219-219): Enter/Space/ArrowDown toggle the menu
   (preventDefault suppresses the native button-activation click); ArrowUp from the closed line
   returns focus to the timeline's tabbable row — symmetric with the surface's ArrowDown hijack
   that moves focus INTO the line (the surface owns that half; this component exposes the line via
   `data-agents-line`, L316); Escape on the closed line in an agent view returns to the parent
   conversation (the menu owns Esc while open).
-- **Menu keys** cit:([`onMenuKeyDown`], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:267-297): ArrowUp/ArrowDown move the active descendant with
+- **Menu keys** cit:(["onKeyDown={onMenuKeyDown}"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:198-198; dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:240-240): ArrowUp/ArrowDown move the active descendant with
   wrap-around, Enter selects the active option, Escape closes returning focus to the line, Tab
   dismisses without the focus return (the browser's own order moves on).
 - **The listbox overlay** cit:([`AgentsArea`], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:180-396): a fixed backdrop (outside click closes with focus return)
@@ -52,7 +52,7 @@ renders ONLY from projection roster evidence (`deriveAgents`): no optimistic row
   `aria-activedescendant={optionId(resolvedActiveId)}`), one `role="option"` row per agent
   (`option` L123-L139, `aria-selected` on the active) carrying the ellipsized label, the
   word-carrying status chip, and the terminal `finalMessage` preview with full text in `title`.
-- The area itself is a labeled `role="group"` (`aria-label="sub-agents"`) cit:(["aria-label=\"sub-agents\""], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:300-300).
+- The area itself is a labeled `role="group"` (`aria-label="sub-agents"`) cit:(["aria-label=\"sub-agents\""], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:205-205).
 
 ### Conventions
 
@@ -95,7 +95,7 @@ reviewed task evidence for any current behavioral claim.
 | The line + listbox menu: state, effects, both keymaps, the overlay JSX. | `AgentsArea` | dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:180-396 |
 | The `ConversationAgentView` rows are shaped by (`deriveAgents`). | `deriveAgents` | dashboard/src/data/conversation/agents.ts:71-86 |
 | The `ConversationAgentStatus` union the tones enumerate. | `ConversationAgentStatus` | dashboard/src/data/conversation/types.ts:140-146 |
-| The surface that derives the roster, owns the effective focus and the ArrowDown-into-the-line hijack, and mounts this strip. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
+| The surface that derives the roster, owns the effective focus and the ArrowDown-into-the-line hijack, and mounts this strip. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
 | The component suite pinning the line/menu states and the keyboard contract. | "shows the viewing note + back-to-parent affordance on the line while an agent view is active" | dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx:185-191 |
 
 ## Cross-Repo References
@@ -108,6 +108,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 - 2026-08-04T10:53:58+02:00 — 260731-EFA-L6 S18-B07 final surgical correction: rebound selection and active-option claims to the coherent bodies at `AgentsArea.tsx:210-218` and `:227-232`; same-reviewer delta pending.
 
 - 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 9 citation claims and preserved verification metadata.

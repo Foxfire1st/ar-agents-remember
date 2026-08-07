@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/catalogPoll.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T16:02+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -74,14 +74,14 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The refcount driver, reconciler, hydrate helper, beat recording, and localStorage preference. | `startCatalogPollDriver`; `startCatalogReconciler`; `hydrateTerminalSessionsFromCatalog`; `recordPollBeat`; `writeLastActiveSessionId` | dashboard/src/data/catalogPoll.ts:68-68; dashboard/src/data/catalogPoll.ts:112-119; dashboard/src/data/catalogPoll.ts:139-157; dashboard/src/data/catalogPoll.ts:179-192; dashboard/src/data/catalogPoll.ts:206-231; dashboard/src/data/sessionCockpitStore.ts:294-303 |
-| The catalog fetch this wraps (`fetchTerminalSessionsOrNull`, null on failure). | `fetchTerminalSessionsOrNull` | dashboard/src/data/terminal.ts:368-387 |
-| The session-store hydrate + row conversion the helper feeds. | `sessionStore`; `fromTerminalSessionInfo` | dashboard/src/data/sessions.ts:271-437; dashboard/src/data/sessions.ts:488-537 |
+| The refcount driver, reconciler, hydrate helper, beat recording, and localStorage preference. | "export function startCatalogPollDriver(): () => void {"; "export function startCatalogReconciler(): () => void {"; "export async function hydrateTerminalSessionsFromCatalog("; "recordPollBeat: (ok) =>"; "export function writeLastActiveSessionId(" | dashboard/src/data/catalogPoll.ts:68-68; dashboard/src/data/catalogPoll.ts:112-119; dashboard/src/data/catalogPoll.ts:139-157; dashboard/src/data/catalogPoll.ts:179-192; dashboard/src/data/catalogPoll.ts:206-231; dashboard/src/data/sessionCockpitStore.ts:294-304 |
+| The catalog fetch this wraps (`fetchTerminalSessionsOrNull`, null on failure). | `fetchTerminalSessionsOrNull` | dashboard/src/data/terminal.ts:414-433 |
+| The session-store hydrate + row conversion the helper feeds. | `sessionStore`; `fromTerminalSessionInfo` | dashboard/src/data/sessions.ts:494-508; dashboard/src/data/sessions.ts:615-623 |
 | The poll-health state the beats update: three misses mark the catalog stale. | `recordPollBeat`; `POLL_STALE_MISSED_BEATS` | dashboard/src/data/sessionCockpitStore.ts:186-186; dashboard/src/data/sessionCockpitStore.ts:228-228 |
-| The shell owns the shared timer and eager/cross-tab reconciler for every view lifetime. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666 |
-| The sole shell subscriptions keep both the poll driver and reconciler alive with no view in front. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666 |
+| The shell owns the shared timer and eager/cross-tab reconciler for every view lifetime. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
+| The sole shell subscriptions keep both the poll driver and reconciler alive with no view in front. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
 | Current manual hydration after bulk termination. | `endLandedDetailed` | dashboard/src/data/sessionLifecycle.ts:230-251 |
-| Current manual hydration after launch confirmation or failed-launch recovery. | `LaunchFlow`; `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:10-10; dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-182; dashboard/src/panels/session-cockpit/LaunchFlow.tsx:177-619 |
+| Current manual hydration after launch confirmation or failed-launch recovery. | "import { useState } from \"react\";"; "import type { LaunchPrefill } from "; `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:10-10; dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-144; dashboard/src/panels/session-cockpit/LaunchFlow.tsx:362-423; dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:1-1 |
 | The unit suite: hydrate/beat recording, guards, exclusion set, refcount single-interval. | `hydrateTerminalSessionsFromCatalog`; `startCatalogPollDriver`; `startCatalogReconciler` | dashboard/src/data/catalogPoll.test.ts:58-272 |
 
 ## Historical FEUI-L8 Reviewed Candidate Delta

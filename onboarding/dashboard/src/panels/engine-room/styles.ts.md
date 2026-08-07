@@ -1,18 +1,30 @@
-# dashboard/src/panels/engine-room/engineRoomStyles.ts
+# dashboard/src/panels/engine-room/styles.ts
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
 | repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/engine-room/engineRoomStyles.ts` |
+| path                   | `dashboard/src/panels/engine-room/styles.ts`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-07T08:19Z |
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
 
 [panels/engine-room overview](overview.md)
+
+## 260731-EFA-L8 Split Layout
+
+The 1,287-line `engineRoomStyles.ts` was split by semantic axis into six style
+domains under `dashboard/src/panels/engine-room/` (260731-EFA-L8 R6 ruling: split by
+semantic axis, no exemption list): `layout.styles.ts` (room shell/grid/stack/health
+layout), `stage.styles.ts` (scene SVG, gauges, wires, lanes, coupler), `ledger.styles.ts`
+(memory-ledger popover), `flow.styles.ts` (conduits, packets, failure overlays),
+`remote.styles.ts` (remote/PR strip), and `backdrop.styles.ts` (atmospheric backdrop).
+`styles.ts` is the 15-line barrel that re-exports all six, preserving every importer.
+This card's historical recipe commentary documents the pre-split module; current
+recipe-level detail is routed to the per-domain sidecars.
 
 ## Purpose
 
@@ -157,19 +169,19 @@ The fact-state recipes include a visibly distinct stale variant used by landing 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `sceneSvg` is now static layout only — the global `& g,& rect,…{ transition }` substrate is removed (05k). | `sceneSvg` | dashboard/src/panels/engine-room/engineRoomStyles.ts:603-609 |
-| `engineCharge` is fill-only colour-as-state (Motion owns the scaleY/opacity boot-fill); `engineReindexCharge` lost `animation: chargeSweep` (GSAP `data-fx='reindex'`). | `engineCharge` | dashboard/src/panels/engine-room/engineRoomStyles.ts:723-736 |
-| `worktreeWire` (05k, NEW) — carries NO opacity so Motion owns the wire's opacity (a className opacity shadows Motion under `initial=false`). | `worktreeWire` | dashboard/src/panels/engine-room/engineRoomStyles.ts:782-782 |
-| `warpSurge` is plain `css` (GSAP `data-fx='surge'`); `warpCouplerG` removed (Motion owns coupler opacity). | `warpSurge` | dashboard/src/panels/engine-room/engineRoomStyles.ts:838-844 |
-| `refusedConduit` — the `polarity` amber/red variants over an `opacity: 0` base; the recipe carries colour only, and the polarity it is keyed on is derived from `edge.state` by the canvas. | `refusedConduit` | dashboard/src/panels/engine-room/engineRoomStyles.ts:1007-1017 |
-| `refusedPolarityOf` — the caller that derives that polarity (`failed`→red, `stale`→amber) with no polarity field read. | `refusedPolarityOf` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:231-241 |
+| `sceneSvg` is now static layout only — the global `& g,& rect,…{ transition }` substrate is removed (05k). | `sceneSvg` | dashboard/src/panels/engine-room/stage.styles.ts:5-11 |
+| `engineCharge` is fill-only colour-as-state (Motion owns the scaleY/opacity boot-fill); `engineReindexCharge` lost `animation: chargeSweep` (GSAP `data-fx='reindex'`). | `engineCharge` | dashboard/src/panels/engine-room/stage.styles.ts:125-138 |
+| `worktreeWire` (05k, NEW) — carries NO opacity so Motion owns the wire's opacity (a className opacity shadows Motion under `initial=false`). | `worktreeWire` | dashboard/src/panels/engine-room/stage.styles.ts:184-189 |
+| `warpSurge` is plain `css` (GSAP `data-fx='surge'`); `warpCouplerG` removed (Motion owns coupler opacity). | `warpSurge` | dashboard/src/panels/engine-room/stage.styles.ts:240-246 |
+| `refusedConduit` — the `polarity` amber/red variants over an `opacity: 0` base; the recipe carries colour only, and the polarity it is keyed on is derived from `edge.state` by the canvas. | `refusedConduit` | dashboard/src/panels/engine-room/flow.styles.ts:65-75 |
+| `refusedPolarityOf` — the caller that derives that polarity (`failed`→red, `stale`→amber) with no polarity field read. | `refusedPolarityOf` | dashboard/src/panels/engine-room/geometry.ts:124-134 |
 | `EngineProcessEdge` declares no polarity field and never documented a `refused` state. | "class EngineProcessEdge" | mcp/src/agents_remember/observer/projection.py:785-785 |
-| `attnBadge`/`stopBar`/`dissolveShell` lost their `animation`/`transition` — GSAP `data-fx='breath'`/`'stop'` + Motion own them. | `attnBadge` | dashboard/src/panels/engine-room/engineRoomStyles.ts:1069-1073 |
-| `engineGaugeOut` — **FLAT** gold bezel (05o dropped the base amber glow; `down`/fault keeps the red bezel + red glow); `enginePetal` is constant gold (05o — amber on `base`, opacity-only variants). `engineCharge`/`warpCouplerBar`/`flowConduit running`/`flowPacket`/`gateBar` keep their state-coloured `drop-shadow` glows (settled lanes glow-less). | `engineGaugeOut` | dashboard/src/panels/engine-room/engineRoomStyles.ts:679-700 |
-| `closeoutTrainLabel` — `ink` 10px (was `muted` 9px) for legibility as a bare caption on the textured backdrop; `cleanupRecord` is an absolute overlay (5k F6). | `closeoutTrainLabel` | dashboard/src/panels/engine-room/engineRoomStyles.ts:1149-1149 |
-| Fleeting-banner atoms (`fleetingBanner`/`fleetingLabel`/`fleetingReason`/`fleetingChoice(s)`). | `fleetingBanner` | dashboard/src/panels/engine-room/engineRoomStyles.ts:408-416 |
-| The `healthDot` / fact-state / runtime-state axes (colour-as-state); the only remaining `animation:` is the app-wide `pulse`. | `healthDot` | dashboard/src/panels/engine-room/engineRoomStyles.ts:201-222 |
-| The GSAP hook + the canvas that read these now-static recipes and drive the motion. | "export function useEngineTimeline", "export function EnclosureCanvas" | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1191; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-168 |
+| `attnBadge`/`stopBar`/`dissolveShell` lost their `animation`/`transition` — GSAP `data-fx='breath'`/`'stop'` + Motion own them. | `attnBadge` | dashboard/src/panels/engine-room/flow.styles.ts:127-131 |
+| `engineGaugeOut` — **FLAT** gold bezel (05o dropped the base amber glow; `down`/fault keeps the red bezel + red glow); `enginePetal` is constant gold (05o — amber on `base`, opacity-only variants). `engineCharge`/`warpCouplerBar`/`flowConduit running`/`flowPacket`/`gateBar` keep their state-coloured `drop-shadow` glows (settled lanes glow-less). | `engineGaugeOut` | dashboard/src/panels/engine-room/stage.styles.ts:81-102 |
+| `closeoutTrainLabel` — `ink` 10px (was `muted` 9px) for legibility as a bare caption on the textured backdrop; `cleanupRecord` is an absolute overlay (5k F6). | `closeoutTrainLabel` | dashboard/src/panels/engine-room/flow.styles.ts:207-207 |
+| Fleeting-banner atoms (`fleetingBanner`/`fleetingLabel`/`fleetingReason`/`fleetingChoice(s)`). | `fleetingBanner` | dashboard/src/panels/engine-room/layout.styles.ts:401-409 |
+| The `healthDot` / fact-state / runtime-state axes (colour-as-state); the only remaining `animation:` is the app-wide `pulse`. | `healthDot` | dashboard/src/panels/engine-room/layout.styles.ts:194-215 |
+| The GSAP hook + the canvas that read these now-static recipes and drive the motion. | "export function useEngineTimeline", "export function EnclosureCanvas" | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-42; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-168 |
 
 ## 260727-CHATS-IM-L2 Current Delta
 
@@ -178,6 +190,7 @@ size and view box. It introduces no new effect paint recipe; surge, reindex, and
 their established classes.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: re-mapped the engineRoomStyles.ts sidecar to the engine-room/styles.ts barrel and added the L8 Split Layout section; per-domain style sidecars carry the current recipe detail. Verification pinned to the leaf base until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
   exact anchors and ranges, and converted the history projection-py citations; exact non-fixing
@@ -215,7 +228,7 @@ their established classes.
   `alignContent: start` and `alignItems: start` so grid rows keep their intrinsic card height when the
   left panel has extra vertical room. A single enclosure entry no longer stretches to fill the whole panel,
   while the existing vertical-scroll and ellipsis behavior remains intact.
-- 2026-06-22T11:00 — slice 05o remaining failure-mode primitives: added three more spec-driven atoms for the
+- 2026-06-22T11:00+02:00 — slice 05o remaining failure-mode primitives: added three more spec-driven atoms for the
   modes the earlier 05o passes left open. **`refusedConduit`** — the shared refused-conduit flash (T9B / T9C /
   T14C): a `cva` keyed on a `polarity` variant (`red` = fault/conflict — the T9B GrepAI seed fault + the T14C
   integration conflict; `amber` = reroute/fallback — the T9C CGC-seed-refused → reindex lane), each a matching
@@ -229,7 +242,7 @@ their established classes.
   local commits), mirroring `reasonBadge`/`reasonDot`/`reasonText` geometry but in the soft cyan register (a
   sync-CHOICE notification, not the alarm gate that escalates a beat later). Verification metadata pinned until
   closeout stamps the 05o code commit.
-- 2026-06-22T10:42 — slice 05o T1B: added `prunedNode` — the dormant/desaturated treatment for the stale
+- 2026-06-22T10:42+02:00 — slice 05o T1B: added `prunedNode` — the dormant/desaturated treatment for the stale
   code base node (the spec §3 pruned/retired register: `dormant` stroke + dark muted fill `oklch(0.18 0.02
   25)` + dashed `3 3` at `0.8`, projection-driven onto the stale base node, static; distinct from
   `planned`/`missing`) — and the FLEETING-block box trio `fleetingBox` / `fleetingBoxTitle` /
@@ -239,7 +252,7 @@ their established classes.
   so it reads as a clear red panel over the dashboard's blueprint backdrop video. The `scanRing` +
   `ghostedLane` atoms were documented in the prior 05o T3B entry. Verification metadata pinned until closeout
   stamps the 05o code commit.
-- 2026-06-22T00:29 — slice 05o T3B: added two failure-mode primitive atoms backing the engine-room
+- 2026-06-22T00:29+02:00 — slice 05o T3B: added two failure-mode primitive atoms backing the engine-room
   visual-language spec §10. **`scanRing`** — the cyan pre-block verify sweep (`fill:none` / cyan `stroke` 2px
   / 4px cyan `drop-shadow` / `opacity:0` at rest), transient like `flowPacket`/`warpSurge`; GSAP
   `data-fx='scan'` drives the r/opacity expand-fade and the `<circle>` is rendered only while `animate`.
@@ -252,7 +265,7 @@ their established classes.
   gold** (amber `stroke` moved to `base`; the per-state variants carry only `opacity`) so the petals are
   structural line-art like `engineSpine` rather than runtime-coloured. Verification metadata pinned until
   closeout stamps the 05o code commit.
-- 2026-06-21T23:35 — slice 5o glow pass + legibility/overlay fixes. `engineGaugeOut` reworked to a **constant
+- 2026-06-21T23:35+02:00 — slice 5o glow pass + legibility/overlay fixes. `engineGaugeOut` reworked to a **constant
   GOLD bezel** (base `stroke: amber` / `strokeWidth: 2` / `drop-shadow(amber)`; the body charge + petals carry
   runtime state, not the frame) — `nominal`/`indexing` now empty variants, `configured` dims it (`opacity 0.5`,
   `filter: none`), `down` is the lone exception that re-colours the frame red (`stroke: alarm` + alarm glow).
@@ -294,41 +307,41 @@ their established classes.
 - 2026-06-18T15:50+02:00 — slice 5h cleanup pass (feedback): `backdropVideo` gained a centre radial vignette (`maskImage`/`WebkitMaskImage`) scoped to the `<video>` so its faded edges fall back to the dark stage (the SVG scene above is untouched). Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-18T13:01+02:00 — slice 5h coupler fix: added `warpLinkGlyph` (the drawn chain-link icon) + `warpSurge` (`cva` dir up/down — the warp-core surge bands) for the ledger coupler. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-18T11:55+02:00 — slice 5h H2: added the closeout-train recipes `closeoutBeat`/`closeoutBeatG`/`closeoutBeatLabel`/`closeoutRail`/`closeoutTrainLabel` (the T13 derived closeout-order strip; mint = settled/done, `closeoutBeatG` runs the `closeoutSweep` fill). Verification metadata pinned until closeout stamps the 5h H2 code commit.
-- 2026-06-17T22:45 — 5g G6 + engine-room visual-parity pass: added the atmospheric backdrop atoms
+- 2026-06-17T22:45+02:00 — 5g G6 + engine-room visual-parity pass: added the atmospheric backdrop atoms
   (`backdrop`/`backdropVideo`/`stageContent` — the effects-gated blueprint-boomerang `<video>` layer) and the
   decal atoms `engineSpine` + `enginePetal` (runtime-coloured), `officialWire`, `canopyStroke` (HUD canopy),
   and `laneFlag`/`laneFlagText` (lane-annotation plates). `diagPanel` is now `flex: 1` (+ `alignContent: start`) so the right zone's diagnostics box stretches to the column floor while the boot timeline stays fixed. Verification metadata pinned until closeout stamps
   the code commit.
-- 2026-06-17T16:15 — slice 5g G5 + engine palette + side-panel fix: the engine recipes
+- 2026-06-17T16:15+02:00 — slice 5g G5 + engine palette + side-panel fix: the engine recipes
   (`engineGaugeOut`/`engineCharge`/`engineSilhouette`) now read **green** (`mint`) for an active `nominal`
   engine and empty/`dormant` for `configured`/`unknown` (active=green · off=empty · boot=cyan · fault=red ·
   reindex=amber via the new `engineReindexOut`); added the G5 overlay atoms `stopBar`/`stopText` (t14c
   terminal STOP) + `dissolveShell`/`abandonRecord` (t18 abandon); the left rail now scrolls vertically only
   (`stackList` `overflowX: hidden` + `minWidth: 0`, threaded down `stackItem`/`stackItemHead`) with a new
   `stackRepo` line. Verification metadata pinned until closeout stamps the G5 code commit.
-- 2026-06-17T15:00 — slice 5g G4: `engineGaugeOut` `down` now flickers (`pulse` — the isolated engine fault,
+- 2026-06-17T15:00+02:00 — slice 5g G4: `engineGaugeOut` `down` now flickers (`pulse` — the isolated engine fault,
   distinct from the steady gate); added `engineReindexCharge` (amber center-out reindex pulse, t9c
   seedFallback); `phaseChip` gained `whiteSpace: nowrap` (stack-item head fix). Verification metadata pinned
   until closeout stamps the G4 code commit.
-- 2026-06-17T14:00 — slice 5g G3: added the failure-overlay recipes — `gateBar` (steady red lane gate),
+- 2026-06-17T14:00+02:00 — slice 5g G3: added the failure-overlay recipes — `gateBar` (steady red lane gate),
   `attnBadge`/`attnText` (breathing attention parity), `reasonBadge`/`reasonDot`/`reasonText` (local reason
   pill), `svgChip`/`svgChipText` (recovery chips). Verification metadata pinned until closeout stamps the G3
   code commit.
-- 2026-06-17T13:30 — slice 5g G2: gave the bird's-eye recipes their boot motion — `engineCharge` center-out
+- 2026-06-17T13:30+02:00 — slice 5g G2: gave the bird's-eye recipes their boot motion — `engineCharge` center-out
   `chargeSweep` (transform-box: fill-box), `flowConduit` running draw-on (`conduitDraw`), conduit colour
   fidelity (`complete` → faint amber, not mint), and the new `flowPacket` travelling-dot atom. Verification
   metadata pinned until closeout stamps the G2 code commit.
-- 2026-06-17T12:47 — slice 5g G1: added the pod-stage bird's-eye recipes (`sceneSvg`, `worldLabel`,
+- 2026-06-17T12:47+02:00 — slice 5g G1: added the pod-stage bird's-eye recipes (`sceneSvg`, `worldLabel`,
   `enclosureBorder`, `svgNodeBox`/`svgNode*`, `engineGaugeOut`/`engineCharge`/`engineDiv`/`engineGaugeLabel`,
   `warpCoupler*`, `flowConduit`) for the two-world SVG scene `EnclosureCanvas` renders — static (no
   keyframes); the draw-on / packet / center-out motion lands in G2. Verification metadata pinned until
   closeout stamps the G1 code commit.
-- 2026-06-16T03:40 — slice 5f S4: added the `conduitChevron` flow-packet atom (the travelling energy packet GSAP runs along a running conduit, T8/T9 power-up). Verification metadata pinned until closeout stamps the S4 code commit.
-- 2026-06-16T03:05 — slice 5f S2: added the fleeting-banner atoms (`fleetingBanner`/`fleetingLabel`/
+- 2026-06-16T03:40+02:00 — slice 5f S4: added the `conduitChevron` flow-packet atom (the travelling energy packet GSAP runs along a running conduit, T8/T9 power-up). Verification metadata pinned until closeout stamps the S4 code commit.
+- 2026-06-16T03:05+02:00 — slice 5f S2: added the fleeting-banner atoms (`fleetingBanner`/`fleetingLabel`/
   `fleetingReason`/`fleetingChoices`/`fleetingChoice`) for the provisional pre-contract blocked-start
   enclosure (§2.1). Verification metadata pinned until closeout stamps the S2 code commit.
-- 2026-06-16T02:30 — slice 5f S1: replaced the 2-col `roomLayout`/`detailColumn` atoms with the §4.2
+- 2026-06-16T02:30+02:00 — slice 5f S1: replaced the 2-col `roomLayout`/`detailColumn` atoms with the §4.2
   full-bleed room layout (`roomShell`/`roomGrid`/`roomStage`/`roomZone`/`roomHeader*`/`roomCaution`).
-- 2026-06-16T01:55 — slice 5f S0: replaced the `conduit` `background`-gradient `<span>` recipe with the
+- 2026-06-16T01:55+02:00 — slice 5f S0: replaced the `conduit` `background`-gradient `<span>` recipe with the
   SVG conduit pair `conduitSvg` + `conduitLine`.
-- 2026-06-15T19:35 — Created for slice 5e: Panda recipes: one per semantic axis (health/factState/conduit/engine); colour carries state (note 08). Verification metadata pinned until closeout stamps the 5e code commit.
+- 2026-06-15T19:35+02:00 — Created for slice 5e: Panda recipes: one per semantic axis (health/factState/conduit/engine); colour carries state (note 08). Verification metadata pinned until closeout stamps the 5e code commit.

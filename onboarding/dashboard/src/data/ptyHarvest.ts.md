@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/ptyHarvest.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,9 +73,9 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Store, parsers, and hint vocabulary. | `ptyHarvestStore`, `parseOsc133`, `parseOsc94`, `turnHintWord` | dashboard/src/data/ptyHarvest.ts:51-73; dashboard/src/data/ptyHarvest.ts:85-91; dashboard/src/data/ptyHarvest.ts:98-110; dashboard/src/data/ptyHarvest.ts:113-126 |
-| The xterm-side hooks (onBell/onTitleChange/OSC 133/OSC 9), observe-only. | `TerminalStreamHooks` | dashboard/src/panels/Terminal.tsx:107-115 |
+| The xterm-side hooks (onBell/onTitleChange/OSC 133/OSC 9), observe-only. | "hooks?: TerminalStreamHooks;" | dashboard/src/panels/Terminal.tsx:14-14; dashboard/src/panels/Terminal.tsx:56-56 |
 | The archetype gate (hooks only when NOT controlled) + acknowledge-on-focus. | `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
-| The rail consumers: bell attention marker + labeled tooltip hints. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:487-1102 |
+| The rail consumers: bell attention marker + labeled tooltip hints. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:149-236 |
 | The grammar this store must never feed. | `seatVisualState` | dashboard/src/data/stateGrammar.ts:101-125 |
 | The unit suite: parser matrices, clamps, no-fabrication, bell/ack semantics. | "parseOsc133 (shell-integration marks)", "parseOsc94 (ConEmu progress)", "turnHintWord", "harvest store" | dashboard/src/data/ptyHarvest.test.ts:11-23; dashboard/src/data/ptyHarvest.test.ts:25-37; dashboard/src/data/ptyHarvest.test.ts:39-44; dashboard/src/data/ptyHarvest.test.ts:46-70 |
 

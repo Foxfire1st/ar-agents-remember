@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ reviewed task evidence for any current behavioral claim.
 | The persisted global hide-thinking preference hook (the only durable UI bit). | `useHideThinking` | dashboard/src/data/conversation/thinkingPreference.ts:38-39 |
 | The content-block/item types the thinking blocks come from. | `ConversationContentBlock`, `ConversationItem` | dashboard/src/data/conversation/types.ts:63-105; dashboard/src/data/conversation/types.ts:158-176 |
 | Streaming-safe Markdown renderer used for each thinking block. | `MarkdownBlock` | dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
-| The kind dispatcher that routes thinking items here. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:68-71 |
+| The kind dispatcher that routes thinking items here. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:66-69 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/RailChat.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -142,15 +142,15 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The rail builds the leaf context package, pastes it as draft input after start-on-leaf or successful attach/move, and surfaces unconfirmed delivery status. | "function stepLines" | dashboard/src/panels/RailChat.tsx:187-187 |
+| The rail builds the leaf context package, pastes it as draft input after start-on-leaf or successful attach/move, and surfaces unconfirmed delivery status. | "function stepLines" | dashboard/src/panels/RailChat.tsx:192-192 |
 | The session store it resolves the chat/terminal slots from and the accepted-row create helper. | "interface OpenSession" | dashboard/src/data/sessions.ts:28-28 |
 | Reliable readiness and leaf-context submission. | "interface ReliableSubmitTransport" | dashboard/src/data/submitClient.ts:58-58 |
-| The harness-detection, terminate, and attach clients the rail drives. | "function connectTerminal" | dashboard/src/data/terminal.ts:197-197 |
+| The harness-detection, terminate, and attach clients the rail drives. | "function connectTerminal" | dashboard/src/data/terminal.ts:310-310 |
 | The durable leaf-key helpers and task tree builder used for packet lookup, heading labels, and the attach picker. | "export type TaskSelection" | dashboard/src/data/taskIdentity.ts:8-8 |
-| The lazy xterm terminal it mounts per pane (shared with Chats). | "export function Terminal" | dashboard/src/panels/Terminal.tsx:117-117 |
-| The composer docked below each pane that injects into that session's stdin. | "export const SessionComposer" | dashboard/src/panels/SessionComposer.tsx:231-231 |
-| The canonical Chats duty bar and view surface the same registry and authoritative leaf attach. | "export function ChatContextBar", "export const SessionsView" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-74; dashboard/src/panels/session-cockpit/SessionsView.tsx:1336-1336 |
-| The cockpit shell that toggles this in for the Event River and passes the displayed `leafKey`, `taskDocuments`, `engineProcesses`, `contextMaster`, and `selectedLifecycleId`. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:63-63 |
+| The lazy xterm terminal it mounts per pane (shared with Chats). | "export function Terminal" | dashboard/src/panels/Terminal.tsx:110-110 |
+| The composer docked below each pane that injects into that session's stdin. | "export const SessionComposer" | dashboard/src/panels/SessionComposer.tsx:57-57 |
+| The canonical Chats duty bar and view surface the same registry and authoritative leaf attach. | "export function ChatContextBar", "export const SessionsView" | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-74 |
+| The cockpit shell that toggles this in for the Event River and passes the displayed `leafKey`, `taskDocuments`, `engineProcesses`, `contextMaster`, and `selectedLifecycleId`. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:64-64 |
 
 ## Cross-Repo References
 
@@ -179,6 +179,7 @@ The contextual rail chat is memoized as another persistent shell surface. It ski
 tab-switch parent renders without changing its own session/store driven behavior.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with
   exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

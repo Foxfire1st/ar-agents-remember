@@ -6,9 +6,16 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-02T01:05+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
+
+## 260731-EFA-L8 Change
+
+All tool-registration functions in this route gained bare-`*` keyword-only
+signatures (19 PLR0917 fixes across the ten registration modules; the rule stays
+enabled and call sites already pass keywords). The registered tool surface is
+unchanged.
 
 ## Purpose
 
@@ -141,6 +148,7 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (bare-`*` keyword-only signatures). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:53:38+02:00 — W3-B05 curator: anchored 6 Tier-2 table citations and normalized one pre-existing transient source range with exact anchors and paths; fixer generated all ranges.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

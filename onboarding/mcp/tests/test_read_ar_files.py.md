@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_read_ar_files.py`                  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-02T01:05+02:00                             |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`         |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -88,7 +88,7 @@ stripped from the served body).
 | The payload builder driven end-to-end. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
 | The net-new ranged reader unit-tested here. | `read_text_range` | mcp/src/agents_remember/kernel/filesystem.py:44-62 |
 | The served-ledger store asserted on disk. | "self._root / \"lifecycles\" / lifecycle_id / \"served.jsonl\"" | mcp/src/agents_remember/observer/served_store.py:90-90 |
-| The ambient lifecycle whose `emit_read_packet` + served set are exercised. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:395-422 |
+| The ambient lifecycle whose `emit_read_packet` + served set are exercised. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:426-453 |
 | Shared config/settings test helpers. | "\"coordinationRoot\": str(coordination_root)" | mcp/tests/test_config.py:34-34 |
 
 ## Update History

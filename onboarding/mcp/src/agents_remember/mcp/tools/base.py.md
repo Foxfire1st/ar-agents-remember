@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`|
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -47,11 +47,11 @@ cit:([`_attach_lifecycle_tail`], mcp/src/agents_remember/application/tool_respon
 | The server registers tool families through its registrar loop. | `register_tools` | mcp/src/agents_remember/mcp/server.py:26-27 |
 | The registrar tuple owns the tool-family set consumed by that loop. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:35-48 |
 | Token-accounting finalizer used by the completed response payload. | `finalize_payload_tokens` | mcp/src/agents_remember/models/tokens.py:232-249 |
-| The ambient lifecycle records each completed tool call. | `emit_tool` | mcp/src/agents_remember/observer/ambient.py:374-393 |
+| The ambient lifecycle records each completed tool call. | `emit_tool` | mcp/src/agents_remember/observer/ambient.py:405-424 |
 | The next-step engine returns the `NextStep` model. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
 | The two terminal-catalog public tools' payload builders. | `attach_terminal_session_to_leaf_payload`; `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:26-43; mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
 | The supervisor heartbeat helper used for the optional banner. | `supervisor_staleness_banner` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:135-151 |
-| `AmbientLifecycle.root` exposes the observer-store root used by the supervisor-banner helper. | `root`; `_supervisor_banner` | mcp/src/agents_remember/application/tool_response.py:22-31; mcp/src/agents_remember/observer/ambient.py:133-140 |
+| `AmbientLifecycle.root` exposes the observer-store root used by the supervisor-banner helper. | "    def root(self) -> Path:"; "def _supervisor_banner(amb: AmbientLifecycle)" | mcp/src/agents_remember/observer/ambient.py:157-157; mcp/src/agents_remember/application/tool_response.py:22-22 |
 
 ## 260712-TRH-L4 Final Candidate
 

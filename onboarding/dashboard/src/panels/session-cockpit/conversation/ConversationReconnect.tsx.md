@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The phase-to-copy/tone/action map and typed-reason append live in the component. | `copyFor`; `ConversationReconnect` | dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx:47-66; dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx:68-102 |
 | The `StreamPhase` union this banner switches on. | `StreamPhase` | dashboard/src/data/conversation/types.ts:391-399 |
-| The surface mounts this banner and supplies the typed route-error reason. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
+| The surface mounts this banner and supplies the typed route-error reason. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
 | The stage body mounts this banner directly without a typed route-error reason. | `ChatsStageBody` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:147-489 |
 
 ## Cross-Repo References

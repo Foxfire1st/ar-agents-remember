@@ -6,13 +6,19 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/worktrees.py`       |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-08-02T01:05+02:00                                        |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                    |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                    |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
 
 [registration route overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The tool-registration functions gained bare-`*` keyword-only signatures (the 19
+PLR0917 fixes across `mcp/registration/*.py`); the rule stays enabled and call sites
+already pass keywords. Registered tools are unchanged.
 
 ## Purpose
 
@@ -70,6 +76,7 @@ and the sync-early doctrine.
 | The three-way split and the light-task default proved through a live server. | `test_worktree_start_splits_identity_bases_and_execution`, `test_worktree_start_defaults_to_a_real_light_task_start` | mcp/tests/test_mcp_registration_wiring.py:698-741; mcp/tests/test_mcp_registration_wiring.py:743-760 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 3 citation rows; scoped citation fixing regenerated the source ranges.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

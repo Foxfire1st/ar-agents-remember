@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:45+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -270,7 +270,7 @@ are proven by repository source and tests.
 | Topology uses provider scope to choose workspace/worktree ownership. | `groupKey`, `buildTopology` | dashboard/src/topology/model.ts:99-99; dashboard/src/topology/model.ts:117-221 |
 | Generated `ProviderNode.role` is a field in the wire declaration. | `ProviderNode` | dashboard/src/types/projection.ts:325-336 |
 | Engine Room labels workspace engines from provider role. | `engineLabel` | dashboard/src/panels/EngineRoom.tsx:68-70 |
-| Enclosure canvas selects code/memory engines from provider role. | `role` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1204-1205; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1316-1317 |
+| Enclosure canvas selects code/memory engines from provider role. | "role="img"" | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:69-69 |
 | Drift snapshot metadata mirrors backend provenance fields used by actionable-drift rows. | `DriftSnapshotNode` | dashboard/src/types/projection.ts:121-131 |
 | Generated `TaskSubTaskRefNode` has `linkedLifecycleId` and no `createdAt`; `SeriesSubTaskNode` has `createdAt` and no `linkedLifecycleId`; `SubTaskRow` unites them. | `TaskSubTaskRefNode`, `SeriesSubTaskNode`, `SubTaskRow` | dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:494-501; dashboard/src/types/projection.ts:515-515 |
 | Generated `SeriesSectionNode` and `TaskSectionNode` are separate declarations, with structural typing remaining a documented limit. | `SeriesSectionNode`, `TaskSectionNode` | dashboard/src/types/projection.ts:363-367; dashboard/src/types/projection.ts:465-469 |

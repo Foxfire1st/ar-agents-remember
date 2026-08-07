@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/stream.ts`                   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ No relevant external documentation is needed beyond the browser EventSource API 
 | --- | --- | --- |
 | State stream snapshot and named deltas merge into the Zustand store. | `connectState` | dashboard/src/data/stream.ts:30-114 |
 | Raw event stream forwards `event` rows and the backend `ready` marker. | `connectEvents` | dashboard/src/data/stream.ts:129-140 |
-| `Cockpit` passes `markEventsHydrated` as the raw stream ready callback. | `markEventsHydrated` | dashboard/src/cockpit/Cockpit.tsx:369-380 |
+| `Cockpit` passes `markEventsHydrated` as the raw stream ready callback. | `markEventsHydrated` | dashboard/src/cockpit/Cockpit.tsx:381-381 |
 | The backend raw stream emits a `ready` event after backlog delivery. | `ready_sent` | mcp/src/agents_remember/serving/events.py:253-276 |
 
 ## Cross-Repo References

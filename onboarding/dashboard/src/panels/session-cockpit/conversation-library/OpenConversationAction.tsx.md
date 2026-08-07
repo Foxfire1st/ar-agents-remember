@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,7 +34,7 @@ the current chat, draft, focus, and scroll untouched.
   through non-terminal polling but NOT while exhausted or errored; `reconcilable` is the re-drivable
   state left by a transport failure (`error`) or a spent poll budget (`pollsExhausted`). The button
   disables while busy so a double-click cannot mint a second open into the L2.3 TOCTOU window.
-- **`label`**: `Open as new chat` / `opening…` / `Reconcile open` / `… — unavailable` (cit:([`label`], dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx:104-109)).
+- **`label`**: `Open as new chat` / `opening…` / `Reconcile open` / `… — unavailable` (cit:([`label`], dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx:98-101)).
 - **Focus-only-on-proof** (L112-L120, R4): the effect calls `onOpened(arSessionId)` ONLY when
   `open.openedForFocus` and an `arSessionId` is present — the exact opened catalog proof, §9.4 step 6.
 - **`start`**: when `reconcilable`, it re-drives via `reconcileOpen` under the SAME
@@ -68,7 +68,7 @@ reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The library store open flow (`beginOpen`/`reconcileOpen`, `openedForFocus`, `dispatching`, `pollsExhausted`). | `OpenTracker`, `beginOpen`, `reconcileOpen` | dashboard/src/data/conversation-library/store.ts:51-63; dashboard/src/data/conversation-library/store.ts:189-223; dashboard/src/data/conversation-library/store.ts:229-251 |
+| The library store open flow (`beginOpen`/`reconcileOpen`, `openedForFocus`, `dispatching`, `pollsExhausted`). | `OpenTracker`, `beginOpen`, `reconcileOpen` | dashboard/src/data/conversation-library/store.ts:51-63; dashboard/src/data/conversation-library/store.ts:229-263; dashboard/src/data/conversation-library/store.ts:269-291 |
 | The row wire type carrying `identityDigest`/`capabilities.resume`. | `ConversationLibraryRow`, `HistoryCapabilities` | dashboard/src/data/conversation-library/types.ts:18-24; dashboard/src/data/conversation-library/types.ts:26-36 |
 | The surface declares `onOpened`, mounts this action for the selected row, and forwards the callback. | `ConversationLibrarySurface` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:75-171 |
 
@@ -82,6 +82,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T03:21:00+02:00 — S18-SR3-B05 curator: regenerated the assigned whole-claim binding with the locked scoped fixer and inspected the generated extent against the approved claim; no approved semantic claim changes.
 - 2026-08-04T03:03:32+02:00 — S18-SR3-B05 worker: selected the surface function as the whole-claim anchor and returned its declaration, mount, and callback-forwarding binding to provisional fixer input.

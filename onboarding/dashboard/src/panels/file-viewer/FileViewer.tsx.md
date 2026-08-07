@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/file-viewer/FileViewer.tsx`    |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`           |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`           |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ switches and is full-bleed (drops the rails), like the Engine Room / Topology / 
 | The one tree explorer rendered twice (code + onboarding sides). | `FileTree` | dashboard/src/panels/file-viewer/FileTree.tsx:44-96 |
 | The persisted split/single flag (`localStorage`-backed). | `localStorage` | dashboard/src/panels/file-viewer/usePersistedFlag.ts:1-1 |
 | The files API client — `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` + types. | `fetchRepos`; `readFile`; `resolveForward`; `resolveReverse` | dashboard/src/data/files.ts:108-111; dashboard/src/data/files.ts:116-121; dashboard/src/data/files.ts:123-131; dashboard/src/data/files.ts:133-141 |
-| The shell that registers + keeps this view mounted across tab switches. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666 |
+| The shell that registers + keeps this view mounted across tab switches. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
 | The route overview that governs this page. | `# dashboard/src/panels/file-viewer/ — File Viewer Overview` | onboarding/dashboard/src/panels/file-viewer/overview.md:1-107 |
 
 ## Current L5I Maintenance
@@ -89,6 +89,7 @@ StrictMode effects share the in-flight request instead of multiplying boot reads
 memoized between meaningful `active` transitions.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 5 citation items; scoped citation check now passes.
 

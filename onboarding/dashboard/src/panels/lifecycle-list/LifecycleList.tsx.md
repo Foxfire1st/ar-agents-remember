@@ -1,18 +1,26 @@
-# dashboard/src/panels/LifecycleList.tsx
+# dashboard/src/panels/lifecycle-list/LifecycleList.tsx
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
 | repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/LifecycleList.tsx`         |
+| path                   | `dashboard/src/panels/lifecycle-list/LifecycleList.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-01T09:35+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
-| governingOverview      | `overview.md`                                    |
+| lastUpdated | 2026-08-07T08:19Z |
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
-[panels/ overview](overview.md)
+[panels/ overview](../overview.md)
+
+## 260731-EFA-L8 Move
+
+`LifecycleList.tsx` moved to `dashboard/src/panels/lifecycle-list/LifecycleList.tsx`
+(canonical entry, 1,182 lines) under the frontend-rail naming rule. Its former
+monolithic test suite split by behavior into `admission.test.tsx`, `gateHint.test.tsx`,
+`hierarchy.test.tsx`, and `signals.test.tsx` (shared fixtures in `test-utils.tsx`).
+The component behavior is unchanged.
 
 ## Purpose
 
@@ -230,23 +238,23 @@ role of its own for the same reason.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `operationRows` admits root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document; `isRootTaskDoc`/`enclosureForDoc` are the joins. | `operationRows`; `isRootTaskDoc`; `enclosureForDoc` | dashboard/src/panels/LifecycleList.tsx:477-567; dashboard/src/panels/LifecycleList.tsx:911-913; dashboard/src/panels/LifecycleList.tsx:915-932 |
-| `enclosureForDoc` admits leaf docs by exact case-insensitive stem/`id` joins only (reopen reuses the same leaf id since L11), and doc-less runtime rows are re-parented onto their master (`masterParentKeyForEnclosure`/`lifecycleRow`) so neither floats as a standalone node. | `enclosureForDoc`; `masterParentKeyForEnclosure`; `lifecycleRow` | dashboard/src/panels/LifecycleList.tsx:689-734; dashboard/src/panels/LifecycleList.tsx:739-750; dashboard/src/panels/LifecycleList.tsx:915-932 |
-| Regressions assert a reopened (cleanup=reopened, no worktrees) enclosure is hidden until restart then re-admitted, an abandoned enclosure leaves the active rows, a doc-less orphan lifecycle nests under the master, and a lifecycle bound to a doc's enclosure annotates the single row instead of duplicating it. | "hides a reopened leaf (cleanup=reopened, no worktrees on disk) until worktree_start recreates them"; "re-admits a reopened leaf once its worktrees physically exist again"; "hides an abandoned enclosure from the active operations rows"; "nests a doc-less orphan lifecycle under its master instead of floating top-level"; "renders ONE task entry per enclosureId: a bound lifecycle annotates the doc row, never duplicates it" | dashboard/src/panels/LifecycleList.test.tsx:464-522; dashboard/src/panels/LifecycleList.test.tsx:523-583; dashboard/src/panels/LifecycleList.test.tsx:584-677; dashboard/src/panels/LifecycleList.test.tsx:678-716; dashboard/src/panels/LifecycleList.test.tsx:717-754 |
-| `groupRows`/`hierarchyRows` give BY REPO its taskHierarchy-derived parent links and `data-depth` marking, and leave BY PHASE flat. | `groupRows`; `hierarchyRows` | dashboard/src/panels/LifecycleList.tsx:752-767; dashboard/src/panels/LifecycleList.tsx:773-800; dashboard/src/panels/LifecycleList.tsx:376-376 |
-| Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`. | `sizing`; `listBox`; `section`; `row`; `rowId`; `rowSec`; `rowGate`; `rowMeta` | dashboard/src/panels/LifecycleList.tsx:61-61; dashboard/src/panels/LifecycleList.tsx:87-104; dashboard/src/panels/LifecycleList.tsx:116-179; dashboard/src/panels/LifecycleList.tsx:180-223 |
-| `rowId` is the shrinkable title span; `taskTitle` assembles the native hover text from label, lifecycle, repo, gate, and current-step context. | `rowId`; `taskTitle` | dashboard/src/panels/LifecycleList.tsx:180-187; dashboard/src/panels/LifecycleList.tsx:841-858 |
-| `docRow`/`seriesRow` build the `Dot` variant as `lifecycle?.state ?? statusVariant(...)`, and `statusVariant` maps `DocStatus` alone. | `docRow`; `seriesRow`; `statusVariant` | dashboard/src/panels/LifecycleList.tsx:582-633; dashboard/src/panels/LifecycleList.tsx:997-1001; dashboard/src/panels/LifecycleList.tsx:635-687 |
+| `operationRows` admits root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document; `isRootTaskDoc`/`enclosureForDoc` are the joins. | `operationRows`; `isRootTaskDoc`; `enclosureForDoc` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:409-466; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1087-1089; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1091-1108 |
+| `enclosureForDoc` admits leaf docs by exact case-insensitive stem/`id` joins only (reopen reuses the same leaf id since L11), and doc-less runtime rows are re-parented onto their master (`masterParentKeyForEnclosure`/`lifecycleRow`) so neither floats as a standalone node. | `enclosureForDoc`; `masterParentKeyForEnclosure`; `lifecycleRow` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:865-910; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:915-926; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1091-1108 |
+| Regressions assert a reopened (cleanup=reopened, no worktrees) enclosure is hidden until restart then re-admitted, an abandoned enclosure leaves the active rows, a doc-less orphan lifecycle nests under the master, and a lifecycle bound to a doc's enclosure annotates the single row instead of duplicating it. | "hides a reopened leaf (cleanup=reopened, no worktrees on disk) until worktree_start recreates them"; "re-admits a reopened leaf once its worktrees physically exist again"; "hides an abandoned enclosure from the active operations rows"; "nests a doc-less orphan lifecycle under its master instead of floating top-level"; "renders ONE task entry per enclosureId: a bound lifecycle annotates the doc row, never duplicates it" | dashboard/src/panels/lifecycle-list/admission.test.tsx:308-308; dashboard/src/panels/lifecycle-list/admission.test.tsx:249-249; dashboard/src/panels/lifecycle-list/admission.test.tsx:463-463; dashboard/src/panels/lifecycle-list/admission.test.tsx:502-502; dashboard/src/panels/lifecycle-list/admission.test.tsx:369-369 |
+| `groupRows`/`hierarchyRows` give BY REPO its taskHierarchy-derived parent links and `data-depth` marking, and leave BY PHASE flat. | `groupRows`; `hierarchyRows` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:941-941; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:305-305 |
+| Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`. | "const sizing = css({ flex: \"1 1 0\", minWidth: \"0\", overflowX: \"hidden\" });"; "const listBox = css({"; "const section = css({"; "const row = cva({"; "const rowId = css({"; "const rowSec = css({"; "const rowGate = css({"; "const rowMeta = css({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:61-61; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:87-87; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:98-98; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:116-116; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:180-180; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:188-188; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:198-198; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:214-214 |
+| `rowId` is the shrinkable title span; `taskTitle` assembles the native hover text from label, lifecycle, repo, gate, and current-step context. | `rowId`; `taskTitle` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:180-187; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1017-1034 |
+| `docRow`/`seriesRow` build the `Dot` variant as `lifecycle?.state ?? statusVariant(...)`, and `statusVariant` maps `DocStatus` alone. | `docRow`; `seriesRow` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:738-786; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:788-830 |
 | `DocStatus` — `statusVariant`'s entire input vocabulary. | `DocStatus` | mcp/src/agents_remember/tasks/document.py:30-30 |
 | `Dot` owns the lifecycle-state treatments (`awaiting-developer`, `paused`, `abandoned`) this list passes through, and is `aria-hidden`. | `Dot`; `DOT_GLYPHS` | dashboard/src/grammar/Dot.tsx:105-115; dashboard/src/grammar/Dot.tsx:104-114; dashboard/src/grammar/Dot.tsx:119-129 |
-| The `task-state` span carries `aria-label` with no role, inside the React Aria `ListBoxItem` whose `role="option"` names it. | `ListBoxItem` | dashboard/src/panels/LifecycleList.tsx:363-392 |
+| The `task-state` span carries `aria-label` with no role, inside the React Aria `ListBoxItem` whose `role="option"` names it. | "ListBoxItem," | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:6-6 |
 | The shared hierarchy helper computes parent matches, child-id hierarchy labels, parent selection keys, and the exported `orderedByCreation`. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
 | The L14 orchestration-command helpers this list's `commandFacts`/`seriesRow` tier derivation calls. | `isOrchestrationDoc`; `masterCommandNames`; `orchestratorParentKey` | dashboard/src/data/taskHierarchy.ts:91-95; dashboard/src/data/taskHierarchy.ts:98-103; dashboard/src/data/taskHierarchy.ts:109-122 |
 | The V4 chevron insignia rendered on tier rows (size `row`). | `RankBadge` | dashboard/src/grammar/RankBadge.tsx:44-79 |
-| L14 tier tests: the three-level hierarchy with 22px indents + the D3 flat-run regression. | "renders the orchestration tier above its commanded masters with the V4 treatment (L14)"; "renders NO orchestration row or insignia in a flat run (D3 regression)" | dashboard/src/panels/LifecycleList.test.tsx:789-883; dashboard/src/panels/LifecycleList.test.tsx:968-1025 |
-| Focused tests assert root docs, active-enclosure leaves, enclosure fallbacks, and tooltip context are visible while loose/inactive/cleanup-completed leaves are absent, then prove BY REPO indentation/parent keys and BY PHASE flatness. | "limits sidebar rows to root docs, enclosure-matched leaves, and enclosure fallbacks"; "keeps standalone root task documents visible without listing loose leaf docs"; "exposes the full long task title and row context on title hover" | dashboard/src/panels/LifecycleList.test.tsx:234-367; dashboard/src/panels/LifecycleList.test.tsx:755-788; dashboard/src/panels/LifecycleList.test.tsx:1026-1090 |
+| L14 tier tests: the three-level hierarchy with 22px indents + the D3 flat-run regression. | "renders the orchestration tier above its commanded masters with the V4 treatment (L14)"; "renders NO orchestration row or insignia in a flat run (D3 regression)" | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:199-199; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:20-20 |
+| Focused tests assert root docs, active-enclosure leaves, enclosure fallbacks, and tooltip context are visible while loose/inactive/cleanup-completed leaves are absent, then prove BY REPO indentation/parent keys and BY PHASE flatness. | "limits sidebar rows to root docs, enclosure-matched leaves, and enclosure fallbacks"; "keeps standalone root task documents visible without listing loose leaf docs"; "exposes the full long task title and row context on title hover" | dashboard/src/panels/lifecycle-list/admission.test.tsx:540-540; dashboard/src/panels/lifecycle-list/admission.test.tsx:19-19; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:257-257 |
 | `fmtWait` for server-computed stale/wait ages. | `fmtWait` | dashboard/src/data/selectors.ts:108-114 |
-| Shared typed selection keys (`taskDocSelectionKey`/`seriesSelectionKey`/`lifecycleSelectionKey`, `parseTaskSelection`) and the `taskLabel`/`taskDocumentLabel` helpers used by the list and detail panel. | `taskDocSelectionKey`; `seriesSelectionKey`; `lifecycleSelectionKey`; `parseTaskSelection`; `taskLabel`; `taskDocumentLabel` | dashboard/src/data/taskIdentity.ts:17-20; dashboard/src/data/taskIdentity.ts:22-45; dashboard/src/data/taskIdentity.ts:213-230; dashboard/src/data/taskIdentity.ts:239-244 |
+| Shared typed selection keys (`taskDocSelectionKey`/`seriesSelectionKey`/`lifecycleSelectionKey`, `parseTaskSelection`) and the `taskLabel`/`taskDocumentLabel` helpers used by the list and detail panel. | `taskDocSelectionKey`; `seriesSelectionKey`; `lifecycleSelectionKey`; `parseTaskSelection`; `taskLabel`; `taskDocumentLabel` | dashboard/src/data/taskIdentity.ts:17-20; dashboard/src/data/taskIdentity.ts:22-45; dashboard/src/data/taskIdentity.ts:239-256; dashboard/src/data/taskIdentity.ts:265-270 |
 | The shared `Panel` head/sticky band the pivot sits in. | `Panel` | dashboard/src/grammar/Panel.tsx:48-69 |
 | Task-row pickup spinner/check-chat notice. | `AgentPickupIndicator` | dashboard/src/panels/AgentPickupIndicator.tsx:42-83 |
 | Native disclosure control and stable persisted collapse hook used by the hierarchy renderer. | `TaskGroupDisclosure`; `useCollapsedTaskGroups` | dashboard/src/panels/TaskGroupDisclosure.tsx:21-46; dashboard/src/panels/useCollapsedTaskGroups.ts:5-28 |
@@ -258,12 +266,13 @@ kept-alive rail is hidden, while the render-heavy row/group derivation lives in 
 clock and parent renders do not reconstruct the React Aria list unnecessarily.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: moved this sidecar from dashboard/src/panels/LifecycleList.tsx to lifecycle-list/LifecycleList.tsx after the frontend-rail naming move; added the L8 Move section. Verification pinned to the leaf base until closeout stamps the code commit.
 
 - 2026-08-04T17:58+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 14 citation rows with exact anchors (definition identifiers and quoted test names) and ledger-verified source ranges across LifecycleList.tsx, its test, Dot/RankBadge/Panel grammar, taskHierarchy, taskIdentity, selectors, AgentPickupIndicator, TaskGroupDisclosure, useCollapsedTaskGroups, and tasks/document.py; converted 3 superseded prose line citations in the 2026-08-01 entry to cit form, and unparenthesized the L14 leaf shorthand the prose scanner counts as an unchecked range. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-08-01T09:35+02:00 — 260731-EFA-L4 curator: documented the `OperationRow.variant` channel, which
-  the body never covered. cit:([`docRow`], dashboard/src/panels/LifecycleList.tsx:582-633) and
-  cit:([`seriesRow`], dashboard/src/panels/LifecycleList.tsx:635-687) both compute
+  the body never covered. cit:([`docRow`], dashboard/src/panels/lifecycle-list/LifecycleList.tsx:738-786) and
+  cit:([`seriesRow`], dashboard/src/panels/lifecycle-list/LifecycleList.tsx:788-830) both compute
   `lifecycle?.state ?? statusVariant(...)`, so a bound lifecycle's RAW state reaches `Dot` untranslated
   — that is how `awaiting-developer` gets its own mark now, and it is why `statusVariant`'s
   `awaiting-developer`/`blocked`/`paused`/`abandoned` arms were removable: they sat on the right of the
@@ -282,7 +291,7 @@ clock and parent renders do not reconstruct the React Aria list unnecessarily.
 - 2026-07-24T13:17:17Z — Curator: documented hidden-rail clock pausing and memoized row rendering;
   verification fields remain pre-commit.
 
-- 2026-07-12T17:50 — 260712-TRH-L6: Operations now subscribes to the shared Chats session catalog and
+- 2026-07-12T17:50+02:00 — 260712-TRH-L6: Operations now subscribes to the shared Chats session catalog and
   renders separate task-progress, live turn-activity, and inbox acknowledgment axes. Exact-leaf-first
   identity, unclaimed lifecycle fallback, deterministic multi-seat precedence, no second poller, and
   static pickup wording are documented here. Reviewer residuals F1 (task-label role), F2 (palette), F4
@@ -384,6 +393,6 @@ clock and parent renders do not reconstruct the React Aria list unnecessarily.
   the aria-labels became "Group tasks by" / "Tasks". Display copy only; the component name, types, store
   keys, and `lifecycle.id` values are unchanged. Refreshed Purpose plus Logic commentary. Verification
   metadata pinned until closeout stamps the rename code commit.
-- 2026-06-15T17:00 — Created for slice 5d: the list became a React Aria `ListBox` and the pivot a
+- 2026-06-15T17:00+02:00 — Created for slice 5d: the list became a React Aria `ListBox` and the pivot a
   `ToggleButtonGroup`, styled by Panda. Verification metadata pinned until closeout stamps the 5d
   code commit.

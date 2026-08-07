@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/PtyRenderBench.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-31T16:10+02:00                           |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -94,7 +94,7 @@ the file).
 | Query params, rAF measurement, serialize probe, `__ptyBench`/`__ptyBenchCols` installation, the minmax grid. | `measureFrames` | dashboard/src/dev/PtyRenderBench.tsx:18-41; dashboard/src/dev/PtyRenderBench.tsx:43-81; dashboard/src/dev/PtyRenderBench.tsx:84-91; dashboard/src/dev/PtyRenderBench.tsx:100-123; dashboard/src/dev/PtyRenderBench.tsx:138-160 |
 | The shared declaration of `PtyFrameStats`, `PtySerializeProbe` and the `Window` augmentation this file installs into. | `PtyFrameStats` | dashboard/src/dev/benchProbes.ts:57-90 |
 | The line-log content + configurable-rate mock socket factory the panes consume. | `benchLineLogSocketFactory` | dashboard/src/dev/lineLogFixture.ts:22-22; dashboard/src/dev/lineLogFixture.ts:89-90 |
-| The real pane component under measurement (renderer prop, `onResizeCols`). | `onResizeCols` | dashboard/src/panels/Terminal.tsx:153-153 |
+| The real pane component under measurement (renderer prop, `onResizeCols`). | `onResizeCols` | dashboard/src/panels/Terminal.tsx:61-61 |
 | The decision record the numbers feed (`PTY_RENDERER = "dom"` + measured summary). | `PTY_RENDERER` | dashboard/src/panels/session-cockpit/PtySurface.tsx:39-39 |
 | The `/dev/pty-bench` route mount. | `PtyRenderBench` | dashboard/src/dev/DevApp.tsx:15-15 |
 

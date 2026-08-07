@@ -6,8 +6,8 @@
 | sourceRoute            | `docs/design/engine-room/`                  |
 | doc_type               | `route-local-overview`                      |
 | lastUpdated            | 2026-06-21T23:35                            |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `cf5ef507f2542d6cd2f9d37a6b72148d3b91b340`  |
+| lastVerifiedCommitDate | 2026-08-06T13:55:47+02:00|
 | governingOverview      | `../overview.md`                            |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ failure-primitive vocabulary) that the React canvas `dashboard/src/panels/engine
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The React engine-room renderer these design docs govern — the two-world canvas, boot/teardown choreography, and failure overlays built from this prototype. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:1191-1711 |
+| The React engine-room renderer these design docs govern — the two-world canvas, boot/teardown choreography, and failure overlays built from this prototype. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93 |
 | The parent in-repo design-documentation route this folder is a child of. | "Engine-Room Visual Language" | docs/design/engine-room/engine-room-visual-language.html:6-6 |
 
 ## Update History

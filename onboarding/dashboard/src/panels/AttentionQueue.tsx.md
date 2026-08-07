@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/AttentionQueue.tsx`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:20+02:00                           |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`       |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -78,12 +78,13 @@ through the component's own subscription.
 | The server-side attention queue this reads. | `build_attention_queue` | mcp/src/agents_remember/observer/reducer.py:678-712 |
 | The `selectQueue` selector. | `selectQueue` | dashboard/src/data/selectors.ts:37-46 |
 | `canDismiss` admits lifecycle rows, gate-id gate rows, and actionable drift only. | `canDismiss` | dashboard/src/panels/AttentionQueue.tsx:122-128 |
-| `dismissItem` and `clearAll` optimistically suppress rows and release failed POSTs. | `dismissItem`, `clearAll` | dashboard/src/panels/AttentionQueue.tsx:146-178 |
+| `dismissItem` and `clearAll` optimistically suppress rows and release failed POSTs. | `dismissItem`, `clearAll` | dashboard/src/panels/AttentionQueue.tsx:287-288 |
 | `severityMark` — the CSS style applied to the severity wrapper. | `severityMark` | dashboard/src/panels/AttentionQueue.tsx:49-49 |
-| The `role="img"` / `aria-label` span rendered around the decorative `Dot`. | `Dot` | dashboard/src/panels/AttentionQueue.tsx:222-230 |
+| The `role="img"` / `aria-label` span rendered around the decorative `Dot`. | "import { AnimatePresence, motion } from \"motion/react\";"; "import { Dot } from " | dashboard/src/panels/AttentionQueue.tsx:9-9; dashboard/src/panels/AttentionQueue.tsx:1-1 |
 | `Dot` is `aria-hidden`, so its consumers own the announced name. | `Dot` | dashboard/src/grammar/Dot.tsx:119-129 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: narrowed the severity-mark row to the `severityMark` CSS style and regenerated its exact source line; the accessibility behavior remains owned by the adjacent rows.
 

@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/setClient.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:40+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Set, snapshot, promotion, pair, cycling, and watcher cases. | "sendSet — wire + honesty table application"; "refreshSessionSnapshot (R1/F16)"; "queued promotion by readback (R4)"; "serialized pair change (R5)"; "cycleEffortRequested (R7)"; "startSetPromotionWatcher (R4 + v3 drift delta)" | dashboard/src/data/setClient.test.ts:64-228; dashboard/src/data/setClient.test.ts:230-265; dashboard/src/data/setClient.test.ts:267-338; dashboard/src/data/setClient.test.ts:340-536; dashboard/src/data/setClient.test.ts:538-607; dashboard/src/data/setClient.test.ts:609-697 |
-| Driver under test. | `refreshSessionSnapshot`; `applySnapshotReadback`; `sendSet`; `applySetResult`; `commitPairDirective`; `startPairChangeFlow`; `acknowledgeSetAttention`; `cycleEffortRequested`; `startSetPromotionWatcher` | dashboard/src/data/setClient.ts:68-115; dashboard/src/data/setClient.ts:118-148; dashboard/src/data/setClient.ts:304-320; dashboard/src/data/setClient.ts:157-244; dashboard/src/data/setClient.ts:247-300; dashboard/src/data/setClient.ts:327-335; dashboard/src/data/setClient.ts:338-343; dashboard/src/data/setClient.ts:352-374; dashboard/src/data/setClient.ts:398-445 |
+| Driver under test. | `refreshSessionSnapshot`; `applySnapshotReadback`; `sendSet`; `applySetResult`; `commitPairDirective`; `startPairChangeFlow`; `acknowledgeSetAttention`; `cycleEffortRequested`; `startSetPromotionWatcher` | dashboard/src/data/setClient.ts:72-119; dashboard/src/data/setClient.ts:149-161; dashboard/src/data/setClient.ts:228-274; dashboard/src/data/setClient.ts:326-348; dashboard/src/data/setClient.ts:352-368; dashboard/src/data/setClient.ts:375-383; dashboard/src/data/setClient.ts:386-391; dashboard/src/data/setClient.ts:405-426; dashboard/src/data/setClient.ts:450-497 |
 | Shared deterministic fixtures. | `ENVELOPES_BY_CACHE_STATUS` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:175-179 |
 | The shared `observerEvent` builder supplies `schema`/`id`/`trust`/`actor` defaults to every event it creates. | `observerEvent` | dashboard/src/test/fixtures/wire.ts:373-385 |
 | The R4 promotion-watcher test routes the turn-ended L2 SEAT-EVENT through `applySeatEvent` using the shared observer-event fixture. | "fires on a turn-ended delivered by L2's SEAT-EVENT channel"; "applySeatEvent("; "observerEvent(" | dashboard/src/data/setClient.test.ts:655-655; dashboard/src/data/setClient.test.ts:670-671 |
@@ -92,7 +92,7 @@ No meaningful cross-repo boundary is owned here.
 
 - 2026-08-01T09:22+02:00 — 260731-EFA-L4 curator: No behavioural impact (this entry originally read
   "No content impact"; corrected 11:40 — the card gained a `wire.ts` reference row): the whole diff against
-  `abc7cbc` is one fixture conversion in the R4 promotion-watcher case (cit:([`startSetPromotionWatcher`], dashboard/src/data/setClient.ts:398-445)) — the seat event
+  `abc7cbc` is one fixture conversion in the R4 promotion-watcher case (cit:([`startSetPromotionWatcher`], dashboard/src/data/setClient.ts:450-497)) — the seat event
   it feeds `applySeatEvent` moved from an inline object closed with `as never` to
   `test/fixtures/wire.ts::observerEvent`, and the card makes no claim about how fixtures are built.
   The check that could have made this consequential: `observerEvent` ADDS `schema`, `id`, `trust`

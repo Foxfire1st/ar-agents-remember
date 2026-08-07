@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/MemoryMirror.tsx`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T10:50+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -45,6 +45,7 @@ ages are server-computed.
 | The drift/ledger/stalest analytics nodes. | `Analytics` | mcp/src/agents_remember/observer/projection.py:942-973 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 2 citation items; scoped citation check now passes.
 

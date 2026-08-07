@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The component under test (the R11 cue). | `CapabilityReason` | dashboard/src/panels/session-cockpit/conversation/primitives.tsx:140-158 |
 | The capability type the fixture builds. | `FeatureCapability` | dashboard/src/data/conversation/types.ts:234-244 |
-| The surface that renders the labeled `history`/`live` cues in production. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
+| The surface that renders the labeled `history`/`live` cues in production. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
 
 ## Cross-Repo References
 

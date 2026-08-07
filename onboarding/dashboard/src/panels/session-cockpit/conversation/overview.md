@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
 | lastUpdated | 2026-08-01T13:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                  |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -16,6 +16,16 @@
 renderer while the session-cockpit overview owns the one-roof Chats composition. The projection it renders
 is the reconstructable [data/conversation](../../../data/conversation/overview.md) store; the sibling
 in-stage history browser is [conversation-library/](../conversation-library/overview.md).
+
+## 260731-EFA-L8 Change
+
+`ConversationTimeline.tsx` moved to `conversation-timeline/` with the machinery
+split into `measurements.ts`, `timelinePremeasure.ts`, `timelineController.ts`,
+`timelineControls.ts`, `timelineFeed.tsx`, `timelineScroll.ts`, `timelineFollow.ts`,
+`timelineRestore.ts`, `timelineRefs.ts`, `unknownRun.tsx`, and `styles.ts`; the
+former `renderer.test.tsx` split into seven behavior suites plus two shared
+fixture modules. The timeline ARIA/scroll contracts (server-ordinal posinset,
+honest setsize, trusted-input-cancellable restore) are unchanged.
 
 ## Purpose
 
@@ -291,6 +301,7 @@ Rulings Register's interrupt gate is an argument ABOUT capability evidence.
   registry counts occurrences, so a fourth cast in a listed file fails.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (conversation-timeline split). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:40:00+02:00 — W3-B01 curator: curated 7 Repo-Internal table citations (5 memory-overview and 2 code-source references) with exact headings, builder identifiers, and registry anchor. Verification metadata remains unchanged for closeout.
 - 2026-08-01T13:05+02:00 — 260731-EFA-L4 route impact (wire contracts and typed vocabularies): added

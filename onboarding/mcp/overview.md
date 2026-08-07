@@ -6,13 +6,20 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260731-EFA-L8 Change
+
+`code_quality/scope_reporting.py` gained the dashboard rail steps and provenance
+lines (coverage, diff-coverage, e2e) forced by the L8 S3 wiring, with the pinned
+TypeScript input count updated to 425; the report remains read-only. The
+registration route's 19 PLR0917 bare-`*` keyword-only fixes ride this leaf.
 
 ## Purpose
 
@@ -1464,6 +1471,7 @@ skill edits (`skills/l-01-agent-lifecycles/` carries those). No new route appear
 umbrella scope statement changed; the detail lives with the children.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (scope-reporting dashboard steps; registration keyword-only fixes). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: pointer entry — mechanism in serving/controlplane/conversation children, tests in mcp/tests, doctrine in skills/l-01-agent-lifecycles. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18 hygiene curator: removed stale `:1-1` fixer-input

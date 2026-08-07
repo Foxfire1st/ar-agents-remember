@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:45+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -88,13 +88,13 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:487-1102 |
+| The component under test. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:149-236 |
 | The shared fixtures every case builds from. | `FLEET`; `catalogRow` | dashboard/src/test/fixtures/catalogRows.ts:10-27; dashboard/src/test/fixtures/catalogRows.ts:32-172 |
 | The grammar the matrix compares against. | `seatVisualState` | dashboard/src/data/stateGrammar.ts:101-125 |
 | The notice store + harvest store the L6 block seeds. | `lifecycleNoticeStore`; `ptyHarvestStore` | dashboard/src/data/sessionLifecycle.ts:68-121; dashboard/src/data/ptyHarvest.ts:51-73 |
 | The harvest store the bell/hint cases drive. | `ptyHarvestStore` | dashboard/src/data/ptyHarvest.ts:51-73 |
 | The typed wire builders the gate/brief cases now call (`lifecycleWithGate`, `taskDoc`, `agentPickup`, `analytics`). | `lifecycleWithGate`; `taskDoc`; `agentPickup`; `analytics` | dashboard/src/test/fixtures/wire.ts:256-266; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:296-301; dashboard/src/test/fixtures/wire.ts:317-322 |
-| `heldGatesByLeafKey` + `briefPendingSessionIds` — the only readers of the seeded lifecycles/pickups, and the reason the richer bases change nothing. | `heldGatesByLeafKey`; `briefPendingSessionIds` | dashboard/src/data/railModel.ts:378-392; dashboard/src/data/railModel.ts:397-414 |
+| `heldGatesByLeafKey` + `briefPendingSessionIds` — the only readers of the seeded lifecycles/pickups, and the reason the richer bases change nothing. | `heldGatesByLeafKey`; `briefPendingSessionIds` | dashboard/src/data/railModel.ts:408-422; dashboard/src/data/railModel.ts:427-439 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -136,9 +136,9 @@ recovery, and the absence of the duplicate bus-footer presentation.
   `BASE_LIFECYCLE`, where it previously had only `{ id, gate }`; the task doc gained every required
   `TaskDocNode` field; and the ten `Analytics` lists that were `undefined` are now `[]`. `SessionRail.tsx`
   reads `state.lifecycles` and `analytics.taskDocuments` at L505-L539 and nowhere else, and the sole
-  consumer is `heldGatesByLeafKey` (cit:([`heldGatesByLeafKey`], dashboard/src/data/railModel.ts:378-392)), which touches only `doc.lifecycleId`,
+  consumer is `heldGatesByLeafKey` (cit:([`heldGatesByLeafKey`], dashboard/src/data/railModel.ts:408-422)), which touches only `doc.lifecycleId`,
   `lifecycles[id]?.gate?.state` and `qualifiedLeafKey`'s `repository`/`docPath`/`id` — all explicitly
-  overridden by the case. `briefPendingSessionIds` (cit:([`briefPendingSessionIds`], dashboard/src/data/railModel.ts:397-414)) reads `messageKind`, `state` and
+  overridden by the case. `briefPendingSessionIds` (cit:([`briefPendingSessionIds`], dashboard/src/data/railModel.ts:427-439)) reads `messageKind`, `state` and
   `deliveredToSession`, also all overridden, and `git diff -U2` confirms no field value inside either
   literal changed. The two residual deltas the sweep warns about do not reach here: this gate sets
   `decisions: []` explicitly (so `BASE_GATE`'s `["approve","revise"]` never applies), and no assertion

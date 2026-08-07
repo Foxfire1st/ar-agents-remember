@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_diff_coverage.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -110,7 +110,7 @@ uncovered changed lines**.
 | --- | --- | --- |
 | The module under test: base resolution, changed-line collection, and the measurement. | `resolve_base`; `changed_python_lines`; `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:145-173; mcp/src/agents_remember/code_quality/diff_coverage.py:176-197; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
 | The wrapper that runs the floor as a step and exposes its two flags. | `run_diff_coverage`; "--diff-base"; "--diff-floor" | mcp/src/agents_remember/code_quality/check.py:396-439; mcp/src/agents_remember/code_quality/check.py:496-496; mcp/src/agents_remember/code_quality/check.py:505-505 |
-| The tier that carries the floor, and why the fast tier cannot. | "The full tier carries the changed-lines coverage floor"; "The fast tier certifies the index" | .githooks/_gate.sh:157-157; .githooks/_gate.sh:177-177 |
+| The tier that carries the floor, and why the fast tier cannot. | "The full tier carries the changed-lines coverage floor"; "The fast tier certifies the index" | .githooks/_gate.sh:185-185; .githooks/_gate.sh:208-208 |
 | The runner `diff_coverage._git` delegates to, and the source of the 300s `GIT_LOCAL_TIMEOUT_SECONDS` bound and the `cwd=` the wrapper-agreement test exercises. | `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-70 |
 | The other side of the same seam: `QualityGateGitTests` proves a non-repository and an unrunnable git both reach `DiffScopeError` through `diff_coverage.run_git`, and points `GIT_DIR` at a decoy to prove the gate reads the repository it was handed. | `QualityGateGitTests` | mcp/tests/test_git_command.py:328-390 |
 

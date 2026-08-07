@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/file-viewer/DualPane.tsx`    |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-29T09:06+02:00                             |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`         |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ reused by L4 by swapping the code side for a diff view.
 | The read-only CodeMirror pane it hosts on the code side. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
 | The markdown renderer the sidecar pane reuses. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
 | The effects-gated boomerang backdrop the `empty` state fills the pane with. | `EmptyStateBackdrop` | dashboard/src/panels/EmptyStateBackdrop.tsx:52-97 |
-| The page that supplies `code` + the derived `SidecarView`. | `FileViewer`, `SidecarView` | dashboard/src/panels/file-viewer/FileViewer.tsx:151-156; dashboard/src/panels/file-viewer/FileViewer.tsx:278-278 |
+| The page that supplies `code` + the derived `SidecarView`. | "export const FileViewer = memo(FileViewerImpl);"; "import { DualPane, type SidecarView } from \"./DualPane\";" | dashboard/src/panels/file-viewer/FileViewer.tsx:299-299; dashboard/src/panels/file-viewer/FileViewer.tsx:22-22 |
 | The `FileContent` type / onboarding pairing it renders. | `FileContent` | dashboard/src/data/files.ts:51-59 |
 | The route overview that governs this component. | `# dashboard/src/panels/file-viewer/ — File Viewer Overview` | onboarding/dashboard/src/panels/file-viewer/overview.md:1-109 |
 

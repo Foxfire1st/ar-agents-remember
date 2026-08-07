@@ -6,13 +6,20 @@
 | path | `dashboard/src/panels/session-cockpit/ChatsStageBody.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The e2e repair fixed a genuine keep-alive defect: a transient `focused ===
+undefined` during smart-focus handoff unmounted the PTY layer. The layer now stays
+mounted through the handoff and the empty backdrop renders inline; the stage layers
+and styles moved to `stageLayers.tsx` / `chatsStageStyles.ts`.
 
 ## Purpose
 
@@ -32,7 +39,7 @@ diagnostic; a legacy-raw session keeps its interactive PTY as the primary body, 
   undefined focus renders nothing; a non-controlled (legacy-raw) session renders the interactive
   `PtySurface` as the primary body under the honest label `legacy terminal · structured conversation
   unavailable` (`data-mode="legacy-raw"`, §4.3).
-- **Epoch resolution + connect lifecycle** cit:([`EPOCH_RESOLVE_WINDOW_MS`], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:127-127): `connect` reads the bridge epoch from
+- **Epoch resolution + connect lifecycle** cit:([`EPOCH_RESOLVE_WINDOW_MS`], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:123-123): `connect` reads the bridge epoch from
   `readSubmissionAuthority` — the LANDED L5 submission authority is REUSED for the epoch, not
   re-discovered, so no second submission/epoch authority is created — then calls
   `connectConversation(sessionId, descriptor.bridgeEpoch)` (the data-layer store orchestration). A
@@ -42,7 +49,7 @@ diagnostic; a legacy-raw session keeps its interactive PTY as the primary body, 
   session startup (`submission-authority` 503), so the first failure schedules ONE 800 ms retry before
   escalating `epochState` to `failed`; fail-loud is preserved — a second failure still renders the
   visible projection-failed banner (`ConversationReconnect phase="projection-failed"`).
-- **Library overlay + diagnostics mutual exclusion** cit:([`hiddenBehind`], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:35-35): when the library is open
+- **Library overlay + diagnostics mutual exclusion** cit:(["const ref = useRef<HTMLDivElement>(null);", "<div className={showLibrary ? hiddenBehind : pool} data-testid="], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:34-34; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:525-525; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:55-55);", `<div className={showLibrary ? hiddenBehind : pool} data-testid=`], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:34-34; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:525-525);"], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:34-34; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:525-525): when the library is open
   (`showLibrary`, controlled harness only) the active surface stays mounted but goes inert behind it
   (`display:none`), and the `TerminalDiagnosticsDrawer` is NOT rendered at all — so the library and the
   drawer can never overlay/z-fight (F8). A successful open closes the library and focuses the new
@@ -73,11 +80,11 @@ reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Thin composition, epoch resolve, bounded auto-retry, library/diagnostics exclusion. | `ChatsStageBody` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:147-489 |
-| The reconstructable active-conversation store connect/disconnect orchestration. | `connectConversation`; `disconnectConversation` | dashboard/src/data/conversation/store.ts:567-612; dashboard/src/data/conversation/store.ts:614-630 |
-| The reused L5 submission authority the epoch comes from. | `readSubmissionAuthority` | dashboard/src/data/submissionLifecycleClient.ts:310-321 |
-| The default structured surface, the library surface, the reconnect banner, and the default-off drawer. | `ConversationSurface`; `ConversationLibrarySurface`; `copyFor`; `TerminalDiagnosticsDrawer` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:75-171; dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx:47-66; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381; dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx:77-117 |
+| The reconstructable active-conversation store connect/disconnect orchestration. | `connectConversation`; `disconnectConversation` | dashboard/src/data/conversation/store.ts:637-682; dashboard/src/data/conversation/store.ts:684-700 |
+| The reused L5 submission authority the epoch comes from. | `readSubmissionAuthority` | dashboard/src/data/submissionLifecycleClient.ts:332-343 |
+| The default structured surface, the library surface, the reconnect banner, and the default-off drawer. | `ConversationSurface`; `ConversationLibrarySurface`; `copyFor`; `TerminalDiagnosticsDrawer` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:82-146; dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx:47-66; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341; dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx:77-117 |
 | The controlled-session predicate and the legacy-raw PTY body. | "legacy raw — the vendor TUI runs in this pane"; `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:122-122 |
-| The view that mounts this body and owns the surrounding authorities. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/SessionsView.tsx:196-1331 |
+| The view that mounts this body and owns the surrounding authorities. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:15-18 |
 
 ## Cross-Repo References
 
@@ -98,6 +105,7 @@ retries only transient failures in a bounded 30-second window and otherwise fail
 layers freeze their last visible box so composer chrome cannot provoke terminal refits.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the keep-alive handoff fix and stageLayers/chatsStageStyles extraction. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:45+02:00 — W3-B01 curator: curated 11 Repo-Internal table source citations across 6 rows and 2 prose citations for the stage composition, conversation store, submission authority, surfaces, and view owner. Verification metadata remains unchanged for closeout.
 

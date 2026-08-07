@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/VirtualizedInspectorList.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | 100-row ordinary DOM case. | "keeps 100 rows as ordinary DOM list items" | dashboard/src/panels/session-cockpit/VirtualizedInspectorList.test.tsx:44-49 |
 | 101-row virtualized logical-total case. | "virtualizes past 100 without slicing the accessible total" | dashboard/src/panels/session-cockpit/VirtualizedInspectorList.test.tsx:51-62 |
-| Component under test. | `VirtualizedInspectorList` | dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx:39-107 |
+| Component under test. | `VirtualizedInspectorList` | dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx:39-106 |
 
 ## Cross-Repo References
 

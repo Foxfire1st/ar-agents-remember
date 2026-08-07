@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/ModelEffortControl.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sourcing, failure, menu, apply, and chip cases. | "ModelEffortControl" | dashboard/src/panels/session-cockpit/ModelEffortControl.test.tsx:1-391 |
-| Component under test. | `ModelEffortControl` | dashboard/src/panels/session-cockpit/ModelEffortControl.tsx:149-379 |
+| Component under test. | `ModelEffortControl` | dashboard/src/panels/session-cockpit/ModelEffortControl.tsx:635-704 |
 | Capability fixtures. | `effortOption`; `modelRow`; `SET_RESULTS` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:20-32; dashboard/src/test/fixtures/capabilityEnvelopes.ts:34-52; dashboard/src/test/fixtures/capabilityEnvelopes.ts:211-247 |
 
 ## Cross-Repo References

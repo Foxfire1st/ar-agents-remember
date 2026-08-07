@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionCockpitStore.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ projections of server lifecycle truth plus local CAS state; they are not a secon
   {railCollapsed, inspectorCollapsed}`, `paletteOpen` — ONE-WAY mirrors from SessionsView (the
   view's imperative panel handles stay the source of truth); mirrored so later leaves/commands can
   read them without a view reference.
-- **`startCockpitMirror()`**: cit:([`startCockpitMirror`], dashboard/src/data/sessionCockpitStore.ts:522-542) — the refcounted catalog-mirror subscription — watches
+- **`startCockpitMirror()`**: cit:([`startCockpitMirror`], dashboard/src/data/sessionCockpitStore.ts:612-632) — the refcounted catalog-mirror subscription — watches
   `sessionStore` and records per-seat turn-state transitions into the client `turnClock`
   (`recordTurnObservation`: `workingSince` starts at the OBSERVED transition into working —
   poll/sweep-bounded, never a claim about when the harness really started).
@@ -113,16 +113,16 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The per-seat shape, L4 live-control state/actions, honesty invariants, poll health, toggle persistence, and mirror. | `PerSessionCockpit`; `SessionCockpitState`; `recordPollBeat`; `setOrchestrationTreeView`; `startCockpitMirror` | dashboard/src/data/sessionCockpitStore.ts:113-153; dashboard/src/data/sessionCockpitStore.ts:209-268; dashboard/src/data/sessionCockpitStore.ts:227-228; dashboard/src/data/sessionCockpitStore.ts:522-542 |
+| The per-seat shape, L4 live-control state/actions, honesty invariants, poll health, toggle persistence, and mirror. | `PerSessionCockpit`; `SessionCockpitState`; `recordPollBeat`; `setOrchestrationTreeView`; `startCockpitMirror` | dashboard/src/data/sessionCockpitStore.ts:113-153; dashboard/src/data/sessionCockpitStore.ts:209-268; dashboard/src/data/sessionCockpitStore.ts:612-632 |
 | The exact snapshot and five-value set-acceptance wire vocabulary mirrored by the store. | `CapabilitySnapshotWire`; `SetAcceptance` | dashboard/src/types/harnessCapabilities.ts:59-65; dashboard/src/types/harnessCapabilities.ts:86-86 |
-| The sole I/O driver for snapshot, route-error, echo, pair, and matching-ack writes. | `refreshSessionSnapshot`; `sendSet`; `applySetResult`; `startPairChangeFlow`; `acknowledgeSetAttention`; `cycleEffortRequested` | dashboard/src/data/setClient.ts:68-115; dashboard/src/data/setClient.ts:157-244; dashboard/src/data/setClient.ts:247-300; dashboard/src/data/setClient.ts:327-335; dashboard/src/data/setClient.ts:338-343; dashboard/src/data/setClient.ts:352-374 |
+| The sole I/O driver for snapshot, route-error, echo, pair, and matching-ack writes. | `refreshSessionSnapshot`; `sendSet`; `applySetResult`; `startPairChangeFlow`; `acknowledgeSetAttention`; `cycleEffortRequested` | dashboard/src/data/setClient.ts:72-119; dashboard/src/data/setClient.ts:228-274; dashboard/src/data/setClient.ts:326-348; dashboard/src/data/setClient.ts:375-383; dashboard/src/data/setClient.ts:386-391; dashboard/src/data/setClient.ts:405-426 |
 | The beat writer (every catalog read records poll health). | `currentCatalogTransportAttempt` | dashboard/src/data/catalogPoll.ts:62-77 |
-| The catalog registry the mirror subscribes to. | `sessionStore` | dashboard/src/data/sessions.ts:271-437 |
-| The view that mirrors layout/palette in and consumes focus + perSession. | `focusedSessionId`; `perSession`; `setLayout`; `setPaletteOpen` | dashboard/src/panels/session-cockpit/SessionsView.tsx:258-258; dashboard/src/panels/session-cockpit/SessionsView.tsx:260-260; dashboard/src/panels/session-cockpit/SessionsView.tsx:501-509 |
+| The catalog registry the mirror subscribes to. | `sessionStore` | dashboard/src/data/sessions.ts:494-508 |
+| The view that mirrors layout/palette in and consumes focus + perSession. | "setLayout: (layout: { railCollapsed: boolean; inspectorCollapsed: boolean }) => void;"; "setPaletteOpen: (open: boolean) => void;"; "const { focused, focusedLive, focusedConversationLive, perSession } = data;" | dashboard/src/data/sessionCockpitStore.ts:225-225; dashboard/src/data/sessionCockpitStore.ts:226-226; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:186-186 |
 | The freshness/provenance consumers (HeaderStrip diagnostics, inspector tiers). | `WS_WORDS`; `HeaderStrip`; `freshness` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:81-86; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:101-101 |
 | The unit suite incl. the QUEUED-never-moves-the-marker and per-kind clobber cases. | `recordPendingSet`; "QUEUED NEVER MOVES THE EFFECTIVE MARKER: ledger writes leave launchEvidence untouched" | dashboard/src/data/sessionCockpitStore.test.ts:41-56; dashboard/src/data/sessionCockpitStore.test.ts:75-89 |
-| The answer round-trip driver (writes in-flight/error/answered; clears on interaction change). | `interactionAnswer`; `submitInteractionAnswer`; `setInteractionAnswer`; `retryStoredInteractionAnswer` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:298-315; dashboard/src/panels/session-cockpit/InteractionBar.tsx:352-379; dashboard/src/panels/session-cockpit/InteractionBar.tsx:492-515 |
-| The answer path whose outcomes the round-trip state records. | `answerPendingInteraction`; `submitInteractionAnswer`; `retryStoredInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:449-481; dashboard/src/data/interactionAnswer.ts:504-618; dashboard/src/data/interactionAnswer.ts:620-640 |
+| The answer round-trip driver (writes in-flight/error/answered; clears on interaction change). | "} from \"react\";"; "} from \"react\";"; "describe(\"representPendingInteraction (kind-awareness, F8)\", () => {"; "describe(\"representPendingInteraction (kind-awareness, F8)\", () => {"; "export function retryStoredInteractionAnswer(" | dashboard/src/panels/session-cockpit/InteractionBar.tsx:16-16; docs/design/dashboard/session-cockpit-closeout-evidence.md:24-24; dashboard/src/data/interactionAnswer.test.ts:14-14; dashboard/src/data/sessionCockpitStore.ts:267-267; dashboard/src/data/interactionAnswer.ts:704-704; dashboard/src/data/interactionAnswer.test.ts:456-456; dashboard/src/panels/session-cockpit/InteractionBar.tsx:8-8; dashboard/src/data/interactionAnswer.test.ts:67-67; dashboard/src/panels/session-cockpit/InteractionBar.tsx:116-116; dashboard/src/panels/session-cockpit/InteractionBar.tsx:14-14 |
+| The answer path whose outcomes the round-trip state records. | `answerPendingInteraction`; `submitInteractionAnswer`; `retryStoredInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:477-509; dashboard/src/data/interactionAnswer.ts:654-702; dashboard/src/data/interactionAnswer.ts:704-724 |
 
 ## Cross-Repo References
 
@@ -148,6 +148,7 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T03:59:59+02:00 — Curated 15 citation claims (10 table rows, 5 prose citations): added exact anchors and source paths; scoped fixer generated the final ranges.
 - 2026-07-24T13:17:50Z — Documented structured-interaction retry state. Verification hash/date remain

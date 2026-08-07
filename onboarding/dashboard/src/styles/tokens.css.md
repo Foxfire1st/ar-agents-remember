@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/styles/tokens.css`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `1119b64ff1564c5fc76fd518f88e529535c04b34`       |
-| lastVerifiedCommitDate | 2026-07-21T08:14:40+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -64,9 +64,9 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The Panda token mirror declares the palette under `colors`, including `colors.well`. | `colors`; "well: { value:" | dashboard/panda.config.ts:30-30; dashboard/panda.config.ts:36-36 |
-| The pty pane consumes the `well` token for its background. | "background: \"well\"" | dashboard/src/panels/Terminal.tsx:19-19 |
-| The session composer consumes the `well` token for its background. | "background: \"well\"" | dashboard/src/panels/SessionComposer.tsx:67-67 |
-| The structured conversation stage consumes the `well` token for its background. | "background: \"well\"" | dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx:152-152 |
+| The pty pane consumes the `well` token for its background. | "background: \"well\"" | dashboard/src/panels/Terminal.tsx:27-27 |
+| The session composer consumes the `well` token for its background. | "background: \"well\"" | dashboard/src/panels/sessionComposerStyles.ts:13-13 |
+| The structured conversation stage consumes the `well` token for its background. | "background: \"well\"" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/styles.ts:12-12 |
 | WebTUI maps `--foreground1` to `--muted`. | "--foreground1" | dashboard/src/styles/webtui.css:28-28 |
 | The WebTUI mapping is token-only and contains no raw color literals. | "[data-view=\"sessions\"] { --background0: var(--bg); --background1: var(--bg-panel); --background2: var(--grid); --background3: color-mix(in oklch, var(--grid) 55%, var(--muted)); --foreground0: var(--ink); --foreground1: var(--muted); --foreground2: color-mix(in oklch, var(--muted) 60%, var(--bg-panel)); --box-border-color: var(--grid); --font-family: var(--font-mono); --font-size: 14px; --line-height: 1.3; }" | dashboard/src/styles/webtui.css:22-34 |
 | The spike assertion that every mapped var is declared here. | "references only existing token vars — no raw color literals (no second color system)" | dashboard/src/test/webtuiSpike.test.ts:117-128 |

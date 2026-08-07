@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/actions.ts`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,8 +69,8 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The serving route this POSTs to (records the developer/dashboard gate decision). | `_gate_decision_response` | mcp/src/agents_remember/serving/app.py:1141-1161 |
-| The gate responder that calls `postGateDecision` and maps failure outcomes into rendered status. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:217-539 |
-| The attention queue that calls `postAttentionDismiss`. | `AttentionQueueImpl` | dashboard/src/panels/AttentionQueue.tsx:130-265 |
+| The gate responder that calls `postGateDecision` and maps failure outcomes into rendered status. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
+| The attention queue that calls `postAttentionDismiss`. | `AttentionQueueImpl` | dashboard/src/panels/AttentionQueue.tsx:271-323 |
 | The interaction answer path riding `postGateDecisionDetailed` (approve + note). | `answerPendingInteraction` | dashboard/src/data/interactionAnswer.ts:449-481 |
 
 ## Cross-Repo References
@@ -83,6 +83,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
 

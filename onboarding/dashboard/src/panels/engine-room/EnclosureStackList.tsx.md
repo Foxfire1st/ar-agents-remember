@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureStackList.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-24T08:09+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -46,11 +46,12 @@ One exported component, `EnclosureStackList`, taking `views: EngineProcessView[]
 | Phase chip + gate-state chips (review/closeout/integration), conditional integ + lifecycle | `phase`; `state`; `humanReviewStatus`; `closeoutStatus`; `integrationStatus`; "not-started" | dashboard/src/panels/engine-room/EnclosureStackList.tsx:69-69; dashboard/src/panels/engine-room/EnclosureStackList.tsx:73-77 |
 | `EngineProcessView` view type ({ enclosureKey, node, lifecycle }) | `EngineProcessView` | dashboard/src/panels/engine-room/engineRoomTypes.ts:15-25 |
 | `EngineProcessNode` fields (worktreeGroup, phase, health, humanReviewStatus, closeoutStatus, integrationStatus) | `EngineProcessNode` | dashboard/src/types/projection.ts:162-202 |
-| `stackItem`/`healthDot`/`phaseChip` `health`-variant recipes | `stackItem`; `healthDot`; `phaseChip` | dashboard/src/panels/engine-room/engineRoomStyles.ts:134-162; dashboard/src/panels/engine-room/engineRoomStyles.ts:201-222; dashboard/src/panels/engine-room/engineRoomStyles.ts:237-263 |
-| `stackList` layout keeps the enclosure rail vertically scrollable | `stackList` | dashboard/src/panels/engine-room/engineRoomStyles.ts:119-132 |
-| `chip` styles define the compact status-chip presentation | `chip` | dashboard/src/panels/engine-room/engineRoomStyles.ts:224-235 |
+| `stackItem`/`healthDot`/`phaseChip` `health`-variant recipes | `stackItem`; `healthDot`; `phaseChip` | dashboard/src/panels/engine-room/layout.styles.ts:127-155; dashboard/src/panels/engine-room/layout.styles.ts:194-215; dashboard/src/panels/engine-room/layout.styles.ts:230-256 |
+| `stackList` layout keeps the enclosure rail vertically scrollable | `stackList` | dashboard/src/panels/engine-room/layout.styles.ts:112-125 |
+| `chip` styles define the compact status-chip presentation | `chip` | dashboard/src/panels/engine-room/stage.styles.ts:252-252 |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:39+02:00 — W3-B01 curator: curated the component, selection, item, phase/status, and style citations; the W3-REV-2 correction delta repaired four generated extents so single selection/key coercion, the keyed `ListBoxItem`/`textValue` implementation, the full phase/status-chip behavior, and the `chip` definition/styles are each supported. Verification metadata remains unchanged for closeout.
 

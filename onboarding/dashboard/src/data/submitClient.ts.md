@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/submitClient.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -66,9 +66,9 @@ No Domain Documentation source is configured for this repository.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Transport parsing, deadline, reconciliation, submit driver, and store integration. | `createFetchSubmitTransport`; `executeReliableSubmit`; `continueReliableReconcile`; `submitSessionText` | dashboard/src/data/submitClient.ts:197-254; dashboard/src/data/submitClient.ts:411-491; dashboard/src/data/submitClient.ts:493-499; dashboard/src/data/submitClient.ts:627-681 |
+| Transport parsing, deadline, reconciliation, submit driver, and store integration. | `createFetchSubmitTransport`; `executeReliableSubmit`; `continueReliableReconcile`; `submitSessionText` | dashboard/src/data/submitClient.ts:238-295; dashboard/src/data/submitClient.ts:567-610; dashboard/src/data/submitClient.ts:612-618; dashboard/src/data/submitClient.ts:828-873 |
 | The evidence state machine supplies receipt/reconcile transitions and retry scheduling. | `reduceReceipt`; `reduceReconciliation`; `reconcileDelay` | dashboard/src/data/submitMachine.ts:215-263; dashboard/src/data/submitMachine.ts:330-358; dashboard/src/data/submitMachine.ts:360-362 |
-| The browser authority client owns polling, withdrawal, and recovery after initial delivery. | `ensureSubmissionLifecyclePolling`; `restoreWithdrawnRecovery`; `withdrawLastQueuedSubmission` | dashboard/src/data/submissionLifecycleClient.ts:787-799; dashboard/src/data/submissionLifecycleClient.ts:1043-1068; dashboard/src/data/submissionLifecycleClient.ts:1096-1108 |
+| The browser authority client owns polling, withdrawal, and recovery after initial delivery. | `ensureSubmissionLifecyclePolling`; `restoreWithdrawnRecovery`; `withdrawLastQueuedSubmission` | dashboard/src/data/submissionLifecycleClient.ts:949-961; dashboard/src/data/submissionWithdrawal.ts:352-377; dashboard/src/data/submissionWithdrawal.ts:405-417 |
 | Tests cover safe certificates, ambiguous loss, no-resend reconciliation, readiness, and provenance. | "retries only an explicitly proven pre-dispatch loss, using the same id and immutable text"; "treats a browser rejection as ambiguous and reconciles without resending"; "never resends an unclassified post-dispatch loss; it reconciles the same id at 1s → 2s"; "allows composing before ready but submits only a ready controlled session"; "records a background queue receipt without clearing or joining composer pop-back state" | dashboard/src/data/submitClient.test.ts:103-128; dashboard/src/data/submitClient.test.ts:210-227; dashboard/src/data/submitClient.test.ts:297-325; dashboard/src/data/submitClient.test.ts:432-446; dashboard/src/data/submitClient.test.ts:638-664 |
 
 ## Cross-Repo References
@@ -87,6 +87,7 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 4 citation rows with exact anchors (transport/machine/lifecycle-client definitions, quoted test names) and ledger-verified source ranges; scoped citation recheck is green. Verification metadata remains pinned until closeout.
 

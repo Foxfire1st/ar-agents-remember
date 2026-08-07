@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/primitives.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,8 +77,8 @@ reviewed task evidence for any current behavioral claim.
 | The clamp/badge consumer in the message grammar. | `MessageItem` | dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:104-156 |
 | The clamp/badge consumer in the tool grammar. | `ToolItem` | dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx:87-118 |
 | The clamp/badge consumer in the diff grammar. | `DiffBlock` | dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx:35-79 |
-| The surface that renders CapabilityReason cues (labeled `history`/`live`) for history/live completeness. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-381 |
-| The renderer suite asserting the real clamp button + source badge. | "ConversationTimeline — one navigable role=feed (R5, §14.2)" | dashboard/src/panels/session-cockpit/conversation/renderer.test.tsx:33-68 |
+| The surface that renders CapabilityReason cues (labeled `history`/`live`) for history/live completeness. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
+| The renderer suite asserting the real clamp button + source badge. | "ConversationTimeline — one navigable role=feed (R5, §14.2)" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/feedSemantics.test.tsx:7-7 |
 | The R11 progressive-disclosure cue unit pins (visible state word, full reason in `title`, supported = nothing). | "CapabilityReason — R11 progressive disclosure cue" | dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx:19-47 |
 
 ## Cross-Repo References

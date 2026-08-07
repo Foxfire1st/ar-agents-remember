@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EmptyStateBackdrop.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T16:02+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`                                        |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                                        |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -96,12 +96,12 @@ empty states that mount it.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The engine-room G6 backdrop styles (`backdrop`/`backdropVideo`) this component mirrors. | "export const backdrop =" | dashboard/src/panels/engine-room/engineRoomStyles.ts:1263-1263 |
-| The engine-room usage of the same backdrop pattern (effects-gated, aria-hidden video). | "export function EnclosureProcessMap" | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:62-62 |
+| The engine-room G6 backdrop styles (`backdrop`/`backdropVideo`) this component mirrors. | "export const backdrop =" | dashboard/src/panels/engine-room/backdrop.styles.ts:4-4 |
+| The engine-room usage of the same backdrop pattern (effects-gated, aria-hidden video). | "export function EnclosureProcessMap" | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:67-67 |
 | The honest-motion gate that decides whether the backdrop mounts at all. | "export function useShouldAnimate" | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-19 |
-| `DetailPanel` mounts the battle-cruiser clip inside `Panel` `fill`, passing `opacity={0.18}`. | "export const DetailPanel" | dashboard/src/panels/DetailPanel.tsx:723-723 |
+| `DetailPanel` mounts the battle-cruiser clip inside `Panel` `fill`, passing `opacity={0.18}`. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76 |
 | File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`. | `DualPane` | dashboard/src/panels/file-viewer/DualPane.tsx:90-134 |
-| Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:156-365 |
+| Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:416-478 |
 | The static direct-video backdrop: baked media motion is owned by the MP4 asset, while the component only gates and styles a direct `<video>` child. | "export function EmptyStateBackdrop" | dashboard/src/panels/EmptyStateBackdrop.tsx:52-52 |
 | The render test pinning children-always-show, effects gating, the direct video child, and absence of `empty-backdrop-zoom`. | "always renders the message children" | dashboard/src/panels/EmptyStateBackdrop.test.tsx:32-37 |
 
@@ -110,6 +110,7 @@ empty states that mount it.
 No meaningful cross-repo references found. This is a self-contained presentational dashboard component.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
   anchors (deleting the unresolvable external URL row); exact non-fixing check returns zero

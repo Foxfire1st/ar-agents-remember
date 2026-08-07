@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/delta.py`  |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-07T05:06+02:00                      |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`  |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Purpose
@@ -66,7 +66,7 @@ deterministic (replay/sim fixtures compare byte-for-byte).
 | --- | --- | --- |
 | The projection schema diffed here (flat, id-keyed collections). | `WorkspaceProjection`; `lifecycles`; `enclosures`; `providers`; `metrics`; `analytics` | mcp/src/agents_remember/observer/projection.py:976-995 |
 | The projector that calls this, caches stable forms, and broadcasts. | `Projector`; `_publish_projection`; `stable_projection_state`; `diff_projection`; `_broadcast` | mcp/src/agents_remember/serving/projector.py:126-330; mcp/src/agents_remember/serving/projector.py:268-295; mcp/src/agents_remember/serving/projector.py:310-312 |
-| The client mirror of the volatile set + local age advancement. | `VOLATILE_AGE_FIELDS`; `stampServed`; `servedAgeSeconds` | dashboard/src/data/servedAges.ts:16-22; dashboard/src/data/servedAges.ts:52-54; dashboard/src/data/servedAges.ts:61-71 |
+| The client mirror of the volatile set + local age advancement. | `VOLATILE_AGE_FIELDS`; `stampServed`; `servedAgeSeconds` | dashboard/src/data/servedAges.ts:16-22; dashboard/src/data/servedAges.ts:59-61; dashboard/src/data/servedAges.ts:68-78 |
 
 ## Update History
 

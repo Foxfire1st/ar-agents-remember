@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/servedAges.ts`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The server half: stable-form diff + the canonical volatile set. | `VOLATILE_AGE_FIELDS` | mcp/src/agents_remember/serving/delta.py:36-38 |
 | The consuming merge (identity reuse + stamping on apply). | `mergeKeyed` | dashboard/src/data/store.ts:66-67; dashboard/src/data/store.ts:91-111 |
-| Display sites (`servedAgeSeconds` + `useNowMs`): Hangar, AttentionQueue, MemoryMirror, LifecycleList. | `servedAgeSeconds` | dashboard/src/panels/Hangar.tsx:3-3; dashboard/src/panels/AttentionQueue.tsx:7-7; dashboard/src/panels/MemoryMirror.tsx:3-3; dashboard/src/panels/LifecycleList.tsx:14-14 |
+| The display sites' shared import pattern (`servedAgeSeconds` + `useNowMs`): Hangar, AttentionQueue, MemoryMirror, LifecycleList. | "import { servedAgeSeconds, useNowMs } from \"../data/servedAges\";" | dashboard/src/panels/Hangar.tsx:3-3 |
 
 ## Cross-Repo References
 
@@ -84,6 +84,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 3 citation rows: the server half (serving/delta.py L33-L56, `VOLATILE_AGE_FIELDS`), the consuming merge (data/store.ts L66-L67 + L88-L110, `mergeKeyed`), and the four display-site import lines (Hangar/AttentionQueue/MemoryMirror/LifecycleList, `servedAgeSeconds`). Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 

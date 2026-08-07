@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/taskIdentity.ts`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T16:02+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -99,18 +99,19 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | Typed Operations keys and selection parsing live beside lifecycle/enclosure identity helpers. | "export type TaskSelection" | dashboard/src/data/taskIdentity.ts:8-8 |
 | Lifecycle labels prefer enclosure metadata when present and fall back through direct task-document titles before raw ids. | "export function parseTaskSelection" | dashboard/src/data/taskIdentity.ts:22-22 |
-| The Operations list creates typed row keys and uses `qualifiedLeafKey` for row chat activity. | `qualifiedLeafKey` | dashboard/src/panels/LifecycleList.tsx:22-35 |
-| The detail panel resolves typed selections and reports the displayed leaf through `qualifiedLeafKey`. | `qualifiedLeafKey` | dashboard/src/panels/DetailPanel.tsx:1-15 |
-| Cockpit derives chat/highlight lifecycle attachment through `lifecycleIdForSelection`; its displayed-leaf state supersedes `leafKeyForSelection` (still exported here, no live caller). | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:63-63 |
-| Current leaf label/id consumers span RailChat and the full session-cockpit bar, rail, header, status, failure, and lifecycle-copy surfaces. | "function stepLines", "export function ChatContextBar", "export function SessionRail", "export function HeaderStrip", "export function FailedLaunchBanner", "export function cleanupOutcomeCopy" | dashboard/src/panels/RailChat.tsx:187-187; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-74; dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-70; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-88; dashboard/src/panels/session-cockpit/SessionRail.tsx:487-487; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:40-40 |
-| `railModel`, `LifecycleList`, `DetailPanel`, and `RailChat` consume `qualifiedLeafKey`; `leafKeyForSelection` has no live import. | "export function buildRailModel", "export const LifecycleList", "export const DetailPanel", "function stepLines" | dashboard/src/data/railModel.ts:131-131; dashboard/src/panels/DetailPanel.tsx:723-723; dashboard/src/panels/LifecycleList.tsx:425-425; dashboard/src/panels/RailChat.tsx:187-187 |
-| Event River imports `taskDocumentLabel` so history rows without live lifecycle projection can still render the task document title. | `taskDocumentLabel` | dashboard/src/panels/eventSummary.ts:1-15 |
+| The Operations list creates typed row keys and uses `qualifiedLeafKey` for row chat activity. | `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:64-70 |
+| The detail panel resolves typed selections and reports the displayed leaf through `qualifiedLeafKey`. | `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:64-70 |
+| Cockpit derives chat/highlight lifecycle attachment through `lifecycleIdForSelection`; its displayed-leaf state supersedes `leafKeyForSelection` (still exported here, no live caller). | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:64-64 |
+| Current leaf label/id consumers span RailChat and the full session-cockpit bar, rail, header, status, failure, and lifecycle-copy surfaces. | "function stepLines", "export function ChatContextBar", "export function SessionRail", "export function HeaderStrip", "export function FailedLaunchBanner", "export function cleanupOutcomeCopy" | dashboard/src/panels/RailChat.tsx:192-192; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-74; dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-70; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:132-132; dashboard/src/panels/session-cockpit/SessionRail.tsx:149-149; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:40-40 |
+| `railModel`, `LifecycleList`, `DetailPanel`, and `RailChat` consume `qualifiedLeafKey`; `leafKeyForSelection` has no live import. | "export function buildRailModel", "export const LifecycleList", "export const DetailPanel", "function stepLines" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357; dashboard/src/data/railModel.ts:192-192; dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76; dashboard/src/panels/RailChat.tsx:192-192 |
+| Event River imports `taskDocumentLabel` so history rows without live lifecycle projection can still render the task document title. | "taskDocumentLabel," | dashboard/src/panels/eventSummary.ts:1-15 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

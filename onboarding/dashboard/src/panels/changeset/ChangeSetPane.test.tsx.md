@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/ChangeSetPane.test.tsx`   |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-06-30                                                |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`                |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ swap — not the live `<Markdown>` styling or the CodeMirror diff (both covered 
 | Markdown diff fixture + per-case localStorage reset. | `mdDiff` | dashboard/src/panels/changeset/ChangeSetPane.test.tsx:16-26 |
 | Rendered toggle swaps the diff for the `<Markdown>` prose view. | "offers a 'rendered' toggle for markdown that draws the after-content as prose, not a raw diff" | dashboard/src/panels/changeset/ChangeSetPane.test.tsx:34-49 |
 | Non-markdown files do not offer the rendered toggle. | "does not offer the rendered toggle for non-markdown files" | dashboard/src/panels/changeset/ChangeSetPane.test.tsx:51-60 |
-| Subject under test: the diff column + its rendered-markdown toggle. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:51-137 |
+| Subject under test: the diff column + its rendered-markdown toggle. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:177-218 |
 | The markdown renderer the rendered view mounts. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
 
 ## Update History

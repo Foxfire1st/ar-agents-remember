@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ the server reports (partial) agent unavailability.
 - **`agentsNote`** cit:(["library-agents-note"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:149-153): rendered VERBATIM (data-testid `library-agents-note`)
   above the rows whenever the page's note is non-null and non-empty — the exact native reason agent
   conversations are (partially) unavailable, never silently absent.
-- **Rows** cit:([`truncateMiddle`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:154-197): each row is a real `<button>`; `data-selected` marks the previewed row;
+- **Rows** cit:(["truncateMiddle(entry.title, 60)"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:154-197): each row is a real `<button>`; `data-selected` marks the previewed row;
   `title` carries the full untruncated title (A5) while `truncateMiddle(title, 60)` renders the
   boundary-truncated visible text; the meta line joins the completeness badge, the mono
   `…safeNativeIdSuffix`, and `humanizeAge(lastActivityAt)`. A row's `agents` render directly beneath
@@ -50,7 +50,7 @@ the server reports (partial) agent unavailability.
   css cit:([`agentChild`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:73-76) (`2ch` inline indent, dashed border), a fixed `agent` badge, the `role` badge when
   present, suffix, and age; `data-testid="library-agent-row"`; clicking selects through
   `onSelect(agentChildRow(parent, agent))` — the identical flow, with the child's own key.
-- **`Load more`** cit:(["Load more"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:198-202): rendered only when `nextCursor !== null`; disabled while loading —
+- **`Load more`** cit:(["Load more"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:164-164): rendered only when `nextCursor !== null`; disabled while loading —
   the R5 explicit native paging affordance (never infinite auto-scroll indexing).
 
 ### Invariants And Boundaries
@@ -81,7 +81,7 @@ reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | Row/cursor/key wire types this list renders (now including `ConversationLibraryAgentRow`). | `ConversationLibraryAgentRow` | dashboard/src/data/conversation-library/types.ts:39-50 |
 | The A4/A5 presentation helpers (`humanizeAge`, `truncateMiddle`, `harnessLabel`). | `humanizeAge` | dashboard/src/data/conversation/format.ts:40-47 |
-| The surface that owns selection/paging callbacks into the store and passes `agentsNote` through. | `agentsNote` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:137-150 |
+| The surface that owns selection/paging callbacks into the store and passes `agentsNote` through. | "agentsNote={listView.agentsNote}" | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:235-235 |
 | The sub-agent nesting + agentsNote regression suite for this list. | "ConversationLibraryList agent nesting" | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx:43-86 |
 
 ## Cross-Repo References
@@ -94,6 +94,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T18:07+02:00 — 260731-EFA-L6 S18-B17 curator: rewrote the seven superseded `(L…)`
   prose line-cites as cit forms with exact frozen-source ranges (plus the `agentChild` css

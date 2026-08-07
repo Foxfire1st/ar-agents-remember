@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionLifecycle.test.ts`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ the reviewed task evidence for any current behavioral claim.
 | The module under test. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
 | The centralized copy the honesty cases pin. | `terminateConfirmCopy` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:14-23 |
 | The L6 fixtures driven through the real store. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:179-191 |
-| The view-level companions (unfocused-residual render, rail End/error-row cases). | "renders the scope root + rail/stage/inspector with markers and zones (F-c: no statusline region)" | dashboard/src/panels/session-cockpit/SessionsView.test.tsx:164-206 |
+| The view-level companions (unfocused-residual render, rail End/error-row cases). | "renders the scope root + rail/stage/inspector with markers and zones (F-c: no statusline region)" | dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:34-34 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 

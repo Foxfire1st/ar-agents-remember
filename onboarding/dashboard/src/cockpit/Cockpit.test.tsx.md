@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -147,16 +147,16 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666 |
+| `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
 | `GALLERY` fixtures + the `applySnapshot` hydration pattern. | `GalleryEntry`; `seed` | dashboard/src/cockpit/Cockpit.test.tsx:29-33; dashboard/src/dev/fixtures.ts:11-11; dashboard/src/dev/fixtures.ts:127-131 |
-| The shared jsdom stubs the render relies on. | "jsdom omits scrollIntoView"; "jsdom's media elements don't implement playback" | dashboard/src/test/setup.ts:26-26; dashboard/src/test/setup.ts:48-48 |
+| The shared jsdom stubs the render relies on. | "jsdom omits scrollIntoView"; "jsdom's media elements don't implement playback" | dashboard/src/test/setup.ts:86-86; dashboard/src/test/setup.ts:125-125 |
 | The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. | "renders complete bodies for direct, master, drilled, and lifecycle-bound paths during analytics refreshes"; "discards task A's late body after selecting task B and hydrates B exactly once" | dashboard/src/cockpit/Cockpit.test.tsx:336-396; dashboard/src/cockpit/Cockpit.test.tsx:398-440 |
 | The S5 cutover case proves existence of a `sessions-view` node, no Sessions route, and same-node hide/reveal persistence. | "defaults to Operations, exposes no Sessions route, and keeps one Chats cockpit mounted" | dashboard/src/cockpit/Cockpit.test.tsx:767-794 |
-| The production source census, separately from the singular test query, establishes the sole `<SessionsView>` JSX mount. | "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:622-622 |
+| The production source census, separately from the singular test query, establishes the sole `<SessionsView>` JSX mount. | "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:774-774 |
 | The `withStates` helper + the two `task-metrics` cases (`2 awaiting you`; nothing at zero). | `withStates` | dashboard/src/cockpit/Cockpit.test.tsx:448-457 |
 | `railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole("img", { name: "Severity: warn" })` + `getByRole("option", …)`, and the scoped `axe.run`. | `railProjection`; `WARN_ROW`; "keeps a handoff state and a queue warning apart in the one rail that shows both"; "speaks the severity of an attention row into the accessibility tree"; "passes axe on the panel the severity label lives in" | dashboard/src/cockpit/Cockpit.test.tsx:859-907; dashboard/src/cockpit/Cockpit.test.tsx:909-919; dashboard/src/cockpit/Cockpit.test.tsx:921-931; dashboard/src/cockpit/Cockpit.test.tsx:933-949; dashboard/src/cockpit/Cockpit.test.tsx:951-961 |
 | The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. | `severityMark` | dashboard/src/panels/AttentionQueue.tsx:49-49 |
-| The `Task progress: …; phase: …` label on `data-testid="task-state"` that React Aria's `role="option"` absorbs. | "task-state" | dashboard/src/panels/LifecycleList.tsx:389-389 |
+| The `Task progress: …; phase: …` label on `data-testid="task-state"` that React Aria's `role="option"` absorbs. | "task-state" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:673-673 |
 | The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before). | `taskDoc` | dashboard/src/test/fixtures/wire.ts:282-287 |
 | `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. | `metricsFor` | dashboard/src/types/projection.ts:309-316 |
 
@@ -179,6 +179,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: removed duplicated Source ranges;
   exact non-fixing check returns zero findings.

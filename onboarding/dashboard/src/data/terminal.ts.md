@@ -6,13 +6,21 @@
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
 [data overview](overview.md)
+
+## 260731-EFA-L8 Change
+
+The round-6 refactor extracted terminal-session helpers and introduced an
+intermediate defect (a stale socket not closed on reattach) that was caught and
+fixed within the round — a self-caught refactor defect, not a pre-existing bug
+(corrected per reviewer F6). The 53-terminal-test contract passes unchanged on the
+leaf base.
 
 ## Purpose
 
@@ -169,11 +177,11 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The backend WebSocket bridge this connects to (binary out, JSON in). | "async def stream_events" | mcp/src/agents_remember/serving/app.py:315-315 |
 | The serving API that returns terminal catalog rows and accepts terminate requests. | "async def stream_events" | mcp/src/agents_remember/serving/app.py:315-315 |
-| The xterm wrapper that adapts a `Terminal` to the `TerminalSink`. | "export function Terminal" | dashboard/src/panels/Terminal.tsx:117-117 |
-| The dev mock socket the bench provides through `TerminalSocketContext`. | `TerminalSocketContext` | dashboard/src/data/terminal.ts:500-500 |
-| The freshness consumers: Terminal forwards `onSocketState`, PtySurface routes it into the cockpit store. | `onSocketState` | dashboard/src/panels/Terminal.tsx:151-151 |
+| The xterm wrapper that adapts a `Terminal` to the `TerminalSink`. | "export function Terminal" | dashboard/src/panels/Terminal.tsx:110-110 |
+| The dev mock socket the bench provides through `TerminalSocketContext`. | `TerminalSocketContext` | dashboard/src/data/terminal.ts:546-546 |
+| The freshness consumers: Terminal forwards `onSocketState`, PtySurface routes it into the cockpit store. | `onSocketState` | dashboard/src/panels/Terminal.tsx:59-59 |
 | The per-pane `freshness.ptyWs` field this hook feeds. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
-| The launch flow consumes the narrow catalog reader through an explicit request-owning hook. | "export function LaunchFlow" | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:177-177 |
+| The launch flow consumes the narrow catalog reader through an explicit request-owning hook. | "export function LaunchFlow" | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:362-362 |
 | The typed narrow harness reader distinguishes transport, protocol, empty, and ready results. | "export function readHarnessCatalog" | dashboard/src/data/harnessCatalog.ts:45-45 |
 | The classifying open client the launch flow uses instead of this module's boolean opener. | "export function launchableEfforts" | dashboard/src/data/launchFlow.ts:34-34 |
 
@@ -193,6 +201,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the terminal refactor and the self-caught intermediate reattach-socket defect (F6 correction). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

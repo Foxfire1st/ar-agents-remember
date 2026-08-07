@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/setClient.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -63,11 +63,11 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Exact snapshot, set, pair, cycling, acknowledgment, and watcher orchestration. | `refreshSessionSnapshot`, `sendSet`, `startPairChangeFlow`, `acknowledgeSetAttention`, `cycleEffortRequested`, `startSetPromotionWatcher` | dashboard/src/data/setClient.ts:68-115; dashboard/src/data/setClient.ts:157-244; dashboard/src/data/setClient.ts:327-335; dashboard/src/data/setClient.ts:338-343; dashboard/src/data/setClient.ts:352-374; dashboard/src/data/setClient.ts:398-445 |
+| Exact snapshot, set, pair, cycling, acknowledgment, and watcher orchestration. | `refreshSessionSnapshot`, `sendSet`, `startPairChangeFlow`, `acknowledgeSetAttention`, `cycleEffortRequested`, `startSetPromotionWatcher` | dashboard/src/data/setClient.ts:72-119; dashboard/src/data/setClient.ts:228-274; dashboard/src/data/setClient.ts:375-383; dashboard/src/data/setClient.ts:386-391; dashboard/src/data/setClient.ts:405-426; dashboard/src/data/setClient.ts:450-497 |
 | Full I/O and transition regression matrix. | "sendSet — wire + honesty table application", "refreshSessionSnapshot (R1/F16)", "serialized pair change (R5)", "cycleEffortRequested (R7)", "startSetPromotionWatcher (R4 + v3 drift delta)" | dashboard/src/data/setClient.test.ts:64-697 |
 | Acceptance and readback policy. | `reduceSetResult`, `resolvePendingsByReadback` | dashboard/src/data/setAcceptance.ts:101-153; dashboard/src/data/setAcceptance.ts:204-232 |
 | Pair serialization machine. | `startPairChange`, `applyPairStepResult`, `applyPairReadback` | dashboard/src/data/pairChange.ts:50-52; dashboard/src/data/pairChange.ts:58-111; dashboard/src/data/pairChange.ts:156-196 |
-| Store state and mutation boundary. | `SessionCockpitState`, `sessionCockpitStore` | dashboard/src/data/sessionCockpitStore.ts:209-268; dashboard/src/data/sessionCockpitStore.ts:279-511 |
+| Store state and mutation boundary. | `SessionCockpitState`, `sessionCockpitStore` | dashboard/src/data/sessionCockpitStore.ts:209-268; dashboard/src/data/sessionCockpitStore.ts:588-601 |
 
 ## Cross-Repo References
 
@@ -85,6 +85,7 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T03:59:59+02:00 — Curated 10 citation claims (5 table rows, 5 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 

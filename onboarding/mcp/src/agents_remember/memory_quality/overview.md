@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated            | 2026-08-07T14:30+02:00                     |
+| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`
+| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -199,8 +199,27 @@ itself, deadlocking every structural change (115 unresolvable findings at this l
 The curator runs the same `memory_quality_check` during the leaf; the gate is its fallback.
 The post-commit phase keeps drift, shape, and history order as the refresh sanity pass.
 
+## 260731-EFA-L8 — The Whole-New-File Absent-At-Stamp Rule
+
+claim_reopen's absent-at-stamp rule (a construct added after the stamp) now extends to whole
+source files added after the stamp. A new file's anchor that resolves exactly once in the
+working tree inside a cited range surfaces report-only — the same current-citation review
+surface, clearing with no commit; an anchor that is absent, ambiguous, or lands outside the
+cited range stays hard (`citation_provenance_invalid` / `citation_claim_reopened`). This is
+what lets a leaf's new-file rows resolve pre-commit instead of failing provenance: regenerated
+ranges point at the new content and the curator's review is the report-only relay.
+Coverage lives in `mcp/tests/test_l6_diff_coverage_claim_reopen.py`
+(`TestLocalChangesNewFile`, lines 143-186) and
+`mcp/tests/test_memory_citation_change_detection.py` (the `test_a_new_source_*` arms in
+`CodeProvenanceTests`, plus the `ChangeRoutingTests` untracked/ignored-local-path assertion).
+
 ## Update History
 
+- 2026-08-07T14:30+02:00 — 260731-EFA-L8 curator (bounded delta): recorded the round-9
+  claim_reopen mechanism — the absent-at-stamp rule extended to whole source files added after
+  the stamp (unique working-tree anchor inside a cited range surfaces report-only; absent,
+  ambiguous, or stale evidence stays hard) — and the test coverage that pins it. Verification
+  metadata stays pinned until closeout stamps the code commit.
 - 2026-08-05T22:55+02:00 — 260731-EFA-L16 curator: recorded the closeout memory-quality phase-order repair (`check.py` phase constants + `worktrees/modules/closeout.py`): the before-commit phase list is now empty and every check, claim-reopen included, runs in the single phase after the code commit and the metadata refresh to it — claim evidence is only comparable once the commit it must be compared against exists; L16's closeout produced the first live deadlock under the L6 placement (115 unresolvable findings). Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: rebound the
   `memory_quality_check` row to the actual `memory_quality_check_tool` definition; exact
