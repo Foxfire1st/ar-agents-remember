@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-01T10:50+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-08-07T23:35:00+02:00 |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -451,7 +451,13 @@ selected-child projection in `panels/session-cockpit/conversation/`, and effect 
 `panels/engine-room/`. The dashboard source layering and ownership model described here are
 unchanged.
 
+## 260731-EFA-L7 — Conversation-Timeline Wiring
+
+The dashboard route absorbed the L7 live-thinking change on top of the L8 split: the conversation-timeline family now renders one coalesced live `thinking` indicator per active turn (`collapse.ts` stable-row refactor + `ThinkingItem` animated indicator), with acceptance pins in `liveThinking.test.tsx` and `collapse.test.ts`. No dashboard file is over the file-size hard limit; the detector's `dashboard/src` TS/TSX scope is enforced by the project wrapper.
+
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the live-thinking wiring and the file-size scope for `dashboard/src`. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section for this route. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T18:00+02:00 — 260731-EFA-L6 S18-B17 curator: resolved the S18-T3 leftover `:1-1`

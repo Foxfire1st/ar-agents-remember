@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/authorization.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -84,9 +84,9 @@ it from the workspace root it already holds.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `AuthorizationBinding` is the strict principal/tenant wire type the resolver mints and verifies. | `AuthorizationBinding` | mcp/src/agents_remember/serving/conversation/models.py:134-136 |
+| `AuthorizationBinding` is the strict principal/tenant wire type the resolver mints and verifies. | "class AuthorizationBinding(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:117-117 |
 | The request dependency consults only the ASGI TCP peer and delegates to the bound resolver. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The production composition binds `LocalOperatorAuthorizationResolver.for_workspace(workspace_root)` into the one runtime. | "LocalOperatorAuthorizationResolver.for_workspace(config.workspace_root)" | mcp/src/agents_remember/serving/app.py:773-773 |
+| The production composition binds `LocalOperatorAuthorizationResolver.for_workspace(workspace_root)` into the one runtime. | "LocalOperatorAuthorizationResolver.for_workspace(config.workspace_root)" | mcp/src/agents_remember/serving/app.py:281-281 |
 | `AuthorityError` is the typed refusal raised for non-loopback peers and cross-principal bindings. | `AuthorityError` | mcp/src/agents_remember/errors.py:17-23 |
 | Contract tests prove local-operator identity, loopback resolution, non-loopback/unknown fail-closed, the signature-pinned no-identity-channel, ignored browser claims, cross-principal cursor/scope/operation rejection, and injected-resolver separation in both directions. | `test_server_resolves_one_local_operator_workspace_identity`; `test_loopback_peers_resolve`; `test_non_loopback_peers_fail_closed`; `test_unknown_peer_fails_closed`; `test_server_resolves_one_local_operator_workspace_identity`; `test_browser_identity_claims_are_never_read`; `test_cross_principal_cursor_binding_rejected`; `test_cross_principal_scope_binding_rejected`; `test_cross_principal_operations_have_distinct_fingerprints`; `test_injected_resolver_proves_cross_principal_rejection` | mcp/tests/test_conversation_authorization.py:109-118; mcp/tests/test_conversation_authorization.py:121-126; mcp/tests/test_conversation_authorization.py:129-144; mcp/tests/test_conversation_authorization.py:147-150; mcp/tests/test_conversation_authorization.py:160-181; mcp/tests/test_conversation_authorization.py:209-227; mcp/tests/test_conversation_authorization.py:230-247; mcp/tests/test_conversation_authorization.py:250-259; mcp/tests/test_conversation_authorization.py:262-282 |
 

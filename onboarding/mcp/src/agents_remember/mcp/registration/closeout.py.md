@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-02T01:05+02:00                                       |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                   |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                   |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ The three destructive tools forward flat:
 | `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | `CloseoutCommitMessages` | mcp/src/agents_remember/application/worktree_tools.py:275-282 |
 | The two pre-staging refusals and the reset-then-stage step apply's docstring describes. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:721-760; mcp/src/agents_remember/worktrees/modules/closeout.py:728-751; mcp/src/agents_remember/worktrees/modules/closeout.py:763-786; mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
 | The wrapper condition that decides whether the gate — and therefore the staging step and its refusals — runs at all. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:24-26; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:35-42; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:45-82 |
-| The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring.py:815-835 |
+| The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring_tests_2.py:77-97 |
 | The closeout descriptions are asserted to pin quality-before-commit. | `test_closeout_tool_descriptions_pin_strict_quality_before_mutation` | mcp/tests/test_tools.py:154-168 |
 | The staged-gate behaviour the rewritten descriptions promise. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:452-558 |
 

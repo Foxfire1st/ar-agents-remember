@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/cursor.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `41b2fd6452ee572799fa10c4f9c820ab549ec3d2`|
-| lastVerifiedCommitDate | 2026-07-19T19:12:25+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,8 +80,8 @@ battery against this authority (all held).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The purpose-branded token prefixes and root validators define the four non-interchangeable cursor brands. | `ActivePageCursor`, `ActiveEventCursor`, `LibraryListCursor`, `LibraryReadCursor` | mcp/src/agents_remember/serving/conversation/models.py:84-85; mcp/src/agents_remember/serving/conversation/models.py:88-89; mcp/src/agents_remember/serving/conversation/models.py:92-93; mcp/src/agents_remember/serving/conversation/models.py:96-97 |
-| `ActiveConversationRef` and `AuthorizationBinding` carry the identity/caller fields every cursor binds. | `ActiveConversationRef`, `AuthorizationBinding` | mcp/src/agents_remember/serving/conversation/models.py:129-131; mcp/src/agents_remember/serving/conversation/models.py:134-136 |
+| The purpose-branded token prefixes and root validators define the four non-interchangeable cursor brands. | "class ActivePageCursor(_OpaqueToken):", "class ActiveEventCursor(_OpaqueToken):", "class LibraryListCursor(_OpaqueToken):", "class LibraryReadCursor(_OpaqueToken):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:67-67; mcp/src/agents_remember/serving/conversation/_models_wire.py:71-71; mcp/src/agents_remember/serving/conversation/_models_wire.py:75-75; mcp/src/agents_remember/serving/conversation/_models_wire.py:79-79; mcp/src/agents_remember/serving/conversation/models.py:96-97 |
+| `ActiveConversationRef` and `AuthorizationBinding` carry the identity/caller fields every cursor binds. | "class ActiveConversationRef(NativeConversationRef):", "class AuthorizationBinding(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:112-112; mcp/src/agents_remember/serving/conversation/_models_wire.py:117-117 |
 | The service decodes and generation-checks every cursor before any stream exists. | "before_ordinal = decode_page_cursor(", "decoded = decode_event_cursor(", "require_same_generation(decoded" | mcp/src/agents_remember/serving/conversation/active/service.py:94-94; mcp/src/agents_remember/serving/conversation/active/service.py:114-115 |
 | The routes map dual resume inputs and every cursor error to typed pre-stream statuses. | `_map_typed_error`, `_resume_cursor` | mcp/src/agents_remember/serving/conversation/active/api.py:77-99; mcp/src/agents_remember/serving/conversation/active/api.py:111-123 |
 

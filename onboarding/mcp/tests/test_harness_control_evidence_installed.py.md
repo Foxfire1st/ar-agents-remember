@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_evidence_installed.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,7 +82,7 @@ evidence.
 | The redacted pi `substrate-evidence/*` rows this suite captures and honors. | "substrate-evidence/live-frames-page" | mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:40-40 |
 | The claude row whose version-mismatch reason this suite enforces. | "Installed 2.1.214 mismatches the locked 2.1.211 gate;" | mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:43-43 |
 | Foundation tests require non-enablement and a raw-free fixture set across these files. | `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement`; `test_runtime_fixtures_contain_no_raw_secret_path_or_conversation_material` | mcp/tests/test_conversation_foundation.py:163-188; mcp/tests/test_conversation_foundation.py:191-202 |
-| The deterministic contract suite whose fake-transport claims this file re-proves live. | `test_reserved_key_round_trip_and_no_leak`; `test_native_page_bridge_epoch_stamped_and_frames_validated`; `test_submission_provenance_all_sources_epoch_and_bounds`; `test_fixture_shaped_response_without_live_epoch_fails_validation` | mcp/tests/test_harness_control_evidence.py:370-418; mcp/tests/test_harness_control_evidence.py:743-786; mcp/tests/test_harness_control_evidence.py:816-897; mcp/tests/test_harness_control_evidence.py:899-922 |
+| The deterministic contract suite whose fake-transport claims this file re-proves live. | `test_reserved_key_round_trip_and_no_leak`; `test_native_page_bridge_epoch_stamped_and_frames_validated`; `test_submission_provenance_all_sources_epoch_and_bounds`; `test_fixture_shaped_response_without_live_epoch_fails_validation` | mcp/tests/test_harness_control_evidence.py:361-409; mcp/tests/test_harness_control_evidence_ipc.py:155-198; mcp/tests/test_harness_control_evidence_ipc.py:229-312; mcp/tests/test_harness_control_evidence_ipc.py:314-337 |
 
 ## Cross-Repo References
 
@@ -94,6 +94,8 @@ boundaries.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-03T03:11:47+02:00 — W3-B04 curator: curated 5 table citations (5 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 quality gate: the codex live test was split for C901, so

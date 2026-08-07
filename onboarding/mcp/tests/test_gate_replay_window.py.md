@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_gate_replay_window.py`   |
 | doc_type               | `file-level-onboarding`                  |
 | lastUpdated            | 2026-08-01T14:20+02:00                   |
-| lastVerifiedCommitHash |                                          `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |                                          2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash |                                          `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |                                          2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                            |
 
 ## Governing Overview
@@ -142,7 +142,7 @@ record. The rows below are each of them, plus the sibling suites that hold the o
 | Why the append now survives: the lock is unconditional across append and rewrite, and the rewrite never unlinks. | `exclusive_access`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:348-403; mcp/src/agents_remember/controlplane/durable_store.py:448-455 |
 | The suite that proves the same loss across all six record types and against the base commit; this file is the authority-level consequence of it. | `MultiProcessDurabilityTests` | mcp/tests/test_controlplane_store_durability.py:123-205 |
 | The precise version of the torn-line claim this file's fourth test states loosely. | `test_gate_enforcement_fold_refuses_a_torn_line` | mcp/tests/test_controlplane_store_durability.py:235-254 |
-| The policy tests around the same enforcement fold: `apply_gate` purity, every `evaluate_closeout_gate` branch, and the closeout helpers over a temp `GateStore`. | `ApplyGateTests`; `EvaluateCloseoutGateTests`; `CloseoutEnforcementHelperTests` | mcp/tests/test_controlplane_gates.py:771-785; mcp/tests/test_controlplane_gates.py:861-961; mcp/tests/test_controlplane_gates.py:964-1035 |
+| The policy tests around the same enforcement fold: `apply_gate` purity, every `evaluate_closeout_gate` branch, and the closeout helpers over a temp `GateStore`. | `ApplyGateTests`; `EvaluateCloseoutGateTests`; `CloseoutEnforcementHelperTests` | mcp/tests/test_controlplane_gates_closeout.py:36-50; mcp/tests/test_controlplane_gates_closeout.py:88-188; mcp/tests/test_controlplane_gates_closeout.py:191-262 |
 
 ## Cross-Repo References
 

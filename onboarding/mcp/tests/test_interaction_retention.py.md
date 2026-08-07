@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_interaction_retention.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T14:20+02:00                     |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -72,8 +72,8 @@ strict reader proves the records physically left rather than that a file disappe
 | Retention constants and policy helpers under test. | `INTERACTION_RECORD_TTL_SECONDS`; `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:16-16; mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
 | The compaction the test now drives directly, and the strict read it checks the result with; `_replace` routes through the contract's rewrite, which never unlinks. | `compact`; `read`; `_replace` | mcp/src/agents_remember/controlplane/store.py:120-130; mcp/src/agents_remember/controlplane/store.py:247-277; mcp/src/agents_remember/controlplane/store.py:316-325 |
 | The rewrite that makes "emptied, not unlinked" true for every store at once: an empty record set is written as an empty file. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:448-455 |
-| The projection this test now asserts is non-destructive, and its own record that the 30 s physical prune was removed because it ran in a process that owns nothing here. | `read_gates` | mcp/src/agents_remember/observer/snapshots.py:512-546 |
-| Agent-pickup projection exercised by the state test. | `read_agent_pickups` | mcp/src/agents_remember/observer/snapshots.py:549-594 |
+| The projection this test now asserts is non-destructive, and its own record that the 30 s physical prune was removed because it ran in a process that owns nothing here. | "def read_gates(coordination_root: Path, *, now: date" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104 |
+| Agent-pickup projection exercised by the state test. | "def read_agent_pickups(" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:142-142 |
 | The suite that measures the loss this test's removed rewrite was causing, across all six stores and against the leaf's base commit. | `MultiProcessDurabilityTests`; `TornLinePolicyTests` | mcp/tests/test_controlplane_store_durability.py:123-205; mcp/tests/test_controlplane_store_durability.py:208-336 |
 
 ## Update History

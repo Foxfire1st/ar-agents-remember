@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_control_installed.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ fixture id on the wire. Those last three stages live in
 `test_live_interrupt_settlement_queue_recovery_assets_and_telemetry`, sharing its one live harness
 and turn sequence, not standalone tests. cit:([`PiInstalledControlApiTests`], mcp/tests/test_conversation_control_installed.py:487-557): guarded abort
 accepted → settlement polls to `interrupted`; stale expected identity after settlement → 422
-rejected. cit:([`ClaudeInstalledHonestyTests`], mcp/tests/test_conversation_control_installed.py:560-578): the control gate stays `unverified` at the
+rejected. cit:([`ClaudeInstalledHonestyTests`], mcp/tests/test_conversation_control_installed.py:593-614): the control gate stays `unverified` at the
 installed-vs-locked version mismatch (a plain `TestCase`, no live harness needed).
 
 ### 260718-CHATS-L5 F1 — installed twin-suppression regression (real codex wire)
@@ -106,6 +106,8 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 3 citation rows and 3 historical prose citations with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 

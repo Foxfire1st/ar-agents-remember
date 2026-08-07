@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/observer/landing_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-12T17:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ No external Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Projector owns startup and cancellation. | `run` | mcp/src/agents_remember/serving/projector.py:193-236 |
-| Landing facts are merged into projected status. | `_safe_status_payload`; `refresh_engine_process_landing` | mcp/src/agents_remember/observer/snapshots.py:701-744; mcp/src/agents_remember/observer/snapshots.py:747-780 |
+| Landing facts are merged into projected status. | "def _safe_status_payload(  # pragma: no cover"; "def refresh_engine_process_landing(  # pragma: no cover" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:346-346; mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:299-299 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/observer/task_document_cache.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Task-document enumeration and parsing consumer. | `_iter_task_document_payloads` | mcp/src/agents_remember/observer/snapshots.py:147-165 |
+| Task-document enumeration and parsing consumer. | "def _iter_task_document_payloads(" | mcp/src/agents_remember/observer/snapshots_impl/_common.py:44-44 |
 | Cache scaling regressions. | `TaskDocumentPayloadCacheTests` | mcp/tests/test_task_document_payload_cache.py:18-96 |
 
 ## Cross-Repo References

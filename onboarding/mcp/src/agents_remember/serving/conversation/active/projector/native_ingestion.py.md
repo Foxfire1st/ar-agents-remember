@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Harness-specific mapping contracts. | `projector_for` | mcp/src/agents_remember/serving/conversation/projectors/__init__.py:120-121 |
-| Project-once and ordering regressions. | `test_settled_live_turns_project_once_when_native_ids_disjoint` | mcp/tests/test_conversation_active_service.py:329-414 |
+| Project-once and ordering regressions. | `test_settled_live_turns_project_once_when_native_ids_disjoint` | mcp/tests/test_conversation_active_service.py:320-405 |
 
 ## Cross-Repo References
 

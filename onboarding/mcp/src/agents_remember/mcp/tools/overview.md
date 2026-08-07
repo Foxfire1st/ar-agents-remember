@@ -226,7 +226,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| What each declaration hands its builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-1307 |
+| What each declaration hands its builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 | Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tool_registry.py:101-108 |
 | Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests` | mcp/tests/test_models.py:16-26 |
 | Conformance test validates every builder routes through `_tool_payload`. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/refs.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ service owns the app-scoped secret this module signs with.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `AuthorizationBinding` (principal/tenant) re-bound in every payload check. | `AuthorizationBinding` | mcp/src/agents_remember/serving/conversation/models.py:134-136 |
+| The `AuthorizationBinding` (principal/tenant) re-bound in every payload check. | "class AuthorizationBinding(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:117-117 |
 | The app-scoped control secret this module signs/verifies with. | "def secret" | mcp/src/agents_remember/serving/conversation/control/service.py:233-233 |
 | The L1 cursor authority whose signed-purpose-branded posture this mirrors. | "CURSOR_SCHEMA_VERSION = 1" | mcp/src/agents_remember/serving/conversation/active/cursor.py:34-34 |
 | Consumers: the queue projection mints operation/withdrawal refs; withdrawals/attachments decode and re-bind them. | "async def operation_queue" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:47-47 |

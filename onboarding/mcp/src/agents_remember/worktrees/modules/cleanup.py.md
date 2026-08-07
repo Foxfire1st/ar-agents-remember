@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:54+02:00     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -171,7 +171,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Shared drift snapshot removal helper used by cleanup. | `remove_drift_snapshot` | mcp/src/agents_remember/observer/drift_snapshots.py:25-33 |
 | `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, the remote timeout class `_remote_git` passes. | `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:71-71 |
 | `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. | `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:201-229 |
-| Worktree tests cover cleanup preconditions and completed cleanup state. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:573-3091 |
+| Worktree tests cover cleanup preconditions and completed cleanup state. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |
 
 ## Update History
 

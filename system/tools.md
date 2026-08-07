@@ -70,7 +70,7 @@ the gate cannot see it). `worktree_closeout_apply` handles this for you — it s
 whole worktree before gating and rolls that staging back if the gate refuses — but a
 hand-run has no such wrapper, so stage first.
 
-The wrapper runs `ruff check`, Pyright static type checking, Radon cyclomatic complexity and maintainability checks, `pytest` with coverage JSON, and CRAP-Calculator. Use the individual tool commands below for focused implementation checks.
+The wrapper runs `ruff check`, Pyright static type checking, Radon cyclomatic complexity and maintainability checks, `pytest` with coverage JSON, CRAP-Calculator, and the enforced **file-size rail** (`mcp/src/agents_remember/code_quality/file_size.py` — every file at or above the 1,200-line hard limit fails the run, with the 2,000+ architectural-failure and 4,000+ emergency-cleanup bands reported per finding). Radon CC/MI print their reports and exit 0: they report, they do not gate. Use the individual tool commands below for focused implementation checks.
 CRAP threshold enforcement is part of the default wrapper. Every function with
 a score at or above the configured threshold makes the wrapper exit non-zero; no
 additional threshold-enforcement flag is required. The default is
@@ -99,8 +99,10 @@ passed" when the tools emitted complexity, coverage, or threshold findings.
 ### Commit-Gate Enforcement
 
 Wherever the wrapper runs it runs in full: Ruff, Pyright, the whole pytest
-suite, and CRAP all fail the run; CRAP scores at or above 30 fail unless the
-repository intentionally configures another threshold.
+suite, CRAP, and the file-size detector all fail the run; Radon CC/MI report
+but never gate. CRAP scores at or above the configured threshold fail unless
+the repository intentionally configures another threshold — the default is
+`DEFAULT_CRAP_THRESHOLD = 20.0`, as stated above.
 
 The local hooks are **tiered** (260731-EFA-L1). Both `.githooks/pre-commit` and
 `.githooks/pre-push` are thin wrappers over `.githooks/_gate.sh`, which takes

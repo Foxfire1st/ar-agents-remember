@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_lifecycle_finalize.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-23T22:50+02:00                     |
-| lastVerifiedCommitHash |                                            `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                            2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                            `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |                                            2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -48,7 +48,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Finalizer behavior under test lives here. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:28-94 |
 | Task document read/write behavior used by the fixture lives here. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:109-173 |
-| Git fixture helpers come from the existing worktree support tests. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:573-3049 |
+| Git fixture helpers come from the existing worktree support tests. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |
 | Public response model registry is checked for the finalizer entry. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:181-185 |
 
 ## Update History

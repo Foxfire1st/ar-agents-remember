@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_carryover.py`              |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-18T20:03+02:00                     |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -72,8 +72,8 @@ typed parser are the authority evidence.
 | --- | --- | --- |
 | Carryover invokes official settings authority before any content/ledger/index/commit mutation. | `apply_carryover_for_request` | mcp/src/agents_remember/memory/carryover.py:776-862 |
 | Raw JSON/Markdown preflight mirrors typed parser semantics while rejecting default-only write authority. | `required_official_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
-| Authority matrix spans missing/invalid/empty/reset/unsupported refusals and retention/repopulation/fallback positive controls. | `test_missing_official_settings_refuses_before_any_mutation`; `test_supported_nonempty_path_rules_remain_authoritative`; `test_unsupported_markdown_storage_labels_refuse_before_any_mutation` | mcp/tests/test_carryover.py:374-387; mcp/tests/test_carryover.py:1059-1098; mcp/tests/test_carryover.py:1173-1207 |
-| Earlier evidence-tier and ledger-mapping coverage remains in worktree tests. | `test_memory_ledger_roundtrip_and_prepend`; `test_memory_carryover_applies_landed_branch_onboarding` | mcp/tests/test_worktree_support.py:843-854; mcp/tests/test_worktree_support.py:2949-3003 |
+| Authority matrix spans missing/invalid/empty/reset/unsupported refusals and retention/repopulation/fallback positive controls. | `test_missing_official_settings_refuses_before_any_mutation`; `test_supported_nonempty_path_rules_remain_authoritative`; `test_unsupported_markdown_storage_labels_refuse_before_any_mutation` | mcp/tests/test_carryover_apply_1.py:100-113; mcp/tests/test_carryover_apply_2.py:455-494; mcp/tests/test_carryover_apply_2.py:569-603 |
+| Earlier evidence-tier and ledger-mapping coverage remains in worktree tests. | `test_memory_ledger_roundtrip_and_prepend`; `test_memory_carryover_applies_landed_branch_onboarding` | mcp/tests/test_worktree_support_tests_1.py:329-340; mcp/tests/test_worktree_support_tests_3.py:488-542 |
 
 ## Cross-Repo References
 
@@ -85,6 +85,8 @@ test dependency.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 4 citation claims; scoped result 0 findings.
 
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: added full-apply JSON/Markdown official-settings

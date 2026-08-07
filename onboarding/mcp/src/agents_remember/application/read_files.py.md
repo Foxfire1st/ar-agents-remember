@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/read_files.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -159,7 +159,7 @@ ever appears it is honored once.
 | --- | --- | --- |
 | The thin payload wrapper that returns this application entry point's dict through the token choke point. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
 | The strict response contract this dict validates against; `FileRead.status` is typed by the `FileReadStatus` alias declared in that model. | `FileReadStatus` | mcp/src/agents_remember/models/read_files.py:29-29 |
-| `test_every_onboarding_status_the_read_entry_point_returns_validates` asserts the set `_resolve_onboarding` returns equals `VALID_FILE_READ_STATUSES`. | `test_every_onboarding_status_the_read_entry_point_returns_validates` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:778-785 |
+| `test_every_onboarding_status_the_read_entry_point_returns_validates` asserts the set `_resolve_onboarding` returns equals `VALID_FILE_READ_STATUSES`. | `test_every_onboarding_status_the_read_entry_point_returns_validates` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:775-782 |
 | Repo-resolution authority guard. | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
 | The authority-violation error raised on a bad batch/range/path. | `AuthorityError` | mcp/src/agents_remember/errors.py:17-23 |
 | The full read and the net-new ranged reader (`read_text_range`). | `read_text_range` | mcp/src/agents_remember/kernel/filesystem.py:44-62 |

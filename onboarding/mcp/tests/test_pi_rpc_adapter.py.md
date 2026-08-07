@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -123,7 +123,7 @@ normalized advertisement.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fake transport supplies reasoning/non-reasoning models, returns them from `get_available_models`, places a secret-shaped header in state, and emulates mutation responses, clamps, hangs, and catalog drift. | `_FakePiTransport` | mcp/tests/test_pi_rpc_adapter.py:52-293 |
+| The fake transport supplies reasoning/non-reasoning models, returns them from `get_available_models`, places a secret-shaped header in state, and emulates mutation responses, clamps, hangs, and catalog drift. | `_FakePiTransport` | mcp/tests/test_pi_rpc_adapter.py:47-292 |
 | `pi_rpc_launch` preserves the launch while adding RPC mode without changing other argv, cwd, settings, or environment. | `pi_rpc_launch` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:135-151 |
 | Adapter startup, transient discovery, cleanup, cached advertisement, and catalog/state validation are owned by the native Pi adapter. | `PiRpcAdapter`; `start`; `discover`; `advertise`; `_current_capabilities` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768 |
 | The adapter delegates both setters to one configuration transaction object with a configurable finite timeout. | `PiRpcAdapter`; `set_model`; `set_effort` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768 |
@@ -144,6 +144,8 @@ bytes on stale idle, absence of a native queue/steer flag, activity-token settle
 interaction completion, certified disconnect before dispatch, and no resend after acknowledgement.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T13:54+02:00 — 260731-EFA-L6 S18-B13 curator: narrowed the launch row to its exact protocol owner and reissued the whole claim for same-reviewer closure.
 

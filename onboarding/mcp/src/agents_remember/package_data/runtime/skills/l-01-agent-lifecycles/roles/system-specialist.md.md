@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/system-specialist.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 
 ## Purpose
 
@@ -67,7 +67,7 @@ response protocol (task doc `08_degradation-protocol-and-system-specialist.json`
 | Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — System Specialist` | skills/l-01-agent-lifecycles/roles/system-specialist.md:1-102 |
 | The detector this seat investigates: degradation events, metrics snapshot, critical failsafe. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
 | The orchestrator role file that dispatches this seat on a degradation-alert and reads its report. | `## Provider Degradation Alert` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:111-131 |
-| The role census / escalation ladder registering `system-specialist` as the ninth portable role. | "system-specialist" | mcp/src/agents_remember/kernel/agentic_settings.py:116-116 |
+| The role census / escalation ladder registering `system-specialist` as the ninth portable role. | "system-specialist" | skills/l-01-agent-lifecycles/templates/manager-brief.md:48-48 |
 | The inbox role/message-kind schema this seat is addressed through (`AgentRole.system-specialist`, `degradation-alert`). | `AgentRole`, "degradation-alert" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:17-31; mcp/src/agents_remember/controlplane/operator_inbox_records.py:39-39 |
 
 ## Cross-Repo References

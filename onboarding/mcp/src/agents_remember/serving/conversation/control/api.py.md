@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T09:28+02:00 |
-| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -127,13 +127,13 @@ foundation suite pins the exact seventeen routes.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The three interrupt routes delegate to the operations ledger's whole public surface: `interrupt`, `interrupt_status`, and the `interrupt_http_status` mapping. | `__all__` | mcp/src/agents_remember/serving/conversation/control/operations.py:564-564 |
-| Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`). | "class ConversationTelemetry" | mcp/src/agents_remember/serving/conversation/models.py:1255-1255 |
+| Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`). |"class ConversationTelemetry"|mcp/src/agents_remember/serving/conversation/_models_telemetry.py:70-70|
 | The read-only effective-policy wire models (`PolicyPart`, `ConversationPolicyProjection`) and the `conversation_policy` projector behind `GET .../conversation/policy`. | `conversation_policy` | mcp/src/agents_remember/serving/conversation/control/policy.py:58-101 |
 | The two L0 request dependencies every handler consumes. | `__all__` | mcp/src/agents_remember/serving/conversation/dependencies.py:39-39 |
 | The foundation regression pins the exact seventeen owned routes (GET-only on policy/telemetry/queue/pending). | `control_paths` | mcp/tests/test_conversation_foundation.py:58-62 |
 | The shared `CONTROL_RESPONSES` table plus the two outcome tables and the three route-assembled models these routes declare. | `CONTROL_RESPONSES`; `INTERRUPT_OUTCOME_RESPONSES`; `WITHDRAW_OUTCOME_RESPONSES`; `StagedAttachments`; `ConversationSubmitted` | mcp/src/agents_remember/serving/conversation/response_contract.py:57-61; mcp/src/agents_remember/serving/conversation/response_contract.py:64-78; mcp/src/agents_remember/serving/conversation/response_contract.py:95-108; mcp/src/agents_remember/serving/conversation/response_contract.py:140-153; mcp/src/agents_remember/serving/conversation/response_contract.py:160-173 |
 | The two 422-carrying control errors that force `/conversation/submit`'s 422 to union the shared refusal with the success model. | `CapabilityRefusedError`; `OperationRejectedError` | mcp/src/agents_remember/serving/conversation/control/service.py:123-127; mcp/src/agents_remember/serving/conversation/control/service.py:130-134 |
-| The suite that enforces the declarations, drives all seventeen routes, and validates in alias form only (`by_name=False`) so camelCase is pinned. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:783-1861 |
+| The suite that enforces the declarations, drives all seventeen routes, and validates in alias form only (`by_name=False`) so camelCase is pinned. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:792-899 |
 
 ## Cross-Repo References
 

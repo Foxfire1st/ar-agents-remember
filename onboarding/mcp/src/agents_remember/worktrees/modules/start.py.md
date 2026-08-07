@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -215,7 +215,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:20-82 |
 | Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
-| Worktree tests cover memory compatibility, disabled-memory choices, and dirty external-memory blocking. | `test_memory_base_for_source_uses_source_branch_tip_not_head`, `test_start_reports_compatible_external_memory`, `test_start_reports_internal_memory_mode`, `test_start_blocks_dirty_external_memory_source` | mcp/tests/test_worktree_support.py:667-684; mcp/tests/test_worktree_support.py:1222-1261; mcp/tests/test_worktree_support.py:1263-1295; mcp/tests/test_worktree_support.py:1297-1319 |
+| Worktree tests cover memory compatibility, disabled-memory choices, and dirty external-memory blocking. | `test_memory_base_for_source_uses_source_branch_tip_not_head`, `test_start_reports_compatible_external_memory`, `test_start_reports_internal_memory_mode`, `test_start_blocks_dirty_external_memory_source` | mcp/tests/test_worktree_support_tests_1.py:153-170; mcp/tests/test_worktree_support_tests_1.py:668-707; mcp/tests/test_worktree_support_tests_1.py:709-741; mcp/tests/test_worktree_support_tests_1.py:743-765 |
 | Launcher, ordering, retry, and guard coverage for the async path. | `test_successful_setup_writes_state_file_and_finishes_ok`, `test_contract_is_written_before_provider_launch`, `test_retry_refused_while_setup_is_running`, `test_retry_relaunches_after_failure`, `test_cleanup_blocks_while_setup_running`, `test_abandon_blocks_without_force_while_setup_running` | mcp/tests/test_provider_async.py:99-122; mcp/tests/test_provider_async.py:220-263; mcp/tests/test_provider_async.py:326-336; mcp/tests/test_provider_async.py:338-363; mcp/tests/test_provider_async.py:376-386; mcp/tests/test_provider_async.py:388-398 |
 | Background launcher and status projection. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/worktrees/modules/provider_async.py:58-69; mcp/src/agents_remember/worktrees/modules/provider_async.py:72-120; mcp/src/agents_remember/worktrees/modules/provider_async.py:123-146; mcp/src/agents_remember/worktrees/modules/provider_async.py:149-154 |
 | mtime-sync unit tests cover matching-file sync, target-only file preservation, `.git` skip, and dry-run no-op. | `test_syncs_matching_files_to_source_mtime`, `test_target_only_file_is_left_untouched`, `test_git_dir_is_skipped`, `test_dry_run_changes_nothing` | mcp/tests/test_worktree_mtime_sync.py:51-57; mcp/tests/test_worktree_mtime_sync.py:59-61; mcp/tests/test_worktree_mtime_sync.py:63-66; mcp/tests/test_worktree_mtime_sync.py:68-71 |

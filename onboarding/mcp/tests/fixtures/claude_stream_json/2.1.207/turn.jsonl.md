@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/claude_stream_json/2.1.207/turn.jsonl` |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-04T00:41+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00 |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ fixture cohorts as schema authority, while the active adapter suite is explicitl
 | The specimen contains the API retry system frame. | `api_retry` | mcp/tests/fixtures/claude_stream_json/2.1.207/turn.jsonl:3-3 |
 | The specimen contains the successful terminal result. | `result` | mcp/tests/fixtures/claude_stream_json/2.1.207/turn.jsonl:4-4 |
 | The Claude projector names both locked fixture cohorts as schema authority; that is evidence provenance, not a direct file consumer. | `Schema` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:3-3 |
-| The focused loader is fixed to 2.1.210, and the correlated-turn regression obtains `turn.jsonl` through that loader rather than this path. | `FIXTURE_ROOT`; `_load_fixture`; `test_correlated_acceptance_retry_activity_and_terminal_result_are_distinct` | mcp/tests/test_harness_control_claude.py:40-40; mcp/tests/test_harness_control_claude.py:49-50; mcp/tests/test_harness_control_claude.py:614-655 |
+| The focused loader is fixed to 2.1.210, and the correlated-turn regression obtains `turn.jsonl` through that loader rather than this path. | "FIXTURE_ROOT = Path(__file__).parent / \"fixtures\" / \"claude_stream_json\" / \"2.1.210\""; "def _load_fixture(name: str) -> list[dict[str, object]]:"; `test_correlated_acceptance_retry_activity_and_terminal_result_are_distinct` | mcp/tests/test_harness_control_claude.py:32-32; mcp/tests/test_harness_control_claude.py:41-42; mcp/tests/test_harness_control_claude_stream_1.py:392-433 |
 
 ## Update History
 - 2026-08-04T03:21:00+02:00 — S18-SR3-B05 curator: retained the factually exact isReplay line-1 binding and regenerated only api_retry/result with the locked scoped fixer; inspected both generated ranges and preserved approved semantics.

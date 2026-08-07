@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:12+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -125,7 +125,7 @@ field, and `produced == declared` equality against the `VALID_*` frozensets).
 | Lifecycle finalizer response registered here is a strict AR-owned tool response, `LifecycleFinalizeTaskResponse`. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycle_finalize.py:12-32 |
 | Terminal responses registered here — `AttachTerminalSessionToLeafResponse`, `SpawnAgentSessionResponse`, `SessionRetireResponse`, and `SessionRenameResponse` — are strict AR-owned tool responses. | `AttachTerminalSessionToLeafResponse`; `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:30-42; mcp/src/agents_remember/models/terminal.py:80-122; mcp/src/agents_remember/models/terminal.py:162-178; mcp/src/agents_remember/models/terminal.py:188-199 |
 | `ResponseEnvelope` — the union both registries are annotated with, and the two envelope bases carrying `nextStep`/`supervisorBanner`. | `ResponseEnvelope` | mcp/src/agents_remember/models/base.py:93-93 |
-| The suite that pins the value-set axis: `produced == declared` for each `VALID_*` frozenset, the AST scan of every literal written at a contract cell, and the guidance state-machine walk. | `GuidanceWalkTests`; `ProducedLiteralTests`; `AdvertisedVocabularyTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:240-304; mcp/tests/test_wire_vocabulary_exhaustiveness.py:635-820; mcp/tests/test_wire_vocabulary_exhaustiveness.py:823-881 |
+| The suite that pins the value-set axis: `produced == declared` for each `VALID_*` frozenset, the AST scan of every literal written at a contract cell, and the guidance state-machine walk. | "class GuidanceWalkTests(unittest.TestCase):"; "class ProducedLiteralTests(unittest.TestCase):"; "class AdvertisedVocabularyTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:230-294; mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:45-45; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:450-450 |
 
 ## 260712-TRH-L4 Final Candidate
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -206,14 +206,14 @@ No external Domain Documentation source is configured for this memory repo.
 | `status_payload` composes the best-effort landing arc (remote/PR probe) via this module. | `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:461-463 |
 | `carryover_done` reads the official ledger via `load_ledger`/`find_mapping`. | "row = find_mapping(load_ledger(ledger_path), landed)" | mcp/src/agents_remember/worktrees/modules/guidance.py:221-221 |
 | Cleanup hard-guards on `carryover_done` before deleting the parked memory branch. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/cleanup.py:432-437 |
-| The `carryover-pending`/`cleanup-pending` routing + `carryover_done` are pinned here. | "def test_routes_carryover_pending_when_not_carried(self, cd: MagicMock) -> None:"; "def test_routes_cleanup_pending_with_done_at_when_carried(self, cd: MagicMock) -> None:" | mcp/tests/test_cleanup_carryover.py:166-166; mcp/tests/test_cleanup_carryover.py:173-173 |
+| The `carryover-pending`/`cleanup-pending` routing + `carryover_done` are pinned here. | "def test_routes_carryover_pending_when_not_carried(self, cd: MagicMock) -> None:"; "def test_routes_cleanup_pending_with_done_at_when_carried(self, cd: MagicMock) -> None:" | mcp/tests/test_cleanup_carryover.py:173-173; mcp/tests/test_cleanup_carryover.py:180-180 |
 | `WorktreeSummary` imports `WorktreePhase` / `NextOperation` / `NextTool` from this module rather than restating them. | "    NextOperation,"; "    NextTool,"; "    WorktreePhase," | mcp/src/agents_remember/models/worktree.py:16-18 |
 | The six persisted contract vocabularies imported for `WorktreeStatusFacts`. | `WorkflowKind`, `MemoryMode`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus` | mcp/src/agents_remember/worktrees/worktree_contract.py:63-68 |
 | `unknown_cells` is the source of `unknown_contract_cells`. | `unknown_cells` | mcp/src/agents_remember/worktrees/worktree_contract.py:287-287 |
 | Three of the five `recovery_guidance` callers: the blocked memory, provider-setup and stale-base starts. | "choose_memory_recovery"; "choose_provider_setup_recovery"; "choose_stale_base_recovery" | mcp/src/agents_remember/worktrees/modules/start.py:121-121; mcp/src/agents_remember/worktrees/modules/start.py:177-177; mcp/src/agents_remember/worktrees/modules/start.py:356-356 |
 | The fourth: the closeout preview's `request_commit_approval` gate. | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/closeout.py:382-382 |
 | The fifth: `_memory_sync_block`'s `choose_memory_sync_recovery`. | "def _memory_sync_block("; "choose_memory_sync_recovery" | mcp/src/agents_remember/worktrees/modules/sync.py:149-149; mcp/src/agents_remember/worktrees/modules/sync.py:165-165 |
-| The two named exhaustiveness tests are defined in this module. | "def test_every_contract_literal_validates_at_its_wire_field(self) -> None:"; "def test_a_live_contract_projects_onto_the_wire_model(self) -> None:" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:638-638; mcp/tests/test_wire_vocabulary_exhaustiveness.py:1191-1191 |
+| The two named exhaustiveness tests are defined in this module. |"def test_every_contract_literal_validates_at_its_wire_field(self) -> None:"; "def test_a_live_contract_projects_onto_the_wire_model(self) -> None:"|mcp/tests/test_wire_vocabulary_exhaustiveness.py:635-635; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:413-413|
 
 ## Invariants And Boundaries
 

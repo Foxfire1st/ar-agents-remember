@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/projectors/common.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,7 +82,7 @@ validate every emitted product.
 | Echo ingestion takes the same containment for a submission echo it cannot parse. | `EchoIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:35-187 |
 | `ProjectionMutationStream.apply_outputs` routes `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` into the store and buffers `MappedTurnOutcome` as the pending terminal. | `ProjectionMutationStream` | mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py:49-197 |
 | The rebuild coordinator resolves pending user-item provenance in a bounded batch and applies each record to the store. | `RebuildCoordinator` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:63-192 |
-| `ProvenanceEvidence` and the strict item validator define the products these builders fill. | `ProvenanceEvidence` | mcp/src/agents_remember/serving/conversation/models.py:193-199 |
+| `ProvenanceEvidence` and the strict item validator define the products these builders fill. | "class ProvenanceEvidence(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:176-176 |
 
 ## Cross-Repo References
 

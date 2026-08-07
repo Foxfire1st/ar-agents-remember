@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:42+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -90,7 +90,7 @@ cleanup now share one filename contract.
 | The tool response model that validates the same packet. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:13-27 |
 | The drift-snapshot dir + schema the b1 write targets (shared with the reader). | `DRIFT_SNAPSHOT_SCHEMA` | mcp/src/agents_remember/observer/paths.py:24-24 |
 | The shared drift-snapshot filename helper now used by the producer. | `drift_snapshot_path` | mcp/src/agents_remember/observer/drift_snapshots.py:19-22 |
-| The observer reader that consumes the persisted snapshot. | `read_drift_snapshots` | mcp/src/agents_remember/observer/snapshots.py:933-969 |
+| The observer reader that consumes the persisted snapshot. | "def read_drift_snapshots(coordination_root: Path, *, now: datetime) -> list[DriftSnapshotNode]:" | mcp/src/agents_remember/observer/snapshots_impl/_analytics.py:80-80 |
 | `_write_drift_snapshot` persists source/memory/report provenance beside counts and rows. | `_write_drift_snapshot` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:109-148 |
 
 ## Update History

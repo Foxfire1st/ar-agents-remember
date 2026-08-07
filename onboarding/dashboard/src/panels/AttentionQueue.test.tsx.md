@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/AttentionQueue.test.tsx`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-28T07:32+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ yet), so no "Open" or dismissal affordance is asserted.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The panel under test (generic severity-keyed rendering). | `item`; `AttentionQueueImpl` | dashboard/src/panels/AttentionQueue.tsx:21-40; dashboard/src/panels/AttentionQueue.tsx:271-323 |
-| The reducer source of the `blocked-start` item (§9). | `_start_attention` | mcp/src/agents_remember/observer/reducer.py:968-991 |
+| The reducer source of the `blocked-start` item (§9). | "def _start_attention(start_progress: list[dict[str, Any]]) -> list[AttentionItem]:" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:335-335 |
 | The store `applySnapshot` path used by this fixture's projection seed. | `applySnapshot` | dashboard/src/panels/AttentionQueue.test.tsx:59-59 |
 | Targetless actionable drift dismissal hides immediately and posts a nullable lifecycle target. | "dismisses actionable drift without a lifecycle target and hides it immediately" | dashboard/src/panels/AttentionQueue.test.tsx:129-145 |
 | Clear all includes gate, lifecycle, and actionable-drift rows but skips worktree alarms. | "Clear all dismisses dismissible listed items, not worktree alarms" | dashboard/src/panels/AttentionQueue.test.tsx:147-193 |

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/contract_snapshot.py`  |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-12T20:02+02:00                                   |
-| lastVerifiedCommitHash |                                                          `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                                          2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                                          `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |                                                          2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -111,7 +111,7 @@ build; the three consumers accept the snapshot via keyword-only injection.
 | The enumeration and contract parser this module reuses (one parser per surface, owned by its producer). | "import iter_leaf_enclosure_contracts" | mcp/src/agents_remember/observer/contract_snapshot.py:29-29 |
 | `projection_store` owns the module-level `_contract_snapshot_cache` (with the three-walks rationale) and injects it into the per-tick `ProjectionInputState`. | "class ProjectionTickState" | mcp/src/agents_remember/observer/projection_store.py:201-201 |
 | `ProjectionInputState` holds the injected cache, builds the snapshot once per tasks refresh, and hands that one `ContractSnapshot` to `read_enclosures`, `read_engine_process_facts`/`refresh_engine_process_landing`, and drift-snapshot pruning. | "class ProjectionInputState" | mcp/src/agents_remember/observer/projection_inputs.py:189-189 |
-| `read_enclosures` and `read_engine_process_facts` take the keyword-only injected snapshot; `contracts=None` builds a local one with identical behavior. | "def read_enclosures" | mcp/src/agents_remember/observer/snapshots.py:468-468 |
+| `read_enclosures` and `read_engine_process_facts` take the keyword-only injected snapshot; `contracts=None` builds a local one with identical behavior. |"def read_enclosures"|mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:59-59|
 | Drift-snapshot pruning consumes the same snapshot, removing the third per-tick walk. | "def prune_orphaned_drift_snapshots" | mcp/src/agents_remember/observer/drift_snapshots.py:36-36 |
 | `ContractSnapshotSharedPassTests` pins N-then-zero-then-one parse counts, one enumeration per full tick, output parity with and without the shared snapshot, live-set retention, the chmod-000 and utime-pinned-rewrite ctime hardening, and malformed-contract retry-every-build. | `ContractSnapshotSharedPassTests` | mcp/tests/test_projection_scaling_cs6.py:590-858 |
 

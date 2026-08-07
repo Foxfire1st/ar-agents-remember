@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/claude_stream_json/2.1.210/initialization.jsonl` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-15T20:08+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -63,8 +63,8 @@ token-free discovery sequence and the normalized catalog projection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture loader selects the 2.1.210 directory and parses each JSONL frame. | `_load_fixture` | mcp/tests/test_harness_control_claude.py:49-50 |
-| Discovery and running advertise consume the initialization and catalog frames without a model turn. | `test_discover_uses_only_token_free_bootstrap_and_list_models` | mcp/tests/test_harness_control_claude.py:256-276 |
+| The fixture loader selects the 2.1.210 directory and parses each JSONL frame. | `_load_fixture` | mcp/tests/test_harness_control_claude.py:41-42 |
+| Discovery and running advertise consume the initialization and catalog frames without a model turn. | `test_discover_uses_only_token_free_bootstrap_and_list_models` | mcp/tests/test_harness_control_claude_stream_1.py:33-53 |
 | The dedicated parser validates model identity, model-local effort, disabled state, and current-model selection. | `parse_list_models_response` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32 |
 
 ## Cross-Repo References

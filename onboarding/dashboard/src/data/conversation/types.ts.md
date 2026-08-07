@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/types.ts`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-26T15:40+02:00                           |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`       |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -93,7 +93,7 @@ reviewed task evidence for any current behavioral claim.
 | The reducer consumes these item/block/event/status types. | "export function applyInitialPage" | dashboard/src/data/conversation/reducer.ts:168-168 |
 | The roster derivation + focus model consumes `ConversationAgentRef`/`ConversationAgentStatus` and reads `ConversationItem.agent`. | "export function deriveAgents" | dashboard/src/data/conversation/agents.ts:71-71 |
 | The client + stream mirror these page/telemetry/interrupt/error shapes. | "export async function fetchConversationTelemetry", "export const STREAM_OPEN_DEADLINE_MS" | dashboard/src/data/conversation/client.ts:101-101; dashboard/src/data/conversation/stream.ts:30-30 |
-| The server wire contract this file mirrors exactly (camelCase `to_camel`). | "class ConversationEventEnvelope" | mcp/src/agents_remember/serving/conversation/models.py:633-633 |
+| The server wire contract this file mirrors exactly (camelCase `to_camel`). |"class ConversationEventEnvelope"|mcp/src/agents_remember/serving/conversation/_models_status.py:232-232|
 | The stale L1 control/telemetry capability view (`controls.interrupt`). | "def _fixture_evidence" | mcp/src/agents_remember/serving/conversation/active/capabilities.py:56-56 |
 
 ## Cross-Repo References

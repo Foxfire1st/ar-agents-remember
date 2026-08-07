@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-01T14:05+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-08-07T23:35:00+02:00 |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -394,7 +394,13 @@ site, `test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `tes
 `resolveJsonModule` widens to `string` — not a one-way `⊆`. **The third link is held by nothing:
 `snapshot.json` ↔ `observer/projection.py` is maintained by hand.**
 
+## 260731-EFA-L7 — Session-Cockpit Live Thinking
+
+The session-cockpit route gained the L7 live-thinking coalescing (one stable `thinking` row per active turn, animated indicator, completion cleanup) and its interleaved acceptance pins in the conversation-timeline family. The file-size rail covers this route's TS/TSX under `dashboard/src`.
+
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the live-thinking coalescing and file-size coverage for session-cockpit. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (sessions-view split, parts modules, e2e app fixes). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 10 route-reference rows and 3 prose citation groups, including the contract-test and harness-response evidence; no route behavior claims were changed.

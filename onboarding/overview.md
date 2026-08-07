@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-08-07T23:35:00+02:00 |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 
 > **Status:** active baseline
 
@@ -1035,7 +1035,13 @@ by mutable authority, and workspace projection ticks gained exact domain invalid
 per-file task parsing. The repository's public capability, task, and dashboard surfaces are
 unchanged; ownership and failure containment are now explicit in their route overviews.
 
+## 260731-EFA-L7 — File-Size Rail And In-Place Facade Splits
+
+This master leaf armed the file-size detector (`code_quality/file_size.py`, hard limit 1,200 / architectural failure 2,000+ / emergency cleanup 4,000+, `wc -l` counting, enforced in the project wrapper via `file_size_armed`) and closed the standard's scope loophole (Python source + tests + `dashboard/src` TS/TSX; narrowed "explicitly boring" exception). Over-limit modules were split in place into facades plus private responsibility modules under `kernel/`, `observer/snapshots_impl/`, `observer/reducer_impl/`, and `serving/`, each facade surface pinned mechanically. The test tree was split into in-place families (79 new modules) and CRAP/coverage scope now includes the test roots.
+
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the armed file-size rail, the scope closure, and the in-place facade/test-family splits. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section (ESLint rail, size splits, coverage/budget/knip/trap, Playwright, hooks, Python ripple). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the code-quality and docs-index claims through their operative sections and regenerated the final ranges with the scoped fixer.

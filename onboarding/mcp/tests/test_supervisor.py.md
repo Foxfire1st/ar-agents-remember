@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_supervisor.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T19:49+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -198,18 +198,18 @@ spec.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: every predicate, the action dispatcher, and the sweep entry point. | `evaluate_escalation_findings`; `act_on_finding`; `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:400-429; mcp/src/agents_remember/serving/supervisor.py:1176-1189; mcp/src/agents_remember/serving/supervisor.py:1195-1282 |
+| The module under test: every predicate, the action dispatcher, and the sweep entry point. | "def evaluate_escalation_findings("; "def act_on_finding("; `run_supervisor_sweep` | mcp/src/agents_remember/serving/_supervisor_actions.py:729-729; mcp/src/agents_remember/serving/_supervisor_evaluation.py:313-313; mcp/src/agents_remember/serving/supervisor.py:96-193 |
 | The heartbeat store the zero-drift and second-sweep tests exercise directly. | `SupervisorHeartbeatStore` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-121 |
 | The terminal catalog declares the typed `Literal` aliases. | `Literal` | mcp/src/agents_remember/serving/terminal_catalog.py:42-44 |
-| The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_supervisor.py:72-96 |
-| The fake-host casting convention this suite reuses rather than inventing its own duck-typing idiom. | `_FakeTerminalHost`; `TerminalHost` | mcp/tests/test_terminal_ws.py:44-44; mcp/tests/test_terminal_ws.py:234-389; mcp/tests/test_terminal_ws.py:441-441; mcp/tests/test_terminal_ws.py:1024-1024 |
+| The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_supervisor.py:60-84 |
+| The fake-host casting convention this suite reuses rather than inventing its own duck-typing idiom. | `_FakeTerminalHost`; "class TerminalHost:" | mcp/src/agents_remember/serving/terminal.py:109-109; mcp/tests/test_terminal_ws.py:227-387 |
 | The pure ladder walker the escalation predicate/integration tests exercise indirectly through the sweep. | `rung_due`; `next_step`; `seat_is_suspect` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152; mcp/src/agents_remember/controlplane/escalation_ladder.py:155-187 |
 | The orphan-detection hook the dead-manager-with-live-workers fixture asserts surfaces both workers. | `find_orphaned_workers` | mcp/src/agents_remember/controlplane/orphan_policy.py:18-30 |
 | The operator-inbox terminal state and compaction semantics used by the L8 sweep tests. | `mark_ladder_resolved`; `list_redeliverable` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:105-125; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:319-341 |
 | The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `SupervisorSignalCooldownStore` | mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215 |
-| The F1 regression pin proves hosted-delivery failures stay below the generic ladder until persistent retry exhaustion. | `test_delivery_failure_waits_for_retry_exhaustion_before_escalating` | mcp/tests/test_supervisor.py:747-777 |
-| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | `_delivery_failure_still_retrying`; `evaluate_escalation_findings` | mcp/src/agents_remember/serving/supervisor.py:376-384; mcp/src/agents_remember/serving/supervisor.py:400-429 |
-| HFX2-L9 tests cover signal cooldown and diagnostic-pane non-actionability. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row`; `test_diagnostic_pane_signal_is_not_actionable` | mcp/tests/test_supervisor.py:600-635; mcp/tests/test_supervisor.py:671-691 |
+| The F1 regression pin proves hosted-delivery failures stay below the generic ladder until persistent retry exhaustion. | `test_delivery_failure_waits_for_retry_exhaustion_before_escalating` | mcp/tests/test_supervisor_ladder.py:49-79 |
+| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | "def _delivery_failure_still_retrying(entry: OperatorInboxEntry) -> bool:"; "def evaluate_escalation_findings(" | mcp/src/agents_remember/serving/_supervisor_evaluation.py:289-289; mcp/src/agents_remember/serving/_supervisor_evaluation.py:313-313 |
+| HFX2-L9 tests cover signal cooldown and diagnostic-pane non-actionability. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row`; `test_diagnostic_pane_signal_is_not_actionable` | mcp/tests/test_supervisor_seat.py:373-408; mcp/tests/test_supervisor_seat.py:444-464 |
 
 ## Cross-Repo References
 
@@ -231,6 +231,8 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: split terminal-catalog aliases from the consuming supervisor fixture builder; the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2: recorded the `_entry` rewrite this leaf already made to

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_document_payload_cache.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,7 +21,10 @@ entries at two corpus sizes.
 
 ## Code Commentary
 
-### Logic
+#
+
+- 260731-EFA-L7 (trace delta): the task-document payload-cache suite is retained as a family entry of the split `test_task_document_*` modules; assertions unchanged.
+## Logic
 
 The suite counts reader calls across an initial corpus, an unchanged pass, and a pass with
 changed, added, and removed files. It verifies both returned payloads and retained entry count.
@@ -55,6 +58,10 @@ No Domain Documentation source is configured.
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the task-document payload-cache suite is retained as a family entry of ...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` row with an
   exact anchor and source-backed range; exact non-fixing check returns zero findings.

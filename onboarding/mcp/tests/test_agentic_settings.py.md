@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -162,7 +162,7 @@ No known follow-up in this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The loader under test. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:445-480 |
+| The loader under test. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:217-252 |
 | The harness registry bounding harness-id validation. | `find_harness` | mcp/src/agents_remember/serving/harnesses.py:61-70 |
 | Supervisor-family tests pin the `signalCooldownSeconds` default/full-block parse and sub-900 floor refusals. | `test_supervisor_knobs_parse`; `test_supervisor_signal_cooldown_must_be_at_least_15_minutes` | mcp/tests/test_agentic_settings.py:426-445; mcp/tests/test_agentic_settings.py:463-465 |
 

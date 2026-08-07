@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_active_projectors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T14:31Z |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,7 +87,7 @@ repository-owned and cited in the mapper sidecars.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The codex mapper under test: live discrimination, thread items, deltas, turn outcomes. | `map_evidence_frame` | mcp/src/agents_remember/serving/conversation/projectors/codex.py:148-201 |
+| The codex mapper under test: live discrimination, thread items, deltas, turn outcomes. | `map_evidence_frame` | mcp/src/agents_remember/serving/conversation/projectors/codex.py:146-199 |
 | The claude mapper under test: frame mapping plus the exact submission echo. | `map_evidence_frame`; `map_transcript_echo` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:210-239; mcp/src/agents_remember/serving/conversation/projectors/claude.py:621-662 |
 | The pi mapper under test: entry mapping plus live tool upserts. | `map_native_frame`; `map_evidence_frame`; `_live_tool_item` | mcp/src/agents_remember/serving/conversation/projectors/pi.py:56-109; mcp/src/agents_remember/serving/conversation/projectors/pi.py:112-167; mcp/src/agents_remember/serving/conversation/projectors/pi.py:429-461 |
 | The mapper output vocabulary the assertions match. | `MappedItem`; `MappedBlockDelta`; `MappedTurnOutcome` | mcp/src/agents_remember/serving/conversation/projectors/common.py:56-60; mcp/src/agents_remember/serving/conversation/projectors/common.py:63-69; mcp/src/agents_remember/serving/conversation/projectors/common.py:72-78 |

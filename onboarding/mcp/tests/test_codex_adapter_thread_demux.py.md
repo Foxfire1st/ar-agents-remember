@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_adapter_thread_demux.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,7 +27,10 @@ raising queue-full.
 
 ## Code Commentary
 
-### Logic
+#
+
+- 260731-EFA-L7 (trace delta): the thread-demux suite now anchors against the `codex_app_server_adapter.py` surface and the `FakeCodexTransport` test double in `test_codex_app_server_adapter.py`; assertions unchanged.
+## Logic
 
 Seventeen async tests drive the real `CodexAppServerAdapter` over the shared
 `FakeCodexTransport`/`prime_start` seam from `test_codex_app_server_adapter`, with wire
@@ -157,6 +160,10 @@ the acquisition implementation is now contract-probed rather than a direct whole
 
 ## Update History
 
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the thread-demux suite now anchors against the `codex_app_server_adapte...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
 - 2026-08-03T11:10+02:00 — 260731-EFA-L6 W3-B07 curator: repaired 8 of 8 retained citation findings (6 table anchor/source findings and 2 prose citations). Deleted the external Codex vendor-suite row (2 diagnostics) under the max-reviewer 2026-08-02 14:10 disposition because its source is outside the frozen roots.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the `PLR0913` pass reached the wire fixtures, so
@@ -186,7 +193,7 @@ the acquisition implementation is now contract-probed rather than a direct whole
   loud), the bounded pending map declining only the newest request, and the load-shed
   queue pins (delta flood sheds oldest deltas with structural completions surviving, the
   consumer-side notice mint, and the notice-before-close-sentinel ordering). Refreshed
-  the import-block citations (cit:([`CodexAppServerAdapter`, `FakeCodexTransport`], mcp/tests/test_codex_adapter_thread_demux.py:31-55)) and the per-test anchors. Verification metadata
+  the import-block citations (cit:(["class CodexAppServerAdapter:", "class FakeCodexTransport:"], mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-91; mcp/tests/test_codex_app_server_adapter.py:45-45)) and the per-test anchors. Verification metadata
   stays pinned — the change is uncommitted.
 - 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: created the sidecar for the new
   thread-demux incident-regression suite (R1; review R5 degrade/registry-eviction pins).

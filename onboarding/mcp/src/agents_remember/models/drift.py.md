@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/drift.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -54,7 +54,7 @@ context packet had not.
 | Context packet construction validates `_drift_packet` output with `DriftSummary.model_validate`; `_drift_packet` is typed as `DriftSummaryPacket`. | "drift=DriftSummary.model_validate"; "def _drift_packet"; "-> DriftSummaryPacket" | mcp/src/agents_remember/application/context_packet.py:97-97; mcp/src/agents_remember/application/context_packet.py:169-169; mcp/src/agents_remember/application/context_packet.py:173-173 |
 | The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes. | `DriftStatus`; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:17-25 |
 | Both wire models expose the shared `DriftStatus` and optional `error` diagnostic. | "class DriftSummary"; "class DriftCheckResponse"; "status: DriftStatus"; "error: str" | mcp/src/agents_remember/models/drift.py:13-14; mcp/src/agents_remember/models/drift.py:23-23; mcp/src/agents_remember/models/memory.py:13-13; mcp/src/agents_remember/models/memory.py:18-18; mcp/src/agents_remember/models/memory.py:23-23 |
-| These tests pin the drift diagnostic and both wire-model status validations. | `test_the_drift_error_diagnostic_survives_its_own_boundary`; `test_every_drift_status_validates_at_both_of_its_wire_models` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:731-736; mcp/tests/test_wire_vocabulary_exhaustiveness.py:767-776 |
+| These tests pin the drift diagnostic and both wire-model status validations. | `test_the_drift_error_diagnostic_survives_its_own_boundary`; `test_every_drift_status_validates_at_both_of_its_wire_models` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:728-733; mcp/tests/test_wire_vocabulary_exhaustiveness.py:764-773 |
 
 ## Update History
 

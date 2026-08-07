@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-12T17:40+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ evidence for this policy.
 | The aggregate reclamation plan is built from one reconstructed snapshot joined with catalog evidence. | `snapshot` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
 | Terminal catalog entries provide the status and ownership evidence. | `terminal` | mcp/src/agents_remember/serving/terminal_catalog.py:81-94 |
 | Reconstructed tmux snapshots provide the remaining ownership evidence. | `snapshot` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
-| The supervisor imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/supervisor.py:88-88 |
+| The supervisor imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/supervisor.py:70-70 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T11:06+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`|
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -173,7 +173,7 @@ negative — it is the assertion that would fail if a polarity field were reintr
 | The scenario fixtures it renders; `engine-cgc-seed-refused` now seeds `edges({ cgc: "stale", … })`. | `ENGINE_ROOM_SCENARIOS` | dashboard/src/panels/engine-room/fixtures.ts:721-1197 |
 | The T9B/T9C refused-conduit describe block, including the `data-state=stale` / `data-refused-polarity` null pair. | "renders the big red fleeting-enclosure box (BLOCKED title + reason + recovery) for a pre-contract block" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:38-45 |
 | `refusedPolarityOf` — the derivation the test's amber expectation depends on. | `refusedPolarityOf` | dashboard/src/panels/engine-room/geometry.ts:124-134 |
-| `_seed_edge_state` — why `stale` is the honest reroute state to assert. | `_seed_edge_state` | mcp/src/agents_remember/observer/reducer.py:1598-1614 |
+| `_seed_edge_state` — why `stale` is the honest reroute state to assert. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:634-634 |
 | The `ProviderNode` shape `WORKSPACE_ENGINES` builds. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:517-517 |
 | The jsdom stubs + determinism freeze. | "window.matchMedia = ((query" | dashboard/src/test/setup.ts:66-66 |
 

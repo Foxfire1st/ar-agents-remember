@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_ipc.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -122,12 +122,12 @@ parameter, whose `None` default keeps the parent-thread read byte-identical.
 | --- | --- | --- |
 | The bridge exposes live advertise and ordered setter operations only while running. | `submissions` | mcp/src/agents_remember/serving/harness_control_bridge.py:323-332 |
 | The bridge's `native_page` accepts the additive `thread_id` selector (`None` = parent thread) and forwards it to multiplexing adapters. | `native_page` | mcp/src/agents_remember/serving/harness_control_bridge.py:226-271 |
-| The blocking client validates exact identity and distinguishes pre-write from post-write loss. | "before any request bytes were accepted" | mcp/src/agents_remember/serving/harness_control_client.py:563-563 |
-| IPC tests pin capability actions, setters, same-id submit retention, response loss, and reconciliation. | `test_exact_session_ipc_advertises_and_returns_set_acceptance` | mcp/tests/test_harness_control.py:1485-1518 |
-| Evidence contract tests pin the three additive actions over a real socket: pages, continuation, cross-domain typed rejection, epoch mismatch, and provenance. | `test_evidence_action_round_trip_with_epoch_and_paging` | mcp/tests/test_harness_control_evidence.py:645-677 |
+| The blocking client validates exact identity and distinguishes pre-write from post-write loss. | "before any request bytes were accepted" | mcp/src/agents_remember/serving/harness_control_client.py:587-587 |
+| IPC tests pin capability actions, setters, same-id submit retention, response loss, and reconciliation. | `test_exact_session_ipc_advertises_and_returns_set_acceptance` | mcp/tests/test_harness_control_ipc.py:148-181 |
+| Evidence contract tests pin the three additive actions over a real socket: pages, continuation, cross-domain typed rejection, epoch mismatch, and provenance. | `test_evidence_action_round_trip_with_epoch_and_paging` | mcp/tests/test_harness_control_evidence_ipc.py:57-89 |
 | The channel bounds and the `InterruptResult`/`OperationTimeline` DTOs these actions serialize. | `MAX_OPERATION_TIMELINE_PAGE` | mcp/src/agents_remember/serving/harness_control_models.py:113-113 |
 | The bridge's epoch-guarded interrupt dispatch and timeline delegation behind the two additive actions. | "interrupt adapter must not mint the bridge epoch" | mcp/src/agents_remember/serving/harness_control_bridge.py:299-299 |
-| Contract tests pin the asset schema/traversal/verification batteries, the two actions end-to-end over a real socket, and the typed confinement refusals. | `test_digest_and_size_verification` | mcp/tests/test_harness_control_plane.py:1329-1378 |
+| Contract tests pin the asset schema/traversal/verification batteries, the two actions end-to-end over a real socket, and the typed confinement refusals. | `test_digest_and_size_verification` | mcp/tests/test_harness_control_plane_channels.py:167-216 |
 
 ## Cross-Repo References
 

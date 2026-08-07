@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_pi_rpc_events.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ The dialog / fire-and-forget split this module relies on is the same split recor
 | The mapper under test. | `PiRpcEventMapper` | mcp/src/agents_remember/serving/pi_rpc_events.py:55-358 |
 | `PiSessionState` and the parser that builds it. | `PiSessionState` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:37-48 |
 | The measured dialog / fire-and-forget vocabulary. | `fireAndForgetMethods` | mcp/tests/fixtures/pi_rpc/0.80.7-capabilities.json:43-43 |
-| The adapter suite that consumes these classifications. | `PiRpcAdapterTests` | mcp/tests/test_pi_rpc_adapter.py:550-1124 |
+| The adapter suite that consumes these classifications. | "class PiRpcAdapterTests1(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_pi_rpc_adapter_ops_1.py:23-23 |
 
 ## Update History
 

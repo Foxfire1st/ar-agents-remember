@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-08-07T23:35:00+02:00 |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -236,7 +236,13 @@ and `test/contract.test.ts` measures how completely `snapshot.json` exercises it
 directions plus runtime vocabulary assertions. The producer-to-TypeScript contract is held by the
 generator and its stale check; the manual boundary is sample coverage.
 
+## 260731-EFA-L7 — Conversation Split Absorbed
+
+The panels route absorbed the L7 live-thinking change on top of the L8 split: the session-cockpit conversation family carries the coalesced live-thinking indicator and its pins; the over-limit dashboard files were split by L8 and the armed file-size rail now covers this route's TS/TSX.
+
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the conversation split absorption and the file-size rail coverage. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Split Layout section (kebab-case folders, canonical entries, parts/styles modules). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound Chats mount/props, lifecycle navigation/reader ownership, and served-fixture seeding to the packet-specified operative spans. Verification metadata unchanged.

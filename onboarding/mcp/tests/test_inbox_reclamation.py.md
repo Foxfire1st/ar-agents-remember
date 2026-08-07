@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,7 @@ evidence.
 | ConfirmedGonePolicyTests and ReconcileAndCompactTests are implemented in this suite. | `ConfirmedGonePolicyTests`, `ReconcileAndCompactTests` | mcp/tests/test_inbox_reclamation.py:87-181; mcp/tests/test_inbox_reclamation.py:184-249 |
 | The store transaction resolves and compacts the selected entries atomically. | `reconcile_and_compact` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:184-225 |
 | The integration suite exercises resolution/compaction before redelivery. | `reconcile_and_compact` | mcp/tests/test_inbox_reclamation.py:203-302 |
-| The supervisor ordering places resolution/compaction before redelivery. | "redelivery" | mcp/src/agents_remember/serving/supervisor.py:1195-1262 |
+| The supervisor ordering places resolution/compaction before redelivery. | "redelivery" | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:297-297 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -311,7 +311,7 @@ catalog.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The operation is defined by same-repository serving/catalog behavior rather than external documentation. | `terminal_catalog_path`; `assign_terminal_session_to_leaf`; `open_terminal_session` | mcp/src/agents_remember/serving/terminal_catalog.py:513-516; mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114; mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
+| The operation is defined by same-repository serving/catalog behavior rather than external documentation. | "def terminal_catalog_path(coordination_root: Path) -> Path:"; "def assign_terminal_session_to_leaf("; "def open_terminal_session(" | mcp/src/agents_remember/serving/terminal_catalog.py:513-516; mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114; mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
 
 ## Repo-Internal References
 
@@ -324,7 +324,7 @@ catalog.
 | The shared opener validates live launch identity and fences create, leaf claim, tmux ensure, and catalog upsert; both role and dashboard paths reuse it. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
 | Explicit REST pane input remains a separate serving concern; it is not part of spawn. | `TerminalPaster`; `paste`; `paste_dispatch` | mcp/src/agents_remember/serving/terminal_paste.py:206-511 |
 | The harness detection helpers that gate a spawn before tmux, and the curated registry table whose order picks the detection-gated default (the table now lives in `kernel/harnesses.py`; `serving/harnesses.py` imports it and owns detection/launch only). | `find_harness`; `is_detected`; `HARNESSES` | mcp/src/agents_remember/serving/harnesses.py:61-70; mcp/src/agents_remember/serving/harnesses.py:86-93; mcp/src/agents_remember/kernel/harnesses.py:63-77 |
-| The per-use agentic-settings loader supplying `spawn_harness` (registry-id validated). | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:445-480 |
+| The per-use agentic-settings loader supplying `spawn_harness` (registry-id validated). | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:217-252 |
 | The public tool tuple advertises `attach_terminal_session_to_leaf` and `spawn_agent_session`. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The facade re-exports all four payload builders. | `__all__` | mcp/src/agents_remember/mcp/tools/__init__.py:93-159 |
 | The tool declarations for attach and spawn; the `spawn_agent_session` docstring is the one that states the HFX2-L10 settings-only authority rule, including `spend-override-unsupported` refusals for legacy spend fields and harness-native spend env keys. | `attach_terminal_session_to_leaf`; `spawn_agent_session` | mcp/src/agents_remember/mcp/registration/sessions.py:34-51; mcp/src/agents_remember/mcp/registration/sessions.py:57-137 |
@@ -338,7 +338,7 @@ catalog.
 | The durable brief path uses the `dispatch-brief` message kind. | "DISPATCH_BRIEF_KIND = \"dispatch-brief\"" | mcp/src/agents_remember/serving/dispatch_brief.py:41-41 |
 | `LeafRefStatus` — where two of the thirteen spawn statuses are actually declared and produced, outside any file enumerating spawn refusals. | `LeafRefStatus`; `VALID_LEAF_REF_STATUSES` | mcp/src/agents_remember/worktrees/leaf_refs.py:30-30; mcp/src/agents_remember/worktrees/leaf_refs.py:32-32 |
 | The `spawn_agent_session` docstring whose eleven-of-thirteen roster is the published tool description — pinned, not edited. | `spawn_agent_session` | mcp/src/agents_remember/mcp/registration/sessions.py:57-137 |
-| The test that pins the docstring gap to exactly the two leaf-ref refusals and asserts retire/rename roster equality. | `test_every_status_the_session_tools_roster_validates` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:845-867 |
+| The test that pins the docstring gap to exactly the two leaf-ref refusals and asserts retire/rename roster equality. | `test_every_status_the_session_tools_roster_validates` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:67-89 |
 
 ## Cross-Repo References
 

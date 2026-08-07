@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_cross_store_lock_order.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T19:58+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,11 +80,11 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The liveness sweep path driven on one thread (batch lock holder). | `TerminalCatalogLivenessSweeper` | mcp/src/agents_remember/serving/terminal_liveness.py:121-280 |
-| The supervisor sweep path driven on the other thread (inbox lock holder). | `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:1195-1292 |
+| The supervisor sweep path driven on the other thread (inbox lock holder). | `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:96-193 |
 | The synchronizer whose store I/O is pinned outside the catalog batch. | `HostedInteractionSynchronizer` | mcp/src/agents_remember/serving/hosted_interactions.py:52-266 |
 | The offloaded control choke point. | `resolve_entry` | mcp/src/agents_remember/serving/conversation/control/service.py:291-299 |
 | The offloaded active-side resolution. | `_projector_for` | mcp/src/agents_remember/serving/conversation/active/service.py:160-177 |
-| The offloaded image handler. | `_terminal_image_response` | mcp/src/agents_remember/serving/app.py:1840-1875 |
+| The offloaded image handler. | "async def _terminal_image_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:600-600 |
 | The intra-store lock contract the cross-store doctrine extends. | `thread_mutex_for` | mcp/src/agents_remember/controlplane/durable_store.py:301-317 |
 
 ## Cross-Repo References
@@ -92,6 +92,8 @@ No Domain Documentation source is configured.
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-05T20:20+02:00 — 260731-EFA-L16 curator: the quality wrapper's diff-coverage rail grew
   the file from five pins to the current set — the starting-fast-path placement pin with its

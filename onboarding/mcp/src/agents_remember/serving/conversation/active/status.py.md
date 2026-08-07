@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/status.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -86,8 +86,8 @@ it observations and terminal settlements.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `CANONICAL_TURN_STATE_BY_EVIDENCE` fixes the evidence-to-turn-state vocabulary this service classifies into. | `CANONICAL_TURN_STATE_BY_EVIDENCE` | mcp/src/agents_remember/serving/conversation/models.py:453-463 |
-| `ConversationStatus` and its freshness/process/turn products define the revisioned envelope shape. | `ConversationStatus` | mcp/src/agents_remember/serving/conversation/models.py:548-561 |
+| "CANONICAL_TURN_STATE_BY_EVIDENCE," fixes the evidence-to-turn-state vocabulary this service classifies into. | "CANONICAL_TURN_STATE_BY_EVIDENCE," | mcp/src/agents_remember/serving/conversation/models.py:52-52 |
+| `ConversationStatus` and its freshness/process/turn products define the revisioned envelope shape. | "class ConversationStatus(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_status.py:145-145 |
 | Orchestration's `snapshot_turn_state` delegates here with a documented function-local import; signature unchanged. | `snapshot_turn_state` | mcp/src/agents_remember/serving/hosted_control_projection.py:78-101 |
 | The projector observes snapshots and pending terminal settlements through this service per poll. | `ConversationStatusService`, `poll_once` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:84-84; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:129-144 |
 | `SeatTurnState` is the orchestration vocabulary the single projection rule emits. | `SeatTurnState` | mcp/src/agents_remember/serving/terminal_catalog.py:49-49 |

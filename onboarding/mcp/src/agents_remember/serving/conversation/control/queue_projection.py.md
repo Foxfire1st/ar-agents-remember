@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/queue_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -86,7 +86,7 @@ preview/digest transforms are the substrate and sibling module this projection c
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `OperationQueueItem`/`CockpitQueueIdentity` privacy validator (source ∈ {cockpit,terminal,durable}; withdrawable cockpit block rule). | `CockpitQueueIdentity`; `OperationQueueItem` | mcp/src/agents_remember/serving/conversation/models.py:963-967; mcp/src/agents_remember/serving/conversation/models.py:970-988 |
+| The `OperationQueueItem`/`CockpitQueueIdentity` privacy validator (source ∈ {cockpit,terminal,durable}; withdrawable cockpit block rule). | "class CockpitQueueIdentity(WireModel):"; "class OperationQueueItem(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_operations.py:152-152; mcp/src/agents_remember/serving/conversation/_models_operations.py:159-159 |
 | The authority-internal setter mint with no submission source (`source=None`). | `_admit_setter` | mcp/src/agents_remember/serving/harness_submission_authority.py:561-594 |
 | The full-timeline paging seam and the submit journal this projection reads. | `read_full_timeline`; `ControlChannel` | mcp/src/agents_remember/serving/conversation/control/service.py:199-219; mcp/src/agents_remember/serving/conversation/control/service.py:320-341 |
 | The payload digest and redacted preview are deterministic transforms. | "def payload_digest("; "return f\"sha256:{sha256(text.encode('utf-8')).hexdigest()}\""; "return f\"sha256:{sha256(canonical.encode('utf-8')).hexdigest()}\""; "def redacted_preview("; "redacted = str(redact_secrets(collapsed))"; "return redacted, False"; "return \"\".join(clusters[:MAX_PREVIEW_CLUSTERS]), True" | mcp/src/agents_remember/serving/conversation/control/previews.py:28-28; mcp/src/agents_remember/serving/conversation/control/previews.py:32-32; mcp/src/agents_remember/serving/conversation/control/previews.py:48-48; mcp/src/agents_remember/serving/conversation/control/previews.py:51-51; mcp/src/agents_remember/serving/conversation/control/previews.py:58-58; mcp/src/agents_remember/serving/conversation/control/previews.py:61-62 |

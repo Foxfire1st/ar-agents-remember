@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ single-thread adapter call (the bridge passes `None`), and an empty-string selec
 before any adapter call. The `_ThreadAwareNativePageAdapter` fake records the exact call shape so
 the test proves forwarding only happens when the wire carries the field.
 
-cit:([`test_evidence_thread_id_round_trips_over_ipc`], mcp/tests/test_harness_control_evidence.py:679-705) pins the multiplexed demux key on the
+cit:([`test_evidence_thread_id_round_trips_over_ipc`], mcp/tests/test_harness_control_evidence_ipc.py:91-117) pins the multiplexed demux key on the
 evidence wire end-to-end over a real socket: an adapter emit whose `arEvidence` payload carries a
 `threadId` surfaces on the typed `EvidenceFrame.thread_id` across the bridge divert, the
 `evidence_frame_json` serialization, and the validated client parse, while a frame without the key
@@ -197,6 +197,8 @@ believing an evidence channel it does not have.
 
 ## Update History
 
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
 - 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 5 repository-internal reference rows for the bounded evidence bridge, IPC server, strict client validators, submission authority, and runner payload parser; scoped citation verification follows.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation.
@@ -213,11 +215,11 @@ believing an evidence channel it does not have.
   Verification metadata remains pinned while uncommitted.
 
 - 2026-07-27T00:02+02:00 — 260718-CHATS-L7R curator: recorded the evidence `threadId` IPC
-  round-trip test (cit:([`test_evidence_thread_id_round_trips_over_ipc`], mcp/tests/test_harness_control_evidence.py:679-705)): an agent `threadId`
+  round-trip test (cit:([`test_evidence_thread_id_round_trips_over_ipc`], mcp/tests/test_harness_control_evidence_ipc.py:91-117)): an agent `threadId`
   crosses the bridge divert + serializer + real socket + client parse into
   `EvidenceFrame.thread_id`, while parent frames carry none (the pre-multiplex wire stays
   identical); re-anchored the stale client-validators citation to the current parser block
-  (cit:([`_evidence_page`, `_native_evidence_page`, `_submission_provenance_batch`], mcp/src/agents_remember/serving/harness_control_client.py:870-917; mcp/src/agents_remember/serving/harness_control_client.py:920-938; mcp/src/agents_remember/serving/harness_control_client.py:977-997)), and scrubbed the pre-existing task-id references out of the body (bodies carry
+  (cit:(["def _evidence_page(result: object, *, expected_bridge_epoch", "def _native_evidence_page(  # pragma: no cover", "def _submission_provenance_batch(  # pragma: no cover"], mcp/src/agents_remember/serving/_harness_control_parsing.py:348-348; mcp/src/agents_remember/serving/_harness_control_parsing.py:399-399; mcp/src/agents_remember/serving/_harness_control_parsing.py:459-459)), and scrubbed the pre-existing task-id references out of the body (bodies carry
   behavioral prose only; the tags remain in this history). Verification metadata stays pinned
   (uncommitted); closeout re-stamps the candidate
   commit.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -178,7 +178,7 @@ is proven by repository source and tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The serving layer this host joins (transport; localhost posture). | `TerminalHost` | mcp/src/agents_remember/serving/terminal.py:109-255 |
-| The FastAPI app wires the WebSocket bridge and terminal-session routes over this host. | `_serve_terminal_websocket`; `_register_terminal_session_routes` | mcp/src/agents_remember/serving/app.py:1322-1348; mcp/src/agents_remember/serving/app.py:1366-1395 |
+| The FastAPI app wires the WebSocket bridge and terminal-session routes over this host. | "async def _serve_terminal_websocket("; "def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/serving/_app_terminal_routes.py:82-82; mcp/src/agents_remember/serving/_app_terminal_routes.py:126-126 |
 | Catalog entries declare durable identity/cwd/tmux/command/lifecycle/status fields, and `TerminalCatalog` persists and reads those entries. | `TerminalCatalogEntry`; `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510; mcp/src/agents_remember/serving/terminal_catalog.py:519-857 |
 | The opener resolves the spawn environment, builds the terminal session spec, calls the host ensure operation, and upserts the catalog entry. | `_open_terminal_transaction` | mcp/src/agents_remember/serving/terminal_opener.py:534-617 |
 | The terminal host registry behavior is exercised by the dedicated registry test class. | `TerminalHostRegistryTests` | mcp/tests/test_terminal.py:300-466 |

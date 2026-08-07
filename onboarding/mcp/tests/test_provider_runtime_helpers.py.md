@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_runtime_helpers.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-31T15:32+02:00                      |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`  |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`  |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ the clock, which is what makes the retry-cadence assertions exact rather than ti
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The provider runtime helpers under test (setup rendering, docker/compose adapters, embedder polling, CGC refresh/apply/isolation). | `render_text` | mcp/src/agents_remember/providers/provider_setup.py:761-770 |
-| The lifecycle-level provider suites these helpers sit beneath. | `ProviderLifecycleRenderTests`; `ProviderSetupTests` | mcp/tests/test_provider_lifecycle.py:30-107; mcp/tests/test_provider_setup.py:25-899 |
+| The lifecycle-level provider suites these helpers sit beneath. | `ProviderLifecycleRenderTests`; `ProviderSetupTests` | mcp/tests/test_provider_lifecycle.py:20-97; mcp/tests/test_provider_setup.py:25-899 |
 
 ## Update History
 - 2026-08-03T03:06:51+02:00 — W3-B05 curator: resolved 2 Tier-2 table findings with exact anchors and source paths; fixer generated all final ranges.

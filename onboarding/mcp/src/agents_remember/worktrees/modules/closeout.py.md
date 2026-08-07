@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -296,12 +296,12 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Ledger updates use the kernel memory ledger parser and renderer. | `parse_ledger_text`, `ledger_to_text`, `load_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:52-104; mcp/src/agents_remember/kernel/memory_ledger.py:159-184; mcp/src/agents_remember/kernel/memory_ledger.py:187-190 |
 | Closeout refresh helpers provide sidecar metadata, route overview metadata, route index, and entity fingerprint updates before the memory commit. | `refresh_onboarding_metadata`, `refresh_route_overview_metadata_for_context`, `refresh_route_indexes_for_context`, `refresh_entity_fingerprints_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:359-390; mcp/src/agents_remember/worktrees/modules/onboarding.py:393-401; mcp/src/agents_remember/worktrees/modules/onboarding.py:508-554; mcp/src/agents_remember/worktrees/modules/onboarding.py:856-864 |
-| The dry-run preview test reports the commit plan. | `test_closeout_dry_run_without_approval_reports_commit_plan` | mcp/tests/test_worktree_support.py:1547-1600 |
-| The approval-note test guards real commits. | `test_closeout_requires_approval_note_for_real_commits` | mcp/tests/test_worktree_support.py:1686-1702 |
-| The missing-onboarding test blocks changed-source closeout. | `test_closeout_blocks_missing_onboarding_for_changed_source` | mcp/tests/test_worktree_support.py:1767-1786 |
-| The refresh test covers onboarding metadata, route overview/index refresh, and new code commit metadata. | `test_closeout_refreshes_onboarding_metadata_to_new_code_commit` | mcp/tests/test_worktree_support.py:1724-1765 |
-| The memory-quality test blocks a memory commit when quality fails. | `test_closeout_blocks_memory_commit_when_memory_quality_fails` | mcp/tests/test_worktree_support.py:2054-2089 |
-| The ledger round-trip test covers ledger rendering and prepend behavior. | `test_memory_ledger_roundtrip_and_prepend` | mcp/tests/test_worktree_support.py:843-854 |
+| The dry-run preview test reports the commit plan. | `test_closeout_dry_run_without_approval_reports_commit_plan` | mcp/tests/test_worktree_support_tests_1.py:957-1010 |
+| The approval-note test guards real commits. | `test_closeout_requires_approval_note_for_real_commits` | mcp/tests/test_worktree_support_tests_2.py:39-55 |
+| The missing-onboarding test blocks changed-source closeout. | `test_closeout_blocks_missing_onboarding_for_changed_source` | mcp/tests/test_worktree_support_tests_2.py:120-139 |
+| The refresh test covers onboarding metadata, route overview/index refresh, and new code commit metadata. | `test_closeout_refreshes_onboarding_metadata_to_new_code_commit` | mcp/tests/test_worktree_support_tests_2.py:77-118 |
+| The memory-quality test blocks a memory commit when quality fails. | `test_closeout_blocks_memory_commit_when_memory_quality_fails` | mcp/tests/test_worktree_support_tests_2.py:407-442 |
+| The ledger round-trip test covers ledger rendering and prepend behavior. | `test_memory_ledger_roundtrip_and_prepend` | mcp/tests/test_worktree_support_tests_1.py:329-340 |
 | Defines the `WorktreeArgs` dataclass that types every closeout entry point and helper. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:20-82 |
 | The pure closeout-gate policy this module enforces (slice 6b). | `GateGuard`, `evaluate_gate`, `evaluate_closeout_gate` | mcp/src/agents_remember/controlplane/enforcement.py:34-46; mcp/src/agents_remember/controlplane/enforcement.py:52-94; mcp/src/agents_remember/controlplane/enforcement.py:97-102 |
 | The gate policy threaded through `WorktreeArgs`. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:20-82 |

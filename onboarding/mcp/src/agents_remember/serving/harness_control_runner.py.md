@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_runner.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ Launch validation and adapter construction remain separate pure/data and vendor-
 | Launch selection, validation, effective echo checks, knob application, and duplicate-selector preflight are centralized in the launch module. | `ResolvedLaunch`; `validate_launch_selection`; `verify_effective_launch`; `apply_launch_knobs`; `_owned_argv_overrides` | mcp/src/agents_remember/serving/harness_launch.py:17-54; mcp/src/agents_remember/serving/harness_launch.py:78-119; mcp/src/agents_remember/serving/harness_launch.py:122-148; mcp/src/agents_remember/serving/harness_launch.py:173-206; mcp/src/agents_remember/serving/harness_launch.py:233-250 |
 | The factory pairs a typed selection with adapter-produced knobs and ignores ambient role env as authority. | `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:48-90 |
 | The opener embeds the typed launch in this runner command and persists model/effort provenance on the terminal row. | `_session_command`; `_opened_catalog_entry` | mcp/src/agents_remember/serving/terminal_opener.py:435-468; mcp/src/agents_remember/serving/terminal_opener.py:471-531 |
-| Contract tests pin the resumeThreadId payload round-trip, legacy field-less parse, malformed refusal, and codex-only factory channel. | `test_runner_payload_round_trips_resume_thread_id`; `test_runner_payload_without_the_field_parses_to_none`; `test_runner_payload_rejects_malformed_resume_thread_id`; `test_factory_sets_codex_resume_and_refuses_non_codex_before_any_spawn` | mcp/tests/test_harness_control_evidence.py:1593-1597; mcp/tests/test_harness_control_evidence.py:1599-1610; mcp/tests/test_harness_control_evidence.py:1612-1623; mcp/tests/test_harness_control_evidence.py:1625-1649 |
+| Contract tests pin the resumeThreadId payload round-trip, legacy field-less parse, malformed refusal, and codex-only factory channel. | `test_runner_payload_round_trips_resume_thread_id`; `test_runner_payload_without_the_field_parses_to_none`; `test_runner_payload_rejects_malformed_resume_thread_id`; `test_factory_sets_codex_resume_and_refuses_non_codex_before_any_spawn` | mcp/tests/test_harness_control_evidence_other.py:294-298; mcp/tests/test_harness_control_evidence_other.py:300-311; mcp/tests/test_harness_control_evidence_other.py:313-324; mcp/tests/test_harness_control_evidence_other.py:326-350 |
 | The bridge translates `mark_failed` into failed/rejected state with exact raw error evidence (`raw["bridgeError"]`), refusing to overwrite an already-started bridge. | `mark_failed` | mcp/src/agents_remember/serving/harness_control_bridge.py:160-174 |
 | The pre-session catalog reuses `adapter_argv` before calling the transient adapter's token-free discovery path. | `adapter_argv` | mcp/src/agents_remember/serving/harness_capability_catalog.py:180-195 |
 

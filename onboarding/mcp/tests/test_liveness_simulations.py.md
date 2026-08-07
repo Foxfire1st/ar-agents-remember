@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T13:03+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -138,11 +138,11 @@ P-15 fixture-zoo mandate (leaf task doc R3) and the liveness report
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sweep entry point every scenario drives across multiple ticks. | `run_supervisor_sweep`; `evaluate_predicates`; `act_on_finding` | mcp/src/agents_remember/serving/supervisor.py:458-515; mcp/src/agents_remember/serving/supervisor.py:1176-1189; mcp/src/agents_remember/serving/supervisor.py:1195-1282 |
+| The sweep entry point every scenario drives across multiple ticks. | `run_supervisor_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_supervisor_actions.py:729-729; mcp/src/agents_remember/serving/_supervisor_evaluation.py:372-372; mcp/src/agents_remember/serving/supervisor.py:96-193 |
 | The pane-signal classifier the two hybrid scenarios call directly (capturer not injectable through the sweep). | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | The escalation ladder every incident's rung-3 assertion walks through. | `rung_due`; `next_step` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152 |
 | The self-liveness heartbeat store and staleness banner `KilledSupervisorDaemonTests` drives. | `SupervisorHeartbeatStore`; `supervisor_staleness_banner` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-121; mcp/src/agents_remember/serving/supervisor_heartbeat.py:135-151 |
-| The unit-level fixture `DeadManagerLiveWorkersTests` extends rather than duplicates. | `LadderWalkIntegrationTests` | mcp/tests/test_supervisor.py:939-1327 |
+| The unit-level fixture `DeadManagerLiveWorkersTests` extends rather than duplicates. | `LadderWalkIntegrationTests` | mcp/tests/test_supervisor_ladder.py:241-629 |
 | The terminal state and compaction semantics the HFX2-L8 storm simulation proves at scale. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
 | The shared simulation context (`_ctx`) wires the supervisor signal cooldown store expected by `SupervisorContext`. | "signal_cooldown_store=" | mcp/tests/test_liveness_simulations.py:165-165 |
 

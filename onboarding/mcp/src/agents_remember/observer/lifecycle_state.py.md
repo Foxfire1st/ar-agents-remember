@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/lifecycle_state.py` |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-08-01T10:40+02:00                               |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`           |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`           |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Purpose
@@ -146,8 +146,8 @@ tool-boundary string into a `Phase` or raises `LifecycleError`.
 | The typed-error family base (`AgentsRememberError`). | `AgentsRememberError` | mcp/src/agents_remember/errors.py:13-14 |
 | The response model reuses `State`/`Phase` so the wire contract matches. | `LifecycleResponse` | mcp/src/agents_remember/models/lifecycle.py:17-22 |
 | `ACTIVE_STATES` is `LIVE_STATES` verbatim, and `STATE_COUNT_FIELDS` derives one `Metrics` bucket per live state — this is what makes the live/terminal filing load-bearing. | `ACTIVE_STATES`; `STATE_COUNT_FIELDS` | mcp/src/agents_remember/observer/projection.py:236-236; mcp/src/agents_remember/observer/projection.py:282-282 |
-| The reducer's `_STATES` is built from `STATES`, and `_ended_updates` routes through `coerce_end_outcome`. | `_STATES`; `_ended_updates` | mcp/src/agents_remember/observer/reducer.py:78-78; mcp/src/agents_remember/observer/reducer.py:408-410 |
-| The partition, the vocabulary reader, and structural terminality are pinned by test. | `StatePartitionTests`; `TerminalityIsStructuralTests`; `StateVocabularyReaderTests` | mcp/tests/test_observer_projection.py:1735-1799; mcp/tests/test_observer_projection.py:1802-1919; mcp/tests/test_observer_projection.py:1922-1957 |
+| The reducer's `_STATES` is built from `STATES`, and `_ended_updates` routes through `coerce_end_outcome`. | `_STATES`; `_ended_updates` | mcp/src/agents_remember/observer/reducer.py:117-117; mcp/src/agents_remember/observer/reducer.py:382-384 |
+| The partition, the vocabulary reader, and structural terminality are pinned by test. | `StatePartitionTests`; `TerminalityIsStructuralTests`; `StateVocabularyReaderTests` | mcp/tests/test_observer_projection_metrics.py:236-300; mcp/tests/test_observer_projection_metrics.py:303-420; mcp/tests/test_observer_projection_metrics.py:423-458 |
 | The write side is pinned to hold no copy of the terminal vocabulary. | `EndSignalVocabularyTests` | mcp/tests/test_observer_ambient.py:157-185 |
 | The design note is historical context only; current lifecycle behavior is owned by this module and its focused tests. | — | — |
 

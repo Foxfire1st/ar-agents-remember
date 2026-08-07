@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-08-01T14:05+02:00                                  |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`              |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`              |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -113,7 +113,7 @@ declare" is answered in the route module, never by reading this one.
   all — a websocket has no response body to model. That is the only route without a declaration,
   and the exhaustiveness test finds it by route *class*, so a future undeclared HTTP route cannot
   hide behind a path skip-list.
-- **The route inventory is pinned.** cit:([`test_the_declared_surface_is_the_whole_surface`], mcp/tests/test_serving_response_conformance.py:529-534) asserts
+- **The route inventory is pinned.** cit:([`test_the_declared_surface_is_the_whole_surface`], mcp/tests/test_serving_response_conformance.py:537-542) asserts
   `len(self.http) == 61` — 62 route decorators, 61 HTTP plus the one websocket — so a new
   route cannot be added without meeting this contract.
 - **Declaring is not enforcing, and the module says so.** Rewriting the 59 handlers FastAPI does not
@@ -150,7 +150,7 @@ one suite, and the one live-validated model has its own producer-parity test.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The app routes that name these models, including the two FastAPI-validated bare-`dict` routes and the single undeclared websocket. | `api_terminal`, `api_terminal_sessions`, `api_harnesses` | mcp/src/agents_remember/serving/app.py:1374-1376; mcp/src/agents_remember/serving/app.py:1382-1390; mcp/src/agents_remember/serving/app.py:1393-1395 |
+| The app routes that name these models, including the two FastAPI-validated bare-`dict` routes and the single undeclared websocket. | `api_terminal`, `api_terminal_sessions`, `api_harnesses` | mcp/src/agents_remember/serving/_app_terminal_routes.py:134-136; mcp/src/agents_remember/serving/_app_terminal_routes.py:142-150; mcp/src/agents_remember/serving/_app_terminal_routes.py:153-155 |
 | The files routes consuming `RepoCatalog` / `DirectoryListing` / `FileContents` / `OnboardingResolution` under `SCOPED_READ_RESPONSES`. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:296-325 |
 | The change-set routes consuming `TaskChangeSet` / `LeafChangeSet` / `FileDiff` / `MasterChangeSet`. | `register_changeset_routes` | mcp/src/agents_remember/serving/changeset.py:501-554 |
 | The notes routes consuming `NotesListing` / `NoteContents`. | `register_notes_routes` | mcp/src/agents_remember/serving/notes.py:168-177 |

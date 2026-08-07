@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:44+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -56,8 +56,8 @@ must be is `served_state.ServedWorkspaceProjection`, and `/api/state` and `/api/
 exactly that.
 
 Two signatures changed with it, from bare dicts to declared models:
-`stream_events(..., supervisor_heartbeat: SupervisorHeartbeatPayload | None = None)` (cit:([`stream_events`], mcp/src/agents_remember/serving/app.py:315-345))
-and `_supervisor_heartbeat_payload(runtime) -> SupervisorHeartbeatPayload` (cit:([`_supervisor_heartbeat_payload`], mcp/src/agents_remember/serving/app.py:949-968)). The
+`stream_events(..., supervisor_heartbeat: SupervisorHeartbeatPayload | None = None)` (cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:112-112))
+and `_supervisor_heartbeat_payload(runtime) -> SupervisorHeartbeatPayload` (cit:(["def _supervisor_heartbeat_payload(runtime: _ServingRuntime) -> SupervisorHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:185-185)). The
 seven keys are identical; `ServingBuild.payload()` likewise returns `ServingBuildPayload` now.
 
 **The body is deliberately still assembled rather than dumped from one model.** The memo and the
@@ -69,35 +69,35 @@ holds both branches shut against the real route.
 **Every HTTP route this file registers now declares a `response_model`** — 17 of them, plus the
 one websocket that structurally cannot:
 
-- `GET /api/state` (cit:([`_register_projection_routes`], mcp/src/agents_remember/serving/app.py:1014-1086)) → `ServedWorkspaceProjection`, with `304` declared as a
+- `GET /api/state` (cit:(["def _register_projection_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_routes.py:115-115)) → `ServedWorkspaceProjection`, with `304` declared as a
   description-only entry carrying **no model**: the branch answers with an ETag and no body at
   all, which no `response_model` can express. That is also why this cannot become a
   model-returning handler.
-- `GET /api/task-document` (cit:([`_register_projection_routes`], mcp/src/agents_remember/serving/app.py:1014-1086)) → `TaskDocNode`, 404/503 as `HttpDetailRefusal`.
-- `GET /api/stream` (cit:([`_register_projection_routes`], mcp/src/agents_remember/serving/app.py:1014-1086)) → `ServedWorkspaceProjection` — what a `snapshot` frame's
+- `GET /api/task-document` (cit:(["def _register_projection_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_routes.py:115-115)) → `TaskDocNode`, 404/503 as `HttpDetailRefusal`.
+- `GET /api/stream` (cit:(["def _register_projection_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_routes.py:115-115)) → `ServedWorkspaceProjection` — what a `snapshot` frame's
   `data` carries. A `delta` frame is one bare projection node; that asymmetry IS the contract.
-- `GET /api/events` (cit:([`_register_projection_routes`], mcp/src/agents_remember/serving/app.py:1014-1086)) → `StreamReadyMarker`. Every `event` frame is a verbatim
+- `GET /api/events` (cit:(["def _register_projection_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_routes.py:115-115)) → `StreamReadyMarker`. Every `event` frame is a verbatim
   observer JSONL record replayed from disk, so the river's schema belongs to the observer; what
   this route mints is the ready marker, so that is what it declares.
-- `POST /api/actions/{action}` (cit:([`_register_action_routes`], mcp/src/agents_remember/serving/app.py:1285-1316)) → `ActionAccepted` with **`status_code=202`**. Left
+- `POST /api/actions/{action}` (cit:(["def _register_action_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_routes.py:386-386)) → `ActionAccepted` with **`status_code=202`**. Left
   implicit, the decorator declared its success shape at 200 — a (route, status) pair no request
   can produce and therefore one no conformance check could ever drive. The handler returns a
   `Response` it built itself, so this moves no bytes.
-- `POST /api/operator-inbox` (cit:([`api_operator_inbox`], mcp/src/agents_remember/serving/app.py:1302-1308)) → `OperatorInboxPostResponse`;
-  `POST /api/operator-inbox/{entry_id}/dismiss` (cit:([`api_operator_inbox_dismiss`], mcp/src/agents_remember/serving/app.py:1310-1316)) → `OperatorInboxDismissed` on both
+- `POST /api/operator-inbox` (cit:([`api_operator_inbox`], mcp/src/agents_remember/serving/_app_routes.py:403-409)) → `OperatorInboxPostResponse`;
+  `POST /api/operator-inbox/{entry_id}/dismiss` (cit:([`api_operator_inbox_dismiss`], mcp/src/agents_remember/serving/_app_routes.py:411-417)) → `OperatorInboxDismissed` on both
   200 and 404 (the same two keys either way).
-- `WS /api/terminal/{session}` (cit:([`_serve_terminal_websocket`], mcp/src/agents_remember/serving/app.py:1322-1348)) is **the one route with no declaration, and the only one
+- `WS /api/terminal/{session}` (cit:(["async def _serve_terminal_websocket("], mcp/src/agents_remember/serving/_app_terminal_routes.py:82-82)) is **the one route with no declaration, and the only one
   there can be**: it is registered as an `APIWebSocketRoute`, which takes no `response_model`
   parameter because it has no response body. The exhaustiveness test recognises the exemption by
   route CLASS, never a path skip-list, so a future undeclared *HTTP* route cannot hide behind it.
-- The eight terminal-control routes (cit:([`_register_terminal_control_routes`], mcp/src/agents_remember/serving/app.py:1874-1973)) declare their success shape plus the exact
+- The eight terminal-control routes (cit:(["def _register_terminal_control_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_terminal_routes.py:642-642)) declare their success shape plus the exact
   refusal shapes each can emit — including two routes with two success shapes each:
   `/paste` → `TerminalHarnessDelivery | TerminalPaneDelivery` (a protocol harness and a plain
   pane can prove different things), and `/retire` → `TerminalRetired | TerminalAlreadyRetired`
   (retiring an already-terminal seat is idempotent, not an error).
 
 **Two routes are different in kind, because FastAPI actually validates them.**
-`GET /api/terminal/sessions` (cit:([`_register_terminal_session_routes`], mcp/src/agents_remember/serving/app.py:1366-1395)) and `GET /api/harnesses` (cit:([`_register_terminal_session_routes`], mcp/src/agents_remember/serving/app.py:1366-1395)) are the only
+`GET /api/terminal/sessions` (cit:(["def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_terminal_routes.py:126-126)) and `GET /api/harnesses` (cit:(["def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_terminal_routes.py:126-126)) are the only
 handlers in this file that return a bare `dict`, so `response_model` is live enforcement here
 rather than schema. That is a real behaviour change: they used to be forward-compatible
 pass-through, and they now answer **HTTP 500** (`ResponseValidationError`) if the payload gains
@@ -546,7 +546,7 @@ otherwise-unchanged projection look changed.
   **before** `mount_static`. The handlers live in `serving/notes.py`.
 
 `stream_events(projector, *, build: ServingBuild | None = None,
-supervisor_heartbeat: SupervisorHeartbeatPayload | None = None)` (cit:(["async def stream_events"], mcp/src/agents_remember/serving/app.py:315-315)) owns one atomic projector
+supervisor_heartbeat: SupervisorHeartbeatPayload | None = None)` (cit:(["async def stream_events"], mcp/src/agents_remember/serving/_app_common.py:112-112)) owns one atomic projector
 subscription. It serializes the initial current snapshot when available; if `prime()` left no
 projection, the same connected iterator waits and serializes the projector's first successful full
 recovery snapshot. Every snapshot is decorated identically with the optional boot-time
@@ -679,27 +679,27 @@ pass was available for this update.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The shared projector owns atomic registration/snapshot capture, publish-before-notify ordering, first-recovery snapshots, and the ETag revision. | `Projector` | mcp/src/agents_remember/serving/projector.py:126-330 |
-| Deterministic serving regressions force the former handoff mutation, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | `StreamEventsTests` | mcp/tests/test_serving.py:420-518 |
+| Deterministic serving regressions force the former handoff mutation, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | `StreamEventsTests` | mcp/tests/test_serving.py:379-477 |
 | The live change watcher `create_app` injects when `live_inputs.change_watch` resolves true (260712-PTS-L3). | `ProjectionInputWatcher` | mcp/src/agents_remember/serving/change_watcher.py:379-487 |
 | The boot-time serving build stamp that rides `/api/state` + the SSE snapshot, now as the declared `ServingBuildPayload`. | `ServingBuildPayload` | mcp/src/agents_remember/serving/build_info.py:43-63 |
 | The declaration of the served body and the one tail builder both merge sites call. | `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:63-78 |
 | The declared response models and shared `responses={...}` tables the 17 HTTP routes here name. | `ACTION_RESPONSES`; `TerminalSessionsResponse`; `StreamReadyMarker` | mcp/src/agents_remember/serving/response_contract.py:197-206; mcp/src/agents_remember/serving/response_contract.py:349-352; mcp/src/agents_remember/serving/response_contract.py:1079-1087 |
 | The suite that validates the assembled `/api/state` body and the SSE snapshot against `ServedWorkspaceProjection`, including the bodiless 304 branch. | `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
-| The suite that drives every route, validates the real body, pins the 61-HTTP-route inventory, and recognises the websocket exemption by route class. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:783-1861 |
+| The suite that drives every route, validates the real body, pins the 61-HTTP-route inventory, and recognises the websocket exemption by route class. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:792-899 |
 | The raw `event` channel `/api/events` delegates to. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:230-277 |
 | The pure action evaluation `/api/actions/{action}` delegates to. | `evaluate_action` | mcp/src/agents_remember/serving/actions.py:149-167 |
-| The serving action helper owns the developer-attributed gate-decision assembly. | `_recorded_gate_decision` | mcp/src/agents_remember/serving/app.py:1092-1138 |
-| The action route records lifecycle-targeted decisions through the control-plane gate function. | "record_lifecycle_gate_decision(" | mcp/src/agents_remember/serving/app.py:1122-1122 |
-| The action route records gate-id-only decisions through the control-plane gate function. | "record_gate_decision(" | mcp/src/agents_remember/serving/app.py:1131-1131 |
-| The `/api/operator-inbox` serving endpoint is registered by the app. | `api_operator_inbox` | mcp/src/agents_remember/serving/app.py:1302-1308 |
-| The operator-inbox endpoint calls the serving post owner directly with trusted developer/dashboard attribution. | `_operator_inbox_response` | mcp/src/agents_remember/serving/app.py:1233-1275 |
+| The serving action helper owns the developer-attributed gate-decision assembly. | "def _recorded_gate_decision(" | mcp/src/agents_remember/serving/_app_routes.py:193-193 |
+| The action route records lifecycle-targeted decisions through the control-plane gate function. | "record_lifecycle_gate_decision(" | mcp/src/agents_remember/serving/_app_routes.py:223-223 |
+| The action route records gate-id-only decisions through the control-plane gate function. | "record_gate_decision(" | mcp/src/agents_remember/application/gate_tools.py:549-549 |
+| The `/api/operator-inbox` serving endpoint is registered by the app. | `api_operator_inbox` | mcp/src/agents_remember/serving/_app_routes.py:403-409 |
+| The operator-inbox endpoint calls the serving post owner directly with trusted developer/dashboard attribution. | "def _operator_inbox_response(" | mcp/src/agents_remember/serving/_app_routes.py:334-334 |
 | The serving operator-inbox module owns the post operation. | `post_operator_inbox_entry` | mcp/src/agents_remember/serving/operator_inbox_posts.py:202-288 |
 | The Mode B2 terminal host the `/api/terminal` WebSocket bridges to (slice 6d), including tmux probe/kill hooks used for durability. | `TerminalHost` | mcp/src/agents_remember/serving/terminal.py:109-255 |
 | The durable terminal-session catalog persisted by the opener, sessions endpoint, landed cleanup, and terminate route. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:519-857 |
 | The catalog liveness sweeper + shared observation path behind the sessions endpoint, attach, and paste (HFX-L5). | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:282-326 |
 | The shared leaf reassignment helper used by this route and the agent-facing MCP tool. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
 | The MCP application owns the spawn command. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:769-842 |
-| The serving route calls the shared hosted-session opener. | "open_terminal_session(" | mcp/src/agents_remember/serving/app.py:1486-1486 |
+| The serving route calls the shared hosted-session opener. | "open_terminal_session(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:246-246 |
 | The MCP application spawn command and serving route compose the shared hosted-session opener. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
 | The L4 route module owns harness-neutral advertise, launch selection, exact-session set, submit, reconcile, and liveness-first status mapping. | `resolve_terminal_open_selection` | mcp/src/agents_remember/serving/harness_control_api.py:156-179 |
 | The pre-session catalog owns bounded dynamic discovery and failed-refresh quarantine. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:81-196 |
@@ -717,10 +717,10 @@ pass was available for this update.
 | The landed archive helper records completion-edge seats without terminating them. | `land_seats_for_leaf` | mcp/src/agents_remember/serving/landing.py:9-28 |
 | The retire/rename mechanics + authority policy the explicit retire and landed-cleanup endpoints call into. | `retire_entry`; `check_retire_authority`; `SeatRef`; `master_of` | mcp/src/agents_remember/serving/retire.py:37-71; mcp/src/agents_remember/serving/retire_policy.py:23-33; mcp/src/agents_remember/serving/retire_policy.py:36-46; mcp/src/agents_remember/serving/retire_policy.py:49-67 |
 | The observer-event loggers the landed, retire, rename, and turn-state paths fire. | `log_landed_event`; `log_retire_event`; `log_rename_event`; `log_turn_state_change_event` | mcp/src/agents_remember/serving/seat_events.py:24-45; mcp/src/agents_remember/serving/seat_events.py:48-68; mcp/src/agents_remember/serving/seat_events.py:71-89; mcp/src/agents_remember/serving/seat_events.py:92-110 |
-| The deterministic supervisor sweep + predicate library `supervisor_loop`/`_supervisor_context` drive every interval (260707-HFX2-L2 R1-R4). | `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:1195-1282 |
+| The deterministic supervisor sweep + predicate library `supervisor_loop`/`_supervisor_context` drive every interval (260707-HFX2-L2 R1-R4). | `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:96-193 |
 | The pane-state classifier one of the sweep's predicates (`evaluate_pane_findings`, inside `supervisor.py`) calls. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | The self-liveness heartbeat store both the loop (tick) and the read side (`_supervisor_heartbeat_payload`) share, including L8 inbox backlog and sweep-duration fields. | `SupervisorHeartbeatStore`; `heartbeat_age_seconds` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-121; mcp/src/agents_remember/serving/supervisor_heartbeat.py:124-132 |
-| The agentic-settings loader `supervisor_loop`/`_supervisor_context`/`_supervisor_heartbeat_payload` all re-read per-use for the `orchestration.supervisor` family. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:445-480 |
+| The agentic-settings loader `supervisor_loop`/`_supervisor_context`/`_supervisor_heartbeat_payload` all re-read per-use for the `orchestration.supervisor` family. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:217-252 |
 | The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | mcp/src/agents_remember/controlplane/expectation_rows.py:156-336; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251; mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127; mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215; mcp/src/agents_remember/observer/store.py:103-171 |
 
 ## Cross-Repo References
@@ -744,6 +744,8 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over `_app_common.py`, `_app_lifespan.py`, `_app_routes.py`, `_app_terminal_routes.py`; full surface re-exported and pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
 - 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded the image route's offload —
   `_terminal_image_response` runs the catalog read (`runtime.catalog.get`) and the
   `_write_paste_image` disk write on `asyncio.to_thread`, keeping the catalog RLock wait and
@@ -759,7 +761,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   already-validated projection dict with nothing declaring them; both sites now call the single
   `served_state.served_state_tail` (L328-L329 for the SSE snapshot, L979-L982 for `/api/state`)
   and the result is declared as `ServedWorkspaceProjection`, which `/api/state` and `/api/stream`
-  name. Corrected cit:([`_supervisor_heartbeat_payload`], mcp/src/agents_remember/serving/app.py:949-968) and cit:([`stream_events`], mcp/src/agents_remember/serving/app.py:315-345),
+  name. Corrected cit:(["def _supervisor_heartbeat_payload(runtime: _ServingRuntime) -> SupervisorHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:185-185) and cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:112-112),
   which return/accept declared models rather than bare dicts, and the `stream_events` paragraph,
   which now records that a snapshot with neither key is a valid served body and that deltas carry
   no tail. Documented all 17 route declarations with lines — including `/api/state`'s
@@ -777,7 +779,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   stamps the L4 commit.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: repaired 1 incomplete self-citation. The
-  change-set bullet cited cit:([`create_app`], mcp/src/agents_remember/serving/app.py:718-777) for a claim about ordering relative to `mount_static`, but
+  change-set bullet cited cit:([`create_app`], mcp/src/agents_remember/serving/app.py:226-285) for a claim about ordering relative to `mount_static`, but
   that span holds only the three registrar calls; `mount_static(app)` is at L733, so the citation
   now names both. Two other flagged items in this card were checked and left alone: `(L2)` and
   `(L5)` next to `collaborators.terminal_catalog` / `lifecycleId` are leaf identifiers
@@ -965,7 +967,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   before the catalog upsert; the opener now claims + persists `leaf_key` (preserving an existing binding
   when none is sent) and echoes `leafKey`. Verification metadata pinned until closeout stamps the L5
   commit.
-- 2026-06-29T15:30+02:00 — operations-integration L3: `create_app` now also calls `register_changeset_routes(app, config)` between `register_files_routes` and `mount_static` (cit:([`create_app`], mcp/src/agents_remember/serving/app.py:718-777)), mounting the read-only `/api/changeset/{task,file-diff,master}` change-set API (handlers in `serving/changeset.py`) — registered before the greedy `/` static mount. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
+- 2026-06-29T15:30+02:00 — operations-integration L3: `create_app` now also calls `register_changeset_routes(app, config)` between `register_files_routes` and `mount_static` (cit:([`create_app`], mcp/src/agents_remember/serving/app.py:226-285)), mounting the read-only `/api/changeset/{task,file-diff,master}` change-set API (handlers in `serving/changeset.py`) — registered before the greedy `/` static mount. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
 - 2026-06-28T22:41+02:00 — operations-integration L1: `create_app` now calls `register_files_routes(app, config)` immediately before `mount_static`, mounting the read-only `/api/files/{repos,list,read,onboarding}` files API (handlers in `serving/files.py`). Registered before the greedy `/` static mount so it cannot swallow them. Verification metadata pinned until closeout stamps the L1 code commit.
 - 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: `/api/actions/dismiss` now persists targetless
   actionable-drift acknowledgements while keeping gate-open dismissal source-consuming and lifecycle

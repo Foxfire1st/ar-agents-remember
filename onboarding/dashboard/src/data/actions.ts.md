@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/actions.ts`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The serving route this POSTs to (records the developer/dashboard gate decision). | `_gate_decision_response` | mcp/src/agents_remember/serving/app.py:1141-1161 |
+| The serving route this POSTs to (records the developer/dashboard gate decision). | "def _gate_decision_response(" | mcp/src/agents_remember/serving/_app_routes.py:242-242 |
 | The gate responder that calls `postGateDecision` and maps failure outcomes into rendered status. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
 | The attention queue that calls `postAttentionDismiss`. | `AttentionQueueImpl` | dashboard/src/panels/AttentionQueue.tsx:271-323 |
 | The interaction answer path riding `postGateDecisionDetailed` (approve + note). | `answerPendingInteraction` | dashboard/src/data/interactionAnswer.ts:449-481 |

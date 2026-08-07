@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -111,8 +111,8 @@ it launches WITHOUT `--forward-subagent-text`, consults this module's floor verd
 | --- | --- | --- |
 | The adapter applies discovery normalization only to a copied transient launch, then uses the ordinary startup/advertise/forced-stop sequence. | `ClaudeStreamJsonAdapter` | mcp/src/agents_remember/serving/harness_control_claude.py:145-571 |
 | The adapter launches without the flag, re-launches with it when `system/init` proves the floor, and records the exact enabled/unverified reason in the snapshot. | `ClaudeStreamJsonAdapter` | mcp/src/agents_remember/serving/harness_control_claude.py:145-571 |
-| Regression cases cover separate, repeated/variadic, equals-attached, end-of-options, exactly-one-empty-selector, and normal-start preservation behavior. | `test_discover_uses_only_token_free_bootstrap_and_list_models` | mcp/tests/test_harness_control_claude.py:256-276 |
-| Floor-gate regressions: at/above the floor the adapter re-launches with the flag; an unparseable version stays fail-closed with no flag. | `test_forward_subagent_text_stays_fail_closed_on_an_unparseable_version` | mcp/tests/test_harness_control_claude.py:498-513 |
+| Regression cases cover separate, repeated/variadic, equals-attached, end-of-options, exactly-one-empty-selector, and normal-start preservation behavior. | `test_discover_uses_only_token_free_bootstrap_and_list_models` | mcp/tests/test_harness_control_claude_stream_1.py:33-53 |
+| Floor-gate regressions: at/above the floor the adapter re-launches with the flag; an unparseable version stays fail-closed with no flag. | `test_forward_subagent_text_stays_fail_closed_on_an_unparseable_version` | mcp/tests/test_harness_control_claude_stream_1.py:275-290 |
 | Startup sends initialization/bootstrap before the correlated catalog request and rejects unexpected catalog frames. | `negotiate_claude_startup` | mcp/src/agents_remember/serving/claude_stream_startup.py:59-81 |
 | State requires the same session, retained UUID, and exact canonical replay body before accepting a command. | `ClaudeStreamState` | mcp/src/agents_remember/serving/claude_stream_state.py:112-1030 |
 | Catalog parsing validates model identities, disabled state, and each model's own effort menu. | `parse_list_models_response` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32 |

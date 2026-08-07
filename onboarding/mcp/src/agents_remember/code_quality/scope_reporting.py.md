@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -87,27 +87,29 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `pyright_config_description` (lines 108-125). | `pyright_config_description` | mcp/src/agents_remember/code_quality/scope_reporting.py:108-125 |
 | Defines the function `wrapper_scope_line` (lines 128-143). | `wrapper_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:128-143 |
 | Defines the function `fixed_step_scope_line` (lines 146-186). | `fixed_step_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:146-186 |
-| Defines the function `coverage_result_scope_line` (lines 189-196). | `coverage_result_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:189-196 |
+| Defines the function `coverage_result_scope_line` (lines 189-196). | `coverage_result_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:202-209 |
 | Defines the function `randomized_pytest_scope_line` (lines 199-213). | `randomized_pytest_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:199-213 |
-| Defines the function `crap_scope_line` (lines 216-227). | `crap_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:216-227 |
+| Defines the function `crap_scope_line` (lines 216-227). | `crap_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:229-240 |
 | Defines the function `diff_input_description` (lines 230-247). | `diff_input_description` | mcp/src/agents_remember/code_quality/scope_reporting.py:230-247 |
 | Defines the function `diff_scope_line` (lines 250-264). | `diff_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:250-264 |
 | Defines the function `untracked_scope_lines` (lines 267-295). | `untracked_scope_lines` | mcp/src/agents_remember/code_quality/scope_reporting.py:267-295 |
 | Defines the function `generated_scope_line` (lines 298-324). | `generated_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:298-324 |
-| Defines the function `frontend_files` (lines 330-338). | `frontend_files` | mcp/src/agents_remember/code_quality/scope_reporting.py:330-338 |
-| Defines the function `read_json_object` (lines 341-348). | `read_json_object` | mcp/src/agents_remember/code_quality/scope_reporting.py:341-348 |
+| Defines the function `frontend_files` (lines 330-338). | `frontend_files` | mcp/src/agents_remember/code_quality/scope_reporting.py:343-351 |
+| Defines the function `read_json_object` (lines 341-348). | `read_json_object` | mcp/src/agents_remember/code_quality/scope_reporting.py:354-361 |
 | Defines the function `tsconfig_project_inputs` (lines 351-377). | `tsconfig_project_inputs` | mcp/src/agents_remember/code_quality/scope_reporting.py:351-377 |
 | Defines the function `tsconfig_inputs` (lines 380-401). | `tsconfig_inputs` | mcp/src/agents_remember/code_quality/scope_reporting.py:380-401 |
 | Defines the function `config_input_files` (lines 404-424). | `config_input_files` | mcp/src/agents_remember/code_quality/scope_reporting.py:404-424 |
 | Defines the function `dashboard_lint_scope_line` (lines 427-443). | `dashboard_lint_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:427-443 |
 | Defines the function `dashboard_test_scope_line` (lines 446-465). | `dashboard_test_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:446-465 |
-| Defines the function `dashboard_typecheck_scope_line` (lines 468-474). | `dashboard_typecheck_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:468-474 |
+| Defines the function `dashboard_typecheck_scope_line` (lines 468-474). | `dashboard_typecheck_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:481-487 |
 | Defines the function `dashboard_build_scope_line` (lines 477-502). | `dashboard_build_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:477-502 |
 | Defines the function `dashboard_scope_line` (lines 505-523). | `dashboard_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:505-523 |
 | Defines the function `build_parser` (lines 526-546). | `build_parser` | mcp/src/agents_remember/code_quality/scope_reporting.py:549-573 |
-| Defines the function `main` (lines 586-596). | `main` | mcp/src/agents_remember/code_quality/scope_reporting.py:612-622 |
+| Defines the function `main` (lines 586-596). | `main` | mcp/src/agents_remember/code_quality/scope_reporting.py:624-634 |
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: the file-size scope contract was added to scope reporting, and the TypeScript-input count now matches the live tsconfig project-input union (426). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the dashboard rail steps and pinned TS input count. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T13:06:07+02:00 — 260731-EFA-L6 residual curator: corrected the `main` citation from the stale range 549-575 (which holds no `main`) to the current definition extent 586-596 in the frozen code tree (HEAD 5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060).

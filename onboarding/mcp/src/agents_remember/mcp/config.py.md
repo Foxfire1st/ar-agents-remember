@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-04T03:03+02:00    |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -171,7 +171,7 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 | The dedicated `providerDegradation` parser validates the authority block and constructs typed settings. | `parse_provider_degradation_settings` | mcp/src/agents_remember/mcp/provider_degradation_settings.py:58-128 |
 | `config_from_mapping` calls that parser and translates `ProviderDegradationSettingsError` into `ConfigError`. | `config_from_mapping` | mcp/src/agents_remember/mcp/config.py:241-290 |
 | `evaluate_provider_degradation` consumes `config.provider_degradation` for enablement, sample limits, and classification thresholds on every evaluation. | `evaluate_provider_degradation`; `provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
-| `load_agentic_settings` layers and merges agentic settings; `_parse_orchestration` applies the shared `parse_gate_delegation` parser to the resulting block. | `load_agentic_settings`; `_parse_orchestration`; `parse_gate_delegation` | mcp/src/agents_remember/kernel/agentic_settings.py:445-480; mcp/src/agents_remember/kernel/agentic_settings.py:644-680; mcp/src/agents_remember/kernel/agentic_settings.py:880-932 |
+| `load_agentic_settings` layers and merges agentic settings; `_parse_orchestration` applies the shared `parse_gate_delegation` parser to the resulting block. | `load_agentic_settings`; `_parse_orchestration`; "def parse_gate_delegation(" | mcp/src/agents_remember/kernel/_agentic_settings_policy.py:26-26; mcp/src/agents_remember/kernel/agentic_settings.py:217-252; mcp/src/agents_remember/kernel/agentic_settings.py:322-358 |
 | `parse_orchestration_settings` supplies the global boot snapshot to `McpRuntimeConfig.orchestration`; its authority-file legacy path delegates to `_parse_legacy_authority_gate_delegation`, which uses the same gate parser. | `parse_orchestration_settings`; `_parse_legacy_authority_gate_delegation` | mcp/src/agents_remember/mcp/config.py:479-512; mcp/src/agents_remember/mcp/config.py:515-547 |
 | `provider_watchers_tool` reloads live launch authority for start, restart, and index invalidation while status, stop, and shutdown remain deliberately ungated. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
 | The provider query funnel reloads launch authority for operations with a required provider and rejects a query when that specific provider is absent. | `_provider_operation_result`; `ProviderOperation.required_provider` | mcp/src/agents_remember/application/provider_tools.py:736-783 |

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_codex_adapter_thread_routing_and_registry.py` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-31T15:32+02:00                                       |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                   |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                   |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ registry assertions a statement about a **settled** frame rather than a race.
 | --- | --- | --- |
 | The Codex app-server adapter, its thread demux and agent registry. | `CodexAppServerAdapter`; `CodexThreadRegistry` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115; mcp/src/agents_remember/serving/codex_app_server_threads.py:69-300 |
 | The demux suite this module extends. | "test_spawned_subagent_traffic_never_fails_the_bridge" | mcp/tests/test_codex_adapter_thread_demux.py:118-158 |
-| The sub-agent projector whose roster these registry bindings feed. | `CodexAgentEngineTests` | mcp/tests/test_conversation_projector_codex_agents.py:464-1291 |
+| The sub-agent projector whose roster these registry bindings feed. | "class CodexAgentEngineTests1(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_conversation_projector_codex_agents_engine_1.py:89-89 |
 
 ## Update History
 

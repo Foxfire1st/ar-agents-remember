@@ -6,8 +6,8 @@
 | path                   | `docs/reference/settings-json.md`       |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -65,10 +65,10 @@ spawn-surface manual.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Agentic settings parser that implements the documented `orchestration.*` families. | "Read + merge the global (and optional repo-local) agentic settings, per use." | mcp/src/agents_remember/kernel/agentic_settings.py:449-449 |
+| Agentic settings parser that implements the documented `orchestration.*` families. | "Read + merge the global (and optional repo-local) agentic settings, per use." | mcp/src/agents_remember/kernel/agentic_settings.py:221-221 |
 | Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
-| Serving app that reads supervisor settings per sweep. | "supervisor sweep failed; retrying next interval" | mcp/src/agents_remember/serving/app.py:871-871 |
-| Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. | `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:1195-1282 |
+| Serving app that reads supervisor settings per sweep. |"logger.exception(\"supervisor sweep failed; retrying next interval\")"|mcp/src/agents_remember/serving/_app_lifespan.py:107-107|
+| Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. | `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:96-193 |
 | Backoff math enforcing the shared 900-second redelivery floor documented here. | "redelivery interval" | mcp/src/agents_remember/controlplane/inbox_backoff.py:45-45 |
 
 ## Update History

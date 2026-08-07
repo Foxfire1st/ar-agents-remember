@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_plane.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -89,7 +89,7 @@ evidence.
 | The authority's paged ledger enumeration, recovery capture, and asset channel under test. | "class HarnessSubmissionAuthority" | mcp/src/agents_remember/serving/harness_submission_authority.py:116-116 |
 | The codex/pi interrupt and asset implementations under fake-transport test. | "class CodexAppServerAdapter", "class PiRpcAdapter" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-91; mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-94 |
 | The IPC asset admission and the two additive actions exercised over a real socket. | "class HarnessControlServer" | mcp/src/agents_remember/serving/harness_control_ipc.py:99-99 |
-| The strict client validators exercised by the validation battery. | "class ControlledSession" | mcp/src/agents_remember/serving/harness_control_client.py:91-91 |
+| The strict client validators exercised by the validation battery. | "class ControlledSession" | mcp/src/agents_remember/serving/harness_control_client.py:99-99 |
 | The installed-runtime companion that captures the same seams live into the redacted fixtures. | `CodexInstalledControlPlaneTests` | mcp/tests/test_harness_control_plane_installed.py:124-266 |
 
 ## Cross-Repo References
@@ -113,6 +113,8 @@ action is refused **by name** and the bridge **keeps serving**. An unknown verb 
 take the control plane down, and the refusal has to say which verb it was.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with
   exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

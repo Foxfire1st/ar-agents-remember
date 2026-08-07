@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-01T09:48+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -170,7 +170,7 @@ No relevant external/domain documentation found; this is an internal response co
 | Conformance coverage includes a representative missing-session (attach) and legacy-caller-harness (spawn) refusal payload for the models. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |
 | `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:944-1001; mcp/src/agents_remember/application/terminal_tools.py:1028-1042 |
 | The response registry maps `session_retire`/`session_rename` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
-| `test_every_spawn_status_the_tool_can_return_validates` / `..._retire_status_...` / `..._rename_status_...` assert produced == declared for each of the three `VALID_*` sets. | `ProducedLiteralTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:635-820 |
+| `test_every_spawn_status_the_tool_can_return_validates` / `..._retire_status_...` / `..._rename_status_...` assert produced == declared for each of the three `VALID_*` sets. | `ProducedLiteralTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817 |
 
 ## Cross-Repo References
 

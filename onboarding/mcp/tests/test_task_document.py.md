@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_document.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -90,11 +90,11 @@ and tool registration.
 | --- | --- | --- |
 | The test imports and exercises the task-document APIs used by this suite. | `task_doc_tool` | mcp/tests/test_task_document.py:30-56 |
 | The application entry point under test. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:135-186 |
-| The path-change rejection test invokes the replace operation and expects TaskDocError. | `test_replace_rejects_document_path_change`, `replace` | mcp/tests/test_task_document.py:1150-1164 |
-| Leaf creation inserts the parent master row. | `create` | mcp/tests/test_task_document.py:724-743 |
-| Master sync preserves manually-authored scope. | `scope` | mcp/tests/test_task_document.py:752-752 |
-| Master row status is derived from leaf state. | `status` | mcp/tests/test_task_document.py:797-797 |
-| Dry-run returns the parent master sync preview. | `dry_run` | mcp/tests/test_task_document.py:923-936 |
+| The path-change rejection test invokes the replace operation and expects TaskDocError. | `test_replace_rejects_document_path_change`, `replace` | mcp/tests/test_memory_citation_source_index_publication_2.py:145-151; mcp/tests/test_task_document_application_1.py:445-459 |
+| Leaf creation inserts the parent master row. | "def create(cls, path: Path) -> Database:" | mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py:156-156 |
+| Master sync preserves manually-authored scope. | "const { webtuiPrefixOptions } = require('./webtui-scope.config.cjs');" | dashboard/postcss.config.cjs:6-6 |
+| Master row status is derived from leaf state. | "export const status = css({" | dashboard/src/panels/sessionComposerStyles.ts:116-116 |
+| Dry-run returns the parent master sync preview. | "def _create_missing_dirs(paths: list[Path], *, dry_run: bool) -> list[str]:" | mcp/src/agents_remember/kernel/memory_init.py:12-12 |
 | The conformance net that also covers `task_doc`. | `task_doc` | mcp/tests/test_tool_response_conformance.py:395-395 |
 
 ## Series-Contract Notes
@@ -108,6 +108,8 @@ Task-document tests cover the `seriesContractPath`/`enclosures[]` linkage fields
 - A master ref naming a **sibling leaf** is refused **by kind**, not by id shape.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer residual correction: bound the path-change rejection test,
   `replace` operation, and `TaskDocError` expectation to the complete test body.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -89,7 +89,7 @@ direct evidence.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Foundation tests parse this exact version tuple, require non-enablement, and scan all fixtures for raw secrets/paths/conversation material. | `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement`; `test_runtime_fixtures_contain_no_raw_secret_path_or_conversation_material` | mcp/tests/test_conversation_foundation.py:163-188; mcp/tests/test_conversation_foundation.py:191-202 |
-| The runtime-fixture model requires allowlist-v1, at least one observation, and literal false enablement. | `RuntimeFixtureEvidence` | mcp/src/agents_remember/serving/conversation/models.py:1272-1282 |
+| The runtime-fixture model requires allowlist-v1, at least one observation, and literal false enablement. | "class RuntimeFixtureEvidence(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_telemetry.py:87-87 |
 | The opt-in installed suite captures these `substrate-evidence/*` rows through the production seam and asserts their shapes. | `test_live_evidence_family_and_resume_channel_through_production_seam` | mcp/tests/test_harness_control_evidence_installed.py:132-179 |
 | The L2 installed-runtime suite produces the live gate and codex open evidence the `native-history/*` rows record. | `test_live_gate_supports_list_read_and_partial_completeness`; `test_open_real_codex_thread_proves_exact_identity` | mcp/tests/test_conversation_library_installed.py:136-153; mcp/tests/test_conversation_library_installed.py:495-551 |
 | The L2E installed-runtime suite captures these `control-plane/*` rows through the production control seam and asserts their shapes. | `test_live_interrupt_timeline_assets_and_recovery` | mcp/tests/test_harness_control_plane_installed.py:142-266 |

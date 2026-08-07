@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `e52edaf5b655f495580efd93306afdf922b19b51`|
-| lastVerifiedCommitDate |  2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -115,7 +115,7 @@ and the production-route suite are the direct evidence.
 | The L0 request dependencies invoked directly in-handler for typed mapping. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
 | The production-route suite driving these routes over a real socket. | `ProductionRouteTests` | mcp/tests/test_conversation_active_api.py:333-348; mcp/tests/test_conversation_active_api.py:379-945 |
 | The `CONVERSATION_RESPONSES` table these routes declare and the `AgentHistoryHydrated` model the child-history body finally has. | `CONVERSATION_RESPONSES`; `AgentHistoryHydrated` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The suite that enforces the declarations by driving all three routes and validating the real bodies and SSE frames. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:783-1861 |
+| The suite that enforces the declarations by driving all three routes and validating the real bodies and SSE frames. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:792-899 |
 
 ## Cross-Repo References
 

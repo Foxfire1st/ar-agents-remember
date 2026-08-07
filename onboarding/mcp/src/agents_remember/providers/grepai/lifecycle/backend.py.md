@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/backend.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ only when Docker labels do not show the expected Compose project.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Backend settings and Docker network name are derived in GrepAI core. | `grepai_backend_settings`, `grepai_network_name` | mcp/src/agents_remember/providers/grepai/lifecycle/core.py:148-152; mcp/src/agents_remember/providers/grepai/lifecycle/core.py:339-362 |
-| Tests require the Postgres wait helper to run both `pg_isready` and a database query. | `pg_isready` | mcp/tests/test_provider_lifecycle.py:1139-1139 |
+| Tests require the Postgres wait helper to run both "test: [\"CMD-SHELL\", \"pg_isready -U grepai -d grepai\"]" and a database query. | "test: [\"CMD-SHELL\", \"pg_isready -U grepai -d grepai\"]" | providers/compose/grepai.compose.yaml:13-13|
 | Shared Compose helpers provide unmanaged container and network migration. | `remove_unmanaged_compose_container`, `remove_unmanaged_compose_network` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:252-269; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:272-289 |
 
 ## Update History

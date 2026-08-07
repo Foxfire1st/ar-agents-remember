@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T15:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -168,17 +168,17 @@ advertisement contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Token-free discovery uses one non-querying synthetic user frame, records zero turns/cost, inserts one strict empty config, selects the current model, and stops the transient transport. | `test_discover_uses_only_token_free_bootstrap_and_list_models` | mcp/tests/test_harness_control_claude.py:256-276 |
-| Discovery replaces separate, variadic/repeated, and equals-attached MCP selectors; preserves unrelated argv and the full post-`--` suffix; and leaves exactly one strict empty config before the separator. | `test_discover_replaces_all_installed_mcp_selector_spellings` | mcp/tests/test_harness_control_claude.py:278-390 |
-| Normal startup preserves caller MCP selectors byte-for-byte, proving isolation is discovery-only. | `test_normal_start_preserves_existing_mcp_selectors_byte_for_byte` | mcp/tests/test_harness_control_claude.py:392-412 |
-| Startup preserves native launch settings, issues `list_models`, caches the selected catalog, gates efforts by model, leaves current effort unknown, and marks disabled rows non-selectable. | `test_launch_preserves_arguments_environment_and_requires_structured_init` | mcp/tests/test_harness_control_claude.py:414-469 |
-| Forwarding at or above the supported version floor relaunches with `--forward-subagent-text`. | `test_forward_subagent_text_relaunches_with_the_flag_at_or_above_the_floor` | mcp/tests/test_harness_control_claude.py:471-496 |
-| An unparseable version keeps `--forward-subagent-text` fail-closed. | `test_forward_subagent_text_stays_fail_closed_on_an_unparseable_version` | mcp/tests/test_harness_control_claude.py:498-513 |
-| Current initialization omits stale model/account fields, while duplicate or rejected catalog evidence yields unsupported/loud failure with no fallback. | `test_current_initialize_without_models_or_account_is_accepted`; `test_malformed_or_rejected_list_models_fails_loud_without_fallback` | mcp/tests/test_harness_control_claude.py:515-531; mcp/tests/test_harness_control_claude.py:533-565 |
-| Same-session model/effort setters require native replay plus terminal echo, update the model gate only on evidence, and refuse effort unavailable for the selected model without a write. | `test_model_and_effort_set_require_terminal_echo_and_update_model_gate` | mcp/tests/test_harness_control_claude.py:896-948 |
-| Native failure and non-echo completion remain unsupported/immediate without promotion; provider-qualified Fable refusal and a successful alias named `fable` prove there is no name heuristic. | `test_terminal_refusal_or_non_echo_never_promotes_claude_capability`; `test_native_noninteractive_set_blocked_refusal_maps_without_alias_guessing` | mcp/tests/test_harness_control_claude.py:950-972; mcp/tests/test_harness_control_claude.py:974-1039 |
-| Exact dynamic terminal aliases reject prefix impostors and arbitrary default labels. | `test_model_terminal_labels_are_exact_dynamic_aliases_not_prefixes` | mcp/tests/test_harness_control_claude.py:1041-1124 |
-| Repeated late replay of an expired set restores one turn rather than one turn per replay. | `test_repeated_late_replay_of_an_expired_set_restores_one_turn_not_two` | mcp/tests/test_harness_control_claude.py:1160-1201 |
+| Token-free discovery uses one non-querying synthetic user frame, records zero turns/cost, inserts one strict empty config, selects the current model, and stops the transient transport. | `test_discover_uses_only_token_free_bootstrap_and_list_models` | mcp/tests/test_harness_control_claude_stream_1.py:33-53 |
+| Discovery replaces separate, variadic/repeated, and equals-attached MCP selectors; preserves unrelated argv and the full post-`--` suffix; and leaves exactly one strict empty config before the separator. | `test_discover_replaces_all_installed_mcp_selector_spellings` | mcp/tests/test_harness_control_claude_stream_1.py:55-167 |
+| Normal startup preserves caller MCP selectors byte-for-byte, proving isolation is discovery-only. | `test_normal_start_preserves_existing_mcp_selectors_byte_for_byte` | mcp/tests/test_harness_control_claude_stream_1.py:169-189 |
+| Startup preserves native launch settings, issues `list_models`, caches the selected catalog, gates efforts by model, leaves current effort unknown, and marks disabled rows non-selectable. | `test_launch_preserves_arguments_environment_and_requires_structured_init` | mcp/tests/test_harness_control_claude_stream_1.py:191-246 |
+| Forwarding at or above the supported version floor relaunches with `--forward-subagent-text`. | `test_forward_subagent_text_relaunches_with_the_flag_at_or_above_the_floor` | mcp/tests/test_harness_control_claude_stream_1.py:248-273 |
+| An unparseable version keeps `--forward-subagent-text` fail-closed. | `test_forward_subagent_text_stays_fail_closed_on_an_unparseable_version` | mcp/tests/test_harness_control_claude_stream_1.py:275-290 |
+| Current initialization omits stale model/account fields, while duplicate or rejected catalog evidence yields unsupported/loud failure with no fallback. | `test_current_initialize_without_models_or_account_is_accepted`; `test_malformed_or_rejected_list_models_fails_loud_without_fallback` | mcp/tests/test_harness_control_claude_stream_1.py:292-308; mcp/tests/test_harness_control_claude_stream_1.py:310-342 |
+| Same-session model/effort setters require native replay plus terminal echo, update the model gate only on evidence, and refuse effort unavailable for the selected model without a write. | `test_model_and_effort_set_require_terminal_echo_and_update_model_gate` | mcp/tests/test_harness_control_claude_stream_2.py:66-118 |
+| Native failure and non-echo completion remain unsupported/immediate without promotion; provider-qualified Fable refusal and a successful alias named `fable` prove there is no name heuristic. | `test_terminal_refusal_or_non_echo_never_promotes_claude_capability`; `test_native_noninteractive_set_blocked_refusal_maps_without_alias_guessing` | mcp/tests/test_harness_control_claude_stream_2.py:120-142; mcp/tests/test_harness_control_claude_stream_2.py:144-209 |
+| Exact dynamic terminal aliases reject prefix impostors and arbitrary default labels. | `test_model_terminal_labels_are_exact_dynamic_aliases_not_prefixes` | mcp/tests/test_harness_control_claude_stream_2.py:211-294 |
+| Repeated late replay of an expired set restores one turn rather than one turn per replay. | `test_repeated_late_replay_of_an_expired_set_restores_one_turn_not_two` | mcp/tests/test_harness_control_claude_stream_2.py:330-371 |
 | The Claude catalog parser validates the native response, exact unique model keys, model-specific effort consistency, disabled state, and current-model membership. | `parse_list_models_response`; `_parse_model`; `_require_unique_model_keys`; "def _select_current_model" | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32; mcp/src/agents_remember/serving/claude_stream_capabilities.py:50-75; mcp/src/agents_remember/serving/claude_stream_capabilities.py:78-83; mcp/src/agents_remember/serving/claude_stream_capabilities.py:86-110 |
 | The adapter negotiates startup then catalog before readiness, isolates only transient discovery, force-stops that probe, and retains cached advertisement for started sessions. | `start`; `discover`; `advertise` | mcp/src/agents_remember/serving/harness_control_claude.py:283-318; mcp/src/agents_remember/serving/harness_control_claude.py:327-341; mcp/src/agents_remember/serving/harness_control_claude.py:343-350 |
 | The discovery argv builder removes only accepted pre-separator MCP selector spellings, preserves unrelated arguments/suffixes, and adds one strict empty set; the ordinary stream argv builder stays separate. | `build_claude_discovery_argv`; `build_claude_stream_argv` | mcp/src/agents_remember/serving/claude_stream_protocol.py:88-113; mcp/src/agents_remember/serving/claude_stream_protocol.py:116-145 |
@@ -214,6 +214,8 @@ more than once restores **one** turn, not one per replay. Replay is idempotent p
 duplicated late frame cannot inflate the transcript.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T13:54+02:00 — 260731-EFA-L6 S18-B13 curator: reissued whole-claim evidence for Claude catalog parsing and native startup frames for same-reviewer closure.
 

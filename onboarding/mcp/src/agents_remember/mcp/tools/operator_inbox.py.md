@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/operator_inbox.py`        |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-31T15:31+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -111,7 +111,7 @@ cannot receive direct session injection.
 | The serving post owner derives routing, persists the row and ack-by expectation, and performs optional hosted delivery. | `_post_address`; `_persist_post`; `_deliver_post`; `post_operator_inbox_entry` | mcp/src/agents_remember/serving/operator_inbox_posts.py:104-119; mcp/src/agents_remember/serving/operator_inbox_posts.py:144-175; mcp/src/agents_remember/serving/operator_inbox_posts.py:178-199; mcp/src/agents_remember/serving/operator_inbox_posts.py:202-288 |
 | Hosted delivery reads the supervisor redelivery floor and passes it into the delivery attempt. | `_redelivery_floor_seconds`; `_deliver_post` | mcp/src/agents_remember/serving/operator_inbox_posts.py:70-73; mcp/src/agents_remember/serving/operator_inbox_posts.py:178-199 |
 | The tool declarations fix public-route attribution to model/cli. | `register_orchestration_tools` | mcp/src/agents_remember/mcp/registration/orchestration.py:26-116 |
-| The dashboard route delegates to `_operator_inbox_response`, which calls the serving post owner directly and fixes trusted developer/dashboard attribution. | `api_operator_inbox`; `_operator_inbox_response` | mcp/src/agents_remember/serving/app.py:1233-1275; mcp/src/agents_remember/serving/app.py:1302-1308 |
+| The dashboard route delegates to `_operator_inbox_response`, which calls the serving post owner directly and fixes trusted developer/dashboard attribution. | `api_operator_inbox`; "def _operator_inbox_response(" | mcp/src/agents_remember/serving/_app_routes.py:334-334; mcp/src/agents_remember/serving/_app_routes.py:403-409 |
 
 ## Cross-Repo References
 

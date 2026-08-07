@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_pi_rpc_real_smoke.py`      |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,6 +29,7 @@ Opt-in isolated smoke against the pinned real Pi RPC npm package. Three tests, a
    blocks) and proves a second prompt cannot slip past the busy guard, emitting zero
    candidate bytes.
 
+260731-EFA-L7 (trace delta): the live Pi RPC smoke suite is environment-gated (`AR_RUN_PI_RPC_SMOKE=1`); its helpers carry per-function R10 pragmas.
 ## The Version Pin
 
 `PI_RPC_VERSION = "0.80.7"` is the single source of the pin in this module and must match
@@ -91,6 +92,10 @@ a live install driven by `_pi_rpc_capabilities.observe_capabilities`:
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the live Pi RPC smoke suite is environment-gated (`AR_RUN_PI_RPC_SMOKE=...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 12 citations (citation_anchor_missing=6, citation_prose_not_in_cit_form=0, citation_source_malformed=6); final scoped citation check clean.
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: rewritten. The module now installs

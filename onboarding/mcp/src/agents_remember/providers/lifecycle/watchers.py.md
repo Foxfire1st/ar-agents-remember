@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle/watchers.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T22:32+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063` |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ configured repo watchers to be ok.
 | GrepAI watcher behavior lives in the Docker runner module. | `grepai_watcher_container_status` | mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:81-107 |
 | CGC start/stop/status behavior lives in the CGC process-control and installation modules. | `cgc_start`, `cgc_stop`, `cgc_status` | mcp/src/agents_remember/providers/cgc/lifecycle/installation.py:317-352; mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:175-201; mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:497-521 |
 | CGC backend status is reported through the backend module and folded into watcher aggregate status. | ["def cgc_backend_status(args: argparse.Namespace)"], `watchers_run` | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:194-194; mcp/src/agents_remember/providers/lifecycle/watchers.py:186-205 |
-| Tests cover aggregate watcher partial result and recovery-action behavior. | `test_watchers_run_reports_partial_results_and_recovery_actions` | mcp/tests/test_provider_lifecycle.py:1143-1195 |
+| Tests cover aggregate watcher partial result and recovery-action behavior. | `test_watchers_run_reports_partial_results_and_recovery_actions` | mcp/tests/test_provider_lifecycle_parser_2.py:269-321 |
 
 ## Update History
 

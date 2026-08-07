@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/telemetry.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,8 +73,8 @@ L0E evidence window; the capability gate decides what may emit.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `MetricEvidence` carries the evidence-bound metric provenance used by telemetry. | `MetricEvidence` | mcp/src/agents_remember/serving/conversation/models.py:1213-1223 |
-| `ConversationTelemetry` is the wire envelope for the projected telemetry metrics. | `ConversationTelemetry` | mcp/src/agents_remember/serving/conversation/models.py:1255-1262 |
+| `MetricEvidence` carries the evidence-bound metric provenance used by telemetry. | "class MetricEvidence(WireModel, Generic[T]):" | mcp/src/agents_remember/serving/conversation/_models_telemetry.py:28-28 |
+| `ConversationTelemetry` is the wire envelope for the projected telemetry metrics. | "class ConversationTelemetry(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_telemetry.py:70-70 |
 | `telemetry_capabilities_for` is the telemetry capability-gate entry. | `telemetry_capabilities_for` | mcp/src/agents_remember/serving/conversation/control/capabilities.py:342-352 |
 | The harness control bridge appends diverted evidence frames into the bounded evidence buffer. | `_append_evidence` | mcp/src/agents_remember/serving/harness_control_bridge.py:505-528 |
 | The harness control bridge's event-consumption path diverts evidence into the bounded buffer. | `_run_events` | mcp/src/agents_remember/serving/harness_control_bridge.py:415-458 |

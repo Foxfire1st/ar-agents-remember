@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/durable_store.py`   |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-01T19:10+02:00                                    |
-| lastVerifiedCommitHash |                                                           `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |                                                           2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash |                                                           `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |                                                           2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -378,7 +378,7 @@ only for other files, and every one below was re-verified against the working tr
 | The third call site and the only factory that declares: `--reload` serves from a uvicorn `multiprocessing` spawn child that re-imports the module with an empty declaration dict and never reaches `run`, so it answered owner for every log. The docstring records this as an ownership gap and not a durability defect — the unconditional lock covered the rewrite — and why `create_app` still must not declare. | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:52-81 |
 | `_reclaim_gate_log` guards on `is_compaction_owner` before compacting, because the dashboard calls `gate_decide_payload` directly; without the guard an MCP-side reclaim runs inside the dashboard. | `_reclaim_gate_log` | mcp/src/agents_remember/controlplane/gate_decisions.py:74-80 |
 | The dashboard's HTTP dismiss route calls `AttentionDismissalStore.dismiss`, the whole-file read-modify-write that made the single-writer store the worst loser. | "class AttentionDismissalStore"; "def dismiss" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-78 |
-| `read_gates` no longer rewrites on the projection tick; it uses the tolerant `projected_current`, and physical reclamation moved to the gate log's owner. | `read_gates` | mcp/src/agents_remember/observer/snapshots.py:512-546 |
+| `read_gates` no longer rewrites on the projection tick; it uses the tolerant `projected_current`, and physical reclamation moved to the gate log's owner. | "def read_gates(coordination_root: Path, *, now: date" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104 |
 | The worktree series contract imports this module's `SCHEMA_VERSION` and `schema_version_supported`, so the tree carries one version policy rather than two. | `SCHEMA_VERSION`; `schema_version_supported` | mcp/src/agents_remember/worktrees/worktree_contract.py:16-16; mcp/src/agents_remember/worktrees/worktree_contract.py:40-40 |
 | The control-plane lockfiles are excluded from the projection watch by a rule DERIVED from `lock_path_for` rather than spelled out, and matched by suffix in every watched directory — which is what covers the per-lifecycle `gates.jsonl.lock` a basename list structurally could not. `_EXCLUDED_WORKSPACE_NAMES` no longer names any lockfile; the comment above the derived constant records that spelling it out is exactly what broke. | `_DURABLE_LOG_LOCK_SUFFIX`; `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:156-156; mcp/src/agents_remember/serving/change_watcher.py:187-205 |
 

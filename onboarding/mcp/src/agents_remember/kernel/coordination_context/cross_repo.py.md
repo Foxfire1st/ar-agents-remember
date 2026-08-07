@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/cross_repo.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ No external documentation is needed for the local cross-repo resolver.
 | `run_git` is imported from the kernel git command module rather than defined locally, and both helpers here pass `GIT_METADATA_TIMEOUT_SECONDS` from it. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | Cross-repo entries are parsed from settings before this module resolves repository state. | `parse_cross_repo_allow`; `parse_cross_repo_allow_entry` | mcp/src/agents_remember/kernel/coordination_context/setting_values.py:44-58; mcp/src/agents_remember/kernel/coordination_context/setting_values.py:61-70 |
 | External memory ledger parsing supplies memory compatibility facts. | `parse_ledger_text`; `parse_ledger_rows` | mcp/src/agents_remember/kernel/memory_ledger.py:52-104; mcp/src/agents_remember/kernel/memory_ledger.py:123-132 |
-| Worktree support tests cover branch-gated cross-repo inclusion and legacy-string exclusion. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:573-3049 |
+| Worktree support tests cover branch-gated cross-repo inclusion and legacy-string exclusion. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |
 
 ## Cross-Repo References
 

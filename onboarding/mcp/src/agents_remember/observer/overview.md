@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-07T20:09+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-08-07T22:45:00+02:00 |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -603,7 +603,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | `ContractSnapshot` is declared here. | "class ContractSnapshot:" | mcp/src/agents_remember/observer/contract_snapshot.py:38-38 |
 | `ContractSnapshotCache` is the associated snapshot-cache type. | `ContractSnapshotCache` | mcp/src/agents_remember/observer/contract_snapshot.py:60-126 |
 | `progress_status` is the setup-progress status record. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
-| The `MetricsBucketVocabularyTests` suite pins the bucket vocabulary. | `MetricsBucketVocabularyTests` | mcp/tests/test_observer_projection.py:1627-1732 |
+| The `MetricsBucketVocabularyTests` suite pins the bucket vocabulary. | `MetricsBucketVocabularyTests` | mcp/tests/test_observer_projection_metrics.py:128-233 |
 | The ambient `end()` entry and its focused terminal-state test are named here. | "def end"; `test_the_ambient_end_signal_accepts_exactly_the_terminal_states` | mcp/src/agents_remember/observer/ambient.py:274-274; mcp/tests/test_observer_ambient.py:175-175 |
 | `projected_current` is the gate store's tolerant projected fold. | `projected_current` | mcp/src/agents_remember/controlplane/store.py:279-300 |
 | The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists. | `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:215-217 |
@@ -742,7 +742,14 @@ False to exit the loop when no lifecycle is active or the current one is termina
 seam-driven and deterministic (grant-stepping fake + `wait_until` polling, plus unit pins for the
 default wait and the loop exit) — no short-interval wall-clock races.
 
+## 260731-EFA-L7 — The Write-Side Facade Splits
+
+The two over-limit write-side modules were split in place into facades plus private subpackages: `observer/snapshots.py` (1,551 → 424) delegates to `snapshots_impl/{_common,_analytics,_runtime,_task_documents}` and `observer/reducer.py` (1,678 → 512) to `reducer_impl/{_types,_metrics,_attention,_processes}`. The subpackages keep `observer/` under the 25-module structural cap. Both facades re-export the full public+private surface (mock-patch targets included), pinned mechanically by `mcp/tests/test_facade_surface.py`; the split families `test_observer_projection_*` cover the split modules.
+
+
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 route impact: recorded the `snapshots_impl/` and `reducer_impl/` facade splits and their surface pin. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded the round-13
   ambient heartbeat mechanism — `_default_ticker_wait`'s monotonic-deadline chunked wait with

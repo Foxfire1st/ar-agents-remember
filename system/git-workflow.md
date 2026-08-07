@@ -37,6 +37,9 @@ A job changes the checkout via these steps:
 5. **Commit gate (human + quality).** Nothing is committed before explicit developer commit
    approval (`c-12-closeout` worktree preview first). After approval, closeout runs the default
    strict project wrapper before any code, memory, ledger, contract, or applied-gate mutation.
+   The wrapper enforces Ruff, Pyright, pytest, CRAP (default threshold 20.0), diff coverage, and
+   the **armed file-size detector** (hard limit 1,200 lines, architectural-failure 2,000+,
+   emergency-cleanup 4,000+); Radon CC/MI report rather than gate.
 6. **Push gate (human — one question).** After commit approval, a single "push?" approval hands the
    tail to the agent. Merge is **no longer its own gate** — only timing.
 7. Agent owns the tail: **push the branch → `gh pr create` (target `main`) → checks green →

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_app_background_loops.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-31T15:32+02:00                             |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`         |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`         |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -63,11 +63,13 @@ out anonymously.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The loops and the lifespan under test. | `_serving_lifespan` | mcp/src/agents_remember/serving/app.py:900-943 |
+| The loops and the lifespan under test. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:136-136 |
 | The same app's failing route arms. | `PasteRouteTests` | mcp/tests/test_serving_app_routes.py:427-481 |
 | The opt-in heap diagnostic's own suite. | `HeapDiagLoopTests` | mcp/tests/test_heap_diag.py:103-264 |
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 3 citation entries (6 findings); no Tier-3 findings.
 

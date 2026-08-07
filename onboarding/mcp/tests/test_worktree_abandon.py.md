@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_abandon.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-21T04:10+02:00                     |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`                |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -105,7 +105,7 @@ No external documentation is needed for these standard-library unit tests.
 | `_worktree_provider_docker_resources` derives the provider container/network resources used by teardown. | `_worktree_provider_docker_resources` | mcp/src/agents_remember/worktrees/modules/provider_teardown.py:60-74 |
 | `_abandon_branch` and `_abandon_blockers`. | `_abandon_branch`; `_abandon_blockers` | mcp/src/agents_remember/worktrees/modules/abandon.py:339-372; mcp/src/agents_remember/worktrees/modules/abandon.py:431-445 |
 | `lifecycle_guidance` delegates terminal cleanup states to `_reclaimed_phase`, including the `cleanup == "abandoned"` branch pinned by the 05l-P1 phase test. | `lifecycle_guidance`; `_reclaimed_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:230-240; mcp/src/agents_remember/worktrees/modules/guidance.py:243-257 |
-| `git`/`init_repo` test utilities from the worktree support test module. | "def git"; "def init_repo" | mcp/tests/test_worktree_support.py:92-92; mcp/tests/test_worktree_support.py:105-105 |
+| `git`/`init_repo` test utilities from the worktree support test module. | "def git"; "def init_repo" | mcp/tests/test_worktree_support.py:54-54; mcp/tests/test_worktree_support.py:68-68 |
 
 ## Cross-Repo References
 

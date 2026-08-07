@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/scenarios.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:40+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -128,7 +128,7 @@ the reviewed task evidence for any current behavioral claim.
 | The `reindexReroute` timeline, whose R4 caption now reads `CGC seed STALE → reindex reroute`. | `reindexReroute` | dashboard/src/dev/scenarios.ts:90-102 |
 | `SCENARIOS` — timelines first, then the folded-in resting frames. | `SCENARIOS` | dashboard/src/dev/scenarios.ts:260-273 |
 | The `engine-cgc-seed-refused` fixture drives a `stale` `cgc-seed` edge; the fixture NAME is unchanged, only the caption moved. | "engine-cgc-seed-refused" | dashboard/src/panels/engine-room/fixtures.ts:834-834 |
-| `_seed_edge_state` is the reducer function that produces seed-edge states; `stale` is one of its decisive answers and `refused` is not among them. | `_seed_edge_state` | mcp/src/agents_remember/observer/reducer.py:1596-1612 |
+| `_seed_edge_state` is the reducer function that produces seed-edge states; `stale` is one of its decisive answers and `refused` is not among them. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:634-634 |
 | `EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra="forbid"` model. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:771-790 |
 | `engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states). | `engineRoomProjection`, `GALLERY` | dashboard/src/dev/fixtures.ts:135-144; dashboard/src/dev/fixtures.ts:146-490 |
 | Consumed by the player transport + the bench picker. | `Bench`, `applyFrame` | dashboard/src/dev/Bench.tsx:18-83; dashboard/src/dev/ScenarioPlayer.tsx:12-17; dashboard/src/dev/ScenarioPlayer.tsx:27-27 |

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical item/revision behavior. | `apply_item` | mcp/src/agents_remember/serving/conversation/active/store.py:161-249 |
-| The `OverflowGapTests` regression suite. | `OverflowGapTests` | mcp/tests/test_conversation_active_service.py:1435-1478 |
+| The `OverflowGapTests` regression suite. | `OverflowGapTests` | mcp/tests/test_conversation_active_service_gaps.py:22-65 |
 
 ## Cross-Repo References
 

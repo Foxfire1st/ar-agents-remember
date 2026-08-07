@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/leaf_ref_validation.py` |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`              |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`              |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ catch `LeafRefResolutionError` and return transport-specific refusals.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Shared resolver and expected-form errors. | `# mcp/src/agents_remember/worktrees/leaf_refs.py` | onboarding/mcp/src/agents_remember/worktrees/leaf_refs.py.md:1-158 |
-| Dashboard terminal open/attach routes that call this adapter. | "def create_app" | mcp/src/agents_remember/serving/app.py:718-718 |
+| Dashboard terminal open/attach routes that call this adapter. | "def create_app" | mcp/src/agents_remember/serving/app.py:226-226 |
 | MCP terminal payload builders that call this adapter. | "def attach_terminal_session_to_leaf_payload" | mcp/src/agents_remember/mcp/tools/terminal.py:26-26 |
 
 ## Update History

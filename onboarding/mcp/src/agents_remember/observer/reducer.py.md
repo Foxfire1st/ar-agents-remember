@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/reducer.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T10:40+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -78,7 +78,7 @@ built from `lifecycle_state.STATES`, **not** from `get_args(State)`: on the unio
 form of a `Literal` declaration `get_args` returns `Literal` *objects*, and a
 frozenset of those matches no event payload — every correction here would be
 dropped as malformed, silently and forever. `STATES` is the already-flattened,
-  already-partition-checked tuple, so this set is strings by construction. cit:([`_STATES`], mcp/src/agents_remember/observer/reducer.py:78-78)
+  already-partition-checked tuple, so this set is strings by construction. cit:([`_STATES`], mcp/src/agents_remember/observer/reducer.py:117-117)
 
 ### Metrics buckets come from the vocabulary (260731-EFA-L4)
 
@@ -377,21 +377,23 @@ file I/O. Defaults empty, so prior structural/analytical callers remain unchange
 | The shared stale/TTL thresholds + age helper. | `STALE_AFTER_SECONDS`; `TTL_SECONDS`; `age_seconds` | mcp/src/agents_remember/controlplane/stamps.py:22-35; mcp/src/agents_remember/observer/timeutil.py:11-11; mcp/src/agents_remember/observer/timeutil.py:30-31 |
 | The provider stale-projection idiom the paused-projection mirrors. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
 | The `EngineProcessNode`/`EngineProcessFacts`/`EngineProcessEdge`/`CommitRefNode`/`ProviderBootNode` schema the 5e map composes. | `EngineProcessNode`; `EngineProcessFacts`; `EngineProcessEdge`; `CommitRefNode`; `ProviderBootNode` | mcp/src/agents_remember/observer/projection.py:746-766; mcp/src/agents_remember/observer/projection.py:755-768; mcp/src/agents_remember/observer/projection.py:832-900; mcp/src/agents_remember/observer/projection.py:785-804; mcp/src/agents_remember/observer/projection.py:769-782; mcp/src/agents_remember/observer/projection.py:903-923 |
-| Reads the engine-process facts + pre-contract start-progress entries at the call edge. | `read_engine_process_facts` | mcp/src/agents_remember/observer/snapshots.py:639-698 |
+| Reads the engine-process facts + pre-contract start-progress entries at the call edge. | "def read_engine_process_facts(" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:236-236 |
 | The pre-contract `worktree_start` progress source (§5.4) the synthesized node reads. | `read_start_progress` | mcp/src/agents_remember/worktrees/start_progress.py:106-114 |
-| The durable gate set `_attach_gates` materializes onto lifecycles (slice 6c). | `_attach_gates` | mcp/src/agents_remember/observer/reducer.py:860-875 |
+| The durable gate set `_attach_gates` materializes onto lifecycles (slice 6c). | "def _attach_gates(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:227-227 |
 | Wires the engine facts + start-progress into `project_workspace`. | `project_and_write` | mcp/src/agents_remember/observer/projection_store.py:212-275 |
-| Missing provider placeholders are created for expected code/memory roles when no matching worktree provider facts exist. | `_provider_boot_nodes`; `_missing_facts` | mcp/src/agents_remember/observer/reducer.py:1406-1435; mcp/src/agents_remember/observer/reducer.py:1617-1642 |
-| Actionable drift queue rows carry repo/branch ids, provenance detail, and `checkedAt` signal timestamps. | `_drift_attention`; `_drift_attention_detail` | mcp/src/agents_remember/observer/reducer.py:917-933; mcp/src/agents_remember/observer/reducer.py:936-947 |
-| `_is_dismissed` admits targetless suppression only for dismissible repo-level kinds. | `_is_dismissed` | mcp/src/agents_remember/observer/reducer.py:715-734 |
+| Missing provider placeholders are created for expected code/memory roles when no matching worktree provider facts exist. | "def _provider_boot_nodes("; "def _missing_facts(  # pragma: no cover" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:439-439; mcp/src/agents_remember/observer/reducer_impl/_processes.py:654-654 |
+| Actionable drift queue rows carry repo/branch ids, provenance detail, and `checkedAt` signal timestamps. | "def _drift_attention(drift_snapshots: list[DriftSnapshotNode]) -> list[AttentionItem]:"; "def _drift_attention_detail(drift: DriftSnapshotNode) -> str:" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:284-284; mcp/src/agents_remember/observer/reducer_impl/_attention.py:303-303 |
+| `_is_dismissed` admits targetless suppression only for dismissible repo-level kinds. | "def _is_dismissed(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:79-79 |
 | The whole-vocabulary tuple `_STATES` is built from, the `coerce_end_outcome` `_ended_updates` routes through, and the partition that decides which states get a bucket. | `STATES`; `coerce_end_outcome` | mcp/src/agents_remember/observer/lifecycle_state.py:133-135; mcp/src/agents_remember/observer/lifecycle_state.py:149-158 |
 | `STATE_COUNT_FIELDS` — the state → `Metrics` bucket map `_metrics` expands, and the `extra="forbid"` model that makes a missing bucket raise. | `STATE_COUNT_FIELDS`; `Metrics` | mcp/src/agents_remember/observer/projection.py:273-273; mcp/src/agents_remember/observer/projection.py:282-282; mcp/src/agents_remember/observer/projection.py:287-313 |
-| The `awaiting-developer` gap and the vocabulary-driven counting are pinned by test. | `MetricsBucketVocabularyTests` | mcp/tests/test_observer_projection.py:1627-1732 |
+| The `awaiting-developer` gap and the vocabulary-driven counting are pinned by test. | `MetricsBucketVocabularyTests` | mcp/tests/test_observer_projection_metrics.py:128-233 |
 | The design: the reducer, inferred trust, corrections (§2.1, §2.5). | "### 2.1 Envelope"; `### 2.5 The observer and its projections` | docs/design/observable-lifecycle.md:136-136; docs/design/observable-lifecycle.md:241-251 |
 
 As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks generic lifecycle vocabulary ("the lifecycle phase") rather than naming the retired session-job skill; the inference logic itself is unchanged.
 
 ## Update History
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over the `reducer_impl/` subpackage (`_types`, `_metrics`, `_attention`, `_processes`); full surface re-exported and pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: rebased the `_STATES` ranges and
   removed duplicated Source ranges; exact non-fixing check returns zero findings.
@@ -407,10 +409,10 @@ As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks ge
   against the current source. (1) `_ended_updates` was described as "(→completed|abandoned)",
   which was the hand-written conditional it no longer has; it is now
 `{"state": coerce_end_outcome(event.data.get("outcome"))}` — the outcome *names*
-  the terminal state. cit:([`_ended_updates`], mcp/src/agents_remember/observer/reducer.py:408-410) (2) The corrections paragraph named the "state enum" without saying where
+  the terminal state. cit:([`_ended_updates`], mcp/src/agents_remember/observer/reducer.py:382-384) (2) The corrections paragraph named the "state enum" without saying where
   it comes from; `_STATES` is now `frozenset(STATES)` rather than `frozenset(get_args(State))`,
   and that matters concretely: on the union form of a `Literal`, `get_args` returns `Literal`
-  objects, so the set would match no event payload and every correction would be silently dropped. cit:([`_STATES`], mcp/src/agents_remember/observer/reducer.py:78-78)
+  objects, so the set would match no event payload and every correction would be silently dropped. cit:([`_STATES`], mcp/src/agents_remember/observer/reducer.py:117-117)
   (3) `_metrics` was undocumented; added a section for it — it counts once with a
   `Counter` and expands `STATE_COUNT_FIELDS`, replacing three hand-written `sum(...)` lines that
   had left `awaiting-developer` counted into `lifecycleCount`/`totalTokens` and into no bucket,

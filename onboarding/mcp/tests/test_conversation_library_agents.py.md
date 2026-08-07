@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_library_agents.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,10 @@ never guessed.
 
 ## Code Commentary
 
-### Logic
+#
+
+- 260731-EFA-L7 (trace delta): the library-agents suite remains the family entry for the split conversation-library tests; name sets reconciled item for item.
+## Logic
 
 cit:([`CodexLibraryAgentTests`], mcp/tests/test_conversation_library_agents.py:256-412) drives `CodexConversationLibrary` over a canned
 app-server transport that dispatches `thread/list` by `sourceKinds`: the additive agent
@@ -104,6 +107,10 @@ experimental-gated on 0.145.0, which is why grouping is client-side.
 | The camelCase sub-agent `ThreadSourceKind` variant the agent fetch pins. | ["subAgentReview"] | mcp/src/agents_remember/serving/conversation/library/codex.py:74-74 |
 
 ## Update History
+
+- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the library-agents suite remains the family entry for the split convers...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 6 repository-internal references for the Codex and Claude libraries, helper agent enumeration/read, cursor authority, shared fake boundary, and the pinned camelCase source-kind literal; final scoped result 0 (checker-clean).
 

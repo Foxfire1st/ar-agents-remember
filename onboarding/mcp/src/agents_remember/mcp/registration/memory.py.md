@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                                     |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                 |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                 |
+| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -65,9 +65,9 @@ ledger and commits memory and is gated on clean drift unless `accept_drift=true`
 | The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:398-404 |
 | The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:411-427 |
 | The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:430-436 |
-| Baseline branch packing and drift gating are proved by `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift`. | `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift` | mcp/tests/test_mcp_registration_wiring.py:466-482 |
-| Carryover selection packing is proved by `test_memory_carryover_plan_packs_the_selection`. | `test_memory_carryover_plan_packs_the_selection` | mcp/tests/test_mcp_registration_wiring.py:484-508 |
-| Apply intent and default-message packing is proved by `test_memory_carryover_apply_carries_the_intent_note_and_default_messages`. | `test_memory_carryover_apply_carries_the_intent_note_and_default_messages` | mcp/tests/test_mcp_registration_wiring.py:510-531 |
+| Baseline branch packing and drift gating are proved by `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift`. | `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift` | mcp/tests/test_mcp_registration_wiring_tests_1.py:373-389 |
+| Carryover selection packing is proved by `test_memory_carryover_plan_packs_the_selection`. | `test_memory_carryover_plan_packs_the_selection` | mcp/tests/test_mcp_registration_wiring_tests_1.py:391-415 |
+| Apply intent and default-message packing is proved by `test_memory_carryover_apply_carries_the_intent_note_and_default_messages`. | `test_memory_carryover_apply_carries_the_intent_note_and_default_messages` | mcp/tests/test_mcp_registration_wiring_tests_1.py:417-438 |
 
 ## Update History
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
