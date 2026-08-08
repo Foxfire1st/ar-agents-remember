@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00               |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -102,8 +102,10 @@ missing/empty `testpaths`. `main()` catches it, prints `gate scope could not be 
 and returns 1. An empty scope would make every step pass by certifying nothing, which is the
 exact failure this module exists to prevent.
 
-**The wrapper takes no path arguments at all.** There is no supported way to narrow what the
-gate certifies.
+**The full wrapper takes no path arguments at all, and it cannot be narrowed by hand.**
+The one sanctioned narrowing is the leaf-edge `--targeted` contract (260731-EFA-L17) —
+see the L17 section below — which derives its scope from the leaf's diff rather than
+accepting caller-supplied paths.
 
 #### Reading The Index Puts An Obligation On The Caller
 
@@ -154,6 +156,33 @@ for a git that cannot run at all — which also now covers `subprocess.TimeoutEx
 runner bounds every call (300s locally by default) — and an explicit `completed.returncode != 0`
 branch that puts the exit code and git's `stderr` in the message. Neither can return an empty list.
 
+### 260731-EFA-L17 — The Two Contracts: Full And Targeted
+
+The wrapper now speaks two contracts. `CheckConfig` (lines 70-84) gained the
+`targeted`, `targeted_base`, and `targeted_scope` fields; `config_from_args`
+(lines 677-711) maps `--targeted` / `--diff-base` / `--memory-cap-bytes` onto
+them. `quality_steps` (lines 225-259) branches on the targeted plan:
+
+- ruff/ruff-format/pyright run over the derived changed-file scope
+  (`_fixed_steps`, lines 133-157);
+- radon-cc/radon-mi consume the changed production module **files**
+  (`_radon_report_steps`, lines 158-184) — this fixed the L17-round-2 finding
+  where the report rails received package names that resolved to nothing at the
+  repo root;
+- pytest runs the derived test subset, or is omitted loudly when a targeted run
+  derived none (`_pytest_step`, lines 185-203);
+- the file-size rail is scoped to the leaf's changed paths in targeted mode
+  (`_file_size_step`, lines 204-224);
+- a targeted run with no changed Python files short-circuits to PASS with
+  nothing for the leaf rails to certify (`run_quality_check`, lines 308-361).
+
+Coverage.py instruments the top-level package root (the same proven shape as
+the full wrapper) because per-module `--cov` on FastMCP/pydantic files crashed
+collection; CRAP and diff-coverage still score the changed modules and the
+leaf's own diff. `source_import_roots` (lines 264-294) now recovers the package
+root when a coverage path is a file inside the package. Full runs may also run
+under `--memory-cap-bytes` (RLIMIT_AS self-cap; see `code_quality.memory_cap`).
+
 ### The Two Post-Suite Scorers
 
 `run_crap_calculator` renders the fixed-length `--top` table, then — separately — lists
@@ -184,7 +213,10 @@ the report to a temporary directory unless `--coverage-json` is given.
 ## Invariants And Boundaries
 
 - The wrapper is a fixed quality suite, not a generic shell command surface.
-- Scope is derived, never passed: no CLI path arguments exist, and no caller can narrow it.
+- Scope is derived, never passed: the full run takes no CLI path arguments, and
+  the only sanctioned narrowing is `--targeted`'s change-set contract (changed
+  files + reverse-import closure + derived test subset). No caller may hand the
+  wrapper paths by hand.
 - Scope is the **index**, so the caller owns what gets certified. The wrapper cannot be pointed at
   unstaged or untracked work, and a caller that commits with `git add -A` must stage before
   invoking it. Undo the `git reset --mixed` + `git add -A` in `closeout.py:_gate_staged_code` and
@@ -222,12 +254,22 @@ the report to a temporary directory unless `--coverage-json` is given.
 | An independent recomputation asserts the wrapper's real argument vectors reach every tracked Python file. | `test_every_tracked_python_file_is_linted_and_type_checked` | mcp/tests/test_gate_scope.py:152-173 |
 | `run_git` — the one runner `git_ls_files` calls — strips `GIT_REPOSITORY_SELECTOR_ENV` and bounds every call with the local/remote/metadata timeout classes. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-73; mcp/src/agents_remember/kernel/git_command.py:85-92 |
 | `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `git_ls_files` still lists the repository it was handed, and that a non-repository and an unrunnable git both surface as `ScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:328-390; mcp/tests/test_git_command.py:372-390 |
-| The shared tiered hook body derives the same `git ls-files` scope and runs this wrapper as its full tier. | "git ls-files -z -- '*.py'" | .githooks/_gate.sh:61-69; .githooks/_gate.sh:162-172 |
+| The shared tiered hook body derives the same `git ls-files` scope; the pre-push tier delegates to the wrapper's targeted contract, while `full` stays the manual/master-gate tier. | "git ls-files -z -- '*.py'" | .githooks/_gate.sh:74-74 |
 | `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | "C901" | pyproject.toml:6-18; pyproject.toml:67-70; pyproject.toml:103-112 |
 | Repo instructions state the gate command, that it takes no path arguments, and that Radon reports. | "python -m agents_remember.code_quality.check" | AGENTS.md:154-160; AGENTS.md:185-189 |
-| The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:789-845; mcp/src/agents_remember/worktrees/modules/closeout.py:820-828; mcp/src/agents_remember/worktrees/modules/closeout.py:841-845 |
+| The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:796-857 |
+| The settings-owned memory cap a full run may run under (`--memory-cap-bytes`). | `plan_capped_command` | mcp/src/agents_remember/code_quality/memory_cap.py:94-135 |
+| The targeted contract proofs: rail scoping, real radon input, and no-change short-circuit. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:142-359; mcp/tests/test_code_quality_targeted.py:360-630 |
 
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the two contracts
+  (full vs `--targeted`), the radon changed-file input fix, the derived test
+  subset, the package-root coverage instrumentation, and the memory-cap flag;
+  corrected the "no path arguments / no narrowing" claim to name `--targeted`
+  as the only sanctioned narrowing; refreshed the closeout caller row to the
+  post-L17 range. Verification metadata stays pinned until closeout stamps the
+  260731-EFA-L17 commit.
 
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the quality steps gained the enforcing `file-size` rail (armed via `pyp...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

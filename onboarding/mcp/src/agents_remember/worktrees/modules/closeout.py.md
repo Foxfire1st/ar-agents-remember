@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -18,8 +18,11 @@ Owns worktree closeout preview/apply behavior.
 
 Closeout validates source branch positions and explicit commit approval. When a code commit would
 be created **in any repository whose checkout carries the wrapper**, it stages the task worktree and
-then runs the strict project-owned quality wrapper over exactly that, before any code, memory,
-ledger, contract, or applied-gate mutation. Only after that gate passes does it claim the
+then runs the leaf change-set-scoped quality contract (`--targeted` — changed files +
+reverse-import closure + derived test subset, mandatory CRAP over the changed modules) over
+exactly that, before any code, memory, ledger, contract, or applied-gate mutation. The full
+wrapper is NOT a leaf gate: it runs once per master at the master integration gate,
+memory-capped. Only after that gate passes does it claim the
 `closeout-approval` gate (260731-EFA-L5 — the `applied` mutation now sits here, one statement above
 the first commit, rather than at the end), commit code, refresh
 onboarding metadata, route overview metadata, generated route indexes, and
@@ -108,6 +111,20 @@ reopens the contract by clearing the integrated commit fields, setting
 `worktree_integrate` can land the new tip normally. A clean no-op re-closeout
 does not reopen integration and avoids duplicating an existing ledger mapping,
 so a completed leaf stays completed when no new code or memory content exists.
+
+## 260731-EFA-L17: The Leaf Contract And The Memory-Quality Carve-Out
+
+Both closeout entry points now pass the leaf's targeted plan: `closeout_preview_payload`
+(lines 362-434) and `closeout_result` (lines 941-1037) hand
+`QualityGatePlan(mode="targeted")` to the preview/run, and `_gate_staged_code`
+(lines 796-857) runs `run_strict_code_quality_gate(code_worktree, diff_base=...,
+plan=QualityGatePlan(mode="targeted"))` after the reset+stage. The preview summary and
+the apply flow state the ladder explicitly: the leaf contract is `--targeted` (changed
+files + reverse-import closure + derived test subset), the full wrapper is NOT a leaf
+gate (once per master at the master integration gate, memory-capped), and
+`memory_quality_check` stays a per-leaf closeout gate (`_run_memory_quality_phase`,
+lines 612-626). A leaf closeout cannot skip its required checks: an uncovered changed
+production module, a failed targeted run, or a missing wrapper refuses loudly.
 
 ## 260731-EFA-L4: The Gate Stages Before It Gates
 
@@ -308,13 +325,13 @@ No external Domain Documentation source is configured for this memory repo.
 | `GateStore.claim_approval` — the compare-and-swap this module now spends an approval through: fold, policy verdict and the `applied` append inside one held `exclusive_access`. It is the only way to spend one; `_mark_closeout_gate_applied` was deleted. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234 |
 | `CONSUMED_APPROVAL_GATE_KINDS` — why the `applied` snapshot this module writes is no longer reclaimed at any age, which is the other half of the replay fix. | `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/interaction_retention.py:48-50 |
 | The replay-window regressions: the gate is `applied` before `commit_if_dirty`, and a gate failure leaves it `approved`. | `test_the_applied_record_survives_a_concurrent_gate_log_compaction`, `test_the_approval_is_already_consumed_when_the_first_commit_runs`, `test_a_refusal_before_any_commit_leaves_the_approval_unspent` | mcp/tests/test_gate_replay_window.py:261-290; mcp/tests/test_gate_replay_window.py:582-615; mcp/tests/test_gate_replay_window.py:617-645 |
-| The strict source-quality adapter decides applicability, executes the current worktree wrapper, and fails before mutation. | `code_quality_gate_preview`, `requires_strict_code_quality`, `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:35-42; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:45-82; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:100-147 |
-| Focused closeout regressions prove failure preserves code/memory/ledger/contract state and success runs quality before code commit; `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests` pin the staging step, both refusals, the reset-after-the-conflict-check ordering, and that a refused gate leaves the worktree staged. | `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests`, `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:452-558; mcp/tests/test_worktree_closeout_quality_gate.py:776-835; mcp/tests/test_worktree_closeout_quality_gate.py:601-713; mcp/tests/test_worktree_closeout_quality_gate.py:716-770 |
+| The strict source-quality adapter decides applicability, executes the current worktree wrapper under the planned mode (leaf targeted / full+capped), and fails before mutation. | `code_quality_gate_preview`, `requires_strict_code_quality`, `run_strict_code_quality_gate`, `QualityGatePlan` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:77-146; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:67-76; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:162-219; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:29-35 |
+| Focused closeout regressions prove failure preserves code/memory/ledger/contract state and success runs the leaf targeted contract before code commit; `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests` pin the staging step, both refusals, the reset-after-the-conflict-check ordering, and that a refused gate leaves the worktree staged. | `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests`, `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:642-753; mcp/tests/test_worktree_closeout_quality_gate.py:791-905; mcp/tests/test_worktree_closeout_quality_gate.py:906-965; mcp/tests/test_worktree_closeout_quality_gate.py:966-1025 |
 | `require_git` is the generic Git command runner. | `require_git` | mcp/src/agents_remember/worktrees/modules/git.py:18-22 |
-| Closeout routes its staging call sites through `require_git`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:776-844 |
+| Closeout routes its staging call sites through `require_git` and runs the leaf targeted plan. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:796-857 |
 | `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | `recovery_guidance`, `RecoveryOperation`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:62-68; mcp/src/agents_remember/worktrees/modules/guidance.py:160-183; mcp/src/agents_remember/worktrees/modules/guidance.py:461-463 |
 | `ContractCells` and `amend_contract` define the contract-cell amendment API. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:183-198; mcp/src/agents_remember/worktrees/worktree_contract.py:201-229 |
-| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:898-934 |
+| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:902-940 |
 
 ## 260731-EFA-L1 Current Commit-Gate Delta
 
@@ -345,6 +362,12 @@ became four** — see the L4 section above. `run_strict_code_quality_gate` remai
 still what actually runs the wrapper, one step inside `_gate_staged_code`.
 
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the leaf targeted
+  contract at both closeout call sites and `_gate_staged_code`, the full-wrapper
+  master-gate home, and the `memory_quality_check` per-leaf carve-out; refreshed
+  the gate/regression/staging rows to the post-L17 source ranges. Verification
+  metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
 
 - 2026-08-05T22:55+02:00 — 260731-EFA-L16 curator: recorded the citation-gate placement in `closeout_result` — the citation checks (`range_resolution` + `claim_reopen`, working-tree semantics that clear without a commit) run BEFORE the strict wrapper and the code commit as the quick-reject gate, and `_combined_memory_quality` reports the gate and the post-commit sanity phase as one result. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: split refresh, gate-test, Git-runner, and

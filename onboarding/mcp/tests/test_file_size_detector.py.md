@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_file_size_detector.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                                        |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`                                        |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ The File Size Budget rail suite: bands, exit codes, wrapper wiring, and scope. P
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The detector under test. | "\"agents_remember.code_quality."\"agents_remember.code_quality.file_size\","\"," | AGENTS.md:7-7; mcp/src/agents_remember/code_quality/check.py:194-194|
+| The detector under test. | "agents_remember.code_quality.file_size" | mcp/src/agents_remember/code_quality/check.py:216-216 |
 
 ## Update History
 

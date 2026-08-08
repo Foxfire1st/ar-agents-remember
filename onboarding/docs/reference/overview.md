@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-31T16:20+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 
 ## Purpose
 
@@ -37,10 +37,12 @@ reference, `worktrees-c09.md` owns the quality-before-commit sequence, and
 `skills.md` records that synchronized skill copies are checked at both
 pre-commit and pre-push. Two facts these docs predate (260731-EFA-L1, recorded on
 the root overview): the two hook tiers are not equivalent — pre-commit runs a
-fast staged-content tier without the wrapper, and pre-push runs the full one —
-and the closeout gate applies to any repository whose checkout carries the
-wrapper rather than only to `agents-remember`. The skill-copy checks named here
-do run in both tiers and are unaffected.
+fast staged-content tier without the wrapper, and pre-push runs the
+change-set-scoped targeted tier (260731-EFA-L17; the full wrapper runs once per
+master at the master integration gate, memory-capped) — and the closeout gate
+applies to any repository whose checkout carries the wrapper rather than only to
+`agents-remember`. The skill-copy checks named here do run in both tiers and are
+unaffected.
 
 ## 260718-CHATS-L5I Commit-Gate Reference Impact
 
@@ -103,7 +105,19 @@ closeout mutation, and still fails closed. What changed is what the gate can cat
    contract-bound leaf (with parent-row reconciliation); the new Task documents section names
    `task_doc` and `task_reopen`.
 
+## 260731-EFA-L17 Reference Impact
+
+The public reference docs were corrected to the ladder: `mcp-tools.md` and
+`use-external-memory.md` describe the leaf `--targeted` closeout contract, `worktrees-c09.md`
+places the full wrapper at the master integration gate inside `worktree_integrate`, and
+`settings-json.md` documents the new `orchestration.qualityGate.memoryCapBytes` knob (2 GiB
+default, fail-loud family) — the schema source for the full-gate memory cap.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the corrected hook-tier and
+  closeout wording in the public references plus the `qualityGate` settings family. Verification
+  metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
 
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: recorded the reference-route impact of the
   contract-scoped memory tools (`contract_path` on `drift_check`, `memory_quality_check`,

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T09:44+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash |  `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
+| lastVerifiedCommitDate |  2026-08-08T02:42:36+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,10 @@
 ## Purpose
 
 This module is the narrow policy and process adapter that makes the project-owned source-quality
-wrapper a mandatory, fail-closed gate before a worktree closeout creates a code commit.
+wrapper a mandatory, fail-closed gate before a worktree closeout or integration lands a code
+commit, and it owns the altitude routing: leaf edges run the change-set-scoped `--targeted`
+contract, and master integration runs the full wrapper once, memory-capped, inside
+`worktree_integrate` itself (260731-EFA-L17).
 
 **It is no longer scoped to one repository.** Until 260731-EFA-L1 the decider read
 `repo_name == "agents-remember"`, so for every consuming repository — the product's actual audience
@@ -35,14 +38,16 @@ not the repository's name.
 `code_would_commit and quality_wrapper_path(code_worktree).is_file()`. Note the first parameter is
 a **checkout path**, not a repository name — see the boundary note below.
 
-`code_quality_gate_preview(code_worktree, *, code_would_commit, diff_base="")` reports which of three
-states this closeout is in, via the `status` key:
+`code_quality_gate_preview(code_worktree, *, code_would_commit, diff_base="", plan=QualityGatePlan())`
+reports which of three states this gate is in, via the `status` key; since 260731-EFA-L17
+the payload also carries `mode` (`targeted` or `full`) and, for a full plan, a `memoryCap`
+block (`capBytes`, `policy` = `orchestration.qualityGate.memoryCapBytes`, `mechanism`):
 
 | `status` | Constant | Meaning |
 | --- | --- | --- |
 | `no-code-commit` | `GATE_NO_CODE_COMMIT` | Nothing would commit, so nothing to gate. |
 | `wrapper-unavailable` | `GATE_WRAPPER_UNAVAILABLE` | Code would commit, but this checkout carries no wrapper. The reason string names `QUALITY_WRAPPER` and states the commit **is not quality-checked**. |
-| `enforced` | `GATE_ENFORCED` | The wrapper runs before the commit; `command` is `_gate_command(diff_base)` — `python -m agents_remember.code_quality.check --diff-base <base>` — and `diffBase` carries the base on its own key. Since 260731-EFA-L4 the `reason` also names the staging step: closeout "stages the whole task worktree so the gate's scope is the commit's content, then runs the strict project-owned quality wrapper over exactly that before the code commit". |
+| `enforced` | `GATE_ENFORCED` | The wrapper runs before the commit; `command` is `_gate_command(diff_base, mode=..., memory_cap_bytes=...)` — for the leaf contract `python -m agents_remember.code_quality.check --targeted --diff-base <base>` — and `diffBase` carries the base on its own key. Since 260731-EFA-L4 the `reason` also names the staging step; since L17 it states that the leaf contract is `--targeted` and that the full wrapper runs once per master at the master integration gate, not at leaf closeout. |
 
 `wrapper-unavailable` is a *reported* state, not a silent skip: closeout still proceeds, and the
 payload says plainly that the code commit was not quality-checked and why. That is the deliberate
@@ -50,11 +55,15 @@ replacement for the old behavior, which returned the same `required: False` for 
 repository as for "nothing to commit" and explained it with the misleading reason "no Agents
 Remember code commit would be created".
 
-`run_strict_code_quality_gate(code_worktree, *, diff_base="", runner=run_subprocess)` requires the
-wrapper to exist (else `RuntimeError`), selects an interpreter, executes the current worktree's
-`agents_remember.code_quality.check`, and raises with a bounded output tail
-(`FAILURE_OUTPUT_LINES` = last 40 lines) on any non-zero result. Success returns
-`{"required": True, "status": GATE_ENFORCED, "passed": True, "command": ..., "diffBase": ...}`.
+`run_strict_code_quality_gate(code_worktree, *, diff_base="", plan=QualityGatePlan(), invocation="closeout-staged", runner=run_subprocess)`
+requires the wrapper to exist (else `RuntimeError`), selects an interpreter, executes the
+current worktree's `agents_remember.code_quality.check` under the planned mode, and raises with a
+bounded output tail (`FAILURE_OUTPUT_LINES` = last 40 lines) on any non-zero result. Success
+returns `{"required": True, "status": GATE_ENFORCED, "passed": True, "command": ..., "diffBase": ..., "mode": ...}`,
+plus `memoryCap` for full runs. The concrete command and invocation label come from
+`_gate_command_parts` (lines 220-248); a full run without `memory_cap_bytes` is refused
+(RuntimeError naming the settings key), and an over-cap kill (returncode -9 / shell 137) is
+named by `_gate_failure_message` (lines 249-275).
 
 ### The Index Is The Scope, And This Function Does Not Own It (260731-EFA-L4)
 
@@ -86,17 +95,20 @@ every change on the whole integration branch rather than for its own diff — a 
 which is exactly as useless as a gate that cannot fail. CI keeps the `main` default on purpose: a
 pull request genuinely is measured against `main`, a leaf closeout is measured against the leaf.
 
-`_gate_command(diff_base)` renders the same string into the payload's `command` key so a reader can
-rerun exactly what ran, and `diffBase` reports the base on its own key. In the `enforced` state both
-the preview and the successful run carry both keys; the two non-enforced preview states carry
-`command: ""` and no `diffBase`, because nothing would run.
+`_gate_command(diff_base, mode=..., memory_cap_bytes=...)` (lines 42-66) renders the same string
+into the payload's `command` key so a reader can rerun exactly what ran — targeted mode appends
+`--targeted`, full mode wraps the command via `memory_cap.plan_capped_command` — and `diffBase`
+reports the base on its own key. In the `enforced` state both the preview and the successful run
+carry both keys; the two non-enforced preview states carry `command: ""` and no `diffBase`,
+because nothing would run.
 
 ### Interpreter Selection And Import Precedence
 
 `quality_python` prefers the worktree virtualenv, then the linked primary clone's shared
-virtualenv, then the active server interpreter. `quality_environment` always puts the current
-worktree's `mcp/src` first on `PYTHONPATH`, so a shared interpreter cannot measure the primary
-clone by mistake.
+virtualenv, then the active server interpreter. `quality_environment` (lines 294-318) always puts
+the current worktree's `mcp/src` first on `PYTHONPATH`, so a shared interpreter cannot measure the
+primary clone by mistake, and it names the invoking altitude through `AR_QUALITY_INVOCATION`
+(`closeout-staged`, `leaf-integration`, `master-integration`).
 
 `quality_environment` builds that environment from `kernel.git_command.git_environment()`, **not**
 from `dict(os.environ)`, so the eight `GIT_DIR`-family repository selectors
@@ -139,9 +151,10 @@ different situations.
   the wrapper is *reported*, not skipped silently.
 - A missing wrapper, missing interpreter, or non-zero wrapper result refuses before closeout
   mutation.
-- The wrapper command carries exactly one flag: `--diff-base`, and only when `diff_base` is
-  non-empty. No threshold-enforcement flag is required or accepted, and no flag narrows what the
-  wrapper certifies.
+- The leaf contract is the only sanctioned narrowing: targeted mode appends `--targeted` (and
+  `--diff-base` when the base is non-empty); full mode appends no narrowing flag but REQUIRES
+  `memory_cap_bytes` — a full run without a settings-owned cap is refused. No threshold-enforcement
+  flag is required or accepted.
 - **A closeout must pass the leaf's own base commit.** Dropping `diff_base` at a call site does not
   weaken the gate, it makes it unpassable: the 100% changed-lines floor would then be measured
   against `main`. Both directions are failures of the same rule — the base the gate measures against
@@ -183,12 +196,12 @@ coverage, and CRAP checks.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `quality_wrapper_path` / `requires_strict_code_quality` decide applicability from the checkout, and `code_quality_gate_preview` reports one of the three `status` values. | `quality_wrapper_path`, `requires_strict_code_quality`, `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:24-26; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:35-42; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:45-82 |
-| `run_strict_code_quality_gate` appends `--diff-base <diff_base>`, refuses on a missing wrapper, and raises with the bounded `_failure_output` tail; its docstring states that the index it is handed is the scope it certifies; success reports `command` and `diffBase`. | `run_strict_code_quality_gate`, `_failure_output` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:100-147; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:201-205 |
-| `quality_python` walks the interpreter chain through `_git_common_dir`, which uses `run_git`; `quality_environment` builds from `git_environment()` and puts this worktree's `mcp/src` first on `PYTHONPATH`. | `quality_python`; `quality_environment`; `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:150-165; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:191-198; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:168-188 |
-| Both closeout call sites pass `contract.code_worktree` **and** `diff_base=contract.code_base_commit` — the preview path, and the apply path where `requires_strict_code_quality` guards `_gate_staged_code` and `commit_if_dirty` follows it. | `closeout_preview_payload`, `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:361-430; mcp/src/agents_remember/worktrees/modules/closeout.py:932-1024 |
-| Regressions cover all three statuses, the checkout-not-name argument at both call sites, that the leaf base reaches the wrapper as `--diff-base` (`test_gate_measures_the_leaf_diff_not_the_whole_branch`), that the spawned wrapper gets no repository selectors (`test_the_gate_hands_the_wrapper_no_repository_selectors`), worktree source precedence, bounded failures, interpreter selection, and mutation ordering. | `CodeQualityGateTests`, `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:49-245; mcp/tests/test_worktree_closeout_quality_gate.py:248-367 |
-| The staging regressions added with `_gate_staged_code`: `_ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `_ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:422-449; mcp/tests/test_worktree_closeout_quality_gate.py:452-558; mcp/tests/test_worktree_closeout_quality_gate.py:776-835; mcp/tests/test_worktree_closeout_quality_gate.py:601-713; mcp/tests/test_worktree_closeout_quality_gate.py:716-770 |
+| `quality_wrapper_path` / `requires_strict_code_quality` decide applicability from the checkout, and `code_quality_gate_preview` reports one of the three `status` values plus the planned `mode`/`memoryCap`. | `quality_wrapper_path`, `requires_strict_code_quality`, `code_quality_gate_preview`, `QualityGatePlan` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:37-41; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:67-76; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:77-146; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:29-35 |
+| `run_strict_code_quality_gate` executes the planned contract (targeted or full+capped), refuses on a missing wrapper or a cap-less full run, and raises with the bounded `_failure_output` tail; success reports `command`, `diffBase`, `mode`, and `memoryCap` for full runs. | `run_strict_code_quality_gate`, `_gate_command_parts`, `_gate_failure_message`, `_failure_output` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:162-219; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:220-248; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:249-275; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:329-333 |
+| `quality_python` walks the interpreter chain through `_git_common_dir`, which uses `run_git`; `quality_environment` builds from `git_environment()`, puts this worktree's `mcp/src` first on `PYTHONPATH`, and names the invoking altitude. | `quality_python`; `quality_environment`; `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:276-293; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:294-318; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:319-328 |
+| Both closeout call sites pass `contract.code_worktree`, `diff_base=contract.code_base_commit`, and the leaf targeted plan — the preview path, and the apply path where `requires_strict_code_quality` guards `_gate_staged_code` and `commit_if_dirty` follows it. | `closeout_preview_payload`, `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:362-434; mcp/src/agents_remember/worktrees/modules/closeout.py:941-1037 |
+| Regressions cover all three statuses, the targeted/full modes, cap-less full refusals, cap-kill naming, the checkout-not-name argument at both call sites, that the leaf base reaches the wrapper as `--diff-base`, that the spawned wrapper gets no repository selectors, worktree source precedence, bounded failures, interpreter selection, and mutation ordering. | `CodeQualityGateTests`, `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:49-423; mcp/tests/test_worktree_closeout_quality_gate.py:424-555 |
+| The staging regressions added with `_gate_staged_code`: `_ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `_ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:605-641; mcp/tests/test_worktree_closeout_quality_gate.py:642-753; mcp/tests/test_worktree_closeout_quality_gate.py:791-905; mcp/tests/test_worktree_closeout_quality_gate.py:906-965; mcp/tests/test_worktree_closeout_quality_gate.py:966-1025 |
 | The one git runner this module calls, and the scrubber `quality_environment` builds from: `run_git` and `git_environment` both drop `GIT_REPOSITORY_SELECTOR_ENV`, and `run_git` carries the local/remote/metadata timeout classes. | `run_git`, `git_environment` | mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | `test_the_closeout_gate_resolves_the_common_dir_of_the_worktree_it_was_given` points `GIT_DIR` at a decoy repository and proves `_git_common_dir` still answers for the worktree it was handed. | `test_the_closeout_gate_resolves_the_common_dir_of_the_worktree_it_was_given` | mcp/tests/test_git_command.py:347-370 |
 | `SingleRunnerTests` sweeps the package's AST and fails if any module spawns `git` itself or defines a second runner. | `SingleRunnerTests` | mcp/tests/test_git_command.py:393-465 |
@@ -201,10 +214,17 @@ that repository's checkout rather than this one.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Applicability is decided by the presence of the wrapper in the target checkout. | `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:35-42 |
-| The preview reports `wrapper-unavailable` when the target checkout lacks the wrapper. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:45-82 |
+| Applicability is decided by the presence of the wrapper in the target checkout. | `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:67-76 |
+| The preview reports `wrapper-unavailable` when the target checkout lacks the wrapper. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:77-146 |
 
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the altitude-routed
+  plan (`QualityGatePlan` mode `targeted`/`full`, mandatory cap for full runs,
+  `memoryCap` payload, cap-kill naming, invocation labels) and refreshed the
+  reference rows to the post-L17 source ranges. The "exactly one flag" invariant
+  was replaced by the sanctioned-narrowing + required-cap statement. Verification
+  metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
 
 - 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: split wrapper applicability from preview reporting and regenerated both operative code-quality function extents.
 

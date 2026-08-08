@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T15:48+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`                                  |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`                                  |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 
 ## Purpose
 
@@ -62,7 +62,21 @@ No sibling repository evidence is needed for this doctrine file.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+### 260731-EFA-L17 — Change-Set-Scoped Leaf Checks
+
+The worker-brief template's Checks section now replaces the "Full:" line with the leaf
+change-set-scoped contract (source lines 55-60): `PYTHONPATH=<code-worktree>/mcp/src
+<venv-python-path> -m agents_remember.code_quality.check --targeted` with
+`AR_GATE_DIFF_BASE=<leaf base>` — must exit 0. The FULL wrapper is NOT a leaf check (quality
+altitude ladder, 260731-EFA-L17): it runs once per master at the master integration gate,
+memory-capped; `memory_quality_check` stays a per-leaf closeout gate.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the worker-brief
+  template's targeted leaf-check command and the full-wrapper master-gate home.
+  Verification metadata stays pinned until closeout stamps the 260731-EFA-L17
+  commit.
 
 - 2026-08-05T21:55+02:00 — 260731-EFA-L16 curator: recorded the brief's new "Coding guidelines" section (developer ruling) — the brief is the worker's entire session start, so a rule absent from this template does not exist for a spawned worker; that is how `system/coding-guidelines.md` sat unread through three violating leaves. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-07-10T15:48+02:00 — 260707-HFX2-L17 generated-runtime doctrine delta: the worker dispatch

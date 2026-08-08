@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -291,7 +291,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:392-400; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:452-558 |
+| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:642-748 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase" | mcp/src/agents_remember/models/worktree.py:59-59; mcp/src/agents_remember/models/worktree.py:18-18 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:562-671 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
@@ -585,7 +585,25 @@ commit it was checking against, deadlocking every structural change; `_combined_
 reports the two phases as one gate. The approval claim still precedes the first irreversible
 act.
 
+## 260731-EFA-L17 — The Altitude-Routed Quality Gate
+
+This route owns the quality altitude ladder's machinery half. `code_quality_gate.py` gained
+`QualityGatePlan` (mode `targeted`/`full` + optional cap), `GATE_TARGETED`/`GATE_FULL`, the
+`memoryCap` payload, cap-kill naming (returncode -9 / shell 137), and altitude invocation labels
+(`AR_QUALITY_INVOCATION` = `closeout-staged` / `leaf-integration` / `master-integration`).
+`closeout.py` passes the leaf targeted plan at both call sites and through `_gate_staged_code`;
+`memory_quality_check` stays a per-leaf closeout gate. `integrate.py` runs the gate inside the
+integration step itself before any merge: leaf contracts certify their change set (targeted),
+series/master contracts run the full wrapper once, memory-capped, with the cap read from
+`load_agentic_settings(...).quality_gate.memory_cap_bytes`; a refusal returns
+`blocked-quality-gate` and nothing merges.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the altitude-routed gate plans
+  (leaf targeted, master full+capped), the closeout targeted call sites, the per-leaf
+  `memory_quality_check` carve-out, and the integration-step gate run. Verification metadata
+  stays pinned until closeout stamps the 260731-EFA-L17 commit.
 - 2026-08-05T22:55+02:00 — 260731-EFA-L16 curator: recorded the closeout memory-quality phase-order repair in `closeout.py` — before-phase skipped when its check list is empty, `_combined_memory_quality` tolerates the empty phase, and all memory-quality checks run in the single phase after the code commit and the metadata refresh to it. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 22 citation findings. Re-anchored the
   eight reference rows (facade `__all__`, `WorktreeSupportTests`, `LifecycleFinalizeTests`,
@@ -656,9 +674,9 @@ act.
   **L179** (`quality_environment` gained a docstring above them); `landing.py::_pr_for` was cited at
   L104, which is inside the `gh` argv rather than at the definition — now **L93**. **Two new
   route-visible facts:** `quality_environment`
-  (cit:([`quality_environment`], mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:168-188))
+  (cit:([`quality_environment`], mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:294-316))
   now builds from `git_environment()`
-  (cit:([`git_environment`], mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:178-178))
+  (cit:(["def git_environment() -> dict[str, str]:"], mcp/src/agents_remember/kernel/git_command.py:76-76))
   instead of `dict(os.environ)`, so the spawned quality wrapper no longer inherits the eight
   repository selectors — the gate decides which repository gets certified and must not depend on a
   child process behaving; and `_pr_for`'s `gh pr list` spawn now passes `env=git_environment()`

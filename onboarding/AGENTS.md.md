@@ -6,8 +6,8 @@
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 
 ## Purpose
 
@@ -182,7 +182,7 @@ file.
 | Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | `## Source Layout` | AGENTS.md:101-126 |
 | Code-quality routing names `python -m agents_remember.code_quality.check` as the gate, states that it takes no path arguments because its scope is `git ls-files '*.py'`, lists four enforcing steps plus mandatory CRAP, states that nothing in the gate is exempt and no baseline or allowlist may be added, tells agents how to clear a complexity finding by extraction, states that Radon reports and cannot fail a gate while remaining CRAP's complexity engine, and requires the Stability/Reclamation doctrine before store, loop-over-store, queue, or append-only-log changes. | `## Code Quality Instructions` | AGENTS.md:148-200 |
 | Source-layout and boundary notes make `scripts/harness/` the single source for the eight self-hosted harness starter packages, route their refresh through `scripts/sync-harness.py`, and separate generated starter files from the per-harness files a starter package owns alone. | `## Source Layout` | AGENTS.md:101-126 |
-| The gate command this file names, with the enforcing/report split it describes — and the `diff-coverage` step this file omits. | `run_quality_check`; `run_diff_coverage` | mcp/src/agents_remember/code_quality/check.py:220-248; mcp/src/agents_remember/code_quality/check.py:396-439 |
+| The gate command this file names, with the enforcing/report split it describes — and the `diff-coverage` step this file omits. | `run_quality_check`; `run_diff_coverage` | mcp/src/agents_remember/code_quality/check.py:308-359; mcp/src/agents_remember/code_quality/check.py:524-578 |
 | The binding coverage floor `AGENTS.md` does not mention; `CONTRIBUTING.md` is the document that does. | `DiffCoverage`; `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:56-77; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
 | The report template this file says must record Radon rows as `reported`. | `## Tool Results` | system/defaults/examples/memory-repo/code-quality-report-template.md:18-39 |
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1151,7 +1151,7 @@ implementation governs its hash rollover or static mount.
 | Detailed provider state is exposed by `provider_diagnostics`. | `provider_diagnostics` | mcp/src/agents_remember/mcp/registration/providers.py:22-26 |
 | `runtime_install` derives install target and provider settings from `McpRuntimeConfig` and calls package-local install/lifecycle services. | `install_runtime_from_config` | mcp/src/agents_remember/install/runtime.py:556-615 |
 | Runtime package-data sync tests cover missing, extra, changed, and target-scope files. | `test_diff_reports_missing_extra_and_changed_files` | mcp/tests/test_sync_runtime.py:24-45 |
-| The generated-copy checks invoke `scripts/sync-runtime.py`. | "scripts/sync-runtime.py" | .githooks/_gate.sh:74-74 |
+| The generated-copy checks invoke `scripts/sync-runtime.py`. | "scripts/sync-runtime.py" | .githooks/_gate.sh:80-80 |
 | The dashboard bundle is described as the cockpit's Vite output. | "The cockpit's Vite output" | scripts/sync-dashboard.py:4-4 |
 | Dashboard sync tests reject an absent `dist` bundle, and the serving test covers the missing-bundle 503/build-command response. | `test_refuses_when_dist_is_absent`; `test_missing_bundle_answers_503_with_the_build_command` | mcp/tests/test_static.py:87-94; mcp/tests/test_sync_dashboard.py:92-113 |
 | The publish job waits for the quality workflow before building. | "needs: [quality]" | .github/workflows/publish-mcp-to-pypi.yml:33-33 |
@@ -1160,8 +1160,8 @@ implementation governs its hash rollover or static mount.
 | Closeout preview reports a missing wrapper instead of silently skipping it. | `test_preview_reports_missing_wrapper_instead_of_skipping_silently` | mcp/tests/test_worktree_closeout_quality_gate.py:77-93 |
 | The closeout quality-gate preview classifies the wrapper and code-quality outcomes. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:45-82 |
 | Closeout resets and stages the task worktree before gating exact commit content. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
-| A refused closeout gate leaves no commit or contract advance and preserves the staged retry tree. | `test_a_refused_gate_commits_nothing_and_leaves_the_worktree_staged` | mcp/tests/test_worktree_closeout_quality_gate.py:488-525 |
-| The closeout gates scope is the commit's content. | `test_the_gates_scope_is_the_commits_content` | mcp/tests/test_worktree_closeout_quality_gate.py:527-558 |
+| A refused closeout gate leaves no commit or contract advance and preserves the staged retry tree. | `test_a_refused_gate_commits_nothing_and_leaves_the_worktree_staged` | mcp/tests/test_worktree_closeout_quality_gate.py:678-715 |
+| The closeout gates scope is the commit's content. | `test_the_gates_scope_is_the_commits_content` | mcp/tests/test_worktree_closeout_quality_gate.py:717-748 |
 | Runtime workflow vocabularies are derived from their aliases with `get_args`. | `VALID_WORKFLOW_KINDS`; "frozenset(get_args(WorkflowKind))" | mcp/src/agents_remember/worktrees/worktree_contract.py:72-72 |
 | The producer vocabulary scan walks every Python module under the installed package root. | `PACKAGE_ROOT`; `_module_trees` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:146-146; mcp/tests/test_wire_vocabulary_exhaustiveness.py:297-299 |
 | The produced literal set is derived from producer source rather than retyped aliases. | `produced_literals` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:313-328 |
@@ -1475,7 +1475,26 @@ umbrella scope statement changed; the detail lives with the children.
 The file-size rail joined the project-owned wrapper: `code_quality/file_size.py` measures index-known Python plus `dashboard/src` TypeScript/TSX against the written File Size Budget (1,200 hard limit / 2,000 architectural failure / 4,000 emergency cleanup), reports the band per finding, fails the run enforced, and is armed via `pyproject.toml`'s `file_size_armed` key read through `code_quality/scope.py`. CRAP/coverage input scope now includes the configured test roots (L7-R8). The over-limit source modules were split in place into facades plus private responsibility modules (`kernel/_agentic_settings_*`, `observer/snapshots_impl/`, `observer/reducer_impl/`, `serving/_app_*`, `serving/_supervisor_*`, `serving/conversation/_models_*`, `serving/_harness_control_parsing.py`, `serving/conversation/projectors/_codex_collab.py`), each facade's full base surface pinned mechanically by `mcp/tests/test_facade_surface.py`.
 
 
+## 260731-EFA-L17 Change — The Targeted Ladder And The Memory Cap
+
+The `code_quality` route gained the change-set-scoped targeted contract
+(`code_quality/targeted.py` — changed files, reverse-import closure, derived test subset,
+refusal when a changed production module has no test) and the settings-owned memory cap for
+full-wrapper runs (`code_quality/memory_cap.py` — systemd MemoryMax scope with
+`MemorySwapMax=0`, or the RLIMIT_AS fallback; `orchestration.qualityGate.memoryCapBytes`,
+2 GiB default). `check.py` speaks both contracts (`--targeted` / `--memory-cap-bytes`), and the
+settings kernel parses the new family across `_agentic_settings_core.py`,
+`_agentic_settings_sections.py`, and the `agentic_settings.py` facade. The registration route's
+closeout docstrings and the worktrees route (closeout/integrate/code_quality_gate) encode the
+altitude routing: leaf edges targeted, master integration full+capped once, `memory_quality_check`
+per leaf.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the targeted contract, the
+  memory-cap mechanism and settings family, and the altitude routing across code_quality/kernel/
+  registration/worktrees. Verification metadata stays pinned until closeout stamps the
+  260731-EFA-L17 commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 route impact: recorded the armed file-size detector rail, the test-tree CRAP/coverage scope, and the in-place facade splits under `code_quality`, `kernel`, `observer`, and `serving`. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (scope-reporting dashboard steps; registration keyword-only fixes). Verification metadata stays pinned until closeout stamps the code commit.

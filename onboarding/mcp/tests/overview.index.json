@@ -61,6 +61,8 @@
     "mcp/tests/test_cli_discovery.py",
     "mcp/tests/test_code_quality_check.py",
     "mcp/tests/test_code_quality_check_scope.py",
+    "mcp/tests/test_code_quality_memory_cap.py",
+    "mcp/tests/test_code_quality_targeted.py",
     "mcp/tests/test_codex_adapter_thread_demux.py",
     "mcp/tests/test_codex_adapter_thread_routing_and_registry.py",
     "mcp/tests/test_codex_agent_lifecycle.py",
@@ -349,6 +351,7 @@
     "mcp/tests/test_worktree_closeout_quality_gate.py",
     "mcp/tests/test_worktree_contract_lifecycle.py",
     "mcp/tests/test_worktree_edge_paths.py",
+    "mcp/tests/test_worktree_integrate_quality_gate.py",
     "mcp/tests/test_worktree_lifecycle_attribution.py",
     "mcp/tests/test_worktree_longpath_preflight.py",
     "mcp/tests/test_worktree_mtime_sync.py",
@@ -361,8 +364,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 339,
-    "fileSidecars": 349,
+    "sourceFilesInScope": 342,
+    "fileSidecars": 352,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -408,6 +411,7 @@
     "bundle",
     "cache",
     "calculator",
+    "cap",
     "capabilities",
     "capture",
     "carryover",
@@ -444,8 +448,7 @@
     "content",
     "context",
     "contract",
-    "contracts",
-    "control"
+    "contracts"
   ],
   "hotPath": {
     "summary": "The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrade-not-die, native-page thread demux \u2014 plus the remediation pins: concurrent parent pendings answered per id with the oldest in the singular slot, the method-first degrade split, the bounded per-thread pending map, and the load-shed event queue with its honest `ar/load-shed` notice), `test_conversatio...",

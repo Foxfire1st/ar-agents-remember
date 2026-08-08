@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00               |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -199,7 +199,7 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths`, `derive_scope` | mcp/src/agents_remember/code_quality/check.py:54-55; mcp/src/agents_remember/code_quality/check.py:124-201; mcp/src/agents_remember/code_quality/scope.py:111-111; mcp/src/agents_remember/code_quality/scope.py:345-373 |
+| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths` | mcp/src/agents_remember/code_quality/check.py:225-257; mcp/src/agents_remember/code_quality/scope.py:111-111 |
 | The changed-lines coverage floor the full tier carries, and its own behavioural suite. | `DEFAULT_DIFF_COVERAGE_FLOOR`, `measure`, `test_a_diff_below_the_floor_fails_the_wrapper`, `test_the_floor_runs_inside_the_wrapper_rather_than_beside_it` | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317; mcp/tests/test_diff_coverage.py:570-585; mcp/tests/test_diff_coverage.py:629-659 |
 | CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | `complexity_blocks`, `calculate_scores` | mcp/src/agents_remember/code_quality/crap_calculator.py:232-239; mcp/src/agents_remember/code_quality/crap_calculator.py:294-305 |
 | The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:390-403; pyproject.toml:34-38 |
@@ -209,7 +209,22 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 | The shared tiered hook body scanned by the parity test; the full tier invokes the wrapper. | "dashboard_checks() {" | .githooks/_gate.sh:120-291 |
 | CI defines a workflow for pull requests. | "pull_request" | .github/workflows/quality-checks.yml:3-58 |
 
+### 260731-EFA-L17 — The Pre-Push Tier Is Targeted
+
+`test_repository_gates_use_default_strict_wrapper` still walks every gate file
+for a wrapper reach and no CRAP opt-out, but the hook tier assertions now expect
+`{"pre-commit": "fast", "pre-push": "targeted"}`
+(`test_git_hooks_delegate_to_the_shared_tiered_gate`), and
+`test_the_pre_push_tier_runs_the_targeted_contract` (lines 156-166) asserts
+`_gate.sh` delegates to `code_quality.check --targeted` while `full` remains a
+manual tier only.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the pre-push
+  targeted-tier assertions and the full-tier manual/master-gate posture.
+  Verification metadata stays pinned until closeout stamps the 260731-EFA-L17
+  commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

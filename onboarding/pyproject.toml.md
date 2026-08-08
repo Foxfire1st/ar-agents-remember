@@ -6,8 +6,8 @@
 | path                   | `pyproject.toml`                           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -203,7 +203,7 @@ off by default and there was nowhere to declare a marker.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The quality gate delegates `testpaths` lookup to `quality_scope.pytest_testpaths`. | `pytest_testpaths` | mcp/src/agents_remember/code_quality/check.py:50-51 |
+| The quality gate delegates `testpaths` lookup to `quality_scope.pytest_testpaths`. | `pytest_testpaths` | mcp/src/agents_remember/code_quality/check.py:56-57 |
 | The repository enables branch measurement. | "branch = true" | pyproject.toml:70-70 |
 | The changed-lines coverage floor reuses the CRAP reader, which refuses reports without branch data. | "by_key = crap_calculator.load_coverage_by_path"; "require_branch_measurement(data, coverage_json)"; "def require_branch_measurement("; "if branch is not True: raise RuntimeError("; "meta.branch_coverage is"; "CRAP is defined over branch coverage" | mcp/src/agents_remember/code_quality/crap_calculator.py:115-115; mcp/src/agents_remember/code_quality/crap_calculator.py:135-135; mcp/src/agents_remember/code_quality/crap_calculator.py:139-142; mcp/src/agents_remember/code_quality/diff_coverage.py:238-238 |
 | The code-quality test asserts the `python_classes = ["Test*", "*Tests"]` naming pattern. | "python_classes = [\"Test*\", \"*Tests\"]" | pyproject.toml:133-133 |

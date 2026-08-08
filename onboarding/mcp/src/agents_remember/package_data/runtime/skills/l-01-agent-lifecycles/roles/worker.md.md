@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 
 ## Purpose
 
@@ -85,7 +85,22 @@ No sibling repository evidence is needed for this doctrine file.
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
 
 
+### 260731-EFA-L17 — Quality Altitude Ladder
+
+The worker role's Checks section now states the ladder (source lines 72-79): leaf checks
+are change-set-scoped — the pre-push tier and the closeout staged gate run
+`agents_remember.code_quality.check --targeted` (changed files + reverse-import closure +
+derived test subset) — and `memory_quality_check` stays a per-leaf closeout gate. The full
+wrapper is NOT a leaf check: it runs once per master at the master integration gate,
+memory-capped. A red check that cannot be fixed inside the leaf's scope remains an
+escalation, not a workaround.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the worker's
+  change-set-scoped leaf checks and the full-wrapper master-gate home.
+  Verification metadata stays pinned until closeout stamps the 260731-EFA-L17
+  commit.
 
 - 2026-08-05T21:55+02:00 — 260731-EFA-L16 curator: recorded the Orient-step coding-guidelines read (developer ruling after task identifiers shipped in source comments through green gates) — the worker reads `system/coding-guidelines.md` before its first edit because no role file named it and the worker onboards from the brief alone. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.

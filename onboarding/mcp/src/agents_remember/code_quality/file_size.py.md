@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/file_size.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                                        |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`                                        |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ Enforce the repository's File Size Budget standard: every file at or above the 1
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The enforcing rail in the project-owned wrapper. | `file_size` | mcp/src/agents_remember/code_quality/check.py:194-194 |
+| The enforcing rail in the project-owned wrapper. | `file_size` | mcp/src/agents_remember/code_quality/check.py:216-216 |
 | The arming boolean and measured scope. | `file_size_armed`; `size_paths` | mcp/src/agents_remember/code_quality/scope.py:34-34; mcp/src/agents_remember/code_quality/scope.py:120-136 |
 | The band-boundary and wiring suite. | `FileSizeBandsTests` | mcp/tests/test_file_size_detector.py:24-58 |
 

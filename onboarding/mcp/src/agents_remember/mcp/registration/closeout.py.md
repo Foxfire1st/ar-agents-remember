@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-02T01:05+02:00                                       |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                   |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00                                       |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`                   |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -20,6 +20,18 @@ The tool-registration functions gained bare-`*` keyword-only signatures (the 19
 PLR0917 fixes across `mcp/registration/*.py`); the rule stays enabled and call sites
 already pass keywords. Registered tools are unchanged.
 
+## 260731-EFA-L17 Change
+
+The five tool declarations are all keyword-only (bare `*` — the L8 remediation completed
+here for `worktree_cleanup`/`worktree_abandon`, which still had positional parameters),
+and the published docstrings now state the quality altitude ladder: preview/apply
+describe the leaf change-set-scoped contract (`--targeted`: changed files +
+reverse-import closure + derived test subset, mandatory CRAP over the changed modules)
+and say the full wrapper is NOT a leaf gate; `worktree_integrate` states that it runs the
+altitude-routed gate itself before any merge (leaf targeted; master full, memory-capped
+via `orchestration.qualityGate.memoryCapBytes`). The registered tool surface is
+unchanged.
+
 ## Purpose
 
 `register_closeout_tools(server, config)` declares the **landing half** of a worktree-backed task:
@@ -30,7 +42,7 @@ already pass keywords. Registered tools are unchanged.
 
 ### Logic
 
-The preview/apply pair (`worktree_closeout_preview` L24-L42, `worktree_closeout_apply` L45-L76)
+The preview/apply pair (`worktree_closeout_preview` L24-L46, `worktree_closeout_apply` L47-L76)
 share `CloseoutCommitMessages(code, memory, ledger)`, built in each body from
 the three flat message arguments. Apply keeps a **second** object, `CloseoutApproval(intent_note,
 dry_run)`, precisely so the approval-bearing half cannot be confused with the commit text: folding
@@ -66,7 +78,8 @@ commit-gated: preview and approval precede apply; apply requires `intent_note`.
 The three destructive tools forward flat:
 
 - `worktree_integrate(contract_path, strategy='ff-only'|'replay', ledger_commit_message, dry_run)` —
-  moves branch refs; protected branches need explicit approval.
+  runs the altitude-routed quality gate before any merge (leaf targeted, master full +
+  memory-capped), then moves branch refs; protected branches need explicit approval.
 - `worktree_cleanup(contract_path, dry_run, teardown_providers=True)` — removes worktrees and merged
   task branches **after** integration, and by default reclaims the worktree's isolated provider stack.
 - `worktree_abandon(contract_path, dry_run, force)` — discards a task without integrating it. Unlike
@@ -94,13 +107,20 @@ The three destructive tools forward flat:
 | --- | --- | --- |
 | The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:78-86 |
 | `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | `CloseoutCommitMessages` | mcp/src/agents_remember/application/worktree_tools.py:275-282 |
-| The two pre-staging refusals and the reset-then-stage step apply's docstring describes. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:721-760; mcp/src/agents_remember/worktrees/modules/closeout.py:728-751; mcp/src/agents_remember/worktrees/modules/closeout.py:763-786; mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
-| The wrapper condition that decides whether the gate — and therefore the staging step and its refusals — runs at all. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:24-26; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:35-42; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:45-82 |
+| The two pre-staging refusals and the reset-then-stage step apply's docstring describes, now running the leaf targeted plan. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:728-769; mcp/src/agents_remember/worktrees/modules/closeout.py:770-795; mcp/src/agents_remember/worktrees/modules/closeout.py:796-857 |
+| The wrapper condition that decides whether the gate — and therefore the staging step and its refusals — runs at all, plus the mode/cap plan. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview`; `QualityGatePlan` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:37-41; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:67-76; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:77-146; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:29-35 |
 | The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring_tests_2.py:77-97 |
 | The closeout descriptions are asserted to pin quality-before-commit. | `test_closeout_tool_descriptions_pin_strict_quality_before_mutation` | mcp/tests/test_tools.py:154-168 |
-| The staged-gate behaviour the rewritten descriptions promise. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:452-558 |
+| The staged-gate behaviour the rewritten descriptions promise. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:642-753 |
 
 ## Update History
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the completed
+  keyword-only signatures (cleanup/abandon), the altitude-ladder tool docstrings
+  (leaf `--targeted`; full wrapper at the master integration gate, memory-capped;
+  `memory_quality_check` per leaf), and refreshed the preview/apply ranges plus the
+  closeout/gate reference rows to the post-L17 source. Verification metadata stays
+  pinned until closeout stamps the 260731-EFA-L17 commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 5 citation rows (payload builders, CloseoutCommitMessages/CloseoutApproval, wiring/description/staged-gate tests) and converted 2 history prose line citations to cit: forms; the preview/apply ranges L24-L42/L45-L76 verified still exact against the frozen source. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.

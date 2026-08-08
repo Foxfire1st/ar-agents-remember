@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-01T09:45+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -58,9 +58,11 @@ authorship can be attributed").
 uses the worktree closeout preview/apply tools against the task contract,
 requires a non-mutating preview before real commits, requires applicable closeout
 authority with an intent note, runs the package-local missing-onboarding gate,
-and runs the strict repository quality wrapper before any code, memory, ledger,
-contract, or applied-gate **commit**. The wrapper's CRAP threshold is mandatory by
-default: a function scoring at or above the configured threshold fails closeout.
+and runs the leaf change-set-scoped quality contract (`--targeted`) before any code, memory, ledger,
+contract, or applied-gate **commit**. The full wrapper is NOT a leaf gate: it runs once per master
+at the master integration gate, memory-capped, and `memory_quality_check` stays a per-leaf closeout
+gate. The wrapper's CRAP threshold is mandatory by default: a function scoring at or above the
+configured threshold fails closeout.
 That threshold is **`DEFAULT_CRAP_THRESHOLD = 20.0`**
 (`mcp/src/agents_remember/code_quality/crap_calculator.py`), not 30 — the skill body
 itself never names a number, it says "the configured threshold" throughout, and this
@@ -82,8 +84,8 @@ carryover are complete.
 ### The Gate Stages What It Certifies (260731-EFA-L4)
 
 L4 changed *when* the wrapper runs relative to the index, and the skill body now says so in four
-places: Approval Authority cit:([`## Approval Authority`], mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-110), both memory-order lists cit:([`## External-Memory Order`, `## Internal-Memory Order`], mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:225-293), and Failure
-Conditions cit:([`## Failure Conditions`], mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:294-358).
+places: Approval Authority cit:([`## Approval Authority`], mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-122), both memory-order lists cit:([`## External-Memory Order`, `## Internal-Memory Order`], mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:249-323), and Failure
+Conditions cit:([`## Failure Conditions`], mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:324-390).
 
 Every rail of the wrapper reads the **index** — `derive_scope` lists ruff's and pyright's files with
 `git ls-files`, and `diff_coverage` diffs the base against the tracked tree — while closeout commits
@@ -115,6 +117,19 @@ worded "fails without any *commit*" rather than "without mutation".
 - **A consuming repository carrying no wrapper is unaffected.** It runs no gate, is not staged early,
   and reaches the ordinary commit step's own `git add -A` exactly as before. The preview reports that
   state as `wrapper-unavailable` rather than passing it off as checked. Neither refusal applies to it.
+
+### Quality Altitude Ladder (260731-EFA-L17)
+
+The skill body now states the ladder unambiguously (source lines 78-88, 265-268,
+292-295, 331-336, 399-405): leaf-edge checks stay mandatory but are change-set-scoped —
+the pre-push tier and the closeout staged gate run the wrapper with `--targeted` (ruff over
+changed files, pyright over changed files plus the reverse-import closure, pytest over the
+derived test subset, coverage/CRAP over changed production modules, changed-lines floor); the
+full wrapper runs exactly once per master, inside `worktree_integrate` itself, memory-capped
+(`orchestration.qualityGate.memoryCapBytes`; systemd MemoryMax scope or the rlimit fallback);
+and `memory_quality_check` is carved out — it stays a per-leaf closeout gate. A leaf closeout
+that tries to skip its required checks (an uncovered changed production module, a failed
+targeted run, or a missing wrapper) is refused loudly, never passed silently.
 
 ### Conventions
 
@@ -213,9 +228,11 @@ canonical `skills/c-12-closeout/SKILL.md`.
 a memory content commit whose affected onboarding metadata still points at
 pre-closeout code, must not commit memory before route overview metadata,
 generated route indexes, and `memory_quality_check` are clean for the new code
-commit, and must not **commit** code, memory, ledger, contract, or applied-gate state
-when the strict repository quality wrapper cannot run or reports any failure,
-including CRAP at or above the configured threshold (`DEFAULT_CRAP_THRESHOLD = 20.0`).
+commit, must not **commit** code, memory, ledger, contract, or applied-gate state
+when the leaf change-set-scoped quality contract cannot run or reports any failure,
+including CRAP at or above the configured threshold (`DEFAULT_CRAP_THRESHOLD = 20.0`) over the
+changed production modules, and must not defer or skip `memory_quality_check` — it stays a
+per-leaf closeout gate even though the full wrapper moved to the master integration gate.
 The index is the one exception and the only mutation permitted ahead of the gate: closeout
 resets and stages the task worktree so the gate reads exactly what would be committed, and
 it does **not** roll that staging back on refusal. It must not advance
@@ -235,16 +252,16 @@ preconditions — a checkout carrying no wrapper runs no gate and neither refusa
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-12-closeout` skill defines worktree closeout tool usage and centralizes the closeout sequence. | `# c-12-closeout Closeout` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-372 |
-| `c-12-closeout` skill keeps commit approval separate from implementation approval and requires preview before apply. | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-110 |
-| Server-Side Gate Enforcement, now explicitly headed **"(parked fallback)"**: run preview/dry-run first, report in chat, raise one `lifecycle_gate(kind="closeout-approval", ask=..., packet=...)`, then `lifecycle_resume` before apply once the developer response is handled; the developer-attributed gate is the security boundary and `closeout-approval` IS the commit gate. The active hand-off is the notify-and-continue `lifecycle_turn_end_notification` above it. | `## Server-Side Gate Enforcement (parked fallback)` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:111-175 |
-| `c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill. | `## Preconditions` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:176-236 |
+| `c-12-closeout` skill defines worktree closeout tool usage and centralizes the closeout sequence. | `# c-12-closeout Closeout` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-409 |
+| `c-12-closeout` skill keeps commit approval separate from implementation approval, requires preview before apply, and states the L17 quality altitude ladder (leaf `--targeted`; full wrapper once per master, memory-capped; `memory_quality_check` per leaf). | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-122; mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:78-88 |
+| Server-Side Gate Enforcement, now explicitly headed **"(parked fallback)"**: run preview/dry-run first, report in chat, raise one `lifecycle_gate(kind="closeout-approval", ask=..., packet=...)`, then `lifecycle_resume` before apply once the developer response is handled; the developer-attributed gate is the security boundary and `closeout-approval` IS the commit gate. The active hand-off is the notify-and-continue `lifecycle_turn_end_notification` above it. | `## Server-Side Gate Enforcement (parked fallback)` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:123-187 |
+| `c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill. | `## Preconditions` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:188-248 |
 | `c-09-git-worktree-manager` skill routes worktree closeout to `c-12-closeout` skill and retains worktree lifecycle, integration, and cleanup ownership. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-328 |
-| Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover. | "Closeout does not mark the task `Completed`" | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:305-305 |
-| The L4 staging contract in Approval Authority: when code would commit **and the checkout carries the wrapper**, closeout resets the index, stages the whole task worktree, and gates exactly that staged content before any commit; a refusal leaves it staged, and `wrapper-unavailable` is the reported state for a checkout with no wrapper. | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-110 |
-| The two staging refusals and why their order is load-bearing: not-a-task-worktree (`--git-dir` vs `--git-common-dir`) and unresolved merge conflicts both run **before** the reset, because `git reset` drops unmerged entries and `MERGE_HEAD` and would silently disarm the conflict check. | `MERGE_HEAD` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:355-355 |
-| Both memory-order lists restate step 4 as reset + stage + gate over staged content before any commit, with the no-wrapper checkout committing as it always has. | `## External-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:225-254 |
-| The caller-side implementation of that contract: `_gate_staged_code` runs both refusals, then `git reset --mixed --quiet HEAD`, then `git add -A`, then the wrapper — and `requires_strict_code_quality` is what makes the whole step conditional on the wrapper being present. | `## Internal-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:255-293 |
+| Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover. | "Closeout does not mark the task `Completed`" | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:318-318 |
+| The L4 staging contract in Approval Authority: when code would commit **and the checkout carries the wrapper**, closeout resets the index, stages the whole task worktree, and gates exactly that staged content before any commit; a refusal leaves it staged, and `wrapper-unavailable` is the reported state for a checkout with no wrapper. | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-122 |
+| The two staging refusals and why their order is load-bearing: not-a-task-worktree (`--git-dir` vs `--git-common-dir`) and unresolved merge conflicts both run **before** the reset, because `git reset` drops unmerged entries and `MERGE_HEAD` and would silently disarm the conflict check. | `MERGE_HEAD` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:370-370 |
+| Both memory-order lists restate step 4 as reset + stage + the leaf targeted contract over staged content before any commit, with the no-wrapper checkout committing as it always has. | `## External-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:249-284; mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:285-323 |
+| The caller-side implementation of that contract: `_gate_staged_code` runs both refusals, then `git reset --mixed --quiet HEAD`, then `git add -A`, then the wrapper — and `requires_strict_code_quality` is what makes the whole step conditional on the wrapper being present. | `## Internal-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:285-323 |
 | `DEFAULT_CRAP_THRESHOLD = 20.0` — the actual value behind every "the configured threshold" sentence in this skill, which names no number itself. | `DEFAULT_CRAP_THRESHOLD` | mcp/src/agents_remember/code_quality/crap_calculator.py:37-37 |
 
 ## Cross-Repo References
@@ -260,6 +277,13 @@ No sibling repository evidence is needed for the skill itself.
 Closeout instructions now target the leaf enclosure `series-contract.md`; the root series contract is integration-branch state and is not the path used for leaf code/memory closeout.
 
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the quality altitude
+  ladder (leaf `--targeted`; full wrapper once per master at the master
+  integration gate, memory-capped; `memory_quality_check` per-leaf carve-out;
+  loud skip-refusal shapes) and refreshed the section anchors to the post-L17
+  ranges. Verification metadata stays pinned until closeout stamps the
+  260731-EFA-L17 commit.
 
 - 2026-08-05T21:40+02:00 — 260731-EFA-L16 curator: recorded the coding-guidelines read added to
   Preconditions and Boundaries rule 10 (developer ruling after task identifiers shipped in source

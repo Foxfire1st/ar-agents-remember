@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -174,7 +174,21 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | Loader-local behavior only. | - | - |
 
+### 260731-EFA-L17 — Quality-Gate Settings Family
+
+`QualityGateSettingsTests` (lines 961-1019) pins the new
+`orchestration.qualityGate` family: the 2 GiB default when absent, parsing and
+overriding `memoryCapBytes`, the empty-block default, the fail-loud unknown-key
+refusal (`memoryCapMegabytes` names the offending file), and the
+positive-integer requirement (`0` refused). `MergePrecedenceTests` and
+`SeedTests` also assert the quality-gate default survives merge and seed paths.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded
+  `QualityGateSettingsTests` and the quality-gate default assertions in the
+  merge/seed classes. Verification metadata stays pinned until closeout stamps
+  the 260731-EFA-L17 commit.
 - 2026-08-04T18:49+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the four malformed rows
   (settings-json.md `## Agentic Settings` section, `load_agentic_settings`, `find_harness`, and the
   supervisor test spans) and rewrote the parenthesized L16 series-tag spellings as cit forms. Renamed construct
