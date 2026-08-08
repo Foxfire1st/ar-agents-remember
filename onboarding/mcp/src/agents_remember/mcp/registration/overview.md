@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-02T01:05+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00                           |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`       |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## 260731-EFA-L8 Change
@@ -147,7 +147,22 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
 
+## 260731-EFA-L17 Change
+
+The closeout-family docstrings now state the quality altitude ladder: preview/apply name the
+leaf change-set-scoped contract (`--targeted`: changed files + reverse-import closure + derived
+test subset, mandatory CRAP over changed modules) and say the full wrapper is NOT a leaf gate;
+`worktree_integrate` states it runs the altitude-routed gate itself before any merge (leaf
+targeted; master full, memory-capped via `orchestration.qualityGate.memoryCapBytes`). The L8
+bare-`*` keyword-only remediation is completed here: `worktree_cleanup` and `worktree_abandon`
+now carry the separator too, so every `@server.tool()` declaration in the module is
+keyword-only. The registered tool surface is unchanged.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the altitude-ladder tool
+  docstrings and the completed keyword-only signatures. Verification metadata stays pinned
+  until closeout stamps the 260731-EFA-L17 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (bare-`*` keyword-only signatures). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:53:38+02:00 — W3-B05 curator: anchored 6 Tier-2 table citations and normalized one pre-existing transient source range with exact anchors and paths; fixer generated all ranges.

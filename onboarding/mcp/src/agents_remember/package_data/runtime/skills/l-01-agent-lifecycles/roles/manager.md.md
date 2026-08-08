@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -237,7 +237,22 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+### 260731-EFA-L17 — Quality Altitude Ladder
+
+The manager role file's integration section now carries a **Quality altitude ladder**
+bullet (source lines 163-168): leaf closeout and leaf integration run the
+change-set-scoped contract (`agents_remember.code_quality.check --targeted`); the full
+wrapper runs exactly once per master inside `worktree_integrate` at master altitude,
+memory-capped (`orchestration.qualityGate.memoryCapBytes`); `memory_quality_check` is NOT
+part of that move — it stays a per-leaf closeout gate, and a leaf closeout that skips its
+required checks is refused, not passed.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the manager's quality
+  altitude ladder bullet (leaf `--targeted`; full wrapper once per master,
+  memory-capped; `memory_quality_check` per leaf). Verification metadata stays
+  pinned until closeout stamps the 260731-EFA-L17 commit.
 - 2026-08-05T22:10+02:00 — 260731-EFA-L16 curator: recorded the removal of the manager's native fan-out permission (developer ruling: orchestration seats use no shadow channel; analysis and report checks are the seat's own work or a dispatched reviewer/curator seat's) and the role-seat-only-via-`spawn_agent_session` binding. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 10 citation findings and two wording
   drifts. Re-anchored the five role/frame rows to their `#`-heading anchors with exact spans (canonical

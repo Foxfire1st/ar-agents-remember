@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_diff_coverage.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -109,8 +109,8 @@ uncovered changed lines**.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module under test: base resolution, changed-line collection, and the measurement. | `resolve_base`; `changed_python_lines`; `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:145-173; mcp/src/agents_remember/code_quality/diff_coverage.py:176-197; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
-| The wrapper that runs the floor as a step and exposes its two flags. | `run_diff_coverage`; "--diff-base"; "--diff-floor" | mcp/src/agents_remember/code_quality/check.py:420-463; mcp/src/agents_remember/code_quality/check.py:524-524; mcp/src/agents_remember/code_quality/check.py:533-533 |
-| The tier that carries the floor, and why the fast tier cannot. | "The full tier carries the changed-lines coverage floor"; "The fast tier certifies the index" | .githooks/_gate.sh:185-185; .githooks/_gate.sh:208-208 |
+| The wrapper that runs the floor as a step and exposes its two flags. | `run_diff_coverage`; "--diff-base"; "--diff-floor" | mcp/src/agents_remember/code_quality/check.py:524-578; mcp/src/agents_remember/code_quality/check.py:658-658; mcp/src/agents_remember/code_quality/check.py:667-667 |
+| The tier that carries the floor, and why the fast tier cannot. | "The full tier carries the changed-lines coverage floor"; "The fast tier certifies the index" | .githooks/_gate.sh:191-191; .githooks/_gate.sh:226-226 |
 | The runner `diff_coverage._git` delegates to, and the source of the 300s `GIT_LOCAL_TIMEOUT_SECONDS` bound and the `cwd=` the wrapper-agreement test exercises. | `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-70 |
 | The other side of the same seam: `QualityGateGitTests` proves a non-repository and an unrunnable git both reach `DiffScopeError` through `diff_coverage.run_git`, and points `GIT_DIR` at a decoy to prove the gate reads the repository it was handed. | `QualityGateGitTests` | mcp/tests/test_git_command.py:328-390 |
 

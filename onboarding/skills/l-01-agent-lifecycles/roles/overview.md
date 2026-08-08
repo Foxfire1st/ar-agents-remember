@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | skills/l-01-agent-lifecycles/roles |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 
 ## Purpose
 
@@ -46,7 +46,21 @@ making citations current, never attestations; the same `memory_quality_check` sn
 before the code commit and test wrapper). Worker, reviewer, and curator fan-out (read/search/
 report) is unchanged.
 
+## 260731-EFA-L17 Route Impact — Role Files State The Ladder
+
+`worker.md` (Checks section) and `templates/worker-brief.md` now require the change-set-scoped
+leaf check (`agents_remember.code_quality.check --targeted` with the leaf base) and state that
+the full wrapper is NOT a leaf check; `manager.md` and `templates/manager-brief.md` name the
+leaf targeted contract, the once-per-master full wrapper inside `worktree_integrate`
+(memory-capped), and the per-leaf `memory_quality_check` carve-out; `orchestrator.md` owns the
+master-gate full wrapper and forbids per-leaf full runs. `curator.md`'s contract-path-scoped
+self-check (L6) is unchanged and is exactly what greens the per-leaf memory-quality gate.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the ladder across the worker/
+  manager/orchestrator role files and brief templates. Verification metadata stays pinned until
+  closeout stamps the 260731-EFA-L17 commit.
 
 - 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the role-seat-only spawn doctrine across architect/orchestrator/manager, the worker/reviewer coding-guidelines reads, and the architect's `system/tools.md` inventory read; hands-on seats' fan-out unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 route impact: recorded the curator self-check contract

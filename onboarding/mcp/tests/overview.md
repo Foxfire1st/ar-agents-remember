@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1241,10 +1241,10 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Every registered AR marker is applied to at least one test and reachable from the gated runner in both directions; the two credential-free CI paths are pinned by name. | `GatedPathInventoryTests` | mcp/tests/test_gated_integration_runner.py:86-154 |
 | CRAP consumes branch coverage and refuses a report without branch measurement; a partially taken branch lowers a score a statement reader calls perfect. | `CrapCalculatorTests`; `test_a_partially_taken_branch_lowers_the_score_a_statement_reader_calls_perfect`; `test_a_report_without_branch_measurement_is_refused` | mcp/tests/test_crap_calculator.py:17-235 |
 | Drift between `scripts/harness/` and the nine generated harness trees fails the suite, covering content and file mode. | `GeneratedTreesTests`; `test_drift_is_reported_for_content_and_for_mode` | mcp/tests/test_sync_harness.py:35-107 |
-| The closeout gate suite covers all three statuses and spies on the real argument passed from unannotated closeout call sites. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:49-245; mcp/tests/test_worktree_closeout_quality_gate.py:248-367 |
-| The gate is shown the commit content: a created file reaches ruff through real `derive_scope`, a deleted one leaves it, and the lint-path set equals the Python paths in the resulting commit tree. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:452-558 |
-| Both staging refusals are asserted as damage that does not happen: the repository checkout preserves its `add -p` selection and untracked secret, and a conflicted worktree keeps `MERGE_HEAD` intact. | `TaskWorktreePreconditionTests`; `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:601-713; mcp/tests/test_worktree_closeout_quality_gate.py:716-770 |
-| A retry commits the tree a first run would: two worktrees driven to the same end state, one through a refused gate, are asserted to produce the identical commit tree, so the ignored `.dmypy.json` a refused attempt staged is not carried into the retry (`RetryStagesWhatAFirstRunWouldTests`). | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:776-835 |
+| The closeout gate suite covers all three statuses and spies on the real argument passed from unannotated closeout call sites. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:49-423; mcp/tests/test_worktree_closeout_quality_gate.py:424-550 |
+| The gate is shown the commit content: a created file reaches ruff through real `derive_scope`, a deleted one leaves it, and the lint-path set equals the Python paths in the resulting commit tree. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:642-748 |
+| Both staging refusals are asserted as damage that does not happen: the repository checkout preserves its `add -p` selection and untracked secret, and a conflicted worktree keeps `MERGE_HEAD` intact. | `TaskWorktreePreconditionTests`; `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:791-903; mcp/tests/test_worktree_closeout_quality_gate.py:906-960 |
+| A retry commits the tree a first run would: two worktrees driven to the same end state, one through a refused gate, are asserted to produce the identical commit tree, so the ignored `.dmypy.json` a refused attempt staged is not carried into the retry (`RetryStagesWhatAFirstRunWouldTests`). | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:966-1025 |
 | The whole HTTP surface is driven and validated against the model declared for the returned status, alias-strict, with the inventory, walker coverage, two runtime-validated dict routes, and the exact 286-declared / 133-driven / 153-listed ledger. | `_grouped`; `_driven_pairs`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:441-445; mcp/tests/test_serving_response_conformance_live.py:458-481; mcp/tests/test_serving_response_conformance_live.py:484-484; mcp/tests/test_serving_response_conformance_cases_1.py:12-12 |
 | `/api/state` and the SSE snapshot validate as `ServedWorkspaceProjection` and refuse `WorkspaceProjection`; 304 is bodyless, deltas omit `SERVED_TAIL_FIELDS`, and the populated-projection guard rejects an empty scaffold. | `ServedStateTailTests`; `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:213-257; mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
 | Every producible vocabulary member validates at its wire field by three mechanisms; the module header states which vocabulary each mechanism defends. | "class GuidanceWalkTests(unittest.TestCase):"; "class ProducedLiteralTests(unittest.TestCase):"; "class AdvertisedVocabularyTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:230-294; mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:45-45; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:450-450 |
@@ -1342,7 +1342,24 @@ the citation gate BEFORE the code commit with no commit spent.
 All 27 over-limit test modules were split in place into families (79 new modules; every original `test_*` name reconciled item for item, plus one intentional new name for R17). New suites added: `test_file_size_detector.py` (the File Size Budget rail — bands, exit codes, wiring, scope), `test_facade_surface.py` (the eight-facade surface pin), and the harness-control conformance family `test_harness_control_conformance_1.py` / `_2.py` + `test_harness_control_ipc.py` (L8's deterministic receipt-before-release rewrite applied verbatim). `test_quality_scope_reporting.py` now asserts the live 426-TypeScript-input count.
 
 
+## 260731-EFA-L17 — Targeted-Contract And Altitude Proofs
+
+The test tree gained three focused suites for the quality ladder: `test_code_quality_targeted.py`
+(derivation selectors, transitive reverse-import closure, uncovered-module refusal, real targeted
+wrapper runs with radon consuming the changed module files), `test_code_quality_memory_cap.py`
+(systemd/rlimit planning and the wrapper's cap enforcement and policy naming), and
+`test_worktree_integrate_quality_gate.py` (leaf targeted / series full+capped altitude routing,
+settings-owned cap, refusal-before-merge, dry-run planned-gate payload). Existing families were
+extended: closeout gate mode/cap/kill-shape assertions, hook-tier `pre-push → targeted`, settings
+`qualityGate` family, scope-reporting integration invocation labels, and the deterministic
+observer ticker-exit assertions (`ticker.join` replacing poll loops — test-only, kills a
+race-dependent diff-coverage class).
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the three new suites and the
+  extended closeout/hook/settings/scope-reporting/observer families. Verification metadata stays
+  pinned until closeout stamps the 260731-EFA-L17 commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 route impact: recorded the in-place test-family splits, the detector/facade-surface/conformance suites, and the count fix. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: test_quality_scope_reporting.py was re-scoped to run the real hook with an npm shim; the tests route's meaning is unchanged.

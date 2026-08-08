@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00               |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -51,6 +51,19 @@ the parser never derives a model/effort paste command from them.
 #
 
 - 260731-EFA-L7 (trace delta): this module is now a facade over `_agentic_settings_{core,harness,policy,sections}.py`; the full base surface (public + private patch targets) is re-exported and pinned by `mcp/tests/test_facade_surface.py`.
+
+### 260731-EFA-L17 — The Quality-Gate Memory Cap
+
+The loader now parses `orchestration.qualityGate.memoryCapBytes` (260731-EFA-L17-R3):
+`KNOWN_ORCHESTRATION_FIELDS` gained `qualityGate` (core), `_parse_orchestration`
+(lines 331-367) wires `_parse_quality_gate(raw.get("qualityGate"), source=source)` into
+`AgenticSettings.quality_gate`, and the facade re-exports `QualityGateSettings`,
+`KNOWN_QUALITY_GATE_FIELDS`, `DEFAULT_FULL_GATE_MEMORY_CAP_BYTES`, and
+`_parse_quality_gate` through `__all__` (lines 141-205). The value is the settings-owned
+cap for full-wrapper runs at the master integration gate; absent key keeps the 2 GiB
+default, unknown keys fail loud like every other orchestration family, and a JSON `null`
+at the family key is refused.
+
 ## Logic
 
 **260714-ACPUI-L2 effort policy.** When a settings-defined non-native harness declares
@@ -249,7 +262,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:408-408; docs/reference/settings-json.md:410-411 |
+| The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:409-409; docs/reference/settings-json.md:411-411; docs/reference/settings-json.md:412-412 |
 
 ## Repo-Internal References
 
@@ -269,6 +282,11 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the
+  `orchestration.qualityGate` family through the facade (known-key set, model,
+  parser wiring, re-exports) and the fail-loud/default contract. Verification
+  metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
 
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): this module is now a facade over `_agentic_settings_{core,harness,polic...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

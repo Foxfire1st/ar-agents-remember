@@ -50,7 +50,7 @@
       "skills",
       "roles.<role>",
       "rolesPerLevel",
-      "5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060",
+      "1b7f6f07c5ccc64627299b5d22463ef9c267e187",
       "system/init",
       "list_models",
       "worktrees-c09.md",
@@ -76,18 +76,18 @@
       "lifecycle_finalize_task",
       "task_doc",
       "task_reopen",
+      "use-external-memory.md",
+      "--targeted",
+      "worktree_integrate",
+      "orchestration.qualityGate.memoryCapBytes",
+      "qualityGate",
       "memory-citations",
       "server.tool",
       "20.0",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T16",
-      "lastVerifiedCommitHash",
-      "ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060",
-      "lastVerifiedCommitDate",
-      "T12",
-      "MCP"
+      "T02"
     ]
   },
   "fallback": {

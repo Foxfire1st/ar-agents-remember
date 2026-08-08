@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00               |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,20 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `UntrackedExposureTests` (lines 346-516). | `UntrackedExposureTests` | mcp/tests/test_quality_scope_reporting.py:346-516 |
 | Defines the class `CallerProvenanceTests` (lines 519-705). | `CallerProvenanceTests` | mcp/tests/test_quality_scope_reporting.py:519-705 |
 
+### 260731-EFA-L17 — Targeted Tier And Integration Provenance
+
+`CallerProvenanceTests` now expects the pre-push tier to render `"targeted"`
+(the `hook-tier` subprocess assertion), and
+`test_integration_invocations_name_the_clean_checkout` (lines 615-626) pins
+`diff_input_description` for `master-integration` ("master integration tree")
+and `leaf-integration` ("leaf integration tree").
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the targeted
+  pre-push tier assertion and the integration-invocation provenance tests.
+  Verification metadata stays pinned until closeout stamps the 260731-EFA-L17
+  commit.
 
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the count-fix delta pins the live 426-TypeScript-input measurement (tsc...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

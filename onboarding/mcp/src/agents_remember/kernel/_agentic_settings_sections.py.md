@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                                        |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00                                            |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`                                        |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -16,7 +16,8 @@
 
 ## Purpose
 
-``orchestration`` section parsers: loops, roles, concurrency, expectations, supervisor, escalation, and spawn.
+``orchestration`` section parsers: loops, roles, concurrency, expectations, supervisor,
+escalation, spawn, and the quality gate (260731-EFA-L17).
 
 ## Code Commentary
 
@@ -35,6 +36,16 @@
 - `_parse_escalation_rung_seconds`
 - `_parse_respawn_after_rung`
 - `_parse_spawn`
+- `_parse_quality_gate` (260731-EFA-L17: `orchestration.qualityGate`, default 2 GiB,
+  fail-loud unknown keys, positive-int `memoryCapBytes`)
+
+## 260731-EFA-L17 Change
+
+`_parse_quality_gate` (lines 476-494) parses `orchestration.qualityGate` into
+`QualityGateSettings`: absent family/key keeps the documented 2 GiB default, unknown keys
+fail loud via `_refuse_unknown(block, KNOWN_QUALITY_GATE_FIELDS, ...)`, and
+`memoryCapBytes` must be a positive integer (`_require_positive_int`). A `null` at the
+family key is refused by `_refuse_null_families` before this parser runs.
 
 ## Invariants And Boundaries
 
@@ -47,5 +58,9 @@
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded `_parse_quality_gate`
+  and the family's default/fail-loud/positive-int contract. Verification metadata
+  stays pinned until closeout stamps the 260731-EFA-L17 commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

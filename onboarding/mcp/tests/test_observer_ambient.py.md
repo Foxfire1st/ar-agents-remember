@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_ambient.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T20:09+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00                           |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`       |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -118,14 +118,29 @@ into a literal container is still seen.
 | The state vocabulary (`TERMINAL_STATES`), `coerce_end_outcome`, and `coerce_phase` under test. | `TERMINAL_STATES`; `coerce_end_outcome`; `coerce_phase` | mcp/src/agents_remember/observer/lifecycle_state.py:139-139; mcp/src/agents_remember/observer/lifecycle_state.py:149-158; mcp/src/agents_remember/observer/lifecycle_state.py:180-184 |
 | The lifecycle-state module owns the `LifecycleError` and guarded-start subtype asserted throughout this suite. | `LifecycleError`; `GuardedStartError` | mcp/src/agents_remember/observer/lifecycle_state.py:161-162; mcp/src/agents_remember/observer/lifecycle_state.py:165-177 |
 | The store events are written to and read back from. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| Task 34 heartbeat activity-decay coverage: inactivity tracks real activity not heartbeats; the ticker goes quiet past the cutoff and resumes on activity. | `test_inactive_seconds_tracks_real_activity_not_heartbeats`; `test_heartbeat_ticker_goes_quiet_when_idle_and_resumes_on_activity` | mcp/tests/test_observer_ambient.py:377-405; mcp/tests/test_observer_ambient.py:407-474 |
+| Task 34 heartbeat activity-decay coverage: inactivity tracks real activity not heartbeats; the ticker goes quiet past the cutoff and resumes on activity. | `test_inactive_seconds_tracks_real_activity_not_heartbeats`; `test_heartbeat_ticker_goes_quiet_when_idle_and_resumes_on_activity` | mcp/tests/test_observer_ambient.py:375-403; mcp/tests/test_observer_ambient.py:405-474 |
 | `_string_constants` plus `EndSignalVocabularyTests`: the `end` signal names no terminal state of its own and converts through `coerce_end_outcome`. | `_string_constants`; `EndSignalVocabularyTests` | mcp/tests/test_observer_ambient.py:140-154; mcp/tests/test_observer_ambient.py:157-185 |
 
 ## Series-Contract Notes
 
 Ambient observer tests use leaf enclosure paths when lifecycle promotion records an enclosure, matching the durable anchor consumed by dashboard projection.
 
+### 260731-EFA-L17 — Deterministic Ticker-Exit Assertions
+
+The three `while ticker.is_alive() and time.monotonic() < deadline:
+time.sleep(0.001)` poll loops in `HeartbeatTests` were replaced with
+`ticker.join(timeout=5)` + `assertFalse(ticker.is_alive(), ...)` (lines 372-374,
+499-501, and 567-569 in the current file). The change is test-only determinism:
+the loop body previously executed only while the ticker was alive, so its
+coverage depended on thread-exit timing and could block the 100% diff-coverage
+floor. Intent is unchanged — the thread must exit after stop / after a tick
+reports no lifecycle.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the join-based
+  ticker-exit assertions (deterministic, test-only). Verification metadata stays
+  pinned until closeout stamps the 260731-EFA-L17 commit.
 
 - 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded rounds 12-13 —
   heartbeat tests are now seam-driven and deterministic: a grant-stepping `ticker_wait` fake via

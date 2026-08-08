@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/crap_calculator.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -158,7 +158,7 @@ than an impossible percentage.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Unit tests cover the CRAP formula, function-span coverage intersection, branch-arc parsing, and missing coverage data behavior. | `CrapCalculatorTests` | mcp/tests/test_crap_calculator.py:17-235 |
-| The wrapper runs CRAP from pytest coverage JSON, lists every offender, and declares its two Radon steps reports. | "def derive_scope" | mcp/src/agents_remember/code_quality/check.py:54-54 |
+| The wrapper runs CRAP from pytest coverage JSON, lists every offender, and declares its two Radon steps reports. | "def derive_scope" | mcp/src/agents_remember/code_quality/check.py:60-60 |
 | The changed-lines coverage floor reuses this module's coverage reader and inherits its branch-data refusal. | "class DiffCoverage" | mcp/src/agents_remember/code_quality/diff_coverage.py:57-57 |
 | `[tool.coverage.run] branch = true` is set here, with the measured effect on the aggregate recorded beside it. | "[tool.coverage.run]" | pyproject.toml:67-67 |
 | Development tool guidance documents the source quality wrapper and CRAP-Calculator command flow. | `# Coding Tools & Repo Notes` | system/tools.md:1-349 |

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | skills/l-01-agent-lifecycles |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-07-15T23:31+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 
 ## Purpose
 
@@ -67,7 +67,20 @@ where green wrapper rails were the only signal (three leaves had shipped task id
 source comments). The architect's Opening Move also gained a standing, repo-generic
 `system/tools.md` inventory read.
 
+## 260731-EFA-L17 Route Impact — The Quality Altitude Ladder
+
+The lifecycle doctrine now states the ladder: `c-12-closeout` runs the leaf change-set-scoped
+contract (`--targeted`) at leaf closeout and keeps `memory_quality_check` as a per-leaf closeout
+gate; the full wrapper belongs to the master integration gate (inside `worktree_integrate`,
+memory-capped); the worker/manager/orchestrator role files and their brief templates carry the
+same ladder so no seat runs or expects a per-leaf full wrapper. Canonical `skills/` remains the
+owner; the packaged `package_data/runtime/skills/` mirrors are sync-propagated copies.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the quality altitude ladder in
+  the lifecycle doctrine (targeted leaf checks, once-per-master full gate, per-leaf memory
+  quality). Verification metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
 
 - 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the spawn doctrine (role seats only via `spawn_agent_session`; no native sub-agents on orchestration seats; architect-solo exception) and the guideline-adherence chain (worker Orient/brief read, reviewer lens, c-12 Preconditions + Boundaries rule 10), plus the architect's generic `system/tools.md` inventory read. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 route impact: recorded the curator self-check doctrine

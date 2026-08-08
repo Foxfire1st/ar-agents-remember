@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_git_command.py`            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T20:52+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -240,7 +240,7 @@ the call sites are the ones the consolidation moved onto it.
 | The runner under test: the eight-name `GIT_REPOSITORY_SELECTOR_ENV` tuple, the timeout constants, `git_environment()`, and `run_git()` with `env=`, `stdin=DEVNULL`, surrogateescape decoding and a per-call `timeout`. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | The conftest strip this suite deliberately defeats: it imports the production selector tuple and pops each name from `os.environ` at import. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/tests/conftest.py:43-48 |
 | `commit_if_dirty` and `head_commit` — the closeout write path driven by the decoy commit test. | `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:29-30; mcp/src/agents_remember/worktrees/modules/git.py:81-86 |
-| `_git_common_dir` decides which repository the closeout quality gate certifies, and returns `None` rather than falling through to an inherited selector. | `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:191-198 |
+| `_git_common_dir` decides which repository the closeout quality gate certifies, and returns `None` rather than falling through to an inherited selector. | `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:319-326 |
 | The gate's own git wrappers route through the shared runner and convert failure into typed domain errors: `_git` (which owns the conversion for all three callers) and `run_git` raising `DiffScopeError`, and `git_ls_files` raising `ScopeError`. | `DiffScopeError` | mcp/src/agents_remember/code_quality/diff_coverage.py:39-40; mcp/src/agents_remember/code_quality/check.py:35-39; mcp/src/agents_remember/code_quality/scope.py:44-53 |
 | The per-command timeout bands `TimeoutClassTests` asserts: the three metadata-band ref reads plus the local-band `status --porcelain`. | `TimeoutClassTests` | mcp/tests/test_git_command.py:550-660 |
 | The freshness reads classed by what they do — metadata for the two ref lookups, local for the history walk. | `read_branch_freshness` | mcp/src/agents_remember/kernel/git_freshness.py:56-65; mcp/src/agents_remember/kernel/git_freshness.py:98-112 |

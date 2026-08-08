@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T15:48+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`                                  |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`                                  |
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 
 ## Purpose
 
@@ -80,7 +80,22 @@ No sibling repository evidence is needed for this doctrine file.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+### 260731-EFA-L17 — Quality Altitude Ladder
+
+The manager-brief template's dispatch-defaults section gains a **Quality altitude ladder
+(260731-EFA-L17)** bullet (source lines 38-43): leaf closeout and leaf integration run the
+change-set-scoped contract (`agents_remember.code_quality.check --targeted`); the FULL
+wrapper runs exactly once per master inside `worktree_integrate` at master altitude,
+memory-capped (`orchestration.qualityGate.memoryCapBytes`); `memory_quality_check` stays a
+per-leaf closeout gate; a leaf closeout that skips its required checks is refused, not
+passed.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the manager-brief
+  template's quality altitude ladder bullet (leaf `--targeted`; full wrapper once
+  per master, memory-capped; `memory_quality_check` per leaf). Verification
+  metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
 
 - 2026-07-10T15:48+02:00 — 260707-HFX2-L17 generated-runtime doctrine delta: manager, worker, and
   curator dispatch defaults now describe the environment-role-plus-qualified-leaf pair claim, and

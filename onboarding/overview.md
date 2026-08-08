@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`
+| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
 
 > **Status:** active baseline
 
@@ -1039,7 +1039,28 @@ unchanged; ownership and failure containment are now explicit in their route ove
 
 This master leaf armed the file-size detector (`code_quality/file_size.py`, hard limit 1,200 / architectural failure 2,000+ / emergency cleanup 4,000+, `wc -l` counting, enforced in the project wrapper via `file_size_armed`) and closed the standard's scope loophole (Python source + tests + `dashboard/src` TS/TSX; narrowed "explicitly boring" exception). Over-limit modules were split in place into facades plus private responsibility modules under `kernel/`, `observer/snapshots_impl/`, `observer/reducer_impl/`, and `serving/`, each facade surface pinned mechanically. The test tree was split into in-place families (79 new modules) and CRAP/coverage scope now includes the test roots.
 
+## 260731-EFA-L17 — The Quality Altitude Ladder
+
+The test-authority ladder (260731-EFA-L17) moved the full quality wrapper up to the master
+integration gate. Leaf-edge checks stay mandatory but are change-set-scoped:
+`agents_remember.code_quality.check --targeted` (ruff/format over changed files, pyright over
+changed files + reverse-import closure, pytest over the derived test subset, coverage/CRAP/radon
+over changed production modules, changed-lines floor). The full wrapper (ruff, ruff-format,
+pyright, pytest+coverage, CRAP, diff-coverage) runs exactly once per master, invoked by
+`worktree_integrate` itself at master altitude, memory-capped
+(`orchestration.qualityGate.memoryCapBytes`; systemd MemoryMax scope or the RLIMIT_AS fallback).
+`memory_quality_check` is explicitly carved out and stays a per-leaf closeout gate. The pre-push
+tier, leaf closeout, and leaf integration route to the targeted contract; CI keeps the full
+remote gate on leaf branches (recorded posture: no CI change this leaf). Refusal shapes are loud:
+an uncovered changed production module, a cap-less full run, a failed targeted run, or a missing
+wrapper all refuse rather than certify a narrower run.
+
 ## Update History
+
+- 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the quality altitude ladder
+  (targeted leaf contract, once-per-master full wrapper at the master integration gate with the
+  settings-owned memory cap, per-leaf `memory_quality_check` carve-out, loud refusal shapes).
+  Verification metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
 
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the armed file-size rail, the scope closure, and the in-place facade/test-family splits. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section (ESLint rail, size splits, coverage/budget/knip/trap, Playwright, hooks, Python ripple). Verification metadata stays pinned until closeout stamps the code commit.
