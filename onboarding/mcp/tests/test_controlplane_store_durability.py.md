@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T16:29+02:00                             |
-| lastVerifiedCommitHash |                                                    `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |                                                    2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |                                                    `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                                    2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -122,7 +122,7 @@ rather than measuring something.
 
 **The documented base-commit rates survived the harness fix — this is the reassuring half.**
 Re-measured through the same archive under a working `harness_work_dir`, four runs, the class
-docstring's own table (cit:([`HarnessSensitivityTests`], mcp/tests/test_controlplane_store_durability.py:389-444)): attention 18.27-30.10, gate 7.50-10.50, supervisor_signal
+docstring's own table (cit:([`HarnessSensitivityTests`], mcp/tests/test_controlplane_store_durability.py:389-444)): attention 18.27-30.10, gate 7.50-10.50, agent_notifier_signal
 7.50-9.00, expectation 6.50-9.50, nudge 5.50-9.00, operator_inbox 0.00 in all four. The leaf's
 re-measured four-run means (23.91 / 9.38 / 8.00 / 7.63 / 7.50 / 0.00) fall inside each of those
 ranges, and both preserve the ordering and the lone survivor at exactly zero that this card
@@ -220,7 +220,7 @@ shared instrument; the rows below are the code each claim is about.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The measurement instrument this file imports: adapters, case lists, the shared stress profile, the scenario dispatch, the base-commit archive, and the pinned re-execution. | `ADAPTERS`; `CASES`; `APPEND_CASES`; `STRESS_PROFILE`; `run_case`; `extract_base_commit_tree`; `run_against_source` | mcp/tests/_store_durability.py:560-562; mcp/tests/_store_durability.py:566-566; mcp/tests/_store_durability.py:568-568; mcp/tests/_store_durability.py:1066-1073; mcp/tests/_store_durability.py:1077-1081; mcp/tests/_store_durability.py:1095-1119; mcp/tests/_store_durability.py:1123-1147 |
+| The measurement instrument this file imports: adapters, case lists, the shared stress profile, the scenario dispatch, the base-commit archive, and the pinned re-execution. | `ADAPTERS`; `CASES`; `APPEND_CASES`; `STRESS_PROFILE`; `run_case`; `extract_base_commit_tree`; `run_against_source` | mcp/tests/_store_durability.py:560-562; mcp/tests/_store_durability.py:566-566; mcp/tests/_store_durability.py:568-568; mcp/tests/_store_durability.py:1066-1073; mcp/tests/_store_durability.py:1077-1081; mcp/tests/_store_durability.py:1157-1183; mcp/tests/_store_durability.py:1187-1211 |
 | The vacuity guard `HarnessVacuityGuardTests` exercises the sibling work directory holding each run's stop flag. | `harness_work_dir` | mcp/tests/_store_durability.py:847-874 |
 | The vacuity guard's evidence-based floor. | `MIN_SUCCESSFUL_RECLAIMS` | mcp/tests/_durability_measurement.py:11-11 |
 | The single funnel that refuses incomplete stress results. | `require_stress_measurement` | mcp/tests/_durability_measurement.py:18-55 |
@@ -247,6 +247,7 @@ inside `agents-remember`.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 139 repeated path:start-end Citation objects from 3 same-claim citation group(s) at card line(s) 223, 228, 232; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
 - 2026-08-02T21:27+02:00 — W2-B08 curator: anchored 25 citation findings; preserved the deleted historical names `reclaim_ticks`, `MIN_RECLAIM_TICKS`, and `_refuse_a_vacuous_run` visibly as Tier 3 with current-source evidence for the surviving instrument names. Verification metadata stays pinned until closeout.
 - 2026-08-01T16:29+02:00 — 260731-EFA-L5 curator: re-derived every self-citation against the

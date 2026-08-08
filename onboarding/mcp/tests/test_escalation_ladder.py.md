@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_escalation_ladder.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T01:14+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ the terminal-catalog and supervisor test modules.
 
 ### Invariants And Boundaries
 
-- No test touches a real coordination root or a real supervisor sweep — every catalog is
+- No test touches a real coordination root or a real agent-notifier sweep — every catalog is
   temp-rooted and every entry is a fixture-built `OperatorInboxEntry`/`TerminalCatalogEntry`.
 - The hierarchy-ceiling jump (`test_rung_two_with_no_further_owner_jumps_straight_to_developer`) is
   the regression a naive "always walk exactly 2 hops" rung-2 implementation would fail — any future
@@ -105,6 +105,8 @@ No meaningful cross-repo references found.
 | Same-repository unit-test suite only. | — | — |
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

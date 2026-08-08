@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_gates.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |  2026-08-08T22:29:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,6 @@ No neighboring repository participates in this gate suite.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-
 
 ## Update History
 

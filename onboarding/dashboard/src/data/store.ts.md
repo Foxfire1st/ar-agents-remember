@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/store.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                  `7c56c11d651972515723b4090b8174087eb5236f`|
-| lastVerifiedCommitDate |                                                  2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-08-08T21:20+02:00 |
+| lastVerifiedCommitHash |                                                  `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                                  2026-08-08T22:29:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,8 +43,8 @@ in `useStore` for React subscribers. State mutates through these actions:
   object. `metrics`/`analytics`/`activeWorktreeGroups`/`servingBuild` go through the same `reuse`
   gate (a replaced analytics re-anchors all its age-bearing nodes via `stampAnalytics`). When
   NOTHING changed and `conn` is already live, the action returns early (260707-HFX2-L2 R5, fix
-  round 2): it calls `set({ supervisorHeartbeat })` only when `heartbeatEquals(state.
-  supervisorHeartbeat, supervisorHeartbeat)` is false, then always returns — a truly idle
+  round 2): it calls `set({ agentNotifierHeartbeat })` only when `heartbeatEquals(state.
+  agentNotifierHeartbeat, agentNotifierHeartbeat)` is false, then always returns — a truly idle
   heartbeat (including `null`/`null`) still performs zero store writes on this path. A dedicated
   `heartbeatEquals` comparator is used instead of the general `stableEquals` gate because
   `stableEquals` strips `ageSeconds` (it's in `VOLATILE_AGE_FIELDS`), which is exactly the field a
@@ -54,7 +54,7 @@ in `useStore` for React subscribers. State mutates through these actions:
   redeliverable inbox count, and sweep duration literally, ages included. Every other field on that early-return
   path stays untouched (identity-preserving). On the normal (changed-content) path, `generatedAt`
   advances only when content applied (it is the "ages as of" stamp the top bar shows — coherence
-  rule); `supervisorHeartbeat` is set alongside it.
+  rule); `agentNotifierHeartbeat` is set alongside it.
 - `applyDelta` — routes the server's named deltas through `reduceDelta`, which now returns
   `null` for a no-op (a stable-equal node, a removed-marker for an absent id, an equal
   whole-value) — the caller then skips `set` entirely. Real upserts stamp the node and merge as
@@ -92,13 +92,13 @@ orphaning and bleeding through the scenario dropdown. `reset()` also clears `act
   displays can advance locally; nodes reused by identity keep their original (correct) anchor.
 - `servingBuild` is wire-optional (a pre-L15 server sends none → `null`, the stamp renders
   nothing); `reset()` clears it like every other collection.
-- **`supervisorHeartbeat` is deliberately EXCLUDED from the general `unchanged` change-gate check
+- **`agentNotifierHeartbeat` is deliberately EXCLUDED from the general `unchanged` change-gate check
   (260707-HFX2-L2 R5)** — it is a live tick age injected app-side at response time (mirroring the
   backend's own `delta.py` "volatile ages excluded" posture), so it is evaluated even on the
   content-unchanged early-return path. Unlike a bypass of the identity-preserving no-write
   guarantee, it has its OWN dedicated equality check gating the write (`heartbeatEquals`, fixed in
   fix round 2 — see Update History): `if (unchanged && state.conn === "live") { if
-  (!heartbeatEquals(state.supervisorHeartbeat, supervisorHeartbeat)) { set({ supervisorHeartbeat
+  (!heartbeatEquals(state.agentNotifierHeartbeat, agentNotifierHeartbeat)) { set({ agentNotifierHeartbeat
   }); } return; }`. So the store still writes only when something actually changed — just via a
   heartbeat-specific comparator that (unlike `stableEquals`) does not strip `ageSeconds`, since
   that's precisely the field a genuine tick advance shows up in. `reset()` clears it to `null` like
@@ -128,13 +128,13 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). | "export const VOLATILE_AGE_FIELDS" | dashboard/src/data/servedAges.ts:16-16 |
-| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:526-526 |
+| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:527-527 |
 | Observer event type for the Event River tail. | "export interface ObserverEvent" | dashboard/src/types/event.ts:9-9 |
-| Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | "export const dashboardStore" | dashboard/src/data/store.ts:312-312 |
-| `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:384-384 |
+| Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | "export const dashboardStore" | dashboard/src/data/store.ts:318-318 |
+| `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:390-390 |
 | `EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap. | `EventRiver` | dashboard/src/panels/EventRiver.tsx:122-122 |
-| `SupervisorHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors. | `SupervisorHeartbeat` | dashboard/src/types/projection.ts:412-420 |
-| `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator. | `SupervisorHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:959-986 |
+| `AgentNotifierHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors; the wire fallback accepts the legacy `supervisorHeartbeat` key during the rename window. | `AgentNotifierHeartbeat` | dashboard/src/types/projection.ts:54-65 |
+| `AgentNotifierHeartbeatBadge` reads `s.agentNotifierHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator. | `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:959-984 |
 
 ## Cross-Repo References
 
@@ -146,6 +146,12 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `agentNotifierHeartbeat` store
+  field rename and the `projection.agentNotifierHeartbeat ?? projection.supervisorHeartbeat ??
+  null` legacy-wire fallback in `applySnapshot`. Verification metadata pinned until closeout
+  stamps the 260713-TES-L1 commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact

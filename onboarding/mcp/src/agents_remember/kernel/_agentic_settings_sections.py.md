@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-08T02:00+02:00                                            |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`                                        |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastUpdated            | 2026-08-08T21:20+02:00                                            |
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                                        |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -16,8 +16,12 @@
 
 ## Purpose
 
-``orchestration`` section parsers: loops, roles, concurrency, expectations, supervisor,
-escalation, spawn, and the quality gate (260731-EFA-L17).
+``orchestration`` section parsers: loops, roles, concurrency, expectations, agent-notifier,
+escalation, spawn, and the quality gate (260731-EFA-L17). The agent-notifier parser is
+`_parse_agent_notifier` (renamed from `_parse_supervisor` in 260713-TES-L1); the floor validator
+is `_require_agent_notifier_floor_seconds` (renamed from `_require_supervisor_floor_seconds`).
+The legacy-key normalization itself lives in `agentic_settings._resolve_agent_notifier_alias`,
+which runs in `_validated_orchestration_block` before parsing.
 
 ## Code Commentary
 
@@ -29,8 +33,8 @@ escalation, spawn, and the quality gate (260731-EFA-L17).
 - `_parse_roles_per_level`
 - `_parse_concurrency`
 - `_parse_expectations`
-- `_parse_supervisor`
-- `_require_supervisor_floor_seconds`
+- `_parse_agent_notifier` (renamed from `_parse_supervisor`)
+- `_require_agent_notifier_floor_seconds` (renamed from `_require_supervisor_floor_seconds`)
 - `_parse_escalation`
 - `_parse_escalation_sla_seconds`
 - `_parse_escalation_rung_seconds`
@@ -58,6 +62,10 @@ family key is refused by `_refuse_null_families` before this parser runs.
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `_parse_agent_notifier` /
+  `_require_agent_notifier_floor_seconds` renames and the facade-side alias normalization.
+  Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded `_parse_quality_gate`
   and the family's default/fail-loud/positive-int contract. Verification metadata

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T10:20+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -324,6 +324,11 @@ agent-tagged notices, including selected-child history state, remain conversatio
 create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
 
 ## Update History
+- 2026-08-08T21:20+02:00 — No route impact: 260713-TES-L1 renamed one store field
+  (`supervisorHeartbeat` → `agentNotifierHeartbeat`) with a legacy-wire fallback in `applySnapshot`;
+  the data route's shape and responsibilities are unchanged and the sidecar for `data/store.ts`
+  carries the detail. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (terminal refactor, submissionWithdrawal extraction, validated narrow). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with

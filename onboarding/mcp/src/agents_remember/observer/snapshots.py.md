@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/snapshots.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ Two readers changed, and the rule underneath them is worth stating before either
 > ever written back on this route, so the skip lasts exactly one tick.
 >
 > **Do not generalise that to all six.** The other three — `AttentionDismissalStore.dismiss` /
-> `_prune_locked`, `OrchestrationNudgeStore.compact`, `SupervisorSignalCooldownStore._compact_locked`
+> `_prune_locked`, `OrchestrationNudgeStore.compact`, `AgentNotifierSignalCooldownStore._compact_locked`
 > — rewrite from the list their *tolerant* `read()` produced, so a row that read could not parse is
 > absent from what the rewrite writes back: those three drop it **permanently**, not for one tick.
 > That is acceptable only because none of the three carries authority, and it stops being acceptable
@@ -399,7 +399,7 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
   that carries authority, must read strictly.** Exactly two of the six stores offer both readers,
   and they are the two this module consumes: `GateStore.read` / `read_for_projection` and
   `ExpectationRowStore.read` / `read_for_projection`. `OperatorInboxStore` is strict only.
-  Attention dismissals, orchestration nudges and supervisor signals are tolerant only — their single
+  Attention dismissals, orchestration nudges and agent-notifier signals are tolerant only — their single
   `read` is the tolerant one, and it drives their rewrites, so those three drop an unparseable row
   permanently. That is safe only because none of the three carries authority.
   This module is a rendering surface, so it takes the tolerant half — but note the direction of the
@@ -446,6 +446,8 @@ reparses only changed/new stat identities and removes deleted entries. The new
 facts on heartbeat ticks.
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over the `snapshots_impl/` subpackage (`_common`, `_analytics`, `_runtime`, `_task_documents`); full public+private surface re-exported and pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

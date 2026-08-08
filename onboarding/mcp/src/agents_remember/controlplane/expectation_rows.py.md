@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-01T20:15+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -32,13 +32,13 @@ reader can check directly, and it is the part that matters: the loss is of whole
 the reader side could have detected it — the durability harness
 (`mcp/tests/_store_durability.py`, driven by `test_controlplane_store_durability.py`) is what
 produces a loss rate at all, and no recorded base-commit run of it is in the tree. Every
-dispatch surface writes here and the supervisor sweep reclaims here, so an append landing between
+dispatch surface writes here and the agent-notifier sweep reclaims here, so an append landing between
 the reclaim's read and its `os.replace` was silently discarded while the caller was told the row
 was written. A lost expectation row is a deadline nobody is watching.
 
 All file I/O now routes through `controlplane/durable_store.py` under `EXPECTATION_ROW_OWNERSHIP`,
 which names both processes as writers and the **dashboard** as the compaction owner — the
-supervisor sweep (`serving/supervisor.py`) is the only reclamation pass this log has and it needs
+agent-notifier sweep (`serving/agent_notifier.py`) is the only reclamation pass this log has and it needs
 the folded snapshot `compact` returns.
 
 - `append` calls `check_declared_writer()` and then holds `exclusive_access` around `append_line`,
@@ -179,7 +179,7 @@ No meaningful external design-doc references found yet (created this leaf).
 | `append` checks the declared writer and holds `exclusive_access` around the fsyncing append. | "def write_expectation_row" | mcp/src/agents_remember/controlplane/expectation_rows.py:339-339 |
 | The strict `read`, the tolerant `read_for_projection`, and the shared `_pending_rows` fold behind `pending` and `pending_for_projection`. | "def _pending_rows" | mcp/src/agents_remember/controlplane/expectation_rows.py:137-137 |
 | `compact` holds the lock across `_compact_locked`, which reclaims from the strict read and rewrites through `_replace`. | "def append(self" | mcp/src/agents_remember/controlplane/expectation_rows.py:165-165 |
-| `EXPECTATION_ROW_OWNERSHIP` names both processes as writers and the dashboard supervisor sweep as the single compaction owner. | `EXPECTATION_ROW_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:152-162 |
+| `EXPECTATION_ROW_OWNERSHIP` names both processes as writers and the dashboard agent-notifier sweep as the single compaction owner. | `EXPECTATION_ROW_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:152-162 |
 | `read_expectation_rows` now calls `pending_for_projection`, because `ValidationError` subclasses `ValueError` and its `suppress` used to discard every deadline in the file on one torn line. |"def read_expectation_rows"|mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193|
 
 ## Cross-Repo References
@@ -196,6 +196,7 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
   anchors, converted the history `read_expectation_rows` citation, and corrected the
   read/projection row; exact non-fixing check returns zero findings.
@@ -205,7 +206,7 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
   earlier is off. Replaced with a symbol-name citation and no range, as this leaf's test cards do,
   because a number that was wrong within the hour is worse than no number. Re-read every other
   citation on this card against the current files and left them: `write_expectation_row` L337-L355
-  cit:([`def`], mcp/src/agents_remember/controlplane/expectation_rows.py:339-339), `find_by_source`/`overdue` L219-L248 (L219, L237), `append` L165-L169 (L165), the
+  cit:(["def write_expectation_row("], mcp/src/agents_remember/controlplane/expectation_rows.py:339-339), `find_by_source`/`overdue` L219-L248 (L219, L237), `append` L165-L169 (L165), the
   read pair L137-L144; L171-L217 (`_pending_rows` L137, `read` L171, `read_for_projection` L185,
   `pending` L212, `pending_for_projection` L215), `compact` L286-L334 (L286, `_compact_locked` L299,
   `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows"], mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193). The **10.20 percent** figure

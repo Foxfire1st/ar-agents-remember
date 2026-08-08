@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -376,7 +376,7 @@ worktree snapshots while deleting a valid snapshot for a deleted worktree.
 | The metrics buckets and the state→field naming rule the coverage suites hold to the vocabulary. | `ACTIVE_STATES`; `state_count_field`; `state_count_fields`; `STATE_COUNT_FIELDS`; `Metrics` | mcp/src/agents_remember/observer/projection.py:227-227; mcp/src/agents_remember/observer/projection.py:236-236; mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:287-313; mcp/src/agents_remember/observer/projection.py:282-282; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/observer/projection.py:273-273 |
 | The event-kind table `TerminalityIsStructuralTests` reads to decide which states a running session can declare about itself, and the rollup that fills the buckets. | `_KIND_UPDATES`; "def _metrics(" | mcp/src/agents_remember/observer/reducer.py:395-404; mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27 |
 | The write side held to the same terminal set — `end` validates against `TERMINAL_STATES` and converts through `coerce_end_outcome`. | `end` | mcp/src/agents_remember/observer/ambient.py:243-274 |
-| The TypeScript mirror of the naming rule, which is why Python moved off `str.capitalize`: the field names are derived type-level with `Capitalize<Camel<Tail>>`. | `stateCountField` | dashboard/src/types/projection.ts:286-290 |
+| The TypeScript mirror of the naming rule, which is why Python moved off `str.capitalize`: the field names are derived type-level with `Capitalize<Camel<Tail>>`. | `stateCountField` | dashboard/src/types/projection.ts:296-300 |
 | The sibling suite that pins the structure of the ambient end signal's vocabulary, which this file pins the behaviour of. | `EndSignalVocabularyTests` | mcp/tests/test_observer_ambient.py:157-185 |
 
 ## Series-Contract Notes
@@ -403,6 +403,8 @@ The provider-reader patch target follows its new `projection_inputs` ownership. 
 asserts the same projection output and uncached volatile-provider behavior.
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

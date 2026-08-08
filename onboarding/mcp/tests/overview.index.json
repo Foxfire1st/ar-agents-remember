@@ -36,6 +36,9 @@
     "mcp/tests/fixtures/pi_rpc/activity.jsonl",
     "mcp/tests/fixtures/sim/logs/observer/lifecycles/sim-replay-lifecycle/events.jsonl",
     "mcp/tests/test_active_projector_singleflight.py",
+    "mcp/tests/test_agent_notifier.py",
+    "mcp/tests/test_agent_notifier_ladder.py",
+    "mcp/tests/test_agent_notifier_seat.py",
     "mcp/tests/test_agentic_settings.py",
     "mcp/tests/test_application_boundary.py",
     "mcp/tests/test_application_guards.py",
@@ -315,9 +318,6 @@
     "mcp/tests/test_store_scaling_cs6.py",
     "mcp/tests/test_structural_limits.py",
     "mcp/tests/test_subprocess_hygiene.py",
-    "mcp/tests/test_supervisor.py",
-    "mcp/tests/test_supervisor_ladder.py",
-    "mcp/tests/test_supervisor_seat.py",
     "mcp/tests/test_sync_dashboard.py",
     "mcp/tests/test_sync_harness.py",
     "mcp/tests/test_sync_runtime.py",
@@ -525,8 +525,8 @@
       "events",
       "test_active_projector_singleflight.py",
       "test_active_projector_singleflight",
-      "test_agentic_settings.py",
-      "test_agentic_settings"
+      "test_agent_notifier.py",
+      "test_agent_notifier"
     ]
   },
   "fallback": {

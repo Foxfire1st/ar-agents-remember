@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 
 > **Status:** active baseline
 
@@ -148,7 +148,7 @@ emits a ready marker after retained backlog replay, actionable-drift notices nam
 repository/memory pair, and only actionable drift can be dismissed without a lifecycle/worktree target.
 The former Lifecycle Flow tab is hidden from the cockpit; `FlowTab.tsx` remains dormant source.
 
-HFX2-L12 updates the root runtime-scaling story for mission-control operation: supervisor signal and
+HFX2-L12 updates the root runtime-scaling story for mission-control operation: agent-notifier signal and
 expectation stores compact on read while escalation/cooldown budgets bound repeated work; raw Event
 River data is startup-compacted and served through bounded/offloaded paths; projection hot paths cache
 lifecycle, task-document, gate, and Git-status reads while guarding task-document body payload size;
@@ -2133,6 +2133,12 @@ Updated 2026-06-27T22:00+02:00 — task 28 (NOTIFY-AND-CONTINUE turn end): refre
 Updated 2026-06-17T22:45+02:00 after the Engine Room visual-parity pass enriched the dashboard-frontend Feature Inventory row (the 5g G6 atmospheric backdrop + Effects/Calm toggle, the restored HUD decal layer, and the fixed-height `Panel fill` layout); verification metadata stays pinned until closeout commits the source. (Prior: 2026-06-06T12:28+02:00 after adding the public `docs/features.md` tour, replacing README `## Core Model` with `## Core Features`, and documenting the Claude Code root `.mcp.json` detection caveat. Prior: 2026-06-04T10:29+02:00 — documented hidden harness starter packages as source-owned surfaces in the main overview and noted their `l-01` deep-research retrieval-strategy tally requirement. Prior: 2026-05-29T17:30+02:00 — re-spined the public docs and this overview's "What This Repo Is" framing around the three retrieval substrates (by path / by meaning / by relationship) and retired the sidecar-only anti-retrieval positioning. Prior: 2026-05-28T19:52+02:00 — added the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.)
 
 ## Update History
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: root inventory reviewed for the
+  supervisor → agent-notifier rename; current feature rows are unchanged by the mechanical
+  identifier rename, and the cross-route detail lives in the `mcp/` package overview and the
+  serving/controlplane/kernel/dashboard route overviews. Verification metadata pinned until
+  closeout stamps the 260713-TES-L1 commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section (ESLint rail, size splits, coverage/budget/knip/trap, Playwright, hooks, Python ripple). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T22:30+02:00 — No route impact: 260731-EFA-L16 (the cross-store lock-order repair, its forcing tests, and the coding-guidelines/spawn-doctrine skill chain) is recorded in the `mcp/` and `skills/l-01-agent-lifecycles/` route overviews and their children; this root inventory was reviewed and is unchanged. Verification metadata pinned until closeout stamps the L16 code commit.

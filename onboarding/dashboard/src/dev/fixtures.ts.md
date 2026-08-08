@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/fixtures.ts`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:52+02:00                          |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -132,7 +132,7 @@ shape, so both sides of that delegation are cited.
 | `EMPTY_ANALYTICS` now lives in the shared wire fixtures and still carries `series: []` and `engineProcesses: []`. | `EMPTY_ANALYTICS` | dashboard/src/test/fixtures/wire.ts:223-237 |
 | `projection()` assigns `metrics` from `metricsFor(lifecycles)`. | `metrics` | dashboard/src/test/fixtures/wire.ts:333-333 |
 | The gallery consumes each `ENGINE_ROOM_SCENARIOS` entry by projecting its `processes` and `workspace` data. | "processes: EngineProcessNode[];"; "workspace: ProviderNode[];"; "ENGINE_ROOM_SCENARIOS.filter"; "projection: engineRoomProjection(scenario)" | dashboard/src/dev/fixtures.ts:484-484; dashboard/src/dev/fixtures.ts:487-487; dashboard/src/panels/engine-room/fixtures.ts:21-22 |
-| `series` and `engineProcesses` live on `WorkspaceProjection["analytics"]`. | `Analytics`; `engineProcesses`; `series`; `WorkspaceProjection` | dashboard/src/types/projection.ts:79-93; dashboard/src/types/projection.ts:517-528 |
+| `series` and `engineProcesses` live on `WorkspaceProjection["analytics"]`. | `Analytics`; `engineProcesses`; `series`; `WorkspaceProjection` | dashboard/src/types/projection.ts:89-103; dashboard/src/types/projection.ts:517-529 |
 
 ## Cross-Repo References
 
@@ -148,6 +148,8 @@ models in `mcp/` inside this same repository; nothing here crosses a repository 
 The dev projection fixture now includes `enclosureId`, `leafId`, and `taskRoot` on each `EnclosureNode`, matching the server projection after leaf enclosure contracts moved under `enclosures/<leaf-id>/series-contract.md`. Since 260703-L11 the `enclosure(...)` factory also defaults the required existence-truth flags `codeWorktreeExists`/`memoryWorktreeExists` to `true`, so the seeded gallery enclosures render as live worktrees under the tasks surface's existence-only visibility rule.
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: bound fixture delegation, gallery scenes,
   engine-room scenario inputs and their gallery consumer, and analytics ownership to exact anchors;

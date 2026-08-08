@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -21,7 +21,7 @@
 unknown-key discipline, absent-file defaults, and the typed models — plus, since
 260703-L16, the free-form role knobs (`FreeFormRoleKnobTests`), the per-level
 overrides (`RolesPerLevelTests`), the harness-definition family
-(`HarnessesFamilyTests`), the supervisor sweep's own knob family (since 260707-HFX2-L2,
+(`HarnessesFamilyTests`), the agent-notifier sweep's own knob family (since 260707-HFX2-L2,
 now the supervisor cases inside `TypedModelTests`), and — since 260707-HFX2-L4 — the escalation ladder's own knob family
 (`EscalationSettingsTests`).
 
@@ -112,7 +112,7 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   the three bad shapes (`/set {mode}={value}`, `{}`, an unmatched brace) refuse
   naming the harness, the builtin-override-supplying-only-the-command path is
   validated, and a `{value}`-only template is accepted.
-- Supervisor-family tests cit:([`test_supervisor_knobs_parse`], mcp/tests/test_agentic_settings.py:426-445) (260707-HFX2-L2, R1/R5; the `SupervisorFamilyTests` class is now folded into `TypedModelTests`) — an absent `orchestration.supervisor` block
+- Supervisor-family tests cit:([`test_agent_notifier_knobs_parse`], mcp/tests/test_agentic_settings.py:426-445) (260707-HFX2-L2, R1/R5; the `SupervisorFamilyTests` class is now folded into `TypedModelTests`) — an absent `orchestration.agentNotifier` block
   yields the documented defaults (`enabled=True`, `interval_seconds=10.0`,
   `stale_cutoff_seconds=60.0`, `redeliver_rate_limit_seconds=None`,
   `signal_cooldown_seconds=900.0`, `redeliver_budget=250`);
@@ -121,7 +121,7 @@ root / repo root (no mocking — the loader's file I/O is the unit under test):
   `enabled` rejects a non-boolean (`"yes"`) naming `supervisor.enabled`; `intervalSeconds` rejects a
   non-positive value naming `intervalSeconds`; `redeliverRateLimitSeconds` and
   `signalCooldownSeconds` both reject `899` as below the 900-second floor; and an unknown key
-  (`sweepSeconds`) fails loud naming itself against `KNOWN_SUPERVISOR_FIELDS`.
+  (`sweepSeconds`) fails loud naming itself against `KNOWN_AGENT_NOTIFIER_FIELDS`.
 - `EscalationSettingsTests` (260707-HFX2-L4, R1) — an absent `orchestration.escalation` block
   yields the documented defaults (`sla_for("nudge") == 300.0`, `rung_dwell(1) == 300.0`,
   `rung_dwell(2) == 900.0`, `nudge_rate_limit_seconds == 900`, `respawn_after_rung == 2`); a full
@@ -164,7 +164,7 @@ No known follow-up in this file.
 | --- | --- | --- |
 | The loader under test. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:217-252 |
 | The harness registry bounding harness-id validation. | `find_harness` | mcp/src/agents_remember/serving/harnesses.py:61-70 |
-| Supervisor-family tests pin the `signalCooldownSeconds` default/full-block parse and sub-900 floor refusals. | `test_supervisor_knobs_parse`; `test_supervisor_signal_cooldown_must_be_at_least_15_minutes` | mcp/tests/test_agentic_settings.py:426-445; mcp/tests/test_agentic_settings.py:463-465 |
+| Supervisor-family tests pin the `signalCooldownSeconds` default/full-block parse and sub-900 floor refusals. | `test_agent_notifier_knobs_parse`; `test_agent_notifier_signal_cooldown_must_be_at_least_15_minutes` | mcp/tests/test_agentic_settings.py:426-445; mcp/tests/test_agentic_settings.py:463-465 |
 
 ## Cross-Repo References
 
@@ -185,6 +185,7 @@ positive-integer requirement (`0` refused). `MergePrecedenceTests` and
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded
   `QualityGateSettingsTests` and the quality-gate default assertions in the
   merge/seed classes. Verification metadata stays pinned until closeout stamps

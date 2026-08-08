@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`             |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`             |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ per tick — and hands the resulting immutable `ContractSnapshot` to all three c
 walk + `load_contract` pass (3x per tick; a py-spy 15s sample on 2026-07-12 showed them at
 2.78s/3.68s/3.40s total). The cross-tick cache reuses a parsed contract while its
 `(mtime_ns, size, ctime_ns)` stat identity is unchanged and prunes to the live enumeration each
-build. The landing refresher and supervisor sweep are deliberately not consumers (event-loop thread
+build. The landing refresher and agent-notifier sweep are deliberately not consumers (event-loop thread
 would need locks; `serving/` territory) and keep their own passes.
 
 ### 260707-HFX2-L13 Heartbeat-Sidecar Merge
@@ -199,7 +199,7 @@ The recurring projection path uses projected status plus the latest landing snap
 | The complete acquired input bundle is represented by `ProjectionInputs`. | `ProjectionInputs` | mcp/src/agents_remember/observer/projection_inputs.py:120-140 |
 | `project_and_write` invokes the input state rather than owning those reads itself. | `project_and_write` | mcp/src/agents_remember/observer/projection_store.py:212-275 |
 | `ProjectionInputState._refresh_drift` prunes stale drift snapshots for deleted worktrees before the analytical read. | `_refresh_drift`; "prune_orphaned_drift_snapshots(" | mcp/src/agents_remember/observer/drift_snapshots.py:36-36; mcp/src/agents_remember/observer/projection_inputs.py:345-350 |
-| The shared per-tick contract snapshot is built once for the projection pass. | `_contract_snapshot_cache`; `build`; "contract_cache=_contract_snapshot_cache"; "self._contract_cache.build(" | mcp/src/agents_remember/observer/contract_snapshot.py:82-112; mcp/src/agents_remember/observer/projection_inputs.py:269-269; mcp/src/agents_remember/observer/projection_store.py:98-98; mcp/src/agents_remember/observer/projection_store.py:101-101; mcp/src/agents_remember/observer/projection_store.py:225-225 |
+| The shared per-tick contract snapshot is built once for the projection pass. | `_contract_snapshot_cache`; "contract_cache=_contract_snapshot_cache"; "self._contract_cache.build(" | mcp/src/agents_remember/observer/contract_snapshot.py:82-112; mcp/src/agents_remember/observer/projection_inputs.py:269-269; mcp/src/agents_remember/observer/projection_store.py:98-98; mcp/src/agents_remember/observer/projection_store.py:101-101; mcp/src/agents_remember/observer/projection_store.py:225-225 |
 | The input state refresh pass owns its delegated task, provider, and drift refreshes before returning the projection inputs. | `read`; `_refresh_tasks`; `_refresh_providers`; `_refresh_drift` | mcp/src/agents_remember/observer/projection_inputs.py:214-264; mcp/src/agents_remember/observer/projection_inputs.py:266-275; mcp/src/agents_remember/observer/projection_inputs.py:297-316; mcp/src/agents_remember/observer/projection_inputs.py:345-350 |
 | A scaling test proves a full `project_and_write` tick enumerates contracts once and reparses nothing unchanged on the next tick. | `test_full_projection_tick_enumerates_once_and_reparses_nothing_unchanged` | mcp/tests/test_projection_scaling_cs6.py:690-728 |
 | The pure fold consumes the threaded `engine_process_facts` / `engine_start_progress` inputs. | `project_workspace` | mcp/src/agents_remember/observer/reducer.py:128-181 |
@@ -227,6 +227,8 @@ repo_surfaces=_gather_repo_surfaces_cached, landing_state=tick.landing_state)` a
 `RefreshPass(now=moment, refresh=refresh or ProjectionRefresh.full())`.
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 - 2026-08-04T16:28:49+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound delegated input refresh, provider ordering, and complete returned bundle claims to operative spans, and bound the shared contract snapshot to its cache threading and in-pass build plus the tick's refresher-before-read call order. Verification metadata unchanged.
 
 - 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 14 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.

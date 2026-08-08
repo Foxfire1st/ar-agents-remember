@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -41,14 +41,14 @@ architect-solo).
 260707-HFX2-L5 (doctrine inversion, active vigilance → passive process-and-ack): the leaf-dispatch
 loop's "Monitor the worker" bullet is gone. In its place, "Process and ack the worker's signals —
 passive contract": a turn-report artifact is expected at every hand-off, but the manager does not
-watch for it — the HFX2-L2 supervisor sweep evaluates each expected artifact
+watch for it — the HFX2-L2 agent-notifier sweep evaluates each expected artifact
 (`evaluate_turn_report_findings`/`missing_artifact()`) on its own mechanical tick and, on
 inactivity, injects the nudge and walks the HFX2-L4 escalation ladder (renudge → skip-level →
 architect custody/architect attention, then respawn). The manager's own job inverts to being woken with its pending
 signals and processing/acking every item before ending its turn. A new **watcher ban** line
 (uniform-mechanism ruling 2026-07-07) states this in the file directly: no seat-local watcher of
 any kind, the L2 sweep is the one mechanism, no per-seat variance. The Comms Protocol's "Stdin
-push" line is reworded the same way — nudges are delivered by the L2 supervisor's injector on its
+push" line is reworded the same way — nudges are delivered by the L2 agent-notifier's injector on its
 own tick, never the manager's own initiative; a non-hosted seat gets the inbox equivalent. This is
 purely a doctrine reword — the mechanical detection/escalation machinery itself (the sweep, the
 ladder) already landed in HFX2-L2/L4; this leaf only inverts the seat's OWN duty language to match
@@ -249,6 +249,7 @@ required checks is refused, not passed.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the manager's quality
   altitude ladder bullet (leaf `--targeted`; full wrapper once per master,
   memory-capped; `memory_quality_check` per leaf). Verification metadata stays

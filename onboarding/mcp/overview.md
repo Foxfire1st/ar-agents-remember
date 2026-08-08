@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -228,17 +228,17 @@ stamped once at post time from that derivation. `kernel/agentic_settings.py` gai
 ladder, and dashboard consumption of `escalatedAt` are explicitly OUT of scope for this leaf (a
 sibling leaf's job); this leaf only lands the durable rows, the backoff math, and the routing
 derivation the sweep will consume.
-260707-HFX2-L2 adds the `orchestration.supervisor` settings family to the same package-level
-loader — `SupervisorSettings` (enabled/interval/staleness-cutoff/redeliver-rate-limit) parsed by
+260707-HFX2-L2 adds the `orchestration.agentNotifier` settings family to the same package-level
+loader — `AgentNotifierSettings` (enabled/interval/staleness-cutoff/redeliver-rate-limit) parsed by
 `kernel/agentic_settings.py` — consumed across TWO other package routes: `serving/app.py`'s new
 supervisor-sweep lifespan task (the sweep subsystem itself — the predicate library, action
 dispatcher, and self-liveness heartbeat — is documented in full in `serving/overview.md`, which
 this file governs) and `mcp/tools/base.py`'s per-tool-call staleness banner attachment
-(`supervisorBanner`, exception-contained at the call site). Same cross-route-consumption shape as
+(`agentNotifierBanner`, exception-contained at the call site). Same cross-route-consumption shape as
 the 260707-HFX2-L1 expectation-row family documented above.
 260707-HFX2-L4 adds the `orchestration.escalation` family to the same loader (`EscalationSettings`
 — per-`message_kind` ack SLA, per-rung dwell timings, the renudge rate limit, the
-respawn-after-rung threshold), consumed by the SAME `serving/app.py::_supervisor_context()` call
+respawn-after-rung threshold), consumed by the SAME `serving/app.py::_agent_notifier_context()` call
 site the supervisor family already wires through — no new lifespan task, no new settings-read
 seam. The family backs the P-15 tier-3 escalation ladder (`controlplane/escalation_ladder.py`,
 `controlplane/orphan_policy.py`, and a new two-hop `signal_routing.derive_skip_level_owner`/
@@ -255,15 +255,15 @@ ruling 2026-07-07) forbids any seat-local watcher/poll/monitor of any kind, one 
 everyone. Doctrine-only change set, propagated by `scripts/sync-skills.py` to all 9 downstream
 package copies plus the canonical `skills/` source — zero Python touched. The SAME leaf adds NEW
 `mcp/tests/test_liveness_simulations.py` (11 tests, 8 named P-15 fixture-zoo incident classes),
-driving `run_supervisor_sweep` across multiple simulated ticks per incident: 6/8 pass fully
+driving `run_agent_notifier_sweep` across multiple simulated ticks per incident: 6/8 pass fully
 end-to-end; 2/8 (chip-stacked delivery stall, and the pane-classified half of never-briefed) are
 proven hybrid (predicate-unit classify + real downstream sweep response) because `evaluate_predicates`
 hardcodes a real, non-injectable `tmux capture-pane` call — documented as a real product gap and the
-natural next leaf (make the pane capturer injectable through `SupervisorContext`), not silently
+natural next leaf (make the pane capturer injectable through `AgentNotifierContext`), not silently
 worked around. Results are filed in `notes/reports/260707-HFX2-L5-liveness-report.md`.
 260707-HFX2-L8 closes the two liveness gaps a live dead-seat-storm incident (2026-07-08) exposed in
-the supervisor loop itself, spanning four package routes. `kernel/agentic_settings.py` gains one
-`orchestration.supervisor` field — `redeliverBudget` (default 250, defaults-safe) — the per-sweep
+the agent-notifier loop itself, spanning four package routes. `kernel/agentic_settings.py` gains one
+`orchestration.agentNotifier` field — `redeliverBudget` (default 250, defaults-safe) — the per-sweep
 redelivery floor so a large redeliverable set degrades gracefully instead of one sweep grinding the
 whole backlog. `controlplane/operator_inbox_records.py` gains a durable `ladder-resolved` terminal
 inbox state (distinct from ack): a pending row at the terminal escalation rung whose target seat is
@@ -273,11 +273,11 @@ from `redeliverable()`/`is_due()` via a state-keyed predicate in `controlplane/i
 `controlplane/interaction_retention.py` compaction. HFX3 supersedes the old immortal-pending
 contract: pending rows expire after 48 hours, the folded inbox is capped at 500 current ids, and
 durable truth lives in artifacts rather than notification rows.
-`serving/supervisor.py` threads ONE in-sweep operator-inbox snapshot/index through every
+`serving/agent_notifier.py` threads ONE in-sweep operator-inbox snapshot/index through every
 finding/mutator (`record_delivery`, `mark_escalated`, `advance_rung`, `mark_ladder_resolved`,
 respawn reads), killing the per-finding full-log re-fold (O(n^2)) so a sweep's cost is bounded by
 finding count and the self-liveness heartbeat ticks unconditionally under backlog;
-`serving/supervisor_heartbeat.py` surfaces `pendingInboxCount`/`redeliverableInboxCount`/
+`serving/agent_notifier_heartbeat.py` surfaces `pendingInboxCount`/`redeliverableInboxCount`/
 `lastSweepDurationSeconds` onto `/api/state` and the dashboard header as a forward backlog signal.
 `worktrees/leaf_refs.py` gains a minimal boot-safety skip of non-task JSON siblings (schema-marked
 malformed task docs still fail loud). The cross-route change is documented in the `controlplane/`,
@@ -431,7 +431,7 @@ paired tests and isolated smoke live under `mcp/tests`; production registration 
 
 HFX2-L20 closes the live consume/redelivery resurrection race without changing a public payload:
 consume remains an append-only terminal fact, and the shared current-state/retention fold refuses to
-let a later stale pending delivery snapshot reverse it. Polling and supervisor redelivery therefore
+let a later stale pending delivery snapshot reverse it. Polling and agent-notifier redelivery therefore
 stay terminal after acknowledgement; compaction remains the cleanup boundary.
 
 HFX2-L17 splits immutable `spawnRole` provenance from current `seatRole` binding. The catalog
@@ -450,7 +450,7 @@ while this route carries only the regenerated `package_data/dashboard/` bundle a
 HFX2-L15 replaces screen-grammar dispatch credit with one repository-wide acceptance path:
 `HarnessSessionLog` binds the unique id-bearing message in the spawn cwd, `injector.deliver`
 applies calibrated Claude/Codex windows, and `TerminalPaster` permits one Enter re-press plus one
-verified-absence clear/replace re-paste. Spawn, durable inbox, supervisor redelivery, and REST paste
+verified-absence clear/replace re-paste. Spawn, durable inbox, agent-notifier redelivery, and REST paste
 all compose that path. Catalog provenance records resolved knobs, log binding, and an optional
 `replacementForLeaf`; tests are pinned to this checkout so the full gate cannot import a sibling
 editable install.
@@ -1472,7 +1472,7 @@ umbrella scope statement changed; the detail lives with the children.
 
 ## 260731-EFA-L7 Change
 
-The file-size rail joined the project-owned wrapper: `code_quality/file_size.py` measures index-known Python plus `dashboard/src` TypeScript/TSX against the written File Size Budget (1,200 hard limit / 2,000 architectural failure / 4,000 emergency cleanup), reports the band per finding, fails the run enforced, and is armed via `pyproject.toml`'s `file_size_armed` key read through `code_quality/scope.py`. CRAP/coverage input scope now includes the configured test roots (L7-R8). The over-limit source modules were split in place into facades plus private responsibility modules (`kernel/_agentic_settings_*`, `observer/snapshots_impl/`, `observer/reducer_impl/`, `serving/_app_*`, `serving/_supervisor_*`, `serving/conversation/_models_*`, `serving/_harness_control_parsing.py`, `serving/conversation/projectors/_codex_collab.py`), each facade's full base surface pinned mechanically by `mcp/tests/test_facade_surface.py`.
+The file-size rail joined the project-owned wrapper: `code_quality/file_size.py` measures index-known Python plus `dashboard/src` TypeScript/TSX against the written File Size Budget (1,200 hard limit / 2,000 architectural failure / 4,000 emergency cleanup), reports the band per finding, fails the run enforced, and is armed via `pyproject.toml`'s `file_size_armed` key read through `code_quality/scope.py`. CRAP/coverage input scope now includes the configured test roots (L7-R8). The over-limit source modules were split in place into facades plus private responsibility modules (`kernel/_agentic_settings_*`, `observer/snapshots_impl/`, `observer/reducer_impl/`, `serving/_app_*`, `serving/_agent_notifier_*`, `serving/conversation/_models_*`, `serving/_harness_control_parsing.py`, `serving/conversation/projectors/_codex_collab.py`), each facade's full base surface pinned mechanically by `mcp/tests/test_facade_surface.py`.
 
 
 ## 260731-EFA-L17 Change — The Targeted Ladder And The Memory Cap
@@ -1490,6 +1490,14 @@ altitude routing: leaf edges targeted, master integration full+capped once, `mem
 per leaf.
 
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the supervisor → agent-notifier rename
+  crossed this package's kernel/serving/controlplane/dashboard routes; the settings family is
+  `orchestration.agentNotifier` (explicit legacy alias), events are dual-emitted under
+  `orchestration.agent-notifier.*` + legacy `orchestration.supervisor.*`, and the sweep modules
+  live at `serving/agent_notifier*.py` + `serving/_agent_notifier_*.py`. Route-local detail lives
+  in the `serving/`, `controlplane/`, `kernel/`, and `dashboard/src/` overviews and their sidecars.
+  Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the targeted contract, the
   memory-cap mechanism and settings family, and the altitude routing across code_quality/kernel/

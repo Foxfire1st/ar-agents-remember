@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -15,6 +15,13 @@
 [mcp overview](../overview.md)
 
 ## Purpose
+
+### 260713-TES-L1 Rename — Test Surface
+
+The three supervisor test modules were renamed 1:1 (`test_agent_notifier*.py`), and the touched
+suites now reference `AgentNotifier*` identifiers, `agentNotifierHeartbeat` /
+`agentNotifierBanner`, the `orchestration.agentNotifier` settings family, and the renamed module
+paths; legacy-value acceptance and dual-key cases are covered by the new regression tests.
 
 Regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
@@ -454,10 +461,10 @@ in `_store_durability.py` and are checkable. The *rates* are not: **no base-comm
 artifact is committed anywhere in the tree**, `main` can write a JSON payload but none is stored, no
 test asserts a rate, and no committed invocation passes `runs`, so "10 runs per store" is a source
 claim too. Two figures are carried at several independent sites and are quoted on that authority:
-attention dismissals **31.45%** lost (`durable_store.py`, `supervisor_signals.py`,
+attention dismissals **31.45%** lost (`durable_store.py`, `agent_notifier_signals.py`,
 `test_durable_store_contract.py`, `test_observer_projection.py`) and gate **11.50%**
 (`durable_store.py`, `store.py`, `test_interaction_retention.py`). The rest come from
-`durable_store.py`'s module docstring alone: supervisor signals 10.50%, expectation rows 10.20%,
+`durable_store.py`'s module docstring alone: agent-notifier signals 10.50%, expectation rows 10.20%,
 orchestration nudges 9.20%, operator inbox 0.00% (the one store that already took a lock), **127 of
 2000** writes *raising*, and "zero torn lines in every run" — the last being the claim that records
 disappeared whole, which is what would explain why no reader-side validation could have detected
@@ -847,7 +854,7 @@ this pass: `create_app(watch_changes=False)` is now `cadence: ProjectionCadence`
 `_provider_operation_result(launch_capable_provider=…)` is now
 `ProviderOperation(required_provider=…)`; `task_doc_tool` takes `TaskDocTarget` + `TaskDocEdit`;
 `create_operator_inbox_entry` takes `InboxMessage` / `InboxAddress` / `InboxPoster` /
-`InboxRouting`; `test_supervisor.py`'s `_entry(...)` no longer mirrors the catalog row's fields.
+`InboxRouting`; `test_agent_notifier.py`'s `_entry(...)` no longer mirrors the catalog row's fields.
 
 The one place a long signature is still allowed is `mcp/src/agents_remember/mcp/registration/`,
 where the signature **is** the published MCP input schema — see
@@ -917,7 +924,7 @@ and seven declared models could be made mathematically unsatisfiable (a required
 
 **What it proves.** Nothing anywhere validated `/api/state`, the SSE `snapshot` event, or the
 projection *as served*. Both keys of the serve-time tail — `servingBuild` and
-`supervisorHeartbeat` — were injected into the dumped projection with nothing declaring them, so
+`agentNotifierHeartbeat` — were injected into the dumped projection with nothing declaring them, so
 the emitted body validated against no model at all, `WorkspaceProjection` (`extra="forbid"`)
 included. The suite drives the real route and the real SSE generator and pins the three shapes the
 assembly is allowed to take: the 200 body **is** a `ServedWorkspaceProjection` and is
@@ -1013,20 +1020,20 @@ it), and a test that read `guidance["nextTool"]` now reads `guidance.get("nextTo
 
 **`test_tool_response_conformance.py` now captures its payloads in the state where the choke point
 fires.** The suite sits exactly at the mutation point — `_tool_payload` is where `nextStep` and
-`supervisorBanner` are set — but its fixtures were a workspace whose supervisor had **never**
-ticked, which is deliberately silent, so `supervisorBanner` never appeared and the suite validated
+`agentNotifierBanner` are set — but its fixtures were a workspace whose supervisor had **never**
+ticked, which is deliberately silent, so `agentNotifierBanner` never appeared and the suite validated
 the one shape the choke point cannot break. `_stale_supervisor` ticks the heartbeat six hours into
 the past, and `test_the_choke_point_injections_are_actually_exercised` asserts both fields are
 present in the captures, so a fixture that quietly stops producing them fails there rather than
 hollowing out every assertion below it.
 
 The mechanism behind that is the leaf's central repair: `TOOL_RESPONSE_MODELS` was typed
-`dict[str, type[BaseModel]]`, which made `nextStep`/`supervisorBanner` unreachable **by type**, so
+`dict[str, type[BaseModel]]`, which made `nextStep`/`agentNotifierBanner` unreachable **by type**, so
 the choke point wrote them into the already-dumped, already-token-counted dict. Consequences,
 each now pinned: a stale supervisor made every response fail its own `model_validate` (nothing
-declared `supervisorBanner`), and the advertised `tokens` excluded the largest thing the choke
+declared `agentNotifierBanner`), and the advertised `tokens` excluded the largest thing the choke
 point adds. `test_next_step.py::test_advertised_token_count_covers_the_attached_next_step` and
-`::test_advertised_token_count_covers_the_supervisor_banner` state the invariant as a fixed
+`::test_advertised_token_count_covers_the_agent_notifier_banner` state the invariant as a fixed
 point — recounting the emitted dict with `count_response_tokens` must reproduce `payload["tokens"]`
 exactly — and each also asserts the field is *genuinely inside* that number by recounting the
 payload without it and requiring a smaller total, so an incidental equality cannot pass.
@@ -1249,8 +1256,8 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | `/api/state` and the SSE snapshot validate as `ServedWorkspaceProjection` and refuse `WorkspaceProjection`; 304 is bodyless, deltas omit `SERVED_TAIL_FIELDS`, and the populated-projection guard rejects an empty scaffold. | `ServedStateTailTests`; `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:213-257; mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
 | Every producible vocabulary member validates at its wire field by three mechanisms; the module header states which vocabulary each mechanism defends. | "class GuidanceWalkTests(unittest.TestCase):"; "class ProducedLiteralTests(unittest.TestCase):"; "class AdvertisedVocabularyTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:230-294; mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:45-45; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:450-450 |
 | The reader tolerates an unclassifiable contract cell by degrading and naming it while the writer refuses it, and every refusal names the contract file it was reading (`ContractBoundaryTests`). | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:144-144 |
-| Tool-response conformance captures `nextStep` and `supervisorBanner` where both envelope additions fire, then validates representative payloads against their registered models. | `ToolResponseConformanceTests`; `test_the_choke_point_injections_are_actually_exercised` | mcp/tests/test_tool_response_conformance.py:538-616 |
-| Next-step regressions require advertised token counts to cover the served payload including `nextStep` and `supervisorBanner`. | `test_advertised_token_count_covers_the_attached_next_step`; `test_advertised_token_count_covers_the_supervisor_banner` | mcp/tests/test_next_step.py:305-317; mcp/tests/test_next_step.py:319-331 |
+| Tool-response conformance captures `nextStep` and `agentNotifierBanner` where both envelope additions fire, then validates representative payloads against their registered models. | `ToolResponseConformanceTests`; `test_the_choke_point_injections_are_actually_exercised` | mcp/tests/test_tool_response_conformance.py:538-616 |
+| Next-step regressions require advertised token counts to cover the served payload including `nextStep` and `agentNotifierBanner`. | `test_advertised_token_count_covers_the_attached_next_step`; `test_advertised_token_count_covers_the_agent_notifier_banner` | mcp/tests/test_next_step.py:305-317; mcp/tests/test_next_step.py:319-331 |
 | The lifecycle state vocabulary is partitioned live and terminal with both halves total and disjoint, every live state counted, and terminality held to the reducer that produces it. | `MetricsBucketVocabularyTests`; `StatePartitionTests`; `TerminalityIsStructuralTests` | mcp/tests/test_observer_projection_metrics.py:128-233; mcp/tests/test_observer_projection_metrics.py:236-300; mcp/tests/test_observer_projection_metrics.py:303-420 |
 | The rich-sim fixture records the raw token in `unknown_cells`, and writing the document as Markdown text bypasses `validate_contract`. | "records the raw token on"; "unknown_cells"; "validate_contract"; "writing the document as markdown text bypasses entirely" | mcp/tests/fixtures/build_rich_sim.py:524-526 |
 | A decoy repository named by all eight selectors receives none of the real repository writes or reads, an AST sweep asserts `kernel/git_command.py` is the only git-spawning module, and the benchmark runner argv including `reset --hard` is asserted directly. | `DecoyRepositoryTests`; `SingleRunnerTests`; `BenchmarkRunnerEnvironmentTests` | mcp/tests/test_git_command.py:155-211; mcp/tests/test_git_command.py:393-465; mcp/tests/test_git_command.py:663-791 |
@@ -1258,7 +1265,7 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | The runner scrubs repository selectors on every call, uses `input_text` for git patch-id and DEVNULL otherwise, and carries the local, remote, and metadata timeout constants. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `GIT_REMOTE_TIMEOUT_SECONDS`; `GIT_METADATA_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-72; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | A cold-cache child process with blocked sockets starts the real server and matches the warm parent count; the shipped vocabulary name and bytes are re-derived and the filename pin and re-entrant-load guard are covered. | `ColdStartTests`; `VendoredVocabularyTests` | mcp/tests/test_cold_start.py:199-218; mcp/tests/test_cold_start.py:221-331 |
 | A present but incorrect vendored vocabulary is refused and left on disk across CRLF, truncation, and flipped-byte cases. | `CorruptVendoredVocabularyTests` | mcp/tests/test_cold_start.py:334-417 |
-| The measurement instrument uses eight store adapters, three forked scenarios, raw on-disk loss accounting, and a dual-mode script path guarded by `_require_source_root`. | `StoreAdapter`; `ADAPTERS`; `SCENARIOS`; `surviving_ids`; `run_case`; `_require_source_root` | mcp/tests/_store_durability.py:109-166; mcp/tests/_store_durability.py:560-562; mcp/tests/_store_durability.py:577-602; mcp/tests/_store_durability.py:1058-1062; mcp/tests/_store_durability.py:1077-1081; mcp/tests/_store_durability.py:1156-1163 |
+| The measurement instrument uses eight store adapters, three forked scenarios, raw on-disk loss accounting, and a dual-mode script path guarded by `_require_source_root`. | `StoreAdapter`; `ADAPTERS`; `SCENARIOS`; `surviving_ids`; `run_case`; `_require_source_root` | mcp/tests/_store_durability.py:109-166; mcp/tests/_store_durability.py:560-562; mcp/tests/_store_durability.py:577-602; mcp/tests/_store_durability.py:1058-1062; mcp/tests/_store_durability.py:1077-1081; mcp/tests/_store_durability.py:1220-1227 |
 | `harness_work_dir` derives each run bookkeeping directory as a sibling named from that run root, preventing sibling cases from sharing stop or error files. | `harness_work_dir` | mcp/tests/_store_durability.py:847-874 |
 | The shared non-vacuity gate refuses incomplete durability results or runs below `MIN_SUCCESSFUL_RECLAIMS` by raising `VacuousRunError`. | `MIN_SUCCESSFUL_RECLAIMS`; `VacuousRunError`; `require_stress_measurement` | mcp/tests/_durability_measurement.py:11-11; mcp/tests/_durability_measurement.py:14-15; mcp/tests/_durability_measurement.py:18-55 |
 | No record reported written is missing afterwards for the six record types; loss and raising are asserted separately, torn-line policy is held per consumer class, and the harness detects the defect against a git archive of the base commit. | `MultiProcessDurabilityTests`; `TornLinePolicyTests`; `HarnessVacuityGuardTests`; `HarnessSensitivityTests` | mcp/tests/test_controlplane_store_durability.py:123-205; mcp/tests/test_controlplane_store_durability.py:208-336; mcp/tests/test_controlplane_store_durability.py:339-386; mcp/tests/test_controlplane_store_durability.py:389-444 |
@@ -1329,7 +1336,7 @@ sharing shape (ONE catalog + ONE inbox log per process): a placement property pr
 hosted-interaction synchronizer's inbox/gate locks are never taken under the catalog batch —
 driven on the full sweep AND the starting fast path, with the legacy inline direct-observe path
 pinned beside it; a rendezvous-parked reproduction running the real liveness sweep and
-supervisor sweep on threads, which deadlocks by timeout on the pre-fix tree ("the ABBA is
+agent-notifier sweep on threads, which deadlocks by timeout on the pre-fix tree ("the ABBA is
 live") and passes on the fix, on daemon threads so the proof cannot hang the suite; and
 thread-identity proofs that control/active resolution and the terminal-image handler run their
 blocking reads on worker threads, never the event loop. Every test asserts the synchronizer
@@ -1357,6 +1364,7 @@ race-dependent diff-coverage class).
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the three new suites and the
   extended closeout/hook/settings/scope-reporting/observer families. Verification metadata stays
   pinned until closeout stamps the 260731-EFA-L17 commit.

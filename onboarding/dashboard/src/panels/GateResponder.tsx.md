@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/GateResponder.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ the worktree-bound gate families: closeout, push, integration, and cleanup.
 | Canonical lifecycle detail surface that renders this only when a durable gate exists. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76 |
 | Engine Room diagnostics secondary surface. | "export function DiagnosticsPanel" | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:40-40 |
 | Hangar secondary surface for worktree-bound gates. | "export function Hangar" | dashboard/src/panels/Hangar.tsx:72-72 |
-| Projection gate and lifecycle shapes. | "export interface GateNode" | dashboard/src/types/projection.ts:217-217 |
+| Projection gate and lifecycle shapes. | "export interface GateNode" | dashboard/src/types/projection.ts:227-227 |
 
 ### 260713-PHA-L5 Adapter Interaction Context
 
@@ -99,6 +99,8 @@ fresh response. It distinguishes `not-sent` (safe to decide again) from `unknown
 already hold the decision) and preserves unfamiliar wire values verbatim rather than guessing.
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact

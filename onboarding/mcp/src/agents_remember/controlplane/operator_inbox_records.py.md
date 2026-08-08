@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
 | lastUpdated            | 2026-08-01T18:30+02:00 |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`|
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -89,7 +89,7 @@ posting; every caller builds them instead of passing nineteen keywords:
 - **`InboxRouting(address, owner=InboxOwner())`** — the two together. A readdressing rung moves
   the address onto the next owner and rewrites both, which is why they are one routing decision.
 - **`InboxSubject(leaf_key=None, seat_role=None, agent_id=None)`** — what a row is *about* as
-  opposed to who it goes to. The supervisor coalesces re-fires and the ladder readdresses on
+  opposed to who it goes to. The agent-notifier coalesces re-fires and the ladder readdresses on
   exactly this triple.
 - **`InboxMessage(ask, response, message_kind="message", gate_id=None, artifact_path=None,
   subject=InboxSubject())`** — what the row says and what about.
@@ -211,6 +211,7 @@ the explicit consume state.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 4 citation rows with exact anchors and source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 - 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded that
   `OperatorInboxCompatibleRecord` now inherits `durable_store.DurableRecord`, so `OperatorInboxEntry`

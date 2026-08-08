@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/wire.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T14:05+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -86,7 +86,7 @@ shapes and vocabularies the fixture contract explicitly measures.
   override, then sets `metrics: metrics ?? metricsFor(lifecycles)`. **`metrics` is DERIVED from the
   lifecycles by the mirror's own rollup rather than restated beside them** — the hand-kept bucket lists
   are where the `awaiting-developer` gap kept reappearing, on both sides of the wire.
-- **`supervisorHeartbeat`** cit:(["The app-injected supervisor tick", "absent from the snapshot", "base is a typed literal", `supervisorHeartbeat`], dashboard/src/test/fixtures/wire.ts:348-349; dashboard/src/test/fixtures/wire.ts:352-366) — a typed literal, not a served row, because the field is
+- **`agentNotifierHeartbeat`** cit:(["The app-injected agent-notifier tick", "absent from the snapshot", "base is a typed literal", `agentNotifierHeartbeat`], dashboard/src/test/fixtures/wire.ts:348-349; dashboard/src/test/fixtures/wire.ts:352-366) — a typed literal, not a served row, because the field is
   app-injected and therefore absent from the snapshot (`contract.test.ts::KnownUnsampled` names it).
 - **`observerEvent`** cit:(["An observer-event envelope", "separate contract from the projection", "base cannot come from", `observerEvent`], dashboard/src/test/fixtures/wire.ts:369-370; dashboard/src/test/fixtures/wire.ts:373-385) — same reasoning: the event channel (`types/event.ts` ←
   `observer/events.py`) is a separate contract from the projection, so its base cannot come from
@@ -169,7 +169,7 @@ does not.
 | The hand-maintained oracle the bases are assembled from — `lifecycles`, `enclosures`, `providers` and the four `analytics` rows the anchors pull (`agentPickups`, `taskDocuments`, `attentionQueue`, `engineProcesses`). | "\"lifecycles\": ["; "\"enclosures\": ["; "\"analytics\": {"; "\"agentPickups\": ["; "\"taskDocuments\": ["; "\"attentionQueue\": ["; "\"engineProcesses\": [" | dashboard/src/fixtures/snapshot.json:4-4; dashboard/src/fixtures/snapshot.json:113-113; dashboard/src/fixtures/snapshot.json:169-169; dashboard/src/fixtures/snapshot.json:229-229; dashboard/src/fixtures/snapshot.json:287-287; dashboard/src/fixtures/snapshot.json:368-368; dashboard/src/fixtures/snapshot.json:406-406 |
 | The override constraint every builder takes, and the three limits it documents. | `Overrides` | dashboard/src/test/fixtures/overrides.ts:60-66 |
 | The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake. | "catches a smuggled field where there is no assertion to ban"; "fixtures/wire.ts::reparsed" | dashboard/src/test/wireFixtureGuard.test.ts:512-534 |
-| `KnownUnsampled`, which names `supervisorHeartbeat` as absent from the snapshot and therefore a typed literal here. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:186-186 |
+| `KnownUnsampled`, which names `agentNotifierHeartbeat` as absent from the snapshot and therefore a typed literal here. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:186-186 |
 | `ObserverEvent` — the separate event contract this module's `observerEvent` builder targets, mirroring `observer/events.py` rather than `projection.py`. | `ObserverEvent` | dashboard/src/types/event.ts:9-22 |
 | The companion builder module for the conversation grammar. | `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:228-243 |
 
@@ -184,6 +184,7 @@ No cross-repository boundary. The wire this file builds against is a Python↔Ty
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T19:00:51+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair + delta-verdict residual repair): distinguished the hand-maintained `snapshot.json` sample from the generated/drift-checked producer-to-TypeScript mirror (generator, drift tests, and fixture contract bound to their operative sources); restored operative fixture bodies (bases, `demandServed`, builders, `reparsed`); widened the pin-distinction citation to the full 22-34 comment; bound the `--check` drift execution to its exact test; bound both guard rules to the complete 512-534 evidence; narrowed the producer-model claim to the singular `WorkspaceProjection`. Residual repair per `260731-EFA-L6-S18-B12-reviewer-delta-verdict.md`: replaced `landing` with `carryoverDoneAt` in the bases bullet's optional-left-off examples (`landing` is a required `EngineProcessNode` field carried at `wire.ts:193`; `carryoverDoneAt?` is optional at `projection.ts:164` and absent from `wire.ts:169-198`), and corrected the Purpose defect narrative to the source's record of a master `TaskSubTaskRefNode` carrying `createdAt`, which its server model omits, now cited to `wire.ts:6`. The scoped fixer confirmed the final ranges with no writes.
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 20 citation rows and normalized 17 prose citation groups; scoped citation check now passes.
 

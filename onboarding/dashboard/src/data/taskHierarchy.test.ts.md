@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/taskHierarchy.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |  2026-08-08T22:29:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ No Domain Documentation entries are configured in this memory worktree's source 
 | Tests define normalization, precedence, and identity-cache expectations. | "normalizes ..-relative ref files across folders"; "prefers the first series in list order when two series name the same doc"; "prefers the earliest ref by creation order within a series"; "caches per seriesList identity: a fresh array observes new refs, the same array does not" | dashboard/src/data/taskHierarchy.test.ts:43-52; dashboard/src/data/taskHierarchy.test.ts:54-60; dashboard/src/data/taskHierarchy.test.ts:62-74; dashboard/src/data/taskHierarchy.test.ts:97-105 |
 | The `ref` / `series` factories, typed against the mirror rather than asserted past it. | "function ref("; "function series(" | dashboard/src/data/taskHierarchy.test.ts:9-9; dashboard/src/data/taskHierarchy.test.ts:13-13 |
 | The production lookup owns the WeakMap index and calls `orderedByCreation` over `series.subTasks`. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
-| The two sub-task row models the `ref` factory had to choose between; only `SeriesSubTaskNode` declares `createdAt`. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:494-501 |
+| The two sub-task row models the `ref` factory had to choose between; only `SeriesSubTaskNode` declares `createdAt`. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:379-386; dashboard/src/types/projection.ts:494-501 |
 
 ## Cross-Repo References
 
@@ -72,6 +72,8 @@ No meaningful cross-repository references found.
 | The hierarchy helper is repository-local projection logic. | "describe(\"findParentTaskMatch\", () => {" | dashboard/src/data/taskHierarchy.test.ts:31-31 |
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: corrected 1 citation range: `TaskSubTaskRefNode` lives at types/projection.ts L494-L501 (was L484-L491, which now covers `TaskSubStepNode`); `SeriesSubTaskNode` L369-L376 unchanged. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 

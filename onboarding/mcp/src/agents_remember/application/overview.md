@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -15,6 +15,13 @@
 [mcp/overview.md](../../../overview.md)
 
 ## Purpose
+
+### 260713-TES-L1 Rename — Response Tail Choke Point
+
+`tool_response.py`'s `_attach_lifecycle_tail` now writes `agentNotifierBanner` on both response
+envelopes, plus the legacy `supervisorBanner` alias during the rename window; the stale-supervisor
+probe is `_agent_notifier_banner` reading `agent_notifier_heartbeat`. The next-step /
+banner choke-point contract is otherwise unchanged.
 
 `application/` owns operation-level MCP composition. Application entry points translate
 trusted MCP runtime config plus typed tool arguments into package service calls
@@ -206,6 +213,7 @@ presence rides the independent `source` field, which is why `found` alongside a 
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: corrected the task-reopen anchor, expanded the
   hot-path inventory, marked parameter examples as selected, and reversed the FileReadStatus ownership
   claim to match the model/application source split.

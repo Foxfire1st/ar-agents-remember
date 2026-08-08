@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/escalation_ladder.py`        |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                           |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                           |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -21,7 +21,7 @@ seat" — an unacked `OperatorInboxEntry` climbs the spawn edges deterministical
 the original addressee) -> rung 2 (skip-level, re-address to the owner's owner via
 `signal_routing.derive_skip_level_owner`, which walks past any dead intermediate) -> rung 3 (the
 developer attention queue, terminal). This module decides WHAT should happen and WHO the next
-addressee is; `serving/supervisor.py` (the only caller) reads the stores, calls this, and performs
+addressee is; `serving/agent_notifier.py` (the only caller) reads the stores, calls this, and performs
 the delivery + durable row update.
 
 ## Code Commentary
@@ -70,7 +70,7 @@ observation.
 ### Conventions
 
 Pure, no I/O — every function takes `catalog`/`entry` in and returns a frozen value
-(`LadderStep`) or a bool; `serving/supervisor.py` is the sole caller and the only place a store
+(`LadderStep`) or a bool; `serving/agent_notifier.py` is the sole caller and the only place a store
 write or delivery happens.
 
 ### Invariants And Boundaries
@@ -104,8 +104,8 @@ log (tier 3, dead-man ladder) are the source of truth.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The two-hop, dead-node-skipping owner derivation `next_step`'s rung-2 branch calls, and the liveness check `seat_is_suspect` calls. | `is_seat_dead`; `derive_skip_level_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:307-315; mcp/src/agents_remember/controlplane/signal_routing.py:335-375 |
-| The `OperatorInboxEntry.rung`/`escalatedAt` fields this walker reads, and the `advance_rung` transition its caller stamps. | "rungTransitionAt: str"; `advance_rung` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:207-207; mcp/src/agents_remember/controlplane/operator_inbox_records.py:209-209; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:255-285 |
-| The sole caller: evaluates `rung_due` as a predicate, calls `next_step` for the action, and calls `seat_is_suspect` past the respawn threshold. | "def evaluate_escalation_findings("; "def _escalate_rung(  # pragma: no cover"; "def _respawn_suspect(  # pragma: no cover" | mcp/src/agents_remember/serving/_supervisor_evaluation.py:313-313; mcp/src/agents_remember/serving/_supervisor_actions.py:504-504; mcp/src/agents_remember/serving/_supervisor_actions.py:592-592 |
+| The `OperatorInboxEntry.rung`/`escalatedAt` fields this walker reads, and the `advance_rung` transition its caller stamps. | "rungTransitionAt: str" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:207-209; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:255-285 |
+| The sole caller: evaluates `rung_due` as a predicate, calls `next_step` for the action, and calls `seat_is_suspect` past the respawn threshold. | "def evaluate_escalation_findings("; "def _escalate_rung(  # pragma: no cover"; "def _respawn_suspect(  # pragma: no cover" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:533-533; mcp/src/agents_remember/serving/_agent_notifier_actions.py:621-621; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:336-336 |
 | Unit tests: rung-due dwell/anchor/ceiling cases, next-step routing per rung including the hierarchy-ceiling jump, and seat-suspect liveness/staleness cases. | `RungDueTests`; `NextStepTests`; `SeatSuspectTests` | mcp/tests/test_escalation_ladder.py:68-110; mcp/tests/test_escalation_ladder.py:113-182; mcp/tests/test_escalation_ladder.py:185-228 |
 
 ## Cross-Repo References
@@ -118,6 +118,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: removed duplicated Source ranges;
   exact non-fixing check returns zero findings.
 

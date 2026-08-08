@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/taskHierarchy.ts`     |
 | doc_type               | `file-level-onboarding`                   |
 | lastUpdated | 2026-08-01T09:05+02:00 |
-| lastVerifiedCommitHash |                                           `7c56c11d651972515723b4090b8174087eb5236f`|
-| lastVerifiedCommitDate |                                           2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash |                                           `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                           2026-08-08T22:29:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -114,7 +114,7 @@ navigation aligned with the master task reader.
 | The helper finds a parent series ref, keeps the authored child task id as the display number, builds hierarchy labels, and returns parent navigation keys. | "export function findParentTaskMatch" | dashboard/src/data/taskHierarchy.ts:43-43 |
 | The L14 orchestration-command helpers are consumed by Operations `LifecycleList` for command tiers and parent rows. | "export function taskDocHierarchyLabel", "export const LifecycleList" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357; dashboard/src/data/taskHierarchy.ts:53-53 |
 | The current Chats session hierarchy is independently derived by `railModel`, not the retired `groupSessions` consumer. | "export function buildRailModel" | dashboard/src/data/railModel.ts:192-192 |
-| The `TaskDocNode.orchestrates?` mirror these helpers read, and the two distinct sub-task row models `ParentTaskMatch.ref` had to choose between. | `TaskDocNode`; `TaskSubTaskRefNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:437-463; dashboard/src/types/projection.ts:494-501; dashboard/src/types/projection.ts:484-491 |
+| The `TaskDocNode.orchestrates?` mirror these helpers read, and the two distinct sub-task row models `ParentTaskMatch.ref` had to choose between. | `TaskDocNode`; `TaskSubTaskRefNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:379-386; dashboard/src/types/projection.ts:437-463; dashboard/src/types/projection.ts:494-501 |
 | `orderedByCreation` is exported here and shared with `DetailPanel`'s `seriesAsMasterDoc`, which replaced the panel's byte-identical private copy. | "export function taskDocParentKey", "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76; dashboard/src/data/taskHierarchy.ts:58-58 |
 | Operations uses the helper for numbered task labels, parent row keys, and BY REPO hierarchy rendering. | "export const LifecycleList" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
 | DetailPanel uses the helper to render a parent link for directly opened leaf task documents and active leaf lifecycle documents. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76 |
@@ -130,6 +130,8 @@ No meaningful cross-repo references found.
 | No cross-repo boundary is involved. | — | — |
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
   anchors and converted the history projection citation; exact non-fixing check returns zero

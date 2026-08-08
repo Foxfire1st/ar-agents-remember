@@ -6,8 +6,8 @@
 | path | `dashboard/src/cockpit/Cockpit.memo.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:40+02:00 |
-| lastVerifiedCommitHash |  `7c56c11d651972515723b4090b8174087eb5236f`|
-| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash |  `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |  2026-08-08T22:29:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ No meaningful cross-repository references found.
   the master's `subTasks[0]` shed a `createdAt` "that `TaskSubTaskRefNode` declares on neither side" —
   **false in both directions**. `git show abc7cbc:dashboard/src/types/projection.ts` declares
   `createdAt?: string` on `TaskSubTaskRefNode` at L206-L214, and this same leaf removed it there
-  (now L368-L375) and moved it onto the new `SeriesSubTaskNode` (cit:([`SeriesSubTaskNode`], dashboard/src/types/projection.ts:369-376)) as part of splitting one
+  (now L368-L375) and moved it onto the new `SeriesSubTaskNode` (cit:([`SeriesSubTaskNode`], dashboard/src/types/projection.ts:379-386)) as part of splitting one
   interface back into the two `extra="forbid"` server models it had collapsed. So the fixture edit was
   compile-forced by that mirror split, not a tidy-up. The card's conclusion survives — nothing reads
   the subtask row's `createdAt` either way — so only the stated reason changed. Also re-verified the two

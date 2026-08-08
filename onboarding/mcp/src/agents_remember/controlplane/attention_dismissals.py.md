@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/attention_dismissals.py`      |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-01T20:15+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                         |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                         |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -30,7 +30,7 @@ timestamp instead of by a lifecycle.
 
 This log measured the **worst loss of the six** at the base commit: **31.45 percent** of writes
 lost — the one base-commit figure carried at several independent sites (`durable_store.py`,
-`supervisor_signals.py`, `test_durable_store_contract.py`, `test_observer_projection.py`) rather
+`agent_notifier_signals.py`, `test_durable_store_contract.py`, `test_observer_projection.py`) rather
 than at one. It also had a
 single writer. Both facts are true at once, and the reason is the most important thing on this card.
 
@@ -125,6 +125,8 @@ not need a row in this store.
 | The HTTP dismiss route at L1164 that makes this whole-file read-modify-write a user-facing click. | "def _dismissal_response(" | mcp/src/agents_remember/serving/_app_routes.py:265-265 |
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 12 citation findings and two
   unsupported claims. Re-anchored the six reference rows (projection prune, reducer check, dismiss

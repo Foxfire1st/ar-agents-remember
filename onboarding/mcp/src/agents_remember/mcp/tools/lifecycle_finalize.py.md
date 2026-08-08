@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash |                                            `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                            2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                            `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                            2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -41,10 +41,12 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Application entry point validates coordination-contained paths and delegates to the worktree finalizer. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:424-454 |
 | The shared payload helper is `_tool_payload`. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
-| The response boundary is `complete_tool_response`. | "def complete_tool_response" | mcp/src/agents_remember/application/tool_response.py:47-47 |
+| The response boundary is `complete_tool_response`. | "def complete_tool_response" | mcp/src/agents_remember/application/tool_response.py:49-49 |
 | The response model is registered in the public tool registry. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tool_registry.py:167-167 |
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
 

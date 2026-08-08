@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -50,14 +50,14 @@ manager's pair claim; the qualified leaf is no longer described as the whole tas
 
 260707-HFX2-L5 (doctrine inversion, active vigilance → passive process-and-ack): the dispatch-loop
 bullet "monitor turn-report artifacts, nudges, escalation intake" is gone. In its place: "process
-and ack the pending signals the L2 supervisor sweep wakes you with — turn-report artifacts,
+and ack the pending signals the L2 agent-notifier sweep wakes you with — turn-report artifacts,
 nudges, escalation intake — before ending your turn; you never watch for these yourself," with an
-explicit **watcher ban** (uniform-mechanism ruling 2026-07-07: the supervisor sweep is the one
+explicit **watcher ban** (uniform-mechanism ruling 2026-07-07: the agent-notifier sweep is the one
 mechanism, no seat-local polling/monitoring). The **spirit test survives as the one surviving
 MODEL-judgment duty** — it is explicitly called out as NOT ported down to a watching duty; the
 sentence now reads "apply the spirit test — a model-judgment duty, not a watching one — to
 escalated deltas." The Comms Protocol section gains two changes: the "Stdin push" line is reworded
-to name the L2 supervisor's injector (HFX2-L3) as the actual delivery mechanism (never this seat's
+to name the L2 agent-notifier's injector (HFX2-L3) as the actual delivery mechanism (never this seat's
 own initiative), and a new "Idle is safe" bullet states plainly that silence is supervised (the L2
 sweep + L4 ladder), so `lifecycle_turn_end_notification` / ending a turn with nothing pending is
 correct, not a risk to cover by watching — restating the same watcher ban. Pure doctrine reword;
@@ -207,6 +207,7 @@ the ladder removes.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the orchestrator's
   quality altitude ladder paragraph (master-gate-owned full wrapper,
   leaf `--targeted`, per-leaf memory quality, no per-leaf full runs).

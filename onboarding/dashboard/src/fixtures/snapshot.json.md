@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:30+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ node be present.
 ### Conventions
 
 - Shaped like the **persisted** `latest-state.json`, not like an HTTP response: the two app-injected
-  response-time fields, `servingBuild` and `supervisorHeartbeat`, are deliberately absent and are the
+  response-time fields, `servingBuild` and `agentNotifierHeartbeat`, are deliberately absent and are the
   entire content of `contract.test.ts::KnownUnsampled`. `data/store.test.ts` exercises those two by
   construction instead, including the "never ticked" (`lastTickAt: null`) reading that a payload always
   carrying a heartbeat could not express.
@@ -161,7 +161,7 @@ absent from the file rather than present as `null`.
 | The provenance boundary: this snapshot is manual, while the TypeScript contract is generated and stale-checked from the Pydantic schema. | "is NOT generated" | dashboard/src/test/fixtures/wire.ts:22-35; scripts/sync-projection-types.py:43-65 |
 | `demandServed` and the eight anchor rows the builders require this payload to keep. | `demandServed` | dashboard/src/test/fixtures/wire.ts:73-76 |
 | The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. | `asServedProjection` | dashboard/src/test/servedProjection.ts:22-43 |
-| Store-suite consumer, which also constructs the two app-injected fields this payload omits. | `asServedProjection` | dashboard/src/data/store.test.ts:4-20; dashboard/src/data/store.test.ts:121-159 |
+| Store-suite consumer, which also constructs the two app-injected fields this payload omits. | "import { asServedProjection } from \"../test/servedProjection\"" | dashboard/src/data/store.test.ts:4-20; dashboard/src/data/store.test.ts:121-159 |
 | Production e2e consumer, which reads this manual sample off disk and states that it is checked against the generated mirror while the projection generator/stale gate hold that mirror to the Pydantic schema. | "reuse, NOT provenance"; "projection generator and stale gate" | dashboard/e2e-production/cockpit.production.spec.ts:12-19; dashboard/e2e-production/cockpit.production.spec.ts:31-34 |
 
 ## Cross-Repo References
@@ -174,6 +174,8 @@ sides live in `agents-remember`.
 | The producer this fixture stands in for is in-repo (`observer/projection.py` via `observer/projection_store.py`), not a sibling repo or external service. | `write_projection` | mcp/src/agents_remember/observer/projection.py:990-990; mcp/src/agents_remember/observer/projection_store.py:156-162 |
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: re-anchored `series` to the analytics
   sub-key (730-762), corrected the `analytics` extent (169-763) and the file size in Purpose (764

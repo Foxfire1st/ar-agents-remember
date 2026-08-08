@@ -6,13 +6,13 @@
 | path                   | `mcp/tests/test_pane_signals.py`           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:42+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
 
-`test_pane_signals.py` covers the supervisor sweep's pane-state classifier
+`test_pane_signals.py` covers the agent-notifier sweep's pane-state classifier
 (`serving/pane_signals.py::classify_pane_signal`, 260707-HFX2-L2 R2a/R6): every trigger family, the
 no-trigger fallback, blank/`None` input, and the precedence rule between the mid-turn and blocked
 marker families.
@@ -86,6 +86,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 3 repository-internal references for the pane-signal test class, classifier, and live-draft chip helper; scoped citation verification follows.
 
 - 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.

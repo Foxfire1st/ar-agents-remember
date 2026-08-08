@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/interaction_retention.py`        |
 | doc_type               | `file-level-onboarding`                                                |
 | lastUpdated            | 2026-08-01T19:45+02:00                                                 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                                          |
 
 ## Governing Overview
@@ -104,7 +104,7 @@ consumed, with a cap (not a TTL) as the future escape hatch".
 
 ### 260712-TRH-L5 Confirmed-Gone Secondary Retention
 
-`inbox_keep_ids` remains the final retention boundary after the supervisor's same-lock
+`inbox_keep_ids` remains the final retention boundary after the agent-notifier's same-lock
 confirmed-gone reconciliation. The 48-hour pending TTL and 500-row folded-current cap are
 unchanged; `current=` lets the transaction reuse its single authoritative fold rather than
 reading the append-only log again. Ladder-resolved snapshots, including the stable
@@ -157,6 +157,7 @@ HFX2-L1 immortal-pending rule that contributed to the 2026-07-09 escalation stor
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: aligned this card with the current source
   paths: `age_seconds` comes from `controlplane/stamps.py`, the deciding-process reclaimer is
   `controlplane/gate_decisions.py::_reclaim_gate_log`, and the cancellation deletion is

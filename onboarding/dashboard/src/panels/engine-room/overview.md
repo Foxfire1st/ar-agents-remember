@@ -244,7 +244,7 @@ The process map keeps stale landing facts inspectable with explicit stale stylin
 | The cockpit shell that hides the rails for the Engine Room view (§4.1). | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:404-404; dashboard/src/cockpit/Cockpit.tsx:443-443 |
 | `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:785-804 |
 | `_seed_edge_state` and "_DECISIVE_SETUP_EDGE_STATES," — the only producers of a seed lane's state, including the `stale` reroute. | "def _seed_edge_state("; "_DECISIVE_SETUP_EDGE_STATES," | mcp/src/agents_remember/observer/reducer.py:73-73; mcp/src/agents_remember/observer/reducer_impl/_processes.py:634-634 |
-| The client mirror of the edge, which no longer declares a polarity field. | `EngineProcessEdge` | dashboard/src/types/projection.ts:152-160 |
+| The client mirror of the edge, which no longer declares a polarity field. | `EngineProcessEdge` | dashboard/src/types/projection.ts:162-170 |
 
 ## Current L5I Route State
 
@@ -297,6 +297,8 @@ payload the server can actually send.
   and lives or dies with `integration`. Delete the lane and its coverage together, or not at all.
 
 ## Update History
+- 2026-08-08T22:45+02:00 — 260713-TES-L1 completion round 2 (curator): refreshed citation ranges and supervisor -> agent-notifier wording in this route overview body; no route-shape change. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (style-domain split, canvas siblings, fixtures trim). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped engine-room citation claims; final exact frozen-snapshot check is clean.

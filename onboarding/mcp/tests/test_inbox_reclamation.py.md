@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 Focused regressions for confirmed-gone inbox reclamation, its same-sweep store transaction, and
-the supervisor's aggregate observer event.
+the agent-notifier's aggregate observer event.
 
 ## Code Commentary
 
@@ -62,7 +62,7 @@ evidence.
 | --- | --- | --- |
 | ConfirmedGonePolicyTests and ReconcileAndCompactTests are implemented in this suite. | `ConfirmedGonePolicyTests`, `ReconcileAndCompactTests` | mcp/tests/test_inbox_reclamation.py:87-181; mcp/tests/test_inbox_reclamation.py:184-249 |
 | The store transaction resolves and compacts the selected entries atomically. | `reconcile_and_compact` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:184-225 |
-| The integration suite exercises resolution/compaction before redelivery. | `reconcile_and_compact` | mcp/tests/test_inbox_reclamation.py:203-302 |
+| The integration suite exercises resolution/compaction before redelivery. | "def reconcile_and_compact(" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:184-225 |
 | The supervisor ordering places resolution/compaction before redelivery. | "redelivery" | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:300-300 |
 
 ## Cross-Repo References
@@ -74,6 +74,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer residual correction: bounded the class claim to
   `ConfirmedGonePolicyTests` and `ReconcileAndCompactTests` through their complete suite range.
 

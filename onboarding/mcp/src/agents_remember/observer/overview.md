@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -15,6 +15,12 @@
 [mcp/overview.md](../../../../overview.md)
 
 ## Purpose
+
+### 260713-TES-L1 Rename — Heartbeat References
+
+`observer/ambient.py` and `observer/contract_snapshot.py` now reference the renamed heartbeat
+surface (`AgentNotifierHeartbeatStore` / `AgentNotifierHeartbeatPayload`,
+`agent_notifier_heartbeat`); the observer substrate itself is unchanged by the rename.
 
 260707-HFX2-L13 closes the L12 observer residuals: workspace appends/compaction/live reads share a
 cross-process lock and virtual cursor base; lifecycle heartbeats coalesce into bounded sidecars whose
@@ -103,7 +109,7 @@ top of a cross-tick parse cache keyed by `(mtime_ns, size, ctime_ns)` stat ident
 contract files are not re-read or re-parsed at all; parse failures are never cached (skip + retry
 every tick). Cache mutation is confined to the serialized projection tick, and the cached
 `WorktreeContract` instances are shared across ticks, so consumers must never mutate them. The
-landing refresher and supervisor sweep deliberately keep their own passes.
+landing refresher and agent-notifier sweep deliberately keep their own passes.
 
 Slice 05l Part 1 closes the **backend teardown-visibility** gaps in this surface. The reducer's
 `_GUIDANCE_PHASE` gains `"abandoned": "abandoned"`, surfacing `worktrees/modules/guidance.py`'s new
@@ -491,7 +497,7 @@ The slice-3a projection read side:
   authority-bearing log) and tolerant (skips the line; backs projection). **Only `GateStore` and
   `ExpectationRowStore` offer both** — a strict `read` plus a projection-only `read_for_projection`,
   which is the pair this route consumes. `OperatorInboxStore` is strict only; attention dismissals,
-  orchestration nudges and supervisor signals are tolerant only, and their rewrites run off that one
+  orchestration nudges and agent-notifier signals are tolerant only, and their rewrites run off that one
   tolerant read. Take the tolerant half — and know the trap that makes the
   choice load-bearing: `pydantic.ValidationError` **subclasses `ValueError`**, so wrapping a strict
   read in `suppress(OSError, ValueError)` does not degrade one row, it silently discards the whole
@@ -711,7 +717,7 @@ writes back.** The `ar-durable-store/1.0` contract carries two policies: a STRIC
 on a torn or unknown-major line, and a TOLERANT read that skips it. **Only two of the six stores
 offer both** — `GateStore` and `ExpectationRowStore` carry a strict `read` beside a projection-only
 `read_for_projection`, and those are the two this route consumes. `OperatorInboxStore` is strict
-only; attention dismissals, orchestration nudges and supervisor signals are tolerant only, their
+only; attention dismissals, orchestration nudges and agent-notifier signals are tolerant only, their
 single `read` being the tolerant one. Authority reads strictly, because a skipped record there could
 drop a gate's `applied` marker and let the enforcement fold conclude a human approval was never
 consumed. Rendering reads tolerantly, because a 1s tick must degrade rather than freeze. **Every
@@ -746,9 +752,9 @@ default wait and the loop exit) — no short-interval wall-clock races.
 
 The two over-limit write-side modules were split in place into facades plus private subpackages: `observer/snapshots.py` (1,551 → 424) delegates to `snapshots_impl/{_common,_analytics,_runtime,_task_documents}` and `observer/reducer.py` (1,678 → 512) to `reducer_impl/{_types,_metrics,_attention,_processes}`. The subpackages keep `observer/` under the 25-module structural cap. Both facades re-export the full public+private surface (mock-patch targets included), pinned mechanically by `mcp/tests/test_facade_surface.py`; the split families `test_observer_projection_*` cover the split modules.
 
-
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 route impact: recorded the `snapshots_impl/` and `reducer_impl/` facade splits and their surface pin. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded the round-13

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -106,7 +106,7 @@ satisfy before posting.
   contract); the two-hop walk is a different question — how many hops THIS walker takes to find a
   live address for the SAME sender, for the ladder's rung-2/R4-grandparent use case. Folding them
   together would either break the locked test or silently change routing for every existing
-  `derive_signal_owner` caller (the L2 supervisor's nudge/signal-emit actions).
+  `derive_signal_owner` caller (the L2 agent-notifier's nudge/signal-emit actions).
 - Pure and catalog-read-only: neither function ever mutates the catalog or posts an inbox entry.
 - `decision-item` routing to `architect` is unconditional — it does not consult the catalog at all
   (unchanged, `derive_signal_owner` only).
@@ -144,6 +144,8 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 2 repository-reference citations (2/2 anchored and sourced; scoped citation check clean).
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_durable_store_contract.py`   |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-01T14:20+02:00                       |
-| lastVerifiedCommitHash |                                              `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                              2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                              `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                              2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -203,7 +203,7 @@ the cross-process and authority halves.
 | The capability probe `_IgnoredFlock` defeats, and the refusal text asserted verbatim. | `_verify_lock_capability` | mcp/src/agents_remember/controlplane/durable_store.py:318-345 |
 | The rewrite invariant and the rewrite itself: refuses without the lock, never unlinks, pid-scoped temp, cleanup on `BaseException`. | `require_lock_held`; `rewrite_lines`; `append_line` | mcp/src/agents_remember/controlplane/durable_store.py:397-415; mcp/src/agents_remember/controlplane/durable_store.py:439-446; mcp/src/agents_remember/controlplane/durable_store.py:425-436 |
 | The single version rule and the validator that gives the strict and tolerant readers their behaviour without a version branch in either. | `schema_version_supported`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:224-245; mcp/src/agents_remember/controlplane/durable_store.py:248-271 |
-| The advisory ownership methods exercised in both directions by the role test, and the two registers it uses. | `check_declared_writer`; `is_compaction_owner`; `GATE_OWNERSHIP`; `SUPERVISOR_SIGNAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:107-121; mcp/src/agents_remember/controlplane/durable_store.py:123-132; mcp/src/agents_remember/controlplane/durable_store.py:138-150; mcp/src/agents_remember/controlplane/durable_store.py:212-221 |
+| The advisory ownership methods exercised in both directions by the role test, and the two registers it uses. | `check_declared_writer`; `is_compaction_owner`; `GATE_OWNERSHIP`; `AGENT_NOTIFIER_SIGNAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:107-121; mcp/src/agents_remember/controlplane/durable_store.py:123-132; mcp/src/agents_remember/controlplane/durable_store.py:138-150; mcp/src/agents_remember/controlplane/durable_store.py:212-221 |
 | The one place that declares a process role, asserted to do so before the server serves. | `main` | mcp/src/agents_remember/mcp/server.py:35-57 |
 | The whole-file read-modify-write pair the thread lost-update test forces, and the `rewrite_lines` reference it patches. | `dismiss`; `prune_lifecycles`; `_replace` | mcp/src/agents_remember/controlplane/attention_dismissals.py:58-77; mcp/src/agents_remember/controlplane/attention_dismissals.py:125-135; mcp/src/agents_remember/controlplane/attention_dismissals.py:102-111 |
 | The nudge log's two rewrite entry points under test — the safe `compact` and the `replace_records` primitive it wraps. | `compact`; `replace_records`; `_rewrite` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:91-107; mcp/src/agents_remember/controlplane/orchestration_nudges.py:145-155; mcp/src/agents_remember/controlplane/orchestration_nudges.py:158-167 |
@@ -224,6 +224,7 @@ the `fcntl` boundary rather than reached across a repository or system boundary.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the durable-store test citations; final exact frozen-snapshot check is clean.
 - 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: repaired 26 citations, corrected 1 anchor-in-range error, and removed 6 duplicate source segments; no unresolved Tier-3 claims.
 

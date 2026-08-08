@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T13:03+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -20,7 +20,7 @@ New file (260707-HFX2-L5, R3/S4): the P-15 "predicate fixture zoo" mandate reali
 END-TO-END liveness simulations of the whole L1-L4 supervisor stack (expectation rows → supervisor
 sweep → paste injector → escalation ladder). HFX2-L8 extends the suite with the dead-seat storm
 simulation: 12 tests across 9 named incident classes, including a >=2000-row terminal-dead-seat
-backlog proving the supervisor sweep returns, heartbeat metrics advance, redeliverable rows converge
+backlog proving the agent-notifier sweep returns, heartbeat metrics advance, redeliverable rows converge
 to empty, and compaction bounds the inbox file.
 
 ## Code Commentary
@@ -37,8 +37,8 @@ address-time hierarchy repair replaces stale manager provenance instead of skipp
 The obsolete empty-composer and stacked-chip supervisor scenarios were removed, and a busy pane
 without a matching log record is explicitly unconfirmed rather than treated as accepted.
 
-Drives `run_supervisor_sweep` (`serving/supervisor.py`) across MULTIPLE simulated ticks per named
-incident, reusing the exact `SupervisorContext`/store-fixture shape `test_supervisor.py`'s
+Drives `run_agent_notifier_sweep` (`serving/agent_notifier.py`) across MULTIPLE simulated ticks per named
+incident, reusing the exact `AgentNotifierContext`/store-fixture shape `test_agent_notifier.py`'s
 `LadderWalkIntegrationTests` already establishes rather than inventing a second harness. Nine test
 classes, one per incident:
 
@@ -48,8 +48,8 @@ classes, one per incident:
   predicate-unit layer (`classify_pane_signal` / `evaluate_pane_findings` with an injected
   capturer), then the routed `delivery-stalled` finding is fed through the real `act_on_finding` and
   escalates to rung 3 within 2 sim-ticks — proven because `evaluate_predicates` (called by
-  `run_supervisor_sweep`) hardcodes a real `tmux capture-pane` with no injectable capturer through
-  `SupervisorContext` today.
+  `run_agent_notifier_sweep`) hardcodes a real `tmux capture-pane` with no injectable capturer through
+  `AgentNotifierContext` today.
 - **`NoHostedSessionTests`** (#16) — 5 redelivery attempts along the real backoff ladder
   (30s→60s→300s→900s→3600s) escalate at `PERSISTENT_FAILURE_ATTEMPTS`; each tick reads the entry's
   own `nextAttemptAt` back from the store rather than hardcoding `now` deltas.
@@ -57,7 +57,7 @@ classes, one per incident:
   (HFX2-L3) classifies a delivery into a busy pane as `acked` on the very first sweep tick, not lost
   or endlessly redelivered.
 - **`DeadManagerLiveWorkersTests`** (P-6 + ladder walk) — extends (does not duplicate)
-  `test_supervisor.py::LadderWalkIntegrationTests::test_dead_manager_with_live_workers_respawns_and_surfaces_orphans`
+  `test_agent_notifier.py::LadderWalkIntegrationTests::test_dead_manager_with_live_workers_respawns_and_surfaces_orphans`
   with a second real sweep tick proving the orphaned workers themselves independently fire
   `dead-upstream` and signal the grandparent orchestrator.
 - **`KilledSupervisorDaemonTests`** — the self-heartbeat store ticks twice then stops; the staleness
@@ -70,7 +70,7 @@ classes, one per incident:
 - **`FalseDeadSeatHysteresisTests`** (#17) — a flicker at t+10s and t+45s (recovers inside the 60s
   window) never fires `seat-liveness`/`signal-emit`/respawn; a control case confirms a REAL
   stale-past-window seat still fires, proving the HFX-L5 hysteresis holds when consumed through the
-  supervisor's own R2e predicate (on top of the existing probe-layer proof in
+  agent-notifier's own R2e predicate (on top of the existing probe-layer proof in
   `test_terminal_liveness.py`).
 - **`DeadSeatStormTests`** (HFX2-L8) — seeds 2000 terminal-rung, no-hosted-session rows addressed to
   retired/dead seats and asserts within a wall-clock bound that the sweep returns and increments
@@ -85,8 +85,8 @@ is a reachable-by-default tmux host a scenario can flip to unreachable (#16);
 `_landing_paster()` is the healthy-delivery
 capture-verified paste every non-stuck scenario reuses; `_StubPaster` returns one fixed
 `PasteResult` for scenarios needing the same pane state on every attempt (a stuck modal, a busy
-pane); `_LivenessSimulationCase` is the shared `SupervisorContext` scaffolding base class. HFX2-L9
-adds `SupervisorSignalCooldownStore` to that scaffolding so the multi-tick supervisor contexts
+pane); `_LivenessSimulationCase` is the shared `AgentNotifierContext` scaffolding base class. HFX2-L9
+adds `AgentNotifierSignalCooldownStore` to that scaffolding so the multi-tick agent-notifier contexts
 match the production context shape after signal cooldown landed; it does not add a new liveness
 scenario in this file.
 
@@ -94,7 +94,7 @@ scenario in this file.
 
 `unittest.TestCase` per incident class, `NOW` a shared fixed-clock constant
 (`datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)`), temp-rooted stores per test via the shared base
-class — matching the project's existing fixture conventions (`test_supervisor.py`,
+class — matching the project's existing fixture conventions (`test_agent_notifier.py`,
 `test_escalation_ladder.py`). Seeded rows are built through parameter objects: expectation rows
 via `write_expectation_row(store, Expectation(kind, source_id, subject=ExpectationSubject(...)),
 row_id=…, now=…, sla_seconds=…)`, and inbox entries via
@@ -106,16 +106,16 @@ routing=InboxRouting(address=InboxAddress(...)), poster=InboxPoster(...))`.
 - Two rows (`ChipStackedDeliveryStallTests`, and the pane-classified half of never-briefed) are
   explicitly hybrid, not full end-to-end sweep coverage — documented in both the test docstrings and
   the liveness report, not silently overclaimed. **The one thing a future editor of
-  `evaluate_predicates`/`run_supervisor_sweep` must know:** there is no way to inject a fake pane
-  capturer today; threading a capturer parameter through `SupervisorContext`/`evaluate_predicates` is
+  `evaluate_predicates`/`run_agent_notifier_sweep` must know:** there is no way to inject a fake pane
+  capturer today; threading a capturer parameter through `AgentNotifierContext`/`evaluate_predicates` is
   the natural follow-up leaf that would let these two scenarios convert to full sweep-driven E2E.
 - `DeadManagerLiveWorkersTests` deliberately builds ON TOP of (does not duplicate)
-  `test_supervisor.py`'s existing unit fixture — a second real sweep tick, not a second copy of the
+  `test_agent_notifier.py`'s existing unit fixture — a second real sweep tick, not a second copy of the
   first.
 - `FalseDeadSeatHysteresisTests`' control case (`test_seat_actually_stale_past_the_window_still_fires`)
   is the regression a naive "flicker never fires" implementation would fail — hysteresis holding must
   never become "never fires at all."
-- `DeadSeatStormTests` is intentionally wall-clock bounded because its regression is supervisor loop
+- `DeadSeatStormTests` is intentionally wall-clock bounded because its regression is agent-notifier loop
   liveness under backlog, not just row semantics. It still uses temp-rooted stores and fake catalog
   rows; no real daemon, tmux session, or operator inbox is touched.
 
@@ -138,13 +138,13 @@ P-15 fixture-zoo mandate (leaf task doc R3) and the liveness report
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sweep entry point every scenario drives across multiple ticks. | `run_supervisor_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_supervisor_actions.py:729-729; mcp/src/agents_remember/serving/_supervisor_evaluation.py:372-372; mcp/src/agents_remember/serving/supervisor.py:96-193 |
+| The sweep entry point every scenario drives across multiple ticks. | `run_agent_notifier_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:758-758; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:395-395; mcp/src/agents_remember/serving/agent_notifier.py:96-241 |
 | The pane-signal classifier the two hybrid scenarios call directly (capturer not injectable through the sweep). | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | The escalation ladder every incident's rung-3 assertion walks through. | `rung_due`; `next_step` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152 |
-| The self-liveness heartbeat store and staleness banner `KilledSupervisorDaemonTests` drives. | `SupervisorHeartbeatStore`; `supervisor_staleness_banner` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-121; mcp/src/agents_remember/serving/supervisor_heartbeat.py:135-151 |
-| The unit-level fixture `DeadManagerLiveWorkersTests` extends rather than duplicates. | `LadderWalkIntegrationTests` | mcp/tests/test_supervisor_ladder.py:241-629 |
+| The self-liveness heartbeat store and staleness banner `KilledSupervisorDaemonTests` drives. | `AgentNotifierHeartbeatStore`; `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:141-157 |
+| The unit-level fixture `DeadManagerLiveWorkersTests` extends rather than duplicates. | `LadderWalkIntegrationTests` | mcp/tests/test_agent_notifier_ladder.py:241-629 |
 | The terminal state and compaction semantics the HFX2-L8 storm simulation proves at scale. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
-| The shared simulation context (`_ctx`) wires the supervisor signal cooldown store expected by `SupervisorContext`. | "signal_cooldown_store=" | mcp/tests/test_liveness_simulations.py:165-165 |
+| The shared simulation context (`_ctx`) wires the agent-notifier signal cooldown store expected by `AgentNotifierContext`. | "signal_cooldown_store=" | mcp/tests/test_liveness_simulations.py:165-165 |
 
 ## Cross-Repo References
 
@@ -162,7 +162,9 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
-- 2026-08-03T03:06:10+02:00 — W3-B05 curator: resolved 3 Tier-2 table findings with exact anchors and current source paths; fixer generated all final ranges.
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
+"- 2026-08-03T03:06:10+02:00 — W3-B05 curator: resolved 3 Tier-2 table findings with exact anchors and current source paths; fixer generated all final ranges.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: corrected the shared-fixture description and the
   self-file citation. `_entry` lost five parameters (`kind`, `status`, `turn_state`,
   `turn_state_changed_at`, `liveness_failures`) and now mints only a `running` `harness` row from

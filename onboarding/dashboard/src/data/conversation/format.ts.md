@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation/format.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ timeline chips) consumes it.
 - **`humanizeDuration(ms)`** — the two most significant units with fixed precision
   (`800 ms`, `45 s`, `3 m 12 s`, `2 h 5 m`, `6 d 0 h`). Never raw minutes or six-decimal seconds
   (the exact developer eyesores `8638.1m` / `518288.173569s`). Negative/non-finite → `ABSENT`.
-  The live `ServingBuildStamp` and `SupervisorHeartbeatBadge` use it for uptime and heartbeat age;
+  The live `ServingBuildStamp` and `AgentNotifierHeartbeatBadge` use it for uptime and heartbeat age;
   the former rail bus footer is removed. cit:([`humanizeDuration`], dashboard/src/data/conversation/format.ts:25-37)
 - **`shortId(id, tail = 6)`** (NEW — R6/B10, 260718-CHATS-L5P) — a long ULID/UUID (`> 12` chars)
   collapses to its distinguishing suffix (`…ZKCZEP`) so the rail/chrome never leaks a 26-char raw id;
@@ -80,7 +80,7 @@ reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The A1/A4/A5 convention proofs. | "conversation format conventions (developer findings A1/A4/A5)" | dashboard/src/data/conversation/format.test.ts:5-44 |
 | The R6 `shortId` implementation, including the short-value and suffix branches. | `shortId` | dashboard/src/data/conversation/format.ts:83-86 |
-| The live `ServingBuildStamp` and `SupervisorHeartbeatBadge` consumers, plus the removed rail footer (R5). | `ServingBuildStamp`; `SupervisorHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:923-923; dashboard/src/cockpit/Cockpit.tsx:959-959; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:926-926 |
+| The live `ServingBuildStamp` and `AgentNotifierHeartbeatBadge` consumers, plus the removed rail footer (R5). | `ServingBuildStamp`; `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:923-923; dashboard/src/cockpit/Cockpit.tsx:959-959; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:926-926 |
 | The focus-handoff fallback that uses `shortId` when no seat label exists (R6). | "shortId(" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:868-868 |
 | The ambient-telemetry surface that consumes `joinChips`/`freshnessTone`/`humanizeAge` (F3/F19). | `AmbientTelemetry` | dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:54-106 |
 | The library rows consuming `truncateMiddle`/`humanizeAge`. | `ConversationLibraryList` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:104-205 |
@@ -96,6 +96,8 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): split the pooled row — the A1/A4/A5 convention proofs are bound to the `format.test.ts` body (which does not import or test `shortId`), and `shortId:83-86` is described as implementation branches only; live-consumer ownership retained; the scoped fixer confirmed the final ranges with no writes.
 - 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 8 direct citations (six function prose citations plus the ambient-telemetry and library references), moved the task-note pointer into Finding prose, and preserved two current-source-mismatched consumer claims unresolved.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-08T21:20+02:00                           |
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ optional fingerprint remains neutral rather than falsely stale.
 
 ### Logic
 
-Since L15 the cockpit top bar renders the muted servingBuild stamp (commit short-hash + boot time from the state payload) — the ghost-process lesson made visible: a stale dashboard server is identifiable at a glance. **260707-HFX2-L2 (R5)** adds a second top-bar indicator right beside it: `SupervisorHeartbeatBadge` reads `s.supervisorHeartbeat` from the store and renders nothing when `lastTickAt` is `null` (the supervisor has never ticked in this workspace — `dashboard.autoStart` is opt-in, so "no row yet" is not itself an alarm); once a tick exists, it shows `"supervisor ok/stale <age>"` with a `title` tooltip naming the exact `lastTickAt`/`staleCutoffSeconds`. **260718-CHATS-L5P (R5/A4/B9):** the age is now HUMANIZED via `humanizeDuration(ageSeconds*1000)` (`6 d 2 h`, never the raw `9512.1m`), and a long-stale supervisor degrades to a QUIET-distinct amber `caution({sev:"warn"})` — NOT the pulsing cried-wolf red it used past the cutoff before (six-day staleness is expected for an idle workspace, not a fault to alarm on); a fresh heartbeat stays the muted `dim` class. **260707-HFX2-L8 (R6)** extends the same badge with `inbox redeliverable/pending` and latest sweep duration, so a growing operator-inbox storm is visible beside the heartbeat before staleness fires. This is issue #15's "the watcher must be code AND watched" made visible in the SAME top bar that already carries `servingBuild` — "the last turtle is the developer's glance."
+Since L15 the cockpit top bar renders the muted servingBuild stamp (commit short-hash + boot time from the state payload) — the ghost-process lesson made visible: a stale dashboard server is identifiable at a glance. **260707-HFX2-L2 (R5)** adds a second top-bar indicator right beside it: `AgentNotifierHeartbeatBadge` (renamed from `SupervisorHeartbeatBadge` in 260713-TES-L1) reads `s.agentNotifierHeartbeat` from the store (the store accepts the legacy `supervisorHeartbeat` wire key as a fallback during the rename window) and renders nothing when `lastTickAt` is `null` (the agent-notifier has never ticked in this workspace — `dashboard.autoStart` is opt-in, so "no row yet" is not itself an alarm); once a tick exists, it shows `"agent-notifier ok/stale <age>"` with a `title` tooltip naming the exact `lastTickAt`/`staleCutoffSeconds`. **260718-CHATS-L5P (R5/A4/B9):** the age is now HUMANIZED via `humanizeDuration(ageSeconds*1000)` (`6 d 2 h`, never the raw `9512.1m`), and a long-stale agent-notifier degrades to a QUIET-distinct amber `caution({sev:"warn"})` — NOT the pulsing cried-wolf red it used past the cutoff before (six-day staleness is expected for an idle workspace, not a fault to alarm on); a fresh heartbeat stays the muted `dim` class. **260707-HFX2-L8 (R6)** extends the same badge with `inbox redeliverable/pending` and latest sweep duration, so a growing operator-inbox storm is visible beside the heartbeat before staleness fires. This is issue #15's "the watcher must be code AND watched" made visible in the SAME top bar that already carries `servingBuild` — "the last turtle is the developer's glance."
 
 `Cockpit` wires the two SSE streams (`connectState`, `connectEvents`) then renders
 `CockpitShell` (split out so the dev gallery renders the same surface against fixtures).
@@ -184,7 +184,7 @@ in isolation, because their being siblings in one view is the claim) and asserti
 differs.
 `selectedId` is no longer assumed to be a raw lifecycle id. Any consumer that needs lifecycle context
 must derive it through the task-identity helper.
-`SupervisorHeartbeatBadge` (260707-HFX2-L2) renders `null` for a never-ticked heartbeat rather than a
+`AgentNotifierHeartbeatBadge` (260707-HFX2-L2, renamed in 260713-TES-L1) renders `null` for a never-ticked heartbeat rather than a
 false "stale" alarm — the same "absence is not evidence of a problem" posture `servingBuild` already
 follows for a pre-L15 server.
 
@@ -231,12 +231,12 @@ the reviewed task evidence for any current behavioral claim.
 | The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:777-777 |
 | The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`). | `ChatContextBar`, `ChatSessionActions` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:132-206 |
 | The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | `HighlightComposerImpl` | dashboard/src/panels/HighlightComposer.tsx:745-813 |
-| The frontend `Analytics` projection includes the `engineProcesses` process-map collection. | `engineProcesses` | dashboard/src/types/projection.ts:83-83 |
+| The frontend `Analytics` projection includes the `engineProcesses` process-map collection. | `engineProcesses` | dashboard/src/types/projection.ts:93-93 |
 | The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:684-684 |
-| The rollup the top bar reads: `Metrics extends LifecycleStateCounts` (one required `…Count` per `ActiveState` via `StateCountField`), plus `metricsFor()` — the client mirror of `reducer.py::_metrics` that test seeds now call instead of hand-listing buckets. | `Metrics`, `LifecycleStateCounts`, `StateCountField`, `metricsFor` | dashboard/src/types/projection.ts:282-282; dashboard/src/types/projection.ts:284-284; dashboard/src/types/projection.ts:303-307; dashboard/src/types/projection.ts:309-316 |
-| The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS` rather than one `sum(...)` line per bucket. | `_metrics` | mcp/src/agents_remember/observer/reducer.py:527-550 |
-| `SupervisorHeartbeatBadge` reads `useDashboard((s) => s.supervisorHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | `SupervisorHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:959-986 |
-| The `SupervisorHeartbeat` type this badge's props shape mirrors. | `SupervisorHeartbeat` | dashboard/src/types/projection.ts:412-420 |
+| The rollup the top bar reads: `Metrics extends LifecycleStateCounts` (one required `…Count` per `ActiveState` via `StateCountField`), plus `metricsFor()` — the client mirror of `reducer.py::_metrics` that test seeds now call instead of hand-listing buckets. | `Metrics`, `LifecycleStateCounts`, `StateCountField`, `metricsFor` | dashboard/src/types/projection.ts:292-292; dashboard/src/types/projection.ts:294-294; dashboard/src/types/projection.ts:313-317; dashboard/src/types/projection.ts:319-326 |
+| The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS` rather than one `sum(...)` line per bucket. | "def _metrics(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-60 |
+| `AgentNotifierHeartbeatBadge` reads `useDashboard((s) => s.agentNotifierHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:959-984 |
+| The `AgentNotifierHeartbeat` type this badge's props shape mirrors. | `AgentNotifierHeartbeat` | dashboard/src/types/projection.ts:54-65 |
 
 ## Historical FEUI-L8 Reviewed Candidate Delta
 
@@ -255,6 +255,11 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `AgentNotifierHeartbeatBadge`
+  rename, the `agent-notifier ok/stale` wording and `data-testid="agent-notifier-heartbeat"`, and
+  the store's legacy-wire fallback. Verification metadata pinned until closeout stamps the
+  260713-TES-L1 commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the re-wired imports to the kebab-case split folders and the lint remediation. Verification metadata stays pinned until closeout stamps the code commit.
 - 2026-08-04T08:45:26+02:00 — 260731-EFA-L6 S18-B07 curator correction: rebound the keep-alive, Analytics, and RailChat claims to their frozen implementation/type bodies; same-reviewer delta pending.
 

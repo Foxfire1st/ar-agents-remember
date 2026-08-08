@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_change_watcher.py`             |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-08-01T16:25+02:00 |
-| lastVerifiedCommitHash |                                                `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                                2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                                `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                                2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -33,7 +33,7 @@ exactly the documented projection-input surfaces and nothing else (including the
 `worktrees/*/*/provider-runtime` glob), and missing surfaces are skipped until they exist.
 cit:([`InputEventFilterTests`], mcp/tests/test_change_watcher.py:98-139) prove genuine inputs pass while `*.tmp`, dotfiles, the
 projection's own `latest-state/metrics.json` outputs, every control-plane lockfile, and the
-remaining `workspace/` non-input churn (event river, cursor/lock, supervisor heartbeat) are dropped
+remaining `workspace/` non-input churn (event river, cursor/lock, agent-notifier heartbeat) are dropped
 — and that a *lifecycle's* `events.jsonl` is NOT confused with the workspace river (the parent-dir
 check). Since 260731-EFA-L5 the lockfile case asserts on `operator-inbox.jsonl.lock` rather than
 `operator-inbox.lock`, and a second lockfile case was added *outside* `workspace/`:
@@ -122,7 +122,9 @@ fallback for an unknown accepted path, and the exact task-domain wake through bo
 worker and real watchfiles integration.
 
 ## Update History
-- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: split watcher, projector, test, and lock claims by source owner and generated final citation ranges with the scoped fixer.
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
+"- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: split watcher, projector, test, and lock claims by source owner and generated final citation ranges with the scoped fixer.
 - 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 1 repository-reference citation (1/1 anchored and sourced; scoped citation check clean).
 
 - 2026-08-01T16:25+02:00 — 260731-EFA-L5 curator: `InputEventFilterTests`' lockfile assertion moved

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_gate_replay_window.py`   |
 | doc_type               | `file-level-onboarding`                  |
 | lastUpdated            | 2026-08-01T14:20+02:00                   |
-| lastVerifiedCommitHash |                                          `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |                                          2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |                                          `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                          2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                            |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ dashboard writes, so the seam under test is the real fold, not a re-implementati
 family skips the rewrite when nothing is prunable, so a compaction pass over a log holding only
 the live gate would never open the window this test forces.
 
-**The forked processes are joined with a bound and the liveness is asserted** cit:([`_tick_supervisor`], mcp/tests/test_served_state_conformance.py:282-283):
+**The forked processes are joined with a bound and the liveness is asserted** cit:([`_tick_agent_notifier`], mcp/tests/test_served_state_conformance.py:286-287):
 `process.join(30.0)` then `assertFalse(process.is_alive())`, so a wedged scenario is reported as
 a failure rather than hanging the suite.
 
@@ -154,6 +154,8 @@ helpers are all inside `agents-remember`.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows and the
   history `(L…)` citations with exact anchors and fixer-generated ranges; exact non-fixing check

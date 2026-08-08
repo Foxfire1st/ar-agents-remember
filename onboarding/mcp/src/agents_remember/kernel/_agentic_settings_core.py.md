@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_core.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-08T02:00+02:00                                            |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`                                        |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastUpdated            | 2026-08-08T21:20+02:00                                            |
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                                        |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -27,10 +27,16 @@ Typed agentic settings models, constants, and validation primitives. The setting
 - `RoleKnobs`
 - `ConcurrencySettings`
 - `ExpectationSettings`
-- `SupervisorSettings`
+- `AgentNotifierSettings` (renamed from `SupervisorSettings` in 260713-TES-L1)
 - `EscalationSettings`
 - `QualityGateSettings` (260731-EFA-L17: `orchestration.qualityGate.memoryCapBytes`, default 2 GiB)
 - `AgenticSettings`
+- `KNOWN_AGENT_NOTIFIER_FIELDS` (renamed from `KNOWN_SUPERVISOR_FIELDS`; the legacy
+  `supervisor` key remains in `KNOWN_ORCHESTRATION_FIELDS` during the compatibility window)
+- `DEFAULT_AGENT_NOTIFIER_INTERVAL_SECONDS` / `DEFAULT_AGENT_NOTIFIER_STALE_CUTOFF_SECONDS` /
+  `DEFAULT_AGENT_NOTIFIER_REDELIVER_BUDGET` / `DEFAULT_AGENT_NOTIFIER_ESCALATION_BUDGET`
+  (renamed from `DEFAULT_SUPERVISOR_*`; `AgenticSettings.agent_notifier` is the renamed
+  `supervisor` field)
 - `agentic_settings_path`
 - `default_agentic_settings_seed`
 - `default_agentic_settings_seed_text`
@@ -65,6 +71,11 @@ orchestration family.
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `AgentNotifierSettings` /
+  `KNOWN_AGENT_NOTIFIER_FIELDS` / `DEFAULT_AGENT_NOTIFIER_*` renames and the retained legacy
+  `supervisor` key in `KNOWN_ORCHESTRATION_FIELDS` for the alias window. Verification metadata
+  pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the
   `orchestration.qualityGate` family (known-key set, `QualityGateSettings` model,

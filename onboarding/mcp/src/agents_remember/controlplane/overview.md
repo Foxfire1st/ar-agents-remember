@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-01T19:10+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -17,15 +17,15 @@ operator/agent inbox (task 10/L3), orchestration artifact/nudge helpers (L3), th
 task-23/24 interaction-retention policy, task-28 lifecycle-scoped attention
 acknowledgements, and — since 260707-HFX2-L1 — the durable expectation-row
 substrate (R2), inbox redelivery backoff math (R3), and hierarchical signal
-routing derivation (R4) the L2 supervisor sweep drives from. **260707-HFX2-L4** adds the P-15
+routing derivation (R4) the L2 agent-notifier sweep drives from. **260707-HFX2-L4** adds the P-15
 tier-3 escalation ladder ON TOP of that L1 substrate: `escalation_ladder.py` (the pure rung walker —
 `rung_due`/`next_step`/`seat_is_suspect`) and `orphan_policy.py` (a detection-only hook for a dead
 manager's live workers). **260707-HFX2-L13 round 2** makes leaf-signal address-time routing
 manager-first (live direct manager, then exact leaf/master scope, else role-only manager), while a
 separate historical provenance walk remains reserved for later ladder skip-level traversal. Later
 rungs require the configured dwell plus a hard five-minute floor anchored by both `escalatedAt` and
-`rungTransitionAt`; rows also preserve `leafKey`/`subjectAgentId` for chain-aware supervisor checks.
-The L2 supervisor sweep (`serving/supervisor.py`, governed by the
+ `rungTransitionAt`; rows also preserve `leafKey`/`subjectAgentId` for chain-aware agent-notifier checks.
+The L2 agent-notifier sweep (`serving/agent_notifier.py`, governed by the
 `serving/` overview) is the sole caller of all of this — no ladder logic lives outside this route,
 and no delivery/store-write happens inside it. Gates are attributed decision points on a lifecycle — the kind vocabulary
 includes the delegable `master-handover-approval` seam gate (the manager raises it with the
@@ -44,14 +44,14 @@ than lifecycle-scoped. These rows are throwaway interaction data, not durable ta
 **260731-EFA-L5 — the durable-store contract. Read this before changing how any store in this route
 touches disk.** The six JSONL stores here (`store.py`, `expectation_rows.py`,
 `operator_inbox_store.py`, `attention_dismissals.py`, `orchestration_nudges.py`,
-`supervisor_signals.py`) were written independently against the same shape, and their safety
+`agent_notifier_signals.py`) were written independently against the same shape, and their safety
 properties ended up distributed almost at random: one of six took a lock, three of six used a
 pid-scoped temp name, none fsynced. **No base-commit measurement artifact is committed anywhere in
 this tree**, so every base-commit rate below is checkable only as "the source says so": the harness
 can be re-pointed at a `git archive` of `e52edaf5` (`mcp/tests/_store_durability.py`), but no run
 output is stored and no test asserts a rate. Two figures are carried at several independent sites
 and are quoted here on that authority: attention-dismissals lost **31.45 percent** of appended
-records (`durable_store.py`, `supervisor_signals.py`, `test_durable_store_contract.py`,
+records (`durable_store.py`, `agent_notifier_signals.py`, `test_durable_store_contract.py`,
 `test_observer_projection.py`) and gate **11.50 percent** (`durable_store.py`, `store.py`,
 `test_interaction_retention.py`). `durable_store.py`'s module docstring reports the rest at that one
 site — and it is the text these cards document, so quoting it back is not corroboration:
@@ -99,7 +99,7 @@ worst.
 
 **Compaction owners.** Gate is the MCP process's, moved off the dashboard's 30-second projection
 tick onto `mcp/tools/gates.py`. Expectation rows, attention dismissals, orchestration nudges and
-supervisor signals are the dashboard's. Operator inbox has **none** — the leaf's declared
+agent-notifier signals are the dashboard's. Operator inbox has **none** — the leaf's declared
 exception, because both processes must physically remove rows (MCP deletes a cancelled gate's rows,
 the dashboard resolves and compacts under one held lock) and neither move travels without the
 decision it implements.
@@ -113,7 +113,7 @@ line — silently skipping a malformed record could drop an `applied` marker and
 window a human approval exists to close — while projection degrades rather than crashing. Three
 stores read strictly because their rows change a decision (gate, expectation rows, operator inbox);
 three read tolerantly because their rows only render or rate-limit (attention dismissals,
-orchestration nudges, supervisor signals). Gate and expectation rows additionally carry a
+orchestration nudges, agent-notifier signals). Gate and expectation rows additionally carry a
 projection-only tolerant reader beside the strict one — `read` plus `read_for_projection` — used by
 `observer/snapshots.py` and by nothing that decides. **Every rewrite of an authority-bearing log
 reads strictly**, which is what makes two policies safe rather than merely different: each of the
@@ -153,7 +153,7 @@ remain forbidden. These delivery-evidence fields do not alter explicit consume o
 degradation state semantics.
 
 260712-TRH-L5 adds a secondary confirmed-gone retention predicate without changing fallback
-retention: only pending supervisor nudge/escalation rows with a subject id qualify, catalog
+ retention: only pending agent-notifier nudge/escalation rows with a subject id qualify, catalog
 `terminated` is direct proof, and a compacted tombstone needs one successful exact-name tmux
 snapshot. `OperatorInboxStore.reconcile_and_compact` resolves and compacts under one lock and
 reuses the folded current before redelivery; consumed/durable/protected rows and indeterminate
@@ -165,9 +165,9 @@ compaction ignores physically later pending snapshots once an id is consumed or 
 Explicit dismissal remains physical deletion, and time-based compaction remains audit cleanup.
 
 260707-HFX2-L17 carries `seatRole` beside `leafKey` through expectation rows, operator inbox rows,
-renewal, supervisor cooldown records, and routing. Current manager/architect/worker discovery and
+ renewal, agent-notifier cooldown records, and routing. Current manager/architect/worker discovery and
 chain credit use binding identity; only the escalation ladder's historical parent hop reads
-`spawnRole`. Same-text supervisor conditions on one leaf coalesce only within the same role, so
+ `spawnRole`. Same-text agent-notifier conditions on one leaf coalesce only within the same role, so
 parallel seats remain independently observable and addressable.
 
 260707-HFX2-L15 closes the active-phase unbound-worker gap without reviving same-cwd inference.
@@ -231,7 +231,7 @@ relay doctrine (orchestrator posts `decision-item` to `architect`; architect pos
 documented in `architect.md`/`orchestrator.md`/`SKILL.md`. Gate policy and inbox storage behavior
 are unchanged — a pure Literal extension.
 
-**260707-HFX2-L1** makes the operator inbox the signal substrate the L2 supervisor sweep drives:
+**260707-HFX2-L1** makes the operator inbox the signal substrate the L2 agent-notifier sweep drives:
 R1 extends `OperatorInboxEntry` with ack/backoff fields (`attemptCount`/`lastAttemptAt`/
 `nextAttemptAt`/`escalatedAt`) so delivered is not acknowledgement. HFX3 supersedes L1's
 immortal-pending retention: pending rows expire after 48 hours, the folded inbox is capped at 500
@@ -258,20 +258,20 @@ workers -- no auto re-parent action exists yet. `OperatorInboxEntry` gains `rung
 `OperatorInboxStore` gains `advance_rung` (stamps the next rung AND re-anchors `escalatedAt` in one
 snapshot, distinct from L2's rung-agnostic `mark_escalated`). All of this is pure/derivation-only in
 this route; the actual predicate evaluation, delivery, and durable-row mutation happen in
-`serving/supervisor.py`, this route's sole caller.
+`serving/agent_notifier.py`, this route's sole caller.
 **260707-HFX2-L8** closes the dead-seat storm gap on that substrate: `OperatorInboxEntry` gains the
 durable terminal `state="ladder-resolved"` plus `ladderResolvedAt`/`ladderResolvedReason`; `inbox_backoff.py`
 excludes ladder-resolved rows via an explicit predicate; `OperatorInboxStore` mutations accept an
 optional in-sweep `current()` snapshot and add idempotent `mark_ladder_resolved`; and
 `interaction_retention.py`/`compact()` prune ladder-resolved terminal rows. Mid-climb rows and
 live-seat rows remain pending/redeliverable only within the HFX3 48-hour TTL and 500-row health cap.
-**260707-HFX2-L9** adds the redelivery-cadence floor and supervisor signal cooldown substrate:
+**260707-HFX2-L9** adds the redelivery-cadence floor and agent-notifier signal cooldown substrate:
 `inbox_backoff.py` now owns the 900-second `MIN_REDELIVERY_INTERVAL_SECONDS` and refuses sub-floor
 values, `OperatorInboxStore.record_delivery` threads that floor into stored `nextAttemptAt`
-scheduling, and new `supervisor_signals.py` stores pane/seat-liveness signal cooldown records keyed
-by owner/leaf/finding kind/detail. Known deferral: `supervisor_signals.py` is currently an unbounded
+scheduling, and new `agent_notifier_signals.py` stores pane/seat-liveness signal cooldown records keyed
+by owner/leaf/finding kind/detail. Known deferral: `agent_notifier_signals.py` is currently an unbounded
 append-only log with no compactor and performs full-file reads through `in_cooldown`; HFX2-L11 tracks
-that CS-6-class scaling gap before the supervisor is re-enabled.
+ that CS-6-class scaling gap before the agent-notifier is re-enabled.
 
 Attention dismissals use `AttentionDismissalStore` under
 `observer_root/workspace/attention-dismissals.jsonl`, but unlike gates the file is a compact current
@@ -297,7 +297,7 @@ signal, while targetless provider-down dismissals are not accepted.
 | `interaction_retention.py` | Shared 5-minute pickup/wait, 24-hour consumed-row audit TTL, HFX3 48-hour pending-row TTL, and 500-current-row hard health cap; ladder-resolved rows drop immediately. |
 | `expectation_rows.py` | (260707-HFX2-L1, R2) `ExpectationRow`/`ExpectationRowStore`/`write_expectation_row`: durable what-must-happen-by-when rows written atomically at every dispatch surface, an L2 sweep scans, never in-memory timers. |
 | `inbox_backoff.py` | (260707-HFX2-L1, R3; HFX2-L9) Pure redelivery backoff-ladder math + the shared 900-second redelivery floor/fail-loud validation, mirroring the `OrchestrationNudgeStore` pattern while refusing sub-floor retry cadences. |
-| `supervisor_signals.py` | (260707-HFX2-L9) Persisted supervisor pane/seat-liveness signal cooldown records keyed by owner/leaf/finding kind/detail; known unbounded/no-compactor limitation tracked for HFX2-L11. |
+| `agent_notifier_signals.py` | (260707-HFX2-L9, renamed 260713-TES-L1) Persisted agent-notifier pane/seat-liveness signal cooldown records keyed by owner/leaf/finding kind/detail; durable names (`supervisor-signals.jsonl`, `store="supervisor-signals"`, `ar-supervisor-signal/v1`) retained until their schema migration. |
 | `signal_routing.py` | (260707-HFX2-L1, R4; 260707-HFX2-L4, R2/R4) `derive_signal_owner`: one-hop hierarchical routing derivation from catalog spawn provenance (worker -> manager, manager -> orchestrator, decision-item -> architect). `is_seat_dead`/`derive_skip_level_owner`: the ladder's liveness check and SEPARATE two-hop, dead-node-skipping owner's-owner walk. |
 | `escalation_ladder.py` | (260707-HFX2-L4 + L13/HFX3 correction) `rung_due`/`next_step`/`seat_is_suspect`: the pure tier-3 ladder walker, configured dwell plus redundant five-minute later-rung floor, architect terminal custody, and dead/stalled-seat respawn-candidate detection. |
 | `orphan_policy.py` | (260707-HFX2-L4, R3) `find_orphaned_workers`: a pure catalog read for a dead/respawned manager's still-running worker seats -- detection/surfacing only, no re-parent action. |
@@ -378,7 +378,7 @@ response models are `models/operator_inbox.py`.
 | Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. | `prepare_mcp_process`; `_dev_app`; `run` | mcp/src/agents_remember/application/server_startup.py:20-23; mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:161-196 |
 | `_reclaim_gate_log` at L453-L473: gate compaction moved here from the dashboard projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly. | "def gate_decide_payload" | mcp/src/agents_remember/mcp/tools/gates.py:67-67 |
 | The projection tick that no longer rewrites anything: `read_gates` at L104 folds through the tolerant `projected_current`, and `read_expectation_rows` at L193 uses `pending_for_projection`. | "def read_gates(coordination_root: Path, *, now: datetime"; "def read_expectation_rows(" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104; mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193 |
-| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. (`evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal`) |"def evaluate_escalation_findings"|mcp/src/agents_remember/serving/_supervisor_evaluation.py:313-313|
+| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. (`evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal`) |"def evaluate_escalation_findings"|mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:336-336|
 
 ## 260712-TRH-L4 Route Impact
 
@@ -412,7 +412,7 @@ keyword lists, and the groupings are the route's own vocabulary:
   `InboxRenewal.readdress_to` *is* the readdress — the old `readdress: bool` beside loose `owner_*`
   values is gone.
 - expectations — `ExpectationSubject` / `Expectation`.
-- supervisor signals — `SupervisorSignalTarget` / `SupervisorSignalKey`; the cooldown key is
+- agent-notifier signals — `AgentNotifierSignalTarget` / `AgentNotifierSignalKey`; the cooldown key is
   compared whole, so `last_sent` and `in_cooldown` cannot diverge on which fields identify a signal.
 
 No record schema, wire field or refusal changed.
@@ -423,13 +423,20 @@ No record schema, wire field or refusal changed.
 thread may hold one store's lock (mutex, RLock, or flock) while acquiring another store's lock;
 evidence a transaction needs from a second store is gathered before entry, or the side effect
 runs after exit — never nested. The two nestings this forbids (the liveness sweep's catalog
-batch across the synchronizer's inbox/gate locks; the supervisor's inbox transaction across a
+batch across the synchronizer's inbox/gate locks; the agent-notifier's inbox transaction across a
 catalog read) deadlocked ABBA in production on 2026-08-05. The operator-inbox store's lock-held
 fold → resolve → compact transaction is untouched — L5's declared exception stands; what moved
-is the evidence gathering around it (the supervisor's catalog read now precedes the lock), and
+is the evidence gathering around it (the agent-notifier's catalog read now precedes the lock), and
 the liveness sweep's synchronizer side effect now follows its batch commit.
 
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: `supervisor_signals.py` renamed to
+  `agent_notifier_signals.py` with `AgentNotifierSignal*` identifiers; durable names
+  (`supervisor-signals.jsonl`, `store="supervisor-signals"`, `ar-supervisor-signal/v1`) retained
+  until their schema migration; the sole caller is now `serving/agent_notifier.py` and the
+  settings family is `orchestration.agentNotifier` (explicit legacy alias). Verification metadata
+  pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the cross-store lock-order doctrine in `durable_store.py` and that the inbox's lock-held transaction (L5's exception) is untouched. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact

@@ -6,8 +6,8 @@
 | path                   | `docs/reference/harnesses.md`           |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-16T07:25+02:00                  |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -123,7 +123,9 @@ that initialize carried account/catalog data.
 | --- | --- | --- |
 
 ## Update History
-- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 7 citation rows (all Tier 2), deleted 2 unresolvable task-report rows under the 2026-08-02 14:10 ruling, and scoped-checked the card with zero unresolved sources.
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
+"- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 7 citation rows (all Tier 2), deleted 2 unresolvable task-report rows under the 2026-08-02 14:10 ruling, and scoped-checked the card with zero unresolved sources.
 - 2026-07-16T07:25+02:00 — 260714-ACPUI-L5 curator: corrected the manual onboarding to the
   three-source Claude startup truth, made dynamic model/model-local-effort rows explicitly
   non-enumerative, and retained the independent review history that caught the former combined

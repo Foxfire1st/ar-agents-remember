@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00               |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastUpdated            | 2026-08-08T21:20+02:00               |
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -25,11 +25,15 @@ preference, and the harness-definition table `orchestration.harnesses` (260703-L
 typed models. It is the single parser
 for the agentic family; the MCP authority file, memory-topology settings, and provider
 lifecycle settings are separate families with separate parsers. **260707-HFX2-L2 (R1/R5)** adds the
-`orchestration.supervisor` family — the deterministic sweep loop's own knobs (enabled, interval
-seconds, self-liveness staleness cutoff, inbox-redelivery rate limit, and since HFX2-L8 a
-conservative per-sweep redelivery budget). HFX2-L9 makes the supervisor cadence knobs explicitly
-production-safe: `redeliverRateLimitSeconds` and the new `signalCooldownSeconds` both refuse values
-below the shared 900-second floor.
+`orchestration.agentNotifier` family (renamed from `orchestration.supervisor` in 260713-TES-L1) —
+the deterministic sweep loop's own knobs (enabled, interval seconds, self-liveness staleness
+cutoff, inbox-redelivery rate limit, and since HFX2-L8 a conservative per-sweep redelivery
+budget). During the 260713-TES-L1 compatibility window the loader also accepts the legacy
+`orchestration.supervisor` key as an EXPLICIT alias (`_resolve_agent_notifier_alias`): a file using
+it loads with a loud `UserWarning` naming the file and replacement key, a file setting BOTH keys is
+refused, and the alias is normalized per file before the layer merge. HFX2-L9 makes the
+agent-notifier cadence knobs explicitly production-safe: `redeliverRateLimitSeconds` and the new
+`signalCooldownSeconds` both refuse values below the shared 900-second floor.
 
 ## Code Commentary
 
@@ -46,7 +50,7 @@ the parser never derives a model/effort paste command from them.
 
 ### 260707-HFX2-L12 CS-6 Update
 
-`orchestration.supervisor.escalationBudget` is now a known supervisor setting with default 250 and positive-int parsing. The serving supervisor context reads it per-use beside `redeliverBudget` to bound escalation-rung emissions per sweep.
+`orchestration.agentNotifier.escalationBudget` is now a known agent-notifier setting with default 250 and positive-int parsing. The serving agent-notifier context reads it per-use beside `redeliverBudget` to bound escalation-rung emissions per sweep.
 
 #
 
@@ -72,7 +76,7 @@ not bypassed. Built-in Claude, Codex, and Pi rows carry no static effort mapping
 or argv override does not invent one. Their model-gated validation belongs to dynamic adapter
 discovery at launch.
 
-**260707-HFX2-L15 dispatch bounds and harness overrides.** The default supervisor redelivery budget
+**260707-HFX2-L15 dispatch bounds and harness overrides.** The default agent-notifier redelivery budget
 is `1`, matching the synchronous calibrated log-verification envelope of one input. When settings
 introduce or replace a Codex `effortFlag`, `_merged_harness` keeps any retired native config-value
 template cleared so the explicit custom mapping receives an ordinary discrete value.
@@ -116,19 +120,19 @@ closed `KNOWN_ESCALATION_RUNGS = (1, 2, 3)`, and `respawnAfterRung` against that
 respawn cannot trigger at a rung that doesn't exist); every value must be a positive number/int,
 and the whole block is checked against `KNOWN_ESCALATION_FIELDS` for unknown top-level keys. Absent
 block or absent key falls back to the documented default (`EscalationSettings()`'s field
-defaults) — `sla_for(kind)`/`rung_dwell(rung)` are the accessor methods `serving/supervisor.py`'s
-`_supervisor_context()` reads per-use, mirroring how `SupervisorSettings`/`ExpectationSettings`
+defaults) — `sla_for(kind)`/`rung_dwell(rung)` are the accessor methods `serving/agent_notifier.py`'s
+`_agent_notifier_context()` reads per-use, mirroring how `AgentNotifierSettings`/`ExpectationSettings`
 are consumed elsewhere in this file.
 
-**260707-HFX2-L2/R8/R9 (supervisor sweep knobs)**: `orchestration.supervisor` configures the
+**260707-HFX2-L2/R8/R9 (agent-notifier sweep knobs)**: `orchestration.agentNotifier` configures the
 deterministic sweep loop hosted beside the serving daemon's projector/metrics loops —
-`SupervisorSettings` (`enabled` default `true`, `interval_seconds` default 10.0,
+`AgentNotifierSettings` (`enabled` default `true`, `interval_seconds` default 10.0,
 `stale_cutoff_seconds` default 60.0, `redeliver_rate_limit_seconds` default `None`,
 `signal_cooldown_seconds` default `DEFAULT_RATE_LIMIT_SECONDS` / 900, `redeliver_budget` default
-1, and `escalation_budget` default 250). `_parse_supervisor` validates boolean/positive fields and checks
-`redeliverRateLimitSeconds` plus `signalCooldownSeconds` through `_require_supervisor_floor_seconds`,
+1, and `escalation_budget` default 250). `_parse_agent_notifier` validates boolean/positive fields and checks
+`redeliverRateLimitSeconds` plus `signalCooldownSeconds` through `_require_agent_notifier_floor_seconds`,
 which refuses any value below `inbox_backoff.MIN_REDELIVERY_INTERVAL_SECONDS` (900). Absent block or
-absent key both fall back to the documented default (`SupervisorSettings()`'s field defaults).
+absent key both fall back to the documented default (`AgentNotifierSettings()`'s field defaults).
 `redeliver_rate_limit_seconds=None` is a deliberate inherit-not-duplicate choice: the sweep passes
 `None` straight through to `OperatorInboxStore.list_redeliverable`, which already owns its own
 default (`inbox_backoff.DEFAULT_RATE_LIMIT_SECONDS`) — the same "`None` = uncapped/inherit"
@@ -262,7 +266,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:409-409; docs/reference/settings-json.md:411-411; docs/reference/settings-json.md:412-412 |
+| The schema reference documents agent-notifier defaults and constraints, the compatibility-window alias, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:399-423 |
 
 ## Repo-Internal References
 
@@ -282,6 +286,8 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `orchestration.agentNotifier` canonical key + explicit legacy-alias window (`_resolve_agent_notifier_alias` in the facade, both-keys refusal, loud `UserWarning`), the renamed re-exports (`AgentNotifierSettings`, `_parse_agent_notifier`, `_require_agent_notifier_floor_seconds`, `KNOWN_AGENT_NOTIFIER_FIELDS`, `DEFAULT_AGENT_NOTIFIER_*`), and the refreshed settings-json citation. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the
   `orchestration.qualityGate` family through the facade (known-key set, model,

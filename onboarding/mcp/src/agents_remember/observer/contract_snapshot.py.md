@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/contract_snapshot.py`  |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-12T20:02+02:00                                   |
-| lastVerifiedCommitHash |                                                          `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |                                                          2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |                                                          `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                                          2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ parameter so reader public signatures are unchanged.
 - **Retention is bounded by the live enumeration.** Every build prunes cache entries whose paths are
   no longer enumerated.
 - **Deliberate non-consumers:** the landing refresher (runs on the event-loop thread — sharing the
-  cache would need locks) and the supervisor sweep (`serving/` territory) keep their own independent
+  cache would need locks) and the agent-notifier sweep (`serving/` territory) keep their own independent
   contract passes; they never touch this cache.
 
 ### Todos
@@ -125,6 +125,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
   exact anchors and source-backed ranges, and converted the history `projection_store`
   citations; exact non-fixing check returns zero findings.

@@ -50,7 +50,9 @@
       "skills",
       "roles.<role>",
       "rolesPerLevel",
-      "1b7f6f07c5ccc64627299b5d22463ef9c267e187",
+      "1c1629fc97dd4daf352cf9b3529d210be167d2af",
+      "orchestration.agentNotifier",
+      "orchestration.supervisor",
       "system/init",
       "list_models",
       "worktrees-c09.md",
@@ -85,9 +87,7 @@
       "server.tool",
       "20.0",
       "sourceRoute",
-      "doc_type",
-      "lastUpdated",
-      "T02"
+      "doc_type"
     ]
   },
   "fallback": {

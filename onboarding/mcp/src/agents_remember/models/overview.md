@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -15,6 +15,13 @@
 [mcp/overview.md](../../../../overview.md)
 
 ## Purpose
+
+### 260713-TES-L1 Rename — Response Envelope Banner Field
+
+Both response envelopes (`ResponseModel`, `FlexibleResponseEnvelope`) now declare
+`agentNotifierBanner: str | None = None` plus the legacy `supervisorBanner` alias during the
+rename window; `models/providers.py` and `models/tool_registry.py` comments were corrected to the
+same field name. The strict/flexible envelope split is unchanged.
 
 `models/` owns the Pydantic response contracts for Agents Remember MCP payload
 builders. It turns the public tool surface and retained compatibility builders
@@ -48,7 +55,7 @@ flexible detail envelopes, token metadata fields, and the strict `NextStep`
 lifecycle-hint model carried by an optional `nextStep` field on BOTH envelope
 bases (`ResponseModel` and `FlexibleResponseEnvelope`), so every modeled tool
 response can surface the computed next move; 260731-EFA-L4 declares the
-`supervisorBanner: str | None` stale-supervisor field beside it on both bases and
+`agentNotifierBanner: str | None` stale-supervisor field beside it on both bases and
 names their union `ResponseEnvelope`. Domain modules then own
 contract slices: `context_packet.py` for compact `ContextPacketV2`,
 `providers.py` for provider summaries and diagnostics, `worktree.py` for
@@ -97,7 +104,7 @@ never changes it). `lifecycle_finalize.py`'s `LifecycleFinalizeTaskResponse` gai
   optional `nextStep: NextStep | None` field, populated for in-lifecycle calls at
   the [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py)`::_tool_payload`
   choke point and excluded when None, so lifecycle-less calls stay unchanged.
-- Both envelope bases also declare `supervisorBanner: str | None` (260731-EFA-L4), set at
+- Both envelope bases also declare `agentNotifierBanner: str | None` (260731-EFA-L4), set at
   the same choke point. It had been written by the choke point since 260707-HFX2-L2 R5 but
   declared on no model, which is the specific hole: `ResponseModel` is `extra="forbid"`, so
   a response carrying a stale-supervisor banner failed its OWN `model_validate`, and
@@ -105,7 +112,7 @@ never changes it). `lifecycle_finalize.py`'s `LifecycleFinalizeTaskResponse` gai
   for the PROVIDER's fields, not this package's. `ResponseEnvelope` is the
   `ResponseModel | FlexibleResponseEnvelope` alias naming the two families; the split between
   them is about `extra`, not about the header, and both carry the same
-  `ok`/`tokens`/`nextStep`/`supervisorBanner` fields.
+  `ok`/`tokens`/`nextStep`/`agentNotifierBanner` fields.
 - `ContextPacketV2` keeps startup context compact and points detailed provider
   troubleshooting to `provider_diagnostics`.
 - Token metadata fields exist on every modeled response; the final S6 wiring
@@ -330,17 +337,19 @@ half derived from the type rather than typed beside it.
 **`tool_registry.py` — the loose type that made the token count wrong.** Both registries are
 `dict[str, type[ResponseEnvelope]]`. Under the previous `dict[str, type[BaseModel]]`,
 `TOOL_RESPONSE_MODELS[tool].model_validate(payload)` was typed as a bare `BaseModel`, on which
-`nextStep` and `supervisorBanner` are not attributes a checker knows — so the choke point had
+`nextStep` and `agentNotifierBanner` are not attributes a checker knows — so the choke point had
 no type-clean way to set them on the validated response, and wrote them into the dict AFTER
 `model_dump` and AFTER `finalize_payload_tokens`. Two consequences, both silent: the served
-response carried bytes the advertised `tokens` did not count, and `supervisorBanner` was a key
+response carried bytes the advertised `tokens` did not count, and `agentNotifierBanner` was a key
 on an object whose model did not declare it. Naming the union is what let the choke point be
 reordered (see the `mcp/tools/` overview). Verified: all 62 registered models are
 `ResponseModel` or `FlexibleResponseEnvelope` subclasses and all 62 declare both fields, so the
 narrower type is true of the whole registry today.
 
 ## Update History
-- 2026-08-04T08:45:26+02:00 — 260731-EFA-L6 S18-B07 curator correction: split the measurement and vocabulary-import claims and rebound them to frozen module bodies/imports; same-reviewer delta pending.
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
+"- 2026-08-04T08:45:26+02:00 — 260731-EFA-L6 S18-B07 curator correction: split the measurement and vocabulary-import claims and rebound them to frozen module bodies/imports; same-reviewer delta pending.
 - 2026-08-03T02:57:31+02:00 — W3-B05 curator: resolved 10 Tier-2 table findings and 1 Tier-2 prose finding with exact source paths; fixer generated all final ranges.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

@@ -78,7 +78,7 @@
       "promptKeywords",
       "PHA",
       "EFA",
-      "1b7f6f07c5ccc64627299b5d22463ef9c267e187",
+      "1c1629fc97dd4daf352cf9b3529d210be167d2af",
       "route_index_refresh",
       "memory_quality_check",
       "drift_check",
@@ -99,11 +99,11 @@
       "lastUpdated",
       "T02",
       "lastVerifiedCommitHash",
-      "b7f6f07c5ccc64627299b5d22463ef9c267e187",
+      "c1629fc97dd4daf352cf9b3529d210be167d2af",
       "lastVerifiedCommitDate",
-      "L16",
-      "AGENTS",
-      "L17"
+      "T22",
+      "TES",
+      "L16"
     ]
   },
   "fallback": {

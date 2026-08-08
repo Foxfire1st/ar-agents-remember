@@ -11,6 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/controlplane/__init__.py",
+    "mcp/src/agents_remember/controlplane/agent_notifier_signals.py",
     "mcp/src/agents_remember/controlplane/attention_dismissals.py",
     "mcp/src/agents_remember/controlplane/durable_store.py",
     "mcp/src/agents_remember/controlplane/enforcement.py",
@@ -30,8 +31,7 @@
     "mcp/src/agents_remember/controlplane/seats.py",
     "mcp/src/agents_remember/controlplane/signal_routing.py",
     "mcp/src/agents_remember/controlplane/stamps.py",
-    "mcp/src/agents_remember/controlplane/store.py",
-    "mcp/src/agents_remember/controlplane/supervisor_signals.py"
+    "mcp/src/agents_remember/controlplane/store.py"
   ],
   "coverageCounts": {
     "sourceFilesInScope": 22,
@@ -39,6 +39,8 @@
     "childRoutes": 0
   },
   "routingTerms": [
+    "agent",
+    "agent_notifier_signals",
     "agents",
     "agents_remember",
     "artifacts",
@@ -66,6 +68,7 @@
     "interaction_retention",
     "ladder",
     "mcp",
+    "notifier",
     "nudges",
     "operator",
     "operator_inbox_records",
@@ -89,15 +92,14 @@
     "src",
     "stamps",
     "store",
-    "supervisor",
-    "supervisor_signals",
     "transitions"
   ],
   "hotPath": {
-    "summary": "**260731-EFA-L5 \u2014 the durable-store contract. Read this before changing how any store in this route touches disk.** The six JSONL stores here (`store.py`, `expectation_rows.py`, `operator_inbox_store.py`, `attention_dismissals.py`, `orchestration_nudges.py`, `supervisor_signals.py`) were written independently against the same shape, and their safety properties ended up distributed almost at random: one of six took a lock, three of six used a pid-scoped temp name, none fsynced. **No base-commit measurement artifact is committed anywhere in this tree**, so every base-commit rate below is chec...",
+    "summary": "**260731-EFA-L5 \u2014 the durable-store contract. Read this before changing how any store in this route touches disk.** The six JSONL stores here (`store.py`, `expectation_rows.py`, `operator_inbox_store.py`, `attention_dismissals.py`, `orchestration_nudges.py`, `agent_notifier_signals.py`) were written independently against the same shape, and their safety properties ended up distributed almost at random: one of six took a lock, three of six used a pid-scoped temp name, none fsynced. **No base-commit measurement artifact is committed anywhere in this tree**, so every base-commit rate below is...",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
+      "mcp/src/agents_remember/controlplane/agent_notifier_signals.py",
       "mcp/src/agents_remember/controlplane/attention_dismissals.py",
       "mcp/src/agents_remember/controlplane/durable_store.py",
       "mcp/src/agents_remember/controlplane/enforcement.py",
@@ -117,12 +119,13 @@
       "mcp/src/agents_remember/controlplane/seats.py",
       "mcp/src/agents_remember/controlplane/signal_routing.py",
       "mcp/src/agents_remember/controlplane/stamps.py",
-      "mcp/src/agents_remember/controlplane/store.py",
-      "mcp/src/agents_remember/controlplane/supervisor_signals.py"
+      "mcp/src/agents_remember/controlplane/store.py"
     ],
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "agent_notifier_signals.py",
+      "agent_notifier_signals",
       "attention_dismissals.py",
       "attention_dismissals",
       "durable_store.py",
@@ -163,8 +166,6 @@
       "stamps",
       "store.py",
       "store",
-      "supervisor_signals.py",
-      "supervisor_signals",
       "EFA",
       "JSONL",
       "mcp/src/agents_remember/controlplane",

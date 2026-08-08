@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/fixtures/sim/logs/observer/lifecycles/sim-replay-lifecycle/events.jsonl` |
 | doc_type               | `file-level-onboarding`                                                        |
 | lastUpdated            | 2026-07-31T15:32+02:00                                                         |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                                     |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                                     |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../../../../overview.md`                                                |
 
 ## Governing Overview
@@ -42,7 +42,6 @@ Read by the serving projection; `test_serving.py` asserts the projected lifecycl
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The projection assertions that read this fixture. | `SimFixtureTests`; `SimReplayTests` | mcp/tests/test_serving_cli.py:313-338; mcp/tests/test_serving_cli.py:341-405 |
-
 
 
 ## Update History
