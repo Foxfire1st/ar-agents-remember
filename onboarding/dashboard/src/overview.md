@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -15,6 +15,15 @@
 [agents-remember root overview](../../overview.md)
 
 ## 260731-EFA-L8 Frontend Rail
+
+### 260713-TES-L1 Rename — Top-Bar Heartbeat Surface
+
+The top-bar heartbeat indicator is renamed: `SupervisorHeartbeatBadge` →
+`AgentNotifierHeartbeatBadge` with `agent-notifier ok/stale` wording and
+`data-testid="agent-notifier-heartbeat"`; the store field is `agentNotifierHeartbeat` and
+`applySnapshot` reads `projection.agentNotifierHeartbeat ?? projection.supervisorHeartbeat`
+so the legacy wire key keeps working during the rename window. The badge still renders nothing
+for a never-ticked agent-notifier.
 
 The route is now rail-enforced: `eslint.config.js` arms react-hooks (first),
 jsx-a11y, import/no-cycle, complexity 10, max-lines-per-function 80 (tests
@@ -210,7 +219,7 @@ enum and already-validated `Metrics` bucket fields, rejects unmatched mappings, 
 emits the TypeScript partition and enumerable tuples from those schema enums.
 `stale_generated_files` compares both committed generated targets with fresh output, so the documented
 `scripts/sync-projection-types.py --check` command fails after either a producer-only change or a hand
-edit on the TypeScript side, until the artifacts are regenerated cit:([`check_state_partition`, `state_count_fields`, `_state_partition`, `_vocabulary_block`, `stale_generated_files`, `test_committed_generated_files_are_current`], mcp/src/agents_remember/observer/lifecycle_state.py:73-98; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/code_quality/projection_types.py:340-356; mcp/src/agents_remember/code_quality/projection_types.py:382-421; mcp/src/agents_remember/code_quality/projection_types.py:509-515; mcp/tests/test_projection_types_codegen.py:266-271).
+edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files(", "def test_committed_generated_files_are_current"], mcp/src/agents_remember/observer/lifecycle_state.py:73-98; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/code_quality/projection_types.py:340-356; mcp/src/agents_remember/code_quality/projection_types.py:382-421; mcp/src/agents_remember/code_quality/projection_types.py:509-515; mcp/tests/test_projection_types_codegen.py:266-271).
 The separate `contract.test.ts` vocabulary suite still measures whether the manual `snapshot.json`
 sample covers every generated member/path and catches a duplicate within one TypeScript tuple; it is
 not the cross-language authority.
@@ -434,9 +443,9 @@ references informed product framing only; current code truth stays in agents-rem
 | Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-745 |
 | Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
 | Dev scenario authority and end-to-end states. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:113-207 |
-| Projection provenance: producer partition/bucket checks feed a schema-generated and stale-checked TypeScript mirror; fixture builders are type-checked against it; `contract.test.ts` measures the separate manual snapshot's coverage. | "BE PRECISE ABOUT WHAT PINS WHAT"; "WHAT SCHEMA CODEGEN CLOSES"; `check_state_partition`; `state_count_fields`; `workspace_projection_schema`; `_state_partition`; `_vocabulary_block`; `stale_generated_files`; `test_committed_generated_files_are_current` | dashboard/src/test/fixtures/wire.ts:22-34; dashboard/src/test/contract.test.ts:60-72; mcp/src/agents_remember/observer/lifecycle_state.py:73-98; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/code_quality/projection_types.py:59-61; mcp/src/agents_remember/code_quality/projection_types.py:340-356; mcp/src/agents_remember/code_quality/projection_types.py:382-421; mcp/src/agents_remember/code_quality/projection_types.py:509-515; mcp/tests/test_projection_types_codegen.py:266-271; scripts/sync-projection-types.py:43-51 |
+| Projection provenance: producer partition/bucket checks feed a schema-generated and stale-checked TypeScript mirror; fixture builders are type-checked against it; `contract.test.ts` measures the separate manual snapshot's coverage. | "The producer-to-TypeScript link is generated and checked"; "WHAT SCHEMA CODEGEN CLOSES"; "def check_state_partition("; "def state_count_fields("; "def workspace_projection_schema("; "def _state_partition("; "def _vocabulary_block("; "def stale_generated_files("; "def test_committed_generated_files_are_current" | dashboard/src/test/fixtures/wire.ts:22-34; dashboard/src/test/contract.test.ts:60-72; mcp/src/agents_remember/observer/lifecycle_state.py:73-98; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/code_quality/projection_types.py:59-61; mcp/src/agents_remember/code_quality/projection_types.py:340-356; mcp/src/agents_remember/code_quality/projection_types.py:382-421; mcp/src/agents_remember/code_quality/projection_types.py:509-515; mcp/tests/test_projection_types_codegen.py:266-271; scripts/sync-projection-types.py:43-51 |
 | Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. | "five rules"; `SCANNED_ROOTS`; "no dashboard test asserts against a payload the server cannot produce" | dashboard/src/test/wireFixtureGuard.ts:1-63; dashboard/src/test/wireFixtureGuard.ts:136-136; dashboard/src/test/wireFixtureGuard.test.ts:266-467 |
-| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:303-307 |
+| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:313-317 |
 | Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | `UNCLASSIFIED_STATUS`; `constelColors` | dashboard/src/topology/model.ts:68-68; dashboard/src/topology/constel.ts:31-39 |
 | JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | `AsJsonModule`; `Overrides` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/fixtures/overrides.ts:60-66 |
 
@@ -456,6 +465,13 @@ unchanged.
 The dashboard route absorbed the L7 live-thinking change on top of the L8 split: the conversation-timeline family now renders one coalesced live `thinking` indicator per active turn (`collapse.ts` stable-row refactor + `ThinkingItem` animated indicator), with acceptance pins in `liveThinking.test.tsx` and `collapse.test.ts`. No dashboard file is over the file-size hard limit; the detector's `dashboard/src` TS/TSX scope is enforced by the project wrapper.
 
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the top-bar badge and store field were
+  renamed to `AgentNotifierHeartbeatBadge` / `agentNotifierHeartbeat` with
+  `agent-notifier ok/stale` wording and `data-testid="agent-notifier-heartbeat"`; the store
+  accepts the legacy `supervisorHeartbeat` wire key as a fallback during the rename window.
+  Per-file detail lives in the `Cockpit.tsx` and `data/store.ts` sidecars. Verification metadata
+  pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the live-thinking wiring and the file-size scope for `dashboard/src`. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section for this route. Verification metadata stays pinned until closeout stamps the code commit.

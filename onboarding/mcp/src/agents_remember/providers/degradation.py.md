@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/degradation.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ but its directory.
 **It has ONE writer today, and that was refused as an argument.** `evaluate_provider_degradation`
 has exactly one production caller, the dashboard's `_metrics_loop`, and it is the only thing that
 appends an event, compacts the log or writes the state document. That is the same argument this leaf
-already refused for `attention_dismissals.py` and `supervisor_signals.py` — and refused for a
+already refused for `attention_dismissals.py` and `agent_notifier_signals.py` — and refused for a
 measured reason, since the draft that left those two unlocked on the strength of single-writer
 measured 31.45% loss on attention-dismissals. **"Only one process writes this file" is a deployment
 fact; the lock is about the file.**
@@ -200,7 +200,7 @@ tests substitute a fake stopper without touching `provider_watchers_tool`/docker
 
 - **Every write to either artifact holds that path's lock, and single-writer is not the reason.**
   The lock is unconditional for the same reason it is on `attention_dismissals.py` and
-  `supervisor_signals.py`, which are also single-writer today: one process writing a file is a
+  `agent_notifier_signals.py`, which are also single-writer today: one process writing a file is a
   deployment fact, not a structural one, and an unlocked draft of that pair measured 31.45% loss.
 - **`compact_events` holds the lock across read, filter and rewrite, and drops rows by age only.**
   The append that races it is the one that caused the state change it is bounding, so rarity is not
@@ -261,11 +261,11 @@ documentation, so it is cited as a repo-internal reference below rather than her
 | `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). | `ProviderDegradationSettings` | mcp/src/agents_remember/mcp/provider_degradation_settings.py:36-55 |
 | `_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. |"async def _metrics_loop"|mcp/src/agents_remember/serving/_app_lifespan.py:47-47|
 | Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. | `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`; `test_critical_transition_records_event_inbox_and_failsafe_once`; `test_critical_stop_failure_still_records_event_inbox_and_state` | mcp/tests/test_provider_degradation.py:99-159; mcp/tests/test_provider_degradation.py:239-330; mcp/tests/test_provider_degradation.py:332-363 |
-| `ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol — that file grew ~100 lines mid-leaf and earlier line ranges into it are invalid. | "def exclusive_access"; "def append_line"; "def rewrite_lines"; "def read_log_text"; "SCHEMA_VERSION ="; "def schema_version_supported"; "class StoreOwnership" | mcp/src/agents_remember/controlplane/durable_store.py:45-45; mcp/src/agents_remember/controlplane/durable_store.py:93-93; mcp/src/agents_remember/controlplane/durable_store.py:224-224; mcp/src/agents_remember/controlplane/durable_store.py:349-349; mcp/src/agents_remember/controlplane/durable_store.py:427-427; mcp/src/agents_remember/controlplane/durable_store.py:434-434; mcp/src/agents_remember/controlplane/durable_store.py:448-448 |
+| `ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol — that file grew ~100 lines mid-leaf and earlier line ranges into it are invalid. | "def exclusive_access"; "def append_line"; "def rewrite_lines"; "def read_log_text"; "SCHEMA_VERSION ="; "def schema_version_supported"; "class StoreOwnership" | mcp/src/agents_remember/controlplane/durable_store.py:45-45; mcp/src/agents_remember/controlplane/durable_store.py:93-93; mcp/src/agents_remember/controlplane/durable_store.py:226-226; mcp/src/agents_remember/controlplane/durable_store.py:351-351; mcp/src/agents_remember/controlplane/durable_store.py:429-429; mcp/src/agents_remember/controlplane/durable_store.py:436-436; mcp/src/agents_remember/controlplane/durable_store.py:450-450 |
 | The sibling provider store put on the same contract in the same change. | "class ProviderMetricsStore" | mcp/src/agents_remember/providers/metrics.py:231-231 |
 | The shared durability suite whose docstring disclaims the base-commit percentages as unreproducible. | `ProviderStoreDurabilityTests` | mcp/tests/test_provider_store_durability.py:280-351 |
 | The attention-dismissal control-plane log whose unlocked draft measured 31.45% loss — the precedent that refused "one writer" as a reason not to lock. | "class AttentionDismissalStore" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-45 |
-| The supervisor-signal control-plane log whose unlocked draft measured 31.45% loss — the precedent that refused "one writer" as a reason not to lock. | "class SupervisorSignalCooldownStore" | mcp/src/agents_remember/controlplane/supervisor_signals.py:68-68 |
+| The supervisor-signal control-plane log whose unlocked draft measured 31.45% loss — the precedent that refused "one writer" as a reason not to lock. | "class AgentNotifierSignalCooldownStore" | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-71 |
 
 ## Cross-Repo References
 
@@ -277,6 +277,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 28 initial citation findings (13 anchor, 0 prose, 15 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

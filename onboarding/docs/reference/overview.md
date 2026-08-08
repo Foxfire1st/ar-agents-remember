@@ -6,10 +6,17 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 
 ## Purpose
+
+### 260713-TES-L1 Rename — Settings And Harness Reference
+
+`settings-json.md` now documents the `orchestration.agentNotifier` family (the deterministic
+agent-notifier sweep knobs) with the compatibility-window alias: the legacy
+`orchestration.supervisor` key is accepted loudly and both-keys is refused. `harnesses.md` prose
+was refreshed to agent-notifier wording; no harness contract changed.
 
 Reference contract for harnesses, MCP tools, and settings. ACPUI makes role settings the initial
 native-selection authority: Claude, Codex, and Pi discover token-free per-install/account catalogs,
@@ -114,6 +121,11 @@ places the full wrapper at the master integration gate inside `worktree_integrat
 default, fail-loud family) — the schema source for the full-gate memory cap.
 
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: `settings-json.md` documents the
+  `orchestration.agentNotifier` family with the compatibility-window alias, and `harnesses.md`
+  prose was refreshed to agent-notifier wording; route shape unchanged. Verification metadata
+  pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the corrected hook-tier and
   closeout wording in the public references plus the `qualityGate` settings family. Verification

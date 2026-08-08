@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/lifecycle.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`     |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`     |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -56,7 +56,7 @@ registered in `TOOL_RESPONSE_MODELS` and inherit `extra="forbid"`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `ToolResponse` strict envelope base (`ok`/`operation`/`tokens`). | "class ToolResponse(ResponseModel):" | mcp/src/agents_remember/models/base.py:63-63 |
+| The `ToolResponse` strict envelope base (`ok`/`operation`/`tokens`). | "class ToolResponse(ResponseModel):" | mcp/src/agents_remember/models/base.py:66-66 |
 | The `State`/`Phase` Literals reused as response field types. | "State = Literal[LiveState, TerminalState]"; "Phase = Literal[" | mcp/src/agents_remember/observer/lifecycle_state.py:120-120; mcp/src/agents_remember/observer/lifecycle_state.py:124-124 |
 | Where these models are registered against tool names. | "\"ping\": PingResponse,"; "PUBLIC_TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {" | mcp/src/agents_remember/models/tool_registry.py:117-117; mcp/src/agents_remember/models/tool_registry.py:181-181 |
 | The builders that assemble payloads validated against these models; `lifecycle_start_payload` fills `frontHalfRundown`. | "def lifecycle_start_payload() -> dict[str, Any]:" | mcp/src/agents_remember/mcp/tools/lifecycle.py:20-20 |
@@ -64,6 +64,8 @@ registered in `TOOL_RESPONSE_MODELS` and inherit `extra="forbid"`.
 | The persisted-record peer these are deliberately *not*. | "class Event(BaseModel):"; "OBSERVER_EVENT_SCHEMA =" | mcp/src/agents_remember/observer/events.py:23-23; mcp/src/agents_remember/observer/events.py:39-39 |
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 6 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 

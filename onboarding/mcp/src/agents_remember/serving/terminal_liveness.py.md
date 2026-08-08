@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                                             |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                                             |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ activity, acceptance, vendor identity, sequence, pending interaction, and raw ve
 projected additively. Bridge failure becomes explicit disconnected/unknown state. Tmux/process
 existence remains process-liveness evidence only; pane text, turn-state classifiers, terminal logs,
 copy mode, and capture timing are diagnostic detail and cannot authorize readiness, delivery,
-completion, or supervisor action. Ordinary shell rows remain ordinary terminal rows.
+completion, or agent-notifier action. Ordinary shell rows remain ordinary terminal rows.
 
 The detailed pane/turn-state path below is historical pre-L5 behavior and is retained only to explain
 the migration surface; it is not current hosted authority.
@@ -185,7 +185,7 @@ pane_capturer, on_turn_state_change) is constructor-injected so tests run fake-d
   [durable_store.py](../controlplane/durable_store.py.md), written from the 2026-08-05 ABBA
   deadlock.
 - Hosted activity and turn state are adapter-derived; pane/log/copy-mode observations are
-  diagnostics-only and cannot drive readiness, delivery, completion, or supervisor action.
+  diagnostics-only and cannot drive readiness, delivery, completion, or agent-notifier action.
 - The sweeper remains rate-limited and non-overlapping, and process-liveness failures remain
   explicit disconnected/unknown evidence rather than a hidden compatibility fallback.
 - Liveness projection never consumes inbox rows. Inbox delivery is inbox-rooted and explicit
@@ -253,7 +253,7 @@ No meaningful cross-repo references found.
 
 Process existence remains tmux evidence, while hosted activity and turn state come from the exact
 adapter snapshot. Bridge failures remain explicit disconnected/unknown states; pane classifiers are
-stored only as diagnostics and cannot produce supervisor actions.
+stored only as diagnostics and cannot produce agent-notifier actions.
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -300,7 +300,7 @@ this sweep's return value.
 
 Provenance: on 2026-08-05 the production serving daemon deadlocked twice (py-spy-verified ABBA) —
 this sweep held the catalog batch lock across the synchronizer's operator-inbox/gate lock
-acquisitions while the supervisor sweep held the inbox lock across a catalog read, and the uvicorn
+acquisitions while the agent-notifier sweep held the inbox lock across a catalog read, and the uvicorn
 event loop queued on the same catalog RLock via async endpoints doing synchronous catalog reads.
 The placement CHATS-L5 had quarantined was the second symptom: the guard absorbed the failure
 mode, not the lock-order one. Forcing regressions live in `mcp/tests/test_cross_store_lock_order.py`
@@ -311,6 +311,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T20:20+02:00 — 260731-EFA-L16 curator: mechanism correction — the collector is a
   `LivenessProbe` field (`replace(probe, sync_collector=...)` at `_observe_catalog_entry`), not a
   sixth parameter of `observe_terminal_liveness`; the bundled probe keeps the five-argument

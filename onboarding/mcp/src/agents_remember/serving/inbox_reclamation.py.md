@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-12T17:40+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,7 +23,7 @@ whose subject session is positively confirmed gone.
 
 ### Logic
 
-`plan_confirmed_gone_reclamation` first filters to pending supervisor-created `nudge` or
+`plan_confirmed_gone_reclamation` first filters to pending agent-notifier-created `nudge` or
 `escalation` rows with `subjectAgentId`, deduplicates subjects, and joins one terminal-catalog
 snapshot. Only `terminated` is direct proof. Catalog-absent subjects require one successful
 tmux name snapshot; exact `ar-<subject-id>` absence resolves them, while presence or any
@@ -63,10 +63,10 @@ evidence for this policy.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The aggregate reclamation plan is built from one reconstructed snapshot joined with catalog evidence. | `snapshot` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
+| The aggregate reclamation plan is built from one reconstructed snapshot joined with catalog evidence. | `InboxReclamationPlan` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
 | Terminal catalog entries provide the status and ownership evidence. | `terminal` | mcp/src/agents_remember/serving/terminal_catalog.py:81-94 |
-| Reconstructed tmux snapshots provide the remaining ownership evidence. | `snapshot` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
-| The supervisor imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/supervisor.py:70-70 |
+| Reconstructed tmux snapshots provide the remaining ownership evidence. | `TmuxSessionNameSnapshotter` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
+| The agent-notifier imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/agent_notifier.py:77-77 |
 
 ## Cross-Repo References
 
@@ -77,6 +77,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: removed placeholder findings and narrowed
   reclamation evidence to the snapshot, catalog, policy, and supervisor owners.
 

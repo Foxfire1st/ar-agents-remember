@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T11:50+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ No meaningful cross-repo references found.
 | The component under test. | "export const NotesReaderViewer = memo(NotesReaderViewerImpl)" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:274-274 |
 | The shell driven by the takeover-wiring test. | "export function CockpitShell(" | dashboard/src/cockpit/Cockpit.tsx:850-850 |
 | `masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`. | `masterDoc`; `seedMaster` | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:188-229 |
-| `TaskDocNode`, `Analytics` with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection`, and `metricsFor`. | `TaskDocNode`; `Analytics`; `WorkspaceProjection`; `metricsFor` | dashboard/src/types/projection.ts:79-93; dashboard/src/types/projection.ts:309-316; dashboard/src/types/projection.ts:437-463; dashboard/src/types/projection.ts:507-518 |
+| `TaskDocNode`, `Analytics` with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection`, and `metricsFor`. | `TaskDocNode`; `Analytics`; `WorkspaceProjection`; `metricsFor` | dashboard/src/types/projection.ts:89-103; dashboard/src/types/projection.ts:319-326; dashboard/src/types/projection.ts:437-463; dashboard/src/types/projection.ts:517-529 |
 
 ## Update History
 
@@ -103,7 +103,7 @@ No meaningful cross-repo references found.
   (the cast was gratuitous over an already-complete node), and `metricsFor([])` is a superset of the old
   six-field literal, which no assertion here reads. Also verified why the short `analytics` literal
   still compiles under `satisfies` — `Analytics.agentPickups` and `.expectationRows` are optional in the
-  mirror (cit:(["agentPickups", "expectationRows"], dashboard/src/types/projection.ts:80-80; dashboard/src/types/projection.ts:84-84)) — and recorded it, since that is the one thing that would otherwise look like a
+  mirror (cit:(["agentPickups", "expectationRows"], dashboard/src/types/projection.ts:90-90; dashboard/src/types/projection.ts:94-94)) — and recorded it, since that is the one thing that would otherwise look like a
   type error. Added the cast-free-seed boundary and two two-cell reference rows (this table is
   consistently two columns; the line ranges ride inside the Finding cell rather than adding a third).
 

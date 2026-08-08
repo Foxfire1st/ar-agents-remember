@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash |                                                                   `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |                                                                   2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash |                                                                   `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                                                   2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -30,7 +30,7 @@ long-lived processes must physically **remove** rows, not merely append them:
 
 - The MCP process deletes the inbox rows tied to a cancelled gate (`mcp/tools/gates.py` calling
   `delete_by_gate`) at the moment it cancels the gate.
-- The dashboard's supervisor sweep must resolve and compact under one continuously held lock
+- The dashboard's agent-notifier sweep must resolve and compact under one continuously held lock
   (`reconcile_and_compact`) so that a consume which won the lock stays terminal.
 
 Neither can be moved to the other process without moving the decision it implements. So this is the
@@ -179,7 +179,7 @@ readdress_to=None, current=None)` stamps
 the ladder's next rung AND re-anchors `escalatedAt` to `now` in the SAME snapshot, so the next
 rung's SLA/dwell check is measured from this transition, not the row's original creation. Distinct
 from `mark_escalated` (HFX2-L2's reserved, rung-agnostic "this row is now escalatable" stamp) —
-`escalation_ladder`/`serving/supervisor.py`'s `_escalate_rung` is the only caller of `advance_rung`.
+`escalation_ladder`/`serving/agent_notifier.py`'s `_escalate_rung` is the only caller of `advance_rung`.
 
 260707-HFX2-L8 adds sweep-scale operation support and the ladder terminal state. `record_delivery`,
 `list_redeliverable`, `mark_escalated`, and `advance_rung` accept an optional folded `current`
@@ -240,7 +240,7 @@ agents that cannot receive dashboard session injection.
 | The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | "def log_path" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:63-63 |
 | Pending filters match supplied lifecycle and/or agent keys. | "def list_pending" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:82-82 |
 | Consume is idempotent and appends a consumed snapshot only once. | "def consume" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:127-127 |
-| Redeliverable selection is a pure filter over pending rows: it defaults the per-target rate limit to `DEFAULT_RATE_LIMIT_SECONDS` and delegates the due/limit decision. | `DEFAULT_RATE_LIMIT_SECONDS` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:105-125 |
+| Redeliverable selection is a pure filter over pending rows: it defaults the per-target rate limit to `DEFAULT_RATE_LIMIT_SECONDS` and delegates the due/limit decision. | "else DEFAULT_RATE_LIMIT_SECONDS" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:105-125 |
 | `redelivery_floor_seconds` and `next_attempt_at` are NOT in this module — the delivery-snapshot half of the old claim moved to the shared backoff module, which is also where `redeliverable` itself lives. | `require_redelivery_floor_seconds`; `next_attempt_at`; `redeliverable` | mcp/src/agents_remember/controlplane/inbox_backoff.py:42-52; mcp/src/agents_remember/controlplane/inbox_backoff.py:55-72; mcp/src/agents_remember/controlplane/inbox_backoff.py:111-124 |
 | The strict `_read_unlocked`, the never-unlinking `_replace_unlocked`, and `_exclusive_access` now delegating to the shared contract instead of opening the module's own lockfile. | `_read_unlocked`; `_replace_unlocked`; `_exclusive_access`; `fcntl` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:230-238; mcp/src/agents_remember/controlplane/operator_inbox_store.py:240-245; mcp/src/agents_remember/controlplane/operator_inbox_store.py:247-251; mcp/src/agents_remember/providers/provider_setup.py:22-22 |
 | `OPERATOR_INBOX_OWNERSHIP` carries `compaction_owner=None` and states why no single owner is possible for this log. | `OPERATOR_INBOX_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:182-198 |
@@ -260,6 +260,7 @@ adapter evidence against an existing durable row. None of these transitions call
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: corrected the TRH-L5 lock-held-evidence
   statement — the catalog read left the lock (pre-fetched by the supervisor before
   `reconcile_and_compact`); only the bounded tmux snapshot remains lock-held. Consume authority and

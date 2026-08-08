@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureCanvas.tsx` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`             |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`             |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -402,7 +402,7 @@ Landing refs with `factState: stale` remain visible, carry an explicit state wor
 | The `engineState` selector that derives each workspace engine's runtime. | `engineState` | dashboard/src/data/selectors.ts:123-127 |
 | The bird's-eye recipes it renders with (incl. `engineSpine`/`enginePetal`/`officialWire`/`canopyStroke`/`laneFlag`). | `engineSpine`; `enginePetal`; `officialWire`; `canopyStroke`; `laneFlag` | dashboard/src/panels/engine-room/stage.styles.ts:151-167; dashboard/src/panels/engine-room/stage.styles.ts:171-177; dashboard/src/panels/engine-room/stage.styles.ts:194-194; dashboard/src/panels/engine-room/stage.styles.ts:199-207 |
 | Projection types `EngineProcessEdge`/`EngineProcessNode`. | `EngineProcessEdge`; `EngineProcessNode` | dashboard/src/types/projection.ts:152-160; dashboard/src/types/projection.ts:162-202 |
-| Projection types `CommitRefNode`/`ProviderBootNode`/`LandingRefNode`, and `ProviderNode`. | `CommitRefNode`; `ProviderBootNode`; `LandingRefNode`; `ProviderNode` | dashboard/src/types/projection.ts:111-119; dashboard/src/types/projection.ts:229-239; dashboard/src/types/projection.ts:318-323; dashboard/src/types/projection.ts:325-336 |
+| Projection types `CommitRefNode`/`ProviderBootNode`/`LandingRefNode`, and `ProviderNode`. | `CommitRefNode`; `ProviderBootNode`; `LandingRefNode`; `ProviderNode` | dashboard/src/types/projection.ts:121-129; dashboard/src/types/projection.ts:239-249; dashboard/src/types/projection.ts:328-333; dashboard/src/types/projection.ts:335-346 |
 | 05o T3B — `checking`/`memGated` derivations + the `scanRing` `<circle data-fx="scan">` + `Conduit ghosted` (the `ghostedLane` inner-`<path>` ghost). | "flowConduit,"; `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93; dashboard/src/panels/engine-room/conduits.tsx:70-136; dashboard/src/panels/engine-room/conduits.tsx:8-8 |
 | The `scanRing` recipe is the full cyan stroked, transparent, glow style; `ghostedLane` is the full dim/desaturate style; `Conduit` applies `ghostedLane` to the inner path through `cx(flowConduit(...), ghosted && ghostedLane)`. | "export const scanRing = css({"; "export const ghostedLane = css({ opacity: \"0.32\", filter: \"grayscale(0.45)\" });" | dashboard/src/panels/engine-room/conduits.tsx:70-136; dashboard/src/panels/engine-room/flow.styles.ts:40-46; dashboard/src/panels/engine-room/flow.styles.ts:54-54; dashboard/src/panels/engine-room/conduits.tsx:8-8; dashboard/src/panels/engine-room/conduits.tsx:10-10 |
 | The design prototype supplies the ported canopy bracket geometry, provider wire/flow links, and engine spine/petal decals: its canopy path, `wire`/`flow-g` links, provider geometry, and `.e-spine`/`.e-petal` recipes are present in the prototype. | "class=\"canopy\""; "M58 22 L22 22 L22 58"; "class=\"wire\" id=\"w-m-cgc\""; "class=\"flow-g\" id=\"flow-int-code\""; "id=\"m-cgc\" transform=\"translate(81,102)\""; ".prov .e-spine{stroke:var(--amber);stroke-width:.8;opacity:.28}"; ".prov .e-petal{stroke:var(--amber);stroke-width:1.4;opacity:0;stroke-linecap:round}" | dashboard/public/_proto/podstage.html:76-77; dashboard/public/_proto/podstage.html:186-186; dashboard/public/_proto/podstage.html:189-189; dashboard/public/_proto/podstage.html:208-208; dashboard/public/_proto/podstage.html:240-240; dashboard/public/_proto/podstage.html:270-270 |
@@ -425,6 +425,8 @@ ownership. With effects off, the original structural SVG renders the static end 
 view-box geometry and style classes preserve the visual composition.
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the responsibility split into engine-room sibling modules. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: narrowed the column-geometry claim to its definitions, kept consumer sites in their own finding, and regenerated the final range with the scoped fixer.

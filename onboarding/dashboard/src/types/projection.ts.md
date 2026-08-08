@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:45+02:00                           |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ attempt/escalation timestamps. `AttentionItem.signalTs?` and drift provenance fi
 where the generated schema permits omission.
 cit:([`TaskDocNode`], dashboard/src/types/projection.ts:437-463)
 cit:([`SeriesNode`], dashboard/src/types/projection.ts:346-361)
-cit:([`SeriesSubTaskNode`], dashboard/src/types/projection.ts:369-376)
+cit:([`SeriesSubTaskNode`], dashboard/src/types/projection.ts:379-386)
 
 ### Generated Vocabulary, Model, And Required-Field Structure
 
@@ -111,11 +111,11 @@ counts 2 where 1 is asserted), and "exercises every member of every vocabulary, 
 depend on luck". Weaker than the Python side — import-time refusal there, one test file here — but
 not absent. cit:([`ACTIVE_STATES`], mcp/src/agents_remember/observer/projection.py:236-236) states the same asymmetry from the other side.
 
-**`Metrics` buckets are derived, not listed.** cit:([`Camel`, `StateCountField`, `LifecycleStateCounts`], dashboard/src/types/projection.ts:278-280; dashboard/src/types/projection.ts:282-282; dashboard/src/types/projection.ts:284-284)
+**`Metrics` buckets are derived, not listed.** cit:([`Camel`, `StateCountField`, `LifecycleStateCounts`], dashboard/src/types/projection.ts:288-290; dashboard/src/types/projection.ts:292-292; dashboard/src/types/projection.ts:294-294)
 computes the field name from the state name; `Metrics extends LifecycleStateCounts` gains a REQUIRED field the day a
 live state is filed on `LIVE_STATES` and every object claiming to be a `Metrics` stops compiling until
 it counts it. Filing one on `TERMINAL_STATES` adds no field — the filing doing its job, not an
-omission. cit:([`stateCountField`, `metricsFor`], dashboard/src/types/projection.ts:286-290; dashboard/src/types/projection.ts:309-316) is the runtime twin and the
+omission. cit:([`stateCountField`, `metricsFor`], dashboard/src/types/projection.ts:296-300; dashboard/src/types/projection.ts:319-326) is the runtime twin and the
 client-side mirror of `reducer.py::_metrics`, so a fixture states its lifecycles and gets the metrics
 the server would have sent instead of re-listing buckets beside them.
 
@@ -127,7 +127,7 @@ lower-cases the tail, so `awaiting-DEVELOPER` bucketed to `awaitingDeveloperCoun
 cannot lower-case a tail at the type level and because lower-casing merges two states differing only
 in tail case.
 
-**Two model pairs were un-collapsed.** cit:([`TaskSubTaskRefNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:494-501) are two distinct `extra="forbid"` server models that this mirror had collapsed into one
+**Two model pairs were un-collapsed.** cit:([`TaskSubTaskRefNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:379-386; dashboard/src/types/projection.ts:494-501) are two distinct `extra="forbid"` server models that this mirror had collapsed into one
 interface. The collapse invented a `createdAt` on the master row that the server never sends and lent
 `linkedLifecycleId` to series rows that never carry it. They share five fields and differ in exactly
 one each. cit:([`SubTaskRow`, `SeriesNode`], dashboard/src/types/projection.ts:346-361; dashboard/src/types/projection.ts:515-515) is the union the sub-task index;
@@ -146,7 +146,7 @@ until their fields diverge.
 client-tolerance optionality is gone. Hand-written fixtures must supply them through typed builders or
 the sampled bases rather than weakening the generated contract.
 
-**Additive fields.** cit:([`LandingRefNode`, `observedAt`], dashboard/src/types/projection.ts:229-239) — the ref's own merge/push timestamp, distinct from
+**Additive fields.** cit:([`LandingRefNode`, `observedAt`], dashboard/src/types/projection.ts:239-249) — the ref's own merge/push timestamp, distinct from
 the probe's observation; cit:([`EngineProcessNode`, `carryoverDoneAt`], dashboard/src/types/projection.ts:162-202) — when memory carryover landed,
 absent until it has; cit:([`ExpectationRowNode`], dashboard/src/types/projection.ts:204-215) — one outstanding supervisor expectation
 (`dueAt`/`overdue`), reached from required `Analytics.expectationRows`.
@@ -180,7 +180,7 @@ absent until it has; cit:([`ExpectationRowNode`], dashboard/src/types/projection
 - `TaskDocNode.createdAt` and `SeriesNode.createdAt` are required structured ordering fields supplied
   by the server; `SeriesSubTaskNode.createdAt?` is optional. Consumers may sort by the optional field
   only where the schema permits it, and must not derive creation order by parsing `number` or filename
-  prefixes. cit:([`TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:346-361; dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:437-463)
+  prefixes. cit:([`TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:356-371; dashboard/src/types/projection.ts:379-386; dashboard/src/types/projection.ts:437-463)
 - `SeriesNode.seriesTokenTotal` is server-derived. Dashboard consumers display it; they do not recompute
   it from lifecycle gauges or task-doc rows.
 - `landing` is a required generated list field; consumers need no mirror-side optionality workaround.
@@ -195,8 +195,8 @@ absent until it has; cit:([`ExpectationRowNode`], dashboard/src/types/projection
 - `EngineProcessNode.id` is the stable enclosure id and the join key to `EnclosureNode.enclosure`; `ProviderNode.worktreeGroup` is the join key to the owning enclosure and takes precedence over `ProviderNode.repoId` in topology parenting.
 - Ages (`*Seconds`) and fact-state are server-computed (never `Date.now()`); `nextAction` is display/copy-only until slice 06. Since 260703-L15 the served age fields are also *volatile* to the change gate (excluded from server diff + client merge equality — `data/servedAges.ts`), and displays advance them locally from arrival anchors.
 - `servingBuild?` (260703-L15) is the ONE field NOT mirrored from `projection.py`: it is injected app-side (`serving/build_info.py` via `serving/app.py`) onto `/api/state` and the SSE snapshot only, so it is optional here and absent from persisted `latest-state.json` (a pre-L15 server also sends none).
-- `supervisorHeartbeat?` (260707-HFX2-L2 R5, expanded by HFX2-L8 R6) is a SECOND app-injected, non-`projection.py` field,
-  same posture as `servingBuild?`: `serving/supervisor_heartbeat.py` via `serving/app.py` attaches it
+- `agentNotifierHeartbeat?` (260707-HFX2-L2 R5, expanded by HFX2-L8 R6) is a SECOND app-injected, non-`projection.py` field,
+  same posture as `servingBuild?`: `serving/agent_notifier_heartbeat.py` via `serving/app.py` attaches it
   onto `/api/state` and the SSE snapshot at RESPONSE time, deliberately excluded from the ETag
   change-gate revision (it is a live tick age, not stable content) — so `ageSeconds` can be stale
   relative to the header's cached revision until a real reconnect or another content change forces
@@ -261,12 +261,12 @@ are proven by repository source and tests.
 | The server-side vocabulary writes `LiveState` and `TerminalState` as halves, composes `State`, and builds phase/state tuples through the partition check. | `LiveState`, `TerminalState`, `State`, `Phase`, `STATES`, `LIVE_STATES`, `TERMINAL_STATES` | mcp/src/agents_remember/observer/lifecycle_state.py:109-109; mcp/src/agents_remember/observer/lifecycle_state.py:118-118; mcp/src/agents_remember/observer/lifecycle_state.py:120-120; mcp/src/agents_remember/observer/lifecycle_state.py:124-131; mcp/src/agents_remember/observer/lifecycle_state.py:133-139 |
 | The server-side mirror comment records the same partition shape and the runtime duplicate-within-half limit. | `ACTIVE_STATES` | mcp/src/agents_remember/observer/projection.py:236-236 |
 | The server bucket-name rule uses the preserved-tail camel transform and rejects non-injective mappings. | `state_count_field`, `state_count_fields`, `STATE_COUNT_FIELDS` | mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/observer/projection.py:282-282 |
-| `Camel<S>`, `StateCountField<S>`, `LifecycleStateCounts`, `stateCountField`, `lifecycleStateCounts`, and `Metrics extends LifecycleStateCounts` derive one number per live state. | `Camel`, `StateCountField`, `LifecycleStateCounts`, `stateCountField`, `lifecycleStateCounts`, `Metrics` | dashboard/src/types/projection.ts:278-280; dashboard/src/types/projection.ts:282-282; dashboard/src/types/projection.ts:284-284; dashboard/src/types/projection.ts:286-290; dashboard/src/types/projection.ts:292-301; dashboard/src/types/projection.ts:303-307 |
-| `metricsFor` is the client-side mirror of the reducer rollup. | `metricsFor` | dashboard/src/types/projection.ts:309-316 |
-| `GateNode.evidenceRefs` is required in the generated contract. | `evidenceRefs` | dashboard/src/types/projection.ts:221-221 |
-| `LifecycleProjection.stateEnteredAt` is required in the generated contract. | `stateEnteredAt` | dashboard/src/types/projection.ts:273-273 |
-| `Analytics.expectationRows` is required in the generated contract. | `expectationRows` | dashboard/src/types/projection.ts:84-84 |
-| Generated `ProviderNode.scope`, `repoId`, and `worktreeGroup` are topology inputs in the wire declaration. | `ProviderNode`, `scope`, `repoId`, `worktreeGroup` | dashboard/src/types/projection.ts:325-336 |
+| `Camel<S>`, `StateCountField<S>`, `LifecycleStateCounts`, `stateCountField`, `lifecycleStateCounts`, and `Metrics extends LifecycleStateCounts` derive one number per live state. | `Camel`, `StateCountField`, `LifecycleStateCounts`, `stateCountField`, `lifecycleStateCounts`, `Metrics` | dashboard/src/types/projection.ts:288-290; dashboard/src/types/projection.ts:292-292; dashboard/src/types/projection.ts:294-294; dashboard/src/types/projection.ts:296-300; dashboard/src/types/projection.ts:302-311; dashboard/src/types/projection.ts:313-317 |
+| `metricsFor` is the client-side mirror of the reducer rollup. | `metricsFor` | dashboard/src/types/projection.ts:319-326 |
+| `GateNode.evidenceRefs` is required in the generated contract. | `evidenceRefs` | dashboard/src/types/projection.ts:231-231 |
+| `LifecycleProjection.stateEnteredAt` is required in the generated contract. | `stateEnteredAt` | dashboard/src/types/projection.ts:283-283 |
+| `Analytics.expectationRows` is required in the generated contract. | `expectationRows` | dashboard/src/types/projection.ts:94-94 |
+| Generated `ProviderNode.scope`, `repoId`, and `worktreeGroup` are topology inputs in the wire declaration. | "export interface ProviderNode {" | dashboard/src/types/projection.ts:332-345 |
 | Topology uses provider scope to choose workspace/worktree ownership. | `groupKey`, `buildTopology` | dashboard/src/topology/model.ts:99-99; dashboard/src/topology/model.ts:117-221 |
 | Generated `ProviderNode.role` is a field in the wire declaration. | `ProviderNode` | dashboard/src/types/projection.ts:325-336 |
 | Engine Room labels workspace engines from provider role. | `engineLabel` | dashboard/src/panels/EngineRoom.tsx:68-70 |
@@ -274,23 +274,23 @@ are proven by repository source and tests.
 | Drift snapshot metadata mirrors backend provenance fields used by actionable-drift rows. | `DriftSnapshotNode` | dashboard/src/types/projection.ts:121-131 |
 | Generated `TaskSubTaskRefNode` has `linkedLifecycleId` and no `createdAt`; `SeriesSubTaskNode` has `createdAt` and no `linkedLifecycleId`; `SubTaskRow` unites them. | `TaskSubTaskRefNode`, `SeriesSubTaskNode`, `SubTaskRow` | dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:494-501; dashboard/src/types/projection.ts:515-515 |
 | Generated `SeriesSectionNode` and `TaskSectionNode` are separate declarations, with structural typing remaining a documented limit. | `SeriesSectionNode`, `TaskSectionNode` | dashboard/src/types/projection.ts:363-367; dashboard/src/types/projection.ts:465-469 |
-| `TaskDocNode.id`, required `createdAt`, optional `lifecycleId`, and master-navigation fields are generated here. | `TaskDocNode`, `id`, `createdAt`, `lifecycleId`, `subTasks`, `sections`, `masterLifecycleId` | dashboard/src/types/projection.ts:437-463 |
-| `SeriesNode` carries `SeriesSubTaskNode[]`, `SeriesSectionNode[]`, and `seriesTokenTotal`. | `SeriesNode`, `seriesTokenTotal` | dashboard/src/types/projection.ts:346-361 |
+| `TaskDocNode.id`, required `createdAt`, optional `lifecycleId`, and master-navigation fields are generated here. | "export interface TaskDocNode {" | dashboard/src/types/projection.ts:437-463 |
+| `SeriesNode` carries `SeriesSubTaskNode[]`, `SeriesSectionNode[]`, and `seriesTokenTotal`. | `SeriesNode`, `seriesTokenTotal` | dashboard/src/types/projection.ts:356-371 |
 | Generated `ATTENTION_SEVERITIES` / `ATTENTION_LANES` tuples and derived `AttentionItem` fields. | `ATTENTION_SEVERITIES`, `ATTENTION_LANES`, `AttentionItem` | dashboard/src/types/projection.ts:31-31; dashboard/src/types/projection.ts:35-35; dashboard/src/types/projection.ts:95-109 |
 | FEUI-L7 optional owner identity and redelivery/escalation fields on `AgentPickupNode`, with required `attemptCount`. | `AgentPickupNode`, `attemptCount` | dashboard/src/types/projection.ts:54-77 |
 | `PROCESS_FACT_STATES` is the process-fact honesty vocabulary. | `PROCESS_FACT_STATES` | dashboard/src/types/projection.ts:39-39 |
 | `PROCESS_HEALTHS` is the process-health honesty vocabulary. | `PROCESS_HEALTHS` | dashboard/src/types/projection.ts:43-43 |
-| Generated `CommitRefNode`, `ProviderBootNode`, and `EngineProcessEdge` declarations carry no `refusedPolarity`. | `CommitRefNode`, `ProviderBootNode`, `EngineProcessEdge` | dashboard/src/types/projection.ts:111-119; dashboard/src/types/projection.ts:152-160; dashboard/src/types/projection.ts:318-323 |
-| `LandingRefNode.at?` is distinct from the probe's `observedAt`. | `LandingRefNode`, `at`, `observedAt` | dashboard/src/types/projection.ts:229-239 |
+| Generated `CommitRefNode`, `ProviderBootNode`, and `EngineProcessEdge` declarations carry no `refusedPolarity`. | `CommitRefNode`, `ProviderBootNode`, `EngineProcessEdge` | dashboard/src/types/projection.ts:121-129; dashboard/src/types/projection.ts:162-170; dashboard/src/types/projection.ts:328-333 |
+| `LandingRefNode.at?` is distinct from the probe's `observedAt`. | "export interface LandingRefNode {" | dashboard/src/types/projection.ts:233-246 |
 | `EngineProcessNode` includes optional `carryoverDoneAt?`. | `EngineProcessNode`, `carryoverDoneAt` | dashboard/src/types/projection.ts:162-202 |
-| `ExpectationRowNode` and required `Analytics.expectationRows` form the supervisor expectation surface. | `ExpectationRowNode`, `expectationRows` | dashboard/src/types/projection.ts:84-84; dashboard/src/types/projection.ts:204-215 |
+| `ExpectationRowNode` and required `Analytics.expectationRows` form the supervisor expectation surface. | `ExpectationRowNode`, `expectationRows` | dashboard/src/types/projection.ts:94-94; dashboard/src/types/projection.ts:214-225 |
 | The Python projection producer defines gate evidence, lifecycle entry time, and expectation rows. | `GateNode`, `LifecycleProjection`, `ExpectationRowNode` | mcp/src/agents_remember/observer/projection.py:76-96; mcp/src/agents_remember/observer/projection.py:99-138; mcp/src/agents_remember/observer/projection.py:422-438 |
 | The Python producer defines task sub-task references and task sections. | `TaskSubTaskRefNode`, `TaskSectionNode` | mcp/src/agents_remember/observer/projection.py:575-592; mcp/src/agents_remember/observer/projection.py:595-605 |
 | The Python producer defines series sub-tasks and series sections. | `SeriesSubTaskNode`, `SeriesSectionNode` | mcp/src/agents_remember/observer/projection.py:657-672; mcp/src/agents_remember/observer/projection.py:675-682 |
 | The Python producer defines engine carryover and analytics expectation projections. | `EngineProcessNode`, `Analytics` | mcp/src/agents_remember/observer/projection.py:832-900; mcp/src/agents_remember/observer/projection.py:956-987 |
-| `SupervisorHeartbeat` mirrors the app-injected wire shape, not a `projection.py` model. | `SupervisorHeartbeat` | dashboard/src/types/projection.ts:412-420 |
+| `AgentNotifierHeartbeat` mirrors the app-injected wire shape, not a `projection.py` model. | `AgentNotifierHeartbeat` | dashboard/src/types/projection.ts:54-62 |
 | `WorkspaceProjection` is the top-level generated shape. | `WorkspaceProjection` | dashboard/src/types/projection.ts:517-528 |
-| The app-side payload builder names the `SupervisorHeartbeatPayload` wire shape. | `SupervisorHeartbeatPayload` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:31-52 |
+| The app-side payload builder names the `AgentNotifierHeartbeatPayload` wire shape. | `AgentNotifierHeartbeatPayload` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:31-55 |
 | The contract guard measures the mirror in three directions and derives `VOCABULARIES`. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:268-293 |
 
 ## Series-Contract Notes
@@ -306,6 +306,7 @@ No meaningful cross-repository implementation source governs this repository-loc
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T13:01:29+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: reconciled generated projection citations against the frozen source, removed unsupported or duplicate claims, and regenerated scoped citation ranges.
 
 - 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: rewrote the live card for generated

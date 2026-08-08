@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/code-seam.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T02:39+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ No external domain documentation applies to this repository-local catalog.
 | --- | --- | --- |
 | This package-data catalog copy carries promoted CS-6 scaling and reclamation with D1-D4, the health-first queue invariant, two catching engagements, and the future gate mechanization seam. | `### CS-6 — Scaling & reclamation *(promoted — 2 catches)*` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/code-seam.md:70-83 |
 | Root `skills/` is the canonical source tree and `scripts/sync-skills.py` propagates it into the MCP package-data copy and all eight harness package copies. | `CANONICAL_SKILLS`, `TARGETS`, `sync_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-56; scripts/sync-skills.py:195-203 |
-| The reviewer role binds `code-seam` at master-exit, super-exit, and applicable leaf full-loop reviews, and keeps the promotion ratchet as the catalog amendment path. | "code-seam", "master-exit", "super-exit" | skills/l-01-agent-lifecycles/roles/reviewer.md:64-66 |
+| The reviewer role binds `code-seam` at master-exit, super-exit, and applicable leaf full-loop reviews, and keeps the promotion ratchet as the catalog amendment path. | "Which catalogs bind:" | skills/l-01-agent-lifecycles/roles/reviewer.md:60-60 |
 
 ## Cross-Repo References
 
@@ -90,6 +90,7 @@ No sibling repository evidence is needed for this catalog.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-03T03:59:59+02:00 — Curated 6 citation claims (3 table rows, 3 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 
 - 2026-07-10T02:39+02:00 — HFX3 retro curation: refreshed CS-6 from candidate/D1-D3 wording to

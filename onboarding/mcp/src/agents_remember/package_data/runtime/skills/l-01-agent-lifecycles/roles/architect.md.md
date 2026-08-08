@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash |                                            `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |                                            2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash |                                            `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                            2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -94,7 +94,7 @@ owner-never-self-approves still holds.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The canonical architect role is defined in the cited source file. | `# Lifecycle — Architect` | skills/l-01-agent-lifecycles/roles/architect.md:1-264 |
-| The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | `architect` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:95-124 |
+| The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:99-99 |
 | The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:22-38; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:429-448 |
 | The design hat the architect wears inline when shaping intent or task docs. | `designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-18 |
 
@@ -110,9 +110,10 @@ No sibling repository evidence is needed for this orchestration role file.
 
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
 
-
 ## Update History
-- 2026-08-05T23:30+02:00 — 260731-EFA-L16 curator: recorded the drawing-board doctrine naming — the Design And Drawing Board section now points at `tasks/AGENTS.md` (task-collaboration doctrine) as the decomposition discipline for the phase: reviewable reframing, explicit assumptions/truth gaps/invariants/non-goals, typed evidence plan, examples before risky change, plan derived from the framing (developer ruling; corrected from an initial whether-a-task-is-needed misreading). Verification metadata stays pinned until closeout stamps the L16 commit.
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
+"- 2026-08-05T23:30+02:00 — 260731-EFA-L16 curator: recorded the drawing-board doctrine naming — the Design And Drawing Board section now points at `tasks/AGENTS.md` (task-collaboration doctrine) as the decomposition discipline for the phase: reviewable reframing, explicit assumptions/truth gaps/invariants/non-goals, typed evidence plan, examples before risky change, plan derived from the framing (developer ruling; corrected from an initial whether-a-task-is-needed misreading). Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-05T22:10+02:00 — 260731-EFA-L16 curator: recorded the spawn-doctrine binding (role seats only via `spawn_agent_session`; native fan-out scoped to solo build per the developer correction) and the Opening-Move `system/tools.md` standing read — as the repo's tool inventory, phrased generically because the shipped role files span repos whose memory layers name different tools; widened from the solo-build-only naming after the developer noted tools.md is not just the quality gate. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: restored canonical/package-data source ownership
   citations and removed the unsupported hosted-cutover impact section.

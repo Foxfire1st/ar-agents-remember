@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_app_routes.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -76,10 +76,12 @@ shape, optionally protocol-backed). `_write_task_documents` writes a real master
 | --- | --- | --- |
 | The routes and handlers under test. |"async def stream_events"|mcp/src/agents_remember/serving/_app_common.py:112-112|
 | The happy paths these arms sit beside. | `AppTests`, `TerminalWebSocketTests` | mcp/tests/test_serving.py:480-554; mcp/tests/test_terminal_ws.py:422-449 |
-| The same app's background loops and lifespan wiring. | `SupervisorLoopTests` | mcp/tests/test_serving_app_background_loops.py:220-272 |
+| The same app's background loops and lifespan wiring. | `AgentNotifierLoopTests` | mcp/tests/test_serving_app_background_loops.py:220-272 |
 | Helper-level arms of the same module. | `ImageSniffTests` | mcp/tests/test_serving_helper_behaviour.py:100-139 |
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
   exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

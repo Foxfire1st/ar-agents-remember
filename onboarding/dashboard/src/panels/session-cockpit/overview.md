@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -15,6 +15,14 @@
 [panels overview](../overview.md)
 
 ## 260731-EFA-L8 Change
+
+### 260713-TES-L1 Rename — Heartbeat UI
+
+The session-cockpit heartbeat surface is renamed with the sweep: `BusPane` / `SeatInspector` /
+`SessionRail` / `sessionRailParts` and the sessions-view body/controller now type and key the
+heartbeat as `AgentNotifierHeartbeat` / `agentNotifierHeartbeat` and render "Agent notifier
+heartbeat" (was "Supervisor heartbeat"). Fixtures and tests were updated to the new type and key;
+the rail-bus footer remains removed and liveness stays in the top bar.
 
 `SessionsView` moved to `sessions-view/` with controller/body/palette/styles
 modules and six behavior-split test files. Shared surfaces gained parts/styles
@@ -400,6 +408,7 @@ The session-cockpit route gained the L7 live-thinking coalescing (one stable `th
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the live-thinking coalescing and file-size coverage for session-cockpit. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (sessions-view split, parts modules, e2e app fixes). Verification metadata stays pinned until closeout stamps the code commit.
 
@@ -409,7 +418,7 @@ The session-cockpit route gained the L7 live-thinking coalescing (one stable `th
   enforced by nothing"* — the outer two nodes of a four-node chain, which reads as though nothing
   measures the mirror against the snapshot. It does: `test/contract.test.ts` measures
   `types/projection.ts` against `fixtures/snapshot.json` in three TYPE-level directions
-  (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror`; cit:(["mirror ⊇ served", "served ⊇ mirror", "fixture ⊇ mirror"], dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45)) plus runtime `VOCABULARIES`
+  (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror`; cit:(["mirror ⊇ served — the server grows", "served ⊇ mirror — the mirror declares", "fixture ⊇ mirror — THE ORACLE ITSELF"], dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45)) plus runtime `VOCABULARIES`
   assertions cit:([`VOCABULARIES`], dashboard/src/test/contract.test.ts:268-283) for the string unions `resolveJsonModule` widens to `string`. The
   paragraph now names all three links and states the unheld one as **`snapshot.json` ↔
   `observer/projection.py`, by hand** rather than as "`mirror ⊆ server`" — one letter from

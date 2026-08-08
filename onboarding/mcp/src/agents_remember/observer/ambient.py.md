@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/ambient.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T20:09+02:00                      |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -173,7 +173,7 @@ attribute, not a module `global`); `ambient()` / `install_ambient` /
 **260707-HFX2-L2 R5:** `AmbientLifecycle` gained a read-only `root` property returning
 `self._store.root` (the observer store root, `logs/observer`) — a one-line accessor, no new state.
 It exists so the `mcp/tools/base.py::_tool_payload` choke point can resolve the observer root and
-check the supervisor sweep's heartbeat row (`serving/supervisor_heartbeat.py`) opportunistically on
+check the agent-notifier sweep's heartbeat row (`serving/agent_notifier_heartbeat.py`) opportunistically on
 every tool call, without constructing its own `McpRuntimeConfig` just to find that path. `ambient()`
 was already the process-singleton entry point every tool call goes through, so this reuses that
 existing seam rather than adding a second one.
@@ -234,8 +234,8 @@ existing seam rather than adding a second one.
 | `end` is pinned to hold no string constant from `TERMINAL_STATES` and to convert through the shared function — a structural test, because a copy that happens to agree passes a behavioural one. | `test_the_end_signal_names_no_terminal_state_of_its_own` | mcp/tests/test_observer_ambient.py:181-189 |
 | The append-only store the ambient writes events to. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | The `ar-observer-event/v1` envelope every signal emits. | `OBSERVER_EVENT_SCHEMA` | mcp/src/agents_remember/observer/events.py:23-23 |
-| `mcp/tools/base.py::_tool_payload` delegates to `application/tool_response.py::complete_tool_response`, the choke point that calls `ambient().emit_tool(...)` for every public tool and (260707-HFX2-L2) reads `.root` to check the supervisor heartbeat. | `complete_tool_response`; `emit_tool` | mcp/src/agents_remember/mcp/tools/base.py:73-75; mcp/src/agents_remember/application/tool_response.py:47-61 |
-| The supervisor heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5). | "the watcher must be code AND watched" | onboarding/mcp/src/agents_remember/serving/supervisor_heartbeat.py.md:20-20 |
+| `mcp/tools/base.py::_tool_payload` delegates to `application/tool_response.py::complete_tool_response`, the choke point that calls `ambient().emit_tool(...)` for every public tool and (260707-HFX2-L2) reads `.root` to check the agent-notifier heartbeat. | "def complete_tool_response("; "amb.emit_tool(" | mcp/src/agents_remember/application/tool_response.py:49-63; mcp/src/agents_remember/application/tool_response.py:62-62 |
+| The agent-notifier heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5). | "the watcher must be code AND watched" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:1-1 |
 | The served-onboarding ledger store this owns (per-lifecycle `served.jsonl`). | `ServedStore` | mcp/src/agents_remember/observer/served_store.py:78-121 |
 | The `read_ar_files` application entry point that calls `emit_read_packet` + the `amb.served.is_served`/`record`/`reset` dedup surface. | `emit_read_packet`; `is_served` | mcp/src/agents_remember/application/read_files.py:105-133; mcp/src/agents_remember/application/read_files.py:301-303; mcp/src/agents_remember/application/read_files.py:357-379 |
 | The heartbeat/stale idiom this generalizes. | `SetupProgressFile` | mcp/src/agents_remember/providers/setup_progress.py:54-170 |
@@ -246,6 +246,7 @@ existing seam rather than adding a second one.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded the round-13
   production fix — `_default_ticker_wait`'s monotonic-deadline chunked wait with stop recheck
   replaces `Event.wait` (no wedged-wait path), `start(ticker_wait=...)` is the keyword-only

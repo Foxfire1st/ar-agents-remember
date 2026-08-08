@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/change_watcher.py`  |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash |                                                      `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |                                                      2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |                                                      `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                                      2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ dot-prefixed sidecar temps, **every control-plane lockfile, by suffix, in any wa
 (see below), the projection's own outputs (`latest-state.json`/
 `latest-metrics.json`, defensive — they also live *outside* every watched subdirectory), and the
 `workspace/` non-input churn by name **only when the parent dir is `workspace`** (the raw event
-river `events.jsonl` + its cursor/lock files and the supervisor's own heartbeat row). A lifecycle's
+river `events.jsonl` + its cursor/lock files and the agent-notifier's own heartbeat row). A lifecycle's
 `events.jsonl` is NOT confused with the workspace river.
 
 ### 260731-EFA-L5 The Lockfile Exclusion Is Derived, Not Spelled Out
@@ -67,7 +67,7 @@ that function** rather than written down. `is_projection_input_event` suffix-mat
 `_EXCLUDED_WORKSPACE_NAMES` while `lock_path_for` had moved to `operator-inbox.jsonl.lock`, so the
 exclusion silently stopped matching anything — a filter that looks correct and filters nothing. The
 name is now out of that set entirely; the set keeps only `events.jsonl`, the workspace cursor and
-lock, and the supervisor heartbeat.
+lock, and the agent-notifier heartbeat.
 
 **Suffix-and-everywhere is what the old list structurally could not express.** Five of the six
 durable logs live only under `workspace/`, but `gates.jsonl` lives there **and once per lifecycle**
@@ -184,7 +184,7 @@ the CLI/daemon own the `--heartbeat` knob's plumbing.
 | `lock_path_for` — the single source this module derives its lockfile suffix from, so the filter cannot drift out of step with the stores again. | `lock_path_for` | mcp/src/agents_remember/controlplane/durable_store.py:291-298 |
 | The tick entry whose readers define the watched input surfaces. | `project_and_write` | mcp/src/agents_remember/observer/projection_store.py:212-275 |
 | The projector side: `ProjectionRefreshers` (all three live inputs enabled together), pacer construction (watcher present ⇒ `ChangePacer`, absent ⇒ legacy `sleep(self._interval)`), change-or-heartbeat waking in `run`, and the `_on_watch_task_done` fail-open callback. | `ProjectionRefreshers`, `_on_watch_task_done` | mcp/src/agents_remember/serving/projector.py:107-118; mcp/src/agents_remember/serving/projector.py:238-249 |
-| `create_app(cadence=ProjectionCadence(heartbeat=…), live_inputs=LiveProjectionInputs(change_watch=…))`: watcher enabled iff `replay.before_tick is None` (sim replay stays time-driven) via `change_watcher=ProjectionInputWatcher(config) if enabled.change_watch else None`; the three live-input toggles resolve together in `LiveProjectionInputs.resolved()`. | "class LiveProjectionInputs:" | mcp/src/agents_remember/serving/_app_common.py:404-404 |
+| `create_app(cadence=ProjectionCadence(heartbeat=…), live_inputs=LiveProjectionInputs(change_watch=…))`: watcher enabled iff `replay.before_tick is None` (sim replay stays time-driven) via `change_watcher=ProjectionInputWatcher(config) if enabled.change_watch else None`; the three live-input toggles resolve together in `LiveProjectionInputs.resolved()`. | "class LiveProjectionInputs:" | mcp/src/agents_remember/serving/_app_common.py:405-405 |
 | The `--interval` flag re-documented as the fast-path cadence floor (L101-L109) and the `--heartbeat` flag (L110-L118), plus the reload/daemon heartbeat plumbing (`_dev_app` L76-L80, the reload env hand-off L218-L221, `serving_daemon.ensure` L294). | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:52-81 |
 | The client-side volatile-age advancement that makes heartbeat-resolution time-derived fields acceptable (R4). | `VOLATILE_AGE_FIELDS` | dashboard/src/data/servedAges.ts:16-22 |
 | The R1-R7 regression suite: root derivation, event filtering including lockfile-suffix cases, domain mapping, pure pacer deadlines, projector integration (heartbeat-only quiet world, debounce-bounded change, burst coalescing, loud degrades, derivation-failure retry, legacy no-watcher pacing), and one real-inotify end-to-end pass. | `ProjectionInputRootsTests`, `InputEventFilterTests`, `ProjectionDomainMappingTests`, `ChangePacerDeadlineTests`, `AdaptiveProjectorTests`, `RealWatchfilesIntegrationTests` | mcp/tests/test_change_watcher.py:48-95; mcp/tests/test_change_watcher.py:98-139; mcp/tests/test_change_watcher.py:142-170; mcp/tests/test_change_watcher.py:173-221; mcp/tests/test_change_watcher.py:252-441; mcp/tests/test_change_watcher.py:444-485 |
@@ -206,6 +206,7 @@ all domains so correctness fails open to a full refresh.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 16 initial citation findings (8 anchor, 0 prose, 8 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-08-01T19:45+02:00 — 260731-EFA-L5 (durable store integrity). The card described the

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -111,7 +111,7 @@ readiness, liveness/activity, delivery evidence, interactions, and terminal proj
 operator-inbox rows are the only inter-agent message roots; the adapter is only their delivery wire,
 and explicit recipient `consume` is the sole acknowledgement. Pane text, terminal logs, copy mode,
 paste echoes, and timing windows are diagnostic-only and cannot authorize readiness, delivery,
-completion, or supervisor action. The older pane/log/paste descriptions retained below are historical
+completion, or agent-notifier action. The older pane/log/paste descriptions retained below are historical
 route history, not current authority.
 
 **`HarnessSubmissionAuthority` is the sole epoch-bound prompt/setter
@@ -215,18 +215,18 @@ matching seats `status:"landed"` via `landing.py` + `seat.landed`, keeps them vi
 the dashboard, and leaves manual retire as the explicit terminating path for stuck/abandoned/duplicate
 or harmful seats; `POST /api/terminal/landed-cleanup` closes only rows still marked landed and reports
 closed/skipped counts. The
-**deterministic supervisor sweep** (P-15 tiers 1+2, "the model is never the polling layer"): a
-third decoupled-cadence lifespan task (`supervisor.py::run_supervisor_sweep`, default ~10s,
+**deterministic agent-notifier sweep** (P-15 tiers 1+2, "the model is never the polling layer"): a
+third decoupled-cadence lifespan task (`agent_notifier.py::run_agent_notifier_sweep`, default ~10s,
 settings-controlled) that reads `TerminalCatalog`/`OperatorInboxStore`/`ExpectationRowStore`/the
 nudge store DIRECTLY (never the projection), evaluates five mechanical predicates — pane-state
 (new `pane_signals.py`), expectation-deadline expiry, turn-report staleness (`missing_artifact()`
 gets its first caller), unacked-row redelivery, and seat-liveness (the liveness/turn-state join with graceful
 degradation) — and acts: redeliver via the shared injector, auto-nudge, owner-addressed signal-emit, or
 hand off to the escalation ladder's reserved stub, logging every action as an
-`orchestration.supervisor.*` observer event. New `supervisor_heartbeat.py` gives the sweep its own
+`orchestration.agent-notifier.*` observer event. New `agent_notifier_heartbeat.py` gives the sweep its own
 self-liveness tick row (issue #15, "the watcher must be code AND watched"), surfaced as a fail-loud
 MCP-tool banner (`mcp/tools/base.py`) and a dashboard header badge (`/api/state`/SSE).
-The escalation ladder fills that reserved stub: `supervisor.py` gains two more predicates
+The escalation ladder fills that reserved stub: `agent_notifier.py` gains two more predicates
 (`evaluate_escalation_findings`/`evaluate_dead_upstream_findings`) and two more actions
 (`_escalate_rung`/`_signal_dead_upstream`), calling through the new
 `controlplane/escalation_ladder.py` walker (governed by the `controlplane/` overview) for rung
@@ -239,20 +239,20 @@ find_orphaned_workers`) as orphans in the same respawn event, never auto re-pare
 absorbing the dead manager's role. No new hot loop, no new `InboxMessageKind` values — rung 1 reuses
 `nudge`, rung 2/3/respawn/dead-upstream reuse `escalation`, distinguishable via the dedicated
 `orchestration.escalation.rung`/`.respawn`/`.dead-upstream` events.
-The supervisor keeps its observation cadence independent from its delivery/escalation
-cadence: `supervisor.py` passes the redelivery floor into hosted delivery, checks the new
-`controlplane/supervisor_signals.py` cooldown store before repeated pane/seat-liveness owner signals,
+The agent-notifier keeps its observation cadence independent from its delivery/escalation
+cadence: `agent_notifier.py` passes the redelivery floor into hosted delivery, checks the new
+`controlplane/agent_notifier_signals.py` cooldown store before repeated pane/seat-liveness owner signals,
 and skips `pane-signal: mid-turn` as busy-state noise. `app.py` wires the new store plus
-`settings.supervisor.signal_cooldown_seconds` into `SupervisorContext`; `inbox_delivery.py` threads
+`settings.agent_notifier.signal_cooldown_seconds` into `AgentNotifierContext`; `inbox_delivery.py` threads
 the redelivery floor into every stored delivery snapshot.
-The supervisor is chain-aware and manager-first: stale expectation/report/
+The agent-notifier is chain-aware and manager-first: stale expectation/report/
 seat/inbox/escalation predicates defer when the same leaf chain has progressed; nudge, signal, and
 dead-upstream actions resolve the current responsible manager; one row can transition at most once per
 sweep; and completion/artifact posts are readdressed and hosted-delivered to the current manager.
 Unbound reviewer/curator progress is credited in the subject worktree; unbound worker active-phase
 credit remains an accepted follow-up.
 
-Release-tail hardening covers the same supervisor path: delivery-failure inbox rows whose
+Release-tail hardening covers the same agent-notifier path: delivery-failure inbox rows whose
 delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redelivery domain until
 `PERSISTENT_FAILURE_ATTEMPTS` or `escalatedAt`; the generic unacked escalation ladder skips them
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
@@ -419,7 +419,7 @@ time-driven; a running daemon picks the new pacing up only via explicit stop + s
 adopts healthy daemons).
 
 Confirmed-gone inbox reconciliation runs at the front of the deterministic
-supervisor sweep. The bounded policy resolves only eligible supervisor nudge/escalation rows:
+  agent-notifier sweep. The bounded policy resolves only eligible agent-notifier nudge/escalation rows:
 catalog termination is direct proof, compacted tombstones require one successful exact-name tmux
 snapshot, and command failure fails closed. Resolve-plus-compact runs under the inbox lock before
 redelivery; the body-free aggregate event is silent on no-op sweeps. The existing TTL/cap fallback
@@ -428,20 +428,20 @@ and active/landed/exited retention remain unchanged.
 Seat normalization is centralized in `seat_binding.py`: `spawnRole` is immutable
 provenance, `seatRole` is current binding, and uniqueness is one live owner per canonical
 leaf-role pair. `terminal_catalog.py` migrates old rows; opener/assignment liveness-check the
-same-role holder; attach requires identity for an untyped hand-opened harness; retire/supervisor/
-landing paths consume binding identity. The supervisor also preserves role in findings, rows,
+  same-role holder; attach requires identity for an untyped hand-opened harness; retire/agent-notifier/
+  landing paths consume binding identity. The agent-notifier also preserves role in findings, rows,
 cooldowns, coalescing, and events, and uses one injected sweep timestamp for delivery writes.
 
 Harness JSONL is the only submitted-delivery authority across spawn, inbox,
-supervisor redelivery, and REST paste. `harness_logs.py` discovers/binds a recent cwd-matching
+agent-notifier redelivery, and REST paste. `harness_logs.py` discovers/binds a recent cwd-matching
 Claude/Codex log; `injector.py` separates message and command evidence with calibrated 40.3 s/29.0
 s windows; `terminal_paste.py` owns one Enter re-press and one verified-absence clear/replace
 re-paste, with pane capture restricted to duplicate prevention and failure diagnostics. The catalog
 persists resolved knobs, log id/path, and `replacementForLeaf`; safe binding re-reads the latest row.
-Codex knobs ride explicit argv, and the supervisor's synchronous redelivery budget defaults to one.
+Codex knobs ride explicit argv, and the agent-notifier's synchronous redelivery budget defaults to one.
 
 A live sixty-second workspace-river compactor runs over virtual locked cursors, full task bodies are
-served only through `GET /api/task-document`, and the supervisor is current-manager-first,
+  served only through `GET /api/task-document`, and the agent-notifier is current-manager-first,
 chain-progress-aware, and one-rung-per-row-per-sweep. The always-on state/SSE projection remains
 body-free for task documents.
 
@@ -577,7 +577,7 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 
 - `cadence.py` — `ProjectionCadence(interval, heartbeat)` + `DEFAULT_PROJECTION_CADENCE`. The one
   pacing decision every dashboard process shares, kept **stdlib-only** so the import-light daemon
-  supervisor can name a spawned child's cadence without importing the projector (and, through it,
+  agent-notifier can name a spawned child's cadence without importing the projector (and, through it,
   the serving stack).
 
 - `hosted_session_runtime.py` — `HostedSessionRuntime(catalog, host)`. The pair of authorities that
@@ -603,7 +603,7 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   carries the boot-time `servingBuild` stamp),
   `GET /api/stream` (the `state` SSE endpoint, delegating to the testable
   `stream_events(projector, build=…)` — it consumes one atomic projector subscription, decorates
-  both initial and first-recovery snapshots with `servingBuild`/supervisor identity, preserves
+  both initial and first-recovery snapshots with `servingBuild`/agent-notifier identity, preserves
   delta framing, and explicitly closes the iterator on disconnect/cancellation),
   `GET /api/events` (the raw channel, delegating to `stream_raw_events`; fresh
   connections start from lifecycle-aware retained offsets while valid
@@ -736,8 +736,9 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   free of any `serving.conversation` import so it stays importable before that package exists —
   the conversation surface's own additions live in `conversation/response_contract.py`.
 - `served_state.py` — the **served projection contract**: `ServedWorkspaceProjection`
-  (`WorkspaceProjection` plus the two OPTIONAL serve-time keys `servingBuild` and
-  `supervisorHeartbeat`), `SERVED_TAIL_FIELDS`, and `served_state_tail(build=, heartbeat=)` — the
+  (`WorkspaceProjection` plus the OPTIONAL serve-time keys `servingBuild`,
+  `agentNotifierHeartbeat`, and the legacy `supervisorHeartbeat` alias during the 260713-TES-L1
+  rename window), `SERVED_TAIL_FIELDS`, and `served_state_tail(build=, heartbeat=)` — the
   one place the tail is built, with the build half dumped `exclude_none=True` (absence, never a
   fabricated fact) and the heartbeat half dumped WITHOUT it (explicit nulls, because "never ticked"
   is a reported state). The tail stays off `WorkspaceProjection` on purpose: it is serve-time not
@@ -992,9 +993,9 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   settings-defined non-native harnesses. A harness id is on the wire, fixed argv stays in registry
   or validated settings, and normalized native model/effort never becomes a generated session
   command or paste.
-- `supervisor.py` — the deterministic supervisor sweep, also the
+- `agent_notifier.py` — the deterministic agent-notifier sweep, also the
   P-15 tier-3 ladder + dead-man-respawn host and the
-  bounded dead-seat-storm terminator: `SupervisorContext` (the
+  bounded dead-seat-storm terminator: `AgentNotifierContext` (the
   one seam every predicate/action reads through — stores + catalog/host/paster, injected directly,
   never the projection, plus the `escalation_sla_seconds`/`escalation_rung_seconds`/
   `respawn_after_rung` plain-primitive knobs and `redeliver_budget`), the eight predicate functions
@@ -1003,7 +1004,7 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `evaluate_dead_upstream_findings`/`evaluate_ladder_terminal_findings`), the action dispatcher (`act_on_finding` →
   `_redeliver`/`_auto_nudge`/`_signal_emit`/`_escalate_rung`/`_signal_dead_upstream`/
   `_resolve_ladder_terminal`, each logging an
-  `orchestration.supervisor.*` or `orchestration.escalation.rung` event), and `run_supervisor_sweep`
+  `orchestration.agent-notifier.*` or `orchestration.escalation.rung` event), and `run_agent_notifier_sweep`
   (one in-sweep inbox snapshot/index → evaluate → bounded act → tick the heartbeat unconditionally,
   now including inbox backlog counts and last sweep duration). Gives `missing_artifact()` its first
   caller; `mark_missed` stays the sweep's own reserved transition, while `mark_escalated` and the
@@ -1019,9 +1020,9 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   over the same captured text — deliberately not merged).
   `_HARNESS_BLOCKED_PATTERNS["codex"]` carries the issue #20 quota/rate-limit modal markers, and
   `blocked_reason_label` + `composer_state` are the two signatures `harness_adapters.py` composes.
-- `supervisor_heartbeat.py` — the self-liveness primitive (issue #15): an
-  atomic-overwrite single-row `SupervisorHeartbeatStore` (`logs/observer/workspace/
-  supervisor-heartbeat.json`), `heartbeat_age_seconds`, and `supervisor_staleness_banner` (silent
+- `agent_notifier_heartbeat.py` — the self-liveness primitive (issue #15): an
+  atomic-overwrite single-row `AgentNotifierHeartbeatStore` (`logs/observer/workspace/
+  supervisor-heartbeat.json`), `heartbeat_age_seconds`, and `agent_notifier_staleness_banner` (silent
   when never-ticked, a fail-loud one-liner past the staleness cutoff) — consumed by the MCP tool
   choke point and the dashboard header payload. The heartbeat row also carries volatile
   `pendingInboxCount`, `redeliverableInboxCount`, and `lastSweepDurationSeconds`.
@@ -1037,7 +1038,7 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   instead of two independent `TerminalPaster.paste` call sites. Wraps `TerminalPaster.paste`
   unchanged, reads `harness_adapters.get_adapter` for the blocked-check (against the FINAL capture)
   and the turn-started corroboration, and never retries itself — retries stay the caller's (the
-  supervisor's) decision. `DeliveryRow`'s `envelope=False` on both current callers keeps the exact
+  agent-notifier's) decision. `DeliveryRow`'s `envelope=False` on both current callers keeps the exact
   pre-existing wire format for the spawn-brief path and avoids double-heading the inbox path's own
   `_push_text` header.
 - `__init__.py` — package docstring only; `delta`/`projector` stay importable without FastAPI.
@@ -1139,8 +1140,8 @@ current hosted-session authority.
   (default 15s); watcher absence or failure degrades LOUDLY to legacy fixed-interval ticking —
   fail-open, never fail-silent, never a crash. `--sim` replay is always time-driven, and an
   already-running daemon adopts the new pacing only through explicit stop + spawn.
-- **The supervisor sweep is stores-not-projections, code-not-model.**
-  `supervisor.py` imports nothing from `projector.py`/`observer/reducer.py`; every predicate reads
+- **The agent-notifier sweep is stores-not-projections, code-not-model.**
+  `agent_notifier.py` imports nothing from `projector.py`/`observer/reducer.py`; every predicate reads
   its store directly. Own decoupled cadence (settings-controlled, default 10s), zero model calls
   anywhere in the loop, level-triggered (a missed action is caught by the next sweep). The
   heartbeat's staleness is a volatile age (same posture as `servingBuild`): never gates the
@@ -1257,8 +1258,8 @@ neighboring repository governs this route.
 | `WireResponse` is strict (`extra="forbid"`), frozen, `populate_by_name`, and camel-aliased; the three shared refusal tables are also defined here. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:1057-1063; mcp/src/agents_remember/serving/response_contract.py:1067-1074; mcp/src/agents_remember/serving/response_contract.py:1079-1087 |
 | The catalog wire model and the `TerminalSessionsResponse`/`DetectedHarnessesResponse` declarations. | `TerminalCatalogEntryWire`; `TerminalSessionsResponse`; `DetectedHarnessesResponse` | mcp/src/agents_remember/serving/response_contract.py:280-346; mcp/src/agents_remember/serving/response_contract.py:349-352; mcp/src/agents_remember/serving/response_contract.py:363-366 |
 | `OnboardingResolution` declares the five-shape union for `GET /api/files/onboarding`. | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:709-715 |
-| `ServedWorkspaceProjection` (the projection plus the two optional serve-time keys), `SERVED_TAIL_FIELDS`, and `served_state_tail` with its opposite null rules per half. | `ServedWorkspaceProjection`; `SERVED_TAIL_FIELDS`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:58-58; mcp/src/agents_remember/serving/served_state.py:63-78 |
-| `ServingBuildPayload` and `SupervisorHeartbeatPayload` — the two tail halves as declared models rather than hand-built dicts; `ServingBuild.payload()` returns the model and collapses clean-and-unprovable to `None`. | `ServingBuildPayload`; `ServingBuild`; `SupervisorHeartbeatPayload` | mcp/src/agents_remember/serving/build_info.py:43-63; mcp/src/agents_remember/serving/build_info.py:66-88; mcp/src/agents_remember/serving/supervisor_heartbeat.py:31-52 |
+| `ServedWorkspaceProjection` (the projection plus the two optional serve-time keys), `SERVED_TAIL_FIELDS`, and `served_state_tail` with its opposite null rules per half. | `ServedWorkspaceProjection`; `SERVED_TAIL_FIELDS`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:48-59; mcp/src/agents_remember/serving/served_state.py:62-66; mcp/src/agents_remember/serving/served_state.py:71-90 |
+| `ServingBuildPayload` and `AgentNotifierHeartbeatPayload` — the two tail halves as declared models rather than hand-built dicts; `ServingBuild.payload()` returns the model and collapses clean-and-unprovable to `None`. | `ServingBuildPayload`; `ServingBuild`; `AgentNotifierHeartbeatPayload` | mcp/src/agents_remember/serving/build_info.py:43-63; mcp/src/agents_remember/serving/build_info.py:66-88; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:31-55 |
 | The declarations on `app.py`'s own routes: the `/api/state` 200/304/503 trio, `/api/task-document`, the two SSE routes' per-frame models, the `202` on `POST /api/actions/{action}`, the websocket exemption comment, and the two FastAPI-validated catalog routes. | "def _register_projection_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"; "def _register_action_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"; "def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/serving/_app_routes.py:115-115; mcp/src/agents_remember/serving/_app_routes.py:386-386; mcp/src/agents_remember/serving/_app_terminal_routes.py:126-126 |
 | The route-inventory, validated-route hazard, per-route conformance and declared-surface-coverage suites enforce the contract on routes FastAPI does not validate. | `ServingRouteInventoryTests`; `ValidatedRouteHazardTests`; `ServingResponseConformanceTests`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance.py:500-632; mcp/tests/test_serving_response_conformance.py:635-704; mcp/tests/test_serving_response_conformance.py:792-899; mcp/tests/test_serving_response_conformance_live.py:484-484 |
 | The served-state tail rules, the populated 200 body, the body-less 304, and the bare-node `delta` asymmetry are bound by the served-state route and snapshot conformance suites. | `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests`; `delta` | mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
@@ -1276,9 +1277,9 @@ neighboring repository governs this route.
 | The transport design (SSE, snapshot-then-deltas, raw channel, sim, placement). | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design`; `## 2. The Event Substrate`; `## 3. Gates and the Return Channel`; `## 5. Placement and Packaging` | docs/design/observable-lifecycle.md:1-402 |
 | The containment metrics sampler + store the lifespan loop drives. | `ProviderMetricsStore`; `sample_provider_containers` | mcp/src/agents_remember/providers/metrics.py:231-360; mcp/src/agents_remember/providers/metrics.py:363-420 |
 | The provider degradation detector the sampling loop also calls once per tick; governed by the `mcp/` package overview. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
-| The expectation-row, operator-inbox, orchestration-nudge, signal-cooldown, and observer-event stores. | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | mcp/src/agents_remember/controlplane/expectation_rows.py:156-336; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251; mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127; mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215; mcp/src/agents_remember/observer/store.py:103-171 |
-| The `orchestration.supervisor` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s supervisor loop re-reads per-use. | "class SupervisorSettings:"; "async def _supervisor_loop(runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:272-272; mcp/src/agents_remember/serving/_app_lifespan.py:97-97 |
-| The MCP tool choke point that surfaces the supervisor staleness banner on every tool call. | `_tool_payload`; `_supervisor_banner` | mcp/src/agents_remember/application/tool_response.py:22-31; mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| The expectation-row, operator-inbox, orchestration-nudge, signal-cooldown, and observer-event stores. | `ExpectationRowStore`; "class OperatorInboxStore"; `OrchestrationNudgeStore`; `AgentNotifierSignalCooldownStore`; `EventStore` | mcp/src/agents_remember/controlplane/expectation_rows.py:156-336; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251; mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127; mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220; mcp/src/agents_remember/observer/store.py:103-171 |
+| The `orchestration.agentNotifier` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s agent-notifier loop re-reads per-use. | "class AgentNotifierSettings:"; "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:275-275; mcp/src/agents_remember/serving/_app_lifespan.py:97-97 |
+| The MCP tool choke point that surfaces the agent-notifier staleness banner on every tool call. | `_tool_payload`; `_agent_notifier_banner` | mcp/src/agents_remember/application/tool_response.py:22-31; mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | The sole epoch-bound prompt/setter timeline and its authoritative status/withdrawal model. | `HarnessSubmissionAuthority`; `withdraw` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
 | The daemon/IPC/client boundary for raw-free lifecycle operations and first-byte classification. | `register_harness_control_routes`; `_dispatch`; `_exchange_control` | mcp/src/agents_remember/serving/harness_control_api.py:182-217; mcp/src/agents_remember/serving/harness_control_client.py:534-568; mcp/src/agents_remember/serving/harness_control_ipc.py:159-171 |
 
@@ -1397,7 +1398,7 @@ The concepts introduced across the existing modules, grouped by what they name:
 - **Bounds chosen as one budget.** `BridgeLimits` (`harness_control_bridge.py`), `SubmissionLimits`
   (`harness_submission_authority.py`), `PiAdapterLimits` (`pi_rpc_adapter.py`),
   `TerminalCatalogLivenessConfig` (now in `terminal_catalog.py`), `AcceptanceWindow` +
-  `PasteRecoveryLadder` (`terminal_paste.py`), `EscalationSchedule` (`supervisor.py`),
+  `PasteRecoveryLadder` (`terminal_paste.py`), `EscalationSchedule` (`agent_notifier.py`),
   `ReadinessWait` (`hosted_readiness.py`), `BoundedPageRequest` (`codex_app_server_history.py`).
 - **Identity / scope that must travel together.** `TerminalLaunchRequest` + `SpawnProvenance` +
   `SpawnKnobs` + `ControlRunnerRequest` (`terminal_opener.py`), `TerminalSessionSpec`
@@ -1411,7 +1412,7 @@ The concepts introduced across the existing modules, grouped by what they name:
   (`conversation/active/status.py`), `SubmittedContent` (`conversation/control/attachments.py`),
   `StartedTurn` (`codex_app_server_adapter.py`), `TranscriptCorrelation`
   (`claude_stream_state.py`), `SeatClosure` (`retire.py`, also written by `landing.py`),
-  `OwnerSignal` (`supervisor.py`), `_DeliveryOutcome` + `InboxDeliveryLog` + `RedeliveryFloor` +
+  `OwnerSignal` (`agent_notifier.py`), `_DeliveryOutcome` + `InboxDeliveryLog` + `RedeliveryFloor` +
   `DeliveryAdmission` (`inbox_delivery.py`), `ExpectedEcho` (`harness_control_claude.py`),
   `StagedAssetClaim` (`harness_control_ipc.py`), `ItemPlacement` + `_LiveItemContext` +
   `_CollabCall` (`conversation/projectors/codex.py`), `_TaskIdentity`
@@ -1525,7 +1526,7 @@ crossing, and no claim that these types are "kept in sync" is true.
 
 `served_state.py` declares what `/api/state` and the SSE `snapshot` frame actually emit:
 `ServedWorkspaceProjection` is a `WorkspaceProjection` plus two OPTIONAL serve-time keys,
-`servingBuild` and `supervisorHeartbeat`. Before this both were injected into the dumped projection
+`servingBuild` and `agentNotifierHeartbeat`. Before this both were injected into the dumped projection
 with nothing declaring them, so feeding a served body back through `WorkspaceProjection`
 (`extra="forbid"`) raised on the extra keys — the emitted object was outside its own model.
 
@@ -1542,7 +1543,7 @@ revision, so a volatile age never busts the `/api/state` ETag and the 304 path k
 `served_state_tail(build=…, heartbeat=…)` is the one assembly point, and the two halves serialize
 under **opposite** null rules, which is why it is two dumps and not one: the build half uses
 `exclude_none=True` (an unresolvable commit, an unbuilt bundle and an unprovable tree are OMITTED —
-absence is never a fabricated "clean"), while the heartbeat half is dumped WITHOUT it (a supervisor
+absence is never a fabricated "clean"), while the heartbeat half is dumped WITHOUT it (an agent-notifier
 that never ticked reports explicit nulls, because the cockpit distinguishes "never ticked" from
 "this server does not report a heartbeat"). `SERVED_TAIL_FIELDS` names exactly the keys the
 assembly may add so it and the model cannot drift apart silently. There is deliberately **no
@@ -1559,11 +1560,11 @@ coordination root that is actually populated (an empty temp root made every coll
   written `True if self.dirty else None`, so proven-clean (`False`) and unprovable (`None`) both
   collapse to absent and the wire still never fabricates a "clean" fact. `ServingBuild`'s own
   dataclass fields and the tri-state `dirty` are unchanged.
-- **`supervisor_heartbeat.py`** — new `SupervisorHeartbeatPayload`, deliberately distinct from the
-  durable `SupervisorHeartbeat` ROW: it is what a reader computes ABOUT that row at response time
+- **`agent_notifier_heartbeat.py`** — new `AgentNotifierHeartbeatPayload`, deliberately distinct from the
+  durable `AgentNotifierHeartbeat` ROW: it is what a reader computes ABOUT that row at response time
   (the row's counters plus the age and the staleness verdict against the configured cutoff).
-- **`app.py`** — `stream_events`'s `supervisor_heartbeat` parameter is typed
-  `SupervisorHeartbeatPayload | None` instead of `dict[str, Any] | None`, and both the `/api/state`
+- **`app.py`** — `stream_events`'s `agent_notifier_heartbeat` parameter is typed
+  `AgentNotifierHeartbeatPayload | None` instead of `dict[str, Any] | None`, and both the `/api/state`
   body and the SSE snapshot now merge `served_state_tail(...)` rather than assigning the two keys by
   hand. Route declarations: `/api/state` declares `ServedWorkspaceProjection` plus a **body-less
   304** and a 503; `/api/task-document` declares the observer's `TaskDocNode`; `/api/stream`
@@ -1613,7 +1614,7 @@ day) ended with three repairs on this route. The liveness sweep's hosted-interac
 no longer runs inside `TerminalCatalog.batch()`: the sweep collects `_PendingInteractionSync`
 evidence and `_run_deferred_interaction_syncs` drains it after the commit — the collector rides
 the `LivenessProbe` seam bundle beside the observer it defers, so no call signature grew. The
-supervisor sweep fetches its catalog snapshot BEFORE the inbox transaction (the lock-held
+agent-notifier sweep fetches its catalog snapshot BEFORE the inbox transaction (the lock-held
 fold → resolve → compact itself is byte-for-byte untouched, L5's declared exception), accepting
 only benign one-directional staleness (a false keep, never a false resolve). And blocking store
 I/O left the uvicorn loop: control `resolve_entry`, the active side's projector resolution, and
@@ -1627,10 +1628,19 @@ endpoint shape, or sweep cadence changed.
 
 ## 260731-EFA-L7 — Serving Split In Place
 
-The three serving files reassigned to L7 under OQ1 Option A were split in place, not moved: `serving/app.py` (1,973) → facade + `_app_{common,lifespan,routes,terminal_routes}.py`; `serving/supervisor.py` (1,282) → facade + `_supervisor_{actions,evaluation}.py`; `serving/conversation/models.py` (1,302) → facade + `_models_{blocks,operations,status,telemetry,wire}.py`. `serving/conversation/projectors/codex.py` (1,223 → 704) gained `_codex_collab.py` and the exact `turn/diff/updated` silent-method route (R16); `serving/harness_control_client.py` (1,225 → 704) gained `_harness_control_parsing.py`. Every facade's base surface is pinned by `mcp/tests/test_facade_surface.py`.
-
+The three serving files reassigned to L7 under OQ1 Option A were split in place, not moved: `serving/app.py` (1,973) → facade + `_app_{common,lifespan,routes,terminal_routes}.py`; `serving/agent_notifier.py` (1,282) → facade + `_agent_notifier_{actions,evaluation}.py`; `serving/conversation/models.py` (1,302) → facade + `_models_{blocks,operations,status,telemetry,wire}.py`. `serving/conversation/projectors/codex.py` (1,223 → 704) gained `_codex_collab.py` and the exact `turn/diff/updated` silent-method route (R16); `serving/harness_control_client.py` (1,225 → 704) gained `_harness_control_parsing.py`. Every facade's base surface is pinned by `mcp/tests/test_facade_surface.py`.
 
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the six-module supervisor → agent-notifier
+  rename reshaped this route's sweep subsystem (`agent_notifier.py`,
+  `agent_notifier_heartbeat.py`, `agent_notifier_models.py`, `_agent_notifier_actions.py`,
+  `_agent_notifier_evaluation.py`); events are dual-emitted under `orchestration.agent-notifier.*`
+  + legacy `orchestration.supervisor.*`, the served heartbeat rides `agentNotifierHeartbeat` +
+  legacy `supervisorHeartbeat`, the settings family is `orchestration.agentNotifier` (explicit
+  legacy alias), and the seat-liveness ask prefixes are one identity. Retained artifact names
+  (`supervisor-heartbeat.json`, `supervisor-signals.jsonl`) stay byte-identical. Verification
+  metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 route impact: recorded the in-place serving facade splits (app/supervisor/models/codex/harness_control_client) and their surface pin. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/served_state.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T15:10+02:00                           |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-08T21:20+02:00                           |
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -17,9 +17,10 @@
 ## Purpose
 
 `served_state.py` declares what `GET /api/state` and the SSE `snapshot` frame ACTUALLY put on
-the wire, which is not a `WorkspaceProjection`. It is that projection plus a two-key serve-time
-tail — `servingBuild` (which process is answering) and `supervisorHeartbeat` (how long ago the
-supervisor last ticked, as of *this* response). Both keys were written into an
+the wire, which is not a `WorkspaceProjection`. It is that projection plus a serve-time
+tail — `servingBuild` (which process is answering) and `agentNotifierHeartbeat` (how long ago the
+agent-notifier last ticked, as of *this* response), with the legacy `supervisorHeartbeat` key
+riding the same payload during the 260713-TES-L1 rename window. Both keys were written into an
 already-validated, already-dumped dict with nothing declaring them, so the emitted object was
 outside its own model: feeding a served body back through `WorkspaceProjection`
 (`model_config = ConfigDict(extra="forbid")`, `observer/projection.py` L967-L970) raised on the
@@ -32,42 +33,46 @@ tail.
 
 Two exports and one constant, all small:
 
-- **`ServedWorkspaceProjection(WorkspaceProjection)`** (cit:([`ServedWorkspaceProjection`], mcp/src/agents_remember/serving/served_state.py:47-55)) adds exactly
-  `servingBuild: ServingBuildPayload | None = None` and
-  `supervisorHeartbeat: SupervisorHeartbeatPayload | None = None`. Both are OPTIONAL rather
+- **`ServedWorkspaceProjection(WorkspaceProjection)`** (cit:([`ServedWorkspaceProjection`], mcp/src/agents_remember/serving/served_state.py:48-60)) adds exactly
+  `servingBuild: ServingBuildPayload | None = None`,
+  `agentNotifierHeartbeat: AgentNotifierHeartbeatPayload | None = None`, and the legacy
+  `agentNotifierHeartbeat: AgentNotifierHeartbeatPayload | None = None` alias (260713-TES-L1).
+  All are OPTIONAL rather
   than required, because `stream_events(projector)` driven with neither a build stamp nor a
   heartbeat reader serves a snapshot with neither key, and that is a valid served body — the
   conformance suite drives that path.
-- **`SERVED_TAIL_FIELDS`** (cit:([`SERVED_TAIL_FIELDS`], mcp/src/agents_remember/serving/served_state.py:58-58)) names the two keys as data: exactly this model's extension
+- **`SERVED_TAIL_FIELDS`** (cit:([`SERVED_TAIL_FIELDS`], mcp/src/agents_remember/serving/served_state.py:62-67)) names the three keys as data: exactly this model's extension
   over the projection it wraps, so the assembly and the contract cannot drift apart silently.
-- **`served_state_tail(*, build, heartbeat)`** (cit:([`served_state_tail`], mcp/src/agents_remember/serving/served_state.py:63-78)) returns the JSON-ready tail dict to be
+- **`served_state_tail(*, build, heartbeat)`** (cit:([`served_state_tail`], mcp/src/agents_remember/serving/served_state.py:71-90)) returns the JSON-ready tail dict to be
   merged onto a **copy** of the memoized projection dump. It is two `model_dump` calls and not
   one, because the two halves serialize under opposite rules: a missing build fact is OMITTED
   (`build.payload().model_dump(mode="json", exclude_none=True)` — absence is not a fabricated
   claim), while a missing heartbeat fact is an explicit NULL
-  (`heartbeat.model_dump(mode="json")`, no `exclude_none` — a supervisor that never ticked is a
-  reported state, not a missing key). `exclude_none` is recursive, so one shared dump could not
-  express both.
+  (`heartbeat.model_dump(mode="json")`, no `exclude_none` — an agent-notifier that never ticked is
+  a reported state, not a missing key), and the heartbeat payload is emitted under BOTH
+  `agentNotifierHeartbeat` and the legacy `supervisorHeartbeat` key during the rename window.
+  `exclude_none` is recursive, so one shared dump could not express both.
 
 Both call sites are in `serving/app.py` and both are one line: `stream_events` does
-`payload.update(served_state_tail(build=build, heartbeat=supervisor_heartbeat))` under
+`payload.update(served_state_tail(build=build, heartbeat=agent_notifier_heartbeat))` under
 `if delta.event == "snapshot"` (cit:(["async def stream_events(", "def _state_response(runtime: _ServingRuntime, if_none_match: str"], mcp/src/agents_remember/serving/_app_common.py:112-112; mcp/src/agents_remember/serving/_app_routes.py:72-72)), and `_state_response` does the same against
-`runtime.build` and `_supervisor_heartbeat_payload(runtime)`.
+`runtime.build` and `_agent_notifier_heartbeat_payload(runtime)`.
 
 ### Conventions
 
-Field names here are the **wire** names (`servingBuild`, `supervisorHeartbeat`), not snake_case
+Field names here are the **wire** names (`servingBuild`, `agentNotifierHeartbeat`, plus the
+legacy `supervisorHeartbeat` alias), not snake_case
 with an alias generator — they mirror `WorkspaceProjection`, whose fields are already camelCase
 by declaration. The two payload types are owned by the modules that produce them
-(`ServingBuildPayload` in `build_info.py`, `SupervisorHeartbeatPayload` in
-`supervisor_heartbeat.py`); this module only composes them.
+(`ServingBuildPayload` in `build_info.py`, `AgentNotifierHeartbeatPayload` in
+`agent_notifier_heartbeat.py`); this module only composes them.
 
 ### Invariants And Boundaries
 
 - **The tail is deliberately NOT on `WorkspaceProjection`.** The module docstring records five
   reasons in ascending order of cost, and all five are load-bearing:
   1. **Layer.** `Projector` builds the projection at TICK time; both keys are serving-layer
-     facts computed at SERVE time (`_supervisor_heartbeat_payload` is explicitly "the tick age
+     facts computed at SERVE time (`_agent_notifier_heartbeat_payload` is explicitly "the tick age
      at RESPONSE time"). A tick-time model cannot hold a per-response value.
   2. **The dump memo.** `app._ProjectionBodyCache` (cit:(["class _ProjectionBodyCache:"], mcp/src/agents_remember/serving/_app_common.py:58-58)) memoizes the ~1.3 MB
      projection dump per published instance *because* the volatile tail is merged onto a
@@ -114,7 +119,7 @@ suite rather than per-request validation.
 | --- | --- | --- |
 | The strict base this model extends: `WorkspaceProjection` with `extra="forbid"`, which is what made the two injected keys a contract violation. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:976-995 |
 | The build half of the tail, and the `exclude_none` honest-unknown rule `served_state_tail` applies to it. | `ServingBuildPayload` | mcp/src/agents_remember/serving/build_info.py:43-63 |
-| The heartbeat half of the tail, serialized WITHOUT `exclude_none` so a never-ticked supervisor reports explicit nulls. | `SupervisorHeartbeatPayload` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:31-52 |
+| The heartbeat half of the tail, serialized WITHOUT `exclude_none` so a never-ticked agent-notifier reports explicit nulls; the payload rides both wire keys during the rename window. | `AgentNotifierHeartbeatPayload` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:31-55 |
 | The two consumers: the SSE snapshot merge and the `/api/state` merge onto a copy of the memoized dump, plus the memo itself. | "async def stream_events("; "def _state_response(runtime: _ServingRuntime, if_none_match: str" | mcp/src/agents_remember/serving/_app_common.py:112-112; mcp/src/agents_remember/serving/_app_routes.py:72-72 |
 | The suite that validates the real route's and the real generator's output against `ServedWorkspaceProjection`, since per-request validation is deliberately not done. | `test_state_body_validates_against_the_served_model`; `test_snapshot_validates_and_delta_carries_no_tail` | mcp/tests/test_served_state_conformance.py:310-328; mcp/tests/test_served_state_conformance.py:364-394 |
 
@@ -127,6 +132,11 @@ No external repository boundary is involved; this is the serving app's own wire 
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `agentNotifierHeartbeat` wire
+  rename, the legacy `supervisorHeartbeat` alias declared alongside it, the three-key
+  `SERVED_TAIL_FIELDS`, and the dual-key emission in `served_state_tail`. Verification metadata
+  pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-02T20:43+02:00 — W2-B08: anchored 2 served-state consumer/conformance references with exact app and test anchors; ranges remain generated by the scoped fixer. Verification metadata stays pinned until closeout.
 

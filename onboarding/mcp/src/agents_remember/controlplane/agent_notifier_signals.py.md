@@ -1,13 +1,13 @@
-# mcp/src/agents_remember/controlplane/supervisor_signals.py
+# mcp/src/agents_remember/controlplane/agent_notifier_signals.py
 
 | Field                  | Value                                                          |
 | ---------------------- | -------------------------------------------------------------- |
 | repository             | agents-remember                                                |
-| path                   | `mcp/src/agents_remember/controlplane/supervisor_signals.py`   |
+| path                   | `mcp/src/agents_remember/controlplane/agent_notifier_signals.py` |
 | doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-08-01T20:15+02:00 |
-| lastVerifiedCommitHash |                                                                `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |                                                                2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-08T21:20+02:00 |
+| lastVerifiedCommitHash |                                                                `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                                                2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                                  |
 
 ## Governing Overview
@@ -16,9 +16,19 @@
 
 ## Purpose
 
-Persisted cooldown memory for supervisor-owned pane/seat-liveness signals. It prevents the
-deterministic supervisor sweep from minting a new owner-addressed inbox row every sweep for the same
+Persisted cooldown memory for agent-notifier-owned pane/seat-liveness signals. It prevents the
+deterministic agent-notifier sweep from minting a new owner-addressed inbox row every sweep for the same
 target owner, leaf, finding kind, and detail.
+
+### 260713-TES-L1 Rename
+
+Module renamed from `supervisor_signals.py`; Python identifiers are `AgentNotifierSignalRecord`,
+`AgentNotifierSignalTarget`, `AgentNotifierSignalKey`, `AgentNotifierSignalCooldownStore`, and the
+ownership constant `AGENT_NOTIFIER_SIGNAL_OWNERSHIP`. Retained byte-identical during the
+compatibility window (durable/on-disk surfaces): the schema string `ar-supervisor-signal/v1`
+(`AGENT_NOTIFIER_SIGNAL_SCHEMA`), the log filename `supervisor-signals.jsonl` (`log_path()`),
+and the ownership label `store="supervisor-signals"`. Removal rides the schema migration that owns
+the cooldown log.
 
 ## Code Commentary
 
@@ -32,7 +42,7 @@ durability harness (`mcp/tests/_store_durability.py`, driven by
 `test_controlplane_store_durability.py`) is what produces a loss rate at all, and no recorded
 base-commit run of it is in the tree. What matters structurally is checkable without the number:
 like attention-dismissals, this happened to a store with a **single writer** — the dashboard's
-supervisor sweep is the only thing that appends a signal and the only thing that compacts the
+agent-notifier sweep is the only thing that appends a signal and the only thing that compacts the
 cooldown log.
 
 The lesson the leaf drew from that pair is recorded in the code and belongs on this card: "only one
@@ -53,12 +63,12 @@ All file I/O now routes through `controlplane/durable_store.py` under
   sweep's cooldown snapshot.
 - `_replace` no longer unlinks an emptied log and no longer builds its own temp path; it delegates
   to `durable_store.rewrite_lines`, which refuses unless the calling thread holds the lock.
-- `SupervisorSignalRecord` now inherits `DurableRecord`, picking up `extra="forbid"` (previously
+- `AgentNotifierSignalRecord` now inherits `DurableRecord`, picking up `extra="forbid"` (previously
   declared locally) plus a validated `schemaVersion`: unknown major rejected, unknown minor
   accepted, and this store's tolerant reader skips a rejected row.
 
 **Read policy: tolerant, and it stays tolerant.** A torn, legacy or version-skewed line is a
-durability event, not a reason to freeze the supervisor sweep that folds this non-authoritative
+durability event, not a reason to freeze the agent-notifier sweep that folds this non-authoritative
 cooldown log. The consequence is worth stating: `_compact_locked` reclaims from that tolerant read,
 so an unparseable cooldown row is dropped permanently by a compaction. The failure mode is
 fail-open — a signal that could have been suppressed is sent again — which is why it is acceptable
@@ -72,26 +82,26 @@ unchanged.
 
 ### 260707-HFX2-L13 CS-6 Update
 
-`SupervisorSignalCooldownStore` is no longer an unbounded per-finding full-file fold: reads skip malformed rows, `in_cooldown(records=...)` consumes a sweep snapshot, and `compact()` atomically retains only records inside the cooldown window.
+`AgentNotifierSignalCooldownStore` is no longer an unbounded per-finding full-file fold: reads skip malformed rows, `in_cooldown(records=...)` consumes a sweep snapshot, and `compact()` atomically retains only records inside the cooldown window.
 
 ### Logic
 
-`SupervisorSignalRecord` is the strict JSONL record shape for one posted supervisor signal. Its
+`AgentNotifierSignalRecord` is the strict JSONL record shape for one posted agent-notifier signal. Its
 dedupe key is the tuple `_signal_emit` supplies: `targetAgentId`, `targetLifecycleId`,
 `targetRole`, `leafKey`, `findingKind`, and `detail`, plus the stored `deliveryState` returned by
 the hosted inbox delivery attempt.
 
-`SupervisorSignalCooldownStore(observer_root)` writes `workspace/supervisor-signals.jsonl`.
+`AgentNotifierSignalCooldownStore(observer_root)` writes `workspace/supervisor-signals.jsonl`.
 `append(record)` creates the workspace directory and appends one alias-rendered JSON row. `read()`
-parses the current full file into `SupervisorSignalRecord` rows.
+parses the current full file into `AgentNotifierSignalRecord` rows.
 
 Two frozen parameter objects (260731-EFA-L2) make the dedupe key a value rather than a keyword
 list:
 
-- **`SupervisorSignalTarget(agent_id=None, lifecycle_id=None, role=None, leaf_key=None,
+- **`AgentNotifierSignalTarget(agent_id=None, lifecycle_id=None, role=None, leaf_key=None,
   seat_role=None)`** — the owner inbox a signal is addressed to. Derived as one routing decision by
-  `derive_signal_owner` and stamped verbatim onto every `SupervisorSignalRecord`.
-- **`SupervisorSignalKey(target, finding_kind, detail)`** — what makes two signals "the same
+  `derive_signal_owner` and stamped verbatim onto every `AgentNotifierSignalRecord`.
+- **`AgentNotifierSignalKey(target, finding_kind, detail)`** — what makes two signals "the same
   signal" for cooldown purposes: the same target told the same thing. **Every field is compared,
   all of them or none** — a partial match is a different signal and must not suppress delivery.
 
@@ -105,15 +115,15 @@ next valid signal can be posted and persisted.
 ### Conventions
 
 The store mirrors the control-plane JSONL-store style but is intentionally small: no MCP surface, no
-catalog read, and no delivery itself. `serving/supervisor.py` is the production caller that decides
-the routed owner, checks this store, posts the inbox row, and appends the cooldown record.
+catalog read, and no delivery itself. `serving/agent_notifier.py` is the production caller that
+decides the routed owner, checks this store, posts the inbox row, and appends the cooldown record.
 
 ### Invariants And Boundaries
 
 - The cooldown floor is shared with inbox redelivery and cannot be below 900 seconds.
 - The key is owner/leaf/kind/detail scoped; different owner addresses or different finding details
   are allowed to post independently.
-- This store records supervisor signal cooldown only. It does not consume inbox rows, ack
+- This store records agent-notifier signal cooldown only. It does not consume inbox rows, ack
   expectations, deliver hosted messages, or decide the escalation ladder.
 - **Locked unconditionally, single writer notwithstanding.** `append` and `compact` both take
   `exclusive_access`. The single-writer claim is a deployment fact and is enforced only as far as
@@ -131,8 +141,8 @@ is **resolved**: `compact(now=, retain_seconds=)` reclaims records outside the c
 returns the sweep's snapshot (added at HFX2-L13; made lock-safe at 260731-EFA-L5). What remains is
 the hot-path half — `in_cooldown()` still reaches `read()` through `last_sent()` once per
 pane/seat-liveness finding when the caller passes no `records` snapshot, which is a CS-6/L7-class
-cost on the supervisor path. `serving/supervisor.py` does pass the snapshot, so the production path
-is bounded. Non-blocking while `orchestration.supervisor.enabled` remains disabled.
+cost on the agent-notifier path. `serving/agent_notifier.py` does pass the snapshot, so the production path
+is bounded. Non-blocking while `orchestration.agent-notifier.enabled` remains disabled.
 
 ## Docs References
 
@@ -147,13 +157,13 @@ supervisor control-plane state.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `SupervisorSignalRecord` defines the persisted signal-cooldown key fields and delivery state. | `SupervisorSignalRecord` | mcp/src/agents_remember/controlplane/supervisor_signals.py:27-41 |
-| The store resolves `workspace/supervisor-signals.jsonl`, reads it tolerantly, and appends under the log's lock after the declared-writer check. | `SupervisorSignalCooldownStore` | mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215 |
-| `last_sent` matches on the whole `SupervisorSignalKey` (target plus kind plus detail) and `in_cooldown` enforces the shared redelivery floor before comparing elapsed time. | `in_cooldown` | mcp/src/agents_remember/controlplane/supervisor_signals.py:131-155 |
-| `compact` holds one `exclusive_access` across the new `_compact_locked` read-filter-rewrite half, and `_replace` delegates to `rewrite_lines` without unlinking. | `SupervisorSignalCooldownStore` | mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215 |
-| `SUPERVISOR_SIGNAL_OWNERSHIP` names the dashboard sole writer and compaction owner, and states why the log is locked all the same. | `SUPERVISOR_SIGNAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:212-221 |
-| `_signal_emit` checks this cooldown before posting and appends a record after the inbox signal delivery attempt. | "def _signal_emit(" | mcp/src/agents_remember/serving/_supervisor_actions.py:407-407 |
-| The serving app imports `SupervisorSignalCooldownStore` and wires "signal_cooldown_seconds = (" into each supervisor context. | "signal_cooldown_store=SupervisorSignalCooldownStore(root),",  | mcp/src/agents_remember/serving/_app_lifespan.py:82-82 |
+| `AgentNotifierSignalRecord` defines the persisted signal-cooldown key fields and delivery state. | `AgentNotifierSignalRecord` | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:30-46 |
+| The store resolves `workspace/supervisor-signals.jsonl` (retained name), reads it tolerantly, and appends under the log's lock after the declared-writer check. | `AgentNotifierSignalCooldownStore` | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-135 |
+| `last_sent` matches on the whole `AgentNotifierSignalKey` (target plus kind plus detail) and `in_cooldown` enforces the shared redelivery floor before comparing elapsed time. | "def in_cooldown(" | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:136-173 |
+| `compact` holds one `exclusive_access` across the `_compact_locked` read-filter-rewrite half, and `_replace` delegates to `rewrite_lines` without unlinking. | `AgentNotifierSignalCooldownStore` | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220 |
+| `AGENT_NOTIFIER_SIGNAL_OWNERSHIP` names the dashboard sole writer and compaction owner (retained label `store="supervisor-signals"`), and states why the log is locked all the same. | `AGENT_NOTIFIER_SIGNAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:212-221 |
+| `_signal_emit` checks this cooldown before posting and appends a record after the inbox signal delivery attempt. | "def _signal_emit(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:434-434 |
+| The serving app imports `AgentNotifierSignalCooldownStore` and wires "signal_cooldown_seconds = (" into each agent-notifier context. | "signal_cooldown_store=AgentNotifierSignalCooldownStore(root),",  | mcp/src/agents_remember/serving/_app_lifespan.py:82-82 |
 | The 900-second floor constant and the shared validator that refuses anything below it. | `MIN_REDELIVERY_INTERVAL_SECONDS`, `require_redelivery_floor_seconds` | mcp/src/agents_remember/controlplane/inbox_backoff.py:26-26; mcp/src/agents_remember/controlplane/inbox_backoff.py:42-52 |
 
 ## Cross-Repo References
@@ -163,15 +173,16 @@ No meaningful cross-repo references found.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Same-repository supervisor state only. | N/A | N/A |
-
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: moved this card to the renamed module path; recorded the `AgentNotifierSignal*` identifiers and the retained durable names (`ar-supervisor-signal/v1`, `supervisor-signals.jsonl`, `store="supervisor-signals"`) with their migration removal point. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-03T02:46:27+02:00 — W3-B05 curator: anchored 5 Tier-2 table citations and 1 Tier-2 prose citation with exact source paths; fixer generated all ranges.
 - 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass). **One stale citation and one
   unsourced number.** The `SUPERVISOR_SIGNAL_OWNERSHIP` row cited `durable_store.py`
   **L327-L336**; the constant is at **L398** — the file grew 598 → 699 lines mid-pass, so every
   range written earlier is off. Replaced with a symbol-name citation and no range. Re-read the three
-  citations into this module's own source and left them: `SupervisorSignalRecord` (cit:([`SupervisorSignalRecord`], mcp/src/agents_remember/controlplane/supervisor_signals.py:27-41)), the path/read/append row L83-L107 (`log_path` L83, `read` L86, `append` L103), `last_sent` /
+  citations into this module's own source and left them: `AgentNotifierSignalRecord` (cit:([`AgentNotifierSignalRecord`], mcp/src/agents_remember/controlplane/agent_notifier_signals.py:30-46)), the path/read/append row L83-L107 (`log_path` L83, `read` L86, `append` L103), `last_sent` /
   `in_cooldown` L109-L155 (L109, L131), and `compact` L157-L213 (L157, `_compact_locked` L178,
   `_replace` L206). The **10.50 percent** figure is now attributed rather than asserted: it appears
   only in the `durable_store.py` docstring, which is also the only place 10.20, 9.20 and 0.00 appear

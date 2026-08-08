@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/contract.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T07:20+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ cit:(["the server grows a field", "the mirror declares something the server neve
    cit:([`MirrorOnlyPaths`], dashboard/src/test/contract.test.ts:146-160) closes it by walking the
    mirror against the fixture's OWN type (`typeof snapshot` — empty arrays and all) and naming every
    declared path the payload does not reach.
-   `fixtureMustSample` cit:([`fixtureMustSample`], dashboard/src/test/contract.test.ts:189-191) is the
+   `fixtureMustSample` cit:([`fixtureMustSample`], dashboard/src/test/contract.test.ts:192-194) is the
    assertion.
 
    A path is reported once, at the highest level that is missing. Arrays are keyed by TYPE, so one
@@ -72,10 +72,10 @@ cit:(["the server grows a field", "the mirror declares something the server neve
 
 **The residue, named.** `KnownUnsampled`
 cit:([`KnownUnsampled`], dashboard/src/test/contract.test.ts:186-186) is exactly two entries:
-`projection.servingBuild` and `projection.supervisorHeartbeat`, both injected by the serving app at
+`projection.servingBuild` and `projection.agentNotifierHeartbeat`, both injected by the serving app at
 RESPONSE time and both absent from the persisted payload this fixture is shaped like.
 `allowlistMustStayEarned`
-cit:([`allowlistMustStayEarned`], dashboard/src/test/contract.test.ts:194-196) checks the
+cit:([`allowlistMustStayEarned`], dashboard/src/test/contract.test.ts:197-199) checks the
 other direction, so an entry that becomes sampled — or that names a path the mirror dropped — fails too.
 
 **The walls of the walk, derived rather than described.**
@@ -197,13 +197,13 @@ the Finding, where a pointer belongs.
 | --- | --- | --- |
 | The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. | "it does so at three seams"; "snapshot as unknown as WorkspaceProjection"; "WHAT SCHEMA CODEGEN CLOSES" | dashboard/src/test/contract.test.ts:30-30; dashboard/src/test/contract.test.ts:34-34; dashboard/src/test/contract.test.ts:60-60 |
 | `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. | `ServedOnlyPaths`; `mirrorMustDeclare` | dashboard/src/test/contract.test.ts:92-102; dashboard/src/test/contract.test.ts:126-128 |
-| `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. | `MirrorOnlyPaths`; `KnownUnsampled`; `fixtureMustSample`; `allowlistMustStayEarned` | dashboard/src/test/contract.test.ts:146-160; dashboard/src/test/contract.test.ts:186-186; dashboard/src/test/contract.test.ts:189-191; dashboard/src/test/contract.test.ts:194-196 |
+| `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. | `MirrorOnlyPaths`; `KnownUnsampled`; `fixtureMustSample`; `allowlistMustStayEarned` | dashboard/src/test/contract.test.ts:146-160; dashboard/src/test/contract.test.ts:186-189; dashboard/src/test/contract.test.ts:192-194; dashboard/src/test/contract.test.ts:197-199 |
 | `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed, replacing a prose list of four that missed three. | `AbsorbingPaths`; `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:206-219; dashboard/src/test/contract.test.ts:221-229; dashboard/src/test/contract.test.ts:226-234 |
 | `ClosedUnionPaths` + `VOCABULARIES` — 15 paths bound to 10 array identities and 8 distinct value sets, replacing two hand-written checks. | `ClosedUnionPaths`; `VOCABULARIES` | dashboard/src/test/contract.test.ts:251-266; dashboard/src/test/contract.test.ts:268-293 |
-| Full-coverage assertion: each vocabulary identity is bound to its declared paths and compared with the fixture's sampled values. | "Object.entries(VOCABULARIES)"; "sampledByVocabulary.get(vocabulary)"; "for (const value of valuesAt(snapshot, path))"; "sampledByVocabulary.set(vocabulary, seen)"; "for (const [vocabulary, seen] of sampledByVocabulary)"; "toEqual([...seen].sort())" | dashboard/src/test/contract.test.ts:377-380; dashboard/src/test/contract.test.ts:382-383 |
+| Full-coverage assertion: each vocabulary identity is bound to its declared paths and compared with the fixture's sampled values. | "sampledByVocabulary.get(vocabulary)"; "sampledByVocabulary.set(vocabulary, seen)"; "for (const [vocabulary, seen] of sampledByVocabulary)"; "toEqual([...seen].sort())" | dashboard/src/test/contract.test.ts:378-387 |
 | Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | "the served payload carries a bucket per live state"; "counts a lifecycle in each live state into its own bucket"; "gives each live state a bucket of its own"; "spells a bucket field the way the server spells it" | dashboard/src/test/contract.test.ts:408-413; dashboard/src/test/contract.test.ts:418-423; dashboard/src/test/contract.test.ts:425-448; dashboard/src/test/contract.test.ts:440-448; dashboard/src/test/contract.test.ts:450-458; dashboard/src/test/contract.test.ts:460-478 |
-| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:511-514; dashboard/src/test/contract.test.ts:532-533 |
-| The generated mirror's metric and analytics declarations. | `Metrics`; `Analytics` | dashboard/src/types/projection.ts:79-93; dashboard/src/types/projection.ts:303-307 |
+| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:514-517; dashboard/src/test/contract.test.ts:535-536 |
+| The generated mirror's metric and analytics declarations. | `Metrics`; `Analytics` | dashboard/src/types/projection.ts:89-103; dashboard/src/types/projection.ts:313-317 |
 | The generated mirror's gate and lifecycle projection declarations. | `GateNode`; `LifecycleProjection` | dashboard/src/types/projection.ts:217-227; dashboard/src/types/projection.ts:258-276 |
 | The sanctioned narrowing the fixture enters through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
 | The hand-maintained oracle, composed to satisfy the coverage and vocabulary assertions above. | `lifecycles`; `metrics` | dashboard/src/fixtures/snapshot.json:4-4; dashboard/src/fixtures/snapshot.json:160-160 |
@@ -227,6 +227,7 @@ inside one repository, not a repository boundary.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T13:49:32+02:00 — 260731-EFA-L6 S18-B02 curator: split the Todos claims across their complete codegen, structural-typing, and manual-sample/oracle spans; extended vocabulary coverage through path/value population and comparison loops while preserving the passing inverted-pin evidence; regenerated the final ranges with the scoped fixer.
 
 - 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: re-scoped this file to its current job:

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ slice-04 transport spine plus the external-chat fallback and Mode B2 terminal.
 Read this with the L2 delta below it; nothing here changed a byte on the wire.
 
 **The two injected keys are now declared.** `stream_events` and `_state_response` each used to
-write `servingBuild` and `supervisorHeartbeat` straight into an already-validated,
+write `servingBuild` and `agentNotifierHeartbeat` straight into an already-validated,
 already-dumped projection dict, so the emitted object was outside its own model — feeding a
 served body back through `WorkspaceProjection` (`extra="forbid"`) raised on the extras. Both
 sites now call the single `served_state.served_state_tail(build=…, heartbeat=…)` and
@@ -56,8 +56,8 @@ must be is `served_state.ServedWorkspaceProjection`, and `/api/state` and `/api/
 exactly that.
 
 Two signatures changed with it, from bare dicts to declared models:
-`stream_events(..., supervisor_heartbeat: SupervisorHeartbeatPayload | None = None)` (cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:112-112))
-and `_supervisor_heartbeat_payload(runtime) -> SupervisorHeartbeatPayload` (cit:(["def _supervisor_heartbeat_payload(runtime: _ServingRuntime) -> SupervisorHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:185-185)). The
+`stream_events(..., supervisor_heartbeat: AgentNotifierHeartbeatPayload | None = None)` (cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:112-112))
+and `_agent_notifier_heartbeat_payload(runtime) -> AgentNotifierHeartbeatPayload` (cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:185-185)). The
 seven keys are identical; `ServingBuild.payload()` likewise returns `ServingBuildPayload` now.
 
 **The body is deliberately still assembled rather than dumped from one model.** The memo and the
@@ -157,7 +157,7 @@ what it owns: `_register_projection_routes` (the read side — the projection on
 raw event river), `_register_action_routes` (the write side the developer drives — the gate return
 channel and the operator inbox), `_register_terminal_session_routes` (attaching to a live pane, and
 what there is to attach to), `_register_terminal_control_routes`. Background loops are likewise
-module-level: `_metrics_loop`, `_supervisor_loop`, `_malloc_trim_loop`,
+module-level: `_metrics_loop`, `_agent_notifier_loop`, `_malloc_trim_loop`,
 `_workspace_river_compaction_loop`, composed by `_serving_lifespan`.
 
 **Two duplicated request-shape guards were deleted, not weakened.** Request validation lives once,
@@ -197,7 +197,7 @@ post-open authorities; this endpoint is deliberately narrow.
 `stream_events()` no longer performs an app-owned `current()` read followed by a later subscription.
 It opens exactly one `Projector.subscribe()` iterator, whose queue is already registered when its
 current snapshot is captured. The app remains wire-only: it aliases/serializes each projector event,
-adds `servingBuild` and `supervisorHeartbeat` to every `snapshot` event (initial or first-recovery),
+adds `servingBuild` and `agentNotifierHeartbeat` to every `snapshot` event (initial or first-recovery),
 and preserves the existing event name, sequence id, and `retry=2000` framing. The iterator is wrapped
 in `contextlib.aclosing()` so disconnect/cancellation closes the inner subscription immediately.
 
@@ -269,7 +269,7 @@ reader bodies; `/api/state` and `/api/stream` remain summary-only.
 
 ### 260707-HFX2-L12 CS-6 Update
 
-The serving lifespan now runs the startup-only workspace-river compactor before starting projector/supervisor/metrics loops, the metrics loop compacts provider metrics after degradation evaluation, and the supervisor context wires `escalation_budget` from agentic settings.
+The serving lifespan now runs the startup-only workspace-river compactor before starting projector/supervisor/metrics loops, the metrics loop compacts provider metrics after degradation evaluation, and the agent-notifier context wires `escalation_budget` from agentic settings.
 
 L16 review follow-up (L16R-1): the terminal-open route loads the effective harness registry ONLY when the request resolves a harness (kind=harness or an explicit harness id) — a malformed agentic settings file fails the launches that use it, never a plain scratch terminal.
 
@@ -329,44 +329,44 @@ detector's entry point; the detector itself owns state persistence, inbox alerti
 critical-threshold failsafe stop (`providers/degradation.py`) — `app.py` only wires the call into
 the loop it already owns.
 
-**260707-HFX2-L2 (R1, supervisor sweep host):** `create_app` builds a third decoupled-cadence
+**260707-HFX2-L2 (R1, agent-notifier sweep host):** `create_app` builds a third decoupled-cadence
 lifespan task, `supervisor_loop()`, following the exact `metrics_loop()` template — its own
-`settings.supervisor.interval_seconds` sleep (default 10s, re-read from `load_agentic_settings`
+`settings.agent_notifier.interval_seconds` sleep (default 10s, re-read from `load_agentic_settings`
 every iteration so a settings edit takes effect without a restart), an `enabled` early-continue when
 the family is switched off, and the same `try/except Exception: logger.exception(...)` resilience
 posture so a sweep failure never crashes the daemon and simply retries next interval. Each iteration
-builds a fresh `SupervisorContext` (`_supervisor_context()`) wiring the catalog/host/paster the app
+builds a fresh `AgentNotifierContext` (`_agent_notifier_context()`) wiring the catalog/host/paster the app
 already owns plus fresh `OperatorInboxStore`/`ExpectationRowStore`/`OrchestrationNudgeStore`/
-`SupervisorSignalCooldownStore`/`EventStore` instances and the shared `SupervisorHeartbeatStore`, then runs
-`run_supervisor_sweep(ctx, now=(now or utc_now)())` via `asyncio.to_thread` (the sweep's store I/O is
+`AgentNotifierSignalCooldownStore`/`EventStore` instances and the shared `AgentNotifierHeartbeatStore`, then runs
+`run_agent_notifier_sweep(ctx, now=(now or utc_now)())` via `asyncio.to_thread` (the sweep's store I/O is
 synchronous, so it never blocks the event loop). `stale_seat_seconds` is derived as
-`max(settings.supervisor.interval_seconds * 4, 60.0)` — four sweep intervals of grace before a
+`max(settings.agent_notifier.interval_seconds * 4, 60.0)` — four sweep intervals of grace before a
 turn-state-stale row fires the seat-liveness predicate (R2e), floored at 60s so a very fast sweep
 interval cannot make the liveness predicate trigger-happy. **260707-HFX2-L4:** the same
-`_supervisor_context()` call now also resolves `settings.escalation.sla_seconds`/`rung_seconds`/
-`respawn_after_rung` straight onto `SupervisorContext`'s plain-primitive escalation knobs — no new
+`_agent_notifier_context()` call now also resolves `settings.escalation.sla_seconds`/`rung_seconds`/
+`respawn_after_rung` straight onto `AgentNotifierContext`'s plain-primitive escalation knobs — no new
 settings read of its own, the same per-sweep `load_agentic_settings` call this function already
 made for the supervisor family. **260707-HFX2-L8 (R4/R6):** that same context wiring also threads
-`settings.supervisor.redeliver_budget`, the conservative per-sweep inbox-redelivery budget that keeps
-large redeliverable backlogs spread across sweeps while preserving the supervisor heartbeat cadence.
-**260707-HFX2-L9:** `_supervisor_context()` now also wires
-`settings.supervisor.signal_cooldown_seconds` and the new persisted
-`SupervisorSignalCooldownStore`, while continuing to pass the configured redelivery floor through
+`settings.agent_notifier.redeliver_budget`, the conservative per-sweep inbox-redelivery budget that keeps
+large redeliverable backlogs spread across sweeps while preserving the agent-notifier heartbeat cadence.
+**260707-HFX2-L9:** `_agent_notifier_context()` now also wires
+`settings.agent_notifier.signal_cooldown_seconds` and the new persisted
+`AgentNotifierSignalCooldownStore`, while continuing to pass the configured redelivery floor through
 `redeliver_rate_limit_seconds`.
 The lifespan cancels
 `supervisor_task` (added to the existing metrics/projector cancel set, same
 `contextlib.suppress(asyncio.CancelledError)` await pattern) on shutdown.
 
-**260707-HFX2-L2 (R5, self-liveness surfacing):** a module-level `SupervisorHeartbeatStore` is
+**260707-HFX2-L2 (R5, self-liveness surfacing):** a module-level `AgentNotifierHeartbeatStore` is
 constructed once in `create_app` (shared by the loop and the read side below).
-`_supervisor_heartbeat_payload()` reads the current tick via `heartbeat_age_seconds` at RESPONSE
+`_agent_notifier_heartbeat_payload()` reads the current tick via `heartbeat_age_seconds` at RESPONSE
 time (using `liveness_clock()`, the same `now or utc_now` base every other liveness call in this
-file shares) and returns — since **260731-EFA-L4** a declared `SupervisorHeartbeatPayload`
+file shares) and returns — since **260731-EFA-L4** a declared `AgentNotifierHeartbeatPayload`
 rather than a bare dict — `{lastTickAt, ageSeconds, staleCutoffSeconds, stale}` plus, since
 **260707-HFX2-L8 (R6)**, `{pendingInboxCount, redeliverableInboxCount, lastSweepDurationSeconds}` —
 the forward signal that shows inbox storm pressure before a stale banner trips. `stale` is `True`
-when there is no tick yet OR the age has passed `settings.supervisor.stale_cutoff_seconds`. This
-payload rides as `supervisorHeartbeat` on both `GET /api/state`'s JSON body and the SSE
+when there is no tick yet OR the age has passed `settings.agent_notifier.stale_cutoff_seconds`. This
+payload rides as `agentNotifierHeartbeat` on both `GET /api/state`'s JSON body and the SSE
 snapshot, since L4 through the single `served_state_tail` merge rather than two hand-written
 key assignments. It is deliberately computed at response/connect time rather than folded
 into the change-gated projection: like `servingBuild`, it never affects `/api/state`'s ETag
@@ -546,11 +546,11 @@ otherwise-unchanged projection look changed.
   **before** `mount_static`. The handlers live in `serving/notes.py`.
 
 `stream_events(projector, *, build: ServingBuild | None = None,
-supervisor_heartbeat: SupervisorHeartbeatPayload | None = None)` (cit:(["async def stream_events"], mcp/src/agents_remember/serving/_app_common.py:112-112)) owns one atomic projector
+supervisor_heartbeat: AgentNotifierHeartbeatPayload | None = None)` (cit:(["async def stream_events"], mcp/src/agents_remember/serving/_app_common.py:112-112)) owns one atomic projector
 subscription. It serializes the initial current snapshot when available; if `prime()` left no
 projection, the same connected iterator waits and serializes the projector's first successful full
 recovery snapshot. Every snapshot is decorated identically with the optional boot-time
-`servingBuild` and connect-time `supervisorHeartbeat` — one `served_state_tail` merge since
+`servingBuild` and connect-time `agentNotifierHeartbeat` — one `served_state_tail` merge since
 **260731-EFA-L4**, and a snapshot with neither is a valid served body (both keys are optional on
 `ServedWorkspaceProjection`); ordinary later events remain per-entity deltas and carry no tail at
 all. `_encode` dumps projection nodes by alias (camelCase, `exclude_none`) and passes removal
@@ -642,13 +642,13 @@ this app.
   lifecycle is owned by `Projector.run` (not the lifespan), and any watcher absence/failure
   degrades LOUDLY to the legacy fixed-`interval` ticking. The `heartbeat` (default 15s) is the
   `/api/state` staleness bound and the resolution of time-derived fields for a quiet world.
-- **The supervisor sweep is stores-not-projections, code-not-model (260707-HFX2-L2 R1/R3):**
-  `supervisor_loop` and `_supervisor_context` wire the app's OWN store instances directly into
-  `SupervisorContext` — `app.py` never reaches into `serving/projector.py` or
+- **The agent-notifier sweep is stores-not-projections, code-not-model (260707-HFX2-L2 R1/R3):**
+  `supervisor_loop` and `_agent_notifier_context` wire the app's OWN store instances directly into
+  `AgentNotifierContext` — `app.py` never reaches into `serving/projector.py` or
   `observer/reducer.py` for the sweep's predicates. Own decoupled cadence (settings-controlled,
   default 10s), never the projection tick; exception-tolerant like the metrics loop; zero model
   calls anywhere in the loop.
-- **The supervisor heartbeat is a volatile age, same posture as `servingBuild` (R5):** computed at
+- **The agent-notifier heartbeat is a volatile age, same posture as `servingBuild` (R5):** computed at
   response/connect time via `liveness_clock()`, never folded into the `/api/state` ETag revision —
   an idle dashboard tab whose OTHER content never changes will not see `ageSeconds` advance until a
   real reconnect or an unrelated content change forces a fresh `200` (the same accepted limitation
@@ -717,11 +717,11 @@ pass was available for this update.
 | The landed archive helper records completion-edge seats without terminating them. | `land_seats_for_leaf` | mcp/src/agents_remember/serving/landing.py:9-28 |
 | The retire/rename mechanics + authority policy the explicit retire and landed-cleanup endpoints call into. | `retire_entry`; `check_retire_authority`; `SeatRef`; `master_of` | mcp/src/agents_remember/serving/retire.py:37-71; mcp/src/agents_remember/serving/retire_policy.py:23-33; mcp/src/agents_remember/serving/retire_policy.py:36-46; mcp/src/agents_remember/serving/retire_policy.py:49-67 |
 | The observer-event loggers the landed, retire, rename, and turn-state paths fire. | `log_landed_event`; `log_retire_event`; `log_rename_event`; `log_turn_state_change_event` | mcp/src/agents_remember/serving/seat_events.py:24-45; mcp/src/agents_remember/serving/seat_events.py:48-68; mcp/src/agents_remember/serving/seat_events.py:71-89; mcp/src/agents_remember/serving/seat_events.py:92-110 |
-| The deterministic supervisor sweep + predicate library `supervisor_loop`/`_supervisor_context` drive every interval (260707-HFX2-L2 R1-R4). | `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:96-193 |
-| The pane-state classifier one of the sweep's predicates (`evaluate_pane_findings`, inside `supervisor.py`) calls. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
-| The self-liveness heartbeat store both the loop (tick) and the read side (`_supervisor_heartbeat_payload`) share, including L8 inbox backlog and sweep-duration fields. | `SupervisorHeartbeatStore`; `heartbeat_age_seconds` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-121; mcp/src/agents_remember/serving/supervisor_heartbeat.py:124-132 |
-| The agentic-settings loader `supervisor_loop`/`_supervisor_context`/`_supervisor_heartbeat_payload` all re-read per-use for the `orchestration.supervisor` family. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:217-252 |
-| The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; `OperatorInboxStore`; `OrchestrationNudgeStore`; `SupervisorSignalCooldownStore`; `EventStore` | mcp/src/agents_remember/controlplane/expectation_rows.py:156-336; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251; mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127; mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215; mcp/src/agents_remember/observer/store.py:103-171 |
+| The deterministic agent-notifier sweep + predicate library `supervisor_loop`/`_agent_notifier_context` drive every interval (260707-HFX2-L2 R1-R4). | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:96-241 |
+| The pane-state classifier one of the sweep's predicates (`evaluate_pane_findings`, inside `agent_notifier.py`) calls. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
+| The self-liveness heartbeat store both the loop (tick) and the read side (`_agent_notifier_heartbeat_payload`) share, including L8 inbox backlog and sweep-duration fields. | `AgentNotifierHeartbeatStore`; `heartbeat_age_seconds` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:128-139 |
+| The agentic-settings loader `supervisor_loop`/`_agent_notifier_context`/`_agent_notifier_heartbeat_payload` all re-read per-use for the `orchestration.agentNotifier` family. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:217-252 |
+| The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; "class OperatorInboxStore"; `OrchestrationNudgeStore`; `AgentNotifierSignalCooldownStore`; `EventStore` | mcp/src/agents_remember/controlplane/expectation_rows.py:156-336; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251; mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127; mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220; mcp/src/agents_remember/observer/store.py:103-171 |
 
 ## Cross-Repo References
 
@@ -744,6 +744,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over `_app_common.py`, `_app_lifespan.py`, `_app_routes.py`, `_app_terminal_routes.py`; full surface re-exported and pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded the image route's offload —
@@ -761,7 +762,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   already-validated projection dict with nothing declaring them; both sites now call the single
   `served_state.served_state_tail` (L328-L329 for the SSE snapshot, L979-L982 for `/api/state`)
   and the result is declared as `ServedWorkspaceProjection`, which `/api/state` and `/api/stream`
-  name. Corrected cit:(["def _supervisor_heartbeat_payload(runtime: _ServingRuntime) -> SupervisorHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:185-185) and cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:112-112),
+  name. Corrected cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:185-185) and cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:112-112),
   which return/accept declared models rather than bare dicts, and the `stream_events` paragraph,
   which now records that a snapshot with neither key is a valid served body and that deltas carry
   no tail. Documented all 17 route declarations with lines — including `/api/state`'s

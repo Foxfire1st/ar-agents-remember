@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harnesses.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-15T23:16+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,7 +83,6 @@ No external repository boundary is implemented by this local registry.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-
 
 ## Update History
 - 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: replaced unanchored launch references with exact local anchors and generated final ranges with the scoped fixer.

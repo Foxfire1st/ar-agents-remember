@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                  |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -68,6 +68,7 @@ No cross-repository implementation source governs this file.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the body
   module extracted from `SessionsView.tsx`. Verification pinned to the leaf base
   until closeout stamps the code commit.

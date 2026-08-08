@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_cross_store_lock_order.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ one day, py-spy-verified).
 
 `_SharedStores` builds the daemon's real sharing shape in a temp dir — ONE `TerminalCatalog`
 instance and ONE operator-inbox log per process, plus the real `HostedInteractionSynchronizer`
-and a `SupervisorContext` over the supporting stores — with a `_FakeHost` seam (every session
+and a `AgentNotifierContext` over the supporting stores — with a `_FakeHost` seam (every session
 probes alive, nothing is owned) and a `counting_observe` wrapper that keeps every pass honest:
 each test asserts the synchronizer actually ran, so no pass is vacuous. The pins:
 
@@ -38,7 +38,7 @@ each test asserts the synchronizer actually ran, so no pass is vacuous. The pins
    record every violation, driven on the full sweep AND on the starting fast path
    (`_refresh_starting_rows`, whose cheap exits — nothing starting, busy sweep lock, starting
    rate limit — are pinned beside it);
-2. `TerminalCatalogLivenessSweeper.refresh` and `run_supervisor_sweep` run concurrently on
+2. `TerminalCatalogLivenessSweeper.refresh` and `run_agent_notifier_sweep` run concurrently on
    threads against the shared stores and both finish — rendezvous wrappers park the liveness
    sweep INSIDE its catalog batch and the supervisor INSIDE its inbox transaction, release both
    at once, and daemon threads with join timeouts are the deadlock detector, so against the
@@ -80,7 +80,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The liveness sweep path driven on one thread (batch lock holder). | `TerminalCatalogLivenessSweeper` | mcp/src/agents_remember/serving/terminal_liveness.py:121-280 |
-| The supervisor sweep path driven on the other thread (inbox lock holder). | `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:96-193 |
+| The agent-notifier sweep path driven on the other thread (inbox lock holder). | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:96-241 |
 | The synchronizer whose store I/O is pinned outside the catalog batch. | `HostedInteractionSynchronizer` | mcp/src/agents_remember/serving/hosted_interactions.py:52-266 |
 | The offloaded control choke point. | `resolve_entry` | mcp/src/agents_remember/serving/conversation/control/service.py:291-299 |
 | The offloaded active-side resolution. | `_projector_for` | mcp/src/agents_remember/serving/conversation/active/service.py:160-177 |
@@ -93,6 +93,7 @@ No meaningful cross-repository references found.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-05T20:20+02:00 — 260731-EFA-L16 curator: the quality wrapper's diff-coverage rail grew

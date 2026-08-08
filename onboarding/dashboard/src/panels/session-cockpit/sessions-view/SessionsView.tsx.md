@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-07T08:19Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ is percentage-only and the 280px calibration contract is pinned; see the worker 
 ### Inspector Composition (superseded status details corrected below)
 
 - **Narrow data seam** (cit:([`projectedTaskDocuments`], dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:258-260)): the view selects existing projected task documents.
-- The same seam selects fleet pickups and supervisor heartbeat facts (cit:(["pickups={data.pickups}", "heartbeat={data.supervisorHeartbeat}"], dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:354-355)).
+- The same seam selects fleet pickups and agent-notifier heartbeat facts (cit:(["pickups={data.pickups}", "heartbeat={data.agentNotifierHeartbeat}"], dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:354-355)).
 - **Inspector composition** (cit:(["export function SeatInspector({"], dashboard/src/panels/session-cockpit/SeatInspector.tsx:112-112)): the `SeatInspector` component is declared in its focused file.
 - **Current action composition:** focused-session actions and rail/inspector reopen controls render
   on `SessionStage`'s title row. There is no StatusLine footer; detailed evidence remains in the
@@ -241,6 +241,8 @@ stop remains beside Send, while raw-terminal stop remains on its line. It passes
 through to the stage so scroll geometry can restore after a view switch.
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: re-mapped this sidecar from dashboard/src/panels/session-cockpit/SessionsView.tsx to the sessions-view/ canonical entry after the responsibility split; added the L8 Split Layout section. Verification pinned to the leaf base until closeout stamps the code commit.
 
 - 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: replaced stale SessionsView line citations with

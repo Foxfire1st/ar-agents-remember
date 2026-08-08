@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/inbox_backoff.py`            |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-07-31T00:00+02:00                                             |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 
 R3 (260707-HFX2-L1): pure backoff-schedule math + per-target rate limiting for redelivering a
 pending/unacked operator inbox entry — the math `OperatorInboxStore.record_delivery`/
-`list_redeliverable` call; L2 (the supervisor sweep, a sibling leaf) is the actual driver. HFX2-L9
+`list_redeliverable` call; L2 (the agent-notifier sweep, a sibling leaf) is the actual driver. HFX2-L9
 turns the old short rate limit into the shared 900-second production floor for every retry path.
 
 ## Code Commentary
@@ -98,6 +98,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the two `n/a`-anchor
   table citations with exact anchors (`is_rate_limited`, `_elapsed_seconds`) and fixer-generated
   ranges; exact non-fixing check returns zero findings.

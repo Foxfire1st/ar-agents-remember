@@ -6,10 +6,16 @@
 | sourceRoute | skills/l-01-agent-lifecycles/roles |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 
 ## Purpose
+
+### 260713-TES-L1 Rename — Role Wording
+
+The role files under this route were refreshed to agent-notifier wording (watcher-ban and
+liveness-supervision prose now name the agent-notifier sweep); no role, seat, or dispatch
+semantics changed.
 
 Role-specific dispatch guidance shares the exact session-id handoff, ready proof, delivered-plus-harness-log-confirmed completion, launch-phase sessionCommands, and post-ready promptKeywords timing.
 
@@ -57,6 +63,10 @@ master-gate full wrapper and forbids per-leaf full runs. `curator.md`'s contract
 self-check (L6) is unchanged and is exactly what greens the per-leaf memory-quality gate.
 
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the role files under this route were
+  refreshed to agent-notifier wording (no supervisor/agent-notifier role or seat change); route
+  shape unchanged. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the ladder across the worker/
   manager/orchestrator role files and brief templates. Verification metadata stays pinned until

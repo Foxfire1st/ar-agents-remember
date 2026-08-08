@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/orphan_policy.py`             |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                           |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                           |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -34,7 +34,7 @@ Spawner provenance remains the parent edge used to identify the dead manager.
 
 `find_orphaned_workers(catalog, *, manager_agent_id)` — a pure catalog read: every catalog row with
 `spawn_role == "worker"`, `spawned_by_session == manager_agent_id`, and `status == "running"`. No
-mutation, no signal post — `serving/supervisor.py`'s `_respawn_suspect` is the caller that gathers
+mutation, no signal post — `serving/agent_notifier.py`'s `_respawn_suspect` is the caller that gathers
 this list once a manager seat is confirmed suspect/retired and surfaces it in the respawn directive
 event (`orphanedWorkers`).
 
@@ -67,7 +67,7 @@ No external requirement or design document is represented here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sole caller: gathers the orphan list once a manager seat is retired as suspect and surfaces it in the respawn observer event. | "def _respawn_suspect(  # pragma: no cover" | mcp/src/agents_remember/serving/_supervisor_actions.py:592-592 |
+| The sole caller: gathers the orphan list once a manager seat is retired as suspect and surfaces it in the respawn observer event. | "def _respawn_suspect(  # pragma: no cover" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:621-621 |
 | Unit test: running workers of the named manager are returned; a terminated sibling and another manager's worker are excluded. | `test_finds_running_workers_of_the_named_manager` | mcp/tests/test_escalation_ladder.py:237-254 |
 
 ## Cross-Repo References
@@ -80,6 +80,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: removed the whole unsupported task-authority claim, including its prose and table row, under the 2026-08-02 17:45 ruling; the two repository-internal references were already exact and unchanged; final scoped result 0 (checker-clean).
 
 - 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.

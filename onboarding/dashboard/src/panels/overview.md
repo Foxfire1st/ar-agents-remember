@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -15,6 +15,14 @@
 [dashboard/src overview](../overview.md)
 
 ## 260731-EFA-L8 Split Layout
+
+### 260713-TES-L1 Reviewed — Heartbeat Wording In Session Cockpit
+
+Route body reviewed for the supervisor → agent-notifier rename: the session-cockpit heartbeat UI
+(`BusPane`, `SeatInspector`, `SessionRail`, `sessionRailParts`, sessions-view) now uses
+`AgentNotifierHeartbeat` / `agentNotifierHeartbeat` and "Agent notifier heartbeat" labels. No
+panel-shape or layout change; per-file detail lives in the session-cockpit overview and the file
+sidecars.
 
 The frontend-rail size remediation (R4/R5) re-shaped this route: `DetailPanel.tsx`
 → `detail-panel/` (canonical entry + `state.ts`, `model.ts`, `lifecycleBody.tsx`,
@@ -242,6 +250,7 @@ The panels route absorbed the L7 live-thinking change on top of the L8 split: th
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the conversation split absorption and the file-size rail coverage. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Split Layout section (kebab-case folders, canonical entries, parts/styles modules). Verification metadata stays pinned until closeout stamps the code commit.
 

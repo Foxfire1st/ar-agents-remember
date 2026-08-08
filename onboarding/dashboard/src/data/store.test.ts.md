@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/store.test.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:16+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ folding into id-keyed maps, the named-delta upsert/removed paths, whole-object m
 replacement, the connection state channel, and — since 260703-L15 — the **change gate** (idle
 payloads cost zero store writes, identity stays stable) plus the **long-session guard** (500
 simulated idle ticks with event traffic stay flat). Since the 260707-HFX2-L2 fix round, the change
-gate also pins the **`supervisorHeartbeat` no-op/write-through split**: an idle re-snapshot with an
+gate also pins the **`agentNotifierHeartbeat` no-op/write-through split**: an idle re-snapshot with an
 unchanged heartbeat costs zero writes, but a genuinely advanced heartbeat still rides through as
 exactly one write. The sliding-window test is the task-34 guard that the raw Event-River buffer
 stays bounded.
@@ -54,15 +54,15 @@ round-trip this helper used to run inline: that round-trip answers `any`, and `a
 anything, so the helper could have handed the store a shape the server cannot send and nothing would
 have objected. The cases: 50 idle re-snapshots fire ZERO subscriber
 notifications and leave `getState()` the SAME object (lifecycles/analytics/generatedAt identity
-included); an idle re-snapshot with an unchanged `supervisorHeartbeat` (including the `null`/`null`
+included); an idle re-snapshot with an unchanged `agentNotifierHeartbeat` (including the `null`/`null`
 case, i.e. no supervisor attached, and since HFX2-L8 the backlog/duration fields) is also zero store writes and the state object stays identical —
 this pins the `applySnapshot` early-return branch's `heartbeatEquals(a, b)` guard (added in the
-260707-HFX2-L2 fix round) that gates the `set({ supervisorHeartbeat })` call on the heartbeat
+260707-HFX2-L2 fix round) that gates the `set({ agentNotifierHeartbeat })` call on the heartbeat
 literally changing, comparing `lastTickAt`/`ageSeconds`/`staleCutoffSeconds`/`stale` field-for-field
 rather than reusing the general `stableEquals` helper (which strips `ageSeconds` as a
 `VOLATILE_AGE_FIELDS` entry and would wrongly treat a real tick advance as unchanged); a companion
 case then advances `ageSeconds` on an otherwise-identical heartbeat and asserts exactly ONE
-notification, a new state object, `supervisorHeartbeat` equal to the advanced value, and that
+notification, a new state object, `agentNotifierHeartbeat` equal to the advanced value, and that
 `lifecycles`/`analytics`/`generatedAt` keep their prior identity — only the heartbeat rode through.
 A redundant volatile-only `lifecycle` delta and a removed-marker for an absent id are both
 no-writes; a real delta still applies exactly as before; a snapshot carrying ONE real change
@@ -98,7 +98,7 @@ Tests assert on `getState()` snapshots rather than rendered output.
   explicitly so it is independent of prior tests.
 - These are store-contract tests; the Event-River rendering/virtualization is covered separately by
   `../panels/EventRiver.test.tsx`.
-- The two `supervisorHeartbeat` cases pin that `applySnapshot`'s idle early-return branch must use a
+- The two `agentNotifierHeartbeat` cases pin that `applySnapshot`'s idle early-return branch must use a
   field-literal comparator (`heartbeatEquals`) for the heartbeat, never `stableEquals` — reusing
   `stableEquals` would strip `ageSeconds` and silently defeat detection of a genuinely advancing tick.
 
@@ -125,10 +125,10 @@ the bounded buffer documented in the store sidecar.
 | System under test: the Zustand store these reducers belong to. | `dashboardStore` | dashboard/src/data/store.ts:225-347 |
 | Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. | `EVENT_WINDOW` | dashboard/src/data/store.ts:56-56 |
 | Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. | "folds a snapshot into id-keyed maps and goes live" | dashboard/src/data/store.test.ts:51-82 |
-| `supervisorHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases. | `supervisorHeartbeat` | dashboard/src/data/store.test.ts:121-159 |
-| The fixture narrowing and the fixture-derived lifecycle count. | `asServedProjection` | dashboard/src/data/store.test.ts:4-20 |
+| `agentNotifierHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases. | "applies an idle re-snapshot with an unchanged agentNotifierHeartbeat (incl. null/null) with zero store writes"; "applies an idle re-snapshot with a genuinely changed agentNotifierHeartbeat" | dashboard/src/data/store.test.ts:121-159 |
+| The fixture narrowing and the fixture-derived lifecycle count. | "export function asServedProjection" | dashboard/src/test/servedProjection.ts:22-43 |
 | The parameter type that IS the check, and why the double cast was not one. | `AsJsonModule`; `asServedProjection` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/servedProjection.ts:41-43 |
-| `reparsed` (the `structuredClone` behind `volatileBump`) and the `supervisorHeartbeat` builder. | `reparsed`; `supervisorHeartbeat` | dashboard/src/test/fixtures/wire.ts:352-366; dashboard/src/test/fixtures/wire.ts:396-398 |
+| `reparsed` (the `structuredClone` behind `volatileBump`) and the `agentNotifierHeartbeat` builder. | `reparsed`; `agentNotifierHeartbeat` | dashboard/src/test/fixtures/wire.ts:352-366; dashboard/src/test/fixtures/wire.ts:396-398 |
 | Projection / observer-event types the store maps over. | `WorkspaceProjection` | dashboard/src/types/projection.ts:517-528 |
 
 ## Cross-Repo References
@@ -141,6 +141,7 @@ No meaningful cross-repo references found. These tests are local to the dashboar
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 6 citation rows
   (deduplicated the servedProjection citation; bound the fold, heartbeat and fixture rows to
   51-82, 121-159 and 4-20) and rewrote the historical single-number line shorthand below (the

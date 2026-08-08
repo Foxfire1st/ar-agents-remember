@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T20:15+02:00|
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ this".
 **What would falsify the ruling**, stated so a later reader can check it rather than trust it: a
 `write_ledger` caller that does not `git add` + commit in the same function, or one reached from a
 process that runs concurrently with another writer (a serving route, a projection tick, a
-supervisor sweep). Either one makes a truncated ledger lose history rather than a delta, and the
+agent-notifier sweep). Either one makes a truncated ledger lose history rather than a delta, and the
 ledger then belongs on the `ar-durable-store/1.0` contract in `controlplane/durable_store.py` like
 the six JSONL logs.
 
@@ -108,7 +108,7 @@ format.
 | `parse_ledger_text()` requires the fenced JSON metadata block, required metadata fields, supported schema, and a valid mapping table. | `parse_ledger_text` | mcp/src/agents_remember/kernel/memory_ledger.py:52-104 |
 | `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | `validate_ledger`; `ledger_to_text`; `prepend_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:147-156; mcp/src/agents_remember/kernel/memory_ledger.py:159-184; mcp/src/agents_remember/kernel/memory_ledger.py:218-229 |
 | `write_ledger()` is an unguarded whole-file write, and its docstring carries the 260731-EFA-L5 R12 ruling that made that a decision: the durable copy is the git object every caller commits two statements later. | `def` | mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
-| The contract this file was measured against and deliberately left off — what an unconditional per-log lock buys, and why a store whose durability rests on a deployment fact is the defect L5 was called in to repair. | "ar-durable-store/1.0" | mcp/src/agents_remember/controlplane/durable_store.py:1-25 |
+| The contract this file was measured against and deliberately left off — what an unconditional per-log lock buys, and why a store whose durability rests on a deployment fact is the defect L5 was called in to repair. | "DURABLE_STORE_CONTRACT = \"ar-durable-store/1.0\"" | mcp/src/agents_remember/controlplane/durable_store.py:42-42 |
 
 ## Cross-Repo References
 
@@ -118,10 +118,12 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing `memory.md`. | `find_mapping` | mcp/src/agents_remember/worktrees/modules/closeout.py:13-17; mcp/src/agents_remember/worktrees/modules/closeout.py:698-710 |
-| `c-09-git-worktree-manager` integration imports the same helpers and unconditionally prepends the integrated code->memory mapping. | `prepend_mapping` | mcp/src/agents_remember/worktrees/modules/integrate.py:11-15; mcp/src/agents_remember/worktrees/modules/integrate.py:253-258 |
+| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing `memory.md`. | "find_mapping(ledger, code_commit)" | mcp/src/agents_remember/worktrees/modules/closeout.py:706-706 |
+| `c-09-git-worktree-manager` integration imports the same helpers and unconditionally prepends the integrated code->memory mapping. | "prepend_mapping(ledger, integrated_code_commit, integrated_memory_content_commit)" | mcp/src/agents_remember/worktrees/modules/integrate.py:300-300 |
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-04T18:29+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the four malformed rows and two
   superseded prose cites. `parse_ledger_text` bound to 52-104; closeout/integration rows bound to

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/DetailPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T08:19Z                                |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -302,7 +302,7 @@ view switches skip its subtree, while real selection and store changes still pas
 | Master leaf rows render in received order and display the matched child task document `id`, with `position` kept separate purely for stable test ids; `SliceList` keeps the `createdAt` sort because it orders `TaskDocNode`s. | "export function SubTaskIndex({"; "export function SliceList({"; "export function subTaskKey(ref: SubTaskRow, index: number): string {"; "import { orderedByCreation } from \"../../data/taskHierarchy\";" | dashboard/src/panels/detail-panel/taskReader.tsx:323-323; dashboard/src/panels/detail-panel/taskReader.tsx:361-361; dashboard/src/panels/detail-panel/model.ts:208-208; dashboard/src/panels/detail-panel/taskReader.tsx:12-12 |
 | `TaskReader` renders the top `ProgressFill` before the task body and keeps implementation-step copy later in the document. | "export function TaskReader({"; "export function ProgressFill({" | dashboard/src/panels/detail-panel/taskReader.tsx:494-494; dashboard/src/grammar/ProgressFill.tsx:27-27 |
 | `seriesAsMasterDoc`; `masterDocWithSeriesTokens`; `seriesTokenTotal`; `MasterTokenSummary` | `masterDocWithSeriesTokens` | dashboard/src/panels/detail-panel/model.ts:198-201 |
-| The `SeriesNode`, `TaskDocNode`, and `SeriesSubTaskNode.createdAt` contract fields consumed by this panel, mirrored in the dashboard projection types. | `SeriesNode`; `TaskDocNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:346-361; dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:437-463 |
+| The `SeriesNode`, `TaskDocNode`, and `SeriesSubTaskNode.createdAt` contract fields consumed by this panel, mirrored in the dashboard projection types. | `SeriesNode`; `TaskDocNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:356-371; dashboard/src/types/projection.ts:379-386; dashboard/src/types/projection.ts:437-463 |
 | `taskLabel`/`taskDocsForLifecycle`/`taskDocumentLabel` — the lifecycle-visible identity helpers used to label promoted leaf lifecycles without changing task-document filtering. | `taskLabel`; `taskDocsForLifecycle`; `taskDocumentLabel`; `findLifecycleEnclosure` | dashboard/src/data/taskIdentity.ts:230-237; dashboard/src/data/taskIdentity.ts:239-256; dashboard/src/data/taskIdentity.ts:258-263; dashboard/src/data/taskIdentity.ts:265-270 |
 | The durable gate responder, now rendered only for real `activeLifecycle.gate` requests. | "testId=\"gate-review\""; "function DetailPanelImpl({"; "<GateResponder" | dashboard/src/panels/detail-panel/lifecycleBody.tsx:226-226; dashboard/src/panels/detail-panel/DetailPanel.tsx:18-18; dashboard/src/panels/detail-panel/lifecycleBody.tsx:222-222 |
 | `Markdown`; `Bullets`; `DecisionList`; `MasterSection` | `DecisionList` | dashboard/src/panels/detail-panel/taskReader.tsx:612-627 |
@@ -351,7 +351,7 @@ view switches skip its subtree, while real selection and store changes still pas
   `createdAt`). Repaired nine citations that had drifted off their symbols, including
   `topLevelStepProgress` L553-L556 → L932-L935, `displayedLeafDoc` L771-L818 → L884-L931,
   `MasterTokenSummary` L652-L705 → L1099-L1108, `TaskReader` L833-L866 → L1307-L1345, and the
-  projection-mirror row cit:([`TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:346-361; dashboard/src/types/projection.ts:369-376; dashboard/src/types/projection.ts:437-463),
+  projection-mirror row cit:([`TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:356-371; dashboard/src/types/projection.ts:379-386; dashboard/src/types/projection.ts:437-463),
   whose prior ranges contained none of the named types.
 
 - 2026-07-24T13:17:50Z — Added persistent DetailPanel memoization semantics. Verification hash/date

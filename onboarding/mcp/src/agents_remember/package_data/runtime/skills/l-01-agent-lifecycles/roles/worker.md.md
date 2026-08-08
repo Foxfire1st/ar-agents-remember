@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 
 ## Purpose
 
@@ -30,7 +30,7 @@ guideline read sits at the wrong end on the wrong seat without this: prevention 
 
 260707-HFX2-L5 (doctrine inversion, active vigilance → passive process-and-ack): the mandatory
 turn-report paragraph's "A missing report gets nudged." is reworded to name the actual mechanism —
-"A missing report gets nudged by the supervisor sweep (HFX2-L2), never by a seat-local watcher — no
+"A missing report gets nudged by the agent-notifier sweep (HFX2-L2), never by a seat-local watcher — no
 owning seat, and no worker, hand-rolls its own polling loop over this artifact; ending your turn
 once the report is written is safe, not a risk you have to cover for." The Comms Protocol's "Stdin
 push" line is reworded the same way (the L2 sweep's injector delivers on its own tick, in the
@@ -38,7 +38,7 @@ owning seat's name, never the owning seat or the worker watching/polling by hand
 is safe" bullet plus an explicit **watcher ban** line (uniform-mechanism ruling 2026-07-07) are
 added right after it. Pure doctrine reword — the worker's own build loop and artifact obligation are
 unchanged; only the language describing what happens to a missing/late artifact inverts to name the
-supervisor sweep as the one mechanism.
+agent-notifier sweep as the one mechanism.
 
 260707-HFX2-L6 adds the same developer-declared takeover guard to worker intake. If a developer
 walks into or reuses a dashboard chat as the worker for a named leaf, the worker first runs the
@@ -97,6 +97,7 @@ escalation, not a workaround.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the worker's
   change-set-scoped leaf checks and the full-wrapper master-gate home.
   Verification metadata stays pinned until closeout stamps the 260731-EFA-L17

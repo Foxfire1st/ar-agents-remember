@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-07-10T13:03+02:00                |
-| lastVerifiedCommitHash |                                       `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                       2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                       `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                       2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -180,7 +180,9 @@ Tests prove legacy-reader projection preserves only optional `adapterDeliverySta
 `adapterDeliveryDetail`, while an unrelated `futureEvidence` extension remains rejected.
 
 ## Update History
-- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
+"- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the whole suite moved to the parameter-object
   form of the inbox seams, so the Conventions section was rewritten to name them instead of
   attesting past them: `create_operator_inbox_entry` and `operator_inbox_post_payload` now take

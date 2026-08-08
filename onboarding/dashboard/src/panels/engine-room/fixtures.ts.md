@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/fixtures.ts`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T15:10+02:00                           |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ Fixtures are presentation data only: they encode the wire shape (camelCase, `exc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Node/edge types this file shapes — the import list here, resolving to the mirror there. | `EngineProcessEdge` | dashboard/src/types/projection.ts:152-160 |
+| Node/edge types this file shapes — the import list here, resolving to the mirror there. | `EngineProcessEdge` | dashboard/src/types/projection.ts:162-170 |
 | `EngineProcessEdge` server model — `extra="forbid"`, no `refusedPolarity`, no `refused` in the state comment. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:771-790 |
 | `_seed_edge_state` returns `stale` for the reroute case — the state this fixture now carries. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:634-634 |
 | `EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS` | `EngineRoomScenario`, `ENGINE_ROOM_SCENARIOS` | dashboard/src/panels/engine-room/fixtures.ts:19-23; dashboard/src/panels/engine-room/fixtures.ts:721-1197 |
@@ -61,6 +61,8 @@ Fixtures are presentation data only: they encode the wire shape (camelCase, `exc
 Engine Room scenario factories now emit leaf enclosure contract paths (`tasks/<repo>/<task>/enclosures/<leaf-id>/series-contract.md`) in both `enclosure` and `sourceFiles`, and seed `leafId` from the fixture id by default. This keeps fixture source traces and rendered labels aligned with the backend resolver.
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the FL1 trim to 1,197 physical lines. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: removed duplicated Source ranges

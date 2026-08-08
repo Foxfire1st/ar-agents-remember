@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-04T03:03+02:00                       |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`   |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`   |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -183,12 +183,13 @@ against the same coordination root as a live MCP server. Closing it means declar
 
 ## 260718-CHATS-L5I Current Delta
 
-Dashboard shutdown now uses a bounded three-second Uvicorn graceful window. This explicitly terminates intentionally endless SSE responses so lifespan cleanup can cancel projector, landing, and supervisor tasks instead of leaving a process alive after SIGTERM.
+Dashboard shutdown now uses a bounded three-second Uvicorn graceful window. This explicitly terminates intentionally endless SSE responses so lifespan cleanup can cancel projector, landing, and agent-notifier tasks instead of leaving a process alive after SIGTERM.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the cadence-owner range (1 repair, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
 - 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: replaced the
   underbound declaration/call fragments with the five complete CLI owners that define and consume

@@ -6,10 +6,16 @@
 | sourceRoute | skills/l-01-agent-lifecycles |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 
 ## Purpose
+
+### 260713-TES-L1 Rename — Doctrine Wording
+
+The canonical `skills/l-01-agent-lifecycles` tree and its nine synced copies now teach the
+agent-notifier name (sweep/heartbeat/retry-path wording in SKILL.md, criteria, role files, and
+templates); the lifecycle router, role registry, and doctrine content are unchanged.
 
 Canonical lifecycle doctrine for hosted role dispatch. Spawn-only creation, an explicit readiness
 gate, and one exact-session durable dispatch brief remain the three assignment states. ACPUI-L2
@@ -77,6 +83,11 @@ same ladder so no seat runs or expects a per-leaf full wrapper. Canonical `skill
 owner; the packaged `package_data/runtime/skills/` mirrors are sync-propagated copies.
 
 ## Update History
+
+- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the canonical `skills/l-01-agent-lifecycles`
+  tree and its nine synced copies were refreshed from supervisor to agent-notifier wording
+  (role files, templates, criteria, SKILL.md); route shape unchanged. Verification metadata
+  pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the quality altitude ladder in
   the lifecycle doctrine (targeted leaf checks, once-per-master full gate, per-leaf memory

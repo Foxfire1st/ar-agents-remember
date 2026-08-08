@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -36,7 +36,7 @@ rail view.
 - **Props vs store** cit:(["export function SessionRail"], dashboard/src/panels/session-cockpit/SessionRail.tsx:149-149): `model`/`rollup` arrive as PROPS — derived once in
   `SessionsView` and shared with the palette commands (one derivation, two surfaces; same-snapshot
   consistency, worker flag 5) — while `sessions`, the tree toggle, poll health, the projection
-  slices (`taskDocuments`, `lifecycles`, `agentPickups`, `supervisorHeartbeat`), the lifecycle
+  slices (`taskDocuments`, `lifecycles`, `agentPickups`, `agentNotifierHeartbeat`), the lifecycle
   notices (`cleanupOutcome`), and the harvest map (`usePtyHarvest`) are store reads.
 - **Row anatomy `renderRow`** (RULED R6 / **RV-2 responsive redesign**): the row is
   now TWO groups inside a `flex-wrap: wrap` `rowShell` — a **LABEL group** (`rowLabelGroup`: dot ·
@@ -108,7 +108,7 @@ rail view.
   finding 3).
 - **Poll-health banner** (L749-L754, R15): `pollHealth.healthy === false` ⇒ the amber "catalog
   poll stale — N beats missed; rows may be frozen" banner.
-- **Bus footer** (L836-L851, R8): anchored numbers from `supervisorHeartbeat`. **RV-4/R4 + R5:** the both-zero inbox collapses to a calm `inbox clear` (the anchored `N pending / M
+- **Bus footer** (L836-L851, R8): anchored numbers from `agentNotifierHeartbeat`. **RV-4/R4 + R5:** the both-zero inbox collapses to a calm `inbox clear` (the anchored `N pending / M
   redeliverable` pair renders only when there is something to anchor); the heartbeat/cutoff are
   HUMANIZED via `humanizeDuration` (`heartbeat 2 s / stale cutoff 1 m 0 s`, never the raw
   `570724.69163s / 86400s`), with the raw seconds kept in the tooltip. Renders the truth ("supervisor
@@ -203,6 +203,8 @@ instead of heartbeat age, and its former bus footer is removed because inbox and
 already have their authority in the top bar and detailed inspector.
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the sessionRailParts/sessionRailStyles extraction. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the superseded `(L…)`

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_store_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                   |
 | lastUpdated            | 2026-07-10T01:14+02:00                    |
-| lastVerifiedCommitHash |                                           `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                           2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                           `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                           2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                          |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`test_store_scaling_cs6.py` is the store-level CS-6 regression suite for HFX2-L12. It verifies bounded reads, compaction/reclamation, and malformed-line tolerance across the supervisor signal store, expectation rows, provider metrics/degradation stores, event river, terminal catalog, and dashboard-tolerant JSONL stores.
+`test_store_scaling_cs6.py` is the store-level CS-6 regression suite for HFX2-L12. It verifies bounded reads, compaction/reclamation, and malformed-line tolerance across the agent-notifier signal store, expectation rows, provider metrics/degradation stores, event river, terminal catalog, and dashboard-tolerant JSONL stores.
 
 ## Code Commentary
 
@@ -34,7 +34,7 @@ The suite uses `_scaling` helpers to prove post-compaction size is bounded at mu
 
 ### Conventions
 
-Each store is temp-rooted. Tests prefer deterministic read/write/count metrics over timing, and they seed at two sizes when proving reclamation or subquadratic growth. Store entry points are addressed through parameter objects rather than loose keywords: `SupervisorSignalCooldownStore.in_cooldown` takes a `SupervisorSignalKey(target=SupervisorSignalTarget(...), finding_kind=..., detail=...)`, `write_expectation_row` takes an `Expectation(kind=..., source_id=..., subject=ExpectationSubject(...))`, `AmbientLifecycle` takes `timing=AmbientTiming(heartbeat_seconds=...)`, and `TerminalCatalogLivenessSweeper` takes `probe=LivenessProbe(hysteresis=TerminalCatalogLivenessConfig(...), pane_capturer=...)`.
+Each store is temp-rooted. Tests prefer deterministic read/write/count metrics over timing, and they seed at two sizes when proving reclamation or subquadratic growth. Store entry points are addressed through parameter objects rather than loose keywords: `AgentNotifierSignalCooldownStore.in_cooldown` takes a `AgentNotifierSignalKey(target=AgentNotifierSignalTarget(...), finding_kind=..., detail=...)`, `write_expectation_row` takes an `Expectation(kind=..., source_id=..., subject=ExpectationSubject(...))`, `AmbientLifecycle` takes `timing=AmbientTiming(heartbeat_seconds=...)`, and `TerminalCatalogLivenessSweeper` takes `probe=LivenessProbe(hysteresis=TerminalCatalogLivenessConfig(...), pane_capturer=...)`.
 
 ### Invariants And Boundaries
 
@@ -56,7 +56,7 @@ No external documentation governs these repo-local store scaling regressions.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Store scaling tests cover signal compaction/snapshot reads, metrics tail reads, expectation snapshot reads, heartbeat/lifecycle reclamation, expectation and metrics compaction, provider degradation compaction, tolerant readers, terminal catalog batch/compact, and workspace-river compaction. | `SupervisorSignalStoreScalingTests` | mcp/tests/test_store_scaling_cs6.py:92-160 |
+| Store scaling tests cover signal compaction/snapshot reads, metrics tail reads, expectation snapshot reads, heartbeat/lifecycle reclamation, expectation and metrics compaction, provider degradation compaction, tolerant readers, terminal catalog batch/compact, and workspace-river compaction. | `AgentNotifierSignalStoreScalingTests` | mcp/tests/test_store_scaling_cs6.py:92-160 |
 | The shared CS-6 assertion helpers provide subquadratic, bounded-file-size, and bounded-count assertions used by this suite. | "def assert_subquadratic" | mcp/tests/_scaling.py:88-88 |
 | The startup workspace-river compactor documents why live cursor-safe compaction is out of scope for this leaf. | `compact_workspace_river` | mcp/src/agents_remember/observer/event_retention.py:110-152 |
 
@@ -70,6 +70,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the `n/a` table rows and
   the history `_scaling.py`/`compact_workspace_river` citations with exact anchors and
   fixer-generated ranges; exact non-fixing check returns zero findings.

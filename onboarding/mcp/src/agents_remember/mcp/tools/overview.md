@@ -82,9 +82,9 @@ domain application entry point and validates the result through `base._tool_payl
 task 27 that choke point also attaches the engine-computed `nextStep` hint onto every
 active-lifecycle response, computed by
 `next_step.py`. **260707-HFX2-L2 (R5)** adds a third thing this same choke point
-surfaces on every call: a `supervisorBanner` string when the serving daemon's
+surfaces on every call: a `agentNotifierBanner` string when the serving daemon's
 supervisor-sweep heartbeat has gone stale (`serving.supervisor_heartbeat
-.supervisor_staleness_banner`, exception-contained at the call site) — issue #15's
+.agent_notifier_staleness_banner`, exception-contained at the call site) — issue #15's
 "the watcher must be code AND watched" surfaced at the one place every MCP tool
 response already passes through. **260731-EFA-L4 reordered this choke point**: both
 attachments are now set on the *validated model* by `_attach_lifecycle_tail` BEFORE the
@@ -142,7 +142,7 @@ calling me" session-id resolution anywhere in this codebase.
 
 | Module          | Owns                                                                       |
 | --------------- | -------------------------------------------------------------------------- |
-| `base.py`       | `TRANSPORT`, `PUBLIC_TOOLS` (58), `RESERVED_TOOLS` (empty), and `_tool_payload` — the choke point. Since 260731-EFA-L4 its order is: `model_validate` → (in-lifecycle only) `_attach_lifecycle_tail` → ONE `model_dump(mode="json", exclude_none=True)` → `finalize_payload_tokens` → `amb.emit_tool`. `_attach_lifecycle_tail(response, amb, tool_name)` runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification` — the name guard is mandatory, since the notification itself flows through here in the same call that set the state), then assigns `response.nextStep = next_step_for(...)` and `response.supervisorBanner = _supervisor_banner(amb)`. Both are assigned unconditionally, `None` included, because `exclude_none=True` drops them — so a lifecycle-less or live-supervisor response is byte-identical to before. Both remain exception-safe and never raise into the tool path (`_supervisor_banner` swallows an unreadable heartbeat file). |
+| `base.py`       | `TRANSPORT`, `PUBLIC_TOOLS` (58), `RESERVED_TOOLS` (empty), and `_tool_payload` — the choke point. Since 260731-EFA-L4 its order is: `model_validate` → (in-lifecycle only) `_attach_lifecycle_tail` → ONE `model_dump(mode="json", exclude_none=True)` → `finalize_payload_tokens` → `amb.emit_tool`. `_attach_lifecycle_tail(response, amb, tool_name)` runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification` — the name guard is mandatory, since the notification itself flows through here in the same call that set the state), then assigns `response.nextStep = next_step_for(...)` and `response.agentNotifierBanner = _agent_notifier_banner(amb)`. Both are assigned unconditionally, `None` included, because `exclude_none=True` drops them — so a lifecycle-less or live-supervisor response is byte-identical to before. Both remain exception-safe and never raise into the tool path (`_agent_notifier_banner` swallows an unreadable heartbeat file). |
 | `next_step.py`  | The lifecycle next-step engine (task 27): pure `compute_next_step` maps the projected lifecycle state to one `NextStep` hint. Front half (no worktree contract yet) is a stable prose pointer back to the one-time `lifecycle_start` rundown (`FRONT_HALF_RUNDOWN`), and HFX-L6 rewrites that role framing around the architect-default developer-facing lifecycle with spawned backend orchestrators and curator closeout seats. Linear half (from `worktree_start`) delegates to `worktrees/modules/guidance.lifecycle_guidance` and overlays a turn-end hint at the gate moments. Task 28 made NOTIFY-AND-CONTINUE the active turn-end model: the `decide`/`_gate_after`/rundown ACTIVE hints now point at `lifecycle_turn_end_notification` (notify + stop, no wait), and a new `awaiting-developer` branch returns a `nextTool=None` stop hint. The `blocked` branch (a raised `lifecycle_gate` → `amb.block()`) still returns the `_AWAIT_GATE` await-developer hint at `lifecycle_resume` — the PARKED gate path, valid but un-hinted. A terminal `lifecycle_end` returns the loop-back hint. Edge `next_step_for` resolves state/contract/guidance and is exception-contained. 260731-EFA-L4: `next_step_for` returns `NextStep \| None` — the MODEL, not a dump of it — because the hint is a declared field of the response envelope and serializing it is the choke point's single `model_dump`; returning a dict here is what made the hint a key written into an already-dumped, already-token-counted payload. `_guidance_for` correspondingly widens `lifecycle_guidance`'s TypedDict with `dict(...)`: this hint layer reads guidance defensively by key and never re-emits its vocabulary. |
 | `core.py`       | ping, server_info, context_packet, runtime_install, resolve_context, skills_install; `compact_runtime_install_payload`. |
 | `memory.py`     | drift_check, memory_quality_check, route_index_refresh, memory_init, baseline status/adopt, carryover plan/apply; `compact_carryover_payload`. |
@@ -233,8 +233,8 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:19-19 |
 | The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
 | The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:230-230 |
-| The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | "class SupervisorHeartbeatStore" | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-59 |
-| The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:10-10 |
+| The agent-notifier heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | "class AgentNotifierHeartbeatStore" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-63 |
+| The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `agentNotifierBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:10-10 |
 | The terminal status aliases `terminal.py` annotates its refusal seams with. | "class AttachTerminalSessionToLeafResponse" | mcp/src/agents_remember/models/terminal.py:30-30 |
 
 ## 260712-TRH-L4 Route Impact
@@ -252,7 +252,7 @@ only. Dashboard and packaged projections remain additive and synchronized.
 ## 260731-EFA-L4 — The Choke Point Emits Its Own Contract
 
 `_tool_payload` used to do this: validate, dump, count tokens, emit the observer event, then
-write `nextStep` and `supervisorBanner` into the dumped dict. Two things were wrong with the
+write `nextStep` and `agentNotifierBanner` into the dumped dict. Two things were wrong with the
 last step and both were silent.
 
 - **The advertised token count excluded them.** `finalize_payload_tokens` stamps `tokens` from
@@ -260,12 +260,12 @@ last step and both were silent.
   `amb.emit_tool` also ran before them, the count recorded against the lifecycle was short by
   the same amount, so the fuel gauge and the wire agreed with each other and both disagreed
   with reality.
-- **`supervisorBanner` was declared on no model.** On a strict envelope (`extra="forbid"`) that
+- **`agentNotifierBanner` was declared on no model.** On a strict envelope (`extra="forbid"`) that
   makes a banner-carrying response fail its own `model_validate`; on a flexible one
   `extra="allow"` silently accepted it, which is the wrong kind of tolerance — that setting is
   for a PROVIDER's fields, not this package's.
 
-The fix has two halves. `models/base.py` declares `supervisorBanner` on both envelope bases and
+The fix has two halves. `models/base.py` declares `agentNotifierBanner` on both envelope bases and
 names their union `ResponseEnvelope`; `models/tool_registry.py` types both registries
 `dict[str, type[ResponseEnvelope]]` instead of `type[BaseModel]`. That retyping is what makes
 the reordering possible at all: against a bare `BaseModel`, `response.nextStep = ...` is not an
@@ -322,6 +322,8 @@ unconditional `flock`, held across the read **and** the rewrite, in every proces
 only who runs the pass.
 
 ## Update History
+- 2026-08-08T22:45+02:00 — 260713-TES-L1 completion round 2 (curator): refreshed citation ranges and supervisor -> agent-notifier wording in this route overview body; no route-shape change. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
   anchors (deleting three unresolvable overview/missing-module rows); exact non-fixing check

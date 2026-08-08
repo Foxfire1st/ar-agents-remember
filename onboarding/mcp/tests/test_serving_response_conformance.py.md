@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`         |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`         |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -227,7 +227,7 @@ modules, and everything that proves them lives here.
 | The open-status map asserted total over the declared outcomes, and the `_open_call` that indexes it directly. | `_OPEN_STATUS_BY_OUTCOME` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84 |
 | The control router and typed-error mapper. | `router`; `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:75-78; mcp/src/agents_remember/serving/conversation/control/api.py:124-141 |
 | The raw event stream's `ready` marker. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:230-277 |
-| The served-state tail field names. | `SERVED_TAIL_FIELDS` | mcp/src/agents_remember/serving/served_state.py:58-58 |
+| The served-state tail field names. | `SERVED_TAIL_FIELDS` | mcp/src/agents_remember/serving/served_state.py:62-66 |
 | The control-bridge harness fixtures used by this suite (`FakeControlAdapter`, `make_harness`, `OPERATOR`). | `FakeControlAdapter`; `make_harness` | mcp/tests/_control_plane.py:89-425; mcp/tests/_control_plane.py:521-532 |
 | The single-route sibling this suite was widened from, which owns `/api/state`'s assembled body and the SSE snapshot. | `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
 
@@ -242,6 +242,7 @@ type is recorded separately below as an in-repo boundary.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.

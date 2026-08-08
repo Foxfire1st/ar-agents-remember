@@ -1,13 +1,13 @@
-# test_supervisor.py
+# test_agent_notifier.py
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                            |
-| path                   | `mcp/tests/test_supervisor.py`             |
+| path                   | `mcp/tests/test_agent_notifier.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -16,8 +16,8 @@
 
 ## Purpose
 
-`test_supervisor.py` covers the deterministic supervisor sweep (`serving/supervisor.py` +
-`serving/supervisor_heartbeat.py`, 260707-HFX2-L2 R2-R6): one unit test per predicate family, the
+`test_agent_notifier.py` covers the deterministic agent-notifier sweep (`serving/agent_notifier.py` +
+`serving/agent_notifier_heartbeat.py`, 260707-HFX2-L2 R2-R6): one unit test per predicate family, the
 heartbeat's own read/tick/staleness behavior, and one integration test that seeds drift across every
 predicate simultaneously and asserts the full finding→action→heartbeat chain — no model in the loop
 anywhere; every fixture is a plain store write or a fake pane capturer/paster. 260707-HFX2-L4 (R2-R6)
@@ -100,7 +100,7 @@ The suite uses `NOW = datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared 
   (a row with no `spawned_by_session` recorded at all is a legacy/unrouted case, not a dead-owner
   case, and stays silent).
 - **Ladder walk integration (260707-HFX2-L4, R6 fixtures):** `LadderWalkIntegrationTests` drives the
-  ladder through `run_supervisor_sweep` end-to-end, not the pure predicates in isolation —
+  ladder through `run_agent_notifier_sweep` end-to-end, not the pure predicates in isolation —
   `test_silent_seat_climbs_rung_one_then_two_then_three` runs four successive sweeps over one
   unacked row and asserts it climbs rung 1 -> 2 -> 3 exactly on schedule, then proves rung 3 is a
   hard ceiling (a fifth sweep, far past every threshold, still reads rung 3).
@@ -109,12 +109,12 @@ The suite uses `NOW = datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared 
   ORCHESTRATOR, never the dead manager. `test_dead_manager_with_live_workers_respawns_and_surfaces_
   orphans` is the R3+orphan-policy fixture: a manager-addressed row past the respawn threshold with
   the manager's OWN turn-state stale triggers `_respawn_suspect` — the manager's catalog row flips
-  to `terminated`, a SINGLE `orchestration.supervisor.respawn` event carries both live workers under
+  to `terminated`, a SINGLE `orchestration.agent-notifier.respawn` event carries both live workers under
   `orphanedWorkers`, and the workers themselves are asserted UNCHANGED (`status == "running"`) —
   proving they are surfaced, never auto-retired or re-parented themselves.
   `test_dead_upstream_signals_the_grandparent` seeds the same dead-manager-with-live-worker shape
   and asserts the sweep's OWN `dead-upstream` finding (not the ladder) fires for the worker and the
-  `orchestration.supervisor.dead-upstream` event names the orchestrator as `grandparentAgentId`.
+  `orchestration.agent-notifier.dead-upstream` event names the orchestrator as `grandparentAgentId`.
 - **Sweep integration:** `test_seeded_drift_produces_expected_actions_and_ticks_heartbeat` seeds
   drift across pane-signal, expectation-overdue, inbox-redeliverable, AND seat-liveness
   simultaneously in one sweep and asserts the expected action set, delivery outcomes, the
@@ -170,9 +170,9 @@ convention from `test_terminal_ws.py`.
   leaf-chain progress; the threshold row must be the only emitted finding.
 - The L8 terminal-dead-seat tests deliberately require both terminal ladder rung and proven dead seat;
   live seats and rows still climbing remain protected by the older redelivery/escalation tests.
-- The HFX2-L9 signal-cooldown tests use a real temp-rooted `SupervisorSignalCooldownStore`; they do
+- The HFX2-L9 signal-cooldown tests use a real temp-rooted `AgentNotifierSignalCooldownStore`; they do
   not fake the cooldown decision.
-- `LadderWalkIntegrationTests` deliberately drives the FULL sweep (`run_supervisor_sweep`), not the
+- `LadderWalkIntegrationTests` deliberately drives the FULL sweep (`run_agent_notifier_sweep`), not the
   isolated `_escalate_rung`/`_respawn_suspect` action functions directly — the R6 fixtures are about
   proving the finding→action→durable-row-stamp chain end to end, matching the existing
   `SweepIntegrationTests` posture for the other five predicate families.
@@ -192,24 +192,24 @@ spec.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-<!-- No external/domain document defines the supervisor sweep; task provenance is not a source citation. -->
+<!-- No external/domain document defines the agent-notifier sweep; task provenance is not a source citation. -->
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: every predicate, the action dispatcher, and the sweep entry point. | "def evaluate_escalation_findings("; "def act_on_finding("; `run_supervisor_sweep` | mcp/src/agents_remember/serving/_supervisor_actions.py:729-729; mcp/src/agents_remember/serving/_supervisor_evaluation.py:313-313; mcp/src/agents_remember/serving/supervisor.py:96-193 |
-| The heartbeat store the zero-drift and second-sweep tests exercise directly. | `SupervisorHeartbeatStore` | mcp/src/agents_remember/serving/supervisor_heartbeat.py:59-121 |
+| The module under test: every predicate, the action dispatcher, and the sweep entry point. | "def evaluate_escalation_findings("; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:758-758; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:336-336; mcp/src/agents_remember/serving/agent_notifier.py:96-241 |
+| The heartbeat store the zero-drift and second-sweep tests exercise directly. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
 | The terminal catalog declares the typed `Literal` aliases. | `Literal` | mcp/src/agents_remember/serving/terminal_catalog.py:42-44 |
-| The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_supervisor.py:60-84 |
+| The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_agent_notifier.py:60-84 |
 | The fake-host casting convention this suite reuses rather than inventing its own duck-typing idiom. | `_FakeTerminalHost`; "class TerminalHost:" | mcp/src/agents_remember/serving/terminal.py:109-109; mcp/tests/test_terminal_ws.py:227-387 |
 | The pure ladder walker the escalation predicate/integration tests exercise indirectly through the sweep. | `rung_due`; `next_step`; `seat_is_suspect` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152; mcp/src/agents_remember/controlplane/escalation_ladder.py:155-187 |
 | The orphan-detection hook the dead-manager-with-live-workers fixture asserts surfaces both workers. | `find_orphaned_workers` | mcp/src/agents_remember/controlplane/orphan_policy.py:18-30 |
 | The operator-inbox terminal state and compaction semantics used by the L8 sweep tests. | `mark_ladder_resolved`; `list_redeliverable` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:105-125; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:319-341 |
-| The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `SupervisorSignalCooldownStore` | mcp/src/agents_remember/controlplane/supervisor_signals.py:68-215 |
-| The F1 regression pin proves hosted-delivery failures stay below the generic ladder until persistent retry exhaustion. | `test_delivery_failure_waits_for_retry_exhaustion_before_escalating` | mcp/tests/test_supervisor_ladder.py:49-79 |
-| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | "def _delivery_failure_still_retrying(entry: OperatorInboxEntry) -> bool:"; "def evaluate_escalation_findings(" | mcp/src/agents_remember/serving/_supervisor_evaluation.py:289-289; mcp/src/agents_remember/serving/_supervisor_evaluation.py:313-313 |
-| HFX2-L9 tests cover signal cooldown and diagnostic-pane non-actionability. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row`; `test_diagnostic_pane_signal_is_not_actionable` | mcp/tests/test_supervisor_seat.py:373-408; mcp/tests/test_supervisor_seat.py:444-464 |
+| The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `AgentNotifierSignalCooldownStore` | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220 |
+| The F1 regression pin proves hosted-delivery failures stay below the generic ladder until persistent retry exhaustion. | `test_delivery_failure_waits_for_retry_exhaustion_before_escalating` | mcp/tests/test_agent_notifier_ladder.py:49-79 |
+| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | "def _delivery_failure_still_retrying(entry: OperatorInboxEntry) -> bool:"; "def evaluate_escalation_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:312-312; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:336-336 |
+| HFX2-L9 tests cover signal cooldown and diagnostic-pane non-actionability. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row`; `test_diagnostic_pane_signal_is_not_actionable` | mcp/tests/test_agent_notifier_seat.py:374-408; mcp/tests/test_agent_notifier_seat.py:530-534 |
 
 ## Cross-Repo References
 
@@ -231,7 +231,7 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
-
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: split terminal-catalog aliases from the consuming supervisor fixture builder; the landing provenance mismatch remains an explicit Tier-3 item.

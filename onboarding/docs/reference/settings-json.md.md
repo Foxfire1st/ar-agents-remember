@@ -6,8 +6,8 @@
 | path                   | `docs/reference/settings-json.md`       |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -31,11 +31,11 @@ acceptance windows, so one sweep must not multiply that synchronous wait across 
 
 ### 260707-HFX2-L12 CS-6 Update
 
-Documented the new `orchestration.supervisor.escalationBudget` reference row: the supervisor now has a settings-owned per-sweep cap for escalation-rung emissions, distinct from `redeliverBudget`, and deferred rung-due rows stay level-triggered for the next sweep.
+Documented the new `orchestration.agent-notifier.escalationBudget` reference row: the supervisor now has a settings-owned per-sweep cap for escalation-rung emissions, distinct from `redeliverBudget`, and deferred rung-due rows stay level-triggered for the next sweep.
 
 The page is documentation, not parser code. Runtime parsing lives in `kernel/agentic_settings.py`
 for `orchestration.*` and the MCP authority/config loaders for boot infrastructure. HFX2-L8 added the
-`orchestration.supervisor` table documenting safe defaults for the deterministic supervisor sweep:
+`orchestration.agentNotifier` table documenting safe defaults for the deterministic agent-notifier sweep:
 `enabled`, `intervalSeconds`, `staleCutoffSeconds`, `redeliverRateLimitSeconds`, and
 `redeliverBudget` (default 250) so an empty supervisor block remains bounded during large inbox
 backlogs. HFX2-L9 updates that table for the production redelivery incident:
@@ -54,9 +54,9 @@ spawn-surface manual.
 - Settings families have exactly one home; do not present coordinator `system/settings.json` as an
   MCP authority file.
 - Unknown keys under `orchestration.*` fail loud in the parser; docs must track parser field names.
-- The supervisor redelivery and repeated-signal cadence floor is 900 seconds; docs must not suggest
+- The agent-notifier redelivery and repeated-signal cadence floor is 900 seconds; docs must not suggest
   a sub-15-minute setting can run.
-- The supervisor redelivery budget is a conservative default, not a required operator knob.
+- The agent-notifier redelivery budget is a conservative default, not a required operator knob.
 - The settings reference should not describe caller-supplied `spawn_agent_session` spend fields as
   a valid precedence rung; HFX2-L10 makes settings the spend authority and treats those caller
   fields as compatibility refusals.
@@ -65,14 +65,16 @@ spawn-surface manual.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Agentic settings parser that implements the documented `orchestration.*` families. | "Read + merge the global (and optional repo-local) agentic settings, per use." | mcp/src/agents_remember/kernel/agentic_settings.py:230-230 |
+| Agentic settings parser that implements the documented `orchestration.*` families. | "Read + merge the global (and optional repo-local) agentic settings, per use." | mcp/src/agents_remember/kernel/agentic_settings.py:237-237 |
 | Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
-| Serving app that reads supervisor settings per sweep. |"logger.exception(\"supervisor sweep failed; retrying next interval\")"|mcp/src/agents_remember/serving/_app_lifespan.py:107-107|
-| Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. | `run_supervisor_sweep` | mcp/src/agents_remember/serving/supervisor.py:96-193 |
+| Serving app that reads supervisor settings per sweep. |"logger.exception(\"agent-notifier sweep failed; retrying next interval\")"|mcp/src/agents_remember/serving/_app_lifespan.py:107-107|
+| Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:96-241 |
 | Backoff math enforcing the shared 900-second redelivery floor documented here. | "redelivery interval" | mcp/src/agents_remember/controlplane/inbox_backoff.py:45-45 |
 
 ## Update History
-- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 5 citation claims; scoped result 0 findings.
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
+"- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 5 citation claims; scoped result 0 findings.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15: refreshed the settings contract for Codex argv knobs,

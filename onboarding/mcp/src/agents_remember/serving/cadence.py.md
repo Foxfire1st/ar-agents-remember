@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/cadence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-31 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,7 +19,7 @@
 Holds `ProjectionCadence` — the one pacing decision every dashboard process shares — in its own
 stdlib-only module. New at 260731-EFA-L2.
 
-The module exists to be importable by the import-light daemon supervisor: `daemon.py` needs to name
+The module exists to be importable by the import-light daemon agent-notifier: `daemon.py` needs to name
 the cadence it hands a spawned child without importing `projector.py` and, through it, the whole
 serving stack. Anything added here must keep that property (stdlib only, no `agents_remember`
 imports).
@@ -62,5 +62,6 @@ No meaningful cross-repo references.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: created for the new module. Verification metadata stays
   pinned to the pre-commit source history until closeout.

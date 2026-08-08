@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/hosted_session_runtime.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-31 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ HostedSessionRuntime(catalog: TerminalCatalog, host: TerminalHost)
 `__all__` exports only `HostedSessionRuntime`.
 
 It mirrors the composition-time bundles the serving layer already uses (`ConversationRuntime`,
-`SupervisorContext`): the authorities are frozen together once and then passed as one thing.
+`AgentNotifierContext`): the authorities are frozen together once and then passed as one thing.
 
 ### Invariants And Boundaries
 
@@ -67,5 +67,6 @@ No meaningful cross-repo references.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: created for the new module. Verification metadata stays
   pinned to the pre-commit source history until closeout.

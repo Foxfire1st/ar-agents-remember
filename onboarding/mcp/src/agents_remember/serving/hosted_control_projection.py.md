@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/hosted_control_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
+| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ seat state from adapter fields; the canonical authority is the only classificati
 ### Invariants And Boundaries
 
 - `paneDiagnostic` remains diagnostic detail and cannot authorize readiness, delivery, or
-  supervisor action.
+  agent-notifier action.
 - Neither orchestration nor Chats derives state from rendered events or PTY output.
 - The delegated mapping must keep exact parity with the pre-canonical seat vocabulary; any
   vocabulary change belongs to the canonical authority, not a local mapping.
@@ -101,6 +101,8 @@ Hosted control projection now consumes the canonical conversation turn-status au
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+
 
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 9 citations (citation_anchor_missing=4, citation_prose_not_in_cit_form=1, citation_source_malformed=4); final scoped citation check clean.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to

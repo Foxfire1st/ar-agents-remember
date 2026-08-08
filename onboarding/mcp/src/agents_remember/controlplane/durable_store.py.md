@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/durable_store.py`   |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-01T19:10+02:00                                    |
-| lastVerifiedCommitHash |                                                           `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |                                                           2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |                                                           `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
+| lastVerifiedCommitDate |                                                           2026-08-08T22:29:45+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ torn" have the same single-site standing.
 
 | Store                | Base-commit loss as the sources state it                      | Compaction owner declared here |
 | --- | --- | --- |
-| attention-dismissals | 31.45 percent — corroborated at four sites (this docstring, `supervisor_signals.py`, `test_durable_store_contract.py`, `test_observer_projection.py`). The "127 of 2000 writes raising `FileNotFoundError`" beside it is this docstring only | dashboard |
+| attention-dismissals | 31.45 percent — corroborated at four sites (this docstring, `agent_notifier_signals.py`, `test_durable_store_contract.py`, `test_observer_projection.py`). The "127 of 2000 writes raising `FileNotFoundError`" beside it is this docstring only | dashboard |
 | gate                 | 11.50 percent — corroborated at three sites (this docstring, `store.py`, `test_interaction_retention.py`). The "100 percent in the forced-window scenario" beside it is `store.py` only, but see the note below: that one is asserted by a test | mcp |
 | supervisor-signals   | 10.50 percent — this docstring only                           | dashboard |
 | expectation-rows     | 10.20 percent — this docstring only                           | dashboard |
@@ -252,7 +252,7 @@ BEFORE entering this one, or the side effect runs AFTER leaving it; never nested
 this rule forbids were each locally documented and locally defensible: the liveness sweep held the
 catalog batch lock across the hosted-interaction synchronizer's operator-inbox/gate acquisitions
 (260718-CHATS-L5 had quarantined that call's failure mode, not its placement), and the
-supervisor's lock-held reconcile read the catalog under the inbox lock (260712-TRH-L5's
+agent-notifier's lock-held reconcile read the catalog under the inbox lock (260712-TRH-L5's
 "intentionally held across catalog/tmux evidence"). On 2026-08-05 the two deadlocked ABBA in
 production, twice and py-spy-verified, and the uvicorn event loop then queued on the same catalog
 RLock via async endpoints doing synchronous catalog reads, so the daemon stopped accepting. Both
@@ -277,7 +277,7 @@ where it is required and unavailable, this refuses to run.
   rewrite. That invariant holds in all six stores. The *code shape* it is written in does not, so do
   not read the shape as the rule — this was checked store by store rather than taken from the
   module's own summary. Three stores use a named locked half: `ExpectationRowStore.compact` →
-  `_compact_locked`, `SupervisorSignalCooldownStore.compact` → `_compact_locked`, and
+  `_compact_locked`, `AgentNotifierSignalCooldownStore.compact` → `_compact_locked`, and
   `AttentionDismissalStore.prune_lifecycles` → `_prune_locked`. The other three inline the read, the
   filter and the rewrite in one method body under a single `exclusive_access`: `GateStore.compact`
   and `GateStore.delete`, `OrchestrationNudgeStore.compact`, and every `OperatorInboxStore` rewrite
@@ -365,7 +365,7 @@ only for other files, and every one below was re-verified against the working tr
 | The version rule as implemented: the major is compared for equality, so `"0.9"` is refused exactly as `"2.0"` is and an unparseable version is refused outright; `DurableRecord` validates `schemaVersion` on the way in so neither reader needs a version branch. | `schema_version_supported`; `SUPPORTED_SCHEMA_MAJOR`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:55-55; mcp/src/agents_remember/controlplane/durable_store.py:224-245; mcp/src/agents_remember/controlplane/durable_store.py:248-271 |
 | `declare_process_role` and `declared_process_role`: the opt-in declaration the two advisory checks read, absent in every CLI invocation and test. Its docstring names the three call sites and states why `_dev_app` is the deliberate exception and the only factory that declares. | `declare_process_role`; `declared_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:76-84; mcp/src/agents_remember/controlplane/durable_store.py:87-89 |
 | `StoreOwnership` with no `serialized` field, `check_declared_writer` which raises only inside a declared process, and `is_compaction_owner` which is a question and never throws — including why the undeclared-is-owner default was re-decided and kept rather than inverted. | `StoreOwnership` | mcp/src/agents_remember/controlplane/durable_store.py:92-132 |
-| The ownership register: all six constants side by side, four logs written by both processes and two by the dashboard alone. All six are named here because no single range covers them. | `GATE_OWNERSHIP`; `EXPECTATION_ROW_OWNERSHIP`; `ATTENTION_DISMISSAL_OWNERSHIP`; `OPERATOR_INBOX_OWNERSHIP`; `ORCHESTRATION_NUDGE_OWNERSHIP`; `SUPERVISOR_SIGNAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:138-150; mcp/src/agents_remember/controlplane/durable_store.py:152-162; mcp/src/agents_remember/controlplane/durable_store.py:164-180; mcp/src/agents_remember/controlplane/durable_store.py:182-198; mcp/src/agents_remember/controlplane/durable_store.py:200-210; mcp/src/agents_remember/controlplane/durable_store.py:212-221 |
+| The ownership register: all six constants side by side, four logs written by both processes and two by the dashboard alone. All six are named here because no single range covers them. | `GATE_OWNERSHIP`; `EXPECTATION_ROW_OWNERSHIP`; `ATTENTION_DISMISSAL_OWNERSHIP`; `OPERATOR_INBOX_OWNERSHIP`; `ORCHESTRATION_NUDGE_OWNERSHIP`; `AGENT_NOTIFIER_SIGNAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:138-150; mcp/src/agents_remember/controlplane/durable_store.py:152-162; mcp/src/agents_remember/controlplane/durable_store.py:164-180; mcp/src/agents_remember/controlplane/durable_store.py:182-198; mcp/src/agents_remember/controlplane/durable_store.py:200-210; mcp/src/agents_remember/controlplane/durable_store.py:212-221 |
 | `OPERATOR_INBOX_OWNERSHIP` carries `compaction_owner=None`, the leaf's declared exception, because both processes must physically remove rows. | `OPERATOR_INBOX_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:182-198 |
 | `ATTENTION_DISMISSAL_OWNERSHIP` records why a single-writer store is still locked, naming the 31.45 percent an unlocked draft measured. | `ATTENTION_DISMISSAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:164-180 |
 | `thread_mutex_for` states that `flock` already excludes two threads of one process, so the mutex closes a plausible regression rather than a reproducible loss, and explains why it is re-entrant. Its account of how the six shape their reclaims is the one recorded under Todos. | `thread_mutex_for` | mcp/src/agents_remember/controlplane/durable_store.py:301-315 |
@@ -393,6 +393,7 @@ repository; nothing outside it reads these logs.
 
 ## Update History
 
+- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded the cross-store lock-order doctrine
   (`exclusive_access` docstring: ONE ORDER ACROSS STORES, TOO — evidence before entry, side effects
   after exit, never nested) next to the intra-store ordering, with the 2026-08-05 ABBA incident
