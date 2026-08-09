@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-09T01:21+02:00|
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastUpdated            | 2026-08-09T03:51+02:00|
+| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
+| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -327,9 +327,11 @@ The catalog row now carries the terminal turn truth lifted by the state-signal r
 - **Interrupt provenance** — `interrupt_requested_by` (`developer`), `interrupt_requested_at`,
   and `interrupt_requested_turn_id` are stamped by the dashboard/interface interrupt route
   (N9 origin attribution).
-- **Signal markers** — `state_signal_emitted_for` (the relayed terminal evidence id) and
-  `non_reaction_emitted_for` (the relayed landed-row episode) are the per-seat+turn/per-episode
-  dedupe markers.
+- **Signal markers** — `state_signal_emitted_for` (the relayed terminal evidence id),
+  `non_reaction_emitted_for` (the relayed landed-row episode), and since 260713-TES-L3
+  `compound_idle_emitted_for` (the relayed compound-idle episode signature) are the
+  per-seat+turn/per-episode dedupe markers; a seat returning to activity changes the
+  compound signature, which is the re-arm (no separate marker-clearing write).
 
 `CatalogTurnEvidence` cit:(["class CatalogTurnEvidence:"], mcp/src/agents_remember/serving/terminal_catalog.py:59-70) is the frozen one-seat-turn projection stamp (state plus
 optional terminal outcome/identity/origin) carried from liveness into the write helpers.
@@ -341,9 +343,23 @@ seats hold; dead/archived rows never accept a push. All new writes ride the publ
 The wire model gained the matching fields (see `response_contract.py.md`); the emitted key pin
 is now 63.
 
+## 260713-TES-L3 Current Delta — Compound-Idle Marker Field
+
+`TerminalCatalogEntry` gained `compound_idle_emitted_for` cit:([`compound_idle_emitted_for`], mcp/src/agents_remember/serving/terminal_catalog.py:233-233)
+(JSON `compoundIdleEmittedFor`), read through `_optional_str` in `from_json`
+cit:([`from_json`], mcp/src/agents_remember/serving/terminal_catalog.py:235-316) and emitted through the `None`-filtered optional fold in `to_json`
+cit:([`to_json`], mcp/src/agents_remember/serving/terminal_catalog.py:318-397) after `nonReactionEmittedFor` — migration-safe like every other
+optional column. The wire model gained the matching field and the emitted key pin is now 64
+(63→64, 260713-TES-L3); the dedupe comment above the marker fields documents the episode-signature
+semantics. The write helpers live in `serving/seat_turn_truth.py` (see its sidecar).
+
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded the `compound_idle_emitted_for`
+  catalog field (JSON `compoundIdleEmittedFor`, migration-safe optional read/write, episode
+  signature semantics, 63→64 wire key pin) and refreshed the signal-marker bullet. Verification
+  metadata pinned until closeout stamps the 260713-TES-L3 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the catalog turn-truth delta —
   terminal outcome/origin fields, evidence cursors, interrupt provenance, signal markers,
   `CatalogTurnEvidence`, `seat_at_turn_boundary`, and the `seat_turn_truth` write seam.

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
+| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -259,6 +259,14 @@ and `inbox_reclamation._eligible` excludes them — no redelivery, ladder, or re
 re-touch a landed relay row. The worker→manager artifact/SLA interpretation
 (`turn-report-by`/`turn-report-stale`) is retired (N8/R6): `briefed-by` rows remain dashboard
 provenance but no longer drive notifier findings.
+
+**260713-TES-L3 — master-scoped compound-idle ownership.** The private `_master_key` helper is
+now the public `signal_routing.master_key` (`repo/master` prefix of a qualified leaf key), used
+by `_scoped_managers` as before and now also by `serving/state_signals.py` to master-scope
+compound-idle set membership on EVERY arm (binding + spawn provenance). `derive_signal_owner`
+remains the one-hop worker→manager / manager→orchestrator route; the compound-idle emitter and
+the manager non-reaction residue both resolve their orchestrator through it, and a manager
+without a recorded spawn edge is skipped (fail-closed, no global fallback, R4/L6).
 **260707-HFX2-L4** lands that ladder escalation: `escalation_ladder.py::rung_due`/`next_step` climb
 an unacked row rung 1 (renudge) -> rung 2 (skip-level, via new `signal_routing.
 derive_skip_level_owner` -- a SEPARATE two-hop walk from L1's one-hop `derive_signal_owner`, walking
@@ -310,7 +318,7 @@ signal, while targetless provider-down dismissals are not accepted.
 | `expectation_rows.py` | (260707-HFX2-L1, R2) `ExpectationRow`/`ExpectationRowStore`/`write_expectation_row`: durable what-must-happen-by-when rows written atomically at every dispatch surface, an L2 sweep scans, never in-memory timers. |
 | `inbox_backoff.py` | (260707-HFX2-L1, R3; HFX2-L9) Pure redelivery backoff-ladder math + the shared 900-second redelivery floor/fail-loud validation, mirroring the `OrchestrationNudgeStore` pattern while refusing sub-floor retry cadences. |
 | `agent_notifier_signals.py` | (260707-HFX2-L9, renamed 260713-TES-L1) Persisted agent-notifier pane/seat-liveness signal cooldown records keyed by owner/leaf/finding kind/detail; durable names (`supervisor-signals.jsonl`, `store="supervisor-signals"`, `ar-supervisor-signal/v1`) retained until their schema migration. |
-| `signal_routing.py` | (260707-HFX2-L1, R4; 260707-HFX2-L4, R2/R4) `derive_signal_owner`: one-hop hierarchical routing derivation from catalog spawn provenance (worker -> manager, manager -> orchestrator, decision-item -> architect). `is_seat_dead`/`derive_skip_level_owner`: the ladder's liveness check and SEPARATE two-hop, dead-node-skipping owner's-owner walk. |
+| `signal_routing.py` | (260707-HFX2-L1, R4; 260707-HFX2-L4, R2/R4; 260713-TES-L3) `derive_signal_owner`: one-hop hierarchical routing derivation from catalog spawn provenance (worker -> manager, manager -> orchestrator, decision-item -> architect). `is_seat_dead`/`derive_skip_level_owner`: the ladder's liveness check and SEPARATE two-hop, dead-node-skipping owner's-owner walk. `master_key` (public since 260713-TES-L3): the qualified `repo/master` scope prefix used by `_scoped_managers` and compound-idle membership. |
 | `escalation_ladder.py` | (260707-HFX2-L4 + L13/HFX3 correction) `rung_due`/`next_step`/`seat_is_suspect`: the pure tier-3 ladder walker, configured dwell plus redundant five-minute later-rung floor, architect terminal custody, and dead/stalled-seat respawn-candidate detection. |
 | `orphan_policy.py` | (260707-HFX2-L4, R3) `find_orphaned_workers`: a pure catalog read for a dead/respawned manager's still-running worker seats -- detection/surfacing only, no re-parent action. |
 | `durable_store.py` | (260731-EFA-L5) `ar-durable-store/1.0`: the one contract all six JSONL stores implement, and the only place in the package that appends, rewrites, builds a temp path or imports `fcntl`. Owns `DurableRecord` (the shared record base with `extra="forbid"` and a validated `schemaVersion`), `StoreOwnership` plus the six per-store ownership constants, `declare_process_role`, the `exclusive_access` / `thread_mutex_for` / `require_lock_held` locking primitives, the `_verify_lock_capability` filesystem probe, and `append_line` / `rewrite_lines`. |
@@ -390,7 +398,7 @@ response models are `models/operator_inbox.py`.
 | Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. | `prepare_mcp_process`; `_dev_app`; `run` | mcp/src/agents_remember/application/server_startup.py:20-23; mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:161-196 |
 | `_reclaim_gate_log` at L453-L473: gate compaction moved here from the dashboard projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly. | "def gate_decide_payload" | mcp/src/agents_remember/mcp/tools/gates.py:67-67 |
 | The projection tick that no longer rewrites anything: `read_gates` at L104 folds through the tolerant `projected_current`, and `read_expectation_rows` at L193 uses `pending_for_projection`. | "def read_gates(coordination_root: Path, *, now: datetime"; "def read_expectation_rows(" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104; mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193 |
-| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. (`evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal`) |"def evaluate_escalation_findings"|mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:295-295|
+| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. (`evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal`) |"def evaluate_escalation_findings"|mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:296-296|
 
 ## 260712-TRH-L4 Route Impact
 
@@ -443,6 +451,11 @@ the liveness sweep's synchronizer side effect now follows its batch commit.
 
 ## Update History
 
+- 2026-08-09T03:51+02:00 — 260713-TES-L3 route impact: recorded the public `master_key`
+  promotion and its compound-idle consumer (`state_signals.py` master-scoped membership),
+  plus `derive_signal_owner` as the one-hop owner for compound-idle and manager-residue
+  signals (no global fallback). Verification metadata pinned until closeout stamps the
+  260713-TES-L3 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: recorded the state-signal substrate
   (`InboxMessageKind`, `state_signal_landed`, backoff/reclamation/transition exclusions) and
   the turn-report-by retirement. Verification metadata pinned until closeout stamps the

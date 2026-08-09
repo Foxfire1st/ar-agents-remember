@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agent_notifier.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-09T01:21+02:00               |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
+| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -197,7 +197,7 @@ spec.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: every predicate, the action dispatcher, and the sweep entry point. | "def evaluate_escalation_findings("; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:757-757; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:295-295; mcp/src/agents_remember/serving/agent_notifier.py:106-205 |
+| The module under test: every predicate, the action dispatcher, and the sweep entry point. | "def evaluate_escalation_findings("; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:830-830; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:296-296; mcp/src/agents_remember/serving/agent_notifier.py:111-210 |
 | The heartbeat store the zero-drift and second-sweep tests exercise directly. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
 | The terminal catalog declares the typed `Literal` aliases. | "TerminalSessionKind = Literal"; "TerminalSessionStatus = Literal" | mcp/src/agents_remember/serving/terminal_catalog.py:42-43 |
 | The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_agent_notifier.py:58-82 |
@@ -207,7 +207,7 @@ spec.
 | The operator-inbox terminal state and compaction semantics used by the L8 sweep tests. | `mark_ladder_resolved`; `list_redeliverable` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:105-125; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:319-341 |
 | The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `AgentNotifierSignalCooldownStore` | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220 |
 | The F1 regression pin proves hosted-delivery failures stay below the generic ladder until persistent retry exhaustion. | `test_delivery_failure_waits_for_retry_exhaustion_before_escalating` | mcp/tests/test_agent_notifier_ladder.py:49-79 |
-| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | "def _delivery_failure_still_retrying(entry: OperatorInboxEntry) -> bool:"; "def evaluate_escalation_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:271-271; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:295-295 |
+| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | "def _delivery_failure_still_retrying(entry: OperatorInboxEntry) -> bool:"; "def evaluate_escalation_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:272-272; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:296-296 |
 | HFX2-L9 tests cover signal cooldown and diagnostic-pane non-actionability. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row`; `test_diagnostic_pane_signal_is_not_actionable` | mcp/tests/test_agent_notifier_seat.py:374-408; mcp/tests/test_agent_notifier_seat.py:530-534 |
 
 ## Cross-Repo References

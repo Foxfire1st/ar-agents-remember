@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T03:51+02:00|
+| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
+| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -88,6 +88,19 @@ hierarchy, the orchestrator, has none) returns whatever the walk last resolved, 
 if nothing did. This is deliberately a SECOND function, not a parameter on `derive_signal_owner` —
 see Invariants.
 
+### 260713-TES-L3 Master-Key Helper Promotion
+
+The former private `_master_key` helper is now the public `master_key`
+cit:([`master_key`], mcp/src/agents_remember/controlplane/signal_routing.py:52-58): the qualified `repo/master` prefix of a qualified leaf key, or
+`None` for an unbound/legacy key. It remains the scope filter inside `_scoped_managers`
+cit:([`_scoped_managers`], mcp/src/agents_remember/controlplane/signal_routing.py:110-128) (replacing the private-name call), and since 260713-TES-L3 it is also
+consumed by `serving/state_signals.py` to master-scope compound-idle membership on EVERY arm
+(binding + spawn provenance): a worker joins a manager's set only when
+`master_key(worker.binding_leaf_key) == master_key(manager.binding_leaf_key)` (fix round 1,
+F1). This is a mechanical rename + promotion with no routing-behavior change: `derive_signal_owner`
+remains the one-hop manager→orchestrator route the compound-idle emitter and the manager
+non-reaction residue use.
+
 ### Conventions
 
 Every "no route" case returns the same empty `RoutedOwner()` sentinel (all fields `None`) rather
@@ -133,6 +146,7 @@ existing design doc.
 | --- | --- | --- |
 | The owner address is read straight off the sender's own `spawned_by_session`/`spawned_by_lifecycle` catalog fields. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
 | The two callers of the two-hop walk: rung 2's skip-level target and the dead-upstream grandparent signal. | `derive_skip_level_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:335-375 |
+| The compound-idle consumer of the public `master_key` scope filter (both membership arms). | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:69-103 |
 | `next_step`'s rung-2 branch calls this walker directly and detects the hierarchy-ceiling empty-owner case. | `next_step` | mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152 |
 
 ## Cross-Repo References
@@ -144,6 +158,12 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+- 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded the `_master_key` → public
+  `master_key` promotion (used by `_scoped_managers` and, since L3, by
+  `serving/state_signals.py` for master-scoped compound-idle membership on every arm). No
+  routing-behavior change; `derive_signal_owner` stays the one-hop manager→orchestrator owner
+  for the compound-idle and manager-residue signals. Verification metadata pinned until
+  closeout stamps the 260713-TES-L3 commit.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 

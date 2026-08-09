@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-09T01:21+02:00                                  |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`              |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastUpdated            | 2026-08-09T03:51+02:00|
+| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`              |
+| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ precisely because `extra="forbid"` would make a shared permissive model accept e
 pin none of them. cit:([`HttpDetailRefusal`], mcp/src/agents_remember/serving/response_contract.py:186-191) is the odd one out: it is FastAPI's own
 `HTTPException` body, so it is a plain `BaseModel` with no alias generator.
 
-**The two live-enforcement models.** cit:([`TerminalCatalogEntryWire`], mcp/src/agents_remember/serving/response_contract.py:280-359) declares 63 fields in
+**The two live-enforcement models.** cit:([`TerminalCatalogEntryWire`], mcp/src/agents_remember/serving/response_contract.py:280-360) declares 64 fields in
 `TerminalCatalogEntry.to_json`'s exact emission order, and its route declares
 `response_model_exclude_unset=True` so re-serializing reproduces that hand-rolled, *conditional*
 body byte for byte instead of back-filling nulls the dashboard has never seen.
@@ -66,8 +66,8 @@ fires the moment the field is added, before any payload carries it — strictly 
 either the runtime 500 or a conformance run whose fixture happens to populate the new field.
 
 **Unions are declared where the route really answers in more than one shape**, and each is
-discriminated where it can be: cit:([`CodeNode`, `OnboardingMeta`, `OnboardingResolution`], mcp/src/agents_remember/serving/response_contract.py:627-627; mcp/src/agents_remember/serving/response_contract.py:656-656; mcp/src/agents_remember/serving/response_contract.py:720-726) (`Field(discriminator="kind")` — only a
-`kind: "file"` row may carry `language`/`hasSidecar`, and only it must), cit:([`OnboardingMeta`], mcp/src/agents_remember/serving/response_contract.py:656-656),
+discriminated where it can be: cit:([`CodeNode`, `OnboardingMeta`, `OnboardingResolution`], mcp/src/agents_remember/serving/response_contract.py:628-628; mcp/src/agents_remember/serving/response_contract.py:657-657; mcp/src/agents_remember/serving/response_contract.py:721-727) (`Field(discriminator="kind")` — only a
+`kind: "file"` row may carry `language`/`hasSidecar`, and only it must), cit:([`OnboardingMeta`], mcp/src/agents_remember/serving/response_contract.py:657-657),
 cit:([`OnboardingResolution`], mcp/src/agents_remember/serving/response_contract.py:720-726) (the five shapes `GET /api/files/onboarding` answers with),
 and cit:([`SubmissionLookup`], mcp/src/agents_remember/serving/response_contract.py:958-960).
 
@@ -82,7 +82,7 @@ idiom is shared, and each route adds only the statuses it can actually produce:
 - cit:([`ACTION_RESPONSES`], mcp/src/agents_remember/serving/response_contract.py:1090-1098) — `/api/actions/{action}`: the evaluator's refusals plus the
   not-ready projection as an `HttpDetailRefusal`.
 
-cit:(["TerminalCleanupResult.model_rebuild()", `TerminalCleanupResult`, `TerminalCleanupSkip`], mcp/src/agents_remember/serving/response_contract.py:431-438; mcp/src/agents_remember/serving/response_contract.py:441-445; mcp/src/agents_remember/serving/response_contract.py:1101-1101) is not decoration: `TerminalCleanupResult`
+cit:(["TerminalCleanupResult.model_rebuild()", `TerminalCleanupResult`, `TerminalCleanupSkip`], mcp/src/agents_remember/serving/response_contract.py:432-439; mcp/src/agents_remember/serving/response_contract.py:442-446; mcp/src/agents_remember/serving/response_contract.py:1102-1102) is not decoration: `TerminalCleanupResult`
 references `TerminalCleanupSkip`, which is declared after it.
 
 ### Conventions
@@ -135,6 +135,13 @@ cit:([`terminal_outcome`], mcp/src/agents_remember/serving/response_contract.py:
 `test_serving_response_conformance.py` moved from 52 to 63, so a future `to_json` growth still
 fails CI before any wire 500.
 
+## 260713-TES-L3 Current Delta — Compound-Idle Wire Field
+
+`TerminalCatalogEntryWire` gained `compound_idle_emitted_for`
+cit:([`compound_idle_emitted_for`], mcp/src/agents_remember/serving/response_contract.py:356-356) in emission order after `non_reaction_emitted_for`; the
+key-set pin in `test_serving_response_conformance.py` moved from 63 to 64. The catalog row's
+marker stores the compound-idle episode signature (see `terminal_catalog.py.md`).
+
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ### Todos
@@ -182,6 +189,10 @@ own serving app emits over localhost.
 
 ## Update History
 
+- 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded the `compound_idle_emitted_for`
+  wire field (64-key pin, emission order after `non_reaction_emitted_for`) and updated the
+  live-enforcement model count to 64 fields. Verification metadata pinned until closeout
+  stamps the 260713-TES-L3 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the eleven new
   `TerminalCatalogEntryWire` fields (63-key pin) carrying the catalog turn truth onto the
   sessions wire. Verification metadata pinned until closeout stamps the 260713-TES-L2 commit.

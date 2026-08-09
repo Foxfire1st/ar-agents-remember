@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | mcp/src/agents_remember/serving/agent_notifier_models.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastUpdated | 2026-08-09T03:51+02:00|
+| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
+| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
@@ -39,7 +39,15 @@ until 260713-TES-L2 (below).
 
 `FindingKind` gained `state-signal-due`, `non-reaction-due`, and `boundary-drain`, and retired
 `turn-report-stale` (the artifact-presence/SLA predicate on the worker→manager path). `ActionKind`
-correspondingly gained `state-signal`, `non-reaction`, and `boundary-drain` cit:([`FindingKind`, `ActionKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:27-49).
+correspondingly gained `state-signal`, `non-reaction`, and `boundary-drain`
+cit:([`FindingKind`, `ActionKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:27-49).
+
+### 260713-TES-L3 Compound-Idle Kinds
+
+`FindingKind` gained `compound-idle-due` cit:([`FindingKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:27-38) (between `state-signal-due` and
+`non-reaction-due` in the Literal) and `ActionKind` gained `compound-idle`
+cit:([`ActionKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:40-53), consumed by `_emit_compound_idle` and its
+`AgentNotifierActionResult`.
 
 ### Logic
 
@@ -62,6 +70,9 @@ Worker source inventory, reviewer verdict, and governing route overview.
 No meaningful cross-repo references.
 ## Update History
 
+- 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded `compound-idle-due` in
+  `FindingKind` and `compound-idle` in `ActionKind`. Verification metadata pinned until
+  closeout stamps the 260713-TES-L3 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the new state-signal
   finding/action kinds and the removal of `turn-report-stale` (the 260713-TES-L1 "literal values
   unchanged" claim is superseded). Verification metadata pinned until closeout stamps the

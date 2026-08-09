@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
+| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -221,7 +221,8 @@ settings-controlled) that reads `TerminalCatalog`/`OperatorInboxStore`/`Expectat
 nudge store DIRECTLY (never the projection), evaluates the mechanical predicate families — pane-state
 (new `pane_signals.py`), expectation-deadline expiry, unacked-row redelivery, seat-liveness (the liveness/turn-state join with graceful
 degradation), escalation, dead-upstream, and since 260713-TES-L2 the worker→manager state-signal
-relay (state-signal-due, non-reaction-due, boundary-drain) — and acts: redeliver via the shared
+relay (state-signal-due, non-reaction-due, boundary-drain), plus since 260713-TES-L3 the
+compound-idle relay (compound-idle-due) one level up — and acts: redeliver via the shared
 injector, auto-nudge, owner-addressed signal-emit, state-signal, or hand off to the escalation
 ladder's reserved stub, logging every action as an `orchestration.agent-notifier.*` observer event.
 New `agent_notifier_heartbeat.py` gives the sweep its own
@@ -252,6 +253,24 @@ the rows; and `inbox_delivery.py` enforces the fail-closed boundary gate BY ROW 
 `state-signal` message kind (N12) lands terminal at correlated boundary acceptance
 (`state_signal_landed`), never via model consume; `turn-report-by`/`turn-report-stale` retire
 from the worker→manager path (N8/R6).
+
+**260713-TES-L3 — the compound-idle relay to orchestrators.** `state_signals.py` owns the
+compound-idle predicate family: `_compound_worker_index` (one catalog scan, indexed by spawner
+id and master key), `compound_idle_sets` (manager + every worker of ITS master, master-scoped
+on every arm via the public `signal_routing.master_key`; status-first; unknown≠idle fail-closed;
+zero-worker and unbound managers never form sets), `compound_idle_signature` (sorted
+`member-id:turn_state:turn_state_changed_at` episode identity — the dedupe/re-arm marker
+`compound_idle_emitted_for` on the manager row), and `evaluate_compound_idle_findings`
+(`compound-idle-due`, one per manager seat). `_agent_notifier_actions._emit_compound_idle`
+posts exactly one durable `state-signal` per set to `derive_signal_owner`'s one-hop
+manager→orchestrator edge (no global fallback), derives the episode signature at ACTION time
+for both the ask and the marker, and rides the existing boundary gate and `state_signal_landed`
+terminality — exactly one landing. The manager non-reaction residue relays one level up to the
+orchestrator with the same 300 s window (worker residue keeps the L2 path); compound-idle stays
+a pure seat-state signal and the orchestrator combines the two facts (N15/N16).
+
+`COMPOUND_IDLE_SWEEP_LATENCY_SECONDS = 10.0` records the N6 latency bound (one default sweep).
+The wire model gained `compoundIdleEmittedFor` (catalog key pin 63→64).
 The agent-notifier keeps its observation cadence independent from its delivery/escalation
 cadence: `agent_notifier.py` passes the redelivery floor into hosted delivery, checks the new
 `controlplane/agent_notifier_signals.py` cooldown store before repeated pane/seat-liveness owner signals,
@@ -1214,7 +1233,7 @@ neighboring repository governs this route.
 | Three additive evidence/provenance read actions are defined. | `_evidence`; `_evidence_native_page`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:377-383; mcp/src/agents_remember/serving/harness_control_ipc.py:385-397; mcp/src/agents_remember/serving/harness_control_ipc.py:399-405 |
 | The native evidence client validates coordinate domains while reading a control-native page. | `read_control_native_page` | mcp/src/agents_remember/serving/harness_control_client.py:369-401 |
 | The native evidence parser validates continuation state. |"def _native_evidence_page"|mcp/src/agents_remember/serving/_harness_control_parsing.py:399-399|
-| Snapshot parsing recognizes plural "pendings_raw = raw.get(\"pendingInteractions\")". | "stays the parent-thread slot" | mcp/src/agents_remember/serving/response_contract.py:1052-1052 |
+| Snapshot parsing recognizes plural "pendings_raw = raw.get(\"pendingInteractions\")". | "stays the parent-thread slot" | mcp/src/agents_remember/serving/response_contract.py:1053-1053 |
 | The provenance batch reads the authority-owned ledger through the bridge's single submission handle, enforcing the expected bridge epoch and returning each requested record's provenance. | `SubmissionLedger`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:399-405; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
 | The resume request shape is `ControlRunnerRequest`. | `ControlRunnerRequest` | mcp/src/agents_remember/serving/terminal_opener.py:83-98 |
 | The runner parses its configuration through `parse_runner_config`. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:72-97 |
@@ -1645,6 +1664,11 @@ The three serving files reassigned to L7 under OQ1 Option A were split in place,
 
 ## Update History
 
+- 2026-08-09T03:51+02:00 — 260713-TES-L3 route impact: added the compound-idle relay paragraph
+  (master-scoped membership, episode-signature dedupe/re-arm, action-time emitter, one-hop
+  orchestrator owner, boundary-gated landing, manager non-reaction residue, 10 s latency
+  constant, 64-key wire pin) and extended the agent-notifier sweep predicate list. Verification
+  metadata pinned until closeout stamps the 260713-TES-L3 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: updated the agent-notifier sweep
   paragraph (predicate families, retired turn-report staleness) and added the worker-state
   relay paragraph (projection lift, state-signal delivery, landed terminality). Verification

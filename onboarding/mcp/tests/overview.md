@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
+| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -33,6 +33,18 @@ boundary drain), and `test_state_signal_delivery.py` (fail-closed row-kind gate,
 unreachable-landed regression, terminal-vs-queued acceptance). The existing suites shifted their
 expectation fixtures from `briefed-by` to `ack-by` and pinned the retired turn-report surface
 (`RetiredDispatchExpectationTests`, `REMOVED_FACADE_NAMES`, 63-key wire pin).
+
+### 260713-TES-L3 Compound-Idle Relay Suite
+
+`test_compound_idle_relay.py` (24 tests) forces the compound-idle relay to orchestrators:
+manager + all workers idle → exactly one durable `state-signal` naming every set member;
+partial/unknown/retired/zero-worker/unbound sets never fire; flap re-arm; busy-orchestrator
+boundary hold with exactly one landing (t+301 s / t+901 s zero mid-turn pushes); master-scoped
+membership on every arm (foreign-master spawn neither blocks nor joins); manager non-reaction
+residue relayed to the orchestrator; emitter skip branches; and the action-time episode
+signature in ask + marker. The existing `test_state_signal_relay.py` rebinding fixture now
+keeps its replacement manager `working` so the L2 behavior stays isolated. The wire pin moved
+63→64 (`compoundIdleEmittedFor`) in `test_serving_response_conformance.py`.
 
 Regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
@@ -1375,6 +1387,10 @@ race-dependent diff-coverage class).
 
 ## Update History
 
+- 2026-08-09T03:51+02:00 — 260713-TES-L3 route impact: recorded the new
+  `test_compound_idle_relay.py` forcing suite, the L2 rebinding-fixture isolation change, and
+  the 63→64 wire-key pin in the conformance family. Verification metadata pinned until
+  closeout stamps the 260713-TES-L3 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: recorded the three new relay suites and
   the expectation/facade/wire-pin updates in the existing families. Verification metadata pinned
   until closeout stamps the 260713-TES-L2 commit.

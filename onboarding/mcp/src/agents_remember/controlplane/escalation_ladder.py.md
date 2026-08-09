@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/escalation_ladder.py`        |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`                           |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`                           |
+| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -105,7 +105,7 @@ log (tier 3, dead-man ladder) are the source of truth.
 | --- | --- | --- |
 | The two-hop, dead-node-skipping owner derivation `next_step`'s rung-2 branch calls, and the liveness check `seat_is_suspect` calls. | `is_seat_dead`; `derive_skip_level_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:307-315; mcp/src/agents_remember/controlplane/signal_routing.py:335-375 |
 | The `OperatorInboxEntry.rung`/`escalatedAt` fields this walker reads, and the `advance_rung` transition its caller stamps. | "rungTransitionAt: str" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:222-222; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:255-285 |
-| The sole caller: evaluates `rung_due` as a predicate, calls `next_step` for the action, and calls `seat_is_suspect` past the respawn threshold. | "def evaluate_escalation_findings("; "def _escalate_rung(  # pragma: no cover"; "def _respawn_suspect(  # pragma: no cover" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:401-401; mcp/src/agents_remember/serving/_agent_notifier_actions.py:495-495; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:295-295 |
+| The sole caller: evaluates `rung_due` as a predicate, calls `next_step` for the action, and calls `seat_is_suspect` past the respawn threshold. | "def evaluate_escalation_findings("; "def _escalate_rung(  # pragma: no cover"; "def _respawn_suspect(  # pragma: no cover" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:405-405; mcp/src/agents_remember/serving/_agent_notifier_actions.py:499-499; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:296-296 |
 | Unit tests: rung-due dwell/anchor/ceiling cases, next-step routing per rung including the hierarchy-ceiling jump, and seat-suspect liveness/staleness cases. | `RungDueTests`; `NextStepTests`; `SeatSuspectTests` | mcp/tests/test_escalation_ladder.py:68-110; mcp/tests/test_escalation_ladder.py:113-182; mcp/tests/test_escalation_ladder.py:185-228 |
 
 ## Cross-Repo References

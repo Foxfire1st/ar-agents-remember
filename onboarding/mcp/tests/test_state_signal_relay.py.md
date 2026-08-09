@@ -5,14 +5,14 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/tests/test_state_signal_relay.py`                   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-09T01:21+02:00                                    |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`                                    |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastUpdated            | 2026-08-09T03:51+02:00|
+| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`                                    |
+| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
 
-[mcp/tests overview](../overview.md)
+[mcp/tests overview](overview.md)
 
 ## Purpose
 
@@ -36,7 +36,10 @@ seams across simulated ticks:
   holds on the durable schedule; t+301s and t+901s (the F1 regression ticks) still produce zero
   adapter submissions and rung 0; the boundary then drains and lands exactly once.
 - Origin cases cit:([`test_interrupted_signal_carries_developer_origin`, `test_interrupted_signal_with_unknown_origin`], mcp/tests/test_state_signal_relay.py:281-309): developer-stamped vs unknown; dedupe per seat+turn cit:([`test_dedupe_keys_per_seat_and_turn`], mcp/tests/test_state_signal_relay.py:199-211);
-  owner rebinding after manager replacement cit:([`test_owner_rebinding_after_manager_replacement`], mcp/tests/test_state_signal_relay.py:311-325); idle flap re-arm cit:([`test_idle_flap_rearms_for_a_new_turn`], mcp/tests/test_state_signal_relay.py:327-366);
+  owner rebinding after manager replacement cit:([`test_owner_rebinding_after_manager_replacement`], mcp/tests/test_state_signal_relay.py:311-325) — the fixture keeps the
+  replacement manager `turn_state="working"` since 260713-TES-L3 so the test isolates the L2
+  rebinding behavior it owns (a turn-ended manager + idle worker would additionally fire the
+  new compound-idle fact); idle flap re-arm cit:([`test_idle_flap_rearms_for_a_new_turn`], mcp/tests/test_state_signal_relay.py:327-366);
   non-reaction residue + dedupe cit:([`test_non_reaction_residue_relays_distinct_fact`, `test_non_reaction_dedupe_marker_suppresses_repeat`], mcp/tests/test_state_signal_relay.py:368-444); no done signal for killed/hung/failed/unknown cit:([`test_no_done_signal_for_killed_or_hung_seats`], mcp/tests/test_state_signal_relay.py:446-478); re-fire renews the same row cit:([`test_repeat_fire_renews_the_same_row`], mcp/tests/test_state_signal_relay.py:480-499); scope exclusions cit:([`test_non_reaction_ignores_non_worker_young_and_malformed_rows`], mcp/tests/test_state_signal_relay.py:501-566); boundary drain skip/fresh-boundary rules and ordinary-row drain cit:([`test_boundary_drain_skips_rows_without_a_fresh_boundary`, `test_boundary_drain_pushes_other_pending_rows_for_the_seat`], mcp/tests/test_state_signal_relay.py:568-719); no-sweep store-fold post cit:([`test_post_owner_signal_without_sweep_reads_the_store_fold`], mcp/tests/test_state_signal_relay.py:721-735).
 
 ### Conventions
@@ -49,7 +52,9 @@ consistent with the store so re-projection behaves like production.
 - Exactly one durable row per seat+turn; re-fire renews, never duplicates.
 - A boundary-held signal must not climb the ladder or hit the wire while its manager is
   running (F1).
-- Non-reaction facts are worker→manager only, one per landed-row episode.
+- Non-reaction facts cover worker→manager and, since 260713-TES-L3, manager→orchestrator —
+  one per landed-row episode (this suite's residue cases are worker-scope; the manager-scope
+  cases live in `test_compound_idle_relay.py`).
 
 ### Todos
 
@@ -70,8 +75,8 @@ The suite exercises `serving/state_signals.py`, `serving/_agent_notifier_actions
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The predicates under test. | `evaluate_state_signal_findings`; `evaluate_non_reaction_findings`; `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:44-73; mcp/src/agents_remember/serving/state_signals.py:75-122; mcp/src/agents_remember/serving/state_signals.py:124-167 |
-| The actions under test. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:614-675; mcp/src/agents_remember/serving/_agent_notifier_actions.py:676-726; mcp/src/agents_remember/serving/_agent_notifier_actions.py:727-741 |
+| The predicates under test. | `evaluate_state_signal_findings`; `evaluate_non_reaction_findings`; `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:128-156; mcp/src/agents_remember/serving/state_signals.py:182-228; mcp/src/agents_remember/serving/state_signals.py:231-273 |
+| The actions under test. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:618-677; mcp/src/agents_remember/serving/_agent_notifier_actions.py:739-796; mcp/src/agents_remember/serving/_agent_notifier_actions.py:799-808 |
 | Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:54-65 |
 
 ## Cross-Repo References
@@ -84,6 +89,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded the working-manager fixture change
+  in `test_owner_rebinding_after_manager_replacement` (isolates the L2 rebinding behavior from
+  the new compound-idle fact), corrected the governing-overview link, and widened the
+  non-reaction invariant to include the manager→orchestrator arm. Verification metadata pinned
+  until closeout stamps the 260713-TES-L3 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: created this sidecar for the new relay
   simulation suite (incident-#1, boundary hold past SLA/backoff, origin, rebinding, idle flap,
   non-reaction, drain). Verification metadata pinned to the leaf base `1c1629fc` until closeout
