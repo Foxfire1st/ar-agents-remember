@@ -84,6 +84,7 @@
     "mcp/src/agents_remember/serving/leaf_ref_validation.py",
     "mcp/src/agents_remember/serving/notes.py",
     "mcp/src/agents_remember/serving/operator_inbox_posts.py",
+    "mcp/src/agents_remember/serving/owner_signals.py",
     "mcp/src/agents_remember/serving/pane_signals.py",
     "mcp/src/agents_remember/serving/pi_rpc_adapter.py",
     "mcp/src/agents_remember/serving/pi_rpc_configuration.py",
@@ -98,12 +99,15 @@
     "mcp/src/agents_remember/serving/scope.py",
     "mcp/src/agents_remember/serving/seat_binding.py",
     "mcp/src/agents_remember/serving/seat_events.py",
+    "mcp/src/agents_remember/serving/seat_turn_truth.py",
     "mcp/src/agents_remember/serving/served_state.py",
     "mcp/src/agents_remember/serving/sim.py",
+    "mcp/src/agents_remember/serving/state_signals.py",
     "mcp/src/agents_remember/serving/static.py",
     "mcp/src/agents_remember/serving/terminal.py",
     "mcp/src/agents_remember/serving/terminal_catalog.py",
     "mcp/src/agents_remember/serving/terminal_catalog_lock.py",
+    "mcp/src/agents_remember/serving/terminal_evidence.py",
     "mcp/src/agents_remember/serving/terminal_leaf_assignment.py",
     "mcp/src/agents_remember/serving/terminal_liveness.py",
     "mcp/src/agents_remember/serving/terminal_opener.py",
@@ -113,8 +117,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 163,
-    "fileSidecars": 95,
+    "sourceFilesInScope": 167,
+    "fileSidecars": 99,
     "childRoutes": 1
   },
   "routingTerms": [
@@ -181,6 +185,7 @@
     "dispatch_brief",
     "evaluation",
     "events",
+    "evidence",
     "factories",
     "files",
     "harness",
@@ -196,8 +201,7 @@
     "harness_control_ipc",
     "harness_control_models",
     "harness_control_parsing",
-    "harness_control_runner",
-    "harness_launch"
+    "harness_control_runner"
   ],
   "hotPath": {
     "summary": "For the active conversation serving, start at `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor), `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics), `conversation/active/store.py` (idempotence, tool block union), `conversation/active/cursor.py` (signed cursor authority), and `conversation/active/status.py` (the canonical classification orchestration shares). The per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`...",

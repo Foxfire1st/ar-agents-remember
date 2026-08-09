@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/notes.py`     |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-02T01:05+02:00                         |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`     |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`     |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -125,7 +125,7 @@ No meaningful cross-repo references found.
 | The changeset route's single-segment master confinement helper. | `_master_task_root` | mcp/src/agents_remember/serving/changeset.py:145-149 |
 | The browser client for these endpoints. | `notes` | dashboard/src/data/notes.ts:19-19 |
 | The `list_notes` and `read_note` helper bodies. | `list_notes`, `read_note` | mcp/src/agents_remember/serving/notes.py:101-109; mcp/src/agents_remember/serving/notes.py:112-136 |
-| The shared `SCOPED_READ_RESPONSES` refusal-table declaration. | `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:1057-1063 |
+| The shared `SCOPED_READ_RESPONSES` refusal-table declaration. | `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:1068-1074 |
 
 ## Update History
 

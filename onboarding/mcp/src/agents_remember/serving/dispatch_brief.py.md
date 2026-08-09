@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | mcp/src/agents_remember/serving/dispatch_brief.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
@@ -33,8 +33,19 @@ be pushed into its recipient's live hosted session or, with `enabled=false`, mer
 `require_dispatch_target` refuses before persistence unless the exact agent session is ready.
 `expectation_store` / `expectation_sla_seconds` resolve the observer-root expectation store and
 its per-kind SLA from agentic settings (falling back to `DEFAULT_EXPECTATION_SLA_SECONDS`);
-`start_dispatch_expectations` starts `briefed-by` (and `turn-report-by` when the target carries a
-leaf key) clocks from the one durable row's timestamp and id, skipping rows already present.
+`start_dispatch_expectations` starts the `briefed-by` clock from the one durable row's timestamp
+and id, skipping rows already present. The `turn-report-by` clock is retired (260713-TES-L2):
+completion truth comes from the catalog turn projection, never from artifact/clock inference.
+
+## 260713-TES-L2 Current Delta — Turn-Report-By Retired
+
+`start_dispatch_expectations` cit:([`start_dispatch_expectations`], mcp/src/agents_remember/serving/dispatch_brief.py:133-167) now writes exactly one expectation kind (`briefed-by`)
+instead of two; no `turn-report-by` row is minted at dispatch. `KNOWN_EXPECTATION_KINDS` and
+`DEFAULT_EXPECTATION_SLA_SECONDS` in `kernel/_agentic_settings_core.py` dropped
+`turn-report-by`; the record Literal in `controlplane/expectation_rows.py` keeps the value for
+legacy-row parse compatibility until the L4 schema migration.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 `fulfill_dispatch_expectation` / `fulfill_briefed_expectation` mark the briefed clock met only
 from delivered evidence. `with_prompt_keywords` prepends settings-owned prompt keywords as one
 line, and `delivery_is_briefed` / `dispatch_stays_on_exact_session` keep the pending row on its
@@ -75,6 +86,9 @@ readiness-gated, exact-session contract; the durable row remains the root, and e
 clocks still start from that one row's timestamp and id.
 
 ## Update History
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the turn-report-by retirement —
+  dispatch writes briefed-by only; no new turn-report-by rows. Verification metadata pinned
+  until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: rewrote this card for the current source after
   `mcp/tools/dispatch_brief.py` moved into serving — the delivery seams and expectation-clock
   helpers are now owned here, exact-session readiness still refuses before persistence, and the

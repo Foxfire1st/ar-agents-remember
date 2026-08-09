@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,17 @@ The three supervisor test modules were renamed 1:1 (`test_agent_notifier*.py`), 
 suites now reference `AgentNotifier*` identifiers, `agentNotifierHeartbeat` /
 `agentNotifierBanner`, the `orchestration.agentNotifier` settings family, and the renamed module
 paths; legacy-value acceptance and dual-key cases are covered by the new regression tests.
+
+### 260713-TES-L2 Relay Suites
+
+Three forcing suites were added for the worker-state relay: `test_terminal_evidence_projection.py`
+(per-vendor outcome mapping, pi tail paging, seat-truth persistence, origin resolution, no-loss
+cursor retry), `test_state_signal_relay.py` (incident-#1 proof, busy-manager boundary hold past
+SLA/backoff with exactly one landing, origin/rebinding/idle-flap, non-reaction residue, dedupe,
+boundary drain), and `test_state_signal_delivery.py` (fail-closed row-kind gate,
+unreachable-landed regression, terminal-vs-queued acceptance). The existing suites shifted their
+expectation fixtures from `briefed-by` to `ack-by` and pinned the retired turn-report surface
+(`RetiredDispatchExpectationTests`, `REMOVED_FACADE_NAMES`, 63-key wire pin).
 
 Regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
@@ -1364,6 +1375,9 @@ race-dependent diff-coverage class).
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: recorded the three new relay suites and
+  the expectation/facade/wire-pin updates in the existing families. Verification metadata pinned
+  until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the three new suites and the
   extended closeout/hook/settings/scope-reporting/observer families. Verification metadata stays

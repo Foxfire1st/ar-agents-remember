@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_leaf_assignment.py` |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`              |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`              |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ The helper is intentionally shared by the dashboard HTTP route and the agent-fac
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Catalog rows carry role-derived leaf ownership, a `with_leaf_binding` copy helper, and a running-only role-scoped `active_for_leaf` uniqueness probe. | `leaf_key`; `seat_role`; `with_leaf_binding`; `active_for_leaf` | mcp/src/agents_remember/serving/terminal_catalog.py:100-100; mcp/src/agents_remember/serving/terminal_catalog.py:105-105; mcp/src/agents_remember/serving/terminal_catalog.py:354-357; mcp/src/agents_remember/serving/terminal_catalog.py:543-559 |
+| Catalog rows carry role-derived leaf ownership, a `with_leaf_binding` copy helper, and a running-only role-scoped `active_for_leaf` uniqueness probe. | `leaf_key`; `seat_role`; `with_leaf_binding`; `active_for_leaf` | mcp/src/agents_remember/serving/terminal_catalog.py:125-125; mcp/src/agents_remember/serving/terminal_catalog.py:130-130; mcp/src/agents_remember/serving/terminal_catalog.py:424-427; mcp/src/agents_remember/serving/terminal_catalog.py:613-629 |
 | The dashboard attach route delegates the existing-session leaf move to `assign_terminal_session_to_leaf` and maps its statuses to 404/409/200 HTTP responses. | "def _attach_leaf_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:313-313 |
 | The MCP payload builder calls the same helper and returns previous leaf, owner, status, and role in one validated payload. | `attach_terminal_session_to_leaf_tool` | mcp/src/agents_remember/application/terminal_tools.py:140-177 |
 | Unit tests cover successful move, leaf-taken no-mutation behavior, and the tool payload using the dashboard catalog path. | `test_assign_terminal_session_to_leaf_moves_existing_catalog_row`; `test_assign_terminal_session_to_leaf_reports_leaf_taken_without_mutating`; `test_attach_terminal_session_to_leaf_payload_uses_dashboard_catalog` | mcp/tests/test_terminal_leaf_assignment.py:110-126; mcp/tests/test_terminal_leaf_assignment.py:128-145; mcp/tests/test_terminal_leaf_assignment.py:147-172 |

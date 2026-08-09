@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 
 > **Status:** active baseline
 
@@ -2133,6 +2133,11 @@ Updated 2026-06-27T22:00+02:00 — task 28 (NOTIFY-AND-CONTINUE turn end): refre
 Updated 2026-06-17T22:45+02:00 after the Engine Room visual-parity pass enriched the dashboard-frontend Feature Inventory row (the 5g G6 atmospheric backdrop + Effects/Calm toggle, the restored HUD decal layer, and the fixed-height `Panel fill` layout); verification metadata stays pinned until closeout commits the source. (Prior: 2026-06-06T12:28+02:00 after adding the public `docs/features.md` tour, replacing README `## Core Model` with `## Core Features`, and documenting the Claude Code root `.mcp.json` detection caveat. Prior: 2026-06-04T10:29+02:00 — documented hidden harness starter packages as source-owned surfaces in the main overview and noted their `l-01` deep-research retrieval-strategy tally requirement. Prior: 2026-05-29T17:30+02:00 — re-spined the public docs and this overview's "What This Repo Is" framing around the three retrieval substrates (by path / by meaning / by relationship) and retired the sidecar-only anti-retrieval positioning. Prior: 2026-05-28T19:52+02:00 — added the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.)
 
 ## Update History
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: root inventory reviewed for the
+  worker-state relay; the current feature rows are unchanged (the relay is substrate-level, not
+  a new user-facing feature row), and the cross-route detail lives in the `mcp/` package
+  overview and the serving/controlplane/conversation/mcp-tests route overviews. Verification
+  metadata pinned until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: root inventory reviewed for the
   supervisor → agent-notifier rename; current feature rows are unchanged by the mechanical
   identifier rename, and the cross-route detail lives in the `mcp/` package overview and the

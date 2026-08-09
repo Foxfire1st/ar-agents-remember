@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/controlplane/operator_inbox_transitions.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ Module-level surface:
 - `RungAdvance` (class, lines 114-123) — The ladder rung to stamp and, when that rung re-addresses, the owner the row moves to.
 - `_readdress_fields` (function, lines 132-141) — Move a row's delivery address onto ``owner`` and record it as the routed owner.
 - `_require_entry` (function, lines 144-156) — The row ``entry_id`` names, from the supplied fold or a fresh one.
-- `record_delivery` (function, lines 159-209) — Append a delivery-status snapshot for one pending entry.
+- `record_delivery` (function, lines 160-214) — Append a delivery-status snapshot for one pending entry; a state-signal row that lands (delivered+accepted at a boundary) gets `nextAttemptAt=None` so no further attempt is scheduled.
 - `record_adapter_completion` (function, lines 212-234) — Persist terminal adapter evidence without consuming the durable inbox row.
 - `mark_escalated` (function, lines 237-252) — Stamp ``escalatedAt`` once the ladder (HFX2-L4) escalates an unacked row.
 - `advance_rung` (function, lines 255-285) — Stamp the ladder's next rung (260707-HFX2-L4, R1/R2): re-anchors ``escalatedAt`` to ``now`` so the NEXT rung's SLA is measured from this transition, not the row's original creation.
@@ -74,5 +74,9 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded `record_delivery`'s landed
+  state-signal handling — `nextAttemptAt=None` when `state_signal_landed` holds after the
+  attempt (terminal on the relay path, no backoff reschedule). Verification metadata pinned
+  until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-05T03:52+02:00 — 260731-EFA-L6 batch B curator: completed truncated docstring summaries for adapter receipts, deliveries, renewals, and ladder-rung transitions against the frozen source; normalized decorator-inclusive citation ranges via scoped --fix.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

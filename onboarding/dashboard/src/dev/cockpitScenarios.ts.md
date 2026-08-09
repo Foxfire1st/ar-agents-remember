@@ -6,8 +6,8 @@
 | path | `dashboard/src/dev/cockpitScenarios.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T10:12+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -145,7 +145,7 @@ construct those lines contain.
 | --- | --- | --- |
 | The `HarnessInfo` type import and the `/api/harnesses` branch returning three-field rows pinned by `satisfies HarnessInfo[]`. | "import { announcerStore } from \"../data/announcer\";"; "import type { HarnessInfo } from " | dashboard/src/dev/cockpitScenarios.ts:7-7; dashboard/src/dev/cockpitScenarios.ts:456-468; dashboard/src/dev/cockpitScenarios.ts:1-1 |
 | `HarnessInfo` declared inline (`id`, `name`, `detected`) in a module carrying no mirror marker, which is why nothing compared the old fixture against it. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
-| The server's `DetectedHarness` / `DetectedHarnessesResponse` for `GET /api/harnesses`: exactly three fields on a `WireResponse`. | `DetectedHarness` | mcp/src/agents_remember/serving/response_contract.py:355-360 |
+| The server's `DetectedHarness` / `DetectedHarnessesResponse` for `GET /api/harnesses`: exactly three fields on a `WireResponse`. | `DetectedHarness` | mcp/src/agents_remember/serving/response_contract.py:366-371 |
 | The guard's own note that its wire vocabulary is discovered from a house marker, that discovery is fail-closed in one direction only, and the five unmarked modules still in the blind spot. | "A NEW UNMARKED MIRROR MODULE IS INVISIBLE" | dashboard/src/test/wireFixtureGuard.ts:55-63 |
 | The `describe` asserting the injector answers only what the daemon could: exact key sets for the catalog rows and for the withdrawal result. | "the scenario server answers only what the daemon could answer" | dashboard/src/dev/cockpitScenarios.test.ts:110-142 |
 | Authority wrapper. | `CockpitScenarioHarness` | dashboard/src/dev/CockpitScenarioHarness.tsx:21-54 |

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_agent_notifier.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T01:21+02:00               |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -71,14 +71,13 @@ The suite uses `NOW = datetime(2026, 7, 8, 12, 0, 0, tzinfo=UTC)` as the shared 
 - **Pane predicate (R2a):** `test_mid_turn_pane_fires_a_finding`, `test_normal_pane_fires_nothing`,
   `test_terminal_kind_rows_are_never_pane_classified` (a `kind="terminal"` row is skipped
   regardless of its captured text — the predicate only ever classifies `kind="harness"` rows).
-- **Expectation predicate (R2b):** `test_overdue_briefed_by_row_fires`,
+- **Expectation predicate (R2b):** `test_overdue_ack_by_row_fires` (renamed from the
+  briefed-by case, 260713-TES-L2),
   `test_not_yet_due_row_is_silent` (a row whose deadline has not yet passed produces no finding).
-- **Turn-report predicate (R2c):** `test_missing_report_fires_when_row_is_overdue`,
-  `test_present_report_does_not_fire` (an overdue row whose artifact DOES exist and has content is
-  silent — pins that `missing_artifact()` is a real second check, not a rubber stamp on
-  overdue-ness), `test_malformed_leaf_key_is_skipped_not_guessed`
-  (`turn_report_path_for_leaf_key` returns `None` for a key not in the `repo/master/leaf-id` shape,
-  and the predicate skips rather than guessing a path).
+- **Retired dispatch expectations (260713-TES-L2):** `RetiredDispatchExpectationTests` proves
+  an overdue `turn-report-by` row AND an overdue `briefed-by` row are both silent
+  (`evaluate_expectation_findings` returns `[]`) — the artifact-presence/SLA predicates no
+  longer drive any finding on the worker→manager path (R6).
 - **Inbox predicate (R2d + HFX2-L8):** `test_pending_row_with_no_next_attempt_is_immediately_redeliverable`
   plus terminal-ladder coverage proving a pending row at the final rung for a provably dead/no-hosted
   seat fires `inbox-ladder-terminal` instead of redelivery.
@@ -198,17 +197,17 @@ spec.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: every predicate, the action dispatcher, and the sweep entry point. | "def evaluate_escalation_findings("; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:758-758; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:336-336; mcp/src/agents_remember/serving/agent_notifier.py:96-241 |
+| The module under test: every predicate, the action dispatcher, and the sweep entry point. | "def evaluate_escalation_findings("; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:757-757; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:295-295; mcp/src/agents_remember/serving/agent_notifier.py:106-205 |
 | The heartbeat store the zero-drift and second-sweep tests exercise directly. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
-| The terminal catalog declares the typed `Literal` aliases. | `Literal` | mcp/src/agents_remember/serving/terminal_catalog.py:42-44 |
-| The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_agent_notifier.py:60-84 |
+| The terminal catalog declares the typed `Literal` aliases. | "TerminalSessionKind = Literal"; "TerminalSessionStatus = Literal" | mcp/src/agents_remember/serving/terminal_catalog.py:42-43 |
+| The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_agent_notifier.py:58-82 |
 | The fake-host casting convention this suite reuses rather than inventing its own duck-typing idiom. | `_FakeTerminalHost`; "class TerminalHost:" | mcp/src/agents_remember/serving/terminal.py:109-109; mcp/tests/test_terminal_ws.py:227-387 |
 | The pure ladder walker the escalation predicate/integration tests exercise indirectly through the sweep. | `rung_due`; `next_step`; `seat_is_suspect` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152; mcp/src/agents_remember/controlplane/escalation_ladder.py:155-187 |
 | The orphan-detection hook the dead-manager-with-live-workers fixture asserts surfaces both workers. | `find_orphaned_workers` | mcp/src/agents_remember/controlplane/orphan_policy.py:18-30 |
 | The operator-inbox terminal state and compaction semantics used by the L8 sweep tests. | `mark_ladder_resolved`; `list_redeliverable` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:105-125; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:319-341 |
 | The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `AgentNotifierSignalCooldownStore` | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220 |
 | The F1 regression pin proves hosted-delivery failures stay below the generic ladder until persistent retry exhaustion. | `test_delivery_failure_waits_for_retry_exhaustion_before_escalating` | mcp/tests/test_agent_notifier_ladder.py:49-79 |
-| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | "def _delivery_failure_still_retrying(entry: OperatorInboxEntry) -> bool:"; "def evaluate_escalation_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:312-312; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:336-336 |
+| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | "def _delivery_failure_still_retrying(entry: OperatorInboxEntry) -> bool:"; "def evaluate_escalation_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:271-271; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:295-295 |
 | HFX2-L9 tests cover signal cooldown and diagnostic-pane non-actionability. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row`; `test_diagnostic_pane_signal_is_not_actionable` | mcp/tests/test_agent_notifier_seat.py:374-408; mcp/tests/test_agent_notifier_seat.py:530-534 |
 
 ## Cross-Repo References
@@ -231,6 +230,10 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the expectation-fixture rename
+  (ack-by), the deletion of the turn-report staleness tests, and the new
+  `RetiredDispatchExpectationTests` silence pins. Verification metadata pinned until closeout
+  stamps the 260713-TES-L2 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

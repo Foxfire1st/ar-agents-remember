@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -209,8 +209,8 @@ repository-owned.
 | The API registers the submission-ledger routes. | `_register_submission_ledger_routes` | mcp/src/agents_remember/serving/harness_control_api.py:301-339 |
 | The API exposes the submission-authority route. | `api_submission_authority` | mcp/src/agents_remember/serving/harness_control_api.py:306-316 |
 | The status serializer produces the raw-free submission batch. | `submission_status_batch_json` | mcp/src/agents_remember/serving/harness_control_models.py:987-991 |
-| The status wire model carries the raw-free batch projection. | `SubmissionStatusBatchWire` | mcp/src/agents_remember/serving/response_contract.py:952-956 |
-| The public receipt wire preserves the raw-free response shape. | `PublicReceiptWire` | mcp/src/agents_remember/serving/response_contract.py:986-995 |
+| The status wire model carries the raw-free batch projection. | `SubmissionStatusBatchWire` | mcp/src/agents_remember/serving/response_contract.py:963-967 |
+| The public receipt wire preserves the raw-free response shape. | `PublicReceiptWire` | mcp/src/agents_remember/serving/response_contract.py:997-1006 |
 | Dedicated tests exercise races, early completion, full-ref reuse, bounds, privacy, and epochs. | `HarnessSubmissionAuthorityTests`; `SubmissionLedgerTests` | mcp/tests/test_harness_submission_authority.py:230-755; mcp/tests/test_harness_submission_authority.py:758-926 |
 | The evidence contract suite exercises provenance end-to-end through bridge → authority → IPC → validated client, including all three sources, not-found, epoch mismatch, and the 1..64 unique-id bound. | `test_submission_provenance_all_sources_epoch_and_bounds` | mcp/tests/test_harness_control_evidence_ipc.py:229-312 |
 | The control-plane contract suite exercises the timeline enumeration (all sources/kinds, paged union, eviction floor, 256-record budget edge), the asset channel (capability gate, digest conflict/dedupe, receipt `assetIds`), and the first-vs-replay recovery through this authority. | `OperationTimelineTests`; `AssetChannelTests`; `AssetNativeConstructionTests`; "class WithdrawalRecoveryTests(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_harness_control_plane_assets.py:249-483; mcp/tests/test_harness_control_plane_channels.py:52-318; mcp/tests/test_harness_control_plane_channels.py:321-481; mcp/tests/test_harness_control_plane_recovery.py:32-32 |

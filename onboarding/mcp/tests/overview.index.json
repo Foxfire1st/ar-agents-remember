@@ -314,6 +314,8 @@
     "mcp/tests/test_spawn_agent_session_resolution.py",
     "mcp/tests/test_spawn_agent_session_settings.py",
     "mcp/tests/test_starter_renderers.py",
+    "mcp/tests/test_state_signal_delivery.py",
+    "mcp/tests/test_state_signal_relay.py",
     "mcp/tests/test_static.py",
     "mcp/tests/test_store_scaling_cs6.py",
     "mcp/tests/test_structural_limits.py",
@@ -330,6 +332,7 @@
     "mcp/tests/test_task_reopen.py",
     "mcp/tests/test_terminal.py",
     "mcp/tests/test_terminal_catalog.py",
+    "mcp/tests/test_terminal_evidence_projection.py",
     "mcp/tests/test_terminal_leaf_assignment.py",
     "mcp/tests/test_terminal_liveness.py",
     "mcp/tests/test_terminal_opener.py",
@@ -364,8 +367,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 342,
-    "fileSidecars": 352,
+    "sourceFilesInScope": 345,
+    "fileSidecars": 355,
     "childRoutes": 0
   },
   "routingTerms": [

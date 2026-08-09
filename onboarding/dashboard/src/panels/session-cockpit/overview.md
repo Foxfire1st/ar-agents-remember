@@ -331,7 +331,7 @@ references, not imported governing implementations, so no cross-repository sourc
 | Dev end-to-end scenario authority. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:113-207 |
 | The shared builders every cockpit suite seeds wire nodes from (projection side and conversation side). | `SERVED`, `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:228-243; dashboard/src/test/fixtures/wire.ts:66-66 |
 | The cast guard, its first-line mirror-marker discovery rule, and its own list of unmarked blind-spot modules. | `collectWireFixtureFindings` | dashboard/src/test/wireFixtureGuard.ts:484-587 |
-| The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). | `HarnessInfo`, `DetectedHarness` | dashboard/src/data/harnessCatalog.ts:5-9; mcp/src/agents_remember/serving/response_contract.py:355-360 |
+| The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). | `HarnessInfo`, `DetectedHarness` | dashboard/src/data/harnessCatalog.ts:5-9; mcp/src/agents_remember/serving/response_contract.py:366-371 |
 
 ## Current L5I Route State
 
@@ -408,6 +408,9 @@ The session-cockpit route gained the L7 live-thinking coalescing (one stable `th
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: repaired two `DetectedHarness` citation
+  ranges in this route overview after `response_contract.py` grew (line-shift only; no route
+  shape change). Verification metadata pinned until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the live-thinking coalescing and file-size coverage for session-cockpit. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (sessions-view split, parts modules, e2e app fixes). Verification metadata stays pinned until closeout stamps the code commit.
@@ -439,7 +442,7 @@ The session-cockpit route gained the L7 live-thinking coalescing (one stable `th
   recorded as a LOSS: its three `control: "starting"` keys are gone, so the surviving
   `not.toContain("adapter starting")` assertions can no longer fail and that guarantee is marked
   superseded here — verified `DetectedHarness` declares exactly `id`/`name`/`detected`
-  cit:([`DetectedHarness`], mcp/src/agents_remember/serving/response_contract.py:355-360) on a `WireResponse` with `extra="forbid"`
+  cit:([`DetectedHarness`], mcp/src/agents_remember/serving/response_contract.py:366-371) on a `WireResponse` with `extra="forbid"`
   cit:([`WireResponse`], mcp/src/agents_remember/serving/response_contract.py:88-100), and
   that `HarnessInfo` mirrors the same three cit:([`HarnessInfo`], dashboard/src/data/harnessCatalog.ts:5-9). Recorded the replacement
   guarantee (typed `HARNESSES` annotation + the per-row `Object.keys` assertion) and the reason the

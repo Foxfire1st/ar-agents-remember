@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-12T17:40+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,11 @@ snapshot. Only `terminated` is direct proof. Catalog-absent subjects require one
 tmux name snapshot; exact `ar-<subject-id>` absence resolves them, while presence or any
 indeterminate command failure keeps them. `snapshot_tmux_session_names` treats a known
 `no server running` result as positive empty evidence and all other failures as fail-closed.
+
+**260713-TES-L2 landed-row exclusion.** `_eligible` cit:([`_eligible`], mcp/src/agents_remember/serving/inbox_reclamation.py:137-146) additionally excludes
+`state_signal_landed(entry)` rows: a landed state-signal is terminal on the relay path and must
+never be reclaimed as confirmed-gone, even though its row state stays `pending` until the L4
+schema migration.
 
 ### Conventions
 
@@ -64,9 +69,9 @@ evidence for this policy.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The aggregate reclamation plan is built from one reconstructed snapshot joined with catalog evidence. | `InboxReclamationPlan` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
-| Terminal catalog entries provide the status and ownership evidence. | `terminal` | mcp/src/agents_remember/serving/terminal_catalog.py:81-94 |
+| Terminal catalog entries provide the status and ownership evidence. | "class TerminalCatalogEntry:" | mcp/src/agents_remember/serving/terminal_catalog.py:106-220 |
 | Reconstructed tmux snapshots provide the remaining ownership evidence. | `TmuxSessionNameSnapshotter` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
-| The agent-notifier imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/agent_notifier.py:77-77 |
+| The agent-notifier imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/agent_notifier.py:74-74 |
 
 ## Cross-Repo References
 
@@ -77,6 +82,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the `state_signal_landed` exclusion
+  in `_eligible` (landed relay rows are terminal on this path). Verification metadata pinned
+  until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: removed placeholder findings and narrowed
   reclamation evidence to the snapshot, catalog, policy, and supervisor owners.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/active/status.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,21 @@ native evidence only.
 - Orchestration parity is exact by construction: the seat projection consumes the same
   classification, never a parallel mapping.
 - The orchestration entry point stays signature-compatible (`snapshot_turn_state` delegates with
-  an optional harness parameter); `terminal_liveness.py` is untouched.
+  an optional harness parameter and, since 260713-TES-L2, an optional terminal observation);
+  `terminal_liveness.py` forwards the lifted evidence.
+
+## 260713-TES-L2 Current Delta — Terminal Precedence On The Seat Projection
+
+`snapshot_seat_turn_state` cit:([`snapshot_seat_turn_state`], mcp/src/agents_remember/serving/conversation/active/status.py:205-233) gained `terminal: TurnTerminalEvidence | None = None`.
+When a terminal observation is present, the seat state is derived from the canonical terminal
+settlement via the new module-level `_terminal_turn_state` cit:([`_terminal_turn_state`], mcp/src/agents_remember/serving/conversation/active/status.py:235-243) — `interrupted` →
+`interrupted`, `failed` → `failed`, anything else → `settling` — instead of from the snapshot's
+own turn classification. `ConversationStatusService` now calls the same module-level helper
+(the private static method was promoted), so both consumers share one terminal-state mapping.
+This is the G1 projection lift: done ≠ interrupted at seat granularity, and killed/hung seats
+are never re-read as clean ends.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ### Todos
 
@@ -119,6 +133,10 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the terminal precedence parameter
+  on `snapshot_seat_turn_state`, the shared module-level `_terminal_turn_state`, and the
+  supersession of the "terminal_liveness untouched" claim. Verification metadata pinned until
+  closeout stamps the 260713-TES-L2 commit.
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=1, citation_prose_not_in_cit_form=4, citation_source_malformed=1); final scoped citation check clean.
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations in Logic, all
   read back. `classify_process` L91-L100 → L101-L110; `snapshot_seat_turn_state` L178-L190 → its

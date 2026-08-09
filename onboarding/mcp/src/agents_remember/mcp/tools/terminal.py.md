@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -311,7 +311,7 @@ catalog.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The operation is defined by same-repository serving/catalog behavior rather than external documentation. | "def terminal_catalog_path(coordination_root: Path) -> Path:"; "def assign_terminal_session_to_leaf("; "def open_terminal_session(" | mcp/src/agents_remember/serving/terminal_catalog.py:513-516; mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114; mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
+| The operation is defined by same-repository serving/catalog behavior rather than external documentation. | "def terminal_catalog_path(coordination_root: Path) -> Path:"; "def assign_terminal_session_to_leaf("; "def open_terminal_session(" | mcp/src/agents_remember/serving/terminal_catalog.py:583-583; mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-53; mcp/src/agents_remember/serving/terminal_opener.py:645-645 |
 
 ## Repo-Internal References
 
@@ -328,14 +328,14 @@ catalog.
 | The public tool tuple advertises `attach_terminal_session_to_leaf` and `spawn_agent_session`. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The facade re-exports all four payload builders. | `__all__` | mcp/src/agents_remember/mcp/tools/__init__.py:93-159 |
 | The tool declarations for attach and spawn; the `spawn_agent_session` docstring is the one that states the HFX2-L10 settings-only authority rule, including `spend-override-unsupported` refusals for legacy spend fields and harness-native spend env keys. | `attach_terminal_session_to_leaf`; `spawn_agent_session` | mcp/src/agents_remember/mcp/registration/sessions.py:34-51; mcp/src/agents_remember/mcp/registration/sessions.py:57-137 |
-| The strict response models are registered for conformance validation. | `AttachTerminalSessionToLeafResponse`; `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/tool_registry.py:121-125 |
+| The strict response models are registered for conformance validation. | "attach_terminal_session_to_leaf": AttachTerminalSessionToLeafResponse,; "spawn_agent_session": SpawnAgentSessionResponse,; "session_retire": SessionRetireResponse,; "session_rename": SessionRenameResponse, | mcp/src/agents_remember/models/tool_registry.py:121-125 |
 | `session_retire_payload`/`session_rename_payload` delegate the actual catalog/tmux mechanics to `retire_entry`/`TerminalCatalog.set_label` and the authority check to `check_retire_authority`/`SeatRef`/`master_of`. | `retire_entry`; `check_retire_authority` | mcp/src/agents_remember/serving/retire.py:37-71; mcp/src/agents_remember/serving/retire_policy.py:49-67 |
 | Both new builders log observer events through the shared seat-events module. | `log_retire_event`; `log_rename_event` | mcp/src/agents_remember/serving/seat_events.py:24-45; mcp/src/agents_remember/serving/seat_events.py:71-89 |
 | The status aliases the producers now take, and the strict response models these builders conform to. | `SpawnAgentSessionStatus`; `SessionRetireStatus`; `SessionRenameStatus` | mcp/src/agents_remember/models/terminal.py:45-71; mcp/src/agents_remember/models/terminal.py:149-155; mcp/src/agents_remember/models/terminal.py:181-181 |
 | Failing-first tests for the retire policy matrix, idempotent retire, and rename provenance/role-immutability. | `RetirePolicyMatrixTests`; `test_retiring_an_already_retired_seat_is_idempotent`; `SessionRenameToolTests` | mcp/tests/test_seat_lifecycle.py:103-166; mcp/tests/test_seat_lifecycle.py:280-302; mcp/tests/test_seat_lifecycle.py:319-368 |
 | The application refusal enforces the separate exact-session brief-delivery protocol. | `_brief_delivery_separate_refusal`; "brief delivery is separate" | mcp/src/agents_remember/application/terminal_tools.py:567-581 |
 | The serving readiness check is performed by `hosted_session_readiness`. | `hosted_session_readiness` | mcp/src/agents_remember/serving/hosted_readiness.py:59-90 |
-| The durable brief path uses the `dispatch-brief` message kind. | "DISPATCH_BRIEF_KIND = \"dispatch-brief\"" | mcp/src/agents_remember/serving/dispatch_brief.py:41-41 |
+| The durable brief path uses the `dispatch-brief` message kind. | "DISPATCH_BRIEF_KIND = \"dispatch-brief\"" | mcp/src/agents_remember/serving/dispatch_brief.py:40-40 |
 | `LeafRefStatus` — where two of the thirteen spawn statuses are actually declared and produced, outside any file enumerating spawn refusals. | `LeafRefStatus`; `VALID_LEAF_REF_STATUSES` | mcp/src/agents_remember/worktrees/leaf_refs.py:30-30; mcp/src/agents_remember/worktrees/leaf_refs.py:32-32 |
 | The `spawn_agent_session` docstring whose eleven-of-thirteen roster is the published tool description — pinned, not edited. | `spawn_agent_session` | mcp/src/agents_remember/mcp/registration/sessions.py:57-137 |
 | The test that pins the docstring gap to exactly the two leaf-ref refusals and asserts retire/rename roster equality. | `test_every_status_the_session_tools_roster_validates` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:67-89 |

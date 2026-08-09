@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_leaf_assignment.py`      |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`        |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`        |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ No relevant external/domain documentation found; the behavior is local catalog/t
 | The shared assignment helper under test returns `attached`, `leaf-taken`, or `unknown-session` and mutates only on success. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
 | The MCP payload builder under test opens the dashboard catalog path and validates the response through `_tool_payload`. | `attach_terminal_session_to_leaf_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:26-43 |
 | The shared leaf-ref resolver and serving adapter normalize accepted refs before catalog writes. | `resolve_catalog_leaf_key` | mcp/src/agents_remember/serving/leaf_ref_validation.py:18-46 |
-| Existing catalog behavior provides the `with_leaf_key` write point and role-scoped active owner lookup these tests exercise indirectly. | `with_leaf_key` | mcp/src/agents_remember/serving/terminal_catalog.py:350-352 |
+| Existing catalog behavior provides the `with_leaf_key` write point and role-scoped active owner lookup these tests exercise indirectly. | `with_leaf_key` | mcp/src/agents_remember/serving/terminal_catalog.py:420-422 |
 
 ## Cross-Repo References
 

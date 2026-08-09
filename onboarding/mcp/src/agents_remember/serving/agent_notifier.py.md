@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/serving/agent_notifier.py`  |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-08-08T21:20+02:00               |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T01:21+02:00               |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -20,12 +20,14 @@
 escalation-ladder + dead-man-respawn host (260707-HFX2-L4): P-15 tiers 1-3 as a pure, zero-token,
 zero-model loop hosted in the serving daemon. "The model is never the polling layer" — every
 intervention the pilot run needed (empty composer post-boot, stacked paste chips, "esc to
-interrupt", modal dialogs, expectation-row expiry, turn-report staleness, unacked redelivery,
-seat-liveness drift, an unacked signal climbing renudge -> skip-level -> developer attention, a
+  interrupt", modal dialogs, expectation-row expiry, unacked redelivery,
+  seat-liveness drift, an unacked signal climbing renudge -> skip-level -> developer attention, a
 persistently silent seat being respawned rather than waited on, a dead owner's seat being detected
-and its grandparent signaled) is detectable by a mechanical predicate over an authoritative store,
-and this module evaluates those predicates every sweep and acts — redeliver, auto-nudge,
-signal-emit, escalate-rung, signal-grandparent — logging every action as an observer event.
+  and its grandparent signaled, and a worker turn ending or a non-reacting seat reaching its
+  owner (260713-TES-L2)) is detectable by a mechanical predicate over an authoritative store,
+  and this module evaluates those predicates every sweep and acts — redeliver, auto-nudge,
+  signal-emit, escalate-rung, signal-grandparent, state-signal — logging every action as an
+  observer event.
 HFX2-L9 makes the sweep safe at fast observation cadence: redelivery calls pass the configured
 900-second floor into the delivery path, repeated pane/seat-liveness signals use persisted
 cooldown state before minting another owner inbox row, and `pane-signal: mid-turn` is treated as a
@@ -108,6 +110,19 @@ L13 truth.
 
 The agent-notifier sweep now compacts and snapshots signal-cooldown and expectation stores once per sweep, threads those snapshots into cooldown and mark-missed actions, and caps escalation-rung findings by `escalation_budget` while leaving deferred rows level-triggered.
 
+### 260713-TES-L2 Worker-State Relay Wiring
+
+The sweep now hosts the worker→manager state-signal relay: `evaluate_predicates` composes the
+three relay families (see R2 bullets), `_FINDING_ACTIONS` maps them to `_emit_state_signal`,
+`_emit_non_reaction`, and `_drain_boundary`, and the owner-signal posting primitives
+(`OwnerSignal`, `_find_coalescible`, `_post_owner_signal`) are re-exported from
+`serving/owner_signals.py` for existing callers. `NON_REACTION_WINDOW_SECONDS` rides the module
+`__all__`. The retired `turn-report-stale` finding/action and `turn_report_path_for_leaf_key`
+are gone from the facade; `test_facade_surface.py` declares them in `REMOVED_FACADE_NAMES`.
+No model consume exists anywhere on this path — state-signals create no ack-by expectations.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ### Logic
 
 **260707-HFX2-L15 bounded redelivery.** The sweep's redelivery path now delegates to a
@@ -143,20 +158,21 @@ Inbox-mutating actions update this index after appending snapshots, so one sweep
 `operator-inbox.jsonl` once instead of refolding the whole log for each finding. The sweep result
 and heartbeat tick now carry pending/redeliverable inbox counts and last-sweep wall-clock duration.
 
-**R2 predicates** (`evaluate_predicates` runs all eight every sweep, concatenating their findings):
+**R2 predicates** (`evaluate_predicates` runs all ten every sweep, concatenating their findings):
 
 - `evaluate_pane_findings` (R2a) — every `RUNNING` `kind == "harness"` catalog row's captured pane
   text through `pane_signals.classify_pane_signal`; a `normal` classification produces no finding.
 - `evaluate_expectation_findings` (R2b) — `ExpectationRowStore.overdue(now=)` filtered to
-  `briefed-by`/`verdict-by`/`ack-by` (`_INACTIVE_EXPECTATION_KINDS`); `turn-report-by` is handled
-  separately below since it needs a second artifact check.
-- `evaluate_turn_report_findings` (R2c) — for each overdue `turn-report-by` row, resolves the
-  standard worker turn-report path via `turn_report_path_for_leaf_key` (splitting the qualified
-  `repo/master/leaf-id` key and calling `orchestration_artifacts.turn_report_artifact` against
-  `coordination_root/tasks/<repo>/<master>`) and fires only when `missing_artifact()` — its FIRST
-  caller, `controlplane/orchestration_nudges.py:112-114` — confirms the artifact is truly
-  missing/empty, so a worker who wrote the report before the row was consumed does not trip a false
-  stale-report action.
+  `verdict-by`/`ack-by` (`_INACTIVE_EXPECTATION_KINDS`); `turn-report-by` and `briefed-by` no
+  longer drive any notifier finding on the worker→manager path (260713-TES-L2).
+- `evaluate_state_signal_findings` (260713-TES-L2) — a running worker seat at `turn-ended` with
+  a completed/interrupted terminal outcome not yet relayed emits one `state-signal-due` finding
+  (evidence-id dedupe).
+- `evaluate_non_reaction_findings` (260713-TES-L2) — a seat still `turn-ended` with landed rows
+  older than `NON_REACTION_WINDOW_SECONDS` relays the non-reaction residue fact (worker→manager
+  only, one per episode).
+- `evaluate_boundary_drain_findings` (260713-TES-L2) — pending rows whose target crossed a turn
+  boundary after the last attempt are pushed (N15), bounded by the redelivery budget.
 - `evaluate_inbox_findings` (R2d) — `OperatorInboxStore.list_redeliverable(now=,
   rate_limit_seconds=)` directly; in the real sweep L8 feeds it from `_SweepState` and schedules at
   most `AgentNotifierContext.redeliver_budget` delivery attempts.
@@ -306,10 +322,10 @@ source is the pilot-observer log (P-15) and the leaf task doc, not an external s
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `_agent_notifier_loop`/`_agent_notifier_context` in `_app_lifespan.py` construct one `AgentNotifierContext` per sweep iteration and call `run_agent_notifier_sweep` via `asyncio.to_thread` on the settings-driven interval. | "def _agent_notifier_context(runtime: _ServingRuntime) -> AgentNotifierContext:", "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:", "def run_agent_notifier_sweep" | mcp/src/agents_remember/serving/_app_lifespan.py:70-70; mcp/src/agents_remember/serving/_app_lifespan.py:97-97; mcp/src/agents_remember/serving/agent_notifier.py:96-96 |
+| `_agent_notifier_loop`/`_agent_notifier_context` in `_app_lifespan.py` construct one `AgentNotifierContext` per sweep iteration and call `run_agent_notifier_sweep` via `asyncio.to_thread` on the settings-driven interval. | "def _agent_notifier_context(runtime: _ServingRuntime) -> AgentNotifierContext:", "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:", "def run_agent_notifier_sweep" | mcp/src/agents_remember/serving/_app_lifespan.py:70-70; mcp/src/agents_remember/serving/_app_lifespan.py:97-97; mcp/src/agents_remember/serving/agent_notifier.py:106-106 |
 | The pane classifier `evaluate_pane_findings` calls per running harness row. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | The heartbeat store `run_agent_notifier_sweep` ticks unconditionally at the end of every sweep, and the staleness helpers built on top of it. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
-| The expectation-row store R2b/R2c read directly, including the reserved `mark_missed` transition this module is the caller of. | "def evaluate_expectation_findings(", "def _mark_expectation_missed(  # pragma: no cover", "def mark_missed(row: ExpectationRow", "class ExpectationRowStore" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:65-65; mcp/src/agents_remember/serving/_agent_notifier_actions.py:279-279; mcp/src/agents_remember/controlplane/expectation_rows.py:127-134; mcp/src/agents_remember/controlplane/expectation_rows.py:156-166 |
+| The expectation-row store R2b/R2c read directly, including the reserved `mark_missed` transition this module is the caller of. | "def evaluate_expectation_findings(", "def _mark_expectation_missed(  # pragma: no cover", "def mark_missed(row: ExpectationRow", "class ExpectationRowStore" | mcp/src/agents_remember/controlplane/expectation_rows.py:127-127; mcp/src/agents_remember/controlplane/expectation_rows.py:156-156; mcp/src/agents_remember/serving/_agent_notifier_actions.py:280-280; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:71-71 |
 | The operator inbox store R2d/R4a/R4c read and write directly, including the reserved `mark_escalated` transition and the ladder's own `advance_rung` transition. | `mark_escalated`; `advance_rung` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:237-252; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:255-285 |
 | The pure escalation-ladder walker `_escalate_rung` reads for the row's next rung/owner. | `rung_due`; `next_step`; `seat_is_suspect` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152; mcp/src/agents_remember/controlplane/escalation_ladder.py:155-187 |
 | The two-hop, dead-node-skipping owner derivation `_escalate_rung`'s rung-2 branch and `_signal_dead_upstream` both call, plus the liveness check `evaluate_dead_upstream_findings`/`seat_is_suspect` use. | `derive_skip_level_owner`; `is_seat_dead` | mcp/src/agents_remember/controlplane/signal_routing.py:307-315; mcp/src/agents_remember/controlplane/signal_routing.py:335-375 |
@@ -319,10 +335,10 @@ source is the pilot-observer log (P-15) and the leaf task doc, not an external s
 | The standard turn-report artifact path helper `turn_report_path_for_leaf_key` resolves against, reused rather than re-derived. | `turn_report_artifact` | mcp/src/agents_remember/controlplane/orchestration_artifacts.py:87-97 |
 | The owner-derivation helper both `_auto_nudge` and `_signal_emit` call before posting an owner-addressed inbox row. | `derive_signal_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:249-275 |
 | The current injector entry point `_redeliver`/`_post_owner_signal` deliver through. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
-| The signal cooldown store `_signal_emit` consults before minting repeated pane/seat-liveness inbox rows. | "def _signal_emit(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:434-434 |
-| HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. | "def _redeliver(  # pragma: no cover", "def _post_owner_signal(  # pragma: no cover", "def _signal_emit(", "def deliver_inbox_entry" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:92-92; mcp/src/agents_remember/serving/_agent_notifier_actions.py:349-349; mcp/src/agents_remember/serving/_agent_notifier_actions.py:434-434; mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
-| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | "class TerminalCatalog:", "def evaluate_pane_findings(", "def evaluate_seat_liveness_findings(" | mcp/src/agents_remember/serving/terminal_catalog.py:519-857; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:42-42; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:272-272 |
-| Failing-first predicate unit tests (one per family) plus one seeded-drift sweep integration test asserting the full finding→action chain, heartbeat tick included. | `test_mid_turn_pane_fires_a_finding`, `test_overdue_briefed_by_row_fires`, `test_missing_report_fires_when_row_is_overdue`, `test_pending_row_with_no_next_attempt_is_immediately_redeliverable`, `test_stale_turn_state_past_cutoff_fires`, `test_seeded_drift_produces_expected_actions_and_ticks_heartbeat` | mcp/tests/test_agent_notifier.py:116-124; mcp/tests/test_agent_notifier.py:142-156; mcp/tests/test_agent_notifier.py:172-193; mcp/tests/test_agent_notifier.py:224-237; mcp/tests/test_agent_notifier_seat.py:43-53; mcp/tests/test_agent_notifier_seat.py:173-262 |
+| The signal cooldown store `_signal_emit` consults before minting repeated pane/seat-liveness inbox rows. | "def _signal_emit(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:303-303 |
+| HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` (moved to `serving/owner_signals.py` in 260713-TES-L2) returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal("; "def _signal_emit("; "def deliver_inbox_entry" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:96-96; mcp/src/agents_remember/serving/owner_signals.py:93-93; mcp/src/agents_remember/serving/_agent_notifier_actions.py:303-303; mcp/src/agents_remember/serving/inbox_delivery.py:165-217 |
+| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | "class TerminalCatalog:", "def evaluate_pane_findings(", "def evaluate_seat_liveness_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:48-48; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:231-231; mcp/src/agents_remember/serving/terminal_catalog.py:589-589 |
+| Failing-first predicate unit tests (one per family) plus one seeded-drift sweep integration test asserting the full finding→action chain, heartbeat tick included. | `test_mid_turn_pane_fires_a_finding`, `test_overdue_ack_by_row_fires`, `RetiredDispatchExpectationTests`, `test_pending_row_with_no_next_attempt_is_immediately_redeliverable`, `test_stale_turn_state_past_cutoff_fires`, `test_seeded_drift_produces_expected_actions_and_ticks_heartbeat` | mcp/tests/test_agent_notifier.py:114-114; mcp/tests/test_agent_notifier.py:140-140; mcp/tests/test_agent_notifier.py:169-169; mcp/tests/test_agent_notifier.py:207-207; mcp/tests/test_agent_notifier_seat.py:44-44; mcp/tests/test_agent_notifier_seat.py:174-174 |
 
 ## Cross-Repo References
 
@@ -385,6 +401,10 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the state-signal relay wiring —
+  ten predicate families, three relay actions, owner-signals re-export, `turn-report-stale`
+  retirement, no-model-consume. Verification metadata pinned until closeout stamps the
+  260713-TES-L2 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: moved this card to the renamed module path; recorded the compatibility window (event dual emission, legacy durable-row values, ask-prefix identity, retained durable artifact names) and refreshed current-truth identifiers (`run_agent_notifier_sweep`, `AgentNotifierContext`, `_agent_notifier_loop`/`_agent_notifier_context`). Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over `_supervisor_actions.py` and `_supervisor_evaluation.py`; full surface re-exported and pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.

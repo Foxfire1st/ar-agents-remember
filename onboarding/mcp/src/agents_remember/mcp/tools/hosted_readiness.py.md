@@ -6,8 +6,8 @@
 | path | mcp/src/agents_remember/mcp/tools/hosted_readiness.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-31T15:31+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | mcp/src/agents_remember/mcp/tools/overview.md |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ direct evidence.
 | --- | --- | --- |
 | The readiness predicate, `ReadinessWait`, and `MAX_HOSTED_READINESS_WAIT_SECONDS`. | `hosted_session_readiness`; `ReadinessWait`; `MAX_HOSTED_READINESS_WAIT_SECONDS` | mcp/src/agents_remember/serving/hosted_readiness.py:21-21; mcp/src/agents_remember/serving/hosted_readiness.py:40-52; mcp/src/agents_remember/serving/hosted_readiness.py:59-90 |
 | The tool declaration that exposes `session_id` / `wait_seconds`. | `hosted_session_readiness` | mcp/src/agents_remember/mcp/registration/sessions.py:143-156 |
-| The dispatch path that requires `status=ready` before creating a durable brief row. | `require_dispatch_target` | mcp/src/agents_remember/serving/dispatch_brief.py:110-131 |
+| The dispatch path that requires `status=ready` before creating a durable brief row. | `require_dispatch_target` | mcp/src/agents_remember/serving/dispatch_brief.py:109-130 |
 
 ## Cross-Repo References
 

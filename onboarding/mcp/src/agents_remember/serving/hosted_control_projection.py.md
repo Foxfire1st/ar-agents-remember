@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/hosted_control_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,7 +40,18 @@ activity/control mapping is exact and pinned over the full control×activity pro
 canonical import is function-local with the cycle documented: `terminal_liveness` imports this
 module, and the conversation package `__init__` imports the runtime that imports
 `terminal_liveness`, so a module-level import would close that cycle (worker round-2 issue 4).
-The public signature is backward-compatible and `terminal_liveness.py` is untouched.
+The public signature is backward-compatible; since 260713-TES-L2 it additionally accepts an
+optional `terminal` observation that `terminal_liveness._observe_alive` forwards from the
+evidence lift.
+
+## 260713-TES-L2 Current Delta — Terminal Precedence
+
+`snapshot_turn_state` cit:([`snapshot_turn_state`], mcp/src/agents_remember/serving/hosted_control_projection.py:79-104) gained `terminal: TurnTerminalEvidence | None = None` and
+forwards it into `snapshot_seat_turn_state`, so the lifted per-vendor settlement takes the same
+canonical precedence the status service applies: an interrupted/failed settlement is never
+re-read as a clean end, and `done ≠ interrupted` at seat granularity.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ### Conventions
 
@@ -101,6 +112,10 @@ Hosted control projection now consumes the canonical conversation turn-status au
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the forwarded `terminal` parameter
+  and terminal precedence in `snapshot_turn_state` (and superseded the "terminal_liveness
+  untouched" claim). Verification metadata pinned until closeout stamps the 260713-TES-L2
+  commit.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 
