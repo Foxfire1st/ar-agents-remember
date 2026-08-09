@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`
-| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
+| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`
+| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
 
 > **Status:** active baseline
 
@@ -1080,6 +1080,14 @@ suite `mcp/tests/test_judgment_demolition.py` pins the demolition; the live chai
 delivered as a runnable post-restart script and stays a manager/orchestrator exit-bar item.
 
 ## Update History
+
+- 2026-08-09T22:22+02:00 — No route impact: a dashboard test-only timer teardown repair
+  prevents a Virtualizer debounce from crossing jsdom destruction. Repository runtime features and
+  top-level boundaries are unchanged; detail lives in the conversation route.
+
+- 2026-08-09T21:54+02:00 — No route impact: a test-only durability helper split keeps the
+  source-pinning instrument below the repository's file-size rail. The repository feature
+  inventory and top-level runtime boundaries are unchanged; detail lives in the MCP tests route.
 
 - 2026-08-09T21:12+02:00 — No route impact: the L1–L5 master integration gate repairs are
   internal structure and source-citation maintenance only; the root feature inventory is

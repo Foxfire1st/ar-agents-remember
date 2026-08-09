@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
 | lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                  |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`                  |
+| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -304,7 +304,25 @@ Rulings Register's interrupt gate is an argument ABOUT capability evidence.
 
 The conversation timeline now coalesces repeated empty/in-progress reasoning into ONE stable live `thinking` row per active turn identity: `collapse.ts`'s `groupDisplayRows` delegates to extracted helpers (`liveKeyFor`, `handleLiveOpen`, `handleLiveUpdate`, `handleLiveFinalize`, `unknownRunFor`) with row-object references and `rows.indexOf` finalize (no index bookkeeping); `ThinkingItem` gained the animated live indicator (shared `pulseSlow`, frozen by effects=off); `timelineController.ts` and `timelineFeed.tsx` carry the wiring in the split conversation-timeline. The interleaved R15/R17 acceptance pins live in `conversation-timeline/liveThinking.test.tsx` and `collapse.test.ts` (at most one live indicator, zero diff-update unknown rows, unknown evidence preserved).
 
+## 260713-TES Master Gate — Hermetic Scroll-Memory Timers
+
+The two split scroll-memory suites share timer ownership through
+`conversation-timeline/scrollMemory.test-utils.tsx`: every case starts with fake timers, React
+renders are unmounted while those timers are still controlled, pending TanStack Virtualizer
+scroll-debounce callbacks are discarded, and only then does the suite restore real timers. The
+explicit fake-timer cases in `scrollMemory1.test.tsx` and `scrollMemory2.test.tsx` perform the same
+ordering in their `finally` blocks. This is a test-environment contract, not a production timeline
+change: it prevents a delayed Virtualizer `onChange` from reaching React after jsdom has destroyed
+`window`, which previously made an otherwise 1,551-passing suite fail nondeterministically at
+process teardown.
+
 ## Update History
+
+- 2026-08-09T22:22+02:00 — 260713-TES master integration route impact: the shared
+  conversation-timeline scroll-memory fixture now owns fake timers and tears down renders plus
+  pending Virtualizer debounces before restoring real time. Both split suites preserve that order,
+  eliminating the nondeterministic post-jsdom React callback while leaving production behavior
+  unchanged.
 
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the live-thinking coalescing change set and its acceptance pins. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (conversation-timeline split). Verification metadata stays pinned until closeout stamps the code commit.

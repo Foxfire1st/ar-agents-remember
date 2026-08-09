@@ -18,6 +18,7 @@
     "mcp/tests/_random_order.py",
     "mcp/tests/_scaling.py",
     "mcp/tests/_store_durability.py",
+    "mcp/tests/_store_durability_source.py",
     "mcp/tests/conftest.py",
     "mcp/tests/fixtures/build_rich_sim.py",
     "mcp/tests/fixtures/claude_stream_json/2.1.207/initialization.jsonl",
@@ -371,8 +372,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 349,
-    "fileSidecars": 359,
+    "sourceFilesInScope": 350,
+    "fileSidecars": 360,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -469,6 +470,7 @@
       "mcp/tests/_random_order.py",
       "mcp/tests/_scaling.py",
       "mcp/tests/_store_durability.py",
+      "mcp/tests/_store_durability_source.py",
       "mcp/tests/conftest.py",
       "mcp/tests/fixtures",
       "mcp/tests/fixtures/build_rich_sim.py",
@@ -482,8 +484,7 @@
       "mcp/tests/fixtures/claude_stream_json/2.1.210/interactions.jsonl",
       "mcp/tests/fixtures/claude_stream_json/2.1.210/turn.jsonl",
       "mcp/tests/fixtures/claude_stream_json/2.1.217",
-      "mcp/tests/fixtures/claude_stream_json/2.1.217/interrupt.jsonl",
-      "mcp/tests/fixtures/codex_app_server_0_144_3.json"
+      "mcp/tests/fixtures/claude_stream_json/2.1.217/interrupt.jsonl"
     ],
     "anchorHints": [
       "_agent_wire_fixtures.py",
@@ -502,6 +503,8 @@
       "_scaling",
       "_store_durability.py",
       "_store_durability",
+      "_store_durability_source.py",
+      "_store_durability_source",
       "conftest.py",
       "conftest",
       "build_rich_sim.py",
@@ -531,9 +534,7 @@
       "events.jsonl",
       "events",
       "test_active_projector_singleflight.py",
-      "test_active_projector_singleflight",
-      "test_agent_notifier.py",
-      "test_agent_notifier"
+      "test_active_projector_singleflight"
     ]
   },
   "fallback": {
