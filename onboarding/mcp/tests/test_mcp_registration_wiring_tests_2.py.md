@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_mcp_registration_wiring_tests_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                                        |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                                            |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                        |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -22,6 +22,13 @@ Part of the 260731-EFA-L7 in-place split family for `test_mcp_registration_wirin
 
 - `RegistrationWiringTests2`
 
+### 260713-TES-L4 Poll And Supersede Wiring
+
+`test_operator_inbox_poll_*` now asserts the `include_terminal: False` default is forwarded to
+the application poll (N11), and `test_operator_inbox_supersede_forwards_entry_reason_and_
+attribution` pins the new declaration: `operator_inbox_supersede` forwards
+`entry_id`/`reason`/`superseded_by` to the payload builder (R11).
+
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/tests/test_mcp_registration_wiring_tests_2.py`.
@@ -34,4 +41,7 @@ Part of the 260731-EFA-L7 in-place split family for `test_mcp_registration_wirin
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the `include_terminal` poll kwarg
+  pin (N11) and the `operator_inbox_supersede` wiring test (R11). Verification metadata pinned
+  until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

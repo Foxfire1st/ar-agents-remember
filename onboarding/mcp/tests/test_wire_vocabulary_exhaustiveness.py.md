@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`       |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -239,7 +239,7 @@ themselves.
 | Worktree status projects invalid-contract errors onto the payload. | `worktree_status_packet`; `status_payload` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
 | Published workflow kinds and session-status docstrings. | `worktree_start`; `spawn_agent_session`; `session_retire`; `session_rename` | mcp/src/agents_remember/mcp/registration/sessions.py:57-137; mcp/src/agents_remember/mcp/registration/sessions.py:158-181; mcp/src/agents_remember/mcp/registration/sessions.py:183-191; mcp/src/agents_remember/mcp/registration/worktrees.py:28-86 |
 | Session response vocabularies. | `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:80-122; mcp/src/agents_remember/models/terminal.py:162-178; mcp/src/agents_remember/models/terminal.py:188-199 |
-| Terminal refusal builders and payloads. | `_spawn_refusal`; `_knob_refusal`; `_retire_payload`; `_rename_payload` | mcp/src/agents_remember/application/terminal_tools.py:423-441; mcp/src/agents_remember/application/terminal_tools.py:880-905; mcp/src/agents_remember/application/terminal_tools.py:914-941; mcp/src/agents_remember/application/terminal_tools.py:1004-1025 |
+| Terminal refusal builders and payloads. | `_spawn_refusal`; `_knob_refusal`; `_retire_payload`; `_rename_payload` | mcp/src/agents_remember/application/terminal_tools.py:439-457; mcp/src/agents_remember/application/terminal_tools.py:896-921; mcp/src/agents_remember/application/terminal_tools.py:930-965; mcp/src/agents_remember/application/terminal_tools.py:1102-1123 |
 | Leaf-reference refusal statuses. | `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:45-72 |
 | Git facts, freshness, onboarding-read, and drift-status producers. | `git_facts_to_packet`; `freshness_to_packet`; `_resolve_onboarding`; `run_drift_summary` | mcp/src/agents_remember/application/read_files.py:209-238; mcp/src/agents_remember/kernel/git_facts.py:104-115; mcp/src/agents_remember/kernel/git_freshness.py:158-169; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
 | Invalid-contract start result. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/serving/state_signals.py`        |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-08-09T03:51+02:00|
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`                                    |
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                    |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -24,7 +24,10 @@ boundary and not yet relayed (`compound-idle-due`), a seat (worker or manager) s
 `turn-ended` long after rows landed at its boundary (`non-reaction-due`), and pending rows
 whose target seat crossed a turn boundary after the last attempt (`boundary-drain`) — plus
 the held-row predicate that keeps a boundary-held signal off the redelivery/escalation
-safety nets while its owner is alive but mid-turn.
+safety nets while its owner is alive but mid-turn. **260713-TES-L4 (N16/N13/N2)**: landing is
+now the formal `state == "landed"` (the by-rule predicate folded into the schema), and the
+boundary-drain predicate skips rows addressed to dead seats — the N2/N14 rebind machinery owns
+them, and a dead seat has no boundary to cross.
 
 ## Code Commentary
 
@@ -38,7 +41,7 @@ mirroring the pickup-staleness convention.
 `terminal_evidence_id`, and has not yet been relayed (`state_signal_emitted_for` != that id).
 The evidence id is the per-seat+turn dedupe identity.
 
-`evaluate_non_reaction_findings` cit:([`evaluate_non_reaction_findings`], mcp/src/agents_remember/serving/state_signals.py:182-229) finds pending inbox rows landed at this seat
+`evaluate_non_reaction_findings` cit:([`evaluate_non_reaction_findings`], mcp/src/agents_remember/serving/state_signals.py:182-229) finds formal `state == "landed"` rows at this seat
 (`deliveredToSession` + `adapterDeliveryState="accepted"` + `adapterAcceptedAt`), takes the
 oldest, and — once it is older than the window and the seat is still `turn-ended` — emits one
 `non-reaction-due` finding per landed-row episode, deduped by `non_reaction_emitted_for`. It
@@ -86,7 +89,8 @@ who was in the set.
 `evaluate_boundary_drain_findings` cit:([`evaluate_boundary_drain_findings`], mcp/src/agents_remember/serving/state_signals.py:231-274) is the N15 drain: pending, not-yet-landed rows
 whose target is at a turn boundary (`seat_at_turn_boundary`) and whose `lastAttemptAt` predates
 the boundary transition (`turn_state_changed_at`) are pushed. Rows without a fresh boundary
-stay on the durable backoff schedule.
+stay on the durable backoff schedule; rows addressed to a dead/replaced seat are skipped here
+and owned by the rebind path (N2/N14, L4).
 
 `state_signal_held_on_boundary` cit:([`state_signal_held_on_boundary`], mcp/src/agents_remember/serving/state_signals.py:114-126) is the F1 fix: a non-landed `state-signal` row whose
 target is a LIVE running seat is excluded from escalation and the redeliverable budget —
@@ -109,8 +113,8 @@ judges, never schedules respawn, and never reasons about expectation deadlines.
 - `acceptance=queued` from a busy adapter is NOT a landing; only correlated acceptance at a
   turn boundary is terminal on this path (`state_signal_landed`).
 - Killed seats stay `exited` and hung seats stay `stale`: neither produces a done signal.
-- Landed rows remain `state=pending` until the L4 schema migration; they are terminal by rule
-  on this path.
+- Landed rows carry the formal `state="landed"` terminal (N13/N16 migration); the old
+  by-rule pending landing no longer exists.
 - Non-reaction residue is a distinct fact, never worded or modeled as "unconsumed rows"; it
   now covers worker→manager AND manager→orchestrator (L3), and the compound-idle predicate
   stays a pure seat-state signal that rides alongside it.
@@ -144,8 +148,8 @@ the landing predicate lives on the inbox record.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The catalog row's terminal truth, boundary vocabulary, and dedupe markers. | `seat_at_turn_boundary`; "class TerminalCatalogEntry:" | mcp/src/agents_remember/serving/terminal_catalog.py:95-103; mcp/src/agents_remember/serving/terminal_catalog.py:106-220 |
-| Terminality for landed state-signal rows (accepted at boundary). | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:54-65 |
-| The action layer: emit, non-reaction, boundary drain, held-row exclusions. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary`; `_FINDING_ACTIONS` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:618-677; mcp/src/agents_remember/serving/_agent_notifier_actions.py:739-796; mcp/src/agents_remember/serving/_agent_notifier_actions.py:799-808; mcp/src/agents_remember/serving/_agent_notifier_actions.py:816-827 |
+| Terminality for landed state-signal rows (accepted at boundary). | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:66-74 |
+| The action layer: emit, non-reaction, boundary drain, held-row exclusions. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary`; `_FINDING_ACTIONS` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:758-817; mcp/src/agents_remember/serving/_agent_notifier_actions.py:879-936; mcp/src/agents_remember/serving/_agent_notifier_actions.py:939-948; mcp/src/agents_remember/serving/_agent_notifier_actions.py:956-969 |
 | The relay simulation suites (incident-#1, boundary hold, dedupe, rebinding, idle flap, non-reaction). | `StateSignalRelayTests`; `StateSignalDeliveryTests` | mcp/tests/test_state_signal_relay.py:128-735; mcp/tests/test_state_signal_delivery.py:88-229 |
 
 ## Cross-Repo References
@@ -158,6 +162,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: updated the landing vocabulary to the formal
+  `state="landed"` (non-reaction scan now filters on the terminal state; the by-rule pending
+  predicate is gone), and recorded the dead-seat skip in `evaluate_boundary_drain_findings`
+  (N2/N14 — rebind machinery owns dead-target rows). Verification metadata pinned until
+  closeout stamps the 260713-TES-L4 commit.
 - 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: added the compound-idle predicate family
   (`_compound_worker_index`, `compound_idle_sets`, `compound_idle_signature`,
   `evaluate_compound_idle_findings`, `compound_idle_response`,

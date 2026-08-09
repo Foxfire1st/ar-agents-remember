@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 
 > **Status:** active baseline
 
@@ -103,7 +103,7 @@ onboarding pass.
 | Reliable controlled-session submission (260715-FEUI-L5) | One `HarnessSubmissionAuthority` per bridge generation owns prompt/model/effort ordering, immutable request/source/payload idempotency, atomic queued-withdraw versus dispatch, exact full-operation-ref completion, early-terminal dominance, raw-free status, and bounded privacy-aware retention. The dashboard's shared CodeMirror composer keeps one epoch/id/text through retry/reconcile, treats only the exact pre-dispatch certificate as retry-safe, and implements authoritative Alt+Up pop-back with revision-CAS recovery. Claude, Codex, and Pi dispatch now under guarded write seams; no adapter/native queue or PTY-paste fallback is authority. | `serving.harness_submission_authority`, `serving.harness_control_{api,bridge,client,models,queue}`, `dashboard/src/data/{submitMachine,submitClient,submissionLifecycleClient,submitRetention}.ts`, `dashboard/src/panels/SessionComposer.tsx` |
 | Sessions inspector and status integration (260715-FEUI-L7) | The Sessions cockpit completes its end-to-end operator audit with stable-mounted accessible Evidence / Capabilities / Bus tabs and a persistent StatusLine. Evidence retains explicit-mark-seen set outcomes and terminate/retire residuals after source-row removal; exact-session capability truth stays separate from pre-session launch catalogs; the fleet-global pending Bus preserves entry-keyed reply state across filters, virtualization, and hidden tabs, and reverse replies address only the projected sender without consuming the source. The status footer keeps its contractual fact order and literal empty UA-5 context/cost slot rather than inventing telemetry. | `dashboard/src/panels/session-cockpit/{SeatInspector,EvidencePane,CapabilitiesPane,BusPane,BusDeveloperReply,VirtualizedInspectorList,StatusLine}.tsx`, `dashboard/src/panels/session-cockpit/` overview |
 | Canonical Chats cockpit and hardening (260715-FEUI-L8) | One product-facing `Chats` destination now uses the keep-alive session cockpit; the old Chats component, session-list grouping, and separate Sessions navigation are retired. Operations remains the default and RailChat remains contextual. The inspector defaults closed, is toggleable and responsive without losing deliberate intent; authoritative launch, attach, highlight routing, landed cleanup, ended/restored states, accessibility, scenario coverage, and performance/fetch tripwires are pinned end to end. At FEUI-L8 controlled sessions still exposed the runner line-log in xterm because UA-1 structured transcript/history authority was not yet implemented; **260718-CHATS-L4 supersedes that** — controlled sessions now default to the structured conversation surface and the line-log is demoted to a read-only diagnostics drawer (see the 260718-CHATS-L4 narrative below). | `dashboard/src/panels/session-cockpit/` overview, `dashboard/src/data/` overview, `docs/design/dashboard/{scenario-catalog,session-cockpit-upstream-register,session-cockpit-closeout-evidence}.md` |
-| Agent orchestration communications | Durable agent-to-agent inbox messages address orchestrator/manager/worker roles, carry message-kind and artifact metadata, and remain pollable while also attempting hosted-session stdin push through the echo-confirmed paste seam. Consume is a monotonic terminal snapshot: a concurrent in-flight delivery may append stale physical evidence but cannot resurrect pending/redelivery state. Turn reports and master handovers have typed artifact helpers/templates; inactivity or missing report nudges are rate-limited, logged as `orchestration.nudge`, and delivered to manager inboxes. | `operator_inbox_*`, `orchestration_nudge_manager`, `serving.inbox_delivery`, `controlplane/orchestration_artifacts.py`, `controlplane/orchestration_nudges.py`, `l-01-agent-lifecycles` templates |
+| Agent orchestration communications | Durable agent-to-agent inbox messages address orchestrator/manager/worker roles, carry message-kind and artifact metadata, and remain pollable while also attempting hosted-session stdin push through the echo-confirmed paste seam. Since 260713-TES-L4 (N13/N16) the success terminal is `landed` — correlated adapter acceptance at a turn boundary — beside `superseded`/`unresolved`/`expired`; terminal markers are inspectable (`include_terminal`) for the 48h retention window; consume is an optional attribution marker with nothing mechanical attached; supersession is explicit (`operator_inbox_supersede`); dead-target rows rebind to the same-leaf+role replacement or expire to the scoped architect mailbox (N14/N2). Turn reports and master handovers have typed artifact helpers/templates; inactivity or missing report nudges are rate-limited, logged as `orchestration.nudge`, and delivered to manager inboxes. | `operator_inbox_*`, `orchestration_nudge_manager`, `serving.inbox_delivery`, `controlplane/orchestration_artifacts.py`, `controlplane/orchestration_nudges.py`, `l-01-agent-lifecycles` templates |
 | Event River lifecycle task labels | Event River readable history rows translate lifecycle-bound activity into task-facing context. When a retained event still has a lifecycle id but its live lifecycle projection is gone, the formatter uses projected task documents to show the task title before falling back to raw enclosure or lifecycle ids. The panel waits for raw-stream hydration before showing an empty feed and renders all retained rows it receives; backend lifecycle retention owns the cutoff. | `dashboard/src/panels/eventSummary.ts`, `dashboard/src/data/taskIdentity.ts`, `dashboard/src/panels/EventRiver.test.tsx` |
 | Authoritative browser session open | Every dashboard raw or harness create entrance crosses one `POST /api/terminal` client, validates exact request/response identity, and materializes only the accepted server row. Network, HTTP, protocol, identity, or server-declared failure creates no registry row, focus change, readiness/submit transition, or dependent context delivery. | `dashboard/src/data/terminalOpen.ts`, `dashboard/src/data/sessions.ts`, dashboard data/panels/session-cockpit overviews |
 | Runtime and skill installation | MCP-owned install of coordinator `AGENTS.md` templates, packaged skills, system defaults, provider defaults, optional benchmark fixtures, and harness skill layouts. | `runtime_install`, `skills_install`, `install/`, `package_data/runtime/` |
@@ -128,6 +128,18 @@ serving endpoint (`POST /api/operator-inbox`, trusted developer/dashboard attrib
 dashboard Gate Respond fallback (`GateResponder` calls `data/operatorInbox.postOperatorInbox` when no
 hosted chat session is attached). Hosted chat injection remains preferred; the inbox is the pull-based
 return channel for external agents that cannot receive direct dashboard injection.
+
+260713-TES-L4 (deliver-until-LANDED) updates that story: the inbox vocabulary is now formally
+terminal (`landed`/`superseded`/`unresolved`/`expired` beside legacy parse-compat literals);
+the success terminal is written by `record_delivery` only when a correlated adapter acceptance
+arrives at a turn boundary; `operator_inbox_poll` lists terminal markers with
+`include_terminal=true` (N11); `operator_inbox_consume` is attribution-only (N16);
+`operator_inbox_supersede` explicitly terminates an overtaken command (R11); pending rows to a
+dead/replaced seat rebind within the 5-minute grace or expire to the scoped architect mailbox
+(N14/N2); and the notifier sweep resolves the attempt ceiling (`unresolved`) and the retention
+boundary (`expired`) instead of climbing a timed escalation ladder (N3, dormant — L5 deletes).
+Detail lives in the `mcp/` package overview and the controlplane/serving/mcp-tools/
+docs-reference route overviews.
 
 Task 23/24 changes the lifecycle of those gate/inbox interactions: prompts, responses, pending pickup
 signals, and attention-queue gate rows are disposable interaction data. Explicit dismiss/clear paths
@@ -2133,6 +2145,12 @@ Updated 2026-06-27T22:00+02:00 — task 28 (NOTIFY-AND-CONTINUE turn end): refre
 Updated 2026-06-17T22:45+02:00 after the Engine Room visual-parity pass enriched the dashboard-frontend Feature Inventory row (the 5g G6 atmospheric backdrop + Effects/Calm toggle, the restored HUD decal layer, and the fixed-height `Panel fill` layout); verification metadata stays pinned until closeout commits the source. (Prior: 2026-06-06T12:28+02:00 after adding the public `docs/features.md` tour, replacing README `## Core Model` with `## Core Features`, and documenting the Claude Code root `.mcp.json` detection caveat. Prior: 2026-06-04T10:29+02:00 — documented hidden harness starter packages as source-owned surfaces in the main overview and noted their `l-01` deep-research retrieval-strategy tally requirement. Prior: 2026-05-29T17:30+02:00 — re-spined the public docs and this overview's "What This Repo Is" framing around the three retrieval substrates (by path / by meaning / by relationship) and retired the sidecar-only anti-retrieval positioning. Prior: 2026-05-28T19:52+02:00 — added the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.)
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: root inventory reviewed for the
+  deliver-until-LANDED inbox migration; the agent-orchestration feature row and the task-10
+  inbox paragraph were updated to the formal terminal vocabulary, attribution-only consume,
+  explicit supersession, N11 inspectability, and N14/N3 rebind/expiry semantics. Verification
+  metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: root inventory reviewed for the
   worker-state relay; the current feature rows are unchanged (the relay is substrate-level, not
   a new user-facing feature row), and the cross-route detail lives in the `mcp/` package

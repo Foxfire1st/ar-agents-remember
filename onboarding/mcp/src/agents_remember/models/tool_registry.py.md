@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:12+02:00                     |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                     |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -17,7 +17,9 @@ classes and exposes the advertised public subset separately. L11 maps
 `task_reopen` -> `TaskReopenResponse` (imported from `models.task_doc`). L2 maps
 `spawn_agent_session` -> `SpawnAgentSessionResponse` (imported from `models.terminal`).
 L3 maps `orchestration_nudge_manager` -> `OrchestrationNudgeManagerResponse`
-(imported from `models.orchestration`).
+(imported from `models.orchestration`). 260713-TES-L4 maps
+`operator_inbox_supersede` -> `OperatorInboxSupersedeResponse` (imported from
+`models.operator_inbox`).
 
 ## Code Commentary
 
@@ -38,7 +40,8 @@ GitHub #54 sub-task D), benchmark, slice-2b lifecycle, the slice-3c
 control-plane gate payload builders (`gate_create`/`gate_decide`/`gate_wait`/
 `gate_response_wait`/`gate_list` → the strict `models/gates.py` responses), plus the
 task-10/L3 inbox tools (`operator_inbox_post` / `operator_inbox_poll`
-/ `operator_inbox_consume` -> the strict `models/operator_inbox.py` responses),
+/ `operator_inbox_consume`, plus 260713-TES-L4 `operator_inbox_supersede` -> the strict
+`models/operator_inbox.py` responses),
 the L3 orchestration nudge tool (`orchestration_nudge_manager` ->
 `models/orchestration.py`),
 plus dashboard task 14 `lifecycle_finalize_task` → `LifecycleFinalizeTaskResponse`,
@@ -132,6 +135,10 @@ field, and `produced == declared` equality against the `VALID_*` frozensets).
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded `operator_inbox_supersede` →
+  `OperatorInboxSupersedeResponse` in `TOOL_RESPONSE_MODELS`. Verification metadata pinned until
+  closeout stamps the 260713-TES-L4 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 "- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 8 table citations and 2 prose citations for registry payloads, gate responses, terminal responses, envelopes, and test vocabulary; fixer-generated ranges verified.

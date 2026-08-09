@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/src/agents_remember/mcp/tools/__init__.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-08T02:43+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                     |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -28,7 +28,8 @@ import block and `__all__`, exactly per the documented re-export pattern.
 Task 25 keeps the split gate/block/wait builders re-exported for internal
 compatibility and tests while making `lifecycle_gate_payload` the only public
 agent-facing gate junction. `__all__` lists the full builder import surface, not
-only the advertised MCP tools.
+only the advertised MCP tools. 260713-TES-L4 adds `operator_inbox_supersede_payload` to the
+`operator_inbox` import block and `__all__`, exactly per the documented re-export pattern.
 
 ### Invariants And Boundaries
 
@@ -44,19 +45,30 @@ only the advertised MCP tools.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Conformance test reaches `tools._tool_payload`. | `_tool_payload` | mcp/tests/test_tool_response_conformance.py:568-574 |
-| `gate_response_wait_payload` is imported from `gates` and listed in `__all__`. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/__init__.py:21-28; mcp/src/agents_remember/mcp/tools/__init__.py:93-112 |
+| Conformance test reaches `tools._tool_payload`. | "tools._tool_payload" | mcp/tests/test_tool_response_conformance.py:4-4 |
+| `gate_response_wait_payload` is imported from `gates`. | "from .gates import (" | mcp/src/agents_remember/mcp/tools/__init__.py:20-28 |
+| `gate_response_wait_payload` is listed in `__all__`. | "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:94-94 |
 | The gate response wait payload builder is owned by the `gates` submodule. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/gates.py:131-148 |
-| The inbox payload builders re-exported by this facade. | `operator_inbox_post_payload`, `operator_inbox_poll_payload`, `operator_inbox_consume_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:19-36; mcp/src/agents_remember/mcp/tools/operator_inbox.py:50-65; mcp/src/agents_remember/mcp/tools/operator_inbox.py:68-83; mcp/src/agents_remember/mcp/tools/__init__.py:50-54 |
-| The orchestration nudge payload builder re-exported by this facade. | `orchestration_nudge_manager_payload` | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36; mcp/src/agents_remember/mcp/tools/__init__.py:55-55 |
-| The lifecycle finalizer payload builder re-exported by this facade. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32; mcp/src/agents_remember/mcp/tools/__init__.py:39-39 |
-| The terminal payload builders (`attach_terminal_session_to_leaf_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`) re-exported by this facade. | `attach_terminal_session_to_leaf_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:26-43; mcp/src/agents_remember/mcp/tools/terminal.py:46-63; mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95; mcp/src/agents_remember/mcp/tools/__init__.py:71-76 |
+| The post payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_post_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-36 |
+| The poll payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_poll_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:51-65 |
+| The consume payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_consume_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:71-83 |
+| The inbox payload builders (post/poll/consume/supersede since 260713-TES-L4) are re-exported by this facade. | "from .operator_inbox import (" | mcp/src/agents_remember/mcp/tools/__init__.py:47-53 |
+| The orchestration nudge payload builder is owned by the `orchestration` submodule. | `orchestration_nudge_manager_payload` | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
+| The orchestration nudge payload builder is re-exported by this facade. | "from .orchestration import orchestration_nudge_manager_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:56-56 |
+| The lifecycle finalizer payload builder is owned by the `lifecycle_finalize` submodule. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
+| The lifecycle finalizer payload builder is re-exported by this facade. | "from .lifecycle_finalize import lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:39-39 |
+| The terminal payload builders (`attach_terminal_session_to_leaf_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`) are owned by the `terminal` submodule. | `attach_terminal_session_to_leaf_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:26-43; mcp/src/agents_remember/mcp/tools/terminal.py:46-63; mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95 |
+| The terminal payload builders are re-exported by this facade. | "from .terminal import (" | mcp/src/agents_remember/mcp/tools/__init__.py:68-74 |
 
 ## 260712-TRH-L4 Final Candidate
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded `operator_inbox_supersede_payload`
+  joining the facade import block and `__all__` per the re-export pattern. Verification
+  metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-03T02:32:19+02:00 — Curator W3-B02 repaired 7 Repo-Internal citation rows, including 14 manifest findings, with exact current builder anchors and repository-relative ranges; verification metadata was preserved.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
 

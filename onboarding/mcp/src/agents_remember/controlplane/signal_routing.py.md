@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-08-09T03:51+02:00|
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -22,6 +22,9 @@ developer ruling: no layer is addressed its grandchildren's noise). 260707-HFX2-
 second, deliberately separate two-hop derivation — `derive_skip_level_owner` — for the escalation
 ladder's rung-2 skip-level target and the dead-upstream grandparent signal, plus `is_seat_dead`, the
 liveness check both the ladder and that two-hop walk use to skip past a confirmed-dead node.
+**260713-TES-L4 (R13/N14)** adds repository+sprint-scoped architect custody
+(`derive_architect_owner(catalog, leaf_key=...)` — never global first-match) and row-based
+sweep-time owner derivation (`derive_row_owner`), the identity machinery behind N14 rebinding.
 
 ## Code Commentary
 
@@ -101,6 +104,27 @@ F1). This is a mechanical rename + promotion with no routing-behavior change: `d
 remains the one-hop manager→orchestrator route the compound-idle emitter and the manager
 non-reaction residue use.
 
+### 260713-TES-L4 Scoped Architect Custody And Row-Based Owner Derivation
+
+`derive_architect_owner(catalog, *, leaf_key=None)` cit:([`derive_architect_owner`], mcp/src/agents_remember/controlplane/signal_routing.py:322-350) now
+resolves the architect bound to the row's repo+sprint scope instead of picking the first running
+architect globally (R13). The row's `leafKey` resolves to its master scope via `master_key`;
+only running harness seats with `binding_role="architect"` whose `binding_leaf_key` or
+`replacement_for_leaf` falls inside that scope are candidates, with an exact-leaf binding
+preferred over the master-scope set. An unscoped/ambiguous set — or no scoped seat — resolves to
+the role-only architect mailbox, fail-closed: a second repository's architect can never capture
+another repo's rows. `escalation_ladder.next_step` passes the row's `leafKey` through.
+
+`derive_row_owner(catalog, entry)` cit:([`derive_row_owner`], mcp/src/agents_remember/controlplane/signal_routing.py:393-412) is the N14 sweep-time derivation: the
+row's durable subject identity (leaf key + seat role + subject agent), never its stamped address.
+`dispatch-brief` rows return an empty owner (exact-pinned, never rebound). A worker/reviewer/
+curator subject re-resolves its live manager (`derive_leaf_manager_owner`); a manager subject
+re-resolves its orchestrator — live spawn provenance first, then a master-scoped replacement
+(`_live_scoped_orchestrator`), else the role-only orchestrator mailbox. `_owner_for_stamped_role`
+falls back through the stamped `ownerRole` for rows with no seat-role subject. A row whose entire
+owner chain is dead surfaces to the scoped architect mailbox (N3 mailbox-not-rung) via
+`_rebind_expired` in the sweep, not through this module.
+
 ### Conventions
 
 Every "no route" case returns the same empty `RoutedOwner()` sentinel (all fields `None`) rather
@@ -145,7 +169,7 @@ existing design doc.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The owner address is read straight off the sender's own `spawned_by_session`/`spawned_by_lifecycle` catalog fields. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
-| The two callers of the two-hop walk: rung 2's skip-level target and the dead-upstream grandparent signal. | `derive_skip_level_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:335-375 |
+| The two callers of the two-hop walk: rung 2's skip-level target and the dead-upstream grandparent signal. | `derive_skip_level_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:490-530 |
 | The compound-idle consumer of the public `master_key` scope filter (both membership arms). | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:69-103 |
 | `next_step`'s rung-2 branch calls this walker directly and detects the hierarchy-ceiling empty-owner case. | `next_step` | mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152 |
 
@@ -158,6 +182,14 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded scoped architect custody (R13) —
+  `derive_architect_owner(catalog, leaf_key=...)` resolves the repo+sprint-scoped architect
+  with exact-leaf preference and fail-closed role-only fallback, never global first-match — and
+  the N14 row-based derivation family (`derive_row_owner`, `_owner_for_role`,
+  `_orchestrator_owner`, `_live_scoped_orchestrator`, `_owner_for_stamped_role`). Noted the
+  `escalation_ladder.next_step` leaf-key pass-through. Verification metadata pinned until
+  closeout stamps the 260713-TES-L4 commit.
 - 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded the `_master_key` → public
   `master_key` promotion (used by `_scoped_managers` and, since L3, by
   `serving/state_signals.py` for master-scoped compound-idle membership on every arm). No

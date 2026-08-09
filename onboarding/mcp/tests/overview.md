@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -45,6 +45,22 @@ residue relayed to the orchestrator; emitter skip branches; and the action-time 
 signature in ask + marker. The existing `test_state_signal_relay.py` rebinding fixture now
 keeps its replacement manager `working` so the L2 behavior stays isolated. The wire pin moved
 63→64 (`compoundIdleEmittedFor`) in `test_serving_response_conformance.py`.
+
+### 260713-TES-L4 Inbox Arrival And Rebinding Suites
+
+Two forcing suites were added for deliver-until-LANDED:
+`test_inbox_arrival_guarantee.py` (25 tests — scoped architect custody, post-time rebinding,
+owner-address branches, explicit supersession, terminal inspectability, TTL/cap eviction,
+settings last-good resilience, relay-death watch, retire surfacing) and
+`test_inbox_rebinding_mechanics.py` (33 tests — transition idempotence, row-owner derivation,
+rebind/expire/unresolved action branches, grace/evaluation branches, retention branches,
+legacy-landed fold, cap-fill, F1 stale-snapshot terminal authority, supersede-during-in-flight
+e2e, rebound delivery-to-B). The notifier/liveness/dispatch/expectation/reclamation/
+escalation/conformance families updated their fixtures to the N16 terminal truth (ack-by →
+verdict-by, attribution-only consume, `state="landed"` seeds, attempt-ceiling `unresolved`,
+dead-seat expiry to the architect mailbox, one-per-row-per-sweep expiry emission), and the
+registration suite pins the `include_terminal` poll kwarg plus the `operator_inbox_supersede`
+wiring.
 
 Regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
@@ -1387,6 +1403,11 @@ race-dependent diff-coverage class).
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the two new inbox
+  arrival/rebinding forcing suites (25+33 tests) and the terminal-honesty fixture updates
+  across the notifier/liveness/dispatch/expectation/reclamation/escalation/conformance and
+  registration-wiring families. Verification metadata pinned until closeout stamps the
+  260713-TES-L4 commit.
 - 2026-08-09T03:51+02:00 — 260713-TES-L3 route impact: recorded the new
   `test_compound_idle_relay.py` forcing suite, the L2 rebinding-fixture isolation change, and
   the 63→64 wire-key pin in the conformance family. Verification metadata pinned until

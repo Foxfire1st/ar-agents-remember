@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 
 ## Purpose
 
@@ -17,6 +17,16 @@
 agent-notifier sweep knobs) with the compatibility-window alias: the legacy
 `orchestration.supervisor` key is accepted loudly and both-keys is refused. `harnesses.md` prose
 was refreshed to agent-notifier wording; no harness contract changed.
+
+### 260713-TES-L4 — Inbox Landing, Supersession, And Reserved Ladder Reference
+
+`mcp-tools.md` now documents the N16 inbox contract (terminal `landed` only on correlated
+adapter acceptance at a turn boundary), `include_terminal` poll inspectability (N11), the
+attribution-only `operator_inbox_consume`, and the explicit `operator_inbox_supersede` tool
+(R11). `settings-json.md` marks `escalationBudget` reserved (N3): the timed escalation ladder is
+demolished as policy — rows resolve by the 5-attempt ceiling, the 5-minute rebind grace, or
+explicit supersession — and the knob no longer gates sweep behavior (removed with the L5
+demolition leaf).
 
 Reference contract for harnesses, MCP tools, and settings. ACPUI makes role settings the initial
 native-selection authority: Claude, Codex, and Pi discover token-free per-install/account catalogs,
@@ -122,6 +132,10 @@ default, fail-loud family) — the schema source for the full-gate memory cap.
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the `mcp-tools.md` inbox
+  landing/supersession rows (N16/R11/N11) and the `settings-json.md` escalationBudget reserved
+  wording (N3, ladder demolished as policy). Verification metadata pinned until closeout stamps
+  the 260713-TES-L4 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: `settings-json.md` documents the
   `orchestration.agentNotifier` family with the compatibility-window alias, and `harnesses.md`
   prose was refreshed to agent-notifier wording; route shape unchanged. Verification metadata

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -271,6 +271,26 @@ a pure seat-state signal and the orchestrator combines the two facts (N15/N16).
 
 `COMPOUND_IDLE_SWEEP_LATENCY_SECONDS = 10.0` records the N6 latency bound (one default sweep).
 The wire model gained `compoundIdleEmittedFor` (catalog key pin 63→64).
+
+**260713-TES-L4 — deliver-until-LANDED, rebinding, and relay-death surfacing.** The serving
+route owns the N13/N16 landing mechanics: `inbox_delivery.py` samples the target's boundary
+state at delivery time and threads `landed=at_boundary and accepted` through every recording
+path, so a correlated adapter acceptance at a turn boundary writes the formal `landed` state
+(never `queued`, never a non-boundary acceptance); `operator_inbox_posts.py` re-derives the
+CURRENT qualified owner at post time for every owner-addressed post (N14, dispatch-brief
+exact-pinned, peer addresses verbatim) and no longer writes ack-by expectation rows;
+`_agent_notifier_evaluation.py` owns the N14 rebind predicates (`evaluate_rebind_findings`,
+`REBIND_GRACE_SECONDS=300.0`, `_row_dead_since`) and the §9 pending-expiry predicate, and no
+longer composes the escalation ladder (dormant, N3); `_agent_notifier_actions.py` owns the
+rebind/expire/unresolved actions (`_rebind_due`, `_rebind_expired`, `_expire_pending`,
+`_mark_unresolved` — grace expiry readdresses the terminal marker to the scoped architect
+mailbox, mailbox-not-rung); `agent_notifier.py` folds legacy by-rule landed rows once
+(`_fold_legacy_landed`) and no landed row is ever retried/nudged/escalated again; and
+`_app_lifespan.py` keeps the sweep alive on bad settings reads (last-good per tick, loud
+failure) while the new `relay_death_watch.py` independently posts a stale-heartbeat
+`degradation-alert` to the architect mailbox (N5 — the relay never relays its own death).
+`state_signals.py` scans formal `landed` rows for non-reaction and skips dead-target rows in
+the boundary drain.
 The agent-notifier keeps its observation cadence independent from its delivery/escalation
 cadence: `agent_notifier.py` passes the redelivery floor into hosted delivery, checks the new
 `controlplane/agent_notifier_signals.py` cooldown store before repeated pane/seat-liveness owner signals,
@@ -1044,7 +1064,15 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `orphan_policy.py`, governed by the `controlplane/` overview) are now genuinely landed here. Still
   touches no `terminal_paste.py` internals. `_delivery_failure_still_retrying`, a
   guard inside `evaluate_escalation_findings`, lets delivery-failure rows exhaust the redelivery
-  threshold before the generic unacked ladder advances them.
+  threshold before the generic unacked ladder advances them. Since 260713-TES-L4: folds legacy
+  by-rule landed rows once (`_fold_legacy_landed`), composes the rebind/grace/pending-expiry
+  predicate families, resolves live-but-silent rows terminal `unresolved` at the attempt
+  ceiling (N3), and no longer drives the escalation ladder (dormant, L5 demolishes).
+- `relay_death_watch.py` — (260713-TES-L4, N5) the dashboard-side relay-death watcher:
+  independent 30s cadence, heartbeat-staleness past the configured cutoff → one durable
+  `degradation-alert` row to the scoped architect mailbox per tick identity (marker-file
+  dedupe, default-cutoff settings fallback, best-effort push); the relay never relays its own
+  death.
 - `pane_signals.py` — the pane-state classifier: `classify_pane_signal`
   answers which of the four P-15 intervention triggers (`never-briefed`/`delivery-stalled`/
   `mid-turn`/`blocked`) a captured pane shows, reusing `terminal_paste.count_paste_chips` for the
@@ -1310,7 +1338,7 @@ neighboring repository governs this route.
 | The containment metrics sampler + store the lifespan loop drives. | `ProviderMetricsStore`; `sample_provider_containers` | mcp/src/agents_remember/providers/metrics.py:231-360; mcp/src/agents_remember/providers/metrics.py:363-420 |
 | The provider degradation detector the sampling loop also calls once per tick; governed by the `mcp/` package overview. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
 | The expectation-row, operator-inbox, orchestration-nudge, signal-cooldown, and observer-event stores. | `ExpectationRowStore`; "class OperatorInboxStore"; `OrchestrationNudgeStore`; `AgentNotifierSignalCooldownStore`; `EventStore` | mcp/src/agents_remember/controlplane/expectation_rows.py:156-336; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251; mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127; mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220; mcp/src/agents_remember/observer/store.py:103-171 |
-| The `orchestration.agentNotifier` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s agent-notifier loop re-reads per-use. | "class AgentNotifierSettings:"; "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:276-276; mcp/src/agents_remember/serving/_app_lifespan.py:97-97 |
+| The `orchestration.agentNotifier` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s agent-notifier loop re-reads per-use. | "class AgentNotifierSettings:"; "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:278-278; mcp/src/agents_remember/serving/_app_lifespan.py:113-113 |
 | The MCP tool choke point that surfaces the agent-notifier staleness banner on every tool call. | `_tool_payload`; `_agent_notifier_banner` | mcp/src/agents_remember/application/tool_response.py:22-31; mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | The sole epoch-bound prompt/setter timeline and its authoritative status/withdrawal model. | `HarnessSubmissionAuthority`; `withdraw` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
 | The daemon/IPC/client boundary for raw-free lifecycle operations and first-byte classification. | `register_harness_control_routes`; `_dispatch`; `_exchange_control` | mcp/src/agents_remember/serving/harness_control_api.py:182-217; mcp/src/agents_remember/serving/harness_control_client.py:534-568; mcp/src/agents_remember/serving/harness_control_ipc.py:159-171 |
@@ -1664,6 +1692,13 @@ The three serving files reassigned to L7 under OQ1 Option A were split in place,
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded deliver-until-LANDED
+  (boundary-sampled landing in inbox_delivery, post-time owner re-resolution in
+  operator_inbox_posts, formal `landed` state), the N14 rebind/grace/expiry predicate+action
+  family, the §9 pending-TTL expiry, the dormant escalation ladder (N3), the legacy-landed
+  migration fold, last-good settings resilience (R7/N5), and the new relay-death watcher
+  (N5). Layout rows refreshed. Verification metadata pinned until closeout stamps the
+  260713-TES-L4 commit.
 - 2026-08-09T03:51+02:00 — 260713-TES-L3 route impact: added the compound-idle relay paragraph
   (master-scoped membership, episode-signature dedupe/re-arm, action-time emitter, one-hop
   orchestrator owner, boundary-gated landing, manager non-reaction residue, 10 s latency

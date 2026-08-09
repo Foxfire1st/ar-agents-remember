@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,13 @@ tmux presence and command failure retention, protected message kinds, subjectles
 exclusion, stale pending non-resurrection, consume authority, unchanged TTL fallback, persisted
 folded-id removal counts, same-sweep compaction before redelivery, body-free aggregate events,
 and silence across three no-op sweeps with a kept candidate.
+
+**260713-TES-L4 (N13/§9):** `test_landed_snapshot_remains_authoritative_when_resolver_targets_
+same_id` replaces the consumed-authority fixture — the terminal `landed` snapshot (written via
+`mark_landed`) stays authoritative under confirmed-gone reconciliation — and
+`test_pending_ttl_is_a_sweep_resolution_boundary_not_silent_compaction` pins that compaction
+keeps an ancient pending row (the sweep stamps it `expired` first, visible and counted, before
+any retention event may drop it).
 
 ### Conventions
 
@@ -61,8 +68,8 @@ evidence.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | ConfirmedGonePolicyTests and ReconcileAndCompactTests are implemented in this suite. | `ConfirmedGonePolicyTests`, `ReconcileAndCompactTests` | mcp/tests/test_inbox_reclamation.py:87-181; mcp/tests/test_inbox_reclamation.py:184-249 |
-| The store transaction resolves and compacts the selected entries atomically. | `reconcile_and_compact` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:184-225 |
-| The integration suite exercises resolution/compaction before redelivery. | "def reconcile_and_compact(" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:184-225 |
+| The store transaction resolves and compacts the selected entries atomically. | `reconcile_and_compact` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:234-275 |
+| The integration suite exercises resolution/compaction before redelivery. | "def reconcile_and_compact(" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:234-234 |
 | The supervisor ordering places resolution/compaction before redelivery. | "redelivery" | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:300-300 |
 
 ## Cross-Repo References
@@ -74,6 +81,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the landed-authority fixture
+  replacement and the pending-TTL-as-resolution-boundary pin (N13/§9 — compaction keeps pending
+  rows; expiry is surfaced first). Verification metadata pinned until closeout stamps the
+  260713-TES-L4 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer residual correction: bounded the class claim to
   `ConfirmedGonePolicyTests` and `ReconcileAndCompactTests` through their complete suite range.

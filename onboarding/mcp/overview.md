@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -295,6 +295,20 @@ terminal turn truth; `controlplane/` gains the `state-signal` inbox kind and
 `turn-report-by` from the expectation settings surface; and `mcp/tests/` adds three forcing
 suites. Route-local detail lives in the `serving/`, `controlplane/`, and `mcp/tests/`
 overviews and their sidecars.
+
+260713-TES-L4 (deliver-until-LANDED) crosses the same package routes again: `controlplane/`
+gains the N13/N16 formal terminal vocabulary and the lock-held latest-fold `transition`
+primitive; `serving/` gains boundary-sampled landing, N14 post-time re-resolution and
+sweep-time rebinding, the attempt-ceiling/grace/TTL terminal actions, the legacy-landed
+migration fold, last-good settings resilience, and the new relay-death watcher; the
+application/MCP/model routes gain `operator_inbox_supersede`, `include_terminal` poll, the
+attribution-only consume, the supersede response model, and the 59-name public tool list;
+`kernel/_agentic_settings_core.py` adds the `state-signal` kind/SLA surface; and `mcp/tests/`
+adds two forcing suites (`test_inbox_arrival_guarantee.py`, `test_inbox_rebinding_mechanics.py`)
+plus the terminal-honesty updates across the notifier/liveness/dispatch/expectation/
+reclamation/conformance families. Route-local detail lives in the `serving/`, `controlplane/`,
+`application/`, `models/`, `mcp/tools/`, `mcp/registration/`, and `mcp/tests/` overviews and
+their sidecars.
 
 260707-HFX2-L7 is the hotfix release tail for `3.0.0rc4`: package/version strings move from rc3 to
 rc4, the packaged lifecycle doctrine refines Developer Clarification Triage to read the active
@@ -1501,6 +1515,11 @@ per leaf.
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the deliver-until-LANDED
+  crossing (controlplane terminal vocabulary + transition primitive; serving landing/rebinding/
+  relay-death; application/MCP/model supersede surface; kernel state-signal kind; two new test
+  suites + terminal-honesty updates). Verification metadata pinned until closeout stamps the
+  260713-TES-L4 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: the worker-state relay crossed this
   package's serving/controlplane/kernel/tests routes (projection lift, state-signal delivery,
   landed terminality, turn-report-by retirement). Route-local detail lives in the serving,

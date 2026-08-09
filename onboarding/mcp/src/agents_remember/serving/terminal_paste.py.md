@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_paste.py`     |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T13:03+02:00                                  |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Purpose
@@ -180,7 +180,7 @@ rows below are retained only as historical provenance for the superseded L3 mech
 | `POST /api/terminal/{session}/paste` is the serving endpoint mirror (404 on unknown/gone session, else delivered/submitted). | `api_terminal_paste`, "def _paste_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:474-474; mcp/src/agents_remember/serving/_app_terminal_routes.py:683-695 |
 | It mirrors the frontend `pasteAndConfirm` / `submitAndConfirm` bracketed-paste + echo-confirm loop. | `pasteAndConfirm`, `bracketedPaste`, `sanitizeForInjection` | dashboard/src/data/terminal.ts:87-89; dashboard/src/data/terminal.ts:99-107; dashboard/src/data/terminal.ts:174-188 |
 | Tier 3 preserved: the historical unit-test row names deleted `DeliveryIntegrityTests` and its chip-vocabulary counter; the current focused tests retain the one-paste, duplicate-chip, failure-capture, Escape, and Enter evidence as standalone functions. | `test_initial_dispatch_uses_one_paste_and_one_enter`, `test_dispatch_retry_leaves_ambiguous_duplicate_chips_pending`, `test_exhausted_ladder_returns_the_final_failure_capture`, `test_escape_is_refused`, `test_early_enter_control_is_suppressed_but_dispatch_enter_submits` | mcp/tests/test_terminal_paste.py:239-252; mcp/tests/test_terminal_paste.py:347-349; mcp/tests/test_terminal_paste.py:356-368; mcp/tests/test_terminal_paste.py:406-423; mcp/tests/test_terminal_paste.py:461-499 |
-| Tier 3 preserved: the historical row says inbox hosted push records a pane-capture tail, while the current protocol delivery records adapter correlation/detail and never invokes the pane paster. | `deliver_inbox_entry`, `_record_reconciliation` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191; mcp/src/agents_remember/serving/inbox_delivery.py:249-279 |
+| Tier 3 preserved: the historical row says inbox hosted push records a pane-capture tail, while the current protocol delivery records adapter correlation/detail and never invokes the pane paster. | `deliver_inbox_entry`, `_record_reconciliation` | mcp/src/agents_remember/serving/inbox_delivery.py:165-223; mcp/src/agents_remember/serving/inbox_delivery.py:288-320 |
 | `capture_pane` is called from the liveness sweeper's alive-harness-row turn-state classification path. | `_observe_alive`; `pane_capturer` | mcp/src/agents_remember/serving/terminal_liveness.py:82-82; mcp/src/agents_remember/serving/terminal_liveness.py:327-393 |
 
 ## Cross-Repo References

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -68,9 +68,9 @@ collects one representative payload per tool into `cls.payloads`:
   developer decision for deterministic conformance, then create/decide/wait/response-wait/list
   compatibility payloads, so both the public unified gate response and retained
   lower-level gate response models have representative payloads.
-- `_operator_inbox_payloads`: a base fixture posting, polling, and consuming one
-  external-chat inbox entry, so the three `operator_inbox_*` tools have
-  representative payloads (task 10).
+- `_operator_inbox_payloads`: a base fixture posting, polling, consuming, and — since
+  260713-TES-L4 — superseding one external-chat inbox entry, so the four `operator_inbox_*`
+  tools have representative payloads (task 10 + L4's R11 supersession).
 
 The former `_direct_closeout_payloads` fixture was removed with the
 `direct_closeout_*` tools (issue #62 worktree-only closeout).
@@ -143,7 +143,7 @@ declared nor part of the input."
 | The strict/flexible response-model taxonomy lives in the model base. | `StrictResponseModel`, `FlexibleResponseModel` | mcp/src/agents_remember/models/base.py:10-13; mcp/src/agents_remember/models/base.py:16-19 |
 | Worktree/carryover fixtures reuse worktree test helpers. | `init_repo`, `write_file_onboarding`, `initialized_memory_repo` | mcp/tests/test_worktree_support.py:68-85; mcp/tests/test_worktree_support.py:88-109; mcp/tests/test_worktree_support.py:242-270 |
 | Schema-level registry coverage is asserted separately. | `test_every_public_tool_has_a_response_model` | mcp/tests/test_models.py:17-18 |
-| Inbox representative payloads call the real post, poll, and consume builders. | `_operator_inbox_payloads` | mcp/tests/test_tool_response_conformance.py:486-507 |
+| Inbox representative payloads call the real post, poll, consume, and supersede builders. | `_operator_inbox_payloads` | mcp/tests/test_tool_response_conformance.py:486-515 |
 | Lifecycle finalizer representative payload exercises the new terminal worktree tool. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
 | Terminal representative payloads exercise the strict `AttachTerminalSessionToLeafResponse` (unknown-session) and `SpawnAgentSessionResponse` (caller spend override) models. | `_simple_payloads`; `AttachTerminalSessionToLeafResponse`; `SpawnAgentSessionResponse`; "spend-override-unsupported" | mcp/tests/test_tool_response_conformance.py:166-185; mcp/src/agents_remember/models/terminal.py:30-36; mcp/src/agents_remember/models/terminal.py:61-86 |
 | The choke point that sets both envelope-wide keys before the single dump — `_attach_lifecycle_tail` assigns `nextStep` and `agentNotifierBanner` (plus the legacy `supervisorBanner` alias), and `_agent_notifier_banner` is exception-safe and silent on a never-ticked agent-notifier, which is why the fixtures have to tick one into the past. | `_agent_notifier_banner`, `_attach_lifecycle_tail`, `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:22-31; mcp/src/agents_remember/application/tool_response.py:34-48; mcp/src/agents_remember/application/tool_response.py:49-61 |
@@ -157,6 +157,9 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded `operator_inbox_supersede` joining
+  the inbox representative payloads (R11 explicit supersession response conformance).
+  Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-03T03:59:59+02:00 — Curated 25 citation findings (12 table rows, 1 prose citation, 12 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 

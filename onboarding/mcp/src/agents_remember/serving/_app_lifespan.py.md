@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_app_lifespan.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                                        |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                                            |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                        |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -17,12 +17,26 @@
 ## Purpose
 
 260731-EFA-L7 responsibility split module for `mcp/src/agents_remember/serving/_app_lifespan.py`; owns the behaviours named by its top-level symbols.
+Since 260713-TES-L4 it also owns the notifier loop's last-good settings resilience (R7/N5) and
+the dashboard-side relay-death watcher task (N5 — the relay never relays its own death).
 
 ## Code Commentary
 
 - `_agent_notifier_context`
+- `_agent_notifier_loop`
 - `_serving_lifespan`
 - `_agent_notifier_heartbeat_payload`
+
+### 260713-TES-L4 Settings Last-Good Loop And Relay-Death Task
+
+`load_agentic_settings` moved INSIDE `_agent_notifier_loop`'s try: a failed read keeps the
+previous good configuration for that sweep (fails loud per tick, never kills the loop); with
+no last-good snapshot at all the loop skips the sweep and retries after the default interval.
+`_agent_notifier_context(runtime, settings=...)` receives the same resolved (possibly
+last-good) settings snapshot the enabled-check and interval used. `_serving_lifespan` now also
+spawns `relay_death_watch_loop(runtime)` (independent 30s cadence, heartbeat-staleness →
+durable `degradation-alert` row to the architect mailbox, marker-file dedupe per tick
+identity).
 
 ## Invariants And Boundaries
 
@@ -36,5 +50,9 @@
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the last-good settings loop
+  (R7/N5 — settings load inside the sweep try, per-tick loud failure, no-last-good skip) and
+  the independent relay-death watcher task spawned from `_serving_lifespan` (N5). Verification
+  metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

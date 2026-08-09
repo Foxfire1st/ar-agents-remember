@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -31,8 +31,8 @@ builders import application entry point functions directly from their domain mod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route overview documents the split application package layout. | "Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:26-38 |
-| Public payload builders import application entry points from their owning modules. | `codex_benchmark_prepare_tool` | mcp/src/agents_remember/mcp/tools/__init__.py:1-6; mcp/src/agents_remember/mcp/tools/benchmark.py:7-16 |
+| The route overview documents the split application package layout. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:42-42 |
+| Public payload builders import application entry points from their owning modules. | "from .benchmark import codex_benchmark_prepare_payload"; "from agents_remember.application.benchmark_tools import (" | mcp/src/agents_remember/mcp/tools/__init__.py:12-12; mcp/src/agents_remember/mcp/tools/benchmark.py:7-16 |
 
 ## Update History
 

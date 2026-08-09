@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -22,6 +22,14 @@ Both response envelopes (`ResponseModel`, `FlexibleResponseEnvelope`) now declar
 `agentNotifierBanner: str | None = None` plus the legacy `supervisorBanner` alias during the
 rename window; `models/providers.py` and `models/tool_registry.py` comments were corrected to the
 same field name. The strict/flexible envelope split is unchanged.
+
+### 260713-TES-L4 Inbox Response Surface
+
+`models/operator_inbox.py` adds `OperatorInboxSupersedeResponse` (R11 terminal marker:
+`entryId`/`state`/`supersededNow`/`terminalAt`/`terminalReason`/`supersededBy`) and
+`models/tool_registry.py` maps `operator_inbox_supersede` → that model in
+`TOOL_RESPONSE_MODELS`. The consume response state is the unchanged row state (attribution-only,
+N16).
 
 `models/` owns the Pydantic response contracts for Agents Remember MCP payload
 builders. It turns the public tool surface and retained compatibility builders
@@ -347,6 +355,11 @@ reordered (see the `mcp/tools/` overview). Verified: all 62 registered models ar
 narrower type is true of the whole registry today.
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded
+  `OperatorInboxSupersedeResponse` and its `TOOL_RESPONSE_MODELS` mapping (R11), plus the
+  attribution-only consume response state (N16). Verification metadata pinned until closeout
+  stamps the 260713-TES-L4 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 "- 2026-08-04T08:45:26+02:00 — 260731-EFA-L6 S18-B07 curator correction: split the measurement and vocabulary-import claims and rebound them to frozen module bodies/imports; same-reviewer delta pending.

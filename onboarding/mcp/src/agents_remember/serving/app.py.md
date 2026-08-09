@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ exactly that.
 
 Two signatures changed with it, from bare dicts to declared models:
 `stream_events(..., supervisor_heartbeat: AgentNotifierHeartbeatPayload | None = None)` (cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:112-112))
-and `_agent_notifier_heartbeat_payload(runtime) -> AgentNotifierHeartbeatPayload` (cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:185-185)). The
+and `_agent_notifier_heartbeat_payload(runtime) -> AgentNotifierHeartbeatPayload` (cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:224-224)). The
 seven keys are identical; `ServingBuild.payload()` likewise returns `ServingBuildPayload` now.
 
 **The body is deliberately still assembled rather than dumped from one model.** The memo and the
@@ -762,7 +762,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   already-validated projection dict with nothing declaring them; both sites now call the single
   `served_state.served_state_tail` (L328-L329 for the SSE snapshot, L979-L982 for `/api/state`)
   and the result is declared as `ServedWorkspaceProjection`, which `/api/state` and `/api/stream`
-  name. Corrected cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:185-185) and cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:112-112),
+  name. Corrected cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:224-224) and cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:112-112),
   which return/accept declared models rather than bare dicts, and the `stream_events` paragraph,
   which now records that a snapshot with neither key is a valid served body and that deltas carry
   no tail. Documented all 17 route declarations with lines — including `/api/state`'s

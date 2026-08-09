@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash |                                            `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate |                                            2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash |                                            `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate |                                            2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -42,7 +42,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Application entry point validates coordination-contained paths and delegates to the worktree finalizer. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:424-454 |
 | The shared payload helper is `_tool_payload`. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | The response boundary is `complete_tool_response`. | "def complete_tool_response" | mcp/src/agents_remember/application/tool_response.py:49-49 |
-| The response model is registered in the public tool registry. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tool_registry.py:167-167 |
+| The response model is registered in the public tool registry. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tool_registry.py:168-168 |
 
 ## Update History
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`       |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -141,7 +141,7 @@ approvals according to `GatePolicy`.
 | The enforcement policy under test (slice 6b): `evaluate_gate`, whose `applied` branch is the refusal a second consume meets and the reason the `applied` snapshot is an authority record. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |
 | Gate delegation policy under test. | `make_gate_policy`; `named_gate_policy`; `apply_seam_verdict_requirement`; `delegated_decision_failure_reason`; `approval_failure_reason` | mcp/src/agents_remember/controlplane/gate_policy.py:73-105; mcp/src/agents_remember/controlplane/gate_policy.py:108-125; mcp/src/agents_remember/controlplane/gate_policy.py:128-147; mcp/src/agents_remember/controlplane/gate_policy.py:179-191; mcp/src/agents_remember/controlplane/gate_policy.py:194-210 |
 | The closeout helpers under test: the early deny-only read `_refuse_unsatisfied_closeout_gate` (called before staging and the strict gate) and the claim `_claim_closeout_gate` (one statement above the first irreversible act). `_mark_closeout_gate_applied` was deleted, not deprecated. | `_refuse_unsatisfied_closeout_gate`; `_claim_closeout_gate`; `_gate_staged_code`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:488-510; mcp/src/agents_remember/worktrees/modules/closeout.py:513-563; mcp/src/agents_remember/worktrees/modules/closeout.py:789-845; mcp/src/agents_remember/worktrees/modules/closeout.py:932-1024 |
-| Why an `applied` `closeout-approval` record can no longer be used as reclaimable fixture filler: `CONSUMED_APPROVAL_GATE_KINDS` retains it at any age, and `PRUNE_IMMEDIATE_GATE_STATES` is what the three relocated decoys now use instead. | `CONSUMED_APPROVAL_GATE_KINDS`; `PRUNE_IMMEDIATE_GATE_STATES` | mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:81-81 |
+| Why an `applied` `closeout-approval` record can no longer be used as reclaimable fixture filler: `CONSUMED_APPROVAL_GATE_KINDS` retains it at any age, and `PRUNE_IMMEDIATE_GATE_STATES` is what the three relocated decoys now use instead. | `CONSUMED_APPROVAL_GATE_KINDS`; `PRUNE_IMMEDIATE_GATE_STATES` | mcp/src/agents_remember/controlplane/interaction_retention.py:47-49; mcp/src/agents_remember/controlplane/interaction_retention.py:80-80 |
 | The suite that pins the claim's position rather than its policy: the gate is already `applied` by the time `commit_if_dirty` runs, a failure upstream leaves it `approved`, and `_prunable_gate` is one of the three fixtures moved to `expired`. | `test_the_approval_is_already_consumed_when_the_first_commit_runs`; `_prunable_gate` | mcp/tests/test_gate_replay_window.py:116-130; mcp/tests/test_gate_replay_window.py:582-615 |
 | The second and third relocated decoys, beside the ownership and durability assertions they keep honest: `GateAdapter.write_decoy` and its enclosing adapter. | `GateAdapter` | mcp/tests/_store_durability.py:163-189 |
 | The durable-store ownership fixture that also carries the relocated decoy. | `GateReclaimOwnershipTests` | mcp/tests/test_durable_store_contract.py:854-918 |

@@ -5,9 +5,9 @@
 | repository             | agents-remember                       |
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-07-10T13:03+02:00                |
-| lastVerifiedCommitHash |                                       `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate |                                       2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -27,6 +27,21 @@ The in-flight delivery test blocks the paster in a worker thread, consumes the s
 delivery append from its stale snapshot. It proves the physical log contains pending, consumed, and
 late pending records while `current`, polling, and redelivery all continue to expose the consumed
 terminal state.
+
+### 260713-TES-L4 Attribution-Only Consume, Landing, And Retention Pins
+
+`OperatorInboxRecordTests` asserts consume keeps `state="pending"` (attribution marker only,
+N16); `OperatorInboxStoreTests` renames the consume/redeliverable pins —
+`test_consume_is_attribution_only_and_idempotent`,
+`test_list_redeliverable_keeps_attribution_marked_rows`,
+`test_record_delivery_clears_schedule_only_via_landing`
+(`DeliveryAttempt(landed=True, adapter accepted)` writes `state="landed"` and clears
+`nextAttemptAt`) — and `test_compaction_keeps_an_ancient_pending_row_for_the_sweep_to_expire`
+pins the §9 resolution boundary (compaction alone never purges pending rows; legacy `consumed`
+rows still age out on the marker window). `OperatorInboxDeliveryTests` converts the in-flight
+race pin: consume can no longer resurrect a pending state over a landing —
+`test_consume_during_in_flight_delivery_cannot_steal_the_landing` asserts the final folded state
+is `landed`.
 
 ### 260707-HFX2-L13 Transition And Completion-Wake Proof
 
@@ -180,6 +195,11 @@ Tests prove legacy-reader projection preserves only optional `adapterDeliverySta
 `adapterDeliveryDetail`, while an unrelated `futureEvidence` extension remains rejected.
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the attribution-only consume pins,
+  the formal landing assertions (`landed` terminal, schedule cleared), the §9 pending-TTL
+  resolution-boundary compaction pin, and the in-flight landing-steal inversion. Verification
+  metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 "- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).

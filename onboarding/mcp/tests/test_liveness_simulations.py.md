@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-09T01:21+02:00                     |
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6` |
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                     |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -31,6 +31,18 @@ The dead-manager respawn simulation now continues through the next supervisor ti
 manager appears. Orphan/dead-upstream signals must name and target that current manager, proving that
 address-time hierarchy repair replaces stale manager provenance instead of skipping directly upward.
 
+### 260713-TES-L4 Terminal-Honesty Conversions
+
+`NeverAckedSeatTests` became the N3 attempt-ceiling scenario: a live-but-silent seat's row
+resolves `unresolved`/`attempt-limit` after `PERSISTENT_FAILURE_ATTEMPTS` (delivery evidence
+intact, no `escalatedAt`, no `orchestration.escalation.rung` event) instead of climbing rungs —
+the verdict-by expectation still nudges the owner exactly once. `NoHostedSessionTests` likewise
+ends `unresolved` instead of escalating. `DeadSeatStormTests` now resolves the capped survivors
+`expired` via `rebind-expired` (no replacement past the grace), stays inspectable for the 48h
+marker window, and compacts away after 49h. `DeadManagerLiveWorkersTests` seeds a replacement
+manager BEFORE the grace expires: tick 1 rebinds the pending row to `manager-2` (same durable
+row, no new post, attempt clock reset) and tick 2 fires dead-upstream for the orphaned workers.
+
 ### Logic
 
 **260707-HFX2-L15 coverage.** Simulation delivery fakes now provide log-backed acceptance context.
@@ -42,8 +54,9 @@ incident, reusing the exact `AgentNotifierContext`/store-fixture shape `test_age
 `LadderWalkIntegrationTests` already establishes rather than inventing a second harness. Nine test
 classes, one per incident:
 
-- **`NeverAckedSeatTests`** (P-5/P-14) — an overdue `ack-by` expectation row nudges, then
-  escalates to rung 3 within 6 simulated ticks (~12 min).
+- **`NeverAckedSeatTests`** (N3) — an overdue `verdict-by` expectation row nudges the owner
+  exactly once while the original row hits the 5-attempt ceiling and resolves `unresolved`
+  (never a ladder rung).
 - **`ChipStackedDeliveryStallTests`** (P-16) — **hybrid**: classification is proven at the
   predicate-unit layer (`classify_pane_signal` / `evaluate_pane_findings` with an injected
   capturer), then the routed `delivery-stalled` finding is fed through the real `act_on_finding` and
@@ -51,15 +64,14 @@ classes, one per incident:
   `run_agent_notifier_sweep`) hardcodes a real `tmux capture-pane` with no injectable capturer through
   `AgentNotifierContext` today.
 - **`NoHostedSessionTests`** (#16) — 5 redelivery attempts along the real backoff ladder
-  (30s→60s→300s→900s→3600s) escalate at `PERSISTENT_FAILURE_ATTEMPTS`; each tick reads the entry's
-  own `nextAttemptAt` back from the store rather than hardcoding `now` deltas.
+  (30s→60s→300s→900s→3600s) resolve `unresolved` at `PERSISTENT_FAILURE_ATTEMPTS` (N3); each tick
+  reads the entry's own `nextAttemptAt` back from the store rather than hardcoding `now` deltas.
 - **`ManagerMidTurnSignalLandsTests`** — the injector's harness-aware busy-marker corroboration
   (HFX2-L3) classifies a delivery into a busy pane as `acked` on the very first sweep tick, not lost
   or endlessly redelivered.
-- **`DeadManagerLiveWorkersTests`** (P-6 + ladder walk) — extends (does not duplicate)
-  `test_agent_notifier.py::LadderWalkIntegrationTests::test_dead_manager_with_live_workers_respawns_and_surfaces_orphans`
-  with a second real sweep tick proving the orphaned workers themselves independently fire
-  `dead-upstream` and signal the grandparent orchestrator.
+- **`DeadManagerLiveWorkersTests`** (N14) — the replacement manager appears before the grace
+  expires: tick 1 rebinds the dead-manager row to `manager-2` (same row, no new post), and tick 2
+  fires `dead-upstream` for the orphaned workers against the current manager.
 - **`KilledSupervisorDaemonTests`** — the self-heartbeat store ticks twice then stops; the staleness
   banner is `None` at 60s stale, fires fail-loud text at 10 min stale (120s cutoff); a companion test
   proves a heartbeat that never ticked is deliberately silent (not a false alarm).
@@ -72,11 +84,12 @@ classes, one per incident:
   stale-past-window seat still fires, proving the HFX-L5 hysteresis holds when consumed through the
   agent-notifier's own R2e predicate (on top of the existing probe-layer proof in
   `test_terminal_liveness.py`).
-- **`DeadSeatStormTests`** (HFX2-L8) — seeds 2000 terminal-rung, no-hosted-session rows addressed to
-  retired/dead seats and asserts within a wall-clock bound that the sweep returns and increments
-  `sweepCount`, no redelivery is attempted, rows transition to `ladder-resolved`, the redeliverable
-  set converges to empty, the heartbeat never goes stale and reports backlog/duration metrics, and
-  compaction reduces `operator-inbox.jsonl` to the bounded live set.
+- **`DeadSeatStormTests`** (HFX2-L8, re-based on N2/§9) — seeds 2000 no-hosted-session rows
+  addressed to retired/dead seats and asserts within a wall-clock bound that the sweep returns and
+  increments `sweepCount`, no redelivery is attempted, rows transition to `expired`
+  (`rebind-grace-expired`), the redeliverable set converges to empty, terminal markers keep their
+  48h window before physical eviction, the heartbeat never goes stale and reports backlog/duration
+  metrics, and compaction bounds the log.
 
 Shared fixtures: `_entry(session_id, *, leaf_key)` builds one fixed shape — a `running` `harness`
 `TerminalCatalogEntry` — and scenarios vary the frozen row with `replace(...)` or with
@@ -138,7 +151,7 @@ P-15 fixture-zoo mandate (leaf task doc R3) and the liveness report
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sweep entry point every scenario drives across multiple ticks. | `run_agent_notifier_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:830-830; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:359-359; mcp/src/agents_remember/serving/agent_notifier.py:111-210 |
+| The sweep entry point every scenario drives across multiple ticks. | `run_agent_notifier_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:972-972; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:474-474; mcp/src/agents_remember/serving/agent_notifier.py:117-219 |
 | The pane-signal classifier the two hybrid scenarios call directly (capturer not injectable through the sweep). | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | The escalation ladder every incident's rung-3 assertion walks through. | `rung_due`; `next_step` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152 |
 | The self-liveness heartbeat store and staleness banner `KilledSupervisorDaemonTests` drives. | `AgentNotifierHeartbeatStore`; `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:141-157 |
@@ -162,6 +175,11 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the terminal-honesty conversions —
+  attempt-ceiling `unresolved` (NeverAcked/NoHostedSession), dead-seat storms resolving `expired`
+  with 48h marker retention (N2/§9), and replacement-mid-flight rebinding to the current manager
+  (N14). Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the scenario rename
   `NeverBriefedSeatTests` → `NeverAckedSeatTests` (fixture kind now `ack-by`, matching the
   retired briefed-by finding surface). Verification metadata pinned until closeout stamps the

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | mcp/src/agents_remember/serving/agent_notifier_models.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-09T03:51+02:00|
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated | 2026-08-09T06:48+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
@@ -49,6 +49,14 @@ cit:([`FindingKind`, `ActionKind`], mcp/src/agents_remember/serving/agent_notifi
 cit:([`ActionKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:40-53), consumed by `_emit_compound_idle` and its
 `AgentNotifierActionResult`.
 
+### 260713-TES-L4 Rebind, Expire, And TTL-Expired Kinds
+
+`FindingKind` gained `rebind-due`, `rebind-expired`, and `inbox-ttl-expired`
+cit:([`FindingKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:27-41) and `ActionKind` gained `rebind` and `expire`
+cit:([`ActionKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:43-56) — the N14 rebind family, the N2 grace-expiry terminal, and the §9
+pending-TTL resolution boundary, consumed by `_rebind_due`/`_rebind_expired`/`_expire_pending`
+in `_agent_notifier_actions.py`.
+
 ### Logic
 
 This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
@@ -70,6 +78,9 @@ Worker source inventory, reviewer verdict, and governing route overview.
 No meaningful cross-repo references.
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded `rebind-due`/`rebind-expired`/
+  `inbox-ttl-expired` in `FindingKind` and `rebind`/`expire` in `ActionKind` (N14/N2/§9).
+  Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded `compound-idle-due` in
   `FindingKind` and `compound-idle` in `ActionKind`. Verification metadata pinned until
   closeout stamps the 260713-TES-L3 commit.

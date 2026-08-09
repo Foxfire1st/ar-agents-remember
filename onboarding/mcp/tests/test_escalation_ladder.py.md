@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_escalation_ladder.py`      |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T01:14+02:00                     |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                     |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -43,6 +43,10 @@ Four test classes:
   is the hierarchy-ceiling case — a manager-addressed row's "owner's owner" resolves to nothing (the
   orchestrator has no further owner), so the walker jumps straight to rung 3 rather than stalling;
   rung 3 and any rung at/past `MAX_RUNG` both resolve to the terminal `developer-attention` action.
+  **260713-TES-L4 (R13):** `test_rung_three_lands_on_the_live_architect_seat` now seeds the
+  architect with the row's master-scoped `leaf_key` and passes a `leafKey`-carrying entry, so the
+  terminal rung resolves through the scoped `derive_architect_owner(catalog, leaf_key=...)`
+  (never global first-match).
 - **`SeatSuspectTests`** — `seat_is_suspect`'s liveness gate: `None` agent id never suspect; an
   unknown/dead catalog entry ("ghost") is suspect; a `turn_state == "stale"` row past
   `stale_seconds` is suspect, one still inside the grace window is not; a live non-stale seat is
@@ -105,6 +109,10 @@ No meaningful cross-repo references found.
 | Same-repository unit-test suite only. | — | — |
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the scoped-architect rung-3 fixture
+  (master-scoped `leaf_key` seeding; R13 scoped custody, no global first-match). Verification
+  metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 

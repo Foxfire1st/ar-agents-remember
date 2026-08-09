@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_core.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-09T01:21+02:00                                            |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`                                        |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                                            |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                        |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -61,6 +61,14 @@ during the window.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260713-TES-L4 Change — State-Signal Kind Surface (N12/N13)
+
+`KNOWN_ESCALATION_MESSAGE_KINDS` cit:([`KNOWN_ESCALATION_MESSAGE_KINDS`], mcp/src/agents_remember/kernel/_agentic_settings_core.py:144-158) gains `"state-signal"` and
+`DEFAULT_ESCALATION_SLA_SECONDS` cit:([`DEFAULT_ESCALATION_SLA_SECONDS`], mcp/src/agents_remember/kernel/_agentic_settings_core.py:159-171) carries `"state-signal": 300.0`: the
+distinct relay message kind is a settings-level surface (N12 — kind drives mechanics: rate
+limits, coalescing keys, terminal-evidence rules). The timed escalation ladder is dormant (N3)
+and this SLA surface is retained for the L5 demolition.
+
 ## 260731-EFA-L17 Change
 
 The module owns the new `orchestration.qualityGate` family: `KNOWN_QUALITY_GATE_FIELDS`
@@ -83,6 +91,10 @@ orchestration family.
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the `state-signal` message kind in
+  `KNOWN_ESCALATION_MESSAGE_KINDS` and its 300s SLA default (N12/N13); noted the dormant-ladder
+  retention of the escalation SLA surface (N3, L5 deletes). Verification metadata pinned until
+  closeout stamps the 260713-TES-L4 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the `turn-report-by` retirement
   from `KNOWN_EXPECTATION_KINDS`/`DEFAULT_EXPECTATION_SLA_SECONDS` (legacy Literal retained in
   the controlplane record). Verification metadata pinned until closeout stamps the

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/owner_signals.py`       |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-09T01:21+02:00                                    |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`                                    |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                    |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -82,10 +82,10 @@ helper; the action layer and the sweep import it.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The inbox row record/creation and renewal/readdress transitions it composes. | "def create_operator_inbox_entry("; "def renew(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:259-300; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:293-316 |
+| The inbox row record/creation and renewal/readdress transitions it composes. | "def create_operator_inbox_entry("; "def renew(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:277-277; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:485-485 |
 | The delivery attempt it drives and the admission policy it carries. | "def deliver_inbox_entry("; "class DeliveryAdmission:" | mcp/src/agents_remember/serving/inbox_delivery.py:165-217; mcp/src/agents_remember/serving/inbox_delivery.py:87-105 |
 | The sweep facade re-exporting the primitive for existing callers. | "def _post_owner_signal("; "def _find_coalescible(" | mcp/src/agents_remember/serving/owner_signals.py:93-158; mcp/src/agents_remember/serving/owner_signals.py:64-91 |
-| The ask-identity normalization shared with the evaluation module. | "def _seat_liveness_ask_identity(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:195-208 |
+| The ask-identity normalization shared with the evaluation module. | "def _seat_liveness_ask_identity(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:311-311 |
 
 ## Cross-Repo References
 

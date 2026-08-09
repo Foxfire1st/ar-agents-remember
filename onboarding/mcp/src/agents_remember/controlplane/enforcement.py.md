@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/enforcement.py`  |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-01T19:45+02:00                      |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`             |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`             |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Purpose
@@ -86,7 +86,7 @@ wrapper around `kind="closeout-approval"`; `CloseoutGuard` aliases `GateGuard`.
 | The delegation policy validator and attribution checks used by this resolver. | `approval_failure_reason`; `delegated_decision_failure_reason` | mcp/src/agents_remember/controlplane/gate_policy.py:179-191; mcp/src/agents_remember/controlplane/gate_policy.py:194-210 |
 | The mutating tool that enforces this policy: `_refuse_unsatisfied_closeout_gate` at L424-L446 (deny-only, writes nothing) and `_claim_closeout_gate` at L449-L499 (the spend). It no longer appends an `applied` snapshot itself. | `_refuse_unsatisfied_closeout_gate`; `_claim_closeout_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:488-510; mcp/src/agents_remember/worktrees/modules/closeout.py:513-563 |
 | `GateStore.claim_approval` — the compare-and-swap that calls `evaluate_gate` and appends `applied` in one held lock. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234 |
-| `CONSUMED_APPROVAL_GATE_KINDS` — what keeps the `applied` snapshot this resolver's refusal depends on from being reclaimed. | `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/interaction_retention.py:48-50 |
+| `CONSUMED_APPROVAL_GATE_KINDS` — what keeps the `applied` snapshot this resolver's refusal depends on from being reclaimed. | `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/interaction_retention.py:47-49 |
 | The dashboard write-path that produces a developer-attributed approval. | `gate_decide_for_lifecycle` | mcp/src/agents_remember/mcp/tools/gates.py:98-115 |
 
 ## Update History
