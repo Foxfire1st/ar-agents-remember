@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-09T19:54+02:00 |
-| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`
-| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
+| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`
+| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1530,6 +1530,10 @@ retired `orchestration.escalation` family. The new forcing suite and the skills/
 complete the change set.
 
 ## Update History
+
+- 2026-08-09T21:54+02:00 — No route impact: the durability test instrument's source-pinning
+  mechanics moved into a bounded sibling helper under `mcp/tests/`. Production MCP package
+  behavior and the package surface described here are unchanged; detail lives in the tests route.
 
 - 2026-08-09T21:12+02:00 — No route impact: master integration repaired two stale
   source-comment citations and split two oversized functions into behavior-preserving helpers.

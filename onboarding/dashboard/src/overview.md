@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a` |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa` |
+| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -472,6 +472,10 @@ landing; `operator_inbox_consume` attribution-only; sweep predicates never read 
 projection).
 
 ## Update History
+
+- 2026-08-09T22:22+02:00 — No route impact: the master integration repair changes only
+  scroll-memory test timer hygiene under the existing conversation-timeline route. Dashboard
+  runtime behavior and source layout are unchanged.
 
 - 2026-08-09T13:59+02:00 — 260713-TES-L5 route impact: recorded the regenerated projection
   schema (`AgentPickupNode` landing semantics; attribution-only consume). Verification

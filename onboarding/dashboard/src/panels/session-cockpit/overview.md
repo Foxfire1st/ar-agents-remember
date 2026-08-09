@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`       |
+| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -408,6 +408,10 @@ site, `test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `tes
 The session-cockpit route gained the L7 live-thinking coalescing (one stable `thinking` row per active turn, animated indicator, completion cleanup) and its interleaved acceptance pins in the conversation-timeline family. The file-size rail covers this route's TS/TSX under `dashboard/src`.
 
 ## Update History
+
+- 2026-08-09T22:22+02:00 — No route impact: the conversation timeline's test-only timer
+  teardown now prevents a Virtualizer debounce from outliving jsdom. Session-cockpit production
+  behavior and route structure are unchanged; detail lives in the conversation overview.
 
 - 2026-08-09T19:36+02:00 — 260713-TES-L5F2 route impact: documented lifecycle-free interaction
   answers through the owning session's interaction-response endpoint.

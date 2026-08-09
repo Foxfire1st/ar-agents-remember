@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |                                                `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash |                                                `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`|
+| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -159,10 +159,10 @@ the test body rather than at module import.
 
 **`PROVIDER_CASES` is kept separate from `CASES` on purpose, and this file owns the assertion that
 keeps it so.** The two provider adapters were added to the *shared* instrument
-cit:([`ProviderMetricsAdapter`, `ProviderDegradationAdapter`], mcp/tests/_store_durability.py:419-465; mcp/tests/_store_durability.py:468-527), which is what lets them reuse the scenarios, the raw on-disk
+cit:([`ProviderMetricsAdapter`, `ProviderDegradationAdapter`], mcp/tests/_store_durability.py:438-486; mcp/tests/_store_durability.py:489-551), which is what lets them reuse the scenarios, the raw on-disk
 accounting and the base-commit archive. But `CASES` still enumerates only the six control-plane
 adapters and `PROVIDER_CASES` only the two provider ones
-cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:567-567) — so widening the instrument
+cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:573-573) — so widening the instrument
 does not silently widen what `test_controlplane_store_durability.py` asserts. Each suite names the
 stores it speaks for, and `ProviderCaseRegistryTests` fails the moment that stops being true.
 
@@ -195,7 +195,7 @@ cit:([`_TempRootTest`, `case_root`], mcp/tests/test_provider_store_durability.py
 one flag and every case after the first left the tick loop after a single tick, reporting a green
 measured over almost nothing on the unfixed tree as readily as on the fixed one. Discovered here,
 worked around here, then fixed at the source: `harness_work_dir`
-cit:([`harness_work_dir`], mcp/tests/_store_durability.py:847-874) now derives the
+cit:([`harness_work_dir`], mcp/tests/_store_durability.py:853-880) now derives the
 scratch directory from `root` itself, and `MIN_SUCCESSFUL_RECLAIMS`
 cit:([`MIN_SUCCESSFUL_RECLAIMS`], mcp/tests/_durability_measurement.py:11-11) refuses a result whose
 reclaimer barely ran for any other reason. What remains in this file is the ordinary requirement
@@ -292,8 +292,10 @@ below are the code each claim is about.
 | --- | --- | --- |
 | The metrics store under test: the tolerant per-row read and its escalation clause, the reclaim that holds one lock across stat + tail + rewrite and drops rows by age only, the two appends that make the pairing two-process, the lock-free tail read, and the ownership declaration. | `_parse_row`; `compact`; `record`; `record_index_state`; `read_recent`; `PROVIDER_METRICS_OWNERSHIP` | mcp/src/agents_remember/providers/metrics.py:65-83; mcp/src/agents_remember/providers/metrics.py:302-341; mcp/src/agents_remember/providers/metrics.py:191-228; mcp/src/agents_remember/providers/metrics.py:254-267; mcp/src/agents_remember/providers/metrics.py:269-283; mcp/src/agents_remember/providers/metrics.py:343-360 |
 | The degradation store under test: the single-writer ownership declaration whose `check_declared_writer` can actually fire, the count-based reclaim under one held lock, the stamped append, and the state document that is deliberately unversioned. | `PROVIDER_DEGRADATION_OWNERSHIP`; `write_state`; `append_event`; `compact_events` | mcp/src/agents_remember/providers/degradation.py:84-103; mcp/src/agents_remember/providers/degradation.py:233-253; mcp/src/agents_remember/providers/degradation.py:190-215; mcp/src/agents_remember/providers/degradation.py:217-231 |
-| The measurement instrument this file imports: the two provider adapters and the root-resolution they override, the deliberately disjoint case lists, the per-run work directory, the reclaim-tick floor, the shared stress profile, and the base-commit archive plus its pinned re-execution. |"def harness_work_dir(root: Path) -> Path:"; "    MIN_SUCCESSFUL_RECLAIMS,"; "STRESS_PROFILE: dict[str, Any] = {"; "def extract_base_commit_tree(destination: Path, *, repo: Path = REPO_ROOT) -> Path:"; "def run_against_source("|mcp/tests/_store_durability.py:49-49; mcp/tests/_store_durability.py:847-847; mcp/tests/_store_durability.py:1066-1066; mcp/tests/_store_durability.py:1157-1157; mcp/tests/_store_durability.py:1187-1187; mcp/tests/_durability_measurement.py:8-11|
-| The contract both stores were moved onto: the unconditional per-log lock, the never-unlinking rewrite, the version policy the reads implement, and the role declaration the ownership tests drive. | `exclusive_access`; `append_line`; `rewrite_lines`; `SCHEMA_VERSION`; `schema_version_supported`; `StoreOwnership`; `declare_process_role`; `CompactionOwnerError` | mcp/src/agents_remember/controlplane/durable_store.py:45-45; mcp/src/agents_remember/controlplane/durable_store.py:65-66; mcp/src/agents_remember/controlplane/durable_store.py:76-84; mcp/src/agents_remember/controlplane/durable_store.py:92-132; mcp/src/agents_remember/controlplane/durable_store.py:224-245; mcp/src/agents_remember/controlplane/durable_store.py:348-403; mcp/src/agents_remember/controlplane/durable_store.py:434-445; mcp/src/agents_remember/controlplane/durable_store.py:448-455 |
+| The shared measurement harness owns the two provider adapters and their root resolution, the deliberately disjoint provider cases, the per-run work directory, and the stress profile. | `ProviderStoreAdapter`; `ProviderMetricsAdapter`; `ProviderDegradationAdapter`; `PROVIDER_CASES`; `harness_work_dir`; `STRESS_PROFILE` | mcp/tests/_store_durability.py:425-435; mcp/tests/_store_durability.py:438-486; mcp/tests/_store_durability.py:489-551; mcp/tests/_store_durability.py:573-573; mcp/tests/_store_durability.py:853-880; mcp/tests/_store_durability.py:1072-1079 |
+| The non-vacuity module owns the exact reclaim-tick floor used by both durability suites. | "MIN_SUCCESSFUL_RECLAIMS = 10" | mcp/tests/_durability_measurement.py:11-11 |
+| The bounded sibling helper owns the base-commit archive and pinned re-execution; both functions remain re-exported by the harness. | `extract_base_commit_tree`; `run_against_source` | mcp/tests/_store_durability_source.py:79-105; mcp/tests/_store_durability_source.py:108-132 |
+| The contract both stores were moved onto: the unconditional per-log lock, the never-unlinking rewrite, the version policy the reads implement, and the role declaration the ownership tests drive. | `exclusive_access`; `append_line`; `rewrite_lines`; `SCHEMA_VERSION`; `schema_version_supported`; `StoreOwnership`; `declare_process_role`; `CompactionOwnerError` | mcp/src/agents_remember/controlplane/durable_store.py:45-45; mcp/src/agents_remember/controlplane/durable_store.py:65-66; mcp/src/agents_remember/controlplane/durable_store.py:76-84; mcp/src/agents_remember/controlplane/durable_store.py:92-132; mcp/src/agents_remember/controlplane/durable_store.py:226-247; mcp/src/agents_remember/controlplane/durable_store.py:350-405; mcp/src/agents_remember/controlplane/durable_store.py:436-447; mcp/src/agents_remember/controlplane/durable_store.py:450-457 |
 | The two-process pairing asserted by `ProviderOwnershipTests`, as it actually runs: the dashboard loop that samples, records, evaluates degradation and then compacts. It is also the metrics reclaim's one call site, and it reaches it as `await asyncio.to_thread(metrics_store.compact)` — a reference rather than a call, which is why `provider_reclaim_call_sites` counts references. | "async def _metrics_loop(config: McpRuntimeConfig, metrics_store: ProviderMetricsStore) -> None:" | mcp/src/agents_remember/serving/_app_lifespan.py:51-51 |
 | The other half of that pairing: the MCP process's provider-setup thread appending index-lifecycle rows into the same log. | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
 | The consumer that makes the metrics log's tolerant read structurally safe: the whole state machine is re-derived from a rolling window of live samples and nothing is consumed. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
@@ -393,7 +395,7 @@ are inside `agents-remember`.
   (`STRESS_PROFILE`'s 4 × 50) across four runs and 0 at four times the volume. **Recorded the
   case-list separation as a contract rather than as tidiness:** the provider adapters joined the
   shared instrument, but `CASES` stays the six control-plane stores and `PROVIDER_CASES` is its own
-  disjoint set cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:567-567), so widening the instrument cannot silently widen
+  disjoint set cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:573-573), so widening the instrument cannot silently widen
   what `test_controlplane_store_durability.py` asserts — and `ProviderCaseRegistryTests`
   cit:([`ProviderCaseRegistryTests`], mcp/tests/test_provider_store_durability.py:804-813)
   is the assertion that fails if that stops holding. **Recorded the tolerance argument

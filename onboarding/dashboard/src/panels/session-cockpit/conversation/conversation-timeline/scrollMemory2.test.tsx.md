@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory2.test.tsx` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`                  |
+| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -16,20 +16,22 @@
 
 ## Purpose
 
-The second scroll-memory suite split from `renderer.test.tsx` by the 260731-EFA-L8
-test split. Pins the remaining F-ac matrix: hidden-collapse clamps, trusted-user
-override, virtual measurement shifts, and late-clamp protection.
+The second scroll-memory suite split from `renderer.test.tsx` by the 260731-EFA-L8 test split.
+Pins the remaining F-ac matrix: hidden-collapse clamps, trusted-user override, virtual measurement
+shifts, and late-clamp protection. Its explicit fake-timer cases follow the shared suite rule:
+unmount and discard pending callbacks before real timers return.
 
 ## Code Commentary
 
 ### Logic
 
-Drives the geometry shim for clamp/override/measurement-shift scenarios and asserts
-the scroll position never fights trusted input.
+Drives the geometry shim for clamp/override/measurement-shift scenarios and asserts the scroll
+position never fights trusted input. Both `finally` blocks clean their render and fake-timer queue
+before `useRealTimers`, preventing a pending Virtualizer debounce from crossing test teardown.
 
 ### Invariants And Boundaries
 
-Assertions preserved from the monolithic suite.
+Assertions preserved from the monolithic suite. Timer restoration must follow render cleanup.
 
 ### Todos
 
@@ -48,7 +50,7 @@ configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The scroll-memory suite. | `describe` | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory2.test.tsx:12-12 |
+| The second scroll-memory suite. | "describe(\"ConversationTimeline — scroll memory (F-ac)\", () => {" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory2.test.tsx:12-12 |
 
 ## Cross-Repo References
 
@@ -59,6 +61,9 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-09T22:22+02:00 — 260713-TES master integration repair: aligned both explicit
+  fake-timer cases with the shared hermetic teardown order (unmount, clear, restore real time).
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the second
   scroll-memory suite split from `renderer.test.tsx`. Verification pinned to the
