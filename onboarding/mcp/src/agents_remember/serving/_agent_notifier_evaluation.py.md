@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_agent_notifier_evaluation.py`                                        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-09T01:21+02:00                                            |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`                                        |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastUpdated            | 2026-08-09T03:51+02:00|
+| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`                                        |
+| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -17,6 +17,8 @@
 ## Purpose
 
 260731-EFA-L7 responsibility split module for `mcp/src/agents_remember/serving/_agent_notifier_evaluation.py` (renamed from `_supervisor_evaluation.py` in 260713-TES-L1); owns the behaviours named by its top-level symbols. The rename window adds the seat-liveness ask-identity seam: `SEAT_LIVENESS_ASK_PREFIXES` names both the current (`"Agent notifier observed seat-liveness:"`) and legacy (`"Supervisor observed seat-liveness:"`) prefixes, and `_seat_liveness_ask_identity` normalizes either prefix to one `seat-liveness:` identity so legacy pending rows still coalesce/renew and chain-progress suppression matches both formats. Since 260713-TES-L2 the turn-report artifact/SLA predicates are retired and the state-signal families are composed from `serving/state_signals.py`.
+
+Since 260713-TES-L3 the compound-idle predicate joins that composition.
 
 ## Code Commentary
 
@@ -40,14 +42,25 @@
 
 ## 260713-TES-L2 Current Delta — Relay Predicates
 
-`_INACTIVE_EXPECTATION_KINDS` cit:([`_INACTIVE_EXPECTATION_KINDS`], mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:35-35) is now `{verdict-by, ack-by}`: `briefed-by` rows are still
+`_INACTIVE_EXPECTATION_KINDS` cit:([`_INACTIVE_EXPECTATION_KINDS`], mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:36-36) is now `{verdict-by, ack-by}`: `briefed-by` rows are still
 written and fulfilled as dashboard provenance but no longer drive any notifier finding.
 `evaluate_turn_report_findings`/`turn_report_path_for_leaf_key` are deleted (the
-artifact-presence/SLA interpretation on the worker→manager path, R6/N8). `evaluate_predicates` cit:([`evaluate_predicates`], mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:358-417) now composes the three relay families from `state_signals.py` —
-`evaluate_state_signal_findings`, `evaluate_non_reaction_findings`, and
-`evaluate_boundary_drain_findings` (the last bounded by `redeliver_budget`) — and excludes
-`state_signal_landed`/`state_signal_held_on_boundary` rows from escalation findings and from the
-sweep's redeliverable budget (F1).
+artifact-presence/SLA interpretation on the worker→manager path, R6/N8). `evaluate_predicates` cit:([`evaluate_predicates`], mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:359-416) now composes the relay families from `state_signals.py` —
+`evaluate_state_signal_findings`, `evaluate_non_reaction_findings`,
+`evaluate_boundary_drain_findings` (the last bounded by `redeliver_budget`), and since
+260713-TES-L3 `evaluate_compound_idle_findings` (inserted after state-signal, before
+non-reaction) — and excludes `state_signal_landed`/`state_signal_held_on_boundary` rows from
+escalation findings and from the sweep's redeliverable budget (F1).
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
+## 260713-TES-L3 Current Delta — Compound-Idle Predicate Composition
+
+`evaluate_predicates` cit:([`evaluate_predicates`], mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:359-416) now composes FOUR relay families from
+`state_signals.py`: `evaluate_state_signal_findings` → `evaluate_compound_idle_findings` →
+`evaluate_non_reaction_findings` → `evaluate_boundary_drain_findings`. The compound predicate
+stays a pure catalog read — no inbox or expectation input — and emits at most one finding per
+manager seat per sweep (see `state_signals.py.md`).
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
@@ -62,6 +75,10 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 ## Update History
 
+- 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded the compound-idle predicate
+  composition in `evaluate_predicates` (state-signal → compound-idle → non-reaction →
+  boundary-drain). Verification metadata pinned until closeout stamps the 260713-TES-L3
+  commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the relay predicate composition,
   `_INACTIVE_EXPECTATION_KINDS = {verdict-by, ack-by}`, the retired turn-report predicates, and
   the held/landed state-signal exclusions. Verification metadata pinned until closeout stamps

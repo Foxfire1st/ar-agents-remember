@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/agent_notifier_signals.py` |
 | doc_type               | `file-level-onboarding`                                        |
 | lastUpdated            | 2026-08-08T21:20+02:00 |
-| lastVerifiedCommitHash |                                                                `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate |                                                                2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash |                                                                `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
+| lastVerifiedCommitDate |                                                                2026-08-09T04:22:51+02:00|
 | governingOverview      | `overview.md`                                                  |
 
 ## Governing Overview
@@ -162,7 +162,7 @@ supervisor control-plane state.
 | `last_sent` matches on the whole `AgentNotifierSignalKey` (target plus kind plus detail) and `in_cooldown` enforces the shared redelivery floor before comparing elapsed time. | "def in_cooldown(" | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:136-173 |
 | `compact` holds one `exclusive_access` across the `_compact_locked` read-filter-rewrite half, and `_replace` delegates to `rewrite_lines` without unlinking. | `AgentNotifierSignalCooldownStore` | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220 |
 | `AGENT_NOTIFIER_SIGNAL_OWNERSHIP` names the dashboard sole writer and compaction owner (retained label `store="supervisor-signals"`), and states why the log is locked all the same. | `AGENT_NOTIFIER_SIGNAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:212-221 |
-| `_signal_emit` checks this cooldown before posting and appends a record after the inbox signal delivery attempt. | "def _signal_emit(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:303-303 |
+| `_signal_emit` checks this cooldown before posting and appends a record after the inbox signal delivery attempt. | "def _signal_emit(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:307-307 |
 | The serving app imports `AgentNotifierSignalCooldownStore` and wires "signal_cooldown_seconds = (" into each agent-notifier context. | "signal_cooldown_store=AgentNotifierSignalCooldownStore(root),",  | mcp/src/agents_remember/serving/_app_lifespan.py:82-82 |
 | The 900-second floor constant and the shared validator that refuses anything below it. | `MIN_REDELIVERY_INTERVAL_SECONDS`, `require_redelivery_floor_seconds` | mcp/src/agents_remember/controlplane/inbox_backoff.py:29-29; mcp/src/agents_remember/controlplane/inbox_backoff.py:45-55 |
 
