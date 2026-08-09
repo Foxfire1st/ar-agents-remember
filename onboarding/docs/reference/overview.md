@@ -6,8 +6,8 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 
 ## Purpose
 
@@ -27,6 +27,15 @@ attribution-only `operator_inbox_consume`, and the explicit `operator_inbox_supe
 demolished as policy — rows resolve by the 5-attempt ceiling, the 5-minute rebind grace, or
 explicit supersession — and the knob no longer gates sweep behavior (removed with the L5
 demolition leaf).
+
+### 260713-TES-L5 — Ladder Demolished, Budget Re-Wired
+
+`settings-json.md` now documents `escalationBudget` as the per-sweep load-shed cap on
+owner-signal emissions (seat-liveness + dead-upstream), the twin of `redeliverBudget`; the
+`orchestration.escalation` settings family is removed (fail-loud unknown key), and the
+recovery/observability docs use the fact-relay terminal paths (landing, attempt ceiling
+`unresolved`, rebind grace `expired`) instead of ladder states. The legacy `ladder-resolved`
+literal remains parse-compat and is still written by the confirmed-gone reclamation fold.
 
 Reference contract for harnesses, MCP tools, and settings. ACPUI makes role settings the initial
 native-selection authority: Claude, Codex, and Pi discover token-free per-install/account catalogs,
@@ -132,6 +141,10 @@ default, fail-loud family) — the schema source for the full-gate memory cap.
 
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the escalation-family
+  removal, the `escalationBudget` load-shed re-wiring, and the fact-relay terminal vocabulary
+  in the reference docs; superseded the L4 "reserved/removed" row in place. Verification
+  metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the `mcp-tools.md` inbox
   landing/supersession rows (N16/R11/N11) and the `settings-json.md` escalationBudget reserved
   wording (N3, ladder demolished as policy). Verification metadata pinned until closeout stamps

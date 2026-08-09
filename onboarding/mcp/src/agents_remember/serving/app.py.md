@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ exactly that.
 
 Two signatures changed with it, from bare dicts to declared models:
 `stream_events(..., supervisor_heartbeat: AgentNotifierHeartbeatPayload | None = None)` (cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:112-112))
-and `_agent_notifier_heartbeat_payload(runtime) -> AgentNotifierHeartbeatPayload` (cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:224-224)). The
+and `_agent_notifier_heartbeat_payload(runtime) -> AgentNotifierHeartbeatPayload` (cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:219-219)). The
 seven keys are identical; `ServingBuild.payload()` likewise returns `ServingBuildPayload` now.
 
 **The body is deliberately still assembled rather than dumped from one model.** The memo and the
@@ -717,10 +717,10 @@ pass was available for this update.
 | The landed archive helper records completion-edge seats without terminating them. | `land_seats_for_leaf` | mcp/src/agents_remember/serving/landing.py:9-28 |
 | The retire/rename mechanics + authority policy the explicit retire and landed-cleanup endpoints call into. | `retire_entry`; `check_retire_authority`; `SeatRef`; `master_of` | mcp/src/agents_remember/serving/retire.py:37-71; mcp/src/agents_remember/serving/retire_policy.py:23-33; mcp/src/agents_remember/serving/retire_policy.py:36-46; mcp/src/agents_remember/serving/retire_policy.py:49-67 |
 | The observer-event loggers the landed, retire, rename, and turn-state paths fire. | `log_landed_event`; `log_retire_event`; `log_rename_event`; `log_turn_state_change_event` | mcp/src/agents_remember/serving/seat_events.py:24-45; mcp/src/agents_remember/serving/seat_events.py:48-68; mcp/src/agents_remember/serving/seat_events.py:71-89; mcp/src/agents_remember/serving/seat_events.py:92-110 |
-| The deterministic agent-notifier sweep + predicate library `supervisor_loop`/`_agent_notifier_context` drive every interval (260707-HFX2-L2 R1-R4). | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:96-241 |
+| The deterministic agent-notifier sweep + predicate library `supervisor_loop`/`_agent_notifier_context` drive every interval (260707-HFX2-L2 R1-R4). | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:93-195 |
 | The pane-state classifier one of the sweep's predicates (`evaluate_pane_findings`, inside `agent_notifier.py`) calls. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | The self-liveness heartbeat store both the loop (tick) and the read side (`_agent_notifier_heartbeat_payload`) share, including L8 inbox backlog and sweep-duration fields. | `AgentNotifierHeartbeatStore`; `heartbeat_age_seconds` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:128-139 |
-| The agentic-settings loader `supervisor_loop`/`_agent_notifier_context`/`_agent_notifier_heartbeat_payload` all re-read per-use for the `orchestration.agentNotifier` family. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:217-252 |
+| The agentic-settings loader `supervisor_loop`/`_agent_notifier_context`/`_agent_notifier_heartbeat_payload` all re-read per-use for the `orchestration.agentNotifier` family. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:211-246 |
 | The stores the sweep's predicates read directly (R3: never the projection). | `ExpectationRowStore`; "class OperatorInboxStore"; `OrchestrationNudgeStore`; `AgentNotifierSignalCooldownStore`; `EventStore` | mcp/src/agents_remember/controlplane/expectation_rows.py:156-336; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251; mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127; mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220; mcp/src/agents_remember/observer/store.py:103-171 |
 
 ## Cross-Repo References
@@ -744,6 +744,10 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the no-impact-adjacent comment
+  sweep — `_build_serving_runtime`'s agent-notifier comment no longer names the nudge log as a
+  direct store (the relay reads TerminalCatalog/OperatorInboxStore/ExpectationRowStore only).
+  Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over `_app_common.py`, `_app_lifespan.py`, `_app_routes.py`, `_app_terminal_routes.py`; full surface re-exported and pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
@@ -762,7 +766,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   already-validated projection dict with nothing declaring them; both sites now call the single
   `served_state.served_state_tail` (L328-L329 for the SSE snapshot, L979-L982 for `/api/state`)
   and the result is declared as `ServedWorkspaceProjection`, which `/api/state` and `/api/stream`
-  name. Corrected cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:224-224) and cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:112-112),
+  name. Corrected cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:219-219) and cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:112-112),
   which return/accept declared models rather than bare dicts, and the `stream_events` paragraph,
   which now records that a snapshot with neither key is a valid served body and that deltas carry
   no tail. Documented all 17 route declarations with lines — including `/api/state`'s

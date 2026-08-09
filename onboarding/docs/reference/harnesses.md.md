@@ -6,8 +6,8 @@
 | path                   | `docs/reference/harnesses.md`           |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-16T07:25+02:00                  |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -105,7 +105,7 @@ references below use source evidence rather than treating this prose as runtime 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The effective harness registry merges built-ins with settings and role-per-level knobs deep-merge over role defaults. | `resolved_role_knobs`, "def _parse_harnesses(" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:342-363; mcp/src/agents_remember/kernel/_agentic_settings_harness.py:26-26 |
+| The effective harness registry merges built-ins with settings and role-per-level knobs deep-merge over role defaults. | `resolved_role_knobs`, "def _parse_harnesses(" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:290-311; mcp/src/agents_remember/kernel/_agentic_settings_harness.py:26-26 |
 | Built-in ids are registry identities, while native model validation is dynamic rather than a registry enum. | `find_harness`, `invalid_model_detail` | mcp/src/agents_remember/serving/harnesses.py:61-70; mcp/src/agents_remember/serving/harnesses.py:160-172 |
 | Spawn rejects caller spend overrides before side effects and sends settings-resolved model/effort through one typed native runner payload. | `_caller_spend_override_refusal`, `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:527-564; mcp/src/agents_remember/application/terminal_tools.py:769-842 |
 | Claude initialize and `system/init` parse different required fields; the catalog request is a separate control message. | `parse_control_initialization`, `parse_system_initialization`, `list_models_request` | mcp/src/agents_remember/serving/claude_stream_protocol.py:156-161; mcp/src/agents_remember/serving/claude_stream_protocol.py:219-232; mcp/src/agents_remember/serving/claude_stream_protocol.py:235-263 |

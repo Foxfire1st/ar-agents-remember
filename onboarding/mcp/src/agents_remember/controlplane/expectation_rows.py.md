@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -16,9 +16,11 @@
 
 ## Purpose
 
-R2 (260707-HFX2-L1): durable what-must-happen-by-when rows, written atomically at every dispatch
-surface (spawn, gate open, signal post) so a deadline is a durable ROW an L2 sweep scans, never an
-in-memory timer that a daemon/MCP restart would erase (the Restate durable-timer lesson).
+R2 (260707-HFX2-L1): durable owner-visible deadline rows, written atomically at dispatch-brief
+(``briefed-by``) and gate open (``verdict-by``) so a deadline is a durable ROW, never an in-memory
+timer that a daemon/MCP restart would erase (the Restate durable-timer lesson). Ordinary
+operator-inbox posts write no expectation row (N16: landing is terminal), and the relay NEVER
+evaluates these rows -- verification is by expected product, which is owner work (260713-TES-L5).
 
 ## Code Commentary
 
@@ -59,9 +61,9 @@ the folded snapshot `compact` returns.
 This store now carries **two readers**, and the split fixed a live defect rather than merely
 tidying one.
 
-`read` stays **strict**: a deadline row that cannot be parsed is a deadline nobody is watching, and
-the L2 sweep is the only thing standing between a missed expectation and silence. Being strict is
-right for the sweep.
+`read` stays **strict**: a deadline row that cannot be parsed is a deadline nobody can see, and
+the dashboard/gate deadline surface depends on it. Being strict protects the owner-visible
+surface; no relay sweep consumes these rows anymore (260713-TES-L5).
 
 But `observer/snapshots.py::read_expectation_rows` wrapped that strict read in
 `suppress(OSError, ValueError)` — and pydantic's `ValidationError` **subclasses `ValueError`**. So
@@ -92,11 +94,11 @@ deadline expired instead of collapsing different roles on one leaf.
 
 ### Logic
 
-`ExpectationKind` is `briefed-by | turn-report-by | verdict-by | ack-by` — the `turn-report-by`
-value is RETAINED in this Literal for legacy-row parse compatibility (260713-TES-L2), while
-`KNOWN_EXPECTATION_KINDS` in `kernel/agentic_settings.py` no longer lists it (no new rows are
-written; the settings surface and the record Literal are now intentionally asymmetric until the
-L4 schema migration).
+`ExpectationKind` is `briefed-by | verdict-by | turn-report-by | ack-by` — the retired
+`turn-report-by`/`ack-by` values stay in the Literal for legacy-row parse compatibility only
+(260713-TES-L2/L5): nothing writes or evaluates them, and `KNOWN_EXPECTATION_KINDS` in
+`kernel/agentic_settings.py` is `{briefed-by, verdict-by}` (a settings override for a retired
+kind is refused).
 `ExpectationRow` is a strict Pydantic snapshot: `kind`, `state` (`pending | met | missed`),
 `dueAt`, the dispatch surface's own `sourceId` (a spawned session id, a gate id, or an inbox entry
 id — lets a sweep or dashboard resolve straight back to the thing the row is a deadline FOR),
@@ -125,9 +127,10 @@ is never a forgettable follow-up step to the dispatch itself.
 
 `ExpectationRowStore` mirrors `OperatorInboxStore`'s append/read/fold shape: one JSONL log
 (`workspace/expectation-rows.jsonl`), folded by row id, last-wins. `pending()` sorts by `dueAt`;
-`overdue(now=)` is the L2 sweep's predicate input (pending rows already past `dueAt`);
-`find_by_source(source_id, kind=)` is the write-once-consume-once lookup a dispatch surface's
-fulfillment path uses (e.g. `operator_inbox_consume_payload` marks the matching `ack-by` row met).
+`overdue(now=)` is a store primitive with no production caller (pending rows already past
+`dueAt`; test-only since 260713-TES-L5); `find_by_source(source_id, kind=)` is the lookup a
+dispatch surface's fulfillment path uses (e.g. verdict fulfillment at gate close marks the
+matching `verdict-by` row met).
 
 ### Conventions
 
@@ -140,12 +143,12 @@ input current.
 
 ### Invariants And Boundaries
 
-- This module writes/reads the durable row only; it never redelivers, escalates, or sweeps —
-  that is L2's job (a sibling leaf). `mark_missed` exists so the row is STRUCTURALLY escalatable,
-  not because this leaf calls it.
-- Surfacing only: the dashboard/architect projection (`observer/snapshots.py::
-  read_expectation_rows`) reads this store for VISIBILITY; an L2 predicate must read this store
-  directly for CORRECTNESS and never the projection (R5's split).
+- This module writes/reads the durable row only; it never redelivers, escalates, evaluates, or
+  sweeps. `mark_missed` is a store primitive for explicit owner-side tooling and legacy rows --
+  the relay never marks expectations missed (260713-TES-L5).
+- Owner-visible only: the dashboard/architect projection (`observer/snapshots_impl/_runtime.py::
+  read_expectation_rows`) reads this store for VISIBILITY, and no relay predicate reads it for
+  correctness anymore (260713-TES-L5).
 - **Two readers, and the correctness one is strict.** `read` / `pending` / `overdue` raise on a
   torn or unknown-major row and are what the sweep uses; `read_for_projection` /
   `pending_for_projection` skip it and are for the dashboard only. Point the sweep at the tolerant
@@ -177,10 +180,10 @@ No meaningful external design-doc references found yet (created this leaf).
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `write_expectation_row` is the create-plus-append helper every dispatch surface calls, so the row is never a forgettable follow-up to the dispatch. | `write_expectation_row` | mcp/src/agents_remember/controlplane/expectation_rows.py:339-357 |
-| `ExpectationRowStore.find_by_source` is the fulfillment lookup and `overdue` is the L2 sweep's predicate input. | `overdue` | mcp/src/agents_remember/controlplane/expectation_rows.py:237-247 |
-| `append` checks the declared writer and holds `exclusive_access` around the fsyncing append. | "def write_expectation_row" | mcp/src/agents_remember/controlplane/expectation_rows.py:339-339 |
-| The strict `read`, the tolerant `read_for_projection`, and the shared `_pending_rows` fold behind `pending` and `pending_for_projection`. | "def _pending_rows" | mcp/src/agents_remember/controlplane/expectation_rows.py:137-137 |
-| `compact` holds the lock across `_compact_locked`, which reclaims from the strict read and rewrites through `_replace`. | "def append(self" | mcp/src/agents_remember/controlplane/expectation_rows.py:165-165 |
+| `ExpectationRowStore.find_by_source` is the fulfillment lookup a dispatch surface's fulfillment path uses; `overdue` is a test-facing store helper — the relay never evaluates expectation rows (owner-visible deadline surface; pending deadlines are surfaced through the dashboard projection). | `overdue` | mcp/src/agents_remember/controlplane/expectation_rows.py:225-247 |
+| `append` checks the declared writer and holds `exclusive_access` around the fsyncing append. | "def write_expectation_row" | mcp/src/agents_remember/controlplane/expectation_rows.py:349-349 |
+| The strict `read`, the tolerant `read_for_projection`, and the shared `_pending_rows` fold behind `pending` and `pending_for_projection`. | "def _pending_rows" | mcp/src/agents_remember/controlplane/expectation_rows.py:143-143 |
+| `compact` holds the lock across `_compact_locked`, which reclaims from the strict read and rewrites through `_replace`. | "def append(self" | mcp/src/agents_remember/controlplane/expectation_rows.py:171-171 |
 | `EXPECTATION_ROW_OWNERSHIP` names both processes as writers and the dashboard agent-notifier sweep as the single compaction owner. | `EXPECTATION_ROW_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:152-162 |
 | `read_expectation_rows` now calls `pending_for_projection`, because `ValidationError` subclasses `ValueError` and its `suppress` used to discard every deadline in the file on one torn line. |"def read_expectation_rows"|mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193|
 
@@ -192,12 +195,38 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | None. | N/A | N/A |
 
+## 260713-TES-L5 Current Delta — Relay Evaluation Demolished
+
+The expectation store is RELOCATED, not deleted: it remains the owner-visible deadline surface for
+``briefed-by`` (dispatch) and ``verdict-by`` (gate open) rows, written atomically at
+dispatch/gate-open and fulfilled at delivery/verdict. All relay evaluation is gone:
+`evaluate_expectation_findings`, `_expectation_chain_progressed`, `_INACTIVE_EXPECTATION_KINDS`,
+`_auto_nudge`, and `_mark_expectation_missed` are deleted, and `expectation-overdue`/
+`auto-nudge` are no longer finding/action kinds. `ack-by`/`turn-report-by` are retired from the
+settings surface and no writer emits them; legacy rows parse but produce no finding. `overdue()`
+has no production caller. This entry supersedes any earlier description in this sidecar that
+conflicts with the current source behavior above; verification metadata stays pinned to the
+pre-commit source history until closeout.
+
 ## 260712-TRH-L4 Final Candidate
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
 
+- 2026-08-09T13:00+02:00 — 260713-TES-L5 curator completion round (reviewer delta R-D1):
+  corrected the surviving reference row that still called `overdue()` "the L2 sweep's
+  predicate input" — it is a test-facing store helper on the owner-visible deadline surface;
+  the relay never evaluates expectation rows, and the retention comment's "can no longer be
+  surfaced as pending deadlines" wording is about the dashboard/provenance surface only.
+  Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the judgment-demolition disposition --
+  the store is an owner-visible deadline surface (briefed-by/verdict-by only), the relay never
+  evaluates expectation rows, `ack-by`/`turn-report-by` are retired to legacy parse-compat, and
+  `overdue()` is a test-only primitive. Superseded the stale "L2 sweep is the only thing standing
+  between a missed expectation and silence" and "sweep is the reserved caller of `mark_missed`"
+  prose (reviewer F2). Verification metadata pinned until closeout stamps the 260713-TES-L5
+  commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the store-retained disposition —
   the `turn-report-by` Literal stays for legacy parse compatibility while the settings surface
   and dispatch writes retire it; `briefed-by` no longer drives findings. Verification metadata
@@ -212,7 +241,7 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
   earlier is off. Replaced with a symbol-name citation and no range, as this leaf's test cards do,
   because a number that was wrong within the hour is worse than no number. Re-read every other
   citation on this card against the current files and left them: `write_expectation_row` L337-L355
-  cit:(["def write_expectation_row("], mcp/src/agents_remember/controlplane/expectation_rows.py:339-339), `find_by_source`/`overdue` L219-L248 (L219, L237), `append` L165-L169 (L165), the
+  cit:(["def write_expectation_row("], mcp/src/agents_remember/controlplane/expectation_rows.py:349-349), `find_by_source`/`overdue` L219-L248 (L219, L237), `append` L165-L169 (L165), the
   read pair L137-L144; L171-L217 (`_pending_rows` L137, `read` L171, `read_for_projection` L185,
   `pending` L212, `pending_for_projection` L215), `compact` L286-L334 (L286, `_compact_locked` L299,
   `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows"], mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193). The **10.20 percent** figure

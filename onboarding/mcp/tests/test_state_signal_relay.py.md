@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_state_signal_relay.py`                   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                    |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                    |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -26,17 +26,17 @@ boundary drain.
 
 ### Logic
 
-`StateSignalRelayTests` cit:([`StateSignalRelayTests`], mcp/tests/test_state_signal_relay.py:128-735) drives `run_agent_notifier_sweep` over fake catalog/inbox
+`StateSignalRelayTests` cit:([`StateSignalRelayTests`], mcp/tests/test_state_signal_relay.py:127-742) drives `run_agent_notifier_sweep` over fake catalog/inbox
 seams across simulated ticks:
 
-- `test_incident_1_finished_worker_without_inbox_row_still_signals_manager` cit:([`test_incident_1_finished_worker_without_inbox_row_still_signals_manager`], mcp/tests/test_state_signal_relay.py:176-197):
+- `test_incident_1_finished_worker_without_inbox_row_still_signals_manager` cit:([`test_incident_1_finished_worker_without_inbox_row_still_signals_manager`], mcp/tests/test_state_signal_relay.py:173-194):
   catalog row only (`turn-ended`/`completed`/`terminal_evidence_id=turn-9`), one sweep emits
   exactly one durable `state-signal` to the owning manager; re-projection emits none.
-- `test_busy_manager_holds_at_boundary_then_lands_exactly_once` cit:([`test_busy_manager_holds_at_boundary_then_lands_exactly_once`], mcp/tests/test_state_signal_relay.py:213-279): a working manager
+- `test_busy_manager_holds_at_boundary_then_lands_exactly_once` cit:([`test_busy_manager_holds_at_boundary_then_lands_exactly_once`], mcp/tests/test_state_signal_relay.py:210-276): a working manager
   holds on the durable schedule; t+301s and t+901s (the F1 regression ticks) still produce zero
   adapter submissions and rung 0; the boundary then drains and lands exactly once.
-- Origin cases cit:([`test_interrupted_signal_carries_developer_origin`, `test_interrupted_signal_with_unknown_origin`], mcp/tests/test_state_signal_relay.py:281-309): developer-stamped vs unknown; dedupe per seat+turn cit:([`test_dedupe_keys_per_seat_and_turn`], mcp/tests/test_state_signal_relay.py:199-211);
-  owner rebinding after manager replacement cit:([`test_owner_rebinding_after_manager_replacement`], mcp/tests/test_state_signal_relay.py:311-325) — the fixture keeps the
+- Origin cases cit:([`test_interrupted_signal_carries_developer_origin`, `test_interrupted_signal_with_unknown_origin`], mcp/tests/test_state_signal_relay.py:278-292; mcp/tests/test_state_signal_relay.py:294-306): developer-stamped vs unknown; dedupe per seat+turn cit:([`test_dedupe_keys_per_seat_and_turn`], mcp/tests/test_state_signal_relay.py:196-208);
+  owner rebinding after manager replacement cit:([`test_owner_rebinding_after_manager_replacement`], mcp/tests/test_state_signal_relay.py:308-325) — the fixture keeps the
   replacement manager `turn_state="working"` since 260713-TES-L3 so the test isolates the L2
   rebinding behavior it owns (a turn-ended manager + idle worker would additionally fire the
   new compound-idle fact); idle flap re-arm cit:([`test_idle_flap_rearms_for_a_new_turn`], mcp/tests/test_state_signal_relay.py:327-366);
@@ -67,7 +67,7 @@ No Domain Documentation entries are configured in the resolved `system/sources.m
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines these relays; the suite is the incident-#1 proof. | `StateSignalRelayTests` | mcp/tests/test_state_signal_relay.py:128-735 |
+| No external/domain document defines these relays; the suite is the incident-#1 proof. | `StateSignalRelayTests` | mcp/tests/test_state_signal_relay.py:127-742 |
 
 ## Repo-Internal References
 
@@ -76,8 +76,8 @@ The suite exercises `serving/state_signals.py`, `serving/_agent_notifier_actions
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The predicates under test. | `evaluate_state_signal_findings`; `evaluate_non_reaction_findings`; `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:128-156; mcp/src/agents_remember/serving/state_signals.py:182-228; mcp/src/agents_remember/serving/state_signals.py:231-273 |
-| The actions under test. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:758-817; mcp/src/agents_remember/serving/_agent_notifier_actions.py:879-936; mcp/src/agents_remember/serving/_agent_notifier_actions.py:939-948 |
+| The predicates under test. | `evaluate_state_signal_findings`; `evaluate_non_reaction_findings`; `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:127-155; mcp/src/agents_remember/serving/state_signals.py:181-227; mcp/src/agents_remember/serving/state_signals.py:230-276 |
+| The actions under test. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:421-480; mcp/src/agents_remember/serving/_agent_notifier_actions.py:542-599; mcp/src/agents_remember/serving/_agent_notifier_actions.py:602-611 |
 | Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:66-74 |
 
 ## Cross-Repo References
@@ -88,8 +88,16 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | No cross-repo boundary participates in this suite. | — | — |
 
+## 260713-TES-L5 Current Delta — Nudge Store Gone From Harness
+
+`StateSignalRelayTests` drops `OrchestrationNudgeStore` from the sweep context; the relay
+fixtures and formal `state="landed"` assertions are unchanged.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the nudge-store removal from the
+  state-signal relay harness. Verification metadata pinned until closeout stamps the
+  260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the landed-row fixtures' formal
   `state="landed"` alignment (N13/N16 migration; the by-rule pending landing no longer exists).
   Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.

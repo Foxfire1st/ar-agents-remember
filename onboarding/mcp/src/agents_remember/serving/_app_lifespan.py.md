@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/_app_lifespan.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T06:48+02:00                                            |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                        |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                        |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -50,6 +50,20 @@ identity).
 
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the context cleanup —
+## 260713-TES-L5 Current Delta — Context Without Nudge Or Escalation Knobs
+
+`_agent_notifier_context` no longer constructs an `OrchestrationNudgeStore` and no longer reads
+`settings.escalation` (the family is deleted). It wires `redeliver_budget` and
+`escalation_budget` from `settings.agent_notifier` as the per-sweep load-shed caps.
+
+## Update History
+
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the context cleanup —
+  `_agent_notifier_context` no longer wires a `nudge_store` or the escalation SLA/rung/
+  respawn knobs (`settings.escalation` no longer exists); `escalation_budget` is read from
+  `settings.agent_notifier.escalation_budget` beside `redeliver_budget`. Verification metadata
+  pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the last-good settings loop
   (R7/N5 — settings load inside the sweep try, per-tick loud failure, no-last-good skip) and
   the independent relay-death watcher task spawned from `_serving_lifespan` (N5). Verification

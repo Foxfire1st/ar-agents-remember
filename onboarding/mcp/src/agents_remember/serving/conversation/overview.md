@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate |  2026-08-09T02:17:45+02:00|
+| lastUpdated | 2026-08-09T17:18+02:00 |
+| lastVerifiedCommitHash |  `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate |  2026-08-09T18:00:39+02:00|
 
 ## What This Area Is
 
@@ -456,8 +456,20 @@ site sweep), and active's projector resolution offloads the same `resolve_runnin
 (`conversation/active` carries it). The conversation wire contracts are untouched — this was an
 availability repair, not a vocabulary change.
 
+## 260713-TES-L5 — Native Fallback Remains Child-Local
+
+The native truncation and schema-failure repair changes only the `active/projector/` child's
+ingestion behavior. It retains the existing `ConversationItem` unknown-vendor grammar, route set,
+cursor authority, authorization, runtime composition, and active/library/control ownership split.
+Transport identity and fail-soft mapping detail therefore live in the projector overview; this
+parent contract route gains no new wire field, endpoint, port, or composition seam.
+
 ## Update History
 
+- 2026-08-09T17:18+02:00 — No route impact: reviewed the TES-L5 native-frame fallback against the
+  parent conversation contract. The child-local repair preserves the wire grammar, routes, ports,
+  authorization, runtime composition, and child ownership split; detail is routed to
+  `active/projector/overview.md`. Verification stays pinned until closeout.
 - 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the event-loop offload across both child routes; wire contracts untouched. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   anchors and converted the history `create_app` citation; exact non-fixing check returns zero

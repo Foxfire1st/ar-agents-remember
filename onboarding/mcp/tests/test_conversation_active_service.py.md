@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_active_service.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-09T16:43+02:00                   |
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -132,7 +132,7 @@ repository-owned and cited below.
 | --- | --- | --- |
 | The projector engine under test is now the `active/projector/` package. Its facade owns the poll loop, the gap classification (`generation-changed` vs `ordering-fault`, plus the consecutive-read-failure ceiling) and dormant release. | `ActiveSessionProjector` | mcp/src/agents_remember/serving/conversation/active/projector/facade.py:59-221 |
 | Hydration (`ensure_hydrated` -> `_rebuild`), the fixed channel-poll order, and paging live in the rebuild coordinator. | `RebuildCoordinator` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:63-192 |
-| The zipper faults under test — `ZipperEvidenceEvicted` and `EvidenceTimelineRegressed` — are raised by the native evidence walk. | `ZipperEvidenceEvicted`; `EvidenceTimelineRegressed`; `poll_evidence` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:36-37; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:40-41; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:116-146 |
+| The zipper faults under test — `ZipperEvidenceEvicted` and `EvidenceTimelineRegressed` — are raised by the native evidence walk. | `ZipperEvidenceEvicted`; `EvidenceTimelineRegressed`; `poll_evidence` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:36-37; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:40-41; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:114-144 |
 | Retention, the retention-overflow gap on a full subscriber queue, and the gap envelope shape live in the mutation stream. | `ProjectionMutationStream`; `_publish`; `_gap_envelope` | mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py:49-197 |
 | The store under test: idempotent apply, block union, delta buffering. | `ProjectionStore`; `apply_item`; `apply_delta` | mcp/src/agents_remember/serving/conversation/active/store.py:135-445 |
 | The evidence/native/provenance page products the scripted bridge mimics. | `EvidencePage`; `NativeEvidencePage`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/serving/harness_control_models.py:481-489; mcp/src/agents_remember/serving/harness_control_models.py:503-510; mcp/src/agents_remember/serving/harness_control_models.py:527-530 |
@@ -159,6 +159,10 @@ and dormant-release assertions remain behavior-identical, demonstrating that the
 change the public projector contract.
 
 ## Update History
+
+- 2026-08-09T16:43+02:00 — 260713-TES-L5 hotfix curator: revalidated the zipper/evidence-walk
+  reference after the shared native fallback insertion and repaired the `poll_evidence` range.
+  The suite source itself is unchanged.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

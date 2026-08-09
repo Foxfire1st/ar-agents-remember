@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastUpdated | 2026-08-09T16:43+02:00 |
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -61,6 +61,16 @@ verdict-by, attribution-only consume, `state="landed"` seeds, attempt-ceiling `u
 dead-seat expiry to the architect mailbox, one-per-row-per-sweep expiry emission), and the
 registration suite pins the `include_terminal` poll kwarg plus the `operator_inbox_supersede`
 wiring.
+
+### 260713-TES-L5 Native Truncation Identity Regression
+
+`test_conversation_native_ingestion.py` reproduces the live 318,975-byte Codex MCP-result
+truncation envelope and proves the active projector keeps the bridge-owned native item and parent
+ids while degrading the clipped body to bounded unknown-vendor evidence. Companion cases force a
+schema-invalid Codex item and Pi's eager native continuation through the same ingestion boundary,
+proving neither malformed payloads nor truncation placeholders can kill conversation rebuild.
+The poll-loop edge suite now pins the corresponding contract replacement: an unmappable body with
+intact transport identity emits `codex:malformed`, not an ordering-fault gap or stream close.
 
 Regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
@@ -1401,8 +1411,25 @@ extended: closeout gate mode/cap/kill-shape assertions, hook-tier `pre-push → 
 observer ticker-exit assertions (`ticker.join` replacing poll loops — test-only, kills a
 race-dependent diff-coverage class).
 
+### 260713-TES-L5 Route Impact — Judgment Demolition
+
+The test route gains the 26-test forcing suite `mcp/tests/test_judgment_demolition.py`
+(suspect-respawn, ladder-policy, inferred-nudge, ack-by/turn-report-by retirement,
+landed-never-escalates, live-chain shape) and drops the deleted `test_escalation_ladder.py`.
+The sibling notifier/settings/inbox suites were converted off the ladder/expectation/nudge
+surfaces: retired settings fail loud, ladder transitions are legacy snapshot fixtures, and
+the nudge store is gone from every sweep harness.
+
 ## Update History
 
+- 2026-08-09T16:43+02:00 — 260713-TES-L5 hotfix curator: indexed the focused native-ingestion
+  regression suite and its Codex/Pi identity-preservation proof; the 17:18 correction also aligned
+  the older poll-loop edge with the fail-soft contract after the authoritative gate exposed its
+  superseded gap expectation.
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the new judgment-demolition
+  forcing suite, the deleted ladder suite, and the fixture conversions across the notifier/
+  settings/inbox tests. Verification metadata pinned until closeout stamps the 260713-TES-L5
+  commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the two new inbox
   arrival/rebinding forcing suites (25+33 tests) and the terminal-honesty fixture updates
   across the notifier/liveness/dispatch/expectation/reclamation/escalation/conformance and

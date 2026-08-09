@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1513,8 +1513,21 @@ closeout docstrings and the worktrees route (closeout/integrate/code_quality_gat
 altitude routing: leaf edges targeted, master integration full+capped once, `memory_quality_check`
 per leaf.
 
+### 260713-TES-L5 Route Impact — Judgment Demolition
+
+The MCP relay's judgment layer is deleted: no escalation ladder, no respawn, no expectation
+evaluation, and no inferred nudges. The control-plane keeps landing/terminal/rebind/renew
+transitions; the serving sweep composes fact-relay predicates with the preserved
+`escalationBudget`/`redeliverBudget` per-sweep load-shed caps; kernel settings refuse the
+retired `orchestration.escalation` family. The new forcing suite and the skills/docs sync
+complete the change set.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the relay judgment
+  demolition (ladder/respawn/expectation evaluation deleted), the load-shed budget wiring,
+  and the fail-loud settings retirement across control-plane/serving/kernel. Verification
+  metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the deliver-until-LANDED
   crossing (controlplane terminal vocabulary + transition primitive; serving landing/rebinding/
   relay-death; application/MCP/model supersede surface; kernel state-signal kind; two new test

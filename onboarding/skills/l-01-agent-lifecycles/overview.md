@@ -6,8 +6,8 @@
 | sourceRoute | skills/l-01-agent-lifecycles |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 
 ## Purpose
 
@@ -82,8 +82,22 @@ memory-capped); the worker/manager/orchestrator role files and their brief templ
 same ladder so no seat runs or expects a per-leaf full wrapper. Canonical `skills/` remains the
 owner; the packaged `package_data/runtime/skills/` mirrors are sync-propagated copies.
 
+### 260713-TES-L5 Route Impact — Judgment Demolition Doctrine
+
+The lifecycle doctrine now teaches the fact-relay supervision model: the agent-notifier sweep
+relays seat-state facts (turn-ended/completed state-signals, compound-idle, non-reaction
+residue) and owners interpret; the timed escalation ladder (renudge → skip-level → architect
+custody, then respawn) is retired from SKILL.md and the architect/manager/orchestrator/worker
+role files. Dead-owner rows surface to the scoped architect mailbox; `operator_inbox_consume`
+is an optional attribution marker. The `code-seam` criterion's coalescing invariant says
+"date, tries, attempt" (no rung); the escalation-storm history remains catching evidence.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the judgment-demolition
+  doctrine (fact-relay supervision, ladder retired, mailbox custody, attribution-only
+  consume, code-seam wording) across the canonical lifecycle tree and its synced mirrors.
+  Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the canonical `skills/l-01-agent-lifecycles`
   tree and its nine synced copies were refreshed from supervisor to agent-notifier wording
   (role files, templates, criteria, SKILL.md); route shape unchanged. Verification metadata

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T13:59+02:00 |
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 
 ## Purpose
 
@@ -95,8 +95,17 @@ wrapper is NOT a leaf check: it runs once per master at the master integration g
 memory-capped. A red check that cannot be fixed inside the leaf's scope remains an
 escalation, not a workaround.
 
+## 260713-TES-L5 Current Delta — Idle Safety Via The State-Signal Relay (synced copy)
+
+This synced runtime copy now says silence is supervised by the agent-notifier sweep and the
+state-signal relay, not an escalation ladder; ending a turn after the report is written
+remains correct.
+
 ## Update History
 
+- 2026-08-09T13:59+02:00 — 260713-TES-L5 curator completion round 2: refreshed this synced
+  runtime copy for the worker's idle-safety wording (state-signal relay; ladder retired);
+  verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the worker's
   change-set-scoped leaf checks and the full-wrapper master-gate home.

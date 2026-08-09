@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-09T06:48+02:00                     |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -145,19 +145,19 @@ P-15 fixture-zoo mandate (leaf task doc R3) and the liveness report
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines the liveness-simulation scope under test; the leaf task doc and liveness report are authoritative. | `_LivenessSimulationCase` | mcp/tests/test_liveness_simulations.py:134-192 |
+| No external/domain document defines the liveness-simulation scope under test; the leaf task doc and liveness report are authoritative. The harness builds the post-demolition `AgentNotifierContext` surface (signal cooldown store; no nudge store or escalation knobs, 260713-TES-L5). | "class _LivenessSimulationCase(unittest.TestCase):" | mcp/tests/test_liveness_simulations.py:128-128 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sweep entry point every scenario drives across multiple ticks. | `run_agent_notifier_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:972-972; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:474-474; mcp/src/agents_remember/serving/agent_notifier.py:117-219 |
+| The sweep entry point every scenario drives across multiple ticks. | `run_agent_notifier_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:633-633; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-330; mcp/src/agents_remember/serving/agent_notifier.py:93-195 |
 | The pane-signal classifier the two hybrid scenarios call directly (capturer not injectable through the sweep). | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
-| The escalation ladder every incident's rung-3 assertion walks through. | `rung_due`; `next_step` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152 |
+| The fact-relay terminal paths every incident simulation asserts: attempt-ceiling `unresolved`, rebind-grace `expired`, never a rung (260713-TES-L5). | `PERSISTENT_FAILURE_ATTEMPTS`; `evaluate_pending_expiry_findings` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:26-26; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:175-175 |
 | The self-liveness heartbeat store and staleness banner `KilledSupervisorDaemonTests` drives. | `AgentNotifierHeartbeatStore`; `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:141-157 |
-| The unit-level fixture `DeadManagerLiveWorkersTests` extends rather than duplicates. | `LadderWalkIntegrationTests` | mcp/tests/test_agent_notifier_ladder.py:241-629 |
+| The unit-level fixture `DeadManagerLiveWorkersTests` extends rather than duplicates. | `LadderWalkIntegrationTests` | mcp/tests/test_agent_notifier_ladder.py:143-633 |
 | The terminal state and compaction semantics the HFX2-L8 storm simulation proves at scale. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
-| The shared simulation context (`_ctx`) wires the agent-notifier signal cooldown store expected by `AgentNotifierContext`. | "signal_cooldown_store=" | mcp/tests/test_liveness_simulations.py:165-165 |
+| The shared simulation context (`_ctx`) wires the agent-notifier signal cooldown store expected by `AgentNotifierContext`. | "signal_cooldown_store=" | mcp/tests/test_liveness_simulations.py:157-157 |
 
 ## Cross-Repo References
 
@@ -174,8 +174,18 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## 260713-TES-L5 Current Delta — Never-Acked Without Nudges
+
+`NeverAckedSeatTests` removes the overdue verdict-by expectation fixture and all nudge
+assertions: the sweep never emits `orchestration.nudge` and no expectation row is marked
+missed. Escalation SLA/rung knobs and the nudge store are gone from the harness; the
+never-acked seat still resolves `unresolved` at the attempt ceiling with no ladder rung.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the nudge/expectation fixture
+  removal and the escalation-knob cleanup in the liveness simulations. Verification metadata
+  pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the terminal-honesty conversions —
   attempt-ceiling `unresolved` (NeverAcked/NoHostedSession), dead-seat storms resolving `expired`
   with 48h marker retention (N2/§9), and replacement-mid-flight rebinding to the current manager

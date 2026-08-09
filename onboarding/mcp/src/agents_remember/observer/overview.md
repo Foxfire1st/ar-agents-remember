@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`       |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -612,7 +612,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | The `MetricsBucketVocabularyTests` suite pins the bucket vocabulary. | `MetricsBucketVocabularyTests` | mcp/tests/test_observer_projection_metrics.py:128-233 |
 | The ambient `end()` entry and its focused terminal-state test are named here. | "def end"; `test_the_ambient_end_signal_accepts_exactly_the_terminal_states` | mcp/src/agents_remember/observer/ambient.py:274-274; mcp/tests/test_observer_ambient.py:175-175 |
 | `projected_current` is the gate store's tolerant projected fold. | `projected_current` | mcp/src/agents_remember/controlplane/store.py:279-300 |
-| The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists. | `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:215-217 |
+| The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists. | `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:221-223 |
 | `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:125-137 |
 | The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:42-42; mcp/src/agents_remember/controlplane/durable_store.py:14-24 |
 | `StatesAreFiledOnce` is the TypeScript overlap-check type. | `StatesAreFiledOnce` | dashboard/src/types/projection.ts:25-25 |
@@ -754,6 +754,11 @@ The two over-limit write-side modules were split in place into facades plus priv
 
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the N16/ladder-demolition
+  wording in the observer projections — `AgentPickupNode` surfaces "pending / not yet landed"
+  with attribution-only consume, and `read_expectation_rows` is an owner-visible deadline
+  surface the relay never evaluates. Verification metadata pinned until closeout stamps the
+  260713-TES-L5 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 route impact: recorded the `snapshots_impl/` and `reducer_impl/` facade splits and their surface pin. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

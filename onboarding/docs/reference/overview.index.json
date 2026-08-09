@@ -50,7 +50,7 @@
       "skills",
       "roles.<role>",
       "rolesPerLevel",
-      "cdca11264fb4d27ee08f5e8b37ac5496e67c0840",
+      "2dea095cd68454a7a68893e37c07dbd8daa86d32",
       "orchestration.agentNotifier",
       "orchestration.supervisor",
       "landed",
@@ -58,6 +58,11 @@
       "operator_inbox_consume",
       "operator_inbox_supersede",
       "escalationBudget",
+      "redeliverBudget",
+      "orchestration.escalation",
+      "unresolved",
+      "expired",
+      "ladder-resolved",
       "system/init",
       "list_models",
       "worktrees-c09.md",
@@ -82,12 +87,7 @@
       "worktree_cleanup",
       "lifecycle_finalize_task",
       "task_doc",
-      "task_reopen",
-      "use-external-memory.md",
-      "--targeted",
-      "worktree_integrate",
-      "orchestration.qualityGate.memoryCapBytes",
-      "qualityGate"
+      "task_reopen"
     ]
   },
   "fallback": {

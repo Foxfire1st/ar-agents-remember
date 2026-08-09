@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/memory_cap.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00                     |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -81,8 +81,8 @@ No external Domain Documentation source is configured for this memory repo
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The gate plans and runs the capped command, names the cap in refusals, and refuses a cap-less full run. | `QualityGatePlan`, `code_quality_gate_preview`, `run_strict_code_quality_gate`, `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:29-35; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:77-146; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:162-219; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:249-275 |
-| The settings model for `orchestration.qualityGate`. | `QualityGateSettings` | mcp/src/agents_remember/kernel/_agentic_settings_core.py:317-330 |
-| The fail-loud parser for `orchestration.qualityGate`. | `_parse_quality_gate` | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:476-494 |
+| The settings model for `orchestration.qualityGate`. | `QualityGateSettings` | mcp/src/agents_remember/kernel/_agentic_settings_core.py:245-256 |
+| The fail-loud parser for `orchestration.qualityGate`. | `_parse_quality_gate` | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:381-399 |
 | Proofs for availability branches, scope wrapping, the rlimit flag, and cap-kill naming. | `MemoryCapPlanningTests`, `WrapperMemoryCapTests` | mcp/tests/test_code_quality_memory_cap.py:70-150; mcp/tests/test_code_quality_memory_cap.py:151-275 |
 
 ## Cross-Repo References

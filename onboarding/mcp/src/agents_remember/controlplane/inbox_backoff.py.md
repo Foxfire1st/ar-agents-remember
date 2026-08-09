@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/inbox_backoff.py`            |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-09T06:48+02:00                                             |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -26,20 +26,22 @@ turns the old short rate limit into the shared 900-second production floor for e
 
 ### Logic
 
-`BACKOFF_SCHEDULE_SECONDS` is a fixed ladder (30s, 60s, 5m, 15m, 1h, 6h) — `attemptCount` indexes
-into it, clamped to the last entry as a steady-state ceiling so a long-pending row never floods
-redelivery. `MIN_REDELIVERY_INTERVAL_SECONDS` and `DEFAULT_RATE_LIMIT_SECONDS` are both 900 seconds
-since HFX2-L9. `require_redelivery_floor_seconds(rate_limit_seconds, owner=...)` returns that floor
-when the caller passes `None` and refuses any explicit sub-900 value with a loud `ValueError`.
-`backoff_seconds_for_attempt(attempt_count)` returns the wait before the NEXT attempt;
-`next_attempt_at(now=, attempt_count=, redelivery_floor_seconds=...)` stamps the durable
-`nextAttemptAt` ISO timestamp as the max of the ladder rung and the required floor — a row, never an
-in-memory timer.
+`BACKOFF_SCHEDULE_SECONDS` is a fixed schedule (30s, 60s, 5m, 15m, 1h, 6h) — `attemptCount`
+indexes into it, clamped to the last entry as a steady-state ceiling so a long-pending row never
+floods redelivery. `MIN_REDELIVERY_INTERVAL_SECONDS` and `DEFAULT_RATE_LIMIT_SECONDS` are both 900
+seconds since HFX2-L9. `require_redelivery_floor_seconds(rate_limit_seconds, owner=...)` returns
+that floor when the caller passes `None` and refuses any explicit sub-900 value with a loud
+`ValueError`. `backoff_seconds_for_attempt(attempt_count)` returns the wait before the NEXT
+attempt; `next_attempt_at(now=, attempt_count=, redelivery_floor_seconds=...)` stamps the durable
+`nextAttemptAt` ISO timestamp as the max of the schedule entry and the required floor — a row,
+never an in-memory timer.
 
-`is_ladder_resolved(entry)` is the legacy terminal predicate for rows that reached the terminal
-escalation rung against a non-live target seat. `is_due(entry, now=)` is true only for a `pending`
-entry that is not `state_signal_landed` (now `state == "landed"` after the N13/N16 migration),
-whose `deliveryState` is one of the redeliverable states, and whose `nextAttemptAt` has elapsed
+`is_ladder_resolved(entry)` is the legacy-terminal predicate for rows carrying the retired
+pre-formal-vocabulary `ladder-resolved` state (260713-TES-L5: the timed escalation ladder is
+deleted; the state survives only as parse-compat and is still written by the confirmed-gone
+reclamation fold). `is_due(entry, now=)` is true only for a `pending` entry that is not
+`state_signal_landed` (now `state == "landed"` after the N13/N16 migration), whose
+`deliveryState` is one of the redeliverable states, and whose `nextAttemptAt` has elapsed
 (or is unset, i.e. never attempted). Every formal terminal state is excluded by the
 pending-only gate.
 `is_rate_limited(entry, now=, rate_limit_seconds=)`
@@ -101,8 +103,23 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | None. | N/A | N/A |
 
+## 260713-TES-L5 Current Delta — Ladder Vocabulary Removed
+
+The backoff schedule itself is untouched, but all "ladder" phrasing now names the retired timed
+escalation ladder: `backoff_seconds_for_attempt` speaks of "the schedule", and
+`is_ladder_resolved` is explicitly a legacy-terminal predicate for the retired pre-formal
+`ladder-resolved` state, not a live ladder resolution path. The relay never escalates a row
+through rungs; rows resolve terminal by landing, attempt ceiling (`unresolved`), rebind grace
+(`expired`), or supersession. This entry supersedes any earlier description in this sidecar that
+conflicts with the current source behavior above; verification metadata stays pinned to the
+pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the ladder-vocabulary removal --
+  backoff is "the schedule", `is_ladder_resolved` is a legacy parse-compat terminal predicate,
+  and no rung-escalation path remains in the relay. Verification metadata pinned until closeout
+  stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: refreshed the ack vocabulary for N16 — the
   backoff rides every pending row until it lands or resolves terminal; `is_due` gates on
   `state == "landed"` (the L2 by-rule predicate folded into the schema); corrected the

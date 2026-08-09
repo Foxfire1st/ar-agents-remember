@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/seat_turn_truth.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-09T03:51+02:00|
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                    |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                    |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -82,8 +82,8 @@ called by the liveness sweep and the interrupt route and the state-signal action
 | The frozen catalog row, evidence stamp, and public get/upsert seams it writes through. | "class TerminalCatalogEntry:"; "class CatalogTurnEvidence:"; "class TerminalCatalog:" | mcp/src/agents_remember/serving/terminal_catalog.py:59-70; mcp/src/agents_remember/serving/terminal_catalog.py:106-220; mcp/src/agents_remember/serving/terminal_catalog.py:589-929 |
 | The liveness sweep's read-before-projection ordering that calls `record_terminal_cursors`. | `_observe_alive` | mcp/src/agents_remember/serving/terminal_liveness.py:343-426 |
 | The interrupt route stamping developer provenance after an accepted interrupt. | `conversation_interrupt` | mcp/src/agents_remember/serving/conversation/control/api.py:151-187 |
-| The state-signal/non-reaction action markers. | `_emit_state_signal`; `_emit_non_reaction` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:758-817; mcp/src/agents_remember/serving/_agent_notifier_actions.py:879-936 |
-| The compound-idle action-time marker write (ask + marker share the fresh signature). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:820-876 |
+| The state-signal/non-reaction action markers. | `_emit_state_signal`; `_emit_non_reaction` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:421-480; mcp/src/agents_remember/serving/_agent_notifier_actions.py:542-599 |
+| The compound-idle action-time marker write (ask + marker share the fresh signature). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:483-539 |
 | The regression suite covering the write helpers. | `SeatTurnTruthTests` | mcp/tests/test_terminal_evidence_projection.py:644-746 |
 
 ## Cross-Repo References

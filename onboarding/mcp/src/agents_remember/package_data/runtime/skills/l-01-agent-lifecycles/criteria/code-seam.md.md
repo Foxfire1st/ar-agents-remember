@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/code-seam.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T02:39+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T13:59+02:00 |
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -88,8 +88,18 @@ No sibling repository evidence is needed for this catalog.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260713-TES-L5 Current Delta — Coalescing Invariant Wording (synced copy)
+
+This synced runtime copy of the `code-seam` criterion now says a re-firing condition updates
+its ONE existing row "(date, tries, attempt)" — the "rung" wording is gone with the retired
+escalation ladder. The escalation-storm catching evidence remains as historical D4 seed, not
+a live mechanism.
+
 ## Update History
 
+- 2026-08-09T13:59+02:00 — 260713-TES-L5 curator completion round 2: refreshed this synced
+  runtime copy for the code-seam coalescing-invariant wording (rung → attempt; ladder
+  retired); verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-03T03:59:59+02:00 — Curated 6 citation claims (3 table rows, 3 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 

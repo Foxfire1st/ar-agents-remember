@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T13:59+02:00 |
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -464,8 +464,18 @@ unchanged.
 
 The dashboard route absorbed the L7 live-thinking change on top of the L8 split: the conversation-timeline family now renders one coalesced live `thinking` indicator per active turn (`collapse.ts` stable-row refactor + `ThinkingItem` animated indicator), with acceptance pins in `liveThinking.test.tsx` and `collapse.test.ts`. No dashboard file is over the file-size hard limit; the detector's `dashboard/src` TS/TSX scope is enforced by the project wrapper.
 
+### 260713-TES-L5 Route Impact — Regenerated Projection Schema
+
+The 260713-TES-L5 change set regenerated `dashboard/src/types/projection.schema.json`: the
+`AgentPickupNode.description` now surfaces "pending / not yet landed" (N16 turn-boundary
+landing; `operator_inbox_consume` attribution-only; sweep predicates never read the
+projection).
+
 ## Update History
 
+- 2026-08-09T13:59+02:00 — 260713-TES-L5 route impact: recorded the regenerated projection
+  schema (`AgentPickupNode` landing semantics; attribution-only consume). Verification
+  metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the top-bar badge and store field were
   renamed to `AgentNotifierHeartbeatBadge` / `agentNotifierHeartbeat` with
   `agent-notifier ok/stale` wording and `data-testid="agent-notifier-heartbeat"`; the store

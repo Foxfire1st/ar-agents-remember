@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_facade_surface.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T01:21+02:00                                            |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`                                        |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                        |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -38,8 +38,24 @@ Mechanical facade-surface pin (260731-EFA-L7 F1 / reviewer CS-6): every split fa
 | --- | --- | --- |
 | The pinned base commit. | `BASE_COMMIT` | mcp/tests/test_facade_surface.py:23-23 |
 
+## 260713-TES-L5 Current Delta — L5 Removed Names Pinned
+
+`REMOVED_FACADE_NAMES` grows the L5 intended deletions for
+`agents_remember.kernel.agentic_settings` (the whole escalation family: `EscalationSettings`,
+`KNOWN_ESCALATION_*`, `DEFAULT_ESCALATION_*`, `DEFAULT_RESPAWN_AFTER_RUNG`,
+`_parse_escalation*`, `_parse_respawn_after_rung`) and for
+`agents_remember.serving.agent_notifier` (`_auto_nudge`, `_escalate_rung`, `_respawn_suspect`,
+`_rung_entry`, `_resolve_ladder_terminal`, `_mark_expectation_missed`,
+`_ladder_terminal_and_dead`, `_delivery_failure_still_retrying`, `EscalationSchedule`,
+`_INACTIVE_EXPECTATION_KINDS`, `evaluate_escalation_findings`,
+`evaluate_expectation_findings`, `evaluate_ladder_terminal_findings`,
+`DEFAULT_ESCALATION_*`, `_nudge_reason`).
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the L5 additions to
+  `REMOVED_FACADE_NAMES` for the settings and notifier facades. Verification metadata pinned
+  until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded `REMOVED_FACADE_NAMES` — the pin's
   deliberate-removal allowlist for `_nudge_reason`, `evaluate_turn_report_findings`, and
   `turn_report_path_for_leaf_key` from the agent-notifier facade. Verification metadata pinned

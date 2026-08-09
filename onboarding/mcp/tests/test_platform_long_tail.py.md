@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_platform_long_tail.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-09T06:48+02:00                     |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -68,8 +68,17 @@ appends nothing and the caller sees the terminal row back.
 | --- | --- | --- |
 | The sibling refusal collection for provider/seed/dispatch paths. | `CgcBackendPortsTests` | mcp/tests/test_platform_edge_refusals.py:76-123 |
 
+## 260713-TES-L5 Current Delta — Escalation Settings Refused Loud
+
+`EscalationSettingsTests` becomes `RetiredEscalationSettingsTests`: any settings file that
+sets the `orchestration.escalation` family (or `respawnAfterRung`) fails loud as an unknown
+key; the rung/SLA parse tests are deleted with the family.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the escalation-family fail-loud
+  retirement tests in the long-tail settings suite. Verification metadata pinned until
+  closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the renewal fixture swap to the
   formal `landed` terminal (mark_landed; the consumed fixture is gone with the N16 consume
   demotion). Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.

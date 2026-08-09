@@ -6,8 +6,8 @@
 | path | skills/l-01-agent-lifecycles/SKILL.md |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/overview.md |
 
 ## Governing Overview
@@ -42,6 +42,22 @@ No meaningful cross-repo references.
 
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the ladder retirement in the
+## 260713-TES-L5 Current Delta — Fact-Relay Supervision Doctrine
+
+The notify-and-stop safety section no longer names the escalation ladder: the agent-notifier
+sweep evaluates seat-state facts on its own mechanical tick and relays them to owners
+(turn-ended/completed state-signals, compound-idle, non-reaction residue); the timed
+escalation ladder (renudge → skip-level → architect custody, then respawn) is retired, and
+no role watches or nudges on its own initiative.
+
+## Update History
+
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the ladder retirement in the
+  silence-supervision doctrine — the agent-notifier sweep relays seat-state facts
+  (turn-ended/completed state-signals, compound-idle, non-reaction residue) and owners
+  interpret; the timed escalation ladder (renudge/skip-level/respawn) is retired, so
+  notify-and-stop safety rests on the fact relay, not a ladder. Verification metadata pinned
+  until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-

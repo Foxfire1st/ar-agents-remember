@@ -6,8 +6,8 @@
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -42,11 +42,28 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `$defs` block contains all reusable projection schema definitions. | "$defs" | dashboard/src/types/projection.schema.json:2-2 |
-| `ActionAvailability` declares reducer-decided action safety for the cockpit. | "ActionAvailability" | dashboard/src/types/projection.schema.json:3-3 |
-| `AgentPickupNode` declares a pending unacked dashboard response. | "AgentPickupNode" | dashboard/src/types/projection.schema.json:47-47 |
+| The `$defs` block contains all reusable projection schema definitions. | "\"$defs\": {" | dashboard/src/types/projection.schema.json:2-2 |
+| `ActionAvailability` declares reducer-decided action safety for the cockpit. | "\"ActionAvailability\": {" | dashboard/src/types/projection.schema.json:3-3 |
+| `AgentPickupNode` declares a pending unacked dashboard response. | "\"AgentPickupNode\": {" | dashboard/src/types/projection.schema.json:47-47 |
 
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the regenerated schema — the
+## 260713-TES-L5 Current Delta — Regenerated AgentPickupNode Description
+
+The generated schema's `AgentPickupNode.description` now carries the N16 landing semantics:
+pending rows wait for a turn-boundary landing (the system acks), `operator_inbox_consume` is
+an optional attribution marker with nothing mechanical attached, and the sweep predicates read
+the stores directly and never this projection. Regenerated via `scripts/sync-projection-types.py`
+from the `AgentPickupNode` docstring in `observer/projection.py`; codegen-current per the worker
+report and reviewer verification.
+
+## Update History
+
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the regenerated schema — the
+  `AgentPickupNode.description` rides the Python docstring rewrite (turn-boundary landing,
+  attribution-only consume, sweep predicates never read the projection), regenerated via
+  `scripts/sync-projection-types.py` and codegen-current. Verification metadata pinned until
+  closeout stamps the 260713-TES-L5 commit.
 - 2026-08-05T03:50+02:00 — 260731-EFA-L6 batch B curator: corrected the generated-schema source-of-truth invariant to name the Python wire schemas and generator script, matching the frozen snapshot.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new generated schema; anchors derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

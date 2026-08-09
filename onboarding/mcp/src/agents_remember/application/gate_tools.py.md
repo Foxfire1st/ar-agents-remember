@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/gate_tools.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -104,4 +104,18 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the N16 wording refresh —
+## 260713-TES-L5 Current Delta — Landing Vocabulary In Gate Wait
+
+`gate_response_wait_tool`'s docstring now says returned inbox entries land at the recipient's
+turn boundary and `operator_inbox_consume` is an optional attribution marker, never a
+mechanical ack. The verdict-by deadline surface (gate-open expectation row) is unchanged.
+
+## Update History
+
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the N16 wording refresh —
+  `gate_response_wait_tool` says returned inbox entries land at the recipient's turn boundary
+  and `operator_inbox_consume` is an optional attribution marker, never a mechanical ack
+  (the consume-as-ack sentence is gone). Verification metadata pinned until closeout stamps
+  the 260713-TES-L5 commit.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
