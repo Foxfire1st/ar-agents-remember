@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_chats_l5_hardening.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T12:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -117,7 +117,7 @@ repository-owned and cited below.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The H1 quarantine under test: `_observe_control_snapshot` contains the per-entry synchronizer failure; `LivenessProbe` (L71) is the sweeper's probe parameter object. | `LivenessProbe` | mcp/src/agents_remember/serving/terminal_liveness.py:70-84; mcp/src/agents_remember/serving/terminal_liveness.py:371-421 |
+| The H1 quarantine under test: `_observe_control_snapshot` contains the per-entry synchronizer failure; `LivenessProbe` (L71) is the sweeper's probe parameter object. | `LivenessProbe` | mcp/src/agents_remember/serving/terminal_liveness.py:85-106 |
 | The synchronizer whose `observe` raises on the orphan completion (contract left intact). | `observe` | mcp/src/agents_remember/serving/hosted_interactions.py:59-61 |
 | The H2/F4 store pin under test: `_preserved_input_authority` keeps the user-item authority triple intact. | `_preserved_input_authority` | mcp/src/agents_remember/serving/conversation/active/store.py:54-74 |
 | The validator (`preserve_input_authority`) whose violation the split item raises at re-validation. | `preserve_input_authority` | mcp/src/agents_remember/serving/conversation/_models_blocks.py:197-248 |

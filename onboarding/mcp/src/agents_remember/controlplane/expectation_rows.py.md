@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-08-01T20:15+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -92,9 +92,11 @@ deadline expired instead of collapsing different roles on one leaf.
 
 ### Logic
 
-`ExpectationKind` is `briefed-by | turn-report-by | verdict-by | ack-by` — kept in sync BY HAND
-with `KNOWN_EXPECTATION_KINDS` in `kernel/agentic_settings.py` (duplicated there to avoid a
-kernel<->controlplane import cycle; a future refactor should watch for drift between the two).
+`ExpectationKind` is `briefed-by | turn-report-by | verdict-by | ack-by` — the `turn-report-by`
+value is RETAINED in this Literal for legacy-row parse compatibility (260713-TES-L2), while
+`KNOWN_EXPECTATION_KINDS` in `kernel/agentic_settings.py` no longer lists it (no new rows are
+written; the settings surface and the record Literal are now intentionally asymmetric until the
+L4 schema migration).
 `ExpectationRow` is a strict Pydantic snapshot: `kind`, `state` (`pending | met | missed`),
 `dueAt`, the dispatch surface's own `sourceId` (a spawned session id, a gate id, or an inbox entry
 id — lets a sweep or dashboard resolve straight back to the thing the row is a deadline FOR),
@@ -196,6 +198,10 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the store-retained disposition —
+  the `turn-report-by` Literal stays for legacy parse compatibility while the settings surface
+  and dispatch writes retire it; `briefed-by` no longer drives findings. Verification metadata
+  pinned until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
   anchors, converted the history `read_expectation_rows` citation, and corrected the

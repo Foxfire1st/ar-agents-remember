@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/control/api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T09:28+02:00 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash |  `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate |  2026-08-09T02:17:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,6 +68,14 @@ closeout.
 
 ### Logic
 
+**260713-TES-L2 interrupt provenance stamp.** `conversation_interrupt` cit:([`conversation_interrupt`], mcp/src/agents_remember/serving/conversation/control/api.py:151-187), after the
+interrupt operation acknowledges (`acknowledgement != "rejected"`), stamps the seat row through
+`seat_turn_truth.record_interrupt_request` (developer, request time, requested turn id) on a
+worker thread. The stamp is the N9 origin evidence the lifted terminal truth later attributes an
+interrupted outcome to. It runs after a successful interrupt and is best-effort (accepted note
+F6): the branch is `# pragma: no cover`-excluded and a catalog-write failure would surface as a
+500 after the operation landed, leaving no origin stamp.
+
 The cit:([`router`], mcp/src/agents_remember/serving/conversation/control/api.py:75-78) mounts at `/api/terminal/{ar_session_id}` with the structured-control tag. The
 seventeen routes are covered by cit:([`conversation_interrupt`, `conversation_interrupt_status`, `conversation_interrupt_reconcile`, `conversation_operation_queue`, `conversation_withdraw`, `conversation_withdraw_status`, `conversation_withdraw_reconcile`, `conversation_pending_recoveries`, `conversation_fetch_recovery`, `conversation_ack_recovery`, `conversation_stage_attachments`, `conversation_rebind_attachment`, `conversation_attachment_status`, `conversation_attachment_reconcile`, `conversation_submit`, `conversation_policy`, `conversation_telemetry`], mcp/src/agents_remember/serving/conversation/control/api.py:151-181; mcp/src/agents_remember/serving/conversation/control/api.py:184-215; mcp/src/agents_remember/serving/conversation/control/api.py:218-249; mcp/src/agents_remember/serving/conversation/control/api.py:252-275; mcp/src/agents_remember/serving/conversation/control/api.py:280-311; mcp/src/agents_remember/serving/conversation/control/api.py:314-343; mcp/src/agents_remember/serving/conversation/control/api.py:346-375; mcp/src/agents_remember/serving/conversation/control/api.py:378-403; mcp/src/agents_remember/serving/conversation/control/api.py:406-433; mcp/src/agents_remember/serving/conversation/control/api.py:436-464; mcp/src/agents_remember/serving/conversation/control/api.py:482-528; mcp/src/agents_remember/serving/conversation/control/api.py:531-564; mcp/src/agents_remember/serving/conversation/control/api.py:567-595; mcp/src/agents_remember/serving/conversation/control/api.py:598-626; mcp/src/agents_remember/serving/conversation/control/api.py:635-682; mcp/src/agents_remember/serving/conversation/control/api.py:685-708; mcp/src/agents_remember/serving/conversation/control/api.py:711-734) across R1-R6. Each handler invokes the two L0
 dependencies (`get_conversation_runtime`, `resolve_conversation_authorization`), gets the per-app
@@ -75,8 +83,8 @@ service via `conversation_control_service`, and delegates to the owning module (
 withdrawals, attachments, policy, telemetry, queue_projection). cit:([`_map_typed_error`], mcp/src/agents_remember/serving/conversation/control/api.py:124-141) maps the
 `_TYPED_ERRORS` tuple (L80-L88 — AuthorityError, ConversationCompositionError,
 HarnessBridgeEpochMismatchError, HarnessControlError, ControlRefError, ControlOperationError,
-SessionResolutionError) to the serving status idiom via cit:([`_error`], mcp/src/agents_remember/serving/conversation/control/api.py:117-121); cit:([`_dump`], mcp/src/agents_remember/serving/conversation/control/api.py:144-145) serializes
-wire models with `exclude_none=True`. Multipart staging parses through cit:([`_parse_uploads`], mcp/src/agents_remember/serving/conversation/control/api.py:737-748),
+SessionResolutionError) to the serving status idiom via cit:([`_error`], mcp/src/agents_remember/serving/conversation/control/api.py:117-121); cit:([`_dump`], mcp/src/agents_remember/serving/conversation/control/api.py:146-147) serializes
+wire models with `exclude_none=True`. Multipart staging parses through cit:([`_parse_uploads`], mcp/src/agents_remember/serving/conversation/control/api.py:750-761),
 cit:([`_parse_metadata_array`], mcp/src/agents_remember/serving/conversation/control/api.py:751-762), and cit:([`_upload_for`], mcp/src/agents_remember/serving/conversation/control/api.py:765-786) with the `MAX_SUBMIT_ASSET_BYTES`
 bounded read. The request bodies
 `InterruptBody`/`WithdrawStatusBody`/`RecoveryFetchBody`/`RecoveryAckBody`/cit:([`RebindBody`], mcp/src/agents_remember/serving/conversation/control/api.py:112-114) are
@@ -108,8 +116,10 @@ wire.
 
 ### Todos
 
-None. (The route shell was filled by 260718-CHATS-L3; the seventeen routes are pinned by the
-foundation suite.)
+The route shell was filled by 260718-CHATS-L3; the seventeen routes are pinned by the
+foundation suite. F6 (accepted, 260713-TES-L2): the interrupt provenance stamp is untested
+(`# pragma: no cover` on the rejected-ack seam) and post-mutation; a later leaf should test the
+stamp and decide the 500-vs-best-effort behavior.
 
 ## Docs References
 
@@ -175,6 +185,9 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the dashboard interrupt provenance
+  stamp (`record_interrupt_request` after a non-rejected acknowledgement) and the accepted F6
+  note. Verification metadata pinned until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded the async offloaded resolution —
   `service.resolve_entry` is `async def` with the catalog read on `asyncio.to_thread`, awaited from
   all fifteen control-layer call sites — so no control route queues on the catalog RLock on the

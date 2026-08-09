@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:15+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`       |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -129,7 +129,7 @@ the reviewed task evidence for any current behavioral claim.
 | The shared row builder used for the F9 appeared-row rerenders. | "function catalogRow" | dashboard/src/test/fixtures/catalogRows.ts:10-10 |
 | The store the 200-path evidence assertion reads. | "export const sessionCockpitStore" | dashboard/src/data/sessionCockpitStore.ts:588-588 |
 | `HarnessInfo` — the three-field type the `HARNESSES` const is annotated with, and its runtime `parseHarness` validator. | "export interface HarnessInfo"; "function parseHarness" | dashboard/src/data/harnessCatalog.ts:5-5; dashboard/src/data/harnessCatalog.ts:22-22 |
-| `DetectedHarness` — the server model that fixes the three fields; `WireResponse` is what makes it `extra="forbid"`. | `DetectedHarness`; `WireResponse` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:355-360 |
+| `DetectedHarness` — the server model that fixes the three fields; `WireResponse` is what makes it `extra="forbid"`. | `DetectedHarness`; `WireResponse` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:366-371 |
 | The guard whose vocabulary is discovered from a `// TypeScript mirror of` header, and its own note naming the five unmarked modules `harnessCatalog.ts` is one of. | "const MIRROR_MARKER"; "harnessCatalog.ts" | dashboard/src/test/wireFixtureGuard.ts:59-59; dashboard/src/test/wireFixtureGuard.ts:108-108 |
 
 ## FEUI-L8 Reviewed Candidate Delta

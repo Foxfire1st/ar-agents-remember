@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -286,6 +286,16 @@ lands in `docs/design/observable-lifecycle.md` and the settings table in
 `docs/reference/settings-json.md`. New scale regression: a 2000-row dead-seat-storm sim in
 `mcp/tests/test_liveness_simulations.py`. Results filed in
 `notes/reports/260707-HFX2-L8-worker-report.md` and `-reviewer-report.md`.
+260713-TES-L2 (worker-state relay) crosses the same package routes: `serving/` gains the
+terminal-evidence lift (`terminal_evidence.py`), the relay predicates (`state_signals.py`), the
+owner-signal posting primitive (`owner_signals.py`), and the catalog write seam
+(`seat_turn_truth.py`); `serving/terminal_catalog.py` and the response contract carry the
+terminal turn truth; `controlplane/` gains the `state-signal` inbox kind and
+`state_signal_landed` terminality; `kernel/_agentic_settings_core.py` retires
+`turn-report-by` from the expectation settings surface; and `mcp/tests/` adds three forcing
+suites. Route-local detail lives in the `serving/`, `controlplane/`, and `mcp/tests/`
+overviews and their sidecars.
+
 260707-HFX2-L7 is the hotfix release tail for `3.0.0rc4`: package/version strings move from rc3 to
 rc4, the packaged lifecycle doctrine refines Developer Clarification Triage to read the active
 queue before choosing note-only handling, and the serving supervisor defers generic unacked
@@ -1491,6 +1501,11 @@ per leaf.
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: the worker-state relay crossed this
+  package's serving/controlplane/kernel/tests routes (projection lift, state-signal delivery,
+  landed terminality, turn-report-by retirement). Route-local detail lives in the serving,
+  controlplane, and mcp/tests overviews and their sidecars. Verification metadata pinned until
+  closeout stamps the 260713-TES-L2 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the supervisor → agent-notifier rename
   crossed this package's kernel/serving/controlplane/dashboard routes; the settings family is
   `orchestration.agentNotifier` (explicit legacy alias), events are dual-emitted under

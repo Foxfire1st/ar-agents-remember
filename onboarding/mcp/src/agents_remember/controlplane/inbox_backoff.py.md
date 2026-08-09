@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/inbox_backoff.py`            |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-31T00:00+02:00                                             |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T01:21+02:00                                             |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -37,8 +37,9 @@ in-memory timer.
 
 `is_ladder_resolved(entry)` is the explicit terminal predicate for rows that reached the terminal
 escalation rung against a non-live target seat. `is_due(entry, now=)` is true only for a `pending`
-entry that is not ladder-resolved, whose `deliveryState` is one of the redeliverable states, and
-whose `nextAttemptAt` has elapsed (or is unset, i.e. never attempted).
+entry that is not ladder-resolved AND not `state_signal_landed` (260713-TES-L2), whose
+`deliveryState` is one of the redeliverable states, and whose `nextAttemptAt` has elapsed (or is
+unset, i.e. never attempted).
 `is_rate_limited(entry, now=, rate_limit_seconds=)`
 mirrors the `OrchestrationNudgeStore.record` rate-limit pattern, but now validates the supplied
 rate-limit value through the same 900-second floor helper
@@ -98,6 +99,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the `state_signal_landed` exclusion
+  in `is_due` — landed relay rows never re-enter the redelivery backoff. Verification metadata
+  pinned until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the two `n/a`-anchor
   table citations with exact anchors (`is_rate_limited`, `_elapsed_seconds`) and fixer-generated

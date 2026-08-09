@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-04T03:03+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate |  2026-08-09T02:17:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ The sibling API module owns the registered control routes; the package overview 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sibling `api.py` owns the control surface's `APIRouter` instance. | "router = APIRouter" | mcp/src/agents_remember/serving/conversation/control/api.py:75-75 |
+| The sibling `api.py` owns the control surface's `APIRouter` instance. | "router = APIRouter" | mcp/src/agents_remember/serving/conversation/control/api.py:77-77 |
 | That router uses the `/api/terminal/{ar_session_id}` prefix and registers exactly seventeen decorated routes, from `conversation_interrupt` through `conversation_telemetry`. | `router`; `conversation_interrupt`; `conversation_interrupt_status`; `conversation_interrupt_reconcile`; `conversation_operation_queue`; `conversation_withdraw`; `conversation_withdraw_status`; `conversation_withdraw_reconcile`; `conversation_pending_recoveries`; `conversation_fetch_recovery`; `conversation_ack_recovery`; `conversation_stage_attachments`; `conversation_rebind_attachment`; `conversation_attachment_status`; `conversation_attachment_reconcile`; `conversation_submit`; `conversation_policy`; `conversation_telemetry` | mcp/src/agents_remember/serving/conversation/control/api.py:75-78; mcp/src/agents_remember/serving/conversation/control/api.py:151-181; mcp/src/agents_remember/serving/conversation/control/api.py:184-215; mcp/src/agents_remember/serving/conversation/control/api.py:218-249; mcp/src/agents_remember/serving/conversation/control/api.py:252-275; mcp/src/agents_remember/serving/conversation/control/api.py:280-311; mcp/src/agents_remember/serving/conversation/control/api.py:314-343; mcp/src/agents_remember/serving/conversation/control/api.py:346-375; mcp/src/agents_remember/serving/conversation/control/api.py:378-403; mcp/src/agents_remember/serving/conversation/control/api.py:406-433; mcp/src/agents_remember/serving/conversation/control/api.py:436-464; mcp/src/agents_remember/serving/conversation/control/api.py:482-528; mcp/src/agents_remember/serving/conversation/control/api.py:531-564; mcp/src/agents_remember/serving/conversation/control/api.py:567-595; mcp/src/agents_remember/serving/conversation/control/api.py:598-626; mcp/src/agents_remember/serving/conversation/control/api.py:635-682; mcp/src/agents_remember/serving/conversation/control/api.py:685-708; mcp/src/agents_remember/serving/conversation/control/api.py:711-734 |
 | The governing route-local overview for the implemented control slice. | `# Structured Conversation Control Route Overview` | onboarding/mcp/src/agents_remember/serving/conversation/control/overview.md:1-433 |
 

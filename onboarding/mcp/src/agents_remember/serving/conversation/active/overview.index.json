@@ -96,7 +96,7 @@
       "mcp/src/agents_remember/serving/conversation/active/",
       "mcp/src/agents_remember/serving/conversation/active/overview.md",
       "conversation/overview.md",
-      "a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f",
+      "7af76249ff1aa728d34a6e81c5f09c8bcb797484",
       "expectedBridgeEpoch",
       "projectors/",
       "ConversationStatusService",
@@ -111,13 +111,13 @@
       "unverified",
       "gap {requiresRepage, closeAfterEvent",
       "block_id",
-      "before",
-      "after",
-      "Last-Event-ID",
-      "resume-replay",
-      "ordering-fault",
-      "role==\"user",
-      "claude:echo: unrecognized submission echo shape"
+      "snapshot_seat_turn_state",
+      "TurnTerminalEvidence",
+      "interrupted",
+      "failed",
+      "settling",
+      "_terminal_turn_state",
+      "before"
     ]
   },
   "fallback": {

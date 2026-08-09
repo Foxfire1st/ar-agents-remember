@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/client.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-27T14:20+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`       |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ reviewed task evidence for any current behavioral claim.
 | The store that threads `PageResult` errors to `errorBySession`/the banner. | "export const LRU_LIMIT" | dashboard/src/data/conversation/store.ts:42-42 |
 | The SSE controller that consumes `conversationEventsUrl`. | "export function openConversationStream" | dashboard/src/data/conversation/stream.ts:209-209 |
 | The interrupt hook that discriminates `ControlResult` into ack/settlement/refusal. | "type ControlResult," | dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:25-25 |
-| The landed active + control routes this client calls. | "async def conversation_page", "def _dump" | mcp/src/agents_remember/serving/conversation/active/api.py:127-127; mcp/src/agents_remember/serving/conversation/control/api.py:144-144 |
+| The landed active + control routes this client calls. | "async def conversation_page", "def _dump" | mcp/src/agents_remember/serving/conversation/active/api.py:127-127; mcp/src/agents_remember/serving/conversation/control/api.py:146-146 |
 
 ## Cross-Repo References
 

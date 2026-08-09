@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00                     |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T01:21+02:00                     |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ incident, reusing the exact `AgentNotifierContext`/store-fixture shape `test_age
 `LadderWalkIntegrationTests` already establishes rather than inventing a second harness. Nine test
 classes, one per incident:
 
-- **`NeverBriefedSeatTests`** (P-5/P-14) — an overdue `briefed-by` expectation row nudges, then
+- **`NeverAckedSeatTests`** (P-5/P-14) — an overdue `ack-by` expectation row nudges, then
   escalates to rung 3 within 6 simulated ticks (~12 min).
 - **`ChipStackedDeliveryStallTests`** (P-16) — **hybrid**: classification is proven at the
   predicate-unit layer (`classify_pane_signal` / `evaluate_pane_findings` with an injected
@@ -138,7 +138,7 @@ P-15 fixture-zoo mandate (leaf task doc R3) and the liveness report
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sweep entry point every scenario drives across multiple ticks. | `run_agent_notifier_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:758-758; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:395-395; mcp/src/agents_remember/serving/agent_notifier.py:96-241 |
+| The sweep entry point every scenario drives across multiple ticks. | `run_agent_notifier_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:757-757; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:358-358; mcp/src/agents_remember/serving/agent_notifier.py:106-205 |
 | The pane-signal classifier the two hybrid scenarios call directly (capturer not injectable through the sweep). | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | The escalation ladder every incident's rung-3 assertion walks through. | `rung_due`; `next_step` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152 |
 | The self-liveness heartbeat store and staleness banner `KilledSupervisorDaemonTests` drives. | `AgentNotifierHeartbeatStore`; `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:141-157 |
@@ -162,6 +162,10 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the scenario rename
+  `NeverBriefedSeatTests` → `NeverAckedSeatTests` (fixture kind now `ack-by`, matching the
+  retired briefed-by finding surface). Verification metadata pinned until closeout stamps the
+  260713-TES-L2 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 "- 2026-08-03T03:06:10+02:00 — W3-B05 curator: resolved 3 Tier-2 table findings with exact anchors and current source paths; fixer generated all final ranges.

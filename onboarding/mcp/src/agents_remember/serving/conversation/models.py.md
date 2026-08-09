@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/models.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -137,7 +137,7 @@ authoritative behavioral evidence for this internal grammar.
 | Foundation tests prove the types participate in exactly two ports and that installed runtime fixtures are allowlisted evidence, never enablement. | `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement` | mcp/tests/test_conversation_foundation.py:163-188 |
 | The two read protocols consume these normalized models without owning control behavior. | "class ConversationLibraryPort" | mcp/src/agents_remember/serving/conversation/ports.py:59-59 |
 | The `active/api` serializer emits `exclude_none=True`, which drops the six required-and-nullable fields' nulls. | "page.model_dump" | mcp/src/agents_remember/serving/conversation/active/api.py:155-155 |
-| The `control/api` serializer emits `exclude_none=True`, which drops the six required-and-nullable fields' nulls. | "model.model_dump" | mcp/src/agents_remember/serving/conversation/control/api.py:145-145 |
+| The `control/api` serializer emits `exclude_none=True`, which drops the six required-and-nullable fields' nulls. | "model.model_dump" | mcp/src/agents_remember/serving/conversation/control/api.py:147-147 |
 | The `library/api` serializer deliberately keeps nulls (`model_dump(mode="json", by_alias=True)` without `exclude_none`). | "value.model_dump" | mcp/src/agents_remember/serving/conversation/library/api.py:316-316 |
 | The declarations that made these models the routes' stated contract. | "class WireResponse" | mcp/src/agents_remember/serving/response_contract.py:88-88 |
 | The suite that drove the real bodies through them. | "class ServingRouteInventoryTests" | mcp/tests/test_serving_response_conformance.py:500-500 |

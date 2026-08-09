@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-01T19:10+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -238,7 +238,9 @@ immortal-pending retention: pending rows expire after 48 hours, the folded inbox
 current ids, and the durable artifact—not the row—is the record. R2 adds `expectation_rows.py`
 (`ExpectationRowStore`/`write_expectation_row`): every dispatch surface (spawn, gate open, signal
 post) atomically writes a durable what-must-happen-by-when row (kinds `briefed-by` /
-`turn-report-by` / `verdict-by` / `ack-by`), configurable per-kind SLA via
+`verdict-by` / `ack-by`; `turn-report-by` is retained only as a legacy record Literal since
+260713-TES-L2 — no new rows are written and the settings surface no longer lists it),
+configurable per-kind SLA via
 `orchestration.expectations` in `kernel/agentic_settings.py`. R3 adds `inbox_backoff.py`: pure
 backoff-ladder math + a per-target rate-limit gate mirroring `OrchestrationNudgeStore`'s pattern,
 consumed by `OperatorInboxStore.list_redeliverable`/`record_delivery`. R4 adds
@@ -247,6 +249,16 @@ consumed by `OperatorInboxStore.list_redeliverable`/`record_delivery`. R4 adds
 onto new `OperatorInboxEntry.ownerRole`/`ownerAgentId`/`ownerLifecycleId` fields at post time.
 Neither this leaf's redelivery driver nor its ladder escalation exist here — L2 (a sibling leaf)
 drives the actual sweep; this route only builds the durable substrate + surfacing it reads.
+
+**260713-TES-L2 — the state-signal substrate and landed terminality.** `InboxMessageKind` gains
+`state-signal` (N12), and `operator_inbox_records.state_signal_landed` makes correlated adapter
+acceptance at a turn boundary terminal ON THE RELAY PATH while the row state stays `pending`
+(the formal `landed` state rides the L4 schema migration); `acceptance=queued` is not a landing.
+`record_delivery` clears `nextAttemptAt` for landed rows, `inbox_backoff.is_due` excludes them,
+and `inbox_reclamation._eligible` excludes them — no redelivery, ladder, or reclamation may
+re-touch a landed relay row. The worker→manager artifact/SLA interpretation
+(`turn-report-by`/`turn-report-stale`) is retired (N8/R6): `briefed-by` rows remain dashboard
+provenance but no longer drive notifier findings.
 **260707-HFX2-L4** lands that ladder escalation: `escalation_ladder.py::rung_due`/`next_step` climb
 an unacked row rung 1 (renudge) -> rung 2 (skip-level, via new `signal_routing.
 derive_skip_level_owner` -- a SEPARATE two-hop walk from L1's one-hop `derive_signal_owner`, walking
@@ -371,14 +383,14 @@ response models are `models/operator_inbox.py`.
 | Gate policy validation and delegated decision checks. | "class GatePolicy:" | mcp/src/agents_remember/controlplane/gate_policy.py:52-52 |
 | The `gate_*` payload builders that drive this substrate. | "def gate_create_payload" | mcp/src/agents_remember/mcp/tools/gates.py:34-34 |
 | Gate response models. | "class GateCreateResponse" | mcp/src/agents_remember/models/gates.py:18-18 |
-| The inbox record/store pair provides the external-chat pull return channel. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:54-54; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-53 |
+| The inbox record/store pair provides the external-chat pull return channel. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:67-67; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-53 |
 | The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | "class AttentionDismissalStore" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-45 |
 | The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:159-159 |
 | The `ar-durable-store/1.0` contract every JSONL store in this route implements, and the only module in the package that appends, rewrites, builds a temp path or imports `fcntl`. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:45-45 |
 | Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. | `prepare_mcp_process`; `_dev_app`; `run` | mcp/src/agents_remember/application/server_startup.py:20-23; mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:161-196 |
 | `_reclaim_gate_log` at L453-L473: gate compaction moved here from the dashboard projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly. | "def gate_decide_payload" | mcp/src/agents_remember/mcp/tools/gates.py:67-67 |
 | The projection tick that no longer rewrites anything: `read_gates` at L104 folds through the tolerant `projected_current`, and `read_expectation_rows` at L193 uses `pending_for_projection`. | "def read_gates(coordination_root: Path, *, now: datetime"; "def read_expectation_rows(" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104; mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193 |
-| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. (`evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal`) |"def evaluate_escalation_findings"|mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:336-336|
+| The sole caller of the ladder + orphan-detection modules: evaluates the escalation/dead-upstream/ladder-terminal predicates, performs delivery, and stamps the durable `advance_rung`/retire/ladder-resolved transitions. (`evaluate_escalation_findings`; `_escalate_rung`; `_respawn_suspect`; `_resolve_ladder_terminal`) |"def evaluate_escalation_findings"|mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:295-295|
 
 ## 260712-TRH-L4 Route Impact
 
@@ -431,6 +443,10 @@ the liveness sweep's synchronizer side effect now follows its batch commit.
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: recorded the state-signal substrate
+  (`InboxMessageKind`, `state_signal_landed`, backoff/reclamation/transition exclusions) and
+  the turn-report-by retirement. Verification metadata pinned until closeout stamps the
+  260713-TES-L2 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: `supervisor_signals.py` renamed to
   `agent_notifier_signals.py` with `AgentNotifierSignal*` identifiers; durable names
   (`supervisor-signals.jsonl`, `store="supervisor-signals"`, `ar-supervisor-signal/v1`) retained

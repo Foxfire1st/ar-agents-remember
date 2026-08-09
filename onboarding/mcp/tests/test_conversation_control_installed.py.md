@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_control_installed.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -93,7 +93,7 @@ The suite drives the registered routes against the live installed adapters.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The seventeen registered routes proven live. | "async def conversation_interrupt(" | mcp/src/agents_remember/serving/conversation/control/api.py:156-156 |
+| The seventeen registered routes proven live. | "async def conversation_interrupt(" | mcp/src/agents_remember/serving/conversation/control/api.py:158-158 |
 | The interrupt ledger whose live settlement this proves. | "class InterruptRecord:" | mcp/src/agents_remember/serving/conversation/control/operations.py:73-73 |
 | The control capability gate whose Claude version-mismatch honesty this pins. | "def control_capabilities_for(" | mcp/src/agents_remember/serving/conversation/control/capabilities.py:318-318 |
 
@@ -113,8 +113,8 @@ No meaningful cross-repo references found.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations that the same
   hardening sweep moved on the other side of the link. `control/api.py` L57-L570 became L131-L631 —
-  the seventeen decorated handlers from `@router.post("/conversation/interrupt")` cit:(["async def conversation_interrupt("], mcp/src/agents_remember/serving/conversation/control/api.py:156-156) through the
-  end of `conversation_telemetry` cit:(["async def conversation_telemetry("], mcp/src/agents_remember/serving/conversation/control/api.py:716-716), counted on the file and excluding the multipart helpers
+  the seventeen decorated handlers from `@router.post("/conversation/interrupt")` cit:(["async def conversation_interrupt("], mcp/src/agents_remember/serving/conversation/control/api.py:158-158) through the
+  end of `conversation_telemetry` cit:(["async def conversation_telemetry("], mcp/src/agents_remember/serving/conversation/control/api.py:729-729), counted on the file and excluding the multipart helpers
   below them. `control/operations.py` L87-L449 became L95-L511, the acknowledge-plus-settle
   machinery this suite proves live: `interrupt`/`interrupt_status` through `_drive_interrupt`,
   `_observe_settlement`, and the per-harness terminal readers ending at `_pi_stop_reason` cit:(["async def _pi_stop_reason("], mcp/src/agents_remember/serving/conversation/control/operations.py:484-484) —

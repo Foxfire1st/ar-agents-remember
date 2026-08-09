@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 
 ## What This Area Is
 
@@ -118,6 +118,13 @@ in the sibling `projectors/` route.
 ## Main Flows
 
 ### Authorized page
+
+**260713-TES-L2 terminal precedence.** `status.py`'s `snapshot_seat_turn_state` accepts a
+lifted `TurnTerminalEvidence` and settles the seat state from the canonical terminal outcome
+(interrupted → `interrupted`, failed → `failed`, else `settling`) instead of the snapshot's own
+turn classification for that observation; the module-level `_terminal_turn_state` is shared with
+`ConversationStatusService`. The orchestration seat projection therefore distinguishes done from
+interrupted at seat granularity (G1).
 
 1. Authorization + epoch verification; session resolution fails typed (404/409/503) before any
    projection work.
@@ -229,11 +236,11 @@ engine/store and one over a real socket.
 | The request dependencies are the only consumption seam the handlers use. | `get_conversation_runtime`; `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
 | The validated IPC reads are the only substrate channels polled. | `read_control_snapshot`; `read_control_capabilities`; `read_submission_authority`; `read_submission_status`; `read_control_transcript`; `read_control_evidence`; `read_control_native_page`; `read_submission_provenance` | mcp/src/agents_remember/serving/harness_control_client.py:119-131; mcp/src/agents_remember/serving/harness_control_client.py:134-141; mcp/src/agents_remember/serving/harness_control_client.py:144-148; mcp/src/agents_remember/serving/harness_control_client.py:151-169; mcp/src/agents_remember/serving/harness_control_client.py:330-343; mcp/src/agents_remember/serving/harness_control_client.py:346-366; mcp/src/agents_remember/serving/harness_control_client.py:369-401; mcp/src/agents_remember/serving/harness_control_client.py:404-422 |
 | The evidence/native-page/provenance products define the polled shapes. | `EvidenceFrame`; `EvidencePage`; `NativeEvidenceFrame`; `NativeEvidencePage`; `SubmissionProvenance`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/serving/harness_control_models.py:455-478; mcp/src/agents_remember/serving/harness_control_models.py:481-489; mcp/src/agents_remember/serving/harness_control_models.py:492-500; mcp/src/agents_remember/serving/harness_control_models.py:503-510; mcp/src/agents_remember/serving/harness_control_models.py:513-524; mcp/src/agents_remember/serving/harness_control_models.py:527-530 |
-| Orchestration's delegated seat projection consumes the canonical classification. | `snapshot_turn_state`; `snapshot_seat_turn_state` | mcp/src/agents_remember/serving/hosted_control_projection.py:78-101 |
+| Orchestration's delegated seat projection consumes the canonical classification. | "def snapshot_turn_state("; "def snapshot_seat_turn_state(" | mcp/src/agents_remember/serving/hosted_control_projection.py:79-104; mcp/src/agents_remember/serving/conversation/active/status.py:205-233 |
 | The foundation pin asserts exactly the three owned active routes (page, events, selected-child history) by exact path/method set. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
 | The declared response shapes and the cursor-aware refusal table the three routes spread. | `conversation_page`; `hydrate_agent_history`; `conversation_events`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/active/api.py:126-235; mcp/src/agents_remember/serving/conversation/response_contract.py:113-122 |
 | `CONVERSATION_RESPONSES` (the control table plus the two cursor refusals) and `AgentHistoryHydrated`, the model the history route's assembled 200 body had never had. | `AgentHistoryHydrated`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:675-675; onboarding/mcp/tests/overview.md:677-679 |
+| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:686-686; onboarding/mcp/tests/overview.md:688-690 |
 
 ## Cross-Repo References
 
@@ -404,6 +411,9 @@ singleflight replacement semantics, epoch verification, and identity constructio
 offload are untouched.
 
 ## Update History
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: recorded the terminal-precedence
+  parameter on the canonical seat projection (status authority + orchestration delegation).
+  Verification metadata pinned until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-08T22:45+02:00 — 260713-TES-L1 completion round 2 (curator): refreshed citation ranges and supervisor -> agent-notifier wording in this route overview body; no route-shape change. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 

@@ -6,8 +6,8 @@
 | path                   | `docs/reference/settings-json.md`       |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ spawn-surface manual.
 | Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
 | Serving app that reads supervisor settings per sweep. |"logger.exception(\"agent-notifier sweep failed; retrying next interval\")"|mcp/src/agents_remember/serving/_app_lifespan.py:107-107|
 | Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:96-241 |
-| Backoff math enforcing the shared 900-second redelivery floor documented here. | "redelivery interval" | mcp/src/agents_remember/controlplane/inbox_backoff.py:45-45 |
+| Backoff math enforcing the shared 900-second redelivery floor documented here. | "redelivery interval" | mcp/src/agents_remember/controlplane/inbox_backoff.py:48-48 |
 
 ## Update History
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_core.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-08T21:20+02:00                                            |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                                        |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T01:21+02:00                                            |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`                                        |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -50,6 +50,17 @@ Typed agentic settings models, constants, and validation primitives. The setting
 - `_require_string_list`
 - `_require_harness_id`
 
+## 260713-TES-L2 Change — Expectation-Kind Surface Retired
+
+`KNOWN_EXPECTATION_KINDS` cit:([`KNOWN_EXPECTATION_KINDS`], mcp/src/agents_remember/kernel/_agentic_settings_core.py:129-129) is now `{"briefed-by", "verdict-by", "ack-by"}` and
+`DEFAULT_EXPECTATION_SLA_SECONDS` cit:([`DEFAULT_EXPECTATION_SLA_SECONDS`], mcp/src/agents_remember/kernel/_agentic_settings_core.py:131-136) no longer carries `turn-report-by`: the settings
+surface retires the worker→manager SLA kind with the catalog-truth relay (R6). The record
+Literal in `controlplane/expectation_rows.py` keeps `turn-report-by` for legacy-row parse
+compatibility until the L4 schema migration, so the two definitions are intentionally asymmetric
+during the window.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## 260731-EFA-L17 Change
 
 The module owns the new `orchestration.qualityGate` family: `KNOWN_QUALITY_GATE_FIELDS`
@@ -72,6 +83,10 @@ orchestration family.
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the `turn-report-by` retirement
+  from `KNOWN_EXPECTATION_KINDS`/`DEFAULT_EXPECTATION_SLA_SECONDS` (legacy Literal retained in
+  the controlplane record). Verification metadata pinned until closeout stamps the
+  260713-TES-L2 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `AgentNotifierSettings` /
   `KNOWN_AGENT_NOTIFIER_FIELDS` / `DEFAULT_AGENT_NOTIFIER_*` renames and the retained legacy
   `supervisor` key in `KNOWN_ORCHESTRATION_FIELDS` for the alias window. Verification metadata

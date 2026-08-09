@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | mcp/tests/test_dispatch_brief.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | mcp/tests/overview.md |
 
 ## Governing Overview
@@ -27,8 +27,9 @@ byte-identical canonical/packaged skill copies the dispatch instructions encode.
 `test_ready_dispatch_is_inbox_rooted_and_starts_expectation_clocks` posts a `dispatch-brief`
 through `operator_inbox_post_payload` with a `HostedDelivery` seam set and asserts the durable
 row is `delivered`/`accepted`/`pending`, the submitted control prompt carries the prompt keywords
-and entry id, and the expectation rows become exactly `{ack-by, briefed-by, turn-report-by}` with
-`briefed-by` met. Receipt tests pin that a rejected adapter receipt keeps the same row pending and
+and entry id, and the expectation rows become exactly `{ack-by, briefed-by}` with
+`briefed-by` met (260713-TES-L2: `turn-report-by` is no longer written at dispatch). Receipt tests
+pin that a rejected adapter receipt keeps the same row pending and
 that an ambiguous redelivery reconciles without resubmitting. Refusal tests pin that a not-ready
 session raises before any durable row exists, that an uncommitted caller (`submit=False`) is
 recorded as adapter-rejected without touching the wire, that a closed dispatch gate keeps its own
@@ -79,6 +80,9 @@ readiness-gated, inbox-rooted contract against the serving policy module.
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the dispatch expectation-set change
+  (`{ack-by, briefed-by}`; no turn-report-by row minted). Verification metadata pinned until
+  closeout stamps the 260713-TES-L2 commit.
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: replaced the placeholder body with the actual
   suite: inbox-rooted dispatch with expectation clocks, receipt/reconciliation handling, refusal
   and no-fallback pins, and canonical/packaged skill sync equality. Recorded that imports now come

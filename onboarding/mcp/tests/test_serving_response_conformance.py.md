@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`         |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T01:21+02:00               |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`         |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -128,15 +128,18 @@ model"; its first clause is a claim about the walker, so each registration form 
 
 `GET /api/terminal/sessions` and `GET /api/harnesses` return a bare `dict`, so unlike the other 59
 FastAPI validates them for real — and a drifted payload is answered as **HTTP 500**, not passed
-through. On `/api/terminal/sessions` that is a 52-key body assembled by hand from a
+through. On `/api/terminal/sessions` that is a 63-key body assembled by hand from a
 36-optional-field dataclass that is actively grown. `_emitted_keys` therefore **AST
 scans** `TerminalCatalogEntry.to_json` (an instance cannot prove the set, because every optional key
 goes through `_present_fields` and is absent when `None`) and
 `test_the_catalog_wire_model_covers_every_key_to_json_emits` asserts set **equality in
-both directions** against `TerminalCatalogEntryWire`'s aliases, plus `len(emitted) == 52` so a scan
+both directions** against `TerminalCatalogEntryWire`'s aliases, plus `len(emitted) == 63` so a scan
 reading zero keys cannot satisfy the equality. This fires when the field is added — earlier than
 the runtime 500, and earlier than a conformance run, which only sees the fields its fixture
 happens to populate.
+
+**260713-TES-L2 key-set growth.** The eleven catalog turn-truth fields lifted the emitted-key pin
+from 52 to 63; the wire model declares them in emission order (see `response_contract.py.md`).
 
 #### The driving classes
 
@@ -218,11 +221,11 @@ modules, and everything that proves them lives here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The declared contract base and the three shared refusal tables. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:1057-1063; mcp/src/agents_remember/serving/response_contract.py:1067-1074; mcp/src/agents_remember/serving/response_contract.py:1079-1087 |
+| The declared contract base and the three shared refusal tables. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:1068-1074; mcp/src/agents_remember/serving/response_contract.py:1078-1085; mcp/src/agents_remember/serving/response_contract.py:1090-1098 |
 | The conversation surface's `CONTROL_RESPONSES` and `CONVERSATION_RESPONSES` tables. | `CONTROL_RESPONSES`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:95-108; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
 | The serving app factory and SSE generator under test. |"async def stream_events("; "def create_app("|mcp/src/agents_remember/serving/_app_common.py:112-112; mcp/src/agents_remember/serving/app.py:226-226|
 | The `StreamContractTests` suite that drives the SSE seam. | `StreamContractTests` | mcp/tests/test_serving_response_conformance.py:38-38 |
-| The producer's `_present_fields` conditionality. | `_present_fields` | mcp/src/agents_remember/serving/terminal_catalog.py:906-907 |
+| The producer's `_present_fields` conditionality. | `_present_fields` | mcp/src/agents_remember/serving/terminal_catalog.py:976-977 |
 | The catalog-entry wire model and its aliases. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:280-346 |
 | The open-status map asserted total over the declared outcomes, and the `_open_call` that indexes it directly. | `_OPEN_STATUS_BY_OUTCOME` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84 |
 | The control router and typed-error mapper. | `router`; `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:75-78; mcp/src/agents_remember/serving/conversation/control/api.py:124-141 |
@@ -242,6 +245,9 @@ type is recorded separately below as an in-repo boundary.
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the 52→63 emitted-key pin growth
+  for the catalog turn-truth fields. Verification metadata pinned until closeout stamps the
+  260713-TES-L2 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

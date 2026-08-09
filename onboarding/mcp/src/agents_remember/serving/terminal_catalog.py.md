@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-09T01:21+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -71,9 +71,9 @@ the opener/API can report an explicit unsupported state without treating pane te
 
 `TerminalCatalogEntry` gained the additive `control_pending_interactions` column (JSON
 `controlPendingInteractions`) beside the untouched singular
-`control_pending_interaction` parent-thread slot (cit:([`control_pending_interaction`], mcp/src/agents_remember/serving/terminal_catalog.py:148-148)). It rides the same migration-safe
+`control_pending_interaction` parent-thread slot (cit:([`control_pending_interaction`], mcp/src/agents_remember/serving/terminal_catalog.py:173-173)). It rides the same migration-safe
 optional pattern as every other control column: `from_json` reads it through the new
-`_optional_object_list` helper (cit:([`from_json`, `_optional_object_list`], mcp/src/agents_remember/serving/terminal_catalog.py:186-253; mcp/src/agents_remember/serving/terminal_catalog.py:891-897)) and `to_json` emits it through the
+`_optional_object_list` helper (cit:([`from_json`, `_optional_object_list`], mcp/src/agents_remember/serving/terminal_catalog.py:232-312; mcp/src/agents_remember/serving/terminal_catalog.py:961-967)) and `to_json` emits it through the
 `None`-filtered optional fold (cit:([`to_json`], mcp/src/agents_remember/serving/terminal_catalog.py:255-324)), so legacy rows read back as `None` and unset values never
 enter the JSON. The read helper is fail-closed on shape: a non-list value, or a list containing
 even one non-object entry, degrades the WHOLE field to `None` rather than persisting a partial or
@@ -313,7 +313,41 @@ accumulate. Values are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260713-TES-L2 Current Delta — Catalog Turn Truth
+
+The catalog row now carries the terminal turn truth lifted by the state-signal relay:
+
+- **Terminal outcome fields** — `terminal_outcome` (`completed`/`interrupted`/`failed`/
+  `unknown`), `terminal_outcome_at`, `terminal_evidence_id`, and `interrupted_by`
+  (`developer`/`unknown`), written only when a terminal observation lands; legacy rows read
+  back as `None`.
+- **Terminal-evidence cursors** — `terminal_evidence_sequence` and `terminal_native_cursor`
+  record the last successfully processed evidence/native position; they advance only on a
+  successful read (no-loss retry, F2).
+- **Interrupt provenance** — `interrupt_requested_by` (`developer`), `interrupt_requested_at`,
+  and `interrupt_requested_turn_id` are stamped by the dashboard/interface interrupt route
+  (N9 origin attribution).
+- **Signal markers** — `state_signal_emitted_for` (the relayed terminal evidence id) and
+  `non_reaction_emitted_for` (the relayed landed-row episode) are the per-seat+turn/per-episode
+  dedupe markers.
+
+`CatalogTurnEvidence` cit:(["class CatalogTurnEvidence:"], mcp/src/agents_remember/serving/terminal_catalog.py:59-70) is the frozen one-seat-turn projection stamp (state plus
+optional terminal outcome/identity/origin) carried from liveness into the write helpers.
+`seat_at_turn_boundary` cit:([`seat_at_turn_boundary`], mcp/src/agents_remember/serving/terminal_catalog.py:95-103) is the availability-gate vocabulary: running seats at
+`turn-ended`/`awaiting-input` (or an unclassified `ready` row) may be pushed; working and stale
+seats hold; dead/archived rows never accept a push. All new writes ride the public
+`get`+`upsert` seams through `serving/seat_turn_truth.py` (class-surface budget preserved).
+
+The wire model gained the matching fields (see `response_contract.py.md`); the emitted key pin
+is now 63.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the catalog turn-truth delta —
+  terminal outcome/origin fields, evidence cursors, interrupt provenance, signal markers,
+  `CatalogTurnEvidence`, `seat_at_turn_boundary`, and the `seat_turn_truth` write seam.
+  Verification metadata pinned until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.
 - 2026-08-04T01:28:33+02:00 — S18-SR2-B05 worker: separated completion-edge auto-land from manual-retire authority and provisionally bound both FastAPI and MCP manual paths through SeatRef construction, authority check, and retirement.
 - 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.

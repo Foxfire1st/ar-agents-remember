@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-08-01T18:30+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -27,6 +27,15 @@ session and/or polled by an external chat.
 `fold_operator_inbox_entries` centralizes the current-state projection. Pending snapshots remain
 last-wins until a terminal `consumed` or `ladder-resolved` snapshot is observed; later stale pending
 delivery snapshots are ignored, while later terminal snapshots preserve idempotent terminal updates.
+
+### 260713-TES-L2 State-Signal Kind And Landing
+
+`InboxMessageKind` cit:([`InboxMessageKind`], mcp/src/agents_remember/controlplane/operator_inbox_records.py:32-46) gained `"state-signal"`. `state_signal_landed(entry)` cit:([`state_signal_landed`], mcp/src/agents_remember/controlplane/operator_inbox_records.py:54-65) is the
+terminal predicate for the relay path: a pending state-signal row whose
+`deliveryState == "delivered"` and `adapterDeliveryState == "accepted"` — correlated adapter
+acceptance at a turn boundary (N1/N16). `acceptance=queued` from a busy adapter is NOT this;
+the row stays non-landed until a boundary acceptance lands. Landed rows remain `state="pending"`
+until the L4 schema migration but are excluded from redelivery, escalation, and reclamation.
 
 ### 260707-HFX2-L17 Seat-Scoped Inbox Rows
 
@@ -179,10 +188,10 @@ external-chat pull implementation of that idea.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The inbox record declares its schema tag and the state, via, role, message-kind and delivery-state literals. | "OPERATOR_INBOX_RECORD_SCHEMA ="; "OperatorInboxState = Literal["; "OperatorInboxVia = Literal["; "AgentRole = Literal["; "InboxMessageKind = Literal["; "InboxDeliveryState = Literal[" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:13-13; mcp/src/agents_remember/controlplane/operator_inbox_records.py:15-17; mcp/src/agents_remember/controlplane/operator_inbox_records.py:32-32; mcp/src/agents_remember/controlplane/operator_inbox_records.py:44-44 |
-| `require_inbox_address` refuses an entry with no mailbox key, and `OperatorInboxCompatibleRecord` inherits `DurableRecord` while keeping its own `extra="allow"` plus the named forward-compatibility allowlist. | "def require_inbox_address("; "class OperatorInboxCompatibleRecord(DurableRecord):" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:125-125; mcp/src/agents_remember/controlplane/operator_inbox_records.py:136-136 |
+| The inbox record declares its schema tag and the state, via, role, message-kind and delivery-state literals. | "OPERATOR_INBOX_RECORD_SCHEMA ="; "OperatorInboxState = Literal["; "OperatorInboxVia = Literal["; "AgentRole = Literal["; "InboxMessageKind = Literal["; "InboxDeliveryState = Literal[" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:13-13; mcp/src/agents_remember/controlplane/operator_inbox_records.py:15-17; mcp/src/agents_remember/controlplane/operator_inbox_records.py:32-32; mcp/src/agents_remember/controlplane/operator_inbox_records.py:45-45 |
+| `require_inbox_address` refuses an entry with no mailbox key, and `OperatorInboxCompatibleRecord` inherits `DurableRecord` while keeping its own `extra="allow"` plus the named forward-compatibility allowlist. | "def require_inbox_address("; "class OperatorInboxCompatibleRecord(DurableRecord):" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:138-138; mcp/src/agents_remember/controlplane/operator_inbox_records.py:149-149 |
 | `OperatorInboxEntry` preserves mailbox keys, ask, response, creation attribution, consume attribution and the routed owner address. | `OperatorInboxEntry` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:156-224 |
-| `fold_operator_inbox_entries`, `create_operator_inbox_entry` and `consume_operator_inbox_entry` are pure snapshot builders that never touch disk. | "def fold_operator_inbox_entries("; "def create_operator_inbox_entry("; "def consume_operator_inbox_entry(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:227-227; mcp/src/agents_remember/controlplane/operator_inbox_records.py:246-246; mcp/src/agents_remember/controlplane/operator_inbox_records.py:289-289 |
+| `fold_operator_inbox_entries`, `create_operator_inbox_entry` and `consume_operator_inbox_entry` are pure snapshot builders that never touch disk. | "def fold_operator_inbox_entries("; "def create_operator_inbox_entry("; "def consume_operator_inbox_entry(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:240-240; mcp/src/agents_remember/controlplane/operator_inbox_records.py:259-259; mcp/src/agents_remember/controlplane/operator_inbox_records.py:302-302 |
 
 ## Cross-Repo References
 
@@ -211,6 +220,9 @@ the explicit consume state.
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the `state-signal` message kind and
+  the `state_signal_landed` terminal predicate (boundary acceptance; queued is not terminal).
+  Verification metadata pinned until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 4 citation rows with exact anchors and source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 - 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded that

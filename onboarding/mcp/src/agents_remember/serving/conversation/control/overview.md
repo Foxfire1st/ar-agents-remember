@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/control/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/control/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash |  `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate |  2026-08-09T02:17:45+02:00|
 
 ## What This Area Is
 
@@ -113,6 +113,12 @@ withdrawal + bounded recovery) with `recovery_assembly.py`, `attachments.py` (R4
 ## Main Flows
 
 ### Exact-turn interrupt (R1)
+
+**260713-TES-L2 interrupt provenance.** After a non-rejected acknowledgement, the interrupt
+route stamps `interrupt_requested_by=developer`/time/turn-id on the catalog seat through
+`seat_turn_truth.record_interrupt_request`; the lifted terminal truth later attributes an
+interrupted outcome to the developer action (N9). The stamp is best-effort and post-mutation
+(accepted note F6).
 
 1. Authorization + epoch verification; capability gate refuses claude/unsupported before any native
    call.
@@ -404,6 +410,9 @@ error mappings are untouched.
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: recorded the interrupt provenance
+  stamp on the seat (N9 origin attribution, F6 best-effort note). Verification metadata pinned
+  until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the async/offloaded `resolve_entry` choke point and the mechanical `await` sweep across the route modules. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
 

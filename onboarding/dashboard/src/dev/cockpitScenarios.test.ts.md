@@ -6,8 +6,8 @@
 | path | `dashboard/src/dev/cockpitScenarios.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T10:20+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
+| lastVerifiedCommitDate |  2026-08-09T02:17:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -114,7 +114,7 @@ same arity.
 | L63-L75 — `authorityTransport`'s `withdraw`, now annotated `: Promise<WithdrawalResultWire>`, with the comment recording why the concise async body lost excess-property checking. | `authorityTransport` | dashboard/src/dev/cockpitScenarios.test.ts:53-77 |
 | L40-L46 — `WithdrawalResultWire`'s five declared fields; `bridgeEpoch` is not among them. | `WithdrawalResultWire` | dashboard/src/data/submissionLifecycleClient.ts:40-46 |
 | L4-L9 — `HarnessInfo`'s three fields, declared inline in a module with no mirror marker. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
-| L355-L366 — the server's `DetectedHarness` / `DetectedHarnessesResponse` declares exactly three fields, inheriting strict `WireResponse` whose `model_config` sets `extra="forbid"`. | `WireResponse`; `DetectedHarness`; `DetectedHarnessesResponse`; "model_config = ConfigDict("; "extra=\"forbid\"," | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:355-360; mcp/src/agents_remember/serving/response_contract.py:363-366 |
+| L366-L377 — the server's `DetectedHarness` / `DetectedHarnessesResponse` declares exactly three fields, inheriting strict `WireResponse` whose `model_config` sets `extra="forbid"`. | "class WireResponse(BaseModel):"; `DetectedHarness`; `DetectedHarnessesResponse` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:366-372; mcp/src/agents_remember/serving/response_contract.py:374-377 |
 | L456-L468 — the `/api/harnesses` GET branch returns its `harnesses` fixture, type-pinned with `satisfies HarnessInfo[]`. | "return json({ status: "unavailable" }, 503);"; `harnesses: [`; `satisfies HarnessInfo[]` | dashboard/src/dev/cockpitScenarios.ts:456-456; dashboard/src/dev/cockpitScenarios.ts:477-481; dashboard/src/dev/cockpitScenarios.ts:418-418 |
 | L55-L64 — the guard documents the unmarked-mirror blind spot and names the removed `control` and `bridgeEpoch` fixtures. | "UNMARKED MIRROR"; `control`; `bridgeEpoch` | dashboard/src/test/wireFixtureGuard.ts:55-55; dashboard/src/test/wireFixtureGuard.ts:62-63 |
 

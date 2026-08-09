@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -683,7 +683,7 @@ pass was available for this update.
 | The live change watcher `create_app` injects when `live_inputs.change_watch` resolves true (260712-PTS-L3). | `ProjectionInputWatcher` | mcp/src/agents_remember/serving/change_watcher.py:379-487 |
 | The boot-time serving build stamp that rides `/api/state` + the SSE snapshot, now as the declared `ServingBuildPayload`. | `ServingBuildPayload` | mcp/src/agents_remember/serving/build_info.py:43-63 |
 | The declaration of the served body and the one tail builder both merge sites call. | `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:63-78 |
-| The declared response models and shared `responses={...}` tables the 17 HTTP routes here name. | `ACTION_RESPONSES`; `TerminalSessionsResponse`; `StreamReadyMarker` | mcp/src/agents_remember/serving/response_contract.py:197-206; mcp/src/agents_remember/serving/response_contract.py:349-352; mcp/src/agents_remember/serving/response_contract.py:1079-1087 |
+| The declared response models and shared `responses={...}` tables the 17 HTTP routes here name. | `ACTION_RESPONSES`; `TerminalSessionsResponse`; `StreamReadyMarker` | mcp/src/agents_remember/serving/response_contract.py:197-206; mcp/src/agents_remember/serving/response_contract.py:360-363; mcp/src/agents_remember/serving/response_contract.py:1090-1098 |
 | The suite that validates the assembled `/api/state` body and the SSE snapshot against `ServedWorkspaceProjection`, including the bodiless 304 branch. | `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
 | The suite that drives every route, validates the real body, pins the 61-HTTP-route inventory, and recognises the websocket exemption by route class. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:792-899 |
 | The raw `event` channel `/api/events` delegates to. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:230-277 |

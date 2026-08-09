@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/seat_binding.py`            |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-10T15:07+02:00                                       |
-| lastVerifiedCommitHash |                                                              `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |                                                              2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |                                                              `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate |                                                              2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ pin migration, role-required attach, coexistence, and suffix refusal.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Catalog rows expose `binding_role` and atomically move `leaf_key` plus `seat_role`. | `with_leaf_binding` | mcp/src/agents_remember/serving/terminal_catalog.py:354-357 |
+| Catalog rows expose `binding_role` and atomically move `leaf_key` plus `seat_role`. | `with_leaf_binding` | mcp/src/agents_remember/serving/terminal_catalog.py:424-427 |
 | Attach resolves the requested role, refuses an untyped harness, liveness-checks the same-pair owner, and persists one pair move. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
 | Pair migration and attach behavior are covered at the catalog/assignment seams. | `TerminalCatalogTests`; `TerminalLeafAssignmentTests` | mcp/tests/test_terminal_catalog.py:48-516; mcp/tests/test_terminal_leaf_assignment.py:109-250 |
 

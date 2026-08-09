@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -172,7 +172,7 @@ and caller-specific response shaping.
 | Native launch selection and fail-loud duplicate/catalog validation are centralized in the launch module. | `validate_launch_selection`; `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:78-119; mcp/src/agents_remember/serving/harness_launch.py:173-206 |
 | Role-scoped leaf arbitration resolves only the same-role owner and marks dead owners exited. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
 | The catalog row owns durable seat, lineage, resolved knob, free-form, and control metadata. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
-| The catalog batch holds both the process lock and instance lock across the complete unit of work. | `batch` | mcp/src/agents_remember/serving/terminal_catalog.py:730-762 |
+| The catalog batch holds both the process lock and instance lock across the complete unit of work. | `batch` | mcp/src/agents_remember/serving/terminal_catalog.py:800-832 |
 | The dashboard route maps actual-row success/conflict facts without duplicating spawn composition. | "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:221-221 |
 | The agent-facing spawn tool resolves role settings, calls this opener, and maps live launch conflict to its existing launch-selection refusal. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:769-842 |
 | Regression tests pin selectionless/same/conflicting live reopen, dead replacement, cross-process race fencing, and preserved multi-role leaf sharing. | `test_live_reopen_preserves_actual_pair_command_and_endpoint`; `test_live_reopen_changed_pair_or_identity_conflicts_without_mutation`; `test_dead_replacement_uses_new_pair_and_fresh_control_generation`; `test_concurrent_different_pair_opens_keep_one_process_and_one_truth`; `test_different_roles_share_leaf_and_dead_same_role_is_replaced` | mcp/tests/test_terminal_opener.py:320-345; mcp/tests/test_terminal_opener.py:434-449; mcp/tests/test_terminal_opener.py:451-467; mcp/tests/test_terminal_opener.py:535-565; mcp/tests/test_terminal_opener.py:567-594 |

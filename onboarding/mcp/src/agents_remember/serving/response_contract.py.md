@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-01T14:05+02:00                                  |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`              |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-09T01:21+02:00                                  |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`              |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -48,11 +48,11 @@ precisely because `extra="forbid"` would make a shared permissive model accept e
 pin none of them. cit:([`HttpDetailRefusal`], mcp/src/agents_remember/serving/response_contract.py:186-191) is the odd one out: it is FastAPI's own
 `HTTPException` body, so it is a plain `BaseModel` with no alias generator.
 
-**The two live-enforcement models.** cit:([`TerminalCatalogEntryWire`], mcp/src/agents_remember/serving/response_contract.py:280-346) declares 52 fields in
+**The two live-enforcement models.** cit:([`TerminalCatalogEntryWire`], mcp/src/agents_remember/serving/response_contract.py:280-359) declares 63 fields in
 `TerminalCatalogEntry.to_json`'s exact emission order, and its route declares
 `response_model_exclude_unset=True` so re-serializing reproduces that hand-rolled, *conditional*
 body byte for byte instead of back-filling nulls the dashboard has never seen.
-cit:([`DetectedHarnessesResponse`], mcp/src/agents_remember/serving/response_contract.py:363-366) is the other. These two are the routes where a
+cit:([`DetectedHarnessesResponse`], mcp/src/agents_remember/serving/response_contract.py:374-377) is the other. These two are the routes where a
 declaration change is a **behaviour** change: they used to be forward-compatible pass-through,
 and with `response_model` + `extra="forbid"` they now answer HTTP 500
 (`ResponseValidationError`) if the payload gains a key, loses a required one, or changes type.
@@ -66,23 +66,23 @@ fires the moment the field is added, before any payload carries it — strictly 
 either the runtime 500 or a conformance run whose fixture happens to populate the new field.
 
 **Unions are declared where the route really answers in more than one shape**, and each is
-discriminated where it can be: cit:([`CodeNode`, `OnboardingMeta`, `OnboardingResolution`], mcp/src/agents_remember/serving/response_contract.py:616-616; mcp/src/agents_remember/serving/response_contract.py:645-645; mcp/src/agents_remember/serving/response_contract.py:709-715) (`Field(discriminator="kind")` — only a
-`kind: "file"` row may carry `language`/`hasSidecar`, and only it must), cit:([`OnboardingMeta`], mcp/src/agents_remember/serving/response_contract.py:645-645),
-cit:([`OnboardingResolution`], mcp/src/agents_remember/serving/response_contract.py:709-715) (the five shapes `GET /api/files/onboarding` answers with),
-and cit:([`SubmissionLookup`], mcp/src/agents_remember/serving/response_contract.py:947-949).
+discriminated where it can be: cit:([`CodeNode`, `OnboardingMeta`, `OnboardingResolution`], mcp/src/agents_remember/serving/response_contract.py:627-627; mcp/src/agents_remember/serving/response_contract.py:656-656; mcp/src/agents_remember/serving/response_contract.py:720-726) (`Field(discriminator="kind")` — only a
+`kind: "file"` row may carry `language`/`hasSidecar`, and only it must), cit:([`OnboardingMeta`], mcp/src/agents_remember/serving/response_contract.py:656-656),
+cit:([`OnboardingResolution`], mcp/src/agents_remember/serving/response_contract.py:720-726) (the five shapes `GET /api/files/onboarding` answers with),
+and cit:([`SubmissionLookup`], mcp/src/agents_remember/serving/response_contract.py:958-960).
 
 **Three shared `responses={...}` tables** close the module, declared once because the refusal
 idiom is shared, and each route adds only the statuses it can actually produce:
 
-- cit:([`SCOPED_READ_RESPONSES`], mcp/src/agents_remember/serving/response_contract.py:1057-1063) — the files / notes / change-set family, whose
+- cit:([`SCOPED_READ_RESPONSES`], mcp/src/agents_remember/serving/response_contract.py:1068-1074) — the files / notes / change-set family, whose
   `run_scoped` and its two siblings map every domain error onto exactly 400 and 404.
-- cit:([`SESSION_CONTROL_RESPONSES`], mcp/src/agents_remember/serving/response_contract.py:1067-1074) — every `harness_control_api` route, where
+- cit:([`SESSION_CONTROL_RESPONSES`], mcp/src/agents_remember/serving/response_contract.py:1078-1085) — every `harness_control_api` route, where
   `_control_route` resolves the seat and `_control_failure_response` answers control failures
   (404 / 409 / 503).
-- cit:([`ACTION_RESPONSES`], mcp/src/agents_remember/serving/response_contract.py:1079-1087) — `/api/actions/{action}`: the evaluator's refusals plus the
+- cit:([`ACTION_RESPONSES`], mcp/src/agents_remember/serving/response_contract.py:1090-1098) — `/api/actions/{action}`: the evaluator's refusals plus the
   not-ready projection as an `HttpDetailRefusal`.
 
-cit:(["TerminalCleanupResult.model_rebuild()", `TerminalCleanupResult`, `TerminalCleanupSkip`], mcp/src/agents_remember/serving/response_contract.py:420-427; mcp/src/agents_remember/serving/response_contract.py:430-434; mcp/src/agents_remember/serving/response_contract.py:1090-1090) is not decoration: `TerminalCleanupResult`
+cit:(["TerminalCleanupResult.model_rebuild()", `TerminalCleanupResult`, `TerminalCleanupSkip`], mcp/src/agents_remember/serving/response_contract.py:431-438; mcp/src/agents_remember/serving/response_contract.py:441-445; mcp/src/agents_remember/serving/response_contract.py:1101-1101) is not decoration: `TerminalCleanupResult`
 references `TerminalCleanupSkip`, which is declared after it.
 
 ### Conventions
@@ -124,6 +124,18 @@ declare" is answered in the route module, never by reading this one.
 - **Multi-shape routes declare the success shape as `response_model` and every refusal under
   `responses={...}`** — the union members are the exact bodies the handler can emit, never a
   generic error envelope.
+
+## 260713-TES-L2 Current Delta — Catalog Turn-Truth Wire Fields
+
+`TerminalCatalogEntryWire` gained the eleven catalog turn-truth fields in emission order
+cit:([`terminal_outcome`], mcp/src/agents_remember/serving/response_contract.py:342-354): `terminal_outcome`, `terminal_outcome_at`, `terminal_evidence_id`,
+`interrupted_by`, `terminal_evidence_sequence`, `terminal_native_cursor`,
+`interrupt_requested_by`, `interrupt_requested_at`, `interrupt_requested_turn_id`,
+`state_signal_emitted_for`, and `non_reaction_emitted_for`. The key-set pin in
+`test_serving_response_conformance.py` moved from 52 to 63, so a future `to_json` growth still
+fails CI before any wire 500.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ### Todos
 
@@ -170,6 +182,9 @@ own serving app emits over localhost.
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the eleven new
+  `TerminalCatalogEntryWire` fields (63-key pin) carrying the catalog turn truth onto the
+  sessions wire. Verification metadata pinned until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 13 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=7, citation_source_malformed=3); final scoped citation check clean.
 - 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. The **Invariants**
   bullet said "Rewriting the 59 `Response`-returning handlers…", attributing a `Response` return to

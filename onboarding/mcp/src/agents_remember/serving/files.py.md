@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/files.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -166,7 +166,7 @@ rejected, never silently re-rooted).
 | The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | "coordination.worktree_group" | mcp/src/agents_remember/worktrees/worktree_contract.py:1013-1013 |
 | The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. | `discover_route_overviews` | mcp/src/agents_remember/kernel/onboarding_doc.py:70-87 |
 | The test suite for this module. | `test_response_shape_and_filtering_are_unchanged` | mcp/tests/test_serving_files.py:333-394 |
-| The declared response models and the shared `SCOPED_READ_RESPONSES` refusal table these four routes name (`RepoCatalog`, `DirectoryListing`, `FileContents`, `OnboardingResolution`). | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:709-715 |
+| The declared response models and the shared `SCOPED_READ_RESPONSES` refusal table these four routes name (`RepoCatalog`, `DirectoryListing`, `FileContents`, `OnboardingResolution`). | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:720-726 |
 | The suite that actually enforces the declarations by driving every route and validating the real body. | `test_files_routes_conform` | mcp/tests/test_serving_response_conformance_cases_1.py:336-392 |
 
 ## 260718-CHATS-L5I Current Delta

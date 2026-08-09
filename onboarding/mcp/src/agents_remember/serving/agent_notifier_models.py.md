@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | mcp/src/agents_remember/serving/agent_notifier_models.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-08T21:20+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
@@ -32,7 +32,14 @@ sweep, preserving one-fold boundedness and same-sweep redelivery exclusion.
 
 Module renamed from `supervisor_models.py` (internal-only rename, no wire/persisted surface): the
 frozen models are `AgentNotifierFinding`, `AgentNotifierActionResult`, `AgentNotifierSweepResult`,
-`AgentNotifierContext`, and `SweepState`; `FindingKind`/`ActionKind` literal values are unchanged.
+`AgentNotifierContext`, and `SweepState`; `FindingKind`/`ActionKind` literal values are unchanged
+until 260713-TES-L2 (below).
+
+### 260713-TES-L2 Relay Findings And Actions
+
+`FindingKind` gained `state-signal-due`, `non-reaction-due`, and `boundary-drain`, and retired
+`turn-report-stale` (the artifact-presence/SLA predicate on the worker→manager path). `ActionKind`
+correspondingly gained `state-signal`, `non-reaction`, and `boundary-drain` cit:([`FindingKind`, `ActionKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:27-49).
 
 ### Logic
 
@@ -55,6 +62,10 @@ Worker source inventory, reviewer verdict, and governing route overview.
 No meaningful cross-repo references.
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the new state-signal
+  finding/action kinds and the removal of `turn-report-stale` (the 260713-TES-L1 "literal values
+  unchanged" claim is superseded). Verification metadata pinned until closeout stamps the
+  260713-TES-L2 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: moved this card to the renamed module path and recorded the `AgentNotifier*` model names. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: recorded the injected single-snapshot seam and
   post-compaction folded inbox state carried through the supervisor context/state models.

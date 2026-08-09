@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -30,6 +30,15 @@ The supervisor supplies its sweep timestamp, preventing wall-clock drift from ch
 retention or retry behavior; ordinary callers retain the existing current-time default.
 
 ### Logic
+
+**260713-TES-L2 availability gate.** `DeliveryAdmission` gained `boundary: bool = False` cit:(["class DeliveryAdmission:"], mcp/src/agents_remember/serving/inbox_delivery.py:87-105): a caller may declare a push as boundary-gated. `_delivery_refusal` cit:([`_delivery_refusal`], mcp/src/agents_remember/serving/inbox_delivery.py:107-162)
+enforces the gate FAIL-CLOSED by row kind: a `state-signal` row is refused
+(`queued`/`queued`, no adapter call) whenever the target seat is not at a turn boundary,
+regardless of which caller drives the delivery (first post, redelivery, or an escalation rung);
+other kinds use the caller's `admission.boundary` flag. This is the F1 fix — a mid-turn push
+would otherwise make acceptance terminal without the N1 gate. The boundary vocabulary lives in
+`terminal_catalog.seat_at_turn_boundary`. `target_session_for_entry` cit:([`target_session_for_entry`], mcp/src/agents_remember/serving/inbox_delivery.py:339-363) is the
+extracted exact-agent-id-first target resolution both delivery and the held-row predicate use.
 
 The current L5 path resolves the target catalog row, submits the existing inbox entry using its row
 id as the adapter request id, and records immediate, queued, rejected, unsupported, ambiguous, or
@@ -127,7 +136,7 @@ not as normative delivery authority.
 | Delivery state is persisted on the operator inbox record. | `record_delivery` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:159-209 |
 | The dashboard serving route and MCP payload builder both pass catalog/host/paster seams for delivery. | "created_by=\"provider-degradation-detector\"," | mcp/src/agents_remember/providers/degradation.py:644-644 |
 | 260707-HFX2-L3: `deliver_inbox_entry` now builds a `DeliveryRow` and calls the ONE delivery path, `serving.injector.deliver`, instead of calling `TerminalPaster.paste` directly. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
-| `serving.agent_notifier`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit action the agent-notifier takes rides through this same translation layer. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal(  # pragma: no cover" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:92-92; mcp/src/agents_remember/serving/_agent_notifier_actions.py:349-349 |
+| `serving.agent_notifier`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit/state-signal action the agent-notifier takes rides through this same translation layer. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:96-96; mcp/src/agents_remember/serving/owner_signals.py:93-93 |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -172,6 +181,10 @@ gate — are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the fail-closed row-kind
+  availability gate (`DeliveryAdmission.boundary`, `_delivery_refusal` state-signal refusal)
+  and the `target_session_for_entry` extraction. Verification metadata pinned until closeout
+  stamps the 260713-TES-L2 commit.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-02T21:40:21+02:00 — 260731-EFA-L6 curator W2-B10: resolved 8 citation findings by repairing 4 findings across 2 reference rows and deleting the 2 unanchorable claims under the 2026-08-02 14:10 citation ruling; scoped recheck clean.

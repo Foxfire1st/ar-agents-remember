@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_conversation_control_projector_edges.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-31T15:32+02:00                                   |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`               |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`               |
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ were unreachable through the fixtures the contract suites use.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The control interrupt ledger under test. | `_claude_result_settlement`; `interrupt`; `interrupt_status` | mcp/src/agents_remember/serving/conversation/control/operations.py:95-156; mcp/src/agents_remember/serving/conversation/control/operations.py:159-201; mcp/src/agents_remember/serving/conversation/control/operations.py:417-449 |
-| The attachment multipart parser under test. | `_parse_uploads` | mcp/src/agents_remember/serving/conversation/control/api.py:737-748 |
+| The attachment multipart parser under test. | `_parse_uploads` | mcp/src/agents_remember/serving/conversation/control/api.py:750-761 |
 | The active-identity proof gate under test. | `build_identity` | mcp/src/agents_remember/serving/conversation/active/factories.py:79-105 |
 | The Claude projector whose sparse task shape is covered here. | `map_evidence_frame`; `_map_result` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:210-239; mcp/src/agents_remember/serving/conversation/projectors/claude.py:1021-1074 |
 | The Codex projector whose unowned and item-scoped shapes are covered here. | `map_evidence_frame`; `_map_item_scoped_notification` | mcp/src/agents_remember/serving/conversation/projectors/codex.py:146-199; mcp/src/agents_remember/serving/conversation/projectors/codex.py:280-307 |

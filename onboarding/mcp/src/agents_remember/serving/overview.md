@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated | 2026-08-09T01:21+02:00 |
+| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
+| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -218,12 +218,13 @@ closed/skipped counts. The
 **deterministic agent-notifier sweep** (P-15 tiers 1+2, "the model is never the polling layer"): a
 third decoupled-cadence lifespan task (`agent_notifier.py::run_agent_notifier_sweep`, default ~10s,
 settings-controlled) that reads `TerminalCatalog`/`OperatorInboxStore`/`ExpectationRowStore`/the
-nudge store DIRECTLY (never the projection), evaluates five mechanical predicates — pane-state
-(new `pane_signals.py`), expectation-deadline expiry, turn-report staleness (`missing_artifact()`
-gets its first caller), unacked-row redelivery, and seat-liveness (the liveness/turn-state join with graceful
-degradation) — and acts: redeliver via the shared injector, auto-nudge, owner-addressed signal-emit, or
-hand off to the escalation ladder's reserved stub, logging every action as an
-`orchestration.agent-notifier.*` observer event. New `agent_notifier_heartbeat.py` gives the sweep its own
+nudge store DIRECTLY (never the projection), evaluates the mechanical predicate families — pane-state
+(new `pane_signals.py`), expectation-deadline expiry, unacked-row redelivery, seat-liveness (the liveness/turn-state join with graceful
+degradation), escalation, dead-upstream, and since 260713-TES-L2 the worker→manager state-signal
+relay (state-signal-due, non-reaction-due, boundary-drain) — and acts: redeliver via the shared
+injector, auto-nudge, owner-addressed signal-emit, state-signal, or hand off to the escalation
+ladder's reserved stub, logging every action as an `orchestration.agent-notifier.*` observer event.
+New `agent_notifier_heartbeat.py` gives the sweep its own
 self-liveness tick row (issue #15, "the watcher must be code AND watched"), surfaced as a fail-loud
 MCP-tool banner (`mcp/tools/base.py`) and a dashboard header badge (`/api/state`/SSE).
 The escalation ladder fills that reserved stub: `agent_notifier.py` gains two more predicates
@@ -239,6 +240,18 @@ find_orphaned_workers`) as orphans in the same respawn event, never auto re-pare
 absorbing the dead manager's role. No new hot loop, no new `InboxMessageKind` values — rung 1 reuses
 `nudge`, rung 2/3/respawn/dead-upstream reuse `escalation`, distinguishable via the dedicated
 `orchestration.escalation.rung`/`.respawn`/`.dead-upstream` events.
+
+**260713-TES-L2 — the worker-state relay on catalog turn truth.** The serving route now carries
+the projection lift (G1) and the relay: `terminal_evidence.py` maps per-vendor turn settlements
+onto the catalog seat truth (with dedicated no-loss cursors and the pi tail walk);
+`terminal_catalog.py` gains the terminal-outcome/origin fields, cursors, interrupt provenance,
+and signal markers; `seat_turn_truth.py` is the get+upsert write seam; `state_signals.py` owns
+the three relay predicate families plus `state_signal_held_on_boundary`; `owner_signals.py` owns
+the one-row-per-root-cause posting primitive; `_agent_notifier_actions.py` emits/renews/drains
+the rows; and `inbox_delivery.py` enforces the fail-closed boundary gate BY ROW KIND. The
+`state-signal` message kind (N12) lands terminal at correlated boundary acceptance
+(`state_signal_landed`), never via model consume; `turn-report-by`/`turn-report-stale` retire
+from the worker→manager path (N8/R6).
 The agent-notifier keeps its observation cadence independent from its delivery/escalation
 cadence: `agent_notifier.py` passes the redelivery floor into hosted delivery, checks the new
 `controlplane/agent_notifier_signals.py` cooldown store before repeated pane/seat-liveness owner signals,
@@ -1201,7 +1214,7 @@ neighboring repository governs this route.
 | Three additive evidence/provenance read actions are defined. | `_evidence`; `_evidence_native_page`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:377-383; mcp/src/agents_remember/serving/harness_control_ipc.py:385-397; mcp/src/agents_remember/serving/harness_control_ipc.py:399-405 |
 | The native evidence client validates coordinate domains while reading a control-native page. | `read_control_native_page` | mcp/src/agents_remember/serving/harness_control_client.py:369-401 |
 | The native evidence parser validates continuation state. |"def _native_evidence_page"|mcp/src/agents_remember/serving/_harness_control_parsing.py:399-399|
-| Snapshot parsing recognizes plural "pendings_raw = raw.get(\"pendingInteractions\")". | "stays the parent-thread slot" | mcp/src/agents_remember/serving/response_contract.py:1041-1041 |
+| Snapshot parsing recognizes plural "pendings_raw = raw.get(\"pendingInteractions\")". | "stays the parent-thread slot" | mcp/src/agents_remember/serving/response_contract.py:1052-1052 |
 | The provenance batch reads the authority-owned ledger through the bridge's single submission handle, enforcing the expected bridge epoch and returning each requested record's provenance. | `SubmissionLedger`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:399-405; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
 | The resume request shape is `ControlRunnerRequest`. | `ControlRunnerRequest` | mcp/src/agents_remember/serving/terminal_opener.py:83-98 |
 | The runner parses its configuration through `parse_runner_config`. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:72-97 |
@@ -1255,9 +1268,9 @@ neighboring repository governs this route.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `WireResponse` is strict (`extra="forbid"`), frozen, `populate_by_name`, and camel-aliased; the three shared refusal tables are also defined here. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:1057-1063; mcp/src/agents_remember/serving/response_contract.py:1067-1074; mcp/src/agents_remember/serving/response_contract.py:1079-1087 |
-| The catalog wire model and the `TerminalSessionsResponse`/`DetectedHarnessesResponse` declarations. | `TerminalCatalogEntryWire`; `TerminalSessionsResponse`; `DetectedHarnessesResponse` | mcp/src/agents_remember/serving/response_contract.py:280-346; mcp/src/agents_remember/serving/response_contract.py:349-352; mcp/src/agents_remember/serving/response_contract.py:363-366 |
-| `OnboardingResolution` declares the five-shape union for `GET /api/files/onboarding`. | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:709-715 |
+| `WireResponse` is strict (`extra="forbid"`), frozen, `populate_by_name`, and camel-aliased; the three shared refusal tables are also defined here. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:1068-1074; mcp/src/agents_remember/serving/response_contract.py:1078-1085; mcp/src/agents_remember/serving/response_contract.py:1090-1098 |
+| The catalog wire model and the `TerminalSessionsResponse`/`DetectedHarnessesResponse` declarations. | `TerminalCatalogEntryWire`; `TerminalSessionsResponse`; `DetectedHarnessesResponse` | mcp/src/agents_remember/serving/response_contract.py:280-357; mcp/src/agents_remember/serving/response_contract.py:360-363; mcp/src/agents_remember/serving/response_contract.py:374-377 |
+| `OnboardingResolution` declares the five-shape union for `GET /api/files/onboarding`. | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:720-726 |
 | `ServedWorkspaceProjection` (the projection plus the two optional serve-time keys), `SERVED_TAIL_FIELDS`, and `served_state_tail` with its opposite null rules per half. | `ServedWorkspaceProjection`; `SERVED_TAIL_FIELDS`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:48-59; mcp/src/agents_remember/serving/served_state.py:62-66; mcp/src/agents_remember/serving/served_state.py:71-90 |
 | `ServingBuildPayload` and `AgentNotifierHeartbeatPayload` — the two tail halves as declared models rather than hand-built dicts; `ServingBuild.payload()` returns the model and collapses clean-and-unprovable to `None`. | `ServingBuildPayload`; `ServingBuild`; `AgentNotifierHeartbeatPayload` | mcp/src/agents_remember/serving/build_info.py:43-63; mcp/src/agents_remember/serving/build_info.py:66-88; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:31-55 |
 | The declarations on `app.py`'s own routes: the `/api/state` 200/304/503 trio, `/api/task-document`, the two SSE routes' per-frame models, the `202` on `POST /api/actions/{action}`, the websocket exemption comment, and the two FastAPI-validated catalog routes. | "def _register_projection_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"; "def _register_action_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"; "def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/serving/_app_routes.py:115-115; mcp/src/agents_remember/serving/_app_routes.py:386-386; mcp/src/agents_remember/serving/_app_terminal_routes.py:126-126 |
@@ -1278,7 +1291,7 @@ neighboring repository governs this route.
 | The containment metrics sampler + store the lifespan loop drives. | `ProviderMetricsStore`; `sample_provider_containers` | mcp/src/agents_remember/providers/metrics.py:231-360; mcp/src/agents_remember/providers/metrics.py:363-420 |
 | The provider degradation detector the sampling loop also calls once per tick; governed by the `mcp/` package overview. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
 | The expectation-row, operator-inbox, orchestration-nudge, signal-cooldown, and observer-event stores. | `ExpectationRowStore`; "class OperatorInboxStore"; `OrchestrationNudgeStore`; `AgentNotifierSignalCooldownStore`; `EventStore` | mcp/src/agents_remember/controlplane/expectation_rows.py:156-336; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251; mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127; mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220; mcp/src/agents_remember/observer/store.py:103-171 |
-| The `orchestration.agentNotifier` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s agent-notifier loop re-reads per-use. | "class AgentNotifierSettings:"; "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:275-275; mcp/src/agents_remember/serving/_app_lifespan.py:97-97 |
+| The `orchestration.agentNotifier` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s agent-notifier loop re-reads per-use. | "class AgentNotifierSettings:"; "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:276-276; mcp/src/agents_remember/serving/_app_lifespan.py:97-97 |
 | The MCP tool choke point that surfaces the agent-notifier staleness banner on every tool call. | `_tool_payload`; `_agent_notifier_banner` | mcp/src/agents_remember/application/tool_response.py:22-31; mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | The sole epoch-bound prompt/setter timeline and its authoritative status/withdrawal model. | `HarnessSubmissionAuthority`; `withdraw` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
 | The daemon/IPC/client boundary for raw-free lifecycle operations and first-byte classification. | `register_harness_control_routes`; `_dispatch`; `_exchange_control` | mcp/src/agents_remember/serving/harness_control_api.py:182-217; mcp/src/agents_remember/serving/harness_control_client.py:534-568; mcp/src/agents_remember/serving/harness_control_ipc.py:159-171 |
@@ -1632,6 +1645,10 @@ The three serving files reassigned to L7 under OQ1 Option A were split in place,
 
 ## Update History
 
+- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: updated the agent-notifier sweep
+  paragraph (predicate families, retired turn-report staleness) and added the worker-state
+  relay paragraph (projection lift, state-signal delivery, landed terminality). Verification
+  metadata pinned until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the six-module supervisor → agent-notifier
   rename reshaped this route's sweep subsystem (`agent_notifier.py`,
   `agent_notifier_heartbeat.py`, `agent_notifier_models.py`, `_agent_notifier_actions.py`,
