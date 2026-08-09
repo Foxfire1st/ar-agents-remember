@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/lifecycleCopy.ts` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-08-09T19:36+02:00 |
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ the InteractionBar's copy states the real answer channel and the real PTY truth.
   exists on the control bridge yet).
 - **InteractionBar copy** (cit:([`INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERING`, `INTERACTION_ANSWERED`, `INTERACTION_COMPOSER_MODE`, `INTERACTION_NO_PROMPT_TEXT`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:72-73; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:75-75; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:78-79; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:82-83; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:85-86)): `INTERACTION_HONESTY_HINT` (terminal text becomes a queued
   message, not an answer), `INTERACTION_ANSWERING`, `INTERACTION_ANSWERED` (poll-bounded,
-  ≤ ~2.5 s named), `INTERACTION_COMPOSER_MODE` (gate channel, not the terminal),
+  ≤ ~2.5 s named), `INTERACTION_COMPOSER_MODE` (direct agent-session route, not the terminal),
   `INTERACTION_NO_PROMPT_TEXT` (raw payload in the inspector).
 - **PTY archetypes (R1)** (cit:([`isControlledSession`, `paneArchetypeCopy`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:109-115; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:117-123)): `isControlledSession` — `controlState` present and
   ≠ `"unsupported"` (the server's `ControlState` literal, never a heuristic);
@@ -75,7 +75,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | Every exported string/predicate. | `terminateConfirmCopy`; `cleanupOutcomeCopy`; `STOP_TURN_DISABLED_REASON`; `isControlledSession` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:14-23; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:40-52; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:66-67; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:109-115 |
 | The grammar state word the confirm/name builders consume. | `seatVisualState` | dashboard/src/data/stateGrammar.ts:101-125 |
-| The rail consuming confirm copy, and the landed-cleanup notice consuming cleanup-outcome copy. | `terminateConfirmCopy`; `cleanupOutcomeCopy` | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:96-96; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:14-23 |
+| The rail consumes confirm copy, and the landed-cleanup notice consumes cleanup-outcome copy. | "          title={terminateConfirmCopy(session)}"; "  const outcomeCopy = cleanupOutcomeCopy(outcome);" | dashboard/src/panels/session-cockpit/sessionRailParts.tsx:285-285; dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:96-96 |
 | The stage notes consuming residual copy. | `terminateResidualCopy`; `retireResidualCopy` | dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:3-3; dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:56-57 |
 | The bar consuming the interaction constants. | "  INTERACTION_HONESTY_HINT,"; "  INTERACTION_COMPOSER_MODE,"; "  INTERACTION_ANSWERING,"; "  INTERACTION_ANSWERED,"; "  INTERACTION_NO_PROMPT_TEXT," | dashboard/src/panels/session-cockpit/interactionParts.tsx:13-13; dashboard/src/panels/session-cockpit/interactionParts.tsx:12-12; dashboard/src/panels/session-cockpit/interactionParts.tsx:11-11; dashboard/src/panels/session-cockpit/interactionParts.tsx:10-10; dashboard/src/panels/session-cockpit/interactionParts.tsx:16-16 |
 | The surface consuming archetype/name/toggle copy. | "isControlledSession,"; "paneAccessibleName,"; "paneArchetypeCopy,"; "SCREEN_READER_MODE_NOTE," | dashboard/src/panels/session-cockpit/PtySurface.tsx:14-17; dashboard/src/panels/session-cockpit/PtySurface.tsx:211-211; dashboard/src/panels/session-cockpit/PtySurface.tsx:230-230; dashboard/src/panels/session-cockpit/PtySurface.tsx:305-305 |
@@ -105,6 +105,9 @@ labels, and recorded-answer feedback. These strings describe the direct route's 
 contract and keep structured interaction wording consistent across the composer-stage UI.
 
 ## Update History
+
+- 2026-08-09T19:36+02:00 — 260713-TES-L5F2: composer answer-mode copy now names the direct
+  agent-session route; it no longer implies lifecycle-gate ownership.
 
 - 2026-08-04T18:03+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 8 citation rows with exact anchors and ledger-verified ranges (whole export surface, seatVisualState, SessionRail confirm + LandedCleanupNotice outcome consumers, StopResidualNotes, InteractionBar import/usages, PtySurface, EvidencePane — replacing the consumer-less SeatInspector citation — and the HarnessControlState literal); converted the 8 Logic-bullet line references to cit form with re-derived ranges after the module grew. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 

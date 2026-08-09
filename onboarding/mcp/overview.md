@@ -5,14 +5,21 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastUpdated | 2026-08-09T19:54+02:00 |
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260713-TES-L5F2 Change
+
+`mcp/server.py` now completes FastMCP's generic Pydantic settings model immediately before
+constructing the server. This resolves the dependency's `Settings.lifespan` forward reference
+instead of suppressing the `pydantic-settings` incomplete-definition warning, keeping the strict
+warnings-as-errors quality gate green while leaving registration and runtime behavior unchanged.
 
 ## 260731-EFA-L8 Change
 
@@ -1524,6 +1531,9 @@ complete the change set.
 
 ## Update History
 
+- 2026-08-09T20:03+02:00 — 260713-TES-L5F2 route impact: recorded the FastMCP settings-model
+  completion required by the current dependency set's strict-warning compatibility boundary.
+  Interaction-response behavior remains owned by the serving route documented below this package.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the relay judgment
   demolition (ladder/respawn/expectation evaluation deleted), the load-shed budget wiring,
   and the fail-loud settings retirement across control-plane/serving/kernel. Verification

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/StopResidualNotes.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ terminated/retired sessions, use informational copy, and never silently discard 
 | The terminate path that records `controlStopDetail`. | `endSessionDetailed` | dashboard/src/data/sessionLifecycle.ts:203-224 |
 | The centralized informational copy. | `terminateResidualCopy`, `retireResidualCopy` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:30-32; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:35-37 |
 | The view explicitly leaves `StopResidualNotes` unmounted and keeps details in the store. | `StopResidualNotes` | dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:41-72 |
-| View-level coverage of store retention and the absence of stacked residual DOM. | "NO stacked DOM notice" | dashboard/src/panels/session-cockpit/sessions-view/stopResiduals.test.tsx:151-151 |
+| View-level coverage of store retention and the absence of stacked residual DOM. | "NO stacked DOM notice" | dashboard/src/panels/session-cockpit/sessions-view/stopResiduals.test.tsx:138-183 |
 
 ## Update History
 - 2026-08-04T09:54:46+02:00 — 260731-EFA-L6 S18-B07 second bounded correction: expanded dismissal and the multiline retire-sweep guard/mark evidence; same-reviewer delta pending.

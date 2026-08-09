@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/InteractionBar.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-08-09T19:36+0200 |
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,13 +27,12 @@ Rendered by SessionsView directly ABOVE the composer — it NEVER replaces the c
 ONE BAR PER pending interaction (review R6): the parent's singular
 `controlPendingInteraction` slot first, then the multiplexed sub-agent entries in the additive
 plural `controlPendingInteractions`. Each bar badges WHO is asking from the adapter-bound
-`raw.agentLabel` when present — never a fabricated name. The landed gate-decision channel is
-the SOLE answer path (`data/interactionAnswer` → `POST /api/actions/approve`, the answer as the
-decision note; structured AskUserQuestion pages and allow/deny permissions POST the session-direct
-interaction-response route instead — channel routing looks up the payload across BOTH slots, so an
-agent approval answers exactly like the parent's): on controlled sessions the PTY can NEVER answer —
-a terminal-typed line queues an ordinary message, and the always-present honesty hint says exactly
-that. Kind-aware (F8): choices → one button per choice; free-text/confirm kinds → the composer
+`raw.agentLabel` when present — never a fabricated name. Every representable payload answers through
+the exact-session `/api/terminal/{session}/interaction-response` route: structured questions send
+an `answers` map, while permission, arbitrary-choice, and composer modes send one `response`
+string. Lifecycle gates are coordination mirrors, not answer channels. On controlled sessions the
+PTY can NEVER answer — a terminal-typed line queues an ordinary message, and the always-present
+honesty hint says exactly that. Kind-aware (F8): choices → one button per choice; free-text/confirm kinds → the composer
 becomes the visibly labeled answer input; payloads with no `interactionId` → an honest
 "unrepresentable" line pointing at the inspector's verbatim payload — never dead chrome.
 
@@ -62,19 +61,17 @@ becomes the visibly labeled answer input; payloads with no `interactionId` → a
   live region covers the poll-bounded appearance for AT users); a `focusin` listener
   remembers the outside invoker, and the unmount cleanup hands focus back when the bar held it.
 - **Composer answer-mode** (L338-L350, L475-L488): non-choice kinds mark the shared composer
-  (`data-answer-mode` + `aria-description` = the visible gate-channel label) and offer the
+  (`data-answer-mode` + `aria-description` = the visible exact-session label) and offer the
   explicit "send composer text as the answer" button (`answerFromComposer`, L368-L384 — empty
   text becomes an inline error, never a blind POST).
 - **Round-trip (F7), store-backed** (L352-L366, L492-L517): `submitAnswer`/`submitAnswers` write
   `interactionAnswer {interactionId, inflight}` to the cockpit store (survives view switches),
-  then `answerPendingInteraction` resolves to answered (`answeredAt`; the poll-bounded
+  then `submitInteractionAnswer` resolves to answered (`answeredAt`; the poll-bounded
   `INTERACTION_ANSWERED` copy) or a VERBATIM error + retry that re-sends the SAME answer
   cit:(["retryStoredInteractionAnswer,"], dashboard/src/panels/session-cockpit/InteractionBar.tsx:14-14). Buttons disable while in-flight OR answered
 - **Round-trip states** cit:(["chrome. Round-trip states are store-backed (survive view switches): answering… (disabled,", "in-flight) → verbatim error + retry, or answered — waiting for the agent (poll-bounded, and the"], dashboard/src/panels/session-cockpit/InteractionBar.tsx:44-45): interaction answer states survive view switches; the bar never steals focus on appearance.
-- **Missing-gate honesty (review finding 2)** (L352-L360; `data/interactionAnswer.ts` L449-L470):
-  the session (with its `lifecycleId`) rides along so the data layer can distinguish NOT-YET
-  (poll-bounded retry copy) from CANNOT (a lifecycle-less seat's gate never projects — the
-  upstream-ask copy).
+- **Lifecycle-free delivery:** the session id and bridge epoch identify the adapter that owns the
+  interaction. The UI never requires or consults `session.lifecycleId` before answering.
 
 ### Invariants And Boundaries
 
@@ -83,10 +80,9 @@ becomes the visibly labeled answer input; payloads with no `interactionId` → a
 - Multiplexed bars are strictly per-payload: status is derived by interactionId match, staleness
   by absence from `activeInteractionIds` — never by an id DIFFERING from a sibling bar's. The
   agent badge comes only from adapter-bound `raw.agentLabel` evidence, never fabricated.
-- The re-answer affordance for an answered-but-never-cleared interaction is DELIBERATELY absent:
-  the gate is decided after the 202, so any client re-answer would 409 (`no-open-gate`) by
-  construction; the synchronizer itself retries vendor delivery each observe beat. Delivery-state
-  row evidence is an upstream ask (worker report, reviewer-accepted skip).
+- The re-answer affordance for an answered-but-never-cleared interaction is deliberately absent;
+  the exact-session endpoint and adapter own pending identity, and the next catalog poll clears the
+  answered row.
 - Unrepresentable payloads must keep pointing at the inspector's raw payload — honesty over
   chrome.
 
@@ -103,13 +99,13 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Multiplexing fan-out + per-payload bar: representation, badge, stale clear, focus, composer mode, id-matched round-trip, retry. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-93 |
-| The answer path + the plural-pending helpers (`pendingInteractionPayloads`, `pendingInteractionAgentLabel`, `representSessionPendingInteraction`). | `pendingInteractionPayloads`, `pendingInteractionAgentLabel`, `representSessionPendingInteraction` | dashboard/src/data/interactionAnswer.ts:202-209; dashboard/src/data/interactionAnswer.ts:218-233; dashboard/src/data/interactionAnswer.ts:241-256 |
+| The answer path + the plural-pending helpers (`pendingInteractionPayloads`, `pendingInteractionAgentLabel`, `representSessionPendingInteraction`). | `pendingInteractionPayloads`, `pendingInteractionAgentLabel`, `representSessionPendingInteraction` | dashboard/src/data/interactionAnswer.ts:191-198; dashboard/src/data/interactionAnswer.ts:207-222; dashboard/src/data/interactionAnswer.ts:230-245 |
 | The payload selector the rail/triage chrome previews (parent first, else first agent entry). | `sessionPendingInteractionPayload` | dashboard/src/data/sessions.ts:538-542 |
-| The `interactionAnswer` per-seat slice this bar round-trips through. | "const submitAnswer = useCallback("; "const submitAnswers = useCallback("; "setInteractionAnswer: (id: string, answer: InteractionAnswerState"; "interactionAnswer: answer,"; "stale round-trip state (review finding 5)" | dashboard/src/panels/session-cockpit/InteractionBar.tsx:179-179; dashboard/src/panels/session-cockpit/InteractionBar.tsx:192-192; dashboard/src/data/sessionCockpitStore.ts:267-267; dashboard/src/data/sessionCockpitStore.ts:582-582; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:246-246 |
+| The `interactionAnswer` per-seat slice this bar round-trips through. | "const submitAnswer = useCallback("; "const submitAnswers = useCallback("; "setInteractionAnswer: (id: string, answer: InteractionAnswerState"; "interactionAnswer: answer,"; "stale round-trip state (review finding 5)" | dashboard/src/data/sessionCockpitStore.ts:267-267; dashboard/src/data/sessionCockpitStore.ts:582-582; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:244-266; dashboard/src/panels/session-cockpit/InteractionBar.tsx:179-179; dashboard/src/panels/session-cockpit/InteractionBar.tsx:192-192 |
 | The centralized copy (honesty hint, answered/answering, composer-mode label). | `INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERED`, `INTERACTION_ANSWERING`, `INTERACTION_COMPOSER_MODE` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:72-73; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:75-75; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:78-79; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:82-83 |
 | The view mounting the bar above the composer + the palette triage that focuses it. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-93 |
-| The inspector's verbatim payload the unrepresentable fallback points at. | "renderRow={(entry) => <SubmitEvidenceRow entry={entry} />}"; "value={<InspectorRaw value={bridgeError} testId="; "Pending interaction (raw)"; "unrepresentable kinds say so honestly — no dead buttons" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:296-296; dashboard/src/panels/session-cockpit/EvidencePane.tsx:13-13; dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:128-128; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:98-98; dashboard/src/panels/session-cockpit/EvidencePane.tsx:261-261; dashboard/src/panels/session-cockpit/EvidencePane.tsx:237-237 |
-| The jsdom suite (kind-awareness, round-trip, focus, stale clear, + the multiplexed block). | "kind-awareness (F8)", "round-trip states (F7)", "stale round-trip state (review finding 5)", "focus + announce honesty", "structured questions (260718-CHATS-L5I)" | dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:75-112; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:114-244; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:246-268; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:270-292; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:325-480 |
+| The inspector's verbatim payload the unrepresentable fallback points at. | "renderRow={(entry) => <SubmitEvidenceRow entry={entry} />}"; "value={<InspectorRaw value={bridgeError} testId="; "Pending interaction (raw)"; "unrepresentable kinds say so honestly — no dead buttons" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:237-237; dashboard/src/panels/session-cockpit/EvidencePane.tsx:261-261; dashboard/src/panels/session-cockpit/EvidencePane.tsx:296-296; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:79-86; dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:128-128 |
+| The jsdom suite (kind-awareness, round-trip, focus, stale clear, + the multiplexed block). | "kind-awareness (F8)", "round-trip states (F7)", "stale round-trip state (review finding 5)", "focus + announce honesty", "structured questions (260718-CHATS-L5I)" | dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:56-93; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:95-242; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:244-266; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:268-290; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:323-478 |
 
 ## Cross-Repo References
 
@@ -121,20 +117,23 @@ No meaningful cross-repo references found.
 
 ## Reliable Submit Delta
 
-Free-text/confirm interactions now use the shared composer handle and its explicit answer mode,
-rather than a bar-owned draft. The exact interaction, stored answer text, and revision survive a
-failed gate call for retry; a later edit wins through revision-CAS clearing. Choice interactions
-remain direct gate decisions and ordinary submission stays disabled as an answer channel.
+Free-text/confirm interactions use the shared composer handle and its explicit answer mode. The
+exact interaction, stored answer text, and revision survive a failed exact-session POST for retry;
+a later edit wins through revision-CAS clearing. Choice interactions use the same session-owned
+transport and ordinary prompt submission stays disabled as an answer channel.
 
 ## Current Structured-Interaction Maintenance
 
 Structured `AskUserQuestion` interactions now render each question with its own option group. A
 multi-select question records a joined single answer only after explicit confirmation; all question
 answers submit together through the direct session route once every question is answered. Permission
-interactions share that direct route, while legacy shapes retain the gate fallback and unsupported
-payloads remain explicit rather than dead controls.
+and all scalar interactions share that direct route; unsupported payloads remain explicit rather
+than dead controls.
 
 ## Update History
+- 2026-08-09T19:36+02:00 — 260713-TES-L5F2: documented the single exact-session answer
+  channel for every representable interaction and removed lifecycle-gate assumptions.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the interactionParts/interactionStyles extraction. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 18 citations (citation_anchor_missing=7, citation_prose_not_in_cit_form=4, citation_source_malformed=7); amended max-reviewer subject binding for store round-trip and raw-payload evidence; final scoped citation check clean.

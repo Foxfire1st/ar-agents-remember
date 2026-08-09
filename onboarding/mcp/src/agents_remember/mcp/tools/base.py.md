@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-09T06:48+02:00                     |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`|
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -45,7 +45,7 @@ cit:([`_attach_lifecycle_tail`], mcp/src/agents_remember/application/tool_respon
 | --- | --- | --- |
 | Response model registry resolved per tool name. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
 | The response envelope union names the strict and flexible families, and `FlexibleResponseEnvelope` declares the shared `ok`/token/`nextStep`/`agentNotifierBanner` fields. | `ResponseEnvelope`; `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:72-89; mcp/src/agents_remember/models/base.py:98-98 |
-| The server registers tool families through its registrar loop. | `register_tools` | mcp/src/agents_remember/mcp/server.py:26-27 |
+| The server registers tool families through its registrar loop. | `register_tools` | mcp/src/agents_remember/mcp/server.py:33-34 |
 | The registrar tuple owns the tool-family set consumed by that loop. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:35-48 |
 | Token-accounting finalizer used by the completed response payload. | `finalize_payload_tokens` | mcp/src/agents_remember/models/tokens.py:232-249 |
 | The ambient lifecycle records each completed tool call. | `emit_tool` | mcp/src/agents_remember/observer/ambient.py:405-424 |

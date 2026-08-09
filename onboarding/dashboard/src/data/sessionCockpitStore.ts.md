@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionCockpitStore.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -121,8 +121,8 @@ No Domain Documentation source is configured for this repository; repository cod
 | The view that mirrors layout/palette in and consumes focus + perSession. | "setLayout: (layout: { railCollapsed: boolean; inspectorCollapsed: boolean }) => void;"; "setPaletteOpen: (open: boolean) => void;"; "const { focused, focusedLive, focusedConversationLive, perSession } = data;" | dashboard/src/data/sessionCockpitStore.ts:225-225; dashboard/src/data/sessionCockpitStore.ts:226-226; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:186-186 |
 | The freshness/provenance consumers (HeaderStrip diagnostics, inspector tiers). | `WS_WORDS`; `HeaderStrip`; `freshness` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:81-86; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:101-101 |
 | The unit suite incl. the QUEUED-never-moves-the-marker and per-kind clobber cases. | `recordPendingSet`; "QUEUED NEVER MOVES THE EFFECTIVE MARKER: ledger writes leave launchEvidence untouched" | dashboard/src/data/sessionCockpitStore.test.ts:41-56; dashboard/src/data/sessionCockpitStore.test.ts:75-89 |
-| The answer round-trip driver (writes in-flight/error/answered; clears on interaction change). | "} from \"react\";"; "} from \"react\";"; "describe(\"representPendingInteraction (kind-awareness, F8)\", () => {"; "describe(\"representPendingInteraction (kind-awareness, F8)\", () => {"; "export function retryStoredInteractionAnswer(" | dashboard/src/panels/session-cockpit/InteractionBar.tsx:16-16; docs/design/dashboard/session-cockpit-closeout-evidence.md:24-24; dashboard/src/data/interactionAnswer.test.ts:14-14; dashboard/src/data/sessionCockpitStore.ts:267-267; dashboard/src/data/interactionAnswer.ts:704-704; dashboard/src/data/interactionAnswer.test.ts:456-456; dashboard/src/panels/session-cockpit/InteractionBar.tsx:8-8; dashboard/src/data/interactionAnswer.test.ts:67-67; dashboard/src/panels/session-cockpit/InteractionBar.tsx:116-116; dashboard/src/panels/session-cockpit/InteractionBar.tsx:14-14 |
-| The answer path whose outcomes the round-trip state records. | `answerPendingInteraction`; `submitInteractionAnswer`; `retryStoredInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:477-509; dashboard/src/data/interactionAnswer.ts:654-702; dashboard/src/data/interactionAnswer.ts:704-724 |
+| The bar writes and clears the exact interaction's in-flight/error/answered state. | "  const submitAnswer = useCallback("; "  const submitAnswers = useCallback("; "    setInteractionAnswer: (id, answer) =>" | dashboard/src/panels/session-cockpit/InteractionBar.tsx:179-204; dashboard/src/data/sessionCockpitStore.ts:578-582 |
+| The exact-session answer path records outcomes and retries the stored payload. | `submitInteractionAnswer`; `retryStoredInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:570-637 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`|
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -616,6 +616,9 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   initialize/list-only discovery path that starts neither a thread nor a turn. Initial model and
   model-local effort travel through `thread/start`/`thread/resume` config and are echoed before
   readiness; later turns reuse the resolved effort.
+  Server interactions retain their original params through correlation. Empty-form MCP tool
+  approvals expose scalar accept/decline/cancel actions; accept serializes the required empty
+  content object, while content-bearing forms remain structured-JSON-only.
 
 - `pi_rpc_protocol.py`, `pi_rpc_process.py`, `pi_rpc_events.py`, and
   `pi_rpc_adapter.py` — the Pi protocol/process/event/adapter chain: strict LF JSONL, bounded child
@@ -1699,6 +1702,9 @@ caps owner-signal findings with `escalationBudget` (twin of `redeliverBudget`). 
 forcing suite and the runnable live-chain-proof script are the leaf's verification surfaces.
 
 ## Update History
+
+- 2026-08-09T19:36+02:00 — 260713-TES-L5F2 route impact: documented retained Codex request params
+  and safe empty-form MCP tool approval serialization.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the serving judgment
   demolition (fact-only actions/predicates, context cleanup, load-shed wiring) and the new
