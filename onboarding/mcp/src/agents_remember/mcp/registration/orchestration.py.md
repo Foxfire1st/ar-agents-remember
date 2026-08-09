@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/orchestration.py`       |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-08-09T06:48+02:00                                            |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                        |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`                        |
+| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -22,13 +22,20 @@ already pass keywords. Registered tools are unchanged.
 
 ## Purpose
 
-`register_orchestration_tools(server, config)` declares the cross-agent messaging surface: the four
-operator-inbox tools (`operator_inbox_post`, `operator_inbox_poll`, `operator_inbox_consume`,
-`operator_inbox_supersede` since 260713-TES-L4) and `orchestration_nudge_manager`.
+`register_orchestration_tools(server, config)` declares the cross-agent messaging surface by
+delegating, in the original publication order, to `_register_operator_inbox_tools` and
+`_register_manager_nudge_tools`: the four operator-inbox tools (`operator_inbox_post`,
+`operator_inbox_poll`, `operator_inbox_consume`, `operator_inbox_supersede` since
+260713-TES-L4) followed by `orchestration_nudge_manager`.
 
 ## Code Commentary
 
 ### Logic
+
+The two private registrars are structural groups only. The public registrar calls inbox first and
+manager nudge second, preserving FastMCP's advertised order while keeping every registrar below
+the repository's hard 100-line function limit; every published tool signature and forwarding body
+is unchanged.
 
 `operator_inbox_post` splits its arguments four ways:
 
@@ -76,6 +83,11 @@ nudge the wrong mailbox. `reason` is a `NudgeReason` and `rate_limit_seconds` de
 
 ## Update History
 
+- 2026-08-09T21:10+02:00 — Master integration gate repair: split the 116-line public registrar
+  into same-module inbox and manager-nudge registrars, with the public registrar delegating in
+  the original order. Published signatures, names, attribution, and forwarding are unchanged;
+  the hard function-length and registrar-shape rails now pass. Verification metadata stays
+  pinned until closeout.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the `operator_inbox_supersede`
   declaration (R11), the `include_terminal` poll parameter (N11), and the attribution-only
   consume wording (N16). Verification metadata pinned until closeout stamps the 260713-TES-L4

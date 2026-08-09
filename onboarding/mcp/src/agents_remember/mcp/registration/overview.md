@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-09T06:48+02:00                           |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`       |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`       |
+| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## 260731-EFA-L8 Change
@@ -159,6 +159,11 @@ now carry the separator too, so every `@server.tool()` declaration in the module
 keyword-only. The registered tool surface is unchanged.
 
 ## Update History
+
+- 2026-08-09T21:12+02:00 — No route impact: the orchestration family now groups its inbox and
+  manager-nudge declarations in two same-module registrars so the public registrar stays below
+  the hard function-length limit. Tool names, signatures, publication order, attribution, and
+  forwarding behavior are unchanged. Verification metadata stays pinned until closeout.
 
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the `operator_inbox_supersede`
   declaration (R11), the `include_terminal` poll parameter (N11), and the attribution-only

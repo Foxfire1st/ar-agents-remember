@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-09T19:54+02:00 |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`
+| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1530,6 +1530,11 @@ retired `orchestration.escalation` family. The new forcing suite and the skills/
 complete the change set.
 
 ## Update History
+
+- 2026-08-09T21:12+02:00 — No route impact: master integration repaired two stale
+  source-comment citations and split two oversized functions into behavior-preserving helpers.
+  The package surface, execution order, and runtime contracts described here are unchanged;
+  details live in the four affected file cards. Verification metadata stays pinned until closeout.
 
 - 2026-08-09T20:03+02:00 — 260713-TES-L5F2 route impact: recorded the FastMCP settings-model
   completion required by the current dependency set's strict-warning compatibility boundary.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/operator_inbox.py`        |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`|
+| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -75,9 +75,11 @@ expectation and never changes row state; supersede is the explicit terminal for 
 command (R11).
 
 The trusted caller still supplies `poster.created_by` / `poster.created_via`.
-`mcp/registration/orchestration.py` fixes those to `model` / `cli` for the public MCP route, so an
-agent cannot post as the developer. The dashboard path supplies trusted developer/dashboard
-attribution directly to the serving post owner.
+`mcp/registration/orchestration.py` fixes those to `model` / `cli` inside
+`_register_operator_inbox_tools`; the public `register_orchestration_tools` delegates to that
+registrar first, so the public MCP route and publication order remain unchanged and an agent cannot
+post as the developer. The dashboard path supplies trusted developer/dashboard attribution
+directly to the serving post owner.
 
 ### Conventions
 
@@ -122,7 +124,7 @@ cannot receive direct session injection.
 | The application layer roots the store, composes post requests, polls pending entries, and consumes entries while fulfilling acknowledgements. | `_store`; `operator_inbox_post_tool`; `operator_inbox_poll_tool`; `operator_inbox_consume_tool` | mcp/src/agents_remember/application/operator_inbox_tools.py:37-38; mcp/src/agents_remember/application/operator_inbox_tools.py:45-65; mcp/src/agents_remember/application/operator_inbox_tools.py:98-123; mcp/src/agents_remember/application/operator_inbox_tools.py:126-150 |
 | The serving post owner derives routing (N14 re-resolution for every owner-addressed post), persists the row (no ack-by expectation since N16), and performs optional hosted delivery. | `_post_address`; `_persist_post`; `_deliver_post`; `post_operator_inbox_entry` | mcp/src/agents_remember/serving/operator_inbox_posts.py:99-129; mcp/src/agents_remember/serving/operator_inbox_posts.py:180-191; mcp/src/agents_remember/serving/operator_inbox_posts.py:192-215; mcp/src/agents_remember/serving/operator_inbox_posts.py:216-288 |
 | Hosted delivery reads the agent-notifier redelivery floor and passes it into the delivery attempt. | `_redelivery_floor_seconds`; `_deliver_post` | mcp/src/agents_remember/serving/operator_inbox_posts.py:63-68; mcp/src/agents_remember/serving/operator_inbox_posts.py:192-213 |
-| The tool declarations fix public-route attribution to model/cli. | `register_orchestration_tools` | mcp/src/agents_remember/mcp/registration/orchestration.py:26-116 |
+| The operator-inbox tool declarations fix public-route attribution to model/cli. | `_register_operator_inbox_tools` | mcp/src/agents_remember/mcp/registration/orchestration.py:27-116 |
 | The dashboard route delegates to `_operator_inbox_response`, which calls the serving post owner directly and fixes trusted developer/dashboard attribution. | `api_operator_inbox`; "def _operator_inbox_response(" | mcp/src/agents_remember/serving/_app_routes.py:334-334; mcp/src/agents_remember/serving/_app_routes.py:403-409 |
 
 ## Cross-Repo References
@@ -146,6 +148,10 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
 
+- 2026-08-09T21:16+02:00 — Master integration gate repair: re-read the trusted-attribution claim
+  against the split registrar, named `_register_operator_inbox_tools` as the declaration owner,
+  and regenerated its range. Public attribution and tool order remain unchanged. Verification
+  metadata stays pinned until closeout.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the `include_terminal` poll adapter
   (N11), the attribution-only consume wording (N16 — no expectation fulfillment, state
   unchanged), the new `operator_inbox_supersede_payload` (R11), and the N14/N16 post-owner

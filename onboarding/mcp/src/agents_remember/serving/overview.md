@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`|
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`|
+| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -1702,6 +1702,11 @@ caps owner-signal findings with `escalationBudget` (twin of `redeliverBudget`). 
 forcing suite and the runnable live-chain-proof script are the leaf's verification surfaces.
 
 ## Update History
+
+- 2026-08-09T21:12+02:00 — No route impact: the agent-notifier sweep's aggregate
+  `inbox-compacted` event assembly moved to a named helper, and one stale source-comment citation
+  was repaired. Sweep order, reconciliation, predicates, actions, heartbeat, and event payloads
+  are unchanged. Verification metadata stays pinned until closeout.
 
 - 2026-08-09T19:36+02:00 — 260713-TES-L5F2 route impact: documented retained Codex request params
   and safe empty-form MCP tool approval serialization.

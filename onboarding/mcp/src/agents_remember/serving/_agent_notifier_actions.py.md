@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/_agent_notifier_actions.py`                                        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                        |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`                                        |
+| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -126,6 +126,9 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 ## Update History
 
+- 2026-08-09T21:10+02:00 — No content impact: master integration gate repair corrected the source's stale
+  `_signal_dead_upstream` self-citation to the declaration's current line. Runtime behavior
+  and the action surface are unchanged. Verification metadata stays pinned until closeout.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the judgment-action demolition --
   respawn/ladder/auto-nudge/mark-missed action functions deleted, `_FINDING_ACTIONS` reduced to
   the fact-relay surface, nudge store + escalation knobs removed from the context, and the
