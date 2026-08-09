@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T16:29+02:00                             |
-| lastVerifiedCommitHash |                                                    `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate |                                                    2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash |                                                    `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate |                                                    2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -229,7 +229,7 @@ shared instrument; the rows below are the code each claim is about.
 | The two `GateStore` read policies the R8 tests hold apart: `read` is strict, `read_for_projection` skips a torn or unknown-major line. | `read`; `read_for_projection` | mcp/src/agents_remember/controlplane/store.py:120-130; mcp/src/agents_remember/controlplane/store.py:132-146 |
 | The projection fold asserted to survive a torn line — and which, since this leaf, no longer rewrites anything on the tick. | "def read_gates(coordination_root: Path, *, now: date" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104 |
 | The expectation-row projection wrapper, which this leaf moved onto the per-row tolerant read; its comment records that the surrounding `suppress(OSError, ValueError)` used to swallow one torn line by discarding every deadline, and is no longer load-bearing for a malformed row. | "def read_expectation_rows(" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193 |
-| The per-row tolerant expectation reads that wrapper now folds, and the strict `read` the L2 overdue sweep keeps. | `read`; `read_for_projection`; `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:171-183; mcp/src/agents_remember/controlplane/expectation_rows.py:185-203; mcp/src/agents_remember/controlplane/expectation_rows.py:215-217 |
+| The per-row tolerant expectation reads that wrapper now folds, and the strict `read` the L2 overdue sweep keeps. | `read`; `read_for_projection`; `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:177-189; mcp/src/agents_remember/controlplane/expectation_rows.py:191-209; mcp/src/agents_remember/controlplane/expectation_rows.py:221-223 |
 | The unconditional lock and the never-unlinking rewrite that take the measured loss to zero, plus the schema-version validator that gives both read policies their behaviour with no version branch. | `exclusive_access`; `rewrite_lines`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:248-271; mcp/src/agents_remember/controlplane/durable_store.py:348-403; mcp/src/agents_remember/controlplane/durable_store.py:448-455 |
 | Why the gate log is the one that matters: `apply_gate` is the appended snapshot and `evaluate_gate`'s `applied` branch is what refuses a second consume of one approval. | `apply_gate`; `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94; mcp/src/agents_remember/controlplane/records.py:224-233 |
 | The refusal branch a dropped `applied` record would silently remove. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |

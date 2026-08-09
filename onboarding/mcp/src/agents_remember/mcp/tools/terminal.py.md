@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -324,7 +324,7 @@ catalog.
 | The shared opener validates live launch identity and fences create, leaf claim, tmux ensure, and catalog upsert; both role and dashboard paths reuse it. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
 | Explicit REST pane input remains a separate serving concern; it is not part of spawn. | `TerminalPaster`; `paste`; `paste_dispatch` | mcp/src/agents_remember/serving/terminal_paste.py:206-511 |
 | The harness detection helpers that gate a spawn before tmux, and the curated registry table whose order picks the detection-gated default (the table now lives in `kernel/harnesses.py`; `serving/harnesses.py` imports it and owns detection/launch only). | `find_harness`; `is_detected`; `HARNESSES` | mcp/src/agents_remember/serving/harnesses.py:61-70; mcp/src/agents_remember/serving/harnesses.py:86-93; mcp/src/agents_remember/kernel/harnesses.py:63-77 |
-| The per-use agentic-settings loader supplying `spawn_harness` (registry-id validated). | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:217-252 |
+| The per-use agentic-settings loader supplying `spawn_harness` (registry-id validated). | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:211-246 |
 | The public tool tuple advertises `attach_terminal_session_to_leaf` and `spawn_agent_session`. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The facade re-exports all four payload builders. | `__all__` | mcp/src/agents_remember/mcp/tools/__init__.py:93-159 |
 | The tool declarations for attach and spawn; the `spawn_agent_session` docstring is the one that states the HFX2-L10 settings-only authority rule, including `spend-override-unsupported` refusals for legacy spend fields and harness-native spend env keys. | `attach_terminal_session_to_leaf`; `spawn_agent_session` | mcp/src/agents_remember/mcp/registration/sessions.py:34-51; mcp/src/agents_remember/mcp/registration/sessions.py:57-137 |

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -18,10 +18,10 @@
 
 R4 (260707-HFX2-L1): derive a signal's routed owner address from catalog spawn provenance — one
 hop up the spawn edge (worker -> its manager, manager -> its orchestrator), never further (a
-developer ruling: no layer is addressed its grandchildren's noise). 260707-HFX2-L4 (R2/R4) adds a
-second, deliberately separate two-hop derivation — `derive_skip_level_owner` — for the escalation
-ladder's rung-2 skip-level target and the dead-upstream grandparent signal, plus `is_seat_dead`, the
-liveness check both the ladder and that two-hop walk use to skip past a confirmed-dead node.
+developer ruling: no layer is addressed its grandchildren's noise). `is_seat_dead` is the liveness
+check the rebind/mailbox machinery uses to treat "no evidence of life" the same as "confirmed
+dead". The escalation ladder's two-hop skip-level walk (`derive_skip_level_owner`) is DELETED with
+the ladder (260713-TES-L5); dead-owner rows surface through the rebind/mailbox machinery.
 **260713-TES-L4 (R13/N14)** adds repository+sprint-scoped architect custody
 (`derive_architect_owner(catalog, leaf_key=...)` — never global first-match) and row-based
 sweep-time owner derivation (`derive_row_owner`), the identity machinery behind N14 rebinding.
@@ -32,17 +32,16 @@ sweep-time owner derivation (`derive_row_owner`), the identity machinery behind 
 
 Current discovery, leaf anchoring, chain credit, manager scoping, and architect lookup use
 `binding_role`/`binding_leaf_key`. Different roles on one leaf are visible and unbound replacements
-still credit their declared leaf. The historical `_derive_spawn_owner` ladder hop intentionally
-continues to use `spawn_role`: that walk reconstructs who spawned a dead seat, not who occupies its
-current binding.
+still credit their declared leaf. The historical `_derive_spawn_owner` ladder hop is deleted with
+the escalation ladder (260713-TES-L5) — nothing reconstructs a dead seat's spawner for a skip-level
+walk anymore.
 
 ### 260707-HFX2-L13 Manager-First Routing And Chain Progress
 
 Worker, reviewer, and curator signals now resolve the live direct manager first, then a manager
 proven on the same qualified leaf/master, and otherwise the role-only manager mailbox. Address-time
 routing never guesses a manager from another master and never jumps directly to orchestrator or
-architect. The older spawn-provenance walk remains separate and is used only by later ladder
-skip-level derivation.
+architect. The older spawn-provenance walk is gone with the ladder (260713-TES-L5).
 
 `leaf_chain_has_progress` suppresses stale expectations, inactivity signals, redelivery, and rung
 escalation when another exact-leaf seat, the current manager, or an unbound reviewer/curator spawned
@@ -80,16 +79,11 @@ operator_inbox_post_payload`) stamps the result onto the durable `OperatorInboxE
 
 **260707-HFX2-L4 (R2/R4).** `is_seat_dead(catalog, agent_id)` — `True` for `None`, an unknown
 catalog id, or any non-`running` status; "no evidence of life" reads the same as "confirmed dead"
-here, since there is nothing live to route TO. `derive_skip_level_owner(catalog, *,
-sender_agent_id, message_kind)` walks the SENDER's provenance TWO hops (hop 1 =
-`derive_signal_owner(sender)`, the ordinary one-hop owner; hop 2 =
-`derive_signal_owner(hop-1's owner)`, the owner's owner) — but unlike `derive_signal_owner`, it
-walks PAST any dead node it lands on: if hop 1 is dead, the walk continues from hop 1's own owner as
-if hop 1 had answered; if the eventual hop-2 landing is dead, the walk continues once more rather
-than stopping there. A cycle or an exhausted chain (no further owner-role mapping — the top of the
-hierarchy, the orchestrator, has none) returns whatever the walk last resolved, or `RoutedOwner()`
-if nothing did. This is deliberately a SECOND function, not a parameter on `derive_signal_owner` —
-see Invariants.
+here, since there is nothing live to route TO. The two-hop `derive_skip_level_owner` walk
+(rung-2 skip-level + dead-upstream grandparent target) is deleted with the escalation ladder
+(260713-TES-L5): dead-owner rows surface through `derive_row_owner` rebinding and the scoped
+architect mailbox, and `evaluate_dead_upstream_findings` still signals the grandparent via the
+ordinary one-hop `derive_signal_owner` (no dead-node walk).
 
 ### 260713-TES-L3 Master-Key Helper Promotion
 
@@ -106,16 +100,17 @@ non-reaction residue use.
 
 ### 260713-TES-L4 Scoped Architect Custody And Row-Based Owner Derivation
 
-`derive_architect_owner(catalog, *, leaf_key=None)` cit:([`derive_architect_owner`], mcp/src/agents_remember/controlplane/signal_routing.py:322-350) now
+`derive_architect_owner(catalog, *, leaf_key=None)` cit:([`derive_architect_owner`], mcp/src/agents_remember/controlplane/signal_routing.py:294-325) now
 resolves the architect bound to the row's repo+sprint scope instead of picking the first running
 architect globally (R13). The row's `leafKey` resolves to its master scope via `master_key`;
 only running harness seats with `binding_role="architect"` whose `binding_leaf_key` or
 `replacement_for_leaf` falls inside that scope are candidates, with an exact-leaf binding
 preferred over the master-scope set. An unscoped/ambiguous set — or no scoped seat — resolves to
 the role-only architect mailbox, fail-closed: a second repository's architect can never capture
-another repo's rows. `escalation_ladder.next_step` passes the row's `leafKey` through.
+another repo's rows. Dead-owner-chain rows surface to this mailbox through the rebind/expiry
+machinery (N3/N14); no ladder `next_step` pass-through remains (260713-TES-L5).
 
-`derive_row_owner(catalog, entry)` cit:([`derive_row_owner`], mcp/src/agents_remember/controlplane/signal_routing.py:393-412) is the N14 sweep-time derivation: the
+`derive_row_owner(catalog, entry)` cit:([`derive_row_owner`], mcp/src/agents_remember/controlplane/signal_routing.py:364-383) is the N14 sweep-time derivation: the
 row's durable subject identity (leaf key + seat role + subject agent), never its stamped address.
 `dispatch-brief` rows return an empty owner (exact-pinned, never rebound). A worker/reviewer/
 curator subject re-resolves its live manager (`derive_leaf_manager_owner`); a manager subject
@@ -138,17 +133,11 @@ satisfy before posting.
   `spawned_by_session` is the orchestrator — routing reads only the SENDER's provenance, never
   recurses. A locked existing test (`test_no_layer_is_addressed_its_grandchildren_noise`) pins this
   invariant for THIS function specifically.
-- **`derive_skip_level_owner` is why that invariant stays locked as a SEPARATE function rather than
-  a parameter.** The one-hop rule is about who ADDRESSES whom (an existing caller's routing
-  contract); the two-hop walk is a different question — how many hops THIS walker takes to find a
-  live address for the SAME sender, for the ladder's rung-2/R4-grandparent use case. Folding them
-  together would either break the locked test or silently change routing for every existing
-  `derive_signal_owner` caller (the L2 agent-notifier's nudge/signal-emit actions).
 - Pure and catalog-read-only: neither function ever mutates the catalog or posts an inbox entry.
 - `decision-item` routing to `architect` is unconditional — it does not consult the catalog at all
   (unchanged, `derive_signal_owner` only).
-- `derive_skip_level_owner`'s walk is bounded (a 64-node pathological-chain guard) so a corrupt or
-  cyclic catalog can never hang it.
+- The ladder's two-hop walk and its 64-node chain guard are gone (260713-TES-L5); the remaining
+  derivations are bounded and pure (catalog-read only).
 
 ### Todos
 
@@ -169,9 +158,7 @@ existing design doc.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The owner address is read straight off the sender's own `spawned_by_session`/`spawned_by_lifecycle` catalog fields. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
-| The two callers of the two-hop walk: rung 2's skip-level target and the dead-upstream grandparent signal. | `derive_skip_level_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:490-530 |
 | The compound-idle consumer of the public `master_key` scope filter (both membership arms). | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:69-103 |
-| `next_step`'s rung-2 branch calls this walker directly and detects the hierarchy-ceiling empty-owner case. | `next_step` | mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152 |
 
 ## Cross-Repo References
 
@@ -181,8 +168,23 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | None. | N/A | N/A |
 
+## 260713-TES-L5 Current Delta — Skip-Level Walk Demolished
+
+`derive_skip_level_owner` and `_derive_spawn_owner` are deleted with the escalation ladder: no
+two-hop owner's-owner walk remains, and dead-owner chains surface through `derive_row_owner`
+rebinding, the rebind-grace expiry, and the scoped architect mailbox. `evaluate_dead_upstream_findings`
+still signals a live worker/manager's dead direct owner through the ordinary one-hop
+`derive_signal_owner` (grandparent = owner of the owner by provenance, not a ladder rung). This
+entry supersedes any earlier description in this sidecar that conflicts with the current source
+behavior above; verification metadata stays pinned to the pre-commit source history until
+closeout.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the skip-level demolition —
+  `derive_skip_level_owner`/`_derive_spawn_owner` deleted; dead-owner chains surface via rebind +
+  scoped architect mailbox; dead-upstream signaling stays one-hop provenance. Verification
+  metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded scoped architect custody (R13) —
   `derive_architect_owner(catalog, leaf_key=...)` resolves the repo+sprint-scoped architect
   with exact-leaf preference and fail-closed role-only fallback, never global first-match — and

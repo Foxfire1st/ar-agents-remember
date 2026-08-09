@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -1338,7 +1338,7 @@ neighboring repository governs this route.
 | The containment metrics sampler + store the lifespan loop drives. | `ProviderMetricsStore`; `sample_provider_containers` | mcp/src/agents_remember/providers/metrics.py:231-360; mcp/src/agents_remember/providers/metrics.py:363-420 |
 | The provider degradation detector the sampling loop also calls once per tick; governed by the `mcp/` package overview. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
 | The expectation-row, operator-inbox, orchestration-nudge, signal-cooldown, and observer-event stores. | `ExpectationRowStore`; "class OperatorInboxStore"; `OrchestrationNudgeStore`; `AgentNotifierSignalCooldownStore`; `EventStore` | mcp/src/agents_remember/controlplane/expectation_rows.py:156-336; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251; mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127; mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220; mcp/src/agents_remember/observer/store.py:103-171 |
-| The `orchestration.agentNotifier` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s agent-notifier loop re-reads per-use. | "class AgentNotifierSettings:"; "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:278-278; mcp/src/agents_remember/serving/_app_lifespan.py:113-113 |
+| The `orchestration.agentNotifier` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s agent-notifier loop re-reads per-use. | "class AgentNotifierSettings:"; "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:226-226; mcp/src/agents_remember/serving/_app_lifespan.py:108-108 |
 | The MCP tool choke point that surfaces the agent-notifier staleness banner on every tool call. | `_tool_payload`; `_agent_notifier_banner` | mcp/src/agents_remember/application/tool_response.py:22-31; mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | The sole epoch-bound prompt/setter timeline and its authoritative status/withdrawal model. | `HarnessSubmissionAuthority`; `withdraw` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
 | The daemon/IPC/client boundary for raw-free lifecycle operations and first-byte classification. | `register_harness_control_routes`; `_dispatch`; `_exchange_control` | mcp/src/agents_remember/serving/harness_control_api.py:182-217; mcp/src/agents_remember/serving/harness_control_client.py:534-568; mcp/src/agents_remember/serving/harness_control_ipc.py:159-171 |
@@ -1690,8 +1690,20 @@ endpoint shape, or sweep cadence changed.
 
 The three serving files reassigned to L7 under OQ1 Option A were split in place, not moved: `serving/app.py` (1,973) → facade + `_app_{common,lifespan,routes,terminal_routes}.py`; `serving/agent_notifier.py` (1,282) → facade + `_agent_notifier_{actions,evaluation}.py`; `serving/conversation/models.py` (1,302) → facade + `_models_{blocks,operations,status,telemetry,wire}.py`. `serving/conversation/projectors/codex.py` (1,223 → 704) gained `_codex_collab.py` and the exact `turn/diff/updated` silent-method route (R16); `serving/harness_control_client.py` (1,225 → 704) gained `_harness_control_parsing.py`. Every facade's base surface is pinned by `mcp/tests/test_facade_surface.py`.
 
+### 260713-TES-L5 Route Impact — Judgment Demolition
+
+The serving relay owns fact actions and predicates only: respawn/ladder/auto-nudge/
+mark-missed actions and the expectation/escalation/ladder-terminal predicates are deleted,
+`AgentNotifierContext` drops the nudge store and escalation knobs, and `evaluate_predicates`
+caps owner-signal findings with `escalationBudget` (twin of `redeliverBudget`). The new
+forcing suite and the runnable live-chain-proof script are the leaf's verification surfaces.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the serving judgment
+  demolition (fact-only actions/predicates, context cleanup, load-shed wiring) and the new
+  forcing-suite/live-proof surfaces. Verification metadata pinned until closeout stamps the
+  260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded deliver-until-LANDED
   (boundary-sampled landing in inbox_delivery, post-time owner re-resolution in
   operator_inbox_posts, formal `landed` state), the N14 rebind/grace/expiry predicate+action

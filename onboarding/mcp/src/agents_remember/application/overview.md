@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -220,8 +220,18 @@ now carries them: this is the ONBOARDING lookup outcome, never a source-read con
 presence rides the independent `source` field, which is why `found` alongside a missing
 `source` is not a contradiction.
 
+### 260713-TES-L5 Route Impact — Judgment Demolition
+
+`gate_tools.py` wording is refreshed for N16: `gate_response_wait_tool` says inbox entries
+land at the recipient's turn boundary and `operator_inbox_consume` is an optional
+attribution marker, never a mechanical ack. No application-layer behavior changed; the
+verdict-by deadline surface remains the gate-open expectation row.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the N16 wording refresh in
+  `gate_response_wait_tool` (landing + attribution-only consume). Verification metadata
+  pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the inbox supersede use case,
   the `include_terminal` poll surface, the attribution-only consume, and the N2 retire
   stranded-row surfacing in `terminal_tools.py`. Verification metadata pinned until closeout

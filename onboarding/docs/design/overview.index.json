@@ -48,7 +48,7 @@
       "FEUI",
       "docs/design/",
       "route-local-overview",
-      "1c1629fc97dd4daf352cf9b3529d210be167d2af",
+      "2dea095cd68454a7a68893e37c07dbd8daa86d32",
       "/../overview.md",
       "dashboard/src/panels/engine-room/",
       "dashboard/scenario-catalog.md",
@@ -62,6 +62,7 @@
       "# Cockpit Dashboard \u2014 Workflow Scenario Catalog",
       "# Session cockpit upstream register and Chats decision brief",
       "# Session cockpit closeout evidence",
+      "ladder-resolved",
       "orient",
       "engine-room/overview.md",
       "onboarding/docs/design/engine-room/overview.md",
@@ -75,9 +76,9 @@
       "lastUpdated",
       "T07",
       "lastVerifiedCommitHash",
-      "c1629fc97dd4daf352cf9b3529d210be167d2af",
+      "dea095cd68454a7a68893e37c07dbd8daa86d32",
       "lastVerifiedCommitDate",
-      "T22",
+      "T18",
       "governingOverview",
       "TES",
       "TTL",
@@ -85,8 +86,7 @@
       "HTML",
       "CSS",
       "GSAP",
-      "RailChat",
-      "T21"
+      "RailChat"
     ]
   },
   "fallback": {

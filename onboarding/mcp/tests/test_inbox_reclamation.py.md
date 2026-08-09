@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -67,10 +67,10 @@ evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| ConfirmedGonePolicyTests and ReconcileAndCompactTests are implemented in this suite. | `ConfirmedGonePolicyTests`, `ReconcileAndCompactTests` | mcp/tests/test_inbox_reclamation.py:87-181; mcp/tests/test_inbox_reclamation.py:184-249 |
+| ConfirmedGonePolicyTests and ReconcileAndCompactTests are implemented in this suite. | `ConfirmedGonePolicyTests`, `ReconcileAndCompactTests` | mcp/tests/test_inbox_reclamation.py:86-180; mcp/tests/test_inbox_reclamation.py:183-254 |
 | The store transaction resolves and compacts the selected entries atomically. | `reconcile_and_compact` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:234-275 |
 | The integration suite exercises resolution/compaction before redelivery. | "def reconcile_and_compact(" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:234-234 |
-| The supervisor ordering places resolution/compaction before redelivery. | "redelivery" | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:300-300 |
+| The supervisor ordering places resolution/compaction before redelivery. | "redelivery" | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:291-291 |
 
 ## Cross-Repo References
 
@@ -79,8 +79,19 @@ No meaningful cross-repo references found.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 
+## 260713-TES-L5 Current Delta — Legacy Ladder-Resolved Snapshot, No Transition
+
+`ReconcileAndCompactTests` no longer calls `mark_ladder_resolved` (deleted); the confirmed-gone
+terminal fixture is appended as a direct `ladder-resolved` snapshot, matching the real
+reclamation fold that still writes the legacy state (reviewer F4). Integration harnesses drop
+`OrchestrationNudgeStore`.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the direct `ladder-resolved`
+  snapshot fixture (transition deleted; fold still writes the legacy state) and the
+  nudge-store removal. Verification metadata pinned until closeout stamps the 260713-TES-L5
+  commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the landed-authority fixture
   replacement and the pending-TTL-as-resolution-boundary pin (N13/§9 — compaction keeps pending
   rows; expiry is surfaced first). Verification metadata pinned until closeout stamps the

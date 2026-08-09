@@ -6,8 +6,8 @@
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
 | lastUpdated            | 2026-07-18T07:43+02:00                      |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`  |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`  |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../../overview.md`                         |
 
 ## Governing Overview
@@ -107,6 +107,20 @@ needed to establish the route model.
 
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: `observable-lifecycle.md`'s recovery
+## 260713-TES-L5 Route Impact — Fact-Relay Recovery Language
+
+`observable-lifecycle.md` (this route's design authority) refreshed its recovery runbook:
+`ladder-resolved` is legacy parse-compat (the timed escalation ladder is retired) and
+retired/absent-target rows resolve through the sweep's landing/ceiling/grace paths.
+
+## Update History
+
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: `observable-lifecycle.md`'s recovery
+  runbook now treats `ladder-resolved` as a legacy pre-formal-vocabulary state (the timed
+  escalation ladder is retired) and resolves retired/absent-target rows through the sweep's
+  landing/ceiling/grace paths instead of hand-parking them. Verification metadata pinned
+  until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: `observable-lifecycle.md` was refreshed to
   agent-notifier wording (supervisor sweep/loop/heartbeat); design-spec prose is historical and
   route shape unchanged. Verification metadata pinned until closeout stamps the 260713-TES-L1

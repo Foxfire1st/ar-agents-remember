@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/state_signals.py`        |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                    |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                    |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -36,12 +36,12 @@ them, and a dead seat has no boundary to cross.
 `NON_REACTION_WINDOW_SECONDS = 300.0` cit:([`NON_REACTION_WINDOW_SECONDS`], mcp/src/agents_remember/serving/state_signals.py:28-30) is the leaf-authored bounded window (R5),
 mirroring the pickup-staleness convention.
 
-`evaluate_state_signal_findings` cit:([`evaluate_state_signal_findings`], mcp/src/agents_remember/serving/state_signals.py:128-157) scans running worker harness rows at
+`evaluate_state_signal_findings` cit:([`evaluate_state_signal_findings`], mcp/src/agents_remember/serving/state_signals.py:127-155) scans running worker harness rows at
 `turn_state="turn-ended"` whose `terminal_outcome` is `completed` or `interrupted`, has a
 `terminal_evidence_id`, and has not yet been relayed (`state_signal_emitted_for` != that id).
 The evidence id is the per-seat+turn dedupe identity.
 
-`evaluate_non_reaction_findings` cit:([`evaluate_non_reaction_findings`], mcp/src/agents_remember/serving/state_signals.py:182-229) finds formal `state == "landed"` rows at this seat
+`evaluate_non_reaction_findings` cit:([`evaluate_non_reaction_findings`], mcp/src/agents_remember/serving/state_signals.py:181-227) finds formal `state == "landed"` rows at this seat
 (`deliveredToSession` + `adapterDeliveryState="accepted"` + `adapterAcceptedAt`), takes the
 oldest, and — once it is older than the window and the seat is still `turn-ended` — emits one
 `non-reaction-due` finding per landed-row episode, deduped by `non_reaction_emitted_for`. It
@@ -76,7 +76,7 @@ is not idle. An unbound manager (no master anchor) never forms a set (accepted r
 activity changes the signature, which is the re-arm — there is no separate marker-clearing
 write.
 
-`evaluate_compound_idle_findings` cit:([`evaluate_compound_idle_findings`], mcp/src/agents_remember/serving/state_signals.py:159-180) emits one `compound-idle-due`
+`evaluate_compound_idle_findings` cit:([`evaluate_compound_idle_findings`], mcp/src/agents_remember/serving/state_signals.py:158-178) emits one `compound-idle-due`
 finding per un-relayed set (`compound_idle_emitted_for != signature`), one finding per
 manager seat, with `source_id=signature` carried only as the trigger — the emitter derives
 the ACTION-time signature and never consumes this informational value (R2 residual).
@@ -86,7 +86,7 @@ manager and every set member (`id@binding-or-replacement`), so the orchestrator 
 the pure seat-state fact with the non-reaction residue fact (N15/N16) without remembering
 who was in the set.
 
-`evaluate_boundary_drain_findings` cit:([`evaluate_boundary_drain_findings`], mcp/src/agents_remember/serving/state_signals.py:231-274) is the N15 drain: pending, not-yet-landed rows
+`evaluate_boundary_drain_findings` cit:([`evaluate_boundary_drain_findings`], mcp/src/agents_remember/serving/state_signals.py:230-276) is the N15 drain: pending, not-yet-landed rows
 whose target is at a turn boundary (`seat_at_turn_boundary`) and whose `lastAttemptAt` predates
 the boundary transition (`turn_state_changed_at`) are pushed. Rows without a fresh boundary
 stay on the durable backoff schedule; rows addressed to a dead/replaced seat are skipped here
@@ -137,7 +137,7 @@ relay semantics are same-repository runtime behavior proven by source and tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines this relay; the catalog turn truth and tests are the authority. | `evaluate_state_signal_findings` | mcp/src/agents_remember/serving/state_signals.py:128-157 |
+| No external/domain document defines this relay; the catalog turn truth and tests are the authority. | `evaluate_state_signal_findings` | mcp/src/agents_remember/serving/state_signals.py:127-155 |
 
 ## Repo-Internal References
 
@@ -149,8 +149,8 @@ the landing predicate lives on the inbox record.
 | --- | --- | --- |
 | The catalog row's terminal truth, boundary vocabulary, and dedupe markers. | `seat_at_turn_boundary`; "class TerminalCatalogEntry:" | mcp/src/agents_remember/serving/terminal_catalog.py:95-103; mcp/src/agents_remember/serving/terminal_catalog.py:106-220 |
 | Terminality for landed state-signal rows (accepted at boundary). | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:66-74 |
-| The action layer: emit, non-reaction, boundary drain, held-row exclusions. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary`; `_FINDING_ACTIONS` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:758-817; mcp/src/agents_remember/serving/_agent_notifier_actions.py:879-936; mcp/src/agents_remember/serving/_agent_notifier_actions.py:939-948; mcp/src/agents_remember/serving/_agent_notifier_actions.py:956-969 |
-| The relay simulation suites (incident-#1, boundary hold, dedupe, rebinding, idle flap, non-reaction). | `StateSignalRelayTests`; `StateSignalDeliveryTests` | mcp/tests/test_state_signal_relay.py:128-735; mcp/tests/test_state_signal_delivery.py:88-229 |
+| The action layer: emit, non-reaction, boundary drain, held-row exclusions. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary`; `_FINDING_ACTIONS` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:421-480; mcp/src/agents_remember/serving/_agent_notifier_actions.py:542-599; mcp/src/agents_remember/serving/_agent_notifier_actions.py:602-611; mcp/src/agents_remember/serving/_agent_notifier_actions.py:619-630 |
+| The relay simulation suites (incident-#1, boundary hold, dedupe, rebinding, idle flap, non-reaction). | `StateSignalRelayTests`; `StateSignalDeliveryTests` | mcp/tests/test_state_signal_delivery.py:88-227; mcp/tests/test_state_signal_relay.py:127-742 |
 
 ## Cross-Repo References
 
@@ -160,8 +160,20 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this relay. | — | — |
 
+## 260713-TES-L5 Current Delta — No Ladder Safety Net
+
+`state_signal_held_on_boundary` now says only that a held row is not redelivered while its
+target is live-but-not-at-boundary; the "or climb the escalation ladder" phrase is deleted
+with the ladder. Dead/archived targets keep the ordinary redelivery schedule, and terminality
+is landing/ceiling/grace only. This entry supersedes any earlier description in this sidecar
+that conflicts with the current source behavior above; verification metadata stays pinned to
+the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the ladder-vocabulary removal in
+  `state_signal_held_on_boundary` (boundary-held rows wait for the next boundary; no ladder
+  climb exists). Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: updated the landing vocabulary to the formal
   `state="landed"` (non-reaction scan now filters on the terminal state; the by-rule pending
   predicate is gone), and recorded the dead-seat skip in `evaluate_boundary_drain_findings`

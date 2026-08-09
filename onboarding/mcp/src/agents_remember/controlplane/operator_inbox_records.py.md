@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
 | lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -106,11 +106,12 @@ posting; every caller builds them instead of passing nineteen keywords:
   derives from catalog provenance BEFORE posting, stamped at creation and re-stamped by
   post-time re-resolution and sweep-time rebinding (N14) so redelivery never re-derives it from
   a catalog snapshot that has since moved on.
-- **`InboxRouting(address, owner=InboxOwner())`** — the two together. A readdressing rung moves
-  the address onto the next owner and rewrites both, which is why they are one routing decision.
+- **`InboxRouting(address, owner=InboxOwner())`** — the two together. Sweep-time rebinding moves
+  the address onto the current qualified owner and rewrites both, which is why they are one
+  routing decision.
 - **`InboxSubject(leaf_key=None, seat_role=None, agent_id=None)`** — what a row is *about* as
-  opposed to who it goes to. The agent-notifier coalesces re-fires and the ladder readdresses on
-  exactly this triple.
+  opposed to who it goes to. The agent-notifier coalesces re-fires and the rebind machinery
+  resolves the current owner on exactly this triple.
 - **`InboxMessage(ask, response, message_kind="message", gate_id=None, artifact_path=None,
   subject=InboxSubject())`** — what the row says and what about.
 - **`InboxPoster(created_by, created_via, sender_agent_id=None, sender_role=None)`** — who put the
@@ -131,12 +132,10 @@ spawn provenance, distinct from the caller-supplied `recipientRole`. Those three
 carried by `InboxRouting.owner` (an `InboxOwner`); the former `owner_role` / `owner_agent_id` /
 `owner_lifecycle_id` keywords on `create_operator_inbox_entry` are gone.
 
-**260707-HFX2-L4** (R1/R2, escalation ladder rung marker): adds `rung: int = 0` — the ladder's own
-position marker for the row (0 = not yet escalated; 1 = renudged; 2 = skip-level re-addressed; 3 =
-surfaced to the developer attention queue, terminal). `escalatedAt` (reserved by HFX2-L2) is now
-genuinely re-stamped by `OperatorInboxStore.advance_rung` on EVERY rung transition, so it always
-names "since when has this row sat at its CURRENT rung" — the anchor the ladder's own SLA/dwell
-check (`escalation_ladder.rung_due`) reads — rather than merely "was this row ever escalated."
+**260707-HFX2-L4** (R1/R2, escalation ladder rung marker): adds `rung: int = 0` — the retired
+escalation ladder's position marker. **260713-TES-L5**: the timed ladder and its transitions are
+deleted, so `rung`/`escalatedAt`/`rungTransitionAt` are legacy fields retained for parse
+compatibility only — no transition writes or advances them anymore (0 = never escalated).
 
 **260707-HFX2-L9** (dead-seat storm fix): adds the terminal non-ack state
 `ladder-resolved` plus `ladderResolvedAt`/`ladderResolvedReason`. This is the durable end state for
@@ -201,10 +200,10 @@ external-chat pull implementation of that idea.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The inbox record declares its schema tag and the state, via, role, message-kind and delivery-state literals. | "OPERATOR_INBOX_RECORD_SCHEMA ="; "OperatorInboxState = Literal["; "OperatorInboxVia = Literal["; "AgentRole = Literal["; "InboxMessageKind = Literal["; "InboxDeliveryState = Literal[" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:13-13; mcp/src/agents_remember/controlplane/operator_inbox_records.py:15-15; mcp/src/agents_remember/controlplane/operator_inbox_records.py:28-29; mcp/src/agents_remember/controlplane/operator_inbox_records.py:44-44; mcp/src/agents_remember/controlplane/operator_inbox_records.py:57-57 |
-| `require_inbox_address` refuses an entry with no mailbox key, and `OperatorInboxCompatibleRecord` inherits `DurableRecord` while keeping its own `extra="allow"` plus the named forward-compatibility allowlist. | "def require_inbox_address("; "class OperatorInboxCompatibleRecord(DurableRecord):" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:149-149; mcp/src/agents_remember/controlplane/operator_inbox_records.py:160-160 |
+| The inbox record declares its schema tag and the state, via, role, message-kind and delivery-state literals. | "OPERATOR_INBOX_RECORD_SCHEMA ="; "OperatorInboxState = Literal["; "OperatorInboxVia = Literal["; "AgentRole = Literal["; "InboxMessageKind = Literal["; "InboxDeliveryState = Literal[" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:13-13; mcp/src/agents_remember/controlplane/operator_inbox_records.py:15-15; mcp/src/agents_remember/controlplane/operator_inbox_records.py:29-30; mcp/src/agents_remember/controlplane/operator_inbox_records.py:45-45; mcp/src/agents_remember/controlplane/operator_inbox_records.py:58-58 |
+| `require_inbox_address` refuses an entry with no mailbox key, and `OperatorInboxCompatibleRecord` inherits `DurableRecord` while keeping its own `extra="allow"` plus the named forward-compatibility allowlist. | "def require_inbox_address("; "class OperatorInboxCompatibleRecord(DurableRecord):" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:150-150; mcp/src/agents_remember/controlplane/operator_inbox_records.py:161-161 |
 | `OperatorInboxEntry` preserves mailbox keys, ask, response, creation attribution, consume attribution and the routed owner address. | `OperatorInboxEntry` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:156-224 |
-| `fold_operator_inbox_entries`, `create_operator_inbox_entry` and `consume_operator_inbox_entry` are pure snapshot builders that never touch disk. | "def fold_operator_inbox_entries("; "def create_operator_inbox_entry("; "def consume_operator_inbox_entry(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:258-258; mcp/src/agents_remember/controlplane/operator_inbox_records.py:277-277; mcp/src/agents_remember/controlplane/operator_inbox_records.py:320-320 |
+| `fold_operator_inbox_entries`, `create_operator_inbox_entry` and `consume_operator_inbox_entry` are pure snapshot builders that never touch disk. | "def fold_operator_inbox_entries("; "def create_operator_inbox_entry("; "def consume_operator_inbox_entry(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:256-256; mcp/src/agents_remember/controlplane/operator_inbox_records.py:275-275; mcp/src/agents_remember/controlplane/operator_inbox_records.py:318-318 |
 
 ## Cross-Repo References
 
@@ -231,8 +230,24 @@ The compatibility base permits exactly the optional `adapterDeliveryState` and
 this is an additive two-field seam, not catch-all parsing. Delivery evidence remains separate from
 the explicit consume state.
 
+## 260713-TES-L5 Current Delta — Retired Ladder Fields And Vocabulary
+
+The timed escalation ladder is deleted. `rung`, `escalatedAt`, and `rungTransitionAt` are legacy
+parse-compat fields (no transition writes them; `rung` stays 0); `ladder-resolved` remains a
+terminal literal for legacy rows and is still written by the confirmed-gone reclamation fold in
+`OperatorInboxStore.reconcile_and_compact` (terminal, deterministic, fact-based -- never a rung
+transition; reviewer F4). Routing prose now says rebind machinery, not ladder readdressing. This
+entry supersedes any earlier description in this sidecar that conflicts with the current source
+behavior above; verification metadata stays pinned to the pre-commit source history until
+closeout.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the ladder retirement in the record --
+  `rung`/`escalatedAt`/`rungTransitionAt` are legacy parse-compat, `ladder-resolved` stays a
+  terminal literal (still written by the confirmed-gone reclamation fold, never a rung
+  transition), and routing vocabulary moved from ladder readdressing to sweep-time rebinding.
+  Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the N13/N16 schema migration —
   `OperatorInboxState` now carries the formal terminal vocabulary
   (`landed`/`superseded`/`unresolved`/`expired`) beside the legacy `consumed`/`ladder-resolved`

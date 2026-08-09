@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_signal_routing.py`            |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -110,11 +110,11 @@ No meaningful external design-doc references found yet (created this leaf).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Worker-to-manager and manager-to-orchestrator one-hop routing from catalog spawn provenance. | `test_worker_signal_routes_to_its_manager`; `test_manager_signal_routes_to_orchestrator` | mcp/tests/test_signal_routing.py:49-62; mcp/tests/test_signal_routing.py:222-237 |
-| One-hop-only regression: a worker's signal never chases the chain past its manager. | `test_no_layer_is_addressed_its_grandchildrens_noise` | mcp/tests/test_signal_routing.py:239-259 |
-| `decision-item` reserved-role routing always targets the architect regardless of provenance. | `test_decision_item_routes_to_architect_regardless_of_provenance` | mcp/tests/test_signal_routing.py:261-266 |
-| Two-hop, dead-node-skipping owner derivation: live chain, dead intermediate, dead-ceiling, unknown sender, and role-only-address cases. | `SkipLevelOwnerTests` | mcp/tests/test_signal_routing.py:353-441 |
-| The shared liveness primitive both the ladder and the two-hop walk read. | `IsSeatDeadTests` | mcp/tests/test_signal_routing.py:444-472 |
+| Worker-to-manager and manager-to-orchestrator one-hop routing from catalog spawn provenance. | `test_worker_signal_routes_to_its_manager`; `test_manager_signal_routes_to_orchestrator` | mcp/tests/test_signal_routing.py:48-61; mcp/tests/test_signal_routing.py:221-236 |
+| One-hop-only regression: a worker's signal never chases the chain past its manager. | `test_no_layer_is_addressed_its_grandchildrens_noise` | mcp/tests/test_signal_routing.py:238-258 |
+| `decision-item` reserved-role routing always targets the architect regardless of provenance. | `test_decision_item_routes_to_architect_regardless_of_provenance` | mcp/tests/test_signal_routing.py:260-265 |
+| The two-hop owner derivation is deleted with the ladder (260713-TES-L5); no skip-level tests remain. | `test_no_layer_is_addressed_its_grandchildrens_noise` | mcp/tests/test_signal_routing.py:238-258 |
+| The shared liveness primitive the rebind/dead-target and dead-upstream machinery reads. | `IsSeatDeadTests` | mcp/tests/test_signal_routing.py:352-352 |
 
 ## Cross-Repo References
 
@@ -123,8 +123,17 @@ No meaningful cross-repo references found.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 
+## 260713-TES-L5 Current Delta — Skip-Level Walk Tests Removed
+
+The `derive_skip_level_owner`/`_derive_spawn_owner` coverage is deleted with the function:
+no two-hop owner's-owner walk remains. One-hop `derive_signal_owner`, `is_seat_dead`, and the
+scoped owner-derivation family stay covered as before.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the removal of the skip-level
+  walk tests (function deleted with the escalation ladder). Verification metadata pinned
+  until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: bound one-hop routing and decision-item behavior to exact tests and removed empty reference placeholders.
 
 - 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed

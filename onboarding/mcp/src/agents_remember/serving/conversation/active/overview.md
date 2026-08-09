@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastUpdated | 2026-08-09T16:43+02:00 |
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 
 ## What This Area Is
 
@@ -240,7 +240,7 @@ engine/store and one over a real socket.
 | The foundation pin asserts exactly the three owned active routes (page, events, selected-child history) by exact path/method set. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
 | The declared response shapes and the cursor-aware refusal table the three routes spread. | `conversation_page`; `hydrate_agent_history`; `conversation_events`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/active/api.py:126-235; mcp/src/agents_remember/serving/conversation/response_contract.py:113-122 |
 | `CONVERSATION_RESPONSES` (the control table plus the two cursor refusals) and `AgentHistoryHydrated`, the model the history route's assembled 200 body had never had. | `AgentHistoryHydrated`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:714-714; onboarding/mcp/tests/overview.md:716-718 |
+| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:722-728 |
 
 ## Cross-Repo References
 
@@ -411,6 +411,9 @@ singleflight replacement semantics, epoch verification, and identity constructio
 offload are untouched.
 
 ## Update History
+
+- 2026-08-09T16:43+02:00 — 260713-TES-L5 hotfix curator: refreshed the active-serving test-route
+  citation after the new native-ingestion suite moved the proving overview paragraph.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: recorded the terminal-precedence
   parameter on the canonical seat projection (status authority + orchestration delegation).
   Verification metadata pinned until closeout stamps the 260713-TES-L2 commit.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agent_notifier_seat.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T06:48+02:00                                            |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                        |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                        |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -51,8 +51,19 @@ resolves `expired`/`rebind-grace-expired`, readdresses to `recipientRole="archit
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
+## 260713-TES-L5 Current Delta — No Nudge, No Expectation Findings
+
+`SweepIntegrationTests` removes the overdue verdict-by expectation fixtures and the
+`OrchestrationNudgeStore` from the context: no `expectation-overdue` finding, no
+`auto-nudge` action, no mark-missed assertion, and no `orchestration.nudge` event in the
+seeded-drift sweep. The remaining seeded drift covers inbox-redeliverable and seat-liveness
+only.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the nudge-store removal and the
+  expectation-overdue/auto-nudge assertion deletions in the sweep integration suite.
+  Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the verdict-by fixture swap (N16
   ack-by retirement) and the dead-seat expiry-to-architect-mailbox integration test (N2/N3).
   Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.

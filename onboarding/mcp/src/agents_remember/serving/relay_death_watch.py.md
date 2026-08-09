@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/relay_death_watch.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -88,10 +88,10 @@ by source and tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The heartbeat row and age helper the watcher reads. | `AgentNotifierHeartbeatStore`; `heartbeat_age_seconds` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-125; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:128-138 |
-| The scoped architect mailbox the alert is addressed to (role-only fallback when no scoped seat). | `derive_architect_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:322-350 |
+| The scoped architect mailbox the alert is addressed to (role-only fallback when no scoped seat). | `derive_architect_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:294-325 |
 | The durable push path for the alert row. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:165-223 |
-| The loop task is spawned by the serving lifespan beside the notifier loop. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:170-215 |
-| The forcing tests: never-ticked silence, one-post-per-tick re-arm, corrupt marker, default cutoff, best-effort delivery, loop behavior. | `RelayDeathWatchTests`; `RelayDeathLoopTests` | mcp/tests/test_inbox_arrival_guarantee.py:560-654 |
+| The loop task is spawned by the serving lifespan beside the notifier loop. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:168-213 |
+| The forcing tests: never-ticked silence, one-post-per-tick re-arm, corrupt marker, default cutoff, best-effort delivery, loop behavior. | `RelayDeathWatchTests`; `RelayDeathLoopTests` | mcp/tests/test_inbox_arrival_guarantee.py:558-624; mcp/tests/test_inbox_arrival_guarantee.py:627-651 |
 
 ## Cross-Repo References
 

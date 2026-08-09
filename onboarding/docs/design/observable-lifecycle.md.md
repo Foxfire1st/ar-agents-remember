@@ -6,8 +6,8 @@
 | path                   | `docs/design/observable-lifecycle.md`   |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-08T23:59+02:00                      |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                           |
 
 ## Governing Overview
@@ -53,6 +53,23 @@ metrics and compact normally.
 
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the recovery-runbook refresh —
+## 260713-TES-L5 Current Delta — Recovery Runbook Uses Fact-Relay Terminals
+
+The inbox-storm recovery runbook now treats `ladder-resolved` as a legacy pre-formal-vocabulary
+state (the timed escalation ladder is retired): live-seat rows are re-posted or allowed to
+land, and retired/absent-target rows resolve through the sweep's own landing/ceiling/grace
+paths (`unresolved` after the attempt ceiling, `expired` after rebind grace) instead of being
+hand-parked as terminal.
+
+## Update History
+
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the recovery-runbook refresh —
+  `ladder-resolved` is a legacy pre-formal-vocabulary state (the timed escalation ladder is
+  retired), live-seat rows are re-posted or allowed to land, and retired/absent-target rows
+  resolve through the normal sweep paths (`unresolved` at the attempt ceiling, `expired`
+  after rebind grace) instead of being parked by hand. Verification metadata pinned until
+  closeout stamps the 260713-TES-L5 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 3 citation entries (6 findings); no Tier-3 findings.
 

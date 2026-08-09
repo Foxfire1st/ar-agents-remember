@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_compound_idle_relay.py`                  |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-09T06:48+02:00                                    |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`               |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`               |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -27,39 +27,39 @@ implementation and drive the production sweep end to end through `run_agent_noti
 
 ### Logic
 
-`CompoundIdleRelayTests` cit:([`CompoundIdleRelayTests`], mcp/tests/test_compound_idle_relay.py:164-741) builds fake catalog/inbox seams
+`CompoundIdleRelayTests` cit:([`CompoundIdleRelayTests`], mcp/tests/test_compound_idle_relay.py:163-735) builds fake catalog/inbox seams
 (`_entry`, `_orchestrator`, `_manager`, `_idle_worker`, `_ctx`, `_state_signals`) and runs
 multi-tick sweeps over them:
 
-- Positive/dedupe: `test_compound_idle_positive_exactly_one_orchestrator_signal` cit:([`test_compound_idle_positive_exactly_one_orchestrator_signal`], mcp/tests/test_compound_idle_relay.py:212-247)
+- Positive/dedupe: `test_compound_idle_positive_exactly_one_orchestrator_signal` cit:([`test_compound_idle_positive_exactly_one_orchestrator_signal`], mcp/tests/test_compound_idle_relay.py:209-243)
   proves one row naming every set member, `state_signal_landed`, marker set, and no second row
   on re-projection.
-- Fail-closed negatives: partial set with one active worker cit:([`test_partial_set_active_worker_no_signal`], mcp/tests/test_compound_idle_relay.py:248-262),
-  unknown member cit:([`test_unknown_member_fail_closed_no_signal`], mcp/tests/test_compound_idle_relay.py:263-270),
-  unknown manager cit:([`test_unknown_manager_fail_closed_no_signal`], mcp/tests/test_compound_idle_relay.py:271-277),
-  zero-worker manager cit:([`test_zero_worker_manager_does_not_signal`], mcp/tests/test_compound_idle_relay.py:472-477),
-  unbound manager cit:([`test_unbound_manager_never_forms_set`], mcp/tests/test_compound_idle_relay.py:478-484),
-  unbound worker cit:([`test_unbound_worker_never_joins_or_blocks`], mcp/tests/test_compound_idle_relay.py:485-504),
-  and no-spawn-provenance owner cit:([`test_no_signal_without_spawn_provenance_owner`], mcp/tests/test_compound_idle_relay.py:533-539).
-- Boundary/idle vocabulary: `awaiting-input` counts as idle cit:([`test_awaiting_input_member_counts_as_idle`], mcp/tests/test_compound_idle_relay.py:278-294);
-  retired/exited rows never count (status-first) cit:([`test_retired_rows_never_count_status_first`], mcp/tests/test_compound_idle_relay.py:505-532);
-  flap re-arms after a seat returns to activity cit:([`test_flap_rearms_after_a_seat_returns_to_activity`], mcp/tests/test_compound_idle_relay.py:295-336);
+- Fail-closed negatives: partial set with one active worker cit:([`test_partial_set_active_worker_no_signal`], mcp/tests/test_compound_idle_relay.py:245-258),
+  unknown member cit:([`test_unknown_member_fail_closed_no_signal`], mcp/tests/test_compound_idle_relay.py:260-266),
+  unknown manager cit:([`test_unknown_manager_fail_closed_no_signal`], mcp/tests/test_compound_idle_relay.py:268-273),
+  zero-worker manager cit:([`test_zero_worker_manager_does_not_signal`], mcp/tests/test_compound_idle_relay.py:469-473),
+  unbound manager cit:([`test_unbound_manager_never_forms_set`], mcp/tests/test_compound_idle_relay.py:475-480),
+  unbound worker cit:([`test_unbound_worker_never_joins_or_blocks`], mcp/tests/test_compound_idle_relay.py:482-500),
+  and no-spawn-provenance owner cit:([`test_no_signal_without_spawn_provenance_owner`], mcp/tests/test_compound_idle_relay.py:530-535).
+- Boundary/idle vocabulary: `awaiting-input` counts as idle cit:([`test_awaiting_input_member_counts_as_idle`], mcp/tests/test_compound_idle_relay.py:275-290);
+  retired/exited rows never count (status-first) cit:([`test_retired_rows_never_count_status_first`], mcp/tests/test_compound_idle_relay.py:502-528);
+  flap re-arms after a seat returns to activity cit:([`test_flap_rearms_after_a_seat_returns_to_activity`], mcp/tests/test_compound_idle_relay.py:292-332);
   a working orchestrator holds the durable row with zero mid-turn submissions at t+301 s /
-  t+901 s and the next boundary lands it exactly once, terminal on this path cit:([`test_busy_orchestrator_holds_at_boundary_then_lands_exactly_once`], mcp/tests/test_compound_idle_relay.py:337-402).
+  t+901 s and the next boundary lands it exactly once, terminal on this path cit:([`test_busy_orchestrator_holds_at_boundary_then_lands_exactly_once`], mcp/tests/test_compound_idle_relay.py:334-398).
 - Membership arms (fix round 1, F1): same-master binding counts even when spawned by another
-  manager cit:([`test_member_identity_same_master_binding_counts`], mcp/tests/test_compound_idle_relay.py:403-414);
-  other-master workers never join or block cit:([`test_member_identity_other_master_worker_not_in_set`], mcp/tests/test_compound_idle_relay.py:415-433);
+  manager cit:([`test_member_identity_same_master_binding_counts`], mcp/tests/test_compound_idle_relay.py:400-410);
+  other-master workers never join or block cit:([`test_member_identity_other_master_worker_not_in_set`], mcp/tests/test_compound_idle_relay.py:412-429);
   a foreign-master worker spawned BY the manager neither blocks (active) nor joins (idle)
-  cit:([`test_foreign_master_worker_active_does_not_block`, `test_foreign_master_worker_idle_does_not_join`], mcp/tests/test_compound_idle_relay.py:434-453; mcp/tests/test_compound_idle_relay.py:454-471).
+  cit:([`test_foreign_master_worker_active_does_not_block`, `test_foreign_master_worker_idle_does_not_join`], mcp/tests/test_compound_idle_relay.py:431-449; mcp/tests/test_compound_idle_relay.py:451-467).
 - Manager residue (L3): a manager with landed rows older than the window relays the distinct
-  `non-reaction` fact to its orchestrator, deduped per episode cit:([`test_manager_non_reaction_residue_relays_to_orchestrator`], mcp/tests/test_compound_idle_relay.py:540-581),
-  and skips when no spawn-provenance owner exists cit:([`test_manager_residue_skips_without_spawn_provenance_owner`], mcp/tests/test_compound_idle_relay.py:582-608).
-- Emitter guards (fix round 1, F4/F5): the marker re-record is a no-op cit:([`test_compound_idle_marker_guard_suppresses_repeat_record`], mcp/tests/test_compound_idle_relay.py:609-642);
-  the action skips no-seat-row (both `session_id=None` and unknown id) cit:([`test_emit_skips_no_seat_row`, `test_emit_skips_finding_without_session_id`], mcp/tests/test_compound_idle_relay.py:643-648; mcp/tests/test_compound_idle_relay.py:649-660),
-  already-emitted-on-fresh-signature cit:([`test_emit_skips_already_emitted`], mcp/tests/test_compound_idle_relay.py:661-683),
-  and no-longer-idle-at-action-time cit:([`test_emit_skips_no_longer_idle_at_action_time`], mcp/tests/test_compound_idle_relay.py:684-704);
+  `non-reaction` fact to its orchestrator, deduped per episode cit:([`test_manager_non_reaction_residue_relays_to_orchestrator`], mcp/tests/test_compound_idle_relay.py:537-578),
+  and skips when no spawn-provenance owner exists cit:([`test_manager_residue_skips_without_spawn_provenance_owner`], mcp/tests/test_compound_idle_relay.py:580-605).
+- Emitter guards (fix round 1, F4/F5): the marker re-record is a no-op cit:([`test_compound_idle_marker_guard_suppresses_repeat_record`], mcp/tests/test_compound_idle_relay.py:607-623);
+  the action skips no-seat-row (both `session_id=None` and unknown id) cit:([`test_emit_skips_no_seat_row`, `test_emit_skips_finding_without_session_id`], mcp/tests/test_compound_idle_relay.py:641-645; mcp/tests/test_compound_idle_relay.py:647-657),
+  already-emitted-on-fresh-signature cit:([`test_emit_skips_already_emitted`], mcp/tests/test_compound_idle_relay.py:659-680),
+  and no-longer-idle-at-action-time cit:([`test_emit_skips_no_longer_idle_at_action_time`], mcp/tests/test_compound_idle_relay.py:682-701);
   the action-time signature replaces a stale evaluation-time signature in both the ask and the
-  marker cit:([`test_action_time_signature_replaces_stale_evaluation_signature`], mcp/tests/test_compound_idle_relay.py:705-741).
+  marker cit:([`test_action_time_signature_replaces_stale_evaluation_signature`], mcp/tests/test_compound_idle_relay.py:703-735).
 
 ### 260713-TES-L4 Landed-State Fixture Alignment
 
@@ -98,7 +98,7 @@ compound-idle semantics are same-repository runtime behavior proven by source an
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines this relay; the suite is the forcing proof. | `CompoundIdleRelayTests` | mcp/tests/test_compound_idle_relay.py:164-741 |
+| No external/domain document defines this relay; the suite is the forcing proof. | `CompoundIdleRelayTests` | mcp/tests/test_compound_idle_relay.py:163-735 |
 
 ## Repo-Internal References
 
@@ -109,8 +109,8 @@ landed-terminality predicate.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The predicates under test (set assembly, signature, findings). | `compound_idle_sets`; `compound_idle_signature`; `evaluate_compound_idle_findings` | mcp/src/agents_remember/serving/state_signals.py:69-103; mcp/src/agents_remember/serving/state_signals.py:104-111; mcp/src/agents_remember/serving/state_signals.py:159-180 |
-| The emitter under test (action-time signature, skip branches, boundary-gated post). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:820-876 |
+| The predicates under test (set assembly, signature, findings). | `compound_idle_sets`; `compound_idle_signature`; `evaluate_compound_idle_findings` | mcp/src/agents_remember/serving/state_signals.py:69-101; mcp/src/agents_remember/serving/state_signals.py:104-111; mcp/src/agents_remember/serving/state_signals.py:158-178 |
+| The emitter under test (action-time signature, skip branches, boundary-gated post). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:483-539 |
 | The marker write seam with its no-op guard. | `record_compound_idle_emitted` | mcp/src/agents_remember/serving/seat_turn_truth.py:155-166 |
 | Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:66-74 |
 
@@ -122,8 +122,17 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | No cross-repo boundary participates in this suite. | — | — |
 
+## 260713-TES-L5 Current Delta — Context Without Nudge Store
+
+The compound-idle relay harness drops `OrchestrationNudgeStore` from
+`AgentNotifierContext` (the sweep no longer nudges); relay behavior and landed-row fixtures
+are unchanged.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the nudge-store removal from the
+  relay harness context. Verification metadata pinned until closeout stamps the
+  260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the landed-row fixture alignment to
   the formal `state="landed"` (N13/N16 migration). Verification metadata pinned until closeout
   stamps the 260713-TES-L4 commit.

@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 
 > **Status:** active baseline
 
@@ -1067,8 +1067,25 @@ remote gate on leaf branches (recorded posture: no CI change this leaf). Refusal
 an uncovered changed production module, a cap-less full run, a failed targeted run, or a missing
 wrapper all refuse rather than certify a narrower run.
 
+### 260713-TES-L5 Route Impact — Judgment Demolition
+
+The agent-notifier relay is now fact-only: suspect-respawn, escalation-ladder, and
+expectation-evaluation machinery is deleted (`escalation_ladder.py`, `orphan_policy.py`, the
+ladder transitions/predicates/actions, `_auto_nudge`/`_mark_expectation_missed`); expectation
+rows are an owner-visible deadline surface (briefed-by/verdict-by) the relay never evaluates;
+`orchestration.escalation` settings fail loud as an unknown key; `escalationBudget` is the
+per-sweep load-shed cap on owner-signal findings. Legacy `ladder-resolved` and the rung fields
+stay parse-compat (the confirmed-gone fold still writes the state). The new 26-test forcing
+suite `mcp/tests/test_judgment_demolition.py` pins the demolition; the live chain proof is
+delivered as a runnable post-restart script and stays a manager/orchestrator exit-bar item.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the judgment demolition
+  across the relay (respawn/ladder/expectation evaluation deleted), the owner-visible
+  expectation surface, the fail-loud settings retirement, and the `escalationBudget`
+  load-shed re-wiring. Verification metadata pinned until closeout stamps the 260713-TES-L5
+  commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the quality altitude ladder
   (targeted leaf contract, once-per-master full wrapper at the master integration gate with the
   settings-owned memory cap, per-leaf `memory_quality_check` carve-out, loud refusal shapes).

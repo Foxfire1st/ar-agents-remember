@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:45+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`       |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -91,7 +91,7 @@ fails naming the offending state — verified by mutation, `TS2344`). Where the
 mirror genuinely cannot follow is a duplicate WITHIN one half: `Literal["a","a"]`
 collapses to one member here, while a TypeScript tuple keeps both. The
 dashboard's `contract.test.ts` catches that at runtime instead (one bucket per
-live state), which is a weaker gate but not an absent one cit:([`check_state_partition`, `ActiveState`, `TerminalState`], dashboard/src/types/projection.ts:19-19; mcp/src/agents_remember/observer/lifecycle_state.py:73-98; mcp/src/agents_remember/observer/lifecycle_state.py:118-118) cit:([`LIVE_STATES`, `TERMINAL_STATES`, `StatesAreFiledOnce`], dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11; dashboard/src/types/projection.ts:25-25). Do not restate this
+live state), which is a weaker gate but not an absent one cit:(["def check_state_partition(", "export type ActiveState = (typeof LIVE_STATES)[number];", "TerminalState = EndOutcome"], mcp/src/agents_remember/observer/lifecycle_state.py:73-98; dashboard/src/types/projection.ts:19-19; mcp/src/agents_remember/observer/lifecycle_state.py:118-118) cit:([`LIVE_STATES`, `TERMINAL_STATES`, `StatesAreFiledOnce`], dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11; dashboard/src/types/projection.ts:25-25). Do not restate this
 as "the mirror has not adopted the partition" — that was true before this leaf
 and is not true now.
 
@@ -392,6 +392,21 @@ Projection assembly receives the latest landing facts as an input and does not c
 `EnclosureNode` now has explicit leaf identity and task-root fields, allowing the observer to serve active leaf enclosure records without making clients infer parent folders from contract paths. Leaf `series-contract.md` files are intentionally not `TaskDocNode`s; a promoted leaf needs a real `ar-task-document/v1` JSON document for the dashboard reader to show task content. `TaskDocNode.sections` can still render authored freeform sections from that JSON document. Master docs project as task documents and still project on `Analytics.series` for the legacy master surface. Master leaf ordering uses `createdAt` read from the referenced leaf JSON when available; task names remain display identity, not ordering metadata.
 
 ## Update History
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the `AgentPickupNode` docstring
+## 260713-TES-L5 Current Delta — AgentPickupNode Landing Semantics
+
+`AgentPickupNode`'s docstring (which rides the generated projection schema) now describes a
+pending dashboard response waiting for a turn-boundary landing: the system acks (N16),
+`operator_inbox_consume` is an optional attribution marker, and the sweep predicates read the
+stores directly and never this projection.
+
+## Update History
+
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the `AgentPickupNode` docstring
+  rewrite — pending rows wait for a turn-boundary landing (N16, the system acks), consume is
+  an optional attribution marker, and the sweep predicates read the stores directly and never
+  this projection. Verification metadata pinned until closeout stamps the 260713-TES-L5
+  commit.
 - 2026-08-04T16:28:49+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound reducer consumption, mirror contract, event envelope, and `ACTIVE_STATES` assignment to operative spans, and extended the series-token row with explicit anchors for the per-reference loop and the token summation body. Verification metadata unchanged.
 - 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change): corrected the mirror partition narrative to the current `LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, and `ACTIVE_STATES` source contract cit:([`LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, `ACTIVE_STATES`], dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11; dashboard/src/types/projection.ts:13-13; dashboard/src/types/projection.ts:21-21). The local explanation and reference table were then rechecked against the current sources cit:(["STATE OF THE MIRROR"], mcp/src/agents_remember/observer/projection.py:217-217) cit:([`project_workspace`], mcp/src/agents_remember/observer/reducer.py:128-181) cit:([`check_state_partition`], mcp/src/agents_remember/observer/lifecycle_state.py:73-98) cit:([`### 2.5 The observer and its projections`], docs/design/observable-lifecycle.md:241-251) cit:([`## 7. Design Principles Preserved`], docs/design/observable-lifecycle.md:363-390).
 - 2026-08-01T00:35+02:00 — 260731-EFA-L4 curator: documented the vocabulary-derived metrics map, the `awaitingDeveloperCount` bucket, and the collision refusal in the current source cit:([`ACTIVE_STATES`, `state_count_field`, `state_count_fields`, `STATE_COUNT_FIELDS`, `awaitingDeveloperCount`], mcp/src/agents_remember/observer/projection.py:236-236; mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:311-311; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/observer/projection.py:282-282). The focused projection tests and reducer-side `_metrics` path remain the behavioral evidence cit:(["class MetricsBucketVocabularyTests(unittest.TestCase):", "class StateCountFieldTests(unittest.TestCase):", "def _metrics("], mcp/tests/test_observer_projection_metrics.py:128-128; mcp/tests/test_observer_projection_metrics.py:461-461; mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27; mcp/tests/test_observer_projection_metrics.py:128-233; mcp/tests/test_observer_projection_metrics.py:461-516).

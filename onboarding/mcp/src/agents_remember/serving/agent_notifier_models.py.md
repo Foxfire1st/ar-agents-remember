@@ -6,8 +6,8 @@
 | path | mcp/src/agents_remember/serving/agent_notifier_models.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
@@ -40,20 +40,20 @@ until 260713-TES-L2 (below).
 `FindingKind` gained `state-signal-due`, `non-reaction-due`, and `boundary-drain`, and retired
 `turn-report-stale` (the artifact-presence/SLA predicate on the worker→manager path). `ActionKind`
 correspondingly gained `state-signal`, `non-reaction`, and `boundary-drain`
-cit:([`FindingKind`, `ActionKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:27-49).
+cit:([`FindingKind`, `ActionKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:26-50).
 
 ### 260713-TES-L3 Compound-Idle Kinds
 
-`FindingKind` gained `compound-idle-due` cit:([`FindingKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:27-38) (between `state-signal-due` and
+`FindingKind` gained `compound-idle-due` cit:([`FindingKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:26-38) (between `state-signal-due` and
 `non-reaction-due` in the Literal) and `ActionKind` gained `compound-idle`
-cit:([`ActionKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:40-53), consumed by `_emit_compound_idle` and its
+cit:([`ActionKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:39-50), consumed by `_emit_compound_idle` and its
 `AgentNotifierActionResult`.
 
 ### 260713-TES-L4 Rebind, Expire, And TTL-Expired Kinds
 
 `FindingKind` gained `rebind-due`, `rebind-expired`, and `inbox-ttl-expired`
-cit:([`FindingKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:27-41) and `ActionKind` gained `rebind` and `expire`
-cit:([`ActionKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:43-56) — the N14 rebind family, the N2 grace-expiry terminal, and the §9
+cit:([`FindingKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:26-38) and `ActionKind` gained `rebind` and `expire`
+cit:([`ActionKind`], mcp/src/agents_remember/serving/agent_notifier_models.py:39-50) — the N14 rebind family, the N2 grace-expiry terminal, and the §9
 pending-TTL resolution boundary, consumed by `_rebind_due`/`_rebind_expired`/`_expire_pending`
 in `_agent_notifier_actions.py`.
 
@@ -76,8 +76,24 @@ Worker source inventory, reviewer verdict, and governing route overview.
 ## Cross-Repo References
 
 No meaningful cross-repo references.
+
+## 260713-TES-L5 Current Delta — Fact-Only Vocabulary And Context
+
+`FindingKind` removes `expectation-overdue`, `inbox-ladder-terminal`, and `escalation-due`;
+`ActionKind` removes `ladder-resolve`, `auto-nudge`, and `escalate-rung`. `AgentNotifierContext`
+no longer carries `nudge_store`, `nudge_rate_limit_seconds`, `escalation_sla_seconds`,
+`escalation_rung_seconds`, or `respawn_after_rung`; `escalation_budget` (250) stays as the
+per-sweep owner-signal load-shed cap. `SweepState` drops `escalated_entry_ids` (no rung tracking)
+and keeps the expectation snapshot only for the compaction read. This entry supersedes any
+earlier description in this sidecar that conflicts with the current source behavior above;
+verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the fact-only vocabulary —
+  expectation/ladder finding and action kinds removed, nudge-store/escalation-knob fields
+  dropped from `AgentNotifierContext`, `SweepState.escalated_entry_ids` removed.
+  Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded `rebind-due`/`rebind-expired`/
   `inbox-ttl-expired` in `FindingKind` and `rebind`/`expire` in `ActionKind` (N14/N2/§9).
   Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.

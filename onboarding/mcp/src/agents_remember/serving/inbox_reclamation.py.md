@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ evidence for this policy.
 | The aggregate reclamation plan is built from one reconstructed snapshot joined with catalog evidence. | `InboxReclamationPlan` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
 | Terminal catalog entries provide the status and ownership evidence. | "class TerminalCatalogEntry:" | mcp/src/agents_remember/serving/terminal_catalog.py:106-220 |
 | Reconstructed tmux snapshots provide the remaining ownership evidence. | `TmuxSessionNameSnapshotter` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
-| The agent-notifier imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/agent_notifier.py:81-81 |
+| The agent-notifier imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/agent_notifier.py:65-65 |
 
 ## Cross-Repo References
 

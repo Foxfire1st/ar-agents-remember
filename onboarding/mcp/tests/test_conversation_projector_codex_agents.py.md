@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_projector_codex_agents.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-09T16:43+02:00                   |
+| lastVerifiedCommitHash |  `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -127,7 +127,7 @@ vendored codex protocol via the shared fixture module.
 | The vendored-shape builders the mapped frames come from, plus the `CollabAgents` thread bundle. | `CollabAgents` | mcp/tests/_agent_wire_fixtures.py:63-77 |
 | The codex mapper under test: collab/activity roster grammar, demux-keyed mapping, unknown-vendor degrade. | `map_evidence_frame`; "def _map_collab_tool_call(" | mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:311-311; mcp/src/agents_remember/serving/conversation/projectors/codex.py:146-199 |
 | Roster identity and per-thread binding under test: `is_agent_roster_item`, the registry-backed agent ref, `bind_thread`, `reconcile_roster`, and the `scope_native_item` thread-scoped id prefix. | `is_agent_roster_item`; `bind_thread`; `reconcile_roster`; `scope_native_item` | mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py:33-41; mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py:80-93; mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py:95-122; mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py:124-131 |
-| Per-thread native twin suppression under test: a native output is dropped when its turn or user request id was already seen live in that thread's bucket. | `suppress_live_twins` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:215-242 |
+| Per-thread native twin suppression under test: a native output is dropped when its turn or user request id was already seen live in that thread's bucket. | `suppress_live_twins` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:254-281 |
 | The page-driven agent backfill under test: the paged `_walk` scopes every evidence handle to `<thread>:<nativeId>`, drops roster items, and binds the thread. | `_walk` | mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:139-173 |
 | Plural pendings under test: the parent pending rotates singly while multiplexed thread-keyed pendings are upserted/resolved concurrently against it. | `apply`; `_apply_multiplexed` | mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py:44-54; mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py:56-79 |
 | The two parameter objects the suite wires the engine through. | `ProjectedSession`; "The whole read surface a projection is assembled from: five bridge reads, one session." | mcp/src/agents_remember/serving/conversation/active/projector/facade.py:42-56; mcp/src/agents_remember/serving/conversation/active/projector/wiring.py:37-37 |
@@ -153,6 +153,10 @@ refusal, and unavailable-to-recovered revision-two state. Opaque source continua
 without native-id cursor assumptions.
 
 ## Update History
+
+- 2026-08-09T16:43+02:00 — 260713-TES-L5 hotfix curator: revalidated the twin-suppression claim
+  after the shared native fallback insertion and repaired its moved `suppress_live_twins` range.
+  The suite source itself is unchanged.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

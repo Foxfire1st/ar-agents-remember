@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash |                                            `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate |                                            2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T13:59+02:00 |
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -110,7 +110,18 @@ No sibling repository evidence is needed for this orchestration role file.
 
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
 
+## 260713-TES-L5 Current Delta — Mailbox Custody, Not Ladder Rungs (synced copy)
+
+This synced runtime copy now says rows whose entire owner chain is dead surface to the
+architect as a mailbox (the timed escalation ladder is retired), rows land at the architect's
+turn boundary (the system acks), and `operator_inbox_consume` is an optional attribution
+marker. The developer remains an authority, not an address.
+
 ## Update History
+
+- 2026-08-09T13:59+02:00 — 260713-TES-L5 curator completion round 2: refreshed this synced
+  runtime copy for the custody doctrine (mailbox surface; ladder retired; attribution-only
+  consume); verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 "- 2026-08-05T23:30+02:00 — 260731-EFA-L16 curator: recorded the drawing-board doctrine naming — the Design And Drawing Board section now points at `tasks/AGENTS.md` (task-collaboration doctrine) as the decomposition discipline for the phase: reviewable reframing, explicit assumptions/truth gaps/invariants/non-goals, typed evidence plan, examples before risky change, plan derived from the framing (developer ruling; corrected from an initial whether-a-task-is-needed misreading). Verification metadata stays pinned until closeout stamps the L16 commit.

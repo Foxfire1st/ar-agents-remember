@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | skills/l-01-agent-lifecycles/roles |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T13:59+02:00 |
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 
 ## Purpose
 
@@ -62,8 +62,21 @@ leaf targeted contract, the once-per-master full wrapper inside `worktree_integr
 master-gate full wrapper and forbids per-leaf full runs. `curator.md`'s contract-path-scoped
 self-check (L6) is unchanged and is exactly what greens the per-leaf memory-quality gate.
 
+### 260713-TES-L5 Route Impact — Judgment Demolition Doctrine
+
+The role files (and their synced package_data runtime copies) now teach the fact-relay
+supervision model: the agent-notifier sweep relays seat-state facts and owners interpret;
+the timed escalation ladder is retired; dead-owner rows surface to the scoped architect
+mailbox; `operator_inbox_consume` is attribution-only. The `code-seam` criterion wording
+follows (rung → attempt).
+
 ## Update History
 
+- 2026-08-09T13:59+02:00 — 260713-TES-L5 route impact: recorded the judgment-demolition
+  doctrine in the role files (fact-relay supervision; ladder retired; mailbox custody;
+  attribution-only consume), mirrored into the synced package_data runtime copies and the
+  code-seam criterion wording. Verification metadata pinned until closeout stamps the
+  260713-TES-L5 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the role files under this route were
   refreshed to agent-notifier wording (no supervisor/agent-notifier role or seat change); route
   shape unchanged. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

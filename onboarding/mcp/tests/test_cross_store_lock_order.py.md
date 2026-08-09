@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_cross_store_lock_order.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The liveness sweep path driven on one thread (batch lock holder). | `TerminalCatalogLivenessSweeper` | mcp/src/agents_remember/serving/terminal_liveness.py:121-280 |
-| The agent-notifier sweep path driven on the other thread (inbox lock holder). | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:96-241 |
+| The agent-notifier sweep path driven on the other thread (inbox lock holder). | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:93-195 |
 | The synchronizer whose store I/O is pinned outside the catalog batch. | `HostedInteractionSynchronizer` | mcp/src/agents_remember/serving/hosted_interactions.py:52-266 |
 | The offloaded control choke point. | `resolve_entry` | mcp/src/agents_remember/serving/conversation/control/service.py:291-299 |
 | The offloaded active-side resolution. | `_projector_for` | mcp/src/agents_remember/serving/conversation/active/service.py:160-177 |
@@ -91,8 +91,16 @@ No Domain Documentation source is configured.
 
 No meaningful cross-repository references found.
 
+## 260713-TES-L5 Current Delta — Lock-Order Harness Without Nudge Store
+
+`_SharedStores` drops `OrchestrationNudgeStore` from the sweep context; the lock-order
+matrix no longer includes the nudge store (no sweep path holds it anymore).
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the nudge-store removal from the
+  shared lock-order harness. Verification metadata pinned until closeout stamps the
+  260713-TES-L5 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

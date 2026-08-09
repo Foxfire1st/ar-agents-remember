@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/projectors/pi.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-09T16:43+02:00 |
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,7 +91,7 @@ observed entry/tool shapes; the store's block union converges the split tool ite
 | The Pi RPC adapter streams live RPC events (tool lifecycle frames) and pages durable entries with native id/parent coordinates. | `_event_stream`; `read_native_page` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:268-305; mcp/src/agents_remember/serving/pi_rpc_adapter.py:576-611 |
 | The pi fixture records the observed message_end live frame and durable-entry native page rows through the production seam. | "message_end full frame[observed]"; "substrate-evidence/native-page-get-entries" | mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:39-61 |
 | The store unions tool-call blocks by `block_id` so start → update → end keeps the input block. | `_union_blocks` | mcp/src/agents_remember/serving/conversation/active/store.py:466-482 |
-| The engine continues native reads eagerly for pi so live items always carry native identity. | `poll_native_continuation` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:244-268 |
+| The engine continues native reads eagerly for pi so live items always carry native identity. | `poll_native_continuation` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:283-304 |
 
 ## Cross-Repo References
 
@@ -104,6 +104,10 @@ subprocess reached through this repository's own adapter.
 
 ## Update History
 
+- 2026-08-09T16:43+02:00 — 260713-TES-L5 hotfix curator: re-read the eager Pi native-continuation
+  claim after the shared identity-preserving fallback insertion and refreshed its moved range.
+  Verification metadata remains pinned because `pi.py` itself did not change.
+
 - 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 4 citation rows (RPC adapter stream/paging, pi fixture rows, store `_union_blocks`, eager `poll_native_continuation`) and converted 6 superseded prose line citations plus 2 single-line parenthesized shorthand forms to cit: forms; all pi.py mapper ranges verified against the frozen source. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation whose target
@@ -111,7 +115,7 @@ subprocess reached through this repository's own adapter.
   `active/projector/` package; the eager native continuation now lives in
   `projector/native_ingestion.py` — `poll_native_continuation` returns immediately unless
   `mapper.eager_native_continuation` and otherwise drains native pages
-  cit:([`poll_native_continuation`], mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:244-268), and the lazy
+  cit:([`poll_native_continuation`], mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:283-304), and the lazy
   `native_dirty` path at L154-L156 is skipped for eager mappers. Re-verified that `_PiProjector`
   is the only projector setting `eager_native_continuation = True`
   cit:([`eager_native_continuation`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:99-99).

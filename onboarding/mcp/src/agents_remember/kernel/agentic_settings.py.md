@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T21:20+02:00               |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -50,7 +50,10 @@ the parser never derives a model/effort paste command from them.
 
 ### 260707-HFX2-L12 CS-6 Update
 
-`orchestration.agentNotifier.escalationBudget` is now a known agent-notifier setting with default 250 and positive-int parsing. The serving agent-notifier context reads it per-use beside `redeliverBudget` to bound escalation-rung emissions per sweep.
+`orchestration.agentNotifier.escalationBudget` is a known agent-notifier setting with default 250
+and positive-int parsing. Since 260713-TES-L5 the serving agent-notifier context reads it per-use
+beside `redeliverBudget` as a per-sweep load-shed cap on OWNER-SIGNAL emissions (seat-liveness +
+dead-upstream), not escalation-rung emissions (the ladder is deleted).
 
 #
 
@@ -97,32 +100,18 @@ membership) bind on the merged block, with the merged source label in errors.
 
 The fail-loud rule is scoped to `orchestration.*`: every nesting level has a frozen
 known-key set (`KNOWN_ORCHESTRATION_FIELDS` = gateDelegation/loops/roles/rolesPerLevel/
-concurrency/spawn/harnesses/expectations/supervisor/**escalation** (260707-HFX2-L4, R1), plus per-family sets for
+concurrency/spawn/harnesses/expectations/supervisor/agentNotifier/qualityGate — the
+`escalation` family is deleted with the ladder, 260713-TES-L5), plus per-family sets for
 gateDelegation kinds, loop defaults/complexity/levels, the eight l-01 role names, the role-knob
 fields harness/model/effort/launchArgs/promptKeywords/sessionCommands, the harness-entry fields,
 concurrency caps, and the four expectation-row kinds) and `_refuse_unknown` raises
 `AgenticSettingsError` naming the unknown keys, the allowed set, and the offending file.
 
-**260707-HFX2-L4 (R1, escalation ladder knobs)**: `orchestration.escalation` configures P-15 tier
-3's ladder — `EscalationSettings` (`sla_seconds` per `message_kind`, defaulting from
-`DEFAULT_ESCALATION_SLA_SECONDS`; `rung_seconds` keyed 1/2/3, defaulting from
-`DEFAULT_ESCALATION_RUNG_SECONDS`; `nudge_rate_limit_seconds` default 900; `respawn_after_rung`
-default 2). `_parse_escalation` is now a three-call assembly over one parser per sub-block
-(260731-EFA-L2): `_parse_escalation_sla_seconds(raw, *, source)`,
-`_parse_escalation_rung_seconds(raw, *, source)` and `_parse_respawn_after_rung(block, *, source)`,
-each returning the defaults when its key is absent. **Call order is the refusal order** — a
-settings file with more than one bad field is still reported against the first one, exactly as
-before the split; do not reorder those calls. The validation itself is unchanged:
-`slaSeconds` keys are checked against `KNOWN_ESCALATION_MESSAGE_KINDS`
-(a literal set duplicated by hand against `InboxMessageKind`, the same kernel<->controlplane
-cycle-avoidance reason `KNOWN_EXPECTATION_KINDS` already uses), `rungSeconds` keys against the
-closed `KNOWN_ESCALATION_RUNGS = (1, 2, 3)`, and `respawnAfterRung` against that same closed set (a
-respawn cannot trigger at a rung that doesn't exist); every value must be a positive number/int,
-and the whole block is checked against `KNOWN_ESCALATION_FIELDS` for unknown top-level keys. Absent
-block or absent key falls back to the documented default (`EscalationSettings()`'s field
-defaults) — `sla_for(kind)`/`rung_dwell(rung)` are the accessor methods `serving/agent_notifier.py`'s
-`_agent_notifier_context()` reads per-use, mirroring how `AgentNotifierSettings`/`ExpectationSettings`
-are consumed elsewhere in this file.
+**260707-HFX2-L4 (R1, escalation ladder knobs) — RETIRED by 260713-TES-L5**: `orchestration.escalation`
+and its `EscalationSettings`/`_parse_escalation*`/`KNOWN_ESCALATION_*` surface are deleted; a
+settings file that sets the family (or `respawnAfterRung`) fails loud as an unknown key. The
+only retained knob from that family is `escalationBudget`, re-homed under
+`orchestration.agentNotifier` as the per-sweep owner-signal load-shed cap (default 250).
 
 **260707-HFX2-L2/R8/R9 (agent-notifier sweep knobs)**: `orchestration.agentNotifier` configures the
 deterministic sweep loop hosted beside the serving daemon's projector/metrics loops —
@@ -287,6 +276,13 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the demolition of the
+  `orchestration.escalation` family through the facade (no `EscalationSettings`, no
+  `KNOWN_ESCALATION_*`/`DEFAULT_ESCALATION_*`/`DEFAULT_RESPAWN_AFTER_RUNG` re-exports, no
+  `_parse_escalation*` wiring; the family now fails loud as an unknown key) and the re-wiring
+  of `escalationBudget` as the per-sweep owner-signal load-shed cap. Superseded the earlier
+  escalation-knobs paragraph in place. Verification metadata pinned until closeout stamps the
+  260713-TES-L5 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `orchestration.agentNotifier` canonical key + explicit legacy-alias window (`_resolve_agent_notifier_alias` in the facade, both-keys refusal, loud `UserWarning`), the renamed re-exports (`AgentNotifierSettings`, `_parse_agent_notifier`, `_require_agent_notifier_floor_seconds`, `KNOWN_AGENT_NOTIFIER_FIELDS`, `DEFAULT_AGENT_NOTIFIER_*`), and the refreshed settings-json citation. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the

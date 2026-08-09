@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_core.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T06:48+02:00                                            |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                        |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                        |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -28,7 +28,6 @@ Typed agentic settings models, constants, and validation primitives. The setting
 - `ConcurrencySettings`
 - `ExpectationSettings`
 - `AgentNotifierSettings` (renamed from `SupervisorSettings` in 260713-TES-L1)
-- `EscalationSettings`
 - `QualityGateSettings` (260731-EFA-L17: `orchestration.qualityGate.memoryCapBytes`, default 2 GiB)
 - `AgenticSettings`
 - `KNOWN_AGENT_NOTIFIER_FIELDS` (renamed from `KNOWN_SUPERVISOR_FIELDS`; the legacy
@@ -52,22 +51,27 @@ Typed agentic settings models, constants, and validation primitives. The setting
 
 ## 260713-TES-L2 Change — Expectation-Kind Surface Retired
 
-`KNOWN_EXPECTATION_KINDS` cit:([`KNOWN_EXPECTATION_KINDS`], mcp/src/agents_remember/kernel/_agentic_settings_core.py:129-129) is now `{"briefed-by", "verdict-by", "ack-by"}` and
-`DEFAULT_EXPECTATION_SLA_SECONDS` cit:([`DEFAULT_EXPECTATION_SLA_SECONDS`], mcp/src/agents_remember/kernel/_agentic_settings_core.py:131-136) no longer carries `turn-report-by`: the settings
-surface retires the worker→manager SLA kind with the catalog-truth relay (R6). The record
-Literal in `controlplane/expectation_rows.py` keeps `turn-report-by` for legacy-row parse
-compatibility until the L4 schema migration, so the two definitions are intentionally asymmetric
-during the window.
+`KNOWN_EXPECTATION_KINDS` cit:([`KNOWN_EXPECTATION_KINDS`], mcp/src/agents_remember/kernel/_agentic_settings_core.py:123-123) is now `{"briefed-by", "verdict-by"}` and
+`DEFAULT_EXPECTATION_SLA_SECONDS` cit:([`DEFAULT_EXPECTATION_SLA_SECONDS`], mcp/src/agents_remember/kernel/_agentic_settings_core.py:125-128) carries only those two kinds:
+the settings surface retires `ack-by` (N16: landing is terminal, no post writes an ack-by row)
+and `turn-report-by` (catalog-truth relay) -- 260713-TES-L2 retired the latter, 260713-TES-L5
+retires the former. The record Literal in `controlplane/expectation_rows.py` keeps both for
+legacy-row parse compatibility; a settings override for a retired kind is refused.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
-## 260713-TES-L4 Change — State-Signal Kind Surface (N12/N13)
+## 260713-TES-L5 Change — Escalation Settings Family Demolished
 
-`KNOWN_ESCALATION_MESSAGE_KINDS` cit:([`KNOWN_ESCALATION_MESSAGE_KINDS`], mcp/src/agents_remember/kernel/_agentic_settings_core.py:144-158) gains `"state-signal"` and
-`DEFAULT_ESCALATION_SLA_SECONDS` cit:([`DEFAULT_ESCALATION_SLA_SECONDS`], mcp/src/agents_remember/kernel/_agentic_settings_core.py:159-171) carries `"state-signal": 300.0`: the
-distinct relay message kind is a settings-level surface (N12 — kind drives mechanics: rate
-limits, coalescing keys, terminal-evidence rules). The timed escalation ladder is dormant (N3)
-and this SLA surface is retained for the L5 demolition.
+The whole `orchestration.escalation` settings family is deleted: `EscalationSettings`,
+`KNOWN_ESCALATION_FIELDS`, `KNOWN_ESCALATION_MESSAGE_KINDS`, `KNOWN_ESCALATION_RUNGS`,
+`DEFAULT_ESCALATION_SLA_SECONDS`, `DEFAULT_ESCALATION_RUNG_SECONDS`, and
+`DEFAULT_RESPAWN_AFTER_RUNG` are gone from the module, `escalation` is removed from
+`KNOWN_ORCHESTRATION_FIELDS`, and a settings file that sets it now fails loud as an unknown key.
+`escalationBudget` (default 250) stays under `orchestration.agentNotifier` as a per-sweep
+load-shed cap on owner-signal findings (seat-liveness + dead-upstream), the twin of
+`redeliverBudget`; shed findings re-fire next sweep (level-triggered).
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## 260731-EFA-L17 Change
 
@@ -91,6 +95,11 @@ orchestration family.
 
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the demolition of the
+  `orchestration.escalation` family (models, known-key sets, defaults, fail-loud unknown key),
+  the retirement of `ack-by` from `KNOWN_EXPECTATION_KINDS`/`DEFAULT_EXPECTATION_SLA_SECONDS`,
+  and the re-wiring of `escalationBudget` as the per-sweep owner-signal load-shed cap.
+  Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the `state-signal` message kind in
   `KNOWN_ESCALATION_MESSAGE_KINDS` and its 300s SLA default (N12/N13); noted the dormant-ladder
   retention of the escalation SLA surface (N3, L5 deletes). Verification metadata pinned until

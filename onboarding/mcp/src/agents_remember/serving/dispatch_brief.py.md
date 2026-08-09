@@ -6,8 +6,8 @@
 | path | mcp/src/agents_remember/serving/dispatch_brief.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
@@ -83,9 +83,22 @@ This leaf deleted `mcp/tools/dispatch_brief.py` and moved its orchestration into
 `fulfill_dispatch_expectation` now live beside `DispatchBriefGate`. The caller
 (`mcp/tools/operator_inbox.py::operator_inbox_post_payload`) still follows the same
 readiness-gated, exact-session contract; the durable row remains the root, and expectation
-clocks still start from that one row's timestamp and id.
+deadline row still starts from that one row's timestamp and id.
+
+## 260713-TES-L5 Current Delta — Deadline-Surface Wording
+
+`start_dispatch_expectations` starts the briefed-by DEADLINE ROW (not a "clock"), and
+`dispatch_stays_on_exact_session` is exact-pinning — "they never rebind or readdress away" —
+with no ladder connotation. Turn-report-by remains retired: nothing writes or evaluates it, and
+the record Literal keeps it for legacy parse-compat only. This entry supersedes any earlier
+description in this sidecar that conflicts with the current source behavior above; verification
+metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the deadline-surface wording
+  (briefed-by deadline row; exact-pinned dispatch rows never rebind/readdress; turn-report-by
+  parse-compat only). Verification metadata pinned until closeout stamps the 260713-TES-L5
+  commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the turn-report-by retirement —
   dispatch writes briefed-by only; no new turn-report-by rows. Verification metadata pinned
   until closeout stamps the 260713-TES-L2 commit.

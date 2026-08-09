@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/styles.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-07T08:19Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`       |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -175,7 +175,7 @@ The fact-state recipes include a visibly distinct stale variant used by landing 
 | `warpSurge` is plain `css` (GSAP `data-fx='surge'`); `warpCouplerG` removed (Motion owns coupler opacity). | `warpSurge` | dashboard/src/panels/engine-room/stage.styles.ts:240-246 |
 | `refusedConduit` — the `polarity` amber/red variants over an `opacity: 0` base; the recipe carries colour only, and the polarity it is keyed on is derived from `edge.state` by the canvas. | `refusedConduit` | dashboard/src/panels/engine-room/flow.styles.ts:65-75 |
 | `refusedPolarityOf` — the caller that derives that polarity (`failed`→red, `stale`→amber) with no polarity field read. | `refusedPolarityOf` | dashboard/src/panels/engine-room/geometry.ts:124-134 |
-| `EngineProcessEdge` declares no polarity field and never documented a `refused` state. | "class EngineProcessEdge" | mcp/src/agents_remember/observer/projection.py:785-785 |
+| `EngineProcessEdge` declares no polarity field and never documented a `refused` state. | "class EngineProcessEdge" | mcp/src/agents_remember/observer/projection.py:787-787 |
 | `attnBadge`/`stopBar`/`dissolveShell` lost their `animation`/`transition` — GSAP `data-fx='breath'`/`'stop'` + Motion own them. | `attnBadge` | dashboard/src/panels/engine-room/flow.styles.ts:127-131 |
 | `engineGaugeOut` — **FLAT** gold bezel (05o dropped the base amber glow; `down`/fault keeps the red bezel + red glow); `enginePetal` is constant gold (05o — amber on `base`, opacity-only variants). `engineCharge`/`warpCouplerBar`/`flowConduit running`/`flowPacket`/`gateBar` keep their state-coloured `drop-shadow` glows (settled lanes glow-less). | `engineGaugeOut` | dashboard/src/panels/engine-room/stage.styles.ts:81-102 |
 | `closeoutTrainLabel` — `ink` 10px (was `muted` 9px) for legibility as a bare caption on the textured backdrop; `cleanupRecord` is an absolute overlay (5k F6). | `closeoutTrainLabel` | dashboard/src/panels/engine-room/flow.styles.ts:207-207 |
@@ -198,9 +198,9 @@ their established classes.
 
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
   `observer/projection.py` citations — the reference row and the restatement in the 10:44 entry
-  below. `L752-L771` → `L762-L781`; read there: `class EngineProcessEdge` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:785-785),
-  `model_config = ConfigDict(extra="forbid")` cit:([`model_config`], mcp/src/agents_remember/observer/projection.py:777-777), the nine-state comment (L778) above
-  the nine-state comment above `state: str`, and the last field `detail` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:785-785). No body claim changed.
+  below. `L752-L771` → `L762-L781`; read there: `class EngineProcessEdge` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:787-787),
+  `model_config = ConfigDict(extra="forbid")` (observer/projection.py L779), the nine-state comment (L778) above
+  the nine-state comment above `state: str`, and the last field `detail` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:787-787). No body claim changed.
 
 - 2026-08-01T10:44+02:00 — 260731-EFA-L4 curator: corrected the `refusedConduit` commentary. Polarity is
   no longer "read off the projection (`edge.state` failed→red / stale→amber, **or `edge.refusedPolarity`**)"

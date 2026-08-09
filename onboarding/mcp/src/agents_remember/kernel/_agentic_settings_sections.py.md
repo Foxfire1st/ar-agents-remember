@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-08T21:20+02:00                                            |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                                        |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                        |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 ``orchestration`` section parsers: loops, roles, concurrency, expectations, agent-notifier,
-escalation, spawn, and the quality gate (260731-EFA-L17). The agent-notifier parser is
+spawn, and the quality gate (260731-EFA-L17). The agent-notifier parser is
 `_parse_agent_notifier` (renamed from `_parse_supervisor` in 260713-TES-L1); the floor validator
 is `_require_agent_notifier_floor_seconds` (renamed from `_require_supervisor_floor_seconds`).
 The legacy-key normalization itself lives in `agentic_settings._resolve_agent_notifier_alias`,
@@ -35,13 +35,19 @@ which runs in `_validated_orchestration_block` before parsing.
 - `_parse_expectations`
 - `_parse_agent_notifier` (renamed from `_parse_supervisor`)
 - `_require_agent_notifier_floor_seconds` (renamed from `_require_supervisor_floor_seconds`)
-- `_parse_escalation`
-- `_parse_escalation_sla_seconds`
-- `_parse_escalation_rung_seconds`
-- `_parse_respawn_after_rung`
 - `_parse_spawn`
 - `_parse_quality_gate` (260731-EFA-L17: `orchestration.qualityGate`, default 2 GiB,
   fail-loud unknown keys, positive-int `memoryCapBytes`)
+
+## 260713-TES-L5 Change — Escalation Parsers Deleted
+
+`_parse_escalation`, `_parse_escalation_sla_seconds`, `_parse_escalation_rung_seconds`, and
+`_parse_respawn_after_rung` are deleted with the `orchestration.escalation` family; the module
+docstring and import block no longer name escalation. Any settings file that sets the retired
+family fails loud as an unknown key in `_validated_orchestration_block` before any parser here
+runs.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## 260731-EFA-L17 Change
 
@@ -63,6 +69,10 @@ family key is refused by `_refuse_null_families` before this parser runs.
 
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the deletion of the four
+  `_parse_escalation*`/`_parse_respawn_after_rung` parsers and the fail-loud retirement of the
+  `orchestration.escalation` family. Verification metadata pinned until closeout stamps the
+  260713-TES-L5 commit.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `_parse_agent_notifier` /
   `_require_agent_notifier_floor_seconds` renames and the facade-side alias normalization.
   Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

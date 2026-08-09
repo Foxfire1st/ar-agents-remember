@@ -16,17 +16,21 @@
     }
   ],
   "coveredFiles": [
-    "skills/l-01-agent-lifecycles/SKILL.md"
+    "skills/l-01-agent-lifecycles/SKILL.md",
+    "skills/l-01-agent-lifecycles/criteria/code-seam.md"
   ],
   "coverageCounts": {
     "sourceFilesInScope": 0,
-    "fileSidecars": 1,
+    "fileSidecars": 2,
     "childRoutes": 1
   },
   "routingTerms": [
     "agent",
+    "code",
+    "criteria",
     "lifecycles",
     "roles",
+    "seam",
     "skill",
     "skills"
   ],
@@ -35,15 +39,19 @@
     "candidateHints": [
       "skills/l-01-agent-lifecycles",
       "skills/l-01-agent-lifecycles/roles",
-      "skills/l-01-agent-lifecycles/SKILL.md"
+      "skills/l-01-agent-lifecycles/SKILL.md",
+      "skills/l-01-agent-lifecycles/criteria",
+      "skills/l-01-agent-lifecycles/criteria/code-seam.md"
     ],
     "anchorHints": [
       "SKILL.md",
       "SKILL",
+      "code-seam.md",
+      "code-seam",
       "roles",
       "skills/",
       "ACPUI",
-      "1c1629fc97dd4daf352cf9b3529d210be167d2af",
+      "2dea095cd68454a7a68893e37c07dbd8daa86d32",
       "skills/l-01-agent-lifecycles",
       "--model",
       "--effort",
@@ -66,14 +74,15 @@
       "--targeted",
       "worktree_integrate",
       "package_data/runtime/skills/",
+      "operator_inbox_consume",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
       "T02",
       "lastVerifiedCommitHash",
-      "c1629fc97dd4daf352cf9b3529d210be167d2af",
+      "dea095cd68454a7a68893e37c07dbd8daa86d32",
       "lastVerifiedCommitDate",
-      "T22",
+      "T18",
       "TES",
       "PHA",
       "EFA",
@@ -81,11 +90,8 @@
       "L16",
       "L17",
       "package_data",
-      "T21",
-      "T03",
-      "T23",
-      "T13",
-      "T14"
+      "T12",
+      "T21"
     ]
   },
   "fallback": {

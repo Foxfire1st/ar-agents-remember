@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_expectation_rows.py`                |
 | doc_type               | `file-level-onboarding`                             |
 | lastUpdated            | 2026-07-08T16:15+02:00                              |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../overview.md`                                    |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ No meaningful external design-doc references found yet (created this leaf).
 | Row creation/transition idempotency: `mark_met`/`mark_missed` never overwrite an existing terminal state. | "def test_mark_met_is_idempotent" | mcp/tests/test_expectation_rows.py:46-46 |
 | Store query surface: `pending`, `overdue`, `find_by_source`, `mark_met`/`mark_missed` via the store. | "def test_pending_excludes_met_rows" | mcp/tests/test_expectation_rows.py:91-91 |
 | `orchestration.expectations` SLA-settings parser: defaults, per-kind override, fail-loud validation. | "class ExpectationRowRecordTests" | mcp/tests/test_expectation_rows.py:33-33 |
-| "class Expectation" | "class Expectation:" | mcp/src/agents_remember/controlplane/expectation_rows.py:79-79 |
+| "class Expectation" | "class Expectation:" | mcp/src/agents_remember/controlplane/expectation_rows.py:84-84 |
 
 ## Cross-Repo References
 
@@ -91,8 +91,18 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | None. | N/A | N/A |
 
+## 260713-TES-L5 Current Delta — Owner-Visible Kinds Only
+
+Fixtures move from retired kinds to the owner-visible surface: `ack-by` fixtures become
+`verdict-by`/`briefed-by`, the retired-kind settings override fails loud, and
+`test_mark_missed_via_store_is_reserved_for_the_ladder` becomes
+`test_mark_missed_via_store_is_an_owner_side_primitive` (the relay never marks missed).
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the retired-kind fixture swaps,
+  the fail-loud ack-by settings test, and the owner-side `mark_missed` re-framing.
+  Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
   anchors and source-backed ranges; exact non-fixing check returns zero findings.
 

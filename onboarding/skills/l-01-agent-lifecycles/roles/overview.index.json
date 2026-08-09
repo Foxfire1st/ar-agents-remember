@@ -78,7 +78,7 @@
       "promptKeywords",
       "PHA",
       "EFA",
-      "1c1629fc97dd4daf352cf9b3529d210be167d2af",
+      "2dea095cd68454a7a68893e37c07dbd8daa86d32",
       "route_index_refresh",
       "memory_quality_check",
       "drift_check",
@@ -93,17 +93,17 @@
       "agents_remember.code_quality.check --targeted",
       "templates/manager-brief.md",
       "worktree_integrate",
+      "operator_inbox_consume",
+      "code-seam",
       "roles/curator.md",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T02",
+      "T13",
       "lastVerifiedCommitHash",
-      "c1629fc97dd4daf352cf9b3529d210be167d2af",
+      "dea095cd68454a7a68893e37c07dbd8daa86d32",
       "lastVerifiedCommitDate",
-      "T22",
-      "TES",
-      "L16"
+      "T18"
     ]
   },
   "fallback": {

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-08-09T06:48+02:00                |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -194,8 +194,19 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 Tests prove legacy-reader projection preserves only optional `adapterDeliveryState` and
 `adapterDeliveryDetail`, while an unrelated `futureEvidence` extension remains rejected.
 
+## 260713-TES-L5 Current Delta — Ladder Transitions Replaced By Legacy Rows
+
+`test_mark_escalated_stamps_the_reserved_field`, `test_advance_rung_*`, and
+`test_ladder_resolved_is_terminal_without_ack`/`test_resolving_an_already_resolved_ladder_row_is_idempotent`
+are replaced by legacy-row tests: a `ladder-resolved` snapshot is terminal, parse-compatible,
+never resurrected by a stale pending snapshot, and consume leaves it untouched. The
+`RungAdvance` import is gone.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the replacement of the ladder
+  transition tests with legacy `ladder-resolved` parse/terminal coverage. Verification
+  metadata pinned until closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the attribution-only consume pins,
   the formal landing assertions (`landed` terminal, schedule cleared), the §9 pending-TTL
   resolution-boundary compaction pin, and the in-flight landing-steal inversion. Verification

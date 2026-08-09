@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agent_notifier_ladder.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T06:48+02:00                                            |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                        |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                        |
+| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -62,8 +62,23 @@ terminal on the next sweep).
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
+## 260713-TES-L5 Current Delta — Escalation Predicates Gone, Fixed-Point Via Grace
+
+`EscalationPredicateTests` is deleted; `DeadUpstreamPredicateTests`/`InactivityChainProgressTests`
+remain (the dead-upstream grandparent signal is one-hop provenance, not a ladder walk).
+`LadderWalkIntegrationTests`'s absent-developer quiescence probe now resolves every seeded row
+terminal via the rebind-grace expiry (`expired`) with no `orchestration.escalation.rung`
+events, and `Cs6SweepScalingTests` adds `test_owner_signal_emissions_are_load_shed_by_escalation_budget`
+(the preserved `escalationBudget` caps seat-liveness signal emissions per sweep) plus the
+zero-findings expectation-compaction read test. The nudge store and escalation context knobs
+are gone from every harness.
+
 ## Update History
 
+- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the escalation-predicate
+  demolition, the grace-path fixed-point conversion, and the new `escalationBudget`
+  load-shed/expectation-compaction scaling tests. Verification metadata pinned until
+  closeout stamps the 260713-TES-L5 commit.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the ladder-retirement conversions
   (attempt-ceiling `unresolved`, landed-never-retried, relay-restart reconcile-by-request_id,
   dispatch exact-pinning, rebind/grace-expiry to the architect mailbox) and the
