@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-08T21:20+02:00                                            |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                        |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`                                        |
+| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -69,6 +69,9 @@ family key is refused by `_refuse_null_families` before this parser runs.
 
 ## Update History
 
+- 2026-08-09T21:10+02:00 — No content impact: master integration gate repair corrected the source's stale
+  `_parse_spawn` self-citation to the declaration's current line. Runtime behavior and the
+  parser surface are unchanged. Verification metadata stays pinned until closeout.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the deletion of the four
   `_parse_escalation*`/`_parse_respawn_after_rung` parsers and the fail-loud retirement of the
   `orchestration.escalation` family. Verification metadata pinned until closeout stamps the

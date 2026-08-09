@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`
+| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
 
 > **Status:** active baseline
 
@@ -1081,6 +1081,10 @@ delivered as a runnable post-restart script and stays a manager/orchestrator exi
 
 ## Update History
 
+- 2026-08-09T21:12+02:00 — No route impact: the L1–L5 master integration gate repairs are
+  internal structure and source-citation maintenance only; the root feature inventory is
+  unchanged. Detail lives in the MCP registration and serving route cards. Verification metadata
+  stays pinned until closeout.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the judgment demolition
   across the relay (respawn/ladder/expectation evaluation deleted), the owner-visible
   expectation surface, the fail-loud settings retirement, and the `escalationBudget`
