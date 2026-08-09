@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `docs/reference/settings-json.md`       |
 | doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -32,6 +32,11 @@ acceptance windows, so one sweep must not multiply that synchronous wait across 
 ### 260707-HFX2-L12 CS-6 Update
 
 Documented the new `orchestration.agent-notifier.escalationBudget` reference row: the supervisor now has a settings-owned per-sweep cap for escalation-rung emissions, distinct from `redeliverBudget`, and deferred rung-due rows stay level-triggered for the next sweep.
+
+**260713-TES-L4 — escalationBudget reserved (N3).** The `escalationBudget` reference row now
+states the timed escalation ladder is demolished as policy: inbox rows resolve by the 5-attempt
+ceiling (`unresolved`), the 5-minute rebind grace, or explicit supersession. The knob no longer
+gates sweep behavior and is removed with the L5 demolition leaf.
 
 The page is documentation, not parser code. Runtime parsing lives in `kernel/agentic_settings.py`
 for `orchestration.*` and the MCP authority/config loaders for boot infrastructure. HFX2-L8 added the
@@ -67,11 +72,16 @@ spawn-surface manual.
 | --- | --- | --- |
 | Agentic settings parser that implements the documented `orchestration.*` families. | "Read + merge the global (and optional repo-local) agentic settings, per use." | mcp/src/agents_remember/kernel/agentic_settings.py:237-237 |
 | Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
-| Serving app that reads supervisor settings per sweep. |"logger.exception(\"agent-notifier sweep failed; retrying next interval\")"|mcp/src/agents_remember/serving/_app_lifespan.py:107-107|
+| Serving app that reads supervisor settings per sweep. |"logger.exception(\"agent-notifier sweep failed; retrying next interval\")"|mcp/src/agents_remember/serving/_app_lifespan.py:144-144|
 | Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:96-241 |
-| Backoff math enforcing the shared 900-second redelivery floor documented here. | "redelivery interval" | mcp/src/agents_remember/controlplane/inbox_backoff.py:48-48 |
+| Backoff math enforcing the shared 900-second redelivery floor documented here. | "redelivery interval" | mcp/src/agents_remember/controlplane/inbox_backoff.py:49-49 |
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the `escalationBudget` reserved
+  wording (N3 — ladder demolished as policy; knob no longer gates sweep behavior; removed with
+  the L5 demolition leaf). Verification metadata pinned until closeout stamps the 260713-TES-L4
+  commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 "- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 5 citation claims; scoped result 0 findings.

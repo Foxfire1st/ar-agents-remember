@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/lifecycle.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`     |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`     |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -58,7 +58,7 @@ registered in `TOOL_RESPONSE_MODELS` and inherit `extra="forbid"`.
 | --- | --- | --- |
 | The `ToolResponse` strict envelope base (`ok`/`operation`/`tokens`). | "class ToolResponse(ResponseModel):" | mcp/src/agents_remember/models/base.py:66-66 |
 | The `State`/`Phase` Literals reused as response field types. | "State = Literal[LiveState, TerminalState]"; "Phase = Literal[" | mcp/src/agents_remember/observer/lifecycle_state.py:120-120; mcp/src/agents_remember/observer/lifecycle_state.py:124-124 |
-| Where these models are registered against tool names. | "\"ping\": PingResponse,"; "PUBLIC_TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {" | mcp/src/agents_remember/models/tool_registry.py:117-117; mcp/src/agents_remember/models/tool_registry.py:181-181 |
+| Where these models are registered against tool names. | "\"ping\": PingResponse,"; "PUBLIC_TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {" | mcp/src/agents_remember/models/tool_registry.py:118-118; mcp/src/agents_remember/models/tool_registry.py:183-183 |
 | The builders that assemble payloads validated against these models; `lifecycle_start_payload` fills `frontHalfRundown`. | "def lifecycle_start_payload() -> dict[str, Any]:" | mcp/src/agents_remember/mcp/tools/lifecycle.py:20-20 |
 | Owner of the `FRONT_HALF_RUNDOWN` list content emitted as `frontHalfRundown`. | "FRONT_HALF_RUNDOWN: list[str] = [" | mcp/src/agents_remember/application/next_step.py:57-57 |
 | The persisted-record peer these are deliberately *not*. | "class Event(BaseModel):"; "OBSERVER_EVENT_SCHEMA =" | mcp/src/agents_remember/observer/events.py:23-23; mcp/src/agents_remember/observer/events.py:39-39 |

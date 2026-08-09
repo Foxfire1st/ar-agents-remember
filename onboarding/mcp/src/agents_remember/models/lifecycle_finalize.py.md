@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/lifecycle_finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -47,7 +47,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Strict tool response base class is defined here. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:10-10 |
-| Public response registry maps `lifecycle_finalize_task` to this model. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tool_registry.py:167-167 |
+| Public response registry maps `lifecycle_finalize_task` to this model. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tool_registry.py:168-168 |
 | Conformance tests validate representative finalizer payloads against this model. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |
 | `lifecycle_finalize_task_tool` populates `autoLandedSeats` from `_auto_land_completed_seats`, gated by `config.retirement.auto_land_on_finalize`. | "def worktree_start_tool" | mcp/src/agents_remember/application/worktree_tools.py:83-83 |
 | `RetirementSettings.auto_land_on_finalize` is the config gate this field's population depends on. | "class McpRuntimeConfig" | mcp/src/agents_remember/mcp/config.py:114-114 |

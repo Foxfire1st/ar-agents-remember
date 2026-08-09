@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_platform_long_tail.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                     |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -57,6 +57,11 @@ a guard nobody can show is right**.
   never propagate.
 - Renewal and update paths must preserve fields the caller did not restate.
 
+**260713-TES-L4:** `InboxRenewalTests.test_a_row_that_is_no_longer_pending_is_returned_untouched`
+now seeds the terminal state via `mark_landed` (the `consumed` fixture is gone with the N16
+consume demotion) and asserts the landed row is returned untouched — a re-firing condition
+appends nothing and the caller sees the terminal row back.
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
@@ -65,6 +70,9 @@ a guard nobody can show is right**.
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the renewal fixture swap to the
+  formal `landed` terminal (mark_landed; the consumed fixture is gone with the N16 consume
+  demotion). Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` row with an exact
   anchor (deleting the unresolvable directory row); exact non-fixing check returns zero findings.
 

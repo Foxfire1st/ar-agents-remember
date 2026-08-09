@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/escalation_ladder.py`        |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`                           |
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                           |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -22,7 +22,10 @@ the original addressee) -> rung 2 (skip-level, re-address to the owner's owner v
 `signal_routing.derive_skip_level_owner`, which walks past any dead intermediate) -> rung 3 (the
 developer attention queue, terminal). This module decides WHAT should happen and WHO the next
 addressee is; `serving/agent_notifier.py` (the only caller) reads the stores, calls this, and performs
-the delivery + durable row update.
+the delivery + durable row update. **260713-TES-L4 (N3)**: the ladder is DORMANT as policy — the
+sweep no longer drives rung escalation (that machinery is reserved for the L5 demolition) — and
+`next_step` now passes the row's `leafKey` through to `derive_architect_owner` so even the
+retained terminal-rung path uses repository+sprint-scoped architect custody (R13).
 
 ## Code Commentary
 
@@ -58,7 +61,9 @@ transition. Rung 1 = `renudge`, addressed back to the row's own mailbox key (`re
 message_kind=entry.messageKind)`. If that walk hits the hierarchy ceiling (a manager-addressed row
 has only one level above it — the orchestrator — so "the owner's owner" resolves to nothing),
 `next_step` jumps straight to rung 3/developer rather than stalling an unaddressable rung 2. Rung 3
-= `developer-attention`, always `RoutedOwner(role="developer")`, terminal.
+= `architect-attention` when the terminal rung readdresses: `derive_architect_owner(catalog,
+leaf_key=entry.leafKey)` (L4 leaf-key pass-through; scoped custody, never global first-match),
+else `developer-attention` with `RoutedOwner(role="developer")`, terminal.
 
 `seat_is_suspect(catalog, agent_id, *, now, stale_seconds)` — R3: a seat is "suspect" (respawn
 candidate) only when this module can actually OBSERVE it as dead (`signal_routing.is_seat_dead`) or
@@ -103,9 +108,9 @@ log (tier 3, dead-man ladder) are the source of truth.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two-hop, dead-node-skipping owner derivation `next_step`'s rung-2 branch calls, and the liveness check `seat_is_suspect` calls. | `is_seat_dead`; `derive_skip_level_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:307-315; mcp/src/agents_remember/controlplane/signal_routing.py:335-375 |
-| The `OperatorInboxEntry.rung`/`escalatedAt` fields this walker reads, and the `advance_rung` transition its caller stamps. | "rungTransitionAt: str" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:222-222; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:255-285 |
-| The sole caller: evaluates `rung_due` as a predicate, calls `next_step` for the action, and calls `seat_is_suspect` past the respawn threshold. | "def evaluate_escalation_findings("; "def _escalate_rung(  # pragma: no cover"; "def _respawn_suspect(  # pragma: no cover" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:405-405; mcp/src/agents_remember/serving/_agent_notifier_actions.py:499-499; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:296-296 |
+| The two-hop, dead-node-skipping owner derivation `next_step`'s rung-2 branch calls, and the liveness check `seat_is_suspect` calls. | `is_seat_dead`; `derive_skip_level_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:312-320; mcp/src/agents_remember/controlplane/signal_routing.py:490-530 |
+| The `OperatorInboxEntry.rung`/`escalatedAt` fields this walker reads, and the `advance_rung` transition its caller stamps. | "rungTransitionAt: str" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:240-240; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:255-285 |
+| The sole caller: evaluates `rung_due` as a predicate, calls `next_step` for the action, and calls `seat_is_suspect` past the respawn threshold. | "def evaluate_escalation_findings("; "def _escalate_rung(  # pragma: no cover"; "def _respawn_suspect(  # pragma: no cover" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:545-545; mcp/src/agents_remember/serving/_agent_notifier_actions.py:639-639; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:411-411 |
 | Unit tests: rung-due dwell/anchor/ceiling cases, next-step routing per rung including the hierarchy-ceiling jump, and seat-suspect liveness/staleness cases. | `RungDueTests`; `NextStepTests`; `SeatSuspectTests` | mcp/tests/test_escalation_ladder.py:68-110; mcp/tests/test_escalation_ladder.py:113-182; mcp/tests/test_escalation_ladder.py:185-228 |
 
 ## Cross-Repo References
@@ -118,6 +123,10 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the dormant-ladder posture (N3) —
+  the sweep no longer drives rung escalation; the module is retained for the L5 demolition —
+  and the `next_step` leaf-key pass-through to `derive_architect_owner` (R13 scoped custody).
+  Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: removed duplicated Source ranges;
   exact non-fixing check returns zero findings.

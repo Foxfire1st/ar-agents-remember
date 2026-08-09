@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/_store_durability.py`      |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |                                       `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash |                                       `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                         |
 
 ## Governing Overview
@@ -309,7 +309,7 @@ consume it.
 | The nudge store has no `compact`, so `replace_records` is the declared rewrite entry point and the read-filter half belongs to the caller — which is why the adapter holds the lock across all three steps. | `read`; `replace_records` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:52-62; mcp/src/agents_remember/controlplane/orchestration_nudges.py:145-155 |
 | The lock and ownership constant the nudge adapter imports locally so the harness still runs against a tree that predates them. | `exclusive_access`; `ORCHESTRATION_NUDGE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:200-210; mcp/src/agents_remember/controlplane/durable_store.py:348-394 |
 | The rewrite `parked_rewrite` parks inside: it commits through `os.replace` and never unlinks, and its temp name is pid-scoped — which is why the hook covers `os.replace` and not `Path.write_text` alone. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:448-455 |
-| The inbox reclaim the `OperatorInboxAdapter` drives — the one store of the six that already took a lock at the base commit, and therefore the lone survivor at 0.00%. | `compact`; `append` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:67-71; mcp/src/agents_remember/controlplane/operator_inbox_store.py:171-182 |
+| The inbox reclaim the `OperatorInboxAdapter` drives — the one store of the six that already took a lock at the base commit, and therefore the lone survivor at 0.00%. | `compact`; `append` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:67-71; mcp/src/agents_remember/controlplane/operator_inbox_store.py:221-232 |
 | The cooldown reclaim the `AgentNotifierSignalAdapter` drives with an explicit retention window. | "def append("; "def compact(" | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:108-119; mcp/src/agents_remember/controlplane/agent_notifier_signals.py:162-213 |
 | The first provider store measured by the same instrument. Its log sits under `<root>/logs/observer/providers`, not `<root>/workspace`, which is one half of why the harness work directory cannot be a child of `root`. | `record_index_state`; `record`; `compact`; `read_recent` | mcp/src/agents_remember/providers/metrics.py:254-267; mcp/src/agents_remember/providers/metrics.py:269-283; mcp/src/agents_remember/providers/metrics.py:302-341; mcp/src/agents_remember/providers/metrics.py:343-360 |
 | The second provider store. Its reclaim drops by row COUNT, which is why its adapter seeds a full backlog and writes no per-tick decoy. | `append_event`; `compact_events` | mcp/src/agents_remember/providers/degradation.py:217-231; mcp/src/agents_remember/providers/degradation.py:233-253 |

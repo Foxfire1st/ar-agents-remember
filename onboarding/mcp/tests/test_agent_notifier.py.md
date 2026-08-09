@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_agent_notifier.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-09T01:21+02:00               |
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00               |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -37,6 +37,12 @@ Tests prove same-leaf findings for different seat roles do not coalesce, current
 drives suspect/orphan/owner behavior, and injected sweep time reaches delivery records. The
 fixed-point ceiling changes from `seeded*8` to `seeded*9` because pair-scoped rows add one bounded
 snapshot per seed; reviewer O4 correctly classifies this as informational, not divergence.
+
+### 260713-TES-L4 Expectation-Fixture Kind Swap
+
+`ExpectationPredicateTests` cit:([`ExpectationPredicateTests`], mcp/tests/test_agent_notifier.py:139-166) renamed its overdue fixtures from
+`ack-by` to `verdict-by` (N16: ack-by retires with the consume demotion and no post writes one
+anymore; `verdict-by` remains an active expectation kind that still drives findings).
 
 ### 260707-HFX2-L13 Chain, Ladder, And Manager-First Regressions
 
@@ -197,18 +203,18 @@ spec.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: every predicate, the action dispatcher, and the sweep entry point. | "def evaluate_escalation_findings("; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:830-830; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:296-296; mcp/src/agents_remember/serving/agent_notifier.py:111-210 |
+| The module under test: every predicate, the action dispatcher, and the sweep entry point. | "def evaluate_escalation_findings("; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:972-972; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:411-411; mcp/src/agents_remember/serving/agent_notifier.py:117-219 |
 | The heartbeat store the zero-drift and second-sweep tests exercise directly. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
 | The terminal catalog declares the typed `Literal` aliases. | "TerminalSessionKind = Literal"; "TerminalSessionStatus = Literal" | mcp/src/agents_remember/serving/terminal_catalog.py:42-43 |
 | The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_agent_notifier.py:58-82 |
 | The fake-host casting convention this suite reuses rather than inventing its own duck-typing idiom. | `_FakeTerminalHost`; "class TerminalHost:" | mcp/src/agents_remember/serving/terminal.py:109-109; mcp/tests/test_terminal_ws.py:227-387 |
 | The pure ladder walker the escalation predicate/integration tests exercise indirectly through the sweep. | `rung_due`; `next_step`; `seat_is_suspect` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152; mcp/src/agents_remember/controlplane/escalation_ladder.py:155-187 |
 | The orphan-detection hook the dead-manager-with-live-workers fixture asserts surfaces both workers. | `find_orphaned_workers` | mcp/src/agents_remember/controlplane/orphan_policy.py:18-30 |
-| The operator-inbox terminal state and compaction semantics used by the L8 sweep tests. | `mark_ladder_resolved`; `list_redeliverable` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:105-125; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:319-341 |
+| The operator-inbox terminal state and compaction semantics used by the L8 sweep tests. | `mark_ladder_resolved`; `list_redeliverable` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:153-173; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:516-538 |
 | The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `AgentNotifierSignalCooldownStore` | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220 |
 | The F1 regression pin proves hosted-delivery failures stay below the generic ladder until persistent retry exhaustion. | `test_delivery_failure_waits_for_retry_exhaustion_before_escalating` | mcp/tests/test_agent_notifier_ladder.py:49-79 |
-| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | "def _delivery_failure_still_retrying(entry: OperatorInboxEntry) -> bool:"; "def evaluate_escalation_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:272-272; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:296-296 |
-| HFX2-L9 tests cover signal cooldown and diagnostic-pane non-actionability. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row`; `test_diagnostic_pane_signal_is_not_actionable` | mcp/tests/test_agent_notifier_seat.py:374-408; mcp/tests/test_agent_notifier_seat.py:530-534 |
+| The production predicate and its public escalation-evaluation call site are the behavior the F1 test mutation-pins. | "def _delivery_failure_still_retrying(entry: OperatorInboxEntry) -> bool:"; "def evaluate_escalation_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:387-387; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:411-411 |
+| HFX2-L9 tests cover signal cooldown and diagnostic-pane non-actionability. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row`; `test_diagnostic_pane_signal_is_not_actionable` | mcp/tests/test_agent_notifier_seat.py:379-414; mcp/tests/test_agent_notifier_seat.py:535-555 |
 
 ## Cross-Repo References
 
@@ -230,6 +236,11 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the `ExpectationPredicateTests`
+  fixture kind swap from `ack-by` to `verdict-by` (ack-by retired with N16; verdict-by remains
+  an active expectation kind). Verification metadata pinned until closeout stamps the
+  260713-TES-L4 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the expectation-fixture rename
   (ack-by), the deletion of the turn-report staleness tests, and the new
   `RetiredDispatchExpectationTests` silence pins. Verification metadata pinned until closeout

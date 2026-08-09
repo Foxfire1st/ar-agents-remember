@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_interaction_retention.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T14:20+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ strict reader proves the records physically left rather than that a file disappe
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retention constants and policy helpers under test. | `INTERACTION_RECORD_TTL_SECONDS`; `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:16-16; mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
+| Retention constants and policy helpers under test. | `INTERACTION_RECORD_TTL_SECONDS`; `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:16-16; mcp/src/agents_remember/controlplane/interaction_retention.py:125-137 |
 | The compaction the test now drives directly, and the strict read it checks the result with; `_replace` routes through the contract's rewrite, which never unlinks. | `compact`; `read`; `_replace` | mcp/src/agents_remember/controlplane/store.py:120-130; mcp/src/agents_remember/controlplane/store.py:247-277; mcp/src/agents_remember/controlplane/store.py:316-325 |
 | The rewrite that makes "emptied, not unlinked" true for every store at once: an empty record set is written as an empty file. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:448-455 |
 | The projection this test now asserts is non-destructive, and its own record that the 30 s physical prune was removed because it ran in a process that owns nothing here. | "def read_gates(coordination_root: Path, *, now: date" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104 |

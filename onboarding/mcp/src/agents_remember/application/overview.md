@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -22,6 +22,15 @@
 envelopes, plus the legacy `supervisorBanner` alias during the rename window; the stale-supervisor
 probe is `_agent_notifier_banner` reading `agent_notifier_heartbeat`. The next-step /
 banner choke-point contract is otherwise unchanged.
+
+### 260713-TES-L4 Inbox And Retire Application Operations
+
+`operator_inbox_tools.py` adds the explicit-supersession use case (`operator_inbox_supersede_tool`,
+R11), threads `include_terminal` through `operator_inbox_poll_tool` (N11), and demotes
+`operator_inbox_consume_tool` to attribution-only (N16 — the ack-by expectation fulfillment block
+is gone). `terminal_tools.py` gains `_surface_stranded_rows`: `session_retire` never refuses
+because rows are pending (N2) — it posts one durable stranded-ids row to the retiring authority
+and carries `strandedRowIds`/`strandedRowCount`/`surfacedRowId` in the retire payload.
 
 `application/` owns operation-level MCP composition. Application entry points translate
 trusted MCP runtime config plus typed tool arguments into package service calls
@@ -213,6 +222,10 @@ presence rides the independent `source` field, which is why `found` alongside a 
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the inbox supersede use case,
+  the `include_terminal` poll surface, the attribution-only consume, and the N2 retire
+  stranded-row surfacing in `terminal_tools.py`. Verification metadata pinned until closeout
+  stamps the 260713-TES-L4 commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: corrected the task-reopen anchor, expanded the
   hot-path inventory, marked parameter examples as selected, and reversed the FileReadStatus ownership

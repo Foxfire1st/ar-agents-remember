@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/inbox_backoff.py`            |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-08-09T01:21+02:00                                             |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                                             |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -17,8 +17,9 @@
 ## Purpose
 
 R3 (260707-HFX2-L1): pure backoff-schedule math + per-target rate limiting for redelivering a
-pending/unacked operator inbox entry — the math `OperatorInboxStore.record_delivery`/
-`list_redeliverable` call; L2 (the agent-notifier sweep, a sibling leaf) is the actual driver. HFX2-L9
+pending operator inbox entry until it lands (N16) or resolves terminal by attempt ceiling,
+rebind grace, or retention — the math `OperatorInboxStore.record_delivery`/
+`list_redeliverable` call; L2/L4 (the agent-notifier sweep) is the actual driver. HFX2-L9
 turns the old short rate limit into the shared 900-second production floor for every retry path.
 
 ## Code Commentary
@@ -35,11 +36,12 @@ when the caller passes `None` and refuses any explicit sub-900 value with a loud
 `nextAttemptAt` ISO timestamp as the max of the ladder rung and the required floor — a row, never an
 in-memory timer.
 
-`is_ladder_resolved(entry)` is the explicit terminal predicate for rows that reached the terminal
+`is_ladder_resolved(entry)` is the legacy terminal predicate for rows that reached the terminal
 escalation rung against a non-live target seat. `is_due(entry, now=)` is true only for a `pending`
-entry that is not ladder-resolved AND not `state_signal_landed` (260713-TES-L2), whose
-`deliveryState` is one of the redeliverable states, and whose `nextAttemptAt` has elapsed (or is
-unset, i.e. never attempted).
+entry that is not `state_signal_landed` (now `state == "landed"` after the N13/N16 migration),
+whose `deliveryState` is one of the redeliverable states, and whose `nextAttemptAt` has elapsed
+(or is unset, i.e. never attempted). Every formal terminal state is excluded by the
+pending-only gate.
 `is_rate_limited(entry, now=, rate_limit_seconds=)`
 mirrors the `OrchestrationNudgeStore.record` rate-limit pattern, but now validates the supplied
 rate-limit value through the same 900-second floor helper
@@ -51,9 +53,10 @@ not ladder-resolved AND not rate-limited.
 ### Conventions
 
 `_REDELIVERABLE_DELIVERY_STATES` includes `delivered` deliberately — R1's central claim is that
-`delivered` is never terminal (pasted != perceived), so a delivered-but-unacked row still
-schedules and remains redeliverable; only `consume` (an inbox `state` transition, not a
-`deliveryState` one) stops it.
+`delivered` is never terminal (pasted != perceived), so a delivered-but-not-landed row still
+schedules and remains redeliverable; only the formal `landed` write or a terminal resolution
+(superseded/unresolved/expired) stops it (N16 — an inbox `state` transition, never a
+`deliveryState` one).
 
 ### Invariants And Boundaries
 
@@ -62,7 +65,8 @@ schedules and remains redeliverable; only `consume` (an inbox `state` transition
 - This module computes WHETHER to redeliver; it never redelivers itself — `OperatorInboxStore.
   list_redeliverable` selects candidates, and the actual re-push through `deliver_inbox_entry` is
   L2's job.
-- Ladder-resolved rows are terminal and never redeliverable even though they are not consumed/acked.
+- All terminal rows (landed/superseded/unresolved/expired, plus legacy ladder-resolved) are
+  never redeliverable.
 - No delivered, queued, unconfirmed, or no-hosted-session row may be retried sooner than 900 seconds;
   below-floor caller settings are refused rather than silently clamped.
 
@@ -99,6 +103,11 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: refreshed the ack vocabulary for N16 — the
+  backoff rides every pending row until it lands or resolves terminal; `is_due` gates on
+  `state == "landed"` (the L2 by-rule predicate folded into the schema); corrected the
+  `_REDELIVERABLE_DELIVERY_STATES` and invariant prose that still named consume as the schedule
+  stopper. Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the `state_signal_landed` exclusion
   in `is_due` — landed relay rows never re-enter the redelivery backoff. Verification metadata
   pinned until closeout stamps the 260713-TES-L2 commit.

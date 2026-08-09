@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/mcp/registration/orchestration.py`       |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-07-31T15:31+02:00                                            |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                        |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                                            |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                        |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -22,9 +22,9 @@ already pass keywords. Registered tools are unchanged.
 
 ## Purpose
 
-`register_orchestration_tools(server, config)` declares the cross-agent messaging surface: the three
-operator-inbox tools (`operator_inbox_post`, `operator_inbox_poll`, `operator_inbox_consume`) and
-`orchestration_nudge_manager`.
+`register_orchestration_tools(server, config)` declares the cross-agent messaging surface: the four
+operator-inbox tools (`operator_inbox_post`, `operator_inbox_poll`, `operator_inbox_consume`,
+`operator_inbox_supersede` since 260713-TES-L4) and `orchestration_nudge_manager`.
 
 ## Code Commentary
 
@@ -45,9 +45,12 @@ operator-inbox tools (`operator_inbox_post`, `operator_inbox_poll`, `operator_in
 dashboard code calls `operator_inbox_post_payload` directly with developer/dashboard attribution.
 An agent therefore cannot post or consume as the developer.
 
-`operator_inbox_poll` forwards the three mailbox keys flat. Consuming is explicit and separate —
-polling never consumes — and repeated `operator_inbox_consume(entry_id)` calls are idempotent
-against the append-only inbox log.
+`operator_inbox_poll` forwards the mailbox keys plus `include_terminal` (N11 terminal
+inspectability). Consuming is explicit and separate — polling never consumes — and repeated
+`operator_inbox_consume(entry_id)` calls are idempotent against the append-only inbox log
+(attribution-only since N16). `operator_inbox_supersede(entry_id, reason, superseded_by="model")`
+declares the explicit-supersession tool (R11): an overtaken command becomes terminal
+`superseded` without a false ack and is skipped by every retry/evaluation path.
 
 `orchestration_nudge_manager` keeps two different agents apart, which is the point of its packing:
 `NudgeTarget(agent_id, lifecycle_id)` is the **manager being nudged**, `NudgeSubject(subject,
@@ -72,6 +75,11 @@ nudge the wrong mailbox. `reason` is a `NudgeReason` and `rate_limit_seconds` de
 | Fixed model attribution and the target/subject split proved through a live server. | `test_operator_inbox_post_over_mcp_is_always_attributed_to_the_model` | mcp/tests/test_mcp_registration_wiring_tests_2.py:454-465 |
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the `operator_inbox_supersede`
+  declaration (R11), the `include_terminal` poll parameter (N11), and the attribution-only
+  consume wording (N16). Verification metadata pinned until closeout stamps the 260713-TES-L4
+  commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 4 citation rows with

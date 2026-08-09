@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/tests/test_state_signal_relay.py`                   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-09T03:51+02:00|
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`                                    |
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                    |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -40,7 +40,8 @@ seams across simulated ticks:
   replacement manager `turn_state="working"` since 260713-TES-L3 so the test isolates the L2
   rebinding behavior it owns (a turn-ended manager + idle worker would additionally fire the
   new compound-idle fact); idle flap re-arm cit:([`test_idle_flap_rearms_for_a_new_turn`], mcp/tests/test_state_signal_relay.py:327-366);
-  non-reaction residue + dedupe cit:([`test_non_reaction_residue_relays_distinct_fact`, `test_non_reaction_dedupe_marker_suppresses_repeat`], mcp/tests/test_state_signal_relay.py:368-444); no done signal for killed/hung/failed/unknown cit:([`test_no_done_signal_for_killed_or_hung_seats`], mcp/tests/test_state_signal_relay.py:446-478); re-fire renews the same row cit:([`test_repeat_fire_renews_the_same_row`], mcp/tests/test_state_signal_relay.py:480-499); scope exclusions cit:([`test_non_reaction_ignores_non_worker_young_and_malformed_rows`], mcp/tests/test_state_signal_relay.py:501-566); boundary drain skip/fresh-boundary rules and ordinary-row drain cit:([`test_boundary_drain_skips_rows_without_a_fresh_boundary`, `test_boundary_drain_pushes_other_pending_rows_for_the_seat`], mcp/tests/test_state_signal_relay.py:568-719); no-sweep store-fold post cit:([`test_post_owner_signal_without_sweep_reads_the_store_fold`], mcp/tests/test_state_signal_relay.py:721-735).
+  non-reaction residue + dedupe cit:([`test_non_reaction_residue_relays_distinct_fact`, `test_non_reaction_dedupe_marker_suppresses_repeat`], mcp/tests/test_state_signal_relay.py:368-444) — the landed-row
+  fixtures now carry the formal `state="landed"` (N13/N16); no done signal for killed/hung/failed/unknown cit:([`test_no_done_signal_for_killed_or_hung_seats`], mcp/tests/test_state_signal_relay.py:446-478); re-fire renews the same row cit:([`test_repeat_fire_renews_the_same_row`], mcp/tests/test_state_signal_relay.py:480-499); scope exclusions cit:([`test_non_reaction_ignores_non_worker_young_and_malformed_rows`], mcp/tests/test_state_signal_relay.py:501-566); boundary drain skip/fresh-boundary rules and ordinary-row drain cit:([`test_boundary_drain_skips_rows_without_a_fresh_boundary`, `test_boundary_drain_pushes_other_pending_rows_for_the_seat`], mcp/tests/test_state_signal_relay.py:568-719); no-sweep store-fold post cit:([`test_post_owner_signal_without_sweep_reads_the_store_fold`], mcp/tests/test_state_signal_relay.py:721-735).
 
 ### Conventions
 
@@ -76,8 +77,8 @@ The suite exercises `serving/state_signals.py`, `serving/_agent_notifier_actions
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The predicates under test. | `evaluate_state_signal_findings`; `evaluate_non_reaction_findings`; `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:128-156; mcp/src/agents_remember/serving/state_signals.py:182-228; mcp/src/agents_remember/serving/state_signals.py:231-273 |
-| The actions under test. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:618-677; mcp/src/agents_remember/serving/_agent_notifier_actions.py:739-796; mcp/src/agents_remember/serving/_agent_notifier_actions.py:799-808 |
-| Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:54-65 |
+| The actions under test. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:758-817; mcp/src/agents_remember/serving/_agent_notifier_actions.py:879-936; mcp/src/agents_remember/serving/_agent_notifier_actions.py:939-948 |
+| Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:66-74 |
 
 ## Cross-Repo References
 
@@ -89,6 +90,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the landed-row fixtures' formal
+  `state="landed"` alignment (N13/N16 migration; the by-rule pending landing no longer exists).
+  Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded the working-manager fixture change
   in `test_owner_rebinding_after_manager_replacement` (isolates the L2 rebinding behavior from
   the new compound-idle fact), corrected the governing-overview link, and widened the

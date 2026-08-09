@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_platform_edge_refusals.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ naming the field the caller left out. Not "it ran".
 | --- | --- | --- |
 | Provider lifecycle, backends and watchers. | "def cgc_backend_start("; "def cgc_watcher_running("; "def watchers_run(" | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:390-390; mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:89-89; mcp/src/agents_remember/providers/lifecycle/watchers.py:186-186 |
 | Task-document edit operations and their required objects. | "def task_doc_tool("; "class TaskEnclosureRef(_Doc):" | mcp/src/agents_remember/application/task_doc_tools.py:135-135; mcp/src/agents_remember/tasks/document.py:113-113 |
-| The sibling long-tail refusal collection. | "class RequestedHarnessTests(unittest.TestCase):"; "class OpenTerminalRefusalTests(unittest.TestCase):" | mcp/tests/test_platform_long_tail.py:374-374; mcp/tests/test_platform_long_tail.py:408-408 |
+| The sibling long-tail refusal collection. | "class RequestedHarnessTests(unittest.TestCase):"; "class OpenTerminalRefusalTests(unittest.TestCase):" | mcp/tests/test_platform_long_tail.py:377-377; mcp/tests/test_platform_long_tail.py:411-411 |
 
 ## Update History
 

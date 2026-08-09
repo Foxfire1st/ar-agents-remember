@@ -50,9 +50,14 @@
       "skills",
       "roles.<role>",
       "rolesPerLevel",
-      "1c1629fc97dd4daf352cf9b3529d210be167d2af",
+      "cdca11264fb4d27ee08f5e8b37ac5496e67c0840",
       "orchestration.agentNotifier",
       "orchestration.supervisor",
+      "landed",
+      "include_terminal",
+      "operator_inbox_consume",
+      "operator_inbox_supersede",
+      "escalationBudget",
       "system/init",
       "list_models",
       "worktrees-c09.md",
@@ -82,12 +87,7 @@
       "--targeted",
       "worktree_integrate",
       "orchestration.qualityGate.memoryCapBytes",
-      "qualityGate",
-      "memory-citations",
-      "server.tool",
-      "20.0",
-      "sourceRoute",
-      "doc_type"
+      "qualityGate"
     ]
   },
   "fallback": {

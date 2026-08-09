@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                     |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -18,6 +18,7 @@ modeled builder uses. L11 adds `task_reopen` to `PUBLIC_TOOLS`, listed beside
 `task_doc` (it is a task tool, not a worktree tool). L2 adds `spawn_agent_session`
 beside `attach_terminal_session_to_leaf` (both terminal-catalog tools). L3 adds
 `orchestration_nudge_manager` for rate-limited manager nudges over the inbox.
+L4 adds `operator_inbox_supersede` for explicit supersession (R11).
 
 ## Code Commentary
 
@@ -58,6 +59,10 @@ cit:([`_attach_lifecycle_tail`], mcp/src/agents_remember/application/tool_respon
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded `operator_inbox_supersede` joining
+  `PUBLIC_TOOLS` (explicit supersession, R11); `_tool_payload` behavior unchanged. Verification
+  metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: split the base-tool ownership record across the payload entry point, response finalizer/lifecycle tail, envelope models, registrar loop/tuple, and supervisor-banner root; the scoped fixer will generate citation ranges.

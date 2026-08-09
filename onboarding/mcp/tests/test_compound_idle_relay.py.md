@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/tests/test_compound_idle_relay.py`                  |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-09T03:51+02:00                                    |
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`               |
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                                    |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`               |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -61,6 +61,13 @@ multi-tick sweeps over them:
   the action-time signature replaces a stale evaluation-time signature in both the ask and the
   marker cit:([`test_action_time_signature_replaces_stale_evaluation_signature`], mcp/tests/test_compound_idle_relay.py:705-741).
 
+### 260713-TES-L4 Landed-State Fixture Alignment
+
+The landed-row fixtures (non-reaction episode seeds) now carry the formal `state="landed"`
+alongside `deliveryState="delivered"`/`adapterDeliveryState="accepted"` — the by-rule pending
+landing folded into the schema with the N13/N16 migration (260713-TES-L4). The suite's
+boundary-hold/land assertions and `state_signal_landed` checks are unchanged in intent.
+
 ### Conventions
 
 Simulation-harness style shared with `test_state_signal_relay.py`: one `_ctx()` per test,
@@ -103,9 +110,9 @@ landed-terminality predicate.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The predicates under test (set assembly, signature, findings). | `compound_idle_sets`; `compound_idle_signature`; `evaluate_compound_idle_findings` | mcp/src/agents_remember/serving/state_signals.py:69-103; mcp/src/agents_remember/serving/state_signals.py:104-111; mcp/src/agents_remember/serving/state_signals.py:159-180 |
-| The emitter under test (action-time signature, skip branches, boundary-gated post). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:680-737 |
+| The emitter under test (action-time signature, skip branches, boundary-gated post). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:820-876 |
 | The marker write seam with its no-op guard. | `record_compound_idle_emitted` | mcp/src/agents_remember/serving/seat_turn_truth.py:155-166 |
-| Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:54-65 |
+| Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:66-74 |
 
 ## Cross-Repo References
 
@@ -117,6 +124,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the landed-row fixture alignment to
+  the formal `state="landed"` (N13/N16 migration). Verification metadata pinned until closeout
+  stamps the 260713-TES-L4 commit.
 - 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: created this sidecar for the new
   compound-idle forcing suite (24 tests: positive/dedupe, fail-closed negatives, boundary
   hold/land, membership-arm pins, manager residue, emitter guards, action-time signature).

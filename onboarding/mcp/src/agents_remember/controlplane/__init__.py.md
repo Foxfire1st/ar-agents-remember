@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/__init__.py`    |
 | doc_type               | `file-level-onboarding`                               |
 | lastUpdated            | 2026-08-01T18:30+02:00                                |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`            |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`            |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                         |
 
 ## Purpose
@@ -69,7 +69,7 @@ directs anyone changing how these stores touch disk to read `durable_store.py` f
 | The gate delegation policy this package exports. | "class GatePolicy:" | mcp/src/agents_remember/controlplane/gate_policy.py:52-52 |
 | The store this package exports. | "class GateStore:" | mcp/src/agents_remember/controlplane/store.py:96-96 |
 | The enforcement policy this package exports (slice 6b). | "class GateGuard" | mcp/src/agents_remember/controlplane/enforcement.py:35-35 |
-| The operator inbox records and store this package now exports. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:67-67; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-53 |
+| The operator inbox records and store this package now exports. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:78-78; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-53 |
 | The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L71-L106. | `__all__` | mcp/src/agents_remember/controlplane/__init__.py:71-106 |
 | The module that defines every durable-store symbol re-exported here, and the six per-store ownership constants that are deliberately not re-exported. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:45-45 |
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -18,8 +18,9 @@
 
 Inbox-rooted delivery helper that submits one pre-existing durable operator-inbox row through the
 matching hosted session's exact protocol adapter and records correlated acceptance, reconciliation,
-and completion evidence. The adapter is a delivery wire, not a second mailbox; explicit recipient
-`consume` is the sole acknowledgement.
+and completion evidence. The adapter is a delivery wire, not a second mailbox; landing (N16) —
+correlated adapter acceptance at a turn boundary — is decided HERE, and `consume` is an optional
+attribution marker with nothing mechanical attached.
 
 ## Code Commentary
 
@@ -30,6 +31,16 @@ The supervisor supplies its sweep timestamp, preventing wall-clock drift from ch
 retention or retry behavior; ordinary callers retain the existing current-time default.
 
 ### Logic
+
+**260713-TES-L4 landing gate (N16).** `deliver_inbox_entry` samples `seat_at_turn_boundary(target)`
+while the target's boundary state is still live, and every recording path
+(`_redelivery`/`_record_receipt`/`_record_reconciliation`/`_record`) passes
+`landed=at_boundary and adapter_state == "accepted"` into `record_delivery`. A correlated
+acceptance at a boundary writes the formal `landed` terminal state; `acceptance=queued` from a
+busy adapter is never a landing, and acceptance outside a boundary leaves the row on its
+redelivery schedule so the next boundary can drain it. The landed write is a lock-held
+latest-fold transition (F1) — a concurrent explicit supersession wins and the stale landing
+appends nothing.
 
 **260713-TES-L2 availability gate.** `DeliveryAdmission` gained `boundary: bool = False` cit:(["class DeliveryAdmission:"], mcp/src/agents_remember/serving/inbox_delivery.py:87-105): a caller may declare a push as boundary-gated. `_delivery_refusal` cit:([`_delivery_refusal`], mcp/src/agents_remember/serving/inbox_delivery.py:107-162)
 enforces the gate FAIL-CLOSED by row kind: a `state-signal` row is refused
@@ -99,8 +110,8 @@ now lives one level down, in `serving.injector.deliver` + `serving.harness_adapt
 
 - Delivery always begins with an existing durable operator-inbox row and exact hosted-session
   identity; the adapter supplies the delivery wire and correlated evidence.
-- Adapter acceptance or completion never calls `consume`; explicit recipient consumption remains the
-  sole acknowledgement and vendor-native queues remain session-ordering detail.
+- Adapter acceptance or completion never calls `consume`; only a correlated acceptance at a turn
+  boundary writes `landed` (N16), and vendor-native queues remain session-ordering detail.
 - Pane, copy-mode, paste, and log observations are diagnostic-only. They may explain an unknown or
   failed transport result but cannot turn it into accepted delivery or acknowledgement.
 - Unsupported legacy/custom sessions and ambiguous transport remain explicit states; no raw-paste or
@@ -136,7 +147,7 @@ not as normative delivery authority.
 | Delivery state is persisted on the operator inbox record. | `record_delivery` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:159-209 |
 | The dashboard serving route and MCP payload builder both pass catalog/host/paster seams for delivery. | "created_by=\"provider-degradation-detector\"," | mcp/src/agents_remember/providers/degradation.py:644-644 |
 | 260707-HFX2-L3: `deliver_inbox_entry` now builds a `DeliveryRow` and calls the ONE delivery path, `serving.injector.deliver`, instead of calling `TerminalPaster.paste` directly. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
-| `serving.agent_notifier`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit/state-signal action the agent-notifier takes rides through this same translation layer. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:100-100; mcp/src/agents_remember/serving/owner_signals.py:93-93 |
+| `serving.agent_notifier`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit/state-signal action the agent-notifier takes rides through this same translation layer. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:101-101; mcp/src/agents_remember/serving/owner_signals.py:93-93 |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -181,6 +192,14 @@ gate — are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the N16 landing decision point —
+  boundary sampling while the target state is live and `landed=at_boundary and accepted`
+  threaded through `_redelivery`/`_record_receipt`/`_record_reconciliation`/`_record`, so a
+  correlated boundary acceptance writes the formal `landed` state (lock-held latest-fold, F1)
+  and queued/non-boundary acceptance never lands. Corrected the sole-acknowledgement prose in
+  Purpose/Invariants (consume is attribution-only). Verification metadata pinned until closeout
+  stamps the 260713-TES-L4 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the fail-closed row-kind
   availability gate (`DeliveryAdmission.boundary`, `_delivery_refusal` state-signal refusal)
   and the `target_session_for_entry` extraction. Verification metadata pinned until closeout

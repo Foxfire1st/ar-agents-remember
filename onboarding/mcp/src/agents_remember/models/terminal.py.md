@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-01T09:48+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ cit:([`SessionRetireResponse`], mcp/src/agents_remember/models/terminal.py:162-1
 success/already-retired), plus `detail` (populated on `retire-refused`, naming the exact
 authority-policy clause `check_retire_authority` raised). `ok` is true for `retired`/
 `already-retired` (idempotent), false for every refusal status — and that rule lives in ONE place,
-cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:911-911), so a refusal status added later cannot
+cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:927-927), so a refusal status added later cannot
 arrive as `ok=True` from a call site that forgot it. cit:([`SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:181-181) `=
 Literal["renamed","unknown-session"]`; `SessionRenameResponse` models `session_rename` (issue #4):
 cit:([`SessionRenameResponse`], mcp/src/agents_remember/models/terminal.py:188-199)
@@ -163,12 +163,12 @@ No relevant external/domain documentation found; this is an internal response co
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The attach payload builder returns the exact fields modeled here, including leaf-ref refusal statuses and details. | `attach_terminal_session_to_leaf_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:26-43 |
-| The application tool imports and annotates the terminal aliases across spawn, refusal, retire, rename, and status seams. | `_knob_refusal`; `_spawn_refusal`; `_RETIRE_OK_STATUSES`; `_retire_payload`; `_rename_payload` | mcp/src/agents_remember/application/terminal_tools.py:423-441; mcp/src/agents_remember/application/terminal_tools.py:880-905; mcp/src/agents_remember/application/terminal_tools.py:911-911; mcp/src/agents_remember/application/terminal_tools.py:914-941; mcp/src/agents_remember/application/terminal_tools.py:1004-1025 |
+| The application tool imports and annotates the terminal aliases across spawn, refusal, retire, rename, and status seams. | `_knob_refusal`; `_spawn_refusal`; `_RETIRE_OK_STATUSES`; `_retire_payload`; `_rename_payload` | mcp/src/agents_remember/application/terminal_tools.py:439-457; mcp/src/agents_remember/application/terminal_tools.py:896-921; mcp/src/agents_remember/application/terminal_tools.py:927-927; mcp/src/agents_remember/application/terminal_tools.py:930-965; mcp/src/agents_remember/application/terminal_tools.py:1102-1123 |
 | The MCP tool wrappers import the modeled spawn, retire, and rename payload aliases. | `spawn_agent_session_payload`; `session_retire_payload`; `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63; mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95 |
 | `LeafRefStatus` declares the two leaf-ref refusal members; `LeafRefResolutionError` produces those statuses, and `VALID_LEAF_REF_STATUSES` derives the runtime set from the alias. | `LeafRefStatus`; `LeafRefResolutionError`; `VALID_LEAF_REF_STATUSES` | mcp/src/agents_remember/worktrees/leaf_refs.py:30-30; mcp/src/agents_remember/worktrees/leaf_refs.py:32-32; mcp/src/agents_remember/worktrees/leaf_refs.py:45-72 |
 | The response registry maps `attach_terminal_session_to_leaf` and `spawn_agent_session` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
 | Conformance coverage includes a representative missing-session (attach) and legacy-caller-harness (spawn) refusal payload for the models. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |
-| `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:944-1001; mcp/src/agents_remember/application/terminal_tools.py:1028-1042 |
+| `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:968-1037; mcp/src/agents_remember/application/terminal_tools.py:1126-1140 |
 | The response registry maps `session_retire`/`session_rename` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
 | `test_every_spawn_status_the_tool_can_return_validates` / `..._retire_status_...` / `..._rename_status_...` assert produced == declared for each of the three `VALID_*` sets. | `ProducedLiteralTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817 |
 

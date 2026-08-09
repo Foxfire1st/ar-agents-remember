@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-08T02:00+02:00                           |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`       |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00                           |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`       |
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## 260731-EFA-L8 Change
@@ -85,9 +85,9 @@ developer ruled all four forbidden — and no `noqa` anywhere holds an argument-
 | `benchmarks.py`     | `codex_benchmark_prepare`, `codex_benchmark_run`.                          |
 | `lifecycle.py`      | The six session-lifecycle signals: `lifecycle_start`, `lifecycle_resume`, `lifecycle_turn_end_notification`, `lifecycle_end`, `switch_lifecycle`, `lifecycle_phase`. |
 | `gates.py`          | `lifecycle_gate`, `gate_decide`, `gate_list`.                              |
-| `orchestration.py`  | `operator_inbox_post`, `operator_inbox_poll`, `operator_inbox_consume`, `orchestration_nudge_manager`. |
+| `orchestration.py`  | `operator_inbox_post`, `operator_inbox_poll`, `operator_inbox_consume`, `operator_inbox_supersede` (since 260713-TES-L4), `orchestration_nudge_manager`. |
 
-Twelve registrars, 58 advertised tools — the same 58 names `mcp/tools/base.py::PUBLIC_TOOLS`
+Twelve registrars, 59 advertised tools — the same 59 names `mcp/tools/base.py::PUBLIC_TOOLS`
 lists, which `mcp/tests/test_tools.py` checks against a live server's `list_tools()`.
 
 ## Hot Path Summary
@@ -160,6 +160,10 @@ keyword-only. The registered tool surface is unchanged.
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the `operator_inbox_supersede`
+  declaration (R11), the `include_terminal` poll parameter (N11), and the attribution-only
+  consume wording (N16); advertised tool count 58 → 59. Verification metadata pinned until
+  closeout stamps the 260713-TES-L4 commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the altitude-ladder tool
   docstrings and the completed keyword-only signatures. Verification metadata stays pinned
   until closeout stamps the 260731-EFA-L17 commit.

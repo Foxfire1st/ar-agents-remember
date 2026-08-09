@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/serving/agent_notifier.py`  |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-08-09T03:51+02:00|
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00|
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -25,9 +25,12 @@ intervention the pilot run needed (empty composer post-boot, stacked paste chips
 persistently silent seat being respawned rather than waited on, a dead owner's seat being detected
   and its grandparent signaled, and a worker turn ending or a non-reacting seat reaching its
   owner (260713-TES-L2)) is detectable by a mechanical predicate over an authoritative store,
-  and this module evaluates those predicates every sweep and acts — redeliver, auto-nudge,
+and this module evaluates those predicates every sweep and acts — redeliver, auto-nudge,
   signal-emit, escalate-rung, signal-grandparent, state-signal — logging every action as an
-  observer event.
+  observer event. **260713-TES-L4** adds the deliver-until-LANDED sweep semantics: the formal
+  terminal vocabulary fold (`_fold_legacy_landed`), the N14 rebind/grace/expiry action family,
+  the N3 attempt-ceiling `unresolved` terminal, and the §9 pending-TTL expiry — the timed
+  escalation ladder is no longer driven (N3, reserved for L5 demolition).
 HFX2-L9 makes the sweep safe at fast observation cadence: redelivery calls pass the configured
 900-second floor into the delivery path, repeated pane/seat-liveness signals use persisted
 cooldown state before minting another owner inbox row, and `pane-signal: mid-turn` is treated as a
@@ -54,6 +57,19 @@ The facade `__all__` cit:([`__all__`], mcp/src/agents_remember/serving/agent_not
 `compound_idle_response`, `compound_idle_signature`, `evaluate_compound_idle_findings`, and
 `_emit_compound_idle` alongside the L2 relay surface; `test_facade_surface.py` pins the
 surface. `NON_REACTION_WINDOW_SECONDS` stays exported (reused by the manager residue path).
+
+### 260713-TES-L4 Deliver-Until-LANDED Sweep Wiring
+
+`run_agent_notifier_sweep` cit:([`run_agent_notifier_sweep`], mcp/src/agents_remember/serving/agent_notifier.py:117-219) now calls `_fold_legacy_landed` after
+reconcile/compact and before predicate evaluation: pre-migration rows that satisfied the
+retired by-rule landing predicate (`state-signal` + `delivered` + `accepted`) gain the formal
+`landed` state exactly once through the lock-held latest-fold transition, and the sweep's
+snapshot is refreshed from the returned entry (F1). The action map gains the
+`rebind-due`/`rebind-expired`/`inbox-ttl-expired` family (see `_agent_notifier_actions.py.md`);
+`evaluate_rebind_findings`/`evaluate_pending_expiry_findings` join `evaluate_predicates`, and
+the facade `__all__` cit:([`__all__`], mcp/src/agents_remember/serving/agent_notifier.py:253-312) exports `_rebind_due`, `_rebind_expired`, `_expire_pending`,
+`evaluate_rebind_findings`, and `evaluate_pending_expiry_findings` alongside the existing relay
+surface. A landed row produces no retry, nudge, or escalation of any kind (N16 regression).
 
 ### 260713-TES-L1 Rename Window
 
@@ -295,14 +311,14 @@ convention. Private action helpers are prefixed `_` and take `ctx`/`finding`/`no
 - **Observation cadence is not delivery/escalation cadence:** short sweeps may observe every second,
   but redelivery and repeated owner signals are floor-gated at 900 seconds by durable row/cooldown
   state.
-- **The escalation ladder's logic lives in `controlplane/escalation_ladder.py`, not here.** This
-  module is the sole caller (`evaluate_escalation_findings`/`_escalate_rung`) that reads the pure
-  walker's `rung_due`/`next_step`/`seat_is_suspect` and performs the delivery + durable
-  `advance_rung` stamp; no ladder decision logic is duplicated in this file.
-- **Delivery-failure rows exhaust redelivery before generic unacked escalation.** A hosted-delivery
+- **The escalation ladder's logic lives in `controlplane/escalation_ladder.py`, not here, and
+  the ladder is DORMANT since 260713-TES-L4 (N3).** This module no longer composes
+  `evaluate_escalation_findings`/`_escalate_rung` in the sweep; the retained walker is reserved
+  for the L5 demolition.
+- **Delivery-failure rows exhaust redelivery, then resolve terminal `unresolved`.** A hosted-delivery
   failure (`"no-hosted-session"` or `"unconfirmed"`) below `PERSISTENT_FAILURE_ATTEMPTS` is still in
-  the inbox redelivery domain, so `evaluate_escalation_findings` defers it until the persistent
-  failure threshold or explicit `escalatedAt` stamp hands the row to the ladder.
+  the inbox redelivery domain; at the attempt ceiling `_redeliver` calls `_mark_unresolved`
+  (N3, delivery evidence intact) instead of handing the row to a ladder.
 - **`_respawn_suspect` is a side effect of a rung transition, not its own dispatched finding** —
   it fires from inside `_escalate_rung` once `respawn_after_rung` + `seat_is_suspect` both hold,
   never from a separate `evaluate_*_findings` entry.
@@ -341,23 +357,23 @@ source is the pilot-observer log (P-15) and the leaf task doc, not an external s
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `_agent_notifier_loop`/`_agent_notifier_context` in `_app_lifespan.py` construct one `AgentNotifierContext` per sweep iteration and call `run_agent_notifier_sweep` via `asyncio.to_thread` on the settings-driven interval. | "def _agent_notifier_context(runtime: _ServingRuntime) -> AgentNotifierContext:", "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:", "def run_agent_notifier_sweep" | mcp/src/agents_remember/serving/_app_lifespan.py:70-70; mcp/src/agents_remember/serving/_app_lifespan.py:97-97; mcp/src/agents_remember/serving/agent_notifier.py:111-111 |
+| `_agent_notifier_loop`/`_agent_notifier_context` in `_app_lifespan.py` construct one `AgentNotifierContext` per sweep iteration (with the resolved last-good settings since 260713-TES-L4) and call `run_agent_notifier_sweep` via `asyncio.to_thread` on the settings-driven interval. | "def _agent_notifier_context(", "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:", "def run_agent_notifier_sweep" | mcp/src/agents_remember/serving/_app_lifespan.py:75-75; mcp/src/agents_remember/serving/_app_lifespan.py:113-113; mcp/src/agents_remember/serving/agent_notifier.py:117-117 |
 | The pane classifier `evaluate_pane_findings` calls per running harness row. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | The heartbeat store `run_agent_notifier_sweep` ticks unconditionally at the end of every sweep, and the staleness helpers built on top of it. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
-| The expectation-row store R2b/R2c read directly, including the reserved `mark_missed` transition this module is the caller of. | "def evaluate_expectation_findings(", "def _mark_expectation_missed(  # pragma: no cover", "def mark_missed(row: ExpectationRow", "class ExpectationRowStore" | mcp/src/agents_remember/controlplane/expectation_rows.py:127-127; mcp/src/agents_remember/controlplane/expectation_rows.py:156-156; mcp/src/agents_remember/serving/_agent_notifier_actions.py:284-284; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:72-72 |
-| The operator inbox store R2d/R4a/R4c read and write directly, including the reserved `mark_escalated` transition and the ladder's own `advance_rung` transition. | `mark_escalated`; `advance_rung` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:237-252; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:255-285 |
+| The expectation-row store R2b/R2c read directly, including the reserved `mark_missed` transition this module is the caller of. | "def evaluate_expectation_findings(", "def _mark_expectation_missed(  # pragma: no cover", "def mark_missed(row: ExpectationRow", "class ExpectationRowStore" | mcp/src/agents_remember/controlplane/expectation_rows.py:127-127; mcp/src/agents_remember/controlplane/expectation_rows.py:156-156; mcp/src/agents_remember/serving/_agent_notifier_actions.py:424-424; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:83-83 |
+| The operator inbox store R2d/R4a/R4c read and write directly, including the reserved `mark_escalated` transition and the ladder's own `advance_rung` transition. | `mark_escalated`; `advance_rung` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:434-449; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:452-482 |
 | The pure escalation-ladder walker `_escalate_rung` reads for the row's next rung/owner. | `rung_due`; `next_step`; `seat_is_suspect` | mcp/src/agents_remember/controlplane/escalation_ladder.py:94-120; mcp/src/agents_remember/controlplane/escalation_ladder.py:123-152; mcp/src/agents_remember/controlplane/escalation_ladder.py:155-187 |
-| The two-hop, dead-node-skipping owner derivation `_escalate_rung`'s rung-2 branch and `_signal_dead_upstream` both call, plus the liveness check `evaluate_dead_upstream_findings`/`seat_is_suspect` use. | `derive_skip_level_owner`; `is_seat_dead` | mcp/src/agents_remember/controlplane/signal_routing.py:307-315; mcp/src/agents_remember/controlplane/signal_routing.py:335-375 |
+| The two-hop, dead-node-skipping owner derivation `_escalate_rung`'s rung-2 branch and `_signal_dead_upstream` both call, plus the liveness check `evaluate_dead_upstream_findings`/`seat_is_suspect` use. | `derive_skip_level_owner`; `is_seat_dead` | mcp/src/agents_remember/controlplane/signal_routing.py:312-320; mcp/src/agents_remember/controlplane/signal_routing.py:490-530 |
 | The orphan-detection hook `_respawn_suspect` calls when the retired seat was a manager. | `find_orphaned_workers` | mcp/src/agents_remember/controlplane/orphan_policy.py:18-30 |
 | The HFX-L8 retirement primitive `_respawn_suspect` calls to retire a confirmed-suspect seat's husk. | `retire_entry` | mcp/src/agents_remember/serving/retire.py:37-71 |
 | `missing_artifact()` gets its first real caller here (R2c) — previously an uncalled function. | `missing_artifact` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:140-142 |
 | The standard turn-report artifact path helper `turn_report_path_for_leaf_key` resolves against, reused rather than re-derived. | `turn_report_artifact` | mcp/src/agents_remember/controlplane/orchestration_artifacts.py:87-97 |
 | The owner-derivation helper both `_auto_nudge` and `_signal_emit` call before posting an owner-addressed inbox row. | `derive_signal_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:249-275 |
 | The current injector entry point `_redeliver`/`_post_owner_signal` deliver through. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
-| The signal cooldown store `_signal_emit` consults before minting repeated pane/seat-liveness inbox rows. | "def _signal_emit(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:307-307 |
-| HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` (moved to `serving/owner_signals.py` in 260713-TES-L2) returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal("; "def _signal_emit("; "def deliver_inbox_entry" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:100-100; mcp/src/agents_remember/serving/_agent_notifier_actions.py:307-307; mcp/src/agents_remember/serving/inbox_delivery.py:165-165; mcp/src/agents_remember/serving/owner_signals.py:93-93 |
-| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | "class TerminalCatalog:", "def evaluate_pane_findings(", "def evaluate_seat_liveness_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:49-49; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:232-232; mcp/src/agents_remember/serving/terminal_catalog.py:594-594 |
-| Failing-first predicate unit tests (one per family) plus one seeded-drift sweep integration test asserting the full finding→action chain, heartbeat tick included. | `test_mid_turn_pane_fires_a_finding`, `test_overdue_ack_by_row_fires`, `RetiredDispatchExpectationTests`, `test_pending_row_with_no_next_attempt_is_immediately_redeliverable`, `test_stale_turn_state_past_cutoff_fires`, `test_seeded_drift_produces_expected_actions_and_ticks_heartbeat` | mcp/tests/test_agent_notifier.py:114-114; mcp/tests/test_agent_notifier.py:140-140; mcp/tests/test_agent_notifier.py:169-169; mcp/tests/test_agent_notifier.py:207-207; mcp/tests/test_agent_notifier_seat.py:44-44; mcp/tests/test_agent_notifier_seat.py:174-174 |
+| The signal cooldown store `_signal_emit` consults before minting repeated pane/seat-liveness inbox rows. | "def _signal_emit(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:447-447 |
+| HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` (moved to `serving/owner_signals.py` in 260713-TES-L2) returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal("; "def _signal_emit("; "def deliver_inbox_entry" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:101-101; mcp/src/agents_remember/serving/_agent_notifier_actions.py:447-447; mcp/src/agents_remember/serving/inbox_delivery.py:165-165; mcp/src/agents_remember/serving/owner_signals.py:93-93 |
+| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | "class TerminalCatalog:", "def evaluate_pane_findings(", "def evaluate_seat_liveness_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:60-60; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:347-347; mcp/src/agents_remember/serving/terminal_catalog.py:594-594 |
+| Failing-first predicate unit tests (one per family) plus one seeded-drift sweep integration test asserting the full finding→action chain, heartbeat tick included. | `test_mid_turn_pane_fires_a_finding`, `test_overdue_verdict_by_row_fires`, `RetiredDispatchExpectationTests`, `test_pending_row_with_no_next_attempt_is_immediately_redeliverable`, `test_stale_turn_state_past_cutoff_fires`, `test_seeded_drift_produces_expected_actions_and_ticks_heartbeat` | mcp/tests/test_agent_notifier.py:114-114; mcp/tests/test_agent_notifier.py:140-140; mcp/tests/test_agent_notifier.py:169-169; mcp/tests/test_agent_notifier.py:207-207; mcp/tests/test_agent_notifier_seat.py:44-44; mcp/tests/test_agent_notifier_seat.py:174-174 |
 
 ## Cross-Repo References
 
@@ -420,6 +436,11 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the deliver-until-LANDED sweep
+  wiring — `_fold_legacy_landed` (N13 migration fold, latest-fold, snapshot refresh), the
+  rebind/grace/expiry predicate+action composition, the attempt-ceiling `unresolved` terminal
+  in `_redeliver`, the dormant ladder (N3), and the expanded facade `__all__`. Verification
+  metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded the compound-idle relay wiring
   (fourth predicate family in `evaluate_predicates`, `compound-idle-due` action mapping,
   facade `__all__` exports of `COMPOUND_IDLE_SWEEP_LATENCY_SECONDS` /

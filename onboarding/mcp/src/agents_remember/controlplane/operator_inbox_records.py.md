@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                     |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_records.py`    |
 | doc_type               | `file-level-onboarding`                                             |
-| lastUpdated            | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastUpdated            | 2026-08-09T06:48+02:00 |
+| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
+| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -28,14 +28,22 @@ session and/or polled by an external chat.
 last-wins until a terminal `consumed` or `ladder-resolved` snapshot is observed; later stale pending
 delivery snapshots are ignored, while later terminal snapshots preserve idempotent terminal updates.
 
-### 260713-TES-L2 State-Signal Kind And Landing
+### 260713-TES-L4 Formal Terminal Vocabulary And Landing (N13/N16)
 
-`InboxMessageKind` cit:([`InboxMessageKind`], mcp/src/agents_remember/controlplane/operator_inbox_records.py:32-46) gained `"state-signal"`. `state_signal_landed(entry)` cit:([`state_signal_landed`], mcp/src/agents_remember/controlplane/operator_inbox_records.py:54-65) is the
-terminal predicate for the relay path: a pending state-signal row whose
-`deliveryState == "delivered"` and `adapterDeliveryState == "accepted"` — correlated adapter
-acceptance at a turn boundary (N1/N16). `acceptance=queued` from a busy adapter is NOT this;
-the row stays non-landed until a boundary acceptance lands. Landed rows remain `state="pending"`
-until the L4 schema migration but are excluded from redelivery, escalation, and reclamation.
+`OperatorInboxState` cit:([`OperatorInboxState`], mcp/src/agents_remember/controlplane/operator_inbox_records.py:15-26) is now
+`pending | landed | superseded | unresolved | expired` plus the legacy `consumed` /
+`ladder-resolved` literals retained for parse compatibility with pre-N16 rows. The success
+terminal is `landed` — a correlated adapter acceptance at a turn boundary (N16; the system
+acks, model-consume abolished). `state_signal_landed(entry)` cit:([`state_signal_landed`], mcp/src/agents_remember/controlplane/operator_inbox_records.py:65-71) is now simply
+`entry.state == "landed"`: the by-rule predicate that derived landing from
+`state-signal` + `delivered` + `adapterDeliveryState=accepted` folded into the schema, and
+`record_delivery` writes the `landed` snapshot itself. `acceptance=queued` from a busy adapter
+is never this.
+
+`OperatorInboxEntry` gains the formal terminal stamps cit:([`terminalAt`], mcp/src/agents_remember/controlplane/operator_inbox_records.py:232-234):
+`terminalAt` (when the row became terminal), `terminalReason` (why), and `supersededBy` (the
+explicit supersession attribution). Every non-pending transition writes them; terminal markers
+stay inspectable for the marker-retention window, then are physically evicted.
 
 ### 260707-HFX2-L17 Seat-Scoped Inbox Rows
 
@@ -54,7 +62,8 @@ fields without changing older rows that omit them.
 ### Logic
 
 `OPERATOR_INBOX_RECORD_SCHEMA` is the wire tag. `OperatorInboxState` is
-`pending | consumed | ladder-resolved`, `OperatorInboxVia` is `chat | dashboard | cli`,
+`pending | landed | superseded | unresolved | expired` (plus legacy `consumed` /
+`ladder-resolved`), `OperatorInboxVia` is `chat | dashboard | cli`,
 `AgentRole` addresses orchestration identities (`orchestrator`, `manager`,
 `worker`, `reviewer`, and — as of 260703-L14 — `strategist`, so the spawn-first sprint
 planner can post/receive role-addressed inbox rows). **260707-HFX-L7** adds
@@ -82,8 +91,10 @@ message kind, optional artifact path, the originating `ask`, the message
 `response`, creation attribution, hosted delivery metadata, and optional consume
 attribution. `create_operator_inbox_entry(message, *, entry_id, now, routing, poster)` returns a
 `pending` snapshot using caller-minted `entry_id` and `now`.
-`consume_operator_inbox_entry(...)` returns a later `consumed` snapshot while preserving the
-original post and delivery metadata.
+`consume_operator_inbox_entry(...)` is demoted to an optional attribution marker (N16): it
+stamps `consumedAt`/`consumedBy`/`consumedVia` once and never changes `state` — nothing
+mechanical (retry, expectation, escalation, terminality) hangs off it, and a landed row stays
+`landed` even when a model also marks it consumed.
 
 **The five frozen parameter objects (260731-EFA-L2)** are the module's public vocabulary for
 posting; every caller builds them instead of passing nineteen keywords:
@@ -91,10 +102,10 @@ posting; every caller builds them instead of passing nineteen keywords:
 - **`InboxAddress(lifecycle_id=None, agent_id=None, recipient_role=None)`** — the mailbox a row is
   delivered to. At least one of the three must be set, which is exactly what
   `require_inbox_address` enforces; they are one address, never independently meaningful.
-- **`InboxOwner(role=None, agent_id=None, lifecycle_id=None)`** — the R4 routed owner a poster
-  derives from catalog spawn provenance BEFORE posting, stamped once at creation (and re-stamped
-  by a readdressing ladder rung) so redelivery never re-derives it from a catalog snapshot that
-  has since moved on.
+- **`InboxOwner(role=None, agent_id=None, lifecycle_id=None)`** — the routed owner a poster
+  derives from catalog provenance BEFORE posting, stamped at creation and re-stamped by
+  post-time re-resolution and sweep-time rebinding (N14) so redelivery never re-derives it from
+  a catalog snapshot that has since moved on.
 - **`InboxRouting(address, owner=InboxOwner())`** — the two together. A readdressing rung moves
   the address onto the next owner and rewrites both, which is why they are one routing decision.
 - **`InboxSubject(leaf_key=None, seat_role=None, agent_id=None)`** — what a row is *about* as
@@ -110,8 +121,10 @@ owner and the same subject a renewal or a readdressing rung rewrites.
 
 **260707-HFX2-L1** (R1 ack semantics + R4 routing): adds `attemptCount`,
 `lastAttemptAt`, `nextAttemptAt`, and `escalatedAt` — the redelivery schedule
-riding every entry, because `delivered` is never terminal and consume=ack is
-the only terminal outcome (F-A/F-V proved pasted != perceived). Also adds
+riding every entry, because `delivered` is never terminal and (pre-N16) consume=ack was
+the only terminal outcome (F-A/F-V proved pasted != perceived). **260713-TES-L4 supersedes
+the ack half of that ruling**: the system acks (N16) — a row lands on correlated adapter
+acceptance at a turn boundary, and `consumed` is now an attribution marker only. Also adds
 `ownerRole`/`ownerAgentId`/`ownerLifecycleId`: the ROUTED address
 (`controlplane/signal_routing.py`) stamped once at post time from catalog
 spawn provenance, distinct from the caller-supplied `recipientRole`. Those three fields are now
@@ -188,10 +201,10 @@ external-chat pull implementation of that idea.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The inbox record declares its schema tag and the state, via, role, message-kind and delivery-state literals. | "OPERATOR_INBOX_RECORD_SCHEMA ="; "OperatorInboxState = Literal["; "OperatorInboxVia = Literal["; "AgentRole = Literal["; "InboxMessageKind = Literal["; "InboxDeliveryState = Literal[" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:13-13; mcp/src/agents_remember/controlplane/operator_inbox_records.py:15-17; mcp/src/agents_remember/controlplane/operator_inbox_records.py:32-32; mcp/src/agents_remember/controlplane/operator_inbox_records.py:45-45 |
-| `require_inbox_address` refuses an entry with no mailbox key, and `OperatorInboxCompatibleRecord` inherits `DurableRecord` while keeping its own `extra="allow"` plus the named forward-compatibility allowlist. | "def require_inbox_address("; "class OperatorInboxCompatibleRecord(DurableRecord):" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:138-138; mcp/src/agents_remember/controlplane/operator_inbox_records.py:149-149 |
+| The inbox record declares its schema tag and the state, via, role, message-kind and delivery-state literals. | "OPERATOR_INBOX_RECORD_SCHEMA ="; "OperatorInboxState = Literal["; "OperatorInboxVia = Literal["; "AgentRole = Literal["; "InboxMessageKind = Literal["; "InboxDeliveryState = Literal[" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:13-13; mcp/src/agents_remember/controlplane/operator_inbox_records.py:15-15; mcp/src/agents_remember/controlplane/operator_inbox_records.py:28-29; mcp/src/agents_remember/controlplane/operator_inbox_records.py:44-44; mcp/src/agents_remember/controlplane/operator_inbox_records.py:57-57 |
+| `require_inbox_address` refuses an entry with no mailbox key, and `OperatorInboxCompatibleRecord` inherits `DurableRecord` while keeping its own `extra="allow"` plus the named forward-compatibility allowlist. | "def require_inbox_address("; "class OperatorInboxCompatibleRecord(DurableRecord):" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:149-149; mcp/src/agents_remember/controlplane/operator_inbox_records.py:160-160 |
 | `OperatorInboxEntry` preserves mailbox keys, ask, response, creation attribution, consume attribution and the routed owner address. | `OperatorInboxEntry` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:156-224 |
-| `fold_operator_inbox_entries`, `create_operator_inbox_entry` and `consume_operator_inbox_entry` are pure snapshot builders that never touch disk. | "def fold_operator_inbox_entries("; "def create_operator_inbox_entry("; "def consume_operator_inbox_entry(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:240-240; mcp/src/agents_remember/controlplane/operator_inbox_records.py:259-259; mcp/src/agents_remember/controlplane/operator_inbox_records.py:302-302 |
+| `fold_operator_inbox_entries`, `create_operator_inbox_entry` and `consume_operator_inbox_entry` are pure snapshot builders that never touch disk. | "def fold_operator_inbox_entries("; "def create_operator_inbox_entry("; "def consume_operator_inbox_entry(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:258-258; mcp/src/agents_remember/controlplane/operator_inbox_records.py:277-277; mcp/src/agents_remember/controlplane/operator_inbox_records.py:320-320 |
 
 ## Cross-Repo References
 
@@ -220,6 +233,14 @@ the explicit consume state.
 
 ## Update History
 
+- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the N13/N16 schema migration —
+  `OperatorInboxState` now carries the formal terminal vocabulary
+  (`landed`/`superseded`/`unresolved`/`expired`) beside the legacy `consumed`/`ladder-resolved`
+  literals retained for parse compatibility; `state_signal_landed` folded to
+  `entry.state == "landed"`; `OperatorInboxEntry` gained `terminalAt`/`terminalReason`/
+  `supersededBy`; `consume_operator_inbox_entry` demoted to an attribution-only marker that
+  never changes state (N16). Superseded the L2 by-rule landing prose in place. Verification
+  metadata pinned until closeout stamps the 260713-TES-L4 commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the `state-signal` message kind and
   the `state_signal_landed` terminal predicate (boundary acceptance; queued is not terminal).
   Verification metadata pinned until closeout stamps the 260713-TES-L2 commit.
