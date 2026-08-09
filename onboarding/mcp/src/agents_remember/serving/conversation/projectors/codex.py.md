@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/projectors/codex.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`|
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -170,7 +170,7 @@ store's roster-aware upsert rules, and a dedicated collab/engine test module.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The codex adapter sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit so the method reaches this projector (the method-carry seam), and the same emit routes its params through the thread registry's router. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:726-726 |
+| The codex adapter sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit so the method reaches this projector (the method-carry seam), and the same emit routes its params through the thread registry's router. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:730-730 |
 | The router itself moved out of the adapter in 260731-EFA-L6 and was renamed with it, so the adapter-private name is gone from the tree. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_threads.py:215-229 |
 | `EvidenceFrame.native_method` is the typed field the bridge preserves and this projector switches on; `evidence_frame_json` serializes it as `nativeMethod`. | "nativeMethod" | mcp/src/agents_remember/serving/harness_control_models.py:621-621 |
 | `ConversationAgentRef`/`ConversationAgentStatus` are the roster identity/status grammar this projector emits; `ConversationItem.agent` is the optional field that carries it (absent = parent conversation). | `parent_agent_id` | mcp/src/agents_remember/serving/conversation/_models_blocks.py:154-154 |

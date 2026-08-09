@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-09T16:43+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`|
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1272,7 +1272,7 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Common timeline, IPC/response loss, idempotency, reconcile, status, and withdraw coverage. | "class HarnessControlConformanceTests1(unittest.IsolatedAsyncioTestCase):"; "class HarnessControlConformanceTests2(unittest.IsolatedAsyncioTestCase):"; `HarnessControlIpcTests` | mcp/tests/test_harness_control_conformance_1.py:39-39; mcp/tests/test_harness_control_conformance_2.py:29-29; mcp/tests/test_harness_control_ipc.py:77-77 |
 | Public API epoch/conflict/certificate/privacy/status matrix plus bounded control-route liveness memo retention. | `HarnessControlApiTests`; `ControlLivenessMemoRetentionTests` | mcp/tests/test_serving_harness_control_api.py:79-776; mcp/tests/test_serving_harness_control_api.py:779-890 |
 | Claude stream-json adapter coverage pins discovery/launch, interaction responses, model/effort mutation, replay/reconciliation, interruption, and real-transport relaunch. | "class ClaudeStreamJsonAdapterTests1(unittest.IsolatedAsyncioTestCase):"; "class ClaudeStreamJsonAdapterTests2(unittest.IsolatedAsyncioTestCase):"; `ClaudeInterruptTests`; `ClaudeProductionTransportRelaunchTests` | mcp/tests/test_harness_control_claude_stream_1.py:32-32; mcp/tests/test_harness_control_claude_stream_2.py:30-30; mcp/tests/test_harness_control_claude_interrupt.py:40-40; mcp/tests/test_harness_control_claude_interrupt.py:438-438 |
-| Codex app-server adapter coverage pins handshake/discovery, exact turn acceptance, model/effort mutation, server-request correlation, reconnect, and fixture schema. | `test_handshake_uses_stable_protocol_and_exposes_effort_menu`; `test_turn_acceptance_blocking_and_terminal_mapping`; `test_codex_set_rejects_unadvertised_model_and_model_local_effort_without_rpc`; `test_correlated_server_approval_and_elicitation_responses`; `test_reconnect_resumes_reads_and_reconciles_without_resend` | mcp/tests/test_codex_app_server_adapter_basic.py:26-83; mcp/tests/test_codex_app_server_adapter_correlation.py:260-282; mcp/tests/test_codex_app_server_adapter_reconnect.py:43-86; mcp/tests/test_codex_app_server_adapter_reconnect.py:129-185; mcp/tests/test_codex_app_server_adapter_turns.py:23-57 |
+| Codex app-server adapter coverage pins handshake/discovery, exact turn acceptance, model/effort mutation, correlated structured and empty-form MCP responses, reconnect, and fixture schema. | `test_handshake_uses_stable_protocol_and_exposes_effort_menu`; `test_turn_acceptance_blocking_and_terminal_mapping`; `test_codex_set_rejects_unadvertised_model_and_model_local_effort_without_rpc`; `test_correlated_server_approval_and_elicitation_responses`; `test_reconnect_resumes_reads_and_reconciles_without_resend` | mcp/tests/test_codex_app_server_adapter_basic.py:26-83; mcp/tests/test_codex_app_server_adapter_correlation.py:260-282; mcp/tests/test_codex_app_server_adapter_reconnect.py:43-123; mcp/tests/test_codex_app_server_adapter_reconnect.py:166-222; mcp/tests/test_codex_app_server_adapter_turns.py:23-57 |
 | Pi RPC adapter coverage pins protocol framing, discovery, prompt acknowledgement, model/thinking mutation, reconnect/reconciliation, and ledger bounds. | `PiRpcProtocolTests`; "class PiRpcAdapterTests1(unittest.IsolatedAsyncioTestCase):"; "class PiRpcAdapterTests2(unittest.IsolatedAsyncioTestCase):"; `PiSubmissionLedgerTests` | mcp/tests/test_pi_rpc_adapter.py:424-546; mcp/tests/test_pi_rpc_adapter_ledger.py:18-121; mcp/tests/test_pi_rpc_adapter_ops_1.py:23-23; mcp/tests/test_pi_rpc_adapter_ops_2.py:33-33 |
 | `_agent_wire_fixtures` defines the reusable Codex collab-agent, sub-agent activity, thread, turn, item, and server-request frame builders. | `CollabAgents`; `collab_agent_tool_call_item`; `sub_agent_activity_item` | mcp/tests/_agent_wire_fixtures.py:63-77; mcp/tests/_agent_wire_fixtures.py:80-106; mcp/tests/_agent_wire_fixtures.py:109-124 |
 | The Codex thread-demux incident suite imports the shared wire fixtures and pins multiplexed parent and sub-agent routing. | "from _agent_wire_fixtures import"; `test_spawned_subagent_traffic_never_fails_the_bridge` | mcp/tests/test_codex_adapter_thread_demux.py:16-16; mcp/tests/test_codex_adapter_thread_demux.py:117-180 |
@@ -1421,6 +1421,9 @@ surfaces: retired settings fail loud, ladder transitions are legacy snapshot fix
 the nudge store is gone from every sweep harness.
 
 ## Update History
+
+- 2026-08-09T19:36+02:00 — 260713-TES-L5F2 route impact: adapter coverage now includes exact
+  accept/decline/cancel response shapes for Codex empty-form MCP tool approvals.
 
 - 2026-08-09T16:43+02:00 — 260713-TES-L5 hotfix curator: indexed the focused native-ingestion
   regression suite and its Codex/Pi identity-preservation proof; the 17:18 correction also aligned

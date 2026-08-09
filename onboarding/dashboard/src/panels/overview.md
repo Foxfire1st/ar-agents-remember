@@ -5,14 +5,22 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated | 2026-08-09T20:25+02:00 |
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
+
+## 260713-TES-L5F2 Change
+
+The shared `SessionComposer` and contextual `RailChat` regression suites now prove that composer
+answer mode does not require a lifecycle or gate. Both follow the same session-owned protocol as
+the canonical cockpit: read the hosted session's bridge epoch, POST the answer to that exact
+session's `interaction-response` route, lock duplicate sends, and never route an adapter answer
+through reliable `/submit`.
 
 ## 260731-EFA-L8 Split Layout
 
@@ -249,6 +257,9 @@ generator and its stale check; the manual boundary is sample coverage.
 The panels route absorbed the L7 live-thinking change on top of the L8 split: the session-cockpit conversation family carries the coalesced live-thinking indicator and its pins; the over-limit dashboard files were split by L8 and the armed file-size rail now covers this route's TS/TSX.
 
 ## Update History
+
+- 2026-08-09T20:25+02:00 — 260713-TES-L5F2 route impact: replaced shared-panel lifecycle-gate
+  answer fixtures with lifecycle-free exact-session interaction-response coverage.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the conversation split absorption and the file-size rail coverage. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.

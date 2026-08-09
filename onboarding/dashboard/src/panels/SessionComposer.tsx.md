@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/SessionComposer.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -68,8 +68,8 @@ No Domain Documentation source is configured for this repository; repository cod
 | --- | --- | --- |
 | `SessionsView` names the focused-live seat condition used by the composer boundary. | "const { focused, focusedLive } = data;" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:172-172 |
 | Ordinary composer drafts call `submitSessionDraft`. | "void submitSessionDraft" | dashboard/src/panels/sessionComposerHooks.ts:125-125 |
-| Pending interaction answers call `submitInteractionAnswer`. | "export async function submitInteractionAnswer(args: {" | dashboard/src/data/interactionAnswer.ts:654-654 |
-| The test suite declares the `SessionComposer` render/interaction block. | "describe(\"SessionComposer" | dashboard/src/panels/SessionComposer.test.tsx:57-57 |
+| Pending interaction answers call `submitInteractionAnswer`. | "export async function submitInteractionAnswer(args: {" | dashboard/src/data/interactionAnswer.ts:570-570 |
+| The test suite declares the `SessionComposer` render/interaction block. | "describe(\"SessionComposer" | dashboard/src/panels/SessionComposer.test.tsx:56-56 |
 
 ## Cross-Repo References
 

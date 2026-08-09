@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/catalogRows.ts`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | The wire type instantiated by these fixtures. | "interface TerminalCatalogRow" | dashboard/src/types/terminalCatalog.ts:24-24 |
 | The rail-state fixture consumer. | "hydrate(FLEET" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:57-57 |
 | The lifecycle-flow consumer of the appended fixtures. | "const retired = fromTerminalSessionInfo(L6_RETIRED_WITH_STOP_ERROR)" | dashboard/src/data/sessionLifecycle.test.ts:89-89 |
-| The interaction-bar consumer, including the multiplex suite. | "const multiplexedSession" | dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:483-483 |
+| The interaction-bar consumer, including the multiplex suite. | "const multiplexedSession" | dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:481-481 |
 | The PTY archetype-surface consumer. | "const controlled = () => fromTerminalSessionInfo(L6_CONTROLLED_WORKING)" | dashboard/src/panels/session-cockpit/PtySurface.test.tsx:39-39 |
 
 ## Cross-Repo References

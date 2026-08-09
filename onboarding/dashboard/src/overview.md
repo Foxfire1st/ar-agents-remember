@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a` |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview

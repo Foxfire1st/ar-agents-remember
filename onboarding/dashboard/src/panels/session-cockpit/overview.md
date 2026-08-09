@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -113,8 +113,8 @@ server reports (partial) agent-history unavailability.
 `InteractionBar` is multiplexed: one bar per pending interaction — the parent's singular slot
 first, then the sub-agent entries from the additive plural catalog slot, de-duplicated by
 interactionId — each badged with the adapter-bound agent label (absent on the parent, never
-fabricated) and answered through the same channel routing, so a sub-agent approval is never
-dropped into the legacy gate fallback. Rail rows and the palette's question triage preview name
+fabricated) and answered through the same exact-session route, so parent, sub-agent, and
+lifecycle-free approvals share one adapter-owned channel. Rail rows and the palette's question triage preview name
 who asks, and a seat blocked solely on a sub-agent approval still reads awaiting-input.
 
 ## Route Model
@@ -152,9 +152,10 @@ who asks, and a seat blocked solely on a sub-agent approval still reads awaiting
 
 - `SessionComposer.tsx` uses the shared reliable-submit client; exact drafts/request ids survive
   ambiguous outcomes. Alt+Up performs authoritative withdrawal/pop-back, never a local queue delete.
-- `InteractionBar.tsx` routes pending adapter questions through their gate channel, distinct from
-  ordinary chat submission. Operator text, agent-bus replies, control commands, and interaction
-  answers remain separate authority paths.
+- `InteractionBar.tsx` routes pending adapter questions through the exact owning session's
+  interaction-response endpoint, distinct from lifecycle gates and ordinary chat submission.
+  Operator text, agent-bus replies, control commands, and interaction answers remain separate
+  authority paths.
 - `CommandPalette.tsx` and `useKeyboardZones.ts` consume the effective map from
   [data/keymap](../../data/keymap/overview.md). The palette traps focus while open and restores the
   correct invoker; F6 is the immutable region escape, including under Vim composer mode.
@@ -407,6 +408,9 @@ site, `test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `tes
 The session-cockpit route gained the L7 live-thinking coalescing (one stable `thinking` row per active turn, animated indicator, completion cleanup) and its interleaved acceptance pins in the conversation-timeline family. The file-size rail covers this route's TS/TSX under `dashboard/src`.
 
 ## Update History
+
+- 2026-08-09T19:36+02:00 — 260713-TES-L5F2 route impact: documented lifecycle-free interaction
+  answers through the owning session's interaction-response endpoint.
 
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: repaired two `DetectedHarness` citation
   ranges in this route overview after `response_contract.py` grew (line-shift only; no route

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T10:20+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -159,8 +159,10 @@ code must not use them as ordinary recovery APIs.
   honestly instead of retaining a live cue.
 - A queued receipt is acceptance evidence rather than pre-dispatch proof. The lifecycle authority alone
   enables withdrawal; dispatching/unknown records wait for a terminal word under the bounded window.
-- Structured question maps and permission responses use the direct session route with bridge-epoch
-  evidence; the gate channel remains the fallback for forms that direct routing cannot represent.
+- Every representable pending adapter interaction uses the direct exact-session route with
+  bridge-epoch evidence. Structured questions send an all-or-nothing answers map; permission,
+  arbitrary-choice, and composer modes send one response string. Lifecycle gates do not transport
+  adapter answers.
 
 ### 260731-EFA-L4 Typed Sub-Task Rows And Mirror-Checked Fixtures
 
@@ -324,6 +326,10 @@ agent-tagged notices, including selected-child history state, remain conversatio
 create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
 
 ## Update History
+
+- 2026-08-09T19:36+02:00 — 260713-TES-L5F2 route impact: the interaction-answer authority is
+  now uniformly exact-session-owned for structured and scalar payloads; lifecycle gates are not
+  an adapter response fallback.
 - 2026-08-08T21:20+02:00 — No route impact: 260713-TES-L1 renamed one store field
   (`supervisorHeartbeat` → `agentNotifierHeartbeat`) with a legacy-wire fallback in `applySnapshot`;
   the data route's shape and responsibilities are unchanged and the sidecar for `data/store.ts`

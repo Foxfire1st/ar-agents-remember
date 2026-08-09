@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-07T08:19Z |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -157,7 +157,7 @@ No task-independent technical debt was identified during review.
 | The view names the panel, floor-chip, calibration, narrow-rule, and keyboard-wiring seams. | "useKeyboardZones({ active, dispatch });"; "The ~80-col floor chip"; "~280px rail default"; "Narrow-width rules: rail behavior is unchanged." | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:762-762; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:1057-1057; dashboard/src/data/sessionLayout.test.ts:42-42; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:777-777 |
 | The stage fill mounts the sweep, live-turn selector, `conversation.stop` registration fields, `ChatsStageBody`, and `InteractionBar`. | "useEffect(() => startRetireResidualSweep(), []);"; "const focusedLiveTurnWorking = useActiveConversation((state) => {"; "id: \"conversation.stop\""; "title: \"Stop turn\""; "keywords: [\"stop\", \"interrupt\", \"cancel\", \"turn\", \"abort\"]"; "when: () => deps.chatsInterruptRef.current.available"; "run: () => deps.chatsInterruptRef.current.onStop?.()"; "<InteractionBar session={focused} composerRef={refs.composerRef} />"; "onToggleDiagnostics={handlers.toggleChatsDiagnostics}" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:817-817; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:297-297; dashboard/src/panels/session-cockpit/sessions-view/useSessionsPaletteCommands.tsx:125-131; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:215-215; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:260-260 |
 | The payload selector + agent label the question-triage preview resolves (N1). | `sessionPendingInteractionPayload` | dashboard/src/data/sessions.ts:538-542 |
-| The pending interaction agent label used by the question-triage preview. | `pendingInteractionAgentLabel` | dashboard/src/data/interactionAnswer.ts:202-209 |
+| The pending interaction agent label used by the question-triage preview. | `pendingInteractionAgentLabel` | dashboard/src/data/interactionAnswer.ts:191-198 |
 | The pane surface the stage mounts per focused seat (archetypes, keep-alive, cols reporting). | "hidden={!terminalFocused}"; "onVisibleCols={terminalFocused ? onVisibleCols : undefined}"; "import { ChatsStageBody } from \"../ChatsStageBody\";" | dashboard/src/panels/session-cockpit/stageLayers.tsx:104-104; dashboard/src/panels/session-cockpit/stageLayers.tsx:103-103; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:22-22 |
 | The stage renders one `InteractionBar` above the composer. | "<InteractionBar session={focused} composerRef={refs.composerRef} />" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:215-215 |
 | The stage renders `ConversationWorkingLine`/`WorkingLine` and the complete `conversation.stop` command registration. | "<ConversationWorkingLine sessionId={focused.id} />"; "id: \"conversation.stop\""; "title: \"Stop turn\"" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:195-195; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:197-197; dashboard/src/panels/session-cockpit/sessions-view/useSessionsPaletteCommands.tsx:125-131 |

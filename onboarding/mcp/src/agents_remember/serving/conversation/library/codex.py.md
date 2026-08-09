@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/codex.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `fb0296562ceb29929a3675a1b0195700d23bc56a`|
+| lastVerifiedCommitDate |  2026-08-09T20:35:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -113,7 +113,7 @@ initialize/state helpers.
 | Shape-skewed list/read payloads and range-absurd timestamps fail as typed store errors. | `test_shape_skewed_list_payloads_fail_as_store_errors`, `test_shape_skewed_read_payloads_fail_as_store_errors`, `test_range_absurd_timestamp_fails_as_store_error` | mcp/tests/test_conversation_library_ports.py:299-351; mcp/tests/test_conversation_library_ports.py:353-388; mcp/tests/test_conversation_library_ports.py:506-519 |
 | Sub-agent grouping with probed source kinds, agent-thread read, RPC-refusal degrade note, truncation note, nested depth-2 naming, and ungroupable-row fail-closed. | `test_agents_group_under_parent_with_probed_source_kinds`, `test_agent_conversation_reads_native_agent_thread`, `test_unproven_agent_kinds_degrade_to_exact_note`, `test_truncated_agent_listing_is_visible`, `test_nested_depth2_agents_are_named_not_silently_absent`, `test_ungroupable_agent_row_fails_closed` | mcp/tests/test_conversation_library_agents.py:295-333; mcp/tests/test_conversation_library_agents.py:343-362; mcp/tests/test_conversation_library_agents.py:364-377; mcp/tests/test_conversation_library_agents.py:379-385; mcp/tests/test_conversation_library_agents.py:387-417; mcp/tests/test_conversation_library_agents.py:419-427 |
 | The installed suite proves the live gate and list/read/resolve round-trip on the real installed app-server (0.145.0 at the probe; earlier passes observed 0.144.5). | `test_live_gate_supports_list_read_and_partial_completeness`, `test_live_list_read_and_resolve_round_trip` | mcp/tests/test_conversation_library_installed.py:136-153; mcp/tests/test_conversation_library_installed.py:155-176 |
-| The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. | `validate_initialize_response`, `iso_from_epoch`, `required_object`, `required_text`, `required_list` | mcp/src/agents_remember/serving/codex_app_server_state.py:127-153; mcp/src/agents_remember/serving/codex_app_server_state.py:527-532; mcp/src/agents_remember/serving/codex_app_server_state.py:551-554; mcp/src/agents_remember/serving/codex_app_server_state.py:561-565; mcp/src/agents_remember/serving/codex_app_server_state.py:568-572 |
+| The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. | `validate_initialize_response`, `iso_from_epoch`, `required_object`, `required_text`, `required_list` | mcp/src/agents_remember/serving/codex_app_server_state.py:128-154; mcp/src/agents_remember/serving/codex_app_server_state.py:553-558; mcp/src/agents_remember/serving/codex_app_server_state.py:577-580; mcp/src/agents_remember/serving/codex_app_server_state.py:587-591; mcp/src/agents_remember/serving/codex_app_server_state.py:594-598 |
 
 ## Cross-Repo References
 

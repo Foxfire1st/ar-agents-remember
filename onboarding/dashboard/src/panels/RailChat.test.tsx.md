@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/RailChat.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T11:34+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-09T20:25+02:00 |
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -85,6 +85,9 @@ records the catalog-change broadcasts the terminate path posts.
   A paired case hydrates a chat + terminal, clicks `rail-terminate-terminal`, and asserts the terminal
   slot frees (`findSessionForLeaf(LEAF_KEY, "terminal")` undefined) while the chat pane survives —
   proving the two slots terminate independently.
+- **lifecycle-free non-choice answers (260713-TES-L5F2)** — a rail-bound hosted session with no
+  lifecycle id answers through `/api/terminal/{session}/interaction-response`. The case pins the
+  bridge epoch and scalar response body and proves the reliable `/submit` path is not used.
 
 ### Conventions
 
@@ -138,6 +141,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | `submitSessionText` is part of the reliable submission seam mocked by the suite. | `submitSessionText` | dashboard/src/data/submitClient.ts:828-873 |
 | `waitForSubmissionReady` is the readiness entry. | "function waitForSubmissionReady" | dashboard/src/data/submitClient.ts:952-952 |
 | `attachSessionToLeaf` — the attach client path whose 200/409 (`leaf-taken`) outcomes the tests mock. | `attachSessionToLeaf` | dashboard/src/data/terminal.ts:492-513 |
+| The rail's lifecycle-free answer case targets its exact session and never `/submit`. | "routes a pane's lifecycle-free non-choice answer by exact session" | dashboard/src/panels/RailChat.test.tsx:480-528 |
 
 ## Cross-Repo References
 
@@ -150,10 +154,13 @@ No meaningful cross-repo references found.
 ## 260715-FEUI-L5 Reliable Submit Delta
 
 RailChat tests now prove create-and-ready leaf-context submission, attach/move delivery through the
-same reliable client, rejection honesty, and gate-only non-choice answers. They no longer model
-bracketed paste or Enter as delivery authority.
+same reliable client, rejection honesty, and session-direct non-choice answers. They no longer model
+bracketed paste, Enter, or lifecycle gates as adapter-answer authority.
 
 ## Update History
+
+- 2026-08-09T20:25+02:00 — 260713-TES-L5F2: removed the rail answer test's lifecycle/gate fixture
+  and pinned the exact session-owned interaction-response request and payload.
 
 - 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
 

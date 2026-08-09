@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`|
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -207,7 +207,7 @@ believing an evidence channel it does not have.
   (a `threadId` in the `arEvidence` payload surfaces on `EvidenceFrame.thread_id`, a frame without
   the key reads `None`) re-verified against the assertions at L700/L702 and unchanged.
 
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. In the 1503-line `codex_app_server_adapter.py` the stop-dropping forwards are `_handle_foreign_notification` + `_emit_notification` (cit:([`_handle_foreign_notification`, `_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:699-710; mcp/src/agents_remember/serving/codex_app_server_adapter.py:712-728)) and the transcript-less `"item/completed"` branch (cit:(["item/completed"], mcp/src/agents_remember/serving/codex_app_server_adapter.py:799-803); `await self._emit_notification("item/completed", params)` is at the end of that range); the native page the suite drives is `read_native_page` (cit:([`read_native_page`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:395-421)). Reworded the claim, which said "`thread/read` native page" — the adapter's `thread/read` call is in `reconcile` (cit:([`reconcile`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:355-393)), not on the native-page path.
+- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. In the 1503-line `codex_app_server_adapter.py` the stop-dropping forwards are `_handle_foreign_notification` + `_emit_notification` (cit:([`_handle_foreign_notification`, `_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:703-714; mcp/src/agents_remember/serving/codex_app_server_adapter.py:716-732)) and the transcript-less completion branch (cit:(["        await self._emit_notification(\"item/completed\", params)"], mcp/src/agents_remember/serving/codex_app_server_adapter.py:807-807)); the native page the suite drives is `read_native_page` (cit:([`read_native_page`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:399-425)). Reworded the claim, which said "`thread/read` native page" — the adapter's `thread/read` call is in `reconcile` (cit:([`reconcile`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:359-397)), not on the native-page path.
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: recorded the arms this leaf added; the rest of this card was re-read against the file and remains true. Call sites in this module now build parameter objects (see the route overview) — what the suite proves is unchanged. Verification metadata pinned until closeout stamps the code commit.
 
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented opaque Codex continuation,

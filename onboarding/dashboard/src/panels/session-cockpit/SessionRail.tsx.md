@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
+| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -169,7 +169,7 @@ the reviewed task evidence for any current behavioral claim.
 | Row anatomy, accessible dots, set/harvest markers, End flows, hierarchy, bulk end, strip, banner, cleanup note, footer, toggles. | "export function SessionRail" | dashboard/src/panels/session-cockpit/SessionRail.tsx:149-149 |
 | The pure model/rollup/join derivations this renders. | "export function buildRailModel" | dashboard/src/data/railModel.ts:192-192 |
 | The payload selector + agent label the `input?` chip tooltip resolves (N1). | "export interface OpenSession" | dashboard/src/data/sessions.ts:28-28 |
-| The adapter-bound agent label the tooltip prefixes. | "export interface InteractionQuestionOption" | dashboard/src/data/interactionAnswer.ts:29-29 |
+| The adapter-bound agent label the tooltip prefixes. | "export interface InteractionQuestionOption" | dashboard/src/data/interactionAnswer.ts:18-18 |
 | The single dot renderer + grammar. | "export function StateDot" | dashboard/src/panels/session-cockpit/StateDot.tsx:38-38 |
 | The view deriving props and wiring focus + palette mirrors. | "export const SessionsView" | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23 |
 | The detailed terminate/cleanup flows + notice store the End paths run through. | "export function startRetireResidualSweep" | dashboard/src/data/sessionLifecycle.ts:136-136 |
