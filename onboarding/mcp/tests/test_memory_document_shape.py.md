@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_document_shape.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d` |
+| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Precision and recall for the three memory-document checks 260731-EFA-L6 added.
+Precision and recall for the memory-document style surface, including the entity-catalog alignment check that closeout runs during its fail-fast preflight.
 
 ## Code Commentary
 
@@ -71,5 +71,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `DefensiveBranchTests` (lines 597-710) — The guards that keep a sweep from crashing on a tree that is not what it expects.. | `DefensiveBranchTests` | mcp/tests/test_memory_document_shape.py:597-710 |
 
 ## Update History
+
+- 2026-08-10T00:00+02:00 — 260731-EFA-L9 follow-up: the default-style surface assertion now includes entity-catalog alignment so the full suite proves registration of the new fail-fast preflight check. Verification metadata remains pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

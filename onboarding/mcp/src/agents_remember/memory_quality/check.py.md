@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d` |
+| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -29,10 +29,12 @@ Drift rows from `run_drift_summary()` are normalized into quality findings so
 the MCP response has one finding list even when checks come from different
 subdomains.
 
-The closeout gate consumes this registry through two declared phase lists,
-`BEFORE_METADATA_REFRESH_CHECKS` — the citation gate (`range_resolution` + `claim_reopen`),
-which runs before the code commit and the strict test wrapper — and
-`AFTER_METADATA_REFRESH_CHECKS`, which repeats citations without temporary provenance and adds
+The closeout gate consumes this registry through two declared phase lists.
+`BEFORE_METADATA_REFRESH_CHECKS` begins with the tree-only
+`entity_catalog_alignment` check, then runs the citation gate (`range_resolution` +
+`claim_reopen`). This phase runs before staging, hooks, the code commit, and the strict test
+wrapper, so orphaned entity fingerprint rows and broken citations reject before Pyright or
+pytest. `AFTER_METADATA_REFRESH_CHECKS` repeats citations without temporary provenance and adds
 drift, document shape, and history order after metadata refresh. Closeout supplies the leaf base
 only while evaluating dirty unstamped cards in the preflight; the post-refresh repetition has no
 fallback, so every such card must receive the real code-commit stamp before memory commits.
@@ -61,7 +63,7 @@ changed: `summarize_rows` always sets all three on a `checked` packet.
 - The top-level finding count uses each checker result's declared
   `findingCount`, so bounded drift samples can report fewer concrete findings
   than the total count. `run_memory_quality_check` coerces it with
-  `int(result.get("findingCount", 0))`: cit:([`run_memory_quality_check`, "result.get(\"findingCount\", 0)"], mcp/src/agents_remember/memory_quality/check.py:86-113), which assumes a checker never puts
+  `int(result.get("findingCount", 0))`: cit:([`run_memory_quality_check`, "result.get(\"findingCount\", 0)"], mcp/src/agents_remember/memory_quality/check.py:103-130), which assumes a checker never puts
   a literal `None` under that key — the drift checker's `.get` reads are safe only
   because the `checked` guard above guarantees the key is present.
 - **The drift packet's shape is owned by `onboarding_drift_check/models.py`.**
@@ -77,8 +79,16 @@ changed: `summarize_rows` always sets all three on a `checked` packet.
 | Update-history ordering is the first style checker. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:47-56 |
 | Drift summary provides the integrity checker payload, now typed `-> DriftSummaryPacket`. | `run_drift_summary` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
 | The declaration of the packet's status vocabulary (in `models/drift.py`) and its `NotRequired` keys. | "DriftStatus = Literal["; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19; mcp/src/agents_remember/models/drift.py:11-11 |
+| The first pre-code check enforces entity inventory/fingerprint alignment without requiring code metadata. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py:70-130 |
 
 ## Update History
+
+- 2026-08-10T12:46+02:00 — L9 fail-fast repair: registered
+  `style.document_shape.entity_catalog_alignment` and placed it first in
+  `BEFORE_METADATA_REFRESH_CHECKS`, ahead of citations and every code rail. This moves pure
+  catalog-structure failures out of the post-refresh drift phase without moving source/hash drift,
+  which can only clear after real commit metadata exists. Verification metadata stays pinned until
+  closeout stamps the repair commit.
 
 - 2026-08-10T08:20+02:00 — 260805-ARG-L1 closeout-order hardening: recorded the explicit
   pre-code-quality citation preflight, temporary base provenance for dirty unstamped cards, and

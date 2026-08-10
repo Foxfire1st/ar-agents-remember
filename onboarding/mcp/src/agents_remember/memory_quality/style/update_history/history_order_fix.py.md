@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d` |
+| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -47,7 +47,7 @@ without writing them.
 | --- | --- | --- |
 | The diagnostic checker provides the timestamp and section parsing helpers. | `CHECK_NAME` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:25-25 |
 | The `rel` path-relativization helper is now imported from the drift-check discovery module instead of defined locally. | `rel` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:58-64 |
-| Tests cover successful reordering and skipped missing-timestamp sections. | `test_history_order_fix_reorders_update_history_entries`, `test_history_order_fix_skips_missing_timestamp` | mcp/tests/test_memory_quality.py:141-165; mcp/tests/test_memory_quality.py:167-190 |
+| Tests cover successful reordering and skipped missing-timestamp sections. | `test_history_order_fix_reorders_update_history_entries`, `test_history_order_fix_skips_missing_timestamp` | mcp/tests/test_memory_quality.py:249-273; mcp/tests/test_memory_quality.py:275-298 |
 
 ## Update History
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_closeout_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `201b0599e5d79049252033c7b737df631135b11d`|
+| lastVerifiedCommitDate |  2026-08-10T13:54:43+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,13 @@
 This suite proves the strict worktree closeout quality gate's policy, execution authority, failure
 containment, interpreter selection, and ordering before the code commit — and, since
 260731-EFA-L1, that the gate is **not** hard-coded to one repository.
+
+The suite also proves the complete fail-fast order: memory preflight → configured pre-commit
+hook → strict targeted wrapper → exact-index hook-bypassed commit. The real-hook regression runs
+an executable temporary hook, asserts one invocation, modifies the working tree after the wrapper,
+and proves that the later modification is not smuggled into the certified commit. It configures a
+relative `core.hooksPath` and repeats the certified commit with no staged delta, covering both the
+relative hook resolver and no-op exact-index return.
 
 Since 260731-EFA-L4 it also proves **what the gate is shown**. Closeout now stages the code
 worktree before running the gate, and the four classes added at L452-L835 cover that staging from
@@ -79,8 +86,12 @@ Two more pin what the gate hands the wrapper:
   decider and `run_strict_code_quality_gate` with `contract.code_worktree` exactly.
 - `test_gate_failure_precedes_all_closeout_commits` — a raising gate leaves code HEAD, memory HEAD,
   ledger bytes, and `closeout_status` all unchanged.
-- `test_success_runs_quality_before_code_commit` — the recorded event order starts
-  `["quality", "code-commit"]`.
+- `test_success_runs_hook_then_quality_then_verified_code_commit` — the recorded event order is
+  `["pre-commit-hook", "quality", "verified-code-commit"]`.
+- `test_memory_preflight_failure_never_starts_the_code_quality_gate` — an orphan entity
+  fingerprint stops both the hook and wrapper.
+- `CertifiedIndexCommitTests` uses a real hook to prove it runs exactly once and that
+  `commit_verified_staged` commits the gate's index rather than later working-tree edits.
 
 #### The staging half (260731-EFA-L4)
 
@@ -132,17 +143,17 @@ The guard tests git's own definition of a linked worktree (`--git-dir` differing
 argument rests on: `kind` is a label beside the path, the git-dir comparison constrains the path
 about to be written.
 
-- cit:([`test_the_repositorys_own_checkout_is_refused_before_anything_is_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:861-892) asserts the
+- cit:([`test_the_repositorys_own_checkout_is_refused_before_anything_is_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:910-941) asserts the
   **damage that does not happen**, not merely a message: a partial `git add -p` selection
   (`one\ntwo` staged, `one\ntwo\nthree` on disk) survives intact, an untracked `secret.env` is
   still untracked with no object written for it, `status --porcelain` is byte-identical, and the
   gate was never called. Both losses are unrecoverable from git alone. The message must say
   "is not a task worktree" and "Nothing was staged and nothing was committed".
-- cit:([`test_a_series_contracts_code_worktree_is_exactly_that_checkout`], mcp/tests/test_worktree_closeout_quality_gate.py:894-924) proves the refusal
+- cit:([`test_a_series_contracts_code_worktree_is_exactly_that_checkout`], mcp/tests/test_worktree_closeout_quality_gate.py:943-973) proves the refusal
   is aimed at a shape the system really produces: `series.kind == "series"` and
   `series.code_worktree == repo`. Without it the guard is a guess about a shape nobody builds.
-- cit:([`test_a_task_worktree_passes_the_precondition_and_is_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:926-939) is the positive leg.
-- cit:([`test_a_refused_gate_leaves_the_task_worktree_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:941-958) states the no-rollback design
+- cit:([`test_a_task_worktree_passes_the_precondition_and_is_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:975-989) is the positive leg.
+- cit:([`test_a_refused_gate_leaves_the_task_worktree_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:991-1008) states the no-rollback design
   as a test: the created file stays in `ls-files`, and there is **no** `index.lock` and **no**
   `ar-closeout-index-*` snapshot left behind — an earlier attempt saved the index aside and copied
   it back, and that machinery is gone rather than fixed.
@@ -151,21 +162,21 @@ about to be written.
 does not refuse; it resolves every conflict to whatever the working tree holds, markers included,
 and closeout then commits that.
 
-- cit:([`test_a_conflicted_worktree_is_refused_before_anything_is_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:970-990): the message names
+- cit:([`test_a_conflicted_worktree_is_refused_before_anything_is_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:1020-1040): the message names
   "closeout cannot stage the code worktree", "unmerged path", the file, and "conflict markers"; the
   gate is not called and HEAD plus `status --porcelain` are unchanged.
-- cit:([`test_the_reset_runs_after_the_conflict_check_not_before_it`], mcp/tests/test_worktree_closeout_quality_gate.py:992-1015) pins the **order**
+- cit:([`test_the_reset_runs_after_the_conflict_check_not_before_it`], mcp/tests/test_worktree_closeout_quality_gate.py:1042-1065) pins the **order**
   through what survives rather than through call bookkeeping. A mixed reset drops the unmerged
   index entries and removes `MERGE_HEAD`; run first, `diff --diff-filter=U` would report nothing,
   the refusal would never fire again, and `add -A` would stage the `<<<<<<<` markers. So
   `MERGE_HEAD` still existing after the refusal is the property that says the reset has not run.
 
-**cit:([`RetryStagesWhatAFirstRunWouldTests`], mcp/tests/test_worktree_closeout_quality_gate.py:966-1025) — staging is recomputed, not accumulated.**
+**cit:([`RetryStagesWhatAFirstRunWouldTests`], mcp/tests/test_worktree_closeout_quality_gate.py:1071-1130) — staging is recomputed, not accumulated.**
 `git add -A` applies ignore rules only to paths git does not already track or hold staged, so a
 file staged by a refused gate stays staged after the leaf adds it to `.gitignore`, and the retry
 commits it. **That is how a `.dmypy.json` a type checker had dropped in the worktree got into this
 leaf's own first commit.** The mixed reset is what removes the path dependence.
-cit:([`test_a_retry_commits_the_tree_a_first_run_would`], mcp/tests/test_worktree_closeout_quality_gate.py:1054-1080) asserts it as an **equality of
+cit:([`test_a_retry_commits_the_tree_a_first_run_would`], mcp/tests/test_worktree_closeout_quality_gate.py:1104-1130) asserts it as an **equality of
 committed trees**, not as the presence of a `reset` call: one worktree is refused with the artefact
 already staged, then ignored and retried; a second worktree reaches the same end state having never
 seen a refusal; both run the same closeout steps, so the only thing that could make the trees
@@ -181,13 +192,13 @@ because a stub would hide the exact defect it exists to catch. It also plants fi
 for the planted wrapper, since the wrapper is a changed source file as far as closeout's
 missing-onboarding check is concerned.
 
-The staging classes keep git real in both directions: cit:([`_task_worktree`], mcp/tests/test_worktree_closeout_quality_gate.py:815-829) builds a
+The staging classes keep git real in both directions: cit:([`_task_worktree`], mcp/tests/test_worktree_closeout_quality_gate.py:833-847) builds a
 repository **and** a linked worktree off it, because the precondition under test is git's own
 distinction between the two and a fixture that faked it would be testing the fixture;
-cit:([`_conflicted_task_worktree`], mcp/tests/test_worktree_closeout_quality_gate.py:832-843) produces a genuine unmerged index by running a real
-conflicting merge. cit:([`_refusing_gate`], mcp/tests/test_worktree_closeout_quality_gate.py:809-812) is the shared patch for "the gate raises",
-and cit:([`GATE_REFUSAL`], mcp/tests/test_worktree_closeout_quality_gate.py:806-806) is the message closeout really emits. The two module constants
-cit:([`CREATED_FILE`], mcp/tests/test_worktree_closeout_quality_gate.py:608-608) and cit:([`DROPPED_TOOL_ARTEFACT`], mcp/tests/test_worktree_closeout_quality_gate.py:1018-1018) name the paths the created-file and retry
+cit:([`_conflicted_task_worktree`], mcp/tests/test_worktree_closeout_quality_gate.py:881-892) produces a genuine unmerged index by running a real
+conflicting merge. cit:([`_refusing_gate`], mcp/tests/test_worktree_closeout_quality_gate.py:827-830) is the shared patch for "the gate raises",
+and cit:([`GATE_REFUSAL`], mcp/tests/test_worktree_closeout_quality_gate.py:824-824) is the message closeout really emits. The two module constants
+cit:([`CREATED_FILE`], mcp/tests/test_worktree_closeout_quality_gate.py:626-626) and cit:([`DROPPED_TOOL_ARTEFACT`], mcp/tests/test_worktree_closeout_quality_gate.py:1072-1072) name the paths the created-file and retry
 cases turn on.
 
 ### Invariants And Boundaries
@@ -250,7 +261,7 @@ The suite proves the adapter and its production closeout call sites together.
 | The created-file/deleted-file scope cases: a created file must be linted, and the gate's `lint_paths` must equal the `.py` files of the commit tree. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:642-748 |
 | The linked-worktree precondition: a repository's own checkout is refused with its `add -p` selection and untracked files intact, a `kind: "series"` contract is shown to be exactly that shape, and a refused gate leaves no rollback machinery behind. | `TaskWorktreePreconditionTests` | mcp/tests/test_worktree_closeout_quality_gate.py:791-903 |
 | The conflict refusal and the ordering proof that the mixed reset runs after it (`MERGE_HEAD` survives). | `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:961-1015 |
-| The retry tree-equality proof that staging is recomputed per attempt rather than accumulated. | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:966-1025 |
+| The retry tree-equality proof that staging is recomputed per attempt rather than accumulated. | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:1071-1130 |
 | The adapter under test: the three status constants plus wrapper-presence applicability and the preview that reports them. | `quality_environment` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:294-316 |
 | `quality_environment`, whose `git_environment()` base the selector test asserts. | `quality_environment` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:294-316 |
 | The unannotated call sites the spy guards, both passing `contract.code_worktree` and `diff_base=contract.code_base_commit`. The apply path now reaches the gate through `_gate_staged_code`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
@@ -286,6 +297,12 @@ asserts the apply path passes the targeted plan alongside
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: recorded the current closeout quality-gate assertions
   and staged wrapper boundary; verification metadata remains pinned until closeout.
 
+- 2026-08-10T12:46+02:00 — L9 closeout-order regression proof: added the entity-preflight
+  short-circuit, advertised order assertion, explicit hook→wrapper→verified-commit event order,
+  and a real Git hook test proving no post-pytest rerun or restage; the delta coverage arm exercises
+  relative hook-path resolution and the no-staged-change return. Verification metadata stays pinned
+  until closeout stamps the repair commit.
+
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the targeted-mode
   command assertions and the full-mode/cap/kill-shape regressions. Verification
   metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
@@ -306,7 +323,7 @@ asserts the apply path passes the targeted plan alongside
   `code_worktree == repo_path`, plus the explicit no-rollback end state (no `index.lock`, no
   `ar-closeout-index-*`); cit:([`ConflictedIndexTests`], mcp/tests/test_worktree_closeout_quality_gate.py:961-1015) — the conflict refusal and the
   ordering proof that the mixed reset runs **after** it, established through `MERGE_HEAD` still
-  existing rather than through call bookkeeping; and cit:([`RetryStagesWhatAFirstRunWouldTests`], mcp/tests/test_worktree_closeout_quality_gate.py:966-1025) — staging recomputed per attempt, asserted as tree equality against a worktree that
+  existing rather than through call bookkeeping; and cit:([`RetryStagesWhatAFirstRunWouldTests`], mcp/tests/test_worktree_closeout_quality_gate.py:1071-1130) — staging recomputed per attempt, asserted as tree equality against a worktree that
   never saw the refusal (`.dmypy.json` is this leaf's own history). Added the matching invariants
   and the fixture conventions (`_task_worktree` L570-L584 builds a real repository *and* a real
   linked worktree; `_conflicted_task_worktree` L587-L598 runs a real conflicting merge).

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-07T14:30+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`
+| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -29,7 +29,8 @@ MCP application entry point supplies `DriftCheckContext`. Drift logic lives unde
 check lives at `integrity/check_missing_onboarding.py`; update-history ordering lives under
 `style/update_history/`. The history-order checker is diagnostic; the matching
 `history_order_fix.py` module is the explicit mutating script for timestamped
-history-order fixes.
+history-order fixes. `style/document_shape/entity_catalog_alignment.py` owns the cheap,
+tree-only one-to-one check between root entity inventory entries and fingerprint rows.
 
 ## Route Model
 
@@ -213,11 +214,23 @@ Coverage lives in `mcp/tests/test_l6_diff_coverage_claim_reopen.py`
 `mcp/tests/test_memory_citation_change_detection.py` (the `test_a_new_source_*` arms in
 `CodeProvenanceTests`, plus the `ChangeRoutingTests` untracked/ignored-local-path assertion).
 
+## L9 Closeout Repair — Entity Structure Fails Before Code Rails
+
+`style.document_shape.entity_catalog_alignment` separates a pure tree-shape invariant from the
+full post-refresh drift comparison. It rejects missing catalog sections, inventory entries without
+a fingerprint, fingerprint rows without an inventory entry, and duplicate fingerprint rows. The
+check is first in `BEFORE_METADATA_REFRESH_CHECKS`, before citation scans, staging, hooks, Pyright,
+or pytest. Source evidence and hash freshness remain in the post-refresh drift check because those
+need the real code commit and refreshed metadata to clear.
+
 ## 260731-EFA-L9 Route Impact — Caller Re-Points
 
 The memory-quality callers were rewritten by the L9 caller wave: `DriftStatus`/`DriftSummaryPacket` import from `models/drift.py` (declaration moved by L9), and runtime config from `kernel/primitives/runtime_config.py`. Check behavior is unchanged.
 
 ## Update History
+
+- 2026-08-10T12:46+02:00 — L9 closeout repair: added the entity-catalog alignment owner and its
+  pre-code fail-fast boundary; verification metadata stays pinned until closeout stamps the repair.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 

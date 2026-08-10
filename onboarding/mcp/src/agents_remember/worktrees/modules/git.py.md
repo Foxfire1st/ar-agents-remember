@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/git.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-29T15:30+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`
+| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -59,6 +59,14 @@ path's text at any ref or `None` when absent — the closeout body gates use it
 to diff sidecar content against the last verified memory commit;
 `head_text_or_none` remains as the HEAD shorthand.
 
+Closeout's certified-index path uses two deliberately separate helpers.
+`run_pre_commit_hook_if_configured(repo)` resolves Git's effective hook path, skips cleanly when
+no pre-commit hook exists, and otherwise invokes it through `git hook run pre-commit`.
+`commit_verified_staged(repo, message)` commits only the existing index with `--no-verify`; it
+never calls `add -A`, so a working-tree edit made after the strict wrapper cannot leak into the
+commit and the already-run hook cannot restart after pytest. Ordinary `commit_if_dirty` retains
+its original stage-and-commit behavior for callers that have not certified an index.
+
 `committed_changed_paths(repo, base_commit, verified_commit)` (issue #83)
 collects the paths changed by commits closeout has not verified yet: the
 tree-diff `base..HEAD` intersected with `verified..HEAD` when a distinct
@@ -90,8 +98,14 @@ No external Domain Documentation source is configured for this memory repo.
 | Memory baseline code reuses these facade-exported Git helpers. | "def run_drift" | mcp/src/agents_remember/memory/baseline.py:74-74 |
 | The L3 serving change-set API consuming `changed_files_with_counts` + `commit_text_or_none`. | "def task_changeset" | mcp/src/agents_remember/serving/changeset.py:80-80 |
 | Worktree tests cover changed-path behavior for long filesystem paths. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support_tests_1.py:1068-1081 |
+| Closeout runs the configured hook before its strict wrapper and commits the certified index afterwards. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:820-889 |
 
 ## Update History
+
+- 2026-08-10T12:46+02:00 — L9 closeout-order repair: added the configured-hook runner and the
+  exact-index `commit_verified_staged` helper. The latter never restages and uses `--no-verify`
+  because the hook was already executed before the pytest-final wrapper. Verification metadata
+  stays pinned until closeout stamps the repair commit.
 
 - 2026-07-31T20:50+02:00 — 260731-EFA-L3 curator: the module-local `run_git` was deleted and every
   helper now calls `kernel.git_command.run_git`, so the old Purpose ("Owns the Git subprocess

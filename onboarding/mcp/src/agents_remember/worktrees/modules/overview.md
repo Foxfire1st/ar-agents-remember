@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`
+| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -31,6 +31,9 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
   `committed_changed_paths` (issue #83: the unverified committed
   range — tree-diff `base..HEAD` ∩ `verified..HEAD`) and the
   `commit_text_or_none` baseline reader behind the closeout body gates.
+  The certified closeout path also uses `run_pre_commit_hook_if_configured` followed by
+  `commit_verified_staged`: the former runs the fast hook before the strict wrapper, while the
+  latter commits exactly that verified index with hooks bypassed and never restages later edits.
   **Operations-integration L3** adds `changed_files_with_counts(repo, base, head=None)`
   (+ `_rename_aware_path`) — the change-set primitive behind the serving change-set API
   (`serving/changeset.py`): per-file `{path, insertions, deletions, status}` via
@@ -608,6 +611,10 @@ and `worktrees/modules/contract_reader.py` implements the kernel resolver's `Con
 The closeout/integrate/guidance machinery is unchanged in behavior.
 
 ## Update History
+
+- 2026-08-10T12:46+02:00 — L9 closeout-order repair: recorded the configured-hook-before-wrapper
+  and exact-index-after-wrapper contract; verification metadata stays pinned until closeout stamps
+  the repair commit.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the provider-runtime move, the
   service-port surface, and the contract reader. Verification metadata pinned until closeout
