@@ -49,6 +49,7 @@
     "mcp/src/agents_remember/memory_quality/style/citations/work_order.py",
     "mcp/src/agents_remember/memory_quality/style/document_shape/__init__.py",
     "mcp/src/agents_remember/memory_quality/style/document_shape/diff_markers.py",
+    "mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py",
     "mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py",
     "mcp/src/agents_remember/memory_quality/style/document_shape/tables.py",
     "mcp/src/agents_remember/memory_quality/style/finding.py",
@@ -56,14 +57,16 @@
     "mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 49,
-    "fileSidecars": 44,
+    "sourceFilesInScope": 50,
+    "fileSidecars": 45,
     "childRoutes": 0
   },
   "routingTerms": [
     "agents",
     "agents_remember",
+    "alignment",
     "cache",
+    "catalog",
     "cells",
     "change",
     "changed",
@@ -84,6 +87,8 @@
     "drift",
     "editing",
     "entities",
+    "entity",
+    "entity_catalog_alignment",
     "extents",
     "finding",
     "fix",
@@ -136,14 +141,10 @@
     "source_index_database",
     "source_index_state",
     "src",
-    "state",
-    "structures",
-    "style",
-    "summary",
-    "symbol"
+    "state"
   ],
   "hotPath": {
-    "summary": "`check.py` is the public package-level runner. It can execute style-only checks without repository context, or combine drift integrity and style checks when an MCP application entry point supplies `DriftCheckContext`. Drift logic lives under `integrity/onboarding_drift_check/`; the pre-code-commit missing-onboarding check lives at `integrity/check_missing_onboarding.py`; update-history ordering lives under `style/update_history/`. The history-order checker is diagnostic; the matching `history_order_fix.py` module is the explicit mutating script for timestamped history-order fixes.",
+    "summary": "`check.py` is the public package-level runner. It can execute style-only checks without repository context, or combine drift integrity and style checks when an MCP application entry point supplies `DriftCheckContext`. Drift logic lives under `integrity/onboarding_drift_check/`; the pre-code-commit missing-onboarding check lives at `integrity/check_missing_onboarding.py`; update-history ordering lives under `style/update_history/`. The history-order checker is diagnostic; the matching `history_order_fix.py` module is the explicit mutating script for timestamped history-order fixes. `style/do...",
     "candidateHints": [
       "mcp/src/agents_remember/memory_quality",
       "mcp/src/agents_remember/memory_quality/check.py",

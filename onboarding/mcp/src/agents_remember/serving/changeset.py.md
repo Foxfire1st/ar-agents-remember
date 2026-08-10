@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-01T08:46+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`     |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`     |
+| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -165,7 +165,7 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). | `FileScope`; `run_scoped`; `language_for` | mcp/src/agents_remember/serving/scope.py:71-73; mcp/src/agents_remember/serving/scope.py:102-113; mcp/src/agents_remember/serving/scope.py:216-236 |
-| The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. | `changed_files_with_counts`; `branch_exists`; `commit_text_or_none` | mcp/src/agents_remember/worktrees/modules/git.py:33-34; mcp/src/agents_remember/worktrees/modules/git.py:105-108; mcp/src/agents_remember/worktrees/modules/git.py:159-198 |
+| The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. | `changed_files_with_counts`; `branch_exists`; `commit_text_or_none` | mcp/src/agents_remember/worktrees/modules/git.py:33-34; mcp/src/agents_remember/worktrees/modules/git.py:129-132; mcp/src/agents_remember/worktrees/modules/git.py:183-222 |
 | The sidecar-pairing helpers (`route_sidecar_status`, `confine_rel`) reused for `hasSidecar` + confinement. | `route_sidecar_status`; `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47; mcp/src/agents_remember/kernel/sidecar_pairing.py:50-65 |
 | The persisted contract model ("def load_contract(path: Path) -> WorktreeContract:") and loader ("def load_contract(path: Path) -> WorktreeContract:") behind master/leaf accumulation, with leaf-id normalization via "slug = slugify(worktree_name)". | "def load_contract(path: Path) -> WorktreeContract:"; "def load_contract(path: Path) -> WorktreeContract:"; "slug = slugify(worktree_name)" | mcp/src/agents_remember/worktrees/worktree_contract.py:233-472; mcp/src/agents_remember/worktrees/task_resolver.py:18-23 |
 | The app factory that calls `register_changeset_routes` before `mount_static`. | "def register_changeset_routes(app: FastAPI" | mcp/src/agents_remember/serving/changeset.py:503-503 |

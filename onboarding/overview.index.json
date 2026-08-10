@@ -79,7 +79,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1446,
+    "sourceFilesInScope": 1447,
     "fileSidecars": 21,
     "childRoutes": 9
   },

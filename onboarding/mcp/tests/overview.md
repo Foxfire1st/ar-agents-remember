@@ -9,8 +9,8 @@ Total output lines: 1813
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`|
+| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -879,9 +879,16 @@ race-dependent diff-coverage class).
 The test tree gained the zero-drift baseline suite (`test_model_split_baseline.py` + the
 `fixtures/model_split_baseline_260731_efa_l9.json` S1.3 fixture), the layering fitness-function
 suite (`test_layering.py`), and the structural-seam coverage suite
-(`test_leaf_structural_coverage.py`), plus the rewritten imports across ~184 test files.
+(`test_leaf_structural_coverage.py`), plus the rewritten imports across ~184 test files. The L9
+closeout-order repair extends existing suites with entity-alignment preflight cases and a real-hook
+proof of memory preflight → hook → wrapper → exact-index commit, including a post-wrapper working
+tree edit that must stay out of the commit.
 
 ## Update History
+
+- 2026-08-10T12:46+02:00 — L9 closeout-order repair: recorded focused entity-preflight and
+  real-hook/exact-index regression coverage; verification metadata stays pinned until closeout
+  stamps the repair commit.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the three new suites and the
   baseline fixture. Verification metadata pinned until closeout stamps the L9 code commit.
@@ -1330,4 +1337,3 @@ suite (`test_layering.py`), and the structural-seam coverage suite
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: added route coverage for bounded landing observation, no-wait projection, stale rendering, invalid-snapshot containment, and shutdown after observer failure.
 
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator: established governing route coverage for the final candidate.
-

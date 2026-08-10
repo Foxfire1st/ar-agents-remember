@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_longpath_preflight.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T00:40+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`|
+| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -42,7 +42,7 @@ helper, so they run identically on Windows and Linux CI.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The preflight and pure payload function under test. | `long_path_block_payload`; `_long_path_preflight` | mcp/src/agents_remember/worktrees/modules/start.py:247-275; mcp/src/agents_remember/worktrees/modules/start.py:278-305 |
-| The longest-tracked-path git helper. | `longest_tracked_path_length` | mcp/src/agents_remember/worktrees/modules/git.py:93-102 |
+| The longest-tracked-path git helper. | `longest_tracked_path_length` | mcp/src/agents_remember/worktrees/modules/git.py:117-126 |
 
 ## Update History
 
