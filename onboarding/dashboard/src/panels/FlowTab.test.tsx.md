@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/FlowTab.test.tsx`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T21:17+02:00 |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce`       |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,6 +27,10 @@ edit that drops an invariant from a drawn model fails a test.
 ## Code Commentary
 
 ### Logic
+
+The updated fixture path exercises a bound command seat with repository+sprint provenance. This
+keeps the flow projection consistent with production named-seat creation and prevents the test
+suite from normalizing an unbound global architect as the ordinary case.
 
 Twelve `it` cases under one `describe` (`FlowTab canvas (unified l-01-agent-lifecycles)`),
 `afterEach(cleanup)`; no mocking — FlowTab has no lazy xterm or store dependency, so it renders
@@ -88,6 +92,10 @@ exact on-canvas prose, so they double as a regression guard on the drawn spec.
 As of the 260703-L8 remediation the tests asserted the then-converged canvas: router default + retired models absent from the nav, the ladder and no-chat-builds invariants on the ROUTER drawing, the branch-not-worktree intent and delegated handover decision on the coordination event loop, reopen-not-redo on the manager, brief-started/no-machinery worker, hat-framed designer, and the ruled deciders on the reviewer. Cycle 6 pinned the ruled seam channel verbatim: the coordination assertion matched decide-by-packet-carried-gateId, and a manager assertion matched the gateId-rides-the-packet raise line. Cycle 7 adds a manager assertion pinning the raise node's enclosure address (`enclosure="<master task name>" — the exact address integration enforcement matches the gate by`).
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: moved the flow fixture onto canonical sprint-bound
+  command-seat provenance. Verification metadata remains pinned until closeout stamps the code
+  commit.
 
 - 2026-08-03T03:59:59+02:00 — Curated 4 citation claims (2 table rows, 2 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-09T19:54+02:00 |
-| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`
-| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -371,6 +371,11 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 (including on consumer-side drain and before the close sentinel).
 
 ## Hot Path Summary
+
+TES-L6 spans three MCP routes: serving owns immutable sprint binding and role-neutral notifier
+truth, controlplane owns exact-sprint owner routing, and registration/models project the additive
+wire vocabulary. Tests under `mcp/tests` prove concurrent sprint isolation and all-subordinate wake
+behavior before closeout.
 
 **260731-EFA-L1: `package_data/dashboard/` is no longer in this package's version-controlled
 surface.** The bundle, its `dashboard.fingerprint` sidecar, and local `mcp/build/` / `mcp/dist/`
@@ -1530,6 +1535,9 @@ retired `orchestration.escalation` family. The new forcing suite and the skills/
 complete the change set.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: added the sprint-binding, exact-routing, and
+  all-subordinate notifier hot paths. Verification metadata remains pinned until closeout.
 
 - 2026-08-09T21:54+02:00 — No route impact: the durability test instrument's source-pinning
   mechanics moved into a bounded sibling helper under `mcp/tests/`. Production MCP package

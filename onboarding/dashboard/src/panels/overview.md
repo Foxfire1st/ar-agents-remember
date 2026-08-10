@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-09T20:25+02:00 |
-| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`       |
-| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -49,6 +49,10 @@ also gained parts/styles modules (`sessionComposer*`, `terminalSession.ts`,
 now a repository guideline. Behavior is preserved.
 
 ## Purpose
+
+TES-L6 changes the command-seat panel boundary from one global spine to sprint-qualified groups.
+`FlowTab` consumes bound fixtures, while the session cockpit delegates group derivation to the data
+model and renders legacy unbound seats only as migration state.
 
 This route contains reusable cockpit panels plus focused child routes. Its strategic UI owners are:
 
@@ -257,6 +261,9 @@ generator and its stale check; the manual boundary is sample coverage.
 The panels route absorbed the L7 live-thinking change on top of the L8 split: the session-cockpit conversation family carries the coalesced live-thinking indicator and its pins; the over-limit dashboard files were split by L8 and the armed file-size rail now covers this route's TS/TSX.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint-group panel projection and the legacy
+  migration boundary. Verification metadata remains pinned until closeout.
 
 - 2026-08-09T22:22+02:00 — No route impact: a test-only scroll-memory teardown repair is
   confined to the conversation timeline fixtures and suites. Panel production surfaces and

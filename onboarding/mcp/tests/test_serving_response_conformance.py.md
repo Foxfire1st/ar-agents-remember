@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-09T03:51+02:00|
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`         |
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`         |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -27,6 +27,10 @@ responses and validate them. cit:([`ServingRouteInventoryTests`; `ValidatedRoute
 ## Code Commentary
 
 ### Logic
+
+The conformance pins now include only the explicit sprint-provenance response additions and
+binding-refusal statuses. This proves the L6 wire expansion without weakening the closed response
+key set or allowing arbitrary catalog fields through the serving boundary.
 
 #### cit:([`validate_wire`], mcp/tests/test_serving_response_conformance.py:211-231) — what pins camelCase
 
@@ -230,7 +234,7 @@ modules, and everything that proves them lives here.
 | The conversation surface's `CONTROL_RESPONSES` and `CONVERSATION_RESPONSES` tables. | `CONTROL_RESPONSES`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:95-108; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
 | The serving app factory and SSE generator under test. |"async def stream_events("; "def create_app("|mcp/src/agents_remember/serving/_app_common.py:112-112; mcp/src/agents_remember/serving/app.py:226-226|
 | The `StreamContractTests` suite that drives the SSE seam. | `StreamContractTests` | mcp/tests/test_serving_response_conformance.py:38-38 |
-| The producer's `_present_fields` conditionality. | `_present_fields` | mcp/src/agents_remember/serving/terminal_catalog.py:981-982 |
+| The producer's `_present_fields` conditionality. | `_present_fields` | mcp/src/agents_remember/serving/terminal_catalog.py:1011-1012 |
 | The catalog-entry wire model and its aliases. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:280-346 |
 | The open-status map asserted total over the declared outcomes, and the `_open_call` that indexes it directly. | `_OPEN_STATUS_BY_OUTCOME` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84 |
 | The control router and typed-error mapper. | `router`; `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:75-78; mcp/src/agents_remember/serving/conversation/control/api.py:124-141 |
@@ -249,6 +253,9 @@ type is recorded separately below as an in-repo boundary.
 | The in-repo workspace projection wire type. | `WorkspaceProjection` | dashboard/src/types/projection.ts:517-528 |
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed response-key/status pins for sprint binding.
+  Verification metadata remains pinned until closeout stamps the code commit.
 
 - 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded the 63→64 emitted-key pin growth
   (`compoundIdleEmittedFor`) in the hazard-section body and the L3 key-set paragraph.

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -59,6 +59,10 @@ cit:([`sessionPendingInteractionPayload`], dashboard/src/data/sessions.ts:538-54
 previews — the parent's singular slot first, else the first multiplexed entry.
 
 ### Logic
+
+Terminal-session projection now preserves the catalog's additive `spawnRepo` and `spawnSprint`
+fields. These are provenance, not display guesses: dashboard grouping and ownership use the exact
+stored pair, while rows without the pair are treated as legacy migration state.
 
 `sessionStore = createStore<SessionState>(...)` (zustand vanilla) holds the full catalog-backed
 `sessions: OpenSession[]`, `activeId: string | null`, and a coarse `count` retaining the highest live
@@ -197,7 +201,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The canonical Chats view reads this store and separates live action routing from inspection focus. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:15-18 |
 | The right-rail leaf chat resolves sessions via leaf role and now uses `pasteDraftToSession` for bind-time context after start, attach, or move. | `pasteDraftToSession` | dashboard/src/data/sessions.ts:722-726 |
-| The replacement rail renders catalog sessions and lifecycle actions through the shared model. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:149-236 |
+| The replacement rail renders catalog sessions and lifecycle actions through the shared model. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
 | `RailChat` is the only production owner of this module's raw connection registry, for visible and hidden keep-alive terminals. | `RailChat` | dashboard/src/panels/RailChat.tsx:817-817 |
 | Production creation callers are `RailChat`, `HighlightComposer`, and the full-page `ChatContextBar`. | `RailChatImpl`; `HighlightComposerImpl`; `ChatContextBar` | dashboard/src/panels/HighlightComposer.tsx:745-813; dashboard/src/panels/RailChat.tsx:414-478; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
 | The full-page cockpit's keep-alive PTY owner is `PtySurface`, separate from the raw RailChat registry. | `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
@@ -208,7 +212,7 @@ the reviewed task evidence for any current behavioral claim.
 | The terminal client types/source that provide catalog rows and terminate/open/attach helpers. | `fetchTerminalSessions`; `terminateTerminalSession`; `attachSessionToLeaf` | dashboard/src/data/terminal.ts:435-441; dashboard/src/data/terminal.ts:443-452; dashboard/src/data/terminal.ts:492-513 |
 | Catalog-change messages accept the `"leaf"` reason and carry the changed session id for out-of-band reassignment invalidation. | `notifySessionCatalogChanged` | dashboard/src/data/sessions.ts:113-126 |
 | The label allocator derives the next label from live rows and releases labels when rows are no longer live. | `nextSessionLabel` | dashboard/src/data/sessions.ts:259-269 |
-| `setLeaf` keeps role-scoped advisory uniqueness local, while `applyLeafAssignment` applies successful server moves and clears stale same-role local owners. | `setLeaf`; `applyLeafAssignment` | dashboard/src/data/sessions.ts:166-166; dashboard/src/data/sessions.ts:171-171 |
+| `setLeaf` keeps role-scoped advisory uniqueness local, while `applyLeafAssignment` applies successful server moves and clears stale same-role local owners. | `setLeaf`; `applyLeafAssignment` | dashboard/src/data/sessions.ts:168-168; dashboard/src/data/sessions.ts:173-173 |
 | The plural pending field and the ONLY sanctioned pending-state reads (N1): `controlPendingInteractions?`, `sessionHasPendingInteraction` (singular OR non-empty plural), `sessionPendingInteractionPayload` (singular first, else first plural entry). | `controlPendingInteractions`; `sessionHasPendingInteraction`; `sessionPendingInteractionPayload` | dashboard/src/data/sessions.ts:74-74; dashboard/src/data/sessions.ts:525-532; dashboard/src/data/sessions.ts:538-542 |
 | `pasteDraftToSession` waits for the live connection and delegates to the confirmed `pasteAndConfirm` draft loop (echo-confirmed, boot-deadline retries, no Enter); `deliverToSession` keeps the submit-and-confirm path. | `pasteDraftToSession`; `deliverToSession` | dashboard/src/data/sessions.ts:722-726; dashboard/src/data/sessions.ts:736-759 |
 | The backend tmux session that persists after `close` and is killed only by explicit terminate. | `close` | mcp/src/agents_remember/serving/terminal.py:218-226 |
@@ -252,6 +256,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the sprint-provenance projection used by the
+  rail and flow surfaces. Verification metadata remains pinned until closeout stamps the code
+  commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 1 citation finding. The `RailChat`

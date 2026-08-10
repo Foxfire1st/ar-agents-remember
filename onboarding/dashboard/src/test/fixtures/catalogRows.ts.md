@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/catalogRows.ts`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -32,6 +32,10 @@ archetypes + interaction kinds + stop residuals, the `L5I_*` structured-interact
 ## Code Commentary
 
 ### Logic
+
+Canonical command-seat fixtures now include `spawnRepo` and `spawnSprint`. Tests that intentionally
+exercise old unbound rows construct that state explicitly, preventing migration compatibility
+from silently becoming the default production fixture.
 
 - cit:([`catalogRow`], dashboard/src/test/fixtures/catalogRows.ts:10-27): defaults = a running claude harness row with `seatRole: "chat"`; every
   field overridable; ids auto-increment.
@@ -91,7 +95,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | --- | --- | --- |
 | The shared row builder. | "export function catalogRow" | dashboard/src/test/fixtures/catalogRows.ts:10-10 |
 | The mockup-mirroring `FLEET` scenario. | "export const FLEET" | dashboard/src/test/fixtures/catalogRows.ts:32-32 |
-| The appended L6 PTY, interaction, and residual fixture pack. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:179-191 |
+| The appended L6 PTY, interaction, and residual fixture pack. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:196-208 |
 | The appended L5I structured-interaction fixture pack. | `L5I_INTERACTION_QUESTIONS` | dashboard/src/test/fixtures/catalogRows.ts:260-297 |
 | The appended L7 multiplexed-interaction fixture. | `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:414-446 |
 | The wire type instantiated by these fixtures. | "interface TerminalCatalogRow" | dashboard/src/types/terminalCatalog.ts:24-24 |
@@ -109,6 +113,10 @@ No meaningful cross-repo references found.
 | This file implements a repository-local contract. | — | — |
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: bound the normal catalog fixtures to a repository+sprint
+  and reserved unbound fixtures for explicit migration cases. Verification metadata remains pinned
+  until closeout stamps the code commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the RAW_TERMINAL_ROW fixture addition. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 10 repository-reference citations and normalized 2 prose citations (10/10 anchored and sourced; scoped citation check clean).

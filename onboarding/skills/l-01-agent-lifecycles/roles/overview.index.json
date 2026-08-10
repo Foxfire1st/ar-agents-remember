@@ -42,7 +42,7 @@
     "worker"
   ],
   "hotPath": {
-    "summary": "Role-specific dispatch guidance shares the exact session-id handoff, ready proof, delivered-plus-harness-log-confirmed completion, launch-phase sessionCommands, and post-ready promptKeywords timing. ### 260713-PHA-L5 Route Contract Review Hosted role dispatch now relies on exact adapter readiness and correlated delivery evidence. The durable inbox remains the message root, explicit recipient consume remains acknowledgement, and pane/log classifiers are diagnostics-only. The packaged role briefs and source lifecycle guidance must stay aligned with this contract. ### 260731-EFA-L6 Curator Sel...",
+    "summary": "Architect is now a sprint-qualified command seat launched from free chat; orchestrator and manager inherit that sprint identity. Role completion remains passively supervised, and every direct manager subordinate role participates in wake status rather than only the worker role. Role-specific dispatch guidance shares the exact session-id handoff, ready proof, delivered-plus-harness-log-confirmed completion, launch-phase sessionCommands, and post-ready promptKeywords timing. ### 260713-PHA-L5 Route Contract Review Hosted role dispatch now relies on exact adapter readiness and correlated deliv...",
     "candidateHints": [
       "skills/l-01-agent-lifecycles/roles",
       "skills/l-01-agent-lifecycles/roles/architect.md",
@@ -77,8 +77,7 @@
       "sessionCommands",
       "promptKeywords",
       "PHA",
-      "EFA",
-      "2dea095cd68454a7a68893e37c07dbd8daa86d32",
+      "a84add4c9422b18a26f1748dedaed16194994ded",
       "route_index_refresh",
       "memory_quality_check",
       "drift_check",
@@ -101,9 +100,10 @@
       "lastUpdated",
       "T13",
       "lastVerifiedCommitHash",
-      "dea095cd68454a7a68893e37c07dbd8daa86d32",
       "lastVerifiedCommitDate",
-      "T18"
+      "T05",
+      "TES",
+      "EFA"
     ]
   },
   "fallback": {

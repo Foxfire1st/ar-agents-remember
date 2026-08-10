@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_helper_behaviour.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-31T15:32+02:00                       |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`   |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`   |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ cadence assertions exact.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The image and retire helpers under test. | "def _looks_like_image(body: bytes, ext: str) -> bool:"; "def _retire_response(" | mcp/src/agents_remember/serving/_app_common.py:160-160; mcp/src/agents_remember/serving/_app_terminal_routes.py:514-514 |
+| The image and retire helpers under test. | "def _looks_like_image(body: bytes, ext: str) -> bool:"; "def _retire_response(" | mcp/src/agents_remember/serving/_app_common.py:160-160; mcp/src/agents_remember/serving/_app_terminal_routes.py:540-540 |
 | The repository diff helper under test. | `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:433-474 |
 | The current-model helper under test. | `_select_current_model` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:86-110 |
 | The Claude activity helper under test. | `_status_activity` | mcp/src/agents_remember/serving/claude_stream_state.py:781-788 |

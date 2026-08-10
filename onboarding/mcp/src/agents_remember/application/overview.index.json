@@ -101,7 +101,7 @@
     "worktree_tools"
   ],
   "hotPath": {
-    "summary": "The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover; `gate_tools.py` and `hosted_readiness.py` for gate/readiness operations; `lifecycle_tools.py`, `operator_inbox_tools.py`, and `orchestration_tools.py` for lifecycle, inbox, and orchestration operations; `server_startup.py` and `terminal_tools.py` for startup and terminal operations; `provider_tools.py` for provider operations; `worktree_tools.py` for worktree operations; `bench...",
+    "summary": "Terminal spawn/open applications now surface the serving layer's sprint-binding refusals and successful provenance unchanged. Start here for MCP response composition; the identity policy itself lives in `serving/sprint_role_binding.py` and executes before host launch. The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover; `gate_tools.py` and `hosted_readiness.py` for gate/readiness operations; `lifecycle_tools.py`, `operator_inbox_...",
     "candidateHints": [
       "mcp/src/agents_remember/application",
       "mcp/src/agents_remember/application/__init__.py",
@@ -172,10 +172,10 @@
       "worktree_status",
       "worktree_tools.py",
       "worktree_tools",
-      "mcp/src/agents_remember/application/",
-      "route-local-overview",
-      "2dea095cd68454a7a68893e37c07dbd8daa86d32",
-      "/../../overview.md"
+      "serving/sprint_role_binding.py",
+      "MCP",
+      "sprint_role_binding",
+      "operator_inbox_"
     ]
   },
   "fallback": {

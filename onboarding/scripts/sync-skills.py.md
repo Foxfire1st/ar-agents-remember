@@ -6,8 +6,8 @@
 | path                   | `scripts/sync-skills.py`       |
 | doc_type               | `file-level-onboarding`        |
 | lastUpdated            | 2026-06-10T00:40+02:00         |
-| lastVerifiedCommitHash |                               `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                               `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ No external documentation is needed for this repository-local helper.
 | The script defines `skills/` as canonical and enumerates all MCP package-data and harness starter skill-copy targets. | `CANONICAL_SKILLS`, `TARGETS` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-56 |
 | `--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync. | `check_targets` | scripts/sync-skills.py:179-192 |
 | Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check. | `sync_targets`, `sync_target`, `replace_tree` | scripts/sync-skills.py:136-139; scripts/sync-skills.py:142-162; scripts/sync-skills.py:195-203 |
-| The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-200 |
+| The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-198 |
 
 ## Cross-Repo References
 

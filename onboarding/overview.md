@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`
-| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 
 > **Status:** active baseline
 
@@ -187,6 +187,12 @@ chat once for the successful bind. Detail lives in the `observer/`, `serving/`, 
 overviews.
 
 ## Hot Path Summary
+
+TES-L6 closes two orchestration-wide invariants: named architect/orchestrator/manager seats are
+bound to one repository+sprint, and manager liveness supervises every structurally owned
+subordinate role rather than builders alone. The implementation spans lifecycle launch doctrine,
+serving/catalog routing, notifier evaluation/actions, dashboard projection, and focused regression
+suites; the route overviews below point to each boundary.
 
 **Gate honesty (260731-EFA-L2 — the seven durable contracts).** The wrapper used to list six steps of
 which three could not fail, enforce two complexity limits it had switched off, feed CRAP the wrong
@@ -856,8 +862,8 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. | "ar-coordination/AGENTS.md"; "Implementation approval is not commit approval" | AGENTS.md:10-10; AGENTS.md:143-143 |
-| The source checkout defines the repository code-quality gate and its no-baseline/no-allowlist policy. | "Code Quality Instructions"; "After implementing Python code in this source checkout"; "python -m agents_remember.code_quality.check"; "There is no baseline, ratchet, allowlist"; "a finding is fixed, never" | AGENTS.md:148-148; AGENTS.md:150-150; AGENTS.md:154-154; AGENTS.md:166-167 |
+| The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. | "ar-coordination/AGENTS.md"; "Implementation approval is not commit approval" | AGENTS.md:10-10; AGENTS.md:141-141 |
+| The source checkout defines the repository code-quality gate and its no-baseline/no-allowlist policy. | "Code Quality Instructions"; "After implementing Python code in this source checkout"; "python -m agents_remember.code_quality.check"; "There is no baseline, ratchet, allowlist"; "a finding is fixed, never" | AGENTS.md:146-146; AGENTS.md:148-148; AGENTS.md:152-152; AGENTS.md:164-165 |
 | The docs index owns the start-here, install, operational, and reference map. | "Start Here"; "Install Guides"; "Getting Started"; "Onboard an Existing Repo"; "MCP Tool Reference"; "Release Checklist" | docs/README.md:23-23; docs/README.md:25-25; docs/README.md:33-33; docs/README.md:46-46; docs/README.md:56-56; docs/README.md:65-65 |
 | Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
 | The runtime sync contract is checked against every generated copy. | `RealTreeDriftTests` | mcp/tests/test_sync_scripts.py:159-207 |
@@ -1080,6 +1086,10 @@ suite `mcp/tests/test_judgment_demolition.py` pins the demolition; the live chai
 delivered as a runnable post-restart script and stays a manager/orchestrator exit-bar item.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: added the repository-wide sprint identity and
+  all-subordinate wake supervision invariants. Verification metadata remains pinned until
+  closeout.
 
 - 2026-08-09T22:22+02:00 — No route impact: a dashboard test-only timer teardown repair
   prevents a Virtualizer debounce from crossing jsdom destruction. Repository runtime features and

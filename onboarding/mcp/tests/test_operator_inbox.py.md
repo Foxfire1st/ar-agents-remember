@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-08-09T06:48+02:00                |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -51,6 +51,10 @@ the resulting row/owner metadata targets the successor manager, hosted delivery 
 paste lands in that manager's session.
 
 ### Logic
+
+The inbox tests now cover sprint-qualified architect custody and ensure two equal role names in
+different sprints cannot receive each other's row. Additive terminal provenance remains compatible
+with exact-agent addressing and existing delivery state transitions.
 
 **260707-HFX2-L15 coverage.** Hosted inbox tests provide a matching harness log, assert
 `harness-log-confirmed` durable detail and catalog binding, and prove absence remains unconfirmed
@@ -203,6 +207,9 @@ never resurrected by a stale pending snapshot, and consume leaves it untouched. 
 `RungAdvance` import is gone.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: added sprint-isolated architect custody coverage to the
+  inbox suite card. Verification metadata remains pinned until closeout stamps the code commit.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the replacement of the ladder
   transition tests with legacy `ladder-resolved` parse/terminal coverage. Verification

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-09T06:48+02:00                           |
-| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`       |
-| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## 260731-EFA-L8 Change
@@ -92,6 +92,10 @@ lists, which `mcp/tests/test_tools.py` checks against a live server's `list_tool
 
 ## Hot Path Summary
 
+Session registration now declares the additive sprint-provenance response fields and stable
+binding-refusal statuses. It remains transport schema only; serving validates identity before any
+terminal side effect.
+
 A tool body does exactly two things: pack the flat MCP arguments into the parameter objects the
 payload builder and its application entry point take, and return the builder's result unchanged. The packing is
 the whole content — `TaskRef`, `SpawnSeat`, `GateVerdict`, `CarryoverSelection`,
@@ -159,6 +163,9 @@ now carry the separator too, so every `@server.tool()` declaration in the module
 keyword-only. The registered tool surface is unchanged.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed session registration for sprint-binding wire
+  additions. Verification metadata remains pinned until closeout.
 
 - 2026-08-09T21:12+02:00 — No route impact: the orchestration family now groups its inbox and
   manager-nudge declarations in two same-module registrars so the public registrar stays below

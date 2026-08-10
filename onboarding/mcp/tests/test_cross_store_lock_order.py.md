@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_cross_store_lock_order.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ No Domain Documentation source is configured.
 | The synchronizer whose store I/O is pinned outside the catalog batch. | `HostedInteractionSynchronizer` | mcp/src/agents_remember/serving/hosted_interactions.py:52-266 |
 | The offloaded control choke point. | `resolve_entry` | mcp/src/agents_remember/serving/conversation/control/service.py:291-299 |
 | The offloaded active-side resolution. | `_projector_for` | mcp/src/agents_remember/serving/conversation/active/service.py:160-177 |
-| The offloaded image handler. | "async def _terminal_image_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:600-600 |
+| The offloaded image handler. | "async def _terminal_image_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:626-626 |
 | The intra-store lock contract the cross-store doctrine extends. | `thread_mutex_for` | mcp/src/agents_remember/controlplane/durable_store.py:301-317 |
 
 ## Cross-Repo References

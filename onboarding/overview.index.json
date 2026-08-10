@@ -79,7 +79,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1413,
+    "sourceFilesInScope": 1415,
     "fileSidecars": 21,
     "childRoutes": 9
   },
@@ -135,7 +135,7 @@
     "workspace"
   ],
   "hotPath": {
-    "summary": "**Gate honesty (260731-EFA-L2 \u2014 the seven durable contracts).** The wrapper used to list six steps of which three could not fail, enforce two complexity limits it had switched off, feed CRAP the wrong metric, and certify a scope written by hand. Seven facts are now true and enforced, not documented: 1. **`C901`, `PLR0911`, `PLR0912`, `PLR0915` and `PLR0913` are armed at full strength with zero exemptions.** The limits existed and were dead \u2014 `max-complexity = 10` was configured while `C901` was unselected, and the three `PLR09xx` codes were ignored \"because Radon reports complexity pressure...",
+    "summary": "TES-L6 closes two orchestration-wide invariants: named architect/orchestrator/manager seats are bound to one repository+sprint, and manager liveness supervises every structurally owned subordinate role rather than builders alone. The implementation spans lifecycle launch doctrine, serving/catalog routing, notifier evaluation/actions, dashboard projection, and focused regression suites; the route overviews below point to each boundary. **Gate honesty (260731-EFA-L2 \u2014 the seven durable contracts).** The wrapper used to list six steps of which three could not fail, enforce two complexity limit...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -209,8 +209,8 @@
       "design",
       "reference",
       "l-01-agent-lifecycles",
-      "C901",
-      "PLR0911"
+      "TES",
+      "EFA"
     ]
   },
   "fallback": {

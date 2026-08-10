@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -86,18 +86,18 @@ one websocket that structurally cannot:
 - `POST /api/operator-inbox` (cit:([`api_operator_inbox`], mcp/src/agents_remember/serving/_app_routes.py:403-409)) → `OperatorInboxPostResponse`;
   `POST /api/operator-inbox/{entry_id}/dismiss` (cit:([`api_operator_inbox_dismiss`], mcp/src/agents_remember/serving/_app_routes.py:411-417)) → `OperatorInboxDismissed` on both
   200 and 404 (the same two keys either way).
-- `WS /api/terminal/{session}` (cit:(["async def _serve_terminal_websocket("], mcp/src/agents_remember/serving/_app_terminal_routes.py:82-82)) is **the one route with no declaration, and the only one
+- `WS /api/terminal/{session}` (cit:(["async def _serve_terminal_websocket("], mcp/src/agents_remember/serving/_app_terminal_routes.py:83-83)) is **the one route with no declaration, and the only one
   there can be**: it is registered as an `APIWebSocketRoute`, which takes no `response_model`
   parameter because it has no response body. The exhaustiveness test recognises the exemption by
   route CLASS, never a path skip-list, so a future undeclared *HTTP* route cannot hide behind it.
-- The eight terminal-control routes (cit:(["def _register_terminal_control_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_terminal_routes.py:642-642)) declare their success shape plus the exact
+- The eight terminal-control routes (cit:(["def _register_terminal_control_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_terminal_routes.py:668-668)) declare their success shape plus the exact
   refusal shapes each can emit — including two routes with two success shapes each:
   `/paste` → `TerminalHarnessDelivery | TerminalPaneDelivery` (a protocol harness and a plain
   pane can prove different things), and `/retire` → `TerminalRetired | TerminalAlreadyRetired`
   (retiring an already-terminal seat is idempotent, not an error).
 
 **Two routes are different in kind, because FastAPI actually validates them.**
-`GET /api/terminal/sessions` (cit:(["def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_terminal_routes.py:126-126)) and `GET /api/harnesses` (cit:(["def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_terminal_routes.py:126-126)) are the only
+`GET /api/terminal/sessions` (cit:(["def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_terminal_routes.py:127-127)) and `GET /api/harnesses` (cit:(["def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"], mcp/src/agents_remember/serving/_app_terminal_routes.py:127-127)) are the only
 handlers in this file that return a bare `dict`, so `response_model` is live enforcement here
 rather than schema. That is a real behaviour change: they used to be forward-compatible
 pass-through, and they now answer **HTTP 500** (`ResponseValidationError`) if the payload gains
@@ -699,11 +699,11 @@ pass was available for this update.
 | The catalog liveness sweeper + shared observation path behind the sessions endpoint, attach, and paste (HFX-L5). | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:282-326 |
 | The shared leaf reassignment helper used by this route and the agent-facing MCP tool. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
 | The MCP application owns the spawn command. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:769-842 |
-| The serving route calls the shared hosted-session opener. | "open_terminal_session(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:246-246 |
-| The MCP application spawn command and serving route compose the shared hosted-session opener. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
+| The serving route calls the shared hosted-session opener. | "open_terminal_session(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:247-247 |
+| The MCP application spawn command and serving route compose the shared hosted-session opener. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:678-730 |
 | The L4 route module owns harness-neutral advertise, launch selection, exact-session set, submit, reconcile, and liveness-first status mapping. | `resolve_terminal_open_selection` | mcp/src/agents_remember/serving/harness_control_api.py:156-179 |
 | The pre-session catalog owns bounded dynamic discovery and failed-refresh quarantine. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:81-196 |
-| The shared opener owns live launch-truth checks and the fenced read/probe/ensure/upsert transaction. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
+| The shared opener owns live launch-truth checks and the fenced read/probe/ensure/upsert transaction. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:678-730 |
 | The serving leaf-ref adapter normalizes terminal open/attach leaf keys before catalog writes. | `resolve_catalog_leaf_key` | mcp/src/agents_remember/serving/leaf_ref_validation.py:18-46 |
 | The server-side capture-verified paste helper the L2 `/paste` endpoint drives (260707-HFX-L3: unconfirmed ships the pane capture). | `TerminalPaster` | mcp/src/agents_remember/serving/terminal_paste.py:206-511 |
 | The harness launch registry the opener + `/api/harnesses` consume (slice 6e-2b). | `detect_harnesses` | mcp/src/agents_remember/serving/harnesses.py:96-109 |

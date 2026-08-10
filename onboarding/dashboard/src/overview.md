@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa` |
-| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -40,6 +40,10 @@ preserved (R12), with two recorded genuine app fixes from the e2e repair (Termin
 headless focus; ChatsStageBody keep-alive).
 
 ## Purpose
+
+TES-L6 makes sprint provenance a cross-dashboard projection invariant. The data layer preserves
+`spawnRepo`/`spawnSprint`, flow models keep equal role names distinct across sprints, and the
+session cockpit renders one command group per sprint while isolating unbound legacy rows.
 
 The dashboard frontend is the operator-facing React cockpit. It projects server-composed observer,
 task, provider, terminal-catalog, adapter, and control evidence into Operations, Chats, Detail,
@@ -472,6 +476,9 @@ landing; `operator_inbox_consume` attribution-only; sweep predicates never read 
 projection).
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the dashboard-wide sprint-provenance projection
+  invariant. Verification metadata remains pinned until closeout.
 
 - 2026-08-09T22:22+02:00 — No route impact: the master integration repair changes only
   scroll-memory test timer hygiene under the existing conversation-timeline route. Dashboard

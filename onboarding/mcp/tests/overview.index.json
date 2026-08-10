@@ -318,6 +318,7 @@
     "mcp/tests/test_spawn_agent_session_knobs_1.py",
     "mcp/tests/test_spawn_agent_session_resolution.py",
     "mcp/tests/test_spawn_agent_session_settings.py",
+    "mcp/tests/test_sprint_role_seats.py",
     "mcp/tests/test_starter_renderers.py",
     "mcp/tests/test_state_signal_delivery.py",
     "mcp/tests/test_state_signal_relay.py",
@@ -372,8 +373,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 350,
-    "fileSidecars": 360,
+    "sourceFilesInScope": 351,
+    "fileSidecars": 361,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -459,7 +460,7 @@
     "context"
   ],
   "hotPath": {
-    "summary": "The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrade-not-die, native-page thread demux \u2014 plus the remediation pins: concurrent parent pendings answered per id with the oldest in the singular slot, the method-first degrade split, the bounded per-thread pending map, and the load-shed event queue with its honest `ar/load-shed` notice), `test_conversatio...",
+    "summary": "TES-L6 proof is split between `test_sprint_role_seats.py` for two-sprint command-seat identity and the compound/state relay suites for role-neutral manager-subordinate liveness. The latter cover reviewer, curator, future roles, topology exclusions, re-arm/dedupe, action-time mutations, and the timezone-naive landed-row counterexample. The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request...",
     "candidateHints": [
       "mcp/tests",
       "mcp/tests/_agent_wire_fixtures.py",

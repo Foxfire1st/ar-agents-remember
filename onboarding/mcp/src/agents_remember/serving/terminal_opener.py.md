@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,6 +64,12 @@ rather than a loose `(Path, list[str])`. `_reopen_state` returns a **`ReopenStat
 is ensured and the seat resolved.
 
 ### Logic
+
+The shared opener resolves and validates named-seat sprint provenance before ensuring tmux or
+writing the catalog. Reopen accepts the same stored pair, rejects partial or conflicting supplied
+scope, and inherits a proven parent binding for descendant command roles. These checks are shared
+by dashboard open and agent spawn, so neither path can mint an unbound global orchestrator or
+manager.
 
 `resolve_terminal_launch` resolves a terminal shell or detected harness id to server-owned base argv.
 For native Claude/Codex/Pi it leaves normalized model/effort to the typed `ResolvedLaunch` carried in
@@ -172,10 +178,10 @@ and caller-specific response shaping.
 | Native launch selection and fail-loud duplicate/catalog validation are centralized in the launch module. | `validate_launch_selection`; `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:78-119; mcp/src/agents_remember/serving/harness_launch.py:173-206 |
 | Role-scoped leaf arbitration resolves only the same-role owner and marks dead owners exited. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
 | The catalog row owns durable seat, lineage, resolved knob, free-form, and control metadata. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
-| The catalog batch holds both the process lock and instance lock across the complete unit of work. | `batch` | mcp/src/agents_remember/serving/terminal_catalog.py:800-832 |
-| The dashboard route maps actual-row success/conflict facts without duplicating spawn composition. | "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:221-221 |
+| The catalog batch holds both the process lock and instance lock across the complete unit of work. | `batch` | mcp/src/agents_remember/serving/terminal_catalog.py:835-867 |
+| The dashboard route maps actual-row success/conflict facts without duplicating spawn composition. | "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:222-222 |
 | The agent-facing spawn tool resolves role settings, calls this opener, and maps live launch conflict to its existing launch-selection refusal. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:769-842 |
-| Regression tests pin selectionless/same/conflicting live reopen, dead replacement, cross-process race fencing, and preserved multi-role leaf sharing. | `test_live_reopen_preserves_actual_pair_command_and_endpoint`; `test_live_reopen_changed_pair_or_identity_conflicts_without_mutation`; `test_dead_replacement_uses_new_pair_and_fresh_control_generation`; `test_concurrent_different_pair_opens_keep_one_process_and_one_truth`; `test_different_roles_share_leaf_and_dead_same_role_is_replaced` | mcp/tests/test_terminal_opener.py:320-345; mcp/tests/test_terminal_opener.py:434-449; mcp/tests/test_terminal_opener.py:451-467; mcp/tests/test_terminal_opener.py:535-565; mcp/tests/test_terminal_opener.py:567-594 |
+| Regression tests pin selectionless/same/conflicting live reopen, dead replacement, cross-process race fencing, and preserved multi-role leaf sharing. | `test_live_reopen_preserves_actual_pair_command_and_endpoint`; `test_live_reopen_changed_pair_or_identity_conflicts_without_mutation`; `test_dead_replacement_uses_new_pair_and_fresh_control_generation`; `test_concurrent_different_pair_opens_keep_one_process_and_one_truth`; `test_different_roles_share_leaf_and_dead_same_role_is_replaced` | mcp/tests/test_terminal_opener.py:319-344; mcp/tests/test_terminal_opener.py:433-448; mcp/tests/test_terminal_opener.py:450-466; mcp/tests/test_terminal_opener.py:534-564; mcp/tests/test_terminal_opener.py:566-593 |
 | Resume-channel contract tests pin the opener `bad-kind` refusals with zero host interactions and the codex pass-through into the runner payload. | `test_codex_resume_rides_opener_to_runner_payload`; `test_non_codex_resume_fails_closed_before_any_spawn`; `test_malformed_resume_fails_closed_before_any_spawn` | mcp/tests/test_harness_control_evidence_other.py:373-380; mcp/tests/test_harness_control_evidence_other.py:390-396; mcp/tests/test_harness_control_evidence_other.py:398-401 |
 
 ## Cross-Repo References
@@ -211,6 +217,10 @@ Runner launch now propagates the daemon worktree's package root into the tmux-sp
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded pre-host sprint binding, parent inheritance,
+  and reopen conflict refusal. Verification metadata remains pinned until closeout stamps the code
+  commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: 260731-EFA-L7 changed this file (split/refactor); the card body remains accurate and this entry records the change. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 9 citation claims; scoped result 0 findings.

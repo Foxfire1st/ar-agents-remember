@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/state_signals.py`        |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                    |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`                                    |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -33,6 +33,18 @@ them, and a dead seat has no boundary to cross.
 
 ### Logic
 
+L6 replaces worker-only notifier membership with `_manager_owned_subordinate`: a live harness seat
+is subordinate when its direct `spawned_by_session` edge points at the live manager and both rows
+belong to the same master. Only owner-tier roles (architect, orchestrator, manager) are excluded;
+reviewer, curator, and future role names participate automatically. Compound-idle, completed/
+interrupted relay, and non-reaction evaluation all consume this one structural predicate.
+
+Every action can reconstruct a fresh finding from current catalog and inbox truth. Missing,
+malformed, consumed, retargeted, working, terminal, cross-master, or reparented evidence fails
+closed before persistence. Landed-row timestamps must parse and carry a UTC offset; a parseable but
+timezone-naive `adapterAcceptedAt` is rejected so an aware/naive subtraction cannot abort the
+notifier sweep.
+
 `NON_REACTION_WINDOW_SECONDS = 300.0` cit:([`NON_REACTION_WINDOW_SECONDS`], mcp/src/agents_remember/serving/state_signals.py:28-30) is the leaf-authored bounded window (R5),
 mirroring the pickup-staleness convention.
 
@@ -56,37 +68,37 @@ compaction and fleet caps (accepted note F7).
 bound: one agent-notifier sweep at the default 10 s cadence, so a set observed idle is
 signaled no later than ~one sweep after that tick.
 
-`_compound_worker_index` cit:([`_compound_worker_index`], mcp/src/agents_remember/serving/state_signals.py:38-67) is a SINGLE catalog scan per sweep: live managers and live
-workers indexed by spawner id and master key, so every compound-idle set is assembled in
-O(catalog + sets), never O(managers × catalog). Status is gated FIRST here — non-running
-rows (retired/exited/landed) are never indexed, so their stale turn state never counts.
+`_compound_subordinate_index` cit:([`_compound_subordinate_index`], mcp/src/agents_remember/serving/state_signals.py:63-84) is a single catalog scan per sweep: live managers and candidate live leaf seats are indexed by
+direct spawner id, so every compound-idle set is assembled in O(catalog + sets), never
+O(managers × catalog). Status is gated first here — non-running rows (retired/exited/landed)
+are never indexed, so their stale turn state never counts.
 
-`compound_idle_sets` cit:([`compound_idle_sets`], mcp/src/agents_remember/serving/state_signals.py:69-103) returns every live manager's member tuple keyed by manager id.
-Membership is **master-scoped on EVERY arm** (fix round 1, F1): a worker joins only when its
-binding (`binding_leaf_key` / `replacement_for_leaf`) shares the manager's `repo/master`
-prefix, whether or not the manager spawned it — the `by_spawner` arm is filtered by the same
-`master_key` check as the `by_master` arm, so a cross-master spawned worker neither blocks
-nor joins. A manager with no workers never forms a set (F3 ruling: zero-worker no-signal,
-fail-closed); a running member with `turn_state=None` is unknown ≠ idle and fails the set
-closed; idle = `turn_state ∈ {turn-ended, awaiting-input}`; `working`/`stale` means the set
-is not idle. An unbound manager (no master anchor) never forms a set (accepted residual R1).
+`_manager_owned_subordinate` cit:([`_manager_owned_subordinate`], mcp/src/agents_remember/serving/state_signals.py:40-60) is the shared structural membership rule. A reviewer, curator, worker, or future leaf role
+joins only when its direct spawn edge points at the manager, both rows are harness seats, and
+their bound repo/master scopes match. Architect, orchestrator, and manager owner-tier roles are
+excluded; missing parents, leaf scope, and cross-master edges fail closed.
 
-`compound_idle_signature` cit:([`compound_idle_signature`], mcp/src/agents_remember/serving/state_signals.py:104-111) is the episode identity: sorted
+`compound_idle_sets` cit:([`compound_idle_sets`], mcp/src/agents_remember/serving/state_signals.py:87-110) returns every live manager's member tuple keyed by manager id. A manager with no proven
+subordinates never forms a set; a running member with `turn_state=None` is unknown != idle and
+fails the set closed; idle is `turn-ended` or `awaiting-input`, while `working`/`stale` means the
+set is not idle.
+
+`compound_idle_signature` cit:([`compound_idle_signature`], mcp/src/agents_remember/serving/state_signals.py:113-120) is the episode identity: sorted
 `member-id:turn_state:turn_state_changed_at` over every live member. A seat returning to
 activity changes the signature, which is the re-arm — there is no separate marker-clearing
 write.
 
-`evaluate_compound_idle_findings` cit:([`evaluate_compound_idle_findings`], mcp/src/agents_remember/serving/state_signals.py:158-178) emits one `compound-idle-due`
+`evaluate_compound_idle_findings` cit:([`evaluate_compound_idle_findings`], mcp/src/agents_remember/serving/state_signals.py:188-208) emits one `compound-idle-due`
 finding per un-relayed set (`compound_idle_emitted_for != signature`), one finding per
 manager seat, with `source_id=signature` carried only as the trigger — the emitter derives
 the ACTION-time signature and never consumes this informational value (R2 residual).
 
-`compound_idle_response` cit:([`compound_idle_response`], mcp/src/agents_remember/serving/state_signals.py:286-297) builds the self-contained payload naming the
+`compound_idle_response` cit:([`compound_idle_response`], mcp/src/agents_remember/serving/state_signals.py:363-373) builds the self-contained payload naming the
 manager and every set member (`id@binding-or-replacement`), so the orchestrator can combine
 the pure seat-state fact with the non-reaction residue fact (N15/N16) without remembering
 who was in the set.
 
-`evaluate_boundary_drain_findings` cit:([`evaluate_boundary_drain_findings`], mcp/src/agents_remember/serving/state_signals.py:230-276) is the N15 drain: pending, not-yet-landed rows
+`evaluate_boundary_drain_findings` cit:([`evaluate_boundary_drain_findings`], mcp/src/agents_remember/serving/state_signals.py:304-350) is the N15 drain: pending, not-yet-landed rows
 whose target is at a turn boundary (`seat_at_turn_boundary`) and whose `lastAttemptAt` predates
 the boundary transition (`turn_state_changed_at`) are pushed. Rows without a fresh boundary
 stay on the durable backoff schedule; rows addressed to a dead/replaced seat are skipped here
@@ -97,7 +109,7 @@ target is a LIVE running seat is excluded from escalation and the redeliverable 
 delivery timing belongs to the boundary gate, and the row keeps the ordinary safety net only
 when the target is dead/archived.
 
-`state_signal_response` / `non_reaction_response` cit:([`state_signal_response`, `non_reaction_response`], mcp/src/agents_remember/serving/state_signals.py:276-283; mcp/src/agents_remember/serving/state_signals.py:299-305) build the self-contained payload:
+`state_signal_response` / `non_reaction_response` cit:([`state_signal_response`, `non_reaction_response`], mcp/src/agents_remember/serving/state_signals.py:353-360; mcp/src/agents_remember/serving/state_signals.py:376-382) build the self-contained payload:
 session, leaf, turn/evidence id, outcome, timestamps, and interrupt origin.
 
 ### Conventions
@@ -170,6 +182,10 @@ that conflicts with the current source behavior above; verification metadata sta
 the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: documented structural all-subordinate membership,
+  shared relay evaluation, action-time revalidation, and timezone-aware non-reaction evidence.
+  Verification metadata remains pinned until closeout stamps the code commit.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the ladder-vocabulary removal in
   `state_signal_held_on_boundary` (boundary-held rows wait for the next boundary; no ladder

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -33,7 +33,12 @@ rail view.
 
 ### Logic
 
-- **Props vs store** cit:(["export function SessionRail"], dashboard/src/panels/session-cockpit/SessionRail.tsx:149-149): `model`/`rollup` arrive as PROPS — derived once in
+The rail now renders command seats under repository+sprint group headings instead of one
+workspace-global spine. Bound manager clusters stay inside the matching group, and legacy unbound
+command rows render separately as migration state. This is a projection of catalog provenance;
+the component does not invent or repair binding.
+
+- **Props vs store** cit:(["export function SessionRail"], dashboard/src/panels/session-cockpit/SessionRail.tsx:155-155): `model`/`rollup` arrive as PROPS — derived once in
   `SessionsView` and shared with the palette commands (one derivation, two surfaces; same-snapshot
   consistency, worker flag 5) — while `sessions`, the tree toggle, poll health, the projection
   slices (`taskDocuments`, `lifecycles`, `agentPickups`, `agentNotifierHeartbeat`), the lifecycle
@@ -166,8 +171,8 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Row anatomy, accessible dots, set/harvest markers, End flows, hierarchy, bulk end, strip, banner, cleanup note, footer, toggles. | "export function SessionRail" | dashboard/src/panels/session-cockpit/SessionRail.tsx:149-149 |
-| The pure model/rollup/join derivations this renders. | "export function buildRailModel" | dashboard/src/data/railModel.ts:192-192 |
+| Row anatomy, accessible dots, set/harvest markers, End flows, hierarchy, bulk end, strip, banner, cleanup note, footer, toggles. | "export function SessionRail" | dashboard/src/panels/session-cockpit/SessionRail.tsx:155-155 |
+| The pure model/rollup/join derivations this renders. | "export function buildRailModel" | dashboard/src/data/railModel.ts:212-212 |
 | The payload selector + agent label the `input?` chip tooltip resolves (N1). | "export interface OpenSession" | dashboard/src/data/sessions.ts:28-28 |
 | The adapter-bound agent label the tooltip prefixes. | "export interface InteractionQuestionOption" | dashboard/src/data/interactionAnswer.ts:18-18 |
 | The single dot renderer + grammar. | "export function StateDot" | dashboard/src/panels/session-cockpit/StateDot.tsx:38-38 |
@@ -203,6 +208,9 @@ instead of heartbeat age, and its former bus footer is removed because inbox and
 already have their authority in the top bar and detailed inspector.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: documented sprint-group rendering and the non-authoritative
+  legacy bucket. Verification metadata remains pinned until closeout stamps the code commit.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the sessionRailParts/sessionRailStyles extraction. Verification metadata stays pinned until closeout stamps the code commit.

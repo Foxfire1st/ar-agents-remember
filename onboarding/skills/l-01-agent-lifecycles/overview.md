@@ -6,8 +6,8 @@
 | sourceRoute | skills/l-01-agent-lifecycles |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 
 ## Purpose
 
@@ -25,6 +25,11 @@ model-local catalog and applies native launch configuration. Generated mirrors a
 doctrine owners.
 
 ## Hot Path Summary
+
+The lifecycle router now treats free chat as the launcher and the architect as a separately bound
+sprint command seat. Its shared liveness doctrine defines wake expectations across every direct
+manager subordinate, so reviewer, curator, and future role seats cannot silently end the leaf when
+the owner is also idle.
 
 Hosted dispatch is role-first and exact-session throughout. Settings choose a complete native
 model/effort pair; discovery and model-gated validation happen before the configured vendor session
@@ -93,6 +98,10 @@ is an optional attribution marker. The `code-seam` criterion's coalescing invari
 "date, tries, attempt" (no rung); the escalation-storm history remains catching evidence.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed lifecycle routing and liveness hot paths for
+  sprint command seats and all subordinate roles. Verification metadata remains pinned until
+  closeout.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the judgment-demolition
   doctrine (fact-relay supervision, ladder retired, mailbox custody, attribution-only

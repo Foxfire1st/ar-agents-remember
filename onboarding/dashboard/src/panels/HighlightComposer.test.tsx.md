@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/HighlightComposer.test.tsx`|
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T15:22+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The composer under test. | "export const HighlightComposer = memo(HighlightComposerImpl)" | dashboard/src/panels/HighlightComposer.tsx:1178-1178 |
-| The accepted-row create helper and routed session store. | "export async function createSession(" | dashboard/src/data/sessions.ts:767-767 |
+| The accepted-row create helper and routed session store. | "export async function createSession(" | dashboard/src/data/sessions.ts:771-771 |
 | The mocked reliable readiness, submission, retry, and reconcile seam. | "export async function executeReliableSubmit(" | dashboard/src/data/submitClient.ts:567-567 |
 
 ## Cross-Repo References

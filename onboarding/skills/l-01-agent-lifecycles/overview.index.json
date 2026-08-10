@@ -35,7 +35,7 @@
     "skills"
   ],
   "hotPath": {
-    "summary": "Hosted dispatch is role-first and exact-session throughout. Settings choose a complete native model/effort pair; discovery and model-gated validation happen before the configured vendor session starts; readiness precedes exactly one durable brief. Model/effort provenance is not configuration, and normalized selection is never pasted through the composer. Canonical `skills/` content remains the owner synchronized into package and harness mirrors. ### 260714-ACPUI-L2 Settings-Owned Native Launch The lifecycle settings example now uses complete installed-catalog selections for every configured...",
+    "summary": "The lifecycle router now treats free chat as the launcher and the architect as a separately bound sprint command seat. Its shared liveness doctrine defines wake expectations across every direct manager subordinate, so reviewer, curator, and future role seats cannot silently end the leaf when the owner is also idle. Hosted dispatch is role-first and exact-session throughout. Settings choose a complete native model/effort pair; discovery and model-gated validation happen before the configured vendor session starts; readiness precedes exactly one durable brief. Model/effort provenance is not c...",
     "candidateHints": [
       "skills/l-01-agent-lifecycles",
       "skills/l-01-agent-lifecycles/roles",
@@ -49,10 +49,9 @@
       "code-seam.md",
       "code-seam",
       "roles",
-      "skills/",
-      "ACPUI",
-      "2dea095cd68454a7a68893e37c07dbd8daa86d32",
+      "a84add4c9422b18a26f1748dedaed16194994ded",
       "skills/l-01-agent-lifecycles",
+      "skills/",
       "--model",
       "--effort",
       "model_reasoning_effort",
@@ -80,16 +79,17 @@
       "lastUpdated",
       "T02",
       "lastVerifiedCommitHash",
-      "dea095cd68454a7a68893e37c07dbd8daa86d32",
       "lastVerifiedCommitDate",
-      "T18",
+      "T05",
       "TES",
+      "ACPUI",
       "PHA",
       "EFA",
       "S31",
       "L16",
       "L17",
       "package_data",
+      "T04",
       "T12",
       "T21"
     ]

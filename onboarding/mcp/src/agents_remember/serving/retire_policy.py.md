@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/retire_policy.py`      |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6` |
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -97,8 +97,8 @@ encodes.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `session_retire_payload` builds actor/target `SeatRef`s from `binding_role`/`binding_leaf_key` and calls `check_retire_authority` before any catalog mutation, translating `RetirePolicyError` into a `retire-refused` tool status. | `session_retire_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:66-83 |
-| `POST /api/terminal/{session}/retire` performs the identical authority check before calling `retire_entry`. | "def _retire_response("; "def _seat_ref(entry: TerminalCatalogEntry) -> SeatRef:" | mcp/src/agents_remember/serving/_app_terminal_routes.py:514-514; mcp/src/agents_remember/serving/_app_terminal_routes.py:570-570 |
-| `TerminalCatalogEntry.binding_role` and `binding_leaf_key` are the current identity fields `SeatRef` consumes; `with_retirement` is the terminal mark this policy gates. | `binding_role`; `binding_leaf_key`; `with_retirement` | mcp/src/agents_remember/serving/terminal_catalog.py:434-459; mcp/src/agents_remember/serving/terminal_catalog.py:571-579; mcp/src/agents_remember/serving/terminal_catalog.py:581-585 |
+| `POST /api/terminal/{session}/retire` performs the identical authority check before calling `retire_entry`. | "def _retire_response("; "def _seat_ref(entry: TerminalCatalogEntry) -> SeatRef:" | mcp/src/agents_remember/serving/_app_terminal_routes.py:540-540; mcp/src/agents_remember/serving/_app_terminal_routes.py:596-596 |
+| `TerminalCatalogEntry.binding_role` and `binding_leaf_key` are the current identity fields `SeatRef` consumes; `with_retirement` is the terminal mark this policy gates. | `binding_role`; `binding_leaf_key`; `with_retirement` | mcp/src/agents_remember/serving/terminal_catalog.py:456-481; mcp/src/agents_remember/serving/terminal_catalog.py:593-601; mcp/src/agents_remember/serving/terminal_catalog.py:603-607 |
 | `retire_entry` is the mechanics primitive this policy gates for manual retire paths; `serving/landing.py` handles completion-edge landed archive marking separately because landing is not retirement. | `retire_entry`; `land_seats_for_leaf` | mcp/src/agents_remember/serving/landing.py:9-28; mcp/src/agents_remember/serving/retire.py:37-71 |
 | Failing-first tests for the exact authority matrix (manager-own-worker/reviewer ✓, other-master ✗, self-retire ✗ checked first, orchestrator-any-role ✓, unprivileged role ✗) and `master_of` segment extraction. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:103-166 |
 

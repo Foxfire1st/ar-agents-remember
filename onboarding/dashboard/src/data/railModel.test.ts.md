@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/railModel.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:32+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,11 @@ as a pure-function case over the shared catalog fixtures.
 ## Code Commentary
 
 ### Logic
+
+The L6 matrix now proves that architect, orchestrator, and manager rows are grouped by their
+explicit `spawnRepo` + `spawnSprint` identity, not by one global command spine. Two simultaneous
+sprints keep separate command-seat groups; legacy unbound rows remain visible only in a dedicated
+migration bucket, and subordinate clusters stay attached to their own sprint manager.
 
 - **Role codes** — the six ruled codes + derived extras; absent without a spawn role.
 - **`buildRailModel`** — flat role-ordered spine (never spawn-nested), managers flat in their
@@ -73,11 +78,11 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The rail-model functions under test. | `buildRailModel`, `railCycleOrder`, `buildSpawnTree` | dashboard/src/data/railModel.ts:192-235; dashboard/src/data/railModel.ts:238-246; dashboard/src/data/railModel.ts:257-279 |
 | The shared full-wire-shape catalog fixtures, including the multiplexed interaction row. | `catalogRow`, `FLEET`, `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:10-27; dashboard/src/test/fixtures/catalogRows.ts:32-172; dashboard/src/test/fixtures/catalogRows.ts:414-446 |
-| The N1 agent-only-blocked triage pin. | "lists a seat blocked SOLELY on a multiplexed sub-agent approval" | dashboard/src/data/railModel.test.ts:342-358 |
+| The N1 agent-only-blocked triage pin. | "lists a seat blocked SOLELY on a multiplexed sub-agent approval" | dashboard/src/data/railModel.test.ts:415-431 |
 | The served builders used by the projection-join fixtures. | `taskDoc`, `gate`, `lifecycle`, `agentPickup` | dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:248-253; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:296-301 |
-| The held-gate join case. | "joins HELD gates by leafKey only while undecided (R13)" | dashboard/src/data/railModel.test.ts:274-278 |
-| The two-state brief-column join case. | "brief column is TWO-state: pending while unacknowledged, gone otherwise — never a tri-state" | dashboard/src/data/railModel.test.ts:293-304 |
-| The critical-bus join case. | "critical bus = age ≥ ttl·0.8 or escalated check-chat (F11)" | dashboard/src/data/railModel.test.ts:306-317 |
+| The held-gate join case. | "joins HELD gates by leafKey only while undecided (R13)" | dashboard/src/data/railModel.test.ts:332-339 |
+| The two-state brief-column join case. | "brief column is TWO-state: pending while unacknowledged, gone otherwise — never a tri-state" | dashboard/src/data/railModel.test.ts:354-372 |
+| The critical-bus join case. | "critical bus = age ≥ ttl·0.8 or escalated check-chat (F11)" | dashboard/src/data/railModel.test.ts:374-387 |
 
 ## Cross-Repo References
 
@@ -89,6 +94,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: added the two-sprint grouping, migration-bucket, and
+  subordinate-isolation coverage to this test card. Verification metadata remains pinned until
+  closeout stamps the code commit.
 - 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
 
 - 2026-08-01T09:32+02:00 — 260731-EFA-L4 curator: the Invariants section claimed the whole suite was
@@ -102,7 +111,7 @@ cross-repository implementation source that governs its behavior.
   `gate()` now hands the joins `decisions: ["approve","revise"]` where the old literal wrote `[]`,
   and `lifecycle()` gives LC1/LC2 a full served lifecycle (`state: "blocked"`, phase, tokens) where
   the old cast gave them only an `id` — but `railModel.ts::heldGatesByLeafKey`
-  (cit:([`heldGatesByLeafKey`], dashboard/src/data/railModel.ts:408-422)) reads
+  (cit:([`heldGatesByLeafKey`], dashboard/src/data/railModel.ts:429-443)) reads
   exactly `doc.lifecycleId`, `lifecycles[…].gate` and `gate.state !== "open"`, and never `decisions`
   or any lifecycle field, so R13 still measures undecided-ness by state alone. Likewise the doc
   fixture stopped stating `status`/`stepsDone`/`stepsTotal`/`steps` and now inherits them from the

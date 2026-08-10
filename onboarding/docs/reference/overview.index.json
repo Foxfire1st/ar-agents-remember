@@ -31,7 +31,7 @@
     "tools"
   ],
   "hotPath": {
-    "summary": "For native launch and control questions, read `harnesses.md` for the dynamic catalog, model-gated effort, duplicate-selector refusal, distinct Claude startup evidence sources, and the Claude/Codex/Pi launch/set matrix; read `settings-json.md` for the complete `roles.<role>` / `rolesPerLevel` model-and-effort authority. Exact harness versions and captured catalog rows are live/fixture evidence, not production pins; in particular, Claude Code 2.1.210 live-confirmed Fable switching supersedes the earlier launch-only assumption without creating a Fable-name policy. Structured hosted dispatch, c...",
+    "summary": "The current orchestration references describe free chat as the launcher and architect/orchestrator/manager as sprint-bound command seats. Any unbound command-seat wording is limited to migration compatibility; runtime identity and custody come from persisted repository+sprint provenance. For native launch and control questions, read `harnesses.md` for the dynamic catalog, model-gated effort, duplicate-selector refusal, distinct Claude startup evidence sources, and the Claude/Codex/Pi launch/set matrix; read `settings-json.md` for the complete `roles.<role>` / `rolesPerLevel` model-and-effor...",
     "candidateHints": [
       "docs/reference",
       "docs/reference/harnesses.md",
@@ -50,7 +50,7 @@
       "skills",
       "roles.<role>",
       "rolesPerLevel",
-      "2dea095cd68454a7a68893e37c07dbd8daa86d32",
+      "a84add4c9422b18a26f1748dedaed16194994ded",
       "orchestration.agentNotifier",
       "orchestration.supervisor",
       "landed",

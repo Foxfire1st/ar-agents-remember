@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-09T16:43+02:00 |
-| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`|
-| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -614,6 +614,11 @@ leaves the log byte-identical (non-destructiveness, newly asserted and never hel
 and `GateStore.compact`, in the owning process, is what empties it.
 
 ## Hot Path Summary
+
+TES-L6 proof is split between `test_sprint_role_seats.py` for two-sprint command-seat identity and
+the compound/state relay suites for role-neutral manager-subordinate liveness. The latter cover
+reviewer, curator, future roles, topology exclusions, re-arm/dedupe, action-time mutations, and the
+timezone-naive landed-row counterexample.
 
 The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared
 codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24
@@ -1426,6 +1431,9 @@ surfaces: retired settings fail loud, ladder transitions are legacy snapshot fix
 the nudge store is gone from every sweep harness.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: added the concurrent-sprint and all-subordinate wake
+  regression hot paths. Verification metadata remains pinned until closeout.
 
 - 2026-08-09T21:54+02:00 — 260713-TES master integration repair: indexed the new
   `_store_durability_source.py` helper and recorded the behavior-preserving source-pinning split.

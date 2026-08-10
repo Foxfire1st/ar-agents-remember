@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_spawn_agent_session.py`           |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -63,6 +63,11 @@ Spawn cases now assert the derived binding role in success/refusal payloads and 
 through expectation creation without changing settings-resolved launch provenance.
 
 ### Logic
+
+Spawn tests now require named architect/orchestrator/manager seats to declare or inherit one
+repository+sprint binding before host launch. They cover missing parents, partial scope,
+cross-sprint conflicts, successful descendant inheritance, provenance in the response/catalog,
+and write-once behavior across reopen.
 
 **260707-HFX2-L14 coverage.** The spawn composition now proves worker/manager/curator settings tiers
 reach distinct argv, resolved knobs and the unique id/log binding persist on the response/catalog,
@@ -186,9 +191,9 @@ No relevant external/domain documentation found; the behavior is local MCP/servi
 | --- | --- | --- |
 | The tool under test composes the opener + echo-confirmed paste and returns the strict spawn payload. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
 | The leaf-ref serving adapter normalizes accepted spawn leaf keys before settings lookup and catalog writes. | `resolve_catalog_leaf_key` | mcp/src/agents_remember/serving/leaf_ref_validation.py:18-46 |
-| The shared opener the tool composes (leaf claim + env-seeded ensure + upsert). | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
+| The shared opener the tool composes (leaf claim + env-seeded ensure + upsert). | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:678-730 |
 | The `PasteResult` the fake paster returns + the paste helper the endpoint drives. | `PasteResult` | mcp/src/agents_remember/serving/terminal_paste.py:53-59 |
-| The `POST /api/terminal/{session}/paste` endpoint under test. | `api_terminal_paste` | mcp/src/agents_remember/serving/_app_terminal_routes.py:683-695 |
+| The `POST /api/terminal/{session}/paste` endpoint under test. | `api_terminal_paste` | mcp/src/agents_remember/serving/_app_terminal_routes.py:709-721 |
 
 ## Cross-Repo References
 
@@ -216,6 +221,9 @@ Spawn/session tests now retain the environment and worktree identity boundary ne
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded named-seat sprint-binding and write-once spawn
+  coverage. Verification metadata remains pinned until closeout stamps the code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

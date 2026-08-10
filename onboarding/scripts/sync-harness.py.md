@@ -6,8 +6,8 @@
 | path                   | `scripts/sync-harness.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -114,7 +114,7 @@ two.
 | The suite check that makes drift a test failure rather than a forgotten script. | `GeneratedTreesTests` | mcp/tests/test_sync_harness.py:35-107 |
 | Both hook tiers run `--check` beside the skill and runtime generated-copy checks. | "run_fast_checks() {"; "run_full_checks() {" | .githooks/_gate.sh:153-153; .githooks/_gate.sh:209-209 |
 | The sibling generators this one is modelled on. | `SkillTarget`; `RuntimeTarget` | scripts/sync-runtime.py:26-30; scripts/sync-skills.py:26-29 |
-| Repo instructions route harness edits through `scripts/harness/` and forbid editing generated starter files. | `## Source Layout`; `## Boundaries`; `## Repository Layout` | AGENTS.md:101-147; README.md:192-272 |
+| Repo instructions route harness edits through `scripts/harness/` and forbid editing generated starter files. | `## Source Layout`; `## Boundaries`; `## Repository Layout` | AGENTS.md:99-145; README.md:192-275 |
 
 ## Update History
 

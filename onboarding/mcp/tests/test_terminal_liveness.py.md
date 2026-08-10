@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_liveness.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`       |
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -98,7 +98,7 @@ classification, self-heal, and sweep cadence/overlap only.
 | --- | --- | --- |
 | The sweeper + shared observation path under test. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:282-326 |
 | The liveness transition copiers retain success-side healing and thresholded failure behavior. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:495-525; mcp/src/agents_remember/serving/terminal_catalog.py:527-559 |
-| The catalog records each probe through the success/failure transition copiers. | "def record_liveness_probe("; "updated = entry.with_liveness_success()"; "updated = entry.with_liveness_failure("; "pane_gone_failure_threshold=hysteresis.pane_gone_failure_threshold, ) if updated != entry: entries[index] = updated self._write(entries)" | mcp/src/agents_remember/serving/terminal_catalog.py:667-667; mcp/src/agents_remember/serving/terminal_catalog.py:684-684; mcp/src/agents_remember/serving/terminal_catalog.py:688-688; mcp/src/agents_remember/serving/terminal_catalog.py:693-697 |
+| The catalog records each probe through the success/failure transition copiers. | "def record_liveness_probe("; "updated = entry.with_liveness_success()"; "updated = entry.with_liveness_failure("; "pane_gone_failure_threshold=hysteresis.pane_gone_failure_threshold, ) if updated != entry: entries[index] = updated self._write(entries)" | mcp/src/agents_remember/serving/terminal_catalog.py:697-697; mcp/src/agents_remember/serving/terminal_catalog.py:714-714; mcp/src/agents_remember/serving/terminal_catalog.py:718-718; mcp/src/agents_remember/serving/terminal_catalog.py:723-727 |
 | The production observer caller drives the catalog probe on alive and failed paths. | "def observe_terminal_liveness("; "if session is not None and session.is_alive: updated = catalog.record_liveness_probe(entry.id, alive=True, checked_at=checked_at)"; "if tmux.exists: updated = catalog.record_liveness_probe(entry.id, alive=True, checked_at=checked_at)"; "updated = catalog.record_liveness_probe( entry.id, alive=False, checked_at=checked_at, evidence=_failure_evidence(tmux)"; "return TerminalLivenessObservation(entry=updated or entry, alive=False)" | mcp/src/agents_remember/serving/terminal_liveness.py:298-298; mcp/src/agents_remember/serving/terminal_liveness.py:314-315; mcp/src/agents_remember/serving/terminal_liveness.py:324-325; mcp/src/agents_remember/serving/terminal_liveness.py:333-337; mcp/src/agents_remember/serving/terminal_liveness.py:340-340 |
 | The production stderr-aware probe classifier the `_TmuxSubprocessProbeHost` cases exercise for real. | `_tmux_missing_session_stderr`; `tmux_probe_session` | mcp/src/agents_remember/serving/terminal_tmux.py:149-176; mcp/src/agents_remember/serving/terminal_tmux.py:179-181 |
 | The catalog JSON/storage unit tests this file deliberately does not duplicate. | `TerminalCatalogTests` | mcp/tests/test_terminal_catalog.py:48-516 |

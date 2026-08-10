@@ -6,8 +6,8 @@
 | sourceRoute | skills/l-01-agent-lifecycles/roles |
 | doc_type | route-local-overview |
 | lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 
 ## Purpose
 
@@ -20,6 +20,10 @@ semantics changed.
 Role-specific dispatch guidance shares the exact session-id handoff, ready proof, delivered-plus-harness-log-confirmed completion, launch-phase sessionCommands, and post-ready promptKeywords timing.
 
 ## Hot Path Summary
+
+Architect is now a sprint-qualified command seat launched from free chat; orchestrator and manager
+inherit that sprint identity. Role completion remains passively supervised, and every direct
+manager subordinate role participates in wake status rather than only the worker role.
 
 Role-specific dispatch guidance shares the exact session-id handoff, ready proof, delivered-plus-harness-log-confirmed completion, launch-phase sessionCommands, and post-ready promptKeywords timing.
 
@@ -71,6 +75,9 @@ mailbox; `operator_inbox_consume` is attribution-only. The `code-seam` criterion
 follows (rung → attempt).
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint-local role-seat identity and
+  all-subordinate passive supervision. Verification metadata remains pinned until closeout.
 
 - 2026-08-09T13:59+02:00 — 260713-TES-L5 route impact: recorded the judgment-demolition
   doctrine in the role files (fact-relay supervision; ladder retired; mailbox custody;
