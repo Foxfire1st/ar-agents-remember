@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/railModel.ts`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -123,6 +123,8 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-10T09:45+02:00 — 260731-EFA-L9 curator repair: updated rail-model test and build citations.
+
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: documented sprint-qualified command groups and the
   migration-only legacy command-seat bucket. Verification metadata remains pinned until closeout
@@ -153,3 +155,4 @@ cross-repository implementation source that governs its behavior.
   tooltip truth, fleet-attention rollup with zero-state suppression and jump priority, held-gate /
   two-state-brief / critical-bus projection joins, smart-default focus, and question triage.
   Verification metadata pinned to the leaf base until closeout stamps the L2 code commit.
+

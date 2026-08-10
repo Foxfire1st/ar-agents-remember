@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -178,8 +178,8 @@ is proven by repository source and tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The serving layer this host joins (transport; localhost posture). | `TerminalHost` | mcp/src/agents_remember/serving/terminal.py:109-255 |
-| The FastAPI app wires the WebSocket bridge and terminal-session routes over this host. | "async def _serve_terminal_websocket("; "def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/serving/_app_terminal_routes.py:83-83; mcp/src/agents_remember/serving/_app_terminal_routes.py:127-127 |
-| Catalog entries declare durable identity/cwd/tmux/command/lifecycle/status fields, and `TerminalCatalog` persists and reads those entries. | `TerminalCatalogEntry`; `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510; mcp/src/agents_remember/serving/terminal_catalog.py:519-857 |
+| The FastAPI app wires the WebSocket bridge and terminal-session routes over this host. | "async def _serve_terminal_websocket("; "def _register_terminal_session_routes(app: FastAPI" | mcp/src/agents_remember/serving/_app_terminal_routes.py:85-85; mcp/src/agents_remember/serving/_app_terminal_routes.py:129-129 |
+| Catalog entries declare durable identity/cwd/tmux/command/lifecycle/status fields, and "class TerminalCatalogEntry:" persists and reads those entries. | "class TerminalCatalogEntry:"; "class TerminalCatalogEntry:" | mcp/src/agents_remember/models/terminal_catalog.py:44-474; mcp/src/agents_remember/serving/terminal_catalog.py:48-386 |
 | The opener resolves the spawn environment, builds the terminal session spec, calls the host ensure operation, and upserts the catalog entry. | `_open_terminal_transaction` | mcp/src/agents_remember/serving/terminal_opener.py:534-617 |
 | The terminal host registry behavior is exercised by the dedicated registry test class. | `TerminalHostRegistryTests` | mcp/tests/test_terminal.py:300-466 |
 | The optional real-tmux integration is exercised by the dedicated integration test class. | `TerminalHostTmuxIntegrationTests` | mcp/tests/test_terminal.py:792-844 |

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/daemon.py`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T20:24+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -96,9 +96,9 @@ protocol.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | CLI dispatch (`--daemon`/`--status`/`--stop`) and the `--no-access-log` child flag. | `add_arguments` | mcp/src/agents_remember/cli/dashboard.py:84-158 |
-| The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes. | `DashboardSettings` | mcp/src/agents_remember/mcp/config.py:85-90 |
+| The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes. | `DashboardSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:90-95 |
 | The MCP boot seam calling `maybe_autostart_dashboard`. | `maybe_autostart_dashboard` | mcp/src/agents_remember/serving/daemon.py:336-356 |
-| The version comparator (`SERVER_VERSION`). | "agents-remember-mcp" | mcp/src/agents_remember/mcp/__init__.py:9-9 |
+| The version comparator (`SERVER_VERSION`, kernel-owned since L9). | "agents-remember-mcp" | mcp/src/agents_remember/kernel/primitives/version.py:15-15 |
 | Unit tests: state round-trip, probes, stop escalation, ensure matrix, autostart, CLI dispatch. | `StateFileTests`; `ProbeTests`; `StopTests`; `EnsureTests`; `AutostartTests`; `CliDaemonDispatchTests` | mcp/tests/test_dashboard_daemon.py:53-90; mcp/tests/test_dashboard_daemon.py:93-125; mcp/tests/test_dashboard_daemon.py:141-181; mcp/tests/test_dashboard_daemon.py:241-364; mcp/tests/test_dashboard_daemon.py:367-404; mcp/tests/test_dashboard_daemon.py:421-503 |
 
 ## 260731-EFA-L2 Current Delta
@@ -121,6 +121,8 @@ it — an **adopted** daemon keeps the cadences it was started with.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 5 citation entries (10 findings); no Tier-3 findings.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_next_step.py`              |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:05+02:00                     |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ stop (`nextTool=None`), and an end-to-end test proves the choke-point auto-dismi
 `blocked`-gate await/resume tests stay intact.
 
 260731-EFA-L4 added the **advertised-count** half: both keys the choke point writes
-(`nextStep`, `agentNotifierBanner`) are now declared fields of the response envelope, are set on the
+(`nextStep`, `supervisorBanner`) are now declared fields of the response envelope, are set on the
 model *before* the single dump, and must therefore be inside the `tokens` number the response
 advertises — and the opportunistic banner must never take down the tool call it rides on.
 
@@ -115,13 +115,13 @@ as the pure ones do:
   `test_advertised_token_count_covers_the_agent_notifier_banner`): the same invariant for the other
   choke-point field. A supervisor that ticked and then went quiet past the cutoff
   (`AgentNotifierHeartbeatStore(self.root).tick(now=now - 6h)`) puts a banner on **every** response;
-  the test asserts `"supervisor stale"` is in `payload["agentNotifierBanner"]`, the same fixed-point
+  the test asserts `"supervisor stale"` is in `payload["supervisorBanner"]`, the same fixed-point
   and strictly-less pair, and — the point of the leaf — `PingResponse.model_validate(payload)`,
-  which is only possible now that `agentNotifierBanner` is a declared envelope field.
+  which is only possible now that `supervisorBanner` is a declared envelope field.
 - **A raising staleness probe degrades to silence** (L333-L345,
   `test_a_raising_staleness_probe_degrades_to_silence`): patching
   `agents_remember.mcp.tools.base.agent_notifier_staleness_banner` to raise `OSError` must yield
-  **no** `agentNotifierBanner` key, a response that still validates, and a `tokens` value that is
+  **no** `supervisorBanner` key, a response that still validates, and a `tokens` value that is
   still the fixed point. The banner is opportunistic and defended: it must never take down the
   tool call it rides on, and the response must not be a half-built envelope.
 - **Auto-dismiss end-to-end**
@@ -187,13 +187,13 @@ the `lifecycle_start` payload it asserts the rundown on.
 | The choke point that attaches `nextStep` to every response. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | `lifecycle_start_payload` whose `frontHalfRundown` + `nextStep` are asserted. | `lifecycle_start_payload` | mcp/src/agents_remember/mcp/tools/lifecycle.py:20-21 |
 | The ambient lifecycle installed/started/promoted by the edge tests. | `AmbientLifecycle`; `install_ambient` | mcp/src/agents_remember/observer/ambient.py:112-635; mcp/src/agents_remember/observer/ambient.py:669-671 |
-| The projected `LifecycleState` the pure tests construct. | `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:187-210 |
+| The projected `LifecycleState` the pure tests construct. | `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:156-179 |
 | The `EventStore` backing the ambient under test. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| `WorktreeContract` + `write_contract`/`load_contract` used by the gate + edge cases. | `WorktreeContract`; `write_contract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:231-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-470; mcp/src/agents_remember/worktrees/worktree_contract.py:473-477 |
-| The `NextStep` shape the assertions read, and the `nextStep` / `agentNotifierBanner` (plus the legacy `supervisorBanner` alias) fields now declared on both response envelopes. | `NextStep`; `ResponseModel`; `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:22-38; mcp/src/agents_remember/models/base.py:41-60; mcp/src/agents_remember/models/base.py:69-87 |
-| The `lifecycle_guidance` state machine the linear half delegates to. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:230-240 |
+| `WorktreeContract` + `write_contract`/`load_contract` used by the gate + edge cases. | `WorktreeContract`; `write_contract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285; mcp/src/agents_remember/worktrees/worktree_contract.py:436-469; mcp/src/agents_remember/worktrees/worktree_contract.py:472-475 |
+| The `NextStep` shape the assertions read, and the `nextStep` / `supervisorBanner` fields now declared on both response envelopes. | `NextStep`; `ResponseModel`; `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:22-38; mcp/src/agents_remember/models/base.py:41-60; mcp/src/agents_remember/models/base.py:69-84 |
+| The `lifecycle_guidance` state machine the linear half delegates to. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:200-210 |
 | `count_response_tokens` / `finalize_payload_tokens` — the counter the fixed-point assertions call and the one the choke point runs over the dump. | `count_response_tokens`; `finalize_payload_tokens` | mcp/src/agents_remember/models/tokens.py:208-215; mcp/src/agents_remember/models/tokens.py:232-249 |
-| `agent_notifier_staleness_banner` — the probe the degrade test patches, and the store that makes it fire. | `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:141-157 |
+| `agent_notifier_staleness_banner` — the probe the degrade test patches, and the store that makes it fire. | `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:135-151 |
 | `PingResponse`, the model the banner-carrying payload is validated against. | `PingResponse` | mcp/src/agents_remember/models/core.py:14-17 |
 
 ## Cross-Repo References
@@ -202,7 +202,6 @@ No meaningful cross-repo references found.
 
 ## Update History
 
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 8 citation entries (15 findings); no Tier-3 findings.
 
 - 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: corrected a claim this card made twice and
@@ -218,10 +217,10 @@ No meaningful cross-repo references found.
   `payload["tokens"] == count_response_tokens(payload)` and the recount without `nextStep` is
   strictly less, closing the gap where `finalize_payload_tokens` ran before the hint was written
   in; cit:([`test_advertised_token_count_covers_the_agent_notifier_banner`], mcp/tests/test_next_step.py:319-331) — the same pair for
-  `agentNotifierBanner` off an agent-notifier ticked six hours into the past, plus
+  `supervisorBanner` off a supervisor ticked six hours into the past, plus
   `PingResponse.model_validate(payload)`, which only became possible once the key was declared;
   and cit:([`test_a_raising_staleness_probe_degrades_to_silence`], mcp/tests/test_next_step.py:333-345) — a patched
-  `base.supervisor_staleness_banner` raising `OSError` yields no key, a still-valid response, and
+  `base.agent_notifier_staleness_banner` raising `OSError` yields no key, a still-valid response, and
   an intact token fixed point. Added the matching invariants and three Repo-Internal rows
   (`models/tokens.py`, `serving/supervisor_heartbeat.py`, `models/core.py`). Every other assertion,
   test name and hint expectation in this card was re-read against the 389-line source and is
@@ -237,3 +236,4 @@ No meaningful cross-repo references found.
 - 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE turn end): the ACTIVE-hint assertions were repointed off `lifecycle_gate` onto `lifecycle_turn_end_notification` — `test_front_half_generic_points_back_to_the_rundown`, the renamed `test_decide_points_to_the_turn_end_notification`, the renamed `_gate_after` overlays (`test_closeout_preview_hints_the_turn_end_until_approved`/`test_integrate_dry_run_hints_the_turn_end`/`test_finalize_dry_run_hints_the_turn_end`), the edge dry-run/torn-contract cases, and the `lifecycle_start` choke-point rundown assertion. Added `test_awaiting_developer_hints_the_stop` (`nextTool=None`, "resumes automatically") and the end-to-end `test_turn_end_notification_does_not_self_dismiss_then_next_call_resumes` (the notification keeps its own response on `awaiting-developer`; the next call auto-resumes). The parked `blocked`-gate await/resume tests are unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-27T20:16+02:00 — Added two gate-await tests: `test_blocked_at_a_gate_awaits_the_decision` (pure — a `blocked` state in both `close` and `build` phases yields `_AWAIT_GATE`/`lifecycle_resume`) and `test_next_step_for_blocked_gate_awaits_resume` (edge — the live `amb.start()` + `amb.block(...)` seam returns the resume hint on the `lifecycle_gate` response). Both pin the blocked-state branch added to `compute_next_step`.
 - 2026-06-27T18:43+02:00 — Added file-level onboarding for the new task-27 test suite covering the `compute_next_step` state machine (front-half/decide pointers, linear guidance delegation, the closeout/integrate/finalize gate overlays, `_from_guidance`, and `lifecycle_end` loop-back), the exception-contained `next_step_for` edge (missing/torn-contract degradation, dry-run windows), and the `_tool_payload`/`lifecycle_start` rundown choke point. Verification metadata pinned until closeout stamps the task-27 code commit.
+

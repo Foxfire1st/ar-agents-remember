@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/grepai/isolated.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -59,10 +59,12 @@ instead of re-pulling it over the network.
 | --- | --- | --- |
 | Provider setup combines isolated GrepAI and CGC settings before running workflow-local provider lifecycle operations. | `isolated_cgc_settings`, `isolated_grepai_settings`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:52-53; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
 | GrepAI database warm-start is handled by the seed module after isolated target settings exist. | `grepai_clone_bundle`, `_clone_database` | mcp/src/agents_remember/providers/grepai/seed.py:88-101; mcp/src/agents_remember/providers/grepai/seed.py:266-310 |
-| Provider identity helpers derive the worktree instance id and ownership labels. | `provider_instance_id`, `provider_ownership_labels` | mcp/src/agents_remember/providers/identity.py:31-57; mcp/src/agents_remember/providers/identity.py:123-135 |
+| Provider identity helpers derive the worktree instance id and ownership labels. | `provider_instance_id`, `provider_ownership_labels` | mcp/src/agents_remember/kernel/primitives/identity.py:31-57; mcp/src/agents_remember/kernel/primitives/identity.py:123-135 |
 | Unit tests verify active-root swapping and preservation of unrelated memory roots. | `test_isolated_grepai_settings_swaps_only_active_memory_root` | mcp/tests/test_provider_setup.py:632-706 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 4 citation rows; scoped citation fixing regenerated the source ranges.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/gates.py`       |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T13:20+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`         |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -154,20 +154,22 @@ fails; the shared decision service owns that failure boundary.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The gate entity and decision helpers. | `GateRecord`; `GateAnchor`; `GateRequest`; `GateVerdict`; `decide_gate` | mcp/src/agents_remember/controlplane/records.py:84-116; mcp/src/agents_remember/controlplane/records.py:128-136; mcp/src/agents_remember/controlplane/records.py:139-146; mcp/src/agents_remember/controlplane/records.py:149-163; mcp/src/agents_remember/controlplane/records.py:191-216 |
-| The gate delegation policy checked before orchestration decisions append. | `record_gate_decision`; `GatePolicy` | mcp/src/agents_remember/controlplane/gate_decisions.py:83-128; mcp/src/agents_remember/controlplane/gate_policy.py:51-61 |
-| The append-only store these builders mutate. | `append` | mcp/src/agents_remember/controlplane/store.py:112-118 |
+| The gate delegation policy checked before orchestration decisions append (policy in kernel primitives since L9). | "def record_gate_decision("; "class GatePolicy:" | mcp/src/agents_remember/controlplane/gate_decisions.py:83-128; mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54 |
+| The append-only store these builders mutate. | `append` | mcp/src/agents_remember/controlplane/store.py:121-127 |
 | The external-chat inbox store this polls in `gate_response_wait_payload`. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/gates.py:131-148 |
 | The choke point every gate payload returns through. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | Gate wait response model. | `GateWaitResponse` | mcp/src/agents_remember/models/gates.py:47-55 |
 | The durable-store gate ownership constant. | `GATE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:138-150 |
 | The compaction-owner predicate. | `is_compaction_owner` | mcp/src/agents_remember/controlplane/durable_store.py:123-132 |
 | The durable-store contract string. | "DURABLE_STORE_CONTRACT = \"ar-durable-store/1.0\"" | mcp/src/agents_remember/controlplane/durable_store.py:42-52 |
-| The serving adapter that records dashboard gate decisions through the shared decision service. | "def _recorded_gate_decision("; "def record_gate_decision(" | mcp/src/agents_remember/serving/_app_routes.py:193-193; mcp/src/agents_remember/controlplane/gate_decisions.py:83-128 |
-| The projection reader that no longer rewrites gate logs (`read_gates` → `GateStore.projected_current`). | "def read_gates(coordination_root: Path, *, now: date" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104 |
+| The serving adapter that records dashboard gate decisions through the shared decision service. | "def _recorded_gate_decision("; "def record_gate_decision(" | mcp/src/agents_remember/controlplane/gate_decisions.py:85-85; mcp/src/agents_remember/serving/_app_routes.py:195-195 |
+| The projection reader that no longer rewrites gate logs (`read_gates` → `GateStore.projected_current`). | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:103-103 |
 
 As of cycle 5 the seam channel is operable: lifecycle_gate accepts wait=false (raise-and-continue — returns the gateId in a model-conformant raised payload instead of blocking); gate_decide resolves a bare gate_id across lifecycles via GateStore.find when no lifecycle_id is given, REFUSES cli-attributed non-cancel decisions on kinds the active policy delegates (fail-loud: pass deciding_role or leave it to the developer), and cancel deletes by the gate's own lifecycleId. Cycle 6 hardens the raise path: wait=false is now reserved for SEAM kinds (`SEAM_GATE_KINDS`) that the active policy also delegates — a delegated non-seam kind like plan-approval blocks again — and the check runs BEFORE the expire-sweep and append (validate-then-mutate), so a refused raise persists no orphan open gate and expires no sibling. `gate_list_payload` is now ambient-defaulting: with no explicit lifecycle_id it lists the ACTIVE lifecycle's gates (a raiser polls its own gate without handling lifecycle ids) and falls back to the workspace log only when no lifecycle is active. Cycle 7 closes the addressless-raise hole (AR4-1): a wait=false raise additionally requires a non-empty `enclosure` — the master task name the integrate guard matches the gate by — and refuses inside the same validate-then-mutate block ("a master-handover-approval raise-and-continue requires enclosure=<master task name>"), because an addressless seam gate could only ever fail open at the enforcement rung.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: split the ownership constant, compaction-owner predicate, and durable-store contract to their distinct frozen-source owners; the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: this historical ownership note is superseded. Current

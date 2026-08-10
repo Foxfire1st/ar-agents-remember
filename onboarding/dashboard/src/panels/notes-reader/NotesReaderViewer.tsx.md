@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -82,7 +82,7 @@ No meaningful cross-repo references found.
 | The L9 notes client (`listNotes`/`readNote`) this view consumes. | "export interface NoteEntry" | dashboard/src/data/notes.ts:10-10 |
 | The shell that hosts the takeover + lifts its selection. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:64-64 |
 | The entry surface (compact list + references) that opens this reader. | "export function TaskNotes" | dashboard/src/panels/TaskNotes.tsx:146-146 |
-| The unchanged L9 serving endpoints behind the client. | "def _walk_notes" | mcp/src/agents_remember/serving/notes.py:67-67 |
+| The unchanged L9 serving endpoints behind the client. | "def _walk_notes" | mcp/src/agents_remember/serving/notes.py:70-70 |
 | The component test suite. | "function stubNotesApi" | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:29-29 |
 
 ## Current L5I Maintenance

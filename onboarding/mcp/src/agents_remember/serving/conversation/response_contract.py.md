@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/conversation/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                              |
 | lastUpdated            | 2026-08-01T08:18+02:00                                               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                           |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                           |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                        |
 
 ## Governing Overview
@@ -114,7 +114,7 @@ it reuses are owned by the parent contract module.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The strict base and the shared refusal models this module imports and extends. | `WireResponse`; `StatusRefusal`; `CursorRefusal`; `CapabilityUnavailableRefusal`; `BridgeEpochMismatchRefusal` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:111-115; mcp/src/agents_remember/serving/response_contract.py:152-158; mcp/src/agents_remember/serving/response_contract.py:170-175; mcp/src/agents_remember/serving/response_contract.py:178-183 |
-| The wire models the 25 routes already dumped, reused here as declarations. | "class AttachmentOperationProjection(WireModel):"; "class InterruptOperation(WireModel):"; "class OpenConversationOperation(WireModel):"; "class WithdrawnQueueResponse(WireModel):"; "class FailedWithdrawalResponse(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_operations.py:355-355; mcp/src/agents_remember/serving/conversation/_models_operations.py:124-124; mcp/src/agents_remember/serving/conversation/_models_operations.py:19-19; mcp/src/agents_remember/serving/conversation/_models_operations.py:213-213; mcp/src/agents_remember/serving/conversation/_models_operations.py:223-223 |
+| The wire models the 25 routes already dumped, reused here as declarations. | "class AttachmentOperationProjection(WireModel):"; "class InterruptOperation(WireModel):"; "class OpenConversationOperation(WireModel):"; "class WithdrawnQueueResponse(WireModel):"; "class FailedWithdrawalResponse(WireModel):" | mcp/src/agents_remember/models/conversations/attachments.py:34-34; mcp/src/agents_remember/models/conversations/interrupts.py:12-12; mcp/src/agents_remember/models/conversations/opening.py:16-16; mcp/src/agents_remember/models/conversations/withdrawals.py:43-43; mcp/src/agents_remember/models/conversations/withdrawals.py:53-53 |
 | The one mapper `CONTROL_RESPONSES` transcribes, and the submit route whose 422 unions the answer with the shared refusal. | `_map_typed_error`; `conversation_submit` | mcp/src/agents_remember/serving/conversation/control/api.py:124-141; mcp/src/agents_remember/serving/conversation/control/api.py:635-682 |
 | The cursor refusals `CONVERSATION_RESPONSES` adds for the active routes. | `_map_typed_error`; `_resume_cursor` | mcp/src/agents_remember/serving/conversation/active/api.py:77-99; mcp/src/agents_remember/serving/conversation/active/api.py:111-123 |
 | The library error table `LIBRARY_RESPONSES` transcribes and the total outcome map `OPEN_OUTCOME_RESPONSES` pairs with. | `_error_response`; `_OPEN_STATUS_BY_OUTCOME` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84; mcp/src/agents_remember/serving/conversation/library/api.py:271-286 |
@@ -131,6 +131,8 @@ conversation routes emit.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 5 repeated path:start-end Citation objects from 2 same-claim citation group(s) at card line(s) 116, 118; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
 - 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 1 repository-reference citation and normalized 2 prose citations (1/1 anchored and sourced; scoped citation check clean).

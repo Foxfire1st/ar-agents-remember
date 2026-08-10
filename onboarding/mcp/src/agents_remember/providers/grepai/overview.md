@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -98,7 +98,13 @@ now uses are listed in the [lifecycle route](lifecycle/overview.md). **The multi
 untouched** — `GrepaiWorkspace.roots` is exactly the multi-root shape `isolated.py` rewrites one
 entry of.
 
+## 260731-EFA-L9 Route Impact — Caller Re-Points
+
+GrepAI provider modules now import the shared kernel primitives directly (`kernel/primitives/runtime_config.py`, `kernel/primitives/identity.py`, `kernel/primitives/provider_degradation_settings.py`) after the L9 layering cleanup. Seed/setup behavior is unchanged.
+
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 
 - 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 3 citation rows; scoped citation fixing regenerated the source ranges.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2: `seed.py` gained `_GrepaiCloneEnd` (naming source and

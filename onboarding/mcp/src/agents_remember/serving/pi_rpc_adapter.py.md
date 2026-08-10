@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -118,7 +118,7 @@ rules; process/event modules remain transport and event boundaries.
 | The event mapper owns normalized state, settlement, and extension interaction projections. | `PiRpcEventMapper`, `translate` | mcp/src/agents_remember/serving/pi_rpc_events.py:55-358 |
 | Entry identity/timestamp helpers keep native paging coordinates honest. | `pi_entry_identity`, `pi_entry_created_at` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:285-296; mcp/src/agents_remember/serving/pi_rpc_protocol.py:299-309 |
 | Contract tests pin the entries native page, message_update/message_end evidence forwarding, and the installed 0.80.7 production-seam capture. | `test_message_end_and_unknown_frames_reach_evidence_with_full_payload`, `test_native_page_typed_identity_and_durable_since_continuation` | mcp/tests/test_harness_control_evidence_other.py:61-99; mcp/tests/test_harness_control_evidence_other.py:101-142 |
-| The content-less `message_end` evidence mapping that keeps a real abort from failing the bridge. | ["pi:message_end"] | mcp/src/agents_remember/serving/pi_rpc_events.py:256-256 |
+| The content-less `message_end` evidence mapping that keeps a real abort from failing the bridge. | ["pi:message_end"] | mcp/src/agents_remember/serving/pi_rpc_events.py:260-260 |
 | The control-plane contract suite pins the guarded abort, replay-once per pair, the successor stale-reconcile typed refusal with zero writes, and the image content construction. | `test_abort_write_guard_replay_and_successor_refusal`, `test_pi_image_content_blocks_and_receipt_asset_ids` | mcp/tests/test_harness_control_plane_assets.py:47-98; mcp/tests/test_harness_control_plane_channels.py:428-481 |
 | The installed-runtime suite captures the live 0.80.7 abort, timeline, and asset evidence behind the fixture rows. | `test_live_abort_guard_timeline_and_assets` | mcp/tests/test_harness_control_plane_installed.py:287-373 |
 | The fixture records the redacted `control-plane/*` observed rows this adapter produced through the production seam. | ["control-plane/abort-write-ack", "control-plane/operation-timeline", "control-plane/asset-image-submit"] | mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:72-72; mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:83-83; mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:94-94 |
@@ -149,6 +149,8 @@ alone just moves where the session first misbehaves under load. The default valu
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 11 repository-internal references for Pi configuration, protocol, launch, process, event, contract-test, installed-runtime, and fixture evidence; final scoped result 0 (checker-clean).
 

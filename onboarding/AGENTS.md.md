@@ -6,8 +6,8 @@
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 
 ## Purpose
 
@@ -83,7 +83,7 @@ generated copies by hand — each generated harness file says so in a header com
 files a starter package owns alone (`.codex/config.toml`, `.cursor/hooks.json`) are edited
 in place. The boundaries section keeps root instructions scoped to source-checkout
 work, keeps installed coordinator instructions under `runtime/agents-md-files/`,
-repeats the "edit root skills, then sync" rule, and adds the matching
+repeats the "edit root skills" rule, and adds the matching
 runtime-asset and harness sync boundaries.
 
 ### Code Quality Instructions — Rewritten By 260731-EFA-L2

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/code_quality/scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-08T02:00+02:00               |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -18,6 +18,7 @@
 
 The scope report gained the dashboard rail steps and provenance lines (coverage,
 diff-coverage, and e2e) forced by this leaf's S3 CI/hook wiring, plus the pinned
+
 TypeScript input count update (349→425); the report remains read-only. The matching
 hook-skip and provenance tests were reconciled in `mcp/tests/test_quality_scope_reporting.py`.
 
@@ -122,8 +123,17 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `build_parser`, including the `targeted` hook tier choice. | `build_parser` | mcp/src/agents_remember/code_quality/scope_reporting.py:627-653 |
 | Defines the function `main`. | `main` | mcp/src/agents_remember/code_quality/scope_reporting.py:690-704 |
 
+## 260731-EFA-L9 Change
+
+The scope report gained the `layering` tier: the armed package-layering step reports violation
+and cycle counts/edges alongside the other quality steps, and the wrapper's invocation labels
+carry the layering result.
+
 ## Update History
 
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the layering tier in the scope
+  report; the L9 change section above documents it. Verification metadata pinned until closeout
+  stamps the L9 code commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the targeted tier
   (invocation labels, targeted scope lines, integration-tree diff labels, the
   `targeted` hook tier), refreshed every function anchor to the post-L17

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/fixtures/claude_stream_json/2.1.210/interactions-multi.jsonl` |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-07-31T15:32+02:00                                             |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                         |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                                             |
 
 ## Governing Overview
@@ -40,8 +40,8 @@ and mixed `multiSelect` / description presence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The Claude control test asserts that `mode.multi_select` is false. | "(mode.text, mode.header, mode.multi_select)," | mcp/tests/test_harness_control_claude_stream_1.py:555-555 |
-| The Claude control test asserts that `features.multi_select` is true. | "(features.text, features.header, features.multi_select)," | mcp/tests/test_harness_control_claude_stream_1.py:563-563 |
+| The Claude control test asserts that `mode.multi_select` is false. | "(mode.text" | mcp/tests/test_harness_control_claude_stream_1.py:557-557 |
+| The Claude control test asserts that `features.multi_select` is true. | "(features.text" | mcp/tests/test_harness_control_claude_stream_1.py:565-565 |
 | The initialization sibling recording carries the vendor-version field. | `claude_code_version` | mcp/tests/fixtures/claude_stream_json/2.1.210/initialization.jsonl:2-2 |
 
 ## Update History

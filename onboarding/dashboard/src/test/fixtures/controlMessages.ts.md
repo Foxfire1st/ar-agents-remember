@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/controlMessages.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `f8196d98982f834d68152d307ff8025ea69440d5`       |
-| lastVerifiedCommitDate | 2026-07-17T22:08:10+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | --- | --- | --- |
 | The five receipts + four reconciliations. | `SUBMISSION_RECEIPTS`; `RECONCILIATIONS` | dashboard/src/test/fixtures/controlMessages.ts:15-61; dashboard/src/test/fixtures/controlMessages.ts:63-100 |
 | The wire mirrors (`SubmissionReceiptWire`, `ReconciliationResultWire`). | `SubmissionReceiptWire`; `ReconciliationResultWire` | dashboard/src/types/harnessCapabilities.ts:99-107; dashboard/src/types/harnessCapabilities.ts:120-128 |
-| The Python serializers mirrored (`public_receipt_json`/`public_reconciliation_json`). | `public_receipt_json`; `public_reconciliation_json` | mcp/src/agents_remember/serving/harness_control_models.py:930-941; mcp/src/agents_remember/serving/harness_control_models.py:944-955 |
+| The Python serializers mirrored (`public_receipt_json`/`public_reconciliation_json`). | `public_receipt_json`; `public_reconciliation_json` | mcp/src/agents_remember/serving/harness_control_models.py:217-228; mcp/src/agents_remember/serving/harness_control_models.py:231-242 |
 | The vocabulary-equality suite (five/four by sorted keys, shared requestId). | "SetResult / receipt / reconciliation vocabularies" | dashboard/src/test/contractCapabilities.test.ts:120-161 |
 
 ## Cross-Repo References

@@ -6,8 +6,8 @@
 | path | mcp/src/agents_remember/mcp/tools/hosted_readiness.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-31T15:31+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | mcp/src/agents_remember/mcp/tools/overview.md |
 
 ## Governing Overview
@@ -73,6 +73,8 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:11+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 3 citation rows with exact anchors (`hosted_session_readiness`/`ReadinessWait`/`MAX_HOSTED_READINESS_WAIT_SECONDS`, the registration declaration, `require_dispatch_target`) and ledger-verified ranges; re-pointed the dispatch-brief citation from the removed `mcp/tools/dispatch_brief.py` to `serving/dispatch_brief.py`. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 

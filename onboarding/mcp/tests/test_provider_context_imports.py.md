@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_context_imports.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -43,7 +43,7 @@ or their own subpackages); these tests fail if such a back-edge returns.
 | --- | --- | --- |
 | The facade whose initialization order is being pinned. | "from agents_remember.providers.context_common import *" | mcp/src/agents_remember/providers/context/__init__.py:14-14 |
 | The relocated shared helpers that broke the cycle. | `ContextProviderError`, `to_container_path` | mcp/src/agents_remember/providers/context_common.py:18-19; mcp/src/agents_remember/providers/context_common.py:22-37 |
-| The chain that originally surfaced the bug (settings imports the facade). | "from agents_remember.providers.context import (" | mcp/src/agents_remember/providers/settings.py:14-14 |
+| The chain that originally surfaced the bug (settings imports the facade). | "from agents_remember.providers.context import (" | mcp/src/agents_remember/providers/settings.py:22-22 |
 
 ## Update History
 

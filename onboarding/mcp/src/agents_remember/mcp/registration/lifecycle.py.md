@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/lifecycle.py`       |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-07-31T15:31+02:00                                        |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                    |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                    |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -57,6 +57,8 @@ question is resolved. `lifecycle_end(outcome)` takes `completed` (the human decl
 | --- | --- | --- |
 
 ## Update History
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: reconciled the frozen-source ledger, split ambient lifecycle and response-tail ownership, and supplied scoped fixer input for generated ranges. Verification metadata unchanged.
 
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The six lifecycle

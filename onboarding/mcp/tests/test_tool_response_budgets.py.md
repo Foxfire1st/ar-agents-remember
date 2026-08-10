@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tool_response_budgets.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:00+02:00                     |
-| lastVerifiedCommitHash | `9b25740b5b373b410c270e14913f5a220c63c795`|
-| lastVerifiedCommitDate | 2026-06-10T02:38:07+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -47,10 +47,12 @@ enumerated, and that the report file retains all records round-trip.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The report helper under test. | `write_tool_report` | mcp/src/agents_remember/mcp/tool_reports.py:30-50 |
+| The report helper under test. | `write_tool_report` | mcp/src/agents_remember/kernel/primitives/tool_reports.py:30-50 |
 | The compact builders under test. | `compact_runtime_install_payload`; `compact_diagnostics_payload`; `compact_carryover_payload` | mcp/src/agents_remember/mcp/tools/core.py:105-128; mcp/src/agents_remember/mcp/tools/memory.py:139-160; mcp/src/agents_remember/mcp/tools/providers.py:55-70 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 2 citation rows covering 4 source references and preserved verification metadata.
 

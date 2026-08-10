@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_active_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,10 +75,10 @@ repository-owned and cited below.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The three registered production routes under test. | "async def conversation_page" | mcp/src/agents_remember/serving/conversation/active/api.py:127-127 |
+| The three registered production routes under test. | "async def conversation_page" | mcp/src/agents_remember/serving/conversation/active/api.py:131-131 |
 | The L0 root composition the suite installs verbatim. | "def register_conversation_routes" | mcp/src/agents_remember/serving/conversation/router.py:22-22 |
-| The bridge/IPC server seam (L0E) the suite runs on a real socket. | "def control_runner_command" | mcp/src/agents_remember/serving/harness_control_runner.py:53-53 |
-| The cursor mint helpers used to forge/tamper cursors in the refusal tests. | "class DecodedPageCursor" | mcp/src/agents_remember/serving/conversation/active/cursor.py:86-86 |
+| The bridge/IPC server seam (L0E) the suite runs on a real socket. | "def control_runner_command" | mcp/src/agents_remember/serving/harness_control_runner.py:55-55 |
+| The cursor mint helpers used to forge/tamper cursors in the refusal tests. | "class DecodedPageCursor" | mcp/src/agents_remember/serving/conversation/active/cursor.py:88-88 |
 
 ## Cross-Repo References
 
@@ -102,6 +102,8 @@ does not replace or fail the parent page. Existing page/event authorization and 
 remain intact.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the superseded
   `ProductionRouteTests` prose citation and the `n/a` table rows with exact anchors and

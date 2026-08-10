@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:45+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`       |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -31,7 +31,7 @@ This module now owns the map from lifecycle state to `Metrics` bucket field, and
 derives it from `lifecycle_state`'s **live half** rather than from a hand-written
 list.
 
-- `ACTIVE_STATES: tuple[LiveState, ...] = LIVE_STATES` cit:([`ACTIVE_STATES`], mcp/src/agents_remember/observer/projection.py:236-236) cit:([`LIVE_STATES`], mcp/src/agents_remember/observer/lifecycle_state.py:136-138) cit:(["def _metrics("], mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27) — the states
+- `ACTIVE_STATES: tuple[LiveState, ...] = LIVE_STATES` cit:([`ACTIVE_STATES`], mcp/src/agents_remember/observer/projection.py:236-236) cit:([`LIVE_STATES`], mcp/src/agents_remember/observer/lifecycle_state.py:105-107) cit:(["def _metrics("], mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27) — the states
   `Metrics` buckets, the live half verbatim. It is deliberately **not** a set
   difference `STATES - TERMINAL_STATES`: a subtraction re-derives the answer from
   a second list that could be wrong, whereas the live half already *is* the
@@ -52,7 +52,7 @@ list.
   keyed by field, so two states sharing a bucket means the later count silently
   overwrites the earlier.
 - `STATE_COUNT_FIELDS: dict[str, str] = state_count_fields(ACTIVE_STATES)`
-  cit:(["STATE_COUNT_FIELDS,"], mcp/src/agents_remember/observer/reducer_impl/_metrics.py:14-14) — the one map the reducer's counting loop reads instead of re-enumerating buckets cit:(["def _metrics(", "**{bucket: counts[state] for state, bucket in STATE_COUNT_FIELDS.items()},"], mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27; mcp/src/agents_remember/observer/reducer_impl/_metrics.py:49-49).
+  cit:(["STATE_COUNT_FIELDS"], mcp/src/agents_remember/observer/reducer_impl/_metrics.py:14-14) — the one map the reducer's counting loop reads instead of re-enumerating buckets cit:(["def _metrics(", "**{bucket: counts[state] for state"], mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27; mcp/src/agents_remember/observer/reducer_impl/_metrics.py:49-49).
 
 **The bug this closed.** `awaiting-developer` had no bucket. `Metrics` declared
 `runningCount`/`blockedCount`/`pausedCount` only, and the reducer summed those
@@ -91,7 +91,7 @@ fails naming the offending state — verified by mutation, `TS2344`). Where the
 mirror genuinely cannot follow is a duplicate WITHIN one half: `Literal["a","a"]`
 collapses to one member here, while a TypeScript tuple keeps both. The
 dashboard's `contract.test.ts` catches that at runtime instead (one bucket per
-live state), which is a weaker gate but not an absent one cit:(["def check_state_partition(", "export type ActiveState = (typeof LIVE_STATES)[number];", "TerminalState = EndOutcome"], mcp/src/agents_remember/observer/lifecycle_state.py:73-98; dashboard/src/types/projection.ts:19-19; mcp/src/agents_remember/observer/lifecycle_state.py:118-118) cit:([`LIVE_STATES`, `TERMINAL_STATES`, `StatesAreFiledOnce`], dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11; dashboard/src/types/projection.ts:25-25). Do not restate this
+live state), which is a weaker gate but not an absent one cit:(["def check_state_partition("], mcp/src/agents_remember/observer/lifecycle_state.py:74-98) cit:(["LIVE_STATES: tuple[LiveState"], mcp/src/agents_remember/observer/lifecycle_state.py:105-107). Do not restate this
 as "the mirror has not adopted the partition" — that was true before this leaf
 and is not true now.
 
@@ -361,12 +361,12 @@ Projection assembly receives the latest landing facts as an input and does not c
 | The lifecycle panel uses structured `createdAt` data in its row comparator. | `compareRows` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1179-1182 |
 | `TaskDocNode.createdAt` and `SeriesSubTaskNode.createdAt` are part of the served projection contract. | `TaskDocNode`; `SeriesSubTaskNode` | mcp/src/agents_remember/observer/projection.py:608-654; mcp/src/agents_remember/observer/projection.py:657-672 |
 | `SeriesNode.createdAt` and `objective` are part of the served projection contract. | `SeriesNode` | mcp/src/agents_remember/observer/projection.py:685-711 |
-| `Analytics.series` carries the folder-keyed master aggregation surface while `taskDocuments` carries concrete active task documents read from JSON-primary sources. | `Analytics`; `taskDocuments`; "def read_task_documents(" | mcp/src/agents_remember/observer/projection.py:956-987; mcp/src/agents_remember/observer/snapshots_impl/_task_documents.py:48-48 |
-| The series-token helper fills served `SeriesNode.seriesTokenTotal` by summing sibling lifecycle tokens for matching references. | "attach_series_token_totals("; `tokens_by_lifecycle`; "for ref in node.subTasks"; "total += tokens_by_lifecycle.get(doc.lifecycleId, 0)"; `model_copy` | mcp/src/agents_remember/observer/series_tokens.py:14-14; mcp/src/agents_remember/observer/series_tokens.py:20-20; mcp/src/agents_remember/observer/series_tokens.py:26-26; mcp/src/agents_remember/observer/series_tokens.py:29-30 |
-| The snapshot reader loads the JSON-primary series documents. | "def read_series_documents(" | mcp/src/agents_remember/observer/snapshots_impl/_task_documents.py:174-174 |
-| The snapshot reader builds series sub-task nodes. | "def _series_subtask_nodes(path: Path, doc: TaskDocument) -> list[SeriesSubTaskNode]:" | mcp/src/agents_remember/observer/snapshots_impl/_task_documents.py:220-220 |
-| The snapshot reader derives sub-task creation order. | "def _series_subtask_created_at(base_dir: Path, ref_file: str) -> s" | mcp/src/agents_remember/observer/snapshots_impl/_task_documents.py:241-241 |
-| The snapshot reader builds task-document nodes, including structured creation data. | "def _task_doc_node(" | mcp/src/agents_remember/observer/snapshots_impl/_task_documents.py:296-296 |
+| `Analytics.series` carries the folder-keyed master aggregation surface while `taskDocuments` carries concrete active task documents read from JSON-primary sources. | `Analytics`; `taskDocuments`; "def read_task_documents(" | mcp/src/agents_remember/observer/projection.py:956-987; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:48-48 |
+| The series-token helper fills served `SeriesNode.seriesTokenTotal` by summing sibling lifecycle tokens for matching references. | "attach_series_token_totals("; `tokens_by_lifecycle`; "for ref in node.subTasks"; "total += tokens_by_lifecycle.get(doc.lifecycleId"; `model_copy` | mcp/src/agents_remember/observer/series_tokens.py:14-14; mcp/src/agents_remember/observer/series_tokens.py:20-20; mcp/src/agents_remember/observer/series_tokens.py:26-26; mcp/src/agents_remember/observer/series_tokens.py:29-30 |
+| The snapshot reader loads the JSON-primary series documents. | "def read_series_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:171-171 |
+| The snapshot reader builds series sub-task nodes. | "def _series_subtask_nodes(path: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:217-217 |
+| The snapshot reader derives sub-task creation order. | "def _series_subtask_created_at(base_dir: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:237-237 |
+| The snapshot reader builds task-document nodes, including structured creation data. | "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:292-292 |
 | The persisted-record peer this mirrors is the append-only observer-event stream, with the same not-a-response-model boundary. | `Event`; "ar-observer-event/v1"; "append-only"; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/observer/events.py:1-13; mcp/src/agents_remember/observer/events.py:39-64 |
 | The reducer produces these shapes and keeps derived analytics pure. | `project_workspace` | mcp/src/agents_remember/observer/reducer.py:128-181 |
 | The reducer's metrics helper keeps derived analytics pure. | "def _metrics(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27 |
@@ -375,8 +375,8 @@ Projection assembly receives the latest landing facts as an input and does not c
 | CGC watcher evidence is converted into repo-covered provider nodes. | `_cgc_repo_provider_nodes` | mcp/src/agents_remember/observer/provider_nodes.py:83-98 |
 | Generic `targetRepos` evidence is converted into repo-covered provider nodes. | `_target_repo_provider_nodes` | mcp/src/agents_remember/observer/provider_nodes.py:139-150 |
 | `DriftSnapshotNode` carries checked/source/memory/report provenance for actionable-drift rows. | `DriftSnapshotNode` | mcp/src/agents_remember/observer/projection.py:316-336 |
-| The state/phase vocabulary the lifecycle projection reuses: live and terminal partitions. | `check_state_partition`; `LIVE_STATES`; `TERMINAL_STATES`; `State` | mcp/src/agents_remember/observer/lifecycle_state.py:73-98; mcp/src/agents_remember/observer/lifecycle_state.py:120-120; mcp/src/agents_remember/observer/lifecycle_state.py:136-139 |
-| The projection takes `ACTIVE_STATES` verbatim from the live half. | "ACTIVE_STATES: tuple[LiveState, ...] = LIVE_STATES" | mcp/src/agents_remember/observer/projection.py:236-236 |
+| The state/phase vocabulary the lifecycle projection reuses: live and terminal partitions (`State` declared in models/lifecycle.py since L9). | "def check_state_partition("; "LIVE_STATES: tuple[LiveState"; "TERMINAL_STATES: frozenset[str] = frozenset(vocabulary_names(TerminalState, label=\"TerminalState\"))"; "State = Literal[LiveState" | mcp/src/agents_remember/observer/lifecycle_state.py:74-98; mcp/src/agents_remember/observer/lifecycle_state.py:105-107; mcp/src/agents_remember/observer/lifecycle_state.py:108-108; mcp/src/agents_remember/models/lifecycle.py:19-19 |
+| The projection takes `ACTIVE_STATES` verbatim from the live half. | "ACTIVE_STATES: tuple[LiveState" | mcp/src/agents_remember/observer/projection.py:236-236 |
 | `LifecycleVocabularyError` is the typed collision error, while `check_state_partition` is the import-time partition refusal. | `LifecycleVocabularyError`; `check_state_partition` | mcp/src/agents_remember/observer/lifecycle_state.py:30-38; mcp/src/agents_remember/observer/lifecycle_state.py:73-98 |
 | The `STATE OF THE MIRROR` comment describes the TypeScript mirror's matching partition and its remaining within-half asymmetry. | "STATE OF THE MIRROR"; `Composition`; "WITHIN one half" | mcp/src/agents_remember/observer/projection.py:217-217; mcp/src/agents_remember/observer/projection.py:228-228; mcp/src/agents_remember/observer/projection.py:233-233 |
 | The TypeScript mirror's matching partition is the client-side counterpart of that comment. | `LIVE_STATES`; `TERMINAL_STATES` | dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11 |
@@ -392,21 +392,6 @@ Projection assembly receives the latest landing facts as an input and does not c
 `EnclosureNode` now has explicit leaf identity and task-root fields, allowing the observer to serve active leaf enclosure records without making clients infer parent folders from contract paths. Leaf `series-contract.md` files are intentionally not `TaskDocNode`s; a promoted leaf needs a real `ar-task-document/v1` JSON document for the dashboard reader to show task content. `TaskDocNode.sections` can still render authored freeform sections from that JSON document. Master docs project as task documents and still project on `Analytics.series` for the legacy master surface. Master leaf ordering uses `createdAt` read from the referenced leaf JSON when available; task names remain display identity, not ordering metadata.
 
 ## Update History
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the `AgentPickupNode` docstring
-## 260713-TES-L5 Current Delta — AgentPickupNode Landing Semantics
-
-`AgentPickupNode`'s docstring (which rides the generated projection schema) now describes a
-pending dashboard response waiting for a turn-boundary landing: the system acks (N16),
-`operator_inbox_consume` is an optional attribution marker, and the sweep predicates read the
-stores directly and never this projection.
-
-## Update History
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the `AgentPickupNode` docstring
-  rewrite — pending rows wait for a turn-boundary landing (N16, the system acks), consume is
-  an optional attribution marker, and the sweep predicates read the stores directly and never
-  this projection. Verification metadata pinned until closeout stamps the 260713-TES-L5
-  commit.
 - 2026-08-04T16:28:49+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound reducer consumption, mirror contract, event envelope, and `ACTIVE_STATES` assignment to operative spans, and extended the series-token row with explicit anchors for the per-reference loop and the token summation body. Verification metadata unchanged.
 - 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change): corrected the mirror partition narrative to the current `LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, and `ACTIVE_STATES` source contract cit:([`LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, `ACTIVE_STATES`], dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11; dashboard/src/types/projection.ts:13-13; dashboard/src/types/projection.ts:21-21). The local explanation and reference table were then rechecked against the current sources cit:(["STATE OF THE MIRROR"], mcp/src/agents_remember/observer/projection.py:217-217) cit:([`project_workspace`], mcp/src/agents_remember/observer/reducer.py:128-181) cit:([`check_state_partition`], mcp/src/agents_remember/observer/lifecycle_state.py:73-98) cit:([`### 2.5 The observer and its projections`], docs/design/observable-lifecycle.md:241-251) cit:([`## 7. Design Principles Preserved`], docs/design/observable-lifecycle.md:363-390).
 - 2026-08-01T00:35+02:00 — 260731-EFA-L4 curator: documented the vocabulary-derived metrics map, the `awaitingDeveloperCount` bucket, and the collision refusal in the current source cit:([`ACTIVE_STATES`, `state_count_field`, `state_count_fields`, `STATE_COUNT_FIELDS`, `awaitingDeveloperCount`], mcp/src/agents_remember/observer/projection.py:236-236; mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:311-311; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/observer/projection.py:282-282). The focused projection tests and reducer-side `_metrics` path remain the behavioral evidence cit:(["class MetricsBucketVocabularyTests(unittest.TestCase):", "class StateCountFieldTests(unittest.TestCase):", "def _metrics("], mcp/tests/test_observer_projection_metrics.py:128-128; mcp/tests/test_observer_projection_metrics.py:461-461; mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27; mcp/tests/test_observer_projection_metrics.py:128-233; mcp/tests/test_observer_projection_metrics.py:461-516).

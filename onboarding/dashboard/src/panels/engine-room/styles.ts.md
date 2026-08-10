@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/styles.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-07T08:19Z |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`       |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -203,7 +203,7 @@ their established classes.
   the nine-state comment above `state: str`, and the last field `detail` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:787-787). No body claim changed.
 
 - 2026-08-01T10:44+02:00 — 260731-EFA-L4 curator: corrected the `refusedConduit` commentary. Polarity is
-  no longer "read off the projection (`edge.state` failed→red / stale→amber, **or `edge.refusedPolarity`**)"
+  no longer "read off the projection (`edge.state` failed→red / stale→amber"
   — the second source is gone and the field never existed on the server model (`EngineProcessEdge`,
   `extra="forbid"`, `observer/projection.py` L762-L781). Polarity is derived from `edge.state` alone by
   `EnclosureCanvas::refusedPolarityOf`. Also retitled the amber case: the T9C lane is CGC-seed-**stale**,

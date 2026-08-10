@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/compact_content.py`     |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-05-29T08:53+02:00                               |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`           |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`           |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                               |
 
 ## Purpose
@@ -27,7 +27,7 @@ public configuration hook for that indent in the supported `mcp` range.
 
 `install_compact_content()` monkeypatches `_convert_to_content` with a wrapper
 that calls the original converter, then re-serializes any `TextContent` block
-whose text parses as JSON using `json.dumps(..., separators=(",", ":"))`.
+whose text parses as JSON using `json.dumps(..., separators=("", ":"))`.
 `_compact_text_block()` performs the per-block re-serialization and returns the
 block unchanged when the text is not JSON (wrapped in `contextlib.suppress`),
 so plain-string and already-minified blocks pass through untouched. The patch is
@@ -51,7 +51,7 @@ compacted text remains a faithful mirror of the structured payload.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `create_server()` installs the shim as its first action. | `create_server` | mcp/src/agents_remember/mcp/server.py:18-28 |
+| `create_server()` installs the shim as its first action. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
 | Behavior is verified through an in-process tool call. | `test_tool_call_text_block_is_compact_and_matches_structured` | mcp/tests/test_compact_content.py:50-72 |
 
 ## Update History

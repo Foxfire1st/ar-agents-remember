@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_transport.py` |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-30T15:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The adapter's floor-gated sub-agent-text probe stops the transport and starts the same object again, so a completed stop must release process ownership for the relaunch to launch at all. | `_negotiate` | mcp/src/agents_remember/serving/harness_control_claude.py:176-223 |
-| The adapter's own shutdown stops the transport before it cancels the state reader, so ownership release is the final shutdown step rather than an early reset. | `finish_reader` | mcp/src/agents_remember/serving/harness_control_claude.py:528-528 |
+| The adapter's own shutdown stops the transport before it cancels the state reader, so ownership release is the final shutdown step rather than an early reset. | `finish_reader` | mcp/src/agents_remember/serving/harness_control_claude.py:530-530 |
 
 ### 260713-PHA-L6 Boundary
 
@@ -68,6 +68,8 @@ authority guard, executed immediately before the framed write, so an atomic with
 zero candidate bytes and unrelated response traffic cannot interleave a control frame.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T02:49:11+02:00 — W3-B01 curator: curated 2 Repo-Internal table citations with exact sub-agent-text capability and reader-finish anchors. Verification metadata remains unchanged for closeout.
 - 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: documented the single-process ownership contract —

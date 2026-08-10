@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/memory.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -51,13 +51,15 @@ apply model adds `carriedPaths` (paths whose onboarding actually carried).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Memory MCP application entry points route these tools to drift, quality, route-index, init, baseline, and carryover services. | `drift_check_tool`; `memory_quality_check_tool`; `citation_check_tool`; `citation_source_index_build_tool`; `citation_fix_tool`; `citation_migrate_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:168-186; mcp/src/agents_remember/application/memory_tools.py:189-212; mcp/src/agents_remember/application/memory_tools.py:240-272; mcp/src/agents_remember/application/memory_tools.py:275-292; mcp/src/agents_remember/application/memory_tools.py:295-321; mcp/src/agents_remember/application/memory_tools.py:324-355; mcp/src/agents_remember/application/memory_tools.py:358-380; mcp/src/agents_remember/application/memory_tools.py:383-395; mcp/src/agents_remember/application/memory_tools.py:443-450; mcp/src/agents_remember/application/memory_tools.py:453-469; mcp/src/agents_remember/application/memory_tools.py:472-477; mcp/src/agents_remember/application/memory_tools.py:480-495 |
-| `DriftStatus` is the shared status declaration. | `DriftStatus` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14 |
+| Memory MCP application entry points route these tools to drift, quality, route-index, init, baseline, and carryover services. | `drift_check_tool`; `memory_quality_check_tool`; `citation_check_tool`; `citation_source_index_build_tool`; `citation_fix_tool`; `citation_migrate_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:176-194; mcp/src/agents_remember/application/memory_tools.py:197-220; mcp/src/agents_remember/application/memory_tools.py:248-280; mcp/src/agents_remember/application/memory_tools.py:283-300; mcp/src/agents_remember/application/memory_tools.py:303-329; mcp/src/agents_remember/application/memory_tools.py:332-363; mcp/src/agents_remember/application/memory_tools.py:366-388; mcp/src/agents_remember/application/memory_tools.py:391-403; mcp/src/agents_remember/application/memory_tools.py:451-458; mcp/src/agents_remember/application/memory_tools.py:461-477; mcp/src/agents_remember/application/memory_tools.py:480-485; mcp/src/agents_remember/application/memory_tools.py:488-503 |
+| "status: DriftStatus" is the shared status declaration. | "status: DriftStatus" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14 |
 | `DriftCheckResponse.status` uses the shared `DriftStatus` alias. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:13-27 |
 | `DriftSummary.status` uses the same shared `DriftStatus` alias. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |
 | The context-packet wire face includes its matching `error` field. | `DriftSummary`; `error` | mcp/src/agents_remember/models/drift.py:13-23 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: split the shared status declaration from both response consumers and the context-packet error field, with regenerated model extents.
 

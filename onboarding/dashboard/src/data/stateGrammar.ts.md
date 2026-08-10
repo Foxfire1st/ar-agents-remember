@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/stateGrammar.ts`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -93,7 +93,7 @@ the reviewed task evidence for any current behavioral claim.
 | The `pulseSlow` keyframe + the effects-off freeze that governs it. | `pulseSlow` | dashboard/src/index.css:91-98 |
 | The server classifier whose words this mirrors (turn state, sweep cadence). | `classify_turn_state`; `boot_ready` | mcp/src/agents_remember/serving/turn_state.py:157-171; mcp/src/agents_remember/serving/turn_state.py:174-177 |
 | The ANY-pending derivation (N1) the blocked-on-human guard now calls — singular slot OR non-empty multiplexed plural. | `sessionHasPendingInteraction` | dashboard/src/data/sessions.ts:525-532 |
-| The SOLE producer of `liveTurnWorking` (R9): computed for the focused seat from the conversation projection status and merged into `focused`. | "{ ...focusedBase, liveTurnWorking: true }" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:316-316 |
+| The SOLE producer of `liveTurnWorking` (R9): computed for the focused seat from the conversation projection status and merged into `focused`. | "{ ...focusedBase" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:316-316 |
 | The unit suite: per-state mapping, precedence, waiting(reason), the no-steps pulse ruling, the R9 override winning only below terminal/fault/blocked, and the N1 agent-only-blocked pin. | "seatVisualState mapping (spec §2.4)" | dashboard/src/data/stateGrammar.test.ts:14-158 |
 
 ## Cross-Repo References

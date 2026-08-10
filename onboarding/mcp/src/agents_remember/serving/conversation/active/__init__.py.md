@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash |  `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
-| lastVerifiedCommitDate |  2026-07-18T11:10:09+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sibling router implements the two owned active routes on the exact-session conversation prefix. | "/api/terminal/{ar_session_id}/conversation" | mcp/src/agents_remember/serving/conversation/active/api.py:62-62 |
+| The sibling router implements the two owned active routes on the exact-session conversation prefix. | "/api/terminal/{ar_session_id}/conversation" | mcp/src/agents_remember/serving/conversation/active/api.py:66-66 |
 
 ## Cross-Repo References
 

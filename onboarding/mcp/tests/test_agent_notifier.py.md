@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_agent_notifier.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-09T06:48+02:00               |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -203,9 +203,9 @@ spec.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: the fact predicates, the action dispatcher, and the sweep entry point. | "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:640-640; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-330; mcp/src/agents_remember/serving/agent_notifier.py:93-180 |
+| The module under test: the fact predicates, the action dispatcher, and the sweep entry point. | "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:640-640; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:331-331; mcp/src/agents_remember/serving/agent_notifier.py:95-182 |
 | The heartbeat store the zero-drift and second-sweep tests exercise directly. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
-| The terminal catalog declares the typed `Literal` aliases. | "TerminalSessionKind = Literal"; "TerminalSessionStatus = Literal" | mcp/src/agents_remember/serving/terminal_catalog.py:42-43 |
+| The terminal catalog declares the typed `Literal` aliases. | "TerminalSessionKind = Literal"; "TerminalSessionStatus = Literal" | mcp/src/agents_remember/models/terminal_catalog.py:21-23 |
 | The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_agent_notifier.py:49-73 |
 | The fake-host casting convention this suite reuses rather than inventing its own duck-typing idiom. | `_FakeTerminalHost`; "class TerminalHost:" | mcp/src/agents_remember/serving/terminal.py:109-109; mcp/tests/test_terminal_ws.py:227-387 |
 | The operator-inbox terminal state and compaction semantics used by the sweep tests (the ladder transitions are deleted; legacy `ladder-resolved` rows stay parse-compat). | `list_redeliverable`; `reconcile_and_compact` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:153-173; mcp/src/agents_remember/controlplane/operator_inbox_store.py:234-234 |
@@ -243,6 +243,7 @@ surface and the sweep never evaluates them.
 
 ## Update History
 
+- 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the deletion of the
   expectation/ladder predicate test classes and the fact-only inbox-predicate surface.
   Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
@@ -315,3 +316,5 @@ surface and the sweep never evaluates them.
   monotonic-chip-counter fix (a live F-V/N1 instance found while writing this suite) as a preserved
   invariant for future test additions. Verification metadata pinned until closeout stamps the
   260707-HFX2-L2 commit.
+
+

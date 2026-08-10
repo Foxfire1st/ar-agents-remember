@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_files.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:20+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -82,7 +82,7 @@ Run with `PYTHONPATH=mcp/src python -m pytest mcp/tests/test_serving_files.py -q
 | --- | --- | --- |
 | The files API under test (`FileScope`, `list_repos`, `list_dir`, `read_file`, `resolve_onboarding`, `resolve_partner`, `_resolve_within`). | `list_repos`; `list_dir`; `read_file`; `resolve_onboarding`; `resolve_partner` | mcp/src/agents_remember/serving/files.py:92-107; mcp/src/agents_remember/serving/files.py:161-184; mcp/src/agents_remember/serving/files.py:190-213; mcp/src/agents_remember/serving/files.py:232-239; mcp/src/agents_remember/serving/files.py:264-290 |
 | The app factory the route tests build. | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
-| `McpRuntimeConfig` / `RepositoryScope` constructed by the catalog + route tests. | `McpRuntimeConfig`; `RepositoryScope` | mcp/src/agents_remember/mcp/config.py:68-73; mcp/src/agents_remember/mcp/config.py:113-137 |
+| `McpRuntimeConfig` / `RepositoryScope` constructed by the catalog + route tests. | `McpRuntimeConfig`; "class RepositoryScope:" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:113-137; mcp/src/agents_remember/kernel/primitives/runtime_config.py:76-81 |
 | The serving test suite whose `_config` / `TestClient` pattern this mirrors. | `_config` | mcp/tests/test_serving.py:95-101 |
 
 ## 260718-CHATS-L5I Current Delta
@@ -92,6 +92,8 @@ Serving-files regressions now assert that repository discovery is single-pass an
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-03T02:57+02:00 — W3-B03 curator: curated 4 table citations for the files API, app factory, runtime config, and serving-test fixture pattern; fixer-generated ranges verified.
 
 - 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: the whole diff for this file is two type

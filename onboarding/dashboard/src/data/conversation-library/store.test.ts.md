@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation-library/store.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T10:08+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ route-keyed `Response`s. `beforeEach` resets the store. The seven cases prove:
   fresh one).
 - **no active-session field exists** — cit:(["activeSessionId"], dashboard/src/data/conversation-library/store.test.ts:95-95): a STRUCTURAL proof — the store's key set contains no
   `activeSessionId`; the library store cannot mark a row live.
-- **requestId retained after a transport failure (F6b)** — cit:(["keeps the requestId after a transport failure so a re-attempt reconciles, never mints a fresh id (F6b)"], dashboard/src/data/conversation-library/store.test.ts:99-106): a dropped POST keeps the
+- **requestId retained after a transport failure (F6b)** — cit:(["keeps the requestId after a transport failure so a re-attempt reconciles"], dashboard/src/data/conversation-library/store.test.ts:99-106): a dropped POST keeps the
   `requestId`, clears `dispatching`, and records the error so a re-attempt reconciles under the same id.
 - **reconcileOpen re-drives open-reconcile under the same id (F6a)** — cit:(["reconcileOpen re-drives open-reconcile under the SAME requestId (F6a)"], dashboard/src/data/conversation-library/store.test.ts:108-128): asserts a
   `/open-reconcile` request under `req-stable` and reaches `openedForFocus`.

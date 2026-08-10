@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_projector_codex_agents.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-09T16:43+02:00                   |
-| lastVerifiedCommitHash |  `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ non-parent (parent boot/resume is silent, and without the parent context the sha
 mints nothing); agent-thread lifecycle frames drive roster status while an agent
 `turn/completed` never feeds the parent-scoped status service.
 
-cit:(["class CodexAgentEngineTests1(unittest.IsolatedAsyncioTestCase):"], mcp/tests/test_conversation_projector_codex_agents_engine_1.py:89-89) drives the real `ActiveSessionProjector` over a
+cit:(["class CodexAgentEngineTests1(unittest.IsolatedAsyncioTestCase):"], mcp/tests/test_conversation_projector_codex_agents_engine_1.py:97-97) drives the real `ActiveSessionProjector` over a
 `_MultiplexedBridge` (extends the `_ScriptedBridge` harness with per-thread native pages and
 demux-keyed frames): the 2026-07-24 incident stream multiplexes into one contiguous
 ordinal space with one upserted roster settled by the agent's turn completion, agent
@@ -130,9 +130,9 @@ vendored codex protocol via the shared fixture module.
 | Per-thread native twin suppression under test: a native output is dropped when its turn or user request id was already seen live in that thread's bucket. | `suppress_live_twins` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:254-281 |
 | The page-driven agent backfill under test: the paged `_walk` scopes every evidence handle to `<thread>:<nativeId>`, drops roster items, and binds the thread. | `_walk` | mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:139-173 |
 | Plural pendings under test: the parent pending rotates singly while multiplexed thread-keyed pendings are upserted/resolved concurrently against it. | `apply`; `_apply_multiplexed` | mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py:44-54; mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py:56-79 |
-| The two parameter objects the suite wires the engine through. | `ProjectedSession`; "The whole read surface a projection is assembled from: five bridge reads, one session." | mcp/src/agents_remember/serving/conversation/active/projector/facade.py:42-56; mcp/src/agents_remember/serving/conversation/active/projector/wiring.py:37-37 |
-| The scripted-bridge harness this suite extends with per-thread native pages. | `_ScriptedBridge` | mcp/tests/test_conversation_active_service.py:75-169 |
-| The additive agent grammar on conversation items. | "class ConversationAgentRef(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_blocks.py:137-137 |
+| The two parameter objects the suite wires the engine through. | `ProjectedSession`; "The whole read surface a projection is assembled from: five bridge reads" | mcp/src/agents_remember/serving/conversation/active/projector/facade.py:42-56; mcp/src/agents_remember/serving/conversation/active/projector/wiring.py:31-31 |
+| The scripted-bridge harness this suite extends with per-thread native pages. | `_ScriptedBridge` | mcp/tests/test_conversation_active_service.py:66-164 |
+| The additive agent grammar on conversation items. | "class ConversationAgentRef(WireModel):" | mcp/src/agents_remember/models/conversations/content.py:139-139 |
 
 ## Cross-Repo References
 
@@ -189,7 +189,7 @@ without native-id cursor assumptions.
   `child_history.py` L139-L173 (the paged `_walk` with thread-scoped evidence refs),
   `interaction_projection.py` L44-L79 (`apply` rotating the single parent pending, then
   `_apply_multiplexed` upserting/resolving the thread-keyed plural pendings around it), and the two
-  parameter objects `ProjectedSession` cit:([`ProjectedSession`], mcp/src/agents_remember/serving/conversation/active/projector/facade.py:42-56) + `BridgeReaders` cit:([`BridgeReaders`], mcp/src/agents_remember/serving/conversation/active/projector/wiring.py:35-48). Beyond my worklist and NOT fixed: the other two rows in this table
+parameter objects "class ProjectedSession:" cit:(["class ProjectedSession:"], mcp/src/agents_remember/serving/conversation/active/projector/facade.py:42-56) + the wiring classes cit:(["class BridgeReaders"], mcp/src/agents_remember/serving/conversation/active/projector/wiring.py:30-30). Beyond my worklist and NOT fixed: the other two rows in this table
   (`_agent_wire_fixtures.py` L25-L36, `projectors/codex.py` L47) cite this test file's own import
   line numbers rather than lines in the linked file, so they point at unrelated text.
 

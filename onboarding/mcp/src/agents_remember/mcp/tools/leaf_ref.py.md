@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/leaf_ref.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated            | 2026-07-07T20:50+02:00                          |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`      |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`      |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -36,8 +36,8 @@ session `kind` when it is one of the modeled values.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared resolver error facts. | `LeafRefStatus`; `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:30-30; mcp/src/agents_remember/worktrees/leaf_refs.py:45-72 |
-| `terminal.py` imports `LeafRefStatus` and declares the `LeafAssignmentStatus` and `SpawnAgentSessionStatus` aliases. | "LeafAssignmentStatus = Literal["; "SpawnAgentSessionStatus = Literal["; "from agents_remember.worktrees.leaf_refs import LeafRefStatus" | mcp/src/agents_remember/models/terminal.py:8-8; mcp/src/agents_remember/models/terminal.py:21-21; mcp/src/agents_remember/models/terminal.py:47-47 |
+| Shared resolver error facts (the status vocabulary is declared in `models/terminal.py`; `worktrees.leaf_refs` imports it). | "LeafRefStatus = Literal["; "class LeafRefResolutionError" | mcp/src/agents_remember/models/terminal.py:17-17; mcp/src/agents_remember/worktrees/leaf_refs.py:39-72 |
+| `models/terminal.py` declares `LeafRefStatus` and the `LeafAssignmentStatus` and `SpawnAgentSessionStatus` aliases; `worktrees.leaf_refs` imports the status from here. | "LeafRefStatus = Literal["; "LeafAssignmentStatus = Literal["; "SpawnAgentSessionStatus = Literal["; "from agents_remember.models.terminal import LeafRefStatus" | mcp/src/agents_remember/models/terminal.py:17-17; mcp/src/agents_remember/models/terminal.py:19-19; mcp/src/agents_remember/models/terminal.py:45-45; mcp/src/agents_remember/worktrees/leaf_refs.py:12-12 |
 
 ## Update History
 

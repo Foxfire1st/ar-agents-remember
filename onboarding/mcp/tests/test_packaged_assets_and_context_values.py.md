@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_packaged_assets_and_context_values.py`  |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-08-01T14:20+02:00                                  |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`              |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`              |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -85,6 +85,8 @@ against the raw bytes: `log_path(None).is_file()`, `read_bytes() == b""`, `read(
 | The provider lifecycle entry points the fan-out drives. | `run_grepai_lifecycle`, `run_cgc_lifecycle` | mcp/src/agents_remember/providers/lifecycle_service.py:50-94; mcp/src/agents_remember/providers/lifecycle_service.py:97-137 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T03:12:00+02:00 — 260731-EFA-L6-W3-B01 curator: curated 8 Repo-Internal table citations and 1 prose citation with exact asset, context, gate-store, durability-suite, provider-lifecycle, and current prune-arm anchors. Verification metadata remains unchanged for closeout.
 

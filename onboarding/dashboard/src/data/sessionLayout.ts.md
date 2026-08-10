@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionLayout.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | Thresholds, floor math, rail conversion/clamps, persisted-layout probe, and the edge-transition rule. | `RAIL_AUTO_COLLAPSE_PX`, `railDefaultPercent`, `hasPersistedPanelLayout`, `stageBelowPtyFloor`, `autoCollapseTransition` | dashboard/src/data/sessionLayout.ts:6-6; dashboard/src/data/sessionLayout.ts:36-43; dashboard/src/data/sessionLayout.ts:50-61; dashboard/src/data/sessionLayout.ts:64-66; dashboard/src/data/sessionLayout.ts:74-85 |
 | The consumer: root/stage measurement, one-shot `calibrateRail`, and the collapse/expand wiring. | `calibrateRail` | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:56-56 |
-| The unit suite: crossings, quiet-below-threshold, floor edges, conversion/clamps/fallback, storage probing. | "the ~80-col PTY floor", "the ~280px rail default (review round 2, finding 4)" | dashboard/src/data/sessionLayout.test.ts:34-40; dashboard/src/data/sessionLayout.test.ts:42-58 |
+| The unit suite: crossings, quiet-below-threshold, floor edges, conversion/clamps/fallback, storage probing. | "the ~80-col PTY floor", "the ~280px rail default (review round 2" | dashboard/src/data/sessionLayout.test.ts:34-40; dashboard/src/data/sessionLayout.test.ts:42-58 |
 
 ## Cross-Repo References
 

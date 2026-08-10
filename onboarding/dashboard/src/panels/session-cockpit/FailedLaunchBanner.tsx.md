@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ SessionsView for any focused seat with `controlState === "failed"`, above the pt
 | The owner mounting it for a focused FAILED seat and opening the pre-filled flow. | `onLaunchCorrected` | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:179-179 |
 | The flow consuming the refused-pair prefill. | `LaunchPrefill` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:41-47 |
 | The failed-row fixtures ×3 harnesses (verbatim bridgeErrors, retained refused pairs). | `FAILED_LAUNCH_ROWS` | dashboard/src/test/fixtures/openResponses.ts:140-144 |
-| The suite: verbatim ×3, never-validated, prefill, honest confirm, decline, stated absence. | "FailedLaunchBanner (R6) — uniform across Claude, Codex, and Pi" | dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:30-106 |
+| The suite: verbatim ×3, never-validated, prefill, honest confirm, decline, stated absence. | "FailedLaunchBanner (R6) — uniform across Claude" | dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:30-106 |
 
 ## Update History
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.

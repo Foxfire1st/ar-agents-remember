@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a`             |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`             |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ contain private sibling repository names, symbols, paths, or code.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 line citation. The catalog is 184 lines,
   so the Practical Rules row's L177-L185 ran past the end; the `## Practical Rules` section now reads
-  L174-L184 (five bullets, ending on the "Treat CGC output as discovery, not proof" source-confirmation
+  L174-L184 (five bullets, ending on the "Treat CGC output as discovery" source-confirmation
   rule). Verified by reading the file tail.
 - 2026-07-02T15:40+02:00 — Updated the CGC dependency-method catalog to document
   the current native command shape as `analyze deps <module>`.

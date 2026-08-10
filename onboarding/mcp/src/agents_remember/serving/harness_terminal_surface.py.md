@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_terminal_surface.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-14T12:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,11 +36,13 @@ the draft for reconciliation. Pane content remains a readable projection, not au
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Draft and transcript models. | `UncommittedDraft` | mcp/src/agents_remember/serving/harness_control_models.py:205-213; mcp/src/agents_remember/serving/harness_control_models.py:278-287 |
+| Draft and transcript models. | `UncommittedDraft` | mcp/src/agents_remember/serving/harness_control_models.py:110-119 |
 | Shared queue owner. | `HarnessControlBridge` | mcp/src/agents_remember/serving/harness_control_bridge.py:77-543 |
 | R11 scenarios. | `test_ambiguous_draft_submission_retains_human_text` | mcp/tests/test_harness_control_conformance_1.py:230-244 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:29+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 3 citation rows with exact anchors (`UncommittedDraft`/`TranscriptEntry` model extents, `HarnessControlBridge`, and the draft-custody test block 551-618 containing `test_ambiguous_draft_submission_retains_human_text`) and ledger-verified ranges. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 

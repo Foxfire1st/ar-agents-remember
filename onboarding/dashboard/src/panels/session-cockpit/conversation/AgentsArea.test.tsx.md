@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `a401e3dba0bc6e9723451edbfdefb8d77c42945d` |
-| lastVerifiedCommitDate | 2026-07-27T00:27:33+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,9 +30,9 @@ arrow navigation with wrap + scroll-into-view, Enter/click select, Esc/backdrop 
   testid.
 - **Empty roster** (cit:(["shows a static '0 agents' line for the empty roster — no dead toggle"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx:36-43)): the line is `0 agents` rendered as a SPAN — nothing to open, so no
   dead toggle (`aria-haspopup` absent) — and no menu mounts.
-- **One line at any size** (cit:(["renders ONLY the compact count line, however large the roster (no per-agent rows)"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx:45-55)): a 20-agent roster renders ONLY the compact line
+- **One line at any size** (cit:(["renders ONLY the compact count line"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx:45-55)): a 20-agent roster renders ONLY the compact line
   (`20 agents · 10 running`) — no per-agent options, no menu.
-- **Open on Enter** (cit:(["opens the menu on Enter with listbox aria, option content, and focus on the listbox"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx:57-94)): the line reports `aria-haspopup="listbox"` + honest
+- **Open on Enter** (cit:(["opens the menu on Enter with listbox aria"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx:57-94)): the line reports `aria-haspopup="listbox"` + honest
   `aria-expanded`; Enter opens the menu with `role="listbox"`, DOM focus on the listbox, one
   `role="option"` per agent, word-carrying status chips in order, the final-message preview ONLY
   where terminal evidence carried it, and the first option as initial `aria-activedescendant` /

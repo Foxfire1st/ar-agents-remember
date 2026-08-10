@@ -1,12 +1,15 @@
+Warning: truncated output (original token count: 67697)
+Total output lines: 1510
+
 # Entities
 
 | Field       | Value                  |
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00 |
+| lastUpdated | 2026-08-08T14:38+02:00 |
+| lastVerifiedCommitHash | `cf5ef507f2542d6cd2f9d37a6b72148d3b91b340`
+| lastVerifiedCommitDate | 2026-08-06T13:55:47+02:00 |
 | status      | active                 |
 
 ## Purpose
@@ -19,27 +22,27 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 
 | Entity                              | Algorithm         | Fingerprint                                                               | Evidence Paths                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ----------------------------------- | ----------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Onboarding Unit                     | `git-blob-set-v1` | `sha256:ec102301fff3b4f96de37992c314cc9ffde407bf4474edc39ff103910b237088` | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py`                      |
-| Runtime AGENTS Template Package     | `git-blob-set-v1` | `sha256:b62c76f77a0f69a6f816def64b3d7f71070e3f51c76e006319421bbe7be54b9b` | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md`; `mcp/src/agents_remember/install/runtime.py`                                                                                                                                                                                                                                    |
-| Coordination Context                | `git-blob-set-v1` | `sha256:5f4e69d2974736bedbe021d9ceceb9e00fcf488556f4e8ece655ce8108208830` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
-| Path Rule                           | `git-blob-set-v1` | `sha256:1c2273132cd93ace007b7a2f835f2b35628b81fe7a92c9f0404e944648eebc59` | `mcp/src/agents_remember/kernel/coordination_context_resolver.py`; `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json`; `examples/mcp/settings.example.json`                                                                                                                                                                                                       |
-| Memory Quality Control              | `git-blob-set-v1` | `sha256:8ff4d0e9d4e383ec166e50b7cdcd4a23c27c0b5ad451887cc46cdd2989d257e3` | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md`; `mcp/src/agents_remember/memory_quality/check.py`; `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py`; `mcp/src/agents_remember/memory_quality/style/update_history/history_order.py`; `mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py` |
+| Onboarding Unit                     | `git-blob-set-v1` | `sha256:52fbceb01ca55fe0c3a212c06af879d13fee19444df7527d403f6d3784748d6b` | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py`                      |
+| Runtime AGENTS Template Package     | `git-blob-set-v1` | `sha256:66db35f7b3210c7b0301e4995fef20cc7ed53e0de7fa0594d808c9a0b23c107e` | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md`; `mcp/src/agents_remember/install/runtime.py`                                                                                                                                                                                                                                    |
+| Coordination Context                | `git-blob-set-v1` | `sha256:8725cd636fe7a28a9cc46bc37f2ee1dd615c892c7e1733d10a9f865b8a042130` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
+| Path Rule                           | `git-blob-set-v1` | `sha256:77175049abc3fb1a4cb416fc7d451a1c52bcce8ffb01bf078726c5f534b70e61` | `mcp/src/agents_remember/kernel/coordination_context_resolver.py`; `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json`; `examples/mcp/settings.example.json`                                                                                                                                                                                                       |
+| Memory Quality Control              | `git-blob-set-v1` | `sha256:eba28a4da49aab6be5f49d04cbeb79b907ee639175d58741866fb1676b3621e5` | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md`; `mcp/src/agents_remember/memory_quality/check.py`; `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py`; `mcp/src/agents_remember/memory_quality/style/update_history/history_order.py`; `mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py` |
 | File-Level Onboarding Content Model | `git-blob-set-v1` | `sha256:cd698aab9465ecd7ddd2a7dfa2606ff49013e9cba93507bdb9d52e559d894259` | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md` |
 | Light Task Artifact                 | `git-blob-set-v1` | `sha256:2670e6700fad52cb381a310a5e97b85d5979debccc59e86aadaef96cd6908f74` | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md`                                                                                                                                                                                                                                                                                      |
-| External Memory Ledger              | `git-blob-set-v1` | `sha256:22d369d70e79de999e6e4d12ac62996bc5212e5c06e69c538876ac472a42b86c` | `mcp/src/agents_remember/kernel/memory_ledger.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                |
-| Memory Baseline Adoption            | `git-blob-set-v1` | `sha256:46d11aad907580077564f5b85c7fa57a1fc472503737521433ac997c51df9af1` | `mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                                                                                                                  |
-| Worktree Contract                   | `git-blob-set-v1` | `sha256:732a12b804770726c26fc25787be205a71e5567632c6874fc572c5dad1f792d6` | `mcp/src/agents_remember/worktrees/worktree_contract.py`; `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/guidance.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`                                                                                                                                                                                                     |
-| Worktree Integration                | `git-blob-set-v1` | `sha256:cebd9724e0bab1d560eda3642706b786e72db8874a06e455f1b38a03976d89c6` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`                                                                                                                                                                                                                                                                                     |
-| Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:5f4e69d2974736bedbe021d9ceceb9e00fcf488556f4e8ece655ce8108208830` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
-| Provider Degradation Protocol       | `git-blob-set-v1` | `sha256:672599780fb3a6e606b0e319e4fb08e9aaaca0dc1222bd8a53d6482d113a7fc7` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/mcp/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/system-specialist.md` |
-| Seat Binding Identity               | `git-blob-set-v1` | `sha256:1578f673a0c38efd3f956f9c6f1b25b59a8ac2a0168e67eedc3bc62bc1846e6e` | `dashboard/src/data/sessions.ts`; `dashboard/src/panels/LeafAttachPicker.tsx`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/serving/seat_binding.py`; `mcp/src/agents_remember/serving/sprint_role_binding.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_leaf_assignment.py`; `mcp/src/agents_remember/serving/terminal_opener.py` |
-| Seat Retirement                     | `git-blob-set-v1` | `sha256:f321cd5f8693ee65567f0fd3ac82dcb54b0b2a49d5028227fe0222cde3e9ce53` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/retire.py`; `mcp/src/agents_remember/serving/retire_policy.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
-| Seat Landing Archive                | `git-blob-set-v1` | `sha256:279716d1eea797ebe28fc39337045db53990c8e261ed08a654407c6a04f387aa` | `dashboard/src/data/railModel.ts`; `dashboard/src/data/sessionLifecycle.ts`; `dashboard/src/panels/session-cockpit/SessionRail.tsx`; `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/landing.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
-| Agent-Notifier Sweep               | `git-blob-set-v1` | `sha256:8a4cb0fcdf3abd88dd377454b0a764e2597336e036c1c2eca4fbca20672128d5` | `mcp/src/agents_remember/kernel/agentic_settings.py`; `mcp/src/agents_remember/mcp/tools/base.py`; `mcp/src/agents_remember/serving/pane_signals.py`; `mcp/src/agents_remember/serving/agent_notifier.py`; `mcp/src/agents_remember/serving/agent_notifier_heartbeat.py`; `mcp/src/agents_remember/serving/seat_turn_truth.py`; `mcp/src/agents_remember/serving/state_signals.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_evidence.py`; `mcp/src/agents_remember/serving/owner_signals.py`; `mcp/src/agents_remember/serving/_agent_notifier_actions.py`; `mcp/src/agents_remember/serving/_agent_notifier_evaluation.py`; `mcp/src/agents_remember/serving/_app_lifespan.py`; `mcp/src/agents_remember/serving/relay_death_watch.py`; `mcp/src/agents_remember/controlplane/inbox_backoff.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/operator_inbox_store.py`; `mcp/src/agents_remember/controlplane/operator_inbox_transitions.py`; `mcp/src/agents_remember/controlplane/interaction_retention.py`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/controlplane/agent_notifier_signals.py` |
-| Task Document                       | `git-blob-set-v1` | `sha256:caa1d67352b0230e68b1bfb800f8d727d3e83044dfc35dfc5a2012de56049f50` | `dashboard/src/data/taskDocuments.ts`; `dashboard/src/panels/detail-panel/DetailPanel.tsx`; `mcp/src/agents_remember/observer/projection.py`; `mcp/src/agents_remember/observer/snapshots.py`; `mcp/src/agents_remember/serving/app.py` |
-| Delivery Injector                   | `git-blob-set-v1` | `sha256:498191984439028f2efeeac435c9627dec603490fddc1e4596d81c4f3ac91cfb` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/harness_adapters.py`; `mcp/src/agents_remember/serving/harness_logs.py`; `mcp/src/agents_remember/serving/inbox_delivery.py`; `mcp/src/agents_remember/serving/injector.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_paste.py` |
-| Harness Capability Snapshot         | `git-blob-set-v1` | `sha256:6030531256a98828e5bfa929d1eabb03f7e268afb9721c1468234710746d1390` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/claude_stream_protocol.py`; `mcp/src/agents_remember/serving/codex_app_server_adapter.py`; `mcp/src/agents_remember/serving/codex_app_server_session.py`; `mcp/src/agents_remember/serving/harness_capabilities.py`; `mcp/src/agents_remember/serving/harness_capability_catalog.py`; `mcp/src/agents_remember/serving/harness_control_adapter.py`; `mcp/src/agents_remember/serving/harness_control_api.py`; `mcp/src/agents_remember/serving/harness_control_bridge.py`; `mcp/src/agents_remember/serving/harness_control_claude.py`; `mcp/src/agents_remember/serving/harness_control_client.py`; `mcp/src/agents_remember/serving/harness_control_factories.py`; `mcp/src/agents_remember/serving/harness_control_models.py`; `mcp/src/agents_remember/serving/harness_control_runner.py`; `mcp/src/agents_remember/serving/harness_launch.py`; `mcp/src/agents_remember/serving/pi_rpc_adapter.py`; `mcp/src/agents_remember/serving/pi_rpc_configuration.py`; `mcp/src/agents_remember/serving/pi_rpc_events.py`; `mcp/src/agents_remember/serving/terminal_opener.py` |
-| Harness Submission Authority        | `git-blob-set-v1` | `sha256:7d1a6b56e6e114ba39cf04ec74a8a990250327127b4c6551785354afdfbbfc9b` | `dashboard/src/data/submissionLifecycleClient.ts`; `dashboard/src/data/submitClient.ts`; `dashboard/src/data/submitMachine.ts`; `mcp/src/agents_remember/serving/codex_app_server_adapter.py`; `mcp/src/agents_remember/serving/harness_control_adapter.py`; `mcp/src/agents_remember/serving/harness_control_api.py`; `mcp/src/agents_remember/serving/harness_control_bridge.py`; `mcp/src/agents_remember/serving/harness_control_claude.py`; `mcp/src/agents_remember/serving/harness_control_client.py`; `mcp/src/agents_remember/serving/harness_control_ipc.py`; `mcp/src/agents_remember/serving/harness_control_models.py`; `mcp/src/agents_remember/serving/harness_submission_authority.py`; `mcp/src/agents_remember/serving/harness_submission_ledger.py`; `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
+| External Memory Ledger              | `git-blob-set-v1` | `sha256:bb8a10bb5f0402d82134d55ba471801b613b5f39cd8f992f399bf399b00e20eb` | `mcp/src/agents_remember/kernel/memory_ledger.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                |
+| Memory Baseline Adoption            | `git-blob-set-v1` | `sha256:16537c18804c8bd246ec3ab8a654447dd99edf0c462171fe233e219f9e38c0c5` | `mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                                                                                                                  |
+| Worktree Contract                   | `git-blob-set-v1` | `sha256:b728e87dbe4f031047c90f7d29139350aea9c4f1e403f69d179c93b6e0ae8b3b` | `mcp/src/agents_remember/worktrees/worktree_contract.py`; `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/guidance.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`                                                                                                                                                                                                     |
+| Worktree Integration                | `git-blob-set-v1` | `sha256:d1bd53a9c5e885c2aaa4216a91d2ee68a2d0b0aa990debc236025ca73433af24` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`                                                                                                                                                                                                                                                                                     |
+| Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:8725cd636fe7a28a9cc46bc37f2ee1dd615c892c7e1733d10a9f865b8a042130` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
+| Provider Degradation Protocol       | `git-blob-set-v1` | `sha256:b11f4ca7e8c770ce255545aec68404134eab5d882b69bdfab9ece6a96e11f238` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/system-specialist.md` |
+| Seat Binding Identity               | `git-blob-set-v1` | `sha256:774a59150ebf165181ce2f437d591015381143b19d891ad5b03906b3997cc3b0` | `dashboard/src/data/sessions.ts`; `dashboard/src/panels/LeafAttachPicker.tsx`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/serving/seat_binding.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_leaf_assignment.py` |
+| Seat Retirement                     | `git-blob-set-v1` | `sha256:abbdda788c0aa76d84f5414ba6928fe35e470f4b960f371826c7658e66daa8b6` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/retire.py`; `mcp/src/agents_remember/serving/retire_policy.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
+| Seat Landing Archive                | `git-blob-set-v1` | `sha256:6bd17fa053160b35cc4f27f476c9b08a8189ef637a119e5b3e067b7506354dca` | `dashboard/src/data/railModel.ts`; `dashboard/src/data/sessionLifecycle.ts`; `dashboard/src/panels/session-cockpit/SessionRail.tsx`; `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/landing.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
+| Supervisor Sweep                    | `git-blob-set-v1` | `sha256:f49bf701124b0d2177733207872387515a38363938b48908676cd96e53e1ff0a` | `mcp/src/agents_remember/kernel/agentic_settings.py`; `mcp/src/agents_remember/mcp/tools/base.py`; `mcp/src/agents_remember/serving/pane_signals.py`; `mcp/src/agents_remember/serving/agent_notifier_heartbeat.py`; `mcp/src/agents_remember/kernel/primitives/inbox_backoff.py`; `mcp/src/agents_remember/controlplane/operator_inbox_store.py`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/controlplane/agent_notifier_signals.py` |
+| Task Document                       | `git-blob-set-v1` | `sha256:b00e45c64c2f32f4bbfc88134fd9b20680c1f8cca956d3cbb778beeffc46f014` | `dashboard/src/data/taskDocuments.ts`; `dashboard/src/panels/detail-panel/DetailPanel.tsx`; `mcp/src/agents_remember/observer/projection.py`; `mcp/src/agents_remember/serving/projections/snapshots.py`; `mcp/src/agents_remember/serving/app.py` |
+| Delivery Injector                   | `git-blob-set-v1` | `sha256:fdc5d0b0f169b03b8ec3871c0cba6d5d25ad617ea6da6716477b08990dcb1955` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/harness_adapters.py`; `mcp/src/agents_remember/serving/harness_logs.py`; `mcp/src/agents_remember/serving/inbox_delivery.py`; `mcp/src/agents_remember/serving/injector.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_paste.py` |
+| Harness Capability Snapshot         | `git-blob-set-v1` | `sha256:7820783a179e78135cbdefa40e219731ea23a3f05e13ad2264b4cb8e541868d3` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/claude_stream_protocol.py`; `mcp/src/agents_remember/serving/codex_app_server_adapter.py`; `mcp/src/agents_remember/serving/codex_app_server_session.py`; `mcp/src/agents_remember/serving/harness_capabilities.py`; `mcp/src/agents_remember/serving/harness_capability_catalog.py`; `mcp/src/agents_remember/serving/harness_control_adapter.py`; `mcp/src/agents_remember/serving/harness_control_api.py`; `mcp/src/agents_remember/serving/harness_control_bridge.py`; `mcp/src/agents_remember/serving/harness_control_claude.py`; `mcp/src/agents_remember/serving/harness_control_client.py`; `mcp/src/agents_remember/serving/harness_control_factories.py`; `mcp/src/agents_remember/serving/harness_control_models.py`; `mcp/src/agents_remember/serving/harness_control_runner.py`; `mcp/src/agents_remember/serving/harness_launch.py`; `mcp/src/agents_remember/serving/pi_rpc_adapter.py`; `mcp/src/agents_remember/serving/pi_rpc_configuration.py`; `mcp/src/agents_remember/serving/pi_rpc_events.py`; `mcp/src/agents_remember/serving/terminal_opener.py` |
+| Harness Submission Authority        | `git-blob-set-v1` | `sha256:a7493044b81877761dbe69bf79361ded70f8c5f58f1ab55daaff01d90f12cd1d` | `dashboard/src/data/submissionLifecycleClient.ts`; `dashboard/src/data/submitClient.ts`; `dashboard/src/data/submitMachine.ts`; `mcp/src/agents_remember/serving/codex_app_server_adapter.py`; `mcp/src/agents_remember/serving/harness_control_adapter.py`; `mcp/src/agents_remember/serving/harness_control_api.py`; `mcp/src/agents_remember/serving/harness_control_bridge.py`; `mcp/src/agents_remember/serving/harness_control_claude.py`; `mcp/src/agents_remember/serving/harness_control_client.py`; `mcp/src/agents_remember/serving/harness_control_ipc.py`; `mcp/src/agents_remember/serving/harness_control_models.py`; `mcp/src/agents_remember/serving/harness_submission_authority.py`; `mcp/src/agents_remember/serving/harness_submission_ledger.py`; `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
 
 ## Entity Inventory
 
@@ -170,837 +173,58 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Category                     | External-memory migration operation                                                                                                                                                                                                                                           |
 | Represents In Reality        | The explicit one-time conversion of existing external-memory onboarding into the first ledgered `memory.md` baseline.                                                                                                                                                         |
 | Description                  | `c-10-adopt-memory-baseline` skill resolves the external-memory context, runs `c-02-memory-quality-control` skill drift, reports ledger status, blocks actionable drift unless the developer accepts it, and then creates the first memory content and ledger commits through the baseline service.                                                                |
-| Canonical Source Of Truth    | `c-10-adopt-memory-baseline` skill and `mcp/src/agents_remember/memory/baseline.py`.                                                                                                                                                                                                            |
-| Current Naming Drift         | This is not onboarding refresh. It is ledger adoption for onboarding the developer already considers factual enough to trust.                                                                                                                                                 |
-| Key Identifiers              | `BaselineRequest`, `baseline_status`, `baseline_adopt`, `status`, `adopt`, `--accept-drift`, `ready`, `blocked-drift`, `already-ledgered`, `adopted`, `would-adopt`, `memory.md`.                                                                                                                                                     |
-| Parent / Child Relationships | Consumes the `c-08-ar-coordination-context-resolver` skill coordination context and `c-02-memory-quality-control` skill drift rows; uses memory ledger helpers and Git worktree manager primitives to create the memory content and ledger commits.                                                                                                                                             |
-| Often Confused With          | `c-05-create-or-update-onboarding-files` skill onboarding maintenance, `c-02-memory-quality-control` skill drift reports, `c-00-initialize-memory-repo` skill memory-root initialization, and `c-09-git-worktree-manager` skill task worktree lifecycle work.                                                                                                                                                      |
-| Source References            | [`c-10-adopt-memory-baseline` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md); [baseline.py](agents-remember/mcp/src/agents_remember/memory/baseline.py) |
-| Migration Notes              | When drift is actionable but the developer says the current onboarding is factual, run adoption with `--accept-drift`; otherwise refresh affected onboarding through `c-05-create-or-update-onboarding-files` skill first.                                                                                              |
-
-### Worktree Contract
-
-| Field                        | Value                                                                                                                                                                                                                                                                                         |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Category                     | Runtime coordination artifact                                                                                                                                                                                                                                                                 |
-| Represents In Reality        | A local record of task identity, workflow artifact, worktree group, code worktree, memory worktree, ledger path, review state, mid-task sync log, closeout commits, integration commits, and cleanup state.                                                                                                      |
-| Description                  | The helper locates contracts under `ar-coordination/tasks/<repo-name>/<task-name>-ar/contract.md` and keeps them out of memory repos and worktrees. The worktree manager facade exposes result-returning service functions implemented in focused modules so MCP application entry points can update and report contract state without shelling through a command facade. Since the issue #54 mid-task sync landing the contract also records `sync_log` — one entry per `worktree_sync` that advanced the recorded base pair — serialized as a single JSON scalar under a `sync:` front-matter section because the limited scalar parser regenerates the document from the dataclass and freeform prose does not survive. Since 260731-EFA-L4 the six persisted vocabulary cells are declared once, in `worktree_contract.py`, as `WorkflowKind`/`MemoryMode`/`HumanReviewStatus`/`CloseoutStatus`/`IntegrationStatus`/`CleanupStatus`, each runtime `VALID_*` frozenset derived from its own alias by `get_args`; `models/worktree.py` imports those aliases instead of retyping them. The read path is total: `_vocabulary_cell` reads a blank cell as the declared default, a member as itself, and anything else as the default plus a quarantine record on `WorktreeContract.unknown_cells` (`"<field>=<raw token> read as <fallback>"`), logged once per parse by `load_contract` and surfaced as `unknown_contract_cells` on the status payload and `unknownContractCells` on the context packet. `memory_mode` is the one cell whose fallback is read rather than fixed — `_memory_mode_fallback` answers `disabled` for `memory.state: disabled`, `external` when a memory worktree or ledger is recorded, and `internal` otherwise — because guessing `internal` for a contract that owns a memory worktree would make closeout skip work that exists. The write path is closed: `validate_contract(contract, *, path)` refuses every one of the six. That refusal reaches only writes. `load_contract` calls the same function, but the reader has already narrowed each cell, so a contract hand-edited on disk still loads: it degrades and quarantines rather than being rejected, and heals the next time any lifecycle tool rewrites the document. The asymmetry is deliberate — no lifecycle tool catches `ContractError`, so raising on read would leave a task that cannot be closed out, integrated, cleaned up or even abandoned. An approved closeout runs the strict repository quality wrapper before every code, memory, ledger, and contract commit, but it is no longer the predecessor of every mutation; see Parent / Child Relationships. Since 260731-EFA-L5 (R6) the persisted front matter carries a second version line, `schemaVersion`, written directly under `schema:` by `contract_to_text`. The two answer different questions and are deliberately not merged: `schema: ar-series-contract/v1` names the document vocabulary, while `schemaVersion` versions the durable-record contract the document is written under. Its constant and its accept/reject rule are REUSED, not redeclared — `CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION` and `_require_supported_schema_version` calls `schema_version_supported`, both imported from `controlplane/durable_store.py`, so the tree holds one version policy rather than two that can drift. The rule has exactly three cases: an absent line means 1.0 and is accepted, an unknown MINOR is accepted as additive, and an unknown MAJOR raises `ContractError` naming the file. This is a DOCUMENT-level refusal, joining absent front matter and an unrecognized `schema`; it is not a seventh vocabulary cell and does not weaken the total reader, which stays total for all six cells. It can only ever fire on a document some other build wrote — measured for this pass, 214 `series-contract.md` files exist under this workspace's coordination tasks root and zero carry a `schemaVersion` line, which is why the absent case had to be the accepted one and why no migration was needed or written. |
-| Canonical Source Of Truth    | `mcp/src/agents_remember/worktrees/worktree_contract.py` plus `c-09-git-worktree-manager` skill.                                                                                                                                                                                                                                     |
-| Current Naming Drift         | The parser/writer and service functions live in the MCP package; the contract is not the same entity as a `w-02-light-task-workflow` skill task file. The worktree service functions now take a typed `WorktreeArgs` DTO instead of a loose `argparse.Namespace`, and `ContractError` now subclasses the shared `AgentsRememberError` (still a `ValueError`). Since L4 the six vocabulary cells are moved through `ContractCells` + `amend_contract`, never `dataclasses.replace`: typeshed declares `replace(obj, /, **changes: Any)`, so `replace(contract, cleanup="reclaimed-ish")` produced no pyright diagnostic at all, at any of the six fields. `WorkflowKind` is exactly `chat-task`/`light-task` — the bare `chat`/`light` the wire model used to carry had no writer and, by this leaf's own scan, zero occurrences across the 213 contracts on disk — and `CleanupStatus` now holds `reopened`, which `worktrees/reopen.py` has always written. |
-| Key Identifiers              | `contract.md`, task id/name, worktree group, code worktree, memory worktree, ledger path, human review state, `sync_log`, closeout commits, integration commits, cleanup state, `unknown_cells`/`unknownContractCells`, `ContractCells`, `amend_contract`, `validate_contract(..., path=...)`, `schemaVersion`/`CONTRACT_SCHEMA_VERSION`, `_require_supported_schema_version`.                                                                                                                           |
-| Parent / Child Relationships | Owned by local coordinator and consumed by `c-08-ar-coordination-context-resolver` and `c-09-git-worktree-manager` skill worktree-aware flows plus MCP worktree tools. Closeout preview/approval remains non-mutating; the strict repository wrapper is the apply-side predecessor of every code, memory, ledger, contract, and applied-gate **commit**. Since L4 it is not the predecessor of every *mutation*: where the gate runs, `closeout._gate_staged_code` first refuses a code checkout that is not a linked worktree (git reports `--git-dir` equal to `--git-common-dir`, which is what a repository's own checkout looks like and what `default_series_contract` records as `code_worktree` for a `kind: series` contract), then refuses a checkout with unmerged index entries, and only then runs `git reset --mixed HEAD` + `git add -A` and the wrapper over exactly that staged content. That index write precedes the gate and is not undone when the gate refuses — nothing is committed, and the next attempt resets and restages from the working tree. The order is load-bearing: `git reset` drops the unmerged entries and `MERGE_HEAD`, so running it ahead of the conflict refusal would disable that refusal silently and let `add -A` stage the conflict markers into the commit. A checkout carrying no wrapper runs no gate, stages nothing early, and previews as `wrapper-unavailable`. |
-| Often Confused With          | Task artifact, onboarding unit, or memory ledger.                                                                                                                                                                                                                                             |
-| Source References            | [worktree_contract.py](agents-remember/mcp/src/agents_remember/worktrees/worktree_contract.py); [guidance.py](agents-remember/mcp/src/agents_remember/worktrees/modules/guidance.py); [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py); [integrate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/integrate.py) |
-| Migration Notes              | Task files should remain planning artifacts; contracts should record operational state. Closeout commits and integration commits are separate because replay can change landed SHAs.                                                                                                          |
-
-### Worktree Integration
-
-| Field                        | Value                                                                                                                                                                                                                                                                              |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Category                     | Worktree lifecycle phase                                                                                                                                                                                                                                                           |
-| Represents In Reality        | The approved landing of closed task work from code and memory worktrees back onto their source branches.                                                                                                                                                                           |
-| Description                  | `c-09-git-worktree-manager` skill `integrate` requires completed closeout and clean checkouts, supports `ff-only` for unchanged source ancestry, supports `replay` for parallel non-overlapping source movement, and regenerates the memory ledger row for landed commits. The final merge is atomic: it pre-validates that both the code and memory ledger fast-forwards are possible before mutating either branch, and if the memory side fails after the code branch advanced it rolls both branches back to their pre-merge heads, so integration is all-or-nothing rather than leaving a half-integrated state. `integrate_result()` lives in the integration module, takes a typed `WorktreeArgs`, and returns the same lifecycle result shape for MCP application entry points while the CLI remains an adapter. Mid-task `worktree_sync` (2.8.0) advances the contract's recorded base pair while parallel cycles land, which is what keeps end-of-series integration `ff-only` instead of forcing replay. Cleanup (`cleanup_result`) runs after successful integration and is now carryover-guarded (slice 05m): it hard-refuses while integration is completed but the parked memory has not been carried into official memory — the proof is the official ledger via `guidance.carryover_done`, not a contract stamp, since cleanup deletes the parked memory branch the carry reads from. Once carryover has run, cleanup retires both the worktree branch and the (PR'd) source branch — locally for code and memory, plus the remote for the code source branch — instead of only deleting Git-proven-merged branches. Since 260731-EFA-L3 every Git mutation in this phase — the code `rebase`, the memory `checkout -b` + `rebase --onto` replay, both `merge --ff-only` landings and the two rollback `reset --hard` calls in `_merge_integrated_commits` — runs through the one kernel runner `kernel/git_command.run_git`, which strips the `GIT_REPOSITORY_SELECTOR_ENV` selectors and bounds local work at `GIT_LOCAL_TIMEOUT_SECONDS = 300`; the worktree-local copy it replaced had neither guard nor timeout, so the all-or-nothing guarantee above is now a guarantee about the contract's own repositories rather than about whatever an exported `GIT_DIR` named. Cleanup's two remote-talking commands (`ls-remote --heads origin <branch>` and `push origin --delete <branch>`) go through `cleanup._remote_git` at `GIT_REMOTE_TIMEOUT_SECONDS = 120`, and a stall is now reported as the already-defined `{"remote_deleted": false, "reason": "remote-unreachable"}` outcome instead of holding the uncancellable MCP tool call open indefinitely. Since 260731-EFA-L4 every contract write in this phase moves its status cells through `ContractCells`/`amend_contract` (`blocked_integration_payload`, `_integrated_result`, `cleanup_result`, `abandon_result`), and the phase vocabulary this module drives is declared in `worktrees/modules/guidance.py` — `WorktreePhase`, `NextOperation`, `NextTool` — rather than hand-copied into `models/worktree.py`. Reconciling the two copies added four values this phase machine was already emitting and the context packet was rejecting: the `carryover-pending` and `abandoned` phases, the `request_carryover_decision` operation, and the `memory_carryover_apply` tool. `commit-approval-pending` and `request_commit_approval` left the packet's vocabulary in the same move: they are not phases of this machine but the closeout preview's own gate, and they now ride the separate `recovery_guidance` builder (`RecoveryOperation`/`RecoveryTool`), which emits the same keys in the same order onto a `FlexibleToolResponse` without widening `WorktreeSummary.nextOperation`. |
-| Canonical Source Of Truth    | `c-09-git-worktree-manager` skill docs and `mcp/src/agents_remember/worktrees/modules/integrate.py`.                                                                                                                                                                                                                                     |
-| Current Naming Drift         | Integration is not cleanup. Cleanup is asked after successful integration and remains pending until explicitly approved.                                                                                                                                                           |
-| Key Identifiers              | `integrate_result`, `cleanup_result`, `integrate`, `--strategy ff-only`, `--strategy replay`, `integration.status`, `integrated_code_commit`, `integrated_memory_content_commit`, `integrated_ledger_commit`, `cleanup`.                                                                                                 |
-| Parent / Child Relationships | Consumes the worktree contract closeout commits and writes integration result fields back to the same contract.                                                                                                                                                                    |
-| Often Confused With          | Closeout commits, manual merge, push, or worktree deletion.                                                                                                                                                                                                                        |
-| Source References            | [`c-09-git-worktree-manager` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md); [integrate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/integrate.py); [cleanup.py](agents-remember/mcp/src/agents_remember/worktrees/modules/cleanup.py)                  |
-| Migration Notes              | Replay integration preserves parallel work support by producing new landed SHAs instead of pretending the closeout SHAs are still the source branch tips.                                                                                                                          |
-
-### Branch-Gated Cross-Repo Source
-
-| Field                        | Value                                                                                                                                                                              |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Category                     | Cross-repo trust contract                                                                                                                                                          |
-| Represents In Reality        | A configured external repository context source that is included only when branch and memory-ledger checks pass.                                                                   |
-| Description                  | The resolver parses `crossRepo.allow` as strict v2 objects with `repo`, `expectedBranch`, `includeCode`, and `includeMemory`; legacy strings are excluded with a migration reason. Parsed entries are resolved through the focused cross-repo module, which validates adjacent repo branches and optionally memory ledger state. |
-| Canonical Source Of Truth    | `c-08-ar-coordination-context-resolver` skill settings parsing, focused cross-repo resolution, and the cross-repo mode design spec.                                                                                         |
-| Current Naming Drift         | Legacy string allow entries are not branch-safe and should be treated as invalid in v2.                                                                                            |
-| Key Identifiers              | `repo`, `expectedBranch`, `includeCode`, `includeMemory`, result state.                                                                                                            |
-| Parent / Child Relationships | Uses committed memory settings, resolver context, worktree context, and memory ledger metadata.                                                                                    |
-| Often Confused With          | Local coordinator path hints or implicit repository browsing.                                                                                                                      |
-| Source References            | [setting_values.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/setting_values.py); [cross_repo.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/cross_repo.py). The former roadmap design-spec link was removed after reference health checking proved the target no longer exists. |
-| Migration Notes              | Cross-repo inclusion must remain read-only toward external repos.                                                                                                                  |
-
-### Provider Degradation Protocol
-
-The durable inbox record used by this entity now has a narrowly bounded rolling-reader seam:
-legacy projections may preserve optional `adapterDeliveryState` and `adapterDeliveryDetail`, while
-unrelated extensions remain rejected. This does not change provider degradation state transitions
-or consume semantics.
-
-| Field                        | Value                                                                                                                                                                                                                                                                                          |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Category                     | Runtime detection/response protocol                                                                                                                                                                                                                                                            |
-| Represents In Reality        | The provider-only degradation detector (a healthy/degraded/critical state machine over the central provider metrics log), its response protocol (durable events, role-addressed inbox alerts, critical-threshold failsafe stop), and the `system-specialist` role that investigates before any fix. |
-| Description                  | 260707-HFX-L7 (developer plan-gate ruling 2026-07-07) lands the detector/state-machine in `providers/degradation.py`, the `providerDegradation` settings surface in `mcp/provider_degradation_settings.py`, the `system-specialist` `AgentRole`/`OrchestrationRole` literal plus the `degradation-alert` `InboxMessageKind`, and the doctrine additions to `roles/manager.md` (stop starting providers, no kill authority) and `roles/orchestrator.md` (dispatch system-specialist, read report, fix-or-stop). The serving metrics sampling loop (`serving/app.py`) calls the detector once per tick. Providers-only this iteration; Sentry (260703_spotlight-dev-observability) is the designated future detection source that can replace/feed this same response protocol without redoing it. |
-| Canonical Source Of Truth    | `providers/degradation.py`, `mcp/provider_degradation_settings.py`, the `AgentRole`/`InboxMessageKind` literals in `controlplane/operator_inbox_records.py`, the `OrchestrationRole`/`_ROLE_ESCALATION` literals in `controlplane/orchestration_artifacts.py`, and `skills/l-01-agent-lifecycles/roles/system-specialist.md`. |
-| Current Naming Drift         | None recorded; this is a newly landed entity as of HFX-L7.                                                                                                                                                                                                                                     |
-| Key Identifiers              | `healthy`/`degraded`/`critical` state, `ar-provider-degradation-state/v1`, `ar-provider-degradation-event/v1`, `degradation-alert` message kind, `system-specialist` role, `providerDegradation` settings key, `failSafeEnabled`.                                                            |
-| Parent / Child Relationships | Reads `providers/metrics.py`'s central metrics log; posts through `controlplane/operator_inbox_store.py` and `serving/inbox_delivery.py`; stops stacks through `application/provider_tools.py`'s always-legal teardown path; consumed once per tick by `serving/app.py`.                       |
-| Often Confused With          | The lower-level per-container containment metrics sampler (260707-HFX-L1, `providers/metrics.py`) — that module only samples and stores; this entity is the decision/response layer built on top of it. Also not the future Sentry integration, which is a detection-source replacement, not this entity's response protocol. |
-| Source References            | [degradation.py](agents-remember/mcp/src/agents_remember/providers/degradation.py); [provider_degradation_settings.py](agents-remember/mcp/src/agents_remember/mcp/provider_degradation_settings.py); [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py); [orchestration_artifacts.py](agents-remember/mcp/src/agents_remember/controlplane/orchestration_artifacts.py); [system-specialist.md](agents-remember/skills/l-01-agent-lifecycles/roles/system-specialist.md) |
-| Migration Notes              | When Sentry-based detection lands (260703_spotlight-dev-observability), it should feed this same event/alert/failsafe response protocol rather than duplicate it; the setup-failure-streak and probe-latency evidence paths in `classify_degradation` are the designated seams (currently producer-less/disclosed). 260707-HFX2-L1 added `attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt`/`ownerRole`/`ownerAgentId`/`ownerLifecycleId` fields to `OperatorInboxEntry` in this entity's shared `operator_inbox_records.py` evidence file — purely additive record fields for the unrelated R1 ack-semantics/R4 hierarchical-routing feature, touching neither the `AgentRole`/`InboxMessageKind` Literals this entity's `system-specialist`/`degradation-alert` values live on nor the degradation detector/response protocol itself; no entity prose change warranted. **260731-EFA-L5 is the same shape and gets the same answer: re-signed, not moved.** The one changed evidence file is again `controlplane/operator_inbox_records.py`, where `OperatorInboxCompatibleRecord` (the base of `OperatorInboxEntry`, so of every `degradation-alert` row this entity posts) now derives from the durable-store contract's `DurableRecord` and therefore carries a persisted `schemaVersion` field and its unknown-major refusal. Two facts worth stating so nobody re-derives them: this store deliberately KEEPS `extra=allow` plus its named forward-compatibility allowlist rather than taking the contract's default `extra=forbid`, and it is the contract's one declared `extra` exception; and the new refusal is a validation refusal on a row written by a future MAJOR, which no build in this tree writes. The detector, the healthy/degraded/critical state machine, the thresholds, the failsafe, the `AgentRole`/`InboxMessageKind` literals and the response protocol are all untouched. |
-
-### Seat Binding Identity
-
-| Field                        | Value |
-| ---------------------------- | ----- |
-| Category                     | Terminal-catalog identity protocol |
-| Represents In Reality        | The durable current assignment of one hosted session to a canonical task leaf and one seat role, distinct from how that session was originally launched. |
-| Description                  | 260707-HFX2-L17 makes `(leafKey, seatRole)` the server-authoritative current assignment. TES-L6 adds immutable `spawnRepo` + `spawnSprint` provenance for named architect/orchestrator/manager command seats: an architect must declare a qualified sprint, descendant command seats inherit from their proven direct spawner, and spawn/attach/reopen refuse missing, partial, or conflicting scope before host side effects. `spawnRole` remains immutable origin provenance; `seatRole` can be established by spawn or explicit attach and changes atomically with `leafKey`. Worker, reviewer, curator, manager/architect anchors, generic chat, and terminal roles can coexist on one leaf, while one live same-role owner still excludes a duplicate. Legacy unbound rows remain readable and a parentless legacy architect may acquire its first qualified binding, but no new global orchestrator or manager can be minted. In the dashboard, a new session's binding fields are materialized only from the validated accepted server row; request fields and failed opens cannot create a provisional binding, and command groups are partitioned by stored repository+sprint provenance. |
-| Canonical Source Of Truth    | `serving/seat_binding.py` for leaf-seat normalization, `serving/sprint_role_binding.py` for named-seat repository+sprint policy, `serving/terminal_catalog.py` for persistence/migration/current binding properties, `serving/terminal_leaf_assignment.py` for explicit attach, and `serving/terminal_opener.py` for pre-host reopen validation. |
-| Current Naming Drift         | `role` on compatibility payloads still means transport (`chat`/`terminal`); `spawnRole` means launch provenance; `seatRole` is current orchestration identity. Older “leaf role” prose often meant transport role and must not be read as the new seat role. |
-| Key Identifiers              | `leafKey`, `seatRole`, `spawnRole`, `spawnRepo`, `spawnSprint`, `binding_role`, `binding_leaf_key`, `SprintRoleBinding`, `NAMED_SPRINT_ROLES`, `sprint-binding-required`, `sprint-binding-conflict`, `migrated_seat_role`, `attach_seat_role`, `with_leaf_binding`, `active_for_leaf(..., seat_role=...)`, `role-required`, `leaf-taken`. |
-| Parent / Child Relationships | Spawn derives and persists the first binding; attach can claim/rebind a hand-opened or existing session; retire, agent-notifier, expectations, inbox, provider discovery, landing, and dashboard grouping/rendering consume current binding identity. The dashboard session registry accepts the server-returned `leafKey`/`seatRole` only after authoritative-open validation and creates no binding row on failure. Spawned-by fields remain the historical parent edge. |
-| Often Confused With          | Session transport kind, immutable spawn provenance, mutable display label, lifecycle attachment, or retirement/landing status. None determines the current leaf-seat pair. |
-| Source References            | [seat_binding.py](agents-remember/mcp/src/agents_remember/serving/seat_binding.py); [sprint_role_binding.py](agents-remember/mcp/src/agents_remember/serving/sprint_role_binding.py); [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py); [terminal_leaf_assignment.py](agents-remember/mcp/src/agents_remember/serving/terminal_leaf_assignment.py); [terminal_opener.py](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py); [signal_routing.py](agents-remember/mcp/src/agents_remember/controlplane/signal_routing.py); [sessions.ts](agents-remember/dashboard/src/data/sessions.ts); [LeafAttachPicker.tsx](agents-remember/dashboard/src/panels/LeafAttachPicker.tsx) |
-| Migration Notes              | Reviewer O1: the self-limiting legacy rewrite currently occurs on the lock-free read path, so first-upgrade read could theoretically lose a concurrent mutation; unique-temp atomic replace still prevents corruption. O2: attach-with-role is deliberately self-service authority in the local single-operator trust model. O3: reopening an existing id preserves persisted binding ahead of a new role env; normal spawn uses fresh ids and attach is the rebind surface. All three are non-blocking observations, not alternate semantics. Candidate fingerprint uses working-tree blobs and must be recomputed against the eventual L17 commit. |
-
-### Seat Retirement
-
-| Field                        | Value                                                                                                                                                                                                                                                                                                                                            |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Category                     | Terminal-catalog lifecycle protocol                                                                                                                                                                                                                                                                                                              |
-| Represents In Reality        | The server-authoritative explicit lifecycle by which a dashboard-owned chat seat is terminated and marked with retirement provenance, plus the authority policy that decides who may retire whom. |
-| Description                  | 260707-HFX-L8 (issues #12/#4) introduces seat retirement as a genuine cross-layer entity, not just a new catalog field: a retire is a terminal mark (`status == "terminated"` plus `retired_at`/`retired_by_session`/`retired_reason`/`retired_edge` provenance) layered onto the existing catalog terminal state, so it composes with the pre-existing L5 liveness hysteresis (a retired row can never be resurrected). Authority is enforced server-side via `retire_policy.check_retire_authority`: owner-never-self-retires checked first unconditionally; a manager may retire worker/reviewer/curator seats whose binding leaf belongs to its own master; only the orchestrator has portfolio-wide authority. HFX2-L17 builds `SeatRef` from current binding role and `binding_leaf_key`, so an explicitly typed hand-opened seat and an unbound failed dispatch with `replacementForLeaf` resolve correctly. Retirement is reached through the manual `session_retire` MCP tool, `POST /api/terminal/{session}/retire`, destructive `/terminate`, the landed-archive cleanup endpoint, and ARG-L1's default completion cleanup after exact durable report proof. 260731-EFA-L4 gives the tool surface one payload builder: `mcp/tools/terminal._retire_payload` replaces four hand-written dicts, is typed on the wire alias `SessionRetireStatus`, and derives `ok` once from `_RETIRE_OK_STATUSES = {"retired", "already-retired"}` — so a refusal status added later cannot arrive as `ok=True` from a fifth call site that forgot the rule. A closure row contributes the four provenance fields and a refusal contributes `detail`; nothing carries both. |
-| Canonical Source Of Truth    | `mcp/src/agents_remember/serving/retire_policy.py`, `mcp/src/agents_remember/serving/retire.py`, `mcp/src/agents_remember/application/completion_cleanup.py`, the retirement fields/copiers on `TerminalCatalogEntry` in `mcp/src/agents_remember/serving/terminal_catalog.py`, and the `session_retire`/dashboard retire routes that call the policy before mutation. |
-| Current Naming Drift         | The historical `autoLandOnIntegration`/`autoLandOnFinalize` names remain edge gates even though ARG-L1's default action is now report-gated retirement; `autoCloseCompletedSeats=false` is the landed/archive compatibility mode. |
-| Key Identifiers              | `retired_at`, `retired_by_session`, `retired_reason`, `retired_edge`, `SeatRef`, `binding_leaf_key`, `binding_role`, `replacementForLeaf`, `RetirePolicyError`, `session_retire`, `api_terminal_retire`, `landed-group-cleanup`. |
-| Parent / Child Relationships | A specialization of the pre-existing `TerminalCatalogEntry` terminal state (composes with, does not replace, the L5 liveness-hysteresis terminal invariant); consumed by the `session_retire` MCP tool, `POST /retire`, `/terminate`, and the landed archive cleanup endpoint. Since 260715-FEUI-L2 the sessions cockpit ALSO consumes it live: the `seat.retired` observer event pre-applies the terminal mark + provenance (`dashboard/src/data/seatEvents.ts`, poll-authoritative, never resurrecting), and retirement provenance renders on rail tooltips and the seat inspector. Since 260715-FEUI-L6 the cockpit additionally renders retirement RESIDUALS: `controlRaw.retireControlStopError` is swept focus-independently across every registry row (`dashboard/src/data/sessionLifecycle.ts` `startRetireResidualSweep`, dedup-once per sessionId) into dismissable INFORMATIONAL `role="status"` stage notes + the retired-row inspector — never silently discarded, never styled as failure. The cockpit itself never calls the retire route: the authority policy requires a real catalog actor SEAT, which the dashboard does not have, so the operator action from the cockpit is terminate (honest confirm naming session · leaf · state) and retirement stays agent-side, rendered not issued. |
-| Often Confused With          | A landed archive row (`status:"landed"`, inspectable, not terminated); the L5 liveness "exited" state (probe-observed, self-healing, non-terminal); a rename (identity-only, does not touch `status`). |
-| Source References            | [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py); [completion_cleanup.py](agents-remember/mcp/src/agents_remember/application/completion_cleanup.py); [app.py](agents-remember/mcp/src/agents_remember/serving/app.py); [retire_policy.py](agents-remember/mcp/src/agents_remember/serving/retire_policy.py); [retire.py](agents-remember/mcp/src/agents_remember/serving/retire.py); [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py); [seatEvents.ts](agents-remember/dashboard/src/data/seatEvents.ts) |
-| Migration Notes              | ARG-L1 makes completion-edge retirement the default only after an exact-session, exact-leaf durable turn report. Transcripts/reports remain inspectable, owner roles are excluded, and `autoCloseCompletedSeats=false` preserves landed/archive behavior. |
-
-### Seat Landing Archive
-
-| Field                        | Value |
-| ---------------------------- | ----- |
-| Category                     | Terminal-catalog lifecycle protocol |
-| Represents In Reality        | The non-destructive compatibility state for completed worker/reviewer/curator seats when automatic close is disabled, plus the dashboard archive group and explicit cleanup action that owns later reclamation. |
-| Description                  | `land_seats_for_leaf` remains the `retirement.autoCloseCompletedSeats=false` completion path. It marks the exact leaf's worker/reviewer/curator rows `status:"landed"` with landing provenance and returns `autoLandedSeats` without killing tmux; manager/orchestrator are excluded. Default ARG-L1 behavior instead closes exact-report-bearing seats through normal retirement. Pair-scoped active lookup remains running-only, so landed rows release their role slot while remaining visible. The liveness sweep stays cold for landed rows; dashboard grouping and explicit landed cleanup remain unchanged for pre-flip rows and opt-out deployments. |
-| Canonical Source Of Truth    | `mcp/src/agents_remember/serving/landing.py`, `mcp/src/agents_remember/application/completion_cleanup.py`, the completion-edge delegation in `application/worktree_tools.py`, `mcp/src/agents_remember/serving/terminal_catalog.py`, `mcp/src/agents_remember/serving/app.py`, dashboard `railModel.ts`/`SessionRail.tsx`/`sessionLifecycle.ts`/`LandedCleanupNotice.tsx`, and the manager/orchestrator package-data doctrine. |
-| Current Naming Drift         | The two historical `autoLandOn*` keys are edge gates even when default behavior closes seats; `autoCloseCompletedSeats` selects close versus land. Legacy `autoRetireOn*` spellings remain aliases for the edge gates. |
-| Key Identifiers              | `status:"landed"`, `landed_at`, `landed_reason`, `landed_edge`, `land_seats_for_leaf`, `auto_complete_seats`, `autoLandedSeats`, `autoLandOnIntegration`, `autoLandOnFinalize`, `autoCloseCompletedSeats`, `landed archive`, `landed-group-cleanup`. |
-| Parent / Child Relationships | Extends the terminal catalog lifecycle beside `running`/`exited`/`terminated`; completion-edge application entry points produce it, serving liveness treats it as sweep-cold, dashboard grouping consumes it, and explicit cleanup converts it to retirement. Since 260715-FEUI-L2 the sessions cockpit rail is a second dashboard consumer: landed rows fold into per-master collapsed completed folders with master- and sprint-level bulk end over the same `landed-cleanup` endpoint (honest naming previews, backend-rechecked), and the `seat.landed` observer event pre-applies landing provenance. Since 260715-FEUI-L6 the rail also renders the cleanup route's OWN outcome instead of dropping it: `dashboard/src/data/sessionLifecycle.ts` `endLandedDetailed` keeps the response's closed + skipped-with-reasons counts and `SessionRail.tsx` shows them after a bulk end. |
-| Often Confused With          | Default ARG-L1 Seat Retirement (terminates tmux only after durable report proof); legacy exited/absent rows in the chat list, which are not grouped by the landed archive. |
-| Source References            | [completion_cleanup.py](agents-remember/mcp/src/agents_remember/application/completion_cleanup.py); [worktree_tools.py](agents-remember/mcp/src/agents_remember/application/worktree_tools.py); [landing.py](agents-remember/mcp/src/agents_remember/serving/landing.py); [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py); [app.py](agents-remember/mcp/src/agents_remember/serving/app.py); [railModel.ts](agents-remember/dashboard/src/data/railModel.ts); [sessionLifecycle.ts](agents-remember/dashboard/src/data/sessionLifecycle.ts); [SessionRail.tsx](agents-remember/dashboard/src/panels/session-cockpit/SessionRail.tsx); [LandedCleanupNotice.tsx](agents-remember/dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx); [manager.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md); [orchestrator.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md); [manager-brief.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md) |
-| Migration Notes              | Known limitation from the HFX2-L11 review: because landed rows are sweep-cold, a landed row whose tmux session later dies stays displayed until explicit cleanup; attach performs the live check and fails rather than the background sweep reclaiming it. |
-
-### Agent-Notifier Sweep
-
-| Field                        | Value                                                                                                                                                                                                                                                                                                                                            |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Category                     | Runtime detection/response protocol                                                                                                                                                                                                                                                                                                              |
-| Represents In Reality        | The deterministic, zero-model reconciliation loop hosted in the serving daemon that sweeps authoritative control-plane stores on its own cadence, evaluates mechanical predicates over what it finds, and relays facts (redeliver, owner signal, state-signal, compound-idle, non-reaction, boundary drain) — "the model is never the polling layer" (P-15 tiers 1+2) — plus its own self-liveness heartbeat and, since 260713-TES-L2, the worker→manager state-signal relay on catalog turn truth. Since 260713-TES-L4 it is also the deliver-until-LANDED terminality engine: it resolves rows terminal (`landed` at boundary acceptance, `unresolved` at the attempt ceiling, `expired` at the retention/grace boundary, `superseded` by explicit command), rebinds dead-target rows (N14), and owns the independent relay-death surface (N5). Since 260713-TES-L5 it is fact-only: no suspect classification, no escalation rungs, no respawn, and no expectation evaluation — the timed ladder is deleted and expectation rows are an owner-visible deadline surface. |
-| Description                  | 260707-HFX2-L2 lands `serving/agent_notifier.py` (`AgentNotifierContext`, five R2 predicate families — pane-state, expectation-deadline expiry, turn-report staleness, unacked-row redelivery, seat-liveness — and the R4 action dispatcher, each action logging an `orchestration.agent-notifier.*` observer event), `serving/pane_signals.py` (the R2a pane-state classifier, distinct from `turn_state.py`'s UI-state classifier over the same captured text), and `serving/agent_notifier_heartbeat.py` (the R5 self-liveness tick store, issue #15 "the watcher must be code AND watched"). The sweep is hosted as a third decoupled-cadence lifespan task in `serving/app.py` beside the projector and metrics loops, configured by the new `orchestration.agentNotifier` settings family in `kernel/agentic_settings.py`, and surfaced two ways: a fail-loud MCP-tool banner (`mcp/tools/base.py::_tool_payload`, reading `AmbientLifecycle.root`) and a dashboard header badge (`/api/state`/SSE `agentNotifierHeartbeat`, `cockpit/Cockpit.tsx`'s `AgentNotifierHeartbeatBadge`). Level-triggered by design: any event lost anywhere (a dropped push, a crashed dispatch call) is caught by the next sweep — the backstop even protocol-grade push (A2A/MCP) needs. **260707-HFX2-L4 fills the P-15 tier-3 stub in**, wired DIRECTLY into this same module rather than as a separate entity: two more predicates (`evaluate_escalation_findings`/`evaluate_dead_upstream_findings`) and two more actions (`_escalate_rung`/`_signal_dead_upstream`) call through NEW pure modules `controlplane/escalation_ladder.py` (the rung walker — renudge/skip-level/developer-attention) and `controlplane/orphan_policy.py` (dead-manager orphan-worker detection), plus a NEW two-hop `signal_routing.derive_skip_level_owner`/`is_seat_dead` pair kept deliberately SEPARATE from the existing one-hop `derive_signal_owner`. Past the respawn threshold, `_escalate_rung` retires the suspect seat (HFX-L8's `retire_entry`), re-delivers its pending queue to the successor, and surfaces (never auto-reparents) a retired manager's orphaned workers. **260707-HFX2-L9 adds the cadence safety layer:** `controlplane/inbox_backoff.py` owns the 900-second retry floor and fail-loud sub-floor validation, `operator_inbox_store.py` persists floor-aware `nextAttemptAt` scheduling, and `controlplane/agent_notifier_signals.py` persists pane/seat-liveness signal cooldown records so short sweeps do not mint per-sweep owner inbox rows. **260707-HFX2-L13 round 2 repairs the live hierarchy/wake seam:** leaf signals resolve the current manager first, agent-notifier predicates suppress stale work when the leaf chain progressed, later rungs have a redundant five-minute floor, duplicated findings cannot advance one row twice in one sweep, and completion reports are readdressed and hosted-delivered to the current manager. **260731-EFA-L4 repairs both surfacing seams, which were writing keys nothing declared.** `agentNotifierBanner` is now a field of `models.base.ResponseModel` and `FlexibleResponseEnvelope`, set by `_tool_payload` on the validated response *before* the single `model_dump`; it used to be stamped onto the already-dumped dict, and because `StrictResponseModel` is `extra="forbid"` that made every tool response fail its own `model_validate` whenever the agent-notifier was stale — and put the banner's bytes, along with the whole `nextStep` object, outside the `tokens` the response advertised. `emit_tool` now observes the finished payload, so the tokens recorded against the lifecycle are the tokens served. `TOOL_RESPONSE_MODELS` is typed `dict[str, type[ResponseEnvelope]]` rather than `type[BaseModel]`, which is what makes those two fields reachable by type at the choke point. On the dashboard side `serving/agent_notifier_heartbeat.AgentNotifierHeartbeatPayload` declares the tick age as the wire carries it — deliberately serialized *without* `exclude_none`, so an agent-notifier that has never ticked reports explicit nulls and the cockpit can still tell "never ticked" from "this server reports no heartbeat at all" — and `serving/served_state.ServedWorkspaceProjection` declares it (with `servingBuild`) as the serve-time tail that `/api/state` and the SSE `snapshot` frame merge onto the memoized projection dump. Both keys were previously injected with nothing declaring them, so a served body could not be fed back through `WorkspaceProjection`. **260731-EFA-L5 puts this sweep's durable stores on one declared storage contract and names this sweep the compaction owner of most of them.** Both changed evidence files are about that. `controlplane/agent_notifier_signals.py`: the cooldown log now takes an unconditional per-log lock across its read AND its rewrite (`compact` delegates to a `_compact_locked` half inside `exclusive_access`), and the dashboard — this sweep — is its declared single writer and compaction owner. It was previously unlocked on single-writer grounds, and the leaf's proof run measured 31.45% loss on its structural twin, attention-dismissals, whose single-writer claim was equally true: one process writing a file is a deployment fact, not a structural one. `controlplane/operator_inbox_store.py`: this is the leaf's ONE DECLARED EXCEPTION to single-owner compaction, because both long-lived processes must physically REMOVE rows and neither removal can move without moving the decision it implements — the MCP deletes a cancelled gate's inbox rows (`delete_by_gate`) at the moment it cancels the gate, while this sweep must resolve and compact under one continuously held lock (`reconcile_and_compact`) so that a consume which won the lock stays terminal. Its pre-existing flock was kept and re-expressed through the shared `exclusive_access`, which adds a once-per-lockfile probe that refuses a filesystem where flock does not actually exclude (NFS, SMB, WSL DrvFs). Across the wider contract, four of the six logs name the DASHBOARD PROCESS as compaction owner, and this sweep is the reclaim pass for three of those four: it calls `expectation_store.compact` and `signal_cooldown_store.compact` once per sweep (`serving/agent_notifier.py` L1235, L1242) and `inbox_store.reconcile_and_compact` (L1208) on the ownerless inbox. The other two are not this sweep's: attention-dismissals is reclaimed by the projection pass (`observer/projection_store.py` L268), and orchestration-nudges has no production reclaim pass at all yet — the dashboard is named its owner now so that whoever writes one does not have to re-decide it. **260713-TES-L2 extends the entity with the worker-state relay on catalog truth:** `serving/terminal_evidence.py` lifts per-vendor turn settlements onto the catalog row (dedicated no-loss cursors, pi tail walk), `serving/state_signals.py` owns the three relay predicate families (state-signal-due, non-reaction-due, boundary-drain) plus the held-on-boundary exclusion, `serving/owner_signals.py` owns the one-row-per-root-cause posting primitive, `serving/seat_turn_truth.py` is the get+upsert write seam, `terminal_catalog.py` carries the outcome/origin/cursor/marker fields and boundary vocabulary, and `controlplane/operator_inbox_records.py` defines the `state-signal` kind plus `state_signal_landed` terminality. The artifact-presence/SLA predicates (`turn-report-stale`, `turn-report-by` findings) retire from the worker→manager path (N8/R6). **260713-TES-L3 extends the entity with the compound-idle relay to orchestrators:** `serving/state_signals.py` owns the compound predicate family (`_compound_worker_index`, `compound_idle_sets`, `compound_idle_signature`, `evaluate_compound_idle_findings`, `compound_idle_response`) with master-scoped membership on EVERY arm (`signal_routing.master_key`, promoted from `_master_key`), status-first gating, unknown≠idle fail-closed, zero-worker/unbound-manager no-signal, and `COMPOUND_IDLE_SWEEP_LATENCY_SECONDS=10.0`; `_agent_notifier_actions._emit_compound_idle` posts exactly one boundary-gated `state-signal` to the one-hop orchestrator owner with the action-time episode signature in ask + marker (`compound_idle_emitted_for`, 63→64 wire key); the manager non-reaction residue relays one level up with the reused 300 s window. **260713-TES-L4 extends the entity with deliver-until-LANDED and the relay-death watch:** `controlplane/operator_inbox_records.py`/`operator_inbox_transitions.py`/`operator_inbox_store.py` own the formal terminal vocabulary and the lock-held latest-fold `transition` primitive (F1); `controlplane/signal_routing.py` adds scoped architect custody (R13) and `derive_row_owner` (N14); `serving/_agent_notifier_evaluation.py` owns the rebind/grace/pending-expiry predicates and no longer composes the escalation ladder (dormant, N3); `serving/_agent_notifier_actions.py` owns the rebind/expire/unresolved actions; `serving/agent_notifier.py` folds legacy by-rule landed rows once (`_fold_legacy_landed`); `serving/_app_lifespan.py` keeps last-good settings through bad reads (R7/N5); and `serving/relay_death_watch.py` independently posts a stale-heartbeat `degradation-alert` to the architect mailbox (N5 — the relay never relays its own death). **260713-TES-L5 demolishes the judgment layer:** `controlplane/escalation_ladder.py` and `controlplane/orphan_policy.py` are deleted, the ladder transitions/predicates/actions and `derive_skip_level_owner` are gone, `_auto_nudge`/`_mark_expectation_missed` and the expectation/escalation/ladder-terminal predicates are deleted, the nudge store and escalation knobs leave `AgentNotifierContext`, and `evaluate_predicates` caps owner-signal findings with `escalationBudget` (twin of `redeliverBudget`). Legacy rung fields and `ladder-resolved` stay parse-compat (the confirmed-gone fold still writes the state). |
-| Canonical Source Of Truth    | `mcp/src/agents_remember/serving/agent_notifier.py`, `mcp/src/agents_remember/serving/pane_signals.py`, `mcp/src/agents_remember/serving/agent_notifier_heartbeat.py`, `mcp/src/agents_remember/controlplane/inbox_backoff.py`, `mcp/src/agents_remember/controlplane/operator_inbox_store.py`, `mcp/src/agents_remember/controlplane/signal_routing.py`, `mcp/src/agents_remember/controlplane/agent_notifier_signals.py`, the `orchestration.agentNotifier` family in `mcp/src/agents_remember/kernel/agentic_settings.py` (the `orchestration.escalation` family is deleted), and the surfacing call sites in `mcp/src/agents_remember/mcp/tools/base.py` and `mcp/src/agents_remember/serving/app.py`.                                                                                                                                                     |
-| Current Naming Drift         | `signal-grandparent` is historical terminology from the pre-L13 dead-upstream action; current behavior is `signal-manager`, and the timed escalation ladder above it is deleted (260713-TES-L5). HFX2-L3's `deliver_inbox_entry` remains implemented through the separate `Delivery Injector` entity. The signal cooldown, current-manager resolver, and chain-progress predicate are internal substrates of this one agent-notifier entity rather than separate runtime entities. |
-| Key Identifiers              | `AgentNotifierContext`, `AgentNotifierFinding`/`AgentNotifierActionResult`, `run_agent_notifier_sweep`, `classify_pane_signal`, `AgentNotifierHeartbeatStore`, `AgentNotifierSignalCooldownStore`, `PERSISTENT_FAILURE_ATTEMPTS`, `MIN_REDELIVERY_INTERVAL_SECONDS`, `leafKey`, `subjectAgentId`, `leaf_chain_has_progress`, `derive_leaf_manager_owner`, `is_seat_dead`, `orchestration.agentNotifier.{enabled,intervalSeconds,staleCutoffSeconds,redeliverRateLimitSeconds,signalCooldownSeconds,redeliverBudget,escalationBudget}` (+ legacy `orchestration.supervisor` alias during the window), `orchestration.agent-notifier.*` event kinds (dual-emitted with `orchestration.supervisor.*`), `agentNotifierBanner`, `agentNotifierHeartbeat`, `AgentNotifierHeartbeatPayload`, `ServedWorkspaceProjection`/`served_state_tail`, `state-signal` message kind, `state_signal_landed`, `NON_REACTION_WINDOW_SECONDS`, `seat_at_turn_boundary`, `state_signal_held_on_boundary`, `evaluate_state_signal_findings`/`evaluate_non_reaction_findings`/`evaluate_boundary_drain_findings`, `_emit_state_signal`/`_emit_compound_idle`/`_emit_non_reaction`/`_drain_boundary`, `COMPOUND_IDLE_SWEEP_LATENCY_SECONDS`, `compound_idle_sets`/`compound_idle_signature`/`compound_idle_response`, `compound-idle-due`/`compound-idle`, `compound_idle_emitted_for`, `master_key`, `OwnerSignal`/`OwnerSignalOptions`/`_post_owner_signal`, `record_interrupt_request`, `MAX_NATIVE_LIFT_PAGES`, `terminal_outcome`/`interrupted_by`/`terminal_evidence_sequence`/`terminal_native_cursor`/`state_signal_emitted_for`/`non_reaction_emitted_for`, `landed`/`superseded`/`unresolved`/`expired` states, `terminalAt`/`terminalReason`/`supersededBy`, `mark_landed`/`mark_superseded`/`mark_unresolved`/`mark_expired`/`rebind_entry`/`ExpiryOptions`, `OperatorInboxStore.transition`, `derive_row_owner`/`_owner_for_role`/`_live_scoped_orchestrator`, `derive_architect_owner(catalog, leaf_key=...)`, `REBIND_GRACE_SECONDS`, `rebind-due`/`rebind-expired`/`inbox-ttl-expired`, `rebind`/`expire`, `_rebind_due`/`_rebind_expired`/`_expire_pending`/`_mark_unresolved`, `_fold_legacy_landed`, `relay_death_watch_loop`/`post_relay_death_signal`/`RelayDeathMarkerStore`, `include_terminal`. |
-| Parent / Child Relationships | Reads `TerminalCatalog`/`OperatorInboxStore`/`ExpectationRowStore`/signal cooldown store directly (never the projection, R3); asks `signal_routing` for current-manager and chain-progress facts; uses inbox backoff/signal cooldown for pacing; completion wake enters through `mcp/tools/operator_inbox.py`; hosted by `serving/app.py`; surfaced by `mcp/tools/base.py` and the dashboard cockpit. Since 260713-TES-L4 it re-derives row owners through `signal_routing.derive_row_owner`/`derive_architect_owner` (N14/R13), resolves terminal/rebind states through `operator_inbox_transitions` (lock-held latest-fold), and is watched by `serving/relay_death_watch.py`, which reads the same heartbeat store and posts architect-mailbox `degradation-alert` rows through the inbox store/delivery path (N5). |
-| Often Confused With          | The lower-level catalog liveness hysteresis sweep (260707-HFX-L5, `terminal_liveness.py`) — that module only probes tmux/pane aliveness and persists status transitions; this entity is a broader cross-store reconciliation-and-action layer built partly ON TOP of that liveness state (R2e). Also not `Seat Retirement` (HFX-L8) itself — retirement authority/mechanics stay owned by that entity, and the sweep no longer calls `retire_entry` (respawn is deleted). |
-| Source References            | [agent_notifier.py](agents-remember/mcp/src/agents_remember/serving/agent_notifier.py); [pane_signals.py](agents-remember/mcp/src/agents_remember/serving/pane_signals.py); [agent_notifier_heartbeat.py](agents-remember/mcp/src/agents_remember/serving/agent_notifier_heartbeat.py); [inbox_backoff.py](agents-remember/mcp/src/agents_remember/controlplane/inbox_backoff.py); [operator_inbox_store.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_store.py); [signal_routing.py](agents-remember/mcp/src/agents_remember/controlplane/signal_routing.py); [agent_notifier_signals.py](agents-remember/mcp/src/agents_remember/controlplane/agent_notifier_signals.py); [agentic_settings.py](agents-remember/mcp/src/agents_remember/kernel/agentic_settings.py); [base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py); [app.py](agents-remember/mcp/src/agents_remember/serving/app.py); [terminal_evidence.py](agents-remember/mcp/src/agents_remember/serving/terminal_evidence.py); [state_signals.py](agents-remember/mcp/src/agents_remember/serving/state_signals.py); [owner_signals.py](agents-remember/mcp/src/agents_remember/serving/owner_signals.py); [seat_turn_truth.py](agents-remember/mcp/src/agents_remember/serving/seat_turn_truth.py); [terminal_catalog.py](agents-remember/mcp/src/agents_remember/serving/terminal_catalog.py); [operator_inbox_records.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_records.py); [_agent_notifier_actions.py](agents-remember/mcp/src/agents_remember/serving/_agent_notifier_actions.py); [_agent_notifier_evaluation.py](agents-remember/mcp/src/agents_remember/serving/_agent_notifier_evaluation.py); [_app_lifespan.py](agents-remember/mcp/src/agents_remember/serving/_app_lifespan.py); [relay_death_watch.py](agents-remember/mcp/src/agents_remember/serving/relay_death_watch.py); [operator_inbox_transitions.py](agents-remember/mcp/src/agents_remember/controlplane/operator_inbox_transitions.py); [interaction_retention.py](agents-remember/mcp/src/agents_remember/controlplane/interaction_retention.py) |
-| Migration Notes              | HFX2-L3 landed: the delivery contract `_redeliver`/`_post_owner_signal` call through (`deliver_inbox_entry`) is routed through the `Delivery Injector` entity instead of a direct `TerminalPaster.paste` call; `inbox_delivery.py` deliberately NOT added to this entity's evidence (it belongs to `Delivery Injector`'s call-site layer). **260707-HFX2-L4 has now landed** (this pass): the escalation ladder is wired DIRECTLY into `serving/agent_notifier.py` rather than reached from outside, so per this leaf's curator judgment it EXTENDS this entity's evidence/Description rather than creating a new entity — the ladder's own pure logic lives in two new small `controlplane/` modules with no independent runtime surface of their own (no lifespan task, no settings family beyond what feeds this entity's context). **260707-HFX2-L9 likewise extends the existing entity** rather than creating a new one: the 900-second floor and cooldown store exist to make this sweep safe to re-enable at short observation cadence. The fingerprint above was computed from current worktree content because this pass runs against an uncommitted worktree; closeout should verify/recompute against the landed commit. **The HFX2-L11 deferral recorded here is discharged, and the note was stale before 260731-EFA-L5 rather than because of it.** `agent_notifier_signals.py` has had a `AgentNotifierSignalCooldownStore.compact(now, retain_seconds)` since before this leaf's base commit (`e52edaf5`), and `serving/agent_notifier.py` calls it once per sweep alongside `expectation_store.compact` — one read that both bounds the log on disk and returns the folded cooldown snapshot every per-finding `in_cooldown` check then reads in memory, so the store is neither unbounded nor re-parsed per finding. L5's contribution is the missing half: that read-filter-rewrite now happens under one hold of the log's lock. Verified for this pass at `serving/agent_notifier.py` L1235 and L1242. **260707-HFX2-L5 forward reference (curator judgment, no code change to this entity):** the leaf's `mcp/tests/test_liveness_simulations.py` proved 6/8 P-15 fixture-zoo incidents fully end-to-end through `run_agent_notifier_sweep`, but found and documented a real gap in THIS entity's own module: `evaluate_predicates` calls `evaluate_pane_findings(ctx.catalog)` with no capturer override, so `run_agent_notifier_sweep` always shoots a real `tmux capture-pane` — there is no way to inject a fake pane capturer through `AgentNotifierContext` today. This is why the chip-stacked-delivery-stall and pane-classified-never-briefed scenarios stay hybrid (predicate-unit classify + real downstream sweep response) rather than full E2E. Threading a capturer parameter through `AgentNotifierContext`/`evaluate_predicates` is the natural next leaf that would close this gap — a forward reference in the same spirit as the L2-era "the L3 injector" reference this entity's Naming Drift row already records for a different seam. **260713-TES-L2 current disposition.** The worker-state relay extends this entity (not a new entity): the terminal-evidence lift, state-signal/non-reaction/boundary-drain predicates, held-on-boundary exclusion, owner-signal posting primitive, and seat-turn-truth writes are internal substrates of the one agent-notifier sweep; `inbox_delivery.py` stays deliberately out of the evidence set (Delivery Injector call-site layer). The fingerprint row was recomputed from current working-tree blobs (sha256:633a422d...) and closeout MUST recompute it against the landed 260713-TES-L2 commit, since several evidence paths do not resolve at HEAD yet. **260713-TES-L3 current disposition.** The compound-idle relay extends this entity (not a new entity): the compound predicates, action-time emitter, episode-signature marker, and master-scoped membership are internal substrates of the one agent-notifier sweep; no new evidence paths were added (all changed files were already in the set). The fingerprint row was recomputed from current working-tree blobs (see the fingerprint table) and closeout MUST recompute it against the landed 260713-TES-L3 commit. **260713-TES-L4 current disposition.** Deliver-until-LANDED extends this entity (not a new entity): the terminal vocabulary, latest-fold transition primitive, rebind/grace/expiry predicates+actions, legacy-landed fold, last-good settings loop, and the relay-death watcher are internal substrates of the one agent-notifier sweep + its independent death surface. Six new evidence paths were added (`_agent_notifier_actions.py`, `_agent_notifier_evaluation.py`, `_app_lifespan.py`, `relay_death_watch.py`, `operator_inbox_transitions.py`, `interaction_retention.py`); the fingerprint row was recomputed from current working-tree blobs (see the fingerprint table) and closeout MUST recompute it against the landed 260713-TES-L4 commit. **260713-TES-L5 current disposition.** Judgment demolition extends this entity (not a new entity): the ladder/orphan/respawn/expectation-evaluation surfaces are deleted from its wiring, two evidence paths (`escalation_ladder.py`, `orphan_policy.py`) leave the fingerprint set, and the fingerprint row was recomputed from current working-tree blobs (see the fingerprint table); closeout MUST recompute it against the landed 260713-TES-L5 commit. The legacy `ladder-resolved` state remains written by the confirmed-gone reclamation fold (reviewer F4). |
-
-**260712-TRH-L5 current disposition.** Confirmed-gone inbox reclamation extends the existing
-Agent-Notifier Sweep entity rather than creating a new runtime entity: the sweep now folds the inbox
-once, reads one terminal-catalog snapshot, optionally takes one deduplicated tmux-name snapshot,
-resolves only eligible agent-notifier nudge/escalation rows, and compacts before redelivery. Its
-body-free `inbox-compacted` event is silent for no-op sweeps; the 48-hour TTL and 500-row cap stay
-the fallback. Reviewer residuals F3-F6 are non-blocking. The fingerprint row is intentionally
-unchanged for this uncommitted candidate; closeout must recompute it against the landed code tip
-and include the new `inbox_reclamation.py` evidence.
-
-**260707-HFX2-L13 current disposition.** The manager accepted reviewer S1 as non-blocking for L13:
-current-manager targeting/wake, chain-aware reviewer/curator suppression, cooldowns, and the
-five-minute rung floor are current code truth. Active-phase chain credit still excludes an unbound
-worker, so bounded false-inactivity refires remain possible until HFX2-L14 S7; this catalog does not
-claim that residual is fixed. The fingerprint above uses current worktree blobs and closeout must
-verify/recompute it against the eventual L13 commit.
-
-**260707-HFX2-L15 current disposition.** The S7 boundary is now closed through explicit catalog
-provenance: an unbound worker/reviewer/curator counts only when the current manager spawned it and
-`replacementForLeaf` names this leaf. Same cwd never grants credit. The agent-notifier's default
-redelivery budget is one because each delivery may synchronously wait on calibrated harness-log
-evidence; `never-briefed` and stacked-chip pane triggers are removed, while mid-turn/blocked remain
-intervention/diagnostic signals. The candidate fingerprint above uses current worktree blobs and
-must be recomputed against the eventual L15 commit.
-
-**260707-HFX2-L17 current disposition.** Every agent-notifier finding and durable condition row carries
-`seatRole` with `leafKey`; cooldown and coalescing identity include both. Current manager,
-architect, worker, chain-credit, and suspect discovery use binding identity, while the historical
-ladder parent hop remains spawn-provenance based. Delivery persistence uses the injected sweep
-timestamp. Reviewer O4's `seeded*8` to `seeded*9` test ceiling is one bounded pair-scoped snapshot,
-not a divergence finding. The candidate fingerprint uses working-tree blobs and must be recomputed
-against the eventual L17 commit.
-
-**Positional 260707-HFX2-L19 current disposition.** Hosted-delivery failures remain in the
-persistent redelivery domain while `escalatedAt` is unset and `attemptCount` is below
-`PERSISTENT_FAILURE_ATTEMPTS`; only the exhausted counterpart enters the generic unacked ladder.
-The F1 `test_agent_notifier.py` pin proves that boundary through `evaluate_escalation_findings` without a
-catalog-side suppression path. The fingerprint above uses current candidate-worktree blobs and must
-be recomputed by manager-owned closeout against the eventual L19 code commit.
-
-**260713-TES-L6 current disposition.** The agent-notifier now derives manager-subordinate membership
-from the direct spawn edge plus exact master identity, not from `binding_role == "worker"`.
-Reviewer, curator, and future subordinate roles therefore participate in compound-idle,
-completed/interrupted, and non-reaction wake behavior; architect/orchestrator/manager remain the
-owner-tier exclusion. Actions re-evaluate live catalog/inbox truth immediately before persistence
-and use the fresh leaf/role/owner metadata. Invalidated, consumed, retargeted, reparented,
-cross-master, terminal, working, malformed, or timezone-naive evidence returns `skipped` with no row
-or marker, so one bad landed timestamp cannot abort the sweep before heartbeat.
-
-### Task Document
-
-| Field                        | Value |
-| ---------------------------- | ----- |
-| Category                     | Planning/runtime projection entity |
-| Represents In Reality        | One JSON-primary `ar-task-document/v1` planning record whose structural summary is continuously projected and whose full reader body is loaded only when selected. |
-| Description                  | 260707-HFX2-L13 splits the task document across two transport shapes without creating two entities. `observer.snapshots.read_task_documents` emits at most 250 body-free `TaskDocNode` summaries into `/api/state` and `/api/stream`; `bodyRevision` fingerprints the omitted reader fields. `serving.app` exposes `GET /api/task-document?path=...`, which delegates path confinement and schema validation to `read_task_document_body`. `dashboard/src/data/taskDocuments.ts` fetches that full node, and L16's `DetailPanel` merges it over the visible summary with absent-array preservation, caches by `docPath + bodyRevision`, and renders an explicit summary fallback when the body is unavailable. 260731-EFA-L4 declares the body edge (`response_model=TaskDocNode`, with `404`/`503` `HttpDetailRefusal`) and separates the two sub-task row shapes that had been collapsed into one interface: a task-doc master's `TaskSubTaskRefNode` may carry a cross-series `linkedLifecycleId` and is never stamped with `createdAt`, while a series' `SeriesSubTaskNode` carries `createdAt` and never a cross-link; `SubTaskRow` is their union. Creation order is therefore server-side — `snapshots.py::_series_subtask_nodes` sorts it — and `DetailPanel`'s `SubTaskIndex` renders rows in the order received, keeping `orderedByCreation` only on `seriesAsMasterDoc` as an order-preserving safety net. The client sort it removed could never have done anything for a master's rows, which carry no `createdAt` at all. |
-| Canonical Source Of Truth    | The JSON-primary task file under `coordination_root/tasks`; `observer/snapshots.py` defines summary/full projection, `observer/projection.py` defines the wire node, `serving/app.py` exposes the body edge, and the dashboard adapter/panel consume it. |
-| Current Naming Drift         | `analytics.taskDocuments` still names the always-on collection, but its nodes are summaries after L13; `TaskDocNode` is used for both summary and full-body shapes, distinguished by endpoint and populated body fields rather than a second DTO name. `Analytics.series` is a compatibility master summary, not a second source of task truth. |
-| Key Identifiers              | `ar-task-document/v1`, `TaskDocNode`, `docPath`, `bodyRevision`, `TASK_DOCUMENT_SUMMARY_LIMIT`, `SERIES_DOCUMENT_SUMMARY_LIMIT`, `read_task_documents`, `read_task_document_body`, `/api/task-document`, `fetchTaskDocument`, `fullTaskDocs`. |
-| Parent / Child Relationships | The task JSON owns authored content; enclosure/lifecycle maps add optional runtime attachment; the always-on projection carries bounded navigation/progress summaries; the serving endpoint returns one confined full node; `DetailPanel` joins the body back to the selected summary by path/revision. |
-| Often Confused With          | A series/master aggregation (`SeriesNode`), an enclosure `series-contract.md`, rendered `task.md`, or a second browser-owned copy of the task. None replaces the JSON-primary document. |
-| Source References            | [projection.py](agents-remember/mcp/src/agents_remember/observer/projection.py); [snapshots.py](agents-remember/mcp/src/agents_remember/observer/snapshots.py); [app.py](agents-remember/mcp/src/agents_remember/serving/app.py); [taskDocuments.ts](agents-remember/dashboard/src/data/taskDocuments.ts); [DetailPanel.tsx](agents-remember/dashboard/src/panels/detail-panel/DetailPanel.tsx) |
-| Migration Notes              | Broadcast bodies are removed end to end, but the 250-node window currently truncates silently and summary nodes retain full step/sub-task lists. The panel cache has no eviction across body revisions. L16 reviewer D-N4 also notes that present body scalars overwrite live summary scalars until `bodyRevision` changes; arrays preserve the summary only when absent from the body. These are accepted follow-ups, not alternate current contracts. The fingerprint uses current L16 worktree blobs and closeout must verify/recompute it against the eventual code commit. **260731-EFA-L5: re-signed, not moved — checked, not assumed.** `observer/snapshots.py` is in this entity's evidence set and did change, but the leaf's three hunks in that file are the deleted gate-compaction cadence constants, `read_gates`, and `read_expectation_rows`. `read_task_documents`, `read_task_document_body`, `_task_doc_node`, `_series_subtask_nodes` and `_series_subtask_created_at` are byte-identical; the summary window, `bodyRevision`, the confinement rule and the server-side sub-task ordering are all unchanged. The only consequence for this entity is arithmetic: every citation into `snapshots.py` past L134 shifted by six lines, and those were repaired on that file's card. |
-
-### Delivery Injector
-
-| Field                        | Value                                                                                                                                                                                                                                                                                                                                            |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Category                     | Runtime delivery/transport protocol                                                                                                                                                                                                                                                                                                              |
-| Represents In Reality        | The single mechanism through which any payload class — a spawn brief/session command, an inbox dispatch/nudge/redelivery/signal row — actually reaches a hosted agent session over the tmux paste-into-chat seam, classified into one of four outcomes and read per-harness through one adapter interface. |
-| Description                  | 260707-HFX2-L3 lands `serving/injector.py` (`DeliveryRow`/`DeliveryResult`/`DeliveryOutcome`, `deliver(row, *, tmux_name, paster, harness=None)` — the four-way outcome `{acked, landed-unacked, blocked(reason), failed(reason)}`, never a bare boolean) and `serving/harness_adapters.py` (`HarnessAdapter` — `boot_ready`/`composer_state`/`mid_turn`/`mid_turn_behavior`/`blocked_reason`/`turn_started`, a thin composition over `pane_signals.py`/`turn_state.py` with no new pattern table of its own, plus `get_adapter` — named `CLAUDE_CODE_ADAPTER`/`CODEX_ADAPTER`, generic fallback for any other id). Both existing delivery call sites — the spawn-brief/session-command path (`mcp/tools/terminal.py::_deliver_spawn_pastes`) and the inbox-row path (`serving/inbox_delivery.py::deliver_inbox_entry`, which `agent_notifier.py`'s `_redeliver`/`_post_owner_signal` call) — now route through this one function instead of calling `terminal_paste.TerminalPaster.paste` directly; the raw-spawn seam's separate delivery loop is retired into it. Developer-ruled non-goals: harness hooks, Agent SDK sessions, and the codex app-server protocol are never delivery channels here or downstream of it. |
-| Canonical Source Of Truth    | `mcp/src/agents_remember/serving/injector.py` and `mcp/src/agents_remember/serving/harness_adapters.py`. |
-| Current Naming Drift         | Referred to informally as "the L3 injector" in the `Agent-Notifier Sweep` entity's Response row before this leaf landed (a forward reference written at L2 time); now resolved to this entity. `deliver_inbox_entry`/`_deliver_spawn_pastes` are the two call-site names — they are consumers of this entity, not the entity itself. |
-| Key Identifiers              | `DeliveryRow`, `DeliveryResult`, `DeliveryOutcome`, `deliver`, `envelope_text`, `HarnessAdapter`, `get_adapter`, `CLAUDE_CODE_ADAPTER`, `CODEX_ADAPTER`, `GENERIC_ADAPTER`. |
-| Parent / Child Relationships | Called by `serving/inbox_delivery.py::deliver_inbox_entry` (itself called by `serving/agent_notifier.py`'s `_redeliver`/`_post_owner_signal` — part of the `Agent-Notifier Sweep` entity's Response layer) and by `mcp/tools/terminal.py::_deliver_spawn_pastes` (the MCP spawn-tool payload builder); reads `harness_adapters.get_adapter`, which composes `pane_signals.classify_pane_signal`/`composer_state` and `turn_state.classify_turn_state`/`boot_ready`; wraps the `terminal_paste.TerminalPaster` transport. **Since 260731-EFA-L2 it selects between two explicit paster methods rather than one method with an optional argument**: a row carrying a `dispatch_policy` goes to `paste_dispatch(tmux_name, text, accepted=…, policy=…)` (exact-once, no Enter re-presses, no duplicate re-pastes, and the harness-log acceptance probe is **required in the signature**), everything else to `paste(tmux_name, text, submit=True, accepted=…)`. `paste()` no longer accepts `dispatch_policy` at all, and its old `ValueError("dispatch paste requires a harness-log acceptance probe")` guard is gone — the rule it enforced is now carried by the type. The outcome classification this entity owns is unchanged. |
-| Often Confused With          | The lower-level transport it wraps, `terminal_paste.py`'s `TerminalPaster` (that module owns the actual capture-verify/idempotent-retry paste mechanics; this entity owns outcome classification and per-harness interpretation on top of it, never re-implementing the paste itself). Also not the `Agent-Notifier Sweep` entity — that entity is the polling/predicate/action loop that is ONE caller of this entity via `deliver_inbox_entry`, not this entity itself. |
-| Source References            | [injector.py](agents-remember/mcp/src/agents_remember/serving/injector.py); [harness_adapters.py](agents-remember/mcp/src/agents_remember/serving/harness_adapters.py); [inbox_delivery.py](agents-remember/mcp/src/agents_remember/serving/inbox_delivery.py); [terminal.py](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) |
-| Migration Notes              | `InboxDeliveryState` (`controlplane/operator_inbox_records.py`) is deliberately left unchanged by this leaf — a `blocked` outcome rides as a `NEEDS-ATTENTION:`-prefixed `deliveryDetail` string rather than a first-class enum value; a future leaf could widen the dashboard-visible schema to surface `blocked` directly (bigger blast radius: `dashboard/src/types/projection.ts`, `inbox_backoff.py`'s redeliverable-state set). **260713-TES-L4:** `deliver_inbox_entry` now decides N16 landing where the target's boundary state is live — a correlated adapter `accepted` receipt while `seat_at_turn_boundary(target)` holds writes the formal `landed` terminal through `record_delivery`'s lock-held latest-fold branch; queued/non-boundary acceptance stays on the redelivery schedule. The evidence path `inbox_delivery.py` was already in this entity's set; the fingerprint row was recomputed from current working-tree blobs and closeout MUST recompute it against the landed 260713-TES-L4 commit. |
-
-**260707-HFX2-L15 current disposition (supersedes the L3 screen-acceptance details above).** The
-entity remains one delivery protocol, but `HarnessSessionLog` is now its acceptance authority.
-Messages carry their existing unique id; commands are separate and require command plus non-error
-stdout evidence; `TerminalPaster` owns one Enter re-press and one verified-absence clear/replace
-re-paste; `HarnessAdapter` labels only final failure captures. Spawn, inbox, agent-notifier, and REST
-paste all compose `injector.deliver`, while `TerminalCatalog.bind_session_log` persists the exact
-bound id/path without clobbering newer liveness. Reviewer residuals N1/N2/N3/N5 remain documented in
-the concrete sidecars rather than becoming alternate entity semantics. The candidate fingerprint
-above adds the log, transport, and catalog evidence and must be recomputed against the eventual L15
-commit.
-
-**260731-EFA-L4 verification note — this entity no longer describes the running code, and 260731-EFA-L4
-did not cause that.** Verified against the current tree: `serving/injector.py` and
-`serving/harness_adapters.py` have **no importer anywhere under `mcp/src/`**; the only modules that
-import them are `mcp/tests/test_injector.py` and `mcp/tests/test_harness_adapters.py`. Every claim
-above about "spawn, inbox, agent-notifier, and REST paste all compose `injector.deliver`" is therefore
-stale, and so are the two named call sites. Current truth, module by module.
-`serving/inbox_delivery.py::deliver_inbox_entry` delivers through
-`harness_control_client.submit_control_prompt` and immediately `del`s its `paster` argument, which
-its own docstring calls a compatibility composition parameter that harness delivery never invokes
-and that has no raw-input fallback — so the durable inbox and agent-notifier path is a protocol
-submission, not a tmux paste. `mcp/tools/terminal.py` carries no delivery path at all: spawn refuses
-the one-call brief contract outright (`_brief_delivery_separate_refusal`, status
-`brief-delivery-separate`) and `_SpawnDelivery` records only launch-phase session-command outcomes —
-the function this entry names, `_deliver_spawn_pastes`, exists neither in the tree nor at `HEAD`.
-The REST paste route answers with either harness submission evidence or plain pane transport
-(`TerminalHarnessDelivery`/`TerminalPaneDelivery`), and `serving/app.py` composes `TerminalPaster`
-for the pane half directly. The change landed with `cff3e8f feat: cut hosted sessions over to
-protocol bridge`, which is why no fingerprint in the table above ever flagged it: this entity's evidence set
-does not include the modules that took the delivery over. The four-way `DeliveryOutcome`
-classification survives only in `serving/injector.py` itself, which is now reachable from tests
-alone. This paragraph records the finding as current-state truth; deciding whether the entity is
-retired, redrawn around the protocol submission path, or reconnected is a code decision, and the
-rows above are left intact so that decision is made against what they actually said.
-
-**260713-TES-L4 current disposition.** The durable inbox path (`serving/inbox_delivery.py::deliver_inbox_entry`) now decides N16 landing where the target's boundary state is still live: a correlated adapter `accepted` receipt while `seat_at_turn_boundary(target)` holds writes the formal `landed` terminal state through `record_delivery`'s lock-held latest-fold branch (a concurrent explicit supersession wins and the stale landing appends nothing, F1); `acceptance=queued` from a busy adapter and non-boundary acceptance stay on the redelivery schedule. `operator_inbox_consume` is attribution-only and never touches delivery terminality. This paragraph updates the current-state truth above for the inbox path; the entity rows remain under the same reconnect decision.
-
-### Harness Capability Snapshot
-
-| Field                        | Value |
-| ---------------------------- | ----- |
-| Category                     | Runtime capability contract |
-| Represents In Reality        | A native Claude, Codex, or Pi installation/session's dynamic authenticated model catalog, model-gated effort choices, settings- or request-resolved initial selection, ordered same-session desired/effective selection, honest mutation evidence, and normalized daemon projection. |
-| Description                  | `CapabilitySnapshot` contains dynamic `ModelCapability` rows whose effort choices live under the accepting model. A running adapter returns retained native state through `advertise()`; a short-lived own adapter performs token-free `discover(launch)`. The daemon pre-session catalog caches only successful normalized discovery under the installed executable/effective-argv fingerprint and uses explicit refresh for auth/account invalidation. Claude discovery replaces accepted inherited MCP selectors with one strict empty config so enumeration does not launch unrelated MCP children, while normal sessions preserve their installed MCP configuration. `ResolvedLaunch{harness, model, effort, workspace}` carries either settings/role authority or an optional complete daemon request pair into the one native launch path; 260718-CHATS-L5F R2 makes launch acceptance validate on resolved-model IDENTITY — when several catalog rows share one `resolved_model` and the running harness echoes the resolved id, the REQUESTED alias key wins (`_select_current_model(requested_key=…)` threaded through `negotiate_claude_catalog`, plus `verify_effective_launch`'s `_resolves_to_same_model` guard), so a natively-succeeding launch of an aliased model (e.g. claude `opus[1m]` collapsing onto the default's `claude-opus-4-8[1m]`) is ACCEPTED instead of refused on strict key-equality, while a genuinely different or absent resolved model still fails (codex/pi exact-key guards unchanged); the additive codex-only `resume_thread_id` rides the same opener → runner payload → factory path into the sole `CodexAppServerSettings` site as a native-identity selector in the `launch_args` authority class (never validated or authorized by the opener, refused pre-spawn for non-codex or malformed values). Same-session `set_model` and `set_effort` return exactly the five honest `SetResult` states and join prompt work on the separate Harness Submission Authority timeline; native adapters do not own a second queue. Exact-session submit/reconcile preserves request correlation without paste or resend, while public responses omit private raw evidence. The catalog projects into ACP Sense 1 category-keyed selects without importing ACP transport. 260718-CHATS-L2E extends the contract with two runtime-checkable structural sub-protocols: `InterruptCapableAdapter` (one epoch-guarded native interrupt write — codex `turn/interrupt` on the exact active turn, pi RPC `abort` guarded pre-write by the caller's expected active-operation identity, replay-once per (expected, active) pair) and `AssetSubmitCapable` (asset-carrying submit dispatched only when verified asset references ride). A harness without a seam fails closed typed naming the adapter — claude stays honestly unverified with the CL-3 headless-unproven reason — and asset submissions on non-capable adapters answer an `unsupported` terminal receipt with the exact reason; capability is advertised only with landed installed-runtime fixture evidence captured through the production seam (`control-plane/*` rows, `enablesCapabilities: false`). 260731-EFA-L4 declares this entity's four daemon routes — `GET /api/harnesses/{harness}/capabilities` (`HarnessCapabilityEnvelope`, with `404`/`503` `StatusRefusal` for an uninstalled harness and for discovery being unavailable), `GET /api/terminal/{session}/capabilities` (`CapabilitySnapshotWire`) and the two `set-model`/`set-effort` routes (`SetResultWire`), the last three sharing the `SESSION_CONTROL_RESPONSES` refusal table — and types the spawn-side knob validation on the wire alias: `mcp/tools/terminal._knob_refusal`'s check table is typed `tuple[tuple[SpawnAgentSessionStatus, str \| None], ...]`, so a `model-invalid`/`effort-invalid` status the tool invents is a pyright error at the producer instead of a pydantic `ValidationError` escaping an MCP handler that has no `except` for one. The route declarations are the contract, not the check: these handlers return `JSONResponse`, which FastAPI hands back unserialized, so `mcp/tests/test_serving_response_conformance.py` — which drives every route through the real app and validates the body that came back — is what enforces them. |
-| Canonical Source Of Truth    | `harness_capabilities.py` defines `CapabilitySnapshot`, `SetResult`, and the fixed acceptance vocabulary; `harness_capability_catalog.py` owns token-free pre-session cache/refresh; `harness_control_adapter.py` owns the normalized setter port and result truth, while the separate Harness Submission Authority owns ordering/idempotency/operation lifecycle and `harness_control_queue.py` remains a facade; `harness_control_api.py` and `harness_control_client.py` own the daemon/exact-session boundary; `harness_launch.py`, `mcp/tools/terminal.py`, the runner/factory, and `terminal_opener.py` own one settings/request-resolved launch path; `claude_stream_protocol.py` and `harness_control_claude.py` own Claude discovery isolation and native evidence; each native adapter owns its remaining protocol-specific evidence. |
-| Current Naming Drift         | `CapabilitySnapshot` is not `AdapterHandshake.capabilities`, which is the fixed control-operation set. `SetResult.acceptance` is mutation evidence, not prompt `SubmissionReceipt.acceptance`; `queued` means admitted for later dispatch by the shared authority, not an adapter-native queue and not already-effective state. `ResolvedLaunch` is the normalized launch selection, while the daemon's `TerminalOpenRequest` is only one request DTO and `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` remain provenance. A selectionless roleless request may still adopt the native authenticated catalog default; that is not a second settings default. `requestId` is submission idempotency/correlation, not a model selection key. `resume_thread_id` is a codex-only native-identity selector riding `RunnerConfig`, not a `ResolvedLaunch` member and not a capability claim. |
-| Key Identifiers              | `CapabilitySnapshot`, `ModelCapability`, `EffortOption`, `SessionConfigOption`, `ResolvedLaunch`, `LaunchKnobs`, `SetAcceptance`, `SetResult`, `CapabilityCatalogResult`, `HarnessCapabilityCatalog`, `resolve_terminal_open_selection`, `read_control_capabilities`, `set_control_model`, `set_control_effort`, `submit_control_prompt`, `reconcile_control_prompt`, `OpenTerminalResult.launch-conflict`, `advertise`, `discover`, `resume_thread_id`/`resumeThreadId`, `InterruptCapableAdapter`, `AssetSubmitCapable`, `submit_with_assets`, `InterruptResult`/`InterruptAcknowledgement`, `SUBMIT_ASSET_MIME_TYPES`/`MAX_SUBMIT_ASSETS`/`MAX_SUBMIT_ASSET_BYTES` |
-| Parent / Child Relationships | `orchestration.roles.<role>` and `rolesPerLevel` resolve through `spawn_agent_session_payload` into `ResolvedLaunch`; the daemon may resolve an optional complete pair into the same type. The shared opener serializes both through one live-identity/batch fence into one runner. The runner performs adapter-owned conflict preflight, transient discovery, model/model-local-effort validation, then fresh runtime construction. After readiness, the bridge serializes setters and prompts; the private exact-session client carries request/response evidence, and the public API strips raw vendor detail. Role-based spawn remains settings-owned and the durable inter-agent inbox/brief bus remains the assignment and messaging root; neither is replaced by capability or submit routes. |
-| Often Confused With          | A hardcoded model enum, a global effort ladder, ACP transport, Toad hosting, a native-config environment shortcut, a prompt/composer command, or the durable inbox bus. Enumeration is dynamic and token-free; normalized initial and same-session model/effort never become composer paste, tmux injection, or synthesized session commands. |
-| Source References            | [normalized snapshot/result shapes](agents-remember/mcp/src/agents_remember/serving/harness_capabilities.py) L20-L194 and [strict IPC parsing](agents-remember/mcp/src/agents_remember/serving/harness_capabilities.py) L216-L325; [pre-session cache/refresh](agents-remember/mcp/src/agents_remember/serving/harness_capability_catalog.py) L48-L195; [normalized port](agents-remember/mcp/src/agents_remember/serving/harness_control_adapter.py) L31-L80, L145-L171; [daemon capability route boundary](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py) L156-L289; [first-byte client boundary](agents-remember/mcp/src/agents_remember/serving/harness_control_client.py) L58-L156, L205-L337; [typed launch and validation](agents-remember/mcp/src/agents_remember/serving/harness_launch.py) L17-L182; [role/settings resolution](agents-remember/mcp/src/agents_remember/mcp/tools/terminal.py) L305-L418; [one-opener live truth](agents-remember/mcp/src/agents_remember/serving/terminal_opener.py) L170-L257, L425-L648; [Claude discovery selector replacement](agents-remember/mcp/src/agents_remember/serving/claude_stream_protocol.py) L116-L145 and [discovery-only wiring](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) L246-L260; [Claude same-session evidence](agents-remember/mcp/src/agents_remember/serving/harness_control_claude.py) L233-L308; [Codex ordered selection](agents-remember/mcp/src/agents_remember/serving/codex_app_server_adapter.py) L221-L306 and [state](agents-remember/mcp/src/agents_remember/serving/codex_app_server_session.py) L210-L309; [Pi mutation/readback transaction](agents-remember/mcp/src/agents_remember/serving/pi_rpc_configuration.py) L24-L165 |
-| Migration Notes              | ACPUI-L5 live-confirmed the complete own-adapter matrix and closed Claude discovery amplification: accepted pre-separator MCP selectors are replaced only for ephemeral discovery, while normal session startup keeps the installed configuration. Captured model rows, effort menus, versions, process costs, and catalog counts remain installation evidence rather than enums or capacity policy. Claude Code 2.1.210 Fable remains live-switchable with generic mapping for any future native refusal; Codex selection remains queued until the next accepted turn on the same thread; Pi preserves model-error versus thinking-clamp/readback asymmetry. A startup-failed bridge can still surface `control command queue is stopped`, but terminate/retire retain the detail and reap the host. The 17-path fingerprint is computed against the current committed L4 base; manager closeout must recompute it after the L5 code commit. |
-
-### Harness Submission Authority
-
-| Field | Value |
-| --- | --- |
-| Category | Cross-layer hosted-control lifecycle protocol |
-| Represents In Reality | The one bridge-generation authority that decides whether prompt/model/effort work is queued, dispatching, completed, withdrawable, ambiguous, or terminal, and projects that truth to the cockpit. |
-| Description | `HarnessSubmissionAuthority` owns one epoch-bound prompt/setter timeline. Admission binds immutable request id, source, payload digest, and operation ref; async preflight is followed by a lock-linearized dispatch claim; queued withdrawal competes atomically with that claim. Adapters dispatch immediately under final write guards and report exact full-ref completion. Early exact completion may dominate a later unknown receipt, while id-only/FIFO/stale evidence cannot release a successor. Public status/withdraw is cockpit-only and raw-free. Timeline and duplicate ledgers are bounded without evicting live, active, or unknown work; terminal prompt text is dropped while digest/correlation remain. The browser keeps the same epoch/id/text through retry/reconcile, uses one evidence fold, and restores a withdrawn composer draft only by revision CAS. The additive `provenance` batch reads the same records epoch-checked and read-only: each exact request id discloses its source (cockpit/terminal/durable), state, submitted/updated/accepted timestamps, and vendor correlation to the exact-session daemon peer over the private socket, with honest `not-found` — never an inferred origin. 260718-CHATS-L2E adds three channels over the same records: the paged never-bodies `operation_timeline` enumeration (all three prompt sources plus set-model/set-effort identity, count-capped and byte-budgeted pages carrying `latestSequence`/`evictedBeforeSequence`/`truncated`/`bridgeEpoch`, completeness as the union of pages, eviction floor tracked at the sole pop site), the pre-tombstone `WithdrawalRecovery` payload (the exact body crosses once inside the already `cockpit_only` withdrawal response at the true transition; replays carry none; tombstone timing/class byte-preserved), and the asset-carrying submit channel (idempotence digest covers canonical asset identity only when assets ride, dispatch routes to `submit_with_assets` on capable adapters, non-capable adapters answer `unsupported`, and native acceptance evidence crosses as additive receipt `assetIds`). 260731-EFA-L4 declares the public surface: `submission-authority`, `submission-status`, `withdraw`, `submit` and `reconcile` each name their success model (`SubmissionAuthorityWire`, `SubmissionStatusBatchWire`, `WithdrawalResultWire`, `PublicReceiptWire`, `PublicReconciliationWire`) and their refusal models, with `submit` carrying two refusals no other control route can produce — `409` for an unsupported seat, a stale bridge epoch, or a reused request id, and `503 PreDispatchFailureRefusal` for the certified retry-safe pre-dispatch failure. The 17 conversation control routes do the same through `CONTROL_RESPONSES`/`INTERRUPT_OUTCOME_RESPONSES`/`WITHDRAW_OUTCOME_RESPONSES`. None of these declarations is self-enforcing — the handlers return `Response` objects, which FastAPI passes through — so `mcp/tests/test_serving_response_conformance.py` is what holds them, by driving the real app and validating the body that came back.
-| Canonical Source Of Truth | `mcp/src/agents_remember/serving/harness_submission_authority.py` for server lifecycle/linearization/retention; `harness_control_models.py`, API/bridge/client/adapter seams for transport and projection; native Claude/Codex/Pi adapters for guarded exact completion; dashboard `submitMachine.ts`, `submitClient.ts`, and `submissionLifecycleClient.ts` for monotonic browser projection and authoritative pop-back. |
-| Current Naming Drift | `HarnessControlQueue` remains a compatibility class name but is now only a facade. `queued` means authority-admitted and withdrawable, not a vendor/native queue. “Pop-back” is UI language for an exact server withdrawal followed by revision-safe recovery; it is not local queue mutation, rewind, or resend. |
-| Key Identifiers | `HarnessSubmissionAuthority`, `ControlOperationRef`, `bridgeEpoch`, `operationSequence`, `expectedBridgeEpoch`, `submission/status`, `submission/withdraw`, `submission-provenance`, `SubmissionProvenance{,Batch}`, `pre-dispatch-failed`, `retrySafe`, `foldSubmitEvidence`, `withdrawLatestQueuedSubmission`, `pendingWithdrawal`, `submissionRecovery`, `OperationTimeline{,Item}`, `operation-timeline`, `evictedBeforeSequence`, `WithdrawalRecovery`, `AssetReference`, `assetIds`. |
-| Parent / Child Relationships | Created once by the hosted control bridge and surfaced through the legacy queue facade; calls dispatch-now native adapters; receives their direct completion before coalesced publication; API/IPC/client expose normalized authority/status/withdraw; dashboard store/composer/QueuePreview consume the raw-free projection. Capability Snapshot supplies model/effort vocabulary but does not own lifecycle ordering. |
-| Often Confused With | The durable inter-agent inbox (assignment/message root), Delivery Injector (tmux-paste delivery for older inbox/spawn seams), adapter-native queue state, browser optimistic state, or interaction gate answers. None can grant prompt lifecycle authority. |
-| Source References | [server authority](agents-remember/mcp/src/agents_remember/serving/harness_submission_authority.py); [bridge](agents-remember/mcp/src/agents_remember/serving/harness_control_bridge.py); [API](agents-remember/mcp/src/agents_remember/serving/harness_control_api.py); [frontend fold](agents-remember/dashboard/src/data/submitMachine.ts); [frontend lifecycle](agents-remember/dashboard/src/data/submissionLifecycleClient.ts); [shared composer](agents-remember/dashboard/src/panels/SessionComposer.tsx) |
-| Migration Notes | FEUI-L5 replaces the ACPUI-L3/L4 model in which `HarnessControlQueue` and native busy/steer paths could be read as co-authorities. Review rounds exposed and closed real gaps in deadline handling, answer-channel separation, full-text retention, source/draft provenance, exact retry certification, response-loss intent, early-completion dominance, revision recovery, full-ref dedupe, bounded Codex correlation, not-found projection, keep-current dismissal, and central response/poll ordering. The candidate fingerprint uses working-tree blobs; closeout must recompute it against the landed code commit. |
-
-## 260718-CHATS-L5I Entity Clarifications
-
-**Harness Capability Snapshot** now carries a narrow fixture-backed interrupt verdict from the control layer into the active-conversation view. That bridge is deliberately single-source: proving native interrupt support does not promote steer, follow-up, attachment, policy, history, or telemetry capability claims.
-
-**Harness Submission Authority** distinguishes a timely accepted/queued receipt from terminal delivery. A bounded dispatch-acceptance grace can return `queued` before a healthy native echo arrives, but only later lifecycle evidence settles the operation; a receipt must never be projected as a completed turn.
-
-These are prose-only clarifications of existing load-bearing entities. Their `git-blob-set-v1` rows intentionally remain pinned until the code commit supplies truthful `HEAD` blobs.
-
-## 260731-EFA-L2 Entity Clarifications
-
-**No entity was added, removed, split or merged in this leaf, and no entity's identity, boundary or
-canonical source of truth moved.** 260731-EFA-L2 armed the quality gate at full strength with zero
-exemptions; the code it touched changed *shape* — long parameter lists became named values, long
-routers became named branches, a few guards were deleted at their cause — which is why nineteen
-fingerprints moved at once. Read a changed fingerprint here as "the implementation was re-signed",
-not "the concept changed". The specifics below are the ones that alter what a caller may write.
-
-**Coordination Context**, **Path Rule** and **Branch-Gated Cross-Repo Source** share one changed
-fact: the resolver's *input* API. `resolve_coordination_context(code_repository_name=None,
-workspace_root=None, code_repository_root=None, *, hints: CoordinationHints | None = None, selector:
-EnclosureSelector | None = None)` replaces the nine former resolution keywords; `CoordinationHints`
-carries `topology` / `coordination_root` / `settings_path` / `onboarding_root`, and
-`EnclosureSelector` carries the contract/leaf selection. All four models (plus `CodeRepository` and
-`CoordinationRoots`, which type what the private helpers pass between them) are re-exported from the
-`kernel.coordination_context_resolver` facade, which remains the supported import path. **The
-resolved context — every `Key Identifiers` field recorded above, resolution order, the
-onboarding-root branch and contract-lookup precedence — is unchanged.** Only how a caller *asks*
-moved. `memory/baseline.py`, `memory_quality`'s two CLI entry points and `serving/scope.py` were
-updated accordingly.
-
-**Delivery Injector** is the one entity whose contract genuinely narrowed: dispatch delivery is now
-a separate paster method with a mandatory acceptance probe rather than an optional argument on the
-ordinary paste. See the entity's Parent / Child Relationships row.
-
-**Harness Submission Authority** now has exactly one capability decision point. The dispatch-time
-asset-capability guard was reduced to an assert, and `_unsupported_prompt_locked` decides under the
-same lock that enrols the record — so the decision and the enrolment cannot disagree. Its bounds are
-declared as one `SubmissionLimits` (`timeline`, `ledger`) and its snapshot access as one
-`BridgeSnapshotPort`. `harness_control_ipc.py` collapsed two `if action == …` chains into a single
-`_CONTROL_ACTIONS` table with one unknown-action refusal (the separate "unknown capability action"
-message is gone; capability actions are ordinary table entries). `harness_control_client.py`'s
-`_submission_state` now raises for anything outside the seven lifecycle states unless
-`optional=True`, so the removed "operation timeline item requires lifecycle state" re-check was a
-duplicate, **not** a relaxation.
-
-**Seat Retirement** and **Seat Landing Archive** now share one provenance value: `SeatClosure`
-(`at`, `reason`, `edge`, `by_session`) in `serving/retire.py`, written by both closure paths —
-retirement marks `killed`, landing marks `archived`. The four facts are one record: a timestamp
-with no reason is an unexplained tombstone, and a reason with no edge cannot be traced back to the
-chain step that closed the seat. Retire authority policy and landing selection rules are unchanged.
-
-**Supervisor Sweep** gained `EscalationSchedule` (`sla_seconds`, `rung_seconds` — one timetable,
-because raising the SLA without the dwell only moves where the same storm starts) and `OwnerSignal`
-(one owner-addressed signal and the seat it is about, inseparable because coalescing looks a row up
-by `(ask, kind, leaf, role)` and renewal rewrites the subject from the same value). The
-deterministic posture — zero tokens, pure code, predicates reading the durable stores rather than
-the projection — is unchanged.
-
-**Seat Binding Identity** and the liveness surface: `TerminalCatalogLivenessConfig`,
-`DEFAULT_LIVENESS_HYSTERESIS` and the four `DEFAULT_LIVENESS_*` constants **moved from
-`terminal_liveness.py` to `terminal_catalog.py`**. Any reference to
-`terminal_liveness.DEFAULT_LIVENESS_FAILURE_THRESHOLD` or its siblings is stale. Values unchanged.
-
-**Worktree Contract** and **Worktree Integration**: `worktree_contract.py` names `RepoBranchPlan`
-(one repository's branch plan for a worktree pair), `ContractTask` (the task a contract speaks for)
-and `LeafIdentity`; `integrate.py` names `IntegrationSources` (where each side's source branch stands
-when integration starts, with `replay_required()` as a method rather than a caller-side computation)
-and `IntegratedCommits` (**the three commits one integration lands — code, memory content, contract
-rewrite — consumed all three or none**); `cleanup.py` names `RetiringBranch`; `guidance.py` splits
-lifecycle phase reporting into `_reclaimed_phase` / `_post_integration_phase` /
-`_pre_integration_phase`. The contract fields, the integration order and the ledger alignment rules
-are unchanged.
-
-**Runtime AGENTS Template Package**: `install/runtime.py` names `RuntimeTreeSync` (one packaged tree
-mirrored into the coordination root — `prune_tree` and `copy_tree` both take it),
-`ProviderDependencyInstall` and `RuntimeInstallRequest`. The four packaged `AGENTS.md` templates
-themselves are byte-identical; only the installer's call shape moved.
-
-**Onboarding Unit** and **Memory Quality Control**: verdict construction was centralized per
-classifier — `check_missing_onboarding.py` splits into `_missing_sidecar_onboarding` /
-`_missing_inline_onboarding` with the unsupported-storage-mode fallthrough as the visible last
-statement, `sidecar.py` builds every `DriftRow` through one `row(...)` closure that fixes identity
-and verification stamp (with `_early_classification` grouping the three pre-diff verdicts), and
-`entities.py` takes an `EntityCatalog` value. **The classification vocabulary, trust levels and
-emitted rows are byte-identical**, which matters here because this entity's own drift output is what
-readers of this catalog rely on.
-
-**Provider Degradation Protocol**: `degradation.py` names `_DegradationTransition` (the event id,
-from-state, to-state and timestamp that *are* the event's identity — everything else in the payload
-is the evidence justifying it) and posts alerts through the control-plane `InboxMessage` /
-`InboxRouting` / `InboxAddress` / `InboxPoster` bundles plus `HostedSessionRuntime`. States,
-thresholds and alert content are unchanged.
-
-**External Memory Ledger**, **Memory Baseline Adoption** and **Task Document** were re-signed by
-their neighbours rather than changed in themselves: `memory_ledger.py` was touched only by the
-whole-tree `ruff format` pass, `memory/baseline.py` only by the resolver-hints call shape, and the
-`Task Document` evidence only by `serving/app.py`'s and `observer/snapshots.py`'s own re-signing.
-
-Fingerprints in the table above were recomputed from the **staged index** — the exact content
-closeout will commit — because this pass runs before the code commit. Closeout should re-verify them
-against the landed `HEAD`.
-
-## 260731-EFA-L4 Entity Clarifications
-
-**No entity was added, removed, split or merged in this leaf, and no entity's canonical source of
-truth was relocated.** 260731-EFA-L4 gave the repository's escape hatches real types: `dict[str,
-Any]` returns became declared models and TypedDicts, and vocabularies that had been carried as two
-or three hand-written copies became one declaration each, imported by everyone else. Read a changed
-fingerprint here mostly as "this entity's vocabulary is now checkable", not "the concept changed".
-Four changes are exceptions, in that they alter what the code does rather than what the checker can
-see, and each is recorded in its own entry above: **Worktree Contract** — the closeout quality gate
-now stages the whole task worktree before it runs (an index mutation that precedes the gate and is
-not undone on refusal), the contract reader became total, and three response keys are now omitted
-where they used to be filled in; **Memory Quality Control** — the drift summary can report `error`
-instead of raising out of the tool; **Seat Retirement** — the tool's `ok` is derived once from a
-named status set instead of being written out per call site; **Task Document** — a no-op client-side
-sub-task sort was removed in favour of the server ordering that was already authoritative.
-
-**Worktree Contract** is the largest entry. Three facts are worth stating separately because they
-are easy to state wrongly. *First*, the read/write asymmetry: `validate_contract(contract, *,
-path)` refuses all six vocabulary cells, but `load_contract` calls it only after `_vocabulary_cell`
-has already narrowed every cell, so the refusal is reachable from `write_contract` alone. **A
-contract written directly as markdown — hand-edited, produced by an older build or a newer one —
-still loads with an off-vocabulary cell in it.** That cell degrades to the declared default, its raw
-token is quarantined in `unknown_cells`, it surfaces as `unknownContractCells` on the context
-packet, and the file heals the next time a lifecycle tool rewrites it. It is not rejected. (The
-document-level refusals are unaffected: absent or unclosed front matter, an unrecognized schema, a
-missing required field, an empty required path, a leaf with no `leaf_id`, and an external-memory
-leaf with no memory repository all still refuse on read, as they did.) That is the whole point: no lifecycle tool catches
-`ContractError`, so refusing on read would leave a task that `worktree_closeout_apply`,
-`worktree_integrate`, `worktree_cleanup`, `worktree_sync` and `worktree_abandon` had all
-simultaneously lost the ability to touch. *Second*, the six cells are now moved by `ContractCells` +
-`amend_contract` rather than `dataclasses.replace`, because typeshed declares
-`replace(obj, /, **changes: Any)` and one `Any` in a third-party stub voided the guarantee: an
-off-vocabulary literal at any of the six fields produced no pyright diagnostic at all.
-`test_wire_vocabulary_exhaustiveness` keeps the loophole shut from the other side, with a scan that
-no `replace` call anywhere may carry one of these keywords. *Third*, nine refusals in
-`worktree_contract.py` now name the file they are about, in two shapes — `<problem>: {path}` for
-the document as a whole, `<problem>: <detail> (in {path})` for something inside it — and `_path`
-additionally names the front-matter line (`section.key`), because `repo_path` and `worktree` each
-appear under both `code:` and `memory:`.
-
-**Worktree Contract** and **Worktree Integration** also share the reconciliation that motivated the
-leaf. `models/worktree.py` had been retyping six vocabularies that other modules produce, and the
-copies had drifted in six places at once: `chat-task`, `reopened`, `carryover-pending`, `abandoned`,
-`request_carryover_decision` and `memory_carryover_apply` were all writable by the producer and none
-of them validated at the wire model — which, by this leaf's own scan, made the context packet reject
-165 of the 213 series contracts on disk with a `ValidationError` that no handler on the tool path
-catches. The fix is directional: `models/worktree.py` imports from `worktree_contract.py` and
-`worktrees/modules/guidance.py`, never the reverse. `application/worktree_status.py` now builds
-`WorktreeSummary` instead of returning a dict for `application/context_packet.py` to
-`model_validate`, which is what moves the failure from response time to type-check time.
-**One response shape genuinely changed**: `nextTool`, `nextArgs` and `nextRequiredArgs` are now
-omitted when the producer omits them, where the projection used to substitute `""`, `{}` and `[]`.
-The leaf measured 48 of 213 responses losing a `"nextRequiredArgs": []` key. An absent key means
-what the empty list meant; the invented `""` was a `nextTool` value no producer declares.
-
-**Memory Quality Control**'s change is small and load-bearing: `DriftStatus` is declared once, with
-`error` in it, and `models/drift.DriftSummary` gained the matching `error` field. Before, an
-`include_drift` context packet against a repository whose onboarding root does not exist raised out
-of the tool — on exactly the call meant to explain that. The classification vocabulary, trust
-levels and emitted drift rows are unchanged.
-
-**Supervisor Sweep**, **Seat Retirement**, **Seat Landing Archive**, **Task Document**, **Harness
-Capability Snapshot** and **Harness Submission Authority** were all reached by the same HTTP-wire
-pass, and it carries one caveat that must not be paraphrased away. `serving/response_contract.py`
-(plus `serving/conversation/response_contract.py`) declares a strict `extra="forbid"` model for
-every **HTTP** route the serving app registers — all 61 of them, and only those: the websocket
-`WS /api/terminal/{session}` has no declaration at all, as this paragraph says again below. Each
-route now names its success model and its per-status refusal models. **That declaration is not the
-enforcement.** FastAPI applies `response_model` only to values it serializes itself, and **57** of
-the 61 handlers return a `Response` subclass directly while **two more** — `GET /api/stream` and
-`GET /api/events` — are async generators feeding an `EventSourceResponse`; on all **59** of those
-the decorator contributes an OpenAPI schema and validates nothing.
-Only `GET /api/terminal/sessions` and `GET /api/harnesses` return a bare dict, and those two now
-answer HTTP 500 on payload drift — a deliberate fail-loud trade, mitigated by a CI check that
-compares `TerminalCatalogEntry.to_json`'s emitted key set against the wire model's aliases. The real
-enforcement for the rest is `mcp/tests/test_serving_response_conformance.py`, which drives every
-route through the real app and validates the body that came back. `WS /api/terminal/{session}` is
-the only undeclared route, found by its route class rather than by a path skip-list.
-
-**The dashboard mirror is generated from the Python projection schema and checked for drift.**
-`dashboard/src/types/projection.ts` is marked generated/do-not-edit, names
-`WorkspaceProjection.model_json_schema()` as canonical, and names
-`scripts/sync-projection-types.py` plus its `--check` command. The generator writes the schema and
-TypeScript outputs when not checking, while `check()` reports out-of-sync files without writing
-when `--check` is used cit:(["GENERATED FILE", "DO NOT EDIT", "Canonical core model:"], dashboard/src/types/projection.ts:1-2) cit:(["Canonical core model: WorkspaceProjection.model_json_schema()"], dashboard/src/types/projection.ts:2-2) cit:([`Generator`, "Drift check"], dashboard/src/types/projection.ts:5-5; dashboard/src/types/projection.ts:7-7) cit:(["sync_generated_files(root)", "out of sync"], scripts/sync-projection-types.py:49-49; scripts/sync-projection-types.py:62-62) cit:(["def check(repo_root: Path) -> int:", "--check", "do not write files"], scripts/sync-projection-types.py:25-25; scripts/sync-projection-types.py:27-27; scripts/sync-projection-types.py:43-43).
-This is a generated mirror with an explicit drift gate, not a hand-maintained/no-generator surface.
-
-**External Memory Ledger** and **Delivery Injector** were re-signed by their neighbours rather than
-changed in themselves. `kernel/memory_ledger.py` and `memory/baseline.py` are untouched; the ledger
-entity's two changed evidence files, `closeout.py` and `integrate.py`, moved only in the
-contract-amend and staged-gate paths, and the one fact that reaches this entity is that a refused
-quality gate now commits nothing at all, so no ledger row is published either. `Delivery Injector`'s
-single changed evidence file, `mcp/tools/terminal.py`, moved only in `_knob_refusal`,
-`_spawn_refusal`, `_retire_payload` and `_rename_payload`; `serving/injector.py` and
-`serving/harness_adapters.py` are untouched. Checking that turned up drift **this leaf did not
-cause and could not have caused**: those two modules have no importer anywhere under `mcp/src/`, so
-the `Delivery Injector` entry describes a mechanism the running code no longer uses. The finding is
-written up as current-state truth in a dated verification note under that entity, with the evidence
-for each claim; it is not deferred, and it is not silently patched over either, because choosing
-between retiring the entity, redrawing it around
-`inbox_delivery.deliver_inbox_entry`'s protocol submission, and reconnecting the injector is a code
-decision and not a curator's.
-
-**Coordination Context** moved without its fingerprint moving, which is the case this table cannot
-flag: `kernel/coordination_context/models.py` is not in its evidence set, and that is where
-`CoordinationContext.memory_mode` became the worktree contract's `MemoryMode` alias. The resolved
-values are unchanged; the declaration is now shared.
-
-Two vocabularies that L4 made checkable belong to no entity in this inventory and are recorded here
-so a later curator does not go looking for them: `observer/lifecycle_state.py` now composes `State`
-from a `LiveState`/`TerminalState` partition validated at import by `check_state_partition` (with
-`EndOutcome` as the terminal half, since a lifecycle reaches a terminal state only by being ended),
-and `observer/projection.py` derives the `Metrics` per-state buckets from the live half — which is
-how `awaitingDeveloperCount` came to exist, a state that had been inflating `lifecycleCount` and
-`totalTokens` while landing in no bucket at all.
-
-The TypeScript mirror **now holds the same partition, in the same shape** — a worker landed it in
-`dashboard/src/types/projection.ts` after the first pass of this leaf's curation, so any card still
-saying otherwise is stale. It writes out `LIVE_STATES` (four) and `TERMINAL_STATES` (two) as the
-halves, spreads `LIFECYCLE_STATES` from them, derives `State` from that tuple, and binds
-`ACTIVE_STATES` to the live half **directly** rather than by subtraction — there is no second list
-left to disagree. State the limit precisely rather than trading one overclaim for another: the
-mirror refuses double-filing at **compile** time (`StatesAreFiledOnce = FiledOnce<ActiveState &
-TerminalState>`; verified by mutation — filing `"completed"` live fails with
-`error TS2344: Type '"completed"' does not satisfy the constraint 'never'`), but it **cannot** refuse
-a duplicate *within* one half, because `Literal["a", "a"]` collapses to one member in Python while a
-TypeScript tuple keeps both. A duplicated half compiles clean and is caught only at runtime, by
-three assertions in `dashboard/src/test/contract.test.ts`. Nothing enforces the agreement between
-the two vocabularies in either direction — that is link C above, in its most load-bearing instance.
-
-**No fingerprint hash and no evidence path in the table above was hand-edited.** Eleven entities
-have at least one changed evidence blob and their fingerprints are therefore stale — Memory Quality
-Control, External Memory Ledger, Worktree Contract, Worktree Integration, Seat Retirement, Seat
-Landing Archive, Supervisor Sweep, Task Document, Delivery Injector, Harness Capability Snapshot and
-Harness Submission Authority. Closeout must recompute all eleven against the landed `HEAD`; they
-cannot be computed here, because `git-blob-set-v1` resolves `HEAD:<path>` and this leaf's code is
-uncommitted. Verification metadata is pinned until closeout stamps the commit.
-
-## 260731-EFA-L5 Entity Clarifications
-
-**No entity was added, removed, split or merged in this leaf.** 260731-EFA-L5 gave the six
-append-only control-plane JSONL stores one declared storage contract, `ar-durable-store/1.0` in the
-new `controlplane/durable_store.py`: every append and every rewrite of every log takes that log's
-`flock` unconditionally, in every process; each log names a single compaction owner (with one
-declared exception); records carry a `schemaVersion` whose unknown major is refused and unknown
-minor accepted; and the read policy is split deliberately rather than uniformly — **only `GateStore`
-and `ExpectationRowStore` carry both a strict and a tolerant reader**. `OperatorInboxStore` is strict
-only; attention dismissals, orchestration nudges and agent-notifier signals are tolerant only, and their
-rewrites run off that single tolerant read, so those three drop an unparseable row permanently. That
-is tolerable only because none of the three carries authority; the rule the contract actually states
-is that **every rewrite of an authority-bearing log reads strictly**, not that every rewrite does.
-
-The defect it closes is record loss under ordinary two-process operation. **No base-commit
-measurement artifact is committed to this tree**, so every base-commit rate below is checkable only
-as "the source says so". Two figures are corroborated across independent sites and are quoted here on
-that authority: **31.45%** on attention dismissals (`durable_store.py`, `agent_notifier_signals.py`) and
-**11.50%** of appended gate snapshots (`store.py`, which also reports 100% in a deterministic
-forced-window scenario). The remaining rates, the run count, and the whole-records-not-torn property
-rest on `durable_store.py`'s module docstring alone.
-
-One base-commit fact *is* checkable, and it is the one worth citing:
-`test_controlplane_store_durability.py::HarnessSensitivityTests` extracts the base commit with
-`git archive` at test time and asserts the forced scenario loses a record in each of the five
-unlocked stores and none in operator-inbox. The post-fix zeros are likewise asserted, by
-`MultiProcessDurabilityTests` — but over five stores rather than six in the `forced_unlink` scenario
-(attention dismissals has no `append` and is excluded by construction), and the torn-line and
-raised-error zeros only in `stress`.
-
-**Five entities have at least one changed evidence blob.** Intersecting each entity's `Evidence
-Paths` against the leaf's 25-file changed set gives exactly: External Memory Ledger, Worktree
-Contract, Provider Degradation Protocol, Supervisor Sweep, Task Document. **Three moved and two were
-only re-signed**, and the split is not guessable from the file list — it needed reading the hunks.
-
-**Moved — Worktree Contract.** The persisted artifact itself changed: `series-contract.md` front
-matter now carries `schemaVersion` under `schema:`, and `load_contract` gained a document-level
-refusal for an unknown major. Three things are easy to state wrongly here. *First*, the constant and
-the policy are **reused, not redeclared** — `CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION` and the
-refusal calls `schema_version_supported`, both from `controlplane/durable_store.py`, so the tree has
-one version rule rather than two that can drift. *Second*, this is **not** a seventh vocabulary
-cell. The L4 entry above draws the read/write asymmetry carefully — a cell outside its vocabulary
-degrades and is quarantined, because refusing it would strand a task that no lifecycle tool could
-close, integrate, clean up or abandon — and `schemaVersion` sits on the other side of that line,
-with absent front matter and an unrecognized `schema`. *Third*, the refusal is unreachable for
-anything this build wrote: an absent line means 1.0 and is accepted, and 214 `series-contract.md`
-files under this workspace's coordination tasks root carry **zero** `schemaVersion` lines today. It
-can only fire on a document a future major wrote, which is what "telling an old record from a new
-one" means and why no migration exists.
-
-**Moved — External Memory Ledger, in its contract rather than its behaviour, and the distinction is
-the point.** `kernel/memory_ledger.py::write_ledger` is byte-identical: still
-`mkdir` + `write_text`, still no lock, no temp-and-rename, no fsync — in the same leaf that gave all
-six JSONL stores exactly those things. What L5 added is a 20-line docstring recording requirement
-R12's ruling, **degraded not unrecoverable**, and a ruling is a change to what the entity guarantees
-even when no instruction changed. It was settled by measurement: all six `write_ledger` call sites
-`git add memory.md` and commit within the next two statements, so the durable authority for a
-mapping is the git object and a truncated file costs only the uncommitted delta; and nothing under
-`observer/` or `serving/` writes the ledger at all, so there is no second daemon to serialize
-against and a lock would guard nothing. **The load-bearing consequence is a new obligation on
-callers** — write and commit in the same function — which is now recorded on that file's card as an
-invariant, because a seventh caller that defers its commit turns "lose a delta" into "lose the
-mapping history".
-
-Two corrections to that docstring's own precision were verified and carried into the file card
-rather than repeated here as fact. It says `observer/snapshots.py` "imports `load_ledger` and
-nothing else"; it imports `LedgerError`, `LedgerRow` and `load_ledger` — three names, none of which
-writes, so the claim that matters holds. And it says the five callers are "reached only through MCP
-tool registrations"; `worktrees/modules/cli.py` registers `start`, `closeout` and `integrate`
-subcommands and `worktrees/git_worktree_manager.py` ends with
-`if __name__ == "__main__": raise SystemExit(main())`, so three of them are also reachable as a
-script. That is a short-lived process on the same commit-immediately path, so the ruling stands, but
-the accurate premise is "no concurrent daemon writes this", not "only the MCP process ever writes
-this".
-
-**Moved — Supervisor Sweep.** Both of its changed evidence files changed *about this sweep's own
-durability*, not incidentally. `agent_notifier_signals.py`: the cooldown log the sweep owns went from
-unlocked to locked across read **and** rewrite, and the reason the earlier draft left it unlocked is
-worth carrying — it has one writer, which was true and irrelevant. The proof run measured 31.45%
-loss on its structural twin, attention-dismissals, whose single-writer claim was just as true; "one
-process writes this file" is a deployment fact, not a structural one. `operator_inbox_store.py`: the
-inbox is **the leaf's one declared exception** to single-owner compaction, because both long-lived
-processes must physically remove rows — the MCP deletes a cancelled gate's inbox rows at the moment
-it cancels the gate, and this sweep must resolve and compact under one continuously held lock so a
-consume that won the lock stays terminal. Neither removal can move to the other process without
-moving the decision it implements, so this is the one log where the lock is the whole mechanism
-rather than a backstop behind an owner — which is what it already was, and why its pre-existing
-flock reads as the right call kept rather than a habit inherited.
-
-**Re-signed, not moved — Provider Degradation Protocol.** Its one changed evidence file,
-`controlplane/operator_inbox_records.py`, moved only in `OperatorInboxCompatibleRecord`, which now
-derives from `DurableRecord` and so carries `schemaVersion` and its unknown-major refusal on every
-`OperatorInboxEntry` — including this entity's `degradation-alert` rows. This is the same shape as
-the HFX2-L1 note already in its Migration Notes and gets the same answer: the detector, the
-healthy/degraded/critical state machine, the thresholds, the failsafe and the
-`AgentRole`/`InboxMessageKind` literals are untouched. One detail is worth having recorded rather
-than rediscovered: this store deliberately keeps `extra="allow"` and its named forward-compatibility
-allowlist instead of the contract's default `extra="forbid"`, and is the contract's one declared
-`extra` exception.
-
-**Re-signed, not moved — Task Document.** `observer/snapshots.py` is in its evidence set and did
-change, but the leaf's three hunks there are the deleted gate-compaction cadence constants,
-`read_gates`, and `read_expectation_rows`. Every task-document reader is byte-identical. The only
-consequence for this entity is arithmetic: `snapshots.py` citations past L134 shifted six lines, and
-those were repaired on that file's card.
-
-### Declarations that now live outside the entity's evidence set
-
-This is the gap the fingerprint cannot see, and it is recorded rather than quietly closed, because
-changing an evidence set changes what `git-blob-set-v1` hashes and is therefore a deliberate
-decision rather than a curator's to make silently. **Three instances, all caused by this leaf:**
-
-- **Worktree Contract.** The rule that decides whether a `series-contract.md` loads at all —
-  `SCHEMA_VERSION`, `SUPPORTED_SCHEMA_MAJOR`, `schema_version_supported` — now lives in
-  `controlplane/durable_store.py`, which is not in this entity's evidence set. Raising
-  `SUPPORTED_SCHEMA_MAJOR` would change which contracts this build accepts and would not move this
-  entity's fingerprint by a single bit.
-- **Supervisor Sweep.** The declarations naming this sweep the compaction owner of expectation-rows,
-  orchestration-nudges and supervisor-signals, and declaring the operator inbox ownerless, are all
-  `StoreOwnership` values in `controlplane/durable_store.py` — outside the evidence set. So are
-  `controlplane/expectation_rows.py` and `controlplane/orchestration_nudges.py`, two stores this
-  sweep drives that the set has never named.
-- **External Memory Ledger.** The ruling itself is inside the set (`kernel/memory_ledger.py`), but
-  the caller obligation it depends on is not: `worktrees/modules/start.py` and `memory/carryover.py`
-  are two of the six `write_ledger` call sites and neither is in the evidence set, which names only
-  `closeout.py`, `integrate.py` and `baseline.py`.
-
-**And one gap this leaf makes newly visible rather than creates:** the whole `ar-durable-store/1.0`
-contract — the lock policy, the ownership register, the two read policies, the schema-version rule —
-belongs to **no entity in this inventory**. Checked against every `Evidence Paths` cell in the table
-above: `controlplane/durable_store.py`, `store.py`, `records.py`, `expectation_rows.py`,
-`attention_dismissals.py`, `orchestration_nudges.py`, `enforcement.py`, `gate_policy.py` and
-`interaction_retention.py` appear in none of them, and neither do `mcp/tools/gates.py`,
-`mcp/server.py` or `cli/dashboard.py`. The control plane is visible to this catalog only through
-Supervisor Sweep's inbox/signal entries and Provider Degradation Protocol's record file — which
-means the gate store, the artifact whose `applied` marker stops one human approval being consumed
-twice, is not covered by any fingerprint at all. Whether that
-warrants a new entity (a "Durable Control-Plane Store" peer of Supervisor Sweep) or an evidence-set
-extension on the existing ones is a decision for the manager and the `controlplane/` route's
-curator, and is deliberately left open here.
-
-### Fingerprints
-
-**No fingerprint hash and no evidence path in the table above was hand-edited.** Five entities have
-at least one changed evidence blob and their fingerprints are therefore stale — **External Memory
-Ledger, Worktree Contract, Provider Degradation Protocol, Supervisor Sweep, Task Document**.
-Closeout must recompute all five against the landed `HEAD`; they cannot be computed here, because
-`git-blob-set-v1` resolves `HEAD:<path>` and this leaf's code is uncommitted. Verification metadata
-is pinned until closeout stamps the commit. Note that the three "declaration outside the evidence
-set" cases above will **not** appear as stale rows at closeout either now or ever, which is the
-whole reason they are written out in prose.
-
-## Cross-Layer Projections
-
-### Onboarding Unit
-
-| Layer              | Representation                                                                                            |
-| ------------------ | --------------------------------------------------------------------------------------------------------- |
-| Repository source  | One concrete source file or repo-level entity set.                                                        |
-| Onboarding storage | Mirrored Markdown file or repo-level `entities.md` under the resolved onboarding root.                    |
-| Drift detection    | File metadata, overview source routes, inline digests, or entity fingerprints compared deterministically. |
-| Agent workflow     | Read alongside source; update through `c-05-create-or-update-onboarding-files` skill when durable state changes, using resolved domain docs as discovery input and live docs as authoritative when configured. |
-
-### Runtime AGENTS Template Package
-
-| Layer              | Representation                                                                                                                        |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Repository source  | Four templates under `mcp/src/agents_remember/package_data/runtime/agents-md-files/{coordinator,skills,system,tasks}/AGENTS.md`.                                           |
-| Runtime install    | Intended destinations under the coordinator root, skills tree, system tree, and task tree.                                            |
-| Onboarding storage | Four mirrored file-level onboarding units under `onboarding/mcp/src/agents_remember/package_data/runtime/agents-md-files/`.                                                |
-| Agent workflow     | Agents read the installed templates at runtime; source changes to the templates are maintained as normal file-level onboarding units. |
-
-### Coordination Context
-
-| Layer            | Representation                                                                                                               |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Settings         | `system/settings.md` plus JSON-first `system/settings.json` when present.                                                    |
-| Resolver code    | `CoordinationContext` dataclass and JSON/text output.                                                                        |
-| Consumer skills  | `c-02-memory-quality-control` skill, `c-03-repo-bootstrap` skill, `c-05-create-or-update-onboarding-files` skill, and task workflows consume resolved roots instead of guessing, including the repo-specific task namespace. |
-| Worktree support | Explicit memory, coordination, task, temp, worktree, contract, and ledger facts. `memory_mode` is copied from the in-scope contract and typed as that contract's `MemoryMode` alias, so the two cannot declare different sets. |
-
-### Light Task Artifact
-
-| Layer            | Representation                                                                              |
-| ---------------- | ------------------------------------------------------------------------------------------- |
-| Planning         | JSON-primary `ar-task-document/v1` doc rendered to `task.md` (by the `task_doc` tool) under the `c-08-ar-coordination-context-resolver` skill resolved task root.                                    |
-| Implementation   | Checkbox checklist is the live execution state.                                             |
-| Onboarding       | Durable current-state findings may be propagated to onboarding through `c-05-create-or-update-onboarding-files` skill after approval. |
-| Worktree support | Lives beside `contract.md` for worktree-backed tasks.                                       |
-
-### Memory Baseline Adoption
-
-| Layer              | Representation                                                                                            |
-| ------------------ | --------------------------------------------------------------------------------------------------------- |
-| Developer decision | Current onboarding is either refreshed through `c-05-create-or-update-onboarding-files` skill or explicitly accepted despite drift.                 |
-| `c-10-adopt-memory-baseline` skill service/CLI   | `baseline_status` reports drift and ledger state; `baseline_adopt` creates the baseline only when allowed, with the CLI commands as adapters. |
-| `c-09-git-worktree-manager` skill mutation      | Bootstrap commits current memory content and writes the initial `memory.md`.                              |
-| Future worktrees   | `c-09-git-worktree-manager` skill can use the ledger to decide whether external memory is compatible with a selected code base commit. |
-
-### Worktree Contract
-
-| Layer             | Representation                                                  |
-| ----------------- | --------------------------------------------------------------- |
-| Current repo      | Common parser/writer plus result-returning `c-09-git-worktree-manager` skill service functions. |
-| Local coordinator | `ar-coordination/tasks/<repo-name>/<task-name>-ar/contract.md`. |
-| Persisted vocabulary | Six `Literal` aliases declared once in `worktree_contract.py`; the reader degrades an unknown cell onto the declared default and quarantines the raw token in `unknown_cells`, the writer refuses it. A hand-edited file therefore loads degraded and heals on the next rewrite; nothing in the package can create that state. |
-| `c-08-ar-coordination-context-resolver` skill              | Facts-only contract reader; its `memory_mode` is the contract's own `MemoryMode` alias. |
-| `c-09-git-worktree-manager` skill              | Creator/updater and lifecycle owner; every status-cell write goes through `ContractCells`/`amend_contract`. |
-| Context packet    | `application.worktree_status.worktree_status_packet` constructs `WorktreeSummary` directly instead of returning a dict for the caller to validate, and omits `nextTool`/`nextArgs`/`nextRequiredArgs` when the producer omitted them rather than substituting `""`/`{}`/`[]`. |
-| Closeout quality gate | Mandatory repository wrapper after preview/approval and before every code, memory, ledger, contract, or applied-gate **commit**. Where the wrapper is present the gate first refuses a code checkout that is not a linked worktree and one with unresolved merge conflicts, then resets the index and stages the whole task worktree so the gate's scope is the commit's content — created files included, not only edited ones. A refusal leaves the worktree staged and commits nothing; the next attempt resets and restages, so it reaches the index a first run would. A checkout carrying no wrapper runs no gate, stages nothing early, and previews as `wrapper-unavailable`. |
-
-### Worktree Integration
-
-| Layer              | Representation                                                               |
-| ------------------ | ---------------------------------------------------------------------------- |
-| Closeout snapshot  | Reviewed code, memory content, and ledger commits recorded in `closeout`.    |
-| Integration replay | Optional code rebase and memory-content replay when source branches moved.   |
-| Source branches    | Fast-forward only after integrated code and memory ledger commits are ready. |
-| Cleanup            | Asked after success; not automatic. Carryover-guarded (05m): refuses until the parked memory is carried home, then retires the work + (PR'd) source branches. |
-| Phase reporting    | `worktrees/modules/guidance.py` declares `WorktreePhase`/`NextOperation`/`NextTool` and is the sole producer that reaches `WorktreeSummary`; `carryover-pending`, `abandoned`, `request_carryover_decision` and `memory_carryover_apply` are members it always emitted and the packet used to reject. Gate and block payloads use the separate `recovery_guidance` builder — same keys, same order, its own `RecoveryOperation`/`RecoveryTool` vocabulary — so `commit-approval-pending`/`request_commit_approval` are no longer values the packet's phase machine claims it can produce. |
-
-### Provider Degradation Protocol
-
-| Layer              | Representation                                                                                            |
-| ------------------ | --------------------------------------------------------------------------------------------------------- |
-| Detection          | State machine over `providers/metrics.py`'s central metrics log; hysteresis-gated healthy/degraded/critical. |
-| Durable record      | `ar-provider-degradation-state/v1` + append-only `ar-provider-degradation-event/v1` under `logs/observer/providers/`. |
-| Response            | Role-addressed `degradation-alert` inbox rows (orchestrator + active managers) and the critical-threshold failsafe stop. |
-| Investigation seat  | `system-specialist` role: reports first, fixes only on explicit orchestrator order.                        |
-| Future detection    | Sentry (260703_spotlight-dev-observability) is designed to replace/feed detection without changing this response protocol. |
-
-### Seat Binding Identity
-
-| Layer              | Representation |
-| ------------------ | -------------- |
-| Catalog storage    | `TerminalCatalogEntry.leaf_key` plus persisted `seat_role`; `spawn_role` remains immutable origin provenance, while named command seats also persist write-once `spawn_repo` + `spawn_sprint`. `binding_leaf_key` falls back to `replacement_for_leaf` for an unbound failed dispatch. |
-| Spawn              | Settings-resolved `AR_SPAWN_ROLE` derives the first binding role; named architect/orchestrator/manager seats must declare or inherit one repository+sprint before host launch. Live arbitration refuses only a same-pair owner and replaces a dead holder. |
-| Attach/API         | MCP and HTTP accept role with canonical leaf key; explicit choice types hand-opened sessions, otherwise provenance/current binding may default, and an untyped harness returns `role-required`. Named seats additionally return `sprint-binding-required` or `sprint-binding-conflict` before mutation. |
-| Control plane      | Retire authority, chain credit, expectations, inbox rows, notifier findings/cooldowns/coalescing, landing, and provider discovery consume binding identity; architect custody and rebind traversal are bounded by exact repository+sprint. |
-| Dashboard          | Session data carries `seatRole`, `spawnRepo`, and `spawnSprint`; authoritative open materializes fields from the accepted server row only, with no row on failure. Command seats group per sprint, while unbound historical rows remain in a migration-only legacy bucket. |
-
-### Seat Retirement
-
-| Layer              | Representation                                                                                            |
-| ------------------ | --------------------------------------------------------------------------------------------------------- |
-| Catalog storage    | `TerminalCatalogEntry.status == "terminated"` plus `retired_at`/`retired_by_session`/`retired_reason`/`retired_edge`, written only when set (migration-safe). |
-| Authority policy   | `retire_policy.check_retire_authority(SeatRef, SeatRef)` over current binding leaf/role — owner-never-self-retires, manager-scoped-to-own-master worker/reviewer/curator seats, orchestrator-portfolio-wide; an unbound failed dispatch resolves through replacement leaf. |
-| Manual surface     | `session_retire` MCP tool + `POST /api/terminal/{session}/retire` — both actor-declared, both policy-checked before mutation. Since L4 the tool's four results are built by one `_retire_payload` typed on `SessionRetireStatus`, and the route declares `TerminalRetired \| TerminalAlreadyRetired` with `403 TerminalRetireRefused` (the only 403 on the whole serving surface) and `404 UnknownSessionRefusal \| UnknownActorRefusal`. The route declaration is the contract, not the check: the handler returns a `Response`, so FastAPI validates nothing — `mcp/tests/test_serving_response_conformance.py` drives the real route and validates the body that came back. |
-| Explicit cleanup   | `POST /api/terminal/landed-cleanup` converts selected landed archive rows to retired rows after a backend status re-check; since L4 it declares `TerminalCleanupResult`, under the same declaration-is-not-enforcement caveat. |
-| Doctrine           | `roles/manager.md`/`roles/orchestrator.md` document the authority split for agents calling `session_retire` by hand. |
-| Automatic completion | ARG-L1 composes the durable inbox fold with `retire_entry`: exact-session + exact-leaf `turn-report` proof permits system auto-close only for worker/reviewer/curator; missing proof defers; manager/orchestrator are excluded. |
-| Composition        | Rides the pre-existing L5 liveness-hysteresis terminal invariant (`with_liveness_success` never revives `terminated`); reports and transcripts are separate durable records and are never deleted. |
-
-### Seat Landing Archive
-
-| Layer              | Representation                                                                                            |
-| ------------------ | --------------------------------------------------------------------------------------------------------- |
-| Catalog storage    | `TerminalCatalogEntry.status == "landed"` plus `landed_at`/`landed_reason`/`landed_edge`, preserving the tmux session for inspection. |
-| Completion surface | With `autoCloseCompletedSeats=false`, both enabled completion edges delegate to `completion_cleanup.auto_complete_seats`, land worker/reviewer/curator, exclude manager/orchestrator, and return `autoLandedSeats`. Default true closes exact-report-bearing subordinate seats instead. |
-| Liveness surface   | `TerminalCatalogLivenessSweeper.refresh()` returns landed rows but skips background tmux probe/capture/classification/catalog writes for them; attach checks on demand. |
-| Dashboard surface  | `railModel.ts`/`SessionRail.tsx` group landed rows into completed folders; `PtySurface.tsx` keeps landed terminals read-only; `sessionLifecycle.ts`/`LandedCleanupNotice.tsx` retain backend-confirmed cleanup outcomes and unavailable-result retry targets. |
-| Cleanup            | The landed archive cleanup endpoint retires only rows still `landed` after re-read and reports closed/skipped rows separately. Since 260731-EFA-L4 that closed/skipped split is declared on the wire as `response_contract.TerminalCleanupResult` (with `TerminalCleanupSkip` rows), enforced by the response-conformance suite against the real route rather than by FastAPI, which never serializes this handler's `Response`. |
-
-### Agent-Notifier Sweep
-
-| Layer              | Representation                                                                                            |
-| ------------------ | --------------------------------------------------------------------------------------------------------- |
-| Detection          | Fact-relay predicates evaluated every sweep directly over `TerminalCatalog`/`OperatorInboxStore`/`ExpectationRowStore`/signal cooldown store (never the projection) — findings preserve `(leafKey, seatRole)` so parallel roles remain distinct. TES-L6 derives every manager subordinate structurally from the direct spawn edge plus exact master, admitting reviewer/curator/future roles while excluding owner-tier roles; expectation rows are never evaluated and no ladder due-time evaluation exists (260713-TES-L5). |
-| Durable record      | `orchestration.agent-notifier.*` observer events (`redeliver`/`signal`/`state-signal`/`compound-idle`/`non-reaction`/`boundary-drain`/`rebind`/`expire`/`unresolved`/`dead-upstream`, etc.) under `logs/observer/`; the sweep's own tick row under `logs/observer/workspace/supervisor-heartbeat.json`; the signal cooldown log under `logs/observer/workspace/supervisor-signals.jsonl`; legacy `rung`/`escalatedAt` fields on the `OperatorInboxEntry` row stay parse-compat only. |
-| Response            | Redeliver via `deliver_inbox_entry` on the injected sweep clock, owner signal, state-signal/compound-idle/non-reaction/boundary-drain emitters, and — since 260713-TES-L4 — rebind/expire/unresolved terminal actions (`_rebind_due`/`_rebind_expired`/`_expire_pending`/`_mark_unresolved`). TES-L6 re-evaluates current topology and evidence immediately before persistence, emits from fresh metadata, and skips invalid or timezone-naive landed evidence without a row, marker, or sweep-aborting exception. Condition coalescing and cooldown identity include leaf plus seat role; current routing uses binding identity and row-based owner derivation (`derive_row_owner`, N14). The timed ladder is deleted (260713-TES-L5) — no escalation/respawn/auto-nudge action exists. |
-| Self-liveness       | `AgentNotifierHeartbeatStore` ticks unconditionally at the end of every sweep; surfaced as an MCP-tool banner and a dashboard header badge, silent when never-ticked. Since L4 both surfaces are declared: the banner is a `agentNotifierBanner` field of the two response envelopes (set before the one `model_dump`, so it is inside the advertised `tokens`), and the badge reads a `AgentNotifierHeartbeatPayload` declared on `ServedWorkspaceProjection` and dumped without `exclude_none`, so "never ticked" stays an explicit null rather than an absent key. Since 260713-TES-L4 the independent relay-death watcher (`serving/relay_death_watch.py`, 30s cadence) reads the same heartbeat row and posts one durable `degradation-alert` to the scoped architect mailbox per stale tick identity (marker-file dedupe, default-cutoff fallback) — the relay never relays its own death (N5). |
-| Settings            | `orchestration.agentNotifier` family in `kernel/agentic_settings.py` (enabled/interval/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget/escalation budget as the per-sweep owner-signal load-shed cap), re-read per-use; `orchestration.escalation` is deleted and fails loud as an unknown key (260713-TES-L5). |
-
-### Task Document
-
-| Layer              | Representation |
-| ------------------ | -------------- |
-| Durable source     | JSON-primary `ar-task-document/v1` under `coordination_root/tasks`; rendered Markdown and enclosure contracts are not content authority. |
-| Always-on backend  | At most 250 `TaskDocNode` summaries plus compatibility series summaries, body fields empty, `bodyRevision` populated. |
-| On-demand backend  | `GET /api/task-document?path=...` returns one full, schema-validated task node only after the resolved path is confined under `tasks/`; since L4 the route declares `TaskDocNode` plus `404`/`503` `HttpDetailRefusal`, checked by the response-conformance suite rather than by FastAPI (the handler returns a `JSONResponse`, which FastAPI passes through unserialized). |
-| Frontend           | `fetchTaskDocument` retrieves the selected body; `DetailPanel` merges it over the live summary with absent-array preservation, caches by `docPath + bodyRevision`, and visibly falls back to summary data when unavailable. Sub-task rows are the `SubTaskRow` union of the master and series shapes and render in the order received; only a series row carries `createdAt`, and the server has already ordered by it. |
-
-### Delivery Injector
-
-| Layer          | Representation                                                                                            |
-| -------------- | --------------------------------------------------------------------------------------------------------- |
-| Transport      | `terminal_paste.TerminalPaster.paste` — sanitized tmux input with one Enter re-press and one verified-absence clear/replace re-paste; pane text cannot grant acceptance. |
-| Classification | `injector.deliver` retains the four-way outcome, but `acked` requires a unique-id user record or command+non-error-stdout evidence in the bound harness log. |
-| Per-harness    | `harness_logs.HarnessSessionLog` parses real Claude/Codex record schemas; `HarnessAdapter` is failure-modal labeling only. |
-| Callers        | Spawn (`mcp/tools/terminal.py`), durable inbox/supervisor (`inbox_delivery.py`), and REST paste (`serving/app.py`) all compose the same injector. Since 260713-TES-L4 the inbox path is a protocol submission whose boundary-sampled acceptance writes the formal `landed` terminal (N16). |
-
-### Harness Capability Snapshot
-
-| Layer              | Representation |
-| ------------------ | -------------- |
-| Settings / role    | `orchestration.roles.<role>` and per-level overrides resolve into a complete `ResolvedLaunch`; namespaced spawn env is provenance only. |
-| Launch boundary    | Settings-owned role selection and an optional complete daemon request pair both become `ResolvedLaunch` and use the shared opener. A live same-id process is immutable truth: exact/selectionless reopen returns it, changed launch identity conflicts, and only a dead row starts a fresh control generation. The runner then refuses owned-selector conflicts, validates the dynamic model/model-local effort catalog, and creates the configured runtime adapter. The additive codex-only `resume_thread_id` rides the same opener → `RunnerConfig` payload → factory seam into the sole `CodexAppServerSettings` site, failing closed before any spawn for non-codex or malformed values; the transient discoverer never receives it. |
-| Native harness     | Launch uses Claude `--model`/`--effort`, Codex thread model/config effort, and Pi provider-qualified `--model`/`--thinking`. Same-session set uses Claude structured `/model`/`/effort` plus exact replay/terminal evidence; Codex fresh-turn overrides on the same thread; and Pi correlated mutation plus bounded state/catalog readback. Dynamic discovery and Claude/Pi set evidence require no model prompt; Codex applies queued settings on the next real turn. Claude's ephemeral discovery replaces supported inherited MCP selectors with one strict empty set, while its normal session launch preserves the installed MCP configuration. |
-| Normalized adapter | `CapabilitySnapshot` retains provider/model identity, selected/effective state, and model-local effort options; `LaunchKnobs` declares native launch material and exclusively owned selectors; `SetResult` separates requested/effective values and carries only the five evidence states. The Harness Submission Authority timeline serializes set with prompt submission, rejects dishonest result combinations, makes request ids idempotent, and reconciles retained known outcomes without native resend; adapters dispatch now and own no second queue. The L2E structural sub-protocols extend the same honesty: interrupt and asset-submit capability is detected structurally, never inferred from the harness id, and a harness without the seam fails closed typed with the adapter named. |
-| ACP Sense 1 view   | Derived `SessionConfigOption` select rows use `model` and `thought_level`; unknown current values are omitted rather than fabricated. |
-| Orchestration moat | Settings-owned role and per-level selection still create the session; the durable inbox/brief bus remains the assignment and inter-agent messaging root. Capability setters configure that owned session and never replace either boundary. |
-| Daemon API         | Since L4 each of the four capability routes declares its success shape (`HarnessCapabilityEnvelope`, `CapabilitySnapshotWire`, `SetResultWire`) and its refusal shapes, the three session-scoped ones through the shared `SESSION_CONTROL_RESPONSES` table; the declaration is the contract and `test_serving_response_conformance.py` is the enforcement, because these handlers return `JSONResponse` and FastAPI never serializes it. Pre-session advertise returns `ar-harness-capabilities/v1` around the unchanged normalized snapshot; explicit refresh owns auth/account invalidation. Live advertise/set and whole-message submit/reconcile address the exact running control endpoint. Public responses retain normalized acceptance/correlation but strip private raw evidence; first-byte ambiguity and duplicate request ids never cause blind resend. |
-
-### Harness Submission Authority
-
-| Layer | Representation |
-| --- | --- |
-| Browser composition | Shared CodeMirror composer plus source/draft revisions; one immutable epoch/id/text request and no PTY-paste fallback. |
-| Browser evidence | `submitMachine` central partial order; `submitClient` certified-retry/ambiguity boundary; `submissionLifecycleClient` raw-free polling, authoritative withdraw, and revision-CAS recovery. |
-| Daemon boundary | Epoch/source/id validation, cockpit-only authority/status/withdraw routes, 64-id status batches, 409 conflict/mismatch, exact retry-safe 503, private IPC. The additive `submission-provenance` action discloses exact per-id source/state/timestamps/vendor-correlation (1..64 unique ids, epoch-checked, honest not-found) to the exact-session daemon peer over the same private socket, delegated bridge → queue → authority as the sole path. The L2E additive `operation-timeline` read follows the same delegation (paged, never bodies, epoch-checked end to end), the additive `interrupt` write crosses the same socket epoch-guarded with a bridge-stamped epoch, and the additive `assets` submit key admits only schema-validated, spool-confined, sha256-verified references. Since L4 every one of these routes declares its success and refusal bodies as strict `extra="forbid"` wire models (`serving/response_contract.py`, and `serving/conversation/response_contract.py` for the conversation half); because the handlers answer with `Response` objects, FastAPI validates none of it and `test_serving_response_conformance.py` carries the enforcement. |
+| Canonical Source Of Truth    | `c-10-adopt-memory-baseline` skill and `mcp/src/agents_remember/memory/baseline.py`.                                                                                              …37697 tokens truncated… discloses exact per-id source/state/timestamps/vendor-correlation (1..64 unique ids, epoch-checked, honest not-found) to the exact-session daemon peer over the same private socket, delegated bridge → queue → authority as the sole path. The L2E additive `operation-timeline` read follows the same delegation (paged, never bodies, epoch-checked end to end), the additive `interrupt` write crosses the same socket epoch-guarded with a bridge-stamped epoch, and the additive `assets` submit key admits only schema-validated, spool-confined, sha256-verified references. Since L4 every one of these routes declares its success and refusal bodies as strict `extra="forbid"` wire models (`serving/response_contract.py`, and `serving/conversation/response_contract.py` for the conversation half); because the handlers answer with `Response` objects, FastAPI validates none of it and `test_serving_response_conformance.py` carries the enforcement. |
 | Server authority | One timeline for prompt/model/effort; atomic queued-withdraw versus dispatch; full operation refs; early terminal dominance; response bypass; 64/256 live-safe retention. L2E: the retained ledger enumerates in bounded never-bodies pages whose eviction floor is tracked at the sole pop site; the withdrawal recovery body is captured pre-tombstone at the one true transition; the idempotence digest extends over canonical asset identity only when assets ride. |
 | Native adapters | Codex fresh-turn guarded write with bounded correlation; Claude sole accepted operation and shared lock; Pi fresh-state token guard and settled-plus-fresh-idle completion. No native queue is authority. |
 | User recovery | Alt+Up requests exact withdrawal; unchanged drafts auto-restore by revision CAS, concurrent edits create one explicit recovery slot, and replace/keep-current/dismiss are local exact decisions. |
+
+### Branch-Gated Cross-Repo Source
+
+Entity inventory entry; current evidence and fingerprint are recorded above.
+
+### Delivery Injector
+
+Entity inventory entry; current evidence and fingerprint are recorded above.
+
+### Harness Capability Snapshot
+
+Entity inventory entry; current evidence and fingerprint are recorded above.
+
+### Harness Submission Authority
+
+Entity inventory entry; current evidence and fingerprint are recorded above.
+
+### Provider Degradation Protocol
+
+Entity inventory entry; current evidence and fingerprint are recorded above.
+
+### Seat Binding Identity
+
+Entity inventory entry; current evidence and fingerprint are recorded above.
+
+### Seat Landing Archive
+
+Entity inventory entry; current evidence and fingerprint are recorded above.
+
+### Seat Retirement
+
+Entity inventory entry; current evidence and fingerprint are recorded above.
+
+### Supervisor Sweep
+
+Entity inventory entry; current evidence and fingerprint are recorded above.
+
+### Task Document
+
+Entity inventory entry; current evidence and fingerprint are recorded above.
+
+### Worktree Contract
+
+Entity inventory entry; current evidence and fingerprint are recorded above.
+
+### Worktree Integration
+
+Entity inventory entry; current evidence and fingerprint are recorded above.
 
 ## Ownership Notes
 
@@ -1011,45 +235,10 @@ whole reason they are written out in prose.
 
 ## Update History
 
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1: Seat Retirement now includes exact-report-gated system
-  completion cleanup; Seat Landing Archive is the explicit opt-out/pre-flip compatibility state.
-  Owner roles stay live, all three subordinate roles share one policy set, and existing archive
-  cleanup remains authoritative. Fingerprints remain pinned until closeout recomputes them.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: expanded Seat Binding Identity with immutable
-  repository+sprint provenance and updated the Agent-Notifier Sweep for structural all-subordinate
-  membership plus action-time fail-closed revalidation. Added the new binding policy and opener to
-  the entity evidence set; fingerprints remain pinned for closeout recomputation against the code
-  commit.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: extended the Agent-Notifier Sweep entity
-  with the judgment demolition (fact-only actions/predicates, deleted ladder/orphan/respawn/
-  expectation surfaces, `escalationBudget` load-shed cap, legacy `ladder-resolved` parse-compat
-  still written by the confirmed-gone fold); removed `escalation_ladder.py` and
-  `orphan_policy.py` from the evidence set and recomputed the fingerprint from current
-  working-tree blobs (`sha256:a30bd939...`). Closeout MUST recompute it against the landed
-  260713-TES-L5 commit. Verification metadata pinned until closeout stamps that commit.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: extended the Agent-Notifier Sweep entity
-  with deliver-until-LANDED (terminal vocabulary, latest-fold transition primitive, rebind/
-  grace/expiry predicates+actions, legacy-landed fold, last-good settings loop) and the new
-  relay-death surface (N5 — independent heartbeat-staleness → architect-mailbox
-  `degradation-alert`); extended the Delivery Injector entity with the boundary-sampled N16
-  landing decision; added six evidence paths to the Agent-Notifier Sweep fingerprint and
-  recomputed both fingerprints from current working-tree blobs (Agent-Notifier Sweep
-  `sha256:73faec5d...`, Delivery Injector `sha256:473583be...`). Closeout MUST recompute them
-  against the landed 260713-TES-L4 commit. Verification metadata pinned until closeout stamps
-  that commit.
-- 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: extended the Agent-Notifier Sweep entity
-  with the compound-idle relay (description, key identifiers, migration notes) and recomputed
-  the fingerprint from current working-tree blobs; closeout must recompute it against the
-  landed 260713-TES-L3 commit. Verification metadata pinned until closeout stamps that commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: extended the Agent-Notifier Sweep entity
-  with the worker-state relay (description, key identifiers, parent/child relationships, source
-  references, migration notes) and recomputed the fingerprint from current working-tree blobs
-  (`sha256:633a422d...`); closeout must recompute it against the landed 260713-TES-L2 commit.
-  Verification metadata pinned until closeout stamps that commit.
-- 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: renamed the Supervisor Sweep entity to Agent-Notifier Sweep, refreshed the evidence paths to the renamed modules (`serving/agent_notifier.py`, `serving/agent_notifier_heartbeat.py`, `controlplane/agent_notifier_signals.py`), recorded the compatibility window (`orchestration.agentNotifier` + explicit legacy alias, `orchestration.agent-notifier.*` + legacy event names, `agentNotifierHeartbeat`/`agentNotifierBanner` + legacy wire keys, ask-prefix identity), and recomputed the fingerprint from current working-tree blobs (`sha256:09570e64...`); closeout must recompute it against the landed 260713-TES-L1 commit. Verification metadata pinned until closeout stamps that commit.
-
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: re-pointed moved entity evidence paths
+  (provider-degradation settings, inbox backoff, task-document snapshots reader, terminal-catalog
+  row vocabulary) and recorded the L9 clarifications; fingerprint hashes remain pinned for
+  closeout recomputation. Verification metadata pinned until closeout stamps the L9 code commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: re-pointed the Task Document entity's evidence path from dashboard/src/panels/DetailPanel.tsx to the detail-panel/ canonical entry after the L8 responsibility split; the fingerprint hash itself is not hand-edited and closeout must recompute it against the landed code commit. Seat Binding Identity and Harness Submission Authority fingerprints will also change because their evidence sources (sessions.ts, LeafAttachPicker.tsx, submissionLifecycleClient.ts, submitClient.ts) changed, and closeout recomputes those rows.
 
 - 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound the generated projection mirror, canonical schema, and sync/check behavior to packet-specified source spans. Verification metadata unchanged.
@@ -1088,9 +277,9 @@ whole reason they are written out in prose.
   appear in none of them.
 
   **Corrected one stale entry this leaf did not cause.** Supervisor Sweep's Migration Notes carried
-  a "Known HFX2-L11 deferral: `agent_notifier_signals.py` is an unbounded append-only log with no
+  a "Known HFX2-L11 deferral: `supervisor_signals.py` is an unbounded append-only log with no
   compactor yet". `AgentNotifierSignalCooldownStore.compact` exists at the leaf's base commit
-  cit:([`AgentNotifierSignalCooldownStore`], mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220) and `serving/agent_notifier.py` calls it once per sweep cit:([`run_agent_notifier_sweep`], mcp/src/agents_remember/serving/agent_notifier.py:93-195), returning the folded snapshot every `in_cooldown` check
+  cit:([`AgentNotifierSignalCooldownStore`], mcp/src/agents_remember/controlplane/agent_notifier_signals.py:68-215) and `serving/supervisor.py` calls it once per sweep cit:([`run_agent_notifier_sweep`], mcp/src/agents_remember/serving/agent_notifier.py:95-182), returning the folded snapshot every `in_cooldown` check
   then reads in memory. The note was false before L5; L5 only added the lock around that
   read-filter-rewrite.
 
@@ -1111,7 +300,7 @@ whole reason they are written out in prose.
   `projection.py`'s "STATE OF THE MIRROR" comment now records the same reading. (2) *The response
   contract, which this file contradicted itself about 250 lines apart.* The body said "59 of the 61
   routes return a `Response` subclass **or feed an `EventSourceResponse`**" (right) while the 09:33
-  history entry said "59 of 61 routes return a `Response`, which FastAPI never serializes" (wrong —
+  history entry said "59 of 61 routes return a `Response`" (wrong —
   it collapses the SSE pair into the `Response` count and implies all 59 are the same shape). Both
   now state the verified split, which `serving/response_contract.py`'s own docstring and
   `mcp/tests/test_serving_response_conformance.py` carry: **57** handlers return a `Response`
@@ -1417,10 +606,10 @@ whole reason they are written out in prose.
   synced to 9 downstream copies + 1 new test file). `Supervisor Sweep`'s Migration Notes gains a
   forward-reference row recording a real gap the new `mcp/tests/test_liveness_simulations.py` found
   and documented in THIS entity's own module: `evaluate_predicates` cannot be fed an injectable pane
-  capturer through `SupervisorContext`, so 2/8 of the leaf's P-15 fixture-zoo scenarios stay hybrid
+  capturer through `AgentNotifierContext`, so 2/8 of the leaf's P-15 fixture-zoo scenarios stay hybrid
   (predicate-unit classify + real downstream sweep response) rather than full end-to-end — recorded
   as a forward reference for the natural follow-up leaf (thread a capturer parameter through
-  `SupervisorContext`/`evaluate_predicates`), in the same spirit as this entity's own
+  `AgentNotifierContext`/`evaluate_predicates`), in the same spirit as this entity's own
   Naming-Drift-row forward reference to the L3 injector before that leaf existed. Verification
   metadata pinned until closeout stamps the 260707-HFX2-L5 commit.
 - 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (P-15 tier 3 escalation ladder + dead-man respawn, curator

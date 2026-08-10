@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_identity.py`               |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-04T23:15+02:00|
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -41,9 +41,11 @@ deterministic and collision-safe rather than a lossy truncation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The provider identity helpers under test. | `provider_instance_id`; `scoped_name` | mcp/src/agents_remember/providers/identity.py:31-57; mcp/src/agents_remember/providers/identity.py:109-120 |
+| The provider identity helpers under test. | `provider_instance_id`; `scoped_name` | mcp/src/agents_remember/kernel/primitives/identity.py:31-57; mcp/src/agents_remember/kernel/primitives/identity.py:109-120 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 1 citation row to the provider identity helpers; scoped citation fixing regenerated the source ranges.
 

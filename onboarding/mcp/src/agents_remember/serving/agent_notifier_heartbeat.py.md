@@ -3,11 +3,11 @@
 | Field                  | Value                                                     |
 | ---------------------- | ------------------------------------------------------------ |
 | repository             | agents-remember                                               |
-| path                   | `mcp/src/agents_remember/serving/agent_notifier_heartbeat.py` |
+| path                   | `mcp/src/agents_remember/serving/agent_notifier_heartbeat.py`    |
 | doc_type               | `file-level-onboarding`                                       |
-| lastUpdated            | 2026-08-08T21:20+02:00                                        |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                    |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastUpdated            | 2026-08-01T08:24+02:00                                        |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                    |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ write it straight into an already-dumped, already-validated projection body unde
 `agentNotifierHeartbeat` alias) on `ServedWorkspaceProjection`. No bytes moved: the
 model is `extra="forbid"` with the same seven camelCase field names the dict carried
 (`lastTickAt`, `ageSeconds`, `staleCutoffSeconds`, `stale`, `pendingInboxCount`,
-`redeliverableInboxCount`, `lastSweepDurationSeconds`) cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:219-219) cit:([`ServedWorkspaceProjection`], mcp/src/agents_remember/serving/served_state.py:47-55).
+`redeliverableInboxCount`, `lastSweepDurationSeconds`) cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:224-224) cit:([`ServedWorkspaceProjection`], mcp/src/agents_remember/serving/served_state.py:47-55).
 
 It is deliberately serialized **without** `exclude_none` (`served_state_tail` dumps it plainly,
 while it dumps the build stamp with `exclude_none=True`): a supervisor that has never ticked
@@ -138,7 +138,7 @@ source is the leaf task doc (R5), not an external spec.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The application computes response-time heartbeat age/staleness, while the served body declares both wire keys and `served_state_tail` serializes the payload without `exclude_none`. |"def _agent_notifier_heartbeat_payload"; `ServedWorkspaceProjection`; `served_state_tail`|mcp/src/agents_remember/serving/_app_lifespan.py:219-219; mcp/src/agents_remember/serving/served_state.py:48-59; mcp/src/agents_remember/serving/served_state.py:71-90|
+| The application computes response-time heartbeat age/staleness, while the served body declares both wire keys and `served_state_tail` serializes the payload without `exclude_none`. |"def _agent_notifier_heartbeat_payload"; `ServedWorkspaceProjection`; `served_state_tail`|mcp/src/agents_remember/serving/_app_lifespan.py:224-224; mcp/src/agents_remember/serving/served_state.py:48-59; mcp/src/agents_remember/serving/served_state.py:71-90|
 
 ## Cross-Repo References
 
@@ -148,13 +148,15 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | No cross-repo boundary owns or consumes this local heartbeat store. | — | — |
 ## Update History
+- 2026-08-10T09:45+02:00 — 260731-EFA-L9 curator repair: refreshed the renamed heartbeat card and current payload citations.
+
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: moved this card to the renamed module path; recorded the `AgentNotifier*` identifiers, the retained `supervisor-heartbeat.json` artifact name, and the `agentNotifierHeartbeat` + legacy `supervisorHeartbeat` dual wire key. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: bound application response-time heartbeat payload computation to its operative source span. Verification metadata unchanged.
 
 - 2026-08-01T08:24+02:00 — 260731-EFA-L4 curator: recorded the new
   cit:([`AgentNotifierHeartbeatPayload`], mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:31-55) and the row-vs-read-side split it makes explicit. The
-  seven-key answer `app._supervisor_heartbeat_payload` used to build as a bare `dict[str, Any]`
+  seven-key answer `app._agent_notifier_heartbeat_payload` used to build as a bare `dict[str, Any]`
   and write into an already-dumped projection body is now a declared `extra="forbid"` model, and
   the `supervisorHeartbeat` key it rides is declared on
   `served_state.ServedWorkspaceProjection`. Added the two invariants that keep it correct — the
@@ -162,7 +164,7 @@ No meaningful cross-repo references found.
   be dumped with `exclude_none` (a never-ticked supervisor reports explicit nulls, unlike the
   build stamp beside it, which omits). Repaired the Docs References citation, which pointed at a
   bare `L1-L99` range in a file that is now 153 lines and named no symbol; it now names
-  `SupervisorHeartbeatStore` and `supervisor_staleness_banner`. Wire bytes unchanged.
+  `AgentNotifierHeartbeatStore` and `agent_notifier_staleness_banner`. Wire bytes unchanged.
   Verification metadata pinned until closeout stamps the L4 commit.
 
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8: heartbeat rows now carry
@@ -170,8 +172,10 @@ No meaningful cross-repo references found.
   compatible reads for older two-field heartbeat files. Verification metadata pinned until closeout
   stamps the HFX2-L8 commit.
 - 2026-07-08T18:45+02:00 — Created for 260707-HFX2-L2 (supervisor sweep + predicates, R5): the
-  self-liveness heartbeat — `SupervisorHeartbeatStore` (atomic-overwrite single-row JSON store),
-  `heartbeat_age_seconds`, and `supervisor_staleness_banner` (silent when never-ticked, a
+  self-liveness heartbeat — `AgentNotifierHeartbeatStore` (atomic-overwrite single-row JSON store),
+  `heartbeat_age_seconds`, and `agent_notifier_staleness_banner` (silent when never-ticked, a
   fail-loud one-liner past the staleness cutoff). Consumed by the MCP tool choke point
   (`mcp/tools/base.py`) and the dashboard header payload (`app.py`'s `/api/state` + SSE snapshot).
   Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
+
+

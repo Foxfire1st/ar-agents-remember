@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-01T19:10+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -413,16 +413,16 @@ response models are `models/operator_inbox.py`.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Gates mirror the observer event substrate (envelope + append-only JSONL store). | "class EventStore" | mcp/src/agents_remember/observer/store.py:103-103 |
-| Gate policy validation and delegated decision checks. | "class GatePolicy:" | mcp/src/agents_remember/controlplane/gate_policy.py:52-52 |
+| Gate policy validation and delegated decision checks. | "class GatePolicy:" | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54 |
 | The `gate_*` payload builders that drive this substrate. | "def gate_create_payload" | mcp/src/agents_remember/mcp/tools/gates.py:34-34 |
-| Gate response models. | "class GateCreateResponse" | mcp/src/agents_remember/models/gates.py:18-18 |
-| The inbox record/store pair provides the external-chat pull return channel. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:79-79; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-53 |
+| Gate response models. | "class GateCreateResponse" | mcp/src/agents_remember/models/gates.py:23-23 |
+| The inbox record/store pair provides the external-chat pull return channel. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:40-40; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-53 |
 | The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | "class AttentionDismissalStore" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-45 |
-| The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:159-159 |
+| The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:171-171 |
 | The `ar-durable-store/1.0` contract every JSONL store in this route implements, and the only module in the package that appends, rewrites, builds a temp path or imports `fcntl`. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:45-45 |
 | Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. | `prepare_mcp_process`; `_dev_app`; `run` | mcp/src/agents_remember/application/server_startup.py:20-23; mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:161-196 |
 | `_reclaim_gate_log` at L453-L473: gate compaction moved here from the dashboard projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly. | "def gate_decide_payload" | mcp/src/agents_remember/mcp/tools/gates.py:67-67 |
-| The projection tick that no longer rewrites anything: `read_gates` at L104 folds through the tolerant `projected_current`, and `read_expectation_rows` at L193 uses `pending_for_projection`. | "def read_gates(coordination_root: Path, *, now: datetime"; "def read_expectation_rows(" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104; mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193 |
+| The projection tick that no longer rewrites anything: `read_gates` at L103 folds through the tolerant `projected_current`, and `read_expectation_rows` at L190 uses `pending_for_projection`. | "def read_gates(coordination_root: Path, *, now: datetime"; "def read_expectation_rows(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:103-103; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:190-190 |
 | The serving relay composes the fact predicates and dispatches the fact actions over this route's stores (260713-TES-L5: no ladder/orphan caller remains). | `evaluate_predicates`; `_FINDING_ACTIONS` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-380; mcp/src/agents_remember/serving/_agent_notifier_actions.py:616-630 |
 
 ## 260712-TRH-L4 Route Impact
@@ -486,6 +486,7 @@ parse-compat; the confirmed-gone reclamation fold still writes `ladder-resolved`
 
 ## Update History
 
+- 2026-08-10T10:30+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: added exact-sprint routing and command-role versus
   subordinate-role separation to the controlplane hot path. Verification metadata remains pinned
   until closeout.
@@ -689,3 +690,5 @@ parse-compat; the confirmed-gone reclamation fold still writes `ladder-resolved`
 - 2026-06-23T07:25+02:00 — slice 09 (gate-signal adoption, S2): `records.py`'s `GateKind` Literal gained `plan-approval`, `worktree-intent`, and `push-approval` — the full l-01 gate spine; refreshed the `records.py` Layout row (and noted `closeout-approval` IS the commit gate, no separate `commit-approval`). The route's record-vs-policy split and store/enforcement modules are unchanged. Verification metadata pinned until closeout stamps the slice-09 code commit.
 - 2026-06-18T12:10+02:00 — Task 6 slice 6b: the route gained enforcement — `enforcement.py` (`evaluate_closeout_gate` + `CloseoutGuard`), the pure closeout-gate policy `worktree_closeout_apply` obeys. Revised the "record, not enforcement" framing: the *policy* is here (I/O-free), the *mutation* stays in the worktree tool. Verification metadata pinned until closeout stamps the 6b code commit.
 - 2026-06-18T01:05+02:00 — Created for task 6 slice 6a: the gate control-plane substrate route (`records.py` + `store.py` + facade). Verification metadata pinned until closeout stamps the 6a code commit.
+
+

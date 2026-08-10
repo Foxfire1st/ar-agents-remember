@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ The jsdom suite for the HeaderStrip AND the SessionStage container (260715-FEUI-
   ready claude row with `claude-fable-5[1m] · max` renders "(model-validated)" + the badge's
   `data-evidence-tier="model-validated"` (stream-json emits no launch-effort echo — the pair's
   honest ceiling); a NEW case pins a STARTING row to "(requested)" + tier `pending`.
-  cit:([`launchTier`], dashboard/src/data/launchEvidence.ts:29-41) cit:(["the pending-interaction fixture (ready, claude pair) sits at model-validated"], dashboard/src/data/launchEvidence.test.ts:96-98) cit:(["open 200-starting responses render the retained pair at 'pending'"], dashboard/src/data/launchEvidence.test.ts:68-77)
+  cit:([`launchTier`], dashboard/src/data/launchEvidence.ts:29-41) cit:(["the pending-interaction fixture (ready"], dashboard/src/data/launchEvidence.test.ts:96-98) cit:(["open 200-starting responses render the retained pair at 'pending'"], dashboard/src/data/launchEvidence.test.ts:68-77)
 - **SessionStage (R10)** — the reserved `data-slot="working-line"` sits DIRECTLY under the header
   (rendered by L6); the focus-handoff note (F17) and the EXPLAINED empty-stage identity (R9)
   render.

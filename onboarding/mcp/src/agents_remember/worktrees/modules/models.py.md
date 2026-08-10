@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/models.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -54,7 +54,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP skill tools type result envelopes and provider setup config through this facade-exported model. | "def skills_install_tool" | mcp/src/agents_remember/application/skill_tools.py:11-11 |
+| MCP skill tools type result envelopes and provider setup config through this facade-exported model. | "def skills_install_tool" | mcp/src/agents_remember/application/skill_tools.py:13-13 |
 
 ## Update History
 

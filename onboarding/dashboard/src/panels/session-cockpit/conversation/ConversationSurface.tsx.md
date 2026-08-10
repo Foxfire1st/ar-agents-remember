@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ owns no data/paging/cursor logic — the store/reducer do.
 
 - **Store reads** cit:([`orderedItemIds`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:119-141): `useActiveConversation` selects the session projection and its typed
   `errorBySession` reason; `items` is the materialized ordered list (`orderedItemIds.map`).
-- **Sub-agent focus model (R7)** cit:(["effectiveAgentFocus,", "const storedAgentFocus = useActiveConversation(", "const storedAgentFocus = useActiveConversation(", "const storedAgentFocus = useActiveConversation(", `storedAgentFocus`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:163-167; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:22-22): `storedAgentFocus` reads the
+- **Sub-agent focus model (R7)** cit:(["effectiveAgentFocus", "const storedAgentFocus = useActiveConversation(", "const storedAgentFocus = useActiveConversation(", "const storedAgentFocus = useActiveConversation(", `storedAgentFocus`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:163-167; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:22-22): `storedAgentFocus` reads the
   LRU-surviving `agentFocusBySession` entry; `agents = deriveAgents(items)` derives the roster from
   projection evidence only; `agentFocus = effectiveAgentFocus(stored, agents)` is NEVER the stored
   value applied blindly — a rehydrated projection without that agent honestly falls back to the
@@ -47,7 +47,7 @@ owns no data/paging/cursor logic — the store/reducer do.
   timeline renders.
 - **Focus keys** cit:([`onSurfaceKeyDown`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:294-298) (the Claude Code sub-agent navigation model): the surface root's
   `onKeyDown` handles FOUR keys. ArrowDown ANYWHERE on the surface (feed article AND scroll
-  viewport — one uniform hijack, cit:(["surfaceRef.current?.querySelector<HTMLElement>("[data-agents-line]")?.focus();", `, `], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();", `], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)) moves DOM focus INTO the agents line when
+  viewport — one uniform hijack, cit:(["surfaceRef.current?.querySelector<HTMLElement>("[data-agents-line]")?.focus();", `, `], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();""], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)?.focus();"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:90-90; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:100-100)) moves DOM focus INTO the agents line when
   the roster is non-empty — the primary sub-agent path; the line owns Enter/menu from there and
   ArrowUp from the line returns focus to the timeline's tabbable row. ArrowLeft/ArrowRight cycle
   parent → agent 1 → … → agent N → parent (`cycleAgentFocus`) as an additional path, and Escape
@@ -145,7 +145,7 @@ projection state.
 ## 260727-CHATS-IM-L2 Effective-Focus Hydration Delta
 
 The surface derives history state from the validated effective focus and runs hydration from an
-effect keyed by that focus/session/bridge epoch cit:(["hydrateAgentConversation,"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:28-28). A valid persisted focus therefore
+effect keyed by that focus/session/bridge epoch cit:(["hydrateAgentConversation"], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:28-28). A valid persisted focus therefore
 hydrates after page load or remount even without a click; a stale focus becomes parent and sends
 no request. Runtime singleflight makes the remount path exactly once.
 

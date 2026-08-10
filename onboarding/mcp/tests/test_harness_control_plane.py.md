@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_plane.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,11 +85,11 @@ evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The bridge epoch-guarded interrupt dispatch and timeline delegation under test. | "class HarnessControlBridge" | mcp/src/agents_remember/serving/harness_control_bridge.py:77-77 |
-| The authority's paged ledger enumeration, recovery capture, and asset channel under test. | "class HarnessSubmissionAuthority" | mcp/src/agents_remember/serving/harness_submission_authority.py:116-116 |
-| The codex/pi interrupt and asset implementations under fake-transport test. | "class CodexAppServerAdapter", "class PiRpcAdapter" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-91; mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-94 |
-| The IPC asset admission and the two additive actions exercised over a real socket. | "class HarnessControlServer" | mcp/src/agents_remember/serving/harness_control_ipc.py:99-99 |
-| The strict client validators exercised by the validation battery. | "class ControlledSession" | mcp/src/agents_remember/serving/harness_control_client.py:99-99 |
+| The bridge epoch-guarded interrupt dispatch and timeline delegation under test. | "class HarnessControlBridge" | mcp/src/agents_remember/serving/harness_control_bridge.py:81-81 |
+| The authority's paged ledger enumeration, recovery capture, and asset channel under test. | "class HarnessSubmissionAuthority" | mcp/src/agents_remember/serving/harness_submission_authority.py:118-118 |
+| The codex/pi interrupt and asset implementations under fake-transport test. | "class CodexAppServerAdapter", "class PiRpcAdapter" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:95-95; mcp/src/agents_remember/serving/pi_rpc_adapter.py:98-98 |
+| The IPC asset admission and the two additive actions exercised over a real socket. | "class HarnessControlServer" | mcp/src/agents_remember/serving/harness_control_ipc.py:103-103 |
+| The strict client validators exercised by the validation battery. | "class ControlledSession" | mcp/src/agents_remember/serving/harness_control_client.py:104-104 |
 | The installed-runtime companion that captures the same seams live into the redacted fixtures. | `CodexInstalledControlPlaneTests` | mcp/tests/test_harness_control_plane_installed.py:124-266 |
 
 ## Cross-Repo References
@@ -113,6 +113,8 @@ action is refused **by name** and the bridge **keeps serving**. An unknown verb 
 take the control plane down, and the refusal has to say which verb it was.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

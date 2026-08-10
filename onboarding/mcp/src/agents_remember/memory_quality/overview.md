@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-07T14:30+02:00                     |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -30,15 +30,6 @@ check lives at `integrity/check_missing_onboarding.py`; update-history ordering 
 `style/update_history/`. The history-order checker is diagnostic; the matching
 `history_order_fix.py` module is the explicit mutating script for timestamped
 history-order fixes.
-
-### 260805-ARG-L1 — Fail-Fast Closeout Without New-Card Deadlock
-
-External-memory closeout runs the citation pair before every code-quality subprocess. Dirty cards
-whose verification stamp is intentionally blank use the leaf base only as temporary comparison
-provenance; nothing writes that value into memory. After the code commit and metadata refresh, the
-complete memory-quality set repeats citations without the fallback. This keeps genuine range,
-claim, and provenance failures ahead of Pyright/pytest while proving every new card receives the
-real code-commit stamp before memory commits.
 
 ## Route Model
 
@@ -98,11 +89,11 @@ real code-commit stamp before memory commits.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point builds drift context and calls the package runner for `memory_quality_check`. | "def memory_quality_check_tool" | mcp/src/agents_remember/application/memory_tools.py:189-189 |
-| Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:18-28; mcp/src/agents_remember/mcp/tools/memory.py:46-63 |
+| The MCP application entry point builds drift context and calls the package runner for `memory_quality_check`. | "def memory_quality_check_tool" | mcp/src/agents_remember/application/memory_tools.py:197-197 |
+| Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:32-44; mcp/src/agents_remember/mcp/tools/memory.py:46-63 |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
 | The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73 |
-| The two wire models that import this route's `DriftStatus` instead of retyping it. | `DriftSummary`, `DriftCheckResponse` | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
+| The two wire models that import this route's status vocabulary instead of retyping it. | "class DriftSummary(StrictResponseModel):" | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
 | The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 
 ## 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
@@ -222,11 +213,14 @@ Coverage lives in `mcp/tests/test_l6_diff_coverage_claim_reopen.py`
 `mcp/tests/test_memory_citation_change_detection.py` (the `test_a_new_source_*` arms in
 `CodeProvenanceTests`, plus the `ChangeRoutingTests` untracked/ignored-local-path assertion).
 
+## 260731-EFA-L9 Route Impact — Caller Re-Points
+
+The memory-quality callers were rewritten by the L9 caller wave: `DriftStatus`/`DriftSummaryPacket` import from `models/drift.py` (declaration moved by L9), and runtime config from `kernel/primitives/runtime_config.py`. Check behavior is unchanged.
+
 ## Update History
 
-- 2026-08-10T08:20+02:00 — 260805-ARG-L1 route impact: recorded fail-fast citation preflight,
-  dirty-card temporary base provenance, and no-fallback post-refresh citation verification.
-  Verification metadata remains pinned until closeout stamps ARG-L1.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
+
 - 2026-08-07T14:30+02:00 — 260731-EFA-L8 curator (bounded delta): recorded the round-9
   claim_reopen mechanism — the absent-at-stamp rule extended to whole source files added after
   the stamp (unique working-tree anchor inside a cited range surfaces report-only; absent,

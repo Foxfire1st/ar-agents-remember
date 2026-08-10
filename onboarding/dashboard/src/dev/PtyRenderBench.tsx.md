@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/PtyRenderBench.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-31T16:10+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -63,7 +63,7 @@ the file).
   `data-testid="pty-bench-results"` for scraping; per-pane REAL column counts land on
   `window.__ptyBenchCols` via each pane's cit:([`onResizeCols`], dashboard/src/dev/PtyRenderBench.tsx:153-154) — the R8 ~80-col floor
   verification reads these.
-- **The constrained grid** cit:(["repeat(4, minmax(0, 1fr))"], dashboard/src/dev/PtyRenderBench.tsx:138-160): `repeat(4, minmax(0, 1fr))` — `minmax(0,…)` is
+- **The constrained grid** cit:(["repeat(4"], dashboard/src/dev/PtyRenderBench.tsx:138-160): `repeat(4, minmax(0, 1fr))` — `minmax(0,…)` is
   deliberate: xterm's canvas must never inflate a track to min-content, so panes get REALLY
   squeezed (the bug fixed during the L6 run; also exactly what the floor verification needs).
   Each 220px-tall cell mounts `<Terminal sessionId="bench-N" renderer={…}>` under a

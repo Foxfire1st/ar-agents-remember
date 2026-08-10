@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projector.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`     |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`     |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -144,13 +144,13 @@ regression suite below prove the ordering rather than relying on timing observat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. | "def _publish_projection(" | mcp/src/agents_remember/serving/projector.py:268-268 |
-| Subscription activation registers its queue before current-snapshot capture and removes it in `finally`. | "self._subscribers.add(queue)"; "self._subscribers.discard(queue)" | mcp/src/agents_remember/serving/projector.py:322-322; mcp/src/agents_remember/serving/projector.py:330-330 |
-| The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. |"async with contextlib.aclosing(projector.subscribe())"; "payload.update(served_state_tail("|mcp/src/agents_remember/serving/_app_common.py:132-132; mcp/src/agents_remember/serving/_app_common.py:142-142|
+| The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. | "def _publish_projection(" | mcp/src/agents_remember/serving/projector.py:273-273 |
+| Subscription activation registers its queue before current-snapshot capture and removes it in `finally`. | "self._subscribers.add(queue)"; "self._subscribers.discard(queue)" | mcp/src/agents_remember/serving/projector.py:327-327; mcp/src/agents_remember/serving/projector.py:335-335 |
+| The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. |"async with contextlib.aclosing(projector.subscribe())"; "payload.update(served_state_tail("|mcp/src/agents_remember/serving/_app_common.py:137-137; mcp/src/agents_remember/serving/_app_common.py:147-147|
 | Deterministic tests force the former handoff interleaving, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | `test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription` | mcp/tests/test_serving.py:387-399; mcp/tests/test_serving.py:401-421; mcp/tests/test_serving.py:423-451; mcp/tests/test_serving.py:453-463 |
 | The pure stable-form diff supplies ordinary post-recovery entity events and excludes volatile ages. | "VOLATILE_AGE_FIELDS = frozenset("; "def diff_projection(" | mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:102-102 |
-| The observer tick entry performs the read/fold/atomic-file projection that this module publishes. | "def write_projection("; "def project_and_write(" | mcp/src/agents_remember/observer/projection_store.py:156-156; mcp/src/agents_remember/observer/projection_store.py:212-212 |
-| Change-driven pacing remains owned by `ChangePacer`/`ChangeWatch`; it changes wake timing, not publication semantics. | "class ChangePacer:"; "class ChangeWatch(Protocol):" | mcp/src/agents_remember/serving/change_watcher.py:273-273; mcp/src/agents_remember/serving/change_watcher.py:283-283 |
+| The observer tick entry performs the read/fold/atomic-file projection that this module publishes. | "def write_projection("; "def project_and_write(" | mcp/src/agents_remember/serving/projections/projection_store.py:158-158; mcp/src/agents_remember/serving/projections/projection_store.py:214-214 |
+| Change-driven pacing remains owned by `ChangePacer`/`ChangeWatch`; it changes wake timing, not publication semantics. | "class ChangePacer:"; "class ChangeWatch(Protocol):" | mcp/src/agents_remember/serving/change_watcher.py:275-275; mcp/src/agents_remember/serving/change_watcher.py:285-285 |
 
 ## Cross-Repo References
 
@@ -191,8 +191,6 @@ injected-`now()` tests — it keeps the exact `sleep(interval)` pacemaker.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
 
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 7 citation rows and normalized 3 prose citation groups; scoped citation check now passes.
 
@@ -200,7 +198,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   `test_serving.py` row is anchored to the four `StreamEventsTests` cases that prove it
   cit:([`test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription`], mcp/tests/test_serving.py:387-399; mcp/tests/test_serving.py:401-421; mcp/tests/test_serving.py:423-451; mcp/tests/test_serving.py:453-463), including identical-state suppression and later deltas. The pure-diff row is anchored to
   cit:(["VOLATILE_AGE_FIELDS = frozenset("; "def _strip_volatile("; "def stable_projection_state("; "def diff_projection("; "def _collection_deltas("], mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:41-41; mcp/src/agents_remember/serving/delta.py:76-76; mcp/src/agents_remember/serving/delta.py:102-102; mcp/src/agents_remember/serving/delta.py:148-148), while the observer row is anchored to
-  cit:(["def write_projection("; "def project_and_write("], mcp/src/agents_remember/observer/projection_store.py:156-156; mcp/src/agents_remember/observer/projection_store.py:212-212). Read all ranges back.
+  cit:(["def write_projection("; "def project_and_write("], mcp/src/agents_remember/serving/projections/projection_store.py:158-158; mcp/src/agents_remember/serving/projections/projection_store.py:214-214). Read all ranges back.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `ProjectionCadence` / `ProjectionReplay` / `ProjectionRefreshers` constructor concepts and their module defaults; pacing behaviour unchanged.
 - 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: the live projection worker now
   owns one `ProjectionInputState`, converts watcher wakes into full/change/heartbeat refreshes, and

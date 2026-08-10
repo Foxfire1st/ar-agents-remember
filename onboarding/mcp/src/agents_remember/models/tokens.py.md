@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-30T22:29+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -17,7 +17,7 @@
 ## Code Commentary
 
 The module counts tokens over compact, sorted JSON payloads (`_payload_json`
-serializes with `ensure_ascii=False`, `separators=(",", ":")`, `sort_keys=True`).
+serializes with `ensure_ascii=False`, `separators=("", ":")`, `sort_keys=True`).
 The default counter, `DEFAULT_TOKEN_COUNTER`, is a `TiktokenTokenCounter` on the
 `o200k_base` encoding (`exact=True`); an `ApproximateTokenCounter` (compact-JSON
 character length divided by four) remains available as a deterministic fallback.

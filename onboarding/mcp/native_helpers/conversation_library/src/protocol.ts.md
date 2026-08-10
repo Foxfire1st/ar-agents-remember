@@ -6,8 +6,8 @@
 | path | `mcp/native_helpers/conversation_library/src/protocol.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ against this exact contract; the helper suite covers the admission and privacy m
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The private manifest and lock select the exact dependency versions represented by the protocol constants. | "@anthropic-ai/claude-agent-sdk", "@earendil-works/pi-coding-agent" | mcp/native_helpers/conversation_library/package.json:14-15 |
-| Helper tests cover exact versions, malformed framing, wrong protocol, exact key sets, inapplicable fields, and hostile error details. | "the exact locked helper versions are protocol constants", "request parser rejects malformed framing and wrong protocol", "request parser rejects unknown fields for every operation", "request parser rejects known fields when they belong to another operation", "helper crash detail is fixed allow-listed copy for secrets, paths, and long input" | mcp/native_helpers/conversation_library/src/protocol.test.ts:14-17; mcp/native_helpers/conversation_library/src/protocol.test.ts:41-66; mcp/native_helpers/conversation_library/src/protocol.test.ts:68-123; mcp/native_helpers/conversation_library/src/protocol.test.ts:125-179; mcp/native_helpers/conversation_library/src/protocol.test.ts:181-218 |
+| Helper tests cover exact versions, malformed framing, wrong protocol, exact key sets, inapplicable fields, and hostile error details. | "the exact locked helper versions are protocol constants", "request parser rejects malformed framing and wrong protocol", "request parser rejects unknown fields for every operation", "request parser rejects known fields when they belong to another operation", "helper crash detail is fixed allow-listed copy for secrets" | mcp/native_helpers/conversation_library/src/protocol.test.ts:14-17; mcp/native_helpers/conversation_library/src/protocol.test.ts:41-66; mcp/native_helpers/conversation_library/src/protocol.test.ts:68-123; mcp/native_helpers/conversation_library/src/protocol.test.ts:125-179; mcp/native_helpers/conversation_library/src/protocol.test.ts:181-218 |
 | Python foundation tests forbid incidental resolution in production helper source. | `test_helper_runtime_source_has_no_incidental_module_resolution` | mcp/tests/test_conversation_foundation.py:139-160 |
 | The Python host spawns this contract's entries and correlates handshake plus one operation per process. | `ConversationLibraryHelperHost` | mcp/src/agents_remember/serving/conversation/library/helper_host.py:91-221 |
 | The locked Claude and Pi entries consume the serve loop, probing, signing, and paging primitives. | `handleClaude`, `handlePi` | mcp/native_helpers/conversation_library/src/claude.ts:65-78; mcp/native_helpers/conversation_library/src/pi.ts:54-67 |

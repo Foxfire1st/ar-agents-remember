@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/taskIdentity.test.ts`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:44+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,10 +82,10 @@ the reviewed task evidence for any current behavioral claim.
 | The leaf-key composer the assertions read through: `repository` + docPath folder + `id`, nothing else. | `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:64-70 |
 | The test file's `doc` fixture helper. | `doc` | dashboard/src/data/taskIdentity.test.ts:10-12 |
 | The `taskDoc` / `analytics` builders and the thirteen-key `EMPTY_ANALYTICS` base. | `EMPTY_ANALYTICS`; `taskDoc`; `analytics` | dashboard/src/test/fixtures/wire.ts:223-237; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:317-322 |
-| ChatSessionActions derives its task tree from taskDocuments. | "const leafTree = useMemo(() => buildTaskTree(taskDocuments), [taskDocuments]);" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:176-176 |
+| ChatSessionActions derives its task tree from taskDocuments. | "const leafTree = useMemo(() => buildTaskTree(taskDocuments)" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:176-176 |
 | ChatSessionActions renders LeafAttachPicker. | "<LeafAttachPicker" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:211-211 |
-| LeafAttachPicker pre-drills to the context master with findMasterPath. | "setPath(contextMaster ? findMasterPath(tree, contextMaster) : []);" | dashboard/src/panels/LeafAttachPicker.tsx:276-276 |
-| Master rows drill further through drillInto. | "const drillInto = (node: TaskTreeNode) => setPath((current) => [...current, node]);" | dashboard/src/panels/LeafAttachPicker.tsx:284-284 |
+| LeafAttachPicker pre-drills to the context master with findMasterPath. | "setPath(contextMaster ? findMasterPath(tree" | dashboard/src/panels/LeafAttachPicker.tsx:276-276 |
+| Master rows drill further through drillInto. | "const drillInto = (node: TaskTreeNode) => setPath((current) => [...current" | dashboard/src/panels/LeafAttachPicker.tsx:284-284 |
 
 ## Cross-Repo References
 

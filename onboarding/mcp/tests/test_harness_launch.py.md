@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_harness_launch.py` |
 | doc_type               | `file-level-onboarding`            |
 | lastUpdated            | 2026-07-21T11:30+02:00             |
-| lastVerifiedCommitHash |                                    `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                    2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                    `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                    2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                      |
 
 ## Governing Overview
@@ -89,7 +89,7 @@ the ordering and persistence boundary covered by its sibling tests.
 | --- | --- | --- |
 | `ResolvedLaunch` is complete and JSON-safe; dynamic validation is model-gated and Pi requires an exact provider-qualified key. | `ResolvedLaunch` | mcp/src/agents_remember/serving/harness_launch.py:17-54 |
 | Effective echo verification is honest, and launch-knob application refuses duplicate adapter-owned argv/config keys. | `verify_effective_launch`, `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:122-148; mcp/src/agents_remember/serving/harness_launch.py:173-206 |
-| Codex config parsing covers separated, equals-attached, and short-attached forms. | ["--config/-c"] | mcp/src/agents_remember/serving/harness_launch.py:210-210 |
+| Codex config parsing covers separated, equals-attached, and short-attached forms. | ["--config/-c"] | mcp/src/agents_remember/serving/harness_launch.py:212-212 |
 | The sibling runner suite verifies discovery/application ordering and persistent failed launch evidence. | `test_dynamic_discovery_precedes_native_launch_knob_application`, `test_adapter_start_mismatch_is_persistent_failed_rejected_evidence` | mcp/tests/test_harness_control_runner.py:190-220; mcp/tests/test_harness_control_runner.py:402-450 |
 
 ## Cross-Repo References
@@ -102,6 +102,8 @@ covered through adapter and live-matrix evidence rather than a cross-repository 
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 3 repository-internal launch-policy and runner-contract references for effective echo/knob checks, Codex config parsing, and discovery/failure ordering; final scoped result 0 (checker-clean).
 

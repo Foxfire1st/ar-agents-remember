@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_contract_lifecycle.py`         |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-08-01T14:20+02:00                                  |
-| lastVerifiedCommitHash | `a714114ef94eedb8042fb4caa38d9469f4767dd6`              |
-| lastVerifiedCommitDate | 2026-08-01T18:06:36+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`              |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -81,9 +81,9 @@ silently becoming an unknown-major case.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The contract module's lifecycle writer — the `lifecycle:` / `id:` block that `contract_to_text` renders. | `contract_to_text`; `"lifecycle:"`; `"  id: "` | mcp/src/agents_remember/worktrees/worktree_contract.py:691-742 |
+| The contract module's lifecycle writer — the `lifecycle:` / `id:` block that `contract_to_text` renders. | `contract_to_text`; `"lifecycle:"`; `"  id: "` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
 | The lifecycle round-trip and pre-2c default behavior exercised by the suite. | `ContractLifecycleAnchorTests` | mcp/tests/test_worktree_contract_lifecycle.py:51-81 |
-| The front-matter schema-version writer and the refusal the loader raises, including the exact message text the tests assert. | `contract_to_text`; `"unsupported series contract schemaVersion: "` | mcp/src/agents_remember/worktrees/worktree_contract.py:691-742 |
+| The front-matter schema-version writer and the refusal the loader raises, including the exact message text the tests assert. | `contract_to_text`; `"unsupported series contract schemaVersion: "` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
 | The shared rule both artifacts are read under — rejects an unknown major, accepts an unknown minor, refuses an unparseable version. | `schema_version_supported` | mcp/src/agents_remember/controlplane/durable_store.py:224-245 |
 | The same policy asserted on the JSONL record side, through the same helper, so the two cannot drift. | `SchemaVersionMajorTests` | mcp/tests/test_durable_store_contract.py:431-517 |
 
@@ -107,7 +107,7 @@ silently becoming an unknown-major case.
   it meant what this build assumes. **Citations:** the card previously carried a single uncited
   row; it now carries exact anchors for the lifecycle renderer and the lifecycle round-trip tests,
   while the version row cites the writer and refusal message. The lifecycle behavior is covered by
-  cit:([`contract_to_text`], mcp/src/agents_remember/worktrees/worktree_contract.py:691-742) and
+  cit:([`contract_to_text`], mcp/src/agents_remember/worktrees/worktree_contract.py:689-740) and
   cit:([`ContractLifecycleAnchorTests`], mcp/tests/test_worktree_contract_lifecycle.py:51-81); the
   schema-version cases remain under cit:([`ContractSchemaVersionTests`], mcp/tests/test_worktree_contract_lifecycle.py:84-145).
   Added three invariants and a cross-link to

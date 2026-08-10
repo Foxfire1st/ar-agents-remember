@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_missing_onboarding.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:51+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -40,7 +40,7 @@ historical repository gaps.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The tested checker lives in `check_missing_onboarding.py`. | `check_missing_onboarding`, `worktree_added_sources` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73; mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:76-85 |
-| Storage settings and path rules are resolved by the kernel resolver helpers. | `detect_coordination_selection`, `resolve_coordination_context` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:40-74; mcp/src/agents_remember/kernel/coordination_context/resolver.py:151-164 |
+| Storage settings and path rules are resolved by the kernel resolver helpers. | `detect_coordination_selection`, `resolve_coordination_context` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:37-71; mcp/src/agents_remember/kernel/coordination_context/resolver.py:148-164 |
 
 ## Update History
 

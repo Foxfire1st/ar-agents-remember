@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_plane_installed.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,9 +83,9 @@ contract are the direct evidence.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The runtime fixtures recording (never enabling) the `control-plane/*` rows this suite captures. | "control-plane/interrupt-write-ack"; "control-plane/abort-write-ack"; "control-plane/interrupt-and-assets" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:94-137; mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:71-102; mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:45-50 |
-| The client helpers driven against the live socket (`interrupt_control`, `read_operation_timeline`, asset-carrying submit, withdrawal). | `withdraw_control_submission`; `submit_control_prompt`; `interrupt_control`; `read_operation_timeline` | mcp/src/agents_remember/serving/harness_control_client.py:172-186; mcp/src/agents_remember/serving/harness_control_client.py:214-252; mcp/src/agents_remember/serving/harness_control_client.py:425-445; mcp/src/agents_remember/serving/harness_control_client.py:448-472 |
+| The client helpers driven against the live socket (`interrupt_control`, `read_operation_timeline`, asset-carrying submit, withdrawal). | "def withdraw_control_submission("; "def submit_control_prompt("; "def interrupt_control("; "opaque cursor coordinates are invalid in the operation timeline domain" | mcp/src/agents_remember/serving/harness_control_client.py:190-190; mcp/src/agents_remember/serving/harness_control_client.py:216-216; mcp/src/agents_remember/serving/harness_control_client.py:431-431; mcp/src/agents_remember/serving/harness_control_client.py:454-478 |
 | The contract-suite companion pinning the same seams over fake transports. | "Contract tests for the native control-plane substrate." | mcp/tests/test_harness_control_plane.py:1-45 |
-| The L0E installed-suite precedent for opt-in version-locked capture. | "LIVE_OPT_IN = \"AR_RUN_EVIDENCE_INSTALLED\""; "class CodexInstalledEvidenceTests(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_harness_control_evidence_installed.py:60-60; mcp/tests/test_harness_control_evidence_installed.py:128-128 |
+| The L0E installed-suite precedent for opt-in version-locked capture. | "LIVE_OPT_IN = \"AR_RUN_EVIDENCE_INSTALLED\""; "class CodexInstalledEvidenceTests(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_harness_control_evidence_installed.py:64-64; mcp/tests/test_harness_control_evidence_installed.py:132-132 |
 
 ## Cross-Repo References
 
@@ -96,6 +96,8 @@ No neighboring repository participates in this installed-runtime suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

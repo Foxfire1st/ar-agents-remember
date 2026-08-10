@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/read_files.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -45,7 +45,7 @@ packet carries `data.repoId`, the read's repo) alongside the per-file facts.
 for one requested path, `found | missing | disabled | unsupported |
 not_requested` — with `VALID_FILE_READ_STATUSES` derived from it by `get_args`
 cit:([`VALID_FILE_READ_STATUSES`], mcp/src/agents_remember/models/read_files.py:32-32); this module imports the alias
-cit:([`FileReadStatus`], mcp/src/agents_remember/application/read_files.py:46-46). 260731-EFA-L4 moved the declaration here from
+cit:(["from agents_remember.models.read_files import FileReadStatus"], mcp/src/agents_remember/application/read_files.py:52-52). 260731-EFA-L4 moved the declaration here from
 `models/read_files.py`; the later staged reversal moved it back, because the
 alias is served wire vocabulary and the model side owns it (see Update History).
 The deciding direction is unchanged: `_resolve_onboarding` is the only function
@@ -163,14 +163,16 @@ ever appears it is honored once.
 | Repo-resolution authority guard. | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
 | The authority-violation error raised on a bad batch/range/path. | `AuthorityError` | mcp/src/agents_remember/errors.py:17-23 |
 | The full read and the net-new ranged reader (`read_text_range`). | `read_text_range` | mcp/src/agents_remember/kernel/filesystem.py:44-62 |
-| Coordination-context resolution and per-path storage-mode resolution. | `resolve_coordination_context` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
+| Coordination-context resolution and per-path storage-mode resolution. | "_resolver.resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
 | The shared path-confinement + sidecar-pairing helpers, imported under their former private names (`_confined_rel`/`_route_sidecar_status`/`_sidecar_body`). | `confine_rel`, `route_sidecar_status`, `sidecar_body` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47; mcp/src/agents_remember/kernel/sidecar_pairing.py:50-65; mcp/src/agents_remember/kernel/sidecar_pairing.py:101-108 |
 | `ROUTE_OVERVIEW_NAME` consumed read-only for the front-door route derivation. | `ROUTE_OVERVIEW_NAME` | mcp/src/agents_remember/kernel/route_index.py:17-17 |
 | The ambient lifecycle: `read.packet` emission and the served-onboarding dedup ledger consumed here. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:426-453 |
-| The observer-root resolver locating the compact-reset marker. | `observer_root` | mcp/src/agents_remember/observer/paths.py:32-34 |
+| The observer-root resolver locating the compact-reset marker. | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
 | The slice-07 test suite. | `RangedReadTests` | mcp/tests/test_read_ar_files.py:159-181 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: resolved the 4 manifest-assigned findings the W1-B10 pass had preserved as Tier 3. The staged reversal has since landed in the frozen source, so the false status-ownership claims were corrected to it: `FileReadStatus`/`VALID_FILE_READ_STATUSES` are declared in models/read_files.py L29/L32 and this module imports the alias at L46 — ownership paragraph, the vocabulary invariant, the models table row, and two history line-spellings now say so. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 

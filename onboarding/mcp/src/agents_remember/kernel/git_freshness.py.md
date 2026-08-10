@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/git_freshness.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                         |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -134,7 +134,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The one git runner, used for every command here including the fetch: `run_git` takes a per-call `timeout` and defaults to `GIT_LOCAL_TIMEOUT_SECONDS = 300`. The three bands this file selects from — `GIT_LOCAL_TIMEOUT_SECONDS` / `GIT_REMOTE_TIMEOUT_SECONDS` / `GIT_METADATA_TIMEOUT_SECONDS` — and why the metadata band exists, are in the timeout-class block; the signature and body are in `run_git`. | `run_git`, `GIT_LOCAL_TIMEOUT_SECONDS`, `GIT_REMOTE_TIMEOUT_SECONDS`, `GIT_METADATA_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-72; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | The per-command bounds are pinned by test, not by convention: `test_branch_freshness_classes_each_of_its_commands_by_what_it_does` patches `run_git` with a recorder whose `timeout` is a **required** keyword, so a call site that omits it fails the recorder instead of silently recording the default. `TimeoutClassTests` owns the assertions. | `TimeoutClassTests`, `test_branch_freshness_classes_each_of_its_commands_by_what_it_does` | mcp/tests/test_git_command.py:550-660 |
 | Style precedent: read-only git facts with dataclass + packet projector, the sibling that classes its four probes the same way, and — since 260731-EFA-L4 — the sibling that declares its own `RepoState` / `VALID_REPO_STATES` for the same reason this file declares `FreshnessState`. | `RepoState`, `VALID_REPO_STATES`, `read_git_facts` | mcp/src/agents_remember/kernel/git_facts.py:22-22; mcp/src/agents_remember/kernel/git_facts.py:26-26; mcp/src/agents_remember/kernel/git_facts.py:40-45 |
-| The wire face that imports `FreshnessState` instead of retyping its eight members: `BranchFreshness.state`. | `state` | mcp/src/agents_remember/models/context_packet.py:99-99 |
+| The wire face that imports `FreshnessState` instead of retyping its eight members: `BranchFreshness.state`. | "state: FreshnessState" | mcp/src/agents_remember/models/context_packet.py:98-98 |
 | The context packet application entry point is the first consumer (`_freshness_packet`). | `_freshness_packet` | mcp/src/agents_remember/application/context_packet.py:105-132 |
 | `test_every_freshness_state_the_git_reader_writes_validates` asserts produced == `VALID_FRESHNESS_STATES`; `test_a_directory_that_is_not_a_repo_crosses_the_freshness_wire` walks a real degrade across the boundary. | `test_every_freshness_state_the_git_reader_writes_validates`, `test_a_directory_that_is_not_a_repo_crosses_the_freshness_wire` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:753-762; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:469-474 |
 | Kernel unit tests cover all states against local bare-origin fixtures. | `GitFreshnessTests` | mcp/tests/test_git_freshness.py:20-104 |

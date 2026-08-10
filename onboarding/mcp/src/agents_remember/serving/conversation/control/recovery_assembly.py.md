@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ and digest transform are the sibling authorities.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The assembly's source priority reads the substrate `WithdrawalRecovery` payload first. | `recovery_text` | mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:40-47 |
-| The submit journal entry used as recovery source of last resort. | `JournalEntry`; `recovery_text` | mcp/src/agents_remember/serving/conversation/control/service.py:144-153; mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:40-47 |
+| The submit journal entry used as recovery source of last resort. | "class JournalEntry:"; "def recovery_text(" | mcp/src/agents_remember/serving/conversation/control/service.py:144-153; mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:40-47 |
 | The attachment recovery-ref assembly mints one ref per recoverable asset through its ref-mint call. | `attachment_recovery_ref` | mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:96-123 |
 | `recovery_digest` reuses the authority-parity payload digest so recovery matches the submit's idempotence digest. | `recovery_digest` | mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:50-61 |
 | The lifecycle policy that consumes this assembly: `_build_withdrawn_record` calls `recovery_text`, `recovery_digest`, `recover_attachment_refs`, and `recovery_payload`. | `_build_withdrawn_record` | mcp/src/agents_remember/serving/conversation/control/withdrawals.py:442-511 |
@@ -92,6 +92,8 @@ digest behaviour are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: rebound recovery source priority, attachment-ref assembly, and authority-parity digest reuse to their complete assembly functions.
 

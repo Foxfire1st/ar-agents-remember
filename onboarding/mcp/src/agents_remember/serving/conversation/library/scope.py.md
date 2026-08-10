@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ route regression is pinned at the ASGI layer.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical scope defaults to the root, narrows inside it, and rejects traversal/symlink/cross-scope escapes. | `test_canonical_scope_defaults_to_root`, `test_canonical_scope_narrows_inside_root`, `test_canonical_scope_rejects_traversal_symlink_and_cross_scope` | mcp/tests/test_conversation_library_cursor.py:137-141; mcp/tests/test_conversation_library_cursor.py:144-150; mcp/tests/test_conversation_library_cursor.py:153-171 |
-| A null-byte cwd maps to the typed 403 scope refusal on the production route. | `test_list_route_maps_null_byte_cwd_to_typed_refusal` | mcp/tests/test_conversation_library_api.py:374-383 |
+| A null-byte cwd maps to the typed 403 scope refusal on the production route. | `test_list_route_maps_null_byte_cwd_to_typed_refusal` | mcp/tests/test_conversation_library_api.py:387-396 |
 | The query digest binds harness, scope, and sort into every minted scope. | `test_query_digest_binds_harness_scope_and_sort` | mcp/tests/test_conversation_library_cursor.py:131-134 |
 
 ## Cross-Repo References
@@ -79,6 +79,8 @@ No meaningful cross-repo boundary exists for this local scope authority.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 6 initial citation findings (3 anchor, 0 prose, 3 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 

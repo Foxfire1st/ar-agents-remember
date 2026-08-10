@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_helper_behaviour.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-31T15:32+02:00                       |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`   |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`   |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -53,17 +53,17 @@ cadence assertions exact.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The image and retire helpers under test. | "def _looks_like_image(body: bytes, ext: str) -> bool:"; "def _retire_response(" | mcp/src/agents_remember/serving/_app_common.py:160-160; mcp/src/agents_remember/serving/_app_terminal_routes.py:540-540 |
+| The image and retire helpers under test. | "def _looks_like_image(body: bytes"; "def _retire_response(" | mcp/src/agents_remember/serving/_app_common.py:165-165; mcp/src/agents_remember/serving/_app_terminal_routes.py:542-542 |
 | The repository diff helper under test. | `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:433-474 |
 | The current-model helper under test. | `_select_current_model` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:86-110 |
 | The Claude activity helper under test. | `_status_activity` | mcp/src/agents_remember/serving/claude_stream_state.py:781-788 |
 | The daemon readiness helper under test. | `_wait_ready` | mcp/src/agents_remember/serving/daemon.py:378-390 |
-| The evidence-page parser under test. | "def _evidence_page(result: object, *, expected_bridge_epoch" | mcp/src/agents_remember/serving/_harness_control_parsing.py:348-348 |
+| The evidence-page parser under test. | "def _evidence_page(result: object" | mcp/src/agents_remember/serving/_harness_control_parsing.py:352-352 |
 | The heap diagnostic frame helper under test. | `_frames` | mcp/src/agents_remember/serving/heap_diag.py:66-75 |
 
 ## Update History
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: narrowed the pooled helper sentence to its cited image and retire owners while preserving the exact-owner rows for diff, model, state, readiness, evidence, and heap.
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_change_watcher.py`             |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-08-01T16:25+02:00 |
-| lastVerifiedCommitHash |                                                `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate |                                                2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash |                                                `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                                2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -33,7 +33,7 @@ exactly the documented projection-input surfaces and nothing else (including the
 `worktrees/*/*/provider-runtime` glob), and missing surfaces are skipped until they exist.
 cit:([`InputEventFilterTests`], mcp/tests/test_change_watcher.py:98-139) prove genuine inputs pass while `*.tmp`, dotfiles, the
 projection's own `latest-state/metrics.json` outputs, every control-plane lockfile, and the
-remaining `workspace/` non-input churn (event river, cursor/lock, agent-notifier heartbeat) are dropped
+remaining `workspace/` non-input churn (event river, cursor/lock, supervisor heartbeat) are dropped
 — and that a *lifecycle's* `events.jsonl` is NOT confused with the workspace river (the parent-dir
 check). Since 260731-EFA-L5 the lockfile case asserts on `operator-inbox.jsonl.lock` rather than
 `operator-inbox.lock`, and a second lockfile case was added *outside* `workspace/`:
@@ -104,7 +104,7 @@ Domain Documentation entries.
 | Domain mapping and the pure pacer deadline are covered separately. | `ProjectionDomainMappingTests`; `ChangePacerDeadlineTests` | mcp/tests/test_change_watcher.py:142-170; mcp/tests/test_change_watcher.py:173-221 |
 | Adaptive projection and real watchfiles integration are covered separately. | `AdaptiveProjectorTests`; `RealWatchfilesIntegrationTests` | mcp/tests/test_change_watcher.py:252-441; mcp/tests/test_change_watcher.py:444-485 |
 | The module derives roots and filters lockfiles/events through named helpers and exposes the pacer and watcher. | `_DURABLE_LOG_LOCK_SUFFIX`; `projection_input_roots`; `is_projection_input_event`; `ChangePacer`; `ProjectionInputWatcher` | mcp/src/agents_remember/serving/change_watcher.py:156-156; mcp/src/agents_remember/serving/change_watcher.py:159-184; mcp/src/agents_remember/serving/change_watcher.py:187-205; mcp/src/agents_remember/serving/change_watcher.py:283-376; mcp/src/agents_remember/serving/change_watcher.py:379-487 |
-| The projector owns pacer wiring, watch-task lifecycle, fail-open completion, and wake instrumentation. | `ProjectionRefreshers`; `NO_PROJECTION_REFRESHERS`; `run`; `_on_watch_task_done` | mcp/src/agents_remember/serving/projector.py:107-118; mcp/src/agents_remember/serving/projector.py:123-123; mcp/src/agents_remember/serving/projector.py:193-236; mcp/src/agents_remember/serving/projector.py:238-249 |
+| The projector owns pacer wiring, watch-task lifecycle, fail-open completion, and wake instrumentation. | `ProjectionRefreshers`; `NO_PROJECTION_REFRESHERS`; `run`; `_on_watch_task_done` | mcp/src/agents_remember/serving/projector.py:112-123; mcp/src/agents_remember/serving/projector.py:128-128; mcp/src/agents_remember/serving/projector.py:198-241; mcp/src/agents_remember/serving/projector.py:243-254 |
 | The lock exclusion is derived from the durable-store naming function and held by the access context. | `lock_path_for`; `exclusive_access` | mcp/src/agents_remember/controlplane/durable_store.py:291-298; mcp/src/agents_remember/controlplane/durable_store.py:348-394 |
 
 ## Cross-Repo References
@@ -122,9 +122,9 @@ fallback for an unknown accepted path, and the exact task-domain wake through bo
 worker and real watchfiles integration.
 
 ## Update History
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
-"- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: split watcher, projector, test, and lock claims by source owner and generated final citation ranges with the scoped fixer.
+- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: split watcher, projector, test, and lock claims by source owner and generated final citation ranges with the scoped fixer.
 - 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 1 repository-reference citation (1/1 anchored and sourced; scoped citation check clean).
 
 - 2026-08-01T16:25+02:00 — 260731-EFA-L5 curator: `InputEventFilterTests`' lockfile assertion moved

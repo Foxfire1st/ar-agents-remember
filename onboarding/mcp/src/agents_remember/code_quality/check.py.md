@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-10T07:30+02:00               |
-| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00               |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -18,6 +18,7 @@
 
 `check.py` is the quality gate. It is the command the pre-push hook, CI, and worktree
 closeout run, and it is the single place that decides what the repository certifies and
+
 what it merely reports.
 
 ```text
@@ -40,7 +41,6 @@ section header so nobody reads the output as enforcement.
 | --- | --- | --- |
 | `ruff` | enforcing | `ruff check <every tracked .py>` — no `--select`, no `--extend-ignore` |
 | `ruff-format` | enforcing | `ruff format --check <every tracked .py>` |
-| `file-size` | enforcing when armed | changed paths (targeted) or index-known Python/dashboard TypeScript (full) |
 | `pyright` | enforcing | `pyright --project . --pythonpath <interpreter> <every tracked .py>` |
 | `radon-cc` | **report** | `radon cc <packages> -s -n B --order SCORE` |
 | `radon-mi` | **report** | `radon mi <packages> -s -n B` |
@@ -51,26 +51,6 @@ section header so nobody reads the output as enforcement.
 The last two do not measure anything again. `pytest` writes one coverage report and both
 score it, so the aggregate, CRAP and the changed-lines floor are three readings of one
 measurement rather than three runs that can disagree.
-
-### Cheap-First Order And Content-Addressed Retries (260805-ARG-L1)
-
-`quality_steps` now orders every independent cheap subprocess before the broad test rail: Ruff,
-format, file size, Pyright, the two Radon reports, then pytest. Pytest is the final subprocess.
-CRAP and diff coverage remain after it because they require the branch artifact; moving those
-calculations earlier would either be impossible or would consume stale coverage.
-
-For a real local invocation, `execute_quality_rails` asks `retry_proof` for a plan before running
-the fixed list. A fresh run records per-test Coverage.py contexts. If pytest passed and only the
-later CRAP/diff rail refused, the proof is published under Git's common directory. The next exact
-tree restores JSON and skips pytest. A selected-test-only delta strips those tests' runtime
-contexts and the ambiguous empty collection context, then invokes only the changed modules with
-`--cov-append --cov-context=test`. Any source/config/support-test/deletion/untracked, selection,
-base, threshold, Python/tool, environment, or artifact drift runs fresh. If conservative delta
-coverage still refuses, `complete_coverage_rails` resets the artifact, runs the full pytest
-selection once, and repeats the two post-processors for a conclusive verdict. CI explicitly
-disables reuse through `AR_QUALITY_INVOCATION=ci`; `AR_QUALITY_NO_RETRY` is the local diagnostic
-escape hatch. A cheap-rail failure always skips pytest and both post-processors; exact mode
-explicitly deletes the restored cached JSON at that boundary so stale evidence cannot leak through.
 
 **Radon cannot fail this gate and never could.** `radon cc` and `radon mi` exit 0 whatever
 they find, so `run_fixed_checks` was structurally incapable of failing on them while the
@@ -179,23 +159,23 @@ branch that puts the exit code and git's `stderr` in the message. Neither can re
 
 ### 260731-EFA-L17 — The Two Contracts: Full And Targeted
 
-The wrapper now speaks two contracts. `CheckConfig` (lines 83-95) carries the
+The wrapper now speaks two contracts. `CheckConfig` (lines 70-84) gained the
 `targeted`, `targeted_base`, and `targeted_scope` fields; `config_from_args`
-(lines 807-839) maps `--targeted` / `--diff-base` / `--memory-cap-bytes` onto
-them. `quality_steps` (lines 248-292) branches on the targeted plan:
+(lines 677-711) maps `--targeted` / `--diff-base` / `--memory-cap-bytes` onto
+them. `quality_steps` (lines 225-259) branches on the targeted plan:
 
 - ruff/ruff-format/pyright run over the derived changed-file scope
-  (`_fixed_steps`, lines 153-176);
+  (`_fixed_steps`, lines 133-157);
 - radon-cc/radon-mi consume the changed production module **files**
-  (`_radon_report_steps`, lines 178-202) — this fixed the L17-round-2 finding
+  (`_radon_report_steps`, lines 158-184) — this fixed the L17-round-2 finding
   where the report rails received package names that resolved to nothing at the
   repo root;
 - pytest runs the derived test subset, or is omitted loudly when a targeted run
-  derived none (`_pytest_step`, lines 205-224);
+  derived none (`_pytest_step`, lines 185-203);
 - the file-size rail is scoped to the leaf's changed paths in targeted mode
-  (`_file_size_step`, lines 227-245);
+  (`_file_size_step`, lines 204-224);
 - a targeted run with no changed Python files short-circuits to PASS with
-  nothing for the leaf rails to certify (`run_quality_check`, lines 344-389).
+  nothing for the leaf rails to certify (`run_quality_check`, lines 308-361).
 
 Coverage.py instruments the top-level package root (the same proven shape as
 the full wrapper) because per-module `--cov` on FastMCP/pydantic files crashed
@@ -206,14 +186,14 @@ under `--memory-cap-bytes` (RLIMIT_AS self-cap; see `code_quality.memory_cap`).
 
 ### The Two Post-Suite Scorers
 
-`post_coverage.run_crap_calculator` renders the fixed-length `--top` table, then — separately — lists
+`run_crap_calculator` renders the fixed-length `--top` table, then — separately — lists
 **every** function at or above the threshold, not the first `--top` of them, with the branch
 coverage that would clear it (`crap_failure_line` inverts `crap = cc**2 * (1-c)**3 + cc`).
 When the complexity term alone already reaches the threshold there is no such coverage, and
 the line says "split it" instead of naming an impossible number. A gate that truncates its
 own findings sends the reader back to run the tool by hand for the rest.
 
-`post_coverage.run_diff_coverage` resolves the diff base, scores the changed lines, prints the base it
+`run_diff_coverage` resolves the diff base, scores the changed lines, prints the base it
 chose and every uncovered line by name, and fails only in the `measured` state. It lives
 inside the wrapper rather than beside it so it reaches the pre-push hook, closeout and CI
 through the one command they already run.
@@ -259,10 +239,6 @@ the report to a temporary directory unless `--coverage-json` is given.
   fails the build if any module in the package spawns `git` itself.
 - One pytest run produces one coverage report; CRAP and the diff floor both score that
   report and never re-measure.
-- A reused pytest proof is content-addressed and integrity-checked. Only exact trees or selected
-  concrete test-module deltas are eligible; every ambiguous change runs fresh, and CI never reuses.
-- Delta coverage is conservative because changed and collection contexts are removed first. A
-  delta failure is not final until the wrapper's automatic fresh full-pytest fallback runs.
 - Every CRAP score at or above the configured threshold fails the default wrapper, and every
   offender is listed — not just the top `--top`.
 - Every uncovered changed line fails the default wrapper, and every one is named.
@@ -275,8 +251,6 @@ the report to a temporary directory unless `--coverage-json` is given.
 | --- | --- | --- |
 | The changed-lines coverage floor this wrapper runs last, and the derivation of the 100% floor. | `DEFAULT_DIFF_COVERAGE_FLOOR` | mcp/src/agents_remember/code_quality/diff_coverage.py:1-5; mcp/src/agents_remember/code_quality/diff_coverage.py:30-30 |
 | CRAP-Calculator owns function-level CRAP scoring, and is where Radon stays load-bearing. | `crap_score` | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:232-239 |
-| Post-pytest enforcement moved to a small module while `check.py` retains public aliases for existing callers/tests. | `run_crap_calculator`; `run_diff_coverage` | mcp/src/agents_remember/code_quality/post_coverage.py:35-101; mcp/src/agents_remember/code_quality/post_coverage.py:121-170 |
-| Content-addressed proof and context filtering are owned separately from command composition. | `RetryPlan`; `prepare`; `_filtered_coverage_data` | mcp/src/agents_remember/code_quality/retry_proof.py:63-134; mcp/src/agents_remember/code_quality/retry_proof.py:136-206; mcp/src/agents_remember/code_quality/retry_proof.py:393-443 |
 | Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | `RadonIsAReportNotAGateTests` | mcp/tests/test_code_quality_check.py:168-223; mcp/tests/test_code_quality_check.py:226-238; mcp/tests/test_code_quality_check.py:340-351; mcp/tests/test_code_quality_check.py:514-521 |
 | An independent recomputation asserts the wrapper's real argument vectors reach every tracked Python file. | `test_every_tracked_python_file_is_linted_and_type_checked` | mcp/tests/test_gate_scope.py:152-173 |
 | `run_git` — the one runner `git_ls_files` calls — strips `GIT_REPOSITORY_SELECTOR_ENV` and bounds every call with the local/remote/metadata timeout classes. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-73; mcp/src/agents_remember/kernel/git_command.py:85-92 |
@@ -284,19 +258,24 @@ the report to a temporary directory unless `--coverage-json` is given.
 | The shared tiered hook body derives the same `git ls-files` scope; the pre-push tier delegates to the wrapper's targeted contract, while `full` stays the manual/master-gate tier. | "git ls-files -z -- '*.py'" | .githooks/_gate.sh:74-74 |
 | `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | "C901" | pyproject.toml:6-18; pyproject.toml:67-70; pyproject.toml:103-112 |
 | Repo instructions state the gate command, that it takes no path arguments, and that Radon reports. | "python -m agents_remember.code_quality.check" | AGENTS.md:152-152 |
-| The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:796-857 |
-| The settings-owned memory cap a full run may run under (`--memory-cap-bytes`). | `plan_capped_command` | mcp/src/agents_remember/code_quality/memory_cap.py:94-135 |
-| The targeted contract proofs: rail scoping, real radon input, and no-change short-circuit. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:142-357; mcp/tests/test_code_quality_targeted.py:360-629 |
-| Retry proofs cover exact reuse, test-only selection, stale-context removal, invalidation, automatic full fallback, and refusal to score restored JSON after a cheap-rail failure. | `test_full_proof_becomes_exact_then_test_delta_and_source_change_invalidates`; `test_wrapper_retry_runs_only_changed_test_module`; `test_exact_proof_is_not_scored_when_a_cheap_rail_breaks` | mcp/tests/test_quality_retry_proof.py:73-114; mcp/tests/test_quality_retry_proof.py:117-204; mcp/tests/test_quality_retry_proof.py:207-266 |
+| The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:793-851 |
+| The settings-owned memory cap a full run may run under (`--memory-cap-bytes`). | `plan_capped_command` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:94-135 |
+| The targeted contract proofs: rail scoping, real radon input, and no-change short-circuit. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:142-359; mcp/tests/test_code_quality_targeted.py:360-630 |
+
+## 260731-EFA-L9 Change — Armed Layering Step
+
+The wrapper's `quality_steps` now registers the `layering` step unconditionally
+(cit:([`quality_steps`], mcp/src/agents_remember/code_quality/check.py:262-308)):
+`code_quality/layering.py` reads `layers.toml [contract].order` and fails on rank violations,
+package-pair cycles, undeclared top-level directories, and `from agents_remember import X` forms
+resolving to no declared package. There is no baseline/allowlist; a green full wrapper now
+requires zero layering violations.
 
 ## Update History
 
-- 2026-08-10T07:30+02:00 — 260805-ARG-L1 developer expansion: reordered cheap deterministic
-  rails before pytest, made pytest the final subprocess, added exact/test-delta content-addressed
-  proof reuse with fail-closed invalidation and automatic conclusive fallback, and extracted the
-  post-coverage calculations to keep this module below the 900-line soft limit. Verification
-  metadata remains blank until closeout stamps the code commit.
-
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the armed layering step in the
+  wrapper contract; the L9 change section above documents the rail. Verification metadata pinned
+  until closeout stamps the L9 code commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the two contracts
   (full vs `--targeted`), the radon changed-file input fix, the derived test
   subset, the package-root coverage instrumentation, and the memory-cap flag;

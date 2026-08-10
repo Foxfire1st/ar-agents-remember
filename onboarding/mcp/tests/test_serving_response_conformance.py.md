@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-09T03:51+02:00|
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`         |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -22,15 +22,11 @@ The enforcement for the declared HTTP response contract (`serving/response_contr
 
 It exists because **declaration-only checks do not establish runtime response behavior**. The route
 inventory, hazard, per-route conformance, and declared-surface-coverage suites below drive actual
-responses and validate them. cit:([`ServingRouteInventoryTests`; `ValidatedRouteHazardTests`; `ServingResponseConformanceTests`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):"], mcp/tests/test_serving_response_conformance.py:500-632; mcp/tests/test_serving_response_conformance.py:635-704; mcp/tests/test_serving_response_conformance.py:792-899; mcp/tests/test_serving_response_conformance_live.py:484-484)
+responses and validate them. cit:([`ServingRouteInventoryTests`; `ValidatedRouteHazardTests`; `ServingResponseConformanceTests`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):"], mcp/tests/test_serving_response_conformance.py:502-634; mcp/tests/test_serving_response_conformance.py:637-706; mcp/tests/test_serving_response_conformance.py:794-901; mcp/tests/test_serving_response_conformance_live.py:486-486)
 
 ## Code Commentary
 
 ### Logic
-
-The conformance pins now include only the explicit sprint-provenance response additions and
-binding-refusal statuses. This proves the L6 wire expansion without weakening the closed response
-key set or allowing arbitrary catalog fields through the serving boundary.
 
 #### cit:([`validate_wire`], mcp/tests/test_serving_response_conformance.py:211-231) — what pins camelCase
 
@@ -50,7 +46,7 @@ conversation routes, which dump `by_alias=True` by hand.
 #### `DeclaredSurfaceCoverageTests` — the score, stated as a number
 
 cit:([`declared_pairs`], mcp/tests/test_serving_response_conformance.py:194-208) is the denominator: every `(method, path, status)` triple the app
-declares. cit:([`DRIVEN`], mcp/tests/test_serving_response_conformance.py:265-265) is the conformance ledger;
+declares. cit:([`DRIVEN`], mcp/tests/test_serving_response_conformance.py:267-267) is the conformance ledger;
 cit:([`_driven_pairs`], mcp/tests/test_serving_response_conformance_live.py:458-481) re-runs the driving classes when the module was
 run partially, so a coverage number is never computed from a partial run.
 
@@ -132,23 +128,15 @@ model"; its first clause is a claim about the walker, so each registration form 
 
 `GET /api/terminal/sessions` and `GET /api/harnesses` return a bare `dict`, so unlike the other 59
 FastAPI validates them for real — and a drifted payload is answered as **HTTP 500**, not passed
-through. On `/api/terminal/sessions` that is a 64-key body assembled by hand from a
+through. On `/api/terminal/sessions` that is a 52-key body assembled by hand from a
 36-optional-field dataclass that is actively grown. `_emitted_keys` therefore **AST
 scans** `TerminalCatalogEntry.to_json` (an instance cannot prove the set, because every optional key
 goes through `_present_fields` and is absent when `None`) and
 `test_the_catalog_wire_model_covers_every_key_to_json_emits` asserts set **equality in
-both directions** against `TerminalCatalogEntryWire`'s aliases, plus `len(emitted) == 64` so a scan
+both directions** against `TerminalCatalogEntryWire`'s aliases, plus `len(emitted) == 52` so a scan
 reading zero keys cannot satisfy the equality. This fires when the field is added — earlier than
 the runtime 500, and earlier than a conformance run, which only sees the fields its fixture
 happens to populate.
-
-**260713-TES-L2 key-set growth.** The eleven catalog turn-truth fields lifted the emitted-key pin
-from 52 to 63; the wire model declares them in emission order (see `response_contract.py.md`).
-
-**260713-TES-L3 key-set growth.** `compoundIdleEmittedFor` (the compound-idle episode-signature
-marker) lifted the emitted-key pin from 63 to 64, asserted by the same equality test plus the
-`len(emitted) == 64` pin; the compound-idle suite exercises the marker end to end (see
-`test_compound_idle_relay.py.md`).
 
 #### The driving classes
 
@@ -230,17 +218,17 @@ modules, and everything that proves them lives here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The declared contract base and the three shared refusal tables. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:1068-1074; mcp/src/agents_remember/serving/response_contract.py:1078-1085; mcp/src/agents_remember/serving/response_contract.py:1090-1098 |
+| The declared contract base and the three shared refusal tables. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:1071-1077; mcp/src/agents_remember/serving/response_contract.py:1081-1088; mcp/src/agents_remember/serving/response_contract.py:1093-1101 |
 | The conversation surface's `CONTROL_RESPONSES` and `CONVERSATION_RESPONSES` tables. | `CONTROL_RESPONSES`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:95-108; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The serving app factory and SSE generator under test. |"async def stream_events("; "def create_app("|mcp/src/agents_remember/serving/_app_common.py:112-112; mcp/src/agents_remember/serving/app.py:226-226|
+| The serving app factory and SSE generator under test. |"async def stream_events("; "def create_app("|mcp/src/agents_remember/serving/_app_common.py:117-117; mcp/src/agents_remember/serving/app.py:232-232|
 | The `StreamContractTests` suite that drives the SSE seam. | `StreamContractTests` | mcp/tests/test_serving_response_conformance.py:38-38 |
-| The producer's `_present_fields` conditionality. | `_present_fields` | mcp/src/agents_remember/serving/terminal_catalog.py:1011-1012 |
+| The producer's `_present_fields` conditionality. | "def _present_fields(" | mcp/src/agents_remember/models/terminal_catalog.py:608-610 |
 | The catalog-entry wire model and its aliases. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:280-346 |
 | The open-status map asserted total over the declared outcomes, and the `_open_call` that indexes it directly. | `_OPEN_STATUS_BY_OUTCOME` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84 |
-| The control router and typed-error mapper. | `router`; `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:75-78; mcp/src/agents_remember/serving/conversation/control/api.py:124-141 |
+| The control router and typed-error mapper. | `router`; `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:87-90; mcp/src/agents_remember/serving/conversation/control/api.py:136-153 |
 | The raw event stream's `ready` marker. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:230-277 |
 | The served-state tail field names. | `SERVED_TAIL_FIELDS` | mcp/src/agents_remember/serving/served_state.py:62-66 |
-| The control-bridge harness fixtures used by this suite (`FakeControlAdapter`, `make_harness`, `OPERATOR`). | `FakeControlAdapter`; `make_harness` | mcp/tests/_control_plane.py:89-425; mcp/tests/_control_plane.py:521-532 |
+| The control-bridge harness fixtures used by this suite (`FakeControlAdapter`, `make_harness`, `OPERATOR`). | `FakeControlAdapter`; `make_harness` | mcp/tests/_control_plane.py:103-439; mcp/tests/_control_plane.py:536-547 |
 | The single-route sibling this suite was widened from, which owns `/api/state`'s assembled body and the SSE snapshot. | `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
 
 ## Cross-Repo References
@@ -254,16 +242,8 @@ type is recorded separately below as an in-repo boundary.
 
 ## Update History
 
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed response-key/status pins for sprint binding.
-  Verification metadata remains pinned until closeout stamps the code commit.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded the 63→64 emitted-key pin growth
-  (`compoundIdleEmittedFor`) in the hazard-section body and the L3 key-set paragraph.
-  Verification metadata pinned until closeout stamps the 260713-TES-L3 commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the 52→63 emitted-key pin growth
-  for the catalog turn-truth fields. Verification metadata pinned until closeout stamps the
-  260713-TES-L2 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.

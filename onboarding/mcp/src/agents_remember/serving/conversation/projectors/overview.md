@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/projectors/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 
 ## What This Area Is
 
@@ -176,9 +176,9 @@ fixtures record which shapes are gate-observed. The mapper suite pins every gram
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The engine consumes the mapper channel flags (`uses_native_pages`, `uses_transcript_echo`, `eager_native_continuation`) and converts `UnmappableShape` into preserved unknown-vendor evidence. | `uses_native_pages`; `uses_transcript_echo`; `eager_native_continuation`; `UnmappableShape` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:106-114; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:148-200; mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:64-75; mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:165-178 |
-| The store converges the split tool items these mappers emit. | `apply_item`; "tool-call"; `_union_blocks` | mcp/src/agents_remember/serving/conversation/active/store.py:161-249; mcp/src/agents_remember/serving/conversation/active/store.py:466-482 |
-| The evidence/native frame products the mappers parse. | `EvidenceFrame`; `EvidencePage`; `NativeEvidenceFrame`; `NativeEvidencePage`; `SubmissionProvenance`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/serving/harness_control_models.py:455-478; mcp/src/agents_remember/serving/harness_control_models.py:481-489; mcp/src/agents_remember/serving/harness_control_models.py:492-500; mcp/src/agents_remember/serving/harness_control_models.py:503-510; mcp/src/agents_remember/serving/harness_control_models.py:513-524; mcp/src/agents_remember/serving/harness_control_models.py:527-530 |
+| The engine consumes the mapper channel flags and converts `UnmappableShape` into preserved unknown-vendor evidence. | "or not self._mapper.uses_native_pages"; "if self._mapper.uses_transcript_echo:"; "or self._mapper.eager_native_continuation" | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:107-108; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:147-147; mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:64-75 |
+| The store converges the split tool items these mappers emit. | "def apply_item(self"; "def _union_blocks(" | mcp/src/agents_remember/serving/conversation/active/store.py:165-249; mcp/src/agents_remember/serving/conversation/active/store.py:470-482 |
+| The evidence/native frame products the mappers parse. | `EvidenceFrame`; `EvidencePage`; `NativeEvidenceFrame`; `NativeEvidencePage`; `SubmissionProvenance`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/models/conversations/control_wire.py:267-278; mcp/src/agents_remember/models/conversations/control_wire.py:281-284; mcp/src/agents_remember/models/conversations/evidence.py:79-102; mcp/src/agents_remember/models/conversations/evidence.py:105-113; mcp/src/agents_remember/models/conversations/evidence.py:116-124; mcp/src/agents_remember/models/conversations/evidence.py:127-134 |
 | The runtime fixtures record the observed (never enabling) shapes per harness. | "active-projector/items-events"; "substrate-evidence/native-page-thread-read" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:34-62 |
 | The mapper suite pins identity, blocks, tools, provenance, and preservation for all three. | `CodexMapperTests`; `ClaudeMapperTests`; `PiMapperTests` | mcp/tests/test_conversation_active_projectors.py:84-404; mcp/tests/test_conversation_active_projectors.py:407-710; mcp/tests/test_conversation_active_projectors.py:713-901 |
 
@@ -302,7 +302,13 @@ filled in**. Nothing is guessed; absent evidence stays absent.
 
 `projectors/codex.py` (1,223 → 704) is now a facade over `_codex_collab.py` (collab/roster/agent-thread/turn-completed mapping), with the full surface pinned by `mcp/tests/test_facade_surface.py`. The silent-notification set gained `turn/diff/updated` exactly (R16): it routes to the non-transcript state and mints zero unknown-vendor items, while genuinely unknown vendor methods still produce addressable unknown-vendor evidence; pinned by `test_conversation_projector_codex_agents_engine_1.py`/`_2.py`.
 
+## 260731-EFA-L9 Route Impact — Contract Imports Moved
+
+The per-harness mapper grammars now import the wire contracts from `models/conversations/` after the L9 monolith split; the projection readers they depend on moved to `serving/projections/`. Mapping behavior is unchanged.
+
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the codex facade split and the `turn/diff/updated` silent-method routing. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

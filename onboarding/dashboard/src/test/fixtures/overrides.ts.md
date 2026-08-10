@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/overrides.ts`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:15+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -29,9 +29,9 @@ answered a page whose REQUIRED `capabilities` was `undefined`: verbatim the defe
 again with no cast at all. `lifecycle({ state: undefined })`, `taskDoc({ steps: undefined })` and
 `projection({ enclosures: undefined })` are the same move.
 
-Nothing in `wireFixtureGuard.ts` can see any of them, and the source says exactly why (cit:(["no assertion for rule 1, no suppression for rule 5"], dashboard/src/test/fixtures/overrides.ts:10-12)): there
+Nothing in `wireFixtureGuard.ts` can see any of them, and the source says exactly why (cit:(["no assertion for rule 1"], dashboard/src/test/fixtures/overrides.ts:10-12)): there
 is no assertion for rule 1, no suppression for rule 5, and rule 4 measures property NAMES, which are
-all present and correct. This is the "a value, not a name" hole named in that guard's own
+all present and correct. This is the "a value" hole named in that guard's own
 `WHAT THIS DOES NOT COVER` section — closed here at the type level rather than left to the AST sweep.
 
 ## Code Commentary
@@ -127,7 +127,7 @@ External language references retained for reading only: [TSConfig Reference — 
 | The three documented limits: fresh-literal-only, one level deep, and only these two modules. | `conversationCapabilities` | dashboard/src/test/fixtures/overrides.ts:23-43 |
 | `RequiredKeys<T>`, `Overrides<O, T>` and `NoOverrides`. | `NoOverrides` | dashboard/src/test/fixtures/overrides.ts:69-69 |
 | The proof that all four rejections fire, that excess-property checking survives, and that the widened-variable case is a known pass. | `diagnosticsFor` | dashboard/src/test/fixtureOverrides.test.ts:72-75; dashboard/src/test/fixtureOverrides.test.ts:82-89 |
-| Consumer: every projection builder takes `Overrides<O, Node>`. | `Overrides` | dashboard/src/test/fixtures/wire.ts:241-243; dashboard/src/test/fixtures/wire.ts:329-331 |
+| Consumer: every projection builder takes `Overrides<O, Node>`. | "export function lifecycle<O extends Partial<LifecycleProjection> = NoOverrides>("; "export function projection<O extends Partial<WorkspaceProjection> = NoOverrides>(" | dashboard/src/test/fixtures/wire.ts:241-243; dashboard/src/test/fixtures/wire.ts:329-331 |
 | Consumer: the conversation builders, including the one that is deliberately NOT an `Overrides` (`conversationCapabilities`, per-group and one level deeper). | `conversationCapabilities` | dashboard/src/test/fixtures/conversationWire.ts:103-146 |
 | The app project's whole `compilerOptions` block — `strict` is on, `resolveJsonModule` is on, and no `exactOptionalPropertyTypes` entry appears anywhere in it. That absence is the config fact this file exists to answer. | `resolveJsonModule` | dashboard/tsconfig.app.json:2-22 |
 | `tsconfig.driver.json` covers the Playwright suites (`e2e`, `e2e-chats`, `e2e-production`, `perf`) and also omits the flag, which is why a call-site constraint reaches further than the flag would have. | "e2e-chats" | dashboard/tsconfig.driver.json:2-30 |
@@ -139,7 +139,8 @@ in-repo test fixtures.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Import and boundary review found only same-repository consumers (`wire.ts`, `conversationWire.ts`, `fixtureOverrides.test.ts`). | `Overrides` | dashboard/src/test/fixtures/wire.ts:62-62; dashboard/src/test/fixtures/conversationWire.ts:48-48 |
+| Import and boundary review found the same-repository `wire.ts` consumer. | "import type { NoOverrides, Overrides } from \"./overrides\";" | dashboard/src/test/fixtures/wire.ts:62-62 |
+| Import and boundary review found the same-repository `conversationWire.ts` consumer. | "import type { NoOverrides, Overrides } from \"./overrides\";" | dashboard/src/test/fixtures/conversationWire.ts:48-48 |
 
 ## Update History
 

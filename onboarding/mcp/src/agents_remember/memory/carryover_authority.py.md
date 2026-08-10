@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory/carryover_authority.py`           |
 | doc_type               | `file-level-onboarding`                                          |
 | lastUpdated            | 2026-07-31T00:00+02:00                                           |
-| lastVerifiedCommitHash |                                                                  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |                                                                  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |                                                                  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                                                  2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                                           |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ grounded in the package settings parser, this raw preflight, and paired tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `apply_carryover_for_request` obtains `official_storage` from `required_official_storage` and passes it to `_refresh_official_route_indexes` after carried onboarding. | "official_storage = required_official_storage(official_memory)"; "if carried:"; "route_index_refresh = _refresh_official_route_indexes"; "official_storage," | mcp/src/agents_remember/memory/carryover.py:790-790; mcp/src/agents_remember/memory/carryover.py:825-826; mcp/src/agents_remember/memory/carryover.py:829-829 |
+| `apply_carryover_for_request` obtains `official_storage` from `required_official_storage` and passes it to `_refresh_official_route_indexes` after carried onboarding. | "official_storage = required_official_storage(official_memory)"; "if carried:"; "route_index_refresh = _refresh_official_route_indexes"; "official_storage" | mcp/src/agents_remember/memory/carryover.py:790-790; mcp/src/agents_remember/memory/carryover.py:825-826; mcp/src/agents_remember/memory/carryover.py:829-829 |
 | The raw preflight exposes the required official storage authority. | `required_official_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
 | Full-apply JSON/Markdown tests cover the missing, invalid, empty/reset, unsupported, retained, repopulated, fallback, and official-over-source cases. | `test_missing_official_settings_refuses_before_any_mutation`; `test_semantically_empty_json_authority_refuses_before_any_mutation`; `test_markdown_reset_lists_remove_final_rule_contribution_before_mutation`; `test_markdown_parser_retained_and_repopulated_contributions_remain_authoritative`; `test_unsupported_json_storage_labels_refuse_before_any_mutation`; `test_unsupported_markdown_storage_labels_refuse_before_any_mutation`; `test_official_settings_override_conflicting_source_settings` | mcp/tests/test_carryover_apply_1.py:100-113; mcp/tests/test_carryover_apply_1.py:150-176; mcp/tests/test_carryover_apply_2.py:88-179; mcp/tests/test_carryover_apply_2.py:216-332; mcp/tests/test_carryover_apply_2.py:496-535; mcp/tests/test_carryover_apply_2.py:569-603; mcp/tests/test_carryover_apply_2.py:605-630 |
 

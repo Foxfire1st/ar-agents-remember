@@ -11,7 +11,6 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/kernel/coordination_context/__init__.py",
-    "mcp/src/agents_remember/kernel/coordination_context/cli.py",
     "mcp/src/agents_remember/kernel/coordination_context/contracts.py",
     "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py",
     "mcp/src/agents_remember/kernel/coordination_context/json_settings.py",
@@ -27,14 +26,13 @@
     "mcp/src/agents_remember/kernel/coordination_context/storage.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 15,
-    "fileSidecars": 15,
+    "sourceFilesInScope": 14,
+    "fileSidecars": 14,
     "childRoutes": 0
   },
   "routingTerms": [
     "agents",
     "agents_remember",
-    "cli",
     "context",
     "contracts",
     "coordination",
@@ -71,7 +69,6 @@
     "candidateHints": [
       "mcp/src/agents_remember/kernel/coordination_context",
       "mcp/src/agents_remember/kernel/coordination_context/__init__.py",
-      "mcp/src/agents_remember/kernel/coordination_context/cli.py",
       "mcp/src/agents_remember/kernel/coordination_context/contracts.py",
       "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py",
       "mcp/src/agents_remember/kernel/coordination_context/json_settings.py",
@@ -89,8 +86,6 @@
     "anchorHints": [
       "__init__.py",
       "__init__",
-      "cli.py",
-      "cli",
       "contracts.py",
       "contracts",
       "cross_repo.py",
@@ -117,10 +112,11 @@
       "settings",
       "storage.py",
       "storage",
+      "cli.py",
       "JSON",
       "mcp/src/agents_remember/kernel/coordination_context/",
       "route-local-overview",
-      "5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060",
+      "7bf564a663bb61f12844dee39538dd09a1633cdb",
       "/../../../overview.md",
       "coordination_context/",
       "c-08-ar-coordination-context-resolver",
@@ -134,7 +130,8 @@
       "_memory_mode(topology",
       "internal",
       "external",
-      "disabled"
+      "disabled",
+      "CoordinationContext"
     ]
   },
   "fallback": {

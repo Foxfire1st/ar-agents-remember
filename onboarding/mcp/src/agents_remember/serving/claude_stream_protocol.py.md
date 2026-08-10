@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,7 +33,7 @@ launching the flag itself.
 cit:([`build_claude_stream_argv`], mcp/src/agents_remember/serving/claude_stream_protocol.py:88-113) preserves caller arguments while requiring stream-json
 input/output, stdio permission prompts, print mode, verbosity, and replayed user messages. It
 takes a keyword-only `forward_subagent_text` flag: the
-`--forward-subagent-text` transport flag cit:([`FORWARD_SUBAGENT_TEXT_FLAG`], mcp/src/agents_remember/serving/claude_stream_protocol.py:56-56) is appended only when
+`--forward-subagent-text` transport flag cit:([`FORWARD_SUBAGENT_TEXT_FLAG`], mcp/src/agents_remember/serving/claude_stream_protocol.py:58-58) is appended only when
 the caller proved the installed CLI meets `FORWARD_SUBAGENT_TEXT_FLOOR` (2.1.220, L65) — never by
 default. The verdict helpers are `claude_version_tuple` (L68-L74 — parses `major.minor.patch`;
 anything unparseable is `None`, never guessed) and `forward_subagent_text_supported` (L77-L85 —
@@ -124,6 +124,8 @@ Claude protocol parsing now normalizes structured multi-question interactions an
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T20:53:56+02:00 — W2-B04 curator: deleted 2 unanchorable task-report claims and repaired the remaining 16 citation findings; scoped check passed.
 

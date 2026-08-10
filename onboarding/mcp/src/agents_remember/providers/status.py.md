@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ while every container reports running; `partial` is set when other providers
 remain ready so callers can distinguish "one repo degraded" from "everything
 down". Separately, the compact summary carries an additive `indexing` list of
 busy `"<provider-id>:<repo-id>"` targets: healthy-but-busy targets never
-degrade state or `ok`, but agents can relay "ready, indexing in progress" to
+degrade state or `ok`, but agents can relay "ready" to
 developers instead of guessing why fresh symbols are missing.
 
 `_cgc_watcher_state()` projects each CGC watcher row, and its `lastRefresh` now
@@ -121,16 +121,18 @@ surface.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Provider response models define summary, diagnostics, watcher, and native provider payload shapes. | "class ProviderSummary" | mcp/src/agents_remember/models/providers.py:75-75 |
-| Context packet construction consumes the compact provider summary. | "def build_context_packet" | mcp/src/agents_remember/application/context_packet.py:59-59 |
-| Provider MCP application entry points expose status, diagnostics, watcher, GrepAI, and CGC tools. | "def provider_status_tool" | mcp/src/agents_remember/application/provider_tools.py:32-32 |
-| Current-state projection and persistence live in the current-state module. | "def build_current_provider_state" | mcp/src/agents_remember/providers/current_state.py:16-16 |
+| Context packet construction consumes the compact provider summary. | "def build_context_packet" | mcp/src/agents_remember/application/context_packet.py:64-64 |
+| Provider MCP application entry points expose status, diagnostics, watcher, GrepAI, and CGC tools. | "def provider_status_tool" | mcp/src/agents_remember/application/provider_tools.py:34-34 |
+| Current-state projection and persistence live in the current-state module. | "def build_current_provider_state" | mcp/src/agents_remember/providers/current_state.py:19-19 |
 | Restart/rebind recovery wording is shared with runtime-install recovery reporting. | `PROVIDER_WATCHER_RESTART_RECOVERY` | mcp/src/agents_remember/providers/recovery.py:3-7 |
 | The containment metrics store whose rolling current snapshot rides the status packet (containment R4). | "class MetricsSnapshot" | mcp/src/agents_remember/providers/metrics.py:161-161 |
 | Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`. | "def refresh_current_provider_state" | mcp/src/agents_remember/providers/status.py:157-157 |
-| Provider current-state tests assert `noWorkspace` stays degraded and that status/diagnostics return the restart recovery action. | `noWorkspace` | mcp/tests/test_provider_current_state.py:139-139 |
+| Provider current-state tests assert `noWorkspace` stays degraded and that status/diagnostics return the restart recovery action. | `noWorkspace` | mcp/tests/test_provider_current_state.py:141-141 |
 | `refresh_current_provider_state` calls the regular provider-status projection and returns the current-state payload for dashboard-owned refreshes. | `refresh_current_provider_state` | mcp/src/agents_remember/providers/status.py:157-167 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
   exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

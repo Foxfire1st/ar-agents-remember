@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/tasks/readiness.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,11 +47,13 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the class `CompletionBlocker` (lines 15-23) — One exact declared work unit that prevents terminal completion.. | `CompletionBlocker` | mcp/src/agents_remember/tasks/readiness.py:15-23 |
-| Defines the function `completion_blockers` (lines 26-61) — Return every unresolved declared unit; an empty document is ready vacuously.. | `completion_blockers` | mcp/src/agents_remember/tasks/readiness.py:26-61 |
-| Defines the function `missing_unresolved_master_rows` (lines 64-73) — Unresolved ``(number, file)`` rows lost from a candidate, including duplicates.. | `missing_unresolved_master_rows` | mcp/src/agents_remember/tasks/readiness.py:64-73 |
-| Defines the function `completed_master_rows_to_validate` (lines 76-101) — Rows whose terminal claim is new, explicitly targeted, or in a terminal master.. | `completed_master_rows_to_validate` | mcp/src/agents_remember/tasks/readiness.py:76-101 |
+| Defines the class `CompletionBlocker` — one exact declared work unit that prevents terminal completion. | "class CompletionBlocker" | mcp/src/agents_remember/models/task_document.py:23-31 |
+| Defines the function `completion_blockers` (lines 26-61) — Return every unresolved declared unit; an empty document is ready vacuously.. | `completion_blockers` | mcp/src/agents_remember/tasks/readiness.py:14-49 |
+| Defines the function `missing_unresolved_master_rows` (lines 64-73) — Unresolved ``(number, file)`` rows lost from a candidate, including duplicates.. | `missing_unresolved_master_rows` | mcp/src/agents_remember/tasks/readiness.py:52-61 |
+| Defines the function `completed_master_rows_to_validate` (lines 76-101) — Rows whose terminal claim is new, explicitly targeted, or in a terminal master.. | `completed_master_rows_to_validate` | mcp/src/agents_remember/tasks/readiness.py:64-89 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

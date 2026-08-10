@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`        |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`        |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 
 `test_terminal_opener.py` covers the shared hosted-session opener (`serving.terminal_opener`) — the
 ONE spawn path both the dashboard `POST /api/terminal/{session}` route and the agent-facing
-`spawn_agent_session` MCP tool compose over cit:([`open_terminal_session`], mcp/src/agents_remember/serving/terminal_opener.py:678-730) cit:(["def _open_terminal_response("], mcp/src/agents_remember/serving/_app_terminal_routes.py:222-222) cit:([`spawn_agent_session_tool`], mcp/src/agents_remember/application/terminal_tools.py:769-842). It drives `open_terminal_session` against a fake host
+`spawn_agent_session` MCP tool compose over cit:([`open_terminal_session`], mcp/src/agents_remember/serving/terminal_opener.py:680-732) cit:(["def _open_terminal_response("], mcp/src/agents_remember/serving/_app_terminal_routes.py:224-224) cit:([`spawn_agent_session_tool`], mcp/src/agents_remember/application/terminal_tools.py:769-842). It drives `open_terminal_session` against a fake host
 (records the `ensure` call, no real tmux) + a real JSON catalog, pinning the leaf-claim / provenance /
 env-seed behaviour both call paths inherit — and, since 260703-L16, the per-harness knob→argv
 application (`KnobApplicationTests`).
@@ -62,11 +62,6 @@ live same-role duplicate, replaces a dead worker without ceremony, and opens cur
 completion without suffix hacks. It also checks persisted binding role in opener results.
 
 ### Logic
-
-Shared-opener regressions now prove named-seat binding is validated before any host ensure call,
-that stored provenance survives reopen, and that partial/conflicting supplied scope returns the
-specific refusal. Both dashboard and MCP composition therefore inherit the same fail-before-side-
-effect contract.
 
 The historical L15 env-to-TUI flag expectation was superseded by ACPUI-L2. Current Codex coverage
 asserts the selection is structured inside `RunnerConfig`; the opener does not synthesize a TUI
@@ -169,9 +164,7 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 
 ## Update History
 
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: added pre-host sprint-binding and reopen-preservation
-  coverage to the opener card. Verification metadata remains pinned until closeout stamps the code
-  commit.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: recorded that two prose citations were converted and seven rangeless internal rows were deleted; no deleted row was retained as anchored evidence. Verification metadata unchanged.

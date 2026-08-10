@@ -33,6 +33,7 @@
     "mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json",
     "mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json",
     "mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json",
+    "mcp/tests/fixtures/model_split_baseline_260731_efa_l9.json",
     "mcp/tests/fixtures/pi_rpc/0.80.7-capabilities.json",
     "mcp/tests/fixtures/pi_rpc/activity.jsonl",
     "mcp/tests/fixtures/sim/logs/observer/lifecycles/sim-replay-lifecycle/events.jsonl",
@@ -211,7 +212,9 @@
     "mcp/tests/test_l6_diff_coverage_terminal_validation.py",
     "mcp/tests/test_landing.py",
     "mcp/tests/test_landing_state.py",
+    "mcp/tests/test_layering.py",
     "mcp/tests/test_leaf_ref_resolution.py",
+    "mcp/tests/test_leaf_structural_coverage.py",
     "mcp/tests/test_lifecycle_finalize.py",
     "mcp/tests/test_liveness_simulations.py",
     "mcp/tests/test_log_capture.py",
@@ -240,6 +243,7 @@
     "mcp/tests/test_memory_quality.py",
     "mcp/tests/test_memory_tool_enclosure_scope.py",
     "mcp/tests/test_missing_onboarding.py",
+    "mcp/tests/test_model_split_baseline.py",
     "mcp/tests/test_models.py",
     "mcp/tests/test_next_step.py",
     "mcp/tests/test_observer.py",
@@ -375,12 +379,13 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 353,
-    "fileSidecars": 363,
+    "sourceFilesInScope": 357,
+    "fileSidecars": 367,
     "childRoutes": 0
   },
   "routingTerms": [
     "144",
+    "260731",
     "abandon",
     "actions",
     "active",
@@ -411,6 +416,7 @@
     "background",
     "backoff",
     "base",
+    "baseline",
     "basic",
     "behaviour",
     "benchmark",
@@ -457,12 +463,10 @@
     "concurrency",
     "config",
     "conformance",
-    "conftest",
-    "containment",
-    "content"
+    "conftest"
   ],
   "hotPath": {
-    "summary": "TES-L6 proof is split between `test_sprint_role_seats.py` for two-sprint command-seat identity and the compound/state relay suites for role-neutral manager-subordinate liveness. The latter cover reviewer, curator, future roles, topology exclusions, re-arm/dedupe, action-time mutations, and the timezone-naive landed-row counterexample. The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request...",
+    "summary": "The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrade-not-die, native-page thread demux \u2014 plus the remediation pins: concurrent parent pendings answered per id with the oldest in the singular slot, the method-first degrade split, the bounded per-thread pending map, and the load-shed event queue with its honest `ar/load-shed` notice), `test_conversatio...",
     "candidateHints": [
       "mcp/tests",
       "mcp/tests/_agent_wire_fixtures.py",
@@ -530,14 +534,14 @@
       "codex-0.144.5",
       "pi-0.80.7.json",
       "pi-0.80.7",
+      "model_split_baseline_260731_efa_l9.json",
+      "model_split_baseline_260731_efa_l9",
       "0.80.7-capabilities.json",
       "0.80.7-capabilities",
       "activity.jsonl",
       "activity",
       "events.jsonl",
-      "events",
-      "test_active_projector_singleflight.py",
-      "test_active_projector_singleflight"
+      "events"
     ]
   },
   "fallback": {

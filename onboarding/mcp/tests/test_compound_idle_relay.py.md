@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_compound_idle_relay.py`                  |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-09T06:48+02:00                                    |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`               |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`               |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -115,10 +115,10 @@ landed-terminality predicate.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The predicates under test (set assembly, signature, findings). | `compound_idle_sets`; `compound_idle_signature`; `evaluate_compound_idle_findings` | mcp/src/agents_remember/serving/state_signals.py:87-110; mcp/src/agents_remember/serving/state_signals.py:113-120; mcp/src/agents_remember/serving/state_signals.py:188-208 |
+| The predicates under test (set assembly, signature, findings). | `compound_idle_sets`; `compound_idle_signature`; `evaluate_compound_idle_findings` | mcp/src/agents_remember/serving/state_signals.py:84-107; mcp/src/agents_remember/serving/state_signals.py:110-117; mcp/src/agents_remember/serving/state_signals.py:185-205 |
 | The emitter under test (action-time signature, skip branches, boundary-gated post). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:483-539 |
 | The marker write seam with its no-op guard. | `record_compound_idle_emitted` | mcp/src/agents_remember/serving/seat_turn_truth.py:155-166 |
-| Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:66-74 |
+| Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:28-36 |
 
 ## Cross-Repo References
 
@@ -135,6 +135,9 @@ The compound-idle relay harness drops `OrchestrationNudgeStore` from
 are unchanged.
 
 ## Update History
+
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: recorded the current compound-idle relay assertions
+  and re-read them against the staged source; verification metadata remains pinned until closeout.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded all-subordinate compound-idle membership,
   topology exclusions, and re-arm/dedupe coverage. Verification metadata remains pinned until

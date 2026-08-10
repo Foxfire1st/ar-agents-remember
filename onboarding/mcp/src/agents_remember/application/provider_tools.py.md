@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/provider_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -136,12 +136,14 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
 | Finalization converts the completed response into the model-facing result. | `finalize_tool_response` | mcp/src/agents_remember/models/tool_response.py:15-26 |
 | The registry selects the response model for each provider tool. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
 | Unit tests guard action naming (refresh rejected), the disk-disabled invalidate-indexes refusal, the always-legal stop, and worktree routing resolution. | `WatcherActionNamingTests`; `WorktreeTargetResolutionTests` | mcp/tests/test_provider_watcher_actions.py:43-77; mcp/tests/test_provider_worktree_routing.py:66-125 |
-| The launch-authority configuration exposes reload and requirement gates. | `ProviderAuthority`; `reload_provider_authority`; `require_provider_launch_authority` | mcp/src/agents_remember/mcp/config.py:151-171; mcp/src/agents_remember/mcp/config.py:174-199; mcp/src/agents_remember/mcp/config.py:202-221 |
+| The launch-authority configuration exposes reload and requirement gates. | `ProviderAuthority`; `reload_provider_authority`; `require_provider_launch_authority` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:151-171; mcp/src/agents_remember/kernel/primitives/runtime_config.py:174-199; mcp/src/agents_remember/kernel/primitives/runtime_config.py:202-221 |
 | The watcher application entry point calls the launch gate. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
 | The query application entry point delegates to `_provider_operation_result`, whose required-provider path invokes the launch authority before the provider operation. | `grepai_search_tool`; `_provider_operation_result` | mcp/src/agents_remember/application/provider_tools.py:273-303; mcp/src/agents_remember/application/provider_tools.py:736-783 |
 | Containment tests pin the launch gate's refusal and armed-path semantics. | `ReloadProviderAuthorityTests`; `QueryFunnelGateTests` | mcp/tests/test_provider_containment.py:78-121; mcp/tests/test_provider_containment.py:180-196 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: rebound direct payload delegation and the query helper's required-provider launch path to their operative extents, preserving owner splits.
 

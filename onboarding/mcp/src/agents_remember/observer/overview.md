@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`       |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -15,12 +15,6 @@
 [mcp/overview.md](../../../../overview.md)
 
 ## Purpose
-
-### 260713-TES-L1 Rename — Heartbeat References
-
-`observer/ambient.py` and `observer/contract_snapshot.py` now reference the renamed heartbeat
-surface (`AgentNotifierHeartbeatStore` / `AgentNotifierHeartbeatPayload`,
-`agent_notifier_heartbeat`); the observer substrate itself is unchanged by the rename.
 
 260707-HFX2-L13 closes the L12 observer residuals: workspace appends/compaction/live reads share a
 cross-process lock and virtual cursor base; lifecycle heartbeats coalesce into bounded sidecars whose
@@ -109,7 +103,7 @@ top of a cross-tick parse cache keyed by `(mtime_ns, size, ctime_ns)` stat ident
 contract files are not re-read or re-parsed at all; parse failures are never cached (skip + retry
 every tick). Cache mutation is confined to the serialized projection tick, and the cached
 `WorktreeContract` instances are shared across ticks, so consumers must never mutate them. The
-landing refresher and agent-notifier sweep deliberately keep their own passes.
+landing refresher and supervisor sweep deliberately keep their own passes.
 
 Slice 05l Part 1 closes the **backend teardown-visibility** gaps in this surface. The reducer's
 `_GUIDANCE_PHASE` gains `"abandoned": "abandoned"`, surfacing `worktrees/modules/guidance.py`'s new
@@ -497,7 +491,7 @@ The slice-3a projection read side:
   authority-bearing log) and tolerant (skips the line; backs projection). **Only `GateStore` and
   `ExpectationRowStore` offer both** — a strict `read` plus a projection-only `read_for_projection`,
   which is the pair this route consumes. `OperatorInboxStore` is strict only; attention dismissals,
-  orchestration nudges and agent-notifier signals are tolerant only, and their rewrites run off that one
+  orchestration nudges and supervisor signals are tolerant only, and their rewrites run off that one
   tolerant read. Take the tolerant half — and know the trap that makes the
   choice load-bearing: `pydantic.ValidationError` **subclasses `ValueError`**, so wrapping a strict
   read in `suppress(OSError, ValueError)` does not degrade one row, it silently discards the whole
@@ -601,19 +595,19 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | The lifecycle-log pruning entry is `prune_expired_lifecycle_event_logs`. | "def prune_expired_lifecycle_event_logs" | mcp/src/agents_remember/observer/event_retention.py:73-107 |
 | `workspace_provider_nodes` is one of the route-local provider-node helper symbols. | `workspace_provider_nodes` | mcp/src/agents_remember/observer/provider_nodes.py:16-39 |
 | Active-enclosure admission is implemented by `admitted_worktree_groups`. | `admitted_worktree_groups` | mcp/src/agents_remember/observer/worktree_provider_admission.py:24-45 |
-| Engine activity is admitted by projection input state. | `ProjectionInputState` | mcp/src/agents_remember/observer/projection_inputs.py:189-407 |
+| Engine activity is admitted by projection input state. | `ProjectionInputState` | mcp/src/agents_remember/serving/projections/projection_inputs.py:189-407 |
 | Series token totals are composed by a reducer-side helper from projected task docs and lifecycles. | `attach_series_token_totals` | mcp/src/agents_remember/observer/series_tokens.py:14-31 |
-| `drift_snapshot_path` is the shared drift-snapshot path helper. | `drift_snapshot_path` | mcp/src/agents_remember/observer/drift_snapshots.py:19-22 |
-| Projection input invokes the orphan-pruning helper. | `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/observer/projection_inputs.py:349-349 |
-| The shared helper implements orphan pruning for worktree drift snapshots. | `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/observer/drift_snapshots.py:36-69 |
-| `ContractSnapshot` is declared here. | "class ContractSnapshot:" | mcp/src/agents_remember/observer/contract_snapshot.py:38-38 |
-| `ContractSnapshotCache` is the associated snapshot-cache type. | `ContractSnapshotCache` | mcp/src/agents_remember/observer/contract_snapshot.py:60-126 |
+| `drift_snapshot_path` is the shared drift-snapshot path helper. | `drift_snapshot_path` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:21-24 |
+| Projection input invokes the orphan-pruning helper. | "prune_orphaned_drift_snapshots(config" | mcp/src/agents_remember/serving/projections/projection_inputs.py:353-353 |
+| The shared helper implements orphan pruning for worktree drift snapshots. | `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-56 |
+| `ContractSnapshot` is declared here. | "class ContractSnapshot:" | mcp/src/agents_remember/serving/projections/contract_snapshot.py:38-38 |
+| `ContractSnapshotCache` is the associated snapshot-cache type. | `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
 | `progress_status` is the setup-progress status record. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
 | The `MetricsBucketVocabularyTests` suite pins the bucket vocabulary. | `MetricsBucketVocabularyTests` | mcp/tests/test_observer_projection_metrics.py:128-233 |
 | The ambient `end()` entry and its focused terminal-state test are named here. | "def end"; `test_the_ambient_end_signal_accepts_exactly_the_terminal_states` | mcp/src/agents_remember/observer/ambient.py:274-274; mcp/tests/test_observer_ambient.py:175-175 |
 | `projected_current` is the gate store's tolerant projected fold. | `projected_current` | mcp/src/agents_remember/controlplane/store.py:279-300 |
 | The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists. | `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:221-223 |
-| `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:125-137 |
+| `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
 | The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:42-42; mcp/src/agents_remember/controlplane/durable_store.py:14-24 |
 | `StatesAreFiledOnce` is the TypeScript overlap-check type. | `StatesAreFiledOnce` | dashboard/src/types/projection.ts:25-25 |
 | The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:217-217 |
@@ -717,7 +711,7 @@ writes back.** The `ar-durable-store/1.0` contract carries two policies: a STRIC
 on a torn or unknown-major line, and a TOLERANT read that skips it. **Only two of the six stores
 offer both** — `GateStore` and `ExpectationRowStore` carry a strict `read` beside a projection-only
 `read_for_projection`, and those are the two this route consumes. `OperatorInboxStore` is strict
-only; attention dismissals, orchestration nudges and agent-notifier signals are tolerant only, their
+only; attention dismissals, orchestration nudges and supervisor signals are tolerant only, their
 single `read` being the tolerant one. Authority reads strictly, because a skipped record there could
 drop a gate's `applied` marker and let the enforcement fold conclude a human approval was never
 consumed. Rendering reads tolerantly, because a 1s tick must degrade rather than freeze. **Every
@@ -752,14 +746,23 @@ default wait and the loop exit) — no short-interval wall-clock races.
 
 The two over-limit write-side modules were split in place into facades plus private subpackages: `observer/snapshots.py` (1,551 → 424) delegates to `snapshots_impl/{_common,_analytics,_runtime,_task_documents}` and `observer/reducer.py` (1,678 → 512) to `reducer_impl/{_types,_metrics,_attention,_processes}`. The subpackages keep `observer/` under the 25-module structural cap. Both facades re-export the full public+private surface (mock-patch targets included), pinned mechanically by `mcp/tests/test_facade_surface.py`; the split families `test_observer_projection_*` cover the split modules.
 
+
+## 260731-EFA-L9 Route Impact — Projection Readers Moved To Serving
+
+The projection file-surface readers moved from `observer/` into `serving/projections/`:
+`contract_snapshot.py`, `drift_snapshots.py`, `landing_state.py`, `paths.py`,
+`projection_inputs.py`, `projection_store.py`, `snapshots.py`, and `snapshots_impl/*` are now
+governed by `serving/projections/overview.md`. This route remains the observable-lifecycle
+**write side** (ambient signals, durable log/store, reducer, save gate, series tokens, provider
+nodes) and its read-side orchestration; the reader implementations live in serving, and the
+shared observer store-root path conventions moved to `kernel/primitives/observer_paths.py`.
+
 ## Update History
 
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the N16/ladder-demolition
-  wording in the observer projections — `AgentPickupNode` surfaces "pending / not yet landed"
-  with attribution-only consume, and `read_expectation_rows` is an owner-visible deadline
-  surface the relay never evaluates. Verification metadata pinned until closeout stamps the
-  260713-TES-L5 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the projection-reader move to
+  `serving/projections/` and the kernel-owned path primitives. Verification metadata pinned until
+  closeout stamps the L9 code commit.
+
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 route impact: recorded the `snapshots_impl/` and `reducer_impl/` facade splits and their surface pin. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded the round-13

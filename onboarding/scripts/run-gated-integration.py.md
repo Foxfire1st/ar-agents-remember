@@ -6,8 +6,8 @@
 | path                   | `scripts/run-gated-integration.py`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ command before executing, so a local operator sees what they are about to spend 
 starts.
 
 `list` (the default) prints the same table with `readiness()` resolved on this machine —
-"binaries present", "missing on PATH: codex, pi", or "no binary needed" — and runs nothing.
+"binaries present", "missing on PATH: codex", or "no binary needed" — and runs nothing.
 
 ## Invariants And Boundaries
 

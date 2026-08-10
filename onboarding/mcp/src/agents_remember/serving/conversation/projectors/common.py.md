@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/projectors/common.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ builders that keep producer claims honest (never guessed, never defaulted).
 ### Logic
 
 `required_object`/`required_list`/cit:([`required_text`], mcp/src/agents_remember/serving/conversation/projectors/common.py:46-49) are the parse-by-schema gate: any
-shape that misses an exact required key or type raises cit:([`UnmappableShape`], mcp/src/agents_remember/serving/conversation/projectors/common.py:24-25), which the
+shape that misses an exact required key or type raises cit:([`UnmappableShape`], mcp/src/agents_remember/serving/conversation/projectors/common.py:26-27), which the
 engine converts into preserved `unknown-vendor` evidence — malformed known shapes never kill
 the stream and never acquire guessed semantics. cit:([`MappedItem`, `MappedBlockDelta`, `MappedTurnOutcome`, `MappedUnknownVendor`], mcp/src/agents_remember/serving/conversation/projectors/common.py:56-60; mcp/src/agents_remember/serving/conversation/projectors/common.py:63-69; mcp/src/agents_remember/serving/conversation/projectors/common.py:72-78; mcp/src/agents_remember/serving/conversation/projectors/common.py:81-95) are the
 only things a mapper may emit: `MappedItem` (a fully built item; the engine assigns the real
@@ -82,7 +82,7 @@ validate every emitted product.
 | Echo ingestion takes the same containment for a submission echo it cannot parse. | `EchoIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:35-187 |
 | `ProjectionMutationStream.apply_outputs` routes `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` into the store and buffers `MappedTurnOutcome` as the pending terminal. | `ProjectionMutationStream` | mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py:49-197 |
 | The rebuild coordinator resolves pending user-item provenance in a bounded batch and applies each record to the store. | `RebuildCoordinator` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:63-192 |
-| `ProvenanceEvidence` and the strict item validator define the products these builders fill. | "class ProvenanceEvidence(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:176-176 |
+| `ProvenanceEvidence` and the strict item validator define the products these builders fill. | "class ProvenanceEvidence(WireModel):" | mcp/src/agents_remember/models/conversations/identity.py:68-68 |
 
 ## Cross-Repo References
 
@@ -93,6 +93,8 @@ No cross-repository implementation participates in this shared module.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T03:00:00+02:00 — 260731-EFA-L6-W3-B01 curator: curated 5 Repo-Internal citation claims with exact ingestion, mutation, rebuild, and mapper-output anchors. Verification metadata remains unchanged for closeout.
 

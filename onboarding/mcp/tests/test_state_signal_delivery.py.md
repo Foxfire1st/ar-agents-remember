@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_state_signal_delivery.py`                  |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-09T06:48+02:00                                      |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                    |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                    |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -73,8 +73,8 @@ The suite exercises `serving/inbox_delivery.py`, `controlplane/operator_inbox_re
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The fail-closed row-kind gate under test. | `_delivery_refusal` | mcp/src/agents_remember/serving/inbox_delivery.py:107-162 |
-| The boundary vocabulary the gate consults. | `seat_at_turn_boundary` | mcp/src/agents_remember/serving/terminal_catalog.py:95-103 |
-| Landed terminality and its backoff/escalation exclusions. | "def state_signal_landed("; "def is_due(" | mcp/src/agents_remember/controlplane/inbox_backoff.py:79-79; mcp/src/agents_remember/controlplane/operator_inbox_records.py:67-67 |
+| The boundary vocabulary the gate consults. | `seat_at_turn_boundary` | mcp/src/agents_remember/models/terminal_catalog.py:58-64 |
+| Landed terminality and its backoff/escalation exclusions. | "def state_signal_landed("; "def is_due(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:28-28; mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:99-99 |
 
 ## Cross-Repo References
 
@@ -85,6 +85,9 @@ No meaningful cross-repo references found.
 | No cross-repo boundary participates in this suite. | — | — |
 
 ## Update History
+
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: recorded the current landed-versus-queued state-signal
+  delivery coverage against the staged source; verification metadata remains pinned until closeout.
 
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the formal `state="landed"`
   assertions (boundary acceptance lands; queued acceptance stays pending) after the N13/N16

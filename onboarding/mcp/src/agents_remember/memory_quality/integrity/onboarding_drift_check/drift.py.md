@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -71,16 +71,18 @@ external classifier via the shared `is_sidecar_storage` predicate from
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Data records and constants. | `DriftRow` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:64-75 |
+| Data records and constants. | `DriftRow` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:58-69 |
 | Git boundary and fingerprints. | `compute_git_blob_set_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:65-73 |
 | Discovery and metadata parsing. | `discover_onboarding_files` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:43-48 |
 | Sidecar/overview classifiers. | `classify_overview_onboarding`; `classify_sidecar_onboarding_units` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:214-265; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342 |
 | Entity and inline classifiers. | `classify_entity_fingerprint`; `classify_inline_source` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:222-280; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:91-175 |
-| Report rendering and path resolution. | `write_markdown_report` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py:118-179 |
+| Report rendering and path resolution. | `write_markdown_report` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py:112-173 |
 | Summary generation reuses the facade's classifiers. | `run_drift_summary` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
 | The re-exported `run_git` and `main`'s git-repository guard resolve here, not to `git_ops`. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the seven malformed rows with
   exact anchors and plain sources (`DriftRow`, `compute_git_blob_set_fingerprint`,

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_app_background_loops.py`   |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`         |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 
 Behavioural coverage for the dashboard app's **background loops and their lifespan wiring**.
 `serving/app.py` runs four always-on background tasks (projection, provider metrics,
-agent-notifier sweep, workspace-river compaction) plus two opt-in ones (the heap diagnostic and
+supervisor sweep, workspace-river compaction) plus two opt-in ones (the heap diagnostic and
 the glibc arena trim). Their steady state is exercised by the rest of the suite simply by
 booting the app; what was never exercised is the part that matters operationally.
 
@@ -34,7 +34,7 @@ loop performs the next pass anyway.
 | Class | Loop |
 | --- | --- |
 | `MetricsLoopTests` | A failed provider sample must cost one interval, not the rest of the daemon's life. |
-| `SupervisorLoopTests` | `orchestration.agent-notifier.enabled` is re-read **on every pass**, so turning the sweep on takes effect without restarting the daemon. Settings state, not boot state. |
+| `SupervisorLoopTests` | `orchestration.supervisor.enabled` is re-read **on every pass**, so turning the sweep on takes effect without restarting the daemon. Settings state, not boot state. |
 | `MallocTrimLoopTests` | The opt-in arena reclaim: never runs unless `AR_MALLOC_TRIM` is set; the interval is resolved **once at task start** rather than per tick; one trim per tick; failures survivable. |
 | `WorkspaceRiverCompactionLoopTests` | The one event river nothing else reclaims — it must keep shrinking, and keep going on error. |
 | `OptionalLifespanTaskTests` | The two `if`s in the lifespan that decide whether the opt-in tasks exist at all, plus the cancellation every background task shares on shutdown. `_TaskProbe` is an awaitable stand-in recording entry and cancellation. |
@@ -63,13 +63,14 @@ out anonymously.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The loops and the lifespan under test. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:168-168 |
+| The loops and the lifespan under test. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:173-173 |
 | The same app's failing route arms. | `PasteRouteTests` | mcp/tests/test_serving_app_routes.py:427-481 |
 | The opt-in heap diagnostic's own suite. | `HeapDiagLoopTests` | mcp/tests/test_heap_diag.py:103-264 |
 
 ## Update History
 
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 3 citation entries (6 findings); no Tier-3 findings.

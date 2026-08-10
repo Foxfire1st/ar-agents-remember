@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastUpdated            | 2026-07-09T14:05+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -63,9 +63,7 @@ each raise `ConfigError`.
 defaults to all-human, named manager leaf-gate policy, per-kind
 reviewer-verdict requirements, and fail-loud rejection for human-pinned
 `push-approval` or unsupported `agent-question` delegation. `RetirementSettingsTests`
-covers `parse_retirement_settings`: the two edge gates and `auto_close_completed_seats` all default
-`True`; `autoCloseCompletedSeats=false` parses independently and preserves both enabled edges;
-non-boolean values fail loud. Existing cases still prove both edge flags default `True` when the
+(260707-HFX2-L11, 8 tests) covers `parse_retirement_settings`: defaults are both `True` when the
 `retirement` key is absent, explicit `autoLandOnIntegration`/`autoLandOnFinalize`
 `False`/`False` parses through, legacy `autoRetireOnIntegration`/`autoRetireOnFinalize` aliases
 parse into the new fields for compatibility, an unknown key (`autoRetireOnLaunch`) is rejected with
@@ -84,9 +82,9 @@ lifecycle settings remain server-owned instead of host-specific user setup.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The tested loader lives in MCP config. | `load_config` | mcp/src/agents_remember/mcp/config.py:140-148 |
+| The tested loader lives in MCP config. | `load_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:149-157 |
 | Generated lifecycle settings define the Docker-owned GrepAI and CodeGraphContext stacks consumed by provider lifecycle code. | `lifecycle_settings_from_config` | mcp/src/agents_remember/providers/settings.py:25-39 |
-| The `providerDegradation` parser under test (260707-HFX-L7). | `parse_provider_degradation_settings` | mcp/src/agents_remember/mcp/provider_degradation_settings.py:58-128 |
+| The `providerDegradation` parser under test (260707-HFX-L7). | `parse_provider_degradation_settings` | mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py:58-128 |
 
 ## Series-Contract Notes
 
@@ -95,9 +93,7 @@ Config/schema tests now assert the public tool surface includes `parent_task` an
 As of the 260703-L8 seam ruling the orchestration settings tests prove the parse path consumes requireReviewerVerdictAtSeams (the delegated handover rule comes back verdict-bound; non-seam rules untouched).
 
 ## Update History
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1: added default, explicit opt-out, and fail-loud type
-  coverage for `autoCloseCompletedSeats`, while preserving existing edge-gate and legacy-alias
-  tests. Verification metadata remains pinned until closeout stamps the ARG-L1 code commit.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 3 citation claims; scoped result 0 findings.
 

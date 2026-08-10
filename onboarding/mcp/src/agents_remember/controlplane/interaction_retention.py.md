@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                        |
 | path                   | `mcp/src/agents_remember/controlplane/interaction_retention.py`        |
 | doc_type               | `file-level-onboarding`                                                |
-| lastUpdated            | 2026-08-09T06:48+02:00                                                 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastUpdated            | 2026-08-01T19:45+02:00                                                 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                          |
 
 ## Governing Overview
@@ -104,28 +104,11 @@ consumed, with a cap (not a TTL) as the future escape hatch".
 
 ### 260712-TRH-L5 Confirmed-Gone Secondary Retention
 
-`inbox_keep_ids` remains the final retention boundary after the agent-notifier's same-lock
+`inbox_keep_ids` remains the final retention boundary after the supervisor's same-lock
 confirmed-gone reconciliation. The 48-hour pending TTL and 500-row folded-current cap are
-unchanged as constants, but 260713-TES-L4 re-meaninged the TTL (see below); `current=` lets the transaction reuse its single authoritative fold rather than
+unchanged; `current=` lets the transaction reuse its single authoritative fold rather than
 reading the append-only log again. Ladder-resolved snapshots, including the stable
 `subject-session-confirmed-gone` reason, are still removed immediately by this policy.
-
-### 260713-TES-L4 Marker Retention, Resolution-Boundary TTL, And Cap Eviction Class (N13/§9)
-
-`INBOX_TERMINAL_MARKER_RETENTION_SECONDS = INBOX_PENDING_TTL_SECONDS` (48h) is the new meaning
-of the old pending TTL: terminal markers (`landed`/`superseded`/`unresolved`/`expired`, plus
-legacy `consumed`) stay inspectable for 48h from their terminal stamp, then are physically
-evicted. In normal operation every resolution clock (attempt ceiling, rebind grace) is far
-shorter than 48h, so a pending row reaches a surfaced terminal state before retention can touch
-it.
-
-The pending TTL is now a sweep-owned RESOLUTION boundary, not a silent purge: `_keep_inbox_entry`
-keeps every pending row (compaction alone never drops an old pending row), and the sweep stamps
-rows older than 48h `expired` (visible + counted) before any retention event may drop them.
-`inbox_keep_ids`' cap is the D4 hard bound: eviction prefers terminal markers oldest-first and
-keeps pending rows ahead of them; only an overflowing pending set itself drops pending rows
-(oldest first), which is accepted behavior at the limit, and cap drops are counted/surfaced by
-the sweep's compaction event.
 
 ### 260707-HFX2-L20 Monotonic Inbox Compaction
 
@@ -142,15 +125,14 @@ validated records plus a projection clock and return the ids still worth keeping
 returns their decision, from worktree/closeout/integration/cleanup gates that a mutating tool still has
 to consume/apply.
 
-**HFX3 health-first supersession (developer ruling 2026-07-09), amended by 260713-TES-L4
-(N13/§9)**: no inbox row outranks system health. The D4 hard bound stays — `inbox_keep_ids`
-enforces `INBOX_MAX_CURRENT_ROWS = 500` with terminal-oldest-first eviction and counted/surfaced
-drops — while the silent 48-hour pending purge is replaced: the sweep stamps an old pending row
-`expired` (visible, counted) before any retention event may drop it, and compaction itself keeps
-pending rows. Terminal markers retain their 48h inspectable window, then are physically evicted;
-`ladder-resolved` rows drop immediately as before. The durable record is the task/report/gate
-artifact on disk, never the notification row. This supersedes the HFX2-L1 immortal-pending rule
-that contributed to the 2026-07-09 escalation storm.
+**HFX3 health-first supersession (developer ruling 2026-07-09)**: no inbox row outranks system
+health. `_keep_inbox_entry` keeps a pending/unacked row only for
+`INBOX_PENDING_TTL_SECONDS` (48 hours), drops `ladder-resolved` rows immediately, and applies the
+ordinary 24-hour audit window to consumed rows. `inbox_keep_ids` then enforces
+`INBOX_MAX_CURRENT_ROWS = 500`, keeping the newest rows when a producer exceeds the cap. If an
+expired condition still holds, the supervisor may recreate one fresh coalesced row; the durable
+record is the task/report/gate artifact on disk, never the notification row. This supersedes the
+HFX2-L1 immortal-pending rule that contributed to the 2026-07-09 escalation storm.
 
 ## Invariants And Boundaries
 
@@ -169,21 +151,14 @@ that contributed to the 2026-07-09 escalation storm.
   deletion, and projection readers supply the clock for passive TTL cleanup.
 - Interaction records are throwaway; durable task docs, contracts, ledgers, and closeout results remain
   outside this policy.
-- Pending inbox rows are disposable notification state: the folded inbox is hard-capped at 500
-  current ids; the 48h pending boundary is a sweep resolution boundary (stamped `expired` first),
-  never a silent compaction purge.
-- Terminal markers keep their 48h inspectable window; a `ladder-resolved` inbox row (legacy)
-  still drops immediately.
+- Pending inbox rows are disposable notification state: they expire after 48 hours and the folded
+  inbox is hard-capped at 500 current ids, newest-first.
+- A `ladder-resolved` inbox row is neither pending nor acked; compaction drops it immediately.
 
 ## Update History
 
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the N13/§9 retention re-meaning —
-  `INBOX_TERMINAL_MARKER_RETENTION_SECONDS` (48h marker visibility), pending TTL as a sweep-owned
-  resolution boundary (`_keep_inbox_entry` keeps pending rows so expiry is surfaced first), and
-  the D4 cap eviction class (terminal-oldest-first, pending-first survival, counted drops).
-  Amended the HFX3 health-first paragraph in place. Verification metadata pinned until closeout
-  stamps the 260713-TES-L4 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: aligned this card with the current source
   paths: `age_seconds` comes from `controlplane/stamps.py`, the deciding-process reclaimer is
   `controlplane/gate_decisions.py::_reclaim_gate_log`, and the cancellation deletion is

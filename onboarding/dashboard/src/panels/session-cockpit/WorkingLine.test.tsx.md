@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/WorkingLine.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -28,9 +28,9 @@ with a frozen clock (`now` prop) over the shared `L6_CONTROLLED_WORKING` fixture
 - **Render gate** cit:(["renders ONLY while the seat state is working"], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:47-57): a `turn-ended` seat renders NOTHING; the working seat renders the
   line.
 - **Never whimsy** cit:(["says plain 'working' when no real activity form is known — never a whimsy verb"], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:59-64): with no real activity form the verb is exactly `working`.
-- **Elapsed honesty** cit:(["shows the ~elapsed from the client turnClock, omitting it when unobserved"], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:66-76): `~2m14s` from `workingSince`, the sweep-bound tooltip present;
+- **Elapsed honesty** cit:(["shows the ~elapsed from the client turnClock"], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:66-76): `~2m14s` from `workingSince`, the sweep-bound tooltip present;
   `workingSince: null` ⇒ the elapsed span is ABSENT (never a fake clock).
-- **Welded stop** cit:(["keeps the line-hosted stop for the raw-terminal path, disabled with the UA-7 reason"], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:85-98): `disabled === true`, `data-disabled-reason` is the exact
+- **Welded stop** cit:(["keeps the line-hosted stop for the raw-terminal path"], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:85-98): `disabled === true`, `data-disabled-reason` is the exact
   `STOP_TURN_DISABLED_REASON`, the title names UA-7.
 - **Spinner ruling** cit:([`PULSE_ANIMATION`], dashboard/src/panels/session-cockpit/WorkingLine.test.tsx:100-109): aria-hidden `◐` only, and `PULSE_ANIMATION` pinned to the ruled
   `pulseSlow 2.4s ease-in-out infinite` literal — the drift net for the component's hard-coded

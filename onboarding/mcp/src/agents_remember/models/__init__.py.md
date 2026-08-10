@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `a69b72e101d09423601916c03d4f59ecdee7dda6` |
-| lastVerifiedCommitDate | 2026-06-11T11:08:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -31,10 +31,20 @@ import surface with an explicit `__all__`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| This initializer declares the public model export list. | `__all__` | mcp/src/agents_remember/models/__init__.py:87-162 |
+| This initializer declares the public model export list. | `__all__` | mcp/src/agents_remember/models/__init__.py:90-90 |
+
+## 260731-EFA-L9 Change
+
+The initializer now also re-exports the curated conversation wire-model surface from
+`models/conversations/` (R6) — the shared evidence/control-wire contracts, conversation
+primitives/identity/cursors/content/capabilities/status/stream/history/operation DTOs, and
+telemetry — keeping the package initializer exports-only.
 
 ## Update History
 
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the conversation-model export
+  additions; the L9 change section above documents them. Verification metadata pinned until
+  closeout stamps the L9 code commit.
 - 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: bound the public model-export claim to exact initializer anchors and normalized scoped citation evidence.
 
 - 2026-06-11T06:47+02:00 — No content impact: `DirectCloseoutPreviewResponse`/`DirectCloseoutApplyResponse` left the export surface (import block and `__all__`) with the issue #62 worktree-only closeout; the exports-only contract this sidecar describes is unchanged.

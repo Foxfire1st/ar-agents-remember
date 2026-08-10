@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_arrival_guarantee.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -119,6 +119,7 @@ sweep no longer owns a nudge store); the arrival-guarantee matrix itself is unch
 
 ## Update History
 
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the current staged inbox-arrival guarantee harness; the existing assertions remain accurate. Verification metadata remains pinned until closeout.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the nudge-store removal from the
   TTL/cap harness context. Verification metadata pinned until closeout stamps the
   260713-TES-L5 commit.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | mcp/tests/test_dispatch_brief.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastUpdated | 2026-07-12T14:20:00+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | mcp/tests/overview.md |
 
 ## Governing Overview
@@ -24,15 +24,12 @@ byte-identical canonical/packaged skill copies the dispatch instructions encode.
 
 ### Logic
 
-`test_ready_dispatch_is_inbox_rooted_lands_and_starts_expectation_clocks` posts a `dispatch-brief`
+`test_ready_dispatch_is_inbox_rooted_and_starts_expectation_clocks` posts a `dispatch-brief`
 through `operator_inbox_post_payload` with a `HostedDelivery` seam set and asserts the durable
-row is `delivered`/`accepted`/`landed` (N16: a brief accepted at a ready turn-boundary seat is
-terminal), the submitted control prompt carries the prompt keywords and entry id, and the
-expectation rows become exactly `{briefed-by}` with `briefed-by` met (260713-TES-L4: `ack-by`
-retires with the consume demotion and no post writes one anymore). Receipt tests
-pin that a rejected adapter receipt keeps the same row pending and
-that an ambiguous redelivery reconciles without resubmitting and lands at the ready boundary.
-Refusal tests pin that a not-ready
+row is `delivered`/`accepted`/`pending`, the submitted control prompt carries the prompt keywords
+and entry id, and the expectation rows become exactly `{ack-by, briefed-by, turn-report-by}` with
+`briefed-by` met. Receipt tests pin that a rejected adapter receipt keeps the same row pending and
+that an ambiguous redelivery reconciles without resubmitting. Refusal tests pin that a not-ready
 session raises before any durable row exists, that an uncommitted caller (`submit=False`) is
 recorded as adapter-rejected without touching the wire, that a closed dispatch gate keeps its own
 reason with the row pending for retry, and that a missing exact session yields
@@ -82,13 +79,8 @@ readiness-gated, inbox-rooted contract against the serving policy module.
 
 ## Update History
 
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the ready-dispatch landing
-  assertion (`state="landed"` at a ready boundary, N16), the `{briefed-by}`-only expectation set
-  (ack-by retired), and the ambiguous-redelivery landing. Verification metadata pinned until
-  closeout stamps the 260713-TES-L4 commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the dispatch expectation-set change
-  (`{ack-by, briefed-by}`; no turn-report-by row minted). Verification metadata pinned until
-  closeout stamps the 260713-TES-L2 commit.
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: replaced the placeholder body with the actual
   suite: inbox-rooted dispatch with expectation clocks, receipt/reconciliation handling, refusal
   and no-fallback pins, and canonical/packaged skill sync equality. Recorded that imports now come

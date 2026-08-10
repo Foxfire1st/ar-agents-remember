@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/store.ts`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-27T14:20+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -117,7 +117,7 @@ reviewed task evidence for any current behavioral claim.
 | The store-level keep-alive + LRU-eviction suite (F4), plus the initial-connect retry pins: a transient 503 retries quietly and never flashes the alarm; a hard 409 fails loud immediately. | `LRU_LIMIT` | dashboard/src/data/conversation/store.test.ts:245-303; dashboard/src/data/conversation/store.test.ts:382-417 |
 | The roster derivation + focus recompute this focus state defers to (`effectiveAgentFocus`). | `effectiveAgentFocus` | dashboard/src/data/conversation/agents.ts:106-112 |
 | The focus LRU-survival + reset pins for `agentFocusBySession`. | `setAgentFocus` | dashboard/src/data/conversation/agents.test.ts:197-235 |
-| The stage body that connects/disconnects on focus + epoch resolution. | "connectConversation," | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:20-20; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:265-276 |
+| The stage body that connects/disconnects on focus + epoch resolution. | "connectConversation" | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:20-20; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:265-276 |
 | The house vanilla-zustand store idiom this matches. | "import { createStore } from \"zustand/vanilla\";" | dashboard/src/data/store.ts:2-2 |
 
 ## Cross-Repo References
@@ -132,7 +132,7 @@ cross-repository implementation source that governs its behavior.
 ## 260727-CHATS-IM-L2 Selected-Child Store Delta
 
 `agentHistoryBySession` is child-scoped UI acquisition state and never changes the parent's stream
-phase cit:(["agentHistoryBySession: Record<string, Record<string, AgentHistoryLoadState>>;", `hydrateAgentConversation`], dashboard/src/data/conversation/store.ts:64-64; dashboard/src/data/conversation/store.ts:143-143; dashboard/src/data/conversation/store.ts:795-795).
+phase cit:(["agentHistoryBySession: Record<string", `hydrateAgentConversation`], dashboard/src/data/conversation/store.ts:64-64; dashboard/src/data/conversation/store.ts:143-143; dashboard/src/data/conversation/store.ts:795-795).
 singleflights duplicate callers, retains successful child ids in LRU order, and publishes
 loading/ready/failed states without calling `failStream` cit:([`hydrateAgentConversation`], dashboard/src/data/conversation/store.ts:795-834). Both in-flight and retained
 child bookkeeping are capped at 64. This explicit bound is necessary because multiple mounted

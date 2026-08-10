@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start_contract.py` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-01T10:45+02:00                                       |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                   |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                   |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -111,12 +111,12 @@ the shared resolver, which indexes non-master `task.json` docs as leaf candidate
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared leaf-ref validation and candidate reporting. | `LeafRefResolutionError`; `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:45-72; mcp/src/agents_remember/worktrees/leaf_refs.py:94-147 |
+| Shared leaf-ref validation and candidate reporting. | `LeafRefResolutionError`; `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Start-side conversion from leaf-ref resolution errors and contract-construction errors into command results. | `invalid_leaf_ref_result`; `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:26-35; mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
-| The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:456-467 |
-| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context, args)"; "existing_result = _existing_contract_result(context, contract, args)"; "preflighted = _preflighted_contract(context, contract, args)"; "return _create_start_enclosure(context, preflighted, args)" | mcp/src/agents_remember/worktrees/modules/start.py:458-458; mcp/src/agents_remember/worktrees/modules/start.py:461-461; mcp/src/agents_remember/worktrees/modules/start.py:464-464; mcp/src/agents_remember/worktrees/modules/start.py:467-467 |
-| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context, preflighted, args)" | mcp/src/agents_remember/worktrees/modules/start.py:467-467; mcp/src/agents_remember/worktrees/modules/start.py:524-590 |
-| `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. | `_task_vocabulary`; `validate_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:163-180; mcp/src/agents_remember/worktrees/worktree_contract.py:763-818 |
+| The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:455-466 |
+| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:457-457; mcp/src/agents_remember/worktrees/modules/start.py:460-460; mcp/src/agents_remember/worktrees/modules/start.py:463-463; mcp/src/agents_remember/worktrees/modules/start.py:466-466 |
+| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:466-466; mcp/src/agents_remember/worktrees/modules/start.py:523-589 |
+| `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. | `_task_vocabulary`; `validate_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:161-178; mcp/src/agents_remember/worktrees/worktree_contract.py:761-816 |
 
 ## Update History
 

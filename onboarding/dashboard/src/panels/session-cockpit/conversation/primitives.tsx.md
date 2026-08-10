@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/primitives.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ reviewed task evidence for any current behavioral claim.
 | The clamp/badge consumer in the tool grammar. | `ToolItem` | dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx:87-118 |
 | The clamp/badge consumer in the diff grammar. | `DiffBlock` | dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx:35-79 |
 | The surface that renders CapabilityReason cues (labeled `history`/`live`) for history/live completeness. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
-| The renderer suite asserting the real clamp button + source badge. | "ConversationTimeline — one navigable role=feed (R5, §14.2)" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/feedSemantics.test.tsx:7-7 |
+| The renderer suite asserting the real clamp button + source badge. | "ConversationTimeline — one navigable role=feed (R5" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/feedSemantics.test.tsx:7-7 |
 | The R11 progressive-disclosure cue unit pins (visible state word, full reason in `title`, supported = nothing). | "CapabilityReason — R11 progressive disclosure cue" | dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx:19-47 |
 
 ## Cross-Repo References

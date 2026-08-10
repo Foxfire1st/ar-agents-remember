@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/lifecycle_state.py` |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-08-01T10:40+02:00                               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`           |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`           |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Purpose
@@ -29,7 +29,7 @@ disagree.
 
 `State` is no longer a flat six-member literal with `TERMINAL_STATES` standing
 beside it naming two of its members again. The two halves are where the names
-live (cit:([`LiveState`, `EndOutcome`, `TerminalState`, `State`], mcp/src/agents_remember/observer/lifecycle_state.py:109-109; mcp/src/agents_remember/observer/lifecycle_state.py:117-118; mcp/src/agents_remember/observer/lifecycle_state.py:118-118; mcp/src/agents_remember/observer/lifecycle_state.py:120-120)):
+live (cit:(["LiveState = Literal[", "EndOutcome = Literal[", "TerminalState = EndOutcome", "State = Literal[LiveState"], mcp/src/agents_remember/models/lifecycle.py:16-16; mcp/src/agents_remember/models/lifecycle.py:17-17; mcp/src/agents_remember/models/lifecycle.py:18-18; mcp/src/agents_remember/models/lifecycle.py:19-19)):
 
 ```python
 LiveState = Literal["running", "paused", "blocked", "awaiting-developer"]   # L109
@@ -40,19 +40,19 @@ State = Literal[LiveState, TerminalState]                                   # L1
 
 `State` is composed from the live and terminal aliases, while `TERMINAL_STATES`
 is derived from the terminal half rather than maintained as a second hand-written
-list (cit:([`State`, `TerminalState`], mcp/src/agents_remember/observer/lifecycle_state.py:118-118; mcp/src/agents_remember/observer/lifecycle_state.py:120-120); cit:([`TERMINAL_STATES`], mcp/src/agents_remember/observer/lifecycle_state.py:139-139)).
+list (cit:(["State = Literal[LiveState", "TerminalState = EndOutcome"], mcp/src/agents_remember/models/lifecycle.py:19-19; mcp/src/agents_remember/models/lifecycle.py:18-18); cit:(["TERMINAL_STATES: frozenset[str] = frozenset(vocabulary_names(TerminalState, label=\"TerminalState\"))"], mcp/src/agents_remember/observer/lifecycle_state.py:108-108)).
 
-The derived constants (cit:([`STATES`, `LIVE_STATES`, `TERMINAL_STATES`, `DEFAULT_END_OUTCOME`, `INITIAL_PHASE`, `PHASES`], mcp/src/agents_remember/observer/lifecycle_state.py:133-139; mcp/src/agents_remember/observer/lifecycle_state.py:143-143; mcp/src/agents_remember/observer/lifecycle_state.py:145-146)) are all read back out of those declarations
+The derived constants (cit:([`STATES`, `LIVE_STATES`, `TERMINAL_STATES`, `DEFAULT_END_OUTCOME`, `INITIAL_PHASE`, `PHASES`], mcp/src/agents_remember/observer/lifecycle_state.py:102-108; mcp/src/agents_remember/observer/lifecycle_state.py:112-112; mcp/src/agents_remember/observer/lifecycle_state.py:114-115)) are all read back out of those declarations
 rather than retyped:
 
 - `STATES: tuple[State, ...]` — the whole vocabulary, produced by
-  cit:([`STATES`, `check_state_partition`], mcp/src/agents_remember/observer/lifecycle_state.py:73-98; mcp/src/agents_remember/observer/lifecycle_state.py:133-135),
+  cit:([`STATES`, `check_state_partition`], mcp/src/agents_remember/observer/lifecycle_state.py:74-99; mcp/src/agents_remember/observer/lifecycle_state.py:102-104),
   which **runs at import**.
-- cit:([`LIVE_STATES`, `TERMINAL_STATES`], mcp/src/agents_remember/observer/lifecycle_state.py:136-139) — each half is derived from its vocabulary, and
+- cit:([`LIVE_STATES`, `TERMINAL_STATES`], mcp/src/agents_remember/observer/lifecycle_state.py:105-108) — each half is derived from its vocabulary, and
   cit:([`vocabulary_names`], mcp/src/agents_remember/observer/lifecycle_state.py:41-56) supplies the names rather than a second hand-written list.
-- cit:([`PHASES`], mcp/src/agents_remember/observer/lifecycle_state.py:146-146) is now `vocabulary_names(Phase, label="Phase")`, not
-  `get_args(Phase)`. cit:([`INITIAL_PHASE`], mcp/src/agents_remember/observer/lifecycle_state.py:145-145) is unchanged.
-- cit:([`DEFAULT_END_OUTCOME`], mcp/src/agents_remember/observer/lifecycle_state.py:143-143) — deliberately *not*
+- cit:([`PHASES`], mcp/src/agents_remember/observer/lifecycle_state.py:115-115) is now `vocabulary_names(Phase, label="Phase")`, not
+  `get_args(Phase)`. cit:([`INITIAL_PHASE`], mcp/src/agents_remember/observer/lifecycle_state.py:114-114) is unchanged.
+- cit:([`DEFAULT_END_OUTCOME`], mcp/src/agents_remember/observer/lifecycle_state.py:112-112) — deliberately *not*
   a classification but a **policy**: `lifecycle_end` takes a free-form outcome
   string at the tool boundary, and anything that is not the affirmative
   completion is an abandonment.
@@ -79,7 +79,7 @@ cit:([`LifecycleVocabularyError`], mcp/src/agents_remember/observer/lifecycle_st
 for a malformed vocabulary *declaration*, distinct from `LifecycleError` (a
 signal issued against an incompatible *state*).
 
-cit:([`coerce_end_outcome`], mcp/src/agents_remember/observer/lifecycle_state.py:149-158) is the one owner of the
+cit:([`coerce_end_outcome`], mcp/src/agents_remember/observer/lifecycle_state.py:118-127) is the one owner of the
 outcome → terminal-state rule. Because the terminal half **is** the
 `lifecycle_end` outcome vocabulary, this is a membership test, not a mapping
 table: a recognized outcome returns itself, and an unrecognized or missing one
@@ -90,8 +90,8 @@ than defaulting it.
 
 ### Current module boundaries
 
-cit:([`Phase`], mcp/src/agents_remember/observer/lifecycle_state.py:124-131) — the session-lifecycle skill's heading vocabulary,
-orthogonal to state. cit:(["system-owned", "NOTIFY-AND-CONTINUE"], mcp/src/agents_remember/observer/lifecycle_state.py:104-104; mcp/src/agents_remember/observer/lifecycle_state.py:106-106) binds the paused and
+cit:(["Phase = Literal["], mcp/src/agents_remember/models/lifecycle.py:20-27) — the session-lifecycle skill's heading vocabulary,
+orthogonal to state. cit:(["system-owned"], mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:163-163) binds the paused and
 awaiting-developer classification: `paused` is system-owned (no model signal),
 while `awaiting-developer` is the turn-end notification state on the live half.
 cit:([`await_developer`, `resume_from_await`], mcp/src/agents_remember/observer/ambient.py:205-221; mcp/src/agents_remember/observer/ambient.py:223-241)
@@ -99,14 +99,14 @@ shows the ambient signal methods that enter and leave that state, and
 cit:([`resume_from_await`], mcp/src/agents_remember/application/tool_response.py:42-42)
 shows the next-tool auto-resume choke point for that notification path.
 
-cit:([`LifecycleError`], mcp/src/agents_remember/observer/lifecycle_state.py:161-162) is this domain's family base;
-cit:([`GuardedStartError`], mcp/src/agents_remember/observer/lifecycle_state.py:165-177) names the active lifecycle in its message.
-cit:([`LifecycleState`], mcp/src/agents_remember/observer/lifecycle_state.py:187-210) is a frozen dataclass (`id`, `state`, `phase`,
+cit:([`LifecycleError`], mcp/src/agents_remember/observer/lifecycle_state.py:130-131) is this domain's family base;
+cit:([`GuardedStartError`], mcp/src/agents_remember/observer/lifecycle_state.py:134-146) names the active lifecycle in its message.
+cit:([`LifecycleState`], mcp/src/agents_remember/observer/lifecycle_state.py:156-179) is a frozen dataclass (`id`, `state`, `phase`,
 `fleeting`, `started_at`, plus the slice-2c persistence-binding fields
 `enclosure`, `repo_id`, and `scope` — all `None` until the lifecycle is promoted)
-with an cit:([`is_terminal`], mcp/src/agents_remember/observer/lifecycle_state.py:208-210) that reads `TERMINAL_STATES` — frozen
+with an cit:([`is_terminal`], mcp/src/agents_remember/observer/lifecycle_state.py:177-179) that reads `TERMINAL_STATES` — frozen
 so each transition is a new value (no shared-mutable surprises across the request
-and heartbeat threads). cit:([`coerce_phase`], mcp/src/agents_remember/observer/lifecycle_state.py:180-184) validates a raw
+and heartbeat threads). cit:([`coerce_phase`], mcp/src/agents_remember/observer/lifecycle_state.py:149-153) validates a raw
 tool-boundary string into a `Phase` or raises `LifecycleError`.
 
 ## Invariants And Boundaries
@@ -144,7 +144,7 @@ tool-boundary string into a `Phase` or raises `LifecycleError`.
 | --- | --- | --- |
 | The singleton that drives these states and raises these errors; its `end` signal now reads `TERMINAL_STATES` and converts through `coerce_end_outcome` instead of keeping its own accept-tuple and outcome→state conditional. | `end` | mcp/src/agents_remember/observer/ambient.py:243-274 |
 | The typed-error family base (`AgentsRememberError`). | `AgentsRememberError` | mcp/src/agents_remember/errors.py:13-14 |
-| The response model reuses `State`/`Phase` so the wire contract matches. | `LifecycleResponse` | mcp/src/agents_remember/models/lifecycle.py:17-22 |
+| The response model reuses `State`/`Phase` so the wire contract matches. | `LifecycleResponse` | mcp/src/agents_remember/models/lifecycle.py:30-35 |
 | `ACTIVE_STATES` is `LIVE_STATES` verbatim, and `STATE_COUNT_FIELDS` derives one `Metrics` bucket per live state — this is what makes the live/terminal filing load-bearing. | `ACTIVE_STATES`; `STATE_COUNT_FIELDS` | mcp/src/agents_remember/observer/projection.py:236-236; mcp/src/agents_remember/observer/projection.py:282-282 |
 | The reducer's `_STATES` is built from `STATES`, and `_ended_updates` routes through `coerce_end_outcome`. | `_STATES`; `_ended_updates` | mcp/src/agents_remember/observer/reducer.py:117-117; mcp/src/agents_remember/observer/reducer.py:382-384 |
 | The partition, the vocabulary reader, and structural terminality are pinned by test. | `StatePartitionTests`; `TerminalityIsStructuralTests`; `StateVocabularyReaderTests` | mcp/tests/test_observer_projection_metrics.py:236-300; mcp/tests/test_observer_projection_metrics.py:303-420; mcp/tests/test_observer_projection_metrics.py:423-458 |
@@ -162,15 +162,15 @@ tool-boundary string into a `Phase` or raises `LifecycleError`.
 - 2026-08-01T00:20+02:00 — 260731-EFA-L4 curator: the body described a flat six-member `State`
   literal with `TERMINAL_STATES` as a separate derived constant and `PHASES = get_args(Phase)`.
   Verified against the current source and rewrote it: `State` is now composed
-  (`State = Literal[LiveState, TerminalState]`, cit:([`State`], mcp/src/agents_remember/observer/lifecycle_state.py:120-120)) from cit:([`LiveState`], mcp/src/agents_remember/observer/lifecycle_state.py:109-109) and
-  `EndOutcome`/cit:([`TerminalState`], mcp/src/agents_remember/observer/lifecycle_state.py:118-118); cit:([`STATES`], mcp/src/agents_remember/observer/lifecycle_state.py:133-135) is assigned from
-  `check_state_partition` so the partition is enforced at **import**; cit:([`LIVE_STATES`], mcp/src/agents_remember/observer/lifecycle_state.py:136-138),
-  cit:([`TERMINAL_STATES`], mcp/src/agents_remember/observer/lifecycle_state.py:139-139) and cit:([`PHASES`], mcp/src/agents_remember/observer/lifecycle_state.py:146-146) are all read back through the new
+  (`State = Literal[LiveState, TerminalState]`, cit:(["State = Literal[LiveState"], mcp/src/agents_remember/models/lifecycle.py:19-19)) from cit:(["LiveState = Literal["], mcp/src/agents_remember/models/lifecycle.py:16-16) and
+`EndOutcome`/cit:(["def coerce_end_outcome(value: object) -> TerminalState:"], mcp/src/agents_remember/observer/lifecycle_state.py:118-118) is assigned from
+  `check_state_partition` so the partition is enforced at **import**; cit:([`LIVE_STATES`], mcp/src/agents_remember/observer/lifecycle_state.py:105-107),
+  cit:([`TERMINAL_STATES`], mcp/src/agents_remember/observer/lifecycle_state.py:108-108) and cit:([`PHASES`], mcp/src/agents_remember/observer/lifecycle_state.py:115-115) are all read back through the new
   cit:([`vocabulary_names`], mcp/src/agents_remember/observer/lifecycle_state.py:41-56) rather than declared or `get_args`-ed. Documented the three new
   public symbols the card never mentioned — cit:([`LifecycleVocabularyError`], mcp/src/agents_remember/observer/lifecycle_state.py:30-38),
   `vocabulary_names`/`_collect_names` (L41-L70, which handles the union form `get_args` would
   have returned `Literal` objects for), cit:([`check_state_partition`], mcp/src/agents_remember/observer/lifecycle_state.py:73-98) — plus
-  cit:([`DEFAULT_END_OUTCOME`], mcp/src/agents_remember/observer/lifecycle_state.py:143-143) and cit:([`coerce_end_outcome`], mcp/src/agents_remember/observer/lifecycle_state.py:149-158). Reframed the
+  cit:([`DEFAULT_END_OUTCOME`], mcp/src/agents_remember/observer/lifecycle_state.py:112-112) and cit:([`coerce_end_outcome`], mcp/src/agents_remember/observer/lifecycle_state.py:118-127). Reframed the
   `awaiting-developer` claim: it was "deliberately not added to `TERMINAL_STATES`", which is now
   a consequence rather than a decision — it is *filed on the live half*, and that filing is what
   earns it a `Metrics` bucket. Added invariants for import-time checking, structural terminality,

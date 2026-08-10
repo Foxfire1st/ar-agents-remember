@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-24T08:09+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -30,7 +30,7 @@ No exports; one `describe("buildEngineRoomModel")` block with five `it` cases pl
   `processes[0].gate` carries it.
 - "lifts workspace-scoped providers into workspaceEngines" passes a `scope: "workspace"` provider and asserts it surfaces in `workspaceEngines`.
 - "falls back to groupEngines when worktree providers exist but no engineProcesses" asserts `usesFallback === true`, one `fallbackStacks` entry, zero `processes`; the converse case (a process present) asserts no fallback.
-- "exposes worktreeGroup as the enclosure key, stable across a fleeting→real id swap" builds two models from nodes with different `id`s (`start:demo` vs `/contract.md`) but the same `worktreeGroup`, asserting both yield `enclosureKey === "/w/r/grp"` — the morph-identity invariant.
+- "exposes worktreeGroup as the enclosure key" builds two models from nodes with different `id`s (`start:demo` vs `/contract.md`) but the same `worktreeGroup`, asserting both yield `enclosureKey === "/w/r/grp"` — the morph-identity invariant.
 - "orders active leaf enclosures before cleanup-pending siblings for the same parent task" builds two sibling leaves with phases `worktree-started` and `cleanup-pending`, asserting the active leaf appears first.
 
 ### Invariants And Boundaries

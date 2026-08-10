@@ -6,8 +6,8 @@
 | path                   | `docs/design/observable-lifecycle.md`   |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-08T23:59+02:00                      |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                           |
 
 ## Governing Overview
@@ -47,30 +47,12 @@ metrics and compact normally.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retention policy implementation follows this design split. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:125-137 |
-| Projection readers apply interaction TTL and pickup feedback. | "def read_agent_pickups(" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:142-142 |
+| Retention policy implementation follows this design split. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
+| Projection readers apply interaction TTL and pickup feedback. | "def read_agent_pickups(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:140-140 |
 | MCP `lifecycle_gate` exposes the unified public gate junction. | `lifecycle_gate_tool` | mcp/src/agents_remember/application/gate_tools.py:384-454 |
 
 ## Update History
 
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the recovery-runbook refresh —
-## 260713-TES-L5 Current Delta — Recovery Runbook Uses Fact-Relay Terminals
-
-The inbox-storm recovery runbook now treats `ladder-resolved` as a legacy pre-formal-vocabulary
-state (the timed escalation ladder is retired): live-seat rows are re-posted or allowed to
-land, and retired/absent-target rows resolve through the sweep's own landing/ceiling/grace
-paths (`unresolved` after the attempt ceiling, `expired` after rebind grace) instead of being
-hand-parked as terminal.
-
-## Update History
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the recovery-runbook refresh —
-  `ladder-resolved` is a legacy pre-formal-vocabulary state (the timed escalation ladder is
-  retired), live-seat rows are re-posted or allowed to land, and retired/absent-target rows
-  resolve through the normal sweep paths (`unresolved` at the attempt ceiling, `expired`
-  after rebind grace) instead of being parked by hand. Verification metadata pinned until
-  closeout stamps the 260713-TES-L5 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 3 citation entries (6 findings); no Tier-3 findings.
 
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R6): added the documented

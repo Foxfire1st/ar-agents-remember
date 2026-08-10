@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/control/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/control/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash |  `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate |  2026-08-09T02:17:45+02:00|
+| lastUpdated | 2026-08-01T09:10+02:00 |
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 
 ## What This Area Is
 
@@ -114,12 +114,6 @@ withdrawal + bounded recovery) with `recovery_assembly.py`, `attachments.py` (R4
 
 ### Exact-turn interrupt (R1)
 
-**260713-TES-L2 interrupt provenance.** After a non-rejected acknowledgement, the interrupt
-route stamps `interrupt_requested_by=developer`/time/turn-id on the catalog seat through
-`seat_turn_truth.record_interrupt_request`; the lifted terminal truth later attributes an
-interrupted outcome to the developer action (N9). The stamp is best-effort and post-mutation
-(accepted note F6).
-
 1. Authorization + epoch verification; capability gate refuses claude/unsupported before any native
    call.
 2. The native write's answer is the acknowledgement (`accepted`/`unknown`/`rejected`); settlement
@@ -219,8 +213,8 @@ foundation and four+installed suites pin the slice.
 | --- | --- | --- |
 | `get_conversation_runtime` is the runtime dependency entry. | `get_conversation_runtime` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23 |
 | The authorization dependency resolves that runtime and delegates peer authorization to its bound resolver. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The conversation models define `protect_queue_source_privacy`. | `protect_queue_source_privacy` | mcp/src/agents_remember/serving/conversation/_models_operations.py:170-177 |
-| `operation_fingerprint` hashes the canonical operation identity without retaining raw request content. | "def operation_fingerprint(" | mcp/src/agents_remember/serving/conversation/_models_telemetry.py:100-100 |
+| The conversation models define `protect_queue_source_privacy`. | `protect_queue_source_privacy` | mcp/src/agents_remember/models/conversations/submissions.py:34-41 |
+| `operation_fingerprint` hashes the canonical operation identity without retaining raw request content. | "def operation_fingerprint(" | mcp/src/agents_remember/models/conversations/telemetry.py:102-102 |
 | `PolicyPart` is declared in the route-local `control/policy.py`. | `PolicyPart` | mcp/src/agents_remember/serving/conversation/control/policy.py:36-43 |
 | `ConversationPolicyProjection` is declared in the route-local `control/policy.py`. | `ConversationPolicyProjection` | mcp/src/agents_remember/serving/conversation/control/policy.py:46-55 |
 | `_map_typed_error` is the control API error-mapping entry. | `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:124-141 |
@@ -228,9 +222,9 @@ foundation and four+installed suites pin the slice.
 | `INTERRUPT_OUTCOME_RESPONSES` declares the interrupt outcome response table. | `INTERRUPT_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:140-153 |
 | `WITHDRAW_OUTCOME_RESPONSES` declares the withdrawal outcome response table. | `WITHDRAW_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:160-173 |
 | The control client sends the epoch-guarded interrupt write. | `interrupt_control` | mcp/src/agents_remember/serving/harness_control_client.py:425-445 |
-| The control client validates paged operation-timeline reads before returning them. | `read_operation_timeline` | mcp/src/agents_remember/serving/harness_control_client.py:448-472 |
+| The control client validates paged operation-timeline reads before returning them. | "opaque cursor coordinates are invalid in the operation timeline domain" | mcp/src/agents_remember/serving/harness_control_client.py:454-478 |
 | The control client validates the additive asset channel on prompt submission. | `submit_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:214-252 |
-| `clip_evidence_payload` is the truncation-envelope entry. | `clip_evidence_payload` | mcp/src/agents_remember/serving/harness_control_models.py:786-838 |
+| `clip_evidence_payload` is the truncation-envelope entry. | `clip_evidence_payload` | mcp/src/agents_remember/models/conversations/evidence.py:301-353 |
 | Pi settlement reads the preserved terminal identity through its stop-reason reader. | `_pi_stop_reason` | mcp/src/agents_remember/serving/conversation/control/operations.py:484-511 |
 | `HarnessSubmissionAuthority` owns setter and prompt admission/dispatch on the shared authority. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
 | `capabilities_for` is the active capability-view entry. | `capabilities_for` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:342-357 |
@@ -408,11 +402,14 @@ policy, queue_projection, withdrawals, telemetry, and the inline `api.py` call);
 use `factories.resolve_running_entry` directly, off the loop. Wire shapes, epoch semantics, and
 error mappings are untouched.
 
+## 260731-EFA-L9 Route Impact — Contract Imports Moved
+
+The control child routes now import the shared wire contracts from `models/conversations/` (`control_wire.py`, `evidence.py`) and the canonical control port from `serving/ports.py` after the L9 monolith split. Control behavior is unchanged.
+
 ## Update History
 
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: recorded the interrupt provenance
-  stamp on the seat (N9 origin attribution, F6 best-effort note). Verification metadata pinned
-  until closeout stamps the 260713-TES-L2 commit.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
+
 - 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the async/offloaded `resolve_entry` choke point and the mechanical `await` sweep across the route modules. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
 

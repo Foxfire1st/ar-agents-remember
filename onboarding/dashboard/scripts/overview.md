@@ -66,7 +66,7 @@ configured for this route.
 | --- | --- | --- |
 | The changed-lines floor and its base resolution. | `measureDiffCoverage`; `resolveBase` | dashboard/scripts/check-diff-coverage.mjs:43-43; dashboard/scripts/check-diff-coverage.mjs:108-108 |
 | The executable-statement contract suite. | "describe(\"check-diff-coverage executable-statement semantics\", () => {" | dashboard/scripts/check-diff-coverage.test.mjs:12-12 |
-| The Vitest include that collects this route's tests. | "include: [\"src/**/*.{ts,tsx}\"],"; "setupFiles: [\"./src/test/setup.ts\"]," | dashboard/vitest.config.ts:58-58; dashboard/vitest.config.ts:35-35; dashboard/vitest.config.ts:32-32 |
+| The Vitest include that collects this route's tests. | "include: ["; "setupFiles: [" | dashboard/vitest.config.ts:58-58; dashboard/vitest.config.ts:35-35; dashboard/vitest.config.ts:32-32 |
 
 ## Cross-Repo References
 

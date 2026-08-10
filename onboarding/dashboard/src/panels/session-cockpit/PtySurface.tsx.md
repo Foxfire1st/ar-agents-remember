@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/PtySurface.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ those panes get byte-stream harvesting hooks.
 - **Two archetypes per pane** cit:(["export function PtySurface"], dashboard/src/panels/session-cockpit/PtySurface.tsx:334-334): `isControlledSession` (lifecycleCopy) switches
   `data-pty-archetype="controlled"|"legacy-raw"`; harvesting `hooks` (onBell/onTitle/OSC 133/9)
   are passed ONLY for legacy raw (`controlled ? undefined : {…}` — L188-L205, R7); the pane
-  chrome names the archetype honestly cit:(["paneArchetypeCopy,"], dashboard/src/panels/session-cockpit/PtySurface.tsx:16-16).
+  chrome names the archetype honestly cit:(["paneArchetypeCopy"], dashboard/src/panels/session-cockpit/PtySurface.tsx:16-16).
 - **Bell acknowledge-on-focus** cit:(["Focusing a seat acknowledges its bell marker"], dashboard/src/panels/session-cockpit/PtySurface.tsx:371-371): focusing a seat clears its harvested bell marker —
   the marker exists to pull attention here.
 - **R8 real-cols wiring** (L144-L149, L183-L185): the VISIBLE pane's `onResizeCols` feeds

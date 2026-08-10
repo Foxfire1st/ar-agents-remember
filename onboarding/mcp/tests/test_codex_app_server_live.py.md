@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_app_server_live.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -114,9 +114,8 @@ retaining only an allowlisted evidence projection.
 | --- | --- | --- |
 | The recorder allowlists method/model/effort/thread fields and numeric token counters instead of retaining raw transport messages. | `RecordingCodexTransport`, `_safe_token_usage` | mcp/tests/test_codex_app_server_live.py:43-91; mcp/tests/test_codex_app_server_live.py:94-111 |
 | The original opt-in smoke, marker- and env-gated, opens an ephemeral no-prompt thread and always stops it. | `test_live_handshake_model_menu_and_ephemeral_thread` | mcp/tests/test_codex_app_server_live.py:119-159 |
-| The L5 driver: independently marker/env opt-in, it sequences the conformance run and force-stops the adapter in its `finally` (L257-L258). | `finally` | mcp/tests/test_codex_app_server_live.py:161-258 |
 | Discovery proves the probe emits only initialize/model-list, starts no thread or turn, and records no token usage; the selection pair is chosen from model-local dynamic rows. | `_discover_without_starting_a_thread`, `_selection_pair` | mcp/tests/test_codex_app_server_live.py:270-286; mcp/tests/test_codex_app_server_live.py:298-322 |
-| Settings-shaped resolution validates unknown model/effort before launch and carries the accepted pair without `CODEX_CONFIG`. | `CODEX_CONFIG` | mcp/tests/test_codex_app_server_live.py:324-344 |
+| Settings-shaped resolution validates unknown model/effort before launch and carries the accepted pair without `CODEX_CONFIG`. | `CODEX_CONFIG` | mcp/tests/test_codex_app_server_live.py:346-346 |
 | Setters are refused as unsupported, move from queued to effective on a fresh turn, repeat as immediate, and both accepted `turn/start` calls carry the one thread and the switched pair. | `_refused_unknown_selections`, `_queued_mid_thread_switch`, `_completed_turn`, `_accepted_turn_calls` | mcp/tests/test_codex_app_server_live.py:361-369; mcp/tests/test_codex_app_server_live.py:373-381; mcp/tests/test_codex_app_server_live.py:385-400; mcp/tests/test_codex_app_server_live.py:404-414 |
 | Printed evidence stays allowlisted behind its three parameter objects, and turn completion has a bounded timeout. | `_wait_for_turn` | mcp/tests/test_codex_app_server_live.py:518-523 |
 | The adapter carries launch state through native thread config, reports desired setters as queued until effective, and reports already-effective values as immediate. | `codex_launch_knobs`, `set_model`, `set_effort` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224; mcp/src/agents_remember/serving/codex_app_server_session.py:35-54 |
@@ -137,6 +136,8 @@ configuration. It remains an opt-in live proof; deterministic lifecycle races st
 tests.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

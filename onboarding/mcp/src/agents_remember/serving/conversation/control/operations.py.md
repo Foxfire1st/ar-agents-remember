@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,7 @@ settlement.
 ### Logic
 
 cit:([`InterruptRecord`], mcp/src/agents_remember/serving/conversation/control/operations.py:72-87) is the immutable ledger row (fingerprint, ack, settlement, revision, the
-recorded evidence floor); cit:([`InterruptAnswer`], mcp/src/agents_remember/serving/conversation/control/operations.py:90-92) is its projection payload. cit:([`interrupt`], mcp/src/agents_remember/serving/conversation/control/operations.py:95-156)
+recorded evidence floor); cit:([`InterruptAnswer`], mcp/src/agents_remember/serving/conversation/control/operations.py:96-98) is its projection payload. cit:([`interrupt`], mcp/src/agents_remember/serving/conversation/control/operations.py:95-156)
 serializes on the service's per-session lock, gates on the control capability, admits under the
 fingerprint (identical replay returns the stored projection with no second native write; a reused id
 with a different tuple is `request-conflict`), then cit:([`_drive_interrupt`], mcp/src/agents_remember/serving/conversation/control/operations.py:219-270) performs the L2E
@@ -36,7 +36,7 @@ epoch-guarded native write and cit:([`_apply_interrupt_result`], mcp/src/agents_
 cit:([`interrupt_status`], mcp/src/agents_remember/serving/conversation/control/operations.py:159-201) re-observes settlement; cit:([`_redrive_unknown`], mcp/src/agents_remember/serving/conversation/control/operations.py:298-326) re-drives a lost
 `may_have_sent` response through the substrate's replay-once cache (one native write total).
 cit:([`_observe_settlement`], mcp/src/agents_remember/serving/conversation/control/operations.py:329-351) correlates the terminal native event: cit:([`_codex_terminal_outcome`], mcp/src/agents_remember/serving/conversation/control/operations.py:354-383)
-reads the completion surface on event kind `"completed"` against cit:([`_CODEX_TERMINAL_STATUSES`], mcp/src/agents_remember/serving/conversation/control/operations.py:66-66);
+reads the completion surface on event kind `"completed"` against cit:([`_CODEX_TERMINAL_STATUSES`], mcp/src/agents_remember/serving/conversation/control/operations.py:72-72);
 cit:([`_pi_terminal_outcome`], mcp/src/agents_remember/serving/conversation/control/operations.py:452-481) + cit:([`_pi_stop_reason`], mcp/src/agents_remember/serving/conversation/control/operations.py:484-511) read pi's `stopReason` from the evidence
 buffer. The **Finding 1 fix** lives at the `_pi_stop_reason` frame filter cit:([`_pi_stop_reason`], mcp/src/agents_remember/serving/conversation/control/operations.py:484-511): it matches
 `frame.raw.get("type") == "message_end"` (payload type) instead of the old `frame.kind ==
@@ -47,7 +47,7 @@ whose turn finished naturally with text stalled `pending` forever. The **Finding
 envelope now preserves `type` + `message.stopReason`), which this evidence read consumes unchanged.
 `_pi_terminal_outcome` returns `None` (cit:([`_pi_terminal_outcome`], mcp/src/agents_remember/serving/conversation/control/operations.py:452-481) — stays `pending`) when no `stopReason` is
 recoverable; the latest-wins scan cit:([`_pi_stop_reason`], mcp/src/agents_remember/serving/conversation/control/operations.py:484-511) settles on the most recent visible reason. `_store`
-cit:([`_store`], mcp/src/agents_remember/serving/conversation/control/operations.py:514-525), cit:([`_projection`], mcp/src/agents_remember/serving/conversation/control/operations.py:528-544), cit:([`_as_record`], mcp/src/agents_remember/serving/conversation/control/operations.py:547-549), and `interrupt_http_status`
+cit:([`_store`], mcp/src/agents_remember/serving/conversation/control/operations.py:514-525), cit:([`_projection`], mcp/src/agents_remember/serving/conversation/control/operations.py:528-544), cit:([`_as_record`], mcp/src/agents_remember/serving/conversation/control/operations.py:554-556), and `interrupt_http_status`
 cit:([`interrupt_http_status`], mcp/src/agents_remember/serving/conversation/control/operations.py:552-561) are the ledger plumbing and the O4 status map.
 
 ### Conventions
@@ -91,10 +91,10 @@ shapes come from the vendor mappers; the L3E envelope preservation is what the p
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The L2E epoch-guarded native interrupt write and replay-once cache. | "One native interrupt write, epoch-guarded and bridge-stamped."; `InterruptCapableAdapter` | mcp/src/agents_remember/serving/harness_control_bridge.py:273-300; mcp/src/agents_remember/serving/harness_control_adapter.py:91-106 |
-| The pi mapper's two message_end emission classes (`pi:message_end` content-less L237, `transcript` content-ful L241). | `transcript` | mcp/src/agents_remember/serving/pi_rpc_events.py:302-302 |
-| The L3E truncation-envelope identity preservation (`type` + `message.stopReason`) this read consumes. | `_preserved_evidence_identity`, `clip_evidence_payload` | mcp/src/agents_remember/serving/harness_control_models.py:727-754; mcp/src/agents_remember/serving/harness_control_models.py:786-838 |
-| The service seams (per-session lock, epoch verify, identity, timeline) this ledger composes. | `session_lock`, `verify_epoch`, `build_identity`, `read_full_timeline` | mcp/src/agents_remember/serving/conversation/control/service.py:252-262; mcp/src/agents_remember/serving/conversation/control/service.py:301-305; mcp/src/agents_remember/serving/conversation/control/service.py:315-325; mcp/src/agents_remember/serving/conversation/control/service.py:327-348 |
+| The L2E epoch-guarded native interrupt write and replay-once cache. | "One native interrupt write" | mcp/src/agents_remember/serving/harness_control_bridge.py:273-300 |
+| The pi mapper's two message_end emission classes (`pi:message_end` content-less, `transcript` content-ful). | "transcript: tuple[TranscriptEntry" | mcp/src/agents_remember/serving/pi_rpc_events.py:51-51 |
+| The L3E truncation-envelope identity preservation (`type` + `message.stopReason`) this read consumes. | `_preserved_evidence_identity`, `clip_evidence_payload` | mcp/src/agents_remember/models/conversations/evidence.py:242-269; mcp/src/agents_remember/models/conversations/evidence.py:301-353 |
+| The service seams (per-session lock, epoch verify, identity, timeline) this ledger composes. | `session_lock`, `verify_epoch`, `build_identity`, `read_full_timeline` | mcp/src/agents_remember/serving/conversation/control/service.py:258-268; mcp/src/agents_remember/serving/conversation/control/service.py:307-311; mcp/src/agents_remember/serving/conversation/control/service.py:321-331; mcp/src/agents_remember/serving/conversation/control/service.py:333-354 |
 
 ## Cross-Repo References
 
@@ -143,7 +143,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   L484→L552-L561. No claim text changed; every range was read back against the current source.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The epoch-guarded
   native write is `HarnessControlBridge.interrupt` cit:([`interrupt`], mcp/src/agents_remember/serving/harness_control_bridge.py:273-300),
-  which calls `_require_epoch` first cit:([`_require_epoch`], mcp/src/agents_remember/serving/harness_control_bridge.py:302-305)
+  which calls `_require_epoch` first cit:([`_require_epoch`], mcp/src/agents_remember/serving/harness_control_bridge.py:306-309)
   and re-stamps the result with the queue's bridge epoch. The row's second half — the replay-once
   cache — is contracted on the `InterruptCapableAdapter` protocol cit:([`InterruptCapableAdapter`], mcp/src/agents_remember/serving/harness_control_adapter.py:91-106),
   where a repeat naming the same (expected, active) pair replays the first acknowledgement with no

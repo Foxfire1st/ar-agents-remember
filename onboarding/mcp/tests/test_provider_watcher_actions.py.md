@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_watcher_actions.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ No external documentation is needed for these standard-library unit tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `provider_watchers_tool` enforces the action naming guard and the launch-authority gate. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
-| The `require_provider_launch_authority` gate whose refusal these tests observe. | `require_provider_launch_authority` | mcp/src/agents_remember/mcp/config.py:202-221 |
+| The `require_provider_launch_authority` gate whose refusal these tests observe. | `require_provider_launch_authority` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:202-221 |
 | The broader containment suite covers authority reload, worktree veto, benchmark filtering, setup locking, and metrics. | `ReloadProviderAuthorityTests`; `WorktreeStartVetoTests`; `BenchmarkProviderFilterTests`; `FleetSetupLockTests`; `MetricsTests` | mcp/tests/test_provider_containment.py:78-121; mcp/tests/test_provider_containment.py:124-177; mcp/tests/test_provider_containment.py:209-273; mcp/tests/test_provider_containment.py:276-315; mcp/tests/test_provider_containment.py:318-450 |
 
 ## Cross-Repo References
@@ -86,6 +86,8 @@ No sibling repository evidence is needed for these tests.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: bound containment coverage to its five exact test classes and removed source-clear placeholders.
 

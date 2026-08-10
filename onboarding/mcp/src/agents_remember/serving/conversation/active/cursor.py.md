@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/cursor.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,9 +80,9 @@ battery against this authority (all held).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The purpose-branded token prefixes and root validators define the four non-interchangeable cursor brands. | "class ActivePageCursor(_OpaqueToken):", "class ActiveEventCursor(_OpaqueToken):", "class LibraryListCursor(_OpaqueToken):", "class LibraryReadCursor(_OpaqueToken):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:67-67; mcp/src/agents_remember/serving/conversation/_models_wire.py:71-71; mcp/src/agents_remember/serving/conversation/_models_wire.py:75-75; mcp/src/agents_remember/serving/conversation/_models_wire.py:79-79; mcp/src/agents_remember/serving/conversation/models.py:96-97 |
-| `ActiveConversationRef` and `AuthorizationBinding` carry the identity/caller fields every cursor binds. | "class ActiveConversationRef(NativeConversationRef):", "class AuthorizationBinding(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:112-112; mcp/src/agents_remember/serving/conversation/_models_wire.py:117-117 |
-| The service decodes and generation-checks every cursor before any stream exists. | "before_ordinal = decode_page_cursor(", "decoded = decode_event_cursor(", "require_same_generation(decoded" | mcp/src/agents_remember/serving/conversation/active/service.py:94-94; mcp/src/agents_remember/serving/conversation/active/service.py:114-115 |
+| The purpose-branded token prefixes and root validators define the four non-interchangeable cursor brands. | "class ActivePageCursor(_OpaqueToken):", "class ActiveEventCursor(_OpaqueToken):", "class LibraryListCursor(_OpaqueToken):", "class LibraryReadCursor(_OpaqueToken):" | mcp/src/agents_remember/models/conversations/cursors.py:20-20; mcp/src/agents_remember/models/conversations/cursors.py:24-24; mcp/src/agents_remember/models/conversations/cursors.py:28-28; mcp/src/agents_remember/models/conversations/cursors.py:32-32 |
+| `ActiveConversationRef` and `AuthorizationBinding` carry the identity/caller fields every cursor binds. | "class ActiveConversationRef(NativeConversationRef):", "class AuthorizationBinding(WireModel):" | mcp/src/agents_remember/models/conversations/identity.py:51-51; mcp/src/agents_remember/models/conversations/identity.py:56-56 |
+| The service decodes and generation-checks every cursor before any stream exists. | "before_ordinal = decode_page_cursor(", "decoded = decode_event_cursor(", "require_same_generation(decoded" | mcp/src/agents_remember/serving/conversation/active/service.py:105-105; mcp/src/agents_remember/serving/conversation/active/service.py:125-126 |
 | The routes map dual resume inputs and every cursor error to typed pre-stream statuses. | `_map_typed_error`, `_resume_cursor` | mcp/src/agents_remember/serving/conversation/active/api.py:77-99; mcp/src/agents_remember/serving/conversation/active/api.py:111-123 |
 
 ## Cross-Repo References
@@ -94,6 +94,8 @@ No cross-repository implementation participates in this cursor authority.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 11 initial citation findings (4 anchor, 3 prose, 4 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 

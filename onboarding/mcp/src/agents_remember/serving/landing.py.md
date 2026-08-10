@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/landing.py`            |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`                                           |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                           |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ default completion uses exact-report-gated retirement instead.
 | --- | --- | --- |
 | Completion cleanup calls `land_seats_for_leaf` only in the close opt-out branch. | "landed = land_seats_for_leaf(" | mcp/src/agents_remember/application/completion_cleanup.py:51-56 |
 | The same compatibility branch logs every landed catalog entry. | "log_landed_event(config, entry)" | mcp/src/agents_remember/application/completion_cleanup.py:57-59 |
-| The catalog status transition and landing provenance fields live in `TerminalCatalog`. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:519-857 |
+| The catalog status transition and landing provenance fields live in `TerminalCatalog`. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:48-386 |
 | Manual retire remains the destructive/session-closing path. | `SeatClosure`; `retire_entry` | mcp/src/agents_remember/serving/retire.py:21-34; mcp/src/agents_remember/serving/retire.py:37-71 |
 | Tests cover leaf/role selection, opt-out end-to-end landing, and retained archive cleanup behavior. | `AutoLandHookIntegrationTests`; `LandSeatsForLeafTests` | mcp/tests/test_seat_lifecycle.py:593-869 |
 
@@ -71,6 +71,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-10T05:45+02:00 — 260805-ARG-L1: repositioned landing as the settings opt-out and
   pre-flip archive compatibility path; the domain mechanic itself is unchanged.
 
@@ -88,3 +89,4 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): created for the new
   non-destructive completion classification. Verification metadata remains pinned until closeout stamps
   the HFX2-L11 commit.
+

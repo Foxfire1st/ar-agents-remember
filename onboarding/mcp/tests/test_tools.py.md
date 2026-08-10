@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -110,11 +110,11 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 | --- | --- | --- |
 | Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | Public response model registry validates payload shapes. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:181-185 |
-| Server registration lives in `server.py`. | `create_server` | mcp/src/agents_remember/mcp/server.py:18-28 |
+| Server registration lives in `server.py`. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
 | Application-layer modules convert public MCP payloads into service calls. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 | Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | `build_current_provider_state` | mcp/src/agents_remember/providers/current_state.py:16-36 |
-| Inbox tool names are now pinned in the public tool subset. | "operator_inbox_post" | mcp/tests/test_tools.py:335-335 |
-| Terminal leaf reassignment and agent-facing session spawn are pinned in the public tool subset. | "attach_terminal_session_to_leaf"; "spawn_agent_session" | mcp/tests/test_tools.py:338-339 |
+| Inbox tool names are now pinned in the public tool subset. | "operator_inbox_post" | mcp/tests/test_tools.py:337-337 |
+| Terminal leaf reassignment and agent-facing session spawn are pinned in the public tool subset. | "attach_terminal_session_to_leaf"; "spawn_agent_session" | mcp/tests/test_tools.py:340-341 |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -127,6 +127,8 @@ mandatory CRAP enforcement. Preview must say it runs before the code commit; app
 before any code mutation and that approval precedes apply.
 
 ## Update History
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-03T03:07:44+02:00 — W3-B05 curator: resolved 7 Tier-2 table findings with exact anchors and source paths; fixer generated all final ranges.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

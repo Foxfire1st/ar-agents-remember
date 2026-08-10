@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/serialize.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ No external documentation is needed for this local formatter.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The CLI delegates JSON/text output to this module. | "context_to_dict("; "print_text(" | mcp/src/agents_remember/kernel/coordination_context/cli.py:103-103; mcp/src/agents_remember/kernel/coordination_context/cli.py:105-105 |
+| The CLI delegates JSON/text output to this module. | "context_to_dict("; "print_text(" | mcp/src/agents_remember/cli/coordination_resolver.py:108-108; mcp/src/agents_remember/cli/coordination_resolver.py:110-110 |
 | The application context packet builds the packet with `context_to_dict()`. | `build_context_packet`; "context_to_dict(" | mcp/src/agents_remember/application/context_packet.py:59-102 |
 
 ## Cross-Repo References

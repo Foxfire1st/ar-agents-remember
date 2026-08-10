@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_chats_l5f_leaks.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,7 +19,7 @@
 The 260718-CHATS-L5F R5 leak-fix regression suite: direct, composition-light unit coverage for the
 daemon-side per-session structure release/bounding. It pins that the control service's per-session
 lock map is bounded-by-construction AND released on session end, and that the queue-revision
-bookkeeping map is capped with oldest-key eviction — the "keyed by session id, never released"
+bookkeeping map is capped with oldest-key eviction — the "keyed by session id"
 CLASS-C leak class the half-time diagnosis named (`_locks` was the prime monotonic leak;
 `queue_rows` was the open L3 precision-note Todo). The active-projector dormant-release companion
 lives in `test_conversation_active_service.py::DormantReleaseTests`.
@@ -88,9 +88,9 @@ The suite pins the control service's bounded/released lock map and the capped qu
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `_locks` `OrderedDict`, `MAX_SESSION_LOCKS_PER_APP` cap, idle-first `_evict_idle_locks`, and `release_session` under test. | "def utc_clock" | mcp/src/agents_remember/serving/conversation/control/service.py:81-81 |
-| The frozen `ControlScope` parameter object this suite now builds to call `_queue_row`. | "class ControlOperationError" | mcp/src/agents_remember/serving/conversation/control/service.py:102-102 |
-| The `queue_rows` cap enforcement (`MAX_QUEUE_ROWS_PER_CHANNEL`, oldest-key `popitem`) under test. | "async def operation_queue" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:47-47 |
+| The `_locks` `OrderedDict`, `MAX_SESSION_LOCKS_PER_APP` cap, idle-first `_evict_idle_locks`, and `release_session` under test. | "def utc_clock" | mcp/src/agents_remember/serving/conversation/control/service.py:83-83 |
+| The frozen `ControlScope` parameter object this suite now builds to call `_queue_row`. | "class ControlOperationError" | mcp/src/agents_remember/serving/conversation/control/service.py:104-104 |
+| The `queue_rows` cap enforcement (`MAX_QUEUE_ROWS_PER_CHANNEL`, oldest-key `popitem`) under test. | "async def operation_queue" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:51-51 |
 | The active-projector dormant-release companion to these control-side leak pins. | `CodexEngineTests` | mcp/tests/test_conversation_active_service.py:224-541 |
 
 ## Cross-Repo References
@@ -102,6 +102,8 @@ No cross-repository implementation participates in this suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

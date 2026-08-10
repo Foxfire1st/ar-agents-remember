@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:35+02:00 |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51` |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ four cases prove:
   CHILD's, `agents` is `[]` (no deeper nesting), and `capabilities` follow the parent's read path.
 - **no child rows without agents** (cit:(["renders no child rows when the row carries no agents"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx:68-71)): a row with no `agents` renders no
   `library-agent-row` at all.
-- **agentsNote verbatim when present, nothing when absent** (cit:(["renders the agentsNote verbatim when present, and nothing when absent"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx:73-85)): the exact note string
+- **agentsNote verbatim when present, nothing when absent** (cit:(["renders the agentsNote verbatim when present"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx:73-85)): the exact note string
   renders in `library-agents-note`; with `null` the testid is absent from the DOM.
 
 ### Invariants And Boundaries

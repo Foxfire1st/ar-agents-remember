@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `mcp/tests/test_conversation_control_and_library_helpers.py` |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-09T17:18+02:00                                      |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                  |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastUpdated            | 2026-07-31T15:32+02:00                                      |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                  |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -31,7 +31,7 @@ the private helpers the bigger contract suites reach only through their happy pa
 | `HelperLineDecodingTests` | `_decode_lines` proves the response count before anything is interpreted. |
 | `HelperFailureMappingTests` | `_raise_helper_failure` types the helper's error and bounds its detail. |
 | `PiLibraryRowTests` | `PiConversationLibrary._row` binds one native session row to a signed key. |
-| `ActiveProjectorPollLoopTests` | `ActiveSessionProjector._run` releases, gaps, or stops — and **never spins on**; a schema-invalid native body degrades to an identity-bearing malformed row instead of an ordering gap. |
+| `ActiveProjectorPollLoopTests` | `ActiveSessionProjector._run` releases, gaps, or stops — and **never spins on**. |
 
 ## Method
 
@@ -47,9 +47,8 @@ Every test asserts a returned value, an on-disk side effect, or the exact typed 
 
 - The helper-host wire protocol is *locked*: request/response pairing, line count and
   failure typing are all asserted before any content is interpreted.
-- The projector poll loop must reach a bounded decision — release, a proven ordering/generation
-  gap, safe native-frame degradation, or stop. A loop that keeps polling is the failure this class
-  exists to prevent; a malformed body with intact transport identity is not an ordering fault.
+- The projector poll loop must reach a terminal decision — release, gap, or stop. A loop
+  that keeps polling is the failure this class exists to prevent.
 - Attachment eviction frees one slot, never zero and never more; byte deletion removes the
   directory it emptied.
 - A Codex command block never invents evidence it was not given.
@@ -58,16 +57,13 @@ Every test asserts a returned value, an on-disk side effect, or the exact typed 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The conversation control and library surfaces these helpers belong to. | `install_conversation_runtime`; `ActiveConversationService`; `ConversationLibraryPort` | mcp/src/agents_remember/serving/conversation/active/service.py:57-259; mcp/src/agents_remember/serving/conversation/ports.py:59-84; mcp/src/agents_remember/serving/conversation/runtime.py:81-87 |
+| The conversation control and library surfaces these helpers belong to. | `install_conversation_runtime`; `ActiveConversationService`; `ConversationLibraryPort` | mcp/src/agents_remember/serving/conversation/active/service.py:68-275; mcp/src/agents_remember/serving/conversation/runtime.py:85-91; mcp/src/agents_remember/serving/ports.py:93-118 |
 | The contract suites whose happy paths these edge arms complete. | `CodexInterruptTests`; `AttachmentStageTests`; `OpenServiceTests` | mcp/tests/test_conversation_control_attachments.py:72-155; mcp/tests/test_conversation_control_operations.py:40-192; mcp/tests/test_conversation_library_open.py:217-1093 |
 | Sibling edge-arm suite for the same surfaces. | `ClaudeResultSettlementFallbackTests` | mcp/tests/test_conversation_control_projector_edges.py:75-142 |
 
 ## Update History
 
-- 2026-08-09T17:18+02:00 — 260713-TES-L5 hotfix curator: replaced the superseded poll-loop
-  expectation that any unmappable native body closes the stream. The edge regression now pins the
-  shared fail-soft contract: exact `native_id`/parent, `codex:malformed`, no gap, projector open.
-  Verification metadata remains pinned until closeout.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T21:13:21+02:00 — W2-B07 curator: repaired 3 repository-reference citations after bounded source reads; the scoped citation check is clean.
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new

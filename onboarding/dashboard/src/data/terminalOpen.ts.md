@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/terminalOpen.ts`   |
 | doc_type               | `file-level-onboarding`                |
 | lastUpdated            | 2026-07-18T15:22+02:00                 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`                                     |
-| lastVerifiedCommitDate |                                        2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                     |
+| lastVerifiedCommitDate |                                        2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                          |
 
 ## Governing Overview
@@ -79,7 +79,7 @@ callers, and reviewed regression tests are the current evidence.
 | The result union and exact accepted-response identity checks. | "export type TerminalOpenResult =" | dashboard/src/data/terminalOpen.ts:38-38 |
 | The sole POST plus network, body, HTTP, and harness-failure classification. | "export async function openTerminalSession" | dashboard/src/data/terminalOpen.ts:334-334 |
 | The compatibility import surface re-exports this authority instead of owning a second opener. | "from \"./terminalOpen\"" | dashboard/src/data/terminal.ts:386-386 |
-| The session store mutates and broadcasts only after `outcome: opened`. | "sessionStore.getState().upsert(result.session, true)" | dashboard/src/data/sessions.ts:786-786 |
+| The session store mutates and broadcasts only after `outcome: opened`. | "sessionStore.getState().upsert(result.session" | dashboard/src/data/sessions.ts:786-786 |
 | Hosted launch delegates to this opener while preserving its established response grammar. | "export async function openHostedSession" | dashboard/src/data/launchFlow.ts:232-232 |
 | Direct parser and caller regressions cover accepted identity and every failure family. | "POSTs raw metadata and accepts the exact server-owned row" | dashboard/src/data/terminal.test.ts:356-392 |
 

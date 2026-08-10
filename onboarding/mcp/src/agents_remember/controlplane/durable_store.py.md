@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/durable_store.py`   |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-01T19:10+02:00                                    |
-| lastVerifiedCommitHash |                                                           `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate |                                                           2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash |                                                           `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                                           2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ row's "100 percent in the forced window" is that assertion read as a rate. It is
 the harness measures the defect rather than something else.
 
 **Against the current tree**, `test_controlplane_store_durability.py::MultiProcessDurabilityTests`
-asserts less than "all six stores, all scenarios", and both narrowings matter. `lost == 0` (with
+asserts less than "all six stores", and both narrowings matter. `lost == 0` (with
 `stragglers == []`) holds in all three scenarios — but over six stores in `forced_lost_update` and
 `stress`, and over **five** in `forced_unlink`, which runs over `APPEND_CASES`. Attention-dismissals
 is excluded there by construction: it has no `append` at all, so it cannot be stranded in an
@@ -144,7 +144,7 @@ load-bearing part of this module:
 
 **The ownership register** holds all six constants side by side so the differences are comparable:
 `GATE_OWNERSHIP`, `EXPECTATION_ROW_OWNERSHIP`, `ATTENTION_DISMISSAL_OWNERSHIP`,
-`OPERATOR_INBOX_OWNERSHIP`, `ORCHESTRATION_NUDGE_OWNERSHIP`, `SUPERVISOR_SIGNAL_OWNERSHIP`. Four
+`OPERATOR_INBOX_OWNERSHIP`, `ORCHESTRATION_NUDGE_OWNERSHIP`, `AGENT_NOTIFIER_SIGNAL_OWNERSHIP`. Four
 logs accept both processes as writers; attention-dismissals and supervisor-signals accept the
 dashboard alone. Locking is *not* one of the differences — all six lock, always.
 
@@ -378,8 +378,8 @@ only for other files, and every one below was re-verified against the working tr
 | The third call site and the only factory that declares: `--reload` serves from a uvicorn `multiprocessing` spawn child that re-imports the module with an empty declaration dict and never reaches `run`, so it answered owner for every log. The docstring records this as an ownership gap and not a durability defect — the unconditional lock covered the rewrite — and why `create_app` still must not declare. | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:52-81 |
 | `_reclaim_gate_log` guards on `is_compaction_owner` before compacting, because the dashboard calls `gate_decide_payload` directly; without the guard an MCP-side reclaim runs inside the dashboard. | `_reclaim_gate_log` | mcp/src/agents_remember/controlplane/gate_decisions.py:74-80 |
 | The dashboard's HTTP dismiss route calls `AttentionDismissalStore.dismiss`, the whole-file read-modify-write that made the single-writer store the worst loser. | "class AttentionDismissalStore"; "def dismiss" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-78 |
-| `read_gates` no longer rewrites on the projection tick; it uses the tolerant `projected_current`, and physical reclamation moved to the gate log's owner. | "def read_gates(coordination_root: Path, *, now: date" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104 |
-| The worktree series contract imports this module's `SCHEMA_VERSION` and `schema_version_supported`, so the tree carries one version policy rather than two. | `SCHEMA_VERSION`; `schema_version_supported` | mcp/src/agents_remember/worktrees/worktree_contract.py:16-16; mcp/src/agents_remember/worktrees/worktree_contract.py:40-40 |
+| `read_gates` no longer rewrites on the projection tick; it uses the tolerant `projected_current`, and physical reclamation moved to the gate log's owner. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:103-103 |
+| The worktree series contract imports this module's "from agents_remember.controlplane.durable_store import SCHEMA_VERSION" and "from agents_remember.controlplane.durable_store import SCHEMA_VERSION", so the tree carries one version policy rather than two. | "from agents_remember.controlplane.durable_store import SCHEMA_VERSION"; "from agents_remember.controlplane.durable_store import SCHEMA_VERSION" | mcp/src/agents_remember/worktrees/worktree_contract.py:16-16; mcp/src/agents_remember/worktrees/worktree_contract.py:40-40 |
 | The control-plane lockfiles are excluded from the projection watch by a rule DERIVED from `lock_path_for` rather than spelled out, and matched by suffix in every watched directory — which is what covers the per-lifecycle `gates.jsonl.lock` a basename list structurally could not. `_EXCLUDED_WORKSPACE_NAMES` no longer names any lockfile; the comment above the derived constant records that spelling it out is exactly what broke. | `_DURABLE_LOG_LOCK_SUFFIX`; `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:156-156; mcp/src/agents_remember/serving/change_watcher.py:187-205 |
 
 ## Cross-Repo References
@@ -455,3 +455,4 @@ repository; nothing outside it reads these logs.
   measured; `rewrite_lines` never unlinking; the strict/tolerant read split with the
   rewrite-reads-strictly property stated per store rather than as a blanket; and the process-wide
   `RLock` described as defending a simulated regression rather than fixing an existing thread race.
+

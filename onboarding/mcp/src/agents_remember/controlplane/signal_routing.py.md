@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-07-31T00:00+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -163,7 +163,7 @@ existing design doc.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The owner address is read straight off the sender's own `spawned_by_session`/`spawned_by_lifecycle` catalog fields. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
+| The owner address is read straight off the sender's own `spawned_by_session`/`spawned_by_lifecycle` catalog fields. | "class TerminalCatalogEntry:" | mcp/src/agents_remember/models/terminal_catalog.py:68-72 |
 | The compound-idle consumer of the public `master_key` scope filter (both membership arms). | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:69-103 |
 
 ## Cross-Repo References
@@ -187,6 +187,7 @@ closeout.
 
 ## Update History
 
+- 2026-08-10T10:30+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint-scoped architect custody and the
   no-cross-sprint rebind boundary. Verification metadata remains pinned until closeout stamps the
   code commit.
@@ -251,3 +252,5 @@ closeout.
 - 2026-07-08T14:25+02:00 — 260707-HFX2-L1: created for R4 hierarchical routing derivation (worker
   -> manager, manager -> orchestrator, decision-item -> architect). Verification metadata pinned
   until closeout stamps the 260707-HFX2-L1 commit.
+
+

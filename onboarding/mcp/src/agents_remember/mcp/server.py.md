@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-09T19:54+02:00                     |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a` |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastUpdated            | 2026-08-01T13:20+02:00                     |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -28,20 +28,17 @@ is the [registration route overview](registration/overview.md), not this file.
 
 ### Logic
 
-`create_server(config) -> FastMCP` does five things in order:
+`create_server(config) -> FastMCP` does four things in order:
 
 1. `install_compact_content()` — idempotent; makes the JSON text mirror of every tool result emit
    without FastMCP's hardcoded indentation. It affects text-mirror serialization only, never
    `structuredContent` or tool behaviour.
-2. `initialize_mcp_application(config)` — installs the one ambient lifecycle for the server
-   process and initializes the application services consumed by registered tools.
-3. `_complete_fastmcp_settings()` — resolves the MCP dependency's generic `FastMCP` forward
-   reference through Pydantic's public `model_rebuild` hook. This is deliberately before
-   construction: current `pydantic-settings` warns on the dependency's otherwise incomplete
-   `Settings.lifespan` field, and this repository's strict warning policy correctly turns that
-   warning into a test failure.
-4. `FastMCP("Agents Remember")`.
-5. `for register_tools in TOOL_REGISTRARS: register_tools(server, config)` — the loop is the only
+2. `install_ambient(AmbientLifecycle(EventStore(observer_root(config))))` — one ambient lifecycle
+   per server process, with the store root resolved through the shared `observer.observer_root`.
+   The `lifecycle_*` tools and the `_tool_payload` choke point read that singleton, so it must be
+   installed before any tool runs.
+3. `FastMCP("Agents Remember")`.
+4. `for register_tools in TOOL_REGISTRARS: register_tools(server, config)` — the loop is the only
    place that decides which families a server advertises.
 
 `run_server(config)` is `create_server(config).run()`.
@@ -84,11 +81,8 @@ that skips this line loses no records — it just stops being distinguishable fr
 - **No tool declarations here.** A new tool means editing one family module under `registration/`;
   a new family means a new module plus one entry in `TOOL_REGISTRARS`. `create_server` must not grow
   per-tool special cases.
-- Keep `install_compact_content()` and `initialize_mcp_application(config)` at the top of
-  `create_server()`, before tools can be exercised.
-- Keep `_complete_fastmcp_settings()` before `FastMCP(...)`. It is idempotent and must use the
-  imported concrete `FastMCP` as the forward-reference namespace; suppressing the warning would
-  leave the dependency model incomplete instead of repairing it.
+- Keep `install_compact_content()` and `install_ambient(...)` at the top of `create_server()`,
+  before tools can be exercised.
 - **`prepare_mcp_process(config)` stays in `main` and process-role declaration must never move into `create_server`.**
   `create_server` is called in-process by the test suite and `_declared` has no reset, so declaring
   there marks the whole interpreter `"mcp"` — after which `is_compaction_owner()` answers `True` for
@@ -103,9 +97,9 @@ that skips this line loses no records — it just stops being distinguishable fr
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `create_server` completes the dependency settings model, builds the FastMCP instance, and invokes the registered tool families. | `_complete_fastmcp_settings`; `create_server` | mcp/src/agents_remember/mcp/server.py:19-35 |
-| The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | `register_core_tools`; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:20-48; mcp/src/agents_remember/mcp/registration/__init__.py:50-50 |
-| The stable `mcp.tools` package imports the payload builders and exports that builder surface for the registered tool families. | "Pure payload builders"; `__all__` | mcp/src/agents_remember/mcp/tools/__init__.py:1-6; mcp/src/agents_remember/mcp/tools/__init__.py:94-161 |
+| `create_server` builds the FastMCP instance and invokes the registered tool families. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
+| The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | "from .core import register_core_tools"; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:24-24; mcp/src/agents_remember/mcp/registration/__init__.py:36-49; mcp/src/agents_remember/mcp/registration/__init__.py:51-51 |
+| The stable `mcp.tools` package imports the payload builders and exports that builder surface for the registered tool families. | "Pure payload builders"; "from .worktree import ("; "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:1-87; mcp/src/agents_remember/mcp/tools/__init__.py:93-159 |
 
 ## Cross-Repo References
 
@@ -116,10 +110,6 @@ No sibling repository defines this process wiring.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
-- 2026-08-09T19:54+02:00 — 260713-TES-L5F2: recorded the strict-warning compatibility repair that
-  completes FastMCP's generic settings model before server construction; the existing server
-  construction tests prove the dependency warning is no longer emitted.
-
 - 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound registrar imports/collection and tools builder imports/exports to packet-specified source spans. Verification metadata unchanged.
 
 - 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: moved the live account to the current
@@ -128,7 +118,7 @@ No sibling repository defines this process wiring.
   `_dev_app` and `run`. New self/cross-file ranges are explicit scoped fixer output.
 
 - 2026-08-03T02:43:00+02:00 — W3-B01 curator: curated 9 Repo-Internal table citations with exact overview headings, current module identifiers, and live test anchor. The earlier call-site commentary was superseded by the current application-layer startup boundary recorded in the S18-T3 entry above. Verification metadata remains unchanged for closeout.
-- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: recorded the process-entry declaration boundary and why it stays outside the in-process `create_server` factory cit:([`declare_process_role`], mcp/src/agents_remember/controlplane/durable_store.py:76-84) cit:([`main`], mcp/src/agents_remember/mcp/server.py:42-64). The dashboard owns its mirrored entry paths cit:([`_dev_app`, `run`], mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:161-196). Verification metadata pinned until closeout stamps the L5 code commit.
+- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: recorded the process-entry declaration boundary and why it stays outside the in-process "create_server(config).run()" factory cit:(["def declare_process_role(role: ProcessRole) -> None:"], mcp/src/agents_remember/controlplane/durable_store.py:76-84). The dashboard owns its mirrored entry paths cit:(["def _dev_app("], mcp/src/agents_remember/cli/dashboard.py:52-81). Verification metadata pinned until closeout stamps the L5 code commit.
 - 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: **rewritten**. The whole tool-registration surface
   left this file for the new `mcp/registration/` package, and `create_server` became wiring plus a
   loop over `TOOL_REGISTRARS`. The previous body — a per-tool catalogue of signatures, refusal

@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/submitClient.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ No Domain Documentation source is configured for this repository.
 | Transport parsing, deadline, reconciliation, submit driver, and store integration. | `createFetchSubmitTransport`; `executeReliableSubmit`; `continueReliableReconcile`; `submitSessionText` | dashboard/src/data/submitClient.ts:238-295; dashboard/src/data/submitClient.ts:567-610; dashboard/src/data/submitClient.ts:612-618; dashboard/src/data/submitClient.ts:828-873 |
 | The evidence state machine supplies receipt/reconcile transitions and retry scheduling. | `reduceReceipt`; `reduceReconciliation`; `reconcileDelay` | dashboard/src/data/submitMachine.ts:215-263; dashboard/src/data/submitMachine.ts:330-358; dashboard/src/data/submitMachine.ts:360-362 |
 | The browser authority client owns polling, withdrawal, and recovery after initial delivery. | `ensureSubmissionLifecyclePolling`; `restoreWithdrawnRecovery`; `withdrawLastQueuedSubmission` | dashboard/src/data/submissionLifecycleClient.ts:949-961; dashboard/src/data/submissionWithdrawal.ts:352-377; dashboard/src/data/submissionWithdrawal.ts:405-417 |
-| Tests cover safe certificates, ambiguous loss, no-resend reconciliation, readiness, and provenance. | "retries only an explicitly proven pre-dispatch loss, using the same id and immutable text"; "treats a browser rejection as ambiguous and reconciles without resending"; "never resends an unclassified post-dispatch loss; it reconciles the same id at 1s → 2s"; "allows composing before ready but submits only a ready controlled session"; "records a background queue receipt without clearing or joining composer pop-back state" | dashboard/src/data/submitClient.test.ts:103-128; dashboard/src/data/submitClient.test.ts:210-227; dashboard/src/data/submitClient.test.ts:297-325; dashboard/src/data/submitClient.test.ts:432-446; dashboard/src/data/submitClient.test.ts:638-664 |
+| Tests cover safe certificates, ambiguous loss, no-resend reconciliation, readiness, and provenance. | "retries only an explicitly proven pre-dispatch loss"; "treats a browser rejection as ambiguous and reconciles without resending"; "never resends an unclassified post-dispatch loss; it reconciles the same id at 1s → 2s"; "allows composing before ready but submits only a ready controlled session"; "records a background queue receipt without clearing or joining composer pop-back state" | dashboard/src/data/submitClient.test.ts:103-128; dashboard/src/data/submitClient.test.ts:210-227; dashboard/src/data/submitClient.test.ts:297-325; dashboard/src/data/submitClient.test.ts:432-446; dashboard/src/data/submitClient.test.ts:638-664 |
 
 ## Cross-Repo References
 

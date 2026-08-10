@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/code_search.py`       |
 | doc_type               | `file-level-onboarding`                                         |
 | lastUpdated            | 2026-08-02T01:05+02:00                                          |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                      |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                      |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                   |
 
 ## Governing Overview
@@ -65,10 +65,12 @@ contract rather than forwarding native arguments.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The payload builders these forward to. | `grepai_search_payload`; `cgc_symbol_search_payload` | mcp/src/agents_remember/mcp/tools/providers.py:129-139; mcp/src/agents_remember/mcp/tools/providers.py:155-165 |
-| `ProviderQueryScope`, `GrepaiRepoScope`, `GrepaiSearchQuery`, `GrepaiTraceQuery`. | "class ProviderQueryScope:"; "class GrepaiRepoScope:"; "class GrepaiSearchQuery:"; "class GrepaiTraceQuery:" | mcp/src/agents_remember/application/provider_tools.py:106-106; mcp/src/agents_remember/application/provider_tools.py:121-121; mcp/src/agents_remember/application/provider_tools.py:140-140; mcp/src/agents_remember/application/provider_tools.py:149-149 |
+| `ProviderQueryScope`, `GrepaiRepoScope`, `GrepaiSearchQuery`, `GrepaiTraceQuery`. | "class ProviderQueryScope:"; "class GrepaiRepoScope:"; "class GrepaiSearchQuery:"; "class GrepaiTraceQuery:" | mcp/src/agents_remember/application/provider_tools.py:108-108; mcp/src/agents_remember/application/provider_tools.py:123-123; mcp/src/agents_remember/application/provider_tools.py:142-142; mcp/src/agents_remember/application/provider_tools.py:151-151 |
 | Query/scope splitting proved through a live server. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 
 ## Update History
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 6 citation finding(s); scoped recheck clean.

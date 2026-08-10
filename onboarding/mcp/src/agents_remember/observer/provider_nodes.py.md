@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/provider_nodes.py` |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-08-01T15:10+02:00                            |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`        |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00                         |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`        |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -104,8 +104,8 @@ contract used by the dashboard topology.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| CGC current state stores per-repo watcher rows under `resources.watchers`, keyed by repo id. | "def cgc_current_state(" | mcp/src/agents_remember/providers/current_state.py:179-179 |
-| GrepAI current state persists configured repository memory-root targets as `targetRepos`. | `targetRepos` | mcp/src/agents_remember/providers/current_state.py:167-167 |
+| CGC current state stores per-repo watcher rows under `resources.watchers`, keyed by repo id. | "def cgc_current_state(" | mcp/src/agents_remember/providers/current_state.py:182-182 |
+| GrepAI current state persists configured repository memory-root targets as `targetRepos`. | `targetRepos` | mcp/src/agents_remember/providers/current_state.py:170-170 |
 | Isolated worktree GrepAI settings keep the aggregate multi-root provider shape while replacing only the active project root with the worktree memory root. | `isolated_grepai_settings` | mcp/src/agents_remember/providers/grepai/isolated.py:36-74 |
 | The isolated GrepAI test proves the active repo root points at the target memory worktree while an unrelated repo root stays on its source path. | `test_isolated_grepai_settings_swaps_only_active_memory_root` | mcp/tests/test_provider_setup.py:632-706 |
 | `workspace_provider_nodes` expands CGC watcher rows and generic `targetRepos`, but falls back to aggregate workspace provider nodes when evidence is absent. | `workspace_provider_nodes` | mcp/src/agents_remember/observer/provider_nodes.py:16-39 |
@@ -133,10 +133,10 @@ current-state to observer projection boundary.
   ended one line before the `"resources"` block, leaving `"watchers": repos` cit:([`cgc_current_state`], mcp/src/agents_remember/providers/current_state.py:179-203), the symbol the
   finding names, outside it; the repo-id keying it also names is L183-L184. `current_state.py`
   L101-L105; L132-L172 → **L100-L109; L136-L176** — the first stopped three lines short of
-  `target_repos=grepai_target_repos(config)` cit:(["target_repos=grepai_target_repos(config)"], mcp/src/agents_remember/providers/current_state.py:108-108) and the second began in `disabled_provider_state`
+  `target_repos=grepai_target_repos(config)` cit:(["target_repos=grepai_target_repos(config)"], mcp/src/agents_remember/providers/current_state.py:111-111) and the second began in `disabled_provider_state`
   and ended mid-function; the new pair is the GrepAI branch of `current_provider_states` plus
   `grepai_current_state` (`payload` gains `targetRepos` at L167) and `grepai_target_repos`
-  and the `memory_root` mapping cit:(["repo.memory_root.as_posix()"], mcp/src/agents_remember/providers/current_state.py:173-173) is inside the function. `grepai/isolated.py` L36-L67 → **L36-L74** —
+  and the `memory_root` mapping cit:(["repo.memory_root.as_posix()"], mcp/src/agents_remember/providers/current_state.py:176-176) is inside the function. `grepai/isolated.py` L36-L67 → **L36-L74** —
   `isolated_grepai_settings` was truncated mid-function and returns at L74; its second range
   L146-L167 (`_isolated_grepai_roots`) was already exact and is unchanged.
   `test_provider_setup.py` L583-L657 → **L632-L706** — the old range started inside

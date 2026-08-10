@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/__init__.py`    |
 | doc_type               | `file-level-onboarding`                               |
 | lastUpdated            | 2026-08-01T18:30+02:00                                |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`            |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`            |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                         |
 
 ## Purpose
@@ -65,15 +65,17 @@ directs anyone changing how these stores touch disk to read `durable_store.py` f
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The records this package exports. | "class GateRecord" | mcp/src/agents_remember/controlplane/records.py:84-84 |
-| The gate delegation policy this package exports. | "class GatePolicy:" | mcp/src/agents_remember/controlplane/gate_policy.py:52-52 |
-| The store this package exports. | "class GateStore:" | mcp/src/agents_remember/controlplane/store.py:96-96 |
-| The enforcement policy this package exports (slice 6b). | "class GateGuard" | mcp/src/agents_remember/controlplane/enforcement.py:35-35 |
-| The operator inbox records and store this package now exports. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:79-79; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-53 |
+| The records this package exports. | "class GateRecord" | mcp/src/agents_remember/controlplane/records.py:45-45 |
+| The gate delegation policy this package exports (moved to kernel primitives by L9). | "class GatePolicy:" | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54 |
+| The store this package exports. | "class GateStore:" | mcp/src/agents_remember/controlplane/store.py:105-105 |
+| The enforcement policy this package exports (slice 6b). | "class GateGuard" | mcp/src/agents_remember/controlplane/enforcement.py:42-42 |
+| The operator inbox records and store this package now exports. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:40-40; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-53 |
 | The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L71-L106. | `__all__` | mcp/src/agents_remember/controlplane/__init__.py:71-106 |
 | The module that defines every durable-store symbol re-exported here, and the six per-store ownership constants that are deliberately not re-exported. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:45-45 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
   exact anchors and source-backed ranges; exact non-fixing check returns zero findings.

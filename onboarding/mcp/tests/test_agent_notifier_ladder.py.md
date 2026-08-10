@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agent_notifier_ladder.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T06:48+02:00                                            |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                        |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -75,6 +75,7 @@ are gone from every harness.
 
 ## Update History
 
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the current staged ladder-demolition and agent-notifier assertions; the existing test card remains accurate. Verification metadata remains pinned until closeout.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the escalation-predicate
   demolition, the grace-path fixed-point conversion, and the new `escalationBudget`
   load-shed/expectation-compaction scaling tests. Verification metadata pinned until

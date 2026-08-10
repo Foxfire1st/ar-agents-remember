@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -15,21 +15,6 @@
 [mcp/overview.md](../../../../overview.md)
 
 ## Purpose
-
-### 260713-TES-L1 Rename — Response Envelope Banner Field
-
-Both response envelopes (`ResponseModel`, `FlexibleResponseEnvelope`) now declare
-`agentNotifierBanner: str | None = None` plus the legacy `supervisorBanner` alias during the
-rename window; `models/providers.py` and `models/tool_registry.py` comments were corrected to the
-same field name. The strict/flexible envelope split is unchanged.
-
-### 260713-TES-L4 Inbox Response Surface
-
-`models/operator_inbox.py` adds `OperatorInboxSupersedeResponse` (R11 terminal marker:
-`entryId`/`state`/`supersededNow`/`terminalAt`/`terminalReason`/`supersededBy`) and
-`models/tool_registry.py` maps `operator_inbox_supersede` → that model in
-`TOOL_RESPONSE_MODELS`. The consume response state is the unchanged row state (attribution-only,
-N16).
 
 `models/` owns the Pydantic response contracts for Agents Remember MCP payload
 builders. It turns the public tool surface and retained compatibility builders
@@ -39,10 +24,6 @@ runtime and tested by schema. Model homes follow tool domains: `TaskReopenRespon
 the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
-
-The terminal wire model carries optional `spawnRepo`/`spawnSprint` and the binding refusal statuses.
-Absence remains readable for legacy rows but does not authorize the runtime to infer a global
-command-seat scope.
 
 ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete
 role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to
@@ -67,7 +48,7 @@ flexible detail envelopes, token metadata fields, and the strict `NextStep`
 lifecycle-hint model carried by an optional `nextStep` field on BOTH envelope
 bases (`ResponseModel` and `FlexibleResponseEnvelope`), so every modeled tool
 response can surface the computed next move; 260731-EFA-L4 declares the
-`agentNotifierBanner: str | None` stale-supervisor field beside it on both bases and
+`supervisorBanner: str | None` stale-supervisor field beside it on both bases and
 names their union `ResponseEnvelope`. Domain modules then own
 contract slices: `context_packet.py` for compact `ContextPacketV2`,
 `providers.py` for provider summaries and diagnostics, `worktree.py` for
@@ -116,7 +97,7 @@ never changes it). `lifecycle_finalize.py`'s `LifecycleFinalizeTaskResponse` gai
   optional `nextStep: NextStep | None` field, populated for in-lifecycle calls at
   the [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py)`::_tool_payload`
   choke point and excluded when None, so lifecycle-less calls stay unchanged.
-- Both envelope bases also declare `agentNotifierBanner: str | None` (260731-EFA-L4), set at
+- Both envelope bases also declare `supervisorBanner: str | None` (260731-EFA-L4), set at
   the same choke point. It had been written by the choke point since 260707-HFX2-L2 R5 but
   declared on no model, which is the specific hole: `ResponseModel` is `extra="forbid"`, so
   a response carrying a stale-supervisor banner failed its OWN `model_validate`, and
@@ -124,7 +105,7 @@ never changes it). `lifecycle_finalize.py`'s `LifecycleFinalizeTaskResponse` gai
   for the PROVIDER's fields, not this package's. `ResponseEnvelope` is the
   `ResponseModel | FlexibleResponseEnvelope` alias naming the two families; the split between
   them is about `extra`, not about the header, and both carry the same
-  `ok`/`tokens`/`nextStep`/`agentNotifierBanner` fields.
+  `ok`/`tokens`/`nextStep`/`supervisorBanner` fields.
 - `ContextPacketV2` keeps startup context compact and points detailed provider
   troubleshooting to `provider_diagnostics`.
 - Token metadata fields exist on every modeled response; the final S6 wiring
@@ -191,17 +172,17 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:181-185 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
-| Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:17-42; mcp/src/agents_remember/models/operator_inbox.py:45-52; mcp/src/agents_remember/models/operator_inbox.py:55-61 |
+| Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
 | Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:12-22 |
 | Lifecycle finalizer response model covers the terminal task finalization payload. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycle_finalize.py:13-33 |
-| Terminal response models cover hosted session leaf reassignment and the L2 agent-facing session spawn. | `AttachTerminalSessionToLeafResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:30-42; mcp/src/agents_remember/models/terminal.py:80-122 |
+| Terminal response models cover hosted session leaf reassignment and the L2 agent-facing session spawn. | `AttachTerminalSessionToLeafResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:28-40; mcp/src/agents_remember/models/terminal.py:78-120 |
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
 | Produced-vs-declared vocabulary measurement runs in both directions. | `test_every_contract_literal_validates_at_its_wire_field`; `test_every_repo_state_the_git_facts_reader_writes_validates`; `test_every_next_guidance_literal_validates_at_its_wire_field` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:635-645; mcp/tests/test_wire_vocabulary_exhaustiveness.py:691-706; mcp/tests/test_wire_vocabulary_exhaustiveness.py:741-751 |
-| The worktree model imports the contract-cell vocabulary aliases rather than retyping them. | "CleanupStatus,"; "HumanReviewStatus,"; "IntegrationStatus,"; "MemoryMode,"; "WorkflowKind,"; "LifecycleStatus," | mcp/src/agents_remember/models/worktree.py:22-28; mcp/src/agents_remember/models/worktree.py:29-31 |
-| The worktree model imports the phase/next-operation/next-tool aliases from guidance. | "WorktreePhase,"; "NextOperation,"; "NextTool," | mcp/src/agents_remember/models/worktree.py:17-21 |
-| Guidance defines the phase/next-operation/next-tool aliases used by the model. | `WorktreePhase`; `NextOperation`; `NextTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:28-53 |
-| The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:17-25 |
+| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:13-14; mcp/src/agents_remember/models/worktree.py:16-16; mcp/src/agents_remember/models/worktree.py:18-18 |
+| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/models/worktree.py:29-29; mcp/src/agents_remember/models/worktree.py:38-38 |
+| Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model. | "from agents_remember.models.worktree import NextOperation" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-10 |
+| The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19 |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -349,30 +330,33 @@ half derived from the type rather than typed beside it.
 **`tool_registry.py` — the loose type that made the token count wrong.** Both registries are
 `dict[str, type[ResponseEnvelope]]`. Under the previous `dict[str, type[BaseModel]]`,
 `TOOL_RESPONSE_MODELS[tool].model_validate(payload)` was typed as a bare `BaseModel`, on which
-`nextStep` and `agentNotifierBanner` are not attributes a checker knows — so the choke point had
+`nextStep` and `supervisorBanner` are not attributes a checker knows — so the choke point had
 no type-clean way to set them on the validated response, and wrote them into the dict AFTER
 `model_dump` and AFTER `finalize_payload_tokens`. Two consequences, both silent: the served
-response carried bytes the advertised `tokens` did not count, and `agentNotifierBanner` was a key
+response carried bytes the advertised `tokens` did not count, and `supervisorBanner` was a key
 on an object whose model did not declare it. Naming the union is what let the choke point be
 reordered (see the `mcp/tools/` overview). Verified: all 62 registered models are
 `ResponseModel` or `FlexibleResponseEnvelope` subclasses and all 62 declare both fields, so the
 narrower type is true of the whole registry today.
 
+## 260731-EFA-L9 Route Impact — Conversation Wire Models Join This Route
+
+The route now owns more than MCP response contracts. 260731-EFA-L9 moved the stable
+conversation/evidence/control-wire grammar out of `serving/` into the new
+`models/conversations/` child route (16 responsibility-owned modules + curated `__init__.py`
+export surface), moved the terminal-catalog row vocabulary into `models/terminal_catalog.py`,
+and added the task-document wire vocabulary in `models/task_document.py`. The route model is
+unchanged in kind — strict owned contracts, curated exports — but the wire surface it governs is
+now shared by serving projectors/control and the response-model registry. `models/__init__.py`
+re-exports the curated conversation surface (R6); no forwarding shims exist at the old serving
+paths.
+
 ## Update History
 
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1: integration and strict finalization response models now
-  declare closed, deferred, failed, and landed completion-seat result lists.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed terminal model vocabulary for sprint provenance
-  and legacy absence. Verification metadata remains pinned until closeout.
-
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded
-  `OperatorInboxSupersedeResponse` and its `TOOL_RESPONSE_MODELS` mapping (R11), plus the
-  attribution-only consume response state (N16). Verification metadata pinned until closeout
-  stamps the 260713-TES-L4 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-"- 2026-08-04T08:45:26+02:00 — 260731-EFA-L6 S18-B07 curator correction: split the measurement and vocabulary-import claims and rebound them to frozen module bodies/imports; same-reviewer delta pending.
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the models/conversations child
+  route, terminal-catalog/task-document vocabulary moves, and the curated export additions.
+  Verification metadata pinned until closeout stamps the L9 code commit.
+- 2026-08-04T08:45:26+02:00 — 260731-EFA-L6 S18-B07 curator correction: split the measurement and vocabulary-import claims and rebound them to frozen module bodies/imports; same-reviewer delta pending.
 - 2026-08-03T02:57:31+02:00 — W3-B05 curator: resolved 10 Tier-2 table findings and 1 Tier-2 prose finding with exact source paths; fixer generated all final ranges.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

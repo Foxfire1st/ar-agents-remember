@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_closeout_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -205,8 +205,6 @@ cases turn on.
   checks the selectors are gone would pass a `quality_environment` that returned `{}`.
 - Failure evidence is useful but bounded.
 - Gate failure precedes every code, memory, ledger, and contract mutation.
-- A memory-preflight failure precedes the code-quality runner itself: Ruff, Pyright, and pytest
-  remain uncalled, and the preview lists that preflight before the targeted gate.
 - At least one test must observe the *actual argument* passed from `closeout.py`, because the type
   system cannot.
 - The gate's scope and the commit's content must remain **one set**, asserted as an equality rather
@@ -257,8 +255,8 @@ The suite proves the adapter and its production closeout call sites together.
 | `quality_environment`, whose `git_environment()` base the selector test asserts. | `quality_environment` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:294-316 |
 | The unannotated call sites the spy guards, both passing `contract.code_worktree` and `diff_base=contract.code_base_commit`. The apply path now reaches the gate through `_gate_staged_code`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
 | `_gate_staged_code` under test: both refusals, then the mixed reset, then `add -A`, then the gate — and the recorded reasoning for the ordering and for having no rollback. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
-| The two preconditions themselves: the linked-worktree check and the unmerged-index check. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/modules/closeout.py:749-788; mcp/src/agents_remember/worktrees/modules/closeout.py:791-814 |
-| The scope derivation the created-file cases exercise for real — `git ls-files` over the index is why staging changes what the gate sees. | `derive_scope`; `posix_args` | mcp/src/agents_remember/code_quality/check.py:73-74; mcp/src/agents_remember/code_quality/check.py:296-297 |
+| The two preconditions themselves: the linked-worktree check and the unmerged-index check. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/modules/closeout.py:746-785; mcp/src/agents_remember/worktrees/modules/closeout.py:788-811 |
+| The scope derivation the created-file cases exercise for real — `git ls-files` over the index is why staging changes what the gate sees. | `derive_scope`; `posix_args` | mcp/src/agents_remember/code_quality/check.py:73-74; mcp/src/agents_remember/code_quality/check.py:311-312 |
 | `GIT_REPOSITORY_SELECTOR_ENV` — the eight names the selector test plants and then requires absent — and `git_environment`, which removes them. | `GIT_REPOSITORY_SELECTOR_ENV`; `git_environment` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:76-82 |
 
 ## Cross-Repo References
@@ -285,10 +283,9 @@ asserts the apply path passes the targeted plan alongside
 
 ## Update History
 
-- 2026-08-10T08:20+02:00 — 260805-ARG-L1: added the direct phase-order regression proving a
-  failed memory preflight never calls the code-quality runner, plus the preview-order assertion
-  that names the preflight before Pyright/pytest. Verification metadata remains pinned until
-  closeout stamps ARG-L1.
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: recorded the current closeout quality-gate assertions
+  and staged wrapper boundary; verification metadata remains pinned until closeout.
+
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the targeted-mode
   command assertions and the full-mode/cap/kill-shape regressions. Verification
   metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.

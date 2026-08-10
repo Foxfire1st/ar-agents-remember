@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/leaf_ref_validation.py` |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`              |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`              |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -44,10 +44,12 @@ catch `LeafRefResolutionError` and return transport-specific refusals.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Shared resolver and expected-form errors. | `# mcp/src/agents_remember/worktrees/leaf_refs.py` | onboarding/mcp/src/agents_remember/worktrees/leaf_refs.py.md:1-158 |
-| Dashboard terminal open/attach routes that call this adapter. | "def create_app" | mcp/src/agents_remember/serving/app.py:226-226 |
+| Dashboard terminal open/attach routes that call this adapter. | "def create_app" | mcp/src/agents_remember/serving/app.py:232-232 |
 | MCP terminal payload builders that call this adapter. | "def attach_terminal_session_to_leaf_payload" | mcp/src/agents_remember/mcp/tools/terminal.py:26-26 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18 wave curator (unowned card): rebound the two
   out-of-bounds onboarding-card citations to their code authorities; exact non-fixing check

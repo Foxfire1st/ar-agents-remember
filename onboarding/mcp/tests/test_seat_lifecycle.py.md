@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_seat_lifecycle.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-08-10T06:28+02:00 |
-| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -17,12 +17,12 @@
 ## Purpose
 
 `test_seat_lifecycle.py` is the failing-first + regression suite for seat lifecycle behavior:
-retirement authority/manual retire, automatic completion cleanup, live identity/rename, and
+retirement authority/manual retire, landed completion classification, live identity/rename, and
 live turn-state. It covers the retire authority matrix, the `session_retire`/`session_rename` MCP
 tools end-to-end, turn-state classification from scripted pane fixtures, the terminal-mark vs.
-liveness-hysteresis interplay, and the `worktree_integrate`/`lifecycle_finalize_task` close-or-land
-hooks. Dedicated failure/race containment moved to `test_completion_cleanup.py` with its source
-owner; this suite retains successful integration/finalization wiring and role/report selection.
+liveness-hysteresis interplay, and the `worktree_integrate`/`lifecycle_finalize_task` auto-land
+hooks (including the best-effort guard that prevents a landing failure from failing an already
+succeeded completion edge).
 
 ## Code Commentary
 
@@ -83,13 +83,19 @@ Test classes, in file order:
   matching BOTH `leaf_key` and `roles`, leaves a manager row and a different-leaf worker row
   untouched, records the landing provenance carried by `SeatClosure`, and skips
   already-terminated seats.
-- **`AutoLandHookIntegrationTests`** — ARG-L1 completion-edge wiring around a fake contract and
-  fake terminal host. Exact-session/exact-leaf durable reports close worker/reviewer/curator via
-  normal retirement, prove tmux termination/catalog auto-close provenance, and leave a seeded
-  transcript unchanged; manager/orchestrator remain running. Missing and wrong-leaf reports defer;
-  `autoCloseCompletedSeats=false` lands all three leaf roles; edge-off and dry-run do nothing;
-  finalization retries late subordinate cleanup without touching the manager.
-- **`RetirementSettingsConfigTests`** — all three `RetirementSettings()` fields default `True`.
+- **`AutoLandHookIntegrationTests`** — the completion-edge wiring in
+  `application/worktree_tools.py`, built around a fake `WorktreeContract` and mocked
+  `git_worktree_manager.integrate_result`/`finalize_result`: `worktree_integrate_tool` auto-lands
+  worker+reviewer seats (manager untouched) and reports them in `autoLandedSeats`; skipped when
+  `auto_land_on_integration=False` (key absent from the result entirely, not an empty list) or on a
+  `dry_run` (same absent-key shape); `lifecycle_finalize_task_tool` auto-lands manager+reviewer
+  seats; an unreadable contract (`load_contract` raising `OSError`) skips silently — `ok: True`,
+  `autoLandedSeats: []`, the edge itself unblocked. Best-effort regression tests monkeypatch
+  `worktree_tools.land_seats_for_leaf` itself to raise (`OSError` and `RuntimeError` respectively),
+  asserting integrate/finalize still return `ok: True` with `autoLandedSeats: []` and the seeded
+  catalog row untouched.
+- **`RetirementSettingsConfigTests`** — `RetirementSettings()` defaults: both
+  `auto_land_on_integration`/`auto_land_on_finalize` default `True`.
 
 ### Conventions
 
@@ -101,7 +107,7 @@ rather than a shared fixture, so catalog file state never leaks between tests.
 
 This file tests behavior across the seat lifecycle source files (`retire_policy.py`, `retire.py`,
 `landing.py`, `turn_state.py`, `terminal_catalog.py`, `terminal_liveness.py`, and
-`application/worktree_tools.py`'s close-or-land hooks) plus the `session_retire`/`session_rename` MCP
+`application/worktree_tools.py`'s auto-land hooks) plus the `session_retire`/`session_rename` MCP
 tool payloads and `RetirementSettings` config parsing.
 
 ### Todos
@@ -115,7 +121,7 @@ same-repository unit/integration test file with no external-standard dependency.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document governs this test shape; the leaf task doc's failing-first requirement list is the source of truth for coverage scope. | "class RetirePolicyMatrixTests" | mcp/tests/test_seat_lifecycle.py:112-112 |
+| No external/domain document governs this test shape; the leaf task doc's failing-first requirement list is the source of truth for coverage scope. | "class RetirePolicyMatrixTests" | mcp/tests/test_seat_lifecycle.py:120-120 |
 
 ## Repo-Internal References
 
@@ -123,14 +129,14 @@ This suite directly exercises five source files and the leaf task doc's requirem
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `RetirePolicyMatrixTests` exercises `check_retire_authority`/`master_of`/`RetirePolicyError` directly. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:112-180 |
-| `LandSeatsForLeafTests` exercises `land_seats_for_leaf` directly. | `LandSeatsForLeafTests` | mcp/tests/test_seat_lifecycle.py:593-643 |
-| `TurnStateClassificationTests` exercises `classify_turn_state` directly. | `TurnStateClassificationTests` | mcp/tests/test_seat_lifecycle.py:383-475 |
-| `TurnStateSweepWiringTests` exercises `observe_terminal_liveness`'s alive-classification path with an injected `pane_capturer`. | `TurnStateSweepWiringTests` | mcp/tests/test_seat_lifecycle.py:476-546 |
-| `TerminalMarkVsLivenessInterplayTests` exercises `mark_retired`/`record_liveness_probe` interplay on `TerminalCatalog` directly. | `TerminalMarkVsLivenessInterplayTests` | mcp/tests/test_seat_lifecycle.py:547-592 |
-| `AutoLandHookIntegrationTests` exercises both successful completion edges, exact report ordering, all three subordinate roles, owner exclusions, retire provenance, transcript retention, opt-out landing, edge-off, and dry-run behavior. | `AutoLandHookIntegrationTests` | mcp/tests/test_seat_lifecycle.py:645-869 |
-| `RetirementSettingsConfigTests` exercises all `RetirementSettings` defaults (parsing is covered separately in `test_config.py::RetirementSettingsTests`). | `RetirementSettingsConfigTests` | mcp/tests/test_seat_lifecycle.py:870-878 |
-| `SessionRetireToolTests`/`SessionRenameToolTests` exercise `session_retire_payload`/`session_rename_payload` end-to-end. | `SessionRetireToolTests`; `SessionRenameToolTests` | mcp/tests/test_seat_lifecycle.py:181-327; mcp/tests/test_seat_lifecycle.py:328-382 |
+| `RetirePolicyMatrixTests` exercises `check_retire_authority`/`master_of`/`RetirePolicyError` directly. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:103-166 |
+| `LandSeatsForLeafTests` exercises `land_seats_for_leaf` directly. | `LandSeatsForLeafTests` | mcp/tests/test_seat_lifecycle.py:584-633 |
+| `TurnStateClassificationTests` exercises `classify_turn_state` directly. | `TurnStateClassificationTests` | mcp/tests/test_seat_lifecycle.py:374-464 |
+| `TurnStateSweepWiringTests` exercises `observe_terminal_liveness`'s alive-classification path with an injected `pane_capturer`. | `TurnStateSweepWiringTests` | mcp/tests/test_seat_lifecycle.py:467-532 |
+| `TerminalMarkVsLivenessInterplayTests` exercises `mark_retired`/`record_liveness_probe` interplay on `TerminalCatalog` directly. | `TerminalMarkVsLivenessInterplayTests` | mcp/tests/test_seat_lifecycle.py:538-578 |
+| `AutoLandHookIntegrationTests` exercises `worktree_integrate_tool`/`lifecycle_finalize_task_tool`/`_auto_land_completed_seats` including the best-effort landing guard. | `AutoLandHookIntegrationTests` | mcp/tests/test_seat_lifecycle.py:636-824 |
+| `RetirementSettingsConfigTests` exercises `RetirementSettings` defaults (config parsing itself is covered separately in `test_config.py::RetirementSettingsTests`). | `RetirementSettingsConfigTests` | mcp/tests/test_seat_lifecycle.py:878-883 |
+| `SessionRetireToolTests`/`SessionRenameToolTests` exercise `session_retire_payload`/`session_rename_payload` end-to-end. | `SessionRetireToolTests`; `SessionRenameToolTests` | mcp/tests/test_seat_lifecycle.py:172-313; mcp/tests/test_seat_lifecycle.py:319-368 |
 
 ## Cross-Repo References
 
@@ -152,16 +158,8 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-10T06:28+02:00 — Moved completion-cleanup failure/race cases to the dedicated
-  `test_completion_cleanup.py` suite and reconciled all class ranges. This file now owns successful
-  edge wiring; the dedicated suite owns containment. Verification metadata remains blank until
-  closeout stamps the code commit.
-
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1: replaced completion-edge landing expectations with
-  exact-report-gated worker/reviewer/curator retirement, tmux/provenance/transcript proofs,
-  manager/orchestrator exclusion, deferral, opt-out landing, and failure-containment coverage.
-  Verification metadata remains pinned until closeout stamps ARG-L1.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: corrected the shared-fixture and injection-seam

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/hosted_session_runtime.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-31 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,7 +20,7 @@ Holds `HostedSessionRuntime` — the pair of authorities that jointly decide whi
 exist. New at 260731-EFA-L2.
 
 A hosted session is two things at once: a durable catalog row (identity, provenance, control
-metadata) and a live tmux process. Neither answers "does this session exist, and what is it?" on its
+metadata) and a live tmux process. Neither answers "does this session exist" on its
 own — opening, reopening, retiring, delivering to and reconciling a seat all read the row and probe
 the process together, and **a row read against the wrong host is a silent correctness bug**. This
 type makes the pairing a single value so the two can only travel bound to each other.
@@ -67,6 +67,8 @@ No meaningful cross-repo references.
 
 ## Update History
 
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: created for the new module. Verification metadata stays
   pinned to the pre-commit source history until closeout.
+

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ protocol snapshot is recorded in the repository fixture instead.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Fixture pins the CLI version, protocol, and stable method inventory. | "codex-app-server/0.144.3", "initialize", "model/list" | mcp/tests/fixtures/codex_app_server_0_144_3.json:4-16 |
-| Adapter uses this transport for correlated fresh-turn settings application on the existing thread. | `CodexAppServerSession`, `set_model`, `set_effort` | mcp/src/agents_remember/serving/codex_app_server_session.py:102-458; mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224 |
+| Adapter uses this transport for correlated fresh-turn settings application on the existing thread. | "class CodexAppServerSession:", "async def set_model(", "async def set_effort(" | mcp/src/agents_remember/serving/codex_app_server_session.py:102-458; mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224 |
 
 ## Cross-Repo References
 
@@ -89,7 +89,7 @@ the final claim and write, making withdrawal-vs-dispatch linearization observabl
 ## 260727-CHATS-IM-L2 Emergency Framing Fuse Delta
 
 The former 4 MiB normal-operation cap is replaced by
-cit:([`CODEX_REMOTE_COMPATIBILITY_CEILING_BYTES`], mcp/src/agents_remember/serving/codex_app_server_protocol.py:22-22). This number is the available
+cit:([`CODEX_REMOTE_COMPATIBILITY_CEILING_BYTES`], mcp/src/agents_remember/serving/codex_app_server_protocol.py:27-27). This number is the available
 Codex remote app-server compatibility precedent and an emergency malformed/runaway JSON payload
 fuse only; it is not paging and does not bound retained history. cit:([`_read_messages`], mcp/src/agents_remember/serving/codex_app_server_protocol.py:217-246) removes exactly
 one JSONL newline before comparing payload bytes: a 128 MiB payload plus delimiter is
@@ -97,6 +97,8 @@ valid, 128 MiB + 1 is shared-fatal, and the same explicit failure reaches pendin
 stream because the JSONL transport cannot safely resynchronize after a partial oversized record.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 8 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=2, citation_source_malformed=3); final scoped citation check clean.
 - 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented the 128 MiB emergency payload

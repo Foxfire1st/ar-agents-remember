@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/turn_state.py`         |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-08T02:43+02:00                                  |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -91,8 +91,8 @@ path — with pane text captured by `terminal_paste.capture_pane`.
 | --- | --- | --- |
 | `_observe_alive` records the pane classification; adapter snapshots remain authoritative for persisted state. | `_observe_alive` | mcp/src/agents_remember/serving/terminal_liveness.py:327-393 |
 | The terminal-paste module defines the shared history-inclusive `capture_pane` wrapper and its bounded history argv supplying classifier input. | "def capture_pane"; `_capture_pane_argv`; `_CAPTURE_HISTORY_LINES` | mcp/src/agents_remember/serving/terminal_paste.py:40-40; mcp/src/agents_remember/serving/terminal_paste.py:181-182; mcp/src/agents_remember/serving/terminal_paste.py:201-201 |
-| The classification result is persisted via `TerminalCatalog.record_turn_state`, with `with_turn_state` producing the catalog copy. | `record_turn_state`; `with_turn_state` | mcp/src/agents_remember/serving/terminal_catalog.py:516-520; mcp/src/agents_remember/serving/terminal_catalog.py:819-833 |
-| The per-harness marker override tables are keyed by the supplied harness id in `turn_state`, with keyed lookups tried before shared patterns. | `_classify_by_marker_tables`; "key = harness or \"\""; "_HARNESS_WORKING_PATTERNS.get(key,"; "_HARNESS_AWAITING_INPUT_PATTERNS.get(key,"; "_HARNESS_TURN_ENDED_PATTERNS.get(key," | mcp/src/agents_remember/serving/turn_state.py:140-154 |
+| The classification result is persisted via `TerminalCatalog.record_turn_state`, with `with_turn_state` producing the catalog copy. | `record_turn_state`; `with_turn_state` | mcp/src/agents_remember/serving/terminal_catalog.py:243-257 |
+| The per-harness marker override tables are keyed by the supplied harness id in `turn_state`, with keyed lookups tried before shared patterns. | `_classify_by_marker_tables`; "key = harness or \"\""; "_HARNESS_WORKING_PATTERNS.get(key"; "_HARNESS_AWAITING_INPUT_PATTERNS.get(key"; "_HARNESS_TURN_ENDED_PATTERNS.get(key" | mcp/src/agents_remember/serving/turn_state.py:140-154 |
 | Tests cover classification precedence, marker families, and the empty per-harness override fallback from scripted pane-text fixtures. | `TurnStateClassificationTests` | mcp/tests/test_seat_lifecycle.py:374-464 |
 | The adapter exposes diagnostic `blocked_reason`; pane classification does not provide a boot-readiness authority method. | `HarnessAdapter`; `blocked_reason` | mcp/src/agents_remember/serving/harness_adapters.py:14-25 |
 | Adapter tests pin stable known/generic classification and keep `blocked_reason` diagnostic-only. | `test_known_and_generic_adapters_are_stable`; `test_blocked_reason_is_failure_diagnostic_only` | mcp/tests/test_harness_adapters.py:11-15; mcp/tests/test_harness_adapters.py:18-25 |
@@ -131,6 +131,8 @@ unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T14:17+02:00 — 260731-EFA-L6 S18-B13 curator: closed D11 complete marker-table lookup construct evidence for the same-reviewer residual delta.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `_first_matching_state` / `_classify_codex_pane` / `_classify_by_marker_tables` split; marker tables and precedence unchanged.

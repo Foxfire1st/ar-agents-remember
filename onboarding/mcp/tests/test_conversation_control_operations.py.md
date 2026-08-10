@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_control_operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,8 +85,8 @@ fields.
 | --- | --- | --- |
 | The interrupt ledger under test, incl. the Finding 1 payload-type settlement match. Both entry points now take a `ControlRequest`, the per-attempt values travel as `InterruptTicket` (L205-L216), and the claude branch's settlement match was extracted into `_claude_result_settlement` (L417-L450). | `interrupt` | mcp/src/agents_remember/serving/conversation/control/operations.py:95-156; mcp/src/agents_remember/serving/conversation/control/operations.py:159-160; mcp/src/agents_remember/serving/conversation/control/operations.py:205-216; mcp/src/agents_remember/serving/conversation/control/operations.py:417-450; mcp/src/agents_remember/serving/conversation/control/operations.py:452-482 |
 | The `ControlRequest` scope object these calls build, and its `resolved()` narrowing to a verified-epoch `ControlScope`. | `ControlRequest` | mcp/src/agents_remember/serving/conversation/control/service.py:156-197 |
-| The shared fake-topology harness (real bridge/IPC/authority, `NOW`-anchored service, pi emit helpers). | `NOW` | mcp/tests/_control_plane.py:68-68 |
-| The L3E truncation-envelope identity preservation the Finding 2 regressions depend on. | `_preserved_evidence_identity` | mcp/src/agents_remember/serving/harness_control_models.py:727-754 |
+| The shared fake-topology harness (real bridge/IPC/authority, `NOW`-anchored service, pi emit helpers). | `NOW` | mcp/tests/_control_plane.py:82-82 |
+| The L3E truncation-envelope identity preservation the Finding 2 regressions depend on. | `_preserved_evidence_identity` | mcp/src/agents_remember/models/conversations/evidence.py:242-269 |
 
 ## Cross-Repo References
 
@@ -103,6 +103,8 @@ Control-operation regressions now cover structured interaction answers and nativ
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 3 citation rows
   (operations.py ledger extents, service.py `ControlRequest`/`ControlScope`, harness_control_models

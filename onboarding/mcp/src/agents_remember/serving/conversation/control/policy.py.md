@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/policy.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,7 +34,7 @@ the live snapshot carrying the control-contract capability's own `capability.rea
 260718-CHATS-L5F R4 that reason is contract-verification language ("unverified until the control seam
 is probed"), NEVER a locked-version-mismatch string; codex approval/sandbox values are adapter-private
 at thread/turn start and never cross (honestly unverified); pi has no built-in permission-popup
-surface. cit:([`_freshness`], mcp/src/agents_remember/serving/conversation/control/policy.py:133-134) stamps the observed-time window. cit:([`_POLICY_ORIGIN`], mcp/src/agents_remember/serving/conversation/control/policy.py:33-33) is the AR
+surface. cit:([`_freshness`], mcp/src/agents_remember/serving/conversation/control/policy.py:139-140) stamps the observed-time window. cit:([`_POLICY_ORIGIN`], mcp/src/agents_remember/serving/conversation/control/policy.py:39-39) is the AR
 composition origin string.
 
 ### Conventions
@@ -71,8 +71,8 @@ authorization ruling; the harness mode reads the live snapshot.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `CapabilityEvidence`/`FeatureCapability` DTOs and wire model base. | "class WireModel(BaseModel):"; "class CapabilityEvidence(WireModel):"; "class FeatureCapability(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:38-38; mcp/src/agents_remember/serving/conversation/_models_status.py:255-255; mcp/src/agents_remember/serving/conversation/_models_status.py:262-262 |
-| The AR local-operator ruling and canonical scope the `repoPolicy` part reports. | `LocalOperatorAuthorizationResolver`; `for_workspace`; `resolve`; `require` | mcp/src/agents_remember/serving/conversation/authorization.py:69-105 |
+| The `CapabilityEvidence`/`FeatureCapability` DTOs and wire model base. | "class WireModel(BaseModel):"; "class CapabilityEvidence(WireModel):"; "class FeatureCapability(WireModel):" | mcp/src/agents_remember/models/conversations/primitives.py:15-15; mcp/src/agents_remember/models/conversations/capabilities.py:11-11; mcp/src/agents_remember/models/conversations/capabilities.py:18-18 |
+| The AR local-operator ruling and canonical scope the `repoPolicy` part reports. | "class LocalOperatorAuthorizationResolver:"; "def for_workspace(cls" | mcp/src/agents_remember/serving/conversation/authorization.py:72-105 |
 | The `policyRead` capability gate. | `policyRead` | dashboard/src/data/conversation/types.ts:274-274 |
 | The live snapshot `harnessMode` reads Claude `permissionMode` from. | `_harness_mode` | mcp/src/agents_remember/serving/conversation/control/policy.py:104-130 |
 
@@ -92,7 +92,7 @@ No meaningful cross-repo references found.
   The three single-line anchors each pointed at the blank line ABOVE their construct (a one-line
   shift, from the module docstring's re-wrap) and are now full spans: `PolicyPart` L35 → L36-L43,
   `ConversationPolicyProjection` L45 → L46-L55, `conversation_policy` L57 → L58-L101. cit:([`_harness_mode`], mcp/src/agents_remember/serving/conversation/control/policy.py:104-130),
-  cit:([`_freshness`], mcp/src/agents_remember/serving/conversation/control/policy.py:133-134) and cit:([`_POLICY_ORIGIN`], mcp/src/agents_remember/serving/conversation/control/policy.py:33-33) were re-checked and still land on their own
+  cit:([`_freshness`], mcp/src/agents_remember/serving/conversation/control/policy.py:139-140) and cit:([`_POLICY_ORIGIN`], mcp/src/agents_remember/serving/conversation/control/policy.py:39-39) were re-checked and still land on their own
   `def`/assignment. No claim text changed; every claim still holds.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The single

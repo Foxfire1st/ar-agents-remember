@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_codex_adapter_thread_routing_and_registry.py` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-31T15:32+02:00                                       |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                   |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                   |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -69,11 +69,13 @@ registry assertions a statement about a **settled** frame rather than a race.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The Codex app-server adapter, its thread demux and agent registry. | `CodexAppServerAdapter`; `CodexThreadRegistry` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115; mcp/src/agents_remember/serving/codex_app_server_threads.py:69-300 |
+| The Codex app-server adapter, its thread demux and agent registry. | "class CodexAppServerAdapter:"; "self._threads = CodexThreadRegistry(" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115; mcp/src/agents_remember/serving/codex_app_server_threads.py:69-300 |
 | The demux suite this module extends. | "test_spawned_subagent_traffic_never_fails_the_bridge" | mcp/tests/test_codex_adapter_thread_demux.py:118-158 |
-| The sub-agent projector whose roster these registry bindings feed. | "class CodexAgentEngineTests1(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_conversation_projector_codex_agents_engine_1.py:89-89 |
+| The sub-agent projector whose roster these registry bindings feed. | "class CodexAgentEngineTests1(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_conversation_projector_codex_agents_engine_1.py:97-97 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T11:15+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 6 assigned citation findings (3 missing anchors and 3 malformed sources); final scoped check is clean.
 

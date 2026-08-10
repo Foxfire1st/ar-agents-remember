@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/webtuiSpike.test.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:42+02:00                           |
-| lastVerifiedCommitHash | `ee955085a2010f62e9ad4d2bdc6aa77975daa5f3`       |
-| lastVerifiedCommitDate | 2026-07-17T00:42:07+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ The four spike assertions plus the pin check:
   effects, webtui, tokens, recipes, utilities`; WebTUI's `outline: none` reset really exists AND
   the mapping file's scoped `:focus-visible` amber restore is present. cit:(["slots webtui between effects and tokens in the FIRST @layer statement"], dashboard/src/test/webtuiSpike.test.ts:157-162) cit:(["WebTUI's outline reset exists but the mapping file restores :focus-visible inside the scope"], dashboard/src/test/webtuiSpike.test.ts:164-171)
 - **Exact pins**: `@webtui/css` is literally `0.1.9`; `cmdk`/`tinykeys` and the dev
-  `postcss-prefix-selector` carry no range sigils. cit:(["pins @webtui/css, cmdk, and tinykeys exactly (no range sigils)"], dashboard/src/test/webtuiSpike.test.ts:175-181)
+  `postcss-prefix-selector` carry no range sigils. cit:(["pins @webtui/css"], dashboard/src/test/webtuiSpike.test.ts:175-181)
 
 ### Invariants And Boundaries
 

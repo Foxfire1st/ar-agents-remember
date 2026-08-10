@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -132,7 +132,7 @@ No sibling repository evidence is needed for these tests.
   `CgcInstance`/`CgcRepo` alongside `to_container_path`. Every own-file line range in
   Repo-Internal References was re-derived from the current source after the reformat — several
   were already stale before this leaf — so the rows now point at the imports plus `parse_cgc`
-  cit:(["from agents_remember.providers.cgc.context.core import CgcInstance, CgcRepo", "def parse_cgc(self, argv: list[str]):"], mcp/tests/test_provider_lifecycle_parser_1.py:10-10; mcp/tests/test_provider_lifecycle.py:121-121), the render tests
+  cit:(["from agents_remember.providers.cgc.context.core import CgcInstance", "def parse_cgc(self"], mcp/tests/test_provider_lifecycle_parser_1.py:10-10; mcp/tests/test_provider_lifecycle.py:121-121), the render tests
   cit:(["test_compose_auto_ports_render_with_empty_published_port"], mcp/tests/test_provider_lifecycle.py:91-91), the parser and default-root tests
   cit:(["test_visualize_accepts_named_options_after_subcommand", "test_grepai_direct_run_requires_settings_backed_docker"], mcp/tests/test_provider_lifecycle_parser_1.py:19-19; mcp/tests/test_provider_lifecycle_parser_1.py:73-73; mcp/tests/test_provider_lifecycle.py:282-282), Docker-mode GrepAI
   cit:(["test_cgc_service_run_builds_command_without_cli_main", "test_watchers_service_reads_settings_without_cli_main", "test_cgc_start_all_dry_run_reports_project_migration"], mcp/tests/test_provider_lifecycle_parser_1.py:202-202; mcp/tests/test_provider_lifecycle_parser_1.py:490-490; mcp/tests/test_provider_lifecycle_parser_1.py:670-670), Compose

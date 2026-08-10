@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/submissionLifecycleClient.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ No Domain Documentation source is configured for this repository.
 | The pure evidence fold defines admissible lifecycle progression. | `settleSubmissionObservation`, `projectSubmissionLifecycle` | dashboard/src/data/submitMachine.ts:155-186; dashboard/src/data/submitMachine.ts:265-294 |
 | The cockpit store owns pending-withdrawal and recovery-slot projections. | `setWithdrawal`, `replaceComposerDraftIfRevision` | dashboard/src/data/sessionCockpitStore.ts:231-231; dashboard/src/data/sessionCockpitStore.ts:257-257 |
 | The composer binds Alt+Up and renders the queue/recovery affordances. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:57-117 |
-| Tests exercise withdrawal races, lost responses, CAS recovery, exact dismissal, and poll order. | "atomic Alt+Up withdrawal", "polls immediately then at the visible cadence, keeps polling past dispatch, and stops on delivered" | dashboard/src/data/submissionLifecycleClient.test.ts:194-233; dashboard/src/data/submissionLifecycleClient.test.ts:339-1127 |
+| Tests exercise withdrawal races, lost responses, CAS recovery, exact dismissal, and poll order. | "atomic Alt+Up withdrawal", "polls immediately then at the visible cadence" | dashboard/src/data/submissionLifecycleClient.test.ts:194-233; dashboard/src/data/submissionLifecycleClient.test.ts:339-1127 |
 
 ## Cross-Repo References
 

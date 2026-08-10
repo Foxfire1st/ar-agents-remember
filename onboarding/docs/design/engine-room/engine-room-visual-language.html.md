@@ -6,8 +6,8 @@
 | path                   | `docs/design/engine-room/engine-room-visual-language.html` |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-06-21T23:35                                     |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`           |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`           |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -23,7 +23,7 @@ to be opened in a browser: each primitive (lines, nodes, engines, coupler, packe
 choreography, despawn) is shown as a live, animated example next to the semantic it carries
 and the exact parameters (ease, duration, OKLCH colour, glow radius). When a developer wants
 to change an engine-room primitive, they point at it **by name** from this page, and the rule
-is "change it here first, then mirror it in the React engine room." It exists so the visual
+is "change it here first" It exists so the visual
 language survives across sessions and stays legible without running the dashboard.
 
 ## Code Commentary

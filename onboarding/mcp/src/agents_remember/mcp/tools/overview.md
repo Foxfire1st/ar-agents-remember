@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -82,7 +82,7 @@ domain application entry point and validates the result through `base._tool_payl
 task 27 that choke point also attaches the engine-computed `nextStep` hint onto every
 active-lifecycle response, computed by
 `next_step.py`. **260707-HFX2-L2 (R5)** adds a third thing this same choke point
-surfaces on every call: a `agentNotifierBanner` string when the serving daemon's
+surfaces on every call: a `supervisorBanner` string when the serving daemon's
 supervisor-sweep heartbeat has gone stale (`serving.supervisor_heartbeat
 .agent_notifier_staleness_banner`, exception-contained at the call site) — issue #15's
 "the watcher must be code AND watched" surfaced at the one place every MCP tool
@@ -108,7 +108,6 @@ the dashboard terminal catalog move policy. L2 adds the public `spawn_agent_sess
 submodule — the agent-facing dispatch tool that composes the shared serving opener + a capture-verified
 context paste (260707-HFX-L3: `contextDelivered` only after the pane provably shows the paste; failures ship `deliveryCapture`) to create a role-configured, leaf-attached, context-primed hosted session. HFX2-L10 makes
 settings the spend authority for ordinary callers: legacy non-null `harness`/`model`/`effort`,
-
 direct `launch_args`/`prompt_keywords`/`session_commands`, `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, and
 maintained harness-native spend/endpoint env keys refuse with `spend-override-unsupported` before
 leaf resolution, host spawn, catalog writes, expectation rows, or paste delivery. Since 260703-L16
@@ -139,17 +138,11 @@ retires, manager scoped to its own master's worker/reviewer seats, orchestrator 
 caller (mirrors `spawn_agent_session`'s `spawned_by_session` pattern) — there is no ambient "who is
 calling me" session-id resolution anywhere in this codebase.
 
-**260713-TES-L4** adds `operator_inbox_supersede_payload` to the `operator_inbox.py` submodule,
-the facade (`mcp/tools/__init__.py`), and `PUBLIC_TOOLS` (58 → 59) — the explicit
-supersession builder (R11). `operator_inbox_poll_payload` gained `include_terminal` (N11), and
-the consume builder is attribution-only (N16); the completion-wake wording above is superseded
-in the sidecars (post-time re-resolution now covers every owner-addressed post).
-
 ## Layout
 
 | Module          | Owns                                                                       |
 | --------------- | -------------------------------------------------------------------------- |
-| `base.py`       | `TRANSPORT`, `PUBLIC_TOOLS` (59), `RESERVED_TOOLS` (empty), and `_tool_payload` — the choke point. Since 260731-EFA-L4 its order is: `model_validate` → (in-lifecycle only) `_attach_lifecycle_tail` → ONE `model_dump(mode="json", exclude_none=True)` → `finalize_payload_tokens` → `amb.emit_tool`. `_attach_lifecycle_tail(response, amb, tool_name)` runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification` — the name guard is mandatory, since the notification itself flows through here in the same call that set the state), then assigns `response.nextStep = next_step_for(...)` and `response.agentNotifierBanner = _agent_notifier_banner(amb)`. Both are assigned unconditionally, `None` included, because `exclude_none=True` drops them — so a lifecycle-less or live-supervisor response is byte-identical to before. Both remain exception-safe and never raise into the tool path (`_agent_notifier_banner` swallows an unreadable heartbeat file). |
+| `base.py`       | `TRANSPORT`, `PUBLIC_TOOLS` (58), `RESERVED_TOOLS` (empty), and `_tool_payload` — the choke point. Since 260731-EFA-L4 its order is: `model_validate` → (in-lifecycle only) `_attach_lifecycle_tail` → ONE `model_dump(mode="json", exclude_none=True)` → `finalize_payload_tokens` → `amb.emit_tool`. `_attach_lifecycle_tail(response, amb, tool_name)` runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification` — the name guard is mandatory, since the notification itself flows through here in the same call that set the state), then assigns `response.nextStep = next_step_for(...)` and `response.supervisorBanner = _agent_notifier_banner(amb)`. Both are assigned unconditionally, `None` included, because `exclude_none=True` drops them — so a lifecycle-less or live-supervisor response is byte-identical to before. Both remain exception-safe and never raise into the tool path (`_agent_notifier_banner` swallows an unreadable heartbeat file). |
 | `next_step.py`  | The lifecycle next-step engine (task 27): pure `compute_next_step` maps the projected lifecycle state to one `NextStep` hint. Front half (no worktree contract yet) is a stable prose pointer back to the one-time `lifecycle_start` rundown (`FRONT_HALF_RUNDOWN`), and HFX-L6 rewrites that role framing around the architect-default developer-facing lifecycle with spawned backend orchestrators and curator closeout seats. Linear half (from `worktree_start`) delegates to `worktrees/modules/guidance.lifecycle_guidance` and overlays a turn-end hint at the gate moments. Task 28 made NOTIFY-AND-CONTINUE the active turn-end model: the `decide`/`_gate_after`/rundown ACTIVE hints now point at `lifecycle_turn_end_notification` (notify + stop, no wait), and a new `awaiting-developer` branch returns a `nextTool=None` stop hint. The `blocked` branch (a raised `lifecycle_gate` → `amb.block()`) still returns the `_AWAIT_GATE` await-developer hint at `lifecycle_resume` — the PARKED gate path, valid but un-hinted. A terminal `lifecycle_end` returns the loop-back hint. Edge `next_step_for` resolves state/contract/guidance and is exception-contained. 260731-EFA-L4: `next_step_for` returns `NextStep \| None` — the MODEL, not a dump of it — because the hint is a declared field of the response envelope and serializing it is the choke point's single `model_dump`; returning a dict here is what made the hint a key written into an already-dumped, already-token-counted payload. `_guidance_for` correspondingly widens `lifecycle_guidance`'s TypedDict with `dict(...)`: this hint layer reads guidance defensively by key and never re-emits its vocabulary. |
 | `core.py`       | ping, server_info, context_packet, runtime_install, resolve_context, skills_install; `compact_runtime_install_payload`. |
 | `memory.py`     | drift_check, memory_quality_check, route_index_refresh, memory_init, baseline status/adopt, carryover plan/apply; `compact_carryover_payload`. |
@@ -160,7 +153,7 @@ in the sidecars (post-time re-resolution now covers every owner-addressed post).
 | `lifecycle_finalize.py` | the terminal `lifecycle_finalize_task` builder, forwarding to the worktree finalizer and strict response model. |
 | `task_doc.py`   | the `task_doc` JSON-primary task-document authoring builder (L14: master docs accept the additive `orchestrates` list — the dashboard's command-hierarchy source) (create/set_status/set_step/set_subtask/set_section/append_decision/set_field/get; master ops are set_subtask/set_section), forwarding to the `task_doc_tools` application entry point. |
 | `gates.py`      | `lifecycle_gate_payload` (the public create+block+wait junction that blocks until a developer decision or gate-specific inbox response — or, with `wait=false` on a delegated SEAM kind (`SEAM_GATE_KINDS` only; plan-approval keeps its blocking brake) carrying a required non-empty `enclosure` (the master task name the integrate guard matches the gate by — an addressless raise refuses), validates-then-raises and continues, returning the gateId the handover packet carries — a refused raise persists no orphan gate and expires no sibling), public `gate_decide`/`gate_list` builders (decide resolves a bare gate id across lifecycles and refuses cli-attributed decisions on delegated kinds; list defaults to the ambient lifecycle when no id is passed, workspace only without an ambient), lower-level compatibility create/wait/response-wait builders, and the non-tool `gate_decide_for_lifecycle` the serving layer calls, config-rooted over a `GateStore(observer_root(config))`; lifecycle gate creation expires older open gates, targeted decisions reject stale gate ids, and `cancel` deletes throwaway gate interactions. Since 260731-EFA-L5 this module also **owns gate-log reclamation**: `_reclaim_gate_log` runs `GateStore.compact` at the end of every terminal decision, guarded by `GATE_OWNERSHIP.is_compaction_owner()` so the dashboard (which reaches `gate_decide_payload` directly) skips it — it moved here off the dashboard projection tick's 30-second rewrite, which raced this process's appends. The gate substrate itself lives in `controlplane/` (task 6). |
-| `operator_inbox.py` | the four `operator_inbox_*` durable inbox builders (post/poll/consume/supersede), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; 260713-TES-L4 adds `include_terminal` poll (N11), attribution-only consume (N16), and explicit supersession (R11). The inbox substrate itself lives in `controlplane/` (task 10/L3/L4). |
+| `operator_inbox.py` | the three `operator_inbox_*` durable inbox builders (post/poll/consume), config-rooted over `OperatorInboxStore(observer_root(config))`; L3 adds agent role/message/artifact metadata plus optional hosted push delivery through the serving catalog/terminal paster seams; public consume returns the terminal snapshot and leaves physical expiry to compaction so concurrent delivery cannot resurrect it. The inbox substrate itself lives in `controlplane/` (task 10/L3). |
 | `orchestration.py` | the L3 `orchestration_nudge_manager_payload` builder: records/rate-limits manager nudges, emits `orchestration.nudge`, and queues a manager inbox message through `operator_inbox_post_payload`. |
 | `leaf_ref.py`   | shared MCP refusal-payload helper for `leaf-ref-not-found` / `leaf-ref-ambiguous`, keeping strict leaf-ref error envelopes out of the already-large terminal tool module. |
 | `terminal.py`   | the L9 `attach_terminal_session_to_leaf_payload` builder (config-rooted over the dashboard `TerminalCatalog`, delegating durable reassignment to `serving.terminal_leaf_assignment`, returning `attached` / `leaf-taken` / `unknown-session` plus HFX-L4 leaf-ref refusals) AND the L2 `spawn_agent_session_payload` dispatch builder (L14: the payload records `spawnRole` from AR_SPAWN_ROLE for the chats command deck; L16/HFX2-L10: `_caller_spend_override_refusal` + `_resolve_harness_dispatch` + `_knob_refusal` + `_brief_packet` + `_deliver_spawn_pastes` + `_spawned_payload` — settings-only knob resolution with the `level` input, effective-registry harness resolution, per-harness model/effort validation, session-command delivery before the keyword-bearing brief, settings-owned free-form + level provenance) — it normalizes leaf refs, composes the shared `serving.terminal_opener.open_terminal_session` for live-identity validation, role-scoped leaf claim, native runner launch, and catalog upsert, then runs the capture-verified brief-delivery sequence. A live launch mismatch maps to `launch-selection-invalid` with no retry, expectation, or paste. Other strict response statuses remain `spawned`, `spend-override-unsupported`, `leaf-taken`, `harness-unknown`, `harness-not-detected`, `effort-invalid`, `model-invalid`, `level-invalid`, `leaf-ref-not-found`, `leaf-ref-ambiguous`, and `bad-kind`. 260731-EFA-L4 types the status seams against the wire aliases imported from `models.terminal` (`SpawnAgentSessionStatus`, `SessionRetireStatus`, `SessionRenameStatus`): `_spawn_refusal(status: SpawnAgentSessionStatus, ...)` and `_knob_refusal`'s `checks` tuple are annotated, so a refusal status this module invents is a pyright error at the producer rather than a `ValidationError` at `model_validate` — this payload is an untyped dict all the way to the MCP handler, which has no `except` for one. The retire/rename builders also collapse onto two constructors, `_retire_payload` and `_rename_payload`, so the shape rules have one site each: `_RETIRE_OK_STATUSES = frozenset({"retired", "already-retired"})` decides `ok` (previously written by hand at five call sites), retirement provenance rides a `closure=` argument and a policy clause rides `detail=` because nothing carries both, and `spawnedLabel` is emitted only when a row was actually renamed. |
@@ -239,10 +232,10 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | Conformance test validates every builder routes through `_tool_payload`. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
 | The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
-| The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:230-230 |
-| The agent-notifier heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | "class AgentNotifierHeartbeatStore" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-63 |
-| The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `agentNotifierBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:10-10 |
-| The terminal status aliases `terminal.py` annotates its refusal seams with. | "class AttachTerminalSessionToLeafResponse" | mcp/src/agents_remember/models/terminal.py:32-32 |
+| The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:200-200 |
+| The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | "class AgentNotifierHeartbeatStore" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-63 |
+| The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:10-10 |
+| The terminal status aliases `terminal.py` annotates its refusal seams with. | "class AttachTerminalSessionToLeafResponse" | mcp/src/agents_remember/models/terminal.py:30-30 |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -259,7 +252,7 @@ only. Dashboard and packaged projections remain additive and synchronized.
 ## 260731-EFA-L4 — The Choke Point Emits Its Own Contract
 
 `_tool_payload` used to do this: validate, dump, count tokens, emit the observer event, then
-write `nextStep` and `agentNotifierBanner` into the dumped dict. Two things were wrong with the
+write `nextStep` and `supervisorBanner` into the dumped dict. Two things were wrong with the
 last step and both were silent.
 
 - **The advertised token count excluded them.** `finalize_payload_tokens` stamps `tokens` from
@@ -267,12 +260,12 @@ last step and both were silent.
   `amb.emit_tool` also ran before them, the count recorded against the lifecycle was short by
   the same amount, so the fuel gauge and the wire agreed with each other and both disagreed
   with reality.
-- **`agentNotifierBanner` was declared on no model.** On a strict envelope (`extra="forbid"`) that
+- **`supervisorBanner` was declared on no model.** On a strict envelope (`extra="forbid"`) that
   makes a banner-carrying response fail its own `model_validate`; on a flexible one
   `extra="allow"` silently accepted it, which is the wrong kind of tolerance — that setting is
   for a PROVIDER's fields, not this package's.
 
-The fix has two halves. `models/base.py` declares `agentNotifierBanner` on both envelope bases and
+The fix has two halves. `models/base.py` declares `supervisorBanner` on both envelope bases and
 names their union `ResponseEnvelope`; `models/tool_registry.py` types both registries
 `dict[str, type[ResponseEnvelope]]` instead of `type[BaseModel]`. That retyping is what makes
 the reordering possible at all: against a bare `BaseModel`, `response.nextStep = ...` is not an
@@ -328,15 +321,13 @@ that route's to describe. The one thing to carry here: what makes the rewrite sa
 unconditional `flock`, held across the read **and** the rewrite, in every process. Ownership decides
 only who runs the pass.
 
+## 260731-EFA-L9 Route Impact — Caller Re-Points
+
+The MCP tool callers were rewritten by the L9 caller wave to import the responsibility-owning homes (`models/conversations/`, `kernel/primitives/`, `serving/ports.py`, `models/terminal_catalog.py`). Tool behavior and payloads are unchanged.
+
 ## Update History
 
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the supersede builder
-  (submodule + facade + PUBLIC_TOOLS 58→59), the `include_terminal` poll surface, the
-  attribution-only consume, and the N14 post-time re-resolution superseding the old
-  completion-wake wording. Layout rows refreshed (base 59, operator_inbox four builders).
-  Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.
-- 2026-08-08T22:45+02:00 — 260713-TES-L1 completion round 2 (curator): refreshed citation ranges and supervisor -> agent-notifier wording in this route overview body; no route-shape change. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
   anchors (deleting three unresolvable overview/missing-module rows); exact non-fixing check
@@ -553,3 +544,4 @@ only who runs the pass.
 - 2026-05-26T23:11+02:00: (from `tools.py`) Refreshed verification metadata after source commit `5ab704a` landed typed GrepAI payload forwarding.
 - 2026-05-24T02:47+02:00: (from `tools.py`) Updated after public tool expectations added `memory_quality_check`.
 - 2026-05-23T13:09+02:00: (from `tools.py`) Established for the complete Phase 04 public MCP tool surface.
+

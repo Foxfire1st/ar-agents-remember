@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/terminalCatalog.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The unions, opaque diagnostics keys, and the full row shape (incl. the additive plural pending slot). | `TerminalCatalogRow` | dashboard/src/types/terminalCatalog.ts:24-93 |
-| The Python source of truth (`TerminalCatalogEntry.to_json()`; both pending slots serialized). | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
+| The Python source of truth (`TerminalCatalogEntry.to_json()`; both pending slots serialized; row vocabulary moved to models by L9). | "class TerminalCatalogEntry:" | mcp/src/agents_remember/models/terminal_catalog.py:68-68 |
 | The re-export seam preserving existing import sites. | "TerminalCatalogRow as TerminalSessionInfo" | dashboard/src/data/terminal.ts:369-369 |
 | The `OpenSession` mapping that carries these fields into the client registry. | `OpenSession` | dashboard/src/data/sessions.ts:28-83 |
 | The sibling hand-mirrored wire type this follows the posture of. | `WorkspaceProjection` | dashboard/src/types/projection.ts:507-518 |

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_active_projectors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T14:31Z |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,7 +91,7 @@ repository-owned and cited in the mapper sidecars.
 | The claude mapper under test: frame mapping plus the exact submission echo. | `map_evidence_frame`; `map_transcript_echo` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:210-239; mcp/src/agents_remember/serving/conversation/projectors/claude.py:621-662 |
 | The pi mapper under test: entry mapping plus live tool upserts. | `map_native_frame`; `map_evidence_frame`; `_live_tool_item` | mcp/src/agents_remember/serving/conversation/projectors/pi.py:56-109; mcp/src/agents_remember/serving/conversation/projectors/pi.py:112-167; mcp/src/agents_remember/serving/conversation/projectors/pi.py:429-461 |
 | The mapper output vocabulary the assertions match. | `MappedItem`; `MappedBlockDelta`; `MappedTurnOutcome` | mcp/src/agents_remember/serving/conversation/projectors/common.py:56-60; mcp/src/agents_remember/serving/conversation/projectors/common.py:63-69; mcp/src/agents_remember/serving/conversation/projectors/common.py:72-78 |
-| The evidence frame products constructed by the suite. | `EvidenceFrame` | mcp/src/agents_remember/serving/harness_control_models.py:455-478 |
+| The evidence frame products constructed by the suite. | `EvidenceFrame` | mcp/src/agents_remember/models/conversations/evidence.py:79-102 |
 
 ## Cross-Repo References
 
@@ -114,6 +114,8 @@ coverage keeps every extracted mutation parser below the mandatory threshold.
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 5 citation claims; scoped result 0 findings.
 
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived the 3 stale class self-citations in the

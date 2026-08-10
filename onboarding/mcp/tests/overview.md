@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 43126)
+Total output lines: 1813
+
 # mcp/tests
 
 | Field | Value |
@@ -5,9 +8,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
+| lastUpdated | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -15,62 +18,6 @@
 [mcp overview](../overview.md)
 
 ## Purpose
-
-### 260713-TES-L1 Rename — Test Surface
-
-The three supervisor test modules were renamed 1:1 (`test_agent_notifier*.py`), and the touched
-suites now reference `AgentNotifier*` identifiers, `agentNotifierHeartbeat` /
-`agentNotifierBanner`, the `orchestration.agentNotifier` settings family, and the renamed module
-paths; legacy-value acceptance and dual-key cases are covered by the new regression tests.
-
-### 260713-TES-L2 Relay Suites
-
-Three forcing suites were added for the worker-state relay: `test_terminal_evidence_projection.py`
-(per-vendor outcome mapping, pi tail paging, seat-truth persistence, origin resolution, no-loss
-cursor retry), `test_state_signal_relay.py` (incident-#1 proof, busy-manager boundary hold past
-SLA/backoff with exactly one landing, origin/rebinding/idle-flap, non-reaction residue, dedupe,
-boundary drain), and `test_state_signal_delivery.py` (fail-closed row-kind gate,
-unreachable-landed regression, terminal-vs-queued acceptance). The existing suites shifted their
-expectation fixtures from `briefed-by` to `ack-by` and pinned the retired turn-report surface
-(`RetiredDispatchExpectationTests`, `REMOVED_FACADE_NAMES`, 63-key wire pin).
-
-### 260713-TES-L3 Compound-Idle Relay Suite
-
-`test_compound_idle_relay.py` (24 tests) forces the compound-idle relay to orchestrators:
-manager + all workers idle → exactly one durable `state-signal` naming every set member;
-partial/unknown/retired/zero-worker/unbound sets never fire; flap re-arm; busy-orchestrator
-boundary hold with exactly one landing (t+301 s / t+901 s zero mid-turn pushes); master-scoped
-membership on every arm (foreign-master spawn neither blocks nor joins); manager non-reaction
-residue relayed to the orchestrator; emitter skip branches; and the action-time episode
-signature in ask + marker. The existing `test_state_signal_relay.py` rebinding fixture now
-keeps its replacement manager `working` so the L2 behavior stays isolated. The wire pin moved
-63→64 (`compoundIdleEmittedFor`) in `test_serving_response_conformance.py`.
-
-### 260713-TES-L4 Inbox Arrival And Rebinding Suites
-
-Two forcing suites were added for deliver-until-LANDED:
-`test_inbox_arrival_guarantee.py` (25 tests — scoped architect custody, post-time rebinding,
-owner-address branches, explicit supersession, terminal inspectability, TTL/cap eviction,
-settings last-good resilience, relay-death watch, retire surfacing) and
-`test_inbox_rebinding_mechanics.py` (33 tests — transition idempotence, row-owner derivation,
-rebind/expire/unresolved action branches, grace/evaluation branches, retention branches,
-legacy-landed fold, cap-fill, F1 stale-snapshot terminal authority, supersede-during-in-flight
-e2e, rebound delivery-to-B). The notifier/liveness/dispatch/expectation/reclamation/
-escalation/conformance families updated their fixtures to the N16 terminal truth (ack-by →
-verdict-by, attribution-only consume, `state="landed"` seeds, attempt-ceiling `unresolved`,
-dead-seat expiry to the architect mailbox, one-per-row-per-sweep expiry emission), and the
-registration suite pins the `include_terminal` poll kwarg plus the `operator_inbox_supersede`
-wiring.
-
-### 260713-TES-L5 Native Truncation Identity Regression
-
-`test_conversation_native_ingestion.py` reproduces the live 318,975-byte Codex MCP-result
-truncation envelope and proves the active projector keeps the bridge-owned native item and parent
-ids while degrading the clipped body to bounded unknown-vendor evidence. Companion cases force a
-schema-invalid Codex item and Pi's eager native continuation through the same ingestion boundary,
-proving neither malformed payloads nor truncation placeholders can kill conversation rebuild.
-The poll-loop edge suite now pins the corresponding contract replacement: an unmappable body with
-intact transport identity emits `codex:malformed`, not an ordering-fault gap or stream close.
 
 Regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
 
@@ -153,7 +100,7 @@ gains the codex startup-burst-mints-zero-unknown-vendor / method-carried-mapping
 truly-unknown-names-the-method tests plus the claude `command_lifecycle` recognized-and-drift and
 `rate_limit_event` drop tests; `test_conversation_active_service.py` gains the non-user-echo-skip
 and the `DormantReleaseTests` (heavy-projection release + shell retire).
-`test_conversation_contracts.py` pins that `FeatureCapability` has no `for_observed_runtime` predicate
+`test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` pins that `FeatureCapability` has no `for_observed_runtime` predicate
 (the contract is the only gate), `test_conversation_control_operations.py` pins the unverified
 refusal now carries a contract reason (not a version comparison), and
 `test_conversation_library_gates.py`/`test_conversation_library_installed.py` pin that a version drift
@@ -454,10 +401,7 @@ appended records. Four suites are new and five existing suites had an assertion 
 `_store_durability.py` — it is the instrument the numbers came from, and it explains why they can
 be trusted.
 
-**`_store_durability.py` is support code with no assertion in it, and that is the point.** Its
-source-pinning/archive runner lives in `_store_durability_source.py` and is re-exported from the
-harness; this structural split keeps both modules below the 1,200-line rail without changing the
-consumer imports or experiment. The harness
+**`_store_durability.py` is support code with no assertion in it, and that is the point.** It
 expresses each store as four operations (`open` / `write` / `write_decoy` / `reclaim_now`), where
 `reclaim_now` is always that store's own shipped reclaim entry point and never a reimplementation,
 and drives three scenarios: `stress`, `forced_lost_update`, `forced_unlink`. It now covers **eight**
@@ -474,7 +418,7 @@ bounded-store reclamation. Three properties make its output evidence rather than
 - **Real processes, never threads** (`multiprocessing` with the `fork` context). The defect is
   cross-process; the GIL would serialise the very window under test.
 - **It is dual-mode, and the second mode is what pins a run to one tree.** Importable by pytest,
-  and executable as a script whose source helper sets `PYTHONPATH` to the `mcp/src` it wants measured —
+  and executable as a script whose caller sets `PYTHONPATH` to the `mcp/src` it wants measured —
   the live worktree for the contract assertion, a `git archive` of the leaf's base commit for the
   reproducible baseline. `_require_source_root` refuses with `SystemExit` if `agents_remember`
   resolved anywhere else. A measurement that cannot name the tree it measured is worthless, so
@@ -507,17 +451,16 @@ polling — so 10 sits an order of magnitude above a vacuous run and under half 
 observed runs; 20 was rejected because the observed minimum is 22, which is no margin. The card
 [`_store_durability.py.md`](_store_durability.py.md) carries the line-level detail.
 
-**The base-commit numbers are quoted, not reproduced here.** `BASE_COMMIT` is `e52edaf5` in
-`_store_durability_source.py`, while
+**The base-commit numbers are quoted, not reproduced here.** `BASE_COMMIT` is `e52edaf5` and
 `STRESS_PROFILE` is 4 appenders × 50 records at 2 ms against 1 reclaimer at 5 ms — both are literals
-in the durability helper family and are checkable. The *rates* are not: **no base-commit measurement
+in `_store_durability.py` and are checkable. The *rates* are not: **no base-commit measurement
 artifact is committed anywhere in the tree**, `main` can write a JSON payload but none is stored, no
 test asserts a rate, and no committed invocation passes `runs`, so "10 runs per store" is a source
 claim too. Two figures are carried at several independent sites and are quoted on that authority:
-attention dismissals **31.45%** lost (`durable_store.py`, `agent_notifier_signals.py`,
+attention dismissals **31.45%** lost (`durable_store.py`, `supervisor_signals.py`,
 `test_durable_store_contract.py`, `test_observer_projection.py`) and gate **11.50%**
 (`durable_store.py`, `store.py`, `test_interaction_retention.py`). The rest come from
-`durable_store.py`'s module docstring alone: agent-notifier signals 10.50%, expectation rows 10.20%,
+`durable_store.py`'s module docstring alone: supervisor signals 10.50%, expectation rows 10.20%,
 orchestration nudges 9.20%, operator inbox 0.00% (the one store that already took a lock), **127 of
 2000** writes *raising*, and "zero torn lines in every run" — the last being the claim that records
 disappeared whole, which is what would explain why no reader-side validation could have detected
@@ -614,11 +557,6 @@ leaves the log byte-identical (non-destructiveness, newly asserted and never hel
 and `GateStore.compact`, in the owning process, is what empties it.
 
 ## Hot Path Summary
-
-TES-L6 proof is split between `test_sprint_role_seats.py` for two-sprint command-seat identity and
-the compound/state relay suites for role-neutral manager-subordinate liveness. The latter cover
-reviewer, curator, future roles, topology exclusions, re-arm/dedupe, action-time mutations, and the
-timezone-naive landed-row counterexample.
 
 The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared
 codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24
@@ -724,7 +662,7 @@ For folded-state transport changes, begin at `test_serving.py::StreamEventsTests
 cases pin atomic activation, first-recovery snapshot semantics, later-delta continuity, and
 close/cancellation cleanup against the production `Projector` and `stream_events` seam.
 
-`test_conversation_contracts.py` carries semantic authority and
+`test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` carries semantic authority and
 `test_conversation_foundation.py` the package/router/helper/fixture topology. The three
 `fixtures/conversation_runtime/*.json` files are allow-listed installed observations with
 `enablesCapabilities:false`; exact versions and observed counts are evidence, never maintained
@@ -821,501 +759,17 @@ first-byte ambiguity without blind retry, whole UTF-8 multiline submit, pending 
 request-id idempotency, retained-known reconciliation without native resend, raw-free public
 serialization, and liveness-first 404/409 classification. Opener/app cases prove complete-pair
 pre-spawn validation, same-pair live reopen, changed launch conflict with actual retained truth,
-fresh dead replacement, and a cross-process different-pair race with one host creation/catalog row.
-Role-spawn uses that same opener and conflicts without an alternate launch path.
-
-The complete same-session setter delegate graph is pinned. Shared contract and queue
-coverage fail closed outside the five `SetResult` outcomes, reject contradictory effective values,
-preserve FIFO set/prompt order, and prove a cancelled waiter cannot poison later commands. Claude
-tests require exact session, UUID, canonical command replay, and terminal evidence; near-miss
-labels, late/duplicate replay, generic native refusal, and successful dynamic Fable-shaped rows are
-separate cases. Codex tests pin desired/pending/effective state, captured prompt selection epochs,
-fresh-turn status gating, reversal-to-effective behavior, unrelated drift rejection, and no
-reconnect. Pi tests bound mutation/state/catalog stalls, preserve requested-versus-clamped effort,
-reject incoherent catalogs atomically, and keep late cancelled responses from the next request.
-Scaling cases at 8 and 64 requests prove Codex/Pi cancellation reclamation without tombstone
-growth. A static 17-module dependency guard covers the full shared/Claude/Codex/Pi setter graph and
-rejects composer, tmux, session-command, terminal-paste, injector, and terminal-surface imports.
-The daemon serving endpoints are covered while retaining the same no-paste delegate graph.
-
-Focused and production-path coverage pins settings-resolved initial
-configuration. `test_harness_launch.py` proves the normalized contract, Pi's exact
-provider-qualified identity, model-gated effort, honest echoes, and the complete Codex selector
-grammar. Runner, opener, spawn, settings, and registry suites prove pre-discovery conflict refusal,
-token-free discovery before configured vendor startup, native Claude/Codex/Pi launch channels,
-roleless Codex dynamic defaults, persistent exact failure evidence, and removal of normalized
-model/effort paste synthesis. Adapter tests pin Codex thread/resume configuration and Claude
-effective-model mismatch classification. No launch test submits a prompt or turn.
-
-Dynamic, token-free catalog discovery is pinned across all three native adapters.
-Claude uses the 2.1.210 initialize/bootstrap/`list_models` fixture, Codex proves paginated hidden
-catalog retention without thread creation, and Pi proves provider-qualified identity plus
-model-gated thinking menus without prompting. Exact fixture versions remain test evidence only.
-
-Exact Claude/Codex/Pi versions are preserved only as fixture and smoke baselines,
-while structured capability acceptance/rejection and the exact additive inbox allowlist are pinned.
-Inbox compatibility stays optional-only `adapterDeliveryState` and `adapterDeliveryDetail`,
-unrelated extras are rejected, and resource performance is not documented as current behavior.
-
-The IPC regression additionally proves that a delayed reply after accepted dispatch can lose its
-peer without an unhandled callback exception: only `BrokenPipeError`/`ConnectionResetError` during
-write/drain/close/`wait_closed` are contained, while dispatch, identity, protocol, validation, and
-unrelated failures remain loud. The accepted timeout remains ambiguous but bridge-reconcilable, and
-the regression confirms the preserved vendor correlation with no retry or fallback.
-
-Worktree-contract read/heal split coverage proves: zero-traversal contract loads (loud
-tripwires on the resolver entry points and pathlib walk primitives), legacy leaf ids returned verbatim
-by reads, heal parity with the removed read-time normalization, canonical-skip idempotence without
-resolution, dry-run reporting, torn-contract tolerance, and the `heal-leaf-ids` CLI seam.
-
-Confirmed-gone reconciliation coverage proves the narrow eligibility boundary, terminal and tmux
-positive-gone evidence, fail-closed indeterminate behavior, one-fold/one-snapshot boundedness,
-same-lock resolve-plus-compact ordering, stale-snapshot non-resurrection, unchanged TTL fallback,
-persisted folded-id removal counts, body-free aggregate events, and silence on no-op sweeps.
-
-Pi boundary coverage proves four levels: the **recorded** capability/framing surface,
-fake-adapter queue/retry/compaction/settlement, extension UI, disconnect, cursor
-reconciliation, and no-resend behavior, the event mapper's frame classification
-(`test_pi_rpc_events.py`), and the real subprocess's correlation, malformed stdout,
-EOF ambiguity, and clean stop. The opt-in real smoke installs Pi **0.80.7** under a temporary
-prefix/HOME/cache, verifies `get_state` readiness without changing global tools, and re-records
-the capability fixture from a live probe.
-
-**The Pi capability recording is version-addressed, and that is the anti-drift mechanism.**
-`fixtures/pi_rpc/0.80.7-capabilities.json` is read as `f"{PI_RPC_VERSION}-capabilities.json"` by
-both `test_pi_rpc_real_smoke.py` (which defines the pin) and `test_pi_rpc_adapter.py` (which imports
-it). Bumping the pin without re-recording therefore fails **offline** with `FileNotFoundError` in
-the ordinary suite, rather than waiting on the network-gated smoke test that would re-record it; and
-`test_capability_fixture_documents_the_smoke_baseline` asserts exactly **one** `*-capabilities.json`
-exists, because a second recording leaves no rule about which is authoritative — which is why
-0.80.6 was renamed rather than copied. The old 0.80.6 recording was under-recorded: it listed 4
-commands where the adapter drives 7 (`abort`, `get_available_models`, `set_model`,
-`set_thinking_level` were all absent) and omitted the `model` state field that `parse_pi_state`
-reads to derive `model_key`. Every field is now produced by `_pi_rpc_capabilities.py`, which drives
-a real installed Pi — including a deliberate unknown-command negative control, without which
-"every recorded command was accepted" would prove nothing.
-
-Regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
-
-## Route-Wide: Call Sites Now Build Parameter Objects (260731-EFA-L2)
-
-`PLR0913` was armed and 274 of 293 long signatures were fixed **by extraction**, introducing 163
-parameter objects. About a hundred modules in this route changed as a consequence, and almost all of
-that change is one kind: a call site that used to pass a long keyword list now builds a parameter
-object first.
-
-**What a future agent should take from that:** those modules prove exactly what they proved before.
-A file card in this route that describes what a suite *asserts* is still true even though the
-module's diff is large; a card that quotes a *keyword argument* may not be. Examples corrected in
-this pass: `create_app(watch_changes=False)` is now `cadence: ProjectionCadence` /
-`live_inputs: LiveProjectionInputs` / `collaborators: ServingCollaborators`;
-`_provider_operation_result(launch_capable_provider=…)` is now
-`ProviderOperation(required_provider=…)`; `task_doc_tool` takes `TaskDocTarget` + `TaskDocEdit`;
-`create_operator_inbox_entry` takes `InboxMessage` / `InboxAddress` / `InboxPoster` /
-`InboxRouting`; `test_agent_notifier.py`'s `_entry(...)` no longer mirrors the catalog row's fields.
-
-The one place a long signature is still allowed is `mcp/src/agents_remember/mcp/registration/`,
-where the signature **is** the published MCP input schema — see
-`test_code_quality_check.py::ToolSignatureExemptionTests` and `test_mcp_registration_wiring.py`.
-
-## Wire-Contract Conformance Gate (260731-EFA-L4)
-
-Three new suites are the **enforcement** half of this leaf. The leaf replaced `dict[str, Any]`
-escape hatches with real types; without these three, those types would be conventions — the models
-would say what a payload is, and nothing would compare that to what a producer actually emits. All
-three are written against the same failure shape: a **set difference** between what a producer can
-write and what a boundary declares, invisible because both sides look declared. Each stops
-somewhere specific, and the stopping point is the part to read before trusting one of them.
-
-### `test_serving_response_conformance.py` — the HTTP wire, all 61 routes
-
-**What it proves.** Every HTTP route on the serving app declares a response model
-(`ServingRouteInventoryTests`), and — the part that matters — the body a real request actually gets
-back validates against the model declared *for the status that came back*
-(`responses[status]["model"]` when there is one, `response_model` otherwise). It has to be
-end-to-end, because **the declaration cannot be the gate**: FastAPI applies `response_model` only
-to values it serializes itself, and a handler returning a `Response` instance is handed back
-untouched and never reaches `serialize_response`. 57 of the 61 handlers do exactly that and two
-more are async-generator SSE routes, so on 59 of them the decorator buys an OpenAPI schema and
-enforces nothing at runtime. A suite that asserted only "every route declares a model" would have
-gone green the day the decorators landed and caught no drift on those 59 ever.
-
-Three mechanisms carry weight beyond the plain validation:
-
-- `validate_wire` validates with `by_alias=True, by_name=False`. Both `WireResponse` and
-  `conversation/models.WireModel` set `populate_by_name=True`, so a plain
-  `TypeAdapter(...).validate_python(body)` accepts `identity_digest` as happily as
-  `identityDigest` — flip one handler's `model_dump(by_alias=True)` to `by_alias=False` and every
-  key on that route goes snake_case, a total break for the cockpit, while every model still
-  validates. Alias-only makes a field-name key an undeclared key against `extra="forbid"`, and
-  `test_a_field_name_body_fails_the_declared_contract` proves the axis is load-bearing by
-  rewriting a real body into field-name form and requiring it to fail.
-- `ValidatedRouteHazardTests` covers the two routes FastAPI genuinely validates (`GET
-  /api/terminal/sessions` and `GET /api/harnesses` return a bare `dict`), where drift is an
-  HTTP 500 rather than a red test. `TerminalCatalogEntry.to_json`'s emitted key set is read by
-  **AST scan** — not from a constructed instance, because `to_json` is conditional and every
-  optional key is absent when `None` — and asserted equal to `TerminalCatalogEntryWire`'s declared
-  aliases in *both* directions, pinned at 52 keys so a scan that read nothing cannot satisfy the
-  equality.
-- `RouteWalkerTests` puts the inventory's own "these are all the routes" clause under test:
-  each registration form FastAPI accepts is registered on a throwaway app and served. The
-  websocket exemption is **structural** — an `APIWebSocketRoute` has no `response_model` attribute
-  and the test asserts its absence — so it cannot widen into a path skip-list that swallows the
-  next undeclared HTTP route. The walk runs inside a *started* app, because `add_api_route` is
-  legal from the lifespan.
-
-**Where the guarantee stops.** It is a body-shape guarantee, and it is a *counted* one.
-`DeclaredSurfaceCoverageTests::test_the_conformance_table_accounts_for_every_declared_pair` pins
-286 declared `(method, path, status)` pairs, **133 driven against a real body and 153 not**, with
-every undriven leg listed in `UNDRIVEN_DECLARATIONS` beside its reason and the remainder asserted
-as an exact equality — a ledger, not a suppression list, so a leg that stops being driven has to
-be written in by hand and one that becomes drivable has to be removed. The undriven legs are the
-ones needing a real vendor harness, a bridge that accepts a connection and then fails mid-write,
-or a pre-prime startup race the fixtures deliberately do not have. What does hold without
-exception is `test_every_route_has_at_least_one_driven_status`: all 61 routes are driven on at
-least one status, so the ledger lists unexercised *legs*, never unexercised routes. Before this
-existed the drivers kept a `self.checked` set no assertion ever read — 88 of 286 pairs driven,
-and seven declared models could be made mathematically unsatisfiable (a required `str` retyped to
-`int`) without one test going red.
-
-### `test_served_state_conformance.py` — the served projection type
-
-**What it proves.** Nothing anywhere validated `/api/state`, the SSE `snapshot` event, or the
-projection *as served*. Both keys of the serve-time tail — `servingBuild` and
-`agentNotifierHeartbeat` — were injected into the dumped projection with nothing declaring them, so
-the emitted body validated against no model at all, `WorkspaceProjection` (`extra="forbid"`)
-included. The suite drives the real route and the real SSE generator and pins the three shapes the
-assembly is allowed to take: the 200 body **is** a `ServedWorkspaceProjection` and is
-**not** a `WorkspaceProjection` (`test_state_body_validates_against_the_served_model` asserts the
-`ValidationError` explicitly — that is the assertion that used to be unmakeable), the 304 branch
-carries the same ETag and a zero-byte body even after the volatile heartbeat has moved, and a
-`delta` frame is a bare projection node that carries none of `SERVED_TAIL_FIELDS`. That asymmetry
-is what stops the tail from being declared as a projection field, and
-`test_serving_only_fields_stay_out_of_the_persisted_projection` names the second consumer that
-would have paid for it: `latest-state.json` is a `WorkspaceProjection` artifact.
-`ServedStateTailTests` additionally pins that `SERVED_TAIL_FIELDS` *is* the served model's
-extension over the projection, that an absent half is a missing key rather than a null
-placeholder, and that the two halves serialize under **opposite** null rules — the build stamp
-omits what it could not prove, the heartbeat reports a never-ticked supervisor as an explicit
-`null` — which is why `served_state_tail` is two dumps and not one shared `exclude_none`.
-
-**Where the guarantee stops.** One route plus the two generators; every other route is the
-sibling suite's problem. And its strength is bounded by the projection it validates over: built
-over an empty temp directory — which is what this file used to do — `lifecycles`, `enclosures`,
-`engineProcesses` and `providers` all come back `[]`, and a body with empty collections validates
-against any node model whatsoever. `_populate` writes two leaf enclosure contracts at different
-lifecycle positions, an observer event log and a provider snapshot, and `_assert_populated`
-refuses a body whose collections are empty, so a fixture that quietly stops seeding fails here
-instead of silently reducing every assertion to a check on the top-level key set.
-
-### `test_wire_vocabulary_exhaustiveness.py` — vocabulary exhaustiveness
-
-**What it proves.** That every value a producer can emit validates at the wire boundary it
-crosses. The failure is not a typo, it is a set difference: a producer's vocabulary grows, the
-response model's hand-written `Literal` copy does not, and nothing notices until a real payload
-carries the new member — at which point pydantic raises a `ValidationError` inside an
-`@server.tool()` handler that has no `except` for one. Measured before the suite existed: **165 of
-the 213 `series-contract.md` files on disk (77.5%) made `context_packet` raise, across seven
-independent gaps.** Three rules, deliberately different in kind so a fix that satisfies one cannot
-fake the others: `GuidanceWalkTests` walks every branch of the `lifecycle_guidance` state machine
-and every writable `cleanup` value and crosses each result through `WorktreeSummary` (behavioural
-— it catches a phase the machine emits from a branch nobody remembered); `ProducedLiteralTests`
-reads the package's own source, requiring every literal written onto a contract vocabulary field
-or handed to `next_guidance` to validate at its wire field, every such write to be statically
-readable, and none of them to be spelled as a `dataclasses.replace` keyword; and
-`AdvertisedVocabularyTests` holds the published *input* contract to the published *output*
-contract in both directions — the `workflow_kind` set `worktree_start`'s docstring advertises must
-**equal** the alias, so a member no tool advertises and no producer writes cannot be added
-silently.
-
-**Where the guarantee stops, and this one matters most.** The AST scan is the weakest of the three
-and the module says so in its own header: **it reads bare string literals**. It does not evaluate
-expressions, so `"a" + "b"`, an f-string, `_MAP["x"]`, a name imported from another module and a
-plain local variable all pass through it unseen. Any claim that the scan alone keeps a vocabulary
-honest is false. What makes the six contract cells total is pyright at `ContractCells`' and
-`WorktreeContract`'s typed fields, **plus** the two invariants the scan supplies: no
-`dataclasses.replace` call may carry one of those keywords, and every value written at a typed
-writer must be an expression the scan can enumerate. The `replace` rule is not hygiene —
-typeshed types it `**changes: Any`, so `replace(contract, cleanup="reclaimed-ish")` produced
-*zero* pyright diagnostics against a four-member `Literal`; `amend_contract(contract,
-ContractCells(...))` exists to put those fields back in front of the checker, and the no-`replace`
-rule is what stops a future edit from routing around it. `cast` still passes both mechanisms, as
-it must, and is refused by the readability rule instead. `ContractTask.workflow_kind` and
-`.memory_mode` are deliberately plain `str` — they are what a caller asked for, arriving from
-`worktree_start`'s MCP signature — and are defended at runtime by `_task_vocabulary`, not by a
-type. Seven further vocabularies (`RepoSummary.state`, `BranchFreshness.state`,
-`DriftCheckResponse.status`, `FileRead.status`, and the three `models.terminal` session
-responses) are covered by the same three rules; all seven were measured *aligned* before they were
-typed and are here because they had the identical construction, not because they had failed.
-`ContractBoundaryTests` owns the other half: what the **reader** does with a contract cell it
-cannot classify (degrade and name it, never strand the task) versus what the **writer** refuses to
-put on disk.
-
-### Route-wide: the fixtures were carrying values the vocabulary does not contain
-
-`WorkflowKind` is `Literal["chat-task", "light-task"]` — exactly two members. Test fixtures across
-this route were writing `"light"`, `"chat"`, `"master-series"`, `"master-task"` and `"master"`,
-and **nothing failed**, which is the concrete evidence for why the suite above exists.
-`fixtures/build_rich_sim.py` now records the mechanism in place: `load_contract` does not reject an
-off-vocabulary cell — it degrades to the declared fallback and records the raw token on
-`unknown_cells`; the refusal lives at `validate_contract`, the *write* boundary, which writing a
-contract as markdown text bypasses entirely. So a wrong value in a fixture produced a whole
-simulated workspace of contracts each carrying a quarantined cell, silently.
-`test_context_packet.py`, `test_landing.py`, `test_landing_state.py`,
-`test_projection_scaling_cs6.py`, `test_resolver_parity.py` and
-`test_worktree_and_observer_helpers.py` are corrected to real members;
-`AdvertisedVocabularyTests::test_the_workflow_kinds_advertised_and_declared_are_the_same_set` is
-what fails if the set drifts again.
-
-The second route-wide edit is mechanical and worth recognising rather than re-deriving: producers
-that returned `dict[str, Any]` now return models or `TypedDict`s, so a test that read
-`step["nextTool"]` now reads `step.nextTool` (`next_step_for` returns `NextStep`, not a dump of
-it), and a test that read `guidance["nextTool"]` now reads `guidance.get("nextTool")` because
-`LifecycleGuidance` declares that key `NotRequired`. A card in this route describing what a suite
-*asserts* is unaffected; a card quoting a subscript is not.
-
-## Choke-Point And Closeout Gate Coverage (260731-EFA-L4)
-
-**`test_tool_response_conformance.py` now captures its payloads in the state where the choke point
-fires.** The suite sits exactly at the mutation point — `_tool_payload` is where `nextStep` and
-`agentNotifierBanner` are set — but its fixtures were a workspace whose supervisor had **never**
-ticked, which is deliberately silent, so `agentNotifierBanner` never appeared and the suite validated
-the one shape the choke point cannot break. `_stale_supervisor` ticks the heartbeat six hours into
-the past, and `test_the_choke_point_injections_are_actually_exercised` asserts both fields are
-present in the captures, so a fixture that quietly stops producing them fails there rather than
-hollowing out every assertion below it.
-
-The mechanism behind that is the leaf's central repair: `TOOL_RESPONSE_MODELS` was typed
-`dict[str, type[BaseModel]]`, which made `nextStep`/`agentNotifierBanner` unreachable **by type**, so
-the choke point wrote them into the already-dumped, already-token-counted dict. Consequences,
-each now pinned: a stale supervisor made every response fail its own `model_validate` (nothing
-declared `agentNotifierBanner`), and the advertised `tokens` excluded the largest thing the choke
-point adds. `test_next_step.py::test_advertised_token_count_covers_the_attached_next_step` and
-`::test_advertised_token_count_covers_the_agent_notifier_banner` state the invariant as a fixed
-point — recounting the emitted dict with `count_response_tokens` must reproduce `payload["tokens"]`
-exactly — and each also asserts the field is *genuinely inside* that number by recounting the
-payload without it and requiring a smaller total, so an incidental equality cannot pass.
-`test_a_raising_staleness_probe_degrades_to_silence` keeps the banner opportunistic: a probe that
-raises yields no banner and still a valid `PingResponse`. `amb.emit_tool` is now called off the
-final payload for the same reason — the lifecycle's recorded token count used to be the same short
-number the wire advertised.
-
-**`test_worktree_closeout_quality_gate.py` roughly doubles, and the three new classes are about
-what the gate is *shown*.** `derive_scope` picks what ruff and pyright are handed with `git
-ls-files`, which reads the index; `diff_coverage` diffs the base against the tracked tree, which
-is blind to the same paths; and closeout commits with `git add -A`. Everything in that gap — every
-path a task created and never staged — went into the commit with no rail of the gate having read
-a line of it, while the gate reported green. Leaf 3's own `abc7cbcc` shipped four files that way.
-Closeout now resets the index and stages the whole task worktree before running the gate, and:
-
-- `CloseoutGateSeesCreatedFilesTests` drives the real `derive_scope` into a real `ruff` run
-  (`_ScopeRecordingGate` — substituting anything less real would miss the defect entirely, which
-  was never in ruff but in *which files ruff was handed*). A created file carrying `import os`
-  fails the gate with `F401` **at that file's path**, no commit is created and
-  `closeout_status` stays `not-started`. `test_the_gates_scope_is_the_commits_content` asserts the
-  invariant as an equality — the lint paths equal the `.py` paths in the resulting commit tree —
-  which covers the mirror defect too: a path the leaf *deleted* stayed in `ls-files` until the
-  removal was staged, so the pre-fix gate handed ruff a file that no longer existed and took an
-  `E902` for it.
-- `TaskWorktreePreconditionTests` guards the staging step, and it tests **git's own definition** of
-  a linked worktree (`--git-dir` differing from `--git-common-dir`) rather than the contract's
-  `kind`, because that is the property the safety argument rests on. The refusal is asserted as
-  *damage that does not happen*: with the guard removed, `git add -A` in a repository's own
-  checkout rewrites a partial `git add -p` selection and writes a durable blob for a deliberately
-  untracked `secret.env`. `test_a_series_contracts_code_worktree_is_exactly_that_checkout` proves
-  the shape is reachable — `default_series_contract` records `code_worktree = code.repo_path`.
-- `ConflictedIndexTests` covers the second refusal: `git add -A` over an unmerged index does not
-  refuse, it resolves every conflict to whatever the working tree holds and closeout commits the
-  `<<<<<<<` markers. `test_the_reset_runs_after_the_conflict_check_not_before_it` asserts the
-  *ordering* through what survives — `MERGE_HEAD` still present after the refusal — because a
-  mixed reset run first would drop the unmerged entries, leave `diff --diff-filter=U` with nothing
-  to report, and make the refusal permanently unreachable.
-- `RetryStagesWhatAFirstRunWouldTests` is why the reset exists at all. `git add -A` applies ignore
-  rules only to paths git does not already track or hold staged, so a file staged by a refused gate
-  stays staged after the leaf adds it to `.gitignore`, and the retry commits it — which is exactly
-  how a `.dmypy.json` reached this leaf's own first commit. The property is asserted as an
-  **equality of committed trees** between a retried worktree and a fresh one that never saw the
-  refusal, not as the presence of a `reset` call.
-
-There is no rollback and the tests say so rather than leaving it to be discovered:
-`test_a_refused_gate_leaves_the_task_worktree_staged` asserts the staging survives, no
-`index.lock` is left, and no `ar-closeout-index-*` snapshot is orphaned — the index-copy machinery
-an earlier attempt used is gone rather than fixed.
-
-`test_observer_projection.py` gains the same shape of proof for the lifecycle state vocabulary:
-`MetricsBucketVocabularyTests` (every live state has a metrics bucket **and** every bucket is
-fillable, plus `test_the_vocabulary_scan_found_the_states` so a scan matching nothing cannot pass),
-`StatePartitionTests` (`State` is exactly its live half plus its terminal half — nothing filed
-twice, nothing filed nowhere), and `TerminalityIsStructuralTests` (filing a state terminal is a
-claim about the reducer, held by driving a log into it). The reported symptom it pins is concrete:
-an `awaiting-developer` lifecycle counted in the total and in no bucket.
-
-## Invariants And Boundaries
-
-- Authority races use explicit synchronization at the preflight/claim/write seams; sleep timing is
-  not accepted as proof of withdrawal linearization.
-- Every completion test carries epoch + sequence + id + kind. Bare-id/FIFO completion must fail to
-  release a successor.
-- Safe retry tests distinguish the exact certified pre-dispatch error from first-byte ambiguity and
-  assert native submit call counts to catch duplication.
-- Bounds may trim terminal history but never live, active, or unknown work; public fixtures remain
-  raw-free and terminal records do not retain full prompt text.
-- Live smokes are credential-safe, explicit opt-in evidence for installed harnesses. Deterministic
-  protocol truth remains in fake/stdio tests.
-- Structured-conversation tests preserve separate active/library cursors and ports, exact
-  authorization/identity/generation binding, and fail closed on contradictory state products.
-- Runtime fixtures and locked helper packages are evidence surfaces only; neither enables history
-  or control capability without a production-seam pass.
-- Folded-state race regressions force ordering through explicit generator/task boundaries; timing
-  sleeps alone are not accepted as proof of snapshot/subscription convergence.
-- First recovery is exactly one full snapshot with boot identity, identical state is silent, later
-  content uses the normal delta grammar, and every closed/cancelled consumer releases its queue.
-- Route-index tests compare complete generated bytes and require a zero-write second pass; source
-  counts and covered-file membership must come from the same frozen Git/path-rule snapshot.
-- Carryover authority refusals assert official HEAD, status, non-Git bytes, source bytes, and
-  route-index absence so parser-default authority cannot mutate any official-memory surface.
-- A test that proves git cannot be redirected must re-set the repository selectors inside its own
-  scope. `conftest.py` strips them at import, so a redirection assertion that relies on the ambient
-  environment proves the harness stripped them and nothing about the call site under test.
-- A cold-start assertion must run in a child process with cold caches. In-process, a warm
-  `tiktoken.registry.ENCODINGS` makes the load a dictionary hit, so the assertion passes against a
-  package that ships no vocabulary; and a network block must be proven to have taken effect before
-  anything that depends on it is trusted.
-- Generated dashboard whitespace coverage must exercise Git's real attribute resolution. Only direct
-  shipped `assets/*.js` may suppress `blank-at-eol`; authored source and generated near misses remain
-  strict, and semantic JavaScript string bytes must remain identical through sync.
-- A response-model declaration is not a runtime check. FastAPI validates only what it serializes
-  itself, so a route whose handler returns a `Response` must be driven and its **returned body**
-  validated; asserting that the decorator is present proves nothing about 59 of the 61 routes.
-- Wire validation must be alias-strict. `populate_by_name=True` makes field-name and alias forms
-  equally valid, so a suite that validates without `by_name=False` cannot see a handler flipping to
-  `by_alias=False` — which renames every key on that route.
-- A coverage claim must be a counted set, not an impression. Where a conformance suite cannot drive
-  a declared leg, the undriven remainder is enumerated with a reason and asserted exactly, so an
-  exercised leg that stops being exercised fails rather than disappearing.
-- A shape assertion is worth exactly as much as the payload it was made over. Empty collections
-  validate against any node model, so a fixture that seeds the projection must assert it seeded it.
-- An AST literal scan is never a vocabulary guarantee on its own — it cannot see concatenation,
-  f-strings, dict lookups, imported names or locals. It supplements a type checker; the invariants
-  that make the pair total (no `dataclasses.replace` on a typed cell, every write statically
-  readable) must themselves be asserted, because `replace` is typed `**changes: Any` and produces
-  no diagnostic at all.
-- The token count a response advertises must be a fixed point over the payload as served.
-  Recounting the emitted dict must reproduce it, and each choke-point field must be provably inside
-  it (recount without the field and require a smaller total, so equality cannot be incidental).
-- A gate that reads the git index must be shown the content that will be committed. Assertions
-  about the closeout gate compare its scope to the resulting commit tree, because a file the task
-  created and never staged is invisible to `git ls-files` and to a diff against the base alike.
-- Ordering between a refusal and a destructive step is asserted through what survives, not through
-  call bookkeeping: `MERGE_HEAD` still present after a conflict refusal is what proves the reset has
-  not run yet.
-- A durability measurement must not be taken through the instrument it is measuring. Loss is
-  counted from appender receipts against a raw on-disk read, never through a store's own `read`,
-  and "record lost" and "line torn" are counted separately — a strict reader would turn the
-  measurement into an exception and a tolerant one would report tearing as loss.
-- **A measurement must refuse to report a vacuous result.** A loss figure is a figure about a
-  window; open it twice instead of two hundred times and "0 records lost" costs the store nothing
-  to earn. `MIN_RECLAIM_TICKS` / `VacuousRunError` therefore sit **in the instrument**, at the
-  return of the run, and not in any suite — a check each caller has to remember holds only until
-  the next caller, and the script entry point carries no assertions at all.
-- **Sibling roots under one temp directory must remain legitimate.** The harness derives its own
-  scratch space from `root` itself, so no caller has to know anything about it. A guard that
-  instead required callers to pick distinct *parents* would be the same defect rewritten as a
-  convention. Correspondingly, nothing the harness writes for its own bookkeeping may live inside
-  `root`: the accounting reads that tree as raw bytes, and `root` resolves to a different
-  subdirectory per store family, so a sibling is the only rule that holds for all eight adapters.
-- A cross-process defect must be reproduced with real processes. Threads let the GIL serialise the
-  window under test, so a thread-based reproduction of these stores measures nothing.
-- A measurement must name the tree it measured. The harness is pinned to one `mcp/src` through
-  `PYTHONPATH` and refuses fatally if `agents_remember` resolved elsewhere; the base-commit
-  baseline comes from a `git archive`, never a second git worktree under a coordination tree.
-- A prune to nothing is asserted as an EMPTY FILE, never a missing one. `assertFalse(path.exists())`
-  over a control-plane log is the shape 260731-EFA-L5 removed: absence proves a file was deleted,
-  emptiness proves the records left.
-- A projection read must be assertable as non-destructive. Where a test's evidence was produced by
-  a rewrite riding on a read, the repair is to split the claim — the read changes nothing, and the
-  owning process's reclaim entry point is what removes the record — not to restate the removed
-  behaviour in stronger words.
-- The per-log in-process mutex is a STATED exclusion, not a fix for a reproducible thread race.
-  `flock` already excludes threads through the open file description; the mutex removes the
-  dependence of that exclusion on how the handle happened to be opened. Any comment, card or test
-  name asserting it closes an existing race is wrong.
-- Where a platform cannot be mounted, fake the platform and not the code. The unsafe-lock tests
-  substitute an `fcntl` stand-in for one module's reference only, and assert exclusively on raised
-  type, message text and on-disk state — never on the substitution.
-
-## Docs References
-
-The resolved Domain Documentation registry has no entries. This route uses direct repository code,
-fixtures, and tests and makes no external behavioral claim from dependency names alone.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this test-route update. | — | — |
-
-## Cross-Repo References
-
-The structured-conversation contract and helper/fixture tests execute entirely inside
-`agents-remember`; no neighboring repository governs them.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Structured-conversation hostile matrices pin cursor-family non-interchangeability, fail-closed provenance, fixed status mapping, capability evidence, operation and attachment semantics, withdrawal recovery, metric evidence, and non-enabling runtime fixtures. | `test_cursor_families_are_runtime_non_interchangeable`; `test_unknown_input_and_controlled_terminal_provenance_fail_closed`; `test_canonical_status_mapping_and_terminal_evidence_are_fixed`; `test_capability_state_tier_and_evidence_matrix_fails_closed`; `test_open_and_attachment_operations_carry_semantic_revision_and_fingerprint`; `test_withdrawal_operation_enforces_phase_outcome_recovery_products`; `test_attachment_operation_enforces_phase_outcome_recovery_products`; `test_every_metric_retains_scope_freshness_precision_and_runtime_evidence`; `test_runtime_fixture_is_evidence_and_cannot_enable_capabilities` | mcp/tests/test_conversation_contracts.py:184-193; mcp/tests/test_conversation_contracts.py:248-269; mcp/tests/test_conversation_contracts.py:373-394; mcp/tests/test_conversation_contracts_operations.py:153-202; mcp/tests/test_conversation_contracts_operations.py:251-284; mcp/tests/test_conversation_contracts_operations.py:489-539; mcp/tests/test_conversation_contracts_operations.py:542-587; mcp/tests/test_conversation_contracts_wire.py:53-73; mcp/tests/test_conversation_contracts_wire.py:76-115 |
-| Foundation coverage pins the two ports, child route ownership, one registration seam, exact helper resolution/source set, and raw-free non-enabling fixtures. | `test_exactly_two_conversation_ports_exist`; `test_root_composes_three_owned_child_routers`; `test_global_registration_has_one_stable_inclusion_seam`; `test_helper_package_and_lock_select_only_the_exact_repository_dependencies`; `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement`; `test_runtime_fixtures_contain_no_raw_secret_path_or_conversation_material` | mcp/tests/test_conversation_foundation.py:22-29; mcp/tests/test_conversation_foundation.py:32-107; mcp/tests/test_conversation_foundation.py:110-122; mcp/tests/test_conversation_foundation.py:125-136; mcp/tests/test_conversation_foundation.py:163-188; mcp/tests/test_conversation_foundation.py:191-202 |
-| Active serving coverage pins canonical status/parity, per-harness mapper grammars, engine/store mechanics, and the real-socket production routes with the no-PTY source scan. | `ProductionRouteTests`; `PiProductionRouteTests`; `test_orchestration_parity_with_canonical_status`; `test_no_pty_runner_log_or_fixture_production_authority` | mcp/tests/test_conversation_active_api.py:379-945; mcp/tests/test_conversation_active_api.py:948-1035 |
-| Installed-library coverage pins live Codex and Pi gate/list/read/resolve paths, malformed helper-protocol rejection, exact real Pi and Codex opens, and Claude contract-not-version gate honesty. | `CodexInstalledTests`; `PiInstalledTests`; `PiOpenEndToEndTests`; `CodexOpenEndToEndTests`; `ClaudeGateHonestyTests` | mcp/tests/test_conversation_library_installed.py:108-199; mcp/tests/test_conversation_library_installed.py:202-301; mcp/tests/test_conversation_library_installed.py:304-437; mcp/tests/test_conversation_library_installed.py:440-579; mcp/tests/test_conversation_library_installed.py:582-617 |
-| Control coverage pins the interrupt ledger, queue and withdrawal truth, typed attachment lifecycle, read-only policy, evidence-bound telemetry, and production control routes over the shared control-plane topology. | `ControlApiTests` | mcp/tests/test_conversation_control_api.py:26-378 |
-| Composition contract coverage pins install-once, fail-closed binding shapes, per-app isolation, no singleton, and no injected identity or fixture/PTY reliance. | `test_production_composition_installs_one_typed_runtime`; `test_duplicate_installation_fails_closed`; `test_child_composition_is_isolated_per_app`; `test_no_import_time_mutable_singleton`; `test_production_composition_accepts_no_injected_identity` | mcp/tests/test_conversation_runtime_composition.py:113-132; mcp/tests/test_conversation_runtime_composition.py:142-146; mcp/tests/test_conversation_runtime_composition.py:197-208; mcp/tests/test_conversation_runtime_composition.py:211-224; mcp/tests/test_conversation_runtime_composition.py:227-233 |
-| Authorization contract coverage pins local-operator identity, loopback-only resolution, no identity channel, ignored browser claims, and cross-principal rejection. | `test_server_resolves_one_local_operator_workspace_identity`; `test_loopback_peers_resolve`; `test_resolution_has_no_principal_or_tenant_input_channel`; `test_browser_identity_claims_are_never_read`; `test_injected_resolver_proves_cross_principal_rejection` | mcp/tests/test_conversation_authorization.py:109-118; mcp/tests/test_conversation_authorization.py:121-126; mcp/tests/test_conversation_authorization.py:153-157; mcp/tests/test_conversation_authorization.py:160-181; mcp/tests/test_conversation_authorization.py:262-282 |
-| Evidence contract coverage pins per-harness round-trips, no-leak, bounds, continuation, cross-domain and epoch rejection, provenance, and the resume channel. | `EvidenceBufferTests`; `EvidenceIpcTests`; `CodexEvidenceTests`; `PiEvidenceTests`; `ClaudeEvidenceTests`; `ResumeChannelTests` | mcp/tests/test_harness_control_evidence.py:360-602; mcp/tests/test_harness_control_evidence_ipc.py:48-337; mcp/tests/test_harness_control_evidence_ipc.py:340-507; mcp/tests/test_harness_control_evidence_other.py:60-153; mcp/tests/test_harness_control_evidence_other.py:156-279; mcp/tests/test_harness_control_evidence_other.py:282-350 |
-| Installed-runtime coverage captures the redacted substrate-evidence fixture rows through the production seam with version-locked honesty. | `CodexInstalledEvidenceTests`; `PiInstalledEvidenceTests`; `ClaudeInstalledHonestyTests` | mcp/tests/test_harness_control_evidence_installed.py:123-296; mcp/tests/test_harness_control_evidence_installed.py:299-372; mcp/tests/test_harness_control_evidence_installed.py:375-398 |
-| Control-plane contract coverage pins the interrupt guards and replay, the paged never-bodies timeline, asset schema/traversal/verification/construction, once-only recovery, and strict client validators. | `InterruptBridgeTests`; `OperationTimelineTests`; `AssetChannelTests`; `AssetNativeConstructionTests`; "class WithdrawalRecoveryTests(unittest.IsolatedAsyncioTestCase):"; `ClientValidationTests` | mcp/tests/test_harness_control_plane.py:289-376; mcp/tests/test_harness_control_plane_assets.py:249-483; mcp/tests/test_harness_control_plane_channels.py:52-318; mcp/tests/test_harness_control_plane_channels.py:321-481; mcp/tests/test_harness_control_plane_recovery.py:32-32; mcp/tests/test_harness_control_plane_recovery.py:107-207 |
-| Installed-runtime control-plane coverage captures the redacted control-plane fixture rows through the production seam and enforces the Claude version-honesty posture. | `CodexInstalledControlPlaneTests`; `PiInstalledControlPlaneTests`; `ClaudeInstalledHonestyTests` | mcp/tests/test_harness_control_plane_installed.py:134-278; mcp/tests/test_harness_control_plane_installed.py:281-387; mcp/tests/test_harness_control_plane_installed.py:390-411 |
-| Focused authority concurrency, completion, identity, retention, epoch, and privacy matrix. | `HarnessSubmissionAuthorityTests`; `SubmissionLedgerTests` | mcp/tests/test_harness_submission_authority.py:230-755; mcp/tests/test_harness_submission_authority.py:758-926 |
-| Common timeline, IPC/response loss, idempotency, reconcile, status, and withdraw coverage. | "class HarnessControlConformanceTests1(unittest.IsolatedAsyncioTestCase):"; "class HarnessControlConformanceTests2(unittest.IsolatedAsyncioTestCase):"; `HarnessControlIpcTests` | mcp/tests/test_harness_control_conformance_1.py:39-39; mcp/tests/test_harness_control_conformance_2.py:29-29; mcp/tests/test_harness_control_ipc.py:77-793 |
-| Public API epoch/conflict/certificate/privacy/status matrix plus bounded control-route liveness memo retention. | `HarnessControlApiTests`; `ControlLivenessMemoRetentionTests` | mcp/tests/test_serving_harness_control_api.py:79-776; mcp/tests/test_serving_harness_control_api.py:779-890 |
-| Claude stream-json adapter coverage pins discovery/launch, interaction responses, model/effort mutation, replay/reconciliation, interruption, and real-transport relaunch. | "class ClaudeStreamJsonAdapterTests1(unittest.IsolatedAsyncioTestCase):"; "class ClaudeStreamJsonAdapterTests2(unittest.IsolatedAsyncioTestCase):"; `ClaudeInterruptTests`; `ClaudeProductionTransportRelaunchTests` | mcp/tests/test_harness_control_claude_stream_1.py:32-32; mcp/tests/test_harness_control_claude_stream_2.py:30-30; mcp/tests/test_harness_control_claude_interrupt.py:40-418; mcp/tests/test_harness_control_claude_interrupt.py:438-487 |
-| Codex app-server adapter coverage pins handshake/discovery, exact turn acceptance, model/effort mutation, correlated structured and empty-form MCP responses, reconnect, and fixture schema. | `test_handshake_uses_stable_protocol_and_exposes_effort_menu`; `test_turn_acceptance_blocking_and_terminal_mapping`; `test_codex_set_rejects_unadvertised_model_and_model_local_effort_without_rpc`; `test_correlated_server_approval_and_elicitation_responses`; `test_reconnect_resumes_reads_and_reconciles_without_resend` | mcp/tests/test_codex_app_server_adapter_basic.py:26-83; mcp/tests/test_codex_app_server_adapter_correlation.py:260-282; mcp/tests/test_codex_app_server_adapter_reconnect.py:44-124; mcp/tests/test_codex_app_server_adapter_reconnect.py:204-260; mcp/tests/test_codex_app_server_adapter_turns.py:23-57 |
-| Pi RPC adapter coverage pins protocol framing, discovery, prompt acknowledgement, model/thinking mutation, reconnect/reconciliation, and ledger bounds. | `PiRpcProtocolTests`; "class PiRpcAdapterTests1(unittest.IsolatedAsyncioTestCase):"; "class PiRpcAdapterTests2(unittest.IsolatedAsyncioTestCase):"; `PiSubmissionLedgerTests` | mcp/tests/test_pi_rpc_adapter.py:424-546; mcp/tests/test_pi_rpc_adapter_ledger.py:18-121; mcp/tests/test_pi_rpc_adapter_ops_1.py:23-23; mcp/tests/test_pi_rpc_adapter_ops_2.py:33-33 |
-| `_agent_wire_fixtures` defines the reusable Codex collab-agent, sub-agent activity, thread, turn, item, and server-request frame builders. | `CollabAgents`; `collab_agent_tool_call_item`; `sub_agent_activity_item` | mcp/tests/_agent_wire_fixtures.py:63-77; mcp/tests/_agent_wire_fixtures.py:80-106; mcp/tests/_agent_wire_fixtures.py:109-124 |
-| The Codex thread-demux incident suite imports the shared wire fixtures and pins multiplexed parent and sub-agent routing. | "from _agent_wire_fixtures import"; `test_spawned_subagent_traffic_never_fails_the_bridge` | mcp/tests/test_codex_adapter_thread_demux.py:16-16; mcp/tests/test_codex_adapter_thread_demux.py:118-182 |
-| The Codex projector suite imports the shared wire fixtures and pins collab mapping, roster lifecycle, multiplexed interactions, and child hydration. | "from _agent_wire_fixtures import agent_message_item, item_completed_params"; `CodexCollabMapperTests`; "class CodexAgentEngineTests1(unittest.IsolatedAsyncioTestCase):"; "class CodexAgentEngineTests2(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_conversation_projector_codex_agents.py:22-22; mcp/tests/test_conversation_projector_codex_agents.py:132-373; mcp/tests/test_conversation_projector_codex_agents_engine_1.py:7-7; mcp/tests/test_conversation_projector_codex_agents_engine_1.py:89-89; mcp/tests/test_conversation_projector_codex_agents_engine_2.py:9-9; mcp/tests/test_conversation_projector_codex_agents_engine_2.py:23-23 |
-| The Claude projector suite uses locally synthesized probe-locked stream-json frames to pin sidechain correlation, roster lifecycle, and launch-flag handling. | `ClaudeAgentLifecycleTests`; `ClaudeLaunchFlagTests` | mcp/tests/test_conversation_projector_claude_agents.py:219-466; mcp/tests/test_conversation_projector_claude_agents.py:469-491 |
-| The library-agent suite uses fake Codex and Claude native boundaries to pin parent grouping, visibility of unproven shapes, agent reads, and fail-closed resume. | `CodexLibraryAgentTests`; `ClaudeLibraryAgentTests` | mcp/tests/test_conversation_library_agents.py:267-427; mcp/tests/test_conversation_library_agents.py:486-663 |
-| Folded-state stream regressions force the handoff mutation, failed-prime snapshot/non-duplication/later delta, and cancellation cleanup. | `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription` | mcp/tests/test_serving.py:401-421; mcp/tests/test_serving.py:423-451; mcp/tests/test_serving.py:453-463 |
-| Route-index regressions cover ignored/generated exclusion, symlink/sparse/gitlink/non-UTF-8 identity, ambient selectors, typed failures, and repeat convergence. | `RouteIndexTests` | mcp/tests/test_route_index.py:82-907 |
-| Carryover full-apply regressions compare raw JSON/Markdown authority with typed parser semantics and prove exact zero mutation for every refusal. | "class CarryoverOverviewApplyTests1(unittest.TestCase):"; "class CarryoverOverviewApplyTests2(unittest.TestCase):" | mcp/tests/test_carryover_apply_1.py:20-20; mcp/tests/test_carryover_apply_2.py:21-21 |
-| Worktree fixtures install explicit supported external-memory storage settings so closeout tests exercise real write authority. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:242-270 |
-| Placement succeeds only for a bundle carrying the current build-input fingerprint; every refusal path writes nothing, and `--check` fails through the process boundary. | `BuildPlacementTests` | mcp/tests/test_sync_dashboard.py:63-219 |
-| The static surface is pinned in both states without reading the repository own bundle, including method parity against the real `StaticFiles` mount. | `DashboardStaticDirTests`; `MountedBundleTests` | mcp/tests/test_static.py:29-52; mcp/tests/test_static.py:55-144 |
-| The placement step under test refuses an absent or non-current `dist` and writes the sidecar only after the tree. | `sync`; `replace_tree` | scripts/sync-dashboard.py:120-135; scripts/sync-dashboard.py:138-159 |
-| The production dashboard build invokes Vite after Panda generation and TypeScript compilation. | "panda codegen && tsc -b && vite build" | dashboard/package.json:10-10 |
-| Vite recreates `dashboard/dist` and embeds the current dashboard-source fingerprint in `__AR_DASHBOARD_BUILD__`. | `dashboardSourceFingerprint`; "dist"; `__AR_DASHBOARD_BUILD__` | dashboard/vite.config.ts:36-55; dashboard/vite.config.ts:65-65; dashboard/vite.config.ts:67-67 |
-| `.gitattributes` preserves whitespace-only lines in packaged dashboard JavaScript and disables text conversion for the content-addressed tiktoken vocabulary. | "whitespace=-blank-at-eol"; "-text" | .gitattributes:3-3; .gitattributes:13-13 |
-| The cold-start suite requires the `.gitattributes` vocabulary filename to match the shipped content-addressed file. | `test_the_gitattributes_entry_names_the_shipped_file` | mcp/tests/test_cold_start.py:246-259 |
-| Two tests hold the local gates to the wrapper after the hook split: the shared tiered body plus CI carry the command, and each hook is pinned to its tier. | `test_repository_gates_use_default_strict_wrapper`; `test_git_hooks_delegate_to_the_shared_tiered_gate` | mcp/tests/test_code_quality_check.py:128-143; mcp/tests/test_code_quality_check.py:145-153 |
-| Six further classes pin the gate honesty: Radon steps are reports, enforcing steps can fail at full strength, the one PLR0913 exemption is AST-bound, CRAP is threshold-enforced, scope is derived, and pytest strictness contracts hold. | `RadonIsAReportNotAGateTests`; `EveryEnforcingStepCanFailTests`; `ToolSignatureExemptionTests`; `CrapThresholdEnforcementTests`; `GateScopeDerivationTests`; `PytestConfigurationTests` | mcp/tests/test_code_quality_check.py:192-247; mcp/tests/test_code_quality_check.py:250-361; mcp/tests/test_code_quality_check.py:364-440; mcp/tests/test_code_quality_check.py:443-535; mcp/tests/test_code_quality_check_scope.py:22-212; mcp/tests/test_code_quality_check_scope.py:215-261 |
-| An independent recomputation asserts the wrapper real ruff and pyright argument vectors reach every tracked Python file and every tracked TypeScript file is linted and type-checked. | `PythonGateScopeTests`; `TypeScriptGateScopeTests` | mcp/tests/test_gate_scope.py:154-197; mcp/tests/test_gate_scope.py:200-219 |
-| The 100% changed-lines coverage floor is driven against real throwaway repositories for base resolution, hunk parsing, per-line uncovered statements and arcs, and wrapper exit status. | `BaseResolutionTests`; `ChangedLineTests`; `MeasurementTests`; `WrapperIntegrationTests` | mcp/tests/test_diff_coverage.py:81-254; mcp/tests/test_diff_coverage.py:257-351; mcp/tests/test_diff_coverage.py:354-551; mcp/tests/test_diff_coverage.py:554-672 |
-| Every registered AR marker is applied to at least one test and reachable from the gated runner in both directions; the two credential-free CI paths are pinned by name. | `GatedPathInventoryTests` | mcp/tests/test_gated_integration_runner.py:86-154 |
-| CRAP consumes branch coverage and refuses a report without branch measurement; a partially taken branch lowers a score a statement reader calls perfect. | `CrapCalculatorTests`; `test_a_partially_taken_branch_lowers_the_score_a_statement_reader_calls_perfect`; `test_a_report_without_branch_measurement_is_refused` | mcp/tests/test_crap_calculator.py:17-235 |
-| Drift between `scripts/harness/` and the nine generated harness trees fails the suite, covering content and file mode. | `GeneratedTreesTests`; `test_drift_is_reported_for_content_and_for_mode` | mcp/tests/test_sync_harness.py:35-107 |
-| The closeout gate suite covers all three statuses and spies on the real argument passed from unannotated closeout call sites. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:49-421; mcp/tests/test_worktree_closeout_quality_gate.py:424-550 |
+fresh dead replacement, and a cross-process diffe…13126 tokens truncated…_harness.py:35-107 |
+| The closeout gate suite covers all three statuses and spies on the real argument passed from unannotated closeout call sites. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:49-423; mcp/tests/test_worktree_closeout_quality_gate.py:424-550 |
 | The gate is shown the commit content: a created file reaches ruff through real `derive_scope`, a deleted one leaves it, and the lint-path set equals the Python paths in the resulting commit tree. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:642-748 |
 | Both staging refusals are asserted as damage that does not happen: the repository checkout preserves its `add -p` selection and untracked secret, and a conflicted worktree keeps `MERGE_HEAD` intact. | `TaskWorktreePreconditionTests`; `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:846-958; mcp/tests/test_worktree_closeout_quality_gate.py:961-1015 |
 | A retry commits the tree a first run would: two worktrees driven to the same end state, one through a refused gate, are asserted to produce the identical commit tree, so the ignored `.dmypy.json` a refused attempt staged is not carried into the retry (`RetryStagesWhatAFirstRunWouldTests`). | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:966-1025 |
-| The whole HTTP surface is driven and validated against the model declared for the returned status, alias-strict, with the inventory, walker coverage, two runtime-validated dict routes, and the exact 286-declared / 133-driven / 153-listed ledger. | `_grouped`; `_driven_pairs`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:441-445; mcp/tests/test_serving_response_conformance_live.py:458-481; mcp/tests/test_serving_response_conformance_live.py:484-484; mcp/tests/test_serving_response_conformance_cases_1.py:12-12 |
-| `/api/state` and the SSE snapshot validate as `ServedWorkspaceProjection` and refuse `WorkspaceProjection`; 304 is bodyless, deltas omit `SERVED_TAIL_FIELDS`, and the populated-projection guard rejects an empty scaffold. | `ServedStateTailTests`; `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:214-261; mcp/tests/test_served_state_conformance.py:264-361; mcp/tests/test_served_state_conformance.py:364-419 |
+| The whole HTTP surface is driven and validated against the model declared for the returned status, alias-strict, with the inventory, walker coverage, two runtime-validated dict routes, and the exact 286-declared / 133-driven / 153-listed ledger. | `_grouped`; `_driven_pairs`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:443-447; mcp/tests/test_serving_response_conformance_live.py:460-483; mcp/tests/test_serving_response_conformance_live.py:486-486; mcp/tests/test_serving_response_conformance_cases_1.py:12-12 |
+| `/api/state` and the SSE snapshot validate as `ServedWorkspaceProjection` and refuse `WorkspaceProjection`; 304 is bodyless, deltas omit `SERVED_TAIL_FIELDS`, and the populated-projection guard rejects an empty scaffold. | `ServedStateTailTests`; `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:213-257; mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
 | Every producible vocabulary member validates at its wire field by three mechanisms; the module header states which vocabulary each mechanism defends. | "class GuidanceWalkTests(unittest.TestCase):"; "class ProducedLiteralTests(unittest.TestCase):"; "class AdvertisedVocabularyTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:230-294; mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:45-45; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:450-450 |
 | The reader tolerates an unclassifiable contract cell by degrading and naming it while the writer refuses it, and every refusal names the contract file it was reading (`ContractBoundaryTests`). | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:144-144 |
-| Tool-response conformance captures `nextStep` and `agentNotifierBanner` where both envelope additions fire, then validates representative payloads against their registered models. | `ToolResponseConformanceTests`; `test_the_choke_point_injections_are_actually_exercised` | mcp/tests/test_tool_response_conformance.py:544-628 |
-| Next-step regressions require advertised token counts to cover the served payload including `nextStep` and `agentNotifierBanner`. | `test_advertised_token_count_covers_the_attached_next_step`; `test_advertised_token_count_covers_the_agent_notifier_banner` | mcp/tests/test_next_step.py:305-317; mcp/tests/test_next_step.py:319-335 |
+| Tool-response conformance captures `nextStep` and `supervisorBanner` where both envelope additions fire, then validates representative payloads against their registered models. | `ToolResponseConformanceTests`; `test_the_choke_point_injections_are_actually_exercised` | mcp/tests/test_tool_response_conformance.py:538-616 |
+| Next-step regressions require advertised token counts to cover the served payload including `nextStep` and `supervisorBanner`. | `test_advertised_token_count_covers_the_attached_next_step`; `test_advertised_token_count_covers_the_agent_notifier_banner` | mcp/tests/test_next_step.py:305-317; mcp/tests/test_next_step.py:319-331 |
 | The lifecycle state vocabulary is partitioned live and terminal with both halves total and disjoint, every live state counted, and terminality held to the reducer that produces it. | `MetricsBucketVocabularyTests`; `StatePartitionTests`; `TerminalityIsStructuralTests` | mcp/tests/test_observer_projection_metrics.py:128-233; mcp/tests/test_observer_projection_metrics.py:236-300; mcp/tests/test_observer_projection_metrics.py:303-420 |
 | The rich-sim fixture records the raw token in `unknown_cells`, and writing the document as Markdown text bypasses `validate_contract`. | "records the raw token on"; "unknown_cells"; "validate_contract"; "writing the document as markdown text bypasses entirely" | mcp/tests/fixtures/build_rich_sim.py:524-526 |
 | A decoy repository named by all eight selectors receives none of the real repository writes or reads, an AST sweep asserts `kernel/git_command.py` is the only git-spawning module, and the benchmark runner argv including `reset --hard` is asserted directly. | `DecoyRepositoryTests`; `SingleRunnerTests`; `BenchmarkRunnerEnvironmentTests` | mcp/tests/test_git_command.py:155-211; mcp/tests/test_git_command.py:393-465; mcp/tests/test_git_command.py:663-791 |
@@ -1323,16 +777,15 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | The runner scrubs repository selectors on every call, uses `input_text` for git patch-id and DEVNULL otherwise, and carries the local, remote, and metadata timeout constants. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `GIT_REMOTE_TIMEOUT_SECONDS`; `GIT_METADATA_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-72; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | A cold-cache child process with blocked sockets starts the real server and matches the warm parent count; the shipped vocabulary name and bytes are re-derived and the filename pin and re-entrant-load guard are covered. | `ColdStartTests`; `VendoredVocabularyTests` | mcp/tests/test_cold_start.py:199-218; mcp/tests/test_cold_start.py:221-331 |
 | A present but incorrect vendored vocabulary is refused and left on disk across CRLF, truncation, and flipped-byte cases. | `CorruptVendoredVocabularyTests` | mcp/tests/test_cold_start.py:334-417 |
-| The measurement instrument uses eight store adapters, three forked scenarios, raw on-disk loss accounting, and a dual-mode script path guarded by `_require_source_root`. | `StoreAdapter`; `ADAPTERS`; `SCENARIOS`; `surviving_ids`; `run_case`; `_require_source_root` | mcp/tests/_store_durability.py:115-172; mcp/tests/_store_durability.py:566-568; mcp/tests/_store_durability.py:583-608; mcp/tests/_store_durability.py:1064-1068; mcp/tests/_store_durability.py:1083-1087; mcp/tests/_store_durability.py:1096-1103 |
-| The bounded source helper archives the pinned base commit, applies the historical supervisor-to-agent-notifier import shim inside that archive, and launches the executable harness with `PYTHONPATH` pinned to the selected tree. | `BASE_COMMIT`; `_apply_rename_shim_to_base_tree`; `extract_base_commit_tree`; `run_against_source` | mcp/tests/_store_durability_source.py:14-14; mcp/tests/_store_durability_source.py:47-76; mcp/tests/_store_durability_source.py:41-76; mcp/tests/_store_durability_source.py:79-105; mcp/tests/_store_durability_source.py:108-132 |
-| `harness_work_dir` derives each run bookkeeping directory as a sibling named from that run root, preventing sibling cases from sharing stop or error files. | `harness_work_dir` | mcp/tests/_store_durability.py:853-880 |
+| The measurement instrument uses eight store adapters, three forked scenarios, raw on-disk loss accounting, and a dual-mode script path guarded by `_require_source_root`. | `StoreAdapter`; `ADAPTERS`; `SCENARIOS`; `surviving_ids`; `run_case`; `_require_source_root` | mcp/tests/_store_durability.py:120-177; mcp/tests/_store_durability.py:571-573; mcp/tests/_store_durability.py:588-613; mcp/tests/_store_durability.py:1069-1073; mcp/tests/_store_durability.py:1088-1092; mcp/tests/_store_durability.py:1101-1108 |
+| `harness_work_dir` derives each run bookkeeping directory as a sibling named from that run root, preventing sibling cases from sharing stop or error files. | `harness_work_dir` | mcp/tests/_store_durability.py:847-874 |
 | The shared non-vacuity gate refuses incomplete durability results or runs below `MIN_SUCCESSFUL_RECLAIMS` by raising `VacuousRunError`. | `MIN_SUCCESSFUL_RECLAIMS`; `VacuousRunError`; `require_stress_measurement` | mcp/tests/_durability_measurement.py:11-11; mcp/tests/_durability_measurement.py:14-15; mcp/tests/_durability_measurement.py:18-55 |
 | No record reported written is missing afterwards for the six record types; loss and raising are asserted separately, torn-line policy is held per consumer class, and the harness detects the defect against a git archive of the base commit. | `MultiProcessDurabilityTests`; `TornLinePolicyTests`; `HarnessVacuityGuardTests`; `HarnessSensitivityTests` | mcp/tests/test_controlplane_store_durability.py:123-205; mcp/tests/test_controlplane_store_durability.py:208-336; mcp/tests/test_controlplane_store_durability.py:339-386; mcp/tests/test_controlplane_store_durability.py:389-444 |
 | The provider durability suite is the second consumer covered by the instrument tick floor; its `case_root` docstring records the shared-stop-flag defect and source fix. | `ProviderStoreDurabilityTests`; `case_root` | mcp/tests/test_provider_store_durability.py:262-277; mcp/tests/test_provider_store_durability.py:280-351 |
 | One human approval is consumable exactly once, and the counterfactual proves the defence is one appended record. | `GateReplayWindowTests`; `test_the_applied_record_is_the_only_thing_closing_the_window` | mcp/tests/test_gate_replay_window.py:176-324 |
 | The in-process axis covers the mutex, re-entrancy across both locks, unsafe-filesystem refusal, schema major/minor policy, and failed-rewrite temp cleanup. | `InProcessExclusivityTests`; `UnsafeLockFilesystemTests`; `SchemaVersionMajorTests`; `FailedRewriteTests` | mcp/tests/test_durable_store_contract.py:167-365; mcp/tests/test_durable_store_contract.py:368-431; mcp/tests/test_durable_store_contract.py:434-520; mcp/tests/test_durable_store_contract.py:650-728 |
-| The contract the four suites are named after: what prevents loss (the unconditional lock) stated apart from what merely documents (advisory ownership), the rewrite that never unlinks, and the record validator that gives both read policies their behaviour with no version branch in either. | `exclusive_access`; `rewrite_lines`; `require_lock_held`; `thread_mutex_for`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:250-273; mcp/src/agents_remember/controlplane/durable_store.py:303-317; mcp/src/agents_remember/controlplane/durable_store.py:350-405; mcp/src/agents_remember/controlplane/durable_store.py:408-426; mcp/src/agents_remember/controlplane/durable_store.py:450-457; mcp/src/agents_remember/controlplane/durable_store.py:439-446 |
-| The projection tick this leaf stopped rewriting on — the reclaim pass that ran in a process owning nothing here, and the source of the measured gate-log loss. | "def read_gates(coordination_root: Path, *, now: date" | mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:104-104 |
+| The contract the four suites are named after: what prevents loss (the unconditional lock) stated apart from what merely documents (advisory ownership), the rewrite that never unlinks, and the record validator that gives both read policies their behaviour with no version branch in either. | `exclusive_access`; `rewrite_lines`; `require_lock_held`; `thread_mutex_for`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:248-271; mcp/src/agents_remember/controlplane/durable_store.py:301-315; mcp/src/agents_remember/controlplane/durable_store.py:348-394; mcp/src/agents_remember/controlplane/durable_store.py:397-415; mcp/src/agents_remember/controlplane/durable_store.py:439-446 |
+| The projection tick this leaf stopped rewriting on — the reclaim pass that ran in a process owning nothing here, and the source of the measured gate-log loss. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:103-103 |
 | Interaction retention separates projection non-mutating reads from owner-side compaction, and owner compaction leaves an empty named log. | `test_an_open_gate_past_24h_leaves_the_projection_then_leaves_the_log` | mcp/tests/test_interaction_retention.py:31-76 |
 | Projection-side attention acknowledgement pruning leaves an empty file rather than unlinking the log. | `test_project_and_write_prunes_completed_lifecycle_attention_acknowledgement` | mcp/tests/test_observer_projection_snapshot.py:511-545 |
 | GateStore compaction that removes the last gate leaves an empty workspace log rather than unlinking it. | `test_pruning_the_last_gate_empties_the_workspace_log_without_unlinking_it` | mcp/tests/test_packaged_assets_and_context_values.py:419-444 |
@@ -1395,7 +848,7 @@ sharing shape (ONE catalog + ONE inbox log per process): a placement property pr
 hosted-interaction synchronizer's inbox/gate locks are never taken under the catalog batch —
 driven on the full sweep AND the starting fast path, with the legacy inline direct-observe path
 pinned beside it; a rendezvous-parked reproduction running the real liveness sweep and
-agent-notifier sweep on threads, which deadlocks by timeout on the pre-fix tree ("the ABBA is
+supervisor sweep on threads, which deadlocks by timeout on the pre-fix tree ("the ABBA is
 live") and passes on the fix, on daemon threads so the proof cannot hang the suite; and
 thread-identity proofs that control/active resolution and the terminal-image handler run their
 blocking reads on worker threads, never the event loop. Every test asserts the synchronizer
@@ -1421,80 +874,18 @@ extended: closeout gate mode/cap/kill-shape assertions, hook-tier `pre-push → 
 observer ticker-exit assertions (`ticker.join` replacing poll loops — test-only, kills a
 race-dependent diff-coverage class).
 
-## 260805-ARG-L1 Quality Retry Proofs
+## 260731-EFA-L9 Route Impact
 
-`test_quality_retry_proof.py` is the forcing suite for the wrapper's new retry state machine. It
-uses public Coverage.py databases and real temporary Git repositories to prove changed-test and
-collection contexts are removed, support/deleted-test deltas are refused, fresh proof advances to
-exact then test-only reuse, and a source change invalidates. Its wrapper-level cases prove the
-delta pytest command carries only the edited test with `--cov-append --cov-context=test`, an
-inconclusive delta triggers one clean full-selection fallback, and a newly failing cheap rail
-deletes exact-restored JSON without invoking pytest or either post-coverage rail. Existing
-`test_code_quality_check.py` and `test_code_quality_targeted.py` pin the shared cheap-first command
-order, and `test_diff_coverage.py` now recreates coverage only from its fake pytest step after the
-wrapper deletes stale JSON.
-
-Closeout-order regressions are explicit rather than inferred: the closeout suite forces a failing
-memory preflight and asserts the code-quality runner is never called, then verifies the preview
-lists that preflight before the targeted gate. Citation change-detection tests prove temporary
-leaf-base provenance applies only to dirty unstamped cards; committed unstamped debt remains hard.
-The support suite requires citations in both closeout phases so post-refresh verification cannot
-be dropped silently.
-
-### 260713-TES-L5 Route Impact — Judgment Demolition
-
-The test route gains the 26-test forcing suite `mcp/tests/test_judgment_demolition.py`
-(suspect-respawn, ladder-policy, inferred-nudge, ack-by/turn-report-by retirement,
-landed-never-escalates, live-chain shape) and drops the deleted `test_escalation_ladder.py`.
-The sibling notifier/settings/inbox suites were converted off the ladder/expectation/nudge
-surfaces: retired settings fail loud, ladder transitions are legacy snapshot fixtures, and
-the nudge store is gone from every sweep harness.
+The test tree gained the zero-drift baseline suite (`test_model_split_baseline.py` + the
+`fixtures/model_split_baseline_260731_efa_l9.json` S1.3 fixture), the layering fitness-function
+suite (`test_layering.py`), and the structural-seam coverage suite
+(`test_leaf_structural_coverage.py`), plus the rewritten imports across ~184 test files.
 
 ## Update History
 
-- 2026-08-10T08:20+02:00 — 260805-ARG-L1 closeout-order expansion: added fail-before-code-quality,
-  preview-order, dirty-card temporary provenance, committed-debt refusal, and post-refresh citation
-  repetition proofs. Verification metadata remains pinned until closeout stamps ARG-L1.
-- 2026-08-10T07:30+02:00 — 260805-ARG-L1 developer expansion: added the quality retry forcing
-  suite and reconciled wrapper-order/stale-artifact tests across the existing quality families.
-  Verification metadata remains blank until closeout stamps the code commit.
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the three new suites and the
+  baseline fixture. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1: tests now prove all subordinate close roles, exact
-  report ordering, owner survival, tmux/provenance/transcript behavior, opt-out landing, failure
-  containment, and response-model declarations.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: added the concurrent-sprint and all-subordinate wake
-  regression hot paths. Verification metadata remains pinned until closeout.
-
-- 2026-08-09T21:54+02:00 — 260713-TES master integration repair: indexed the new
-  `_store_durability_source.py` helper and recorded the behavior-preserving source-pinning split.
-  The durability experiment and consumer imports are unchanged; both helper modules now satisfy
-  the 1,200-line repository rail.
-
-- 2026-08-09T19:36+02:00 — 260713-TES-L5F2 route impact: adapter coverage now includes exact
-  accept/decline/cancel response shapes for Codex empty-form MCP tool approvals.
-
-- 2026-08-09T16:43+02:00 — 260713-TES-L5 hotfix curator: indexed the focused native-ingestion
-  regression suite and its Codex/Pi identity-preservation proof; the 17:18 correction also aligned
-  the older poll-loop edge with the fail-soft contract after the authoritative gate exposed its
-  superseded gap expectation.
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the new judgment-demolition
-  forcing suite, the deleted ladder suite, and the fixture conversions across the notifier/
-  settings/inbox tests. Verification metadata pinned until closeout stamps the 260713-TES-L5
-  commit.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the two new inbox
-  arrival/rebinding forcing suites (25+33 tests) and the terminal-honesty fixture updates
-  across the notifier/liveness/dispatch/expectation/reclamation/escalation/conformance and
-  registration-wiring families. Verification metadata pinned until closeout stamps the
-  260713-TES-L4 commit.
-- 2026-08-09T03:51+02:00 — 260713-TES-L3 route impact: recorded the new
-  `test_compound_idle_relay.py` forcing suite, the L2 rebinding-fixture isolation change, and
-  the 63→64 wire-key pin in the conformance family. Verification metadata pinned until
-  closeout stamps the 260713-TES-L3 commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: recorded the three new relay suites and
-  the expectation/facade/wire-pin updates in the existing families. Verification metadata pinned
-  until closeout stamps the 260713-TES-L2 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the three new suites and the
   extended closeout/hook/settings/scope-reporting/observer families. Verification metadata stays
   pinned until closeout stamps the 260731-EFA-L17 commit.
@@ -1548,7 +939,7 @@ the nudge store is gone from every sweep harness.
   about the instrument's three trustworthiness properties, the torn-line policy, the replay-window
   counterfactual or the mutex was touched, because it was right. The section asserted six
   base-commit loss rates, "127 of 2000", "10 runs per store" and "zero torn lines in every run" as
-  measurements, and closed with "0 lost, 0 raised, 0 torn, all six stores, all three scenarios"
+  measurements, and closed with "0 lost"
   against the current tree. **No base-commit measurement artifact is committed anywhere in the
   tree** — `_store_durability.py::main` can write a JSON payload but none is stored, no test asserts
   a rate, and no committed invocation passes `runs` — so that is now stated once and the rates are
@@ -1939,3 +1330,4 @@ the nudge store is gone from every sweep harness.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: added route coverage for bounded landing observation, no-wait projection, stale rendering, invalid-snapshot containment, and shutdown after observer failure.
 
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator: established governing route coverage for the final candidate.
+

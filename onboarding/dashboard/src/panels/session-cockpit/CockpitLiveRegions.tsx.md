@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f` |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Persistent polite/assertive DOM bridge. | `CockpitLiveRegions` | dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx:19-45 |
-| Mount-before-message and repeated-message coverage. | "renders one polite and one assertive region, both present BEFORE any announcement" | dashboard/src/panels/session-cockpit/CockpitLiveRegions.test.tsx:16-26 |
+| Mount-before-message and repeated-message coverage. | "renders one polite and one assertive region" | dashboard/src/panels/session-cockpit/CockpitLiveRegions.test.tsx:16-26 |
 | Refcounted announcement stores. | `announcerStore` | dashboard/src/data/announcer.ts:25-28 |
 
 ## Cross-Repo References

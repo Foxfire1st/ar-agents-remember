@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_code_quality_targeted.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
+| lastUpdated | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,11 +48,6 @@ no-Python-changed and tests-only runs short-circuit to PASS with zero vacuous
 rails (`test_no_python_changes_short_circuits_to_pass` — the regression that
 removed the never-executed `unexpected_runner` closure).
 
-The command-vector assertions now pin the cheap-first order shared with full mode: file size is
-before Pyright, Radon stays before pytest, and pytest is the last subprocess. Tests-only and
-scripts-only expectations were adjusted to the same structural order without widening their
-derived inputs.
-
 ### Conventions
 
 Fixtures are real git repositories with `pyproject.toml` quality config so the
@@ -81,7 +76,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper contract the real-run class drives. | `quality_steps`, `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:248-292; mcp/src/agents_remember/code_quality/check.py:344-389 |
+| The wrapper contract the real-run class drives. | `quality_steps`, `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:262-308; mcp/src/agents_remember/code_quality/check.py:359-404 |
 | The printed derivation lines the suite asserts. | `targeted_scope_lines` | mcp/src/agents_remember/code_quality/scope_reporting.py:235-263 |
 
 ## Cross-Repo References
@@ -94,9 +89,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
-- 2026-08-10T07:30+02:00 — Reconciled command indices and assertions with the cheap-first,
-  pytest-last subprocess order. Verification metadata remains blank until closeout stamps the
-  code commit.
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: created this file-level
   onboarding card for the new targeted-derivation suite; content derived from

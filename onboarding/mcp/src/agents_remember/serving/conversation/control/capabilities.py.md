@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/capabilities.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,10 +32,10 @@ informational metadata only.
 ### Logic
 
 Per-harness fixture ids and version pins are module constants,
-cit:([`_CODEX_FIXTURE`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:41-41): codex
+cit:([`_CODEX_FIXTURE`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:43-43): codex
 `0.144.5`/`codex-0.144.5-installed-20260718`, claude `2.1.211` plus the separate interrupt pin
 `2.1.217`/`claude-2.1.217-installed-20260722`, pi `0.80.7`. `_fixture`,
-cit:([`_fixture`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:64-71), cit:([`_adapter`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:91-97), cit:([`_unavailable`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:100-101), and cit:([`_image_capability`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:104-128)
+cit:([`_fixture`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:64-71), cit:([`_adapter`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:91-97), cit:([`_unavailable`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:102-103), and cit:([`_image_capability`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:104-128)
 build the typed `FeatureCapability`/`AttachmentCapability` products; cit:([`_no_asset_kind`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:131-142)
 reports a kind the harness cannot stage. `_codex_controls`, cit:([`_codex_controls`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:145-173), `_claude_controls`, cit:([`_claude_controls`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:176-209), and `_pi_controls`, cit:([`_pi_controls`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:212-237), plus the telemetry builders `_codex_telemetry`, cit:([`_codex_telemetry`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:240-263), `_claude_telemetry`, cit:([`_claude_telemetry`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:266-276), and `_pi_telemetry`, cit:([`_pi_telemetry`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:279-302), assemble the static per-harness
 control/telemetry capability sets, keyed in cit:([`_CONTROLS`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:305-309) and cit:([`_TELEMETRY`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:311-315).
@@ -47,7 +47,7 @@ demotion machinery is REMOVED. Claude's `_CLAUDE_MISMATCH` reason,
 cit:([`_CLAUDE_MISMATCH`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:56-59), is now the honest
 never-probed contract note ("control contract not yet probed through a captured production fixture
 … never a version gate"), not an installed-vs-locked version note. The attachment MIME allow-list
-is cit:([`_ATTACHMENT_MIME_TYPES`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:61-61), sorted from the L2E `SUBMIT_ASSET_MIME_TYPES`.
+is cit:([`_ATTACHMENT_MIME_TYPES`], mcp/src/agents_remember/serving/conversation/control/capabilities.py:63-63), sorted from the L2E `SUBMIT_ASSET_MIME_TYPES`.
 
 ### Conventions
 
@@ -85,8 +85,8 @@ asset limits come from the L2E substrate; the L1 page-level view is the conserva
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `ControlCapabilities`, `AttachmentCapabilities`, "class TelemetryCapabilities(WireModel):" DTOs; `FeatureCapability` carries the documenting NOTE that there is deliberately no `for_observed_runtime` version-demotion. | "class FeatureCapability(WireModel):", "class AttachmentCapabilities(WireModel):", "class ControlCapabilities(WireModel):", `TelemetryCapabilities` | mcp/src/agents_remember/serving/conversation/_models_status.py:339-339; mcp/src/agents_remember/serving/conversation/_models_status.py:325-325; mcp/src/agents_remember/serving/conversation/_models_status.py:331-331; mcp/src/agents_remember/serving/conversation/_models_status.py:262-262 |
-| The L2E asset MIME/count/byte constants used by this gate. | `MAX_SUBMIT_ASSETS`, `MAX_SUBMIT_ASSET_BYTES`, `SUBMIT_ASSET_MIME_TYPES` | mcp/src/agents_remember/serving/harness_control_models.py:116-116; mcp/src/agents_remember/serving/harness_control_models.py:119-119; mcp/src/agents_remember/serving/harness_control_models.py:122-122 |
+| `ControlCapabilities`, `AttachmentCapabilities`, "class TelemetryCapabilities(WireModel):" DTOs; `FeatureCapability` carries the documenting NOTE that there is deliberately no `for_observed_runtime` version-demotion. | "class FeatureCapability(WireModel):", "class AttachmentCapabilities(WireModel):", "class ControlCapabilities(WireModel):", `TelemetryCapabilities` | mcp/src/agents_remember/models/conversations/capabilities.py:18-18; mcp/src/agents_remember/models/conversations/capabilities.py:80-80; mcp/src/agents_remember/models/conversations/capabilities.py:86-86; mcp/src/agents_remember/models/conversations/capabilities.py:94-99 |
+| The L2E asset MIME/count/byte constants used by this gate. | `MAX_SUBMIT_ASSETS`, `MAX_SUBMIT_ASSET_BYTES`, `SUBMIT_ASSET_MIME_TYPES` | mcp/src/agents_remember/models/conversations/control_wire.py:43-43; mcp/src/agents_remember/models/conversations/control_wire.py:47-47; mcp/src/agents_remember/models/conversations/control_wire.py:51-51 |
 | The L1 conservative page-level control/telemetry view (stale post-L2E; L4 gates on this module instead). | `capabilities_for` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:342-357 |
 
 ## Cross-Repo References
@@ -114,6 +114,8 @@ reasons and `evidence_tier="runtime-fixture"` are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T02:32:19+02:00 — Curator W3-B02 converted 3 legacy prose line citations and repaired 3 Repo-Internal rows, resolving 9 manifest findings with exact capability, fixture, and active-view anchors; verification metadata was preserved.
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived every stale self-citation in the Logic

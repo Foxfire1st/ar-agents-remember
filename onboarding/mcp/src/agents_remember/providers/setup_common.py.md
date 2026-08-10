@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/setup_common.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -50,6 +50,8 @@ while announcing phases (GitHub #53).
 | Lifecycle calls are dispatched through the direct lifecycle facade. | "Callers import this facade directly" | onboarding/mcp/src/agents_remember/providers/lifecycle/__init__.py.md:19-22; onboarding/mcp/src/agents_remember/providers/lifecycle/__init__.py.md:36-39 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 2 facade rows to
   memory-repo `onboarding/` citations with literal anchors (provider_setup.py.md 15-18 + 41-46,

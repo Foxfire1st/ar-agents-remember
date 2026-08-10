@@ -60,7 +60,6 @@
       "resolveBase",
       "cf5ef50",
       "dashboard/scripts/check-diff-coverage.mjs",
-      "/src/test/setup.ts",
       "sourceRoute",
       "doc_type",
       "lastUpdated",

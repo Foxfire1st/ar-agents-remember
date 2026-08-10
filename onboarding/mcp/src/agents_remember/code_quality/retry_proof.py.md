@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/code_quality/retry_proof.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -89,6 +89,7 @@ No meaningful cross-repository boundary is owned by this module.
 
 ## Update History
 
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the current staged retry-proof implementation; the existing sidecar remains accurate. Verification metadata remains pinned until closeout.
 - 2026-08-10T12:20+02:00 — Made tracked symlink snapshotting Git-faithful after the live retry
   exposed `dashboard/node_modules` as a directory symlink that disabled proof reuse.
 - 2026-08-10T07:30+02:00 — Created for the developer-approved cheap-first and content-addressed

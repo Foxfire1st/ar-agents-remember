@@ -163,7 +163,7 @@ resolution source.
 | --- | --- | --- |
 | The helper protocol fixes exact versions, a 1 MiB bound, exact operation keys, fixed safe error detail, and the serve/probe/sign/page primitives. | "export const PROTOCOL_VERSION" | mcp/native_helpers/conversation_library/src/protocol.ts:13-13 |
 | The helper suite probes exact version tuples, malformed/wrong-version frames, cross-operation fields, and a hostile secret/path corpus. | "the exact locked helper versions are protocol constants" | mcp/native_helpers/conversation_library/src/protocol.test.ts:14-17 |
-| The Python foundation suite forbids incidental resolution and verifies package/lock pins plus the exact helper source set. | "test_exactly_two_conversation_ports_exist" | mcp/tests/test_conversation_foundation.py:22-22 |
+| The Python foundation suite forbids incidental resolution and verifies package/lock pins plus the exact helper source set. | "test_exactly_two_conversation_ports_exist" | mcp/tests/test_conversation_foundation.py:24-24 |
 | The Python host and Claude/Pi ports drive these entries on the production seam. | "class ConversationLibraryHelperHost" | mcp/src/agents_remember/serving/conversation/library/helper_host.py:91-91 |
 | The installed-runtime suite proves the Pi gate/round-trip and the real Pi open through these helpers, and pins the Claude gate on the live list CONTRACT — asserting the reason is never a version-mismatch demotion. | `CodexInstalledTests` | mcp/tests/test_conversation_library_installed.py:103-186 |
 

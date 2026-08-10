@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_native_ingestion.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-09T16:43+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ composition while reusing the active-service bridge double.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `NativeEvidenceFrame` keeps item, parent, type, timestamp, and raw payload as separate transport fields. | `NativeEvidenceFrame` | mcp/src/agents_remember/serving/harness_control_models.py:493-501 |
+| `NativeEvidenceFrame` keeps item, parent, type, timestamp, and raw payload as separate transport fields. | `NativeEvidenceFrame` | mcp/src/agents_remember/models/conversations/evidence.py:116-124 |
 | Shared ingestion turns truncation or mapper failure into a bounded row keyed by transport identity. | `NativeEvidenceIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:45-304 |
 | The scripted bridge and projector factory exercise production projector composition with doubled reads. | `_ScriptedBridge`; `_projector` | mcp/tests/test_conversation_active_service.py:62-166; mcp/tests/test_conversation_active_service.py:168-188 |
 
@@ -83,6 +83,9 @@ No cross-repository implementation participates in this suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: recorded the current native-ingestion identity and
+  truncation coverage against the staged source; verification metadata remains pinned until closeout.
 
 - 2026-08-09T16:43+02:00 — 260713-TES-L5 hotfix curator: created the focused Codex/Pi
   native-truncation identity regression card. As with the leaf's new judgment-demolition suite,

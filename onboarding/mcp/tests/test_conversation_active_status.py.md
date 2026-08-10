@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_active_status.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ is repository-owned and cited below.
 | --- | --- | --- |
 | The canonical status authority under test: classification, seat projection, revisioned service. | `classify_snapshot` | mcp/src/agents_remember/serving/conversation/active/status.py:153-162 |
 | The delegated orchestration entry point driven by the parity suite. | `snapshot_turn_state` | mcp/src/agents_remember/serving/hosted_control_projection.py:78-101 |
-| "CANONICAL_TURN_STATE_BY_EVIDENCE," fixes the vocabulary the classification tests pin. | "CANONICAL_TURN_STATE_BY_EVIDENCE," | mcp/tests/test_conversation_active_api.py:44-44 |
+| `CANONICAL_TURN_STATE_BY_EVIDENCE` fixes the vocabulary the classification tests pin. | "CANONICAL_TURN_STATE_BY_EVIDENCE: Mapping[" | mcp/src/agents_remember/models/conversations/status.py:42-42 |
 
 ## Cross-Repo References
 
@@ -88,6 +88,8 @@ Status regressions now cover freshness classification against evidence-expected 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 4 citation findings; scoped check passed.
 

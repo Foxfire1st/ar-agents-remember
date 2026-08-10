@@ -75,7 +75,7 @@ the reader kept mounted-hidden so selection survives.
 | Cockpit defines the note-opening callback. | "const openNotes = useCallback((target: NotesReaderTarget) => {" | dashboard/src/cockpit/Cockpit.tsx:526-526 |
 | Cockpit defines the note-selection callback. | "const selectNote = useCallback(" | dashboard/src/cockpit/Cockpit.tsx:533-533 |
 | Cockpit renders NotesReaderViewer. | "<NotesReaderViewer" | dashboard/src/cockpit/Cockpit.tsx:590-590 |
-| TaskNotes resolves a note reference into a reader target. | "const target = resolveNoteReference(reference, notePaths);" | dashboard/src/panels/TaskNotes.tsx:83-83 |
+| TaskNotes resolves a note reference into a reader target. | "const target = resolveNoteReference(reference" | dashboard/src/panels/TaskNotes.tsx:83-83 |
 
 ## Current L5I Route State
 

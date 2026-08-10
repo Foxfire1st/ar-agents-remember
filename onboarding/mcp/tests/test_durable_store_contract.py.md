@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_durable_store_contract.py`   |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-01T14:20+02:00                       |
-| lastVerifiedCommitHash |                                              `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate |                                              2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash |                                              `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                              2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ discarded.
 
 **cit:([`UnsafeLockFilesystemTests`], mcp/tests/test_durable_store_contract.py:368-431).**
 cit:([`test_a_lock_that_does_not_exclude_is_refused_and_names_what_to_fix`], mcp/tests/test_durable_store_contract.py:384-410) asserts the
-message names the lock path, the store, and "NFS, SMB or WSL DrvFs", that the exception is a
+message names the lock path, the store, and "NFS", that the exception is a
 `DurableStoreError` so a caller catching the family catches it, and then the two that matter for
 durability: the `with` body was never entered (`entered == []`) and **no log was created**.
 cit:([`test_a_store_refuses_the_append_itself_and_recovers_once_the_lock_works`], mcp/tests/test_durable_store_contract.py:412-431) drives the

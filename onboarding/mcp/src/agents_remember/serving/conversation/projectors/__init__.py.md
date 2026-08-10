@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/projectors/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,16 +28,16 @@ session factory consumes.
 cit:([`HarnessProjector`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:24-52) is a `Protocol` with four channel flags — `harness_id`,
 `uses_native_pages`, `uses_transcript_echo`, `eager_native_continuation` — and three mapping
 entry points (`map_native_frame`, `map_evidence_frame`, `map_transcript_echo`).
-cit:([`map_evidence_frame`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:39-45) also takes the optional keyword
+cit:(["def map_evidence_frame("], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:39-45) also takes the optional keyword
   `parent_thread_id`: the multiplexed-harness demux context (the parent thread's vendor id) that
 lets codex/claude mappers route a frame to its sub-agent thread; harnesses without sub-agent
-threads (pi) accept and ignore it. cit:([`parent_thread_id`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:44-44) Three private adapter classes bind the module-level mapper
+threads (pi) accept and ignore it. cit:([`parent_thread_id`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:46-46) Three private adapter classes bind the module-level mapper
 functions and declare each harness's
 honest channel set: codex pages native threads with lazy continuation and no echo; claude is
 stream/replay-only (its `map_native_frame` raises `NotImplementedError`) and consumes the
 submission echo; pi pages durable entries with eager native continuation so live items always
 carry native identity. cit:([`_CodexProjector`, `_ClaudeProjector`, `_PiProjector`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:55-72; mcp/src/agents_remember/serving/conversation/projectors/__init__.py:75-90; mcp/src/agents_remember/serving/conversation/projectors/__init__.py:93-110) cit:([`PROJECTORS`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:113-117) maps harness id to the bound projector;
-cit:([`projector_for`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:120-121) returns `None` for harnesses without a projector so the factory
+cit:([`projector_for`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:122-123) returns `None` for harnesses without a projector so the factory
   fails closed typed.
 
 ### Conventions
@@ -122,7 +122,7 @@ No cross-repository implementation participates in this registry.
 - 2026-07-26T15:34 — 260718-CHATS-L7: `map_evidence_frame` gained the optional keyword-only
   `parent_thread_id` parameter — the multiplexed demux context for harnesses with
   sub-agent threads (codex/claude); pi accepts and ignores it. Sidecar: documented the seam and
-  cit:([`parent_thread_id`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:44-44)
+  cit:([`parent_thread_id`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:46-46)
   its `None`-means-parent invariant; refreshed all line citations (protocol L24-L52, adapters
   L55-L110, registry L113-L117, lookup L120-L121) and re-pointed the projector.py flag-
   consumption citations, which the L7 multiplexed-projection rewrite had displaced

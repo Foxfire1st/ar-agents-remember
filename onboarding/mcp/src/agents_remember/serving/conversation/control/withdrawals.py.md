@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/withdrawals.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ disposal (post-ack replays return the same outcome/revision with the body dispos
 `withdrawRequestId` — the substrate replay is idempotent and carries no recovery, so the journal is
 the recovery source of last resort. cit:([`sweep_recoveries`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:651-669) lazily disposes text and bytes at lease
 expiry and flips `recoveryState` to `expired`. cit:([`_replay_response`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:708-732), the ref
-mint cit:([`_mint_operation_ref`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:748-754), and cit:([`_withdrawal_projection`, `_as_withdrawal`, `_as_recovery`, `withdraw_http_status`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:735-745; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:772-774; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:777-779; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:782-791) the projection/coercions complete the wire surface.
+mint cit:([`_mint_operation_ref`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:755-761), and cit:([`_withdrawal_projection`, `_as_withdrawal`, `_as_recovery`, `withdraw_http_status`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:735-745; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:772-774; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:777-779; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:782-791) the projection/coercions complete the wire surface.
 
 ### Conventions
 
@@ -117,6 +117,8 @@ crossing exactly once — are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T19:58+02:00 — No content impact: 260731-EFA-L16 made `ConversationControlService.resolve_entry` async (event-loop offload of the lock-taking catalog read), so this module's five call sites (`withdraw`, `withdraw_status`, `pending_recoveries`, `fetch_recovery`, `acknowledge_recovery`) gained only the matching `await` — one-for-one line replacements; no handler logic, lease sweep, wire shape, or error mapping changed, and this card names neither the seam's signature nor the call shape.
 - 2026-08-03T02:54:18+02:00 — W3-B01 curator: curated 4 Repo-Internal table citations and 5 prose citation groups with exact authority, recovery, attachment, ref, withdrawal, lease, projection, and status anchors. Verification metadata remains unchanged for closeout.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-09T19:36+02:00 |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a` |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,12 +55,6 @@ prompt and retain the prior effective selection plus pending fresh-turn barrier.
 `thread/settings/updated` is supplementary evidence, while unrelated drift fails loudly.
 Launch-knob ownership, token-free discovery, interactions, events, and bounded reconciliation remain
 on their existing native paths.
-
-When `respond` resolves a server request it now supplies the pending request's retained original
-params to `interaction_result`. This is required for MCP elicitation: the serializer must prove the
-request was Codex's empty form before converting a scalar `accept` into
-`{action: "accept", content: {}}`; content-bearing forms remain structured-JSON-only. Correlation
-still uses the exact interaction id and RPC id before the pending entry is removed.
 
 Evidence forwarding places the full `params` of each previously trimmed emit under the reserved
 `arEvidence` raw key — consolidated through the `_emit_notification` helper cit:([`_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:712-728),
@@ -145,7 +139,7 @@ the message loop catches (`_run_messages` cit:([`_run_messages`], mcp/src/agents
 with the failure noted; a missing or parent threadId re-raises and still fails the bridge — unless
 `force=True` (the unknown-request-METHOD path above), which degrades on any thread. The four
 white-box parent views (`_active_turn_id`, `_turn_operations`, `_unbound_completions`,
-`_completed_turns` cit:([`_completed_turns`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:1075-1077)) keep the original correlation-test surface as live mappings over the
+`_completed_turns` cit:([`_completed_turns`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:1079-1081)) keep the original correlation-test surface as live mappings over the
 parent `_ThreadState`.
 
 The event queue is a bounded LOAD-SHED queue, not a kill seam. `CodexEventQueue` cit:([`CodexEventQueue`], mcp/src/agents_remember/serving/codex_app_server_events.py:24-118) uses `offer` cit:([`offer`], mcp/src/agents_remember/serving/codex_app_server_events.py:59-72) and never
@@ -159,7 +153,7 @@ once the queue has room again — producer-side after an enqueue that leaves spa
 `stream` cit:([`stream`], mcp/src/agents_remember/serving/codex_app_server_events.py:74-84) after each drained yield (a silent producer must not strand the
 accounting), and always BEFORE the close sentinel (the enqueue path for `None` first makes room for
 notice + sentinel, so the subscriber sees the loss account before termination). The queue limit
-rose 256 → `ADAPTER_EVENT_QUEUE_LIMIT = 1024` cit:([`ADAPTER_EVENT_QUEUE_LIMIT`], mcp/src/agents_remember/serving/codex_app_server_events.py:10-10). The shed notice rides the same monotonic
+rose 256 → `ADAPTER_EVENT_QUEUE_LIMIT = 1024` cit:([`ADAPTER_EVENT_QUEUE_LIMIT`], mcp/src/agents_remember/serving/codex_app_server_events.py:12-12). The shed notice rides the same monotonic
 sequence path as every other event, and a zero count makes the emit a no-op, so the notice itself
 never recurses.
 
@@ -226,8 +220,6 @@ the only live pending. Sheddable queue pressure is identified by `codexMethod` m
   parent entries beyond the oldest ride the tuple plainly). Concurrent pendings on one thread are
   normal vendor traffic and never raise; a full map declines + degrades the NEWEST request without
   dropping older ones; `respond`'s active-operation guard applies to parent-thread responses only.
-- A response is serialized against the original params of the exact pending RPC. Empty-form MCP
-  tool approvals may use scalar action buttons; non-empty forms cannot be accepted without content.
 - The adapter event queue never raises at saturation: the oldest high-volume delta event sheds
   first, structural events (turns, completions, interactions, failures, the close sentinel) shed
   only when nothing else remains, every shed is counted, and one `ar/load-shed` notice with the
@@ -271,13 +263,12 @@ the follow-on concurrency and queue-shed remediation.
 | The launch boundary refuses duplicate adapter-owned argv/config selectors before discovery. | `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:173-206 |
 | Model pages preserve display/description metadata and model-local reasoning effort options. | `parse_model_page` | mcp/src/agents_remember/serving/codex_app_server_state.py:156-227 |
 | The thread flatten helper enforces unique typed item identity for native paging. | `native_evidence_frames_from_thread` | mcp/src/agents_remember/serving/codex_app_server_state.py:378-413 |
-| The multiplexing grammar this adapter fills: `AdapterSnapshot.pending_interactions` (parent slot back-compat, agent entries carry `raw.threadId`/`agentLabel`) and `EvidenceFrame.thread_id` as the demux key. | `AdapterSnapshot`, `EvidenceFrame` | mcp/src/agents_remember/serving/harness_control_models.py:216-241; mcp/src/agents_remember/serving/harness_control_models.py:455-478 |
+| The multiplexing grammar this adapter fills: `AdapterSnapshot.pending_interactions` (parent slot back-compat, agent entries carry `raw.threadId`/`agentLabel`) and `EvidenceFrame.thread_id` as the demux key. | `AdapterSnapshot`, `EvidenceFrame` | mcp/src/agents_remember/models/conversations/control_wire.py:126-151; mcp/src/agents_remember/models/conversations/evidence.py:79-102 |
 | The bridge extracts `threadId` from diverted evidence into `EvidenceFrame.thread_id` and forwards the additive `thread_id` native-page selector. | `native_page`, `_evidence_thread_id` | mcp/src/agents_remember/serving/harness_control_bridge.py:226-271; mcp/src/agents_remember/serving/harness_control_bridge.py:491-503 |
 | Thread-demux regression tests pin the anti-death behavior (foreign-thread auto-registration, collab identity binding into `agentRegistry`, multiplexed pending interactions, parent-only settlement, degraded-never-fatal malformed agent frames) plus the remediation pins: concurrent parent pendings answered per id, the method-first degrade split, the bounded pending map, and the load-shed queue with its honest notice. | `test_spawned_subagent_traffic_never_fails_the_bridge`, `test_subagent_approval_is_multiplexed_and_answered_by_request_id`, `test_experimental_server_request_on_parent_degrades`, `test_pending_map_overflow_declines_the_newest_request`, `test_delta_flood_sheds_oldest_deltas_with_an_honest_notice` | mcp/tests/test_codex_adapter_thread_demux.py:117-180; mcp/tests/test_codex_adapter_thread_demux.py:183-221; mcp/tests/test_codex_adapter_thread_demux.py:533-568; mcp/tests/test_codex_adapter_thread_demux.py:662-697; mcp/tests/test_codex_adapter_thread_demux.py:700-761 |
-| Reconnect coverage proves correlated structured elicitation plus empty-form MCP accept/decline/cancel response shapes. | `test_correlated_server_approval_and_elicitation_responses` | mcp/tests/test_codex_app_server_adapter_reconnect.py:43-123 |
 | Contract tests pin the evidence round-trip, unknown-vendor pass-through, thread/read paging, and the installed 0.144.5 production-seam capture. | `test_reserved_key_round_trip_and_no_leak`, `test_unknown_vendor_pass_through_preserves_raw_without_guessing`, `test_native_page_thread_id_is_additive_over_ipc`, `test_dropped_item_and_token_usage_frames_reach_evidence_with_native_ids` | mcp/tests/test_harness_control_evidence.py:361-409; mcp/tests/test_harness_control_evidence.py:411-427; mcp/tests/test_harness_control_evidence_ipc.py:200-226; mcp/tests/test_harness_control_evidence_ipc.py:341-391 |
 | The structural sub-protocols this adapter implements; the caller's identity guards ride the write. | `InterruptCapableAdapter`, `AssetSubmitCapable` | mcp/src/agents_remember/serving/harness_control_adapter.py:91-106; mcp/src/agents_remember/serving/harness_control_adapter.py:109-113 |
-| The control-plane contract suite pins the interrupt write/replay/turnId guard/no-active typed refusal and the "blocks.append({\"type\": \"localImage\", \"path\": verified_asset_path(asset)})" construction with zero-write rejection. | "blocks.append({\"type\": \"localImage\", \"path\": verified_asset_path(asset)})" | mcp/src/agents_remember/serving/codex_app_server_turns.py:60-60 |
+| The control-plane contract suite pins the interrupt write/replay/turnId guard/no-active typed refusal and the "blocks.append({\"type\": \"localImage\", \"path\": verified_asset_path(asset)})" construction with zero-write rejection. | "blocks.append({\"type\": \"localImage\", \"path\": verified_asset_path(asset)})" | mcp/src/agents_remember/serving/codex_app_server_turns.py:62-62 |
 | The installed-runtime suite captures the live 0.144.5 interrupt, timeline, asset, and withdrawal-recovery evidence behind the fixture rows. | `test_live_interrupt_timeline_assets_and_recovery` | mcp/tests/test_harness_control_plane_installed.py:142-266 |
 | The fixture records the redacted `control-plane/*` observed rows this adapter produced through the production seam. | "control-plane/interrupt-write-ack", "control-plane/asset-local-image-submit", "control-plane/withdrawal-recovery" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:95-95; mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:119-119; mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:129-129 |
 
@@ -327,8 +318,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
-- 2026-08-09T19:36+02:00 — 260713-TES-L5F2: `respond` now passes retained request params into
-  method-specific result serialization, enabling safe empty-form MCP tool approval actions.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T20:49:28+02:00 — 260731-EFA-L6 curator W2-B11: repaired 54 citation findings in this card (13 citation_anchor_missing, 28 citation_prose_not_in_cit_form, 13 citation_source_malformed) with exact current anchors and source paths; scoped memory-citations recheck PASS with 0 findings.
 

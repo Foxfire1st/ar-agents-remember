@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_integrate_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The altitude routing and gate invocation under test. | `quality_gate_mode`, `_quality_gate_memory_cap`, `_run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/integrate.py:54-63; mcp/src/agents_remember/worktrees/modules/integrate.py:64-68; mcp/src/agents_remember/worktrees/modules/integrate.py:664-693 |
 | The planned gate the dry run reports. | `_quality_gate_preview`, `IntegratePreview`, `_dry_run_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:69-80; mcp/src/agents_remember/worktrees/modules/integrate.py:81-88; mcp/src/agents_remember/worktrees/modules/integrate.py:368-414 |
-| The cap plan the full mode uses. | `plan_capped_command` | mcp/src/agents_remember/code_quality/memory_cap.py:94-135 |
+| The cap plan the full mode uses. | `plan_capped_command` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:94-135 |
 
 ## Cross-Repo References
 

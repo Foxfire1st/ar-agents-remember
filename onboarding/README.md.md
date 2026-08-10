@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -22,13 +22,7 @@
 
 ### Logic
 
-The orchestration overview now describes command seats as sprint-bound identities. Architect,
-orchestrator, and manager rows carry explicit repository+sprint provenance, descendants inherit
-that provenance from their direct spawner, and multiple concurrent sprints remain independent.
-Legacy unbound rows are migration display state only; they are not a production route for minting
-new global command seats.
-
-The README's `<h3>` headline now frames Agents Remember in two parts — git-verified records of what coding agents know, and a control plane for what they do — sharpening the earlier single-line "durable, git-verified repo memory" framing toward the records-plus-control-plane positioning. Below it, the README uses `## Core Features` as the fast product pitch. It frames Agents Remember as project memory coding agents can verify and act on, shows the source-file to onboarding-unit mapping, and names the user-facing features a skimming reader needs in the first thirty seconds: path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery that finds but does not decide, memory that lands with code through external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages. The previous `## Core Model` section carried the same conceptual spine but was less effective as a public feature pitch.
+The README's `<h3>` headline now frames Agents Remember in two parts — git-verified records of what coding agents know, and a control plane for what they do — sharpening the earlier single-line "durable" framing toward the records-plus-control-plane positioning. Below it, the README uses `## Core Features` as the fast product pitch. It frames Agents Remember as project memory coding agents can verify and act on, shows the source-file to onboarding-unit mapping, and names the user-facing features a skimming reader needs in the first thirty seconds: path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery that finds but does not decide, memory that lands with code through external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages. The previous `## Core Model` section carried the same conceptual spine but was less effective as a public feature pitch.
 
 The previous MCP-installs-skills first-run model was replaced with package-first
 harness setup. The root page now keeps one short, harness-agnostic three-step
@@ -162,6 +156,9 @@ states:
 - **Radon is printed as a report and cannot fail either tier — it exits 0 whatever it
   finds.** The README says so explicitly rather than listing it beside the enforcing steps.
 
+**Known gap in the source file:** the README's targeted-tier sentence does not name the
+changed-lines coverage floor, which is the wrapper's last and binding step. `CONTRIBUTING.md`
+carries it; the README does not.
 - **CI** runs that same wrapper on **every branch push and every pull request**, not only `main`.
 - **The full wrapper also runs exactly once per master at the master integration gate**,
   invoked by `worktree_integrate` itself and memory-capped
@@ -170,13 +167,6 @@ states:
   hooks are not configured.
 - The tier table and the staged-content stash contract live in `CONTRIBUTING.md`; the README links
   there rather than duplicating them.
-
-The new paragraph immediately after the tier summary owns the retry behavior in public prose:
-cheap deterministic rails run before pytest; CRAP/diff coverage read pytest's artifact afterward;
-a local coverage-derived refusal may publish a content-addressed proof for exact or concrete
-test-module-only retry; every source/config/suite/runtime/environment/artifact ambiguity runs
-fresh; an inconclusive delta falls back to the full pytest selection; CI never reuses proof; and
-`AR_QUALITY_NO_RETRY=1` forces a fresh diagnostic run.
 
 Note that `sync-dashboard.py` is **not** among the generated-copy checks — it is a release
 build step with no `--check` mode, because the bundle it places is no longer in version control.
@@ -205,15 +195,6 @@ across the two hooks was retiered by 260731-EFA-L1, and the *step list* was corr
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
-
-- 2026-08-10T07:30+02:00 — 260805-ARG-L1 developer expansion: documented the cheap-first wrapper
-  order and fail-closed exact/test-only retry proof, removed the superseded claim that README omits
-  the changed-lines floor, and recorded CI-fresh/fallback behavior. Verification metadata remains
-  blank until closeout stamps the code commit.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed the public orchestration description for
-  sprint-bound command seats and migration-only unbound legacy rows. Verification metadata remains
-  pinned until closeout stamps the code commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: rewrote the gate-paragraph
   section for the ladder — pre-push runs `--targeted`, the full wrapper runs
@@ -257,7 +238,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 - 2026-07-08T15:45+02:00 — No content impact: 260707-HFX2-L7 bumps the public Status/install pin
   strings 3.0.0rc3 -> 3.0.0rc4 for the hotfix release tail; the body describes the release version
-  generically as "bumped every release," so README structure and guidance remain current.
+  generically as "bumped every release" so README structure and guidance remain current.
 
 - 2026-07-07T21:17+02:00 — 260707-HFX-L6 review remediation: the public workflow sentence
   after the quickstart now says the developer-facing session is the architect, while spawned
@@ -280,7 +261,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 - 2026-07-03T11:20+02:00 — L14 release: Status reads 3.0.0rc1 and the journey paragraph became 'The 3.0 arc' — the lifecycle/gates/projection substrate served as the mission-control cockpit from the MCP package (agents-remember dashboard), with the rc caveat on the settling cockpit surface.
 - 2026-06-22T22:00+02:00 — No content impact: Status section version string bumped to 2.9.3 (worktree_name contract-resolution fix release, #90); the README structure and guidance this sidecar describes are unchanged.
 - 2026-06-19T13:42 — No content impact: Status section version string bumped to 2.9.2 (benchmark provider isolation release, task 260619); the README structure and guidance this sidecar describes are unchanged.
-- 2026-06-19T01:50+02:00 — Updated the Logic section for the README headline revision (PR #85 / `b9d7314`): the `<h3>` tagline changed from "Durable, git-verified repo memory for coding agents." to "Git-verified records for what your coding agents know. A control plane for what they do.", sharpening the public positioning toward records-plus-control-plane. Advanced verification metadata to merged `main` `cbea101`.
+- 2026-06-19T01:50+02:00 — Updated the Logic section for the README headline revision (PR #85 / `b9d7314`): the `<h3>` tagline changed from "Durable" to "Git-verified records for what your coding agents know. A control plane for what they do.", sharpening the public positioning toward records-plus-control-plane. Advanced verification metadata to merged `main` `cbea101`.
 - 2026-06-12T19:06+02:00 — No content impact: Status section version string bumped to 2.9.1 (issue #83 closeout committed-range fix release); the README structure and guidance this sidecar describes are unchanged.
 - 2026-06-12T12:05+02:00 — Rewrote the Status section from the per-release narrative chain (2.0.0→2.8.0, grown into a de-facto changelog) into a two-paragraph current-state + direction statement: version `2.9.0` with the core-path maturity, Stability deferral, GitHub Releases routing (the repository's canonical changelog), and harness-maturity notes, plus a "where the journey is going" paragraph (observable, steerable sessions: machine-readable lifecycle entity, durable gates, projection layer, browser cockpit #2/#43, the 3.0 posture) — making Status the one public place that states direction. The 2.9.0 release content (worktree-only closeout, GitHub #62) moves to the mcp-v2.9.0 GitHub Release notes instead of the README. Updated the stale Status body row (previously pinned at 2.5.2). Verification metadata stays pinned until closeout commits the source change.
 - 2026-06-11T14:07+02:00: No content impact: re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
@@ -321,7 +302,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 - 2026-05-30T21:22+02:00: Refreshed for the 0.9.0–0.9.4 run and verified against `57944df`. Rewrote the Logic quickstart description to the current short three-step, agent-driven flow that hands onboarding to `c-13-install-and-onboard` and frames the three harness restarts; corrected the stale Repo-Internal References (the quickstart row had described an older `c-00-initialize-memory-repo` skill / `c-03-repo-bootstrap` skill / `include_benchmarks` / `.codex` flow) and realigned all README line ranges to the 119-line source; cleared the resolved verification-refresh Todo.
 - 2026-05-29T21:00+02:00: Updated after the Quickstart stopped telling users to clone this repo (Agents Remember runs from the published `agents-remember-mcp` package via `uvx`) and switched the `runtime_install`/`skills_install` examples to the act-by-default form.
 - 2026-05-29T20:30+02:00: Verified the sidecar body against the committed re-spined `README.md` (TLDR, the three retrieval substrates, quickstart, install pages, source/runtime layout) and advanced verification metadata to the landed commit `01f503d`.
-- 2026-05-29T17:30+02:00: Re-spined the README front door — added a TLDR framing repo knowledge as first-class infrastructure, replaced the sidecar-only "path-derived, no vector store / hidden service" positioning with the three retrieval substrates (by path / by meaning / by relationship), and removed the sidecar-era infographic embed. Verification metadata remains pinned to the last committed source state until closeout.
+- 2026-05-29T17:30+02:00: Re-spined the README front door — added a TLDR framing repo knowledge as first-class infrastructure, replaced the sidecar-only "path-derived" positioning with the three retrieval substrates (by path / by meaning / by relationship), and removed the sidecar-era infographic embed. Verification metadata remains pinned to the last committed source state until closeout.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` moved Codex setup to `.codex` and removed the source `.env` resolver path.
 - 2026-05-24T09:38+02:00: Updated after the public quickstart switched Codex MCP registration and skill exposure examples from `.agents` to `.codex`.
 - 2026-05-24T04:34+02:00: Updated after public docs renamed `c-02-memory-quality-control` skill to memory quality control.

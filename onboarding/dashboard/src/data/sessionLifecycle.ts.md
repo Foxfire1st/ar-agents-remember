@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionLifecycle.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ the reviewed task evidence for any current behavioral claim.
 | The stage renderer of residual notices (dismissable `role="status"` lines). | `StopResidualNotes` | dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:41-72 |
 | The rail consumers keep immediate single End and confirmed bulk End. | `endSession`; `endLanded`; `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:33-35; dashboard/src/panels/session-cockpit/SessionRail.tsx:39-43; dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
 | The cleanup outcome notice is rendered by the dedicated landed-cleanup component. | `LandedCleanupNotice` | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:48-113 |
-| The view mounts the focus-independent sweep. | "useEffect(() => startRetireResidualSweep(), []);" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:817-817 |
+| The view mounts the focus-independent sweep. | "useEffect(() => startRetireResidualSweep()" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:817-817 |
 | `terminateTerminalSession` is the boolean-only predecessor. | `terminateTerminalSession` | dashboard/src/data/terminal.ts:443-452 |
 | `subscribeSessionCatalogChanges` registers catalog-change listeners. | `subscribeSessionCatalogChanges` | dashboard/src/data/sessions.ts:128-138 |
 | The focused `endLandedDetailed (bulk cleanup honesty)` test covers the landed cleanup path. | "endLandedDetailed (bulk cleanup honesty)" | dashboard/src/data/sessionLifecycle.test.ts:146-213 |

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_cross_store_lock_order.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,28 +80,21 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The liveness sweep path driven on one thread (batch lock holder). | `TerminalCatalogLivenessSweeper` | mcp/src/agents_remember/serving/terminal_liveness.py:121-280 |
-| The agent-notifier sweep path driven on the other thread (inbox lock holder). | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:93-195 |
+| The supervisor sweep path driven on the other thread (inbox lock holder). | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:95-182 |
 | The synchronizer whose store I/O is pinned outside the catalog batch. | `HostedInteractionSynchronizer` | mcp/src/agents_remember/serving/hosted_interactions.py:52-266 |
 | The offloaded control choke point. | `resolve_entry` | mcp/src/agents_remember/serving/conversation/control/service.py:291-299 |
 | The offloaded active-side resolution. | `_projector_for` | mcp/src/agents_remember/serving/conversation/active/service.py:160-177 |
-| The offloaded image handler. | "async def _terminal_image_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:626-626 |
+| The offloaded image handler. | "async def _terminal_image_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:628-628 |
 | The intra-store lock contract the cross-store doctrine extends. | `thread_mutex_for` | mcp/src/agents_remember/controlplane/durable_store.py:301-317 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
-## 260713-TES-L5 Current Delta — Lock-Order Harness Without Nudge Store
-
-`_SharedStores` drops `OrchestrationNudgeStore` from the sweep context; the lock-order
-matrix no longer includes the nudge store (no sweep path holds it anymore).
-
 ## Update History
 
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the nudge-store removal from the
-  shared lock-order harness. Verification metadata pinned until closeout stamps the
-  260713-TES-L5 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-05T20:20+02:00 — 260731-EFA-L16 curator: the quality wrapper's diff-coverage rail grew
@@ -112,3 +105,4 @@ matrix no longer includes the nudge store (no sweep path holds it anymore).
   lock-order forcing tests (synchronizer placement, rendezvous-parked ABBA reproduction on the
   real sweep paths, event-loop offload of control/active/image resolution). Verification is
   blank because the new source file is uncommitted; closeout owns its first source stamp.
+

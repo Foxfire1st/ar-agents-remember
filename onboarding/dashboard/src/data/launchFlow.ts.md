@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/launchFlow.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -106,7 +106,7 @@ the reviewed task evidence for any current behavioral claim.
 | The server's synchronous-refusal boundary (split pair / non-native only). | `resolve_terminal_open_selection` | mcp/src/agents_remember/serving/harness_control_api.py:156-179 |
 | The dialog rendering these machines (options exclusively from the envelope). | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:362-423 |
 | Open-response fixtures the classifier is table-tested over. | `OPENED_STARTING`, `INVALID_PARTIAL_PAIR`, `LAUNCH_CONFLICT` | dashboard/src/test/fixtures/openResponses.ts:17-33; dashboard/src/test/fixtures/openResponses.ts:46-49; dashboard/src/test/fixtures/openResponses.ts:72-86 |
-| The unit suite (reducer tables, classifier table, POST-body assertions). | "selection reducers — complete pair or vendor defaults, never partial", "200 + session → opened, carrying the REQUESTED pair (starting) verbatim", "POSTs the complete pair and classifies the answer" | dashboard/src/data/launchFlow.test.ts:35-128; dashboard/src/data/launchFlow.test.ts:133-142; dashboard/src/data/launchFlow.test.ts:200-220 |
+| The unit suite (reducer tables, classifier table, POST-body assertions). | "selection reducers — complete pair or vendor defaults", "200 + session → opened", "POSTs the complete pair and classifies the answer" | dashboard/src/data/launchFlow.test.ts:35-128; dashboard/src/data/launchFlow.test.ts:133-142; dashboard/src/data/launchFlow.test.ts:200-220 |
 
 ## Cross-Repo References
 

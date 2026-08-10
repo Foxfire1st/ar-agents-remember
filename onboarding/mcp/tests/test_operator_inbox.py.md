@@ -5,9 +5,9 @@
 | repository             | agents-remember                       |
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-08-09T06:48+02:00                |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00                |
+| lastVerifiedCommitHash |                                       `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                       2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -28,21 +28,6 @@ delivery append from its stale snapshot. It proves the physical log contains pen
 late pending records while `current`, polling, and redelivery all continue to expose the consumed
 terminal state.
 
-### 260713-TES-L4 Attribution-Only Consume, Landing, And Retention Pins
-
-`OperatorInboxRecordTests` asserts consume keeps `state="pending"` (attribution marker only,
-N16); `OperatorInboxStoreTests` renames the consume/redeliverable pins —
-`test_consume_is_attribution_only_and_idempotent`,
-`test_list_redeliverable_keeps_attribution_marked_rows`,
-`test_record_delivery_clears_schedule_only_via_landing`
-(`DeliveryAttempt(landed=True, adapter accepted)` writes `state="landed"` and clears
-`nextAttemptAt`) — and `test_compaction_keeps_an_ancient_pending_row_for_the_sweep_to_expire`
-pins the §9 resolution boundary (compaction alone never purges pending rows; legacy `consumed`
-rows still age out on the marker window). `OperatorInboxDeliveryTests` converts the in-flight
-race pin: consume can no longer resurrect a pending state over a landing —
-`test_consume_during_in_flight_delivery_cannot_steal_the_landing` asserts the final folded state
-is `landed`.
-
 ### 260707-HFX2-L13 Transition And Completion-Wake Proof
 
 Store coverage now asserts `advance_rung` stamps `rungTransitionAt` on consecutive transitions.
@@ -51,10 +36,6 @@ the resulting row/owner metadata targets the successor manager, hosted delivery 
 paste lands in that manager's session.
 
 ### Logic
-
-The inbox tests now cover sprint-qualified architect custody and ensure two equal role names in
-different sprints cannot receive each other's row. Additive terminal provenance remains compatible
-with exact-agent addressing and existing delivery state transitions.
 
 **260707-HFX2-L15 coverage.** Hosted inbox tests provide a matching harness log, assert
 `harness-log-confirmed` durable detail and catalog binding, and prove absence remains unconfirmed
@@ -198,29 +179,10 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 Tests prove legacy-reader projection preserves only optional `adapterDeliveryState` and
 `adapterDeliveryDetail`, while an unrelated `futureEvidence` extension remains rejected.
 
-## 260713-TES-L5 Current Delta — Ladder Transitions Replaced By Legacy Rows
-
-`test_mark_escalated_stamps_the_reserved_field`, `test_advance_rung_*`, and
-`test_ladder_resolved_is_terminal_without_ack`/`test_resolving_an_already_resolved_ladder_row_is_idempotent`
-are replaced by legacy-row tests: a `ladder-resolved` snapshot is terminal, parse-compatible,
-never resurrected by a stale pending snapshot, and consume leaves it untouched. The
-`RungAdvance` import is gone.
-
 ## Update History
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: added sprint-isolated architect custody coverage to the
-  inbox suite card. Verification metadata remains pinned until closeout stamps the code commit.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the replacement of the ladder
-  transition tests with legacy `ladder-resolved` parse/terminal coverage. Verification
-  metadata pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the attribution-only consume pins,
-  the formal landing assertions (`landed` terminal, schedule cleared), the §9 pending-TTL
-  resolution-boundary compaction pin, and the in-flight landing-steal inversion. Verification
-  metadata pinned until closeout stamps the 260713-TES-L4 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-"- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
+- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the whole suite moved to the parameter-object
   form of the inbox seams, so the Conventions section was rewritten to name them instead of
   attesting past them: `create_operator_inbox_entry` and `operator_inbox_post_payload` now take

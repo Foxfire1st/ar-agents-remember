@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/StopResidualNotes.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ terminated/retired sessions, use informational copy, and never silently discard 
 - **Component behavior** cit:([`StopResidualNotes`], dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:41-72): reads `residuals` from
   `useLifecycleNotices`, renders nothing at zero residuals, and maps each retained residual to its
   informational copy and dismissal control. This component is not mounted by the current stage.
-- **Newest-first retention** cit:(["residuals: [residual, ...state.residuals]"], dashboard/src/data/sessionLifecycle.ts:75-75): `recordResidual` prepends each retained residual.
+- **Newest-first retention** cit:(["residuals: [residual"], dashboard/src/data/sessionLifecycle.ts:75-75): `recordResidual` prepends each retained residual.
 - **Dismissal** cit:(["state.residuals.filter", "entry.sessionId === sessionId && entry.at === at"], dashboard/src/data/sessionLifecycle.ts:78-79): `dismissResidual` removes the matching session/timestamp entry.
 - **Focus-independent retire sweep and deduplication** cit:(["for (const session of sessions)", "if ( typeof detail !== \"string\" || !detail || state.sweptRetire[session.id] ) continue;", "sweptRetire[session.id] = true"], dashboard/src/data/sessionLifecycle.ts:87-87; dashboard/src/data/sessionLifecycle.ts:89-94; dashboard/src/data/sessionLifecycle.ts:110-110): `sweepRetireResiduals` inspects every session, skips a session after its retire residual has already been swept, and marks the session as swept.
 - **Terminate capture** cit:([`endSessionDetailed`], dashboard/src/data/sessionLifecycle.ts:203-224): a successful terminate response records its `controlStopDetail` in the lifecycle notice store.
@@ -47,7 +47,7 @@ terminated/retired sessions, use informational copy, and never silently discard 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The store read, note anatomy, dismiss wiring. | `StopResidualNotes` | dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:41-72 |
-| The notice store prepends each retained residual. | "residuals: [residual, ...state.residuals]" | dashboard/src/data/sessionLifecycle.ts:75-75 |
+| The notice store prepends each retained residual. | "residuals: [residual" | dashboard/src/data/sessionLifecycle.ts:75-75 |
 | Dismissal removes the matching session/timestamp entry. | "state.residuals.filter"; "entry.sessionId === sessionId && entry.at === at" | dashboard/src/data/sessionLifecycle.ts:78-79 |
 | The retire sweep visits every session. | "for (const session of sessions)" | dashboard/src/data/sessionLifecycle.ts:87-87 |
 | The retire sweep rejects non-string, empty, and already-swept details. | "typeof detail !== \"string\""; "!detail"; "state.sweptRetire[session.id]" | dashboard/src/data/sessionLifecycle.ts:90-92 |

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_capability_catalog.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-16T06:15+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,8 +76,8 @@ provide the same native adapter construction and argv normalization used by host
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The capability snapshot serializer retains model-local effort and the ACP Sense-1 projection. | `model_capability_json`; "Project the catalog into category-keyed options without duplicating state." | mcp/src/agents_remember/serving/harness_capabilities.py:85-85; mcp/src/agents_remember/serving/harness_capabilities.py:171-184 |
-| The adapter port limits normalized native discovery to the built-in protocol harness set. | `HarnessCapabilityDiscoverer`; `BUILTIN_PROTOCOL_HARNESSES` | mcp/src/agents_remember/serving/harness_control_adapter.py:62-65; mcp/src/agents_remember/serving/harness_control_adapter.py:136-136 |
-| The shared runner helper converts Codex registry argv to the native app-server boundary without dropping supplied arguments. | `adapter_argv`; "app-server" | mcp/src/agents_remember/serving/harness_control_runner.py:311-319 |
+| The adapter port limits normalized native discovery to the built-in protocol harness set. | `HarnessCapabilityDiscoverer`; `BUILTIN_PROTOCOL_HARNESSES` | mcp/src/agents_remember/serving/harness_control_adapter.py:64-67; mcp/src/agents_remember/serving/harness_control_adapter.py:138-138 |
+| The shared runner helper converts Codex registry argv to the native app-server boundary without dropping supplied arguments. | `adapter_argv`; "app-server" | mcp/src/agents_remember/serving/harness_control_runner.py:313-321 |
 | Focused tests pin cache hits, refresh quarantine, concurrent-success protection, executable invalidation, single flight, and the fixed cache bound. | `test_cache_hit_is_discover_only_and_preserves_model_gating`; `test_failed_refresh_quarantines_stale_entry_until_ordinary_recovery`; `test_failed_refresh_does_not_delete_a_later_concurrent_success`; `test_executable_change_invalidates_without_growing_the_cache`; `test_same_fingerprint_requests_share_one_inflight_discovery`; `test_refresh_reenumerates_and_replaces_the_bounded_entry` | mcp/tests/test_serving_harness_capabilities.py:88-105; mcp/tests/test_serving_harness_capabilities.py:107-117; mcp/tests/test_serving_harness_capabilities.py:119-131; mcp/tests/test_serving_harness_capabilities.py:133-150; mcp/tests/test_serving_harness_capabilities.py:152-175; mcp/tests/test_serving_harness_capabilities.py:177-187 |
 
 ## Cross-Repo References
@@ -89,6 +89,8 @@ No external repository or ACP transport is used by this catalog.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T03:08:11+02:00 — W3-B04 curator: curated 4 table citations (4 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: created the pre-session catalog sidecar for

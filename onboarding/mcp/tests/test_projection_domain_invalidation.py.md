@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_projection_domain_invalidation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,13 +49,15 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retained domain state under test. | `ProjectionInputState`, `ProjectionReaders`, `ProjectionRefresh` | mcp/src/agents_remember/observer/projection_inputs.py:93-117; mcp/src/agents_remember/observer/projection_inputs.py:178-186; mcp/src/agents_remember/observer/projection_inputs.py:189-407 |
+| Retained domain state under test. | `ProjectionInputState`, `ProjectionReaders`, `ProjectionRefresh` | mcp/src/agents_remember/serving/projections/projection_inputs.py:93-117; mcp/src/agents_remember/serving/projections/projection_inputs.py:178-186; mcp/src/agents_remember/serving/projections/projection_inputs.py:189-407 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T03:05:00+02:00 — Curator W3-B02 repaired 1 Repo-Internal citation row, resolving 2 manifest findings with exact retained-state and invalidation anchors; verification metadata was preserved.
 - 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 collapsed

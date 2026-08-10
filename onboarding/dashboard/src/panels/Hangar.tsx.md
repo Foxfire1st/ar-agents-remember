@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Hangar.tsx`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T10:50+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ instructional chat injections through `GateResponder`, not enclosure status muta
 | The `EnclosureNode` statuses (closeout/integration/cleanup) and existence flags shown/filtered on. | `EnclosureNode` | mcp/src/agents_remember/observer/projection.py:141-172 |
 | The shared `hasLiveWorktree` tasks-surface visibility rule. | `hasLiveWorktree` | dashboard/src/data/selectors.ts:24-28 |
 | The shared chat-routed gate responder. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
-| The render tests pinning existence-only visibility (reopened hidden, visible again after restart, completed/abandoned gone). | "renders a row ONLY while a worktree physically exists — never from a cleanup-state proxy"; "hides a reopened contract with no worktrees on disk (reset-awaiting-restart, not live work)"; "shows a reopened leaf again once worktree_start recreates its worktrees"; "fully reduces to the empty state once every worktree is physically gone" | dashboard/src/panels/Hangar.test.tsx:37-71; dashboard/src/panels/Hangar.test.tsx:73-93; dashboard/src/panels/Hangar.test.tsx:95-113; dashboard/src/panels/Hangar.test.tsx:115-138 |
+| The render tests pinning existence-only visibility (reopened hidden, visible again after restart, completed/abandoned gone). | "renders a row ONLY while a worktree physically exists — never from a cleanup-state proxy"; "hides a reopened contract with no worktrees on disk (reset-awaiting-restart"; "shows a reopened leaf again once worktree_start recreates its worktrees"; "fully reduces to the empty state once every worktree is physically gone" | dashboard/src/panels/Hangar.test.tsx:37-71; dashboard/src/panels/Hangar.test.tsx:73-93; dashboard/src/panels/Hangar.test.tsx:95-113; dashboard/src/panels/Hangar.test.tsx:115-138 |
 
 ## Update History
 

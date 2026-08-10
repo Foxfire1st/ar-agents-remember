@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/projectors/claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -173,11 +173,11 @@ upsert; the conversation grammar carries the roster identity as `ConversationAge
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The adapter defines replay-user and transcript-entry handlers together with a 128 KiB transcript-text bound and clipping helper. | "def _handle_replayed_user("; "def _transcript_entry("; `MAX_TRANSCRIPT_TEXT_CHARS`; "def clip_transcript_text(" | mcp/src/agents_remember/serving/claude_stream_protocol.py:19-19; mcp/src/agents_remember/serving/claude_stream_protocol.py:427-427; mcp/src/agents_remember/serving/claude_stream_state.py:624-624; mcp/src/agents_remember/serving/claude_stream_state.py:925-925 |
+| The adapter defines replay-user and transcript-entry handlers together with a 128 KiB transcript-text bound and clipping helper. | "def _handle_replayed_user("; "def _transcript_entry("; `MAX_TRANSCRIPT_TEXT_CHARS`; "def clip_transcript_text(" | mcp/src/agents_remember/serving/claude_stream_protocol.py:21-21; mcp/src/agents_remember/serving/claude_stream_protocol.py:429-429; mcp/src/agents_remember/serving/claude_stream_state.py:628-628; mcp/src/agents_remember/serving/claude_stream_state.py:929-929 |
 | The Claude runtime fixture records runtime/helper versions and sets `enablesCapabilities` to false. | "runtimeVersion"; "helperVersion"; "enablesCapabilities" | mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:5-6; mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:10-10 |
 | The store unions tool-call blocks by `block_id` so `tool_use` → `tool_result` keeps input and output, and a late tagging upsert does not regress a terminal phase. | `ProjectionStore`; `apply_item`; `_union_blocks` | mcp/src/agents_remember/serving/conversation/active/store.py:135-445; mcp/src/agents_remember/serving/conversation/active/store.py:466-482 |
 | The engine's echo zipper merges echo and frame channels by strict turn order. | `_zip_entry`; `_drain_one_turn_body` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:82-97; mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:99-111 |
-| The conversation grammar declares the `ConversationAgentRef` roster-reference model. |"class ConversationAgentRef"|mcp/src/agents_remember/serving/conversation/_models_blocks.py:137-137|
+| The conversation grammar declares the `ConversationAgentRef` roster-reference model. |"class ConversationAgentRef"|mcp/src/agents_remember/models/conversations/content.py:139-139|
 
 ## Cross-Repo References
 
@@ -229,6 +229,8 @@ shape is still preserved, never guessed.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: rewrote the submission-echo claim to the
   bounded retained-text definitions, narrowed fixture/roster/system claims to their cited extents,

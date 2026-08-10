@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/stream.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -79,7 +79,7 @@ reviewed task evidence for any current behavioral claim.
 | The event-URL builder (`after=` only) this controller opens. | `conversationEventsUrl` | dashboard/src/data/conversation/client.ts:294-303 |
 | The envelope type this controller parses and forwards. | `eventCursor` | dashboard/src/data/conversation/types.ts:286-315 |
 | The store recovery path that stops and recreates the stream. | `startStream` | dashboard/src/data/conversation/store.ts:382-425 |
-| The active-conversation cursor authority names the `cursor-conflict` refusal. | "cursor-conflict" | mcp/src/agents_remember/serving/conversation/active/cursor.py:82-82 |
+| The active-conversation cursor authority names the `cursor-conflict` refusal. | "cursor-conflict" | mcp/src/agents_remember/serving/conversation/active/cursor.py:84-84 |
 
 ## Cross-Repo References
 

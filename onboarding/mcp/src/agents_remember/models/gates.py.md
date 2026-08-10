@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/gates.py`   |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-04T12:32+02:00                      |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`  |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`  |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Purpose
@@ -37,11 +37,13 @@ drift-proof as the record.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The Literals reused here. | `GateKind`; `GateState` | mcp/src/agents_remember/controlplane/records.py:29-45; mcp/src/agents_remember/controlplane/records.py:49-57 |
+| The Literals reused here (`GateKind` kernel-owned since L9). | "GateKind = Literal["; `GateState` | mcp/src/agents_remember/kernel/primitives/gate_vocab.py:12-12; mcp/src/agents_remember/kernel/primitives/gate_vocab.py:32-38 |
 | The strict response base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:63-66 |
 | The registry that maps the gate tools to these models. | `TOOL_RESPONSE_MODELS`; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179; mcp/src/agents_remember/models/tool_registry.py:181-185 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped gate-model citation claims; final exact frozen-snapshot check is clean.
 - 2026-07-04T12:32+02:00 — 260703-L4: `GateDecideResponse` now exposes

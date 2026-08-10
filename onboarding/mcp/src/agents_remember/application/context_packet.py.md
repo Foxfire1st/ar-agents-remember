@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/context_packet.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -26,26 +26,26 @@ facts, projects paths and memory state into explicit
 Pydantic nested models, obtains read-only worktree status, obtains compact
 provider summary status, and adds a drift summary only when requested. The
 application entry point validates the serialized provider summary through
-`ProviderSummary.model_validate(...)` cit:(["ProviderSummary.model_validate("], mcp/src/agents_remember/application/context_packet.py:89-89) before inserting it into the packet, then
-returns the JSON-compatible model dump of `ContextPacketV2` cit:(["ContextPacketV2("], mcp/src/agents_remember/application/context_packet.py:79-79).
+`ProviderSummary.model_validate(...)` cit:(["ProviderSummary.model_validate("], mcp/src/agents_remember/application/context_packet.py:97-97) before inserting it into the packet, then
+returns the JSON-compatible model dump of `ContextPacketV2` cit:(["ContextPacketV2("], mcp/src/agents_remember/application/context_packet.py:87-87).
 
 **Two of the five nested blocks stopped being adapter boundaries in 260731-EFA-L4**, because
 the producer now hands over the typed thing rather than a dict:
 
-- `worktree=worktree_status_packet(context.contract_path)` cit:(["worktree_status_packet(context.contract_path)"], mcp/src/agents_remember/application/context_packet.py:88-88) — **no
+- `worktree=worktree_status_packet(context.contract_path)` cit:(["worktree_status_packet(context.contract_path)"], mcp/src/agents_remember/application/context_packet.py:96-96) — **no
   `WorktreeSummary.model_validate(...)`**. `application.worktree_status.worktree_status_packet` returns the
   model. The old `dict[str, Any]` return is what let a value the worktree state machine can emit
   and this packet cannot accept survive every type check up to the moment the packet was built,
   at which point the `ValidationError` escaped the `@server.tool()` handler — nothing on this
   path catches one. Constructing the model at the projection puts the checker on the seam
   instead.
-- `_drift_packet(...)` cit:(["def _drift_packet("], mcp/src/agents_remember/application/context_packet.py:169-169) is typed `-> DriftSummaryPacket`, the `TypedDict` from
+- `_drift_packet(...)` cit:(["def _drift_packet("], mcp/src/agents_remember/application/context_packet.py:177-177) is typed `-> DriftSummaryPacket`, the `TypedDict` from
   `memory_quality.integrity.onboarding_drift_check.models`, instead of `dict[str, Any]`. Its
   `status` is the producer's `DriftStatus`, whose `error` member — and the matching `error` key —
   `DriftSummary` now accepts, so `include_drift=true` against a repo with no onboarding root
   reports the reason rather than raising out of the tool.
 
-The four that remain `model_validate` boundaries — cit:([`repo`], mcp/src/agents_remember/application/context_packet.py:81-81), cit:([`providers`], mcp/src/agents_remember/application/context_packet.py:89-89), cit:(["drift=DriftSummary.model_validate("], mcp/src/agents_remember/application/context_packet.py:97-97) and cit:([`freshness`], mcp/src/agents_remember/application/context_packet.py:98-98) — are the ones whose producers legitimately hand over a dict; their
+The four that remain "repo=RepoSummary.model_validate(git_facts_to_packet(git_facts))" boundaries — cit:(["repo=RepoSummary.model_validate(git_facts_to_packet(git_facts))"], mcp/src/agents_remember/application/context_packet.py:89-89), cit:(["from agents_remember.models.providers import ProviderSummary"], mcp/src/agents_remember/application/context_packet.py:42-42), cit:(["drift=DriftSummary.model_validate(_drift_packet(request"], mcp/src/agents_remember/application/context_packet.py:105-105) and cit:(["from agents_remember.kernel.git_freshness import freshness_to_packet"], mcp/src/agents_remember/application/context_packet.py:19-19) — are the ones whose producers legitimately hand over a dict; their
 vocabularies are covered instead by the wire models importing the producer's `Literal`
 (`RepoState`, `FreshnessState`, `DriftStatus`).
 
@@ -101,13 +101,13 @@ l-01 trust checkpoint is the intended opt-in caller.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `ContextPacketV2` and nested summary models define the response shape. | `ContextPacketV2` | mcp/src/agents_remember/models/context_packet.py:115-125 |
+| `ContextPacketV2` and nested summary models define the response shape. | `ContextPacketV2` | mcp/src/agents_remember/models/context_packet.py:114-124 |
 | Provider summary projection keeps context compact and points details at diagnostics. | `provider_summary` | mcp/src/agents_remember/providers/status.py:130-154 |
 | Worktree status projection supplies the read-only worktree summary — as the MODEL: `worktree_status_packet` (L14-L49) returns `WorktreeSummary`, so there is no dict boundary here to validate. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
-| `DriftSummaryPacket` (L17-L20) — the `TypedDict` `_drift_packet` now returns — and `DriftStatus` (L14), the alias both drift wire models read. | `DriftSummaryPacket`; `DriftStatus` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:17-25 |
+| `DriftSummaryPacket` (L17-L20) — the `TypedDict` `_drift_packet` now returns — and `DriftStatus` (declared in `models/drift.py`). | `DriftSummaryPacket`; "DriftStatus = Literal[" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19; mcp/src/agents_remember/models/drift.py:11-11 |
 | Public payload builder validates this application entry point output through the model registry. | `context_packet_payload` | mcp/src/agents_remember/mcp/tools/core.py:54-73 |
 | Branch freshness facts (upstream, fetch, ahead/behind) come from the freshness kernel. | `read_branch_freshness` | mcp/src/agents_remember/kernel/git_freshness.py:98-112 |
-| `ledgerMapsCodeHead` reuses the ledger loader and mapping lookup. | `ledgerMapsCodeHead` | mcp/src/agents_remember/models/context_packet.py:107-107 |
+| `ledgerMapsCodeHead` reuses the ledger loader and mapping lookup. | `ledgerMapsCodeHead` | mcp/src/agents_remember/models/context_packet.py:106-106 |
 
 ## Update History
 
@@ -118,7 +118,7 @@ l-01 trust checkpoint is the intended opt-in caller.
 - 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. Behavior is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T10:07+02:00 — 260731-EFA-L4 curator: body updated. Two of the five nested blocks
   stopped being `model_validate` adapter boundaries, and the card described all five the same
-  way. `worktree=` no longer calls `WorktreeSummary.model_validate(...)` — cit:(["worktree_status_packet(context.contract_path)"], mcp/src/agents_remember/application/context_packet.py:88-88)
+  way. `worktree=` no longer calls `WorktreeSummary.model_validate(...)` — cit:(["worktree_status_packet(context.contract_path)"], mcp/src/agents_remember/application/context_packet.py:96-96)
   `worktrees.status.worktree_status_packet` (L14-L49 there) returns the model, which moves "a
   value the state machine emits and this packet rejects" from a runtime `ValidationError` inside
   a handler with no `except` to a type error at the projection; the `WorktreeSummary` import was
