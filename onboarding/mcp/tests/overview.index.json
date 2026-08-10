@@ -81,6 +81,7 @@
     "mcp/tests/test_codex_native_history.py",
     "mcp/tests/test_cold_start.py",
     "mcp/tests/test_compact_content.py",
+    "mcp/tests/test_completion_cleanup.py",
     "mcp/tests/test_compound_idle_relay.py",
     "mcp/tests/test_config.py",
     "mcp/tests/test_context_packet.py",
@@ -286,6 +287,7 @@
     "mcp/tests/test_provider_watcher_actions.py",
     "mcp/tests/test_provider_workflow_integration.py",
     "mcp/tests/test_provider_worktree_routing.py",
+    "mcp/tests/test_quality_retry_proof.py",
     "mcp/tests/test_quality_scope_reporting.py",
     "mcp/tests/test_random_order.py",
     "mcp/tests/test_read_ar_files.py",
@@ -373,8 +375,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 351,
-    "fileSidecars": 361,
+    "sourceFilesInScope": 353,
+    "fileSidecars": 363,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -449,6 +451,7 @@
     "command",
     "comms",
     "compact",
+    "completion",
     "composition",
     "compound",
     "concurrency",
@@ -456,8 +459,7 @@
     "conformance",
     "conftest",
     "containment",
-    "content",
-    "context"
+    "content"
   ],
   "hotPath": {
     "summary": "TES-L6 proof is split between `test_sprint_role_seats.py` for two-sprint command-seat identity and the compound/state relay suites for role-neutral manager-subordinate liveness. The latter cover reviewer, curator, future roles, topology exclusions, re-arm/dedupe, action-time mutations, and the timezone-naive landed-row counterexample. The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request...",

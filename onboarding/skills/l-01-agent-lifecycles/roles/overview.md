@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | skills/l-01-agent-lifecycles/roles |
 | doc_type | route-local-overview |
-| lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-10T07:30+02:00 |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 
 ## Purpose
 
@@ -74,7 +74,20 @@ the timed escalation ladder is retired; dead-owner rows surface to the scoped ar
 mailbox; `operator_inbox_consume` is attribution-only. The `code-seam` criterion wording
 follows (rung → attempt).
 
+## 260805-ARG-L1 Route Impact — Completed Subordinates And Quality Retries
+
+The manager/orchestrator role files and manager brief now require exact-report-gated automatic
+cleanup for worker/reviewer/curator seats, preserve transcripts, exclude manager/orchestrator
+owners, and name landed/archive as the opt-out mode. The orchestrator role also records that
+cheap-first execution and exact/test-only proof reuse are pipeline behavior, never a seat's
+discretion; unsupported deltas run fresh, conservative failures fall back to full pytest, and CI
+does not reuse local proof.
+
 ## Update History
+
+- 2026-08-10T07:30+02:00 — 260805-ARG-L1: manager/orchestrator roles now name exact-report-gated
+  subordinate auto-close, manager/orchestrator exclusion, the landed/archive opt-out, and
+  wrapper-owned fail-closed quality retry behavior.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint-local role-seat identity and
   all-subordinate passive supervision. Verification metadata remains pinned until closeout.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00               |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastUpdated            | 2026-08-10T07:30+02:00               |
+| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -33,6 +33,12 @@ The command-composition test also asserts Pyright receives `--pythonpath` with
 the active interpreter, which lets linked worktrees reuse the primary checkout
 virtualenv without losing third-party import resolution.
 
+260805-ARG-L1 changes the expected command order to cheap-first: Ruff, format, file size,
+Pyright, Radon CC/MI, then pytest. The fixed-step failure test records the commands and proves a
+Ruff refusal prevents pytest from starting; the wrapper prints the two coverage-derived rails as
+skipped because no new report exists. Retry proof behavior has its own focused suite in
+`test_quality_retry_proof.py`.
+
 ### Repository-Gate Parity After The Hook Split (260731-EFA-L1)
 
 Two tests hold the local gates to the wrapper, and the split between them matters.
@@ -45,7 +51,7 @@ tier is where the wrapper runs. The fix was to follow the indirection, not to dr
 
 `test_git_hooks_delegate_to_the_shared_tiered_gate` closes the hole that indirection would
 otherwise open: `.githooks/pre-commit` must contain `exec "$hook_dir/_gate.sh" fast` and
-`.githooks/pre-push` must contain `exec "$hook_dir/_gate.sh" full`. Together the two tests still
+`.githooks/pre-push` must contain `exec "$hook_dir/_gate.sh" targeted`. Together the two tests still
 prove every repository gate reaches the wrapper with no threshold opt-out, while pinning the tier
 each hook is wired to — so a pre-commit silently promoted to the full tier (the cost that trained
 the `--no-verify` habit) or a pre-push silently demoted to the fast tier both fail here.
@@ -170,14 +176,14 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 
 - Tests verify command order and fixed module selection without shelling out,
   including that Pyright receives the derived scope and the active interpreter path.
-- Fixed check failures make the wrapper return nonzero.
+- Fixed check failures make the wrapper return nonzero and prevent the expensive pytest subprocess.
 - Missing coverage JSON makes the CRAP step fail.
 - CRAP threshold hits fail the default wrapper, and the parser exposes no
   report-only or strict opt-in mode — and now no path arguments either.
 - Repository-gate fixtures prove the shared tiered hook body and CI both invoke
   the same default wrapper command, and separately that each hook is wired to
-  its intended tier (`pre-commit` → `fast`, `pre-push` → `full`). The wrapper
-  itself runs in the full tier and in CI; the fast tier runs the generated-copy
+  its intended tier (`pre-commit` → `fast`, `pre-push` → `targeted`). The wrapper
+  runs targeted at pre-push/leaf edges and full in CI/master integration; the fast tier runs the generated-copy
   checks (skills, runtime assets, **harness trees**) plus Ruff,
   `ruff format --check`, and Pyright. The full tier is the only one that carries
   pytest, CRAP and the changed-lines coverage floor, because the floor needs a diff base.
@@ -199,14 +205,16 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths` | mcp/src/agents_remember/code_quality/check.py:225-257; mcp/src/agents_remember/code_quality/scope.py:111-111 |
-| The changed-lines coverage floor the full tier carries, and its own behavioural suite. | `DEFAULT_DIFF_COVERAGE_FLOOR`, `measure`, `test_a_diff_below_the_floor_fails_the_wrapper`, `test_the_floor_runs_inside_the_wrapper_rather_than_beside_it` | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317; mcp/tests/test_diff_coverage.py:570-585; mcp/tests/test_diff_coverage.py:629-659 |
+| The source quality wrapper: cheap-first enforcing steps, two declared Radon reports, pytest last, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths` | mcp/src/agents_remember/code_quality/check.py:248-292; mcp/src/agents_remember/code_quality/scope.py:108-117 |
+| The changed-lines coverage floor is fixed at 100 percent. | "DEFAULT_DIFF_COVERAGE_FLOOR = 100.0" | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30 |
+| The measurement implementation scores changed statements and branches against that floor. | "def measure(" | mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
+| Behavioural tests prove a sub-floor diff fails inside the wrapper rather than beside it. | `test_a_diff_below_the_floor_fails_the_wrapper`; `test_the_floor_runs_inside_the_wrapper_rather_than_beside_it` | mcp/tests/test_diff_coverage.py:570-585; mcp/tests/test_diff_coverage.py:629-659 |
 | CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | `complexity_blocks`, `calculate_scores` | mcp/src/agents_remember/code_quality/crap_calculator.py:232-239; mcp/src/agents_remember/code_quality/crap_calculator.py:294-305 |
 | The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:390-403; pyproject.toml:34-38 |
 | The complexity-selection and branch-coverage settings this suite reads. | `C901`; `branch` | pyproject.toml:17-17; pyproject.toml:68-70 |
 | The pytest configuration this suite reads. | `testpaths` | pyproject.toml:119-119 |
 | An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`, `test_python_coverage_and_test_rails_reach_their_trees` | mcp/tests/test_gate_scope.py:152-173; mcp/tests/test_gate_scope.py:175-194 |
-| The shared tiered hook body scanned by the parity test; the full tier invokes the wrapper. | "dashboard_checks() {" | .githooks/_gate.sh:120-291 |
+| The shared tiered hook body scanned by the parity test; targeted and full tiers invoke the wrapper. | "dashboard_checks() {" | .githooks/_gate.sh:120-291 |
 | CI defines a workflow for pull requests. | "pull_request" | .github/workflows/quality-checks.yml:3-58 |
 
 ### 260731-EFA-L17 — The Pre-Push Tier Is Targeted
@@ -220,6 +228,11 @@ for a wrapper reach and no CRAP opt-out, but the hook tier assertions now expect
 manual tier only.
 
 ## Update History
+
+- 2026-08-10T07:30+02:00 — Updated command-order expectations for cheap-first/pytest-last and
+  proved an earlier fixed-rail failure never launches pytest. Corrected the historical pre-push
+  prose to the already-landed targeted tier. Verification metadata remains blank until closeout
+  stamps the code commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the pre-push
   targeted-tier assertions and the full-tier manual/master-gate posture.

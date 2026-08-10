@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_workflow_integration.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                         |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`                         |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -64,7 +64,7 @@ to take individually now live on the workspace object.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Provider setup is the public service path used to prepare source providers. | `run_provider_setup`; `_action_payload_from_args` | mcp/src/agents_remember/providers/provider_setup.py:547-555; mcp/src/agents_remember/providers/provider_setup.py:562-588 |
-| Worktree start is exercised through the split `worktree_start_tool`, which writes isolated provider state. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:83-162 |
+| Worktree start is exercised through the split `worktree_start_tool`, which writes isolated provider state. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:77-156 |
 | Benchmark provider setup is exercised through the benchmark runner registration/setup path. | `benchmark_lifecycle_settings`; `prepare_configured_providers` | mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:237-238; mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:254-298 |
 | Focused provider setup tests cover the same settings and seed behavior without Docker. | `ProviderSetupTests`; `test_run_provider_setup_accepts_typed_request`; `test_prepare_announces_phases_in_order_with_seed_fallback` | mcp/tests/test_provider_setup.py:25-899 |
 

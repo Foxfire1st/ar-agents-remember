@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-09T19:54+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated | 2026-08-10T07:30+02:00 |
+| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1196,14 +1196,14 @@ implementation governs its hash rollover or static mount.
 | Closeout preview reports a missing wrapper instead of silently skipping it. | `test_preview_reports_missing_wrapper_instead_of_skipping_silently` | mcp/tests/test_worktree_closeout_quality_gate.py:77-93 |
 | The closeout quality-gate preview classifies the wrapper and code-quality outcomes. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:45-82 |
 | Closeout resets and stages the task worktree before gating exact commit content. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
-| A refused closeout gate leaves no commit or contract advance and preserves the staged retry tree. | `test_a_refused_gate_commits_nothing_and_leaves_the_worktree_staged` | mcp/tests/test_worktree_closeout_quality_gate.py:678-715 |
-| The closeout gates scope is the commit's content. | `test_the_gates_scope_is_the_commits_content` | mcp/tests/test_worktree_closeout_quality_gate.py:717-748 |
+| A refused closeout gate leaves no commit or contract advance and preserves the staged retry tree. | `test_a_refused_gate_commits_nothing_and_leaves_the_worktree_staged` | mcp/tests/test_worktree_closeout_quality_gate.py:733-770 |
+| The closeout gates scope is the commit's content. | `test_the_gates_scope_is_the_commits_content` | mcp/tests/test_worktree_closeout_quality_gate.py:772-803 |
 | Runtime workflow vocabularies are derived from their aliases with `get_args`. | `VALID_WORKFLOW_KINDS`; "frozenset(get_args(WorkflowKind))" | mcp/src/agents_remember/worktrees/worktree_contract.py:72-72 |
 | The producer vocabulary scan walks every Python module under the installed package root. | `PACKAGE_ROOT`; `_module_trees` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:146-146; mcp/tests/test_wire_vocabulary_exhaustiveness.py:297-299 |
 | The produced literal set is derived from producer source rather than retyped aliases. | `produced_literals` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:313-328 |
-| The response model imports all three producer-owned guidance vocabulary aliases. | "NextOperation,"; "NextTool,"; "WorktreePhase," | mcp/src/agents_remember/models/worktree.py:16-18 |
-| The response model imports the cleanup contract alias. | "CleanupStatus," | mcp/src/agents_remember/models/worktree.py:21-21 |
-| The response model publishes the lifecycle alias for closeout status. | "CloseoutStatus as LifecycleStatus" | mcp/src/agents_remember/models/worktree.py:28-28 |
+| The response model imports all three producer-owned guidance vocabulary aliases. | "NextOperation,"; "NextTool,"; "WorktreePhase," | mcp/src/agents_remember/models/worktree.py:17-21 |
+| The response model imports the cleanup contract alias. | "CleanupStatus," | mcp/src/agents_remember/models/worktree.py:22-28 |
+| The response model publishes the lifecycle alias for closeout status. | "CloseoutStatus as LifecycleStatus" | mcp/src/agents_remember/models/worktree.py:29-31 |
 | The exhaustiveness suite crosses guidance through the wire model field by field. | `cross_the_wire` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:212-227 |
 | The worktree contract reads tolerantly and writes strictly: an unreadable vocabulary cell degrades and is quarantined on `unknown_cells` (reported as `unknownContractCells`) because no lifecycle tool catches `ContractError`, while `validate_contract(contract, *, path)` refuses all six cells at the write boundary and every refusal names the file. | "class ContractBoundaryTests(unittest.TestCase):"; `test_an_unknown_cleanup_cell_degrades_and_names_itself`; `test_every_vocabulary_cell_degrades_rather_than_stranding_the_task`; `test_the_writer_refuses_what_the_reader_tolerated`; `test_every_refusal_names_the_contract_it_was_reading`; `test_the_invalid_contract_payload_carries_the_file_to_open` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:144-144; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:211-216; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:231-241; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:278-290; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:302-331; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:372-384 |
 | Base provider lifecycle settings derive their runtime and log roots from MCP settings. | `lifecycle_settings_from_config` | mcp/src/agents_remember/providers/settings.py:25-39 |
@@ -1225,7 +1225,7 @@ implementation governs its hash rollover or static mount.
 | The Git test suite rejects ambient selectors and extra spawners and checks the stdin contract. | `test_no_module_spawns_git_with_the_ambient_environment`; `test_only_the_kernel_module_defines_a_git_runner`; `test_stdin_is_devnull_unless_input_text_is_given` | mcp/tests/test_git_command.py:215-233; mcp/tests/test_git_command.py:427-446; mcp/tests/test_git_command.py:448-465 |
 | The `o200k_base` tokenizer vocabulary is vendored under `package_data/tiktoken/` so the import-time default counter never downloads it; an absent file, an unshipped encoding, or a copy whose SHA-256 does not match raises `TokenizerVocabularyError` — checked in `_verify_vendored_vocabulary` before tiktoken is pointed at the directory, because tiktoken answers a mismatch by deleting and re-downloading — and the cold-start suite starts the real server with every socket call blocked. | `_verify_vendored_vocabulary`; `VENDORED_VOCABULARY_URL`; `test_the_server_starts_with_cold_caches_and_no_network`; `test_a_missing_vocabulary_fails_loudly` | mcp/src/agents_remember/models/tokens.py:38-38; mcp/src/agents_remember/models/tokens.py:70-106; mcp/tests/test_cold_start.py:200-205; mcp/tests/test_cold_start.py:241-241; mcp/tests/test_cold_start.py:261-269 |
 | Carryover validates effective official-memory JSON or Markdown storage authority before mutation and reuses it for official route-index refresh. | `_ScopedRuleAuthority`; `_refresh_official_route_indexes`; `test_apply_carries_reviewed_overview_and_regenerates_indexes` | mcp/src/agents_remember/memory/carryover.py:653-687; mcp/src/agents_remember/memory/carryover_authority.py:216-230; mcp/tests/test_carryover_apply_1.py:21-70 |
-| The provider launch-authority reload/gate (containment R1), the fleet setup lock (R2), and the central containment metrics module (R4), pinned by the containment suite. | "containment R1, fail-closed"; `test_require_launch_authority_refuses_disk_disabled`; `test_second_setup_waits_and_times_out_loudly`; `test_store_roundtrip_and_torn_line_tolerance` | mcp/src/agents_remember/mcp/config.py:214-214; mcp/tests/test_provider_containment.py:109-115; mcp/tests/test_provider_containment.py:277-300; mcp/tests/test_provider_containment.py:435-450 |
+| The provider launch-authority reload/gate (containment R1), the fleet setup lock (R2), and the central containment metrics module (R4), pinned by the containment suite. | "containment R1, fail-closed"; `test_require_launch_authority_refuses_disk_disabled`; `test_second_setup_waits_and_times_out_loudly`; `test_store_roundtrip_and_torn_line_tolerance` | mcp/src/agents_remember/mcp/config.py:218-218; mcp/tests/test_provider_containment.py:109-115; mcp/tests/test_provider_containment.py:277-300; mcp/tests/test_provider_containment.py:435-450 |
 | The provider-only degradation detector/response protocol (260707-HFX-L7) and its dedicated settings parser, pinned by the degradation test suite. | `parse_provider_degradation_settings`; `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`; `test_critical_transition_records_event_inbox_and_failsafe_once` | mcp/src/agents_remember/mcp/provider_degradation_settings.py:58-128; mcp/tests/test_provider_degradation.py:99-159; mcp/tests/test_provider_degradation.py:239-330 |
 | FEUI-L5 submission authority, typed lifecycle errors, public boundary, and focused race matrix. | `register_harness_control_routes`; `test_slow_active_operation_does_not_block_status_or_queued_withdrawal`; `test_dispatch_claim_wins_atomic_withdrawal_race`; `test_same_id_is_idempotent_but_source_or_payload_change_conflicts` | mcp/src/agents_remember/serving/harness_control_api.py:182-217; mcp/tests/test_harness_submission_authority.py:231-262; mcp/tests/test_harness_submission_authority.py:307-321; mcp/tests/test_harness_submission_authority.py:515-530 |
 
@@ -1525,6 +1525,31 @@ closeout docstrings and the worktrees route (closeout/integrate/code_quality_gat
 altitude routing: leaf edges targeted, master integration full+capped once, `memory_quality_check`
 per leaf.
 
+## 260805-ARG-L1 Quality Pipeline Expansion
+
+The `code_quality` route now runs its deterministic subprocesses cheap-first — Ruff, formatter,
+file-size, Pyright, Radon CC/MI — before pytest, which remains the final subprocess because CRAP
+and diff coverage consume its branch artifact afterward. New `post_coverage.py` owns those two
+in-process enforcing calculations while `check.py` retains compatible aliases.
+
+New `retry_proof.py` owns local content-addressed pytest proof reuse after pytest passed and a
+coverage-derived rail refused. Its manifest binds every tracked byte, the selected tests, diff
+base, thresholds and measurement scope, Python/platform, pytest/coverage tool versions, an
+environment digest, and hashes of both coverage artifacts. Exact reuse skips pytest. Only concrete
+selected `test_*.py`/`*_test.py` deltas may filter their previous per-test contexts and append a
+small rerun; support/config/source/deletion/untracked or ambiguous selection changes run fresh.
+An inconclusive delta automatically discards the aggregate and runs the full selection once. A
+cheap-rail refusal deletes restored JSON before skipping pytest and the post-processors. The cache
+lives below Git's common directory, a successful gate deletes it, CI always runs fresh, and
+`AR_QUALITY_NO_RETRY=1` forces fresh local diagnosis. `test_quality_retry_proof.py` forces the
+context filter, transition/invalidation matrix, delta command, fallback, and stale-artifact case.
+
+Closeout now makes its existing fail-fast memory order operator-visible and deadlock-safe. The
+preview lists the working-tree citation preflight before any code-quality subprocess. Dirty
+unstamped cards compare to the leaf base temporarily; after the code commit, the complete memory
+gate repeats citations without fallback, so every new card must carry the real commit stamp before
+memory or ledger commits. Regression tests prove a memory failure never starts Pyright or pytest.
+
 ### 260713-TES-L5 Route Impact — Judgment Demolition
 
 The MCP relay's judgment layer is deleted: no escalation ladder, no respawn, no expectation
@@ -1535,6 +1560,18 @@ retired `orchestration.escalation` family. The new forcing suite and the skills/
 complete the change set.
 
 ## Update History
+
+- 2026-08-10T08:20+02:00 — 260805-ARG-L1 closeout-order expansion: recorded the advertised and
+  enforced memory-before-code-quality order, temporary dirty-card provenance, and no-fallback
+  post-refresh citation verification. Verification metadata remains pinned until closeout.
+- 2026-08-10T07:30+02:00 — 260805-ARG-L1 developer expansion: recorded cheap-first/pytest-last
+  ordering, the `retry_proof.py` and `post_coverage.py` ownership split, exact/test-only proof
+  reuse, conservative full fallback, stale-artifact refusal, and CI-fresh behavior. Verification
+  metadata remains blank until closeout stamps the code commit.
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1: MCP completion edges now compose the durable inbox,
+  normal retire mechanics, explicit role/owner policy, declared response fields, and a compatible
+  land mode. Verification remains pinned until closeout.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: added the sprint-binding, exact-routing, and
   all-subordinate notifier hot paths. Verification metadata remains pinned until closeout.

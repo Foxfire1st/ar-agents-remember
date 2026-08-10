@@ -12,6 +12,7 @@
   "coveredFiles": [
     "mcp/src/agents_remember/application/__init__.py",
     "mcp/src/agents_remember/application/benchmark_tools.py",
+    "mcp/src/agents_remember/application/completion_cleanup.py",
     "mcp/src/agents_remember/application/context_packet.py",
     "mcp/src/agents_remember/application/coordination_tools.py",
     "mcp/src/agents_remember/application/gate_tools.py",
@@ -34,8 +35,8 @@
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 22,
-    "fileSidecars": 22,
+    "sourceFilesInScope": 23,
+    "fileSidecars": 23,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -44,6 +45,9 @@
     "application",
     "benchmark",
     "benchmark_tools",
+    "cleanup",
+    "completion",
+    "completion_cleanup",
     "context",
     "context_packet",
     "coordination",
@@ -106,6 +110,7 @@
       "mcp/src/agents_remember/application",
       "mcp/src/agents_remember/application/__init__.py",
       "mcp/src/agents_remember/application/benchmark_tools.py",
+      "mcp/src/agents_remember/application/completion_cleanup.py",
       "mcp/src/agents_remember/application/context_packet.py",
       "mcp/src/agents_remember/application/coordination_tools.py",
       "mcp/src/agents_remember/application/gate_tools.py",
@@ -132,6 +137,8 @@
       "__init__",
       "benchmark_tools.py",
       "benchmark_tools",
+      "completion_cleanup.py",
+      "completion_cleanup",
       "context_packet.py",
       "context_packet",
       "coordination_tools.py",
@@ -173,9 +180,7 @@
       "worktree_tools.py",
       "worktree_tools",
       "serving/sprint_role_binding.py",
-      "MCP",
-      "sprint_role_binding",
-      "operator_inbox_"
+      "MCP"
     ]
   },
   "fallback": {

@@ -119,7 +119,9 @@
     "mcp/src/agents_remember/code_quality/diff_coverage.py",
     "mcp/src/agents_remember/code_quality/file_size.py",
     "mcp/src/agents_remember/code_quality/memory_cap.py",
+    "mcp/src/agents_remember/code_quality/post_coverage.py",
     "mcp/src/agents_remember/code_quality/projection_types.py",
+    "mcp/src/agents_remember/code_quality/retry_proof.py",
     "mcp/src/agents_remember/code_quality/scope.py",
     "mcp/src/agents_remember/code_quality/scope_reporting.py",
     "mcp/src/agents_remember/code_quality/single_owner.py",
@@ -270,8 +272,8 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 985,
-    "fileSidecars": 167,
+    "sourceFilesInScope": 990,
+    "fileSidecars": 169,
     "childRoutes": 18
   },
   "routingTerms": [
@@ -419,8 +421,12 @@
       "file_size",
       "memory_cap.py",
       "memory_cap",
+      "post_coverage.py",
+      "post_coverage",
       "projection_types.py",
       "projection_types",
+      "retry_proof.py",
+      "retry_proof",
       "scope.py",
       "scope",
       "scope_reporting.py",
@@ -428,11 +434,7 @@
       "single_owner.py",
       "single_owner",
       "structural_limits.py",
-      "structural_limits",
-      "targeted.py",
-      "targeted",
-      "wire_contract.py",
-      "wire_contract"
+      "structural_limits"
     ]
   },
   "fallback": {

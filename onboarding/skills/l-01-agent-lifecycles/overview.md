@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | skills/l-01-agent-lifecycles |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated | 2026-08-10T07:30+02:00 |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 
 ## Purpose
 
@@ -87,6 +87,16 @@ memory-capped); the worker/manager/orchestrator role files and their brief templ
 same ladder so no seat runs or expects a per-leaf full wrapper. Canonical `skills/` remains the
 owner; the packaged `package_data/runtime/skills/` mirrors are sync-propagated copies.
 
+## 260805-ARG-L1 Route Impact — Completion Cleanup And Retry Doctrine
+
+Manager/orchestrator doctrine now treats the exact durable subordinate report and transcript as
+the record: successful completion retries cleanup for worker/reviewer/curator seats, while
+manager/orchestrator owners remain live until explicit handoff retirement. The landed/archive
+path remains the setting-controlled opt-out. The closeout and orchestrator quality paragraphs also
+state the wrapper-owned retry contract: cheap deterministic rails precede pytest, exact and
+selected-test-only reuse are content-addressed and automatic, ambiguous deltas run fresh, a
+conservative delta refusal falls back to one full selection, and CI always runs fresh.
+
 ### 260713-TES-L5 Route Impact — Judgment Demolition Doctrine
 
 The lifecycle doctrine now teaches the fact-relay supervision model: the agent-notifier sweep
@@ -98,6 +108,11 @@ is an optional attribution marker. The `code-seam` criterion's coalescing invari
 "date, tries, attempt" (no rung); the escalation-storm history remains catching evidence.
 
 ## Update History
+
+- 2026-08-10T07:30+02:00 — 260805-ARG-L1: manager/orchestrator lifecycle doctrine now treats
+  reports as the durable handoff and completed subordinate processes as reclaimable; owner roles
+  remain live until explicit handoff retirement. The route also records the wrapper-owned
+  cheap-first and content-addressed retry contract.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed lifecycle routing and liveness hot paths for
   sprint command seats and all subordinate roles. Verification metadata remains pinned until

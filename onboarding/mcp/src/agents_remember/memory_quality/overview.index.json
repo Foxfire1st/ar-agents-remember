@@ -143,7 +143,7 @@
     "symbol"
   ],
   "hotPath": {
-    "summary": "`check.py` is the public package-level runner. It can execute style-only checks without repository context, or combine drift integrity and style checks when an MCP application entry point supplies `DriftCheckContext`. Drift logic lives under `integrity/onboarding_drift_check/`; the pre-code-commit missing-onboarding check lives at `integrity/check_missing_onboarding.py`; update-history ordering lives under `style/update_history/`. The history-order checker is diagnostic; the matching `history_order_fix.py` module is the explicit mutating script for timestamped history-order fixes.",
+    "summary": "`check.py` is the public package-level runner. It can execute style-only checks without repository context, or combine drift integrity and style checks when an MCP application entry point supplies `DriftCheckContext`. Drift logic lives under `integrity/onboarding_drift_check/`; the pre-code-commit missing-onboarding check lives at `integrity/check_missing_onboarding.py`; update-history ordering lives under `style/update_history/`. The history-order checker is diagnostic; the matching `history_order_fix.py` module is the explicit mutating script for timestamped history-order fixes. ### 26080...",
     "candidateHints": [
       "mcp/src/agents_remember/memory_quality",
       "mcp/src/agents_remember/memory_quality/check.py",

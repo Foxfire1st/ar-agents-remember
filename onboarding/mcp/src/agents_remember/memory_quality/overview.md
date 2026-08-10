@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-07T14:30+02:00                     |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -30,6 +30,15 @@ check lives at `integrity/check_missing_onboarding.py`; update-history ordering 
 `style/update_history/`. The history-order checker is diagnostic; the matching
 `history_order_fix.py` module is the explicit mutating script for timestamped
 history-order fixes.
+
+### 260805-ARG-L1 — Fail-Fast Closeout Without New-Card Deadlock
+
+External-memory closeout runs the citation pair before every code-quality subprocess. Dirty cards
+whose verification stamp is intentionally blank use the leaf base only as temporary comparison
+provenance; nothing writes that value into memory. After the code commit and metadata refresh, the
+complete memory-quality set repeats citations without the fallback. This keeps genuine range,
+claim, and provenance failures ahead of Pyright/pytest while proving every new card receives the
+real code-commit stamp before memory commits.
 
 ## Route Model
 
@@ -215,6 +224,9 @@ Coverage lives in `mcp/tests/test_l6_diff_coverage_claim_reopen.py`
 
 ## Update History
 
+- 2026-08-10T08:20+02:00 — 260805-ARG-L1 route impact: recorded fail-fast citation preflight,
+  dirty-card temporary base provenance, and no-fallback post-refresh citation verification.
+  Verification metadata remains pinned until closeout stamps ARG-L1.
 - 2026-08-07T14:30+02:00 — 260731-EFA-L8 curator (bounded delta): recorded the round-9
   claim_reopen mechanism — the absent-at-stamp rule extended to whole source files added after
   the stamp (unique working-tree anchor inside a cited range surfaces report-only; absent,

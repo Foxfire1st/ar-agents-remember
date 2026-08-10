@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash |                                            `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate |                                            2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash |                                            `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate |                                            2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -39,7 +39,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Application entry point validates coordination-contained paths and delegates to the worktree finalizer. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:424-454 |
+| Application entry point validates coordination-contained paths, delegates to the worktree finalizer, and then performs configured completion cleanup. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:419-450 |
 | The shared payload helper is `_tool_payload`. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | The response boundary is `complete_tool_response`. | "def complete_tool_response" | mcp/src/agents_remember/application/tool_response.py:49-49 |
 | The response model is registered in the public tool registry. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tool_registry.py:168-168 |

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_change_detection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-07T14:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,6 +33,8 @@ Module-level surface:
   `test_a_new_source_is_invalid_when_absent_from_the_working_tree` pin the absent-at-stamp rule
   extended to whole source files added after the stamp (unique working-tree anchor inside a cited
   range surfaces report-only; stale, ambiguous, or absent evidence stays hard).
+  ARG-L1 adds the closeout fallback boundary: a dirty unstamped card can be compared against the
+  supplied leaf base, while committed unstamped debt still returns `citation_provenance_missing`.
 - `MemoryProvenanceTests.test_a_memory_relative_source_uses_the_separate_memory_history`
   asserts the report-only arm (260731-EFA-L16): the memory construct changed AND the citation
   still covers it, so the review surface is report-only while the ledger-mapped memory history
@@ -69,11 +71,14 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `CodeProvenanceTests` (lines 125-587). | `CodeProvenanceTests` | mcp/tests/test_memory_citation_change_detection.py:125-587 |
 | Defines the class `MemoryProvenanceTests` (lines 588-661). | `MemoryProvenanceTests` | mcp/tests/test_memory_citation_change_detection.py:588-661 |
 | Defines the class `DependencyProvenanceTests` (lines 662-820). | `DependencyProvenanceTests` | mcp/tests/test_memory_citation_change_detection.py:662-820 |
-| Defines the class `RegistrationAndLimitsTests` (lines 821-849). | `RegistrationAndLimitsTests` | mcp/tests/test_memory_citation_change_detection.py:821-849 |
+| Defines the class `RegistrationAndLimitsTests` (lines 821-849). | `RegistrationAndLimitsTests` | mcp/tests/test_memory_citation_change_detection.py:853-879 |
 | Defines the class `ChangeRoutingTests` (lines 850-1180). | `ChangeRoutingTests` | mcp/tests/test_memory_citation_change_detection.py:850-1180 |
 
 ## Update History
 
+- 2026-08-10T08:20+02:00 — 260805-ARG-L1: added real-Git proofs that temporary leaf-base
+  provenance applies only to dirty unstamped cards and never forgives committed unstamped debt.
+  Verification metadata remains pinned until closeout stamps ARG-L1.
 - 2026-08-07T14:30+02:00 — 260731-EFA-L8 curator (bounded delta): recorded the round-9
   whole-new-file rule — the absent-at-stamp tests now cover whole source files added after the
   stamp (surfaces report-only when current and unique in range; enforced when stale or absent;

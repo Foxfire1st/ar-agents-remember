@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T14:05+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-10T05:45+02:00 |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -63,7 +63,9 @@ each raise `ConfigError`.
 defaults to all-human, named manager leaf-gate policy, per-kind
 reviewer-verdict requirements, and fail-loud rejection for human-pinned
 `push-approval` or unsupported `agent-question` delegation. `RetirementSettingsTests`
-(260707-HFX2-L11, 8 tests) covers `parse_retirement_settings`: defaults are both `True` when the
+covers `parse_retirement_settings`: the two edge gates and `auto_close_completed_seats` all default
+`True`; `autoCloseCompletedSeats=false` parses independently and preserves both enabled edges;
+non-boolean values fail loud. Existing cases still prove both edge flags default `True` when the
 `retirement` key is absent, explicit `autoLandOnIntegration`/`autoLandOnFinalize`
 `False`/`False` parses through, legacy `autoRetireOnIntegration`/`autoRetireOnFinalize` aliases
 parse into the new fields for compatibility, an unknown key (`autoRetireOnLaunch`) is rejected with
@@ -93,6 +95,10 @@ Config/schema tests now assert the public tool surface includes `parent_task` an
 As of the 260703-L8 seam ruling the orchestration settings tests prove the parse path consumes requireReviewerVerdictAtSeams (the delegated handover rule comes back verdict-bound; non-seam rules untouched).
 
 ## Update History
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1: added default, explicit opt-out, and fail-loud type
+  coverage for `autoCloseCompletedSeats`, while preserving existing edge-gate and legacy-alias
+  tests. Verification metadata remains pinned until closeout stamps the ARG-L1 code commit.
+
 - 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 3 citation claims; scoped result 0 findings.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to `mcp/tests/test_config.py` since

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-09T16:43+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated | 2026-08-10T07:30+02:00 |
+| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1308,7 +1308,7 @@ The structured-conversation contract and helper/fixture tests execute entirely i
 | Drift between `scripts/harness/` and the nine generated harness trees fails the suite, covering content and file mode. | `GeneratedTreesTests`; `test_drift_is_reported_for_content_and_for_mode` | mcp/tests/test_sync_harness.py:35-107 |
 | The closeout gate suite covers all three statuses and spies on the real argument passed from unannotated closeout call sites. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:49-421; mcp/tests/test_worktree_closeout_quality_gate.py:424-550 |
 | The gate is shown the commit content: a created file reaches ruff through real `derive_scope`, a deleted one leaves it, and the lint-path set equals the Python paths in the resulting commit tree. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:642-748 |
-| Both staging refusals are asserted as damage that does not happen: the repository checkout preserves its `add -p` selection and untracked secret, and a conflicted worktree keeps `MERGE_HEAD` intact. | `TaskWorktreePreconditionTests`; `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:791-903; mcp/tests/test_worktree_closeout_quality_gate.py:906-960 |
+| Both staging refusals are asserted as damage that does not happen: the repository checkout preserves its `add -p` selection and untracked secret, and a conflicted worktree keeps `MERGE_HEAD` intact. | `TaskWorktreePreconditionTests`; `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:846-958; mcp/tests/test_worktree_closeout_quality_gate.py:961-1015 |
 | A retry commits the tree a first run would: two worktrees driven to the same end state, one through a refused gate, are asserted to produce the identical commit tree, so the ignored `.dmypy.json` a refused attempt staged is not carried into the retry (`RetryStagesWhatAFirstRunWouldTests`). | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:966-1025 |
 | The whole HTTP surface is driven and validated against the model declared for the returned status, alias-strict, with the inventory, walker coverage, two runtime-validated dict routes, and the exact 286-declared / 133-driven / 153-listed ledger. | `_grouped`; `_driven_pairs`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:441-445; mcp/tests/test_serving_response_conformance_live.py:458-481; mcp/tests/test_serving_response_conformance_live.py:484-484; mcp/tests/test_serving_response_conformance_cases_1.py:12-12 |
 | `/api/state` and the SSE snapshot validate as `ServedWorkspaceProjection` and refuse `WorkspaceProjection`; 304 is bodyless, deltas omit `SERVED_TAIL_FIELDS`, and the populated-projection guard rejects an empty scaffold. | `ServedStateTailTests`; `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:214-261; mcp/tests/test_served_state_conformance.py:264-361; mcp/tests/test_served_state_conformance.py:364-419 |
@@ -1421,6 +1421,26 @@ extended: closeout gate mode/cap/kill-shape assertions, hook-tier `pre-push → 
 observer ticker-exit assertions (`ticker.join` replacing poll loops — test-only, kills a
 race-dependent diff-coverage class).
 
+## 260805-ARG-L1 Quality Retry Proofs
+
+`test_quality_retry_proof.py` is the forcing suite for the wrapper's new retry state machine. It
+uses public Coverage.py databases and real temporary Git repositories to prove changed-test and
+collection contexts are removed, support/deleted-test deltas are refused, fresh proof advances to
+exact then test-only reuse, and a source change invalidates. Its wrapper-level cases prove the
+delta pytest command carries only the edited test with `--cov-append --cov-context=test`, an
+inconclusive delta triggers one clean full-selection fallback, and a newly failing cheap rail
+deletes exact-restored JSON without invoking pytest or either post-coverage rail. Existing
+`test_code_quality_check.py` and `test_code_quality_targeted.py` pin the shared cheap-first command
+order, and `test_diff_coverage.py` now recreates coverage only from its fake pytest step after the
+wrapper deletes stale JSON.
+
+Closeout-order regressions are explicit rather than inferred: the closeout suite forces a failing
+memory preflight and asserts the code-quality runner is never called, then verifies the preview
+lists that preflight before the targeted gate. Citation change-detection tests prove temporary
+leaf-base provenance applies only to dirty unstamped cards; committed unstamped debt remains hard.
+The support suite requires citations in both closeout phases so post-refresh verification cannot
+be dropped silently.
+
 ### 260713-TES-L5 Route Impact — Judgment Demolition
 
 The test route gains the 26-test forcing suite `mcp/tests/test_judgment_demolition.py`
@@ -1431,6 +1451,17 @@ surfaces: retired settings fail loud, ladder transitions are legacy snapshot fix
 the nudge store is gone from every sweep harness.
 
 ## Update History
+
+- 2026-08-10T08:20+02:00 — 260805-ARG-L1 closeout-order expansion: added fail-before-code-quality,
+  preview-order, dirty-card temporary provenance, committed-debt refusal, and post-refresh citation
+  repetition proofs. Verification metadata remains pinned until closeout stamps ARG-L1.
+- 2026-08-10T07:30+02:00 — 260805-ARG-L1 developer expansion: added the quality retry forcing
+  suite and reconciled wrapper-order/stale-artifact tests across the existing quality families.
+  Verification metadata remains blank until closeout stamps the code commit.
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1: tests now prove all subordinate close roles, exact
+  report ordering, owner survival, tmux/provenance/transcript behavior, opt-out landing, failure
+  containment, and response-model declarations.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: added the concurrent-sprint and all-subordinate wake
   regression hot paths. Verification metadata remains pinned until closeout.

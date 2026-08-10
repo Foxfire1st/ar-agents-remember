@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/seat_events.py`        |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`              |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-10T05:45+02:00 |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`              |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 
 `seat_events.py` emits the observer events that feed the watcher/architect
 NEEDS-ATTENTION feed for seat landing, retirement, rename, and turn-state transitions. It exists so
-the completion-edge landing hooks, the `session_retire`/`session_rename` MCP tools, and the L5
+the completion-edge close-or-land hooks, the `session_retire`/`session_rename` MCP tools, and the L5
 liveness-sweep turn-state wiring
 (`serving/app.py`'s `on_turn_state_change` callback) log identically-shaped `ar-observer-event/v1`
 records, rather than each caller hand-rolling its own event shape.
@@ -98,7 +98,7 @@ pattern; it is called by every retire/rename/turn-state mutation path.
 | `orchestration_nudge_manager` is the existing event-logging pattern this module mirrors (same `EventStore(observer_root(config)).append(Event(...))` shape). | "def orchestration_nudge_manager_payload" | mcp/src/agents_remember/mcp/tools/orchestration.py:19-19 |
 | `session_retire_payload`/`session_rename_payload` call `log_retire_event`/`log_rename_event` after a successful mutation. | `session_retire_payload`; `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95 |
 | `api_terminal_retire`/`api_terminal_rename` call the same functions from the serving endpoints; `api_terminal_landed_cleanup` logs each cleanup retirement; `create_app` wires `on_turn_state_change=lambda observation: log_turn_state_change_event(config, observation.entry)` into the liveness sweeper. | `api_terminal_retire`; `api_terminal_landed_cleanup`; `api_terminal_rename`; `create_app` | mcp/src/agents_remember/serving/_app_terminal_routes.py:671-673; mcp/src/agents_remember/serving/_app_terminal_routes.py:733-745; mcp/src/agents_remember/serving/_app_terminal_routes.py:747-753; mcp/src/agents_remember/serving/app.py:226-285 |
-| `_auto_land_completed_seats` calls `log_landed_event` for every completion-edge landed seat, inside the same best-effort `try/except Exception` guard that wraps the landing body. | `_auto_land_completed_seats` | mcp/src/agents_remember/application/worktree_tools.py:457-487 |
+| `auto_complete_seats` calls `log_retire_event` for default automatic closes and `log_landed_event` for the settings opt-out; both remain subordinate to edge success. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:27-108 |
 
 ## Cross-Repo References
 
@@ -109,6 +109,9 @@ No meaningful cross-repo references found.
 | The observer event feed is consumed by the local dashboard/watcher surface, not a cross-repo boundary. | — | — |
 
 ## Update History
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1 relationship update: default completion emits
+  system-attributed `seat.retired`; the explicit landed opt-out still emits `seat.landed`.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   anchors and removed duplicated ranges; exact non-fixing check returns zero findings.

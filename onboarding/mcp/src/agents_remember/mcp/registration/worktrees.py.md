@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/worktrees.py`       |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-08-02T01:05+02:00                                        |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                    |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`                    |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ and the sync-early doctrine.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The payload builders these forward to. | `worktree_start_payload`, `worktree_attach_payload`, `worktree_status_payload`, `worktree_sync_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:31-41; mcp/src/agents_remember/mcp/tools/worktree.py:44-59; mcp/src/agents_remember/mcp/tools/worktree.py:62-71; mcp/src/agents_remember/mcp/tools/worktree.py:74-75 |
-| `TaskIdentity`, `TaskBases`, `StartExecution`. | `TaskIdentity`, `TaskBases`, `StartExecution` | mcp/src/agents_remember/application/worktree_tools.py:31-45; mcp/src/agents_remember/application/worktree_tools.py:48-62; mcp/src/agents_remember/application/worktree_tools.py:65-73 |
+| `TaskIdentity`, `TaskBases`, `StartExecution`. | `TaskIdentity`, `TaskBases`, `StartExecution` | mcp/src/agents_remember/application/worktree_tools.py:25-39; mcp/src/agents_remember/application/worktree_tools.py:42-56; mcp/src/agents_remember/application/worktree_tools.py:59-67 |
 | `TaskRef` — the shared task locator attach and status pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
 | The three-way split and the light-task default proved through a live server. | `test_worktree_start_splits_identity_bases_and_execution`, `test_worktree_start_defaults_to_a_real_light_task_start` | mcp/tests/test_mcp_registration_wiring_tests_1.py:599-642; mcp/tests/test_mcp_registration_wiring_tests_2.py:7-24 |
 

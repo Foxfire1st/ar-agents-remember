@@ -49,7 +49,7 @@
       "code-seam.md",
       "code-seam",
       "roles",
-      "a84add4c9422b18a26f1748dedaed16194994ded",
+      "b537abe20cf2498ef38e86e29ca586b5eec38466",
       "skills/l-01-agent-lifecycles",
       "skills/",
       "--model",
@@ -77,10 +77,10 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T02",
+      "T07",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "T05",
+      "T08",
       "TES",
       "ACPUI",
       "PHA",
@@ -89,9 +89,9 @@
       "L16",
       "L17",
       "package_data",
+      "ARG",
       "T04",
-      "T12",
-      "T21"
+      "T12"
     ]
   },
   "fallback": {

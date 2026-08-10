@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastUpdated            | 2026-08-10T05:45+02:00 |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -103,6 +103,9 @@ asserts, per tool, that the payload validates and that round-tripping
 (`model_validate(...).model_dump(mode="json", exclude_none=True)`) fabricates no
 keys. `test_strict_response_models_forbid_extra_fields` asserts the
 strict/flexible split matches the response-model taxonomy.
+`test_completion_cleanup_fields_are_declared_on_both_edge_models` pins the four ARG-L1
+close/deferred/failed/landed fields on both integration and finalization models, catching a strict
+finalizer wire rejection even when a representative dry-run payload has empty cleanup.
 
 ### Conventions
 
@@ -156,6 +159,10 @@ declared nor part of the input."
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1: added an explicit cross-model declaration proof for
+  all four completion-seat cleanup fields. Verification remains pinned until closeout stamps
+  ARG-L1.
 
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded `operator_inbox_supersede` joining
   the inbox representative payloads (R11 explicit supersession response conformance).

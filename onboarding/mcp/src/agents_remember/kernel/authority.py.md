@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/authority.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                         |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`                         |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -62,9 +62,9 @@ Two module-level helpers operate on an `McpRuntimeConfig`:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `RepositoryScope`, `McpRuntimeConfig`, `allowed_repo_ids`, `coordination_root`, and `path_is_relative_to` are defined here. | `RepositoryScope` | mcp/src/agents_remember/mcp/config.py:68-73; mcp/src/agents_remember/mcp/config.py:113-133; mcp/src/agents_remember/mcp/config.py:635-640 |
+| `RepositoryScope`, `McpRuntimeConfig`, `allowed_repo_ids`, `coordination_root`, and `path_is_relative_to` are defined here. | `RepositoryScope` | mcp/src/agents_remember/mcp/config.py:68-73; mcp/src/agents_remember/mcp/config.py:117-137; mcp/src/agents_remember/mcp/config.py:639-644 |
 | `AuthorityError` is the authority-violation error type raised by both guards. | `AuthorityError` | mcp/src/agents_remember/errors.py:17-23 |
-| Worktree application entry points consume these guards for repo resolution and path confinement. | `require_repo` | mcp/src/agents_remember/application/worktree_tools.py:10-10; mcp/src/agents_remember/application/worktree_tools.py:90-90; mcp/src/agents_remember/application/worktree_tools.py:250-256 |
+| Worktree application entry points import the shared guards for repo resolution and path confinement. | "from agents_remember.kernel.authority import require_repo, require_within_coordination" | mcp/src/agents_remember/application/worktree_tools.py:10-10 |
 | Provider application entry points route repo validation through `require_repo`. | `require_repo` | mcp/src/agents_remember/application/provider_tools.py:11-11; mcp/src/agents_remember/application/provider_tools.py:438-438; mcp/src/agents_remember/application/provider_tools.py:468-468 |
 | Authority guard returning the repository scope for a configured `repo_id` or raising `AuthorityError`. | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
 | Authority guard resolving and confining a caller value to the coordination root. | `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:27-35 |
