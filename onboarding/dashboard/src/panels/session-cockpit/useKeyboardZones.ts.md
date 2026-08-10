@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/useKeyboardZones.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:42+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ capture phase, active only while the sessions view is the visible view. Every ha
 - PTY reserved chords (cit:(["for (const reserved of PTY_RESERVED)"], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:61-61)): only `bound` entries with a `tinykeys` string are installed, the
   zone must be `pty`, and `routeKey` stays the authority (reserved.ts data) — an unbound/removed
   entry can never be intercepted by a stale binding.
-- The composer `/` rule (cit:(["slashOpensPalette(target.value, target.selectionStart)"], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:80-80)): `[Shift]+/` (keeps layouts where `/` needs Shift working, e.g.
+- The composer `/` rule (cit:(["slashOpensPalette(target.value"], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:80-80)): `[Shift]+/` (keeps layouts where `/` needs Shift working, e.g.
   German Shift+7), gated by zone = composer + the pure `slashOpensPalette(value, selectionStart)`
   caret test — the deliberate exception to printable suppression.
 - `tinykeys(window, map, { ignore: () => false, capture: true })` (cit:(["import { tinykeys, type KeybindingsMap } from \"tinykeys\""], dashboard/src/panels/session-cockpit/useKeyboardZones.ts:7-7)): the **default ignore

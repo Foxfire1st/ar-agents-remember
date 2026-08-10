@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash |  `1b7f6f07c5ccc64627299b5d22463ef9c267e187`|
-| lastVerifiedCommitDate |  2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ went into the commit with no rail of the gate having read it.
 
 This module deliberately does not do the staging and does not describe it. `runner` is a public
 parameter and closeout is not the only caller this signature admits, so the failure message states
-only what is true of every caller — "code, memory, and ledger remain uncommitted" — and **does not
+only what is true of every caller — "code" — and **does not
 say the staging was undone, because closeout does not undo it**. This function certifies the index
 it is handed and says nothing about how it came to look that way. The refusals, the reset and the
 `add -A` all live in `closeout.py`, where the disposable-worktree precondition that makes staging
@@ -199,7 +199,7 @@ coverage, and CRAP checks.
 | `quality_wrapper_path` / `requires_strict_code_quality` decide applicability from the checkout, and `code_quality_gate_preview` reports one of the three `status` values plus the planned `mode`/`memoryCap`. | `quality_wrapper_path`, `requires_strict_code_quality`, `code_quality_gate_preview`, `QualityGatePlan` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:37-41; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:67-76; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:77-146; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:29-35 |
 | `run_strict_code_quality_gate` executes the planned contract (targeted or full+capped), refuses on a missing wrapper or a cap-less full run, and raises with the bounded `_failure_output` tail; success reports `command`, `diffBase`, `mode`, and `memoryCap` for full runs. | `run_strict_code_quality_gate`, `_gate_command_parts`, `_gate_failure_message`, `_failure_output` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:162-219; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:220-248; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:249-275; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:329-333 |
 | `quality_python` walks the interpreter chain through `_git_common_dir`, which uses `run_git`; `quality_environment` builds from `git_environment()`, puts this worktree's `mcp/src` first on `PYTHONPATH`, and names the invoking altitude. | `quality_python`; `quality_environment`; `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:276-293; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:294-318; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:319-328 |
-| Both closeout call sites pass `contract.code_worktree`, `diff_base=contract.code_base_commit`, and the leaf targeted plan — the preview path, and the apply path where `requires_strict_code_quality` guards `_gate_staged_code` and `commit_if_dirty` follows it. | `closeout_preview_payload`, `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:362-434; mcp/src/agents_remember/worktrees/modules/closeout.py:941-1037 |
+| Both closeout call sites pass `contract.code_worktree`, `diff_base=contract.code_base_commit`, and the leaf targeted plan — the preview path, and the apply path where `requires_strict_code_quality` guards `_gate_staged_code` and `commit_if_dirty` follows it. | `closeout_preview_payload`, `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:357-427; mcp/src/agents_remember/worktrees/modules/closeout.py:938-1035 |
 | Regressions cover all three statuses, the targeted/full modes, cap-less full refusals, cap-kill naming, the checkout-not-name argument at both call sites, that the leaf base reaches the wrapper as `--diff-base`, that the spawned wrapper gets no repository selectors, worktree source precedence, bounded failures, interpreter selection, and mutation ordering. | `CodeQualityGateTests`, `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:49-423; mcp/tests/test_worktree_closeout_quality_gate.py:424-555 |
 | The staging regressions added with `_gate_staged_code`: `_ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `_ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:605-641; mcp/tests/test_worktree_closeout_quality_gate.py:642-753; mcp/tests/test_worktree_closeout_quality_gate.py:791-905; mcp/tests/test_worktree_closeout_quality_gate.py:906-965; mcp/tests/test_worktree_closeout_quality_gate.py:966-1025 |
 | The one git runner this module calls, and the scrubber `quality_environment` builds from: `run_git` and `git_environment` both drop `GIT_REPOSITORY_SELECTOR_ENV`, and `run_git` carries the local/remote/metadata timeout classes. | `run_git`, `git_environment` | mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
@@ -218,6 +218,8 @@ that repository's checkout rather than this one.
 | The preview reports `wrapper-unavailable` when the target checkout lacks the wrapper. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:77-146 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the altitude-routed
   plan (`QualityGatePlan` mode `targeted`/`full`, mandatory cap for full runs,

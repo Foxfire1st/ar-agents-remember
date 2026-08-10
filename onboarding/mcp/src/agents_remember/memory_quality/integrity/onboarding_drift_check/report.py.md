@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T12:10+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -48,9 +48,11 @@ at durable memory, so temporary drift reports never land inside a memory repo.
 | --- | --- | --- |
 | The drift summary and CLI facade call these renderers and the path resolver. | `run_drift_summary` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
 | Branch facts (`current_branch_name`, for the default report filename) come from `git_ops`. | `current_branch_name` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:15-19 |
-| The HEAD stamp in `write_markdown_report` runs on the single kernel git runner. | `write_markdown_report` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py:118-179 |
+| The HEAD stamp in `write_markdown_report` runs on the single kernel git runner. | `write_markdown_report` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py:112-173 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 2 citation items; scoped citation check now passes.
 

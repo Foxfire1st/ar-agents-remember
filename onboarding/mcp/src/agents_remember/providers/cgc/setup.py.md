@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -62,6 +62,8 @@ else `stage`).
 | CGC lifecycle install and refresh commands are dispatched through the lifecycle facade. | `__getattr__` | mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py:20-27 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 3 repository-reference citations (3/3 anchored and sourced; scoped citation check clean).
 

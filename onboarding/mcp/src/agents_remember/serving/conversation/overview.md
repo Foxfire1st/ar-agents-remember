@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-09T17:18+02:00 |
-| lastVerifiedCommitHash |  `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate |  2026-08-09T18:00:39+02:00|
+| lastUpdated | 2026-08-01T09:10+02:00 |
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 
 ## What This Area Is
 
@@ -60,7 +60,7 @@ render a UI.
 
 ## Hot Path Summary
 
-Start with `models.py` for identity, cursor, status, capability, operation, attachment,
+Start with `models/conversations/` for identity, cursor, status, capability, operation, attachment,
 withdrawal, and sub-agent participant grammar
 (`ConversationAgentRef`, per-item `agent`, library agent rows, `agents_note`); use `ports.py`
 to see the only two read boundaries. `runtime.py` defines the
@@ -76,9 +76,9 @@ implemented control slice by `control/overview.md`.
 
 | Path | Role |
 | --- | --- |
-| `models.py` | Stable strict wire vocabulary and authority-product validation. |
+| `models/` contracts | Moved by 260731-EFA-L9 to `models/conversations/`; this route consumes them through the canonical `serving/ports.py` surface. |
 | `response_contract.py` | The declared HTTP response contract for the 25 conversation routes: the three route-assembled shapes `models.py` never held, and the six shared `responses=` tables. |
-| `ports.py` | Exactly two read protocols: active conversation and dormant native library. |
+| `ports.py` | Re-exports the canonical read/control ports from `serving/ports.py`. |
 | `runtime.py` | The immutable app-scoped authority bundle, installed exactly once per app. |
 | `authorization.py` | Server-resolved local single-user operator ruling; loopback-only, fail closed. |
 | `dependencies.py` | The two narrow request dependencies child leaves consume. |
@@ -216,18 +216,18 @@ composition and authorization contract suites.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Cursor brands, identity bindings, strict wire configuration, provenance authority, and the sub-agent participant grammar are centralized in the contract module. |"class ConversationEventEnvelope"|mcp/src/agents_remember/serving/conversation/_models_status.py:232-232|
-| Canonical status, capability evidence, library agent rows, open rollback, withdrawal recovery, and fixture non-promotion are fail-closed products. |"class ConversationEventEnvelope"|mcp/src/agents_remember/serving/conversation/_models_status.py:232-232|
-| Exactly two read ports separate active exact-session reads from dormant native library reads. | "class ActiveConversationPort" | mcp/src/agents_remember/serving/conversation/ports.py:27-27 |
+| Cursor brands, identity bindings, strict wire configuration, provenance authority, and the sub-agent participant grammar are centralized in the contract module. |"class ConversationEventEnvelope"|mcp/src/agents_remember/models/conversations/stream_events.py:88-88|
+| Canonical status, capability evidence, library agent rows, open rollback, withdrawal recovery, and fixture non-promotion are fail-closed products. |"class ConversationEventEnvelope"|mcp/src/agents_remember/models/conversations/stream_events.py:88-88|
+| Exactly two read ports separate active exact-session reads from dormant native library reads. | "class ActiveConversationPort" | mcp/src/agents_remember/serving/ports.py:61-61 |
 | Three owned child routers — all implemented, none behavior-empty — compose through one stable root that also installs the one runtime. | "def register_conversation_routes" | mcp/src/agents_remember/serving/conversation/router.py:22-22 |
-| The immutable runtime/scope types, install-once binding, and fail-closed retrieval define the app-scoped composition authority. | "class ConversationRuntime" | mcp/src/agents_remember/serving/conversation/runtime.py:56-56 |
-| The server-resolved local-operator resolver, loopback-only classification, and cross-principal rejection define the authorization ruling. | "class ConversationAuthorizationResolver" | mcp/src/agents_remember/serving/conversation/authorization.py:32-32 |
-| The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. | "def resolve_conversation_authorization" | mcp/src/agents_remember/serving/conversation/dependencies.py:26-26 |
-| `create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call. | "def create_app", "def register_harness_control_routes" | mcp/src/agents_remember/serving/app.py:226-226; mcp/src/agents_remember/serving/harness_control_api.py:182-182 |
+| The immutable runtime/scope types, install-once binding, and fail-closed retrieval define the app-scoped composition authority. | "class ConversationRuntime" | mcp/src/agents_remember/serving/conversation/runtime.py:59-59 |
+| The server-resolved local-operator resolver, loopback-only classification, and cross-principal rejection define the authorization ruling. | "class ConversationAuthorizationResolver" | mcp/src/agents_remember/serving/conversation/authorization.py:34-34 |
+| The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. | "def resolve_conversation_authorization" | mcp/src/agents_remember/serving/conversation/dependencies.py:28-28 |
+| `create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call. | "def create_app", "def register_harness_control_routes" | mcp/src/agents_remember/serving/app.py:232-232; mcp/src/agents_remember/serving/harness_control_api.py:186-186 |
 | The strict response contract for the 25 conversation routes: the three shapes assembled at a route that had no model at all, plus the six `responses=` tables the child APIs spread. | "class WireResponse" | mcp/src/agents_remember/serving/response_contract.py:88-88 |
-| The foundation suite verifies two-port topology, child ownership (the active child's exact two routes, the library child's exact five routes, and the control child's exact seventeen routes), one registration seam, exact helper pins, and fixture non-promotion. | "test_exactly_two_conversation_ports_exist" | mcp/tests/test_conversation_foundation.py:22-22 |
+| The foundation suite verifies two-port topology, child ownership (the active child's exact two routes, the library child's exact five routes, and the control child's exact seventeen routes), one registration seam, exact helper pins, and fixture non-promotion. | "test_exactly_two_conversation_ports_exist" | mcp/tests/test_conversation_foundation.py:24-24 |
 | The composition contract suite proves single installation, duplicate/missing/foreign/missing-member failure, per-app isolation, no import-time singleton, and no production identity-injection or fixture/PTY reliance. | `_NoSessionHost` | mcp/tests/test_conversation_runtime_composition.py:42-47 |
-| The authorization contract suite proves local-operator identity, loopback-only resolution, fail-closed peers, no identity input channel, ignored browser claims, and cross-principal rejection in both directions. | "test_loopback_peers_resolve" | mcp/tests/test_conversation_authorization.py:122-122 |
+| The authorization contract suite proves local-operator identity, loopback-only resolution, fail-closed peers, no identity input channel, ignored browser claims, and cross-principal rejection in both directions. | "test_loopback_peers_resolve" | mcp/tests/test_conversation_authorization.py:130-130 |
 
 ## Cross-Repo References
 
@@ -456,20 +456,21 @@ site sweep), and active's projector resolution offloads the same `resolve_runnin
 (`conversation/active` carries it). The conversation wire contracts are untouched — this was an
 availability repair, not a vocabulary change.
 
-## 260713-TES-L5 — Native Fallback Remains Child-Local
+## 260731-EFA-L9 Route Impact — Contract Grammar Moved To Models
 
-The native truncation and schema-failure repair changes only the `active/projector/` child's
-ingestion behavior. It retains the existing `ConversationItem` unknown-vendor grammar, route set,
-cursor authority, authorization, runtime composition, and active/library/control ownership split.
-Transport identity and fail-soft mapping detail therefore live in the projector overview; this
-parent contract route gains no new wire field, endpoint, port, or composition seam.
+The contract grammar left this route: `models.py` and the five `_models_*` split files are gone,
+moved verbatim into `models/conversations/` (with `serving/conversation/models.py` receiving no
+forwarding shim). `ports.py` is now a thin re-export of the canonical `serving/ports.py` port
+surface (the two read ports plus the control/terminal seams). This overview remains the contract
+and composition governor for the conversation route; the wire-model governance lives at
+`models/conversations/overview.md`. The `active`/`library`/`control` child routes are unchanged.
 
 ## Update History
 
-- 2026-08-09T17:18+02:00 — No route impact: reviewed the TES-L5 native-frame fallback against the
-  parent conversation contract. The child-local repair preserves the wire grammar, routes, ports,
-  authorization, runtime composition, and child ownership split; detail is routed to
-  `active/projector/overview.md`. Verification stays pinned until closeout.
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the grammar move to
+  `models/conversations/`, the canonical port re-export, and the updated file map.
+  Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the event-loop offload across both child routes; wire contracts untouched. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   anchors and converted the history `create_app` citation; exact non-fixing check returns zero
@@ -496,7 +497,7 @@ parent contract route gains no new wire field, endpoint, port, or composition se
   `enables_capabilities: Literal[False]` is at L1281). Seventh: the composition row cited
   `harness_control_api.py` L144-L162, which is `resolve_terminal_open_selection` and was wrong
   BEFORE this leaf; the claim was also wrong on its face — construction happens in
-  cit:(["def create_app"], mcp/src/agents_remember/serving/app.py:226-226), and `harness_control_api.py` L182-L195 is where the single
+  cit:(["def create_app"], mcp/src/agents_remember/serving/app.py:232-232), and `harness_control_api.py` L182-L195 is where the single
   `register_conversation_routes(app, runtime)` install call sits. Corrected the router row's
   "three behavior-empty child routers", contradicted by this same file's own text. Verification
   metadata pinned until closeout stamps the L4 commit.

@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/SeatInspector.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Tab navigation and hidden-panel draft retention. | "exposes keyboard-navigable Evidence, Capabilities, and Bus tabs"; "retains an open Bus draft across click and keyboard tabs while hiding inactive controls" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:29-46; dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:48-91 |
+| Tab navigation and hidden-panel draft retention. | "exposes keyboard-navigable Evidence"; "retains an open Bus draft across click and keyboard tabs while hiding inactive controls" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:29-46; dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:48-91 |
 | Off-tab success/error settlement and no-focus Bus. | "settles posted and error replies on their exact entries while the Bus tab is inactive" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:93-160 |
 | Carried L6 evidence cases. | "names the pane archetype for controlled vs legacy raw seats (R1)"; "shows the verbatim pending-interaction payload (the unrepresentable fallback's target)" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:187-196; dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:212-222 |
 | Explicit mark-seen and seat-switch regressions. | "viewing the ledger does not acknowledge; the explicit mark-seen action does (F22)"; "switching seats never acknowledges the newly focused seat" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:251-273; dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:275-292 |

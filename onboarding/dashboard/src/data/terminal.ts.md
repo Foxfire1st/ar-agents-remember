@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/terminal.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -175,8 +175,8 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The backend WebSocket bridge this connects to (binary out, JSON in). |"async def stream_events"|mcp/src/agents_remember/serving/_app_common.py:112-112|
-| The serving API that returns terminal catalog rows and accepts terminate requests. |"async def stream_events"|mcp/src/agents_remember/serving/_app_common.py:112-112|
+| The backend WebSocket bridge this connects to (binary out, JSON in). |"async def stream_events"|mcp/src/agents_remember/serving/_app_common.py:117-117|
+| The serving API that returns terminal catalog rows and accepts terminate requests. |"async def stream_events"|mcp/src/agents_remember/serving/_app_common.py:117-117|
 | The xterm wrapper that adapts a `Terminal` to the `TerminalSink`. | "export function Terminal" | dashboard/src/panels/Terminal.tsx:110-110 |
 | The dev mock socket the bench provides through `TerminalSocketContext`. | `TerminalSocketContext` | dashboard/src/data/terminal.ts:546-546 |
 | The freshness consumers: Terminal forwards `onSocketState`, PtySurface routes it into the cockpit store. | `onSocketState` | dashboard/src/panels/Terminal.tsx:59-59 |

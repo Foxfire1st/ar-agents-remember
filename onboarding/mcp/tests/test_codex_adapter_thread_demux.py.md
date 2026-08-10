@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_adapter_thread_demux.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -140,8 +140,8 @@ vendored codex protocol via the shared fixture module.
 | --- | --- | --- |
 | The shared fixture/transport seam (FakeCodexTransport, prime_start, launch, make_adapter) this suite reuses. | `FakeCodexTransport`; `prime_start`; `launch`; `make_adapter` | mcp/tests/test_codex_app_server_adapter.py:42-103; mcp/tests/test_codex_app_server_adapter.py:212-222; mcp/tests/test_codex_app_server_adapter.py:187-194; mcp/tests/test_codex_app_server_adapter.py:239-247 |
 | The vendored-shape builders the frames come from, now including the `CollabAgents` parameter object. | `CollabAgents` | mcp/tests/_agent_wire_fixtures.py:63-77 |
-| The demuxed adapter under test: thread registry, per-thread pending maps, multiplexed pendings, method-first degrade, load-shed queue, native-page demux. | `CodexAppServerAdapter`; `_publish_agent_registry`; `CodexThreadRegistry` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115; mcp/src/agents_remember/serving/codex_app_server_adapter.py:1075-1083; mcp/src/agents_remember/serving/codex_app_server_threads.py:69-300 |
-| The snapshot/evidence models carrying the plural pending tuple and evidence key. | `AdapterSnapshot`; `pending_interactions`; `AR_EVIDENCE_KEY` | mcp/src/agents_remember/serving/harness_control_models.py:216-241; mcp/src/agents_remember/serving/harness_control_models.py:58-58 |
+| The demuxed adapter under test: thread registry, per-thread pending maps, multiplexed pendings, method-first degrade, load-shed queue, native-page demux. | "class CodexAppServerAdapter:"; "on_register=self._publish_agent_registry"; "self._threads = CodexThreadRegistry(" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115; mcp/src/agents_remember/serving/codex_app_server_adapter.py:1075-1083; mcp/src/agents_remember/serving/codex_app_server_threads.py:69-300 |
+| The snapshot/evidence models carrying the plural pending tuple and evidence key. | `AdapterSnapshot`; `pending_interactions`; `AR_EVIDENCE_KEY` | mcp/src/agents_remember/models/conversations/control_wire.py:126-151; mcp/src/agents_remember/models/conversations/evidence.py:17-17 |
 
 ## Cross-Repo References
 
@@ -193,7 +193,7 @@ the acquisition implementation is now contract-probed rather than a direct whole
   loud), the bounded pending map declining only the newest request, and the load-shed
   queue pins (delta flood sheds oldest deltas with structural completions surviving, the
   consumer-side notice mint, and the notice-before-close-sentinel ordering). Refreshed
-  the import-block citations (cit:(["class CodexAppServerAdapter:", "class FakeCodexTransport:"], mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-91; mcp/tests/test_codex_app_server_adapter.py:45-45)) and the per-test anchors. Verification metadata
+  the import-block citations (cit:(["class CodexAppServerAdapter:", "class FakeCodexTransport:"], mcp/src/agents_remember/serving/codex_app_server_adapter.py:95-95; mcp/tests/test_codex_app_server_adapter.py:47-47)) and the per-test anchors. Verification metadata
   stays pinned — the change is uncommitted.
 - 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: created the sidecar for the new
   thread-demux incident-regression suite (R1; review R5 degrade/registry-eviction pins).

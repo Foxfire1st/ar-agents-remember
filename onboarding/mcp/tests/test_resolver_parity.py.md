@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_resolver_parity.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:59+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -35,14 +35,16 @@ deleted runtime skill script.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package resolver module provides the tested CLI. | `main` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:1-11 |
-| Worktree contracts supply the contract-backed fixture. | `default_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:345-395; mcp/src/agents_remember/worktrees/worktree_contract.py:398-404 |
+| The package resolver CLI (moved to `cli/coordination_resolver.py` by L9) provides the tested command. | "def main(argv" | mcp/src/agents_remember/cli/coordination_resolver.py:17-17 |
+| Worktree contracts supply the contract-backed fixture. | `default_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:343-393 |
 
 ## Series-Contract Notes
 
 Resolver parity tests now pin task-name lookup over active roots, nested parent disambiguation, leaf-id selection, archive exclusion, and parity between source API and MCP wrapper arguments.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 2 citation rows
   (`main` re-export at coordination_context_resolver.py 1-11; the contract fixture builders at

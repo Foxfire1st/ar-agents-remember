@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_projector_claude_agents.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -114,6 +114,8 @@ stream-json runtime probed live during implementation.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 4 citation rows (mapper
   registry/grammar ranges, floor verdict + argv builder 77-114, the reordered-binder engine

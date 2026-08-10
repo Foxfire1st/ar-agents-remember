@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/seat_turn_truth.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-09T03:51+02:00|
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                    |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                    |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -79,12 +79,12 @@ called by the liveness sweep and the interrupt route and the state-signal action
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The frozen catalog row, evidence stamp, and public get/upsert seams it writes through. | "class TerminalCatalogEntry:"; "class CatalogTurnEvidence:"; "class TerminalCatalog:" | mcp/src/agents_remember/serving/terminal_catalog.py:59-70; mcp/src/agents_remember/serving/terminal_catalog.py:106-220; mcp/src/agents_remember/serving/terminal_catalog.py:589-929 |
+| The frozen catalog row, evidence stamp, and public get/upsert seams it writes through. | "class TerminalCatalogEntry:"; "class CatalogTurnEvidence:"; "class TerminalCatalog:" | mcp/src/agents_remember/models/terminal_catalog.py:68-72; mcp/src/agents_remember/models/terminal_catalog.py:42-50; mcp/src/agents_remember/serving/terminal_catalog.py:48-92 |
 | The liveness sweep's read-before-projection ordering that calls `record_terminal_cursors`. | `_observe_alive` | mcp/src/agents_remember/serving/terminal_liveness.py:343-426 |
 | The interrupt route stamping developer provenance after an accepted interrupt. | `conversation_interrupt` | mcp/src/agents_remember/serving/conversation/control/api.py:151-187 |
 | The state-signal/non-reaction action markers. | `_emit_state_signal`; `_emit_non_reaction` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:421-480; mcp/src/agents_remember/serving/_agent_notifier_actions.py:542-599 |
 | The compound-idle action-time marker write (ask + marker share the fresh signature). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:483-539 |
-| The regression suite covering the write helpers. | `SeatTurnTruthTests` | mcp/tests/test_terminal_evidence_projection.py:644-746 |
+| The regression suite covering the write helpers. | `SeatTurnTruthTests` | mcp/tests/test_terminal_evidence_projection.py:643-744 |
 
 ## Cross-Repo References
 
@@ -95,6 +95,10 @@ No meaningful cross-repo references found.
 | No cross-repo boundary owns or consumes these catalog writes. | — | — |
 
 ## Update History
+
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: refreshed the body and citations for the current
+  `TerminalCatalogEntry`/`CatalogTurnEvidence` model move; verification metadata remains pinned
+  until closeout.
 
 - 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: added the compound-idle write helpers
   (`with_compound_idle_emitted` / `record_compound_idle_emitted`), the signature-keyed

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/records.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T18:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -108,7 +108,7 @@ advance). All helpers are pure.
 | Mirrors the observer event envelope (camelCase, `extra="forbid"`, schema alias). | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
 | The append-only store that serializes and folds these snapshots. | `GateStore` | mcp/src/agents_remember/controlplane/store.py:96-325 |
 | Ids come from the local ULID mint. | `new_ulid` | mcp/src/agents_remember/observer/ulid.py:30-41 |
-| `GateRecord` now subclasses `DurableRecord` and its docstring states why `schema` and `schemaVersion` answer different questions. | `GateRecord` | mcp/src/agents_remember/controlplane/records.py:84-116 |
+| `GateRecord` now subclasses `DurableRecord` and its docstring states why `schema` and `schemaVersion` answer different questions. | `GateRecord` | mcp/src/agents_remember/controlplane/records.py:45-77 |
 | `DurableRecord` supplies the `extra="forbid"` config and the `schemaVersion` validator that rejects an unknown major and accepts an unknown minor. | `DurableRecord`; `schema_version_supported` | mcp/src/agents_remember/controlplane/durable_store.py:224-245; mcp/src/agents_remember/controlplane/durable_store.py:248-271 |
 
 As of the 260703-L8 seam ruling the GateKind vocabulary includes `master-handover-approval`: the master-exit seam gate the manager raises with the reviewer verdict attached and the orchestrator decides (delegable, never human-pinned — human review concentrates at the super gate).
@@ -120,6 +120,8 @@ As of the 260703-L8 seam ruling the GateKind vocabulary includes `master-handove
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
 

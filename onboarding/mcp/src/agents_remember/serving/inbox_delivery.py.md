@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ enforces the gate FAIL-CLOSED by row kind: a `state-signal` row is refused
 regardless of which caller drives the delivery (first post, redelivery, or an escalation rung);
 other kinds use the caller's `admission.boundary` flag. This is the F1 fix — a mid-turn push
 would otherwise make acceptance terminal without the N1 gate. The boundary vocabulary lives in
-`terminal_catalog.seat_at_turn_boundary`. `target_session_for_entry` cit:([`target_session_for_entry`], mcp/src/agents_remember/serving/inbox_delivery.py:339-363) is the
+`terminal_catalog.seat_at_turn_boundary`. `target_session_for_entry` cit:(["def target_session_for_entry("], mcp/src/agents_remember/serving/inbox_delivery.py:364-388) is the
 extracted exact-agent-id-first target resolution both delivery and the held-row predicate use.
 
 The current L5 path resolves the target catalog row, submits the existing inbox entry using its row
@@ -145,7 +145,7 @@ not as normative delivery authority.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Delivery state is persisted on the operator inbox record. | `record_delivery` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:159-209 |
-| The dashboard serving route and MCP payload builder both pass catalog/host/paster seams for delivery. | "created_by=\"provider-degradation-detector\"," | mcp/src/agents_remember/providers/degradation.py:644-644 |
+| The dashboard serving route and MCP payload builder both pass catalog/host/paster seams for delivery. | "created_by=\"provider-degradation-detector\"," | mcp/src/agents_remember/providers/degradation.py:658-658 |
 | 260707-HFX2-L3: `deliver_inbox_entry` now builds a `DeliveryRow` and calls the ONE delivery path, `serving.injector.deliver`, instead of calling `TerminalPaster.paste` directly. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
 | `serving.agent_notifier`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit/state-signal action the agent-notifier takes rides through this same translation layer. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:91-91; mcp/src/agents_remember/serving/owner_signals.py:93-93 |
 
@@ -193,6 +193,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the vocabulary sweep — the
   fail-closed availability-gate comment names "a boundary drain" instead of "an escalation
   rung" as the third delivery driver; no ladder path calls `deliver_inbox_entry` anymore.

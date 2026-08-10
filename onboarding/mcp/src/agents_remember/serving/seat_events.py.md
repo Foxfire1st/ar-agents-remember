@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/seat_events.py`        |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`              |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`              |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -83,7 +83,7 @@ not an external standard.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines this event shape; the existing `orchestration_nudge_manager` precedent and the `ar-observer-event/v1` schema are the source of truth. | "def log_retire_event" | mcp/src/agents_remember/serving/seat_events.py:24-24 |
+| No external/domain document defines this event shape; the existing `orchestration_nudge_manager` precedent and the `ar-observer-event/v1` schema are the source of truth. | "def log_retire_event" | mcp/src/agents_remember/serving/seat_events.py:28-28 |
 
 ## Repo-Internal References
 
@@ -93,11 +93,11 @@ pattern; it is called by every retire/rename/turn-state mutation path.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `Event`/`now_iso` define the record shape and timestamp helper this module builds every event from. | `Event`; `now_iso` | mcp/src/agents_remember/observer/events.py:34-36; mcp/src/agents_remember/observer/events.py:39-64 |
-| `observer_root`/`EventStore` are the append-only durable log this module writes to. | `observer_root` | mcp/src/agents_remember/observer/paths.py:32-34; mcp/src/agents_remember/observer/store.py:106-107 |
+| `observer_root`/`EventStore` are the append-only durable log this module writes to. | `observer_root` | mcp/src/agents_remember/observer/store.py:106-107 |
 | `new_ulid` generates the event `id`. | `new_ulid` | mcp/src/agents_remember/observer/ulid.py:30-41 |
 | `orchestration_nudge_manager` is the existing event-logging pattern this module mirrors (same `EventStore(observer_root(config)).append(Event(...))` shape). | "def orchestration_nudge_manager_payload" | mcp/src/agents_remember/mcp/tools/orchestration.py:19-19 |
 | `session_retire_payload`/`session_rename_payload` call `log_retire_event`/`log_rename_event` after a successful mutation. | `session_retire_payload`; `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95 |
-| `api_terminal_retire`/`api_terminal_rename` call the same functions from the serving endpoints; `api_terminal_landed_cleanup` logs each cleanup retirement; `create_app` wires `on_turn_state_change=lambda observation: log_turn_state_change_event(config, observation.entry)` into the liveness sweeper. | `api_terminal_retire`; `api_terminal_landed_cleanup`; `api_terminal_rename`; `create_app` | mcp/src/agents_remember/serving/_app_terminal_routes.py:671-673; mcp/src/agents_remember/serving/_app_terminal_routes.py:733-745; mcp/src/agents_remember/serving/_app_terminal_routes.py:747-753; mcp/src/agents_remember/serving/app.py:226-285 |
+| `api_terminal_retire`/`api_terminal_rename` call the same functions from the serving endpoints; `api_terminal_landed_cleanup` logs each cleanup retirement; `create_app` wires `on_turn_state_change=lambda observation: log_turn_state_change_event(config, observation.entry)` into the liveness sweeper. | `api_terminal_retire`; `api_terminal_landed_cleanup`; `api_terminal_rename`; `create_app` | mcp/src/agents_remember/serving/_app_terminal_routes.py:673-675; mcp/src/agents_remember/serving/_app_terminal_routes.py:735-747; mcp/src/agents_remember/serving/_app_terminal_routes.py:749-755; mcp/src/agents_remember/serving/app.py:232-292 |
 | `auto_complete_seats` calls `log_retire_event` for default automatic closes and `log_landed_event` for the settings opt-out; both remain subordinate to edge success. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:27-108 |
 
 ## Cross-Repo References
@@ -110,6 +110,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-10T05:45+02:00 — 260805-ARG-L1 relationship update: default completion emits
   system-attributed `seat.retired`; the explicit landed opt-out still emits `seat.landed`.
 
@@ -132,3 +133,4 @@ No meaningful cross-repo references found.
   feed with `ar-observer-event/v1` records (`seat.retired`/`seat.renamed`/
   `seat.turn-state-changed`). Turn-state events fire only on an actual transition, gated by the
   caller. Verification metadata pinned until closeout stamps the HFX-L8 commit.
+

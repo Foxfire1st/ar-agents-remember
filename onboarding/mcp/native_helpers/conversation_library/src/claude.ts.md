@@ -6,8 +6,8 @@
 | path | `mcp/native_helpers/conversation_library/src/claude.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -98,9 +98,9 @@ drift — the observed versions are informational and the `list`/`read` operatio
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. | "export const PROTOCOL_VERSION" | mcp/native_helpers/conversation_library/src/protocol.ts:13-13 |
-| The Python Claude port calls list/read/resolve-resume-target through the locked helper host; it also adds the per-row agent grouping, the `agentsEnumerated` marker degrade, and the composite `<sessionId>/<agentId>` read split. | "class ClaudeConversationLibrary" | mcp/src/agents_remember/serving/conversation/library/claude.py:80-80 |
+| The Python Claude port calls list/read/resolve-resume-target through the locked helper host; it also adds the per-row agent grouping, the `agentsEnumerated` marker degrade, and the composite `<sessionId>/<agentId>` read split. | "class ClaudeConversationLibrary" | mcp/src/agents_remember/serving/conversation/library/claude.py:88-88 |
 | The library agent-grouping suite proves the helper's agent rows, marker degrade, and agent transcript read through the fake boundary. | `ClaudeLibraryAgentTests` | mcp/tests/test_conversation_library_agents.py:471-648 |
-| The installed suite gates Claude on the live helper contract probe, not a version comparison; the observed runtime/helper version rides evidence informationally. | `ClaudeGateHonestyTests` | mcp/tests/test_conversation_library_installed.py:554-586 |
+| The installed suite gates Claude on the live helper contract probe, not a version comparison; the observed runtime/helper version rides evidence informationally. | `ClaudeGateHonestyTests` | mcp/tests/test_conversation_library_installed.py:587-622 |
 
 ## Cross-Repo References
 

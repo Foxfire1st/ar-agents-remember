@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/selectors.ts`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,7 +62,6 @@ No relevant external documentation is needed for these store selectors.
 | --- | --- | --- |
 | `selectQueue` caches filtered queue arrays by source references and filters optimistic suppression ids. | `selectQueue` | dashboard/src/data/selectors.ts:37-46 |
 | Lifecycle tree grouping and wait formatting are pure display derivations. | `buildTree` | dashboard/src/data/selectors.ts:73-105 |
-| Store state owns `suppressedAttentionIds`, not this selector. | "suppressedAttentionIds: Record<string, true>" | dashboard/src/data/store.ts:41-41 |
 
 ## Cross-Repo References
 

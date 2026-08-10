@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 52839)
+Total output lines: 2259
+
 # mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview
 
 | Field                  | Value                                            |
@@ -5,9 +8,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated | 2026-08-07T22:45:00+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -111,7 +114,7 @@ readiness, liveness/activity, delivery evidence, interactions, and terminal proj
 operator-inbox rows are the only inter-agent message roots; the adapter is only their delivery wire,
 and explicit recipient `consume` is the sole acknowledgement. Pane text, terminal logs, copy mode,
 paste echoes, and timing windows are diagnostic-only and cannot authorize readiness, delivery,
-completion, or agent-notifier action. The older pane/log/paste descriptions retained below are historical
+completion, or supervisor action. The older pane/log/paste descriptions retained below are historical
 route history, not current authority.
 
 **`HarnessSubmissionAuthority` is the sole epoch-bound prompt/setter
@@ -215,20 +218,18 @@ matching seats `status:"landed"` via `landing.py` + `seat.landed`, keeps them vi
 the dashboard, and leaves manual retire as the explicit terminating path for stuck/abandoned/duplicate
 or harmful seats; `POST /api/terminal/landed-cleanup` closes only rows still marked landed and reports
 closed/skipped counts. The
-**deterministic agent-notifier sweep** (P-15 tiers 1+2, "the model is never the polling layer"): a
-third decoupled-cadence lifespan task (`agent_notifier.py::run_agent_notifier_sweep`, default ~10s,
+**deterministic supervisor sweep** (P-15 tiers 1+2, "the model is never the polling layer"): a
+third decoupled-cadence lifespan task (`supervisor.py::run_agent_notifier_sweep`, default ~10s,
 settings-controlled) that reads `TerminalCatalog`/`OperatorInboxStore`/`ExpectationRowStore`/the
-nudge store DIRECTLY (never the projection), evaluates the mechanical predicate families — pane-state
-(new `pane_signals.py`), expectation-deadline expiry, unacked-row redelivery, seat-liveness (the liveness/turn-state join with graceful
-degradation), escalation, dead-upstream, and since 260713-TES-L2 the worker→manager state-signal
-relay (state-signal-due, non-reaction-due, boundary-drain), plus since 260713-TES-L3 the
-compound-idle relay (compound-idle-due) one level up — and acts: redeliver via the shared
-injector, auto-nudge, owner-addressed signal-emit, state-signal, or hand off to the escalation
-ladder's reserved stub, logging every action as an `orchestration.agent-notifier.*` observer event.
-New `agent_notifier_heartbeat.py` gives the sweep its own
+nudge store DIRECTLY (never the projection), evaluates five mechanical predicates — pane-state
+(new `pane_signals.py`), expectation-deadline expiry, turn-report staleness (`missing_artifact()`
+gets its first caller), unacked-row redelivery, and seat-liveness (the liveness/turn-state join with graceful
+degradation) — and acts: redeliver via the shared injector, auto-nudge, owner-addressed signal-emit, or
+hand off to the escalation ladder's reserved stub, logging every action as an
+`orchestration.supervisor.*` observer event. New `supervisor_heartbeat.py` gives the sweep its own
 self-liveness tick row (issue #15, "the watcher must be code AND watched"), surfaced as a fail-loud
 MCP-tool banner (`mcp/tools/base.py`) and a dashboard header badge (`/api/state`/SSE).
-The escalation ladder fills that reserved stub: `agent_notifier.py` gains two more predicates
+The escalation ladder fills that reserved stub: `supervisor.py` gains two more predicates
 (`evaluate_escalation_findings`/`evaluate_dead_upstream_findings`) and two more actions
 (`_escalate_rung`/`_signal_dead_upstream`), calling through the new
 `controlplane/escalation_ladder.py` walker (governed by the `controlplane/` overview) for rung
@@ -241,81 +242,25 @@ find_orphaned_workers`) as orphans in the same respawn event, never auto re-pare
 absorbing the dead manager's role. No new hot loop, no new `InboxMessageKind` values — rung 1 reuses
 `nudge`, rung 2/3/respawn/dead-upstream reuse `escalation`, distinguishable via the dedicated
 `orchestration.escalation.rung`/`.respawn`/`.dead-upstream` events.
-
-**260713-TES-L2 — the worker-state relay on catalog turn truth.** The serving route now carries
-the projection lift (G1) and the relay: `terminal_evidence.py` maps per-vendor turn settlements
-onto the catalog seat truth (with dedicated no-loss cursors and the pi tail walk);
-`terminal_catalog.py` gains the terminal-outcome/origin fields, cursors, interrupt provenance,
-and signal markers; `seat_turn_truth.py` is the get+upsert write seam; `state_signals.py` owns
-the three relay predicate families plus `state_signal_held_on_boundary`; `owner_signals.py` owns
-the one-row-per-root-cause posting primitive; `_agent_notifier_actions.py` emits/renews/drains
-the rows; and `inbox_delivery.py` enforces the fail-closed boundary gate BY ROW KIND. The
-`state-signal` message kind (N12) lands terminal at correlated boundary acceptance
-(`state_signal_landed`), never via model consume; `turn-report-by`/`turn-report-stale` retire
-from the worker→manager path (N8/R6).
-
-**260713-TES-L3 — the compound-idle relay to orchestrators.** `state_signals.py` owns the
-compound-idle predicate family: `_compound_worker_index` (one catalog scan, indexed by spawner
-id and master key), `compound_idle_sets` (manager + every worker of ITS master, master-scoped
-on every arm via the public `signal_routing.master_key`; status-first; unknown≠idle fail-closed;
-zero-worker and unbound managers never form sets), `compound_idle_signature` (sorted
-`member-id:turn_state:turn_state_changed_at` episode identity — the dedupe/re-arm marker
-`compound_idle_emitted_for` on the manager row), and `evaluate_compound_idle_findings`
-(`compound-idle-due`, one per manager seat). `_agent_notifier_actions._emit_compound_idle`
-posts exactly one durable `state-signal` per set to `derive_signal_owner`'s one-hop
-manager→orchestrator edge (no global fallback), derives the episode signature at ACTION time
-for both the ask and the marker, and rides the existing boundary gate and `state_signal_landed`
-terminality — exactly one landing. The manager non-reaction residue relays one level up to the
-orchestrator with the same 300 s window (worker residue keeps the L2 path); compound-idle stays
-a pure seat-state signal and the orchestrator combines the two facts (N15/N16).
-
-`COMPOUND_IDLE_SWEEP_LATENCY_SECONDS = 10.0` records the N6 latency bound (one default sweep).
-The wire model gained `compoundIdleEmittedFor` (catalog key pin 63→64).
-
-**260713-TES-L4 — deliver-until-LANDED, rebinding, and relay-death surfacing.** The serving
-route owns the N13/N16 landing mechanics: `inbox_delivery.py` samples the target's boundary
-state at delivery time and threads `landed=at_boundary and accepted` through every recording
-path, so a correlated adapter acceptance at a turn boundary writes the formal `landed` state
-(never `queued`, never a non-boundary acceptance); `operator_inbox_posts.py` re-derives the
-CURRENT qualified owner at post time for every owner-addressed post (N14, dispatch-brief
-exact-pinned, peer addresses verbatim) and no longer writes ack-by expectation rows;
-`_agent_notifier_evaluation.py` owns the N14 rebind predicates (`evaluate_rebind_findings`,
-`REBIND_GRACE_SECONDS=300.0`, `_row_dead_since`) and the §9 pending-expiry predicate, and no
-longer composes the escalation ladder (dormant, N3); `_agent_notifier_actions.py` owns the
-rebind/expire/unresolved actions (`_rebind_due`, `_rebind_expired`, `_expire_pending`,
-`_mark_unresolved` — grace expiry readdresses the terminal marker to the scoped architect
-mailbox, mailbox-not-rung); `agent_notifier.py` folds legacy by-rule landed rows once
-(`_fold_legacy_landed`) and no landed row is ever retried/nudged/escalated again; and
-`_app_lifespan.py` keeps the sweep alive on bad settings reads (last-good per tick, loud
-failure) while the new `relay_death_watch.py` independently posts a stale-heartbeat
-`degradation-alert` to the architect mailbox (N5 — the relay never relays its own death).
-`state_signals.py` scans formal `landed` rows for non-reaction and skips dead-target rows in
-the boundary drain.
-The agent-notifier keeps its observation cadence independent from its delivery/escalation
-cadence: `agent_notifier.py` passes the redelivery floor into hosted delivery, checks the new
-`controlplane/agent_notifier_signals.py` cooldown store before repeated pane/seat-liveness owner signals,
+The supervisor keeps its observation cadence independent from its delivery/escalation
+cadence: `supervisor.py` passes the redelivery floor into hosted delivery, checks the new
+`controlplane/supervisor_signals.py` cooldown store before repeated pane/seat-liveness owner signals,
 and skips `pane-signal: mid-turn` as busy-state noise. `app.py` wires the new store plus
-`settings.agent_notifier.signal_cooldown_seconds` into `AgentNotifierContext`; `inbox_delivery.py` threads
+`settings.supervisor.signal_cooldown_seconds` into `AgentNotifierContext`; `inbox_delivery.py` threads
 the redelivery floor into every stored delivery snapshot.
-The agent-notifier is chain-aware and manager-first: stale expectation/report/
+The supervisor is chain-aware and manager-first: stale expectation/report/
 seat/inbox/escalation predicates defer when the same leaf chain has progressed; nudge, signal, and
 dead-upstream actions resolve the current responsible manager; one row can transition at most once per
 sweep; and completion/artifact posts are readdressed and hosted-delivered to the current manager.
 Unbound reviewer/curator progress is credited in the subject worktree; unbound worker active-phase
 credit remains an accepted follow-up.
 
-Release-tail hardening covers the same agent-notifier path: delivery-failure inbox rows whose
+Release-tail hardening covers the same supervisor path: delivery-failure inbox rows whose
 delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redelivery domain until
 `PERSISTENT_FAILURE_ATTEMPTS` or `escalatedAt`; the generic unacked escalation ladder skips them
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
-
-For L6 command-seat identity, start at `sprint_role_binding.py`, then follow its callers through
-`terminal_opener.py`, `terminal_leaf_assignment.py`, and `terminal_catalog.py`. For wake liveness,
-start at `state_signals.py`: all direct manager descendants in the same master participate unless
-they are owner-tier roles; `_agent_notifier_actions.py` revalidates that current truth immediately
-before persistence and rejects malformed or timezone-naive non-reaction evidence.
 
 For the active conversation serving, start at
 `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then
@@ -477,7 +422,7 @@ time-driven; a running daemon picks the new pacing up only via explicit stop + s
 adopts healthy daemons).
 
 Confirmed-gone inbox reconciliation runs at the front of the deterministic
-  agent-notifier sweep. The bounded policy resolves only eligible agent-notifier nudge/escalation rows:
+supervisor sweep. The bounded policy resolves only eligible supervisor nudge/escalation rows:
 catalog termination is direct proof, compacted tombstones require one successful exact-name tmux
 snapshot, and command failure fails closed. Resolve-plus-compact runs under the inbox lock before
 redelivery; the body-free aggregate event is silent on no-op sweeps. The existing TTL/cap fallback
@@ -486,20 +431,20 @@ and active/landed/exited retention remain unchanged.
 Seat normalization is centralized in `seat_binding.py`: `spawnRole` is immutable
 provenance, `seatRole` is current binding, and uniqueness is one live owner per canonical
 leaf-role pair. `terminal_catalog.py` migrates old rows; opener/assignment liveness-check the
-  same-role holder; attach requires identity for an untyped hand-opened harness; retire/agent-notifier/
-  landing paths consume binding identity. The agent-notifier also preserves role in findings, rows,
+same-role holder; attach requires identity for an untyped hand-opened harness; retire/supervisor/
+landing paths consume binding identity. The supervisor also preserves role in findings, rows,
 cooldowns, coalescing, and events, and uses one injected sweep timestamp for delivery writes.
 
 Harness JSONL is the only submitted-delivery authority across spawn, inbox,
-agent-notifier redelivery, and REST paste. `harness_logs.py` discovers/binds a recent cwd-matching
+supervisor redelivery, and REST paste. `harness_logs.py` discovers/binds a recent cwd-matching
 Claude/Codex log; `injector.py` separates message and command evidence with calibrated 40.3 s/29.0
 s windows; `terminal_paste.py` owns one Enter re-press and one verified-absence clear/replace
 re-paste, with pane capture restricted to duplicate prevention and failure diagnostics. The catalog
 persists resolved knobs, log id/path, and `replacementForLeaf`; safe binding re-reads the latest row.
-Codex knobs ride explicit argv, and the agent-notifier's synchronous redelivery budget defaults to one.
+Codex knobs ride explicit argv, and the supervisor's synchronous redelivery budget defaults to one.
 
 A live sixty-second workspace-river compactor runs over virtual locked cursors, full task bodies are
-  served only through `GET /api/task-document`, and the agent-notifier is current-manager-first,
+served only through `GET /api/task-document`, and the supervisor is current-manager-first,
 chain-progress-aware, and one-rung-per-row-per-sweep. The always-on state/SSE projection remains
 body-free for task documents.
 
@@ -622,9 +567,6 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   initialize/list-only discovery path that starts neither a thread nor a turn. Initial model and
   model-local effort travel through `thread/start`/`thread/resume` config and are echoed before
   readiness; later turns reuse the resolved effort.
-  Server interactions retain their original params through correlation. Empty-form MCP tool
-  approvals expose scalar accept/decline/cancel actions; accept serializes the required empty
-  content object, while content-bearing forms remain structured-JSON-only.
 
 - `pi_rpc_protocol.py`, `pi_rpc_process.py`, `pi_rpc_events.py`, and
   `pi_rpc_adapter.py` — the Pi protocol/process/event/adapter chain: strict LF JSONL, bounded child
@@ -638,12 +580,12 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
 
 - `cadence.py` — `ProjectionCadence(interval, heartbeat)` + `DEFAULT_PROJECTION_CADENCE`. The one
   pacing decision every dashboard process shares, kept **stdlib-only** so the import-light daemon
-  agent-notifier can name a spawned child's cadence without importing the projector (and, through it,
+  supervisor can name a spawned child's cadence without importing the projector (and, through it,
   the serving stack).
 
 - `hosted_session_runtime.py` — `HostedSessionRuntime(catalog, host)`. The pair of authorities that
   jointly decide which hosted sessions exist: a durable catalog row and a live tmux process. Neither
-  answers "does this session exist, and what is it?" alone, and a row read against the wrong host is
+  answers "does this session exist" alone, and a row read against the wrong host is
   a silent correctness bug, so the opener takes them bound together.
 
 - `app.py` — `create_app(config, *, cadence, replay, live_inputs, collaborators)` builds
@@ -664,7 +606,7 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   carries the boot-time `servingBuild` stamp),
   `GET /api/stream` (the `state` SSE endpoint, delegating to the testable
   `stream_events(projector, build=…)` — it consumes one atomic projector subscription, decorates
-  both initial and first-recovery snapshots with `servingBuild`/agent-notifier identity, preserves
+  both initial and first-recovery snapshots with `servingBuild`/supervisor identity, preserves
   delta framing, and explicitly closes the iterator on disconnect/cancellation),
   `GET /api/events` (the raw channel, delegating to `stream_raw_events`; fresh
   connections start from lifecycle-aware retained offsets while valid
@@ -794,983 +736,7 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   route) and `ACTION_RESPONSES`. Declared here and enforced in
   `mcp/tests/test_serving_response_conformance.py`, because FastAPI validates only the two routes
   that return a bare `dict`; see the 260731-EFA-L4 route impact for the exact boundary. Deliberately
-  free of any `serving.conversation` import so it stays importable before that package exists —
-  the conversation surface's own additions live in `conversation/response_contract.py`.
-- `served_state.py` — the **served projection contract**: `ServedWorkspaceProjection`
-  (`WorkspaceProjection` plus the OPTIONAL serve-time keys `servingBuild`,
-  `agentNotifierHeartbeat`, and the legacy `supervisorHeartbeat` alias during the 260713-TES-L1
-  rename window), `SERVED_TAIL_FIELDS`, and `served_state_tail(build=, heartbeat=)` — the
-  one place the tail is built, with the build half dumped `exclude_none=True` (absence, never a
-  fabricated fact) and the heartbeat half dumped WITHOUT it (explicit nulls, because "never ticked"
-  is a reported state). The tail stays off `WorkspaceProjection` on purpose: it is serve-time not
-  tick-time, it must stay outside the `_ProjectionBodyCache` memo and the ETag revision, and it must
-  not enter `latest-state.json`'s schema.
-- `build_info.py` — the boot-time **serving build stamp** (the July-4
-  ghost-process lesson): `ServingBuild` (version / best-effort git short-hash / boot time) +
-  `resolve_serving_build`, resolved ONCE in `create_app` and injected on `/api/state` + the SSE
-  snapshot as `servingBuild` so a stale serving process is visible in the cockpit top bar. A
-  failed hash resolve serves version-only (`commit` omitted), never a fake. Since 260731-EFA-L4
-  `payload()` returns the declared `ServingBuildPayload` model rather than a `dict[str, Any]`; the
-  omission rule moved into `None` + the caller's `exclude_none=True`, and `dirty` is written
-  `True if self.dirty else None` so proven-clean and unprovable both stay absent.
-  Both probes — `_git_short_head` (`rev-parse --short HEAD`) and `_git_worktree_dirty`
-  (`status --porcelain`) — go through the package's one git runner, `run_git` in
-  `kernel/git_command.py`, since 260731-EFA-L3; they previously built their own `subprocess.run`
-  calls here. The runner strips the `GIT_DIR`-family repository selectors, which is what makes the
-  stamp name **the checkout the server was actually booted from**: with `GIT_DIR` exported, the
-  identity meant to expose a ghost process would have described whatever repository that variable
-  pointed at. It also keeps the `stdin=DEVNULL` guard the local calls carried by hand (never touch
-  the MCP stdio protocol pipes). The 2-second bound survives as the named
-  `_PROBE_TIMEOUT_SECONDS = 2`, passed explicitly against the runner's general-purpose
-  `GIT_LOCAL_TIMEOUT_SECONDS = 300` — a best-effort stamp must never delay app creation, so a git
-  that does not answer in two seconds is "unstampable" like any other failure.
-- `events.py` — the raw `event` channel: the **pure** byte-offset tail `read_new_events` (a
-  composite per-source offset cursor, `encode_cursor`/`decode_cursor`) + the `stream_raw_events`
-  async tailer. Fresh connections use `observer.event_retention.initial_event_offsets` so expired
-  (inactivity-pruned) lifecycle logs are skipped, workspace/lifecycle-less rows are bounded by age, and
-  active lifecycle histories remain uncapped; malformed/empty cursors fall back to those retained offsets,
-  while valid `Last-Event-ID` cursors keep exact byte-offset resume. Separate from `/api/stream`
-  (byte-offset resume vs. snapshot resume). The stream emits `event: ready` once after the retained
-  backlog is sent on each connection, giving the browser a reliable hydration boundary. The
-  connect path is cheap and quiet: it does **one** retained-backlog scan per connect (no repeated
-  whole-history reads), streams that bounded backlog to the client in **chunks** rather than
-  materializing the whole history, filters `lifecycle.heartbeat` events out of the river, and prunes
-  expired logs on a slow background cadence instead of on every tail.
-- `sim.py` — sim mode: `build_sim` + `ReplayClock` + progressive `ReplayFeeder` +
-  `parse_sim_speed`, replaying a fixture's recorded events through the projector's
-  `now`/`before_tick` seams over a throwaway temp root (the fixture is never mutated). `build_sim`
-  also **materializes the fixture's structural surfaces** (`_materialize_surfaces` — contracts / task
-  docs / provider state / ledgers / drift) into the sim root, so a rich fixture exercises the whole
-  projection, not only the replayed event logs.
-- `actions.py` — the POST action layer: `ActionRequest` + the **pure** `evaluate_action`.
-  Lifecycle transitions map against the node's `ActionAvailability` to 202/409/404 with
-  attribution (no mutation); gate-decision verbs carry a targeted `GateDecisionIntent` with optional
-  `gate_id` and `note`, reject requires a non-empty reason, target omission is allowed for `cancel`
-  with `gateId` and for actionable-drift `dismiss`, and the router records the result as a
-  developer/dashboard-attributed gate decision via `gate_decide_for_lifecycle` or a workspace-gate
-  `gate_decide_payload` cancel. Targetless actionable-drift dismissals are persisted as attention
-  acknowledgements instead of gate decisions.
-- `static.py` — `dashboard_static_dir()` resolves `package_data/dashboard` via
-  `importlib.resources` (the `install.assets` idiom), returning `None` when nothing was built there;
-  `mount_static(app)` always mounts something at `/`. With a bundle it mounts
-  `DashboardStaticFiles` (HTML revalidates, hashed assets keep default caching). Without one it
-  mounts `MissingDashboardBundle`: **503** on `GET`/`HEAD` with the expected location and the build
-  command in a `no-store` plain-text body, and **405** on every other method — exactly what
-  `StaticFiles` raises — so the greedy mount cannot turn an `/api` method error into an outage.
-  Since 260731-EFA-L1 the bundle is a release build product that is not in version control, so
-  "absent" is a normal state for a source checkout, not a broken install. There is no placeholder
-  and no fallback UI.
-- `files.py` — the **read-only files API**: `register_files_routes(app, config)`
-  registers `GET /api/files/{repos,list,read,onboarding}` **before** `mount_static` (the greedy `/` mount
-  must stay last). It is the first serving module to resolve a kernel `CoordinationContext`: a
-  `{repo, mainline|enclosure}` scope maps to `(codeRoot, onboardingRoot)` to enumerate repos/enclosures,
-  list one directory level (code + paired onboarding), read a file (content + drift metadata), and resolve
-  the 1:1 code↔onboarding sidecar pairing both ways via the shared `kernel/sidecar_pairing.py`. Allow-listed
-  roots only, realpath-confined (Task-6 posture); a memory-less repo degrades to code-only browsing and a
-  missing sidecar is a normal `missing` result, never an error. Feeds the dashboard File Viewer and
-  Change-Set Viewer.
-- `scope.py` — the **shared browse-scope layer** (extracted from `files.py`):
-  `FileScope`, `resolve_scope` (`{repo, mainline|enclosure}` → roots), the `run_scoped` error map (404
-  unknown-repo/unknown-scope/not-found, 400 bad-path), `language_for`, and the active leaf-enclosure
-  enumeration. `files.py` and `changeset.py` both import it (files.py re-exports `FileScope` +
-  `_resolve_within` for callers/tests). Behaviour matches the original files resolver — one resolver, shared.
-- `changeset.py` — the **read-only change-set API**: `register_changeset_routes`
-  mounts `GET /api/changeset/{task,file-diff,master}` **before** the static mount. Computes a task's
-  `base → current` code + memory change-set with insertion/deletion counts + status + `hasSidecar`
-  (`task`), BEFORE/AFTER file content for the CodeMirror MergeView (`file-diff`, with an optional `master` param for the series net file-diff), and the master's **NET**
-  change-set (`master`) — `git diff <master-base> <resolved-series-tip>` for code + memory (one
-  coherent, per-file-inspectable range) with a per-leaf counter breakdown alongside. For an in-flight
-  series the resolved tip is the contract work-branch tip; after landing, when that work branch is gone,
-  it falls back to the source-branch tip. The master file-diff view uses the same resolved tip so
-  counters and BEFORE/AFTER content cannot drift. The doc-reader
-  **leaf views**: the `task` + `file-diff` routes take a `leaf` + `mode` selector (precedence
-  `leaf > master > scope`), resolving one leaf's `committed` (`base → code_commit`) or `working`
-  (`HEAD → worktree`, uncommitted only) change-set straight off the persisted enclosure contract
-  (`_load_leaf_contract`, by leaf-id — works with no live worktree, for a completed leaf), with the
-  selector validated (`leaf` needs `master` + a valid `mode` → `400`, no-live-worktree `working` → `404`).
-  Master and leaf contract discovery is confined to the requested repo/master enclosure and
-  canonicalizes both requested and persisted leaf ids; `/api/changeset/master?includeLeaves=false`
-  skips the optional per-leaf breakdown while preserving the coherent net range.
-  Reuses `scope.py` + the same confinement posture; the change-detection primitive is
-  `worktrees/modules/git.changed_files_with_counts`. Feeds the dashboard Change-Set Viewer.
-- `notes.py` — the **read-only coordination-notes API** (its status mapper, like `scope.py`'s files-API mapper, answers `400 bad-path` for `ValueError` input such as null bytes — a review fix applied to both):
-  `register_notes_routes` mounts `GET /api/notes/{list,read}` **before** the static mount. Lists +
-  reads one series master's `tasks/<repo>/<master>/notes/` tree under the coordination root — the
-  design records / friction ledger / worker reports / adversarial verdicts that previously had no
-  dashboard surface. Confinement: `require_repo` allow-list, single-segment `master`, `confine_rel`
-  realpath reads, per-child realpath checks on the depth-capped (`truncated`-honest) listing walk;
-  a missing notes folder is an empty list, a binary file reads as `language: "binary"` with empty
-  content. Feeds the task reader's notes view (`dashboard/src/panels/TaskNotes.tsx`).
-- `terminal.py` — the **Mode B2 terminal host** (slice 6d-1): `TerminalHost`, a registry of
-  tmux-wrapped PTY sessions correlated to a lifecycle/worktree. `open`/`write`/
-  `read_nonblocking`/`resize`/`close` over a stdlib-`pty` master fd; the spawn (`tmux
-  new-session -A … -- <harness>` on `pty.openpty`) is injectable so tests drive a real kernel
-  PTY without tmux. The spawn gives the child a **controlling terminal** (`os.login_tty` in a
-  `preexec_fn`) + a seeded winsize, so tmux has a `/dev/tty` to size against and honors resize (slice
-  6e-4). `write` strips the Ctrl-Z byte `0x1a` for **suspend-unsafe** (bare-pane harness) sessions only,
-  so a harness can't be soft-locked into a suspend while a plain shell keeps its job control (slice 6f).
-  Injectable tmux probe/create/kill hooks, `has_session`, `ensure`, `terminate`, and
-  unregistered per-connection `attach` clients so the durable catalog can create a detached tmux
-  session, prove it still exists before attach, kill one explicitly, and serve multiple browser tabs
-  without sharing one PTY fd. The probe is evidence-bearing:
-  `TmuxProbeResult(exists, evidence)` / `probe_session` beside the boolean `has_session`, with
-  stderr-aware classification — only explicit missing-session stderr is definitive `pane-gone`;
-  every other failure (subprocess error, timeout, non-missing nonzero exit) is the transient
-  `tmux-command-failed` that feeds catalog hysteresis instead of an immediate exit mark. An optional `env: Mapping[str, str]` threads through
-  `ensure`/`open`/`_build_tmux_command` (`_tmux_create_detached` emits `tmux new-session -e KEY=VALUE`
-  via the pure `_env_flags`), seeded only at creation and inert on re-attach — the minimal
-  env-passthrough seam the agent-facing spawn tool injects role knobs through (empty-safe: an empty
-  mapping keeps the byte-identical legacy argv). The injectable `TmuxConfigurer` seam
-  (default: per-session `tmux set-option mouse on`, failures suppressed) is asserted by `ensure` and
-  every `attach`, so browser wheel input reaches tmux as mouse reports — tmux scrolls pane history for
-  normal-buffer TUIs and passes wheel through to mouse-aware ones (pane text selection becomes
-  Shift+drag). Its copy-mode escape companion: `write_session` arms a per-connection flag on
-  mouse-report-only stdin and cancels copy-mode (injectable `TmuxModeCanceller`, `send-keys -X cancel`
-  default) on the first typed input after scrolling, so typing anywhere in the scrollback snaps to the
-  live bottom and reaches the pane app. Fixed-argv (no shell injection), OS-user creds, localhost. The live
-  WebSocket bridge (`@app.websocket("/api/terminal/{session}")`, in `app.py`) + the `websockets`
-  dep landed in 6d-2; the xterm.js viewport is 6e.
-- `terminal_catalog.py` — the durable dashboard terminal-session catalog: immutable
-  `TerminalCatalogEntry` rows plus a JSON store under `logs/dashboard/terminal-sessions.json`. It
-  persists id, label, kind, optional harness/lifecycle, cwd, tmux name, command, timestamps, status,
-  an optional `leaf_key`, and optional spawned-by provenance
-  (`spawned_by_session` / `spawned_by_lifecycle`, written migration-safe only when set; the copiers now
-  use `dataclasses.replace` so a new column survives a re-attach); normal `list()` keeps exited rows visible and filters terminated
-  rows, while `include_terminated=True`
-  is available for audits. Explicit termination wins over later passive exit bookkeeping so an `End`
-  action cannot reappear after refresh as an `exited` row. The catalog is the
-  **leaf→chat registry**: `to_json` writes `leafKey` only when set (migration-safe), `with_leaf_key` is
-  the attach write point, and a leaf-uniqueness **role** (`TerminalSessionRole`,
-  `role_for_kind` / `entry.role` — a shell is a terminal, a harness is a chat) scopes
-  `active_for_leaf(leaf_key, role="chat")` so it returns the single **running** owner *of that role* — the
-  per-(leaf, role) single-owner probe the opener + attach-leaf routes call before an upsert, letting one
-  leaf hold a running chat AND a running terminal at once. The catalog also carries persisted liveness
-  state (`livenessFailures`/`livenessFirstFailedAt`/`livenessLastFailedAt`/`livenessEvidence` +
-  `exitEvidence` on exited rows, all migration-safe write-when-set) and the locked
-  `record_liveness_probe` write point with the `with_liveness_success`/`with_liveness_failure`
-  transition copiers — hysteresis survives a daemon restart and a false exit self-heals on the next
-  alive probe. `batch()` serves as the complete session-open transaction fence: its file lock
-  plus process `RLock` spans read, live probe, host ensure, and upsert, so concurrent callers cannot
-  share one newly created process and then publish different attempted launch provenance. Other
-  processes see the coherent last committed atomic-file snapshot until the batch commits.
-- `terminal_liveness.py` — the **catalog liveness hysteresis** module:
-  `TerminalCatalogLivenessSweeper` (rate-limited — 10s default interval — and non-overlapping via a
-  non-blocking lock; a rate-limited or concurrent `refresh()` serves the persisted catalog without
-  probing, so the dashboard's 1s cadence never implies 1s tmux probing) +
-  `observe_terminal_liveness`, the shared single-row observation path (in-process `is_alive` →
-  evidence-bearing `probe_session` → legacy boolean `has_session`) that persists transitions
-  through `TerminalCatalog.record_liveness_probe`. Evidence-scaled hysteresis: transient
-  `tmux-command-failed` probes need 3 consecutive failures across ≥5s before an exit mark (a
-  command-failure storm cannot mass-exit a live fleet), definitive `pane-gone` marks fast, and a
-  falsely exited row self-heals to `running` within one sweep (exited rows are probed too;
-  `terminated` is never revived). Constants are code defaults, not settings knobs. Replaces
-  `app.py`'s deleted `_refresh_catalog_entries`. Live turn-state
-  classification is folded into the SAME alive-probe call (`_observe_alive`, no new hot loop, no new tmux
-  round-trip cadence): `kind == "harness"` rows only get `terminal_paste.capture_pane` +
-  `turn_state.classify_turn_state` on every ALIVE observation, persisted via
-  `catalog.record_turn_state`; `TerminalLivenessObservation.turn_state_changed` is true only on an
-  actual transition, and `TerminalCatalogLivenessSweeper` gained an `on_turn_state_change` callback
-  (wired in `app.py`'s `create_app` to `seat_events.log_turn_state_change_event`) fired only for
-  those transitioning rows, never per sweep tick. The `on_control_snapshot` observer (the
-  hosted-interaction synchronizer wired in `create_app`) is quarantined as a
-  per-entry side effect: `_observe_alive` routes it through `_observe_control_snapshot`, which
-  records any failure fail-loud on that ONE row's `control_raw["interactionSyncError"]` and lets the
-  sweep continue. Before this, a single orphan-`vendorCorrelationId` completion raised
-  `HarnessControlError` out of the per-entry comprehension inside `catalog.batch()`, aborting the
-  whole sweep and 500-ing `GET /api/terminal/sessions` for EVERY row (the stuck-loading
-  rail). Load-bearing fact: an orphan `vendorCorrelationId` is the NORMAL steady state of every
-  cockpit-driven hosted (`+ Chat`) codex chat, so this quarantine path is HOT, not exceptional; the
-  warning is bounded to state changes (first occurrence / heal) while the per-sweep marker keeps the
-  wire honestly degraded. Availability hardening only — the completion-correlation contract in
-  `hosted_interactions.py` is untouched (the
-  phantom-transition re-warn on non-observer `control_raw` rebuilds is a known Low residual). Detail in the
-  file sidecar.
-- `retire_policy.py` — the server-side retire authority policy: `SeatRef`,
-  `master_of(leaf_key)` (the qualified leaf key's 2nd path segment — uniform for a leaf-level or
-  master-level `leaf_key`), `check_retire_authority(actor, target)` (owner-never-self-retires
-  checked FIRST unconditionally; a manager may retire only worker/reviewer seats of its own master;
-  only the orchestrator has portfolio-wide authority; every refusal names the exact clause via
-  `RetirePolicyError`).
-- `retire.py` — shared retirement mechanics: `retire_entry` gracefully stops control, kills tmux
-  best-effort/idempotently, then `catalog.mark_retired`. It backs manual retirement, landed cleanup,
-  and ARG-L1 automatic completion cleanup after the durable report barrier.
-- `landing.py` — the shared landed/archive compatibility mechanics: `land_seats_for_leaf` marks matching
-  non-terminated catalog rows `status:"landed"` with reason/edge provenance, without constructing a
-  `TerminalHost` and without killing tmux. ARG-L1 completion edges call it only when
-  `retirement.autoCloseCompletedSeats=false`; default behavior retires exact-report-bearing
-  worker/reviewer/curator seats and excludes manager/orchestrator.
-- `turn_state.py` — the live turn-state classifier: `classify_turn_state(pane_text,
-  harness=)` is marker-regex-based (precedence working > awaiting-input > turn-ended > stale; blank/
-  unreadable pane ⇒ `stale`), with empty per-harness override dicts ready for future tuning. Rides
-  the EXISTING `terminal_liveness.py` sweep cadence via `terminal_paste.capture_pane` — no new
-  tmux round-trip. Patterns are a first-cut, not verified against live harness panes (the classifier
-  is fed the full history-inclusive capture rather than just the pane tail).
-- `seat_events.py` — the observer-event emitters for the seat surface:
-  `log_retire_event`/`log_rename_event`/`log_turn_state_change_event` write `ar-observer-event/v1`
-  records (`seat.retired`/`seat.renamed`/`seat.turn-state-changed`) mirroring the existing
-  `orchestration_nudge_manager` event-logging pattern, feeding the watcher/architect
-  NEEDS-ATTENTION feed.
-- `terminal_leaf_assignment.py` — the shared catalog reassignment helper: moves an existing catalog row
-  to a new durable `leafKey`, returns `leaf-taken` without mutation when another running same-role session
-  owns the target leaf, and is reused by the dashboard route and MCP tool.
-- `leaf_ref_validation.py` — the serving adapter for terminal catalog write surfaces: resolves
-  qualified ids, doc ids, and unambiguous legacy stems/slugs through `worktrees.leaf_refs`, returning the
-  canonical qualified leaf key that opener/attach routes persist.
-- `terminal_opener.py` — the shared hosted-session opener: `open_terminal_session(...)` resolves a
-  harness **id** to settings-owned base argv, carries an optional typed
-  `ResolvedLaunch{harness,model,effort,workspace}` into the exact-session runner, claims `leaf_key`
-  under role-scoped per-(leaf, role) uniqueness before spawn, seeds namespaced provenance env at
-  `TerminalHost.ensure`, and upserts the durable catalog row with write-once role/lineage/free-form/
-  resolved-selection provenance. Static knob mapping is retained only for explicitly declared
-  settings-defined non-native harnesses; native Claude/Codex/Pi selection is dynamically validated
-  and applied by their adapters. Dashboard `POST /api/terminal/{session}` and
-  `spawn_agent_session` compose this same opener—no parallel spawn path. A live catalog
-  row is treated as immutable process truth: a selectionless or exact-pair reopen returns it unchanged; a
-  changed kind, harness, cwd, or explicit pair returns `launch-conflict` without a second ensure or
-  catalog mutation. A dead row starts a fresh generation and drops process-specific control/log/raw
-  evidence. The full operation runs under the catalog batch fence so cross-thread/process races
-  create one process and one durable launch truth.
-- `terminal_paste.py` — the **capture-verified server-side paste**:
-  `TerminalPaster.paste(tmux_name, text, submit=…)` mirrors the frontend
-  `pasteAndConfirm`/`submitAndConfirm` over tmux primitives — the payload rides STDIN into
-  `load-buffer` (never argv/ARG_MAX) then `paste-buffer -p -d`, and `capture-pane` verification
-  against ONE pre-delivery origin baseline held for the whole delivery: a NEW paste chip in either
-  harness vocabulary (`[Pasted text #N]` claude, `[Pasted Content N chars]` codex) or the payload's
-  own head confirms; before any re-paste across the boot window the pane is re-captured first, so a
-  landed paste is never re-sent (duplicate stacking impossible — per-attempt re-baselining
-  is what allowed repeats to stack). `PasteResult.capture` attaches the final pane snapshot so a failed
-  delivery is loud evidence, never a bare boolean; Escape is refused by
-  construction — only Enter is ever sent. Every tmux op + the clock are injectable so the loop is
-  fake-driven and sleepless in tests. Never submits an unconfirmed paste; never raises on a gone
-  session. Backs the `spawn_agent_session` context delivery, the
-  `POST /api/terminal/{session}/paste` endpoint, and the inbox hosted push (whose durable failure
-  detail embeds a bounded capture tail). The public `capture_pane(tmux_name)`
-  wrapper wraps the existing private `_tmux_capture_pane`, so turn-state classification
-  (`terminal_liveness.py`) reads the identical history-inclusive pane view paste verification
-  already uses — one capture-command shape in the codebase, not two.
-- `harnesses.py` — the harness id/base-command registry and injectable executable detection behind
-  `GET /api/harnesses` and opener resolution. Built-in Claude/Codex/Pi rows intentionally contain no
-  static native model/effort vocabulary or mapping; the dynamic capability port and adapter-owned
-  launch channels are authoritative. The older mapping helpers remain only for explicit
-  settings-defined non-native harnesses. A harness id is on the wire, fixed argv stays in registry
-  or validated settings, and normalized native model/effort never becomes a generated session
-  command or paste.
-- `agent_notifier.py` — the deterministic agent-notifier sweep, also the
-  P-15 tier-3 ladder + dead-man-respawn host and the
-  bounded dead-seat-storm terminator: `AgentNotifierContext` (the
-  one seam every predicate/action reads through — stores + catalog/host/paster, injected directly,
-  never the projection, plus the `escalation_sla_seconds`/`escalation_rung_seconds`/
-  `respawn_after_rung` plain-primitive knobs and `redeliver_budget`), the eight predicate functions
-  (`evaluate_pane_findings`/`evaluate_expectation_findings`/`evaluate_turn_report_findings`/
-  `evaluate_inbox_findings`/`evaluate_seat_liveness_findings`/`evaluate_escalation_findings`/
-  `evaluate_dead_upstream_findings`/`evaluate_ladder_terminal_findings`), the action dispatcher (`act_on_finding` →
-  `_redeliver`/`_auto_nudge`/`_signal_emit`/`_escalate_rung`/`_signal_dead_upstream`/
-  `_resolve_ladder_terminal`, each logging an
-  `orchestration.agent-notifier.*` or `orchestration.escalation.rung` event), and `run_agent_notifier_sweep`
-  (one in-sweep inbox snapshot/index → evaluate → bounded act → tick the heartbeat unconditionally,
-  now including inbox backlog counts and last sweep duration). Gives `missing_artifact()` its first
-  caller; `mark_missed` stays the sweep's own reserved transition, while `mark_escalated` and the
-  ladder's own `advance_rung`/respawn/orphan-surfacing (via `escalation_ladder.py`/
-  `orphan_policy.py`, governed by the `controlplane/` overview) are now genuinely landed here. Still
-  touches no `terminal_paste.py` internals. `_delivery_failure_still_retrying`, a
-  guard inside `evaluate_escalation_findings`, lets delivery-failure rows exhaust the redelivery
-  threshold before the generic unacked ladder advances them. Since 260713-TES-L4: folds legacy
-  by-rule landed rows once (`_fold_legacy_landed`), composes the rebind/grace/pending-expiry
-  predicate families, resolves live-but-silent rows terminal `unresolved` at the attempt
-  ceiling (N3), and no longer drives the escalation ladder (dormant, L5 demolishes).
-- `relay_death_watch.py` — (260713-TES-L4, N5) the dashboard-side relay-death watcher:
-  independent 30s cadence, heartbeat-staleness past the configured cutoff → one durable
-  `degradation-alert` row to the scoped architect mailbox per tick identity (marker-file
-  dedupe, default-cutoff settings fallback, best-effort push); the relay never relays its own
-  death.
-- `pane_signals.py` — the pane-state classifier: `classify_pane_signal`
-  answers which of the four P-15 intervention triggers (`never-briefed`/`delivery-stalled`/
-  `mid-turn`/`blocked`) a captured pane shows, reusing `terminal_paste.count_paste_chips` for the
-  chip-count trigger. Distinct from `turn_state.py`'s `classify_turn_state` (a different question
-  over the same captured text — deliberately not merged).
-  `_HARNESS_BLOCKED_PATTERNS["codex"]` carries the issue #20 quota/rate-limit modal markers, and
-  `blocked_reason_label` + `composer_state` are the two signatures `harness_adapters.py` composes.
-- `agent_notifier_heartbeat.py` — the self-liveness primitive (issue #15): an
-  atomic-overwrite single-row `AgentNotifierHeartbeatStore` (`logs/observer/workspace/
-  supervisor-heartbeat.json`), `heartbeat_age_seconds`, and `agent_notifier_staleness_banner` (silent
-  when never-ticked, a fail-loud one-liner past the staleness cutoff) — consumed by the MCP tool
-  choke point and the dashboard header payload. The heartbeat row also carries volatile
-  `pendingInboxCount`, `redeliverableInboxCount`, and `lastSweepDurationSeconds`.
-- `harness_adapters.py` — the per-harness delivery adapter: `HarnessAdapter`
-  (`boot_ready`/`composer_state`/`mid_turn`/`mid_turn_behavior`/`blocked_reason`/`turn_started`), a
-  thin composition over `pane_signals.py`/`turn_state.py` with NO new pattern table of its own, plus
-  `get_adapter` (named `CLAUDE_CODE_ADAPTER`/`CODEX_ADAPTER`, generic fallback for any other id) and
-  the NEW-HARNESS CHECKLIST (a future harness is one adapter registration, never a new delivery
-  path).
-- `injector.py` — the ONE delivery path: `deliver(row) -> {acked,
-  landed-unacked, blocked(reason), failed(reason)}` — the four-way `DeliveryOutcome` contract every
-  payload class (spawn briefs, inbox dispatch/nudge/redelivery/signal rows) now funnels through
-  instead of two independent `TerminalPaster.paste` call sites. Wraps `TerminalPaster.paste`
-  unchanged, reads `harness_adapters.get_adapter` for the blocked-check (against the FINAL capture)
-  and the turn-started corroboration, and never retries itself — retries stay the caller's (the
-  agent-notifier's) decision. `DeliveryRow`'s `envelope=False` on both current callers keeps the exact
-  pre-existing wire format for the spawn-brief path and avoids double-heading the inbox path's own
-  `_push_text` header.
-- `__init__.py` — package docstring only; `delta`/`projector` stay importable without FastAPI.
-
-## Invariants And Boundaries
-
-### Current Authority Boundary
-
-- The conversation products are strict normalized contracts, not proof of a live projector,
-  historical store, control service, or renderer.
-- Active-transcript and conversation-library cursors are purpose-bound and non-interchangeable;
-  status, capability, operation, attachment, and metric claims require their modeled evidence.
-- The route owns exactly two read ports and three owned child routers — all now implemented (active,
-  library, control), none behavior-empty. Production behavior lands in the owning child
-  without creating a second root registration seam.
-- Runtime observations and the locked native helper are evidence boundaries. Their versions and
-  observed counts do not become feature flags or maintained capability declarations.
-- Protocol adapter snapshots, bridge receipts, reconciliation, and normalized transcript entries
-  are authoritative for hosted sessions.
-- Panes, logs, copy mode, paste echoes, and timing observations are diagnostic-only.
-- Hosted delivery starts from a durable inbox row and records adapter evidence without consuming it;
-  explicit recipient `consume` remains the sole acknowledgement.
-- Legacy raw-TUI and unsupported custom sessions remain explicitly unsupported, with no compatibility
-  raw-paste or timing fallback.
-- `settings.json`/role resolution supplies the complete typed native initial selection; dynamic
-  adapter advertise validates it before the configured vendor session starts.
-- Native Claude/Codex/Pi model and effort are applied only through their owned launch channels.
-  Free-form duplicate selectors refuse before discovery, and normalized selection is never pasted.
-- Startup acceptance remains protocol-honest: Codex/Pi echo effective values; Claude has no effort
-  echo and reports exactly that narrower evidence.
-- Pre-session daemon advertise uses only dynamic own-adapter discovery. Cache identity includes the
-  installed executable/effective argv; explicit refresh owns auth/account invalidation, and failure
-  quarantines the observed entry rather than serving it as a current hit.
-- A live session's persisted process launch is immutable. Reopen returns that actual row or a
-  conflict; only observed-dead replacement may publish a new model/effort/control generation.
-- Exact-session set and submit never retry after request bytes may have been sent. Same request ids
-  are idempotent, retained known outcomes reconcile locally, and only genuinely unknown outcomes
-  invoke native reconciliation without resubmission.
-- Public daemon responses are normalized and raw-free; adapter-private `raw` remains inside the
-  IPC/diagnostic boundary. Unknown/stopped/dead sessions are 404 before live unsupported sessions
-  are classified 409.
-
-The older route bullets below preserve historical implementation context and must not be read as
-current hosted-session authority.
-
-- **Control authority is protocol-backed.** Adapter state, bridge receipts, reconciliation, and
-  normalized transcript entries are authoritative; tmux panes and terminal logs are diagnostics.
-- **Codex app-server compatibility is structured.** The consumed initialize/model/thread messages
-  and fields decide compatibility; package-version text is fixture/smoke evidence only. No
-  terminal/pane/log fallback is permitted.
-- **One epoch-bound submission authority.** Prompt/model/effort work shares the authority timeline;
-  adapters dispatch now and may not retain a second queue. Browser drafts are local revisioned state,
-  while server status/withdrawal owns delivery and pop-back truth.
-- **Exact operation completion.** Only the full epoch/sequence/id/kind ref can release active work;
-  early exact terminal evidence may dominate unknown, but stale/id-only/FIFO evidence cannot.
-- **Retention and privacy are load-bearing.** Timeline and duplicate ledgers are bounded without
-  evicting live/active/unknown work; terminal prompt text is dropped; public status/withdraw is
-  cockpit-only and raw-free.
-
-- **Transport only.** No interpretation here — the reducer produces full projections; this
-  layer serves them, diffs consecutive snapshots, tails the raw log, and reads precomputed
-  action availability. The observer stays a pure fold.
-- **Client-agnostic (NS #2).** The served shapes are the existing `WorkspaceProjection`
-  nodes verbatim; no dashboard-bespoke endpoints in the reducer. Named per-entity SSE events let any
-  client (browser, TUI, agent) merge by id. The operator-inbox POST is a dashboard serving write into
-  the shared control-plane inbox, not a projection shape.
-- **One read abstraction (NS #5).** Every read flows through `config` + `observer.paths` +
-  `project_and_write`; sim mode swaps the root + clock at that one seam.
-- **Local-first.** Bind `127.0.0.1` only, no auth in v1 (documented in `app.py`). The UI is
-  never the gate *enforcement* (the mutating MCP tools bind it server-side); a gate-decision POST
-  does record a developer-attributed gate *decision* (slice 6b).
-- **Terminal host = render-not-scrape, fixed argv (slice 6d).** `terminal.py` launches the
-  harness on a PTY whose raw bytes xterm.js renders verbatim; the spawn is a `Sequence[str]`
-  (never a shell string — no injection surface), runs as the dashboard's own OS user, and
-  persists via tmux. PTY attach, detached creation, and termination are injectable for tests. Rehydrate
-  probes tmux before using `tmux new-session -A`, and detach remains non-destructive; termination is
-  explicit.
-- **Two resume models, two streams.** The `state` channel re-snapshots on (re)connect; the
-  raw `event` channel resumes by exact byte offset (`Last-Event-ID`) when the client presents a
-  valid cursor, while fresh connections do one retained-backlog scan, stream that bounded backlog in
-  chunks (heartbeats filtered, no whole-history materialization) instead of replaying every
-  historical raw row, and then emit a `ready` marker. They stay separate.
-- **One atomic activation/publication owner for folded state.** The projector registers each
-  subscriber before capturing its current snapshot, computes each successful tick's event batch
-  before mutation, commits `_latest_stable`/`_published` before notification, and removes the exact
-  queue on close/cancellation. A failed-prime `None → success` transition emits one full snapshot;
-  an identical recovered state emits nothing; later content changes use the normal delta grammar.
-  The app decorates this authority but never performs a second current-state handoff.
-- **Sim is a seam, not a fork.** Only `now` + `coordination_root` differ from live, so the
-  SSE output is byte-identical and replay is deterministic.
-- **Containment metrics are observation, not control.** The lifespan's
-  sampler is read-only + dockerless-safe, discovers stacks by ownership label (no settings
-  needed, leftover stacks stay visible), runs on its own 30s cadence — never the projection
-  tick — and never gates or launches providers; a failed pass logs and retries.
-- **Change-driven pacing changes when the projector wakes, never what a tick does.**
-  The tick body, prime, diff/broadcast, and ETag revision are untouched; a
-  busy world keeps the former `--interval` cadence (max-delay = interval + floor); a quiet
-  world's `/api/state` staleness and time-derived fields advance at heartbeat resolution
-  (default 15s); watcher absence or failure degrades LOUDLY to legacy fixed-interval ticking —
-  fail-open, never fail-silent, never a crash. `--sim` replay is always time-driven, and an
-  already-running daemon adopts the new pacing only through explicit stop + spawn.
-- **The agent-notifier sweep is stores-not-projections, code-not-model.**
-  `agent_notifier.py` imports nothing from `projector.py`/`observer/reducer.py`; every predicate reads
-  its store directly. Own decoupled cadence (settings-controlled, default 10s), zero model calls
-  anywhere in the loop, level-triggered (a missed action is caught by the next sweep). The
-  heartbeat's staleness is a volatile age (same posture as `servingBuild`): never gates the
-  `/api/state` ETag revision.
-- **Dead-seat storm termination is narrower than escalation.** A pending row only
-  becomes `ladder-resolved` when it is both at the terminal rung and addressed to a provably dead/no-
-  hosted-session seat. Live seats and rows still climbing stay pending; redelivery is merely bounded by
-  budget/rate limit, not dropped.
-- **The escalation ladder never absorbs a dead owner's role.** A spawned seat with a dead owner continues its own brief and escalates to its
-  grandparent — `_signal_dead_upstream` only ever signals, never reassigns. Rung 3 (developer
-  attention) is a hard ceiling: `escalation_ladder.rung_due` refuses to advance a row past it, so
-  re-surfacing happens via the row's own rung-3 dwell SLA firing the same signal again, never a
-  state change past the developer. Orphaned workers of a respawned manager are surfaced, never
-  auto re-parented.
-- **Manual retirement is terminal; landed completion is inspectable archive.**
-  A retire rides the EXISTING `status == "terminated"` catalog state plus provenance, so it composes
-  for free with the liveness hysteresis (never resurrected) and the "never a zombie row" `list()`
-  filter — no new interplay logic. Normal successful completion instead sets `status == "landed"` with
-  landing provenance, keeps the row visible for dashboard/WebSocket inspection, and releases leaf
-  ownership because active lookup is running-only. Retire authority is enforced server-side, never
-  trusted from the caller; refusals are loud and name the exact policy clause. Rename is identity text only — `spawn_role`
-  (role-seat immutability) never changes on a rename. Turn-state classification is best-effort and
-  fail-safe (an unreadable/blank pane classifies `stale`, never raises) — it rides the existing
-  sweep cadence and classifies `kind == "harness"` rows only, never plain terminals.
-
-## Docs References
-
-The resolved Domain Documentation registry has no configured entries for this route. The
-structured-conversation contract is grounded in repository code, tests, and redacted observations.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation governed the structured-conversation contract update. | — | — |
-
-## Cross-Repo References
-
-The structured-conversation contract, helper package, fixtures, and tests are all owned by `agents-remember`; no
-neighboring repository governs this route.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repository reference was found. | — | — |
-
-## Repo-Internal References
-
-### Current Evidence Substrate
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reserved evidence key names the evidence channel. | `AR_EVIDENCE_KEY` | mcp/src/agents_remember/serving/harness_control_models.py:58-58 |
-| The snapshot DTO carries `pending_interactions`. | `pending_interactions` | mcp/src/agents_remember/serving/harness_control_models.py:226-226 |
-| Evidence frames carry `thread_id`. | `thread_id` | mcp/src/agents_remember/serving/harness_control_models.py:471-471 |
-| The native evidence page defines the structural page protocol. | `NativeEvidencePage` | mcp/src/agents_remember/serving/harness_control_models.py:503-510 |
-| The bridge clips evidence payloads. | `clip_evidence_payload` | mcp/src/agents_remember/serving/harness_control_models.py:786-838 |
-| The bridge windows native evidence pages. | `window_native_evidence_page` | mcp/src/agents_remember/serving/harness_control_models.py:849-888 |
-| The bounded evidence deque diverts the reserved key at the one consumption point and stamps epochs on every page; `_evidence_thread_id` also stamps the per-thread demux key on every diverted frame. | `_divert_evidence`; `_evidence_thread_id`; `_append_evidence` | mcp/src/agents_remember/serving/harness_control_bridge.py:468-489; mcp/src/agents_remember/serving/harness_control_bridge.py:505-528; mcp/src/agents_remember/serving/harness_control_bridge.py:491-503 |
-| Three additive evidence/provenance read actions are defined. | `_evidence`; `_evidence_native_page`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:377-383; mcp/src/agents_remember/serving/harness_control_ipc.py:385-397; mcp/src/agents_remember/serving/harness_control_ipc.py:399-405 |
-| The native evidence client validates coordinate domains while reading a control-native page. | `read_control_native_page` | mcp/src/agents_remember/serving/harness_control_client.py:369-401 |
-| The native evidence parser validates continuation state. |"def _native_evidence_page"|mcp/src/agents_remember/serving/_harness_control_parsing.py:399-399|
-| Snapshot parsing recognizes plural "pendings_raw = raw.get(\"pendingInteractions\")". | "stays the parent-thread slot" | mcp/src/agents_remember/serving/response_contract.py:1055-1055 |
-| The provenance batch reads the authority-owned ledger through the bridge's single submission handle, enforcing the expected bridge epoch and returning each requested record's provenance. | `SubmissionLedger`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:399-405; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
-| The resume request shape is `ControlRunnerRequest`. | `ControlRunnerRequest` | mcp/src/agents_remember/serving/terminal_opener.py:83-98 |
-| The runner parses its configuration through `parse_runner_config`. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:72-97 |
-| The factory owns the built-in protocol harness set. | `BUILTIN_PROTOCOL_HARNESSES` | mcp/src/agents_remember/serving/harness_control_factories.py:26-26 |
-| Contract and installed-runtime suites pin the whole seam including no-leak, continuation, provenance, and resume. | `EvidenceBufferTests`; `EvidenceIpcTests`; `CodexEvidenceTests`; `PiEvidenceTests`; `CodexInstalledEvidenceTests`; `PiInstalledEvidenceTests` | mcp/tests/test_harness_control_evidence.py:360-602; mcp/tests/test_harness_control_evidence_installed.py:123-296; mcp/tests/test_harness_control_evidence_installed.py:299-372; mcp/tests/test_harness_control_evidence_ipc.py:48-337; mcp/tests/test_harness_control_evidence_ipc.py:340-507; mcp/tests/test_harness_control_evidence_other.py:60-153 |
-
-### Current Control-Plane Substrate
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The control-plane DTOs/constants and serializers: `InterruptResult`, `OperationTimeline{,Item}`, `AssetReference`, `WithdrawalRecovery`, the additive optionals, and the typed spool reader. | `AssetReference`; `WithdrawalRecovery`; `InterruptResult`; `OperationTimelineItem`; `OperationTimeline`; `read_asset_bytes` | mcp/src/agents_remember/serving/harness_control_models.py:254-262; mcp/src/agents_remember/serving/harness_control_models.py:384-389; mcp/src/agents_remember/serving/harness_control_models.py:402-411; mcp/src/agents_remember/serving/harness_control_models.py:414-427; mcp/src/agents_remember/serving/harness_control_models.py:430-438; mcp/src/agents_remember/serving/harness_control_models.py:1066-1073 |
-| The structural sub-protocols adapters opt into without a base-contract member. | `InterruptCapableAdapter`; `AssetSubmitCapable` | mcp/src/agents_remember/serving/harness_control_adapter.py:91-106; mcp/src/agents_remember/serving/harness_control_adapter.py:109-113 |
-| The bridge's epoch-guarded interrupt dispatch (structural refusal, adapter-mint refusal, bridge-stamped epoch) and timeline delegation. | `interrupt`; `submissions` | mcp/src/agents_remember/serving/harness_control_bridge.py:273-300; mcp/src/agents_remember/serving/harness_control_bridge.py:323-332 |
-| The authority's `respond` path owns response matching. | `respond` | mcp/src/agents_remember/serving/harness_submission_authority.py:300-356 |
-| The authority's `withdraw` path owns recovery capture. | `withdraw` | mcp/src/agents_remember/serving/harness_submission_authority.py:452-498 |
-| The authority applies its capability decision through `_unsupported_prompt_locked`. | `_unsupported_prompt_locked` | mcp/src/agents_remember/serving/harness_submission_authority.py:262-292 |
-| The authority computes asset-conditional payload digests through `_payload_digest`. | `_payload_digest` | mcp/src/agents_remember/serving/harness_submission_authority.py:987-1008 |
-| The paged never-bodies enumeration and eviction floor now belong to `SubmissionLedger.operation_timeline`, with `OperationRecord` and `SubmissionLedger` defined in the split ledger. | `OperationRecord`; `SubmissionLedger`; `operation_timeline` | mcp/src/agents_remember/serving/harness_submission_ledger.py:57-252; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
-| The two additive IPC actions and the submit-asset schema/confinement/verification admission under the endpoint's own assets root. | `_interrupt`; `_operation_timeline`; `_submit_assets`; `_submit_asset_schema`; `_confined_asset_path`; `_verify_staged_asset` | mcp/src/agents_remember/serving/harness_control_ipc.py:250-282; mcp/src/agents_remember/serving/harness_control_ipc.py:284-304; mcp/src/agents_remember/serving/harness_control_ipc.py:485-506; mcp/src/agents_remember/serving/harness_control_ipc.py:525-543; mcp/src/agents_remember/serving/harness_control_ipc.py:306-313; mcp/src/agents_remember/serving/harness_control_ipc.py:315-326 |
-| The client defines the `interrupt_control` helper. | "def interrupt_control" | mcp/src/agents_remember/serving/harness_control_client.py:443-443 |
-| The client defines the `read_operation_timeline` helper. | "def read_operation_timeline" | mcp/src/agents_remember/serving/harness_control_client.py:466-466 |
-| Operation-timeline response validation is implemented by `_operation_timeline` and `_operation_timeline_items`. | "def _operation_timeline("; "def _operation_timeline_items(  # pragma: no cover" | mcp/src/agents_remember/serving/_harness_control_parsing.py:273-273; mcp/src/agents_remember/serving/_harness_control_parsing.py:299-299 |
-| The client defines the `_withdrawal_recovery` parser helper. |"def _withdrawal_recovery"|mcp/src/agents_remember/serving/_harness_control_parsing.py:215-215|
-| The client defines the `_asset_reference` parser helper. |"def _asset_reference"|mcp/src/agents_remember/serving/_harness_control_parsing.py:233-233|
-| The client defines the `_submit_payload` helper. | "def _submit_payload" | mcp/src/agents_remember/serving/harness_control_client.py:269-269 |
-| The Codex adapter handles exact-active-turn interrupt replay and load-shed. | `interrupt`; `_load_shed_notice` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:281-328; mcp/src/agents_remember/serving/codex_app_server_adapter.py:1012-1039 |
-| `CodexThreadRegistry` owns `resolve`, `pending_interactions`, `learn_collab_identity`, and `route_delta_params`. | `CodexThreadRegistry` | mcp/src/agents_remember/serving/codex_app_server_threads.py:69-300 |
-| Verified `localImage` construction uses `verified_asset_path` and `turn_input`. | `verified_asset_path`; `turn_input` | mcp/src/agents_remember/serving/codex_app_server_turns.py:42-52; mcp/src/agents_remember/serving/codex_app_server_turns.py:55-61 |
-| Pi expected-operation-guarded `abort` with replay-once and verified base64 image content. | `interrupt`; `_image_content`; `_verified_asset_bytes` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:404-454; mcp/src/agents_remember/serving/pi_rpc_adapter.py:456-462; mcp/src/agents_remember/serving/pi_rpc_adapter.py:464-474 |
-| The content-less `message_end` evidence-only mapping (the abort's own shape) with preserved role strictness. | `_message_event` | mcp/src/agents_remember/serving/pi_rpc_events.py:244-262 |
-| Contract and installed-runtime suites pin the whole seam; the fixtures record redacted `control-plane/*` rows without enabling anything. | `InterruptBridgeTests`; `CodexInterruptTests`; `OperationTimelineTests`; `AssetChannelTests`; `AssetNativeConstructionTests`; `CodexInstalledControlPlaneTests`; `PiInstalledControlPlaneTests` | mcp/tests/test_harness_control_plane.py:289-376; mcp/tests/test_harness_control_plane.py:496-558; mcp/tests/test_harness_control_plane_assets.py:249-483; mcp/tests/test_harness_control_plane_channels.py:52-318; mcp/tests/test_harness_control_plane_channels.py:321-481; mcp/tests/test_harness_control_plane_installed.py:134-278; mcp/tests/test_harness_control_plane_installed.py:281-387 |
-
-### Current Structured-Conversation Evidence
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Strict normalized conversation products encode identity, cursor, provenance, status, capability, operation, attachment, and telemetry authority. | "class NativeConversationRef(WireModel):"; "class ProvenanceEvidence(WireModel):"; "class ConversationStatus(WireModel):"; "class ConversationCapabilities(WireModel):"; "class OpenConversationOperation(WireModel):"; "class AttachmentOperationProjection(WireModel):"; "class ConversationTelemetry(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_wire.py:105-105; mcp/src/agents_remember/serving/conversation/_models_wire.py:176-176; mcp/src/agents_remember/serving/conversation/_models_status.py:145-145; mcp/src/agents_remember/serving/conversation/_models_status.py:347-347; mcp/src/agents_remember/serving/conversation/_models_operations.py:19-19; mcp/src/agents_remember/serving/conversation/_models_operations.py:355-355; mcp/src/agents_remember/serving/conversation/_models_telemetry.py:70-70 |
-| Exactly two protocol read ports separate active transcript reads from conversation-library reads. | `ActiveConversationPort`; `ConversationLibraryPort` | mcp/src/agents_remember/serving/conversation/ports.py:27-56; mcp/src/agents_remember/serving/conversation/ports.py:59-84 |
-| Three owned child routers compose beneath one stable root and one explicit registration function. | `CONVERSATION_CHILD_ROUTERS`; `register_conversation_routes` | mcp/src/agents_remember/serving/conversation/router.py:15-15; mcp/src/agents_remember/serving/conversation/router.py:22-32 |
-| The existing harness-control application factory mounts the conversation root once. | `register_harness_control_routes` | mcp/src/agents_remember/serving/harness_control_api.py:182-217 |
-
-### Current Folded-State Evidence
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Projector publication computes events, commits authority, and then notifies; subscription activation registers before snapshot capture and cleans up in `finally`. | `_publish_projection`; `subscribe` | mcp/src/agents_remember/serving/projector.py:268-295; mcp/src/agents_remember/serving/projector.py:314-330 |
-| App streaming consumes one iterator, decorates every snapshot, preserves event/id/retry framing, and owns explicit closure. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:112-112 |
-| Deterministic regressions force handoff publication, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | `StreamEventsTests` | mcp/tests/test_serving.py:379-477 |
-
-### Current Wire Contract
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `WireResponse` is strict (`extra="forbid"`), frozen, `populate_by_name`, and camel-aliased; the three shared refusal tables are also defined here. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:1068-1074; mcp/src/agents_remember/serving/response_contract.py:1078-1085; mcp/src/agents_remember/serving/response_contract.py:1090-1098 |
-| The catalog wire model and the `TerminalSessionsResponse`/`DetectedHarnessesResponse` declarations. | `TerminalCatalogEntryWire`; `TerminalSessionsResponse`; `DetectedHarnessesResponse` | mcp/src/agents_remember/serving/response_contract.py:280-357; mcp/src/agents_remember/serving/response_contract.py:360-363; mcp/src/agents_remember/serving/response_contract.py:374-377 |
-| `OnboardingResolution` declares the five-shape union for `GET /api/files/onboarding`. | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:720-726 |
-| `ServedWorkspaceProjection` (the projection plus the two optional serve-time keys), `SERVED_TAIL_FIELDS`, and `served_state_tail` with its opposite null rules per half. | `ServedWorkspaceProjection`; `SERVED_TAIL_FIELDS`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:48-59; mcp/src/agents_remember/serving/served_state.py:62-66; mcp/src/agents_remember/serving/served_state.py:71-90 |
-| `ServingBuildPayload` and `AgentNotifierHeartbeatPayload` — the two tail halves as declared models rather than hand-built dicts; `ServingBuild.payload()` returns the model and collapses clean-and-unprovable to `None`. | `ServingBuildPayload`; `ServingBuild`; `AgentNotifierHeartbeatPayload` | mcp/src/agents_remember/serving/build_info.py:43-63; mcp/src/agents_remember/serving/build_info.py:66-88; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:31-55 |
-| The declarations on `app.py`'s own routes: the `/api/state` 200/304/503 trio, `/api/task-document`, the two SSE routes' per-frame models, the `202` on `POST /api/actions/{action}`, the websocket exemption comment, and the two FastAPI-validated catalog routes. | "def _register_projection_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"; "def _register_action_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"; "def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/serving/_app_routes.py:115-115; mcp/src/agents_remember/serving/_app_routes.py:386-386; mcp/src/agents_remember/serving/_app_terminal_routes.py:127-127 |
-| The route-inventory, validated-route hazard, per-route conformance and declared-surface-coverage suites enforce the contract on routes FastAPI does not validate. | `ServingRouteInventoryTests`; `ValidatedRouteHazardTests`; `ServingResponseConformanceTests`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance.py:500-632; mcp/tests/test_serving_response_conformance.py:635-704; mcp/tests/test_serving_response_conformance.py:792-899; mcp/tests/test_serving_response_conformance_live.py:484-484 |
-| The served-state tail rules, the populated 200 body, the body-less 304, and the bare-node `delta` asymmetry are bound by the served-state route and snapshot conformance suites. | `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests`; `delta` | mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
-
-### Legacy route map
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The tick entry the projector drives (read → fold → atomic write; the `now` seam + fixture loader). | `read_lifecycle_logs`; `project_and_write` | mcp/src/agents_remember/observer/projection_store.py:111-153; mcp/src/agents_remember/observer/projection_store.py:212-275 |
-| The served shapes (`WorkspaceProjection`, `ActionAvailability`). | `WorkspaceProjection`; `ActionAvailability` | mcp/src/agents_remember/observer/projection.py:45-58; mcp/src/agents_remember/observer/projection.py:990-1009 |
-| The raw event envelope + log layout tailed by `events.py`/`sim.py`. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| The one read/path abstraction (NS #5). | `observer_logs_root`; `observer_root` | mcp/src/agents_remember/observer/paths.py:27-29; mcp/src/agents_remember/observer/paths.py:32-34 |
-| The `--config` → `McpRuntimeConfig` contract the CLI mirrors. | `McpRuntimeConfig` | mcp/src/agents_remember/mcp/config.py:113-137 |
-| The umbrella CLI entry that launches the server (and wires `--sim`). | `build_parser`; `main` | mcp/src/agents_remember/cli/__main__.py:16-28; mcp/src/agents_remember/cli/__main__.py:31-33 |
-| The transport design (SSE, snapshot-then-deltas, raw channel, sim, placement). | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design`; `## 2. The Event Substrate`; `## 3. Gates and the Return Channel`; `## 5. Placement and Packaging` | docs/design/observable-lifecycle.md:1-402 |
-| The containment metrics sampler + store the lifespan loop drives. | `ProviderMetricsStore`; `sample_provider_containers` | mcp/src/agents_remember/providers/metrics.py:231-360; mcp/src/agents_remember/providers/metrics.py:363-420 |
-| The provider degradation detector the sampling loop also calls once per tick; governed by the `mcp/` package overview. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
-| The expectation-row, operator-inbox, orchestration-nudge, signal-cooldown, and observer-event stores. | `ExpectationRowStore`; "class OperatorInboxStore"; `OrchestrationNudgeStore`; `AgentNotifierSignalCooldownStore`; `EventStore` | mcp/src/agents_remember/controlplane/expectation_rows.py:156-336; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251; mcp/src/agents_remember/controlplane/orchestration_nudges.py:43-127; mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220; mcp/src/agents_remember/observer/store.py:103-171 |
-| The `orchestration.agentNotifier` settings family (interval/enable/staleness cutoff/redeliver rate limit/signal cooldown/redeliver budget) `app.py`'s agent-notifier loop re-reads per-use. | "class AgentNotifierSettings:"; "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:226-226; mcp/src/agents_remember/serving/_app_lifespan.py:108-108 |
-| The MCP tool choke point that surfaces the agent-notifier staleness banner on every tool call. | `_tool_payload`; `_agent_notifier_banner` | mcp/src/agents_remember/application/tool_response.py:22-31; mcp/src/agents_remember/mcp/tools/base.py:73-75 |
-| The sole epoch-bound prompt/setter timeline and its authoritative status/withdrawal model. | `HarnessSubmissionAuthority`; `withdraw` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
-| The daemon/IPC/client boundary for raw-free lifecycle operations and first-byte classification. | `register_harness_control_routes`; `_dispatch`; `_exchange_control` | mcp/src/agents_remember/serving/harness_control_api.py:182-217; mcp/src/agents_remember/serving/harness_control_client.py:534-568; mcp/src/agents_remember/serving/harness_control_ipc.py:159-171 |
-
-## Historical Route Impact (superseded hosted authority)
-
-Serving implements exact-session readiness, copy-mode rechecks, calibrated settling beyond the shipped 120 ms suppression window, harness-log proof, and pending-without-respawn recovery. Catalog writers serialize the complete one-read/one-write batch across processes while atomic readers remain lock-free.
-
-
-### Current Capability Contract
-
-Claude, Codex, and Pi production adapters launch the installed/current harness and validate the
-structured capabilities, messages, and fields they consume. Missing, malformed, or contradictory
-required evidence fails loudly; exact 2.1.207, 0.144.3, and 0.80.6 values are fixture/smoke
-evidence only. Rolling inbox compatibility remains limited to optional `adapterDeliveryState`
-and `adapterDeliveryDetail`; unrelated extras remain rejected. Resource performance work is queued
-and not implemented or current behavior.
-
-### Codex Completion Correlation
-
-The Codex adapter owns the null-requestId/vendor-correlation mapping and terminal projection. It
-must consume structured protocol messages and fields and fail loudly on missing, non-text,
-unmatched, or ambiguous correlation evidence; exact 2.1.207, 0.144.3, and 0.80.6 values remain
-fixture/smoke evidence only. The matched row receives adapter completion metadata without explicit
-inbox consumption, and only an actual replacement permits `settling` / `queued`; otherwise the
-terminal snapshot is `idle` / `immediate`. Inbox compatibility remains limited to optional
-`adapterDeliveryState` and `adapterDeliveryDetail`, with unrelated extras rejected. Resource performance remains queued and unimplemented.
-
-### Hosted Protocol Cutover
-
-Claude, Codex, and Pi hosted sessions now launch through the shared bridge. Exact adapter snapshots
-govern readiness, delivery, liveness, interactions, and terminal projection. Durable inbox rows are
-the only inter-agent message roots: adapter receipts record delivery evidence, while explicit consume
-acknowledges receipt. Custom and already-running raw-TUI sessions are explicitly unsupported, and
-pane/turn/log classifiers remain diagnostics-only. Dashboard and packaged assets stay additive and
-must remain synchronized.
-
-## Hot-Path Performance And Diagnostics Route Impact
-
-The serving hot path is both cheaper and more explicit: one published projection supplies the `/api/state` and snapshot body memo, per-response volatile fields are injected outside that memo, ordinary JSON is gzip-compressed while SSE stays streaming, and repository discovery is single-pass/TTL-cached. The route also adds bounded dashboard shutdown, opt-in heap diagnostics/allocator trimming, honest dirty-build marking, structured interaction responses, native Claude interrupt support, and capability-aware terminal frame synchronization.
-
-Route indexes are intentionally not regenerated during a partitioned documentation pass; a single aggregate refresh runs after all ownership is complete. Existing verification metadata remains pre-commit.
-
-## Sub-Agent Multiplexing Route Impact
-
-Harness sub-agents became first-class across the control substrate: the bridge extracts
-`threadId` into every evidence frame (`_evidence_thread_id`; missing/malformed degrades to the
-parent thread, never guessed), snapshots carry the multiplexed `pending_interactions` tuple
-end-to-end (catalog column `control_pending_interactions` → hosted projection → API
-`pendingInteractions`; the singular slot stays the parent-thread entry), the authority's
-`respond` matches a response against the singular parent pending OR the plural sub-agent tuple
-with the active-operation guard explicitly parent-only, the codex adapter owns the per-thread
-demux/registry with collab identity learning and degrade-never-fatal agent frames, and claude
-launches with the floor-gated `--forward-subagent-text` (floor 2.1.220) only after `system/init`
-proves the floor. Every change is additive; single-thread sessions stay byte-identical.
-
-That floor gate makes the Claude subprocess transport a RESTARTABLE resource rather than a one-shot:
-the adapter stops and re-launches the same transport object to add the flag, so
-`claude_stream_transport.py` releases its process and stderr-task ownership as the final step of a
-completed stop, while a start against a live process still refuses. The refusal and the release are
-one contract — a transport that kept its terminated process turned every at-or-above-floor install
-into an `unsupported` handshake, which is what removed control readiness and the dashboard's
-model/effort selection before 260727-CHATS-IM-L4.
-
-The remediation pass closed the two multiplexed-production kill seams. Concurrent server requests
-are now normal traffic: the adapter keeps a bounded per-thread pending-interaction MAP keyed by
-rpc id (the "multiple unresolved server requests" raise is deleted; the vendor keeps a global
-pending map), the singular slot carries the parent's OLDEST pending, an unknown/experimental
-request METHOD is declined (`respond_error` -32601) and degraded on ANY thread while a known
-method's malformed shape keeps the agent-degrade/parent-fail split, the projector projects ALL
-pendings (concurrent parent ones plainly) with singular-rotation resolution semantics, and the
-authority's parent guard follows the entry's own thread (a parent-thread tuple entry is guarded
-like the singular slot). And the adapter event queue no longer raises queue-full: it sheds the
-oldest high-volume delta events first (structural events survive), counts every shed, and emits
-one `ar/load-shed` notice with the count when the consumer catches up (queue 256→1024).
-
-Route indexes are intentionally not regenerated during a partitioned documentation pass; a single aggregate refresh runs after all ownership is complete. Existing verification metadata remains pre-commit.
-
-## Codex Native-History And Selected-Child Route Impact
-
-Codex history now has separate compatibility/resource layers: the 128 MiB JSON payload fuse in
-`codex_app_server_protocol.py`; runtime-probed items/turns/explicit-legacy acquisition plus the
-16 MiB complete source-response ceiling and 64 MiB/64-walk continuation LRU in
-`codex_app_server_history.py`; typed preservation over control IPC; and selected-child-only active
-projection. The fuse is shared-fatal above its boundary and is never history paging.
-
-The active serving child now owns three routes. Parent paging discovers children from metadata/live
-events without hydrating all of them; the selected-child POST performs native I/O outside the
-projector apply lock, singleflights same-child work, caps concurrent reads at 64, and converts only
-typed native-history outcomes into child-local unavailable/recovered state. The separate dormant
-`conversation/library/codex.py` full-read path remains a follow-up exposure.
-
-## 260731-EFA-L2 Route Impact — named concepts replaced parameter lists
-
-Enforcing `PLR0913` (Ruff's default max-args of 5) and the complexity codes at full strength, with
-no per-file ignore or `noqa` anywhere in this route, turned this route's long parameter lists into
-named values. The rule for reading the rest of this overview: **wherever a description below names
-a keyword that no longer exists, the concept it belonged to is one of the values listed here.**
-
-Three modules are new:
-
-| Module | Concept |
-| --- | --- |
-| `cadence.py` | `ProjectionCadence(interval, heartbeat)` — one pacing decision; stdlib-only so `daemon.py` can name it without importing the projector. |
-| `hosted_session_runtime.py` | `HostedSessionRuntime(catalog, host)` — the durable row and the tmux process that jointly decide which hosted sessions exist. |
-| `conversation/active/projector/wiring.py` | `SessionProjectionSpine` + `BridgeReaders` — one projection, one session, one epoch, made structural. |
-
-The concepts introduced across the existing modules, grouped by what they name:
-
-- **Composition / substitution seams.** `ServingCollaborators` + `LiveProjectionInputs` +
-  `_ServingRuntime` (`app.py`), `ProjectionReplay` + `ProjectionRefreshers` (`projector.py`),
-  `TerminalHostSeams` (`terminal.py`), `TerminalPasterSeams` (`terminal_paste.py`), `LivenessProbe`
-  (`terminal_liveness.py`), `AppServerSeams` (`conversation/library/codex.py`), `GateProbes`
-  (`conversation/library/gates.py`), `ConfigurationPorts` (`pi_rpc_configuration.py`),
-  `BridgeSnapshotPort` (`harness_submission_authority.py`), `BridgeReaders` (projector `wiring.py`).
-  Every one of them exists because **partial substitution observes a world that does not exist**.
-- **Bounds chosen as one budget.** `BridgeLimits` (`harness_control_bridge.py`), `SubmissionLimits`
-  (`harness_submission_authority.py`), `PiAdapterLimits` (`pi_rpc_adapter.py`),
-  `TerminalCatalogLivenessConfig` (now in `terminal_catalog.py`), `AcceptanceWindow` +
-  `PasteRecoveryLadder` (`terminal_paste.py`), `EscalationSchedule` (`agent_notifier.py`),
-  `ReadinessWait` (`hosted_readiness.py`), `BoundedPageRequest` (`codex_app_server_history.py`).
-- **Identity / scope that must travel together.** `TerminalLaunchRequest` + `SpawnProvenance` +
-  `SpawnKnobs` + `ControlRunnerRequest` (`terminal_opener.py`), `TerminalSessionSpec`
-  (`terminal.py`), `DaemonEndpoint` (`daemon.py`), `ControlRequest` → `ControlScope`
-  (`conversation/control/service.py`), `RefBinding` + `RefTarget` (`conversation/control/refs.py`),
-  `ControlSubmission` (`harness_control_client.py`), `ProjectedSession` (projector `facade.py`),
-  `LibraryBinding` + `OpenRequest` (`conversation/library/open_service.py`), `ChangesetFileRef`
-  (`changeset.py`), `ClaudeStreamSession` (`claude_stream_state.py`).
-- **One attempt / one observation.** `WithdrawalTicket` (`conversation/control/withdrawals.py`),
-  `InterruptTicket` (`conversation/control/operations.py`), `TurnTransition`
-  (`conversation/active/status.py`), `SubmittedContent` (`conversation/control/attachments.py`),
-  `StartedTurn` (`codex_app_server_adapter.py`), `TranscriptCorrelation`
-  (`claude_stream_state.py`), `SeatClosure` (`retire.py`, also written by `landing.py`),
-  `OwnerSignal` (`agent_notifier.py`), `_DeliveryOutcome` + `InboxDeliveryLog` + `RedeliveryFloor` +
-  `DeliveryAdmission` (`inbox_delivery.py`), `ExpectedEcho` (`harness_control_claude.py`),
-  `StagedAssetClaim` (`harness_control_ipc.py`), `ItemPlacement` + `_LiveItemContext` +
-  `_CollabCall` (`conversation/projectors/codex.py`), `_TaskIdentity`
-  (`conversation/projectors/claude.py`), `IngestionComponents` (projector
-  `rebuild_coordinator.py`), `StageAttachmentsForm` (`conversation/control/api.py`),
-  `ActionEvaluationContext` (`actions.py`, now built by the caller).
-
-**Deletions in this route, at the cause rather than covered by a test:**
-
-- `terminal_opener.py` lost its legacy pre-bridge argv path. `_live_open_result` is now the single
-  place a live row is handled; everything past it is a spawn, so `_reopen_state` no longer probes
-  the host and `_control_metadata` mints control columns instead of inheriting them.
-- `app.py` lost two duplicated request-shape guards (the `missing-gate-id` re-check and the
-  dismissal scope re-check). Request validation lives once, in `actions.py`, which already refuses
-  both shapes with 400 `missing-target` / `missing-lifecycle`.
-- `harness_submission_authority.py` reduced its dispatch-time asset-capability guard to an assert;
-  `_unsupported_prompt_locked` is the single capability decision point, deciding under the same lock
-  that enrols the record.
-- `terminal_paste.py` lost its "dispatch paste requires a harness-log acceptance probe" `ValueError`:
-  `paste_dispatch` requires the probe in its signature, and `paste()` no longer accepts a dispatch
-  policy at all.
-- `harness_control_client.py` lost its "operation timeline item requires lifecycle state" re-check:
-  `_submission_state` now raises for anything outside the seven states unless `optional=True`.
-- `harness_control_ipc.py` collapsed two `if action == …` chains into one `_CONTROL_ACTIONS` table
-  with one unknown-action refusal.
-
-**One relocation:** `TerminalCatalogLivenessConfig`, `DEFAULT_LIVENESS_HYSTERESIS` and the four
-`DEFAULT_LIVENESS_*` constants moved from `terminal_liveness.py` to `terminal_catalog.py`.
-
-This entry supersedes any earlier description in this overview that conflicts with the current
-source behavior above; verification metadata stays pinned to the pre-commit source history until
-closeout.
-
-## 260731-EFA-L4 Route Impact — the wire is declared, and ONE TEST is the enforcement
-
-Two new modules, `response_contract.py` (93 model classes) and `served_state.py`, declare what every
-HTTP route of this app answers with. **Read the mechanism before the intent, because the declaration
-and the enforcement are in different files and only one of them can fail.**
-
-### What the declaration is, and what it is not
-
-`serving/` registers 62 route decorators. 61 are HTTP routes and every one now carries
-`response_model=`; the 62nd is `@app.websocket("/api/terminal/{session}")`, which FastAPI registers
-as an `APIWebSocketRoute` — a class that has no `response_model` parameter, because a websocket has
-no response body. That is the only undeclared route there can be, and
-`ServingRouteInventoryTests` recognises the exemption **by route class**, asserting the attribute
-is absent, so a future undeclared *HTTP* route cannot hide behind a path skip-list.
-
-FastAPI applies `response_model` only to values it serializes itself: `get_request_handler` returns
-a `Response` instance untouched and never reaches `serialize_response`. Of the 61 handlers, **57
-return a `Response` subclass directly** and **two** (`GET /api/stream`, `GET /api/events`) are async
-generators feeding an `EventSourceResponse`. On all 59 the decorator contributes an OpenAPI schema
-and **validates nothing at runtime**. Undoing this leaf's decorators would therefore break no route
-and fail no request — which is exactly why "declare a model everywhere plus a test that no
-declaration is missing" would have been green on day one and enforced nothing.
-
-The enforcement is `mcp/tests/test_serving_response_conformance.py`: it drives the real routes
-through the real app and validates each returned body against the model declared **for the status
-that actually came back** (`responses[status]["model"]` when there is one, `response_model`
-otherwise). Because every model is `extra="forbid"` and validation is alias-strict, an undeclared
-key fails and so does a body that arrived in field-name rather than camel-alias form. Its score is
-pinned rather than implied: **286 declared `(method, path, status)` pairs, 133 driven against a real
-body, 153 declared-and-undriven** — each undriven leg listed with a reason in
-`UNDRIVEN_DECLARATIONS`, asserted by exact equality, so a declaration that stops being exercised
-fails there instead of going quiet. A weaker claim holds without exception: **every one of the 61
-routes is driven on at least one status.** Most undriven legs are the typed control-bridge failures
-(a stale epoch, a rejected operation, a socket that dies mid-write) that the bridge fixture does not
-model.
-
-### The two routes where the declaration IS live enforcement — and the hazard that creates
-
-`GET /api/terminal/sessions` and `GET /api/harnesses` are the only handlers returning a bare `dict`,
-so FastAPI validates them for real. That is a **behaviour change**: both were forward-compatible
-pass-through, and a key the model did not know about simply reached the cockpit. They now answer
-**HTTP 500** (`ResponseValidationError`) if the payload gains a key, loses a required one, or
-changes a type. On `/api/terminal/sessions` that is a 52-key body hand-assembled from an actively
-grown dataclass, so a leaf that adds a field to `TerminalCatalogEntry.to_json` and forgets
-`TerminalCatalogEntryWire` takes the session rail **down** rather than degrading it. The mitigation
-is `ValidatedRouteHazardTests.test_the_catalog_wire_model_covers_every_key_to_json_emits`: an AST
-scan of `to_json`'s two emission forms asserting set EQUALITY in both directions against the model's
-aliases, with the key count pinned at 52 so a scan that reads nothing cannot satisfy the equality.
-It fires when the field is added — earlier than the runtime 500 and earlier than a conformance run,
-whose fixture only populates some fields. The route also declares
-`response_model_exclude_unset=True`, which reproduces `to_json`'s conditional key set instead of
-back-filling nulls the dashboard has never seen.
-
-### THE LIMIT OF THE GUARANTEE — the dashboard mirror is NOT derived from these models
-
-`dashboard/src/types/projection.ts` and `dashboard/src/test/fixtures/wire.ts` are **hand-maintained**.
-**No generator exists anywhere in this repository, and no in-repo mechanism keeps the two sides in
-step** — nothing under `mcp/`, `scripts/` or `dashboard/` derives TypeScript, JSON Schema or an
-OpenAPI artifact from these pydantic models, and nothing writes
-`dashboard/src/fixtures/snapshot.json`. (An exhaustive search of this tree and its history supports
-that; it cannot exclude a generator kept outside the repository.)
-
-Be exact about which links ARE held, because the short form of this claim keeps losing its middle
-term. The chain is **four nodes and three links** — `test/fixtures/wire.ts` → `types/projection.ts`
-→ `dashboard/src/fixtures/snapshot.json` → `observer/projection.py` — and the dashboard's own tests
-hold the first two. `tsc -b` binds the fixture to the mirror: every base is annotated with its mirror
-type, every call-site override goes through `Overrides<O, Node>`, and `test/wireFixtureGuard.test.ts`
-refuses the one-token opt-outs. `test/contract.test.ts` then **measures the mirror against
-`snapshot.json`**, and it is *not* a one-way `⊆`: three TYPE-level directions (`mirror ⊇ served`,
-`served ⊇ mirror`, `fixture ⊇ mirror`) plus runtime `VOCABULARIES` assertions for the string unions
-`resolveJsonModule` widens to `string`. **The third link is held by nothing: `snapshot.json` ↔ these
-pydantic models is maintained by hand**, so the snapshot proves only what a person wrote it to say.
-A field the server starts sending that neither the mirror nor the snapshot knows about is invisible
-to every test on both sides. This leaf pinned the server half of the wire; it did not close the
-crossing, and no claim that these types are "kept in sync" is true.
-
-### The served state, which is assembled rather than dumped
-
-`served_state.py` declares what `/api/state` and the SSE `snapshot` frame actually emit:
-`ServedWorkspaceProjection` is a `WorkspaceProjection` plus two OPTIONAL serve-time keys,
-`servingBuild` and `agentNotifierHeartbeat`. Before this both were injected into the dumped projection
-with nothing declaring them, so feeding a served body back through `WorkspaceProjection`
-(`extra="forbid"`) raised on the extra keys — the emitted object was outside its own model.
-
-The tail deliberately does **not** move onto `WorkspaceProjection`, for five reasons that are load
-bearing rather than stylistic: (1) the projection is built at TICK time and both keys are computed at
-SERVE time; (2) `app._ProjectionBodyCache` memoizes the ~1.3 MB dump per published instance
-*precisely because* the volatile tail is merged onto a shallow copy afterwards — a measured
-13.7–16.5 ms per request; (3) the heartbeat is deliberately outside the projector's content
-revision, so a volatile age never busts the `/api/state` ETag and the 304 path keeps firing;
-(4) `observer.projection_store.write_projection` persists `WorkspaceProjection` into
-`latest-state.json`, and serving-only fields must not enter that artifact's schema; (5) only the
-`snapshot` frame carries the tail — a `delta` is one bare projection node.
-
-`served_state_tail(build=…, heartbeat=…)` is the one assembly point, and the two halves serialize
-under **opposite** null rules, which is why it is two dumps and not one: the build half uses
-`exclude_none=True` (an unresolvable commit, an unbuilt bundle and an unprovable tree are OMITTED —
-absence is never a fabricated "clean"), while the heartbeat half is dumped WITHOUT it (an agent-notifier
-that never ticked reports explicit nulls, because the cockpit distinguishes "never ticked" from
-"this server does not report a heartbeat"). `SERVED_TAIL_FIELDS` names exactly the keys the
-assembly may add so it and the model cannot drift apart silently. There is deliberately **no
-per-request validation** — it would re-parse the whole body and hand back exactly what the memo
-exists to save; `mcp/tests/test_served_state_conformance.py` holds it shut instead, over a
-coordination root that is actually populated (an empty temp root made every collection `[]`, so the
-200 validated without a single projection node ever being constructed).
-
-### What changed in each governed file
-
-- **`build_info.py`** — `ServingBuild.payload()` returns a declared `ServingBuildPayload`
-  (`extra="forbid"`) instead of a hand-built `dict[str, Any]`. The honest-unknown rule is now
-  expressed as `None` on every best-effort field plus the caller's `exclude_none=True`; `dirty` is
-  written `True if self.dirty else None`, so proven-clean (`False`) and unprovable (`None`) both
-  collapse to absent and the wire still never fabricates a "clean" fact. `ServingBuild`'s own
-  dataclass fields and the tri-state `dirty` are unchanged.
-- **`agent_notifier_heartbeat.py`** — new `AgentNotifierHeartbeatPayload`, deliberately distinct from the
-  durable `AgentNotifierHeartbeat` ROW: it is what a reader computes ABOUT that row at response time
-  (the row's counters plus the age and the staleness verdict against the configured cutoff).
-- **`app.py`** — `stream_events`'s `agent_notifier_heartbeat` parameter is typed
-  `AgentNotifierHeartbeatPayload | None` instead of `dict[str, Any] | None`, and both the `/api/state`
-  body and the SSE snapshot now merge `served_state_tail(...)` rather than assigning the two keys by
-  hand. Route declarations: `/api/state` declares `ServedWorkspaceProjection` plus a **body-less
-  304** and a 503; `/api/task-document` declares the observer's `TaskDocNode`; `/api/stream`
-  declares the shape a `snapshot` frame's `data` carries; `/api/events` declares `StreamReadyMarker`
-  — the ONLY frame that route mints, because every `event` frame is a verbatim observer JSONL record
-  whose schema belongs to the observer. `POST /api/actions/{action}` gained `status_code=202`,
-  because 202 is the status it answers with: left implicit it declared its success shape at 200, a
-  pair no request can produce and therefore one no conformance check could ever drive.
-- **`files.py` / `notes.py` / `changeset.py`** — every route declares its shape plus the shared
-  `SCOPED_READ_RESPONSES` (400 confinement/malformed, 404 unknown-repo/unknown-scope/not-found),
-  which is `run_scoped`'s error map transcribed. Two routes declare no refusal at all, each for a
-  stated reason: `/api/files/repos` has no refusal branch (the catalog is assembled from the
-  allow-list), and `/api/changeset/master` degrades an unresolvable master to empty lists rather
-  than refusing. `/api/files/onboarding` declares the five-member `OnboardingResolution` union,
-  because `direction` picks the pairing direction and each direction discriminates further;
-  declaring only the forward shape would have been a lie about half the route's traffic.
-- **`harness_control_api.py`** — nine of its ten routes take the shared `SESSION_CONTROL_RESPONSES`
-  (404 no live bridge-backed seat / 409 unsupported seat or stale epoch / 503 bridge refused),
-  which is `_control_route` → `_control_failure_response` transcribed. The tenth,
-  `GET /api/harnesses/{harness}/capabilities`, is the one capability route with **no seat**, so it
-  declares its own 404 (no such installed native harness) and 503 (discovery unavailable) instead.
-  `POST .../submit` and `POST .../interaction-response` extend the shared table with their own
-  409/503 unions, for refusals no other control route can produce (a reused request id; a certified
-  retry-safe pre-dispatch failure).
-
-### Rules a later leaf must not undo
-
-- A route that returns a `Response` gets **no runtime validation** from its declaration. If you add
-  a route here, the thing that makes its declaration mean anything is a driver in
-  `test_serving_response_conformance.py` — and `DeclaredSurfaceCoverageTests` will fail if you add
-  declarations without either driving them or listing them in `UNDRIVEN_DECLARATIONS` with a reason.
-- Growing `TerminalCatalogEntry.to_json` without growing `TerminalCatalogEntryWire` is now a
-  cockpit outage, not a passthrough. The AST equality test is what turns it into a red build first.
-- The serve-time tail must not become a `WorkspaceProjection` field: doing so puts a volatile age
-  inside the ETag revision and inside the persisted `latest-state.json` schema.
-- Nothing generates the dashboard's TypeScript from these models. Adding a served key is still a
-  two-sided, hand-made change.
-
-This entry supersedes any earlier description in this overview that conflicts with the current
-source behavior above; verification metadata stays pinned to the pre-commit source history until
-closeout stamps the L4 commit.
-
-## 260731-EFA-L16 Route Impact — cross-store lock order, and an event loop that cannot park
-
-The 2026-08-05 production incident (two py-spy-verified deadlocks of the serving daemon in one
-day) ended with three repairs on this route. The liveness sweep's hosted-interaction synchronizer
-no longer runs inside `TerminalCatalog.batch()`: the sweep collects `_PendingInteractionSync`
-evidence and `_run_deferred_interaction_syncs` drains it after the commit — the collector rides
-the `LivenessProbe` seam bundle beside the observer it defers, so no call signature grew. The
-agent-notifier sweep fetches its catalog snapshot BEFORE the inbox transaction (the lock-held
-fold → resolve → compact itself is byte-for-byte untouched, L5's declared exception), accepting
-only benign one-directional staleness (a false keep, never a false resolve). And blocking store
-I/O left the uvicorn loop: control `resolve_entry`, the active side's projector resolution, and
-the terminal-image catalog read + paste write all run through `asyncio.to_thread` — the
-amplifier that turned a two-thread deadlock into a full outage is gone. The cross-store
-lock-order doctrine is declared in `controlplane/durable_store.py` beside the intra-store order:
-no thread holds one store's lock while acquiring another's. Forcing regressions
-(`mcp/tests/test_cross_store_lock_order.py`) deadlock on the pristine base and pin placement,
-both sweep paths, the legacy inline path, and every offload. No wire schema, record format,
-endpoint shape, or sweep cadence changed.
-
-## 260731-EFA-L7 — Serving Split In Place
-
-The three serving files reassigned to L7 under OQ1 Option A were split in place, not moved: `serving/app.py` (1,973) → facade + `_app_{common,lifespan,routes,terminal_routes}.py`; `serving/agent_notifier.py` (1,282) → facade + `_agent_notifier_{actions,evaluation}.py`; `serving/conversation/models.py` (1,302) → facade + `_models_{blocks,operations,status,telemetry,wire}.py`. `serving/conversation/projectors/codex.py` (1,223 → 704) gained `_codex_collab.py` and the exact `turn/diff/updated` silent-method route (R16); `serving/harness_control_client.py` (1,225 → 704) gained `_harness_control_parsing.py`. Every facade's base surface is pinned by `mcp/tests/test_facade_surface.py`.
-
-### 260713-TES-L5 Route Impact — Judgment Demolition
-
-The serving relay owns fact actions and predicates only: respawn/ladder/auto-nudge/
-mark-missed actions and the expectation/escalation/ladder-terminal predicates are deleted,
-`AgentNotifierContext` drops the nudge store and escalation knobs, and `evaluate_predicates`
-caps owner-signal findings with `escalationBudget` (twin of `redeliverBudget`). The new
-forcing suite and the runnable live-chain-proof script are the leaf's verification surfaces.
-
-## Update History
-
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1 route impact: normal successful completion now composes
-  durable inbox report proof with `retire_entry`; landed rows remain the explicit settings opt-out
-  and archive-cleanup compatibility path. Verification remains pinned until closeout.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: added immutable sprint binding and structural
-  all-subordinate notifier revalidation to the serving hot path. Verification metadata remains
-  pinned until closeout.
-
-- 2026-08-09T21:12+02:00 — No route impact: the agent-notifier sweep's aggregate
-  `inbox-compacted` event assembly moved to a named helper, and one stale source-comment citation
-  was repaired. Sweep order, reconciliation, predicates, actions, heartbeat, and event payloads
-  are unchanged. Verification metadata stays pinned until closeout.
-
-- 2026-08-09T19:36+02:00 — 260713-TES-L5F2 route impact: documented retained Codex request params
-  and safe empty-form MCP tool approval serialization.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the serving judgment
-  demolition (fact-only actions/predicates, context cleanup, load-shed wiring) and the new
-  forcing-suite/live-proof surfaces. Verification metadata pinned until closeout stamps the
-  260713-TES-L5 commit.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded deliver-until-LANDED
-  (boundary-sampled landing in inbox_delivery, post-time owner re-resolution in
-  operator_inbox_posts, formal `landed` state), the N14 rebind/grace/expiry predicate+action
-  family, the §9 pending-TTL expiry, the dormant escalation ladder (N3), the legacy-landed
-  migration fold, last-good settings resilience (R7/N5), and the new relay-death watcher
-  (N5). Layout rows refreshed. Verification metadata pinned until closeout stamps the
-  260713-TES-L4 commit.
-- 2026-08-09T03:51+02:00 — 260713-TES-L3 route impact: added the compound-idle relay paragraph
-  (master-scoped membership, episode-signature dedupe/re-arm, action-time emitter, one-hop
-  orchestrator owner, boundary-gated landing, manager non-reaction residue, 10 s latency
-  constant, 64-key wire pin) and extended the agent-notifier sweep predicate list. Verification
-  metadata pinned until closeout stamps the 260713-TES-L3 commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: updated the agent-notifier sweep
-  paragraph (predicate families, retired turn-report staleness) and added the worker-state
-  relay paragraph (projection lift, state-signal delivery, landed terminality). Verification
-  metadata pinned until closeout stamps the 260713-TES-L2 commit.
-- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the six-module supervisor → agent-notifier
-  rename reshaped this route's sweep subsystem (`agent_notifier.py`,
-  `agent_notifier_heartbeat.py`, `agent_notifier_models.py`, `_agent_notifier_actions.py`,
-  `_agent_notifier_evaluation.py`); events are dual-emitted under `orchestration.agent-notifier.*`
-  + legacy `orchestration.supervisor.*`, the served heartbeat rides `agentNotifierHeartbeat` +
-  legacy `supervisorHeartbeat`, the settings family is `orchestration.agentNotifier` (explicit
-  legacy alias), and the seat-liveness ask prefixes are one identity. Retained artifact names
-  (`supervisor-heartbeat.json`, `supervisor-signals.jsonl`) stay byte-identical. Verification
-  metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 route impact: recorded the in-place serving facade splits (app/supervisor/models/codex/harness_control_client) and their surface pin. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-
-- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the cross-store lock-order doctrine, the deferred liveness synchronizer (probe-bundled collector), the supervisor's pre-lock catalog snapshot, the event-loop offloads, and the forcing tests, with the 2026-08-05 ABBA provenance. Verification metadata pinned until closeout stamps the code commit.
-- 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: closed the five adversarial whole-claim gaps across client, parser, runner, factory, authority, and adapter owners; the landing provenance mismatch remains an explicit Tier-3 item.
-- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B12 resolved all 91 scoped citation findings in this document: 40 missing anchors and 51 malformed source segments. The current provenance sentence was aligned with the bridge-owned ledger path; the scoped check passes with 0 findings. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T01:42+02:00 — 260731-EFA-L6 deleted-source cleanup. `serving/harness_control_queue.py` was deleted outright by the L6 class-split work (a pure forwarding facade), and its mirrored sidecar was removed with it. **Curator's judgement, stated rather than assumed: the card had no subject left.** Every invariant it carried was either the facade's own NON-behavior ("cannot enqueue work behind the authority", "holds no facade state, mutates nothing") or was explicitly attributed to `harness_submission_authority.py`, so nothing moved with the deletion and no knowledge needed rehoming — which is also why no replacement card was manufactured. Present-tense claims that `HarnessControlQueue` "is a facade" were corrected here to say it no longer exists; dated history entries naming it are preserved verbatim. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T19:45+02:00 — 260731-EFA-L5 second curator pass (route governor for
-  `serving/change_watcher.py`). Corrected the `change_watcher.py` route bullet, which named
-  `operator-inbox.lock` as a workspace name-filter entry: that literal is gone, and it was the
-  defect — it had stopped matching once `durable_store.lock_path_for` moved to
-  `operator-inbox.jsonl.lock`, so the exclusion filtered nothing while looking correct. The filter
-  is now `_DURABLE_LOG_LOCK_SUFFIX`, **derived** from `lock_path_for` and suffix-matched in every
+  free of any `serving.conversation` import so it stays importable before that package…22839 tokens truncated…erived** from `lock_path_for` and suffix-matched in every
   watched directory, which is what lets it cover the per-lifecycle `gates.jsonl.lock` a
   workspace-scoped basename list structurally could not. Recorded, on the `app.py` sampling-loop
   bullet, that this route's `_metrics_loop` is now the declared compaction owner of both provider
@@ -1779,6 +745,13 @@ forcing suite and the runnable live-chain-proof script are the leaf's verificati
   consequence — provider-log reclamation follows this loop's 30s cadence and every write on the path
   holds its log's lock. No other route bullet changed: nothing else under `serving/` was touched by
   this leaf. Verification metadata untouched.
+## Update History
+
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: refreshed the serving/ route body for the current
+  staged delivery, terminal-catalog, notifier, projection, and conversation seams; the four
+  renamed/repaired sidecar paths are included in this review. Verification metadata remains pinned
+  until closeout.
+
 - 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. "THE LIMIT OF THE
   GUARANTEE" said *"The dashboard's own tests enforce `fixture ⊆ mirror`; `mirror ⊆ server` is
   enforced by nothing"*, which keeps only the outer two nodes of a four-node chain and so reads as
@@ -2088,7 +1061,7 @@ forcing suite and the runnable live-chain-proof script are the leaf's verificati
   configured/shared 900-second floor through delivery snapshots; pane/seat-liveness signal emission
   checks persisted cooldown state before posting repeated owner inbox rows; `pane-signal: mid-turn`
   is skipped as busy-state noise; and `app.py` wires the new cooldown store/settings into
-  `SupervisorContext`. Verification metadata pinned until closeout stamps the 260707-HFX2-L9
+  `AgentNotifierContext`. Verification metadata pinned until closeout stamps the 260707-HFX2-L9
   commit.
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L8 route impact (dead-seat storm, R1-R6): `supervisor.py`
   now builds one in-sweep inbox snapshot/index, resolves terminal-rung dead/no-hosted-session rows
@@ -2106,7 +1079,7 @@ forcing suite and the runnable live-chain-proof script are the leaf's verificati
   threshold, `_escalate_rung` calls new `_respawn_suspect`: retires the suspect seat via
   `retire.py::retire_entry`, re-delivers its pending queue to the successor, and — via NEW
   `controlplane/orphan_policy.py::find_orphaned_workers` — surfaces (never auto-reparents) a retired
-  manager's still-running workers in the same respawn event. `SupervisorContext` gains
+  manager's still-running workers in the same respawn event. `AgentNotifierContext` gains
   `escalation_sla_seconds`/`escalation_rung_seconds`/`respawn_after_rung`; `OperatorInboxEntry`
   gains `rung`; `OperatorInboxStore` gains `advance_rung`. No new lifespan task, no new
   `InboxMessageKind` values. Verification metadata pinned until closeout stamps the
@@ -2131,7 +1104,7 @@ forcing suite and the runnable live-chain-proof script are the leaf's verificati
   metadata pinned until closeout stamps the 260707-HFX2-L3 commit.
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep + predicates, R1-R6):
   route gains `supervisor.py` (the deterministic sweep — five R2 predicate families, R4 action
-  dispatcher, `run_supervisor_sweep`), `pane_signals.py` (the R2a pane-state classifier), and
+  dispatcher, `run_agent_notifier_sweep`), `pane_signals.py` (the R2a pane-state classifier), and
   `supervisor_heartbeat.py` (the R5 self-liveness store). `app.py` gains a third lifespan task
   (`supervisor_loop`, following the `metrics_loop` template) and `supervisorHeartbeat` on
   `/api/state`/the SSE snapshot. Gives `missing_artifact()` its first caller and reserves the

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/factories.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,7 @@ endpoint, harnesses without a projector, and sessions without proven native iden
 
 cit:([`SessionResolutionError`], mcp/src/agents_remember/serving/conversation/active/factories.py:31-35) is the typed base; `UnknownSessionError` 404,
 `UnsupportedSessionError` 409 `unsupported`, `ControlUnavailableError` 503
-`control-unavailable` cit:([`ControlUnavailableError`], mcp/src/agents_remember/serving/conversation/active/factories.py:48-50) are the wire-visible refusals. `resolve_running_entry`
+`control-unavailable` cit:([`ControlUnavailableError`], mcp/src/agents_remember/serving/conversation/active/factories.py:51-53) are the wire-visible refusals. `resolve_running_entry`
 cit:([`resolve_running_entry`], mcp/src/agents_remember/serving/conversation/active/factories.py:63-76) mirrors the serving idiom: the catalog row must exist, be `running`, be a `harness`
 kind with a `control_endpoint`, and be alive on the terminal host. cit:([`build_identity`], mcp/src/agents_remember/serving/conversation/active/factories.py:79-105)
 selects the harness projector via `projector_for`, requires the snapshot's proven
@@ -73,10 +73,10 @@ projector registry owns per-harness mapper selection; the service drives this fa
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `read_submission_authority` and `read_control_snapshot` are the validated exact-session IPC reads used here. | `read_submission_authority`; `read_control_snapshot` | mcp/src/agents_remember/serving/harness_control_client.py:128-140; mcp/src/agents_remember/serving/harness_control_client.py:155-161 |
-| `AdapterSnapshot.vendor_session_id` is the proven native identity the factory requires. | `AdapterSnapshot` | mcp/src/agents_remember/serving/harness_control_models.py:216-241 |
-| The catalog row supplies status, kind, control endpoint, tmux name, and cwd. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
-| `projector_for` returns `None` for harnesses without a projector, failing resolution typed. | `projector_for` | mcp/src/agents_remember/serving/conversation/projectors/__init__.py:120-121 |
+| The validated exact-session IPC reads used here. | "def read_submission_authority(self"; "def read_control_snapshot(entry: ControlledSession) -> AdapterSnapshot:  # pragma: no cover" | mcp/src/agents_remember/serving/harness_control_client.py:642-642; mcp/src/agents_remember/serving/harness_control_client.py:133-133 |
+| `AdapterSnapshot.vendor_session_id` is the proven native identity the factory requires. | `AdapterSnapshot` | mcp/src/agents_remember/models/conversations/control_wire.py:126-151 |
+| The catalog row supplies status, kind, control endpoint, tmux name, and cwd. | "def from_json(cls" | mcp/src/agents_remember/models/terminal_catalog.py:80-510 |
+| `projector_for` returns `None` for harnesses without a projector, failing resolution typed. | `projector_for` | mcp/src/agents_remember/serving/conversation/projectors/__init__.py:122-123 |
 
 ## Cross-Repo References
 
@@ -87,6 +87,8 @@ No cross-repository implementation participates in this factory.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 8 citation claims and preserved verification metadata.
 

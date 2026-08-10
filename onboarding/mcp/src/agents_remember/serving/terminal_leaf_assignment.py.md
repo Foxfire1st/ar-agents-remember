@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_leaf_assignment.py` |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`              |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`              |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -32,11 +32,6 @@ dead same-role row is marked exited, whereas a live same-role row owns the pair.
 reattachment reports both previous binding values.
 
 ### Logic
-
-Named-seat attachment now validates the target qualified leaf against stored repository+sprint
-provenance before mutating the catalog. A legacy top-level architect may acquire its first binding
-only through the permitted attachment seam; spawned orchestrators/managers and already bound seats
-must inherit or match their existing sprint, and conflicts are refused.
 
 `LeafAssignmentResult` is a small frozen result object carrying the requested session, target leaf,
 status (`attached`, `leaf-taken`, or `unknown-session`), the previous leaf and seat role when known,
@@ -85,8 +80,8 @@ The helper is intentionally shared by the dashboard HTTP route and the agent-fac
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Catalog rows carry role-derived leaf ownership, a `with_leaf_binding` copy helper, and a running-only role-scoped `active_for_leaf` uniqueness probe. | `leaf_key`; `seat_role`; `with_leaf_binding`; `active_for_leaf` | mcp/src/agents_remember/serving/terminal_catalog.py:125-125; mcp/src/agents_remember/serving/terminal_catalog.py:130-130; mcp/src/agents_remember/serving/terminal_catalog.py:438-454; mcp/src/agents_remember/serving/terminal_catalog.py:648-664 |
-| The dashboard attach route delegates the existing-session leaf move to `assign_terminal_session_to_leaf` and maps its statuses to 404/409/200 HTTP responses. | "def _attach_leaf_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:329-329 |
+| Catalog rows carry role-derived leaf ownership (`leaf_key`/`seat_role` fields), a `with_leaf_binding` copy helper, and a running-only role-scoped `active_for_leaf` uniqueness probe (row vocabulary in models since L9). | "def with_leaf_binding("; "def active_for_leaf" | mcp/src/agents_remember/models/terminal_catalog.py:382-399; mcp/src/agents_remember/serving/terminal_catalog.py:72-72 |
+| The dashboard attach route delegates the existing-session leaf move to `assign_terminal_session_to_leaf` and maps its statuses to 404/409/200 HTTP responses. | "def _attach_leaf_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:331-331 |
 | The MCP payload builder calls the same helper and returns previous leaf, owner, status, and role in one validated payload. | `attach_terminal_session_to_leaf_tool` | mcp/src/agents_remember/application/terminal_tools.py:140-177 |
 | Unit tests cover successful move, leaf-taken no-mutation behavior, and the tool payload using the dashboard catalog path. | `test_assign_terminal_session_to_leaf_moves_existing_catalog_row`; `test_assign_terminal_session_to_leaf_reports_leaf_taken_without_mutating`; `test_attach_terminal_session_to_leaf_payload_uses_dashboard_catalog` | mcp/tests/test_terminal_leaf_assignment.py:110-126; mcp/tests/test_terminal_leaf_assignment.py:128-145; mcp/tests/test_terminal_leaf_assignment.py:147-172 |
 
@@ -99,9 +94,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: documented attachment-time sprint binding and the
-  write-once conflict boundary. Verification metadata remains pinned until closeout stamps the code
-  commit.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: corrected role-aware `(leaf_key, seat_role)` binding semantics, removed source-clear placeholders, and normalized scoped citation evidence.
 

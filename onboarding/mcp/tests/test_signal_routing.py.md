@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_signal_routing.py`            |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -135,6 +135,8 @@ scoped owner-derivation family stay covered as before.
 
 ## Update History
 
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: the L9 citation re-anchoring was reviewed against the current staged routing tests; the existing route assertions remain accurate. Verification metadata remains pinned until closeout.
+- 2026-08-10T10:30+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded exact-sprint architect routing and no-global-
   fallback coverage. Verification metadata remains pinned until closeout stamps the code commit.
 

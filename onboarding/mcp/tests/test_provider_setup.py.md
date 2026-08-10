@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T20:45+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -102,8 +102,8 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The test module imports package-local provider setup code from `mcp/src`, extending the loaded `agents_remember` package path when needed. | `agents_remember` | mcp/tests/test_provider_setup.py:12-24 |
-| Explicit-settings coverage asserts missing provider settings are rejected, the parser requires `--from-settings`, and a typed `ProviderSetupRequest` can execute a disabled-provider dry run with setup summary metadata. | `ProviderSetupRequest` | mcp/tests/test_provider_setup.py:20-60 |
+| The test module imports package-local provider setup code from `mcp/src`, extending the loaded `agents_remember` package path when needed. | "from agents_remember.kernel.primitives.identity import (" | mcp/tests/test_provider_setup.py:17-17 |
+| Explicit-settings coverage asserts missing provider settings are rejected, the parser requires `--from-settings`, and a typed `ProviderSetupRequest` can execute a disabled-provider dry run with setup summary metadata. | "def test_run_provider_setup_accepts_typed_request(" | mcp/tests/test_provider_setup.py:38-66 |
 | Setup reporting coverage asserts compact summary writes and recovered final status reporting while preserving strict failed-phase `ok=false`. | `ProviderSetupTests` | mcp/tests/test_provider_setup.py:25-899 |
 | CGC prepare fallback coverage asserts a missing seed source still yields an overall successful dry-run payload when refresh fallback is enabled and `refresh-all` is planned. | `test_cgc_prepare_is_ok_when_seed_falls_back_to_refresh` | mcp/tests/test_provider_setup.py:281-322 |
 | The CGC bundle rewrite test builds JSON, JSONL, and text zip entries that contain a source path, calls `rewrite_cgc_bundle_paths`, then asserts the source path disappeared and the target path appears. | `test_rewrite_cgc_bundle_paths_rewrites_json_jsonl_and_text` | mcp/tests/test_provider_setup.py:372-416 |
@@ -120,6 +120,8 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: bound provider rewrite and subprocess claims to complete test bodies under the adversarial verdict, then the exact scoped fixer/check passed.
 - 2026-08-02T21:40:21+02:00 — 260731-EFA-L6 curator W2-B10: repaired 10 citation findings (4 reference rows and 2 prose citations); scoped recheck clean.
 

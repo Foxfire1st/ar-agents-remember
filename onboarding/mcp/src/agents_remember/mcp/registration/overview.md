@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-09T06:48+02:00                           |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00                           |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## 260731-EFA-L8 Change
@@ -85,16 +85,12 @@ developer ruled all four forbidden — and no `noqa` anywhere holds an argument-
 | `benchmarks.py`     | `codex_benchmark_prepare`, `codex_benchmark_run`.                          |
 | `lifecycle.py`      | The six session-lifecycle signals: `lifecycle_start`, `lifecycle_resume`, `lifecycle_turn_end_notification`, `lifecycle_end`, `switch_lifecycle`, `lifecycle_phase`. |
 | `gates.py`          | `lifecycle_gate`, `gate_decide`, `gate_list`.                              |
-| `orchestration.py`  | `operator_inbox_post`, `operator_inbox_poll`, `operator_inbox_consume`, `operator_inbox_supersede` (since 260713-TES-L4), `orchestration_nudge_manager`. |
+| `orchestration.py`  | `operator_inbox_post`, `operator_inbox_poll`, `operator_inbox_consume`, `orchestration_nudge_manager`. |
 
-Twelve registrars, 59 advertised tools — the same 59 names `mcp/tools/base.py::PUBLIC_TOOLS`
+Twelve registrars, 58 advertised tools — the same 58 names `mcp/tools/base.py::PUBLIC_TOOLS`
 lists, which `mcp/tests/test_tools.py` checks against a live server's `list_tools()`.
 
 ## Hot Path Summary
-
-Session registration now declares the additive sprint-provenance response fields and stable
-binding-refusal statuses. It remains transport schema only; serving validates identity before any
-terminal side effect.
 
 A tool body does exactly two things: pack the flat MCP arguments into the parameter objects the
 payload builder and its application entry point take, and return the builder's result unchanged. The packing is
@@ -142,11 +138,11 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface. | `create_server` | mcp/src/agents_remember/mcp/server.py:18-28 |
+| `create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
 | The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | `PUBLIC_TOOLS` — the advertised name list this package must match. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
-| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:390-403 |
+| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:404-417 |
 | What each declaration hands its payload builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 | The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
@@ -162,20 +158,14 @@ bare-`*` keyword-only remediation is completed here: `worktree_cleanup` and `wor
 now carry the separator too, so every `@server.tool()` declaration in the module is
 keyword-only. The registered tool surface is unchanged.
 
+## 260731-EFA-L9 Route Impact — Caller Re-Points
+
+The registration callers were rewritten by the L9 caller wave: conversation/evidence/control-wire models now import from `models/conversations/`, the runtime config record from `kernel/primitives/runtime_config.py`, and the terminal-catalog row vocabulary from `models/terminal_catalog.py`. Registration/tool wiring behavior is unchanged.
+
 ## Update History
 
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed session registration for sprint-binding wire
-  additions. Verification metadata remains pinned until closeout.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 
-- 2026-08-09T21:12+02:00 — No route impact: the orchestration family now groups its inbox and
-  manager-nudge declarations in two same-module registrars so the public registrar stays below
-  the hard function-length limit. Tool names, signatures, publication order, attribution, and
-  forwarding behavior are unchanged. Verification metadata stays pinned until closeout.
-
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the `operator_inbox_supersede`
-  declaration (R11), the `include_terminal` poll parameter (N11), and the attribution-only
-  consume wording (N16); advertised tool count 58 → 59. Verification metadata pinned until
-  closeout stamps the 260713-TES-L4 commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the altitude-ladder tool
   docstrings and the completed keyword-only signatures. Verification metadata stays pinned
   until closeout stamps the 260731-EFA-L17 commit.

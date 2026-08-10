@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastUpdated            | 2026-08-01T20:15+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -185,7 +185,7 @@ No meaningful external design-doc references found yet (created this leaf).
 | The strict `read`, the tolerant `read_for_projection`, and the shared `_pending_rows` fold behind `pending` and `pending_for_projection`. | "def _pending_rows" | mcp/src/agents_remember/controlplane/expectation_rows.py:143-143 |
 | `compact` holds the lock across `_compact_locked`, which reclaims from the strict read and rewrites through `_replace`. | "def append(self" | mcp/src/agents_remember/controlplane/expectation_rows.py:171-171 |
 | `EXPECTATION_ROW_OWNERSHIP` names both processes as writers and the dashboard agent-notifier sweep as the single compaction owner. | `EXPECTATION_ROW_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:152-162 |
-| `read_expectation_rows` now calls `pending_for_projection`, because `ValidationError` subclasses `ValueError` and its `suppress` used to discard every deadline in the file on one torn line. |"def read_expectation_rows"|mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193|
+| `read_expectation_rows` now calls `pending_for_projection`, because `ValidationError` subclasses `ValueError` and its `suppress` used to discard every deadline in the file on one torn line. |"def read_expectation_rows"|mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:190-190|
 
 ## Cross-Repo References
 
@@ -214,6 +214,7 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 
 ## Update History
 
+- 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-09T13:00+02:00 — 260713-TES-L5 curator completion round (reviewer delta R-D1):
   corrected the surviving reference row that still called `overdue()` "the L2 sweep's
   predicate input" — it is a test-facing store helper on the owner-visible deadline surface;
@@ -244,7 +245,7 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
   cit:(["def write_expectation_row("], mcp/src/agents_remember/controlplane/expectation_rows.py:349-349), `find_by_source`/`overdue` L219-L248 (L219, L237), `append` L165-L169 (L165), the
   read pair L137-L144; L171-L217 (`_pending_rows` L137, `read` L171, `read_for_projection` L185,
   `pending` L212, `pending_for_projection` L215), `compact` L286-L334 (L286, `_compact_locked` L299,
-  `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows"], mcp/src/agents_remember/observer/snapshots_impl/_runtime.py:193-193). The **10.20 percent** figure
+  `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:190-190). The **10.20 percent** figure
   is now attributed rather than asserted: it appears only in the `durable_store.py` docstring, unlike
   31.45 percent and 11.50 percent, which several independent sites carry. Named the harness that
   produces a loss rate and recorded that no base-commit run of it is stored in the tree, so a reader
@@ -281,3 +282,5 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 - 2026-07-08T14:15+02:00 — 260707-HFX2-L1: created for R2 durable expectation/deadline rows —
   the store + atomic-write helper every dispatch surface (spawn, gate open, signal post) calls.
   Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
+
+

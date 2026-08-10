@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/styles/webtui.css`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:42+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ transform leaves them alone.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The layer-order statement that slots `webtui` between effects and tokens. | "@layer reset, base, effects, webtui, tokens, recipes, utilities;" | dashboard/src/index.css:9-9 |
+| The layer-order statement that slots `webtui` between effects and tokens. | "@layer reset" | dashboard/src/index.css:9-9 |
 | The token vars the mapping references (incl. the L1-added `--muted`). | "--muted" | dashboard/src/styles/tokens.css:13-13 |
 | The shared scoping options (prefix, includeFiles, the :root/html/body collapse transform). | `webtuiPrefixOptions` | dashboard/webtui-scope.config.cjs:26-30 |
 | The build wiring: Panda first, then the prefixer over the inlined imports. | "Panda first", "postcss-import", "postcss-prefix-selector': webtuiPrefixOptions" | dashboard/postcss.config.cjs:1-4; dashboard/postcss.config.cjs:8-11 |

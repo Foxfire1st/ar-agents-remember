@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/actions.ts`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The serving route this POSTs to (records the developer/dashboard gate decision). | "def _gate_decision_response(" | mcp/src/agents_remember/serving/_app_routes.py:242-242 |
+| The serving route this POSTs to (records the developer/dashboard gate decision). | "def _gate_decision_response(" | mcp/src/agents_remember/serving/_app_routes.py:244-244 |
 | The gate responder that calls `postGateDecision` and maps failure outcomes into rendered status. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
 | The attention queue that calls `postAttentionDismiss`. | `AttentionQueueImpl` | dashboard/src/panels/AttentionQueue.tsx:271-323 |
 

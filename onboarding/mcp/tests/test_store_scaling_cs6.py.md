@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_store_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                   |
 | lastUpdated            | 2026-07-10T01:14+02:00                    |
-| lastVerifiedCommitHash |                                           `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate |                                           2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash |                                           `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                           2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                          |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-`test_store_scaling_cs6.py` is the store-level CS-6 regression suite for HFX2-L12. It verifies bounded reads, compaction/reclamation, and malformed-line tolerance across the agent-notifier signal store, expectation rows, provider metrics/degradation stores, event river, terminal catalog, and dashboard-tolerant JSONL stores.
+`test_store_scaling_cs6.py` is the store-level CS-6 regression suite for HFX2-L12. It verifies bounded reads, compaction/reclamation, and malformed-line tolerance across the supervisor signal store, expectation rows, provider metrics/degradation stores, event river, terminal catalog, and dashboard-tolerant JSONL stores.
 
 ## Code Commentary
 
@@ -70,14 +70,15 @@ No meaningful cross-repo references found.
 
 ## Update History
 
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the `n/a` table rows and
   the history `_scaling.py`/`compact_workspace_river` citations with exact anchors and
   fixer-generated ranges; exact non-fixing check returns zero findings.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: the store entry points this suite
   drives moved their loose keywords into parameter objects
-  (`SupervisorSignalKey`/`SupervisorSignalTarget` for `in_cooldown`,
+  (`AgentNotifierSignalKey`/`AgentNotifierSignalTarget` for `in_cooldown`,
   `Expectation`/`ExpectationSubject` for `write_expectation_row`, `AmbientTiming` for
   `AmbientLifecycle`, and `LivenessProbe` for `TerminalCatalogLivenessSweeper`), and a whole-file
   reformat pushed every block down. Recorded the new call shapes in Conventions and re-anchored
@@ -93,3 +94,4 @@ No meaningful cross-repo references found.
   Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: created for the store, event-river, terminal-catalog, and tolerant-reader CS-6 regressions added by the L12 worker. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
+

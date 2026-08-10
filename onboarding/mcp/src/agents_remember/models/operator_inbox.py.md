@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/models/operator_inbox.py`      |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastUpdated            | 2026-07-08T14:35+02:00 |
+| lastVerifiedCommitHash |                                                         `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                                         2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -33,14 +33,11 @@ onto the entry at post time — distinct from the caller-supplied `recipientRole
 key, optional recipient role, pending entry count, and serialized entry
 dictionaries. `OperatorInboxConsumeResponse`
 returns the entry id, final state, whether this call consumed it now, and the
-consume timestamp when present. Since 260713-TES-L4 the consume response state is the
-unchanged row state (attribution-only, N16), and a fourth response model,
-`OperatorInboxSupersedeResponse`, returns the terminal marker after an explicit supersession:
-`entryId`, `state`, `supersededNow`, `terminalAt`, `terminalReason`, `supersededBy` (R11).
+consume timestamp when present.
 
 ### Conventions
 
-All four classes inherit `ToolResponse`, so they are strict AR-owned contracts
+All three classes inherit `ToolResponse`, so they are strict AR-owned contracts
 with the common `ok`, `operation`, and token metadata envelope. State typing
 reuses `OperatorInboxState` from the persisted record module.
 
@@ -50,7 +47,7 @@ reuses `OperatorInboxState` from the persisted record module.
 - Nullable fields use `= None` so `_tool_payload(... exclude_none=True)` can omit
   absent mailbox/gate/delivery/consumed timestamp fields.
 - Register every new public inbox tool here and in
-  `TOOL_RESPONSE_MODELS` (`models/tool_registry.py`).
+  `PUBLIC_TOOL_RESPONSE_MODELS`.
 
 ### Todos
 
@@ -69,10 +66,8 @@ listed as Domain Documentation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The response models cover post, poll, and consume payloads. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:17-42; mcp/src/agents_remember/models/operator_inbox.py:45-52; mcp/src/agents_remember/models/operator_inbox.py:55-61 |
-| The response models reuse the inbox state literal imported from the persisted record module. | "OperatorInboxState," | mcp/src/agents_remember/models/operator_inbox.py:12-12 |
-| The registry imports the inbox response models. | "from agents_remember.models.operator_inbox import (" | mcp/src/agents_remember/models/tool_registry.py:59-65 |
-| The registry maps the `operator_inbox_*` tools (post/poll/consume/supersede since 260713-TES-L4) to these response models. | "operator_inbox_post": OperatorInboxPostResponse | mcp/src/agents_remember/models/tool_registry.py:175-180 |
+| The response models cover post, poll, and consume payloads and reuse the inbox state literal. | "class OperatorInboxPostResponse(ToolResponse):"; "class OperatorInboxPollResponse(ToolResponse):"; "class OperatorInboxConsumeResponse(ToolResponse):"; "OperatorInboxState = Literal[" | mcp/src/agents_remember/models/operator_inbox.py:10-10; mcp/src/agents_remember/models/operator_inbox.py:54-54; mcp/src/agents_remember/models/operator_inbox.py:82-82; mcp/src/agents_remember/models/operator_inbox.py:92-92 |
+| The registry maps the three `operator_inbox_*` tools to these response models. | "from agents_remember.models.operator_inbox import ("; "\"operator_inbox_post\": OperatorInboxPostResponse," | mcp/src/agents_remember/models/tool_registry.py:59-63; mcp/src/agents_remember/models/tool_registry.py:175-177 |
 
 ## Cross-Repo References
 
@@ -91,10 +86,8 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
 
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded `OperatorInboxSupersedeResponse`
-  (R11 explicit supersession terminal marker) and the attribution-only consume response state
-  (N16 — state unchanged). Verification metadata pinned until closeout stamps the
-  260713-TES-L4 commit.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-04T18:17+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 2 citation rows with exact anchors (the three response models + `OperatorInboxState`, and the registry import/mapping) and ledger-verified ranges. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.

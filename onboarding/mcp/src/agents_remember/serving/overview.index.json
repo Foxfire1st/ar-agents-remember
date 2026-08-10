@@ -13,6 +13,11 @@
       "route": "mcp/src/agents_remember/serving/conversation",
       "overview": "mcp/src/agents_remember/serving/conversation/overview.md",
       "index": "mcp/src/agents_remember/serving/conversation/overview.index.json"
+    },
+    {
+      "route": "mcp/src/agents_remember/serving/projections",
+      "overview": "mcp/src/agents_remember/serving/projections/overview.md",
+      "index": "mcp/src/agents_remember/serving/projections/overview.index.json"
     }
   ],
   "coveredFiles": [
@@ -50,6 +55,7 @@
     "mcp/src/agents_remember/serving/codex_app_server_threads.py",
     "mcp/src/agents_remember/serving/codex_app_server_turns.py",
     "mcp/src/agents_remember/serving/daemon.py",
+    "mcp/src/agents_remember/serving/degradation_delivery.py",
     "mcp/src/agents_remember/serving/delta.py",
     "mcp/src/agents_remember/serving/dispatch_brief.py",
     "mcp/src/agents_remember/serving/events.py",
@@ -92,6 +98,7 @@
     "mcp/src/agents_remember/serving/pi_rpc_process.py",
     "mcp/src/agents_remember/serving/pi_rpc_protocol.py",
     "mcp/src/agents_remember/serving/pi_rpc_submissions.py",
+    "mcp/src/agents_remember/serving/ports.py",
     "mcp/src/agents_remember/serving/projector.py",
     "mcp/src/agents_remember/serving/relay_death_watch.py",
     "mcp/src/agents_remember/serving/response_contract.py",
@@ -119,9 +126,9 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 169,
-    "fileSidecars": 101,
-    "childRoutes": 1
+    "sourceFilesInScope": 176,
+    "fileSidecars": 103,
+    "childRoutes": 2
   },
   "routingTerms": [
     "actions",
@@ -181,6 +188,8 @@
     "conversation",
     "daemon",
     "death",
+    "degradation",
+    "degradation_delivery",
     "delivery",
     "delta",
     "diag",
@@ -201,15 +210,14 @@
     "harness_control_claude",
     "harness_control_client",
     "harness_control_factories",
-    "harness_control_ipc",
-    "harness_control_models",
-    "harness_control_parsing"
+    "harness_control_ipc"
   ],
   "hotPath": {
-    "summary": "For L6 command-seat identity, start at `sprint_role_binding.py`, then follow its callers through `terminal_opener.py`, `terminal_leaf_assignment.py`, and `terminal_catalog.py`. For wake liveness, start at `state_signals.py`: all direct manager descendants in the same master participate unless they are owner-tier roles; `_agent_notifier_actions.py` revalidates that current truth immediately before persistence and rejects malformed or timezone-naive non-reaction evidence. For the active conversation serving, start at `conversation/active/api.py` (page/events plus selected-child history and th...",
+    "summary": "For the active conversation serving, start at `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor), `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics), `conversation/active/store.py` (idempotence, tool block union), `conversation/active/cursor.py` (signed cursor authority), and `conversation/active/status.py` (the canonical classification orchestration shares). The per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/conversation",
+      "mcp/src/agents_remember/serving/projections",
       "mcp/src/agents_remember/serving/__init__.py",
       "mcp/src/agents_remember/serving/_agent_notifier_actions.py",
       "mcp/src/agents_remember/serving/_agent_notifier_evaluation.py",
@@ -230,8 +238,7 @@
       "mcp/src/agents_remember/serving/claude_stream_capabilities.py",
       "mcp/src/agents_remember/serving/claude_stream_limits.py",
       "mcp/src/agents_remember/serving/claude_stream_protocol.py",
-      "mcp/src/agents_remember/serving/claude_stream_startup.py",
-      "mcp/src/agents_remember/serving/claude_stream_state.py"
+      "mcp/src/agents_remember/serving/claude_stream_startup.py"
     ],
     "anchorHints": [
       "__init__.py",

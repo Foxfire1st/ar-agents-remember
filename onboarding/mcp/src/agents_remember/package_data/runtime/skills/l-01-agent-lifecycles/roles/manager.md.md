@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ and unclear fit escalates one rung rather than being guessed.
 no longer a description — it names the exact brief template (`../templates/curator-brief.md`), the
 exact fed inputs (leaf contract base-to-head diff with paths/counters, task doc, notes/), and states
 plainly **"do not run the closeout preview before this pass exists."** The bullet's opening phrase
-is now "mandatory, not skippable." This closes the gap the developer ruling named directly: without
+is now "mandatory" This closes the gap the developer ruling named directly: without
 it, a manager could dispatch a spawnable curator that never actually runs while the builder keeps
 writing onboarding, paying builder context twice for no reason.
 
@@ -329,7 +329,7 @@ them before ending the turn (no watcher).
   manager.md`. Verification metadata pinned until closeout stamps the HFX-L8 commit.
 
 - 2026-07-08T02:10+02:00 — 260707-HFX-L11 curator activation (R4): the curator-spawn duty bullet
-  reworded from descriptive to enforced — "Curator memory pass — mandatory, not skippable," naming
+  reworded from descriptive to enforced — "Curator memory pass — mandatory" naming
   `../templates/curator-brief.md`, the exact fed inputs (leaf contract base-to-head diff w/
   paths/counters, task doc, notes/), and the hard gate "do not run the closeout preview before this
   pass exists." Doctrine-only change set (7 canonical `skills/` files: 6 edits + 1 new template,

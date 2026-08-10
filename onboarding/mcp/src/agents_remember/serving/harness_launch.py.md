@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_launch.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate |  2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,11 +87,11 @@ The launch policy is carried by the shared opener/runner and consumed by each ow
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The normalized capability types nest effort under each model and declare owned launch selectors. | `LaunchKnobs` | mcp/src/agents_remember/serving/harness_capabilities.py:136-148 |
-| The runner performs pure conflict preflight, transient discovery, dynamic validation, then fresh runtime construction. | `launch_knobs` | mcp/src/agents_remember/serving/harness_control_runner.py:237-237 |
+| The runner performs pure conflict preflight, transient discovery, dynamic validation, then fresh runtime construction. | `launch_knobs` | mcp/src/agents_remember/serving/harness_control_runner.py:239-239 |
 | Claude produces native model/effort flags and verifies the model echo without fabricating effort echo. | `claude_launch_knobs` | mcp/src/agents_remember/serving/harness_control_claude.py:128-142 |
 | Codex produces thread config plus owned model/config selectors. | `codex_launch_knobs` | mcp/src/agents_remember/serving/codex_app_server_session.py:35-54 |
 | Pi produces native provider-qualified model/thinking flags and requires both effective echoes. | `pi_launch_knobs` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:118-132 |
-| The opener serializes this typed object into the runner and persists its selected values as catalog provenance. | "The durable row for the process this open just spawned" | mcp/src/agents_remember/serving/terminal_opener.py:516-516 |
+| The opener serializes this typed object into the runner and persists its selected values as catalog provenance. | "The durable row for the process this open just spawned" | mcp/src/agents_remember/serving/terminal_opener.py:518-518 |
 
 ## Cross-Repo References
 
@@ -103,6 +103,8 @@ their in-repository own adapters.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T21:30:45+02:00 — 260731-EFA-L6 curator W2-B10: repaired 12 citation findings (6 reference rows); scoped recheck clean.
 

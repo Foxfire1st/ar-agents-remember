@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -134,6 +134,8 @@ clients reach it through the `runtime_install` tool.
 | Runtime-install tests cover watcher stop/start ordering, dry-run reporting, degraded-status retry, and dependency-install failure recovery. | `test_runtime_install_provider_deps_rebinds_watchers_around_runner_refresh`; `test_runtime_install_provider_deps_dry_run_reports_rebind_without_mutating`; `test_runtime_install_provider_deps_retries_rebind_after_degraded_status`; `test_runtime_install_provider_dependency_failure_attempts_watcher_recovery` | mcp/tests/test_install_runtime.py:166-237; mcp/tests/test_install_runtime.py:239-303; mcp/tests/test_install_runtime.py:305-363; mcp/tests/test_install_runtime.py:413-463 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 8 initial citation findings (4 anchor, 0 prose, 4 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 

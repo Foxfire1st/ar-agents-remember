@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -33,7 +33,7 @@ disk (77.5%) made `context_packet` raise, across seven independent gaps** cit:([
 
 The module docstring carries a `WHAT DEFENDS WHAT` table cit:(["WHAT DEFENDS WHAT"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:10-10). Read it before trusting any
 test below, because the three mechanisms are **not interchangeable**. Stated honestly, and as the
-docstring itself states it cit:(["Any claim that the scan alone keeps a vocabulary honest would be false, and was."], mcp/tests/test_wire_vocabulary_exhaustiveness.py:15-16):
+docstring itself states it cit:(["Any claim that the scan alone keeps a vocabulary honest would be false"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:15-16):
 
 > the AST scan is the weakest of the three. It reads *bare string literals*. It does not evaluate
 > expressions … Any claim that the scan alone keeps a vocabulary honest would be false, and was.
@@ -233,14 +233,14 @@ themselves.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The six contract cells, typed amendment, tolerant read, and refusing write. | `WorkflowKind`; `CleanupStatus`; `ContractCells`; `amend_contract`; `load_contract`; `write_contract`; `VALID_MEMORY_MODES` | mcp/src/agents_remember/worktrees/worktree_contract.py:63-63; mcp/src/agents_remember/worktrees/worktree_contract.py:68-68; mcp/src/agents_remember/worktrees/worktree_contract.py:73-73; mcp/src/agents_remember/worktrees/worktree_contract.py:183-198; mcp/src/agents_remember/worktrees/worktree_contract.py:201-229; mcp/src/agents_remember/worktrees/worktree_contract.py:438-471; mcp/src/agents_remember/worktrees/worktree_contract.py:474-477 |
+| The six contract cells (declared in models/worktree.py), typed amendment, tolerant read, and refusing write. | "WorkflowKind = Literal["; "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract"; "def load_contract"; "def write_contract"; "VALID_MEMORY_MODES: frozenset[MemoryMode]" | mcp/src/agents_remember/models/worktree.py:13-13; mcp/src/agents_remember/models/worktree.py:18-18; mcp/src/agents_remember/worktrees/worktree_contract.py:71-71; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199; mcp/src/agents_remember/worktrees/worktree_contract.py:436-436; mcp/src/agents_remember/worktrees/worktree_contract.py:472-472 |
 | The wire model every contract and guidance value must validate at. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:36-74 |
-| Guidance state machines and the separate recovery vocabulary. | `lifecycle_guidance`; `next_guidance`; `recovery_guidance`; `WorktreePhase`; `NextOperation`; `NextTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:28-53; mcp/src/agents_remember/worktrees/modules/guidance.py:38-53; mcp/src/agents_remember/worktrees/modules/guidance.py:143-157; mcp/src/agents_remember/worktrees/modules/guidance.py:160-183; mcp/src/agents_remember/worktrees/modules/guidance.py:230-240 |
+| Guidance state machines and the separate recovery vocabulary. | "def lifecycle_guidance("; "def next_guidance("; "def recovery_guidance("; "from agents_remember.models.worktree import NextOperation" | mcp/src/agents_remember/worktrees/modules/guidance.py:200-200; mcp/src/agents_remember/worktrees/modules/guidance.py:113-113; mcp/src/agents_remember/worktrees/modules/guidance.py:130-130; mcp/src/agents_remember/worktrees/modules/guidance.py:10-10 |
 | Worktree status projects invalid-contract errors onto the payload. | `worktree_status_packet`; `status_payload` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
 | Published workflow kinds and session-status docstrings. | `worktree_start`; `spawn_agent_session`; `session_retire`; `session_rename` | mcp/src/agents_remember/mcp/registration/sessions.py:57-137; mcp/src/agents_remember/mcp/registration/sessions.py:158-181; mcp/src/agents_remember/mcp/registration/sessions.py:183-191; mcp/src/agents_remember/mcp/registration/worktrees.py:28-86 |
-| Session response vocabularies. | `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:80-122; mcp/src/agents_remember/models/terminal.py:162-178; mcp/src/agents_remember/models/terminal.py:188-199 |
-| Terminal refusal builders and payloads. | `_spawn_refusal`; `_knob_refusal`; `_retire_payload`; `_rename_payload` | mcp/src/agents_remember/application/terminal_tools.py:448-466; mcp/src/agents_remember/application/terminal_tools.py:924-949; mcp/src/agents_remember/application/terminal_tools.py:969-1004; mcp/src/agents_remember/application/terminal_tools.py:1141-1162 |
-| Leaf-reference refusal statuses. | `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:45-72 |
+| Session response vocabularies. | `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:78-120; mcp/src/agents_remember/models/terminal.py:160-176; mcp/src/agents_remember/models/terminal.py:186-197 |
+| Terminal refusal builders and payloads. | `_spawn_refusal`; `_knob_refusal`; `_retire_payload`; `_rename_payload` | mcp/src/agents_remember/application/terminal_tools.py:452-470; mcp/src/agents_remember/application/terminal_tools.py:928-953; mcp/src/agents_remember/application/terminal_tools.py:973-1008; mcp/src/agents_remember/application/terminal_tools.py:1145-1166 |
+| Leaf-reference refusal statuses. | `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66 |
 | Git facts, freshness, onboarding-read, and drift-status producers. | `git_facts_to_packet`; `freshness_to_packet`; `_resolve_onboarding`; `run_drift_summary` | mcp/src/agents_remember/application/read_files.py:209-238; mcp/src/agents_remember/kernel/git_facts.py:104-115; mcp/src/agents_remember/kernel/git_freshness.py:158-169; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
 | Invalid-contract start result. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
 | The suite's own producer scan and behavioural test classes. | `ProducedLiteralTests`; "class AdvertisedVocabularyTests(unittest.TestCase):"; `GuidanceWalkTests`; `RecoveryGuidanceTests`; "class ContractBoundaryTests(unittest.TestCase):"; `ProducerWireCrossingTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:230-294; mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:45-45; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:106-141; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:144-144; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:447-474 |
@@ -267,7 +267,7 @@ and docstring this suite reads lives in `mcp/src/agents_remember/`.
 - 2026-08-01T08:35+02:00 — 260731-EFA-L4 curator: created for the new leaf-central wire-vocabulary
   suite. Recorded the three mechanisms and the honest answer to what the AST scan defends on its
   own — **nothing**: the module docstring states the scan reads bare string literals and that "any
-  claim that the scan alone keeps a vocabulary honest would be false, and was" cit:(["Any claim that the scan alone keeps a vocabulary honest would be false, and was"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:15-16), and the
+  claim that the scan alone keeps a vocabulary honest would be false, and was" cit:(["Any claim that the scan alone keeps a vocabulary honest would be false"], mcp/tests/test_wire_vocabulary_exhaustiveness.py:15-16), and the
   six spellings that evade it are named (concatenation, f-string, dict subscript, imported name,
   local bound elsewhere, `cast`). The brief that commissioned this card described the
   `WHAT DEFENDS WHAT` table as carrying a row reading "**nothing** — the AST scan alone"; the table

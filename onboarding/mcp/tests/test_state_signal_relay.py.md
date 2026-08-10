@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_state_signal_relay.py`                   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`                                    |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                    |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -83,9 +83,9 @@ The suite exercises `serving/state_signals.py`, `serving/_agent_notifier_actions
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The predicates under test. | `evaluate_state_signal_findings`; `evaluate_non_reaction_findings`; `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:136-144; mcp/src/agents_remember/serving/state_signals.py:211-225; mcp/src/agents_remember/serving/state_signals.py:304-350 |
+| The predicates under test. | `evaluate_state_signal_findings`; `evaluate_non_reaction_findings`; `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:133-141; mcp/src/agents_remember/serving/state_signals.py:208-222; mcp/src/agents_remember/serving/state_signals.py:301-347 |
 | The actions under test. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:421-480; mcp/src/agents_remember/serving/_agent_notifier_actions.py:542-599; mcp/src/agents_remember/serving/_agent_notifier_actions.py:602-611 |
-| Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:66-74 |
+| Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:28-36 |
 
 ## Cross-Repo References
 
@@ -101,6 +101,9 @@ No meaningful cross-repo references found.
 fixtures and formal `state="landed"` assertions are unchanged.
 
 ## Update History
+
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: recorded the current state-signal relay, owner, and
+  metadata coverage against the staged source; verification metadata remains pinned until closeout.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: documented all-subordinate relay, action-time mutation,
   fresh-owner metadata, and timezone-naive evidence regressions. Verification metadata remains

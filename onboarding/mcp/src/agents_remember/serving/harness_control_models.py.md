@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_models.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,6 +18,7 @@
 
 Defines protocol-neutral value objects and JSON projections for one hosted harness control session:
 exact identity, handshake, normalized state, prompt and interaction requests, receipts,
+
 reconciliation, transcript entries, and shutdown mode. Deliberately raw-free serializers cover the
 daemon's public submit and reconciliation responses. The additive, read-only native evidence family
 adds deque-domain and native-domain evidence pages, submission provenance, the reserved `arEvidence`
@@ -228,7 +229,7 @@ per-thread demux and serialized end-to-end through `snapshot_json` into the cont
 | The three additive IPC actions serialize these evidence/provenance DTOs onto the private socket. | `_evidence`; `_evidence_native_page`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:377-383; mcp/src/agents_remember/serving/harness_control_ipc.py:385-397; mcp/src/agents_remember/serving/harness_control_ipc.py:399-405 |
 | The evidence contract tests cover reserved-key privacy, epoch/paging, thread-id wire round-trip, provenance bounds, and fail-closed native-page continuation. | `test_reserved_key_round_trip_and_no_leak`; `test_evidence_action_round_trip_with_epoch_and_paging`; `test_evidence_thread_id_round_trips_over_ipc`; `test_submission_provenance_all_sources_epoch_and_bounds`; `test_native_page_continuation_no_overlap_no_gap_and_fail_closed_cursor` | mcp/tests/test_harness_control_evidence.py:361-409; mcp/tests/test_harness_control_evidence_ipc.py:57-89; mcp/tests/test_harness_control_evidence_ipc.py:91-117; mcp/tests/test_harness_control_evidence_ipc.py:229-312; mcp/tests/test_harness_control_evidence_ipc.py:393-439 |
 | The codex adapter's `_sync_pending_snapshot` preserves the parent pending interaction and adds raw `threadId` plus `agentLabel` for non-parent entries. | `_sync_pending_snapshot` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:910-922 |
-| The L2E control-plane models define interrupt/timeline/asset/recovery DTOs and their serializers, the timeline wire-byte measurer, and `read_asset_bytes`. | `InterruptResult`; `OperationTimeline`; `OperationTimelineItem`; `AssetReference`; `WithdrawalRecovery`; `interrupt_result_json`; `operation_timeline_json`; `operation_timeline_item_wire_bytes`; `asset_reference_json`; `withdrawal_result_json`; `read_asset_bytes` | mcp/src/agents_remember/serving/harness_control_models.py:254-262; mcp/src/agents_remember/serving/harness_control_models.py:384-389; mcp/src/agents_remember/serving/harness_control_models.py:402-411; mcp/src/agents_remember/serving/harness_control_models.py:414-427; mcp/src/agents_remember/serving/harness_control_models.py:430-438; mcp/src/agents_remember/serving/harness_control_models.py:994-1005; mcp/src/agents_remember/serving/harness_control_models.py:1008-1016; mcp/src/agents_remember/serving/harness_control_models.py:1026-1034; mcp/src/agents_remember/serving/harness_control_models.py:1052-1059; mcp/src/agents_remember/serving/harness_control_models.py:1062-1063; mcp/src/agents_remember/serving/harness_control_models.py:1066-1073 |
+| The L2E control-plane models define interrupt/timeline/asset/recovery DTOs and their serializers, the timeline wire-byte measurer, and `read_asset_bytes`. | `InterruptResult`; `OperationTimeline`; `OperationTimelineItem`; `AssetReference`; `WithdrawalRecovery`; `interrupt_result_json`; `operation_timeline_json`; `operation_timeline_item_wire_bytes`; `asset_reference_json`; `withdrawal_result_json`; `read_asset_bytes` | mcp/src/agents_remember/models/conversations/control_wire.py:154-162; mcp/src/agents_remember/models/conversations/control_wire.py:210-215; mcp/src/agents_remember/models/conversations/control_wire.py:228-237; mcp/src/agents_remember/models/conversations/control_wire.py:240-253; mcp/src/agents_remember/models/conversations/control_wire.py:256-264; mcp/src/agents_remember/models/conversations/control_wire.py:372-383; mcp/src/agents_remember/models/conversations/control_wire.py:386-394; mcp/src/agents_remember/models/conversations/control_wire.py:404-412; mcp/src/agents_remember/models/conversations/control_wire.py:430-437; mcp/src/agents_remember/models/conversations/control_wire.py:440-441; mcp/src/agents_remember/models/conversations/control_wire.py:444-451 |
 | The interrupt and operation-timeline IPC actions serialize these DTOs over the same private socket. | `_interrupt`; `_operation_timeline` | mcp/src/agents_remember/serving/harness_control_ipc.py:306-313; mcp/src/agents_remember/serving/harness_control_ipc.py:315-326 |
 | The submit-asset admission validates staged-asset claims before dispatch. | `_submit_asset_schema` | mcp/src/agents_remember/serving/harness_control_ipc.py:485-506 |
 | The authority captures the pre-tombstone recovery on withdraw and extends the idempotence digest over canonical asset identity only when assets ride. | `withdraw`; `_payload_digest` | mcp/src/agents_remember/serving/harness_submission_authority.py:452-498; mcp/src/agents_remember/serving/harness_submission_authority.py:987-1008 |
@@ -272,8 +273,21 @@ per nesting level.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260731-EFA-L9 Change
+
+The shared evidence and control-wire contracts moved to `models/conversations/evidence.py` and
+`models/conversations/control_wire.py` (R2/R8); this module now holds the control-plane-only set
+(278 lines) — `CONTROL_PROTOCOL_VERSION`, terminal/transcript/adapter vocabulary,
+`TerminalResult`, `AdapterHandshake`, `PromptRequest`, `InteractionResponse`, submission
+status/lookup records, and their JSON projections. L11 will move the control-only set to
+`harness_control/`; no forwarding shim exists, and conversation modules import the shared names
+from `models.conversations`.
+
 ## Update History
 
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the control-only scope after the
+  shared contracts moved to models; the L9 change section above documents the split. Verification
+  metadata pinned until closeout stamps the L9 code commit.
 - 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: restored route-handler/serializer ownership, expanded the evidence-contract test matrix, split pending-interaction producers, and widened the L2E DTO/serializer coverage; the scoped fixer will generate citation ranges.
 - 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: a prose line had been hard-wrapped at a ` + ` conjunction, leaving the plus at column zero where markdown reads `+ ` as a list bullet, so a wrapped sentence rendered as a spurious new list item mid-thought. The plus moved to the end of the previous line; the rendered prose is character-for-character unchanged. Verification metadata pinned until closeout stamps the L4 commit.

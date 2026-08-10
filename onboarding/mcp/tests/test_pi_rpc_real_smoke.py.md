@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_pi_rpc_real_smoke.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -80,10 +80,10 @@ a live install driven by `_pi_rpc_capabilities.observe_capabilities`:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Real adapter and launch path under test. | `PiRpcAdapter`, `PiRpcSubprocess` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768; mcp/src/agents_remember/serving/pi_rpc_process.py:43-287 |
+| Real adapter and launch path under test. | "class PiRpcAdapter:", "transport_factory: TransportFactory = PiRpcSubprocess" | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768; mcp/src/agents_remember/serving/pi_rpc_process.py:43-287 |
 | The recording this module re-verifies. | "0.80.7" | mcp/tests/fixtures/pi_rpc/0.80.7-capabilities.json:4-4 |
 | Produces the observation compared against the recording. | `observe_capabilities` | mcp/tests/_pi_rpc_capabilities.py:431-473 |
-| Imports `PI_RPC_VERSION` and enforces the one-recording rule offline. | `CAPABILITY_FIXTURE`, `PI_RPC_VERSION` | mcp/tests/test_pi_rpc_real_smoke.py:42-42; mcp/tests/test_pi_rpc_real_smoke.py:49-49 |
+| Imports `PI_RPC_VERSION` and enforces the one-recording rule offline. | `CAPABILITY_FIXTURE`, `PI_RPC_VERSION` | mcp/tests/test_pi_rpc_real_smoke.py:44-44; mcp/tests/test_pi_rpc_real_smoke.py:51-51 |
 | Proves this marker is applied and reachable from the gated runner. | "ar_run_pi_rpc_smoke" | scripts/run-gated-integration.py:79-79 |
 
 ## Cross-Repo References
@@ -92,6 +92,8 @@ a live install driven by `_pi_rpc_capabilities.observe_capabilities`:
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the live Pi RPC smoke suite is environment-gated (`AR_RUN_PI_RPC_SMOKE=...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

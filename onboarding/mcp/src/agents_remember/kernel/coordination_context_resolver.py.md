@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context_resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -61,15 +61,17 @@ invokes it.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The compatibility facade exposes the package resolver entry point. | "def resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-131 |
+| The compatibility facade exposes the package resolver entry point. | "def resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:129-129 |
 | Resolver shape is covered by the package resolver harness. | "def run_package_resolver" | mcp/tests/test_resolver_parity.py:328-328 |
-| Focused implementation modules live under the coordination-context package. | "def build_coordination_context" | mcp/src/agents_remember/kernel/coordination_context/resolver.py:268-268 |
+| Focused implementation modules live under the coordination-context package. | "def build_coordination_context" | mcp/src/agents_remember/kernel/coordination_context/resolver.py:272-272 |
 
 ## Series-Contract Notes
 
 The compatibility facade preserves the old import path while forwarding `parent_task` and `leaf_id` into the focused resolver package.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 3 repository-reference citations (3/3 anchored and sourced; scoped citation check clean).
 

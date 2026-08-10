@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/base.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T21:20+02:00                     |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -127,7 +127,7 @@ PROVIDER's fields, not this package's.
   not a dump). Recorded the new `ResponseEnvelope: TypeAlias = ResponseModel |
   FlexibleResponseEnvelope` cit:(["ResponseEnvelope: TypeAlias = ResponseModel | FlexibleResponseEnvelope"], mcp/src/agents_remember/models/base.py:98-98) and why it exists: it is the annotation
   `models.tool_registry` needs so the two choke-point fields are reachable by type. Added the
-  "what this package writes, this package declares" invariant and the `ResponseEnvelope`
+  "what this package writes" invariant and the `ResponseEnvelope`
   invariant. Citations: every class in this file gained a line range
   cit:([`StrictResponseModel`, `FlexibleResponseModel`, `ResponseModel`, `ToolResponse`, `FlexibleResponseEnvelope`, `FlexibleToolResponse`, `ResponseEnvelope`], mcp/src/agents_remember/models/base.py:10-13; mcp/src/agents_remember/models/base.py:16-19; mcp/src/agents_remember/models/base.py:41-63; mcp/src/agents_remember/models/base.py:66-69; mcp/src/agents_remember/models/base.py:72-89; mcp/src/agents_remember/models/base.py:92-95; mcp/src/agents_remember/models/base.py:98-98), the response-boundary reference row was re-pointed to
   cit:([`_attach_lifecycle_tail`, `complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:34-44; mcp/src/agents_remember/application/tool_response.py:47-61), and the registry row was added with

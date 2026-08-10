@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/read_files.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:05+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Purpose
@@ -41,6 +41,8 @@ application entry point.
 | The strict response model `read_ar_files` validates against. | `ReadArFilesResponse` | mcp/src/agents_remember/models/read_files.py:50-63 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 3 repository-internal references for the read-files application, token choke point, and response model; final scoped result 0 (checker-clean).
 

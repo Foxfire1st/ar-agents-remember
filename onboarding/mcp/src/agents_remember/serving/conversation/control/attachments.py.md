@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/attachments.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate |  2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,8 +29,8 @@ transition.
 
 ### Logic
 
-cit:([`AttachmentOperation`], mcp/src/agents_remember/serving/conversation/control/attachments.py:101-115), cit:([`SubmitAnswer`], mcp/src/agents_remember/serving/conversation/control/attachments.py:118-126), and cit:([`StageAnswer`], mcp/src/agents_remember/serving/conversation/control/attachments.py:129-132) are the
-ledger/answer types. cit:([`stage`], mcp/src/agents_remember/serving/conversation/control/attachments.py:135-201) enforces the 1..4 asset count itself (cit:(["attachment staging requires 1..4 assets per request"], mcp/src/agents_remember/serving/conversation/control/attachments.py:150-151)) and admits
+cit:([`AttachmentOperation`], mcp/src/agents_remember/serving/conversation/control/attachments.py:101-115), cit:([`SubmitAnswer`], mcp/src/agents_remember/serving/conversation/control/attachments.py:127-135), and cit:([`StageAnswer`], mcp/src/agents_remember/serving/conversation/control/attachments.py:138-141) are the
+ledger/answer types. cit:([`stage`], mcp/src/agents_remember/serving/conversation/control/attachments.py:135-201) enforces the 1..4 asset count itself (cit:(["attachment staging requires 1..4 assets per request"], mcp/src/agents_remember/serving/conversation/control/attachments.py:160-160)) and admits
 each upload through cit:([`stage_one`], mcp/src/agents_remember/serving/conversation/control/asset_spool.py:68-85) — the kind-capability gate, then per-asset MIME
 allow-list / byte-limit / description validation, digest compute, and the confined 0600 spool write;
 the allow-list and the byte limit ride the kind capability and are never re-declared here. Identical
@@ -46,8 +46,8 @@ cit:([`attachment_status`], mcp/src/agents_remember/serving/conversation/control
 live-state test reads `_LIVE_TIMELINE_STATES` L97 at L652) move
 the lifecycle only from the retained timeline — `unknown` is retained (never re-uploaded), advancing
 only into `accepted` (bytes deleted) or `failed`, never guessed. cit:([`rebind`], mcp/src/agents_remember/serving/conversation/control/attachments.py:375-433) exchanges one
-authorized recovery asset for a fresh one-use staged asset under a new request id (cit:([`_rebind_target`], mcp/src/agents_remember/serving/conversation/control/attachments.py:667-707), cit:([`_rebind_replay`], mcp/src/agents_remember/serving/conversation/control/attachments.py:436-457) idempotent same-request; a different request conflicts). cit:([`mark_recoverable`], mcp/src/agents_remember/serving/conversation/control/attachments.py:460-481) / cit:([`delete_recoverable`], mcp/src/agents_remember/serving/conversation/control/attachments.py:484-497) tie into the withdrawal lease; cit:([`_sweep_expired`], mcp/src/agents_remember/serving/conversation/control/attachments.py:710-718) deletes
-staged bytes on the 900 s TTL; cit:([`_evict_attachment_operation`], mcp/src/agents_remember/serving/conversation/control/attachments.py:721-733) and cit:([`_delete_operation_bytes`], mcp/src/agents_remember/serving/conversation/control/attachments.py:736-741) enforce the 32/channel bound with byte disposal. cit:([`_receipt`], mcp/src/agents_remember/serving/conversation/control/attachments.py:744-762) and cit:([`_projection`], mcp/src/agents_remember/serving/conversation/control/attachments.py:765-775)
+authorized recovery asset for a fresh one-use staged asset under a new request id (cit:([`_rebind_target`], mcp/src/agents_remember/serving/conversation/control/attachments.py:667-707), cit:([`_rebind_replay`], mcp/src/agents_remember/serving/conversation/control/attachments.py:436-457) idempotent same-request; a different request conflicts). cit:([`mark_recoverable`], mcp/src/agents_remember/serving/conversation/control/attachments.py:460-481) / cit:([`delete_recoverable`], mcp/src/agents_remember/serving/conversation/control/attachments.py:484-497) tie into the withdrawal lease; cit:([`_sweep_expired`], mcp/src/agents_remember/serving/conversation/control/attachments.py:719-727) deletes
+staged bytes on the 900 s TTL; cit:([`_evict_attachment_operation`], mcp/src/agents_remember/serving/conversation/control/attachments.py:721-733) and cit:([`_delete_operation_bytes`], mcp/src/agents_remember/serving/conversation/control/attachments.py:745-750) enforce the 32/channel bound with byte disposal. cit:([`_receipt`], mcp/src/agents_remember/serving/conversation/control/attachments.py:744-762) and cit:([`_projection`], mcp/src/agents_remember/serving/conversation/control/attachments.py:765-775)
 build the wire payloads with alt provenance.
 
 ### Conventions
@@ -88,9 +88,9 @@ the authority; the withdrawal lease ties recoverable assets to the text recovery
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The staged-bytes filesystem boundary and staged asset types. | `stage_one` | mcp/src/agents_remember/serving/conversation/control/asset_spool.py:68-83; mcp/src/agents_remember/serving/conversation/control/asset_spool.py:101-123 |
-| The L2E asset channel (refs on the wire, digest verify at admission/construction) and MIME/count/byte constants. | `MAX_SUBMIT_ASSETS`; `AssetReference`; `read_asset_bytes` | mcp/src/agents_remember/serving/harness_control_models.py:116-116; mcp/src/agents_remember/serving/harness_control_models.py:254-262; mcp/src/agents_remember/serving/harness_control_models.py:1066-1073 |
+| The L2E asset channel (refs on the wire, digest verify at admission/construction) and MIME/count/byte constants. | `MAX_SUBMIT_ASSETS`; `AssetReference`; `read_asset_bytes` | mcp/src/agents_remember/models/conversations/control_wire.py:43-43; mcp/src/agents_remember/models/conversations/control_wire.py:154-162; mcp/src/agents_remember/models/conversations/control_wire.py:444-451 |
 | The retained operation timeline this lifecycle advances from. | `read_full_timeline` | mcp/src/agents_remember/serving/conversation/control/service.py:320-341 |
-| Recoverable assets ride the same 900 s lease as the text recovery. | "RECOVERY_TTL_SECONDS =" | mcp/src/agents_remember/serving/conversation/control/service.py:74-74; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:458-467 |
+| Recoverable assets ride the same 900 s lease as the text recovery. | "RECOVERY_TTL_SECONDS =" | mcp/src/agents_remember/serving/conversation/control/service.py:76-76; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:458-467 |
 
 ## Cross-Repo References
 
@@ -126,7 +126,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 - 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: repaired 7 stale self-citations and corrected one
   false wiring claim. **The claim `stage` "admits uploads through `_admit`" was wrong**: cit:([`_admit`], mcp/src/agents_remember/serving/conversation/control/attachments.py:564-591) is `submit`'s receipt mapper — it turns the bridge receipt's acceptance into the
-  operation phase/outcome and the `SubmitAnswer`, and its only caller is `submit` (cit:([`_admit`], mcp/src/agents_remember/serving/conversation/control/attachments.py:564-591)). cit:([`stage`], mcp/src/agents_remember/serving/conversation/control/attachments.py:135-201) checks the 1..4 count inline (cit:(["attachment staging requires 1..4 assets per request"], mcp/src/agents_remember/serving/conversation/control/attachments.py:150-151)) and delegates per-asset gating, MIME/byte
+  operation phase/outcome and the `SubmitAnswer`, and its only caller is `submit` (cit:([`_admit`], mcp/src/agents_remember/serving/conversation/control/attachments.py:564-591)). cit:([`stage`], mcp/src/agents_remember/serving/conversation/control/attachments.py:135-201) checks the 1..4 count inline (cit:(["attachment staging requires 1..4 assets per request"], mcp/src/agents_remember/serving/conversation/control/attachments.py:160-160)) and delegates per-asset gating, MIME/byte
   validation, digest and the confined spool write to cit:([`stage_one`], mcp/src/agents_remember/serving/conversation/control/asset_spool.py:68-85). The
   `_LIVE_TIMELINE_STATES` reference moved with it: that constant (L97, correct) is read by
   `_timeline_transition` at L652 and has nothing to do with upload validation. Re-derived ranges:
@@ -138,7 +138,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   lease is minted in `withdrawals._build_withdrawn_record`, now L442-L467: `expires_at` comes from
   `iso_seconds_after(withdrawn_at, RECOVERY_TTL_SECONDS)` (L458, `RECOVERY_TTL_SECONDS = 900` in
   `control/service.py` L74) and that same `expires_at` is passed straight into
-  cit:([`recover_attachment_refs`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:465-467). Was L444-L484, which now lands in the
+  cit:([`recover_attachment_refs`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:472-472). Was L444-L484, which now lands in the
   unrelated `WithdrawalRecord` field block.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `SubmittedContent`, the `ControlRequest` entry shape, and the `ControlSubmission` / `RefBinding` / `RefTarget` call shapes.
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the typed attachment

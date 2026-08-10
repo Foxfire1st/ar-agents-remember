@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -94,7 +94,7 @@ and `test_terminal_ws.py`; this file pins only catalog JSON/storage semantics.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The catalog implementation under test, including typed optional reads and required/optional JSON projection. | `TerminalCatalogEntry` | mcp/src/agents_remember/serving/terminal_catalog.py:80-510 |
+| The catalog implementation under test, including typed optional reads and required/optional JSON projection. | "def from_json(cls" | mcp/src/agents_remember/models/terminal_catalog.py:80-510 |
 | The FastAPI route tests that exercise catalog rows through open/list/rehydrate/terminate/image endpoints. | `test_get_terminal_sessions_lists_catalog_entries`; `test_post_open_spawns_shell_at_workspace_root`; `test_terminate_marks_catalog_and_kills_tmux`; `test_saves_under_session_cwd_and_returns_path` | mcp/tests/test_terminal_ws_misc.py:43-54; mcp/tests/test_terminal_ws_websocket_1.py:84-111; mcp/tests/test_terminal_ws_websocket_1.py:113-132; mcp/tests/test_terminal_ws_websocket_1.py:203-212 |
 
 ## 260712-TRH-L4 Final Candidate
@@ -102,6 +102,8 @@ and `test_terminal_ws.py`; this file pins only catalog JSON/storage semantics.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 2 citation claims; scoped result 0 findings.
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: documented additive control metadata
   round-trip and legacy omission coverage.

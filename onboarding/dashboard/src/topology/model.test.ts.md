@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/topology/model.test.ts`      |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-08-01T10:30+02:00                      |
-| lastVerifiedCommitHash |                                             `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                             2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |                                             `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                             2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                            |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ repo-scoped workspace provider parenting, and `worktreeGroup` precedence over `r
    that it equals `UNCLASSIFIED_STATUS`, and that the declared value is `"warn"`.
 3. *still classifies an unknown state when the reducer INFERRED it* — the degrade reads
    `declared === "ok"`, which is false for `undefined` as well as for `warn`, so that branch cannot
-   tell "unclassified" from "classified, not healthy" on its own. Pinned separately.
+   tell "unclassified" from "classified" on its own. Pinned separately.
 4. *degrades an inferred healthy state and leaves every other reading alone* — `running`+inferred →
    `warn`, `running` → `ok`, `blocked`+inferred → `crit`, `abandoned`+inferred → `idle`.
 

@@ -22,6 +22,7 @@
     "mcp/src/agents_remember/application/next_step.py",
     "mcp/src/agents_remember/application/operator_inbox_tools.py",
     "mcp/src/agents_remember/application/orchestration_tools.py",
+    "mcp/src/agents_remember/application/provider_runtime.py",
     "mcp/src/agents_remember/application/provider_tools.py",
     "mcp/src/agents_remember/application/read_files.py",
     "mcp/src/agents_remember/application/runtime_install.py",
@@ -31,12 +32,13 @@
     "mcp/src/agents_remember/application/task_ref.py",
     "mcp/src/agents_remember/application/terminal_tools.py",
     "mcp/src/agents_remember/application/tool_response.py",
+    "mcp/src/agents_remember/application/worktree_services.py",
     "mcp/src/agents_remember/application/worktree_status.py",
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 23,
-    "fileSidecars": 23,
+    "sourceFilesInScope": 25,
+    "fileSidecars": 25,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -75,6 +77,7 @@
     "orchestration_tools",
     "packet",
     "provider",
+    "provider_runtime",
     "provider_tools",
     "read",
     "read_files",
@@ -86,6 +89,7 @@
     "runtime_install",
     "server",
     "server_startup",
+    "services",
     "skill",
     "skill_tools",
     "src",
@@ -101,11 +105,12 @@
     "tool_response",
     "tools",
     "worktree",
+    "worktree_services",
     "worktree_status",
     "worktree_tools"
   ],
   "hotPath": {
-    "summary": "Terminal spawn/open applications now surface the serving layer's sprint-binding refusals and successful provenance unchanged. Start here for MCP response composition; the identity policy itself lives in `serving/sprint_role_binding.py` and executes before host launch. The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover; `gate_tools.py` and `hosted_readiness.py` for gate/readiness operations; `lifecycle_tools.py`, `operator_inbox_...",
+    "summary": "The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover; `gate_tools.py` and `hosted_readiness.py` for gate/readiness operations; `lifecycle_tools.py`, `operator_inbox_tools.py`, and `orchestration_tools.py` for lifecycle, inbox, and orchestration operations; `server_startup.py` and `terminal_tools.py` for startup and terminal operations; `provider_tools.py` for provider operations; `worktree_tools.py` for worktree operations; `bench...",
     "candidateHints": [
       "mcp/src/agents_remember/application",
       "mcp/src/agents_remember/application/__init__.py",
@@ -120,6 +125,7 @@
       "mcp/src/agents_remember/application/next_step.py",
       "mcp/src/agents_remember/application/operator_inbox_tools.py",
       "mcp/src/agents_remember/application/orchestration_tools.py",
+      "mcp/src/agents_remember/application/provider_runtime.py",
       "mcp/src/agents_remember/application/provider_tools.py",
       "mcp/src/agents_remember/application/read_files.py",
       "mcp/src/agents_remember/application/runtime_install.py",
@@ -129,8 +135,7 @@
       "mcp/src/agents_remember/application/task_ref.py",
       "mcp/src/agents_remember/application/terminal_tools.py",
       "mcp/src/agents_remember/application/tool_response.py",
-      "mcp/src/agents_remember/application/worktree_status.py",
-      "mcp/src/agents_remember/application/worktree_tools.py"
+      "mcp/src/agents_remember/application/worktree_services.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -157,6 +162,8 @@
       "operator_inbox_tools",
       "orchestration_tools.py",
       "orchestration_tools",
+      "provider_runtime.py",
+      "provider_runtime",
       "provider_tools.py",
       "provider_tools",
       "read_files.py",
@@ -175,12 +182,10 @@
       "terminal_tools",
       "tool_response.py",
       "tool_response",
+      "worktree_services.py",
+      "worktree_services",
       "worktree_status.py",
-      "worktree_status",
-      "worktree_tools.py",
-      "worktree_tools",
-      "serving/sprint_role_binding.py",
-      "MCP"
+      "worktree_status"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/active/status.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastUpdated | 2026-07-19T17:35+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,8 +44,8 @@ interrupted/failed map directly, completed settles) over activity classification
 completed outcome across the settling → ready transition, and cit:([`_set_turn`], mcp/src/agents_remember/serving/conversation/active/status.py:414-434) advances state only on semantic change. The revision
 advances only on semantic transitions — turn/process/stale changes; freshness timestamps are derived metadata
 recomputed per observation under the same revision cit:([`_envelope`], mcp/src/agents_remember/serving/conversation/active/status.py:480-508), never a mutation
-trigger. Staleness is one liveness-sweep cadence plus slack cit:([`STALE_AFTER_MS`], mcp/src/agents_remember/serving/conversation/active/status.py:46-46), and the
-observation bound is honestly `poll` cit:([`OBSERVATION_BOUND`], mcp/src/agents_remember/serving/conversation/active/status.py:59-59).
+trigger. Staleness is one liveness-sweep cadence plus slack cit:([`STALE_AFTER_MS`], mcp/src/agents_remember/serving/conversation/active/status.py:52-52), and the
+observation bound is honestly `poll` cit:([`OBSERVATION_BOUND`], mcp/src/agents_remember/serving/conversation/active/status.py:65-65).
 
 ### Conventions
 
@@ -63,21 +63,7 @@ native evidence only.
 - Orchestration parity is exact by construction: the seat projection consumes the same
   classification, never a parallel mapping.
 - The orchestration entry point stays signature-compatible (`snapshot_turn_state` delegates with
-  an optional harness parameter and, since 260713-TES-L2, an optional terminal observation);
-  `terminal_liveness.py` forwards the lifted evidence.
-
-## 260713-TES-L2 Current Delta — Terminal Precedence On The Seat Projection
-
-`snapshot_seat_turn_state` cit:([`snapshot_seat_turn_state`], mcp/src/agents_remember/serving/conversation/active/status.py:205-233) gained `terminal: TurnTerminalEvidence | None = None`.
-When a terminal observation is present, the seat state is derived from the canonical terminal
-settlement via the new module-level `_terminal_turn_state` cit:([`_terminal_turn_state`], mcp/src/agents_remember/serving/conversation/active/status.py:235-243) — `interrupted` →
-`interrupted`, `failed` → `failed`, anything else → `settling` — instead of from the snapshot's
-own turn classification. `ConversationStatusService` now calls the same module-level helper
-(the private static method was promoted), so both consumers share one terminal-state mapping.
-This is the G1 projection lift: done ≠ interrupted at seat granularity, and killed/hung seats
-are never re-read as clean ends.
-
-This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+  an optional harness parameter); `terminal_liveness.py` is untouched.
 
 ### Todos
 
@@ -100,11 +86,11 @@ it observations and terminal settlements.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| "CANONICAL_TURN_STATE_BY_EVIDENCE," fixes the evidence-to-turn-state vocabulary this service classifies into. | "CANONICAL_TURN_STATE_BY_EVIDENCE," | mcp/src/agents_remember/serving/conversation/models.py:52-52 |
-| `ConversationStatus` and its freshness/process/turn products define the revisioned envelope shape. | "class ConversationStatus(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_status.py:145-145 |
+| "CANONICAL_TURN_STATE_BY_EVIDENCE" fixes the evidence-to-turn-state vocabulary this service classifies into (declared in models/conversations/status.py since L9). | "CANONICAL_TURN_STATE_BY_EVIDENCE: Mapping[" | mcp/src/agents_remember/models/conversations/status.py:42-42 |
+| `ConversationStatus` and its freshness/process/turn products define the revisioned envelope shape. | "class ConversationStatus(WireModel):" | mcp/src/agents_remember/models/conversations/status.py:137-137 |
 | Orchestration's `snapshot_turn_state` delegates here with a documented function-local import; signature unchanged. | `snapshot_turn_state` | mcp/src/agents_remember/serving/hosted_control_projection.py:78-101 |
-| The projector observes snapshots and pending terminal settlements through this service per poll. | `ConversationStatusService`, `poll_once` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:84-84; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:129-144 |
-| `SeatTurnState` is the orchestration vocabulary the single projection rule emits. | `SeatTurnState` | mcp/src/agents_remember/serving/terminal_catalog.py:49-49 |
+| The projector observes snapshots and pending terminal settlements through this service per poll. | "self._status = ConversationStatusService(", `poll_once` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:88-88; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:129-144 |
+| `SeatTurnState` is the orchestration vocabulary the single projection rule emits. | `SeatTurnState` | mcp/src/agents_remember/models/terminal_catalog.py:31-31 |
 
 ## Cross-Repo References
 
@@ -133,10 +119,8 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the terminal precedence parameter
-  on `snapshot_seat_turn_state`, the shared module-level `_terminal_turn_state`, and the
-  supersession of the "terminal_liveness untouched" claim. Verification metadata pinned until
-  closeout stamps the 260713-TES-L2 commit.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=1, citation_prose_not_in_cit_form=4, citation_source_malformed=1); final scoped citation check clean.
 - 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations in Logic, all
   read back. `classify_process` L91-L100 → L101-L110; `snapshot_seat_turn_state` L178-L190 → its

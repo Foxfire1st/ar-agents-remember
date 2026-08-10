@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,13 +28,13 @@ never a routine refusal path (L0 reviewer obligation O4).
 
 ### 260731-EFA-L4 Current Delta — The Three Routes Declare Their Contract
 
-- `GET ""` (cit:([`ConversationPage`], mcp/src/agents_remember/serving/conversation/active/api.py:126-126)) declares `response_model=ConversationPage`.
-- `POST /agents/{agent_id}/history` (cit:([`AgentHistoryHydrated`], mcp/src/agents_remember/serving/conversation/active/api.py:160-164)) declares `response_model=AgentHistoryHydrated` —
+- `GET ""` (cit:(["response_model=ConversationPage"], mcp/src/agents_remember/serving/conversation/active/api.py:130-130)) declares `response_model=ConversationPage`.
+- `POST /agents/{agent_id}/history` (cit:(["response_model=AgentHistoryHydrated"], mcp/src/agents_remember/serving/conversation/active/api.py:166-166)) declares `response_model=AgentHistoryHydrated` —
   the first model this assembled body has ever had. The comment above it states the rule this
   card already documented: **a typed child failure is a SUCCESSFUL local outcome**, so the
   failure vocabulary lives inside the 200 body's `status`/`code` and only parent-bridge refusals
   reach `responses`.
-- `GET /events` (cit:([`ConversationEventEnvelope`], mcp/src/agents_remember/serving/conversation/active/api.py:204-214)) declares `response_model=ConversationEventEnvelope` — one envelope
+- `GET /events` (cit:(["response_model=ConversationEventEnvelope"], mcp/src/agents_remember/serving/conversation/active/api.py:210-210)) declares `response_model=ConversationEventEnvelope` — one envelope
   per SSE frame's `data` — plus an explicit `200: {"content": {"text/event-stream": {}}}` entry.
   The declaration is coherent here precisely because every failure on this route is typed
   PRE-stream, which is why the handler returns an explicit `StreamingResponse` rather than being
@@ -110,7 +110,7 @@ and the production-route suite are the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The active service these routes invoke for page assembly and subscription validation. | `active_conversation_service` | mcp/src/agents_remember/serving/conversation/active/service.py:57-130; mcp/src/agents_remember/serving/conversation/active/service.py:285-292 |
+| The active service these routes invoke for page assembly and subscription validation. | `active_conversation_service` | mcp/src/agents_remember/serving/conversation/active/service.py:301-308 |
 | The cursor error family mapped to exact statuses here. | `ConversationCursorError` | mcp/src/agents_remember/serving/conversation/active/cursor.py:39-47 |
 | The L0 request dependencies invoked directly in-handler for typed mapping. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
 | The production-route suite driving these routes over a real socket. | `ProductionRouteTests` | mcp/tests/test_conversation_active_api.py:333-348; mcp/tests/test_conversation_active_api.py:379-945 |
@@ -142,6 +142,8 @@ failures retain the existing typed HTTP mapping. The route never replaces the pa
 stream.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 14 citation findings. Converted the
   four route-declaration/hydration line-cites to cit form at their verified decorator/handler spans

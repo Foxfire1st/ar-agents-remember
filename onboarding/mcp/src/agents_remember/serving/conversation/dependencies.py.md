@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/dependencies.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `d7d85ca8e1abc0a09f8d71e03b555a81ad4734f1`|
-| lastVerifiedCommitDate |  2026-07-19T00:41:29+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,11 +69,11 @@ contract tests drive both through real requests and prove per-app isolation over
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fail-closed runtime retrieval and the reserved `app.state` key live in the runtime module. | "CONVERSATION_RUNTIME_STATE_KEY ="; "class ConversationRuntime:" | mcp/src/agents_remember/serving/conversation/runtime.py:44-44; mcp/src/agents_remember/serving/conversation/runtime.py:56-56 |
-| The bound resolver's loopback-only ruling is what the authorization dependency delegates to. | "Return the local operator binding for a loopback peer; fail closed otherwise." | mcp/src/agents_remember/serving/conversation/authorization.py:91-91 |
+| Fail-closed runtime retrieval and the reserved `app.state` key live in the runtime module. | "CONVERSATION_RUNTIME_STATE_KEY ="; "class ConversationRuntime:" | mcp/src/agents_remember/serving/conversation/runtime.py:47-47; mcp/src/agents_remember/serving/conversation/runtime.py:59-59 |
+| The bound resolver's loopback-only ruling is what the authorization dependency delegates to. | "Return the local operator binding for a loopback peer; fail closed otherwise." | mcp/src/agents_remember/serving/conversation/authorization.py:93-93 |
 | The package facade re-exports both dependencies beside `ConversationRuntime` and `register_conversation_routes`. | "from agents_remember.serving.conversation.router import register_conversation_routes"; "from agents_remember.serving.conversation.runtime import ConversationRuntime" | mcp/src/agents_remember/serving/conversation/__init__.py:7-8 |
-| Composition tests drive `get_conversation_runtime` through per-app probe routes over `TestClient` and prove missing-install failure. | "def test_missing_installation_fails_closed(tmp_path: Path) -> None:" | mcp/tests/test_conversation_runtime_composition.py:157-157 |
-| Authorization tests prove forged browser identity headers are never read and the dependency fails closed off loopback. | "def test_browser_identity_claims_are_never_read(tmp_path: Path) -> None:"; "def test_non_loopback_peers_fail_closed(tmp_path: Path, peer: str) -> None:" | mcp/tests/test_conversation_authorization.py:141-141; mcp/tests/test_conversation_authorization.py:160-160 |
+| Composition tests drive `get_conversation_runtime` through per-app probe routes over `TestClient` and prove missing-install failure. | "def test_missing_installation_fails_closed(tmp_path: Path) -> None:" | mcp/tests/test_conversation_runtime_composition.py:163-163 |
+| Authorization tests prove forged browser identity headers are never read and the dependency fails closed off loopback. | "def test_browser_identity_claims_are_never_read(tmp_path: Path) -> None:"; "def test_non_loopback_peers_fail_closed(tmp_path: Path" | mcp/tests/test_conversation_authorization.py:149-149; mcp/tests/test_conversation_authorization.py:168-168 |
 
 ## Cross-Repo References
 
@@ -84,6 +84,8 @@ No cross-repository boundary participates in this request-local dependency seam.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 5 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 

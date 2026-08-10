@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/orchestration_nudges.py`    |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-08-01T18:30+02:00 |
-| lastVerifiedCommitHash |                                                                   `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate |                                                                   2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash |                                                                   `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                                                   2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -108,12 +108,14 @@ does the read, the filter and the rewrite inside that one hold.
 | --- | --- | --- |
 | The public nudge tool records these rows and emits the manager inbox message. | `orchestration_nudge_manager_payload` | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
 | Nudge events are written into the observer workspace event log. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| `append` at L64-L68 checks the declared writer and locks; the new `compact` at L91-L107 holds one lock across read, filter and rewrite; `replace_records` at L145-L155 raises unless the caller already holds the lock, and `_rewrite` at L158-L165 delegates to `rewrite_lines` without unlinking. | `replace_records` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:145-155 |
+| `append` at L64-L68 checks the declared writer and locks; the new `compact` at L91-L107 holds one lock across read, filter and rewrite; `replace_records` at L145-L155 raises unless the caller already holds the lock, and `_rewrite` at L158-L165 delegates to `rewrite_lines` without unlinking. | `replace_records` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:143-153 |
 | `ORCHESTRATION_NUDGE_OWNERSHIP` at L315-L325 names both processes as writers and the dashboard as compaction owner even though no production reclaim pass exists yet. | `ORCHESTRATION_NUDGE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:200-210 |
 
 ## Update History
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the three `n/a`-anchor
   table citations with exact anchors and fixer-generated ranges; exact non-fixing check returns

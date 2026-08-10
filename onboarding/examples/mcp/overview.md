@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
 | lastUpdated            | 2026-08-10T07:30+02:00                     |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 
 ## Purpose
 
@@ -58,8 +58,14 @@ In this leaf the example renamed its layer heading from `### Controller` to
 `### Application entry point` (and anti-pattern 7's wording with it), mirroring the
 `controllers/` → `application/` package move in the repo; the file remains
 documentation-shaped example content, not a runtime input.
+The staged L9 example edit remains confined to that documentation-shaped heading/prose rename;
+the settings template and runtime-facing example shape are unchanged.
 
 ## Update History
+
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: route impact: re-read the examples/mcp body
+  against the staged example change; the route body records the rename and confirms the settings
+  template is unchanged. Verification metadata remains pinned until closeout.
 
 - 2026-08-10T07:30+02:00 — 260805-ARG-L1: the authority example now ships
   `autoCloseCompletedSeats:true` with both existing edge gates.

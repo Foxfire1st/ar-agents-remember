@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/projectors/pi.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-09T16:43+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,7 +36,7 @@ per `toolCall` part (input block, phase `streaming`, parented on the message), c
 message phase from `stopReason`, and emit terminal outcomes — `stop`/`toolUse`/cit:([`length`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:53-53)
 complete the turn without a separate marker (the assistant message itself is the settlement),
 while `aborted`/`error` mint an in-place `turn-result` item plus `MappedTurnOutcome`
-cit:([`MappedTurnOutcome`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:334-360); `toolResult` messages cit:([`_map_tool_result_message`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:363-398) upsert the same `toolCallId` item with the output
+cit:(["def _map_tool_result_message("], mcp/src/agents_remember/serving/conversation/projectors/pi.py:363-398) upsert the same `toolCallId`; `message_end` triggers the engine's native continuation item with the output
 block. cit:([`map_evidence_frame`], mcp/src/agents_remember/serving/conversation/projectors/pi.py:112-167) maps live `tool_execution_start` (with the input block),
 `tool_execution_update`/`_end` (output only) to partial-block upserts by `toolCallId`;
 `message_end`/`message_update`/`agent_end` mint nothing — completed messages mint from durable
@@ -118,7 +118,7 @@ subprocess reached through this repository's own adapter.
   cit:([`poll_native_continuation`], mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:283-304), and the lazy
   `native_dirty` path at L154-L156 is skipped for eager mappers. Re-verified that `_PiProjector`
   is the only projector setting `eager_native_continuation = True`
-  cit:([`eager_native_continuation`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:99-99).
+  cit:(["eager_native_continuation = True"], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:101-101).
   Repointed both the link path and the range; no claim text changed.
 
 - 2026-07-31T16:35+02:00 — No content impact: the only change to

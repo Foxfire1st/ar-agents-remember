@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/notes.py`     |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-02T01:05+02:00                         |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`     |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`     |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -117,17 +117,19 @@ No meaningful cross-repo references found.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The app factory registers notes routes during app assembly and mounts static assets later; those calls are not an immediately adjacent pair. | "def register_notes_routes(app: FastAPI, config: McpRuntimeConfig) -> None:", `mount_static` | mcp/src/agents_remember/serving/notes.py:168-168; mcp/src/agents_remember/serving/static.py:112-129 |
+| The app factory registers notes routes during app assembly and mounts static assets later; those calls are not an immediately adjacent pair. | "def register_notes_routes(app: FastAPI", `mount_static` | mcp/src/agents_remember/serving/notes.py:171-171; mcp/src/agents_remember/serving/static.py:112-129 |
 | The `confine_rel` realpath confinement this module reuses for reads. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47 |
 | The repo allow-list authority guard (`require_repo`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
-| `McpRuntimeConfig` (`coordination_root`, `allowed_repo_ids`) and `path_is_relative_to` provide configuration and path confinement. | `McpRuntimeConfig`, `path_is_relative_to` | mcp/src/agents_remember/mcp/config.py:113-137; mcp/src/agents_remember/mcp/config.py:635-640 |
-| `language_for` supplies the listing and read `language` field. | `language_for` | mcp/src/agents_remember/serving/scope.py:65-67 |
+| `McpRuntimeConfig` (`coordination_root`, `allowed_repo_ids`) and `path_is_relative_to` provide configuration and path confinement. | `McpRuntimeConfig`, `path_is_relative_to` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:122-146; mcp/src/agents_remember/kernel/primitives/runtime_config.py:645-650 |
+| `language_for` supplies the listing and read `language` field. | `language_for` | mcp/src/agents_remember/serving/scope.py:71-73 |
 | The changeset route's single-segment master confinement helper. | `_master_task_root` | mcp/src/agents_remember/serving/changeset.py:145-149 |
 | The browser client for these endpoints. | `notes` | dashboard/src/data/notes.ts:19-19 |
 | The `list_notes` and `read_note` helper bodies. | `list_notes`, `read_note` | mcp/src/agents_remember/serving/notes.py:101-109; mcp/src/agents_remember/serving/notes.py:112-136 |
 | The shared `SCOPED_READ_RESPONSES` refusal-table declaration. | `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:1068-1074 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer residual correction: narrowed rows 127-128 to the `list_notes`/
   `read_note` helper bodies and the shared refusal-table declaration.

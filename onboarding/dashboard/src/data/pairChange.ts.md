@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/pairChange.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ No Domain Documentation source is configured; the behavior is proven by reposito
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Pure state, step/result/readback transitions, route provenance, and copy. | `startPairChange`; `applyPairStepResult`; `applyPairRouteError`; `applyPairReadback`; `pairProgressCopy`; `pairRouteTerminationCopy`; `pairPartialFailureCopy` | dashboard/src/data/pairChange.ts:50-52; dashboard/src/data/pairChange.ts:58-111; dashboard/src/data/pairChange.ts:119-150; dashboard/src/data/pairChange.ts:156-196; dashboard/src/data/pairChange.ts:199-203; dashboard/src/data/pairChange.ts:207-209; dashboard/src/data/pairChange.ts:216-219 |
-| Exhaustive acceptance, guard, readback, route, and copy tables. | "step 1 (model) — every acceptance"; "step 2 (effort) — every acceptance"; "readback resolution of an unknown-held step"; "route failures end the pair story"; "machine guards"; "copy (R5 — one source, tests assert the words)" | dashboard/src/data/pairChange.test.ts:30-60; dashboard/src/data/pairChange.test.ts:62-101; dashboard/src/data/pairChange.test.ts:103-123; dashboard/src/data/pairChange.test.ts:125-153; dashboard/src/data/pairChange.test.ts:155-172; dashboard/src/data/pairChange.test.ts:174-199 |
+| Exhaustive acceptance, guard, readback, route, and copy tables. | "step 1 (model) — every acceptance"; "step 2 (effort) — every acceptance"; "readback resolution of an unknown-held step"; "route failures end the pair story"; "machine guards"; "copy (R5 — one source" | dashboard/src/data/pairChange.test.ts:30-60; dashboard/src/data/pairChange.test.ts:62-101; dashboard/src/data/pairChange.test.ts:103-123; dashboard/src/data/pairChange.test.ts:125-153; dashboard/src/data/pairChange.test.ts:155-172; dashboard/src/data/pairChange.test.ts:174-199 |
 | I/O driver consuming directives. | `commitPairDirective` | dashboard/src/data/setClient.ts:352-368 |
 
 ## Cross-Repo References

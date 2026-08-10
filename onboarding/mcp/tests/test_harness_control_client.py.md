@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T15:55+02:00 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -96,8 +96,8 @@ owns the corresponding exact-session request encoding and unknown-result convers
 | Post-write submit loss and a mismatched receipt both remain unknown under the original request id with one request call. | `test_post_write_submit_failure_returns_unknown_with_same_request_id`; `test_mismatched_receipt_stays_unknown_and_is_not_resent`; "response timed out"; "different-request" | mcp/tests/test_harness_control_client.py:204-215; mcp/tests/test_harness_control_client.py:262-282 |
 | A post-write setter failure returns unknown for the requested model and is not retried. | `test_post_write_set_failure_returns_unknown_without_retry`; "response reset" | mcp/tests/test_harness_control_client.py:284-294 |
 | The blocking client preserves whole UTF-8 JSON text, records the first accepted byte, and reports the exact failure stage. | `request_control`; `_encode_control_request`; `_exchange_control` | mcp/src/agents_remember/serving/harness_control_client.py:479-491; mcp/src/agents_remember/serving/harness_control_client.py:494-508; mcp/src/agents_remember/serving/harness_control_client.py:534-568 |
-| Submit and set helpers convert only post-write uncertainty into normalized unknown evidence while pre-write failures stay loud. | `submit_control_prompt`; `_set_control_value`; "def _unknown_set_result(value: str, detail: str) -> SetResult:"; "def _submission_receipt(" | mcp/src/agents_remember/serving/_harness_control_parsing.py:110-110; mcp/src/agents_remember/serving/harness_control_claude.py:677-677; mcp/src/agents_remember/serving/harness_control_client.py:228-266; mcp/src/agents_remember/serving/harness_control_client.py:596-622 |
-| `_connect_unavailable_detail` maps a refused control socket to the honest exit note and unlinks the stale socket (R6). | `_connect_unavailable_detail` | mcp/src/agents_remember/serving/harness_control_client.py:532-552 |
+| Submit and set helpers convert only post-write uncertainty into normalized unknown evidence while pre-write failures stay loud. | `submit_control_prompt`; `_set_control_value`; "def _unknown_set_result(value: str"; "def _submission_receipt(" | mcp/src/agents_remember/serving/_harness_control_parsing.py:114-114; mcp/src/agents_remember/serving/harness_control_claude.py:679-679; mcp/src/agents_remember/serving/harness_control_client.py:216-254; mcp/src/agents_remember/serving/harness_control_client.py:584-610 |
+| `_connect_unavailable_detail` maps a refused control socket to the honest exit note and unlinks the stale socket (R6). | `_connect_unavailable_detail` | mcp/src/agents_remember/serving/harness_control_client.py:520-540 |
 
 ## Cross-Repo References
 

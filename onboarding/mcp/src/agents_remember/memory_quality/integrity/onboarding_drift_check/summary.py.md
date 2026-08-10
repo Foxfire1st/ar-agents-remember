@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:42+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -83,17 +83,19 @@ cleanup now share one filename contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Tier 3 unresolved: context packets and skill-facing drift tools call this summary helper; `context_packet.py` calls `run_drift_summary`, while `skill_tools.py` exposes `skills_install_tool` and no drift-summary call. | "return run_drift_summary("; `skills_install_tool` | mcp/src/agents_remember/application/context_packet.py:176-176; mcp/src/agents_remember/application/skill_tools.py:11-28 |
+| Tier 3 unresolved: context packets and skill-facing drift tools call this summary helper; `context_packet.py` calls `run_drift_summary`, while `skill_tools.py` exposes `skills_install_tool` and no drift-summary call. | "return run_drift_summary("; `skills_install_tool` | mcp/src/agents_remember/application/context_packet.py:184-184; mcp/src/agents_remember/application/skill_tools.py:13-30 |
 | The memory quality runner wraps actionable rows from this summary as integrity findings, reading the status-conditional keys with `.get`. | `run_drift_quality_check` | mcp/src/agents_remember/memory_quality/check.py:137-170 |
-| `ACTIONABLE_CLASSIFICATIONS` and, since 260731-EFA-L4, `DriftSummaryPacket`/`DriftStatus` are sourced from the shared models module. | `DriftStatus`; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:17-25 |
+| `ACTIONABLE_CLASSIFICATIONS` and, since 260731-EFA-L4, `DriftSummaryPacket`/`DriftStatus` are sourced from the shared models module (`DriftStatus` declared in `models/drift.py`). | "DriftStatus = Literal["; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19; mcp/src/agents_remember/models/drift.py:11-11 |
 | The context-packet wire model that validates this packet's `status` — the one that used to lack `error`. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |
 | The tool response model that validates the same packet. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:13-27 |
-| The drift-snapshot dir + schema the b1 write targets (shared with the reader). | `DRIFT_SNAPSHOT_SCHEMA` | mcp/src/agents_remember/observer/paths.py:24-24 |
-| The shared drift-snapshot filename helper now used by the producer. | `drift_snapshot_path` | mcp/src/agents_remember/observer/drift_snapshots.py:19-22 |
-| The observer reader that consumes the persisted snapshot. | "def read_drift_snapshots(coordination_root: Path, *, now: datetime) -> list[DriftSnapshotNode]:" | mcp/src/agents_remember/observer/snapshots_impl/_analytics.py:80-80 |
+| The drift-snapshot dir + schema the b1 write targets (shared with the reader). | `DRIFT_SNAPSHOT_SCHEMA` | mcp/src/agents_remember/serving/projections/paths.py:26-26 |
+| The shared drift-snapshot filename helper now used by the producer. | `drift_snapshot_path` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:21-24 |
+| The observer reader that consumes the persisted snapshot. | "def read_drift_snapshots(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py:79-79 |
 | `_write_drift_snapshot` persists source/memory/report provenance beside counts and rows. | `_write_drift_snapshot` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:109-148 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 3 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 88; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 7 citation items; preserved 1 semantic claim explicitly as Tier 3.

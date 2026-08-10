@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,7 +27,7 @@ an honest Retire confirm and 'Launch corrected…' — no auto-retry path exists
 - **Verbatim ×3** cit:(["renders the bridgeError VERBATIM for every harness's failed row"], dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:31-39) — loops `FAILED_LAUNCH_ROWS` (Claude, Codex, Pi) asserting the
   rendered text `toBe` the fixture's `controlRaw.bridgeError` byte-for-byte (uniform async
   fail-loud: no harness gets special framing).
-- **Refused, never validated** cit:(["renders the retained pair as the REFUSED pair, never as validated evidence"], dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:41-49) — the Codex row's retained pair renders with "never
+- **Refused, never validated** cit:(["renders the retained pair as the REFUSED pair"], dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:41-49) — the Codex row's retained pair renders with "never
   validated" and the badge's `data-evidence-tier`/`aria-label` are `refused`.
 - **Prefill** cit:(["'Launch corrected…' pre-fills the flow from the refused pair"], dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:51-59) — 'Launch corrected…' calls back with the Pi row's exact
   `{harness, modelKey, effort}` (provider-qualified key intact).

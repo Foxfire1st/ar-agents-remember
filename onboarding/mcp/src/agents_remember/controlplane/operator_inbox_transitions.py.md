@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/controlplane/operator_inbox_transitions.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastUpdated | 2026-08-05T00:00+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `DeliveryAttempt` (lines 68-76) — One attempt to put a pending row in front of its addressee: the outcome, the session it was pasted into, the human-readable detail, and the adapter's receipt for the same attempt. | `DeliveryAttempt` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:67-76 |
 | Defines the class `InboxRenewal` (lines 80-87) — What a re-firing condition refreshes on the one row it already has: the response text, the subject the row now concerns, and -- when the routed owner has moved on -- the owner to readdress it to. | `InboxRenewal` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:79-87 |
 | Defines the class `RedeliveryFloor` (lines 91-100) — The rate limit on re-recording a delivery, and the row snapshot it is measured against.. | `RedeliveryFloor` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:90-100 |
-| Defines the class `AdapterCompletion` (lines 104-110) — The terminal evidence a vendor adapter reported for one row: the vendor's own correlation id and whatever detail came with the terminal result. | `AdapterCompletion` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:103-110 |
+| Defines the class `AdapterCompletion` (lines 104-110) — The terminal evidence a vendor adapter reported for one row: the vendor's own correlation id and whatever detail came with the terminal result. | `AdapterCompletion` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:110-117 |
 | Defines the function `_readdress_fields` (lines 132-141) — Move a row's delivery address onto ``owner`` and record it as the routed owner.. | `_readdress_fields` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:132-141 |
 | Defines the function `_require_entry` (lines 144-156) — The row ``entry_id`` names, from the supplied fold or a fresh one.. | `_require_entry` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:144-156 |
 | Defines the function `record_delivery` (lines 159-209) — Append a delivery-status snapshot for one pending entry.. | `record_delivery` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:159-209 |
@@ -100,6 +100,7 @@ closeout.
 
 ## Update History
 
+- 2026-08-10T10:30+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the ladder-transition demolition --
   `RungAdvance`/`mark_escalated`/`advance_rung`/`mark_ladder_resolved` deleted; only the
   landing/terminal/rebind/renew transitions remain; legacy fields/states are parse-compat with
@@ -119,3 +120,4 @@ closeout.
   until closeout stamps the 260713-TES-L2 commit.
 - 2026-08-05T03:52+02:00 — 260731-EFA-L6 batch B curator: completed truncated docstring summaries for adapter receipts, deliveries, renewals, and ladder-rung transitions against the frozen source; normalized decorator-inclusive citation ranges via scoped --fix.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+

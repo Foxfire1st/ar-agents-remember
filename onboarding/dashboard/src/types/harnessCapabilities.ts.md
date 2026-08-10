@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/harnessCapabilities.ts`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | Setter, submission, and reconciliation evidence shapes. | `SetResultWire`, `SubmissionReceiptWire`, `ReconciliationResultWire` | dashboard/src/types/harnessCapabilities.ts:89-96; dashboard/src/types/harnessCapabilities.ts:99-107; dashboard/src/types/harnessCapabilities.ts:120-128 |
 | The daemon envelope serializer. | `CapabilityCatalogResult` | mcp/src/agents_remember/serving/harness_capability_catalog.py:49-65 |
 | Snapshot and setter serializers plus acceptance vocabulary. | `SET_ACCEPTANCE_VALUES`, `capability_snapshot_json`, `set_result_json` | mcp/src/agents_remember/serving/harness_capabilities.py:21-23; mcp/src/agents_remember/serving/harness_capabilities.py:162-168; mcp/src/agents_remember/serving/harness_capabilities.py:216-225 |
-| Public receipt and reconciliation serializers. | `public_receipt_json`, `public_reconciliation_json` | mcp/src/agents_remember/serving/harness_control_models.py:930-941; mcp/src/agents_remember/serving/harness_control_models.py:944-955 |
+| Public receipt and reconciliation serializers. | `public_receipt_json`, `public_reconciliation_json` | mcp/src/agents_remember/serving/harness_control_models.py:217-228; mcp/src/agents_remember/serving/harness_control_models.py:231-242 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-01T09:14+02:00                                      |
-| lastVerifiedCommitHash | `e52edaf5b655f495580efd93306afdf922b19b51`                  |
-| lastVerifiedCommitDate | 2026-08-01T11:01:51+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                  |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -68,9 +68,9 @@ is quarantined, while a *caller asking for* one is refused before it can be writ
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared resolver and `LeafRefResolutionError` payload facts, plus the `LeafRefStatus` alias `error.status` is typed as. | `LeafRefStatus`, `LeafRefResolutionError`, `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:30-30; mcp/src/agents_remember/worktrees/leaf_refs.py:45-72; mcp/src/agents_remember/worktrees/leaf_refs.py:94-147 |
+| Shared resolver and `LeafRefResolutionError` payload facts, plus the `LeafRefStatus` alias `error.status` is typed as. | "LeafRefStatus = Literal["; "class LeafRefResolutionError"; "def resolve_leaf_ref(" | mcp/src/agents_remember/models/terminal.py:17-17; mcp/src/agents_remember/worktrees/leaf_refs.py:39-72; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Start contract builder that calls these helpers. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:187-206 |
-| `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. | `ContractError`, `_task_vocabulary`, `ContractCells` | mcp/src/agents_remember/worktrees/worktree_contract.py:92-93; mcp/src/agents_remember/worktrees/worktree_contract.py:162-179; mcp/src/agents_remember/worktrees/worktree_contract.py:182-197 |
+| `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. | `ContractError`, `_task_vocabulary`, `ContractCells` | mcp/src/agents_remember/worktrees/worktree_contract.py:91-92; mcp/src/agents_remember/worktrees/worktree_contract.py:161-178; mcp/src/agents_remember/worktrees/worktree_contract.py:181-196 |
 
 ## Update History
 

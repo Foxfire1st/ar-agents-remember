@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ vendor-clone skin.
   the markdown/text blocks, `sourceLineCount` counts newlines, and a message is `clampable` only when
   it is an assistant message, `phase === "completed"`, and exceeds `CLAMP_THRESHOLD_LINES` (40, L13).
 - **Clamp by slicing, not by pixels (F12):** a collapsed message renders `sourceText.split("\n").
-  slice(0, 40)` and reports `hiddenLines = totalLines - 40` cit:(["hiddenLines: collapsed ? Math.max(0, totalLines - CLAMP_THRESHOLD_LINES) : 0"], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:169-169), so the `+N lines` on the
+  slice(0, 40)` and reports `hiddenLines = totalLines - 40` cit:(["hiddenLines: collapsed ? Math.max(0"], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:169-169), so the `+N lines` on the
   `ClampButton` is EXACTLY what is hidden — never a `maxHeight` visual clamp whose count diverges
   from the pixels actually hidden.
 - The user role gets a distinct left-amber-border wrap and a `>` glyph cit:([`userWrap`], dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:16-25); the head row

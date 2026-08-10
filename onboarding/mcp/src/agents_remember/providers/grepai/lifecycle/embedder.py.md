@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -86,7 +86,7 @@ fallback runs. The failed seed result is attached to the response as
 | `grepai_install_workspace` is the GrepAI install/start entry. | `grepai_install_workspace` | mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:358-378 |
 | `grepai_backend_start` is the GrepAI backend startup entry. | `grepai_backend_start` | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:444-463 |
 | The embedder lifecycle is the compose-owned startup path that consumes the migrated settings. | `grepai_embedder_backend_start` | mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py:392-415 |
-| `isolated.py` populates `seedFromContainer` in worktree embedder settings. | `seedFromContainer` | mcp/src/agents_remember/providers/grepai/isolated.py:282-282 |
+| `isolated.py` populates `seedFromContainer` in worktree embedder settings. | `seedFromContainer` | mcp/src/agents_remember/providers/grepai/isolated.py:283-283 |
 | The seed guard and tar-pipe paths are covered by the focused seed tests. | `SeedFromSourceTests` | mcp/tests/test_ollama_model_seed.py:30-55 |
 | The ensure-model short-circuits and pull fallback are covered by the focused ensure tests. | `EnsureModelTests` | mcp/tests/test_ollama_model_seed.py:58-122 |
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_control_attachments.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ topology.
 | The typed attachment lifecycle under test. | `AttachmentOperation`; `stage`; `submit`; `attachment_status`; `rebind`; `mark_recoverable`; `delete_recoverable` | mcp/src/agents_remember/serving/conversation/control/attachments.py:101-115; mcp/src/agents_remember/serving/conversation/control/attachments.py:135-201; mcp/src/agents_remember/serving/conversation/control/attachments.py:204-270; mcp/src/agents_remember/serving/conversation/control/attachments.py:345-372; mcp/src/agents_remember/serving/conversation/control/attachments.py:375-433; mcp/src/agents_remember/serving/conversation/control/attachments.py:460-481; mcp/src/agents_remember/serving/conversation/control/attachments.py:484-497 |
 | The asset-spool deletion primitive whose on-disk effect the rebind/expiry tests assert. | `delete_asset_bytes` | mcp/src/agents_remember/serving/conversation/control/asset_spool.py:161-168 |
 | The read-only policy and evidence-bound telemetry projections. | `conversation_policy`; `_harness_mode`; `conversation_telemetry`; `_codex_usage` | mcp/src/agents_remember/serving/conversation/control/policy.py:58-101; mcp/src/agents_remember/serving/conversation/control/policy.py:104-130; mcp/src/agents_remember/serving/conversation/control/telemetry.py:41-73; mcp/src/agents_remember/serving/conversation/control/telemetry.py:76-121 |
-| The shared fake-topology harness with the L2E asset channel + spool. | `FakeControlAdapter`; `ControlHarness`; `make_harness` | mcp/tests/_control_plane.py:89-425; mcp/tests/_control_plane.py:436-518; mcp/tests/_control_plane.py:521-532 |
+| The shared fake-topology harness with the L2E asset channel + spool. | `FakeControlAdapter`; `ControlHarness`; `make_harness` | mcp/tests/_control_plane.py:103-439; mcp/tests/_control_plane.py:450-533; mcp/tests/_control_plane.py:536-547 |
 
 ## Cross-Repo References
 
@@ -89,6 +89,8 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: narrowed the attachment claim to the focused test's digest-only mutation; the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the lifecycle citation after the

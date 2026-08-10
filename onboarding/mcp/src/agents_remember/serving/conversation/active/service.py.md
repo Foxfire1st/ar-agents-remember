@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/service.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f`|
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,10 +31,10 @@ per-app cursor secret and owns page, subscription, and projector lifecycle. cit:
 mcp/src/agents_remember/serving/conversation/active/service.py:78-99; mcp/src/agents_remember/serving/conversation/active/service.py:233-259)
 resolves the authorized projector, decodes the optional `before` cursor, bounds the limit, and assembles the
 `ConversationPage`. cit:([`subscribe`], mcp/src/agents_remember/serving/conversation/active/service.py:101-127)
-cit:([`generation`], mcp/src/agents_remember/serving/conversation/active/cursor.py:256-256) checks cursor generation and
+cit:(["generation = payload.get(\"generation\")"], mcp/src/agents_remember/serving/conversation/active/cursor.py:258-258) checks cursor generation and
 retention before attaching the subscriber queue and replay snapshot without an interleaving await.
 
-cit:([`release_session`], mcp/src/agents_remember/serving/conversation/active/service.py:152-158)
+cit:([`release_session`], mcp/src/agents_remember/serving/conversation/active/service.py:163-169)
 cit:([`close`], mcp/src/agents_remember/serving/conversation/active/projector/facade.py:162-168) removes the projector
 from the registry and LRU order and awaits its close. This is registry/projector release evidence; it does not
 prove immediate deletion of every store item, live-turn/request id-set, or retained envelope.
@@ -98,8 +98,8 @@ signing/binding; the projector engine does hydration/polling; the routes call on
 | The immutable app-scoped `ConversationRuntime` is the authority one service instance binds. | `ConversationRuntime` | mcp/src/agents_remember/serving/conversation/runtime.py:55-78 |
 | The cursor authority's `decode_event_cursor` validates event-cursor generation. | `decode_event_cursor` | mcp/src/agents_remember/serving/conversation/active/cursor.py:248-262 |
 | The rebuild coordinator captures the atomic page + event cursor under its apply lock. | `page` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:103-127 |
-| The page route invokes this service and maps typed refusals to the serving status idiom. | `ConversationPage` | mcp/src/agents_remember/serving/conversation/active/api.py:126-155 |
-| The SSE route invokes this service and maps typed refusals to the serving status idiom. | `StreamingResponse` | mcp/src/agents_remember/serving/conversation/active/api.py:215-247 |
+| The page route invokes this service and maps typed refusals to the serving status idiom. | "response_model=ConversationPage" | mcp/src/agents_remember/serving/conversation/active/api.py:130-155 |
+| The SSE route invokes this service and maps typed refusals to the serving status idiom. | "return StreamingResponse(" | mcp/src/agents_remember/serving/conversation/active/api.py:215-247 |
 
 ## Cross-Repo References
 
@@ -112,7 +112,7 @@ No cross-repository implementation participates in this service.
 ## 260727-CHATS-IM-L2 Selected-Child Service Delta
 
 `hydrate_agent_history` resolves the same exact authorized session/projector and bridge epoch as
-page/SSE, then delegates only the requested child id to cit:([`refresh_agent_native`], mcp/src/agents_remember/serving/conversation/active/service.py:138-153). The
+page/SSE, then delegates only the requested child id to cit:([`refresh_agent_native`], mcp/src/agents_remember/serving/conversation/active/service.py:155-155). The
 service does not widen parent paging, invent child eligibility, or translate the local hydration
 outcome; those contracts remain projector-owned.
 
@@ -126,6 +126,8 @@ references for it — see [projector/facade.py](projector/facade.py.md). No beha
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded `_projector_for_locked` offloading the
   catalog resolution (`resolve_running_entry`) via `asyncio.to_thread`, joining the epoch/snapshot

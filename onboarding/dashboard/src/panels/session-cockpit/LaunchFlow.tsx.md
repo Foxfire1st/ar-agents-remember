@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ harness plus a complete selection; pre-session buttons no longer claim adapter p
   `fetchHarnessCapabilities(harnessId)` (single-flighted; a daemon cache hit is cheap) and the
   component subscribes to that harness's `perHarness` entry only.
 - **Model/effort pickers — dynamic only** (cit:([`capabilityLoadingCopy`], dashboard/src/data/capabilityCatalog.ts:75-79)): while `loading`/`refreshing`, the
-  cost-named `capabilityLoadingCopy` renders and ZERO options exist (cit:(["data-testid=\"launch-cap-loading\"", "capabilityLoadingCopy,"], dashboard/src/panels/session-cockpit/launchFlowParts.tsx:313-313; dashboard/src/panels/session-cockpit/launchFlowParts.tsx:7-7)); an `error` entry
+  cost-named `capabilityLoadingCopy` renders and ZERO options exist (cit:(["data-testid=\"launch-cap-loading\"", "capabilityLoadingCopy"], dashboard/src/panels/session-cockpit/launchFlowParts.tsx:313-313; dashboard/src/panels/session-cockpit/launchFlowParts.tsx:7-7)); an `error` entry
   renders the VERBATIM `status: detail` with a retry button (cit:(["launch-cap-retry"], dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx:211-211)); a loaded envelope renders
   `cacheStatusNote` + a refresh button whose `title` is `capabilityCostNote` (R2 — the same cost
   naming as the miss-loading state, cit:(["launch-cap-refresh"], dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx:394-394)). Hidden rows are FILTERED OUT;

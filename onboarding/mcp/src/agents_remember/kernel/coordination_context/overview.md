@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -74,8 +74,8 @@ The package is intentionally split by responsibility:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package-local facade keeps existing callers pointed at the split implementation. | `resolve_coordination_context` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
-| Resolver behavior is covered by resolver parity and worktree support tests. | "def test_external_memory_resolution_reports_expected_context(self) -> None:", "def test_resolver_returns_repo_task_root_without_task_name(self) -> None:" | mcp/tests/test_resolver_parity.py:57-57; mcp/tests/test_worktree_support_tests_1.py:384-384 |
+| The package-local facade keeps existing callers pointed at the split implementation. | "_resolver.resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
+| Resolver behavior is covered by resolver parity and worktree support tests. | "def test_external_memory_resolution_reports_expected_context(self) -> None:", "def test_resolver_returns_repo_task_root_without_task_name(self) -> None:" | mcp/tests/test_resolver_parity.py:57-57; mcp/tests/test_worktree_support_tests_1.py:386-386 |
 
 ## 260731-EFA-L2 Resolver API
 
@@ -90,7 +90,18 @@ models are re-exported from the `kernel.coordination_context_resolver` facade, w
 supported import path for callers outside this package. Resolution order, the onboarding-root
 branch and contract-lookup precedence are unchanged.
 
+## 260731-EFA-L9 Route Impact
+
+The resolver CLI moved to `cli/coordination_resolver.py` (the `cli` package sits above kernel),
+and the resolver now consumes a `ContractReaderPort` bound to
+`worktrees/modules/contract_reader.py::WorktreeContractReader` instead of importing worktrees
+directly. The coordination-context detection/assembly behavior is unchanged.
+
 ## Update History
+
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the CLI move and the
+  contract-reader port seam. Verification metadata pinned until closeout stamps the L9 code
+  commit.
 
 - 2026-08-03T03:59:59+02:00 — Curated 5 citation claims (2 table rows, 3 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 

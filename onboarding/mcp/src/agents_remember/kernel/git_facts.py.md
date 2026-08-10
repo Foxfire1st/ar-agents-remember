@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/git_facts.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                         |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -122,8 +122,8 @@ The shared git runner and the context-packet consumer are the direct evidence.
 | The three timeout bands this file selects from, and the `run_git` signature whose `timeout` defaults to `GIT_LOCAL_TIMEOUT_SECONDS = 300`. | `GIT_LOCAL_TIMEOUT_SECONDS`; `GIT_REMOTE_TIMEOUT_SECONDS`; `GIT_METADATA_TIMEOUT_SECONDS`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:70-72; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | The other kernel caller of `branch --show-current` and `rev-parse HEAD` names the same metadata bound, so one command means one bound. | `git_branch`; `git_head_or_empty` | mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:21-29; mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:32-38 |
 | The per-command bounds are asserted, not left to whichever module holds the call — including the cross-module comparison that fails on re-divergence. | `TimeoutClassTests`; `test_read_git_facts_bounds_its_three_ref_reads_at_the_metadata_band`; `test_one_command_means_one_bound_across_the_kernel` | mcp/tests/test_git_command.py:550-660 |
-| `git_facts_to_packet` output feeds the context packet's repo summary. | `read_git_facts` | mcp/src/agents_remember/application/context_packet.py:77-77 |
-| The wire face that imports `RepoState` instead of retyping it — the untyped-dict boundary this alias exists to close. | `RepoState` | mcp/src/agents_remember/models/context_packet.py:27-27 |
+| `git_facts_to_packet` output feeds the context packet's repo summary. | "git_facts = read_git_facts(" | mcp/src/agents_remember/application/context_packet.py:85-85 |
+| The wire face that imports `RepoState` instead of retyping it — the untyped-dict boundary this alias exists to close. | "state: RepoState" | mcp/src/agents_remember/models/context_packet.py:26-26 |
 | `test_every_repo_state_the_git_facts_reader_writes_validates` asserts produced == `VALID_REPO_STATES`; `test_an_absent_repo_crosses_the_wire_as_unavailable` walks a real degrade through `RepoSummary`. | `ProducedLiteralTests`; `ProducerWireCrossingTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:447-474 |
 
 ## Cross-Repo References

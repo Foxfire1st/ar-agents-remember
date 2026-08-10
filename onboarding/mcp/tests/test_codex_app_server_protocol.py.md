@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_app_server_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,6 +85,8 @@ explicit failure to every pending RPC and the event stream; the fuse is not pres
 paging.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the supported protocol-test citations and removed the unsupported reviewer-verdict row; final exact frozen-snapshot check is clean.
 - 2026-08-02T18:15+02:00 — 260731-EFA-L6 curator W1-B06: repaired 4 Repo-Internal reference rows and 1 exact staged fixture range; retained 1 unresolved reviewer-verdict Cross-Repo row; scoped result preserves 2 Tier-3 findings (`citation_anchor_missing`, `citation_source_malformed`).

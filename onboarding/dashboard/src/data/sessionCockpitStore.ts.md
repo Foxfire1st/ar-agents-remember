@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionCockpitStore.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -148,6 +148,8 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+- 2026-08-10T09:45+02:00 — 260731-EFA-L9 curator repair: updated cockpit-store answer-state citations.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T03:59:59+02:00 — Curated 15 citation claims (10 table rows, 5 prose citations): added exact anchors and source paths; scoped fixer generated the final ranges.
@@ -176,3 +178,4 @@ leaf base; closeout owns commit stamping.
   queue with alt+↑ supersession, poll-health beats with the 3-miss stale cutoff, the persisted
   orchestration-tree toggle, one-way view mirrors, and the refcounted catalog mirror.
   Verification metadata pinned to the leaf base until closeout stamps the L2 code commit.
+

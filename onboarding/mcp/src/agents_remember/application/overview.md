@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -15,22 +15,6 @@
 [mcp/overview.md](../../../overview.md)
 
 ## Purpose
-
-### 260713-TES-L1 Rename — Response Tail Choke Point
-
-`tool_response.py`'s `_attach_lifecycle_tail` now writes `agentNotifierBanner` on both response
-envelopes, plus the legacy `supervisorBanner` alias during the rename window; the stale-supervisor
-probe is `_agent_notifier_banner` reading `agent_notifier_heartbeat`. The next-step /
-banner choke-point contract is otherwise unchanged.
-
-### 260713-TES-L4 Inbox And Retire Application Operations
-
-`operator_inbox_tools.py` adds the explicit-supersession use case (`operator_inbox_supersede_tool`,
-R11), threads `include_terminal` through `operator_inbox_poll_tool` (N11), and demotes
-`operator_inbox_consume_tool` to attribution-only (N16 — the ack-by expectation fulfillment block
-is gone). `terminal_tools.py` gains `_surface_stranded_rows`: `session_retire` never refuses
-because rows are pending (N2) — it posts one durable stranded-ids row to the retiring authority
-and carries `strandedRowIds`/`strandedRowCount`/`surfacedRowId` in the retire payload.
 
 `application/` owns operation-level MCP composition. Application entry points translate
 trusted MCP runtime config plus typed tool arguments into package service calls
@@ -41,17 +25,12 @@ abandon now also ends the ambient lifecycle it anchors).
 
 ## Hot Path Summary
 
-Terminal spawn/open applications now surface the serving layer's sprint-binding refusals and
-successful provenance unchanged. Start here for MCP response composition; the identity policy
-itself lives in `serving/sprint_role_binding.py` and executes before host launch.
-
 The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context
 assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline,
 and carryover; `gate_tools.py` and `hosted_readiness.py` for gate/readiness operations;
 `lifecycle_tools.py`, `operator_inbox_tools.py`, and `orchestration_tools.py` for lifecycle, inbox,
 and orchestration operations; `server_startup.py` and `terminal_tools.py` for startup and terminal
-operations; `provider_tools.py` for provider operations; `worktree_tools.py` for worktree operations
-and `completion_cleanup.py` for post-success subordinate close/land policy;
+operations; `provider_tools.py` for provider operations; `worktree_tools.py` for worktree operations;
 `benchmark_tools.py`, `runtime_install.py`, and `skill_tools.py` for benchmark, install, and skill
 surfaces; `task_doc_tools.py` for JSON-primary task-document authoring; `tool_response.py` for response
 completion; `worktree_status.py` for status packets; and `read_files.py` for paired source/onboarding
@@ -59,13 +38,16 @@ reads. Route-index refresh still resolves context first and forwards repository/
 the deterministic builder.
 Context and worktree application entry points forward `parent_task`/`leaf_id` into the source resolver, and task-doc
 authoring writes `seriesContractPath` plus `enclosures[]` instead of the retired `contractPath`.
-**260805-ARG-L1**: both successful non-dry-run completion edges delegate to
-`completion_cleanup.auto_complete_seats` over
-the exact worker/reviewer/curator role set. Default-on `autoCloseCompletedSeats` requires an
-exact-session, exact-leaf durable turn report before `retire_entry` gracefully stops control, kills
-tmux, and stamps auto-close provenance; missing reports defer. Manager/orchestrator stay live.
-Setting the switch false restores `land_seats_for_leaf`/`autoLandedSeats` behavior. Cleanup stays
-best-effort and cannot rewrite an already-successful integration/finalization result.
+**260707-HFX2-L11**: `worktree_tools.py`'s `worktree_integrate_tool`/
+`lifecycle_finalize_task_tool` now compose completion-edge landing — after a successful non-dry-run
+edge, when `config.retirement.auto_land_on_integration`/`auto_land_on_finalize` is on (both default
+ON), `_auto_land_completed_seats` resolves the qualified leaf key and calls
+`serving.landing.land_seats_for_leaf` for the edge's own role set (worker/reviewer at integrate,
+manager/reviewer at finalize). Matching sessions are marked `status:"landed"` with provenance and
+returned as `autoLandedSeats`; tmux sessions are not killed, so the dashboard can show an inspectable
+landed archive. The helper body remains best-effort (`except Exception: return []`) so a catalog
+fault can never fail an already-succeeded edge — landing is archive bookkeeping riding the edge,
+never a gate on it.
 
 ## Parameter Objects: This Route Owns The Concepts
 
@@ -115,8 +97,7 @@ nested object for every client.
   whereas a type mismatch at the producer is a pyright error before the code ships.
 - A vocabulary an application entry point decides is declared in the owning model/module and imported
   by the consumer, not retyped there (260731-EFA-L4; `FileReadStatus` is the worked example).
-  cit:([`FileReadStatus`], mcp/src/agents_remember/models/read_files.py:20-32;
-  mcp/src/agents_remember/application/read_files.py:44-46)
+  cit:(["FileReadStatus = Literal["], mcp/src/agents_remember/models/read_files.py:20-32; mcp/src/agents_remember/application/read_files.py:44-46)
 
 ## Invariants And Boundaries
 
@@ -145,9 +126,9 @@ L14: the task-doc application entry point accepts the additive `orchestrates` fi
 | `route_index_refresh_tool` resolves context and supplies repository/storage authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:358-380 |
 | `build_route_indexes` is the deterministic route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | `worktree_status_packet` returns the `WorktreeSummary` the context packet embeds directly, so the state machine's output is checked at the producer. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
-| `DriftSummaryPacket`, the typed drift seam `_drift_packet` returns. | "class DriftSummaryPacket(TypedDict):" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:17-17 |
+| `DriftSummaryPacket`, the typed drift seam `_drift_packet` returns. | "class DriftSummaryPacket(TypedDict):" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-11 |
 | `FileReadStatus` is defined in the models type. | `FileReadStatus` | mcp/src/agents_remember/models/read_files.py:29-29 |
-| The application read-files entry point imports `FileReadStatus`, and `_resolve_onboarding` decides the value. | `FileReadStatus`, `_resolve_onboarding` | mcp/src/agents_remember/application/read_files.py:44-46; mcp/src/agents_remember/application/read_files.py:209-238 |
+| The application read-files entry point imports the wire type and decides the read status. | "from agents_remember.models.read_files import FileReadStatus"; "def _resolve_onboarding(" | mcp/src/agents_remember/application/read_files.py:52-52; mcp/src/agents_remember/application/read_files.py:218-218 |
 
 Worktree start is async (GitHub #53): `worktree_tools.py` transfers the temp
 lifecycle settings file to the background setup thread on a `starting` result,
@@ -211,7 +192,7 @@ are checked against the shape `models/drift.py` expects.
 `application/read_files.py` imports that alias, and `_resolve_onboarding` is the only function that
 decides the value and returns `tuple[FileReadStatus, str | None, bool]`.
 cit:([`FileReadStatus`], mcp/src/agents_remember/models/read_files.py:29-29)
-cit:([`FileReadStatus`], mcp/src/agents_remember/application/read_files.py:44-46)
+cit:(["from agents_remember.models.read_files import FileReadStatus"], mcp/src/agents_remember/application/read_files.py:52-52)
 cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:209-238)
 `VALID_FILE_READ_STATUSES = frozenset(get_args(FileReadStatus))` is the runtime half, derived from the
 alias. The import direction is application → models, so the producer uses the single declared alias
@@ -222,30 +203,20 @@ now carries them: this is the ONBOARDING lookup outcome, never a source-read con
 presence rides the independent `source` field, which is why `found` alongside a missing
 `source` is not a contradiction.
 
-### 260713-TES-L5 Route Impact — Judgment Demolition
+## 260731-EFA-L9 Route Impact
 
-`gate_tools.py` wording is refreshed for N16: `gate_response_wait_tool` says inbox entries
-land at the recipient's turn boundary and `operator_inbox_consume` is an optional
-attribution marker, never a mechanical ack. No application-layer behavior changed; the
-verdict-by deadline surface remains the gate-open expectation row.
+The application layer gained the provider lifecycle runtime
+(`application/provider_runtime.py`, moved from `worktrees/modules/provider_teardown.py` and
+absorbing `provider_async.py`'s setup launcher/status) and the default `WorktreeServices`
+composition (`application/worktree_services.py`) binding the provider, memory-quality, and
+citation-guard adapters into the worktrees service ports.
 
 ## Update History
 
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1 route impact: completion-edge composition now closes
-  exact-report-bearing worker/reviewer/curator seats, excludes owner roles, preserves the landed
-  compatibility path, and contains per-seat failures. Verification remains pinned until closeout.
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the provider-runtime and
+  worktree-services composition additions. Verification metadata pinned until closeout stamps the
+  L9 code commit.
 
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed the application route for binding refusal and
-  provenance projection. Verification metadata remains pinned until closeout.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the N16 wording refresh in
-  `gate_response_wait_tool` (landing + attribution-only consume). Verification metadata
-  pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the inbox supersede use case,
-  the `include_terminal` poll surface, the attribution-only consume, and the N2 retire
-  stranded-row surfacing in `terminal_tools.py`. Verification metadata pinned until closeout
-  stamps the 260713-TES-L4 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: corrected the task-reopen anchor, expanded the
   hot-path inventory, marked parameter examples as selected, and reversed the FileReadStatus ownership
   claim to match the model/application source split.

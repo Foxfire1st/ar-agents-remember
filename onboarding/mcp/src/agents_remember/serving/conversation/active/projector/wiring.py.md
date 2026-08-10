@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/projector/wiring.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-31 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ Two derived properties keep the rooting rules in one place: `parent_thread_id` (
 conversation this projection is rooted at, which child threads hang off — i.e.
 `identity.vendor_conversation_id`) and `bridge_epoch` (`identity.bridge_epoch`).
 
-Handing each component the same spine is what makes "one projection, one session, one epoch"
+Handing each component the same spine is what makes "one projection"
 checkable rather than a convention repeated across five parameter lists.
 
 ### Invariants And Boundaries
@@ -92,6 +92,8 @@ No domain documentation source is configured for this repository.
 No meaningful cross-repo references.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: created for the new module. Verification metadata stays
   pinned to the pre-commit source history until closeout.

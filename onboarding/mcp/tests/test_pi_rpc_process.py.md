@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_pi_rpc_process.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-16T01:21+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ late-response behavior.
 | --- | --- | --- |
 | A cancelled request's eventual response is ignored and a separately correlated next request still completes. | `test_cancelled_request_ignores_late_response_and_next_reader_survives` | mcp/tests/test_pi_rpc_process.py:90-118 |
 | Two-size coverage proves that 8 and 64 cancelled requests with no response require no retained tombstone store. | `test_cancelled_requests_without_responses_need_no_retained_tombstones` | mcp/tests/test_pi_rpc_process.py:120-151 |
-| The transport removes a cancelled pending future, and response dispatch drops an id that has no live future instead of retaining it. | `request`; `_dispatch` | mcp/src/agents_remember/serving/pi_rpc_process.py:90-112; mcp/src/agents_remember/serving/pi_rpc_process.py:221-238 |
+| The transport removes a cancelled pending future, and response dispatch drops an id that has no live future instead of retaining it. | "if request_id in self._pending:"; "async def _dispatch(self" | mcp/src/agents_remember/serving/pi_rpc_process.py:90-112; mcp/src/agents_remember/serving/pi_rpc_process.py:221-238 |
 | Strict frame decoding remains the protocol boundary used by the subprocess transport. | `PiRpcJsonlDecoder`; `_decode_frame` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:59-103; mcp/src/agents_remember/serving/pi_rpc_protocol.py:383-394 |
 
 ## Cross-Repo References
@@ -79,6 +79,8 @@ No sibling repository is required to prove this process boundary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 8 citation findings for cancellation tests, pending-request dispatch, and strict frame decoding.
 

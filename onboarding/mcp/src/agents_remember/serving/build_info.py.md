@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/build_info.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated            | 2026-08-01T08:30+02:00                          |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`      |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`      |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -43,7 +43,7 @@ self.dirty else None` — because the tri-state must not leak: proven-clean (`Fa
 unprovable (`None`) both drop out, so the wire never fabricates a "clean" fact. Absence is not a
 pristine claim.
 
-**No bytes moved.** `test_serving.py`'s `_build_wire(build)` helper cit:(["return build.payload().model_dump("], mcp/tests/test_serving.py:92-92) is the one place
+**No bytes moved.** `test_serving.py`'s `_build_wire(build)` helper cit:(["return build.payload().model_dump("], mcp/tests/test_serving.py:94-94) is the one place
 the tests express "the stamp exactly as the state body carries it"
 (`build.payload().model_dump(mode="json", exclude_none=True)`), and every assertion that used to
 call `build.payload()` directly now goes through it against the same expected dicts.
@@ -164,13 +164,13 @@ is proven by repository source and tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two merge points: the SSE snapshot and the `/api/state` body, both now via `served_state_tail` onto a copy of the memoized projection dump. |"payload.update(served_state_tail("; "served_state_tail(build=runtime.build"|mcp/src/agents_remember/code_quality/wire_contract.py:13-13; mcp/src/agents_remember/serving/_app_routes.py:95-95|
+| The two merge points: the SSE snapshot and the `/api/state` body, both now via `served_state_tail` onto a copy of the memoized projection dump. |"payload.update(served_state_tail("; "served_state_tail(build=runtime.build"|mcp/src/agents_remember/code_quality/wire_contract.py:13-13; mcp/src/agents_remember/serving/_app_routes.py:97-97|
 | The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`. | `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:63-78 |
-| `SERVER_VERSION` supplies the wheel version in the daemon restart identity, read from installed package metadata with a source-checkout literal fallback. | "SERVER_VERSION = version(" | mcp/src/agents_remember/mcp/__init__.py:9-9 |
+| `SERVER_VERSION` supplies the wheel version in the daemon restart identity, read from installed package metadata with a source-checkout literal fallback (kernel-owned since L9). | "SERVER_VERSION = version(" | mcp/src/agents_remember/kernel/primitives/version.py:15-15 |
 | The cockpit compares and renders the serving/client identity. | "function ServingBuildStamp()" | dashboard/src/cockpit/Cockpit.tsx:923-923 |
 | The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. | "if not bundle_is_current(fingerprint):"; "FINGERPRINT_FILE.write_text(" | scripts/sync-dashboard.py:147-147; scripts/sync-dashboard.py:157-157 |
 | The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. | "agents_remember/package_data/dashboard/index.html"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:93-94 |
-| `test_resolves_commit_in_a_git_checkout` asserts `dashboardBuild` present-or-omitted rather than indexing it unconditionally, through the shared `_build_wire` helper that names the wire form. | `test_resolves_commit_in_a_git_checkout`; "return build.payload().model_dump(" | mcp/tests/test_serving.py:92-92; mcp/tests/test_serving_cli.py:38-53 |
+| `test_resolves_commit_in_a_git_checkout` asserts `dashboardBuild` present-or-omitted rather than indexing it unconditionally, through the shared `_build_wire` helper that names the wire form. | `test_resolves_commit_in_a_git_checkout`; "return build.payload().model_dump(" | mcp/tests/test_serving.py:94-94; mcp/tests/test_serving_cli.py:40-55 |
 | The one runner both probes call: `GIT_REPOSITORY_SELECTOR_ENV` (the `GIT_DIR` family stripped by `git_environment`) and `run_git` itself (`safe.directory`, stdin `DEVNULL`, caller-supplied `timeout`). | "GIT_REPOSITORY_SELECTOR_ENV = ("; "def git_environment() ->"; "def run_git(" | mcp/src/agents_remember/kernel/git_command.py:33-33; mcp/src/agents_remember/kernel/git_command.py:76-76; mcp/src/agents_remember/kernel/git_command.py:85-85 |
 | `DecoyRepositoryTests` sets the selectors against a decoy repository and proves reads and writes still answer from the real one; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` keeps this module from growing a private copy again. | `test_reads_answer_from_the_real_repository_not_the_decoy`; `test_only_the_kernel_module_defines_a_git_runner` | mcp/tests/test_git_command.py:184-202; mcp/tests/test_git_command.py:448-465 |
 
@@ -189,6 +189,8 @@ Serving build identity now distinguishes a proven dirty checkout from an unprova
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 13 citation items (7 table rows and 6 prose citations); scoped citation check now passes.
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/topology/model.ts`           |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-08-01T10:30+02:00                      |
-| lastVerifiedCommitHash |                                             `7c56c11d651972515723b4090b8174087eb5236f`|
-| lastVerifiedCommitDate |                                             2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash |                                             `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                             2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                            |
 
 ## Governing Overview
@@ -151,7 +151,7 @@ ends of that crossing are cited below: `LIFECYCLE_STATES`/`State` upstream, `con
 | `CONSTEL_STATUSES` + the derived `ConstelStatus`, the total `CONSTEL_STATUS_BY_STATE`, the declared `UNCLASSIFIED_STATUS`, the `STATUS_BY_DECLARED_STATE` partial read view, and `lifecycleStatus` with its inferred-degrades-healthy-only rule. | `lifecycleStatus` | dashboard/src/topology/model.ts:85-93 |
 | `activeTopologyInputs` keeps only enclosures whose `groupKey(worktreeGroup)` ∈ `activeWorktreeGroups` and the lifecycles bound to them; `buildTopology` folds each enclosure's 1:1 lifecycle into the `wt` node via `lifecycleStatus` and parents providers by `groupKey` worktree group, then repo id, then workspace core. | `activeTopologyInputs`, `buildTopology`, `groupKey` | dashboard/src/topology/model.ts:99-99; dashboard/src/topology/model.ts:105-115; dashboard/src/topology/model.ts:117-221 |
 | The backend exposes `activeWorktreeGroups` from the structural `active_worktree_groups` set via `project_workspace`. | `project_workspace` | mcp/src/agents_remember/observer/reducer.py:126-179 |
-| The projection store passes that structural set through to the served projection. | `active_worktree_groups` | mcp/src/agents_remember/observer/projection_store.py:245-245 |
+| The projection store passes that structural set through to the served projection. | `active_worktree_groups` | mcp/src/agents_remember/serving/projections/projection_store.py:247-247 |
 | `constelColors` keys the canvas palette by `ConstelStatus` declared here, and `col` indexes it with no `??` — the downstream half of the same grammar. | `constelColors` | dashboard/src/topology/constel.ts:31-39 |
 | `model.test.ts` pins the grammar: totality over `LIFECYCLE_STATES`, the unclassified answer pinned to `UNCLASSIFIED_STATUS` by value, the inferred degrade, and `buildTopology` driven over the whole vocabulary. | "classifies every state the vocabulary declares" | dashboard/src/topology/model.test.ts:94-102 |
 | `Topology.tsx` is the only caller: it runs `activeTopologyInputs` then `buildTopology` before handing the model to `mountConstel`. | `Topology` | dashboard/src/panels/Topology.tsx:82-155 |

@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-07T08:19Z |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -48,17 +48,17 @@ navigation, and unknown-vendor run collapse — and no data/cursor logic.
   `Load older (total unknown)`. The button copy and article attributes are owned by the render body
 # dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx
   `aria-live="off"` because the surface owns announcements.
-- **Focus pinning** cit:(["Pin the focused row AND the default-tab row (the last row) so a tabbable article always exists,", "const rangeExtractor = useCallback(", "range extractor (which also pins the DEFAULT tab row) keep a tabbable article mounted even"], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineControls.ts:56-58; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:5-5) (F18): `rangeExtractor` pins the focused row AND unconditionally the
+- **Focus pinning** cit:(["Pin the focused row AND the default-tab row (the last row) so a tabbable article always exists", "const rangeExtractor = useCallback(", "range extractor (which also pins the DEFAULT tab row) keep a tabbable article mounted even"], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineControls.ts:56-58; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:5-5) (F18): `rangeExtractor` pins the focused row AND unconditionally the
   last row (`rows.length - 1`), so a tabbable article always stays mounted even when both scroll out of
   the virtual window — incoming data can never relocate focus to the container. `tabbable` gives the
   focused row, or the last row when nothing is focused, `tabIndex=0`.
-- **Bottom-follow** cit:(["const handleScroll = useCallback(() => {", "const [pendingUpdates, setPendingUpdates] = useState(0);", "refs.nearBottomRef.current = true;", "const isNearBottom = distance <= BOTTOM_FOLLOW_PX;"], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineScroll.ts:101-101; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineController.ts:65-65; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineScroll.ts:54-54; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineScroll.ts:45-45) (`BOTTOM_FOLLOW_PX=120`): `handleScroll` tracks `nearBottom`.
+- **Bottom-follow** cit:(["const handleScroll = useCallback(() => {", "const [pendingUpdates", "refs.nearBottomRef.current = true;", "const isNearBottom = distance <= BOTTOM_FOLLOW_PX;"], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineScroll.ts:101-101; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineController.ts:65-65; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineScroll.ts:54-54; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineScroll.ts:45-45) (`BOTTOM_FOLLOW_PX=120`): `handleScroll` tracks `nearBottom`.
   The append effect cit:([`ConversationTimeline`], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-106) scrolls a new last row to the end while near-bottom and
   otherwise increments `pendingUpdates`. The latest chip render and its `N new updates` count are
   owned by the timeline cit:([`ConversationTimeline`], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-106), while its update-state emphasis is static color/border styling rather than a continuous animation
   cit:([`latestChipWithUpdates`], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/styles.ts:81-84). Older prepend restores the captured top stable row + pixel
   offset through `prevFirstKeyRef` and the saved anchor cit:([`ConversationTimeline`], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-106).
-- **Widget-scoped keyboard nav** cit:(["The feed surface owns the ARIA feed contract (label + busy); layout, keyboard, and test", "<div role=\"feed\" aria-label=\"Conversation\" aria-busy={busy} {...props}>"], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFeed.tsx:25-25; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFeed.tsx:33-33) (§14.4/F14 accepted deviation): `onKeyDown` on the `feed`
+- **Widget-scoped keyboard nav** cit:(["The feed surface owns the ARIA feed contract (label + busy); layout", "<div role=\"feed\" aria-label=\"Conversation\" aria-busy={busy} {...props}>"], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFeed.tsx:25-25; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFeed.tsx:33-33) (§14.4/F14 accepted deviation): `onKeyDown` on the `feed`
   element (the ARIA feed pattern), NOT a global document handler. `]`/`[` move next/prev; `Home`/`End`
   jump ends. The exclusion list is complete — cit:([`isEditableTarget`], dashboard/src/panels/session-cockpit/conversation/conversation-timeline/unknownRun.tsx:12-12) skips
   `INPUT/TEXTAREA/SELECT/contentEditable` and any `closest('button,a,[contenteditable],.cm-editor')`;
@@ -133,7 +133,7 @@ reviewed task evidence for any current behavioral claim.
 | The kind dispatcher + stable accessible-name helper per article. | `ConversationItemView`, `itemAccessibleName` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:41-44; dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:66-69 |
 | The item wire type (`globalOrdinal`/`kind`/`phase`) the feed reads. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
 | The surface that mounts this feed, owns announcements + paging callbacks, and hijacks ArrowDown into the agents line. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
-| The feed ARIA + default-closed diagnostics render suite. | "ConversationTimeline — one navigable role=feed (R5, §14.2)" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/feedSemantics.test.tsx:7-7 |
+| The feed ARIA + default-closed diagnostics render suite. | "ConversationTimeline — one navigable role=feed (R5" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/feedSemantics.test.tsx:7-7 |
 | The surface keyboard-contract suite pinning the ArrowDown absence from the scroll-key set. | "ConversationSurface agent focus" | dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:144-410 |
 
 ## Cross-Repo References

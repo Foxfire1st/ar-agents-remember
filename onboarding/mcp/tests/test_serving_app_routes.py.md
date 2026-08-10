@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_app_routes.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ shape, optionally protocol-backed). `_write_task_documents` writes a real master
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The routes and handlers under test. |"async def stream_events"|mcp/src/agents_remember/serving/_app_common.py:112-112|
+| The routes and handlers under test. |"async def stream_events"|mcp/src/agents_remember/serving/_app_common.py:117-117|
 | The happy paths these arms sit beside. | `AppTests`, `TerminalWebSocketTests` | mcp/tests/test_serving.py:480-554; mcp/tests/test_terminal_ws.py:422-449 |
 | The same app's background loops and lifespan wiring. | `AgentNotifierLoopTests` | mcp/tests/test_serving_app_background_loops.py:220-272 |
 | Helper-level arms of the same module. | `ImageSniffTests` | mcp/tests/test_serving_helper_behaviour.py:100-139 |
@@ -82,6 +82,8 @@ shape, optionally protocol-backed). `_write_task_documents` writes a real master
 ## Update History
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
   exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

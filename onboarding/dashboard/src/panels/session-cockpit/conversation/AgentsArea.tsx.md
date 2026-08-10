@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,9 +35,9 @@ renders ONLY from projection roster evidence (`deriveAgents`): no optimistic row
   conversation` button (L84-L98, L331-L340) renders beside the line while focused — the old
   surface-owned focus bar is gone; the line owns the whole affordance row.
 - **Live-roster state** cit:(["{open && resolvedActiveId !== null ? ("], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:190-202; dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:233-233): a stale active id resolves to the first live agent.
-- **Open action** cit:(["const openMenu = () => {"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:199-199; dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:402-402) => {"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:199-199) => {"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:199-199): opening starts from the focused/first agent.
+- **Open action** cit:(["const openMenu = () => {"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:199-199; dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:402-402) => {"]"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:199-199): opening starts from the focused/first agent.
 - **Selection and focus return** cit:(["const closeMenu = (returnFocus: boolean) => {", "const selectAgent = (agentId: string) => {"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:407-407; dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:411-411): selection focuses a changed agent and closes with focus return.
-- **Active-option visibility** cit:(["useEffect(() => { if (!open || resolvedActiveId === null) return;", "[id='", "scrollIntoView({ block: \"nearest\" })", "[open, resolvedActiveId]"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:424-429): the guarded effect scrolls the option resolved from the active id into view whenever either dependency changes.
+- **Active-option visibility** cit:(["useEffect(() => { if (!open || resolvedActiveId === null) return;", "[id='", "scrollIntoView({ block: \"nearest\" })", "[open"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:424-429): the guarded effect scrolls the option resolved from the active id into view whenever either dependency changes.
 - **Line keys** cit:(["onKeyDown={onLineKeyDown}"], dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:197-197; dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:219-219): Enter/Space/ArrowDown toggle the menu
   (preventDefault suppresses the native button-activation click); ArrowUp from the closed line
   returns focus to the timeline's tabbable row — symmetric with the surface's ArrowDown hijack

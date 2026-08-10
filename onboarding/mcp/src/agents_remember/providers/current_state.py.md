@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T15:20+02:00     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -104,11 +104,11 @@ No external documentation is needed for this local status projection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current state payloads include version, kind, instance, aggregate state, `ok`, check time, settings file, enabled providers, process namespace, and per-provider state. | `ok` | mcp/src/agents_remember/providers/current_state.py:16-34 |
+| Current state payloads include version, kind, instance, aggregate state, `ok` (`state == "ready"`), check time, settings file, enabled providers, process namespace, and per-provider state. | "def build_current_provider_state("; "def aggregate_state(" | mcp/src/agents_remember/providers/current_state.py:19-34; mcp/src/agents_remember/providers/current_state.py:288-288 |
 | Current state files are written under `logs/providers/status/<scope>/<instance>/current.json` by `current_state_path`. | `current_state_path` | mcp/src/agents_remember/providers/current_state.py:52-62 |
 | Instance identity uses the shared configured provider scope/id or a deterministic mixed digest through `current_state_instance`. | `current_state_instance` | mcp/src/agents_remember/providers/current_state.py:65-86 |
 | GrepAI and CGC status mappers keep provider-specific resources, watcher state, and indexing state separate through `grepai_current_state` and `cgc_current_state`. | `grepai_current_state`; `cgc_current_state` | mcp/src/agents_remember/providers/current_state.py:136-168; mcp/src/agents_remember/providers/current_state.py:179-203 |
-| GrepAI target repos are derived from configured repository memory roots and persisted as `targetRepos` in current state. | `targetRepos` | mcp/src/agents_remember/providers/current_state.py:167-167 |
+| GrepAI target repos are derived from configured repository memory roots and persisted as `targetRepos` in current state. | `targetRepos` | mcp/src/agents_remember/providers/current_state.py:170-170 |
 | GrepAI lifecycle settings use the same repository memory-root mapping for roots (`projectId == repoId`) through `_grepai_roots`. | `_grepai_roots` | mcp/src/agents_remember/providers/settings.py:82-91 |
 | GrepAI readiness is gated on workspace presence: `grepai_workspace_present` reads the watcher `workspaceStatus` stdout, `grepai_current_state` downgrades to `degraded`, and `grepai_indexing_state` returns `noWorkspace` when absent. | `grepai_workspace_present`; `grepai_current_state`; `grepai_indexing_state` | mcp/src/agents_remember/providers/current_state.py:136-168; mcp/src/agents_remember/providers/current_state.py:302-314; mcp/src/agents_remember/providers/current_state.py:317-333 |
 | Container normalization keeps container state, running flag, started-at time, uptime seconds, and health in the current-state payload through `normalize_container_state` and `resource_state`. | `normalize_container_state`; `resource_state` | mcp/src/agents_remember/providers/current_state.py:250-257; mcp/src/agents_remember/providers/current_state.py:260-272 |
@@ -125,6 +125,8 @@ No sibling repository boundary is needed to explain this file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-03T02:57+02:00 — W3-B03 curator: curated 9 table citations for current-state paths, provider aggregation, normalization, refresh, and tests; fixer-generated ranges verified.
 
 - 2026-08-01T15:20+02:00 — 260731-EFA-L4 citation repair (no behaviour claim changed). Three ranges in `Repo-Internal References` had drifted off the symbols their findings name and were re-anchored against the current source: the status-mapper row `L85-L198` → **L136-L203** (`grepai_current_state` L136, `grepai_target_repos` L171, `cgc_current_state` L179, its `"watchers"` block closing L203 — the old range began inside `current_state_instance` and stopped mid-mapper); the `targetRepos` row `L101-L105; L132-L172` → **L100-L109; L136-L176** (the grepai branch passing `target_repos=grepai_target_repos(config)` at L108, and `payload["targetRepos"]` at L167); and the workspace-presence row `L132-L164, L298-L329` → **L136-L168; L302-L332** (`degraded` L150, `grepai_workspace_present` L302 reading `workspaceStatus` L311, `grepai_indexing_state` L317 returning `noWorkspace` L321). The card was flagged by the L4 citation sweep as drifting the same way as its two sibling observer cards; every range above was opened and read before being written. Prose unchanged. Verification metadata pinned until closeout stamps the L4 commit.

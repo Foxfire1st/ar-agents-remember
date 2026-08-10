@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/projectors/codex.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`|
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,7 +43,7 @@ discriminates live evidence by adapter event kind, then — for `codex-notificat
 frames — by the native METHOD the adapter preserves on cit:([`native_method`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:210-210) (the method
 used to be dropped before the projector, so shapeless startup notices
 flooded as one `unknown-vendor` row per configured MCP server). It also accepts the multiplexed
-demux context cit:(["def __init__(self, parent_thread_id:"], mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py:47-47), consulted only where parent-vs-agent
+demux context cit:(["def __init__(self"], mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py:52-52), consulted only where parent-vs-agent
 cannot be told from the frame alone (`thread/started`) — without it those frames keep the
 pre-multiplexing silent behavior rather than guess. cit:([`_SILENT_NOTIFICATION_METHODS`], mcp/src/agents_remember/serving/conversation/projectors/codex.py:105-122) drops the
 codex 0.144.5 session lifecycle/status/telemetry burst — one `mcpServer/startupStatus/updated`
@@ -56,14 +56,14 @@ config note). Sub-agent multiplexing changed this set at both ends: `thread/sett
 `codex-notification` and is equally timeline-less), and `thread/started` was REMOVED — it is no
 longer blanket-silent but mapped by `_map_thread_started`. Frames without a known drop method
 fall through the schema-disjoint params-shape branches: `completed` frames map `turn/completed`
-to a `turn-result` item plus `MappedTurnOutcome` (via cit:(["def emit_pi_content_ful_message_end(self, stop_reason: str, *, filler_chars: int) -> None:"], mcp/tests/test_harness_control_evidence.py:272-272));
+to a `turn-result` item plus `MappedTurnOutcome` (via cit:(["def emit_pi_content_ful_message_end(self"], mcp/tests/test_harness_control_evidence.py:278-278));
 `transcript` frames carry full `item/completed` items; `state` frames feed canonical status only
 and mint no items; item-bearing `startedAtMs` frames resolve item started/completed, indexed
 deltas (`summaryIndex`/`contentIndex`) to their named blocks, bare deltas (agentMessage/plan/
 commandExecution output share one shape) to an empty block id the engine resolves through the
 item kind, `patchUpdated` change lists to diff-block tool items, and token-usage/rate-limit
 frames to nothing (telemetry evidence, never token-theater rows). A method that matches no
-drop and no shape becomes cit:(["class MappedUnknownVendor:"], mcp/src/agents_remember/serving/conversation/projectors/common.py:82-82) but NAMES the method
+drop and no shape becomes cit:(["class MappedUnknownVendor:"], mcp/src/agents_remember/serving/conversation/projectors/common.py:84-84) but NAMES the method
 (`codex:notification:<method>` / `unrecognized codex notification <method>`), so a genuinely
 novel notification stays visible AND identifiable rather than anonymous.
 
@@ -89,8 +89,8 @@ parent's own act and stays untagged — plus one roster upsert per involved agen
 cit:(["def _map_sub_agent_activity("], mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:356-356) upserts the same roster row, binding `agentPath`. Both
 return `None` for off-shape items, which falls through to `MappedUnknownVendor` — degrade,
 never fatal. cit:(["def _roster_item("], mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:103-103) mints the shared `codex-agent-<threadId>` notice row
-with a status-derived phase cit:(["_ROSTER_ITEM_PHASE: dict[ConversationAgentStatus, ItemPhase] = {"], mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:86-86); cit:(["\"errored\": \"failed\","], mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:81-81) is the probe-locked collab/`subAgentActivity.kind` vocabulary — anything outside the
-table stays honest `unknown` instead of a guess; cit:(["_THREAD_STATUS_ROSTER: dict[str, ConversationAgentStatus] = {"], mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:97-97) admits only
+with a status-derived phase cit:(["_ROSTER_ITEM_PHASE: dict[ConversationAgentStatus"], mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:86-86); cit:(["\"errored\": \"failed\","], mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:81-81) is the probe-locked collab/`subAgentActivity.kind` vocabulary — anything outside the
+table stays honest `unknown` instead of a guess; cit:(["_THREAD_STATUS_ROSTER: dict[str"], mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:97-97) admits only
 `active`→running and `systemError`→failed, because `idle` says only "no active turn" and mints
 nothing rather than regressing a richer collab-derived roster status. `_map_thread_item` keys
 every other item on its native `id` and maps `userMessage` (content parts to
@@ -170,10 +170,10 @@ store's roster-aware upsert rules, and a dedicated collab/engine test module.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The codex adapter sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit so the method reaches this projector (the method-carry seam), and the same emit routes its params through the thread registry's router. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:730-730 |
+| The codex adapter sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit so the method reaches this projector (the method-carry seam), and the same emit routes its params through the thread registry's router. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:734-734 |
 | The router itself moved out of the adapter in 260731-EFA-L6 and was renamed with it, so the adapter-private name is gone from the tree. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_threads.py:215-229 |
-| `EvidenceFrame.native_method` is the typed field the bridge preserves and this projector switches on; `evidence_frame_json` serializes it as `nativeMethod`. | "nativeMethod" | mcp/src/agents_remember/serving/harness_control_models.py:621-621 |
-| `ConversationAgentRef`/`ConversationAgentStatus` are the roster identity/status grammar this projector emits; `ConversationItem.agent` is the optional field that carries it (absent = parent conversation). | `parent_agent_id` | mcp/src/agents_remember/serving/conversation/_models_blocks.py:154-154 |
+| `EvidenceFrame.native_method` is the typed field the bridge preserves and this projector switches on; `evidence_frame_json` serializes it as `nativeMethod` (wire contracts in models since L9). | "payload[\"nativeMethod\"]" | mcp/src/agents_remember/models/conversations/evidence.py:158-158 |
+| `ConversationAgentRef`/`ConversationAgentStatus` are the roster identity/status grammar this projector emits; `ConversationItem.agent` is the optional field that carries it (absent = parent conversation). | `parent_agent_id` | mcp/src/agents_remember/models/conversations/content.py:156-156 |
 | The engine passes the multiplexed demux context: the one mapper call site sets `parent_thread_id=self._identity.vendor_conversation_id` on `map_evidence_frame`. | `map_evidence_frame` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:159-200 |
 | The codex fixture rows record the observed live item/notification shapes and native thread pages through the production seam. | "codex-0.144.5-installed-20260718" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:3-3 |
 | The store's tool-call block union keeps full-item re-maps byte-identical while converging partial-block tools; roster-aware rules preserve a roster notice's `final-message` block across later block-less lifecycle upserts, and a late `streaming` tagging upsert never regresses a terminal phase. | `apply_item` | mcp/src/agents_remember/serving/conversation/active/store.py:161-249 |
@@ -230,6 +230,8 @@ non-documented collab shape.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over `_codex_collab.py`; the silent-notification set gained `turn/diff/updated` exactly (R16) while genuinely unknown vendor methods still mint addressable unknown-vendor evidence. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

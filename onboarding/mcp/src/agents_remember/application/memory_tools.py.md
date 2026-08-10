@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                 |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                 |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -25,11 +25,11 @@ refresh, memory initialization, baseline adoption, and memory carryover MCP oper
 
 The module defines three parameter objects for separate application contracts:
 `MemoryBranches` carries optional source/work branch overrides for baseline adoption
-cit:([`MemoryBranches`], mcp/src/agents_remember/application/memory_tools.py:398-404);
+cit:([`MemoryBranches`], mcp/src/agents_remember/application/memory_tools.py:406-412);
 `CarryoverSelection` carries the repository, memory/code refs, base, and replacement choice for
 carryover planning/apply cit:([`CarryoverSelection`], mcp/src/agents_remember/application/memory_tools.py:411-427);
 and `CarryoverCommitMessages` carries the two commit subjects for apply
-cit:([`CarryoverCommitMessages`], mcp/src/agents_remember/application/memory_tools.py:430-436).
+cit:([`CarryoverCommitMessages`], mcp/src/agents_remember/application/memory_tools.py:438-444).
 `intent_note` remains a separate apply approval argument.
 
 The module resolves repository and leaf-memory authority through `McpRuntimeConfig` and the
@@ -76,7 +76,7 @@ package application entry point and resolver contracts.
 | The shared memory-scope resolver and its leaf confinement rules. | `_memory_scope`, `_leaf_memory_scope` | mcp/src/agents_remember/application/memory_tools.py:82-108; mcp/src/agents_remember/application/memory_tools.py:111-165 |
 | The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:358-380 |
 | The route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| The route-index storage authority type. | "storage: StorageSettings," | mcp/src/agents_remember/kernel/route_index.py:187-187 |
+| The route-index storage authority type. | "storage: StorageSettings" | mcp/src/agents_remember/kernel/route_index.py:187-187 |
 
 ## Cross-Repo References
 
@@ -88,6 +88,8 @@ this package-local dispatch contract.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

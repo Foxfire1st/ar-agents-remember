@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_ports.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ fetch: a `thread/list` whose
 boundary, keeping these dormant port cases green while the agent-grouping suite
 (`test_conversation_library_agents.py`) owns the non-empty sub-agent cases. That fake transport and
 a stubbed environment reach the Codex library through a single `AppServerSeams(env=...,
-transport_factory=...)` object in `_codex_library` (cit:(["transport_factory="], mcp/tests/test_conversation_library_ports.py:148-148)), not as two loose constructor
+transport_factory=...)` object in `_codex_library` (cit:(["transport_factory="], mcp/tests/test_conversation_library_ports.py:150-150)), not as two loose constructor
 keywords.
 
 ### Conventions
@@ -83,6 +83,8 @@ No neighboring repository participates in this ports suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-03T03:03:33+02:00 — W3-B05 curator: resolved 5 Tier-2 citation claims (3 table, 2 prose) with exact anchors and source paths; fixer generated all final ranges.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. Only the

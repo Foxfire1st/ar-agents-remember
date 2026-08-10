@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -160,6 +160,8 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 
 ## Update History
 
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: the L9 citation/body repair was re-read against the current staged response-conformance source; the existing sidecar remains accurate. Verification metadata remains pinned until closeout.
+- 2026-08-10T10:40+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-10T05:45+02:00 — 260805-ARG-L1: added an explicit cross-model declaration proof for
   all four completion-seat cleanup fields. Verification remains pinned until closeout stamps
   ARG-L1.

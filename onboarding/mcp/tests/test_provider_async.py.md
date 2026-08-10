@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -52,7 +52,7 @@ before the state file exists, asserting `"providers"` is `assertNotIn` the paylo
 writing `<worktree_group>/provider-runtime/provider-state.json`, asserting
 `payload.get("providers") == {"state": "prepared"}`. The absence half is the assertion that
 carries the weight: `providers` is a `NotRequired` key on `WorktreeStatusFacts`, attached by
-`_status_payload_with_landing` only `if providers is not None`, cit:([`_status_payload_with_landing`], mcp/src/agents_remember/worktrees/modules/guidance.py:402-451), so a projection that always
+`_status_payload_with_landing` only `if providers is not None`, cit:([`_status_payload_with_landing`], mcp/src/agents_remember/worktrees/modules/guidance.py:372-421), so a projection that always
 emitted an empty value would pass the presence half alone. This is the only test in the suite
 that reads the composed status payload rather than the projector in isolation.
 
@@ -83,10 +83,10 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Launcher and projections under test. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/worktrees/modules/provider_async.py:58-69; mcp/src/agents_remember/worktrees/modules/provider_async.py:72-120; mcp/src/agents_remember/worktrees/modules/provider_async.py:123-146; mcp/src/agents_remember/worktrees/modules/provider_async.py:149-154 |
-| `projected_status_payload` and the `NotRequired` `providers` key on `WorktreeStatusFacts` the new payload test pins. | `WorktreeStatusFacts`, `projected_status_payload`, `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:99-136; mcp/src/agents_remember/worktrees/modules/guidance.py:402-451; mcp/src/agents_remember/worktrees/modules/guidance.py:454-458 |
-| Start ordering and retry path under test. | `start_result`, `run_or_launch_provider_setup`, `_retry_provider_setup_result` | mcp/src/agents_remember/worktrees/modules/start.py:456-467; mcp/src/agents_remember/worktrees/modules/start.py:629-667; mcp/src/agents_remember/worktrees/modules/start.py:670-703 |
-| Application-layer ownership helper under test. | `worktree_start_tool`, `_settings_owned_by_background` | mcp/src/agents_remember/application/worktree_tools.py:77-177; mcp/src/agents_remember/application/worktree_tools.py:159-164 |
+| Launcher and projections under test. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:59-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
+| `projected_status_payload` and the `NotRequired` `providers` key on `WorktreeStatusFacts` the new payload test pins. | `WorktreeStatusFacts`, `projected_status_payload`, `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:69-106; mcp/src/agents_remember/worktrees/modules/guidance.py:372-421; mcp/src/agents_remember/worktrees/modules/guidance.py:424-428 |
+| Start ordering and retry path under test. | `start_result`, `run_or_launch_provider_setup`, `_retry_provider_setup_result` | mcp/src/agents_remember/worktrees/modules/start.py:455-466; mcp/src/agents_remember/worktrees/modules/start.py:628-665; mcp/src/agents_remember/worktrees/modules/start.py:668-701 |
+| Application-layer ownership helper under test. | `worktree_start_tool`, `_settings_owned_by_background` | mcp/src/agents_remember/application/worktree_tools.py:77-156; mcp/src/agents_remember/application/worktree_tools.py:159-164 |
 
 ## Update History
 
@@ -102,7 +102,7 @@ No external documentation is needed for these standard-library unit tests.
   `NotRequired` key meaningful. Verified against `worktrees/modules/guidance.py`:
   `projected_status_payload`, `providers: NotRequired[dict[str, Any]]` on
   `WorktreeStatusFacts`, and the `if providers is not None` attach in
-  `_status_payload_with_landing`, cit:([`_status_payload_with_landing`], mcp/src/agents_remember/worktrees/modules/guidance.py:402-451); added the `guidance.py` reference row that the card
+  `_status_payload_with_landing`, cit:([`_status_payload_with_landing`], mcp/src/agents_remember/worktrees/modules/guidance.py:372-421); added the `guidance.py` reference row that the card
   previously lacked despite now importing from it. Re-read the rest of the card against the current
   409-line file — the `ProviderSetupJob` positional slot, the keyword-only `runner`/`thread_factory`
   seams, `call_args.args[0].settings_cleanup`, the disabled-memory `make_contract`, the dry-run and

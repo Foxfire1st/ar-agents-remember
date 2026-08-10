@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/queue_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ caller-bound `withdrawalRef`/`operationRef` (via `mint_ref` on the row `Operatio
 `redacted_preview`, and the `payload_digest`. Preview and digest come from this authority's own
 submit journal; a row the journal does not hold (submitted outside the typed L3 submit) honestly
 reports empty held content — `redactedPreview: ""` and `_EMPTY_DIGEST` (the digest of empty),
-identification copy never fabricated. cit:([`_LIVE_ROW_STATES`], mcp/src/agents_remember/serving/conversation/control/queue_projection.py:43-43) is `queued|dispatching|unknown`.
+identification copy never fabricated. cit:([`_LIVE_ROW_STATES`], mcp/src/agents_remember/serving/conversation/control/queue_projection.py:47-47) is `queued|dispatching|unknown`.
 Set-model/set-effort control operations (substrate `source=None`) are **not** projected — the SC1
 `OperationQueueItem` validator cannot represent them without inventing a source or forcing a
 withdrawable cockpit block on a row the authority cannot withdraw — so the projection covers the
@@ -86,12 +86,12 @@ preview/digest transforms are the substrate and sibling module this projection c
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `OperationQueueItem`/`CockpitQueueIdentity` privacy validator (source ∈ {cockpit,terminal,durable}; withdrawable cockpit block rule). | "class CockpitQueueIdentity(WireModel):"; "class OperationQueueItem(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_operations.py:152-152; mcp/src/agents_remember/serving/conversation/_models_operations.py:159-159 |
+| The `OperationQueueItem`/`CockpitQueueIdentity` privacy validator (source ∈ {cockpit,terminal,durable}; withdrawable cockpit block rule). | "class CockpitQueueIdentity(WireModel):"; "class OperationQueueItem(WireModel):" | mcp/src/agents_remember/models/conversations/submissions.py:16-16; mcp/src/agents_remember/models/conversations/submissions.py:23-23 |
 | The authority-internal setter mint with no submission source (`source=None`). | `_admit_setter` | mcp/src/agents_remember/serving/harness_submission_authority.py:561-594 |
 | The full-timeline paging seam and the submit journal this projection reads. | `read_full_timeline`; `ControlChannel` | mcp/src/agents_remember/serving/conversation/control/service.py:199-219; mcp/src/agents_remember/serving/conversation/control/service.py:320-341 |
-| The payload digest and redacted preview are deterministic transforms. | "def payload_digest("; "return f\"sha256:{sha256(text.encode('utf-8')).hexdigest()}\""; "return f\"sha256:{sha256(canonical.encode('utf-8')).hexdigest()}\""; "def redacted_preview("; "redacted = str(redact_secrets(collapsed))"; "return redacted, False"; "return \"\".join(clusters[:MAX_PREVIEW_CLUSTERS]), True" | mcp/src/agents_remember/serving/conversation/control/previews.py:28-28; mcp/src/agents_remember/serving/conversation/control/previews.py:32-32; mcp/src/agents_remember/serving/conversation/control/previews.py:48-48; mcp/src/agents_remember/serving/conversation/control/previews.py:51-51; mcp/src/agents_remember/serving/conversation/control/previews.py:58-58; mcp/src/agents_remember/serving/conversation/control/previews.py:61-62 |
-| The queue projection precomputes the empty-content digest. | "_EMPTY_DIGEST = payload_digest(\"\")" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:44-44 |
-| Authorized cockpit rows use stored content or the empty fallback, then mint operation and withdrawal refs. | "preview, truncated = redacted_preview(journal.text)"; "digest = journal.content_digest"; "preview, truncated, digest = \"\", False, _EMPTY_DIGEST"; "operation_ref = mint_ref( service.secret, \"operation-ref\", RefBinding(authorization, ar_session_id, epoch), RefTarget(identity=identity),"; "withdrawal_ref=mint_ref( service.secret, \"withdrawal-ref\", RefBinding(authorization, ar_session_id, epoch), RefTarget(identity=identity)," | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:111-115; mcp/src/agents_remember/serving/conversation/control/queue_projection.py:121-122; mcp/src/agents_remember/serving/conversation/control/queue_projection.py:127-127; mcp/src/agents_remember/serving/conversation/control/queue_projection.py:129-133 |
+| The payload digest and redacted preview are deterministic transforms. | "def payload_digest("; "return f\"sha256:{sha256(text.encode('utf-8')).hexdigest()}\""; "return f\"sha256:{sha256(canonical.encode('utf-8')).hexdigest()}\""; "def redacted_preview("; "redacted = str(redact_secrets(collapsed))"; "return redacted"; "return \"\".join(clusters[:MAX_PREVIEW_CLUSTERS])" | mcp/src/agents_remember/serving/conversation/control/previews.py:30-30; mcp/src/agents_remember/serving/conversation/control/previews.py:34-34; mcp/src/agents_remember/serving/conversation/control/previews.py:50-50; mcp/src/agents_remember/serving/conversation/control/previews.py:53-53; mcp/src/agents_remember/serving/conversation/control/previews.py:60-60; mcp/src/agents_remember/serving/conversation/control/previews.py:63-64 |
+| The queue projection precomputes the empty-content digest. | "_EMPTY_DIGEST = payload_digest(\"\")" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:48-48 |
+| Authorized cockpit rows use stored content or the empty fallback, then mint operation and withdrawal refs. | "operation_ref = mint_ref("; "withdrawal_ref=mint_ref(" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:115-119; mcp/src/agents_remember/serving/conversation/control/queue_projection.py:133-137 |
 
 ## Cross-Repo References
 
@@ -111,6 +111,8 @@ arguments to `mint_ref`. The projected queue rows are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T19:58+02:00 — No content impact: 260731-EFA-L16 made `ConversationControlService.resolve_entry` async (event-loop offload of the lock-taking catalog read), so this module's one call site (`operation_queue`) gained only the matching `await` — a one-for-one line replacement; no projection logic, wire shape, or error mapping changed, and this card names neither the seam's signature nor the call shape.
 - 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: deduplicated the shared queue-model source

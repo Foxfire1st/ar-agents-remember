@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/factories.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ consumes the injected port builder through the documented no-cycle seam.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The immutable runtime/scope types and install-once binding used by this factory. | `ConversationScope`; `ConversationRuntime`; `install_conversation_runtime` | mcp/src/agents_remember/serving/conversation/runtime.py:47-52; mcp/src/agents_remember/serving/conversation/runtime.py:55-78; mcp/src/agents_remember/serving/conversation/runtime.py:81-87 |
-| The service module's injected `port_builder` seam. | "port_builder" | mcp/src/agents_remember/serving/conversation/library/service.py:80-80; mcp/src/agents_remember/serving/conversation/library/service.py:85-85; mcp/src/agents_remember/serving/conversation/library/service.py:109-109; mcp/src/agents_remember/serving/conversation/library/service.py:167-167 |
+| The service module's injected `port_builder` seam. | "port_builder: PortBuilder" | mcp/src/agents_remember/serving/conversation/library/service.py:84-84 |
 | The foundation suite pins per-app isolation and no import-time singleton for the composition this factory preserves. | `test_no_import_time_mutable_singleton`; `test_child_composition_is_isolated_per_app` | mcp/tests/test_conversation_runtime_composition.py:197-208; mcp/tests/test_conversation_runtime_composition.py:211-224 |
 
 ## Cross-Repo References
@@ -91,6 +91,8 @@ so binding them once is what stops one caller's request from being keyed under a
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that ran past

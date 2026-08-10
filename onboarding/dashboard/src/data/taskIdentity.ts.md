@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/taskIdentity.ts`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T16:02+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -104,7 +104,7 @@ the reviewed task evidence for any current behavioral claim.
 | Cockpit derives chat/highlight lifecycle attachment through `lifecycleIdForSelection`; its displayed-leaf state supersedes `leafKeyForSelection` (still exported here, no live caller). | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:64-64 |
 | Current leaf label/id consumers span RailChat and the full session-cockpit bar, rail, header, status, failure, and lifecycle-copy surfaces. | "function stepLines", "export function ChatContextBar", "export function SessionRail", "export function HeaderStrip", "export function FailedLaunchBanner", "export function cleanupOutcomeCopy" | dashboard/src/panels/RailChat.tsx:192-192; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-74; dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-70; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:132-132; dashboard/src/panels/session-cockpit/SessionRail.tsx:155-155; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:40-40 |
 | `railModel`, `LifecycleList`, `DetailPanel`, and `RailChat` consume `qualifiedLeafKey`; `leafKeyForSelection` has no live import. | "export function buildRailModel", "export const LifecycleList", "export const DetailPanel", "function stepLines" | dashboard/src/data/railModel.ts:212-212; dashboard/src/panels/RailChat.tsx:192-192; dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
-| Event River imports `taskDocumentLabel` so history rows without live lifecycle projection can still render the task document title. | "taskDocumentLabel," | dashboard/src/panels/eventSummary.ts:1-15 |
+| Event River imports `taskDocumentLabel` so history rows without live lifecycle projection can still render the task document title. | "taskDocumentLabel" | dashboard/src/panels/eventSummary.ts:1-15 |
 
 ## Cross-Repo References
 

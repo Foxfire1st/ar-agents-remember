@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -98,7 +98,7 @@ cross-repository implementation source that governs its behavior.
 
 - 2026-08-03T02:41:46+02:00 — W3-B05 curator: anchored 6 Tier-2 table citations and 5 Tier-2 prose citations with exact source paths; fixer generated all ranges.
 - 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: refreshed for the one-line `agentsNote` pass-through
-  (the list receives `agentsNote` as a pass-through prop) (cit:(["agentsNote: list?.agentsNote,"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:178-178)) into the list; all line citations re-stamped against the
+  (the list receives `agentsNote` as a pass-through prop) (cit:(["agentsNote: list?.agentsNote"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:178-178)) into the list; all line citations re-stamped against the
   post-L7 source (several pre-existing citations had also drifted and are corrected). The L7 source is
   uncommitted, so lastVerifiedCommit* stays on the prior stamp and closeout re-stamps verification.
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V10 stack-threshold raise (`@container`

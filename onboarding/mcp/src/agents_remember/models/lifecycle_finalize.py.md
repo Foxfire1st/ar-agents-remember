@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/lifecycle_finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-10T05:45+02:00                     |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -27,11 +27,16 @@ finalizer response is a separate terminal contract: it reports only the edge
 proof, cleanup result, task-document reconciliation, and blockers relevant to
 finalization.
 
-ARG-L1 declares all completion cleanup products on this strict response: `autoClosedSeats`,
-`autoCloseDeferredSeats`, `autoCloseFailedSeats`, and compatibility `autoLandedSeats`, each a
-default-empty string list. Default close distinguishes retired seats, missing-report deferrals, and
-per-seat failures; `autoCloseCompletedSeats=false` uses only the landed list. Empty values never
-mean finalization failed; the cleanup hook is subordinate to finalization truth.
+**260707-HFX2-L11** replaces the former completion-edge retirement field with
+`autoLandedSeats: list[str] = Field(default_factory=list)` — the session ids marked `landed` at this
+master→super finalize completion edge (config-gated via
+`config.retirement.auto_land_on_finalize`, default ON, `mcp/config.py`). Empty when the gate is
+off, when nothing matched the finalizing master's own qualified leaf key
+(`repo/master/master-doc-id`), or when the call was a dry run. The
+landing sweep is best-effort and never fails this finalize call itself — any failure in the landing
+body (contract load or catalog I/O) is swallowed and reported as an empty list
+(`application/worktree_tools.py::_auto_land_completed_seats`), so this field can legitimately be
+empty even when spent seats existed, never a signal that finalization itself failed.
 
 ## Docs References
 
@@ -44,9 +49,8 @@ No external Domain Documentation source is configured for this memory repo.
 | Strict tool response base class is defined here. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:10-10 |
 | Public response registry maps `lifecycle_finalize_task` to this model. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tool_registry.py:168-168 |
 | Conformance tests validate representative finalizer payloads against this model. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |
-| `lifecycle_finalize_task_tool` populates all completion-cleanup products after a successful finalization. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:419-450 |
-| The completion helper returns the close/defer/fail or compatibility landed products. | "def auto_complete_seats(" | mcp/src/agents_remember/application/completion_cleanup.py:27-67 |
-| Conformance pins the same four fields on both completion-edge response models. | `test_completion_cleanup_fields_are_declared_on_both_edge_models` | mcp/tests/test_tool_response_conformance.py:630-643 |
+| `lifecycle_finalize_task_tool` populates `autoLandedSeats` from `_auto_land_completed_seats`, gated by `config.retirement.auto_land_on_finalize`. | "def worktree_start_tool" | mcp/src/agents_remember/application/worktree_tools.py:77-77 |
+| `RetirementSettings.auto_land_on_finalize` is the config gate this field's population depends on. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:123-123 |
 
 ## Series-Contract Notes
 
@@ -54,9 +58,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1: declared close, deferred, failed, and landed
-  completion-seat products on the strict finalizer response. Verification remains pinned until
-  closeout stamps ARG-L1.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/task_resolver.py`     |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-08-02T01:05+02:00                                  |
-| lastVerifiedCommitHash |                                                         `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |                                                         2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |                                                         `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                                         2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                                  |
 
 ## Governing Overview
@@ -78,8 +78,8 @@ Same-repository source and tests define the supported task-folder and series-con
 | The resolver defines series-contract filenames, archive/enclosure directory names, slug helpers, current/legacy task-root candidates, and leaf enclosure paths. | "def slugify" | mcp/src/agents_remember/worktrees/task_resolver.py:18-18 |
 | Active series discovery excludes archived task folders and leaf enclosure contracts; active task resolution can be constrained by `parent_task` and errors on ambiguous task names. | "def task_root_for" | mcp/src/agents_remember/worktrees/task_resolver.py:33-33 |
 | Leaf enclosure resolution selects an explicit leaf, auto-selects a single leaf, or errors when several leaves exist; completed root tasks archive under `0_archive` with dry-run support and safety blockers. | "def series_contract_path" | mcp/src/agents_remember/worktrees/task_resolver.py:47-47 |
-| `leaf_refs.py` owns qualified/doc-id/legacy-stem leaf-ref validation and alias-aware legacy enclosure lookup. | "def resolve_leaf_ref" | mcp/src/agents_remember/worktrees/leaf_refs.py:94-94 |
-| `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. | "def load_contract_from_args" | mcp/src/agents_remember/worktrees/modules/start.py:74-74 |
+| `leaf_refs.py` owns qualified/doc-id/legacy-stem leaf-ref validation and alias-aware legacy enclosure lookup. | "def resolve_leaf_ref" | mcp/src/agents_remember/worktrees/leaf_refs.py:88-88 |
+| `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. | "def load_contract_from_args" | mcp/src/agents_remember/worktrees/modules/start.py:73-73 |
 | `finalize.py` calls `archive_completed_root_task` after cleanup so completed root tasks move to `0_archive` while leaf finalization skips that move. | `archive_completed_root_task` | mcp/src/agents_remember/worktrees/task_resolver.py:147-184 |
 | Resolver parity tests pin parent-task disambiguation and archive exclusion from active task discovery. | `ResolverCliTests` | mcp/tests/test_resolver_parity.py:56-251 |
 | Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_evidence_projection.py`                 |
 | doc_type               | `file-level-onboarding`                                          |
 | lastUpdated            | 2026-08-09T01:21+02:00                                            |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`                                    |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                    |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                    |
 
 ## Governing Overview
@@ -24,19 +24,19 @@ attribution, and the no-loss cursor contract. Written red before implementation 
 
 ### Logic
 
-`LatestTerminalEvidenceTests` cit:([`LatestTerminalEvidenceTests`], mcp/tests/test_terminal_evidence_projection.py:180-283) pins codex completed/interrupted frames, pi aborted
+`LatestTerminalEvidenceTests` cit:([`LatestTerminalEvidenceTests`], mcp/tests/test_terminal_evidence_projection.py:179-281) pins codex completed/interrupted frames, pi aborted
 frames, newest-outcome-wins across frames, empty-page no-evidence, unknown harness/projector
-no-evidence, and unmappable-native skip. `ReadEntryTerminalEvidenceTests` cit:([`ReadEntryTerminalEvidenceTests`], mcp/tests/test_terminal_evidence_projection.py:285-471) covers
+no-evidence, and unmappable-native skip. `ReadEntryTerminalEvidenceTests` cit:([`ReadEntryTerminalEvidenceTests`], mcp/tests/test_terminal_evidence_projection.py:284-470) covers
 non-harness/endpointless rows, codex evidence-page reads, and the pi tail walk: beyond-one-page
 lift (251 entries, terminal at `entry-240`), forward tracking from a persisted cursor, empty
 page no-advance, and the 8-page bound.
 
-`CatalogSeatTruthTests` cit:([`CatalogSeatTruthTests`], mcp/tests/test_terminal_evidence_projection.py:474-618) pins the vocabulary: completed settles then claims
+`CatalogSeatTruthTests` cit:([`CatalogSeatTruthTests`], mcp/tests/test_terminal_evidence_projection.py:473-616) pins the vocabulary: completed settles then claims
 `turn-ended` (never "done"), interrupted is `turn-ended` immediately and never `completed`,
 developer-stamp origin attribution (including the other-turn case), killed stays `exited`,
 hung stays `stale` and holds the boundary, transient read failure retries the same window
-(F2), and the boundary vocabulary. `OriginResolutionTests` cit:([`OriginResolutionTests`], mcp/tests/test_terminal_evidence_projection.py:620-642) pins
-`interrupted_origin` directly. `SeatTurnTruthTests` cit:([`SeatTurnTruthTests`], mcp/tests/test_terminal_evidence_projection.py:644-746) covers the write helpers:
+(F2), and the boundary vocabulary. `OriginResolutionTests` cit:([`OriginResolutionTests`], mcp/tests/test_terminal_evidence_projection.py:619-640) pins
+`interrupted_origin` directly. `SeatTurnTruthTests` cit:([`SeatTurnTruthTests`], mcp/tests/test_terminal_evidence_projection.py:643-744) covers the write helpers:
 missing-row no-op, same-state no-op write, idempotent signal/interrupt stamps, and cursor
 advance/idempotence. `SnapshotParityTests` (L748+) verifies the new `terminal` parameter keeps
 the snapshot signature backward compatible.
@@ -62,7 +62,7 @@ No Domain Documentation entries are configured in the resolved `system/sources.m
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines these projections; the relay contract and tests are the authority. | `CatalogSeatTruthTests` | mcp/tests/test_terminal_evidence_projection.py:474-618 |
+| No external/domain document defines these projections; the relay contract and tests are the authority. | `CatalogSeatTruthTests` | mcp/tests/test_terminal_evidence_projection.py:473-616 |
 
 ## Repo-Internal References
 
@@ -71,9 +71,9 @@ The suite exercises `serving/terminal_evidence.py`, `serving/terminal_liveness.p
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lift module under test. | `read_entry_terminal_evidence`; `_read_pi_terminal_evidence` | mcp/src/agents_remember/serving/terminal_evidence.py:148-164; mcp/src/agents_remember/serving/terminal_evidence.py:166-194 |
+| The lift module under test. | `read_entry_terminal_evidence`; `_read_pi_terminal_evidence` | mcp/src/agents_remember/serving/terminal_evidence.py:145-160; mcp/src/agents_remember/serving/terminal_evidence.py:163-190 |
 | The liveness ordering (read terminal evidence before persisting the advanced snapshot). | `_observe_alive` | mcp/src/agents_remember/serving/terminal_liveness.py:343-426 |
-| The catalog row fields and boundary predicate the suite pins. | `seat_at_turn_boundary`; "class TerminalCatalogEntry:" | mcp/src/agents_remember/serving/terminal_catalog.py:95-103; mcp/src/agents_remember/serving/terminal_catalog.py:106-220 |
+| The catalog row fields and boundary predicate the suite pins. | `seat_at_turn_boundary`; "class TerminalCatalogEntry:" | mcp/src/agents_remember/models/terminal_catalog.py:58-64; mcp/src/agents_remember/models/terminal_catalog.py:68-72 |
 
 ## Cross-Repo References
 
@@ -85,6 +85,9 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-10T10:40+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: created this sidecar for the new forcing
   suite (projection lift, pi paging, origin, seat truth, cursor no-loss). Verification
   metadata left blank: the source is uncommitted; closeout stamps the 260713-TES-L2 commit.
+
+

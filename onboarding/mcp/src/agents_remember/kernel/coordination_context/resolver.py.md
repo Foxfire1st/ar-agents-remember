@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -102,8 +102,18 @@ No cross-repository evidence is needed; cross-repo facts are read dynamically fr
 
 Resolver assembly threads `selector.parent_task` and `selector.leaf_id` into contract and task-root selection, so user-facing calls can keep using task names while the source API resolves nested active roots. Independently, `selector.worktree_name` resolves a contract by its worktree-group folder when no task name is available; the two mechanisms coexist (task-based resolution wins, worktree-name is the fallback). All five live on one `EnclosureSelector`.
 
+## 260731-EFA-L9 Change
+
+The resolver now consumes a "ContractReaderPort" (cit:(["class ContractReaderPort"], mcp/src/agents_remember/kernel/coordination_context/models.py:108-108))
+so it never imports `worktrees` directly; the production binding is
+`worktrees/modules/contract_reader.py::WorktreeContractReader`, and reader failures degrade to a
+reported missing/unreadable contract instead of a crash.
+
 ## Update History
 
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the contract-reader port seam and
+  degradation behavior; the L9 change section above documents it. Verification metadata pinned
+  until closeout stamps the L9 code commit.
 - 2026-08-02T21:03:24+02:00 — 260731-EFA-L6 curator W2-B10: repaired 7 citation findings (3 reference rows); scoped recheck clean.
 
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):

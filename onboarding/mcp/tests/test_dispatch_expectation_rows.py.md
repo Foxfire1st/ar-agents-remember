@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/tests/test_dispatch_expectation_rows.py`             |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastUpdated            | 2026-07-15T23:00+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -52,11 +52,7 @@ asserts the matching row's `.current()` state flips to `met`. `InboxExpectationR
 the same shape for the inbox: `operator_inbox_post_payload`, now addressed through
 `InboxAddress`/`InboxMessage`/`InboxPoster` plus `delivery=HostedDelivery(enabled=False)`, writes
 a single `ack-by` row keyed to the posted entry id, and `operator_inbox_consume_payload` flips it
-to `met`. **260713-TES-L4 (N16) supersedes the inbox half**: ordinary posts write NO ack-by row
-(`test_post_no_longer_writes_an_ack_by_row` asserts `pending() == []` and the post stays
-`pending`), and `operator_inbox_consume_payload` is attribution-only — it stamps `consumedAt`
-and meets nothing (`test_consume_is_attribution_only_and_meets_nothing` asserts the row set stays
-empty and the consume response state stays `pending`). Every test reads the store directly (`ExpectationRowStore(observer_root(self.config))`)
+to `met`. Every test reads the store directly (`ExpectationRowStore(observer_root(self.config))`)
 rather than through the observer projection, matching R5's surfacing-only split (the store is the
 correctness source, the projection is display-only).
 
@@ -111,10 +107,8 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 
 ## Update History
 
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the N16 inversion of the
-  `InboxExpectationRowTests` — no ack-by row is written for ordinary posts, and consume is
-  attribution-only with nothing mechanical attached. Verification metadata pinned until closeout
-  stamps the 260713-TES-L4 commit.
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 3 citation claims; scoped recheck clean (0 findings).
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: rewrote the Logic paragraph and all three
   self-file citations to match the parameter-object call sites. `SpawnExpectationRowTests` no

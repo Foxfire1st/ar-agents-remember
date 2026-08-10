@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/scope.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -41,18 +41,18 @@ code_repository_root` as the code root, and **degrades to a code-only scope**
 
 `run_scoped(op, config, repo_id, scope_id) -> Response` (cit:([`run_scoped`], mcp/src/agents_remember/serving/scope.py:207-227)) is the error mapper
 (formerly `files._run`): an unknown repo → `404 unknown-repo`, an unknown enclosure
-(`_UnknownScope` (cit:([`_UnknownScope`], mcp/src/agents_remember/serving/scope.py:92-93))) → `404 unknown-scope`, an out-of-root / absolute path
+(`_UnknownScope` (cit:([`_UnknownScope`], mcp/src/agents_remember/serving/scope.py:98-99))) → `404 unknown-scope`, an out-of-root / absolute path
 (`AuthorityError` from `confine_rel`) → `400 bad-path`, an absent file
 (`FileNotFoundError`) → `404 not-found`; success returns the domain dict at 200.
 
-cit:([`_iter_repo_contracts`], mcp/src/agents_remember/serving/scope.py:110-114) / cit:([`_find_enclosure_contract`], mcp/src/agents_remember/serving/scope.py:138-144) enumerate the
+cit:([`_iter_repo_contracts`], mcp/src/agents_remember/serving/scope.py:116-120) / cit:([`_find_enclosure_contract`], mcp/src/agents_remember/serving/scope.py:138-144) enumerate the
 **active** leaf-enclosure contracts for a repo. The tasks-tree walk itself now lives in
 cit:([`_iter_active_contracts`], mcp/src/agents_remember/serving/scope.py:117-135) — the L5I single-pass extraction — which reads
 `iter_leaf_enclosure_contracts(coordination_root/"tasks")` ONCE, skipping
 `cleanup=="abandoned"` and any enclosure whose `code_worktree` no longer exists and
 tolerating a malformed contract (`ContractError`/`OSError` → skip); `_iter_repo_contracts`
 filters that one pass to the requested `repo_name`.
-`_resolve_within(root, rel)` (cit:([`_resolve_within`], mcp/src/agents_remember/serving/scope.py:196-204)) is the per-call confinement: `""`/`"."` is the
+`_resolve_within(root, rel)` (cit:([`_resolve_within`], mcp/src/agents_remember/serving/scope.py:205-213)) is the per-call confinement: `""`/`"."` is the
 root, everything else goes through `confine_rel` (so an absolute or escaping path is
 rejected, never silently re-rooted). `language_for(path)` maps a file extension
 to the dashboard language id via `_LANG_BY_EXT` (`text` fallback). `decode_capped(raw, cap)
@@ -89,12 +89,12 @@ modules.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The L1 files API that now imports + re-exports these helpers. | `resolve_scope` | mcp/src/agents_remember/serving/files.py:18-18 |
-| The L3 change-set API that reuses `FileScope` / `resolve_scope` / `run_scoped` / `language_for`. | "from agents_remember.serving.scope import FileScope, language_for, run_scoped" | mcp/src/agents_remember/serving/changeset.py:44-44 |
+| The L3 change-set API that reuses `FileScope` / `resolve_scope` / `run_scoped` / `language_for`. | "from agents_remember.serving.scope import FileScope" | mcp/src/agents_remember/serving/changeset.py:46-46 |
 | The shared path-confinement helper (`confine_rel`) the scope uses. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47 |
-| The scope resolver bridge + `MissingMemoryError`. | `resolve_coordination_context` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
+| The scope resolver bridge + "MissingMemoryError,". | "_resolver.resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
 | The repo allow-list authority guard (`require_repo`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
 | The leaf-enclosure contract enumerator the catalog walks. | `iter_leaf_enclosure_contracts` | mcp/src/agents_remember/worktrees/task_resolver.py:80-85 |
-| The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | `WorktreeContract`; `load_contract`; `ContractError` | mcp/src/agents_remember/worktrees/worktree_contract.py:92-93; mcp/src/agents_remember/worktrees/worktree_contract.py:231-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-470 |
+| The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | `WorktreeContract`; `load_contract`; `ContractError` | mcp/src/agents_remember/worktrees/worktree_contract.py:91-92; mcp/src/agents_remember/worktrees/worktree_contract.py:230-285; mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
 | The test asserting the extraction (files.py re-exports `FileScope`/`_resolve_within`). | `test_scope_module_exposes_resolver_and_runner` | mcp/tests/test_serving_changeset.py:791-797 |
 
 ## 260718-CHATS-L5I Current Delta
@@ -123,7 +123,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   abandoned/worktree-gone/malformed skips out of `_iter_repo_contracts` into `_iter_active_contracts`
   (cit:([`_iter_active_contracts`], mcp/src/agents_remember/serving/scope.py:117-135)); `_iter_repo_contracts` now only filters that one pass by
   `repo_name`. The current self-citations for the moved scope helpers are
-  cit:([`_find_enclosure_contract`, `FileScope`, `_UnknownScope`, `resolve_scope`, `_resolve_within`, `run_scoped`], mcp/src/agents_remember/serving/scope.py:92-93; mcp/src/agents_remember/serving/scope.py:96-107; mcp/src/agents_remember/serving/scope.py:138-144; mcp/src/agents_remember/serving/scope.py:147-193; mcp/src/agents_remember/serving/scope.py:196-204; mcp/src/agents_remember/serving/scope.py:207-227). Behaviour is unchanged; ranges are generated by the W2-B08 scoped fixer.
+  cit:([`_find_enclosure_contract`, `FileScope`, `_UnknownScope`, `resolve_scope`, `_resolve_within`, `run_scoped`], mcp/src/agents_remember/serving/scope.py:98-99; mcp/src/agents_remember/serving/scope.py:102-113; mcp/src/agents_remember/serving/scope.py:144-150; mcp/src/agents_remember/serving/scope.py:153-202; mcp/src/agents_remember/serving/scope.py:205-213; mcp/src/agents_remember/serving/scope.py:216-236). Behaviour is unchanged; ranges are generated by the W2-B08 scoped fixer.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `CoordinationHints` / `EnclosureSelector` call shape into the kernel resolver.
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
 

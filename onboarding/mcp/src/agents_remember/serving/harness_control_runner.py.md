@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_runner.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -86,7 +86,7 @@ Launch validation and adapter construction remain separate pure/data and vendor-
 | The opener embeds the typed launch in this runner command and persists model/effort provenance on the terminal row. | `_session_command`; `_opened_catalog_entry` | mcp/src/agents_remember/serving/terminal_opener.py:435-468; mcp/src/agents_remember/serving/terminal_opener.py:471-531 |
 | Contract tests pin the resumeThreadId payload round-trip, legacy field-less parse, malformed refusal, and codex-only factory channel. | `test_runner_payload_round_trips_resume_thread_id`; `test_runner_payload_without_the_field_parses_to_none`; `test_runner_payload_rejects_malformed_resume_thread_id`; `test_factory_sets_codex_resume_and_refuses_non_codex_before_any_spawn` | mcp/tests/test_harness_control_evidence_other.py:294-298; mcp/tests/test_harness_control_evidence_other.py:300-311; mcp/tests/test_harness_control_evidence_other.py:313-324; mcp/tests/test_harness_control_evidence_other.py:326-350 |
 | The bridge translates `mark_failed` into failed/rejected state with exact raw error evidence (`raw["bridgeError"]`), refusing to overwrite an already-started bridge. | `mark_failed` | mcp/src/agents_remember/serving/harness_control_bridge.py:160-174 |
-| The pre-session catalog reuses `adapter_argv` before calling the transient adapter's token-free discovery path. | `adapter_argv` | mcp/src/agents_remember/serving/harness_capability_catalog.py:180-195 |
+| The pre-session catalog reuses "argv=adapter_argv(installed.harness.id" before calling the transient adapter's token-free discovery path. | "argv=adapter_argv(installed.harness.id" | mcp/src/agents_remember/serving/harness_capability_catalog.py:180-195 |
 
 ## 260731-EFA-L2 Current Delta
 
@@ -106,6 +106,8 @@ The refusals and the launch sequence are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: split launch, factory, opener, and contract-test ownership and normalized scoped citation evidence.
 

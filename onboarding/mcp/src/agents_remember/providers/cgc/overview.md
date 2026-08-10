@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/`   |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -118,7 +118,13 @@ No seeding rule changed — catch-up rather than teardown, UNRELATABLE-only refu
 from-zero reindex, and `caughtUp` conditioned on zero residuals all still hold exactly as written
 above. What changed is that the repository those rules are evaluated against is now guaranteed.
 
+## 260731-EFA-L9 Route Impact — Caller Re-Points
+
+CGC provider modules now import the shared kernel primitives directly — `kernel/primitives/runtime_config.py` (runtime config), `kernel/primitives/identity.py` (instance naming), and `kernel/primitives/provider_degradation_settings.py` — instead of the former `mcp`/`providers` homes. Seed/setup behavior is unchanged.
+
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` row with an exact
   anchor (deleting two unresolvable overview rows); exact non-fixing check returns zero findings.

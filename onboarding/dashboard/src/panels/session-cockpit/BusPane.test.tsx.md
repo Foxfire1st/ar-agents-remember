@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/BusPane.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Fleet, filter, focus-loss, and draft persistence cases. | "keeps a reply draft keyed to its entry across focused-seat filter unmounts" | dashboard/src/panels/session-cockpit/BusPane.test.tsx:121-144 |
 | Exact POST and lifecycle-only zero-write cases. | "posts a developer decision to the original sender through /api/operator-inbox only"; "renders a lifecycle-only source as unavailable and performs zero POSTs" | dashboard/src/panels/session-cockpit/BusPane.test.tsx:146-184; dashboard/src/panels/session-cockpit/BusPane.test.tsx:186-203 |
-| Virtualized per-entry async state case. | "keeps each reply's open, draft, posted, and error state across >100-row unmounts" | dashboard/src/panels/session-cockpit/BusPane.test.tsx:205-293 |
+| Virtualized per-entry async state case. | "keeps each reply's open" | dashboard/src/panels/session-cockpit/BusPane.test.tsx:205-293 |
 | Shared coherent and legacy fixture pack. | `L7_PICKUPS` | dashboard/src/test/fixtures/busScenarios.ts:108-112 |
 
 ## Cross-Repo References

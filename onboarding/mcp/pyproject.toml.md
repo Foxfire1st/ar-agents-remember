@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -136,7 +136,7 @@ the source rather than being repeated here; it is the same string
 | Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:25-26 |
 | CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | `crap_score`, "radon.complexity" | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:234-234 |
 | The MCP console entry point resolves through `agents_remember.mcp.__main__`. | "from .server import main" | mcp/src/agents_remember/mcp/__main__.py:5-5 |
-| MCP server payloads report the package-level `SERVER_VERSION`. | "SERVER_VERSION = version" | mcp/src/agents_remember/mcp/__init__.py:9-9 |
+| MCP server payloads report the package-level `SERVER_VERSION`. | "SERVER_VERSION = version(" | mcp/src/agents_remember/kernel/primitives/version.py:15-15 |
 | The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | `## Quickstart`, `## Install And Run` | mcp/README.md:15-48; mcp/README.md:66-114 |
 | `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | `runtime_install` | mcp/src/agents_remember/install/runtime.py:593-593 |
 | The release job builds the frontend, places the bundle, packages, and then verifies both distributions carry the bundle and its fingerprint sidecar. | "npm run build", "python scripts/sync-dashboard.py", "run: python -m build", "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:62-62; .github/workflows/publish-mcp-to-pypi.yml:71-71; .github/workflows/publish-mcp-to-pypi.yml:78-78; .github/workflows/publish-mcp-to-pypi.yml:94-94 |
@@ -148,6 +148,7 @@ the source rather than being repeated here; it is the same string
 
 ## Update History
 
+- 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-03T02:52:34+02:00 — W3-B04 curator: curated 12 table citations (12 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-07-31T16:45+02:00 — 260731-EFA-L2 (R13, supported-platform decision of 2026-07-31): added a
   `classifiers` block declaring Python 3.11/3.12/3.13 and the `POSIX :: Linux` / `MacOS` platforms,
@@ -214,3 +215,5 @@ the source rather than being repeated here; it is the same string
 - 2026-05-28T19:52+02:00: Updated after Pydantic and tiktoken became MCP runtime dependencies and Pyright joined the dev quality dependency group.
 - 2026-05-28T15:43+02:00: Updated while preparing MCP package release `0.2.0`, documenting package/server version alignment, and wiring the dedicated MCP README into package metadata. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-24T06:43+02:00: Created after the MCP package gained explicit development dependencies for the source quality suite.
+
+

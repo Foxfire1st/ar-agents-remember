@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/setup_progress.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                              |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Provider setup functions announce phases through `setup_progress_from(args)`. | `setup_progress_from` | mcp/src/agents_remember/providers/setup_common.py:25-33 |
-| The worktree launcher creates the file and finishes it from the setup payload. | `launch_provider_setup` | mcp/src/agents_remember/worktrees/modules/provider_async.py:72-120 |
+| The worktree launcher creates the file and finishes it from the setup payload. | `launch_provider_setup` | mcp/src/agents_remember/application/provider_runtime.py:73-121 |
 | Unit tests cover the event lifecycle, heartbeat, staleness, and projections. | `SetupProgressFileTests`, `ReadAndProjectionTests` | mcp/tests/test_setup_progress.py:45-143; mcp/tests/test_setup_progress.py:146-221 |
 
 ## Update History

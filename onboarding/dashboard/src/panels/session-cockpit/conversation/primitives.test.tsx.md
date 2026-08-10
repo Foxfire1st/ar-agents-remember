@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ the disclosure LOGIC is fully covered here.
 - cit:([`cap`], dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx:10-17) builds a `FeatureCapability` with a realistic long `reason` (the exact
   developer-observed jargon string) so the test proves the paragraph is NOT rendered inline.
 - cit:(["renders nothing when the capability is supported"], dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx:20-23) Case 1 renders nothing for a supported capability and asserts that the capability cue is absent.
-- cit:(["shows the short state word, not the full reason paragraph, and puts the reason in the tooltip"], dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx:25-34) Case 2 renders the one-word partial cue, keeps the reason out of visible text, and places it in the title while echoing `data-state`.
+- cit:(["shows the short state word"], dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx:25-34) Case 2 renders the one-word partial cue, keeps the reason out of visible text, and places it in the title while echoing `data-state`.
 - cit:(["prefixes the cue and the tooltip with a disambiguating label when given"], dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx:36-46) Case 3 prefixes the unavailable cue and title with the history label and reason.
 
 ### Invariants And Boundaries

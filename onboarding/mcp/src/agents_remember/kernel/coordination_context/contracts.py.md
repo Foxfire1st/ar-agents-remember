@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/contracts.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -64,9 +64,9 @@ No external documentation is needed for this package-local worktree contract ada
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Worktree contract parsing and task-root candidate logic live in the worktrees package. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:437-470 |
-| Alias-aware leaf enclosure lookup for explicit leaf ids lives in the dedicated leaf-ref resolver. | `resolve_leaf_enclosure_contract_for_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:181-206 |
-| Resolver assembly consumes the optional contract payload. | `resolve_coordination_context` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:151-164 |
+| Worktree contract parsing and task-root candidate logic live in the worktrees package. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
+| Alias-aware leaf enclosure lookup for explicit leaf ids lives in the dedicated leaf-ref resolver. | `resolve_leaf_enclosure_contract_for_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:175-200 |
+| Resolver assembly consumes the optional contract payload. | `resolve_coordination_context` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:148-164 |
 
 ## Cross-Repo References
 
@@ -81,6 +81,8 @@ No cross-repository evidence is needed for local contract fact loading.
 Contract lookup delegates task-name selection to `worktrees.task_resolver` and explicit leaf-id selection to `worktrees.leaf_refs`, first resolving active task roots outside `0_archive/` and then choosing a root series contract or alias-aware leaf enclosure contract as requested. Independently, the `worktree_name` fallback resolves a contract by its derived worktree-group folder when no task name is available; the two paths coexist (task-based selection wins, worktree-name is the fallback), and both honor the canonical `series-contract.md` filename and skip `0_archive/`.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 3 citation claims
   (Repo-Internal reference rows); scoped result 0 findings.

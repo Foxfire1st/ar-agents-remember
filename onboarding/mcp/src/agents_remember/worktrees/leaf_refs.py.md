@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/leaf_refs.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:20+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -106,14 +106,16 @@ walk. `repo_name` only shapes the internal qualified ids, never the returned doc
 | --- | --- | --- |
 | Task-root and raw contract path helpers imported by this resolver. | "def series_contract_path" | mcp/src/agents_remember/worktrees/task_resolver.py:47-47 |
 | Worktree start adapter returning doc ids or command refusals. | "def resolve_start_leaf_doc_id" | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:15-15 |
-| Worktree contract WRITES and the explicit `heal_contract_leaf_ids` sweep normalize legacy `leaf_id` values through this resolver; since 260712-PTS-L1 contract reads never call into this module. | "def heal_contract_leaf_ids" | mcp/src/agents_remember/worktrees/worktree_contract.py:480-480 |
-| The heal consumes `canonical_leaf_doc_ids` as its per-task-root cheap-skip index. | "canonical_leaf_doc_ids(contract.repo_name, task_root)" | mcp/src/agents_remember/worktrees/worktree_contract.py:517-517 |
-| Terminal serving adapter persists qualified catalog keys from this resolver. | "def resolve_catalog_leaf_key" | mcp/src/agents_remember/serving/leaf_ref_validation.py:18-18 |
-| `LeafAssignmentStatus` and `SpawnAgentSessionStatus` fold in the `LeafRefStatus` alias declared here rather than restating its two members. | "LeafAssignmentStatus = Literal["; "SpawnAgentSessionStatus = Literal[" | mcp/src/agents_remember/models/terminal.py:21-21; mcp/src/agents_remember/models/terminal.py:47-47 |
+| Worktree contract WRITES and the explicit `heal_contract_leaf_ids` sweep normalize legacy `leaf_id` values through this resolver; since 260712-PTS-L1 contract reads never call into this module. | "def heal_contract_leaf_ids" | mcp/src/agents_remember/worktrees/worktree_contract.py:478-478 |
+| The heal consumes `canonical_leaf_doc_ids` as its per-task-root cheap-skip index. | "canonical_leaf_doc_ids(contract.repo_name" | mcp/src/agents_remember/worktrees/worktree_contract.py:515-515 |
+| Terminal serving adapter persists qualified catalog keys from this resolver. | "def resolve_catalog_leaf_key" | mcp/src/agents_remember/serving/leaf_ref_validation.py:20-20 |
+| `LeafAssignmentStatus` and `SpawnAgentSessionStatus` fold in the `LeafRefStatus` alias declared here rather than restating its two members. | "LeafAssignmentStatus = Literal["; "SpawnAgentSessionStatus = Literal[" | mcp/src/agents_remember/models/terminal.py:19-19; mcp/src/agents_remember/models/terminal.py:45-45 |
 | `leaf_ref_refusal_payload` copies `LeafRefResolutionError.status` onto the terminal-tool refusal verbatim. | `leaf_ref_refusal_payload` | mcp/src/agents_remember/mcp/tools/leaf_ref.py:18-35 |
 | Focused resolver tests pin accepted forms, ambiguity, no-match candidates, missing optional master docs, schema-marked malformed doc failures, sibling artifact skips, read-path contract tolerance, and light-task indexing. | `LeafRefResolutionTests` | mcp/tests/test_leaf_ref_resolution.py:103-464 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 14 citation finding(s); scoped recheck clean.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_capabilities.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ plus transient discovery through that boundary.
 | The protocol, discovery, and launchable adapter ports consume `CapabilitySnapshot`, `LaunchKnobs`, and `SetResult`. | `HarnessProtocolAdapter`; `HarnessCapabilityDiscoverer`; `LaunchableHarnessProtocolAdapter` | mcp/src/agents_remember/serving/harness_control_adapter.py:32-59; mcp/src/agents_remember/serving/harness_control_adapter.py:62-65; mcp/src/agents_remember/serving/harness_control_adapter.py:78-88 |
 | The submission authority validates the exact `SET_ACCEPTANCE_VALUES` vocabulary and the ok/effective-value relationship before releasing a setter result to its waiter. | `_apply_set_result_locked`; `_validate_set_result` | mcp/src/agents_remember/serving/harness_submission_authority.py:856-882; mcp/src/agents_remember/serving/harness_submission_authority.py:1010-1023 |
 | The launch boundary consumes owned selectors before token-free discovery and runtime construction. | `validate_launch_selection`; `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:78-119; mcp/src/agents_remember/serving/harness_launch.py:173-206 |
-| The exact-session client uses the strict inverse parsers for live advertise and set responses. | `read_control_capabilities`; `_set_control_value` | mcp/src/agents_remember/serving/harness_control_client.py:144-151; mcp/src/agents_remember/serving/harness_control_client.py:596-622 |
+| The exact-session client uses the strict inverse parsers for live advertise and set responses. | `read_control_capabilities`; `_set_control_value` | mcp/src/agents_remember/serving/harness_control_client.py:149-156; mcp/src/agents_remember/serving/harness_control_client.py:584-610 |
 | The normalized capability and setter payloads have strict inverse parsers. | `capability_snapshot_from_json`; `set_result_from_json` | mcp/src/agents_remember/serving/harness_capabilities.py:228-246; mcp/src/agents_remember/serving/harness_capabilities.py:249-265 |
 | The daemon emits this unchanged normalized shape for both pre-session and live capability reads. | `api_harness_capabilities`; `api_terminal_capabilities` | mcp/src/agents_remember/serving/harness_control_api.py:231-253; mcp/src/agents_remember/serving/harness_control_api.py:255-265 |
 | Claude produces native model/effort flags. | `claude_launch_knobs` | mcp/src/agents_remember/serving/harness_control_claude.py:128-142 |
@@ -107,7 +107,7 @@ No external repository or ACP transport dependency is implemented by the normali
 - 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations. The setter
   row pointed at `harness_control_queue.py` L476-L508, but that module is now a 227-line facade
-  whose `set_model`/`set_effort` cit:([`set_model`, `set_effort`], mcp/src/agents_remember/serving/harness_submission_authority.py:294-295; mcp/src/agents_remember/serving/harness_submission_authority.py:297-298) only delegate — the validation moved with the rest of
+  whose `set_model`/`set_effort` cit:([`set_model`, `set_effort`], mcp/src/agents_remember/serving/harness_submission_authority.py:296-297; mcp/src/agents_remember/serving/harness_submission_authority.py:299-300) only delegate — the validation moved with the rest of
   the ordering truth into `harness_submission_authority.py`. Repointed the link and the range to
   `_apply_set_result_locked` cit:([`_apply_set_result_locked`, `_validate_set_result`], mcp/src/agents_remember/serving/harness_submission_authority.py:856-882; mcp/src/agents_remember/serving/harness_submission_authority.py:1010-1023), which is where `SET_ACCEPTANCE_VALUES` membership and the
   `ok`/`effective_value` coherence per acceptance tier are actually enforced, and renamed the row's

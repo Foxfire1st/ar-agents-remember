@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_code_quality_memory_cap.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,8 +65,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The planning functions under test. | `plan_capped_command`, `systemd_scope_available`, `with_self_cap` | mcp/src/agents_remember/code_quality/memory_cap.py:94-135; mcp/src/agents_remember/code_quality/memory_cap.py:52-71; mcp/src/agents_remember/code_quality/memory_cap.py:79-93 |
-| The wrapper main path that applies the rlimit and names the policy. | `main` | mcp/src/agents_remember/code_quality/check.py:846-888 |
+| The planning functions under test. | `plan_capped_command`, `systemd_scope_available`, `with_self_cap` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:94-135; mcp/src/agents_remember/kernel/primitives/memory_cap.py:52-71; mcp/src/agents_remember/kernel/primitives/memory_cap.py:79-93 |
+| The wrapper main path that applies the rlimit and names the policy. | `main` | mcp/src/agents_remember/code_quality/check.py:861-903 |
 | The gate's cap-kill naming (returncode -9 / shell 137). | `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:249-275 |
 
 ## Cross-Repo References
@@ -78,6 +78,8 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: created this file-level
   onboarding card for the new memory-cap suite; content derived from the

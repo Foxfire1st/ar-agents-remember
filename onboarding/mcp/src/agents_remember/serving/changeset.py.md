@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-01T08:46+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`     |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`     |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -164,11 +164,11 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). | `FileScope`; `run_scoped`; `language_for` | mcp/src/agents_remember/serving/scope.py:65-67; mcp/src/agents_remember/serving/scope.py:96-107; mcp/src/agents_remember/serving/scope.py:207-227 |
+| The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). | `FileScope`; `run_scoped`; `language_for` | mcp/src/agents_remember/serving/scope.py:71-73; mcp/src/agents_remember/serving/scope.py:102-113; mcp/src/agents_remember/serving/scope.py:216-236 |
 | The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. | `changed_files_with_counts`; `branch_exists`; `commit_text_or_none` | mcp/src/agents_remember/worktrees/modules/git.py:33-34; mcp/src/agents_remember/worktrees/modules/git.py:105-108; mcp/src/agents_remember/worktrees/modules/git.py:159-198 |
 | The sidecar-pairing helpers (`route_sidecar_status`, `confine_rel`) reused for `hasSidecar` + confinement. | `route_sidecar_status`; `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47; mcp/src/agents_remember/kernel/sidecar_pairing.py:50-65 |
-| The persisted contract model (`WorktreeContract`) and loader (`load_contract`) behind master/leaf accumulation, with leaf-id normalization via `slugify`. | `WorktreeContract`; `load_contract`; `slugify` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-472; mcp/src/agents_remember/worktrees/task_resolver.py:18-23 |
-| The app factory that calls `register_changeset_routes` before `mount_static`. | "def register_changeset_routes(app: FastAPI, config: McpRuntimeConfig) -> None:" | mcp/src/agents_remember/serving/changeset.py:501-501 |
+| The persisted contract model ("def load_contract(path: Path) -> WorktreeContract:") and loader ("def load_contract(path: Path) -> WorktreeContract:") behind master/leaf accumulation, with leaf-id normalization via "slug = slugify(worktree_name)". | "def load_contract(path: Path) -> WorktreeContract:"; "def load_contract(path: Path) -> WorktreeContract:"; "slug = slugify(worktree_name)" | mcp/src/agents_remember/worktrees/worktree_contract.py:233-472; mcp/src/agents_remember/worktrees/task_resolver.py:18-23 |
+| The app factory that calls `register_changeset_routes` before `mount_static`. | "def register_changeset_routes(app: FastAPI" | mcp/src/agents_remember/serving/changeset.py:503-503 |
 | The test suite for this module. | `TaskChangesetTests` | mcp/tests/test_serving_changeset.py:179-259 |
 | The declared response models and the shared `SCOPED_READ_RESPONSES` table these three routes name (`TaskChangeSet`, `LeafChangeSet`, `FileDiff`, `MasterChangeSet`). | `TaskChangeSet`; `LeafChangeSet`; `MasterChangeSet`; `FileDiff`; `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:799-805; mcp/src/agents_remember/serving/response_contract.py:808-811; mcp/src/agents_remember/serving/response_contract.py:821-828; mcp/src/agents_remember/serving/response_contract.py:837-845; mcp/src/agents_remember/serving/response_contract.py:1068-1074 |
 | The suite that enforces the declarations by driving each route and validating the real body. | `test_changeset_routes_conform` | mcp/tests/test_serving_response_conformance_cases_2.py:40-64 |
@@ -185,6 +185,8 @@ binds it with FastAPI `Depends()`, so the wire query parameters are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:46+02:00 — 260731-EFA-L6 S18-B17 curator: rewrote the three superseded `(L…)`
   route-declaration cites as cit forms with exact decorator+handler extents, repaired the eight

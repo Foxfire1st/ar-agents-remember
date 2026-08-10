@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_ipc.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ checks existence, size, and sha256 against the staged bytes. Asset bytes never c
 only verified references ride submit.
 
 The multiplexing extension keeps the same additive posture without adding an action: `_evidence_native_page`
-now forwards the optional `threadId` payload key straight to cit:([`thread_id`], mcp/src/agents_remember/serving/harness_control_ipc.py:395-395)
+now forwards the optional `threadId` payload key straight to cit:([`thread_id`], mcp/src/agents_remember/serving/harness_control_ipc.py:399-399)
 through `_optional_text`. When the key is absent the call is byte-identical to before and reads the
 parent/session thread; when present it selects that (sub-agent) multiplexed thread — the codex
 app-server serves `thread/read` for every multiplexed thread, and adapters that do not multiplex
@@ -122,11 +122,11 @@ parameter, whose `None` default keeps the parent-thread read byte-identical.
 | --- | --- | --- |
 | The bridge exposes live advertise and ordered setter operations only while running. | `submissions` | mcp/src/agents_remember/serving/harness_control_bridge.py:323-332 |
 | The bridge's `native_page` accepts the additive `thread_id` selector (`None` = parent thread) and forwards it to multiplexing adapters. | `native_page` | mcp/src/agents_remember/serving/harness_control_bridge.py:226-271 |
-| The blocking client validates exact identity and distinguishes pre-write from post-write loss. | "before any request bytes were accepted" | mcp/src/agents_remember/serving/harness_control_client.py:587-587 |
+| The blocking client validates exact identity and distinguishes pre-write from post-write loss. | "before any request bytes were accepted" | mcp/src/agents_remember/serving/harness_control_client.py:575-575 |
 | IPC tests pin capability actions, setters, same-id submit retention, response loss, and reconciliation. | `test_exact_session_ipc_advertises_and_returns_set_acceptance` | mcp/tests/test_harness_control_ipc.py:148-181 |
 | Evidence contract tests pin the three additive actions over a real socket: pages, continuation, cross-domain typed rejection, epoch mismatch, and provenance. | `test_evidence_action_round_trip_with_epoch_and_paging` | mcp/tests/test_harness_control_evidence_ipc.py:57-89 |
-| The channel bounds and the `InterruptResult`/`OperationTimeline` DTOs these actions serialize. | `MAX_OPERATION_TIMELINE_PAGE` | mcp/src/agents_remember/serving/harness_control_models.py:113-113 |
-| The bridge's epoch-guarded interrupt dispatch and timeline delegation behind the two additive actions. | "interrupt adapter must not mint the bridge epoch" | mcp/src/agents_remember/serving/harness_control_bridge.py:299-299 |
+| The channel bounds and the `InterruptResult`/`OperationTimeline` DTOs these actions serialize. | `MAX_OPERATION_TIMELINE_PAGE` | mcp/src/agents_remember/serving/harness_control_models.py:63-63 |
+| The bridge's epoch-guarded interrupt dispatch and timeline delegation behind the two additive actions. | "interrupt adapter must not mint the bridge epoch" | mcp/src/agents_remember/serving/harness_control_bridge.py:303-303 |
 | Contract tests pin the asset schema/traversal/verification batteries, the two actions end-to-end over a real socket, and the typed confinement refusals. | `test_digest_and_size_verification` | mcp/tests/test_harness_control_plane_channels.py:167-216 |
 
 ## Cross-Repo References
@@ -155,7 +155,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 The private IPC preserves child-history semantics in both directions.
 `NativeHistoryLimitExceeded` serializes status, stable code, actual bytes, and limit bytes;
 `NativeHistoryUnavailable` serializes status and code. The inverse decoder requires the same
-typed fields before reconstructing either error cit:(["control request failed"], mcp/src/agents_remember/serving/harness_control_ipc.py:605-605). This makes the selected-child
+typed fields before reconstructing either error cit:(["control request failed"], mcp/src/agents_remember/serving/harness_control_ipc.py:609-609). This makes the selected-child
 boundary recoverable across Unix IPC without converting it into an undifferentiated
 `HarnessControlError`.
 
@@ -199,7 +199,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   control IPC. Verification metadata remains pinned while uncommitted.
 
 - 2026-07-26T15:37 — 260718-CHATS-L7 curator: documented the additive optional `threadId` payload
-  key on `evidence-native-page` (`_evidence_native_page`, cit:([`thread_id`], mcp/src/agents_remember/serving/harness_control_ipc.py:395-395)) — the multiplexed-thread
+  key on `evidence-native-page` (`_evidence_native_page`, cit:([`thread_id`], mcp/src/agents_remember/serving/harness_control_ipc.py:399-399)) — the multiplexed-thread
   selector forwarded to `bridge.native_page`; absent = parent/session thread byte-identical to
   before, no new action, protocol unchanged. Added the additive/absent-means-parent invariant and
   refreshed the bridge (advertise L413-L425, native_page L209-L246, interrupt/timeline L264-L328),

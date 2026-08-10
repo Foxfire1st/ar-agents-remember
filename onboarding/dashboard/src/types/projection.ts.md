@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:45+02:00                           |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -256,9 +256,9 @@ are proven by repository source and tests.
 | `TerminalState`, `ActiveState`, and `ACTIVE_STATES = LIVE_STATES` are derived from the live/terminal partition. | `TerminalState`, `ActiveState`, `ACTIVE_STATES` | dashboard/src/types/projection.ts:17-17; dashboard/src/types/projection.ts:19-19; dashboard/src/types/projection.ts:21-21 |
 | The generated compile-time partition declarations `FiledOnce<S extends never>` and `StatesAreFiledOnce = FiledOnce<ActiveState & TerminalState>`. | `FiledOnce`, `StatesAreFiledOnce` | dashboard/src/types/projection.ts:23-23; dashboard/src/types/projection.ts:25-25 |
 | Generated `PHASES` tuple and derived `Phase` type. | `PHASES`, `Phase` | dashboard/src/types/projection.ts:27-27; dashboard/src/types/projection.ts:29-29 |
-| The served docstring describes the persisted/served contract, camelCase wire convention, and `extra="forbid"` boundary. | `projection` | mcp/src/agents_remember/observer/projection.py:1-9 |
+| The served docstring describes the persisted/served contract, camelCase wire convention, and `extra="forbid"` boundary. | "The projection schema: the resolved state the reducer produces." | mcp/src/agents_remember/observer/projection.py:1-9 |
 | The partition helper this file's compile-time check mirrors: `check_state_partition` and the `LifecycleVocabularyError` it raises. | `LifecycleVocabularyError`, `check_state_partition` | mcp/src/agents_remember/observer/lifecycle_state.py:30-38; mcp/src/agents_remember/observer/lifecycle_state.py:73-98 |
-| The server-side vocabulary writes `LiveState` and `TerminalState` as halves, composes `State`, and builds phase/state tuples through the partition check. | `LiveState`, `TerminalState`, `State`, `Phase`, `STATES`, `LIVE_STATES`, `TERMINAL_STATES` | mcp/src/agents_remember/observer/lifecycle_state.py:109-109; mcp/src/agents_remember/observer/lifecycle_state.py:118-118; mcp/src/agents_remember/observer/lifecycle_state.py:120-120; mcp/src/agents_remember/observer/lifecycle_state.py:124-131; mcp/src/agents_remember/observer/lifecycle_state.py:133-139 |
+| The server-side vocabulary writes `LiveState` and `TerminalState` as halves, composes `State`, and builds phase/state tuples through the partition check (halves/state/phase declared in `models/lifecycle.py` since L9; tuples stay in observer). | "LiveState = Literal["; "TerminalState = EndOutcome"; "State = Literal[LiveState"; "Phase = Literal["; "STATES: tuple[State"; "LIVE_STATES: tuple[LiveState"; "TERMINAL_STATES: frozenset[str] = frozenset(vocabulary_names(" | mcp/src/agents_remember/models/lifecycle.py:16-19; mcp/src/agents_remember/models/lifecycle.py:20-27; mcp/src/agents_remember/observer/lifecycle_state.py:102-104; mcp/src/agents_remember/observer/lifecycle_state.py:105-107; mcp/src/agents_remember/observer/lifecycle_state.py:108-108 |
 | The server-side mirror comment records the same partition shape and the runtime duplicate-within-half limit. | `ACTIVE_STATES` | mcp/src/agents_remember/observer/projection.py:236-236 |
 | The server bucket-name rule uses the preserved-tail camel transform and rejects non-injective mappings. | `state_count_field`, `state_count_fields`, `STATE_COUNT_FIELDS` | mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:257-279; mcp/src/agents_remember/observer/projection.py:282-282 |
 | `Camel<S>`, `StateCountField<S>`, `LifecycleStateCounts`, `stateCountField`, `lifecycleStateCounts`, and `Metrics extends LifecycleStateCounts` derive one number per live state. | `Camel`, `StateCountField`, `LifecycleStateCounts`, `stateCountField`, `lifecycleStateCounts`, `Metrics` | dashboard/src/types/projection.ts:288-290; dashboard/src/types/projection.ts:292-292; dashboard/src/types/projection.ts:294-294; dashboard/src/types/projection.ts:296-300; dashboard/src/types/projection.ts:302-311; dashboard/src/types/projection.ts:313-317 |

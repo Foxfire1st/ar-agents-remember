@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The kind switch and accessible-name helper. | `itemAccessibleName`, `ConversationItemViewImpl` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:15-42; dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:44-65 |
-| The item block-grammar renderers this dispatches to. | "export function MessageItem({ item }: { item: ConversationItem }) {"; "export function ThinkingItem({ item, animated = false }: { item: ConversationItem; animated?: boolean }) {"; "export function InteractionItem({ item }: { item: ConversationItem }) {"; "export function TurnResultItem({ item }: { item: ConversationItem }) {" | dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-73; dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:104-104; dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:40-40; dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx:46-46 |
+| The item block-grammar renderers this dispatches to. | "export function MessageItem({ item }: { item: ConversationItem }) {"; "export function ThinkingItem({ item"; "export function InteractionItem({ item }: { item: ConversationItem }) {"; "export function TurnResultItem({ item }: { item: ConversationItem }) {" | dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-73; dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:104-104; dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:40-40; dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx:46-46 |
 | The `ConversationItem` wire type it switches on. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
 | The feed that mounts one dispatcher per article and reads the accessible name. | "export function ConversationTimeline({" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-56 |
 

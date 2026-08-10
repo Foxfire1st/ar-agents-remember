@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -182,7 +182,7 @@ advertisement contract.
 | The Claude catalog parser validates the native response, exact unique model keys, model-specific effort consistency, disabled state, and current-model membership. | `parse_list_models_response`; `_parse_model`; `_require_unique_model_keys`; "def _select_current_model" | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32; mcp/src/agents_remember/serving/claude_stream_capabilities.py:50-75; mcp/src/agents_remember/serving/claude_stream_capabilities.py:78-83; mcp/src/agents_remember/serving/claude_stream_capabilities.py:86-110 |
 | The adapter negotiates startup then catalog before readiness, isolates only transient discovery, force-stops that probe, and retains cached advertisement for started sessions. | `start`; `discover`; `advertise` | mcp/src/agents_remember/serving/harness_control_claude.py:283-318; mcp/src/agents_remember/serving/harness_control_claude.py:327-341; mcp/src/agents_remember/serving/harness_control_claude.py:343-350 |
 | The discovery argv builder removes only accepted pre-separator MCP selector spellings, preserves unrelated arguments/suffixes, and adds one strict empty set; the ordinary stream argv builder stays separate. | `build_claude_discovery_argv`; `build_claude_stream_argv` | mcp/src/agents_remember/serving/claude_stream_protocol.py:88-113; mcp/src/agents_remember/serving/claude_stream_protocol.py:116-145 |
-| Native startup frames define the exact `list_models` control request and a synthetic non-querying bootstrap. | `list_models`; `bootstrap_message`; "\"shouldQuery\": False" | mcp/src/agents_remember/serving/claude_stream_protocol.py:160-160; mcp/src/agents_remember/serving/claude_stream_protocol.py:206-216 |
+| Native startup frames define the exact `list_models` control request and a synthetic non-querying bootstrap. | `list_models`; `bootstrap_message`; "\"shouldQuery\": False" | mcp/src/agents_remember/serving/claude_stream_protocol.py:162-162; mcp/src/agents_remember/serving/claude_stream_protocol.py:208-218 |
 | Claude setters validate the dynamic catalog/model gate, send structured commands, promote only echo-verified results, and derive exact model terminal aliases from the selected catalog row. | `set_model`; `set_effort`; `_submit_set_command`; `_model_terminal_results` | mcp/src/agents_remember/serving/harness_control_claude.py:352-376; mcp/src/agents_remember/serving/harness_control_claude.py:402-442; mcp/src/agents_remember/serving/harness_control_claude.py:686-707; mcp/src/agents_remember/serving/harness_control_claude.py:378-400 |
 | State submission retains canonical command replay text, waits for a terminal result, and marks timed-out commands abandoned. | `submit`; `wait_terminal`; `abandon_submission` | mcp/src/agents_remember/serving/claude_stream_state.py:163-211; mcp/src/agents_remember/serving/claude_stream_state.py:225-241; mcp/src/agents_remember/serving/claude_stream_state.py:243-251 |
 | Replayed-user handling requires exact retained correlation, session, and body; completed abandoned replays are ignored rather than requeued. | `_handle_replayed_user`; `_handle_abandoned_replay`; `_require_faithful_replay` | mcp/src/agents_remember/serving/claude_stream_state.py:624-670; mcp/src/agents_remember/serving/claude_stream_state.py:672-718; mcp/src/agents_remember/serving/claude_stream_state.py:720-738 |
@@ -214,6 +214,8 @@ more than once restores **one** turn, not one per replay. Replay is idempotent p
 duplicated late frame cannot inflate the transcript.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

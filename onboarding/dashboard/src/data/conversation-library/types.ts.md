@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation-library/types.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -92,9 +92,9 @@ reviewed task evidence for any current behavioral claim.
 | The client that returns these types as or-null reads / typed open evidence. | `fetchLibraryList`; `openConversation` | dashboard/src/data/conversation-library/client.ts:36-54; dashboard/src/data/conversation-library/client.ts:127-135 |
 | The store that holds the paged list, preview, and open-operation state over these types. | `conversationLibraryStore` | dashboard/src/data/conversation-library/store.ts:77-84 |
 | The native library route authority these types mirror. | `api_library_list` | mcp/src/agents_remember/serving/conversation/library/api.py:109-130 |
-| The wire model authority these types mirror. | "class ConversationLibraryPage(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_status.py:413-413 |
-| Server-side `ConversationLibraryAgentRow` / `agents` / `agents_note` producer these types mirror. | "class ConversationLibraryAgentRow(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_status.py:375-375 |
-| The Claude harness lister's unavailable-agent note. | `_AGENTS_UNAVAILABLE_NOTE` | mcp/src/agents_remember/serving/conversation/library/claude.py:75-77 |
+| The wire model authority these types mirror (moved to `models/conversations/` by L9). | "class ConversationLibraryPage(WireModel):" | mcp/src/agents_remember/models/conversations/history.py:86-86 |
+| Server-side `ConversationLibraryAgentRow` / `agents` / `agents_note` producer these types mirror. | "class ConversationLibraryAgentRow(WireModel):" | mcp/src/agents_remember/models/conversations/history.py:48-48 |
+| The Claude harness lister's unavailable-agent note. | `_AGENTS_UNAVAILABLE_NOTE` | mcp/src/agents_remember/serving/conversation/library/claude.py:83-85 |
 | The Codex harness lister's degraded/truncated agent-page note. | `_agent_page` | mcp/src/agents_remember/serving/conversation/library/codex.py:477-500 |
 
 ## Cross-Repo References

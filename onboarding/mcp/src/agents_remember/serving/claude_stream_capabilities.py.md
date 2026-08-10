@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/claude_stream_capabilities.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,8 +71,8 @@ testable and token-free.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The protocol builds the correlated `list_models` control request. | `list_models` | mcp/src/agents_remember/serving/claude_stream_protocol.py:156-160 |
-| Startup passes the `system/init` current model into this parser before returning the catalog. | `_negotiate`; `negotiate_claude_catalog`; `parse_list_models_response` | mcp/src/agents_remember/serving/harness_control_claude.py:176-223; mcp/src/agents_remember/serving/claude_stream_startup.py:84-111; mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32 |
+| The protocol builds the correlated `list_models` control request. | `list_models` | mcp/src/agents_remember/serving/claude_stream_protocol.py:162-162 |
+| Startup passes the `system/init` current model into this parser before returning the catalog. | "async def _negotiate(self"; "capabilities = await negotiate_claude_catalog("; "capabilities = parse_list_models_response(" | mcp/src/agents_remember/serving/harness_control_claude.py:176-223; mcp/src/agents_remember/serving/claude_stream_startup.py:84-111; mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32 |
 
 ## Cross-Repo References
 

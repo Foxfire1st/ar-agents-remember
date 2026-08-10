@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/context_common.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T07:05+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                              |
 
 ## Governing Overview
@@ -41,6 +41,8 @@ It defines `ContextProviderError` (subclass of `AgentsRememberError`), `to_conta
 | GrepAI context module imports shared error, path, pin, and removal helpers from here. | "from agents_remember.providers.context_common import" | mcp/src/agents_remember/providers/grepai/context/layout.py:10-10 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 3 initial citation findings (1 anchor, 0 prose, 2 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 

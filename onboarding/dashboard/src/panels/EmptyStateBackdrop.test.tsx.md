@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EmptyStateBackdrop.test.tsx` |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T17:40+02:00                             |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`                                          |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                          |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -20,7 +20,7 @@ Vitest + `@testing-library/react` render test pinning the shared empty-state bac
 (slice 07b polish): the empty-state **message always shows**, and the faint boomerang `<video>` is an
 **effects-gated** atmosphere — present as a direct child of `empty-backdrop` with the given `src` + `loop` +
 `aria-hidden` when effects are on, absent entirely under calm-cockpit / reduced-motion while the
-message still renders. It guards the "pure atmosphere, never state / never lost in the calm cockpit"
+message still renders. It guards the "pure atmosphere"
 posture by construction.
 
 ## Code Commentary

@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-09T16:43+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastUpdated | 2026-08-01T09:10+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 
 ## What This Area Is
 
@@ -119,13 +119,6 @@ in the sibling `projectors/` route.
 
 ### Authorized page
 
-**260713-TES-L2 terminal precedence.** `status.py`'s `snapshot_seat_turn_state` accepts a
-lifted `TurnTerminalEvidence` and settles the seat state from the canonical terminal outcome
-(interrupted → `interrupted`, failed → `failed`, else `settling`) instead of the snapshot's own
-turn classification for that observation; the module-level `_terminal_turn_state` is shared with
-`ConversationStatusService`. The orchestration seat projection therefore distinguishes done from
-interrupted at seat granularity (G1).
-
 1. Authorization + epoch verification; session resolution fails typed (404/409/503) before any
    projection work.
 2. `before` page cursor decodes against the authorized identity (cross-principal/session 403,
@@ -234,13 +227,13 @@ engine/store and one over a real socket.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The request dependencies are the only consumption seam the handlers use. | `get_conversation_runtime`; `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The validated IPC reads are the only substrate channels polled. | `read_control_snapshot`; `read_control_capabilities`; `read_submission_authority`; `read_submission_status`; `read_control_transcript`; `read_control_evidence`; `read_control_native_page`; `read_submission_provenance` | mcp/src/agents_remember/serving/harness_control_client.py:119-131; mcp/src/agents_remember/serving/harness_control_client.py:134-141; mcp/src/agents_remember/serving/harness_control_client.py:144-148; mcp/src/agents_remember/serving/harness_control_client.py:151-169; mcp/src/agents_remember/serving/harness_control_client.py:330-343; mcp/src/agents_remember/serving/harness_control_client.py:346-366; mcp/src/agents_remember/serving/harness_control_client.py:369-401; mcp/src/agents_remember/serving/harness_control_client.py:404-422 |
-| The evidence/native-page/provenance products define the polled shapes. | `EvidenceFrame`; `EvidencePage`; `NativeEvidenceFrame`; `NativeEvidencePage`; `SubmissionProvenance`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/serving/harness_control_models.py:455-478; mcp/src/agents_remember/serving/harness_control_models.py:481-489; mcp/src/agents_remember/serving/harness_control_models.py:492-500; mcp/src/agents_remember/serving/harness_control_models.py:503-510; mcp/src/agents_remember/serving/harness_control_models.py:513-524; mcp/src/agents_remember/serving/harness_control_models.py:527-530 |
-| Orchestration's delegated seat projection consumes the canonical classification. | "def snapshot_turn_state("; "def snapshot_seat_turn_state(" | mcp/src/agents_remember/serving/hosted_control_projection.py:79-104; mcp/src/agents_remember/serving/conversation/active/status.py:205-233 |
+| The validated IPC reads are the only substrate channels polled. | "def read_control_snapshot(entry: ControlledSession) -> AdapterSnapshot:  # pragma: no cover"; "def read_control_capabilities(entry: ControlledSession) -> CapabilitySnapshot:  # pragma: no cover"; "def read_submission_authority(self"; "def read_submission_status("; "def read_control_transcript(  # pragma: no cover"; "def read_control_evidence("; "def read_control_native_page(  # pragma: no cover"; "        return read_submission_provenance(" | mcp/src/agents_remember/serving/harness_control_client.py:133-133; mcp/src/agents_remember/serving/harness_control_client.py:149-149; mcp/src/agents_remember/serving/harness_control_client.py:642-642; mcp/src/agents_remember/serving/harness_control_client.py:169-169; mcp/src/agents_remember/serving/harness_control_client.py:335-335; mcp/src/agents_remember/serving/harness_control_client.py:351-351; mcp/src/agents_remember/serving/harness_control_client.py:375-375; mcp/src/agents_remember/serving/harness_control_client.py:693-693 |
+| The evidence/native-page/provenance products define the polled shapes. | `EvidenceFrame`; `EvidencePage`; `NativeEvidenceFrame`; `NativeEvidencePage`; `SubmissionProvenance`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/models/conversations/control_wire.py:267-278; mcp/src/agents_remember/models/conversations/control_wire.py:281-284; mcp/src/agents_remember/models/conversations/evidence.py:79-102; mcp/src/agents_remember/models/conversations/evidence.py:105-113; mcp/src/agents_remember/models/conversations/evidence.py:116-124; mcp/src/agents_remember/models/conversations/evidence.py:127-134 |
+| Orchestration's delegated seat projection consumes the canonical classification. | "def snapshot_turn_state("; "return snapshot_seat_turn_state(snapshot" | mcp/src/agents_remember/serving/hosted_control_projection.py:79-79; mcp/src/agents_remember/serving/hosted_control_projection.py:105-105 |
 | The foundation pin asserts exactly the three owned active routes (page, events, selected-child history) by exact path/method set. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
-| The declared response shapes and the cursor-aware refusal table the three routes spread. | `conversation_page`; `hydrate_agent_history`; `conversation_events`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/active/api.py:126-235; mcp/src/agents_remember/serving/conversation/response_contract.py:113-122 |
+| The declared response shapes and the cursor-aware refusal table the three routes spread. | "async def conversation_page("; "async def hydrate_agent_history("; "async def conversation_events("; "response_model=ConversationPage" | mcp/src/agents_remember/serving/conversation/active/api.py:126-235; mcp/src/agents_remember/serving/conversation/response_contract.py:113-122 |
 | `CONVERSATION_RESPONSES` (the control table plus the two cursor refusals) and `AgentHistoryHydrated`, the model the history route's assembled 200 body had never had. | `AgentHistoryHydrated`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:733-733; onboarding/mcp/tests/overview.md:735-737 |
+| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:671-671; onboarding/mcp/tests/overview.md:673-675 |
 
 ## Cross-Repo References
 
@@ -410,15 +403,13 @@ event loop, where a lock wait parked the whole server in the 2026-08-05 ABBA inc
 singleflight replacement semantics, epoch verification, and identity construction below the
 offload are untouched.
 
+## 260731-EFA-L9 Route Impact — Contract Imports Moved
+
+The active conversation routes now import the wire contracts from `models/conversations/` (moved from the serving monolith by L9) and consume the canonical ports from `serving/ports.py`. Route behavior is unchanged.
+
 ## Update History
 
-- 2026-08-09T16:43+02:00 — 260713-TES-L5 hotfix curator: refreshed the active-serving test-route
-  citation after the new native-ingestion suite moved the proving overview paragraph.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: recorded the terminal-precedence
-  parameter on the canonical seat projection (status authority + orchestration delegation).
-  Verification metadata pinned until closeout stamps the 260713-TES-L2 commit.
-- 2026-08-08T22:45+02:00 — 260713-TES-L1 completion round 2 (curator): refreshed citation ranges and supervisor -> agent-notifier wording in this route overview body; no route-shape change. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 
 - 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the offloaded projector resolution; singleflight/epoch/identity semantics unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-08-03T05:21:55+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 8 table citations and normalized 8 source paths; retried the focused-suite claim with four unique behavioral literals from `onboarding/mcp/tests/overview.md`, and the frozen stale `:1-1` bridge generated `onboarding/mcp/tests/overview.md:668-668; onboarding/mcp/tests/overview.md:670-672`. The immediate exact check returned zero findings; the two unchanged ambiguous rows are recorded in the batch report.

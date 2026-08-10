@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/conversation/agents.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -92,10 +92,10 @@ reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The wire types this module reads (`ConversationAgentRef`/`ConversationAgentStatus`, `ConversationItem.agent`). | `ConversationAgentRef`; `ConversationAgentStatus`; `ConversationItem` | dashboard/src/data/conversation/types.ts:140-146; dashboard/src/data/conversation/types.ts:148-156; dashboard/src/data/conversation/types.ts:158-176 |
-| The store whose `agentFocusBySession` this module's `effectiveAgentFocus` revalidates. | "agentFocusBySession: Record<string, string>;" | dashboard/src/data/conversation/store.ts:61-61; dashboard/src/data/conversation/store.ts:87-87; dashboard/src/data/conversation/store.ts:127-130 |
+| The store whose `agentFocusBySession` this module's `effectiveAgentFocus` revalidates. | "agentFocusBySession: Record<string" | dashboard/src/data/conversation/store.ts:61-61; dashboard/src/data/conversation/store.ts:87-87; dashboard/src/data/conversation/store.ts:127-130 |
 | The codex roster mint: one `codex-agent-<threadId>` notice/system item per agent, upserted across the lifecycle, never optimistic. |"def _roster_item("; "item_id=f\"codex-agent-{thread_id}\","|mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:103-103; mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:120-120|
-| The claude roster mint: `claude-agent-<taskId>` from the task_* frames (with the join-key tool upsert), terminal summary as a `summary` TextBlock. | `_task_lifecycle_blocks`; "summary" | mcp/src/agents_remember/serving/conversation/projectors/claude.py:496-511 |
-| The surface that cycles/filters by this model (ArrowLeft/Right, Esc, focus bar). | "cycleAgentFocus," | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:20-20; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:208-216 |
+| The claude roster mint: `claude-agent-<taskId>` from the task_* frames (with the join-key tool upsert), terminal summary as a "summary: str" TextBlock. | "def _task_lifecycle_blocks("; "summary: str" | mcp/src/agents_remember/serving/conversation/projectors/claude.py:496-511 |
+| The surface that cycles/filters by this model (ArrowLeft/Right, Esc, focus bar). | "cycleAgentFocus" | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:20-20; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:208-216 |
 | The roster strip rendering `ConversationAgentView` rows. | "import type { ConversationAgentView } from \"../../../data/conversation/agents\";" | dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:18-19 |
 | The agent badge rendering `agentLabel`. | `agentLabel` | dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-81 |
 | The unit pins for every rule above. | `isAgentRosterItem`; `deriveAgents`; `cycleAgentFocus` | dashboard/src/data/conversation/agents.test.ts:53-60; dashboard/src/data/conversation/agents.test.ts:108-119; dashboard/src/data/conversation/agents.test.ts:141-150 |

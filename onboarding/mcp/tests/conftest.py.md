@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/conftest.py`                    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T16:20+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 
 `conftest.py` provides session-wide pytest bootstrap that pins imports to the candidate checkout,
 scrubs ambient Git repository selection before fixtures run, and supplies fallback commit identity
-for throwaway repositories. Its autouse cit:([`reject_owned_global_state_leaks`], mcp/tests/conftest.py:78-89) fixture snapshots the explicit owned-global register,
+for throwaway repositories. Its autouse cit:([`reject_owned_global_state_leaks`], mcp/tests/conftest.py:103-114) fixture snapshots the explicit owned-global register,
 restores every registered value after each test, and fails the leaking test with the complete list of
 changed globals.
 
@@ -32,7 +32,7 @@ the current worktree's `mcp/src` first on `sys.path`. It imports
 the process environment before a fixture can spawn Git. It then uses `setdefault` for test-only
 author/committer identity so an explicit caller identity remains authoritative.
 
-**cit:([`reject_owned_global_state_leaks`; `OWNED_MUTABLE_STATES`; `restore_owned_mutable_state`], mcp/tests/conftest.py:78-89; mcp/tests/_global_state.py:33-39; mcp/tests/_global_state.py:46-54) — the autouse guard and its explicit ownership register.**
+**cit:([`reject_owned_global_state_leaks`; `OWNED_MUTABLE_STATES`; "from _global_state import restore_owned_mutable_state"], mcp/tests/_global_state.py:33-39; mcp/tests/conftest.py:66-66; mcp/tests/conftest.py:103-114) — the autouse guard and its explicit ownership register.**
 The register is deliberately not a repository scan: a row is added only after a mutable module
 global has been proved capable of carrying state between tests. The current row owns
 `durable_store._declared`. Before each test the fixture snapshots all registered state; afterward it
@@ -92,9 +92,9 @@ Git isolation directly.
 | --- | --- | --- |
 | Production owns the eight-selector inventory and the scrubbed Git environment built from it. | `GIT_REPOSITORY_SELECTOR_ENV`; `git_environment` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:76-82 |
 | Route-index tests independently contaminate each selector and require identical output. | "test_ambient_git_repository_selectors_cannot_redirect_the_census"; "test_regular_checkout_and_linked_worktree_produce_identical_indexes" | mcp/tests/test_route_index.py:592-620; mcp/tests/test_route_index.py:822-850 |
-| Worktree fixture tests. |"test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_plan_uses_memory_worktree_settings"|mcp/tests/test_worktree_support_tests_2.py:120-120; mcp/tests/test_worktree_support_tests_1.py:1012-1012|
+| Worktree fixture tests. |"test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_plan_uses_memory_worktree_settings"|mcp/tests/test_worktree_support_tests_1.py:1036-1036; mcp/tests/test_worktree_support_tests_2.py:122-122|
 | The explicit ownership register, snapshot/restore operations, and scoped preservation helper used by the autouse guard. | `OWNED_MUTABLE_STATES`; `snapshot_owned_mutable_state`; `restore_owned_mutable_state`; `preserve_owned_mutable_state` | mcp/tests/_global_state.py:33-39; mcp/tests/_global_state.py:42-43; mcp/tests/_global_state.py:46-54; mcp/tests/_global_state.py:57-64 |
-| The current autouse guard restores all registered state and fails the leaking test with the complete changed-owner list. | `reject_owned_global_state_leaks` | mcp/tests/conftest.py:78-89 |
+| The current autouse guard restores all registered state and fails the leaking test with the complete changed-owner list. | `reject_owned_global_state_leaks` | mcp/tests/conftest.py:103-114 |
 | The currently registered process-global declaration and its production writer/accessor. | `_declared`; `declare_process_role`; `declared_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:73-73; mcp/src/agents_remember/controlplane/durable_store.py:76-84; mcp/src/agents_remember/controlplane/durable_store.py:87-89 |
 
 ## Cross-Repo References
@@ -106,6 +106,8 @@ No sibling repository defines the pytest bootstrap contract.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: superseded the removed single-purpose

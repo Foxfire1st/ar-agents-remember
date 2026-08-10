@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`                                             |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastUpdated            | 2026-07-21T11:00+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                             |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ activity, acceptance, vendor identity, sequence, pending interaction, and raw ve
 projected additively. Bridge failure becomes explicit disconnected/unknown state. Tmux/process
 existence remains process-liveness evidence only; pane text, turn-state classifiers, terminal logs,
 copy mode, and capture timing are diagnostic detail and cannot authorize readiness, delivery,
-completion, or agent-notifier action. Ordinary shell rows remain ordinary terminal rows.
+completion, or supervisor action. Ordinary shell rows remain ordinary terminal rows.
 
 The detailed pane/turn-state path below is historical pre-L5 behavior and is retained only to explain
 the migration surface; it is not current hosted authority.
@@ -162,24 +162,6 @@ failing sweep sees no previous marker and warns again, and no intermediate `reco
 emitted for that transition. Correction not taken here: carry `interactionSyncError` through
 `control_raw` rebuilds on non-observer paths, or log the intermediate transitions symmetrically.
 
-## 260713-TES-L2 Current Delta — Terminal-Evidence Lift In The Alive Probe
-
-The shared alive probe now also lifts terminal turn truth: `LivenessProbe` carries a
-`terminal_reader` (default `read_entry_terminal_evidence`), and `_observe_alive` cit:([`_observe_alive`], mcp/src/agents_remember/serving/terminal_liveness.py:343-426) reads the terminal evidence BEFORE persisting the advanced snapshot projection.
-`_terminal_evidence` cit:([`_terminal_evidence`], mcp/src/agents_remember/serving/terminal_liveness.py:428-443) swallows `HarnessControlError` → no claim AND no cursor
-advance; only after a successful read does `record_terminal_cursors` persist the new evidence
-sequence/native cursor. A failed read therefore leaves the row at the pre-window position and
-the next sweep re-reads the same evidence — the F2 no-loss contract, now stated in the module
-docstring.
-
-The lifted projection feeds `snapshot_turn_state(..., terminal=...)`, so an
-interrupted/failed settlement takes canonical precedence over the snapshot's own turn
-classification for that observation (`done ≠ interrupted`; killed stays exited; hung stays
-stale). The final turn-state write persists through `record_turn_projection`, which carries
-state AND terminal outcome atomically.
-
-This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
 ### Conventions
 
 Pure orchestration over injected seams: catalog writes stay in `terminal_catalog.py`, probe
@@ -203,7 +185,7 @@ pane_capturer, on_turn_state_change) is constructor-injected so tests run fake-d
   [durable_store.py](../controlplane/durable_store.py.md), written from the 2026-08-05 ABBA
   deadlock.
 - Hosted activity and turn state are adapter-derived; pane/log/copy-mode observations are
-  diagnostics-only and cannot drive readiness, delivery, completion, or agent-notifier action.
+  diagnostics-only and cannot drive readiness, delivery, completion, or supervisor action.
 - The sweeper remains rate-limited and non-overlapping, and process-liveness failures remain
   explicit disconnected/unknown evidence rather than a hidden compatibility fallback.
 - Liveness projection never consumes inbox rows. Inbox delivery is inbox-rooted and explicit
@@ -226,9 +208,8 @@ migration archaeology; they do not override the protocol-backed L5 contract abov
   Known limitation: a landed row whose tmux session dies later stays in the archive until explicit
   cleanup; attach performs the live check and fails instead of the sweeper reclaiming it.
 - The module never spawns, kills, or attaches tmux sessions and never mutates anything but
-  liveness state through `record_liveness_probe`, turn-state through `record_turn_state`, and
-  (since 260713-TES-L2) terminal truth/cursors through the `seat_turn_truth` helpers — all for
-  harness rows.
+  liveness state through `record_liveness_probe` (and, since HFX-L8, turn-state through
+  `record_turn_state` for harness rows).
 - Turn-state classification rides the SAME rate-limited sweep cadence as liveness — no separate
   cadence, no extra tmux round-trip beyond the one `pane_capturer` call per alive harness row per
   sweep. Only `kind == "harness"` rows are ever classified; plain `terminal` rows are untouched.
@@ -252,7 +233,7 @@ record.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes. | `TmuxProbeResult` | mcp/src/agents_remember/serving/terminal_tmux.py:61-66 |
-| The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:495-525; mcp/src/agents_remember/serving/terminal_catalog.py:527-559 |
+| The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:138-138; mcp/src/agents_remember/serving/terminal_catalog.py:142-142 |
 | The app wiring: one sweeper behind `GET /api/terminal/sessions`, direct observations on WebSocket attach + paste, injected clock. | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
 | Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification. | `TerminalCatalogLivenessTests` | mcp/tests/test_terminal_liveness.py:176-718 |
 | The marker-based classifier this module's `_observe_alive` calls on every alive harness row. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:157-171 |
@@ -272,7 +253,7 @@ No meaningful cross-repo references found.
 
 Process existence remains tmux evidence, while hosted activity and turn state come from the exact
 adapter snapshot. Bridge failures remain explicit disconnected/unknown states; pane classifiers are
-stored only as diagnostics and cannot produce agent-notifier actions.
+stored only as diagnostics and cannot produce supervisor actions.
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -319,7 +300,7 @@ this sweep's return value.
 
 Provenance: on 2026-08-05 the production serving daemon deadlocked twice (py-spy-verified ABBA) —
 this sweep held the catalog batch lock across the synchronizer's operator-inbox/gate lock
-acquisitions while the agent-notifier sweep held the inbox lock across a catalog read, and the uvicorn
+acquisitions while the supervisor sweep held the inbox lock across a catalog read, and the uvicorn
 event loop queued on the same catalog RLock via async endpoints doing synchronous catalog reads.
 The placement CHATS-L5 had quarantined was the second symptom: the guard absorbed the failure
 mode, not the lock-order one. Forcing regressions live in `mcp/tests/test_cross_store_lock_order.py`
@@ -330,11 +311,8 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the read-before-projection
-  terminal-evidence lift — `terminal_reader` on `LivenessProbe`, no-loss cursor persistence,
-  canonical terminal precedence in `snapshot_turn_state`, and the `seat_turn_truth` write
-  seam. Verification metadata pinned until closeout stamps the 260713-TES-L2 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-05T20:20+02:00 — 260731-EFA-L16 curator: mechanism correction — the collector is a
   `LivenessProbe` field (`replace(probe, sync_collector=...)` at `_observe_catalog_entry`), not a
   sixth parameter of `observe_terminal_liveness`; the bundled probe keeps the five-argument

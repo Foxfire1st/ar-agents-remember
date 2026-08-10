@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_application_guards.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                         |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -64,9 +64,11 @@ substring of each guard's message rather than the full string.
 | --- | --- | --- |
 | The two guards under test live in the application layer. | `require_repo`; `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:16-24; mcp/src/agents_remember/kernel/authority.py:27-35 |
 | `AuthorityError` is the rejection type and is a `ValueError` subclass via `AgentsRememberError`. | `AuthorityError`; `AgentsRememberError` | mcp/src/agents_remember/errors.py:13-14; mcp/src/agents_remember/errors.py:17-23 |
-| `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. | `McpRuntimeConfig`; `RepositoryScope`; `path_is_relative_to` | mcp/src/agents_remember/mcp/config.py:68-73; mcp/src/agents_remember/mcp/config.py:113-137; mcp/src/agents_remember/mcp/config.py:635-640 |
+| `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. | `McpRuntimeConfig`; `RepositoryScope`; `path_is_relative_to` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:75-80; mcp/src/agents_remember/kernel/primitives/runtime_config.py:122-146; mcp/src/agents_remember/kernel/primitives/runtime_config.py:645-650 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

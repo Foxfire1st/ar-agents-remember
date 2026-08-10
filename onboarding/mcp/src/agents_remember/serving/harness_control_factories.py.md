@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_factories.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,8 +74,8 @@ startup evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The runner constructs a discovery adapter, obtains knobs, validates dynamic advertise, then constructs the configured runtime adapter. | `_prepare_controlled_launch`; `create_harness_protocol_adapter`; `harness_launch_knobs`; `apply_launch_knobs`; `discover`; `validate_launch_selection` | mcp/src/agents_remember/serving/harness_control_runner.py:192-240 |
-| Claude consumes expected launch evidence and produces native model/effort flags. | `claude_launch_knobs`; `ClaudeStreamJsonAdapter`; `verify_effective_launch`; `launch_knobs` | mcp/src/agents_remember/serving/harness_control_claude.py:128-142; mcp/src/agents_remember/serving/harness_control_claude.py:145-571; mcp/src/agents_remember/serving/harness_control_runner.py:237-237 |
+| The runner constructs a discovery adapter, obtains knobs, validates dynamic advertise, then constructs the configured runtime adapter. | "async def _prepare_controlled_launch("; "discoverer = create_harness_protocol_adapter(config.harness_id"; "knobs = harness_launch_knobs("; "launch = apply_launch_knobs(base"; "discovery_env = {"; "validate_launch_selection(selection" | mcp/src/agents_remember/serving/harness_control_runner.py:192-240 |
+| Claude consumes expected launch evidence and produces native model/effort flags. | `claude_launch_knobs`; `ClaudeStreamJsonAdapter`; "def verify_effective_launch"; `launch_knobs` | mcp/src/agents_remember/serving/harness_control_claude.py:130-144; mcp/src/agents_remember/serving/harness_control_claude.py:147-573; mcp/src/agents_remember/serving/harness_control_runner.py:239-239; mcp/src/agents_remember/serving/harness_launch.py:124-124 |
 | Codex session settings resolve typed or catalog-default model/effort into thread config. | `CodexAppServerSettings`; `connect`; `_thread_params` | mcp/src/agents_remember/serving/codex_app_server_session.py:57-99; mcp/src/agents_remember/serving/codex_app_server_session.py:124-208; mcp/src/agents_remember/serving/codex_app_server_session.py:403-448 |
 | Pi consumes expected launch evidence and produces native provider-qualified model/thinking flags. | `PiRpcAdapter`; `pi_launch_knobs` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768; mcp/src/agents_remember/serving/pi_rpc_protocol.py:118-132 |
 

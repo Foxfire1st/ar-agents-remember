@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/served_store.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Purpose
@@ -73,9 +73,8 @@ is the working manual reset; the application-side marker consumer
 | --- | --- | --- |
 | The ambient lifecycle owns this store and the in-memory served-set hot path. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:90-594 |
 | The append-only event store this mirrors (the GateStore pattern). | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| The observer-root resolver that anchors the per-lifecycle path. | `observer_root` | mcp/src/agents_remember/observer/paths.py:32-34 |
+| The observer-root resolver that anchors the per-lifecycle path. | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
 | The application entry point consumer that records and resets served pieces. | `_maybe_reset_served` | mcp/src/agents_remember/application/read_files.py:357-381 |
-| The observer package re-exports `ServedStore` / `ServedRecord` / `served_key` / `SERVED_RECORD_SCHEMA`. | `ServedStore`; `ServedRecord`; `served_key`; `SERVED_RECORD_SCHEMA` | mcp/src/agents_remember/observer/__init__.py:73-79 |
 
 ## Update History
 

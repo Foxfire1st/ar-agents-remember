@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal.py`                     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -114,7 +114,7 @@ are proven by repository source and the test suite itself.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The terminal host under test. | `TerminalHost` | mcp/src/agents_remember/serving/terminal.py:109-255 |
-| The serving layer the host joins. | `# mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview` | onboarding/mcp/src/agents_remember/serving/overview.md:1-2198 |
+| The serving layer the host joins. | `# mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview` | onboarding/mcp/src/agents_remember/serving/overview.md:4-1334 |
 
 ## 260712-TRH-L4 Final Candidate
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/CommandPalette.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ stays local (R7 — the view's `closePalette` hands focus back to the invoker).
 - `runItem(id)` cit:([`runItem`], dashboard/src/panels/session-cockpit/CommandPalette.tsx:410-419): runs through `registry.run(id, getContext())`; commands without
   `keepsPaletteOpen` close the palette, page-switch commands (keyboard.reference) keep it open
   and clear the query.
-- cit:(["const onKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) =>"], dashboard/src/panels/session-cockpit/CommandPalette.tsx:324-324; dashboard/src/panels/session-cockpit/CommandPalette.tsx:421-421) =>"], dashboard/src/panels/session-cockpit/CommandPalette.tsx:324-324) =>"], dashboard/src/panels/session-cockpit/CommandPalette.tsx:324-324): Escape closes (preventDefault + stopPropagation so the window-level
+- cit:(["const onKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) =>"], dashboard/src/panels/session-cockpit/CommandPalette.tsx:324-324; dashboard/src/panels/session-cockpit/CommandPalette.tsx:421-421) =>"]"], dashboard/src/panels/session-cockpit/CommandPalette.tsx:324-324): Escape closes (preventDefault + stopPropagation so the window-level
   layer never sees it); Tab/Shift-Tab wrap focus inside the dialog (the modal focus
   trap over the dialog's own enabled inputs/buttons/tabbables); Backspace on an EMPTY query leaves
   a sub-page back to `commands` — the page pattern's back gesture.
@@ -71,7 +71,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | The registry contract (`list`/`run`/`keepsPaletteOpen`). | `CommandRegistry` | dashboard/src/data/commands.ts:47-55 |
 | The keys page renders the PTY-reserved terminal entries. | "Terminal — everything passes through except exactly" | dashboard/src/panels/session-cockpit/CommandPalette.tsx:301-301 |
 | The view that owns open/page state and the invoker focus-return. | `closePalette` | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:379-379 |
-| Palette behavior coverage: open, Esc + focus return, keys page from real tables, suppression, `/` rule. | "opens on ctrl+k from the chrome zone and closes on Escape, returning focus to the invoker" | dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:171-171 |
+| Palette behavior coverage: open, Esc + focus return, keys page from real tables, suppression, `/` rule. | "opens on ctrl+k from the chrome zone and closes on Escape" | dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:171-171 |
 
 ## Cross-Repo References
 

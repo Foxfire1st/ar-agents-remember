@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/projector/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/projector/overview.md` |
 | parentOverview | [`active/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-09T17:18+02:00 |
-| lastVerifiedCommitHash |  `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate |  2026-08-09T18:00:39+02:00|
+| lastUpdated | 2026-07-30T12:51+02:00 |
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 
 ## Governing Overview
 
@@ -20,9 +20,7 @@
 Owns the active-session projection component graph. The package replaces the former
 `active/projector.py` monolith without changing its public import surface: one facade coordinates
 native and echo ingestion, child-history hydration, interaction projection, canonical mutations,
-and rebuild/poll lifecycle for one exact session and bridge epoch. The native-ingestion boundary
-also preserves transport-owned item identity when a raw native body is clipped or cannot satisfy a
-harness mapper's exact schema.
+and rebuild/poll lifecycle for one exact session and bridge epoch.
 
 ## Architecture And Boundaries
 
@@ -42,18 +40,9 @@ component takes them instead of re-listing their fields. `SessionProjectionSpine
 one session's projection shares (identity, controlled session, mapper, mutation stream, agent
 authority, evidence refs, apply lock, clock, plus the derived `parent_thread_id` / `bridge_epoch`);
 `BridgeReaders` is the whole five-call read surface, substituted as one set. That is what makes
-"one projection, one session, one epoch" structural rather than a convention repeated across five
+"one projection" structural rather than a convention repeated across five
 parameter lists — a component wired to a different spine, or a test that fakes one reader and
 leaves the others live, is reading two different sessions.
-
-Native-page mapping is deliberately fail-soft at the shared ingestion boundary. Both the Codex
-parent-history walk and Pi eager continuation route each `NativeEvidenceFrame` through
-`map_native_frame`. An `arEvidenceTruncated` envelope becomes bounded
-`<harness>:evidence-truncated` evidence; an exact mapper `UnmappableShape` becomes
-`<harness>:malformed`. In both cases the visible item and parent ids come from the frame envelope,
-never the clipped `preview`, and the remaining page continues. Typed gaps remain reserved for
-lost ordering proof, epoch change, or repeated control-read failure — not a damaged item body whose
-transport identity is intact.
 
 ## Load-Bearing Invariants
 
@@ -62,8 +51,6 @@ transport identity is intact.
 - Every component of one projection receives the SAME `SessionProjectionSpine` and the SAME
   `BridgeReaders`; readers are substituted whole, never field by field (`wiring.py`).
 - Native history remains authoritative where available; live evidence is the incremental tail.
-- Native item and parent identity come from `NativeEvidenceFrame`, outside the raw body; truncation
-  or schema failure must degrade one item without inventing an id or closing the projection.
 - Claude transcript entries are submission echoes only and are zipped to evidence in turn order.
 - Selected-child native history is opt-in, singleflight, bounded, and child-local on failure.
 - Subscriber overflow, epoch changes, and ordering faults close with one typed gap.
@@ -77,7 +64,7 @@ transport identity is intact.
 | `facade.py` | Public projector lifecycle and component composition. |
 | `rebuild_coordinator.py` | Hydration, page assembly, poll ordering, status, provenance. |
 | `mutation_stream.py` | Canonical store mutations, event cursors, retention, subscribers. |
-| `native_ingestion.py` | Native/evidence watermarks, identity-preserving fail-soft mapping, completeness, twin suppression. |
+| `native_ingestion.py` | Native/evidence watermarks, mapping, completeness, twin suppression. |
 | `echo_ingestion.py` | Claude transcript/evidence zipper and eviction realignment. |
 | `agent_authority.py` | Child-thread identity and roster-status authority. |
 | `child_history.py` | Selected-child native-history eligibility and singleflight hydration. |
@@ -97,16 +84,17 @@ repository-owned and cited through the source and tests below.
 | The active service creates and retires projector instances. | `ActiveConversationService` | mcp/src/agents_remember/serving/conversation/active/service.py:57-259 |
 | The package mutates one canonical projection store. | `ProjectionStore` | mcp/src/agents_remember/serving/conversation/active/store.py:135-445 |
 | Focused regressions cover projection, restart, overflow, child hydration, and singleflight. | `test_settled_live_turns_project_once_when_native_ids_disjoint`; `test_concurrent_reconnect_replaces_a_retired_projector_once` | mcp/tests/test_active_projector_singleflight.py:24-94; mcp/tests/test_conversation_active_service.py:320-405 |
-| Native truncation, malformed-body degradation, and Codex/Pi mode parity keep transport item and parent ids readable without an ordering gap. | `NativeFrameIdentityFallbackTests`; `test_an_unmappable_native_frame_degrades_without_an_ordering_fault_gap` | mcp/tests/test_conversation_native_ingestion.py:49-107; mcp/tests/test_conversation_control_and_library_helpers.py:937-960 |
 
 ## Cross-Repo References
 
 No cross-repository implementation participates in this package.
 
+## 260731-EFA-L9 Route Impact — Contract Imports Moved
+
+The active projector mappers now import the wire contracts from `models/conversations/` (evidence, content, status, stream events) after the L9 monolith split. Projection behavior is unchanged.
+
 ## Update History
-- 2026-08-09T17:18+02:00 — 260713-TES-L5 hotfix route refresh: documented the shared
-  native-page fail-soft boundary, its transport-identity invariant, Codex/Pi parity, and the rule
-  that a damaged item body is not an ordering fault. Verification stays pinned until closeout.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 
 - 2026-08-03T03:02:37+02:00 — W3-B05 curator: resolved 3 Tier-2 table findings with exact anchors and source paths; fixer generated all final ranges.
 

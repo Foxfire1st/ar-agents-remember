@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/selectors.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,8 +55,8 @@ No relevant external documentation is needed for these pure selector tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `selectQueue` coverage includes empty analytics and optimistic suppression. | "reads the server-computed queue, empty when analytics is absent" | dashboard/src/data/selectors.test.ts:74-89 |
-| Tree grouping and wait formatting tests cover the unchanged selector behavior. | "BY PHASE groups by l-01 phase in pipeline order, members id-sorted"; "scales seconds → s/m/h/d and renders unknown as a dash" | dashboard/src/data/selectors.test.ts:25-36; dashboard/src/data/selectors.test.ts:64-70 |
+| `selectQueue` coverage includes empty analytics and optimistic suppression. | "reads the server-computed queue" | dashboard/src/data/selectors.test.ts:74-89 |
+| Tree grouping and wait formatting tests cover the unchanged selector behavior. | "BY PHASE groups by l-01 phase in pipeline order"; "scales seconds → s/m/h/d and renders unknown as a dash" | dashboard/src/data/selectors.test.ts:25-36; dashboard/src/data/selectors.test.ts:64-70 |
 | The selector under test caches and filters attention rows. | `selectQueue` | dashboard/src/data/selectors.ts:37-46 |
 
 ## Cross-Repo References

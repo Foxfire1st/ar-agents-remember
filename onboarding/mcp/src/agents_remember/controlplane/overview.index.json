@@ -18,7 +18,6 @@
     "mcp/src/agents_remember/controlplane/expectation_rows.py",
     "mcp/src/agents_remember/controlplane/gate_decisions.py",
     "mcp/src/agents_remember/controlplane/gate_policy.py",
-    "mcp/src/agents_remember/controlplane/inbox_backoff.py",
     "mcp/src/agents_remember/controlplane/interaction_retention.py",
     "mcp/src/agents_remember/controlplane/operator_inbox_records.py",
     "mcp/src/agents_remember/controlplane/operator_inbox_store.py",
@@ -32,8 +31,8 @@
     "mcp/src/agents_remember/controlplane/store.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 20,
-    "fileSidecars": 20,
+    "sourceFilesInScope": 19,
+    "fileSidecars": 19,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -44,7 +43,6 @@
     "artifacts",
     "attention",
     "attention_dismissals",
-    "backoff",
     "controlplane",
     "decisions",
     "dismissals",
@@ -57,7 +55,6 @@
     "gate_decisions",
     "gate_policy",
     "inbox",
-    "inbox_backoff",
     "init",
     "init__",
     "interaction",
@@ -99,7 +96,6 @@
       "mcp/src/agents_remember/controlplane/expectation_rows.py",
       "mcp/src/agents_remember/controlplane/gate_decisions.py",
       "mcp/src/agents_remember/controlplane/gate_policy.py",
-      "mcp/src/agents_remember/controlplane/inbox_backoff.py",
       "mcp/src/agents_remember/controlplane/interaction_retention.py",
       "mcp/src/agents_remember/controlplane/operator_inbox_records.py",
       "mcp/src/agents_remember/controlplane/operator_inbox_store.py",
@@ -129,8 +125,6 @@
       "gate_decisions",
       "gate_policy.py",
       "gate_policy",
-      "inbox_backoff.py",
-      "inbox_backoff",
       "interaction_retention.py",
       "interaction_retention",
       "operator_inbox_records.py",
@@ -158,9 +152,11 @@
       "JSONL",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "a84add4c9422b18a26f1748dedaed16194994ded",
+      "7bf564a663bb61f12844dee39538dd09a1633cdb",
       "/../../overview.md",
-      "controlplane/"
+      "controlplane/",
+      "escalation_ladder.py",
+      "rung_due"
     ]
   },
   "fallback": {

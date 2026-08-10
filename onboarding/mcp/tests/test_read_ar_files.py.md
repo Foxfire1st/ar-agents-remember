@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_read_ar_files.py`                  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-02T01:05+02:00                             |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`         |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -89,9 +89,11 @@ stripped from the served body).
 | The net-new ranged reader unit-tested here. | `read_text_range` | mcp/src/agents_remember/kernel/filesystem.py:44-62 |
 | The served-ledger store asserted on disk. | "self._root / \"lifecycles\" / lifecycle_id / \"served.jsonl\"" | mcp/src/agents_remember/observer/served_store.py:90-90 |
 | The ambient lifecycle whose `emit_read_packet` + served set are exercised. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:426-453 |
-| Shared config/settings test helpers. | "\"coordinationRoot\": str(coordination_root)" | mcp/tests/test_config.py:34-34 |
+| Shared config/settings test helpers. | "\"coordinationRoot\": str(coordination_root)" | mcp/tests/test_config.py:36-36 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T21:32+02:00 — W2-B08 curator: anchored 10 citation findings to the application entry point, payload builder, ranged reader, served ledger, and config helper evidence. Verification metadata stays pinned until closeout.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

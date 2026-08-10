@@ -6,8 +6,8 @@
 | path                   | `dashboard/scripts/check-diff-coverage.test.mjs`            |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `cf5ef507f2542d6cd2f9d37a6b72148d3b91b340`                  |
-| lastVerifiedCommitDate | 2026-08-06T13:55:47+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                  |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ configured for this file.
 | --- | --- | --- |
 | The executable-statement semantics suite. | "describe(\"check-diff-coverage executable-statement semantics\", () => {" | dashboard/scripts/check-diff-coverage.test.mjs:12-12 |
 | The helpers under test. | `executableStatementLines`; `measureDiffCoverage` | dashboard/scripts/check-diff-coverage.mjs:14-14; dashboard/scripts/check-diff-coverage.mjs:43-43 |
-| The Vitest include that runs this file. | "include: [\"src/**/*.{ts,tsx}\"],"; "setupFiles: [\"./src/test/setup.ts\"]," | dashboard/vitest.config.ts:58-58; dashboard/vitest.config.ts:35-35; dashboard/vitest.config.ts:32-32 |
+| The Vitest setup list that runs this file's harness. | "setupFiles: [" | dashboard/vitest.config.ts:32-32 |
 
 ## Cross-Repo References
 

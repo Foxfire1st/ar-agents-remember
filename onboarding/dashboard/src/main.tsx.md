@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/main.tsx`                          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T00:25+02:00                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ while leaving production bundles and live DevTools recording behavior untouched.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The Panda entry + layer order it loads. | "@layer reset, base, effects, webtui, tokens, recipes, utilities" | dashboard/src/index.css:9-9 |
+| The Panda entry + layer order it loads. | "@layer reset" | dashboard/src/index.css:9-9 |
 | The `:root` design tokens it loads. | ":root" | dashboard/src/styles/tokens.css:5-5 |
 | The scoped WebTUI skin it loads third (260715-FEUI-L1). | "base.css" | dashboard/src/styles/webtui.css:12-12 |
 

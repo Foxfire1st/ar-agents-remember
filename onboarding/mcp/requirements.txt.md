@@ -6,8 +6,8 @@
 | path                   | `mcp/requirements.txt`                     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-28T19:52+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -30,7 +30,7 @@ contract dependencies `pydantic>=2,<3` and `tiktoken>=0.12,<1`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP package metadata declares the same runtime dependencies. | "pydantic>=2,<3" | mcp/pyproject.toml:25-25 |
+| MCP package metadata declares the same runtime dependencies. | "pydantic>=2" | mcp/pyproject.toml:25-25 |
 | Pydantic response contracts live under the models package. | `# mcp/src/agents_remember/models/ - Response Contract Models Overview` | onboarding/mcp/src/agents_remember/models/overview.md:1-506 |
 
 ## Update History

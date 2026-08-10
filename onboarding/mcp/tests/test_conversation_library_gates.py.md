@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_gates.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate |  2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ No Domain Documentation source is configured. The repository sources are direct 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The gate registry, locked Codex version constant, and per-fingerprint cache under test. | `LibraryGateRegistry`; `LOCKED_CODEX_RUNTIME_VERSION` | mcp/src/agents_remember/serving/conversation/library/gates.py:48-48; mcp/src/agents_remember/serving/conversation/library/gates.py:171-324 |
+| The gate registry, locked Codex version constant, and per-fingerprint cache under test. | `LibraryGateRegistry`; `LOCKED_CODEX_RUNTIME_VERSION` | mcp/src/agents_remember/serving/conversation/library/gates.py:50-50; mcp/src/agents_remember/serving/conversation/library/gates.py:173-326 |
 | Codex gate behavior is covered by the focused test class. | `CodexGateTests` | mcp/tests/test_conversation_library_gates.py:63-148 |
 | Helper-backed gate behavior is covered by the focused test class. | `HelperGateTests` | mcp/tests/test_conversation_library_gates.py:151-212 |
 

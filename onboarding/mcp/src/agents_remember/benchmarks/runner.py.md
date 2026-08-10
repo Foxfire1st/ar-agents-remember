@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/benchmarks/runner.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -52,7 +52,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP benchmark tools import the facade as `benchmark_runner`. | "def skills_install_tool" | mcp/src/agents_remember/application/skill_tools.py:11-11 |
+| MCP benchmark tools import the facade as `benchmark_runner`. | "def skills_install_tool" | mcp/src/agents_remember/application/skill_tools.py:13-13 |
 | Benchmark portability tests patch facade-level compatibility attributes. | `BenchmarkRunnerPortabilityTests` | mcp/tests/test_worktree_support_benchmark.py:32-665 |
 
 ## Cross-Repo References

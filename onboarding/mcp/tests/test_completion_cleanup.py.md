@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_completion_cleanup.py`         |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-10T06:28+02:00                         |
-| lastVerifiedCommitHash |                                                `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |                                                2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash |                                                `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                                2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -74,6 +74,7 @@ No cross-repository boundary is exercised.
 
 ## Update History
 
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the extracted completion-cleanup containment coverage; the existing test card remains accurate. Verification metadata remains pinned until closeout.
 - 2026-08-10T06:28+02:00 — Created by extracting completion-cleanup containment cases from the
   seat-lifecycle suite so both production and test files stay below their architecture thresholds.
   Verification metadata remains blank until closeout stamps the code commit.

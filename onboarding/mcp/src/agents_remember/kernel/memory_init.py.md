@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/memory_init.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -24,7 +24,7 @@ creates the external memory root, standard `system/`, `onboarding/`, and `docs/`
 folders, seed system files, and an optional Git repository initialization.
 
 cit:([`_git_init_result`], mcp/src/agents_remember/kernel/memory_init.py:35-56) runs that initialization through the package's one
-git runner: cit:([`run_git`], mcp/src/agents_remember/kernel/memory_init.py:47-47), replacing the local
+git runner: cit:(["run_git(memory_root, [\"init\"])"], mcp/src/agents_remember/kernel/memory_init.py:49-49), replacing the local
 `subprocess.run(["git", "init"], cwd=memory_root, ...)` this file used to spawn
 itself. The outcome is still reported as data — `ran`, `returncode`, `stdout`,
 `stderr` — and a non-zero `returncode` makes `initialize_memory()` return
@@ -53,7 +53,7 @@ itself. The outcome is still reported as data — `ran`, `returncode`, `stdout`,
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `memory_init` is wired through the Phase 04 application entry point. | `memory_init` | mcp/src/agents_remember/mcp/registration/memory.py:95-109 |
-| MCP config defines repository memory roots. | `McpRuntimeConfig` | mcp/src/agents_remember/mcp/config.py:113-137 |
+| MCP config defines repository memory roots. | `McpRuntimeConfig` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:113-137 |
 | The one git runner this module's `git init` goes through: `run_git` scrubs `GIT_REPOSITORY_SELECTOR_ENV` (L24-L33) via `git_environment` and bounds the command at `GIT_LOCAL_TIMEOUT_SECONDS = 300` by default (L53-L55; L67-L96). | `run_git`, `git_environment`, `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 
 ## Update History
@@ -66,7 +66,7 @@ itself. The outcome is still reported as data — `ran`, `returncode`, `stdout`,
   repository initialization" without saying how it was spawned, which is now the load-bearing fact:
   `_git_init_result` was one of the six drifted private git spawns and its
   `subprocess.run(["git", "init"], cwd=memory_root, ...)` — no `env=`, no `timeout` — was replaced
-  by cit:([`run_git`], mcp/src/agents_remember/kernel/memory_init.py:47-47). Documented the two consequences as invariants: the
+  by cit:(["run_git(memory_root, [\"init\"])"], mcp/src/agents_remember/kernel/memory_init.py:49-49). Documented the two consequences as invariants: the
   selectors are stripped, so an inherited `GIT_DIR` can no longer make `git init` build the
   repository elsewhere and still return 0; and the call is bounded at the runner's 300s default
   where it was previously unbounded, with `TimeoutExpired` propagating because this module catches

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/InteractionBar.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-09T19:36+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated | 2026-08-01T10:40+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -99,6 +99,8 @@ The interaction tests cover separate question option groups, multi-select confir
 recorded-answer copy, all-or-nothing direct submission, and the retained honest fallback forms.
 
 ## Update History
+- 2026-08-10T09:45+02:00 — 260731-EFA-L9 curator repair: updated interaction-bar test citations after the answer-path rename.
+
 
 - 2026-08-09T19:36+02:00 — 260713-TES-L5F2: replaced gate fixtures and gate-body assertions with
   exact-session response stubs; added lifecycle-less choice and composer delivery coverage.
@@ -138,3 +140,4 @@ recorded-answer copy, all-or-nothing direct submission, and the retained honest 
   the finding-5 stale-answered clear before a following unrepresentable payload, and the
   no-steal/return focus + assertive announce cases. Verification metadata pinned to the leaf
   base until closeout stamps the L6 code commit.
+

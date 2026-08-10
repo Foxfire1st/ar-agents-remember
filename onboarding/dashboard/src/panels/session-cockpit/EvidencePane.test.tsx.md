@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/EvidencePane.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Focused-seat case covers launch, receipt/reconciliation, bridge, pane, retire-stop residual, and liveness evidence. | "reveals launch, receipt, reconciliation, bridge, pane, residual, and liveness evidence" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:32-113 |
+| Focused-seat case covers launch, receipt/reconciliation, bridge, pane, retire-stop residual, and liveness evidence. | "reveals launch" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:32-113 |
 | Missing-receipt honesty case. | "keeps missing receipt evidence explicitly absent in the pure detail projection" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:115-127 |
 | Terminate and retire residuals remain inspectable without focus and share dismissal across surfaces. | "keeps terminate and retire residuals inspectable without focus and shares exact dismissal" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:129-177 |
 | A successful terminate residual remains visible after the terminated seat is removed. | "reveals a successful terminate residual after the terminated seat is removed" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:179-201 |

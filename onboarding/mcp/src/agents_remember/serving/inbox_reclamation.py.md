@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastUpdated | 2026-07-12T17:40+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,9 +69,9 @@ evidence for this policy.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The aggregate reclamation plan is built from one reconstructed snapshot joined with catalog evidence. | `InboxReclamationPlan` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
-| Terminal catalog entries provide the status and ownership evidence. | "class TerminalCatalogEntry:" | mcp/src/agents_remember/serving/terminal_catalog.py:106-220 |
+| Terminal catalog entries provide the status and ownership evidence. | "class TerminalCatalogEntry:" | mcp/src/agents_remember/models/terminal_catalog.py:68-72 |
 | Reconstructed tmux snapshots provide the remaining ownership evidence. | `TmuxSessionNameSnapshotter` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
-| The agent-notifier imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/agent_notifier.py:65-65 |
+| The agent-notifier imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/agent_notifier.py:67-67 |
 
 ## Cross-Repo References
 
@@ -82,6 +82,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the `state_signal_landed` exclusion
   in `_eligible` (landed relay rows are terminal on this path). Verification metadata pinned
   until closeout stamps the 260713-TES-L2 commit.
@@ -93,3 +94,5 @@ No meaningful cross-repo references found.
   recording narrow eligibility, positive-gone/fail-closed evidence, one-snapshot boundedness,
   body-free output, and non-blocking F3-F6 residuals. Verification metadata remains blank until
   the candidate receives a commit.
+
+

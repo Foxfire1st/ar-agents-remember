@@ -6,8 +6,8 @@
 | path                   | `scripts/harness/session_start_hook.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../overview.md`                        |
 
 ## Governing Overview
@@ -81,8 +81,10 @@ among its fragments; the generator inserts the constant conditionally.
 
 ## Update History
 
+- 2026-08-10T10:40+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-03T03:12:31+02:00 — W3-B04 curator: curated 3 table citations (3 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-07-31T06:30+02:00 — 260731-EFA-L2 created this fragment library, collapsing four
   independent session-start hook copies into one checked definition (requirement L2-R12).
   Verification metadata is pinned to the leaf's reformat commit until closeout stamps the
   code commit.
+

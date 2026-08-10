@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `docs/reference/settings-json.md`       |
 | doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastUpdated            | 2026-07-10T13:03+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -78,11 +78,13 @@ spawn-surface manual.
 | --- | --- | --- |
 | Agentic settings parser that implements the documented `orchestration.*` families. | "Read + merge the global (and optional repo-local) agentic settings, per use." | mcp/src/agents_remember/kernel/agentic_settings.py:215-215 |
 | Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
-| Serving app that reads supervisor settings per sweep. |"logger.exception(\"agent-notifier sweep failed; retrying next interval\")"|mcp/src/agents_remember/serving/_app_lifespan.py:139-139|
+| Serving app that reads supervisor settings per sweep. |"logger.exception(\"agent-notifier sweep failed; retrying next interval\")"|mcp/src/agents_remember/serving/_app_lifespan.py:144-144|
 | Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:93-195 |
-| Backoff math enforcing the shared 900-second redelivery floor documented here. | "redelivery interval" | mcp/src/agents_remember/controlplane/inbox_backoff.py:49-49 |
+| Backoff math enforcing the shared 900-second redelivery floor documented here. | "redelivery interval" | mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:69-69 |
 
 ## Update History
+- 2026-08-10T09:45+02:00 — 260731-EFA-L9 curator repair: repaired agent-notifier settings and sweep citations.
+
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the `escalationBudget` re-wiring in
   the settings reference — load-shed cap on owner-signal emissions (twin of
@@ -117,3 +119,4 @@ spawn-surface manual.
   reference gained the `orchestration.supervisor` section including `redeliverBudget` default 250
   and the safe-empty-block posture. Verification metadata pinned until closeout stamps the
   260707-HFX2-L8 commit.
+

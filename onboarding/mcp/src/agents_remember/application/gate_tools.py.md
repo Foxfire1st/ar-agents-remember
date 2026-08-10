@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/gate_tools.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,15 +72,15 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `_result` (lines 88-90) — Return the raw use-case result for the MCP adapter to finalize.. | `_result` | mcp/src/agents_remember/application/gate_tools.py:88-90 |
-| Defines the function `_store` (lines 93-94). | `_store` | mcp/src/agents_remember/application/gate_tools.py:93-94 |
-| Defines the function `_inbox_store` (lines 97-98). | `_inbox_store` | mcp/src/agents_remember/application/gate_tools.py:97-98 |
-| Defines the function `_expectation_store` (lines 101-102). | `_expectation_store` | mcp/src/agents_remember/application/gate_tools.py:101-102 |
-| Defines the function `_gate_policy` (lines 105-107) — The active delegation policy; a config-less caller gets the human-only default.. | `_gate_policy` | mcp/src/agents_remember/application/gate_tools.py:105-107 |
-| Defines the function `_expectation_sla_seconds` (lines 110-113). | `_expectation_sla_seconds` | mcp/src/agents_remember/application/gate_tools.py:110-113 |
+| Defines the function `_result` (lines 88-90) — Return the raw use-case result for the MCP adapter to finalize.. | `_result` | mcp/src/agents_remember/application/gate_tools.py:92-94 |
+| Defines the function `_store` (lines 93-94). | `_store` | mcp/src/agents_remember/application/gate_tools.py:97-98 |
+| Defines the function `_inbox_store` (lines 97-98). | `_inbox_store` | mcp/src/agents_remember/application/gate_tools.py:101-102 |
+| Defines the function `_expectation_store` (lines 101-102). | `_expectation_store` | mcp/src/agents_remember/application/gate_tools.py:105-106 |
+| Defines the function `_gate_policy` (lines 105-107) — The active delegation policy; a config-less caller gets the human-only default.. | `_gate_policy` | mcp/src/agents_remember/application/gate_tools.py:109-111 |
+| Defines the function `_expectation_sla_seconds` (lines 110-113). | `_expectation_sla_seconds` | mcp/src/agents_remember/application/gate_tools.py:114-117 |
 | Defines the function `_write_verdict_by_row` (lines 116-132) — R2: a gate open atomically writes its ``verdict-by`` expectation row (same call, never a. | `_write_verdict_by_row` | mcp/src/agents_remember/application/gate_tools.py:116-132 |
 | Defines the function `_resolve_gate_lifecycle_id` (lines 135-144). | `_resolve_gate_lifecycle_id` | mcp/src/agents_remember/application/gate_tools.py:135-144 |
-| Defines the function `_entry_payload` (lines 147-148). | `_entry_payload` | mcp/src/agents_remember/application/gate_tools.py:147-148 |
+| Defines the function `_entry_payload` (lines 147-148). | `_entry_payload` | mcp/src/agents_remember/application/gate_tools.py:151-152 |
 | Defines the function `_decision_payload` (lines 151-156). | `_decision_payload` | mcp/src/agents_remember/application/gate_tools.py:151-156 |
 | Defines the function `_resolve_deciding_actor` (lines 159-170). | `_resolve_deciding_actor` | mcp/src/agents_remember/application/gate_tools.py:159-170 |
 | Defines the function `_cancelled_wait_payload` (lines 173-185). | `_cancelled_wait_payload` | mcp/src/agents_remember/application/gate_tools.py:173-185 |
@@ -104,18 +104,6 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 ## Update History
 
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the N16 wording refresh —
-## 260713-TES-L5 Current Delta — Landing Vocabulary In Gate Wait
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
-`gate_response_wait_tool`'s docstring now says returned inbox entries land at the recipient's
-turn boundary and `operator_inbox_consume` is an optional attribution marker, never a
-mechanical ack. The verdict-by deadline surface (gate-open expectation row) is unchanged.
-
-## Update History
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the N16 wording refresh —
-  `gate_response_wait_tool` says returned inbox entries land at the recipient's turn boundary
-  and `operator_inbox_consume` is an optional attribution marker, never a mechanical ack
-  (the consume-as-ack sentence is gone). Verification metadata pinned until closeout stamps
-  the 260713-TES-L5 commit.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

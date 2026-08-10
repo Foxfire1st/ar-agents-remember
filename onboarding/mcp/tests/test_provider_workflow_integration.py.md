@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_workflow_integration.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`                         |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -69,6 +69,8 @@ to take individually now live on the workspace object.
 | Focused provider setup tests cover the same settings and seed behavior without Docker. | `ProviderSetupTests`; `test_run_provider_setup_accepts_typed_request`; `test_prepare_announces_phases_in_order_with_seed_fallback` | mcp/tests/test_provider_setup.py:25-899 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the provider workflow-integration suite is environment-gated; its helpe...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

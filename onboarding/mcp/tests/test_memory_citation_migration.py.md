@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_migration.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `card` (lines 70-71). | "def card(path: str, *body: str, header: tuple[str, ...] = HEADER) -> str:" | mcp/tests/test_memory_citation_migration.py:54-54 |
+| Defines the function `card` (lines 70-71). | "def card(path: str" | mcp/tests/test_memory_citation_migration.py:54-54 |
 | Defines the function `link` (lines 74-76) — A Source Path cell in the superseded spelling, repo-name prefixed as the tree writes it.. | `link` | mcp/tests/test_memory_citation_migration.py:58-60 |
 | Defines the class `Tree` (lines 79-123) — A memory repository and the code repository it documents, both on disk.. | `Tree` | mcp/tests/test_memory_citation_migration.py:79-123 |
 | Defines the class `TreeCase` (lines 126-137). | `TreeCase` | mcp/tests/test_memory_citation_migration.py:110-121 |

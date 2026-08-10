@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
+| lastUpdated            | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -49,15 +49,15 @@ dispatch likewise treats `AR_SPAWN_ROLE=manager` plus the qualified coordination
 manager's pair claim; the qualified leaf is no longer described as the whole task-seat identity.
 
 260707-HFX2-L5 (doctrine inversion, active vigilance → passive process-and-ack): the dispatch-loop
-bullet "monitor turn-report artifacts, nudges, escalation intake" is gone. In its place: "process
-and ack the pending signals the L2 agent-notifier sweep wakes you with — turn-report artifacts,
+bullet "monitor turn-report artifacts" is gone. In its place: "process
+and ack the pending signals the L2 supervisor sweep wakes you with — turn-report artifacts,
 nudges, escalation intake — before ending your turn; you never watch for these yourself," with an
-explicit **watcher ban** (uniform-mechanism ruling 2026-07-07: the agent-notifier sweep is the one
+explicit **watcher ban** (uniform-mechanism ruling 2026-07-07: the supervisor sweep is the one
 mechanism, no seat-local polling/monitoring). The **spirit test survives as the one surviving
 MODEL-judgment duty** — it is explicitly called out as NOT ported down to a watching duty; the
 sentence now reads "apply the spirit test — a model-judgment duty, not a watching one — to
 escalated deltas." The Comms Protocol section gains two changes: the "Stdin push" line is reworded
-to name the L2 agent-notifier's injector (HFX2-L3) as the actual delivery mechanism (never this seat's
+to name the L2 supervisor's injector (HFX2-L3) as the actual delivery mechanism (never this seat's
 own initiative), and a new "Idle is safe" bullet states plainly that silence is supervised (the L2
 sweep + L4 ladder), so `lifecycle_turn_end_notification` / ending a turn with nothing pending is
 correct, not a risk to cover by watching — restating the same watcher ban. Pure doctrine reword;
@@ -150,14 +150,13 @@ providers-only this iteration, with Sentry/system-monitoring integration recorde
 detection source, not part of this role's response procedure.
 
 
-### 260805-ARG-L1 Completion Cleanup
+### 260707-HFX2-L11 Seat Cleanup Addition
 
-`lifecycle_finalize_task` retries cleanup for exact-leaf, report-bearing worker/reviewer/curator
-seats. Normal retirement frees tmux and preserves durable reports/transcripts; missing reports
-defer. Manager and orchestrator stay live because they carry coordination state; after consuming a
-completed manager's handover and finishing the seam, the orchestrator retires that manager
-explicitly. `autoCloseCompletedSeats=false` restores landed/archive behavior only for the three
-automatic subordinate roles. The by-hand
+Issue #12's authority split still names the orchestrator's PORTFOLIO-WIDE retire authority, but
+normal successful master→super finalization no longer terminates chats. `lifecycle_finalize_task`
+marks the finalizing master's manager + master-level reviewer seats `status:"landed"` at the
+finalize edge (config-gated `retirement.autoLandOnFinalize`, default ON), putting them in the
+dashboard's collapsed landed archive for inspection until explicit archive cleanup. The by-hand
 `session_retire(actor_session_id=<own session>, session_id=<the seat>, reason=...)` path remains for
 stuck/abandoned seats and for exceptional cleanup; unlike the manager (scoped to its own master's
 worker/reviewer/curator seats), the orchestrator may retire any seat in the portfolio.
@@ -165,14 +164,6 @@ Owner-never-self-retires still holds unconditionally: the orchestrator can never
 same server-side policy (`serving/retire_policy.py::check_retire_authority`) the manager's cleanup
 duty relies on. The Knobs table's `tools` row includes `session_retire` (any seat, portfolio-wide)
 alongside the existing `spawn_agent_session` entry for explicit by-hand cases.
-
-### 260805-ARG-L1 Cheap-First Quality Retry
-
-The quality-altitude paragraph now makes retry a wrapper-owned pipeline behavior. Cheap
-deterministic subprocesses precede pytest; exact or concrete selected-test-only proof reuse is
-automatic after a coverage-derived refusal; ambiguity runs the ordinary suite; conservative delta
-coverage falls back to one full pytest selection; and CI always runs fresh. Orchestration seats do
-not decide which previously passing tests to omit.
 
 ### L16 Knob Additions
 
@@ -214,27 +205,8 @@ change-set-scoped contract (`--targeted`); `memory_quality_check` stays a per-le
 gate; and orchestrators must not run a separate full wrapper per leaf — that is the waste
 the ladder removes.
 
-## 260713-TES-L5 Current Delta — Idle Safety Via The State-Signal Relay (synced copy)
-
-This synced runtime copy now says silence is supervised by the agent-notifier sweep and the
-state-signal relay; the escalation ladder is no longer part of the supervision story. Ending
-a turn with nothing pending remains correct.
-
 ## Update History
 
-- 2026-08-10T07:30+02:00 — 260805-ARG-L1 developer expansion: synced the cheap-first and
-  content-addressed local retry doctrine, including fail-closed invalidation, automatic full
-  fallback, and CI-fresh behavior. Verification metadata remains blank until closeout stamps the
-  code commit.
-
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1: synced orchestrator doctrine to automatic subordinate
-  close, manager-owner retention/explicit retirement, report gating, transcript retention, and the
-  landed opt-out. Verification metadata remains pinned until closeout stamps ARG-L1.
-
-- 2026-08-09T13:59+02:00 — 260713-TES-L5 curator completion round 2: refreshed this synced
-  runtime copy for the orchestrator's idle-safety wording (state-signal relay; ladder
-  retired); verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the orchestrator's
   quality altitude ladder paragraph (master-gate-owned full wrapper,
   leaf `--targeted`, per-leaf memory quality, no per-leaf full runs).
@@ -266,7 +238,7 @@ a turn with nothing pending remains correct.
   until closeout stamps the HFX2-L11 commit.
 
 - 2026-07-08T23:59+02:00 — 260707-HFX2-L5 (doctrine rewrite, active vigilance → passive
-  process-and-ack): "monitor turn-report artifacts, nudges, escalation intake" replaced with the
+  process-and-ack): "monitor turn-report artifacts" replaced with the
   passive process-and-ack contract + watcher ban (uniform-mechanism ruling 2026-07-07); the spirit
   test is explicitly retained as the one surviving model-judgment (not watching) duty; Comms gains
   a reworded "Stdin push" line naming the L2 injector and a new "Idle is safe" bullet. Doctrine-only

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/sessions.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-31T15:31+02:00                                       |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`                   |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                   |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -29,10 +29,6 @@ already pass keywords. Registered tools are unchanged.
 ## Code Commentary
 
 ### Logic
-
-Terminal and spawn tool schemas now expose the sprint-binding refusal/status values and additive
-spawn provenance needed by callers. Registration remains a transport declaration: the shared
-serving policy validates and writes repository+sprint identity before host side effects.
 
 `spawn_agent_session` is the reason this module exists as its own family and the clearest case of
 the route's contract. Its sixteen flat parameters are the published schema every dispatching agent
@@ -93,10 +89,8 @@ The other four forward their arguments as keywords:
 | Each argument lands in exactly one of the three spawn groups. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 
 ## Update History
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed session tool registration for sprint-binding
-  refusals and provenance projection. Verification metadata remains pinned until closeout stamps
-  the code commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 6 citation findings; scoped check passed.

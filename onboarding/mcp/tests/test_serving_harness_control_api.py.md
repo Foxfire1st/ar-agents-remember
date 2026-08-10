@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_serving_harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -96,8 +96,8 @@ same-repository implementation evidence.
 | The capability registrar owns exact-session advertise and set routes. | `_register_capability_routes` | mcp/src/agents_remember/serving/harness_control_api.py:220-289 |
 | `_register_submission_routes` delegates to `_register_submission_write_routes`, which installs `api_terminal_submit` and `api_terminal_reconcile` with public serializers. | `_register_submission_routes`; `_register_submission_write_routes`; `api_terminal_submit`; `api_terminal_reconcile` | mcp/src/agents_remember/serving/harness_control_api.py:292-298; mcp/src/agents_remember/serving/harness_control_api.py:342-423 |
 | Liveness observation precedes live endpoint-support classification. | `_running_control_entry` | mcp/src/agents_remember/serving/harness_control_api.py:633-666 |
-| Public receipt and reconciliation serializers retain normalized evidence while intentionally omitting internal `raw`. | `public_receipt_json`; `public_reconciliation_json` | mcp/src/agents_remember/serving/harness_control_models.py:930-941; mcp/src/agents_remember/serving/harness_control_models.py:944-955 |
-| The exact-session client encodes Unicode with `ensure_ascii=False` and sends one newline-framed JSON request. | "ensure_ascii=False" | mcp/src/agents_remember/serving/harness_control_client.py:525-525 |
+| Public receipt and reconciliation serializers retain normalized evidence while intentionally omitting internal `raw`. | `public_receipt_json`; `public_reconciliation_json` | mcp/src/agents_remember/serving/harness_control_models.py:217-228; mcp/src/agents_remember/serving/harness_control_models.py:231-242 |
+| The exact-session client encodes Unicode with `ensure_ascii=False` and sends one newline-framed JSON request. | "ensure_ascii=False" | mcp/src/agents_remember/serving/harness_control_client.py:513-513 |
 
 ## Cross-Repo References
 
@@ -121,6 +121,8 @@ API regressions now cover the control liveness memo and lifecycle-free interacti
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T15:58:25+02:00 — 260731-EFA-L6 S18-B12 curator: expanded the pre-session success claim to its complete refresh-and-normalized-envelope test owner while retaining the route, serializer, liveness, and exact-session client ownership.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired two cross-file route and liveness

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/drift.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -51,12 +51,14 @@ context packet had not.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The strict `DriftSummary` model exposes status and the optional diagnostic error. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |
-| Context packet construction validates `_drift_packet` output with `DriftSummary.model_validate`; `_drift_packet` is typed as `DriftSummaryPacket`. | "drift=DriftSummary.model_validate"; "def _drift_packet"; "-> DriftSummaryPacket" | mcp/src/agents_remember/application/context_packet.py:97-97; mcp/src/agents_remember/application/context_packet.py:169-169; mcp/src/agents_remember/application/context_packet.py:173-173 |
-| The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes. | `DriftStatus`; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:17-25 |
-| Both wire models expose the shared `DriftStatus` and optional `error` diagnostic. | "class DriftSummary"; "class DriftCheckResponse"; "status: DriftStatus"; "error: str" | mcp/src/agents_remember/models/drift.py:13-14; mcp/src/agents_remember/models/drift.py:23-23; mcp/src/agents_remember/models/memory.py:13-13; mcp/src/agents_remember/models/memory.py:18-18; mcp/src/agents_remember/models/memory.py:23-23 |
+| Context packet construction validates `_drift_packet` output with `DriftSummary.model_validate`; `_drift_packet` is typed as `DriftSummaryPacket`. | "drift=DriftSummary.model_validate"; "def _drift_packet"; "-> DriftSummaryPacket" | mcp/src/agents_remember/application/context_packet.py:105-105; mcp/src/agents_remember/application/context_packet.py:177-177; mcp/src/agents_remember/application/context_packet.py:181-181 |
+| The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes. | "DriftStatus = Literal["; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19; mcp/src/agents_remember/models/drift.py:11-11 |
+| Both wire models expose the shared `DriftStatus` and optional error diagnostic. | "class DriftSummary"; "class DriftCheckResponse(ToolResponse):" | mcp/src/agents_remember/models/drift.py:13-14; mcp/src/agents_remember/models/memory.py:13-13 |
 | These tests pin the drift diagnostic and both wire-model status validations. | `test_the_drift_error_diagnostic_survives_its_own_boundary`; `test_every_drift_status_validates_at_both_of_its_wire_models` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:728-733; mcp/tests/test_wire_vocabulary_exhaustiveness.py:764-773 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T13:54+02:00 — 260731-EFA-L6 S18-B13 curator: reissued whole-claim evidence for context validation and both drift wire-model faces for same-reviewer closure.
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-04T00:41+02:00|
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ provenance; model/effort values and their evidence are not duplicated outside th
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | HeaderStrip renders identity, one model/effort control, state, leaf-only context, and diagnostics with freshness plus optional spawn-level provenance. | `HeaderStrip`; `header-leaf`; `header-provenance-level` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169 |
-| Focused tests assert that leaf context omits seat-role text, model/effort is not duplicated with evidence badges or tier words, and spawn-level provenance is conditional. | "renders the §1.2 anatomy in order: identity → controls → state → leaf → diagnostics"; "one plain pair (260723): the control carries model · effort; diagnostics never duplicate it"; "renders no provenance chips for a hand-opened session — absent, never invented" | dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:17-25; dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:85-108; dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:110-115 |
+| Focused tests assert that leaf context omits seat-role text, model/effort is not duplicated with evidence badges or tier words, and spawn-level provenance is conditional. | "renders the §1.2 anatomy in order: identity → controls → state → leaf → diagnostics"; "one plain pair (260723): the control carries model · effort; diagnostics never duplicate it"; "renders no provenance chips for a hand-opened session — absent" | dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:17-25; dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:85-108; dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:110-115 |
 | The grammar + single dot renderer the state cluster uses. | `StateDot` | dashboard/src/panels/session-cockpit/StateDot.tsx:38-61 |
 | The freshness state consumed (`PerSessionCockpit`). | `PerSessionCockpit` | dashboard/src/data/sessionCockpitStore.ts:113-153 |
 | The stage container mounting this as the always-on header layer. | `SessionStage` | dashboard/src/panels/session-cockpit/SessionStage.tsx:46-102 |

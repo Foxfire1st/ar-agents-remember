@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T11:06+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ it + RTL `cleanup`.
 
 - "renders a fleeting banner …" — `engine-precontract-blocked` → asserts the `fleeting-banner` contains
   the "contract not yet written" label, the node `summary` reason, and the `nextAction` recovery choice.
-- "renders no fleeting banner …, shows the pod-stage canvas" — `engine-bootstrap` (contract-anchored) →
+- "renders no fleeting banner …" — `engine-bootstrap` (contract-anchored) →
   no `fleeting-banner`; `process-map` + `enclosure-canvas` present.
 - (05k) `describe("EnclosureCanvas — GSAP gate (05f §8.4 — no ticker under effects=off)")` — two cases that
   spy on `gsap.context` (importing `gsap` + `vi`) to pin the honest-motion gate **both ways**: under

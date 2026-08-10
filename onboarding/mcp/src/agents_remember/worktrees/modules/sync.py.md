@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/sync.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:12+02:00                     |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                         |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -128,12 +128,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Detection surface: `worktree_status`'s fetch-free freshness block in `base_freshness` recommends this tool. | `base_freshness` | mcp/src/agents_remember/worktrees/modules/guidance.py:349-399 |
-| The contract declares `sync_log` as one entry per `worktree_sync` that advanced the recorded base pair. | `sync_log`; "one entry per worktree_sync"; "recorded base pair" | mcp/src/agents_remember/worktrees/worktree_contract.py:277-278; mcp/src/agents_remember/worktrees/worktree_contract.py:281-281 |
+| Detection surface: `worktree_status`'s fetch-free freshness block in `base_freshness` recommends this tool. | `base_freshness` | mcp/src/agents_remember/worktrees/modules/guidance.py:319-369 |
+| The contract declares `sync_log` as one entry per `worktree_sync` that advanced the recorded base pair. | `sync_log`; "one entry per worktree_sync"; "recorded base pair" | mcp/src/agents_remember/worktrees/worktree_contract.py:275-276; mcp/src/agents_remember/worktrees/worktree_contract.py:279-279 |
 | The sync module persists the result of each base-pair advance. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:36-119 |
 | Upstream fetch + ref helpers come from the freshness kernel through `upstream_ref` and `fetch_remote`. | `upstream_ref`; `fetch_remote` | mcp/src/agents_remember/kernel/git_freshness.py:55-64; mcp/src/agents_remember/kernel/git_freshness.py:67-77 |
 | The `run_git` every merge/ff/show in this module calls, and the `GIT_LOCAL_TIMEOUT_SECONDS` default that bounds them. | `run_git`; `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| `recovery_guidance` and the `RecoveryOperation` / `RecoveryTool` vocabularies this module's block belongs to, kept separate from the phase machine's `next_guidance`. | `recovery_guidance`; `RecoveryOperation`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:62-69; mcp/src/agents_remember/worktrees/modules/guidance.py:160-183 |
+| `recovery_guidance` and the `RecoveryOperation` / `RecoveryTool` vocabularies this module's block belongs to, kept separate from the phase machine's `next_guidance`. | `recovery_guidance`; `RecoveryOperation`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:32-39; mcp/src/agents_remember/worktrees/modules/guidance.py:130-153 |
 | Sync behavior coverage: ff pair, mid-cycle block, conflicts, choices, dry-run, in `WorktreeSyncTests`. | `WorktreeSyncTests` | mcp/tests/test_worktree_sync.py:111-244 |
 
 ## Cross-Repo References
@@ -161,7 +161,7 @@ No meaningful cross-repo references found.
   exactly. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-31T20:58+02:00 — 260731-EFA-L3 curator: `run_git` now comes from
   `kernel.git_command`, not `modules.git`. The module's own logic is untouched, but the
-  Conventions section asserted "States are data, never exceptions" without qualification and that no
+  Conventions section asserted "States are data" without qualification and that no
   longer holds unconditionally: the shared runner always sets a timeout (the 300s
   `GIT_LOCAL_TIMEOUT_SECONDS` default, taken by all six `run_git` calls here — `_consistent_pair_block`,
   `_sync_code`, `_aborted_merge_state` x2, `_move_memory_branch` x2), the module's only `except` is

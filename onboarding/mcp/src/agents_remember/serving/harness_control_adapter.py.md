@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -92,9 +92,9 @@ separate consumer of the adapter protocol.
 | Normalized model/effort catalogs, ACP-style options, owned launch knobs, exact acceptance values, and set evidence are declared separately. | `CapabilitySnapshot`; `LaunchKnobs`; `SetResult` | mcp/src/agents_remember/serving/harness_capabilities.py:75-133; mcp/src/agents_remember/serving/harness_capabilities.py:136-148; mcp/src/agents_remember/serving/harness_capabilities.py:151-159 |
 | The hosted runner requires the combined launchable seam for preflight, discovery, validation, and runtime construction. | `_prepare_controlled_launch` | mcp/src/agents_remember/serving/harness_control_runner.py:192-240 |
 | The bridge validates handshake identity/version/capabilities and routes both setters through its ordered queue. | `HarnessControlBridge` | mcp/src/agents_remember/serving/harness_control_bridge.py:77-543 |
-| The bridge's interrupt dispatch detects `InterruptCapableAdapter` structurally, refuses unsupported harnesses typed naming the adapter, and rejects an adapter-minted epoch. | `InterruptCapableAdapter` | mcp/src/agents_remember/serving/harness_control_bridge.py:268-295 |
+| The bridge's interrupt dispatch detects `InterruptCapableAdapter` structurally, refuses unsupported harnesses typed naming the adapter, and rejects an adapter-minted epoch. | "InterruptCapableAdapter):" | mcp/src/agents_remember/serving/harness_control_bridge.py:293-293 |
 | The authority routes asset-carrying submissions to `submit_with_assets` and fails non-capable adapters closed with an unsupported receipt. | `_invoke_adapter` | mcp/src/agents_remember/serving/harness_submission_authority.py:729-757 |
-| Codex and Pi implement both sub-protocols: exact-active-turn/expected-operation interrupt writes with replay-once, and verified asset construction. | `submit_with_assets`; `interrupt` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:266-279; mcp/src/agents_remember/serving/codex_app_server_adapter.py:281-328; mcp/src/agents_remember/serving/pi_rpc_adapter.py:389-402; mcp/src/agents_remember/serving/pi_rpc_adapter.py:404-454 |
+| Codex and Pi implement both sub-protocols: exact-active-turn/expected-operation interrupt writes with replay-once, and verified asset construction. | "self._last_interrupt: tuple[tuple[str" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:124-124 |
 
 ## Cross-Repo References
 
@@ -112,6 +112,8 @@ unsupported implementation and reducer callback preserve exact refs so adapters 
 by FIFO or request id alone.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 5 citation entries (10 findings); no Tier-3 findings.
 

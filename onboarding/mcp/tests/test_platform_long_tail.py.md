@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_platform_long_tail.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-09T06:48+02:00                     |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastUpdated            | 2026-07-31T15:32+02:00                     |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -57,31 +57,16 @@ a guard nobody can show is right**.
   never propagate.
 - Renewal and update paths must preserve fields the caller did not restate.
 
-**260713-TES-L4:** `InboxRenewalTests.test_a_row_that_is_no_longer_pending_is_returned_untouched`
-now seeds the terminal state via `mark_landed` (the `consumed` fixture is gone with the N16
-consume demotion) and asserts the landed row is returned untouched — a re-firing condition
-appends nothing and the caller sees the terminal row back.
-
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The sibling refusal collection for provider/seed/dispatch paths. | `CgcBackendPortsTests` | mcp/tests/test_platform_edge_refusals.py:76-123 |
 
-## 260713-TES-L5 Current Delta — Escalation Settings Refused Loud
-
-`EscalationSettingsTests` becomes `RetiredEscalationSettingsTests`: any settings file that
-sets the `orchestration.escalation` family (or `respawnAfterRung`) fails loud as an unknown
-key; the rung/SLA parse tests are deleted with the family.
-
 ## Update History
 
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the escalation-family fail-loud
-  retirement tests in the long-tail settings suite. Verification metadata pinned until
-  closeout stamps the 260713-TES-L5 commit.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the renewal fixture swap to the
-  formal `landed` terminal (mark_landed; the consumed fixture is gone with the N16 consume
-  demotion). Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` row with an exact
   anchor (deleting the unresolvable directory row); exact non-fixing check returns zero findings.
 

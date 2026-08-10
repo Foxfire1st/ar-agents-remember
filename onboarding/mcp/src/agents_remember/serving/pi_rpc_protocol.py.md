@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -79,7 +79,7 @@ owns raw subprocess transport.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Adapter startup/discovery reads state and catalog, validates current selection, and keeps entries out of discovery. | `_read_state`; `_read_available_models`; `_read_entries`; `_current_capabilities` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:540-544; mcp/src/agents_remember/serving/pi_rpc_adapter.py:566-574; mcp/src/agents_remember/serving/pi_rpc_adapter.py:613-614; mcp/src/agents_remember/serving/pi_rpc_adapter.py:631-657 |
+| Adapter startup/discovery reads state and catalog, validates current selection, and keeps entries out of discovery. | `_read_state`; `_read_available_models`; `_read_entries`; `_current_capabilities` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:544-548; mcp/src/agents_remember/serving/pi_rpc_adapter.py:570-578; mcp/src/agents_remember/serving/pi_rpc_adapter.py:617-618; mcp/src/agents_remember/serving/pi_rpc_adapter.py:635-661 |
 | Process transport uses this module's JSONL encoder/decoder and exact response correlation. | `PiRpcSubprocess` | mcp/src/agents_remember/serving/pi_rpc_process.py:43-287 |
 
 ## Cross-Repo References
@@ -91,6 +91,8 @@ No external repository boundary is implemented by this protocol parser.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 2 citation items; scoped citation check now passes.
 

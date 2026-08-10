@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a` |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -141,15 +141,15 @@ thread-free discovery contract.
 | Busy-queue prompts preserve their acceptance-time selection epoch, and reversing pending settings back to effective clears the barrier. | `test_busy_second_submit_certifies_zero_bytes_without_steer_or_adapter_queue`; `test_reversing_pending_codex_settings_clears_fresh_turn_barrier` | mcp/tests/test_codex_app_server_adapter_correlation.py:231-257; mcp/tests/test_codex_app_server_adapter_turns.py:60-75 |
 | Unknown model/model-local effort values cause no RPC; pending settings force a fresh turn rather than steer; deliberate notification matching and external-drift rejection stay distinct. | `test_codex_set_rejects_unadvertised_model_and_model_local_effort_without_rpc`; `test_pending_codex_settings_force_fresh_turn_instead_of_steering_active_turn`; `test_settings_notification_promotes_only_deliberate_match_and_keeps_drift_guard` | mcp/tests/test_codex_app_server_adapter_correlation.py:260-282; mcp/tests/test_codex_app_server_adapter_correlation.py:285-306; mcp/tests/test_codex_app_server_adapter_correlation.py:309-360 |
 | Idempotent setters return immediate without falsely claiming an effective echo. | `test_idempotent_codex_set_is_immediate_without_invented_effective_evidence` | mcp/tests/test_codex_app_server_adapter_reconnect.py:27-40 |
-| The experimental-request case pins the decline-not-fail remediation contract. | `test_unknown_server_request_is_declined_while_experimental_history_stays_enabled` | mcp/tests/test_codex_app_server_adapter_reconnect.py:164-201 |
+| The experimental-request case pins the decline-not-fail remediation contract. | `test_unknown_server_request_is_declined_while_experimental_history_stays_enabled` | mcp/tests/test_codex_app_server_adapter_reconnect.py:166-203 |
 | The shared `TEST_SETTINGS` baseline and the `drain_events`/`assert_notification_is_inert`/`next_event_of_kind` helpers every correlation case reuses. | `TEST_SETTINGS`; `drain_events`; `assert_notification_is_inert`; `next_event_of_kind` | mcp/tests/test_codex_app_server_adapter.py:231-235; mcp/tests/test_codex_app_server_adapter.py:261-268; mcp/tests/test_codex_app_server_adapter.py:271-280; mcp/tests/test_codex_app_server_adapter.py:283-288 |
 | The adapter validates the native Codex harness id and delegates transient discovery and cached advertisement to its session. | `CodexAppServerAdapter`; `start`; `discover` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115 |
 | Session discovery performs initialize plus paged model-list only and always stops its transient transport; started advertisement requires a retained catalog. | `CodexAppServerSession`; `discover`; `_read_models` | mcp/src/agents_remember/serving/codex_app_server_session.py:102-458 |
-| Adapter setters update desired state, return queued or immediate honestly, and never make a setter RPC. | "    async def set_model("; "    async def set_effort("; "    def set_desired_model(self, model_key"; "    def set_desired_effort(self, effort" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224; mcp/src/agents_remember/serving/codex_app_server_session.py:226-245; mcp/src/agents_remember/serving/codex_app_server_session.py:247-253 |
+| Adapter setters update desired state, return queued or immediate honestly, and never make a setter RPC. | "async def set_model("; "async def set_effort("; "rebase_detail = self._session.set_desired_model(model_key)"; "self._session.set_desired_effort(effort)" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224; mcp/src/agents_remember/serving/codex_app_server_session.py:226-245; mcp/src/agents_remember/serving/codex_app_server_session.py:247-253 |
 | Each accepted prompt reserves its desired model/effort snapshot; pending settings force a fresh turn and remain attached to that evidence while queued. | `submit`; `_start_turn`; `preflight_operation` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:229-237; mcp/src/agents_remember/serving/codex_app_server_adapter.py:239-264; mcp/src/agents_remember/serving/codex_app_server_adapter.py:434-480 |
-| Turn-start overrides carry the captured selection and promote it only after a non-failed/non-interrupted status. | "    async def _start_turn("; "    async def _accept_started_turn("; "    def accept_settings_selection(" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:438-484; mcp/src/agents_remember/serving/codex_app_server_adapter.py:537-572; mcp/src/agents_remember/serving/codex_app_server_session.py:265-283 |
+| Turn-start overrides carry the captured selection and promote it only after a non-failed/non-interrupted status. | "async def _start_turn("; "return await self._accept_started_turn("; "self._session.accept_settings_selection(model=evidence.model" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:442-442; mcp/src/agents_remember/serving/codex_app_server_adapter.py:484-484; mcp/src/agents_remember/serving/codex_app_server_adapter.py:557-557; mcp/src/agents_remember/serving/codex_app_server_session.py:265-283 |
 | Session state validates dynamic model-local effort, separates desired from effective state, promotes only an accepted selection, and guards settings notifications against unrelated drift. | `set_desired_model`; `set_desired_effort`; `accept_settings_selection`; `accept_settings_update` | mcp/src/agents_remember/serving/codex_app_server_session.py:226-245; mcp/src/agents_remember/serving/codex_app_server_session.py:247-253; mcp/src/agents_remember/serving/codex_app_server_session.py:265-283; mcp/src/agents_remember/serving/codex_app_server_session.py:285-303 |
-| The fixture path remains an explicit test baseline rather than a runtime catalog source. | `fixture`; `TEST_SETTINGS` | mcp/tests/test_codex_app_server_adapter.py:140-141; mcp/tests/test_codex_app_server_adapter.py:231-235 |
+| The fixture path remains an explicit test baseline rather than a runtime catalog source. | `fixture`; `TEST_SETTINGS` | mcp/tests/test_codex_app_server_adapter.py:142-143; mcp/tests/test_codex_app_server_adapter.py:233-237 |
 
 ## Cross-Repo References
 
@@ -174,6 +174,8 @@ declined/degraded. It does not infer that any history method exists or that expe
 requests are accepted; the dedicated history-reader tests own runtime method probing.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

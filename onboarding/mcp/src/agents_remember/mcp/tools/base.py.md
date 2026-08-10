@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-09T06:48+02:00                     |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`|
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -18,7 +18,6 @@ modeled builder uses. L11 adds `task_reopen` to `PUBLIC_TOOLS`, listed beside
 `task_doc` (it is a task tool, not a worktree tool). L2 adds `spawn_agent_session`
 beside `attach_terminal_session_to_leaf` (both terminal-catalog tools). L3 adds
 `orchestration_nudge_manager` for rate-limited manager nudges over the inbox.
-L4 adds `operator_inbox_supersede` for explicit supersession (R11).
 
 ## Code Commentary
 
@@ -44,14 +43,14 @@ cit:([`_attach_lifecycle_tail`], mcp/src/agents_remember/application/tool_respon
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Response model registry resolved per tool name. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
-| The response envelope union names the strict and flexible families, and `FlexibleResponseEnvelope` declares the shared `ok`/token/`nextStep`/`agentNotifierBanner` fields. | `ResponseEnvelope`; `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:72-89; mcp/src/agents_remember/models/base.py:98-98 |
-| The server registers tool families through its registrar loop. | `register_tools` | mcp/src/agents_remember/mcp/server.py:33-34 |
+| The response envelope union names the strict and flexible families, and `FlexibleResponseEnvelope` declares the shared `ok`/token/`nextStep`/`supervisorBanner` fields. | `ResponseEnvelope`; `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:72-89; mcp/src/agents_remember/models/base.py:98-98 |
+| The server registers tool families through its registrar loop. | `register_tools` | mcp/src/agents_remember/mcp/server.py:42-43 |
 | The registrar tuple owns the tool-family set consumed by that loop. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:35-48 |
 | Token-accounting finalizer used by the completed response payload. | `finalize_payload_tokens` | mcp/src/agents_remember/models/tokens.py:232-249 |
 | The ambient lifecycle records each completed tool call. | `emit_tool` | mcp/src/agents_remember/observer/ambient.py:405-424 |
 | The next-step engine returns the `NextStep` model. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
 | The two terminal-catalog public tools' payload builders. | `attach_terminal_session_to_leaf_payload`; `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:26-43; mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
-| The agent-notifier heartbeat helper used for the optional banner. | `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:141-157 |
+| The supervisor heartbeat helper used for the optional banner. | `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:135-151 |
 | `AmbientLifecycle.root` exposes the observer-store root used by the supervisor-banner helper. | "    def root(self) -> Path:"; "def _agent_notifier_banner(amb: AmbientLifecycle)" | mcp/src/agents_remember/observer/ambient.py:157-157; mcp/src/agents_remember/application/tool_response.py:22-22 |
 
 ## 260712-TRH-L4 Final Candidate
@@ -59,12 +58,6 @@ cit:([`_attach_lifecycle_tail`], mcp/src/agents_remember/application/tool_respon
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
-
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded `operator_inbox_supersede` joining
-  `PUBLIC_TOOLS` (explicit supersession, R11); `_tool_payload` behavior unchanged. Verification
-  metadata pinned until closeout stamps the 260713-TES-L4 commit.
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
 - 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: split the base-tool ownership record across the payload entry point, response finalizer/lifecycle tail, envelope models, registrar loop/tuple, and supervisor-banner root; the scoped fixer will generate citation ranges.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
@@ -77,7 +70,7 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 
 - 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5, issue #15): `_tool_payload` now
   attaches `finalized["supervisorBanner"]` when the supervisor heartbeat has gone stale past
-  `DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS`, via `supervisor_heartbeat.supervisor_staleness_banner`
+  `DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS`, via `supervisor_heartbeat.agent_notifier_staleness_banner`
   and `amb.root`; exception-contained at the call site, silent when the supervisor has never ticked.
   Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
 - 2026-07-08T02:43+02:00 — 260707-HFX-L8: `PUBLIC_TOOLS` now advertises `session_retire` and
@@ -107,3 +100,4 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 - 2026-06-01T20:45+02:00 — Registered `worktree_abandon` in `PUBLIC_TOOLS` so its response is validated like every other public tool.
 - 2026-05-30T22:29+02:00: Documented that `_tool_payload` now finalizes token-accounting metadata via `finalize_payload_tokens` (S6 wiring), making it the single point that populates `tokens`/`tokenizer`/`tokenCountExact` on every MCP response. Verification metadata stays pinned until closeout commits the source change.
 - 2026-05-29T18:35+02:00: Created when `mcp/tools.py` was split into the `mcp/tools/` package (commit `01f503d`); holds the `_tool_payload`/`PUBLIC_TOOLS` contract previously documented in `tools.py.md`.
+

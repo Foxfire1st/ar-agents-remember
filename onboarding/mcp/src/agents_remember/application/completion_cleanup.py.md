@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/completion_cleanup.py`  |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-10T06:28+02:00                                       |
-| lastVerifiedCommitHash |                                                              `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |                                                              2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash |                                                              `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                                              2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ tests pin edge wiring separately from cleanup failure containment.
 | --- | --- | --- |
 | Integration and finalization call `auto_complete_seats` only after their underlying edge succeeds. | `worktree_integrate_tool`; `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:324-355; mcp/src/agents_remember/application/worktree_tools.py:419-451 |
 | Normal retirement terminates the host and persists catalog retirement provenance without touching transcripts. | `retire_entry` | mcp/src/agents_remember/serving/retire.py:37-71 |
-| Durable inbox folding supplies the exact report rows used as the close barrier. | `current` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:105-107 |
+| Durable inbox folding supplies the exact report rows used as the close barrier. | "def current(self) -> dict[str, OperatorInboxEntry]:" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:105-107 |
 | Integration tests prove all eligible roles, owner exclusions, report matching, provenance, transcript retention, and opt-out landing. | `AutoLandHookIntegrationTests` | mcp/tests/test_seat_lifecycle.py:645-869 |
 | Focused tests prove contract, retirement-race, per-seat failure, and opt-out landing containment. | `CompletionCleanupContainmentTests` | mcp/tests/test_completion_cleanup.py:47-169 |
 
@@ -89,6 +89,7 @@ No meaningful cross-repository boundary is owned by this module.
 
 ## Update History
 
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the current staged completion-edge cleanup policy; the report-gated worker/reviewer/curator boundary remains accurately described. Verification metadata remains pinned until closeout.
 - 2026-08-10T06:28+02:00 — Created when completion-seat cleanup was extracted from the worktree
   application entry-point module. The split preserves exact-report-gated close behavior, the
   landed/archive opt-out, owner-role exclusion, per-seat containment, and additive response fields.

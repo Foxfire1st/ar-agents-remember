@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/agent_history.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `3a8ff703d796dc585b86a458daaf9eb2af6b2b31`|
-| lastVerifiedCommitDate |  2026-07-30T13:59:13+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,6 +71,8 @@ No cross-repository boundary is implemented here.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: reconciled the projector/API/test ledger, converted the package-split history citation, and supplied scoped fixer input for generated ranges. Verification metadata unchanged.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the cross-file citation after the `active/projector.py` to `active/projector/` package split. The typed-native-history catch and unavailable/recovered row minting are owned by `ChildHistoryProjection._hydrate` cit:([`_hydrate`], mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:99-137).

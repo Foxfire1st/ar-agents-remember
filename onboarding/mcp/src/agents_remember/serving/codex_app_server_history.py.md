@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_history.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ reader. Focused tests pin every probe, continuation, cycle, fallback, and capaci
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The adapter constructs one reader, delegates native pages to it, and resets the probe after reconnect. | `CodexAppServerAdapter` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115 |
-| The protocol defines the separate 128 MiB emergency payload fuse before decoding. | `CODEX_REMOTE_COMPATIBILITY_CEILING_BYTES` | mcp/src/agents_remember/serving/codex_app_server_protocol.py:22-22 |
+| The protocol defines the separate 128 MiB emergency payload fuse before decoding. | `CODEX_REMOTE_COMPATIBILITY_CEILING_BYTES` | mcp/src/agents_remember/serving/codex_app_server_protocol.py:27-27 |
 | Unit regressions cover items-first/turns fallback, linear one-shot walks, cycle termination, exact fallback, aggregate legacy refusal, eviction, and typed IPC survival. | `test_bounded_items_are_probed_and_opaque_cursor_consumes_each_source_page_once`; `test_turns_list_is_used_when_bounded_items_method_is_unavailable`; `test_turns_full_continuation_requests_and_decodes_each_source_turn_once`; `test_two_cursor_cycle_terminates_typed_without_re_requesting_a_source_page`; `test_legacy_whole_thread_read_requires_both_bounded_methods_to_be_unavailable`; `test_legacy_complete_response_aggregate_over_ceiling_is_typed`; `test_evicted_legacy_continuation_expires_without_refetch`; `test_native_history_limit_outcome_survives_both_control_ipc_clients` | mcp/tests/test_codex_native_history.py:134-166; mcp/tests/test_codex_native_history.py:169-202; mcp/tests/test_codex_native_history.py:205-252; mcp/tests/test_codex_native_history.py:350-384; mcp/tests/test_codex_native_history.py:387-419; mcp/tests/test_codex_native_history.py:422-451; mcp/tests/test_codex_native_history.py:487-531; mcp/tests/test_codex_native_history.py:572-589 |
 | The production regression crosses measured-size stdio, runtime probe, adapter, Unix IPC, and selected-child projection. | `test_measured_history_crosses_transport_probe_ipc_and_selected_projection` | mcp/tests/test_codex_history_production_path.py:281-365 |
 
@@ -111,6 +111,8 @@ thread's frames. `_scan_bounded_source` and both bounded contracts (`bounded-ite
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T02:50:24+02:00 — W3-B01 curator: curated 4 Repo-Internal table citations with exact adapter, protocol, unit-regression, and production-path anchors. Verification metadata remains unchanged for closeout.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations into

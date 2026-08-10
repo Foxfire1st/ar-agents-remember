@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/ChatsStageBody.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ diagnostic; a legacy-raw session keeps its interactive PTY as the primary body, 
   session startup (`submission-authority` 503), so the first failure schedules ONE 800 ms retry before
   escalating `epochState` to `failed`; fail-loud is preserved — a second failure still renders the
   visible projection-failed banner (`ConversationReconnect phase="projection-failed"`).
-- **Library overlay + diagnostics mutual exclusion** cit:(["const ref = useRef<HTMLDivElement>(null);", "<div className={showLibrary ? hiddenBehind : pool} data-testid="], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:34-34; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:525-525; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:55-55);", `<div className={showLibrary ? hiddenBehind : pool} data-testid=`], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:34-34; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:525-525);"], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:34-34; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:525-525): when the library is open
+- **Library overlay + diagnostics mutual exclusion** cit:(["const ref = useRef<HTMLDivElement>(null);", "<div className={showLibrary ? hiddenBehind : pool} data-testid="], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:34-34; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:525-525; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:55-55);""], dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:34-34; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:525-525): when the library is open
   (`showLibrary`, controlled harness only) the active surface stays mounted but goes inert behind it
   (`display:none`), and the `TerminalDiagnosticsDrawer` is NOT rendered at all — so the library and the
   drawer can never overlay/z-fight (F8). A successful open closes the library and focuses the new

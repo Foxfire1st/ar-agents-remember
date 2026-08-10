@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T00:56+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -22,12 +22,12 @@ import cycles.
 
 ### Logic
 
-Defines the `DriftRow` result record returned by every classifier, cit:([`DriftRow`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:64-75), the
-`EntityFingerprint` row model, cit:([`EntityFingerprint`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:78-83), and the `InlineBlock` parse result,
-cit:([`InlineBlock`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:86-89). Also defines the module constants: `CLASSIFICATIONS`,
+Defines the `DriftRow` result record returned by every classifier, cit:([`DriftRow`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:58-69), the
+`EntityFingerprint` row model, cit:([`EntityFingerprint`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:72-77), and the `InlineBlock` parse result,
+cit:([`InlineBlock`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:80-83). Also defines the module constants: `CLASSIFICATIONS`,
 `ACTIONABLE_CLASSIFICATIONS`, the inline markers, `GIT_BLOB_SET_ALGORITHM`,
-`SIDECAR_DOC_TYPES`, cit:([`COMMON_BLOCK_DELIMITERS`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:53-61), and the
-`repo_root_placeholder()` helper: cit:([`repo_root_placeholder`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:92-93).
+`SIDECAR_DOC_TYPES`, cit:([`COMMON_BLOCK_DELIMITERS`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:47-55), and the
+`repo_root_placeholder()` helper: cit:([`repo_root_placeholder`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:86-87).
 
 ### The drift summary vocabulary (260731-EFA-L4)
 
@@ -83,7 +83,6 @@ cannot carry that narrowing across the branch.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The drift facade re-exports these models/constants for backward-compatible imports. | `DriftRow` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py:63-75 |
 | The producer of every `DriftStatus` member; its three summary builders are typed `-> DriftSummaryPacket`. | `not_checked`; `run_drift_summary`; `summarize_rows` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:21-22; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:76-91 |
 | The context-packet wire model that reads `DriftStatus` and gained the matching `error` field. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |
 | The tool response model that dropped its third copy of the enum for the same alias. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:13-27 |
@@ -97,7 +96,7 @@ cannot carry that narrowing across the branch.
   result record, the `EntityFingerprint` row model, and the `InlineBlock` parse result" plus a
   named list of constants, and asserted "dataclasses and constants only". All three claims were
   incomplete after this leaf. Verified against the diff and the current source and documented the
-  new declarations: cit:([`DriftStatus`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14) and the `DriftSummaryPacket` TypedDict: cit:([`DriftSummaryPacket`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:17-25). Recorded
+  new declarations: cit:(["status: DriftStatus"], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14) and the "class DriftSummaryPacket(TypedDict):" TypedDict: cit:(["class DriftSummaryPacket(TypedDict):"], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19). Recorded
   why they are here rather than beside either wire model — `models/drift.py::DriftSummary` and
   `models/memory.py::DriftCheckResponse` now both import `DriftStatus` from this declaration, and
   the copy that used to sit on `DriftSummary` was missing `error`, so the packet crashed on the

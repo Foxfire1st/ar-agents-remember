@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_conversation_control_projector_edges.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-31T15:32+02:00                                   |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`               |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`               |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ were unreachable through the fixtures the contract suites use.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The control interrupt ledger under test. | `_claude_result_settlement`; `interrupt`; `interrupt_status` | mcp/src/agents_remember/serving/conversation/control/operations.py:95-156; mcp/src/agents_remember/serving/conversation/control/operations.py:159-201; mcp/src/agents_remember/serving/conversation/control/operations.py:417-449 |
-| The attachment multipart parser under test. | `_parse_uploads` | mcp/src/agents_remember/serving/conversation/control/api.py:750-761 |
+| The attachment multipart parser under test. | `_parse_uploads` | mcp/src/agents_remember/serving/conversation/control/api.py:762-773 |
 | The active-identity proof gate under test. | `build_identity` | mcp/src/agents_remember/serving/conversation/active/factories.py:79-105 |
 | The Claude projector whose sparse task shape is covered here. | `map_evidence_frame`; `_map_result` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:210-239; mcp/src/agents_remember/serving/conversation/projectors/claude.py:1021-1074 |
 | The Codex projector whose unowned and item-scoped shapes are covered here. | `map_evidence_frame`; `_map_item_scoped_notification` | mcp/src/agents_remember/serving/conversation/projectors/codex.py:146-199; mcp/src/agents_remember/serving/conversation/projectors/codex.py:280-307 |
@@ -59,6 +59,8 @@ were unreachable through the fixtures the contract suites use.
 | The attachment contract suites whose happy paths these branches complete. | `AttachmentStageTests`; `AttachmentSubmitTests`; `AttachmentRebindTests`; `AttachmentReconcileTransitionTests` | mcp/tests/test_conversation_control_attachments.py:72-155; mcp/tests/test_conversation_control_attachments.py:158-233; mcp/tests/test_conversation_control_attachments.py:236-402; mcp/tests/test_conversation_control_attachments.py:405-569 |
 
 ## Update History
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-03T02:57+02:00 — W3-B03 curator: curated 8 table citations for control operations, attachment parsing, identity, per-harness projectors, and contract suites; fixer-generated ranges verified.
 
 - 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created onboarding for the new control /

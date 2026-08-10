@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/service.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ suite drives the service through the real FastAPI composition with doubled nativ
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The dormant library port defines scoped list, historical read, and server-private resume-target resolution. | `ConversationLibraryPort` | mcp/src/agents_remember/serving/conversation/ports.py:59-84 |
+| The dormant library port defines scoped list, historical read, and server-private resume-target resolution. | `ConversationLibraryPort` | mcp/src/agents_remember/serving/ports.py:93-118 |
 | List/read routes return wire pages, narrow scope, and map capability/cursor/store refusals to exact statuses. | `test_list_route_returns_wire_page_and_authorizes_scope` | mcp/tests/test_conversation_library_api.py:345-358 |
 | The per-app `LibraryShared` bundle and caller-bound builders construct this service. | `LibraryShared` | mcp/src/agents_remember/serving/conversation/library/factories.py:53-60 |
 
@@ -79,6 +79,8 @@ No meaningful cross-repo boundary exists for this local orchestration service.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 2 citation claims; scoped result 0 findings.
 
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the list/read re-authorization

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/taskDocuments.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |                                                  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |                                                  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                                  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,8 +70,8 @@ link state is recorded rather than silently treated as already landed.
 | --- | --- | --- |
 | The helper encodes `docPath`, rejects non-OK responses, and returns the decoded task node. | `fetchTaskDocument` | dashboard/src/data/taskDocuments.ts:3-9 |
 | `useTaskDocumentBody` calls the adapter for the visible document and keys cached bodies by path plus revision. | `useTaskDocumentBody` | dashboard/src/data/useTaskDocumentBody.ts:29-74 |
-| The serving route maps projection readiness and the confined snapshot read to HTTP responses. | "def _task_document_response(runtime: _ServingRuntime, path: str) -> JSONResponse:" | mcp/src/agents_remember/serving/_app_routes.py:100-100 |
-| The snapshot reader resolves under `tasks`, validates the schema, and builds the full node. | "def read_task_document_body(  # pragma: no cover" | mcp/src/agents_remember/observer/snapshots_impl/_task_documents.py:80-80 |
+| The serving route maps projection readiness and the confined snapshot read to HTTP responses. | "def _task_document_response(runtime: _ServingRuntime" | mcp/src/agents_remember/serving/_app_routes.py:102-102 |
+| The snapshot reader resolves under `tasks`, validates the schema, and builds the full node. | "def read_task_document_body(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:79-79 |
 
 ## Cross-Repo References
 

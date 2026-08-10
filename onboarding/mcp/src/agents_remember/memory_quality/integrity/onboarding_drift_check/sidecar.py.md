@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -61,7 +61,7 @@ from `git_ops`.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Metadata parsing, path mirroring, and `rel` come from `discovery`. | `parse_table_metadata`; `mirror_onboarding_path`; `rel` | mcp/src/agents_remember/kernel/coordination_context/paths.py:42-52; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:17-32; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:58-64 |
-| Entity-catalog sidecars import `classify_entity_catalog` from `entities`. | "from agents_remember.memory_quality.integrity.onboarding_drift_check.entities import ( classify_entity_catalog, )" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:21-23 |
+| Entity-catalog sidecars import `classify_entity_catalog` from `entities`. | "from agents_remember.memory_quality.integrity.onboarding_drift_check.entities import ( classify_entity_catalog" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:21-23 |
 | For `repo-entity-catalog` sidecars, `classify_sidecar_onboarding_units` delegates to `classify_entity_catalog`. | "if doc_type == \"repo-entity-catalog\": return classify_entity_catalog" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:299-300 |
 | Local staged/unstaged change notes come from `git_ops`. | `local_change_note`; `local_route_change_note` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:22-38; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:48-51 |
 | The `cat-file -e` and `diff --quiet` calls run on the single kernel git runner. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |

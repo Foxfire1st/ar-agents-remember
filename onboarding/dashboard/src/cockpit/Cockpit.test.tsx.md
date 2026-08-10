@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ dashboard store.
   default `rail--right` shows the Event River; clicking the `rail-toggle-chat` `role="radio"` segment
   swaps in the single-instance `RailChat` (`rail-chat` testid), and clicking `rail-toggle-river` swaps
   the Event River back, pinning the `railView` switch without unmounting the railed body.
-- "rail chat keys by the drilled leaf, not the master" (L5 fix 1) — a local `seedDrillableMaster` (+ a
+- "rail chat keys by the drilled leaf" (L5 fix 1) — a local `seedDrillableMaster` (+ a
   `taskDoc` factory) seeds a lifecycle-bound master with one authored, drillable leaf. The test selects
   the master, toggles the rail to chat, and asserts the master overview shows no leaf slot yet
   (`rail-chat-no-leaf`); drilling into the master's `subtask-open-1` then makes the `rail-chat-heading`
@@ -150,8 +150,8 @@ the reviewed task evidence for any current behavioral claim.
 | `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
 | `GALLERY` fixtures + the `applySnapshot` hydration pattern. | `GalleryEntry`; `seed` | dashboard/src/cockpit/Cockpit.test.tsx:29-33; dashboard/src/dev/fixtures.ts:11-11; dashboard/src/dev/fixtures.ts:127-131 |
 | The shared jsdom stubs the render relies on. | "jsdom omits scrollIntoView"; "jsdom's media elements don't implement playback" | dashboard/src/test/setup.ts:86-86; dashboard/src/test/setup.ts:125-125 |
-| The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. | "renders complete bodies for direct, master, drilled, and lifecycle-bound paths during analytics refreshes"; "discards task A's late body after selecting task B and hydrates B exactly once" | dashboard/src/cockpit/Cockpit.test.tsx:336-396; dashboard/src/cockpit/Cockpit.test.tsx:398-440 |
-| The S5 cutover case proves existence of a `sessions-view` node, no Sessions route, and same-node hide/reveal persistence. | "defaults to Operations, exposes no Sessions route, and keeps one Chats cockpit mounted" | dashboard/src/cockpit/Cockpit.test.tsx:767-794 |
+| The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. | "renders complete bodies for direct"; "discards task A's late body after selecting task B and hydrates B exactly once" | dashboard/src/cockpit/Cockpit.test.tsx:336-396; dashboard/src/cockpit/Cockpit.test.tsx:398-440 |
+| The S5 cutover case proves existence of a `sessions-view` node, no Sessions route, and same-node hide/reveal persistence. | "defaults to Operations" | dashboard/src/cockpit/Cockpit.test.tsx:767-794 |
 | The production source census, separately from the singular test query, establishes the sole `<SessionsView>` JSX mount. | "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:774-774 |
 | The `withStates` helper + the two `task-metrics` cases (`2 awaiting you`; nothing at zero). | `withStates` | dashboard/src/cockpit/Cockpit.test.tsx:448-457 |
 | `railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole("img", { name: "Severity: warn" })` + `getByRole("option", …)`, and the scoped `axe.run`. | `railProjection`; `WARN_ROW`; "keeps a handoff state and a queue warning apart in the one rail that shows both"; "speaks the severity of an attention row into the accessibility tree"; "passes axe on the panel the severity label lives in" | dashboard/src/cockpit/Cockpit.test.tsx:859-907; dashboard/src/cockpit/Cockpit.test.tsx:909-919; dashboard/src/cockpit/Cockpit.test.tsx:921-931; dashboard/src/cockpit/Cockpit.test.tsx:933-949; dashboard/src/cockpit/Cockpit.test.tsx:951-961 |

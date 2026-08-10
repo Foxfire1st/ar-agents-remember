@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/interactionAnswer.ts`        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-09T19:36+0200 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated | 2026-07-26T15:40+0200 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -116,6 +116,8 @@ revision-CAS so a concurrent operator edit survives. Lifecycle membership is irr
 message, PTY write, or lifecycle gate can never substitute for the exact-session response.
 
 ## Update History
+- 2026-08-10T09:45+02:00 — 260731-EFA-L9 curator repair: updated interaction-answer routing claims and current submit/retry citations.
+
 - 2026-08-09T19:36+02:00 — 260713-TES-L5F2: removed the lifecycle-gate fallback. Every
   representable vendor interaction now uses the exact-session interaction-response endpoint;
   documented lifecycle-free arbitrary-choice and composer handling.
@@ -150,3 +152,4 @@ message, PTY write, or lifecycle gate can never substitute for the exact-session
   answer-as-decision-note POST on the approve verb, verbatim failure text, and the NOT-YET vs
   CANNOT copy split on the seat's lifecycle binding. Verification metadata pinned to the leaf
   base until closeout stamps the L6 code commit.
+

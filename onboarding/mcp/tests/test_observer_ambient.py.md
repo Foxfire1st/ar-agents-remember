@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer_ambient.py`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-08T02:00+02:00                           |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`       |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -115,8 +115,8 @@ into a literal container is still seen.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The ambient lifecycle under test. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:90-594 |
-| The state vocabulary (`TERMINAL_STATES`), `coerce_end_outcome`, and `coerce_phase` under test. | `TERMINAL_STATES`; `coerce_end_outcome`; `coerce_phase` | mcp/src/agents_remember/observer/lifecycle_state.py:139-139; mcp/src/agents_remember/observer/lifecycle_state.py:149-158; mcp/src/agents_remember/observer/lifecycle_state.py:180-184 |
-| The lifecycle-state module owns the `LifecycleError` and guarded-start subtype asserted throughout this suite. | `LifecycleError`; `GuardedStartError` | mcp/src/agents_remember/observer/lifecycle_state.py:161-162; mcp/src/agents_remember/observer/lifecycle_state.py:165-177 |
+| The state vocabulary (`TERMINAL_STATES`), `coerce_end_outcome`, and `coerce_phase` under test. | `TERMINAL_STATES`; `coerce_end_outcome`; `coerce_phase` | mcp/src/agents_remember/observer/lifecycle_state.py:108-108; mcp/src/agents_remember/observer/lifecycle_state.py:118-127; mcp/src/agents_remember/observer/lifecycle_state.py:149-153 |
+| The lifecycle-state module owns the `LifecycleError` and guarded-start subtype asserted throughout this suite. | `LifecycleError`; `GuardedStartError` | mcp/src/agents_remember/observer/lifecycle_state.py:130-131; mcp/src/agents_remember/observer/lifecycle_state.py:134-146 |
 | The store events are written to and read back from. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | Task 34 heartbeat activity-decay coverage: inactivity tracks real activity not heartbeats; the ticker goes quiet past the cutoff and resumes on activity. | `test_inactive_seconds_tracks_real_activity_not_heartbeats`; `test_heartbeat_ticker_goes_quiet_when_idle_and_resumes_on_activity` | mcp/tests/test_observer_ambient.py:375-403; mcp/tests/test_observer_ambient.py:405-474 |
 | `_string_constants` plus `EndSignalVocabularyTests`: the `end` signal names no terminal state of its own and converts through `coerce_end_outcome`. | `_string_constants`; `EndSignalVocabularyTests` | mcp/tests/test_observer_ambient.py:140-154; mcp/tests/test_observer_ambient.py:157-185 |
@@ -162,7 +162,7 @@ reports no lifecycle.
   `AmbientLifecycle.end.__code__` (`co_consts` for the first, `co_names` for the second), so a
   comment or docstring cannot satisfy them, and the second is what stops a bare `cast` from passing
   the first. Verified the production side directly: cit:([`end`], mcp/src/agents_remember/observer/ambient.py:243-274) guards on
-  cit:([`TERMINAL_STATES`, `coerce_end_outcome`], mcp/src/agents_remember/observer/lifecycle_state.py:139-139; mcp/src/agents_remember/observer/lifecycle_state.py:149-158), and added a self-citation row for the new class.
+  cit:([`TERMINAL_STATES`, `coerce_end_outcome`], mcp/src/agents_remember/observer/lifecycle_state.py:108-108; mcp/src/agents_remember/observer/lifecycle_state.py:118-127), and added a self-citation row for the new class.
   The task-34 heartbeat coverage remains anchored to the two named test methods.
   Counted the file: 39 tests across 11 classes. No existing test was renamed and no assertion in
   them changed.

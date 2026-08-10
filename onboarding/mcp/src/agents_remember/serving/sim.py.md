@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/sim.py`  |
 | doc_type               | `file-level-onboarding`                   |
 | lastUpdated            | 2026-06-14T11:30+02:00                    |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`|
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                             |
 
 ## Governing Overview
@@ -54,6 +54,8 @@ feeder so the root remains alive for the setup's lifetime.
 | Setup lifetime retains the temporary root. | `SimSetup` | mcp/src/agents_remember/serving/sim.py:109-120 |
 
 ## Update History
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+
 - 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
 
 - 2026-06-14T23:30+02:00 — Slice 05 (5c): `build_sim` now calls `_materialize_surfaces` to copy the fixture's structural surfaces (contracts / task docs / provider state / ledgers / drift) into the sim root — not just replay event logs — so the rich sim can exercise the whole projection. Verification metadata pinned until closeout stamps the 5c code commit.

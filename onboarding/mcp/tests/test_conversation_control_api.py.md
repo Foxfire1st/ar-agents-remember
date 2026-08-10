@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_control_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,9 +65,9 @@ The suite drives the registered routes and their O4 mapping over the real wire a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The seventeen registered routes and the O4 typed-error mapping under test. | `conversation_telemetry` | mcp/src/agents_remember/serving/conversation/control/api.py:711-734 |
+| The seventeen registered routes and the O4 typed-error mapping under test. | `conversation_telemetry` | mcp/src/agents_remember/serving/conversation/control/api.py:736-759 |
 | The shared fake-topology harness (real bridge/IPC/authority/L0 composition). | `ControlHarness` | mcp/tests/_control_plane.py:436-518 |
-| The foundation pin that independently asserts the exact seventeen routes. | `control_paths` | mcp/tests/test_conversation_foundation.py:58-62 |
+| The foundation pin that independently asserts the exact seventeen routes. | `control_paths` | mcp/tests/test_conversation_foundation.py:65-69 |
 
 ## Cross-Repo References
 
@@ -78,6 +78,8 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 6 citation finding(s); scoped recheck clean.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/events.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`  |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`  |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -139,8 +139,8 @@ claims are proven by repository source and tests.
 | --- | --- | --- |
 | The observer event envelope tailed here. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
 | The log layout (`lifecycles/<id>/events.jsonl`, `workspace/events.jsonl`). | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| The one read/path abstraction (NS #5). | `observer_root` | mcp/src/agents_remember/observer/paths.py:32-34 |
-| The app that mounts this as `GET /api/events`. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:112-112 |
+| The one read/path abstraction (NS #5). | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
+| The app that mounts this as `GET /api/events`. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:117-117 |
 | The inactivity retention helper that computes windowed fresh offsets and prunes dormant lifecycle logs. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
 | `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. | `read_new_events` | mcp/src/agents_remember/serving/events.py:189-227 |
 | `stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:230-277 |
@@ -155,6 +155,8 @@ No meaningful cross-repository implementation source governs this repository-loc
 | The reviewed behavior is wholly repository-local. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 7 citation claims; scoped recheck clean (0 findings).
 

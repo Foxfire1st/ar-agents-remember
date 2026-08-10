@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -250,7 +250,7 @@ are proven by repository source and the test suite itself.
 | The pure diff under test. | `diff_projection` | mcp/src/agents_remember/serving/delta.py:102-145 |
 | The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
 | The projector under test owns atomic subscribe/snapshot activation, first-recovery publication, publish-before-notify ordering, and cleanup. | `Projector` | mcp/src/agents_remember/serving/projector.py:126-330 |
-| The app consumes one projector iterator, decorates every snapshot with the serve-time tail, preserves SSE framing, and closes the subscription through `contextlib.aclosing`. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:112-112 |
+| The app consumes one projector iterator, decorates every snapshot with the serve-time tail, preserves SSE framing, and closes the subscription through `contextlib.aclosing`. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:117-117 |
 | The forced MX-FIX-1 regressions pin the handoff mutation, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | `StreamEventsTests` | mcp/tests/test_serving.py:379-477 |
 | The raw event tail under test. | `read_new_events` | mcp/src/agents_remember/serving/events.py:189-227 |
 | The inactivity-based raw event retention helper under test. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
@@ -264,7 +264,7 @@ are proven by repository source and the test suite itself.
 | The gate write-path the `/api/actions` gate verbs drive (slice 6b). | `gate_create_payload`; `gate_decide_payload` | mcp/src/agents_remember/mcp/tools/gates.py:34-44; mcp/src/agents_remember/mcp/tools/gates.py:67-84 |
 | The operator inbox store asserted by the dashboard `/api/operator-inbox` endpoint tests. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
 | The compact attention acknowledgement store asserted by `ActionDismissTests`; `dismiss` is a whole-file read-modify-write and `prune_lifecycles` now empties the log through the contract's rewrite instead of unlinking it. | `dismiss`; `prune_lifecycles`; `_replace` | mcp/src/agents_remember/controlplane/attention_dismissals.py:58-77; mcp/src/agents_remember/controlplane/attention_dismissals.py:125-135; mcp/src/agents_remember/controlplane/attention_dismissals.py:102-111 |
-| The rewrite that makes "emptied, not unlinked" true for every control-plane log at once: an empty record set is written as an empty file, never removed. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:448-455 |
+| The rewrite that makes "emptied" true for every control-plane log at once: an empty record set is written as an empty file, never removed. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:448-455 |
 | The prune-to-emptiness assertion this leaf rewrote, and the loss it used to hide. | `test_attention_store_upserts_and_prunes_lifecycle_rows` | mcp/tests/test_serving_actions.py:355-388 |
 | Actionable-drift dismiss tests cover targetless pure evaluation, store retention, and API persistence. | `ActionDismissTests` | mcp/tests/test_serving_actions.py:271-513 |
 | The CLI dispatcher + dashboard adapter under test. | `main` | mcp/src/agents_remember/cli/__main__.py:31-33 |
@@ -321,7 +321,7 @@ recorder's own gate-id-only arm lives in `test_serving_app_routes.py::GateDecisi
   reader plus zero bytes on disk proves the row physically left, where absence only proved a file
   was removed. Added a paragraph under the `ActionDismissTests` description, three
   Repo-Internal rows (the store's `dismiss`/`prune_lifecycles`/`_replace`, the contract's
-  `rewrite_lines` that makes "emptied, never unlinked" true for every control-plane log at once,
+  `rewrite_lines` that makes "emptied" true for every control-plane log at once,
   and the rewritten test itself). **Citation repairs — 5 ranges.** The file grew 2418 → 2428
   lines, all of it at L1432 where 7 lines became 17, so every self-citation at or below L1442
   shifted by exactly +10 and each was re-verified against the symbol it names: the actionable-drift

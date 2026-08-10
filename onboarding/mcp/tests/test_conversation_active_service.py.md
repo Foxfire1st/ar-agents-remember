@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_active_service.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-09T16:43+02:00                   |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ store.
 
 ### Logic
 
-A cit:([`_ScriptedBridge`], mcp/tests/test_conversation_active_service.py:75-169) plays scripted evidence/native/transcript/provenance/snapshot
+A cit:([`_ScriptedBridge`], mcp/tests/test_conversation_active_service.py:66-164) plays scripted evidence/native/transcript/provenance/snapshot
 answers through the projector's injected reader seams; its `read_native_page` double takes exactly
 the production seam's parameters (`entry`, `cursor`, `limit`, `expected_bridge_epoch`) and
 deliberately does NOT accept a `byte_budget`, so a caller cannot pass the double an argument the
@@ -132,10 +132,10 @@ repository-owned and cited below.
 | --- | --- | --- |
 | The projector engine under test is now the `active/projector/` package. Its facade owns the poll loop, the gap classification (`generation-changed` vs `ordering-fault`, plus the consecutive-read-failure ceiling) and dormant release. | `ActiveSessionProjector` | mcp/src/agents_remember/serving/conversation/active/projector/facade.py:59-221 |
 | Hydration (`ensure_hydrated` -> `_rebuild`), the fixed channel-poll order, and paging live in the rebuild coordinator. | `RebuildCoordinator` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:63-192 |
-| The zipper faults under test — `ZipperEvidenceEvicted` and `EvidenceTimelineRegressed` — are raised by the native evidence walk. | `ZipperEvidenceEvicted`; `EvidenceTimelineRegressed`; `poll_evidence` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:36-37; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:40-41; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:114-144 |
+| The zipper faults under test — `ZipperEvidenceEvicted` and `EvidenceTimelineRegressed` — are raised by the native evidence walk. | `ZipperEvidenceEvicted`; `EvidenceTimelineRegressed`; `poll_evidence` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:37-38; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:41-42; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:114-144 |
 | Retention, the retention-overflow gap on a full subscriber queue, and the gap envelope shape live in the mutation stream. | `ProjectionMutationStream`; `_publish`; `_gap_envelope` | mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py:49-197 |
 | The store under test: idempotent apply, block union, delta buffering. | `ProjectionStore`; `apply_item`; `apply_delta` | mcp/src/agents_remember/serving/conversation/active/store.py:135-445 |
-| The evidence/native/provenance page products the scripted bridge mimics. | `EvidencePage`; `NativeEvidencePage`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/serving/harness_control_models.py:481-489; mcp/src/agents_remember/serving/harness_control_models.py:503-510; mcp/src/agents_remember/serving/harness_control_models.py:527-530 |
+| The evidence/native/provenance page products the scripted bridge mimics. | `EvidencePage`; `NativeEvidencePage`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/models/conversations/control_wire.py:281-284; mcp/src/agents_remember/models/conversations/evidence.py:105-113; mcp/src/agents_remember/models/conversations/evidence.py:127-134 |
 
 ## Cross-Repo References
 
@@ -160,9 +160,7 @@ change the public projector contract.
 
 ## Update History
 
-- 2026-08-09T16:43+02:00 — 260713-TES-L5 hotfix curator: revalidated the zipper/evidence-walk
-  reference after the shared native fallback insertion and repaired the `poll_evidence` range.
-  The suite source itself is unchanged.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_configuration.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash |  `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |  2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,8 +72,8 @@ request cancellation behavior; protocol parsing validates state and model-local 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Adapter delegates setters here, reads candidate state without publishing it, and commits state/catalog together. | `_read_configuration_state`; `_commit_configuration` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:546-549; mcp/src/agents_remember/serving/pi_rpc_adapter.py:551-557 |
-| Transport removes cancelled pending futures and discards their later valid responses without an unbounded tombstone set. | "except asyncio.CancelledError:"; `_dispatch` | mcp/src/agents_remember/serving/pi_rpc_process.py:107-107; mcp/src/agents_remember/serving/pi_rpc_process.py:221-238 |
+| Adapter delegates setters here, reads candidate state without publishing it, and commits state/catalog together. | `_read_configuration_state`; `_commit_configuration` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:550-553; mcp/src/agents_remember/serving/pi_rpc_adapter.py:555-561 |
+| Transport removes cancelled pending futures and discards their later valid responses without an unbounded tombstone set. | "except asyncio.CancelledError:"; `_dispatch` | mcp/src/agents_remember/serving/pi_rpc_process.py:112-112; mcp/src/agents_remember/serving/pi_rpc_process.py:226-243 |
 | Protocol helpers parse correlated responses, safe state, provider-qualified catalogs, and each model's own effort menu. | `parse_pi_response`; `parse_pi_state`; `parse_pi_models`; `_pi_effort_options` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:180-194; mcp/src/agents_remember/serving/pi_rpc_protocol.py:197-215; mcp/src/agents_remember/serving/pi_rpc_protocol.py:218-255; mcp/src/agents_remember/serving/pi_rpc_protocol.py:450-475 |
 
 ## Cross-Repo References

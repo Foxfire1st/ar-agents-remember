@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/telemetry.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,7 +35,7 @@ usage: cit:([`_codex_usage`], mcp/src/agents_remember/serving/conversation/contr
 window and projects the cumulative breakdown with unit `tokens`, scope `conversation`, observed time
 (frame `createdAt`), and precision `exact`; reasoning tokens have no model field and are omitted rather
 than misfiled. cit:([`_freshness`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:124-132) classifies fresh/stale/unknown against the `_FRESH_WINDOW_MS`
-15 s window. The telemetry implementation exposes the `revision` value here, cit:([`revision`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:70-70), while `_telemetry_key` constructs the semantic key, cit:([`_telemetry_key`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:135-141). cit:([`_int_or_none`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:144-145) keeps absent values absent.
+15 s window. The telemetry implementation exposes the `revision` value here, cit:([`revision`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:75-75), while `_telemetry_key` constructs the semantic key, cit:([`_telemetry_key`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:135-141). cit:([`_int_or_none`], mcp/src/agents_remember/serving/conversation/control/telemetry.py:150-151) keeps absent values absent.
 
 ### Conventions
 
@@ -73,8 +73,8 @@ L0E evidence window; the capability gate decides what may emit.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `MetricEvidence` carries the evidence-bound metric provenance used by telemetry. | "class MetricEvidence(WireModel, Generic[T]):" | mcp/src/agents_remember/serving/conversation/_models_telemetry.py:28-28 |
-| `ConversationTelemetry` is the wire envelope for the projected telemetry metrics. | "class ConversationTelemetry(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_telemetry.py:70-70 |
+| `MetricEvidence` carries the evidence-bound metric provenance used by telemetry. | "class MetricEvidence(WireModel" | mcp/src/agents_remember/models/conversations/telemetry.py:30-30 |
+| `ConversationTelemetry` is the wire envelope for the projected telemetry metrics. | "class ConversationTelemetry(WireModel):" | mcp/src/agents_remember/models/conversations/telemetry.py:72-72 |
 | `telemetry_capabilities_for` is the telemetry capability-gate entry. | `telemetry_capabilities_for` | mcp/src/agents_remember/serving/conversation/control/capabilities.py:342-352 |
 | The harness control bridge appends diverted evidence frames into the bounded evidence buffer. | `_append_evidence` | mcp/src/agents_remember/serving/harness_control_bridge.py:505-528 |
 | The harness control bridge's event-consumption path diverts evidence into the bounded buffer. | `_run_events` | mcp/src/agents_remember/serving/harness_control_bridge.py:415-458 |
@@ -90,6 +90,8 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded that caller/epoch resolution now awaits
   the async, `asyncio.to_thread`-offloaded `service.resolve_entry` (same convention as the IPC

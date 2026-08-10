@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_foundation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -88,7 +88,7 @@ contract are direct evidence.
 | The foundation suite's exact-set assertion pins all seventeen control-child L3 routes by method and path. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
 | The helper manifest declares the repository-owned helper package identity. | "@agents-remember/conversation-library-helper" | mcp/native_helpers/conversation_library/package.json:2-2 |
 | The foundation test checks the helper's exact direct dependencies against the lockfile. | `test_helper_package_and_lock_select_only_the_exact_repository_dependencies` | mcp/tests/test_conversation_foundation.py:125-136 |
-| Runtime fixture DTOs force allowlist-v1 and `enablesCapabilities=false`. | `allowlist-v1`; `enables_capabilities` | mcp/src/agents_remember/serving/conversation/_models_telemetry.py:96-96 |
+| Runtime fixture DTOs force allowlist-v1 and `enablesCapabilities=false`. | `allowlist-v1`; `enables_capabilities` | mcp/src/agents_remember/models/conversations/telemetry.py:98-98 |
 
 ## Cross-Repo References
 
@@ -104,6 +104,8 @@ The topology pin now asserts three active child routes: page GET, events GET, an
 `/agents/{agent_id}/history` POST (cit:([`conversation_page`, `conversation_events`, `hydrate_agent_history`], mcp/src/agents_remember/serving/conversation/active/api.py:126-155; mcp/src/agents_remember/serving/conversation/active/api.py:160-198; mcp/src/agents_remember/serving/conversation/active/api.py:204-247)). Library and control ownership sets remain unchanged.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T03:21:00+02:00 — S18-SR3-B05 curator: regenerated the exact-seventeen route assertion binding with the locked scoped fixer and inspected the complete focused test extent; no approved semantic claim changes.
 - 2026-08-04T03:03:32+02:00 — S18-SR3-B05 worker: bound the exact-seventeen claim to the focused method/path set assertion and returned that source-local test binding to provisional fixer input.

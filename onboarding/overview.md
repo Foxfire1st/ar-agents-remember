@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
+| lastUpdated | 2026-08-08T02:00+02:00 |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 
 > **Status:** active baseline
 
@@ -103,7 +103,7 @@ onboarding pass.
 | Reliable controlled-session submission (260715-FEUI-L5) | One `HarnessSubmissionAuthority` per bridge generation owns prompt/model/effort ordering, immutable request/source/payload idempotency, atomic queued-withdraw versus dispatch, exact full-operation-ref completion, early-terminal dominance, raw-free status, and bounded privacy-aware retention. The dashboard's shared CodeMirror composer keeps one epoch/id/text through retry/reconcile, treats only the exact pre-dispatch certificate as retry-safe, and implements authoritative Alt+Up pop-back with revision-CAS recovery. Claude, Codex, and Pi dispatch now under guarded write seams; no adapter/native queue or PTY-paste fallback is authority. | `serving.harness_submission_authority`, `serving.harness_control_{api,bridge,client,models,queue}`, `dashboard/src/data/{submitMachine,submitClient,submissionLifecycleClient,submitRetention}.ts`, `dashboard/src/panels/SessionComposer.tsx` |
 | Sessions inspector and status integration (260715-FEUI-L7) | The Sessions cockpit completes its end-to-end operator audit with stable-mounted accessible Evidence / Capabilities / Bus tabs and a persistent StatusLine. Evidence retains explicit-mark-seen set outcomes and terminate/retire residuals after source-row removal; exact-session capability truth stays separate from pre-session launch catalogs; the fleet-global pending Bus preserves entry-keyed reply state across filters, virtualization, and hidden tabs, and reverse replies address only the projected sender without consuming the source. The status footer keeps its contractual fact order and literal empty UA-5 context/cost slot rather than inventing telemetry. | `dashboard/src/panels/session-cockpit/{SeatInspector,EvidencePane,CapabilitiesPane,BusPane,BusDeveloperReply,VirtualizedInspectorList,StatusLine}.tsx`, `dashboard/src/panels/session-cockpit/` overview |
 | Canonical Chats cockpit and hardening (260715-FEUI-L8) | One product-facing `Chats` destination now uses the keep-alive session cockpit; the old Chats component, session-list grouping, and separate Sessions navigation are retired. Operations remains the default and RailChat remains contextual. The inspector defaults closed, is toggleable and responsive without losing deliberate intent; authoritative launch, attach, highlight routing, landed cleanup, ended/restored states, accessibility, scenario coverage, and performance/fetch tripwires are pinned end to end. At FEUI-L8 controlled sessions still exposed the runner line-log in xterm because UA-1 structured transcript/history authority was not yet implemented; **260718-CHATS-L4 supersedes that** — controlled sessions now default to the structured conversation surface and the line-log is demoted to a read-only diagnostics drawer (see the 260718-CHATS-L4 narrative below). | `dashboard/src/panels/session-cockpit/` overview, `dashboard/src/data/` overview, `docs/design/dashboard/{scenario-catalog,session-cockpit-upstream-register,session-cockpit-closeout-evidence}.md` |
-| Agent orchestration communications | Durable agent-to-agent inbox messages address orchestrator/manager/worker roles, carry message-kind and artifact metadata, and remain pollable while also attempting hosted-session stdin push through the echo-confirmed paste seam. Since 260713-TES-L4 (N13/N16) the success terminal is `landed` — correlated adapter acceptance at a turn boundary — beside `superseded`/`unresolved`/`expired`; terminal markers are inspectable (`include_terminal`) for the 48h retention window; consume is an optional attribution marker with nothing mechanical attached; supersession is explicit (`operator_inbox_supersede`); dead-target rows rebind to the same-leaf+role replacement or expire to the scoped architect mailbox (N14/N2). Turn reports and master handovers have typed artifact helpers/templates; inactivity or missing report nudges are rate-limited, logged as `orchestration.nudge`, and delivered to manager inboxes. | `operator_inbox_*`, `orchestration_nudge_manager`, `serving.inbox_delivery`, `controlplane/orchestration_artifacts.py`, `controlplane/orchestration_nudges.py`, `l-01-agent-lifecycles` templates |
+| Agent orchestration communications | Durable agent-to-agent inbox messages address orchestrator/manager/worker roles, carry message-kind and artifact metadata, and remain pollable while also attempting hosted-session stdin push through the echo-confirmed paste seam. Consume is a monotonic terminal snapshot: a concurrent in-flight delivery may append stale physical evidence but cannot resurrect pending/redelivery state. Turn reports and master handovers have typed artifact helpers/templates; inactivity or missing report nudges are rate-limited, logged as `orchestration.nudge`, and delivered to manager inboxes. | `operator_inbox_*`, `orchestration_nudge_manager`, `serving.inbox_delivery`, `controlplane/orchestration_artifacts.py`, `controlplane/orchestration_nudges.py`, `l-01-agent-lifecycles` templates |
 | Event River lifecycle task labels | Event River readable history rows translate lifecycle-bound activity into task-facing context. When a retained event still has a lifecycle id but its live lifecycle projection is gone, the formatter uses projected task documents to show the task title before falling back to raw enclosure or lifecycle ids. The panel waits for raw-stream hydration before showing an empty feed and renders all retained rows it receives; backend lifecycle retention owns the cutoff. | `dashboard/src/panels/eventSummary.ts`, `dashboard/src/data/taskIdentity.ts`, `dashboard/src/panels/EventRiver.test.tsx` |
 | Authoritative browser session open | Every dashboard raw or harness create entrance crosses one `POST /api/terminal` client, validates exact request/response identity, and materializes only the accepted server row. Network, HTTP, protocol, identity, or server-declared failure creates no registry row, focus change, readiness/submit transition, or dependent context delivery. | `dashboard/src/data/terminalOpen.ts`, `dashboard/src/data/sessions.ts`, dashboard data/panels/session-cockpit overviews |
 | Runtime and skill installation | MCP-owned install of coordinator `AGENTS.md` templates, packaged skills, system defaults, provider defaults, optional benchmark fixtures, and harness skill layouts. | `runtime_install`, `skills_install`, `install/`, `package_data/runtime/` |
@@ -116,7 +116,7 @@ onboarding pass.
 | Branch memory carryover | Carry richer onboarding from a source branch into official memory only after the corresponding code has landed. Candidates cover file sidecars and route overviews (route-keyed, `kind`-tagged): overviews whose route covers a landed path auto-carry only when branch and official content are identical (metadata re-verification), otherwise they are always review-required; official-side `overview.index.json` files are regenerated after carry — never copied — guarded on a clean official-ref checkout. | `c-11-memory-carryover-from-branch` skill, `memory_carryover_*`, `memory/carryover.py` |
 | Branch-gated cross-repo context | Optional cross-repo context inclusion guarded by configured branch and memory-ledger checks. | `c-08-ar-coordination-context-resolver` skill, `crossRepo.allow` |
 | Benchmark harness | Package-owned Codex benchmark fixtures, workspace preparation, paired source-only versus memory-enabled runs, JSONL/result capture, and metric summaries. | `codex_benchmark_prepare`, `codex_benchmark_run`, `benchmarks/` |
-| Source quality tooling | Repository-owned gate whose scope is derived from Git and the declared pytest roots. Enforcing rails are Ruff, `ruff format --check`, file size, Pyright, pytest under branch coverage, mandatory CRAP (**20.0**), and **100% changed-lines/branches coverage**; Radon CC/MI are explicit non-enforcing reports and remain CRAP's complexity input. The wrapper orders every cheap deterministic subprocess before pytest, then scores CRAP/diff coverage from that new artifact. A local coverage-derived refusal may publish a worktree-local, content-addressed pytest proof: exact reuse skips pytest; only concrete selected test-module changes can run as a context-filtered delta; all ambiguous changes run fresh; and an inconclusive delta automatically falls back to the full selection. CI always runs fresh. No baseline, ratchet, allowlist, or grandfather file exists. Pre-push/leaf edges run the targeted tier, master integration owns the full capped tier, and pre-commit runs the cheap fast tier. | `python -m agents_remember.code_quality.check`, `code_quality/{retry_proof,post_coverage,diff_coverage}.py`, `.githooks/_gate.sh`, `worktrees/modules/code_quality_gate.py`, `mcp/tests/test_quality_retry_proof.py` |
+| Source quality tooling | Repository-owned gate whose scope is **derived from `git ls-files '*.py'`** — it takes no path arguments, so nothing can narrow what it certifies. **Six steps enforce**: Ruff (lint, including `C901`/`PLR0911`/`PLR0912`/`PLR0915`/`PLR0913` armed at full strength), `ruff format --check`, Pyright, the full pytest suite under branch coverage, mandatory CRAP threshold enforcement (**20.0**, against branch coverage, with a report lacking branch data refused), and the **changed-lines coverage floor at 100%** (`diff_coverage.py`, the binding coverage gate — the aggregate is 87.16%, so any lower floor passes a merely average change). **Radon's `cc` and `mi` steps are declared reports and cannot fail anything** (they exit 0 whatever they find), while Radon stays load-bearing as CRAP's complexity engine. **There is no baseline, ratchet, allowlist or grandfather file anywhere in the gate** — one was built inside 260731-EFA-L2 and deleted. The gate runs at pre-push (full tier), worktree closeout before any **commit** (since 260731-EFA-L4 closeout resets the index and stages the whole task worktree first, so the gate's scope is the commit's content), and CI on every branch and pull request; pre-commit runs a cheap **fast tier** over the staged content (three generated-copy checks + Ruff + formatter + Pyright), deriving the same `git ls-files` scope — see the enforcement topology below. | `python -m agents_remember.code_quality.check`, `code_quality/`, `code_quality/diff_coverage.py`, `.githooks/_gate.sh`, `worktrees/modules/code_quality_gate.py`, `mcp/tests/test_gate_scope.py` |
 | Self-hosted harness configuration | The nine dogfooded harness configuration trees (`.claude/`, `.codex/`, `.cursor/`, `.github-vscode/` + `.vscode/`, `.hermes/`, `.openclaw/`, `.pi/`, `.agents/`) are **generated from one source and checked**, not eight independent copies. `scripts/harness/` holds the fragment libraries and shared bodies; `scripts/sync-harness.py` fans out 45 files three ways (verbatim, composed body + per-harness framing, and programs assembled from named fragments with derived imports). `--check` runs in both hook tiers and in the test suite. `scripts/harness/README.md` is the ruled classification of genuine per-harness requirements versus drift. | `scripts/sync-harness.py`, `scripts/harness/`, `mcp/tests/test_sync_harness.py` |
 | Public docs and harness guides | User-facing setup, concepts, architecture, workflows, references, guides, and install notes for Codex, Claude Code, Cursor, Antigravity, VS Code Copilot, Hermes, Pi, and OpenClaw. | `docs/`, `README.md` |
 | Canonical runtime and skills asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are canonical editable assets synced into MCP package data by `scripts/sync-runtime.py`; root `skills/` is the canonical skill tree synced into MCP package data plus every harness starter skill folder by `scripts/sync-skills.py`. Both carry a `--check` mode and both run in **both** local hook tiers via `_gate.sh`'s `generated_copy_checks`. **Neither `--check` runs in CI** — no workflow invokes `_gate.sh` or any `scripts/sync-*.py`, and the quality wrapper does not either. Drift is caught outside the hooks anyway, because `mcp/tests/test_sync_scripts.py::RealTreeDriftTests` reads the **real** trees in this checkout: `test_every_skill_copy_matches_the_canonical_tree` walks all nine `sync-skills.TARGETS` and `test_every_runtime_package_asset_matches_its_source` walks all four `sync-runtime.TARGETS`, both through the shared module-level `drifted_files()` reader over each script's `diff_target`, and each failure names the drifted copy plus the command that repairs it. It is a plain `unittest` class under `mcp/tests/` (pytest's declared `testpaths`), so it runs in the quality wrapper's **pytest step** — at pre-push, at closeout, and in CI. **Two limits:** CI still never calls `--check` itself, so the guarantee arrives through pytest rather than a workflow step; and the tests are only as strong as `TARGETS` — nothing asserts that set is complete, so a tenth skill mirror added without registering it would go unnoticed (`test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data` does pin the runtime target set; `sync-skills.TARGETS` has no counterpart). The six temp-directory cases in `ReplaceTreeTests` are unchanged and still needed — they cover `replace_tree`'s crash-safe copy-then-swap contract, which real-tree drift does not test. `RealTreeDriftTests` is modelled on `mcp/tests/test_sync_harness.py::test_every_generated_harness_file_matches_its_source`, so all three sync scripts now behave alike. | `scripts/sync-runtime.py`, `scripts/sync-skills.py`, `mcp/tests/test_sync_scripts.py`, `mcp/tests/test_sync_runtime.py`, `.githooks/_gate.sh` |
@@ -128,18 +128,6 @@ serving endpoint (`POST /api/operator-inbox`, trusted developer/dashboard attrib
 dashboard Gate Respond fallback (`GateResponder` calls `data/operatorInbox.postOperatorInbox` when no
 hosted chat session is attached). Hosted chat injection remains preferred; the inbox is the pull-based
 return channel for external agents that cannot receive direct dashboard injection.
-
-260713-TES-L4 (deliver-until-LANDED) updates that story: the inbox vocabulary is now formally
-terminal (`landed`/`superseded`/`unresolved`/`expired` beside legacy parse-compat literals);
-the success terminal is written by `record_delivery` only when a correlated adapter acceptance
-arrives at a turn boundary; `operator_inbox_poll` lists terminal markers with
-`include_terminal=true` (N11); `operator_inbox_consume` is attribution-only (N16);
-`operator_inbox_supersede` explicitly terminates an overtaken command (R11); pending rows to a
-dead/replaced seat rebind within the 5-minute grace or expire to the scoped architect mailbox
-(N14/N2); and the notifier sweep resolves the attempt ceiling (`unresolved`) and the retention
-boundary (`expired`) instead of climbing a timed escalation ladder (N3, dormant — L5 deletes).
-Detail lives in the `mcp/` package overview and the controlplane/serving/mcp-tools/
-docs-reference route overviews.
 
 Task 23/24 changes the lifecycle of those gate/inbox interactions: prompts, responses, pending pickup
 signals, and attention-queue gate rows are disposable interaction data. Explicit dismiss/clear paths
@@ -160,7 +148,7 @@ emits a ready marker after retained backlog replay, actionable-drift notices nam
 repository/memory pair, and only actionable drift can be dismissed without a lifecycle/worktree target.
 The former Lifecycle Flow tab is hidden from the cockpit; `FlowTab.tsx` remains dormant source.
 
-HFX2-L12 updates the root runtime-scaling story for mission-control operation: agent-notifier signal and
+HFX2-L12 updates the root runtime-scaling story for mission-control operation: supervisor signal and
 expectation stores compact on read while escalation/cooldown budgets bound repeated work; raw Event
 River data is startup-compacted and served through bounded/offloaded paths; projection hot paths cache
 lifecycle, task-document, gate, and Git-status reads while guarding task-document body payload size;
@@ -187,12 +175,6 @@ chat once for the successful bind. Detail lives in the `observer/`, `serving/`, 
 overviews.
 
 ## Hot Path Summary
-
-TES-L6 closes two orchestration-wide invariants: named architect/orchestrator/manager seats are
-bound to one repository+sprint, and manager liveness supervises every structurally owned
-subordinate role rather than builders alone. The implementation spans lifecycle launch doctrine,
-serving/catalog routing, notifier evaluation/actions, dashboard projection, and focused regression
-suites; the route overviews below point to each boundary.
 
 **Gate honesty (260731-EFA-L2 — the seven durable contracts).** The wrapper used to list six steps of
 which three could not fail, enforce two complexity limits it had switched off, feed CRAP the wrong
@@ -666,7 +648,7 @@ GrepAI runs in workspace mode with explicit `{ projectId, path }` roots generate
 
 The source checkout tells agents to run **one command** after Python implementation work —
 `python -m agents_remember.code_quality.check` — and states that it takes no path arguments because
-its scope is `git ls-files '*.py'`. (It previously said "run Ruff, Pyright, and Radon"; 260731-EFA-L2
+its scope is `git ls-files '*.py'`. (It previously said "run Ruff"; 260731-EFA-L2
 replaced that, because two of the three named tools were not the gate and the third could not fail
 it.) The resolved memory layer's `system/tools.md` still holds exact command details and
 `system/coding-guidelines.md` the repository-specific style rules. Coordinator-level tools examples keep global commands separate from repo-specific code quality tools, and the memory-repo tools example reserves a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. The packaged and live code-quality report templates no longer offer `passed` as a Radon result: a tool that cannot fail must not be given a verdict vocabulary that says it did not.
@@ -694,19 +676,6 @@ and F-rank blocks in the tree. **Radon configuration shapes a report; it never d
 certifies.**
 
 The wrapper is fail-closed and mandatory by default: a CRAP score at or above the configured threshold (**20.0** by default, scored against branch coverage) produces a failing result without a separate strict flag, and so does any changed line the tests never reach (the 100% diff-coverage floor). The same repository-owned command is enforced by the **full** hook tier on pre-push, by worktree closeout before any code/memory/ledger/contract/applied-gate **commit**, and by CI on every branch push and pull request. (260731-EFA-L4 corrected "before any mutation" to "before any commit": closeout now performs one mutation ahead of the gate — a `git reset --mixed` plus `git add -A` in the task worktree — precisely so the gate can see files the task created. See the L4 repository-impact section.) The **fast** pre-commit tier does not run it — it runs the generated-copy checks, Ruff, `ruff format --check`, and Pyright over the staged content, deliberately cheap so nobody buys back the minutes with `--no-verify`. Closeout applies the gate in any repository whose checkout carries the wrapper (a checkout without it is reported as `wrapper-unavailable`, not silently skipped), and resolves the active worktree package first, using the worktree, shared-clone, then active-Python interpreter order so a linked worktree without its own virtualenv still runs the exact candidate source.
-
-**260805-ARG-L1 quality retry expansion.** The wrapper now runs Ruff, formatting, the file-size
-rail, Pyright, and the two Radon reports before starting pytest; pytest is its final subprocess,
-with CRAP and diff coverage remaining fast in-process consumers of the emitted branch artifact.
-When pytest passes but one of those post-processors refuses, a local run may store an integrity-
-checked proof below Git's common directory. Exact trees restore it without pytest; concrete
-selected-test-only deltas remove those tests' old runtime contexts and append only their new run.
-Source/config/support/deletion/selection/base/threshold/Python/tool/environment/artifact drift runs
-fresh. An inconclusive delta automatically discards the aggregate and runs the full selection once.
-A cheap-rail refusal deletes any restored JSON and runs neither pytest nor the post-processors. CI
-sets `AR_QUALITY_INVOCATION=ci` and never reuses proof; `AR_QUALITY_NO_RETRY=1` is the local fresh-run
-diagnostic control. `retry_proof.py` owns the cache/manifest/context mechanics and
-`post_coverage.py` owns the two post-pytest rails, keeping `check.py` below the 900-line soft limit.
 
 The last quality sweep passed Ruff, Ruff format check, compile checks, MCP unit tests, and diff whitespace checks after safe formatting and cleanup. It also found refactor pressure that should feed Phase 06 rather than be hidden by formatter churn: `parse_settings_block` in `coordination_context_resolver.py` was the highest-complexity function seen in the sweep, and provider lifecycle/setup plus worktree and benchmark modules remain large enough to need package-level analysis before code motion.
 
@@ -876,12 +845,12 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. | "ar-coordination/AGENTS.md"; "Implementation approval is not commit approval" | AGENTS.md:10-10; AGENTS.md:141-141 |
-| The source checkout defines the repository code-quality gate and its no-baseline/no-allowlist policy. | "Code Quality Instructions"; "After implementing Python code in this source checkout"; "python -m agents_remember.code_quality.check"; "There is no baseline, ratchet, allowlist"; "a finding is fixed, never" | AGENTS.md:146-146; AGENTS.md:148-148; AGENTS.md:152-152; AGENTS.md:164-165 |
+| The source checkout defines the repository code-quality gate and its no-baseline/no-allowlist policy. | "Code Quality Instructions"; "After implementing Python code in this source checkout"; "python -m agents_remember.code_quality.check"; "There is no baseline"; "a finding is fixed" | AGENTS.md:146-146; AGENTS.md:148-148; AGENTS.md:152-152; AGENTS.md:164-165 |
 | The docs index owns the start-here, install, operational, and reference map. | "Start Here"; "Install Guides"; "Getting Started"; "Onboard an Existing Repo"; "MCP Tool Reference"; "Release Checklist" | docs/README.md:23-23; docs/README.md:25-25; docs/README.md:33-33; docs/README.md:46-46; docs/README.md:56-56; docs/README.md:65-65 |
 | Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
 | The runtime sync contract is checked against every generated copy. | `RealTreeDriftTests` | mcp/tests/test_sync_scripts.py:159-207 |
 | CI exposes the quality workflow as a reusable call. | `workflow_call` | .github/workflows/quality-checks.yml:11-11 |
-| Closeout stages before it gates and refuses unsafe linked/conflicted worktrees. | `_gate_staged_code`; `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/modules/closeout.py:721-760; mcp/src/agents_remember/worktrees/modules/closeout.py:763-786; mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
+| Closeout stages before it gates and refuses unsafe linked/conflicted worktrees. | `_gate_staged_code`; `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/modules/closeout.py:746-785; mcp/src/agents_remember/worktrees/modules/closeout.py:788-811; mcp/src/agents_remember/worktrees/modules/closeout.py:814-872 |
 | The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" | CONTRIBUTING.md:64-64 |
 | Provider guidance keeps provider runtime paths under configured provider roots. | "providers/runners/grepai" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:95-95 |
 | The MCP settings example declares repository and coordination authority. | `coordinationRoot` | examples/mcp/settings.example.json:3-3 |
@@ -1086,46 +1055,21 @@ remote gate on leaf branches (recorded posture: no CI change this leaf). Refusal
 an uncovered changed production module, a cap-less full run, a failed targeted run, or a missing
 wrapper all refuse rather than certify a narrower run.
 
-### 260713-TES-L5 Route Impact — Judgment Demolition
+## 260731-EFA-L9 Change — First Structural Leaf
 
-The agent-notifier relay is now fact-only: suspect-respawn, escalation-ladder, and
-expectation-evaluation machinery is deleted (`escalation_ladder.py`, `orphan_policy.py`, the
-ladder transitions/predicates/actions, `_auto_nudge`/`_mark_expectation_missed`); expectation
-rows are an owner-visible deadline surface (briefed-by/verdict-by) the relay never evaluates;
-`orchestration.escalation` settings fail loud as an unknown key; `escalationBudget` is the
-per-sweep load-shed cap on owner-signal findings. Legacy `ladder-resolved` and the rung fields
-stay parse-compat (the confirmed-gone fold still writes the state). The new 26-test forcing
-suite `mcp/tests/test_judgment_demolition.py` pins the demolition; the live chain proof is
-delivered as a runnable post-restart script and stays a manager/orchestrator exit-bar item.
+260731-EFA-L9 is the first leaf that moves code: both serving model monoliths split into the new
+`models/conversations/` route (plus `models/terminal_catalog.py` and `models/task_document.py`),
+the kernel gained the `kernel/primitives/` vocabulary route, `serving/projections/` took over
+the observer projection readers, and `code_quality/layering.py` was built and ARMED as the
+package-layering gate (rank violations, cycles, undeclared dirs/imports all fail closed with no
+baseline). The move ledger and pre-change serialization baseline prove zero wire drift.
 
 ## Update History
 
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1: completion edges now reclaim exact-report-bearing
-  worker/reviewer/curator processes, keep manager/orchestrator owners live, preserve transcripts,
-  and retain landed/archive behavior behind an explicit opt-out. Verification remains pinned until
-  closeout.
+- 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the model extraction, kernel
+  primitives, projections move, and armed layering rail at the repo level. Verification metadata
+  pinned until closeout stamps the L9 code commit.
 
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: added the repository-wide sprint identity and
-  all-subordinate wake supervision invariants. Verification metadata remains pinned until
-  closeout.
-
-- 2026-08-09T22:22+02:00 — No route impact: a dashboard test-only timer teardown repair
-  prevents a Virtualizer debounce from crossing jsdom destruction. Repository runtime features and
-  top-level boundaries are unchanged; detail lives in the conversation route.
-
-- 2026-08-09T21:54+02:00 — No route impact: a test-only durability helper split keeps the
-  source-pinning instrument below the repository's file-size rail. The repository feature
-  inventory and top-level runtime boundaries are unchanged; detail lives in the MCP tests route.
-
-- 2026-08-09T21:12+02:00 — No route impact: the L1–L5 master integration gate repairs are
-  internal structure and source-citation maintenance only; the root feature inventory is
-  unchanged. Detail lives in the MCP registration and serving route cards. Verification metadata
-  stays pinned until closeout.
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the judgment demolition
-  across the relay (respawn/ladder/expectation evaluation deleted), the owner-visible
-  expectation surface, the fail-loud settings retirement, and the `escalationBudget`
-  load-shed re-wiring. Verification metadata pinned until closeout stamps the 260713-TES-L5
-  commit.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the quality altitude ladder
   (targeted leaf contract, once-per-master full wrapper at the master integration gate with the
   settings-owned memory cap, per-leaf `memory_quality_check` carve-out, loud refusal shapes).
@@ -2087,7 +2031,7 @@ delivered as a runnable post-restart script and stays a manager/orchestrator exi
 
 ## Build & Dev
 
-- Source-checkout Python implementation work should run `python -m agents_remember.code_quality.check` from the `agents-remember/` root — one command, no path arguments, scope derived from `git ls-files '*.py'`. (Superseded 2026-07-31 by 260731-EFA-L2: this line used to read "run Ruff, Pyright, and Radon", which named two tools that are not the gate and one that cannot fail it.) Exact command details belong in the resolved memory layer's `system/tools.md`.
+- Source-checkout Python implementation work should run `python -m agents_remember.code_quality.check` from the `agents-remember/` root — one command, no path arguments, scope derived from `git ls-files '*.py'`. (Superseded 2026-07-31 by 260731-EFA-L2: this line used to read "run Ruff", which named two tools that are not the gate and one that cannot fail it.) Exact command details belong in the resolved memory layer's `system/tools.md`.
 - The MCP package tests under `mcp/tests` cover `c-08-ar-coordination-context-resolver` skill, `c-02-memory-quality-control` skill, `c-09-git-worktree-manager` skill, ledger, contract, provider, benchmark, runtime install, and skills install behavior through package modules.
 - `system/sources.md` registers `docs/design/` as the Domain Documentation routing index (added when `docs/design/` was brought into onboarding scope, slice 05k); `system/tools.md` is unchanged.
 
@@ -2202,29 +2146,6 @@ Updated 2026-06-27T22:00+02:00 — task 28 (NOTIFY-AND-CONTINUE turn end): refre
 Updated 2026-06-17T22:45+02:00 after the Engine Room visual-parity pass enriched the dashboard-frontend Feature Inventory row (the 5g G6 atmospheric backdrop + Effects/Calm toggle, the restored HUD decal layer, and the fixed-height `Panel fill` layout); verification metadata stays pinned until closeout commits the source. (Prior: 2026-06-06T12:28+02:00 after adding the public `docs/features.md` tour, replacing README `## Core Model` with `## Core Features`, and documenting the Claude Code root `.mcp.json` detection caveat. Prior: 2026-06-04T10:29+02:00 — documented hidden harness starter packages as source-owned surfaces in the main overview and noted their `l-01` deep-research retrieval-strategy tally requirement. Prior: 2026-05-29T17:30+02:00 — re-spined the public docs and this overview's "What This Repo Is" framing around the three retrieval substrates (by path / by meaning / by relationship) and retired the sidecar-only anti-retrieval positioning. Prior: 2026-05-28T19:52+02:00 — added the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.)
 
 ## Update History
-
-- 2026-08-10T07:30+02:00 — 260805-ARG-L1 developer expansion: refreshed the source-quality
-  inventory for cheap-first subprocess ordering, pytest-last coverage production, worktree-local
-  content-addressed exact/test-only retry proof, conservative full fallback, stale-artifact
-  refusal, CI-fresh behavior, and the new `retry_proof.py` / `post_coverage.py` ownership split.
-  Verification metadata remains blank until closeout stamps the code commit.
-
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: root inventory reviewed for the
-  deliver-until-LANDED inbox migration; the agent-orchestration feature row and the task-10
-  inbox paragraph were updated to the formal terminal vocabulary, attribution-only consume,
-  explicit supersession, N11 inspectability, and N14/N3 rebind/expiry semantics. Verification
-  metadata pinned until closeout stamps the 260713-TES-L4 commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: root inventory reviewed for the
-  worker-state relay; the current feature rows are unchanged (the relay is substrate-level, not
-  a new user-facing feature row), and the cross-route detail lives in the `mcp/` package
-  overview and the serving/controlplane/conversation/mcp-tests route overviews. Verification
-  metadata pinned until closeout stamps the 260713-TES-L2 commit.
-- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: root inventory reviewed for the
-  supervisor → agent-notifier rename; current feature rows are unchanged by the mechanical
-  identifier rename, and the cross-route detail lives in the `mcp/` package overview and the
-  serving/controlplane/kernel/dashboard route overviews. Verification metadata pinned until
-  closeout stamps the 260713-TES-L1 commit.
-
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section (ESLint rail, size splits, coverage/budget/knip/trap, Playwright, hooks, Python ripple). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T22:30+02:00 — No route impact: 260731-EFA-L16 (the cross-store lock-order repair, its forcing tests, and the coding-guidelines/spawn-doctrine skill chain) is recorded in the `mcp/` and `skills/l-01-agent-lifecycles/` route overviews and their children; this root inventory was reviewed and is unchanged. Verification metadata pinned until closeout stamps the L16 code commit.

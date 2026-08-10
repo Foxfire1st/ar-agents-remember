@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-09T06:48+02:00                     |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastUpdated            | 2026-08-01T09:12+02:00                     |
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -17,9 +17,7 @@ classes and exposes the advertised public subset separately. L11 maps
 `task_reopen` -> `TaskReopenResponse` (imported from `models.task_doc`). L2 maps
 `spawn_agent_session` -> `SpawnAgentSessionResponse` (imported from `models.terminal`).
 L3 maps `orchestration_nudge_manager` -> `OrchestrationNudgeManagerResponse`
-(imported from `models.orchestration`). 260713-TES-L4 maps
-`operator_inbox_supersede` -> `OperatorInboxSupersedeResponse` (imported from
-`models.operator_inbox`).
+(imported from `models.orchestration`).
 
 ## Code Commentary
 
@@ -29,8 +27,8 @@ cit:([`TOOL_RESPONSE_MODELS`], mcp/src/agents_remember/models/tool_registry.py:1
 `ResponseModel | FlexibleResponseEnvelope`), not `type[BaseModel]`.
 cit:([`PUBLIC_TOOL_RESPONSE_MODELS`], mcp/src/agents_remember/models/tool_registry.py:181-185) carries the same annotation. That is not
 cosmetic: `BaseModel` made the envelope's two choke-point fields — `nextStep`
-and `agentNotifierBanner` — unreachable by type from `_tool_payload`, which is how
-`agentNotifierBanner` came to be written into the already-dumped dict instead of
+and `supervisorBanner` — unreachable by type from `_tool_payload`, which is how
+`supervisorBanner` came to be written into the already-dumped dict instead of
 declared at all. With `ResponseEnvelope` the choke point sets both on the
 validated response *before* the single `model_dump`, so the emitted object stays
 inside its own contract and inside its own token count. It covers all modeled core, runtime, memory, skill
@@ -40,8 +38,7 @@ GitHub #54 sub-task D), benchmark, slice-2b lifecycle, the slice-3c
 control-plane gate payload builders (`gate_create`/`gate_decide`/`gate_wait`/
 `gate_response_wait`/`gate_list` → the strict `models/gates.py` responses), plus the
 task-10/L3 inbox tools (`operator_inbox_post` / `operator_inbox_poll`
-/ `operator_inbox_consume`, plus 260713-TES-L4 `operator_inbox_supersede` -> the strict
-`models/operator_inbox.py` responses),
+/ `operator_inbox_consume` -> the strict `models/operator_inbox.py` responses),
 the L3 orchestration nudge tool (`orchestration_nudge_manager` ->
 `models/orchestration.py`),
 plus dashboard task 14 `lifecycle_finalize_task` → `LifecycleFinalizeTaskResponse`,
@@ -108,7 +105,7 @@ field, and `produced == declared` equality against the `VALID_*` frozensets).
   envelope still applies. AR-owned shapes must register a STRICT model.
 - **Both registries are `dict[str, type[ResponseEnvelope]]`.** Every registered
   model must be a `ResponseModel` or a `FlexibleResponseEnvelope`, because
-  `_tool_payload` assigns the envelope's `nextStep` / `agentNotifierBanner` on the
+  `_tool_payload` assigns the envelope's `nextStep` / `supervisorBanner` on the
   instance it validated. Widening this back to `type[BaseModel]` would silently
   put those two fields out of the type checker's reach again.
 - **A registered model does not retype a vocabulary another module produces.**
@@ -123,11 +120,11 @@ field, and `produced == declared` equality against the `VALID_*` frozensets).
 | --- | --- | --- |
 | Payload builders validate through `TOOL_RESPONSE_MODELS` at `_tool_payload`. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | Tests assert exact coverage between `PUBLIC_TOOLS` and the public subset, and conformance across all modeled builders. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
-| Inbox responses registered here are strict AR-owned tool responses: `OperatorInboxPostResponse`, `OperatorInboxPollResponse`, and `OperatorInboxConsumeResponse`. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:17-42; mcp/src/agents_remember/models/operator_inbox.py:45-52; mcp/src/agents_remember/models/operator_inbox.py:55-61 |
-| Gate responses, including the combined wait helper, are strict AR-owned tool responses: `GateCreateResponse`, `LifecycleGateResponse`, `GateDecideResponse`, `GateWaitResponse`, `GateResponseWaitResponse`, and `GateListResponse`. | `GateCreateResponse`; `LifecycleGateResponse`; `GateDecideResponse`; `GateWaitResponse`; `GateResponseWaitResponse`; `GateListResponse` | mcp/src/agents_remember/models/gates.py:18-24; mcp/src/agents_remember/models/gates.py:27-33; mcp/src/agents_remember/models/gates.py:36-44; mcp/src/agents_remember/models/gates.py:47-55; mcp/src/agents_remember/models/gates.py:58-68; mcp/src/agents_remember/models/gates.py:71-75 |
+| Inbox responses registered here are strict AR-owned tool responses: `OperatorInboxPostResponse`, `OperatorInboxPollResponse`, and `OperatorInboxConsumeResponse`. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
+| Gate responses, including the combined wait helper, are strict AR-owned tool responses: `GateCreateResponse`, `LifecycleGateResponse`, `GateDecideResponse`, `GateWaitResponse`, `GateResponseWaitResponse`, and `GateListResponse`. | `GateCreateResponse`; `LifecycleGateResponse`; `GateDecideResponse`; `GateWaitResponse`; `GateResponseWaitResponse`; `GateListResponse` | mcp/src/agents_remember/models/gates.py:23-29; mcp/src/agents_remember/models/gates.py:32-38; mcp/src/agents_remember/models/gates.py:41-49; mcp/src/agents_remember/models/gates.py:52-60; mcp/src/agents_remember/models/gates.py:63-73; mcp/src/agents_remember/models/gates.py:76-80 |
 | Lifecycle finalizer response registered here is a strict AR-owned tool response, `LifecycleFinalizeTaskResponse`. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycle_finalize.py:12-32 |
-| Terminal responses registered here — `AttachTerminalSessionToLeafResponse`, `SpawnAgentSessionResponse`, `SessionRetireResponse`, and `SessionRenameResponse` — are strict AR-owned tool responses. | `AttachTerminalSessionToLeafResponse`; `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:30-42; mcp/src/agents_remember/models/terminal.py:80-122; mcp/src/agents_remember/models/terminal.py:162-178; mcp/src/agents_remember/models/terminal.py:188-199 |
-| `ResponseEnvelope` — the union both registries are annotated with, and the two envelope bases carrying `nextStep`/`agentNotifierBanner`. | `ResponseEnvelope` | mcp/src/agents_remember/models/base.py:98-98 |
+| Terminal responses registered here — `AttachTerminalSessionToLeafResponse`, `SpawnAgentSessionResponse`, `SessionRetireResponse`, and `SessionRenameResponse` — are strict AR-owned tool responses. | `AttachTerminalSessionToLeafResponse`; `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:28-40; mcp/src/agents_remember/models/terminal.py:78-120; mcp/src/agents_remember/models/terminal.py:160-176; mcp/src/agents_remember/models/terminal.py:186-197 |
+| `ResponseEnvelope` — the union both registries are annotated with, and the two envelope bases carrying `nextStep`/`supervisorBanner`. | `ResponseEnvelope` | mcp/src/agents_remember/models/base.py:98-98 |
 | The suite that pins the value-set axis: `produced == declared` for each `VALID_*` frozenset, the AST scan of every literal written at a contract cell, and the guidance state-machine walk. | "class GuidanceWalkTests(unittest.TestCase):"; "class ProducedLiteralTests(unittest.TestCase):"; "class AdvertisedVocabularyTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:230-294; mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:45-45; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:450-450 |
 
 ## 260712-TRH-L4 Final Candidate
@@ -135,13 +132,7 @@ field, and `produced == declared` equality against the `VALID_*` frozensets).
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
-
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded `operator_inbox_supersede` →
-  `OperatorInboxSupersedeResponse` in `TOOL_RESPONSE_MODELS`. Verification metadata pinned until
-  closeout stamps the 260713-TES-L4 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-"- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 8 table citations and 2 prose citations for registry payloads, gate responses, terminal responses, envelopes, and test vocabulary; fixer-generated ranges verified.
+- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 8 table citations and 2 prose citations for registry payloads, gate responses, terminal responses, envelopes, and test vocabulary; fixer-generated ranges verified.
 - 2026-08-01T09:12+02:00 — 260731-EFA-L4 curator: body corrected on both counts an earlier review
   flagged. (1) The registry's declared value type changed from `dict[str, type[BaseModel]]` to
   `dict[str, type[ResponseEnvelope]]` (L116 and L181; `ResponseEnvelope` is the new

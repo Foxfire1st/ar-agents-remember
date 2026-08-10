@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastUpdated            | 2026-08-02T01:42+02:00 |
+| lastVerifiedCommitHash |                                                                   `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |                                                                   2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -30,7 +30,7 @@ long-lived processes must physically **remove** rows, not merely append them:
 
 - The MCP process deletes the inbox rows tied to a cancelled gate (`mcp/tools/gates.py` calling
   `delete_by_gate`) at the moment it cancels the gate.
-- The dashboard's agent-notifier sweep must resolve and compact under one continuously held lock
+- The dashboard's supervisor sweep must resolve and compact under one continuously held lock
   (`reconcile_and_compact`) so that a consume which won the lock stays terminal.
 
 Neither can be moved to the other process without moving the decision it implements. So this is the
@@ -76,27 +76,6 @@ coordination root with `UnsafeLockFilesystemError` instead of silently degrading
 `OperatorInboxEntry` inherits `DurableRecord` through `OperatorInboxCompatibleRecord`, so it picks
 up the validated `schemaVersion` (unknown major rejected, unknown minor accepted) while keeping its
 own `extra="allow"` forward-compatibility allowlist.
-
-### 260713-TES-L4 Latest-Fold Transition Primitive And Terminal Inspectability
-
-`transition(entry_id, fn)` is a lock-held read+append primitive against the LATEST folded
-snapshot: under `_exclusive_access` it re-reads and re-folds the log, applies `fn` to the
-current entry, and appends only when `fn` returns a NEW snapshot (`None`/identity means
-"append nothing"). It returns `(new_or_latest, changed)`. Every terminal transition
-(`mark_landed`/`mark_superseded`/`mark_unresolved`/`mark_expired` and `record_delivery`'s landed
-branch) is built on it, so a sweep's stale fold can never overwrite a concurrent explicit
-supersession or another terminal write with a different terminal truth (reviewer F1).
-
-`list_for_mailbox(lifecycle_id, agent_id, recipient_role, include_terminal=False)` is the
-inspectable mailbox filter: pending rows are always listed, and `include_terminal=True`
-additionally surfaces the terminal markers (landed/superseded/unresolved/expired and legacy
-terminals) still inside their retention window (N11 terminal inspectability). `list_pending` is
-now a thin delegator with `include_terminal=False`.
-
-`consume(entry_id, ...)` no longer changes row state: it stamps the optional
-`consumedAt`/`consumedBy`/`consumedVia` attribution once (idempotent via the `consumedAt` guard)
-and leaves `state` untouched — nothing mechanical hangs off it (N16). Only landing or a formal
-terminal resolution clears the redelivery schedule.
 
 ### 260712-TRH-L5 Same-Lock Confirmed-Gone Reconciliation
 
@@ -162,18 +141,16 @@ Normal renewal does not touch either rung anchor.
 `OperatorInboxStore(observer_root)` writes one workspace log:
 `workspace/operator-inbox.jsonl`. `append(record)` creates the parent directory
 and appends a strict JSON snapshot. `read()` validates each JSONL row back into
-`OperatorInboxEntry`, and `current()` folds by entry id, last snapshot wins with
-terminal-dominant semantics.
+`OperatorInboxEntry`, and `current()` folds by entry id, last snapshot wins.
 
 `list_pending(lifecycle_id, agent_id, recipient_role)` requires at least one
-mailbox key, then returns pending entries matching every supplied key (terminal markers via
-`list_for_mailbox(..., include_terminal=True)`). That means
+mailbox key, then returns pending entries matching every supplied key. That means
 a lifecycle poll, an agent poll, a role poll, or a combined poll all use the same
 log without duplicating entries. `record_delivery(entry_id, attempt, *, now, current=None,
 redelivery_floor_seconds=None)` appends a delivery-state
-snapshot for a queued message. `consume(entry_id, ...)` stamps the optional attribution marker
-once and returns `(entry, True)` the first time; repeated consumes return the existing entry
-with `False` (state never changes).
+snapshot for a queued message. `consume(entry_id, ...)` appends one consumed snapshot and
+returns `(entry, True)` the first time; repeated consumes return the existing
+consumed entry with `False`.
 
 Task 23/24 added physical cleanup. `delete(entry_id)` removes all snapshots for
 one inbox entry, `delete_by_gate(gate_id)` removes entries associated with a
@@ -184,10 +161,8 @@ snapshot until normal compaction so concurrent stale delivery writes cannot eras
 260707-HFX2-L1 (R1/R3 ack semantics + redelivery): `record_delivery(...)` now
 bumps `attemptCount`, stamps `lastAttemptAt`, and schedules a durable
 `nextAttemptAt` (via `inbox_backoff.next_attempt_at`) on EVERY attempt,
-including a confirmed `delivered` paste -- under N16 (260713-TES-L4) only a correlated
-acceptance at a turn boundary (the formal `landed` write) or a terminal resolution
-(superseded/unresolved/expired) stops the schedule, because `delivered` is never terminal
-(pasted != perceived).
+including a confirmed `delivered` paste -- consume is the only call that stops
+the schedule, because `delivered` is never terminal (pasted != perceived).
 `list_redeliverable(now=..., rate_limit_seconds=...)` selects pending rows past
 their backoff window and clear of the per-target rate limit
 (`inbox_backoff.redeliverable`) -- the pure selection L2's sweep drives
@@ -204,7 +179,7 @@ readdress_to=None, current=None)` stamps
 the ladder's next rung AND re-anchors `escalatedAt` to `now` in the SAME snapshot, so the next
 rung's SLA/dwell check is measured from this transition, not the row's original creation. Distinct
 from `mark_escalated` (HFX2-L2's reserved, rung-agnostic "this row is now escalatable" stamp) —
-`escalation_ladder`/`serving/agent_notifier.py`'s `_escalate_rung` is the only caller of `advance_rung`.
+`escalation_ladder`/`serving/supervisor.py`'s `_escalate_rung` is the only caller of `advance_rung`.
 
 260707-HFX2-L8 adds sweep-scale operation support and the ladder terminal state. `record_delivery`,
 `list_redeliverable`, `mark_escalated`, and `advance_rung` accept an optional folded `current`
@@ -222,12 +197,10 @@ by lifecycle, agent, role, or combinations of those keys.
 
 ### Invariants And Boundaries
 
-- Current state is a fold while entries are pending; terminal markers
-  (landed/superseded/unresolved/expired, plus legacy consumed) are inspectable for the 48h
-  marker-retention window, then physically removed. Pending rows are kept by compaction so the
-  sweep can stamp `expired` first; `ladder-resolved` rows still drop immediately.
-- A terminal row is excluded from redelivery; only the D4 cap may drop rows (terminal-oldest-first
-  by policy) when the store is over its 500-row bound.
+- Current state is a fold while entries are pending; consumed/dismissed/expired
+  entries are throwaway interaction data and can be physically removed.
+- A `ladder-resolved` row is terminal but not acked; it is excluded from redelivery and eligible for
+  compaction.
 - Delivery scheduling may inherit the store default or take a caller floor, but the effective floor is
   validated in `inbox_backoff` and cannot be below 900 seconds.
 - Polling without `lifecycle_id`, `agent_id`, or `recipient_role` is invalid
@@ -260,14 +233,6 @@ agents that cannot receive dashboard session injection.
 | --- | --- | --- |
 | Pull-based return channels sit above durable gate truth and resume on the next poll/poke when push is unavailable. | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design` | docs/design/observable-lifecycle.md:1-402 |
 
-### ARG-L1 Durable Completion Barrier
-
-The completion-edge cleanup application now reads one folded `current()` snapshot and treats an
-exact seat's exact-leaf `turn-report` row as the persistence barrier before tmux retirement. It
-does not consume, delete, or terminalize that report; ordinary inbox delivery/retry remains free to
-continue after the process exits. Thus report durability, not terminal transcript state or process
-liveness, orders auto-close.
-
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
@@ -275,8 +240,8 @@ liveness, orders auto-close.
 | The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | "def log_path" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:63-63 |
 | Pending filters match supplied lifecycle and/or agent keys. | "def list_pending" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:109-109 |
 | Consume is idempotent and appends a consumed snapshot only once. | "def consume" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:175-175 |
-| Redeliverable selection is a pure filter over pending rows: it defaults the per-target rate limit to `DEFAULT_RATE_LIMIT_SECONDS` and delegates the due/limit decision. | "else DEFAULT_RATE_LIMIT_SECONDS" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:171-171 |
-| `redelivery_floor_seconds` and `next_attempt_at` are NOT in this module — the delivery-snapshot half of the old claim moved to the shared backoff module, which is also where `redeliverable` itself lives. | `require_redelivery_floor_seconds`; `next_attempt_at`; `redeliverable` | mcp/src/agents_remember/controlplane/inbox_backoff.py:42-52; mcp/src/agents_remember/controlplane/inbox_backoff.py:55-72; mcp/src/agents_remember/controlplane/inbox_backoff.py:111-124 |
+| Redeliverable selection is a pure filter over pending rows: it defaults the per-target rate limit to "rate_limit_seconds if rate_limit_seconds is not None else DEFAULT_RATE_LIMIT_SECONDS" and delegates the due/limit decision. | "rate_limit_seconds if rate_limit_seconds is not None else DEFAULT_RATE_LIMIT_SECONDS" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:171-171 |
+| `redelivery_floor_seconds` and `next_attempt_at` are NOT in this module — the delivery-snapshot half of the old claim moved to the shared backoff module, which is also where `redeliverable` itself lives. | `require_redelivery_floor_seconds`; `next_attempt_at`; `redeliverable` | mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:66-76; mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:79-96; mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:133-146 |
 | The strict `_read_unlocked`, the never-unlinking `_replace_unlocked`, and `_exclusive_access` now delegating to the shared contract instead of opening the module's own lockfile. | `_read_unlocked`; `_replace_unlocked`; `_exclusive_access`; `fcntl` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:280-288; mcp/src/agents_remember/controlplane/operator_inbox_store.py:290-295; mcp/src/agents_remember/controlplane/operator_inbox_store.py:297-301; mcp/src/agents_remember/providers/provider_setup.py:22-22 |
 | `OPERATOR_INBOX_OWNERSHIP` carries `compaction_owner=None` and states why no single owner is possible for this log. | `OPERATOR_INBOX_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:182-198 |
 
@@ -295,17 +260,8 @@ adapter evidence against an existing durable row. None of these transitions call
 
 ## Update History
 
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1 relationship update: the folded inbox is now the durable
-  exact-session/exact-leaf report-before-close barrier; store behavior and ownership are unchanged.
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the lock-held latest-fold
-  `transition(entry_id, fn)` primitive (append only when a new snapshot is produced; terminal
-  transitions refuse a stale different-terminal write), `list_for_mailbox` with
-  `include_terminal` (N11 terminal inspectability; `list_pending` delegates), and the
-  attribution-only `consume` (state untouched, N16). Corrected the R1 prose: only landing or a
-  formal terminal resolution clears the redelivery schedule. Verification metadata pinned until
-  closeout stamps the 260713-TES-L4 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: corrected the TRH-L5 lock-held-evidence
   statement — the catalog read left the lock (pre-fetched by the supervisor before
   `reconcile_and_compact`); only the bounded tmux snapshot remains lock-held. Consume authority and

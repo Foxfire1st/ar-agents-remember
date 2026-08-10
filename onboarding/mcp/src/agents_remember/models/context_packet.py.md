@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/context_packet.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,32 +19,32 @@ response contract for `context_packet`.
 
 The model separates repository Git facts, resolved paths, memory/storage facts,
 worktree summary, provider summary, and drift summary into explicit nested
-objects. cit:([`ContextPacketV2`], mcp/src/agents_remember/models/context_packet.py:115-125) fixes `contextPacketVersion` to `2` and
+objects. cit:([`ContextPacketV2`], mcp/src/agents_remember/models/context_packet.py:114-124) fixes `contextPacketVersion` to `2` and
 carries a diagnostics hint pointing agents at `provider_diagnostics` for raw
 provider details.
 
 **Three of this file's vocabularies are imported from their producers, not
-retyped here** (cit:([`RepoState`, `FreshnessState`, `MemoryMode`], mcp/src/agents_remember/models/context_packet.py:9-15)) — the same rule the four gate/lifecycle/inbox/
+retyped here** (cit:(["from agents_remember.kernel.git_facts import RepoState", "from agents_remember.kernel.git_freshness import FreshnessState", "from agents_remember.models.worktree import MemoryMode"], mcp/src/agents_remember/models/context_packet.py:9-15)) — the same rule the four gate/lifecycle/inbox/
 orchestration models already followed:
 
-- `RepoSummary.state` (cit:([`RepoState`], mcp/src/agents_remember/models/context_packet.py:27-27)) is `RepoState`, from `kernel.git_facts` (cit:([`RepoState`], mcp/src/agents_remember/kernel/git_facts.py:22-22)),
+- `RepoSummary.state` (cit:(["state: RepoState"], mcp/src/agents_remember/models/context_packet.py:26-26)) is `RepoState`, from `kernel.git_facts` (cit:(["RepoState = Literal["], mcp/src/agents_remember/kernel/git_facts.py:22-22)),
   the module that decides it. The packet assembles this block as
   `RepoSummary.model_validate(git_facts_to_packet(...))` over an untyped dict, so
   a retyped copy here would let a new degrade path reach pydantic before it
   reaches a reviewer.
-- `MemorySummary.mode` (cit:([`MemoryMode`], mcp/src/agents_remember/models/context_packet.py:85-85)) is `MemoryMode`, from
-  `worktrees.worktree_contract` (cit:([`MemoryMode`], mcp/src/agents_remember/worktrees/worktree_contract.py:64-64)). It **was**
+- `MemorySummary.mode` (cit:(["mode: MemoryMode"], mcp/src/agents_remember/models/context_packet.py:84-84)) is `MemoryMode`, from
+  `kernel.coordination_context.models` since L9 (cit:(["MemoryMode = Literal["], mcp/src/agents_remember/kernel/coordination_context/models.py:209-209)). It **was**
   `Literal["internal", "external"]` and was the only copy in the package missing
   `disabled` — `CoordinationContext.memory_mode` has always been able to carry it
   and `WorktreeSummary.memoryMode` in the *same response* declared it correctly,
   so one packet could pass `memoryMode="disabled"` and fail `memory.mode` on the
   identical value.
-- `BranchFreshness.state` (cit:([`FreshnessState`], mcp/src/agents_remember/models/context_packet.py:99-99)) is `FreshnessState`, from
+- `BranchFreshness.state` (cit:(["state: FreshnessState"], mcp/src/agents_remember/models/context_packet.py:98-98)) is `FreshnessState`, from
   `kernel.git_freshness` (cit:([`FreshnessState`], mcp/src/agents_remember/kernel/git_freshness.py:29-38)). `freshness_to_packet` hands over a
   plain dict, and half that vocabulary exists only on degrade paths a hand-copied
   `Literal` would be the last to hear about.
 
-`FreshnessSummary` (cit:([`FreshnessSummary`], mcp/src/agents_remember/models/context_packet.py:103-108), issue #54) is the opt-in branch-freshness section:
+`FreshnessSummary` (cit:([`FreshnessSummary`], mcp/src/agents_remember/models/context_packet.py:102-107), issue #54) is the opt-in branch-freshness section:
 `status` is `checked`/`not-checked` (defaulting like drift's not-checked), with
 optional `BranchFreshness` blocks (cit:([`BranchFreshness`], mcp/src/agents_remember/models/context_packet.py:90-100)) for the code and memory repos
 (`branch`, `upstream`, `fetched`, `ahead`/`behind`, `state`) plus
@@ -83,11 +83,11 @@ reports why instead of raising.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The context application entry point constructs `ContextPacketV2` from resolver, Git, provider, worktree, and drift facts. | `ContextPacketV2` | mcp/src/agents_remember/application/context_packet.py:79-96 |
+| The context application entry point constructs "packet = ContextPacketV2(" from resolver, Git, provider, worktree, and drift facts. | "packet = ContextPacketV2(" | mcp/src/agents_remember/application/context_packet.py:79-96 |
 | Provider readiness in the packet uses compact provider summary models. | `ProviderSummary` | mcp/src/agents_remember/models/providers.py:75-93 |
 | `RepoState` (L22) and its `VALID_REPO_STATES` (L26); `git_facts_to_packet` (L104-L115) is the untyped dict `RepoSummary` validates. | `RepoState`; `VALID_REPO_STATES`; `git_facts_to_packet` | mcp/src/agents_remember/kernel/git_facts.py:22-22; mcp/src/agents_remember/kernel/git_facts.py:26-26; mcp/src/agents_remember/kernel/git_facts.py:104-115 |
 | `FreshnessState` (L29-L38) and `VALID_FRESHNESS_STATES` (L41); `freshness_to_packet` (L158-L169). | `FreshnessState`; `VALID_FRESHNESS_STATES`; `freshness_to_packet` | mcp/src/agents_remember/kernel/git_freshness.py:29-38; mcp/src/agents_remember/kernel/git_freshness.py:41-41; mcp/src/agents_remember/kernel/git_freshness.py:158-169 |
-| `MemoryMode` (L64) — the one declaration `memory.mode` and `worktree.memoryMode` now share. | `MemoryMode` | mcp/src/agents_remember/worktrees/worktree_contract.py:64-64 |
+| `MemoryMode` (L209) — the one declaration `memory.mode` and `worktree.memoryMode` now share (kernel-owned since L9). | "MemoryMode = Literal[" | mcp/src/agents_remember/kernel/coordination_context/models.py:209-209 |
 | `worktree_status_packet` (L14-L49) returns `WorktreeSummary` directly, so this packet's `worktree` block is constructed, not validated. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
 
 ## Update History
@@ -104,15 +104,15 @@ reports why instead of raising.
   `WorktreeSummary.memoryMode` — the latter in the SAME response — both accepted `disabled`, so
   one packet could pass `memoryMode="disabled"` and fail `memory.mode` on the identical value. All
   three now import: `RepoSummary.state` → `RepoState` (cit:([`RepoState`], mcp/src/agents_remember/kernel/git_facts.py:22-22)),
-  `MemorySummary.mode` → `MemoryMode` (cit:([`MemoryMode`], mcp/src/agents_remember/worktrees/worktree_contract.py:64-64)),
+  `MemorySummary.mode` → `MemoryMode` (cit:(["MemoryMode = Literal["], mcp/src/agents_remember/kernel/coordination_context/models.py:209-209)),
   `BranchFreshness.state` → `FreshnessState` (cit:([`FreshnessState`], mcp/src/agents_remember/kernel/git_freshness.py:29-38)). Rewrote the
   `FreshnessSummary` paragraph, which had listed four of the eight `state` members inline — that
   hand-list is exactly the artefact the import removes. Noted that `worktree` is now constructed
   rather than `model_validate`d and that `DriftSummary` gained an `error` field. Added two
-  invariants. Citations: cit:([`ContextPacketV2`], mcp/src/agents_remember/models/context_packet.py:115-125), cit:([`FreshnessSummary`], mcp/src/agents_remember/models/context_packet.py:103-108),
-  cit:([`BranchFreshness`], mcp/src/agents_remember/models/context_packet.py:90-100), cit:([`RepoState`], mcp/src/agents_remember/models/context_packet.py:27-27), cit:([`MemoryMode`], mcp/src/agents_remember/models/context_packet.py:85-85),
-  cit:([`FreshnessState`], mcp/src/agents_remember/models/context_packet.py:99-99), cit:([`RepoState`, `FreshnessState`, `MemoryMode`], mcp/src/agents_remember/models/context_packet.py:9-15); new reference rows for `git_facts.py`
-  (cit:([`RepoState`, `VALID_REPO_STATES`, `git_facts_to_packet`], mcp/src/agents_remember/kernel/git_facts.py:22-22; mcp/src/agents_remember/kernel/git_facts.py:26-26; mcp/src/agents_remember/kernel/git_facts.py:104-115), cit:([`FreshnessState`, `VALID_FRESHNESS_STATES`, `freshness_to_packet`], mcp/src/agents_remember/kernel/git_freshness.py:29-38; mcp/src/agents_remember/kernel/git_freshness.py:41-41; mcp/src/agents_remember/kernel/git_freshness.py:158-169), cit:([`MemoryMode`], mcp/src/agents_remember/worktrees/worktree_contract.py:64-64))
+  invariants. Citations: cit:([`ContextPacketV2`], mcp/src/agents_remember/models/context_packet.py:114-124), cit:([`FreshnessSummary`], mcp/src/agents_remember/models/context_packet.py:102-107),
+  cit:([`BranchFreshness`], mcp/src/agents_remember/models/context_packet.py:89-100), cit:(["state: RepoState"], mcp/src/agents_remember/models/context_packet.py:26-26), cit:(["mode: MemoryMode"], mcp/src/agents_remember/models/context_packet.py:84-84),
+  cit:(["state: FreshnessState"], mcp/src/agents_remember/models/context_packet.py:98-98), cit:(["from agents_remember.kernel.git_facts import RepoState", "from agents_remember.kernel.git_freshness import FreshnessState", "from agents_remember.models.worktree import MemoryMode"], mcp/src/agents_remember/models/context_packet.py:9-9; mcp/src/agents_remember/models/context_packet.py:10-10; mcp/src/agents_remember/models/context_packet.py:14-14); new reference rows for `git_facts.py`
+  (cit:([`RepoState`, `VALID_REPO_STATES`, `git_facts_to_packet`], mcp/src/agents_remember/kernel/git_facts.py:22-22; mcp/src/agents_remember/kernel/git_facts.py:26-26; mcp/src/agents_remember/kernel/git_facts.py:104-115), cit:([`FreshnessState`, `VALID_FRESHNESS_STATES`, `freshness_to_packet`], mcp/src/agents_remember/kernel/git_freshness.py:29-38; mcp/src/agents_remember/kernel/git_freshness.py:41-41; mcp/src/agents_remember/kernel/git_freshness.py:158-169), cit:(["MemoryMode = Literal["], mcp/src/agents_remember/kernel/coordination_context/models.py:209-209))
   and cit:([`worktree_status_packet`], mcp/src/agents_remember/application/worktree_status.py:21-56). Verification metadata pinned until closeout stamps the L4
   commit.
 

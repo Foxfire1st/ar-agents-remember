@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/enforcement.py`  |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-01T19:45+02:00                      |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`             |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`             |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Purpose
@@ -82,14 +82,16 @@ wrapper around `kind="closeout-approval"`; `CloseoutGuard` aliases `GateGuard`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The records + folded gate set this policy reads. | `GateRecord` | mcp/src/agents_remember/controlplane/records.py:84-116 |
-| The delegation policy validator and attribution checks used by this resolver. | `approval_failure_reason`; `delegated_decision_failure_reason` | mcp/src/agents_remember/controlplane/gate_policy.py:179-191; mcp/src/agents_remember/controlplane/gate_policy.py:194-210 |
-| The mutating tool that enforces this policy: `_refuse_unsatisfied_closeout_gate` at L424-L446 (deny-only, writes nothing) and `_claim_closeout_gate` at L449-L499 (the spend). It no longer appends an `applied` snapshot itself. | `_refuse_unsatisfied_closeout_gate`; `_claim_closeout_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:488-510; mcp/src/agents_remember/worktrees/modules/closeout.py:513-563 |
+| The records + folded gate set this policy reads. | `GateRecord` | mcp/src/agents_remember/controlplane/records.py:45-77 |
+| The delegation policy validator and attribution checks used by this resolver. | `approval_failure_reason`; `delegated_decision_failure_reason` | mcp/src/agents_remember/controlplane/gate_policy.py:52-64; mcp/src/agents_remember/controlplane/gate_policy.py:67-83 |
+| The mutating tool that enforces this policy: `_refuse_unsatisfied_closeout_gate` at L424-L446 (deny-only, writes nothing) and `_claim_closeout_gate` at L449-L499 (the spend). It no longer appends an `applied` snapshot itself. | `_refuse_unsatisfied_closeout_gate`; `_claim_closeout_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:485-507; mcp/src/agents_remember/worktrees/modules/closeout.py:510-560 |
 | `GateStore.claim_approval` — the compare-and-swap that calls `evaluate_gate` and appends `applied` in one held lock. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234 |
-| `CONSUMED_APPROVAL_GATE_KINDS` — what keeps the `applied` snapshot this resolver's refusal depends on from being reclaimed. | `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/interaction_retention.py:47-49 |
+| `CONSUMED_APPROVAL_GATE_KINDS` — what keeps the `applied` snapshot this resolver's refusal depends on from being reclaimed. | `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/interaction_retention.py:52-54 |
 | The dashboard write-path that produces a developer-attributed approval. | `gate_decide_for_lifecycle` | mcp/src/agents_remember/mcp/tools/gates.py:98-115 |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 6 citation claims
   (Repo-Internal reference rows); scoped result 0 findings.

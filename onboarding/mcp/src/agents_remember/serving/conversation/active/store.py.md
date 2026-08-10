@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,11 +44,11 @@ review finding 5, cit:([`_reconcile_roster_upsert`], mcp/src/agents_remember/ser
 lifecycle event and most of those events (`turn/started`, `turn/completed`, status) know nothing
 about the agent's final message — when the candidate carries no `final-message` block, the
 existing one is retained first-wins instead of being wiped by whole-item replacement.
-Comparison normalizes engine-assigned fields cit:([`_NORMALIZED_FIELDS`], mcp/src/agents_remember/serving/conversation/active/store.py:49-49) so identical replays are no-ops; a
+Comparison normalizes engine-assigned fields cit:([`_NORMALIZED_FIELDS`], mcp/src/agents_remember/serving/conversation/active/store.py:53-53) so identical replays are no-ops; a
 real change advances the revision while preserving ordinal, created-at, and provenance.
 cit:([`apply_delta`], mcp/src/agents_remember/serving/conversation/active/store.py:251-273) appends text into one existing block — targeting the mapped block id
-or the kind-based default (`tool-call` → `output`, else `markdown`, cit:([`_default_block`], mcp/src/agents_remember/serving/conversation/active/store.py:441-445)) — and buffers
-deltas that arrive before their item or block (bounded 64 items × 64 deltas, cit:([`MAX_PENDING_DELTA_ITEMS`, `MAX_PENDING_DELTAS_PER_ITEM`], mcp/src/agents_remember/serving/conversation/active/store.py:36-36; mcp/src/agents_remember/serving/conversation/active/store.py:39-39), cit:([`_buffer_delta`], mcp/src/agents_remember/serving/conversation/active/store.py:335-342)), flushing them on the item's arrival cit:([`_flush_pending_deltas`], mcp/src/agents_remember/serving/conversation/active/store.py:344-376). cit:([`apply_provenance`], mcp/src/agents_remember/serving/conversation/active/store.py:275-306)
+or the kind-based default (`tool-call` → `output`, else `markdown`, cit:([`_default_block`], mcp/src/agents_remember/serving/conversation/active/store.py:445-449)) — and buffers
+deltas that arrive before their item or block (bounded 64 items × 64 deltas, cit:([`MAX_PENDING_DELTA_ITEMS`, `MAX_PENDING_DELTAS_PER_ITEM`], mcp/src/agents_remember/serving/conversation/active/store.py:40-40; mcp/src/agents_remember/serving/conversation/active/store.py:43-43), cit:([`_buffer_delta`], mcp/src/agents_remember/serving/conversation/active/store.py:335-342)), flushing them on the item's arrival cit:([`_flush_pending_deltas`], mcp/src/agents_remember/serving/conversation/active/store.py:344-376). cit:([`apply_provenance`], mcp/src/agents_remember/serving/conversation/active/store.py:275-306)
 resolves one user item's producer from the provenance batch verdict through `_SOURCE_AUTHORITY`
 (cit:([`_SOURCE_AUTHORITY`], mcp/src/agents_remember/serving/conversation/active/store.py:41-47): cockpit → operator/cockpit-composer, terminal → operator/terminal-controlled, durable
 → agent-bus/durable-inbox), exactly once per request id, with strength `exact`; absent records
@@ -149,8 +149,8 @@ the codex roster lifecycle upserts the two retention guards cover.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `ConversationItem` and the block/provenance vocabulary define what the store compares and unions. | "class ConversationItem(WireModel):" | mcp/src/agents_remember/serving/conversation/_models_blocks.py:158-158 |
-| The submission-provenance batch is the only producer-verdict channel; absent records stay unknown-input. | `SubmissionProvenanceBatch`; `apply_provenance` | mcp/src/agents_remember/serving/conversation/active/store.py:275-306; mcp/src/agents_remember/serving/harness_control_models.py:527-530 |
+| `ConversationItem` and the block/provenance vocabulary define what the store compares and unions. | "class ConversationItem(WireModel):" | mcp/src/agents_remember/models/conversations/content.py:160-160 |
+| The submission-provenance batch is the only producer-verdict channel; absent records stay unknown-input. | `SubmissionProvenanceBatch`; `apply_provenance` | mcp/src/agents_remember/models/conversations/control_wire.py:281-284; mcp/src/agents_remember/serving/conversation/active/store.py:279-310 |
 | Claude mappers emit split tool items (input first, output later) that the block union converges, and the `task_started` tagging upsert that hard-claims `streaming` (the finding-9 guard's subject). | `_map_task_lifecycle`; `_agent_identity_tag_item`; `_map_tool_result` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:305-385; mcp/src/agents_remember/serving/conversation/projectors/claude.py:514-554; mcp/src/agents_remember/serving/conversation/projectors/claude.py:978-1018 |
 | The projector wraps store mutations into totally ordered envelopes. | `ProjectionMutationStream`; `_mint_envelope` | mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py:49-197 |
 
@@ -203,8 +203,8 @@ and yields to terminal candidates or non-history live authority.
   L291-L298 → L326-L333, `_buffer_delta` L300-L307 → L335-L342, `_flush_pending_deltas`
   L309-L341 → L344-L376, `_default_block` L408-L412 → L441-L445, `_union_blocks` L435-L451 →
   L466-L482, `unknown_vendor_item` L454-L486 → L485-L517, and the agent-ref propagation L472 →
-  L503. cit:([`_NORMALIZED_FIELDS`], mcp/src/agents_remember/serving/conversation/active/store.py:49-49), cit:([`_SOURCE_AUTHORITY`], mcp/src/agents_remember/serving/conversation/active/store.py:41-47) and the buffering bounds
-  (cit:([`MAX_PENDING_DELTA_ITEMS`, `MAX_PENDING_DELTAS_PER_ITEM`], mcp/src/agents_remember/serving/conversation/active/store.py:36-36; mcp/src/agents_remember/serving/conversation/active/store.py:39-39)) sit above the first join and were already correct. No prose claim changed: the
+  L503. cit:([`_NORMALIZED_FIELDS`], mcp/src/agents_remember/serving/conversation/active/store.py:53-53), cit:([`_SOURCE_AUTHORITY`], mcp/src/agents_remember/serving/conversation/active/store.py:41-47) and the buffering bounds
+  (cit:([`MAX_PENDING_DELTA_ITEMS`, `MAX_PENDING_DELTAS_PER_ITEM`], mcp/src/agents_remember/serving/conversation/active/store.py:40-40; mcp/src/agents_remember/serving/conversation/active/store.py:43-43)) sit above the first join and were already correct. No prose claim changed: the
   block-union convergence, both upsert-race guards, the `_preserved_input_authority` triple and
   the honest page slicing all behave exactly as described.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.

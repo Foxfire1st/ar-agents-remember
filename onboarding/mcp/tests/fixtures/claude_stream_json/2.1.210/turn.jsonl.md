@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/claude_stream_json/2.1.210/turn.jsonl` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-15T20:08+02:00 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ activity, transcript, and terminal outcome.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture loader selects the 2.1.210 directory and parses each JSONL frame. | `FIXTURE_ROOT` | mcp/tests/test_harness_control_claude.py:32-32 |
+| The fixture loader selects the 2.1.210 directory and parses each JSONL frame. | `FIXTURE_ROOT` | mcp/tests/test_harness_control_claude.py:34-34 |
 | The correlated-turn test proves replay acceptance, retry settling, and terminal completion remain distinct. | `test_correlated_acceptance_retry_activity_and_terminal_result_are_distinct` | mcp/tests/test_harness_control_claude_stream_1.py:392-433 |
 
 ## Cross-Repo References

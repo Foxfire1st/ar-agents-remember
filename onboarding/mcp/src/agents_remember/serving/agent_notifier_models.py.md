@@ -6,8 +6,8 @@
 | path | mcp/src/agents_remember/serving/agent_notifier_models.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
@@ -90,6 +90,7 @@ verification metadata stays pinned to the pre-commit source history until closeo
 
 ## Update History
 
+- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the current staged agent-notifier model vocabulary and rename seam; the sidecar remains accurate. Verification metadata remains pinned until closeout.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the fact-only vocabulary —
   expectation/ladder finding and action kinds removed, nudge-store/escalation-knob fields
   dropped from `AgentNotifierContext`, `SweepState.escalated_entry_ids` removed.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T20:15+02:00|
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ this".
 **What would falsify the ruling**, stated so a later reader can check it rather than trust it: a
 `write_ledger` caller that does not `git add` + commit in the same function, or one reached from a
 process that runs concurrently with another writer (a serving route, a projection tick, a
-agent-notifier sweep). Either one makes a truncated ledger lose history rather than a delta, and the
+supervisor sweep). Either one makes a truncated ledger lose history rather than a delta, and the
 ledger then belongs on the `ar-durable-store/1.0` contract in `controlplane/durable_store.py` like
 the six JSONL logs.
 
@@ -104,11 +104,11 @@ format.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines the canonical ledger schema, row and ledger dataclasses, and validation error type (a subclass of `AgentsRememberError`). | `AgentsRememberError` | mcp/src/agents_remember/kernel/memory_ledger.py:17-41 |
+| The module defines the canonical ledger schema, row and ledger dataclasses, and validation error type (a subclass of "class LedgerError(AgentsRememberError):"). | "class LedgerError(AgentsRememberError):" | mcp/src/agents_remember/kernel/memory_ledger.py:17-41 |
 | `parse_ledger_text()` requires the fenced JSON metadata block, required metadata fields, supported schema, and a valid mapping table. | `parse_ledger_text` | mcp/src/agents_remember/kernel/memory_ledger.py:52-104 |
 | `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | `validate_ledger`; `ledger_to_text`; `prepend_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:147-156; mcp/src/agents_remember/kernel/memory_ledger.py:159-184; mcp/src/agents_remember/kernel/memory_ledger.py:218-229 |
-| `write_ledger()` is an unguarded whole-file write, and its docstring carries the 260731-EFA-L5 R12 ruling that made that a decision: the durable copy is the git object every caller commits two statements later. | `def` | mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
-| The contract this file was measured against and deliberately left off — what an unconditional per-log lock buys, and why a store whose durability rests on a deployment fact is the defect L5 was called in to repair. | "DURABLE_STORE_CONTRACT = \"ar-durable-store/1.0\"" | mcp/src/agents_remember/controlplane/durable_store.py:42-42 |
+| `write_ledger()` is an unguarded whole-file write, and its docstring carries the 260731-EFA-L5 R12 ruling that made that a decision: the durable copy is the git object every caller commits two statements later. | "def write_ledger(path: Path" | mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
+| The contract this file was measured against and deliberately left off — what an unconditional per-log lock buys, and why a store whose durability rests on a deployment fact is the defect L5 was called in to repair. | "contract for control-plane JSONL stores" | mcp/src/agents_remember/controlplane/durable_store.py:1-1 |
 
 ## Cross-Repo References
 
@@ -118,12 +118,12 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing `memory.md`. | "find_mapping(ledger, code_commit)" | mcp/src/agents_remember/worktrees/modules/closeout.py:727-727 |
-| `c-09-git-worktree-manager` integration imports the same helpers and unconditionally prepends the integrated code->memory mapping. | "prepend_mapping(ledger, integrated_code_commit, integrated_memory_content_commit)" | mcp/src/agents_remember/worktrees/modules/integrate.py:300-300 |
+| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing "require_git(contract.memory_worktree". | "existing_mapping = find_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/closeout.py:724-724 |
+| `c-09-git-worktree-manager` integration imports the same helpers and unconditionally prepends the integrated code->memory mapping. | "prepend_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/integrate.py:302-302 |
 
 ## Update History
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 moved the ledger reader (`observer/snapshots.py` → `serving/projections/snapshots.py`); the documented behavior is unchanged and the reader-path citation was re-pointed. Body re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:29+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the four malformed rows and two
   superseded prose cites. `parse_ledger_text` bound to 52-104; closeout/integration rows bound to
@@ -148,9 +148,9 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
   this leaf's test cards do, because a number that was wrong within the hour is worse than no
   number. The row's claim is unchanged and was re-read at the new location. The four citations into
   this module's own source were re-read and are correct: L17-L41 (`LEDGER_SCHEMA` L17, `LedgerRow`
-  L23, `MemoryLedger` L29, `LedgerError` L40), `parse_ledger_text` L51-L104 cit:([`def`], mcp/src/agents_remember/kernel/memory_ledger.py:52-52),
+  L23, "def parse_ledger_text(text: str) -> MemoryLedger:" L29, "class LedgerError(AgentsRememberError):" L40), "def parse_ledger_text(text: str) -> MemoryLedger:" L51-L104 cit:(["def parse_ledger_text(text: str) -> MemoryLedger:"], mcp/src/agents_remember/kernel/memory_ledger.py:52-52),
   `validate_ledger` L147 / `ledger_to_text` L159 / `prepend_mapping` L218, and `write_ledger`
-  L193-L215 cit:([`def`], mcp/src/agents_remember/kernel/memory_ledger.py:193-193). Nothing on this card asserts a measured figure.
+  L193-L215 cit:(["def write_ledger(path: Path"], mcp/src/agents_remember/kernel/memory_ledger.py:193-193). Nothing on this card asserts a measured figure.
 - 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: the only source change here is a 20-line docstring
   on `write_ledger`, and it is a **ruling**, not a description — so the card now records the ruling,
   the evidence for it, and what would overturn it. Verified all six call sites myself rather than
@@ -158,7 +158,7 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
   `carryover.py` L759-L762 and L849, `baseline.py` L153 — each followed by
   `require_git(..., ["add", "memory.md"])` and `commit_if_dirty(...)` in the next two statements, so
   the durable authority is the git object and a truncated `memory.md` costs the uncommitted delta.
-  Confirmed no writer under `observer/` or `serving/`; `observer/snapshots.py` L42 imports
+  Confirmed no writer under `observer/` or `serving/`; `serving/projections/snapshots.py` L42 imports
   `LedgerError`, `LedgerRow` and `load_ledger` and never `write_ledger`. Added the caller obligation
   as an invariant, because it is the property the whole exemption rests on.
 

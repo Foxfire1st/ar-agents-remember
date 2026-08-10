@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/__init__.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-06-14T11:30+02:00                         |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`     |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`     |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -31,7 +31,7 @@ package's surface is reached through its submodules (`app.create_app`, `projecto
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The serving route overview. | `# mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview` | onboarding/mcp/src/agents_remember/serving/overview.md:1-2198 |
+| The serving route overview. | `# mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview` | onboarding/mcp/src/agents_remember/serving/overview.md:4-1334 |
 
 ## Update History
 - 2026-08-03T03:00:33+02:00 — W3-B05 curator: resolved 1 Tier-2 table finding with an exact route-overview heading and memory-repository source path; fixer generated the final range.

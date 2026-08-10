@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_changeset.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-12T12:55+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -96,9 +96,9 @@ this checkout, `unittest.TestCase` with a `tempfile.TemporaryDirectory` per case
 | The change-set API under test (`task_changeset`, `file_diff`, `master_changeset`). | `task_changeset`; `file_diff`; `master_changeset` | mcp/src/agents_remember/serving/changeset.py:78-97; mcp/src/agents_remember/serving/changeset.py:100-125; mcp/src/agents_remember/serving/changeset.py:225-269 |
 | The git primitive under test (`changed_files_with_counts`). | `changed_files_with_counts` | mcp/src/agents_remember/worktrees/modules/git.py:159-198 |
 | The shared scope layer the extraction test checks (`resolve_scope`, `run_scoped`, `FileScope`). | `resolve_scope`; `run_scoped`; `FileScope` | mcp/src/agents_remember/serving/scope.py:96-107; mcp/src/agents_remember/serving/scope.py:147-193; mcp/src/agents_remember/serving/scope.py:207-227 |
-| The files module re-exporting `FileScope`/`_resolve_within` (asserted here). | "def list_dir(scope: FileScope, rel_dir: str) -> dict[str, Any]:"; "_resolve_within," | mcp/src/agents_remember/serving/files.py:54-54; mcp/src/agents_remember/serving/files.py:161-161 |
-| `WorktreeContract` / `write_contract` used to drive the change-set scope. | `WorktreeContract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:232-287; mcp/src/agents_remember/worktrees/worktree_contract.py:474-477 |
-| `McpRuntimeConfig` / `RepositoryScope` constructed by the master test. | `McpRuntimeConfig`; `RepositoryScope` | mcp/src/agents_remember/mcp/config.py:68-73; mcp/src/agents_remember/mcp/config.py:113-137 |
+| The files module re-exporting "Scope resolution (``FileScope`` / ``resolve_scope`` / ``run_scoped``) + the language"/"reuses them" (asserted here). | "def list_dir(scope: FileScope"; "reuses them" | mcp/src/agents_remember/serving/files.py:20-20; mcp/src/agents_remember/serving/files.py:163-163 |
+| `WorktreeContract` / `write_contract` used to drive the change-set scope. | `WorktreeContract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285; mcp/src/agents_remember/worktrees/worktree_contract.py:472-475 |
+| `McpRuntimeConfig` / `RepositoryScope` constructed by the master test. | `McpRuntimeConfig`; "class RepositoryScope:" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:113-137; mcp/src/agents_remember/kernel/primitives/runtime_config.py:76-81 |
 | The L1 files test whose harness/style this mirrors. | `PathGuardTests` | mcp/tests/test_serving_files.py:80-111 |
 
 ## 260731-EFA-L2 Delta — the scope-resolution fall-through
@@ -111,6 +111,8 @@ Five tests pinning which diff a file request resolves to when it names no leaf:
 - a scoped file diff **reports an unknown scope rather than guessing** one.
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 4 citation findings, all duplicate
   sources: deduplicated the repeated ranges in the scope-layer row (21× `scope.py:96-107`, 6×

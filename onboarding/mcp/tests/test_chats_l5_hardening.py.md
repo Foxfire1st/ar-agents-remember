@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_chats_l5_hardening.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T12:00+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -120,8 +120,8 @@ repository-owned and cited below.
 | The H1 quarantine under test: `_observe_control_snapshot` contains the per-entry synchronizer failure; `LivenessProbe` (L71) is the sweeper's probe parameter object. | `LivenessProbe` | mcp/src/agents_remember/serving/terminal_liveness.py:85-106 |
 | The synchronizer whose `observe` raises on the orphan completion (contract left intact). | `observe` | mcp/src/agents_remember/serving/hosted_interactions.py:59-61 |
 | The H2/F4 store pin under test: `_preserved_input_authority` keeps the user-item authority triple intact. | `_preserved_input_authority` | mcp/src/agents_remember/serving/conversation/active/store.py:54-74 |
-| The validator (`preserve_input_authority`) whose violation the split item raises at re-validation. | `preserve_input_authority` | mcp/src/agents_remember/serving/conversation/_models_blocks.py:197-248 |
-| The projector-tier and installed companions to these store-level regressions. | "Projector engine: hydration, ordering, idempotence, provenance, rehydration, gaps."; "Installed-runtime production proof for the L3 control API (260718-CHATS-L3, R7)." | mcp/tests/test_conversation_active_service.py:1-1; mcp/tests/test_conversation_control_installed.py:1-7 |
+| The validator (`preserve_input_authority`) whose violation the split item raises at re-validation. | `preserve_input_authority` | mcp/src/agents_remember/models/conversations/content.py:197-248 |
+| The projector-tier and installed companions to these store-level regressions. | "Projector engine: hydration"; "Installed-runtime production proof for the L3 control API (260718-CHATS-L3" | mcp/tests/test_conversation_active_service.py:1-1; mcp/tests/test_conversation_control_installed.py:1-7 |
 
 ## Cross-Repo References
 
@@ -132,6 +132,8 @@ No cross-repository implementation participates in this suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 2 citation rows
   (terminal_liveness probe + quarantine ranges, and the two companion-suite docstring literals).

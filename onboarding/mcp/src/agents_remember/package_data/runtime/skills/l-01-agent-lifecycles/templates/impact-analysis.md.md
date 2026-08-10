@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 
 ## Purpose
 
@@ -25,7 +25,7 @@ The report is **evidence-first**: every finding cites the route indexes, `cgc_*`
 
 ### Invariants And Boundaries
 
-This is a **report, not a decision** — it feeds the orchestrator's spirit test / reshape proposals or the reviewer's verdict; it never decides. **Sub-agents WRITE it; AR state mutations** (`task_doc`, gates, spawn, closeout) stay in the **spawning agent's main loop**. It must cover both axes: planned-vs-planned (collision with another master/leaf, present or future) and planned-vs-past (the "fixed one, broke two" regression surface).
+This is a **report, not a decision** — it feeds the orchestrator's spirit test / reshape proposals or the reviewer's verdict; it never decides. **Sub-agents WRITE it; AR state mutations** (`task_doc`, gates, spawn, closeout) stay in the **spawning agent's main loop**. It must cover both axes: planned-vs-planned (collision with another master/leaf, present or future) and planned-vs-past (the "fixed one" regression surface).
 
 ### Todos
 

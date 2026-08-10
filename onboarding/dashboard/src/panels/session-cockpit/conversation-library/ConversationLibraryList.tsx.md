@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ the server reports (partial) agent unavailability.
 - **`agentsNote`** cit:(["library-agents-note"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:149-153): rendered VERBATIM (data-testid `library-agents-note`)
   above the rows whenever the page's note is non-null and non-empty — the exact native reason agent
   conversations are (partially) unavailable, never silently absent.
-- **Rows** cit:(["truncateMiddle(entry.title, 60)"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:154-197): each row is a real `<button>`; `data-selected` marks the previewed row;
+- **Rows** cit:(["truncateMiddle(entry.title"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:154-197): each row is a real `<button>`; `data-selected` marks the previewed row;
   `title` carries the full untruncated title (A5) while `truncateMiddle(title, 60)` renders the
   boundary-truncated visible text; the meta line joins the completeness badge, the mono
   `…safeNativeIdSuffix`, and `humanizeAge(lastActivityAt)`. A row's `agents` render directly beneath

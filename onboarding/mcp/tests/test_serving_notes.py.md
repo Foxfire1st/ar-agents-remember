@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_notes.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-07T18:40+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -77,6 +77,8 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 
 ## Update History
+- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+
 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: deleted the three rangeless internal rows; no unsupported anchored-route disposition retained. Verification metadata unchanged.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the shared client builder now calls

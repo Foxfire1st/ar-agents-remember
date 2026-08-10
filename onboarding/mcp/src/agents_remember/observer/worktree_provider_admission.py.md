@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/worktree_provider_admission.py` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-01T00:52+02:00                                      |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                  |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                  |
+| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -125,7 +125,7 @@ rejection, and close-phase Engine Room visibility.
 | The archived-cleanup vocabulary is declared once. | `ARCHIVED_CLEANUP_STATES` | mcp/src/agents_remember/observer/worktree_provider_admission.py:18-18 |
 | Active-enclosure groups keep any non-archived enclosure live; a missing log never drops the group (the Engine Room disappearing-worktree regression). | `active_enclosure_worktree_groups` | mcp/src/agents_remember/observer/worktree_provider_admission.py:48-73 |
 | A non-retired master series retains all its leaf lifecycle ids; retirement requires every leaf archived AND the one-week grace past the last finalized contract mtime. | `series_retained_lifecycle_ids`; `_series_is_retired`; `_contract_finalized_at` | mcp/src/agents_remember/observer/worktree_provider_admission.py:76-101; mcp/src/agents_remember/observer/worktree_provider_admission.py:104-118; mcp/src/agents_remember/observer/worktree_provider_admission.py:121-127 |
-| The projection store reads enclosures first, then passes `series_retained_lifecycle_ids(...)` as the retention `protected_lifecycle_ids`. | `project_and_write` | mcp/src/agents_remember/observer/projection_store.py:212-275 |
+| The projection store reads enclosures first, then passes `series_retained_lifecycle_ids(...)` as the retention `protected_lifecycle_ids`. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
 | Retention honors that protection set, exempting protected logs from inactivity pruning. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
 | Tests pin a live group surviving a pruned log, and series retention across live/archived/grace/no-taskname cases. | `test_active_group_survives_a_pruned_lifecycle_log`; `SeriesRetentionTests` | mcp/tests/test_observer_projection.py:227-242; mcp/tests/test_observer_projection.py:245-301 |
 
