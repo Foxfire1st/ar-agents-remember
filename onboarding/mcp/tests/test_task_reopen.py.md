@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ task doc id when the task tree proves the mapping.
 | The recreate-fresh + restamp start path under test. | `start_result`, `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/worktrees/modules/start.py:456-467; mcp/src/agents_remember/worktrees/modules/start.py:579-584 |
 | Contract loading preserves a legacy stem-shaped leaf id when the task tree proves the mapping. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:438-471 |
 | The canonical contract leaf-id normalization helper is `normalize_contract_leaf_id`. | `normalize_contract_leaf_id` | mcp/src/agents_remember/worktrees/worktree_contract.py:558-581 |
-| The abandon-side ambient end helper under test. | `_end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:401-407 |
+| The abandon-side ambient end helper under test. | `_end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:396-402 |
 
 ## Update History
 

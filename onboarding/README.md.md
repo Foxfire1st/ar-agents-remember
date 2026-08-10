@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-10T07:30+02:00 |
+| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -128,9 +128,9 @@ The README routes readers into the split documentation tree and gives the curren
 | The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. | `## Documentation` | README.md:178-191 |
 | The `## Run The Dashboard` section: unpinned `uv tool install` first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, pinning as the debugging path, and the rc-period pre-release note. | `## Run The Dashboard`; "autoStart" | README.md:138-177 |
 | The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. | `## Repository Layout` | README.md:192-272 |
-| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | `## Status` | README.md:273-278 |
-| The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | `## Stability` | README.md:279-282 |
-| The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | `## Contributing` | README.md:283-287 |
+| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | `## Status` | README.md:287-292 |
+| The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | `## Stability` | README.md:293-296 |
+| The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | `## Contributing` | README.md:297-301 |
 | The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. | `# Agents Remember Documentation` | docs/README.md:1-65 |
 | `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. | `# Memory your coding agent can trust` | docs/features.md:1-478 |
 
@@ -162,9 +162,6 @@ states:
 - **Radon is printed as a report and cannot fail either tier — it exits 0 whatever it
   finds.** The README says so explicitly rather than listing it beside the enforcing steps.
 
-**Known gap in the source file:** the README's targeted-tier sentence does not name the
-changed-lines coverage floor, which is the wrapper's last and binding step. `CONTRIBUTING.md`
-carries it; the README does not.
 - **CI** runs that same wrapper on **every branch push and every pull request**, not only `main`.
 - **The full wrapper also runs exactly once per master at the master integration gate**,
   invoked by `worktree_integrate` itself and memory-capped
@@ -173,6 +170,13 @@ carries it; the README does not.
   hooks are not configured.
 - The tier table and the staged-content stash contract live in `CONTRIBUTING.md`; the README links
   there rather than duplicating them.
+
+The new paragraph immediately after the tier summary owns the retry behavior in public prose:
+cheap deterministic rails run before pytest; CRAP/diff coverage read pytest's artifact afterward;
+a local coverage-derived refusal may publish a content-addressed proof for exact or concrete
+test-module-only retry; every source/config/suite/runtime/environment/artifact ambiguity runs
+fresh; an inconclusive delta falls back to the full pytest selection; CI never reuses proof; and
+`AR_QUALITY_NO_RETRY=1` forces a fresh diagnostic run.
 
 Note that `sync-dashboard.py` is **not** among the generated-copy checks — it is a release
 build step with no `--check` mode, because the bundle it places is no longer in version control.
@@ -201,6 +205,11 @@ across the two hooks was retiered by 260731-EFA-L1, and the *step list* was corr
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-10T07:30+02:00 — 260805-ARG-L1 developer expansion: documented the cheap-first wrapper
+  order and fail-closed exact/test-only retry proof, removed the superseded claim that README omits
+  the changed-lines floor, and recorded CI-fresh/fallback behavior. Verification metadata remains
+  blank until closeout stamps the code commit.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed the public orchestration description for
   sprint-bound command seats and migration-only unbound legacy rows. Verification metadata remains

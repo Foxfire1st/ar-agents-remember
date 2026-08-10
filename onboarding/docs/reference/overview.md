@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated | 2026-08-10T07:30+02:00 |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 
 ## Purpose
 
@@ -144,7 +144,21 @@ places the full wrapper at the master integration gate inside `worktree_integrat
 `settings-json.md` documents the new `orchestration.qualityGate.memoryCapBytes` knob (2 GiB
 default, fail-loud family) — the schema source for the full-gate memory cap.
 
+## 260805-ARG-L1 Reference Impact
+
+`settings-json.md` now documents the third retirement setting,
+`autoCloseCompletedSeats` (default `true`). The two existing edge gates still decide whether
+completion cleanup runs; this setting chooses its result for exact-leaf worker/reviewer/curator
+seats. Default mode requires the exact sender's durable `turn-report`, retires the process through
+normal session-retire semantics, and preserves transcript/report evidence. `false` restores the
+landed/archive path. Manager and orchestrator seats are excluded in either mode. The public quality
+description also reflects cheap-first subprocess ordering and CI-fresh local proof reuse policy.
+
 ## Update History
+
+- 2026-08-10T07:30+02:00 — 260805-ARG-L1: `settings-json.md` now documents default-on completion
+  close, the exact durable report barrier, owner exclusions, landed/archive opt-out, and the
+  cheap-first quality/retry contract.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed the reference route for sprint-bound command
   seats and migration-only unbound language. Verification metadata remains pinned until closeout.

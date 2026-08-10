@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-10T05:45+02:00 |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -198,8 +198,8 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
 | Produced-vs-declared vocabulary measurement runs in both directions. | `test_every_contract_literal_validates_at_its_wire_field`; `test_every_repo_state_the_git_facts_reader_writes_validates`; `test_every_next_guidance_literal_validates_at_its_wire_field` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:635-645; mcp/tests/test_wire_vocabulary_exhaustiveness.py:691-706; mcp/tests/test_wire_vocabulary_exhaustiveness.py:741-751 |
-| The worktree model imports the contract-cell vocabulary aliases rather than retyping them. | "CleanupStatus,"; "HumanReviewStatus,"; "IntegrationStatus,"; "MemoryMode,"; "WorkflowKind,"; "LifecycleStatus," | mcp/src/agents_remember/models/worktree.py:21-25; mcp/src/agents_remember/models/worktree.py:28-28 |
-| The worktree model imports the phase/next-operation/next-tool aliases from guidance. | "WorktreePhase,"; "NextOperation,"; "NextTool," | mcp/src/agents_remember/models/worktree.py:16-18 |
+| The worktree model imports the contract-cell vocabulary aliases rather than retyping them. | "CleanupStatus,"; "HumanReviewStatus,"; "IntegrationStatus,"; "MemoryMode,"; "WorkflowKind,"; "LifecycleStatus," | mcp/src/agents_remember/models/worktree.py:22-28; mcp/src/agents_remember/models/worktree.py:29-31 |
+| The worktree model imports the phase/next-operation/next-tool aliases from guidance. | "WorktreePhase,"; "NextOperation,"; "NextTool," | mcp/src/agents_remember/models/worktree.py:17-21 |
 | Guidance defines the phase/next-operation/next-tool aliases used by the model. | `WorktreePhase`; `NextOperation`; `NextTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:28-53 |
 | The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:17-25 |
 
@@ -359,6 +359,9 @@ reordered (see the `mcp/tools/` overview). Verified: all 62 registered models ar
 narrower type is true of the whole registry today.
 
 ## Update History
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1: integration and strict finalization response models now
+  declare closed, deferred, failed, and landed completion-seat result lists.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed terminal model vocabulary for sprint provenance
   and legacy absence. Verification metadata remains pinned until closeout.

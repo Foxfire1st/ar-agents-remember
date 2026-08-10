@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-09T03:51+02:00|
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-10T05:45+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -170,9 +170,10 @@ giving server-authoritative single-owner-per-role uniqueness.
 **Seat lifecycle** adds optional column groups, all written-only-when-set
 via the same `to_json`/`from_json` migration-safe pattern: **retirement provenance**
 (`retired_at`/`retired_by_session`/`retired_reason`/`retired_edge`, JSON `retiredAt`/
-`retiredBySession`/`retiredReason`/`retiredEdge`) layered onto `status == "terminated"` for manual
-retire/cleanup; **landing provenance** (`landed_at`/`landed_reason`/`landed_edge`, JSON `landedAt`/
-`landedReason`/`landedEdge`) layered onto the visible `status == "landed"` archive state for normal
+`retiredBySession`/`retiredReason`/`retiredEdge`) layered onto `status == "terminated"` for manual,
+archive-cleanup, and ARG-L1 report-gated automatic close; **landing provenance** (`landed_at`/
+`landed_reason`/`landed_edge`, JSON `landedAt`/`landedReason`/`landedEdge`) layered onto the visible
+`status == "landed"` archive state for opt-out
 successful completion; **live identity** (`spawned_label`, JSON `spawnedLabel`) frozen on the FIRST
 rename only; and **live turn-state** (`turn_state: SeatTurnState = "working"|"turn-ended"|
 "awaiting-input"|"stale"`, `turn_state_changed_at`, JSON `turnState`/`turnStateChangedAt`,
@@ -273,7 +274,9 @@ operations that keep catalog state honest.
 | Unit tests pin catalog path, JSON schema/order, complete optional-field round-trip, status filtering, attach/status transitions, and termination winning over later exit bookkeeping. | `TerminalCatalogTests` | mcp/tests/test_terminal_catalog.py:48-516 |
 | The liveness sweeper + shared observation path that drive `record_liveness_probe` and own the default hysteresis constants. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:282-326 |
 | Regression tests for hysteresis, pane-gone fast-marking, self-heal, sweep rate-limit/overlap, and stderr classification. | `TerminalCatalogLivenessTests` | mcp/tests/test_terminal_liveness.py:176-718 |
-| Worktree integrate/finalize completion hooks call `_auto_land_completed_seats`, which archives selected roles through `land_seats_for_leaf`; this is completion-edge auto-land, not manual retirement authority. | "def _auto_land_completed_seats"; "def land_seats_for_leaf" | mcp/src/agents_remember/application/worktree_tools.py:457-457; mcp/src/agents_remember/serving/landing.py:9-9 |
+| Completion hooks default to report-gated system retirement of worker/reviewer/curator; manager/orchestrator are excluded. | "def auto_complete_seats(" | mcp/src/agents_remember/application/completion_cleanup.py:27-67 |
+| The compatibility path uses the ordinary landing owner only when auto-close is disabled. | "def land_seats_for_leaf(" | mcp/src/agents_remember/serving/landing.py:9-28 |
+| The default close path delegates each eligible seat to ordinary retirement mechanics. | "def retire_entry(" | mcp/src/agents_remember/serving/retire.py:37-71 |
 | The serving manual-retire route assembles the actor/target `SeatRef`s, checks authority, and calls the retirement owner. | "def _retire_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:540-540 |
 | The MCP manual-retire tool assembles the actor/target `SeatRef`s, checks authority, and calls the retirement owner. | `session_retire_tool` | mcp/src/agents_remember/application/terminal_tools.py:1007-1076 |
 | Failing-first + regression tests for the retire/rename/turn-state mechanics, the retire-vs-liveness interplay, and idempotent provenance. | `TerminalMarkVsLivenessInterplayTests` | mcp/tests/test_seat_lifecycle.py:538-578 |
@@ -362,6 +365,9 @@ semantics. The write helpers live in `serving/seat_turn_truth.py` (see its sidec
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1 relationship update: retirement provenance now also
+  records system automatic completion closes; landed provenance remains the opt-out archive path.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded write-once sprint provenance and structural
   manager-subordinate compound sets. Verification metadata remains pinned until closeout stamps the

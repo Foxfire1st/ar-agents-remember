@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`                                  |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastUpdated            | 2026-08-10T05:45+02:00 |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`                                  |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 
 ## Purpose
 
@@ -63,12 +63,11 @@ range) + the leaf task doc + notes/ — and that the curator routes each piece t
 home (specific sidecar or governing overview; L3 Operational-Notes last-resort only) before writing
 onboarding.
 
-As of 260707-HFX2-L11: the "Dispatch defaults" section's "Cleanup" line now states that
-`worktree_integrate` auto-lands successful worker/reviewer seats into the landed archive
-(`retirement.autoLandOnIntegration`, default ON); `session_retire` is available for a
-stuck/abandoned worker/reviewer/curator seat of the manager's OWN master only, and server policy
-refuses any other target.
-This is placed in Dispatch defaults (not the exit block) because the landing automation rides the
+As of 260805-ARG-L1, the Dispatch-default cleanup line says `worktree_integrate` auto-closes each
+worker/reviewer/curator only after its exact-leaf turn report is durable. Reports/transcripts
+survive; missing reports defer; manager/orchestrator are excluded. Setting
+`retirement.autoCloseCompletedSeats=false` restores the previous landed/archive behavior.
+This is placed in Dispatch defaults (not the exit block) because the cleanup automation rides the
 per-leaf integrate edge, the same section that already documents the worker-brief/AR_SPAWN_ROLE/
 qualified-leaf-key/curator-chain dispatch defaults.
 
@@ -91,6 +90,10 @@ per-leaf closeout gate; a leaf closeout that skips its required checks is refuse
 passed.
 
 ## Update History
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1: synced the manager brief's completion cleanup contract
+  to exact report ordering, all three leaf-altitude roles, owner exclusion, and the landed opt-out.
+  Verification metadata remains pinned until closeout stamps ARG-L1.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the manager-brief
   template's quality altitude ladder bullet (leaf `--targeted`; full wrapper once

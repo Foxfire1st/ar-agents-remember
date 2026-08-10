@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -195,6 +195,7 @@ checkout.
 `"run-strict-code-quality-if-code-commit"` entry with four:
 
 ```
+run-working-tree-memory-quality-preflight-before-code-quality
 refuse-if-gate-would-run-and-code-checkout-is-not-the-tasks-own-worktree
 refuse-if-gate-would-run-and-code-worktree-has-unresolved-merge-conflicts
 reset-and-stage-whole-task-worktree-if-gate-would-run
@@ -256,8 +257,11 @@ report-only review surface) and a failure rejects in seconds instead of after th
 suite. The curator clears the same `memory_quality_check` during the leaf, so gate findings are
 the exception. The L6 placement ran claim evidence before the code commit with a clearing
 condition that required the commit to exist — an unreachable state that deadlocked this leaf's
-closeout with 115 unresolvable findings. The post-commit phase keeps drift, document shape, and
-history order as the sanity pass over the metadata refresh. The approval-claim ordering is
+closeout with 115 unresolvable findings. Dirty unstamped cards use the leaf base as temporary
+comparison provenance during this preflight; no stamp is written. The post-commit phase repeats
+citations without that fallback, then runs drift, document shape, and history order over the
+metadata refresh, so memory cannot commit unless every temporary card received the real code
+commit stamp. The approval-claim ordering is
 untouched: `gate_guard` is still claimed before the first irreversible act.
 
 ### `_claim_closeout_gate` — the spend
@@ -363,6 +367,11 @@ still what actually runs the wrapper, one step inside `_gate_staged_code`.
 
 ## Update History
 
+- 2026-08-10T08:20+02:00 — 260805-ARG-L1 closeout-order hardening: made the preview advertise the
+  already-enforced memory preflight before code quality, passed temporary leaf-base provenance for
+  dirty unstamped cards, and required a no-fallback citation repetition after metadata refresh.
+  Regression coverage proves a failed preflight never calls the code-quality runner. Verification
+  metadata remains pinned until closeout stamps ARG-L1.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the leaf targeted
   contract at both closeout call sites and `_gate_staged_code`, the full-wrapper
   master-gate home, and the `memory_quality_check` per-leaf carve-out; refreshed

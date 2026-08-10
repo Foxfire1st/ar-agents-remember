@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/files.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -161,7 +161,7 @@ rejected, never silently re-rooted).
 | The shared, side-effect-free sidecar pairing + path-confinement helpers this module reuses. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47 |
 | The scope resolver + `CoordinationContext`/`MissingMemoryError` bridged here. | "test_worktree_support.py" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:156-156 |
 | The repo allow-list authority guard (`require_repo` → `RepositoryScope`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
-| `McpRuntimeConfig` (`allowed_repo_ids`, `repositories`) + the `path_is_relative_to` guard. | `allowed_repo_ids` | mcp/src/agents_remember/mcp/config.py:131-133 |
+| `McpRuntimeConfig` (`allowed_repo_ids`, `repositories`) + the `path_is_relative_to` guard. | `allowed_repo_ids` | mcp/src/agents_remember/mcp/config.py:135-137 |
 | The leaf-enclosure contract enumerator the catalog walks. | `iter_leaf_enclosure_contracts` | mcp/src/agents_remember/worktrees/task_resolver.py:80-85 |
 | The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | "coordination.worktree_group" | mcp/src/agents_remember/worktrees/worktree_contract.py:1013-1013 |
 | The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. | `discover_route_overviews` | mcp/src/agents_remember/kernel/onboarding_doc.py:70-87 |

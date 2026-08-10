@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastUpdated            | 2026-08-10T07:30+02:00 |
+| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -150,13 +150,14 @@ providers-only this iteration, with Sentry/system-monitoring integration recorde
 detection source, not part of this role's response procedure.
 
 
-### 260707-HFX2-L11 Seat Cleanup Addition
+### 260805-ARG-L1 Completion Cleanup
 
-Issue #12's authority split still names the orchestrator's PORTFOLIO-WIDE retire authority, but
-normal successful master→super finalization no longer terminates chats. `lifecycle_finalize_task`
-marks the finalizing master's manager + master-level reviewer seats `status:"landed"` at the
-finalize edge (config-gated `retirement.autoLandOnFinalize`, default ON), putting them in the
-dashboard's collapsed landed archive for inspection until explicit archive cleanup. The by-hand
+`lifecycle_finalize_task` retries cleanup for exact-leaf, report-bearing worker/reviewer/curator
+seats. Normal retirement frees tmux and preserves durable reports/transcripts; missing reports
+defer. Manager and orchestrator stay live because they carry coordination state; after consuming a
+completed manager's handover and finishing the seam, the orchestrator retires that manager
+explicitly. `autoCloseCompletedSeats=false` restores landed/archive behavior only for the three
+automatic subordinate roles. The by-hand
 `session_retire(actor_session_id=<own session>, session_id=<the seat>, reason=...)` path remains for
 stuck/abandoned seats and for exceptional cleanup; unlike the manager (scoped to its own master's
 worker/reviewer/curator seats), the orchestrator may retire any seat in the portfolio.
@@ -164,6 +165,14 @@ Owner-never-self-retires still holds unconditionally: the orchestrator can never
 same server-side policy (`serving/retire_policy.py::check_retire_authority`) the manager's cleanup
 duty relies on. The Knobs table's `tools` row includes `session_retire` (any seat, portfolio-wide)
 alongside the existing `spawn_agent_session` entry for explicit by-hand cases.
+
+### 260805-ARG-L1 Cheap-First Quality Retry
+
+The quality-altitude paragraph now makes retry a wrapper-owned pipeline behavior. Cheap
+deterministic subprocesses precede pytest; exact or concrete selected-test-only proof reuse is
+automatic after a coverage-derived refusal; ambiguity runs the ordinary suite; conservative delta
+coverage falls back to one full pytest selection; and CI always runs fresh. Orchestration seats do
+not decide which previously passing tests to omit.
 
 ### L16 Knob Additions
 
@@ -212,6 +221,15 @@ state-signal relay; the escalation ladder is no longer part of the supervision s
 a turn with nothing pending remains correct.
 
 ## Update History
+
+- 2026-08-10T07:30+02:00 — 260805-ARG-L1 developer expansion: synced the cheap-first and
+  content-addressed local retry doctrine, including fail-closed invalidation, automatic full
+  fallback, and CI-fresh behavior. Verification metadata remains blank until closeout stamps the
+  code commit.
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1: synced orchestrator doctrine to automatic subordinate
+  close, manager-owner retention/explicit retirement, report gating, transcript retention, and the
+  landed opt-out. Verification metadata remains pinned until closeout stamps ARG-L1.
 
 - 2026-08-09T13:59+02:00 — 260713-TES-L5 curator completion round 2: refreshed this synced
   runtime copy for the orchestrator's idle-safety wording (state-signal relay; ladder

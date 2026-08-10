@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -86,7 +86,7 @@ documented by the `modules/overview.md` route overview.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP worktree start writes temporary lifecycle settings and passes them to this module. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:83-162 |
+| MCP worktree start writes temporary lifecycle settings and passes them to this module. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:77-156 |
 | Provider setup performs isolated provider seed and runtime preparation. | `ProviderSetupRequest`; `prepare_enabled_providers`; `write_isolated_provider_settings` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:219-233; mcp/src/agents_remember/providers/provider_setup.py:591-629 |
 | Worktree status packets project lifecycle payloads into context packets. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
 | Worktree contract serialization lives in the package worktree contract module. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:691-742 |

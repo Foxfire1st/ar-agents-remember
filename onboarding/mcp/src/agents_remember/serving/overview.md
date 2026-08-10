@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-09T06:48+02:00 |
+| lastUpdated | 2026-08-10T05:45+02:00 |
 | lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
 | lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../../../../overview.md`                         |
@@ -991,13 +991,14 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   checked FIRST unconditionally; a manager may retire only worker/reviewer seats of its own master;
   only the orchestrator has portfolio-wide authority; every refusal names the exact clause via
   `RetirePolicyError`).
-- `retire.py` — the shared manual retire mechanics: `retire_entry` kills the tmux
-  session best-effort/idempotent, then `catalog.mark_retired`. This path backs explicit retire/tool and
-  landed-cleanup closure, not normal successful completion.
-- `landing.py` — the shared landing mechanics: `land_seats_for_leaf` marks matching
+- `retire.py` — shared retirement mechanics: `retire_entry` gracefully stops control, kills tmux
+  best-effort/idempotently, then `catalog.mark_retired`. It backs manual retirement, landed cleanup,
+  and ARG-L1 automatic completion cleanup after the durable report barrier.
+- `landing.py` — the shared landed/archive compatibility mechanics: `land_seats_for_leaf` marks matching
   non-terminated catalog rows `status:"landed"` with reason/edge provenance, without constructing a
-  `TerminalHost` and without killing tmux. `application/worktree_tools.py` calls it from successful
-  `worktree_integrate`/`lifecycle_finalize_task` completion edges.
+  `TerminalHost` and without killing tmux. ARG-L1 completion edges call it only when
+  `retirement.autoCloseCompletedSeats=false`; default behavior retires exact-report-bearing
+  worker/reviewer/curator seats and excludes manager/orchestrator.
 - `turn_state.py` — the live turn-state classifier: `classify_turn_state(pane_text,
   harness=)` is marker-regex-based (precedence working > awaiting-input > turn-ended > stale; blank/
   unreadable pane ⇒ `stale`), with empty per-harness override dicts ready for future tuning. Rides
@@ -1708,6 +1709,10 @@ caps owner-signal findings with `escalationBudget` (twin of `redeliverBudget`). 
 forcing suite and the runnable live-chain-proof script are the leaf's verification surfaces.
 
 ## Update History
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1 route impact: normal successful completion now composes
+  durable inbox report proof with `retire_entry`; landed rows remain the explicit settings opt-out
+  and archive-cleanup compatibility path. Verification remains pinned until closeout.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: added immutable sprint binding and structural
   all-subordinate notifier revalidation to the serving hot path. Verification metadata remains

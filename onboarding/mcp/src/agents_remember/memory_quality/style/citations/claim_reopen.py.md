@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-07T14:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -53,6 +53,9 @@ Module-level surface:
 - `dependency_changes` (function, lines 482-513)
 - `evaluate_claim` (function, lines 560-604)
 - `check_onboarding_root` (function, lines 605-681) — Compare every complete claim against its own historical provenance.
+- Closeout may pass `unstamped_code_commit` for dirty cards only. The checker uses that base as
+  comparison provenance without writing a verification stamp; committed unstamped debt remains
+  hard, and closeout's post-refresh run supplies no fallback.
 
 ### Conventions
 
@@ -94,6 +97,10 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 ## Update History
 
+- 2026-08-10T08:20+02:00 — 260805-ARG-L1: added closeout-only temporary base provenance for
+  dirty unstamped cards, reusing the Git dirty-path truth that also controls provenance-debt
+  demotion. Standalone checks and committed unstamped cards remain hard failures; post-refresh
+  closeout reruns without the fallback. Verification stays pinned until closeout stamps ARG-L1.
 - 2026-08-07T14:30+02:00 — 260731-EFA-L8 curator (bounded delta): recorded the round-9 mechanism
   change — the absent-at-stamp rule now extends to whole source files added after the stamp: an
   anchor that resolves exactly once in the working tree inside a cited range surfaces report-only;

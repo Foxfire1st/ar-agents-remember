@@ -1,0 +1,95 @@
+# mcp/src/agents_remember/application/completion_cleanup.py
+
+| Field                  | Value                                                        |
+| ---------------------- | ------------------------------------------------------------ |
+| repository             | agents-remember                                              |
+| path                   | `mcp/src/agents_remember/application/completion_cleanup.py`  |
+| doc_type               | `file-level-onboarding`                                      |
+| lastUpdated            | 2026-08-10T06:28+02:00                                       |
+| lastVerifiedCommitHash |                                                              `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate |                                                              2026-08-10T08:37:35+02:00|
+| governingOverview      | `overview.md`                                                |
+
+## Governing Overview
+
+[Application overview](overview.md)
+
+## Purpose
+
+`completion_cleanup.py` owns the resource-cleanup policy that runs only after a worktree
+integration or lifecycle-finalization edge has already succeeded. It closes completed
+worker/reviewer/curator seats when an exact durable report proves their turn finished, while
+preserving the historical landed/archive mode as an explicit settings opt-out.
+
+## Code Commentary
+
+### Logic
+
+`auto_complete_seats` derives the qualified leaf from the enclosure contract and opens the durable
+terminal catalog. With `autoCloseCompletedSeats=true`, `_retire_reported_leaf_seats` folds the
+operator inbox once, admits only `turn-report` records with the exact `senderAgentId` and `leafKey`,
+and retires matching live or landed leaf seats through `retire_entry`. Missing proof is returned in
+`autoCloseDeferredSeats`; per-seat exceptions are returned in `autoCloseFailedSeats`; successful
+retirements are returned in `autoClosedSeats` and logged best-effort after catalog provenance is
+durable. With auto-close disabled, the same finite role set uses `land_seats_for_leaf` and returns
+`autoLandedSeats`.
+
+### Conventions
+
+The completion edge supplies the human-readable reason and edge identifier. This module supplies
+the finite eligible-role boundary and all cleanup side effects. Result keys use the public wire
+names declared by the integration and finalization response models.
+
+### Invariants And Boundaries
+
+- Automatic close is report-gated by exact session and exact qualified leaf; a missing or
+  wrong-leaf report never kills a process.
+- Only worker, reviewer, and curator are candidates. Manager and orchestrator are coordination
+  owners and cannot enter the automatic cleanup set.
+- Cleanup is subordinate to the already-successful completion edge. Contract, inbox, catalog,
+  host, landing, or observer-log failures cannot rewrite integration/finalization success.
+- Retirement uses the normal graceful-stop, tmux termination, and catalog-provenance path.
+  Transcripts and durable reports are not deleted.
+- The inbox is folded once per edge and the candidate list is read once, avoiding per-seat store
+  rescans.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation entries are configured for this repository, and this module implements a
+repository-local orchestration policy. No relevant external documentation was available.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain contract governs this repository-local cleanup policy. | — | — |
+
+## Repo-Internal References
+
+The worktree application entry points invoke this owner only after successful non-dry-run edges;
+tests pin edge wiring separately from cleanup failure containment.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Integration and finalization call `auto_complete_seats` only after their underlying edge succeeds. | `worktree_integrate_tool`; `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:324-355; mcp/src/agents_remember/application/worktree_tools.py:419-451 |
+| Normal retirement terminates the host and persists catalog retirement provenance without touching transcripts. | `retire_entry` | mcp/src/agents_remember/serving/retire.py:37-71 |
+| Durable inbox folding supplies the exact report rows used as the close barrier. | `current` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:105-107 |
+| Integration tests prove all eligible roles, owner exclusions, report matching, provenance, transcript retention, and opt-out landing. | `AutoLandHookIntegrationTests` | mcp/tests/test_seat_lifecycle.py:645-869 |
+| Focused tests prove contract, retirement-race, per-seat failure, and opt-out landing containment. | `CompletionCleanupContainmentTests` | mcp/tests/test_completion_cleanup.py:47-169 |
+
+## Cross-Repo References
+
+No meaningful cross-repository boundary is owned by this module.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Cleanup reads only repositories and runtime paths already resolved by Agents Remember configuration. | — | — |
+
+## Update History
+
+- 2026-08-10T06:28+02:00 — Created when completion-seat cleanup was extracted from the worktree
+  application entry-point module. The split preserves exact-report-gated close behavior, the
+  landed/archive opt-out, owner-role exclusion, per-seat containment, and additive response fields.
+  Verification metadata remains blank until closeout stamps the code commit.

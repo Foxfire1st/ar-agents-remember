@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/mcp/config.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-04T03:03+02:00    |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastUpdated            | 2026-08-10T05:45+02:00    |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -104,24 +104,23 @@ or when the live map is empty (the refusal names the operation, the authority
 path, and the stale boot-snapshot ids) and returns the live-map config when
 armed. Stop/status/cleanup paths must not call it — stopping is always legal.
 
-`parse_retirement_settings` (260707-HFX-L8, renamed by HFX2-L11) validates the optional `retirement`
-object into `McpRuntimeConfig.retirement` — a frozen
-`RetirementSettings(auto_land_on_integration=True, auto_land_on_finalize=True)`, both defaulting ON
-per the developer ruling that successful completion should classify spent chats as landed/archive
-without anyone remembering to clean them up. It follows the same fail-loud-unknown-key discipline as
-`parse_dashboard_settings`: a non-dict `retirement` value, any key outside
-`KNOWN_RETIREMENT_FIELDS` (`autoLandOnIntegration`, `autoLandOnFinalize`, and one-cycle legacy aliases
-`autoRetireOnIntegration`, `autoRetireOnFinalize`), or a non-bool value for any present known field
-raises `ConfigError`. When both a new and legacy key are present, the new `autoLandOn*` key wins.
+`parse_retirement_settings` validates the optional local authority block into frozen
+`RetirementSettings`. Its historical `auto_land_on_integration` and `auto_land_on_finalize` fields
+remain default-on completion-edge gates. ARG-L1 adds `auto_close_completed_seats=True`, sourced from
+`autoCloseCompletedSeats`: true retires exact-report-bearing worker/reviewer/curator seats and frees
+tmux; false restores the previous landed/archive behavior. It follows the same fail-loud discipline
+as `parse_dashboard_settings`: a non-dict value, any key outside `KNOWN_RETIREMENT_FIELDS`, or a
+non-bool known value raises `ConfigError`. The `autoRetireOnIntegration`/
+`autoRetireOnFinalize` aliases remain compatibility spellings for the edge gates, and current
+`autoLandOn*` keys win when both spellings are present.
 The legacy aliases are deliberate compatibility, not defensive slop: existing authority files using
 the HFX-L8 names would otherwise fail boot during this semantic rename. `config_from_mapping` calls
 `parse_retirement_settings(data.get("retirement"))` and threads the result into the constructed
 `McpRuntimeConfig`. This is a deliberate design choice, not an oversight: `retirement` stays a
 LOCAL MCP-authority boot-snapshot setting (like `dashboard`), NOT the global agentic-orchestration
 settings file (unlike `orchestration.gateDelegation`, which moved there in 260703-L13) — these are
-per-process server-behavior toggles for THIS server's completion-edge hooks
-(`worktree_integrate_tool`/`lifecycle_finalize_task_tool`'s `_auto_land_completed_seats` calls in
-`application/worktree_tools.py`), not portfolio-wide policy.
+per-process server-behavior toggles for THIS server's completion-edge `auto_complete_seats` hook,
+not portfolio-wide policy.
 
 ### Invariants And Boundaries
 
@@ -154,11 +153,11 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
   `require_provider_launch_authority`, which re-reads the on-disk file
   fail-closed (unreadable/invalid ⇒ refusal, never a snapshot fallback).
   Stop/status/cleanup operations are never gated on the reload.
-- `retirement` accepts only `KNOWN_RETIREMENT_FIELDS` (`autoLandOnIntegration`,
-  `autoLandOnFinalize`, plus legacy `autoRetireOnIntegration`/`autoRetireOnFinalize` aliases) with
-  the same fail-loud rejection as `dashboard`/`timeoutCaps`; both fields default to `True` —
-  existing settings files with no `retirement` key keep auto-land ON, not off, unlike `dashboard`'s
-  off-by-default posture.
+- `retirement` accepts only `KNOWN_RETIREMENT_FIELDS`: the two edge gates, the
+  `autoCloseCompletedSeats` close-vs-land switch, and the two legacy edge aliases. All three current
+  fields default `True`; omitted settings therefore clean up completed report-bearing subordinate
+  processes. Explicitly setting only `autoCloseCompletedSeats=false` preserves the prior landed
+  archive behavior.
 
 ## Repo-Internal References
 
@@ -175,15 +174,20 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 | `parse_orchestration_settings` supplies the global boot snapshot to `McpRuntimeConfig.orchestration`; its authority-file legacy path delegates to `_parse_legacy_authority_gate_delegation`, which uses the same gate parser. | `parse_orchestration_settings`; `_parse_legacy_authority_gate_delegation` | mcp/src/agents_remember/mcp/config.py:479-512; mcp/src/agents_remember/mcp/config.py:515-547 |
 | `provider_watchers_tool` reloads live launch authority for start, restart, and index invalidation while status, stop, and shutdown remain deliberately ungated. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
 | The provider query funnel reloads launch authority for operations with a required provider and rejects a query when that specific provider is absent. | `_provider_operation_result`; `ProviderOperation.required_provider` | mcp/src/agents_remember/application/provider_tools.py:736-783 |
-| Worktree start derives background provider setup from `reload_provider_authority`, skipping setup on disabled or unreadable live authority while still creating the worktree. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:83-162 |
+| Worktree start derives background provider setup from `reload_provider_authority`, skipping setup on disabled or unreadable live authority while still creating the worktree. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:77-156 |
 | Benchmark preparation and execution both pass provider ids from the live on-disk authority into their requests. | `codex_benchmark_prepare_tool`; `codex_benchmark_run_tool`; `_live_provider_ids` | mcp/src/agents_remember/application/benchmark_tools.py:64-84; mcp/src/agents_remember/application/benchmark_tools.py:137-144; mcp/src/agents_remember/application/benchmark_tools.py:87-134 |
 | Runtime install derives provider dependency and watcher-rebind settings from the live on-disk authority. | `install_runtime`; `install_runtime_from_config` | mcp/src/agents_remember/install/runtime.py:462-553; mcp/src/agents_remember/install/runtime.py:556-615 |
 | Containment tests pin the authority reload fail-closed semantics and the launch gate refusal/armed paths. | `ReloadProviderAuthorityTests`; `WorktreeStartVetoTests`; `QueryFunnelGateTests`; `RuntimeRebindDerivationTests`; `BenchmarkProviderFilterTests` | mcp/tests/test_provider_containment.py:78-121; mcp/tests/test_provider_containment.py:124-177; mcp/tests/test_provider_containment.py:180-196; mcp/tests/test_provider_containment.py:199-206; mcp/tests/test_provider_containment.py:209-273 |
-| `RetirementSettings` defines the two default-on toggles; worktree integration and lifecycle finalization each consult the corresponding `config.retirement` flag before calling `_auto_land_completed_seats`. | `RetirementSettings`; `worktree_integrate_tool`; `lifecycle_finalize_task_tool`; `_auto_land_completed_seats` | mcp/src/agents_remember/application/worktree_tools.py:330-359; mcp/src/agents_remember/application/worktree_tools.py:457-487; mcp/src/agents_remember/application/worktree_tools.py:424-454; mcp/src/agents_remember/mcp/config.py:101-110 |
+| `RetirementSettings` defines two edge gates plus default-on close-vs-land behavior; both completion edges call the shared cleanup helper. | `RetirementSettings`; `parse_retirement_settings`; `auto_complete_seats` | mcp/src/agents_remember/mcp/config.py:104-115; mcp/src/agents_remember/mcp/config.py:460-483; mcp/src/agents_remember/application/completion_cleanup.py:27-119 |
 
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
 
 ## Update History
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1: added the fail-loud
+  `retirement.autoCloseCompletedSeats` boot-snapshot setting, default true. False restores the old
+  landed/archive path while leaving the existing per-edge gates and legacy aliases intact.
+  Verification metadata remains pinned until closeout stamps the ARG-L1 code commit.
+
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 

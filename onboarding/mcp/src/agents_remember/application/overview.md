@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-10T05:45+02:00 |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -50,7 +50,8 @@ assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-
 and carryover; `gate_tools.py` and `hosted_readiness.py` for gate/readiness operations;
 `lifecycle_tools.py`, `operator_inbox_tools.py`, and `orchestration_tools.py` for lifecycle, inbox,
 and orchestration operations; `server_startup.py` and `terminal_tools.py` for startup and terminal
-operations; `provider_tools.py` for provider operations; `worktree_tools.py` for worktree operations;
+operations; `provider_tools.py` for provider operations; `worktree_tools.py` for worktree operations
+and `completion_cleanup.py` for post-success subordinate close/land policy;
 `benchmark_tools.py`, `runtime_install.py`, and `skill_tools.py` for benchmark, install, and skill
 surfaces; `task_doc_tools.py` for JSON-primary task-document authoring; `tool_response.py` for response
 completion; `worktree_status.py` for status packets; and `read_files.py` for paired source/onboarding
@@ -58,16 +59,13 @@ reads. Route-index refresh still resolves context first and forwards repository/
 the deterministic builder.
 Context and worktree application entry points forward `parent_task`/`leaf_id` into the source resolver, and task-doc
 authoring writes `seriesContractPath` plus `enclosures[]` instead of the retired `contractPath`.
-**260707-HFX2-L11**: `worktree_tools.py`'s `worktree_integrate_tool`/
-`lifecycle_finalize_task_tool` now compose completion-edge landing — after a successful non-dry-run
-edge, when `config.retirement.auto_land_on_integration`/`auto_land_on_finalize` is on (both default
-ON), `_auto_land_completed_seats` resolves the qualified leaf key and calls
-`serving.landing.land_seats_for_leaf` for the edge's own role set (worker/reviewer at integrate,
-manager/reviewer at finalize). Matching sessions are marked `status:"landed"` with provenance and
-returned as `autoLandedSeats`; tmux sessions are not killed, so the dashboard can show an inspectable
-landed archive. The helper body remains best-effort (`except Exception: return []`) so a catalog
-fault can never fail an already-succeeded edge — landing is archive bookkeeping riding the edge,
-never a gate on it.
+**260805-ARG-L1**: both successful non-dry-run completion edges delegate to
+`completion_cleanup.auto_complete_seats` over
+the exact worker/reviewer/curator role set. Default-on `autoCloseCompletedSeats` requires an
+exact-session, exact-leaf durable turn report before `retire_entry` gracefully stops control, kills
+tmux, and stamps auto-close provenance; missing reports defer. Manager/orchestrator stay live.
+Setting the switch false restores `land_seats_for_leaf`/`autoLandedSeats` behavior. Cleanup stays
+best-effort and cannot rewrite an already-successful integration/finalization result.
 
 ## Parameter Objects: This Route Owns The Concepts
 
@@ -232,6 +230,10 @@ attribution marker, never a mechanical ack. No application-layer behavior change
 verdict-by deadline surface remains the gate-open expectation row.
 
 ## Update History
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1 route impact: completion-edge composition now closes
+  exact-report-bearing worker/reviewer/curator seats, excludes owner roles, preserves the landed
+  compatibility path, and contains per-seat failures. Verification remains pinned until closeout.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed the application route for binding refusal and
   provenance projection. Verification metadata remains pinned until closeout.

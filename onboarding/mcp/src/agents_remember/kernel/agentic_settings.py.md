@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T21:20+02:00               |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -255,7 +255,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema reference documents agent-notifier defaults and constraints, the compatibility-window alias, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:399-423 |
+| The schema reference documents agent-notifier defaults and constraints, the compatibility-window alias, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:399-424 |
 
 ## Repo-Internal References
 

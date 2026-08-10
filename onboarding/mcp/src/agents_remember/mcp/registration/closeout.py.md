@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-08T02:00+02:00                                       |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`                   |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`                   |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -106,7 +106,7 @@ The three destructive tools forward flat:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:78-86 |
-| `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | `CloseoutCommitMessages` | mcp/src/agents_remember/application/worktree_tools.py:275-282 |
+| `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tools.py:269-292 |
 | The two pre-staging refusals and the reset-then-stage step apply's docstring describes, now running the leaf targeted plan. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:728-769; mcp/src/agents_remember/worktrees/modules/closeout.py:770-795; mcp/src/agents_remember/worktrees/modules/closeout.py:796-857 |
 | The wrapper condition that decides whether the gate — and therefore the staging step and its refusals — runs at all, plus the mode/cap plan. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview`; `QualityGatePlan` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:37-41; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:67-76; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:77-146; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:29-35 |
 | The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring_tests_2.py:77-97 |

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
-| lastUpdated            | 2026-07-09T14:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-10T07:30+02:00                     |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 
 ## Purpose
 
@@ -43,12 +43,12 @@ store). Shipping it enabled-by-default in the example (unlike `dashboard`,
 which ships opt-in) matches the requirement that the critical-threshold
 failsafe defaults ON at a conservative bound.
 
-Since 260707-HFX2-L11 the template also carries a `retirement` object
-(`autoLandOnIntegration: true`, `autoLandOnFinalize: true`) — the completion-edge landing gates
-that mark successful worker/reviewer/manager chats `landed` for the collapsed archive instead of
-terminating them. Both flags ship ON (completion/archive symmetry is the happy path) unlike
-`dashboard`'s off-by-default posture; the parser still accepts the older `autoRetire*` names as
-compatibility aliases, but the example uses the current `autoLand*` keys.
+The template's `retirement` object now carries `autoLandOnIntegration: true`,
+`autoLandOnFinalize: true`, and `autoCloseCompletedSeats: true`. The first two are completion-edge
+gates; the third selects default report-gated retirement for exact-leaf worker/reviewer/curator
+seats. Setting it false restores landed/archive behavior. Manager/orchestrator owners are never
+automatic targets. The parser still accepts the older `autoRetire*` edge names as compatibility
+aliases, while the example uses only the current keys.
 
 `coding-guidelines.example.md` is an example `system/coding-guidelines.md` body
 that teams can adapt for a memory repo. It is documentation-shaped example
@@ -60,6 +60,9 @@ In this leaf the example renamed its layer heading from `### Controller` to
 documentation-shaped example content, not a runtime input.
 
 ## Update History
+
+- 2026-08-10T07:30+02:00 — 260805-ARG-L1: the authority example now ships
+  `autoCloseCompletedSeats:true` with both existing edge gates.
 
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 route impact: the coding-guidelines example renamed its
   `Controller` layer heading (and anti-pattern 7) to `Application entry point` to mirror the

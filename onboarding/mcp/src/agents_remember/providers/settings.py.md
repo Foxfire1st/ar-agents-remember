@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP config derives allowed repositories/providers and provider runtime roots from trusted settings. | `McpRuntimeConfig`, `allowed_repo_ids`, `allowed_provider_ids` | mcp/src/agents_remember/mcp/config.py:113-137 |
+| MCP config derives allowed repositories/providers and provider runtime roots from trusted settings. | `McpRuntimeConfig`, `allowed_repo_ids`, `allowed_provider_ids` | mcp/src/agents_remember/mcp/config.py:117-141 |
 | Provider status writes generated lifecycle settings before calling `watchers_run`. | `watchers_run` | mcp/src/agents_remember/providers/status.py:239-239 |
 | Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool. | `install_runtime_from_config`, ["settings=lifecycle_settings_from_config("], ["def lifecycle_settings_from_config(config: McpRuntimeConfig)"] | mcp/src/agents_remember/install/runtime.py:556-615; mcp/src/agents_remember/providers/settings.py:25-25 |
 | GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend. | `_grepai_settings`, `_grepai_runtime`, `_grepai_backend`, `_grepai_embedder` | mcp/src/agents_remember/providers/settings.py:94-115; mcp/src/agents_remember/providers/settings.py:118-153; mcp/src/agents_remember/providers/settings.py:156-192; mcp/src/agents_remember/providers/settings.py:195-234 |

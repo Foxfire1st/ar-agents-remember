@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -86,7 +86,7 @@ No external documentation is needed for these standard-library unit tests.
 | Launcher and projections under test. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/worktrees/modules/provider_async.py:58-69; mcp/src/agents_remember/worktrees/modules/provider_async.py:72-120; mcp/src/agents_remember/worktrees/modules/provider_async.py:123-146; mcp/src/agents_remember/worktrees/modules/provider_async.py:149-154 |
 | `projected_status_payload` and the `NotRequired` `providers` key on `WorktreeStatusFacts` the new payload test pins. | `WorktreeStatusFacts`, `projected_status_payload`, `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:99-136; mcp/src/agents_remember/worktrees/modules/guidance.py:402-451; mcp/src/agents_remember/worktrees/modules/guidance.py:454-458 |
 | Start ordering and retry path under test. | `start_result`, `run_or_launch_provider_setup`, `_retry_provider_setup_result` | mcp/src/agents_remember/worktrees/modules/start.py:456-467; mcp/src/agents_remember/worktrees/modules/start.py:629-667; mcp/src/agents_remember/worktrees/modules/start.py:670-703 |
-| Application-layer ownership helper under test. | `worktree_start_tool`, `_settings_owned_by_background` | mcp/src/agents_remember/application/worktree_tools.py:83-162; mcp/src/agents_remember/application/worktree_tools.py:165-170 |
+| Application-layer ownership helper under test. | `worktree_start_tool`, `_settings_owned_by_background` | mcp/src/agents_remember/application/worktree_tools.py:77-177; mcp/src/agents_remember/application/worktree_tools.py:159-164 |
 
 ## Update History
 

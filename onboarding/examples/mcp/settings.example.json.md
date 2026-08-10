@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T14:05+02:00                     |
-| lastVerifiedCommitHash | `0d5ce6784930aa4e9006ab4bbf2b788a3296abce` |
-| lastVerifiedCommitDate | 2026-07-10T22:30:19+02:00|
+| lastUpdated            | 2026-08-10T05:45+02:00                     |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -70,14 +70,13 @@ provider-only degradation detector's settings surface; `agents_remember.mcp.prov
 fail-loud rejects unknown keys and wrong per-field shapes the same way `timeoutCaps`/`dashboard`
 do.
 
-The template also ships a `retirement` object (260707-HFX2-L11):
-`{"autoLandOnIntegration": true, "autoLandOnFinalize": true}` — both flags default `true`, unlike
-`dashboard`'s off-by-default posture, because successful completion should preserve spent chats in
-the landed archive automatically. `agents_remember.mcp.config`'s `parse_retirement_settings`
-fail-loud rejects unknown `retirement` keys and non-boolean values for either known field the same
-way `timeoutCaps`/`dashboard`/`providerDegradation` do, while still accepting the old
-`autoRetireOnIntegration`/`autoRetireOnFinalize` spellings as compatibility aliases. The template
-uses the current `autoLand*` keys so new settings files do not teach completion-edge termination.
+The template ships all three current `retirement` controls:
+`autoLandOnIntegration`, `autoLandOnFinalize`, and `autoCloseCompletedSeats`, each `true`.
+The first two gate the completion edges; the third selects default exact-report-gated retirement
+of worker/reviewer/curator seats instead of the previous landed/archive behavior. Operators who
+need the archive behavior set only `autoCloseCompletedSeats=false`; manager/orchestrator seats are
+excluded in either mode. The parser rejects unknown/non-boolean values and still accepts the old
+`autoRetireOnIntegration`/`autoRetireOnFinalize` edge aliases.
 
 ### Invariants And Boundaries
 
@@ -92,11 +91,15 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids. | "class McpRuntimeConfig" | mcp/src/agents_remember/mcp/config.py:114-114 |
+| MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids. | "class McpRuntimeConfig" | mcp/src/agents_remember/mcp/config.py:118-118 |
 | Provider lifecycle settings are generated from MCP config instead of read from coordinator settings. | "def lifecycle_settings_from_config" | mcp/src/agents_remember/providers/settings.py:25-25 |
 | The `providerDegradation` shape shown here validates through the dedicated fail-loud parser (260707-HFX-L7). | "class ProviderDegradationSettings:" | mcp/src/agents_remember/mcp/provider_degradation_settings.py:37-37 |
 
 ## Update History
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1: the public template now exposes the default-on
+  `autoCloseCompletedSeats` switch alongside both existing completion-edge gates. Verification
+  metadata remains pinned until closeout stamps the ARG-L1 code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

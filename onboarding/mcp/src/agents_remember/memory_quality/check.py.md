@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -31,10 +31,12 @@ subdomains.
 
 The closeout gate consumes this registry through two declared phase lists,
 `BEFORE_METADATA_REFRESH_CHECKS` — the citation gate (`range_resolution` + `claim_reopen`),
-which runs before the code commit and the strict test wrapper because the checks are
-working-tree semantics that need no commit to clear — and `AFTER_METADATA_REFRESH_CHECKS`
-(drift, document shape, history order), the sanity pass over the single ordinary metadata
-refresh. `claim_reopen` splits detected change three ways: absent/ambiguous anchors and
+which runs before the code commit and the strict test wrapper — and
+`AFTER_METADATA_REFRESH_CHECKS`, which repeats citations without temporary provenance and adds
+drift, document shape, and history order after metadata refresh. Closeout supplies the leaf base
+only while evaluating dirty unstamped cards in the preflight; the post-refresh repetition has no
+fallback, so every such card must receive the real code-commit stamp before memory commits.
+`claim_reopen` splits detected change three ways: absent/ambiguous anchors and
 unverifiable provenance are hard; a changed construct whose citation stays current (anchor
 resolves uniquely, range covers it) is the report-only review surface; only a changed construct
 with a stale pointer is enforced. The curator runs the same `memory_quality_check` during the
@@ -78,6 +80,10 @@ changed: `summarize_rows` always sets all three on a `checked` packet.
 
 ## Update History
 
+- 2026-08-10T08:20+02:00 — 260805-ARG-L1 closeout-order hardening: recorded the explicit
+  pre-code-quality citation preflight, temporary base provenance for dirty unstamped cards, and
+  the no-fallback post-refresh citation repetition that proves real stamps exist before memory
+  commits. Verification metadata remains pinned until closeout stamps ARG-L1.
 - 2026-08-05T22:55+02:00 — 260731-EFA-L16 curator: recorded the citation-gate semantics and placement. The L6 closeout placement ran `style.citations.claim_reopen` before the code commit with a clearing condition that required the commit to exist — unreachable, and it deadlocked this leaf's closeout with 115 unresolvable findings. Now: detected change splits into hard (absent/ambiguous anchor, unverifiable provenance, stale pointer) versus report-only review surface (changed construct with a current citation — anchor resolves uniquely, range covers it, clearing needs no commit), and the citation gate (`range_resolution` + `claim_reopen`) runs before the strict wrapper and the code commit, so failures reject in seconds. The curator runs the same `memory_quality_check` during the leaf; gate findings are the exception. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-03T03:59:59+02:00 — Curated 8 citation findings (1 table row, 6 prose citations, 1 source-form repair): added exact anchors and source paths; scoped fixer generated the final ranges.
 

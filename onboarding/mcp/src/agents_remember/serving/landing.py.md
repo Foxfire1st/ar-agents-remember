@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/landing.py`            |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                           |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-10T05:45+02:00 |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`                                           |
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -36,8 +36,9 @@ whose `leaf_key` matches and whose `binding_role` is in that role set, and calls
 `TerminalCatalog.mark_landed` with the closure's `at`, `reason`, and `edge` for each selected row. It
 returns the changed entries so application entry points can report session ids and emit observer events.
 
-Unlike manual retire, this module never constructs `TerminalHost` and never kills a tmux session. A
-landed row is an archive classification, not terminal cleanup.
+This module never constructs `TerminalHost` and never kills tmux. Since ARG-L1 it is the explicit
+`autoCloseCompletedSeats=false` compatibility path and still handles pre-flip archive rows; normal
+default completion uses exact-report-gated retirement instead.
 
 ### Invariants And Boundaries
 
@@ -51,10 +52,11 @@ landed row is an archive classification, not terminal cleanup.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Completion-edge application entry points call `land_seats_for_leaf` after successful integrate/finalize and log each landed entry. | `_auto_land_completed_seats`; `log_landed_event` | mcp/src/agents_remember/application/worktree_tools.py:457-487 |
+| Completion cleanup calls `land_seats_for_leaf` only in the close opt-out branch. | "landed = land_seats_for_leaf(" | mcp/src/agents_remember/application/completion_cleanup.py:51-56 |
+| The same compatibility branch logs every landed catalog entry. | "log_landed_event(config, entry)" | mcp/src/agents_remember/application/completion_cleanup.py:57-59 |
 | The catalog status transition and landing provenance fields live in `TerminalCatalog`. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:519-857 |
 | Manual retire remains the destructive/session-closing path. | `SeatClosure`; `retire_entry` | mcp/src/agents_remember/serving/retire.py:21-34; mcp/src/agents_remember/serving/retire.py:37-71 |
-| Tests cover leaf/role selection and completion-edge auto-land results. | `AutoLandHookIntegrationTests` | mcp/tests/test_seat_lifecycle.py:636-824 |
+| Tests cover leaf/role selection, opt-out end-to-end landing, and retained archive cleanup behavior. | `AutoLandHookIntegrationTests`; `LandSeatsForLeafTests` | mcp/tests/test_seat_lifecycle.py:593-869 |
 
 ## 260731-EFA-L2 Current Delta
 
@@ -68,6 +70,9 @@ remain leaf-key and binding-role scoped.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1: repositioned landing as the settings opt-out and
+  pre-flip archive compatibility path; the domain mechanic itself is unchanged.
 
 - 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

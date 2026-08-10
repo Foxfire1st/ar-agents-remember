@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastUpdated            | 2026-08-10T05:45+02:00 |
+| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -260,6 +260,14 @@ agents that cannot receive dashboard session injection.
 | --- | --- | --- |
 | Pull-based return channels sit above durable gate truth and resume on the next poll/poke when push is unavailable. | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design` | docs/design/observable-lifecycle.md:1-402 |
 
+### ARG-L1 Durable Completion Barrier
+
+The completion-edge cleanup application now reads one folded `current()` snapshot and treats an
+exact seat's exact-leaf `turn-report` row as the persistence barrier before tmux retirement. It
+does not consume, delete, or terminalize that report; ordinary inbox delivery/retry remains free to
+continue after the process exits. Thus report durability, not terminal transcript state or process
+liveness, orders auto-close.
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
@@ -286,6 +294,9 @@ The store records accepted, queued, rejected, unsupported, ambiguous, and termin
 adapter evidence against an existing durable row. None of these transitions call `consume`.
 
 ## Update History
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1 relationship update: the folded inbox is now the durable
+  exact-session/exact-leaf report-before-close barrier; store behavior and ownership are unchanged.
 
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the lock-held latest-fold
   `transition(entry_id, fn)` primitive (append only when a new snapshot is produced; terminal

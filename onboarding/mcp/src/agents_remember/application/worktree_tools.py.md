@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-10T06:28+02:00                     |
+| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -83,38 +83,13 @@ the configured policy too (the dataclass default is all-human, which would
 refuse the exact delegated master-handover approval the seam channel produces),
 so both gate consumers evaluate the deployment's policy, not the default.
 
-260707-HFX2-L11 changes the completion-edge hook from auto-retire to auto-land. After a successful
-non-dry-run `worktree_integrate_tool` call (`result["ok"]` true), the application entry point — gated by
-`config.retirement.auto_land_on_integration` (default ON) — calls
-`_auto_land_completed_seats(config, confined_contract, roles=frozenset({"worker", "reviewer"}),
-reason="leaf integrated into master", edge="leaf-integration")` and stores its return into
-`result["autoLandedSeats"]`. `lifecycle_finalize_task_tool` does the analogous thing on its own
-success, gated by `config.retirement.auto_land_on_finalize`, with
-`roles=frozenset({"manager", "reviewer"})`, `reason="master finalized into super"`,
-`edge="master-finalization"`. `worktree_integrate_tool` was refactored to bind
-`confined_contract = require_within_coordination(...)` once (previously inlined directly into
-`WorktreeArgs(...)`) so the same confined path is reused by the auto-land call without
-re-deriving it.
-
-`_auto_land_completed_seats(config, contract_path, *, roles, reason, edge) -> list[str]`
-resolves the contract's own qualified leaf key
-(`f"{contract.repo_name}/{contract.task_root.name}/{contract.task_id}"` via
-`worktree_contract.load_contract`), builds a `TerminalCatalog` at
-`terminal_catalog_path(config.coordination_root)`, calls
-`landing.land_seats_for_leaf(catalog, leaf_key=..., roles=roles, reason=reason, edge=edge,
-at=now_iso())`, logs each landed entry via `seat_events.log_landed_event(config, entry)`, and returns
-the landed session ids. The helper does not construct `TerminalHost` and does not kill tmux:
-successful completion is an archive classification, not cleanup.
-
-**F1 fix round (260707-HFX-L9, reviewer finding F1, LOW/MEDIUM):** the FIRST build round only
-wrapped `load_contract` in a narrow `try/except (ContractError, OSError)`, leaving
-the catalog file I/O (the `_read`/`_write` calls inside the seat-classification helper can raise
-`OSError`/JSON-decode errors) and the `log_retire_event` loop OUTSIDE any guard. That let a rare
-catalog I/O fault propagate out of `worktree_integrate_tool`/`lifecycle_finalize_task_tool` and
-make the TOOL report failure for an edge (branch integration / task-doc reconciliation) that had
-already landed successfully. The fix, now in the code, widens the guard to wrap the ENTIRE helper
-body — contract load through the `log_retire_event` loop — in a single `try: ... except Exception:
-return []`, so nothing inside the helper can ever raise out of it.
+260805-ARG-L1 restores resource cleanup without losing the archive fallback. This application
+entry-point module owns only the successful-edge invocation: after a non-dry-run integration or
+finalization succeeds, the historical edge flag gates a call to
+`completion_cleanup.auto_complete_seats`. The dedicated cleanup module owns eligible roles,
+exact-report proof, close-vs-land settings, retirement/landing side effects, per-seat containment,
+and additive response keys. Keeping that policy out of this already broad facade prevents the two
+completion edges from drifting while leaving their git/task result authoritative.
 
 Slice 2c wires the observable lifecycle here while the git module stays
 observer-free: `worktree_start_tool` resolves a `lifecycle_id` (the active
@@ -144,13 +119,12 @@ ambient is installed (CLI/tests).
   authority skips setup fail-closed and is surfaced via the
   `providersAuthority` result block; worktree creation itself is never blocked
   by the provider gate.
-- Completion-seat classification must NEVER be able to fail a completion edge that has already
-  succeeded (260707-HFX-L9 F1 doctrine, carried into HFX2-L11): `_auto_land_completed_seats` wraps
-  its ENTIRE body — contract load, catalog construction, `land_seats_for_leaf`, and the
-  `log_landed_event` loop — in one `try: ... except Exception: return []`. Landing is an archive
-  courtesy that rides the `worktree_integrate`/`lifecycle_finalize_task` edge; it is never itself a
-  gate on that edge, and the current code achieves this by construction (guard wraps everything,
-  catches everything, always returns `[]` on any failure rather than raising).
+- Completion cleanup must never rewrite an already-successful edge. The outer helper contains
+  contract/inbox/catalog failures; retirement is isolated per seat; observer logging is
+  best-effort after the terminal catalog has persisted retirement provenance.
+- Automatic retirement requires an exact-session, exact-leaf durable turn report. A missing report
+  defers rather than kills. Only worker/reviewer/curator are eligible; manager/orchestrator remain
+  live coordination owners.
 
 ## Repo-Internal References
 `worktree_start_tool` marks the temp lifecycle settings file with
@@ -169,19 +143,30 @@ the documented setup cap now actually governs the worktree flow.
 | Worktree response models define the public tool envelopes and context summary. | `WorktreeSummary`, `WorktreeCommandResponse` | mcp/src/agents_remember/models/worktree.py:36-74; mcp/src/agents_remember/models/worktree.py:77-96 |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo`, `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:16-24; mcp/src/agents_remember/kernel/authority.py:27-35 |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:28-94 |
-| The on-disk provider authority reload consumed before provider setup (containment R1). | `reload_provider_authority`, `worktree_start_tool` | mcp/src/agents_remember/mcp/config.py:174-199; mcp/src/agents_remember/application/worktree_tools.py:83-162 |
+| The on-disk provider authority reload owner (containment R1). | "def reload_provider_authority(" | mcp/src/agents_remember/mcp/config.py:178-199 |
+| Worktree start consumes the live provider authority before setup. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:77-166 |
+| The dedicated completion owner contains role/report/settings policy and every cleanup side effect. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:27-119 |
 | Containment tests pin the worktree-start veto and the armed-path live-map launch. | "test_stale_armed_snapshot_is_vetoed_by_disk", "test_disk_armed_snapshot_launches_with_live_map" | mcp/tests/test_provider_containment.py:125-177 |
-| `land_seats_for_leaf`, the seat-landing domain function the auto-land hook calls. | `land_seats_for_leaf` | mcp/src/agents_remember/serving/landing.py:9-28 |
+| Auto-close composes the durable inbox fold, normal retire mechanics, terminal host, and observer event path. | `OperatorInboxStore.current`; `retire_entry`; `TerminalHost`; `log_retire_event` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-112; mcp/src/agents_remember/serving/retire.py:37-71; mcp/src/agents_remember/serving/terminal.py:109-240; mcp/src/agents_remember/serving/seat_events.py:24-68 |
+| `land_seats_for_leaf` remains the explicit `autoCloseCompletedSeats=false` compatibility path. | `land_seats_for_leaf` | mcp/src/agents_remember/serving/landing.py:9-28 |
 | Manual retire eligibility/role policy remains owned by `retire_policy.py`. | `check_retire_authority` | mcp/src/agents_remember/serving/retire_policy.py:49-67 |
-| `log_landed_event`, called once per landed entry after a successful auto-land. | `log_landed_event` | mcp/src/agents_remember/serving/seat_events.py:48-68 |
-| `TerminalCatalog`/`terminal_catalog_path`, the seat catalog the auto-land hook reads and writes. | `terminal_catalog_path`, `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:513-516; mcp/src/agents_remember/serving/terminal_catalog.py:519-857 |
-| `RetirementSettings`/`config.retirement` gating the two auto-land hooks. | `RetirementSettings` | mcp/src/agents_remember/mcp/config.py:101-110 |
+| `TerminalCatalog`/`terminal_catalog_path` is the durable seat truth for both close and land modes. | `terminal_catalog_path`; `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:618-760 |
+| `RetirementSettings` carries the two edge gates plus the default-on close-vs-land switch. | `RetirementSettings`; `parse_retirement_settings` | mcp/src/agents_remember/mcp/config.py:103-114; mcp/src/agents_remember/mcp/config.py:460-481 |
 
 ## Series-Contract Notes
 
 Worktree start/attach/status application entry points accept `parent_task` and `leaf_id` and report lifecycle attribution against `enclosure_path`, with `contract_path` retained only as the existing wire-compatible field.
 
 ## Update History
+
+- 2026-08-10T06:28+02:00 — Extracted completion cleanup into
+  `application/completion_cleanup.py`; this facade now retains only successful-edge gating and
+  delegation. Verification metadata remains blank until closeout stamps the code commit.
+
+- 2026-08-10T05:45+02:00 — 260805-ARG-L1: replaced fixed-role auto-land with exact-report-gated
+  worker/reviewer/curator auto-close, manager/orchestrator exclusion, per-seat failure containment,
+  explicit auto-close provenance, and a settings-controlled landed/archive compatibility path.
+  Verification metadata remains pinned until closeout stamps the ARG-L1 code commit.
 
 - 2026-08-03T03:59:59+02:00 — Curated 16 citation claims (8 table rows, 8 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 

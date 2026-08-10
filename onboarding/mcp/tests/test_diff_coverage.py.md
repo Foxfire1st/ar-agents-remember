@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_diff_coverage.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastUpdated            | 2026-08-10T07:30+02:00                     |
+| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
+| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -91,6 +91,11 @@ base fails the step rather than the process. The floor runs **inside** the wrapp
 than beside it, and `--diff-base` / `--diff-floor` are real flags. The default is **zero
 uncovered changed lines**.
 
+The inside-wrapper case now snapshots its fixture JSON and has the fake pytest runner recreate it.
+That mirrors the production contract added with retry proof: the wrapper deletes an explicitly
+named old JSON before any subprocess so an earlier-tree report can never feed the new CRAP/diff
+calculation when a cheap rail refuses before pytest.
+
 ## Invariants And Boundaries
 
 - Real repositories only. Do not replace them with canned diff text. The single `patch.object`
@@ -109,12 +114,16 @@ uncovered changed lines**.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module under test: base resolution, changed-line collection, and the measurement. | `resolve_base`; `changed_python_lines`; `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:145-173; mcp/src/agents_remember/code_quality/diff_coverage.py:176-197; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
-| The wrapper that runs the floor as a step and exposes its two flags. | `run_diff_coverage`; "--diff-base"; "--diff-floor" | mcp/src/agents_remember/code_quality/check.py:524-578; mcp/src/agents_remember/code_quality/check.py:658-658; mcp/src/agents_remember/code_quality/check.py:667-667 |
-| The tier that carries the floor, and why the fast tier cannot. | "The full tier carries the changed-lines coverage floor"; "The fast tier certifies the index" | .githooks/_gate.sh:191-191; .githooks/_gate.sh:226-226 |
+| The post-coverage module owns the floor calculation; the wrapper exposes its two flags. | "def run_diff_coverage("; "--diff-base"; "--diff-floor" | mcp/src/agents_remember/code_quality/post_coverage.py:121-170; mcp/src/agents_remember/code_quality/check.py:792-792; mcp/src/agents_remember/code_quality/check.py:801-801 |
+| The tier that carries the floor, and why the fast tier cannot. | "The full tier carries the changed-lines coverage floor"; "The fast tier certifies the index" | .githooks/_gate.sh:201-201; .githooks/_gate.sh:236-236 |
 | The runner `diff_coverage._git` delegates to, and the source of the 300s `GIT_LOCAL_TIMEOUT_SECONDS` bound and the `cwd=` the wrapper-agreement test exercises. | `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-70 |
 | The other side of the same seam: `QualityGateGitTests` proves a non-repository and an unrunnable git both reach `DiffScopeError` through `diff_coverage.run_git`, and points `GIT_DIR` at a decoy to prove the gate reads the repository it was handed. | `QualityGateGitTests` | mcp/tests/test_git_command.py:328-390 |
 
 ## Update History
+
+- 2026-08-10T07:30+02:00 — Updated the wrapper-integration fake so pytest recreates the report
+  after the wrapper's stale-artifact deletion; re-pointed the floor implementation reference to
+  `post_coverage.py`. Verification metadata remains blank until closeout stamps the code commit.
 
 - 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 111; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 4 citation entries (8 findings); no Tier-3 findings.
