@@ -242,7 +242,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:230-230 |
 | The agent-notifier heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | "class AgentNotifierHeartbeatStore" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-63 |
 | The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `agentNotifierBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:10-10 |
-| The terminal status aliases `terminal.py` annotates its refusal seams with. | "class AttachTerminalSessionToLeafResponse" | mcp/src/agents_remember/models/terminal.py:30-30 |
+| The terminal status aliases `terminal.py` annotates its refusal seams with. | "class AttachTerminalSessionToLeafResponse" | mcp/src/agents_remember/models/terminal.py:32-32 |
 
 ## 260712-TRH-L4 Route Impact
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -147,7 +147,7 @@ not as normative delivery authority.
 | Delivery state is persisted on the operator inbox record. | `record_delivery` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:159-209 |
 | The dashboard serving route and MCP payload builder both pass catalog/host/paster seams for delivery. | "created_by=\"provider-degradation-detector\"," | mcp/src/agents_remember/providers/degradation.py:644-644 |
 | 260707-HFX2-L3: `deliver_inbox_entry` now builds a `DeliveryRow` and calls the ONE delivery path, `serving.injector.deliver`, instead of calling `TerminalPaster.paste` directly. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
-| `serving.agent_notifier`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit/state-signal action the agent-notifier takes rides through this same translation layer. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:89-89; mcp/src/agents_remember/serving/owner_signals.py:93-93 |
+| `serving.agent_notifier`'s `_redeliver`/`_post_owner_signal` are the only callers of `deliver_inbox_entry` — every nudge/redelivery/signal-emit/state-signal action the agent-notifier takes rides through this same translation layer. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:91-91; mcp/src/agents_remember/serving/owner_signals.py:93-93 |
 
 ## 260712-TRH-L4 Final Candidate
 

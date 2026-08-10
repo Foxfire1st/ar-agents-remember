@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/RailChat.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T20:25+02:00 |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -136,8 +136,8 @@ No Domain Documentation source is configured for this repository; repository cod
 | The context package reads `codeWorktree.path`. | `codeWorktree` | dashboard/src/panels/RailChat.tsx:261-261 |
 | The context package reads the optional `memoryWorktree.path`. | `memoryWorktree` | dashboard/src/panels/RailChat.tsx:262-262 |
 | `RailChatImpl` builds and reliably submits the context package at leaf bind/move time. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:254-519 |
-| `sessionStore` is declared here. | "const sessionStore" | dashboard/src/data/sessions.ts:494-494 |
-| `findSessionForLeaf` is the lookup entry. | "function findSessionForLeaf" | dashboard/src/data/sessions.ts:548-548 |
+| `sessionStore` is declared here. | "const sessionStore" | dashboard/src/data/sessions.ts:496-496 |
+| `findSessionForLeaf` is the lookup entry. | "function findSessionForLeaf" | dashboard/src/data/sessions.ts:550-550 |
 | `submitSessionText` is part of the reliable submission seam mocked by the suite. | `submitSessionText` | dashboard/src/data/submitClient.ts:828-873 |
 | `waitForSubmissionReady` is the readiness entry. | "function waitForSubmissionReady" | dashboard/src/data/submitClient.ts:952-952 |
 | `attachSessionToLeaf` — the attach client path whose 200/409 (`leaf-taken`) outcomes the tests mock. | `attachSessionToLeaf` | dashboard/src/data/terminal.ts:492-513 |

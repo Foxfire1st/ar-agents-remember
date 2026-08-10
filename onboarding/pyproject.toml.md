@@ -6,8 +6,8 @@
 | path                   | `pyproject.toml`                           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -216,7 +216,7 @@ off by default and there was nowhere to declare a marker.
 | `fitness` is registered but ordinary in `pyproject.toml`. | "fitness" | pyproject.toml:202-202 |
 | The ordinary-marker rule is asserted by `test_fitness_is_registered_as_an_ordinary_non_gated_marker`. | `test_fitness_is_registered_as_an_ordinary_non_gated_marker` | mcp/tests/test_gated_integration_runner.py:108-113 |
 | The supported Python floor and supported platforms are declared as package classifiers. | "requires-python = "; "Programming Language :: Python :: 3.11"; "Operating System :: POSIX :: Linux"; "Operating System :: MacOS" | mcp/pyproject.toml:10-10; mcp/pyproject.toml:17-17; mcp/pyproject.toml:20-21 |
-| Source-checkout instructions state the gate command and that Radon reports rather than enforces. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-200 |
+| Source-checkout instructions state the gate command and that Radon reports rather than enforces. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-198 |
 
 ## Update History
 

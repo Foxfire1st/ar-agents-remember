@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agent_notifier.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-09T06:48+02:00               |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -203,7 +203,7 @@ spec.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: the fact predicates, the action dispatcher, and the sweep entry point. | "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-330; mcp/src/agents_remember/serving/_agent_notifier_actions.py:633-633; mcp/src/agents_remember/serving/agent_notifier.py:93-195 |
+| The module under test: the fact predicates, the action dispatcher, and the sweep entry point. | "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:640-640; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-330; mcp/src/agents_remember/serving/agent_notifier.py:93-180 |
 | The heartbeat store the zero-drift and second-sweep tests exercise directly. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
 | The terminal catalog declares the typed `Literal` aliases. | "TerminalSessionKind = Literal"; "TerminalSessionStatus = Literal" | mcp/src/agents_remember/serving/terminal_catalog.py:42-43 |
 | The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_agent_notifier.py:49-73 |

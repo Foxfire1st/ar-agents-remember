@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/ChatContextBar.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate |  2026-08-10T05:11:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,7 +82,7 @@ No task-independent technical debt was identified during MX-FIX-2 review.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical host composition delegates launch through the session view. | `onLaunchChat` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:66-66 |
-| The server-first leaf operation exposes its result type and assignment action. | `applyLeafAssignment`; `AttachLeafResult` | dashboard/src/data/sessions.ts:171-171; dashboard/src/data/terminal.ts:485-485 |
+| The server-first leaf operation exposes its result type and assignment action. | `applyLeafAssignment`; `AttachLeafResult` | dashboard/src/data/sessions.ts:173-173; dashboard/src/data/terminal.ts:485-485 |
 | Session changes are broadcast through the catalog notification helper. | `notifySessionCatalogChanged` | dashboard/src/data/sessions.ts:113-126 |
 
 ## 260718-CHATS-L4 Reviewed Candidate Delta (Browse history)

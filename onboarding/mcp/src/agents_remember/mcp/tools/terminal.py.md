@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -34,18 +34,18 @@ the response model does not know becomes a pydantic `ValidationError` on a path
 with no `except` for one. Annotating the producers moves that to a type error.
 
 The aliases are imported from `models/terminal.py`
-cit:([`SpawnAgentSessionStatus`, `SessionRetireStatus`, `SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:45-71; mcp/src/agents_remember/models/terminal.py:149-155; mcp/src/agents_remember/models/terminal.py:181-181)
+cit:([`SpawnAgentSessionStatus`, `SessionRetireStatus`, `SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:47-75; mcp/src/agents_remember/models/terminal.py:155-161; mcp/src/agents_remember/models/terminal.py:187-187)
 rather than declared locally, deliberately — declaring them here would create the cycle, since
 `models/terminal.py` is what `_tool_payload` validates against.
 
 - `SpawnAgentSessionStatus` — `_spawn_refusal(status, harness, kind, *, detail)`
-  cit:([`_spawn_refusal`], mcp/src/agents_remember/application/terminal_tools.py:880-905) takes it, and
+  cit:([`_spawn_refusal`], mcp/src/agents_remember/application/terminal_tools.py:924-949) takes it, and
   `_knob_refusal`'s check table is annotated
   `checks: tuple[tuple[SpawnAgentSessionStatus, str | None], ...]`
   cit:([`_knob_refusal`], mcp/src/agents_remember/application/terminal_tools.py:423-441), so
   every model/effort refusal in this module is checked at the producer.
 - `SessionRetireStatus` — the new `_retire_payload(status, session_id, *, detail, closure)`
-  cit:([`_retire_payload`], mcp/src/agents_remember/application/terminal_tools.py:914-941) is the single
+  cit:([`_retire_payload`], mcp/src/agents_remember/application/terminal_tools.py:969-1004) is the single
   builder for all five `session_retire` results. A success reports the row's retirement provenance
   (`retiredAt`/`retiredBySession`/`retiredReason`/`retiredEdge`, from a
   `TerminalCatalogEntry`); a refusal reports the policy clause that fired
@@ -53,14 +53,14 @@ rather than declared locally, deliberately — declaring them here would create 
   arguments rather than one bundle. The module constant
   `_RETIRE_OK_STATUSES: frozenset[SessionRetireStatus] = frozenset({"retired",
   "already-retired"})`
-  cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:927-927)
+  cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:966-966)
   encodes `SessionRetireResponse.ok`'s own documented
   rule in one place — the two idempotent successes are true and every refusal is
   false — so a refusal status added later cannot arrive as `ok=True` from a fifth
   call site that forgot the rule. cit:([`session_retire_payload`], mcp/src/agents_remember/mcp/tools/terminal.py:66-83) shrank to
   five `_retire_payload(...)` calls.
 - `SessionRenameStatus` — `_rename_payload(status, session_id, *, label, renamed)`
-  cit:([`_rename_payload`], mcp/src/agents_remember/application/terminal_tools.py:1102-1123)
+  cit:([`_rename_payload`], mcp/src/agents_remember/application/terminal_tools.py:1141-1162)
   is the peer for `session_rename`. It reports the **requested** label
   on a refusal and the **stored** pair on success; `spawnedLabel` is added only
   when a row was actually renamed, because it is the frozen spawn-time label and
@@ -264,7 +264,7 @@ is `_tool_payload` + `models/terminal.py`, and the `@server.tool()` declarations
   `_rename_payload` all take the `models/terminal.py` alias. Import the alias; do
   not re-declare it here (that is the cycle those aliases exist to avoid).
 - **`ok` has one owner per tool.**
-  cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:927-927) encodes
+  cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:966-966) encodes
   `SessionRetireResponse.ok`'s documented rule, and `_rename_payload` computes
   `status == "renamed"`. A new refusal status must not be able to arrive as
   `ok=True` from a call site that restated the rule.
@@ -311,7 +311,7 @@ catalog.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The operation is defined by same-repository serving/catalog behavior rather than external documentation. | "def terminal_catalog_path(coordination_root: Path) -> Path:"; "def assign_terminal_session_to_leaf("; "def open_terminal_session(" | mcp/src/agents_remember/serving/terminal_catalog.py:588-588; mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-53; mcp/src/agents_remember/serving/terminal_opener.py:645-645 |
+| The operation is defined by same-repository serving/catalog behavior rather than external documentation. | "def terminal_catalog_path(coordination_root: Path) -> Path:"; "def assign_terminal_session_to_leaf("; "def open_terminal_session(" | mcp/src/agents_remember/serving/terminal_catalog.py:618-618; mcp/src/agents_remember/serving/terminal_leaf_assignment.py:61-61; mcp/src/agents_remember/serving/terminal_opener.py:678-678 |
 
 ## Repo-Internal References
 
@@ -321,7 +321,7 @@ catalog.
 | The MCP spawn builder delegates to the application command and validates its response; it performs no context paste. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
 | The application spawn command normalizes refs, resolves settings-owned launch authority, calls the shared opener, and returns `spawned-unbriefed`. | `spawn_agent_session_tool`; `"spawned-unbriefed"` | mcp/src/agents_remember/application/terminal_tools.py:769-842 |
 | Leaf-ref refusal payloads are shared by attach and spawn. | `leaf_ref_refusal_payload` | mcp/src/agents_remember/mcp/tools/leaf_ref.py:18-35 |
-| The shared opener validates live launch identity and fences create, leaf claim, tmux ensure, and catalog upsert; both role and dashboard paths reuse it. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:620-672 |
+| The shared opener validates live launch identity and fences create, leaf claim, tmux ensure, and catalog upsert; both role and dashboard paths reuse it. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:678-730 |
 | Explicit REST pane input remains a separate serving concern; it is not part of spawn. | `TerminalPaster`; `paste`; `paste_dispatch` | mcp/src/agents_remember/serving/terminal_paste.py:206-511 |
 | The harness detection helpers that gate a spawn before tmux, and the curated registry table whose order picks the detection-gated default (the table now lives in `kernel/harnesses.py`; `serving/harnesses.py` imports it and owns detection/launch only). | `find_harness`; `is_detected`; `HARNESSES` | mcp/src/agents_remember/serving/harnesses.py:61-70; mcp/src/agents_remember/serving/harnesses.py:86-93; mcp/src/agents_remember/kernel/harnesses.py:63-77 |
 | The per-use agentic-settings loader supplying `spawn_harness` (registry-id validated). | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:211-246 |
@@ -331,9 +331,9 @@ catalog.
 | The strict response models are registered for conformance validation. | "attach_terminal_session_to_leaf": AttachTerminalSessionToLeafResponse,; "spawn_agent_session": SpawnAgentSessionResponse,; "session_retire": SessionRetireResponse,; "session_rename": SessionRenameResponse, | mcp/src/agents_remember/models/tool_registry.py:122-123; mcp/src/agents_remember/models/tool_registry.py:125-126 |
 | `session_retire_payload`/`session_rename_payload` delegate the actual catalog/tmux mechanics to `retire_entry`/`TerminalCatalog.set_label` and the authority check to `check_retire_authority`/`SeatRef`/`master_of`. | `retire_entry`; `check_retire_authority` | mcp/src/agents_remember/serving/retire.py:37-71; mcp/src/agents_remember/serving/retire_policy.py:49-67 |
 | Both new builders log observer events through the shared seat-events module. | `log_retire_event`; `log_rename_event` | mcp/src/agents_remember/serving/seat_events.py:24-45; mcp/src/agents_remember/serving/seat_events.py:71-89 |
-| The status aliases the producers now take, and the strict response models these builders conform to. | `SpawnAgentSessionStatus`; `SessionRetireStatus`; `SessionRenameStatus` | mcp/src/agents_remember/models/terminal.py:45-71; mcp/src/agents_remember/models/terminal.py:149-155; mcp/src/agents_remember/models/terminal.py:181-181 |
+| The status aliases the producers now take, and the strict response models these builders conform to. | `SpawnAgentSessionStatus`; `SessionRetireStatus`; `SessionRenameStatus` | mcp/src/agents_remember/models/terminal.py:47-75; mcp/src/agents_remember/models/terminal.py:155-161; mcp/src/agents_remember/models/terminal.py:187-187 |
 | Failing-first tests for the retire policy matrix, idempotent retire, and rename provenance/role-immutability. | `RetirePolicyMatrixTests`; `test_retiring_an_already_retired_seat_is_idempotent`; `SessionRenameToolTests` | mcp/tests/test_seat_lifecycle.py:103-166; mcp/tests/test_seat_lifecycle.py:280-302; mcp/tests/test_seat_lifecycle.py:319-368 |
-| The application refusal enforces the separate exact-session brief-delivery protocol. | `_brief_delivery_separate_refusal`; "brief delivery is separate" | mcp/src/agents_remember/application/terminal_tools.py:583-597 |
+| The application refusal enforces the separate exact-session brief-delivery protocol. | `_brief_delivery_separate_refusal`; "brief delivery is separate" | mcp/src/agents_remember/application/terminal_tools.py:592-606 |
 | The serving readiness check is performed by `hosted_session_readiness`. | `hosted_session_readiness` | mcp/src/agents_remember/serving/hosted_readiness.py:59-90 |
 | The durable brief path uses the `dispatch-brief` message kind. | "DISPATCH_BRIEF_KIND = \"dispatch-brief\"" | mcp/src/agents_remember/serving/dispatch_brief.py:40-40 |
 | `LeafRefStatus` — where two of the thirteen spawn statuses are actually declared and produced, outside any file enumerating spawn refusals. | `LeafRefStatus`; `VALID_LEAF_REF_STATUSES` | mcp/src/agents_remember/worktrees/leaf_refs.py:30-30; mcp/src/agents_remember/worktrees/leaf_refs.py:32-32 |
@@ -374,18 +374,18 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 - 2026-08-01T01:22+02:00 — 260731-EFA-L4 curator: the card described `session_retire_payload` and
   `session_rename_payload` as building their own payload dicts and said nothing about status
   typing; both are now incomplete. Verified against the diff and the current source and added a
-  typed-seam section: cit:([`_spawn_refusal`], mcp/src/agents_remember/application/terminal_tools.py:880-905)
+  typed-seam section: cit:([`_spawn_refusal`], mcp/src/agents_remember/application/terminal_tools.py:924-949)
   takes `SpawnAgentSessionStatus` and `_knob_refusal`'s check table is annotated with it
   cit:([`_knob_refusal`], mcp/src/agents_remember/application/terminal_tools.py:423-441); the new
-  cit:([`_retire_payload`], mcp/src/agents_remember/application/terminal_tools.py:914-941)
-  and cit:([`_rename_payload`], mcp/src/agents_remember/application/terminal_tools.py:1102-1123) are the
+  cit:([`_retire_payload`], mcp/src/agents_remember/application/terminal_tools.py:969-1004)
+  and cit:([`_rename_payload`], mcp/src/agents_remember/application/terminal_tools.py:1141-1162) are the
   single builders for their tools' results, so
   cit:([`session_retire_payload`], mcp/src/agents_remember/mcp/tools/terminal.py:66-83) and
   cit:([`session_rename_payload`], mcp/src/agents_remember/mcp/tools/terminal.py:86-95) no
   longer restate the shape at each call site;
-  cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:927-927) gives
+  cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:966-966) gives
   `SessionRetireResponse.ok` one owner. The aliases are imported from `models/terminal.py`
-  cit:([`SpawnAgentSessionStatus`, `SessionRetireStatus`, `SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:45-71; mcp/src/agents_remember/models/terminal.py:149-155; mcp/src/agents_remember/models/terminal.py:181-181)
+  cit:([`SpawnAgentSessionStatus`, `SessionRetireStatus`, `SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:47-75; mcp/src/agents_remember/models/terminal.py:155-161; mcp/src/agents_remember/models/terminal.py:187-187)
   to avoid the cycle. Recorded
   the finding that `SpawnAgentSessionStatus` folds in `worktrees/leaf_refs.py::LeafRefStatus`, so
   two of the thirteen spawn statuses are produced entirely outside any file enumerating spawn

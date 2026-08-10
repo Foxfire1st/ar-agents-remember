@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessions.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T16:02+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -140,10 +140,10 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The catalog-change helper accepts and forwards the L9 `"leaf"` reason for reassignment invalidation. | "export function notifySessionCatalogChanged" | dashboard/src/data/sessions.ts:113-113 |
+| The catalog-change helper accepts and forwards the L9 `"leaf"` reason for reassignment invalidation. | "export function notifySessionCatalogChanged" | dashboard/src/data/sessions.ts:115-115 |
 | The L9 store test proves server-authoritative `applyLeafAssignment` overrides a stale same-role local owner. | "applies a server-authoritative leaf assignment over a stale local same-role owner" | dashboard/src/data/sessions.test.ts:289-299 |
 | The catalog-sync test now receives a remote `"leaf"` event and ignores the sender tab's own broadcast. | "receives remote catalog-change notifications and ignores this tab's own broadcast" | dashboard/src/data/sessions.test.ts:570-594 |
-| The store and delivery helpers under test, including the separate draft-paste and submit-and-confirm paths. | "export const sessionStore" | dashboard/src/data/sessions.ts:494-494 |
+| The store and delivery helpers under test, including the separate draft-paste and submit-and-confirm paths. | "export const sessionStore" | dashboard/src/data/sessions.ts:496-496 |
 | The connection-registry suite covers pending sends, submit-and-confirm delivery, draft paste without Enter, and timeout behavior. | "queues sendToSession into pending and flushes in order once the terminal registers" | dashboard/src/data/sessions.test.ts:649-657 |
 | `PtySurface` pins visited-pane identity and hidden keep-alive behavior across focus changes and transient handoff. | "keeps the exact visited terminal node across a transient removed-focus gap" | dashboard/src/panels/session-cockpit/PtySurface.test.tsx:111-132 |
 | `SessionsView` pins the full cockpit composition, hidden keyboard boundary, and focus/inspection handoff. | "renders the scope root + rail/stage/inspector with markers and zones (F-c: no statusline region)" | dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:34-34 |

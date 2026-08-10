@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/controlplane/seats.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,11 @@ What the control plane needs to know about a seat, declared by the control plane
 ## Code Commentary
 
 ### Logic
+
+Named command-seat classification now includes architect, orchestrator, and manager as the roles
+whose identity must be sprint-qualified. This classification is deliberately separate from
+notifier subordinate membership: wake supervision uses direct manager spawn topology and therefore
+admits reviewer, curator, and future subordinate role names without changing this finite set.
 
 Module-level surface:
 
@@ -57,6 +62,10 @@ machinery). `SeatRow`/`SeatDirectory` behavior is unchanged: pure catalog reads 
 shape declared by the control plane.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: clarified the named sprint-seat set and its separation
+  from role-neutral manager-subordinate supervision. Verification metadata remains pinned until
+  closeout stamps the code commit.
 
 - 2026-08-09T13:59+02:00 — 260713-TES-L5 curator completion round 2: recorded the
   fix-round docstring refresh (ladder/orphan predicates wording removed; "routing and rebind

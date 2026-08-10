@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/open_service.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate |  2026-08-10T05:11:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -86,7 +86,7 @@ outcome→status surface end-to-end.
 | Pre-launch polls stay pending, absent-row retirements report pending, and reconcile completes them for real. | `test_prelaunch_poll_stays_pending_then_real_mismatch_retires_for_real`; `test_absent_row_at_retire_reports_pending_and_reconcile_completes_it` | mcp/tests/test_conversation_library_open.py:283-350; mcp/tests/test_conversation_library_open.py:352-416 |
 | Codex resume-thread-id channel, kind guards, identical-replay absorb, and evicted changed-conversation ownership. | `test_codex_open_passes_resume_thread_id_through_the_channel`; `test_non_codex_open_never_carries_resume_thread_id`; `test_codex_open_with_invalid_resume_target_fails_typed`; `test_codex_kind_target_on_non_codex_record_is_rejected`; `test_identical_replay_after_eviction_absorbs_and_opens`; `test_evicted_changed_conversation_never_retires_foreign_session` | mcp/tests/test_conversation_library_open.py:449-483; mcp/tests/test_conversation_library_open.py:485-512; mcp/tests/test_conversation_library_open.py:514-530; mcp/tests/test_conversation_library_open.py:532-547; mcp/tests/test_conversation_library_open.py:594-636; mcp/tests/test_conversation_library_open.py:638-703 |
 | Idempotent replay, conflicts, stale digests, retirement, timeout reconcile, ledger bounds, and untouched foreign rows. | `test_open_proves_exact_identity_and_replays_idempotently`; `test_changed_fingerprint_conflicts_without_launching`; `test_stale_expected_digest_fails_before_launch`; `test_identity_mismatch_retires_and_reports`; `test_timeout_unknown_stays_reconcilable_and_opens_later`; `test_ledger_full_of_live_operations_refuses`; `test_ready_without_vendor_identity_stays_reconcilable_not_retired`; `test_existing_catalog_rows_are_never_touched` | mcp/tests/test_conversation_library_open.py:731-781; mcp/tests/test_conversation_library_open.py:783-818; mcp/tests/test_conversation_library_open.py:838-850; mcp/tests/test_conversation_library_open.py:884-918; mcp/tests/test_conversation_library_open.py:920-966; mcp/tests/test_conversation_library_open.py:968-996; mcp/tests/test_conversation_library_open.py:1035-1062; mcp/tests/test_conversation_library_open.py:1064-1093 |
-| The tracked opener absorbs identical replays through the live catalog row and carries `resume_thread_id` codex-only. | `_live_open_result`; `_session_command`; `open_terminal_session`; `resume_thread_id` | mcp/src/agents_remember/serving/terminal_opener.py:360-377; mcp/src/agents_remember/serving/terminal_opener.py:435-466; mcp/src/agents_remember/serving/terminal_opener.py:620-666 |
+| The tracked opener absorbs identical replays through the live catalog row and carries `resume_thread_id` codex-only. | `_live_open_result`; `_session_command`; `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:373-387; mcp/src/agents_remember/serving/terminal_opener.py:473-506; mcp/src/agents_remember/serving/terminal_opener.py:678-703 |
 | Open routes map outcomes to 201/202/409/503 and focus only the proven identity. | `test_open_created_replays_and_focuses_only_proven_identity`; `test_open_maps_stale_digest_unknown_request_and_timeout`; `test_open_launch_failure_and_identity_mismatch_statuses` | mcp/tests/test_conversation_library_api.py:557-592; mcp/tests/test_conversation_library_api.py:594-647; mcp/tests/test_conversation_library_api.py:649-704 |
 
 ## Cross-Repo References

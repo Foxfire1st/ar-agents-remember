@@ -54,7 +54,7 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "A tool body does exactly two things: pack the flat MCP arguments into the parameter objects the payload builder and its application entry point take, and return the builder's result unchanged. The packing is the whole content \u2014 `TaskRef`, `SpawnSeat`, `GateVerdict`, `CarryoverSelection`, `CloseoutCommitMessages`, `TaskIdentity`/`TaskBases`/`StartExecution`, `BenchmarkSelection`/ `BenchmarkPreparation`/`CodexBenchmarkRun`, `TaskDocTarget`/`TaskDocEdit`, `InboxAddress`/ `InboxMessage`/`InboxPoster`, `NudgeTarget`/`NudgeSubject`, `GrepaiSearchQuery`/`GrepaiRepoScope`/ `ProviderQueryScope`. The...",
+    "summary": "Session registration now declares the additive sprint-provenance response fields and stable binding-refusal statuses. It remains transport schema only; serving validates identity before any terminal side effect. A tool body does exactly two things: pack the flat MCP arguments into the parameter objects the payload builder and its application entry point take, and return the builder's result unchanged. The packing is the whole content \u2014 `TaskRef`, `SpawnSeat`, `GateVerdict`, `CarryoverSelection`, `CloseoutCommitMessages`, `TaskIdentity`/`TaskBases`/`StartExecution`, `BenchmarkSelection`/ `Be...",
     "candidateHints": [
       "mcp/src/agents_remember/mcp/registration",
       "mcp/src/agents_remember/mcp/registration/__init__.py",
@@ -107,19 +107,19 @@
       "TaskBases",
       "StartExecution",
       "BenchmarkSelection",
-      "BenchmarkPreparation",
-      "CodexBenchmarkRun",
-      "TaskDocTarget",
-      "TaskDocEdit",
-      "InboxAddress",
-      "InboxMessage",
-      "InboxPoster",
-      "NudgeTarget",
-      "NudgeSubject",
-      "GrepaiSearchQuery",
-      "GrepaiRepoScope",
-      "ProviderQueryScope",
-      "MCP"
+      "MCP",
+      "mcp/src/agents_remember/mcp/registration",
+      "route-local-overview",
+      "a84add4c9422b18a26f1748dedaed16194994ded",
+      "/../../../../overview.md",
+      "mcp/registration/",
+      "@server.tool",
+      "mcp/server.py",
+      "server.py",
+      "FastMCP",
+      "TOOL_REGISTRARS",
+      "register_<family>_tools(server, config) -> None",
+      "mcp/tools/"
     ]
   },
   "fallback": {

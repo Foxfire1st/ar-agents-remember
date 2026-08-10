@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`       |
-| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -264,6 +264,11 @@ from Toad `main.tcss` + the Claude Code / Codex TUIs — a reference derivation,
 
 ## Hot Path Summary
 
+For sprint-seat rendering, follow `SessionRail.tsx` into `sessionRailParts.tsx`, then back to
+`data/railModel.ts` for authoritative grouping. The cockpit renders each repository+sprint command
+group independently; it never infers ownership from labels, and the unbound section is explicitly
+legacy-only.
+
 1. A create gesture crosses the shared opener; only an accepted server row reaches the registry and
    the context bar's focus callback.
 2. Shell reconciliation hydrates catalog rows and the persistent Chats layer.
@@ -325,7 +330,7 @@ references, not imported governing implementations, so no cross-repository sourc
 | --- | --- | --- |
 | Full-route composition and shell ownership. | "import { SessionsView } from \"../panels/session-cockpit/sessions-view/SessionsView\";"; "data-testid=\"sessions-stage\"" | dashboard/src/cockpit/Cockpit.tsx:47-47; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
 | Legacy duty bar. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
-| Role/spawn rail and data derivation. | `SessionRail`, `buildRailModel` | dashboard/src/data/railModel.ts:192-235; dashboard/src/panels/session-cockpit/SessionRail.tsx:149-236 |
+| Role/spawn rail and data derivation. | `SessionRail`, `buildRailModel` | dashboard/src/data/railModel.ts:212-256; dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
 | PTY/ended continuity. | "import { lazy, Suspense, useEffect, useMemo, useRef, useState } from \"react\";"; "import { EndedSessionState } from \"./EndedSessionState\";"; "The PtySurface: the session stage's terminal half. Wraps the"; "export function EndedSessionState({ session }: { session: OpenSession }) {" | dashboard/src/panels/session-cockpit/PtySurface.tsx:1-1; dashboard/src/panels/session-cockpit/PtySurface.tsx:19-19; dashboard/src/panels/session-cockpit/PtySurface.tsx:21-21; dashboard/src/panels/session-cockpit/EndedSessionState.tsx:35-35 |
 | Cleanup authority notice. | `LandedCleanupNotice` | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:48-113 |
 | Effective keyboard contract. | "export function useEffectiveKeymap(): EffectiveKeymap {"; "export function useKeyboardZones({" | dashboard/src/data/keymap/preferences.ts:329-331; dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97; dashboard/src/data/keymap/preferences.ts:369-369 |
@@ -408,6 +413,9 @@ site, `test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `tes
 The session-cockpit route gained the L7 live-thinking coalescing (one stable `thinking` row per active turn, animated indicator, completion cleanup) and its interleaved acceptance pins in the conversation-timeline family. The file-size rail covers this route's TS/TSX under `dashboard/src`.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed the rail hot path for concurrent sprint command
+  groups and legacy isolation. Verification metadata remains pinned until closeout.
 
 - 2026-08-09T22:22+02:00 — No route impact: the conversation timeline's test-only timer
   teardown now prevents a Virtualizer debounce from outliving jsdom. Session-cockpit production

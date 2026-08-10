@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`   |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-08-09T03:51+02:00|
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`|
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -71,15 +71,21 @@ the opener/API can report an explicit unsupported state without treating pane te
 
 `TerminalCatalogEntry` gained the additive `control_pending_interactions` column (JSON
 `controlPendingInteractions`) beside the untouched singular
-`control_pending_interaction` parent-thread slot (cit:([`control_pending_interaction`], mcp/src/agents_remember/serving/terminal_catalog.py:173-173)). It rides the same migration-safe
+`control_pending_interaction` parent-thread slot (cit:([`control_pending_interaction`], mcp/src/agents_remember/serving/terminal_catalog.py:178-178)). It rides the same migration-safe
 optional pattern as every other control column: `from_json` reads it through the new
 `_optional_object_list` helper (cit:([`from_json`, `_optional_object_list`], mcp/src/agents_remember/serving/terminal_catalog.py:232-312; mcp/src/agents_remember/serving/terminal_catalog.py:961-967)) and `to_json` emits it through the
-`None`-filtered optional fold (cit:([`to_json`], mcp/src/agents_remember/serving/terminal_catalog.py:255-324)), so legacy rows read back as `None` and unset values never
+`None`-filtered optional fold (cit:([`to_json`], mcp/src/agents_remember/serving/terminal_catalog.py:325-408)), so legacy rows read back as `None` and unset values never
 enter the JSON. The read helper is fail-closed on shape: a non-list value, or a list containing
 even one non-object entry, degrades the WHOLE field to `None` rather than persisting a partial or
 malformed pending set.
 
 ### Logic
+
+Catalog rows now persist `spawn_repo` and `spawn_sprint` as write-once named-seat provenance.
+Upsert/reopen preserves an established pair and refuses conflicting scope rather than silently
+moving a command seat. Compound-idle set construction is role-neutral by inclusion: it discovers
+all live direct manager descendants in the same master and applies only the owner-tier exclusion,
+so reviewer, curator, and future subordinate seats block the manager set exactly like workers.
 
 **Dispatch provenance.** `TerminalCatalogEntry` persists
 `replacementForLeaf`, resolved model/effort, and the bound harness-log entry id/path with
@@ -268,8 +274,8 @@ operations that keep catalog state honest.
 | The liveness sweeper + shared observation path that drive `record_liveness_probe` and own the default hysteresis constants. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:282-326 |
 | Regression tests for hysteresis, pane-gone fast-marking, self-heal, sweep rate-limit/overlap, and stderr classification. | `TerminalCatalogLivenessTests` | mcp/tests/test_terminal_liveness.py:176-718 |
 | Worktree integrate/finalize completion hooks call `_auto_land_completed_seats`, which archives selected roles through `land_seats_for_leaf`; this is completion-edge auto-land, not manual retirement authority. | "def _auto_land_completed_seats"; "def land_seats_for_leaf" | mcp/src/agents_remember/application/worktree_tools.py:457-457; mcp/src/agents_remember/serving/landing.py:9-9 |
-| The serving manual-retire route assembles the actor/target `SeatRef`s, checks authority, and calls the retirement owner. | "def _retire_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:514-514 |
-| The MCP manual-retire tool assembles the actor/target `SeatRef`s, checks authority, and calls the retirement owner. | `session_retire_tool` | mcp/src/agents_remember/application/terminal_tools.py:944-1001 |
+| The serving manual-retire route assembles the actor/target `SeatRef`s, checks authority, and calls the retirement owner. | "def _retire_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:540-540 |
+| The MCP manual-retire tool assembles the actor/target `SeatRef`s, checks authority, and calls the retirement owner. | `session_retire_tool` | mcp/src/agents_remember/application/terminal_tools.py:1007-1076 |
 | Failing-first + regression tests for the retire/rename/turn-state mechanics, the retire-vs-liveness interplay, and idempotent provenance. | `TerminalMarkVsLivenessInterplayTests` | mcp/tests/test_seat_lifecycle.py:538-578 |
 
 ## Cross-Repo References
@@ -345,7 +351,7 @@ is now 63.
 
 ## 260713-TES-L3 Current Delta — Compound-Idle Marker Field
 
-`TerminalCatalogEntry` gained `compound_idle_emitted_for` cit:([`compound_idle_emitted_for`], mcp/src/agents_remember/serving/terminal_catalog.py:233-233)
+`TerminalCatalogEntry` gained `compound_idle_emitted_for` cit:([`compound_idle_emitted_for`], mcp/src/agents_remember/serving/terminal_catalog.py:238-238)
 (JSON `compoundIdleEmittedFor`), read through `_optional_str` in `from_json`
 cit:([`from_json`], mcp/src/agents_remember/serving/terminal_catalog.py:235-316) and emitted through the `None`-filtered optional fold in `to_json`
 cit:([`to_json`], mcp/src/agents_remember/serving/terminal_catalog.py:318-397) after `nonReactionEmittedFor` — migration-safe like every other
@@ -356,6 +362,10 @@ semantics. The write helpers live in `serving/seat_turn_truth.py` (see its sidec
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded write-once sprint provenance and structural
+  manager-subordinate compound sets. Verification metadata remains pinned until closeout stamps the
+  code commit.
 - 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded the `compound_idle_emitted_for`
   catalog field (JSON `compoundIdleEmittedFor`, migration-safe optional read/write, episode
   signature semantics, 63→64 wire key pin) and refreshed the signal-marker bullet. Verification

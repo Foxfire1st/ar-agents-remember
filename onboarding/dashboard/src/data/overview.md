@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T10:20+02:00 |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -239,6 +239,11 @@ code must not use them as ordinary recovery APIs.
 
 ## Hot Path Summary
 
+TES-L6 adds sprint-qualified command-seat projection here: terminal rows carry stored
+repository+sprint provenance, `railModel.ts` groups architect/orchestrator/manager by that pair,
+and unbound historical rows remain in a migration-only bucket. For concurrent-sprint grouping or
+ownership-display bugs, start with `sessions.ts`, `railModel.ts`, and their focused tests.
+
 1. `terminalOpen.ts` validates the sole open request and yields an accepted server row or a typed
    failure without mutating browser state.
 2. `sessions.ts` commits only the accepted row; catalog reconciliation then keeps terminal truth
@@ -301,11 +306,11 @@ own server contracts, so no external code path is cited as authority.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Catalog/session ownership and cross-tab reconciliation. | "export function captureCatalogAuthority", "export function notifySessionCatalogChanged" | dashboard/src/data/catalogPoll.ts:44-44; dashboard/src/data/sessions.ts:113-113 |
+| Catalog/session ownership and cross-tab reconciliation. | "export function captureCatalogAuthority", "export function notifySessionCatalogChanged" | dashboard/src/data/catalogPoll.ts:44-44; dashboard/src/data/sessions.ts:115-115 |
 | Per-seat UI and evidence state. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
 | Reliable submission and authoritative withdrawal. | "export function createFetchSubmitTransport", "export const VISIBLE_STATUS_POLL_MS" | dashboard/src/data/submissionLifecycleClient.ts:18-18; dashboard/src/data/submitClient.ts:238-238 |
 | Lifecycle termination, residuals, and landed cleanup. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
-| Role/spawn hierarchy replacing legacy `sessionGroups`. | `sessionGroups` | dashboard/src/data/railModel.ts:119-119 |
+| Role/spawn hierarchy replacing legacy `sessionGroups`. | `sessionGroups` | dashboard/src/data/railModel.ts:126-126 |
 | The single exported creation-order sort and the panel that now imports it instead of keeping a byte-identical copy. | "export function findParentTaskMatch", "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76; dashboard/src/data/taskHierarchy.ts:43-43 |
 | The two distinct sub-task row models and their union, plus the server builder that has already ordered the series rows. | , "class _TaskDocumentLifecycleMaps:" | mcp/src/agents_remember/observer/snapshots_impl/_common.py:37-37;  |
 | The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:43-43; scripts/sync-projection-types.py:54-54 |
@@ -326,6 +331,9 @@ agent-tagged notices, including selected-child history state, remain conversatio
 create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: added the sprint-qualified command-group hot path and
+  migration-only legacy boundary. Verification metadata remains pinned until closeout.
 
 - 2026-08-09T19:36+02:00 — 260713-TES-L5F2 route impact: the interaction-answer authority is
   now uniformly exact-session-owned for structured and scalar payloads; lifecycle gates are not

@@ -86,7 +86,7 @@
     "worktree"
   ],
   "hotPath": {
-    "summary": "ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to carry settings provenance, while `sessionCommands` is now explicitly user-authored launch configuration rather than a normalized model/effort vehicle. Dynamic catalog and process failures remain hosted control evidence and do not inflate the pre-spawn status enum. HFX2-L17 adds binding identity to terminal responses: attach can return `role-required` and carries `seatRole`/`previousSeatRole`; spawn car...",
+    "summary": "The terminal wire model carries optional `spawnRepo`/`spawnSprint` and the binding refusal statuses. Absence remains readable for legacy rows but does not authorize the runtime to infer a global command-seat scope. ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to carry settings provenance, while `sessionCommands` is now explicitly user-authored launch configuration rather than a normalized model/effort vehicle. Dynamic catalog and process failures re...",
     "candidateHints": [
       "mcp/src/agents_remember/models",
       "mcp/src/agents_remember/models/__init__.py",
@@ -160,8 +160,8 @@
       "tool_response",
       "worktree.py",
       "worktree",
-      "launch-selection-invalid",
-      "resolvedModel"
+      "spawnRepo",
+      "spawnSprint"
     ]
   },
   "fallback": {

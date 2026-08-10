@@ -6,8 +6,8 @@
 | path                   | `scripts/harness/shared/session-start-directive.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -25,6 +25,11 @@ agents-remember.mdc`, and `.github-vscode/copilot-instructions.md`.
 ## Code Commentary
 
 ### Logic
+
+The shared session-start directive now treats an ordinary developer session as free chat that
+launches the configured architect seat, while `AR_SPAWN_ROLE` and fresh role briefs continue to
+enter their exact role lifecycle. This keeps command-seat identity explicit and lets the opener
+bind architect/orchestrator/manager sessions to one sprint before any brief is delivered.
 
 The body states the three-condition session routing that `l-01-agent-lifecycles` owns:
 
@@ -64,11 +69,15 @@ The body states the three-condition session routing that `l-01-agent-lifecycles`
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The generator that composes this body into six files with per-harness framing. | `generated_files`, `compose` | scripts/sync-harness.py:576-621; scripts/sync-harness.py:631-633 |
-| The workspace-root variant of the same directive. | "as workspace instructions" | scripts/harness/shared/workspace-directive.md:9-9 |
+| The workspace-root variant of the same directive. | "as workspace instructions" | scripts/harness/shared/workspace-directive.md:8-9 |
 | The hook fragments that read this file at run time. | `DIRECTIVE_PATH`, `emit` | scripts/harness/session_start_hook.py:23-23; scripts/harness/session_start_hook.py:57-59 |
 | The lifecycle this directive routes a session into. | `# l-01-agent-lifecycles — The Agent Lifecycles` | skills/l-01-agent-lifecycles/SKILL.md:6-416 |
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the free-chat-to-sprint-architect launcher
+  boundary shared by generated harness starters. Verification metadata remains pinned until
+  closeout stamps the code commit.
 
 - 2026-08-03T03:06:00+02:00 — Curator W3-B02 repaired 4 Repo-Internal citation rows, resolving 8 manifest findings with exact generator, directive, hook, and lifecycle anchors; verification metadata was preserved.
 - 2026-07-31T06:30+02:00 — 260731-EFA-L2 promoted this to the single source for six

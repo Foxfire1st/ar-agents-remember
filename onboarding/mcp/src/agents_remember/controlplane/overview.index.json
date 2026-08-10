@@ -88,7 +88,7 @@
     "transitions"
   ],
   "hotPath": {
-    "summary": "**260731-EFA-L5 \u2014 the durable-store contract. Read this before changing how any store in this route touches disk.** The six JSONL stores here (`store.py`, `expectation_rows.py`, `operator_inbox_store.py`, `attention_dismissals.py`, `orchestration_nudges.py`, `agent_notifier_signals.py`) were written independently against the same shape, and their safety properties ended up distributed almost at random: one of six took a lock, three of six used a pid-scoped temp name, none fsynced. **No base-commit measurement artifact is committed anywhere in this tree**, so every base-commit rate below is...",
+    "summary": "TES-L6 keeps owner routing sprint-local. `signal_routing.py` resolves architect custody and rebind chains inside the row's exact repository+sprint identity, while `seats.py` names command roles without constraining the notifier's structurally discovered subordinate roles. **260731-EFA-L5 \u2014 the durable-store contract. Read this before changing how any store in this route touches disk.** The six JSONL stores here (`store.py`, `expectation_rows.py`, `operator_inbox_store.py`, `attention_dismissals.py`, `orchestration_nudges.py`, `agent_notifier_signals.py`) were written independently against t...",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
@@ -153,14 +153,14 @@
       "stamps",
       "store.py",
       "store",
+      "TES",
       "EFA",
       "JSONL",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "2dea095cd68454a7a68893e37c07dbd8daa86d32",
+      "a84add4c9422b18a26f1748dedaed16194994ded",
       "/../../overview.md",
-      "controlplane/",
-      "escalation_ladder.py"
+      "controlplane/"
     ]
   },
   "fallback": {

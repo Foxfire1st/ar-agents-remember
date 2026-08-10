@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-09T06:48+02:00                     |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -151,7 +151,7 @@ P-15 fixture-zoo mandate (leaf task doc R3) and the liveness report
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sweep entry point every scenario drives across multiple ticks. | `run_agent_notifier_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:633-633; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-330; mcp/src/agents_remember/serving/agent_notifier.py:93-195 |
+| The sweep entry point every scenario drives across multiple ticks. | `run_agent_notifier_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:640-640; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-330; mcp/src/agents_remember/serving/agent_notifier.py:93-180 |
 | The pane-signal classifier the two hybrid scenarios call directly (capturer not injectable through the sweep). | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | The fact-relay terminal paths every incident simulation asserts: attempt-ceiling `unresolved`, rebind-grace `expired`, never a rung (260713-TES-L5). | `PERSISTENT_FAILURE_ATTEMPTS`; `evaluate_pending_expiry_findings` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:26-26; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:175-175 |
 | The self-liveness heartbeat store and staleness banner `KilledSupervisorDaemonTests` drives. | `AgentNotifierHeartbeatStore`; `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:141-157 |

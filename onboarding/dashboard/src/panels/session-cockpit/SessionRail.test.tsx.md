@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:45+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -22,6 +22,10 @@ the shared `FLEET` fixtures.
 ## Code Commentary
 
 ### Logic
+
+The rail tests now pin separate headers and seat membership for multiple sprint-qualified command
+groups. They also pin the migration-only legacy group, ensuring unbound historical rows remain
+inspectable without being rendered as the owner or parent of a live bound sprint.
 
 - **Rail-state matrix (R14)** — every fixture row's dot carries exactly the `stateGrammar` visual
   (`data-state`/color/pulse per row); FEUI-L4 also pins `role="img"` and the literal
@@ -88,13 +92,13 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:149-236 |
+| The component under test. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
 | The shared fixtures every case builds from. | `FLEET`; `catalogRow` | dashboard/src/test/fixtures/catalogRows.ts:10-27; dashboard/src/test/fixtures/catalogRows.ts:32-172 |
 | The grammar the matrix compares against. | `seatVisualState` | dashboard/src/data/stateGrammar.ts:101-125 |
 | The notice store + harvest store the L6 block seeds. | `lifecycleNoticeStore`; `ptyHarvestStore` | dashboard/src/data/sessionLifecycle.ts:68-121; dashboard/src/data/ptyHarvest.ts:51-73 |
 | The harvest store the bell/hint cases drive. | `ptyHarvestStore` | dashboard/src/data/ptyHarvest.ts:51-73 |
 | The typed wire builders the gate/brief cases now call (`lifecycleWithGate`, `taskDoc`, `agentPickup`, `analytics`). | `lifecycleWithGate`; `taskDoc`; `agentPickup`; `analytics` | dashboard/src/test/fixtures/wire.ts:256-266; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:296-301; dashboard/src/test/fixtures/wire.ts:317-322 |
-| `heldGatesByLeafKey` + `briefPendingSessionIds` — the only readers of the seeded lifecycles/pickups, and the reason the richer bases change nothing. | `heldGatesByLeafKey`; `briefPendingSessionIds` | dashboard/src/data/railModel.ts:408-422; dashboard/src/data/railModel.ts:427-439 |
+| `heldGatesByLeafKey` + `briefPendingSessionIds` — the only readers of the seeded lifecycles/pickups, and the reason the richer bases change nothing. | `heldGatesByLeafKey`; `briefPendingSessionIds` | dashboard/src/data/railModel.ts:429-443; dashboard/src/data/railModel.ts:448-460 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -118,6 +122,10 @@ The rail suite now pins immediate single-seat termination, retained bulk confirm
 recovery, and the absence of the duplicate bus-footer presentation.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: added rendering coverage for concurrent sprint command
+  groups and the isolated legacy bucket. Verification metadata remains pinned until closeout
+  stamps the code commit.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 "- 2026-08-04T12:19:51+02:00 — 260731-EFA-L6 S18-B01 curator: reconciled the bounded worker ledger; source-clear citations were repaired, split, rewritten, or deleted as applicable, then the exact scoped fixer/check passed.
@@ -138,9 +146,9 @@ recovery, and the absence of the duplicate bus-footer presentation.
   `BASE_LIFECYCLE`, where it previously had only `{ id, gate }`; the task doc gained every required
   `TaskDocNode` field; and the ten `Analytics` lists that were `undefined` are now `[]`. `SessionRail.tsx`
   reads `state.lifecycles` and `analytics.taskDocuments` at L505-L539 and nowhere else, and the sole
-  consumer is `heldGatesByLeafKey` (cit:([`heldGatesByLeafKey`], dashboard/src/data/railModel.ts:408-422)), which touches only `doc.lifecycleId`,
+  consumer is `heldGatesByLeafKey` (cit:([`heldGatesByLeafKey`], dashboard/src/data/railModel.ts:429-443)), which touches only `doc.lifecycleId`,
   `lifecycles[id]?.gate?.state` and `qualifiedLeafKey`'s `repository`/`docPath`/`id` — all explicitly
-  overridden by the case. `briefPendingSessionIds` (cit:([`briefPendingSessionIds`], dashboard/src/data/railModel.ts:427-439)) reads `messageKind`, `state` and
+  overridden by the case. `briefPendingSessionIds` (cit:([`briefPendingSessionIds`], dashboard/src/data/railModel.ts:448-460)) reads `messageKind`, `state` and
   `deliveredToSession`, also all overridden, and `git diff -U2` confirms no field value inside either
   literal changed. The two residual deltas the sweep warns about do not reach here: this gate sets
   `decisions: []` explicitly (so `BASE_GATE`'s `["approve","revise"]` never applies), and no assertion

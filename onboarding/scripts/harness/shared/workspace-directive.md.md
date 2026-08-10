@@ -6,8 +6,8 @@
 | path                   | `scripts/harness/shared/workspace-directive.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -23,6 +23,11 @@ files: `.hermes/HERMES.md`, `.agents/GEMINI.md`, and `.openclaw/workspace/AGENTS
 ## Code Commentary
 
 ### Logic
+
+The workspace directive now routes durable developer work through a separately launched,
+sprint-bound architect rather than assigning one global architect identity to every free chat.
+Spawned role briefs remain authoritative, and the named command-seat chain retains the sprint
+provenance established at launch.
 
 The body is the same three-condition session routing as
 `shared/session-start-directive.md` — ignore the notice when `AR_SPAWN_ROLE` is set or
@@ -71,6 +76,10 @@ bodies exist:**
 | The classification recording why the two directive bodies differ. | `## What is shared and what is per-harness` | scripts/harness/README.md:38-94 |
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed the generated-workspace guidance for the
+  sprint-qualified architect launcher. Verification metadata remains pinned until closeout stamps
+  the code commit.
 
 - 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -52,6 +52,12 @@ floor, and completion wake bound it; HFX2-L14 S7 owns extending same-worktree/cu
 to the unbound worker without cross-leaf suppression. Do not document or infer that S1 is fixed here.
 
 ### Logic
+
+Architect ownership is now resolved inside the row's exact repository+sprint boundary. A bound
+architect may retain custody after leaf movement, but no lookup falls back to an architect from a
+different sprint or to one workspace-global architect. Rebind-chain traversal likewise stops at
+the sprint boundary, preserving N14 routing isolation while reusing the existing
+`derive_architect_owner` seam.
 
 **260707-HFX2-L15 replacement-chain discriminator.** An unbound worker, reviewer, or curator counts
 as progress for a leaf only when it was spawned by the current manager and its catalog row carries
@@ -180,6 +186,10 @@ behavior above; verification metadata stays pinned to the pre-commit source hist
 closeout.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint-scoped architect custody and the
+  no-cross-sprint rebind boundary. Verification metadata remains pinned until closeout stamps the
+  code commit.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the skip-level demolition —
   `derive_skip_level_owner`/`_derive_spawn_owner` deleted; dead-owner chains surface via rebind +

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`|
-| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -310,6 +310,12 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+For L6 command-seat identity, start at `sprint_role_binding.py`, then follow its callers through
+`terminal_opener.py`, `terminal_leaf_assignment.py`, and `terminal_catalog.py`. For wake liveness,
+start at `state_signals.py`: all direct manager descendants in the same master participate unless
+they are owner-tier roles; `_agent_notifier_actions.py` revalidates that current truth immediately
+before persistence and rejects malformed or timezone-naive non-reaction evidence.
 
 For the active conversation serving, start at
 `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then
@@ -1264,7 +1270,7 @@ neighboring repository governs this route.
 | Three additive evidence/provenance read actions are defined. | `_evidence`; `_evidence_native_page`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:377-383; mcp/src/agents_remember/serving/harness_control_ipc.py:385-397; mcp/src/agents_remember/serving/harness_control_ipc.py:399-405 |
 | The native evidence client validates coordinate domains while reading a control-native page. | `read_control_native_page` | mcp/src/agents_remember/serving/harness_control_client.py:369-401 |
 | The native evidence parser validates continuation state. |"def _native_evidence_page"|mcp/src/agents_remember/serving/_harness_control_parsing.py:399-399|
-| Snapshot parsing recognizes plural "pendings_raw = raw.get(\"pendingInteractions\")". | "stays the parent-thread slot" | mcp/src/agents_remember/serving/response_contract.py:1053-1053 |
+| Snapshot parsing recognizes plural "pendings_raw = raw.get(\"pendingInteractions\")". | "stays the parent-thread slot" | mcp/src/agents_remember/serving/response_contract.py:1055-1055 |
 | The provenance batch reads the authority-owned ledger through the bridge's single submission handle, enforcing the expected bridge epoch and returning each requested record's provenance. | `SubmissionLedger`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:399-405; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
 | The resume request shape is `ControlRunnerRequest`. | `ControlRunnerRequest` | mcp/src/agents_remember/serving/terminal_opener.py:83-98 |
 | The runner parses its configuration through `parse_runner_config`. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:72-97 |
@@ -1323,7 +1329,7 @@ neighboring repository governs this route.
 | `OnboardingResolution` declares the five-shape union for `GET /api/files/onboarding`. | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:720-726 |
 | `ServedWorkspaceProjection` (the projection plus the two optional serve-time keys), `SERVED_TAIL_FIELDS`, and `served_state_tail` with its opposite null rules per half. | `ServedWorkspaceProjection`; `SERVED_TAIL_FIELDS`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:48-59; mcp/src/agents_remember/serving/served_state.py:62-66; mcp/src/agents_remember/serving/served_state.py:71-90 |
 | `ServingBuildPayload` and `AgentNotifierHeartbeatPayload` — the two tail halves as declared models rather than hand-built dicts; `ServingBuild.payload()` returns the model and collapses clean-and-unprovable to `None`. | `ServingBuildPayload`; `ServingBuild`; `AgentNotifierHeartbeatPayload` | mcp/src/agents_remember/serving/build_info.py:43-63; mcp/src/agents_remember/serving/build_info.py:66-88; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:31-55 |
-| The declarations on `app.py`'s own routes: the `/api/state` 200/304/503 trio, `/api/task-document`, the two SSE routes' per-frame models, the `202` on `POST /api/actions/{action}`, the websocket exemption comment, and the two FastAPI-validated catalog routes. | "def _register_projection_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"; "def _register_action_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"; "def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/serving/_app_routes.py:115-115; mcp/src/agents_remember/serving/_app_routes.py:386-386; mcp/src/agents_remember/serving/_app_terminal_routes.py:126-126 |
+| The declarations on `app.py`'s own routes: the `/api/state` 200/304/503 trio, `/api/task-document`, the two SSE routes' per-frame models, the `202` on `POST /api/actions/{action}`, the websocket exemption comment, and the two FastAPI-validated catalog routes. | "def _register_projection_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"; "def _register_action_routes(app: FastAPI, runtime: _ServingRuntime) -> None:"; "def _register_terminal_session_routes(app: FastAPI, runtime: _ServingRuntime) -> None:" | mcp/src/agents_remember/serving/_app_routes.py:115-115; mcp/src/agents_remember/serving/_app_routes.py:386-386; mcp/src/agents_remember/serving/_app_terminal_routes.py:127-127 |
 | The route-inventory, validated-route hazard, per-route conformance and declared-surface-coverage suites enforce the contract on routes FastAPI does not validate. | `ServingRouteInventoryTests`; `ValidatedRouteHazardTests`; `ServingResponseConformanceTests`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance.py:500-632; mcp/tests/test_serving_response_conformance.py:635-704; mcp/tests/test_serving_response_conformance.py:792-899; mcp/tests/test_serving_response_conformance_live.py:484-484 |
 | The served-state tail rules, the populated 200 body, the body-less 304, and the bare-node `delta` asymmetry are bound by the served-state route and snapshot conformance suites. | `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests`; `delta` | mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
 
@@ -1702,6 +1708,10 @@ caps owner-signal findings with `escalationBudget` (twin of `redeliverBudget`). 
 forcing suite and the runnable live-chain-proof script are the leaf's verification surfaces.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: added immutable sprint binding and structural
+  all-subordinate notifier revalidation to the serving hot path. Verification metadata remains
+  pinned until closeout.
 
 - 2026-08-09T21:12+02:00 — No route impact: the agent-notifier sweep's aggregate
   `inbox-compacted` event assembly moved to a named helper, and one stale source-comment citation

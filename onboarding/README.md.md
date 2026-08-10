@@ -6,8 +6,8 @@
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -21,6 +21,12 @@
 ## Code Commentary
 
 ### Logic
+
+The orchestration overview now describes command seats as sprint-bound identities. Architect,
+orchestrator, and manager rows carry explicit repository+sprint provenance, descendants inherit
+that provenance from their direct spawner, and multiple concurrent sprints remain independent.
+Legacy unbound rows are migration display state only; they are not a production route for minting
+new global command seats.
 
 The README's `<h3>` headline now frames Agents Remember in two parts — git-verified records of what coding agents know, and a control plane for what they do — sharpening the earlier single-line "durable, git-verified repo memory" framing toward the records-plus-control-plane positioning. Below it, the README uses `## Core Features` as the fast product pitch. It frames Agents Remember as project memory coding agents can verify and act on, shows the source-file to onboarding-unit mapping, and names the user-facing features a skimming reader needs in the first thirty seconds: path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery that finds but does not decide, memory that lands with code through external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages. The previous `## Core Model` section carried the same conceptual spine but was less effective as a public feature pitch.
 
@@ -195,6 +201,10 @@ across the two hooks was retiered by 260731-EFA-L1, and the *step list* was corr
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed the public orchestration description for
+  sprint-bound command seats and migration-only unbound legacy rows. Verification metadata remains
+  pinned until closeout stamps the code commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: rewrote the gate-paragraph
   section for the ladder — pre-push runs `--targeted`, the full wrapper runs

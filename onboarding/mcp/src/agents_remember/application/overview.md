@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -40,6 +40,10 @@ reopens a task, while worktree_tools keeps only genuine worktree operations (its
 abandon now also ends the ambient lifecycle it anchors).
 
 ## Hot Path Summary
+
+Terminal spawn/open applications now surface the serving layer's sprint-binding refusals and
+successful provenance unchanged. Start here for MCP response composition; the identity policy
+itself lives in `serving/sprint_role_binding.py` and executes before host launch.
 
 The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context
 assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline,
@@ -228,6 +232,9 @@ attribution marker, never a mechanical ack. No application-layer behavior change
 verdict-by deadline surface remains the gate-open expectation row.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed the application route for binding refusal and
+  provenance projection. Verification metadata remains pinned until closeout.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the N16 wording refresh in
   `gate_response_wait_tool` (landing + attribution-only consume). Verification metadata

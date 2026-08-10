@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_leaf_assignment.py`      |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `7463b97a560e39367b9e31a687f09ea3f4f6b9f6`        |
-| lastVerifiedCommitDate | 2026-08-09T04:22:51+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`        |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                                  |
 
 ## Governing Overview
@@ -29,6 +29,10 @@ when untyped, atomic role changes, different-role coexistence, live same-role re
 same-role supersession with the stale row marked exited.
 
 ### Logic
+
+Attachment tests now pin first binding for a permitted legacy architect, inherited binding for
+spawned named roles, and refusal of invalid, partial, or cross-sprint reattachment. They also prove
+the refusal happens before catalog mutation, preserving the original write-once pair.
 
 The `_entry` helper seeds running harness catalog rows with deterministic timestamps. The tests cover
 three L9 contracts: `assign_terminal_session_to_leaf` moves an existing row and reports the previous
@@ -71,7 +75,7 @@ No relevant external/domain documentation found; the behavior is local catalog/t
 | The shared assignment helper under test returns `attached`, `leaf-taken`, or `unknown-session` and mutates only on success. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
 | The MCP payload builder under test opens the dashboard catalog path and validates the response through `_tool_payload`. | `attach_terminal_session_to_leaf_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:26-43 |
 | The shared leaf-ref resolver and serving adapter normalize accepted refs before catalog writes. | `resolve_catalog_leaf_key` | mcp/src/agents_remember/serving/leaf_ref_validation.py:18-46 |
-| Existing catalog behavior provides the `with_leaf_key` write point and role-scoped active owner lookup these tests exercise indirectly. | `with_leaf_key` | mcp/src/agents_remember/serving/terminal_catalog.py:425-427 |
+| Existing catalog behavior provides the `with_leaf_key` write point and role-scoped active owner lookup these tests exercise indirectly. | `with_leaf_key` | mcp/src/agents_remember/serving/terminal_catalog.py:434-436 |
 
 ## Cross-Repo References
 
@@ -82,6 +86,10 @@ No meaningful cross-repo references found.
 | The tests cover local MCP/serving behavior only. | - | - |
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint-binding attachment and conflict-
+  preservation coverage. Verification metadata remains pinned until closeout stamps the code
+  commit.
 
 - 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 4 citation claims; scoped recheck clean (0 findings).
 

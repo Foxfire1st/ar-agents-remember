@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_signal_routing.py`            |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -41,6 +41,10 @@ S7 follow-up.
 
 ### Logic
 
+Routing regressions now prove architect lookup and rebind traversal are bounded by the exact
+repository+sprint identity. Concurrent sprint architects remain distinct, and absence of a
+matching bound owner fails closed instead of selecting a global or merely role-matching row.
+
 **260707-HFX2-L15 coverage.** Production-shaped same-cwd fixtures prove a declared unbound
 replacement with `replacementForLeaf` counts as this leaf's progress, while a worker for a parallel
 leaf under the same manager never suppresses this leaf.
@@ -53,10 +57,10 @@ layers of the hierarchy resolve correctly, not just one hardcoded hop.
 `test_no_layer_is_addressed_its_grandchildrens_noise` is the one-hop regression: with a worker
 spawned by a manager which was itself spawned by an orchestrator, a worker signal resolves to the
 manager, never chasing the provenance chain a second hop to the orchestrator.
-`test_decision_item_routes_to_architect_regardless_of_provenance` pins that a `decision-item`
-message kind always routes to the reserved `architect` role (no `agent_id`/`lifecycle_id`,
-since the architect is not a spawned catalog entry) regardless of the sender's own catalog
-provenance. Three negative cases close the surface: an unknown/unregistered sender, a sender with
+`test_decision_item_routes_to_its_sprint_architect_with_an_exact_address` pins that a
+`decision-item` resolves the architect bound to the sender's exact repository+sprint, including
+its concrete `agent_id` and `lifecycle_id`; it never falls back to a global role-only architect.
+Three negative cases close the surface: an unknown/unregistered sender, a sender with
 no `spawned_by_session` provenance (e.g. an orchestrator's own signal — the caller's explicit
 `recipient_role` stands instead), and a `None` `sender_agent_id` all derive an empty `RoutedOwner()`
 rather than a wrong or partial address.
@@ -87,8 +91,8 @@ test modules (`test_terminal_catalog.py`, `test_signal_routing.py`'s own module)
 
 - Routing reads only the SENDER's own catalog provenance (one hop) — it never walks the spawn
   chain further, even when the intermediate owner's own provenance would resolve further up.
-- `decision-item` is a reserved-role route (architect) independent of catalog provenance; every
-  other message kind routes structurally off `spawn_role`.
+- `decision-item` is an exact-sprint architect route derived from persisted catalog provenance;
+  every other message kind routes structurally off `spawn_role`.
 - No sender id, an unknown sender, or a sender with no spawn provenance all derive an empty
   `RoutedOwner()` — the caller's own explicit addressing is the fallback, never a guessed owner.
 - `SkipLevelOwnerTests` is a genuinely separate suite from `SignalRoutingTests` above — it never
@@ -112,9 +116,9 @@ No meaningful external design-doc references found yet (created this leaf).
 | --- | --- | --- |
 | Worker-to-manager and manager-to-orchestrator one-hop routing from catalog spawn provenance. | `test_worker_signal_routes_to_its_manager`; `test_manager_signal_routes_to_orchestrator` | mcp/tests/test_signal_routing.py:48-61; mcp/tests/test_signal_routing.py:221-236 |
 | One-hop-only regression: a worker's signal never chases the chain past its manager. | `test_no_layer_is_addressed_its_grandchildrens_noise` | mcp/tests/test_signal_routing.py:238-258 |
-| `decision-item` reserved-role routing always targets the architect regardless of provenance. | `test_decision_item_routes_to_architect_regardless_of_provenance` | mcp/tests/test_signal_routing.py:260-265 |
+| `decision-item` routing resolves the architect bound to the sender's exact sprint with a concrete address. | `test_decision_item_routes_to_its_sprint_architect_with_an_exact_address` | mcp/tests/test_signal_routing.py:260-275 |
 | The two-hop owner derivation is deleted with the ladder (260713-TES-L5); no skip-level tests remain. | `test_no_layer_is_addressed_its_grandchildrens_noise` | mcp/tests/test_signal_routing.py:238-258 |
-| The shared liveness primitive the rebind/dead-target and dead-upstream machinery reads. | `IsSeatDeadTests` | mcp/tests/test_signal_routing.py:352-352 |
+| The shared liveness primitive the rebind/dead-target and dead-upstream machinery reads. | `IsSeatDeadTests` | mcp/tests/test_signal_routing.py:362-390 |
 
 ## Cross-Repo References
 
@@ -130,6 +134,9 @@ no two-hop owner's-owner walk remains. One-hop `derive_signal_owner`, `is_seat_d
 scoped owner-derivation family stay covered as before.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded exact-sprint architect routing and no-global-
+  fallback coverage. Verification metadata remains pinned until closeout stamps the code commit.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the removal of the skip-level
   walk tests (function deleted with the escalation ladder). Verification metadata pinned

@@ -159,7 +159,7 @@
     "workingline"
   ],
   "hotPath": {
-    "summary": "1. A create gesture crosses the shared opener; only an accepted server row reaches the registry and the context bar's focus callback. 2. Shell reconciliation hydrates catalog rows and the persistent Chats layer. 3. `SessionsView` resolves deliberate/smart focus and live action ownership, then derives one rail model/attention rollup for rail and palette. 4. `SessionRail` selects a row; the stage keeps visited inspectable PTYs alive and shows ended-state overview when no terminal exists. 5. Composer, interaction, attach, set, terminate, cleanup, and bus actions cross their own authority route...",
+    "summary": "For sprint-seat rendering, follow `SessionRail.tsx` into `sessionRailParts.tsx`, then back to `data/railModel.ts` for authoritative grouping. The cockpit renders each repository+sprint command group independently; it never infers ownership from labels, and the unbound section is explicitly legacy-only. 1. A create gesture crosses the shared opener; only an accepted server row reaches the registry and the context bar's focus callback. 2. Shell reconciliation hydrates catalog rows and the persistent Chats layer. 3. `SessionsView` resolves deliberate/smart focus and live action ownership, then...",
     "candidateHints": [
       "dashboard/src/panels/session-cockpit",
       "dashboard/src/panels/session-cockpit/conversation",

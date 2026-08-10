@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/terminalCatalog.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -27,6 +27,10 @@ replaces the former partial `TerminalSessionInfo` in `data/terminal.ts`, which n
 ## Code Commentary
 
 ### Logic
+
+The terminal-catalog wire type now exposes optional `spawnRepo` and `spawnSprint` provenance. The
+pair is additive for compatibility but semantically write-once for named command seats; absence
+means a legacy row, not permission to infer a global sprint.
 
 - **Vocabulary unions**: `TerminalOpenKind`, `TerminalSessionStatus`
   (`running|exited|landed|terminated`), `HarnessControlState`, `HarnessActivityState`,
@@ -92,6 +96,10 @@ No meaningful cross-repo references found.
 | This file implements a repository-local contract. | — | — |
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the additive sprint-provenance wire fields and
+  their legacy-absence semantics. Verification metadata remains pinned until closeout stamps the
+  code commit.
 
 - 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
 

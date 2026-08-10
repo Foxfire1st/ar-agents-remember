@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/_agent_notifier_actions.py`                                        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `b7f09a4dc992a7a450a0a37e704475e66df79746`                                        |
-| lastVerifiedCommitDate | 2026-08-09T21:31:32+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`                                        |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -26,6 +26,17 @@ also owns the rebind/expiry/unresolved actions (`_rebind_due`, `_rebind_expired`
 `_mark_expectation_missed` are deleted.
 
 ## Code Commentary
+
+## 260713-TES-L6 Current Delta — Action-Time Truth And Role-Neutral Relay
+
+State-signal and non-reaction actions now re-run the shared finding evaluator immediately before
+durable persistence and build the emitted owner signal from that fresh result. If the subordinate
+was reparented, moved to another leaf/master, resumed working, terminated, retired, or lost valid
+terminal/timestamp evidence between evaluation and action, the action returns `skipped` and writes
+neither an inbox row nor a dedupe marker. Valid findings use the fresh leaf, role, manager, and
+episode metadata, so same-master reparenting cannot route stale ownership. Compound-idle action
+membership consumes the same direct-manager topology as evaluation, covering reviewer, curator,
+and future subordinate roles without a worker-only branch.
 
 - `AGENT_NOTIFIER_EVENT_PREFIX` / `LEGACY_SUPERVISOR_EVENT_PREFIX`
 - `_log_event` (dual event emission during the rename window)
@@ -125,6 +136,10 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded action-time revalidation, fresh routing
+  metadata, fail-closed mutation handling, and role-neutral subordinate relays. Verification
+  metadata remains pinned until closeout stamps the code commit.
 
 - 2026-08-09T21:10+02:00 — No content impact: master integration gate repair corrected the source's stale
   `_signal_dead_upstream` self-citation to the declaration's current line. Runtime behavior

@@ -103,6 +103,7 @@
     "mcp/src/agents_remember/serving/seat_turn_truth.py",
     "mcp/src/agents_remember/serving/served_state.py",
     "mcp/src/agents_remember/serving/sim.py",
+    "mcp/src/agents_remember/serving/sprint_role_binding.py",
     "mcp/src/agents_remember/serving/state_signals.py",
     "mcp/src/agents_remember/serving/static.py",
     "mcp/src/agents_remember/serving/terminal.py",
@@ -118,8 +119,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 168,
-    "fileSidecars": 100,
+    "sourceFilesInScope": 169,
+    "fileSidecars": 101,
     "childRoutes": 1
   },
   "routingTerms": [
@@ -205,7 +206,7 @@
     "harness_control_parsing"
   ],
   "hotPath": {
-    "summary": "For the active conversation serving, start at `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor), `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics), `conversation/active/store.py` (idempotence, tool block union), `conversation/active/cursor.py` (signed cursor authority), and `conversation/active/status.py` (the canonical classification orchestration shares). The per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`...",
+    "summary": "For L6 command-seat identity, start at `sprint_role_binding.py`, then follow its callers through `terminal_opener.py`, `terminal_leaf_assignment.py`, and `terminal_catalog.py`. For wake liveness, start at `state_signals.py`: all direct manager descendants in the same master participate unless they are owner-tier roles; `_agent_notifier_actions.py` revalidates that current truth immediately before persistence and rejects malformed or timezone-naive non-reaction evidence. For the active conversation serving, start at `conversation/active/api.py` (page/events plus selected-child history and th...",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/conversation",

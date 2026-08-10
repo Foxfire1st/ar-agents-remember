@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -39,6 +39,10 @@ runtime and tested by schema. Model homes follow tool domains: `TaskReopenRespon
 the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
+
+The terminal wire model carries optional `spawnRepo`/`spawnSprint` and the binding refusal statuses.
+Absence remains readable for legacy rows but does not authorize the runtime to infer a global
+command-seat scope.
 
 ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete
 role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to
@@ -355,6 +359,9 @@ reordered (see the `mcp/tools/` overview). Verified: all 62 registered models ar
 narrower type is true of the whole registry today.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed terminal model vocabulary for sprint provenance
+  and legacy absence. Verification metadata remains pinned until closeout.
 
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded
   `OperatorInboxSupersedeResponse` and its `TOOL_RESPONSE_MODELS` mapping (R11), plus the

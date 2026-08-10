@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionLifecycle.test.ts`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The module under test. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
 | The centralized copy the honesty cases pin. | `terminateConfirmCopy` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:14-23 |
-| The L6 fixtures driven through the real store. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:179-191 |
+| The L6 fixtures driven through the real store. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:196-208 |
 | The view-level companions (unfocused-residual render, rail End/error-row cases). | "renders the scope root + rail/stage/inspector with markers and zones (F-c: no statusline region)" | dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:34-34 |
 
 ## FEUI-L8 Reviewed Candidate Delta

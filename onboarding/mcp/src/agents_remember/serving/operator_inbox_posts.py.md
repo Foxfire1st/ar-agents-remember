@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/operator_inbox_posts.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840` |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,11 @@ Persist and optionally deliver one operator-inbox post.
 ## Code Commentary
 
 ### Logic
+
+Inbox addressing now consumes sprint-qualified catalog ownership for named command seats. Posts
+that target architect custody resolve inside the row's repository+sprint scope; missing or legacy
+global identity does not authorize cross-sprint delivery. Existing exact-agent delivery remains
+unchanged.
 
 Module-level surface:
 
@@ -74,10 +79,13 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `_post_catalog` (lines 122-130). | `_post_catalog` | mcp/src/agents_remember/serving/operator_inbox_posts.py:158-166 |
 | Defines the function `_dispatch_entry_fields` (lines 133-141). | `_dispatch_entry_fields` | mcp/src/agents_remember/serving/operator_inbox_posts.py:169-177 |
 | Defines the function `_persist_post` (lines 144-175). | `_persist_post` | mcp/src/agents_remember/serving/operator_inbox_posts.py:180-189 |
-| Defines the function `_deliver_post` (lines 178-199). | `_deliver_post` | mcp/src/agents_remember/serving/operator_inbox_posts.py:178-199 |
+| Defines the function `_deliver_post` (lines 178-199). | `_deliver_post` | mcp/src/agents_remember/serving/operator_inbox_posts.py:200-221 |
 | Defines the function `post_operator_inbox_entry` (lines 202-288) — Create, persist, deliver, and describe one post through the shared real owner.. | `post_operator_inbox_entry` | mcp/src/agents_remember/serving/operator_inbox_posts.py:202-288 |
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint-local architect custody for inbox post
+  routing. Verification metadata remains pinned until closeout stamps the code commit.
 
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the N14 post-time owner
   re-resolution (`_post_address` generalized to every owner-addressed post with the

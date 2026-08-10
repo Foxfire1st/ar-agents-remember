@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -32,6 +32,12 @@ normalized model/effort is never converted into composer paste or generated sess
 Explicit free-form commands remain user-authored.
 
 ### Logic
+
+The installed lifecycle router now distinguishes the unbound developer free chat from the
+sprint-bound architect command seat it launches. The hosted dispatch chain preserves explicit
+repository+sprint provenance through architect → orchestrator → manager, and the liveness doctrine
+defines subordinate membership structurally from the manager's direct spawn topology rather than
+from the finite role name `worker`.
 
 Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/SKILL.md`. The router has exactly three conditions, in order: (1) `AR_SPAWN_ROLE` selects the matching role; (2) a fresh-session role brief selects that role; (3) otherwise the session remains a research-capable **free-chat launcher** and spawns a clean architect with the settings-owned profile for role-shaped work. The spawned architect owns the developer conversation; the orchestrator remains backend-only; curator remains the dedicated onboarding writer. Solo hat-collapse belongs only to the architect after the developer approves the short-root question. The minimal frame is the only shared machinery: the six `lifecycle_*` signals, fleeting-to-persistent promotion at `worktree_start`, `awaiting-developer` auto-resume on the next AR call, and server-side identity. A spawned role that never touches mutating AR tools never instantiates a lifecycle, and no role adopts its spawner's lifecycle. Shared invariants include durable-artifact continuity, architect terminal custody, role-seat immutability, the manager -> builder -> reviewer -> curator leaf chain, the decision relay, and dependency-graph scheduling: independent work runs in parallel by default up to the applicable `orchestration.concurrency` cap; serial execution must name a gate, shared-file one-writer dependency, or explicit ruling. The architect proposes a strategist pass and it runs only after developer approval; settings cannot auto-run it.
 
@@ -178,6 +184,10 @@ escalation ladder (renudge → skip-level → architect custody, then respawn) i
 role watches or nudges on its own initiative.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint-qualified command-seat dispatch and the
+  all-subordinate liveness contract in the packaged lifecycle skill. Verification metadata remains
+  pinned until closeout stamps the code commit.
 
 - 2026-08-09T13:59+02:00 — 260713-TES-L5 curator completion round 2: refreshed this synced
   runtime copy for the judgment-demolition doctrine (fact-relay supervision; ladder retired);

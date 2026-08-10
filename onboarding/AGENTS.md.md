@@ -6,8 +6,8 @@
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 
 ## Purpose
 
@@ -23,6 +23,13 @@ before implementation.
 ## Code Commentary
 
 ### Logic
+
+The current launcher contract is sprint-local rather than global. A developer-opened free chat
+launches an architect seat that is bound to one qualified `repo/sprint/leaf` context; that
+architect then launches the sprint's orchestrator, and the orchestrator launches managers inside
+the same repository+sprint provenance. Named command seats do not fall back to a workspace-wide
+architect or orchestrator identity. The dashboard and notifier can therefore host concurrent
+sprints without cross-sprint custody, routing, or wake ownership.
 
 The file starts by declaring that `agents-remember` is source package code,
 not the live runtime after installation. It gives a fallback handoff for the
@@ -174,14 +181,14 @@ file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-200 |
+| The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-198 |
 | The repo routes sessions by role through the `l-01-agent-lifecycles` skill: spawned agents follow their briefs, a developer session runs the architect lifecycle, and the build decision at `decide` is a research-only exit or a durable `w-02-light-task-workflow` skill task (chat is never a build route); the standalone chat workflow and the chat build are retired. | `## Start Here — Route By Role` | AGENTS.md:16-50 |
-| Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | `## Memory And Onboarding` | AGENTS.md:51-100 |
-| Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | `## Boundaries` | AGENTS.md:127-147 |
-| Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | `## Source Layout` | AGENTS.md:101-126 |
-| Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | `## Source Layout` | AGENTS.md:101-126 |
-| Code-quality routing names `python -m agents_remember.code_quality.check` as the gate, states that it takes no path arguments because its scope is `git ls-files '*.py'`, lists four enforcing steps plus mandatory CRAP, states that nothing in the gate is exempt and no baseline or allowlist may be added, tells agents how to clear a complexity finding by extraction, states that Radon reports and cannot fail a gate while remaining CRAP's complexity engine, and requires the Stability/Reclamation doctrine before store, loop-over-store, queue, or append-only-log changes. | `## Code Quality Instructions` | AGENTS.md:148-200 |
-| Source-layout and boundary notes make `scripts/harness/` the single source for the eight self-hosted harness starter packages, route their refresh through `scripts/sync-harness.py`, and separate generated starter files from the per-harness files a starter package owns alone. | `## Source Layout` | AGENTS.md:101-126 |
+| Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | `## Memory And Onboarding` | AGENTS.md:49-98 |
+| Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | `## Boundaries` | AGENTS.md:125-145 |
+| Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | `## Source Layout` | AGENTS.md:99-124 |
+| Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | `## Source Layout` | AGENTS.md:99-124 |
+| Code-quality routing names `python -m agents_remember.code_quality.check` as the gate, states that it takes no path arguments because its scope is `git ls-files '*.py'`, lists four enforcing steps plus mandatory CRAP, states that nothing in the gate is exempt and no baseline or allowlist may be added, tells agents how to clear a complexity finding by extraction, states that Radon reports and cannot fail a gate while remaining CRAP's complexity engine, and requires the Stability/Reclamation doctrine before store, loop-over-store, queue, or append-only-log changes. | `## Code Quality Instructions` | AGENTS.md:146-198 |
+| Source-layout and boundary notes make `scripts/harness/` the single source for the eight self-hosted harness starter packages, route their refresh through `scripts/sync-harness.py`, and separate generated starter files from the per-harness files a starter package owns alone. | `## Source Layout` | AGENTS.md:99-124 |
 | The gate command this file names, with the enforcing/report split it describes — and the `diff-coverage` step this file omits. | `run_quality_check`; `run_diff_coverage` | mcp/src/agents_remember/code_quality/check.py:308-359; mcp/src/agents_remember/code_quality/check.py:524-578 |
 | The binding coverage floor `AGENTS.md` does not mention; `CONTRIBUTING.md` is the document that does. | `DiffCoverage`; `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:56-77; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
 | The report template this file says must record Radon rows as `reported`. | `## Tool Results` | system/defaults/examples/memory-repo/code-quality-report-template.md:18-39 |
@@ -196,6 +203,10 @@ delegates sibling-repository work to the installed runtime instructions.
 | No sibling repository citation is required; the cross-repo behavior is a handoff instruction in this file. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the free-chat launcher and sprint-qualified
+  architect → orchestrator → manager chain, including the removal of global named-seat fallback.
+  Verification metadata remains pinned until closeout stamps the code commit.
 
 - 2026-08-02T16:46+02:00 — 260731-EFA-L6 curator W1-B03: repaired 11 citation rows with exact anchors and source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -163,8 +163,8 @@ live/dead reopen projection over the shared opener.
 | Same-pair live reopen preserves the original endpoint; changed-pair reopen conflicts with actual truth; dead replacement uses the new pair and a fresh endpoint. | "test_post_open_reopen_preserves_live_truth_conflicts_then_replaces_dead"; "launch-selection-conflict" | mcp/tests/test_terminal_ws_websocket_2.py:209-209; mcp/tests/test_terminal_ws_websocket_2.py:233-233 |
 | Partial, plain-terminal, and non-native selections all fail before host ensure. | "test_post_open_rejects_partial_or_non_harness_selection_before_spawn"; "launch-selection-invalid" | mcp/tests/test_terminal_ws_websocket_2.py:247-247; mcp/tests/test_terminal_ws_websocket_2.py:270-270 |
 | WebSocket and catalog cases continue to cover raw PTY framing, parallel attachments, liveness, leaf/role claims, and landed inspection. | "class ApplyTerminalInputTests(unittest.TestCase):"; "class TerminalWebSocketTests(unittest.TestCase):"; "def feed_all(self, data: bytes) -> None:  # pragma: no cover"; "_TERMINAL_EXIT_FRAME,"; "client.websocket_connect(\"/api/terminal/restored\") as ws,"; "/api/terminal/chat-2"; "/api/terminal/term-2" | mcp/tests/test_terminal_ws.py:390-390; mcp/tests/test_terminal_ws.py:422-422; mcp/tests/test_terminal_ws.py:363-363; mcp/src/agents_remember/serving/app.py:49-49; mcp/tests/test_terminal_ws_websocket_1.py:158-158; mcp/tests/test_terminal_ws_websocket_2.py:119-119; mcp/tests/test_terminal_ws_websocket_2.py:126-126 |
-| `TerminalOpenRequest` carries optional model/effort, and the HTTP route validates them into one resolved launch before calling the shared opener. | "class TerminalOpenRequest(BaseModel):"; "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_common.py:264-264; mcp/src/agents_remember/serving/_app_terminal_routes.py:221-221 |
-| A launch conflict returns 409 with the retained session's actual model, effort, control state, and endpoint. | "def _terminal_entry_payload(entry: TerminalCatalogEntry) -> dict[str, Any]:"; "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:203-203; mcp/src/agents_remember/serving/_app_terminal_routes.py:221-221 |
+| `TerminalOpenRequest` carries optional model/effort, and the HTTP route validates them into one resolved launch before calling the shared opener. | "class TerminalOpenRequest(BaseModel):"; "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_common.py:264-264; mcp/src/agents_remember/serving/_app_terminal_routes.py:222-222 |
+| A launch conflict returns 409 with the retained session's actual model, effort, control state, and endpoint. | "def _terminal_entry_payload(entry: TerminalCatalogEntry) -> dict[str, Any]:"; "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:204-204; mcp/src/agents_remember/serving/_app_terminal_routes.py:222-222 |
 | Direct opener regressions provide the complementary same/different/dead/concurrent transaction and role-path authority. | `OpenTerminalSessionTests`; "spawnedByLifecycle"; "seatRole"; "ar-owner-1"; `reviewer_entry`; `first_worker`; `KnobApplicationTests`; "attempted metadata rewrite"; `pair_conflict`; "other-workspace"; "resolved launch requested 'codex'"; `second_runner`; `open_after_barrier` | mcp/tests/test_terminal_opener.py:156-335; mcp/tests/test_terminal_opener.py:338-630 |
 
 ## Cross-Repo References

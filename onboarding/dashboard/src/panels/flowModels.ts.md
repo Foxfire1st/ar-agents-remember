@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/flowModels.ts`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T21:17+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -32,6 +32,10 @@ spawned backend event loop. The strategist remains the spawn-first sprint planne
 ## Code Commentary
 
 ### Logic
+
+Flow-model command-seat identity now includes the stored repository+sprint provenance carried by
+the terminal catalog. That additive identity lets the panel distinguish equal role names in two
+concurrent sprints without inferring scope from labels or global role order.
 
 **Types** cit:([`Status`, `FlowSegment`], dashboard/src/panels/flowModels.ts:9-9; dashboard/src/panels/flowModels.ts:42-42): `Status = "current" | "proposed"` drives edge colour (mint vs amber dashed).
 The four segment shapes form the `FlowSegment` union (L42): `FlowStart` (a labelled entry pill +
@@ -157,6 +161,9 @@ As of the 260703-L8 remediation the registry drew the then-converged doctrine: a
 No meaningful cross-repo references found.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint provenance as part of command-seat flow
+  identity. Verification metadata remains pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the superseded Types
   prose citation and the `n/a` table rows with exact anchors; deleted the unresolvable

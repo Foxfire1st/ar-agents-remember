@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/interactionAnswer.ts`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-09T19:36+0200 |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | The `OpenSession` mirror of both pending slots + the catalog mapping that carries them. | `OpenSession` | dashboard/src/data/sessions.ts:28-83 |
 | The exact-session backend response endpoint used by all modes. | `api_terminal_interaction_response` | mcp/src/agents_remember/serving/harness_control_api.py:430-487 |
 | The bar that renders one bar per pending payload and badges the agent label. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-93 |
-| The rail preview naming WHO asks via the same label helper. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:149-236 |
+| The rail preview naming WHO asks via the same label helper. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
 | The waiting-seat triage titles deriving asker + preview from the helpers. | `SessionsView` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23 |
 | The round-trip state slice this path's outcomes land in. | `sessionCockpitStore` | dashboard/src/data/sessionCockpitStore.ts:588-601 |
 | The suite: kind matrix, lifecycle-free structured/scalar round-trips, epoch retry, and agent-label pins. | "submitInteractionAnswer — the session-direct route" | dashboard/src/data/interactionAnswer.test.ts:317-519 |

@@ -6,8 +6,8 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 
 ## Purpose
 
@@ -48,6 +48,11 @@ surface rather than the default path. The route also retains the three-state hos
 readiness, catalog-concurrency, and serving-cutover contracts.
 
 ## Hot Path Summary
+
+The current orchestration references describe free chat as the launcher and
+architect/orchestrator/manager as sprint-bound command seats. Any unbound command-seat wording is
+limited to migration compatibility; runtime identity and custody come from persisted
+repository+sprint provenance.
 
 For native launch and control questions, read `harnesses.md` for the dynamic catalog,
 model-gated effort, duplicate-selector refusal, distinct Claude startup evidence sources, and the
@@ -140,6 +145,9 @@ places the full wrapper at the master integration gate inside `worktree_integrat
 default, fail-loud family) — the schema source for the full-gate memory cap.
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed the reference route for sprint-bound command
+  seats and migration-only unbound language. Verification metadata remains pinned until closeout.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the escalation-family
   removal, the `escalationBudget` load-shed re-wiring, and the fact-relay terminal vocabulary

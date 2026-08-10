@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/terminalOpen.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ shapes went to new files.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | All five response-body interfaces. | `TerminalOpenSuccessBody` | dashboard/src/types/terminalOpen.ts:10-26 |
-| The route these mirror (`api_terminal_open`, 200/400/409 bodies). | `api_terminal_open` | mcp/src/agents_remember/serving/_app_terminal_routes.py:649-664 |
+| The route these mirror (`api_terminal_open`, 200/400/409 bodies). | `api_terminal_open` | mcp/src/agents_remember/serving/_app_terminal_routes.py:675-690 |
 | The synchronous selection gate (partial pair / non-native only). | `resolve_terminal_open_selection` | mcp/src/agents_remember/serving/harness_control_api.py:156-179 |
 | The vocabularies imported instead of re-declared. | `TerminalOpenKind` | dashboard/src/types/terminalCatalog.ts:7-7 |
 | The classifier consuming every body verbatim (`classifyOpenResponse`). | `classifyOpenResponse` | dashboard/src/data/launchFlow.ts:182-195 |

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -40,6 +40,10 @@ across that prune boundary because their source item is repository/branch-scoped
 than lifecycle-scoped. These rows are throwaway interaction data, not durable task records.
 
 ## Hot Path Summary
+
+TES-L6 keeps owner routing sprint-local. `signal_routing.py` resolves architect custody and rebind
+chains inside the row's exact repository+sprint identity, while `seats.py` names command roles
+without constraining the notifier's structurally discovered subordinate roles.
 
 **260731-EFA-L5 — the durable-store contract. Read this before changing how any store in this route
 touches disk.** The six JSONL stores here (`store.py`, `expectation_rows.py`,
@@ -481,6 +485,10 @@ parse-compat; the confirmed-gone reclamation fold still writes `ladder-resolved`
 (reviewer F4).
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: added exact-sprint routing and command-role versus
+  subordinate-role separation to the controlplane hot path. Verification metadata remains pinned
+  until closeout.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the ladder/orphan/skip-level
   demolition, the owner-visible expectation surface, and the legacy parse-compat posture in

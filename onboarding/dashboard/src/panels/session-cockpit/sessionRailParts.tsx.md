@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/sessionRailParts.tsx` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                  |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`                  |
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -23,6 +23,10 @@ blocks, attention markers, and the `BulkTarget` type.
 ## Code Commentary
 
 ### Logic
+
+Rail section components now receive and render sprint-qualified group labels and keep the legacy
+unbound section visually explicit. The parts remain presentation-only: grouping is computed by the
+rail model from persisted provenance, so labels cannot create cross-sprint ownership.
 
 `RailRow` renders one seat row with chip tone/derived state and action buttons;
 `BulkConfirm` renders the sprint/master bulk confirm surface; `RailMasterBlock`
@@ -53,7 +57,7 @@ configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The rail row and bulk parts. | `RailRow`; `BulkConfirm`; `RailMasterBlock` | dashboard/src/panels/session-cockpit/sessionRailParts.tsx:337-411; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:433-467; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:567-650; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:62-62 |
+| The rail row and bulk parts. | `RailRow`; `BulkConfirm`; `RailMasterBlock` | dashboard/src/panels/session-cockpit/sessionRailParts.tsx:316-386; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:409-442; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:537-579 |
 
 ## Cross-Repo References
 
@@ -64,6 +68,9 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the sprint-group and legacy-section presentation
+  contract. Verification metadata remains pinned until closeout stamps the code commit.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the rail

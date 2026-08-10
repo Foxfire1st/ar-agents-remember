@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T08:54+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`|
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`|
+| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -167,7 +167,7 @@ boundaries rather than duplicating their policy.
 | The exact-session client reconciles a possibly lost submission by request id and bridge epoch. | `reconcile_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:273-303 |
 | Public serializers deliberately omit the internal raw evidence mapping. | `public_receipt_json` | mcp/src/agents_remember/serving/harness_control_models.py:930-941 |
 | The app registers these routes and passes `config.coordination_root` into the one `ConversationRuntime` scope. | "register_harness_control_routes(" | mcp/src/agents_remember/serving/app.py:265-265 |
-| The app feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`. | "resolve_terminal_open_selection(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:234-234 |
+| The app feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`. | "resolve_terminal_open_selection(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:235-235 |
 | The declared models and the shared `SESSION_CONTROL_RESPONSES` table these ten routes name, plus the two submit-only refusals. | `SESSION_CONTROL_RESPONSES`; `PreDispatchFailureRefusal` | mcp/src/agents_remember/serving/response_contract.py:161-167; mcp/src/agents_remember/serving/response_contract.py:1078-1085 |
 | The suite that enforces the declarations by driving every route and validating the real body. | `test_harness_control_routes_conform` | mcp/tests/test_serving_response_conformance_cases_2.py:265-407 |
 | Route tests pin refresh, raw-free public responses, exact correlation, liveness-before-support ordering, and honest set results. | `test_pre_session_capabilities_freeze_envelope_and_refresh` | mcp/tests/test_serving_harness_control_api.py:129-147 |
