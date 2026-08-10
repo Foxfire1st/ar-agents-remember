@@ -9,8 +9,8 @@ Total output lines: 2259
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`|
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -746,6 +746,12 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   holds its log's lock. No other route bullet changed: nothing else under `serving/` was touched by
   this leaf. Verification metadata untouched.
 ## Update History
+
+- 2026-08-10T19:57:55+02:00 — No route impact: 260731-EFA-L21 repairs
+  `terminal_liveness.py`'s type-only `HarnessId` import to the canonical
+  `models.conversations.identity` owner exposed by L9. Serving behavior, liveness authority, and
+  route responsibilities are unchanged. Verification metadata remains pinned until closeout
+  stamps the L21 code commit.
 
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: refreshed the serving/ route body for the current
   staged delivery, terminal-catalog, notifier, projection, and conversation seams; the four

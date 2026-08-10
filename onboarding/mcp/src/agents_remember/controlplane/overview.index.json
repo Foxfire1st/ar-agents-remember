@@ -85,7 +85,7 @@
     "transitions"
   ],
   "hotPath": {
-    "summary": "TES-L6 keeps owner routing sprint-local. `signal_routing.py` resolves architect custody and rebind chains inside the row's exact repository+sprint identity, while `seats.py` names command roles without constraining the notifier's structurally discovered subordinate roles. **260731-EFA-L5 \u2014 the durable-store contract. Read this before changing how any store in this route touches disk.** The six JSONL stores here (`store.py`, `expectation_rows.py`, `operator_inbox_store.py`, `attention_dismissals.py`, `orchestration_nudges.py`, `agent_notifier_signals.py`) were written independently against t...",
+    "summary": "**260731-EFA-L21 \u2014 target containment precedes filesystem effects.** The shared durable-store lock, append, and rewrite primitives ask the kernel checkout policy to authorize the target before creating a parent directory, lock file, temporary file, or durable row. In undeclared linked worktree mode only the deterministic `provider-runtime/dev-ar-coordination` subtree is writable; trusted MCP/dashboard and explicit test modes retain their declared roots. TES-L6 keeps owner routing sprint-local. `signal_routing.py` resolves architect custody and rebind chains inside the row's exact repository...",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
@@ -147,16 +147,16 @@
       "stamps",
       "store.py",
       "store",
-      "TES",
+      "provider-runtime/dev-ar-coordination",
       "EFA",
-      "JSONL",
+      "L21",
+      "MCP",
+      "TES",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "7bf564a663bb61f12844dee39538dd09a1633cdb",
+      "7b6c8d8eee67c654a11a58ed1d3476db004b8d6e",
       "/../../overview.md",
-      "controlplane/",
-      "escalation_ladder.py",
-      "rung_due"
+      "controlplane/"
     ]
   },
   "fallback": {

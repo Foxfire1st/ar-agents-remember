@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/_global_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-10T18:31+02:00 |
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e` |
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ Owned module-level mutable state that every test must leave as it found it.
 Module-level surface:
 
 - `OwnedMutableState` (class, lines 14-19) — One deliberately-enumerated global and the operations needed to restore it.
-- `_declared_snapshot` (function, lines 22-23)
+- `_declared_snapshot` (function, lines 22-23) — Snapshot the kernel-owned checkout execution mode.
 - `_declared_restore` (function, lines 26-28)
 - `snapshot_owned_mutable_state` (function, lines 42-43)
 - `restore_owned_mutable_state` (function, lines 46-54) — Restore every owned global, returning the complete list that changed.
@@ -37,7 +37,8 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+- The owned process declaration now lives in `kernel.primitives.checkout_coordination`; the
+  register restores its `mcp`/`dashboard`/`test` mode rather than a control-plane-local role dict.
 
 ### Todos
 
@@ -57,5 +58,9 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `preserve_owned_mutable_state` (lines 58-64) — Explicitly contain a production entry point whose contract is to set process state.. | `preserve_owned_mutable_state` | mcp/tests/_global_state.py:58-64 |
 
 ## Update History
+
+- 2026-08-10T18:31+02:00 — 260731-EFA-L21: moved owned-state snapshot/restore to the kernel
+  checkout execution declaration, including explicit pytest mode. Verification metadata remains
+  pinned until approved closeout.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

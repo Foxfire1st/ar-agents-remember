@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/controlplane/durable_store.py`   |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-08-01T19:10+02:00                                    |
-| lastVerifiedCommitHash |                                                           `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                                           2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-10T18:31+02:00                                    |
+| lastVerifiedCommitHash |                                                           `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`|
+| lastVerifiedCommitDate |                                                           2026-08-10T22:27:45+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -105,11 +105,13 @@ directly against all six record classes: minor `1.99` accepted, major `2.0` reje
 rejected. Undo the validator and every reader silently accepts a record it cannot be trusted to
 interpret.
 
-**Process role.** `ProcessRole` is the two long-lived writers, mcp and dashboard.
-`declare_process_role(role)` is called once at a process entry point and `declared_process_role()`
-reports it, or `None` for a CLI invocation, script or test that declared nothing. There are exactly
-**three** callers, and together they cover the two long-lived processes in all their launch modes:
-`mcp/server.py` `main`, `cli/dashboard.py` `run`, and `cli/dashboard.py` `_dev_app`. The first two
+**Process role and checkout execution.** `ProcessRole` remains the two long-lived writers, mcp and
+dashboard, but the declaration state now has one kernel owner:
+`kernel.primitives.checkout_coordination`. `declare_process_role(role)` delegates to that primitive
+and `declared_process_role()` narrows `mcp`/`dashboard`, returning `None` for the explicit `test`
+mode and for an undeclared CLI. There are exactly three daemon entry paths: `mcp/server.py` `main`,
+`cli/dashboard.py` `run`, and `cli/dashboard.py` `_dev_app`. MCP declares before `load_config`; the
+dashboard paths already declared before their config load. The foreground entry points
 sit at the true process entry point rather than inside `create_server` / `create_app`, which the
 test suite calls in-process — declaring there would stamp a role onto every later test in the same
 interpreter.
@@ -148,6 +150,13 @@ load-bearing part of this module:
 logs accept both processes as writers; attention-dismissals and supervisor-signals accept the
 dashboard alone. Locking is *not* one of the differences — all six lock, always.
 
+**Checkout target containment precedes locking.** `exclusive_access`, `append_line`, and
+`rewrite_lines` all call `require_durable_write_target`. In an undeclared linked checkout, the only
+allowed target is below that leaf's `provider-runtime/dev-ar-coordination`; an escape raises before
+the target parent or lockfile exists. Declared MCP/dashboard and explicit test modes retain their
+normal roots. This is the second half of checkout isolation: synthetic runtime config routes normal
+CLI construction, while this I/O choke point refuses a manually constructed live log path.
+
 **The locking primitives.** `lock_path_for(log)` is the sibling lockfile, named after the log.
 `thread_mutex_for(log)` returns the per-log process-wide `RLock`, created once under a registry
 lock so two threads reaching an unseen log get the same object. `_LockDepth` is a
@@ -162,7 +171,8 @@ never the other order. `require_lock_held(log, store)` refuses a rewrite whose c
 not hold the log's lock.
 
 **The I/O.** `read_log_text(log)` returns the raw text or `""` when absent — the one read both
-policies share. `append_line(log, line)` writes one record and `fsync`s before the handle closes.
+policies share. `append_line(log, line)` first enforces checkout containment, then writes one record
+and `fsync`s before the handle closes.
 `rewrite_lines(log, lines, ownership)` is the only destructive rewrite in the control plane: it
 calls `require_lock_held` first, **never unlinks** (an empty record set is an empty file), builds a
 pid-scoped hidden temp name, fsyncs the temp, `os.replace`s it, then fsyncs the parent directory so
@@ -360,7 +370,7 @@ only for other files, and every one below was re-verified against the working tr
 | --- | --- | --- |
 | The `CONTRACT FRONT MATTER` block declaring `ar-durable-store/1.0`, the unconditional per-log serialization, single-owner compaction, the local-POSIX platform constraint and the two read policies. | "Contract:"; `DURABLE_STORE_CONTRACT` | mcp/src/agents_remember/controlplane/durable_store.py:3-8; mcp/src/agents_remember/controlplane/durable_store.py:42-42 |
 | The heading that separates the two mechanisms: the lock is unconditional and is what took the loss to zero, while ownership is advisory and opt-in and works structurally rather than at runtime. Also where the module names all three `declare_process_role` call sites, the third being the `--reload` spawn worker. | `declare_process_role`; `StoreOwnership`; `is_compaction_owner`; `exclusive_access` | mcp/src/agents_remember/controlplane/durable_store.py:76-84; mcp/src/agents_remember/controlplane/durable_store.py:92-132; mcp/src/agents_remember/controlplane/durable_store.py:348-394 |
-| The read-policy section: strict for authority because a skipped record could drop an `applied` marker, tolerant for projection because a tick must degrade rather than crash. Both bullets, TOLERANT included — an earlier range in this card stopped five lines short of it and cited only the strict half. | "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:14-24 |
+| The read-policy section: strict for authority because a skipped record could drop an `applied` marker, tolerant for projection because a tick must degrade rather than crash. Both bullets, TOLERANT included — an earlier range in this card stopped five lines short of it and cited only the strict half. | "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:13-24 |
 | The leaf's most important statement, and the one this card's read-policy body paraphrases: the three tolerant stores drop an unparseable row permanently rather than for one tick, which is a cost and not a defect only because none of the three carries authority — and if one ever does, its rewrite must be moved onto a strict read first, in the same change. | "Their rewrites may permanently drop malformed" | mcp/src/agents_remember/controlplane/durable_store.py:19-24 |
 | The version rule as implemented: the major is compared for equality, so `"0.9"` is refused exactly as `"2.0"` is and an unparseable version is refused outright; `DurableRecord` validates `schemaVersion` on the way in so neither reader needs a version branch. | `schema_version_supported`; `SUPPORTED_SCHEMA_MAJOR`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:55-55; mcp/src/agents_remember/controlplane/durable_store.py:224-245; mcp/src/agents_remember/controlplane/durable_store.py:248-271 |
 | `declare_process_role` and `declared_process_role`: the opt-in declaration the two advisory checks read, absent in every CLI invocation and test. Its docstring names the three call sites and states why `_dev_app` is the deliberate exception and the only factory that declares. | `declare_process_role`; `declared_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:76-84; mcp/src/agents_remember/controlplane/durable_store.py:87-89 |
@@ -371,7 +381,7 @@ only for other files, and every one below was re-verified against the working tr
 | `thread_mutex_for` states that `flock` already excludes two threads of one process, so the mutex closes a plausible regression rather than a reproducible loss, and explains why it is re-entrant. Its account of how the six shape their reclaims is the one recorded under Todos. | `thread_mutex_for` | mcp/src/agents_remember/controlplane/durable_store.py:301-315 |
 | `_verify_lock_capability` takes the lock twice from two file descriptions and raises `UnsafeLockFilesystemError` when the second acquisition succeeds. | `_verify_lock_capability` | mcp/src/agents_remember/controlplane/durable_store.py:318-345 |
 | `exclusive_access` takes the per-log mutex before the flock, and the thread-local `_LockDepth` counter makes a nested acquisition return before either lock is touched. `lock_path_for` names the lockfile after the whole log and states why renaming it makes a rolling restart unsafe, with no compatibility path. | `exclusive_access`; `_LockDepth`; `lock_path_for` | mcp/src/agents_remember/controlplane/durable_store.py:274-282; mcp/src/agents_remember/controlplane/durable_store.py:348-394; mcp/src/agents_remember/controlplane/durable_store.py:291-298 |
-| `require_lock_held` raises from inside `rewrite_lines`, so no store can rewrite a log it has not locked however the call was reached. | `require_lock_held`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:397-415; mcp/src/agents_remember/controlplane/durable_store.py:439-446 |
+| `_require_rewrite_access` first enforces checkout-target confinement and then calls `require_lock_held`, so a rewrite can neither escape a linked leaf's dummy coordinator nor proceed without the store lock. | `_require_rewrite_access`; `require_lock_held`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:408-427; mcp/src/agents_remember/controlplane/durable_store.py:450-472 |
 | The one read both policies share; the only append in the package, which fsyncs before the handle closes; and the only rewrite, which never unlinks the log, uses a pid-scoped hidden temp, and fsyncs both the temp and the parent directory. | `read_log_text`; `append_line`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:427-431; mcp/src/agents_remember/controlplane/durable_store.py:434-445; mcp/src/agents_remember/controlplane/durable_store.py:448-455 |
 | The MCP process declares its role at the true entry point, not in the `create_server` factory a test would call in-process. | `main` | mcp/src/agents_remember/mcp/server.py:35-57 |
 | The dashboard declares its role in `run`, for the same reason. | `run` | mcp/src/agents_remember/cli/dashboard.py:161-196 |
@@ -392,6 +402,11 @@ repository; nothing outside it reads these logs.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-08-10T18:31+02:00 — 260731-EFA-L21: process declaration moved to the kernel checkout-policy
+  owner; lock, append, and rewrite primitives now fail closed against live/outside targets for
+  undeclared linked-checkout code before creating filesystem state. Verification metadata remains
+  pinned until approved closeout.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded the cross-store lock-order doctrine
@@ -455,4 +470,3 @@ repository; nothing outside it reads these logs.
   measured; `rewrite_lines` never unlinking; the strict/tolerant read split with the
   rewrite-reads-strictly property stated per store rather than as a blanket; and the process-wide
   `RLock` described as defending a simulated regression rather than fixing an existing thread race.
-

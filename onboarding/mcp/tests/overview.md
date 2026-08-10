@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`|
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
+| lastUpdated | 2026-08-10T18:31+02:00 |
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`|
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -20,6 +20,11 @@ Total output lines: 1813
 ## Purpose
 
 Regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
+
+Checkout coordination isolation coverage (`test_checkout_coordination_isolation.py`) reproduces
+the L19 unpublished-writer failure shape without touching live state: loaded-source linked/primary
+classification, synthetic leaf config, incident-shaped inbox placement, pre-lock escape refusal,
+manual rewrite refusal, trusted MCP preservation, and explicit pytest temporary-root behavior.
 
 The stable structured-conversation contract gate: the contract suite uses
 hostile sibling-product matrices to pin purpose-bound cursors, exact provenance, canonical status,
@@ -885,6 +890,10 @@ proof of memory preflight → hook → wrapper → exact-index commit, including
 tree edit that must stay out of the commit.
 
 ## Update History
+
+- 2026-08-10T18:31+02:00 — 260731-EFA-L21: added the checkout-coordination isolation regression
+  suite and updated global-state tests for the explicit kernel-owned pytest mode. Verification
+  metadata remains pinned until approved closeout.
 
 - 2026-08-10T12:46+02:00 — L9 closeout-order repair: recorded focused entity-preflight and
   real-hook/exact-index regression coverage; verification metadata stays pinned until closeout

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T13:20+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-10T18:31+02:00                     |
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e` |
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -43,10 +43,13 @@ is the [registration route overview](registration/overview.md), not this file.
 
 `run_server(config)` is `create_server(config).run()`.
 
-`main(argv)` parses a required `--config` (an absolute path to trusted MCP settings JSON), loads it
-through `load_config` and turns a `ConfigError` into an argparse error, then calls
-`prepare_mcp_process(config)` between `load_config` and `run_server`. The application-layer wrapper
-declares the MCP durable-store role and then invokes the dashboard-autostart hook. That hook is a no-op
+`main(argv)` parses a required `--config` (an absolute path to trusted MCP settings JSON), calls
+`declare_mcp_process()` **before** `load_config`, turns a `ConfigError` into an argparse error, then
+calls `prepare_mcp_process(config)` between config loading and `run_server`. The early declaration
+is load-bearing for worktree-hosted MCP development: without it the checkout policy would classify
+the process as an undeclared CLI and ignore the supplied authority in favor of the leaf-local dummy
+coordinator. `prepare_mcp_process` idempotently reasserts the same declaration and invokes the
+dashboard-autostart hook. That hook is a no-op
 unless the trusted settings set `dashboard.autoStart`; otherwise a daemon thread adopts a healthy
 dashboard daemon, spawns an absent one, or restarts one on version mismatch. It is total and
 threaded so it can never delay or break the stdio handshake this process exists for, and its only
@@ -54,8 +57,8 @@ output goes to stderr — stdout is the MCP protocol.
 
 ### Durable-store process-role startup is owned by the application boundary
 
-`main` calls the application-layer `prepare_mcp_process` wrapper, which declares the MCP role before
-optional dashboard supervision cit:([`main`], mcp/src/agents_remember/mcp/server.py:35-57) cit:([`prepare_mcp_process`], mcp/src/agents_remember/application/server_startup.py:20-23).
+`main` calls the application-layer `declare_mcp_process` before authority loading, then the
+`prepare_mcp_process` wrapper before optional dashboard supervision.
 `controlplane/durable_store.py` names two concurrent writers of the six
 control-plane JSONL logs, `"mcp"` and `"dashboard"`, and the declaration is what lets shared code
 ask which one it is running in. `StoreOwnership.is_compaction_owner()` answers `role is None or
@@ -83,7 +86,8 @@ that skips this line loses no records — it just stops being distinguishable fr
   per-tool special cases.
 - Keep `install_compact_content()` and `install_ambient(...)` at the top of `create_server()`,
   before tools can be exercised.
-- **`prepare_mcp_process(config)` stays in `main` and process-role declaration must never move into `create_server`.**
+- **`declare_mcp_process()` stays before `load_config`, `prepare_mcp_process(config)` stays before
+  `run_server`, and neither declaration may move into `create_server`.**
   `create_server` is called in-process by the test suite and `_declared` has no reset, so declaring
   there marks the whole interpreter `"mcp"` — after which `is_compaction_owner()` answers `True` for
   every MCP-owned log in a test that is exercising the dashboard, and `check_declared_writer()`
@@ -110,6 +114,11 @@ No sibling repository defines this process wiring.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-10T18:31+02:00 — 260731-EFA-L21: MCP now establishes its trusted execution mode before
+  loading authority settings, while the existing preparation operation remains before serving and
+  idempotently reasserts the same role. Verification metadata remains pinned until approved
+  closeout.
+
 - 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound registrar imports/collection and tools builder imports/exports to packet-specified source spans. Verification metadata unchanged.
 
 - 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: moved the live account to the current

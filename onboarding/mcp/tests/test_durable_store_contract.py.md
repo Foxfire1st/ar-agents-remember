@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/tests/test_durable_store_contract.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-08-01T14:20+02:00                       |
-| lastVerifiedCommitHash |                                              `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                              2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-10T18:31+02:00                       |
+| lastVerifiedCommitHash |                                              `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`|
+| lastVerifiedCommitDate |                                              2026-08-10T22:27:45+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -201,7 +201,7 @@ the cross-process and authority halves.
 | The per-log mutex under test, and its own statement that `flock` already excludes threads so the mutex closes a dependence on the handle rather than a reproducible race. | `thread_mutex_for`; `lock_path_for` | mcp/src/agents_remember/controlplane/durable_store.py:291-298; mcp/src/agents_remember/controlplane/durable_store.py:301-315 |
 | The two-lock acquisition order and the thread-local depth counter the re-entrancy test composes against. | `exclusive_access`; `_LockDepth` | mcp/src/agents_remember/controlplane/durable_store.py:274-282; mcp/src/agents_remember/controlplane/durable_store.py:348-394 |
 | The capability probe `_IgnoredFlock` defeats, and the refusal text asserted verbatim. | `_verify_lock_capability` | mcp/src/agents_remember/controlplane/durable_store.py:318-345 |
-| The rewrite invariant and the rewrite itself: refuses without the lock, never unlinks, pid-scoped temp, cleanup on `BaseException`. | `require_lock_held`; `rewrite_lines`; `append_line` | mcp/src/agents_remember/controlplane/durable_store.py:397-415; mcp/src/agents_remember/controlplane/durable_store.py:439-446; mcp/src/agents_remember/controlplane/durable_store.py:425-436 |
+| The shared write boundary first applies checkout-target confinement, then retains the tested rewrite invariants: refusal without the lock, never unlinking, atomic publication, and durable append. Checkout-isolation behavior itself belongs to the focused L21 suite. | "def require_lock_held(log_path: Path, store: str) -> None:"; "def append_line(log_path: Path, line: str) -> None:"; "def rewrite_lines(log_path: Path, lines: list[str], ownership: StoreOwnership) -> None:"; "def _require_rewrite_access(log_path: Path, store: str) -> None:"; "def test_incident_shaped_inbox_write_lands_only_in_leaf_dummy_root(self) -> None:" | mcp/src/agents_remember/controlplane/durable_store.py:408-427; mcp/src/agents_remember/controlplane/durable_store.py:436-472; mcp/tests/test_checkout_coordination_isolation.py:149-166 |
 | The single version rule and the validator that gives the strict and tolerant readers their behaviour without a version branch in either. | `schema_version_supported`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:224-245; mcp/src/agents_remember/controlplane/durable_store.py:248-271 |
 | The advisory ownership methods exercised in both directions by the role test, and the two registers it uses. | `check_declared_writer`; `is_compaction_owner`; `GATE_OWNERSHIP`; `AGENT_NOTIFIER_SIGNAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:107-121; mcp/src/agents_remember/controlplane/durable_store.py:123-132; mcp/src/agents_remember/controlplane/durable_store.py:138-150; mcp/src/agents_remember/controlplane/durable_store.py:212-221 |
 | The one place that declares a process role, asserted to do so before the server serves. | `main` | mcp/src/agents_remember/mcp/server.py:35-57 |
@@ -223,6 +223,13 @@ the `fcntl` boundary rather than reached across a repository or system boundary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-10T19:57:55+02:00 — Closeout citation review: retained the shared-write-boundary claim
+  after re-reading the candidate and replaced ambiguous function-name anchors with exact unique
+  signatures plus the incident-shaped regression name. Verification metadata remains pinned until
+  closeout.
+
+- 2026-08-10T18:31+02:00 — 260731-EFA-L21: re-read the shared write boundary after checkout-target confinement was added ahead of lock/append/rewrite filesystem effects; linked the focused isolation regressions. Verification metadata remains pinned until approved closeout stamps the L21 code commit.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the durable-store test citations; final exact frozen-snapshot check is clean.

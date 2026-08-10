@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 
 > **Status:** active baseline
 
@@ -1065,6 +1065,12 @@ package-layering gate (rank violations, cycles, undeclared dirs/imports all fail
 baseline). The move ledger and pre-change serialization baseline prove zero wire drift.
 
 ## Update History
+
+- 2026-08-10T19:57:55+02:00 — No route impact: 260731-EFA-L21 confines undeclared
+  checkout CLI coordination to the linked worktree's disposable provider-runtime root. The
+  repository inventory and top-level feature routing remain unchanged; current mechanics live in
+  the `mcp/`, application, kernel/primitives, controlplane, and tests route documentation.
+  Verification metadata remains pinned until closeout stamps the L21 code commit.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the model extraction, kernel
   primitives, projections move, and armed layering rail at the repo level. Verification metadata
@@ -2136,6 +2142,11 @@ Same-repository files remain the direct evidence for Agents Remember's own runti
 - The memory quality package is now the home for drift integrity and update-history style checks; further quality checks should be added under `memory_quality/style` or `memory_quality/integrity`.
 
 ## Last Verified
+
+Updated 2026-08-10T19:57:55+02:00 — No route impact: 260731-EFA-L21 changes the
+checkout-only coordination boundary inside the existing MCP package routes; the repo-level
+inventory and feature routing remain current. Verification metadata remains pinned until closeout
+stamps the L21 code commit.
 
 Updated 2026-08-05T22:30+02:00 — No route impact: 260731-EFA-L16 (the cross-store lock-order repair, its forcing tests, and the coding-guidelines/spawn-doctrine skill chain) is recorded in the `mcp/` and `skills/l-01-agent-lifecycles/` route overviews and their children; this root inventory is unchanged. Verification metadata pinned until closeout stamps the L16 code commit.
 

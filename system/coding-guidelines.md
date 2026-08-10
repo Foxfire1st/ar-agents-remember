@@ -193,6 +193,36 @@ The following patterns are not acceptable:
 
 These are drift behaviors. Agents must call them out before continuing.
 
+## Coordination Writes From Source Checkouts
+
+The deployed `ar-coordination` tree is production control-plane state. Unpublished
+checkout code must never use it as a schema playground, fixture root, or convenient
+CLI target.
+
+1. Regular MCP consumers use the registered MCP tools. They do not invoke package
+   CLI or one-shot Python commands to write MCP-owned coordination records.
+2. Code loaded from an Agents Remember linked task worktree runs undeclared CLI
+   operations against that leaf's deterministic disposable root only:
+   `<worktree-group>/provider-runtime/dev-ar-coordination/`.
+3. A schema/write experiment uses that leaf-local root or an explicit pytest
+   temporary root. It must not copy the live coordinator: synthetic test state is
+   created from the candidate models and only the minimum records the test needs.
+4. Supplying a live settings path, `coordinationRoot`, or direct durable-log path
+   from unpublished checkout code is forbidden. The runtime and durable-store
+   boundary must fail closed before creating a parent, lockfile, or record outside
+   the leaf-local root.
+5. Pydantic validation proves only that a row matches the writer model loaded in
+   the current process. It does not prove that deployed readers understand the
+   candidate fields. Mixed-version compatibility is established in isolation and
+   the code is integrated before a deployed writer can emit the new row shape.
+6. Do not solve a mixed-version failure by making authority readers permissive,
+   dropping unknown fields, adding an unruled migration, or duplicating a live
+   coordination tree. The writer boundary owns prevention.
+
+The checkout guard covers supported Agents Remember runtime/CLI and durable-store
+paths. It is not a claim that arbitrary malicious Python or shell code can be
+sandboxed inside the interpreter.
+
 ## Source Comment Scope
 
 Source comments explain the technical **why** of the code and must stand alone for a maintainer who has only this repository.
