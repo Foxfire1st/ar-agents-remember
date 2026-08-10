@@ -110,7 +110,7 @@
     "worktree_tools"
   ],
   "hotPath": {
-    "summary": "The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover; `gate_tools.py` and `hosted_readiness.py` for gate/readiness operations; `lifecycle_tools.py`, `operator_inbox_tools.py`, and `orchestration_tools.py` for lifecycle, inbox, and orchestration operations; `server_startup.py` and `terminal_tools.py` for startup and terminal operations; `provider_tools.py` for provider operations; `worktree_tools.py` for worktree operations; `bench...",
+    "summary": "For 260731-EFA-L21, `server_startup.py` is the trusted MCP declaration boundary: it declares MCP execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker entry paths make the corresponding dashboard declaration in their CLI route. Undeclared linked worktree entry paths therefore cannot inherit the deployed coordination root. The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover; `gate_tools.py...",
     "candidateHints": [
       "mcp/src/agents_remember/application",
       "mcp/src/agents_remember/application/__init__.py",

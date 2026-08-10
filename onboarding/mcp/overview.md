@@ -9,8 +9,8 @@ Total output lines: 2603
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -343,6 +343,13 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 (including on consumer-side drain and before the close sentinel).
 
 ## Hot Path Summary
+
+**260731-EFA-L21 — checkout coordination isolation.** An undeclared source-checkout invocation is
+classified before runtime configuration is read: a linked worktree receives a synthetic
+provider-disabled configuration rooted at `provider-runtime/dev-ar-coordination`, while a primary
+checkout refuses live coordination access. Trusted MCP/dashboard declarations and installed
+package execution retain the configured coordinator. The kernel policy and durable-store guard
+carry the invariant; application startup and test bootstrap declare the trusted/test modes.
 
 **260731-EFA-L1: `package_data/dashboard/` is no longer in this package's version-controlled
 surface.** The bundle, its `dashboard.fingerprint` sidecar, and local `mcp/build/` / `mcp/dist/`
@@ -744,6 +751,12 @@ The MCP package separates three surfaces:
   `mcp/tests/test_dashboard_daemon.py` + new `test_config.py` cases. Verification metadata pinned
   until closeout stamps the code commit.
 ## Update History
+
+- 2026-08-10T19:57:55+02:00 — 260731-EFA-L21 route impact: recorded checkout execution
+  classification, the linked-worktree dummy coordination root, primary-checkout refusal, and the
+  trusted MCP/dashboard plus explicit-test declarations. Detailed ownership remains in the
+  application, kernel/primitives, controlplane, and tests route cards. Verification metadata
+  remains pinned until closeout stamps the L21 code commit.
 
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: refreshed the mcp/ route body for the current
   staged package delta (application, models, registration/tools, memory-quality, worktree, and

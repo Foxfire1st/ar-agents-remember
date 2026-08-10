@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
+| lastUpdated            | 2026-08-10T22:09+02:00 |
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -611,6 +611,11 @@ and `worktrees/modules/contract_reader.py` implements the kernel resolver's `Con
 The closeout/integrate/guidance machinery is unchanged in behavior.
 
 ## Update History
+
+- 2026-08-10T22:09+02:00 — No route impact: L21 extracted the unchanged external-memory citation
+  preflight from `closeout_result` into one module-local helper solely to restore the repository's
+  hard 100-line function limit; closeout ordering, authority, and package responsibilities remain
+  unchanged. Verification metadata stays pinned until closeout stamps the L21 code commit.
 
 - 2026-08-10T12:46+02:00 — L9 closeout-order repair: recorded the configured-hook-before-wrapper
   and exact-index-after-wrapper contract; verification metadata stays pinned until closeout stamps

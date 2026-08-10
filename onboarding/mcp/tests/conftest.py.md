@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/conftest.py`                    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T16:20+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-10T18:31+02:00                     |
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -17,6 +17,7 @@
 ## Purpose
 
 `conftest.py` provides session-wide pytest bootstrap that pins imports to the candidate checkout,
+declares the explicit hermetic `test` execution mode,
 scrubs ambient Git repository selection before fixtures run, and supplies fallback commit identity
 for throwaway repositories. Its autouse cit:([`reject_owned_global_state_leaks`], mcp/tests/conftest.py:103-114) fixture snapshots the explicit owned-global register,
 restores every registered value after each test, and fails the leaking test with the complete list of
@@ -27,7 +28,10 @@ changed globals.
 ### Logic
 
 At collection time the bootstrap removes previously imported `agents_remember` modules and places
-the current worktree's `mcp/src` first on `sys.path`. It imports
+the current worktree's `mcp/src` first on `sys.path`. Immediately after that pin, it calls
+`declare_test_process()` before importing application services. This is the explicit bypass for
+temporary fixture configs and stores: tests do not masquerade as MCP/dashboard daemons, and
+production does not infer test mode from `pytest`, argv, or an environment flag. It imports
 `GIT_REPOSITORY_SELECTOR_ENV` from production `kernel.git_command` and removes every selector from
 the process environment before a fixture can spawn Git. It then uses `setdefault` for test-only
 author/committer identity so an explicit caller identity remains authoritative.
@@ -35,7 +39,8 @@ author/committer identity so an explicit caller identity remains authoritative.
 **cit:([`reject_owned_global_state_leaks`; `OWNED_MUTABLE_STATES`; "from _global_state import restore_owned_mutable_state"], mcp/tests/_global_state.py:33-39; mcp/tests/conftest.py:66-66; mcp/tests/conftest.py:103-114) — the autouse guard and its explicit ownership register.**
 The register is deliberately not a repository scan: a row is added only after a mutable module
 global has been proved capable of carrying state between tests. The current row owns
-`durable_store._declared`. Before each test the fixture snapshots all registered state; afterward it
+`kernel.primitives.checkout_coordination._declared`, whose session baseline is `mode=test`. Before
+each test the fixture snapshots all registered state; afterward it
 restores every value, collects every changed owner, and then fails the test that leaked it. Restore
 happens before failure so one defect cannot contaminate later tests.
 
@@ -61,6 +66,9 @@ explicit, reviewable contract, and diagnostics must name the exact global that c
   real repository.
 - Checkout-source pinning ensures verification exercises the candidate, not a sibling editable
   installation.
+- Explicit test-mode declaration occurs after checkout pinning and before application imports, so
+  linked-worktree tests retain their existing temporary-root contracts without gaining production
+  authority.
 - Fallback identity applies only to temporary fixture commits and never overwrites an exported
   identity.
 - The guard restores every registered value before it reports a leak, keeping failure attribution
@@ -95,7 +103,7 @@ Git isolation directly.
 | Worktree fixture tests. |"test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_plan_uses_memory_worktree_settings"|mcp/tests/test_worktree_support_tests_1.py:1036-1036; mcp/tests/test_worktree_support_tests_2.py:122-122|
 | The explicit ownership register, snapshot/restore operations, and scoped preservation helper used by the autouse guard. | `OWNED_MUTABLE_STATES`; `snapshot_owned_mutable_state`; `restore_owned_mutable_state`; `preserve_owned_mutable_state` | mcp/tests/_global_state.py:33-39; mcp/tests/_global_state.py:42-43; mcp/tests/_global_state.py:46-54; mcp/tests/_global_state.py:57-64 |
 | The current autouse guard restores all registered state and fails the leaking test with the complete changed-owner list. | `reject_owned_global_state_leaks` | mcp/tests/conftest.py:103-114 |
-| The currently registered process-global declaration and its production writer/accessor. | `_declared`; `declare_process_role`; `declared_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:73-73; mcp/src/agents_remember/controlplane/durable_store.py:76-84; mcp/src/agents_remember/controlplane/durable_store.py:87-89 |
+| The currently registered process-global execution declaration, explicit test entry, and accessor. | "_declared: dict[str, ExecutionMode] = {}"; "def declare_test_process() -> None:"; `return _declared.get("mode")` | mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:27-66 |
 
 ## Cross-Repo References
 
@@ -106,6 +114,14 @@ No sibling repository defines the pytest bootstrap contract.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-10T19:57:55+02:00 — Closeout citation review: retained the execution-declaration claim
+  after re-reading the candidate and replaced the reopened broad identifiers with exact unique
+  declaration/signature anchors. Verification metadata remains pinned until closeout.
+
+- 2026-08-10T18:31+02:00 — 260731-EFA-L21: pytest now declares explicit hermetic test mode after
+  pinning candidate source; owned-global documentation follows the kernel execution declaration.
+  Verification metadata remains pinned until approved closeout.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

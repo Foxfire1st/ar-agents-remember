@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-07-21T11:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                             |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-10T18:31+02:00 |
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`                                             |
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -310,6 +310,13 @@ event-loop offload).
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-10T18:31+02:00 — No content impact: 260731-EFA-L21's targeted reverse-import gate exposed
+  L9's stale type-only `serving.conversation.models` import. `HarnessId` now comes directly from
+  its canonical `models.conversations.identity` declaration; this changes static import ownership
+  only and does not change the liveness behavior, invariants, or boundaries documented above. No
+  compatibility re-export was added. Verification metadata remains pinned until approved closeout
+  stamps the L21 code commit.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

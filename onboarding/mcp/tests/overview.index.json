@@ -57,6 +57,7 @@
     "mcp/tests/test_change_watcher.py",
     "mcp/tests/test_chats_l5_hardening.py",
     "mcp/tests/test_chats_l5f_leaks.py",
+    "mcp/tests/test_checkout_coordination_isolation.py",
     "mcp/tests/test_citation_resolution.py",
     "mcp/tests/test_claude_stream_transport.py",
     "mcp/tests/test_cleanup_carryover.py",
@@ -379,8 +380,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 357,
-    "fileSidecars": 367,
+    "sourceFilesInScope": 358,
+    "fileSidecars": 368,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -441,6 +442,7 @@
     "channels",
     "chats",
     "check",
+    "checkout",
     "citation",
     "claim",
     "claude",
@@ -462,8 +464,7 @@
     "compound",
     "concurrency",
     "config",
-    "conformance",
-    "conftest"
+    "conformance"
   ],
   "hotPath": {
     "summary": "The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrade-not-die, native-page thread demux \u2014 plus the remediation pins: concurrent parent pendings answered per id with the oldest in the singular slot, the method-first degrade split, the bounded per-thread pending map, and the load-shed event queue with its honest `ar/load-shed` notice), `test_conversatio...",

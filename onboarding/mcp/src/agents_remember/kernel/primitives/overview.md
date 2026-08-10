@@ -7,22 +7,24 @@
 | sourceRoute | `mcp/src/agents_remember/kernel/primitives/` |
 | onboardingRoute | `mcp/src/agents_remember/kernel/primitives/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../../../overview.md) |
-| lastUpdated | 2026-08-08T14:38+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-10T18:31+02:00 |
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e` |
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 
 ## What This Area Is
 
 The kernel-owned primitive vocabulary extracted by 260731-EFA-L9 so kernel stops importing
 upward: runtime configuration (`runtime_config.py`, moved from `mcp/config.py` — the leaf's
-centre of gravity), gate policy/vocabulary, provider identity, inbox backoff, memory cap, drift
+centre of gravity), checkout coordination isolation, gate policy/vocabulary, provider identity, inbox backoff, memory cap, drift
 snapshot/observer paths, command capture, tool reports, provider-degradation settings, and
 version identity. Every layer above kernel reads these without importing `mcp`, `controlplane`,
 `providers`, or `worktrees`.
 
 ## Hot Path Summary
 
-`runtime_config.py::McpRuntimeConfig` is the trusted authority settings record; `gate_policy.py`
+`runtime_config.py::McpRuntimeConfig` is the trusted authority settings record;
+`checkout_coordination.py` keeps unpublished linked-checkout CLI/store writes inside the leaf's
+disposable coordinator and refuses undeclared primary-checkout access; `gate_policy.py`
 owns the human-first gate delegation policy; `provider_degradation_settings.py` parses the
 `providerDegradation` block; `inbox_backoff.py` owns redelivery backoff; `memory_cap.py` plans
 memory-capped full gate runs; `identity.py` owns provider instance naming.
@@ -31,6 +33,7 @@ memory-capped full gate runs; `identity.py` owns provider instance naming.
 
 | Path | Role |
 | --- | --- |
+| `checkout_coordination.py` | Loaded-checkout classification, execution-mode declaration, and leaf-local durable-write containment. |
 | `runtime_config.py` | Runtime configuration record + parsing (from `mcp/config.py`). |
 | `command_capture.py` | Package-local command-module adapter helpers. |
 | `drift_snapshot.py` | Drift-snapshot path/removal primitives. |
@@ -56,7 +59,7 @@ memory-capped full gate runs; `identity.py` owns provider instance naming.
 
 - Settings records with fail-loud `ConfigError`/typed error families.
 - Policy/vocabulary literals with single-declaration ownership.
-- Pure path, backoff, cap-planning, and identity helpers.
+- Pure path, checkout-containment, backoff, cap-planning, and identity helpers.
 
 ## Operating Model
 
@@ -68,6 +71,7 @@ memory-capped full gate runs; `identity.py` owns provider instance naming.
 
 | File | Role | Why It Matters | Onboarding |
 | --- | --- | --- | --- |
+| `checkout_coordination.py` | checkout write policy | Prevents unpublished worktree code from selecting or writing the deployed coordinator through supported paths. | covered |
 | `runtime_config.py` | config authority | Every layer reads the same runtime record. | covered |
 | `gate_policy.py` | policy | Human-first gate decisions. | covered |
 | `memory_cap.py` | gate economics | Caps full-wrapper memory at integration. | covered |
@@ -78,11 +82,15 @@ memory-capped full gate runs; `identity.py` owns provider instance naming.
   port/implementation instead.
 - Single declaration per vocabulary (gate kinds, decision roles, provider ids); wire layers
   re-export, never retype.
+- Checkout execution mode is declared once in kernel. Undeclared linked worktrees own only
+  `<worktree-group>/provider-runtime/dev-ar-coordination`; undeclared primary checkout access is
+  refused and tests declare their mode explicitly.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Checkout policy derives from the loaded package path and centrally refuses durable targets outside the leaf-local root. | `resolve_checkout_location`; `require_durable_write_target` | mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:75-128 |
 | The layering rail enforces the total order this route anchors. | `load_contract` | mcp/src/agents_remember/code_quality/layering.py:62-62 |
 | The wire layer re-exports gate vocabulary from kernel. | "from agents_remember.kernel.primitives.gate_vocab import (" | mcp/src/agents_remember/models/gates.py:14-18 |
 
@@ -106,6 +114,7 @@ No Domain Documentation source is configured.
 
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
+| `checkout_coordination.py` | [`checkout_coordination.py.md`](checkout_coordination.py.md) | covered | Checkout execution and durable-write isolation policy. |
 | `runtime_config.py` | [`runtime_config.py.md`](runtime_config.py.md) | covered | Config authority. |
 | `command_capture.py` | [`command_capture.py.md`](command_capture.py.md) | covered | Command adapter. |
 | `drift_snapshot.py` | [`drift_snapshot.py.md`](drift_snapshot.py.md) | covered | Snapshot primitives. |
@@ -132,6 +141,10 @@ When adding a primitive:
 3. Run the layering check and structural-coverage suite.
 
 ## Update History
+
+- 2026-08-10T18:31+02:00 — 260731-EFA-L21: added the checkout-coordination primitive, its
+  loaded-package detection rule, explicit execution modes, deterministic leaf dummy root, and
+  central durable-target containment. Verification metadata remains pinned until approved closeout.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created the route overview for the new
   `kernel/primitives/` package. Verification metadata pinned until closeout stamps the L9 code

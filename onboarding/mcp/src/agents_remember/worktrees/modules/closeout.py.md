@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d` |
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
+| lastUpdated            | 2026-08-10T22:09+02:00 |
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e` |
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -32,6 +32,11 @@ onboarding metadata, route overview metadata, generated route indexes, and
 entity fingerprints to the new code commit, run `memory_quality_check`, commit
 memory content, update the external memory ledger, and return the closeout
 payload.
+The pre-code citation phase is isolated in `_memory_quality_before_refresh`: external-memory
+contracts obtain the configured preflight checks and run them against the unstamped base commit,
+while other memory modes return an empty result. `closeout_result` invokes the helper immediately
+before deciding and running the strict code-quality gate, preserving the existing fail-fast order
+while keeping the coordinator below the repository's structural function limit.
 Closeout is worktree-only: the former direct-closeout functions
 (`validate_direct_external_context`, `direct_closeout_preview_payload`,
 `direct_closeout_result`) were removed with the direct tool surface (issue #62).
@@ -340,10 +345,11 @@ No external Domain Documentation source is configured for this memory repo.
 | The strict source-quality adapter decides applicability, executes the current worktree wrapper under the planned mode (leaf targeted / full+capped), and fails before mutation. | `code_quality_gate_preview`, `requires_strict_code_quality`, `run_strict_code_quality_gate`, `QualityGatePlan` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:77-146; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:67-76; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:162-219; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:29-35 |
 | Focused closeout regressions prove failure preserves code/memory/ledger/contract state and success runs the leaf targeted contract before code commit; `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests` pin the staging step, both refusals, the reset-after-the-conflict-check ordering, and that a refused gate leaves the worktree staged. | `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests`, `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:715-821; mcp/tests/test_worktree_closeout_quality_gate.py:895-1008; mcp/tests/test_worktree_closeout_quality_gate.py:1011-1065; mcp/tests/test_worktree_closeout_quality_gate.py:1071-1130 |
 | `require_git` is the generic Git command runner. | `require_git` | mcp/src/agents_remember/worktrees/modules/git.py:18-22 |
-| Closeout routes its staging call sites through `require_git` and runs the leaf targeted plan. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:793-851 |
+| Closeout routes its staging call sites through `require_git` and runs the leaf targeted plan. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:820-889 |
+| The external-memory citation preflight remains immediately before strict code quality after its behavior-preserving extraction from the coordinator. | `_memory_quality_before_refresh`, `memory_quality_before_refresh = _memory_quality_before_refresh(contract)` | mcp/src/agents_remember/worktrees/modules/closeout.py:974-983; mcp/src/agents_remember/worktrees/modules/closeout.py:1010 |
 | `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | `recovery_guidance`, `RecoveryOperation`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:32-38; mcp/src/agents_remember/worktrees/modules/guidance.py:130-153; mcp/src/agents_remember/worktrees/modules/guidance.py:431-433 |
 | `ContractCells` and `amend_contract` define the contract-cell amendment API. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:181-196; mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
-| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:899-935 |
+| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:935-971 |
 
 ## 260731-EFA-L1 Current Commit-Gate Delta
 
@@ -374,6 +380,12 @@ became four** — see the L4 section above. `run_strict_code_quality_gate` remai
 still what actually runs the wrapper, one step inside `_gate_staged_code`.
 
 ## Update History
+
+- 2026-08-10T22:09+02:00 — L21 closeout prerequisite: the hard structural-limit regression in
+  the L9 base was repaired without changing behavior by extracting the existing external-memory
+  citation preflight into `_memory_quality_before_refresh`; recorded its exact pre-gate call site
+  and refreshed the shifted closeout helper citations. Verification metadata stays pinned until
+  closeout stamps the L21 code commit.
 
 - 2026-08-10T12:46+02:00 — L9 closeout-order repair: the working-tree memory preflight remains
   first; `_gate_staged_code` now runs the configured fast hook after complete staging, restages

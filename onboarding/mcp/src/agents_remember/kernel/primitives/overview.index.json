@@ -10,6 +10,7 @@
   ],
   "childRoutes": [],
   "coveredFiles": [
+    "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py",
     "mcp/src/agents_remember/kernel/primitives/command_capture.py",
     "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py",
     "mcp/src/agents_remember/kernel/primitives/gate_policy.py",
@@ -24,8 +25,8 @@
     "mcp/src/agents_remember/kernel/primitives/version.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 12,
-    "fileSidecars": 12,
+    "sourceFilesInScope": 13,
+    "fileSidecars": 13,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -34,9 +35,12 @@
     "backoff",
     "cap",
     "capture",
+    "checkout",
+    "checkout_coordination",
     "command",
     "command_capture",
     "config",
+    "coordination",
     "degradation",
     "drift",
     "drift_snapshot",
@@ -70,9 +74,10 @@
     "vocab"
   ],
   "hotPath": {
-    "summary": "`runtime_config.py::McpRuntimeConfig` is the trusted authority settings record; `gate_policy.py` owns the human-first gate delegation policy; `provider_degradation_settings.py` parses the `providerDegradation` block; `inbox_backoff.py` owns redelivery backoff; `memory_cap.py` plans memory-capped full gate runs; `identity.py` owns provider instance naming.",
+    "summary": "`runtime_config.py::McpRuntimeConfig` is the trusted authority settings record; `checkout_coordination.py` keeps unpublished linked-checkout CLI/store writes inside the leaf's disposable coordinator and refuses undeclared primary-checkout access; `gate_policy.py` owns the human-first gate delegation policy; `provider_degradation_settings.py` parses the `providerDegradation` block; `inbox_backoff.py` owns redelivery backoff; `memory_cap.py` plans memory-capped full gate runs; `identity.py` owns provider instance naming.",
     "candidateHints": [
       "mcp/src/agents_remember/kernel/primitives",
+      "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py",
       "mcp/src/agents_remember/kernel/primitives/command_capture.py",
       "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py",
       "mcp/src/agents_remember/kernel/primitives/gate_policy.py",
@@ -87,6 +92,8 @@
       "mcp/src/agents_remember/kernel/primitives/version.py"
     ],
     "anchorHints": [
+      "checkout_coordination.py",
+      "checkout_coordination",
       "command_capture.py",
       "command_capture",
       "drift_snapshot.py",
@@ -114,11 +121,12 @@
       "runtime_config.py::McpRuntimeConfig",
       "providerDegradation",
       "McpRuntimeConfig",
+      "CLI",
       "route-local-overview",
       "mcp/src/agents_remember/kernel/primitives/",
       "mcp/src/agents_remember/kernel/primitives/overview.md",
       "mcp/overview.md",
-      "7bf564a663bb61f12844dee39538dd09a1633cdb",
+      "7b6c8d8eee67c654a11a58ed1d3476db004b8d6e",
       "mcp/config.py",
       "mcp",
       "controlplane",
@@ -131,10 +139,7 @@
       "application/provider_runtime.py",
       "ConfigError",
       "rank(Q) < rank(P",
-      "load_contract",
-      "runtime_config.py.md",
-      "command_capture.py.md",
-      "drift_snapshot.py.md"
+      "resolve_checkout_location"
     ]
   },
   "fallback": {

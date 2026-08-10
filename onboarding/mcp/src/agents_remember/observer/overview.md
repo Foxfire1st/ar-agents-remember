@@ -608,7 +608,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | `projected_current` is the gate store's tolerant projected fold. | `projected_current` | mcp/src/agents_remember/controlplane/store.py:279-300 |
 | The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists. | `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:221-223 |
 | `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
-| The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:42-42; mcp/src/agents_remember/controlplane/durable_store.py:14-24 |
+| The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:42-42; mcp/src/agents_remember/controlplane/durable_store.py:13-24 |
 | `StatesAreFiledOnce` is the TypeScript overlap-check type. | `StatesAreFiledOnce` | dashboard/src/types/projection.ts:25-25 |
 | The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:217-217 |
 

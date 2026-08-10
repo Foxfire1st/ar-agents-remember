@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/primitives/runtime_config.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-04T03:03+02:00    |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-10T18:31+02:00    |
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e` |
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,6 +24,17 @@ same runtime configuration without importing the `mcp` package.
 ## Code Commentary
 
 ### Logic
+
+Before authority-path validation, `load_config` asks the checkout-coordination primitive whether
+this is undeclared code loaded from an Agents Remember checkout. A linked task worktree receives
+`_checkout_runtime_config`: a synthetic, non-authority record rooted exactly at
+`<worktree-group>/provider-runtime/dev-ar-coordination`, with the candidate checkout registered as
+`agents-remember`, a dummy external-memory root below that coordinator, and providers, dashboard
+autostart, benchmarks, and automatic retirement disabled. The supplied settings file is not read,
+so a live `coordinationRoot`/`workspaceRoot` cannot redirect candidate CLI code. No coordinator is
+copied. An undeclared primary checkout raises `ConfigError`; declared MCP/dashboard and explicit
+pytest modes continue through the ordinary authority loader. An installed wheel has no owning Git
+checkout and also keeps the ordinary loader.
 
 The loader requires an absolute JSON settings path, rejects coordinator
 `system/settings.json` as an authority file, rejects settings located inside the
@@ -191,6 +202,11 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
 
 ## Update History
+
+- 2026-08-10T18:31+02:00 — 260731-EFA-L21: `load_config` now selects a deterministic synthetic
+  config for undeclared linked-checkout execution before reading caller-supplied settings, and
+  refuses undeclared primary-checkout execution. Verification metadata remains pinned until
+  approved closeout.
 
 - 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the seven configuration relationship groups (9 repairs, 2 normalisations, 0 declines); the runtime group was split across both install owners, and the locked final rerun was clean with frozen zero source/tokenize/parse/build telemetry.
 - 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: corrected seven

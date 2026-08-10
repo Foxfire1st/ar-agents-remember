@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e` |
+| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -24,6 +24,11 @@ reopens a task, while worktree_tools keeps only genuine worktree operations (its
 abandon now also ends the ambient lifecycle it anchors).
 
 ## Hot Path Summary
+
+For 260731-EFA-L21, `server_startup.py` is the trusted MCP declaration boundary: it declares MCP
+execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker
+entry paths make the corresponding dashboard declaration in their CLI route. Undeclared linked
+worktree entry paths therefore cannot inherit the deployed coordination root.
 
 The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context
 assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline,
@@ -212,6 +217,10 @@ composition (`application/worktree_services.py`) binding the provider, memory-qu
 citation-guard adapters into the worktrees service ports.
 
 ## Update History
+
+- 2026-08-10T19:57:55+02:00 — 260731-EFA-L21 route impact: recorded declaration-before-config-load
+  at the MCP application startup boundary and its separation from undeclared linked-worktree CLI
+  execution. Verification metadata remains pinned until closeout stamps the L21 code commit.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the provider-runtime and
   worktree-services composition additions. Verification metadata pinned until closeout stamps the
