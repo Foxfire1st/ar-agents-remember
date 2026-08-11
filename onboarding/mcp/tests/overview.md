@@ -8,14 +8,56 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-10T18:31+02:00 |
-| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`|
-| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
+| lastUpdated | 2026-08-12T00:08+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [mcp overview](../overview.md)
+
+## Structural Seat Regression Boundary
+
+`test_structural_agent_tools.py` pins both directions of replacement-aware messaging, ambiguity
+refusal, and exact-pinned dispatch rollback. `test_agent_doctrine_plane_identity.py` rejects
+agent-instruction regressions to control-plane id cognition and proves packaged lifecycle doctrine
+is byte-identical to canonical source. `test_seat_lifecycle.py` exercises the task-document-owned
+retire, land, and completion-cleanup matrix; its turn-report fixture is `AgentRole`-typed so the
+worker/reviewer/curator cases preserve the wire vocabulary under full Pyright. Existing routing,
+inbox, catalog, serving-response, and wire-vocabulary suites cover the broader migration surface.
+
+`test_leaf_structural_coverage.py` now reaches the cross-package migration, topology, structural
+gate, identity-migration, and platform-quality-environment branches needed by the 100% changed-code
+floor. The separate `test_leaf_structural_refusal_coverage.py` concentrates the fail-closed matrix:
+ambiguous or missing seats/topology, invalid durable shapes, persistence-first dispatch rollback,
+structural mutation refusals, dead/live binding conflicts, and exact dispatch/launch boundaries.
+These are focused coverage companions; the targeted gate may conservatively expand to its derived
+full selection when fragments cannot be merged narrowly.
+
+The three installed harness suites convert OS/subprocess failure of their version probe into an
+explicit unavailable-runtime skip. `test_quality_scope_reporting.py` applies the same boundary only
+to its two live Node assertions. No skip records observed fixture evidence or weakens assertions
+when the external runtime is present.
+
+## Leaf Memory Pre-Closeout Gate
+
+`test_memory_tool_enclosure_scope.py` distinguishes leaf and official memory with two real trees.
+Its quality checks pin the additional provenance rule: a contract-scoped call feeds the leaf
+contract's code-base commit to claim comparison, while a bare official-memory call leaves unstamped
+provenance absent. That makes dirty-worktree claim repair available before closeout without
+fabricating a future verification stamp.
+cit:(["test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims"; "test_the_bare_check_does_not_invent_unstamped_claim_provenance"], mcp/tests/test_memory_tool_enclosure_scope.py:296-321)
+
+## Quality Command Construction
+
+`test_code_quality_check_scope.py` proves root pytest `addopts` includes `-n=auto`, while the
+derived-scope command test separately retains its coverage targets. This pins the single
+configuration owner used by raw pytest and every wrapper.
+
+The session-level conftest assigns every xdist worker a private `XDG_CACHE_HOME` below its worker
+base temp directory, leaving the non-xdist master environment unchanged. Parameterized tests pass
+only serializable diagnostic values to `subTest`; those edits do not change the assertions.
 
 ## Purpose
 
@@ -419,6 +461,10 @@ returning early), and `anchor-keepalive` (never prunable, never counted, present
 stays non-empty and the tick takes the temp-and-rename path rather than the `unlink` branch). That
 is what makes a reported "loss" mean *a row nobody decided to drop* rather than ordinary
 bounded-store reclamation. Three properties make its output evidence rather than anecdote:
+
+The dual-version sensitivity path statically imports the current structural `GateState`. Only its
+runtime execution against the extracted pre-structural base dynamically loads historical
+`models.gates`; other missing modules still fail and no production compatibility module exists.
 
 - **Real processes, never threads** (`multiprocessing` with the `fork` context). The defect is
   cross-process; the GIL would serialise the very window under test.
@@ -890,6 +936,30 @@ proof of memory preflight → hook → wrapper → exact-index commit, including
 tree edit that must stay out of the commit.
 
 ## Update History
+
+- 2026-08-12T00:20+02:00 — Corrected the xdist regression description after worker selection
+  moved from wrapper argv to root pytest `addopts`. Verification metadata remains pinned until
+  closeout.
+
+- 2026-08-12T00:08+02:00 — Recorded worker-private XDG cache isolation and serialization-only
+  subtest diagnostics required by the parallel pytest executor. Verification metadata remains
+  pinned until closeout.
+
+- 2026-08-11T23:56+02:00 — Recorded the focused command-construction regression that pins
+  pytest-xdist `-n auto` alongside derived coverage arguments. Verification metadata remains
+  pinned until closeout.
+
+- 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: recorded the new focused structural
+  refusal module, the expanded structural coverage companion, and exact unavailable-runtime skips
+  for installed harness and live Node probes. Verification metadata remains pinned until closeout.
+
+- 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: recorded the `AgentRole`-typed
+  seat-lifecycle fixture and the durability harness's type-check-safe, historical-archive-only gate
+  import; no production compatibility path was added.
+
+- 2026-08-11T14:40+02:00 — Recorded the enclosure-scope regressions that distinguish temporary leaf
+  base comparison provenance from real commit verification and forbid invented provenance on a bare
+  official-memory check.
 
 - 2026-08-10T18:31+02:00 — 260731-EFA-L21: added the checkout-coordination isolation regression
   suite and updated global-state tests for the explicit kernel-owned pytest mode. Verification

@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation-library/store.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,8 @@ focus signal ONLY on exact opened-catalog proof.
   every other outcome is terminal.
 - **`beginOpen`** (cit:([`beginOpen`], dashboard/src/data/conversation-library/store.ts:229-263)): sets `dispatching:true` BEFORE the first POST (F6c — a second click
   cannot open a second operation into the TOCTOU window), dispatches `openConversation`, folds the
-  result, and starts polling only if non-terminal.
+  result, and starts polling only if non-terminal. Its optional launch context uses the shared
+  `ConversationLaunchContext`, whose routing identity is `TaskDocumentRef` plus seat role.
 - **`reconcileOpen`** (cit:([`reconcileOpen`], dashboard/src/data/conversation-library/store.ts:269-291)): the poll-exhaustion / transport-retry re-drive — reuses the
   EXISTING requestId and re-enters the poll loop with `reconcileFirst`, never minting a fresh id.
 - **`runOpenPolls`** (cit:([`runOpenPolls`], dashboard/src/data/conversation-library/store.ts:262-300)): the bounded poll loop (`OPEN_POLL_MS`=1200, `OPEN_POLL_LIMIT`=25).
@@ -101,6 +102,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — Recorded the store's typed task-document launch context while
+  preserving caller-stable request identity and exact-open focus discipline.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 18 citation findings. Converted the

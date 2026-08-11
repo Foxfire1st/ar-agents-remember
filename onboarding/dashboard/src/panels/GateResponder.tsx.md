@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/GateResponder.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`       |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -78,13 +78,13 @@ the worktree-bound gate families: closeout, push, integration, and cleanup.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Dashboard gate decision client used by Yes/No. | "export type GateDecisionStatus" | dashboard/src/data/actions.ts:7-7 |
-| Hosted session identity and delivery helpers. | "export interface OpenSession" | dashboard/src/data/sessions.ts:28-28 |
+| Hosted session identity and delivery helpers. | "export interface OpenSession" | dashboard/src/data/sessions.ts:29-29 |
 | External inbox helper used when no hosted session is attached. | "export interface OperatorInboxPostRequest" | dashboard/src/data/operatorInbox.ts:4-4 |
 | Request/status formatting helpers extracted from this component. | "export function humanKey" | dashboard/src/panels/GateResponderText.ts:20-20 |
-| Canonical lifecycle detail surface that renders this only when a durable gate exists. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76 |
+| Canonical lifecycle detail surface that renders this only when a durable gate exists. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
 | Engine Room diagnostics secondary surface. | "export function DiagnosticsPanel" | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:40-40 |
 | Hangar secondary surface for worktree-bound gates. | "export function Hangar" | dashboard/src/panels/Hangar.tsx:72-72 |
-| Projection gate and lifecycle shapes. | "export interface GateNode" | dashboard/src/types/projection.ts:227-227 |
+| Projection gate and lifecycle shapes. | "export interface GateNode" | dashboard/src/types/projection.ts:230-230 |
 
 ### 260713-PHA-L5 Adapter Interaction Context
 

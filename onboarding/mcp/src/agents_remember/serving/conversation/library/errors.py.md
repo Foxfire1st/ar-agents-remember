@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/library/errors.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-11T15:20+02:00 |
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ keeps existing handlers compatible.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route table maps each family member subclass-before-base to one exact HTTP status. | `_error_response`; `_ERROR_STATUS_TABLE`; `LIBRARY_RESPONSES` | mcp/src/agents_remember/serving/conversation/library/api.py:271-286; mcp/src/agents_remember/serving/conversation/library/api.py:291-305; mcp/src/agents_remember/serving/conversation/library/api.py:54-56; mcp/src/agents_remember/serving/conversation/response_contract.py:125-136 |
+| The route table maps each family member subclass-before-base to one exact HTTP status. | "def _error_response(exc: Exception) -> JSONResponse:"; "_ERROR_STATUS_TABLE: tuple[tuple[type[Exception], str, int], ...] = ("; "LIBRARY_RESPONSES: dict" | mcp/src/agents_remember/serving/conversation/library/api.py:278-312; mcp/src/agents_remember/serving/conversation/response_contract.py:131-142 |
 | The shared base types this family subclasses keep `except ValueError` handlers working. | `ConversationLibraryError`; `LibraryScopeError` | mcp/src/agents_remember/serving/conversation/library/errors.py:15-16; mcp/src/agents_remember/serving/conversation/library/errors.py:23-24 |
 
 ## Cross-Repo References
@@ -77,6 +77,8 @@ No meaningful cross-repo boundary exists for this local error module.
 
 ## Update History
 
+- 2026-08-11T15:20+02:00 — Replaced generic error/table names with their exact declarations and
+  removed the import-only citation that did not own response semantics.
 - 2026-08-03T10:50+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 4 assigned citation findings (2 missing anchors and 2 malformed sources); final scoped check is clean.
 
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the leaf-local typed error family

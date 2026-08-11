@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -159,13 +159,13 @@ live/dead reopen projection over the shared opener.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A complete native model/effort pair reaches the encoded runner exactly once and is returned as resolved launch truth. | "test_post_open_harness_carries_complete_model_effort_pair_once"; "/api/terminal/h-selected" | mcp/tests/test_terminal_ws_websocket_2.py:187-187; mcp/tests/test_terminal_ws_websocket_2.py:190-190 |
-| Same-pair live reopen preserves the original endpoint; changed-pair reopen conflicts with actual truth; dead replacement uses the new pair and a fresh endpoint. | "test_post_open_reopen_preserves_live_truth_conflicts_then_replaces_dead"; "launch-selection-conflict" | mcp/tests/test_terminal_ws_websocket_2.py:210-210; mcp/tests/test_terminal_ws_websocket_2.py:234-234 |
-| Partial, plain-terminal, and non-native selections all fail before host ensure. | "test_post_open_rejects_partial_or_non_harness_selection_before_spawn"; "launch-selection-invalid" | mcp/tests/test_terminal_ws_websocket_2.py:248-248; mcp/tests/test_terminal_ws_websocket_2.py:271-271 |
+| A complete native model/effort pair reaches the encoded runner exactly once and is returned as resolved launch truth. | "test_post_open_harness_carries_complete_model_effort_pair_once"; "/api/terminal/h-selected" | mcp/tests/test_terminal_ws_websocket_2.py:230-230; mcp/tests/test_terminal_ws_websocket_2.py:233-233 |
+| Same-pair live reopen preserves the original endpoint; changed-pair reopen conflicts with actual truth; dead replacement uses the new pair and a fresh endpoint. | "test_post_open_reopen_preserves_live_truth_conflicts_then_replaces_dead"; "launch-selection-conflict" | mcp/tests/test_terminal_ws_websocket_2.py:253-253; mcp/tests/test_terminal_ws_websocket_2.py:277-277 |
+| Partial, plain-terminal, and non-native selections all fail before host ensure. | "test_post_open_rejects_partial_or_non_harness_selection_before_spawn"; "launch-selection-invalid" | mcp/tests/test_terminal_ws_websocket_2.py:291-291; mcp/tests/test_terminal_ws_websocket_2.py:314-314 |
 | WebSocket and catalog cases continue to cover raw PTY framing, parallel attachments, liveness, leaf/role claims, and landed inspection. | "class ApplyTerminalInputTests(unittest.TestCase):"; "class TerminalWebSocketTests(unittest.TestCase):"; "def feed_all(self" | mcp/tests/test_terminal_ws.py:394-394; mcp/tests/test_terminal_ws.py:426-426; mcp/tests/test_terminal_ws.py:367-367 |
-| `TerminalOpenRequest` carries optional model/effort, and the HTTP route validates them into one resolved launch before calling the shared opener. | "class TerminalOpenRequest(BaseModel):"; "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_common.py:269-269; mcp/src/agents_remember/serving/_app_terminal_routes.py:224-224 |
-| A launch conflict returns 409 with the retained session's actual model, effort, control state, and endpoint. | "def _terminal_entry_payload(entry: TerminalCatalogEntry) -> dict[str"; "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:206-206; mcp/src/agents_remember/serving/_app_terminal_routes.py:224-224 |
-| Direct opener regressions provide the complementary same/different/dead/concurrent transaction and role-path authority. | `OpenTerminalSessionTests`; "spawnedByLifecycle"; "seatRole"; "ar-owner-1"; `reviewer_entry`; `first_worker`; `KnobApplicationTests`; "attempted metadata rewrite"; `pair_conflict`; "other-workspace"; "resolved launch requested 'codex'"; `second_runner`; `open_after_barrier` | mcp/tests/test_terminal_opener.py:156-335; mcp/tests/test_terminal_opener.py:338-630 |
+| `TerminalOpenRequest` carries optional model/effort, and the HTTP route validates them into one resolved launch before calling the shared opener. | "class TerminalOpenRequest(BaseModel):"; "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_common.py:267-267; mcp/src/agents_remember/serving/_app_terminal_routes.py:225-225 |
+| A launch conflict returns 409 with the retained session's actual model, effort, control state, and endpoint. | "def _terminal_entry_payload(entry: TerminalCatalogEntry) -> dict[str"; "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:207-207; mcp/src/agents_remember/serving/_app_terminal_routes.py:225-225 |
+| Direct opener regressions provide the complementary same/different/dead/concurrent transaction and role-path authority. | `OpenTerminalSessionTests`; "spawnedByLifecycle"; "seatRole"; "ar-owner-1"; `reviewer_entry`; `first_worker`; `KnobApplicationTests`; "attempted metadata rewrite"; `pair_conflict`; "other-workspace"; "resolved launch requested 'codex'"; `second_runner`; `open_after_barrier` | mcp/tests/test_terminal_opener.py:217-479; mcp/tests/test_terminal_opener.py:482-772 |
 
 ## Cross-Repo References
 
@@ -194,6 +194,7 @@ instead of long keyword lists. The assertions are unchanged.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the regression card for `test_terminal_ws.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.

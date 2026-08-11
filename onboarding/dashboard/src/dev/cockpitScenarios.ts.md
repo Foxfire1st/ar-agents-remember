@@ -6,8 +6,8 @@
 | path | `dashboard/src/dev/cockpitScenarios.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T10:12+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ deleted on teardown).
 The `/dev/bench` fetch injector now emits the same typed accepted HTTP body consumed in production,
 with kind-specific authority. Raw requests produce terminal command/catalog identity and omit
 harness/control facts. Harness requests preserve the requested harness, model/effort pair, control
-identity, lifecycle, leaf, and seat facts. The accepted response and inserted scenario catalog row
+identity, lifecycle, task-document, and seat facts. The accepted response and inserted scenario catalog row
 are derived from the same request, so the bench exercises the real opener instead of bypassing it.
 
 - Covers launch success/conflict/failure, set promotion, ambiguous submit reconciliation,
@@ -87,7 +87,8 @@ The same leaf removed three more `control` fields from the harness rows in
 
 `installCockpitScenarioFetch` matches the terminal-open request, parses its body, and returns a real
 accepted `Response` whose row mirrors raw or harness identity. The scenario catalog exposes the same
-row so downstream reconciliation observes consistent fixture truth. The `/api/harnesses` branch
+row so downstream reconciliation observes consistent fixture truth. Task identity is parsed from
+the structured `taskDocumentRef`; the fixture does not revive a `leafKey` transport field. The `/api/harnesses` branch
 returns the three-field catalog rows pinned by `satisfies HarnessInfo[]`.
 
 ### Conventions
@@ -154,6 +155,9 @@ construct those lines contain.
 | The probe types and the `Window` augmentation this file installs into, shared with the Playwright driver tsconfig project. | `Window` | dashboard/src/dev/benchProbes.ts:85-91 |
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — Updated the scenario authority model from leaf-key fixture identity to
+  structured task-document identity in both accepted responses and catalog rows.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the terminal-focus scenario addition. Verification metadata stays pinned until closeout stamps the code commit.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->

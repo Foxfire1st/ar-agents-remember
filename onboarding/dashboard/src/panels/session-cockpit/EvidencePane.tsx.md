@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/EvidencePane.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,8 @@ including post-removal control-stop residuals that must stay visible without a f
 ### Logic
 
 - Projects launch evidence, SetResult ledger lines, submit receipts and reconciliation, bridge
-  errors, pane/raw-interaction facts, and liveness/outcome facts without synthesizing missing proof.
+  errors, pane/raw-interaction facts, the selected seat's task-document identity, and
+  liveness/outcome facts without synthesizing missing proof.
 - Set evidence has an explicit `mark seen` action; merely viewing or focusing the pane never
   acknowledges it.
 - Reads both terminate `controlStopDetail` and retire `retireControlStopError` from the shared
@@ -69,6 +70,9 @@ No meaningful cross-repo boundary is owned here.
 | No cross-repo evidence applies. | — | — |
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — Replaced the inspector's leaf fact with the current task-document path
+  while preserving the pane's evidence-only boundary.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 - 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
 

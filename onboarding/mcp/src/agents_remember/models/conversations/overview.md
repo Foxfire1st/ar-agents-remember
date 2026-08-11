@@ -101,7 +101,7 @@ owns `ConversationItem` and the sub-agent grammar. The zero-drift proof is
 | --- | --- | --- |
 | The zero-drift baseline pins schemas, signatures, samples, and rebuild order. | `test_conversation_schemas_and_dataclass_fields_match_baseline` | mcp/tests/test_model_split_baseline.py:144-144 |
 | Hostile contract tests pin the grammar products. | `test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` | mcp/tests/test_conversation_contracts.py:196-220 |
-| The canonical ports consume these models without owning behavior. | `ControlPlanePort` | mcp/src/agents_remember/serving/ports.py:186-186 |
+| The canonical ports consume these models without owning behavior. | `ControlPlanePort` | mcp/src/agents_remember/serving/ports.py:189-269 |
 
 ## Cross-Repo References
 

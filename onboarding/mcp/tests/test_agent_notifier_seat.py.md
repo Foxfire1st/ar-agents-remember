@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agent_notifier_seat.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T06:48+02:00                                            |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`                                        |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -16,51 +16,39 @@
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_agent_notifier_seat.py`'s source module; covers the behaviours named by its test classes.
+Regression suite for seat-liveness findings and one notifier sweep over canonical task-document/role seats.
 
 ## Code Commentary
 
-- `SeatLivenessPredicateTests`
-- `SweepIntegrationTests`
+### Logic
 
-### 260713-TES-L2 Fixture Kind Swap
+The suite covers stale/degraded/unbound predicates, heartbeat progress, routable-owner refusal, backlog budgets, redelivery floors, coalescing, expiry, and restart behavior. Coalescing distinguishes roles on the same task document and routes unresolved dead seats to the architect boundary.
 
-`SweepIntegrationTests` now writes overdue `ack-by` expectation rows for the worker/orphan
-fixtures instead of `briefed-by`. The seeded drift still drives the full
-expectation-overdue → auto-nudge → escalation chain through `run_agent_notifier_sweep`, but on
-the expectation kind that remains active after the worker→manager predicate retirement
-(260713-TES-L2): `briefed-by`/`turn-report-by` no longer produce notifier findings, so the
-integration fixtures had to move to `ack-by` to keep exercising the SLA path end to end.
+### Conventions
 
-### 260713-TES-L4 Dead-Seat Expiry And Fixture-Kind Update
+Test-only evidence uses deterministic fakes/fixtures and exercises the public or owning internal seam directly.
 
-`SweepIntegrationTests` now writes overdue `verdict-by` rows for the worker/orphan fixtures
-(ack-by retired with the N16 consume demotion; verdict-by remains active) and
-`test_dead_seat_row_expires_to_the_architect_mailbox_not_redelivered` replaces the ladder
-terminal fixture: a pending row to a dead seat with no replacement past the 5-minute grace
-resolves `expired`/`rebind-grace-expired`, readdresses to `recipientRole="architect"`, emits
-`orchestration.agent-notifier.rebind-expired`, and is never redelivered (N2/N3).
+### Invariants And Boundaries
 
-## Invariants And Boundaries
+Diagnostics are not actionable findings; live or declared replacement evidence suppresses false inactivity; one sweep remains bounded and idempotent.
 
-- The card mirrors the source file one-to-one at `mcp/tests/test_agent_notifier_seat.py`.
+## Docs References
+
+No Domain Documentation source is configured for this repository-local regression contract.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| Current suite declaration anchoring this card. | `SeatLivenessPredicateTests` | mcp/tests/test_agent_notifier_seat.py:38-38 |
 
-## 260713-TES-L5 Current Delta — No Nudge, No Expectation Findings
+## Cross-Repo References
 
-`SweepIntegrationTests` removes the overdue verdict-by expectation fixtures and the
-`OrchestrationNudgeStore` from the context: no `expectation-overdue` finding, no
-`auto-nudge` action, no mark-missed assertion, and no `orchestration.nudge` event in the
-seeded-drift sweep. The remaining seeded drift covers inbox-redeliverable and seat-liveness
-only.
+No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `test_agent_notifier_seat.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the nudge-store removal and the
   expectation-overdue/auto-nudge assertion deletions in the sweep integration suite.
   Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.

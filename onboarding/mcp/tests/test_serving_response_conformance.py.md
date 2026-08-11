@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`         |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -218,11 +218,11 @@ modules, and everything that proves them lives here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The declared contract base and the three shared refusal tables. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:1071-1077; mcp/src/agents_remember/serving/response_contract.py:1081-1088; mcp/src/agents_remember/serving/response_contract.py:1093-1101 |
+| The declared contract base and the three shared refusal tables. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:89-101; mcp/src/agents_remember/serving/response_contract.py:1062-1068; mcp/src/agents_remember/serving/response_contract.py:1072-1079; mcp/src/agents_remember/serving/response_contract.py:1084-1092 |
 | The conversation surface's `CONTROL_RESPONSES` and `CONVERSATION_RESPONSES` tables. | `CONTROL_RESPONSES`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:95-108; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The serving app factory and SSE generator under test. |"async def stream_events("; "def create_app("|mcp/src/agents_remember/serving/_app_common.py:117-117; mcp/src/agents_remember/serving/app.py:232-232|
+| The serving app factory and SSE generator under test. |"async def stream_events("; "def create_app("|mcp/src/agents_remember/serving/_app_common.py:115-115; mcp/src/agents_remember/serving/app.py:230-230|
 | The `StreamContractTests` suite that drives the SSE seam. | `StreamContractTests` | mcp/tests/test_serving_response_conformance.py:38-38 |
-| The producer's `_present_fields` conditionality. | "def _present_fields(" | mcp/src/agents_remember/models/terminal_catalog.py:608-610 |
+| The producer's `_present_fields` conditionality. | "def _present_fields(" | mcp/src/agents_remember/models/terminal_catalog.py:597-597 |
 | The catalog-entry wire model and its aliases. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:280-346 |
 | The open-status map asserted total over the declared outcomes, and the `_open_call` that indexes it directly. | `_OPEN_STATUS_BY_OUTCOME` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84 |
 | The control router and typed-error mapper. | `router`; `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:87-90; mcp/src/agents_remember/serving/conversation/control/api.py:136-153 |
@@ -242,6 +242,7 @@ type is recorded separately below as an in-repo boundary.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the regression card for `test_serving_response_conformance.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.

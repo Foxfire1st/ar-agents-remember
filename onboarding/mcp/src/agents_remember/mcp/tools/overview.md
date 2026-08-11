@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -20,6 +20,14 @@ task-domain `task_doc.py` submodule, and `PUBLIC_TOOLS` lists `task_reopen` besi
 `task_doc`): every `*_payload` builder, the
 `PUBLIC_TOOLS`/`RESERVED_TOOLS`/`TRANSPORT` constants, and the `_tool_payload`
 re-export remain importable from `agents_remember.mcp.tools`.
+
+## Current Structural Boundary
+
+Agent-facing dispatch, parent/child messaging, retire, rename, and delegated gates enter through
+`structural_agent.py` and structural gate builders. Their requests and responses contain real task
+documents and roles, never runtime session/lifecycle/inbox/gate identifiers. `terminal.py` retains
+exact-id adapters only for internal operator/control-plane composition; it is not a compatibility
+public agent surface. The removed `leaf_ref.py` has no successor compatibility shim.
 
 ## Where Registration Lives Now (260731-EFA-L2)
 
@@ -47,10 +55,9 @@ concept objects their application entry points take:
 | `memory_carryover_plan_payload` / `..._apply_payload` | `selection: CarryoverSelection` (+ `messages: CarryoverCommitMessages`) |
 | `codex_benchmark_prepare_payload` / `..._run_payload` | `selection`, `preparation` (+ `run`) |
 | the eight `grepai_*`/`cgc_*` builders | `scope: ProviderQueryScope` (+ GrepAI query/repo-scope objects) |
-| `spawn_agent_session_payload` | `seat: SpawnSeat`, `retired: RetiredSpawnInputs`, `spawned_by: SpawnedBy`, `overrides: SpawnOverrides` |
-| `lifecycle_gate_payload` / the gate builders | `GateRaise`, `GateWait`, `InboxWatch`, `GateVerdict` |
-| `operator_inbox_post_payload` | `InboxAddress`, `InboxMessage`, `InboxPoster`, `HostedDelivery` |
-| `orchestration_nudge_manager_payload` | `NudgeTarget`, `NudgeSubject` |
+| `dispatch_agent_payload` / structural child/self builders | Structural request DTOs; ambient caller identity is injected by the plane |
+| Structural gate builders | Structural gate request DTOs; exact correlation stays internal |
+| `message_parent_payload` / `message_child_payload` | Whole-message structural requests whose current occupant is re-resolved |
 
 Behaviour, refusal vocabularies and response shapes are unchanged throughout; only the argument
 shape on the application-facing side moved.
@@ -66,15 +73,11 @@ with different launch identity, the opener returns `launch-conflict`; this build
 `launch-selection-invalid` and stops before expectations, log binding, brief delivery, or respawn.
 Settings-defined non-native harnesses retain only their explicitly declared legacy mappings.
 
-HFX2-L17 makes the terminal tool surface pair-aware. Attach accepts explicit role and reports
-current/previous binding identity; spawned rows expose `seatRole`; brief and turn-report
-expectations preserve it; retire authority uses binding leaf/role including replacement-leaf
-recovery. Existing settings-owned launch provenance and delivery acceptance stay separate.
-
-`spawn_agent_session` now sends separate session-command entries, binds the unique id-bearing brief
-in the spawn-cwd harness log, retroactively verifies/reissues only missing or errored commands, and
-persists resolved model/effort plus log id/path. An unbound replacement declares
-`replacement_for_leaf`; it receives normal leaf expectations without taking the occupied leaf key.
+The internal terminal builder accepts a runtime occupant plus canonical task document and role for
+operator assignment. Structural dispatch composes the same opener internally, then persists an
+exact-pinned first brief. Ordinary structural messages persist a document+role address and re-resolve
+the current occupant at post and delivery time; replacement therefore does not change the sender's
+address.
 
 The `mcp/registration/` family modules import the advertised `*_payload` builders from
 `agents_remember.mcp.tools`; each builder forwards its arguments to its
@@ -227,7 +230,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | What each declaration hands its builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
-| Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tool_registry.py:101-108 |
+| Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tool_registry.py:113-134 |
 | Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests` | mcp/tests/test_models.py:16-26 |
 | Conformance test validates every builder routes through `_tool_payload`. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
@@ -235,7 +238,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:200-200 |
 | The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | "class AgentNotifierHeartbeatStore" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-63 |
 | The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:10-10 |
-| The terminal status aliases `terminal.py` annotates its refusal seams with. | "class AttachTerminalSessionToLeafResponse" | mcp/src/agents_remember/models/terminal.py:30-30 |
+| The trusted terminal assignment response carries document-and-role binding plus private session correlation. | "class AttachTerminalSessionToTaskResponse" | mcp/src/agents_remember/models/terminal.py:32-44 |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -326,6 +329,10 @@ only who runs the pass.
 The MCP tool callers were rewritten by the L9 caller wave to import the responsibility-owning homes (`models/conversations/`, `kernel/primitives/`, `serving/ports.py`, `models/terminal_catalog.py`). Tool behavior and payloads are unchanged.
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the tool layer with structural
+  document-and-role requests and plane-owned runtime addresses; retired exact-id agent tools do not
+  remain as a parallel public control path.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 
@@ -544,4 +551,3 @@ The MCP tool callers were rewritten by the L9 caller wave to import the responsi
 - 2026-05-26T23:11+02:00: (from `tools.py`) Refreshed verification metadata after source commit `5ab704a` landed typed GrepAI payload forwarding.
 - 2026-05-24T02:47+02:00: (from `tools.py`) Updated after public tool expectations added `memory_quality_check`.
 - 2026-05-23T13:09+02:00: (from `tools.py`) Established for the complete Phase 04 public MCP tool surface.
-

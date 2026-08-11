@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/install/assets.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                      |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-11T15:20+02:00                     |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                      |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -49,12 +49,14 @@ a relative path against the current working directory before applying the prefix
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Runtime install uses packaged assets unless tests pass an explicit source root. | `install_runtime_from_config`; `packaged_source_root`; `source_root` | mcp/src/agents_remember/install/runtime.py:556-582 |
+| Runtime install uses packaged assets unless tests pass an explicit source root. | "def install_runtime_from_config("; "if request.source_root is not None:"; "with packaged_source_root() as packaged_root:" | mcp/src/agents_remember/install/runtime.py:556-589 |
 | Skill installation reads package-owned runtime skills through the shared asset root. | `install_skills`; `packaged_source_root`; `skills_root` | mcp/src/agents_remember/install/skills.py:58-106; mcp/src/agents_remember/install/skills.py:72-73 |
 | Benchmark tooling resolves packaged benchmark cases through the same package-data root. | `benchmark_root_context`; `packaged_source_root` | mcp/src/agents_remember/benchmarks/runner_modules/roots.py:10-17 |
 
 ## Update History
 
+- 2026-08-11T15:20+02:00 — Re-anchored runtime asset selection to the exact application entry
+  point, explicit-source branch, and packaged-source branch.
 - 2026-08-03T10:10+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 6 assigned citation findings (3 missing anchors and 3 malformed sources), including a source-duplication normalization; final scoped check is clean.
 
 - 2026-05-31T12:30+02:00 — Documented new `long_path()` `resolve=False` mode that absolutizes relative paths against cwd without resolving symlinks (1.0.0 review remediation).

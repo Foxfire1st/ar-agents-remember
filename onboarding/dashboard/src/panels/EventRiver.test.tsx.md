@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EventRiver.test.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T11:15+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -92,7 +92,7 @@ exists; lifecycle-less workspace diagnostics still render their honest raw fallb
 | `observerEvent` — the shared envelope builder supplying `schema`/`trust`, typed against the mirror. | `observerEvent` | dashboard/src/test/fixtures/wire.ts:373-385 |
 | The `read.packet` emitter that carries `data.repoId` + facts-only `files`. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:426-453 |
 | The `ObserverEvent` shape (trust/actor/kind/data) the helper builds. | `ObserverEvent` | dashboard/src/types/event.ts:9-22 |
-| `qualifiedLeafKey`/`leafTitleForKey` — the task identity helpers used by the lifecycle-attached and lifecycle-only row tests. | `leafTitleForKey` | dashboard/src/data/taskIdentity.ts:95-100 |
+| `qualifiedLeafKey`/`leafTitleForKey` — the task identity helpers used by the lifecycle-attached and lifecycle-only row tests. | `leafTitleForKey` | dashboard/src/data/taskIdentity.ts:118-123 |
 
 ## Update History
 - 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 8 repository-reference citations and normalized 1 prose citation (8/8 anchored and sourced; scoped citation check clean).

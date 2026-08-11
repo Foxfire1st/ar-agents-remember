@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/announcer.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+0200                           |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ Domain Documentation sources.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Store, transition detector, and refcounted watcher. | "export function announcePolite" | dashboard/src/data/announcer.ts:33-33 |
-| The ANY-pending derivation (N1) the focused-seat suppression now uses. | "export interface OpenSession" | dashboard/src/data/sessions.ts:28-28 |
+| The ANY-pending derivation (N1) the focused-seat suppression now uses. | "export interface OpenSession" | dashboard/src/data/sessions.ts:29-29 |
 | Exact announcement copy and sequencing coverage. | "SetResult arrival strings" | dashboard/src/data/announcer.test.ts:36-52 |
 | The N1 agent-only-blocked pin: unfocused speaks seat-level, focused stays silent (the bar announces every pending payload). | "promotion + assertive state strings" | dashboard/src/data/announcer.test.ts:54-60 |
 | Permanent DOM regions consuming both channels. | "export function CockpitLiveRegions" | dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx:19-19 |

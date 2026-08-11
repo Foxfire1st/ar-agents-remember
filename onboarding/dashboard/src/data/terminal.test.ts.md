@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/terminal.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,10 +41,10 @@ terminal, while an explicit server `exit` remains authoritative. It pins one rep
 serving-boot identity, resize-before-input replay, superseding stale CONNECTING and OPEN sockets,
 inert stale callbacks, first-observed-boot adoption, silence on dispose, and refusal after exit.
 
-### 260707-HFX2-L17 Attach Payload Regression
+### Task Attachment Payload Regression
 
-The request test now proves `attachSessionToLeaf` sends both `leafKey` and the selected role while
-retaining `409`/network result classification.
+The request test proves `attachSessionToTask` posts the canonical `{repository, path}` task document
+and selected role to `/attach-task`, while retaining `409`/network result classification.
 
 ### Logic
 
@@ -120,6 +120,8 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Replaced the retired leaf-key attachment description with the current
+  canonical task-document attachment endpoint, payload, and regression boundary.
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: bound the client-under-test row to
   `connectTerminal` (terminal.ts 197-313) with a plain source. Zero findings remain.
 

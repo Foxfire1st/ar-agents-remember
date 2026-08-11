@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/launchFlow.test.ts`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ pass through the removed direct `response.json()` implementation.
 
 ### Logic
 
-- **Selection reducers (R4)** cit:([`chooseModel`, `chooseEffort`, `launchableEfforts`, `launchSelectionBody`, `selectionComplete`, `EMPTY_SELECTION`], dashboard/src/data/launchFlow.ts:27-31; dashboard/src/data/launchFlow.ts:34-36; dashboard/src/data/launchFlow.ts:47-59; dashboard/src/data/launchFlow.ts:62-71; dashboard/src/data/launchFlow.ts:77-79; dashboard/src/data/launchFlow.ts:82-90) — over the recorded Claude/Codex/Pi envelopes:
+- **Selection reducers (R4)** cit:([`chooseModel`, `chooseEffort`, `launchableEfforts`, `launchSelectionBody`, `selectionComplete`, `EMPTY_SELECTION`], dashboard/src/data/launchFlow.ts:31-35; dashboard/src/data/launchFlow.ts:38-40; dashboard/src/data/launchFlow.ts:51-63; dashboard/src/data/launchFlow.ts:66-75; dashboard/src/data/launchFlow.ts:81-83; dashboard/src/data/launchFlow.ts:86-94) — over the recorded Claude/Codex/Pi envelopes:
   Codex `gpt-5.6-sol` re-gates effort to its advertised `low`, switching to `spark` re-gates to
   `high` (never carried over); Claude rows advertise no default ⇒ effort `null`, selection
   incomplete; a `defaultEffort` that is NOT launch-settable is not silently selected (the trap
@@ -43,7 +43,7 @@ pass through the removed direct `response.json()` implementation.
   verbatim and a bare id matches nothing; `launchSelectionBody` emits both knobs or `{}` and
   throws `/incomplete/` on either partial; the fresh-Claude exact-session snapshot keeps
   `selectedEffort` null with only the model config category.
-- **Classifier table (R5/R8)** cit:([`classifyOpenResponse`], dashboard/src/data/launchFlow.ts:182-195) — every open fixture: 200-starting → `opened`
+- **Classifier table (R5/R8)** cit:([`classifyOpenResponse`], dashboard/src/data/launchFlow.ts:198-211) — every open fixture: 200-starting → `opened`
   carrying the requested pair verbatim; 200 vendor-defaults → both knobs null; 400
   `launch-selection-invalid` ×2 (partial pair / non-native, verbatim details); 400 bad-kind →
   `open-refused` with verbatim status+detail; 409 leaf-taken → owning session named; 409
@@ -98,6 +98,7 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current data-contract card for `launchFlow.test.ts` with task-document identity, qualified seat state, and terminal projections represented by this source.
 - 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 9 citation findings, converting 3 legacy prose line references and 3 unanchored/malformed fixture rows into exact citations.
 
 - 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. The

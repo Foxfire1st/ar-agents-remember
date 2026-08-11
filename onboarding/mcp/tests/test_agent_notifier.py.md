@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agent_notifier.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -203,16 +203,16 @@ spec.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: the fact predicates, the action dispatcher, and the sweep entry point. | "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:640-640; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:331-331; mcp/src/agents_remember/serving/agent_notifier.py:95-182 |
+| The module under test: the fact predicates, the action dispatcher, and the sweep entry point. | "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:689-689; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:350-350; mcp/src/agents_remember/serving/agent_notifier.py:95-182 |
 | The heartbeat store the zero-drift and second-sweep tests exercise directly. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
-| The terminal catalog declares the typed `Literal` aliases. | "TerminalSessionKind = Literal"; "TerminalSessionStatus = Literal" | mcp/src/agents_remember/models/terminal_catalog.py:21-23 |
+| The terminal catalog declares the typed `Literal` aliases. | "TerminalSessionKind = Literal"; "TerminalSessionStatus = Literal" | mcp/src/agents_remember/models/terminal_catalog.py:22-22; mcp/src/agents_remember/models/terminal_catalog.py:24-24 |
 | The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_agent_notifier.py:49-73 |
 | The fake-host casting convention this suite reuses rather than inventing its own duck-typing idiom. | `_FakeTerminalHost`; "class TerminalHost:" | mcp/src/agents_remember/serving/terminal.py:109-109; mcp/tests/test_terminal_ws.py:227-387 |
 | The operator-inbox terminal state and compaction semantics used by the sweep tests (the ladder transitions are deleted; legacy `ladder-resolved` rows stay parse-compat). | `list_redeliverable`; `reconcile_and_compact` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:153-173; mcp/src/agents_remember/controlplane/operator_inbox_store.py:234-234 |
 | The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `AgentNotifierSignalCooldownStore` | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220 |
-| The quiescence pin proves an absent-developer backlog reaches a fixed point through the grace path (no escalation rungs, 260713-TES-L5). | `test_unacked_backlog_reaches_a_fixed_point_with_absent_developer` | mcp/tests/test_agent_notifier_ladder.py:538-580 |
+| The quiescence pin proves an absent-developer backlog reaches a fixed point through the grace path (no escalation rungs, 260713-TES-L5). | `test_unacked_backlog_reaches_a_fixed_point_with_absent_developer` | mcp/tests/test_agent_notifier_ladder.py:691-750 |
 | The production predicates and the fact-only finding kinds are the behavior the demolition suite mutation-pins. | `evaluate_predicates`; `FindingKind` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-380; mcp/src/agents_remember/serving/agent_notifier_models.py:26-50 |
-| HFX2-L9 tests cover signal cooldown and diagnostic-pane non-actionability. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row`; `test_diagnostic_pane_signal_is_not_actionable` | mcp/tests/test_agent_notifier_seat.py:336-371; mcp/tests/test_agent_notifier_seat.py:492-512 |
+| HFX2-L9 tests cover signal cooldown and diagnostic-pane non-actionability. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row`; `test_diagnostic_pane_signal_is_not_actionable` | mcp/tests/test_agent_notifier_seat.py:367-404; mcp/tests/test_agent_notifier_seat.py:538-560 |
 
 ## Cross-Repo References
 
@@ -243,6 +243,7 @@ surface and the sweep never evaluates them.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the regression card for `test_agent_notifier.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the deletion of the
   expectation/ladder predicate test classes and the fact-only inbox-predicate surface.
@@ -316,5 +317,3 @@ surface and the sweep never evaluates them.
   monotonic-chip-counter fix (a live F-V/N1 instance found while writing this suite) as a preserved
   invariant for future test additions. Verification metadata pinned until closeout stamps the
   260707-HFX2-L2 commit.
-
-

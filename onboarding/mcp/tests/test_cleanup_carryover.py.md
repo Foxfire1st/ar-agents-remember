@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cleanup_carryover.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                               |
-| lastVerifiedCommitDate |2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                               |
+| lastVerifiedCommitDate |2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                    |
 
 ## Governing Overview
@@ -74,7 +74,8 @@ rule in `guidance.carryover_done`.
   present in both repos, and the branch payload contains only `code` and `memory`.
 - `CleanupDryRunDirectoryTests` patch carryover/provider teardown, create a standard
   worktree group containing only the code worktree, memory worktree, and
-  `provider-runtime/`, then assert `cleanup_result(..., dry_run=True)` reports the
+  `provider-runtime/` plus the reserved curator `reports/` tree, then assert
+  `cleanup_result(..., dry_run=True)` reports the report tree and
   group directory as `would_remove` rather than `not-empty`, returns state
   `would-cleanup`, and uses prospective "Cleanup would reclaim..." wording in the
   summary.
@@ -106,6 +107,8 @@ faking the row.
   their own lifecycle edge.
 - Dry-run directory reporting models cleanup's scheduled removals, but real cleanup
   remains conservative and removes directories only after they are empty.
+- Real cleanup and dry-run both target only the current enclosure's reserved `reports/` tree;
+  unrelated coordination/task reports are outside this path.
 - External-only: the carryover route + cleanup guard are no-ops for `internal`/`disabled`
   memory (vacuously done), which `test_internal_memory_is_vacuously_done` asserts.
 - Cleanup drift snapshot removal is exact to the contract's code worktree name and branch;
@@ -147,6 +150,8 @@ Cleanup/carryover tests keep the carryover-before-cleanup invariant while updati
 
 ## Update History
 
+- 2026-08-11T16:54+02:00 — Extended cleanup coverage to prove actual and prospective garbage
+  collection of the enclosure-local curator checklist directory.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.

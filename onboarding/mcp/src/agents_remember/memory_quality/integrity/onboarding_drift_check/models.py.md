@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T00:56+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -42,6 +42,7 @@ class DriftSummaryPacket(TypedDict):                      # L17-L25
     actionableCount: NotRequired[int]
     reportPath: NotRequired[str]
     actionableSample: NotRequired[list[dict[str, Any]]]
+    rows: NotRequired[list[dict[str, Any]]]
     error: NotRequired[str]
 ```
 
@@ -58,7 +59,8 @@ status member and a matching `error: str | None = None` field;
 identical copy of the enum.
 
 The `NotRequired` keys are the status-conditional half of the shape: only a
-`checked` status carries `count`/`actionableCount`/`reportPath`/`actionableSample`,
+`checked` status carries `count`/`actionableCount`/`reportPath`/`actionableSample` and may carry
+the internal opt-in complete `rows`,
 and only an `error` status carries `error`. That is why `memory_quality/check.py`
 reads them with `.get` — the guard there establishes the status, but the TypedDict
 cannot carry that narrowing across the branch.
@@ -78,6 +80,8 @@ cannot carry that narrowing across the branch.
 - **Status-conditional keys stay `NotRequired`.** The packet's optional keys are
   what let one type describe all three statuses; consumers narrow on `status` and
   read with `.get`.
+- Complete `rows` are internal opt-in report material. Ordinary context/tool callers keep the
+  bounded actionable sample and do not widen their transport payload.
 
 ## Repo-Internal References
 
@@ -90,6 +94,8 @@ cannot carry that narrowing across the branch.
 
 ## Update History
 
+- 2026-08-11T16:54+02:00 — Added optional complete serialized rows for the enclosure checklist's
+  internal report path while preserving the bounded ordinary drift packet.
 - 2026-08-03T03:59:59+02:00 — Curated 7 citation findings (1 table row, 5 prose citations, 1 source-form repair): added exact anchors and source paths; removed one duplicate source extent; scoped fixer generated the final ranges.
 
 - 2026-08-01T00:56+02:00 — 260731-EFA-L4 curator: the card said this module defines "the `DriftRow`

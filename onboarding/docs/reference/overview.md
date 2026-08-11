@@ -6,8 +6,8 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 ## Purpose
 
@@ -154,7 +154,24 @@ normal session-retire semantics, and preserves transcript/report evidence. `fals
 landed/archive path. Manager and orchestrator seats are excluded in either mode. The public quality
 description also reflects cheap-first subprocess ordering and CI-fresh local proof reuse policy.
 
+## 260731-EFA-L19 Reference Impact
+
+The public reference now presents structural agent control directly: agents dispatch and address
+children by canonical task document plus role, while launch/session, inbox-row, adapter, and gate
+correlations remain private control-plane state. `harnesses.md`, `mcp-tools.md`, and
+`settings-json.md` describe that division and the settings-derived role/altitude launch selection;
+the retired exact-session agent tools are not retained as a compatibility surface.
+
+`drift-c02.md` distinguishes the task-start temporary drift report from the curator's full
+contract-scoped combined checklist at `<worktree-enclosure>/reports/curator-memory-quality.md`.
+That enclosure-local operational artifact is atomically replaced, combines repairable onboarding
+and quality work with explicitly closeout-owned evidence, and is removed with the enclosure.
+
 ## Update History
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the four changed reference files
+  with structural agent control and the enclosure-local curator checklist; no exact-session public
+  control or duplicate drift-report authority remains.
 
 - 2026-08-10T07:30+02:00 — 260805-ARG-L1: `settings-json.md` now documents default-on completion
   close, the exact durable report barrier, owner exclusions, landed/archive opt-out, and the

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_inbox_arrival_guarantee.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-11T14:29+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,7 +35,7 @@ tests were red before implementation and drive the production sweep/tool surface
 - `ScopedArchitectCustodyTests` cit:([`ScopedArchitectCustodyTests`], mcp/tests/test_inbox_arrival_guarantee.py:94-175) — two simultaneous repository
   architects resolve by their binding scope; an exact-leaf architect wins within its master;
   global first-match is never a fallback (R13).
-- `PostTimeOwnerRebindingTests` cit:([`PostTimeOwnerRebindingTests`], mcp/tests/test_inbox_arrival_guarantee.py:178-229) — a message addressed to a retired
+- `PostTimeOwnerRebindingTests` cit:([`PostTimeOwnerRebindingTests`], mcp/tests/test_inbox_arrival_guarantee.py:177-229) — a message addressed to a retired
   manager reaches the same-leaf+role replacement at post time without a new post (N14).
 - `PostTimeAddressBranchTests` cit:([`PostTimeAddressBranchTests`], mcp/tests/test_inbox_arrival_guarantee.py:232-332) — role-only owner addresses resolve to
   the current manager; unknown seat and lifecycle addresses resolve to the derived owner;
@@ -94,14 +94,14 @@ deliver-until-LANDED semantics are same-repository runtime behavior proven by so
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The scoped custody resolver under test. | `derive_architect_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:294-325 |
-| The post-time re-resolution under test. | `_post_address`; `_is_owner_addressed` | mcp/src/agents_remember/serving/operator_inbox_posts.py:99-125; mcp/src/agents_remember/serving/operator_inbox_posts.py:131-155 |
+| The scoped custody resolver under test. | `derive_architect_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:129-138 |
+| The post-time re-resolution under test. | `_post_address`; `_is_owner_addressed` | mcp/src/agents_remember/serving/operator_inbox_posts.py:110-144; mcp/src/agents_remember/serving/operator_inbox_posts.py:176-193 |
 | The supersede tool under test. | `operator_inbox_supersede_tool` | mcp/src/agents_remember/application/operator_inbox_tools.py:153-180 |
 | The supersede transition under test. | `mark_superseded` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:265-293 |
 | Terminal inspectability under test. | `list_for_mailbox` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:117-148 |
 | Retention/cap eviction under test. | `inbox_keep_ids`; `evaluate_pending_expiry_findings` | mcp/src/agents_remember/controlplane/interaction_retention.py:140-163; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:175-198 |
 | Last-good settings loop under test. | `_agent_notifier_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:108-140 |
-| Relay-death watcher under test. | `post_relay_death_signal`; `relay_death_watch_loop` | mcp/src/agents_remember/serving/relay_death_watch.py:101-180 |
+| Relay-death watcher under test. | `post_relay_death_signal`; `relay_death_watch_loop` | mcp/src/agents_remember/serving/relay_death_watch.py:100-152; mcp/src/agents_remember/serving/relay_death_watch.py:167-174 |
 | Retire surfacing under test. | `_surface_stranded_rows` | mcp/src/agents_remember/application/terminal_tools.py:1025-1095 |
 
 ## Cross-Repo References
@@ -119,6 +119,9 @@ sweep no longer owns a nudge store); the arrival-guarantee matrix itself is unch
 
 ## Update History
 
+- 2026-08-11T14:29+02:00 — Re-read post-time owner rebinding and regenerated the
+  `_post_address`/`_is_owner_addressed` ranges around their current declarations; verification
+  metadata remains unchanged for governed closeout.
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the current staged inbox-arrival guarantee harness; the existing assertions remain accurate. Verification metadata remains pinned until closeout.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the nudge-store removal from the
   TTL/cap harness context. Verification metadata pinned until closeout stamps the

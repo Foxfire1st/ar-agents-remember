@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_claude_stream_transport.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T15:05+02:00 |
-| lastVerifiedCommitHash | `2b47ed9520a770b9858e8af1f112f58745dcf473` |
-| lastVerifiedCommitDate | 2026-07-30T16:00:03+02:00|
+| lastUpdated | 2026-08-12T00:08+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,6 +50,10 @@ prompt/response/setter frames preserve shared-lock order. These cases pin the se
 withdrawal linearization seam for Claude.
 
 ## Update History
+
+- 2026-08-12T00:08+02:00 — No content impact: the guarded-write failure subtest now records the
+  exception type name instead of the type object so xdist can serialize diagnostics; transport
+  behavior and assertions are unchanged. Verification metadata remains pinned until closeout.
 
 - 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: recorded the real-subprocess lifecycle tier that pins
   ownership release across start -> stop -> start and retains the live double-start refusal. Split the

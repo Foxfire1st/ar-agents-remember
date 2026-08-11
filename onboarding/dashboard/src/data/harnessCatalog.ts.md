@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/harnessCatalog.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,8 +63,8 @@ proven by repository source and tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Owns timeout, retry, and stale-request cancellation around this pure read. | `useHarnessCatalogRead` | dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts:22-84 |
-| Renders the explicit catalog states in the chooser. | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:362-423 |
-| The serving endpoint returns exactly the narrow row shape. | `api_harnesses` | mcp/src/agents_remember/serving/_app_terminal_routes.py:155-157 |
+| Renders the explicit catalog states in the chooser. | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:353-413 |
+| The serving endpoint returns exactly the narrow row shape. | `api_harnesses` | mcp/src/agents_remember/serving/_app_terminal_routes.py:157-159 |
 
 ## Cross-Repo References
 

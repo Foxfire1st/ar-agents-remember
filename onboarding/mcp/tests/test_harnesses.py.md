@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_harnesses.py`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-15T23:16+02:00                           |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ the direct evidence.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The registry under test. | `find_harness` | mcp/src/agents_remember/serving/harnesses.py:61-70 |
-| The endpoint-level harness tests (GET detection + the harness opener). | `test_get_harnesses_lists_supported_set_with_detection` | mcp/tests/test_terminal_ws_websocket_2.py:148-158 |
+| The endpoint-level harness tests (GET detection + the harness opener). | `test_get_harnesses_lists_supported_set_with_detection` | mcp/tests/test_terminal_ws_websocket_2.py:192-202 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/provider_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -131,7 +131,7 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
 | Provider summary and diagnostics projection live in the provider status module. | `provider_status_packet`; `provider_diagnostics_packet` | mcp/src/agents_remember/providers/status.py:53-87; mcp/src/agents_remember/providers/status.py:105-127 |
 | Provider response models distinguish compact summaries from diagnostics/native payloads. | `ProviderSummary`; `ProviderStatusResponse`; `ProviderDiagnosticsResponse`; `ProviderNativeToolResponse` | mcp/src/agents_remember/models/providers.py:75-93; mcp/src/agents_remember/models/providers.py:96-119; mcp/src/agents_remember/models/providers.py:138-158; mcp/src/agents_remember/models/providers.py:182-188 |
 | Provider status and diagnostics payload builders produce the application-facing model inputs. | `provider_status_payload`; `provider_diagnostics_payload` | mcp/src/agents_remember/mcp/tools/providers.py:33-37; mcp/src/agents_remember/mcp/tools/providers.py:40-52 |
-| The base tool payload delegates the builder output to completion without normalizing it itself. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| The base tool payload delegates the builder output to completion without normalizing it itself. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
 | Complete tool responses validate the normalized payload. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:47-61 |
 | Finalization converts the completed response into the model-facing result. | `finalize_tool_response` | mcp/src/agents_remember/models/tool_response.py:15-26 |
 | The registry selects the response model for each provider tool. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |

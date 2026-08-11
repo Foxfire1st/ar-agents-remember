@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/ports.py`                    |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-08T14:38+02:00                                       |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                   |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                   |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -26,12 +26,12 @@ re-exports these names for the conversation package.
 
 ### Logic
 
-`ActiveConversationPort` (cit:(["class ActiveConversationPort"], mcp/src/agents_remember/serving/ports.py:61-61)) and `ConversationLibraryPort`
-(cit:(["class ConversationLibraryPort"], mcp/src/agents_remember/serving/ports.py:93-93)) are the two read protocols; `ControlSessionLike`
-(cit:(["class ControlSessionLike"], mcp/src/agents_remember/serving/ports.py:121-121)), `TerminalCatalogPort` (cit:(["class TerminalCatalogPort"], mcp/src/agents_remember/serving/ports.py:134-134)), and
-`ControlPlanePort` (cit:(["class ControlPlanePort"], mcp/src/agents_remember/serving/ports.py:186-186)) expose the control/terminal seams. The canonical
+`ActiveConversationPort` (cit:(["class ActiveConversationPort"], mcp/src/agents_remember/serving/ports.py:62-62)) and `ConversationLibraryPort`
+(cit:(["class ConversationLibraryPort"], mcp/src/agents_remember/serving/ports.py:94-94)) are the two read protocols; `ControlSessionLike`
+(cit:(["class ControlSessionLike"], mcp/src/agents_remember/serving/ports.py:122-122)), `TerminalCatalogPort` (cit:(["class TerminalCatalogPort"], mcp/src/agents_remember/serving/ports.py:135-135)), and
+`ControlPlanePort` (cit:(["class ControlPlanePort"], mcp/src/agents_remember/serving/ports.py:189-189)) expose the control/terminal seams. The canonical
 definitions live here so serving modules can import them without triggering the conversation
-package's route composition; `__all__` (cit:([`__all__`], mcp/src/agents_remember/serving/ports.py:269-269)) curates the surface.
+package's route composition; `__all__` (cit:([`__all__`], mcp/src/agents_remember/serving/ports.py:272-278)) curates the surface.
 
 ### Invariants And Boundaries
 
@@ -69,6 +69,7 @@ No cross-repository implementation participates.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current serving card for `ports.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the canonical port surface added
   by the backwards-edge removal. Verification metadata pinned until closeout stamps the L9 code
   commit.

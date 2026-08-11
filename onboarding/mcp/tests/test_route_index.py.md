@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_route_index.py`                         |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-18T20:03+02:00                                 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`             |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`             |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ production code and real Git fixtures.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Source census validates the root and freezes tracked/untracked membership plus eligible paths. | "def route_index_source_snapshot" | mcp/src/agents_remember/kernel/route_index_census.py:41-41 |
-| Rendering consumes one snapshot and writes only changed index bytes. | "def build_route_indexes" | mcp/src/agents_remember/kernel/route_index.py:182-182 |
+| Rendering consumes one snapshot and writes only changed index bytes. | "def build_route_indexes" | mcp/src/agents_remember/kernel/route_index.py:184-230 |
 | Shared Git execution scrubs selectors and uses surrogate-preserving decoding. | "def git_environment" | mcp/src/agents_remember/kernel/git_command.py:76-76 |
 | Matrix sections cover contamination, symlink/sparse/gitlink identity, selectors, failures, non-UTF-8 paths, and convergence. | `RouteIndexTests` | mcp/tests/test_route_index.py:82-907 |
 

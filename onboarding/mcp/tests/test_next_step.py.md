@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_next_step.py`              |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -184,7 +184,7 @@ the `lifecycle_start` payload it asserts the rundown on.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The next-step engine under test. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
-| The choke point that attaches `nextStep` to every response. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| The choke point that attaches `nextStep` to every response. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
 | `lifecycle_start_payload` whose `frontHalfRundown` + `nextStep` are asserted. | `lifecycle_start_payload` | mcp/src/agents_remember/mcp/tools/lifecycle.py:20-21 |
 | The ambient lifecycle installed/started/promoted by the edge tests. | `AmbientLifecycle`; `install_ambient` | mcp/src/agents_remember/observer/ambient.py:112-635; mcp/src/agents_remember/observer/ambient.py:669-671 |
 | The projected `LifecycleState` the pure tests construct. | `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:156-179 |
@@ -236,4 +236,3 @@ No meaningful cross-repo references found.
 - 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE turn end): the ACTIVE-hint assertions were repointed off `lifecycle_gate` onto `lifecycle_turn_end_notification` — `test_front_half_generic_points_back_to_the_rundown`, the renamed `test_decide_points_to_the_turn_end_notification`, the renamed `_gate_after` overlays (`test_closeout_preview_hints_the_turn_end_until_approved`/`test_integrate_dry_run_hints_the_turn_end`/`test_finalize_dry_run_hints_the_turn_end`), the edge dry-run/torn-contract cases, and the `lifecycle_start` choke-point rundown assertion. Added `test_awaiting_developer_hints_the_stop` (`nextTool=None`, "resumes automatically") and the end-to-end `test_turn_end_notification_does_not_self_dismiss_then_next_call_resumes` (the notification keeps its own response on `awaiting-developer`; the next call auto-resumes). The parked `blocked`-gate await/resume tests are unchanged. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-27T20:16+02:00 — Added two gate-await tests: `test_blocked_at_a_gate_awaits_the_decision` (pure — a `blocked` state in both `close` and `build` phases yields `_AWAIT_GATE`/`lifecycle_resume`) and `test_next_step_for_blocked_gate_awaits_resume` (edge — the live `amb.start()` + `amb.block(...)` seam returns the resume hint on the `lifecycle_gate` response). Both pin the blocked-state branch added to `compute_next_step`.
 - 2026-06-27T18:43+02:00 — Added file-level onboarding for the new task-27 test suite covering the `compute_next_step` state machine (front-half/decide pointers, linear guidance delegation, the closeout/integrate/finalize gate overlays, `_from_guidance`, and `lifecycle_end` loop-back), the exception-contained `next_step_for` edge (missing/torn-contract degradation, dry-run windows), and the `_tool_payload`/`lifecycle_start` rundown choke point. Verification metadata pinned until closeout stamps the task-27 code commit.
-

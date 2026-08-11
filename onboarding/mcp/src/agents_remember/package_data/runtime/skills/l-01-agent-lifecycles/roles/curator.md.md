@@ -1,120 +1,66 @@
-# l-01-agent-lifecycles/roles/curator.md
+# mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash |                                            `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate |                                            2026-08-08T22:29:45+02:00|
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-08-11T14:40+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| governingOverview | `../../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
-The portable **curator** lifecycle: a fresh per-leaf onboarding writer spawned after builder code
-and reviewer verdict are available. As of 260707-HFX-L11 it is spawned from a dedicated
-`../templates/curator-brief.md` dispatch pack that FEEDS it three inputs (never inferred from
-transcript memory): the leaf's landed change set, the leaf task doc, and notes/. It writes
-onboarding only — file sidecars, route overviews when affected, generated route indexes, and the
-repo entity catalog when a real entity changed — then returns a memory-pass report for the
-manager's leaf closeout packet.
+This file is the packaged runtime artifact synchronized exactly from canonical
+`skills/l-01-agent-lifecycles/roles/curator.md`. It carries the same curator lifecycle into installed
+runtimes and owns no independent doctrine.
 
-## Code Commentary
+## Logic
 
-### Logic
+Because synchronization replaces the complete canonical skill tree, the packaged curator has the
+same leaf-scoped onboarding-only seat, three-way intent reconciliation, current/evidence/history
+separation, and the single enclosure-checklist intake/repair loop as the canonical source. The
+full scoped call combines missing-onboarding, quality, stale indexes, source-change candidates, and
+noteworthy evidence; the curator reruns it until the zeroable count clears. Changes must be made
+canonically and propagated; editing this artifact independently creates drift.
 
-This is a sync-propagated (`scripts/sync-skills.py`) package-data copy of the canonical
-`skills/l-01-agent-lifecycles/roles/curator.md`. The role ratifies the L6R3 curator seat in the
-manager -> builder -> reviewer -> curator chain, and 260707-HFX-L11 activates it: change-set
-feeding (R1), the c-12/c-05 process rewiring that moves onboarding-authoring duty off the builder
-and onto this seat (R2/R3), and the manager wiring that makes the chain enforced rather than
-descriptive (R4). Its Checks And Report section is the soft gate of the citation contract
-(260731-EFA-L16): the curator runs `memory_quality_check` during its own pass and clears findings
-by making citations CURRENT (fixer, re-anchor, re-read — never attestation prose), because the
-same tool is the closeout hard gate and now snaps BEFORE the code commit and the test wrapper.
+## Conventions
 
-**What This Seat Is** now names the fed inputs explicitly: the brief FEEDS the curator the leaf's
-landed change set (code diff over the leaf's base-to-head range, with counters/paths — the manager
-pulls this from the leaf contract's recorded range, not a guess), the leaf task doc, and notes/ (the
-builder turn report and, when the leaf ran a loop, the reviewer verdict). A new paragraph states the
-seat-routing rule plainly: during leaf work, onboarding create/update duty belongs to this seat, not
-the builder — the builder produces code + a turn report only (`../roles/worker.md`), and this seat
-is where `c-05-create-or-update-onboarding-files` runs; the strict 1-to-1 source mapping,
-governing-overview links, and metadata rules that skill enforces are unchanged, only the writing
-seat moved. The closing-seat binding is now explicit too: the `c-12-closeout` skill's
-missing-onboarding and changed-sidecar checks are satisfied by THIS pass, before the manager ever
-runs the closeout preview — a check still failing after this pass is a closeout failure escalated
-back to a respawned curator pass, never something the closing seat patches inline.
+- Treat canonical `skills/` as the sole doctrine owner.
+- Keep this artifact byte-identical through `scripts/sync-skills.py`.
+- Describe packaged behavior only as synchronized canonical behavior.
+- Verification provenance remains specific to this packaged source path.
 
-Intake (step 1) now names the FED change-set explicitly (paths + counters over the leaf's
-base-to-head range) instead of a generic "changed-path list." Step 3 ("Write Onboarding Only") now
-opens with the mgmt-L4 routing rule stated in full: route every change-set item and every notes/
-item to the RIGHT onboarding home (a source file's own sidecar; the nearest governing route-local
-overview for route/package-shape changes; the repo entity catalog only for a real load-bearing
-cross-layer change; the L3 Operational-Notes target as LAST RESORT ONLY) — overview-dumping is
-rejected as a default, not just discouraged.
+## Invariants And Boundaries
 
-The loop remains: brief -> intake -> inspect diff + evidence -> write onboarding -> indexes/checks ->
-memory-pass report -> end. Code worktree access is read-only for changed source confirmation. Memory
-worktree writes are limited to onboarding surfaces: sidecars, route overviews when route meaning
-changed, and entity catalog
-entries only for real load-bearing entity changes. The curator uses the c-05 file-level onboarding
-workflow for sidecars and catalogs.
-
-The curator never writes code, never decides gates, never mutates task-doc state, and never performs
-closeout, integration, or finalization. The manager closes a leaf from builder code + reviewer
-verdict + curator memory pass — now an enforced sequencing rule (`roles/manager.md`: "do not run the
-closeout preview before this pass exists"), not just a descriptive line.
-
-### Invariants And Boundaries
-
-- One fresh curator seat per leaf memory pass.
-- Onboarding writes only; code and AR state are out of scope.
-- The curator is FED its change-set/task-doc/notes inputs via `../templates/curator-brief.md`; it
-  never infers a change set from transcript memory, and asks the owning seat for one clarification
-  row when evidence is missing or ambiguous.
-- Every routed item goes to the specific sidecar or governing overview whose subject it is; the L3
-  Operational-Notes target is last-resort only, never a default.
-- Role-seat immutability applies in dashboard-owned sessions; a curator never absorbs another role
-  brief.
-- The memory-pass report is the durable output consumed by the owning seat; the `c-12-closeout`
-  gates are bound to it (doctrinally — the underlying checks remain role-agnostic on-disk checks,
-  per this leaf's doctrine-review Note C).
+- Package installation must not alter curator authority or workflow.
+- This artifact cannot introduce a compatibility lifecycle or task-specific override.
+- Curator still writes onboarding only and communicates through structural parent messaging/report.
+- The synchronized curator cannot report completion with an enforced curator-actionable finding.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-05-create-or-update-onboarding-files` skill, whose "Seat routing" paragraph names the curator as the seat that runs it during leaf work. | "Seat routing"; "builder produces code and a turn report only"; "workflows from a change set"; "L3 Operational-Notes" | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:19-19; mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:21-22; mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md:24-24 |
-
-## 260712-TRH-L4 Generated-Copy Doctrine
-
-This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
+| The packaged curator contains the same current seat definition and three-way responsibility. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:7-47 |
+| The synchronized check loop requires complete curator-actionable repair before report. | "### 4 — Iterate The Checklist, Then Report" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
+| The canonical source is the doctrine owner. | "# Lifecycle — Curator" | skills/l-01-agent-lifecycles/roles/curator.md:1-47 |
+| MCP package data is an explicit synchronization target. | "mcp package data" | scripts/sync-skills.py:43-47 |
+| Synchronization replaces each target from the canonical tree and then checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
 ## Update History
 
-- 2026-08-05T23:20+02:00 — 260731-EFA-L16 curator: recorded the checks-paragraph sharpening — citation findings clear by making the citation CURRENT (fixer, re-anchor, re-read), never by attestation prose, and the same `memory_quality_check` is the closeout gate running BEFORE the code commit and test wrapper, so skipping it snaps in seconds. Verification metadata stays pinned until closeout stamps the L16 commit.
-- 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the seat-routing claim through the operative ownership paragraph and regenerated the final range with the scoped fixer.
-
-- 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-07-08T00:00+02:00 — 260707-HFX-L11 curator activation (R1/R2/R3/R4): rewrote "What This
-  Seat Is" to describe the fed inputs (landed change set + task doc + notes/, delivered via the new
-  `../templates/curator-brief.md`, never inferred from transcript memory), the seat-routing
-  statement (builder = code + report only; curator = where c-05 runs), and the explicit binding of
-  the c-12 missing-onboarding/changed-sidecar checks to this pass (a still-failing check escalates
-  to a respawned curator pass, never patched inline by the closing seat). Intake (step 1) now names
-  the FED change-set explicitly; step 3 opens with the mgmt-L4 routing rule in full (sidecar >
-  governing overview > entity catalog > L3 Operational-Notes last-resort; overview-dumping rejected
-  as a default). Removed the prior "this role deliberately does not implement change-set feeding,
-  c-12 rewiring, or c-05 process rewiring" sentence — that scope is exactly what this leaf lands.
-  Doctrine-only change set (60 files: 6 canonical `skills/` edits + 1 new template, each synced to 9
-  mirrors, 0 Python); sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
-  `skills/l-01-agent-lifecycles/roles/curator.md`. Verification metadata pinned — no commit yet on
-  `ar/260707-hfx-l11-curator-activation` (working-tree change); this memory pass is itself dogfooding
-  the new curator-brief template (the first leaf dispatched with it).
-- 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: created onboarding for
-  the new dedicated onboarding-writer lifecycle, including fresh per-leaf spawn, builder/reviewer
-  inputs, onboarding-only write scope, local route-index regeneration, memory-pass reporting, and
-  the explicit boundary excluding code edits, AR state, closeout, change-set feeding, and c-12/c-05
-  rewiring. Verification metadata is blank until closeout stamps the first commit containing this
-  new package-data source file.
+- 2026-08-11T16:54+02:00 — Synchronized the single enclosure-checklist intake/repair loop and its
+  zeroable curator gate without creating copy-specific doctrine.
+- 2026-08-11T14:40+02:00 — Synchronized the curator-owned missing-onboarding/full-quality
+  completion condition without creating copy-specific doctrine.
+- 2026-08-11T14:25+02:00 — Replaced accumulated copy-specific/task-delta prose with the exact
+  synchronized-artifact contract and current packaged-source evidence.
+- 2026-08-09T13:59+02:00 — Synchronized fact-relay supervision wording from canonical doctrine.
+- 2026-08-08T22:10+02:00 — Synchronized the agent-notifier naming wave.
+- 2026-07-12T18:11+02:00 — Established packaged curator lifecycle coverage.

@@ -72,9 +72,9 @@ the reader kept mounted-hidden so selection survives.
 | The read-only notes routes. | `register_notes_routes`; `list_notes`; `read_note` | mcp/src/agents_remember/serving/notes.py:101-109; mcp/src/agents_remember/serving/notes.py:112-136; mcp/src/agents_remember/serving/notes.py:168-177 |
 | The same-origin notes client (`listNotes`/`readNote`/`resolveNoteReference`). | `listNotes`; `readNote`; `resolveNoteReference` | dashboard/src/data/notes.ts:32-33; dashboard/src/data/notes.ts:35-41; dashboard/src/data/notes.ts:52-65 |
 | The reused File Viewer content pane (markdown/code/placeholder). | "function noteAsFileContent("; "function dualPaneProps("; "<DualPane {...dualPaneProps(note)} split={false} />" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:118-118; dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:131-131; dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:196-196 |
-| Cockpit defines the note-opening callback. | "const openNotes = useCallback((target: NotesReaderTarget) => {" | dashboard/src/cockpit/Cockpit.tsx:526-526 |
-| Cockpit defines the note-selection callback. | "const selectNote = useCallback(" | dashboard/src/cockpit/Cockpit.tsx:533-533 |
-| Cockpit renders NotesReaderViewer. | "<NotesReaderViewer" | dashboard/src/cockpit/Cockpit.tsx:590-590 |
+| Cockpit defines the note-opening callback. | "const openNotes = useCallback((target: NotesReaderTarget) => {" | dashboard/src/cockpit/Cockpit.tsx:530-530 |
+| Cockpit defines the note-selection callback. | "const selectNote = useCallback(" | dashboard/src/cockpit/Cockpit.tsx:537-537 |
+| Cockpit renders NotesReaderViewer. | "<NotesReaderViewer" | dashboard/src/cockpit/Cockpit.tsx:594-594 |
 | TaskNotes resolves a note reference into a reader target. | "const target = resolveNoteReference(reference" | dashboard/src/panels/TaskNotes.tsx:83-83 |
 
 ## Current L5I Route State

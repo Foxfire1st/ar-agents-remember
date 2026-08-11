@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/session-cockpit/sessions-view/lifecycle.test.tsx` |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-11T15:20+02:00                                      |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lifecycle suite. | `describe` | dashboard/src/panels/session-cockpit/sessions-view/lifecycle.test.tsx:34-280 |
+| The lifecycle file contains the legacy-duty, smart-default/handoff, and authoritative landed-cleanup suites. | "describe(\"S5 legacy duty parity\", () => {"; "describe(\"smart-default focus + handoff + session cycling (L2: R9, F17)\", () => {"; "describe(\"authoritative landed cleanup through rail and palette callers (F5-S5-2)\", () => {" | dashboard/src/panels/session-cockpit/sessions-view/lifecycle.test.tsx:64-280 |
 
 ## Cross-Repo References
 
@@ -61,6 +61,8 @@ No cross-repository implementation source governs this file.
 
 ## Update History
 
+- 2026-08-11T15:20+02:00 — Replaced the ambiguous `describe` anchor with the three exact suite
+  declarations and stated the file-level coverage they evidence.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
   lifecycle suite split from `SessionsView.test.tsx`. Verification pinned to the
   leaf base until closeout stamps the code commit.

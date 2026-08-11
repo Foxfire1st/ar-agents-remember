@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/FlowTab.test.tsx`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T21:17+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -87,12 +87,13 @@ exact on-canvas prose, so they double as a regression guard on the drawn spec.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The renderer + nav under test (default model, nav radiogroup, initialModel fallback, segment counts). | `FlowTab`, `FLOW_MODELS` | dashboard/src/panels/FlowTab.tsx:111-148 |
-| The registry the census derives expectations from and whose invariant prose the suite asserts. | `ROUTER`, `FLOW_MODELS` | dashboard/src/panels/flowModels.ts:56-101; dashboard/src/panels/flowModels.ts:437-437 |
+| The registry the census derives expectations from and whose invariant prose the suite asserts. | `ROUTER`, `FLOW_MODELS` | dashboard/src/panels/flowModels.ts:56-101; dashboard/src/panels/flowModels.ts:438-438 |
 
 As of the 260703-L8 remediation the tests asserted the then-converged canvas: router default + retired models absent from the nav, the ladder and no-chat-builds invariants on the ROUTER drawing, the branch-not-worktree intent and delegated handover decision on the coordination event loop, reopen-not-redo on the manager, brief-started/no-machinery worker, hat-framed designer, and the ruled deciders on the reviewer. Cycle 6 pinned the ruled seam channel verbatim: the coordination assertion matched decide-by-packet-carried-gateId, and a manager assertion matched the gateId-rides-the-packet raise line. Cycle 7 adds a manager assertion pinning the raise node's enclosure address (`enclosure="<master task name>" — the exact address integration enforcement matches the gate by`).
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `FlowTab.test.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: moved the flow fixture onto canonical sprint-bound
   command-seat provenance. Verification metadata remains pinned until closeout stamps the code
   commit.

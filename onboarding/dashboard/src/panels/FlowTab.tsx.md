@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/FlowTab.tsx`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-06T15:40+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -108,7 +108,7 @@ No relevant documentation found after checking live sources.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The flow-model registry FlowTab renders and switches between — all content + the segment/model types live here. | `FLOW_MODELS` | dashboard/src/panels/flowModels.ts:437-437 |
+| The flow-model registry FlowTab renders and switches between — all content + the segment/model types live here. | `FLOW_MODELS` | dashboard/src/panels/flowModels.ts:438-438 |
 | The renderer + nav under test (default model, nav switching, initialModel fallback, per-model render census, invariant text). | "FlowTab canvas (unified l-01-agent-lifecycles)" | dashboard/src/panels/FlowTab.test.tsx:9-176 |
 | The dev harness route that mounts FlowTab at `/dev/flows` with `initialModel` from `?model=`. | `initialModel` | dashboard/src/dev/DevApp.tsx:15-20 |
 | The next-step engine the build-job model is the human-readable spec for (regime model). | `compute_next_step` | mcp/src/agents_remember/application/next_step.py:110-131 |

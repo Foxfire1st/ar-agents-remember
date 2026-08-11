@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -108,13 +108,13 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
-| Public response model registry validates payload shapes. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:181-185 |
+| Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
+| Public response model registry validates payload shapes. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:217-221 |
 | Server registration lives in `server.py`. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
 | Application-layer modules convert public MCP payloads into service calls. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 | Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | `build_current_provider_state` | mcp/src/agents_remember/providers/current_state.py:16-36 |
-| Inbox tool names are now pinned in the public tool subset. | "operator_inbox_post" | mcp/tests/test_tools.py:337-337 |
-| Terminal leaf reassignment and agent-facing session spawn are pinned in the public tool subset. | "attach_terminal_session_to_leaf"; "spawn_agent_session" | mcp/tests/test_tools.py:340-341 |
+| The agent-facing control surface exposes only structural dispatch, parent/child messaging, lifecycle gates, and role-relative administration. | "test_agent_control_surface_exposes_only_structural_addresses" | mcp/tests/test_tools.py:156-221 |
+| Exact-session administrative tools, including inbox rows, task attachment, raw spawn, retire, and rename, are explicitly absent from the public agent roster. | "for retired in (" | mcp/tests/test_tools.py:414-428 |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -127,6 +127,8 @@ mandatory CRAP enforcement. Preview must say it runs before the code commit; app
 before any code mutation and that approval precedes apply.
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — Aligned the regression card for `test_tools.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T03:07:44+02:00 — W3-B05 curator: resolved 7 Tier-2 table findings with exact anchors and source paths; fixer generated all final ranges.

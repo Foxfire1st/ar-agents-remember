@@ -5,90 +5,64 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/sessions.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-31T15:31+02:00                                       |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                   |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-11T14:29+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                   |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
 
 [registration route overview](overview.md)
 
-## 260731-EFA-L8 Change
-
-The tool-registration functions gained bare-`*` keyword-only signatures (the 19
-PLR0917 fixes across `mcp/registration/*.py`); the rule stays enabled and call sites
-already pass keywords. Registered tools are unchanged.
-
 ## Purpose
 
-`register_session_tools(server, config)` declares the hosted agent-session family:
-`attach_terminal_session_to_leaf`, `spawn_agent_session`, `hosted_session_readiness`,
-`session_retire`, `session_rename`.
+Registers agent dispatch and structural child/self seat-management operations whose caller identity
+is plane-resolved.
 
 ## Code Commentary
 
 ### Logic
 
-`spawn_agent_session` is the reason this module exists as its own family and the clearest case of
-the route's contract. Its sixteen flat parameters are the published schema every dispatching agent
-and every `l-01` skill calls with; the body sorts them into the three parameter objects
-`spawn_agent_session_payload` takes:
+`dispatch_agent` accepts child document, role, brief, and optional label. Retire/rename child use
+the same structural address; rename-self has no identity argument. Application services own
+authorization, runtime allocation, exact initial brief delivery, and cleanup.
 
-- `SpawnSeat` — what the caller may declare: `kind`, `leaf_key`, `replacement_for_leaf`, `level`,
-  `label`, `env` (the seat's `AR_SPAWN_ROLE` rides here).
-- `RetiredSpawnInputs` — what the caller may no longer declare: `context`/`submit` (the retired
-  one-call brief) plus `harness`, `model`, `effort`, `launch_args`, `prompt_keywords`,
-  `session_commands`. These are still **accepted** so a non-`None` value can be refused loudly
-  (`brief-delivery-separate`, `spend-override-unsupported`) before any settings, catalog, or
-  terminal side effect. Removing them from the signature would turn a named refusal into an
-  unknown-argument error.
-- `SpawnedBy` — `spawned_by_session` / `spawned_by_lifecycle`, recorded on the catalog row so the
-  dashboard can draw the orchestration tree.
+### Conventions
 
-The docstring is the full public contract: status `spawned-unbriefed` on success; the pre-spawn
-refusals (`brief-delivery-separate`, `spend-override-unsupported`, `harness-unknown`,
-`harness-not-detected`, `effort-invalid`, `model-invalid`, `launch-selection-invalid`,
-`level-invalid`, `bad-kind`); the settings-only knob chain (`orchestration.rolesPerLevel[level]`
-deep-merged over flat `orchestration.roles`, falling through to `orchestration.spawn.harness` and
-then the first detected registry harness); and the separation of brief delivery — the caller must
-obtain `hosted_session_readiness(...)=ready` and post one exact-agent durable `dispatch-brief`.
-
-The other four forward their arguments as keywords:
-
-- `attach_terminal_session_to_leaf(session_id, leaf_key, role?)` — moves one existing session;
-  returns `attached` / `leaf-taken` / `unknown-session`; needs no worktree enclosure.
-- `hosted_session_readiness(session_id, wait_seconds=0.0)` — read-only; exact catalog identity plus
-  the protocol adapter snapshot. Pane text, copy mode and log timing are explicitly not authority.
-  It never sends input, and the wait is finite (60 s maximum, enforced downstream).
-- `session_retire(actor_session_id, session_id, reason)` — `actor_session_id` is the retiring seat's
-  own id, self-declared; there is no ambient "who am I" resolution anywhere in this codebase. The
-  docstring is the model-visible statement of the authority policy (never self-retire; a manager may
-  retire only worker/reviewer seats of its OWN master; the orchestrator may retire any seat) and the
-  status vocabulary (`retired`, `already-retired`, `unknown-session`, `unknown-actor`,
-  `retire-refused`).
-- `session_rename(session_id, label)` — identity text only; the spawned role never changes, and the
-  FIRST rename freezes the original spawn-time label into provenance.
+The public operation family speaks task documents and roles only.
 
 ### Invariants And Boundaries
 
-- Keep the retired spawn inputs in the signature. They exist to be refused; deleting them changes a
-  named, guided refusal into a schema error.
-- Do not collapse `spawn_agent_session`'s parameters into `SpawnSeat` at the signature. The
-  parameter objects belong on the payload-builder side of the boundary, which is exactly where this
-  body puts them.
-- Authority (retire policy, spend-override refusal, leaf-claim arbitration) is enforced in
-  `mcp/tools/terminal.py` and the `serving/` layer, never here.
+- Models never submit a session/lifecycle/terminal id.
+- The initial brief is internally exact-pinned and persisted before delivery.
+- Failed initial briefing retires the unbriefed child.
+- Replacement does not change the public child address.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The payload builders and the `SpawnSeat`/`RetiredSpawnInputs`/`SpawnedBy` definitions. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
-| The readiness builder and its finite-wait bound. | `hosted_session_readiness_payload` | mcp/src/agents_remember/mcp/tools/hosted_readiness.py:13-30 |
-| Each argument lands in exactly one of the three spawn groups. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
+| Dispatch accepts only structural identity and the brief. | `dispatch_agent` | mcp/src/agents_remember/mcp/registration/sessions.py:27-49 |
+| Child retire and rename use document plus role. | `retire_child`; `rename_child` | mcp/src/agents_remember/mcp/registration/sessions.py:51-81 |
+| Self rename derives the caller ambiently. | `rename_self` | mcp/src/agents_remember/mcp/registration/sessions.py:83-86 |
+
+## Cross-Repo References
+
+No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-11T14:29+02:00 — Re-read dispatch, child retirement/rename, and self-rename and
+  widened their citations to include the registered-tool decorators; verification metadata
+  remains unchanged for governed closeout.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.

@@ -6,8 +6,8 @@
 | path | mcp/tests/test_dispatch_brief.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | mcp/tests/overview.md |
 
 ## Governing Overview
@@ -16,69 +16,39 @@ Governing overview: mcp/tests/overview.md
 
 ## Purpose
 
-Pins the serving dispatch-brief contract end to end: exact-session readiness gating, adapter
-submission and receipt handling, durable inbox rooting, expectation-clock startup, and the
-byte-identical canonical/packaged skill copies the dispatch instructions encode.
+Regression suite for the control-plane-owned initial dispatch-brief transaction.
 
 ## Code Commentary
 
 ### Logic
 
-`test_ready_dispatch_is_inbox_rooted_and_starts_expectation_clocks` posts a `dispatch-brief`
-through `operator_inbox_post_payload` with a `HostedDelivery` seam set and asserts the durable
-row is `delivered`/`accepted`/`pending`, the submitted control prompt carries the prompt keywords
-and entry id, and the expectation rows become exactly `{ack-by, briefed-by, turn-report-by}` with
-`briefed-by` met. Receipt tests pin that a rejected adapter receipt keeps the same row pending and
-that an ambiguous redelivery reconciles without resubmitting. Refusal tests pin that a not-ready
-session raises before any durable row exists, that an uncommitted caller (`submit=False`) is
-recorded as adapter-rejected without touching the wire, that a closed dispatch gate keeps its own
-reason with the row pending for retry, and that a missing exact session yields
-`no-hosted-session` rather than falling back to a matching lifecycle. The sync test asserts the
-canonical `skills/l-01-agent-lifecycles` files carry the protocol phrases and equal their packaged
-copies byte-for-byte.
+The tests prove ready dispatch persists one exact internal row, accepted delivery starts expectation clocks, queued/not-ready delivery stays durable for retry, ambiguous receipts reconcile without resubmission, gate or caller refusal leaves evidence, and lifecycle doctrine advertises the structural dispatcher.
+
+### Conventions
+
+Test-only evidence uses deterministic fakes/fixtures and exercises the public or owning internal seam directly.
 
 ### Invariants And Boundaries
 
-Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
-outputs. Dispatch proof remains exact-session and fail-closed: the exact agent target is never
-replaced by a lifecycle match, refusals never contact the adapter, and a pending row survives
-redelivery ambiguity without a second submission.
+The agent-facing result never exposes the child occupant id; an exact internal target never falls back by lifecycle; queued work does not duplicate briefs or respawn.
 
 ## Docs References
 
-No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
+No Domain Documentation source is configured for this repository-local regression contract.
 
 ## Repo-Internal References
 
-Worker source inventory, reviewer verdict, and governing route overview.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Current suite declaration anchoring this card. | `test_ready_dispatch_is_inbox_rooted_lands_and_starts_expectation_clocks` | mcp/tests/test_dispatch_brief.py:146-146 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references.
-
-### 260713-PHA-L5 Reviewed Hosted Cutover Impact
-
-Reviewed this file against the accepted hosted-session cutover and PASS verdict. Its relevant
-contract now follows exact adapter evidence for readiness, delivery, liveness, or interactions;
-legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
-inbox acceptance remains distinct from explicit consumption where applicable.
-
-## 260731-EFA-L2 Delta — refusals before the adapter
-
-- An **uncommitted caller** is recorded as rejected **without touching the adapter**: the refusal
-  is durable, and no vendor process is contacted for a dispatch that was never authorised.
-- A **closed dispatch gate** refuses the brief and **keeps the gate reason**, so the operator sees
-  why rather than a generic denial.
-
-## 260731-EFA-L6 Delta — imports follow the serving move
-
-`HostedDelivery` (and `DispatchBriefGate`) are now imported from
-`agents_remember.serving.dispatch_brief` instead of the deleted
-`agents_remember.mcp.tools.dispatch_brief`; the suite itself is unchanged and still pins the same
-readiness-gated, inbox-rooted contract against the serving policy module.
+No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `test_dispatch_brief.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: replaced the placeholder body with the actual

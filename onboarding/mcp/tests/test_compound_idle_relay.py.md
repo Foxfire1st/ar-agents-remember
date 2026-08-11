@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_compound_idle_relay.py`                  |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-09T06:48+02:00                                    |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`               |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`               |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -37,35 +37,35 @@ signatures dedupe repeated sweeps.
 (`_entry`, `_orchestrator`, `_manager`, `_idle_worker`, `_ctx`, `_state_signals`) and runs
 multi-tick sweeps over them:
 
-- Positive/dedupe: `test_compound_idle_positive_exactly_one_orchestrator_signal` cit:([`test_compound_idle_positive_exactly_one_orchestrator_signal`], mcp/tests/test_compound_idle_relay.py:209-243)
+- Positive/dedupe: `test_compound_idle_positive_exactly_one_orchestrator_signal` cit:([`test_compound_idle_positive_exactly_one_orchestrator_signal`], mcp/tests/test_compound_idle_relay.py:277-312)
   proves one row naming every set member, `state_signal_landed`, marker set, and no second row
   on re-projection.
-- Fail-closed negatives: partial set with one active worker cit:([`test_partial_set_active_worker_no_signal`], mcp/tests/test_compound_idle_relay.py:245-258),
-  unknown member cit:([`test_unknown_member_fail_closed_no_signal`], mcp/tests/test_compound_idle_relay.py:370-376),
-  unknown manager cit:([`test_unknown_manager_fail_closed_no_signal`], mcp/tests/test_compound_idle_relay.py:378-383),
-  zero-worker manager cit:([`test_zero_worker_manager_does_not_signal`], mcp/tests/test_compound_idle_relay.py:578-582),
-  unbound manager cit:([`test_unbound_manager_never_forms_set`], mcp/tests/test_compound_idle_relay.py:584-589),
-  unbound worker cit:([`test_unbound_worker_never_joins_or_blocks`], mcp/tests/test_compound_idle_relay.py:591-609),
-  and no-spawn-provenance owner cit:([`test_no_signal_without_spawn_provenance_owner`], mcp/tests/test_compound_idle_relay.py:639-644).
-- Boundary/idle vocabulary: `awaiting-input` counts as idle cit:([`test_awaiting_input_member_counts_as_idle`], mcp/tests/test_compound_idle_relay.py:385-400);
-  retired/exited rows never count (status-first) cit:([`test_retired_rows_never_count_status_first`], mcp/tests/test_compound_idle_relay.py:611-637);
-  flap re-arms after a seat returns to activity cit:([`test_flap_rearms_after_a_seat_returns_to_activity`], mcp/tests/test_compound_idle_relay.py:402-442);
+- Fail-closed negatives: partial set with one active worker cit:([`test_partial_set_active_worker_no_signal`], mcp/tests/test_compound_idle_relay.py:314-327),
+  unknown member cit:([`test_unknown_member_fail_closed_no_signal`], mcp/tests/test_compound_idle_relay.py:433-441),
+  unknown manager cit:([`test_unknown_manager_fail_closed_no_signal`], mcp/tests/test_compound_idle_relay.py:443-448),
+  zero-worker manager cit:([`test_zero_worker_manager_does_not_signal`], mcp/tests/test_compound_idle_relay.py:648-652),
+  unbound manager cit:([`test_unbound_manager_never_forms_set`], mcp/tests/test_compound_idle_relay.py:654-661),
+  unbound worker cit:([`test_unbound_worker_never_joins_or_blocks`], mcp/tests/test_compound_idle_relay.py:663-681),
+  while structural ownership remains routable without spawn provenance cit:([`test_structural_owner_routes_without_spawn_provenance`], mcp/tests/test_compound_idle_relay.py:710-715).
+- Boundary/idle vocabulary: `awaiting-input` counts as idle cit:([`test_awaiting_input_member_counts_as_idle`], mcp/tests/test_compound_idle_relay.py:450-465);
+  retired/exited rows never count (status-first) cit:([`test_retired_rows_never_count_status_first`], mcp/tests/test_compound_idle_relay.py:683-708);
+  flap re-arms after a seat returns to activity cit:([`test_flap_rearms_after_a_seat_returns_to_activity`], mcp/tests/test_compound_idle_relay.py:467-507);
   a working orchestrator holds the durable row with zero mid-turn submissions at t+301 s /
-  t+901 s and the next boundary lands it exactly once, terminal on this path cit:([`test_busy_orchestrator_holds_at_boundary_then_lands_exactly_once`], mcp/tests/test_compound_idle_relay.py:444-508).
-- Membership arms (TES-L6 structural ownership): a same-master seat spawned by another manager is
-  excluded cit:([`test_member_identity_same_master_without_manager_ownership_is_excluded`], mcp/tests/test_compound_idle_relay.py:510-519);
-  other-master workers never join or block cit:([`test_member_identity_other_master_worker_not_in_set`], mcp/tests/test_compound_idle_relay.py:521-538);
+  t+901 s and the next boundary lands it exactly once, terminal on this path cit:([`test_busy_orchestrator_holds_at_boundary_then_lands_exactly_once`], mcp/tests/test_compound_idle_relay.py:509-573).
+- Membership arms (L19 structural ownership): same-master membership is derived from task topology and ignores spawn provenance
+  cit:([`test_same_master_membership_ignores_spawn_provenance`], mcp/tests/test_compound_idle_relay.py:575-589);
+  other-master workers never join or block cit:([`test_member_identity_other_master_worker_not_in_set`], mcp/tests/test_compound_idle_relay.py:591-608);
   a foreign-master worker spawned BY the manager neither blocks (active) nor joins (idle)
-  cit:([`test_foreign_master_worker_active_does_not_block`, `test_foreign_master_worker_idle_does_not_join`], mcp/tests/test_compound_idle_relay.py:540-558; mcp/tests/test_compound_idle_relay.py:560-576).
+  cit:([`test_foreign_master_worker_active_does_not_block`, `test_foreign_master_worker_idle_does_not_join`], mcp/tests/test_compound_idle_relay.py:610-628; mcp/tests/test_compound_idle_relay.py:630-646).
 - Manager residue (L3): a manager with landed rows older than the window relays the distinct
-  `non-reaction` fact to its orchestrator, deduped per episode cit:([`test_manager_non_reaction_residue_relays_to_orchestrator`], mcp/tests/test_compound_idle_relay.py:646-687),
-  and skips when no spawn-provenance owner exists cit:([`test_manager_residue_skips_without_spawn_provenance_owner`], mcp/tests/test_compound_idle_relay.py:689-714).
-- Emitter guards (fix round 1, F4/F5): the marker re-record is a no-op cit:([`test_compound_idle_marker_guard_suppresses_repeat_record`], mcp/tests/test_compound_idle_relay.py:716-732);
-  the action skips no-seat-row (both `session_id=None` and unknown id) cit:([`test_emit_skips_no_seat_row`, `test_emit_skips_finding_without_session_id`], mcp/tests/test_compound_idle_relay.py:750-754; mcp/tests/test_compound_idle_relay.py:756-766),
-  already-emitted-on-fresh-signature cit:([`test_emit_skips_already_emitted`], mcp/tests/test_compound_idle_relay.py:768-789),
-  and no-longer-idle-at-action-time cit:([`test_emit_skips_no_longer_idle_at_action_time`], mcp/tests/test_compound_idle_relay.py:791-810);
+  `non-reaction` fact to its orchestrator, deduped per episode cit:([`test_manager_non_reaction_residue_relays_to_orchestrator`], mcp/tests/test_compound_idle_relay.py:717-758),
+  and routes structurally even without spawn provenance cit:([`test_manager_residue_routes_structurally_without_spawn_provenance`], mcp/tests/test_compound_idle_relay.py:760-787).
+- Emitter guards (fix round 1, F4/F5): the marker re-record is a no-op cit:([`test_compound_idle_marker_guard_suppresses_repeat_record`], mcp/tests/test_compound_idle_relay.py:789-805);
+  the action skips no-seat-row (both `session_id=None` and unknown id) cit:([`test_emit_skips_no_seat_row`, `test_emit_skips_finding_without_session_id`], mcp/tests/test_compound_idle_relay.py:823-827; mcp/tests/test_compound_idle_relay.py:829-839),
+  already-emitted-on-fresh-signature cit:([`test_emit_skips_already_emitted`], mcp/tests/test_compound_idle_relay.py:841-862),
+  and no-longer-idle-at-action-time cit:([`test_emit_skips_no_longer_idle_at_action_time`], mcp/tests/test_compound_idle_relay.py:864-883);
   the action-time signature replaces a stale evaluation-time signature in both the ask and the
-  marker cit:([`test_action_time_signature_replaces_stale_evaluation_signature`], mcp/tests/test_compound_idle_relay.py:812-844).
+  marker cit:([`test_action_time_signature_replaces_stale_evaluation_signature`], mcp/tests/test_compound_idle_relay.py:885-919).
 
 ### 260713-TES-L4 Landed-State Fixture Alignment
 
@@ -136,6 +136,7 @@ are unchanged.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the regression card for `test_compound_idle_relay.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: recorded the current compound-idle relay assertions
   and re-read them against the staged source; verification metadata remains pinned until closeout.
 

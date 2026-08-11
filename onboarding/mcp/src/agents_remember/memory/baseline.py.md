@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory/baseline.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -47,7 +47,7 @@ inside a `CoordinationHints(...)` (260731-EFA-L2) — the resolver no longer acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `memory_baseline_status` and `memory_baseline_adopt` call this module. | `memory_baseline_status_tool`; `memory_baseline_adopt_tool` | mcp/src/agents_remember/application/memory_tools.py:451-458; mcp/src/agents_remember/application/memory_tools.py:461-477 |
+| `memory_baseline_status` and `memory_baseline_adopt` call this module. | `memory_baseline_status_tool`; `memory_baseline_adopt_tool` | mcp/src/agents_remember/application/memory_tools.py:523-530; mcp/src/agents_remember/application/memory_tools.py:533-549 |
 | Ledger parsing and writing live in the kernel. | `load_ledger`; `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
 
 ## Update History

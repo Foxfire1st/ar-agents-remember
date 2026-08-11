@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-01T09:48+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -44,18 +44,8 @@ compatibility and must not be confused with orchestration binding identity.
 `sessionLogPath`. `contextDelivered` means the id-bearing user record exists in the bound harness
 log; `sessionCommandsDelivered` means command record plus non-error stdout, not pane rendering.
 
-cit:([`LeafAssignmentStatus`], mcp/src/agents_remember/models/terminal.py:19-25) is the closed response vocabulary for assignment
-attempts: `attached`, `leaf-taken`, `unknown-session`, `role-required`, plus the
-two members folded in from `LeafRefStatus` — `leaf-ref-not-found` and
-`leaf-ref-ambiguous`. Those two are no longer typed out here: since
-260731-EFA-L4 the alias `LeafRefStatus` is imported from `worktrees.leaf_refs`
-cit:(["LeafRefStatus = Literal["], mcp/src/agents_remember/models/terminal.py:17-17), which is what raises them. `LeafRefStatus` flattens a nested alias, so the
-published enum is byte-identical to the hand-written one — the change is that
-there is now one declaration instead of three.
-cit:([`AttachTerminalSessionToLeafResponse`], mcp/src/agents_remember/models/terminal.py:28-40) is a strict
-`ToolResponse` with operation `attach_terminal_session_to_leaf`, the requested session and `leafKey`,
-the optional prior binding (`previousLeafKey`), optional conflict owner (`ownerSession`), optional
-role (`chat` or `terminal`), and optional `detail` for validation refusals.
+cit:([`TaskAssignmentStatus`], mcp/src/agents_remember/models/terminal.py:20-29) is the closed response vocabulary for document-owned seat assignment attempts: `attached`, `seat-taken`, `unknown-session`, `role-required`, and explicit task-binding/document validation refusals. The operation accepts structural document-and-role intent; it does not expose a leaf-key or occupant-id address.
+cit:([`AttachTerminalSessionToTaskResponse`], mcp/src/agents_remember/models/terminal.py:32-44) is a strict `ToolResponse` with operation `attach_terminal_session_to_task`, the requested session and `taskDocumentRef`, the optional previous document binding and seat role, an optional conflict owner for administrative diagnostics, and optional refusal detail.
 
 cit:([`SpawnAgentSessionStatus`], mcp/src/agents_remember/models/terminal.py:43-69) is the L2 vocabulary: `spawned-unbriefed` (the only `ok: true`
 case — the seat exists and is bound, and its brief is a separate delivery),
@@ -95,8 +85,8 @@ cit:([`SessionRetireResponse`], mcp/src/agents_remember/models/terminal.py:160-1
 success/already-retired), plus `detail` (populated on `retire-refused`, naming the exact
 authority-policy clause `check_retire_authority` raised). `ok` is true for `retired`/
 `already-retired` (idempotent), false for every refusal status — and that rule lives in ONE place,
-cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:970-970), so a refusal status added later cannot
-arrive as `ok=True` from a call site that forgot it. cit:([`SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:185-185) `=
+cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:977-977), so a refusal status added later cannot
+arrive as `ok=True` from a call site that forgot it. cit:([`SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:186-186) `=
 Literal["renamed","unknown-session"]`; `SessionRenameResponse` models `session_rename` (issue #4):
 cit:([`SessionRenameResponse`], mcp/src/agents_remember/models/terminal.py:186-197)
 `operation: Literal["session_rename"]`, `status`, `session`, `label`/`spawnedLabel` (`None`-default).
@@ -117,12 +107,10 @@ payload, and the spawn preflight check table. cit:([`_spawn_refusal`, `_retire_p
 the tool invents is therefore a pyright error at the tool rather than a `ValidationError`
 escaping the MCP handler.
 
-The one alias that comes from elsewhere is cit:(["LeafRefStatus = Literal["], mcp/src/agents_remember/models/terminal.py:17-17), imported from
-`worktrees.leaf_refs` — the module that raises those two members — and folded into both
-`LeafAssignmentStatus` and `SpawnAgentSessionStatus`. cit:([`LeafAssignmentStatus`, `SpawnAgentSessionStatus`], mcp/src/agents_remember/models/terminal.py:19-25; mcp/src/agents_remember/models/terminal.py:43-69)
+The task-assignment contract is declared independently from the legacy leaf-ref refusal alias: cit:([`TaskAssignmentStatus`, `SpawnAgentSessionStatus`], mcp/src/agents_remember/models/terminal.py:20-29; mcp/src/agents_remember/models/terminal.py:47-78). Document assignment failures name task-document validation; spawn retains its own broader refusal vocabulary.
 
 Each of the three tool-facing vocabularies also publishes its runtime half, derived from the
-alias by `get_args` rather than retyped beside it: cit:([`VALID_SPAWN_AGENT_SESSION_STATUSES`], mcp/src/agents_remember/models/terminal.py:77-79),
+alias by `get_args` rather than retyped beside it: cit:([`VALID_SPAWN_AGENT_SESSION_STATUSES`], mcp/src/agents_remember/models/terminal.py:80-82),
 cit:([`VALID_SESSION_RETIRE_STATUSES`], mcp/src/agents_remember/models/terminal.py:161-163), cit:([`VALID_SESSION_RENAME_STATUSES`], mcp/src/agents_remember/models/terminal.py:187-189).
 `test_wire_vocabulary_exhaustiveness` asserts, per tool, that the set of statuses the tool can
 actually return *equals* the declared set — a measurement in the other direction too, catching a
@@ -156,17 +144,17 @@ No relevant external/domain documentation found; this is an internal response co
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The response fields are defined by the local MCP payload and catalog assignment behavior. | `LeafAssignmentStatus`; `AttachTerminalSessionToLeafResponse` | mcp/src/agents_remember/models/terminal.py:19-25; mcp/src/agents_remember/models/terminal.py:28-40 |
+| The response fields are defined by the document-and-role assignment contract. | `TaskAssignmentStatus`; `AttachTerminalSessionToTaskResponse` | mcp/src/agents_remember/models/terminal.py:20-29; mcp/src/agents_remember/models/terminal.py:32-44 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The attach payload builder returns the exact fields modeled here, including leaf-ref refusal statuses and details. | `attach_terminal_session_to_leaf_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:26-43 |
+| The administrative attach payload builder returns the exact task-document-and-role fields modeled here. | `attach_terminal_session_to_task_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:27-44 |
 | The application tool imports and annotates the terminal aliases across spawn, refusal, retire, rename, and status seams. | `_knob_refusal`; `_spawn_refusal`; `_RETIRE_OK_STATUSES`; `_retire_payload`; `_rename_payload` | mcp/src/agents_remember/application/terminal_tools.py:452-470; mcp/src/agents_remember/application/terminal_tools.py:928-953; mcp/src/agents_remember/application/terminal_tools.py:970-970; mcp/src/agents_remember/application/terminal_tools.py:973-1008; mcp/src/agents_remember/application/terminal_tools.py:1145-1166 |
 | The MCP tool wrappers import the modeled spawn, retire, and rename payload aliases. | `spawn_agent_session_payload`; `session_retire_payload`; `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63; mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95 |
-| `LeafRefStatus` declares the two leaf-ref refusal members; `LeafRefResolutionError` produces those statuses, and `VALID_LEAF_REF_STATUSES` derives the runtime set from the alias. | "LeafRefStatus = Literal["; "class LeafRefResolutionError"; "VALID_LEAF_REF_STATUSES" | mcp/src/agents_remember/models/terminal.py:17-17; mcp/src/agents_remember/worktrees/leaf_refs.py:39-72; mcp/src/agents_remember/worktrees/leaf_refs.py:26-26 |
-| The response registry maps `attach_terminal_session_to_leaf` and `spawn_agent_session` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
+| `LeafRefStatus` declares the two leaf-ref refusal members; `LeafRefResolutionError` produces those statuses, and `VALID_LEAF_REF_STATUSES` derives the runtime set from the alias. | "LeafRefStatus = Literal["; "class LeafRefResolutionError"; "VALID_LEAF_REF_STATUSES" | mcp/src/agents_remember/models/terminal.py:18-18; mcp/src/agents_remember/worktrees/leaf_refs.py:26-26; mcp/src/agents_remember/worktrees/leaf_refs.py:39-39 |
+| The response registry maps `attach_terminal_session_to_task` and `spawn_agent_session` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:140-212 |
 | Conformance coverage includes a representative missing-session (attach) and legacy-caller-harness (spawn) refusal payload for the models. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |
 | `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:1011-1080; mcp/src/agents_remember/application/terminal_tools.py:1169-1183 |
 | The response registry maps `session_retire`/`session_rename` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
@@ -207,11 +195,12 @@ inbox acceptance remains distinct from explicit consumption where applicable.
   preflight table), the three derived `VALID_*` frozensets
   and the exhaustiveness assertions over them, plus the `_RETIRE_OK_STATUSES` L834 single-place
   `ok` rule. `LeafRefStatus` is now imported from `worktrees.leaf_refs` and folded into
-  `LeafAssignmentStatus` and `SpawnAgentSessionStatus` instead of the two members
-  being typed out in both — `Literal` flattens nested aliases, so the published enums are
-  unchanged. cit:(["LeafRefStatus = Literal["], mcp/src/agents_remember/models/terminal.py:17-17) cit:(["LeafAssignmentStatus = Literal[", "SpawnAgentSessionStatus = Literal["], mcp/src/agents_remember/models/terminal.py:19-25; mcp/src/agents_remember/models/terminal.py:43-69)
-  Two pre-existing body errors found while checking the vocabularies against the
-  source and fixed: the `LeafAssignmentStatus` enumeration omitted `role-required` (added in
+  the historical leaf-assignment and spawn vocabularies instead of the two members
+  being typed out in both. L19 later replaced that assignment surface with the structural
+  `TaskAssignmentStatus` document contract while spawn retained its own vocabulary.
+  cit:(["TaskAssignmentStatus = Literal[", "SpawnAgentSessionStatus = Literal["], mcp/src/agents_remember/models/terminal.py:20-29; mcp/src/agents_remember/models/terminal.py:47-78)
+  Two pre-existing body errors found while checking the historical vocabularies against the
+  source and fixed: the assignment enumeration omitted `role-required` (added in
   HFX2-L17, described later in this same card), and `SpawnAgentSessionStatus` was described as
   having `spawned` as "the only `ok: true` case" — the success status is `spawned-unbriefed`
   (`_spawned_payload` L768-L773 there, the only `ok: True`), while `brief-delivery-separate` is a

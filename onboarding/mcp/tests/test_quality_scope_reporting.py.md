@@ -5,86 +5,83 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-08T02:00+02:00               |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastUpdated            | 2026-08-11T22:28+02:00               |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
 [overview](overview.md)
 
-## 260731-EFA-L8 Change
-
-The sequencer-contract test no longer forces the hook to skip the dashboard tier: it
-creates `dashboard/node_modules` and injects an external npm shim (outside the temp
-repo) so the real `_gate.sh` runs the dashboard rail to completion (FL4 fix-round
-verification).
-
 ## Purpose
 
-Defines the module-level API of test_quality_scope_reporting.py.
+Contract tests for the code-quality wrapper's reported scope and provenance. The suite proves that
+each fixed rail names non-vacuous inputs and results, untracked exposure does not mutate Git state,
+caller altitude describes the actual candidate tree, and generated/dashboard workflow rails use
+the shared reporting contract.
 
 ## Code Commentary
 
-#
+### Logic
 
-- 260731-EFA-L7 (trace delta): the count-fix delta pins the live 426-TypeScript-input measurement (tsconfig project-input union after `liveThinking.test.tsx` joined the sync merge).
-## Logic
+`WrapperScopeOutputTests` pins scope-before-result ordering, nonzero units, distinct Radon/coverage
+populations, and refusal of a vacuous CRAP scope. `ConfigTruthTests` rejects missing or inert tool
+configuration. `UntrackedExposureTests` proves source/test/dashboard siblings are reported without
+index mutation and that enumeration failure refuses. `CallerProvenanceTests` covers pre-push ref
+input, staged closeout, clean integration, generated targets, and every dashboard/workflow rail.
 
-Module-level surface:
-
-- `run_git` (function, lines 27-34)
-- `write_quality_config` (function, lines 37-57)
-- `sample_repository` (function, lines 60-87)
-- `config_for` (function, lines 90-97)
-- `digest_text` (function, lines 100-101)
-- `digest_bytes` (function, lines 104-105)
-- `workflow_run_blocks` (function, lines 108-132)
-- `WrapperScopeOutputTests` (class, lines 135-309)
-- `ConfigTruthTests` (class, lines 312-343)
-- `UntrackedExposureTests` (class, lines 346-516)
-- `CallerProvenanceTests` (class, lines 519-705)
+The two assertions that execute installed Node tooling now use `skipUnless(shutil.which("node"))`.
+Absence of the external runtime is an explicit environment skip; when Node is present the live
+ESLint result set and all dashboard CI provenance rails are still asserted unchanged.
 
 ### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+Temporary repositories are real Git repositories. Helpers construct only the minimal config and
+workflow text needed to prove scope; live tool assertions skip only when their external executable
+is unavailable.
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+- A PASS result must follow a non-vacuous, explicitly described scope.
+- Reporting untracked inputs must not stage or otherwise mutate them.
+- Closeout and integration labels describe the actual staged or clean candidate they certify.
+- Missing Node may skip only the assertions that invoke Node; it cannot make a present runtime's
+  lint or workflow result set pass vacuously.
 
 ### Todos
 
 None.
 
-## Repo-Internal References
+## Docs References
 
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+No external Domain Documentation source is configured; the quality contract is repository-owned.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `run_git` (lines 27-34). | `run_git` | mcp/tests/test_quality_scope_reporting.py:27-34 |
-| Defines the function `write_quality_config` (lines 37-57). | `write_quality_config` | mcp/tests/test_quality_scope_reporting.py:37-57 |
-| Defines the function `sample_repository` (lines 60-87). | `sample_repository` | mcp/tests/test_quality_scope_reporting.py:60-87 |
-| Defines the function `config_for` (lines 90-97). | `config_for` | mcp/tests/test_quality_scope_reporting.py:90-97 |
-| Defines the function `digest_text` (lines 100-101). | `digest_text` | mcp/tests/test_quality_scope_reporting.py:100-101 |
-| Defines the function `digest_bytes` (lines 104-105). | `digest_bytes` | mcp/tests/test_quality_scope_reporting.py:104-105 |
-| Defines the function `workflow_run_blocks` (lines 108-132). | `workflow_run_blocks` | mcp/tests/test_quality_scope_reporting.py:108-132 |
-| Defines the class `WrapperScopeOutputTests` (lines 135-309). | `WrapperScopeOutputTests` | mcp/tests/test_quality_scope_reporting.py:135-309 |
-| Defines the class `ConfigTruthTests` (lines 312-343). | `ConfigTruthTests` | mcp/tests/test_quality_scope_reporting.py:312-343 |
-| Defines the class `UntrackedExposureTests` (lines 346-516). | `UntrackedExposureTests` | mcp/tests/test_quality_scope_reporting.py:346-516 |
-| Defines the class `CallerProvenanceTests` (lines 519-705). | `CallerProvenanceTests` | mcp/tests/test_quality_scope_reporting.py:519-705 |
+| No configured domain documentation was available. | — | — |
 
-### 260731-EFA-L17 — Targeted Tier And Integration Provenance
+## Repo-Internal References
 
-`CallerProvenanceTests` now expects the pre-push tier to render `"targeted"`
-(the `hook-tier` subprocess assertion), and
-`test_integration_invocations_name_the_clean_checkout` (lines 615-626) pins
-`diff_input_description` for `master-integration` ("master integration tree")
-and `leaf-integration` ("leaf integration tree").
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Wrapper result ordering and populations are non-vacuous. | `WrapperScopeOutputTests` | mcp/tests/test_quality_scope_reporting.py:135-327 |
+| Configuration and untracked-input failures refuse rather than pass. | `ConfigTruthTests`; `UntrackedExposureTests` | mcp/tests/test_quality_scope_reporting.py:328-361; mcp/tests/test_quality_scope_reporting.py:362-547 |
+| Caller provenance distinguishes pre-push, staged closeout, and clean integration inputs. | `CallerProvenanceTests`; `test_closeout_labels_the_already_staged_candidate`; `test_integration_invocations_name_the_clean_checkout` | mcp/tests/test_quality_scope_reporting.py:548-760; mcp/tests/test_quality_scope_reporting.py:608-614; mcp/tests/test_quality_scope_reporting.py:615-627 |
+
+## Cross-Repo References
+
+No cross-repository implementation participates.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: rewrote the generic symbol inventory
+  as the current scope/provenance contract and recorded exact Node-unavailable skips for the two
+  live dashboard assertions. Verification metadata remains pinned until governed closeout.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the targeted
   pre-push tier assertion and the integration-invocation provenance tests.

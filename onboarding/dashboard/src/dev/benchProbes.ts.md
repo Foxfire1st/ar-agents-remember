@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/benchProbes.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-31T16:10+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ alongside the four Playwright config files and the four driver directories.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `cockpitScenarios.ts` imports `CockpitBenchProbe` + `CockpitResetAudit` from this type-only module. | "./benchProbes" | dashboard/src/dev/cockpitScenarios.ts:43-43 |
-| `cockpitScenarios.ts` installs the `window.__cockpitBench` probe used by the browser drivers. | "window.__cockpitBench =" | dashboard/src/dev/cockpitScenarios.ts:756-756 |
+| `cockpitScenarios.ts` installs the `window.__cockpitBench` probe used by the browser drivers. | "window.__cockpitBench =" | dashboard/src/dev/cockpitScenarios.ts:765-765 |
 | `cockpitScenarios.ts` installs the `__cockpitBenchResetAudit` reset-audit surface. | `__cockpitBenchResetAudit` | dashboard/src/dev/cockpitScenarios.ts:326-326 |
 | `PtyRenderBench.tsx` imports `PtyFrameStats` + `PtySerializeProbe` from this type-only module. | "./benchProbes" | dashboard/src/dev/PtyRenderBench.tsx:7-7 |
 | `PtyRenderBench.tsx` installs the initial `window.__ptyBench` probe state. | "window.__ptyBench = { done: false" | dashboard/src/dev/PtyRenderBench.tsx:100-100 |

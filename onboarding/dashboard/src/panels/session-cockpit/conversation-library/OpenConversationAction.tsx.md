@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,8 +17,9 @@
 ## Purpose
 
 `Open as new chat` — the SOLE resume action (design §4.4, §9.4, R4). It mints a caller-stable
-`requestId`, sends the opaque conversation key + expected identity digest + cwd + launch context
-through the library store's open flow, and reflects the exact open operation's phase/outcome/rollback.
+`requestId`, sends the opaque conversation key + expected identity digest + cwd + a typed launch
+context carrying the task-document reference and optional seat role through the library store's
+open flow, and reflects the exact open operation's phase/outcome/rollback.
 It NEVER focuses anything itself; the parent focuses the new rail row only after the store reports
 `openedForFocus` (`phase="opened" && outcome="opened"`) with catalog proof. Every other outcome leaves
 the current chat, draft, focus, and scroll untouched.
@@ -82,6 +83,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — Clarified that conversation resume forwards canonical task-document
+  identity and optional seat role, not leaf-key addressing.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T03:21:00+02:00 — S18-SR3-B05 curator: regenerated the assigned whole-claim binding with the locked scoped fixer and inspected the generated extent against the approved claim; no approved semantic claim changes.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_abandon.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-21T04:10+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -19,7 +19,7 @@
 `test_worktree_abandon.py` covers worktree provider teardown and abandon in
 isolation: Docker-resource derivation from provider settings, dry-run teardown
 behaviour, Docker ownership-reclaim helpers, branch safety (unmerged refusal
-without force, force discard), and blocker reporting.
+without force, force discard), blocker reporting, and enclosure-report cleanup.
 
 ## Code Commentary
 
@@ -66,6 +66,10 @@ helpers):
 asserts two blockers (dirty worktree + unmerged branch), or zero blockers for a
 clean removal.
 
+`AbandonReportCleanupTests` creates an enclosure-local
+`reports/curator-memory-quality.md`, calls `_abandon_directories` without force,
+and proves both the reports tree and then-empty worktree group are removed.
+
 `AbandonLifecyclePhaseTests` (slice 05l P1, Gap A) covers the abandon-phase
 projection in isolation: `test_abandoned_cleanup_projects_abandoned_phase` calls
 `lifecycle_guidance(SimpleNamespace(cleanup="abandoned"))` and asserts the result's
@@ -78,8 +82,9 @@ imports `lifecycle_guidance` from `worktrees.modules.guidance`.
 
 Tests that need Git use the `git`/`init_repo` helpers imported from
 `test_worktree_support`. Docker tests are purely structural (no containers
-started). Temp dirs are cleaned up in `tearDown`. `lifecycle_guidance` (slice 05l)
-is exercised against a `SimpleNamespace` contract stub — no real Git or Docker.
+started). Temp dirs are cleaned up in `tearDown` or by their context manager.
+The report-cleanup and `lifecycle_guidance` tests use `SimpleNamespace` contract
+stubs, so neither needs a real coordinator, Git worktree, or Docker runtime.
 
 ### Invariants And Boundaries
 
@@ -87,7 +92,8 @@ The tests protect: template container names are expanded per repo root; settings
 absence is non-fatal (graceful empty result); unmerged commits are surfaced to
 the caller before any destructive action; the force path actually deletes
 (`git branch --list` confirms deletion); blockers are only raised for real
-blocking conditions (not already-absent).
+blocking conditions (not already-absent); and non-force abandon removes the
+enclosure report before reclaiming the now-empty worktree group.
 
 ## Docs References
 
@@ -104,6 +110,7 @@ No external documentation is needed for these standard-library unit tests.
 | `teardown_worktree_providers` loads worktree provider settings, removes the derived resources, and reclaims the provider-runtime tree. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
 | `_worktree_provider_docker_resources` derives the provider container/network resources used by teardown. | `_worktree_provider_docker_resources` | mcp/src/agents_remember/application/provider_runtime.py:194-208 |
 | `_abandon_branch` and `_abandon_blockers`. | `_abandon_branch`; `_abandon_blockers` | mcp/src/agents_remember/worktrees/modules/abandon.py:337-370; mcp/src/agents_remember/worktrees/modules/abandon.py:431-445 |
+| `_abandon_directories` removes the enclosure reports tree before attempting to reclaim the enclosing worktree group. | `_abandon_directories` | mcp/src/agents_remember/worktrees/modules/abandon.py:416-441 |
 | `lifecycle_guidance` delegates terminal cleanup states to `_reclaimed_phase`, including the `cleanup == "abandoned"` branch pinned by the 05l-P1 phase test. | `lifecycle_guidance`; `_reclaimed_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:200-210; mcp/src/agents_remember/worktrees/modules/guidance.py:213-227 |
 | `git`/`init_repo` test utilities from the worktree support test module. | "def git"; "def init_repo" | mcp/tests/test_worktree_support.py:54-54; mcp/tests/test_worktree_support.py:68-68 |
 
@@ -116,6 +123,8 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-11T17:26+02:00 — L19 report-folder delta: added direct non-force abandon proof that the enclosure reports tree is removed before the empty worktree group; verification metadata remains pinned for governed closeout.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

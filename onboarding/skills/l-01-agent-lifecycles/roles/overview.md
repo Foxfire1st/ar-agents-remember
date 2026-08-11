@@ -3,112 +3,67 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| sourceRoute | skills/l-01-agent-lifecycles/roles |
-| doc_type | route-local-overview |
-| lastUpdated            | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| sourceRoute | `skills/l-01-agent-lifecycles/roles` |
+| doc_type | `route-local-overview` |
+| lastUpdated | 2026-08-11T14:40+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 ## Purpose
 
-### 260713-TES-L1 Rename — Role Wording
-
-The role files under this route were refreshed to agent-notifier wording (watcher-ban and
-liveness-supervision prose now name the agent-notifier sweep); no role, seat, or dispatch
-semantics changed.
-
-Role-specific dispatch guidance shares the exact session-id handoff, ready proof, delivered-plus-harness-log-confirmed completion, launch-phase sessionCommands, and post-ready promptKeywords timing.
+This route owns the self-contained lifecycle for each role. Every file states what one seat is,
+which task-document altitude it occupies, the loop and artifacts it owns, its communication path,
+and the work it must refuse or escalate.
 
 ## Hot Path Summary
 
-Architect is now a sprint-qualified command seat launched from free chat; orchestrator and manager
-inherit that sprint identity. Role completion remains passively supervised, and every direct
-manager subordinate role participates in wake status rather than only the worker role.
+Architect owns sprint-level direction. Orchestrator owns the portfolio and manager topology.
+Manager occupies one canonical master and drives the leaf closeout chain. Worker occupies one leaf
+and produces code plus a turn report. Reviewer produces independent verdict evidence. Curator
+occupies one leaf coherence pass and reconciles existing intent, ruled intent, and implemented
+reality into onboarding. Other specialist roles retain their own documented altitude and artifact.
 
-Role-specific dispatch guidance shares the exact session-id handoff, ready proof, delivered-plus-harness-log-confirmed completion, launch-phase sessionCommands, and post-ready promptKeywords timing.
+The curator's terminal artifact is valid only after current-additions coverage and the full
+leaf-scoped memory-quality worklist have been repaired and rerun. Expected dirty-source drift and
+real-commit verification fields remain separately closeout-owned; they do not excuse a repairable
+onboarding or citation finding.
 
-### 260713-PHA-L5 Route Contract Review
+Roles are immutable within dashboard-owned seats. Horizontal role expansion uses structural
+dispatch to another document+role seat; native sub-agents, when allowed by a hands-on role, remain
+read/search helpers and never become AR role seats.
 
-Hosted role dispatch now relies on exact adapter readiness and correlated delivery evidence. The
-durable inbox remains the message root, explicit recipient consume remains acknowledgement, and
-pane/log classifiers are diagnostics-only. The packaged role briefs and source lifecycle guidance
-must stay aligned with this contract.
+## Conventions
 
-### 260731-EFA-L6 Curator Self-Check Impact
+- A role file is complete enough to start from its brief without transcript history.
+- The source role files are canonical; packaged copies are exact synchronization outputs.
+- Each role writes its artifact of record and communicates structurally one rung at a time.
+- Shared dispatch/authority doctrine remains in the parent `SKILL.md`.
 
-`curator.md` now requires the curator to green its own change-set before reporting:
-`route_index_refresh`, `memory_quality_check`, and `drift_check` are called with the leaf's
-enclosure `contract_path`, and each response's `onboardingRoot` must be the memory worktree.
-`templates/curator-brief.md` feeds the same contract-path doctrine to the dispatched curator.
-The other role briefs are unchanged.
+## Invariants And Boundaries
 
-### 260731-EFA-L16 Route Impact — role seats only, and guidelines where code is written
+- Manager owns a real master; worker/reviewer/curator own real leaves.
+- Role replacement preserves the task-document/role address.
+- Builder, reviewer, curator, and owner duties remain separate.
+- Curator completion requires the required missing-onboarding and full-quality reruns to name no
+  curator-actionable work.
+- No role absorbs lifecycle machinery, memory duty, or gate authority assigned to another role.
+- Terminal/finalizer truth and durable artifacts, not model completion posts, signal completion.
 
-The three prior role files now bind role-seat creation to `spawn_agent_session` explicitly and
-remove native sub-agent fan-out from the orchestration seats (orchestrator, manager); the
-architect keeps fan-out only for solo build under the worker discipline. The worker role (and
-its brief) reads `system/coding-guidelines.md` before the first edit; the reviewer lens verifies
-adherence independently; the architect's Opening Move reads `system/tools.md` as the repo's tool
-inventory and its drawing-board phase now names `tasks/AGENTS.md` as the problem-decomposition
-doctrine (reframe, assumptions/truth gaps/invariants, evidence plan, examples, derived plan);
-the curator's checks paragraph names the citation-gate contract (findings clear by
-making citations current, never attestations; the same `memory_quality_check` snaps at closeout
-before the code commit and test wrapper). Worker, reviewer, and curator fan-out (read/search/
-report) is unchanged.
+## Repo-Internal References
 
-## 260731-EFA-L17 Route Impact — Role Files State The Ladder
-
-`worker.md` (Checks section) and `templates/worker-brief.md` now require the change-set-scoped
-leaf check (`agents_remember.code_quality.check --targeted` with the leaf base) and state that
-the full wrapper is NOT a leaf check; `manager.md` and `templates/manager-brief.md` name the
-leaf targeted contract, the once-per-master full wrapper inside `worktree_integrate`
-(memory-capped), and the per-leaf `memory_quality_check` carve-out; `orchestrator.md` owns the
-master-gate full wrapper and forbids per-leaf full runs. `curator.md`'s contract-path-scoped
-self-check (L6) is unchanged and is exactly what greens the per-leaf memory-quality gate.
-
-### 260713-TES-L5 Route Impact — Judgment Demolition Doctrine
-
-The role files (and their synced package_data runtime copies) now teach the fact-relay
-supervision model: the agent-notifier sweep relays seat-state facts and owners interpret;
-the timed escalation ladder is retired; dead-owner rows surface to the scoped architect
-mailbox; `operator_inbox_consume` is attribution-only. The `code-seam` criterion wording
-follows (rung → attempt).
-
-## 260805-ARG-L1 Route Impact — Completed Subordinates And Quality Retries
-
-The manager/orchestrator role files and manager brief now require exact-report-gated automatic
-cleanup for worker/reviewer/curator seats, preserve transcripts, exclude manager/orchestrator
-owners, and name landed/archive as the opt-out mode. The orchestrator role also records that
-cheap-first execution and exact/test-only proof reuse are pipeline behavior, never a seat's
-discretion; unsupported deltas run fresh, conservative failures fall back to full pytest, and CI
-does not reuse local proof.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Curator is a fresh conservative coherence seat with onboarding-only writes and a mandatory pre-closeout repair-and-rerun loop. | "# Lifecycle — Curator"; "### 4 — Iterate The Checklist, Then Report" | skills/l-01-agent-lifecycles/roles/curator.md:1-47; skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
+| Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Lifecycle — Manager" | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
+| Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Lifecycle — Worker" | skills/l-01-agent-lifecycles/roles/worker.md:1-33 |
+| The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:95-111 |
 
 ## Update History
 
-- 2026-08-10T07:30+02:00 — 260805-ARG-L1: manager/orchestrator roles now name exact-report-gated
-  subordinate auto-close, manager/orchestrator exclusion, the landed/archive opt-out, and
-  wrapper-owned fail-closed quality retry behavior.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint-local role-seat identity and
-  all-subordinate passive supervision. Verification metadata remains pinned until closeout.
-
-- 2026-08-09T13:59+02:00 — 260713-TES-L5 route impact: recorded the judgment-demolition
-  doctrine in the role files (fact-relay supervision; ladder retired; mailbox custody;
-  attribution-only consume), mirrored into the synced package_data runtime copies and the
-  code-seam criterion wording. Verification metadata pinned until closeout stamps the
-  260713-TES-L5 commit.
-- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the role files under this route were
-  refreshed to agent-notifier wording (no supervisor/agent-notifier role or seat change); route
-  shape unchanged. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-- 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the ladder across the worker/
-  manager/orchestrator role files and brief templates. Verification metadata stays pinned until
-  closeout stamps the 260731-EFA-L17 commit.
-
-- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the role-seat-only spawn doctrine across architect/orchestrator/manager, the worker/reviewer coding-guidelines reads, and the architect's `system/tools.md` inventory read; hands-on seats' fan-out unchanged. Verification metadata pinned until closeout stamps the code commit.
-- 2026-08-05T03:47+02:00 — 260731-EFA-L6 route impact: recorded the curator self-check contract
-  (`contract_path`-scoped memory tools and `onboardingRoot` confirmation) landed in
-  `roles/curator.md` and `templates/curator-brief.md`; other role documents are unchanged.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator: established governing route coverage for the final candidate.
+- 2026-08-11T14:40+02:00 — Made the curator's missing-onboarding and full-quality repair-and-rerun
+  obligation part of the role route's current contract, with commit-derived stamps left to closeout.
+- 2026-08-11T14:10+02:00 — Replaced task-delta sections with direct current role ownership,
+  altitude, artifact, and separation contracts.
+- 2026-08-10T07:30+02:00 — Durable reports became the cleanup precondition for short-lived seats.
+- 2026-08-09T12:08+02:00 — Role-local watcher/ladder prose was superseded by fact relay.
+- 2026-07-12T14:20+02:00 — Established the governing role-route overview.

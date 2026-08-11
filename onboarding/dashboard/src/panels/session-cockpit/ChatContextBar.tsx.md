@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/ChatContextBar.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
-| lastVerifiedCommitDate |  2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -81,8 +81,8 @@ No task-independent technical debt was identified during MX-FIX-2 review.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical host composition delegates launch through the session view. | `onLaunchChat` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:66-66 |
-| The server-first leaf operation exposes its result type and assignment action. | `applyLeafAssignment`; `AttachLeafResult` | dashboard/src/data/sessions.ts:173-173; dashboard/src/data/terminal.ts:485-485 |
+| Canonical host composition delegates launch through the session view. | `onLaunchChat` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:71-71 |
+| The server-first task-seat operation exposes its result type and catalog-authoritative assignment action. | `applyTaskAssignment`; `AttachTaskResult` | dashboard/src/data/sessions.ts:169-176; dashboard/src/data/terminal.ts:483-495 |
 | Session changes are broadcast through the catalog notification helper. | `notifySessionCatalogChanged` | dashboard/src/data/sessions.ts:113-126 |
 
 ## 260718-CHATS-L4 Reviewed Candidate Delta (Browse history)
@@ -101,6 +101,8 @@ leaf attach/move—are extracted to `ChatSessionActions` on the stage title row,
 visible. Ineligible actions retain their disabled placement/reason rather than moving unpredictably.
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `ChatContextBar.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: narrowed claims to positive local ownership and generated final citation ranges with the scoped fixer.

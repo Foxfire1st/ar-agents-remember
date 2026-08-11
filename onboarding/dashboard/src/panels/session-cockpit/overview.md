@@ -5,33 +5,21 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated | 2026-08-11T23:40+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [panels overview](../overview.md)
 
-## 260731-EFA-L8 Change
+## Current Structural Rail Contract
 
-### 260713-TES-L1 Rename — Heartbeat UI
-
-The session-cockpit heartbeat surface is renamed with the sweep: `BusPane` / `SeatInspector` /
-`SessionRail` / `sessionRailParts` and the sessions-view body/controller now type and key the
-heartbeat as `AgentNotifierHeartbeat` / `agentNotifierHeartbeat` and render "Agent notifier
-heartbeat" (was "Supervisor heartbeat"). Fixtures and tests were updated to the new type and key;
-the rail-bus footer remains removed and liveness stays in the top bar.
-
-`SessionsView` moved to `sessions-view/` with controller/body/palette/styles
-modules and six behavior-split test files. Shared surfaces gained parts/styles
-modules (`interactionParts*`, `launchFlowParts*`, `sessionRailParts*`,
-`stageLayers.tsx`, `chatsStageStyles.ts`, `conversationSurfaceParts*`). The e2e
-repair fixed a genuine keep-alive defect in `ChatsStageBody` (the PTY layer stays
-mounted through smart-focus handoff) and the Terminal headless-focus delegation;
-the primary Playwright suite now asserts the real DOM order (rail → stage →
-inspector).
+`SessionRail` renders the task-projected sprint/master/leaf tree and one role row per structural
+seat. `sessionRailParts` uses runtime ids only for focus/actions against the current occupant, while
+`sessionRailStyles` keeps live titles on one ellipsized line. Replacement preserves the row address;
+the separate spawn tree remains diagnostic-only.
 
 ## Purpose
 
@@ -328,9 +316,9 @@ references, not imported governing implementations, so no cross-repository sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Full-route composition and shell ownership. | "import { SessionsView } from \"../panels/session-cockpit/sessions-view/SessionsView\";"; "data-testid=\"sessions-stage\"" | dashboard/src/cockpit/Cockpit.tsx:47-47; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
+| Full-route composition and shell ownership. | "import { SessionsView } from \"../panels/session-cockpit/sessions-view/SessionsView\";"; "data-testid=\"sessions-stage\"" | dashboard/src/cockpit/Cockpit.tsx:48-48; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
 | Legacy duty bar. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
-| Role/spawn rail and data derivation. | `SessionRail`, `buildRailModel` | dashboard/src/data/railModel.ts:212-256; dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
+| Structural role rail and data derivation. | `SessionRail`; `buildRailModel` | dashboard/src/data/railModel.ts:361-387; dashboard/src/panels/session-cockpit/SessionRail.tsx:160-241 |
 | PTY/ended continuity. | "import { lazy, Suspense, useEffect, useMemo, useRef, useState } from \"react\";"; "import { EndedSessionState } from \"./EndedSessionState\";"; "The PtySurface: the session stage's terminal half. Wraps the"; "export function EndedSessionState({ session }: { session: OpenSession }) {" | dashboard/src/panels/session-cockpit/PtySurface.tsx:1-1; dashboard/src/panels/session-cockpit/PtySurface.tsx:19-19; dashboard/src/panels/session-cockpit/PtySurface.tsx:21-21; dashboard/src/panels/session-cockpit/EndedSessionState.tsx:35-35 |
 | Cleanup authority notice. | `LandedCleanupNotice` | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:48-113 |
 | Effective keyboard contract. | "export function useEffectiveKeymap(): EffectiveKeymap {"; "export function useKeyboardZones({" | dashboard/src/data/keymap/preferences.ts:329-331; dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97; dashboard/src/data/keymap/preferences.ts:369-369 |
@@ -413,6 +401,18 @@ site, `test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `tes
 The session-cockpit route gained the L7 live-thinking coalescing (one stable `thinking` row per active turn, animated indicator, completion cleanup) and its interleaved acceptance pins in the conversation-timeline family. The file-size rail covers this route's TS/TSX under `dashboard/src`.
 
 ## Update History
+
+- 2026-08-12T00:28+02:00 — No route impact: `BusPane.test.tsx` now waits for its already-expected
+  final developer-reply acknowledgment so the legitimate intermediate `posting…` render cannot
+  race the assertion; session-cockpit production behavior and route structure are unchanged.
+
+- 2026-08-11T23:40+02:00 — No route impact: the `RailTop` summary and completed-bulk helper split
+  preserves the task-projected rail, completed-seat actions, and current-occupant row boundary.
+  Verification metadata remains pinned until governed closeout.
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the cockpit route with
+  task-document-addressed dispatch, messaging, gate, retire, and rename controls while keeping
+  private runtime coordinates out of agent-facing state.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed the rail hot path for concurrent sprint command
   groups and legacy isolation. Verification metadata remains pinned until closeout.

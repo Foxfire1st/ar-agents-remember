@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`                  |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The controller entry points. | `useSessionsViewRefs`; `useSessionsViewState`; `useFocusAndLibraryHandlers` | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:114-182; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:183-247; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:362-430; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:72-72 |
+| The controller entry points. | `useSessionsViewRefs`; `useSessionsViewState`; `useFocusAndLibraryHandlers` | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:113-180; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:182-245; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:357-420 |
 
 ## Cross-Repo References
 
@@ -68,6 +68,7 @@ No cross-repository implementation source governs this file.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `sessionsViewController.ts` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
   controller module extracted from `SessionsView.tsx`. Verification pinned to the

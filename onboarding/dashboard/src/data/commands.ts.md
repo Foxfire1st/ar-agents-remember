@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/commands.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The registry, replace-by-id unregister guard, and the default set with the stub seams. | `createCommandRegistry` | dashboard/src/data/commands.ts:57-81 |
-| The view builds the context and dispatches chord command ids into the registry. | "registry.run(commandId" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:1053-1053 |
+| The view builds the context and dispatches chord command ids into the registry. | "registry.run(commandId" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:1048-1048 |
 | The palette clears its query when the selected command keeps the palette open. | "if (command?.keepsPaletteOpen)" | dashboard/src/panels/session-cockpit/CommandPalette.tsx:418-418 |
 | The chord tables that carry these command ids per zone. | "palette.open" | dashboard/src/data/keymap/chords.ts:24-24 |
 | The registry suite pins registration order and when-predicate filtering. | "lists commands in registration order and filters by when-predicate" | dashboard/src/data/commands.test.ts:38-44 |

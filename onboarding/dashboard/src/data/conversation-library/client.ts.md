@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation-library/client.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,8 +39,9 @@ it without a network (design §9.4, §11.2).
 - **`openConversation`/`openStatus`/`openReconcile`** — the three exact-open verbs. cit:([`postOpen`], dashboard/src/data/conversation-library/client.ts:106-125)
   cit:([`openConversation`, `openStatus`, `openReconcile`], dashboard/src/data/conversation-library/client.ts:127-135; dashboard/src/data/conversation-library/client.ts:137-145; dashboard/src/data/conversation-library/client.ts:147-155)
   `openConversation` carries the full `OpenRequestBody` (`requestId`, `expectedIdentityDigest`, optional
-  `cwd`/`launchContext`); status/reconcile carry only `{ requestId }` — the caller-stable id is the
-  correlation key.
+  `cwd`/`launchContext`); launch context is a canonical `TaskDocumentRef` plus optional seat role,
+  never a leaf-key address. Status/reconcile carry only `{ requestId }` — the caller-stable id is
+  the correlation key.
 
 ### Invariants And Boundaries
 
@@ -84,6 +85,8 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Replaced the obsolete leaf-key launch-context implication with the
+  current canonical task-document reference and optional seat-role contract.
 - 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 12 initial citation findings (3 anchor, 6 prose, 3 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the native-library HTTP

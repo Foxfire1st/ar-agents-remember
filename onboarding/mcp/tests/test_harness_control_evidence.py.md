@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -197,6 +197,9 @@ believing an evidence channel it does not have.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — No content impact: removed an explicit `leaf_key=None` from the local
+  catalog fixture after that retired model field disappeared; evidence buffering, truncation, and
+  resume assertions documented by this card are unchanged.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 5 repository-internal reference rows for the bounded evidence bridge, IPC server, strict client validators, submission authority, and runner payload parser; scoped citation verification follows.

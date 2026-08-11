@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/eventSummary.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-28T05:38+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ repository's observer event contract.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The raw observer event envelope rendered by this formatter. | `ObserverEvent` | dashboard/src/types/event.ts:9-22 |
-| Existing task identity helpers reused for lifecycle-attached event labels, including task-document title fallback. | `findLifecycleEnclosure`, `taskLabel`, `taskDocsForLifecycle`, `taskDocumentLabel` | dashboard/src/data/taskIdentity.ts:230-237; dashboard/src/data/taskIdentity.ts:239-256; dashboard/src/data/taskIdentity.ts:258-263; dashboard/src/data/taskIdentity.ts:265-270 |
+| Existing task identity helpers reused for lifecycle-attached event labels, including task-document title fallback. | `findLifecycleEnclosure`, `taskLabel`, `taskDocsForLifecycle`, `taskDocumentLabel` | dashboard/src/data/taskIdentity.ts:253-260; dashboard/src/data/taskIdentity.ts:262-279; dashboard/src/data/taskIdentity.ts:281-286; dashboard/src/data/taskIdentity.ts:288-293 |
 | Ambient lifecycle emits `tool.completed`, `read.packet`, lifecycle phase, and block events with explicit fields. | "\"tool.completed\","; "\"read.packet\", \"observed\", \"model\", repoId=repo_id, files=projected"; "self._emit_locked(\"lifecycle.phase-changed\", \"declared\", \"model\", phase=phase)"; "\"lifecycle.blocked\"," | mcp/src/agents_remember/observer/ambient.py:418-418; mcp/src/agents_remember/observer/ambient.py:452-452; mcp/src/agents_remember/observer/ambient.py:312-312; mcp/src/agents_remember/observer/ambient.py:217-217 |
 | The Event River component consumes these summaries for rendering. | `eventSummaryContextReady`, `summarizeEvent` | dashboard/src/panels/EventRiver.tsx:62-73 |
 | Focused render coverage proves lifecycle-only history rows use task document labels instead of raw lifecycle ids. | "uses task document labels when event history no longer has a live lifecycle row" | dashboard/src/panels/EventRiver.test.tsx:312-332 |

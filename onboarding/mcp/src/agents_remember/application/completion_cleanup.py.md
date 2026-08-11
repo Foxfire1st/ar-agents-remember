@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/completion_cleanup.py`  |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-10T06:28+02:00                                       |
-| lastVerifiedCommitHash |                                                              `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                                              2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |                                                              `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |                                                              2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -25,13 +25,15 @@ preserving the historical landed/archive mode as an explicit settings opt-out.
 
 ### Logic
 
-`auto_complete_seats` derives the qualified leaf from the enclosure contract and opens the durable
-terminal catalog. With `autoCloseCompletedSeats=true`, `_retire_reported_leaf_seats` folds the
-operator inbox once, admits only `turn-report` records with the exact `senderAgentId` and `leafKey`,
-and retires matching live or landed leaf seats through `retire_entry`. Missing proof is returned in
+`auto_complete_seats` resolves the enclosure contract to a canonical `TaskDocumentRef` through
+`TaskDocumentTopology` and opens the durable terminal catalog. With
+`autoCloseCompletedSeats=true`, `_retire_reported_leaf_seats` folds the operator inbox once, admits
+only `turn-report` records with the exact `senderAgentId` and matching
+`subjectTaskDocumentRef`, and retires matching live or landed task seats through `retire_entry`.
+Missing proof is returned in
 `autoCloseDeferredSeats`; per-seat exceptions are returned in `autoCloseFailedSeats`; successful
 retirements are returned in `autoClosedSeats` and logged best-effort after catalog provenance is
-durable. With auto-close disabled, the same finite role set uses `land_seats_for_leaf` and returns
+durable. With auto-close disabled, the same finite role set uses `land_seats_for_task` and returns
 `autoLandedSeats`.
 
 ### Conventions
@@ -42,8 +44,8 @@ names declared by the integration and finalization response models.
 
 ### Invariants And Boundaries
 
-- Automatic close is report-gated by exact session and exact qualified leaf; a missing or
-  wrong-leaf report never kills a process.
+- Automatic close is report-gated by exact session and exact task-document identity; a missing or
+  wrong-task report never kills a process.
 - Only worker, reviewer, and curator are candidates. Manager and orchestrator are coordination
   owners and cannot enter the automatic cleanup set.
 - Cleanup is subordinate to the already-successful completion edge. Contract, inbox, catalog,
@@ -89,6 +91,8 @@ No meaningful cross-repository boundary is owned by this module.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Replaced qualified-leaf cleanup with canonical task-document topology,
+  task-addressed turn-report proof, and task-bound landing/retirement.
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the current staged completion-edge cleanup policy; the report-gated worker/reviewer/curator boundary remains accurately described. Verification metadata remains pinned until closeout.
 - 2026-08-10T06:28+02:00 — Created when completion-seat cleanup was extracted from the worktree
   application entry-point module. The split preserves exact-report-gated close behavior, the

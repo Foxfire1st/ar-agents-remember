@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-04T00:41+02:00|
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ provenance; model/effort values and their evidence are not duplicated outside th
 - **Leaf context:** when `leafKey` exists, the header renders `leaf <leaf-id>` through
   `leafIdFromKey`. It intentionally renders no seat-role suffix; the focused test asserts that
   the leaf segment does not contain `seat`.
-- **Freshness honesty (R15 + R3, 260718-CHATS-L5P)** cit:([`WS_WORDS`, `quiet`], dashboard/src/panels/session-cockpit/HeaderStrip.tsx:81-86; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:146-146): `WS_WORDS` for the real ws
+- **Freshness honesty (R15 + R3, 260718-CHATS-L5P)** cit:([`WS_WORDS`, `quiet`], dashboard/src/panels/session-cockpit/HeaderStrip.tsx:80-85; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:146-146): `WS_WORDS` for the real ws
   state; `quiet Xs/Xm` ONLY when an output stamp exists; the tooltip states the 10 s sweep bound on
   turn-state freshness. **R3:** the diagnostics segment now filters absent parts — the `ws` word shows
   only when a pane actually reports a ws state (`freshness.ptyWs !== "none"`), so a paneless seat no
@@ -81,6 +81,8 @@ without painting a false visible state word; model/effort remains one plain curr
 dedicated control.
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `HeaderStrip.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.

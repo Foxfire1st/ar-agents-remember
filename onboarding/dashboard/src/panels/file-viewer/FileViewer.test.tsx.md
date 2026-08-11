@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/file-viewer/FileViewer.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ is a breaking change.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The component under test. | `FileViewer` | dashboard/src/panels/file-viewer/FileViewer.tsx:299-299 |
-| `CockpitShell` registers the "File Viewer" mode and keeps it mounted via `display`. | "export function CockpitShell({ initialView = "operations" }: { initialView?: CockpitView } = {}) {"; `File Viewer` | dashboard/src/cockpit/Cockpit.tsx:75-75; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:4-4; dashboard/src/data/files.ts:102-102; dashboard/src/cockpit/Cockpit.tsx:850-850 |
+| `CockpitShell` registers the "File Viewer" mode and keeps it mounted via `display`. | "export function CockpitShell({ initialView = "operations" }: { initialView?: CockpitView } = {}) {"; `File Viewer` | dashboard/src/cockpit/Cockpit.tsx:858-858; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:4-4; dashboard/src/data/files.ts:102-102 |
 | The empty-state backdrop prompt copy ("Select a code file") asserted here. | "Select a code file" | dashboard/src/panels/file-viewer/DualPane.tsx:99-112 |
 | `applySnapshot` loads the projection under test. | `applySnapshot` | dashboard/src/data/store.ts:43-43 |
 | The `engine-fleet` GALLERY fixture. | "engine-fleet" | dashboard/src/panels/engine-room/fixtures.ts:723-723 |

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/test-utils.tsx`          |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -32,7 +32,8 @@ enclosures, projections, promoted-lifecycle scenarios, and counter stubs.
 ### Conventions
 
 Fixtures are typed through the projection mirror so a fixture that compiles is a shape
-the mirror can produce.
+the mirror can produce. Task-document fixture paths use `/tasks/<repository>/...`, so tests exercise
+the same repository-qualified document topology as production selection and projection code.
 
 ### Invariants And Boundaries
 
@@ -67,6 +68,8 @@ No cross-repository implementation source governs this file.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Canonicalized DetailPanel fixture document paths under the
+  repository-qualified `/tasks/<repository>/...` topology.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the shared
   test fixtures extracted from `DetailPanel.test.tsx`. Verification pinned to the
   leaf base until closeout stamps the code commit.

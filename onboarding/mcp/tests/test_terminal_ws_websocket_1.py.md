@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_ws_websocket_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                                        |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -16,22 +16,37 @@
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_terminal_ws_websocket_1.py`'s source module; covers the behaviours named by its test classes.
+Terminal HTTP/WebSocket suite for session I/O, lifecycle cleanup, catalog projection, and task-aware open.
 
 ## Code Commentary
 
-- `TerminalWebSocketTests1`
+### Logic
 
-## Invariants And Boundaries
+Cases prove PTY forwarding and teardown, catalog reconciliation, termination/landing cleanup, and terminal open with canonical task-document persistence. Required task identity failures are explicit, while an intentionally unbound raw terminal remains supported where the endpoint contract allows it.
 
-- The card mirrors the source file one-to-one at `mcp/tests/test_terminal_ws_websocket_1.py`.
+### Conventions
+
+Test-only evidence uses deterministic fakes/fixtures and exercises the owning seam directly.
+
+### Invariants And Boundaries
+
+The server owns the catalog row returned to clients; task claims use structured references and never accept a leaf-key attachment payload.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository-local regression contract.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| Current suite declaration anchoring this card. | `TerminalWebSocketTests1` | mcp/tests/test_terminal_ws_websocket_1.py:14-14 |
+
+## Cross-Repo References
+
+No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `test_terminal_ws_websocket_1.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_spawn_agent_session_settings.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -16,25 +16,39 @@
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_spawn_agent_session_settings.py`'s source module; covers the behaviours named by its test classes.
+Regression suite for configured harness definitions, role/level knob precedence, and override refusal.
 
 ## Code Commentary
 
-- `SettingsDefinedHarnessTests`
-- `SpawnLevelResolutionTests`
+### Logic
 
-## Invariants And Boundaries
+Cases prove repository-local task context selects the right settings layer, level and role defaults deep-merge deterministically, declared vocabularies validate model/effort, free-form knobs flow only from settings, and legacy arguments/environment overrides are refused.
 
-- The card mirrors the source file one-to-one at `mcp/tests/test_spawn_agent_session_settings.py`.
+### Conventions
+
+Test-only evidence uses deterministic fakes/fixtures and exercises the owning seam directly.
+
+### Invariants And Boundaries
+
+Callers never select harness/model/effort; provenance records the settings-owned resolution used by the plane-private spawn stage.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository-local regression contract.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| Current suite declaration anchoring this card. | `_role_ref` | mcp/tests/test_spawn_agent_session_settings.py:35-35 |
+
+## Cross-Repo References
+
+No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `test_spawn_agent_session_settings.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

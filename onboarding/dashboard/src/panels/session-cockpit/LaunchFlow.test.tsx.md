@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:15+02:00                           |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484`       |
-| lastVerifiedCommitDate | 2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -123,7 +123,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The dialog under test. | "export function LaunchFlow" | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:362-362 |
+| The dialog under test. | "export function LaunchFlow" | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:353-353 |
 | The envelope fixtures the routers serve. | "function capabilityEnvelope" | dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-160 |
 | The open-response fixtures (200/400/409×2). | "const OPENED_STARTING" | dashboard/src/test/fixtures/openResponses.ts:17-17 |
 | The shared row builder used for the F9 appeared-row rerenders. | "function catalogRow" | dashboard/src/test/fixtures/catalogRows.ts:10-10 |
@@ -150,6 +150,7 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `LaunchFlow.test.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 21 citation items; scoped citation check now passes.
 
 - 2026-08-01T10:15+02:00 — 260731-EFA-L4 curator: the card asserted a guarantee the suite no longer

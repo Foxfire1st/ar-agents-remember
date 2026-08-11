@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/operator_inbox.py`        |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-31T15:31+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -109,8 +109,8 @@ cannot receive direct session injection.
 | The MCP module delegates post, registered-post, poll, and consume commands to the application layer and validates each response through `_tool_payload`. | `operator_inbox_post_payload`; `registered_operator_inbox_post_payload`; `operator_inbox_poll_payload`; `operator_inbox_consume_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:19-36; mcp/src/agents_remember/mcp/tools/operator_inbox.py:39-47; mcp/src/agents_remember/mcp/tools/operator_inbox.py:50-65; mcp/src/agents_remember/mcp/tools/operator_inbox.py:68-83 |
 | The application layer roots the store, composes post requests, polls pending entries, and consumes entries while fulfilling acknowledgements. | `_store`; `operator_inbox_post_tool`; `operator_inbox_poll_tool`; `operator_inbox_consume_tool` | mcp/src/agents_remember/application/operator_inbox_tools.py:39-40; mcp/src/agents_remember/application/operator_inbox_tools.py:47-67; mcp/src/agents_remember/application/operator_inbox_tools.py:100-125; mcp/src/agents_remember/application/operator_inbox_tools.py:128-152 |
 | The serving post owner derives routing, persists the row and ack-by expectation, and performs optional hosted delivery. | `_post_address`; `_persist_post`; `_deliver_post`; `post_operator_inbox_entry` | mcp/src/agents_remember/serving/operator_inbox_posts.py:104-119; mcp/src/agents_remember/serving/operator_inbox_posts.py:144-175; mcp/src/agents_remember/serving/operator_inbox_posts.py:178-199; mcp/src/agents_remember/serving/operator_inbox_posts.py:202-288 |
-| Hosted delivery reads the supervisor redelivery floor and passes it into the delivery attempt. | `_redelivery_floor_seconds`; `_deliver_post` | mcp/src/agents_remember/serving/operator_inbox_posts.py:68-73; mcp/src/agents_remember/serving/operator_inbox_posts.py:205-226 |
-| The tool declarations fix public-route attribution to model/cli. | `register_orchestration_tools` | mcp/src/agents_remember/mcp/registration/orchestration.py:147-149 |
+| Hosted delivery reads the supervisor redelivery floor and passes it into the delivery attempt. | `_redelivery_floor_seconds`; `_deliver_post` | mcp/src/agents_remember/serving/operator_inbox_posts.py:70-75; mcp/src/agents_remember/serving/operator_inbox_posts.py:230-251 |
+| The tool declarations fix public-route attribution to model/cli. | `register_orchestration_tools` | mcp/src/agents_remember/mcp/registration/orchestration.py:18-68 |
 | The dashboard route delegates to `_operator_inbox_response`, which calls the serving post owner directly and fixes trusted developer/dashboard attribution. | `api_operator_inbox`; "def _operator_inbox_response(" | mcp/src/agents_remember/serving/_app_routes.py:336-336; mcp/src/agents_remember/serving/_app_routes.py:405-411 |
 
 ## Cross-Repo References

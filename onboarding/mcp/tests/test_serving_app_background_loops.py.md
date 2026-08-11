@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_app_background_loops.py`   |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`         |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -63,8 +63,8 @@ out anonymously.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The loops and the lifespan under test. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:173-173 |
-| The same app's failing route arms. | `PasteRouteTests` | mcp/tests/test_serving_app_routes.py:427-481 |
+| The loops and the lifespan under test. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:176-176 |
+| The same app's failing route arms. | `PasteRouteTests` | mcp/tests/test_serving_app_routes.py:486-540 |
 | The opt-in heap diagnostic's own suite. | `HeapDiagLoopTests` | mcp/tests/test_heap_diag.py:103-264 |
 
 ## Update History

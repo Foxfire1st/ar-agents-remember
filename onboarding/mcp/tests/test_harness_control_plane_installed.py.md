@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_plane_installed.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-11T22:28+02:00                  |
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,6 +52,8 @@ here on a qualifying machine is what the fixtures record (shape descriptors only
 machines without the pinned runtimes skip. Cockpit submissions are issued as
 `submit_control_prompt(entry, text, ControlSubmission(...))`, with the source, request id,
 `expected_bridge_epoch` guard, and any staged `assets` travelling inside that one parameter object.
+The `_version_of` probe converts OS/process launch failures into `SkipTest`; an installed command
+that cannot run is unavailable evidence, not a control-plane regression and not an observed row.
 
 ### Invariants And Boundaries
 
@@ -63,6 +65,7 @@ machines without the pinned runtimes skip. Cockpit submissions are issued as
   conversation material.
 - Claude rows stay `not-exercised` with the exact version-mismatch + CL-3 reason until a locked
   2.1.211 install exercises the seam.
+- A failed installed-version process skips before any live-seam evidence is claimed.
 
 ### Todos
 
@@ -85,7 +88,8 @@ contract are the direct evidence.
 | The runtime fixtures recording (never enabling) the `control-plane/*` rows this suite captures. | "control-plane/interrupt-write-ack"; "control-plane/abort-write-ack"; "control-plane/interrupt-and-assets" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:94-137; mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:71-102; mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:45-50 |
 | The client helpers driven against the live socket (`interrupt_control`, `read_operation_timeline`, asset-carrying submit, withdrawal). | "def withdraw_control_submission("; "def submit_control_prompt("; "def interrupt_control("; "opaque cursor coordinates are invalid in the operation timeline domain" | mcp/src/agents_remember/serving/harness_control_client.py:190-190; mcp/src/agents_remember/serving/harness_control_client.py:216-216; mcp/src/agents_remember/serving/harness_control_client.py:431-431; mcp/src/agents_remember/serving/harness_control_client.py:454-478 |
 | The contract-suite companion pinning the same seams over fake transports. | "Contract tests for the native control-plane substrate." | mcp/tests/test_harness_control_plane.py:1-45 |
-| The L0E installed-suite precedent for opt-in version-locked capture. | "LIVE_OPT_IN = \"AR_RUN_EVIDENCE_INSTALLED\""; "class CodexInstalledEvidenceTests(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_harness_control_evidence_installed.py:64-64; mcp/tests/test_harness_control_evidence_installed.py:132-132 |
+| The L0E installed-suite precedent for opt-in version-locked capture. | "LIVE_OPT_IN = \"AR_RUN_EVIDENCE_INSTALLED\""; "class CodexInstalledEvidenceTests(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_harness_control_evidence_installed.py:64-64; mcp/tests/test_harness_control_evidence_installed.py:135-135 |
+| The installed-version probe maps OS and subprocess failures to an explicit skip. | `_version_of` | mcp/tests/test_harness_control_plane_installed.py:96-108 |
 
 ## Cross-Repo References
 
@@ -96,6 +100,10 @@ No neighboring repository participates in this installed-runtime suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: recorded the unavailable-harness
+  skip when the installed version process cannot start or complete. No observed fixture evidence
+  follows from that skip; verification metadata remains pinned until closeout.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

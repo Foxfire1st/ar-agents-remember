@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/ChatContextBar.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:40+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ The suite exercises repository-local routing and browser broadcast doubles; no c
 | --- | --- | --- |
 | Unit under test. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
 | The typed `taskDoc` builder `leafDoc()` now returns, replacing an `as unknown as TaskDocNode` cast. | `taskDoc` | dashboard/src/test/fixtures/wire.ts:282-287 |
-| `buildTaskTree` — the only consumer of the seeded doc, and the reason the richer base changes nothing. | `buildTaskTree` | dashboard/src/data/taskIdentity.ts:185-191 |
+| `buildTaskTree` — the only consumer of the seeded doc, and the reason the richer base changes nothing. | `buildTaskTree` | dashboard/src/data/taskIdentity.ts:208-214 |
 
 ## Current L5I Maintenance
 
@@ -108,7 +108,7 @@ actions, including history availability and the server-first leaf assignment pat
   responses, alert copy, focus, and leaf attach/move routing — none of which reads a task-document
   field. I checked the one place that does rather than assuming: `ChatContextBar.tsx` L140 passes
   `taskDocuments` into `buildTaskTree` and nothing else, and `buildTaskTree`
-  (cit:([`buildTaskTree`], dashboard/src/data/taskIdentity.ts:185-191)) reads **seven** fields: `kind`, `docPath`, `title`, `lifecycleId`
+  (cit:([`buildTaskTree`], dashboard/src/data/taskIdentity.ts:208-214)) reads **seven** fields: `kind`, `docPath`, `title`, `lifecycleId`
   and `masterLifecycleId` directly, plus `repository` and `id` through `qualifiedLeafKey` (L64-L70,
   whose parameter is `Pick<TaskDocNode, "repository" | "docPath" | "id">`), which it calls at L153 to
   key every leaf node. All of `kind`, `docPath`, `title`, `repository` and `id` were already set by

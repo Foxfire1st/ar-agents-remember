@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/_agent_wire_fixtures.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:45+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-11T15:20+02:00 |
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,8 +73,8 @@ protocol checkout cited in the module docstring and below.
 | --- | --- | --- |
 | The local builder inventory, including the `CollabAgents` parameter object. | `CollabAgents` | mcp/tests/_agent_wire_fixtures.py:63-77 |
 | The module docstring records external provenance labels for the fixture shapes; those labels are not protocol proof under this frozen source authority. | `protocol` | mcp/tests/_agent_wire_fixtures.py:1-37 |
-| The demux incident-regression suite imports these local builders. | `collab_agent_tool_call_item` | mcp/tests/test_codex_adapter_thread_demux.py:16-28 |
-| The codex projector-agent suite imports these local builders. | `collab_agent_tool_call_item` | mcp/tests/test_conversation_projector_codex_agents.py:25-35 |
+| The demux incident-regression suite imports these local builders. | "from _agent_wire_fixtures import (" | mcp/tests/test_codex_adapter_thread_demux.py:16-29 |
+| The codex projector-agent suite imports these local builders. | "from _agent_wire_fixtures import (" | mcp/tests/test_conversation_projector_codex_agents.py:22-33 |
 | The demuxed adapter under test owns the thread registry, per-thread state, and multiplexed pendings. | `CodexAppServerAdapter` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115 |
 
 ## Cross-Repo References
@@ -88,6 +88,8 @@ external protocol files are not treated as frozen source evidence here.
 
 ## Update History
 
+- 2026-08-11T15:20+02:00 — Re-anchored both consumer claims to each suite's unique fixture-import
+  declaration instead of a builder name repeated by later calls.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: separated local fixture construction from
   external provenance, re-anchored local consumer/adapter suites, and removed out-of-authority protocol rows.
 

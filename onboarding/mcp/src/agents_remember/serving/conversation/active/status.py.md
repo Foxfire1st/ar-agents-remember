@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/status.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ it observations and terminal settlements.
 | `ConversationStatus` and its freshness/process/turn products define the revisioned envelope shape. | "class ConversationStatus(WireModel):" | mcp/src/agents_remember/models/conversations/status.py:137-137 |
 | Orchestration's `snapshot_turn_state` delegates here with a documented function-local import; signature unchanged. | `snapshot_turn_state` | mcp/src/agents_remember/serving/hosted_control_projection.py:78-101 |
 | The projector observes snapshots and pending terminal settlements through this service per poll. | "self._status = ConversationStatusService(", `poll_once` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:88-88; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:129-144 |
-| `SeatTurnState` is the orchestration vocabulary the single projection rule emits. | `SeatTurnState` | mcp/src/agents_remember/models/terminal_catalog.py:31-31 |
+| `SeatTurnState` is the orchestration vocabulary the single projection rule emits. | `SeatTurnState` | mcp/src/agents_remember/models/terminal_catalog.py:32-32 |
 
 ## Cross-Repo References
 

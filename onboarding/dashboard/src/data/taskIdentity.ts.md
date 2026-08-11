@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/taskIdentity.ts`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T16:02+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-11T09:45+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,101 +16,55 @@
 
 ## Purpose
 
-`taskIdentity.ts` centralizes display identity helpers and Operations selection identity for dashboard
-task rows, detail headers, and lifecycle-attached Event River rows. It lets promoted leaf lifecycles
-show the human task/worktree leaf name, lets lifecycle-only history rows fall back to projected task
-document titles, keeps stable lifecycle ids available, and defines typed selection namespaces so task
-documents, series masters, and runtime-only lifecycles are not guessed from one overloaded string.
-Slice L5 adds the **leaf-key identity** the sidebar chat is keyed on: helpers that derive a durable
-qualified leaf id (`repo/master/leaf-id`) from the open task doc — not the enclosure — so a chat⇄leaf
-binding resolves with no live worktree and after finalize.
+Centralizes dashboard task-selection keys, canonical task-document references, structural equality,
+and real task-tree construction. Qualified leaf keys remain a display/context helper; they are no
+longer the hosted-seat address.
 
 ## Code Commentary
 
 ### Logic
 
-`taskDocSelectionKey`, `seriesSelectionKey`, and `lifecycleSelectionKey` create explicit Operations
-selection keys (`taskdoc:<docPath>`, `series:<seriesId>`, `lifecycle:<id>`). `parseTaskSelection`
-parses those keys and accepts older raw lifecycle ids / series ids only as a compatibility bridge for
-surfaces that still emit raw ids. `lifecycleIdForSelection` derives the selected lifecycle for chats
-and highlight context from either a lifecycle key or a task-document key whose projected document has
-`lifecycleId`.
-
-The slice-L5 leaf-key helpers sit beside the selection helpers. `qualifiedLeafKey(doc)` builds the
-durable `repo/master/leaf-id` from a `Pick<TaskDocNode, "repository" | "docPath" | "id">`, where
-`master` is the basename of the doc's directory (the series/contract folder) and the leaf is the doc id;
-it returns `undefined` when any part is missing (a master-less / pathless doc). `leafKeyForSelection`
-mirrors `lifecycleIdForSelection`: from the **open task doc** behind a `taskdoc`/`lifecycle` selection it
-resolves the leaf key (a `series` selection has no single leaf → `undefined`). **L5 fix 1 superseded
-`leafKeyForSelection`:** the rail chat now keys off the leaf the detail panel is actually *displaying*
-(reported up via `DetailPanel.onViewLeaf` → `Cockpit`'s `viewedLeafKey`), because the top-level selection
-is the master and a drilled sub-task shows a different leaf. `leafKeyForSelection` remains exported in this
-file but **has no live caller** — left in place rather than deleted. `leafTitleForKey(taskDocuments,
-leafKey)` resolves the bound leaf's display title (the matching doc's `title`, else `undefined`), and
-`leafIdFromKey(leafKey)` returns the last path segment — the name-label fallback when no doc title
-resolves. `ChatContextBar` uses the title helper; the id fallback is consumed by `RailChat`,
-`ChatContextBar`, `SessionRail`, `HeaderStrip`, `StatusLine`, `FailedLaunchBanner`, and
-`lifecycleCopy`. `qualifiedLeafKey` is consumed by `RailChat`, `DetailPanel`, `LifecycleList`, and
-`railModel` (and internally by this module's tree/title helpers). No retired `Chats` or `SessionList`
-consumer remains.
-
-`groupEnclosuresByLifecycle` builds a `lifecycleId -> EnclosureNode` lookup from projected enclosures.
-`findLifecycleEnclosure` first respects `lifecycle.enclosure` when the lifecycle already points at a
-known enclosure id, then falls back to the lifecycle-id lookup for promoted lifecycles whose durable
-record has not carried the enclosure path in the same shape. `taskLabel` chooses a visible name:
-master/task rows keep `taskName` when the lifecycle id is already the task id/name or multiple direct
-docs are attached, while concrete leaf rows prefer `leafId`, then `enclosureId`, then task name, then
-a direct task-document label. `taskDocumentLabel` chooses the master document title, then a single
-direct document title, then the supplied fallback; `taskDocsForLifecycle` deliberately filters only
-`TaskDocNode.lifecycleId === lifecycle.id`.
+`taskDocumentRefForDoc` turns a projected task document into the repository-qualified reference used
+by the runtime, and `sameTaskDocumentRef` compares that identity. `buildTaskTree` constructs the
+Operations/Chats task hierarchy from actual sprint, master, and leaf documents. Existing lifecycle and
+leaf-key helpers continue to serve selection, labels, and leaf context packages without becoming a
+parallel seat identity.
 
 ### Conventions
 
-The helpers are pure and are shared by `Cockpit`, `LifecycleList`, and `DetailPanel` so the Operations
-list, detail header, and chat/highlight lifecycle binding agree on selection identity. They do not read
-the store directly.
+Selection keys are UI namespaces. Structural seats use `TaskDocumentRef`; labels and qualified leaf
+keys are presentation/context values.
 
 ### Invariants And Boundaries
 
-- Visible names may come from enclosure metadata or directly attached task documents, but task-reader
-  content must come from `analytics.taskDocuments`.
-- The helpers never rewrite lifecycle ids or mutate projection state; they only choose labels and direct
-  document matches for rendering.
-- There is no parent/master fallback and no `series-contract.md` fallback in `taskDocsForLifecycle`.
-- Parent `taskName` may label runtime context but must not select leaf task content. Typed selection
-  keys are the boundary that prevents that regression.
-- The leaf key is derived from the **task doc**, never the enclosure, so it is stable across worktree
-  lifetime (no worktree, post-finalize). It is opaque downstream — `data/sessions` + the serving catalog
-  treat it as a registry key, never parsing it.
+- Every structural reference points to a real projected task document.
+- No synthetic logical seat id or master key is introduced.
+- Leaf-key helpers must not be used to address a hosted occupant.
+- Lifecycle ids remain optional runtime attachment, not task identity.
+
+### Todos
+
+None.
 
 ## Docs References
 
-The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
-are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
-the reviewed task evidence for any current behavioral claim.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed Operations keys and selection parsing live beside lifecycle/enclosure identity helpers. | "export type TaskSelection" | dashboard/src/data/taskIdentity.ts:8-8 |
-| Lifecycle labels prefer enclosure metadata when present and fall back through direct task-document titles before raw ids. | "export function parseTaskSelection" | dashboard/src/data/taskIdentity.ts:22-22 |
-| The Operations list creates typed row keys and uses `qualifiedLeafKey` for row chat activity. | `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:64-70 |
-| The detail panel resolves typed selections and reports the displayed leaf through `qualifiedLeafKey`. | `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:64-70 |
-| Cockpit derives chat/highlight lifecycle attachment through `lifecycleIdForSelection`; its displayed-leaf state supersedes `leafKeyForSelection` (still exported here, no live caller). | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:64-64 |
-| Current leaf label/id consumers span RailChat and the full session-cockpit bar, rail, header, status, failure, and lifecycle-copy surfaces. | "function stepLines", "export function ChatContextBar", "export function SessionRail", "export function HeaderStrip", "export function FailedLaunchBanner", "export function cleanupOutcomeCopy" | dashboard/src/panels/RailChat.tsx:192-192; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-74; dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-70; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:132-132; dashboard/src/panels/session-cockpit/SessionRail.tsx:155-155; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:40-40 |
-| `railModel`, `LifecycleList`, `DetailPanel`, and `RailChat` consume `qualifiedLeafKey`; `leafKeyForSelection` has no live import. | "export function buildRailModel", "export const LifecycleList", "export const DetailPanel", "function stepLines" | dashboard/src/data/railModel.ts:212-212; dashboard/src/panels/RailChat.tsx:192-192; dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
-| Event River imports `taskDocumentLabel` so history rows without live lifecycle projection can still render the task document title. | "taskDocumentLabel" | dashboard/src/panels/eventSummary.ts:1-15 |
+| Projected documents become canonical task-document references. | `taskDocumentRefForDoc` | dashboard/src/data/taskIdentity.ts:74-84 |
+| Structural equality compares repository, path, and level. | `sameTaskDocumentRef` | dashboard/src/data/taskIdentity.ts:86-95 |
+| The dashboard tree is built from real task documents. | `buildTaskTree` | dashboard/src/data/taskIdentity.ts:208-216 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references found.
+No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — Aligned the current data-contract card for `taskIdentity.ts` with task-document identity, qualified seat state, and terminal projections represented by this source.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact

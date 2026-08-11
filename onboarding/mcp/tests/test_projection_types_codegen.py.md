@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_projection_types_codegen.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-12T00:08+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,5 +49,9 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `ProjectionSchemaDriftTests` (lines 169-307). | `ProjectionSchemaDriftTests` | mcp/tests/test_projection_types_codegen.py:169-307 |
 
 ## Update History
+
+- 2026-08-12T00:08+02:00 — No content impact: schema-drift subtests report relative paths as
+  serializable POSIX strings for xdist; generated-schema comparisons are unchanged. Verification
+  metadata remains pinned until closeout.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

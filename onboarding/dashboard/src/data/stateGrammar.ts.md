@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/stateGrammar.ts`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ tracked separately).
   (starting/ready) → `unclassified`. Server truth mirrored — an unclassified row renders as
   unclassified, never a fabricated state.
 - **Plural pending counts as blocked (review N1)**: `SeatStateInput` picks up
-  cit:([`controlPendingInteractions`], dashboard/src/data/stateGrammar.ts:73-93), and the blocked-on-human guard cit:([`sessionHasPendingInteraction`], dashboard/src/data/sessions.ts:525-532) calls
+  cit:([`controlPendingInteractions`], dashboard/src/data/stateGrammar.ts:73-93), and the blocked-on-human guard cit:([`sessionHasPendingInteraction`], dashboard/src/data/sessions.ts:539-546) calls
   `sessions.ts`'s `sessionHasPendingInteraction` — the singular parent slot OR a non-empty
   multiplexed sub-agent list — instead of reading only the singular slot. A seat blocked SOLELY on
   a sub-agent approval is STEADY amber awaiting-input, never dark; the guard still slots below the
@@ -92,8 +92,8 @@ the reviewed task evidence for any current behavioral claim.
 | The ONLY renderer of these visuals (Panda literal pinned to `PULSE_ANIMATION`). | `StateDot` | dashboard/src/panels/session-cockpit/StateDot.tsx:38-61 |
 | The `pulseSlow` keyframe + the effects-off freeze that governs it. | `pulseSlow` | dashboard/src/index.css:91-98 |
 | The server classifier whose words this mirrors (turn state, sweep cadence). | `classify_turn_state`; `boot_ready` | mcp/src/agents_remember/serving/turn_state.py:157-171; mcp/src/agents_remember/serving/turn_state.py:174-177 |
-| The ANY-pending derivation (N1) the blocked-on-human guard now calls — singular slot OR non-empty multiplexed plural. | `sessionHasPendingInteraction` | dashboard/src/data/sessions.ts:525-532 |
-| The SOLE producer of `liveTurnWorking` (R9): computed for the focused seat from the conversation projection status and merged into `focused`. | "{ ...focusedBase" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:316-316 |
+| The ANY-pending derivation (N1) the blocked-on-human guard now calls — singular slot OR non-empty multiplexed plural. | `sessionHasPendingInteraction` | dashboard/src/data/sessions.ts:539-546 |
+| The SOLE producer of `liveTurnWorking` (R9): computed for the focused seat from the conversation projection status and merged into `focused`. | "{ ...focusedBase" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:315-315 |
 | The unit suite: per-state mapping, precedence, waiting(reason), the no-steps pulse ruling, the R9 override winning only below terminal/fault/blocked, and the N1 agent-only-blocked pin. | "seatVisualState mapping (spec §2.4)" | dashboard/src/data/stateGrammar.test.ts:14-158 |
 
 ## Cross-Repo References

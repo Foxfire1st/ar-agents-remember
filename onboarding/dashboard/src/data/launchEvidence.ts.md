@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/launchEvidence.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ the reviewed task evidence for any current behavioral claim.
 | The requested-pair persistence this refuses to treat as proof. | `_resolved_pair` | mcp/src/agents_remember/serving/terminal_opener.py:424-427 |
 | The badge rendering the tier word + glyph. | `EvidenceBadge` | dashboard/src/grammar/EvidenceBadge.tsx:46-69 |
 | Header derivation from row truth (`launchTier(session)`). | `HeaderStrip` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169 |
-| The failed-launch banner consuming `verbatimBridgeError` + the refused tier. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-182 |
+| The failed-launch banner consuming `verbatimBridgeError` + the refused tier. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:69-143 |
 | The exhaustive table suite incl. the claude-never-readback invariant. | "launchTier — exhaustive controlState × harness × pair table" | dashboard/src/data/launchEvidence.test.ts:19-65 |
 
 ## Cross-Repo References

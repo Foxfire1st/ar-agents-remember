@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/StopResidualNotes.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T04:20+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -33,7 +33,7 @@ terminated/retired sessions, use informational copy, and never silently discard 
 - **Dismissal** cit:(["state.residuals.filter", "entry.sessionId === sessionId && entry.at === at"], dashboard/src/data/sessionLifecycle.ts:78-79): `dismissResidual` removes the matching session/timestamp entry.
 - **Focus-independent retire sweep and deduplication** cit:(["for (const session of sessions)", "if ( typeof detail !== \"string\" || !detail || state.sweptRetire[session.id] ) continue;", "sweptRetire[session.id] = true"], dashboard/src/data/sessionLifecycle.ts:87-87; dashboard/src/data/sessionLifecycle.ts:89-94; dashboard/src/data/sessionLifecycle.ts:110-110): `sweepRetireResiduals` inspects every session, skips a session after its retire residual has already been swept, and marks the session as swept.
 - **Terminate capture** cit:([`endSessionDetailed`], dashboard/src/data/sessionLifecycle.ts:203-224): a successful terminate response records its `controlStopDetail` in the lifecycle notice store.
-- **Copy** cit:([`terminateResidualCopy`, `retireResidualCopy`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:30-32; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:35-37): both paths label the retained fact informational.
+- **Copy** cit:([`terminateResidualCopy`, `retireResidualCopy`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:29-31; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:34-36): both paths label the retained fact informational.
 
 ### Invariants And Boundaries
 
@@ -54,7 +54,7 @@ terminated/retired sessions, use informational copy, and never silently discard 
 | The retire sweep continues after a rejected detail. | "continue;" | dashboard/src/data/sessionLifecycle.ts:94-94 |
 | The retire sweep marks a processed session as swept. | "sweptRetire[session.id] = true" | dashboard/src/data/sessionLifecycle.ts:110-110 |
 | The terminate path that records `controlStopDetail`. | `endSessionDetailed` | dashboard/src/data/sessionLifecycle.ts:203-224 |
-| The centralized informational copy. | `terminateResidualCopy`, `retireResidualCopy` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:30-32; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:35-37 |
+| The centralized informational copy. | `terminateResidualCopy`, `retireResidualCopy` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:29-31; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:34-36 |
 | The view explicitly leaves `StopResidualNotes` unmounted and keeps details in the store. | `StopResidualNotes` | dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:41-72 |
 | View-level coverage of store retention and the absence of stacked residual DOM. | "NO stacked DOM notice" | dashboard/src/panels/session-cockpit/sessions-view/stopResiduals.test.tsx:138-183 |
 

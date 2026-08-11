@@ -6,8 +6,8 @@
 | path | `dashboard/src/cockpit/Cockpit.memo.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:40+02:00 |
-| lastVerifiedCommitHash |  `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate |  2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ documentation was invented.
 | --- | --- | --- |
 | The seven `vi.mock` render-count probes (`counts`, `CountedEngineRoom` … `CountedEventRiver`). | "function CountedEngineRoom()", "function CountedDetailPanel(props: ComponentProps<typeof Real>)", "function CountedSessionsView(props: ComponentProps<typeof Real>)", "function CountedFileViewer(props: ComponentProps<typeof Real>)", "function CountedAttentionQueue(props: ComponentProps<typeof Real>)", "function CountedLifecycleList(props: ComponentProps<typeof Real>)", "function CountedEventRiver()" | dashboard/src/cockpit/Cockpit.memo.test.tsx:32-32; dashboard/src/cockpit/Cockpit.memo.test.tsx:43-43; dashboard/src/cockpit/Cockpit.memo.test.tsx:54-54; dashboard/src/cockpit/Cockpit.memo.test.tsx:65-65; dashboard/src/cockpit/Cockpit.memo.test.tsx:76-76; dashboard/src/cockpit/Cockpit.memo.test.tsx:87-87; dashboard/src/cockpit/Cockpit.memo.test.tsx:98-98 |
 | The keep-alive DOM-identity case (same `.rail--left` / `engine-room` / `sessions-view` nodes across switches). | "keeps the visibility/aria contract and DOM identity across switches (keep-alive intact)" | dashboard/src/cockpit/Cockpit.memo.test.tsx:253-290 |
-| The production shell owns the persistent layers under test: the `chatsLayer`/`filesLayer`/`operationsLayer`/`engineLayer` consts and the four divs that toggle their `display`. | "const chatsLayer = css({", "const filesLayer = chatsLayer;", "const operationsLayer = chatsLayer;", "const engineLayer = chatsLayer;", "className={engineLayer}", "className={operationsLayer}", "className={filesLayer}", "className={chatsLayer}" | dashboard/src/cockpit/Cockpit.tsx:326-326; dashboard/src/cockpit/Cockpit.tsx:336-336; dashboard/src/cockpit/Cockpit.tsx:341-341; dashboard/src/cockpit/Cockpit.tsx:347-347; dashboard/src/cockpit/Cockpit.tsx:748-748; dashboard/src/cockpit/Cockpit.tsx:753-753; dashboard/src/cockpit/Cockpit.tsx:765-765; dashboard/src/cockpit/Cockpit.tsx:773-773 |
+| The production shell owns the persistent layers under test: the `chatsLayer`/`filesLayer`/`operationsLayer`/`engineLayer` consts and the four divs that toggle their `display`. | "const chatsLayer = css({", "const filesLayer = chatsLayer;", "const operationsLayer = chatsLayer;", "const engineLayer = chatsLayer;", "className={engineLayer}", "className={operationsLayer}", "className={filesLayer}", "className={chatsLayer}" | dashboard/src/cockpit/Cockpit.tsx:327-327; dashboard/src/cockpit/Cockpit.tsx:337-337; dashboard/src/cockpit/Cockpit.tsx:342-342; dashboard/src/cockpit/Cockpit.tsx:348-348; dashboard/src/cockpit/Cockpit.tsx:755-755; dashboard/src/cockpit/Cockpit.tsx:760-760; dashboard/src/cockpit/Cockpit.tsx:772-772; dashboard/src/cockpit/Cockpit.tsx:780-780 |
 
 ## Cross-Repo References
 

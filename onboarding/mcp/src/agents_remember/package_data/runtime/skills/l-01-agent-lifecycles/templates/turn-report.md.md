@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/turn-report.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 ## Purpose
 
@@ -47,7 +47,7 @@ This bundle copy is the shape the worker job writes at every hand-off; the frame
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Sync-propagated bundle copy of the canonical templates source. | `# Turn-Report Template` | skills/l-01-agent-lifecycles/templates/turn-report.md:1-58 |
+| Sync-propagated bundle copy of the canonical templates source. | `# Turn-Report Template` | skills/l-01-agent-lifecycles/templates/turn-report.md:1-57 |
 | The worker writes the turn report in the main loop at every hand-off; it is the leaf's single artifact of record. | `# Lifecycle — Worker` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:1-154 |
 | The frame lists the mandatory worker turn report among the per-role artifact obligations. | `# l-01-agent-lifecycles — The Agent Lifecycles` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-416 |
 
@@ -61,6 +61,7 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Recorded `turn-report.md` as a synchronized runtime artifact of the current canonical lifecycle doctrine; it introduces no independent role contract.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 6 citation findings for the canonical turn-report template, worker role, and lifecycle skill references.
 

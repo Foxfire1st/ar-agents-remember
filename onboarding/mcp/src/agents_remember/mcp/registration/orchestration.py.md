@@ -5,73 +5,61 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/mcp/registration/orchestration.py`       |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-07-31T15:31+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-11T14:29+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                        |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
 
 [registration route overview](overview.md)
 
-## 260731-EFA-L8 Change
-
-The tool-registration functions gained bare-`*` keyword-only signatures (the 19
-PLR0917 fixes across `mcp/registration/*.py`); the rule stays enabled and call sites
-already pass keywords. Registered tools are unchanged.
-
 ## Purpose
 
-`register_orchestration_tools(server, config)` declares the cross-agent messaging surface: the three
-operator-inbox tools (`operator_inbox_post`, `operator_inbox_poll`, `operator_inbox_consume`) and
-`orchestration_nudge_manager`.
+Registers agent-facing parent and child whole-message tools over structural seat relationships.
 
 ## Code Commentary
 
 ### Logic
 
-`operator_inbox_post` splits its arguments four ways:
+`message_parent` derives the target entirely from the ambient caller. `message_child` accepts only
+a canonical child task document, role, and message content. Both delegate persistence, authorization,
+current-occupant resolution, and delivery to the structural application boundary.
 
-- `InboxAddress(lifecycle_id, agent_id, recipient_role)` — the mailbox key.
-- `InboxMessage(ask, response, message_kind, gate_id, artifact_path)` — the content.
-- `InboxPoster(created_by, created_via, sender_agent_id, sender_role)` — who sent it.
-- `HostedDelivery(enabled=deliver_to_hosted)` — whether the entry is also pushed into the
-  recipient's live hosted session through the terminal paste seam. The durable row stays
-  dashboard-visible either way.
+### Conventions
 
-**Attribution is fixed in this declaration, not taken from the caller.** `created_by="model"` and
-`created_via="cli"` are literals in the body, and `operator_inbox_consume` likewise sends
-`consumed_by="model"` / `consumed_via="cli"`. Over MCP this route is always the model's; trusted
-dashboard code calls `operator_inbox_post_payload` directly with developer/dashboard attribution.
-An agent therefore cannot post or consume as the developer.
-
-`operator_inbox_poll` forwards the three mailbox keys flat. Consuming is explicit and separate —
-polling never consumes — and repeated `operator_inbox_consume(entry_id)` calls are idempotent
-against the append-only inbox log.
-
-`orchestration_nudge_manager` keeps two different agents apart, which is the point of its packing:
-`NudgeTarget(agent_id, lifecycle_id)` is the **manager being nudged**, `NudgeSubject(subject,
-agent_id, lifecycle_id, artifact_path)` is the **seat the nudge is about**. Collapsing them would
-nudge the wrong mailbox. `reason` is a `NudgeReason` and `rate_limit_seconds` defaults to 900.
+Runtime, lifecycle, inbox-row, gate, and adapter ids are absent from requests and responses.
 
 ### Invariants And Boundaries
 
-- Never accept `created_by` / `consumed_by` from the caller on this surface.
-- Keep `NudgeTarget` and `NudgeSubject` distinct.
-- Delivery mechanics, rate limiting, expectation rows and owner-routing live in
-  `mcp/tools/operator_inbox.py`, `mcp/tools/orchestration.py` and `controlplane/`.
+- Ordinary traffic is re-resolved after replacement.
+- Dispatch briefs and state signals are plane-owned, not model-posted through these tools.
+- A child target must be an authorized direct structural relation.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The three inbox payload builders and the hosted-delivery seam. | `operator_inbox_post_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:19-36; mcp/src/agents_remember/mcp/tools/operator_inbox.py:50-65; mcp/src/agents_remember/mcp/tools/operator_inbox.py:68-83 |
-| "target: NudgeTarget" / "subject: NudgeSubject" and the nudge builder. | "subject: NudgeSubject" | mcp/src/agents_remember/mcp/tools/orchestration.py:7-12; mcp/src/agents_remember/mcp/tools/orchestration.py:19-37 |
-| `HostedDelivery` — the delivery bundle the post declaration builds. | `HostedDelivery` | mcp/src/agents_remember/serving/dispatch_brief.py:45-54 |
-| "class InboxAddress:", "class InboxMessage:", "class InboxPoster:", "sender_role: AgentRole", "message_kind: InboxMessageKind =". | "sender_role: AgentRole" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:108-108 |
-| Fixed model attribution and the target/subject split proved through a live server. | `test_operator_inbox_post_over_mcp_is_always_attributed_to_the_model` | mcp/tests/test_mcp_registration_wiring_tests_2.py:454-465 |
+| Parent messaging has no caller-supplied target identity. | `message_parent` | mcp/src/agents_remember/mcp/registration/orchestration.py:21-42 |
+| Child messaging accepts only structural target and content. | `message_child` | mcp/src/agents_remember/mcp/registration/orchestration.py:44-68 |
+
+## Cross-Repo References
+
+No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-11T14:29+02:00 — Re-read `message_parent` and `message_child` and widened both
+  citations to include their registered-tool decorators; verification metadata remains unchanged
+  for governed closeout.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.

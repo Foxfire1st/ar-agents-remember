@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/relay_death_watch.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,9 +27,9 @@ cap, and fail-safe on settings-read failure (default cutoff).
 
 ### Logic
 
-- `RELAY_DEATH_WATCH_INTERVAL_SECONDS = 30.0` cit:([`RELAY_DEATH_WATCH_INTERVAL_SECONDS`], mcp/src/agents_remember/serving/relay_death_watch.py:45-45) — the watcher's
+- `RELAY_DEATH_WATCH_INTERVAL_SECONDS = 30.0` cit:([`RELAY_DEATH_WATCH_INTERVAL_SECONDS`], mcp/src/agents_remember/serving/relay_death_watch.py:44-44) — the watcher's
   independent cadence, decoupled from the notifier sweep interval.
-- `RELAY_DEATH_MARKER_FILENAME = "agent-notifier-death-watch.json"` cit:([`RELAY_DEATH_MARKER_FILENAME`], mcp/src/agents_remember/serving/relay_death_watch.py:48-48) —
+- `RELAY_DEATH_MARKER_FILENAME = "agent-notifier-death-watch.json"` cit:([`RELAY_DEATH_MARKER_FILENAME`], mcp/src/agents_remember/serving/relay_death_watch.py:47-47) —
   the durable dedupe marker lives under `observer_root/workspace/`.
 - `RelayDeathMarker` cit:([`RelayDeathMarker`], mcp/src/agents_remember/serving/relay_death_watch.py:51-56) — one post-per-stale-heartbeat identity:
   which tick was reported, and when/where.
@@ -39,14 +39,14 @@ cap, and fail-safe on settings-read failure (default cutoff).
 - `_stale_cutoff_seconds` cit:([`_stale_cutoff_seconds`], mcp/src/agents_remember/serving/relay_death_watch.py:91-98) — the configured stale cutoff with a
   default fallback (`DEFAULT_AGENT_NOTIFIER_STALE_CUTOFF_SECONDS`) when settings are
   unreadable.
-- `post_relay_death_signal` cit:([`post_relay_death_signal`], mcp/src/agents_remember/serving/relay_death_watch.py:101-158) — returns `False` when there is no
+- `post_relay_death_signal` cit:([`post_relay_death_signal`], mcp/src/agents_remember/serving/relay_death_watch.py:100-152) — returns `False` when there is no
   heartbeat at all (the relay is opt-in, so absence is not evidence of death), when the tick is
   fresh, or when the marker already names this `lastTickAt`. Otherwise it derives the scoped
   architect owner, appends a `degradation-alert` row (reason text carries the heartbeat age and
   cutoff), writes the marker, and best-effort pushes the row to a live architect seat.
-- `_try_deliver` cit:([`_try_deliver`], mcp/src/agents_remember/serving/relay_death_watch.py:160-171) — best-effort push; the durable row is the surface
+- `_try_deliver` cit:([`_try_deliver`], mcp/src/agents_remember/serving/relay_death_watch.py:155-164) — best-effort push; the durable row is the surface
   regardless, so delivery failure is swallowed.
-- `relay_death_watch_loop` cit:([`relay_death_watch_loop`], mcp/src/agents_remember/serving/relay_death_watch.py:173-180) — the `asyncio` loop spawned from
+- `relay_death_watch_loop` cit:([`relay_death_watch_loop`], mcp/src/agents_remember/serving/relay_death_watch.py:167-174) — the `asyncio` loop spawned from
   `_app_lifespan._serving_lifespan`; sleeps the independent cadence, runs the check in a
   worker thread, logs-and-continues on failure.
 
@@ -81,14 +81,14 @@ by source and tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines this watcher; N5 ruling and the tests are the authority. | `post_relay_death_signal` | mcp/src/agents_remember/serving/relay_death_watch.py:101-158 |
+| No external/domain document defines this watcher; N5 ruling and the tests are the authority. | `post_relay_death_signal` | mcp/src/agents_remember/serving/relay_death_watch.py:100-152 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The heartbeat row and age helper the watcher reads. | `AgentNotifierHeartbeatStore`; `heartbeat_age_seconds` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-125; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:128-138 |
-| The scoped architect mailbox the alert is addressed to (role-only fallback when no scoped seat). | `derive_architect_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:294-325 |
+| The scoped architect mailbox the alert is addressed to (role-only fallback when no scoped seat). | `derive_architect_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:129-138 |
 | The durable push path for the alert row. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:165-223 |
 | The loop task is spawned by the serving lifespan beside the notifier loop. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:168-213 |
 | The forcing tests: never-ticked silence, one-post-per-tick re-arm, corrupt marker, default cutoff, best-effort delivery, loop behavior. | `RelayDeathWatchTests`; `RelayDeathLoopTests` | mcp/tests/test_inbox_arrival_guarantee.py:558-624; mcp/tests/test_inbox_arrival_guarantee.py:627-651 |
@@ -103,6 +103,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current serving card for `relay_death_watch.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: created this file-level onboarding card for
   the new relay-death watcher module (N5): independent 30s cadence, heartbeat-staleness →
   architect-mailbox `degradation-alert`, per-tick-identity marker dedupe, default-cutoff

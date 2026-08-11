@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/memory_cap.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ No external Domain Documentation source is configured for this memory repo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The gate plans and runs the capped command, names the cap in refusals, and refuses a cap-less full run. | `QualityGatePlan`, `code_quality_gate_preview`, `run_strict_code_quality_gate`, `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:29-35; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:77-146; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:162-219; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:249-275 |
+| The gate plans and runs the capped command, names the cap in refusals, and refuses a cap-less full run. | `QualityGatePlan`, `code_quality_gate_preview`, `run_strict_code_quality_gate`, `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:34-40; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-177; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:195-270; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:346-372 |
 | The settings model for `orchestration.qualityGate`. | `QualityGateSettings` | mcp/src/agents_remember/kernel/_agentic_settings_core.py:250-261 |
 | The fail-loud parser for `orchestration.qualityGate`. | `_parse_quality_gate` | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:383-401 |
 | Proofs for availability branches, scope wrapping, the rlimit flag, and cap-kill naming. | `MemoryCapPlanningTests`, `WrapperMemoryCapTests` | mcp/tests/test_code_quality_memory_cap.py:70-150; mcp/tests/test_code_quality_memory_cap.py:151-275 |

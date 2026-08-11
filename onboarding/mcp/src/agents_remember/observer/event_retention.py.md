@@ -5,9 +5,9 @@
 | repository             | agents-remember                                     |
 | path                   | `mcp/src/agents_remember/observer/event_retention.py` |
 | doc_type               | `file-level-onboarding`                             |
-| lastUpdated            | 2026-07-10T01:14+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`          |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-11T15:20+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`          |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                       |
 
 ## Governing Overview
@@ -143,7 +143,7 @@ lifecycles.
 | The protection set is derived from durable enclosure state (a live master series) by the admission module. | `series_retained_lifecycle_ids` | mcp/src/agents_remember/observer/worktree_provider_admission.py:76-101 |
 | A protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | mcp/tests/test_serving_raw_events.py:334-357 |
 | `_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff. | `_first_retained_offset` | mcp/src/agents_remember/observer/event_retention.py:210-223 |
-| The raw SSE tailer calls retention pruning and uses retained initial offsets only when no cursor is supplied. | `stream_raw_events`; `initial_event_offsets`; `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/serving/events.py:230-277 |
+| The raw SSE tailer calls retention pruning and uses retained initial offsets only when no cursor is supplied. | "async def stream_raw_events("; "offsets = await asyncio.to_thread(initial_event_offsets, root, now=now)"; "await asyncio.to_thread(prune_expired_lifecycle_event_logs, root, now=now)" | mcp/src/agents_remember/serving/events.py:232-277 |
 | Raw-event tests cover dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, and uncapped parallel active history. | `test_fresh_connection_does_not_cap_parallel_active_lifecycle_history`; `test_read_new_events_skips_heartbeats`; `test_read_new_events_limit_bounds_batch`; `test_dormant_promoted_lifecycle_pruned_without_terminal_event`; `test_dormant_fleeting_lifecycle_pruned_without_terminal_event`; `test_protected_lifecycle_log_survives_inactivity`; `test_initial_offsets_bound_active_replay_to_recent_window` | mcp/tests/test_serving_raw_events.py:236-262; mcp/tests/test_serving_raw_events.py:264-280; mcp/tests/test_serving_raw_events.py:282-295; mcp/tests/test_serving_raw_events.py:297-318; mcp/tests/test_serving_raw_events.py:320-332; mcp/tests/test_serving_raw_events.py:334-357; mcp/tests/test_serving_raw_events.py:374-389 |
 
 ## Cross-Repo References
@@ -157,6 +157,8 @@ log layout.
 
 ## Update History
 
+- 2026-08-11T15:20+02:00 — Replaced generic retention-call anchors with the unique stream
+  declaration and its exact initial-offset and pruning calls.
 - 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 6 table citations and normalized 6 source paths; no unresolved Tier-3 claims.
 
 - 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3/F7: made workspace-river compaction live and

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/conversations/history.py`     |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-08T14:38+02:00                                       |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                   |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                   |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The library serializer deliberately keeps nulls on the wire. | "return value.model_dump(" | mcp/src/agents_remember/serving/conversation/library/api.py:322-322 |
+| The library serializer deliberately keeps nulls on the wire. | "return value.model_dump(" | mcp/src/agents_remember/serving/conversation/library/api.py:323-323 |
 
 ## Cross-Repo References
 

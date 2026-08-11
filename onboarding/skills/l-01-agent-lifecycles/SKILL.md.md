@@ -3,61 +3,78 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | skills/l-01-agent-lifecycles/SKILL.md |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
-| governingOverview | skills/l-01-agent-lifecycles/overview.md |
+| path | `skills/l-01-agent-lifecycles/SKILL.md` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-08-11T14:10+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
 
-Governing overview: skills/l-01-agent-lifecycles/overview.md
+[l-01-agent-lifecycles overview](overview.md)
 
 ## Purpose
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+This is the canonical lifecycle router and shared doctrine for every agent role. It selects exactly
+one session path, defines the minimal frame every session may rely on, registers role-owned
+lifecycle files, and owns the common structural dispatch, authority, continuity, supervision, and
+three-party-loop contracts.
 
-## Code Commentary
+## Logic
 
-### Logic
+The router has three ordered conditions: a bound spawn role loads that role lifecycle; a fresh role
+brief loads the named role lifecycle; otherwise the session is the free-chat launcher. Role seats
+bind to canonical task documents at the appropriate altitude plus role. A dispatching role supplies
+the child document, role, and complete brief once; the control plane privately resolves/creates the
+occupant, establishes readiness, and exact-pins only the initial brief.
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+Continuity lives in task documents and durable artifacts rather than transcripts or a particular
+occupant. The agent-notifier relays mechanical facts; owners interpret them without seat-local
+watchers or an escalation ladder. Role files own the detailed loops and authority limits.
 
-### Invariants And Boundaries
+## Conventions
 
-Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization outputs. Dispatch proof remains exact-session and fail-closed.
+- `skills/l-01-agent-lifecycles/` is canonical. Package and harness trees are synchronized outputs.
+- One self-contained role file owns each role lifecycle; templates carry dispatch inputs, not
+  alternate doctrine.
+- Roles communicate through structural parent/child operations and durable artifacts.
+- Exact runtime ids, readiness correlations, inbox ids, lifecycle ids, and gate ids remain
+  control-plane details.
+
+## Invariants And Boundaries
+
+- Exactly one routing condition wins for a session.
+- `(canonical task document, role)` is the stable seat address; replacement changes the occupant.
+- Agents never poll readiness, retain another seat's runtime address, or duplicate an initial brief.
+- Durable artifacts, delegated authority, and human-only gates retain their owning altitudes.
+- The three-party loop separates builder work, independent review, curator coherence, and owner
+  decision; verdicts are evidence rather than gate decisions.
 
 ## Docs References
 
-No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
+No external domain source governs this repository-owned lifecycle doctrine.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-Worker source inventory, reviewer verdict, and governing route overview.
-
-## Cross-Repo References
-
-No meaningful cross-repo references.
-
-## Update History
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the ladder retirement in the
-## 260713-TES-L5 Current Delta — Fact-Relay Supervision Doctrine
-
-The notify-and-stop safety section no longer names the escalation ladder: the agent-notifier
-sweep evaluates seat-state facts on its own mechanical tick and relays them to owners
-(turn-ended/completed state-signals, compound-idle, non-reaction residue); the timed
-escalation ladder (renudge → skip-level → architect custody, then respawn) is retired, and
-no role watches or nudges on its own initiative.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The router is exactly three ordered conditions. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)" | skills/l-01-agent-lifecycles/SKILL.md:13-51 |
+| The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:95-111 |
+| The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. | "## The Minimal Frame (the only machinery every session shares)" | skills/l-01-agent-lifecycles/SKILL.md:140-175 |
+| Shared continuity and authority invariants are explicit. | "## Shared Invariants (every role can count on these)" | skills/l-01-agent-lifecycles/SKILL.md:177-190 |
+| Hosted role dispatch is one structural transaction. | "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:286-301 |
 
 ## Update History
 
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the ladder retirement in the
-  silence-supervision doctrine — the agent-notifier sweep relays seat-state facts
-  (turn-ended/completed state-signals, compound-idle, non-reaction residue) and owners
-  interpret; the timed escalation ladder (renudge/skip-level/respawn) is retired, so
-  notify-and-stop safety rests on the fact relay, not a ladder. Verification metadata pinned
-  until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
+- 2026-08-11T14:10+02:00 — Reconciled the sidecar directly to current structural lifecycle
+  doctrine and removed duplicated task-delta/history blocks. Verification remains pinned pending
+  governed closeout.
+- 2026-08-09T12:08+02:00 — Fact-relay supervision replaced timed escalation-ladder doctrine.
+- 2026-08-08T02:00+02:00 — Quality checks were assigned to leaf and master altitudes.
+- 2026-07-12T14:20+02:00 — Established canonical lifecycle route coverage and generated-copy
+  ownership.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d` |
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -27,7 +27,10 @@ default run is style-only. With `DriftCheckContext`, the default run combines
 
 Drift rows from `run_drift_summary()` are normalized into quality findings so
 the MCP response has one finding list even when checks come from different
-subdomains.
+subdomains. Internal callers may request all report-only rows and all drift rows for a file report;
+the ordinary wire response keeps its bounded samples. `DriftCheckContext` also carries explicit
+report output options so the full leaf checklist can defer Markdown publication to the unified
+renderer while preserving the observer snapshot's final report path.
 
 The closeout gate consumes this registry through two declared phase lists.
 `BEFORE_METADATA_REFRESH_CHECKS` begins with the tree-only
@@ -70,6 +73,8 @@ changed: `summarize_rows` always sets all three on a `checked` packet.
   This runner narrows on `status` and reads the status-conditional keys
   defensively; it must not re-declare the status vocabulary or assume a key that
   `DriftSummaryPacket` marks `NotRequired`.
+- Full internal detail is opt-in and is removed before the public response. Bounded samples remain
+  the default transport contract; report generation must not expand normal MCP payloads.
 
 ## Repo-Internal References
 
@@ -83,6 +88,8 @@ changed: `summarize_rows` always sets all three on a `checked` packet.
 
 ## Update History
 
+- 2026-08-11T16:54+02:00 — Added opt-in complete drift/report-only materialization and report
+  output control for the unified enclosure curator checklist; default quality payloads stay bounded.
 - 2026-08-10T12:46+02:00 — L9 fail-fast repair: registered
   `style.document_shape.entity_catalog_alignment` and placed it first in
   `BEFORE_METADATA_REFRESH_CHECKS`, ahead of citations and every code rail. This moves pure

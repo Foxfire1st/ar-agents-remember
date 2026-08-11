@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_store_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                   |
 | lastUpdated            | 2026-07-10T01:14+02:00                    |
-| lastVerifiedCommitHash |                                           `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                           2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |                                           `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |                                           2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                          |
 
 ## Governing Overview
@@ -16,60 +16,39 @@
 
 ## Purpose
 
-`test_store_scaling_cs6.py` is the store-level CS-6 regression suite for HFX2-L12. It verifies bounded reads, compaction/reclamation, and malformed-line tolerance across the supervisor signal store, expectation rows, provider metrics/degradation stores, event river, terminal catalog, and dashboard-tolerant JSONL stores.
+Scaling and corruption-tolerance suite for notifier, expectation, provider, event, lifecycle, and terminal stores.
 
 ## Code Commentary
 
-### 260707-HFX2-L13 F3/F7 Storage Bounds
-
-`LifecycleHeartbeatSidecarTests` proves at two heartbeat counts that the lifecycle log retains one
-real row, the sidecar stays bounded, and merged reads expose only the latest beat. The B1 regression
-creates 10 and 100 beaten lifecycle directories and proves pruning removes every directory before a
-later fleeting reap. Event-river cases prove live workspace cursors resume without duplicates or
-skips after compaction at two sizes and that the virtual base offset advances.
-
 ### Logic
 
-The suite uses `_scaling` helpers to prove post-compaction size is bounded at multiple seed sizes, fixed-limit reads do not scale with whole-file size, per-finding snapshot paths do not re-read stores, tolerant readers skip torn lines, terminal-catalog liveness sweeps perform constant disk I/O at two catalog sizes, and startup workspace-river compaction preserves exactly the retained tail for reconnecting clients.
+Notifier signal fixtures use canonical master `TaskDocumentRef` plus seat role while the suite proves bounded compaction, snapshot reuse, tolerant reads, constant-I/O sweeps, and subquadratic behavior across store sizes.
 
 ### Conventions
 
-Each store is temp-rooted. Tests prefer deterministic read/write/count metrics over timing, and they seed at two sizes when proving reclamation or subquadratic growth. Store entry points are addressed through parameter objects rather than loose keywords: `AgentNotifierSignalCooldownStore.in_cooldown` takes a `AgentNotifierSignalKey(target=AgentNotifierSignalTarget(...), finding_kind=..., detail=...)`, `write_expectation_row` takes an `Expectation(kind=..., source_id=..., subject=ExpectationSubject(...))`, `AmbientLifecycle` takes `timing=AmbientTiming(heartbeat_seconds=...)`, and `TerminalCatalogLivenessSweeper` takes `probe=LivenessProbe(hysteresis=TerminalCatalogLivenessConfig(...), pane_capturer=...)`.
+Test-only evidence uses deterministic fakes/fixtures and exercises the owning seam directly.
 
 ### Invariants And Boundaries
 
-The F3 river test covers the startup-boundary compactor only. It does not claim live cursor-safe compaction; that remains HFX2-L13 scope because live clients resume by byte offset and appenders exist in more than one process.
-
-### Todos
-
-Extend this suite when HFX2-L13 lands live river compaction, task-doc broadcast windowing, or heartbeat coalescing.
+Scaling behavior must not depend on retired leaf-key grouping; task-document-and-role identity remains stable across compaction and sweep snapshots.
 
 ## Docs References
 
-No external documentation governs these repo-local store scaling regressions.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking live sources; no Domain Documentation entries are configured. | N/A | N/A |
+No Domain Documentation source is configured for this repository-local regression contract.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Store scaling tests cover signal compaction/snapshot reads, metrics tail reads, expectation snapshot reads, heartbeat/lifecycle reclamation, expectation and metrics compaction, provider degradation compaction, tolerant readers, terminal catalog batch/compact, and workspace-river compaction. | `AgentNotifierSignalStoreScalingTests` | mcp/tests/test_store_scaling_cs6.py:92-160 |
-| The shared CS-6 assertion helpers provide subquadratic, bounded-file-size, and bounded-count assertions used by this suite. | "def assert_subquadratic" | mcp/tests/_scaling.py:88-88 |
-| The startup workspace-river compactor documents why live cursor-safe compaction is out of scope for this leaf. | `compact_workspace_river` | mcp/src/agents_remember/observer/event_retention.py:110-152 |
+| Current suite declaration anchoring this card. | `_signal` | mcp/tests/test_store_scaling_cs6.py:80-80 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references found.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Same-repository tests only. | N/A | N/A |
+No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `test_store_scaling_cs6.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the `n/a` table rows and
@@ -94,4 +73,3 @@ No meaningful cross-repo references found.
   Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
 
 - 2026-07-09T19:31+02:00 — 260707-HFX2-L12: created for the store, event-river, terminal-catalog, and tolerant-reader CS-6 regressions added by the L12 worker. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-

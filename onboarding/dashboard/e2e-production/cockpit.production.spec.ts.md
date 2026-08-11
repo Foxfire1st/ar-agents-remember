@@ -6,8 +6,8 @@
 | path                   | `dashboard/e2e-production/cockpit.production.spec.ts`  |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-01T10:45+02:00                                 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`             |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`             |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../overview.md`                                    |
 
 ## Governing Overview
@@ -151,7 +151,7 @@ server routes those mirror — so both are cited, along with the config that dec
 | --- | --- | --- |
 | The header's three-answer rule (L8-L29), the `snapshot.json` read (L32-L34), and the module-level `dashboard.fingerprint` read that makes import fail without a release-generated file (L35-L38). | `dashboardBuild` | dashboard/e2e-production/cockpit.production.spec.ts:35-38 |
 | The fault-injection dispositions — the `OpenDisposition` union declaring `missing`/`malformed`/`contradictory` (L47-L54) and the arms that fulfil them alongside the `503`/`400` bodies (L93-L122), all deliberately untyped. | `OpenDisposition` | dashboard/e2e-production/cockpit.production.spec.ts:47-54 |
-| The catalog row `satisfies TerminalCatalogRow` (L141) and the open response `satisfies TerminalOpenSuccessBody` (L163), with `harness` (L149), `controlState` (L156), `controlEndpoint` (L159) and `controlProtocol` (L160) written unconditionally. | "controlProtocol: null" | dashboard/e2e-production/cockpit.production.spec.ts:160-160 |
+| The catalog row `satisfies TerminalCatalogRow` (L141) and the open response `satisfies TerminalOpenSuccessBody` (L163), with `harness` (L149), `controlState` (L156), `controlEndpoint` (L159) and `controlProtocol` (L160) written unconditionally. | "controlProtocol: null" | dashboard/e2e-production/cockpit.production.spec.ts:168-168 |
 | The five-way failure loop asserting the error text and zero `rail-row-*` elements (the count assertion at L297). | "production raw ${failure} failure stays visible with zero ghost rows" | dashboard/e2e-production/cockpit.production.spec.ts:286-300 |
 | The shared typed capability fixture the envelopes come from — annotated with the `types/harnessCapabilities` wire mirrors, which is why it is a stronger claim than the reused projection. | `capabilityEnvelope` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-172 |
 | Nothing generates `snapshot.json`: every reference in the repository reads it. | "NOT generated" | dashboard/src/test/fixtures/wire.ts:22-22 |

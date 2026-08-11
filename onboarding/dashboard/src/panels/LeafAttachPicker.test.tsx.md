@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/LeafAttachPicker.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ key as opaque — they only check it round-trips through `onPick`.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The component under test. | `LeafAttachPicker` | dashboard/src/panels/LeafAttachPicker.tsx:145-349 |
-| The `TaskTreeNode` type the `TREE` fixture is built against. | `TaskTreeNode` | dashboard/src/data/taskIdentity.ts:110-116 |
+| The `TaskTreeNode` type the `TREE` fixture is built against. | `TaskTreeNode` | dashboard/src/data/taskIdentity.ts:133-139 |
 
 ## Current L5I Maintenance
 

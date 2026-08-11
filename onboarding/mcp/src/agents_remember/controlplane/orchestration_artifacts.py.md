@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`   |
 | doc_type               | `file-level-onboarding`                                             |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash |                                                                     `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate |                                                                     2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash |                                                                     `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |                                                                     2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                                       |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ their own workflow.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The bundled turn-report template is the worker artifact shape. | `# Turn-Report Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/turn-report.md:1-58 |
+| The bundled turn-report template is the worker artifact shape. | `# Turn-Report Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/turn-report.md:1-57 |
 | The bundled master-handover template is rendered by the helper. | `# Master-Handover-Packet Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md:1-49 |
 
 ## Update History

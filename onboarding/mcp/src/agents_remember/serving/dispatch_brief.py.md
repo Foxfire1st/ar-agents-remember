@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | mcp/src/agents_remember/serving/dispatch_brief.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-11T09:50+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
@@ -16,65 +16,52 @@ Governing overview: mcp/src/agents_remember/serving/overview.md
 
 ## Purpose
 
-Policy and performer-layer collaborators for one readiness-gated durable dispatch brief. This
-file absorbed the tool-layer orchestration that lived in the deleted `mcp/tools/dispatch_brief.py`
-and now owns the delivery seams, the expectation clocks, and the exact-session readiness gate for
-dispatch-brief delivery.
+Governs the first durable message to a newly dispatched child. It is the sole internally exact-pinned
+inbox delivery because the brief belongs to that newly created occupant.
 
 ## Code Commentary
 
 ### Logic
 
-`DispatchBriefGate` remains the exact-session protocol readiness gate: it accepts only a catalog
-entry whose identity matches and whose adapter snapshot is ready, with no recovery/compatibility
-path. `HostedDelivery` (with `HOSTED_DELIVERY` / `NO_HOSTED_DELIVERY` singletons) carries the
-delivery collaborators — catalog, host, paster, readiness probe, and gate — so a durable row can
-be pushed into its recipient's live hosted session or, with `enabled=false`, merely persisted.
-`require_dispatch_target` refuses before persistence unless the exact agent session is ready.
-`expectation_store` / `expectation_sla_seconds` resolve the observer-root expectation store and
-its per-kind SLA from agentic settings (falling back to `DEFAULT_EXPECTATION_SLA_SECONDS`);
-`start_dispatch_expectations` starts `briefed-by` (and `turn-report-by` when the target carries a
-leaf key) clocks from the one durable row's timestamp and id, skipping rows already present.
-`fulfill_dispatch_expectation` / `fulfill_briefed_expectation` mark the briefed clock met only
-from delivered evidence. `with_prompt_keywords` prepends settings-owned prompt keywords as one
-line, and `delivery_is_briefed` / `dispatch_stays_on_exact_session` keep the pending row on its
-exact agent id.
+The gate requires the exact target to be running and ready, starts the brief expectation, and verifies
+delivery against the same session correlation. Prompt keywords are applied only to this initial brief.
+Ordinary relationship traffic does not use this exact-pin rule.
+
+### Conventions
+
+Exact session identity is private transaction evidence. The agent-facing dispatch request supplies
+only task document, role, brief, and optional label.
 
 ### Invariants And Boundaries
 
-Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
-outputs. Dispatch proof remains exact-session and fail-closed: no durable row is created without
-prior exact-session readiness, no adapter is contacted for a caller that never committed, and a
-pending dispatch row never enters a ladder that can readdress its exact agent id.
+- Initial brief delivery never rebinds to a replacement.
+- Persistence precedes delivery.
+- Failure leaves no silently live unbriefed child; the structural application performs rollback.
+- Briefed truth comes from correlated delivery evidence, not model completion.
+
+### Todos
+
+None.
 
 ## Docs References
 
-No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
+No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-Worker source inventory, reviewer verdict, and governing route overview.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Dispatch target admission requires the exact hosted target. | `require_dispatch_target` | mcp/src/agents_remember/serving/dispatch_brief.py:114-139 |
+| Dispatch brief is explicitly the exact-pinned exception. | `dispatch_stays_on_exact_session` | mcp/src/agents_remember/serving/dispatch_brief.py:216-220 |
+| Brief expectation fulfillment reads durable delivery evidence. | `fulfill_briefed_expectation` | mcp/src/agents_remember/serving/dispatch_brief.py:222-234 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references.
-
-### 260713-PHA-L5 Exact Protocol Readiness
-
-Dispatch readiness checks the exact catalog session's adapter snapshot and requires ready control
-plus an accepting state. Copy mode, pane text, placeholders, and recovery paste are not authority.
-
-### 260731-EFA-L6 Tool-Layer Move Into Serving
-
-This leaf deleted `mcp/tools/dispatch_brief.py` and moved its orchestration into this file:
-`HostedDelivery`, `HOSTED_DELIVERY`, `NO_HOSTED_DELIVERY`, `expectation_store`,
-`expectation_sla_seconds`, `require_dispatch_target`, `start_dispatch_expectations`, and
-`fulfill_dispatch_expectation` now live beside `DispatchBriefGate`. The caller
-(`mcp/tools/operator_inbox.py::operator_inbox_post_payload`) still follows the same
-readiness-gated, exact-session contract; the durable row remains the root, and expectation
-clocks still start from that one row's timestamp and id.
+No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — Aligned the current serving card for `dispatch_brief.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: rewrote this card for the current source after

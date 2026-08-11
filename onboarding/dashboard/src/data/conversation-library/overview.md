@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/conversation-library/`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-01T10:35+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -44,7 +44,9 @@ intact (R4).
 - `client.ts` — list/read (or-null reads) + open/open-status/open-reconcile (typed `OpenResult`
   evidence; a refusal is discriminated by the `phase`+`outcome` payload shape, never guessed into
   success). The open `requestId` is caller-stable and reused across status/reconcile — a lost response
-  is reconciled under the SAME id, never a fresh one (§9.4, invariant 27).
+  is reconciled under the SAME id, never a fresh one (§9.4, invariant 27). Optional launch context
+  carries the canonical `TaskDocumentRef` plus seat role; it does not expose or reconstruct a leaf or
+  runtime-session address.
 - `store.ts` — the `conversationLibraryStore` + list/preview/open orchestration. `openedForFocus` is the
   sole focus gate (set only on `opened`/`opened`); there is no active-marking field. The open flow is
   hardened per fix-round F6: `dispatching` from dispatch blocks a double-open (F6c); the requestId is
@@ -123,6 +125,10 @@ serving endpoints; no cross-repository implementation source governs it.
 | The parent data boundary keeps `dashboardStore`/`DashboardState` separate from `conversationLibraryStore`. | `DashboardState`; `dashboardStore`; `conversationLibraryStore` | dashboard/src/data/conversation-library/store.ts:77-84; dashboard/src/data/store.ts:19-50; dashboard/src/data/store.ts:225-347 |
 
 ## Update History
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: updated the route body for the canonical
+  `TaskDocumentRef` launch context shared by client and store; leaf-key routing is not retained as a
+  parallel public contract.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: store.ts changed only by behavior-preserving lint remediation.
 
 - 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: split list, read, open, status, and reconcile ownership across the browser client and native routes. Verification metadata unchanged.

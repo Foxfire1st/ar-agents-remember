@@ -63,6 +63,7 @@
     "dashboard/e2e/cockpit.spec.ts",
     "dashboard/vitest.config.ts",
     "pyproject.toml",
+    "requirements.txt",
     "scripts/harness/README.md",
     "scripts/harness/render_starter.py",
     "scripts/harness/session_start_hook.py",
@@ -79,8 +80,8 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1449,
-    "fileSidecars": 21,
+    "sourceFilesInScope": 1462,
+    "fileSidecars": 22,
     "childRoutes": 9
   },
   "routingTerms": [
@@ -115,6 +116,7 @@
     "remember",
     "render",
     "render_starter",
+    "requirements",
     "revs",
     "run",
     "runtime",
@@ -130,6 +132,7 @@
     "starter",
     "sync",
     "toml",
+    "txt",
     "types",
     "vitest",
     "workspace"
@@ -156,11 +159,11 @@
       "dashboard",
       "dashboard/vitest.config.ts",
       "pyproject.toml",
+      "requirements.txt",
       "scripts/harness",
       "scripts/harness/README.md",
       "scripts/harness/render_starter.py",
-      "scripts/harness/session_start_hook.py",
-      "scripts/harness/shared"
+      "scripts/harness/session_start_hook.py"
     ],
     "anchorHints": [
       "git-blame-ignore-revs",
@@ -176,6 +179,8 @@
       "vitest.config",
       "pyproject.toml",
       "pyproject",
+      "requirements.txt",
+      "requirements",
       "render_starter.py",
       "render_starter",
       "session_start_hook.py",
@@ -208,9 +213,7 @@
       "src",
       "design",
       "reference",
-      "l-01-agent-lifecycles",
-      "C901",
-      "PLR0911"
+      "l-01-agent-lifecycles"
     ]
   },
   "fallback": {

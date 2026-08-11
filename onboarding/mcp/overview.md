@@ -8,21 +8,30 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`
-| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
+| lastUpdated | 2026-08-11T23:56+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
 
-## 260731-EFA-L8 Change
+## Current Structural Agent Boundary
 
-`code_quality/scope_reporting.py` gained the dashboard rail steps and provenance
-lines (coverage, diff-coverage, e2e) forced by the L8 S3 wiring, with the pinned
-TypeScript input count updated to 425; the report remains read-only. The
-registration route's 19 PLR0917 bare-`*` keyword-only fixes ride this leaf.
+Agent-facing dispatch, messaging, seat management, and gates use canonical task documents and roles.
+Ambient hosted evidence proves the caller; runtime session/lifecycle/gate/inbox identities stay
+plane-only. The application resolves authorized parent/child seats and current occupants, with one
+internally exact-pinned initial brief and replacement-aware ordinary messages. Startup migration is
+one-way before strict current readers; there is no public exact-id compatibility surface.
+
+## Current Quality Execution Boundary
+
+The package's development extra supplies pytest-xdist 3.x, while root pytest `addopts` owns
+`-n=auto` for raw and wrapped runs alike. The quality wrapper adds only derived selection,
+coverage, and retry-proof arguments. The retry-proof compatibility key includes the pytest-xdist
+version alongside pytest and coverage tooling; proof reuse therefore fails closed when the
+parallel executor changes.
 
 ## Purpose
 
@@ -751,6 +760,18 @@ The MCP package separates three surfaces:
   `mcp/tests/test_dashboard_daemon.py` + new `test_config.py` cases. Verification metadata pinned
   until closeout stamps the code commit.
 ## Update History
+
+- 2026-08-12T00:20+02:00 — Corrected the package boundary: the dependency supplies pytest-xdist,
+  root pytest configuration owns worker selection, and the wrapper contributes derived gate
+  arguments only. Verification metadata remains pinned until closeout.
+
+- 2026-08-11T23:56+02:00 — Recorded the package-level pytest-xdist dependency, automatic worker
+  selection in the single pytest rail, and retry-proof invalidation across executor changes.
+  Verification metadata remains pinned until closeout.
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the package route with the public
+  structural agent surface and private plane-owned session, inbox, and gate machinery; child-route
+  overviews and one-to-one cards carry the implementation evidence.
 
 - 2026-08-10T19:57:55+02:00 — 260731-EFA-L21 route impact: recorded checkout execution
   classification, the linked-worktree dummy coordination root, primary-checkout refusal, and the

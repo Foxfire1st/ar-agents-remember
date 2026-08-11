@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/seatEvents.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,8 +78,8 @@ the reviewed task evidence for any current behavioral claim.
 | Kind gate, per-kind application, strictly-newer dedup, JSONL adapter, backlog gate. | `applySeatEvent` | dashboard/src/data/seatEvents.ts:40-92 |
 | The server emitter defining the four kinds + data field names. | `log_retire_event`, `log_landed_event`, `log_rename_event`, `log_turn_state_change_event` | mcp/src/agents_remember/serving/seat_events.py:24-45; mcp/src/agents_remember/serving/seat_events.py:48-68; mcp/src/agents_remember/serving/seat_events.py:71-89; mcp/src/agents_remember/serving/seat_events.py:92-110 |
 | The `ready`/`error` transport hooks the gate rides (`connectEvents` + `onInterrupt`). | `connectEvents` | dashboard/src/data/stream.ts:129-140 |
-| The one-EventSource-two-consumers wiring + gate lifecycle. | `onInterrupt` | dashboard/src/cockpit/Cockpit.tsx:383-383 |
-| The `patch`/`setStatus` store actions this applies through. | `patch`, `setStatus` | dashboard/src/data/sessions.ts:155-155; dashboard/src/data/sessions.ts:160-160 |
+| The one-EventSource-two-consumers wiring + gate lifecycle. | `onInterrupt` | dashboard/src/cockpit/Cockpit.tsx:384-384 |
+| The `patch`/`setStatus` store actions this applies through. | `patch`, `setStatus` | dashboard/src/data/sessions.ts:154-154; dashboard/src/data/sessions.ts:159-159 |
 | The unit suite: never-resurrect, unknown-session, strict-newer dedup, vocabulary guard, malformed lines, per-connection gate. | "createGatedSeatEventApplier (per-connection backlog gate — review finding 2)" | dashboard/src/data/seatEvents.test.ts:161-186 |
 
 ## Cross-Repo References

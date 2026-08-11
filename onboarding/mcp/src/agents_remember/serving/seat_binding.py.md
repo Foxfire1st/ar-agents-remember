@@ -1,14 +1,14 @@
 # mcp/src/agents_remember/serving/seat_binding.py
 
-| Field                  | Value                                                        |
-| ---------------------- | ------------------------------------------------------------ |
-| repository             | agents-remember                                              |
-| path                   | `mcp/src/agents_remember/serving/seat_binding.py`            |
-| doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-10T15:07+02:00                                       |
-| lastVerifiedCommitHash |                                                              `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                                              2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                                |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/serving/seat_binding.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-08-11T12:15+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
@@ -16,89 +16,47 @@
 
 ## Purpose
 
-`seat_binding.py` is the shared vocabulary and normalization boundary for a hosted session's
-current leaf-seat identity. It keeps orchestration binding state separate from immutable launch
-provenance so worker, reviewer, curator, manager, architect, and terminal seats can coexist on one
-canonical leaf while a live same-role owner still has exclusive claim to its pair.
+This small compatibility helper resolves an attach role for legacy/operator terminal assignment and
+recognizes old role-suffixed leaf references so callers can refuse them with corrective guidance.
+Canonical structural seat identity is owned elsewhere by task document plus role.
 
 ## Code Commentary
 
-### Logic
+`attach_seat_role` fixes plain terminals to `terminal`, otherwise prefers an explicit requested role,
+then spawn provenance, then a previously typed non-legacy binding. It never silently assigns an
+untyped harness to `chat`. `role_suffixed_leaf_base` recognizes maintained pipeline-role suffixes
+only as a legacy diagnostic.
 
-`migrated_seat_role` gives terminal rows the fixed `terminal` role and migrates harness rows from
-persisted `seatRole`, then `spawnRole`, then legacy `chat`. `attach_seat_role` uses an explicit
-operator choice first, otherwise spawn provenance or a previously typed non-chat binding; an
-untyped hand-opened harness returns `None` so the attach surface emits `role-required` instead of
-inventing an occupant. `role_suffixed_leaf_base` recognizes old `leaf-role`, `leaf/role`, and
-`leaf:role` workarounds only after normal leaf resolution fails, allowing callers to reject them
-with canonical-leaf-plus-role guidance.
+This module does not resolve task documents, arbitrate seats, authorize callers, or persist catalog
+state. Structural assignment validates the canonical task document and role altitude in
+`terminal_task_assignment.py`.
 
-### Conventions
+## Invariants And Boundaries
 
-Role strings remain open rather than a closed Python `Literal` because the attach UI also permits
-future/custom seat names. The tuple lists the maintained pipeline roles used only for detecting
-legacy suffix hacks.
-
-### Invariants And Boundaries
-
-- `spawnRole` records where the session came from; `seatRole` records who currently occupies the
-  binding. Reattaching may change only the latter.
-- Plain terminals always occupy `terminal`; callers cannot relabel a shell as an orchestration
-  seat.
-- A hand-opened harness without explicit or previously declared identity is never silently
-  assigned `chat` during attach.
-- This module normalizes roles only. Catalog persistence, live-owner arbitration, and HTTP/MCP
-  refusal payloads stay in their owning modules.
-
-### Todos
-
-Reviewer O2 records the deliberate local single-operator trust model: attach-with-role is the
-role-claim authority. If the product becomes multi-user, authentication/authorization belongs at
-the public attach boundary rather than as validation inside this pure helper.
+- Role inference is compatibility input normalization, not structural authority.
+- Plain terminals stay terminal seats.
+- An untyped harness requires an explicit role.
+- Role-suffixed leaf forms are rejected; they are not alternate canonical addresses.
 
 ## Docs References
 
-No external domain sources are configured for this repository; the current seat-binding contract
-is defined by same-repository source and tests.
+No external domain source governs this repository-local helper.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document is configured for this local runtime contract. | — | — |
+| No configured domain documentation was available. | — | — |
 
 ## Repo-Internal References
 
-The catalog persists the normalized role, assignment performs live pair arbitration, and the tests
-pin migration, role-required attach, coexistence, and suffix refusal.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Catalog rows expose `binding_role` and atomically move `leaf_key` plus `seat_role`. | "def with_leaf_binding(" | mcp/src/agents_remember/models/terminal_catalog.py:382-399 |
-| Attach resolves the requested role, refuses an untyped harness, liveness-checks the same-pair owner, and persists one pair move. | `assign_terminal_session_to_leaf` | mcp/src/agents_remember/serving/terminal_leaf_assignment.py:53-114 |
-| Pair migration and attach behavior are covered at the catalog/assignment seams. | `TerminalCatalogTests`; `TerminalLeafAssignmentTests` | mcp/tests/test_terminal_catalog.py:48-516; mcp/tests/test_terminal_leaf_assignment.py:109-250 |
-
-## Cross-Repo References
-
-No meaningful cross-repo references found; seat binding is local runtime state.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No sibling repository owns this catalog identity. | — | — |
+| Attach-role normalization is deliberately narrow and fail-closed for an untyped harness. | `attach_seat_role` | mcp/src/agents_remember/serving/seat_binding.py:32-48 |
+| Legacy role suffixes are detection-only. | `role_suffixed_leaf_base` | mcp/src/agents_remember/serving/seat_binding.py:51-64 |
+| Structural assignment validates canonical task identity, altitude, and live pair ownership. | `assign_terminal_session_to_task` | mcp/src/agents_remember/serving/terminal_task_assignment.py:96-170 |
 
 ## Update History
 
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 2 repository-internal citations for catalog pair binding and role-aware attach.
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/serving/seat_binding.py` since the L2 base commit is the whole-tree
-  `ruff format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change whatsoever.
-  Checked by parsing both revisions and comparing the abstract syntax trees (identical) and the
-  comment tokens (identical), so no symbol, signature, default, decorator, control-flow branch,
-  docstring, or assertion this card describes has moved, and every claim this card makes about its
-  own source still holds.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: created for the shared `(leafKey, seatRole)`
-  normalization contract, explicit hand-opened role claim, legacy-row migration, and rejection of
-  role-suffixed leaf workarounds. Verification metadata remains blank until closeout stamps the
-  eventual L17 code commit.
+- 2026-08-11T12:15+02:00 — Clarified that this file is a legacy/operator normalization helper, not
+  the source of canonical structural identity. Verification remains pinned pending closeout.
+- 2026-07-10T15:07+02:00 — Created for role normalization, explicit hand-opened role claims, and
+  rejection of role-suffixed leaf workarounds.

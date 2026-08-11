@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-08T14:38+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 ## What This Area Is
 
@@ -59,7 +59,9 @@ observer write side through `kernel/primitives/observer_paths.py`).
 ## Operating Model
 
 1. The serving projection tick enumerates which domain changed (`projection_inputs.py`).
-2. Readers (`snapshots.py`, `snapshots_impl/`) read the producing subsystems' own parsers.
+2. Readers (`snapshots.py`, `snapshots_impl/`) read the producing subsystems' own parsers and project
+   inbox entry/subject/owner and expectation task references as canonical `TaskDocumentRef` values;
+   they do not synthesize an agent-visible leaf-address field.
 3. `project_and_write` ties reading, pure reduction, and the atomic write together.
 
 ## Load-Bearing Files
@@ -129,6 +131,10 @@ When changing a projection reader:
 3. Prove the change through the projection/observer suites and the structural-coverage suite.
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: updated the route body for canonical
+  task-document references in inbox and expectation snapshots; private occupant coordinates remain
+  internal runtime evidence.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created the route overview for the
   observer→serving projection-reader move; observer overview retains the write-side governance.

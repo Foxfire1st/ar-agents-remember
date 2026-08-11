@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_platform_long_tail.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,55 +16,39 @@
 
 ## Purpose
 
-Refusals, defaults and degraded paths across the platform's **small helpers**. None is big
-enough to earn a module of its own, and every one is a guard: the argument shape a tool
-refuses, the settings key it rejects by name, the already-aborted operation it reports
-instead of raising, the inbox row it renews without losing fields the caller did not
-restate.
+Long-tail regression collection for refusal, parser, cache, fingerprint, inbox, and terminal boundaries.
 
-They are collected here rather than scattered because they share a shape — a specific bad or
-unusual input, and the exact verdict it produces — and because **a guard nobody exercises is
-a guard nobody can show is right**.
+## Code Commentary
 
-## Classes
+### Logic
 
-| Class | Guard |
-| --- | --- |
-| `DecisionRoleTests` | Decision role handling. |
-| `ReadFilesRangeTests` | `read_ar_files` line ranges are caller-supplied JSON, so each field is checked. |
-| `CarryoverRequestTests` | Carryover request validation. |
-| `NudgeTargetTests` | Nudge target resolution. |
-| `ReducerPausedTests` | The paused-reducer arm. |
-| `ProviderStateCacheTests` | The projection's pre-read provider refresh is **best-effort by design** — a failed refresh must not fail the projection. |
-| `EntityFingerprintValidationTests` | Entity fingerprint validation. |
-| `MemoryBaselineParserTests` | Memory baseline parsing. |
-| `EscalationSettingsTests` | `orchestration.escalation` timings, read from developer-owned settings text. |
-| `InboxRenewalTests` | Renewing a pending row bumps its date **without dropping what it already carried**. |
-| `RequestedHarnessTests` | A caller-named harness must be both a known id **and** actually installed. |
-| `OpenTerminalRefusalTests` | Terminal-open outcomes translated into the spawn tool's public statuses. |
-| `SkillsInstallRequestTests` | The skills install validates its own request before touching the harness root. |
-| `CopySkillTreeCollisionTests` | What happens to a skill directory that is already installed. |
-| `ProviderDependencyInstallTests` | Settings that enable no provider mean there is no dependency install to run. |
-| `DashboardReloadServerTests` | `--reload` hands its knobs to the re-imported app **through the environment**. |
-| `BenchmarkBatchExecutionTests` | Parallel benchmark task execution collects failures instead of aborting the run. |
-| `BenchmarkMcpRegistrationTests` | The benchmark MCP registration insists on the layout its settings hard-code. |
+Inbox renewal now preserves or replaces `subjectTaskDocumentRef` plus seat role, and terminal-open refusal fixtures use canonical task-document identity. The remaining cases protect their independent fail-closed and tolerance behaviors.
 
-## Invariants And Boundaries
+### Conventions
 
-- Each test names one specific bad or unusual input and the exact verdict it produces —
-  the message or status a caller acts on, not merely "an error".
-- Best-effort paths (provider state refresh, parallel benchmark execution) must degrade,
-  never propagate.
-- Renewal and update paths must preserve fields the caller did not restate.
+Test-only evidence uses deterministic fakes/fixtures and exercises the registered or owning seam directly.
+
+### Invariants And Boundaries
+
+Renewal changes only explicitly restated fields; structural task identity remains repository-qualified and no retired leaf field is synthesized.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository-local regression contract.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sibling refusal collection for provider/seed/dispatch paths. | `CgcBackendPortsTests` | mcp/tests/test_platform_edge_refusals.py:76-123 |
+| Current suite declaration anchoring this card. | `DecisionRoleTests` | mcp/tests/test_platform_long_tail.py:73-73 |
+
+## Cross-Repo References
+
+No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `test_platform_long_tail.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` row with an exact

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 ## Purpose
 
@@ -27,7 +27,10 @@ candidates versus dirty-source active work-in-progress, run
 code commit when the task added source files, and run `memory_quality_check`
 after onboarding refresh and before the memory content commit. It keeps the
 drift classifier rules for file-level sidecars, route overviews, inline blocks,
-and repo entity catalog fingerprints.
+and repo entity catalog fingerprints. During a curator leaf pass, the full scoped quality call
+also replaces one enclosure-local checklist combining the repairable work, current-addition
+coverage, stale indexes, source-change candidates, and noteworthy evidence; the curator reruns it
+until the zeroable count clears.
 
 ### Conventions
 
@@ -36,13 +39,16 @@ prose. Task-start drift reports remain local coordination artifacts under
 `c-08-ar-coordination-context-resolver` skill's resolved `temp_root`. Closeout style checks do not run at task start.
 Mechanical style repair is done by targeted fixers only after
 `memory_quality_check` reports a finding.
+The curator checklist is the explicit temp-location exception: it lives under the leaf worktree
+enclosure's reserved `reports/` directory, outside both Git worktrees, and replaces its predecessor.
 
 ### Invariants And Boundaries
 
 `c-02-memory-quality-control` skill must stay read-only with respect to onboarding prose. Any content update
 belongs to `c-05-create-or-update-onboarding-files` skill. Drift reports are temporary evidence, not durable onboarding,
 and explicit report paths inside a durable memory repo should be redirected
-back to the resolved coordination temp area. Implementation approval is not
+back to the resolved coordination temp area. The enclosure checklist is temporary operational
+evidence and is garbage-collected with the worktrees. Implementation approval is not
 commit approval; `c-02-memory-quality-control` skill can report quality state, but `c-09-git-worktree-manager` skill owns commit approval
 gates.
 
@@ -66,10 +72,10 @@ closeout.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The skill names task-start drift, pre-code-commit missing-onboarding checks, closeout `memory_quality_check`, and targeted style repair as one `c-02-memory-quality-control` skill quality control workflow. | `drift_check`, `check_missing_onboarding`, `memory_quality_check`, `history_order_fix` | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:31-36 |
-| Task-start quality control runs `drift_check` MCP tool, preserves the gradual-adoption boundary for historical files without onboarding, and separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff. | `drift_check`, `c-05-create-or-update-onboarding-files` | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:31-36; mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:175-178 |
-| Pre-code-commit quality control runs `check_missing_onboarding` only against current worktree additions so newly added files cannot escape onboarding. | `check_missing_onboarding` | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:162-168 |
-| Closeout quality control runs `memory_quality_check` MCP tool and uses focused fixers such as `history_order_fix.py` only after reported findings. | `memory_quality_check`, `history_order_fix` | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:180-214 |
+| The quality-control phase table distinguishes task-start drift, curator intake, pre-commit coverage, closeout validation, and targeted style repair. | "## Quality Control Phases" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:30-38 |
+| Task-start quality control preserves the gradual-adoption boundary for historical files without onboarding and separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff. | "Run Task-Start Drift Control" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:71-107 |
+| Pre-code-commit quality control checks only current worktree additions so newly added files cannot escape onboarding. | "Run Pre-Code-Commit Missing-Onboarding Control" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:164-180 |
+| Closeout quality control runs the full memory gate and uses focused style fixers only after reported findings. | "Run Closeout Memory Quality Control"; "Use Targeted Style Fixers Only After Findings" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:210-248 |
 
 ## Cross-Repo References
 
@@ -81,6 +87,8 @@ No cross-repo evidence is needed for the current skill contract.
 
 ## Update History
 
+- 2026-08-11T16:54+02:00 — Documented the full scoped curator checklist, its stable enclosure
+  path, overwrite/cleanup lifetime, and repeat-until-zero repair loop.
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 4 citations (citation_anchor_missing=2, citation_prose_not_in_cit_form=0, citation_source_malformed=2); final scoped citation check clean.
 - 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
 - 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` added clean-source versus dirty-source drift classification to `c-02-memory-quality-control` skill.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/retire_policy.py`      |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -97,13 +97,14 @@ encodes.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `session_retire_payload` builds actor/target `SeatRef`s from `binding_role`/`binding_leaf_key` and calls `check_retire_authority` before any catalog mutation, translating `RetirePolicyError` into a `retire-refused` tool status. | `session_retire_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:66-83 |
-| `POST /api/terminal/{session}/retire` performs the identical authority check before calling `retire_entry`. | "def _retire_response("; "def _seat_ref(entry: TerminalCatalogEntry) -> SeatRef:" | mcp/src/agents_remember/serving/_app_terminal_routes.py:542-542; mcp/src/agents_remember/serving/_app_terminal_routes.py:598-598 |
-| `TerminalCatalogEntry.binding_role` and `binding_leaf_key` are the current identity fields `SeatRef` consumes; `with_retirement` is the terminal mark this policy gates (row vocabulary in models since L9). | "def binding_role(self) -> str:"; "def binding_leaf_key(self) -> str"; "def with_retirement(" | mcp/src/agents_remember/models/terminal_catalog.py:538-545; mcp/src/agents_remember/models/terminal_catalog.py:548-551; mcp/src/agents_remember/models/terminal_catalog.py:400-425 |
-| `retire_entry` is the mechanics primitive this policy gates for manual retire paths; `serving/landing.py` handles completion-edge landed archive marking separately because landing is not retirement. | `retire_entry`; `land_seats_for_leaf` | mcp/src/agents_remember/serving/landing.py:9-28; mcp/src/agents_remember/serving/retire.py:37-71 |
-| Failing-first tests for the exact authority matrix (manager-own-worker/reviewer ✓, other-master ✗, self-retire ✗ checked first, orchestrator-any-role ✓, unprivileged role ✗) and `master_of` segment extraction. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:103-166 |
+| `POST /api/terminal/{session}/retire` performs the identical authority check before calling `retire_entry`. | "def _retire_response("; "def _seat_ref(entry: TerminalCatalogEntry) -> SeatRef:" | mcp/src/agents_remember/serving/_app_terminal_routes.py:544-544; mcp/src/agents_remember/serving/_app_terminal_routes.py:604-604 |
+| `TerminalCatalogEntry.binding_role` and `binding_task_document_ref` are the current structural identity fields `SeatRef` consumes; `with_retirement` is the terminal mark this policy gates. | "def binding_role(self) -> str:"; "def binding_task_document_ref"; "def with_retirement(" | mcp/src/agents_remember/models/terminal_catalog.py:526-539; mcp/src/agents_remember/models/terminal_catalog.py:388-410 |
+| `retire_entry` is the mechanics primitive this policy gates for manual retire paths; `serving/landing.py` handles completion-edge landed archive marking separately because landing is not retirement. | `retire_entry`; `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32; mcp/src/agents_remember/serving/retire.py:37-71 |
+| Failing-first tests for the exact authority matrix (manager-own-worker/reviewer ✓, other-master ✗, self-retire ✗ checked first, orchestrator-any-role ✓, unprivileged role ✗) and `master_of` segment extraction. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:192-256 |
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current serving card for `retire_policy.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: corrected curator-role authority and split retire/landing implementation ownership while removing stale task/domain/cross-repo claims.
 
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17: keyed authority on binding leaf plus seat role,

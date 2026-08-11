@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-07-10T13:03+02:00                |
-| lastVerifiedCommitHash |                                       `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                       2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |                                       `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |                                       2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -16,170 +16,39 @@
 
 ## Purpose
 
-Focused backend tests for the durable operator/agent inbox record, store, hosted
-delivery helper, and MCP payload builders.
+Record, store, tool, and delivery regression suite for durable operator-inbox communication.
 
 ## Code Commentary
 
-### 260707-HFX2-L20 Deterministic Concurrency Regression
-
-The in-flight delivery test blocks the paster in a worker thread, consumes the same row, then lets
-delivery append from its stale snapshot. It proves the physical log contains pending, consumed, and
-late pending records while `current`, polling, and redelivery all continue to expose the consumed
-terminal state.
-
-### 260707-HFX2-L13 Transition And Completion-Wake Proof
-
-Store coverage now asserts `advance_rung` stamps `rungTransitionAt` on consecutive transitions.
-The end-to-end completion test posts a reviewer turn-report with a stale manager address and proves
-the resulting row/owner metadata targets the successor manager, hosted delivery succeeds, and the
-paste lands in that manager's session.
-
 ### Logic
 
-**260707-HFX2-L15 coverage.** Hosted inbox tests provide a matching harness log, assert
-`harness-log-confirmed` durable detail and catalog binding, and prove absence remains unconfirmed
-with failure evidence. Fixture rows carry the new optional dispatch provenance without changing
-the durable inbox state enum.
-
-`OperatorInboxRecordTests` covers pure create/consume snapshots, address
-validation, and schema alias round-trip. `OperatorInboxStoreTests` verifies
-pending filtering by lifecycle, agent, recipient role, and combined keys; delivery metadata snapshots;
-the lower-level store consume path appends a
-consumed snapshot and repeated consume calls are idempotent. `operator_inbox_consume_payload` returns
-the consumed entry and retains that terminal snapshot until compaction. `OperatorInboxToolTests` patches `_store` to an in-memory temp
-store and drives the real post, poll, and consume payload builders. `OperatorInboxDeliveryTests`
-drives `deliver_inbox_entry` against a temp store + a fake catalog/host: one case pushes a
-verified paste (state `delivered`) and — since 260703-L18 (finding 3, pinning the friction
-F-A confirm seam) — a second case pushes an UNVERIFIED paste
-(`PasteResult(delivered=False, capture="claude> (booting)")`) and asserts the recorded
-`deliveryState` is `unconfirmed` with a `deliveryDetail` that — since 260707-HFX-L3 — contains
-"paste was not capture-verified" AND the pane capture itself (the durable row is the forensic
-record a re-briefing operator reads, never a bare "not echoed"). A third case
-(`test_unverified_delivery_with_empty_capture_still_records_a_loud_detail`) pushes an
-empty-capture failure (a vanished session) and asserts the dedicated wording
-"paste was not capture-verified (empty pane capture)". The unverified cases are the regression:
-they FAIL if `serving/inbox_delivery.py`'s delivered/unconfirmed branch is ever collapsed to
-always-`delivered` or its detail drops the capture evidence.
-`OperatorInboxToolTests` (260707-HFX-L12) gains two round-trip tests pinning the ratified R9
-decision-item relay's operator-inbox schema representability:
-`test_decision_item_relay_round_trip_between_orchestrator_and_architect` drives
-`operator_inbox_post_payload`/`operator_inbox_poll_payload` for the exact doctrine-mandated call
-shape — orchestrator posts `messageKind="decision-item"` to `recipient_role="architect"`, the
-architect polls and receives it, then posts `messageKind="decision-ruling"` back to
-`recipient_role="orchestrator"` — asserting both posts and the poll succeed at the real tool-payload
-seam, not the raw pydantic model. `test_plain_message_addressed_to_architect_and_curator_succeeds`
-pins that a plain `"message"` kind addressed to each of the two new `AgentRole` values succeeds.
-Both tests are the regression for `controlplane/operator_inbox_records.py`'s `AgentRole`/
-`InboxMessageKind` Literal extension: before that fix both raised `ValidationError` (`recipientRole`
-rejecting `'architect'`, `messageKind` rejecting `'decision-item'`) — this is the exact live repro
-the master-exit adversarial review's Finding 1 (BLOCK) named, and these tests are the proof it is
-closed, not just the schema edit in isolation.
-`OperatorInboxStoreTests` (260707-HFX2-L1, R1/R3) gains ack/backoff/redelivery/escalation coverage
-for the new `attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt` fields on
-`OperatorInboxEntry`: `test_record_delivery_bumps_attempt_and_schedules_next_attempt` pins that
-`record_delivery` bumps `attemptCount` and stamps a further-out `nextAttemptAt` on EVERY delivery
-attempt — including a confirmed `delivered` paste — because consume=ack is the only terminal
-outcome, `delivered` is never terminal. HFX2-L9 strengthens that assertion so the first stamped
-`nextAttemptAt` is at least 900 seconds after `lastAttemptAt`, proving first send is treated as
-in-flight for the redelivery floor. `test_record_delivery_clears_schedule_only_via_consume`
-pins the corollary: only `consume` (never another `record_delivery` call) transitions the entry to
-the `consumed` state. `test_list_redeliverable_returns_pending_rows_past_backoff` and
-`test_list_redeliverable_excludes_consumed_rows` cover the store-level redelivery query the L2
-sweep will use — a pending row past its backoff schedule is redeliverable, a consumed row never is.
-`test_mark_escalated_stamps_the_reserved_field` pins that `mark_escalated` stamps `escalatedAt`
-(the field this leaf only RESERVES for a future escalation-ladder leaf to set on its own trigger).
-260707-HFX2-L4 (R1/R2) adds `test_advance_rung_stamps_rung_and_reanchors_escalated_at` — the
-ladder's own transition: `advance_rung` sets BOTH `rung` and re-anchors `escalatedAt` to the new
-`now` in the SAME snapshot, asserted across two successive transitions (rung 1 then rung 2, each
-re-anchoring `escalatedAt` to its own call's `now`) so a stale prior anchor can never leak into the
-next rung's SLA check. `test_advance_rung_unknown_entry_raises` pins the `KeyError` on an entry id
-the store has never seen.
-HFX2-L8 adds `test_ladder_resolved_is_terminal_without_ack` and
-`test_compaction_prunes_ladder_resolved_rows`: a row can become durable
-`state="ladder-resolved"` without being an ack/consume, redelivery queries exclude it, and
-compaction prunes it while still preserving live pending rows.
-`test_compaction_never_removes_a_pending_unacked_row_regardless_of_age` is the R1 regression proper:
-an unacked row survives `store.compact()` even when it is far past the retention TTL, exercised
-against the real post-time compaction path (`operator_inbox_post_payload` calls `store.compact()`
-immediately after append) — this is the test that FAILS if `_keep_inbox_entry` is ever changed to
-prune pending rows by age instead of by consumed state.
-`test_compaction_still_prunes_a_stale_consumed_row` is the paired control: a `consumed` row past
-the TTL is still pruned, proving the fix is a targeted pending-row exemption, not a blanket
-compaction disable.
+The suite covers append-only snapshots, mailbox validation, legacy parsing, idempotent attribution, backoff/compaction, role-address resolution, decision relay, replacement-safe manager/architect delivery, and hosted delivery races. Current subjects and owners carry task-document identity where durable work is addressed.
 
 ### Conventions
 
-Tests mirror the gate control-plane test style: temporary directories, patched
-store factories for payload-builder tests, and direct assertions on modeled
-payload dictionaries.
-
-Every inbox row is minted through the parameter-object form of the record factory —
-`create_operator_inbox_entry(InboxMessage(...), entry_id=…, now=…,
-routing=InboxRouting(address=InboxAddress(...)), poster=InboxPoster(...))` — and the tool tests post
-through the matching `operator_inbox_post_payload(config, address=InboxAddress(...),
-message=InboxMessage(...), poster=InboxPoster(...), delivery=HostedDelivery(...))`, where
-`HostedDelivery(enabled=False)` is the no-push case and `HostedDelivery(catalog=…, host=…,
-paster=…)` injects the fakes. Store attempts go through `record_delivery(entry_id,
-DeliveryAttempt(delivery_state=…, delivered_to_session=…, detail=…), now=…)`, note `detail` where
-the row field is `deliveryDetail`. `deliver_inbox_entry` takes `InboxDeliveryLog(store=…, entry=…,
-at=…, floor=RedeliveryFloor(current=…))` plus `sessions=HostedSessionRuntime(catalog=…, host=…)`
-and a `paster`, so the stale-snapshot concurrency case passes its stale `current` and delivery
-timestamp inside the log object. `TerminalHost` is built as
-`TerminalHost(TerminalHostSeams(tmux_probe=...))`, and every `submit_control_prompt` patch takes a
-positional `submission` object (`submission.request_id`) rather than `**kwargs`.
+Test-only evidence uses deterministic fakes/fixtures and exercises the registered or owning seam directly.
 
 ### Invariants And Boundaries
 
-- A mailbox post/poll must include `lifecycle_id`, `agent_id`, or `recipient_role`.
-- Store-level consume preserves an auditable snapshot for direct store users, while the public MCP consume
-  payload deletes the throwaway pending row after returning it.
-- Tool tests exercise payload builders, not FastMCP transport.
-
-### Todos
-
-None.
+Durable rows preserve attribution and delivery evidence; public structural messaging never asks the model for the current occupant id; unresolved or ambiguous owners fail closed.
 
 ## Docs References
 
-No relevant external documentation found after checking the in-repo design docs
-listed as Domain Documentation.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| None. | N/A | N/A |
+No Domain Documentation source is configured for this repository-local regression contract.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Record tests cover create/consume purity, required addressing, schema alias round-trip, and the legacy-reader allowlist. | `OperatorInboxRecordTests` | mcp/tests/test_operator_inbox.py:55-155 |
-| Store tests cover lifecycle/agent/recipient filters, idempotent consume, delete, missing entry, delivery snapshots, and missing address errors. | `OperatorInboxStoreTests` | mcp/tests/test_operator_inbox.py:158-474 |
-| Store tests (R1/R3 plus HFX2-L4/L8/L9) cover attempt/backoff stamping, the 900-second first-send floor, redeliverable filtering, escalation and rung stamping, ladder-resolved terminal state, and compaction pruning for terminal rows while preserving fresh pending rows. | `OperatorInboxStoreTests` | mcp/tests/test_operator_inbox.py:158-474 |
-| Tool tests cover post, poll, durable consume payloads, no-address poll validation, the decision-item relay round trip, and the stale-manager completion wake. | `OperatorInboxToolTests` | mcp/tests/test_operator_inbox.py:477-709 |
-| Delivery tests drive `deliver_inbox_entry` against the temp store and fake catalog/host for the verified, in-flight-consume, unknown-acceptance, and empty-capture cases. | `OperatorInboxDeliveryTests` | mcp/tests/test_operator_inbox.py:712-938 |
+| Current suite declaration anchoring this card. | `_TaskHierarchy` | mcp/tests/test_operator_inbox.py:69-69 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references found.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| None. | N/A | N/A |
-
-### 260713-PHA-L5 Reviewed Hosted Cutover Impact
-
-Reviewed this file against the accepted hosted-session cutover and PASS verdict. Its relevant
-contract now follows exact adapter evidence for readiness, delivery, liveness, or interactions;
-legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
-inbox acceptance remains distinct from explicit consumption where applicable.
-
-## 260713-PHA-L6 Rolling Compatibility Evidence
-
-Tests prove legacy-reader projection preserves only optional `adapterDeliveryState` and
-`adapterDeliveryDetail`, while an unrelated `futureEvidence` extension remains rejected.
+No cross-repository implementation source governs this test module.
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — Reconciled `test_operator_inbox.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).

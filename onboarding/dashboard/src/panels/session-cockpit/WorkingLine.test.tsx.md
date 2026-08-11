@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/WorkingLine.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | --- | --- | --- |
 | The component + pure formatter under test. | `formatApproxElapsed` | dashboard/src/panels/session-cockpit/WorkingLine.tsx:80-86 |
 | The ruled pulse constant the spinner case pins. | `PULSE_ANIMATION` | dashboard/src/data/stateGrammar.ts:14-14 |
-| The UA-7 reason asserted verbatim. | `STOP_TURN_DISABLED_REASON` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:66-67 |
+| The UA-7 reason asserted verbatim. | `STOP_TURN_DISABLED_REASON` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:65-66 |
 | The working fixture. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:196-208 |
 | The view-level cases (slot containment, `turn.stop` gate alignment). | "renders the WorkingLine in the reserved slot ONLY for a working focused seat" | dashboard/src/panels/session-cockpit/sessions-view/stageSurface.test.tsx:144-144 |
 

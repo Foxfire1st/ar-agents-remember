@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/terminal_tools.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-11T10:10+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,100 +16,55 @@
 
 ## Purpose
 
-Application operations for terminal-session lifecycle tools.
+Provides plane-internal hosted-occupant assignment, spawn, retire, and rename operations. Public
+agents reach these only through the structural application, which supplies authorized document+role
+targets and keeps runtime correlations private.
 
 ## Code Commentary
 
 ### Logic
 
-Module-level surface:
-
-- `_result` (function, lines 70-72) — Return the raw use-case result for the MCP adapter to finalize.
-- `_leaf_ref_refusal_result` (function, lines 75-92)
-- `attach_terminal_session_to_leaf_tool` (function, lines 140-177) — Move an existing hosted terminal/chat session to a durable leaf key.
-- `_spawn_env` (function, lines 180-196) — Fold the role knobs into the spawn env the terminal host seeds at ``tmux new-session``.
-- `_ambient_lifecycle_id` (function, lines 199-204) — The active (spawning) lifecycle id, for default spawned-by provenance. Best-effort, never raises.
-- `_spawn_repo_root` (function, lines 207-219) — The code-repo root whose repo-local agentic settings apply to this spawn.
-- `_resolve_spawn_harness` (function, lines 222-243) — Resolve the harness for a spawn (260703-L13 seam; effective registry 260703-L16).
-- `_requested_harness` (function, lines 246-265) — The caller named a harness: it must be a known id AND installed.
-- `_preferred_harness` (function, lines 268-285) — Settings named a spawn harness: a configured-but-missing one names its source file.
-- `_first_detected_harness` (function, lines 288-304) — Nothing asked for and nothing configured: the first registry harness on PATH.
-- `_HarnessDispatch` (class, lines 308-325) — The pre-spawn knob bundle for one harness-kind dispatch (260703-L16).
-- `_resolve_harness_dispatch` (function, lines 328-420) — Resolve + validate every knob BEFORE anything spawns (260703-L16).
-- `_knob_refusal` (function, lines 423-441) — Preserve explicit static validation for settings-defined non-native harnesses.
-- `SpawnSeat` (class, lines 445-455) — The seat a spawn creates: which leaf it binds to (or replaces), at what dispatch level,
-- `RetiredSpawnInputs` (class, lines 459-476) — Spawn inputs this tool no longer honours, accepted only so they can be refused loudly
-- `SpawnedBy` (class, lines 480-485) — The spawner's own provenance: the catalog session and lifecycle that requested the
-- `SpawnOverrides` (class, lines 489-511) — Real collaborators a caller may substitute. The seam is the whole content of this
-- `_caller_spend_override_refusal` (function, lines 527-564) — Reject legacy caller-controlled spend knobs before any spawn-side effect.
-- `_brief_delivery_separate_refusal` (function, lines 567-581) — Refuse the retired one-call brief contract before any settings, catalog, or spawn work.
-- `_SpawnDelivery` (class, lines 585-589) — Launch-phase session-command outcome; task instructions are never represented here.
-- `_spawn_request_refusal` (function, lines 592-602) — Refuse a request this tool no longer honours, before any settings, catalog, or spawn work.
-- `_resolve_spawn_leaf` (function, lines 605-614) — Resolve one optional spawn leaf reference, preserving the public refusal payload.
-- `_resolve_spawn_leaves` (function, lines 617-629) — Resolve both spawn leaf references; the first unresolvable one refuses the spawn.
-- `_open_terminal_refusal` (function, lines 632-660) — Translate a non-opened terminal outcome into its public refusal payload.
-- `_SpawnLaunchPlan` (class, lines 664-681) — What one spawn will actually launch, after the settings rungs have been read.
-- `_spawn_launch_plan` (function, lines 684-732) — The launch plan for one spawn, or the refusal that stops it before any side effect.
-- `_spawn_launch_request` (function, lines 735-766) — The launch request the terminal opener receives, assembled from the plan.
-- `spawn_agent_session_tool` (function, lines 769-842) — Spawn one role-configured, leaf-attached hosted session without a leaf brief.
-- `_spawned_payload` (function, lines 845-877) — The spawned-unbriefed row plus settings-owned launch-command outcome.
-- `_spawn_refusal` (function, lines 880-905) — A pre-spawn refusal payload (unknown/undetected harness or bad kind) -- nothing was spawned.
-- `_retire_payload` (function, lines 914-941) — One ``session_retire`` result: the status, plus whichever half of the shape it carries.
-- `session_retire_tool` (function, lines 944-1001) — Retire ``session_id`` (issue #12): terminal mark + provenance, authority enforced server-side.
-- `_rename_payload` (function, lines 1004-1025) — One ``session_rename`` result: the REQUESTED label on a refusal, the stored pair on success.
-- `session_rename_tool` (function, lines 1028-1042) — Rename ``session_id``'s display label post-spawn (issue #4). Identity text only -- never role.
+`attach_terminal_session_to_task_tool` applies a canonical task-document binding through the
+generalized assignment primitive. `spawn_agent_session_tool` remains the low-level settings-owned
+occupant allocator used by structural dispatch; it resolves harness/launch facts and opens the
+terminal without owning the public dispatch brief contract. Retire and rename operate on exact ids
+only after a trusted caller has resolved the current occupant.
 
 ### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+`SpawnSeat`, provenance, and override objects are internal composition seams. Agent-facing
+requests are the strict structural DTOs in `application/structural/`.
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+- No leaf-key assignment or public exact-id compatibility path remains.
+- Structural authorization precedes internal mutation.
+- New hosted environment identity is plane-seeded and caller identity is scrubbed.
+- Initial brief persistence/delivery belongs to structural dispatch, not the raw spawn primitive.
 
 ### Todos
 
 None.
 
-## Repo-Internal References
+## Docs References
 
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+No Domain Documentation source is configured.
+
+## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `_result` (lines 70-72) — Return the raw use-case result for the MCP adapter to finalize.. | `_result` | mcp/src/agents_remember/application/terminal_tools.py:93-95 |
-| Defines the function `_leaf_ref_refusal_result` (lines 75-92). | `_leaf_ref_refusal_result` | mcp/src/agents_remember/application/terminal_tools.py:98-115 |
-| Defines the function `attach_terminal_session_to_leaf_tool` (lines 140-177) — Move an existing hosted terminal/chat session to a durable leaf key.. | `attach_terminal_session_to_leaf_tool` | mcp/src/agents_remember/application/terminal_tools.py:140-177 |
-| Defines the function `_spawn_env` (lines 180-196) — Fold the role knobs into the spawn env the terminal host seeds at ``tmux new-session``.. | `_spawn_env` | mcp/src/agents_remember/application/terminal_tools.py:209-225 |
-| Defines the function `_ambient_lifecycle_id` (lines 199-204) — The active (spawning) lifecycle id, for default spawned-by provenance. Best-effort, never raises.. | `_ambient_lifecycle_id` | mcp/src/agents_remember/application/terminal_tools.py:228-233 |
-| Defines the function `_spawn_repo_root` (lines 207-219) — The code-repo root whose repo-local agentic settings apply to this spawn.. | `_spawn_repo_root` | mcp/src/agents_remember/application/terminal_tools.py:236-248 |
-| Defines the function `_resolve_spawn_harness` (lines 222-243) — Resolve the harness for a spawn (260703-L13 seam; effective registry 260703-L16).. | `_resolve_spawn_harness` | mcp/src/agents_remember/application/terminal_tools.py:251-272 |
-| Defines the function `_requested_harness` (lines 246-265) — The caller named a harness: it must be a known id AND installed.. | `_requested_harness` | mcp/src/agents_remember/application/terminal_tools.py:275-294 |
-| Defines the function `_preferred_harness` (lines 268-285) — Settings named a spawn harness: a configured-but-missing one names its source file.. | `_preferred_harness` | mcp/src/agents_remember/application/terminal_tools.py:268-285 |
-| Defines the function `_first_detected_harness` (lines 288-304) — Nothing asked for and nothing configured: the first registry harness on PATH.. | `_first_detected_harness` | mcp/src/agents_remember/application/terminal_tools.py:317-333 |
-| Defines the class `_HarnessDispatch` (lines 308-325) — The pre-spawn knob bundle for one harness-kind dispatch (260703-L16).. | `_HarnessDispatch` | mcp/src/agents_remember/application/terminal_tools.py:336-354 |
-| Defines the function `_resolve_harness_dispatch` (lines 328-420) — Resolve + validate every knob BEFORE anything spawns (260703-L16).. | `_resolve_harness_dispatch` | mcp/src/agents_remember/application/terminal_tools.py:328-420 |
-| Defines the function `_knob_refusal` (lines 423-441) — Preserve explicit static validation for settings-defined non-native harnesses.. | `_knob_refusal` | mcp/src/agents_remember/application/terminal_tools.py:423-441 |
-| Defines the class `SpawnSeat` (lines 445-455) — The seat a spawn creates: which leaf it binds to (or replaces), at what dispatch level,. | `SpawnSeat` | mcp/src/agents_remember/application/terminal_tools.py:473-484 |
-| Defines the class `RetiredSpawnInputs` (lines 459-476) — Spawn inputs this tool no longer honours, accepted only so they can be refused loudly. | `RetiredSpawnInputs` | mcp/src/agents_remember/application/terminal_tools.py:487-505 |
-| Defines the class `SpawnedBy` (lines 480-485) — The spawner's own provenance: the catalog session and lifecycle that requested the. | `SpawnedBy` | mcp/src/agents_remember/application/terminal_tools.py:508-514 |
-| Defines the class `SpawnOverrides` (lines 489-511) — Real collaborators a caller may substitute. The seam is the whole content of this. | `SpawnOverrides` | mcp/src/agents_remember/application/terminal_tools.py:517-540 |
-| Defines the function `_caller_spend_override_refusal` (lines 527-564) — Reject legacy caller-controlled spend knobs before any spawn-side effect.. | `_caller_spend_override_refusal` | mcp/src/agents_remember/application/terminal_tools.py:527-564 |
-| Defines the function `_brief_delivery_separate_refusal` (lines 567-581) — Refuse the retired one-call brief contract before any settings, catalog, or spawn work.. | `_brief_delivery_separate_refusal` | mcp/src/agents_remember/application/terminal_tools.py:596-610 |
-| Defines the class `_SpawnDelivery` (lines 585-589) — Launch-phase session-command outcome; task instructions are never represented here.. | `_SpawnDelivery` | mcp/src/agents_remember/application/terminal_tools.py:613-618 |
-| Defines the function `_spawn_request_refusal` (lines 592-602) — Refuse a request this tool no longer honours, before any settings, catalog, or spawn work.. | `_spawn_request_refusal` | mcp/src/agents_remember/application/terminal_tools.py:621-631 |
-| Defines the function `_resolve_spawn_leaf` (lines 605-614) — Resolve one optional spawn leaf reference, preserving the public refusal payload.. | `_resolve_spawn_leaf` | mcp/src/agents_remember/application/terminal_tools.py:634-643 |
-| Defines the function `_resolve_spawn_leaves` (lines 617-629) — Resolve both spawn leaf references; the first unresolvable one refuses the spawn.. | `_resolve_spawn_leaves` | mcp/src/agents_remember/application/terminal_tools.py:646-658 |
-| Defines the function `_open_terminal_refusal` (lines 632-660) — Translate a non-opened terminal outcome into its public refusal payload.. | `_open_terminal_refusal` | mcp/src/agents_remember/application/terminal_tools.py:661-693 |
-| Defines the class `_SpawnLaunchPlan` (lines 664-681) — What one spawn will actually launch, after the settings rungs have been read.. | `_SpawnLaunchPlan` | mcp/src/agents_remember/application/terminal_tools.py:696-714 |
-| Defines the function `_spawn_launch_plan` (lines 684-732) — The launch plan for one spawn, or the refusal that stops it before any side effect.. | `_spawn_launch_plan` | mcp/src/agents_remember/application/terminal_tools.py:684-732 |
-| Defines the function `_spawn_launch_request` (lines 735-766) — The launch request the terminal opener receives, assembled from the plan.. | `_spawn_launch_request` | mcp/src/agents_remember/application/terminal_tools.py:768-799 |
-| Defines the function `spawn_agent_session_tool` (lines 769-842) — Spawn one role-configured, leaf-attached hosted session without a leaf brief.. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:769-842 |
-| Defines the function `_spawned_payload` (lines 845-877) — The spawned-unbriefed row plus settings-owned launch-command outcome.. | `_spawned_payload` | mcp/src/agents_remember/application/terminal_tools.py:891-925 |
-| Defines the function `_spawn_refusal` (lines 880-905) — A pre-spawn refusal payload (unknown/undetected harness or bad kind) -- nothing was spawned.. | `_spawn_refusal` | mcp/src/agents_remember/application/terminal_tools.py:928-953 |
+| Internal task assignment accepts canonical document and role. | `attach_terminal_session_to_task_tool` | mcp/src/agents_remember/application/terminal_tools.py:171-205 |
+| The low-level spawn primitive remains plane-owned composition. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:818-890 |
+| Exact retire/rename operations remain behind structural resolution. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:1018-1191 |
+
+## Cross-Repo References
+
+No cross-repository implementation dependency governs this file.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current application-layer card for `terminal_tools.py` with qualified seat resolution and terminal/session orchestration boundaries.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

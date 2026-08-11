@@ -5,11 +5,19 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`
-| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
+| lastUpdated | 2026-08-11T23:56+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 > **Status:** active baseline
+
+## Python Quality Execution Boundary
+
+Root pytest `addopts` owns the repository-wide pytest-xdist `-n=auto` default, so raw pytest and
+derived full or targeted wrappers share one execution policy; `-n=0` is the explicit serial
+diagnostic override. The checkout requirements pin pytest-xdist 3.8.0 and the MCP package's
+development extra admits major version 3. Retry-proof compatibility includes the pytest-xdist
+version, so a changed parallel executor cannot reuse an earlier coverage proof.
 
 ## 260731-EFA-L8 Frontend Rail
 
@@ -158,10 +166,12 @@ compaction, full task-document body windowing/on-demand retrieval, and heartbeat
 the next HFX2 leaf rather than claimed complete here. Detail lives in the `mcp/`, `controlplane/`,
 `observer/`, `serving/`, and provider route overviews plus their file sidecars.
 
-The 260628_operations-integration series (L1–L4 covered above under the files/Change-Set surfaces) adds
-**L5**: the **sidebar leaf-keyed chat registry** — chat sessions are keyed to leaf enclosures and shown
-in a left-rail switcher with a leaf-attach picker (`panels/RailChat.tsx`, `panels/LeafAttachPicker.tsx`,
-`data/sessions.ts`/`taskIdentity.ts`) — plus an operations-dashboard **polish** pass (resizable
+The current Chats registry is structurally keyed by canonical task document plus role: sprint roles
+occupy the sprint document, managers the master, and worker/reviewer/curator their leaf documents.
+The left rail projects that real task hierarchy and resolves the current hosted occupant; replacement
+does not change the row address. Qualified leaf keys remain only for leaf display/context helpers,
+not seat identity. This supersedes the earlier leaf-keyed registry described in semantic history.
+The operations-dashboard **polish** surface also includes resizable
 persisted rails, drill-state that survives a view switch, the File/Diff viewer rendering opened route
 overviews as markdown and the corrected Change-Set selected-row highlight, the Hangar filtering archived
 enclosures, and faint siege-tank/battlecruiser empty-state backdrops). L5 also lands a **lifecycle
@@ -170,9 +180,9 @@ lifecycle event log — is the source of truth for liveness, so a running worktr
 the Engine Room when its log ages out, and a not-yet-retired master series protects every leaf's event
 history from the inactivity TTL until the series is archived plus a one-week grace. **L6** keeps the chat
 assignment timing explicit: when an operator starts an agent chat on the displayed leaf or attaches a free
-chat through the leaf picker, the right-rail chat injects projected leaf task/worktree context into that
-chat once for the successful bind. Detail lives in the `observer/`, `serving/`, and `dashboard/src/` route
-overviews.
+chat through task assignment, the right-rail chat may still inject projected leaf task/worktree context
+once for the successful bind. That context package is not addressing authority. Detail lives in the
+`observer/`, `serving/`, and `dashboard/src/` route overviews.
 
 ## Hot Path Summary
 
@@ -1065,6 +1075,18 @@ package-layering gate (rank violations, cycles, undeclared dirs/imports all fail
 baseline). The move ledger and pre-change serialization baseline prove zero wire drift.
 
 ## Update History
+
+- 2026-08-12T00:20+02:00 — Corrected parallel-execution ownership to root pytest `addopts`, shared
+  by raw and wrapped runs; `-n=0` remains the explicit serial diagnostic override. Verification
+  metadata remains pinned until closeout.
+
+- 2026-08-11T23:56+02:00 — Recorded automatic pytest-xdist worker selection, the matching
+  checkout/package dependency boundary, and retry-proof invalidation across executor-version
+  changes. Verification metadata remains pinned until closeout.
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the repository overview with the
+  enforcement-first separation between structural task-document/role control and private
+  plane-owned runtime addressing; implementation detail remains routed to the affected children.
 
 - 2026-08-10T19:57:55+02:00 — No route impact: 260731-EFA-L21 confines undeclared
   checkout CLI coordination to the linked worktree's disposable provider-runtime root. The

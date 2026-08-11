@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-01T19:10+02:00 |
-| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`|
-| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -255,8 +255,8 @@ configurable per-kind SLA via
 backoff-ladder math + a per-target rate-limit gate mirroring `OrchestrationNudgeStore`'s pattern,
 consumed by `OperatorInboxStore.list_redeliverable`/`record_delivery`. R4 adds
 `signal_routing.py::derive_signal_owner`: the routed owner address (worker -> its manager, manager
--> its orchestrator, decision-item -> architect) derived from catalog spawn provenance, stamped
-onto new `OperatorInboxEntry.ownerRole`/`ownerAgentId`/`ownerLifecycleId` fields at post time.
+-> its orchestrator, decision-item -> architect) derived from task-document containment and role,
+stamped with structural owner plus private occupant correlation at post time.
 Neither this leaf's redelivery driver nor its ladder escalation exist here — L2 (a sibling leaf)
 drives the actual sweep; this route only builds the durable substrate + surfacing it reads.
 
@@ -270,13 +270,10 @@ re-touch a landed relay row. The worker→manager artifact/SLA interpretation
 (`turn-report-by`/`turn-report-stale`) is retired (N8/R6): `briefed-by` rows remain dashboard
 provenance but no longer drive notifier findings.
 
-**260713-TES-L3 — master-scoped compound-idle ownership.** The private `_master_key` helper is
-now the public `signal_routing.master_key` (`repo/master` prefix of a qualified leaf key), used
-by `_scoped_managers` as before and now also by `serving/state_signals.py` to master-scope
-compound-idle set membership on EVERY arm (binding + spawn provenance). `derive_signal_owner`
-remains the one-hop worker→manager / manager→orchestrator route; the compound-idle emitter and
-the manager non-reaction residue both resolve their orchestrator through it, and a manager
-without a recorded spawn edge is skipped (fail-closed, no global fallback, R4/L6).
+**Current master-scoped ownership.** Real task-document containment supplies leaf→master→sprint
+scope. `derive_signal_owner` resolves one role-appropriate parent seat and then its singular current
+catalog occupant; spawn ancestry is audit provenance only. Compound-idle and non-reaction flows use
+the same task-owned scope and fail closed when the qualified owner is absent or ambiguous.
 
 **260713-TES-L4 — the N13/N16 inbox-schema migration, scoped custody, and terminal
 truth.** `OperatorInboxState` gains the formal terminal vocabulary `landed`/`superseded`/
@@ -338,7 +335,7 @@ signal, while targetless provider-down dismissals are not accepted.
 | ------------- | ----------------------------------------------------------------------------- |
 | `records.py`  | `GateRecord` (`ar-gate-record/v1`) + pure `create_gate` / `decide_gate` / `expire_gate` / `coerce_gate_kind`; the `GateKind` / `GateState` / `DecidedVia` Literals, `GateEvidenceRef`, and `DECISION_STATES`. `GateKind` is the full l-01 gate spine (slice 09 added `plan-approval` / `worktree-intent` / `push-approval`); `closeout-approval` IS the commit gate — no separate `commit-approval`. |
 | `store.py`    | `GateStore`: lifecycle/workspace gate logs beside the event log; `current()` folds by gate id (last-wins), while `delete`/`compact` physically remove throwaway interaction rows under the log's lock. The strict `read` backs enforcement; the tolerant `read_for_projection` backs `projected_current`, which replaced `compact_current` and rewrites nothing. |
-| `operator_inbox_records.py` | (260713-TES-L4, N13/N16) `OperatorInboxEntry` (`ar-operator-inbox-entry/v1`) + pure create/attribution helpers for durable operator/agent inbox snapshots; formal terminal vocabulary (`landed`/`superseded`/`unresolved`/`expired` + legacy parse-compat literals), `terminalAt`/`terminalReason`/`supersededBy`, and attribution-only consume. |
+| `operator_inbox_records.py` | `OperatorInboxEntry` v2 plus structural address/owner/subject value objects, private delivery correlations, formal terminal vocabulary, and attribution-only consume. |
 | `operator_inbox_store.py` | (260713-TES-L4) `OperatorInboxStore`: workspace inbox log, pending/terminal mailbox filters (`list_for_mailbox`, N11), delivery-state snapshots, the lock-held latest-fold `transition` primitive, attribution-only idempotent consume, public delete/dismiss paths, and retention compaction. |
 | `orchestration_artifacts.py` | Strict turn-report, master-handover, and escalation packet helpers for the L2/L3 orchestration frame, with HFX-L6 architect/curator role literals in the artifact vocabulary. |
 | `orchestration_nudges.py` | `OrchestrationNudgeRecord` + `OrchestrationNudgeStore`: append-only, rate-limited manager nudge attempts plus message/artifact helpers. |
@@ -346,19 +343,19 @@ signal, while targetless provider-down dismissals are not accepted.
 | `enforcement.py` | `evaluate_gate` (pure kind-generic gate policy resolver) + `GateGuard`; `evaluate_closeout_gate` / `CloseoutGuard` remain the closeout wrapper `worktree_closeout_apply` reads. |
 | `attention_dismissals.py` | `AttentionDismissalRecord` + `AttentionDismissalStore`: compact current acknowledgement rows for attention queue dismissals, with physical prune by live lifecycle id and a targetless actionable-drift exception. |
 | `interaction_retention.py` | (260713-TES-L4, N13/§9) Shared 5-minute pickup/wait, 24-hour consumed-row audit TTL, 48h terminal-marker retention, sweep-owned pending-TTL resolution boundary, and 500-current-row hard health cap (terminal-oldest-first, counted drops); ladder-resolved rows drop immediately. |
-| `expectation_rows.py` | (260707-HFX2-L1, R2) `ExpectationRow`/`ExpectationRowStore`/`write_expectation_row`: durable what-must-happen-by-when rows written atomically at every dispatch surface, an L2 sweep scans, never in-memory timers. |
+| `expectation_rows.py` | Durable what-must-happen-by-when rows with task-document/role subjects and private occupant correlation; dispatch/gate seams write them atomically, never as in-memory timers. |
 | `inbox_backoff.py` | (260707-HFX2-L1, R3; HFX2-L9) Pure redelivery backoff-ladder math + the shared 900-second redelivery floor/fail-loud validation, mirroring the `OrchestrationNudgeStore` pattern while refusing sub-floor retry cadences. |
-| `agent_notifier_signals.py` | (260707-HFX2-L9, renamed 260713-TES-L1) Persisted agent-notifier pane/seat-liveness signal cooldown records keyed by owner/leaf/finding kind/detail; durable names (`supervisor-signals.jsonl`, `store="supervisor-signals"`, `ar-supervisor-signal/v1`) retained until their schema migration. |
-| `signal_routing.py` | (260707-HFX2-L1, R4; 260707-HFX2-L4, R2/R4; 260713-TES-L3; 260713-TES-L4, R13/N14) `derive_signal_owner`: one-hop hierarchical routing derivation from catalog spawn provenance (worker -> manager, manager -> orchestrator, decision-item -> architect). `is_seat_dead`/`derive_skip_level_owner`: the ladder's liveness check and SEPARATE two-hop, dead-node-skipping owner's-owner walk. `master_key` (public since 260713-TES-L3): the qualified `repo/master` scope prefix used by `_scoped_managers`, compound-idle membership, and L4 scoped custody. `derive_architect_owner(catalog, leaf_key=...)`: repo+sprint-scoped architect custody (R13), exact-leaf preference, role-only fail-closed fallback. `derive_row_owner`: N14 sweep-time owner derivation (dispatch-brief never rebinds; manager→orchestrator scoped replacement). |
+| `agent_notifier_signals.py` | Persisted cooldown records keyed by structural owner plus private current-occupant correlation, finding kind, and detail. |
+| `signal_routing.py` | One-hop owner routing from task containment and role; decision items resolve the sprint architect, ordinary rows rebind to current occupants, and ambiguity fails closed. Spawn ancestry is excluded from resolution. |
 | `escalation_ladder.py` | (260707-HFX2-L4 + L13/HFX3 correction; DORMANT since 260713-TES-L4, N3) `rung_due`/`next_step`/`seat_is_suspect`: the pure tier-3 ladder walker, configured dwell plus redundant five-minute later-rung floor, scoped architect terminal custody via leaf-key pass-through (R13), and dead/stalled-seat respawn-candidate detection. The sweep no longer drives it; L5 deletes the module. |
 | `orphan_policy.py` | (260707-HFX2-L4, R3) `find_orphaned_workers`: a pure catalog read for a dead/respawned manager's still-running worker seats -- detection/surfacing only, no re-parent action. |
 | `durable_store.py` | (260731-EFA-L5) `ar-durable-store/1.0`: the one contract all six JSONL stores implement, and the only place in the package that appends, rewrites, builds a temp path or imports `fcntl`. Owns `DurableRecord` (the shared record base with `extra="forbid"` and a validated `schemaVersion`), `StoreOwnership` plus the six per-store ownership constants, `declare_process_role`, the `exclusive_access` / `thread_mutex_for` / `require_lock_held` locking primitives, the `_verify_lock_capability` filesystem probe, and `append_line` / `rewrite_lines`. |
 | `__init__.py` | Package export surface (gate records/store/enforcement + operator inbox records/store), plus the durable-store contract surface: constants, error types, `DurableRecord`, `StoreOwnership` and the process-role pair. The locking and rewrite primitives and the per-store ownership constants are deliberately not re-exported. |
 
-The `gate_*` MCP tools live in `mcp/tools/gates.py` (config-rooted, building a
-`GateStore(observer_root(config))`); their response models are `models/gates.py`.
-The `operator_inbox_*` MCP tools live in `mcp/tools/operator_inbox.py`; their
-response models are `models/operator_inbox.py`.
+The structural `gate_*` MCP tools live in `mcp/tools/gates.py`; internal exact correlations are
+isolated from the public document-and-role responses in `models/structural/gates.py`. Ordinary
+agent messaging enters through the structural application and durable operator-inbox substrate;
+operator-facing inbox administration remains a separate internal surface.
 
 ## Invariants And Boundaries
 
@@ -420,16 +417,16 @@ response models are `models/operator_inbox.py`.
 | --- | --- | --- |
 | Gates mirror the observer event substrate (envelope + append-only JSONL store). | "class EventStore" | mcp/src/agents_remember/observer/store.py:103-103 |
 | Gate policy validation and delegated decision checks. | "class GatePolicy:" | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54 |
-| The `gate_*` payload builders that drive this substrate. | "def gate_create_payload" | mcp/src/agents_remember/mcp/tools/gates.py:34-34 |
-| Gate response models. | "class GateCreateResponse" | mcp/src/agents_remember/models/gates.py:23-23 |
-| The inbox record/store pair provides the external-chat pull return channel. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:40-40; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-53 |
+| The `gate_*` payload builders that drive this substrate. | "def gate_create_payload" | mcp/src/agents_remember/mcp/tools/gates.py:44-44 |
+| Gate response models, including the structural public boundary and internal exact correlations. | "class GateCreateResponse"; "class StructuralGateResponse" | mcp/src/agents_remember/models/structural/gates.py:48-55; mcp/src/agents_remember/models/structural/gates.py:108-116 |
+| The inbox record/store pair provides the external-chat pull return channel. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:41-41; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-53 |
 | The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | "class AttentionDismissalStore" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-45 |
 | The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:171-171 |
-| The `ar-durable-store/1.0` contract every JSONL store in this route implements, and the only module in the package that appends, rewrites, builds a temp path or imports `fcntl`. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:45-45 |
-| Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. | `prepare_mcp_process`; `_dev_app`; `run` | mcp/src/agents_remember/application/server_startup.py:27-30; mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:161-196 |
-| `_reclaim_gate_log` at L453-L473: gate compaction moved here from the dashboard projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly. | "def gate_decide_payload" | mcp/src/agents_remember/mcp/tools/gates.py:67-67 |
-| The projection tick that no longer rewrites anything: `read_gates` at L103 folds through the tolerant `projected_current`, and `read_expectation_rows` at L190 uses `pending_for_projection`. | "def read_gates(coordination_root: Path, *, now: datetime"; "def read_expectation_rows(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:103-103; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:190-190 |
-| The serving relay composes the fact predicates and dispatches the fact actions over this route's stores (260713-TES-L5: no ladder/orphan caller remains). | `evaluate_predicates`; `_FINDING_ACTIONS` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-380; mcp/src/agents_remember/serving/_agent_notifier_actions.py:616-630 |
+| The `ar-durable-store/1.0` contract every JSONL store in this route implements, and the only module in the package that appends, rewrites, builds a temp path or imports `fcntl`. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:46-46 |
+| Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. | `prepare_mcp_process`; `_dev_app`; `run` | mcp/src/agents_remember/application/server_startup.py:33-36; mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:161-196 |
+| Gate compaction is guarded by control-plane ownership because trusted dashboard paths call `gate_decide_payload` directly. | "def gate_decide_payload" | mcp/src/agents_remember/mcp/tools/gates.py:92-122 |
+| The projection tick reads folded gates and pending expectation rows without rewriting them. | "def read_gates(coordination_root: Path, *, now: datetime"; "def read_expectation_rows(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:103-103; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:193-193 |
+| The serving relay composes fact predicates and dispatches fact actions over this route's stores. | `evaluate_predicates`; `_FINDING_ACTIONS` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:349-403; mcp/src/agents_remember/serving/_agent_notifier_actions.py:675-702 |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -491,6 +488,10 @@ parse-compat; the confirmed-gone reclamation fold still writes `ladder-resolved`
 (reviewer F4).
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the control-plane route with
+  plane-owned occupant addressing, structural document-and-role seats, pinned inbox delivery, and
+  current-owner routing; affected file cards retain the direct source evidence.
 
 - 2026-08-10T19:57:55+02:00 — 260731-EFA-L21 route impact: recorded the durable-store target guard,
   its pre-filesystem ordering, and linked-worktree dummy-root containment. Verification metadata

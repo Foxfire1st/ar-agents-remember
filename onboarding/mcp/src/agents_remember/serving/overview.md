@@ -8,9 +8,9 @@ Total output lines: 2259
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`|
-| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
+| lastUpdated | 2026-08-11T20:28+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -112,10 +112,24 @@ router, nor the wire grammar; the slice is governed by `conversation/control/ove
 The current hosted-session serving contract is protocol-backed: exact adapter snapshots govern
 readiness, liveness/activity, delivery evidence, interactions, and terminal projection. Durable
 operator-inbox rows are the only inter-agent message roots; the adapter is only their delivery wire,
-and explicit recipient `consume` is the sole acknowledgement. Pane text, terminal logs, copy mode,
+and correlated adapter acceptance at a turn boundary is acknowledgement/landing authority. Model
+`consume` is optional attribution with no mechanical effect. Pane text, terminal logs, copy mode,
 paste echoes, and timing windows are diagnostic-only and cannot authorize readiness, delivery,
-completion, or supervisor action. The older pane/log/paste descriptions retained below are historical
-route history, not current authority.
+completion, or supervisor action. Older pane/log/paste descriptions retained below are semantic
+history, not current authority.
+
+### Current Structural Seat And Routing Contract
+
+Hosted-seat identity is the real task document plus role: sprint roles bind the sprint document,
+manager binds the master, and worker/reviewer/curator bind leaves. `ambient_seat.py` proves callers
+from plane-seeded hosted context; `structural_seats.py` qualifies parent/child relations and singular
+current occupants. `terminal_task_assignment.py` is the one level-neutral binding primitive. Ordinary
+inbox traffic is persisted, then re-resolved at post and delivery time so replacement is transparent;
+the initial dispatch brief alone stays exact-pinned internally. One-way startup migrations run before
+strict catalog/control-plane readers; no dual-schema compatibility reader remains. Agent-notifier
+predicate helpers consume the existing `TaskHierarchy` protocol, while production constructs the
+filesystem-backed `TaskDocumentTopology`; this preserves one hierarchy authority without forcing
+callers to depend on its concrete implementation.
 
 **`HarnessSubmissionAuthority` is the sole epoch-bound prompt/setter
 timeline.** It owns prompt FIFO, immutable id/source/payload admission, atomic queued-withdraw versus
@@ -187,13 +201,11 @@ for stale task-row pickup warnings. `terminal_catalog.py` provides the durable t
 surface: opener rows persist under `logs/dashboard/terminal-sessions.json`, `/api/terminal/sessions`
 hydrates the UI after refresh, the opener creates detached tmux sessions, each WebSocket gets its own
 tmux client only after a tmux probe, and explicit terminate kills tmux and hides the row from normal
-lists. `terminal_leaf_assignment.py` is the shared catalog move policy used by both
-`POST /api/terminal/{session}/attach-leaf` and the agent-facing MCP tool so hosted chats can move between
-durable leaves without respawn. `leaf_ref_validation.py` is the serving adapter that normalizes
-terminal opener/attach leaf keys to canonical qualified task-doc ids before catalog mutation. `terminal_opener.py` is the shared
-hosted-session **opener** (leaf claim + env-seeded tmux ensure + catalog upsert) that both the
-`POST /api/terminal/{session}` route and the agent-facing `spawn_agent_session` MCP tool compose over so
-there is **no parallel spawn path** — and `terminal_paste.py`, the server-side capture-verified stdin
+lists. `terminal_task_assignment.py` is the shared level-neutral binding primitive used by operator
+APIs and internal structural dispatch. `TaskDocumentTopology` validates real sprint/master/leaf
+documents; no leaf-normalization adapter or role-anchor leaf remains. `terminal_opener.py` is the
+shared hosted-occupant opener that both the operator route and structural dispatch compose over, so
+there is no parallel spawn path — and `terminal_paste.py`, the server-side capture-verified stdin
 paste (success only after the pane provably shows the paste; one origin baseline per
 delivery makes duplicate stacking impossible; failures ship the pane capture) that backs the
 `POST /api/terminal/{session}/paste` endpoint and the tool's context delivery. `terminal.py`
@@ -622,29 +634,28 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `POST /api/operator-inbox/{entry_id}/dismiss` (physically delete a pending inbox entry
   for dismissible `check chat` warnings), the
   `POST /api/terminal/{session}` **opener**
-  (6e-2a/6e-2b; the leaf-claim + `host.ensure` + catalog-upsert composition delegates to the
+  (the task-binding + `host.ensure` + catalog-upsert composition delegates to the
   shared `terminal_opener.open_terminal_session` — `resolve_terminal_launch` / `_terminal_label` / the
-  role-scoped conflict check all left `app.py` for that module — so this route and the `spawn_agent_session`
-  MCP tool spawn through ONE opener; it accepts optional `model`/`effort`, requires a complete pair for
-  built-in native harnesses, and maps `bad-kind`→400 / `leaf-taken`→409 /
+  role-scoped conflict check all left `app.py` for that module — so operator opening and structural
+  dispatch use one opener; it accepts optional `model`/`effort`, requires a complete pair for
+  built-in native harnesses, and maps `bad-kind`→400 / `seat-taken`→409 /
   `launch-conflict`→409 / `opened`→200. Successful and conflicting responses report the actual
   retained row's launch/control facts rather than echoing the attempted request. Server-resolved
   harness id, never argv on the wire; the opener passes `suspend_unsafe=(kind=="harness")` so
-  later host writes strip Ctrl-Z for bare-pane harnesses, slice 6f, and persists a `TerminalCatalogEntry`
-  carrying label/lifecycle/cwd/tmux/command/status/leafKey + spawned-by provenance + `spawnRole` without opening a
-  starter PTY client; uniqueness is per (leaf, role) so a terminal never collides with the
-  leaf's chat, and the `leafKey` is normalized through `leaf_ref_validation.resolve_catalog_leaf_key`
-  before persistence (preserving an existing binding when none is sent) and echoed),
+  later host writes strip Ctrl-Z for bare-pane harnesses and persists a `TerminalCatalogEntry`
+  carrying occupant/launch facts plus `taskDocumentRef`, `seatRole`, replacement declaration, and
+  spawn provenance without opening a starter PTY client; uniqueness is per task-document-and-role
+  seat, with topology/altitude validation before persistence),
   `POST /api/terminal/{session}/paste` (server-side capture-verified
   context-packet delivery to a hosted session with no attached browser client, over
   `terminal_paste.TerminalPaster`; delivery is confirmed against the pre-delivery origin capture —
   a new chip in either harness vocabulary or the payload head, not mere pane output; 404 on
   unknown/gone session, else `{delivered, submitted}` plus the pane `capture` on an unconfirmed
   outcome),
-  `POST /api/terminal/{session}/attach-leaf` (normalize the requested leaf ref,
-  then claim or move a leaf for an existing session, enclosure-free / no respawn; delegates to
-  `terminal_leaf_assignment.assign_terminal_session_to_leaf`, returning `400 leaf-ref-not-found` /
-  `400 leaf-ref-ambiguous`, `404 unknown-session`, `409 leaf-taken` without mutation, or `200 attached`), `GET
+  `POST /api/terminal/{session}/attach-task` (validate the canonical task document and role, then
+  claim or move the structural binding for an existing session without respawn; delegates to
+  `terminal_task_assignment.assign_terminal_session_to_task`, returning typed invalid/taken/unknown
+  refusals without mutation or the accepted binding), `GET
   /api/terminal/sessions` (return non-terminated sessions via
   `terminal_liveness.TerminalCatalogLivenessSweeper.refresh()`: ≤1 probe sweep per 10s,
   non-overlapping, rate-limited callers get the persisted catalog; WebSocket attach + the paste
@@ -746,6 +757,14 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   holds its log's lock. No other route bullet changed: nothing else under `serving/` was touched by
   this leaf. Verification metadata untouched.
 ## Update History
+
+- 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: recorded the notifier's
+  protocol-typed hierarchy seam; structural routing behavior and production topology authority are
+  unchanged.
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled serving with plane-owned occupant
+  launch/delivery and structural task-document projections; conversation and projection child
+  overviews own the route-specific details.
 
 - 2026-08-10T19:57:55+02:00 — No route impact: 260731-EFA-L21 repairs
   `terminal_liveness.py`'s type-only `HarnessId` import to the canonical

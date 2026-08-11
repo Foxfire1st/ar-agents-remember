@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash |  `201b0599e5d79049252033c7b737df631135b11d`|
-| lastVerifiedCommitDate |  2026-08-10T13:54:43+02:00|
+| lastUpdated | 2026-08-11T22:28+02:00 |
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,12 @@ wrapper a mandatory, fail-closed gate before a worktree closeout or integration 
 commit, and it owns the altitude routing: leaf edges run the change-set-scoped `--targeted`
 contract, and master integration runs the full wrapper once, memory-capped, inside
 `worktree_integrate` itself (260731-EFA-L17).
+
+It also owns the latest completed gate transcript. The caller supplies a `QualityGateTarget`
+containing both the checkout and its worktree enclosure; every completed run atomically replaces
+`<worktree_group>/reports/test-results.md`, and success returns that path while failure publishes
+the same full output before raising. Because publication occurs only after the subprocess returns,
+an interrupted retry leaves the preceding completed report intact.
 
 **It is no longer scoped to one repository.** Until 260731-EFA-L1 the decider read
 `repo_name == "agents-remember"`, so for every consuming repository — the product's actual audience
@@ -55,15 +61,24 @@ replacement for the old behavior, which returned the same `required: False` for 
 repository as for "nothing to commit" and explained it with the misleading reason "no Agents
 Remember code commit would be created".
 
-`run_strict_code_quality_gate(code_worktree, *, diff_base="", plan=QualityGatePlan(), invocation="closeout-staged", runner=run_subprocess)`
+`run_strict_code_quality_gate(QualityGateTarget(code_worktree, worktree_group), *, diff_base="", plan=QualityGatePlan(), invocation="closeout-staged", runner=run_subprocess)`
 requires the wrapper to exist (else `RuntimeError`), selects an interpreter, executes the
-current worktree's `agents_remember.code_quality.check` under the planned mode, and raises with a
-bounded output tail (`FAILURE_OUTPUT_LINES` = last 40 lines) on any non-zero result. Success
-returns `{"required": True, "status": GATE_ENFORCED, "passed": True, "command": ..., "diffBase": ..., "mode": ...}`,
-plus `memoryCap` for full runs. The concrete command and invocation label come from
-`_gate_command_parts` (lines 220-248); a full run without `memory_cap_bytes` is refused
-(RuntimeError naming the settings key), and an over-cap kill (returncode -9 / shell 137) is
-named by `_gate_failure_message` (lines 249-275).
+current worktree's `agents_remember.code_quality.check` under the planned mode, writes the complete
+captured transcript through `_write_test_results_report`, and raises with both the stable report
+path and a bounded output tail (`FAILURE_OUTPUT_LINES` = last 40 lines) on any non-zero result.
+Success returns `reportPath` beside the existing command/scope/memory-cap evidence. The concrete
+command and invocation label still come from `_gate_command_parts`; a full run without
+`memory_cap_bytes` is refused, and an over-cap kill remains named by `_gate_failure_message`.
+
+`run_subprocess` captures the merged quality transcript as UTF-8 with replacement for undecodable
+bytes. A tool emitting one non-UTF-8 byte therefore cannot abort the adapter before the stable
+report is written; the replacement is confined to diagnostic output and does not alter source or
+gate status.
+
+`test_results_report_path` fixes the location at `reports/test-results.md` under the supplied
+worktree group. `_write_test_results_report` renders status, invocation, mode, diff base, exit code,
+UTC start/finish, elapsed seconds, exact shell command, applicable cap facts, and the full output,
+then publishes with the shared `atomic_write_text` primitive. It creates no timestamped siblings.
 
 ### The Index Is The Scope, And This Function Does Not Own It (260731-EFA-L4)
 
@@ -121,6 +136,12 @@ behaviour of a process this one cannot see. Nothing else about the environment c
 worktree's `mcp/src` still leads `PYTHONPATH`, any inherited `PYTHONPATH` still follows it, and
 `PATH` survives (without it the wrapper cannot start).
 
+On non-Windows hosts the same environment normalizes `TMPDIR`, `TMP`, and `TEMP` to `/tmp`. This
+keeps concurrent quality scratch process-local and Unix-domain harness-control socket paths short
+when a WSL process inherited Windows temp paths. The durable latest-run transcript remains under
+the enclosure's `reports/` directory; only ephemeral scratch moves. Native Windows retains the
+inherited temp variables.
+
 `_git_common_dir` — the middle step of that interpreter chain — runs
 `git rev-parse --path-format=absolute --git-common-dir` through
 `agents_remember.kernel.git_command.run_git`, the package's single git runner, rather than through
@@ -160,6 +181,13 @@ different situations.
   against `main`. Both directions are failures of the same rule — the base the gate measures against
   must be the base the leaf branched from.
 - Failure output is bounded to the last 40 lines while preserving the actionable exit status.
+- The bounded exception is only a notification surface; `reports/test-results.md` retains the
+  complete stdout/stderr transcript for both pass and fail and is replaced atomically only after a
+  run completes.
+- Captured subprocess text is always decoded as UTF-8 with replacement so malformed diagnostic
+  bytes cannot suppress the completed-run report.
+- On non-Windows hosts, quality scratch uses `/tmp`; this must not redirect or weaken the
+  enclosure-owned `reports/test-results.md` durability contract.
 - **This module never stages, resets or restores.** The index it is handed is the scope it
   certifies; producing that index is the caller's job, and the failure message must stay true for a
   caller that did no staging at all. Do not add a "staging was reverted" claim here — closeout does
@@ -196,12 +224,13 @@ coverage, and CRAP checks.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `quality_wrapper_path` / `requires_strict_code_quality` decide applicability from the checkout, and `code_quality_gate_preview` reports one of the three `status` values plus the planned `mode`/`memoryCap`. | `quality_wrapper_path`, `requires_strict_code_quality`, `code_quality_gate_preview`, `QualityGatePlan` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:37-41; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:67-76; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:77-146; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:29-35 |
-| `run_strict_code_quality_gate` executes the planned contract (targeted or full+capped), refuses on a missing wrapper or a cap-less full run, and raises with the bounded `_failure_output` tail; success reports `command`, `diffBase`, `mode`, and `memoryCap` for full runs. | `run_strict_code_quality_gate`, `_gate_command_parts`, `_gate_failure_message`, `_failure_output` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:162-219; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:220-248; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:249-275; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:329-333 |
-| `quality_python` walks the interpreter chain through `_git_common_dir`, which uses `run_git`; `quality_environment` builds from `git_environment()`, puts this worktree's `mcp/src` first on `PYTHONPATH`, and names the invoking altitude. | `quality_python`; `quality_environment`; `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:276-293; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:294-318; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:319-328 |
+| `quality_wrapper_path` / `requires_strict_code_quality` decide applicability from the checkout, and `code_quality_gate_preview` reports one of the three `status` values plus the planned `mode`/`memoryCap`. | `quality_wrapper_path`, `requires_strict_code_quality`, `code_quality_gate_preview`, `QualityGatePlan` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:37-41; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:100-107; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-177; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:34-40 |
+| `run_strict_code_quality_gate` executes the planned contract, atomically publishes the complete latest transcript, exposes `reportPath` on success, and names it before raising on failure. | `QualityGateTarget`, `test_results_report_path`, `run_strict_code_quality_gate`, `_write_test_results_report`, `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:43-48; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:70-72; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:195-270; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:273-314; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:346-372 |
+| `run_subprocess` captures merged output as UTF-8 with replacement so an undecodable diagnostic byte cannot prevent report publication. | `run_subprocess` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:180-194 |
+| `quality_python` walks the interpreter chain through `_git_common_dir`, which uses `run_git`; `quality_environment` builds from `git_environment()`, puts this worktree's `mcp/src` first on `PYTHONPATH`, names the invoking altitude, and uses `/tmp` for non-Windows scratch. | `quality_python`; `quality_environment`; `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:377-392; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:395-424; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:427-434 |
 | Both closeout call sites pass `contract.code_worktree`, `diff_base=contract.code_base_commit`, and the leaf targeted plan — the preview path, and the apply path where `requires_strict_code_quality` guards `_gate_staged_code` and `commit_if_dirty` follows it. | `closeout_preview_payload`, `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:357-427; mcp/src/agents_remember/worktrees/modules/closeout.py:938-1035 |
 | Regressions cover all three statuses, the targeted/full modes, cap-less full refusals, cap-kill naming, the checkout-not-name argument at both call sites, that the leaf base reaches the wrapper as `--diff-base`, that the spawned wrapper gets no repository selectors, worktree source precedence, bounded failures, interpreter selection, and mutation ordering. | `CodeQualityGateTests`, `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:49-423; mcp/tests/test_worktree_closeout_quality_gate.py:424-555 |
-| The staging regressions added with `_gate_staged_code`: `_ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `_ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:678-712; mcp/tests/test_worktree_closeout_quality_gate.py:715-821; mcp/tests/test_worktree_closeout_quality_gate.py:895-1008; mcp/tests/test_worktree_closeout_quality_gate.py:1011-1065; mcp/tests/test_worktree_closeout_quality_gate.py:1071-1130 |
+| The staging regressions added with `_gate_staged_code`: `_ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `_ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:785-820; mcp/tests/test_worktree_closeout_quality_gate.py:823-929; mcp/tests/test_worktree_closeout_quality_gate.py:1009-1132; mcp/tests/test_worktree_closeout_quality_gate.py:1135-1193; mcp/tests/test_worktree_closeout_quality_gate.py:1199-1262 |
 | The one git runner this module calls, and the scrubber `quality_environment` builds from: `run_git` and `git_environment` both drop `GIT_REPOSITORY_SELECTOR_ENV`, and `run_git` carries the local/remote/metadata timeout classes. | `run_git`, `git_environment` | mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | `test_the_closeout_gate_resolves_the_common_dir_of_the_worktree_it_was_given` points `GIT_DIR` at a decoy repository and proves `_git_common_dir` still answers for the worktree it was handed. | `test_the_closeout_gate_resolves_the_common_dir_of_the_worktree_it_was_given` | mcp/tests/test_git_command.py:347-370 |
 | `SingleRunnerTests` sweeps the package's AST and fails if any module spawns `git` itself or defines a second runner. | `SingleRunnerTests` | mcp/tests/test_git_command.py:393-465 |
@@ -214,10 +243,21 @@ that repository's checkout rather than this one.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Applicability is decided by the presence of the wrapper in the target checkout. | `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:67-76 |
-| The preview reports `wrapper-unavailable` when the target checkout lacks the wrapper. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:77-146 |
+| Applicability is decided by the presence of the wrapper in the target checkout. | `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:100-107 |
+| The preview reports `wrapper-unavailable` when the target checkout lacks the wrapper. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-177 |
 
 ## Update History
+
+- 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: recorded deterministic UTF-8
+  replacement for captured quality output and non-Windows `/tmp` normalization for ephemeral
+  quality scratch. The enclosure-owned, atomically replaced `reports/test-results.md` contract is
+  unchanged. Verification metadata remains pinned until governed closeout stamps the real code
+  commit.
+
+- 2026-08-11T17:50+02:00 — 260731-EFA-L19 curator: recorded the enclosure-owned,
+  atomically replaced `reports/test-results.md` contract, full pass/fail transcript retention,
+  stable `reportPath`, explicit checkout+enclosure target, and interrupted-run preservation.
+  Verification metadata remains pinned until governed closeout stamps the L19 code commit.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

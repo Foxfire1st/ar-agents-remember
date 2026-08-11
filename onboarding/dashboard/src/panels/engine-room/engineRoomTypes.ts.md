@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/engineRoomTypes.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-23T13:45+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ Two exported interfaces, both pure type declarations (no runtime code).
 | --- | --- | --- |
 | `EngineProcessView` joins a process node + lifecycle + `enclosureKey` | `EngineProcessView` | dashboard/src/panels/engine-room/engineRoomTypes.ts:15-25 |
 | `EngineRoomModel` fields: processes, workspaceEngines, fallbackStacks, usesFallback | `EngineRoomModel` | dashboard/src/panels/engine-room/engineRoomTypes.ts:28-37 |
-| `EngineProcessNode`, `LifecycleProjection`, `ProviderNode` source types | `EngineProcessNode`; `LifecycleProjection`; `ProviderNode` | dashboard/src/types/projection.ts:162-202; dashboard/src/types/projection.ts:258-276; dashboard/src/types/projection.ts:325-336 |
+| `EngineProcessNode`, `LifecycleProjection`, `ProviderNode` source types | `EngineProcessNode`; `LifecycleProjection`; `ProviderNode` | dashboard/src/types/projection.ts:175-215; dashboard/src/types/projection.ts:271-289; dashboard/src/types/projection.ts:338-349 |
 | `EngineStack` source type + `groupEngines` fallback producer | `EngineStack`; `groupEngines` | dashboard/src/data/selectors.ts:132-137; dashboard/src/data/selectors.ts:147-165 |
 
 ## Update History

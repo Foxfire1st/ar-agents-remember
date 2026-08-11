@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/controlplane/seats.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,8 +22,9 @@ What the control plane needs to know about a seat, declared by the control plane
 
 ### Logic
 
-Named command-seat classification now includes architect, orchestrator, and manager as the roles
-whose identity must be sprint-qualified. This classification is deliberately separate from
+Named command-seat classification includes architect, orchestrator, and manager as roles whose
+identity must be structurally qualified. `SeatRow` exposes primary, replacement, and binding
+identity as `TaskDocumentRef`; it does not expose leaf or sprint keys. This classification remains separate from
 notifier subordinate membership: wake supervision uses direct manager spawn topology and therefore
 admits reviewer, curator, and future subordinate role names without changing this finite set.
 
@@ -38,7 +39,9 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+- Control-plane consumers compare repository-qualified task-document values, not reconstructed
+  leaf/sprint strings.
+- The protocol is read-only; catalog implementations own persistence and mutation.
 
 ### Todos
 
@@ -63,6 +66,8 @@ shape declared by the control plane.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Replaced leaf/sprint protocol fields with primary, replacement, and
+  binding `TaskDocumentRef` properties owned by the control plane.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: clarified the named sprint-seat set and its separation
   from role-neutral manager-subordinate supervision. Verification metadata remains pinned until
   closeout stamps the code commit.

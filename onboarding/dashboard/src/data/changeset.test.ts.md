@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/changeset.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-11T15:20+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ the reviewed task evidence for any current behavioral claim.
 | Asserts the task / file-diff / master URLs (including `%2F` path encoding). | "includeLeaves=false" | dashboard/src/data/changeset.test.ts:16-32 |
 | Asserts a non-ok (404) response throws `FilesApiError`. | "not-found" | dashboard/src/data/changeset.test.ts:48-57 |
 | The test imports and exercises taskChangeset and FilesApiError in its URL and error cases. | `taskChangeset`, `FilesApiError` | dashboard/src/data/changeset.test.ts:3-4; dashboard/src/data/changeset.test.ts:16-32; dashboard/src/data/changeset.test.ts:54-57 |
-| Contract counterpart: the serving layer emits the 404/400 codes this test stubs. | `status_code` | mcp/src/agents_remember/serving/changeset.py:482-498 |
+| Contract counterpart: the serving layer emits the 404/400 codes this test stubs. | "def _leaf_json(produce: Any, master: str, mode: str) -> Response:"; "leaf change-set needs master" | mcp/src/agents_remember/serving/changeset.py:479-500 |
 
 ## Cross-Repo References
 
@@ -77,6 +77,8 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-08-11T15:20+02:00 — Replaced the ambiguous `status_code` evidence with the exact 400 and
+  404 response expressions; the serving-contract claim is unchanged.
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer residual correction: bound the test imports and URL/error
   cases to the complete `taskChangeset`/`FilesApiError` test evidence through the scoped fixer.
 

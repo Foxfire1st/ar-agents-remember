@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_spawn_agent_session_knobs_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -16,23 +16,38 @@
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_spawn_agent_session_knobs_1.py`'s source module; covers the behaviours named by its test classes.
+Regression suite for settings-owned launch-knob application during the plane-private spawn stage.
 
 ## Code Commentary
 
-- `SpawnKnobApplicationTests1`
+### Logic
 
-## Invariants And Boundaries
+The cases prove resolved harness/model/effort and free-form launch arguments reach the runner and provenance without becoming session commands. Role tiers use task-document context, spawn itself never delivers a brief, and prompt keywords are withheld for the later structural dispatch transaction.
 
-- The card mirrors the source file one-to-one at `mcp/tests/test_spawn_agent_session_knobs_1.py`.
+### Conventions
+
+Test-only evidence uses deterministic fakes/fixtures and exercises the owning seam directly.
+
+### Invariants And Boundaries
+
+Agent-facing callers cannot override spend knobs; spawn and initial brief delivery remain separate internal phases owned by the control plane.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository-local regression contract.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| Current suite declaration anchoring this card. | `SpawnKnobApplicationTests1` | mcp/tests/test_spawn_agent_session_knobs_1.py:17-17 |
+
+## Cross-Repo References
+
+No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `test_spawn_agent_session_knobs_1.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the split spawn-knobs test card against its current staged source; the documented coverage remains accurate. Verification metadata remains pinned until closeout.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

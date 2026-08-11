@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/paths.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-13T20:48+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -50,7 +50,7 @@ between the two sides (North-Star #5).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The writer that resolves the root here to install the ambient "install_ambient(AmbientLifecycle(EventStore(observer_root(config))))" ("def create_server(config: McpRuntimeConfig) -> Any:" → "def initialize_mcp_application(config: McpRuntimeConfig) -> None:"). | "install_ambient(AmbientLifecycle("; "install_ambient(AmbientLifecycle(EventStore(observer_root(config))))" | mcp/src/agents_remember/application/server_startup.py:19-19; mcp/src/agents_remember/mcp/server.py:17-21 |
+| The writer that resolves the root here to install the ambient "install_ambient(AmbientLifecycle(EventStore(observer_root(config))))" ("def create_server(config: McpRuntimeConfig) -> Any:" → "def initialize_mcp_application(config: McpRuntimeConfig) -> None:"). | "install_ambient(AmbientLifecycle("; "install_ambient(AmbientLifecycle(EventStore(observer_root(config))))" | mcp/src/agents_remember/application/server_startup.py:25-25; mcp/src/agents_remember/mcp/server.py:17-21 |
 | The reader I/O edge that resolves the same root. | "root = observer_root(config)" | mcp/src/agents_remember/serving/projections/projection_store.py:224-224 |
 | The drift snapshot reader using `drift_snapshot_dir` + the schema (3b). | "def read_drift_snapshots(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py:79-79 |
 | The drift-run producer that writes the snapshot to `drift_snapshot_dir` (3b). | `drift_snapshot_dir` | mcp/src/agents_remember/serving/projections/paths.py:37-39 |

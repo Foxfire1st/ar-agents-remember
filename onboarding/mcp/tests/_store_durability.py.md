@@ -5,9 +5,9 @@
 | repository             | agents-remember                       |
 | path                   | `mcp/tests/_store_durability.py`      |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |                                       `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-11T20:28+02:00               |
+| lastVerifiedCommitHash |                                       `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                         |
 
 ## Governing Overview
@@ -20,7 +20,7 @@ The **measurement instrument** for 260731-EFA-L5, and support code rather than a
 contains no assertion at all. It expresses each of **eight** JSONL record stores — the six under
 `controlplane/` plus `ProviderMetricsStore` and `ProviderDegradationStore` under `providers/`,
 which have the identical shape and are therefore measured by the identical instrument rather than
-by a second one (module docstring, cit:([`ProviderStoreAdapter`], mcp/tests/_store_durability.py:425-435)) — as four operations, drives three concurrency
+by a second one (module docstring, cit:([`ProviderStoreAdapter`], mcp/tests/_store_durability.py:437-447)) — as four operations, drives three concurrency
 scenarios against them in real processes, and returns a counted result — attempted / surviving /
 lost / torn / raised. The suites that assert live elsewhere:
 `test_controlplane_store_durability.py` imports the six control-plane cases, the shared profile
@@ -68,20 +68,20 @@ scored off its **predecessor's** receipts.
 — a sibling.** A sibling rather than a directory inside `root`, deliberately, because **`root`
 does not name one place**: the six control-plane adapters resolve their log under `root/workspace`
 (`StoreAdapter.log_path`, cit:([`StoreAdapter`], mcp/tests/_store_durability.py:115-172)), the two provider adapters under
-`root/logs/observer/providers` (`ProviderStoreAdapter.log_path`, cit:([`ProviderStoreAdapter`], mcp/tests/_store_durability.py:425-435)), and `GateStore`
+`root/logs/observer/providers` (`ProviderStoreAdapter.log_path`, cit:([`ProviderStoreAdapter`], mcp/tests/_store_durability.py:437-447)), and `GateStore`
 additionally globs `root/lifecycles/*/gates.jsonl` — while the accounting reads that whole tree as
 raw bytes cit:([`surviving_ids`], mcp/tests/_store_durability.py:583-608). "Inside `root`" is a different neighbourhood per store and
 each of them is already owned or scanned by some store; the sibling is one rule that holds for all
 eight adapters, and it keeps the harness's own bookkeeping out of the thing being weighed. A path
 has exactly one name, so the sibling is unique whenever `root` is — and two cases sharing a `root`
 would collide on the *log*, a collision no caller can overlook. `_prepared_work_dir`
-(cit:([`_prepared_work_dir`], mcp/tests/_store_durability.py:888-891)) is the only creator; every scenario calls it.
+(cit:([`_prepared_work_dir`], mcp/tests/_store_durability.py:899-902)) is the only creator; every scenario calls it.
 
 **The guard: `MIN_SUCCESSFUL_RECLAIMS = 10` (cit:([`MIN_SUCCESSFUL_RECLAIMS`], mcp/tests/_durability_measurement.py:11-11)), raised as cit:([`VacuousRunError`], mcp/tests/_durability_measurement.py:14-15) from
 cit:([`require_stress_measurement`], mcp/tests/_durability_measurement.py:18-55), which wraps the return value of `run_stress` (cit:([`run_stress`], mcp/tests/_store_durability.py:889-962)).**
 It lives **in the instrument, not in either suite**, and that placement is the whole point: the
 control-plane suite, the provider suite and a bare `main()` script run are covered by **one**
-floor rather than by three copies of it, and cit:([`main`], mcp/tests/_store_durability.py:1107-1120) carries no assertions at all.
+floor rather than by three copies of it, and cit:([`main`], mcp/tests/_store_durability.py:1123-1136) carries no assertions at all.
 The floor is evidence-based rather than round: real runs measure **22-39** ticks idle and **34-49**
 under 24-way CPU load — load *raises* the count, because appender pacing stretches in wall clock
 while the reclaimer keeps polling — so 10 sits an order of magnitude above a vacuous run and under
@@ -105,9 +105,9 @@ this bug. Re-measured through the same `git archive` under the working harness, 
 percentage of records the store reported written and then did not have: attention **23.91%**,
 gate **9.38%**, supervisor-signals **8.00%**, expectation-rows **7.63%**, nudges **7.50%**,
 operator-inbox **0.00%**. That preserves the documented ordering store for store, with the same
-lone survivor at exactly zero. They survived because cit:([`main`], mcp/tests/_store_durability.py:1107-1120) — the entry point every
+lone survivor at exactly zero. They survived because cit:([`main`], mcp/tests/_store_durability.py:1123-1136) — the entry point every
 base-commit run goes through — already gave each case a root under its **own** parent
-(`<root>/run{n}/{case}/observer`, cit:([`main`], mcp/tests/_store_durability.py:1107-1120)), so `root.parent` was distinct there and the stop
+(`<root>/run{n}/{case}/observer`, cit:([`main`], mcp/tests/_store_durability.py:1123-1136)), so `root.parent` was distinct there and the stop
 flag was never shared. **The bug never corrupted the historical measurements; it hollowed out the
 ongoing regression**, which is measured against the live tree and was passing over one tick per
 store.
@@ -131,21 +131,21 @@ a retention window), `AttentionAdapter` (cit:([`AttentionAdapter`], mcp/tests/_s
 (cit:([`OperatorInboxAdapter`], mcp/tests/_store_durability.py:294-328), `compact`), `NudgeAdapter` (cit:([`NudgeAdapter`], mcp/tests/_store_durability.py:331-388), `replace_records`) and
 `AgentNotifierSignalAdapter` (cit:([`AgentNotifierSignalAdapter`], mcp/tests/_store_durability.py:391-422), `compact`); the two provider adapters are
 `ProviderMetricsAdapter` (cit:([`ProviderMetricsAdapter`], mcp/tests/_store_durability.py:438-486), `compact`) and `ProviderDegradationAdapter` (cit:([`ProviderDegradationAdapter`], mcp/tests/_store_durability.py:489-551),
-`compact_events`), both under cit:([`ProviderStoreAdapter`], mcp/tests/_store_durability.py:425-435) for the different log directory.
+`compact_events`), both under cit:([`ProviderStoreAdapter`], mcp/tests/_store_durability.py:437-447) for the different log directory.
 `CONTROLPLANE_ADAPTERS` / `PROVIDER_ADAPTERS` / `ADAPTERS` / `CASES` / `PROVIDER_CASES` /
-cit:([`APPEND_CASES`], mcp/tests/_store_durability.py:579-579) are derived from them, so a ninth store is registered once — and
+cit:([`APPEND_CASES`], mcp/tests/_store_durability.py:590-590) are derived from them, so a ninth store is registered once — and
 `CASES` deliberately stays the six control-plane stores beside a separate `PROVIDER_CASES`, so
 adding the provider stores to the shared instrument did not silently widen what the control-plane
 contract test asserts.
 
 **`AttentionAdapter` is the one that is not an append.** It sets `appends_in_place = False`
 (cit:([`AttentionAdapter`], mcp/tests/_store_durability.py:252-291)) because `dismiss` is a whole-file read-modify-write with no `"a"`-mode handle to strand;
-cit:([`APPEND_CASES`], mcp/tests/_store_durability.py:579-579) is what the unlink scenario iterates, so the attention store is
+cit:([`APPEND_CASES`], mcp/tests/_store_durability.py:590-590) is what the unlink scenario iterates, so the attention store is
 covered by the lost-update scenario only. That is a property of the store, derived once, not a
 skip written into a test.
 
 **Three record classes, and they are what make "loss" mean something.** `SURVIVOR_PREFIX` /
-`ANCHOR_ID` / cit:([`DECOY_PREFIX`], mcp/tests/_store_durability.py:104-104) partition every log into three kinds of row.
+`ANCHOR_ID` / cit:([`DECOY_PREFIX`], mcp/tests/_store_durability.py:115-115) partition every log into three kinds of row.
 **`survivor-*`** is what policy must keep and the only class the accounting counts —
 `surviving_ids` filters on exactly that prefix (cit:([`surviving_ids`], mcp/tests/_store_durability.py:583-608)). **`decoy-*`** is what policy *should*
 drop, so that a reclaim tick does real work: `StoreAdapter.reclaim` (cit:([`StoreAdapter`], mcp/tests/_store_durability.py:115-172)) writes a decoy and
@@ -174,7 +174,7 @@ accepted and then lost, and a write that raised is counted as an error rather th
 process and is the one that yields a *rate*; cit:([`run_forced_lost_update`], mcp/tests/_store_durability.py:987-1022) forces exactly
 one append into the reclaim's read→commit window and is deterministic;
 cit:([`run_forced_unlink`], mcp/tests/_store_durability.py:1025-1061) holds one `"a"` handle open across a reclaim that empties the
-log. cit:([`SCENARIOS`], mcp/tests/_store_durability.py:1069-1073) is the dispatch table shared by the pytest path and the script path.
+log. cit:([`SCENARIOS`], mcp/tests/_store_durability.py:1076-1080) is the dispatch table shared by the pytest path and the script path.
 
 **cit:([`parked_rewrite`], mcp/tests/_store_durability.py:683-732)** is the interposition the two forced scenarios are built on. It
 hooks `Path.write_text` **and** `os.replace` — whichever the implementation reaches first — arms
@@ -197,8 +197,8 @@ cit:([`extract_base_commit_tree`], mcp/tests/_store_durability_source.py:79-105)
 scratch directory and extracts it with `tar` (the stdlib extractor's filter migration emits a
 `DeprecationWarning` this suite turns into an error). cit:([`run_against_source`], mcp/tests/_store_durability_source.py:108-132)
 re-executes this harness through the sibling's deliberate `HARNESS_PATH` in a fresh interpreter
-with `PYTHONPATH` set to that tree, and cit:([`_require_source_root`], mcp/tests/_store_durability.py:1096-1103) refuses with `SystemExit` unless `agents_remember` actually
-resolved under it. cit:([`main`], mcp/tests/_store_durability.py:1107-1120) reads a JSON config, loops runs × cases, and writes a JSON
+with `PYTHONPATH` set to that tree, and cit:([`_require_source_root`], mcp/tests/_store_durability.py:1108-1115) refuses with `SystemExit` unless `agents_remember` actually
+resolved under it. cit:([`main`], mcp/tests/_store_durability.py:1123-1136) reads a JSON config, loops runs × cases, and writes a JSON
 result.
 
 ### Conventions
@@ -207,21 +207,28 @@ result.
 (`ADAPTERS`, `CASES`, `PROVIDER_CASES`, `APPEND_CASES`, `STRESS_PROFILE`, `MIN_SUCCESSFUL_RECLAIMS`,
 `VacuousRunError`, `run_case`, `parked_rewrite`, `harness_work_dir`, `extract_base_commit_tree`,
 `run_against_source`) and executable as a script pinned to one `mcp/src` through `PYTHONPATH`
-(`main`, cit:([`main`], mcp/tests/_store_durability.py:1107-1120), behind the `__main__` guard, cit:(["__main__"], mcp/tests/_store_durability.py:1128-1128)). Only the executable mode goes
-through cit:([`_require_source_root`], mcp/tests/_store_durability.py:1096-1103), because only that mode makes a claim about *which
+(`main`, cit:([`main`], mcp/tests/_store_durability.py:1123-1136), behind the `__main__` guard, cit:(["__main__"], mcp/tests/_store_durability.py:1139-1139)). Only the executable mode goes
+through cit:([`_require_source_root`], mcp/tests/_store_durability.py:1108-1115), because only that mode makes a claim about *which
 tree* it measured — and a measurement that cannot name its tree is worthless, so the guard raises
 `SystemExit` rather than warning. That is exactly what lets `run_against_source` measure a
 `git archive` of the base commit.
 
-**Real processes, never threads.** `_context()` (cit:([`_context`], mcp/tests/_store_durability.py:835-836)) returns the `fork` context and every
+**The gate-state import follows that same cross-version boundary without creating production
+compatibility.** Static checking imports `GateState` from the current structural model. Runtime
+first imports that owner too; only when the sensitivity harness executes against an extracted
+historical base that predates `models.structural` does it load the historical `models.gates`
+symbol dynamically. Any other missing module is re-raised, and the installed package exposes no
+fallback module.
+
+**Real processes, never threads.** `_context()` (cit:([`_context`], mcp/tests/_store_durability.py:846-847)) returns the `fork` context and every
 scenario uses it. The defect is cross-process; threads would let the GIL serialise the exact
 window under test, and the module docstring (cit:([`GIL`], mcp/tests/_store_durability.py:26-26)) states that as the reason rather than
 leaving it to be inferred.
 
-**One profile, two consumers.** cit:([`STRESS_PROFILE`], mcp/tests/_store_durability.py:1072-1079) — 4 appenders × 50 records at 2 ms
+**One profile, two consumers.** cit:([`STRESS_PROFILE`], mcp/tests/_store_durability.py:1084-1091) — 4 appenders × 50 records at 2 ms
 against one reclaimer at 5 ms, an 8000-tick budget and a 120 s bound — is imported by both
 contract tests *and* used by the reported baseline, so the number in the report and the number the
-suite enforces cannot become two different experiments. cit:([`FORCED_PROFILE`], mcp/tests/_store_durability.py:1085-1085) does the same for
+suite enforces cannot become two different experiments. cit:([`FORCED_PROFILE`], mcp/tests/_store_durability.py:1096-1096) does the same for
 the deterministic scenarios.
 
 **The two measurement properties are enforced here rather than left to callers.** The implementation
@@ -267,7 +274,7 @@ side effect a measurement must not have.
   lines are returned as two quantities and are never summed.
 - `reclaim_now` must stay the store's real entry point. The moment an adapter reimplements a
   reclaim, the harness measures a model of the store instead of the store.
-- Every wait is bounded (`parked_rewrite`'s `seconds`, `_join`'s deadline at cit:([`_join`], mcp/tests/_store_durability.py:835-844), the
+- Every wait is bounded (`parked_rewrite`'s `seconds`, `_join`'s deadline at cit:([`_join`], mcp/tests/_store_durability.py:847-856), the
   `handoff_seconds` waits in the forced entry points). A *fixed* store is expected to make the
   other party wait, so an unbounded wait here would hang on success rather than on failure.
 - The base-commit run requires the archive step to succeed against the repository the file sits
@@ -312,7 +319,7 @@ consume it.
 | The expectation-row reclaim the adapter calls with an explicit retention window. | `compact`; `_compact_locked` | mcp/src/agents_remember/controlplane/expectation_rows.py:296-307; mcp/src/agents_remember/controlplane/expectation_rows.py:309-335 |
 | The nudge store has no `compact`, so `replace_records` is the declared rewrite entry point and the read-filter half belongs to the caller — which is why the adapter holds the lock across all three steps. | `read`; `replace_records` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:50-60; mcp/src/agents_remember/controlplane/orchestration_nudges.py:143-153 |
 | The lock and ownership constant the nudge adapter imports locally so the harness still runs against a tree that predates them. | `exclusive_access`; `ORCHESTRATION_NUDGE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:200-210; mcp/src/agents_remember/controlplane/durable_store.py:350-405 |
-| The rewrite `parked_rewrite` parks inside: it commits through `os.replace` and never unlinks, and its temp name is pid-scoped — which is why the hook covers `os.replace` and not `Path.write_text` alone. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:450-457 |
+| The rewrite `parked_rewrite` parks inside: it commits through `os.replace` and never unlinks, and its temp name is pid-scoped — which is why the hook covers `os.replace` and not `Path.write_text` alone. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:491-498 |
 | The inbox reclaim the `OperatorInboxAdapter` drives — the one store of the six that already took a lock at the base commit, and therefore the lone survivor at 0.00%. | `compact`; `append` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:67-71; mcp/src/agents_remember/controlplane/operator_inbox_store.py:221-232 |
 | The cooldown reclaim the `AgentNotifierSignalAdapter` drives with an explicit retention window. | "def append("; "def compact(" | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:108-119; mcp/src/agents_remember/controlplane/agent_notifier_signals.py:162-213 |
 | The first provider store measured by the same instrument. Its log sits under `<root>/logs/observer/providers`, not `<root>/workspace`, which is one half of why the harness work directory cannot be a child of `root`. | `record_index_state`; `record`; `compact`; `read_recent` | mcp/src/agents_remember/providers/metrics.py:254-267; mcp/src/agents_remember/providers/metrics.py:269-283; mcp/src/agents_remember/providers/metrics.py:302-341; mcp/src/agents_remember/providers/metrics.py:343-360 |
@@ -331,6 +338,14 @@ standard library, and pins itself to one `mcp/src` inside this repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: documented the
+  `TYPE_CHECKING`-safe current `GateState` import and the narrowly justified historical-archive
+  runtime fallback; this is test-harness compatibility, not a production compatibility surface.
+
+- 2026-08-11T14:29+02:00 — Re-read the shared `rewrite_lines` implementation and regenerated
+  its range around the current declaration; verification metadata remains unchanged for governed
+  closeout.
 
 - 2026-08-10T10:40+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-09T21:54+02:00 — 260713-TES master integration repair: split source-tree pinning,
@@ -359,12 +374,12 @@ standard library, and pins itself to one `mcp/src` inside this repository.
   `root.with_name(root.name + "-harness")`, a *sibling*, chosen over a child because `root` does
   not name one place: control-plane logs resolve under `root/workspace`
   (`StoreAdapter.log_path`, cit:([`StoreAdapter`], mcp/tests/_store_durability.py:115-172)), provider logs under `root/logs/observer/providers`
-  (`ProviderStoreAdapter.log_path`, cit:([`ProviderStoreAdapter`], mcp/tests/_store_durability.py:425-435)), and `GateStore` additionally globs
+  (`ProviderStoreAdapter.log_path`, cit:([`ProviderStoreAdapter`], mcp/tests/_store_durability.py:437-447)), and `GateStore` additionally globs
   `root/lifecycles/*/gates.jsonl`, while cit:([`surviving_ids`], mcp/tests/_store_durability.py:583-608) reads that whole tree as raw
   bytes. **The guard** — `MIN_SUCCESSFUL_RECLAIMS = 10` (cit:([`MIN_SUCCESSFUL_RECLAIMS`], mcp/tests/_durability_measurement.py:11-11)) raising `VacuousRunError`
   (cit:([`VacuousRunError`], mcp/tests/_durability_measurement.py:14-15)) from cit:([`require_stress_measurement`], mcp/tests/_durability_measurement.py:18-55) at the end of `run_stress` (cit:([`run_stress`], mcp/tests/_store_durability.py:889-962)),
   **in the instrument rather than in either suite**, so the control-plane suite, the provider
-  suite and bare `main()` script runs (cit:([`main`], mcp/tests/_store_durability.py:1107-1120)) share one floor; evidence-based at 22-39 ticks
+  suite and bare `main()` script runs (cit:([`main`], mcp/tests/_store_durability.py:1123-1136)) share one floor; evidence-based at 22-39 ticks
   idle and 34-49 under 24-way load — load raises the count — with 20 rejected because the observed
   minimum is 22. **The principle** is stated as an invariant: *a measurement must refuse to report
   a vacuous result*, beside its companion that *sibling roots under one temp directory must remain
@@ -373,12 +388,12 @@ standard library, and pins itself to one `mcp/src` inside this repository.
   survived, re-measured at attention 23.91% / gate 9.38% / supervisor-signals 8.00% /
   expectation-rows 7.63% / nudges 7.50% / operator-inbox 0.00%, same ordering and same lone
   survivor — because `main` already built each case a root under its own parent
-  (`<root>/run{n}/{case}/observer`, cit:([`main`], mcp/tests/_store_durability.py:1107-1120)). The bug never corrupted the historical
+  (`<root>/run{n}/{case}/observer`, cit:([`main`], mcp/tests/_store_durability.py:1123-1136)). The bug never corrupted the historical
   measurements; it hollowed out the ongoing regression. **Those six figures are labelled as this
   leaf's four-run means that do NOT appear in the source**: the source carries *ranges*, in
   `test_controlplane_store_durability.py::HarnessSensitivityTests`' class docstring (cit:([`HarnessSensitivityTests`], mcp/tests/test_controlplane_store_durability.py:389-444)), and each mean was checked to fall inside its own range. Also added, per
-  the leaf's request: the dual-mode boundary restated with cit:([`_require_source_root`], mcp/tests/_store_durability.py:1096-1103)
-  and the `__main__` guard (cit:(["__main__"], mcp/tests/_store_durability.py:1128-1128)); `surviving_ids` as a tolerant reader returning two
+  the leaf's request: the dual-mode boundary restated with cit:([`_require_source_root`], mcp/tests/_store_durability.py:1108-1115)
+  and the `__main__` guard (cit:(["__main__"], mcp/tests/_store_durability.py:1139-1139)); `surviving_ids` as a tolerant reader returning two
   quantities that are never summed; and the **three record classes** — `survivor-*` (counted,
   cit:([`surviving_ids`], mcp/tests/_store_durability.py:583-608)), `decoy-*` (`StoreAdapter.reclaim`, cit:([`StoreAdapter`], mcp/tests/_store_durability.py:115-172)) and `anchor-keepalive` (`seed`,
   cit:([`StoreAdapter`], mcp/tests/_store_durability.py:115-172), omitted by `run_forced_unlink` at cit:([`run_forced_unlink`], mcp/tests/_store_durability.py:1025-1061)) — which is what makes "loss" mean *a
@@ -397,8 +412,8 @@ standard library, and pins itself to one `mcp/src` inside this repository.
   and is superseded by the 19:40 entry above, which re-derived all of them; the symbols it names
   are still the right ones.)* Recorded the four properties that make its numbers trustworthy, each verified
   against the source rather than restated: (1) **dual-mode** — importable by the two suites and
-  executable as a script whose `main` (cit:([`main`], mcp/tests/_store_durability.py:1107-1120)) reads a JSON config, with `_require_source_root`
-  (cit:([`_require_source_root`], mcp/tests/_store_durability.py:1096-1103)) raising `SystemExit` unless `agents_remember` resolved under the tree the caller
+  executable as a script whose `main` (cit:([`main`], mcp/tests/_store_durability.py:1123-1136)) reads a JSON config, with `_require_source_root`
+  (cit:([`_require_source_root`], mcp/tests/_store_durability.py:1108-1115)) raising `SystemExit` unless `agents_remember` resolved under the tree the caller
   named, which is what let `run_against_source` (cit:([`run_against_source`], mcp/tests/_store_durability_source.py:108-132)) measure a `git archive` of
   `e52edaf5` (`BASE_COMMIT`, cit:([`BASE_COMMIT`], mcp/tests/_store_durability_source.py:14-14), `extract_base_commit_tree`, cit:([`extract_base_commit_tree`], mcp/tests/_store_durability_source.py:79-105)) with `PYTHONPATH` pinned;
   (2) **separate loss and torn accounting** — `surviving_ids` (cit:([`surviving_ids`], mcp/tests/_store_durability.py:583-608)) is a raw tolerant
@@ -406,11 +421,11 @@ standard library, and pins itself to one `mcp/src` inside this repository.
   unparseable line count)` so a strict reader cannot turn a measurement into an exception and a
   tolerant one cannot report a torn line as a lost record, paired with `_appender_main`
   (cit:([`_appender_main`], mcp/tests/_store_durability.py:617-650)) journalling an id only after the store call returned; (3) **real processes** —
-  `_context()` (cit:([`_context`], mcp/tests/_store_durability.py:835-836)) is `multiprocessing.get_context("fork")` because the defect is
+  `_context()` (cit:([`_context`], mcp/tests/_store_durability.py:846-847)) is `multiprocessing.get_context("fork")` because the defect is
 cross-process and the GIL would serialise the window (module docstring cit:([`GIL`], mcp/tests/_store_durability.py:26-26)); and (4) **one
-  profile for both consumers** — `STRESS_PROFILE` (cit:([`STRESS_PROFILE`], mcp/tests/_store_durability.py:1072-1079)) is 4 appenders × 50 records at 2 ms
+  profile for both consumers** — `STRESS_PROFILE` (cit:([`STRESS_PROFILE`], mcp/tests/_store_durability.py:1084-1091)) is 4 appenders × 50 records at 2 ms
   against one reclaimer at 5 ms, imported by the contract test and used for the reported
-  baseline. Also recorded the anchor/decoy design (cit:([`DECOY_PREFIX`], mcp/tests/_store_durability.py:104-104); cit:([`StoreAdapter`], mcp/tests/_store_durability.py:115-172)) that forces a reclaim tick
+  baseline. Also recorded the anchor/decoy design (cit:([`DECOY_PREFIX`], mcp/tests/_store_durability.py:115-115); cit:([`StoreAdapter`], mcp/tests/_store_durability.py:119-176)) that forces a reclaim tick
   to actually rewrite, `AttentionAdapter.appends_in_place = False` (cit:([`AttentionAdapter`], mcp/tests/_store_durability.py:252-291)) deriving
   `APPEND_CASES`, and `NudgeAdapter._reclaim_lock` (cit:([`_reclaim_lock`], mcp/tests/_store_durability.py:354-378)) importing `durable_store` locally
   inside a `try/except ImportError` so the harness can still run against a tree that predates it.

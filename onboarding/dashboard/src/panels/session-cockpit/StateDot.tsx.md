@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/StateDot.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ consumes the same grammar word without rendering a dot.
 | The cva variants + dual accessibility-mode renderer. | `dot`; `StateDot` | dashboard/src/panels/session-cockpit/StateDot.tsx:8-36; dashboard/src/panels/session-cockpit/StateDot.tsx:38-61 |
 | The grammar whose visuals this renders (single source). | `PULSE_ANIMATION`; `SeatVisualState`; `seatVisualState` | dashboard/src/data/stateGrammar.ts:14-14; dashboard/src/data/stateGrammar.ts:33-42; dashboard/src/data/stateGrammar.ts:101-125 |
 | The `pulseSlow` keyframe + the sovereign effects-off freeze. | `pulseSlow` | dashboard/src/index.css:94-101 |
-| The cross-surface consistency test (rail dot ≡ HeaderStrip dot). | "the rail dot and the HeaderStrip dot render the SAME grammar state for the same seat" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:470-480 |
+| The cross-surface consistency test (rail dot ≡ HeaderStrip dot). | "the rail dot and the HeaderStrip dot render the SAME grammar state for the same seat" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:522-532 |
 
 ## Update History
 

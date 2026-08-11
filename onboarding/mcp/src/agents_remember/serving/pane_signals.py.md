@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/pane_signals.py` |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-02T01:42+02:00                             |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`         |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -114,7 +114,7 @@ leaf task doc's R2a is the source of truth), same posture as `turn_state.py`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `evaluate_pane_findings` reads the captured pane and harness before invoking the pane classifier. | "def evaluate_pane_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:45-45 |
+| `evaluate_pane_findings` reads the captured pane and harness before invoking the pane classifier. | "def evaluate_pane_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:48-48 |
 | The pane classifier used by that path is `classify_pane_signal`. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | `classify_turn_state` remains a separate classifier with its own operative call and precedence over the captured pane text. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:157-171 |
 | The failing-first suite covers five generic pane-signal cases; it does not establish per-harness override coverage. | `PaneSignalClassifierTests` | mcp/tests/test_pane_signals.py:16-43 |
@@ -160,4 +160,3 @@ inbox acceptance remains distinct from explicit consumption where applicable.
   delivery-stalled trigger. Feeds `supervisor.py::evaluate_pane_findings` on the sweep's own
   cadence, never a hot loop. Verification metadata pinned until closeout stamps the
   260707-HFX2-L2 commit.
-

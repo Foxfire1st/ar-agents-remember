@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/fixtures/capabilityEnvelopes.ts` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-11T15:20+02:00                           |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -60,10 +60,12 @@ result, and route-error behavior. They must not enter production UI constants.
 | --- | --- | --- |
 | Builders, catalogs, envelopes, snapshots, SetResults, later sequences, and both route-error families. | `effortOption`; `modelRow`; `CLAUDE_MODEL_ROWS`; `CODEX_MODEL_ROWS`; `PI_MODEL_ROWS`; `capabilityEnvelope`; `SET_RESULTS`; `CAPABILITY_ERROR_BODIES` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:20-32; dashboard/src/test/fixtures/capabilityEnvelopes.ts:34-52; dashboard/src/test/fixtures/capabilityEnvelopes.ts:60-84; dashboard/src/test/fixtures/capabilityEnvelopes.ts:88-131; dashboard/src/test/fixtures/capabilityEnvelopes.ts:135-146; dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-172; dashboard/src/test/fixtures/capabilityEnvelopes.ts:211-247; dashboard/src/test/fixtures/capabilityEnvelopes.ts:336-358 |
 | The wire mirrors everything is typed against. | `EffortOptionWire`; `ModelCapabilityWire`; `CapabilitySnapshotWire`; `CapabilityEnvelope`; `SetResultWire` | dashboard/src/types/harnessCapabilities.ts:16-22; dashboard/src/types/harnessCapabilities.ts:25-39; dashboard/src/types/harnessCapabilities.ts:59-65; dashboard/src/types/harnessCapabilities.ts:68-75; dashboard/src/types/harnessCapabilities.ts:89-96 |
-| The Python serializers the shapes mirror. | `to_json`; `capability_snapshot_json`; `model_capability_json`; `effort_option_json`; `set_result_json` | mcp/src/agents_remember/serving/harness_capability_catalog.py:56-65; mcp/src/agents_remember/serving/harness_capabilities.py:162-168; mcp/src/agents_remember/serving/harness_capabilities.py:171-184; mcp/src/agents_remember/serving/harness_capabilities.py:187-194; mcp/src/agents_remember/serving/harness_capabilities.py:216-225 |
+| The Python serializers the shapes mirror. | "def to_json(self) -> dict[str, object]:"; "def capability_snapshot_json(value: CapabilitySnapshot) -> dict[str, object]:"; "def model_capability_json(value: ModelCapability) -> dict[str, object]:"; "def effort_option_json(value: EffortOption) -> dict[str, object]:"; "def set_result_json(value: SetResult) -> dict[str, object]:" | mcp/src/agents_remember/serving/harness_capability_catalog.py:59-68; mcp/src/agents_remember/serving/harness_capabilities.py:162-168; mcp/src/agents_remember/serving/harness_capabilities.py:171-184; mcp/src/agents_remember/serving/harness_capabilities.py:187-194; mcp/src/agents_remember/serving/harness_capabilities.py:216-225 |
 
 ## Update History
 
+- 2026-08-11T15:20+02:00 — Replaced generic serializer-name anchors with their exact Python
+  declarations so each mirrored wire shape has unique provenance.
 - 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: applied the adversarial fixture-truth correction; the fingerprint is documented as a synthetic harness-prefixed token, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-07-31T18:05+02:00 — 260731-EFA wave 2 curator: re-derived 1 stale self-citation.
   `CAPABILITY_ERROR_BODIES` is declared at the object's opening line and runs through the three verbatim 404/409/503

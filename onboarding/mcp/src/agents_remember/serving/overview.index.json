@@ -33,6 +33,7 @@
     "mcp/src/agents_remember/serving/agent_notifier.py",
     "mcp/src/agents_remember/serving/agent_notifier_heartbeat.py",
     "mcp/src/agents_remember/serving/agent_notifier_models.py",
+    "mcp/src/agents_remember/serving/ambient_seat.py",
     "mcp/src/agents_remember/serving/app.py",
     "mcp/src/agents_remember/serving/build_info.py",
     "mcp/src/agents_remember/serving/cadence.py",
@@ -54,6 +55,7 @@
     "mcp/src/agents_remember/serving/codex_app_server_state.py",
     "mcp/src/agents_remember/serving/codex_app_server_threads.py",
     "mcp/src/agents_remember/serving/codex_app_server_turns.py",
+    "mcp/src/agents_remember/serving/control_plane_identity_migration.py",
     "mcp/src/agents_remember/serving/daemon.py",
     "mcp/src/agents_remember/serving/degradation_delivery.py",
     "mcp/src/agents_remember/serving/delta.py",
@@ -87,7 +89,6 @@
     "mcp/src/agents_remember/serving/inbox_reclamation.py",
     "mcp/src/agents_remember/serving/injector.py",
     "mcp/src/agents_remember/serving/landing.py",
-    "mcp/src/agents_remember/serving/leaf_ref_validation.py",
     "mcp/src/agents_remember/serving/notes.py",
     "mcp/src/agents_remember/serving/operator_inbox_posts.py",
     "mcp/src/agents_remember/serving/owner_signals.py",
@@ -110,24 +111,25 @@
     "mcp/src/agents_remember/serving/seat_turn_truth.py",
     "mcp/src/agents_remember/serving/served_state.py",
     "mcp/src/agents_remember/serving/sim.py",
-    "mcp/src/agents_remember/serving/sprint_role_binding.py",
     "mcp/src/agents_remember/serving/state_signals.py",
     "mcp/src/agents_remember/serving/static.py",
+    "mcp/src/agents_remember/serving/structural_seats.py",
     "mcp/src/agents_remember/serving/terminal.py",
     "mcp/src/agents_remember/serving/terminal_catalog.py",
     "mcp/src/agents_remember/serving/terminal_catalog_lock.py",
+    "mcp/src/agents_remember/serving/terminal_catalog_migration.py",
     "mcp/src/agents_remember/serving/terminal_evidence.py",
-    "mcp/src/agents_remember/serving/terminal_leaf_assignment.py",
     "mcp/src/agents_remember/serving/terminal_liveness.py",
     "mcp/src/agents_remember/serving/terminal_opener.py",
     "mcp/src/agents_remember/serving/terminal_paste.py",
     "mcp/src/agents_remember/serving/terminal_pty.py",
+    "mcp/src/agents_remember/serving/terminal_task_assignment.py",
     "mcp/src/agents_remember/serving/terminal_tmux.py",
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 176,
-    "fileSidecars": 103,
+    "sourceFilesInScope": 178,
+    "fileSidecars": 105,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -142,6 +144,8 @@
     "agent_notifier_models",
     "agents",
     "agents_remember",
+    "ambient",
+    "ambient_seat",
     "api",
     "app",
     "app_common",
@@ -185,6 +189,7 @@
     "configuration",
     "contract",
     "control",
+    "control_plane_identity_migration",
     "conversation",
     "daemon",
     "death",
@@ -207,10 +212,7 @@
     "harness_control_adapter",
     "harness_control_api",
     "harness_control_bridge",
-    "harness_control_claude",
-    "harness_control_client",
-    "harness_control_factories",
-    "harness_control_ipc"
+    "harness_control_claude"
   ],
   "hotPath": {
     "summary": "For the active conversation serving, start at `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor), `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics), `conversation/active/store.py` (idempotence, tool block union), `conversation/active/cursor.py` (signed cursor authority), and `conversation/active/status.py` (the canonical classification orchestration shares). The per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`...",
@@ -230,6 +232,7 @@
       "mcp/src/agents_remember/serving/agent_notifier.py",
       "mcp/src/agents_remember/serving/agent_notifier_heartbeat.py",
       "mcp/src/agents_remember/serving/agent_notifier_models.py",
+      "mcp/src/agents_remember/serving/ambient_seat.py",
       "mcp/src/agents_remember/serving/app.py",
       "mcp/src/agents_remember/serving/build_info.py",
       "mcp/src/agents_remember/serving/cadence.py",
@@ -237,8 +240,7 @@
       "mcp/src/agents_remember/serving/changeset.py",
       "mcp/src/agents_remember/serving/claude_stream_capabilities.py",
       "mcp/src/agents_remember/serving/claude_stream_limits.py",
-      "mcp/src/agents_remember/serving/claude_stream_protocol.py",
-      "mcp/src/agents_remember/serving/claude_stream_startup.py"
+      "mcp/src/agents_remember/serving/claude_stream_protocol.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -265,6 +267,8 @@
       "agent_notifier_heartbeat",
       "agent_notifier_models.py",
       "agent_notifier_models",
+      "ambient_seat.py",
+      "ambient_seat",
       "app.py",
       "app",
       "build_info.py",
@@ -286,9 +290,7 @@
       "claude_stream_state.py",
       "claude_stream_state",
       "claude_stream_submission.py",
-      "claude_stream_submission",
-      "claude_stream_transport.py",
-      "claude_stream_transport"
+      "claude_stream_submission"
     ]
   },
   "fallback": {

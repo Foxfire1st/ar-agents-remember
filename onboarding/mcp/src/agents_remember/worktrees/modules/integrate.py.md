@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -31,7 +31,10 @@ the dry run and the result payload (`IntegratePreview`, lines 81-88); and
 `_run_integration_quality_gate` (lines 664-693), called from `_apply_integration`
 (lines 626-663) after the code commit is landed but before any merge, runs
 `run_strict_code_quality_gate` with the plan and the altitude invocation label
-(`leaf-integration` / `master-integration`). A refusal returns
+(`leaf-integration` / `master-integration`) plus a `QualityGateTarget` carrying the checkout and
+owning worktree group. Every completed run therefore replaces the enclosure's
+`reports/test-results.md`; success exposes `reportPath`, while a refusal writes the full transcript
+before returning
 `blocked-quality-gate` and nothing merges. `memory_quality_check` is NOT part of
 this move: it stays a per-leaf closeout gate.
 
@@ -88,7 +91,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The wire model declares `IntegrationStatus` / `CleanupStatus`; worktree_contract imports them and exposes `ContractCells` / `amend_contract` as the typed amendment path. | "class ContractCells"; "def amend_contract"; "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:17-18; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
 | This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:161-176; mcp/src/agents_remember/worktrees/modules/integrate.py:527-561 |
-| The altitude routing and the gate run inside the integration step itself. | `quality_gate_mode`, `_quality_gate_memory_cap`, `_quality_gate_preview`, `_run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/integrate.py:54-63; mcp/src/agents_remember/worktrees/modules/integrate.py:64-68; mcp/src/agents_remember/worktrees/modules/integrate.py:69-80; mcp/src/agents_remember/worktrees/modules/integrate.py:664-693 |
+| The altitude routing and the gate run inside the integration step itself; the run target carries `contract.worktree_group` for stable transcript publication. | `quality_gate_mode`, `_quality_gate_memory_cap`, `_quality_gate_preview`, `_run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/integrate.py:55-64; mcp/src/agents_remember/worktrees/modules/integrate.py:65-69; mcp/src/agents_remember/worktrees/modules/integrate.py:70-81; mcp/src/agents_remember/worktrees/modules/integrate.py:665-699 |
 | The planned gate is carried in the dry-run payload and the integrated result without running on the dry-run path. | `IntegratePreview`, `_dry_run_result`, `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:81-88; mcp/src/agents_remember/worktrees/modules/integrate.py:368-414; mcp/src/agents_remember/worktrees/modules/integrate.py:527-561 |
 | The altitude-routing proofs: leaf targeted, series full+capped, kind-based routing, settings cap, refusal-before-merge, dry-run preview. | `IntegrationQualityGateAltitudeTests` | mcp/tests/test_worktree_integrate_quality_gate.py:48-192 |
 | Worktree tests cover fast-forward integration, replay, and conflict blocking. | `test_integrate_ff_only_fast_forwards_code_and_memory_main`; `test_integrate_replay_handles_parallel_non_overlapping_changes`; `test_integrate_replay_blocks_code_conflicts_before_main_moves`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:582-637; mcp/tests/test_worktree_support_tests_2.py:647-692; mcp/tests/test_worktree_support_tests_2.py:694-725; mcp/tests/test_worktree_support_tests_3.py:715-750 |
@@ -96,6 +99,10 @@ No external Domain Documentation source is configured for this memory repo.
 As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the application entry point) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
 
 ## Update History
+
+- 2026-08-11T17:50+02:00 — 260731-EFA-L19 curator: recorded enclosure-targeted,
+  atomically replaced test/quality transcripts for leaf and master integration gates. Verification
+  metadata remains pinned until governed closeout.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

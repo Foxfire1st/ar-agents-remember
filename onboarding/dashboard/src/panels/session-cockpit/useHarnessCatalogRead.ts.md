@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`|
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ No task-independent technical debt was identified during FEUI-L9R review.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Supplies the typed one-attempt read and result states. | `HarnessCatalogRead`; `readHarnessCatalog` | dashboard/src/data/harnessCatalog.ts:13-16; dashboard/src/data/harnessCatalog.ts:45-51 |
-| Consumes the hook and renders retryable explicit states. | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:362-423 |
+| Consumes the hook and renders retryable explicit states. | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:353-413 |
 
 ## Update History
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the servingBootedAtRef hooks fix. Verification metadata stays pinned until closeout stamps the code commit.

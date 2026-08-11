@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-11T14:29+02:00               |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -116,14 +116,14 @@ comparison operand; cit:([`_dataclass_field_writes`], mcp/tests/test_wire_vocabu
 the class body and also follows the same-named local both git readers assign; cit:([`_builder_statuses`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:579-600) follows a refusal builder handed a variable through the first cell of the table its
 function walks, which is how two of the thirteen spawn statuses are reached at all.
 
-#### cit:(["class AdvertisedVocabularyTests(unittest.TestCase):"], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:45-45) — the published input contract
+#### cit:(["class AdvertisedVocabularyTests(unittest.TestCase):"], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:43-43) — the published input contract
 
 This class reads vocabularies **out of a tool's own docstring, by AST**, and holds them to the
 published output contract:
 
-- cit:([`_advertised_workflow_kinds`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:478-483) parses `worktree_start`'s docstring in
+- cit:([`_advertised_workflow_kinds`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:487-492) parses `worktree_start`'s docstring in
   `mcp/registration/worktrees.py` with `re.findall(r"'([a-z-]+-task)'", …)`.
-  cit:([`test_the_workflow_kinds_advertised_and_declared_are_the_same_set`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:48-65) asserts it EQUAL
+  cit:([`test_the_workflow_kinds_advertised_and_declared_are_the_same_set`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:46-63) asserts it EQUAL
   to `set(get_args(WorkflowKind))` **and** to `{"light-task", "chat-task"}`. Held only one way,
   the alias could grow a member no tool advertises and no writer emits — which is exactly what had
   happened: `WorkflowKind` carried a bare `chat` and `light` beside `chat-task` and `light-task`,
@@ -133,10 +133,7 @@ published output contract:
   `Status …` roster plus any inline `status 'x'` mention in the prose above it, and nothing else —
   the backticked `dispatch-brief` in `spawn_agent_session` is a message kind, and reading it as a
   status would assert the existence of one that was never meant to exist.
-  cit:([`test_every_status_the_session_tools_roster_validates`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:67-89) asserts docstring ==
-  response enum for `session_retire` and `session_rename`, and for `spawn_agent_session` **pins
-  the difference rather than tolerating it**: `vocabulary - advertised == {"leaf-ref-not-found",
-  "leaf-ref-ambiguous"}` — two statuses that are producible and undocumented.
+  cit:([`test_agent_session_tools_are_structural_and_exact_id_tools_are_absent`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:65-98) asserts that the agent roster declares structural dispatch/child administration and excludes raw spawn, retire, and rename tools plus their private id fields.
 - cit:([`test_every_memory_mode_the_contract_accepts_validates_on_both_fields`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:91-103): one packet
   reports the mode twice (`WorktreeSummary.memoryMode` and `MemorySummary.mode`); both copies must
   accept `VALID_MEMORY_MODES`.
@@ -154,7 +151,7 @@ published output contract:
   be undone by accident: `recovery_guidance` emits the same four keys in the same order, omits
   `nextRequiredArgs` when there are none — and its vocabulary must **not** validate at
   `WorktreeSummary`.
-- cit:(["class ContractBoundaryTests(unittest.TestCase):"], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:144-144) is the other half of the same guarantee, and the one place
+- cit:(["class ContractBoundaryTests(unittest.TestCase):"], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:153-153) is the other half of the same guarantee, and the one place
   tolerance is the correct answer. `load_contract` is the single entry point of
   `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`, `worktree_sync`,
   `worktree_abandon` and `worktree_status`, **none** of which catches `ContractError`, so one
@@ -166,7 +163,7 @@ published output contract:
   cit:([`test_the_writer_refuses_what_the_reader_tolerated`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:278-290). `memory_mode` is the one cell
   whose fallback is *inferred* rather than declared — a recorded memory worktree is an external
   topology cit:([`test_an_unreadable_memory_mode_degrades_to_the_topology_on_disk`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:243-266). A rewrite by any lifecycle tool heals the file, and that is the recovery
-  path cit:([`test_a_rewrite_heals_the_file_and_that_is_the_recovery_path`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:268-276). Every refusal names the contract file it was reading cit:([`test_every_refusal_names_the_contract_it_was_reading`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:302-331), and the
+  path cit:([`test_a_rewrite_heals_the_file_and_that_is_the_recovery_path`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:277-285). Every refusal names the contract file it was reading cit:([`test_every_refusal_names_the_contract_it_was_reading`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:302-331), and the
   refusal reaches `worktree_status` as a payload rather than a traceback cit:([`test_the_invalid_contract_payload_carries_the_file_to_open`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:372-384).
   cit:([`test_a_healthy_contract_omits_the_next_required_args_it_has_none_of`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:427-444) pins the
   declared wire shape: measured across the 213 contracts on disk, **48 responses that carried
@@ -237,13 +234,13 @@ themselves.
 | The wire model every contract and guidance value must validate at. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:36-74 |
 | Guidance state machines and the separate recovery vocabulary. | "def lifecycle_guidance("; "def next_guidance("; "def recovery_guidance("; "from agents_remember.models.worktree import NextOperation" | mcp/src/agents_remember/worktrees/modules/guidance.py:200-200; mcp/src/agents_remember/worktrees/modules/guidance.py:113-113; mcp/src/agents_remember/worktrees/modules/guidance.py:130-130; mcp/src/agents_remember/worktrees/modules/guidance.py:10-10 |
 | Worktree status projects invalid-contract errors onto the payload. | `worktree_status_packet`; `status_payload` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
-| Published workflow kinds and session-status docstrings. | `worktree_start`; `spawn_agent_session`; `session_retire`; `session_rename` | mcp/src/agents_remember/mcp/registration/sessions.py:57-137; mcp/src/agents_remember/mcp/registration/sessions.py:158-181; mcp/src/agents_remember/mcp/registration/sessions.py:183-191; mcp/src/agents_remember/mcp/registration/worktrees.py:28-86 |
+| Published workflow kind and structural agent-session tool docstrings. | `worktree_start`; `dispatch_agent`; `retire_child`; `rename_child`; `rename_self` | mcp/src/agents_remember/mcp/registration/worktrees.py:29-86; mcp/src/agents_remember/mcp/registration/sessions.py:27-86 |
 | Session response vocabularies. | `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:78-120; mcp/src/agents_remember/models/terminal.py:160-176; mcp/src/agents_remember/models/terminal.py:186-197 |
 | Terminal refusal builders and payloads. | `_spawn_refusal`; `_knob_refusal`; `_retire_payload`; `_rename_payload` | mcp/src/agents_remember/application/terminal_tools.py:452-470; mcp/src/agents_remember/application/terminal_tools.py:928-953; mcp/src/agents_remember/application/terminal_tools.py:973-1008; mcp/src/agents_remember/application/terminal_tools.py:1145-1166 |
 | Leaf-reference refusal statuses. | `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66 |
 | Git facts, freshness, onboarding-read, and drift-status producers. | `git_facts_to_packet`; `freshness_to_packet`; `_resolve_onboarding`; `run_drift_summary` | mcp/src/agents_remember/application/read_files.py:209-238; mcp/src/agents_remember/kernel/git_facts.py:104-115; mcp/src/agents_remember/kernel/git_freshness.py:158-169; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
 | Invalid-contract start result. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
-| The suite's own producer scan and behavioural test classes. | `ProducedLiteralTests`; "class AdvertisedVocabularyTests(unittest.TestCase):"; `GuidanceWalkTests`; `RecoveryGuidanceTests`; "class ContractBoundaryTests(unittest.TestCase):"; `ProducerWireCrossingTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:230-294; mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:45-45; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:106-141; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:144-144; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:447-474 |
+| The suite's own producer scan and behavioural test classes. | "class GuidanceWalkTests(unittest.TestCase):"; "class ProducedLiteralTests(unittest.TestCase):"; "class AdvertisedVocabularyTests(unittest.TestCase):"; "class RecoveryGuidanceTests(unittest.TestCase):"; "class ContractBoundaryTests(unittest.TestCase):"; "class ProducerWireCrossingTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:230-294; mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-819; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:43-43; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:115-150; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:153-153; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:456-483 |
 
 ## Cross-Repo References
 
@@ -255,6 +252,10 @@ and docstring this suite reads lives in `mcp/src/agents_remember/`.
 | No meaningful cross-repo references found — the whole import surface is same-repository. | `ProducerWireCrossingTests` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:447-474 |
 
 ## Update History
+
+- 2026-08-11T14:29+02:00 — Re-read the structural session tool declarations and widened the
+  session-registration range to include the decorated `dispatch_agent` declaration; verification
+  metadata remains unchanged for governed closeout.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-04T09:54:46+02:00 — 260731-EFA-L6 S18-B07 second bounded correction: made package traversal, exemption branches, readable-expression behavior, base dictionaries, and the bounded history citations checker-visible; same-reviewer delta pending.

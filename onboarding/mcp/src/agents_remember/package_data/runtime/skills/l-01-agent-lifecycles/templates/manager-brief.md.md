@@ -6,70 +6,40 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`                                  |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                  |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 ## Purpose
 
-The manager dispatch packet — the "ninth template" the adversarial review demanded (AR-12): the
-orchestrator compiles a manager's entire session start from this shape, ending the
-manager-dispatch folklore the same way worker-brief.md ended the worker's. It carries the ONE
-load-bearing base fact only the orchestrator's own file used to state: the manager's master
-integration branch bases off the **current super branch** (with the super-tip commit written in as
-the reconciliation anchor), never off main.
+Packaged runtime copy of the complete manager dispatch brief. The canonical
+`skills/l-01-agent-lifecycles/templates/manager-brief.md` owns the packet; the sync process installs
+this exact artifact.
 
 ## Code Commentary
 
 ### Logic
 
-**260707-HFX2-L15 reviewer N7 current-source debt.** The source brief still says hosted delivery is
-counted from a post-boot echo. L15's current runtime accepts the unique id only from the bound
-harness log; a future doctrine edit must align this template without reviving screen predicates.
-This note documents the mismatch on the unchanged source.
+The orchestrator calls `dispatch_agent` with the canonical master document, role `manager`, and this
+complete brief. The manager dispatches worker/reviewer/curator children on canonical leaf or review
+documents, never handles their occupant ids, and closes a leaf only after builder code, reviewer
+verdict, and curator coherence exist. Master handover raises the structural gate from ambient master
+identity; the orchestrator later decides the one matching open gate by master document and kind.
 
-Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
-`skills/l-01-agent-lifecycles/templates/manager-brief.md`. Opens with the canonical `ROLE BRIEF —
-manager` header line (the router's condition-2 recognizer). Placeholder slots: the master + its
-leaf list with dependency notes; orchestrator-compiled trust facts (no checkpoint re-run); the
-branch base block (master branch off the CURRENT super @ tip); dispatch defaults (worker-brief
-template, `AR_SPAWN_ROLE=worker`, pair claims from environment role plus qualified leaf keys, the
-manager -> builder -> reviewer -> curator leaf closeout chain, fresh curator spawns with
-`AR_SPAWN_ROLE=curator` on the curator `(leaf, role)` pair, concurrency,
-and — **260707-HFX-L7** — a one-line "Provider degradation:" bullet); the exit block (spawn the
-reviewer with `AR_SPAWN_ROLE=reviewer`, RAISE `master-handover-approval` with the verdict attached
-— the ORCHESTRATOR decides; escalation to the orchestrator, never the developer; the human-pinned
-kinds named); the report obligations (master-handover packet, leaf-review notes, decision-log
-entries per delegated gate and reopen). Compiler notes bind the orchestrator: fill every
-placeholder, state the super-tip anchor, echo-confirmed paste delivery.
+### Conventions
 
-**260707-HFX-L7 (provider degradation protocol):** the dispatch-defaults bullet list gains one new
-bullet — "Provider degradation: on `messageKind="degradation-alert"`, do not start provider setup,
-provider watchers, watcher restarts, or `retry_provider_setup` until an all-clear. Managers have no
-provider kill authority; provider stops and fixes route through the orchestrator and
-system-specialist." — placed after the existing curator-spawn bullet and before the concurrency
-bullet. This is the SAME rule `roles/manager.md`'s new "Provider Degradation Alert" subsection
-states in full; the template only needs the compact one-liner because the orchestrator compiling
-this brief is telling a freshly-dispatched manager what to do, not re-deriving the doctrine — the
-manager's own role file remains the authoritative source the brief's line summarizes. No other
-brief section (branch base, exit block, report obligations) changed for this addition.
+Fill every placeholder, retain the current-super branch anchor, include existing/ruled/current
+memory intent inputs for the curator, and synchronize only from the canonical template.
 
-As of cycle 5: the exit block states the wait=false raise and the gateId-in-packet hand-off. Cycle 6: the raise call carries `enclosure="<master task name>"` (the integration guard's address), the exit block adds the all-human conditional (the raise blocks; do not pass wait=false), and "The master" block gains a planner-master path slot (`<path or n/a (flat run)>`), resolving the planner-master reach for a seat that must not read orchestrator.md. Cycle 7: the exit block pins the address to the EXACT master task name as the contracts carry it and states that the raise refuses without one (AR4-1c).
+### Invariants And Boundaries
 
-As of 260707-HFX-L11 (curator activation, R1/R4) the "Dispatch defaults" section's curator lines
-were rewritten: the leaf closeout chain line now adds "— never before the curator pass exists"; the
-curator-spawn line now points at `../templates/curator-brief.md` (not just `roles/curator.md`) and
-states explicitly what the brief FEEDS — the landed change set (leaf contract's base-to-head
-range) + the leaf task doc + notes/ — and that the curator routes each piece to the right onboarding
-home (specific sidecar or governing overview; L3 Operational-Notes last-resort only) before writing
-onboarding.
+- The brief addresses `(master document, manager)`, not a qualified leaf key or runtime id.
+- Child retirement uses `retire_child` by leaf document and role.
+- Gate authority and initial brief delivery remain control-plane-owned.
+- This packaged artifact must remain byte-identical to the canonical template.
 
-As of 260805-ARG-L1, the Dispatch-default cleanup line says `worktree_integrate` auto-closes each
-worker/reviewer/curator only after its exact-leaf turn report is durable. Reports/transcripts
-survive; missing reports defer; manager/orchestrator are excluded. Setting
-`retirement.autoCloseCompletedSeats=false` restores the previous landed/archive behavior.
-This is placed in Dispatch defaults (not the exit block) because the cleanup automation rides the
-per-leaf integrate edge, the same section that already documents the worker-brief/AR_SPAWN_ROLE/
-qualified-leaf-key/curator-chain dispatch defaults.
+### Todos
+
+None recorded.
 
 ## Cross-Repo Evidence
 
@@ -91,6 +61,7 @@ passed.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `manager-brief.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-10T05:45+02:00 — 260805-ARG-L1: synced the manager brief's completion cleanup contract
   to exact report ordering, all three leaf-altitude roles, owner exclusion, and the landed opt-out.
   Verification metadata remains pinned until closeout stamps ARG-L1.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agent_notifier_ladder.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T06:48+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -16,65 +16,39 @@
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_agent_notifier_ladder.py`'s source module; covers the behaviours named by its test classes.
+Regression suite for notifier escalation, replacement, expiry, and bounded sweep behavior under plane-owned seat identity.
 
 ## Code Commentary
 
-- `EscalationPredicateTests`
-- `DeadUpstreamPredicateTests`
-- `LadderWalkIntegrationTests`
-- `Cs6SweepScalingTests`
+### Logic
 
-### 260713-TES-L2 Fixture Kind Swap
+The tests prove dead-upstream detection from structural provenance; durable dispatch rows do not rebind; manager replacement preserves the worker through canonical task-document/role routing; grace expiry reaches the architect mailbox; landed seats remain terminal; repeated sweeps, cooldowns, budgets, and restart reconciliation reach bounded fixed points.
 
-`Cs6SweepScalingTests` now seeds an overdue `ack-by` expectation row instead of `briefed-by`.
-The swap keeps the scaling fixture on a kind that still drives expectation findings after the
-worker→manager predicate retirement (260713-TES-L2): `briefed-by` rows remain dashboard
-provenance but no longer fire `expectation-overdue`, while `ack-by` still exercises the
-overdue→nudge→ladder path the CS-6 ceiling asserts. The bounded fixed-point ceiling semantics
-the class pins are unchanged.
+### Conventions
 
-### 260713-TES-L4 Ladder Retirement And Terminal-Honesty Tests
+Test-only evidence uses deterministic fakes/fixtures and exercises the public or owning internal seam directly.
 
-`LadderWalkIntegrationTests` converted the rung-climb fixtures to the N3/N16 terminal truth:
-`test_silent_live_seat_reaches_unresolved_after_attempt_ceiling` drives
-`PERSISTENT_FAILURE_ATTEMPTS` sweeps and asserts `state="unresolved"`/`terminalReason=
-"attempt-limit"` with delivery evidence intact and NO `orchestration.escalation.rung` event;
-`test_landed_row_produces_no_retry_nudge_or_escalation_ever` pins the N16 regression across
-repeated sweeps; `test_relay_restart_reconciles_by_request_id_without_duplicate_submission`
-proves the same correlated request is never resubmitted and lands at the next boundary;
-`test_delivered_dispatch_never_rebinds` pins dispatch-brief exact-pinning even against a dead
-addressee; `test_dead_manager_row_rebinds_to_replacement_within_grace` and
-`test_dead_manager_without_replacement_expires_to_architect_mailbox` pin the N14/N2/N3 rebind
-and grace-expiry paths (rebind clears correlation and resets attempts; expiry readdresses the
-marker to the role-only architect mailbox). `Cs6SweepScalingTests` swaps its overdue fixture to
-`verdict-by` and replaces the escalation-budget cap test with
-`test_dead_seat_expiry_emission_is_exactly_one_per_row_per_sweep` (linear, level-triggered, and
-terminal on the next sweep).
+### Invariants And Boundaries
 
-## Invariants And Boundaries
+Notifier actions must use durable task/role evidence, never a guessed occupant address; duplicate findings cannot duplicate rebind, delivery, or expiry effects.
 
-- The card mirrors the source file one-to-one at `mcp/tests/test_agent_notifier_ladder.py`.
+## Docs References
+
+No Domain Documentation source is configured for this repository-local regression contract.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| Current suite declaration anchoring this card. | `DeadUpstreamPredicateTests` | mcp/tests/test_agent_notifier_ladder.py:121-121 |
 
-## 260713-TES-L5 Current Delta — Escalation Predicates Gone, Fixed-Point Via Grace
+## Cross-Repo References
 
-`EscalationPredicateTests` is deleted; `DeadUpstreamPredicateTests`/`InactivityChainProgressTests`
-remain (the dead-upstream grandparent signal is one-hop provenance, not a ladder walk).
-`LadderWalkIntegrationTests`'s absent-developer quiescence probe now resolves every seeded row
-terminal via the rebind-grace expiry (`expired`) with no `orchestration.escalation.rung`
-events, and `Cs6SweepScalingTests` adds `test_owner_signal_emissions_are_load_shed_by_escalation_budget`
-(the preserved `escalationBudget` caps seat-liveness signal emissions per sweep) plus the
-zero-findings expectation-compaction read test. The nudge store and escalation context knobs
-are gone from every harness.
+No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `test_agent_notifier_ladder.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the current staged ladder-demolition and agent-notifier assertions; the existing test card remains accurate. Verification metadata remains pinned until closeout.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the escalation-predicate
   demolition, the grace-path fixed-point conversion, and the new `escalationBudget`

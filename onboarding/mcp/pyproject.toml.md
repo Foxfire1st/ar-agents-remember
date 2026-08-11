@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T04:28+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-11T23:56+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -43,7 +43,10 @@ loudly to fixed-interval ticking when it is missing, so the dep is core for the 
 behaviour, not for the daemon to run at all. The webstack is a **core** dependency (not an optional
 extra) so `agents-remember dashboard` works on a plain install. Development-only
 quality tools live under the `dev` optional dependency group: Coverage.py, httpx
-(the FastAPI `TestClient` backend), pytest, pytest-cov, Pyright, Radon, and Ruff.
+(the FastAPI `TestClient` backend), pytest, pytest-cov, pytest-xdist, Pyright, Radon, and Ruff.
+The xdist range is deliberately bounded to major version 3 because root pytest `addopts` owns
+`-n=auto`; the dependency supplies that executor while the root configuration governs raw and
+wrapped pytest uniformly.
 
 Two console scripts are declared: the umbrella `agents-remember`
 (`agents_remember.cli.__main__:main`, the front door for subcommands such as
@@ -133,6 +136,7 @@ the source rather than being repeated here; it is the same string
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | "Ruff, Ruff format, file size, Pyright, pytest, CRAP, and changed-lines coverage enforce.", `quality_steps` | mcp/src/agents_remember/code_quality/check.py:3-3; mcp/src/agents_remember/code_quality/check.py:248-293 |
+| The development extra supplies pytest-xdist for the root configuration's mandatory automatic worker selection. | "pytest-xdist>=3,<4"; "-n=auto" | mcp/pyproject.toml:56-66; pyproject.toml:110-130 |
 | Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:25-26 |
 | CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | `crap_score`, "radon.complexity" | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:234-234 |
 | The MCP console entry point resolves through `agents_remember.mcp.__main__`. | "from .server import main" | mcp/src/agents_remember/mcp/__main__.py:5-5 |
@@ -147,6 +151,14 @@ the source rather than being repeated here; it is the same string
 | The interpreter matrix the classifiers claim support for is the one the gate workflow runs. | "3.11" | .github/workflows/quality-checks.yml:27-27 |
 
 ## Update History
+
+- 2026-08-12T00:20+02:00 — Corrected execution ownership: the development extra supplies
+  pytest-xdist, while root pytest `addopts` owns the `-n=auto` default. Verification metadata
+  remains pinned until closeout.
+
+- 2026-08-11T23:56+02:00 — Added pytest-xdist to the development quality-tool boundary because
+  the repository-owned pytest rail now runs with automatic worker selection. Verification metadata
+  remains pinned until closeout stamps the code commit.
 
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-03T02:52:34+02:00 — W3-B04 curator: curated 12 table citations (12 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
@@ -215,5 +227,3 @@ the source rather than being repeated here; it is the same string
 - 2026-05-28T19:52+02:00: Updated after Pydantic and tiktoken became MCP runtime dependencies and Pyright joined the dev quality dependency group.
 - 2026-05-28T15:43+02:00: Updated while preparing MCP package release `0.2.0`, documenting package/server version alignment, and wiring the dedicated MCP README into package metadata. Verification metadata remains pinned until closeout commits the source change.
 - 2026-05-24T06:43+02:00: Created after the MCP package gained explicit development dependencies for the source quality suite.
-
-

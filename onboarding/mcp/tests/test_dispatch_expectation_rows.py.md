@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_dispatch_expectation_rows.py`             |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -16,97 +16,39 @@
 
 ## Purpose
 
-R2 (260707-HFX2-L1) regression: proves every named dispatch surface — spawn, gate open, signal
-post — writes its durable `ExpectationRowStore` row in the SAME call as the dispatch itself, and
-that the matching fulfillment call marks that same row `met`, never leaving the write as a
-forgettable follow-up step.
+Regression suite for expectation-row creation and completion at spawn, gate, and inbox boundaries.
 
 ## Code Commentary
 
-### 260714-ACPUI-L2 Complete Role Fixture
-
-The spawn expectation-row fixture now writes a complete native Claude role selection
-(`harness`, `model`, and `effort`) into the temporary settings authority. This keeps the test on the
-real role-dispatch path after L2's structural preflight without changing its subject: spawning a
-seat still starts no assignment clocks until a separate durable brief is dispatched.
-
-### 260707-HFX2-L23 Seat-Scoped Dispatch Rows
-
-Spawn expectation assertions now include the derived seat role, proving brief and turn-report
-deadlines retain the same leaf-role subject as the spawned catalog row.
-
 ### Logic
 
-`SpawnExpectationRowTests` drives the real `spawn_agent_session_payload` through
-`test_spawn_agent_session`'s `call_spawn(config, **flat)` shim — the shim packs flat keywords into
-the builder's `SpawnSeat`/`RetiredSpawnInputs`/`SpawnedBy`/`SpawnOverrides` parameter objects, so
-these call sites keep reading as one spawn request — and reuses the same module's
-`_FakeHost`/`_FakePaster` fakes. Against a leaf-attached spawn it asserts
-`ExpectationRowStore(...).pending()` holds exactly a `briefed-by` and a `turn-report-by`
-row, both stamped with the spawned session id as `sourceId`; a bare command chat with no
-`leaf_key` gets only the `briefed-by` row (no leaf to report back into). `GateExpectationRowTests`
-drives `gate_tools.gate_create_payload(kind=…, anchor=GateAnchor(lifecycle_id=…))` and asserts it
-wrote a single `verdict-by` row keyed to the new gate's id, then drives
-`gate_tools.gate_decide_payload(..., verdict=GateVerdict(decision, by, via))` on that gate and
-asserts the matching row's `.current()` state flips to `met`. `InboxExpectationRowTests` mirrors
-the same shape for the inbox: `operator_inbox_post_payload`, now addressed through
-`InboxAddress`/`InboxMessage`/`InboxPoster` plus `delivery=HostedDelivery(enabled=False)`, writes
-a single `ack-by` row keyed to the posted entry id, and `operator_inbox_consume_payload` flips it
-to `met`. Every test reads the store directly (`ExpectationRowStore(observer_root(self.config))`)
-rather than through the observer projection, matching R5's surfacing-only split (the store is the
-correctness source, the projection is display-only).
+Spawn alone starts no assignment clocks, including a task-document-bound worker and a bare command chat. Gate creation/decision owns `verdict-by`; inbox post/consume no longer creates or meets an acknowledgement clock.
 
 ### Conventions
 
-Same `tempfile.mkdtemp()` + `McpRuntimeConfig` harness pattern as the other MCP tool payload-level
-test modules; `SpawnExpectationRowTests` additionally seeds a real master/leaf task-document pair
-via `write_task_doc` because `spawn_agent_session_payload`'s leaf-attach path resolves the leaf
-through the task-document store, and resets the observer ambient singleton in `setUp`/`tearDown`
-so tests do not leak lifecycle state across cases.
+Test-only evidence uses deterministic fakes/fixtures and exercises the public or owning internal seam directly.
 
 ### Invariants And Boundaries
 
-- These are payload-builder-level regressions, not unit tests of `expectation_rows.py` itself
-  (see `test_expectation_rows.py` for the store/settings unit coverage) — they exist specifically
-  to catch a dispatch surface that writes its row as a separate, droppable step instead of inside
-  the same call.
-- A bare command-chat spawn (no `leaf_key`) intentionally gets no `turn-report-by` row; asserting
-  otherwise would be a false regression.
-
-### Todos
-
-None.
+Assignment expectations begin only when work is structurally dispatched, not when an occupant is merely spawned or catalog-bound.
 
 ## Docs References
 
-No meaningful external design-doc references found yet (created this leaf).
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| None. | N/A | N/A |
+No Domain Documentation source is configured for this repository-local regression contract.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Spawn writes `briefed-by` (+ `turn-report-by` when leaf-attached) atomically with the dispatch. | `SpawnExpectationRowTests` | mcp/tests/test_dispatch_expectation_rows.py:85-135 |
-| Gate create writes a `verdict-by` row; gate decide meets it. | `GateExpectationRowTests` | mcp/tests/test_dispatch_expectation_rows.py:138-169 |
-| Inbox post writes an `ack-by` row; consume meets it. | `InboxExpectationRowTests` | mcp/tests/test_dispatch_expectation_rows.py:172-207 |
+| Current suite declaration anchoring this card. | `SpawnExpectationRowTests` | mcp/tests/test_dispatch_expectation_rows.py:88-88 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references found.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| None. | N/A | N/A |
-
-## 260712-TRH-L4 Final Candidate
-
-This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `test_dispatch_expectation_rows.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 3 citation claims; scoped recheck clean (0 findings).

@@ -6,8 +6,8 @@
 | path | mcp/src/agents_remember/serving/agent_notifier_models.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
@@ -16,7 +16,9 @@ Governing overview: mcp/src/agents_remember/serving/overview.md
 
 ## Purpose
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+Defines the immutable notifier finding/action/result records and the injected sweep context shared
+by notifier evaluation and action modules. Findings carry canonical task-document identity when
+they refer to a qualified seat.
 
 ## Code Commentary
 
@@ -59,11 +61,15 @@ in `_agent_notifier_actions.py`.
 
 ### Logic
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+`AgentNotifierFinding` carries kind, subject session, optional `TaskDocumentRef`, seat role, timing,
+and detail without deciding the action. `AgentNotifierContext` owns injected stores, clocks, and
+host/catalog seams; `SweepState` freezes one bounded sweep snapshot.
 
 ### Invariants And Boundaries
 
-Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization outputs. Dispatch proof remains exact-session and fail-closed.
+- A finding's task identity is a structured `TaskDocumentRef`; consumers must not infer a leaf key.
+- These records describe evidence and planned actions. Evaluators choose findings and action
+  modules perform effects.
 
 ## Docs References
 
@@ -90,6 +96,8 @@ verification metadata stays pinned to the pre-commit source history until closeo
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Replaced generic lifecycle prose and the leaf-key finding field with the
+  notifier model's actual task-document identity and evaluation/action boundary.
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the current staged agent-notifier model vocabulary and rename seam; the sidecar remains accurate. Verification metadata remains pinned until closeout.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the fact-only vocabulary —
   expectation/ladder finding and action kinds removed, nudge-store/escalation-knob fields

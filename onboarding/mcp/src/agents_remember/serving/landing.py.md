@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/landing.py`            |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                           |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-11T10:20+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                           |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -16,61 +16,47 @@
 
 ## Purpose
 
-`landing.py` owns the non-destructive completion classification for dashboard seats. It marks matching
-catalog rows as `status:"landed"` after successful worktree integration/finalization so spent chats roll
-into the dashboard archive while tmux remains available for inspection.
+Marks all non-terminated occupants of selected roles on one canonical task document as landed while
+leaving their hosted transcript/process inspectable.
 
 ## Code Commentary
 
-### 260707-HFX2-L16 Binding-Role Landing Filter
-
-Completion-edge seat selection now matches the current binding role rather than immutable spawn
-provenance. Rebound or hand-opened typed pipeline seats therefore land with their actual leaf role;
-landing status/provenance and tmux-preservation behavior are unchanged.
-
 ### Logic
 
-The domain function cit:([`land_seats_for_leaf`], mcp/src/agents_remember/serving/landing.py:9-28)
-receives a `SeatClosure` plus the leaf key and role set. It scans visible catalog rows, selects rows
-whose `leaf_key` matches and whose `binding_role` is in that role set, and calls
-`TerminalCatalog.mark_landed` with the closure's `at`, `reason`, and `edge` for each selected row. It
-returns the changed entries so application entry points can report session ids and emit observer events.
+`land_seats_for_task` scans catalog rows, matches exact task-document identity and role, skips
+terminated occupants, and delegates the landing transition for each match.
 
-This module never constructs `TerminalHost` and never kills tmux. Since ARG-L1 it is the explicit
-`autoCloseCompletedSeats=false` compatibility path and still handles pre-flip archive rows; normal
-default completion uses exact-report-gated retirement instead.
+### Conventions
+
+Callers supply the real task document resolved from governed closeout/finalization context.
 
 ### Invariants And Boundaries
 
-- Landing is leaf-key scoped and role-filtered by the caller.
-- Landing skips rows already `terminated`; `TerminalCatalog.mark_landed` owns the exact idempotence and
-  transition rules.
-- This module has no authority-policy check; it is called from completion edges that already succeeded.
-  Manual retire authority remains in `retire.py`/`retire_policy.py`.
+- Landing is document-and-role scoped, never leaf-key parsed.
+- Landed seats remain inspectable and are distinct from explicit retirement.
+- Unrelated roles on the same document remain unchanged.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Completion cleanup calls `land_seats_for_leaf` only in the close opt-out branch. | "landed = land_seats_for_leaf(" | mcp/src/agents_remember/application/completion_cleanup.py:51-56 |
-| The same compatibility branch logs every landed catalog entry. | "log_landed_event(config, entry)" | mcp/src/agents_remember/application/completion_cleanup.py:57-59 |
-| The catalog status transition and landing provenance fields live in `TerminalCatalog`. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:48-386 |
-| Manual retire remains the destructive/session-closing path. | `SeatClosure`; `retire_entry` | mcp/src/agents_remember/serving/retire.py:21-34; mcp/src/agents_remember/serving/retire.py:37-71 |
-| Tests cover leaf/role selection, opt-out end-to-end landing, and retained archive cleanup behavior. | `AutoLandHookIntegrationTests`; `LandSeatsForLeafTests` | mcp/tests/test_seat_lifecycle.py:593-869 |
+| Landing matches canonical document and explicit role set. | `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32 |
 
-## 260731-EFA-L2 Current Delta
+## Cross-Repo References
 
-Landing currently passes `SeatClosure.at`, `SeatClosure.reason`, and `SeatClosure.edge` to
-`TerminalCatalog.mark_landed`; retirement persists those facts plus `SeatClosure.by_session`, while
-the landing transition does not persist `by_session`. The `SeatClosure` documentation says both
-closure paths write four facts, so whether landing should gain that authority provenance or the claim
-should be narrowed remains an explicit Tier-3 developer-owned question. The landing selection rules
-remain leaf-key and binding-role scoped.
-
-This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+No cross-repository implementation dependency governs this file.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current serving card for `landing.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-10T05:45+02:00 — 260805-ARG-L1: repositioned landing as the settings opt-out and
   pre-flip archive compatibility path; the domain mechanic itself is unchanged.
@@ -89,4 +75,3 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 - 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): created for the new
   non-destructive completion classification. Verification metadata remains pinned until closeout stamps
   the HFX2-L11 commit.
-

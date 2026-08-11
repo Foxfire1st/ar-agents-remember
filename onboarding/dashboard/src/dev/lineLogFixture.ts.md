@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/lineLogFixture.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:42+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ dev surfaces.
 | The socket-factory context type this plugs into. | `TerminalSocketFactory` | dashboard/src/data/terminal.ts:46-46 |
 | The bench consuming the firehose factory + stream lines (serialize probe fill). | `PtyRenderBench` | dashboard/src/dev/PtyRenderBench.tsx:83-164 |
 | The pre-existing generic dev echo socket this complements (Chats bench). | `MockTerminalSocket`; `createMockTerminalSocketFactory` | dashboard/src/dev/mockTerminalSocket.ts:11-56; dashboard/src/dev/mockTerminalSocket.ts:58-63 |
-| The honesty hint whose trap the `send` echo models. | `INTERACTION_HONESTY_HINT` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:72-73 |
+| The honesty hint whose trap the `send` echo models. | `INTERACTION_HONESTY_HINT` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:71-72 |
 
 ## Update History
 

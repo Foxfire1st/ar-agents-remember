@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/inflight.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-24T13:17:50Z |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
+| lastUpdated | 2026-08-11T15:20+02:00 |
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ No Domain Documentation entries are configured in this memory worktree's source 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The map shares a pending promise and releases it by identity on settle. | `shareInflight` | dashboard/src/data/inflight.ts:21-30 |
-| Repository and terminal catalogs use the helper for boot contention. | `shareInflight` | dashboard/src/data/files.ts:108-111; dashboard/src/data/terminal.ts:368-387 |
+| Repository and terminal catalogs use the helper for boot contention. | "export const fetchRepos = (base"; "export async function fetchTerminalSessionsOrNull(base" | dashboard/src/data/files.ts:108-111; dashboard/src/data/terminal.ts:413-430 |
 
 ## Cross-Repo References
 
@@ -63,6 +63,8 @@ No meaningful cross-repository references found.
 
 ## Update History
 
+- 2026-08-11T15:20+02:00 — Re-anchored both catalog consumers to their unique keyed
+  `shareInflight` calls and refreshed the terminal consumer's moved range.
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 3 citation rows to plain
   sources with `shareInflight` anchors (inflight.ts 15-30) and added the terminal catalog range
   (terminal.ts 368-387) beside files.ts 108-111 so the repository+terminal claim carries both

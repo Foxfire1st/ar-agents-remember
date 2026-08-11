@@ -6,38 +6,38 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash | `a3e43cb0877c18b9d2b0e6ada4eb5719a01f251f` |
-| lastVerifiedCommitDate | 2026-08-06T05:49:07+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 ## Purpose
 
-This template is the **onboarding-vs-code** report of the `l-01-agent-lifecycles` report-template library. A fan-out sub-agent writes it for the **adversarial reviewer's** third lens and for the **orchestrator's** memory-quality checks — the paired `read_ar_files` + `memory_quality_check` + `drift_check` review made durable, since **orchestrator quality ∝ memory-repo quality**.
+Packaged runtime copy of the onboarding-versus-code coherence report template. The canonical
+template owns the review shape; the skill sync process publishes this exact artifact.
 
 ## Code Commentary
 
 ### Logic
 
-The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/templates/onboarding-coherency.md`. It carries a prose header naming its consumers and the paired-check basis, a numbered **Rules** block, and a fenced **Shape**: a metadata table (for / author / scope / written) followed by a *Changed Files — Sidecar Refresh* table, a *New Files — Missing Onboarding* table, a *Drift & Quality* section (`drift_check`, `memory_quality_check`, ledger-maps-HEAD), an *Overviews* section, and a *Bottom Line* that frames gaps as candidate fix leaves.
+The report compares current code, existing onboarding/entity intent, and ruled task/design intent.
+It inventories changed sidecars, missing onboarding, route overviews/indexes, drift, and full memory
+quality. The author field names the analysis role or bounded fan-out label, not a runtime sub-agent
+id.
 
 ### Conventions
 
-The report checks that every **changed** source file has its sidecar body updated **in the same pass** (a refreshed `lastVerifiedCommitHash` over stale content silently defeats the drift check and is itself a finding), that every **new** source file has a created sidecar (`check_missing_onboarding` clean), and that route/repository overviews reflect the change set including moved/added/deleted slices.
+Changed source sidecars and their nearest governing routes need a substantive current-body update
+plus newest-first history, or a specific sanctioned no-impact attestation after review. Missing
+onboarding and curator-actionable quality findings must reach zero before handoff.
 
 ### Invariants And Boundaries
 
-This is a **report**; the reviewer's verdict or the orchestrator's main loop acts on it — the report does not decide or mutate. A moved/added/deleted slice must be reflected in the governing overview, and a stale overview or an unrefreshed sidecar body is a finding surfaced as a candidate fix leaf.
+- Verification hashes and entity fingerprints remain real-commit-derived.
+- The report is evidence; it neither stamps metadata nor performs closeout.
+- This packaged artifact must remain byte-identical to the canonical template.
 
 ### Todos
 
-No TODO markers are present in this report template.
-
-### Docs References
-
-No external domain documentation applies to this repository-local report template.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+None recorded.
 
 ## Repo-Internal References
 
@@ -60,6 +60,7 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `onboarding-coherency.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 4 citation items; scoped citation check now passes.
 
 - 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed under l-01-agent-lifecycles/templates/ (content unchanged). Verification metadata pinned until closeout stamps the L9 commit.

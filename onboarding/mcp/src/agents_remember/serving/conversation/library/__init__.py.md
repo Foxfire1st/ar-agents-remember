@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sibling router reserves the harness-native conversation-library prefix. | "/api/harnesses/{harness_id}/conversations" | mcp/src/agents_remember/serving/conversation/library/api.py:65-65 |
+| The sibling router reserves the harness-native conversation-library prefix. | "/api/harnesses/{harness_id}/conversations" | mcp/src/agents_remember/serving/conversation/library/api.py:66-66 |
 
 ## Cross-Repo References
 

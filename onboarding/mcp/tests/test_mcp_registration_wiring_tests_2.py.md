@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_mcp_registration_wiring_tests_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T06:48+02:00                                            |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`                                        |
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -16,31 +16,39 @@
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_mcp_registration_wiring_tests_2.py`'s source module; covers the behaviours named by its test classes.
+Registration wiring suite for worktree, task-document, lifecycle, and structural gate tools.
 
 ## Code Commentary
 
-- `RegistrationWiringTests2`
+### Logic
 
-### 260713-TES-L4 Poll And Supersede Wiring
+The suite pins closeout message grouping, task-document edit/read shapes, ambient lifecycle signals, structural lifecycle-gate raise, and `gate_decide` by canonical document plus kind without a gate id.
 
-`test_operator_inbox_poll_*` now asserts the `include_terminal: False` default is forwarded to
-the application poll (N11), and `test_operator_inbox_supersede_forwards_entry_reason_and_
-attribution` pins the new declaration: `operator_inbox_supersede` forwards
-`entry_id`/`reason`/`superseded_by` to the payload builder (R11).
+### Conventions
 
-## Invariants And Boundaries
+Test-only evidence uses deterministic fakes/fixtures and exercises the registered or owning seam directly.
 
-- The card mirrors the source file one-to-one at `mcp/tests/test_mcp_registration_wiring_tests_2.py`.
+### Invariants And Boundaries
+
+Registration must not reintroduce exact gate, lifecycle, or occupant addressing; application composition owns authority and refusal.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository-local regression contract.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| Current suite declaration anchoring this card. | `RegistrationWiringTests2` | mcp/tests/test_mcp_registration_wiring_tests_2.py:6-6 |
+
+## Cross-Repo References
+
+No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `test_mcp_registration_wiring_tests_2.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the `include_terminal` poll kwarg
   pin (N11) and the `operator_inbox_supersede` wiring test (R11). Verification metadata pinned
   until closeout stamps the 260713-TES-L4 commit.

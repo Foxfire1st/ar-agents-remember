@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -16,93 +16,34 @@
 
 ## Purpose
 
-This is the portable **strategist** role file the `l-01-agent-lifecycles` frame houses at the
-portfolio tier — the SPRINT PLANNER. This seat runs only after the developer approves the
-architect's propose-first strategist question. Like
-every role file it carries both axes in one file — the **role** (verify the in-flight master set is
-coherent, resolve dependency chains, establish blast radius, shuffle leaves, deliver the
-orchestration task) and the **lens** (mechanical phases with real tools; judgment phases with
-mandatory citations) — plus duties, artifact obligations, a comms protocol, and a knob block. The
-central doctrine the card must protect: strategist dispatch is approval-gated, and once dispatched
-the strategist is a **reader, not a mutator** — it drafts the orchestration task as a notes
-artifact; the orchestrator adopts it. A developer-sanctioned skip uses the orchestrator-owned
-author-and-adopt path instead.
+Packaged runtime copy of the optional sprint-bound strategist lifecycle. The canonical
+`skills/l-01-agent-lifecycles/roles/strategist.md` owns doctrine; the sync process publishes this
+exact runtime artifact.
 
 ## Code Commentary
 
 ### Logic
 
-L13 review follow-up (L13R-1): the knob table's `harness` example is the registry id `claude` (was the non-id `claude-code`); spawn refuses non-registry values, so examples must model valid input.
-
-The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
-`skills/l-01-agent-lifecycles/roles/strategist.md`; it is model-interpreted markdown, never an
-executor. The body defines: the seat (**spawn-first by design** — portfolio analysis is
-token-heavy and must not burn the orchestrator's context; the designer's inline-hat precedent
-explicitly does NOT apply; spawned with `AR_SPAWN_ROLE=strategist`); the loop position (the
-portfolio three-party loop's BUILDER: owner = orchestrator, reviewer = the plan-review criteria
-catalog); the **eight-phase method** as the operating procedure — 1 inventory (JSON-primary task
-docs + series contracts + notes), 2 **two-sided touch-surface extraction** (existing surfaces map
-against the route map `onboarding/**/overview.md` + `overview.index.json`; NEW/greenfield surfaces
-map by DECLARATION — parent route + intended shape, the L9 `serving/notes.py` precedent;
-"unplannable as scoped" fires only when a leaf can name neither), 3 structural dependency analysis
-with `cgc_dependencies`/`cgc_callers`/`cgc_callees` + `grepai_search`/`grepai_trace` +
-`cgc_complexity` producing an evidence-cited EDGE LIST (ORDER / CONFLICT / INDEPENDENT; new-surface
-edges from declaration cross-reference), 4 cited semantic/doctrine edges (an uncited edge is
-refutable by default), 5 the blast-radius register (low/medium/high — the input to the owning
-seat's loop-tier scoring), 6 the cross-master coherence/contradiction sweep (directional
-contradictions are quo-vadis → developer), 7 topological ordering with leaf moves (from→to +
-rationale) and parallel waves, 8 the orchestration task with shown work. Six duties run brief
-intake → portfolio read → analysis → the orchestration task → drawing-board rounds (multi-round
-convergence expected; the drawing board IS this loop's escalation; 3-full-round cap) →
-adopted-plan handover (round 2, L12R-8: the artifact write is unconditional; the inbox is the
-delivery channel when the brief wires it, otherwise the final playback message carries the ref). Re-evaluation rules: an in-sprint master added before implementation starts
-re-plans; an out-of-sprint master waits for the next sprint.
-
-HFX-L6 keeps the strategist as the portfolio planner but routes developer-visible drawing-board
-feedback through the architect. The strategist is still spawned for backend portfolio planning,
-remains reader-not-mutator, and keeps role-seat immutability in dashboard-owned sessions.
+After developer approval, the architect may dispatch `(sprint document, strategist)`. The
+strategist is read-only: it analyzes portfolio dependencies and drafts the orchestration task,
+`message_parent` carries clarification or quo-vadis escalation to the architect, the architect rules
+the plan, and the orchestrator adopts it. The role never edits task docs, raises gates, mutates Git,
+or addresses an orchestrator occupant.
 
 ### Conventions
 
-Role + lens in one file (D10); a portable knob block (D7, highest-reasoning / high-effort — the
-sprint plan parameterizes every downstream loop) resolving role-file defaults <
-`settings.json orchestration.roles.strategist`. The brief carries **refs to durable portfolio
-state, never pasted state**. Comms ride the inbox (brief context in, artifact refs out) + stdin
-push for round feedback.
+Use cited evidence for dependency and coherence claims, preserve the draft/adoption boundary, and
+edit only the canonical role before synchronization.
 
 ### Invariants And Boundaries
 
-**READER, NOT MUTATOR.** The tool surface is stated positively: read-only AR retrieval
-(`read_ar_files`, `grepai_*`, `cgc_*`, `context_packet`, `drift_check`), native reads, native
-writes ONLY to the own draft artifact, inbox. No `task_doc`, no `worktree_*`, no `lifecycle_*`, no
-gates, no spawn, no git — a seat that never touches mutating AR tools never instantiates a
-lifecycle (the designed shape). The architect proposes this seat and the developer approves its
-dispatch; settings cannot auto-run it. Once running, the artifact write remains unconditional.
-Citation discipline binds the judgment phases: every claimed
-edge carries a citation, and thin leaf scopes become explicit "unplannable as scoped" findings,
-never silent guesses.
+- The strategist remains a sprint-bound reader, not a mutator or orchestrator child.
+- Durable artifacts, not runtime identity, carry the result across occupant replacement.
+- This packaged artifact must remain byte-identical to the canonical role.
 
 ### Todos
 
-No TODO is recorded for this role file. Wiring the orchestration task as a first-class
-dashboard/task-doc kind is deferred to the L14 hierarchy work (proven at the L15 pilot).
-
-### Docs References
-
-No external domain documentation applies to this repository-local orchestration role file.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
-
-### L16 Knob Additions
-
-260703-L16: the Knobs table gains the three FREE-FORM rows (`launchArgs` — verbatim harness argv;
-`sessionCommands` — lines pasted + submitted into the fresh session before the brief;
-`promptKeywords` — prepended as the first line of the dispatch brief paste; all settings-only,
-never validated, recorded in spawn provenance), and the knob footer now names the per-level
-override (`orchestration.rolesPerLevel.<level>.<role>`; role-file defaults < settings < level
-override) plus the `docs/reference/harnesses.md` spawn-knobs manual.
+None recorded.
 
 ## Repo-Internal References
 
@@ -130,6 +71,7 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `strategist.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 6 citation anchors across 5 reference claims; scoped recheck clean (0 findings).
 
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.

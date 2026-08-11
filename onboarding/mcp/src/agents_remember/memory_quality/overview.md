@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-07T14:30+02:00                     |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
+| lastUpdated            | 2026-08-11T14:58+02:00                     |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -31,6 +31,10 @@ check lives at `integrity/check_missing_onboarding.py`; update-history ordering 
 `history_order_fix.py` module is the explicit mutating script for timestamped
 history-order fixes. `style/document_shape/entity_catalog_alignment.py` owns the cheap,
 tree-only one-to-one check between root entity inventory entries and fingerprint rows.
+Contract-scoped application calls supply the leaf base as temporary provenance for unstamped
+dirty-tree claims; this is comparison input only and never a verification stamp.
+`curator_checklist.py` renders the full scoped result plus missing-onboarding, route-index, drift,
+and report-only detail into the enclosure's one atomically replaced curator worklist.
 
 ## Route Model
 
@@ -54,6 +58,9 @@ tree-only one-to-one check between root entity inventory entries and fingerprint
   (`DriftCheckResponse`) and `application/context_packet.py` all import from here now.
 - `integrity/check_missing_onboarding.py` checks only current worktree
   additions so newly added eligible files get sidecars before the code commit.
+- `curator_checklist.py` deterministically separates zeroable curator repairs from truthful
+  closeout-only provenance, renders every worklist class, and publishes one operational report
+  outside both Git worktrees.
 - `style/update_history/` checks that onboarding `## Update History` bullets
   are newest-first and timestamped, and contains the dedicated history-order
   fix script.
@@ -61,14 +68,18 @@ tree-only one-to-one check between root entity inventory entries and fingerprint
 ## Invariants And Boundaries
 
 - Task-start work should use `drift_check` to build the onboarding worklist.
-- Closeout should run `memory_quality_check` after onboarding refresh and before
-  the memory content commit.
+- Curator starts with the full contract-scoped `memory_quality_check`, uses its single enclosure
+  report as the combined missing-onboarding/quality/index/drift worklist, and reruns until
+  `curatorActionableCount` is zero before handoff.
+- Closeout creates the real code commit, refreshes commit-derived metadata once, and repeats the
+  full quality gate before the memory content commit.
 - Closeout should run `check_missing_onboarding` before the code commit when
   the task added source files; this is local worktree responsibility, not a
   whole-repository adoption scan.
 - Style checks should not block the beginning of normal implementation work.
-- `memory_quality_check` should stay diagnostic; mechanical style rewrites
-  belong in focused fix scripts.
+- `memory_quality_check` must not mutate code or memory. Its full leaf-scoped operational report
+  is an atomic overwrite outside both Git worktrees; mechanical style rewrites still belong in
+  focused fix scripts.
 - New memory-quality checks should be placed under `style/` or `integrity/`
   according to what they validate.
 - **A status this route can emit is declared here, once, and imported by every wire model that
@@ -90,12 +101,13 @@ tree-only one-to-one check between root entity inventory entries and fingerprint
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point builds drift context and calls the package runner for `memory_quality_check`. | "def memory_quality_check_tool" | mcp/src/agents_remember/application/memory_tools.py:197-197 |
+| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | "def memory_quality_check_tool("; "unstamped_code_commit=scope.unstamped_code_commit" | mcp/src/agents_remember/application/memory_tools.py:217-292 |
 | Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:32-44; mcp/src/agents_remember/mcp/tools/memory.py:46-63 |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
 | The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73 |
 | The two wire models that import this route's status vocabulary instead of retyping it. | "class DriftSummary(StrictResponseModel):" | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
 | The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
+| The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:79-126 |
 
 ## 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
 
@@ -228,6 +240,15 @@ need the real code commit and refreshed metadata to clear.
 The memory-quality callers were rewritten by the L9 caller wave: `DriftStatus`/`DriftSummaryPacket` import from `models/drift.py` (declaration moved by L9), and runtime config from `kernel/primitives/runtime_config.py`. Check behavior is unchanged.
 
 ## Update History
+
+- 2026-08-11T16:54+02:00 — Added the enclosure-local curator checklist owner, combined the
+  pre-closeout worklist behind one full scoped quality call, and preserved code/memory mutation and
+  real-commit stamping outside the report writer.
+- 2026-08-11T14:58+02:00 — Re-read the new temporary-provenance claim against the current
+  application entry point and regenerated its evidence to the exact declaration and assignment.
+- 2026-08-11T14:40+02:00 — Assigned missing-onboarding and full dirty-tree quality repair to the
+  curator before handoff, recorded temporary comparison provenance, and kept real-commit refresh
+  and the repeated hard gate in closeout.
 
 - 2026-08-10T12:46+02:00 — L9 closeout repair: added the entity-catalog alignment owner and its
   pre-code fail-fast boundary; verification metadata stays pinned until closeout stamps the repair.
