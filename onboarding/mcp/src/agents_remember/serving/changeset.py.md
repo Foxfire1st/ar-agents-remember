@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-01T08:46+02:00 |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`     |
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`     |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -170,7 +170,7 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 | The persisted contract model ("def load_contract(path: Path) -> WorktreeContract:") and loader ("def load_contract(path: Path) -> WorktreeContract:") behind master/leaf accumulation, with leaf-id normalization via "slug = slugify(worktree_name)". | "def load_contract(path: Path) -> WorktreeContract:"; "def load_contract(path: Path) -> WorktreeContract:"; "slug = slugify(worktree_name)" | mcp/src/agents_remember/worktrees/worktree_contract.py:233-472; mcp/src/agents_remember/worktrees/task_resolver.py:18-23 |
 | The app factory that calls `register_changeset_routes` before `mount_static`. | "def register_changeset_routes(app: FastAPI" | mcp/src/agents_remember/serving/changeset.py:503-503 |
 | The test suite for this module. | `TaskChangesetTests` | mcp/tests/test_serving_changeset.py:179-259 |
-| The declared response models and the shared `SCOPED_READ_RESPONSES` table these three routes name (`TaskChangeSet`, `LeafChangeSet`, `FileDiff`, `MasterChangeSet`). | `TaskChangeSet`; `LeafChangeSet`; `MasterChangeSet`; `FileDiff`; `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:799-805; mcp/src/agents_remember/serving/response_contract.py:808-811; mcp/src/agents_remember/serving/response_contract.py:821-828; mcp/src/agents_remember/serving/response_contract.py:837-845; mcp/src/agents_remember/serving/response_contract.py:1068-1074 |
+| The declared response models and the shared `SCOPED_READ_RESPONSES` table these three routes name (`TaskChangeSet`, `LeafChangeSet`, `FileDiff`, `MasterChangeSet`). | `TaskChangeSet`; `LeafChangeSet`; `MasterChangeSet`; `FileDiff`; `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:793-799; mcp/src/agents_remember/serving/response_contract.py:802-805; mcp/src/agents_remember/serving/response_contract.py:815-822; mcp/src/agents_remember/serving/response_contract.py:831-839; mcp/src/agents_remember/serving/response_contract.py:1062-1068 |
 | The suite that enforces the declarations by driving each route and validating the real body. | `test_changeset_routes_conform` | mcp/tests/test_serving_response_conformance_cases_2.py:40-64 |
 
 ## 260731-EFA-L2 Current Delta

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/install/skills.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -60,7 +60,7 @@ symlink installs can be migrated to the copy.
 | --- | --- | --- |
 | `skills_install` is exposed as an MCP payload. | `skills_install` | mcp/src/agents_remember/mcp/tools/core.py:152-152 |
 | Runtime package discovery is shared with runtime install. | "class RuntimeTreeSync" | mcp/src/agents_remember/install/runtime.py:72-72 |
-| MCP tests cover replacing an existing symlink skill at its flat install path. | `test_skills_install_payload_replaces_existing_symlink` | mcp/tests/test_tools.py:507-536 |
+| MCP tests cover replacing an existing symlink skill at its flat install path. | `test_skills_install_payload_replaces_existing_symlink` | mcp/tests/test_tools.py:586-615 |
 
 ## Update History
 

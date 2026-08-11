@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-10T18:31+02:00 |
-| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`                                             |
-| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                             |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -233,13 +233,13 @@ record.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes. | `TmuxProbeResult` | mcp/src/agents_remember/serving/terminal_tmux.py:61-66 |
-| The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:138-138; mcp/src/agents_remember/serving/terminal_catalog.py:142-142 |
+| The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:145-145; mcp/src/agents_remember/serving/terminal_catalog.py:149-149 |
 | The app wiring: one sweeper behind `GET /api/terminal/sessions`, direct observations on WebSocket attach + paste, injected clock. | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
 | Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification. | `TerminalCatalogLivenessTests` | mcp/tests/test_terminal_liveness.py:176-718 |
 | The marker-based classifier this module's `_observe_alive` calls on every alive harness row. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:157-171 |
 | The public pane-capture wrapper `_observe_alive`'s default `pane_capturer` uses (same capture shape paste verification already uses). | "Public pane capture used by liveness and bounded dispatch retry/failure evidence." | mcp/src/agents_remember/serving/terminal_paste.py:202-202 |
 | `create_app` wires `on_turn_state_change` to `log_turn_state_change_event` so a sweep-detected transition becomes an observer event. | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
-| Failing-first tests for turn-state classification wiring: scripted pane fixtures, precedence ordering, "plain terminals never classified", `turn_state_changed` gating. | `TurnStateSweepWiringTests` | mcp/tests/test_seat_lifecycle.py:467-532 |
+| Failing-first tests for turn-state classification wiring: scripted pane fixtures, precedence ordering, "plain terminals never classified", `turn_state_changed` gating. | `TurnStateSweepWiringTests` | mcp/tests/test_seat_lifecycle.py:549-614 |
 
 ## Cross-Repo References
 

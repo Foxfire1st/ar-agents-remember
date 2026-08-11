@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/server_startup.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-10T18:31+02:00 |
-| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e` |
-| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
+| lastUpdated | 2026-08-11T10:20+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,46 +16,49 @@
 
 ## Purpose
 
-Application-owned startup operations for MCP trust declaration, application composition, and
-optional dashboard supervision.
+Initializes MCP-process application collaborators after applying the bounded control-plane identity
+migration required by strict structural readers.
 
 ## Code Commentary
 
 ### Logic
 
-Module-level surface:
-
-- `initialize_mcp_application` (function, lines 15-17) — Install the process-wide application collaborators used by registered operations.
-- `declare_mcp_process` (function, lines 22-24) — Declare trusted MCP execution before authority settings are loaded.
-- `prepare_mcp_process` (function, lines 27-30) — Idempotently retain the MCP declaration, then start optional dashboard supervision.
+`initialize_mcp_application` declares MCP process ownership, migrates recognized durable logs without
+the dashboard-owned notifier log, then installs ambient lifecycle state. Dashboard autostart remains
+a separate startup hook.
 
 ### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+Migration runs before any strict store can parse current records; ownership boundaries determine
+which process may migrate which log.
 
 ### Invariants And Boundaries
 
-- `mcp/server.py::main` calls `declare_mcp_process` before `load_config`; moving the declaration
-  after config loading would route worktree-hosted MCP code into checkout CLI mode.
-- `prepare_mcp_process` deliberately reasserts the same idempotent declaration before supervision,
-  preserving the application operation for existing callers without a second source of state.
+- Migration is one-way, idempotent deployment work.
+- MCP startup does not mutate the dashboard-owned notifier log.
+- No dual-schema reader is installed.
 
 ### Todos
 
 None.
 
-## Repo-Internal References
+## Docs References
 
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+No Domain Documentation source is configured.
+
+## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `initialize_mcp_application` (lines 15-17) — Install the process-wide application collaborators used by registered operations.. | `initialize_mcp_application` | mcp/src/agents_remember/application/server_startup.py:15-17 |
-| Declares trusted MCP execution before config loading. | `declare_mcp_process` | mcp/src/agents_remember/application/server_startup.py:22-24 |
-| Reasserts MCP trust and starts optional dashboard supervision. | `prepare_mcp_process` | mcp/src/agents_remember/application/server_startup.py:27-30 |
+| MCP startup migrates its owned logs before ambient installation. | `initialize_mcp_application` | mcp/src/agents_remember/application/server_startup.py:20-28 |
+
+## Cross-Repo References
+
+No cross-repository implementation dependency governs this file.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current application-layer card for `server_startup.py` with qualified seat resolution and terminal/session orchestration boundaries.
 - 2026-08-10T18:31+02:00 — 260731-EFA-L21: split out the idempotent pre-config MCP trust
   declaration while preserving `prepare_mcp_process` as the supervision operation. Verification
   metadata remains pinned until approved closeout.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_open.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ No Domain Documentation source is configured. The repository sources are direct 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The open service, bounded ledger, and record model under test. | "class ConversationOpenService" | mcp/src/agents_remember/serving/conversation/library/open_service.py:241-241 |
+| The open service, bounded ledger, and record model under test. | "class ConversationOpenService" | mcp/src/agents_remember/serving/conversation/library/open_service.py:242-242 |
 | The ASGI open/status/reconcile surface mapping the same outcomes to HTTP. | `LibraryApiTests` | mcp/tests/test_conversation_library_api.py:300-704 |
 | The installed suite's real open E2Es for the Pi and Codex channels. | `CodexInstalledTests` | mcp/tests/test_conversation_library_installed.py:103-186 |
 
@@ -80,6 +80,7 @@ No neighboring repository participates in this open suite.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the regression card for `test_conversation_library_open.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with

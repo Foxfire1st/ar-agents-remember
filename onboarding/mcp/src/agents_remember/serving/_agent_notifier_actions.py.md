@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_agent_notifier_actions.py`                                        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`                                        |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated | 2026-08-11T10:33+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -16,127 +16,53 @@
 
 ## Purpose
 
-260731-EFA-L7 responsibility split module for `mcp/src/agents_remember/serving/_agent_notifier_actions.py` (renamed from `_supervisor_actions.py` in 260713-TES-L1); owns the behaviours named by its top-level symbols. Since the rename, the file also owns the two event-name constants (`AGENT_NOTIFIER_EVENT_PREFIX` / `LEGACY_SUPERVISOR_EVENT_PREFIX`) and `_log_event`'s dual append that emits every agent-notifier event under both the current and the legacy observer name for the compatibility window. Since 260713-TES-L2 the one-row-per-root-cause posting primitives (`OwnerSignal`, `OwnerSignalOptions`, `_find_coalescible`, `_post_owner_signal`) moved OUT to `serving/owner_signals.py`, and the relay actions `_emit_state_signal` / `_emit_non_reaction` / `_drain_boundary` moved IN.
-Since 260713-TES-L3 it also owns `_emit_compound_idle` (the orchestrator-facing compound-idle
-emitter) and the manager-aware owner branch inside `_emit_non_reaction`. Since 260713-TES-L4 it
-also owns the rebind/expiry/unresolved actions (`_rebind_due`, `_rebind_expired`,
-`_expire_pending`, `_mark_unresolved`) and no longer drives the escalation ladder (N3). Since
-260713-TES-L5 it owns the fact-relay action surface only: `_respawn_suspect`, `_escalate_rung`,
-`_rung_entry`, `_escalate_inbox_entry`, `_resolve_ladder_terminal`, `_auto_nudge`, and
-`_mark_expectation_missed` are deleted.
+Applies one evaluated agent-notifier finding through durable inbox transitions, structural owner
+rebinding, shared delivery, and observer evidence.
 
 ## Code Commentary
 
-## 260713-TES-L6 Current Delta — Action-Time Truth And Role-Neutral Relay
+### Logic
 
-State-signal and non-reaction actions now re-run the shared finding evaluator immediately before
-durable persistence and build the emitted owner signal from that fresh result. If the subordinate
-was reparented, moved to another leaf/master, resumed working, terminated, retired, or lost valid
-terminal/timestamp evidence between evaluation and action, the action returns `skipped` and writes
-neither an inbox row nor a dedupe marker. Valid findings use the fresh leaf, role, manager, and
-episode metadata, so same-master reparenting cannot route stale ownership. Compound-idle action
-membership consumes the same direct-manager topology as evaluation, covering reviewer, curator,
-and future subordinate roles without a worker-only branch.
+`_rebind_due` rewrites a pending row's structural address/owner to the current qualified occupant
+before delivery. Expiry and unresolved paths write explicit terminal snapshots. State-signal,
+compound-idle, and non-reaction actions use the same structural routing and shared whole-message
+delivery; boundary drain records adapter acknowledgement.
 
-- `AGENT_NOTIFIER_EVENT_PREFIX` / `LEGACY_SUPERVISOR_EVENT_PREFIX`
-- `_log_event` (dual event emission during the rename window)
-- `_redeliver`
-- `_signal_emit`
-- `_signal_dead_upstream`
-- `_emit_state_signal`
-- `_emit_compound_idle`
-- `_emit_non_reaction`
-- `_drain_boundary`
-- `_mark_unresolved`
-- `_rebind_due`
-- `_rebind_expired`
-- `_expire_pending`
-- `act_on_finding`
+### Conventions
 
-## 260713-TES-L2 Current Delta — Relay Actions
+Actions re-check the current fold before mutation so a stale sweep snapshot cannot reverse a newer
+terminal outcome.
 
-`_FINDING_ACTIONS` cit:([`_FINDING_ACTIONS`], mcp/src/agents_remember/serving/_agent_notifier_actions.py:619-630) now maps `state-signal-due` → `_emit_state_signal`,
-`non-reaction-due` → `_emit_non_reaction`, and `boundary-drain` → `_drain_boundary`, and no
-longer maps the retired `turn-report-stale` kind (auto-nudge was inactive-only then). The two
-emitters resolve the leaf's current manager via `derive_leaf_manager_owner`, post one
-owner-addressed `state-signal` row with `DeliveryAdmission(boundary=True)`, record the
-evidence/episode marker, and log `orchestration.agent-notifier.state-signal`. `_redeliver` cit:([`_redeliver`], mcp/src/agents_remember/serving/_agent_notifier_actions.py:89-139) passes `DeliveryAdmission(boundary=True)` for
-state-signal rows as defense-in-depth behind the seam-level row-kind gate in
-`inbox_delivery._delivery_refusal` (F1).
+### Invariants And Boundaries
 
-This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+- Ordinary pending rows can follow replacement; dispatch briefs never rebind.
+- Rebinding and owner stamps change together.
+- Persistence precedes delivery.
+- No action treats model consume or completion as acknowledgement.
 
-## 260713-TES-L5 Current Delta — Judgment Actions Demolished
+### Todos
 
-The relay's judgment action surface is deleted outright: `_respawn_suspect`, `_escalate_rung`,
-`_rung_entry`, `_escalate_inbox_entry`, `_resolve_ladder_terminal`, `_auto_nudge`, and
-`_mark_expectation_missed` are gone, along with the `escalation_ladder`/`orphan_policy`/
-`orchestration_nudges` imports and the `_FINDING_ACTIONS` mappings for `inbox-ladder-terminal`
-and `expectation-overdue`. `_FINDING_ACTIONS` cit:([`_FINDING_ACTIONS`], mcp/src/agents_remember/serving/_agent_notifier_actions.py:616-630) now maps only
-`inbox-redeliverable` → `_redeliver`, `rebind-due` → `_rebind_due`, `rebind-expired` →
-`_rebind_expired`, `inbox-ttl-expired` → `_expire_pending`, and the state-signal/compound-idle/
-non-reaction/boundary-drain emitters. The `AgentNotifierContext` no longer carries a
-`nudge_store`, `nudge_rate_limit_seconds`, escalation SLAs/rung seconds, or
-`respawn_after_rung`; no seat is ever retired or respawned by the sweep. `_signal_dead_upstream`
-docstring no longer claims "the ordinary ladder owns any later climb" (reviewer F1 — the wording
-was corrected in source). This entry supersedes any earlier description in this sidecar that
-conflicts with the current source behavior above; verification metadata stays pinned to the
-pre-commit source history until closeout.
+None.
 
-## 260713-TES-L4 Current Delta — Rebind, Expiry, And Unresolved Actions (N14/N3/§9)
+## Docs References
 
-`_FINDING_ACTIONS` cit:([`_FINDING_ACTIONS`], mcp/src/agents_remember/serving/_agent_notifier_actions.py:619-630) now maps `rebind-due` → `_rebind_due`,
-`rebind-expired` → `_rebind_expired`, and `inbox-ttl-expired` → `_expire_pending`; the
-`escalation-due` mapping is gone (the timed ladder is dormant, N3 — reserved for the L5
-demolition). `_redeliver` cit:([`_redeliver`], mcp/src/agents_remember/serving/_agent_notifier_actions.py:89-139) now resolves a live-but-silent row at
-`PERSISTENT_FAILURE_ATTEMPTS` via `_mark_unresolved` (terminal `unresolved`, reason
-`attempt-limit`, delivery evidence intact) instead of escalating it. `_rebind_due` derives the
-row's CURRENT qualified owner via `derive_row_owner` and moves the pending row onto the
-same-leaf+role replacement (correlation cleared, attempt clock reset) within the N2 grace.
-`_rebind_expired` readdresses the terminal marker to the scoped architect mailbox
-(`derive_architect_owner(catalog, leaf_key=...)` — mailbox, not a ladder rung) with reason
-`rebind-grace-expired`. `_expire_pending` stamps rows past the retention boundary `expired`
-(reason `pending-ttl-expired`) before compaction can drop them. All three write
-`orchestration.agent-notifier.*` events and update the sweep snapshot from the transition
-result (F1 latest-fold).
-
-## 260713-TES-L3 Current Delta — Compound-Idle Emitter And Manager Residue
-
-`_FINDING_ACTIONS` cit:([`_FINDING_ACTIONS`], mcp/src/agents_remember/serving/_agent_notifier_actions.py:619-630) now maps `compound-idle-due` →
-`_emit_compound_idle` alongside the three L2 relay actions.
-
-`_emit_compound_idle` cit:([`_emit_compound_idle`], mcp/src/agents_remember/serving/_agent_notifier_actions.py:483-539) posts exactly one durable `state-signal` per
-compound set to the owning orchestrator. The owner is `derive_signal_owner(sender=manager,
-message_kind="state-signal")` — one hop up the spawn edge; a manager with no recorded
-orchestrator edge is skipped ("no routable owner"), never routed by a global fallback (R4).
-The episode signature is derived from the ACTION-time member read
-(`compound_idle_signature(compound_idle_sets(...))`) and used for BOTH the ask and the
-`compound_idle_emitted_for` marker write (fix round 1, F4); `finding.source_id` is trigger
-only. Skip branches are fully covered (F5 — no `# pragma: no cover`): no seat row, no longer
-idle at action time, already emitted on the fresh signature, and no routable owner. The post
-rides `_post_owner_signal` with `DeliveryAdmission(boundary=True)` and
-`OwnerSignal(message_kind="state-signal", ...)`; the marker write follows the durable append
-so a lost-marker re-fire renews the one existing row (R7).
-
-`_emit_non_reaction` cit:([`_emit_non_reaction`], mcp/src/agents_remember/serving/_agent_notifier_actions.py:542-599) now branches on `entry.binding_role == "manager"`:
-a manager's residue routes through `derive_signal_owner` to its orchestrator (one hop,
-no-owner skip), while a worker's residue keeps the L2 `derive_leaf_manager_owner` rebinding
-path. Compound-idle stays a pure seat-state signal; the non-reaction residue rides alongside
-it and the orchestrator combines the two facts (N15/N16).
-
-This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Invariants And Boundaries
-
-- The card mirrors the source file one-to-one at `mcp/src/agents_remember/serving/_agent_notifier_actions.py`.
+No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| Due rebinding updates and redelivers the current structural owner. | `_rebind_due` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:177-221 |
+| State-signal action uses the durable structural message path. | `_emit_state_signal` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:452-515 |
+| Dispatch maps each current finding to one action. | `act_on_finding` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:689-702 |
+
+## Cross-Repo References
+
+No cross-repository implementation dependency governs this file.
+
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current serving card for `_agent_notifier_actions.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded action-time revalidation, fresh routing
   metadata, fail-closed mutation handling, and role-neutral subordinate relays. Verification
   metadata remains pinned until closeout stamps the code commit.

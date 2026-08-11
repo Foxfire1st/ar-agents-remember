@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cold_start.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T20:52+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -36,7 +36,7 @@ half, and it runs in-process against corrupted *copies*.
 
 **Nothing in this file may import `agents_remember.models.tokens` at module scope, and that rule is
 load-bearing enough that the docstring spends a paragraph on it —
-cit:(["so a module-scope import runs the", "def tokens_module("], mcp/tests/test_cold_start.py:24-24; mcp/tests/test_cold_start.py:160-160).** That module
+cit:(["so a module-scope import runs the", "def tokens_module("], mcp/tests/test_cold_start.py:24-24; mcp/tests/test_cold_start.py:162-162).** That module
 builds `DEFAULT_TOKEN_COUNTER` at import, so a module-scope import runs the load under test inside
 the *parent* pytest process, during collection, before any assertion exists to see what it did — and
 the parent has network and a writable checkout, which is exactly the pair of conditions this guard
@@ -224,7 +224,7 @@ error that must be raised instead of a download.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module under test: the vendored constants including `VENDORED_VOCABULARY_SHA256` and the reentrant `_CACHE_DIR_LOCK`, `vendored_vocabulary_path()` deriving the file name as `sha1(url)`, `_verify_vendored_vocabulary()` refusing absent / wrong-encoding / wrong-digest before the environment is touched, the scoped `vendored_vocabulary_cache()` handing tiktoken `str(path.parent)` of the verified file, `TiktokenTokenCounter.__post_init__` reading the vocabulary, and `DEFAULT_TOKEN_COUNTER` built at module scope — the statement a module-scope import here would execute during collection. | `VENDORED_VOCABULARY_SHA256`, `_CACHE_DIR_LOCK`, `vendored_vocabulary_path`, `_verify_vendored_vocabulary`, `vendored_vocabulary_cache`, `TiktokenTokenCounter`, `DEFAULT_TOKEN_COUNTER` | mcp/src/agents_remember/models/tokens.py:47-47; mcp/src/agents_remember/models/tokens.py:54-54; mcp/src/agents_remember/models/tokens.py:57-67; mcp/src/agents_remember/models/tokens.py:70-106; mcp/src/agents_remember/models/tokens.py:109-146; mcp/src/agents_remember/models/tokens.py:183-202; mcp/src/agents_remember/models/tokens.py:205-205 |
-| The import-path link that puts the counter on the server's startup path: the tool payload builder imports `finalize_payload_tokens` at module level and calls it from `_tool_payload`, which every public tool response is built by. | `finalize_payload_tokens`, `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75; mcp/src/agents_remember/models/tokens.py:232-249 |
+| The import-path link that puts the counter on the server's startup path: the tool payload builder imports `finalize_payload_tokens` at module level and calls it from `_tool_payload`, which every public tool response is built by. | `finalize_payload_tokens`, `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72; mcp/src/agents_remember/models/tokens.py:232-249 |
 | `TokenizerVocabularyError` — the one production symbol this file may import at module scope, because it carries no import-time load. Raised instead of letting tiktoken reach for a vocabulary that is missing *or wrong*, precisely because the counter is built while the MCP tool surface is still importing. | `TokenizerVocabularyError` | mcp/src/agents_remember/errors.py:44-52 |
 | The vendored blob's own documentation: why the file name is a hash, why `models/tokens.py` verifies the digest itself rather than leaving it to tiktoken, the copy-based corruption tests this file runs, and how to refresh it. | `## Why the file name is a hash`, `## Refreshing it` | mcp/src/agents_remember/package_data/tiktoken/README.md:13-67 |
 | The `-text` entry that `test_the_gitattributes_entry_names_the_shipped_file` reads and pins: it stops a `core.autocrlf=true` checkout from rewriting the bytes that are the blob's identity, which now makes that clone alone refuse to start rather than re-download. Its comment names this test as the thing that stays red until a refresh renames the entry. | "fb374d419588a4632f3f557e76b4b70aebbca790 -text", `test_the_gitattributes_entry_names_the_shipped_file` | .gitattributes:5-13 |
@@ -300,7 +300,7 @@ mismatch** — it repairs, from the network — which is why the digest check li
   cit:([`test_holding_the_context_open_around_a_counter_does_not_deadlock`], mcp/tests/test_cold_start.py:307-331),
   and the new `VENDORED_VOCABULARY_SHA256` assertion inside
   `test_the_shipped_file_is_the_one_tiktoken_asks_for` —
-  cit:(["def test_the_shipped_file_is_the_one_tiktoken_asks_for("], mcp/tests/test_cold_start.py:222-222). Re-derived every
+  cit:(["def test_the_shipped_file_is_the_one_tiktoken_asks_for("], mcp/tests/test_cold_start.py:224-224). Re-derived every
   citation in the file — the docstring L1-L27 → L1-L47, `PROBE` L64-L123 → L98-L157,
   `run_cold_start_probe` L126-L150 →
   L172-L196, `ColdStartTests` L153-L171 → L199-L218, `VendoredVocabularyTests` L174-L228 →

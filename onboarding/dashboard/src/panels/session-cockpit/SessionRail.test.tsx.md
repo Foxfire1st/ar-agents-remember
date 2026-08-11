@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:45+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ inspectable without being rendered as the owner or parent of a live bound sprint
   dots' `data-state`/color/pulse attributes (two surfaces, not one function twice).
 - **Zero state (R9)** — the empty rail explains itself; waiting(reason) renders steady
   muted-amber when supplied.
-- **L6 block (R5/R7, 6 cases)** — cit:(["End terminates the seat IMMEDIATELY — no armed inline confirm (F-g ruling)"], dashboard/src/panels/session-cockpit/SessionRail.test.tsx:659-691): End terminates the selected seat immediately; there is no armed inline-confirm state. The
+- **L6 block (R5/R7, 6 cases)** — cit:(["End terminates the seat IMMEDIATELY — no armed inline confirm (F-g ruling)"], dashboard/src/panels/session-cockpit/SessionRail.test.tsx:726-758): End terminates the selected seat immediately; there is no armed inline-confirm state. The
   selected session identity is carried by the control title, and the first click posts the exact
   terminate URL. A FAILED
   terminate POST (502 + body) renders `role="alert"` with the VERBATIM server words and retry
@@ -98,7 +98,7 @@ the reviewed task evidence for any current behavioral claim.
 | The notice store + harvest store the L6 block seeds. | `lifecycleNoticeStore`; `ptyHarvestStore` | dashboard/src/data/sessionLifecycle.ts:68-121; dashboard/src/data/ptyHarvest.ts:51-73 |
 | The harvest store the bell/hint cases drive. | `ptyHarvestStore` | dashboard/src/data/ptyHarvest.ts:51-73 |
 | The typed wire builders the gate/brief cases now call (`lifecycleWithGate`, `taskDoc`, `agentPickup`, `analytics`). | `lifecycleWithGate`; `taskDoc`; `agentPickup`; `analytics` | dashboard/src/test/fixtures/wire.ts:256-266; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:296-301; dashboard/src/test/fixtures/wire.ts:317-322 |
-| `heldGatesByLeafKey` + `briefPendingSessionIds` — the only readers of the seeded lifecycles/pickups, and the reason the richer bases change nothing. | `heldGatesByLeafKey`; `briefPendingSessionIds` | dashboard/src/data/railModel.ts:429-443; dashboard/src/data/railModel.ts:448-460 |
+| `heldGatesByLeafKey` + `briefPendingSessionIds` — the only readers of the seeded lifecycles/pickups, and the reason the richer bases change nothing. | `heldGatesByLeafKey`; `briefPendingSessionIds` | dashboard/src/data/railModel.ts:565-579; dashboard/src/data/railModel.ts:584-596 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -146,9 +146,9 @@ recovery, and the absence of the duplicate bus-footer presentation.
   `BASE_LIFECYCLE`, where it previously had only `{ id, gate }`; the task doc gained every required
   `TaskDocNode` field; and the ten `Analytics` lists that were `undefined` are now `[]`. `SessionRail.tsx`
   reads `state.lifecycles` and `analytics.taskDocuments` at L505-L539 and nowhere else, and the sole
-  consumer is `heldGatesByLeafKey` (cit:([`heldGatesByLeafKey`], dashboard/src/data/railModel.ts:429-443)), which touches only `doc.lifecycleId`,
+  consumer is `heldGatesByLeafKey` (cit:([`heldGatesByLeafKey`], dashboard/src/data/railModel.ts:565-579)), which touches only `doc.lifecycleId`,
   `lifecycles[id]?.gate?.state` and `qualifiedLeafKey`'s `repository`/`docPath`/`id` — all explicitly
-  overridden by the case. `briefPendingSessionIds` (cit:([`briefPendingSessionIds`], dashboard/src/data/railModel.ts:448-460)) reads `messageKind`, `state` and
+  overridden by the case. `briefPendingSessionIds` (cit:([`briefPendingSessionIds`], dashboard/src/data/railModel.ts:584-596)) reads `messageKind`, `state` and
   `deliveredToSession`, also all overridden, and `git diff -U2` confirms no field value inside either
   literal changed. The two residual deltas the sweep warns about do not reach here: this gate sets
   `decisions: []` explicitly (so `BASE_GATE`'s `["approve","revise"]` never applies), and no assertion

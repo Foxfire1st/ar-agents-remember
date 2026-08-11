@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/EvidenceBadge.tsx`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ by the HeaderStrip provenance chip, SeatInspector, and FailedLaunchBanner.
 | The `EvidenceTier` union the props/glyph record key on. | `EvidenceTier` | dashboard/src/data/sessionCockpitStore.ts:18-18 |
 | Provenance-chip consumer (derived tier, `size="sm"`). | `HeaderStrip` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169 |
 | Inspector consumer (same derivation). | `SeatInspector` | dashboard/src/panels/session-cockpit/SeatInspector.tsx:60-161 |
-| Banner consumer (refused tier beside the never-validated pair). | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-182 |
+| Banner consumer (refused tier beside the never-validated pair). | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:69-143 |
 | The jsdom suite pinning distinctness + the word at every size. | "the tier WORD is present in the accessible name at EVERY size" | dashboard/src/grammar/EvidenceBadge.test.tsx:30-41 |
 
 ## Update History

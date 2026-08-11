@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:30+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -49,8 +49,9 @@ Top-level keys in wire order: `version` (1), `generatedAt`, `lifecycles`, `enclo
   (`GATE-1` open with `decisions: ["approve","revise"]`, `GATE-0` decided), both with a non-empty
   `evidenceRefs`. Every row carries `stateEnteredAt`. The `awaiting-developer` row is the state the
   mirror had never declared, and it is here so the vocabulary check can bite.
-- **cit:([`enclosures`], dashboard/src/fixtures/snapshot.json:113-135)** — one enclosure; **cit:([`providers`], dashboard/src/fixtures/snapshot.json:136-158)** — two (a code provider and
-  a memory provider, joined by `worktreeGroup: "sim-group"`); **cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:159-159)** —
+- **cit:(["\"enclosures\": ["], dashboard/src/fixtures/snapshot.json:113-135)** — one enclosure; **two providers** (a code provider and
+  a memory provider) are pinned by cit:(["\"snapshotStaleSeconds\": 3.5"], dashboard/src/fixtures/snapshot.json:136-158),
+  joined by `worktreeGroup: "sim-group"`; **cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:159-159)** —
   `["sim-group"]`.
 - **cit:([`metrics`], dashboard/src/fixtures/snapshot.json:160-168)** — `lifecycleCount: 6`, one bucket per LIVE state (`runningCount`,
   `blockedCount`, `pausedCount`, `awaitingDeveloperCount`, each 1), `totalTokens: 2800`, and a
@@ -59,9 +60,9 @@ Top-level keys in wire order: `version` (1), `generatedAt`, `lifecycles`, `enclo
   has no bucket.
 - **`analytics`** cit:([`analytics`], dashboard/src/fixtures/snapshot.json:169-763) — all thirteen keys present and none empty: cit:([`driftSnapshots`], dashboard/src/fixtures/snapshot.json:170-170),
   cit:([`stalestSidecars`], dashboard/src/fixtures/snapshot.json:183-183), cit:([`setupSummaries`], dashboard/src/fixtures/snapshot.json:191-191), cit:([`setupProgress`], dashboard/src/fixtures/snapshot.json:202-202), cit:([`routeCoverage`], dashboard/src/fixtures/snapshot.json:212-212),
-  cit:([`toolReports`], dashboard/src/fixtures/snapshot.json:221-221), cit:([`agentPickups`], dashboard/src/fixtures/snapshot.json:229-229), cit:([`expectationRows`], dashboard/src/fixtures/snapshot.json:255-255), cit:([`ledgers`], dashboard/src/fixtures/snapshot.json:269-269),
-  cit:([`taskDocuments`], dashboard/src/fixtures/snapshot.json:287-287), `attentionQueue` (L368, three rows), `engineProcesses` (L406, eight pods),
-  cit:([`series`], dashboard/src/fixtures/snapshot.json:730-762).
+  cit:([`toolReports`], dashboard/src/fixtures/snapshot.json:221-221), cit:([`agentPickups`], dashboard/src/fixtures/snapshot.json:229-229), cit:([`expectationRows`], dashboard/src/fixtures/snapshot.json:267-267), cit:([`ledgers`], dashboard/src/fixtures/snapshot.json:284-284),
+  cit:([`taskDocuments`], dashboard/src/fixtures/snapshot.json:302-302), `attentionQueue` (L368, three rows), `engineProcesses` (L406, eight pods),
+  cit:(["\"series\": ["], dashboard/src/fixtures/snapshot.json:745-762).
 
 **The payload is composed to satisfy specific checks, not sampled at random.** `contract.test.ts`
 requires that every closed vocabulary in the mirror is exercised in FULL, pooled per vocabulary rather
@@ -175,6 +176,7 @@ sides live in `agents-remember`.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current data-contract card for `snapshot.json` with task-document identity, qualified seat state, and terminal projections represented by this source.
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: re-anchored `series` to the analytics
   sub-key (730-762), corrected the `analytics` extent (169-763) and the file size in Purpose (764
   lines), generated final ranges for the S18-T3 provenance rows (wire.ts 22-35,

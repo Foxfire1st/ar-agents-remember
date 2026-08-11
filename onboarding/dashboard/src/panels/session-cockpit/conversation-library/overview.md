@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation-library/`        |
 | doc_type               | `route-local-overview`                                              |
 | lastUpdated            | 2026-08-01T13:28+02:00                                              |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                         |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                         |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                                    |
 
 ## Governing Overview
@@ -58,7 +58,8 @@ active.
   (`unsupported`/`stale-identity`/`timeout-unknown`/`launch-failed`/`identity-mismatch`/`request-conflict`)
   is surfaced without focusing. `dispatching` (set from dispatch) blocks a double-open (the dispatch TOCTOU
   window); poll exhaustion switches to an honest "outcome unknown — reconcile" re-drive under the SAME
-  requestId (F6).
+  requestId (F6). Its optional launch context forwards the focused canonical `TaskDocumentRef` and
+  seat role through the shared data contract, never a leaf or runtime-session address.
 
 ## Invariants And Boundaries
 
@@ -128,6 +129,9 @@ cross-repository implementation source governs it.
 | The live renderer whose block grammar the read-only preview reuses. | `# dashboard/src/panels/session-cockpit/conversation/ — Structured Conversation Renderer Overview` | onboarding/dashboard/src/panels/session-cockpit/conversation/overview.md:1-360 |
 
 ## Update History
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: updated the in-stage open path to describe
+  canonical task-document-and-role launch context and the removal of leaf-key addressing.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: conversation-library panels changed only by behavior-preserving lint remediation.
 
 - 2026-08-03T02:32:19+02:00 — Curator W3-B02: anchored 3 Repo-Internal onboarding-overview citation

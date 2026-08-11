@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory/carryover.py`                |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-07-31T00:00+02:00                                      |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                  |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../overview.md`                                      |
 
 ## Governing Overview
@@ -116,7 +116,7 @@ matrix define the current write-authority contract.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Official JSON/Markdown settings are scanned for effective write authority with typed-parser equivalence. | `required_official_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
-| Route-index rendering requires and reuses explicit repository/storage authority. | "Build route indexes using explicit Git and onboarding-storage authority", `RouteIndexBuildResult` | mcp/src/agents_remember/kernel/route_index.py:85-98; mcp/src/agents_remember/kernel/route_index.py:190-190 |
+| Route-index rendering requires and reuses explicit repository/storage authority. | "Build route indexes using explicit Git and onboarding-storage authority", `RouteIndexBuildResult` | mcp/src/agents_remember/kernel/route_index.py:85-100; mcp/src/agents_remember/kernel/route_index.py:184-197 |
 | Full-apply tests pin empty/unsupported refusal, retention/repopulation acceptance, official-over-source selection, and exact zero mutation. | "def test_missing_official_settings_refuses_before_any_mutation(self) -> None:", "def test_markdown_parser_retained_and_repopulated_contributions_remain_authoritative(", "def test_markdown_unsupported_rule_lists_refuse_before_mutation(self) -> None:", "def test_official_settings_override_conflicting_source_settings(self) -> None:" | mcp/tests/test_carryover_apply_1.py:100-100; mcp/tests/test_carryover_apply_2.py:216-216; mcp/tests/test_carryover_apply_2.py:334-334; mcp/tests/test_carryover_apply_2.py:605-605 |
 | Ledger updates remain delegated to the kernel memory-ledger service. | `load_ledger`, `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
 | The one git runner owns selector scrubbing (`GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`), the `input_text` stdin path used by `patch_id`, and the timeout classes (`GIT_LOCAL_TIMEOUT_SECONDS = 300`). | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git`, `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |

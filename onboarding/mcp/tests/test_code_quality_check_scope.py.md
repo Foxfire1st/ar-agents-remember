@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_code_quality_check_scope.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                                        |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-11T23:56+02:00                                            |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -16,12 +16,15 @@
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_code_quality_check_scope.py`'s source module; covers the behaviours named by its test classes.
+`test_code_quality_check_scope.py` pins repository-derived gate scope, fixed command vectors, and
+the root pytest configuration inherited by raw and wrapped test runs.
 
 ## Code Commentary
 
 - `GateScopeDerivationTests`
 - `PytestConfigurationTests`
+- `PytestConfigurationTests` asserts root `addopts` contains `-n=auto` alongside the strictness
+  switches; the derived-scope command test remains focused on coverage arguments.
 
 ## Invariants And Boundaries
 
@@ -32,7 +35,16 @@ Part of the 260731-EFA-L7 in-place split family for `test_code_quality_check_sco
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| The configuration regression pins automatic xdist worker selection at the root pytest owner. | "self.assertIn(\"-n=auto\", ini_strings(\"addopts\"))" | mcp/tests/test_code_quality_check_scope.py:215-223 |
 
 ## Update History
+
+- 2026-08-12T00:20+02:00 — Corrected the test boundary after automatic worker selection moved
+  from wrapper argv to root pytest `addopts`; the regression now asserts that single owner.
+  Verification metadata remains pinned until closeout.
+
+- 2026-08-11T23:56+02:00 — Recorded the focused assertion that the constructed pytest command
+  contains `-n auto` alongside the derived coverage scope. Verification metadata remains pinned
+  until closeout.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

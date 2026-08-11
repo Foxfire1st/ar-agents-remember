@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionLifecycle.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -92,12 +92,12 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The notice store and residual sweep. | `lifecycleNoticeStore`; `sweepRetireResiduals`; `startRetireResidualSweep`; "for (const session of sessions)"; "if (!changed)" | dashboard/src/data/sessionLifecycle.ts:61-61; dashboard/src/data/sessionLifecycle.ts:68-121; dashboard/src/data/sessionLifecycle.ts:136-154 |
 | The detailed terminate and bulk-end flows preserve server outcomes. | `terminateSessionDetailed`; `endSessionDetailed`; `endLandedDetailed` | dashboard/src/data/sessionLifecycle.ts:169-197; dashboard/src/data/sessionLifecycle.ts:203-224; dashboard/src/data/sessionLifecycle.ts:230-251 |
-| The centralized terminate confirmation copy. | `terminateConfirmCopy` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:14-23 |
+| The centralized terminate confirmation copy. | `terminateConfirmCopy` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:13-22 |
 | The stage renderer of residual notices (dismissable `role="status"` lines). | `StopResidualNotes` | dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:41-72 |
 | The rail consumers keep immediate single End and confirmed bulk End. | `endSession`; `endLanded`; `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:33-35; dashboard/src/panels/session-cockpit/SessionRail.tsx:39-43; dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
 | The cleanup outcome notice is rendered by the dedicated landed-cleanup component. | `LandedCleanupNotice` | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:48-113 |
-| The view mounts the focus-independent sweep. | "useEffect(() => startRetireResidualSweep()" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:817-817 |
-| `terminateTerminalSession` is the boolean-only predecessor. | `terminateTerminalSession` | dashboard/src/data/terminal.ts:443-452 |
+| The view mounts the focus-independent sweep. | "useEffect(() => startRetireResidualSweep()" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:812-812 |
+| `terminateTerminalSession` is the boolean-only predecessor. | `terminateTerminalSession` | dashboard/src/data/terminal.ts:442-451 |
 | `subscribeSessionCatalogChanges` registers catalog-change listeners. | `subscribeSessionCatalogChanges` | dashboard/src/data/sessions.ts:128-138 |
 | The focused `endLandedDetailed (bulk cleanup honesty)` test covers the landed cleanup path. | "endLandedDetailed (bulk cleanup honesty)" | dashboard/src/data/sessionLifecycle.test.ts:146-213 |
 

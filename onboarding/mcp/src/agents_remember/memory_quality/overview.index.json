@@ -11,6 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/memory_quality/check.py",
+    "mcp/src/agents_remember/memory_quality/curator_checklist.py",
     "mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py",
     "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py",
     "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py",
@@ -57,8 +58,8 @@
     "mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 50,
-    "fileSidecars": 45,
+    "sourceFilesInScope": 51,
+    "fileSidecars": 46,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -73,10 +74,13 @@
     "changed_lines",
     "check",
     "check_missing_onboarding",
+    "checklist",
     "citations",
     "claim",
     "claim_change_router",
     "claim_reopen",
+    "curator",
+    "curator_checklist",
     "database",
     "diff",
     "diff_markers",
@@ -138,16 +142,14 @@
     "source",
     "source_index",
     "source_index_cache",
-    "source_index_database",
-    "source_index_state",
-    "src",
-    "state"
+    "source_index_database"
   ],
   "hotPath": {
     "summary": "`check.py` is the public package-level runner. It can execute style-only checks without repository context, or combine drift integrity and style checks when an MCP application entry point supplies `DriftCheckContext`. Drift logic lives under `integrity/onboarding_drift_check/`; the pre-code-commit missing-onboarding check lives at `integrity/check_missing_onboarding.py`; update-history ordering lives under `style/update_history/`. The history-order checker is diagnostic; the matching `history_order_fix.py` module is the explicit mutating script for timestamped history-order fixes. `style/do...",
     "candidateHints": [
       "mcp/src/agents_remember/memory_quality",
       "mcp/src/agents_remember/memory_quality/check.py",
+      "mcp/src/agents_remember/memory_quality/curator_checklist.py",
       "mcp/src/agents_remember/memory_quality/integrity",
       "mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py",
       "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check",
@@ -168,12 +170,13 @@
       "mcp/src/agents_remember/memory_quality/style/citations/cells.py",
       "mcp/src/agents_remember/memory_quality/style/citations/claim_change_router.py",
       "mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py",
-      "mcp/src/agents_remember/memory_quality/style/citations/drafts.py",
-      "mcp/src/agents_remember/memory_quality/style/citations/editing.py"
+      "mcp/src/agents_remember/memory_quality/style/citations/drafts.py"
     ],
     "anchorHints": [
       "check.py",
       "check",
+      "curator_checklist.py",
+      "curator_checklist",
       "check_missing_onboarding.py",
       "check_missing_onboarding",
       "discovery.py",
@@ -217,9 +220,7 @@
       "grammars.py",
       "grammars",
       "migration.py",
-      "migration",
-      "model.py",
-      "model"
+      "migration"
     ]
   },
   "fallback": {

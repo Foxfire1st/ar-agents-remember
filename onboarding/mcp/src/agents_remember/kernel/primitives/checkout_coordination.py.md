@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/primitives/checkout_coordination.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-10T18:31+02:00 |
-| lastVerifiedCommitHash |  `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`|
-| lastVerifiedCommitDate |  2026-08-10T22:27:45+02:00|
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ manual runtime-config construction cannot bypass the normal synthetic config rou
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Runtime config selects the synthetic leaf config before reading the supplied authority file. | `checkout_cli_location`; `_checkout_runtime_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:149-157; mcp/src/agents_remember/kernel/primitives/runtime_config.py:653-706 |
-| Durable-store lock, append, and rewrite paths all enforce this target policy. | "path = _checked_lock_path_for(log_path)"; "def _prepare_append_target(log_path: Path) -> None:"; "def _require_rewrite_access(log_path: Path, store: str) -> None:" | mcp/src/agents_remember/controlplane/durable_store.py:386-387; mcp/src/agents_remember/controlplane/durable_store.py:443-472 |
+| Durable-store lock, append, and rewrite paths all enforce this target policy. | "path = _checked_lock_path_for(log_path)"; "def _prepare_append_target(log_path: Path) -> None:"; "def _require_rewrite_access(log_path: Path, store: str) -> None:" | mcp/src/agents_remember/controlplane/durable_store.py:427-427; mcp/src/agents_remember/controlplane/durable_store.py:506-506; mcp/src/agents_remember/controlplane/durable_store.py:511-511 |
 | MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. | "server_startup.declare_mcp_process()"; "declare_test_process()" | mcp/src/agents_remember/mcp/server.py:60-65; mcp/tests/conftest.py:37-39 |
 
 ## Update History

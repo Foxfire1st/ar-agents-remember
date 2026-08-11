@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/HighlightComposer.test.tsx`|
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T15:22+02:00                           |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -75,8 +75,8 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The composer under test. | "export const HighlightComposer = memo(HighlightComposerImpl)" | dashboard/src/panels/HighlightComposer.tsx:1178-1178 |
-| The accepted-row create helper and routed session store. | "export async function createSession(" | dashboard/src/data/sessions.ts:771-771 |
+| The composer under test. | "export const HighlightComposer = memo(HighlightComposerImpl)" | dashboard/src/panels/HighlightComposer.tsx:1133-1133 |
+| The accepted-row create helper and routed session store. | "export async function createSession(" | dashboard/src/data/sessions.ts:783-783 |
 | The mocked reliable readiness, submission, retry, and reconcile seam. | "export async function executeReliableSubmit(" | dashboard/src/data/submitClient.ts:567-567 |
 
 ## Cross-Repo References
@@ -102,6 +102,7 @@ leaf base; closeout owns commit stamping.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `HighlightComposer.test.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 3 citation items; scoped citation check now passes.
 
 - 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: updated create mocks to the authoritative result and

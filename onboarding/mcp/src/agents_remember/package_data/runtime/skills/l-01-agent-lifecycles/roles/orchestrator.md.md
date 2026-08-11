@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -16,163 +16,38 @@
 
 ## Purpose
 
-The spawned backend orchestrator lifecycle: an EVENT LOOP over durable portfolio state, not a
-developer-facing conversation. Each turn routes backend events (architect dispatch, manager
-handover, worker report, verdict, own finding) into portfolio/orchestration work. Developer-worthy
-decisions go to the architect as one-at-a-time decision items over the operator inbox.
+Packaged runtime copy of the sprint-bound backend orchestrator lifecycle. The canonical
+`skills/l-01-agent-lifecycles/roles/orchestrator.md` owns doctrine; the sync process installs this
+exact artifact.
 
 ## Code Commentary
 
-### No Native Sub-Agents (260731-EFA-L16)
-
-The Sub-Agent Fan-Out section is replaced by the "No Native Sub-Agents" doctrine (developer
-ruling): orchestration seats never use harness-native sub-agents — a sub-agent beside the
-orchestration machinery is a shadow channel with no brief, leaf, turn report, or supervision.
-Analyses that once fanned out (route-coherence scan, conflict/regression scan, per-design
-adversarial pass) now run sequentially in the seat's own loop or dispatch as proper
-system-specialist/strategist role seats, each writing the same templated durable reports. Native
-fan-out survives only on the hands-on seats (worker, reviewer, curator, architect-solo). The same
-pass names the resolved `system/tools.md` wrapper in the delegated-authority checks and the
-master→super integration packet — this role file previously never named the quality suite.
-
 ### Logic
 
-**260707-HFX2-L15 reviewer N7 current-source debt.** The source role still describes supervisor
-hosted delivery as an echo-confirmed paste. L15's runtime now grants submitted acceptance only from
-the bound harness log; pane capture is retry-safety/failure evidence. This sidecar records that the
-role doctrine is stale until a separate canonical skill edit and sync pass lands.
+The orchestrator owns durable portfolio execution behind the architect. It dispatches managers and
+system specialists with `dispatch_agent` on canonical master or sprint documents, adopts
+architect-ruled plans, processes durable handovers, and decides the one open master handover gate by
+master document and kind. It never handles a child occupant id, exact readiness, raw inbox address,
+attachment id, or packet-carried gate id. Optional designer/strategist seats are architect children;
+reviewers are manager children.
 
-260707-HFX2-L17 aligns orchestrator takeover and manager dispatch with pair-identified task seats.
-A hand-opened orchestrator takeover explicitly claims the `orchestrator` role while attaching to
-the qualified leaf, then verifies that `(leaf, role)` pair in the catalog/dashboard. Manager
-dispatch likewise treats `AR_SPAWN_ROLE=manager` plus the qualified coordination leaf as the
-manager's pair claim; the qualified leaf is no longer described as the whole task-seat identity.
+### Conventions
 
-260707-HFX2-L5 (doctrine inversion, active vigilance → passive process-and-ack): the dispatch-loop
-bullet "monitor turn-report artifacts" is gone. In its place: "process
-and ack the pending signals the L2 supervisor sweep wakes you with — turn-report artifacts,
-nudges, escalation intake — before ending your turn; you never watch for these yourself," with an
-explicit **watcher ban** (uniform-mechanism ruling 2026-07-07: the supervisor sweep is the one
-mechanism, no seat-local polling/monitoring). The **spirit test survives as the one surviving
-MODEL-judgment duty** — it is explicitly called out as NOT ported down to a watching duty; the
-sentence now reads "apply the spirit test — a model-judgment duty, not a watching one — to
-escalated deltas." The Comms Protocol section gains two changes: the "Stdin push" line is reworded
-to name the L2 supervisor's injector (HFX2-L3) as the actual delivery mechanism (never this seat's
-own initiative), and a new "Idle is safe" bullet states plainly that silence is supervised (the L2
-sweep + L4 ladder), so `lifecycle_turn_end_notification` / ending a turn with nothing pending is
-correct, not a risk to cover by watching — restating the same watcher ban. Pure doctrine reword;
-the underlying sweep/ladder mechanics were already landed by HFX2-L2/L4.
+The role runs an event loop over durable portfolio state, relays developer decisions to the
+architect, and uses proper role seats rather than orchestration-native sub-agents. Edit the canonical
+role, then synchronize.
 
-260707-HFX2-L6 adds step 0 to the opening move for developer-declared orchestrator takeovers. If
-the developer declares this chat the orchestrator for a named task, the task leaf is the seat: run
-the shared Developer-Declared Task-Seat Takeover checklist from `../SKILL.md` before trust
-checkpoint/profile work, attaching the current dashboard terminal catalog session to the qualified
-leaf key, renaming the session, and verifying the catalog/dashboard row. The same leaf adds the
-Delegated Series Authority paragraph: after the developer accepts an orchestration plan, this seat
-owns subordinate execution without repeated developer formality, including manager handovers,
-direct-work closeout when wearing a build hat, subordinate finalize/cleanup, and master→super
-integration. It still stops for final super/PR-carryover, raised human-pinned gates, plan-meaning
-changes, red checks outside scope, and quo-vadis truths. This is a doctrine-only correction; the
-existing attachment and worktree command paths are unchanged.
+### Invariants And Boundaries
 
-260707-HFX2-L7 adds the queue-aware clarification hook to the opening portfolio orientation step.
-When a developer or architect clarification arrives while a task is active, the orchestrator applies
-Developer Clarification Triage against the same portfolio/queue state it is already reading:
-close/current/small additions belong in the active task surface and implementation, future-queue
-items go to the durable backlog, and unclear fit becomes one clarification request through the
-architect relay.
+- Seat identity is `(canonical task document, role)` and occupant replacement is plane-owned.
+- Structural dispatch and structural gate decision fail closed on missing or ambiguous authority.
+- The orchestrator is backend-only and does not become manager, worker, reviewer, curator, or
+  developer-facing architect.
+- This packaged artifact must remain byte-identical to the canonical role.
 
-L13 review follow-up (L13R-1): the knob table's `harness` example is the registry id `claude` (was the non-id `claude-code`); spawn refuses non-registry values, so examples must model valid input.
+### Todos
 
-Sync-propagated copy of the canonical skills/l-01-agent-lifecycles/roles/orchestrator.md. HFX-L6
-reframes this file as a spawned backend seat. Opening move every session (resumption is the common
-case): trust checkpoint -> lifecycle_start -> PORTFOLIO ORIENTATION (read the task tree: in flight /
-blocked / awaiting whom; say it back) -> route backend events from the architect, managers, workers,
-reviewers, or the orchestrator's own findings. The invariant ladder still holds: approved task doc
--> branch intent -> worktree only where something is built; chat is never a build route. Design and
-drawing-board items go to the architect. Job P performs coherence scan, bulwark, and—only after
-developer approval of the architect's propose-first question—a strategist pass. Job O always
-requires an adopted orchestration task: it adopts the approved strategist draft, or after a
-developer-sanctioned skip this seat authors and adopts the task from the ruled plan and records the
-source in the decision log. Job O executes approved backend plans: super-branch intent,
-dependency-ordered dispatch with independent ready masters parallel by default up to
-`orchestration.concurrency.maxParallelMasters`, failed-deliverable reopen/reshape, C-11
-master->super integration duty, super-exit seam, architect-mediated developer landing tail, and
-self-improvement close. Backend operational handoffs still use durable gates and inbox surfaces.
-Hat-collapse is forbidden for spawned backend orchestrator sessions.
-
-As of the L8 de-harnessing pass the file carries a Sub-Agent Fan-Out capability-doctrine section (any harness that has fan-out: sub-agents write templated durable reports and return compact summaries; AR mutations stay in the main loop; capped by orchestration.concurrency.maxSubAgents; a harness without the ability runs the analyses sequentially) — the content formerly held by the deleted roles/orchestrator.claude-code.md overlay, generalized off the vendor.
-
-As of cycle 4 the orchestrator DECIDES the manager's `master-handover-approval` gate at each master exit (own ambient identity as the attributed decider; policy may require the attached verdict; an undecidable handover escalates to the developer); manager dispatch compiles from templates/manager-brief.md carrying the base-off-current-super fact; the hat-collapse rule notes delegated gates collapse back to the developer when one chair owns both sides; the super-exit reviewer spawn states AR_SPAWN_ROLE=reviewer; finalize wording is honest (statuses via the tool, steps by hand); the dangling Phase cross-reference is fixed.
-
-As of cycle 5: the master-exit decide call is named exactly (gate_decide(gate_id=<packet-carried>, decision, deciding_role=orchestrator) with server-side cross-lifecycle resolution) and integration enforcement stated; a Profile check (takeover) paragraph exists in The Event Loop (the AR-10 pointers now resolve); the fan-out section names the framework backdoor: spawn_agent_session is the harness-independent fan-out (DBMS principle). Cycle 6 makes the enforcement sentence true as-built (`worktree_integrate` refuses while a `master-handover-approval` gate addressed to this master — its `enclosure` — is undecided or policy-invalid), moves the Profile check paragraph AFTER the routing table so strict CommonMark keeps the opening-move list intact, and disambiguates the fan-out fallback: analyses stay sequential-in-loop on a spawnless harness, the framework spawn is for ROLE seats only (an env-less spawned chat would be misrouted as an orchestrator).
-
-As of 260703-L12 the **strategist seat is real** and returns an orchestration-task draft when
-dispatched. HFX3 supersedes the old mandatory-pre-run rule: the architect proposes Job P and the
-developer decides; a sanctioned skip routes directly to this seat's author-and-adopt path, so Job O
-never deadlocks. The dependency graph, not habit, decides sequencing: independent ready masters run
-in parallel within `maxParallelMasters`; serial execution must name a gate, shared-file one-writer
-dependency, or explicit ruling. The super-exit handover remains orchestrator-delegated under standing
-series authority, with human-pinned gates and the final visible-behavior-first super review preserved.
-
-As of 260703-L14 the Job P Output bullet states the orchestration task's DURABLE FORM: a
-`kind:"master"` task doc carrying a top-level `orchestrates` list naming the master tasks it
-commands — the dashboard derives the orchestration > master > leaf hierarchy (and the rank
-insignia) from that field, so setting it is part of adoption. This onboarded package_data copy is
-the mirror of the canonical `skills/l-01-agent-lifecycles/roles/orchestrator.md`; the other
-sync-propagated harness-dir copies (`.claude/`, `.codex/`, …) are generated and not
-onboarding-covered.
-
-**260707-HFX-L7 (provider degradation protocol)** adds a new "## Provider Degradation Alert"
-section, placed right after the trust-checkpoint/hand-off paragraph that closes the opening-move
-description and before the "Decision-Item Relay To The Architect" section. On a `degradation-alert`
-inbox row the orchestrator keeps portfolio attention on OBSERVATION AND DELEGATION — it must never
-become the fixer itself, echoing the file's core framing (an event loop over durable state, never a
-hands-on builder). The section is a four-step procedure: (1) dispatch the new `system-specialist`
-role via `spawn_agent_session` with `env={"AR_SPAWN_ROLE": "system-specialist"}`, the degradation
-event id/payload, current metrics and provider log paths, and a report path under the active
-master's `notes/reports/` (or an orchestrator-designated folder when no master owns the incident);
-(2) require the specialist to investigate and write the report BEFORE any remediation — this is
-the same investigate-first discipline `roles/system-specialist.md` itself carries; (3) read the
-report and, only if it says the issue is fixable in session, send the specialist exactly ONE
-explicit fix order; (4) otherwise — not fixable, or critical pressure continues — stop providers
-through the always-legal teardown path (`provider_watchers stop` / provider teardown) before they
-take the system down, noting that a critical detector event may already have executed the
-automated failsafe stop (`providers/degradation.py`'s critical-threshold behavior), in which case
-the orchestrator verifies and records what happened rather than re-issuing a redundant stop. The
-section closes three composition points: managers receiving the same alert only stop STARTING
-providers and have no kill authority (the asymmetry with this seat's step 4 is deliberate — kill
-authority is exclusively the orchestrator's escalation path); the system-specialist seat never
-mutates task docs, lifecycle state, or memory beyond its report (so this dispatch is safe under
-the orchestrator's existing decision-item-relay and gate-decision machinery — the specialist
-cannot make an irreversible AR-state change on its own); and the whole protocol is scoped
-providers-only this iteration, with Sentry/system-monitoring integration recorded as a future
-detection source, not part of this role's response procedure.
-
-
-### 260707-HFX2-L11 Seat Cleanup Addition
-
-Issue #12's authority split still names the orchestrator's PORTFOLIO-WIDE retire authority, but
-normal successful master→super finalization no longer terminates chats. `lifecycle_finalize_task`
-marks the finalizing master's manager + master-level reviewer seats `status:"landed"` at the
-finalize edge (config-gated `retirement.autoLandOnFinalize`, default ON), putting them in the
-dashboard's collapsed landed archive for inspection until explicit archive cleanup. The by-hand
-`session_retire(actor_session_id=<own session>, session_id=<the seat>, reason=...)` path remains for
-stuck/abandoned seats and for exceptional cleanup; unlike the manager (scoped to its own master's
-worker/reviewer/curator seats), the orchestrator may retire any seat in the portfolio.
-Owner-never-self-retires still holds unconditionally: the orchestrator can never retire its own seat, mirroring the
-same server-side policy (`serving/retire_policy.py::check_retire_authority`) the manager's cleanup
-duty relies on. The Knobs table's `tools` row includes `session_retire` (any seat, portfolio-wide)
-alongside the existing `spawn_agent_session` entry for explicit by-hand cases.
-
-### L16 Knob Additions
-
-260703-L16: the Knobs table gains the three FREE-FORM rows (`launchArgs` — verbatim harness argv;
-`sessionCommands` — lines pasted + submitted into the fresh session before the brief;
-`promptKeywords` — prepended as the first line of the dispatch brief paste; all settings-only,
-never validated, recorded in spawn provenance), and the knob footer now names the per-level
-override (`orchestration.rolesPerLevel.<level>.<role>`; role-file defaults < settings < level
-override) plus the `docs/reference/harnesses.md` spawn-knobs manual.
+None recorded.
 
 ## Cross-Repo Evidence
 
@@ -207,6 +82,7 @@ the ladder removes.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `orchestrator.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the orchestrator's
   quality altitude ladder paragraph (master-gate-owned full wrapper,
   leaf `--targeted`, per-leaf memory quality, no per-leaf full runs).

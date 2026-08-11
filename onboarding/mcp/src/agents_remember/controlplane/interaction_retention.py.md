@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/interaction_retention.py`        |
 | doc_type               | `file-level-onboarding`                                                |
 | lastUpdated            | 2026-08-01T19:45+02:00                                                 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                                          |
 
 ## Governing Overview
@@ -157,6 +157,8 @@ HFX2-L1 immortal-pending rule that contributed to the 2026-07-09 escalation stor
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — No content impact: reviewed the gate-model import move into the
+  structural package; retention sets, authority preservation, and TTL behavior are unchanged.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: aligned this card with the current source

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_integrate_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,75 +16,39 @@
 
 ## Purpose
 
-The L17 proof suite for altitude routing at the integration seam: leaf
-integration certifies its change set with the targeted contract, series/master
-integration runs the full wrapper once, memory-capped, inside
-`worktree_integrate` itself, and a refused gate blocks integration without
-merging.
+Integration-seam suite for leaf-targeted versus master/full code-quality altitude.
 
 ## Code Commentary
 
 ### Logic
 
-`IntegrationQualityGateAltitudeTests` (lines 48-192) builds typed integration
-contracts of both kinds (`integration_contract`, lines 25-47) and pins:
-
-- `test_leaf_integration_runs_the_targeted_contract` — a leaf contract drives
-  the gate with mode `targeted`;
-- `test_series_integration_runs_the_full_capped_gate` — a series contract runs
-  the full mode with the settings-owned cap;
-- `test_altitude_routing_is_kind_based` — `quality_gate_mode` returns
-  `GATE_TARGETED` for leaf and `GATE_FULL` otherwise;
-- `test_quality_gate_memory_cap_reads_the_settings_owned_value` — the cap
-  comes from `load_agentic_settings(...).quality_gate.memory_cap_bytes`;
-- `test_a_refused_gate_blocks_integration_without_merging` — the refusal shape
-  (`blocked-quality-gate`) precedes any merge;
-- `test_dry_run_reports_the_planned_gate_without_running_it` — the preview
-  carries the planned gate (mode + cap) and does not execute it.
+Leaf integration builds a `QualityGateTarget` from both the code worktree and enclosure worktree group, so the targeted gate can use enclosure-local evidence; series integration uses the full capped gate. Dry-run reports without executing and a refusal prevents merge.
 
 ### Conventions
 
-The suite patches the gate runner rather than the routing helpers, so altitude
-routing and refusal ordering are tested through the real `integrate.py` code
-path.
+Test-only evidence uses deterministic fakes/fixtures and exercises the owning seam directly.
 
 ### Invariants And Boundaries
 
-- The integration step itself invokes the gate — no manager or orchestrator has
-  to remember a separate full-gate invocation.
-- `memory_quality_check` is not part of this move; it stays a per-leaf closeout
-  gate.
-
-### Todos
-
-None.
+Altitude routing is contract-kind based; the worktree group accompanies the code checkout; no integration mutation occurs after a failed quality gate.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this memory repo.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is configured for the integration-gate suite. | — | — |
+No Domain Documentation source is configured for this repository-local regression contract.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The altitude routing and gate invocation under test. | `quality_gate_mode`, `_quality_gate_memory_cap`, `_run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/integrate.py:54-63; mcp/src/agents_remember/worktrees/modules/integrate.py:64-68; mcp/src/agents_remember/worktrees/modules/integrate.py:664-693 |
-| The planned gate the dry run reports. | `_quality_gate_preview`, `IntegratePreview`, `_dry_run_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:69-80; mcp/src/agents_remember/worktrees/modules/integrate.py:81-88; mcp/src/agents_remember/worktrees/modules/integrate.py:368-414 |
-| The cap plan the full mode uses. | `plan_capped_command` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:94-135 |
+| Current suite declaration anchoring this card. | `integration_contract` | mcp/tests/test_worktree_integrate_quality_gate.py:26-26 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references found.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `test_worktree_integrate_quality_gate.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: created this file-level
   onboarding card for the new integration-altitude suite; content derived from
   the current worktree source. Verification metadata pinned until closeout

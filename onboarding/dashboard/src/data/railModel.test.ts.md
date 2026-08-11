@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/railModel.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:32+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The rail-model functions under test. | `buildRailModel`, `railCycleOrder`, `buildSpawnTree` | dashboard/src/data/railModel.ts:192-235; dashboard/src/data/railModel.ts:238-246; dashboard/src/data/railModel.ts:257-279 |
+| The rail-model functions under test. | `buildRailModel`, `railCycleOrder`, `buildSpawnTree` | dashboard/src/data/railModel.ts:361-403; dashboard/src/data/railModel.ts:414-436 |
 | The shared full-wire-shape catalog fixtures, including the multiplexed interaction row. | `catalogRow`, `FLEET`, `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:10-27; dashboard/src/test/fixtures/catalogRows.ts:32-172; dashboard/src/test/fixtures/catalogRows.ts:414-446 |
 | The N1 agent-only-blocked triage pin. | "lists a seat blocked SOLELY on a multiplexed sub-agent approval" | dashboard/src/data/railModel.test.ts:415-431 |
 | The served builders used by the projection-join fixtures. | `taskDoc`, `gate`, `lifecycle`, `agentPickup` | dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:248-253; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:296-301 |
@@ -102,7 +102,7 @@ cross-repository implementation source that governs its behavior.
   `gate()` now hands the joins `decisions: ["approve","revise"]` where the old literal wrote `[]`,
   and `lifecycle()` gives LC1/LC2 a full served lifecycle (`state: "blocked"`, phase, tokens) where
   the old cast gave them only an `id` — but `railModel.ts::heldGatesByLeafKey`
-  (cit:([`heldGatesByLeafKey`], dashboard/src/data/railModel.ts:429-443)) reads
+  (cit:([`heldGatesByLeafKey`], dashboard/src/data/railModel.ts:565-579)) reads
   exactly `doc.lifecycleId`, `lifecycles[…].gate` and `gate.state !== "open"`, and never `decisions`
   or any lifecycle field, so R13 still measures undecided-ness by state alone. Likewise the doc
   fixture stopped stating `status`/`stepsDone`/`stepsTotal`/`steps` and now inherits them from the

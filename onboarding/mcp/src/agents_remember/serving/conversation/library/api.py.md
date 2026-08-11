@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T09:18+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,7 +75,9 @@ the exact capability state, and re-raises genuinely unexpected exceptions so the
 ### Conventions
 
 Request bodies are strict extra-forbid Pydantic models serialized once with camel-case aliases;
-null is meaningful on this wire (cursor/identity absence is contract-significant). Page sizes
+`OpenLaunchContext` carries an optional canonical `TaskDocumentRef` and seat role and serializes
+them as `taskDocumentRef`/`seatRole`; it does not accept a leaf-key identity. Null is meaningful on
+this wire (cursor/identity absence is contract-significant). Page sizes
 clamp through one bounded rule (default 50, max 100).
 
 ### Invariants And Boundaries
@@ -141,6 +143,8 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Replaced the conversation-open leaf launch key with canonical
+  task-document identity while preserving the strict request and typed-outcome contract.
 - 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 6 repository-internal reference rows for the route tests, foundation seam, request dependencies, outcome literal, and conformance suite; final scoped result 0 (checker-clean).
 
 - 2026-08-01T09:18+02:00 — 260731-EFA-L4 curator: recorded the five `response_model`

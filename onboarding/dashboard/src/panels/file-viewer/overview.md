@@ -78,7 +78,7 @@ a file is selected; kept mounted so state survives a tab switch.
 | --- | --- | --- |
 | The L1 read-only files API this view consumes. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:296-325 |
 | The same-origin client wrapping that API. | `fetchRepos` | dashboard/src/data/files.ts:108-111 |
-| The shell that registers + keeps this view mounted. | `filesLayer` | dashboard/src/cockpit/Cockpit.tsx:336-336 |
+| The shell that registers + keeps this view mounted. | `filesLayer` | dashboard/src/cockpit/Cockpit.tsx:337-337 |
 | The markdown renderer the sidecar pane reuses. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
 
 ## Current L5I Route State

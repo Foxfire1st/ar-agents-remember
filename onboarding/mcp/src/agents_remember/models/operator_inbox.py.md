@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/operator_inbox.py`      |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash |                                                         `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                                         2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |                                                         `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |                                                         2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ listed as Domain Documentation.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The response models cover post, poll, and consume payloads and reuse the inbox state literal. | "class OperatorInboxPostResponse(ToolResponse):"; "class OperatorInboxPollResponse(ToolResponse):"; "class OperatorInboxConsumeResponse(ToolResponse):"; "OperatorInboxState = Literal[" | mcp/src/agents_remember/models/operator_inbox.py:10-10; mcp/src/agents_remember/models/operator_inbox.py:54-54; mcp/src/agents_remember/models/operator_inbox.py:82-82; mcp/src/agents_remember/models/operator_inbox.py:92-92 |
-| The registry maps the three `operator_inbox_*` tools to these response models. | "from agents_remember.models.operator_inbox import ("; "\"operator_inbox_post\": OperatorInboxPostResponse," | mcp/src/agents_remember/models/tool_registry.py:59-63; mcp/src/agents_remember/models/tool_registry.py:175-177 |
+| The registry maps the three `operator_inbox_*` tools to these response models. | "from agents_remember.models.operator_inbox import ("; "\"operator_inbox_post\": OperatorInboxPostResponse," | mcp/src/agents_remember/models/tool_registry.py:51-51; mcp/src/agents_remember/models/tool_registry.py:208-208 |
 
 ## Cross-Repo References
 

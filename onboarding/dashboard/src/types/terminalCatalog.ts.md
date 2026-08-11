@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/terminalCatalog.ts`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-11T09:45+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,87 +16,51 @@
 
 ## Purpose
 
-The TypeScript mirror of the **FULL terminal-catalog row**:
-`mcp/src/agents_remember/serving/terminal_catalog.py` `TerminalCatalogEntry.to_json()`, served
-verbatim by `GET /api/terminal/sessions` (`serving/app.py` `_catalog_payload`). The Python entry
-is the source of truth — kept in lockstep BY HAND, camelCase to match the wire form,
-written-only-when-set fields optional (`?:`) — the same posture as `types/projection.ts`. It
-replaces the former partial `TerminalSessionInfo` in `data/terminal.ts`, which now re-exports
-`TerminalCatalogRow as TerminalSessionInfo` so existing consumers keep their import site.
+Mirrors the terminal-catalog wire row consumed by the dashboard. The current binding fields are
+`taskDocumentRef` plus `seatRole`; replacement declares the same structural document independently
+of runtime session identity.
 
 ## Code Commentary
 
 ### Logic
 
-The terminal-catalog wire type now exposes optional `spawnRepo` and `spawnSprint` provenance. The
-pair is additive for compatibility but semantically write-once for named command seats; absence
-means a legacy row, not permission to infer a global sprint.
+`TerminalCatalogRow` carries runtime transport/status, structural binding, replacement declaration,
+spawn provenance, control evidence, and terminal outcome. `TaskDocumentRef` is imported from the
+generated projection vocabulary so task and catalog surfaces share one shape.
 
-- **Vocabulary unions**: `TerminalOpenKind`, `TerminalSessionStatus`
-  (`running|exited|landed|terminated`), `HarnessControlState`, `HarnessActivityState`,
-  `HarnessAcceptanceState`, `SeatTurnState` (`working|turn-ended|awaiting-input|stale` —
-  classified on the 10 s sweep cadence; ABSENT means unclassified, never a fabricated state),
-  `TerminalLivenessEvidence` (`tmux-command-failed|pane-gone`). cit:([`TerminalOpenKind`, `TerminalSessionStatus`, `HarnessControlState`, `HarnessActivityState`, `HarnessAcceptanceState`, `SeatTurnState`, `TerminalLivenessEvidence`], dashboard/src/types/terminalCatalog.ts:7-11; dashboard/src/types/terminalCatalog.ts:14-15)
-- **`ControlRawDiagnostics`**: `controlRaw` is the retained verbatim adapter state; the
-  two keys the cockpit reads (`bridgeError`, `paneDiagnostic`) are NAMED but typed opaque
-  (`unknown`) — the backend retains vendor payloads the UI must not re-shape. cit:([`ControlRawDiagnostics`], dashboard/src/types/terminalCatalog.ts:19-22)
-- **`TerminalCatalogRow`** — the full row: identity/transport (id, label, kind, cwd,
-  tmuxName, `command?` — always serialized by the server, optional here because no cockpit
-  surface consumes it, existing fixtures omit it), timestamps + status, leaf identity
-  (`leafKey`, `seatRole` — always serialized, the server migrates legacy rows;
-  `replacementForLeaf`), spawn provenance (`spawnedBySession/Lifecycle`, `spawnRole`,
-  `launchArgs`/`promptKeywords`/`sessionCommands`, `spawnLevel` + `spawnLevelSource`),
-  **requested** model/effort (`resolvedModel`/`resolvedEffort` — settings-resolved argv pins,
-  NEVER proof of the effective pair; evidence tiers live in `sessionCockpitStore`, L4), control
-  metadata (`controlState/Endpoint/Protocol/Activity/Acceptance/VendorSessionId/
-  PendingInteraction/LastEventSequence/Raw`) plus the **additive plural
-  `controlPendingInteractions`** (multiplexed harness sub-agent pendings,
-  review R6; the singular slot above stays the parent-thread entry), liveness
-  evidence, retirement provenance (`retiredAt/BySession/Reason/Edge`), landing provenance
-  (`landedAt/Reason/Edge`), the frozen `spawnedLabel`, and `turnState` + `turnStateChangedAt`. cit:([`TerminalCatalogRow`], dashboard/src/types/terminalCatalog.ts:24-93)
+### Conventions
+
+`seatRole` is current binding and `spawnRole` is provenance. Optionality mirrors catalog rows
+during creation/migration; current server writers use the structural fields.
 
 ### Invariants And Boundaries
 
-- Reviewer-verified key-by-key against `to_json()`: every declared field is actually serialized —
-  nothing invented. Any server field addition lands HERE first, then in consumers.
-- `resolvedModel`/`resolvedEffort` are REQUESTED provenance; presenting them as effective anywhere
-  is an honesty violation (R7 renders them "(requested)" until the tier proves better).
-- The plural `controlPendingInteractions` is strictly ADDITIVE: the singular slot remains the
-  parent-thread entry, and multiplexing bridges carry the parent in BOTH slots — consumers must de-duplicate
-  by interactionId (see `data/interactionAnswer.ts` `pendingInteractionPayloads`) rather than
-  assume the sets are disjoint.
-- The one hand-maintained wire mirror for the catalog; `data/terminal.ts` must keep re-exporting
-  rather than re-declaring.
+- `leafKey` and `replacementForLeaf` are not current wire fields.
+- Task document plus role is the stable seat; `id` is the occupant.
+- Replacement provenance does not create a second seat identity.
+
+### Todos
+
+None.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository; repository code and tests are the authority.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The unions, opaque diagnostics keys, and the full row shape (incl. the additive plural pending slot). | `TerminalCatalogRow` | dashboard/src/types/terminalCatalog.ts:24-93 |
-| The Python source of truth (`TerminalCatalogEntry.to_json()`; both pending slots serialized; row vocabulary moved to models by L9). | "class TerminalCatalogEntry:" | mcp/src/agents_remember/models/terminal_catalog.py:68-68 |
-| The re-export seam preserving existing import sites. | "TerminalCatalogRow as TerminalSessionInfo" | dashboard/src/data/terminal.ts:369-369 |
-| The `OpenSession` mapping that carries these fields into the client registry. | `OpenSession` | dashboard/src/data/sessions.ts:28-83 |
-| The sibling hand-mirrored wire type this follows the posture of. | `WorkspaceProjection` | dashboard/src/types/projection.ts:507-518 |
-| The full-wire-shape fixtures built on this type (FLEET + appended packs, incl. the `L7_*` multiplexed seat). | `FLEET` | dashboard/src/test/fixtures/catalogRows.ts:32-172 |
+| The wire row separates runtime identity, structural binding, and replacement. | `TerminalCatalogRow` | dashboard/src/types/terminalCatalog.ts:24-95 |
+| The task-document reference is shared with the projection contract. | `TaskDocumentRef` | dashboard/src/types/projection.ts:468-471 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references found.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
+No cross-repository implementation dependency governs this file.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current data-contract card for `terminalCatalog.ts` with task-document identity, qualified seat state, and terminal projections represented by this source.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the additive sprint-provenance wire fields and
   their legacy-absence semantics. Verification metadata remains pinned until closeout stamps the
   code commit.

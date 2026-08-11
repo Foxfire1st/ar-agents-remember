@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/launchFlow.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ path. This preserves the caller-minted-id catalog watch without creating a secon
 
 - `LaunchSelectionState` / cit:([`EMPTY_SELECTION`], dashboard/src/data/launchFlow.ts:27-31) — `{modelKey, effort, vendorDefaults}`;
   `vendorDefaults: true` is the EXPLICIT selectionless choice (send NEITHER knob).
-- cit:([`launchableEfforts`], dashboard/src/data/launchFlow.ts:34-36) — `effortOptions.filter(launchSettable)`; a `filter` only,
+- cit:([`launchableEfforts`], dashboard/src/data/launchFlow.ts:38-40) — `effortOptions.filter(launchSettable)`; a `filter` only,
   no `.sort()` anywhere (advertised order preserved — reviewer-grepped).
 - cit:([`chooseModel`], dashboard/src/data/launchFlow.ts:47-59) — picking a model RE-GATES effort: that row's
   advertised `defaultEffort` only when it is itself in the launch-settable menu, otherwise `null`
@@ -47,7 +47,7 @@ path. This preserves the caller-minted-id catalog watch without creating a secon
   is also why a corrected-launch prefill can never re-offer a key the live catalog dropped).
 - cit:([`chooseEffort`], dashboard/src/data/launchFlow.ts:62-71) — accepts only the CURRENT model's
   advertised launchable menu; anything else leaves the selection unchanged.
-- cit:([`selectionComplete`], dashboard/src/data/launchFlow.ts:77-79) / cit:([`launchSelectionBody`], dashboard/src/data/launchFlow.ts:82-90) — complete = vendor defaults OR
+- cit:([`selectionComplete`], dashboard/src/data/launchFlow.ts:81-83) / cit:([`launchSelectionBody`], dashboard/src/data/launchFlow.ts:82-90) — complete = vendor defaults OR
   both knobs; the body emits `{model, effort}` or `{}` and THROWS on any partial pair
   ("complete the pair or choose vendor defaults") — partiality is unrepresentable.
 - cit:([`OpenOutcome`], dashboard/src/data/launchFlow.ts:95-126) — one normalized outcome per server path, each rendered verbatim by
@@ -56,7 +56,7 @@ path. This preserves the caller-minted-id catalog watch without creating a secon
   `open-refused` (other 400, verbatim status+detail), `leaf-taken` (409, names the owning
   session), `launch-selection-conflict` (409, the LIVE row's retained pair vs attempted —
   provenance never rewritten), `outcome-unknown` (transport/5xx/unrecognized — design §7.1 F9).
-- cit:([`classifyOpenResponse`], dashboard/src/data/launchFlow.ts:182-195) — the pure classifier; `httpStatus: null`
+- cit:([`classifyOpenResponse`], dashboard/src/data/launchFlow.ts:198-211) — the pure classifier; `httpStatus: null`
   = the fetch threw. Unrecognized 200s/409s/5xx all fall through to `outcome-unknown` with an
   honest detail line.
 - `openHostedSession(sessionId, request, base)` — delegates to the sole opener with
@@ -100,11 +100,11 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Selection reducers, wire-body rule, classifier, and the classifying open client. | `LaunchSelectionState`, `selectionComplete`, `launchSelectionBody`, `classifyOpenResponse`, `openHostedSession` | dashboard/src/data/launchFlow.ts:20-25; dashboard/src/data/launchFlow.ts:77-79; dashboard/src/data/launchFlow.ts:82-90; dashboard/src/data/launchFlow.ts:182-195; dashboard/src/data/launchFlow.ts:232-250 |
+| Selection reducers, wire-body rule, classifier, and the classifying open client. | `LaunchSelectionState`, `selectionComplete`, `launchSelectionBody`, `classifyOpenResponse`, `openHostedSession` | dashboard/src/data/launchFlow.ts:24-29; dashboard/src/data/launchFlow.ts:81-83; dashboard/src/data/launchFlow.ts:86-94; dashboard/src/data/launchFlow.ts:198-211; dashboard/src/data/launchFlow.ts:248-266 |
 | The capability wire types the reducers read (snapshot/model/effort rows). | `CapabilitySnapshotWire`, `ModelCapabilityWire`, `EffortOptionWire` | dashboard/src/types/harnessCapabilities.ts:16-22; dashboard/src/types/harnessCapabilities.ts:25-39; dashboard/src/types/harnessCapabilities.ts:59-65 |
-| The open-response wire shapes this classifies (200/400/409×2 bodies). | `TerminalOpenSuccessBody`, `TerminalOpenSelectionInvalidBody`, `TerminalOpenBadKindBody`, `TerminalOpenLeafTakenBody`, `TerminalOpenConflictBody` | dashboard/src/types/terminalOpen.ts:10-26; dashboard/src/types/terminalOpen.ts:31-34; dashboard/src/types/terminalOpen.ts:37-40; dashboard/src/types/terminalOpen.ts:43-47; dashboard/src/types/terminalOpen.ts:51-63 |
+| The open-response wire shapes this classifies (200/400/409×2 bodies). | `TerminalOpenSuccessBody`, `TerminalOpenSelectionInvalidBody`, `TerminalOpenBadKindBody`, `TerminalOpenSeatTakenBody`, `TerminalOpenConflictBody` | dashboard/src/types/terminalOpen.ts:10-26; dashboard/src/types/terminalOpen.ts:31-34; dashboard/src/types/terminalOpen.ts:37-40; dashboard/src/types/terminalOpen.ts:43-47; dashboard/src/types/terminalOpen.ts:51-63 |
 | The server's synchronous-refusal boundary (split pair / non-native only). | `resolve_terminal_open_selection` | mcp/src/agents_remember/serving/harness_control_api.py:156-179 |
-| The dialog rendering these machines (options exclusively from the envelope). | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:362-423 |
+| The dialog rendering these machines (options exclusively from the envelope). | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:353-413 |
 | Open-response fixtures the classifier is table-tested over. | `OPENED_STARTING`, `INVALID_PARTIAL_PAIR`, `LAUNCH_CONFLICT` | dashboard/src/test/fixtures/openResponses.ts:17-33; dashboard/src/test/fixtures/openResponses.ts:46-49; dashboard/src/test/fixtures/openResponses.ts:72-86 |
 | The unit suite (reducer tables, classifier table, POST-body assertions). | "selection reducers — complete pair or vendor defaults", "200 + session → opened", "POSTs the complete pair and classifies the answer" | dashboard/src/data/launchFlow.test.ts:35-128; dashboard/src/data/launchFlow.test.ts:133-142; dashboard/src/data/launchFlow.test.ts:200-220 |
 
@@ -118,6 +118,8 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — Aligned the current data-contract card for `launchFlow.ts` with task-document identity, qualified seat state, and terminal projections represented by this source.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/viewedLeaf.test.tsx`     |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-11T15:20+02:00                                      |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The viewed-leaf reporting suite. | `describe` | dashboard/src/panels/detail-panel/viewedLeaf.test.tsx:11-48 |
+| The viewed-leaf reporting suite. | "describe(\"DetailPanel viewed-task reporting\", () => {" | dashboard/src/panels/detail-panel/viewedLeaf.test.tsx:11-52 |
 
 ## Cross-Repo References
 
@@ -60,6 +60,8 @@ No cross-repository implementation source governs this file.
 
 ## Update History
 
+- 2026-08-11T15:20+02:00 — Replaced the generic test-runner anchor with the suite's unique
+  declaration and complete current extent.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
   viewed-leaf suite split from `DetailPanel.test.tsx`. Verification pinned to the
   leaf base until closeout stamps the code commit.

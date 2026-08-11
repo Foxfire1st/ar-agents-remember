@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | Row/cursor/key wire types this list renders (now including `ConversationLibraryAgentRow`). | `ConversationLibraryAgentRow` | dashboard/src/data/conversation-library/types.ts:39-50 |
 | The A4/A5 presentation helpers (`humanizeAge`, `truncateMiddle`, `harnessLabel`). | `humanizeAge` | dashboard/src/data/conversation/format.ts:40-47 |
-| The surface that owns selection/paging callbacks into the store and passes `agentsNote` through. | "agentsNote={listView.agentsNote}" | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:235-235 |
+| The surface that owns selection/paging callbacks into the store and passes `agentsNote` through. | "agentsNote={listView.agentsNote}" | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:236-236 |
 | The sub-agent nesting + agentsNote regression suite for this list. | "ConversationLibraryList agent nesting" | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx:43-86 |
 
 ## Cross-Repo References

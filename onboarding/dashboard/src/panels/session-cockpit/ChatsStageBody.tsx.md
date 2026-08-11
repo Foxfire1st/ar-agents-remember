@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/ChatsStageBody.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,7 +83,7 @@ reviewed task evidence for any current behavioral claim.
 | The reconstructable active-conversation store connect/disconnect orchestration. | `connectConversation`; `disconnectConversation` | dashboard/src/data/conversation/store.ts:637-682; dashboard/src/data/conversation/store.ts:684-700 |
 | The reused L5 submission authority the epoch comes from. | `readSubmissionAuthority` | dashboard/src/data/submissionLifecycleClient.ts:332-343 |
 | The default structured surface, the library surface, the reconnect banner, and the default-off drawer. | `ConversationSurface`; `ConversationLibrarySurface`; `copyFor`; `TerminalDiagnosticsDrawer` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:82-146; dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx:47-66; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341; dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx:77-117 |
-| The controlled-session predicate and the legacy-raw PTY body. | "legacy raw — the vendor TUI runs in this pane"; `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:122-122 |
+| The controlled-session predicate and the legacy-raw PTY body. | "legacy raw — the vendor TUI runs in this pane"; `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:334-421; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:121-121 |
 | The view that mounts this body and owns the surrounding authorities. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:15-18 |
 
 ## Cross-Repo References

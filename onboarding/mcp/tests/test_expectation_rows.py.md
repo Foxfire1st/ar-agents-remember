@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_expectation_rows.py`                |
 | doc_type               | `file-level-onboarding`                             |
 | lastUpdated            | 2026-07-08T16:15+02:00                              |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                    |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ No meaningful external design-doc references found yet (created this leaf).
 | Row creation/transition idempotency: `mark_met`/`mark_missed` never overwrite an existing terminal state. | "def test_mark_met_is_idempotent" | mcp/tests/test_expectation_rows.py:46-46 |
 | Store query surface: `pending`, `overdue`, `find_by_source`, `mark_met`/`mark_missed` via the store. | "def test_pending_excludes_met_rows" | mcp/tests/test_expectation_rows.py:91-91 |
 | `orchestration.expectations` SLA-settings parser: defaults, per-kind override, fail-loud validation. | "class ExpectationRowRecordTests" | mcp/tests/test_expectation_rows.py:33-33 |
-| "class Expectation" | "class Expectation:" | mcp/src/agents_remember/controlplane/expectation_rows.py:84-84 |
+| "class Expectation" | "class Expectation:" | mcp/src/agents_remember/controlplane/expectation_rows.py:85-85 |
 
 ## Cross-Repo References
 

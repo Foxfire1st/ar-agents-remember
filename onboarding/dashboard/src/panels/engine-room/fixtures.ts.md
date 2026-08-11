@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/fixtures.ts`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T15:10+02:00                           |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ Fixtures are presentation data only: they encode the wire shape (camelCase, `exc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Node/edge types this file shapes — the import list here, resolving to the mirror there. | `EngineProcessEdge` | dashboard/src/types/projection.ts:162-170 |
-| `EngineProcessEdge` server model — `extra="forbid"`, no `refusedPolarity`, no `refused` in the state comment. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:771-790 |
+| `EngineProcessEdge` server model — `extra="forbid"`, no `refusedPolarity`, no `refused` in the state comment. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:791-810 |
 | `_seed_edge_state` returns `stale` for the reroute case — the state this fixture now carries. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:634-634 |
 | `EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS` | `EngineRoomScenario`, `ENGINE_ROOM_SCENARIOS` | dashboard/src/panels/engine-room/fixtures.ts:19-23; dashboard/src/panels/engine-room/fixtures.ts:721-1197 |
 | `engineProcess` core builder (override-last spread) | `engineProcess` | dashboard/src/panels/engine-room/fixtures.ts:214-268 |
@@ -73,7 +73,7 @@ Engine Room scenario factories now emit leaf enclosure contract paths (`tasks/<r
 
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
   `observer/projection.py` citations — the reference row and the restatement in the 10:56 entry
-  below. `EngineProcessEdge` cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:771-790)
+  below. `EngineProcessEdge` cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:791-810)
   is the class with the `extra="forbid"` model and the documented state vocabulary. No body claim changed.
 
 - 2026-08-01T10:56+02:00 — 260731-EFA-L4 curator: corrected the T9C fixture description. `EdgeStates`

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/kernel/route_index.py`           |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-02T01:05+02:00                                   |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`               |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-11T14:40+02:00                                   |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`               |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
@@ -29,7 +29,9 @@ unfiltered `repository_paths` for sidecar/source membership and its path-rule-fi
 `eligible_paths` for route source counts. It discovers overview topology in onboarding, derives
 covered sidecars, child routes, routing terms, and hot-path summaries, serializes stable JSON, and
 writes only when bytes differ. There is no filesystem source walker and no late `Path.is_file()`
-membership decision.
+membership decision. The result retains the full index census and now also names `staleIndexes`,
+the exact subset whose bytes differ (or would differ in a dry run), so a curator checklist can
+present concrete index work instead of only a count.
 
 Routing-term extraction decides which identifier hints are worth indexing in two named steps
 (260731-EFA-L2): `_is_source_anchor(token)` rejects tokens shorter than three characters and
@@ -55,6 +57,8 @@ Generated indexes are derived metadata and are regenerated rather than copied or
   official carryover preflight; the builder must not invent defaults.
 - A second build with unchanged source/onboarding inputs must report zero writes and byte-identical
   indexes.
+- `staleIndexes` must be the exact deterministic subset counted by `written`; in dry-run mode the
+  names are prospective and no index bytes change.
 - Indexes support retrieval routing; they are not hand-authored semantic truth.
 
 ### Todos
@@ -75,7 +79,7 @@ package source and deterministic production-path tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The census exposes Git source-snapshot, tracked-candidate, and untracked-candidate entry points. | "def route_index_source_snapshot(", "def _tracked_source_candidates(", "def _untracked_source_candidates(" | mcp/src/agents_remember/kernel/route_index_census.py:41-41; mcp/src/agents_remember/kernel/route_index_census.py:83-83; mcp/src/agents_remember/kernel/route_index_census.py:126-126 |
-| MCP refresh supplies resolved repository and storage authority. | "def route_index_refresh_tool(", "storage=scope.context.storage" | mcp/src/agents_remember/application/memory_tools.py:366-366; mcp/src/agents_remember/application/memory_tools.py:378-378 |
+| MCP refresh supplies resolved repository and storage authority. | "def route_index_refresh_tool(" | mcp/src/agents_remember/application/memory_tools.py:438-460 |
 | Closeout preview/apply expose route-index refresh planning entry points. | "def refresh_route_indexes_for_context(", "def route_index_refresh_plan_for_context(" | mcp/src/agents_remember/worktrees/modules/onboarding.py:393-393; mcp/src/agents_remember/worktrees/modules/onboarding.py:404-404 |
 | The regression matrix proves identity, exclusions, typed failures, and repeat convergence. | `RouteIndexTests`, `test_exact_paths_and_symlinks_are_target_independent`, `test_ignored_generated_and_path_rule_excluded_artifacts_do_not_change_bytes`, `test_git_census_failure_uses_typed_domain_error`, `test_regular_checkout_and_linked_worktree_produce_identical_indexes` | mcp/tests/test_route_index.py:82-907 |
 
@@ -90,6 +94,10 @@ inside this package.
 
 ## Update History
 
+- 2026-08-11T16:54+02:00 — Exposed the exact stale-index subset beside the existing counts so the
+  enclosure curator checklist can name actionable index paths without applying them.
+- 2026-08-11T14:40+02:00 — Re-read the application refresh seam after its memory-scope extension
+  and regenerated the shifted authority citation; route-index behavior is unchanged.
 - 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-08-03T02:57:48+02:00 — W3-B04 curator: curated 4 table citations (4 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

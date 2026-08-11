@@ -6,16 +6,9 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-08T02:00+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
-
-## 260731-EFA-L8 Change
-
-All tool-registration functions in this route gained bare-`*` keyword-only
-signatures (19 PLR0917 fixes across the ten registration modules; the rule stays
-enabled and call sites already pass keywords). The registered tool surface is
-unchanged.
 
 ## Purpose
 
@@ -40,10 +33,9 @@ def flat(repo_id, task_name, leaf_id)  -> properties: [repo_id, task_name, leaf_
 def nested(args: SomeModel)            -> properties: [args];                        has $defs
 ```
 
-So "tidying" `spawn_agent_session(leaf_key=...)` into `spawn_agent_session(seat: SpawnSeat)` does
-not refactor anything — it changes the wire. `{"leaf_key": ...}` becomes `{"seat": {"leaf_key":
-...}}` for every MCP client, every row of `docs/reference/mcp-tools.md`, and every flat-kwargs call
-in the `c-09` and `l-01` skills.
+So changing a flat structural signature such as `dispatch_agent(task_document_ref, role, brief)`
+into one model-typed argument is not an internal refactor: it republishes the MCP input schema as a
+nested object. Structural vocabulary and flatness are both part of the registered contract.
 
 That is why these modules — and only these — are exempt from `PLR0913` (the ≤5-argument rule that
 260731-EFA-L2 armed at full strength across the rest of the tree, refactoring 274 of 293 offenders
@@ -75,7 +67,7 @@ developer ruled all four forbidden — and no `noqa` anywhere holds an argument-
 | ------------------- | ------------------------------------------------------------------------- |
 | `__init__.py`       | `TOOL_REGISTRARS` (the ordered tuple `create_server` loops over) and the `ToolRegistrar` alias. |
 | `core.py`           | `ping`, `server_info`, `context_packet`, `read_ar_files`, `resolve_context`, `runtime_install`, `skills_install`. |
-| `sessions.py`       | `attach_terminal_session_to_leaf`, `spawn_agent_session`, `hosted_session_readiness`, `session_retire`, `session_rename`. |
+| `sessions.py`       | `dispatch_agent`, `retire_child`, `rename_child`, `rename_self`; caller identity and runtime allocation are plane-owned. |
 | `memory.py`         | `drift_check`, `memory_quality_check`, `route_index_refresh`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt`, `memory_carryover_plan`, `memory_carryover_apply`. |
 | `providers.py`      | `provider_status`, `provider_diagnostics`, `provider_watchers`.            |
 | `code_search.py`    | `grepai_search`, `grepai_trace`, and the six `cgc_*` graph tools.          |
@@ -84,10 +76,10 @@ developer ruled all four forbidden — and no `noqa` anywhere holds an argument-
 | `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`.                      |
 | `benchmarks.py`     | `codex_benchmark_prepare`, `codex_benchmark_run`.                          |
 | `lifecycle.py`      | The six session-lifecycle signals: `lifecycle_start`, `lifecycle_resume`, `lifecycle_turn_end_notification`, `lifecycle_end`, `switch_lifecycle`, `lifecycle_phase`. |
-| `gates.py`          | `lifecycle_gate`, `gate_decide`, `gate_list`.                              |
-| `orchestration.py`  | `operator_inbox_post`, `operator_inbox_poll`, `operator_inbox_consume`, `orchestration_nudge_manager`. |
+| `gates.py`          | Structural `lifecycle_gate`, `gate_decide`, `gate_list`; public gate/lifecycle ids are absent. |
+| `orchestration.py`  | `message_parent`, `message_child`; ordinary whole-message traffic resolves current structural occupants. |
 
-Twelve registrars, 58 advertised tools — the same 58 names `mcp/tools/base.py::PUBLIC_TOOLS`
+Twelve registrars, 55 advertised tools — the same 55 names `mcp/tools/base.py::PUBLIC_TOOLS`
 lists, which `mcp/tests/test_tools.py` checks against a live server's `list_tools()`.
 
 ## Hot Path Summary
@@ -104,14 +96,9 @@ The published docstring is the model-visible description of the tool and is chec
 `test_tools.py`; it is the only place a caller learns the semantics, so it carries the refusal
 vocabulary and the act-by-default `dry_run` contract in prose.
 
-Two attributions are fixed **in this layer**, not taken from the caller, so an agent cannot
-self-attribute a human decision:
-
-- `gate_decide` sends `by="model"`, `via="cli"` for a plain decision; supplying `deciding_role`
-  switches `via` to `"orchestration"` and leaves `by` empty for the server to fill from the role.
-- `operator_inbox_post` and `operator_inbox_consume` always send `created_by`/`consumed_by="model"`
-  and `..._via="cli"`. Trusted dashboard code calls the payload builder directly with
-  developer/dashboard attribution instead.
+Structural tool registration fixes attribution and caller identity in the plane. Gate decisions use
+the ambient seat for authority; message tools derive the sender from the same hosted context. No
+agent-facing signature accepts an actor/session/lifecycle/inbox/gate id.
 
 `register_lifecycle_tools` takes `_config` and does not use it: its six payloads act on the
 process-wide ambient lifecycle rather than on resolved settings. The parameter stays so every
@@ -139,7 +126,7 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
-| The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
 | `PUBLIC_TOOLS` — the advertised name list this package must match. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
 | The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:404-417 |
@@ -163,6 +150,10 @@ keyword-only. The registered tool surface is unchanged.
 The registration callers were rewritten by the L9 caller wave: conversation/evidence/control-wire models now import from `models/conversations/`, the runtime config record from `kernel/primitives/runtime_config.py`, and the terminal-catalog row vocabulary from `models/terminal_catalog.py`. Registration/tool wiring behavior is unchanged.
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled registration with the structural
+  `dispatch_agent`, parent/child messaging, gate, retire, and rename surface and the removal of
+  agent-visible exact-session controls.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 

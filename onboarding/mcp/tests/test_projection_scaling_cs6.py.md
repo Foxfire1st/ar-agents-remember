@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_projection_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |                                                `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |                                                `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ No external documentation governs these repo-local projection scaling regression
 | The shared per-tick contract snapshot + stat-identity parse cache under test. | `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
 | The single per-tick build in `project_and_write` the full-tick regression instruments: one shared `ContractSnapshotCache`, then exactly one `state.read(...)` pass per tick. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
 | Projection store implements lifecycle-log caching and over-budget task-document payload warnings. | `project_and_write`; `_warn_if_task_documents_payload_over_budget` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275; mcp/src/agents_remember/serving/projections/projection_store.py:278-304 |
-| Snapshot readers implement the shared task-document cache (`_task_doc_cache` + `_iter_task_document_payloads`), the single-read gate fold (`read_gates`), and the git-status TTL cache (`STATUS_PAYLOAD_TTL_SECONDS` / `_cached_local_status`). | "_task_doc_cache = TaskDocumentPayloadCache()"; "def read_gates(coordination_root: Path"; "STATUS_PAYLOAD_TTL_SECONDS = 8.0"; "def _cached_local_status(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:26-26; mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:32-32; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:103-103; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:377-377 |
+| Snapshot readers implement the shared task-document cache (`_task_doc_cache` + `_iter_task_document_payloads`), the single-read gate fold (`read_gates`), and the git-status TTL cache (`STATUS_PAYLOAD_TTL_SECONDS` / `_cached_local_status`). | "_task_doc_cache = TaskDocumentPayloadCache()"; "def read_gates(coordination_root: Path"; "STATUS_PAYLOAD_TTL_SECONDS = 8.0"; "def _cached_local_status(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:26-26; mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:32-32; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:103-103; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:380-380 |
 
 ## Cross-Repo References
 

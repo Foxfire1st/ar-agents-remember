@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_controlplane_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-01T16:29+02:00                             |
-| lastVerifiedCommitHash |                                                    `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                                    2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-11T14:29+02:00                             |
+| lastVerifiedCommitHash |                                                    `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |                                                    2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -148,7 +148,7 @@ passes on a loaded CI box and proves nothing. The stress case is kept alongside 
 it is the one that produces a *rate* and carries the number in its failure text through
 cit:([`_describe`], mcp/tests/test_controlplane_store_durability.py:78-91). **Tier 3 — the
 historical `reclaim_ticks` name is absent from the current instrument:** `run_stress` now returns
-`reclaim_attempts` and `successful_reclaims` (cit:([`reclaim_attempts`, `successful_reclaims`], mcp/tests/_store_durability.py:958-959)). The old name is preserved here for developer review rather than guessed into a replacement; the failure text still states how much racing the rate was measured over.
+`reclaim_attempts` and `successful_reclaims` (cit:([`reclaim_attempts`, `successful_reclaims`], mcp/tests/_store_durability.py:969-970)). The old name is preserved here for developer review rather than guessed into a replacement; the failure text still states how much racing the rate was measured over.
 
 **One seeded survivor plus one torn line, built by the adapters — and the torn line is not always
 last.** `_TempRootTest._tear` (cit:([`_tear`], mcp/tests/test_controlplane_store_durability.py:100-102)) is now a one-call wrapper over cit:([`_tear_mid_log`], mcp/tests/test_controlplane_store_durability.py:104-120),
@@ -220,7 +220,7 @@ shared instrument; the rows below are the code each claim is about.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The measurement harness this file imports: adapters, case lists, the shared stress profile, and the scenario dispatch. | `ADAPTERS`; `CASES`; `APPEND_CASES`; `STRESS_PROFILE`; `run_case` | mcp/tests/_store_durability.py:571-573; mcp/tests/_store_durability.py:577-577; mcp/tests/_store_durability.py:579-579; mcp/tests/_store_durability.py:1077-1084; mcp/tests/_store_durability.py:1088-1092 |
+| The measurement harness this file imports: adapters, case lists, the shared stress profile, and the scenario dispatch. | `ADAPTERS`; `CASES`; `APPEND_CASES`; `STRESS_PROFILE`; `run_case` | mcp/tests/_store_durability.py:582-590; mcp/tests/_store_durability.py:1088-1095; mcp/tests/_store_durability.py:1099-1109 |
 | The bounded sibling helper owns the base-commit archive and pinned re-execution; both functions remain re-exported by the harness. | `extract_base_commit_tree`; `run_against_source` | mcp/tests/_store_durability_source.py:79-105; mcp/tests/_store_durability_source.py:108-132 |
 | The vacuity guard `HarnessVacuityGuardTests` exercises the sibling work directory holding each run's stop flag. | `harness_work_dir` | mcp/tests/_store_durability.py:853-880 |
 | The vacuity guard's evidence-based floor. | `MIN_SUCCESSFUL_RECLAIMS` | mcp/tests/_durability_measurement.py:11-11 |
@@ -229,9 +229,9 @@ shared instrument; the rows below are the code each claim is about.
 | Tier 3 — the historical names `MIN_RECLAIM_TICKS` and `_refuse_a_vacuous_run` are absent from the current tree; the current floor and funnel are named `MIN_SUCCESSFUL_RECLAIMS` and `require_stress_measurement`. | `MIN_SUCCESSFUL_RECLAIMS`; `require_stress_measurement` | mcp/tests/_durability_measurement.py:11-11; mcp/tests/_durability_measurement.py:18-55 |
 | The two `GateStore` read policies the R8 tests hold apart: `read` is strict, `read_for_projection` skips a torn or unknown-major line. | `read`; `read_for_projection` | mcp/src/agents_remember/controlplane/store.py:120-130; mcp/src/agents_remember/controlplane/store.py:132-146 |
 | The projection fold asserted to survive a torn line — and which, since this leaf, no longer rewrites anything on the tick. | "def read_gates(coordination_root: Path, *, now: datetime" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:103-103 |
-| The expectation-row projection wrapper, which this leaf moved onto the per-row tolerant read; its comment records that the surrounding `suppress(OSError, ValueError)` used to swallow one torn line by discarding every deadline, and is no longer load-bearing for a malformed row. | "def read_expectation_rows(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:190-190 |
+| The expectation-row projection wrapper, which this leaf moved onto the per-row tolerant read; its comment records that the surrounding `suppress(OSError, ValueError)` used to swallow one torn line by discarding every deadline, and is no longer load-bearing for a malformed row. | "def read_expectation_rows(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:193-193 |
 | The per-row tolerant expectation reads that wrapper now folds, and the strict `read` the L2 overdue sweep keeps. | `read`; `read_for_projection`; `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:177-189; mcp/src/agents_remember/controlplane/expectation_rows.py:191-209; mcp/src/agents_remember/controlplane/expectation_rows.py:221-223 |
-| The unconditional lock and the never-unlinking rewrite that take the measured loss to zero, plus the schema-version validator that gives both read policies their behaviour with no version branch. | `exclusive_access`; `rewrite_lines`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:250-273; mcp/src/agents_remember/controlplane/durable_store.py:350-405; mcp/src/agents_remember/controlplane/durable_store.py:450-457 |
+| The unconditional lock and the never-unlinking rewrite that take the measured loss to zero, plus the schema-version validator that gives both read policies their behaviour with no version branch. | `exclusive_access`; `rewrite_lines`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:250-273; mcp/src/agents_remember/controlplane/durable_store.py:350-405; mcp/src/agents_remember/controlplane/durable_store.py:491-498 |
 | Why the gate log is the one that matters: `apply_gate` is the appended snapshot and `evaluate_gate`'s `applied` branch is what refuses a second consume of one approval. | `apply_gate`; `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:59-101; mcp/src/agents_remember/controlplane/records.py:185-194 |
 | The refusal branch a dropped `applied` record would silently remove. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |
 | The replay-specific companion suite: same defect, asserted at the level of one human approval rather than of six record types. | `GateReplayWindowTests` | mcp/tests/test_gate_replay_window.py:176-324 |
@@ -247,6 +247,10 @@ inside `agents-remember`.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-11T14:29+02:00 — Re-read `rewrite_lines` and regenerated its citation around the
+  current declaration while retaining the lock and record evidence; verification metadata remains
+  unchanged for governed closeout.
 
 - 2026-08-10T10:40+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
@@ -339,5 +343,3 @@ inside `agents-remember`.
   which passes under both behaviours — so the docstring is stale and the assertion does not pin
   what the leaf shipped. Reported, not repaired. **Citations:** every self-citation into this suite was opened and checked against each symbol the claim names, ends included. Rows pointing into `controlplane/durable_store.py`, `store.py`, `attention_dismissals.py`, `expectation_rows.py` and `orchestration_nudges.py` are cited **by symbol name without a line range**: those five modules still carried unstaged edits in the code worktree while this card was written, so any range would have been stale on arrival; the symbol is the durable anchor and the linked file cards are authoritative for line numbers. Verification metadata is blank because the source
   file is new and uncommitted; closeout owns its first stamp.
-
-

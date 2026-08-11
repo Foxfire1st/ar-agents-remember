@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_evidence_installed.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-11T22:28+02:00                  |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,6 +51,9 @@ and shape descriptors only — never content, paths, native text, or credentials
 registered `@pytest.mark.ar_run_evidence_installed` marker so the pair can be selected or deselected
 by name; `ClaudeInstalledHonestyTests` is unmarked. Cockpit submissions pass one
 `ControlSubmission(source=..., request_id=..., expected_bridge_epoch=...)` parameter object.
+The `_version_of` probe turns OS/process launch failures into `SkipTest`, so a configured but
+unrunnable harness remains explicitly unexercised rather than failing the deterministic suite or
+creating fixture evidence.
 
 ### Invariants And Boundaries
 
@@ -59,6 +62,7 @@ by name; `ClaudeInstalledHonestyTests` is unmarked. Cockpit submissions pass one
 - Fixture rows record `observed` only for seams actually exercised through production code;
   `enablesCapabilities` stays `false` and version-mismatched harnesses stay `not-exercised`.
 - No fixture-shaped canned response can substitute for a live seam: the bridge epoch must be live.
+- A version probe that cannot run is an unavailable-harness skip, never an observed evidence row.
 
 ### Todos
 
@@ -83,6 +87,7 @@ evidence.
 | The claude row whose version-mismatch reason this suite enforces. | "Installed 2.1.214 mismatches the locked 2.1.211 gate;" | mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:43-43 |
 | Foundation tests require non-enablement and a raw-free fixture set across these files. | `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement`; `test_runtime_fixtures_contain_no_raw_secret_path_or_conversation_material` | mcp/tests/test_conversation_foundation.py:163-188; mcp/tests/test_conversation_foundation.py:191-202 |
 | The deterministic contract suite whose fake-transport claims this file re-proves live. | `test_reserved_key_round_trip_and_no_leak`; `test_native_page_bridge_epoch_stamped_and_frames_validated`; `test_submission_provenance_all_sources_epoch_and_bounds`; `test_fixture_shaped_response_without_live_epoch_fails_validation` | mcp/tests/test_harness_control_evidence.py:361-409; mcp/tests/test_harness_control_evidence_ipc.py:155-198; mcp/tests/test_harness_control_evidence_ipc.py:229-312; mcp/tests/test_harness_control_evidence_ipc.py:314-337 |
+| The installed-version probe converts OS and subprocess failures into an explicit skip. | `_version_of` | mcp/tests/test_harness_control_evidence_installed.py:102-114 |
 
 ## Cross-Repo References
 
@@ -94,6 +99,10 @@ boundaries.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: recorded the unavailable-harness
+  skip for version processes that cannot start or complete. Such a skip cannot create observed
+  fixture evidence; verification metadata remains pinned until closeout.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

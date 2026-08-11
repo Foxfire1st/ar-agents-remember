@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/records.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T18:30+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`         |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -91,8 +91,8 @@ advance). All helpers are pure.
   self-approval before such a snapshot is persisted.
 - Evidence refs are append-only metadata on the gate snapshots. A reviewer
   verdict artifact is referenced by id/path, not inlined into the gate record.
-- This is a persisted-record model, not an MCP response: the `gate_*` tools have
-  their own response models in `models/gates.py`.
+- This is a persisted-record model, not an MCP response: structural gate requests and responses
+  live in `models/structural/gates.py`.
 - **`schema` and `schemaVersion` version different things** — the record vocabulary and the
   durable-store contract respectively. Adding a gate field is a `schema` question; changing how the
   gate log locks, compacts or tolerates a torn line is a `schemaVersion` question.
@@ -121,6 +121,8 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Updated the structural gate-model ownership path after the old flat
+  `models/gates.py` module was retired.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).

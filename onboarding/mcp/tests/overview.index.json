@@ -38,6 +38,7 @@
     "mcp/tests/fixtures/pi_rpc/activity.jsonl",
     "mcp/tests/fixtures/sim/logs/observer/lifecycles/sim-replay-lifecycle/events.jsonl",
     "mcp/tests/test_active_projector_singleflight.py",
+    "mcp/tests/test_agent_doctrine_plane_identity.py",
     "mcp/tests/test_agent_notifier.py",
     "mcp/tests/test_agent_notifier_ladder.py",
     "mcp/tests/test_agent_notifier_seat.py",
@@ -216,6 +217,7 @@
     "mcp/tests/test_layering.py",
     "mcp/tests/test_leaf_ref_resolution.py",
     "mcp/tests/test_leaf_structural_coverage.py",
+    "mcp/tests/test_leaf_structural_refusal_coverage.py",
     "mcp/tests/test_lifecycle_finalize.py",
     "mcp/tests/test_liveness_simulations.py",
     "mcp/tests/test_log_capture.py",
@@ -331,6 +333,7 @@
     "mcp/tests/test_state_signal_relay.py",
     "mcp/tests/test_static.py",
     "mcp/tests/test_store_scaling_cs6.py",
+    "mcp/tests/test_structural_agent_tools.py",
     "mcp/tests/test_structural_limits.py",
     "mcp/tests/test_subprocess_hygiene.py",
     "mcp/tests/test_sync_dashboard.py",
@@ -380,8 +383,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 358,
-    "fileSidecars": 368,
+    "sourceFilesInScope": 361,
+    "fileSidecars": 371,
     "childRoutes": 0
   },
   "routingTerms": [

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_launch.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,7 +91,7 @@ The launch policy is carried by the shared opener/runner and consumed by each ow
 | Claude produces native model/effort flags and verifies the model echo without fabricating effort echo. | `claude_launch_knobs` | mcp/src/agents_remember/serving/harness_control_claude.py:128-142 |
 | Codex produces thread config plus owned model/config selectors. | `codex_launch_knobs` | mcp/src/agents_remember/serving/codex_app_server_session.py:35-54 |
 | Pi produces native provider-qualified model/thinking flags and requires both effective echoes. | `pi_launch_knobs` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:118-132 |
-| The opener serializes this typed object into the runner and persists its selected values as catalog provenance. | "The durable row for the process this open just spawned" | mcp/src/agents_remember/serving/terminal_opener.py:518-518 |
+| The opener serializes this typed object into the runner and persists its selected values as catalog provenance. | "The durable row for the process this open just spawned" | mcp/src/agents_remember/serving/terminal_opener.py:520-520 |
 
 ## Cross-Repo References
 

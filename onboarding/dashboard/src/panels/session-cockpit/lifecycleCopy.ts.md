@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/lifecycleCopy.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-09T19:36+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -27,29 +27,29 @@ the InteractionBar's copy states the real answer channel and the real PTY truth.
 
 ### Logic
 
-- **`terminateConfirmCopy`** (cit:([`terminateConfirmCopy`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:14-23)): `end <label> · leaf <id> · state <word> — kills the tmux
+- **`terminateConfirmCopy`** (cit:([`terminateConfirmCopy`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:13-22)): `end <label> · leaf <id> · state <word> — kills the tmux
   session; transcripts are kept` — the grammar's state word via `seatVisualState`, the leaf via
   `leafIdFromKey`. **R1 dash-collision fix (260718-CHATS-L5P):** an UNCLASSIFIED seat's state word is
   itself an em-dash (`—`), which placed next to the copy's `— kills` consequence dash printed a bare
   `state — —`. The `· state <word>` clause is now DROPPED entirely when the state is `—`, so the two
   dashes never collide (`end <label> · leaf <id> — kills …`).
-- **Residual copy** (cit:([`terminateResidualCopy`, `retireResidualCopy`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:30-32; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:35-37)): `terminateResidualCopy` / `retireResidualCopy` — both
+- **Residual copy** (cit:([`terminateResidualCopy`, `retireResidualCopy`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:29-31; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:34-36)): `terminateResidualCopy` / `retireResidualCopy` — both
   `<label> terminated|retired · control-stop note (informational): <detail>`; the detail is the
   server's verbatim words.
-- **`cleanupOutcomeCopy`** (cit:([`cleanupOutcomeCopy`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:40-52)): the landed-cleanup route's OWN outcome —
+- **`cleanupOutcomeCopy`** (cit:([`cleanupOutcomeCopy`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:39-51)): the landed-cleanup route's OWN outcome —
   `ended N · skipped M (session: reason, …)`; skips never dropped.
-- **`STOP_TURN_DISABLED_REASON`** (cit:([`STOP_TURN_DISABLED_REASON`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:66-67)): the UA-7 gap named honestly (no cancel-turn route
+- **`STOP_TURN_DISABLED_REASON`** (cit:([`STOP_TURN_DISABLED_REASON`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:65-66)): the UA-7 gap named honestly (no cancel-turn route
   exists on the control bridge yet).
-- **InteractionBar copy** (cit:([`INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERING`, `INTERACTION_ANSWERED`, `INTERACTION_COMPOSER_MODE`, `INTERACTION_NO_PROMPT_TEXT`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:72-73; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:75-75; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:78-79; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:82-83; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:85-86)): `INTERACTION_HONESTY_HINT` (terminal text becomes a queued
+- **InteractionBar copy** (cit:([`INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERING`, `INTERACTION_ANSWERED`, `INTERACTION_COMPOSER_MODE`, `INTERACTION_NO_PROMPT_TEXT`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:71-72; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:74-74; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:77-78; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:81-82; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:84-85)): `INTERACTION_HONESTY_HINT` (terminal text becomes a queued
   message, not an answer), `INTERACTION_ANSWERING`, `INTERACTION_ANSWERED` (poll-bounded,
   ≤ ~2.5 s named), `INTERACTION_COMPOSER_MODE` (direct agent-session route, not the terminal),
   `INTERACTION_NO_PROMPT_TEXT` (raw payload in the inspector).
-- **PTY archetypes (R1)** (cit:([`isControlledSession`, `paneArchetypeCopy`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:109-115; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:117-123)): `isControlledSession` — `controlState` present and
+- **PTY archetypes (R1)** (cit:([`isControlledSession`, `paneArchetypeCopy`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:108-114; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:116-122)): `isControlledSession` — `controlState` present and
   ≠ `"unsupported"` (the server's `ControlState` literal, never a heuristic);
   `paneArchetypeCopy` names both archetypes honestly.
-- **`paneAccessibleName`** (cit:([`paneAccessibleName`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:126-129), R2): `terminal: <label> · <harness> · <state>` — every
+- **`paneAccessibleName`** (cit:([`paneAccessibleName`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:125-128), R2): `terminal: <label> · <harness> · <state>` — every
   pane's `role="group"` name.
-- **`SCREEN_READER_MODE_NOTE`** (cit:([`SCREEN_READER_MODE_NOTE`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:132-133), R2): the toggle's honest cost note (xterm's a11y tree
+- **`SCREEN_READER_MODE_NOTE`** (cit:([`SCREEN_READER_MODE_NOTE`], dashboard/src/panels/session-cockpit/lifecycleCopy.ts:131-132), R2): the toggle's honest cost note (xterm's a11y tree
   costs rendering performance — hence opt-in).
 
 ### Invariants And Boundaries
@@ -73,13 +73,13 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Every exported string/predicate. | `terminateConfirmCopy`; `cleanupOutcomeCopy`; `STOP_TURN_DISABLED_REASON`; `isControlledSession` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:14-23; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:40-52; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:66-67; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:109-115 |
+| Every exported string/predicate. | `terminateConfirmCopy`; `cleanupOutcomeCopy`; `STOP_TURN_DISABLED_REASON`; `isControlledSession` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:13-22; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:39-51; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:65-66; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:108-114 |
 | The grammar state word the confirm/name builders consume. | `seatVisualState` | dashboard/src/data/stateGrammar.ts:101-125 |
-| The rail consumes confirm copy, and the landed-cleanup notice consumes cleanup-outcome copy. | "          title={terminateConfirmCopy(session)}"; "  const outcomeCopy = cleanupOutcomeCopy(outcome);" | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:96-96; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:266-266 |
+| The rail consumes confirm copy, and the landed-cleanup notice consumes cleanup-outcome copy. | "          title={terminateConfirmCopy(session)}"; "  const outcomeCopy = cleanupOutcomeCopy(outcome);" | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:96-96; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:279-279 |
 | The stage notes consuming residual copy. | `terminateResidualCopy`; `retireResidualCopy` | dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:3-3; dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:56-57 |
 | The bar consuming the interaction constants. | "  INTERACTION_HONESTY_HINT"; "  INTERACTION_COMPOSER_MODE"; "  INTERACTION_ANSWERING"; "  INTERACTION_ANSWERED"; "  INTERACTION_NO_PROMPT_TEXT" | dashboard/src/panels/session-cockpit/interactionParts.tsx:13-13; dashboard/src/panels/session-cockpit/interactionParts.tsx:12-12; dashboard/src/panels/session-cockpit/interactionParts.tsx:11-11; dashboard/src/panels/session-cockpit/interactionParts.tsx:10-10; dashboard/src/panels/session-cockpit/interactionParts.tsx:16-16 |
 | The surface consuming archetype/name/toggle copy. | "isControlledSession"; "paneAccessibleName"; "paneArchetypeCopy"; "SCREEN_READER_MODE_NOTE" | dashboard/src/panels/session-cockpit/PtySurface.tsx:14-17; dashboard/src/panels/session-cockpit/PtySurface.tsx:211-211; dashboard/src/panels/session-cockpit/PtySurface.tsx:230-230; dashboard/src/panels/session-cockpit/PtySurface.tsx:305-305 |
-| The inspector's evidence pane consuming archetype + retire-residual copy. | "paneArchetypeCopy"; "retireResidualCopy" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:19-20; dashboard/src/panels/session-cockpit/EvidencePane.tsx:111-111; dashboard/src/panels/session-cockpit/EvidencePane.tsx:199-199; dashboard/src/panels/session-cockpit/EvidencePane.tsx:213-213 |
+| The inspector's evidence pane consumes archetype and retire-residual copy at its rendering sites. | "value={paneArchetypeCopy(session)}"; "? retireResidualCopy(session.label, retireStopError)" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:139-139; dashboard/src/panels/session-cockpit/EvidencePane.tsx:342-342 |
 | The server literal the archetype predicate mirrors. | `HarnessControlState` | dashboard/src/types/terminalCatalog.ts:9-9 |
 
 ## FEUI-L8 Reviewed Candidate Delta
@@ -106,6 +106,7 @@ contract and keep structured interaction wording consistent across the composer-
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `lifecycleCopy.ts` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-09T19:36+02:00 — 260713-TES-L5F2: composer answer-mode copy now names the direct
   agent-session route; it no longer implies lifecycle-gate ownership.
 

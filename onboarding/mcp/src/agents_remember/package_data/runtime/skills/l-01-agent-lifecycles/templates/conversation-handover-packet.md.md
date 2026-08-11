@@ -6,38 +6,37 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T18:20+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 ## Purpose
 
-This template is the **one schema, three uses** hand-off packet of the `l-01-agent-lifecycles` report-template library: **role takeover** (profile-fit — the frame spawns the correct profile and hands over), **worker respawn** (a fresh worker continues a leaf), and any **master-complete handover**. The receiver always onboards from the packet, **never from a prior conversation**.
+Packaged runtime copy of the conversation-handover packet. The canonical template owns its shape;
+`scripts/sync-skills.py` publishes this exact artifact for installed runtimes.
 
 ## Code Commentary
 
 ### Logic
 
-The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md`. It carries a prose header stating the single-schema/three-use design (the COMMS model), a numbered **Rules** block, and a fenced **Shape**: a metadata table (use / seat-role / from / to / leaf-master / written) followed by *Why This Handover* (a line per use), *The Request (as agreed)*, *Decisions Already Made*, *Constraints & Invariants*, *Links (onboard from these, not the transcript)*, *Open Questions For The Successor*, and *Current State*.
+The packet transfers durable conversation context between structural seats. It identifies `from`
+and `to` by canonical task-document path plus role, records the canonical sprint/master/leaf
+document, and leaves harness/model/effort to settings. Runtime occupant, lifecycle, and agent ids do
+not belong in the packet.
 
 ### Conventions
 
-The `use` slot selects among role-takeover, worker-respawn, and master-handover, and the *Why This Handover* section carries one line per use. Links (task_doc, integration branch, prior turn reports, durable notes) are named so the successor onboards from artifacts rather than a transcript.
+Fill the canonical packet completely, carry durable artifact references, and synchronize changes
+from the canonical template rather than editing this packaged copy independently.
 
 ### Invariants And Boundaries
 
-The receiver must be able to act from **this packet alone** — the transcript is assumed gone. For a **takeover spawn**, the packet states the profile mismatch that triggered it so the successor knows why it exists and does not repeat the wrong-profile work. The same one schema serves master handover, role takeover, and worker respawn alike.
+- A handover remains valid across occupant replacement because seats are document-and-role bound.
+- The packet never becomes a transport-address or profile-selection surface.
+- This packaged artifact must remain byte-identical to the canonical template.
 
 ### Todos
 
-No TODO markers are present in this report template.
-
-### Docs References
-
-No external domain documentation applies to this repository-local report template.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+None recorded.
 
 ## Repo-Internal References
 
@@ -64,6 +63,7 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `conversation-handover-packet.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 4 repo-internal citation rows and preserved verification metadata.
 
 - 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the takeover pointer names the real section.. Verification metadata pinned until closeout stamps the L8 commit.

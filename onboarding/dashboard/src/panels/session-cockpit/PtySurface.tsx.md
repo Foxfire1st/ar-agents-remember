@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/PtySurface.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | Renderer record, keep-alive, archetypes, hooks, toggle, slots, focus handoff. | "export function PtySurface" | dashboard/src/panels/session-cockpit/PtySurface.tsx:334-334 |
 | The wrapped terminal: fit rules, live screenReaderMode, key filter, hooks, cols. | "export function Terminal" | dashboard/src/panels/Terminal.tsx:110-110 |
-| The archetype predicate + pane copy + accessible name + toggle cost note. | "export function cleanupOutcomeCopy" | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:40-40 |
+| The archetype predicate + pane copy + accessible name + toggle cost note. | "export function cleanupOutcomeCopy" | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:39-39 |
 | The harvest store + OSC parsers the legacy-raw hooks feed. | "export interface PtyHarvest" | dashboard/src/data/ptyHarvest.ts:21-21 |
 | The reserved-chord matcher the key filter consults. | "export const PTY_RESERVED" | dashboard/src/data/keymap/reserved.ts:62-62 |
 | The freshness fields the socket/output callbacks write. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |

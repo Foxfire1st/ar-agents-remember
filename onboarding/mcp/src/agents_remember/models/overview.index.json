@@ -13,6 +13,11 @@
       "route": "mcp/src/agents_remember/models/conversations",
       "overview": "mcp/src/agents_remember/models/conversations/overview.md",
       "index": "mcp/src/agents_remember/models/conversations/overview.index.json"
+    },
+    {
+      "route": "mcp/src/agents_remember/models/structural",
+      "overview": "mcp/src/agents_remember/models/structural/overview.md",
+      "index": "mcp/src/agents_remember/models/structural/overview.index.json"
     }
   ],
   "coveredFiles": [
@@ -23,7 +28,6 @@
     "mcp/src/agents_remember/models/context_packet.py",
     "mcp/src/agents_remember/models/core.py",
     "mcp/src/agents_remember/models/drift.py",
-    "mcp/src/agents_remember/models/gates.py",
     "mcp/src/agents_remember/models/lifecycle.py",
     "mcp/src/agents_remember/models/lifecycle_finalize.py",
     "mcp/src/agents_remember/models/memory.py",
@@ -35,6 +39,7 @@
     "mcp/src/agents_remember/models/skills.py",
     "mcp/src/agents_remember/models/task_doc.py",
     "mcp/src/agents_remember/models/task_document.py",
+    "mcp/src/agents_remember/models/task_document_ref.py",
     "mcp/src/agents_remember/models/terminal.py",
     "mcp/src/agents_remember/models/terminal_catalog.py",
     "mcp/src/agents_remember/models/tokens.py",
@@ -43,9 +48,9 @@
     "mcp/src/agents_remember/models/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 42,
+    "sourceFilesInScope": 45,
     "fileSidecars": 25,
-    "childRoutes": 1
+    "childRoutes": 2
   },
   "routingTerms": [
     "agents",
@@ -64,7 +69,6 @@
     "drift",
     "files",
     "finalize",
-    "gates",
     "inbox",
     "init",
     "init__",
@@ -80,6 +84,7 @@
     "providers",
     "read",
     "read_files",
+    "ref",
     "registry",
     "remember",
     "requests",
@@ -87,9 +92,11 @@
     "runtime",
     "skills",
     "src",
+    "structural",
     "task",
     "task_doc",
     "task_document",
+    "task_document_ref",
     "terminal",
     "terminal_catalog",
     "tokens",
@@ -103,6 +110,7 @@
     "candidateHints": [
       "mcp/src/agents_remember/models",
       "mcp/src/agents_remember/models/conversations",
+      "mcp/src/agents_remember/models/structural",
       "mcp/src/agents_remember/models/__init__.py",
       "mcp/src/agents_remember/models/application_requests.py",
       "mcp/src/agents_remember/models/base.py",
@@ -110,7 +118,6 @@
       "mcp/src/agents_remember/models/context_packet.py",
       "mcp/src/agents_remember/models/core.py",
       "mcp/src/agents_remember/models/drift.py",
-      "mcp/src/agents_remember/models/gates.py",
       "mcp/src/agents_remember/models/lifecycle.py",
       "mcp/src/agents_remember/models/lifecycle_finalize.py",
       "mcp/src/agents_remember/models/memory.py",
@@ -122,9 +129,9 @@
       "mcp/src/agents_remember/models/skills.py",
       "mcp/src/agents_remember/models/task_doc.py",
       "mcp/src/agents_remember/models/task_document.py",
+      "mcp/src/agents_remember/models/task_document_ref.py",
       "mcp/src/agents_remember/models/terminal.py",
-      "mcp/src/agents_remember/models/terminal_catalog.py",
-      "mcp/src/agents_remember/models/tokens.py"
+      "mcp/src/agents_remember/models/terminal_catalog.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -141,8 +148,6 @@
       "core",
       "drift.py",
       "drift",
-      "gates.py",
-      "gates",
       "lifecycle.py",
       "lifecycle",
       "lifecycle_finalize.py",
@@ -165,6 +170,8 @@
       "task_doc",
       "task_document.py",
       "task_document",
+      "task_document_ref.py",
+      "task_document_ref",
       "terminal.py",
       "terminal",
       "terminal_catalog.py",

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/servedProjection.ts`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T09:10+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-11T15:20+02:00                           |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -93,7 +93,7 @@ language reference is [TSConfig Reference — resolveJsonModule](https://www.typ
 | The mirror whose literal unions the import erases (`State`, `Phase`, `AttentionSeverity`, `AttentionLane`, `ProcessFactState`, `ProcessHealth`). | `State`; `Phase`; `AttentionSeverity`; `AttentionLane`; `ProcessFactState`; `ProcessHealth` | dashboard/src/types/projection.ts:15-15; dashboard/src/types/projection.ts:29-29; dashboard/src/types/projection.ts:33-33; dashboard/src/types/projection.ts:37-37; dashboard/src/types/projection.ts:41-41; dashboard/src/types/projection.ts:45-45 |
 | Caller 1: the contract test imports `asServedProjection` for the sampled snapshot. | "./servedProjection" | dashboard/src/test/contract.test.ts:21-21 |
 | Caller 1: the contract test calls `asServedProjection` for the sampled snapshot. | "asServedProjection(snapshot)" | dashboard/src/test/contract.test.ts:74-74 |
-| The contract file documents the three type-level directions `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror`. | "mirror ⊇ served"; "served ⊇ mirror"; "fixture ⊇ mirror" | dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45 |
+| The contract file documents the three type-level directions `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror`. | "mirror ⊇ served — the server grows a field"; "served ⊇ mirror — the mirror declares something"; "fixture ⊇ mirror — THE ORACLE ITSELF" | dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45 |
 | Caller 2: the fixture module exports `SERVED` from `asServedProjection(snapshot)`. | "export const SERVED" | dashboard/src/test/fixtures/wire.ts:66-66 |
 | Caller 2: the fixture module reads the served projection's fields when constructing the `BASE_*` builders. | `BASE_LIFECYCLE` | dashboard/src/test/fixtures/wire.ts:95-107 |
 | The registry entry that makes the body cast the only one allowed in this file, with its written reason. | "src/test/servedProjection.ts :: as WorkspaceProjection" | dashboard/src/test/wireFixtureGuard.test.ts:159-159 |
@@ -110,6 +110,8 @@ the same repository. No sibling repository or external system is involved.
 
 ## Update History
 
+- 2026-08-11T15:20+02:00 — Extended each direction anchor to its unique explanatory clause; the
+  three type-level direction claims are unchanged.
 - 2026-08-04T15:46:45+02:00 — 260731-EFA-L6 S18-B08 curator: split contract import/call, direction comments, and fixture-consumer ownership, regenerated the unique caller/builder extents, and rechecked the ledger-bounded direction literals.
 
 - 2026-08-03T02:32:19+02:00 — Curator W3-B02: removed unsupported comment-header and absolute

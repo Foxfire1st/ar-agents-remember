@@ -112,12 +112,12 @@ Material).
 | The Panda runtime these primitives import (`css`/`cva`/`cx`). | "export default defineConfig" | dashboard/panda.config.ts:3-3 |
 | The React Aria condition reconciliation (data-hovered/-focused). | "[data-hovered]" | dashboard/panda.config.ts:21-21 |
 | The route's sole React Aria import wraps the viewport toggle group. | "export function ModeBar" | dashboard/src/grammar/ModeBar.tsx:48-48 |
-| The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`). | "export function EvidencePane", "export function FailedLaunchBanner" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:407-407; dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-70 |
+| The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`). | "export function EvidencePane", "export function FailedLaunchBanner" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:411-411; dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:69-69 |
 | The action-availability shape `Affordance` renders. | `Affordance` | dashboard/src/grammar/Affordance.tsx:27-42 |
 | The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions. | "export type State = ", "const ALL_VARIANTS" | dashboard/src/types/projection.ts:15-15; dashboard/src/grammar/Dot.test.tsx:17-17 |
 | The OTHER state-to-visual table — a separate, total `Record<State, ConstelStatus>` with its own `UNCLASSIFIED_STATUS`; no import in either direction. | `UNCLASSIFIED_STATUS` | dashboard/src/topology/model.ts:68-68 |
 | The shared global `pulse` / `pulseSlow` keyframes and the unlayered `html[data-effects="off"]` freeze the dot's motion rules depend on. | "@keyframes pulse {" | dashboard/src/index.css:88-88 |
-| The two panels rendered as siblings in one always-visible rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:64-64 |
+| The two panels rendered as siblings in one always-visible rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:65-65 |
 
 ## Update History
 

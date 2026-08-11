@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EmptyStateBackdrop.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T16:02+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                                        |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ empty states that mount it.
 | The engine-room G6 backdrop styles (`backdrop`/`backdropVideo`) this component mirrors. | "export const backdrop =" | dashboard/src/panels/engine-room/backdrop.styles.ts:4-4 |
 | The engine-room usage of the same backdrop pattern (effects-gated, aria-hidden video). | "export function EnclosureProcessMap" | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:67-67 |
 | The honest-motion gate that decides whether the backdrop mounts at all. | "export function useShouldAnimate" | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-19 |
-| `DetailPanel` mounts the battle-cruiser clip inside `Panel` `fill`, passing `opacity={0.18}`. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76 |
+| `DetailPanel` mounts the battle-cruiser clip inside `Panel` `fill`, passing `opacity={0.18}`. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
 | File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`. | `DualPane` | dashboard/src/panels/file-viewer/DualPane.tsx:90-134 |
 | Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:416-478 |
 | The static direct-video backdrop: baked media motion is owned by the MP4 asset, while the component only gates and styles a direct `<video>` child. | "export function EmptyStateBackdrop" | dashboard/src/panels/EmptyStateBackdrop.tsx:52-52 |

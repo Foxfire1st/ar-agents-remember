@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/retry_proof.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-11T23:56+02:00 |
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -26,7 +26,8 @@ and admits only an exact repository retry or a selected-test-only delta.
 
 `prepare` builds a fresh run plan from a complete tracked-file snapshot and a compatibility key.
 The key binds the resolved diff base, measurement scope and thresholds, Python/platform and
-coverage/pytest tool versions, plus a digest of the invocation environment. The manifest and both
+coverage, pytest, pytest-cov, and pytest-xdist tool versions, plus a digest of the invocation
+environment. The manifest and both
 coverage artifacts carry SHA-256 integrity checks. An exact match restores coverage JSON and skips
 pytest. When only concrete selected `test_*.py`/`*_test.py` modules changed, the plan reruns those
 modules with coverage append.
@@ -78,6 +79,7 @@ quality-proof policy.
 | The wrapper prepares, consumes, and finalizes retry plans around its fixed and coverage-derived rails. | `execute_quality_rails`; `prepare_retry_plan` | mcp/src/agents_remember/code_quality/check.py:392-429; mcp/src/agents_remember/code_quality/check.py:650-684 |
 | Retry pytest commands record per-test contexts and append only in delta mode. | `_pytest_step`; `quality_steps` | mcp/src/agents_remember/code_quality/check.py:205-224; mcp/src/agents_remember/code_quality/check.py:248-292 |
 | Focused tests prove filtering, invalidation, exact reuse, changed-test selection, conclusive full fallback, cached-report deletion after a cheap-rail failure, and tracked directory-symlink snapshotting. | `test_changed_test_contexts_and_collection_context_are_removed`; `test_wrapper_retry_runs_only_changed_test_module`; `test_repository_snapshot_hashes_symlink_identity_without_following_it` | mcp/tests/test_quality_retry_proof.py:22-45; mcp/tests/test_quality_retry_proof.py:120-207; mcp/tests/test_quality_retry_proof.py:272-296 |
+| The compatibility key includes pytest-xdist alongside the other coverage/pytest tool versions, so executor changes invalidate reuse. | `_compatibility_key` | mcp/src/agents_remember/code_quality/retry_proof.py:292-313 |
 
 ## Cross-Repo References
 
@@ -88,6 +90,10 @@ No meaningful cross-repository boundary is owned by this module.
 | The proof remains local to the repository/worktree Git common directory. | — | — |
 
 ## Update History
+
+- 2026-08-11T23:56+02:00 — Added pytest-xdist to the documented retry-proof compatibility
+  fingerprint; changing the parallel executor version now invalidates cached proof reuse.
+  Verification metadata remains pinned until closeout.
 
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the current staged retry-proof implementation; the existing sidecar remains accurate. Verification metadata remains pinned until closeout.
 - 2026-08-10T12:20+02:00 — Made tracked symlink snapshotting Git-faithful after the live retry

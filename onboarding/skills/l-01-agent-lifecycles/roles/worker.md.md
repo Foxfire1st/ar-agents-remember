@@ -3,57 +3,68 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | skills/l-01-agent-lifecycles/roles/worker.md |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
-| governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
+| path | `skills/l-01-agent-lifecycles/roles/worker.md` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-08-11T14:20+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
 
-Governing overview: skills/l-01-agent-lifecycles/roles/overview.md
+[roles overview](overview.md)
 
 ## Purpose
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+The worker is one short-lived implementation seat on one canonical leaf document. It reads its
+complete brief and leaf task document, changes code in the named worktree, runs prescribed
+leaf-scoped checks, and writes the mandatory builder turn report. Its terminal state is checks green
+plus report written.
 
-## Code Commentary
+## Logic
 
-### Logic
+The worker orients by pairing current worktree reads with onboarding and coding guidelines before
+the first edit. It implements the approved leaf, fills only small unambiguous gaps, and records
+changed paths, diff summary, tests, retrieval evidence, escalations, and onboarding observations in
+the turn report. Observations are evidence for a separate curator; the worker does not write
+accepted onboarding.
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+Closeout, integration, finalization, gates, task-document status, and memory quality belong to the
+owning seat/curator chain. The worker communicates upward with structural `message_parent`; the
+control plane derives the current parent occupant. Completion follows the durable report plus
+terminal/finalizer truth, not a runtime-addressed model post.
 
-### Invariants And Boundaries
+## Conventions
 
-Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization outputs. Dispatch proof remains exact-session and fail-closed.
+- One leaf, one worker seat, one appendable report artifact.
+- Native reads in the actual worktree are the edit precondition.
+- Read/search fan-out may assist, but the main worker owns edits and the report.
+- Fix rounds resume the same worker when possible and append round evidence.
+- A plan delta beyond blank filling escalates one rung to the owning seat.
 
-## Docs References
+## Invariants And Boundaries
 
-No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
+- Worker identity is the canonical leaf document plus `worker` role.
+- Worker never commits, closes out, integrates, decides gates, or mutates accepted memory.
+- Worker never absorbs manager, reviewer, curator, architect, orchestrator, or strategist work.
+- No seat-local watcher or polling loop substitutes for the agent-notifier fact relay.
+- Runtime session and lifecycle ids remain private control-plane correlation.
 
 ## Repo-Internal References
 
-Worker source inventory, reviewer verdict, and governing route overview.
-
-## Cross-Repo References
-
-No meaningful cross-repo references.
-
-## Update History
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the idle-safety wording — silence
-## 260713-TES-L5 Current Delta — Idle Safety Via The State-Signal Relay
-
-The worker's idle-safety line now says silence is supervised by the agent-notifier sweep and
-the state-signal relay, not an escalation ladder; ending a turn after the report is written
-remains correct.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The worker is one leaf-scoped builder whose terminal state is checks plus report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
+| Intake binds writes to the named code worktree and report path. | "### 1 — Intake" | skills/l-01-agent-lifecycles/roles/worker.md:35-42 |
+| Orientation requires current worktree reads and coding guidelines before edits. | "### 2 — Orient (paired reads before edits)" | skills/l-01-agent-lifecycles/roles/worker.md:44-57 |
+| Build produces implementation plus evidence for the separate curator. | "### 3 — Build" | skills/l-01-agent-lifecycles/roles/worker.md:59-69 |
+| The mandatory turn report is the durable builder artifact. | "### 5 — The Turn Report (mandatory, your last act)" | skills/l-01-agent-lifecycles/roles/worker.md:81-90 |
+| Tool authority excludes lifecycle, gates, task state, and memory writes. | "## Tool Surface (positive statement — this is all of it)" | skills/l-01-agent-lifecycles/roles/worker.md:92-105 |
 
 ## Update History
 
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the idle-safety wording — silence
-  is supervised by the agent-notifier sweep and the state-signal relay, not an escalation
-  ladder; ending a turn after the report is written remains correct. Verification metadata
-  pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
+- 2026-08-11T14:20+02:00 — Rewrote the default body around real-leaf implementation, durable
+  evidence, structural escalation, and separate curator ownership.
+- 2026-08-09T12:08+02:00 — Fact-relay supervision replaced seat-local watcher/ladder language.
+- 2026-08-08T02:00+02:00 — Leaf checks became change-set scoped; full quality remained master-owned.
+- 2026-07-05T01:30+02:00 — Established the self-contained worker lifecycle and report terminal state.

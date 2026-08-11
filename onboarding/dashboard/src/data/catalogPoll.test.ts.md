@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/catalogPoll.test.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -84,6 +84,9 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — No content impact: reviewed the `leaf`-to-`task` invalidation-reason
+  rename; the card already describes the same cross-tab catalog reconciliation and authoritative
+  empty-catalog behavior without depending on the old reason literal.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: rebased the
   `hydrateTerminalSessionsFromCatalog` range; exact non-fixing check returns zero findings.
 

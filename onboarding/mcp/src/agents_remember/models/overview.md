@@ -5,19 +5,28 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-11T20:28+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../../overview.md)
 
+## Current Structural Wire Vocabulary
+
+`TaskDocumentRef` is the shared repository-qualified work identity. `models/structural/agent.py` and
+`models/structural/gates.py` define the agent-facing request/response families without runtime
+address fields; internal gate correlation models are isolated behind that public boundary. The
+former flat gate model has moved, with its semantic history preserved in the successor card.
+`TaskDocumentRef` is a frozen value object whose explicit hash uses repository plus path; task
+altitude remains topology-owned rather than becoming a third identity field.
+
 ## Purpose
 
 `models/` owns the Pydantic response contracts for Agents Remember MCP payload
-builders. It turns the public tool surface and retained compatibility builders
+builders. It turns the public tool surface and internal builders
 from loose dictionaries into named, inspectable models that can be validated at
 runtime and tested by schema. Model homes follow tool domains: `TaskReopenResponse`
 (cit:([`TaskReopenResponse`], mcp/src/agents_remember/models/task_doc.py:62-65)) lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
@@ -169,13 +178,13 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
-| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:181-185 |
+| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
+| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:217-221 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
 | Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:12-22 |
 | Lifecycle finalizer response model covers the terminal task finalization payload. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycle_finalize.py:13-33 |
-| Terminal response models cover hosted session leaf reassignment and the L2 agent-facing session spawn. | `AttachTerminalSessionToLeafResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:28-40; mcp/src/agents_remember/models/terminal.py:78-120 |
+| Terminal response models cover trusted task-seat assignment and internal hosted-session spawn. | `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:32-44; mcp/src/agents_remember/models/terminal.py:85-127 |
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
 | Produced-vs-declared vocabulary measurement runs in both directions. | `test_every_contract_literal_validates_at_its_wire_field`; `test_every_repo_state_the_git_facts_reader_writes_validates`; `test_every_next_guidance_literal_validates_at_its_wire_field` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:635-645; mcp/tests/test_wire_vocabulary_exhaustiveness.py:691-706; mcp/tests/test_wire_vocabulary_exhaustiveness.py:741-751 |
@@ -352,6 +361,13 @@ re-exports the curated conversation surface (R6); no forwarding shims exist at t
 paths.
 
 ## Update History
+
+- 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: recorded the explicit immutable
+  `TaskDocumentRef` value/hash contract; verification metadata remains commit-owned.
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the model route with canonical
+  `TaskDocumentRef` structural requests, document-projected gates, and agent-visible responses that
+  omit private occupant coordinates.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the models/conversations child
   route, terminal-catalog/task-document vocabulary moves, and the curated export additions.

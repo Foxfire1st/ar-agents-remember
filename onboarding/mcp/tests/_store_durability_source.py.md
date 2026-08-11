@@ -6,8 +6,8 @@
 | path | `mcp/tests/_store_durability_source.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-09T21:54+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,9 +73,9 @@ No external domain documentation governs this test helper.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The executable durability harness imports both source-pinning helpers from this bounded sibling. | "from _store_durability_source import extract_base_commit_tree, run_against_source" | mcp/tests/_store_durability.py:52-52 |
-| The harness preserves its public helper surface by listing both imported names in `__all__`. | "    \"extract_base_commit_tree\","; "    \"run_against_source\"," | mcp/tests/_store_durability.py:93-94 |
-| The executable harness retains the source-root guard and owns `main`; this sibling only prepares and launches that entry point. | `_require_source_root`; `main` | mcp/tests/_store_durability.py:1096-1103; mcp/tests/_store_durability.py:1107-1120 |
+| The executable durability harness imports both source-pinning helpers from this bounded sibling. | "from _store_durability_source import extract_base_commit_tree, run_against_source" | mcp/tests/_store_durability.py:53-53 |
+| The harness preserves its public helper surface by listing both imported names in `__all__`. | "    \"extract_base_commit_tree\","; "    \"run_against_source\"," | mcp/tests/_store_durability.py:104-105 |
+| The executable harness retains the source-root guard and owns `main`; this sibling only prepares and launches that entry point. | `_require_source_root`; `main` | mcp/tests/_store_durability.py:1112-1120; mcp/tests/_store_durability.py:1123-1136 |
 | The control-plane contract imports both public helpers to prove the defect against the archived base tree. | "from _store_durability import (" | mcp/tests/test_controlplane_store_durability.py:42-52 |
 | The provider contract imports the same helpers so both store families use one pinned-source mechanism. | "from _store_durability import (" | mcp/tests/test_provider_store_durability.py:72-79 |
 

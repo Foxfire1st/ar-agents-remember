@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`        |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 
 `test_terminal_opener.py` covers the shared hosted-session opener (`serving.terminal_opener`) — the
 ONE spawn path both the dashboard `POST /api/terminal/{session}` route and the agent-facing
-`spawn_agent_session` MCP tool compose over cit:([`open_terminal_session`], mcp/src/agents_remember/serving/terminal_opener.py:680-732) cit:(["def _open_terminal_response("], mcp/src/agents_remember/serving/_app_terminal_routes.py:224-224) cit:([`spawn_agent_session_tool`], mcp/src/agents_remember/application/terminal_tools.py:769-842). It drives `open_terminal_session` against a fake host
+`spawn_agent_session` MCP tool compose over cit:([`open_terminal_session`], mcp/src/agents_remember/serving/terminal_opener.py:680-732) cit:(["def _open_terminal_response("], mcp/src/agents_remember/serving/_app_terminal_routes.py:225-225) cit:([`spawn_agent_session_tool`], mcp/src/agents_remember/application/terminal_tools.py:769-842). It drives `open_terminal_session` against a fake host
 (records the `ensure` call, no real tmux) + a real JSON catalog, pinning the leaf-claim / provenance /
 env-seed behaviour both call paths inherit — and, since 260703-L16, the per-harness knob→argv
 application (`KnobApplicationTests`).
@@ -71,12 +71,12 @@ asserts the selection is structured inside `RunnerConfig`; the opener does not s
 cwd / command / env, adds the tmux name to a known set) + a real `TerminalCatalog` over a temp dir + a
 `_detected` `which`. The cases:
 
-- **opened** (`test_opened_records_provenance_env_and_leaf`, cit:([`test_opened_records_provenance_env_and_leaf`], mcp/tests/test_terminal_opener.py:174-209)): the result is `opened`, the catalog row
-  carries the leaf, the spawned-by session/lifecycle, the harness, and the `spawn_role` read
+- **opened** (`test_opened_records_provenance_env_and_task_document`, cit:([`test_opened_records_provenance_env_and_task_document`], mcp/tests/test_terminal_opener.py:236-272)): the result is `opened`, the catalog row
+  carries the canonical task document, the spawned-by session/lifecycle, the harness, and the `spawn_role` read
   from the env's `AR_SPAWN_ROLE`; the knob env was seeded into the
   detached tmux spawn; and the provenance survives the catalog camelCase round-trip
   (`spawnedBySession` / `spawnedByLifecycle` / `spawnRole`).
-- **role preservation** (`test_reopen_preserves_spawn_role_and_hand_open_records_none`, cit:([`test_reopen_preserves_spawn_role_and_hand_open_records_none`], mcp/tests/test_terminal_opener.py:295-308)): a
+- **role preservation** (`test_reopen_preserves_spawn_role_and_hand_open_records_none`, cit:([`test_reopen_preserves_spawn_role_and_hand_open_records_none`], mcp/tests/test_terminal_opener.py:373-385)): a
   role-less re-open keeps the recorded `spawn_role` (write-once, like the spawned-by pair), and a
   hand-opened session (no env role) records `None` with `spawnRole` absent from its JSON.
 
@@ -164,6 +164,7 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the regression card for `test_terminal_opener.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.

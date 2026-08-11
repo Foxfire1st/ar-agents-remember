@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
 
 ## What This Area Is
 
@@ -104,7 +104,8 @@ family.
 2. List/read re-derive the canonical scope, re-check the live gate, verify cursor/key purpose,
    signature, scope binding, and catalog generation, then delegate to the dormant port.
 3. Open resolves the conversation key, checks the expected identity digest and optional cwd
-   narrowing, and records one immutable fingerprint per (principal, requestId); identical
+   narrowing, accepts only the canonical task-document reference plus role as optional launch
+   context, and records one immutable fingerprint per (principal, requestId); identical
    replays return the retained operation, changed fingerprints conflict without launching.
 4. The drive gates resume support, resolves and verifies the server-private resume target,
    launches a NEW tracked session through the existing shared opener (argv `--resume`/
@@ -367,6 +368,11 @@ with a recorded reason.
 The library child routes now import the page/history wire contracts from `models/conversations/history.py` and the canonical library port from `serving/ports.py` after the L9 monolith split. Library behavior is unchanged.
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: updated the exact-open operating model for
+  canonical `TaskDocumentRef` launch context; no leaf or caller-visible runtime address survives as
+  a second routing authority.
+
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 
 - 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: split helper dispatch from runtime-fixture ownership under the adversarial verdict, then the exact scoped fixer/check passed.

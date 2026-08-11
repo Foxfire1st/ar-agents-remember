@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/conversations/__init__.py`    |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-08T14:38+02:00                                       |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                   |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                   |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -91,8 +91,8 @@ baseline fixture are the authoritative behavioral evidence for this internal gra
 | The zero-drift baseline proves schema/serialization equality and rebuild ordering for every moved model. | `test_conversation_schemas_and_dataclass_fields_match_baseline` | mcp/tests/test_model_split_baseline.py:144-144 |
 | Removed monolith paths receive no forwarding shim. | `test_removed_paths_receive_no_forwarding_shim` | mcp/tests/test_model_split_baseline.py:239-239 |
 | Hostile contract tests still pin cursor/provenance/status/capability products. | `test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` | mcp/tests/test_conversation_contracts.py:196-220 |
-| The canonical conversation read/control ports consume these models without owning behavior. | `ControlPlanePort` | mcp/src/agents_remember/serving/ports.py:186-186 |
-| The response-contract declarations that make these models the routes' stated contract. | `WireResponse` | mcp/src/agents_remember/serving/response_contract.py:88-88 |
+| The canonical conversation read/control ports consume these models without owning behavior. | `ControlPlanePort` | mcp/src/agents_remember/serving/ports.py:189-269 |
+| The response-contract declarations that make these models the routes' stated contract. | `WireResponse` | mcp/src/agents_remember/serving/response_contract.py:89-101 |
 
 ## Cross-Repo References
 

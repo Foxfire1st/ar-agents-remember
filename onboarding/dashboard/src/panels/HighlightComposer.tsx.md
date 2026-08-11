@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/HighlightComposer.tsx`     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-08-11T23:40+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -107,10 +107,10 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The mouse-up selection snapshot it attaches to, including optional task leaf metadata. | `SelectionContext` | dashboard/src/data/selection.ts:9-16 |
-| Session creation supplies only accepted server ids; session lookup supplies routed targets. | `createSession`; `findSessionForLeaf` | dashboard/src/data/sessions.ts:548-557; dashboard/src/data/sessions.ts:767-785 |
+| Session creation supplies only accepted server ids; task-document lookup supplies structurally routed targets. | `createSession`; `findSessionForTask` | dashboard/src/data/sessions.ts:561-573; dashboard/src/data/sessions.ts:783-802 |
 | Reliable highlight submission, readiness, same-id retry, and endgame reconciliation. | `submitSessionText`; `retryRouteFailure`; `keepWaitingForSubmit`; `waitForSubmissionReady` | dashboard/src/data/submitClient.ts:828-873; dashboard/src/data/submitClient.ts:889-907; dashboard/src/data/submitClient.ts:921-949; dashboard/src/data/submitClient.ts:952-976 |
-| Harness discovery supplies detected create options. | `fetchHarnesses` | dashboard/src/data/terminal.ts:392-394 |
-| Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. | "leafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:681-681 |
+| Harness discovery supplies detected create options. | `fetchHarnesses` | dashboard/src/data/terminal.ts:391-393 |
+| Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. | "leafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:687-687 |
 | The behavior tests cover direct leaf paste and fallback routing. | "direct leaf pill click submits through /submit; selection alone never acts"; "keeps a rejected direct submit visible with the verbatim detail" | dashboard/src/panels/HighlightComposer.test.tsx:380-420; dashboard/src/panels/HighlightComposer.test.tsx:422-457 |
 
 ## Cross-Repo References
@@ -141,6 +141,13 @@ The persistent highlight composer is now memoized. Unchanged shell props on a co
 skip its subtree while its own local and store-backed state still updates normally.
 
 ## Update History
+
+- 2026-08-11T23:40+02:00 — No content impact: `directLeafChatFor` now delegates the running-harness
+  validation, but direct highlight submission still requires the current structurally selected
+  chat and the reliable explicit-click path described above. Verification metadata remains pinned
+  until governed closeout.
+
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `HighlightComposer.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 5 citation claims; scoped recheck clean (0 findings).

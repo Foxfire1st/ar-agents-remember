@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/Dot.test.tsx`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -120,8 +120,8 @@ vocabulary, and the glyph table. All three are cited so a reader can see why no 
 | The `html[data-effects="off"]` selector is declared here. | "html[data-effects=\"off\"] *," | dashboard/src/index.css:138-138 |
 | The effects-off rule disables animation with `!important`. | "animation: none" | dashboard/src/index.css:141-141 |
 | The effects-off rule disables transition with `!important`. | "transition: none" | dashboard/src/index.css:142-142 |
-| `Cockpit.tsx` renders `AttentionQueue`. | "<AttentionQueue" | dashboard/src/cockpit/Cockpit.tsx:634-634 |
-| `Cockpit.tsx` renders `LifecycleList`. | "<LifecycleList" | dashboard/src/cockpit/Cockpit.tsx:635-635 |
+| `Cockpit.tsx` renders `AttentionQueue`. | "<AttentionQueue" | dashboard/src/cockpit/Cockpit.tsx:638-638 |
+| `Cockpit.tsx` renders `LifecycleList`. | "<LifecycleList" | dashboard/src/cockpit/Cockpit.tsx:639-639 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | docs/reference/mcp-tools.md |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `cdca11264fb4d27ee08f5e8b37ac5496e67c0840`|
-| lastVerifiedCommitDate | 2026-08-09T07:36:31+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | docs/reference/overview.md |
 
 ## Governing Overview
@@ -17,6 +17,9 @@ Governing overview: docs/reference/overview.md
 ## Purpose
 
 Reference documentation records the three-state dispatch contract, readiness proof, settings timing, public hosted_session_readiness, tool census, and concurrency ruling.
+The memory-tool reference also distinguishes the full contract-scoped curator checklist from
+subset/official quality calls, including its stable enclosure path, zeroable curator count, and
+cleanup lifetime.
 Since 260713-TES-L4 it also records the N16 inbox landing contract (the row lands terminal
 `landed` only on correlated adapter acceptance at a turn boundary), terminal inspectability
 (`include_terminal`, N11), the attribution-only `operator_inbox_consume`, and the explicit
@@ -54,6 +57,8 @@ No meaningful cross-repo references.
 
 ## Update History
 
+- 2026-08-11T16:54+02:00 — Documented the one enclosure-local, atomically replaced curator
+  checklist, its scoped-only response fields, and cleanup/abandon garbage collection.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the N16 post/poll/consume/
   supersede reference rows — terminal `landed` at boundary acceptance, `include_terminal`
   inspectability (N11), attribution-only consume, explicit supersession (R11). Verification

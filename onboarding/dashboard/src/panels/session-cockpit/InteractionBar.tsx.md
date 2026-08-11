@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/InteractionBar.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -104,11 +104,11 @@ No Domain Documentation source is configured for this repository; repository cod
 | --- | --- | --- |
 | Multiplexing fan-out + per-payload bar: representation, badge, stale clear, focus, composer mode, id-matched round-trip, retry. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-93 |
 | The answer path + the plural-pending helpers (`pendingInteractionPayloads`, `pendingInteractionAgentLabel`, `representSessionPendingInteraction`). | `pendingInteractionPayloads`, `pendingInteractionAgentLabel`, `representSessionPendingInteraction` | dashboard/src/data/interactionAnswer.ts:191-198; dashboard/src/data/interactionAnswer.ts:207-222; dashboard/src/data/interactionAnswer.ts:230-245 |
-| The payload selector the rail/triage chrome previews (parent first, else first agent entry). | `sessionPendingInteractionPayload` | dashboard/src/data/sessions.ts:538-542 |
+| The payload selector the rail/triage chrome previews (parent first, else first agent entry). | `sessionPendingInteractionPayload` | dashboard/src/data/sessions.ts:552-556 |
 | The `interactionAnswer` per-seat slice this bar round-trips through. | "const submitAnswer = useCallback("; "const submitAnswers = useCallback("; "setInteractionAnswer: (id: string"; "interactionAnswer: answer"; "stale round-trip state (review finding 5)" | dashboard/src/data/sessionCockpitStore.ts:267-267; dashboard/src/data/sessionCockpitStore.ts:582-582; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:244-266; dashboard/src/panels/session-cockpit/InteractionBar.tsx:179-179; dashboard/src/panels/session-cockpit/InteractionBar.tsx:192-192 |
-| The centralized copy (honesty hint, answered/answering, composer-mode label). | `INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERED`, `INTERACTION_ANSWERING`, `INTERACTION_COMPOSER_MODE` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:72-73; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:75-75; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:78-79; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:82-83 |
+| The centralized copy (honesty hint, answered/answering, composer-mode label). | `INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERED`, `INTERACTION_ANSWERING`, `INTERACTION_COMPOSER_MODE` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:71-72; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:74-74; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:77-78; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:81-82 |
 | The view mounting the bar above the composer + the palette triage that focuses it. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-93 |
-| The inspector's verbatim payload the unrepresentable fallback points at. | "renderRow={(entry) => <SubmitEvidenceRow entry={entry} />}"; "value={<InspectorRaw value={bridgeError} testId="; "Pending interaction (raw)"; "unrepresentable kinds say so honestly — no dead buttons" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:237-237; dashboard/src/panels/session-cockpit/EvidencePane.tsx:261-261; dashboard/src/panels/session-cockpit/EvidencePane.tsx:296-296; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:79-86; dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:128-128 |
+| The inspector's verbatim payload the unrepresentable fallback points at. | "renderRow={(entry) => <SubmitEvidenceRow entry={entry} />}"; "value={<InspectorRaw value={bridgeError} testId="; "Pending interaction (raw)"; "unrepresentable kinds say so honestly — no dead buttons" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:241-241; dashboard/src/panels/session-cockpit/EvidencePane.tsx:265-265; dashboard/src/panels/session-cockpit/EvidencePane.tsx:300-300; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:79-86; dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:128-128 |
 | The jsdom suite (kind-awareness, round-trip, focus, stale clear, + the multiplexed block). | "kind-awareness (F8)", "round-trip states (F7)", "stale round-trip state (review finding 5)", "focus + announce honesty", "structured questions (260718-CHATS-L5I)" | dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:56-93; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:95-242; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:244-266; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:268-290; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:323-478 |
 
 ## Cross-Repo References

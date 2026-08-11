@@ -5,14 +5,21 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e` |
-| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
+| lastUpdated            | 2026-08-11T14:40+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## Current Structural Application Boundary
+
+`application/structural/` translates ambient caller intent and document+role targets into authorized
+plane-owned dispatch, messaging, seat management, and gate mutations. Runtime correlations remain
+inside the transaction. Ordinary messages are replacement-aware; the initial dispatch brief is the
+sole exact-pinned exception and failed briefing retires the unbriefed child.
 
 ## Purpose
 
@@ -43,6 +50,12 @@ reads. Route-index refresh still resolves context first and forwards repository/
 the deterministic builder.
 Context and worktree application entry points forward `parent_task`/`leaf_id` into the source resolver, and task-doc
 authoring writes `seriesContractPath` plus `enclosures[]` instead of the retired `contractPath`.
+
+Contract-scoped memory quality is the curator's pre-closeout worklist over the leaf's dirty code and
+memory worktrees. `memory_tools.py` supplies the contract's code-base commit only as temporary
+comparison provenance for unstamped cards, so changed claims reopen before a real code commit exists.
+A bare repository-scoped call still targets official memory and supplies no invented provenance;
+commit-derived verification stamps remain closeout-owned.
 **260707-HFX2-L11**: `worktree_tools.py`'s `worktree_integrate_tool`/
 `lifecycle_finalize_task_tool` now compose completion-edge landing — after a successful non-dry-run
 edge, when `config.retirement.auto_land_on_integration`/`auto_land_on_finalize` is on (both default
@@ -111,6 +124,9 @@ nested object for every client.
 - Route-index application entry points must pass the resolver-owned repository identity and storage/path-rule
   settings into the kernel builder explicitly; the builder does not infer write authority from a
   filesystem location.
+- Contract-scoped quality must measure the leaf memory tree against the leaf code worktree and pass
+  the leaf base as unstamped comparison provenance. It must not stamp the dirty tree or give an
+  official-memory call a synthetic comparison base.
 - Provider, benchmark, and worktree application entry points should call package services
   directly rather than CLI `main(argv)` wrappers.
 - Keep each application entry point file scoped by domain; do not rebuild the former
@@ -128,7 +144,9 @@ L14: the task-doc application entry point accepts the additive `orchestrates` fi
 | The two MCP payload builders are declared at these entry points. | "def skills_install_payload("; "def task_reopen_payload(" | mcp/src/agents_remember/mcp/tools/core.py:144-144; mcp/src/agents_remember/mcp/tools/task_doc.py:33-33 |
 | `ResponseModel` is the public response-model base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:41-60 |
 | `TOOL_RESPONSE_MODELS` is the registry of public response models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
-| `route_index_refresh_tool` resolves context and supplies repository/storage authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:358-380 |
+| Leaf memory scope carries the optional unstamped comparison base; the contract path supplies the leaf's real code base while bare official scope leaves it absent. | "class MemoryScope:"; "def _leaf_memory_scope(" | mcp/src/agents_remember/application/memory_tools.py:42-57; mcp/src/agents_remember/application/memory_tools.py:120-178 |
+| `memory_quality_check_tool` passes that comparison provenance into the full quality runner without changing verification metadata. | `memory_quality_check_tool` | mcp/src/agents_remember/application/memory_tools.py:217-292 |
+| `route_index_refresh_tool` resolves context and supplies repository/storage authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:438-460 |
 | `build_route_indexes` is the deterministic route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | `worktree_status_packet` returns the `WorktreeSummary` the context packet embeds directly, so the state machine's output is checked at the producer. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
 | `DriftSummaryPacket`, the typed drift seam `_drift_packet` returns. | "class DriftSummaryPacket(TypedDict):" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-11 |
@@ -217,6 +235,10 @@ composition (`application/worktree_services.py`) binding the provider, memory-qu
 citation-guard adapters into the worktrees service ports.
 
 ## Update History
+
+- 2026-08-11T14:40+02:00 — Recorded the current pre-closeout memory-quality boundary: a leaf-scoped
+  call compares unstamped cards from the contract's code base against the dirty worktree, while
+  official-memory calls do not invent provenance and closeout still owns real-commit stamps.
 
 - 2026-08-10T19:57:55+02:00 — 260731-EFA-L21 route impact: recorded declaration-before-config-load
   at the MCP application startup boundary and its separation from undeclared linked-worktree CLI

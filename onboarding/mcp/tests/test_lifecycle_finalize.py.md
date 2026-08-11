@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_lifecycle_finalize.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-23T22:50+02:00                     |
-| lastVerifiedCommitHash |                                            `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |                                            2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-12T00:08+02:00                     |
+| lastVerifiedCommitHash |                                            `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |                                            2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -49,9 +49,13 @@ No external Domain Documentation source is configured for this memory repo.
 | Finalizer behavior under test lives here. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:28-94 |
 | Task document read/write behavior used by the fixture lives here. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:109-173 |
 | Git fixture helpers come from the existing worktree support tests. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |
-| Public response model registry is checked for the finalizer entry. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:181-185 |
+| Public response model registry is checked for the finalizer entry. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:217-221 |
 
 ## Update History
+
+- 2026-08-12T00:08+02:00 — No content impact: the parameterized finalization subtest reports a
+  serializable label under xdist; finalization setup, operation, and assertions are unchanged.
+  Verification metadata remains pinned until closeout.
 
 - 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 4 repo-internal citation rows and preserved verification metadata.
 

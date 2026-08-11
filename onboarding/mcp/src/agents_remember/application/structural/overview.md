@@ -1,0 +1,121 @@
+# Structural Application Services Overview
+
+| Field | Value |
+|---|---|
+| repository | agents-remember |
+| doc_type | `route-local-overview` |
+| sourceRoute | `mcp/src/agents_remember/application/structural/` |
+| onboardingRoute | `mcp/src/agents_remember/application/structural/overview.md` |
+| parentOverview | [`application/overview.md`](../overview.md) |
+| lastUpdated | 2026-08-11T06:47+02:00 |
+| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+
+## What This Area Is
+
+The structural application boundary translates an ambient hosted seat's intent into authorized
+document-and-role operations. It owns dispatch, parent/child messaging, retirement, rename, and
+delegated gate operations without accepting runtime session, lifecycle, inbox, or gate identifiers
+from an agent.
+
+## Hot Path Summary
+
+`agent_tools.py` resolves the caller and target structural seats before invoking the existing
+plane-owned spawn, inbox, retire, and rename machinery. `gate_tools.py` applies the same boundary to
+delegated gates. Public response models expose task-document and role outcomes only.
+
+## What Belongs Here
+
+| Path | Role |
+|---|---|
+| `agent_tools.py` | Structural dispatch, messaging, retirement, and rename orchestration |
+| `gate_tools.py` | Structural lifecycle-gate creation, decision, and listing |
+
+## What Does Not Belong Here
+
+| Nearby Thing | Belongs Instead In |
+|---|---|
+| Catalog qualification and hierarchy walking | `serving/structural_seats.py` |
+| Ambient caller resolution | `serving/ambient_seat.py` |
+| Strict agent-facing request/response schemas | `models/structural/` |
+| Runtime-id administration | Internal serving/control-plane surfaces, never public structural tools |
+
+## Operating Model
+
+1. Resolve the caller from trusted hosted-process context.
+2. Authorize the requested parent or child relationship from canonical task containment and role.
+3. Resolve exactly one current target occupant or return a typed structural failure.
+4. Invoke the existing plane-owned mutation using runtime ids internally.
+5. Return only structural work-domain identity to the model.
+
+## Main Flows
+
+### Dispatch
+
+1. Validate the requested child role and contained task document.
+2. Spawn and bind the child occupant.
+3. Persist an internally exact-pinned initial dispatch brief.
+4. Retire an unbriefed child if that transaction fails.
+
+### Ordinary relationship traffic
+
+1. Persist a document-and-role structural address.
+2. Re-resolve its current occupant immediately before delivery.
+3. Preserve the same address across parent or child replacement.
+
+## Load-Bearing Files
+
+| File | Role | Why It Matters | Onboarding |
+|---|---|---|---|
+| `agent_tools.py` | application boundary | Prevents model-supplied runtime addressing | covered |
+| `gate_tools.py` | authorization boundary | Prevents exact lifecycle/gate targeting by agents | covered |
+
+## Local Invariants And Traps
+
+- No public structural request or response carries a runtime id.
+- Initial dispatch remains exact-pinned internally; ordinary relationship traffic remains rebindable.
+- Missing or ambiguous seats fail closed; no same-role global fallback is permitted.
+- This package composes existing primitives and must not create a second lifecycle implementation.
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The public structural operations are registered through one adapter module. | `dispatch_agent_payload` | mcp/src/agents_remember/mcp/tools/structural_agent.py:31-114 |
+| Structural resolution qualifies document+role seats and refuses ambiguity. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:14-160 |
+
+## Cross-Repo References
+
+No cross-repository runtime dependency governs this package.
+
+
+## Docs References
+
+The resolved memory source registry has no configured Domain Documentation entry. The implementation
+contract is therefore evidenced by repository source, tests, and the approved task design.
+
+
+## File-Level Onboarding Map
+
+| Source File | Onboarding File | Status | Reason |
+|---|---|---|---|
+| `application/structural/__init__.py` | [`__init__.py.md`](__init__.py.md) | covered | Package marker |
+| `application/structural/agent_tools.py` | [`agent_tools.py.md`](agent_tools.py.md) | covered | Agent structural boundary |
+| `application/structural/gate_tools.py` | [`gate_tools.py.md`](gate_tools.py.md) | covered | Gate structural boundary |
+
+## Child Overviews
+
+No child overview is needed for this bounded package.
+
+## How To Use This Area
+
+Read this overview, the target file card, `serving/structural_seats.py.md`, and the strict model
+card before changing a structural operation.
+
+## Needs Verification
+
+None.
+
+## Update History
+
+- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for the new structural application package.

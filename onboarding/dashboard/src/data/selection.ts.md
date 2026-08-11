@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/selection.ts`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,9 +68,9 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The composer a selection raises. | "export const HighlightComposer" | dashboard/src/panels/HighlightComposer.tsx:1178-1178 |
+| The composer a selection raises. | "export const HighlightComposer" | dashboard/src/panels/HighlightComposer.tsx:1133-1133 |
 | The rules + capture tests. | "carries the task leaf key when the selected text belongs to a task reader" | dashboard/src/data/selection.test.ts:52-57 |
-| The task reader marker that supplies task leaf ownership. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76 |
+| The task reader marker that supplies task leaf ownership. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
 
 ## Cross-Repo References
 

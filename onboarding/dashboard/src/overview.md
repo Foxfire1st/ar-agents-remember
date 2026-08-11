@@ -6,38 +6,20 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
 
 [agents-remember root overview](../../overview.md)
 
-## 260731-EFA-L8 Frontend Rail
+## Current Structural Chats Contract
 
-### 260713-TES-L1 Rename — Top-Bar Heartbeat Surface
-
-The top-bar heartbeat indicator is renamed: `SupervisorHeartbeatBadge` →
-`AgentNotifierHeartbeatBadge` with `agent-notifier ok/stale` wording and
-`data-testid="agent-notifier-heartbeat"`; the store field is `agentNotifierHeartbeat` and
-`applySnapshot` reads `projection.agentNotifierHeartbeat ?? projection.supervisorHeartbeat`
-so the legacy wire key keeps working during the rename window. The badge still renders nothing
-for a never-ticked agent-notifier.
-
-The route is now rail-enforced: `eslint.config.js` arms react-hooks (first),
-jsx-a11y, import/no-cycle, complexity 10, max-lines-per-function 80 (tests
-excluded), and max-lines 1,200 with no exemption list; `npm run lint` is 0 errors
-with no suppressions. Vitest coverage thresholds, `coverage:diff` (90% floor,
-GITHUB_BASE_REF-aware), a 32 MiB bundle budget in `npm run build`, `knip`, and the
-setup-level unhandled-error trap (which caught the live canvas exception) are all
-wired. The nine over-limit files were split by responsibility into kebab-case
-folders with canonical entries (`detail-panel/`, `lifecycle-list/`, `sessions-view/`,
-`conversation-timeline/`, and engine-room siblings + six style domains); test
-suites split by behavior with reconciled test-name sets. The primary Playwright
-suite (`dashboard/e2e/cockpit.spec.ts`) is green 27/27 and runs in CI. Behavior is
-preserved (R12), with two recorded genuine app fixes from the e2e repair (Terminal
-headless focus; ChatsStageBody keep-alive).
+Operations and Chats project the same real sprint/master/leaf task hierarchy. Hosted seats bind by
+task-document reference plus role; runtime session ids identify only the current occupant. The rail
+keeps one stable row across replacement, while spawn ancestry is available only as a separate
+diagnostic projection. Long live labels remain single-line CSS ellipsis.
 
 ## Purpose
 
@@ -476,6 +458,10 @@ landing; `operator_inbox_consume` attribution-only; sweep predicates never read 
 projection).
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the dashboard route with
+  plane-owned seat routing, document-addressed role control, and the corresponding projection and
+  cockpit changes; detailed evidence remains in the affected child-route cards.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the dashboard-wide sprint-provenance projection
   invariant. Verification metadata remains pinned until closeout.

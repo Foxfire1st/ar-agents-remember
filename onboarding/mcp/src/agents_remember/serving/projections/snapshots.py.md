@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -208,9 +208,9 @@ it builds an `EngineProcessFacts` bundle per contract carrying the status-guidan
 `contract_payload(contract)` (code/memory branches, base commits, worktree paths) and
 `dict(lifecycle_guidance(contract))` — both pure — plus `status` from `_safe_status_payload`.
 Since 260731-EFA-L4 the guidance payload is **widened at the boundary** with an explicit `dict(...)`
-cit:(["def read_engine_process_facts("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:233-233): `read_engine_process_facts`
+cit:(["def read_engine_process_facts("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:236-236): `read_engine_process_facts`
 constructs `EngineProcessFacts` with a plain dictionary guidance payload. The same
-widening is applied to the cached local status in cit:(["def _cached_local_status(  # pragma: no cover"], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:377-377), where the
+widening is applied to the cached local status in cit:(["def _cached_local_status(  # pragma: no cover"], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:380-380), where the
 annotation `value: dict[str, Any] | None` is now declared before the `try` so the `except` branch's
 `None` and the success branch's `dict(projected_status_payload(...))` share one type. Neither change
 alters a served value. `status_payload`
@@ -420,8 +420,8 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 | The provider-node projection policy used by `read_providers`. | `read_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:163-181 |
 | Worktree provider readers derive isolated provider container names (`_worktree_providers` → `_worktree_runtime_specs`), inspect Docker (`_inspect_containers`), and convert observed runtime into ready/degraded/failed summaries (`_worktree_runtime_summary`). | `_worktree_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:199-259 |
 | `read_providers` always reads workspace providers and filters worktree provider-state files by admitted active groups (`if active_worktree_groups is not None and group not in active_worktree_groups: continue`). | `read_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:163-181 |
-| `read_engine_process_facts` accepts an `active_worktree_groups` filter and skips a non-admitted group before the derived payload is built. | "def read_engine_process_facts("; "contract.worktree_group.name not in active_worktree_groups"; "cp = contract_payload(contract)" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:233-233; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:261-261; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:264-264 |
-| `read_enclosures` and `read_engine_process_facts` take the keyword-only `contracts` snapshot; `contracts=None` builds a local one-shot snapshot via `build_contract_snapshot`. | "def read_enclosures("; "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:58-58; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:233-233 |
+| `read_engine_process_facts` accepts an `active_worktree_groups` filter and skips a non-admitted group before the derived payload is built. | "def read_engine_process_facts("; "contract.worktree_group.name not in active_worktree_groups"; "cp = contract_payload(contract)" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:236-236; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:264-264; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:267-267 |
+| `read_enclosures` and `read_engine_process_facts` take the keyword-only `contracts` snapshot; `contracts=None` builds a local one-shot snapshot via `build_contract_snapshot`. | "def read_enclosures("; "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:58-58; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:236-236 |
 | The shared per-tick contract snapshot + stat-identity parse cache these readers consume. | `ContractSnapshot`; `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:37-49; mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
 | PTS-L2 tests pin reader-output parity with and without the shared snapshot and one enumeration per full projection tick. | `test_full_projection_tick_enumerates_once_and_reparses_nothing_unchanged`; `test_reader_outputs_equal_with_and_without_shared_snapshot` | mcp/tests/test_projection_scaling_cs6.py:690-728; mcp/tests/test_projection_scaling_cs6.py:730-761 |
 | `read_setup_progress_nodes` accepts the same active worktree-group filter used by provider setup projection. | "def read_setup_progress_nodes(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py:188-188 |
@@ -579,7 +579,7 @@ facts on heartbeat ticks.
   the guidance producer's own return through — the carrier is the projection's untyped
   input carrier and the reducer folds it by key name, so the carrier takes a plain
   `dict[str, Any]` and does not propagate a narrower typed shape into a structure that never
-  re-emits its vocabulary. cit:(["def _cached_local_status(  # pragma: no cover"], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:377-377) declares
+  re-emits its vocabulary. cit:(["def _cached_local_status(  # pragma: no cover"], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:380-380) declares
   `value: dict[str, Any] | None` before the `try` and stores
   `dict(projected_status_payload(...))`, so the `except` branch's `None` and the success value
   share one type. No served value changes. **Citation repairs** — the two edits added three lines
@@ -765,4 +765,3 @@ facts on heartbeat ticks.
   (`read_providers`, `read_enclosures`) reusing the producers' parsers. Analytical
   readers land in 3b. Verification metadata is pinned until closeout stamps the 3a
   code commit.
-

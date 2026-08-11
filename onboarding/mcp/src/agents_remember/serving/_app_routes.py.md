@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/_app_routes.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -31,6 +31,10 @@
 - `_inbox_dismiss_response`
 - `_register_action_routes`
 
+Recorded dashboard gate decisions finalize under the internal
+`gate_decide_internal` vocabulary. This route is an internal projection/action seam and must not
+mislabel itself as the agent-facing structural `gate_decide` tool.
+
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/serving/_app_routes.py`.
@@ -43,6 +47,8 @@
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Distinguished internal dashboard gate-decision finalization from the
+  agent-facing structural `gate_decide` tool name.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

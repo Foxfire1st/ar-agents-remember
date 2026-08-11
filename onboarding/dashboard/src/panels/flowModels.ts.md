@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/flowModels.ts`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T21:17+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -109,7 +109,7 @@ STRATEGIST · ORCHESTRATOR · MANAGER · WORKER · REVIEWER · COMMS:
 ### Conventions
 
 Plain TypeScript data module — no React, no styling, no store. Each model is a `const` typed as
-`FlowModel`, and cit:([`FLOW_MODELS`], dashboard/src/panels/flowModels.ts:437-437) is the ordered export the nav renders; `FLOW_MODELS[0]`
+`FlowModel`, and cit:([`FLOW_MODELS`], dashboard/src/panels/flowModels.ts:438-438) is the ordered export the nav renders; `FLOW_MODELS[0]`
 (`ROUTER`) is FlowTab's default/fallback, so ordering is load-bearing for the default view. Prose
 carries the series' typographic conventions (`⟁` for a junction/decision, `⊘` for a gate/seam rider,
 `·` separators, mint/amber via `nextStatus`). A gate/seam node sets `rides`; when it needs a bespoke
@@ -162,6 +162,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `flowModels.ts` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint provenance as part of command-seat flow
   identity. Verification metadata remains pinned until closeout stamps the code commit.
 

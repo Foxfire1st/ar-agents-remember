@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_gated_integration_runner.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-31T15:32+02:00                       |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`   |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`   |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -87,7 +87,7 @@ registers it in `sys.modules` before executing it.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The runner under test: `PATHS`, `BY_NAME`, `write_settings`, `child_environment`, `readiness`, `verify_passed`, `pytest_command`. | `PATHS`; `write_settings`; `verify_passed`; `readiness` | scripts/run-gated-integration.py:76-173; scripts/run-gated-integration.py:203-221; scripts/run-gated-integration.py:282-307; scripts/run-gated-integration.py:310-314 |
-| Where the eight markers are registered. | "ar_run_pi_rpc_smoke: opt in with AR_RUN_PI_RPC_SMOKE=1" | pyproject.toml:194-204 |
+| Where the eight markers are registered. | "ar_run_pi_rpc_smoke: opt in with AR_RUN_PI_RPC_SMOKE=1" | pyproject.toml:197-207 |
 | The CI job that must name every credential-free path. | "ar-run-pi-rpc-smoke"; "agents-remember-real-mcp-config" | .github/workflows/integration-gated.yml:75-112 |
 | The complementary registry check: markers reconciled against the suite's real `AR_*` environment gates. | `test_registered_markers_and_the_suite_environment_gates_agree` | mcp/tests/test_code_quality_check_scope.py:253-261 |
 

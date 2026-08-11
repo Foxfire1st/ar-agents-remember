@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-11T23:56+02:00               |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -37,6 +37,11 @@ prose. `Step.report_note is None` means the step **enforces**: a non-zero exit i
 and fails the gate. A note means the step **reports**, and the note is printed into the
 section header so nobody reads the output as enforcement.
 
+The pytest step supplies the derived selection, coverage, and retry-proof context/append arguments.
+Parallelism is not duplicated in this command builder: root pytest `addopts` owns `-n=auto`, so raw,
+full, and targeted pytest runs inherit one default and `-n=0` remains an explicit diagnostic
+override.
+
 | Step | Kind | What it runs |
 | --- | --- | --- |
 | `ruff` | enforcing | `ruff check <every tracked .py>` — no `--select`, no `--extend-ignore` |
@@ -44,7 +49,7 @@ section header so nobody reads the output as enforcement.
 | `pyright` | enforcing | `pyright --project . --pythonpath <interpreter> <every tracked .py>` |
 | `radon-cc` | **report** | `radon cc <packages> -s -n B --order SCORE` |
 | `radon-mi` | **report** | `radon mi <packages> -s -n B` |
-| `pytest` | enforcing | the suite under coverage, emitting the coverage JSON |
+| `pytest` | enforcing | the derived suite under coverage, inheriting root pytest `-n=auto`, and emitting the coverage JSON |
 | CRAP | enforcing | scored in-process from that JSON after the steps (`run_crap_calculator`) |
 | diff-coverage | enforcing | scored in-process from the **same** JSON (`run_diff_coverage`) |
 
@@ -256,11 +261,12 @@ the report to a temporary directory unless `--coverage-json` is given.
 | `run_git` — the one runner `git_ls_files` calls — strips `GIT_REPOSITORY_SELECTOR_ENV` and bounds every call with the local/remote/metadata timeout classes. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-73; mcp/src/agents_remember/kernel/git_command.py:85-92 |
 | `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `git_ls_files` still lists the repository it was handed, and that a non-repository and an unrunnable git both surface as `ScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:328-390; mcp/tests/test_git_command.py:372-390 |
 | The shared tiered hook body derives the same `git ls-files` scope; the pre-push tier delegates to the wrapper's targeted contract, while `full` stays the manual/master-gate tier. | "git ls-files -z -- '*.py'" | .githooks/_gate.sh:74-74 |
-| `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | "C901" | pyproject.toml:6-18; pyproject.toml:67-70; pyproject.toml:103-112 |
+| `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true"; "testpaths = [\"mcp/tests\"]" | pyproject.toml:6-18; pyproject.toml:67-70; pyproject.toml:110-124 |
 | Repo instructions state the gate command, that it takes no path arguments, and that Radon reports. | "python -m agents_remember.code_quality.check" | AGENTS.md:152-152 |
 | The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:793-851 |
 | The settings-owned memory cap a full run may run under (`--memory-cap-bytes`). | `plan_capped_command` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:94-135 |
 | The targeted contract proofs: rail scoping, real radon input, and no-change short-circuit. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:142-359; mcp/tests/test_code_quality_targeted.py:360-630 |
+| The command builder supplies derived test and coverage arguments; root pytest configuration owns automatic xdist workers. | "pytest_args = [sys.executable, \"-m\", \"pytest\", *test_args]"; "-n=auto" | mcp/src/agents_remember/code_quality/check.py:205-224; pyproject.toml:110-130 |
 
 ## 260731-EFA-L9 Change — Armed Layering Step
 
@@ -272,6 +278,14 @@ resolving to no declared package. There is no baseline/allowlist; a green full w
 requires zero layering violations.
 
 ## Update History
+
+- 2026-08-12T00:20+02:00 — Corrected ownership after `-n=auto` moved to root pytest `addopts`:
+  this wrapper now contributes only derived test, coverage, and retry-proof arguments.
+  Verification metadata remains pinned until closeout.
+
+- 2026-08-11T23:56+02:00 — Recorded the single pytest rail's mandatory pytest-xdist `-n auto`
+  execution; coverage and retry-proof arguments remain on the same command. Verification metadata
+  remains pinned until closeout.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the armed layering step in the
   wrapper contract; the L9 change section above documents the rail. Verification metadata pinned

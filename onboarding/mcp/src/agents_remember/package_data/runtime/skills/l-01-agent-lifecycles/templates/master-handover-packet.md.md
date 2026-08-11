@@ -6,42 +6,38 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T19:10+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 ## Purpose
 
-This template is the **manager → orchestrator** hand-off artifact posted at **master exit** in the `l-01-agent-lifecycles` report-template library. It is what the orchestrator integrates a completed master into the super branch from: the integration branch ref, the change-set summary, the master-exit verdict reference, and the C-11 carry-over state.
+Packaged runtime copy of the durable manager-to-orchestrator master handover. The canonical template
+owns its shape; the sync process publishes this exact artifact.
 
 ## Code Commentary
 
 ### Logic
 
-The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/templates/master-handover-packet.md`. It carries a prose header naming the writer (`roles/manager.md`) and the delivery path (inbox + stdin push), a numbered **Rules** block, and a fenced **Shape**: a metadata table (master / manager seat / integration branch / handover gateId / base / verdict / verdict outcome / written) followed by *Change-Set Summary*, *Requirements / Steps Completion*, *Carry-Over State* (for the orchestrator's master → super C-11), *Known Follow-Ups*, and *Reachability*. Since cycle 6 the manager row is `manager seat | <master's coordination leaf / chat ref>` — no lifecycle ids in model-authored artifacts; the gateId row is the gate's address.
+After master-exit review, the manager records the master task document, manager role, integration
+branch/base, verdict or delegated-decision evidence, landed change set, carry-over state, and
+follow-ups. Terminal/finalizer truth wakes the current orchestrator. The packet carries neither an
+orchestrator occupant address nor a gate id; `message_parent` is only for clarification or a
+blocking issue.
 
 ### Conventions
 
-The packet is delivered durably via the inbox plus a stdin push, using the
-`master-handover` message kind so the orchestrator can distinguish it from nudges
-or ordinary notes. It names the integration branch precisely (the orchestrator
-bases its C-11 integration on it) and summarizes the change set at master
-granularity, listing each leaf landed with a one-line outcome.
+Write the durable packet after the verdict exists and keep its evidence sufficient for integration
+and memory carry-over without re-derivation. Edit the canonical template, then synchronize.
 
 ### Invariants And Boundaries
 
-The packet is posted **only after** the master-exit adversarial verdict exists — the verdict reference is a required slot. The carry-over state must let the orchestrator's `c-11-memory-carryover-from-branch` integration run without re-deriving what landed (parked/carried memory rows, ledger coverage of every leaf commit, single-siding notes for overlapping strands).
+- `(master task document, manager)` remains reachable across occupant replacement.
+- Structural gate resolution is plane-owned and does not use packet-carried transport identity.
+- This packaged artifact must remain byte-identical to the canonical template.
 
 ### Todos
 
-No TODO markers are present in this report template.
-
-### Docs References
-
-No external domain documentation applies to this repository-local report template.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+None recorded.
 
 ## Repo-Internal References
 
@@ -66,6 +62,7 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `master-handover-packet.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 8 citation findings for the canonical handover template, manager role, verdict template, and lifecycle skill references.
 
 - 2026-07-05T19:10+02:00 - L8 builder cycle 6: the manager row became `manager seat | <master's coordination leaf / chat ref>` — no lifecycle ids in model-authored artifacts (AR3-6d). Verification metadata pinned until closeout stamps the L8 commit.

@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,7 +36,7 @@ discipline that the review's F8/F16/F22/F23 findings and the height-containment 
   contenteditable) calls `onBack`, which consumes the same focus-return token as the `← back to
   current chat` button (L131) and the palette `conversation.backToChat` command in `SessionsView`.
 - **List mount + `agentsNote` pass-through**: the list receives rows/cursor/loading/
-  error and `agentsNote={listView.agentsNote}` (cit:(["agentsNote={listView.agentsNote}"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:235-235)) — a pure pass-through; the list
+  error and `agentsNote={listView.agentsNote}` (cit:(["agentsNote={listView.agentsNote}"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:236-236)) — a pure pass-through; the list
   owns the verbatim render and the nested agent child rows.
 - **Selection → preview only** (L145): selecting a row loads its preview; it never opens/activates.
 - **`OpenConversationAction`** is mounted only for the selected row (cit:([`ConversationLibrarySurface`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:75-171)), so the sole resume
@@ -45,7 +45,7 @@ discipline that the review's F8/F16/F22/F23 findings and the height-containment 
 ### Invariants And Boundaries
 
 - **Height containment is the whole point of the CSS here (F23).** The `columns`
-  flex box is cit:([`nowrap`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:71-71): a *wrapping* flex container is multi-line, so each line's cross-size
+  flex box is cit:([`nowrap`], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:72-72): a *wrapping* flex container is multi-line, so each line's cross-size
   is sized to content — the columns would then grow to full content height inside this
   `overflow:hidden` clip and the interior `overflow-y:auto` scrollers would never engage, pushing
   `Open as new chat`/`Load more` past the fold and out of pointer reach. `nowrap` keeps one flex line
@@ -98,7 +98,7 @@ cross-repository implementation source that governs its behavior.
 
 - 2026-08-03T02:41:46+02:00 — W3-B05 curator: anchored 6 Tier-2 table citations and 5 Tier-2 prose citations with exact source paths; fixer generated all ranges.
 - 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: refreshed for the one-line `agentsNote` pass-through
-  (the list receives `agentsNote` as a pass-through prop) (cit:(["agentsNote: list?.agentsNote"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:178-178)) into the list; all line citations re-stamped against the
+  (the list receives `agentsNote` as a pass-through prop) (cit:(["agentsNote: list?.agentsNote"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:179-179)) into the list; all line citations re-stamped against the
   post-L7 source (several pre-existing citations had also drifted and are corrected). The L7 source is
   uncommitted, so lastVerifiedCommit* stays on the prior stamp and closeout re-stamps verification.
 - 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V10 stack-threshold raise (`@container`

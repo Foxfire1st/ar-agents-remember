@@ -5,9 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                 |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-11T14:40+02:00                                     |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                 |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -30,10 +30,15 @@ already pass keywords. Registered tools are unchanged.
 
 ### Logic
 
-The two read-only gates are named for when they run: `drift_check` is the **task-start** gate
+The two read-only checks are named for what they measure: `drift_check` is the **task-start**
+worklist
 (classifies how far onboarding has drifted since it was last verified — a nonzero actionable count
-after code changes is expected, not a failure), `memory_quality_check` is the **closeout** gate
-(`ok=false` means findings exist, not that the tool failed).
+after code changes is expected, not a failure). A contract-scoped `memory_quality_check` is the
+curator's full pre-closeout repair worklist and is repeated as the hard post-refresh closeout gate;
+`ok=false` means enforced findings exist, not that the tool failed. A full scoped call also replaces
+one operational checklist under the enclosure `reports/` directory and returns the zeroable
+curator count/status; subset and unscoped calls write no checklist. The application layer supplies
+the leaf base only as temporary comparison provenance for unstamped cards.
 
 Three declarations pack:
 
@@ -52,8 +57,10 @@ ledger and commits memory and is gated on clean drift unless `accept_drift=true`
 ### Invariants And Boundaries
 
 - The signature stays flat; the parameter objects are built in the body.
-- `drift_check` is task-start guidance, `memory_quality_check` is the closeout quality gate — do not
-  swap them in prose or hints.
+- `drift_check` identifies update work; contract-scoped `memory_quality_check` must be repaired and
+  rerun by the curator before handoff, then repeated by closeout after real-commit metadata refresh.
+- Registration documents the checklist as the only write of a full scoped quality call: code and
+  memory remain unchanged, and dirty-source/full-quality `ok` is not the curator's zeroable gate.
 - Everything these tools do lives in `application/memory_tools.py` and the memory-quality package;
   this module chooses nothing.
 
@@ -62,14 +69,20 @@ ledger and commits memory and is gated on clean drift unless `accept_drift=true`
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The payload builders for the carryover plan and report-filing apply pair. | `memory_carryover_plan_payload`; `memory_carryover_apply_payload` | mcp/src/agents_remember/mcp/tools/memory.py:163-174; mcp/src/agents_remember/mcp/tools/memory.py:177-198 |
-| The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:406-412 |
-| The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:411-427 |
-| The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:438-444 |
-| Baseline branch packing and drift gating are proved by `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift`. | `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift` | mcp/tests/test_mcp_registration_wiring_tests_1.py:373-389 |
-| Carryover selection packing is proved by `test_memory_carryover_plan_packs_the_selection`. | `test_memory_carryover_plan_packs_the_selection` | mcp/tests/test_mcp_registration_wiring_tests_1.py:391-415 |
-| Apply intent and default-message packing is proved by `test_memory_carryover_apply_carries_the_intent_note_and_default_messages`. | `test_memory_carryover_apply_carries_the_intent_note_and_default_messages` | mcp/tests/test_mcp_registration_wiring_tests_1.py:417-438 |
+| The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:478-484 |
+| The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:491-507 |
+| The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:510-516 |
+| Baseline branch packing and drift gating are proved by `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift`. | `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift` | mcp/tests/test_mcp_registration_wiring_tests_1.py:362-378 |
+| Carryover selection packing is proved by `test_memory_carryover_plan_packs_the_selection`. | `test_memory_carryover_plan_packs_the_selection` | mcp/tests/test_mcp_registration_wiring_tests_1.py:380-404 |
+| Apply intent and default-message packing is proved by `test_memory_carryover_apply_carries_the_intent_note_and_default_messages`. | `test_memory_carryover_apply_carries_the_intent_note_and_default_messages` | mcp/tests/test_mcp_registration_wiring_tests_1.py:406-427 |
 
 ## Update History
+
+- 2026-08-11T16:54+02:00 — Documented the single enclosure-local checklist side effect and the
+  curator-specific zeroable count/status while preserving code/memory read-only behavior.
+- 2026-08-11T14:40+02:00 — Clarified the contract-scoped quality tool as the curator's complete
+  pre-closeout worklist and regenerated shifted application-model citations; real-commit metadata
+  remains closeout-owned.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.

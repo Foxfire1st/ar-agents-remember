@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/delta.py`  |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-07T05:06+02:00                      |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`  |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Purpose
@@ -64,8 +64,8 @@ deterministic (replay/sim fixtures compare byte-for-byte).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The projection schema diffed here (flat, id-keyed collections). | `WorkspaceProjection`; `lifecycles`; `enclosures`; `providers`; `metrics`; `analytics` | mcp/src/agents_remember/observer/projection.py:976-995 |
-| The projector that calls this, caches stable forms, and broadcasts. | `Projector`; `_publish_projection`; `stable_projection_state`; `diff_projection`; `_broadcast` | mcp/src/agents_remember/serving/projector.py:126-330; mcp/src/agents_remember/serving/projector.py:268-295; mcp/src/agents_remember/serving/projector.py:310-312 |
+| The projection schema diffed here (flat, id-keyed collections). | "class WorkspaceProjection(BaseModel):"; "lifecycles: list[LifecycleProjection]"; "enclosures: list[EnclosureNode]"; "providers: list[ProviderNode]"; "metrics: Metrics"; "analytics: Analytics" | mcp/src/agents_remember/observer/projection.py:996-1015 |
+| The projector calls the stable-state and diff functions, publishes the projection, and broadcasts resulting items. | "class Projector:"; "def stable_projection_state("; "def diff_projection("; "def _publish_projection("; "def _broadcast(" | mcp/src/agents_remember/serving/projector.py:131-131; mcp/src/agents_remember/serving/delta.py:76-114; mcp/src/agents_remember/serving/projector.py:273-273; mcp/src/agents_remember/serving/projector.py:315-315 |
 | The client mirror of the volatile set + local age advancement. | `VOLATILE_AGE_FIELDS`; `stampServed`; `servedAgeSeconds` | dashboard/src/data/servedAges.ts:16-22; dashboard/src/data/servedAges.ts:59-61; dashboard/src/data/servedAges.ts:68-78 |
 
 ## Update History

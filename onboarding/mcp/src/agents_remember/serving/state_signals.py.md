@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/serving/state_signals.py`        |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                    |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-11T10:20+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                    |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -16,173 +16,52 @@
 
 ## Purpose
 
-The predicate library of the worker→manager and compound-idle state-signal relay
-(260713-TES-L2 + L3): facts from catalog turn truth, never inference. It produces the
-four mechanical findings — a completed/interrupted worker turn that has not been relayed
-(`state-signal-due`), a manager seat whose whole live worker set is simultaneously at a turn
-boundary and not yet relayed (`compound-idle-due`), a seat (worker or manager) still
-`turn-ended` long after rows landed at its boundary (`non-reaction-due`), and pending rows
-whose target seat crossed a turn boundary after the last attempt (`boundary-drain`) — plus
-the held-row predicate that keeps a boundary-held signal off the redelivery/escalation
-safety nets while its owner is alive but mid-turn. **260713-TES-L4 (N16/N13/N2)**: landing is
-now the formal `state == "landed"` (the by-rule predicate folded into the schema), and the
-boundary-drain predicate skips rows addressed to dead seats — the N2/N14 rebind machinery owns
-them, and a dead seat has no boundary to cross.
+Derives terminal-outcome, compound-idle, and non-reaction findings from catalog truth using real
+task-document containment for manager ownership.
 
 ## Code Commentary
 
 ### Logic
 
-L6 replaces worker-only notifier membership with `_manager_owned_subordinate`: a live harness seat
-is subordinate when its direct `spawned_by_session` edge points at the live manager and both rows
-belong to the same master. Only owner-tier roles (architect, orchestrator, manager) are excluded;
-reviewer, curator, and future role names participate automatically. Compound-idle, completed/
-interrupted relay, and non-reaction evaluation all consume this one structural predicate.
-
-Every action can reconstruct a fresh finding from current catalog and inbox truth. Missing,
-malformed, consumed, retargeted, working, terminal, cross-master, or reparented evidence fails
-closed before persistence. Landed-row timestamps must parse and carry a UTC offset; a parseable but
-timezone-naive `adapterAcceptedAt` is rejected so an aware/naive subtraction cannot abort the
-notifier sweep.
-
-`NON_REACTION_WINDOW_SECONDS = 300.0` cit:([`NON_REACTION_WINDOW_SECONDS`], mcp/src/agents_remember/serving/state_signals.py:25-25) is the leaf-authored bounded window (R5),
-mirroring the pickup-staleness convention.
-
-`evaluate_state_signal_findings` cit:([`evaluate_state_signal_findings`], mcp/src/agents_remember/serving/state_signals.py:127-155) scans running worker harness rows at
-`turn_state="turn-ended"` whose `terminal_outcome` is `completed` or `interrupted`, has a
-`terminal_evidence_id`, and has not yet been relayed (`state_signal_emitted_for` != that id).
-The evidence id is the per-seat+turn dedupe identity.
-
-`evaluate_non_reaction_findings` cit:([`evaluate_non_reaction_findings`], mcp/src/agents_remember/serving/state_signals.py:181-227) finds formal `state == "landed"` rows at this seat
-(`deliveredToSession` + `adapterDeliveryState="accepted"` + `adapterAcceptedAt`), takes the
-oldest, and — once it is older than the window and the seat is still `turn-ended` — emits one
-`non-reaction-due` finding per landed-row episode, deduped by `non_reaction_emitted_for`. It
-covers BOTH `worker` and `manager` seats since 260713-TES-L3: the emitter routes a worker's
-residue through the L2 manager path and a manager's residue one hop up to its orchestrator
-(see `_agent_notifier_actions.py.md`). The scan is O(catalog × inbox) per sweep, bounded by
-compaction and fleet caps (accepted note F7).
-
-### 260713-TES-L3 Compound-Idle Predicates
-
-`COMPOUND_IDLE_SWEEP_LATENCY_SECONDS = 10.0` cit:([`COMPOUND_IDLE_SWEEP_LATENCY_SECONDS`], mcp/src/agents_remember/serving/state_signals.py:29-29) is the recorded N6 latency
-bound: one agent-notifier sweep at the default 10 s cadence, so a set observed idle is
-signaled no later than ~one sweep after that tick.
-
-`_compound_subordinate_index` cit:([`_compound_subordinate_index`], mcp/src/agents_remember/serving/state_signals.py:60-81) is a single catalog scan per sweep: live managers and candidate live leaf seats are indexed by
-direct spawner id, so every compound-idle set is assembled in O(catalog + sets), never
-O(managers × catalog). Status is gated first here — non-running rows (retired/exited/landed)
-are never indexed, so their stale turn state never counts.
-
-`_manager_owned_subordinate` cit:([`_manager_owned_subordinate`], mcp/src/agents_remember/serving/state_signals.py:37-57) is the shared structural membership rule. A reviewer, curator, worker, or future leaf role
-joins only when its direct spawn edge points at the manager, both rows are harness seats, and
-their bound repo/master scopes match. Architect, orchestrator, and manager owner-tier roles are
-excluded; missing parents, leaf scope, and cross-master edges fail closed.
-
-`compound_idle_sets` cit:([`compound_idle_sets`], mcp/src/agents_remember/serving/state_signals.py:84-107) returns every live manager's member tuple keyed by manager id. A manager with no proven
-subordinates never forms a set; a running member with `turn_state=None` is unknown != idle and
-fails the set closed; idle is `turn-ended` or `awaiting-input`, while `working`/`stale` means the
-set is not idle.
-
-`compound_idle_signature` cit:([`compound_idle_signature`], mcp/src/agents_remember/serving/state_signals.py:110-117) is the episode identity: sorted
-`member-id:turn_state:turn_state_changed_at` over every live member. A seat returning to
-activity changes the signature, which is the re-arm — there is no separate marker-clearing
-write.
-
-`evaluate_compound_idle_findings` cit:([`evaluate_compound_idle_findings`], mcp/src/agents_remember/serving/state_signals.py:185-205) emits one `compound-idle-due`
-finding per un-relayed set (`compound_idle_emitted_for != signature`), one finding per
-manager seat, with `source_id=signature` carried only as the trigger — the emitter derives
-the ACTION-time signature and never consumes this informational value (R2 residual).
-
-`compound_idle_response` cit:([`compound_idle_response`], mcp/src/agents_remember/serving/state_signals.py:360-370) builds the self-contained payload naming the
-manager and every set member (`id@binding-or-replacement`), so the orchestrator can combine
-the pure seat-state fact with the non-reaction residue fact (N15/N16) without remembering
-who was in the set.
-
-`evaluate_boundary_drain_findings` cit:([`evaluate_boundary_drain_findings`], mcp/src/agents_remember/serving/state_signals.py:301-347) is the N15 drain: pending, not-yet-landed rows
-whose target is at a turn boundary (`seat_at_turn_boundary`) and whose `lastAttemptAt` predates
-the boundary transition (`turn_state_changed_at`) are pushed. Rows without a fresh boundary
-stay on the durable backoff schedule; rows addressed to a dead/replaced seat are skipped here
-and owned by the rebind path (N2/N14, L4).
-
-`state_signal_held_on_boundary` cit:([`state_signal_held_on_boundary`], mcp/src/agents_remember/serving/state_signals.py:114-126) is the F1 fix: a non-landed `state-signal` row whose
-target is a LIVE running seat is excluded from escalation and the redeliverable budget —
-delivery timing belongs to the boundary gate, and the row keeps the ordinary safety net only
-when the target is dead/archived.
-
-`state_signal_response` / `non_reaction_response` cit:([`state_signal_response`, `non_reaction_response`], mcp/src/agents_remember/serving/state_signals.py:350-357; mcp/src/agents_remember/serving/state_signals.py:373-379) build the self-contained payload:
-session, leaf, turn/evidence id, outcome, timestamps, and interrupt origin.
+`compound_idle_sets` groups a manager with running leaf-role occupants whose documents are direct
+children of that manager's master. State-signal and non-reaction evaluation resolve the current
+manager structurally, including singular replacement handling. Inbox delivery/landing remains owned
+by the shared durable message path.
 
 ### Conventions
 
-Findings carry the sweep's standard identity fields (session, leaf, role, source id) so
-`act_on_finding` can resolve the owner at action time. The relay emits facts only; it never
-judges, never schedules respawn, and never reasons about expectation deadlines.
+Task hierarchy determines ownership; runtime ids only correlate observed episodes.
 
 ### Invariants And Boundaries
 
-- Exactly one durable row per seat+turn (evidence-id keyed); re-projection renews the same
-  row, a new turn mints a distinct row.
-- `acceptance=queued` from a busy adapter is NOT a landing; only correlated acceptance at a
-  turn boundary is terminal on this path (`state_signal_landed`).
-- Killed seats stay `exited` and hung seats stay `stale`: neither produces a done signal.
-- Landed rows carry the formal `state="landed"` terminal (N13/N16 migration); the old
-  by-rule pending landing no longer exists.
-- Non-reaction residue is a distinct fact, never worded or modeled as "unconsumed rows"; it
-  now covers worker→manager AND manager→orchestrator (L3), and the compound-idle predicate
-  stays a pure seat-state signal that rides alongside it.
-- Compound-idle sets are master-scoped on every arm, status-first, unknown≠idle, and never
-  empty: zero-worker managers and unbound managers never signal (F1/F3/R1 pins).
-- Residual R1 (accepted, folded into 260713-TES-L4): a held row whose boundary push returns
-  queued/unconfirmed waits for the next boundary — delayed, never lost or duplicated.
+- Spawn ancestry does not establish manager/subordinate membership.
+- Missing or ambiguous current managers fail closed.
+- Findings arise from terminal/turn evidence, not model artifact judgment.
+- State-signal delivery still obeys the target turn boundary.
 
 ### Todos
 
-- F7 note (accepted): `evaluate_non_reaction_findings` scans the full inbox per catalog row;
-  an index by `deliveredToSession` would make it linear.
-- R1 note (accepted): periodic reconciliation-only redelivery of held state-signal rows is
-  owned by 260713-TES-L4 deliver-until-LANDED.
+None.
 
 ## Docs References
 
-No Domain Documentation entries are configured in the resolved `system/sources.md`; the
-relay semantics are same-repository runtime behavior proven by source and tests.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external/domain document defines this relay; the catalog turn truth and tests are the authority. | `evaluate_state_signal_findings` | mcp/src/agents_remember/serving/state_signals.py:127-155 |
+No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
-The predicates read `TerminalCatalog` and `OperatorInboxStore` directly (never the
-projection); the actions that consume the findings live in `_agent_notifier_actions.py`, and
-the landing predicate lives on the inbox record.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The catalog row's terminal truth, boundary vocabulary, and dedupe markers. | `seat_at_turn_boundary`; "class TerminalCatalogEntry:" | mcp/src/agents_remember/models/terminal_catalog.py:58-64; mcp/src/agents_remember/models/terminal_catalog.py:68-72 |
-| Terminality for landed state-signal rows (accepted at boundary). | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:28-36 |
-| The action layer: emit, non-reaction, boundary drain, held-row exclusions. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary`; `_FINDING_ACTIONS` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:421-480; mcp/src/agents_remember/serving/_agent_notifier_actions.py:542-599; mcp/src/agents_remember/serving/_agent_notifier_actions.py:602-611; mcp/src/agents_remember/serving/_agent_notifier_actions.py:619-630 |
-| The relay simulation suites (incident-#1, boundary hold, dedupe, rebinding, idle flap, non-reaction). | `StateSignalRelayTests`; `StateSignalDeliveryTests` | mcp/tests/test_state_signal_delivery.py:88-227; mcp/tests/test_state_signal_relay.py:127-742 |
+| Compound-idle membership follows direct task containment. | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:93-117 |
+| Terminal outcome findings resolve manager ownership structurally. | `evaluate_state_signal_findings` | mcp/src/agents_remember/serving/state_signals.py:135-186 |
+| Non-reaction evaluation uses topology and durable landed rows. | `evaluate_non_reaction_findings` | mcp/src/agents_remember/serving/state_signals.py:211-273 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references found.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary owns or consumes this relay. | — | — |
-
-## 260713-TES-L5 Current Delta — No Ladder Safety Net
-
-`state_signal_held_on_boundary` now says only that a held row is not redelivered while its
-target is live-but-not-at-boundary; the "or climb the escalation ladder" phrase is deleted
-with the ladder. Dead/archived targets keep the ordinary redelivery schedule, and terminality
-is landing/ceiling/grace only. This entry supersedes any earlier description in this sidecar
-that conflicts with the current source behavior above; verification metadata stays pinned to
-the pre-commit source history until closeout.
+No cross-repository implementation dependency governs this file.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current serving card for `state_signals.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: documented structural all-subordinate membership,
   shared relay evaluation, action-time revalidation, and timezone-aware non-reaction evidence.
@@ -207,5 +86,3 @@ the pre-commit source history until closeout.
   state-signal predicate module (NON_REACTION_WINDOW_SECONDS=300, three finding families,
   held-on-boundary exclusion, self-contained payloads, R1/F7 accepted notes). Verification
   metadata pinned to the leaf base `1c1629fc` until closeout stamps the 260713-TES-L2 commit.
-
-

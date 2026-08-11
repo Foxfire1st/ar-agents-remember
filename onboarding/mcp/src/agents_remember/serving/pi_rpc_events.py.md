@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_events.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | Pi frame schemas and UI policy. | `PI_RPC_DIALOG_METHODS`, `PI_RPC_FIRE_AND_FORGET_METHODS`, `PiRpcJsonlDecoder` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:20-23; mcp/src/agents_remember/serving/pi_rpc_protocol.py:59-103 |
 | Adapter event-stream owner. | `PiRpcAdapter`, `_event_stream`, `subscribe` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768; mcp/src/agents_remember/serving/pi_rpc_adapter.py:268-305; mcp/src/agents_remember/serving/pi_rpc_adapter.py:307-308 |
 | Event/settlement coverage. | `test_retry_compaction_and_agent_settled_are_not_early_idle`, `test_extension_ui_round_trip_and_reclamation_scale` | mcp/tests/test_pi_rpc_adapter_ops_2.py:79-110; mcp/tests/test_pi_rpc_adapter_ops_2.py:112-167 |
-| The guarded abort whose interrupted turns produce the content-less `message_end` shape this mapper crosses evidence-only. | `message_end` | mcp/tests/test_harness_control_evidence_installed.py:349-351 |
+| The guarded abort whose interrupted turns produce the content-less `message_end` shape this mapper crosses evidence-only. | `message_end` | mcp/tests/test_harness_control_evidence_installed.py:352-355 |
 | The control-plane contract test pins the evidence-only mapping and the preserved role/object strictness (bad role still fails the bridge). | `test_contentless_message_end_crosses_as_evidence_without_failing` | mcp/tests/test_harness_control_plane_assets.py:113-139 |
 
 ## Cross-Repo References

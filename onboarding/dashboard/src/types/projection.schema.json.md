@@ -6,8 +6,8 @@
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,8 @@ Generated JSON Schema for the dashboard projection contract: typed projections, 
 - `$defs` (line 2) holds the reusable projection schema definitions.
 - `ActionAvailability` (line 3) declares whether one action is safe, decided by the reducer, never the UI.
 - `AgentPickupNode` (line 47) declares a pending dashboard response waiting for an agent to consume it.
+- `TaskDocumentRef` is the repository-qualified task identity reused by terminal, inbox, and
+  projection fields; task ownership is not encoded as a leaf-key string.
 
 ### Conventions
 
@@ -48,6 +50,8 @@ None.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Recorded the generated `TaskDocumentRef` definition and the projection,
+  subject, and owner fields that consume it after leaf-key removal.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the regenerated schema — the
 ## 260713-TES-L5 Current Delta — Regenerated AgentPickupNode Description
 

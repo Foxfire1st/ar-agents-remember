@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/memory.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-11T14:40+02:00                     |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -34,6 +34,11 @@ details. The carryover models document the 2.5.2 compact wire shape: both
 declare optional `decisions` (source paths grouped by carryover decision) and
 `reportPath` (the temp report holding the full candidate records), and the
 apply model adds `carriedPaths` (paths whose onboarding actually carried).
+`MemoryQualityCheckResponse` explicitly declares the optional leaf-checklist path, status, and
+component counts even though the envelope remains flexible. Those fields exist only on a full
+contract-scoped call; subset and official-memory calls omit them.
+`RouteIndexRefreshResponse` likewise declares `staleIndexes`, so a dry-run's changed-index paths
+are present in the agent-facing response schema instead of relying only on the flexible envelope.
 
 ## Invariants And Boundaries
 
@@ -46,12 +51,16 @@ apply model adds `carriedPaths` (paths whose onboarding actually carried).
   identical.
 - Flexible memory-service responses should still include the public operation
   name and shared token metadata.
+- Checklist status is constrained to `action-required | ready-for-closeout`; all component counts
+  are non-negative and omission remains the unscoped/subset meaning.
+- `staleIndexes` is optional because older or non-preview route-index payloads may omit it; when
+  present it is the list of index paths whose rendered bytes differ from the onboarding census.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Memory MCP application entry points route these tools to drift, quality, route-index, init, baseline, and carryover services. | `drift_check_tool`; `memory_quality_check_tool`; `citation_check_tool`; `citation_source_index_build_tool`; `citation_fix_tool`; `citation_migrate_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:176-194; mcp/src/agents_remember/application/memory_tools.py:197-220; mcp/src/agents_remember/application/memory_tools.py:248-280; mcp/src/agents_remember/application/memory_tools.py:283-300; mcp/src/agents_remember/application/memory_tools.py:303-329; mcp/src/agents_remember/application/memory_tools.py:332-363; mcp/src/agents_remember/application/memory_tools.py:366-388; mcp/src/agents_remember/application/memory_tools.py:391-403; mcp/src/agents_remember/application/memory_tools.py:451-458; mcp/src/agents_remember/application/memory_tools.py:461-477; mcp/src/agents_remember/application/memory_tools.py:480-485; mcp/src/agents_remember/application/memory_tools.py:488-503 |
+| Memory MCP application entry points route these tools to drift, quality, citation, route-index, init, baseline, and carryover services. | `drift_check_tool`; `memory_quality_check_tool`; `citation_check_tool`; `citation_source_index_build_tool`; `citation_fix_tool`; `citation_migrate_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:196-292; mcp/src/agents_remember/application/memory_tools.py:320-435; mcp/src/agents_remember/application/memory_tools.py:438-475; mcp/src/agents_remember/application/memory_tools.py:523-575 |
 | "status: DriftStatus" is the shared status declaration. | "status: DriftStatus" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14 |
 | `DriftCheckResponse.status` uses the shared `DriftStatus` alias. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:13-27 |
 | `DriftSummary.status` uses the same shared `DriftStatus` alias. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |
@@ -59,6 +68,13 @@ apply model adds `carriedPaths` (paths whose onboarding actually carried).
 
 ## Update History
 
+- 2026-08-11T17:26+02:00 — L19 report-folder delta: exposed
+  `RouteIndexRefreshResponse.staleIndexes` in the agent-facing schema so the curator checklist can
+  name exact route-index work; verification metadata remains pinned for governed closeout.
+- 2026-08-11T16:54+02:00 — Declared the full scoped curator-checklist path, status, and component
+  counts on the memory-quality wire model without changing subset or official-memory payloads.
+- 2026-08-11T14:40+02:00 — Re-read the application memory-tool surface after its scoped-quality
+  extension and regenerated every shifted entry-point range; this response-model contract is unchanged.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: split the shared status declaration from both response consumers and the context-packet error field, with regenerated model extents.

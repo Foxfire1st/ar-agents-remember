@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "mcp/src/agents_remember/models/structural",
+  "overview": "mcp/src/agents_remember/models/structural/overview.md",
+  "index": "mcp/src/agents_remember/models/structural/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/models/structural/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/models/structural/__init__.py",
+    "mcp/src/agents_remember/models/structural/agent.py",
+    "mcp/src/agents_remember/models/structural/gates.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 3,
+    "fileSidecars": 3,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agent",
+    "agents",
+    "agents_remember",
+    "gates",
+    "init",
+    "init__",
+    "mcp",
+    "models",
+    "remember",
+    "src",
+    "structural"
+  ],
+  "hotPath": {
+    "summary": "Read `agent.py` for dispatch/message/retire/rename schemas and `gates.py` for structural delegated gate schemas plus the deliberately separate internal response family.",
+    "candidateHints": [
+      "mcp/src/agents_remember/models/structural",
+      "mcp/src/agents_remember/models/structural/__init__.py",
+      "mcp/src/agents_remember/models/structural/agent.py",
+      "mcp/src/agents_remember/models/structural/gates.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "agent.py",
+      "agent",
+      "gates.py",
+      "gates",
+      "route-local-overview",
+      "mcp/src/agents_remember/models/structural/",
+      "mcp/src/agents_remember/models/structural/overview.md",
+      "models/overview.md",
+      "d9a1eb82849baea6c0b86735e772a932f4bbdc7c",
+      "serving/structural_seats.py",
+      "application/structural/",
+      "test_agent_doctrine_contains_no_control_plane_address_instructions",
+      "StructuralAgentToolTests",
+      "models/structural/__init__.py",
+      "__init__.py.md",
+      "models/structural/agent.py",
+      "agent.py.md",
+      "models/structural/gates.py",
+      "gates.py.md",
+      "models/gates.py",
+      "/overview.md",
+      "mcp/tests/test_agent_doctrine_plane_identity.py",
+      "mcp/tests/test_structural_agent_tools.py",
+      "doc_type",
+      "sourceRoute",
+      "agents_remember",
+      "onboardingRoute",
+      "parentOverview",
+      "lastUpdated",
+      "T14",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T00",
+      "DTOs",
+      "structural_seats",
+      "API",
+      "test_agent_doctrine_plane_identity",
+      "test_structural_agent_tools",
+      "init__",
+      "T06",
+      "EFA",
+      "L19"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/models/structural/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

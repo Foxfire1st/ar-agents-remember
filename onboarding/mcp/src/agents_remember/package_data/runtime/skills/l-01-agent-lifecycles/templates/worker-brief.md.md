@@ -6,53 +6,40 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187`                                  |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                  |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 ## Purpose
 
-The institutionalized worker dispatch packet: the template a spawning seat (manager, or the
-architect in a flat series) compiles a worker brief from. The brief is the worker's **entire
-session start** — it replaces the front half the spawner already ran (trust checkpoint, reframe,
-plan). This template turns the proven dispatch shape of the 260703 series (leaves L3–L8) into
-doctrine and, as of L6R3, makes the worker the builder input for a separate curator memory pass.
-It still absorbs the old dispatch frictions: route-index leaks into the official checkout (F-E),
-provider-stack keying confusion (F-H), and the missing `python` shim in spawn environments (F-I).
+Packaged runtime copy of the complete worker dispatch brief. The canonical template owns the packet;
+the sync process installs this exact artifact.
 
 ## Code Commentary
 
-### Coding-Guidelines Section (260731-EFA-L16)
-
-The brief shape gained a "Coding guidelines" section naming
-`<memory-worktree-path>/system/coding-guidelines.md` with the read-before-first-edit instruction
-and the turn-report finding rule. The brief is the worker's entire session start, so a rule that
-is not in this template does not exist for a spawned worker — which is exactly how the guidelines
-sat unread while three leaves shipped task identifiers in source comments through green rails.
-The spawning seat's compiler duty is unchanged: fill the path like every other placeholder.
-
 ### Logic
 
-**260707-HFX2-L15 reviewer N7 current-source debt.** The source brief still instructs an
-`echo-confirmed`/paste-chip dispatch check. L15 removes screen rendering as acceptance authority;
-the future doctrine edit must say that the id-bearing input is accepted from the bound harness log,
-with pane text restricted to duplicate-retry safety and failure diagnostics. This onboarding note
-records the mismatch; it does not pretend the unchanged source has already been fixed.
+The manager calls `dispatch_agent` with the canonical leaf document, role `worker`, and this brief.
+The control plane binds the occupant privately. The worker edits code, runs the scoped checks, and
+writes the builder report; it never commits or writes onboarding. Its curator handoff supplies
+observations and evidence, while the curator independently reconciles existing, ruled, and
+implemented intent before writing memory.
 
-Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
-`skills/l-01-agent-lifecycles/templates/worker-brief.md`. The template body is a fenced markdown
-brief with `<placeholder>` slots: leaf identity, the code worktree plus memory context path with
-branch/base, the positive tool-surface statement (native edits, read-only AR retrieval with the
-`read_ar_files`-serves-official-baseline caveat and the provider stack key or NONE, no mutating AR
-tools, local `build_route_indexes` for generated indexes, explicit interpreter path — no `python`
-shim), the task statement, the checks ladder (focused + full wrapper + `git diff --check`), a
-curator handoff-input block (changed paths, code-diff summary, tests, route/onboarding observations,
-and the pin idiom for the curator), and the mandatory turn-report path. Compiler notes bind the
-spawning seat: fill every placeholder (an unresolved placeholder is not dispatchable), verify the
-provider stack answers before naming it, spawn with `env={"AR_SPAWN_ROLE": "worker"}` and the
-qualified leaf key as one pair claim for the worker's `(leaf, role)` seat, deliver as an
-echo-confirmed paste and only count delivery on a post-boot echo.
+### Conventions
 
-As of cycle 5: the fenced brief opens with the canonical ROLE BRIEF — worker line (uniform with manager-brief).
+Fill every placeholder, include exact code and memory worktree paths, state the quality ladder, and
+keep the worker's authority limited to code plus its report. Edit the canonical template and
+synchronize.
+
+### Invariants And Boundaries
+
+- The brief addresses `(leaf document, worker)` and carries no runtime address.
+- Leaf closeout requires builder code, reviewer verdict, and curator coherence.
+- Forward-looking observations are not accepted system intent until curator reconciliation.
+- This packaged artifact must remain byte-identical to the canonical template.
+
+### Todos
+
+None recorded.
 
 ## Cross-Repo Evidence
 
@@ -73,6 +60,7 @@ memory-capped; `memory_quality_check` stays a per-leaf closeout gate.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `worker-brief.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the worker-brief
   template's targeted leaf-check command and the full-wrapper master-gate home.
   Verification metadata stays pinned until closeout stamps the 260731-EFA-L17

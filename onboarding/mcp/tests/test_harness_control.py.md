@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -189,6 +189,9 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — No content impact: removed an explicit `leaf_key=None` from the local
+  catalog fixture after that retired model field disappeared; native harness control behavior and
+  evidence assertions documented by this card are unchanged.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: restructured under 1,200 lines (357): the shared fake-adapter helpers stay here and the conformance family moved to `test_harness_control_conformance_1.py` / `_2.py`; L8's deterministic receipt-before-release rewrite is applied verbatim in the family. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.

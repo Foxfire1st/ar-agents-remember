@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/launchFlowParts.tsx`  |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The dialog parts. | `HarnessSection`; `ModelPicker`; `LaunchFlowDialog` | dashboard/src/panels/session-cockpit/launchFlowParts.tsx:103-143; dashboard/src/panels/session-cockpit/launchFlowParts.tsx:144-206; dashboard/src/panels/session-cockpit/launchFlowParts.tsx:599-675; dashboard/src/panels/session-cockpit/launchFlowParts.tsx:571-571 |
+| The dialog parts. | `HarnessSection`; `ModelPicker`; `LaunchFlowDialog` | dashboard/src/panels/session-cockpit/launchFlowParts.tsx:103-142; dashboard/src/panels/session-cockpit/launchFlowParts.tsx:144-205; dashboard/src/panels/session-cockpit/launchFlowParts.tsx:582-656 |
 
 ## Cross-Repo References
 
@@ -67,6 +67,7 @@ No cross-repository implementation source governs this file.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `launchFlowParts.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the launch
   flow parts module extracted from `LaunchFlow.tsx`. Verification pinned to the leaf
   base until closeout stamps the code commit.

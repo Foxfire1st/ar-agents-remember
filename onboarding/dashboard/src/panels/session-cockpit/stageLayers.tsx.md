@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/stageLayers.tsx`      |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -26,7 +26,9 @@ layer (keep-alive), and the library/diagnostics slot.
 
 `PtyLayer` keeps the PTY surface mounted through smart-focus handoffs (the B1
 keep-alive rule); `ConversationPool` renders the pool when no session is live;
-`EmptyChatStage`/`LibraryAndDiagnostics` cover the empty and library states.
+`EmptyChatStage`/`LibraryAndDiagnostics` cover the empty and library states. The library layer
+forwards the focused seat's `taskDocumentRef` and role as resume launch context; it does not
+reconstruct a leaf address.
 
 ### Conventions
 
@@ -65,6 +67,8 @@ No cross-repository implementation source governs this file.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Recorded task-document-plus-role launch context at the library-stage
+  composition seam.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the stage
   layers module extracted from `ChatsStageBody.tsx`. Verification pinned to the leaf
   base until closeout stamps the code commit.

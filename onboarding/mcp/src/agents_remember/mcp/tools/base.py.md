@@ -5,59 +5,59 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-11T10:10+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
 
-Shared payload-builder primitives for the MCP tools package: the advertised
-public tool-name list and the single response-validation helper that every
-modeled builder uses. L11 adds `task_reopen` to `PUBLIC_TOOLS`, listed beside
-`task_doc` (it is a task tool, not a worktree tool). L2 adds `spawn_agent_session`
-beside `attach_terminal_session_to_leaf` (both terminal-catalog tools). L3 adds
-`orchestration_nudge_manager` for rate-limited manager nudges over the inbox.
+Owns the exact advertised MCP tool-name tuple and the one shared response-finalization adapter.
 
 ## Code Commentary
 
 ### Logic
 
-`_tool_payload` delegates the decoded mapping to `complete_tool_response`.
-cit:([`_tool_payload`], mcp/src/agents_remember/mcp/tools/base.py:73-75)
+`PUBLIC_TOOLS` is the 55-name registered surface. Structural agent operations are
+`dispatch_agent`, `retire_child`, `rename_child`, `rename_self`, `message_parent`, and
+`message_child`; structural gate names remain `lifecycle_gate`, `gate_decide`, and `gate_list`.
+Removed exact-id/leaf-address agent tools are absent. `_tool_payload` passes every application
+result through the shared finalizer.
 
-`complete_tool_response` calls `finalize_tool_response` for validation and enrichment, and `_attach_lifecycle_tail` sets `nextStep` plus the optional supervisor banner.
-cit:([`complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:47-61)
-cit:([`finalize_tool_response`], mcp/src/agents_remember/models/tool_response.py:15-26)
-cit:([`_attach_lifecycle_tail`], mcp/src/agents_remember/application/tool_response.py:34-44)
+### Conventions
+
+Registration and response-model registries must match this tuple exactly.
 
 ### Invariants And Boundaries
 
-- `PUBLIC_TOOLS` must match the public tool declarations and the public response-model registry.
-- `_tool_payload` delegates response validation and lifecycle-tail shaping; request validation remains in server signatures and application entry points.
-- Every public payload must pass through the shared payload entry point, with lifecycle response ownership kept in the application response layer.
-- The module does not own the lifecycle tail implementation; changes to `complete_tool_response` and its helpers are documented with that application-layer source.
+- Public tool names cannot restore session/lifecycle/inbox/gate-id cognition.
+- Structural operations use document+role vocabulary.
+- Every public result passes the common response finalizer.
+- Reserved tools are empty.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Response model registry resolved per tool name. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
-| The response envelope union names the strict and flexible families, and `FlexibleResponseEnvelope` declares the shared `ok`/token/`nextStep`/`supervisorBanner` fields. | `ResponseEnvelope`; `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:72-89; mcp/src/agents_remember/models/base.py:98-98 |
-| The server registers tool families through its registrar loop. | `register_tools` | mcp/src/agents_remember/mcp/server.py:42-43 |
-| The registrar tuple owns the tool-family set consumed by that loop. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:35-48 |
-| Token-accounting finalizer used by the completed response payload. | `finalize_payload_tokens` | mcp/src/agents_remember/models/tokens.py:232-249 |
-| The ambient lifecycle records each completed tool call. | `emit_tool` | mcp/src/agents_remember/observer/ambient.py:405-424 |
-| The next-step engine returns the `NextStep` model. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
-| The two terminal-catalog public tools' payload builders. | `attach_terminal_session_to_leaf_payload`; `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:26-43; mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
-| The supervisor heartbeat helper used for the optional banner. | `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:135-151 |
-| `AmbientLifecycle.root` exposes the observer-store root used by the supervisor-banner helper. | "    def root(self) -> Path:"; "def _agent_notifier_banner(amb: AmbientLifecycle)" | mcp/src/agents_remember/observer/ambient.py:157-157; mcp/src/agents_remember/application/tool_response.py:22-22 |
+| The advertised tuple names the structural public surface. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:9-65 |
+| The shared adapter finalizes one application result. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
+| Registrars are the only published declaration family. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:36-49 |
 
-## 260712-TRH-L4 Final Candidate
+## Cross-Repo References
 
-This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — Aligned the current MCP-tool card for `base.py` with structural tool exposure and control-plane ownership boundaries.
 - 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: split the base-tool ownership record across the payload entry point, response finalizer/lifecycle tail, envelope models, registrar loop/tuple, and supervisor-banner root; the scoped fixer will generate citation ranges.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
@@ -100,4 +100,3 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 - 2026-06-01T20:45+02:00 — Registered `worktree_abandon` in `PUBLIC_TOOLS` so its response is validated like every other public tool.
 - 2026-05-30T22:29+02:00: Documented that `_tool_payload` now finalizes token-accounting metadata via `finalize_payload_tokens` (S6 wiring), making it the single point that populates `tokens`/`tokenizer`/`tokenCountExact` on every MCP response. Verification metadata stays pinned until closeout commits the source change.
 - 2026-05-29T18:35+02:00: Created when `mcp/tools.py` was split into the `mcp/tools/` package (commit `01f503d`); holds the `_tool_payload`/`PUBLIC_TOOLS` contract previously documented in `tools.py.md`.
-

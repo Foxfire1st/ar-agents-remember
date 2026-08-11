@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/session-cockpit/sessionRailParts.tsx` |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`                  |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated | 2026-08-11T23:40+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -16,59 +16,54 @@
 
 ## Purpose
 
-The session-rail render parts, extracted from `SessionRail.tsx` by the
-260731-EFA-L8 split. Owns the rail row (`RailRow`), bulk confirm, master head/body
-blocks, attention markers, and the `BulkTarget` type.
+Contains the row, master block, attention, and rail-body renderers for the structural Chats tree.
 
 ## Code Commentary
 
 ### Logic
 
-Rail section components now receive and render sprint-qualified group labels and keep the legacy
-unbound section visually explicit. The parts remain presentation-only: grouping is computed by the
-rail model from persisted provenance, so labels cannot create cross-sprint ownership.
-
-`RailRow` renders one seat row with chip tone/derived state and action buttons;
-`BulkConfirm` renders the sprint/master bulk confirm surface; `RailMasterBlock`
-composes the master attention badge/head/body.
+`RailMasterBlock` renders master and leaf containment, while `RailBody` walks sprint sections and
+their current occupants. `RailRow` treats the occupant id as an action/focus target but renders task
+and role identity supplied by the model.
 
 ### Conventions
 
-Presentational; data comes from the rail model and store.
+Structure is passed in; this module does not infer parentage from spawn ids or labels.
 
 ### Invariants And Boundaries
 
-Actions always route through the rail/seat handlers; no direct store mutation here.
+- One structural row remains stable when its occupant changes.
+- Row actions target the currently rendered occupant only.
+- Empty and attention states do not manufacture a fallback seat.
 
 ### Todos
 
-None recorded.
+None.
 
 ## Docs References
 
-The curator checked `system/sources.md`; no Domain Documentation source is
-configured for this file.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The rail row and bulk parts. | `RailRow`; `BulkConfirm`; `RailMasterBlock` | dashboard/src/panels/session-cockpit/sessionRailParts.tsx:316-386; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:409-442; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:537-579 |
+| Individual rows separate structural label from occupant actions. | `RailRow` | dashboard/src/panels/session-cockpit/sessionRailParts.tsx:330-429 |
+| Master blocks render the supplied task containment. | `RailMasterBlock` | dashboard/src/panels/session-cockpit/sessionRailParts.tsx:567-606 |
+| The rail body renders sprint/master/leaf sections. | `RailBody` | dashboard/src/panels/session-cockpit/sessionRailParts.tsx:751-961 |
 
 ## Cross-Repo References
 
-No cross-repository implementation source governs this file.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No cross-repository implementation dependency governs this file.
 
 ## Update History
 
+- 2026-08-11T23:40+02:00 — No content impact: `RailTop` now delegates its summary and completed-bulk
+  controls to focused helpers; the supplied sprint/master/leaf structure, completed-seat actions,
+  and current-occupant row contract are unchanged. Verification metadata remains pinned until
+  governed closeout.
+
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `sessionRailParts.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the sprint-group and legacy-section presentation
   contract. Verification metadata remains pinned until closeout stamps the code commit.
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -53,12 +53,13 @@ zero-fetch-before-confirm assertions are the no-auto-retry net.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The banner under test. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:70-182 |
+| The banner under test. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:69-143 |
 | The failed-row fixtures ×3 harnesses with verbatim bridgeErrors. | `FAILED_CLAUDE_ROW` | dashboard/src/test/fixtures/openResponses.ts:93-106 |
 | The shared row builder for the leafed/bare variants. | `catalogRow` | dashboard/src/test/fixtures/catalogRows.ts:10-27 |
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `FailedLaunchBanner.test.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the six superseded
   `(L…)` prose citations with exact test-title anchors and the three `n/a` table rows with
   exact anchors; exact non-fixing check returns zero findings.

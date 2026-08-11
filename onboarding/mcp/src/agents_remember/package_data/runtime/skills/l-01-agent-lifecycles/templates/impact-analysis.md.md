@@ -6,38 +6,35 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 ## Purpose
 
-This template is the **integrity-bulwark** report of the `l-01-agent-lifecycles` report-template library. A fan-out sub-agent writes it for the **orchestrator** (portfolio phase) or the **adversarial reviewer** (completion + code-quality lenses), covering the change's blast radius on **two axes**: planned-vs-planned and planned-vs-past.
+Packaged runtime copy of the bounded impact-analysis report template. The canonical template owns
+the report contract; the sync process publishes this exact artifact.
 
 ## Code Commentary
 
 ### Logic
 
-The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/templates/impact-analysis.md`. It carries a prose header naming its consumers and the write-vs-mutate rule, a numbered **Rules** block, and a fenced **Shape**: a metadata table (for / author / subject / written) followed by *Surface Swept*, a *Planned-vs-Planned* collisions table (with other masters/leaves, incl. FUTURE), a *Planned-vs-Past* regression-surface table, an *Evidence Inventory* (route indexes, `cgc` queries, `grepai` queries, paired `read_ar_files` reads), and a *Bottom Line* for the spawning agent's main loop.
+The report records scope, evidence, affected surfaces, risks, and conclusions for an orchestrator or
+reviewer. Its author is an analysis role or bounded fan-out label, not a runtime sub-agent id.
 
 ### Conventions
 
-The report is **evidence-first**: every finding cites the route indexes, `cgc_*` queries, `grepai_search` queries, and `read_ar_files` reads that back it, and each finding states its **limits** — what the evidence does not prove.
+Keep findings evidence-backed and label the analytical responsibility rather than transport
+identity. Edit the canonical template and synchronize.
 
 ### Invariants And Boundaries
 
-This is a **report, not a decision** — it feeds the orchestrator's spirit test / reshape proposals or the reviewer's verdict; it never decides. **Sub-agents WRITE it; AR state mutations** (`task_doc`, gates, spawn, closeout) stay in the **spawning agent's main loop**. It must cover both axes: planned-vs-planned (collision with another master/leaf, present or future) and planned-vs-past (the "fixed one" regression surface).
+- The report carries analysis, not mutation authority.
+- Runtime occupant identifiers are not durable authorship identity.
+- This packaged artifact must remain byte-identical to the canonical template.
 
 ### Todos
 
-No TODO markers are present in this report template.
-
-### Docs References
-
-No external domain documentation applies to this repository-local report template.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+None recorded.
 
 ## Repo-Internal References
 
@@ -59,6 +56,7 @@ No sibling repository evidence is needed for this report template.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `impact-analysis.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: deleted the unresolvable
   adversarial-reviewer row; exact non-fixing check returns zero findings.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-08-10T22:09+02:00 |
-| lastVerifiedCommitHash | `7b6c8d8eee67c654a11a58ed1d3476db004b8d6e`
-| lastVerifiedCommitDate | 2026-08-10T22:27:45+02:00|
+| lastUpdated            | 2026-08-11T22:28+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -46,6 +46,10 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
   candidate worktree's `mcp/src` first on `PYTHONPATH`, and rejects a missing
   wrapper/interpreter or any nonzero result. This preserves linked worktree
   operation without weakening the gate or accidentally testing a sibling checkout.
+  Captured output is decoded as UTF-8 with replacement so malformed diagnostics cannot suppress
+  the completed report. On non-Windows hosts only ephemeral quality scratch is normalized to the
+  short process-safe `/tmp` root; the durable latest transcript remains the enclosure-owned,
+  atomically replaced `reports/test-results.md`.
 
   **Since 260731-EFA-L1 the gate is not scoped to one repository.** The deciders take the code
   worktree `Path` and gate on whether that checkout carries
@@ -294,7 +298,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:392-400; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:642-748 |
+| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:777-883 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/models/worktree.py:81-81 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:562-671 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
@@ -612,6 +616,10 @@ The closeout/integrate/guidance machinery is unchanged in behavior.
 
 ## Update History
 
+- 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: recorded deterministic transcript
+  decoding and non-Windows ephemeral scratch normalization while preserving the enclosure-owned
+  reports-folder contract. Verification metadata remains pinned until governed closeout.
+
 - 2026-08-10T22:09+02:00 — No route impact: L21 extracted the unchanged external-memory citation
   preflight from `closeout_result` into one module-local helper solely to restore the repository's
   hard 100-line function limit; closeout ordering, authority, and package responsibilities remain
@@ -699,7 +707,7 @@ The closeout/integrate/guidance machinery is unchanged in behavior.
   **L179** (`quality_environment` gained a docstring above them); `landing.py::_pr_for` was cited at
   L104, which is inside the `gh` argv rather than at the definition — now **L93**. **Two new
   route-visible facts:** `quality_environment`
-  (cit:([`quality_environment`], mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:294-316))
+  (cit:([`quality_environment`], mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:393-415))
   now builds from `git_environment()`
   (cit:(["def git_environment() -> dict[str"], mcp/src/agents_remember/kernel/git_command.py:76-76))
   instead of `dict(os.environ)`, so the spawned quality wrapper no longer inherits the eight

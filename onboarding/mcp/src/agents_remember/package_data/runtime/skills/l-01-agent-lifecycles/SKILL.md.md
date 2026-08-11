@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -16,129 +16,38 @@
 
 ## Purpose
 
-The spine of the unified `l-01-agent-lifecycles` skill: lifecycle and job are ONE entity (one lifecycle per agent type). This file is the router + the minimal frame + the shared invariants; the per-role lifecycles live in `roles/`, the lenses in `lenses.md`, the report templates in `templates/`. It supersedes and replaces BOTH `l-01-session-job-lifecycle` and `l-02-agent-orchestration` (converged 2026-07-05, series 260703-L9).
+Packaged runtime copy of the unified lifecycle router and shared frame. The canonical source at
+`skills/l-01-agent-lifecycles/SKILL.md` owns doctrine; `scripts/sync-skills.py` replaces and checks
+this artifact byte-for-byte for installed runtimes.
 
 ## Code Commentary
 
-### 260714-ACPUI-L2 Dynamic Native Launch Doctrine
-
-This generated runtime copy now gives every illustrative role a complete harness/model/effort
-selection and labels those values as install/account-specific examples. The launch doctrine routes
-the settings selection through token-free model-gated advertise and the native initial-config
-channel: Claude `--model`/`--effort`, Pi provider-qualified `--model` plus `--thinking`, and Codex
-`thread/start` model plus `model_reasoning_effort`. `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT` are retained
-as provenance only. Missing, stale, unsupported, or conflicting native selections fail loud, and
-normalized model/effort is never converted into composer paste or generated session commands.
-Explicit free-form commands remain user-authored.
-
 ### Logic
 
-The installed lifecycle router now distinguishes the unbound developer free chat from the
-sprint-bound architect command seat it launches. The hosted dispatch chain preserves explicit
-repository+sprint provenance through architect → orchestrator → manager, and the liveness doctrine
-defines subordinate membership structurally from the manager's direct spawn topology rather than
-from the finite role name `worker`.
-
-Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/SKILL.md`. The router has exactly three conditions, in order: (1) `AR_SPAWN_ROLE` selects the matching role; (2) a fresh-session role brief selects that role; (3) otherwise the session remains a research-capable **free-chat launcher** and spawns a clean architect with the settings-owned profile for role-shaped work. The spawned architect owns the developer conversation; the orchestrator remains backend-only; curator remains the dedicated onboarding writer. Solo hat-collapse belongs only to the architect after the developer approves the short-root question. The minimal frame is the only shared machinery: the six `lifecycle_*` signals, fleeting-to-persistent promotion at `worktree_start`, `awaiting-developer` auto-resume on the next AR call, and server-side identity. A spawned role that never touches mutating AR tools never instantiates a lifecycle, and no role adopts its spawner's lifecycle. Shared invariants include durable-artifact continuity, architect terminal custody, role-seat immutability, the manager -> builder -> reviewer -> curator leaf chain, the decision relay, and dependency-graph scheduling: independent work runs in parallel by default up to the applicable `orchestration.concurrency` cap; serial execution must name a gate, shared-file one-writer dependency, or explicit ruling. The architect proposes a strategist pass and it runs only after developer approval; settings cannot auto-run it.
-
-As of the L8 de-harnessing pass there are deliberately NO per-harness role files (developer decision 2026-07-05): knob resolution is role-file defaults < settings.json orchestration block (the variant layer is gone), harness ABILITIES are capability-conditional doctrine inside the portable files, and harness PREFERENCE is deployment configuration in settings. The registry has nine portable role files. The strategist is spawn-first only after developer approval of the architect's propose-first question; the curator is dedicated to fresh per-leaf onboarding writes; and the reviewer covers both exit seams and applicable three-party loops.
-
-As of 260707-HFX-L7 (provider degradation protocol) the registry grows to **NINE** portable role
-files: a new `system-specialist` row is inserted after `curator` and before the adversarial
-reviewer — "backend provider-degradation investigator; report first, fixes only after explicit
-orchestrator order; spawn value `system-specialist`" — pointing at `roles/system-specialist.md`.
-The frontmatter `description` and the "Companion Files" sentence are both updated in lockstep
-("architect, orchestrator, designer, strategist, manager, worker, curator, system-specialist,
-adversarial reviewer" / "the nine self-contained role lifecycles"), so a reader scanning either
-the frontmatter or the companion-files footer sees the same count as the registry table. The
-shared-invariants escalation-ladder bullet, which previously stated only the single chain
-`worker -> manager -> orchestrator -> architect -> developer`, now carries a second clause for the
-new seat: "worker → manager → orchestrator → architect → developer; system-specialist →
-orchestrator" — `system-specialist` is NOT inserted into the main worker-ladder chain (it never
-sits between manager and orchestrator in the normal build sense); it is a standalone one-rung
-escalation like the designer/reviewer/strategist rungs documented in
-`controlplane/orchestration_artifacts.py`'s `_ROLE_ESCALATION` map. The as-built settings-block
-worked example (`orchestration.roles.<role>`) gains a `system-specialist` entry
-(`{"harness": "claude", "model": "fable", "effort": "high"}`) alongside the existing
-architect/strategist/reviewer/curator/worker rows, giving the reader a concrete spawn-knob shape
-for the new role rather than only the registry mention.
-
-As of 260703-L12 the file is also the **three-party-loop doctrine's single home**: OWNER → BUILDER → REVIEWER at every level that owns work; complexity-scored tiers at dispatch; the hard three-full-round cap; same-reviewer delta verification; same-builder fix rounds; convergence and quo-vadis escalation; standing criteria catalogs; and per-level agent sets. HFX3 supersedes the old unconditional strategist sentence: Job P is approval-gated, and a developer-sanctioned skip authorizes the orchestrator to author and adopt the orchestration task from the ruled plan.
-
-As of 260707-HFX2-L17 the catalog binding that identifies a task seat is explicitly the pair
-`(qualified leaf key, seat role)`, not the leaf key alone. Developer-declared takeovers resolve the
-claimed lifecycle role, pass it with the qualified leaf key to
-`attach_terminal_session_to_leaf`, and verify the exact pair in the terminal catalog/dashboard.
-Different roles may coexist on one canonical leaf; only a second live owner of the same pair
-collides. This is the packaged runtime copy of the canonical doctrine propagated by
-`scripts/sync-skills.py`.
-
-As of 260707-HFX2-L5 (doctrine inversion: active vigilance → passive process-and-ack) the Shared
-Invariants section gains a new "Notify-and-stop is safe by design" paragraph right after the
-lifecycle-adoption sentence: ending a turn on `lifecycle_turn_end_notification`, or simply stopping
-once the artifact is written and nothing is pending, is never a liveness gap, because the HFX2-L2
-agent-notifier sweep evaluates every expected artifact/signal on its own mechanical tick and the
-HFX2-L4 escalation ladder (renudge → skip-level → architect custody/architect attention, then respawn) handles
-inactivity. The paragraph states the **watcher ban** in the same breath (uniform-mechanism ruling
-2026-07-07: no role watches, polls, or nudges on its own initiative — that is a banned seat-local
-mechanism) and the inversion this leaf drives through every role file: **every role's own liveness
-duty inverts to passive** — be woken with pending signals, process and ack every item, then end the
-turn. This is the doctrine's canonical home for the literal phrase "notify-and-stop"; it did not
-appear anywhere in this skill before this leaf. The role files this doctrine touches
-(`roles/manager.md`, `roles/orchestrator.md`, `roles/worker.md`) and the mandatory
-`templates/turn-report.md` artifact each carry their own matching inversion, documented in their own
-sidecars.
-
-As of 260707-HFX2-L6 the router carries three linked doctrine corrections. First,
-Developer-Declared Task-Seat Takeover: when the developer says "you are the
-orchestrator/manager/worker for task X", the named task leaf is the seat. The agent opens the
-named task doc first, resolves the qualified leaf key `<repository>/<master>/<docId>` and claimed
-role, uses the dashboard terminal catalog session id (not `CLAUDE_CODE_SESSION_ID` or
-`CODEX_THREAD_ID`), calls `attach_terminal_session_to_leaf` with both leaf and role, renames the
-session to the expected seat label, and verifies the exact pair in the terminal catalog/dashboard
-before continuing lifecycle work. Second, Developer Clarification
-Triage: during an active task, the seat reads the active queue (current leaf, parent/master,
-neighboring leaves, decision log, open questions, in-flight branch state) before choosing a
-note-only path. Close/current/small clarifications that fit the same task, doctrine, code path, or
-current diff are implemented in the current leaf instead of downgraded into future notes, while
-future/larger/dependency-blocked items are queued and unclear fit asks the developer directly.
-Third, Delegated Series Authority: once the developer accepts an orchestrated series/portfolio plan, managers and the
-orchestrator govern subordinate closeout, integration, finalization, and cleanup under that
-standing series authority, while final super/PR-carryover, raised human-pinned gates, scope changes,
-red checks outside scope, and quo-vadis decisions still stop for the developer. This is operational
-doctrine only; no runtime attachment behavior changed in this leaf.
-
-As of 260707-HFX-L11 (curator activation, R1/R4) the Companion Files `templates/…` list gains
-`curator-brief` — the first dedicated curator dispatch-pack template
-(`skills/l-01-agent-lifecycles/templates/curator-brief.md`, new file), documented as: `ROLE BRIEF —
-curator`; the manager compiles a curator's session start from it, feeding the leaf's landed change
-set + task doc + notes/ — never spawned before builder code and the reviewer verdict exist. Before
-this leaf the curator role file (HFX-L6/L6R3) had no matching template, so "change-set feeding"
-was a doctrine sentence with no concrete brief shape; this closes that gap the same way
-`worker-brief.md`/`manager-brief.md` closed it for their seats.
-
-As of cycle 4 the router decides its edge cases in writing (unresolvable AR_SPAWN_ROLE falls through to the brief; a briefless role-env session announces itself on the inbox and waits; AR_SPAWN_ROLE=orchestrator is takeover-only), the brief header form is canonical (`ROLE BRIEF — <role>` or a templates/*-brief.md shape), the hat/seat exception to the no-cross-reading rule is stated, the reviewer registry row carries spawn value `reviewer` -> roles/reviewer.md, the six lifecycle signals are enumerated by name, the dead variant rung is gone from the precedence line, and the as-built settings text documents the wired requireReviewerVerdictAtSeams + the named policy routing the handover to the orchestrator.
-
-As of cycle 5: the takeover pointer names the real section (Profile check (takeover), The Event Loop); the no-cross-reading exception says 'above'; the capability paragraph states the spawn-as-fan-out backdoor (DBMS principle). As of cycle 7 the Companion Files template registry lists all nine on-disk templates. As of 260703-L12 it lists ten templates plus the five reviewer criteria catalogs. HFX3 aligns the frontmatter summary with the body: condition 3 is the otherwise-free-chat launcher, not an architect default.
+The router selects exactly one role from plane-injected `AR_SPAWN_ROLE`, a fresh role brief, or the
+unbound free-chat launcher. Managed seats bind to canonical sprint, master, or leaf task documents
+plus role. `dispatch_agent` is the one structural child transaction: the control plane authorizes
+the relationship, creates the child, proves readiness, persists the initial brief, and returns only
+structural delivery state. Models never handle occupant, lifecycle, readiness, inbox-address, or
+attachment identifiers.
 
 ### Conventions
 
-Canonical doctrine is edited under root `skills/` and propagated with `scripts/sync-skills.py`.
-Package-data copies are eligible onboarding evidence; dot-prefixed harness mirrors remain excluded by
-path rules.
+Edit the canonical skill and run the sync process; never hand-author independent packaged doctrine.
+Role files remain self-contained and the shared frame stays limited to routing, lifecycle signals,
+and cross-role invariants.
 
 ### Invariants And Boundaries
 
-- Free chat launches roles but is not itself a role seat.
-- Strategist dispatch is propose-first and developer-approved; a sanctioned skip never blocks Job O.
-- The escalation ladder terminates in architect custody, not a developer mailbox.
-- Independent work is parallel by default within configured caps; sequential work names its reason.
-- Task-seat identity is `(qualified leaf key, seat role)`; different roles may share one leaf, but
-  the same live pair may not have two owners.
+- This artifact must remain byte-identical to the canonical lifecycle SKILL.
+- Task-document-plus-role is seat identity; runtime occupant identity stays plane-private.
+- A queued structural dispatch is durable and follows the notifier retry path without duplicate
+  briefs or respawn.
+- Installed runtimes receive the same doctrine as the canonical tree, not a compatibility variant.
 
 ### Todos
 
-Reviewer notes N1-N5 and N-d1 remain nonblocking/out of scope for this curation pass.
+None recorded.
 
 ## Docs References
 
@@ -185,6 +94,7 @@ role watches or nudges on its own initiative.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `SKILL.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint-qualified command-seat dispatch and the
   all-subordinate liveness contract in the packaged lifecycle skill. Verification metadata remains
   pinned until closeout stamps the code commit.

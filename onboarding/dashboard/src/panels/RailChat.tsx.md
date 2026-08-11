@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/RailChat.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-08-11T23:40+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -16,169 +16,60 @@
 
 ## Purpose
 
-The single contextual right-rail chat surface beside Operations. It is anchored on durable qualified
-leaf identity and shares the same catalog, reliable composer, and connection registry as the full-page
-Chats cockpit. A leaf may expose an agent chat plus optional raw terminal, with keep-alive panes and
-server-first leaf attachment/context handoff. It is deliberately not another full-page destination
-and does not own a second conversation/session index.
+Hosts Chats over the task-document hierarchy. It selects the current occupant of a structural
+document-and-role seat, supports task assignment, and keeps free-chat/terminal behavior outside the
+task hierarchy.
 
 ## Code Commentary
 
-### FEUI MX-FIX-2 Visible Open Failure
-
-Both contextual harness start and raw-terminal open now clear prior error copy, await the
-discriminated create result, and render `rail-session-open-error` on failure. Leaf-context delivery
-starts only from the accepted `result.session.id`; rejected opens cannot produce a pane, binding,
-draft delivery, or false success. The existing attach and terminate routes remain separate.
-
-### 260707-HFX2-L17 Role-Aware Rail Attach And Identity
-
-Rail attach/move posts the selected role and applies the server-authoritative pair. The picker
-preselects declared identity but requires a choice for a hand-opened generic chat, and pane headers
-render current binding role before label. The focused rail still shows one chat plus optional
-terminal; the complete multi-role fleet remains available in the session list.
-
 ### Logic
 
-`RailChat({ leafKey, selectedLifecycleId, taskDocuments, engineProcesses, contextMaster })` reads
-`sessions` from the `data/sessions` store and resolves the leaf's two slots independently by filtering
-running sessions by `leafKey` and `sessionRole`: `chatSession` = the most recent running session on this
-leaf whose role is `"chat"`, `terminalSession` = the running `"terminal"` one. With no viewed leaf, the
-same resolver intentionally returns the latest unattached/free session of each role so an operator can
-start a chat anywhere and attach it later. A `useEffect` fetches `fetchHarnesses()` once on mount and keeps
-the detected set in state; `detected.length > 0` renders one
-**`＋ {harness.name}`** start button per detected harness (testid `rail-start-chat-{id}`), else a passive
-"No agent detected on PATH." note. A local `mountedSessionIds` set mirrors the Chats-page pattern: a
-`useEffect` keeps every session id surfaced here (and still in the store) so switching leaves keeps a
-previously-surfaced session **mounted but hidden** (a `display:none` + `aria-hidden` keep-alive layer that
-re-mounts the lazy `Terminal` into the shared registry) rather than tearing down its xterm buffer / live
-WebSocket; ids whose sessions have left the store are pruned.
-
-`buildLeafContextPackage` is the L6 packet builder. It matches the selected/picked durable leaf key to a
-`TaskDocNode` with `qualifiedLeafKey(doc)`, finds the corresponding `EngineProcessNode` by lifecycle id or
-case-normalized leaf id, and renders task id/title/status, leaf key, task-document path, lifecycle id,
-worktree group, code worktree, memory worktree, objective, requirements, and top-level steps. The package
-ends with a direct instruction to attach to the lifecycle/leaf before working. `deliverLeafContext`
-waits for native submission readiness and sends that packet through `submitSessionText` with
-`source: "leaf-context"` and `clearDraftOnAccept: false`. Accepted, queued, blocked, empty, refused,
-route-error, and unresolved outcomes produce honest `rail-leaf-context-note` copy; the rail never
-falls back to PTY paste or mutates the operator's visible composer draft.
-
-`startChat(harness)` calls `createSession(harness.name, "harness", harness.id, selectedLifecycleId,
-leafKey)` — an **agent chat** that claims the leaf's chat slot (and inherits the selected lifecycle tag)
-when a leaf is being viewed, or a free unattached chat when no leaf is being viewed. If `leafKey` is
-present, it immediately sends the context package to the created chat. `openTerminal()` calls
-`createSession("Terminal", "terminal", undefined, selectedLifecycleId, leafKey)` for a plain shell on the
-terminal slot and does **not** send leaf context. `attachChatToLeaf(sessionId, lk)` is the other L6/L9
-timing point: after `attachSessionToLeaf` returns `"ok"`, the rail updates the local store, broadcasts the
-`"leaf"` catalog change, and delivers the packet for the picked leaf. A `409 leaf-taken` attach/move never
-mutates the store and never injects context.
-
-Render branches: a leaf with neither slot filled shows the leaf empty state (`rail-chat-empty`) with the
-harness-choice affordance + `rail-open-terminal`; no leaf shows the free-chat empty state and still offers
-agent/terminal creation. When any chat is visible, a `LeafAttachPicker` drills the task tree (pre-drilled
-by `contextMaster`) and attaches or moves that chat to the picked leaf. Otherwise each present slot renders a
-`Pane` and each missing slot a thin `slotBar` affordance (start chat / ＋ Terminal) so the split can be
-completed without leaving the rail. A `Pane` (`rail-pane-{role}`) is a header row — a **truncating**
-`paneTitle` carrying the full `session.label` as a hover-reveal `title` (fix 4) and an **End** terminate
-control (`rail-terminate-{role}`, fix 3) — over the `<Suspense>`-wrapped lazy `Terminal` registered through
-`onConnection`, and that pane's shared reliable `SessionComposer`. The xterm remains the hosted runner
-line-log/raw fallback surface; controlled composer text crosses the native submit authority rather
-than that terminal connection.
-Since 260715-FEUI-L6 (review F6) BOTH `Terminal` mounts — the chat slot and the split terminal
-`Pane` — pass ``ariaLabel={`terminal: ${session.label}`}`` so each pane's `role="group"` landmark
-carries a real name in the rail surface (`Terminal.tsx` additionally guarantees a
-`terminal session <sessionId>` fallback, so the landmark can never be unnamed); this is the ONLY
-L6 change to this file — pane behavior, registries, and every other Terminal prop are
-byte-unchanged.
-`terminate(id)` awaits `terminateTerminalSession(id)`, then marks the row `terminated` + `close`s it
-locally and posts a `notifySessionCatalogChanged("terminate", id)` broadcast — so ending one slot frees
-only that slot. The heading shows `Chat · {leafIdFromKey(leafKey)}`.
+The session hook joins a selected `TaskDocumentRef` to live catalog sessions and role. Task-bound
+launches pass that reference into the opener; assignment resolves the selected leaf document and
+posts the reference plus role. Leaf keys remain only for legacy context-package content and display.
+The rendered panel uses the current occupant id for transport after structural selection.
 
 ### Conventions
 
-Co-located Panda `css()`; the lazy `Terminal` import mirrors `Chats` (xterm is code-split — it probes the
-canvas on import and cannot mount under jsdom). `data-testid`s: `rail-chat`, `rail-chat-heading`,
-`rail-chat-empty`, `rail-start-chat` / `rail-start-chat-{id}`, `rail-no-harness`, `rail-open-terminal`,
-`rail-attach-row`, `rail-attach-leaf-picker`, `rail-leaf-attach-error`, `rail-leaf-context-note`,
-`rail-pane-{role}`, `rail-terminate-{role}`, `rail-chat-keepalive-{id}`. `isRunning` treats a missing
-`status` as `"running"` (the optimistic default for a freshly created session).
+Task-document selection comes from the projected real document. Free chat is represented by an
+unbound chat session, not by a manufactured task address.
 
 ### Invariants And Boundaries
 
-- **Single instance, shared session:** the connection registry is shared with `Chats`, so this rail and
-  the Chats page never open competing sockets for one leaf — they surface the same session.
-- **Leaf-keyed, enclosure-independent:** binding is on the durable `leafKey`; it survives finalize and a
-  missing worktree. Uniqueness is per **(leaf, role)** and server-authoritative (`409 leaf-taken`) — this
-  component only *reads* the leaf's chat + terminal slots and *opens* sessions carrying the leaf, never
-  arbitrating ownership.
-- **Chat vs terminal are separate slots:** a chat is an agent harness; a terminal is a shell. They never
-  conflict on one leaf and terminate independently — ending the chat leaves the terminal (and vice versa).
-- **Mounted-not-unmounted on leaf switch:** surfaced sessions stay mounted while hidden so their xterm
-  buffers survive a leaf switch; only a session that leaves the store is dropped.
-- **Context delivery happens only at leaf bind time:** start-on-leaf and successful attach/move are the
-  packet-delivery points. Free/off-leaf chat creation, plain terminal creation, and rejected attaches/moves
-  do not submit leaf context. The packet uses reliable `leaf-context` provenance and never overwrites
-  the operator's visible composer draft.
-- **Context packet is projected-state only:** the rail reads `taskDocuments` and `engineProcesses`; it does
-  not fetch task files, inspect worktrees, or invent missing worktree facts. A missing task document means
-  no packet is sent.
-- Presentational over the store + the lazy terminal; backend calls go through the openers
-  (`createSession`) and the terminate client (`terminateTerminalSession`), never arbitrating ownership.
+- Task-bound chat selection never searches globally by role.
+- Replacement keeps the same task-document-and-role selection.
+- Free chat and shell terminal affordances are not inserted into the structural task tree.
+- Runtime ids remain behind the selected occupant/transport seam.
 
 ### Todos
 
-No task-independent technical debt was identified during MX-FIX-2 review.
+Leaf-key context packaging remains a non-addressing presentation path and should stay clearly
+separated from structural seat lookup.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository; repository code and tests are the authority.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No Domain Documentation source is configured.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The rail builds the leaf context package, pastes it as draft input after start-on-leaf or successful attach/move, and surfaces unconfirmed delivery status. | "function stepLines" | dashboard/src/panels/RailChat.tsx:192-192 |
-| The session store it resolves the chat/terminal slots from and the accepted-row create helper. | "interface OpenSession" | dashboard/src/data/sessions.ts:28-28 |
-| Reliable readiness and leaf-context submission. | "interface ReliableSubmitTransport" | dashboard/src/data/submitClient.ts:58-58 |
-| The harness-detection, terminate, and attach clients the rail drives. | "function connectTerminal" | dashboard/src/data/terminal.ts:310-310 |
-| The durable leaf-key helpers and task tree builder used for packet lookup, heading labels, and the attach picker. | "export type TaskSelection" | dashboard/src/data/taskIdentity.ts:8-8 |
-| The lazy xterm terminal it mounts per pane (shared with Chats). | "export function Terminal" | dashboard/src/panels/Terminal.tsx:110-110 |
-| The composer docked below each pane that injects into that session's stdin. | "export const SessionComposer" | dashboard/src/panels/SessionComposer.tsx:57-57 |
-| The canonical Chats duty bar and view surface the same registry and authoritative leaf attach. | "export function ChatContextBar", "export const SessionsView" | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-74 |
-| The cockpit shell that toggles this in for the Event River and passes the displayed `leafKey`, `taskDocuments`, `engineProcesses`, `contextMaster`, and `selectedLifecycleId`. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:64-64 |
+| Selected structural identity resolves the current live chat occupant. | `useRailChatSessions` | dashboard/src/panels/RailChat.tsx:355-432 |
+| Task assignment derives and sends a real task-document reference. | "function useRailChatAttach(" | dashboard/src/panels/RailChat.tsx:506-540 |
+| The panel accepts structural task identity separately from leaf display context. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:545-644 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references found.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
-
-## 260715-FEUI-L5 Reliable Submit Delta
-
-RailChat now uses the same reliable `SessionComposer` as the full Chats view. Automatic leaf-context
-delivery carries `leaf-context` provenance through epoch-bound submission, so it cannot clear or
-restore the visible composer draft. Neither path uses terminal paste or a native hidden queue.
-
-## FEUI-L8 Reviewed Candidate Delta
-
-Updates contextual-chat ownership language for the one-roof cutover: RailChat shares the canonical Chats connection/session registry and keep-alive semantics. It remains a task-side contextual surface, not a second destination.
-
-The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
-leaf base; closeout owns commit stamping.
-
-## Current L5I Maintenance
-
-The contextual rail chat is memoized as another persistent shell surface. It skips unchanged
-tab-switch parent renders without changing its own session/store driven behavior.
+No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-11T23:40+02:00 — No content impact: the lint-only extraction of props, harness
+  detection, sprint-role start, and termination helpers preserves structural document-and-role
+  selection, current-occupant transport, assignment, and free-chat boundaries. Verification
+  metadata remains pinned until governed closeout.
+
+- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `RailChat.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with

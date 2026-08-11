@@ -5,23 +5,21 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-01T10:20+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated | 2026-08-11T23:40+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
 
-## 260731-EFA-L8 Change
+## Current Structural Identity Contract
 
-`data/terminal.ts` was refactored during the frontend-rail remediation (a
-self-caught intermediate reattach-socket defect, corrected within the round; the
-53-test terminal contract passes unchanged on base). `data/submissionWithdrawal.ts`
-was extracted from `submissionLifecycleClient.ts`, which also replaced its
-`wireFixtureGuard` cast with a validated narrow. All other data-route changes are
-behavior-preserving lint remediation.
+`taskIdentity.ts` derives canonical references from projected real task documents. `sessions.ts`
+stores document+role binding separately from runtime correlation, and `railModel.ts` constructs the
+default Chats hierarchy from task containment. `terminal.ts` posts structural assignment; leaf keys
+remain display/context helpers and never serve as hosted-seat addresses.
 
 ## Purpose
 
@@ -306,12 +304,12 @@ own server contracts, so no external code path is cited as authority.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Catalog/session ownership and cross-tab reconciliation. | "export function captureCatalogAuthority", "export function notifySessionCatalogChanged" | dashboard/src/data/catalogPoll.ts:44-44; dashboard/src/data/sessions.ts:115-115 |
+| Catalog/session ownership and cross-tab reconciliation. | "export function captureCatalogAuthority", "export function notifySessionCatalogChanged" | dashboard/src/data/catalogPoll.ts:44-44; dashboard/src/data/sessions.ts:114-114 |
 | Per-seat UI and evidence state. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
 | Reliable submission and authoritative withdrawal. | "export function createFetchSubmitTransport", "export const VISIBLE_STATUS_POLL_MS" | dashboard/src/data/submissionLifecycleClient.ts:18-18; dashboard/src/data/submitClient.ts:238-238 |
 | Lifecycle termination, residuals, and landed cleanup. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
-| Role/spawn hierarchy replacing legacy `sessionGroups`. | `sessionGroups` | dashboard/src/data/railModel.ts:126-126 |
-| The single exported creation-order sort and the panel that now imports it instead of keeping a byte-identical copy. | "export function findParentTaskMatch", "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:76-76; dashboard/src/data/taskHierarchy.ts:43-43 |
+| Structural task hierarchy and diagnostic spawn ancestry are built as separate models. | `buildRailModel`; `buildSpawnTree` | dashboard/src/data/railModel.ts:361-387; dashboard/src/data/railModel.ts:414-436 |
+| The single exported creation-order sort and the panel that now imports it instead of keeping a byte-identical copy. | "export function findParentTaskMatch", "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75; dashboard/src/data/taskHierarchy.ts:43-43 |
 | The two distinct sub-task row models and their union, plus the server builder that has already ordered the series rows. | , "class _TaskDocumentLifecycleMaps:" | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:37-37;  |
 | The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:43-43; scripts/sync-projection-types.py:54-54 |
 
@@ -331,6 +329,14 @@ agent-tagged notices, including selected-child history state, remain conversatio
 create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
 
 ## Update History
+
+- 2026-08-11T23:40+02:00 — No route impact: the `railModel.ts` helper split preserves this route's
+  canonical task-document hierarchy, role-altitude placement, and spawn-provenance separation.
+  Verification metadata remains pinned until governed closeout.
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled this route with the
+  task-document-addressed dashboard data changes; current bodies and file cards now describe
+  canonical `TaskDocumentRef` identity without treating a leaf key as agent routing authority.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: added the sprint-qualified command-group hot path and
   migration-only legacy boundary. Verification metadata remains pinned until closeout.

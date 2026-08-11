@@ -6,37 +6,39 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 
 ## Purpose
 
-The design lifecycle as a HAT the architect pulls inline whenever design is needed - front of the
-pipeline or mid-flight. Not a coordination leaf by default: it cannot sit in a coordination leaf
-because the task is what it exists to create; no leaf, no worktree, no branch, no spawn required. A
-heavy design may run the same hat in a separate session (AR_SPAWN_ROLE=designer - chair logistics,
-not a role distinction).
+Packaged runtime copy of the optional sprint-bound designer lifecycle. The canonical
+`skills/l-01-agent-lifecycles/roles/designer.md` owns the role; the sync process publishes this
+exact artifact without a separate packaged interpretation.
 
 ## Code Commentary
 
 ### Logic
 
-Sync-propagated copy of the canonical skills/l-01-agent-lifecycles/roles/designer.md. Content remains the tasks/AGENTS.md co-think doctrine as a job (meta-question, reframe, evidence-first via c-04), blast-radius bounded to the one master, task_doc authorship with a code example per distinct change, decision-needing questions into the task doc's openQuestions (notes/ carries the analysis), and the declared master-scoped limit (cross-master collisions are owned downstream at the backend orchestrator's bulwark). HFX-L6 changes the wearer from orchestrator to architect, adds role-seat immutability for spawned designer sessions, and makes the primary channel the architect chat/relay.
+Operations may create or switch to `(sprint document, designer)` when design deserves a dedicated
+conversation; otherwise the architect may apply the same drawing-board method inline. A dispatched
+designer remains designer, creates task/design artifacts without a worktree, and returns durable
+artifacts to the architect. `message_parent` carries clarification or escalation without revealing
+an occupant id.
 
-As of the L8 de-harnessing pass the overlay-authoring sentence is gone: no per-harness designer files; the hat is fully portable.
+### Conventions
 
-As of cycle 4 the knob footer resolution reads role-file defaults < settings (dead variant rung removed).
+The designer works evidence-first, keeps scope at the sprint/design boundary, and hands durable
+artifacts back to the architect. Edit the canonical role and synchronize this runtime copy.
 
-As of cycle 5: the knob tools row gains the inbox (the no-brief announce path is executable).
+### Invariants And Boundaries
 
-### L16 Knob Additions
+- The designer role is task-document-and-role bound, not leaf-key or session-id addressed.
+- Inline architect design is hat collapse; a dispatched designer never absorbs another role.
+- This packaged artifact must remain byte-identical to the canonical role.
 
-260703-L16: the Knobs table gains the three FREE-FORM rows (`launchArgs` — verbatim harness argv;
-`sessionCommands` — lines pasted + submitted into the fresh session before the brief;
-`promptKeywords` — prepended as the first line of the dispatch brief paste; all settings-only,
-never validated, recorded in spawn provenance), and the knob footer now names the per-level
-override (`orchestration.rolesPerLevel.<level>.<role>`; role-file defaults < settings < level
-override) plus the `docs/reference/harnesses.md` spawn-knobs manual.
+### Todos
+
+None recorded.
 
 ## Cross-Repo Evidence
 
@@ -52,6 +54,7 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Reconciled `designer.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
 - 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: the designer
   hat is now pulled by the architect, not the backend orchestrator; spawned designer seats keep

@@ -6,13 +6,19 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../../overview.md)
+
+## Current Structural Projection Contract
+
+Observer schemas expose canonical task-document references on task-aware analytics so the dashboard
+can join the same real hierarchy used by routing. This is read-only evidence: the observer never
+chooses current occupants or authorizes parent/child relations, and runtime ids remain correlation.
 
 ## Purpose
 
@@ -608,9 +614,9 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | `projected_current` is the gate store's tolerant projected fold. | `projected_current` | mcp/src/agents_remember/controlplane/store.py:279-300 |
 | The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists. | `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:221-223 |
 | `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
-| The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:42-42; mcp/src/agents_remember/controlplane/durable_store.py:13-24 |
+| The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:43-43; mcp/src/agents_remember/controlplane/durable_store.py:13-24 |
 | `StatesAreFiledOnce` is the TypeScript overlap-check type. | `StatesAreFiledOnce` | dashboard/src/types/projection.ts:25-25 |
-| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:217-217 |
+| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:218-218 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -758,6 +764,10 @@ nodes) and its read-side orchestration; the reader implementations live in servi
 shared observer store-root path conventions moved to `kernel/primitives/observer_paths.py`.
 
 ## Update History
+
+- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled observer state with structural
+  task-document seats and the projection boundary; private runtime correlations remain internal
+  evidence rather than agent addresses.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the projection-reader move to
   `serving/projections/` and the kernel-owned path primitives. Verification metadata pinned until

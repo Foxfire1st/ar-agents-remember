@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/owner_signals.py`       |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-09T01:21+02:00                                    |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                    |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                    |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -82,10 +82,10 @@ helper; the action layer and the sweep import it.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The inbox row record/creation and renewal/readdress transitions it composes. | "def create_operator_inbox_entry("; "def renew(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:236-236; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:423-423 |
+| The inbox row record/creation and renewal/readdress transitions it composes. | "def create_operator_inbox_entry("; "def renew(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:244-244; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:425-425 |
 | The delivery attempt it drives and the admission policy it carries. | "def deliver_inbox_entry("; "class DeliveryAdmission:" | mcp/src/agents_remember/serving/inbox_delivery.py:165-217; mcp/src/agents_remember/serving/inbox_delivery.py:87-105 |
 | The sweep facade re-exporting the primitive for existing callers. | "def _post_owner_signal("; "def _find_coalescible(" | mcp/src/agents_remember/serving/owner_signals.py:93-158; mcp/src/agents_remember/serving/owner_signals.py:64-91 |
-| The ask-identity normalization shared with the evaluation module. | "def _seat_liveness_ask_identity(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:228-228 |
+| The ask-identity normalization shared with the evaluation module. | "def _seat_liveness_ask_identity(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:235-235 |
 
 ## Cross-Repo References
 
@@ -107,6 +107,7 @@ pre-commit source history until closeout.
 
 ## Update History
 
+- 2026-08-11T19:58+02:00 — Aligned the current serving card for `owner_signals.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the rebind-vocabulary sweep in
   `_find_coalescible`/`_post_owner_signal` (ladder readdressing → rebind machinery; storm
   note historical). Verification metadata pinned until closeout stamps the 260713-TES-L5

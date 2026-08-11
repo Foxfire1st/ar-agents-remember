@@ -92,7 +92,7 @@ memory-capped full gate runs; `identity.py` owns provider instance naming.
 | --- | --- | --- |
 | Checkout policy derives from the loaded package path and centrally refuses durable targets outside the leaf-local root. | `resolve_checkout_location`; `require_durable_write_target` | mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:75-128 |
 | The layering rail enforces the total order this route anchors. | `load_contract` | mcp/src/agents_remember/code_quality/layering.py:62-62 |
-| The wire layer re-exports gate vocabulary from kernel. | "from agents_remember.kernel.primitives.gate_vocab import (" | mcp/src/agents_remember/models/gates.py:14-18 |
+| Structural gate models import the producer-owned gate vocabulary from kernel. | "from agents_remember.kernel.primitives.gate_vocab import (" | mcp/src/agents_remember/models/structural/gates.py:15-20 |
 
 ## Cross-Repo References
 

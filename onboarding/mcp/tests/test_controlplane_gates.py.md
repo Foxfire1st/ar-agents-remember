@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -124,7 +124,7 @@ approvals according to `GatePolicy`.
   a compaction with nothing prunable does not rewrite, so the concurrency they exist to exercise
   would never happen and both halves of the affected tests would pass for the wrong reason. All
   three moved to `expired` (which is in `PRUNE_IMMEDIATE_GATE_STATES`): `_store_durability.py`'s
-  `GateAdapter.write_decoy` (cit:([`GateAdapter`], mcp/tests/_store_durability.py:163-189)), `test_durable_store_contract.py`'s
+  `GateAdapter.write_decoy` (cit:([`GateAdapter`], mcp/tests/_store_durability.py:191-218)), `test_durable_store_contract.py`'s
   `GateReclaimOwnershipTests.setUp` (cit:([`GateReclaimOwnershipTests`], mcp/tests/test_durable_store_contract.py:854-918)), and `test_gate_replay_window.py`'s `_prunable_gate`
   (cit:([`_prunable_gate`], mcp/tests/test_gate_replay_window.py:116-130)) — the last of which also moved off `closeout-approval` onto `alarm-ack`, a kind
   nothing decides on. Each carries the reasoning in a comment at the fixture rather than in a
@@ -136,14 +136,14 @@ approvals according to `GatePolicy`.
 | --- | --- | --- |
 | The records under test. | `GateRecord`; `create_gate`; `decide_gate`; `apply_gate` | mcp/src/agents_remember/controlplane/records.py:45-77; mcp/src/agents_remember/controlplane/records.py:127-149; mcp/src/agents_remember/controlplane/records.py:152-177; mcp/src/agents_remember/controlplane/records.py:185-194 |
 | The store under test, and since 260731-EFA-L5 the only way to spend an approval: `claim_approval` folds, evaluates policy and appends the `applied` snapshot inside one held lock. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234 |
-| The payload builders under test. | `gate_create_payload`; `lifecycle_gate_payload`; `gate_decide_payload`; `gate_wait_payload`; `gate_response_wait_payload`; `gate_list_payload` | mcp/src/agents_remember/mcp/tools/gates.py:34-44; mcp/src/agents_remember/mcp/tools/gates.py:47-53; mcp/src/agents_remember/mcp/tools/gates.py:67-84; mcp/src/agents_remember/mcp/tools/gates.py:118-128; mcp/src/agents_remember/mcp/tools/gates.py:131-148; mcp/src/agents_remember/mcp/tools/gates.py:151-156 |
-| The operator inbox store polled by `gate_response_wait_payload`. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/gates.py:131-148 |
+| The payload builders under test. | `gate_create_payload`; `lifecycle_gate_payload`; `gate_decide_payload`; `gate_wait_payload`; `gate_response_wait_payload`; `gate_list_payload` | mcp/src/agents_remember/mcp/tools/gates.py:44-54; mcp/src/agents_remember/mcp/tools/gates.py:57-63; mcp/src/agents_remember/mcp/tools/gates.py:92-109; mcp/src/agents_remember/mcp/tools/gates.py:158-168; mcp/src/agents_remember/mcp/tools/gates.py:171-188; mcp/src/agents_remember/mcp/tools/gates.py:191-196 |
+| The operator inbox store polled by `gate_response_wait_payload`. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/gates.py:171-188 |
 | The enforcement policy under test (slice 6b): `evaluate_gate`, whose `applied` branch is the refusal a second consume meets and the reason the `applied` snapshot is an authority record. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |
 | Gate delegation policy under test. | `make_gate_policy`; `named_gate_policy`; `apply_seam_verdict_requirement`; `delegated_decision_failure_reason`; `approval_failure_reason` | mcp/src/agents_remember/controlplane/gate_policy.py:52-64; mcp/src/agents_remember/controlplane/gate_policy.py:67-83; mcp/src/agents_remember/kernel/primitives/gate_policy.py:75-107; mcp/src/agents_remember/kernel/primitives/gate_policy.py:110-127; mcp/src/agents_remember/kernel/primitives/gate_policy.py:130-149 |
 | The closeout helpers under test: the early deny-only read `_refuse_unsatisfied_closeout_gate` (called before staging and the strict gate) and the claim `_claim_closeout_gate` (one statement above the first irreversible act). `_mark_closeout_gate_applied` was deleted, not deprecated. | `_refuse_unsatisfied_closeout_gate`; `_claim_closeout_gate`; `_gate_staged_code`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:488-510; mcp/src/agents_remember/worktrees/modules/closeout.py:513-563; mcp/src/agents_remember/worktrees/modules/closeout.py:789-845; mcp/src/agents_remember/worktrees/modules/closeout.py:932-1024 |
 | Why an `applied` `closeout-approval` record can no longer be used as reclaimable fixture filler: `CONSUMED_APPROVAL_GATE_KINDS` retains it at any age, and `PRUNE_IMMEDIATE_GATE_STATES` is what the three relocated decoys now use instead. | `CONSUMED_APPROVAL_GATE_KINDS`; `PRUNE_IMMEDIATE_GATE_STATES` | mcp/src/agents_remember/controlplane/interaction_retention.py:52-54; mcp/src/agents_remember/controlplane/interaction_retention.py:85-85 |
 | The suite that pins the claim's position rather than its policy: the gate is already `applied` by the time `commit_if_dirty` runs, a failure upstream leaves it `approved`, and `_prunable_gate` is one of the three fixtures moved to `expired`. | `test_the_approval_is_already_consumed_when_the_first_commit_runs`; `_prunable_gate` | mcp/tests/test_gate_replay_window.py:116-130; mcp/tests/test_gate_replay_window.py:582-615 |
-| The second and third relocated decoys, beside the ownership and durability assertions they keep honest: `GateAdapter.write_decoy` and its enclosing adapter. | `GateAdapter` | mcp/tests/_store_durability.py:163-189 |
+| The second and third relocated decoys, beside the ownership and durability assertions they keep honest: `GateAdapter.write_decoy` and its enclosing adapter. | `GateAdapter` | mcp/tests/_store_durability.py:191-218 |
 | The durable-store ownership fixture that also carries the relocated decoy. | `GateReclaimOwnershipTests` | mcp/tests/test_durable_store_contract.py:854-918 |
 | The conformance suite that also covers the gate tools. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |
 
@@ -184,7 +184,7 @@ fake's unattached contract. Cycle 7 adds three layers on the enclosure address: 
   something for a reclaim pass to drop, and since R1 such a record is retained at any age
   (`CONSUMED_APPROVAL_GATE_KINDS`), so leaving them would have made a compaction with nothing
   prunable skip its rewrite and quietly turn those harnesses into no-ops. All three moved to
-  `expired`: `_store_durability.py::GateAdapter.write_decoy` (cit:([`GateAdapter`], mcp/tests/_store_durability.py:163-189)),
+  `expired`: `_store_durability.py::GateAdapter.write_decoy` (cit:([`GateAdapter`], mcp/tests/_store_durability.py:191-218)),
   `test_durable_store_contract.py::GateReclaimOwnershipTests.setUp` (cit:([`GateReclaimOwnershipTests`], mcp/tests/test_durable_store_contract.py:854-918)) and
   `test_gate_replay_window.py::_prunable_gate` (cit:([`_prunable_gate`], mcp/tests/test_gate_replay_window.py:116-130)), the last also moving off
   `closeout-approval` onto `alarm-ack`. **Citations:** every range added here was opened and checked

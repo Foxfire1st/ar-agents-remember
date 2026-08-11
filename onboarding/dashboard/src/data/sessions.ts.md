@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/sessions.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated | 2026-08-11T14:29+02:00 |
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -16,246 +16,59 @@
 
 ## Purpose
 
-The catalog-backed open-session registry shared by the canonical Chats cockpit, contextual RailChat,
-highlight delivery, and lifecycle/gate lookups. It normalizes durable terminal rows and leaf/lifecycle
-identity while keeping browser-only active id as the live action/reload route; richer cockpit focus
-may inspect landed or ended evidence separately. Backend catalog + tmux own persistence.
-
-The module also owns cross-tab catalog invalidations and the non-reactive live connection registry
-used by keep-alive PTYs. Reliable controlled messages go through the submit clients, not this raw
-connection seam. The dev-only reset clears connections, queued input, and waiters so old scenario
-transport cannot cross into a successor fixture.
+Owns the browser's catalog-backed hosted-session registry and connection registry. Structural seat
+binding is carried as a canonical task-document reference plus role; session and lifecycle ids remain
+runtime correlation and do not define the seat.
 
 ## Code Commentary
 
-### Fail-Closed Creation
-
-`createSession` now returns the same `TerminalOpenResult` as the sole opener. It still proposes a
-caller id and next label, but it upserts, activates, and broadcasts only `result.session` after an
-`opened` result. Every failure returns before mutation. The accepted server row therefore owns id,
-label, kind, harness, lifecycle/leaf/seat identity, control state, and resolved launch facts; a
-request proposal cannot fabricate a running row. The stable failure formatter is re-exported for
-visible production caller copy.
-
-### Binding Role In The Client Registry
-
-`OpenSession.seatRole` is current leaf-seat identity; `spawnRole` remains origin provenance.
-`sessionSeatRole` prefers binding, then provenance, then transport fallback for legacy rows, while
-`attachSeatRole` intentionally leaves an untyped generic chat unselected so the operator must
-choose. Local uniqueness and `applyLeafAssignment` compare the selected seat role, clearing only a
-same-role owner and preserving different roles on the leaf. Catalog hydration carries `seatRole`.
-
-### Plural Pending Interactions (Review N1)
-
-`OpenSession.controlPendingInteractions?: Record<string, unknown>[]` is the ADDITIVE plural
-companion to the singular `controlPendingInteraction` (which stays the parent-thread entry); cit:([`OpenSession`, `controlPendingInteractions`], dashboard/src/data/sessions.ts:28-83) it
-carries multiplexed harness sub-agent pendings (e.g. a codex sub-agent's permission request, with
-the adapter-bound `raw.agentLabel`), mirrored by `fromTerminalSessionInfo`, cit:([`fromTerminalSessionInfo`], dashboard/src/data/sessions.ts:615-623) only-when-set like every
-other catalog field. Two helpers are the ONLY sanctioned read of pending state:
-cit:([`sessionHasPendingInteraction`], dashboard/src/data/sessions.ts:525-532) — the singular slot OR a non-empty plural list —
-is the single derivation every attention surface (rail badge, announcer, visual grammar, question
-triage) must use, or a seat blocked SOLELY on a sub-agent approval goes dark;
-cit:([`sessionPendingInteractionPayload`], dashboard/src/data/sessions.ts:538-542) returns the payload attention chrome
-previews — the parent's singular slot first, else the first multiplexed entry.
-
 ### Logic
 
-Terminal-session projection now preserves the catalog's additive `spawnRepo` and `spawnSprint`
-fields. These are provenance, not display guesses: dashboard grouping and ownership use the exact
-stored pair, while rows without the pair are treated as legacy migration state.
-
-`sessionStore = createStore<SessionState>(...)` (zustand vanilla) holds the full catalog-backed
-`sessions: OpenSession[]`, `activeId: string | null`, and a coarse `count` retaining the highest live
-ordinal for inspection. `OpenSession` carries transport identity, lifecycle/leaf/seat binding,
-spawn provenance, status, control, liveness, and landing/retirement evidence only when supplied by
-the catalog. `OpenSession.spawnRole?` is the AR_SPAWN_ROLE the backend recorded on the catalog row at spawn
-(orchestrator/strategist/manager/worker/reviewer…), read-only provenance this store merely carries:
-it is a legacy fallback behind current `seatRole`; `railModel.ts` derives the canonical Chats
-hierarchy and `SessionRail.tsx` renders binding-first role identity. `fromTerminalSessionInfo` maps
-both fields only when present, like `leafKey`.
-`OpenSession.liveTurnWorking?` is a UI-only flag, **not a catalog field
-and never mapped by `fromTerminalSessionInfo`**. It reports that the focused seat's conversation
-projection sees a turn actively streaming right now, fresher than the sweep-bounded `turnState`;
-`SessionsView` sets it (focused seat only) from the projection status and `stateGrammar.seatVisualState`
-prefers it over a lagging catalog `turn-ended`. Non-focused rows never carry it (they keep the
-catalog turn-state), so it stays a stage-authority signal, not stored session truth.
-`add(prefix, id, lifecycleId?)` appends a session labelled with the lowest available live ordinal for
-that prefix, optionally tags it with a lifecycle, updates the tracked ordinal, and makes it active.
-`upsert(session, activate=true)` inserts/replaces a server-owned session row while clearing any older
-owner of the same lifecycle, and `hydrate(sessions, preferredActiveId?)` replaces local rows with
-catalog rows, restores the preferred or current active live session when possible, and recomputes the
-tracked ordinal from live rows. Live means `status` absent/`running`; `landed` is intentionally
-non-live, so it releases labels, lifecycle routing, and leaf lookup while remaining renderable.
-`setStatus` updates a row and moves focus away from the active session when it stops running.
-`fromTerminalSessionInfo` converts the API shape from `data/terminal.ts` into an `OpenSession`,
-including landed provenance when present.
-`close(id)` drops the local row and clears `activeId` **only if** it was the one removed. It never kills
-tmux by itself; destructive termination is the caller-owned backend route through `data/terminal.ts`
-and `serving.app`.
-`setActive(id)` moves the active pointer.
-`setLifecycle(id, lifecycleId|null)` attaches or clears the lifecycle tag; when a tag is set, any
-other session that previously owned that lifecycle is cleared, so `findSessionForLifecycle(lifecycleId)`
-has a single **live** target for gate-response delivery.
-A session's leaf-uniqueness **role** mirrors the backend: `SessionRole = "chat" | "terminal"` and
-`sessionRole(session)` returns `"terminal"` for a `kind === "terminal"` shell, else `"chat"` (any agent
-harness). `setLeaf(id, leafKey|null)` binds or clears a session's durable `leafKey`. The
-non-null bind carries a **role-scoped advisory uniqueness guard**: it looks up the binding
-session's role and treats the bind as a no-op only if another *live* session **of the same role** already
-owns that leaf — so a chat and a terminal can both bind one leaf without blocking each other, and a second
-same-role claim loses. It is purely a local convenience, since the server's `409 leaf-taken` is the real
-arbiter; clearing routes through a `clearLeaf` helper (the `clearLifecycle` mirror, `delete`s the key so an
-absent leaf is truly unset). `applyLeafAssignment(id, leafKey|null)` applies server/catalog-authoritative
-updates after a successful attach/move: it assigns the target session and clears any same-role local owner
-of the destination leaf because the backend result has already won. `findSessionForLeaf(leafKey, role?)` returns the single **live** session
-bound to a leaf (mirrors `findSessionForLifecycle`); the optional `role` filter resolves the leaf's chat
-vs. its terminal independently. `createSession(prefix, kind?, harness?, lifecycleId?, leafKey?)` sends
-the proposal to the opener and materializes only the accepted server row. `fromTerminalSessionInfo` maps the
-catalog row's `leafKey` onto the store row alongside harness/lifecycle.
-`useSessions(selector)` is the React seam — `useStore(sessionStore, selector)` so components subscribe
-to a slice. External production readers/mutators using `sessionStore.getState()` are `catalogPoll`,
-`sessionLifecycle`, `seatEvents`, `setClient`, `submitClient`, `announcer`, `RailChat`,
-`HighlightComposer`, `GateResponder`, and `ChatContextBar`. Separately, development-only
-`dev/cockpitScenarios` snapshots `sessions` and `activeId` to restore scenario authority. There is no
-legacy `Chats` event-handler owner.
-
-A `BroadcastChannel` catalog-sync seam, extended for leaf moves:
-`notifySessionCatalogChanged(reason, sessionId?)` posts `"create"`/`"terminate"`/`"leaf"` events after a
-backend catalog mutation succeeds, and `subscribeSessionCatalogChanges(callback)` receives events from
-other tabs while ignoring this tab's own source id. The channel carries invalidation plus the changed
-session id; receivers still re-fetch `/api/terminal/sessions` instead of trusting another tab's local
-store state.
-
-A non-reactive **connection registry** sits beside the store (module-level maps, so a
-registration never re-renders): `registerConnection(id, conn|null)` — called by `RailChat` for its
-visible and hidden keep-alive terminals — records each live `TerminalConnection`; `sendToSession(id, text)` injects into it, or
-**queues** the text in `pending` when the session's terminal has not registered yet (the
-create-then-send race; the connection itself buffers anything sent before its WebSocket opens, see
-`data/terminal.ts`), flushed on register. `createSession(prefix, kind?, harness?, lifecycleId?)` mints a UUID,
-posts the opener with the generated label/lifecycle, then upserts, activates, and broadcasts
-`"create"` only from the accepted server row. Current production callers are `RailChat` (chat and
-terminal launches), `HighlightComposer` (create-then-deliver), and `ChatContextBar` (full-page
-terminal launch). `pasteDraftToSession(id,
-packageText)` is the leaf-context draft path: it waits for the session's terminal to register (bounded by
-`CONNECTION_TIMEOUT_MS`), then delegates to `data/terminal.ts`'s `pasteAndConfirm` — quiet-gated paste
-attempts confirmed by the draft's own echo and retried through a ~30s harness boot deadline, because a
-booting Claude Code discards stdin until its composer mounts. It returns `"delivered"` only once an
-attempt echoed, else `"unconfirmed"`, and never calls the submit/confirm loop (no Enter). `deliverToSession(id, packageText)` remains the create-then-send delivery path for
-surfaces that intentionally submit: it waits for the session's terminal to register **and** its harness to
-look ready (`conn.whenReady()`), injects one sanitized bracketed paste, and submits/observes the response
-loop so callers can surface `"delivered"` vs `"unconfirmed"` instead of silently dropping a package.
+`OpenSession` mirrors the terminal catalog's structural binding. Store mutations clear duplicate live
+occupants only for the same task-document-and-role pair, and `applyTaskAssignment` atomically applies
+the server-accepted binding. `findSessionForTask` resolves one live occupant by structural address.
+Catalog hydration maps `taskDocumentRef`, role, replacement, provenance, control, and terminal truth
+without deriving identity from labels or spawn ancestry. The separate connection registry remains an
+imperative PTY transport seam.
 
 ### Conventions
 
-zustand vanilla `createStore` + a `useStore` selector hook (mirrors `data/store.ts`). State is a flat
-object with the action methods on it, not a separate actions slice.
+`seatRole` is current binding; `spawnRole` is provenance. Lifecycle lookup remains for runtime UI
+correlation, while Chats grouping and targeting use task-document identity.
 
 ### Invariants And Boundaries
 
-- Ephemeral UI state only — never persisted, never the projected lifecycle truth (`data/store.ts`).
-- Labels allocate per prefix from live rows only. End/terminated, landed, and exited rows release labels so a
-  fresh chat can become `Claude Code 1` again once prior Claude chats are gone.
-- Closing a local row forgets it here but does **not** kill the backend tmux session; explicit terminate
-  goes through `data/terminal.ts` + `serving.app`.
-- Owns the *registry*, not terminal lifetime: tmux/catalog own durability. `RailChat` registers the
-  raw `TerminalConnection` instances used by this legacy connection seam; the canonical full-page
-  session cockpit independently keeps visited PTYs mounted through `SessionsView`/`PtySurface`.
-- Cross-tab sync is catalog invalidation, not shared local state. Backend-persisted create/terminate/leaf
-  broadcasts tell other tabs which session changed, then those tabs re-fetch the durable catalog.
-- `lifecycleId` is a routing tag for AR-hosted chats only. It is not projected truth, and external
-  non-hosted chats use the operator inbox path outside this store. Exited/landed/terminated sessions
-  must not receive lifecycle-routed injection.
-- `leafKey` is the durable chat⇄leaf binding (qualified leaf id), enclosure-independent so it survives
-  finalize. Uniqueness is **server-authoritative** and per **(leaf, role)** (`409 leaf-taken`,
-  running-only); `setLeaf`'s local guard is advisory and role-scoped (a chat and a terminal never block
-  each other on one leaf). Leaf moves use `applyLeafAssignment` and mutate the store only after the backend
-  accepts the catalog change or after catalog rehydration observes the new binding. `findSessionForLeaf` resolves only **live** sessions
-  (optionally filtered by role), so an exited/landed/terminated session frees its slot for a new claim.
-- Legacy raw connection helpers remain distinct from controlled submission. Current highlight and
-  leaf-context callers use the reliable submit client; this registry must not promote PTY echo or
-  bracketed paste into controlled delivery authority.
+- Seat uniqueness is scoped to one task document and one role.
+- A replacement session may occupy the same structural seat without changing its address.
+- Browser state never manufactures sprint/master anchor leaves.
+- Raw connection transport is not reliable structural-message delivery.
 
 ### Todos
 
-The older raw connection helpers remain for legacy terminal surfaces, but no new task-independent
-debt was introduced by the authoritative-open change.
-
-### 2026-07-24 Curator Delta
-
-Catalog hydration now reuses content-identical row objects and returns the prior store state when a
-whole beat is unchanged. Changed catalog facts still replace only their row, including a locally
-pre-applied seat event that the authoritative poll disproves.
+None.
 
 ## Docs References
 
-The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
-are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
-the reviewed task evidence for any current behavioral claim.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No Domain Documentation source is configured; repository source and tests govern this card.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical Chats view reads this store and separates live action routing from inspection focus. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:15-18 |
-| The right-rail leaf chat resolves sessions via leaf role and now uses `pasteDraftToSession` for bind-time context after start, attach, or move. | `pasteDraftToSession` | dashboard/src/data/sessions.ts:722-726 |
-| The replacement rail renders catalog sessions and lifecycle actions through the shared model. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
-| `RailChat` is the only production owner of this module's raw connection registry, for visible and hidden keep-alive terminals. | `RailChat` | dashboard/src/panels/RailChat.tsx:817-817 |
-| Production creation callers are `RailChat`, `HighlightComposer`, and the full-page `ChatContextBar`. | `RailChatImpl`; `HighlightComposerImpl`; `ChatContextBar` | dashboard/src/panels/HighlightComposer.tsx:745-813; dashboard/src/panels/RailChat.tsx:414-478; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
-| The full-page cockpit's keep-alive PTY owner is `PtySurface`, separate from the raw RailChat registry. | `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
-| The leaf-identity helper that mints the qualified `leafKey` this store binds. | `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:64-70 |
-| The gate responder resolves `gate.lifecycleId` and directly mutates lifecycle routing through `sessionStore.getState()`. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
-| Development scenario isolation snapshots this store's session ids and active id; it is not a production consumer. | `cockpitStateSnapshot` | dashboard/src/dev/cockpitScenarios.ts:257-274 |
-| The projection store this mirrors in pattern but stays separate from. | `dashboardStore` | dashboard/src/data/store.ts:225-347 |
-| The terminal client types/source that provide catalog rows and terminate/open/attach helpers. | `fetchTerminalSessions`; `terminateTerminalSession`; `attachSessionToLeaf` | dashboard/src/data/terminal.ts:435-441; dashboard/src/data/terminal.ts:443-452; dashboard/src/data/terminal.ts:492-513 |
-| Catalog-change messages accept the `"leaf"` reason and carry the changed session id for out-of-band reassignment invalidation. | `notifySessionCatalogChanged` | dashboard/src/data/sessions.ts:113-126 |
-| The label allocator derives the next label from live rows and releases labels when rows are no longer live. | `nextSessionLabel` | dashboard/src/data/sessions.ts:259-269 |
-| `setLeaf` keeps role-scoped advisory uniqueness local, while `applyLeafAssignment` applies successful server moves and clears stale same-role local owners. | `setLeaf`; `applyLeafAssignment` | dashboard/src/data/sessions.ts:168-168; dashboard/src/data/sessions.ts:173-173 |
-| The plural pending field and the ONLY sanctioned pending-state reads (N1): `controlPendingInteractions?`, `sessionHasPendingInteraction` (singular OR non-empty plural), `sessionPendingInteractionPayload` (singular first, else first plural entry). | `controlPendingInteractions`; `sessionHasPendingInteraction`; `sessionPendingInteractionPayload` | dashboard/src/data/sessions.ts:74-74; dashboard/src/data/sessions.ts:525-532; dashboard/src/data/sessions.ts:538-542 |
-| `pasteDraftToSession` waits for the live connection and delegates to the confirmed `pasteAndConfirm` draft loop (echo-confirmed, boot-deadline retries, no Enter); `deliverToSession` keeps the submit-and-confirm path. | `pasteDraftToSession`; `deliverToSession` | dashboard/src/data/sessions.ts:722-726; dashboard/src/data/sessions.ts:736-759 |
-| The backend tmux session that persists after `close` and is killed only by explicit terminate. | `close` | mcp/src/agents_remember/serving/terminal.py:218-226 |
-
-### Protocol Projection
-
-Hosted rows carry additive adapter control, activity, acceptance, vendor identity, pending
-interaction, event sequence, and raw diagnostics. Hosted delivery is protocol-backed and accepts
-only immediate/queued receipts; ordinary shell connection behavior remains separate.
-
-### Full-Row Mirror + Seat-Event Patch Seam
-
-`OpenSession` now mirrors the FULL catalog row the sessions cockpit consumes (R4): `createdAt`
-(smart-focus/jump ordering fallback), retirement provenance (`retiredAt/BySession/Reason/Edge`),
-`spawnLevel`+`spawnLevelSource`, the REQUESTED `resolvedModel`/`resolvedEffort` pair (never proof
-of the effective pair — evidence tiers live in `sessionCockpitStore`), and liveness evidence
-(`livenessFailures/FirstFailedAt/LastFailedAt/Evidence`, `exitEvidence`); `fromTerminalSessionInfo`
-maps each field only-when-set, as before. A new **`patch(id, partial)`** action is the seat-event
-reconciler's merge seam (`data/seatEvents.ts`): it merges server-observed fields into one
-row — pre-applied UI state the authoritative 2500 ms poll confirms or replaces on the next
-hydrate. Known reviewer-noted nit (deliberately unchanged): `hydrate` replaces the sessions array
-every beat even when content is identical, so subscribers re-render per beat; ordering stays
-deterministic over states, and an identity-preserving hydrate (the dashboardStore change-gate
-pattern) is a follow-up candidate; that optimization was deliberately left outside the
-authoritative session-cockpit cutover rather than treating the retired component as current ownership.
-
-## Historical Reviewed Candidate Delta
-
-Clarifies `activeId` as the live action/reload route while cockpit focus may inspect other rows. Adds a dev-scenario reset for connections, queued input, and waiters so transport work cannot cross fixture authorities.
-
-This section records the review point. That candidate subsequently landed in code authority
-`31f58834f86c0d98e26b0896e099a2403a8729ee`, which this card now verifies.
+| The client row carries structural binding separately from runtime identity. | `OpenSession` | dashboard/src/data/sessions.ts:29-83 |
+| Assignment updates and uniqueness use task-document plus role. | `applyTaskAssignment` | dashboard/src/data/sessions.ts:168-176; dashboard/src/data/sessions.ts:480-506 |
+| Live lookup resolves the current occupant of a structural seat. | `findSessionForTask` | dashboard/src/data/sessions.ts:561-576 |
+| Catalog hydration preserves the server-owned structural row. | `fromTerminalSessionInfo` | dashboard/src/data/sessions.ts:631-655 |
 
 ## Cross-Repo References
 
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-11T14:29+02:00 — Re-read `applyTaskAssignment` against the current L19 source and
+  regenerated its citation around the public declaration and implementation; verification
+  metadata remains unchanged for governed closeout.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the sprint-provenance projection used by the
   rail and flow surfaces. Verification metadata remains pinned until closeout stamps the code

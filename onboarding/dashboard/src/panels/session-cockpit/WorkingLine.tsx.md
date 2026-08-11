@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/WorkingLine.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
+| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -47,7 +47,7 @@ theater NEVER renders per rail row.
 | The WorkingLine component, elapsed formatter, and interrupt seam. | "export function WorkingLine({"; "export function formatApproxElapsed(elapsedMs: number): string {"; "interrupt === undefined ? null" | dashboard/src/panels/session-cockpit/WorkingLine.tsx:80-80; dashboard/src/panels/session-cockpit/WorkingLine.tsx:133-133; dashboard/src/panels/session-cockpit/WorkingLine.tsx:183-183 |
 | The grammar predicate + the ruled pulse literal. | `seatVisualState`; `PULSE_ANIMATION` | dashboard/src/data/stateGrammar.ts:14-14; dashboard/src/data/stateGrammar.ts:101-125 |
 | The cockpit-store shape contains `workingSince`. | `workingSince` | dashboard/src/data/sessionCockpitStore.ts:139-139 |
-| The UA-7 reason copy. | `STOP_TURN_DISABLED_REASON` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:66-67 |
+| The UA-7 reason copy. | `STOP_TURN_DISABLED_REASON` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:65-66 |
 | The reserved stage slot renders `ConversationWorkingLine` or `WorkingLine`. | "<ConversationWorkingLine sessionId={focused.id} />"; "<WorkingLine session={focused}" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:195-195; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:197-198 |
 | SessionsView registers the `conversation.stop` command used by the working-line stage. | "id: \"conversation.stop\""; "title: \"Stop turn\""; "keywords: [\"stop\", \"interrupt\", \"cancel\", \"turn\", \"abort\"]"; "when: () => deps.chatsInterruptRef.current.available"; "run: () => deps.chatsInterruptRef.current.onStop?.()" | dashboard/src/panels/session-cockpit/sessions-view/useSessionsPaletteCommands.tsx:125-131 |
 

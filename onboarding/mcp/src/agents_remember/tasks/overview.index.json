@@ -12,6 +12,7 @@
   "coveredFiles": [
     "mcp/src/agents_remember/tasks/__init__.py",
     "mcp/src/agents_remember/tasks/document.py",
+    "mcp/src/agents_remember/tasks/document_refs.py",
     "mcp/src/agents_remember/tasks/leaf_doc.py",
     "mcp/src/agents_remember/tasks/master_sync.py",
     "mcp/src/agents_remember/tasks/readiness.py",
@@ -19,8 +20,8 @@
     "mcp/src/agents_remember/tasks/store.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 7,
-    "fileSidecars": 7,
+    "sourceFilesInScope": 8,
+    "fileSidecars": 8,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -28,6 +29,7 @@
     "agents_remember",
     "doc",
     "document",
+    "document_refs",
     "init",
     "init__",
     "leaf",
@@ -36,6 +38,7 @@
     "master_sync",
     "mcp",
     "readiness",
+    "refs",
     "remember",
     "render",
     "src",
@@ -49,6 +52,7 @@
       "mcp/src/agents_remember/tasks",
       "mcp/src/agents_remember/tasks/__init__.py",
       "mcp/src/agents_remember/tasks/document.py",
+      "mcp/src/agents_remember/tasks/document_refs.py",
       "mcp/src/agents_remember/tasks/leaf_doc.py",
       "mcp/src/agents_remember/tasks/master_sync.py",
       "mcp/src/agents_remember/tasks/readiness.py",
@@ -60,6 +64,8 @@
       "__init__",
       "document.py",
       "document",
+      "document_refs.py",
+      "document_refs",
       "leaf_doc.py",
       "leaf_doc",
       "master_sync.py",
@@ -81,7 +87,7 @@
       "JSON",
       "mcp/src/agents_remember/tasks/",
       "route-local-overview",
-      "7bf564a663bb61f12844dee39538dd09a1633cdb",
+      "d9a1eb82849baea6c0b86735e772a932f4bbdc7c",
       "/../../../overview.md",
       "tasks/",
       "ar-task-document/v1",
@@ -101,9 +107,7 @@
       "Section",
       "DocKind",
       "light",
-      "subTask",
-      "master",
-      "DocStatus"
+      "subTask"
     ]
   },
   "fallback": {
