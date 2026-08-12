@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_codex_app_server_adapter_basic.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                                        |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated            | 2026-08-12T04:15+02:00                                            |
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`                                        |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -16,22 +16,43 @@
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_codex_app_server_adapter_basic.py`'s source module; covers the behaviours named by its test classes.
+Exercises basic Codex app-server negotiation, startup identity, model discovery, desired/effective
+settings, and fail-clean adapter teardown under the current Desktop user-agent contract.
 
 ## Code Commentary
 
+The Desktop regression presents a host-first primary token (`Codex Desktop/<version>`) plus the
+exact initialize client suffix. Its positive case proves the host version feeds the adapter
+protocol identity; its negative peer changes only the requested client version and proves startup
+fails cleanly rather than accepting an unrelated host response.
+
+The settings-update regression drives all deliberate-state branches through the public adapter:
+an already-effective echo stays inert, a stale effective echo remains inert while a requested
+change is pending, a matching desired echo promotes that selection, and an unrelated echo fails
+the adapter. This raises meaningful branch coverage on the changed session owner rather than
+exempting its CRAP score.
 
 
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/tests/test_codex_app_server_adapter_basic.py`.
+- Both initialize wire forms retain the existing independent thread `cliVersion` agreement gate.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| Desktop startup accepts the host-first product version only with the exact Agents Remember client suffix and rejects a version-mismatched suffix. | `test_desktop_user_agent_uses_host_version_and_exact_client_identity`; `test_host_first_user_agent_rejects_wrong_client_identity` | mcp/tests/test_codex_app_server_adapter_basic.py:200-234 |
+| Public settings notifications cover matching, stale-effective, desired-promotion, and drift-refusal branches. | `test_settings_updates_cover_matching_stale_and_drift_branches` | mcp/tests/test_codex_app_server_adapter_basic.py:296-356 |
 
 ## Update History
+
+- 2026-08-12T04:41+02:00 — 260731-EFA-L22 closeout repair: added public adapter coverage for all
+  `accept_settings_update` paths after the first targeted closeout run proved tests/diff coverage
+  green but correctly refused the changed session owner at CRAP 46.84.
+
+- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: added positive host-first
+  negotiation coverage and exact-client-suffix refusal coverage, and migrated the shared fixture
+  instead of retaining unused CLI compatibility; the focused module passes under `-n=auto`.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

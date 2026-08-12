@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_leaf_structural_coverage.py`                  |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-11T22:28+02:00                                       |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                   |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`                   |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -17,9 +17,9 @@
 ## Purpose
 
 This focused coverage module reaches cross-package leaf seams that are intentionally smaller than
-the domain suites. It retains the layering, context-resolution, provider, evidence, catalog, and
-worktree edge coverage and now exercises L19's structural migration/topology/gate paths plus the
-non-Windows quality-scratch boundary needed by the targeted 100% changed-code coverage contract.
+the domain suites. It retains layering, context-resolution, provider, evidence, catalog, and
+worktree edge coverage. Task-document identity, topology, structural-gate, and Windows scratch
+branches now live in `test_task_document_structural_identity.py`.
 
 ## Code Commentary
 
@@ -27,10 +27,8 @@ non-Windows quality-scratch boundary needed by the targeted 100% changed-code co
 
 The first half covers the pre-existing wrapper-adjacent seams: layering CLI/rendering, coordination
 context resolution, gate vocabulary, drift cleanup, catalog behavior, evidence/control clients,
-provider status, and contract-reader failure modes. The L19 extension groups four current
-boundaries: terminal/control-plane migrations; task-document topology and role validation;
-structural gate authorization and lifecycle results; and the platform branch that leaves inherited
-temp variables intact on Windows while production normalizes non-Windows scratch.
+provider status, and contract-reader failure modes. The identity and lifecycle extension is split
+into its own responsibility unit rather than keeping an ever-growing mixed structural suite.
 
 ### Conventions
 
@@ -61,9 +59,9 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite complements the layering unit tests with wrapper-adjacent seams. | `test_layering_cli_and_edges`; `test_layering_render_and_stale` | mcp/tests/test_leaf_structural_coverage.py:84-121; mcp/tests/test_leaf_structural_coverage.py:141-168 |
-| The L19 extension covers migration, task-topology, and structural-gate branches. | `test_terminal_catalog_migration_maps_every_legacy_identity`; `test_task_document_topology_children_and_refusals`; `test_structural_gate_authorization_decision_and_listing` | mcp/tests/test_leaf_structural_coverage.py:855-939; mcp/tests/test_leaf_structural_coverage.py:996-1047; mcp/tests/test_leaf_structural_coverage.py:1097-1189 |
-| The platform branch preserves inherited temp paths only on native Windows. | `test_quality_environment_has_a_windows_branch` | mcp/tests/test_leaf_structural_coverage.py:1327-1332 |
+| The suite complements the layering unit tests with wrapper-adjacent seams. | `test_layering_cli_and_edges`; `test_layering_render_and_stale` | mcp/tests/test_leaf_structural_coverage.py:83-119; mcp/tests/test_leaf_structural_coverage.py:140-167 |
+| The L19 extension covers migration, task-topology, and structural-gate branches. | `test_terminal_catalog_migration_maps_every_legacy_identity`; `test_task_document_topology_children_and_refusals`; `test_structural_gate_authorization_decision_and_listing` | mcp/tests/test_task_document_structural_identity.py:20-159; mcp/tests/test_task_document_structural_identity.py:161-260; mcp/tests/test_task_document_structural_identity.py:262-390 |
+| The platform branch preserves inherited temp paths only on native Windows. | `test_quality_environment_has_a_windows_branch` | mcp/tests/test_task_document_structural_identity.py:492-497 |
 
 ## Cross-Repo References
 
@@ -74,6 +72,10 @@ No cross-repository implementation participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: moved the task-document identity/topology half
+  into its own one-to-one test card and refreshed all surviving citations; both files are below the
+  hard size limit.
 
 - 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: recorded the appended structural
   migration, topology, gate, identity-migration, and quality-environment branch coverage. This is a

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`       |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -115,7 +115,9 @@ in the [session-cockpit overview](session-cockpit/overview.md).
 - SessionComposer.tsx is the shared CodeMirror reliable-submit surface. It consumes effective
   keymap/profile state and uses authoritative withdrawal for pop-back.
 - HighlightComposer.tsx sends a selected context package only after acceptance; selection and target
-  choice cannot move active route/focus on rejection or ambiguity.
+  choice cannot move active route/focus on rejection or ambiguity. Its pre-projection task-document
+  fallback is a stable module-level snapshot, so the always-mounted composer cannot force React into
+  an external-store update loop while analytics is still absent.
 - RailChat.tsx renders contextual task-side chat under the same registry, not a competing destination.
 
 ### Operations And Other Routes
@@ -268,6 +270,10 @@ generator and its stale check; the manual boundary is sample coverage.
 The panels route absorbed the L7 live-thinking change on top of the L8 split: the session-cockpit conversation family carries the coalesced live-thinking indicator and its pins; the over-limit dashboard files were split by L8 and the armed file-size rail now covers this route's TS/TSX.
 
 ## Update History
+
+- 2026-08-12T04:04+02:00 — Recorded the shared-panel startup invariant exposed by the live dashboard
+  repair: an always-mounted Zustand consumer must return a referentially stable selector fallback
+  before the first projection. Verification metadata remains pinned until governed closeout.
 
 - 2026-08-11T23:40+02:00 — No route impact: helper extractions in `HighlightComposer.tsx`,
   `RailChat.tsx`, and detail-panel state preserve explicit reliable submission, structural

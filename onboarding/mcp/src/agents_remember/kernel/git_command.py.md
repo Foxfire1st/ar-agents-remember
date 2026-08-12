@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/git_command.py`           |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-18T20:03+02:00                                   |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`               |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`               |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
@@ -93,7 +93,7 @@ package's production-path regression matrix.
 | `_run_git` calls this runner with `GIT_METADATA_TIMEOUT_SECONDS` and converts `TimeoutExpired`/`OSError` into `AuthorityError`/`RouteIndexCensusError`; `_nul_records` splits its NUL-delimited stdout. | "git diff-files deletion census failed", "git census returned an empty NUL-delimited record" | mcp/src/agents_remember/kernel/route_index_census.py:91-91; mcp/src/agents_remember/kernel/route_index_census.py:222-222 |
 | Carryover no longer defines its own input-bearing adapter: `require_git` delegates to `run_git`, and `patch_id` is the one caller that passes `input_text`. | `require_git`, `patch_id` | mcp/src/agents_remember/memory/carryover.py:92-96; mcp/src/agents_remember/memory/carryover.py:200-207 |
 | Tests import the production selector inventory and cover every selector. | `test_ambient_git_repository_selectors_cannot_redirect_the_census` | mcp/tests/test_route_index.py:592-640 |
-| `DecoyRepositoryTests` re-exports the selectors against a decoy repo inside its own scope; `RunnerContractTests` covers `input_text` vs `DEVNULL`, `surrogateescape`, and the per-call timeout; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` AST-sweeps the package and asserts `kernel/git_command.py` is the only module that spawns git. | `DecoyRepositoryTests`, `RunnerContractTests`, `test_only_the_kernel_module_defines_a_git_runner` | mcp/tests/test_git_command.py:155-211; mcp/tests/test_git_command.py:214-291; mcp/tests/test_git_command.py:448-465 |
+| `DecoyRepositoryTests` re-exports the selectors against a decoy repo inside its own scope; `RunnerContractTests` covers `input_text` vs `DEVNULL`, `surrogateescape`, and the per-call timeout; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` AST-sweeps the package and asserts `kernel/git_command.py` is the only module that spawns git. | `DecoyRepositoryTests`, `RunnerContractTests`, `test_only_the_kernel_module_defines_a_git_runner` | mcp/tests/test_git_command.py:160-216; mcp/tests/test_git_command.py:219-315; mcp/tests/test_git_command.py:472-489 |
 
 ## Cross-Repo References
 

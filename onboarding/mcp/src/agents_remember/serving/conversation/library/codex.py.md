@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/library/codex.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-12T04:15+02:00 |
+| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
+| lastVerifiedCommitDate |  2026-08-12T04:57:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 
 The dormant Codex library port: DIRECT read-only list/read/resolve over one short-lived
 `codex app-server` stdio connection per operation — no Node helper, no local catalog or index —
-plus the live gate probe that reports the installed CLI version. The list
+plus the live gate probe that reports the installed Codex runtime version. The list
 also surfaces harness sub-agent conversations: a second probed `thread/list` over the sub-agent
 source kinds groups agent threads under their parent's top-level row as
 `ConversationLibraryAgentRow` children.
@@ -28,7 +28,8 @@ source kinds groups agent threads under their parent's top-level row as
 ### Logic
 
 `_AppServer` resolves the installed harness executable, starts the existing
-`CodexStdioTransport`, performs the initialize handshake (validated client name/version), and
+`CodexStdioTransport`, performs the initialize handshake (current Desktop product plus the exact
+client name/version sent on the request), and
 exposes `thread/list` (parameterized source kinds: `_SOURCE_KINDS` for top-level conversations,
 `_AGENT_SOURCE_KINDS` for the sub-agent fetch) and `thread/read`.
 `CodexConversationLibrary.list` verifies the signed list cursor (scope, generation), fetches one
@@ -66,6 +67,8 @@ every thread/list row carries.
 
 - Nothing here resumes, forks, or mutates a thread; the native app-server remains the one
   list/read authority on every call.
+- The library connection passes its owned `_CLIENT_NAME` and `_CLIENT_VERSION` into the shared
+  validator; it cannot accept a Desktop response addressed to another initialize client.
 - Shape-skewed payloads and range-absurd but type-valid timestamps fail as typed
   `LibraryStoreError` (review F3/F4), never raw 500s; `thread/read` RPC method-absence maps to
   `LibraryStoreError`, other RPC errors to `UnknownNativeConversationError`.
@@ -113,7 +116,7 @@ initialize/state helpers.
 | Shape-skewed list/read payloads and range-absurd timestamps fail as typed store errors. | `test_shape_skewed_list_payloads_fail_as_store_errors`, `test_shape_skewed_read_payloads_fail_as_store_errors`, `test_range_absurd_timestamp_fails_as_store_error` | mcp/tests/test_conversation_library_ports.py:299-351; mcp/tests/test_conversation_library_ports.py:353-388; mcp/tests/test_conversation_library_ports.py:506-519 |
 | Sub-agent grouping with probed source kinds, agent-thread read, RPC-refusal degrade note, truncation note, nested depth-2 naming, and ungroupable-row fail-closed. | `test_agents_group_under_parent_with_probed_source_kinds`, `test_agent_conversation_reads_native_agent_thread`, `test_unproven_agent_kinds_degrade_to_exact_note`, `test_truncated_agent_listing_is_visible`, `test_nested_depth2_agents_are_named_not_silently_absent`, `test_ungroupable_agent_row_fails_closed` | mcp/tests/test_conversation_library_agents.py:295-333; mcp/tests/test_conversation_library_agents.py:343-362; mcp/tests/test_conversation_library_agents.py:364-377; mcp/tests/test_conversation_library_agents.py:379-385; mcp/tests/test_conversation_library_agents.py:387-417; mcp/tests/test_conversation_library_agents.py:419-427 |
 | The installed suite proves the live gate and list/read/resolve round-trip on the real installed app-server (0.145.0 at the probe; earlier passes observed 0.144.5). | `test_live_gate_supports_list_read_and_partial_completeness`, `test_live_list_read_and_resolve_round_trip` | mcp/tests/test_conversation_library_installed.py:136-153; mcp/tests/test_conversation_library_installed.py:155-176 |
-| The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. | `validate_initialize_response`, `iso_from_epoch`, `required_object`, `required_text`, `required_list` | mcp/src/agents_remember/serving/codex_app_server_state.py:128-154; mcp/src/agents_remember/serving/codex_app_server_state.py:553-558; mcp/src/agents_remember/serving/codex_app_server_state.py:577-580; mcp/src/agents_remember/serving/codex_app_server_state.py:587-591; mcp/src/agents_remember/serving/codex_app_server_state.py:594-598 |
+| The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. | `validate_initialize_response`, `iso_from_epoch`, `required_object`, `required_text`, `required_list` | mcp/src/agents_remember/serving/codex_app_server_state.py:132-164; mcp/src/agents_remember/serving/codex_app_server_state.py:563-568; mcp/src/agents_remember/serving/codex_app_server_state.py:587-590; mcp/src/agents_remember/serving/codex_app_server_state.py:597-601; mcp/src/agents_remember/serving/codex_app_server_state.py:604-608 |
 
 ## Cross-Repo References
 
@@ -135,6 +138,10 @@ replaced as one seam**.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: passed the library connector's
+  already-owned client version into strict initialize validation and documented the clean-cut
+  Desktop host-first identity contract.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

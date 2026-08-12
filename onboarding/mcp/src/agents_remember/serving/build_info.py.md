@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/build_info.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated            | 2026-08-01T08:30+02:00                          |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`      |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`      |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -172,7 +172,7 @@ is proven by repository source and tests.
 | The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. | "agents_remember/package_data/dashboard/index.html"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:93-94 |
 | `test_resolves_commit_in_a_git_checkout` asserts `dashboardBuild` present-or-omitted rather than indexing it unconditionally, through the shared `_build_wire` helper that names the wire form. | `test_resolves_commit_in_a_git_checkout`; "return build.payload().model_dump(" | mcp/tests/test_serving.py:94-94; mcp/tests/test_serving_cli.py:40-55 |
 | The one runner both probes call: `GIT_REPOSITORY_SELECTOR_ENV` (the `GIT_DIR` family stripped by `git_environment`) and `run_git` itself (`safe.directory`, stdin `DEVNULL`, caller-supplied `timeout`). | "GIT_REPOSITORY_SELECTOR_ENV = ("; "def git_environment() ->"; "def run_git(" | mcp/src/agents_remember/kernel/git_command.py:33-33; mcp/src/agents_remember/kernel/git_command.py:76-76; mcp/src/agents_remember/kernel/git_command.py:85-85 |
-| `DecoyRepositoryTests` sets the selectors against a decoy repository and proves reads and writes still answer from the real one; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` keeps this module from growing a private copy again. | `test_reads_answer_from_the_real_repository_not_the_decoy`; `test_only_the_kernel_module_defines_a_git_runner` | mcp/tests/test_git_command.py:184-202; mcp/tests/test_git_command.py:448-465 |
+| `DecoyRepositoryTests` sets the selectors against a decoy repository and proves reads and writes still answer from the real one; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` keeps this module from growing a private copy again. | `test_reads_answer_from_the_real_repository_not_the_decoy`; `test_only_the_kernel_module_defines_a_git_runner` | mcp/tests/test_git_command.py:189-207; mcp/tests/test_git_command.py:472-489 |
 
 ## Cross-Repo References
 

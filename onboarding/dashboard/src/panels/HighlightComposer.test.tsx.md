@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/HighlightComposer.test.tsx`|
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T15:22+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`       |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -32,6 +32,13 @@ Create mocks now return an accepted server-row result rather than a bare id. The
 failure case proves visible `session open network` copy and zero readiness or submit calls, so a
 failed create cannot be treated as a deliverable target.
 
+### Pre-Projection Snapshot Regression
+
+The first case explicitly clears dashboard analytics before rendering the composer and spies on
+`console.error`. It proves the selection pill still renders while React does not emit its
+"getSnapshot should be cached" warning. This pins the module-level stable empty task-document
+fallback that production needs before the first dashboard projection arrives.
+
 ### Logic
 
 `vi.mock("../data/selection")` feeds a fixed `useSelectionCapture` (`{ selection, clear }`, or `null`);
@@ -46,7 +53,8 @@ readiness, and submits with `source: "highlight"`; picking ＋ Codex targets `co
 submits directly. Task 11 cases assert lifecycle-tagged creation and target filtering. Direct-branch
 cases hydrate a leaf-keyed harness, assert the pill click calls `submitSessionText` with the context
 package, and prove only accepted/queued truth clears and routes; rejected, route-error, and unresolved
-endgame states preserve prior route, selection, and operator draft.
+endgame states preserve prior route, selection, and operator draft. The pre-projection case sets
+`analytics: null` and asserts the selector does not produce React's uncached-snapshot diagnostic.
 
 ### Conventions
 
@@ -75,9 +83,10 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The composer under test. | "export const HighlightComposer = memo(HighlightComposerImpl)" | dashboard/src/panels/HighlightComposer.tsx:1133-1133 |
+| The composer under test. | "export const HighlightComposer = memo(HighlightComposerImpl)" | dashboard/src/panels/HighlightComposer.tsx:1140-1140 |
 | The accepted-row create helper and routed session store. | "export async function createSession(" | dashboard/src/data/sessions.ts:783-783 |
 | The mocked reliable readiness, submission, retry, and reconcile seam. | "export async function executeReliableSubmit(" | dashboard/src/data/submitClient.ts:567-567 |
+| The stable-snapshot regression clears analytics, renders the composer, and refuses React's uncached-snapshot warning. | "keeps the pre-projection task-document snapshot stable" | dashboard/src/panels/HighlightComposer.test.tsx:140-153 |
 
 ## Cross-Repo References
 
@@ -101,6 +110,10 @@ The reviewed candidate is still uncommitted. Existing verification hash/date rem
 leaf base; closeout owns commit stamping.
 
 ## Update History
+
+- 2026-08-12T04:04+02:00 — Added and documented the empty-analytics regression that pins a stable
+  external-store selector snapshot and prevents the production React maximum-update-depth crash.
+  Verification metadata remains pinned until governed closeout.
 
 - 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `HighlightComposer.test.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 3 citation items; scoped citation check now passes.

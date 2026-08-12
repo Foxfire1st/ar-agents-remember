@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-12T04:15+02:00 |
+| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
+| lastVerifiedCommitDate |  2026-08-12T04:57:26+02:00|
 
 ## What This Area Is
 
@@ -41,7 +41,9 @@ overview: the authorized dormant native list/read routes, live capability gates,
 cursor/key authority, and the idempotent exact open/status/reconcile service landed inside the
 library ownership seam without touching this contract, the composition, or the active/control
 shells. This overview stays the contract and composition governor; the library overview governs
-the implemented slice.
+the implemented slice. Its Codex connection uses the current Desktop host-first initialize
+identity and reuses the exact requested client name/version for response validation; no runtime or
+model-facing identity token participates in that handshake.
 
 The `control/` child is an implemented subsystem with its own route-local
 overview: the authoritative human control surface — seventeen registered routes for exact-turn
@@ -466,6 +468,9 @@ and composition governor for the conversation route; the wire-model governance l
 `models/conversations/overview.md`. The `active`/`library`/`control` child routes are unchanged.
 
 ## Update History
+
+- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: recorded the conversation route's
+  current host-first initialize boundary and exact request-client validation in its library child.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the grammar move to
   `models/conversations/`, the canonical port re-export, and the updated file map.

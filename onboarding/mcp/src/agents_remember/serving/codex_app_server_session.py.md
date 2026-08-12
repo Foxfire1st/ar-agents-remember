@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_session.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-12T04:15+02:00 |
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,8 +37,9 @@ authority before any setter.
 
 ### Conventions
 
-The runtime user-agent proves the client/opaque-version form, and the token must agree with thread
-`cliVersion`. `model` is the normalized model key; descriptions and effort descriptions are retained.
+The runtime user-agent proves a Codex Desktop host-first product with the exact client name/version
+suffix sent in `clientInfo`; the primary product version must
+agree with thread `cliVersion`. `model` is the normalized model key; descriptions and effort descriptions are retained.
 Reasoning effort travels through app-server session config and turn parameters. A roleless pre-L4
 open derives both defaults from the authenticated catalog. `settingsPending` exposes comparison
 state; it is not acceptance evidence by itself.
@@ -58,6 +59,8 @@ state; it is not acceptance evidence by itself.
 - Reconnect keeps deliberate desired overrides on the same thread rather than restoring stale
   launch settings.
 - Failed connect/discover always stops its transient transport.
+- `_initialize` gives response validation the same client name/version values it sent, so a
+  host-first response cannot claim a different Agents Remember client identity.
 
 ### Todos
 
@@ -83,6 +86,7 @@ catalog and thread evidence.
 | Session-owned desired-model and desired-effort setters stage the next selection. | `set_desired_model`; `set_desired_effort` | mcp/src/agents_remember/serving/codex_app_server_session.py:226-245; mcp/src/agents_remember/serving/codex_app_server_session.py:247-253 |
 | Fresh adapter `turn/start` acceptance promotes the submission's captured pair. | `_start_turn`; `_accept_started_turn` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:434-480; mcp/src/agents_remember/serving/codex_app_server_adapter.py:533-568 |
 | The factory deliberately leaves a roleless Codex selection empty so this session resolves catalog defaults. | `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:48-90 |
+| Initialize sends and then reuses the exact client identity when validating the host response. | `_initialize` | mcp/src/agents_remember/serving/codex_app_server_session.py:362-385 |
 
 ## Cross-Repo References
 
@@ -106,6 +110,11 @@ callable. It does not assert that either method exists: the connection-local his
 items first, turns second, and treats runtime results—not Codex version text—as authority.
 
 ## Update History
+
+- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: bound initialize-response client
+  suffix validation to the exact `clientInfo` name/version sent by this session while retaining
+  primary host-version agreement with the opened thread; the old CLI-shaped form is intentionally
+  outside this project's runtime contract.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

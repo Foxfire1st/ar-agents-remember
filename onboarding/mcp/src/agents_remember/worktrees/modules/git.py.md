@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/git.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-29T15:30+02:00                     |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -51,6 +51,14 @@ everything `run_git` guarantees:
   `rebase`/`merge`/`status`. Nothing in this module is unbounded any more, and a
   git call that exceeds 300s raises `subprocess.TimeoutExpired` out of the helper
   instead of hanging; no helper catches it.
+
+The shared runner deliberately keeps `errors="surrogateescape"` so raw Git path
+identity survives decoding. The facade now separates that internal representation
+from transport-facing failure text: `_transport_safe_git_diagnostic` applies UTF-8
+`backslashreplace` only when `require_git` is about to raise, preserving valid Unicode
+while rendering an invalid byte as a literal escape such as `\udc81`. Raw successful
+stdout and stderr remain untouched; only a failed command's `RuntimeError` diagnostic
+is made safe for Pydantic/FastMCP JSON serialization.
 
 The module exposes branch, commit, cleanliness,
 worktree creation, commit-if-dirty, changed-path, and commit-content helpers
@@ -99,8 +107,14 @@ No external Domain Documentation source is configured for this memory repo.
 | The L3 serving change-set API consuming `changed_files_with_counts` + `commit_text_or_none`. | "def task_changeset" | mcp/src/agents_remember/serving/changeset.py:80-80 |
 | Worktree tests cover changed-path behavior for long filesystem paths. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support_tests_1.py:1068-1081 |
 | Closeout runs the configured hook before its strict wrapper and commits the certified index afterwards. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:820-889 |
+| The hook-failure regression proves the raw runner retains a surrogateescaped byte while the facade exception is UTF-8 JSON serializable. | `test_failed_hook_diagnostic_with_invalid_bytes_is_json_serializable` | mcp/tests/test_git_command.py:298-315 |
 
 ## Update History
+
+- 2026-08-12T03:31+02:00 — 260731-EFA-L22 closeout repair: preserved surrogateescape inside the
+  shared Git runner but escaped invalid bytes at `require_git`'s diagnostic boundary, preventing a
+  malformed failed-hook message from crashing MCP response serialization. Added the exact invalid-byte
+  hook regression reference. Verification metadata remains pinned until closeout stamps the repair.
 
 - 2026-08-10T12:46+02:00 — L9 closeout-order repair: added the configured-hook runner and the
   exact-index `commit_verified_staged` helper. The latter never restages and uses `--no-verify`

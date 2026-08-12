@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/orchestration.py`       |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated | 2026-08-11T14:29+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                        |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`                        |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -25,6 +25,9 @@ Registers agent-facing parent and child whole-message tools over structural seat
 `message_parent` derives the target entirely from the ambient caller. `message_child` accepts only
 a canonical child task document, role, and message content. Both delegate persistence, authorization,
 current-occupant resolution, and delivery to the structural application boundary.
+The content fields after `role` are keyword-only in Python. FastMCP keeps the same named JSON fields,
+while Ruff's positional-argument rule can enforce the implementation signature without changing the
+published tool schema.
 
 ### Conventions
 
@@ -56,6 +59,9 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: recorded the keyword-only Python boundary for
+  child-message content; the named MCP JSON schema and structural address remain unchanged.
 
 - 2026-08-11T14:29+02:00 — Re-read `message_parent` and `message_child` and widened both
   citations to include their registered-tool decorators; verification metadata remains unchanged

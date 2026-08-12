@@ -9,8 +9,8 @@ Total output lines: 2603
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -760,6 +760,10 @@ The MCP package separates three surfaces:
   `mcp/tests/test_dashboard_daemon.py` + new `test_config.py` cases. Verification metadata pinned
   until closeout stamps the code commit.
 ## Update History
+
+- 2026-08-12T01:38+02:00 — No route impact: 260731-EFA-L22 makes leaf quality enforcement
+  deterministic (exact Ruff pin and preserved file-size arm) and splits three oversized test
+  responsibilities; package subsystems and public tool inventory are unchanged.
 
 - 2026-08-12T00:20+02:00 — Corrected the package boundary: the dependency supplies pytest-xdist,
   root pytest configuration owns worker selection, and the wrapper contributes derived gate

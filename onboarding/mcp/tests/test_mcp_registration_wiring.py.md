@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_mcp_registration_wiring.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`  |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`  |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -89,9 +89,12 @@ the config only to keep one signature, and these six must be called without it.
 | --- | --- | --- |
 | The tool surface under test: one module per family of `@server.tool()` declarations. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:35-48 |
 | The advertised-surface companion (names, descriptions, response conformance). | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
-| The AST test that keeps the `PLR0913` exemption over `registration/` honest. | `ToolSignatureExemptionTests` | mcp/tests/test_code_quality_check.py:340-416 |
+| The AST test that keeps the `PLR0913` exemption over `registration/` honest. | `ToolSignatureExemptionTests` | mcp/tests/test_code_quality_check.py:397-474 |
 
 ## Update History
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 citation maintenance: refreshed the shifted tool-
+  exemption proof; registration wiring behavior is unchanged.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

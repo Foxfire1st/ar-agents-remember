@@ -7,7 +7,7 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-11T14:52+02:00 |
+| lastUpdated | 2026-08-12T04:15+02:00 |
 | lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
 | lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 
@@ -233,7 +233,7 @@ engine/store and one over a real socket.
 | The foundation pin asserts exactly the three owned active routes (page, events, selected-child history) by exact path/method set. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
 | The declared response shapes and the cursor-aware refusal table the three routes spread. | "async def conversation_page("; "async def hydrate_agent_history("; "async def conversation_events("; "response_model=ConversationPage" | mcp/src/agents_remember/serving/conversation/active/api.py:126-235; mcp/src/agents_remember/serving/conversation/response_contract.py:113-122 |
 | `CONVERSATION_RESPONSES` (the control table plus the two cursor refusals) and `AgentHistoryHydrated`, the model the history route's assembled 200 body had never had. | `AgentHistoryHydrated`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:722-728 |
+| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:740-744 |
 
 ## Cross-Repo References
 
@@ -408,6 +408,13 @@ offload are untouched.
 The active conversation routes now import the wire contracts from `models/conversations/` (moved from the serving monolith by L9) and consume the canonical ports from `serving/ports.py`. Route behavior is unchanged.
 
 ## Update History
+
+- 2026-08-12T04:15+02:00 — 260731-EFA-L22 citation maintenance: widened the active-serving test
+  overview citation after the new Codex fixture paragraph shifted its final three anchors; no
+  active-serving contract changed.
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 citation maintenance: widened the tests-overview range
+  after its responsibility-split paragraph moved the existing route sentence by one line.
 
 - 2026-08-11T14:52+02:00 — Re-derived the focused-suite cross-memory citation after the governing
   tests overview gained a pre-closeout quality section; the active-serving claim is unchanged.

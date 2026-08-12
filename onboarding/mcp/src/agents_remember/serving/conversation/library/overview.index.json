@@ -117,10 +117,11 @@
       "mcp/src/agents_remember/serving/conversation/library/",
       "mcp/src/agents_remember/serving/conversation/library/overview.md",
       "conversation/overview.md",
-      "d9a1eb82849baea6c0b86735e772a932f4bbdc7c",
+      "65cb81f7de4db13c0627264fec1eb46f444e0ee3",
       "supported",
       "switch_session",
       "mcp/native_helpers/conversation_library/",
+      "Codex Desktop/<version>",
       "LibraryShared",
       "subAgent*",
       "agents_note",
@@ -128,8 +129,7 @@
       "subagents/*.jsonl",
       "mcp/src/agents_remember/serving/conversation/models.py",
       "mcp/src/agents_remember/serving/conversation/",
-      "terminal_opener.py",
-      "retire.py"
+      "terminal_opener.py"
     ]
   },
   "fallback": {

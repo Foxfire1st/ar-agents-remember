@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_closeout_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
+| lastVerifiedCommitDate |  2026-08-12T04:57:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -107,42 +107,42 @@ Two more pin what the gate hands the wrapper:
 which refuses two unsafe checkouts, does a mixed reset, `git add -A`, and only then runs the gate.
 Four classes cover it.
 
-**cit:([`CloseoutGateSeesCreatedFilesTests`], mcp/tests/test_worktree_closeout_quality_gate.py:809-915) — the original defect, in both directions.**
+**cit:([`CloseoutGateSeesCreatedFilesTests`], mcp/tests/test_worktree_closeout_quality_gate.py:350-456) — the original defect, in both directions.**
 `derive_scope` picks what ruff and pyright are given with `git ls-files`, which reads the index;
 `diff_coverage` diffs the base against the tracked tree, which is blind to the same files; and
 closeout commits with `git add -A`. Everything in that gap — every path the task created and never
 staged — went into the commit with no rail of the gate having read a line of it, while the gate
 reported green. **Leaf 3's `abc7cbcc` shipped four files that way.**
 
-- cit:([`test_a_created_file_carrying_a_lint_error_fails_the_gate`], mcp/tests/test_worktree_closeout_quality_gate.py:820-843): a created
+- cit:([`test_a_created_file_carrying_a_lint_error_fails_the_gate`], mcp/tests/test_worktree_closeout_quality_gate.py:361-384): a created
   `pkg/leaf_addition.py` containing `import os` must make closeout raise, the message must name
   `pkg/leaf_addition.py:1:` and `F401`, the created path must appear in the gate's own
   `lint_paths`, and HEAD plus `closeout_status` must be unmoved. The assertion is that the gate
   failed **on this file, having read it** — not merely that it failed.
-- cit:([`test_a_refused_gate_commits_nothing_and_leaves_the_worktree_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:845-882): the promise is
+- cit:([`test_a_refused_gate_commits_nothing_and_leaves_the_worktree_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:386-423): the promise is
   "nothing was committed", **not** "nothing was staged". Closeout stages the task's own worktree
   and does not put it back; what must hold is that no commit was created, the contract did not
   advance, and a further `add -A` reaches the byte-identical tree — so `commit_if_dirty`'s own add
   adds nothing to what the gate certified.
-- cit:([`test_the_gates_scope_is_the_commits_content`], mcp/tests/test_worktree_closeout_quality_gate.py:884-915): the invariant as an **equality**
+- cit:([`test_the_gates_scope_is_the_commits_content`], mcp/tests/test_worktree_closeout_quality_gate.py:425-456): the invariant as an **equality**
   rather than a trust — `sorted(gate.lint_paths) == sorted(py files in the commit tree)`. The
   deletion arm is there because the index cut both ways: a path the leaf *removed* stayed in
   `git ls-files` until the removal was staged, so the pre-fix gate handed ruff a file that no
   longer existed and took an `E902 No such file or directory` for it — the exact mirror of the
   created file it never looked at.
 
-The fixture cit:([`_gate_scope_contract_fixture`], mcp/tests/test_worktree_closeout_quality_gate.py:722-768) is deliberately minimal: internal memory
+The fixture cit:([`_gate_scope_contract_fixture`], mcp/tests/test_worktree_closeout_quality_gate.py:263-310) is deliberately minimal: internal memory
 mode keeps sidecar/ledger/memory-quality machinery out of the way, and the base commit already
 carries everything `derive_scope` needs (a tracked top-level package, a `pyproject.toml` declaring
 `testpaths`, the quality wrapper whose presence makes the gate mandatory), so the only thing that
-differs between base and closeout is the file the leaf creates. cit:([`_ScopeRecordingGate`], mcp/tests/test_worktree_closeout_quality_gate.py:771-806)
+differs between base and closeout is the file the leaf creates. cit:([`_ScopeRecordingGate`], mcp/tests/test_worktree_closeout_quality_gate.py:312-347)
 is the wrapper's **own** `derive_scope` handed to the wrapper's **own** first rail
 (`ruff check <lint_paths>`) — the pair `quality_steps` builds — so it stands in for the whole
 wrapper without paying for pyright and a full pytest run. Substituting anything less real would
 miss the defect entirely: it was never in ruff, it was in which files ruff was handed, and only
 the real `derive_scope` can be wrong about that.
 
-**cit:([`TaskWorktreePreconditionTests`], mcp/tests/test_worktree_closeout_quality_gate.py:995-1118) — the linked-worktree refusal.** Staging is safe in a
+**cit:([`TaskWorktreePreconditionTests`], mcp/tests/test_worktree_closeout_quality_gate.py:536-659) — the linked-worktree refusal.** Staging is safe in a
 task worktree because that checkout is disposable scratch space with nobody in it; it is **not**
 safe in a repository's own checkout, and closeout can be handed one —
 `default_series_contract` records `code_worktree = code.repo_path` for a `kind: "series"` contract.
@@ -151,40 +151,40 @@ The guard tests git's own definition of a linked worktree (`--git-dir` differing
 argument rests on: `kind` is a label beside the path, the git-dir comparison constrains the path
 about to be written.
 
-- cit:([`test_the_repositorys_own_checkout_is_refused_before_anything_is_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:1010-1043) asserts the
+- cit:([`test_the_repositorys_own_checkout_is_refused_before_anything_is_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:551-584) asserts the
   **damage that does not happen**, not merely a message: a partial `git add -p` selection
   (`one\ntwo` staged, `one\ntwo\nthree` on disk) survives intact, an untracked `secret.env` is
   still untracked with no object written for it, `status --porcelain` is byte-identical, and the
   gate was never called. Both losses are unrecoverable from git alone. The message must say
   "is not a task worktree" and "Nothing was staged and nothing was committed".
-- cit:([`test_a_series_contracts_code_worktree_is_exactly_that_checkout`], mcp/tests/test_worktree_closeout_quality_gate.py:1045-1079) proves the refusal
+- cit:([`test_a_series_contracts_code_worktree_is_exactly_that_checkout`], mcp/tests/test_worktree_closeout_quality_gate.py:586-620) proves the refusal
   is aimed at a shape the system really produces: `series.kind == "series"` and
   `series.code_worktree == repo`. Without it the guard is a guess about a shape nobody builds.
-- cit:([`test_a_task_worktree_passes_the_precondition_and_is_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:1081-1097) is the positive leg.
-- cit:([`test_a_refused_gate_leaves_the_task_worktree_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:1099-1118) states the no-rollback design
+- cit:([`test_a_task_worktree_passes_the_precondition_and_is_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:622-638) is the positive leg.
+- cit:([`test_a_refused_gate_leaves_the_task_worktree_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:640-659) states the no-rollback design
   as a test: the created file stays in `ls-files`, and there is **no** `index.lock` and **no**
   `ar-closeout-index-*` snapshot left behind — an earlier attempt saved the index aside and copied
   it back, and that machinery is gone rather than fixed.
 
-**cit:([`ConflictedIndexTests`], mcp/tests/test_worktree_closeout_quality_gate.py:1121-1179) — the conflict refusal.** `git add -A` over an unmerged index
+**cit:([`ConflictedIndexTests`], mcp/tests/test_worktree_closeout_quality_gate.py:662-720) — the conflict refusal.** `git add -A` over an unmerged index
 does not refuse; it resolves every conflict to whatever the working tree holds, markers included,
 and closeout then commits that.
 
-- cit:([`test_a_conflicted_worktree_is_refused_before_anything_is_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:1130-1152): the message names
+- cit:([`test_a_conflicted_worktree_is_refused_before_anything_is_staged`], mcp/tests/test_worktree_closeout_quality_gate.py:671-693): the message names
   "closeout cannot stage the code worktree", "unmerged path", the file, and "conflict markers"; the
   gate is not called and HEAD plus `status --porcelain` are unchanged.
-- cit:([`test_the_reset_runs_after_the_conflict_check_not_before_it`], mcp/tests/test_worktree_closeout_quality_gate.py:1154-1179) pins the **order**
+- cit:([`test_the_reset_runs_after_the_conflict_check_not_before_it`], mcp/tests/test_worktree_closeout_quality_gate.py:695-720) pins the **order**
   through what survives rather than through call bookkeeping. A mixed reset drops the unmerged
   index entries and removes `MERGE_HEAD`; run first, `diff --diff-filter=U` would report nothing,
   the refusal would never fire again, and `add -A` would stage the `<<<<<<<` markers. So
   `MERGE_HEAD` still existing after the refusal is the property that says the reset has not run.
 
-**cit:([`RetryStagesWhatAFirstRunWouldTests`], mcp/tests/test_worktree_closeout_quality_gate.py:1185-1248) — staging is recomputed, not accumulated.**
+**cit:([`RetryStagesWhatAFirstRunWouldTests`], mcp/tests/test_worktree_closeout_quality_gate.py:726-789) — staging is recomputed, not accumulated.**
 `git add -A` applies ignore rules only to paths git does not already track or hold staged, so a
 file staged by a refused gate stays staged after the leaf adds it to `.gitignore`, and the retry
 commits it. **That is how a `.dmypy.json` a type checker had dropped in the worktree got into this
 leaf's own first commit.** The mixed reset is what removes the path dependence.
-cit:([`test_a_retry_commits_the_tree_a_first_run_would`], mcp/tests/test_worktree_closeout_quality_gate.py:1220-1248) asserts it as an **equality of
+cit:([`test_a_retry_commits_the_tree_a_first_run_would`], mcp/tests/test_worktree_closeout_quality_gate.py:761-789) asserts it as an **equality of
 committed trees**, not as the presence of a `reset` call: one worktree is refused with the artefact
 already staged, then ignored and retried; a second worktree reaches the same end state having never
 seen a refusal; both run the same closeout steps, so the only thing that could make the trees
@@ -200,13 +200,13 @@ because a stub would hide the exact defect it exists to catch. It also plants fi
 for the planted wrapper, since the wrapper is a changed source file as far as closeout's
 missing-onboarding check is concerned.
 
-The staging classes keep git real in both directions: cit:([`_task_worktree`], mcp/tests/test_worktree_closeout_quality_gate.py:927-941) builds a
+The staging classes keep git real in both directions: cit:([`_task_worktree`], mcp/tests/test_worktree_closeout_quality_gate.py:468-483) builds a
 repository **and** a linked worktree off it, because the precondition under test is git's own
 distinction between the two and a fixture that faked it would be testing the fixture;
-cit:([`_conflicted_task_worktree`], mcp/tests/test_worktree_closeout_quality_gate.py:995-1006) produces a genuine unmerged index by running a real
-conflicting merge. cit:([`_refusing_gate`], mcp/tests/test_worktree_closeout_quality_gate.py:935-938) is the shared patch for "the gate raises",
-and cit:([`GATE_REFUSAL`], mcp/tests/test_worktree_closeout_quality_gate.py:932-932) is the message closeout really emits. The two module constants
-cit:([`CREATED_FILE`], mcp/tests/test_worktree_closeout_quality_gate.py:733-733) and cit:([`DROPPED_TOOL_ARTEFACT`], mcp/tests/test_worktree_closeout_quality_gate.py:1196-1196) name the paths the created-file and retry
+cit:([`_conflicted_task_worktree`], mcp/tests/test_worktree_closeout_quality_gate.py:522-534) produces a genuine unmerged index by running a real
+conflicting merge. cit:([`_refusing_gate`], mcp/tests/test_worktree_closeout_quality_gate.py:462-466) is the shared patch for "the gate raises",
+and cit:([`GATE_REFUSAL`], mcp/tests/test_worktree_closeout_quality_gate.py:459-459) is the message closeout really emits. The two module constants
+cit:([`CREATED_FILE`], mcp/tests/test_worktree_closeout_quality_gate.py:260-260) and cit:([`DROPPED_TOOL_ARTEFACT`], mcp/tests/test_worktree_closeout_quality_gate.py:723-723) name the paths the created-file and retry
 cases turn on.
 
 ### Invariants And Boundaries
@@ -263,13 +263,13 @@ The suite proves the adapter and its production closeout call sites together.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `CodeQualityGateTests` covers all three gate statuses, invocation, worktree import authority, stable report publication/overwrite on pass and fail, the `--diff-base` argument, the scrubbed wrapper environment, bounded exceptions, and interpreter selection. | `CodeQualityGateTests`, `test_gate_replaces_one_test_report_instead_of_accumulating_runs`, `test_gate_failure_includes_bounded_wrapper_output` | mcp/tests/test_worktree_closeout_quality_gate.py:58-485; mcp/tests/test_worktree_closeout_quality_gate.py:158-189; mcp/tests/test_worktree_closeout_quality_gate.py:408-440 |
-| The argument spy proves both closeout entry points pass the checkout path, not the repository name. | `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:424-550 |
-| Closeout integration tests prove zero mutation on failure and quality-before-commit on success. | `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:424-550 |
-| The created-file/deleted-file scope cases: a created file must be linted, and the gate's `lint_paths` must equal the `.py` files of the commit tree. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:777-883 |
-| The linked-worktree precondition: a repository's own checkout is refused with its `add -p` selection and untracked files intact, a `kind: "series"` contract is shown to be exactly that shape, and a refused gate leaves no rollback machinery behind. | `TaskWorktreePreconditionTests` | mcp/tests/test_worktree_closeout_quality_gate.py:961-1074 |
-| The conflict refusal and the ordering proof that the mixed reset runs after it (`MERGE_HEAD` survives). | `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:1135-1193 |
-| The retry tree-equality proof that staging is recomputed per attempt rather than accumulated. | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:1199-1262 |
+| `CodeQualityGateTests` covers all three gate statuses, invocation, worktree import authority, stable report publication/overwrite on pass and fail, the `--diff-base` argument, the scrubbed wrapper environment, bounded exceptions, and interpreter selection. | `CodeQualityGateTests`, `test_gate_replaces_one_test_report_instead_of_accumulating_runs`, `test_gate_failure_includes_bounded_wrapper_output` | mcp/tests/test_worktree_quality_gate_runner.py:19-486; mcp/tests/test_worktree_quality_gate_runner.py:119-150; mcp/tests/test_worktree_quality_gate_runner.py:397-429 |
+| The argument spy proves both closeout entry points pass the checkout path, not the repository name. | `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:55-257 |
+| Closeout integration tests prove zero mutation on failure and quality-before-commit on success. | `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:55-257 |
+| The created-file/deleted-file scope cases: a created file must be linted, and the gate's `lint_paths` must equal the `.py` files of the commit tree. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:350-456 |
+| The linked-worktree precondition: a repository's own checkout is refused with its `add -p` selection and untracked files intact, a `kind: "series"` contract is shown to be exactly that shape, and a refused gate leaves no rollback machinery behind. | `TaskWorktreePreconditionTests` | mcp/tests/test_worktree_closeout_quality_gate.py:536-659 |
+| The conflict refusal and the ordering proof that the mixed reset runs after it (`MERGE_HEAD` survives). | `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:662-720 |
+| The retry tree-equality proof that staging is recomputed per attempt rather than accumulated. | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:726-789 |
 | The adapter under test: the three status constants plus wrapper-presence applicability and the preview that reports them. | `quality_environment` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:393-415 |
 | `quality_environment`, whose `git_environment()` base the selector test asserts. | `quality_environment` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:393-415 |
 | The unannotated call sites the spy guards, both passing `contract.code_worktree` and `diff_base=contract.code_base_commit`. The apply path now reaches the gate through `_gate_staged_code`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:789-845 |
@@ -285,7 +285,7 @@ about other repositories: a bare temp checkout stands in for a consuming reposit
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A checkout with no wrapper is reported as `wrapper-unavailable` rather than silently skipped, which is the consuming-repository case. | `test_preview_reports_missing_wrapper_instead_of_skipping_silently` | mcp/tests/test_worktree_closeout_quality_gate.py:77-93 |
+| A checkout with no wrapper is reported as `wrapper-unavailable` rather than silently skipped, which is the consuming-repository case. | `test_preview_reports_missing_wrapper_instead_of_skipping_silently` | mcp/tests/test_worktree_quality_gate_runner.py:51-67 |
 
 ### 260731-EFA-L17 — Mode, Cap, And Kill-Shape Assertions
 
@@ -301,6 +301,10 @@ asserts the apply path passes the targeted plan alongside
 `contract.code_worktree` and `contract.code_base_commit`.
 
 ## Update History
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: moved `CodeQualityGateTests` into
+  `test_worktree_quality_gate_runner.py`, retained closeout mutation/staging ownership here, and
+  regenerated all split-sensitive citations.
 
 - 2026-08-11T17:50+02:00 — 260731-EFA-L19 curator: recorded the pass/fail report
   assertions and the two-run replacement proof for one enclosure-local `test-results.md` without
@@ -324,18 +328,18 @@ asserts the apply path passes the targeted plan alongside
 - 2026-08-01T08:55+02:00 — 260731-EFA-L4 curator: this suite gained the staging half — four new
   classes at L452-L835, added because closeout now runs the gate over a **staged** worktree via
   cit:([`_gate_staged_code`], mcp/src/agents_remember/worktrees/modules/closeout.py:789-845). Recorded all four with the property each actually
-  asserts: cit:([`CloseoutGateSeesCreatedFilesTests`], mcp/tests/test_worktree_closeout_quality_gate.py:777-883) — the original defect in **both**
+  asserts: cit:([`CloseoutGateSeesCreatedFilesTests`], mcp/tests/test_worktree_closeout_quality_gate.py:350-456) — the original defect in **both**
   directions, a created file that must be linted and a deleted file that must stop being handed to
   ruff, closed by the equality `sorted(gate.lint_paths) == sorted(.py files in the commit tree)`,
-  with cit:([`_ScopeRecordingGate`], mcp/tests/test_worktree_closeout_quality_gate.py:785-820) running the wrapper's own `derive_scope` because a lesser
-  double would miss a defect that was never in ruff; cit:([`TaskWorktreePreconditionTests`], mcp/tests/test_worktree_closeout_quality_gate.py:961-1074) —
+  with cit:([`_ScopeRecordingGate`], mcp/tests/test_worktree_closeout_quality_gate.py:312-347) running the wrapper's own `derive_scope` because a lesser
+  double would miss a defect that was never in ruff; cit:([`TaskWorktreePreconditionTests`], mcp/tests/test_worktree_closeout_quality_gate.py:536-659) —
   the linked-worktree refusal, asserted as the damage that does not happen (the `add -p` selection
   survives, `secret.env` stays untracked with no object written, `status --porcelain` is
   byte-identical) plus the proof that `default_series_contract` really produces
   `code_worktree == repo_path`, plus the explicit no-rollback end state (no `index.lock`, no
-  `ar-closeout-index-*`); cit:([`ConflictedIndexTests`], mcp/tests/test_worktree_closeout_quality_gate.py:1135-1193) — the conflict refusal and the
+  `ar-closeout-index-*`); cit:([`ConflictedIndexTests`], mcp/tests/test_worktree_closeout_quality_gate.py:662-720) — the conflict refusal and the
   ordering proof that the mixed reset runs **after** it, established through `MERGE_HEAD` still
-  existing rather than through call bookkeeping; and cit:([`RetryStagesWhatAFirstRunWouldTests`], mcp/tests/test_worktree_closeout_quality_gate.py:1199-1262) — staging recomputed per attempt, asserted as tree equality against a worktree that
+  existing rather than through call bookkeeping; and cit:([`RetryStagesWhatAFirstRunWouldTests`], mcp/tests/test_worktree_closeout_quality_gate.py:726-789) — staging recomputed per attempt, asserted as tree equality against a worktree that
   never saw the refusal (`.dmypy.json` is this leaf's own history). Added the matching invariants
   and the fixture conventions (`_task_worktree` L570-L584 builds a real repository *and* a real
   linked worktree; `_conflicted_task_worktree` L587-L598 runs a real conflicting merge).

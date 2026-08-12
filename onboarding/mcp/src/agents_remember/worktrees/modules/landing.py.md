@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-21T05:30+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -138,7 +138,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The reducer composer that reads `status["landing"]` into the node. | "landing=[LandingRefNode" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:300-300 |
 | The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | `test_the_gh_probe_does_not_inherit_the_repository_selectors` — the direct assertion for the one probe the AST sweep cannot see. | `test_the_gh_probe_does_not_inherit_the_repository_selectors` | mcp/tests/test_landing.py:171-195 |
-| The package-wide AST sweep that covers the git spawns but deliberately not `gh` (`_spawns_git`; `test_a_program_that_merely_starts_with_git_is_not_git`). | "def _spawns_git"; "test_a_program_that_merely_starts_with_git" | mcp/tests/test_git_command.py:119-119; mcp/tests/test_git_command.py:528-528 |
+| The package-wide AST sweep that covers the git spawns but deliberately not `gh` (`_spawns_git`; `test_a_program_that_merely_starts_with_git_is_not_git`). | "def _spawns_git"; "test_a_program_that_merely_starts_with_git" | mcp/tests/test_git_command.py:124-124; mcp/tests/test_git_command.py:552-554 |
 | The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead. | `LandingStateRefresher`; "observe: LandingObserver = landing_refs" | mcp/src/agents_remember/serving/projections/landing_state.py:146-350 |
 
 ## Update History
