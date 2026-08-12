@@ -6,10 +6,14 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`|
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 
 ## Purpose
+
+### 260731-EFA-L23 Route Delta
+
+L23 documents guarded MCP citation repair, task-addressed asynchronous closeout/integration and cancellation, and exact `local`/`dagger` quality-executor policy with fail-closed selection.
 
 ### 260713-TES-L1 Rename — Settings And Harness Reference
 
@@ -169,6 +173,8 @@ That enclosure-local operational artifact is atomically replaced, combines repai
 and quality work with explicitly closeout-owned evidence, and is removed with the enclosure.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 documents guarded MCP citation repair, task-addressed asynchronous closeout/integration and cancellation, and exact `local`/`dagger` quality-executor policy with fail-closed selection. Verification provenance remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: corrected the
   settings-reference route from a mandatory 2 GiB cap to host-managed memory

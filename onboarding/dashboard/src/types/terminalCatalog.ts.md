@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/terminalCatalog.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-11T09:45+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -52,13 +52,14 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The wire row separates runtime identity, structural binding, and replacement. | `TerminalCatalogRow` | dashboard/src/types/terminalCatalog.ts:24-95 |
-| The task-document reference is shared with the projection contract. | `TaskDocumentRef` | dashboard/src/types/projection.ts:468-471 |
+| The task-document reference is shared with the projection contract. | `TaskDocumentRef` | dashboard/src/types/projection.ts:485-488 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current data-contract card for `terminalCatalog.ts` with task-document identity, qualified seat state, and terminal projections represented by this source.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the additive sprint-provenance wire fields and

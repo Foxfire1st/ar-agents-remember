@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtureOverrides.test.ts`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:20+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ being pinned is the `exactOptionalPropertyTypes`-off rule described in the TSCon
 | The builders whose parameters are being pinned. | `lifecycle`, `taskDoc`, `projection` | dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:329-345 |
 | The conversation builders, including the `capabilities`-required page the first probe attacks. | `conversationPage`, `conversationItem` | dashboard/src/test/fixtures/conversationWire.ts:209-226; dashboard/src/test/fixtures/conversationWire.ts:228-243 |
 | The current fixture-override regression deliberately supplies undeclared `refusedPolarity` to `lifecycle` and `createdAtButMisspelled` to `taskDoc`, and asserts two unknown-property diagnostics. | `refusedPolarity`; `createdAtButMisspelled`; "still rejects a field the mirror does not declare" | dashboard/src/test/fixtureOverrides.test.ts:45-46; dashboard/src/test/fixtureOverrides.test.ts:101-112 |
-| The schema distinction is deliberate: the full `TaskDocNode` legitimately carries `createdAt`; a master's `TaskSubTaskRefNode` does not and instead may carry `linkedLifecycleId`; `SeriesSubTaskNode` may carry `createdAt`; the contract type assertions pin the master/series distinction. | "class TaskDocNode(BaseModel):"; "class TaskSubTaskRefNode(BaseModel):"; "class SeriesSubTaskNode(BaseModel):"; "keeps the master and series sub-task row models distinct" | mcp/src/agents_remember/observer/projection.py:610-656; mcp/src/agents_remember/observer/projection.py:577-594; mcp/src/agents_remember/observer/projection.py:659-674; dashboard/src/test/contract.test.ts:477-507 |
+| The schema distinction is deliberate: the full `TaskDocNode` legitimately carries `createdAt`; a master's `TaskSubTaskRefNode` does not and instead may carry `linkedLifecycleId`; `SeriesSubTaskNode` may carry `createdAt`; the contract type assertions pin the master/series distinction. | "class TaskDocNode(BaseModel):"; "class TaskSubTaskRefNode(BaseModel):"; "class SeriesSubTaskNode(BaseModel):"; "keeps the master and series sub-task row models distinct" | dashboard/src/test/contract.test.ts:520-550; mcp/src/agents_remember/observer/projection.py:583-583; mcp/src/agents_remember/observer/projection.py:616-616; mcp/src/agents_remember/observer/projection.py:665-665 |
 
 ## Cross-Repo References
 

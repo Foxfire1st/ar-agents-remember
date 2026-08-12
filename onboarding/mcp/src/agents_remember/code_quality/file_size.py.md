@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/file_size.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`                                        |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                                        |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -37,10 +37,11 @@ Enforce the repository's File Size Budget standard: every file at or above the 1
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The enforcing rail in the project-owned wrapper. | `file_size` | mcp/src/agents_remember/code_quality/check.py:239-239 |
+| The enforcing rail in the project-owned wrapper. | `file_size` | mcp/src/agents_remember/code_quality/check.py:297-297 |
 | The arming boolean and measured scope. | `file_size_armed`; `size_paths` | mcp/src/agents_remember/code_quality/scope.py:34-34; mcp/src/agents_remember/code_quality/scope.py:120-136 |
 | The band-boundary and wiring suite. | `FileSizeBandsTests` | mcp/tests/test_file_size_detector.py:24-58 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the new detector; content derived from the current worktree source (armed rail per the L7 closeout). Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

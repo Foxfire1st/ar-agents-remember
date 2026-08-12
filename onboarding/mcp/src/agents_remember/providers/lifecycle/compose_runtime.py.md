@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle/compose_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -89,8 +89,8 @@ resolved `system/sources.md` currently contains no entries.
 | Compose rendering and execution use `docker compose --project-name <project> -f <base> -f -`, and `run_compose()` passes the rendered override through stdin. | `run_compose` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:72-84 |
 | Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, render `auto` host ports as Compose's empty published-port form, and require generated ownership labels before rendering provider resources. | `auto` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:98-141 |
 | `host_user()` uses `getattr()` plus `callable()` checks before reading POSIX uid/gid APIs, returning `None` on hosts that do not expose them. | `host_user` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:151-156 |
-| Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. | `container_managed_by_project`; `network_managed_by_project` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:173-174; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:202-203 |
-| Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks. | `remove_container_command`; `remove_network_command` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:206-207; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:210-211 |
+| Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. | `container_managed_by_project`; `network_managed_by_project` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:176-177; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:205-206 |
+| Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks. | `remove_container_command`; `remove_network_command` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:209-210; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:213-214 |
 
 ## Cross-Repo References
 
@@ -101,6 +101,7 @@ No meaningful cross-repo references found.
 | No cross-repo boundary is required beyond Docker/Compose runtime execution. | n/a | n/a |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 5 citation items; scoped citation check now passes.
 

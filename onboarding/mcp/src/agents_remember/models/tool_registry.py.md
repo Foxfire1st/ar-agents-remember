@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T12:15+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,6 +20,8 @@
 advertised public subset by excluding internal compatibility and administration operations.
 
 ## Code Commentary
+
+L23 registers response envelopes for `citation_fix` and `worktree_operation_cancel`, keeping the public registry aligned with the newly exposed tools.
 
 `TOOL_RESPONSE_MODELS` is typed as `dict[str, type[ResponseEnvelope]]`, preserving the strict versus
 provider-flexible response convention while allowing `_tool_payload` to set shared envelope fields
@@ -55,6 +57,8 @@ No external domain source governs this repository-local registry.
 | The choke point validates against this registry before emitting the envelope. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-11T12:15+02:00 — Reconciled the registry card with structural public responses and the
   expanded exact-id internal exclusion set. Verification remains pinned pending governed closeout.

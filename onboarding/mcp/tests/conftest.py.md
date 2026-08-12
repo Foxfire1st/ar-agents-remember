@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/conftest.py`                    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`
-| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -107,7 +107,7 @@ Git isolation directly.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Production owns the eight-selector inventory and the scrubbed Git environment built from it. | `GIT_REPOSITORY_SELECTOR_ENV`; `git_environment` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:76-82 |
+| Production owns the eight-selector inventory and the scrubbed Git environment built from it. | `GIT_REPOSITORY_SELECTOR_ENV`; `git_environment` | mcp/src/agents_remember/kernel/git_command.py:34-43; mcp/src/agents_remember/kernel/git_command.py:85-91 |
 | Route-index tests independently contaminate each selector and require identical output. | "test_ambient_git_repository_selectors_cannot_redirect_the_census"; "test_regular_checkout_and_linked_worktree_produce_identical_indexes" | mcp/tests/test_route_index.py:592-620; mcp/tests/test_route_index.py:822-850 |
 | Worktree fixture tests. |"test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_plan_uses_memory_worktree_settings"|mcp/tests/test_worktree_support_tests_1.py:1036-1036; mcp/tests/test_worktree_support_tests_2.py:122-122|
 | The explicit ownership register, snapshot/restore operations, and scoped preservation helper used by the autouse guard. | `OWNED_MUTABLE_STATES`; `snapshot_owned_mutable_state`; `restore_owned_mutable_state`; `preserve_owned_mutable_state` | mcp/tests/_global_state.py:33-39; mcp/tests/_global_state.py:42-43; mcp/tests/_global_state.py:46-54; mcp/tests/_global_state.py:57-64 |
@@ -124,6 +124,7 @@ No sibling repository defines the pytest bootstrap contract.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 replaced manual `XDG_CACHE_HOME` save/restore branches with `mock.patch.dict`; isolation semantics remain the same while unreachable test-only coverage branches are gone.
 - 2026-08-12T00:08+02:00 — Recorded worker-private XDG cache isolation for pytest-xdist and

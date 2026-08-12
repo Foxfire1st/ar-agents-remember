@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_arrival_guarantee.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:29+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -98,7 +98,7 @@ deliver-until-LANDED semantics are same-repository runtime behavior proven by so
 | The post-time re-resolution under test. | `_post_address`; `_is_owner_addressed` | mcp/src/agents_remember/serving/operator_inbox_posts.py:110-144; mcp/src/agents_remember/serving/operator_inbox_posts.py:176-193 |
 | The supersede tool under test. | `operator_inbox_supersede_tool` | mcp/src/agents_remember/application/operator_inbox_tools.py:153-180 |
 | The supersede transition under test. | `mark_superseded` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:265-293 |
-| Terminal inspectability under test. | `list_for_mailbox` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:117-148 |
+| Terminal inspectability under test. | `list_for_mailbox` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:160-187 |
 | Retention/cap eviction under test. | `inbox_keep_ids`; `evaluate_pending_expiry_findings` | mcp/src/agents_remember/controlplane/interaction_retention.py:140-163; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:175-198 |
 | Last-good settings loop under test. | `_agent_notifier_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:108-140 |
 | Relay-death watcher under test. | `post_relay_death_signal`; `relay_death_watch_loop` | mcp/src/agents_remember/serving/relay_death_watch.py:100-152; mcp/src/agents_remember/serving/relay_death_watch.py:167-174 |
@@ -118,6 +118,7 @@ The TTL/cap-eviction harness drops `OrchestrationNudgeStore` from the sweep cont
 sweep no longer owns a nudge store); the arrival-guarantee matrix itself is unchanged.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T14:29+02:00 — Re-read post-time owner rebinding and regenerated the
   `_post_address`/`_is_owner_addressed` ranges around their current declarations; verification

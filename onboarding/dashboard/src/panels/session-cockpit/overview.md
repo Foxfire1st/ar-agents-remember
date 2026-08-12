@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -400,7 +400,22 @@ site, `test/wireFixtureGuard.test.ts` refusing the one-token opt-outs), and `tes
 
 The session-cockpit route gained the L7 live-thinking coalescing (one stable `thinking` row per active turn, animated indicator, completion cleanup) and its interleaved acceptance pins in the conversation-timeline family. The file-size rail covers this route's TS/TSX under `dashboard/src`.
 
+## 260731-EFA-L23 — Hermetic Intent-Lock Test Teardown
+
+The conversation timeline's intent-lock suite now consumes the existing shared scroll-memory
+geometry fixture instead of maintaining a second timer/geometry harness. That fixture keeps fake
+timers active through React Testing Library cleanup, clears the Virtualizer's pending 150 ms
+debounce, and only then restores real time. This is a test-lifecycle boundary rather than a product
+behavior change: it prevents a deferred Virtualizer callback from escaping jsdom teardown after an
+otherwise-green dashboard run while preserving the same intent-lock, follow-on-growth, and
+latest-chip assertions.
+
 ## Update History
+
+- 2026-08-12T17:16+02:00 — 260731-EFA-L23 dashboard-gate repair: reconciled the parent cockpit
+  route with the intent-lock suite's shared hermetic geometry/timer fixture and its cleanup-before-
+  real-time ordering. Focused Vitest remains 10/10 with no unhandled teardown error; production
+  session-cockpit behavior is unchanged.
 
 - 2026-08-12T00:28+02:00 — No route impact: `BusPane.test.tsx` now waits for its already-expected
   final developer-reply acknowledgment so the legitimate intermediate `posting…` render cannot

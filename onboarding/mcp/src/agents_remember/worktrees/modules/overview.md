@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-08-11T22:28+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -21,6 +21,15 @@ argument wiring while preserving the public facade import path. Reopen is delibe
 merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the leaf doc's lifecycle).
 
 ## Hot Path Summary
+
+L23 makes quality execution an explicit `QualityGatePlan.executor` choice. `code_quality_gate.py`
+keeps local execution as one exact mode and delegates clean execution to
+`clean_quality_executor.py`, which materializes the immutable staged candidate into a pinned
+Dagger graph, streams progress, and replaces the enclosure's latest reports. `closeout.py` and
+`integrate.py` pass operation progress and candidate identity through the existing synchronous
+mutation path; they do not own detached process identity. `git.py` captures and later rechecks the
+candidate with an isolated Git index so asynchronous delay cannot change what accepted approval
+authorizes.
 
 - `git.py` owns this route's Git vocabulary — the typed helpers and small repository
   state checks every operation module speaks — but **since 260731-EFA-L3 it no longer
@@ -302,7 +311,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:392-400; mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:350-456 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/models/worktree.py:81-81 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:20-20; mcp/src/agents_remember/models/worktree.py:82-82 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:562-671 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
@@ -618,6 +627,7 @@ and `worktrees/modules/contract_reader.py` implements the kernel resolver's `Con
 The closeout/integrate/guidance machinery is unchanged in behavior.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: documented explicit local/Dagger quality execution, immutable candidate capture, and lifecycle progress threading through closeout/integration; verification provenance remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24: made the master full-
   gate resource policy host-managed by default while retaining an explicit cap
@@ -722,9 +732,9 @@ The closeout/integrate/guidance machinery is unchanged in behavior.
   **L179** (`quality_environment` gained a docstring above them); `landing.py::_pr_for` was cited at
   L104, which is inside the `gh` argv rather than at the definition — now **L93**. **Two new
   route-visible facts:** `quality_environment`
-  (cit:([`quality_environment`], mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:393-415))
+  (cit:([`quality_environment`], mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:554-584))
   now builds from `git_environment()`
-  (cit:(["def git_environment() -> dict[str"], mcp/src/agents_remember/kernel/git_command.py:76-76))
+  (cit:(["def git_environment() -> dict[str"], mcp/src/agents_remember/kernel/git_command.py:85-85))
   instead of `dict(os.environ)`, so the spawned quality wrapper no longer inherits the eight
   repository selectors — the gate decides which repository gets certified and must not depend on a
   child process behaving; and `_pr_for`'s `gh pr list` spawn now passes `env=git_environment()`

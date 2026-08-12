@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -59,6 +59,7 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-09T13:00+02:00 — 260713-TES-L5 curator completion round (reviewer delta R-D1):
@@ -91,7 +92,7 @@ No cross-repository implementation dependency governs this file.
   cit:(["def write_expectation_row("], mcp/src/agents_remember/controlplane/expectation_rows.py:350-350), `find_by_source`/`overdue` L219-L248 (L219, L237), `append` L165-L169 (L165), the
   read pair L137-L144; L171-L217 (`_pending_rows` L137, `read` L171, `read_for_projection` L185,
   `pending` L212, `pending_for_projection` L215), `compact` L286-L334 (L286, `_compact_locked` L299,
-  `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:193-193). The **10.20 percent** figure
+  `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:195-195). The **10.20 percent** figure
   is now attributed rather than asserted: it appears only in the `durable_store.py` docstring, unlike
   31.45 percent and 11.50 percent, which several independent sites carry. Named the harness that
   produces a loss rate and recorded that no base-commit run of it is stored in the tree, so a reader

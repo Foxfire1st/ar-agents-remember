@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_rebinding_mechanics.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T00:08+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,15 +36,15 @@ stale-snapshot authority, in-flight supersession, and delivery to the replacemen
 - `ActionSkipBranchTests` cit:([`ActionSkipBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:226-493) — rebind/rebind-expired/expire/unresolved
   skip branches, replacement-appeared reroute, missing-entry silence, and the stale-sweep
   idempotent-false branch asserting final store states.
-- `EvaluationBranchTests` cit:([`EvaluationBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:495-545) — unparseable death stamps keep the grace
+- `EvaluationBranchTests` cit:([`EvaluationBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:495-544) — unparseable death stamps keep the grace
   unmeasured; running seats have no death stamp; unparseable created-at skips pending expiry.
-- `KeepRetentionBranchTests` cit:([`KeepRetentionBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:547-596) — legacy consumed marker retention,
+- `KeepRetentionBranchTests` cit:([`KeepRetentionBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:547-595) — legacy consumed marker retention,
   terminal-marker retention windows, and immediate ladder-resolved drops.
 - `LoopModeTests` cit:([`LoopModeTests`], mcp/tests/test_inbox_rebinding_mechanics.py:598-667) — loop/cadence behavior for the last-good settings and
   relay-death surfaces.
 - `LegacyLandedFoldTests` cit:([`LegacyLandedFoldTests`], mcp/tests/test_inbox_rebinding_mechanics.py:669-788) — a pre-migration by-rule state-signal
   row folds into the formal `landed` state exactly once (`_fold_legacy_landed`, N13).
-- `CapFillBranchTests` cit:([`CapFillBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:790-836) — terminal markers fill the remaining cap slots
+- `CapFillBranchTests` cit:([`CapFillBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:790-835) — terminal markers fill the remaining cap slots
   newest-first (D4 eviction class).
 - `StaleSnapshotTerminalAuthorityTests` cit:([`StaleSnapshotTerminalAuthorityTests`], mcp/tests/test_inbox_rebinding_mechanics.py:838-942) — the F1
   shapes: concurrent supersede survives a stale landing append; concurrent landed survives a
@@ -117,6 +117,7 @@ All four sweep-context builders drop `OrchestrationNudgeStore`; no harness needs
 the sweep no longer nudges. Rebind/grace/expiry mechanics are unchanged.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T00:08+02:00 — Replaced the obsolete spawn-provenance/role-mailbox description with
   current task-document containment and unique-occupant refusal semantics; the transition subtest's

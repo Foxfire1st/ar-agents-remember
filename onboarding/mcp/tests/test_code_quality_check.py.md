@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T00:08+02:00               |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -34,6 +34,18 @@ the active interpreter, which lets linked worktrees reuse the primary checkout
 virtualenv without losing third-party import resolution.
 L22 adds direct regressions that targeted configuration preserves the repository file-size arm and
 that both development dependency entry points carry the same exact Ruff version.
+
+### L23 Enclosure Progress-Report Configuration
+
+The targeted-configuration regression now also defines every report-related CLI seam explicitly,
+sets `AR_QUALITY_PROGRESS_REPORT`, and proves `config_from_args` derives the enclosure-owned
+`progress_report` path while retaining the repository file-size arm. This pins the environment
+fallback branch that clean and local quality executors share: a caller may omit the CLI report
+argument, but the configured enclosure report must still reach the resulting quality configuration.
+The same regression then supplies an explicit `args.progress_report` while the environment remains
+set and proves that explicit path wins. Together the two calls pin both sides of the precedence
+boundary—CLI selection first, environment only when the CLI seam is absent—without adding a second
+configuration owner.
 
 ### Repository-Gate Parity After The Hook Split (260731-EFA-L1)
 
@@ -201,15 +213,16 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths` | mcp/src/agents_remember/code_quality/check.py:262-308; mcp/src/agents_remember/code_quality/scope.py:111-111 |
+| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths` | mcp/src/agents_remember/code_quality/check.py:320-366; mcp/src/agents_remember/code_quality/scope.py:111-111 |
 | The changed-lines coverage floor the full tier carries, and its own behavioural suite. | "DEFAULT_DIFF_COVERAGE_FLOOR = 100.0"; "Score the changed lines, or report why there is nothing to score."; "def test_a_diff_below_the_floor_fails_the_wrapper(self) -> None:"; "def test_the_floor_runs_inside_the_wrapper_rather_than_beside_it(self) -> None:" | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317; mcp/tests/test_diff_coverage.py:570-585; mcp/tests/test_diff_coverage.py:629-659 |
 | CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | `complexity_blocks`, `calculate_scores` | mcp/src/agents_remember/code_quality/crap_calculator.py:232-239; mcp/src/agents_remember/code_quality/crap_calculator.py:294-305 |
-| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:461-474; pyproject.toml:34-38 |
+| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:540-553; pyproject.toml:34-38 |
 | The complexity-selection and branch-coverage settings this suite reads. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true" | pyproject.toml:17-17; pyproject.toml:67-70 |
 | The pytest configuration this suite reads. | `testpaths` | pyproject.toml:119-119 |
 | An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`, `test_python_coverage_and_test_rails_reach_their_trees` | mcp/tests/test_gate_scope.py:152-173; mcp/tests/test_gate_scope.py:175-194 |
 | The shared tiered hook body scanned by the parity test; the full tier invokes the wrapper. | "dashboard_checks() {" | .githooks/_gate.sh:120-291 |
 | CI defines a workflow for pull requests. | "pull_request" | .github/workflows/quality-checks.yml:3-58 |
+| The targeted configuration regression pins both environment fallback and explicit-argument precedence for the enclosure progress report. | `test_targeted_config_keeps_the_repository_file_size_arm`, "self.assertEqual(explicit_config.progress_report, explicit_progress_report)" | mcp/tests/test_code_quality_check.py:110-163 |
 
 ### 260731-EFA-L17 — The Pre-Push Tier Is Targeted
 
@@ -222,6 +235,17 @@ for a wrapper reach and no CRAP opt-out, but the hook tier assertions now expect
 manual tier only.
 
 ## Update History
+
+- 2026-08-12T17:27+02:00 — 260731-EFA-L23 final Dagger diff-coverage repair: expanded the existing
+  targeted-configuration test with the complementary explicit-progress-report call, proving the CLI
+  path wins even while `AR_QUALITY_PROGRESS_REPORT` is set. Focused pytest is 1/1; verification
+  provenance remains closeout-owned.
+
+- 2026-08-12T16:28+02:00 — 260731-EFA-L23 final diff-coverage repair: extended the existing
+  targeted-configuration regression to prove environment-derived progress-report ownership and
+  to define the optional coverage/progress/pytest-report arguments explicitly. Focused test proof
+  belongs to the code change; verification provenance remains closeout-owned.
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: recorded the targeted file-size-arm and exact
   Ruff-pin regressions; refreshed shifted ranges after inserting them.

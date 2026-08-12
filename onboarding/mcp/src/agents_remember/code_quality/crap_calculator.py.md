@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/crap_calculator.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -158,12 +158,13 @@ than an impossible percentage.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Unit tests cover the CRAP formula, function-span coverage intersection, branch-arc parsing, and missing coverage data behavior. | `CrapCalculatorTests` | mcp/tests/test_crap_calculator.py:17-235 |
-| The wrapper runs CRAP from pytest coverage JSON, lists every offender, and declares its two Radon steps reports. | "def derive_scope" | mcp/src/agents_remember/code_quality/check.py:73-73 |
+| The wrapper runs CRAP from pytest coverage JSON, lists every offender, and declares its two Radon steps reports. | "def derive_scope" | mcp/src/agents_remember/code_quality/check.py:77-77 |
 | The changed-lines coverage floor reuses this module's coverage reader and inherits its branch-data refusal. | "class DiffCoverage" | mcp/src/agents_remember/code_quality/diff_coverage.py:57-57 |
 | `[tool.coverage.run] branch = true` is set here, with the measured effect on the aggregate recorded beside it. | "[tool.coverage.run]" | pyproject.toml:67-67 |
 | Development tool guidance documents the source quality wrapper and CRAP-Calculator command flow. | `# Coding Tools & Repo Notes` | system/tools.md:1-349 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

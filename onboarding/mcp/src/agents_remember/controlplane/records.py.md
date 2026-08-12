@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/records.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T18:30+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`         |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`         |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -17,6 +17,8 @@ append-only, attributed snapshot of a decision point on a lifecycle — plus the
 pure helpers that open and decide gates.
 
 ## Code Commentary
+
+L23 records the plane-private `appliedOperation` fingerprint when consuming a gate. It supports same-operation recovery without projecting or accepting that identity at the agent boundary.
 
 `GATE_RECORD_SCHEMA` is the versioned wire tag. `GateKind` (slice 09 extends it to
 the full l-01 gate spine: plan-approval | worktree-intent | closeout-approval |
@@ -120,6 +122,8 @@ As of the 260703-L8 seam ruling the GateKind vocabulary includes `master-handove
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Updated the structural gate-model ownership path after the old flat
   `models/gates.py` module was retired.

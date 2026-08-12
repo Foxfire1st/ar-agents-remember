@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-11T14:40+02:00                                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                 |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                 |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -68,15 +68,16 @@ ledger and commits memory and is gated on clean drift unless `accept_drift=true`
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The payload builders for the carryover plan and report-filing apply pair. | `memory_carryover_plan_payload`; `memory_carryover_apply_payload` | mcp/src/agents_remember/mcp/tools/memory.py:163-174; mcp/src/agents_remember/mcp/tools/memory.py:177-198 |
+| The payload builders for the carryover plan and report-filing apply pair. | `memory_carryover_plan_payload`; `memory_carryover_apply_payload` | mcp/src/agents_remember/mcp/tools/memory.py:186-197; mcp/src/agents_remember/mcp/tools/memory.py:200-221 |
 | The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:478-484 |
 | The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:491-507 |
 | The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:510-516 |
-| Baseline branch packing and drift gating are proved by `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift`. | `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift` | mcp/tests/test_mcp_registration_wiring_tests_1.py:362-378 |
+| Baseline branch packing and drift gating are proved by `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift`. | `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift` | mcp/tests/test_mcp_registration_wiring_tests_1.py:382-398 |
 | Carryover selection packing is proved by `test_memory_carryover_plan_packs_the_selection`. | `test_memory_carryover_plan_packs_the_selection` | mcp/tests/test_mcp_registration_wiring_tests_1.py:380-404 |
 | Apply intent and default-message packing is proved by `test_memory_carryover_apply_carries_the_intent_note_and_default_messages`. | `test_memory_carryover_apply_carries_the_intent_note_and_default_messages` | mcp/tests/test_mcp_registration_wiring_tests_1.py:406-427 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T16:54+02:00 — Documented the single enclosure-local checklist side effect and the
   curator-specific zeroable count/status while preserving code/memory read-only behavior.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -90,7 +90,7 @@ code and refresh the new sidecars to the real code commit hash.
 | Resolver helpers provide storage/path-rule decisions. | "def resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:129-129 |
 | Tests cover untracked, staged, excluded, and renamed file cases. | `MissingOnboardingTests` | mcp/tests/test_missing_onboarding.py:22-154 |
 | The kernel filesystem helper handles long-path sidecar and source probes. | "def absolute_path" | mcp/src/agents_remember/kernel/filesystem.py:10-10 |
-| `run_git` — the single runner `require_git` wraps — owns the selector scrubbing, the DEVNULL stdin and the timeout classes. | "def run_git" | mcp/src/agents_remember/kernel/git_command.py:85-85 |
+| `run_git` — the single runner `require_git` wraps — owns the selector scrubbing, the DEVNULL stdin and the timeout classes. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:94-145 |
 
 ## Update History
 

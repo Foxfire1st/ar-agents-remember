@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/wireFixtureGuard.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:50+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -194,7 +194,7 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 | `excessPropertyVerdict` — undeclared properties, and the union blend no single member declares. | `excessPropertyVerdict` | dashboard/src/test/wireFixtureGuard.ts:609-658 |
 | `reconcileWithRegistry` — unregistered / spent / miscounted / unreasoned. | `reconcileWithRegistry` | dashboard/src/test/wireFixtureGuard.ts:673-693 |
 | The registry, planted bypasses and vacuity checks this module deliberately does not own. | `SANCTIONED_WIRE_SITES` | dashboard/src/test/wireFixtureGuard.test.ts:51-188 |
-| `SubTaskRow` and the two `extra="forbid"` models whose collapse the union rule reproduces. | `SubTaskRow` | dashboard/src/types/projection.ts:523-523 |
+| `SubTaskRow` and the two `extra="forbid"` models whose collapse the union rule reproduces. | `SubTaskRow` | dashboard/src/types/projection.ts:540-540 |
 | Gap 3, live: the first line is a "Same-origin client for …" header, not a `mirror of` marker, so nothing this module declares enters the vocabulary. | `ChangedFile` | dashboard/src/data/changeset.ts:12-18 |
 | Same, for the read-only files API client. | `RepoCatalogEntry` | dashboard/src/data/files.ts:22-26 |
 | Same, for the coordination-notes API client. | `NoteEntry` | dashboard/src/data/notes.ts:10-15 |
@@ -213,6 +213,7 @@ devDependency rather than a system boundary.
 | The scanned roots are all inside `dashboard/`; nothing outside this repository is read. | `SCANNED_ROOTS` | dashboard/src/test/wireFixtureGuard.ts:136-136 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: corrected 1 citation range: `SubTaskRow` is declared at types/projection.ts L515 (was L505). All other rows and prose citations were already resolved. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 

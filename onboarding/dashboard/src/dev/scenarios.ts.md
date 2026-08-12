@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/scenarios.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:40+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -132,7 +132,7 @@ the reviewed task evidence for any current behavioral claim.
 | `EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra="forbid"` model. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:791-810 |
 | `engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states). | `engineRoomProjection`, `GALLERY` | dashboard/src/dev/fixtures.ts:135-144; dashboard/src/dev/fixtures.ts:146-490 |
 | Consumed by the player transport + the bench picker. | `Bench`, `applyFrame` | dashboard/src/dev/Bench.tsx:18-83; dashboard/src/dev/ScenarioPlayer.tsx:12-17; dashboard/src/dev/ScenarioPlayer.tsx:27-27 |
-| `WorkspaceProjection` / `ObserverEvent` types each frame carries. | `WorkspaceProjection`, `ObserverEvent` | dashboard/src/types/event.ts:9-22; dashboard/src/types/projection.ts:525-537 |
+| `WorkspaceProjection` / `ObserverEvent` types each frame carries. | `WorkspaceProjection`, `ObserverEvent` | dashboard/src/types/event.ts:9-22; dashboard/src/types/projection.ts:542-554 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -151,6 +151,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 

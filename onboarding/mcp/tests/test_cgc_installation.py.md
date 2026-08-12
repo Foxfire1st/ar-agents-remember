@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cgc_installation.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                         |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -106,13 +106,13 @@ No external documentation is needed for these unit tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared fixtures build a synthetic coordination root and settings file for a single `codegraphcontext-code` provider instance and parse `cgc` args through the real lifecycle parser. | `cgc` | mcp/tests/test_cgc_installation.py:22-98 |
+| Shared fixtures build a synthetic coordination root and settings file for a single `codegraphcontext-code` provider instance and parse CGC arguments through the real lifecycle parser. | `_parse_cgc` | mcp/tests/test_cgc_installation.py:22-98 |
 | The scoped install dry-run asserts the result shape, absence of `doctor`/`backend` keys, and the two planned Compose commands (image build, then doctor run). | `test_scoped_install_dry_run_returns_expected_shape_without_docker` | mcp/tests/test_cgc_installation.py:102-125 |
 | The dry-run side-effect test proves the runtime root and state file are not materialized because preflight short-circuits before the layout is ensured. | `test_dry_run_does_not_create_runtime_layout_on_disk` | mcp/tests/test_cgc_installation.py:127-137 |
 | The no-`--repo-id` install dry-run routes to install-all and asserts the aggregated action, backend ok flag, repo count, and per-repo `install` result. | `test_install_all_dry_run_aggregates_per_repo_results` | mcp/tests/test_cgc_installation.py:139-163 |
 | The preflight dry-run returns no executed/backend results and an early result carrying `dryRun`, `ok`, the `install` action, and the planned commands. | `test_preflight_dry_run_returns_dry_run_result_and_no_executed_results` | mcp/tests/test_cgc_installation.py:167-181 |
 | The doctor dry-run asserts the named check order, the failing runner-image check and overall verdict, and the Compose doctor command plan. | `test_doctor_dry_run_assembles_named_checks_without_docker` | mcp/tests/test_cgc_installation.py:185-229 |
-| The runtime containment check passes for a coordination-rooted runtime and reports `outsideSourceRepo`. | `outsideSourceRepo` | mcp/tests/test_cgc_installation.py:231-240 |
+| The runtime containment check passes for a coordination-rooted runtime and reports `outsideSourceRepo`. | `outsideSourceRepo` | mcp/tests/test_cgc_installation.py:249-249 |
 
 ## Cross-Repo References
 
@@ -123,6 +123,7 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped CGC-installation test citations; final exact frozen-snapshot check is clean.
 - 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed

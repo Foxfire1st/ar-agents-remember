@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/authority.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                         |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -64,12 +64,13 @@ Two module-level helpers operate on an `McpRuntimeConfig`:
 | --- | --- | --- |
 | `RepositoryScope`, `McpRuntimeConfig`, `allowed_repo_ids`, `coordination_root`, and `path_is_relative_to` are defined here. | "class RepositoryScope:" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:76-81; mcp/src/agents_remember/kernel/primitives/runtime_config.py:113-133; mcp/src/agents_remember/kernel/primitives/runtime_config.py:635-640 |
 | `AuthorityError` is the authority-violation error type raised by both guards. | `AuthorityError` | mcp/src/agents_remember/errors.py:17-23 |
-| Worktree application entry points consume these guards for repo resolution and path confinement. | "from agents_remember.kernel.authority import require_repo" | mcp/src/agents_remember/application/worktree_tools.py:10-10; mcp/src/agents_remember/application/worktree_tools.py:90-90; mcp/src/agents_remember/application/worktree_tools.py:250-256 |
+| Worktree application entry points consume these guards for repo resolution and path confinement. | "from agents_remember.kernel.authority import require_repo" | mcp/src/agents_remember/application/worktree_tools.py:11-11 |
 | Provider application entry points route repo validation through "from agents_remember.kernel.authority import require_repo". | "from agents_remember.kernel.authority import require_repo" | mcp/src/agents_remember/application/provider_tools.py:11-11; mcp/src/agents_remember/application/provider_tools.py:438-438; mcp/src/agents_remember/application/provider_tools.py:468-468 |
 | Authority guard returning the repository scope for a configured `repo_id` or raising `AuthorityError`. | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
 | Authority guard resolving and confining a caller value to the coordination root. | `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:27-35 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

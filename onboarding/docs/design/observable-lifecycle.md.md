@@ -6,8 +6,8 @@
 | path                   | `docs/design/observable-lifecycle.md`   |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-08T23:59+02:00                      |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                           |
 
 ## Governing Overview
@@ -48,10 +48,11 @@ metrics and compact normally.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Retention policy implementation follows this design split. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
-| Projection readers apply interaction TTL and pickup feedback. | "def read_agent_pickups(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:140-140 |
+| Projection readers apply interaction TTL and pickup feedback. | "def read_agent_pickups(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:142-142 |
 | MCP `lifecycle_gate` exposes the unified public gate junction. | `lifecycle_gate_tool` | mcp/src/agents_remember/application/gate_tools.py:384-454 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 3 citation entries (6 findings); no Tier-3 findings.
 

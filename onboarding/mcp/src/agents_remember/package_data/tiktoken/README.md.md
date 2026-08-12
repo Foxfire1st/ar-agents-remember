@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/tiktoken/README.md`      |
 | doc_type               | `file-level-onboarding`                                        |
 | lastUpdated            | 2026-07-31T20:52+02:00                                         |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                     |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                     |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../../overview.md`                                      |
 
 ## Governing Overview
@@ -115,13 +115,14 @@ test that re-derives its two hashes.
 | `TiktokenTokenCounter` is the production counter that reads the verified vocabulary. | `TiktokenTokenCounter` | mcp/src/agents_remember/models/tokens.py:183-202 |
 | `DEFAULT_TOKEN_COUNTER` constructs the default token counter at module scope. | `DEFAULT_TOKEN_COUNTER` | mcp/src/agents_remember/models/tokens.py:205-205 |
 | The `-text` attribute this README says must be renamed on refresh, with a comment that points back at this file and names the test that stays red until it is renamed. | "-text" | .gitattributes:12-13 |
-| The `package-data` glob is recursive, so whatever is present under `package_data` at build time ships — which is how this blob reaches an installed wheel or sdist; the same file pins the tiktoken range the vendored bytes must satisfy (`tiktoken>=0.12,<1`). | "tiktoken>=0.12"; "package_data/**/*" | mcp/pyproject.toml:26-26; mcp/pyproject.toml:84-84 |
+| The `package-data` glob is recursive, so whatever is present under `package_data` at build time ships — which is how this blob reaches an installed wheel or sdist; the same file pins the tiktoken range the vendored bytes must satisfy (`tiktoken>=0.12,<1`). | "tiktoken>=0.12"; "package_data/**/*" | mcp/pyproject.toml:26-26; mcp/pyproject.toml:86-86 |
 | The test that re-derives both hashes from the installed tiktoken and additionally asserts `VENDORED_VOCABULARY_SHA256` equals the one tiktoken asks for, so a moved URL cannot silently fall back to the network and the loader's copy of the digest cannot become a second source of truth. | "test_the_shipped_file_is_the_one_tiktoken_asks_for" | mcp/tests/test_cold_start.py:222-244 |
 | The test that pins the `.gitattributes` `-text` entry to the file actually shipped — the enforcement behind this README's refresh instruction. | "test_the_gitattributes_entry_names_the_shipped_file" | mcp/tests/test_cold_start.py:246-259 |
 | The corruption cases this README describes, each applied to a *copy* in a temp directory and never to the blob here: CRLF-mangled, truncated to half its bytes, one flipped byte through the production `TiktokenTokenCounter()` entry point. | `CorruptVendoredVocabularyTests` | mcp/tests/test_cold_start.py:334-417 |
 | The contrast the README draws: the cockpit bundle and its fingerprint sidecar are git-ignored, while this content-addressed blob is committed. | "this file is committed"; "/mcp/src/agents_remember/package_data/dashboard/" | mcp/src/agents_remember/package_data/tiktoken/README.md:64-67; .gitignore:19-24 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the hash/provenance paragraph through local verifier evidence, narrowed the module-scope row, and regenerated both final ranges with the scoped fixer.
 

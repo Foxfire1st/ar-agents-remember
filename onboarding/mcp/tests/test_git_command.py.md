@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_git_command.py`            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405` |
-| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ test anywhere could observe a call site that failed to strip them, because the h
 removed the hazard. So cit:([`_selectors`], mcp/tests/test_git_command.py:146-157) builds a dict pointing all eight selectors at a
 decoy repository, and every redirection test re-**sets** them inside its own `patch.dict` scope,
 deliberately defeating the conftest strip. `DecoyRepositoryTests` even asserts the re-set took
-(cit:(["self.assertTrue(set(GIT_REPOSITORY_SELECTOR_ENV).issubset(os.environ))"], mcp/tests/test_git_command.py:178-181)) before exercising
+(cit:(["self.assertTrue(set(GIT_REPOSITORY_SELECTOR_ENV).issubset(os.environ))"], mcp/tests/test_git_command.py:182-182)) before exercising
 production. These tests pass because production strips, not because the harness did.
 
 cit:([`DecoyRepositoryTests`], mcp/tests/test_git_command.py:160-216) is the core suite. `_init()`/cit:([`_commit`], mcp/tests/test_git_command.py:81-85) build two real
@@ -69,7 +69,7 @@ decode contract. The second path calls the worktree facade and proves its raised
 the literal escape and can be encoded by `json.dumps(..., ensure_ascii=False)`, pinning the exact MCP
 serialization failure that interrupted L22 closeout without weakening the internal Git representation.
 
-cit:([`RemoteBranchStallTests`], mcp/tests/test_git_command.py:318-349) patches `cleanup.run_git` and proves the two remote-talking
+cit:([`RemoteBranchStallTests`], mcp/tests/test_git_command.py:357-388) patches `cleanup.run_git` and proves the two remote-talking
 calls in `delete_remote_branch_if_present` — which previously ran with no timeout at all — now
 degrade a stall into the already-handled `{"remote_deleted": False, "reason": "remote-unreachable"}`
 result, and that both calls carry `GIT_REMOTE_TIMEOUT_SECONDS` as a keyword.
@@ -100,17 +100,17 @@ what makes it exercisable on synthetic sources rather than only on the real tree
   `arg is None` and is explicitly **not** proof — the sweep sees the splat, never its contents.
 
 cit:([`SingleRunnerTests`], mcp/tests/test_git_command.py:417-489) is the decay guard built on them. `_package_modules()`
-(cit:([`_package_modules`], mcp/tests/test_git_command.py:444-449))
+(cit:([`_package_modules`], mcp/tests/test_git_command.py:483-488))
 skips `package_data` because those are runtime assets executed outside this process.
-cit:([`test_no_module_spawns_git_with_the_ambient_environment`], mcp/tests/test_git_command.py:451-470) reports any spawn that
-`_spawns_git` and not `_passes_env`; cit:([`test_only_the_kernel_module_defines_a_git_runner`], mcp/tests/test_git_command.py:472-489)
+cit:([`test_no_module_spawns_git_with_the_ambient_environment`], mcp/tests/test_git_command.py:490-509) reports any spawn that
+`_spawns_git` and not `_passes_env`; cit:([`test_only_the_kernel_module_defines_a_git_runner`], mcp/tests/test_git_command.py:511-528)
 asserts the set of modules that spawn git is exactly `["kernel/git_command.py"]`. The class docstring
 (cit:([`SingleRunnerTests`], mcp/tests/test_git_command.py:417-489)) states the reach exactly rather than assuming it, and names the one remaining hole.
 
 cit:([`SingleRunnerGuardReachTests`], mcp/tests/test_git_command.py:492-571) is the guard on the guard, and it exists for a specific
 reason: `SingleRunnerTests` passes by reporting an **empty offender list**, which is also exactly what
 it reports when the sweep cannot see the offender. A hole does not look like a failure, it looks like
-a clean tree. cit:([`_offenders`], mcp/tests/test_git_command.py:503-511) reruns the guard's own composition
+a clean tree. cit:([`_offenders`], mcp/tests/test_git_command.py:542-550) reruns the guard's own composition
 (`_spawns_git(node) and not _passes_env(node)` over `_spawn_calls(tree)`) against a source string, so
 each bypass form can be planted and the expected line numbers asserted. Three previously-open blind
 spots are closed and pinned here:
@@ -136,7 +136,7 @@ The limitation is stated, not closed, and this test is what stops the documented
 quietly ceasing to be the true one.
 
 cit:([`TimeoutClassTests`], mcp/tests/test_git_command.py:574-684) asserts that the timeout class belongs to the **command**, not to the
-module holding the call. cit:([`_recorder`], mcp/tests/test_git_command.py:585-604) is a `run_git` stand-in recording
+module holding the call. cit:([`_recorder`], mcp/tests/test_git_command.py:624-643) is a `run_git` stand-in recording
 `(command, timeout)` per call, and its `timeout` is a **required keyword-only** parameter on purpose:
 a call site that leaves the band to the runner's default fails the recorder rather than quietly
 recording that default.
@@ -163,7 +163,7 @@ outside: `benchmarks/runner_modules/commands.py` routes every command through th
 (`clone`, `checkout --detach`, `reset --hard`, `clean -fdx`). L672-L689 runs a real `reset --hard`
 against `real` with the selectors pointing at `decoy` and asserts the decoy's uncommitted work
 survives; L690-L702 proves `repo_has_commit` answers from the named repository.
-cit:([`RunnerArgvTests`], mcp/tests/test_git_command.py:794-823) pins the argv-facing half of the same module: the repository is named to
+cit:([`RunnerArgvTests`], mcp/tests/test_git_command.py:857-886) pins the argv-facing half of the same module: the repository is named to
 git itself and not only through `cwd`, a `work_dir` aims the process while the repository stays the
 subject, and `core.longpaths=true` really reaches git.
 
@@ -181,8 +181,8 @@ from `kernel.git_command`, so the suite cannot drift from the inventory and boun
 Every test docstring or leading comment names the concrete defect it encodes rather than restating
 the assertion.
 
-Two seams exist purely so the tests can be tested: cit:([`_offenders`], mcp/tests/test_git_command.py:503-511) replays the guard's own
-sweep composition against a source string, and cit:([`_recorder`], mcp/tests/test_git_command.py:585-604) makes `timeout` a required
+Two seams exist purely so the tests can be tested: cit:([`_offenders`], mcp/tests/test_git_command.py:542-550) replays the guard's own
+sweep composition against a source string, and cit:([`_recorder`], mcp/tests/test_git_command.py:624-643) makes `timeout` a required
 keyword so an unclassed call site fails rather than silently recording the default. Both are only
 possible because the four sweep helpers sit at module level
 (cit:([`_spawn_aliases`], mcp/tests/test_git_command.py:88-101)) rather than inside
@@ -203,15 +203,15 @@ possible because the four sweep helpers sit at module level
 - The computed-argv blind spot is **deliberate and pinned**, not deferred: `_spawns_git` reads the
   argv list literal at the call site, so `argv = [...]; subprocess.run(argv)` is invisible.
   `test_a_computed_argv_is_this_sweeps_documented_blind_spot`
-  (cit:([`test_a_computed_argv_is_this_sweeps_documented_blind_spot`], mcp/tests/test_git_command.py:563-571))
+  (cit:([`test_a_computed_argv_is_this_sweeps_documented_blind_spot`], mcp/tests/test_git_command.py:602-610))
   asserts that `[]`. Closing it
   means deleting that test; leaving it open means any module in that shape owes a direct suite.
 - The sweep matches argv heads named `git` only. A non-git spawn that nevertheless resolves a
   repository through git — currently just `landing.py`'s `gh pr list` — is outside it by design
-  (cit:([`test_a_program_that_merely_starts_with_git_is_not_git`], mcp/tests/test_git_command.py:552-554)) and carries its own assertion
+  (cit:([`test_a_program_that_merely_starts_with_git_is_not_git`], mcp/tests/test_git_command.py:591-593)) and carries its own assertion
   in `test_landing.py`.
 - Timeout bands are asserted per command, not per module. A command called from two kernel modules
-  must get one bound cit:([`test_one_command_means_one_bound_across_the_kernel`], mcp/tests/test_git_command.py:630-654).
+  must get one bound cit:([`test_one_command_means_one_bound_across_the_kernel`], mcp/tests/test_git_command.py:693-717).
 - The slow-command test asserts real elapsed time above five seconds; it is intentionally not a
   mocked clock, because the failure it prevents was a real five-second cut-off on every integrate.
 - This suite owns the runner's process boundary only. Route-index census parsing, carryover
@@ -222,7 +222,7 @@ possible because the four sweep helpers sit at module level
 None known. The suite is the guard for the L3 single-runner consolidation and carries no deferred
 work of its own. The computed-argv gap in the AST sweep is **not** a todo: it is a stated limit with
 a test asserting it
-(cit:([`test_a_computed_argv_is_this_sweeps_documented_blind_spot`], mcp/tests/test_git_command.py:563-571))
+(cit:([`test_a_computed_argv_is_this_sweeps_documented_blind_spot`], mcp/tests/test_git_command.py:602-610))
 and a direct suite covering the one module in that shape.
 
 ## Docs References
@@ -245,8 +245,8 @@ the call sites are the ones the consolidation moved onto it.
 | --- | --- | --- |
 | The runner under test: the eight-name `GIT_REPOSITORY_SELECTOR_ENV` tuple, the timeout constants, `git_environment()`, and `run_git()` with `env=`, `stdin=DEVNULL`, surrogateescape decoding and a per-call `timeout`. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | The conftest strip this suite deliberately defeats: it imports the production selector tuple and pops each name from `os.environ` at import. | "from agents_remember.kernel.git_command import GIT_REPOSITORY_SELECTOR_ENV" | mcp/tests/conftest.py:83-83 |
-| `commit_if_dirty` and `head_commit` — the closeout write path driven by the decoy commit test. | `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:36-37; mcp/src/agents_remember/worktrees/modules/git.py:88-93 |
-| `_git_common_dir` decides which repository the closeout quality gate certifies, and returns `None` rather than falling through to an inherited selector. | `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:438-445 |
+| `commit_if_dirty` and `head_commit` — the closeout write path driven by the decoy commit test. | `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:114-119 |
+| `_git_common_dir` decides which repository the closeout quality gate certifies, and returns `None` rather than falling through to an inherited selector. | `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:587-594 |
 | The gate's own git wrappers route through the shared runner and convert failure into typed domain errors: `_git` (which owns the conversion for all three callers) and `run_git` raising `DiffScopeError`, and `git_ls_files` raising `ScopeError`. | `DiffScopeError` | mcp/src/agents_remember/code_quality/diff_coverage.py:39-40; mcp/src/agents_remember/code_quality/check.py:35-39; mcp/src/agents_remember/code_quality/scope.py:44-53 |
 | The per-command timeout bands `TimeoutClassTests` asserts: the three metadata-band ref reads plus the local-band `status --porcelain`. | `TimeoutClassTests` | mcp/tests/test_git_command.py:550-660 |
 | The freshness reads classed by what they do — metadata for the two ref lookups, local for the history walk. | `read_branch_freshness` | mcp/src/agents_remember/kernel/git_freshness.py:56-65; mcp/src/agents_remember/kernel/git_freshness.py:98-112 |
@@ -267,6 +267,7 @@ repositories. No sibling repository or external service participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored the shared Git selector import after `conftest.py` simplification; command behavior is unchanged.
 - 2026-08-12T03:31+02:00 — 260731-EFA-L22 closeout repair: added the 41st regression, a real failing

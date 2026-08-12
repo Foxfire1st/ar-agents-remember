@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -19,6 +19,12 @@
 Observer schemas expose canonical task-document references on task-aware analytics so the dashboard
 can join the same real hierarchy used by routing. This is read-only evidence: the observer never
 chooses current occupants or authorizes parent/child relations, and runtime ids remain correlation.
+
+L23 adds the latest task lifecycle-operation projection to the existing contract snapshot. It
+exposes operation kind, public state, phase, heartbeat/current-command evidence, result/failure,
+and guidance for Operations rendering while omitting the private operation key, worker PID,
+candidate fingerprint, and approval claim. Observer remains a reader: it neither launches nor
+recovers the operation.
 
 ## Purpose
 
@@ -616,7 +622,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
 | The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:43-43; mcp/src/agents_remember/controlplane/durable_store.py:13-24 |
 | `StatesAreFiledOnce` is the TypeScript overlap-check type. | `StatesAreFiledOnce` | dashboard/src/types/projection.ts:25-25 |
-| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:218-218 |
+| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:220-220 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -764,6 +770,7 @@ nodes) and its read-side orchestration; the reader implementations live in servi
 shared observer store-root path conventions moved to `kernel/primitives/observer_paths.py`.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: added the private-identity-free task lifecycle-operation projection boundary; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled observer state with structural
   task-document seats and the projection boundary; private runtime correlations remain internal

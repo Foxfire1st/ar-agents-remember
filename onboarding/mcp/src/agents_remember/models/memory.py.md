@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/memory.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-11T14:40+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -16,6 +16,8 @@
 memory initialization, baseline, and carryover MCP tools.
 
 ## Code Commentary
+
+L23 adds the flexible `CitationFixResponse` envelope, pinning the public operation discriminator while retaining guarded tool detail.
 
 cit:([`DriftCheckResponse`], mcp/src/agents_remember/models/memory.py:13-27) is strict because drift summaries have a stable
 status, count, report, and actionable-sample shape. Its cit:([`status`], mcp/src/agents_remember/models/memory.py:18-18) is
@@ -67,6 +69,8 @@ are present in the agent-facing response schema instead of relying only on the f
 | The context-packet wire face includes its matching `error` field. | `DriftSummary`; `error` | mcp/src/agents_remember/models/drift.py:13-23 |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-11T17:26+02:00 — L19 report-folder delta: exposed
   `RouteIndexRefreshResponse.staleIndexes` in the agent-facing schema so the curator checklist can

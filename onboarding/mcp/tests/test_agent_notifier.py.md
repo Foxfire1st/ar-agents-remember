@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agent_notifier.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -203,12 +203,12 @@ spec.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: the fact predicates, the action dispatcher, and the sweep entry point. | "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:689-689; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:350-350; mcp/src/agents_remember/serving/agent_notifier.py:95-182 |
+| The module under test: the fact predicates, the action dispatcher, and the sweep entry point. | "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:691-691; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:350-350; mcp/src/agents_remember/serving/agent_notifier.py:96-183 |
 | The heartbeat store the zero-drift and second-sweep tests exercise directly. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
 | The terminal catalog declares the typed `Literal` aliases. | "TerminalSessionKind = Literal"; "TerminalSessionStatus = Literal" | mcp/src/agents_remember/models/terminal_catalog.py:22-22; mcp/src/agents_remember/models/terminal_catalog.py:24-24 |
 | The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_agent_notifier.py:49-73 |
 | The fake-host casting convention this suite reuses rather than inventing its own duck-typing idiom. | `_FakeTerminalHost`; "class TerminalHost:" | mcp/src/agents_remember/serving/terminal.py:109-109; mcp/tests/test_terminal_ws.py:227-387 |
-| The operator-inbox terminal state and compaction semantics used by the sweep tests (the ladder transitions are deleted; legacy `ladder-resolved` rows stay parse-compat). | `list_redeliverable`; `reconcile_and_compact` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:153-173; mcp/src/agents_remember/controlplane/operator_inbox_store.py:234-234 |
+| The operator-inbox terminal state and compaction semantics used by the sweep tests (the ladder transitions are deleted; legacy `ladder-resolved` rows stay parse-compat). | `list_redeliverable`; `reconcile_and_compact` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:189-209; mcp/src/agents_remember/controlplane/operator_inbox_store.py:270-311 |
 | The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `AgentNotifierSignalCooldownStore` | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220 |
 | The quiescence pin proves an absent-developer backlog reaches a fixed point through the grace path (no escalation rungs, 260713-TES-L5). | `test_unacked_backlog_reaches_a_fixed_point_with_absent_developer` | mcp/tests/test_agent_notifier_ladder.py:691-750 |
 | The production predicates and the fact-only finding kinds are the behavior the demolition suite mutation-pins. | `evaluate_predicates`; `FindingKind` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-380; mcp/src/agents_remember/serving/agent_notifier_models.py:26-50 |
@@ -242,6 +242,7 @@ gone). No suite in this file imports `write_expectation_row` or
 surface and the sweep never evaluates them.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_agent_notifier.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -26,6 +26,8 @@ now the supervisor cases inside `TypedModelTests`), and — since 260707-HFX2-L4
 (`EscalationSettingsTests`).
 
 ## Code Commentary
+
+L23 proves `local` is the quality-executor default, `dagger` parses explicitly, and unknown executor values fail loudly.
 
 ### 260714-ACPUI-L2 Native Registry Regression
 
@@ -191,6 +193,8 @@ loaded `AgenticSettings` has no `escalation` attribute. The SLA/rung-parse cover
 with the family.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: replaced the
   obsolete 2 GiB default assertions with absent/empty host-managed assertions

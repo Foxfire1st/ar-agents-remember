@@ -23,6 +23,7 @@
     "mcp/src/agents_remember/application/coordination_tools.py",
     "mcp/src/agents_remember/application/gate_tools.py",
     "mcp/src/agents_remember/application/hosted_readiness.py",
+    "mcp/src/agents_remember/application/lifecycle_operation_worker.py",
     "mcp/src/agents_remember/application/lifecycle_tools.py",
     "mcp/src/agents_remember/application/memory_tools.py",
     "mcp/src/agents_remember/application/next_step.py",
@@ -43,8 +44,8 @@
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 28,
-    "fileSidecars": 25,
+    "sourceFilesInScope": 29,
+    "fileSidecars": 26,
     "childRoutes": 1
   },
   "routingTerms": [
@@ -71,12 +72,14 @@
     "init__",
     "install",
     "lifecycle",
+    "lifecycle_operation_worker",
     "lifecycle_tools",
     "mcp",
     "memory",
     "memory_tools",
     "next",
     "next_step",
+    "operation",
     "operator",
     "operator_inbox_tools",
     "orchestration",
@@ -111,6 +114,7 @@
     "tool",
     "tool_response",
     "tools",
+    "worker",
     "worktree",
     "worktree_services",
     "worktree_status",
@@ -128,6 +132,7 @@
       "mcp/src/agents_remember/application/coordination_tools.py",
       "mcp/src/agents_remember/application/gate_tools.py",
       "mcp/src/agents_remember/application/hosted_readiness.py",
+      "mcp/src/agents_remember/application/lifecycle_operation_worker.py",
       "mcp/src/agents_remember/application/lifecycle_tools.py",
       "mcp/src/agents_remember/application/memory_tools.py",
       "mcp/src/agents_remember/application/next_step.py",
@@ -141,8 +146,7 @@
       "mcp/src/agents_remember/application/skill_tools.py",
       "mcp/src/agents_remember/application/task_doc_tools.py",
       "mcp/src/agents_remember/application/task_ref.py",
-      "mcp/src/agents_remember/application/terminal_tools.py",
-      "mcp/src/agents_remember/application/tool_response.py"
+      "mcp/src/agents_remember/application/terminal_tools.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -159,6 +163,8 @@
       "gate_tools",
       "hosted_readiness.py",
       "hosted_readiness",
+      "lifecycle_operation_worker.py",
+      "lifecycle_operation_worker",
       "lifecycle_tools.py",
       "lifecycle_tools",
       "memory_tools.py",
@@ -190,9 +196,7 @@
       "tool_response.py",
       "tool_response",
       "worktree_services.py",
-      "worktree_services",
-      "worktree_status.py",
-      "worktree_status"
+      "worktree_services"
     ]
   },
   "fallback": {

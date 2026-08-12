@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_gate_replay_window.py`   |
 | doc_type               | `file-level-onboarding`                  |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |                                          `df36127113619f4e85522eb615cc20c7eb637405`|
-| lastVerifiedCommitDate |                                          2026-08-12T08:57:17+02:00|
+| lastVerifiedCommitHash |                                          `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |                                          2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                            |
 
 ## Governing Overview
@@ -134,12 +134,12 @@ record. The rows below are each of them, plus the sibling suites that hold the o
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The whole defence, in one call: `_mark_closeout_gate_applied` appends an `apply_gate` snapshot and nothing else records the consume. | "def apply_gate" | mcp/src/agents_remember/controlplane/records.py:185-185 |
+| The whole defence, in one call: `_mark_closeout_gate_applied` appends an `apply_gate` snapshot and nothing else records the consume. | "def apply_gate" | mcp/src/agents_remember/controlplane/records.py:189-189 |
 | The refusal branch that reads that snapshot — "was already applied; open a fresh gate for a new mutation" — and the `approved` branch it falls back to when the record is gone. | "def evaluate_gate" | mcp/src/agents_remember/controlplane/enforcement.py:59-59 |
 | The pure snapshot the append carries: same gate id, `state="applied"`, decision attribution carried forward unchanged. | `apply_gate` | mcp/src/agents_remember/controlplane/records.py:185-194 |
 | The log that has to keep it: the strict authority read, the last-wins fold the enforcement asks, and the compaction the regression races. | `read`; `current`; `compact` | mcp/src/agents_remember/controlplane/store.py:120-130; mcp/src/agents_remember/controlplane/store.py:167-172; mcp/src/agents_remember/controlplane/store.py:247-277 |
 | The interposition primitive imported to park the compactor between its read and its commit. | `parked_rewrite` | mcp/tests/_store_durability.py:706-755 |
-| Why the append now survives: the lock is unconditional across append and rewrite, and the rewrite never unlinks. | `exclusive_access`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:391-446; mcp/src/agents_remember/controlplane/durable_store.py:491-498 |
+| Why the append now survives: the lock is unconditional across append and rewrite, and the rewrite never unlinks. | `exclusive_access`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:391-446; mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
 | The suite that proves the same loss across all six record types and against the base commit; this file is the authority-level consequence of it. | `MultiProcessDurabilityTests` | mcp/tests/test_controlplane_store_durability.py:123-205 |
 | The precise version of the torn-line claim this file's fourth test states loosely. | `test_gate_enforcement_fold_refuses_a_torn_line` | mcp/tests/test_controlplane_store_durability.py:235-254 |
 | The policy tests around the same enforcement fold: `apply_gate` purity, every `evaluate_closeout_gate` branch, and the closeout helpers over a temp `GateStore`. | `ApplyGateTests`; `EvaluateCloseoutGateTests`; `CloseoutEnforcementHelperTests` | mcp/tests/test_controlplane_gates_closeout.py:36-50; mcp/tests/test_controlplane_gates_closeout.py:88-188; mcp/tests/test_controlplane_gates_closeout.py:191-262 |
@@ -154,6 +154,7 @@ helpers are all inside `agents-remember`.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored `parked_rewrite` after the shared durability harness insertion; the replay-window contract is unchanged.
 - 2026-08-10T10:40+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
@@ -166,7 +167,7 @@ helpers are all inside `agents-remember`.
 - 2026-08-01T14:20+02:00 — 260731-EFA-L5 curator: created the card for the replay-window suite.
   Recorded the mechanism exactly as the source has it — the defence against spending one human
   approval twice is a **single appended record**, `_mark_closeout_gate_applied`
-  cit:(["def apply_gate"], mcp/src/agents_remember/controlplane/records.py:185-185) appending `apply_gate` cit:([`apply_gate`], mcp/src/agents_remember/controlplane/records.py:185-194), refused on the next
+  cit:(["def apply_gate"], mcp/src/agents_remember/controlplane/records.py:189-189) appending `apply_gate` cit:([`apply_gate`], mcp/src/agents_remember/controlplane/records.py:185-194), refused on the next
   fold by `evaluate_gate`'s `applied` branch cit:([`evaluate_gate`], mcp/src/agents_remember/controlplane/enforcement.py:52-94); no flag, no marker file,
   no timestamp comparison — and recorded that the counterfactual test
   cit:([`test_the_applied_record_is_the_only_thing_closing_the_window`], mcp/tests/test_gate_replay_window.py:233-259) is what makes that falsifiable: it deletes **only** the line containing

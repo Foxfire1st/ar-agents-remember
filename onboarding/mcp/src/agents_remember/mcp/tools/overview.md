@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -28,6 +28,11 @@ Agent-facing dispatch, parent/child messaging, retire, rename, and delegated gat
 documents and roles, never runtime session/lifecycle/inbox/gate identifiers. `terminal.py` retains
 exact-id adapters only for internal operator/control-plane composition; it is not a compatibility
 public agent surface. The removed `leaf_ref.py` has no successor compatibility shim.
+
+L23 payload builders start/observe/cancel closeout and integration by task contract and operation
+kind while retaining operation fingerprints, candidate trees, and worker identities inside the
+service plane. Memory payloads also expose the guarded `citation_fix` preview/apply operation so
+range repairs use the validated MCP write boundary rather than direct store or file mutation.
 
 ## Where Registration Lives Now (260731-EFA-L2)
 
@@ -232,7 +237,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | What each declaration hands its builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 | Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tool_registry.py:113-134 |
 | Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests` | mcp/tests/test_models.py:16-26 |
-| Conformance test validates every builder routes through `_tool_payload`. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:538-616 |
+| Conformance test validates every builder routes through `_tool_payload`. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:639-734 |
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
 | The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
 | The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:200-200 |
@@ -329,6 +334,7 @@ only who runs the pass.
 The MCP tool callers were rewritten by the L9 caller wave to import the responsibility-owning homes (`models/conversations/`, `kernel/primitives/`, `serving/ports.py`, `models/terminal_catalog.py`). Tool behavior and payloads are unchanged.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: added task-addressed lifecycle payload composition and the sanctioned citation-fix memory payload; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the tool layer with structural
   document-and-role requests and plane-owned runtime addresses; retired exact-id agent tools do not

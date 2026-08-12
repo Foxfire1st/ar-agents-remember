@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -54,12 +54,13 @@ persisted task document itself (`tasks.TaskDocument`) is deliberately not return
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tool_registry.py:183-183 |
+| The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tool_registry.py:187-187 |
 | The strict `ToolResponse` envelope base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:63-66 |
 | The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:109-173 |
 | The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:122-164 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-03T02:58:43+02:00 — W3-B05 curator: resolved 3 Tier-2 table findings with exact source paths; fixer generated all final ranges.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

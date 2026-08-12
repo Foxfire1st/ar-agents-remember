@@ -8,10 +8,14 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
-| lastVerifiedCommitDate |  2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
 
 ## What This Area Is
+
+### 260731-EFA-L23 Route Delta
+
+L23 updates the conversation boundary for native Codex executable resolution and product-agnostic initialize diagnostics: the plane resolves the native executable, while exact client identity remains the handshake authority.
 
 This route is the production-owned semantic boundary for native-authoritative structured Chats.
 It defines one normalized wire grammar for current conversations, dormant native history,
@@ -468,6 +472,8 @@ and composition governor for the conversation route; the wire-model governance l
 `models/conversations/overview.md`. The `active`/`library`/`control` child routes are unchanged.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 updates the conversation boundary for native Codex executable resolution and product-agnostic initialize diagnostics: the plane resolves the native executable, while exact client identity remains the handshake authority. Verification provenance remains closeout-owned.
 
 - 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: recorded the conversation route's
   current host-first initialize boundary and exact request-client validation in its library child.

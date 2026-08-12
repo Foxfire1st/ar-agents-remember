@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/codex_app_server_0_144_3.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -20,6 +20,8 @@ Pins the validated Codex `0.144.3` app-server schema snapshot and representative
 initialize, model, thread, turn, server-request, and notification messages used by tests.
 
 ## Code Commentary
+
+L23 changes the captured initialize fixture's server product to `agents_remember` while retaining the exact client suffix, exercising product-agnostic validation.
 
 The snapshot records protocol/schema hashes, stable method inventory, advertised reasoning efforts,
 thread settings/echoes, terminal statuses, structured interactions, and reconnect evidence. It is
@@ -65,6 +67,8 @@ The fixture was generated from the external Codex CLI app-server schema.
 | Generated command and pinned schema hashes are recorded in the fixture. | "generatedBy"; "schemaSha256" | mcp/tests/fixtures/codex_app_server_0_144_3.json:5-5; mcp/tests/fixtures/codex_app_server_0_144_3.json:7-7 |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: migrated the representative
   initialize result to the clean-cut Desktop host-first user agent with exact client identity; the

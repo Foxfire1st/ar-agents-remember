@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405` |
-| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -151,7 +151,7 @@ P-15 fixture-zoo mandate (leaf task doc R3) and the liveness report
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sweep entry point every scenario drives across multiple ticks. | `run_agent_notifier_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:689-689; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:350-350; mcp/src/agents_remember/serving/agent_notifier.py:95-182 |
+| The sweep entry point every scenario drives across multiple ticks. | `run_agent_notifier_sweep`; "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:691-691; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:350-350; mcp/src/agents_remember/serving/agent_notifier.py:96-183 |
 | The pane-signal classifier the two hybrid scenarios call directly (capturer not injectable through the sweep). | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | The fact-relay terminal paths every incident simulation asserts: attempt-ceiling `unresolved`, rebind-grace `expired`, never a rung (260713-TES-L5). | `PERSISTENT_FAILURE_ATTEMPTS`; `evaluate_pending_expiry_findings` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:30-30; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:180-203 |
 | The self-liveness heartbeat store and staleness banner `KilledSupervisorDaemonTests` drives. | `AgentNotifierHeartbeatStore`; `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:141-157 |
@@ -182,6 +182,7 @@ missed. Escalation SLA/rung knobs and the nudge store are gone from the harness;
 never-acked seat still resolves `unresolved` at the attempt ceiling with no ladder rung.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 replaced exhaustive fixture-only role branches with an equivalent mapping; every liveness scenario and assertion remains unchanged.
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_liveness_simulations.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.

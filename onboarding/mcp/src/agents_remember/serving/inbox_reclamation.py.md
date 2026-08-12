@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-12T17:40+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ evidence for this policy.
 | The aggregate reclamation plan is built from one reconstructed snapshot joined with catalog evidence. | `InboxReclamationPlan` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
 | Terminal catalog entries provide the status and ownership evidence. | "class TerminalCatalogEntry:" | mcp/src/agents_remember/models/terminal_catalog.py:68-72 |
 | Reconstructed tmux snapshots provide the remaining ownership evidence. | `TmuxSessionNameSnapshotter` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
-| The agent-notifier imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/agent_notifier.py:67-67 |
+| The agent-notifier imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/agent_notifier.py:68-68 |
 
 ## Cross-Repo References
 
@@ -81,6 +81,7 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the `state_signal_landed` exclusion
@@ -94,5 +95,4 @@ No meaningful cross-repo references found.
   recording narrow eligibility, positive-gone/fail-closed evidence, one-snapshot boundedness,
   body-free output, and non-blocking F3-F6 residuals. Verification metadata remains blank until
   the candidate receives a commit.
-
 

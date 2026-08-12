@@ -121,6 +121,7 @@
     "mcp/src/agents_remember/code_quality/application_boundary.py",
     "mcp/src/agents_remember/code_quality/check.py",
     "mcp/src/agents_remember/code_quality/citations.py",
+    "mcp/src/agents_remember/code_quality/clean_room.py",
     "mcp/src/agents_remember/code_quality/crap_calculator.py",
     "mcp/src/agents_remember/code_quality/diff_coverage.py",
     "mcp/src/agents_remember/code_quality/file_size.py",
@@ -156,6 +157,7 @@
     "mcp/src/agents_remember/kernel/memory_init.py",
     "mcp/src/agents_remember/kernel/memory_ledger.py",
     "mcp/src/agents_remember/kernel/onboarding_doc.py",
+    "mcp/src/agents_remember/kernel/platform_subprocess.py",
     "mcp/src/agents_remember/kernel/route_index.py",
     "mcp/src/agents_remember/kernel/route_index_census.py",
     "mcp/src/agents_remember/kernel/sidecar_pairing.py",
@@ -267,6 +269,8 @@
     "mcp/src/agents_remember/providers/watcher_service.py",
     "mcp/src/agents_remember/worktrees/git_worktree_manager.py",
     "mcp/src/agents_remember/worktrees/leaf_refs.py",
+    "mcp/src/agents_remember/worktrees/lifecycle_operation_store.py",
+    "mcp/src/agents_remember/worktrees/lifecycle_operations.py",
     "mcp/src/agents_remember/worktrees/reopen.py",
     "mcp/src/agents_remember/worktrees/services.py",
     "mcp/src/agents_remember/worktrees/start_progress.py",
@@ -274,8 +278,8 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1035,
-    "fileSidecars": 166,
+    "sourceFilesInScope": 1049,
+    "fileSidecars": 170,
     "childRoutes": 19
   },
   "routingTerms": [
@@ -316,6 +320,8 @@
     "cgcignore",
     "check",
     "citations",
+    "clean",
+    "clean_room",
     "cli",
     "closeout",
     "code",
@@ -356,9 +362,7 @@
     "deep",
     "defaults",
     "degradation",
-    "designer",
-    "diff",
-    "diff_coverage"
+    "designer"
   ],
   "hotPath": {
     "summary": "**260731-EFA-L21 \u2014 checkout coordination isolation.** An undeclared source-checkout invocation is classified before runtime configuration is read: a linked worktree receives a synthetic provider-disabled configuration rooted at `provider-runtime/dev-ar-coordination`, while a primary checkout refuses live coordination access. Trusted MCP/dashboard declarations and installed package execution retain the configured coordinator. The kernel policy and durable-store guard carry the invariant; application startup and test bootstrap declare the trusted/test modes. **260731-EFA-L1: `package_data/das...",
@@ -417,6 +421,8 @@
       "check",
       "citations.py",
       "citations",
+      "clean_room.py",
+      "clean_room",
       "crap_calculator.py",
       "crap_calculator",
       "diff_coverage.py",
@@ -434,9 +440,7 @@
       "scope.py",
       "scope",
       "scope_reporting.py",
-      "scope_reporting",
-      "single_owner.py",
-      "single_owner"
+      "scope_reporting"
     ]
   },
   "fallback": {

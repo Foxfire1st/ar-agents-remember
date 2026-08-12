@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/durable_store.py`   |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-10T18:31+02:00                                    |
-| lastVerifiedCommitHash |                                                           `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |                                                           2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |                                                           `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |                                                           2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -382,13 +382,13 @@ only for other files, and every one below was re-verified against the working tr
 | `_verify_lock_capability` takes the lock twice from two file descriptions and raises `UnsafeLockFilesystemError` when the second acquisition succeeds. | `_verify_lock_capability` | mcp/src/agents_remember/controlplane/durable_store.py:361-388 |
 | `exclusive_access` takes the per-log mutex before the flock, and the thread-local `_LockDepth` counter makes a nested acquisition return before either lock is touched. `lock_path_for` names the lockfile after the whole log and states why renaming it makes a rolling restart unsafe, with no compatibility path. | `exclusive_access`; `_LockDepth`; `lock_path_for` | mcp/src/agents_remember/controlplane/durable_store.py:274-282; mcp/src/agents_remember/controlplane/durable_store.py:348-394; mcp/src/agents_remember/controlplane/durable_store.py:291-298 |
 | `_require_rewrite_access` first enforces checkout-target confinement and then calls `require_lock_held`, so a rewrite can neither escape a linked leaf's dummy coordinator nor proceed without the store lock. | `_require_rewrite_access`; `require_lock_held`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:449-467; mcp/src/agents_remember/controlplane/durable_store.py:491-498; mcp/src/agents_remember/controlplane/durable_store.py:511-513 |
-| The one read both policies share; the only append in the package, which fsyncs before the handle closes; and the only rewrite, which never unlinks the log, uses a pid-scoped hidden temp, and fsyncs both the temp and the parent directory. | `read_log_text`; `append_line`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:470-474; mcp/src/agents_remember/controlplane/durable_store.py:477-488; mcp/src/agents_remember/controlplane/durable_store.py:491-498 |
+| The one read both policies share; the only append in the package, which fsyncs before the handle closes; and the only rewrite, which never unlinks the log, uses a pid-scoped hidden temp, and fsyncs both the temp and the parent directory. | `read_log_text`; `append_line`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:470-474; mcp/src/agents_remember/controlplane/durable_store.py:477-488; mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
 | The MCP process declares its role at the true entry point, not in the `create_server` factory a test would call in-process. | `main` | mcp/src/agents_remember/mcp/server.py:35-57 |
 | The dashboard declares its role in `run`, for the same reason. | `run` | mcp/src/agents_remember/cli/dashboard.py:161-196 |
 | The third call site and the only factory that declares: `--reload` serves from a uvicorn `multiprocessing` spawn child that re-imports the module with an empty declaration dict and never reaches `run`, so it answered owner for every log. The docstring records this as an ownership gap and not a durability defect — the unconditional lock covered the rewrite — and why `create_app` still must not declare. | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:52-81 |
 | `_reclaim_gate_log` guards on `is_compaction_owner` before compacting, because the dashboard calls `gate_decide_payload` directly; without the guard an MCP-side reclaim runs inside the dashboard. | `_reclaim_gate_log` | mcp/src/agents_remember/controlplane/gate_decisions.py:74-80 |
 | The dashboard's HTTP dismiss route calls `AttentionDismissalStore.dismiss`, the whole-file read-modify-write that made the single-writer store the worst loser. | "class AttentionDismissalStore"; "def dismiss" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-78 |
-| `read_gates` no longer rewrites on the projection tick; it uses the tolerant `projected_current`, and physical reclamation moved to the gate log's owner. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:103-103 |
+| `read_gates` no longer rewrites on the projection tick; it uses the tolerant `projected_current`, and physical reclamation moved to the gate log's owner. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:105-105 |
 | The worktree series contract imports this module's "from agents_remember.controlplane.durable_store import SCHEMA_VERSION" and "from agents_remember.controlplane.durable_store import SCHEMA_VERSION", so the tree carries one version policy rather than two. | "from agents_remember.controlplane.durable_store import SCHEMA_VERSION"; "from agents_remember.controlplane.durable_store import SCHEMA_VERSION" | mcp/src/agents_remember/worktrees/worktree_contract.py:16-16; mcp/src/agents_remember/worktrees/worktree_contract.py:40-40 |
 | The control-plane lockfiles are excluded from the projection watch by a rule DERIVED from `lock_path_for` rather than spelled out, and matched by suffix in every watched directory — which is what covers the per-lifecycle `gates.jsonl.lock` a basename list structurally could not. `_EXCLUDED_WORKSPACE_NAMES` no longer names any lockfile; the comment above the derived constant records that spelling it out is exactly what broke. | `_DURABLE_LOG_LOCK_SUFFIX`; `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:156-156; mcp/src/agents_remember/serving/change_watcher.py:187-205 |
 
@@ -402,6 +402,7 @@ repository; nothing outside it reads these logs.
 | None. | N/A | N/A |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current control-plane card for `durable_store.py` with plane-owned seat identity, routing, and enforcement boundaries.
 - 2026-08-10T18:31+02:00 — 260731-EFA-L21: process declaration moved to the kernel checkout-policy

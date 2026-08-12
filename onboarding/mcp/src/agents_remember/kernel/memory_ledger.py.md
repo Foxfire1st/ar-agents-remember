@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T20:15+02:00|
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -118,10 +118,11 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing "require_git(contract.memory_worktree". | "existing_mapping = find_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/closeout.py:731-731 |
-| `c-09-git-worktree-manager` integration imports the same helpers and unconditionally prepends the integrated code->memory mapping. | "prepend_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/integrate.py:303-303 |
+| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing "require_git(contract.memory_worktree". | "existing_mapping = find_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/closeout.py:749-749 |
+| `c-09-git-worktree-manager` integration imports the same helpers and unconditionally prepends the integrated code->memory mapping. | "prepend_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/integrate.py:312-312 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 moved the ledger reader (`observer/snapshots.py` → `serving/projections/snapshots.py`); the documented behavior is unchanged and the reader-path citation was re-pointed. Body re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

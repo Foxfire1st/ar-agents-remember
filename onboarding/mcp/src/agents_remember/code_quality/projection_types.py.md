@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/code_quality/projection_types.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,8 @@
 Generate the dashboard projection contract from the Python wire schemas.
 
 ## Code Commentary
+
+L23 makes projection regeneration invoke `python` through the active environment instead of deriving a checkout-adjacent virtualenv path, so the clean executor controls interpreter resolution.
 
 ### Logic
 
@@ -111,6 +113,8 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `_tuple_constant` (lines 377-379). | `_tuple_constant` | mcp/src/agents_remember/code_quality/projection_types.py:377-379 |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

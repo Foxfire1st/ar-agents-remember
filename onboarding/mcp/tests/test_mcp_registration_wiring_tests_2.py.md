@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_mcp_registration_wiring_tests_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T06:48+02:00                                            |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                                        |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -19,6 +19,8 @@
 Registration wiring suite for worktree, task-document, lifecycle, and structural gate tools.
 
 ## Code Commentary
+
+L23 proves `worktree_operation_cancel` forwards only the task address, operation kind, developer intent, and dry-run choice—never an operation ID.
 
 ### Logic
 
@@ -47,6 +49,8 @@ No Domain Documentation source is configured for this repository-local regressio
 No cross-repository implementation source governs this test module.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_mcp_registration_wiring_tests_2.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the `include_terminal` poll kwarg

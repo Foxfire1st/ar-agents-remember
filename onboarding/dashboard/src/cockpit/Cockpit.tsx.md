@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-08T21:20+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -233,7 +233,7 @@ the reviewed task evidence for any current behavioral claim.
 | The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | `HighlightComposerImpl` | dashboard/src/panels/HighlightComposer.tsx:710-780 |
 | The frontend `Analytics` projection includes the `engineProcesses` process-map collection. | `engineProcesses` | dashboard/src/types/projection.ts:96-96 |
 | The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:691-691 |
-| The rollup the top bar reads: `Metrics extends LifecycleStateCounts` (one required `…Count` per `ActiveState` via `StateCountField`), plus `metricsFor()` — the client mirror of `reducer.py::_metrics` that test seeds now call instead of hand-listing buckets. | `Metrics`, `LifecycleStateCounts`, `StateCountField`, `metricsFor` | dashboard/src/types/projection.ts:295-295; dashboard/src/types/projection.ts:297-297; dashboard/src/types/projection.ts:316-320; dashboard/src/types/projection.ts:322-329 |
+| The rollup the top bar reads: `Metrics extends LifecycleStateCounts` (one required `…Count` per `ActiveState` via `StateCountField`), plus `metricsFor()` — the client mirror of `reducer.py::_metrics` that test seeds now call instead of hand-listing buckets. | `Metrics`, `LifecycleStateCounts`, `StateCountField`, `metricsFor` | dashboard/src/types/projection.ts:312-312; dashboard/src/types/projection.ts:314-314; dashboard/src/types/projection.ts:333-337; dashboard/src/types/projection.ts:339-346 |
 | The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS` rather than one `sum(...)` line per bucket. | "def _metrics(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-60 |
 | `AgentNotifierHeartbeatBadge` reads `useDashboard((s) => s.agentNotifierHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:959-984 |
 | The `AgentNotifierHeartbeat` type this badge's props shape mirrors. | `AgentNotifierHeartbeat` | dashboard/src/types/projection.ts:54-65 |
@@ -255,6 +255,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `Cockpit.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `AgentNotifierHeartbeatBadge`

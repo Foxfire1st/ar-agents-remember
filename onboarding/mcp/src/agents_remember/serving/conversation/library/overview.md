@@ -8,10 +8,14 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
-| lastVerifiedCommitDate |  2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
 
 ## What This Area Is
+
+### 260731-EFA-L23 Route Delta
+
+L23 makes Codex executable selection a native-PATH resolver seam and treats the initialize server product as diagnostic rather than authority. Exact Agents Remember client suffix and version agreement remain mandatory, and resolution failures surface as typed store errors.
 
 This route is the implemented dormant native conversation library.
 It exposes each normalized harness's (Codex, Claude, Pi) native conversation catalog and history
@@ -370,6 +374,8 @@ with a recorded reason.
 The library child routes now import the page/history wire contracts from `models/conversations/history.py` and the canonical library port from `serving/ports.py` after the L9 monolith split. Library behavior is unchanged.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 makes Codex executable selection a native-PATH resolver seam and treats the initialize server product as diagnostic rather than authority. Exact Agents Remember client suffix and version agreement remain mandatory, and resolution failures surface as typed store errors. Verification provenance remains closeout-owned.
 
 - 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: recorded current Desktop
   host-first initialize identity and exact request client-name/version validation for the native

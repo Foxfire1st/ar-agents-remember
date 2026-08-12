@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cold_start.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T20:52+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -228,7 +228,7 @@ error that must be raised instead of a download.
 | `TokenizerVocabularyError` — the one production symbol this file may import at module scope, because it carries no import-time load. Raised instead of letting tiktoken reach for a vocabulary that is missing *or wrong*, precisely because the counter is built while the MCP tool surface is still importing. | `TokenizerVocabularyError` | mcp/src/agents_remember/errors.py:44-52 |
 | The vendored blob's own documentation: why the file name is a hash, why `models/tokens.py` verifies the digest itself rather than leaving it to tiktoken, the copy-based corruption tests this file runs, and how to refresh it. | `## Why the file name is a hash`, `## Refreshing it` | mcp/src/agents_remember/package_data/tiktoken/README.md:13-67 |
 | The `-text` entry that `test_the_gitattributes_entry_names_the_shipped_file` reads and pins: it stops a `core.autocrlf=true` checkout from rewriting the bytes that are the blob's identity, which now makes that clone alone refuse to start rather than re-download. Its comment names this test as the thing that stays red until a refresh renames the entry. | "fb374d419588a4632f3f557e76b4b70aebbca790 -text", `test_the_gitattributes_entry_names_the_shipped_file` | .gitattributes:5-13 |
-| Packaging ships whatever is under `package_data` recursively, which is how the vendored vocabulary reaches an installed wheel or sdist. | "setuptools globs package-data with recursive=True", "package_data/**/*" | mcp/pyproject.toml:73-84 |
+| Packaging ships whatever is under `package_data` recursively, which is how the vendored vocabulary reaches an installed wheel or sdist. | "setuptools globs package-data with recursive=True", "package_data/**/*" | mcp/pyproject.toml:78-78; mcp/pyproject.toml:86-86 |
 
 ## Cross-Repo References
 
@@ -249,6 +249,7 @@ mismatch** — it repairs, from the network — which is why the digest check li
 | tiktoken is admitted through the permissive `tiktoken>=0.12,<1` requirement with no resolved version pinned in this repository, so dependency-internal line ranges are not offline-verifiable; the rows above cite the tracked cold-start test and `models/tokens.py`, and `test_the_shipped_file_is_the_one_tiktoken_asks_for` is what fails when a release changes the URL or expected hash. | "tiktoken>=0.12", `test_the_shipped_file_is_the_one_tiktoken_asks_for` | mcp/pyproject.toml:23-26; mcp/tests/test_cold_start.py:222-244 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-05T13:06:07+02:00 — 260731-EFA-L6 residual curator: replaced the four tiktoken-internal citations (tiktoken/load.py:35-53, 54-80, 81-84; tiktoken_ext/openai_public.py:95-99), which are not offline-verifiable because tiktoken has only the permissive tiktoken>=0.12,<1 requirement and no resolved version, with tracked evidence from mcp/tests/test_cold_start.py and mcp/src/agents_remember/models/tokens.py; reworded the cross-repo prose and the permissive-pin row to match the tracked sources.
 

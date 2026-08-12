@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_agents.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-12T04:15+02:00               |
-| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -104,9 +104,10 @@ experimental-gated on 0.145.0, which is why grouping is client-side.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The camelCase sub-agent `ThreadSourceKind` variant the agent fetch pins. | ["subAgentReview"] | mcp/src/agents_remember/serving/conversation/library/codex.py:85-85 |
+| The camelCase sub-agent `ThreadSourceKind` variant the agent fetch pins. | ["subAgentReview"] | mcp/src/agents_remember/serving/conversation/library/codex.py:89-89 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T04:15+02:00 — No content impact: 260731-EFA-L22 migrated this suite's fake
   initialize user agent from the retired client-first form to the current Desktop host-first form

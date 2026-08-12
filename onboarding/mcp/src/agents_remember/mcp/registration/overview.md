@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-08T02:00+02:00                           |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`       |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -17,6 +17,12 @@ declaration in this repository lives here, one module per tool family. It was ca
 `mcp/server.py` in 260731-EFA-L2; `server.py` kept only process wiring (compact-content shim,
 ambient lifecycle, the `FastMCP` instance) and now loops over `TOOL_REGISTRARS` from this
 package's `__init__.py`.
+
+L23 keeps the same flat-schema rule while adding task-addressed lifecycle operation start/status/
+cancel declarations and the guarded public `citation_fix` maintenance tool. Operation declarations
+accept task contract plus semantic inputs only; private operation identity never enters the
+published schema. Citation repair is a sanctioned memory write with preview/apply semantics, not
+an invitation to bypass the MCP boundary.
 
 Each module exposes exactly one `register_<family>_tools(server, config) -> None`, declares its
 tools as nested functions decorated with `@server.tool()`, and forwards each call to one payload
@@ -129,7 +135,7 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
 | `PUBLIC_TOOLS` — the advertised name list this package must match. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
-| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:461-474 |
+| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:540-553 |
 | What each declaration hands its payload builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 | The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
@@ -154,6 +160,7 @@ continues publishing the identical named JSON fields; no agent-visible address o
 The registration callers were rewritten by the L9 caller wave: conversation/evidence/control-wire models now import from `models/conversations/`, the runtime config record from `kernel/primitives/runtime_config.py`, and the terminal-catalog row vocabulary from `models/terminal_catalog.py`. Registration/tool wiring behavior is unchanged.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: recorded task-addressed lifecycle operation declarations and the guarded public citation-fix surface; verification provenance remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24: aligned registered
   closeout/integration descriptions with host-managed master memory and the

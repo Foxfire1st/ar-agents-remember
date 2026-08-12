@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-12T10:08+02:00 |
-| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97` |
-| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
+| lastUpdated            | 2026-08-11T23:56+02:00 |
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -138,7 +138,7 @@ the source rather than being repeated here; it is the same string
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | "Ruff, Ruff format, file size, Pyright, pytest, CRAP, and changed-lines coverage enforce.", `quality_steps` | mcp/src/agents_remember/code_quality/check.py:3-3; mcp/src/agents_remember/code_quality/check.py:248-293 |
+| The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | "Ruff, Ruff format, file size, Pyright, pytest, CRAP, and changed-lines coverage enforce.", `quality_steps` | mcp/src/agents_remember/code_quality/check.py:3-3; mcp/src/agents_remember/code_quality/check.py:320-366 |
 | The development extra supplies pytest-xdist for the root configuration's mandatory automatic worker selection. | "pytest-xdist>=3,<4"; "-n=auto" | mcp/pyproject.toml:56-66; pyproject.toml:110-130 |
 | Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:25-26 |
 | CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | `crap_score`, "radon.complexity" | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:234-234 |
@@ -154,6 +154,7 @@ the source rather than being repeated here; it is the same string
 | The interpreter matrix the classifiers claim support for is the one the gate workflow runs. | "3.11" | .github/workflows/quality-checks.yml:27-27 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T10:08+02:00 — No content impact: bumped the package release identity to `3.0.0rc7`; it remains
   aligned with the kernel `SERVER_VERSION` fallback. No dependency, entry-point, classifier,

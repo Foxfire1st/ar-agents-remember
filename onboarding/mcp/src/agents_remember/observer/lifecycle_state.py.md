@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/lifecycle_state.py` |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-08-01T10:40+02:00                               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`           |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`           |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Purpose
@@ -145,13 +145,14 @@ tool-boundary string into a `Phase` or raises `LifecycleError`.
 | The singleton that drives these states and raises these errors; its `end` signal now reads `TERMINAL_STATES` and converts through `coerce_end_outcome` instead of keeping its own accept-tuple and outcome→state conditional. | `end` | mcp/src/agents_remember/observer/ambient.py:243-274 |
 | The typed-error family base (`AgentsRememberError`). | `AgentsRememberError` | mcp/src/agents_remember/errors.py:13-14 |
 | The response model reuses `State`/`Phase` so the wire contract matches. | `LifecycleResponse` | mcp/src/agents_remember/models/lifecycle.py:30-35 |
-| `ACTIVE_STATES` is `LIVE_STATES` verbatim, and `STATE_COUNT_FIELDS` derives one `Metrics` bucket per live state — this is what makes the live/terminal filing load-bearing. | `ACTIVE_STATES`; `STATE_COUNT_FIELDS` | mcp/src/agents_remember/observer/projection.py:237-237; mcp/src/agents_remember/observer/projection.py:283-283 |
+| `ACTIVE_STATES` is `LIVE_STATES` verbatim, and `STATE_COUNT_FIELDS` derives one `Metrics` bucket per live state — this is what makes the live/terminal filing load-bearing. | `ACTIVE_STATES`; `STATE_COUNT_FIELDS` | mcp/src/agents_remember/observer/projection.py:239-239; mcp/src/agents_remember/observer/projection.py:285-285 |
 | The reducer's `_STATES` is built from `STATES`, and `_ended_updates` routes through `coerce_end_outcome`. | `_STATES`; `_ended_updates` | mcp/src/agents_remember/observer/reducer.py:117-117; mcp/src/agents_remember/observer/reducer.py:382-384 |
 | The partition, the vocabulary reader, and structural terminality are pinned by test. | `StatePartitionTests`; `TerminalityIsStructuralTests`; `StateVocabularyReaderTests` | mcp/tests/test_observer_projection_metrics.py:236-300; mcp/tests/test_observer_projection_metrics.py:303-420; mcp/tests/test_observer_projection_metrics.py:423-458 |
 | The write side is pinned to hold no copy of the terminal vocabulary. | `EndSignalVocabularyTests` | mcp/tests/test_observer_ambient.py:157-185 |
 | The design note is historical context only; current lifecycle behavior is owned by this module and its focused tests. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: split phase/state classification from ambient entry/exit and next-tool resume behavior, regenerated the operative extents, and narrowed unsupported pooled wording.
 

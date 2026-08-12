@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/TokenGauge.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-15T17:00                                 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -37,9 +37,10 @@ uPlot-deferral). Cyan = the progress/charge grammar.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `TokenSample` shape (ts + cumulative) it plots. | `TokenSample` | dashboard/src/types/projection.ts:511-514 |
+| The `TokenSample` shape (ts + cumulative) it plots. | `TokenSample` | dashboard/src/types/projection.ts:528-531 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: reconciled the frozen-source ledger and generated final citation ranges with the scoped fixer.
 

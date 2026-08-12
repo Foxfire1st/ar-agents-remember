@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/wireFixtureGuard.test.ts`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -180,15 +180,15 @@ an error.
 | The registry reconciliation unit cases. | "the registry cannot be quietly outgrown" | dashboard/src/test/wireFixtureGuard.test.ts:595-626 |
 | The five-rule mechanism and discovered vocabulary. | `wireTypeNames` | dashboard/src/test/wireFixtureGuard.ts:466-482 |
 | The guard's documented uncovered-evasions section names `ElementAccessExpression`. | "WHAT THIS DOES NOT COVER"; "ElementAccessExpression" | dashboard/src/test/wireFixtureGuard.ts:39-39; dashboard/src/test/wireFixtureGuard.ts:44-44 |
-| `SubTaskRow` is the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode`. | `SubTaskRow` | dashboard/src/types/projection.ts:523-523 |
-| The `StateCountField` mirror-internal cast. | `StateCountField` | dashboard/src/types/projection.ts:295-295 |
-| The `LifecycleStateCounts` mirror-internal cast. | `LifecycleStateCounts` | dashboard/src/types/projection.ts:297-297 |
+| `SubTaskRow` is the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode`. | `SubTaskRow` | dashboard/src/types/projection.ts:540-540 |
+| The `StateCountField` mirror-internal cast. | `StateCountField` | dashboard/src/types/projection.ts:312-312 |
+| The `LifecycleStateCounts` mirror-internal cast. | `LifecycleStateCounts` | dashboard/src/types/projection.ts:314-314 |
 | The sanctioned narrowing the registry names. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
 | The `ActivePageCursor` brand mint. | `pageCursor` | dashboard/src/test/fixtures/conversationWire.ts:53-55 |
 | The `ActiveEventCursor` brand mint. | `eventCursor` | dashboard/src/test/fixtures/conversationWire.ts:58-60 |
 | The `LibraryConversationKey` brand mint. | `libraryConversationKey` | dashboard/src/test/fixtures/conversationWire.ts:63-65 |
-| The contract test suppresses invalid master/series property access with `@ts-expect-error`. | "masterRow.createdAt"; "seriesRow.linkedLifecycleId" | dashboard/src/test/contract.test.ts:515-515; dashboard/src/test/contract.test.ts:517-517 |
-| The contract test suppresses the carried `refusedPolarity` property. | "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:536-536 |
+| The contract test suppresses invalid master/series property access with `@ts-expect-error`. | "masterRow.createdAt"; "seriesRow.linkedLifecycleId" | dashboard/src/test/contract.test.ts:545-545; dashboard/src/test/contract.test.ts:547-547 |
+| The contract test suppresses the carried `refusedPolarity` property. | "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:566-566 |
 | The deliberate widening in the topology suite. | `fromANewerServer` | dashboard/src/topology/model.test.ts:52-54 |
 | KNOWN GAP, live: the inline `HarnessInfo` response shape is outside the marker vocabulary. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
 | KNOWN GAP, live: `WithdrawalResultWire` is outside the marker vocabulary. | `WithdrawalResultWire` | dashboard/src/data/submissionLifecycleClient.ts:40-46 |
@@ -203,6 +203,7 @@ No cross-repository boundary. Every scanned root, every registry key and every p
 | The sweep is built from the in-repo dashboard root and scanned source files; nothing outside this repository is read. | `dashboardRoot`, `dashboardSourceFiles` | dashboard/src/test/wireFixtureGuard.ts:171-173; dashboard/src/test/wireFixtureGuard.ts:175-177 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-04T08:45:26+02:00 — 260731-EFA-L6 S18-B07 curator correction: narrowed the vacuity/evasion claims and rebound the union and suppression evidence to frozen test/source bodies; same-reviewer delta pending.

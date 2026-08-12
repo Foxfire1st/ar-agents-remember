@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/codex.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
-| lastVerifiedCommitDate |  2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -112,11 +112,11 @@ initialize/state helpers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Codex list maps rows/keys/next-cursor, generation mismatch resets, reads window by ordinal, and resolve mints the exact codex-thread-resume target. | `test_list_maps_rows_keys_and_next_cursor`, `test_list_generation_mismatch_resets_cursor`, `test_read_normalizes_items_with_ordinals_and_window`, `test_resolve_mints_exact_resume_target` | mcp/tests/test_conversation_library_ports.py:229-246; mcp/tests/test_conversation_library_ports.py:248-262; mcp/tests/test_conversation_library_ports.py:264-297; mcp/tests/test_conversation_library_ports.py:390-410 |
-| Shape-skewed list/read payloads and range-absurd timestamps fail as typed store errors. | `test_shape_skewed_list_payloads_fail_as_store_errors`, `test_shape_skewed_read_payloads_fail_as_store_errors`, `test_range_absurd_timestamp_fails_as_store_error` | mcp/tests/test_conversation_library_ports.py:299-351; mcp/tests/test_conversation_library_ports.py:353-388; mcp/tests/test_conversation_library_ports.py:506-519 |
-| Sub-agent grouping with probed source kinds, agent-thread read, RPC-refusal degrade note, truncation note, nested depth-2 naming, and ungroupable-row fail-closed. | `test_agents_group_under_parent_with_probed_source_kinds`, `test_agent_conversation_reads_native_agent_thread`, `test_unproven_agent_kinds_degrade_to_exact_note`, `test_truncated_agent_listing_is_visible`, `test_nested_depth2_agents_are_named_not_silently_absent`, `test_ungroupable_agent_row_fails_closed` | mcp/tests/test_conversation_library_agents.py:295-333; mcp/tests/test_conversation_library_agents.py:343-362; mcp/tests/test_conversation_library_agents.py:364-377; mcp/tests/test_conversation_library_agents.py:379-385; mcp/tests/test_conversation_library_agents.py:387-417; mcp/tests/test_conversation_library_agents.py:419-427 |
+| Codex list maps rows/keys/next-cursor, generation mismatch resets, reads window by ordinal, and resolve mints the exact codex-thread-resume target. | `test_list_maps_rows_keys_and_next_cursor`, `test_list_generation_mismatch_resets_cursor`, `test_read_normalizes_items_with_ordinals_and_window`, `test_resolve_mints_exact_resume_target` | mcp/tests/test_conversation_library_ports.py:266-283; mcp/tests/test_conversation_library_ports.py:285-299; mcp/tests/test_conversation_library_ports.py:301-334; mcp/tests/test_conversation_library_ports.py:427-447 |
+| Shape-skewed list/read payloads and range-absurd timestamps fail as typed store errors. | `test_shape_skewed_list_payloads_fail_as_store_errors`, `test_shape_skewed_read_payloads_fail_as_store_errors`, `test_range_absurd_timestamp_fails_as_store_error` | mcp/tests/test_conversation_library_ports.py:336-388; mcp/tests/test_conversation_library_ports.py:390-425; mcp/tests/test_conversation_library_ports.py:543-556 |
+| Sub-agent grouping with probed source kinds, agent-thread read, RPC-refusal degrade note, truncation note, nested depth-2 naming, and ungroupable-row fail-closed. | `test_agents_group_under_parent_with_probed_source_kinds`, `test_agent_conversation_reads_native_agent_thread`, `test_unproven_agent_kinds_degrade_to_exact_note`, `test_truncated_agent_listing_is_visible`, `test_nested_depth2_agents_are_named_not_silently_absent`, `test_ungroupable_agent_row_fails_closed` | mcp/tests/test_conversation_library_agents.py:302-340; mcp/tests/test_conversation_library_agents.py:350-369; mcp/tests/test_conversation_library_agents.py:371-384; mcp/tests/test_conversation_library_agents.py:386-392; mcp/tests/test_conversation_library_agents.py:394-424; mcp/tests/test_conversation_library_agents.py:426-434 |
 | The installed suite proves the live gate and list/read/resolve round-trip on the real installed app-server (0.145.0 at the probe; earlier passes observed 0.144.5). | `test_live_gate_supports_list_read_and_partial_completeness`, `test_live_list_read_and_resolve_round_trip` | mcp/tests/test_conversation_library_installed.py:136-153; mcp/tests/test_conversation_library_installed.py:155-176 |
-| The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. | `validate_initialize_response`, `iso_from_epoch`, `required_object`, `required_text`, `required_list` | mcp/src/agents_remember/serving/codex_app_server_state.py:132-164; mcp/src/agents_remember/serving/codex_app_server_state.py:563-568; mcp/src/agents_remember/serving/codex_app_server_state.py:587-590; mcp/src/agents_remember/serving/codex_app_server_state.py:597-601; mcp/src/agents_remember/serving/codex_app_server_state.py:604-608 |
+| The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. | `validate_initialize_response`, `iso_from_epoch`, `required_object`, `required_text`, `required_list` | mcp/src/agents_remember/serving/codex_app_server_state.py:132-162; mcp/src/agents_remember/serving/codex_app_server_state.py:561-566; mcp/src/agents_remember/serving/codex_app_server_state.py:585-588; mcp/src/agents_remember/serving/codex_app_server_state.py:595-599; mcp/src/agents_remember/serving/codex_app_server_state.py:602-606 |
 
 ## Cross-Repo References
 
@@ -138,6 +138,7 @@ replaced as one seam**.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: passed the library connector's
   already-owned client version into strict initialize validation and documented the clean-cut

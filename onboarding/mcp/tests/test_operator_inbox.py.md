@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-07-10T13:03+02:00                |
-| lastVerifiedCommitHash |                                       `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |                                       2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |                                       `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |                                       2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -19,6 +19,8 @@
 Record, store, tool, and delivery regression suite for durable operator-inbox communication.
 
 ## Code Commentary
+
+L23 covers `transition_many` folding in order, appending only real changes, retaining the latest row for no-op transitions, and refusing missing entries.
 
 ### Logic
 
@@ -47,6 +49,8 @@ No Domain Documentation source is configured for this repository-local regressio
 No cross-repository implementation source governs this test module.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_operator_inbox.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.

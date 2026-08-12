@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_and_observer_helpers.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-01T09:38+02:00                             |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`         |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`         |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -72,11 +72,12 @@ deciding anything.
 | The lifecycle suites whose happy paths these arms complete. | `WorktreeSupportTests`; `ContractMemoryModeTests` | mcp/tests/test_worktree_edge_paths.py:95-164; mcp/tests/test_worktree_support.py:539-614 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:38+02:00 — 260731-EFA-L4 curator: `ParentSeriesContractTests` moved both its
   fixtures from `workflow_kind="master-task"` to `"light-task"`, because `WorkflowKind` is now
-  `Literal["chat-task", "light-task"]` (cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:13-13)). The Classes-table
+  `Literal["chat-task", "light-task"]` (cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:14-14)). The Classes-table
   claim "mint one for a master task" survives, and the note added under the table says why it is
   now a demonstration rather than a coincidence: `_parent_series_contract` reads `**Type:** Master`
   off the `task.md` the fixture writes, so with the workflow kind no longer able to say "master",

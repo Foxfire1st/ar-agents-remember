@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_code_quality_check_scope.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-11T23:56+02:00                                            |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                                        |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -20,6 +20,8 @@
 the root pytest configuration inherited by raw and wrapped test runs.
 
 ## Code Commentary
+
+L23 lets whole-tree scope expectations include the Dagger package when present, while preserving MCP coverage and test roots.
 
 - `GateScopeDerivationTests`
 - `PytestConfigurationTests`
@@ -38,6 +40,8 @@ the root pytest configuration inherited by raw and wrapped test runs.
 | The configuration regression pins automatic xdist worker selection at the root pytest owner. | "self.assertIn(\"-n=auto\", ini_strings(\"addopts\"))" | mcp/tests/test_code_quality_check_scope.py:215-223 |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-12T00:20+02:00 — Corrected the test boundary after automatic worker selection moved
   from wrapper argv to root pytest `addopts`; the regression now asserts that single owner.

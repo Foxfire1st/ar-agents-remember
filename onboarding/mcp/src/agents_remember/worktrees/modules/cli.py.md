@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cli.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -42,7 +42,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The CLI module exposes the public main entry point for `python -m` execution. | "def main" | mcp/src/agents_remember/worktrees/modules/cli.py:159-159 |
-| MCP application entry points bypass CLI parsing and call result-returning functions directly. | `worktree_start_tool`; `worktree_attach_tool`; `worktree_status_tool`; `worktree_integrate_tool`; `worktree_cleanup_tool` | mcp/src/agents_remember/application/worktree_tools.py:77-156; mcp/src/agents_remember/application/worktree_tools.py:221-230; mcp/src/agents_remember/application/worktree_tools.py:233-235; mcp/src/agents_remember/application/worktree_tools.py:324-354; mcp/src/agents_remember/application/worktree_tools.py:357-370 |
+| MCP application entry points bypass CLI parsing and call result-returning functions directly. | `worktree_start_tool`; `worktree_attach_tool`; `worktree_status_tool`; `worktree_integrate_tool`; `worktree_cleanup_tool` | mcp/src/agents_remember/application/worktree_tools.py:92-171; mcp/src/agents_remember/application/worktree_tools.py:236-245; mcp/src/agents_remember/application/worktree_tools.py:248-256; mcp/src/agents_remember/application/worktree_tools.py:359-401; mcp/src/agents_remember/application/worktree_tools.py:452-465 |
 | The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. | `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:480-555 |
 | The CLI seam regression drives `main(["heal-leaf-ids", ...])` end to end. | `test_heal_cli_command_is_the_on_demand_seam` | mcp/tests/test_leaf_ref_resolution.py:418-432 |
 
@@ -51,6 +51,7 @@ No external Domain Documentation source is configured for this memory repo.
 The common CLI contract-path help now names `series-contract.md`, aligning command-line usage with the root/leaf contract schema.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-04T12:19:51+02:00 — 260731-EFA-L6 S18-B01 curator: reconciled the bounded worker ledger; source-clear citations were repaired, split, rewritten, or deleted as applicable, then the exact scoped fixer/check passed.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

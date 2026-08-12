@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_task_document.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ and tool registration.
 | Master sync preserves manually-authored scope. | "const { webtuiPrefixOptions } = require('./webtui-scope.config.cjs');" | dashboard/postcss.config.cjs:6-6 |
 | Master row status is derived from leaf state. | "export const status = css({" | dashboard/src/panels/sessionComposerStyles.ts:116-116 |
 | Dry-run returns the parent master sync preview. | "def _create_missing_dirs(paths: list[Path]" | mcp/src/agents_remember/kernel/memory_init.py:14-14 |
-| The conformance net that also covers `task_doc`. | `task_doc` | mcp/tests/test_tool_response_conformance.py:443-443 |
+| The conformance net that also covers `task_doc`. | `task_doc` | mcp/tests/test_tool_response_conformance.py:470-470 |
 
 ## Series-Contract Notes
 
@@ -108,6 +108,7 @@ Task-document tests cover the `seriesContractPath`/`enclosures[]` linkage fields
 - A master ref naming a **sibling leaf** is refused **by kind**, not by id shape.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/targeted.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ No external Domain Documentation source is configured for this memory repo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper consumes the derived scope for every rail and prints the derivation on a targeted run. | `quality_steps`, `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:262-308; mcp/src/agents_remember/code_quality/check.py:359-404 |
+| The wrapper consumes the derived scope for every rail and prints the derivation on a targeted run. | `quality_steps`, `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:320-366; mcp/src/agents_remember/code_quality/check.py:420-469 |
 | The targeted run's printed derivation and per-rail provenance lines. | `targeted_scope_lines`, `wrapper_scope_line`, `fixed_step_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:235-263; mcp/src/agents_remember/code_quality/scope_reporting.py:136-163; mcp/src/agents_remember/code_quality/scope_reporting.py:164-234 |
 | The changed-lines floor and CRAP consume the same coverage JSON as the full wrapper. | `run_diff_coverage`; `run_crap_calculator` | mcp/src/agents_remember/code_quality/post_coverage.py:121-170; mcp/src/agents_remember/code_quality/post_coverage.py:35-101 |
 | Proofs for the derivation selectors, the transitive-import closure, the refusal shape, and real-run radon input. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:142-357; mcp/tests/test_code_quality_targeted.py:360-629 |
@@ -112,6 +112,7 @@ repository-local gate machinery.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: created this file-level
   onboarding card for the new change-set derivation module; content derived from

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-10T18:31+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -103,7 +103,7 @@ that skips this line loses no records — it just stops being distinguishable fr
 | --- | --- | --- |
 | `create_server` builds the FastMCP instance and invokes the registered tool families. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
 | The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | "from .core import register_core_tools"; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:24-24; mcp/src/agents_remember/mcp/registration/__init__.py:36-49; mcp/src/agents_remember/mcp/registration/__init__.py:51-51 |
-| The stable `mcp.tools` package imports the payload builders and exports that builder surface for the registered tool families. | "Pure payload builders"; "from .worktree import ("; "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:1-1; mcp/src/agents_remember/mcp/tools/__init__.py:89-89; mcp/src/agents_remember/mcp/tools/__init__.py:105-105 |
+| The stable `mcp.tools` package imports the payload builders and exports that builder surface for the registered tool families. | "Pure payload builders"; "from .worktree import ("; "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:1-1; mcp/src/agents_remember/mcp/tools/__init__.py:90-90; mcp/src/agents_remember/mcp/tools/__init__.py:107-107 |
 
 ## Cross-Repo References
 
@@ -114,6 +114,7 @@ No sibling repository defines this process wiring.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-10T18:31+02:00 — 260731-EFA-L21: MCP now establishes its trusted execution mode before
   loading authority settings, while the existing preparation operation remains before serving and
   idempotently reasserts the same role. Verification metadata remains pinned until approved

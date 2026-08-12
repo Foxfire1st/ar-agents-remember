@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`|
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ evidence.
 | --- | --- | --- |
 | ConfirmedGonePolicyTests and ReconcileAndCompactTests are implemented in this suite. | `ConfirmedGonePolicyTests`, `ReconcileAndCompactTests` | mcp/tests/test_inbox_reclamation.py:87-181; mcp/tests/test_inbox_reclamation.py:184-249 |
 | The store transaction resolves and compacts the selected entries atomically. | `reconcile_and_compact` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:234-275 |
-| The supervisor ordering places resolution/compaction before redelivery. | "redelivery" | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:292-292 |
+| The supervisor ordering places resolution/compaction before redelivery. | "redelivery" | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:295-295 |
 
 ## Cross-Repo References
 
@@ -72,6 +72,7 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/read_files.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-08-02T01:05+02:00                      |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`  |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`  |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Purpose
@@ -69,10 +69,11 @@ sets them.
 | --- | --- | --- |
 | The strict response base and `ToolResponse`. | `ToolResponse` | mcp/src/agents_remember/models/base.py:63-66 |
 | The application entry point producing the dict this validates; it imports `FileReadStatus` from this module, and `_resolve_onboarding` returns the narrowed type. | `_resolve_onboarding` | mcp/src/agents_remember/application/read_files.py:209-238 |
-| The registry mapping `read_ar_files` to this response model (L120). | `read_ar_files` | mcp/src/agents_remember/models/tool_registry.py:146-146 |
+| The registry mapping `read_ar_files` to this response model (L120). | `read_ar_files` | mcp/src/agents_remember/models/tool_registry.py:148-148 |
 | `test_every_onboarding_status_the_read_entry_point_returns_validates` asserts the produced set equals the declared alias. | `test_every_onboarding_status_the_read_entry_point_returns_validates` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:775-782 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 8 citation findings and repaired the
   reversal this card had self-flagged. `FileReadStatus` is declared in this module at line 29 and

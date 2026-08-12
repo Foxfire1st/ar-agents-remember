@@ -6,8 +6,8 @@
 | path | `dashboard/src/cockpit/Cockpit.memo.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:40+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -65,6 +65,7 @@ No meaningful cross-repository references found.
 | This is dashboard-local test coverage. | "persistent layers skip the setView reconcile (260721 tab-switch CPU)" | dashboard/src/cockpit/Cockpit.memo.test.tsx:218-322 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-03T02:33:03+02:00 — W3-B04 curator: curated 4 table citations and 3 prose citations (7 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
@@ -78,7 +79,7 @@ No meaningful cross-repository references found.
   the master's `subTasks[0]` shed a `createdAt` "that `TaskSubTaskRefNode` declares on neither side" —
   **false in both directions**. `git show abc7cbc:dashboard/src/types/projection.ts` declares
   `createdAt?: string` on `TaskSubTaskRefNode` at L206-L214, and this same leaf removed it there
-  (now L368-L375) and moved it onto the new `SeriesSubTaskNode` (cit:([`SeriesSubTaskNode`], dashboard/src/types/projection.ts:379-386)) as part of splitting one
+  (now L368-L375) and moved it onto the new `SeriesSubTaskNode` (cit:([`SeriesSubTaskNode`], dashboard/src/types/projection.ts:399-406)) as part of splitting one
   interface back into the two `extra="forbid"` server models it had collapsed. So the fixture edit was
   compile-forced by that mirror split, not a tidy-up. The card's conclusion survives — nothing reads
   the subtask row's `createdAt` either way — so only the stated reason changed. Also re-verified the two

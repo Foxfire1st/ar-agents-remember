@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_landing.py`                      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:52+02:00                           |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`       |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -92,13 +92,14 @@ index or a prefix match — a positional assertion here would have broken on the
 | The landing-arc observation under test (`landing_refs` + `_default_branch`), and the `_pr_for` `env=git_environment()` (L124) the selector test asserts. | `landing_refs`, `_default_branch`, `_pr_for` | mcp/src/agents_remember/worktrees/modules/landing.py:69-90; mcp/src/agents_remember/worktrees/modules/landing.py:93-150; mcp/src/agents_remember/worktrees/modules/landing.py:229-258 |
 | The `WorktreeContract` dataclass the fixture builds. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285 |
 | `GIT_REPOSITORY_SELECTOR_ENV` (imported, not restated — L21) and the `run_git` whose spawn the shared-module patch also intercepts. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42 |
-| The package-wide AST sweep that covers git spawns but deliberately not `gh`, which is why the `gh` property is asserted here instead. | `gh` | mcp/tests/test_git_command.py:553-553 |
+| The package-wide AST sweep that covers git spawns but deliberately not `gh`, which is why the `gh` property is asserted here instead. | `gh` | mcp/tests/test_git_command.py:592-592 |
 
 ## Series-Contract Notes
 
 Landing tests continue to pin landing-state projection, with fixture contract paths updated from task-root contracts to leaf `series-contract.md` enclosures.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows and
   the history `worktree_contract.py` citation with exact anchors; exact non-fixing check returns
@@ -107,7 +108,7 @@ Landing tests continue to pin landing-state projection, with fixture contract pa
 - 2026-08-01T09:52+02:00 — 260731-EFA-L4 curator: No content impact: the whole diff is one
   fixture value, `_contract`'s `"workflow_kind": "chat"` becoming `"chat-task"`, forced by
   `WorkflowKind` narrowing to `Literal["chat-task", "light-task"]`
-  cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:13-13). No test, class, mock, probe branch or assertion changed,
+  cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:14-14). No test, class, mock, probe branch or assertion changed,
   and the card names no workflow kind anywhere — it claims the landing-window gate, the
   observed/planned/missing honesty axis, the origin-main semantics, the `gh` process boundary and
   the shared-`subprocess`-module patching argument, none of which the fixture value reaches.

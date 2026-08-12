@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -120,6 +120,7 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
@@ -135,11 +136,11 @@ No sibling repository evidence is needed for these tests.
   cit:(["from agents_remember.providers.cgc.context.core import CgcInstance", "def parse_cgc(self"], mcp/tests/test_provider_lifecycle_parser_1.py:10-10; mcp/tests/test_provider_lifecycle.py:121-121), the render tests
   cit:(["test_compose_auto_ports_render_with_empty_published_port"], mcp/tests/test_provider_lifecycle.py:91-91), the parser and default-root tests
   cit:(["test_visualize_accepts_named_options_after_subcommand", "test_grepai_direct_run_requires_settings_backed_docker"], mcp/tests/test_provider_lifecycle_parser_1.py:19-19; mcp/tests/test_provider_lifecycle_parser_1.py:73-73; mcp/tests/test_provider_lifecycle.py:282-282), Docker-mode GrepAI
-  cit:(["test_cgc_service_run_builds_command_without_cli_main", "test_watchers_service_reads_settings_without_cli_main", "test_cgc_start_all_dry_run_reports_project_migration"], mcp/tests/test_provider_lifecycle_parser_1.py:202-202; mcp/tests/test_provider_lifecycle_parser_1.py:490-490; mcp/tests/test_provider_lifecycle_parser_1.py:670-670), Compose
+  cit:(["test_cgc_service_run_builds_command_without_cli_main", "test_watchers_service_reads_settings_without_cli_main", "test_cgc_start_all_dry_run_reports_project_migration"], mcp/tests/test_provider_lifecycle_parser_1.py:203-203; mcp/tests/test_provider_lifecycle_parser_1.py:500-500; mcp/tests/test_provider_lifecycle_parser_1.py:682-682), Compose
   render and start-all with the POSIX user block, the process-namespace
   and handler tests, and the GrepAI readiness/watcher aggregation tests
   cit:(["test_docker_wait_for_postgres_requires_database_query", "test_watchers_run_reports_partial_results_and_recovery_actions"], mcp/tests/test_provider_lifecycle_parser_2.py:239-239; mcp/tests/test_provider_lifecycle_parser_2.py:269-269); a new row covers the two runtime-containment tests
-  cit:(["test_cgc_runtime_containment_allows_workflow_local_provider_runtime", "test_cgc_runtime_containment_rejects_source_repo_runtime"], mcp/tests/test_provider_lifecycle_parser_1.py:613-613; mcp/tests/test_provider_lifecycle_parser_1.py:648-648; mcp/tests/test_provider_lifecycle_parser_2.py:269-269). No test case was
+  cit:(["test_cgc_runtime_containment_allows_workflow_local_provider_runtime", "test_cgc_runtime_containment_rejects_source_repo_runtime"], mcp/tests/test_provider_lifecycle_parser_1.py:625-625; mcp/tests/test_provider_lifecycle_parser_1.py:660-660; mcp/tests/test_provider_lifecycle_parser_2.py:269-269). No test case was
   added, removed, or renamed and no assertion changed.
 
 - 2026-07-06T22:48+02:00 — 260703-L13 (GQ3): added `LifecycleSettingsPathTests` (fallback

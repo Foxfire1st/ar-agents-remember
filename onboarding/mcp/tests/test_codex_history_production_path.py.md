@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_history_production_path.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-12T04:15+02:00               |
-| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,8 @@ probe, adapter, Unix control IPC, and selected-child active projection path whil
 failure containment and sibling/parent continuity.
 
 ## Code Commentary
+
+L23 updates the production-path fake initialize response to the product-agnostic `agents_remember` server token while retaining exact client identity.
 
 #
 
@@ -73,6 +75,8 @@ The fake Codex process is repository-local; no external repository is executed.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-12T04:15+02:00 — No content impact: 260731-EFA-L22 migrated the composed fake process's
   initialize user agent to the current Desktop host-first form with exact client suffix; measured

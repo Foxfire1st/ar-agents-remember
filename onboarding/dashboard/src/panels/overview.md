@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`       |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -56,6 +56,10 @@ also gained parts/styles modules (`sessionComposer*`, `terminalSession.ts`,
 now a repository guideline. Behavior is preserved.
 
 ## Purpose
+
+### 260731-EFA-L23 Route Delta
+
+L23 makes Hangar expose optional durable lifecycle-operation kind, status, and phase as a compact enclosure badge without inventing an operation when none is projected.
 
 TES-L6 changes the command-seat panel boundary from one global spine to sprint-qualified groups.
 `FlowTab` consumes bound fixtures, while the session cockpit delegates group derivation to the data
@@ -270,6 +274,8 @@ generator and its stale check; the manual boundary is sample coverage.
 The panels route absorbed the L7 live-thinking change on top of the L8 split: the session-cockpit conversation family carries the coalesced live-thinking indicator and its pins; the over-limit dashboard files were split by L8 and the armed file-size rail now covers this route's TS/TSX.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 makes Hangar expose optional durable lifecycle-operation kind, status, and phase as a compact enclosure badge without inventing an operation when none is projected. Verification provenance remains closeout-owned.
 
 - 2026-08-12T04:04+02:00 — Recorded the shared-panel startup invariant exposed by the live dashboard
   repair: an always-mounted Zustand consumer must return a referentially stable selector fallback

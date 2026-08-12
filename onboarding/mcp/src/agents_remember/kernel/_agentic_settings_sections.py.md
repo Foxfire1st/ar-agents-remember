@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-08T02:00+02:00                                            |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`                                        |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                                        |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -20,6 +20,8 @@
 escalation, spawn, and the quality gate (260731-EFA-L17).
 
 ## Code Commentary
+
+L23 parses `qualityGate.executor` as exactly `local` or `dagger` and refuses any other value instead of selecting a fallback.
 
 - `_parse_loops`
 - `_parse_loop_defaults`
@@ -59,6 +61,8 @@ family key is refused by `_refuse_null_families` before this parser runs.
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: recorded that absent or
   empty quality-gate settings select host-managed memory and only an explicit

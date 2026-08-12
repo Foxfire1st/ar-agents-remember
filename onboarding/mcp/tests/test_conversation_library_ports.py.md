@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_ports.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
-| lastVerifiedCommitDate |  2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,8 @@ Codex, Claude, and Pi resolvers produce the landed normalized grammar (strict
 targets — without touching real harness processes.
 
 ## Code Commentary
+
+L23 adds a native Codex resolver seam to the fake library and proves both normalized native-PATH resolution and typed `LibraryStoreError` behavior when executable resolution is incompatible.
 
 ### Logic
 
@@ -39,7 +41,7 @@ fetch: a `thread/list` whose
 boundary, keeping these dormant port cases green while the agent-grouping suite
 (`test_conversation_library_agents.py`) owns the non-empty sub-agent cases. That fake transport and
 a stubbed environment reach the Codex library through a single `AppServerSeams(env=...,
-transport_factory=...)` object in `_codex_library` (cit:(["transport_factory="], mcp/tests/test_conversation_library_ports.py:150-150)), not as two loose constructor
+transport_factory=...)` object in `_codex_library` (cit:(["_FakeCodexTransport(script)"], mcp/tests/test_conversation_library_ports.py:147-147)), not as two loose constructor
 keywords.
 
 ### Conventions
@@ -83,6 +85,8 @@ No neighboring repository participates in this ports suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 - 2026-08-12T04:15+02:00 — No content impact: 260731-EFA-L22 migrated the fake Codex initialize
   user agent to the current Desktop host-first form with exact client suffix; port normalization,
   pagination, sub-agent, and hostile-shape assertions are unchanged.

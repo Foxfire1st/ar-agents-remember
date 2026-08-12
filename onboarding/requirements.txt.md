@@ -6,8 +6,8 @@
 | path | `requirements.txt` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
-| lastVerifiedCommitDate |  2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,12 +41,13 @@ metadata admits the same major-version range in its `dev` extra.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The checkout pins pytest-xdist 3.8.0 with the other quality tools. | "pytest-xdist==3.8.0" | requirements.txt:1-8 |
+| The checkout pins pytest-xdist 3.8.0 with the other quality tools. | "pytest-xdist==3.8.0" | requirements.txt:10-10 |
 | The package development extra admits pytest-xdist 3.x, and root pytest configuration enables automatic worker selection. | "pytest-xdist>=3,<4"; "-n=auto" | mcp/pyproject.toml:56-66; pyproject.toml:110-130 |
 | The checkout requirements pin Ruff 0.16.1 exactly. | "ruff==0.16.1" | requirements.txt:1-8 |
-| The package development extra independently pins the same Ruff release. | "\"ruff==0.16.1\"," | mcp/pyproject.toml:56-66 |
+| The package development extra independently pins the same Ruff release. | "\"ruff==0.16.1\"," | mcp/pyproject.toml:67-67 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: aligned the checkout and package development
   entry points on exact Ruff 0.16.1 after master integration exposed a stable-rule mismatch.

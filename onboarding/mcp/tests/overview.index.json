@@ -43,6 +43,7 @@
     "mcp/tests/test_agent_notifier_ladder.py",
     "mcp/tests/test_agent_notifier_seat.py",
     "mcp/tests/test_agentic_settings.py",
+    "mcp/tests/test_agents_remember_quality.py",
     "mcp/tests/test_application_boundary.py",
     "mcp/tests/test_application_guards.py",
     "mcp/tests/test_atomic_write.py",
@@ -61,6 +62,8 @@
     "mcp/tests/test_checkout_coordination_isolation.py",
     "mcp/tests/test_citation_resolution.py",
     "mcp/tests/test_claude_stream_transport.py",
+    "mcp/tests/test_clean_quality_executor.py",
+    "mcp/tests/test_clean_room.py",
     "mcp/tests/test_cleanup_carryover.py",
     "mcp/tests/test_cleanup_carryover_cache_1.py",
     "mcp/tests/test_cleanup_carryover_cache_2.py",
@@ -80,6 +83,7 @@
     "mcp/tests/test_codex_app_server_adapter_turns.py",
     "mcp/tests/test_codex_app_server_live.py",
     "mcp/tests/test_codex_app_server_protocol.py",
+    "mcp/tests/test_codex_clean_room_probe.py",
     "mcp/tests/test_codex_history_production_path.py",
     "mcp/tests/test_codex_native_history.py",
     "mcp/tests/test_cold_start.py",
@@ -188,6 +192,7 @@
     "mcp/tests/test_install_runtime.py",
     "mcp/tests/test_interaction_retention.py",
     "mcp/tests/test_judgment_demolition.py",
+    "mcp/tests/test_l23_notifier_batch_edges.py",
     "mcp/tests/test_l6_diff_coverage_abandon.py",
     "mcp/tests/test_l6_diff_coverage_citation_helpers.py",
     "mcp/tests/test_l6_diff_coverage_claim_reopen.py",
@@ -219,6 +224,7 @@
     "mcp/tests/test_leaf_structural_coverage.py",
     "mcp/tests/test_leaf_structural_refusal_coverage.py",
     "mcp/tests/test_lifecycle_finalize.py",
+    "mcp/tests/test_lifecycle_operations.py",
     "mcp/tests/test_liveness_simulations.py",
     "mcp/tests/test_log_capture.py",
     "mcp/tests/test_markdown_settings.py",
@@ -277,6 +283,7 @@
     "mcp/tests/test_pi_rpc_real_smoke.py",
     "mcp/tests/test_platform_edge_refusals.py",
     "mcp/tests/test_platform_long_tail.py",
+    "mcp/tests/test_platform_subprocess.py",
     "mcp/tests/test_projection_domain_invalidation.py",
     "mcp/tests/test_projection_scaling_cs6.py",
     "mcp/tests/test_projection_types_codegen.py",
@@ -386,8 +393,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 364,
-    "fileSidecars": 374,
+    "sourceFilesInScope": 371,
+    "fileSidecars": 381,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -425,6 +432,7 @@
     "base",
     "baseline",
     "basic",
+    "batch",
     "behaviour",
     "benchmark",
     "boundary",
@@ -453,6 +461,7 @@
     "claim",
     "claude",
     "claude_stream_json",
+    "clean",
     "cleanup",
     "cli",
     "client",
@@ -468,9 +477,7 @@
     "completion",
     "composition",
     "compound",
-    "concurrency",
-    "config",
-    "conformance"
+    "concurrency"
   ],
   "hotPath": {
     "summary": "The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrade-not-die, native-page thread demux \u2014 plus the remediation pins: concurrent parent pendings answered per id with the oldest in the singular slot, the method-first degrade split, the bounded per-thread pending map, and the load-shed event queue with its honest `ar/load-shed` notice), `test_conversatio...",

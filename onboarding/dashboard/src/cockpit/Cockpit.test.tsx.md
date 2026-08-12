@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -158,7 +158,7 @@ the reviewed task evidence for any current behavioral claim.
 | The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. | `severityMark` | dashboard/src/panels/AttentionQueue.tsx:49-49 |
 | The `Task progress: …; phase: …` label on `data-testid="task-state"` that React Aria's `role="option"` absorbs. | "task-state" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:673-673 |
 | The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before). | `taskDoc` | dashboard/src/test/fixtures/wire.ts:282-287 |
-| `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. | `metricsFor` | dashboard/src/types/projection.ts:319-326 |
+| `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. | `metricsFor` | dashboard/src/types/projection.ts:339-346 |
 
 ## Historical FEUI-L8 Reviewed Candidate Delta
 
@@ -179,6 +179,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.

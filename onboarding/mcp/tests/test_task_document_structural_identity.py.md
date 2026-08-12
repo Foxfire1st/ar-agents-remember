@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_document_structural_identity.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |  `df36127113619f4e85522eb615cc20c7eb637405`|
-| lastVerifiedCommitDate |  2026-08-12T08:57:17+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,8 @@ coverage split out of the general leaf structural-coverage suite so both respons
 below the repository's 1,200-line hard limit.
 
 ## Code Commentary
+
+L23 supplies an enclosure reports root to the Windows quality-environment case while preserving inherited Windows temp-variable behavior.
 
 ### Logic
 
@@ -69,6 +71,8 @@ No cross-repository implementation participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 removed a return statement after an unconditional fixture exception; structural identity and native-Windows environment coverage remain unchanged.
 - 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: created from the task-identity half of

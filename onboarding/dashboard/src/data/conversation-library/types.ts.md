@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation-library/types.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ reviewed task evidence for any current behavioral claim.
 | The wire model authority these types mirror (moved to `models/conversations/` by L9). | "class ConversationLibraryPage(WireModel):" | mcp/src/agents_remember/models/conversations/history.py:86-86 |
 | Server-side `ConversationLibraryAgentRow` / `agents` / `agents_note` producer these types mirror. | "class ConversationLibraryAgentRow(WireModel):" | mcp/src/agents_remember/models/conversations/history.py:48-48 |
 | The Claude harness lister's unavailable-agent note. | `_AGENTS_UNAVAILABLE_NOTE` | mcp/src/agents_remember/serving/conversation/library/claude.py:83-85 |
-| The Codex harness lister's degraded/truncated agent-page note. | `_agent_page` | mcp/src/agents_remember/serving/conversation/library/codex.py:477-500 |
+| The Codex harness lister's degraded/truncated agent-page note. | `_agent_page` | mcp/src/agents_remember/serving/conversation/library/codex.py:521-544 |
 
 ## Cross-Repo References
 
@@ -107,6 +107,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 3 repeated path:start-end Citation objects from 2 same-claim citation group(s) at card line(s) 56, 91; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
 - 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 22 initial citation findings (6 anchor, 8 prose, 8 source); scoped recheck PASS (0 findings). Verification metadata unchanged.

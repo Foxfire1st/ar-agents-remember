@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/daemon.py`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T20:24+02:00                           |
-| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97`       |
-| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview

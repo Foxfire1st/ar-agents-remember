@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-11T20:28+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -22,6 +22,12 @@ address fields; internal gate correlation models are isolated behind that public
 former flat gate model has moved, with its semantic history preserved in the successor card.
 `TaskDocumentRef` is a frozen value object whose explicit hash uses repository plus path; task
 altitude remains topology-owned rather than becoming a third identity field.
+
+`lifecycle_operation.py` adds strict closeout/integration input snapshots, an internal durable
+record, and a deliberately smaller public projection. The record carries private fingerprint,
+candidate tree, PID, approval claim, and recovery details; the projection exposes only the task,
+kind, state, phase, heartbeat, current command, result/failure, and guidance required by agents
+and the dashboard. `models/worktree.py` embeds that projection without publishing operation IDs.
 
 ## Purpose
 
@@ -188,8 +194,8 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
 | Produced-vs-declared vocabulary measurement runs in both directions. | `test_every_contract_literal_validates_at_its_wire_field`; `test_every_repo_state_the_git_facts_reader_writes_validates`; `test_every_next_guidance_literal_validates_at_its_wire_field` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:635-645; mcp/tests/test_wire_vocabulary_exhaustiveness.py:691-706; mcp/tests/test_wire_vocabulary_exhaustiveness.py:741-751 |
-| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:13-14; mcp/src/agents_remember/models/worktree.py:16-16; mcp/src/agents_remember/models/worktree.py:18-18 |
-| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/models/worktree.py:29-29; mcp/src/agents_remember/models/worktree.py:38-38 |
+| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:14-15; mcp/src/agents_remember/models/worktree.py:17-17; mcp/src/agents_remember/models/worktree.py:19-19 |
+| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:20-20; mcp/src/agents_remember/models/worktree.py:30-30; mcp/src/agents_remember/models/worktree.py:39-39 |
 | Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model. | "from agents_remember.models.worktree import NextOperation" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-10 |
 | The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19 |
 
@@ -361,6 +367,7 @@ re-exports the curated conversation surface (R6); no forwarding shims exist at t
 paths.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: documented strict durable lifecycle records and the private-identity-free public projection; verification provenance remains closeout-owned.
 
 - 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: recorded the explicit immutable
   `TaskDocumentRef` value/hash contract; verification metadata remains commit-owned.

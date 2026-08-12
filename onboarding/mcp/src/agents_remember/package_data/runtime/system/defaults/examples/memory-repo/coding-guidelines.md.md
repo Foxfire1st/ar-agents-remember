@@ -6,14 +6,16 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 
 ## Purpose
 
 This file is the coding-guidelines starter for a memory layer.
 
 ## Code Commentary
+
+L23 adds clean-quality guidance for native POSIX subprocesses, enclosure-owned self-overwriting reports, configured pytest parallelism, and the single pinned Dagger Ubuntu graph with no local-container fallback.
 
 ### Logic
 
@@ -55,6 +57,8 @@ No sibling repository evidence is needed.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   heading anchors; exact non-fixing check returns zero findings.

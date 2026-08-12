@@ -8,10 +8,14 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-08T14:38+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 
 ## What This Area Is
+
+### 260731-EFA-L23 Route Delta
+
+L23 makes the runtime enclosure reader attach the latest durable lifecycle-operation projection. The projection exposes task-addressed progress and report evidence while keeping worker/process resume identities private.
 
 The projection file-surface readers moved by 260731-EFA-L9 from `observer/` into the serving
 tree (layering cleanup: the serving projection tick owns these readers, and observer stays the
@@ -131,6 +135,8 @@ When changing a projection reader:
 3. Prove the change through the projection/observer suites and the structural-coverage suite.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 makes the runtime enclosure reader attach the latest durable lifecycle-operation projection. The projection exposes task-addressed progress and report evidence while keeping worker/process resume identities private. Verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: updated the route body for canonical
   task-document references in inbox and expectation snapshots; private occupant coordinates remain

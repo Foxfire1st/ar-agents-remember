@@ -30,6 +30,7 @@
     "mcp/src/agents_remember/models/drift.py",
     "mcp/src/agents_remember/models/lifecycle.py",
     "mcp/src/agents_remember/models/lifecycle_finalize.py",
+    "mcp/src/agents_remember/models/lifecycle_operation.py",
     "mcp/src/agents_remember/models/memory.py",
     "mcp/src/agents_remember/models/operator_inbox.py",
     "mcp/src/agents_remember/models/orchestration.py",
@@ -48,8 +49,8 @@
     "mcp/src/agents_remember/models/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 45,
-    "fileSidecars": 25,
+    "sourceFilesInScope": 46,
+    "fileSidecars": 26,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -74,9 +75,11 @@
     "init__",
     "lifecycle",
     "lifecycle_finalize",
+    "lifecycle_operation",
     "mcp",
     "memory",
     "models",
+    "operation",
     "operator",
     "operator_inbox",
     "orchestration",
@@ -120,6 +123,7 @@
       "mcp/src/agents_remember/models/drift.py",
       "mcp/src/agents_remember/models/lifecycle.py",
       "mcp/src/agents_remember/models/lifecycle_finalize.py",
+      "mcp/src/agents_remember/models/lifecycle_operation.py",
       "mcp/src/agents_remember/models/memory.py",
       "mcp/src/agents_remember/models/operator_inbox.py",
       "mcp/src/agents_remember/models/orchestration.py",
@@ -130,8 +134,7 @@
       "mcp/src/agents_remember/models/task_doc.py",
       "mcp/src/agents_remember/models/task_document.py",
       "mcp/src/agents_remember/models/task_document_ref.py",
-      "mcp/src/agents_remember/models/terminal.py",
-      "mcp/src/agents_remember/models/terminal_catalog.py"
+      "mcp/src/agents_remember/models/terminal.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -152,6 +155,8 @@
       "lifecycle",
       "lifecycle_finalize.py",
       "lifecycle_finalize",
+      "lifecycle_operation.py",
+      "lifecycle_operation",
       "memory.py",
       "memory",
       "operator_inbox.py",
@@ -179,9 +184,7 @@
       "tokens.py",
       "tokens",
       "tool_registry.py",
-      "tool_registry",
-      "tool_response.py",
-      "tool_response"
+      "tool_registry"
     ]
   },
   "fallback": {

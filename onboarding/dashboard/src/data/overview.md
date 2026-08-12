@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -22,6 +22,10 @@ default Chats hierarchy from task containment. `terminal.ts` posts structural as
 remain display/context helpers and never serve as hosted-seat addresses.
 
 ## Purpose
+
+### 260731-EFA-L23 Route Delta
+
+L23 extends the route's volatile-age contract with lifecycle-operation `elapsedSeconds`: server and client strip the same field so operation clocks do not churn structurally unchanged enclosure rows.
 
 This route owns the browser-side state and authority boundaries consumed by the dashboard UI. It
 normalizes terminal catalog rows, keeps session and per-seat cockpit state, reconciles the daemon's
@@ -329,6 +333,8 @@ agent-tagged notices, including selected-child history state, remain conversatio
 create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 extends the route's volatile-age contract with lifecycle-operation `elapsedSeconds`: server and client strip the same field so operation clocks do not churn structurally unchanged enclosure rows. Verification provenance remains closeout-owned.
 
 - 2026-08-11T23:40+02:00 — No route impact: the `railModel.ts` helper split preserves this route's
   canonical task-document hierarchy, role-altitude placement, and spawn-provenance separation.

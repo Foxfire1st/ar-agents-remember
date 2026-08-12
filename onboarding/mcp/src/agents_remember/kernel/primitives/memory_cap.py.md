@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/memory_cap.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00                     |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ No external Domain Documentation source is configured for this memory repo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The gate runs uncapped full commands directly, plans explicitly capped commands here, and reports both resource modes. | `QualityGatePlan`, `code_quality_gate_preview`, `run_strict_code_quality_gate`, `_memory_policy_payload` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:34-40; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-171; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:193-266; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:339-358 |
+| The gate runs uncapped full commands directly, plans explicitly capped commands here, and reports both resource modes. | `code_quality_gate_preview`; `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-171; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:193-266 |
 | The settings model for `orchestration.qualityGate`, including the host-managed `None` default. | "class QualityGateSettings:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:248-257 |
 | The fail-loud parser for `orchestration.qualityGate`, including absent/empty host-managed behavior. | `_parse_quality_gate` | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:382-400 |
 | Proofs for availability branches, scope wrapping, the rlimit flag, and cap-kill naming. | `MemoryCapPlanningTests`, `WrapperMemoryCapTests` | mcp/tests/test_code_quality_memory_cap.py:70-150; mcp/tests/test_code_quality_memory_cap.py:151-275 |

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/code_quality/post_coverage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ No external Domain Documentation source is configured for this repository-local 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper calls both rails after pytest and repeats them only after a conservative delta requires a full fallback. | `run_coverage_rails`; `complete_coverage_rails` | mcp/src/agents_remember/code_quality/check.py:431-474; mcp/src/agents_remember/code_quality/check.py:543-556 |
+| The wrapper calls both rails after pytest and repeats them only after a conservative delta requires a full fallback. | `run_coverage_rails`; `complete_coverage_rails` | mcp/src/agents_remember/code_quality/check.py:517-559; mcp/src/agents_remember/code_quality/check.py:632-656 |
 | CRAP calculation uses Coverage.py branch units and Radon complexity. | `calculate_scores` | mcp/src/agents_remember/code_quality/crap_calculator.py:294-305 |
 | Diff measurement intersects coverage units with the resolved Git diff. | `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
 | Existing suites continue to exercise the aliases exposed by `check.py`. | `TestCheckRails`; `WrapperIntegrationTests` | mcp/tests/test_diff_coverage.py:554-675; mcp/tests/test_l6_diff_coverage_code_quality.py:174-339 |
@@ -68,6 +68,7 @@ No meaningful cross-repository boundary is owned by this module.
 | Both rails read only the current repository and the wrapper-produced artifact. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T07:30+02:00 — Created when the unchanged post-pytest rail behavior was extracted
   from `check.py` during retry-pipeline implementation. Verification metadata remains blank until
