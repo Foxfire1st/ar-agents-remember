@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-12T09:20+02:00 |
-| lastVerifiedCommitHash | `284ddbcd879a0b1ea58c9997ff781fb471982c36`
-| lastVerifiedCommitDate | 2026-08-12T09:23:37+02:00|
+| lastUpdated | 2026-08-12T10:08+02:00 |
+| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97`
+| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
 
 > **Status:** active baseline
 
@@ -1078,6 +1078,10 @@ package-layering gate (rank violations, cycles, undeclared dirs/imports all fail
 baseline). The move ledger and pre-change serialization baseline prove zero wire drift.
 
 ## Update History
+
+- 2026-08-12T10:08+02:00 — No route impact: the rc7 release leaf changes only the public
+  README version pin and existing package-version authorities; repository routes and subsystem
+  ownership are unchanged. Verification metadata remains pinned until closeout.
 
 - 2026-08-12T09:20+02:00 — No route impact: the 260731-EFA-L20 reopen removes one intentionally unreachable test body after the master coverage gate identified it; repository architecture and routing remain unchanged.
 - 2026-08-12T08:41+02:00 — No route impact: 260731-EFA-L20 changes only regression implementation and direct boundary coverage needed by the existing master quality contract; repository architecture and routing remain unchanged.

@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-12T09:20+02:00 |
-| lastVerifiedCommitHash | `284ddbcd879a0b1ea58c9997ff781fb471982c36`
-| lastVerifiedCommitDate | 2026-08-12T09:23:37+02:00|
+| lastUpdated | 2026-08-12T10:08+02:00 |
+| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97`
+| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -765,6 +765,10 @@ The MCP package separates three surfaces:
   `mcp/tests/test_dashboard_daemon.py` + new `test_config.py` cases. Verification metadata pinned
   until closeout stamps the code commit.
 ## Update History
+
+- 2026-08-12T10:08+02:00 — No route impact: MCP 3.0.0rc7 advances the existing package and
+  kernel fallback version authorities without changing package routes, dependencies, entry
+  points, or tool behavior. Verification metadata remains pinned until closeout.
 
 - 2026-08-12T09:20+02:00 — No route impact: the 260731-EFA-L20 reopen changes only the executable shape of one checkout-isolation assertion; MCP package behavior and routing are unchanged.
 - 2026-08-12T08:41+02:00 — No route impact: 260731-EFA-L20 adds no package behavior or source route; it repairs master-gate proof through test simplification and direct boundary coverage.

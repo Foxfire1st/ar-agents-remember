@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastUpdated            | 2026-08-12T10:08+02:00 |
+| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97` |
+| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -143,7 +143,7 @@ the source rather than being repeated here; it is the same string
 | Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:25-26 |
 | CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | `crap_score`, "radon.complexity" | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:234-234 |
 | The MCP console entry point resolves through `agents_remember.mcp.__main__`. | "from .server import main" | mcp/src/agents_remember/mcp/__main__.py:5-5 |
-| MCP server payloads report the package-level `SERVER_VERSION`. | "SERVER_VERSION = version(" | mcp/src/agents_remember/kernel/primitives/version.py:15-15 |
+| MCP server payloads report the package-level `SERVER_VERSION`. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
 | The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | `## Quickstart`, `## Install And Run` | mcp/README.md:15-48; mcp/README.md:66-114 |
 | `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | `runtime_install` | mcp/src/agents_remember/install/runtime.py:593-593 |
 | The release job builds the frontend, places the bundle, packages, and then verifies both distributions carry the bundle and its fingerprint sidecar. | "npm run build", "python scripts/sync-dashboard.py", "run: python -m build", "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:62-62; .github/workflows/publish-mcp-to-pypi.yml:71-71; .github/workflows/publish-mcp-to-pypi.yml:78-78; .github/workflows/publish-mcp-to-pypi.yml:94-94 |
@@ -154,6 +154,11 @@ the source rather than being repeated here; it is the same string
 | The interpreter matrix the classifiers claim support for is the one the gate workflow runs. | "3.11" | .github/workflows/quality-checks.yml:27-27 |
 
 ## Update History
+
+- 2026-08-12T10:08+02:00 — No content impact: bumped the package release identity to `3.0.0rc7`; it remains
+  aligned with the kernel `SERVER_VERSION` fallback. No dependency, entry-point, classifier,
+  package-data, or discovery contract changed. Verification metadata remains pinned until
+  closeout stamps the release commit.
 
 - 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: replaced the permissive Ruff development range
   with the repository's exact 0.16.1 pin so master and leaf lint results are deterministic.

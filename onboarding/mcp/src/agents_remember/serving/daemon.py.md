@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/daemon.py`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T20:24+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97`       |
+| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -98,7 +98,7 @@ protocol.
 | CLI dispatch (`--daemon`/`--status`/`--stop`) and the `--no-access-log` child flag. | `add_arguments` | mcp/src/agents_remember/cli/dashboard.py:84-158 |
 | The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes. | `DashboardSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:90-95 |
 | The MCP boot seam calling `maybe_autostart_dashboard`. | `maybe_autostart_dashboard` | mcp/src/agents_remember/serving/daemon.py:336-356 |
-| The version comparator (`SERVER_VERSION`, kernel-owned since L9). | "agents-remember-mcp" | mcp/src/agents_remember/kernel/primitives/version.py:15-15 |
+| The version comparator (`SERVER_VERSION`, kernel-owned since L9). | "agents-remember-mcp"; `SERVER_VERSION = _resolve_server_version()` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
 | Unit tests: state round-trip, probes, stop escalation, ensure matrix, autostart, CLI dispatch. | `StateFileTests`; `ProbeTests`; `StopTests`; `EnsureTests`; `AutostartTests`; `CliDaemonDispatchTests` | mcp/tests/test_dashboard_daemon.py:53-90; mcp/tests/test_dashboard_daemon.py:93-125; mcp/tests/test_dashboard_daemon.py:141-181; mcp/tests/test_dashboard_daemon.py:241-364; mcp/tests/test_dashboard_daemon.py:367-404; mcp/tests/test_dashboard_daemon.py:421-503 |
 
 ## 260731-EFA-L2 Current Delta
@@ -121,6 +121,10 @@ it — an **adopted** daemon keeps the cadences it was started with.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-12T10:20+02:00 — Citation maintenance only: widened the kernel version-comparator
+  reference to the named metadata/fallback resolver introduced by the rc7 leaf; daemon behavior
+  is unchanged. Verification metadata remains pinned until closeout.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

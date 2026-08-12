@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastUpdated            | 2026-08-12T10:08+02:00 |
+| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97` |
+| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -195,6 +195,10 @@ across the two hooks was retiered by 260731-EFA-L1, and the *step list* was corr
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-12T10:08+02:00 — No content impact: MCP 3.0.0rc7 refreshed the public dashboard pin and
+  current-version statement from rc6 to rc7. The README structure and product contract are
+  unchanged; verification metadata remains pinned until closeout stamps the release commit.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: aligned the
   contributor-facing quality ladder with host-managed master RAM/swap and an

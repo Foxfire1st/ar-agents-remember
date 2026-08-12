@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/kernel/primitives/` |
 | onboardingRoute | `mcp/src/agents_remember/kernel/primitives/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../../../overview.md) |
-| lastUpdated | 2026-08-10T18:31+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastUpdated | 2026-08-12T10:08+02:00 |
+| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97` |
+| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
 
 ## What This Area Is
 
@@ -141,6 +141,11 @@ When adding a primitive:
 3. Run the layering check and structural-coverage suite.
 
 ## Update History
+
+- 2026-08-12T10:08+02:00 — No route impact: the rc7 leaf changes the existing version fallback
+  literal and names its metadata/fallback resolver so targeted CRAP can score it; primitive
+  vocabulary, import direction, and route ownership are unchanged. Verification metadata remains
+  pinned until closeout.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24: changed memory-cap
   ownership from a mandatory default to an explicit opt-in primitive; host-
