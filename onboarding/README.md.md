@@ -6,8 +6,8 @@
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -161,7 +161,7 @@ changed-lines coverage floor, which is the wrapper's last and binding step. `CON
 carries it; the README does not.
 - **CI** runs that same wrapper on **every branch push and every pull request**, not only `main`.
 - **The full wrapper also runs exactly once per master at the master integration gate**,
-  invoked by `worktree_integrate` itself and memory-capped
+  invoked by `worktree_integrate` itself with host-managed RAM/swap by default
   (`orchestration.qualityGate.memoryCapBytes`) — the L17 move that retired per-leaf full runs.
 - **Closeout and leaf integration** run the targeted tier before creating a code commit even when
   hooks are not configured.
@@ -196,9 +196,14 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: aligned the
+  contributor-facing quality ladder with host-managed master RAM/swap and an
+  optional explicit constrained-environment cap. Verification metadata remains
+  pinned until closeout stamps L24.
+
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: rewrote the gate-paragraph
   section for the ladder — pre-push runs `--targeted`, the full wrapper runs
-  once per master at the master integration gate (memory-capped, invoked by
+  once per master at the master integration gate (host-managed by default, invoked by
   `worktree_integrate`), leaf closeouts/integrations run the targeted tier —
   and adjusted the coverage-floor gap note to the targeted-tier sentence.
   Verification metadata stays pinned until closeout stamps the 260731-EFA-L17

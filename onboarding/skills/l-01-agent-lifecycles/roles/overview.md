@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 
 ## Purpose
 
@@ -22,6 +22,11 @@ Manager occupies one canonical master and drives the leaf closeout chain. Worker
 and produces code plus a turn report. Reviewer produces independent verdict evidence. Curator
 occupies one leaf coherence pass and reconciles existing intent, ruled intent, and implemented
 reality into onboarding. Other specialist roles retain their own documented altitude and artifact.
+
+Manager, orchestrator, and worker doctrine shares one quality altitude rule:
+leaf checks remain targeted, while the once-per-master full wrapper keeps
+pytest `-n=auto` and host-managed RAM/swap unless constrained CI explicitly
+configures a hard cap.
 
 The curator's terminal artifact is valid only after current-additions coverage and the full
 leaf-scoped memory-quality worklist have been repaired and rerun. Expected dirty-source drift and
@@ -59,6 +64,11 @@ read/search helpers and never become AR role seats.
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:95-111 |
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 route impact: manager,
+  orchestrator, and worker quality-altitude doctrine now uses host-managed
+  master memory by default and keeps leaf checks targeted. Verification
+  metadata remains pinned until closeout stamps L24.
 
 - 2026-08-11T14:40+02:00 — Made the curator's missing-onboarding and full-quality repair-and-rerun
   obligation part of the role route's current contract, with commit-derived stamps left to closeout.

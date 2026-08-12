@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/kernel/primitives/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../../../overview.md) |
 | lastUpdated | 2026-08-10T18:31+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 
 ## What This Area Is
 
@@ -27,7 +27,7 @@ version identity. Every layer above kernel reads these without importing `mcp`, 
 disposable coordinator and refuses undeclared primary-checkout access; `gate_policy.py`
 owns the human-first gate delegation policy; `provider_degradation_settings.py` parses the
 `providerDegradation` block; `inbox_backoff.py` owns redelivery backoff; `memory_cap.py` plans
-memory-capped full gate runs; `identity.py` owns provider instance naming.
+explicit opt-in hard caps while uncapped full gates stay host-managed; `identity.py` owns provider instance naming.
 
 ## What Belongs Here
 
@@ -41,7 +41,7 @@ memory-capped full gate runs; `identity.py` owns provider instance naming.
 | `gate_vocab.py` | Gate-kind vocabulary. |
 | `identity.py` | Provider instance identity/naming. |
 | `inbox_backoff.py` | Inbox redelivery backoff + rate limiting. |
-| `memory_cap.py` | Full-gate memory cap planning. |
+| `memory_cap.py` | Optional explicit full-gate hard-cap planning; default host memory/swap remains untouched. |
 | `observer_paths.py` | Observer store-root path conventions. |
 | `provider_degradation_settings.py` | Provider degradation settings parsing. |
 | `tool_reports.py` | Bulk tool-report retention/redaction. |
@@ -141,6 +141,11 @@ When adding a primitive:
 3. Run the layering check and structural-coverage suite.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24: changed memory-cap
+  ownership from a mandatory default to an explicit opt-in primitive; host-
+  managed full gates bypass it. Verification metadata remains pinned until
+  closeout stamps L24.
 
 - 2026-08-10T18:31+02:00 — 260731-EFA-L21: added the checkout-coordination primitive, its
   loaded-package detection rule, explicit execution modes, deterministic leaf dummy root, and

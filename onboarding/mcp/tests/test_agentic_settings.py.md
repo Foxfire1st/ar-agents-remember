@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32` |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -162,7 +162,7 @@ No known follow-up in this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The loader under test. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:211-246 |
+| The loader under test. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:209-244 |
 | The harness registry bounding harness-id validation. | `find_harness` | mcp/src/agents_remember/serving/harnesses.py:61-70 |
 | Supervisor-family tests pin the `signalCooldownSeconds` default/full-block parse and sub-900 floor refusals. | `test_agent_notifier_knobs_parse`; `test_agent_notifier_signal_cooldown_must_be_at_least_15_minutes` | mcp/tests/test_agentic_settings.py:426-445; mcp/tests/test_agentic_settings.py:463-465 |
 
@@ -176,9 +176,9 @@ No meaningful cross-repo references found.
 
 ### 260731-EFA-L17 — Quality-Gate Settings Family
 
-`QualityGateSettingsTests` (lines 961-1019) pins the new
-`orchestration.qualityGate` family: the 2 GiB default when absent, parsing and
-overriding `memoryCapBytes`, the empty-block default, the fail-loud unknown-key
+`QualityGateSettingsTests` pins the
+`orchestration.qualityGate` family: the host-managed `None` default when absent,
+parsing and overriding `memoryCapBytes`, the empty-block default, the fail-loud unknown-key
 refusal (`memoryCapMegabytes` names the offending file), and the
 positive-integer requirement (`0` refused). `MergePrecedenceTests` and
 `SeedTests` also assert the quality-gate default survives merge and seed paths.
@@ -191,6 +191,11 @@ loaded `AgenticSettings` has no `escalation` attribute. The SLA/rung-parse cover
 with the family.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: replaced the
+  obsolete 2 GiB default assertions with absent/empty host-managed assertions
+  while retaining explicit positive-cap and fail-loud schema coverage.
+  Verification metadata remains pinned until closeout stamps L24.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the `orchestration.escalation`
   fail-loud retirement tests (family and `respawnAfterRung` refused; no `settings.escalation`

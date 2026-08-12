@@ -74,7 +74,7 @@
     "vocab"
   ],
   "hotPath": {
-    "summary": "`runtime_config.py::McpRuntimeConfig` is the trusted authority settings record; `checkout_coordination.py` keeps unpublished linked-checkout CLI/store writes inside the leaf's disposable coordinator and refuses undeclared primary-checkout access; `gate_policy.py` owns the human-first gate delegation policy; `provider_degradation_settings.py` parses the `providerDegradation` block; `inbox_backoff.py` owns redelivery backoff; `memory_cap.py` plans memory-capped full gate runs; `identity.py` owns provider instance naming.",
+    "summary": "`runtime_config.py::McpRuntimeConfig` is the trusted authority settings record; `checkout_coordination.py` keeps unpublished linked-checkout CLI/store writes inside the leaf's disposable coordinator and refuses undeclared primary-checkout access; `gate_policy.py` owns the human-first gate delegation policy; `provider_degradation_settings.py` parses the `providerDegradation` block; `inbox_backoff.py` owns redelivery backoff; `memory_cap.py` plans explicit opt-in hard caps while uncapped full gates stay host-managed; `identity.py` owns provider instance naming.",
     "candidateHints": [
       "mcp/src/agents_remember/kernel/primitives",
       "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py",
@@ -126,7 +126,7 @@
       "mcp/src/agents_remember/kernel/primitives/",
       "mcp/src/agents_remember/kernel/primitives/overview.md",
       "mcp/overview.md",
-      "d9a1eb82849baea6c0b86735e772a932f4bbdc7c",
+      "61d2c6a225b2e107bb50d446f708002d58b03a75",
       "mcp/config.py",
       "mcp",
       "controlplane",

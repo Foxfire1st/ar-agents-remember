@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-10T22:09+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -22,8 +22,8 @@ then runs the configured pre-commit hook once, restages any hook edits, and runs
 change-set-scoped quality contract (`--targeted` — changed files +
 reverse-import closure + derived test subset, mandatory CRAP over the changed modules) over
 exactly that, before any code, memory, ledger, contract, or applied-gate mutation. The full
-wrapper is NOT a leaf gate: it runs once per master at the master integration gate,
-memory-capped. After the wrapper's pytest-final subprocess, closeout commits exactly the
+wrapper is NOT a leaf gate: it runs once per master at the master integration gate with
+host-managed RAM/swap by default. After the wrapper's pytest-final subprocess, closeout commits exactly the
 certified index with hooks bypassed; it neither reruns the fast hook nor restages the working
 tree. Only after that gate passes does it claim the
 `closeout-approval` gate (260731-EFA-L5 — the `applied` mutation now sits here, one statement above
@@ -131,7 +131,8 @@ argument routes the complete test/quality transcript to the leaf's stable
 `reports/test-results.md`; the successful closeout payload retains its `reportPath`. The preview summary and
 the apply flow state the ladder explicitly: the leaf contract is `--targeted` (changed
 files + reverse-import closure + derived test subset), the full wrapper is NOT a leaf
-gate (once per master at the master integration gate, memory-capped), and
+gate (once per master at the master integration gate with host-managed memory
+by default), and
 `memory_quality_check` stays a per-leaf closeout gate (`_run_memory_quality_phase`,
 lines 612-626). A leaf closeout cannot skip its required checks: an uncovered changed
 production module, a failed targeted run, or a missing wrapper refuses loudly.
@@ -344,7 +345,7 @@ No external Domain Documentation source is configured for this memory repo.
 | `GateStore.claim_approval` — the compare-and-swap this module now spends an approval through: fold, policy verdict and the `applied` append inside one held `exclusive_access`. It is the only way to spend one; `_mark_closeout_gate_applied` was deleted. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234 |
 | `CONSUMED_APPROVAL_GATE_KINDS` — why the `applied` snapshot this module writes is no longer reclaimed at any age, which is the other half of the replay fix. | `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/interaction_retention.py:52-54 |
 | The replay-window regressions: the gate is `applied` before `commit_if_dirty`, and a gate failure leaves it `approved`. | `test_the_applied_record_survives_a_concurrent_gate_log_compaction`, `test_the_approval_is_already_consumed_when_the_first_commit_runs`, `test_a_refusal_before_any_commit_leaves_the_approval_unspent` | mcp/tests/test_gate_replay_window.py:261-290; mcp/tests/test_gate_replay_window.py:582-615; mcp/tests/test_gate_replay_window.py:617-645 |
-| The strict source-quality adapter decides applicability, executes the current worktree wrapper under the planned mode (leaf targeted / full+capped), and fails before mutation. | `code_quality_gate_preview`, `requires_strict_code_quality`, `run_strict_code_quality_gate`, `QualityGatePlan` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-177; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:100-107; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:195-270; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:34-40 |
+| The strict source-quality adapter decides applicability, executes the current worktree wrapper under the planned mode (leaf targeted / full host-managed by default), and fails before mutation. | `code_quality_gate_preview`, `requires_strict_code_quality`, `run_strict_code_quality_gate`, `QualityGatePlan` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-171; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:100-107; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:193-266; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:34-40 |
 | Focused closeout regressions prove failure preserves code/memory/ledger/contract state and success runs the leaf targeted contract before code commit; `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests` pin the staging step, both refusals, the reset-after-the-conflict-check ordering, and that a refused gate leaves the worktree staged. | `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests`, `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:350-456; mcp/tests/test_worktree_closeout_quality_gate.py:536-659; mcp/tests/test_worktree_closeout_quality_gate.py:662-720; mcp/tests/test_worktree_closeout_quality_gate.py:726-789 |
 | `require_git` is the fail-closed facade over the shared Git runner; it preserves raw runner decoding and makes only raised diagnostics transport-safe. | `require_git` | mcp/src/agents_remember/worktrees/modules/git.py:18-29 |
 | Closeout routes its staging call sites through `require_git`, supplies both checkout and enclosure in `QualityGateTarget`, and runs the leaf targeted plan. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:821-893 |
@@ -382,6 +383,11 @@ became four** — see the L4 section above. `run_strict_code_quality_gate` remai
 still what actually runs the wrapper, one step inside `_gate_staged_code`.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: corrected the
+  closeout preview doctrine to describe host-managed master memory by default;
+  leaf targeted behavior is unchanged. Verification metadata remains pinned
+  until closeout stamps L24.
 
 - 2026-08-12T03:31+02:00 — 260731-EFA-L22 closeout repair: re-read the `require_git` dependency
   after its diagnostic-boundary change. Closeout still uses the same fail-closed facade and Git

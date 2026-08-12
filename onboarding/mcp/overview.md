@@ -9,8 +9,8 @@ Total output lines: 2603
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -32,6 +32,11 @@ The package's development extra supplies pytest-xdist 3.x, while root pytest `ad
 coverage, and retry-proof arguments. The retry-proof compatibility key includes the pytest-xdist
 version alongside pytest and coverage tooling; proof reuse therefore fails closed when the
 parallel executor changes.
+
+Full master integration keeps that literal `-n=auto` and uses host-managed RAM
+and swap by default. `orchestration.qualityGate.memoryCapBytes` is absent unless
+an operator deliberately configures a constrained-environment hard cap; an
+explicit systemd cap applies `MemoryMax` without disabling host swap.
 
 ## Purpose
 
@@ -760,6 +765,11 @@ The MCP package separates three surfaces:
   `mcp/tests/test_dashboard_daemon.py` + new `test_config.py` cases. Verification metadata pinned
   until closeout stamps the code commit.
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 route impact: settings,
+  integration, closeout, packaged lifecycle doctrine, and regression tests now
+  agree on host-managed full-gate RAM/swap with an optional explicit hard cap.
+  Verification metadata remains pinned until closeout stamps L24.
 
 - 2026-08-12T01:38+02:00 — No route impact: 260731-EFA-L22 makes leaf quality enforcement
   deterministic (exact Ruff pin and preserved file-size arm) and splits three oversized test

@@ -9,8 +9,8 @@ Total output lines: 1813
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`|
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -936,8 +936,8 @@ The test tree gained three focused suites for the quality ladder: `test_code_qua
 (derivation selectors, transitive reverse-import closure, uncovered-module refusal, real targeted
 wrapper runs with radon consuming the changed module files), `test_code_quality_memory_cap.py`
 (systemd/rlimit planning and the wrapper's cap enforcement and policy naming), and
-`test_worktree_integrate_quality_gate.py` (leaf targeted / series full+capped altitude routing,
-settings-owned cap, refusal-before-merge, dry-run planned-gate payload). Existing families were
+`test_worktree_integrate_quality_gate.py` (leaf targeted / series full altitude routing,
+host-managed absence and explicit settings caps, refusal-before-merge, dry-run planned-gate payload). Existing families were
 extended: closeout gate mode/cap/kill-shape assertions, hook-tier `pre-push → targeted`, settings
 `qualityGate` family, scope-reporting integration invocation labels, and the deterministic
 observer ticker-exit assertions (`ticker.join` replacing poll loops — test-only, kills a
@@ -954,6 +954,11 @@ proof of memory preflight → hook → wrapper → exact-index commit, including
 tree edit that must stay out of the commit.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24: added host-managed
+  full-gate and optional explicit-cap regression coverage; pytest remains
+  literal `-n=auto`. Verification metadata remains pinned until closeout stamps
+  L24.
 
 - 2026-08-12T04:41+02:00 — 260731-EFA-L22 closeout repair: recorded the public settings-update
   branch matrix added to clear the session owner's enforced CRAP finding without weakening the

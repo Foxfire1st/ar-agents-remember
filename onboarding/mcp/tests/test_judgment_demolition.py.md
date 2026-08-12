@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_judgment_demolition.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-09T12:08+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,7 +87,7 @@ authority.
 | The post-demolition actions surface (fact-relay `_FINDING_ACTIONS` only). | `_FINDING_ACTIONS` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:675-686 |
 | The post-demolition predicate composition, including the `escalationBudget` load-shed slice. | `evaluate_predicates` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-380 |
 | The fact-only finding/action vocabulary. | `FindingKind`; `ActionKind` | mcp/src/agents_remember/serving/agent_notifier_models.py:26-50 |
-| The retired-kind settings surface (fail-loud unknown keys). | `KNOWN_EXPECTATION_KINDS` | mcp/src/agents_remember/kernel/_agentic_settings_core.py:128-128 |
+| The retired-kind settings surface (fail-loud unknown keys). | `KNOWN_EXPECTATION_KINDS` | mcp/src/agents_remember/kernel/_agentic_settings_core.py:125-125 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`|
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 
 ## Purpose
 
@@ -70,7 +70,7 @@ pre-commit and pre-push. Two facts these docs predate (260731-EFA-L1, recorded o
 the root overview): the two hook tiers are not equivalent — pre-commit runs a
 fast staged-content tier without the wrapper, and pre-push runs the
 change-set-scoped targeted tier (260731-EFA-L17; the full wrapper runs once per
-master at the master integration gate, memory-capped) — and the closeout gate
+master at the master integration gate with host-managed RAM/swap by default) — and the closeout gate
 applies to any repository whose checkout carries the wrapper rather than only to
 `agents-remember`. The skill-copy checks named here do run in both tiers and are
 unaffected.
@@ -141,8 +141,9 @@ closeout mutation, and still fails closed. What changed is what the gate can cat
 The public reference docs were corrected to the ladder: `mcp-tools.md` and
 `use-external-memory.md` describe the leaf `--targeted` closeout contract, `worktrees-c09.md`
 places the full wrapper at the master integration gate inside `worktree_integrate`, and
-`settings-json.md` documents the new `orchestration.qualityGate.memoryCapBytes` knob (2 GiB
-default, fail-loud family) — the schema source for the full-gate memory cap.
+`settings-json.md` documents optional `orchestration.qualityGate.memoryCapBytes`
+(absent/host-managed default, fail-loud family) — the schema source for an
+explicit constrained-environment full-gate cap.
 
 ## 260805-ARG-L1 Reference Impact
 
@@ -168,6 +169,11 @@ That enclosure-local operational artifact is atomically replaced, combines repai
 and quality work with explicitly closeout-owned evidence, and is removed with the enclosure.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: corrected the
+  settings-reference route from a mandatory 2 GiB cap to host-managed memory
+  with an optional explicit cap. Verification metadata remains pinned until
+  closeout stamps L24.
 
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the four changed reference files
   with structural agent control and the enclosure-local curator checklist; no exact-session public

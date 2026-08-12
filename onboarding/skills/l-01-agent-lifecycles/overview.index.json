@@ -51,7 +51,8 @@
       "roles",
       "skills/l-01-agent-lifecycles",
       "route-local-overview",
-      "d9a1eb82849baea6c0b86735e772a932f4bbdc7c",
+      "61d2c6a225b2e107bb50d446f708002d58b03a75",
+      "-n=auto",
       "roles/",
       "skills/l-01-agent-lifecycles/SKILL.md",
       "skills/l-01-agent-lifecycles/roles/curator.md",
@@ -62,9 +63,12 @@
       "lastUpdated",
       "T14",
       "lastVerifiedCommitHash",
+      "d2c6a225b2e107bb50d446f708002d58b03a75",
       "lastVerifiedCommitDate",
-      "T00",
       "T07",
+      "RAM",
+      "EFA",
+      "L24",
       "T12",
       "T02"
     ]

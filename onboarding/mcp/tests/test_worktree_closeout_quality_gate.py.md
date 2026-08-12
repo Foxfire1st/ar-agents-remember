@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_closeout_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
-| lastVerifiedCommitDate |  2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash |  `61d2c6a225b2e107bb50d446f708002d58b03a75`|
+| lastVerifiedCommitDate |  2026-08-12T07:36:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -287,20 +287,25 @@ about other repositories: a bare temp checkout stands in for a consuming reposit
 | --- | --- | --- |
 | A checkout with no wrapper is reported as `wrapper-unavailable` rather than silently skipped, which is the consuming-repository case. | `test_preview_reports_missing_wrapper_instead_of_skipping_silently` | mcp/tests/test_worktree_quality_gate_runner.py:51-67 |
 
-### 260731-EFA-L17 — Mode, Cap, And Kill-Shape Assertions
+### 260731-EFA-L17/L24 — Mode, Resource Policy, And Kill-Shape Assertions
 
 `CodeQualityGateTests` (lines 49-423) now asserts the leaf contract command
 `python -m agents_remember.code_quality.check --targeted` (and
 `--targeted --diff-base <base>`), the `mode` payload key, and the new full-mode
-arms: `_gate_command` refuses unknown modes and cap-less full runs, the full
-preview names `memoryCap` (`capBytes`, policy, mechanism), a full run without a
-cap is refused, the planned rlimit mechanism reaches the runner argv, and
+arms: `_gate_command` refuses unknown modes, the full preview names
+`memoryPolicy` and names `memoryCap` only for an explicit limit, an uncapped
+full run executes host-managed, the planned rlimit mechanism reaches the runner argv, and
 over-cap kills (returncode 137 and -9) raise with
 `orchestration.qualityGate.memoryCapBytes` named. `CloseoutCodeQualityGateTests`
 asserts the apply path passes the targeted plan alongside
 `contract.code_worktree` and `contract.code_base_commit`.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 dependent-contract
+  correction: replaced the obsolete cap-less refusal description with the
+  host-managed full-gate path; the assertions themselves live in the runner
+  suite after L22's split.
 
 - 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: moved `CodeQualityGateTests` into
   `test_worktree_quality_gate_runner.py`, retained closeout mutation/staging ownership here, and

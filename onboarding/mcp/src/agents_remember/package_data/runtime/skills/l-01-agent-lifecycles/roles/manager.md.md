@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:25+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -26,6 +26,10 @@ The packaged source therefore carries the canonical manager's structural leaf di
 builder/reviewer/curator closeout chain, delegated gate authority, leaf/master quality altitudes,
 subordinate cleanup, and durable master-handover contract unchanged. The sync process copies the
 complete canonical tree; package-local edits are drift, not customization.
+
+The synchronized quality altitude keeps leaf checks change-set scoped and runs
+the full wrapper once at master integration with host-managed RAM/swap. Only a
+constrained environment explicitly opts into `memoryCapBytes`.
 
 ## Conventions
 
@@ -50,6 +54,10 @@ complete canonical tree; package-local edits are drift, not customization.
 | MCP package data is copied from canonical skills and checked for drift. | "mcp package data"; `sync_target`; `check_targets` | scripts/sync-skills.py:43-47; scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
+  canonical manager quality-altitude rule: full master gates use host-managed
+  RAM/swap by default and only constrained CI opts into a hard cap.
 
 - 2026-08-11T14:25+02:00 — Replaced duplicated history/task fragments with the exact synchronized
   manager-artifact contract and current source evidence.

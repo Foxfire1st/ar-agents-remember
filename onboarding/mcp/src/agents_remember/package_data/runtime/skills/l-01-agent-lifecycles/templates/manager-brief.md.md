@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                  |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`                                  |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 
 ## Purpose
 
@@ -54,12 +54,17 @@ No sibling repository evidence is needed for this doctrine file.
 The manager-brief template's dispatch-defaults section gains a **Quality altitude ladder
 (260731-EFA-L17)** bullet (source lines 38-43): leaf closeout and leaf integration run the
 change-set-scoped contract (`agents_remember.code_quality.check --targeted`); the FULL
-wrapper runs exactly once per master inside `worktree_integrate` at master altitude,
-memory-capped (`orchestration.qualityGate.memoryCapBytes`); `memory_quality_check` stays a
+wrapper runs exactly once per master inside `worktree_integrate` at master altitude with
+host-managed RAM/swap by default; constrained CI may set
+`orchestration.qualityGate.memoryCapBytes`; `memory_quality_check` stays a
 per-leaf closeout gate; a leaf closeout that skips its required checks is refused, not
 passed.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
+  manager brief's host-managed master-gate default and optional constrained-CI
+  cap. Verification metadata remains pinned until closeout stamps L24.
 
 - 2026-08-11T19:58+02:00 — Reconciled `manager-brief.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-10T05:45+02:00 — 260805-ARG-L1: synced the manager brief's completion cleanup contract

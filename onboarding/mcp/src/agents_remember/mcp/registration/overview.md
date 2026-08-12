@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-08T02:00+02:00                           |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`       |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`       |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -140,7 +140,8 @@ The closeout-family docstrings now state the quality altitude ladder: preview/ap
 leaf change-set-scoped contract (`--targeted`: changed files + reverse-import closure + derived
 test subset, mandatory CRAP over changed modules) and say the full wrapper is NOT a leaf gate;
 `worktree_integrate` states it runs the altitude-routed gate itself before any merge (leaf
-targeted; master full, memory-capped via `orchestration.qualityGate.memoryCapBytes`). The L8
+targeted; master full with host-managed RAM/swap by default and an optional
+`orchestration.qualityGate.memoryCapBytes`). The L8
 bare-`*` keyword-only remediation is completed here: `worktree_cleanup` and `worktree_abandon`
 now carry the separator too, so every `@server.tool()` declaration in the module is
 keyword-only. The registered tool surface is unchanged.
@@ -153,6 +154,11 @@ continues publishing the identical named JSON fields; no agent-visible address o
 The registration callers were rewritten by the L9 caller wave: conversation/evidence/control-wire models now import from `models/conversations/`, the runtime config record from `kernel/primitives/runtime_config.py`, and the terminal-catalog row vocabulary from `models/terminal_catalog.py`. Registration/tool wiring behavior is unchanged.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24: aligned registered
+  closeout/integration descriptions with host-managed master memory and the
+  optional explicit cap. Verification metadata remains pinned until closeout
+  stamps L24.
 
 - 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: recorded `message_child`'s keyword-only Python
   boundary and unchanged named MCP schema; refreshed the shifted exemption-test citation.

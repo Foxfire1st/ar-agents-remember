@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`|
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -52,17 +52,17 @@ the parser never derives a model/effort paste command from them.
 
 - 260731-EFA-L7 (trace delta): this module is now a facade over `_agentic_settings_{core,harness,policy,sections}.py`; the full base surface (public + private patch targets) is re-exported and pinned by `mcp/tests/test_facade_surface.py`.
 
-### 260731-EFA-L17 — The Quality-Gate Memory Cap
+### 260731-EFA-L17/L24 — Optional Quality-Gate Memory Cap
 
 The loader now parses `orchestration.qualityGate.memoryCapBytes` (260731-EFA-L17-R3):
 `KNOWN_ORCHESTRATION_FIELDS` gained `qualityGate` (core), `_parse_orchestration`
 (lines 331-367) wires `_parse_quality_gate(raw.get("qualityGate"), source=source)` into
 `AgenticSettings.quality_gate`, and the facade re-exports `QualityGateSettings`,
-`KNOWN_QUALITY_GATE_FIELDS`, `DEFAULT_FULL_GATE_MEMORY_CAP_BYTES`, and
+`KNOWN_QUALITY_GATE_FIELDS` and
 `_parse_quality_gate` through `__all__` (lines 141-205). The value is the settings-owned
-cap for full-wrapper runs at the master integration gate; absent key keeps the 2 GiB
-default, unknown keys fail loud like every other orchestration family, and a JSON `null`
-at the family key is refused.
+optional hard cap for full-wrapper runs at the master integration gate; an absent key
+keeps RAM and swap host-managed, unknown keys fail loud like every other orchestration
+family, and a JSON `null` at the family key is refused.
 
 ## Logic
 
@@ -282,6 +282,11 @@ No meaningful cross-repo references found.
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: changed quality-gate
+  settings doctrine from a mandatory 2 GiB default to an optional constrained-
+  environment override and removed the retired default constant from the
+  facade. Verification metadata remains pinned until closeout stamps L24.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body updated — the former `mcp/config.py` references are re-pointed to `kernel/primitives/runtime_config.py` (the runtime-config record's L9 home). Verification metadata pinned until closeout stamps the L9 code commit.
 

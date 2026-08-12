@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-08T02:00+02:00                                       |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`                   |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`                   |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -28,8 +28,9 @@ and the published docstrings now state the quality altitude ladder: preview/appl
 describe the leaf change-set-scoped contract (`--targeted`: changed files +
 reverse-import closure + derived test subset, mandatory CRAP over the changed modules)
 and say the full wrapper is NOT a leaf gate; `worktree_integrate` states that it runs the
-altitude-routed gate itself before any merge (leaf targeted; master full, memory-capped
-via `orchestration.qualityGate.memoryCapBytes`). The registered tool surface is
+altitude-routed gate itself before any merge (leaf targeted; master full with
+host-managed RAM/swap by default and an optional explicit
+`orchestration.qualityGate.memoryCapBytes`). The registered tool surface is
 unchanged.
 
 ## Purpose
@@ -78,8 +79,8 @@ commit-gated: preview and approval precede apply; apply requires `intent_note`.
 The three destructive tools forward flat:
 
 - `worktree_integrate(contract_path, strategy='ff-only'|'replay', ledger_commit_message, dry_run)` —
-  runs the altitude-routed quality gate before any merge (leaf targeted, master full +
-  memory-capped), then moves branch refs; protected branches need explicit approval.
+  runs the altitude-routed quality gate before any merge (leaf targeted, master full and
+  host-managed by default), then moves branch refs; protected branches need explicit approval.
 - `worktree_cleanup(contract_path, dry_run, teardown_providers=True)` — removes worktrees and merged
   task branches **after** integration, and by default reclaims the worktree's isolated provider stack.
 - `worktree_abandon(contract_path, dry_run, force)` — discards a task without integrating it. Unlike
@@ -114,6 +115,11 @@ The three destructive tools forward flat:
 | The staged-gate behaviour the rewritten descriptions promise. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:350-456 |
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: aligned the MCP
+  closeout/integration tool descriptions with the host-managed full-gate
+  default and optional explicit cap. Verification metadata remains pinned
+  until closeout stamps L24.
 
 - 2026-08-12T01:38+02:00 — 260731-EFA-L22 citation maintenance: regenerated closeout staging
   ranges after the quality-runner responsibility split; registered behavior is unchanged.
