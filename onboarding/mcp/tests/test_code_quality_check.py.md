@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T00:08+02:00               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -32,6 +32,8 @@ root first on `PYTHONPATH` while preserving any pre-existing `PYTHONPATH` entry.
 The command-composition test also asserts Pyright receives `--pythonpath` with
 the active interpreter, which lets linked worktrees reuse the primary checkout
 virtualenv without losing third-party import resolution.
+L22 adds direct regressions that targeted configuration preserves the repository file-size arm and
+that both development dependency entry points carry the same exact Ruff version.
 
 ### Repository-Gate Parity After The Hook Split (260731-EFA-L1)
 
@@ -202,7 +204,7 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 | The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths` | mcp/src/agents_remember/code_quality/check.py:262-308; mcp/src/agents_remember/code_quality/scope.py:111-111 |
 | The changed-lines coverage floor the full tier carries, and its own behavioural suite. | "DEFAULT_DIFF_COVERAGE_FLOOR = 100.0"; "Score the changed lines, or report why there is nothing to score."; "def test_a_diff_below_the_floor_fails_the_wrapper(self) -> None:"; "def test_the_floor_runs_inside_the_wrapper_rather_than_beside_it(self) -> None:" | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317; mcp/tests/test_diff_coverage.py:570-585; mcp/tests/test_diff_coverage.py:629-659 |
 | CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | `complexity_blocks`, `calculate_scores` | mcp/src/agents_remember/code_quality/crap_calculator.py:232-239; mcp/src/agents_remember/code_quality/crap_calculator.py:294-305 |
-| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:404-417; pyproject.toml:34-38 |
+| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:461-474; pyproject.toml:34-38 |
 | The complexity-selection and branch-coverage settings this suite reads. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true" | pyproject.toml:17-17; pyproject.toml:67-70 |
 | The pytest configuration this suite reads. | `testpaths` | pyproject.toml:119-119 |
 | An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`, `test_python_coverage_and_test_rails_reach_their_trees` | mcp/tests/test_gate_scope.py:152-173; mcp/tests/test_gate_scope.py:175-194 |
@@ -220,6 +222,9 @@ for a wrapper reach and no CRAP opt-out, but the hook tier assertions now expect
 manual tier only.
 
 ## Update History
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: recorded the targeted file-size-arm and exact
+  Ruff-pin regressions; refreshed shifted ranges after inserting them.
 
 - 2026-08-12T00:08+02:00 — No content impact: the repository-gate subtest reports each gate path
   as a serializable POSIX string for xdist; the gate reachability and no-opt-out assertions are

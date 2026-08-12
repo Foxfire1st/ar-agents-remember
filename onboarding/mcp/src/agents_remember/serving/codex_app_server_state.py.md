@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-12T04:15+02:00 |
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,6 +44,9 @@ pages. Item payloads cross whole as the frame `raw`; `created_at` stays `None` r
 Parser helpers require typed JSON fields and include context in failures. Reasoning-effort display
 names preserve vendor tokens while descriptions preserve vendor explanatory text. Stable server
 requests are explicitly enumerated; `item/tool/requestUserInput` remains rejected as experimental.
+Initialize identity accepts only the current Codex Desktop host-first wire shape. Its diagnostics
+must end in the exact requested `(agents_remember; <client-version>)` token. The Desktop product's
+version remains the negotiated Codex version and must later agree with thread evidence.
 
 ### Invariants And Boundaries
 
@@ -56,6 +59,8 @@ requests are explicitly enumerated; `item/tool/requestUserInput` remains rejecte
 - Submission and interaction state is bounded and saturates loudly.
 - Native evidence identity is exact: missing item id/type fails parsing and duplicate ids fail
   closed; paging never proceeds without per-item uniqueness.
+- A host-first initialize response without the exact requested client name/version suffix is not
+  accepted as Agents Remember's app-server session.
 
 ### Todos
 
@@ -79,6 +84,7 @@ the same strict thread and event helpers.
 | --- | --- | --- |
 | Session reads all model pages and validates desired/effective model-local settings against these rows. | `discover` | mcp/src/agents_remember/serving/codex_app_server_session.py:214-224 |
 | Adapter reserves each prompt with the current desired selection and dispatches the retained pair on `turn/start`. | `submit`; `_start_turn` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:239-264; mcp/src/agents_remember/serving/codex_app_server_adapter.py:434-480 |
+| Initialize parsing extracts the primary Codex product version while requiring exact client identity on host-first responses. | `validate_initialize_response` | mcp/src/agents_remember/serving/codex_app_server_state.py:132-164 |
 
 ## Cross-Repo References
 
@@ -89,6 +95,10 @@ No external repository boundary is implemented by this parser module.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: documented the clean-cut current
+  Desktop initialize grammar, exact client suffix, and unchanged initialize/thread version
+  agreement; no unused CLI compatibility branch remains.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

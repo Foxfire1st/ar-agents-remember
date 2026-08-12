@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-11T23:56+02:00               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -112,6 +112,11 @@ exact failure this module exists to prevent.
 The one sanctioned narrowing is the leaf-edge `--targeted` contract (260731-EFA-L17) —
 see the L17 section below — which derives its scope from the leaf's diff rather than
 accepting caller-supplied paths.
+
+The targeted branch preserves the repository's `file_size_armed` setting when it constructs the
+targeted `CheckConfig`. File-size therefore remains an enforcing leaf rail; deriving a smaller path
+set must never reset the policy bit to the dataclass default and turn violations into report-only
+output.
 
 #### Reading The Index Puts An Obligation On The Caller
 
@@ -256,7 +261,7 @@ the report to a temporary directory unless `--coverage-json` is given.
 | --- | --- | --- |
 | The changed-lines coverage floor this wrapper runs last, and the derivation of the 100% floor. | `DEFAULT_DIFF_COVERAGE_FLOOR` | mcp/src/agents_remember/code_quality/diff_coverage.py:1-5; mcp/src/agents_remember/code_quality/diff_coverage.py:30-30 |
 | CRAP-Calculator owns function-level CRAP scoring, and is where Radon stays load-bearing. | `crap_score` | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:232-239 |
-| Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | `RadonIsAReportNotAGateTests` | mcp/tests/test_code_quality_check.py:168-223; mcp/tests/test_code_quality_check.py:226-238; mcp/tests/test_code_quality_check.py:340-351; mcp/tests/test_code_quality_check.py:514-521 |
+| Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | `RadonIsAReportNotAGateTests` | mcp/tests/test_code_quality_check.py:250-308; mcp/tests/test_code_quality_check.py:226-238; mcp/tests/test_code_quality_check.py:340-351; mcp/tests/test_code_quality_check.py:514-521 |
 | An independent recomputation asserts the wrapper's real argument vectors reach every tracked Python file. | `test_every_tracked_python_file_is_linted_and_type_checked` | mcp/tests/test_gate_scope.py:152-173 |
 | `run_git` — the one runner `git_ls_files` calls — strips `GIT_REPOSITORY_SELECTOR_ENV` and bounds every call with the local/remote/metadata timeout classes. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-73; mcp/src/agents_remember/kernel/git_command.py:85-92 |
 | `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `git_ls_files` still lists the repository it was handed, and that a non-repository and an unrunnable git both surface as `ScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:328-390; mcp/tests/test_git_command.py:372-390 |
@@ -278,6 +283,10 @@ resolving to no declared package. There is no baseline/allowlist; a green full w
 requires zero layering violations.
 
 ## Update History
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: recorded that targeted configuration carries
+  the repository file-size arm instead of falling back to the false dataclass default; updated
+  shifted test citations after the responsibility splits.
 
 - 2026-08-12T00:20+02:00 — Corrected ownership after `-n=auto` moved to root pytest `addopts`:
   this wrapper now contributes only derived test, coverage, and retry-proof arguments.

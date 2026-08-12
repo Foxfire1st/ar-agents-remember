@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -44,6 +44,9 @@ behaviour, not for the daemon to run at all. The webstack is a **core** dependen
 extra) so `agents-remember dashboard` works on a plain install. Development-only
 quality tools live under the `dev` optional dependency group: Coverage.py, httpx
 (the FastAPI `TestClient` backend), pytest, pytest-cov, pytest-xdist, Pyright, Radon, and Ruff.
+Ruff is an exact 0.16.1 pin shared with the checkout requirements, so a worktree and a package-dev
+environment enforce the same stable rule set instead of interpreting the same configuration under
+different Ruff releases.
 The xdist range is deliberately bounded to major version 3 because root pytest `addopts` owns
 `-n=auto`; the dependency supplies that executor while the root configuration governs raw and
 wrapped pytest uniformly.
@@ -151,6 +154,9 @@ the source rather than being repeated here; it is the same string
 | The interpreter matrix the classifiers claim support for is the one the gate workflow runs. | "3.11" | .github/workflows/quality-checks.yml:27-27 |
 
 ## Update History
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: replaced the permissive Ruff development range
+  with the repository's exact 0.16.1 pin so master and leaf lint results are deterministic.
 
 - 2026-08-12T00:20+02:00 — Corrected execution ownership: the development extra supplies
   pytest-xdist, while root pytest `addopts` owns the `-n=auto` default. Verification metadata

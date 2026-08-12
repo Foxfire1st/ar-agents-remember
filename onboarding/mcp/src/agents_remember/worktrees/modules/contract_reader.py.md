@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/contract_reader.py` |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-08-08T14:38+02:00                                        |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                    |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`                    |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ No external/domain documentation is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The kernel resolver declares the port this adapter implements. | "class ContractReaderPort" | mcp/src/agents_remember/kernel/coordination_context/models.py:108-108 |
-| Reader-failure degradation is pinned by the structural-coverage suite. | `test_resolver_missing_reader_and_contract_edges` | mcp/tests/test_leaf_structural_coverage.py:248-248 |
+| Reader-failure degradation is pinned by the structural-coverage suite. | `test_resolver_missing_reader_and_contract_edges` | mcp/tests/test_leaf_structural_coverage.py:247-277 |
 
 ## Cross-Repo References
 
@@ -62,6 +62,9 @@ No cross-repository implementation participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 citation maintenance: refreshed the shifted structural
+  coverage range; contract-reader behavior is unchanged.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the contract-reader adapter added
   by the layering cleanup. Verification metadata pinned until closeout stamps the L9 code commit.

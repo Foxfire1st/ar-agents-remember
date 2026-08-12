@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 
 > **Status:** active baseline
 
@@ -1075,6 +1075,10 @@ package-layering gate (rank violations, cycles, undeclared dirs/imports all fail
 baseline). The move ledger and pre-change serialization baseline prove zero wire drift.
 
 ## Update History
+
+- 2026-08-12T01:38+02:00 — No route impact: 260731-EFA-L22 repairs master-quality enforcement,
+  removes cache-only layering false positives, and splits three oversized test modules; the
+  repository feature inventory and top-level subsystem boundaries are unchanged.
 
 - 2026-08-12T00:20+02:00 — Corrected parallel-execution ownership to root pytest `addopts`, shared
   by raw and wrapped runs; `-n=0` remains the explicit serial diagnostic override. Verification

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-12T04:15+02:00 |
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -439,6 +439,11 @@ references informed product framing only; current code truth stays in agents-rem
 
 The cockpit now treats a focused chat or terminal as a persistent operator surface rather than disposable tab content: switch and hidden-view transitions preserve mounted identity, scroll/selection/geometry state, and only resume visible-only work when appropriate. Its global data consumers also adopt bounded stream/watchdog, single-flight, timeout, build-identity, and wake-lock behavior. Detailed mechanics remain owned by the existing `data/`, `panels/`, and nested session-cockpit overviews; this route records only the shared frontend consequence.
 
+Selection-driven panels also preserve stable external-store snapshot identity when no task-document
+projection exists. In particular, `HighlightComposer` uses one shared empty task-document value
+rather than allocating an empty array during every snapshot read, preventing a React
+`useSyncExternalStore` render loop without changing selection or injection authority.
+
 ## 260727-CHATS-IM-L2 No Route-Level Architecture Impact
 
 This leaf changes internals inside existing children: roster identity in `data/conversation/`,
@@ -458,6 +463,10 @@ landing; `operator_inbox_consume` attribution-only; sweep predicates never read 
 projection).
 
 ## Update History
+
+- 2026-08-12T04:15+02:00 — 260731-EFA-L22 dashboard repair: recorded the route-wide consequence
+  of stable empty external-store snapshots in selection-driven panels; child panel cards own the
+  exact regression and implementation.
 
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the dashboard route with
   plane-owned seat routing, document-addressed role control, and the corresponding projection and

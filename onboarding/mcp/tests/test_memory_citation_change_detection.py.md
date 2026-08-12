@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_change_detection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-07T14:30+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,9 @@
 
 ## Purpose
 
-Per-claim change-detection bites over real code, memory, and dependency history.
+Per-claim change-detection bites over real code, memory, and dependency history. Registration,
+cache limits, and history-routing cases now live in `test_memory_citation_change_routing.py` while
+the shared real-Git fixtures remain single-owned here.
 
 ## Code Commentary
 
@@ -41,8 +43,8 @@ Module-level surface:
   proves the diff.
 - `MemoryProvenanceTests` (class, lines 588-661)
 - `DependencyProvenanceTests` (class, lines 662-820)
-- `RegistrationAndLimitsTests` (class, lines 821-849)
-- `ChangeRoutingTests` (class, lines 850-1180) — round 9 updates
+- `RegistrationAndLimitsTests` moved to `test_memory_citation_change_routing.py`.
+- `ChangeRoutingTests` moved to `test_memory_citation_change_routing.py`; its round 9 update
   `test_untracked_and_ignored_local_paths_are_never_proven_unchanged` so an untracked/ignored
   new source whose anchor resolves exactly once inside a cited range is the report-only surface
   rather than invalid provenance.
@@ -65,16 +67,19 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `git` (lines 29-38). | `git` | mcp/tests/test_memory_citation_change_detection.py:29-38 |
-| Defines the class `ProvenanceTree` (lines 42-110). | `ProvenanceTree` | mcp/tests/test_memory_citation_change_detection.py:42-110 |
-| Defines the class `ChangeDetectionCase` (lines 111-124). | `ChangeDetectionCase` | mcp/tests/test_memory_citation_change_detection.py:111-124 |
-| Defines the class `CodeProvenanceTests` (lines 125-587). | `CodeProvenanceTests` | mcp/tests/test_memory_citation_change_detection.py:125-587 |
-| Defines the class `MemoryProvenanceTests` (lines 588-661). | `MemoryProvenanceTests` | mcp/tests/test_memory_citation_change_detection.py:588-661 |
-| Defines the class `DependencyProvenanceTests` (lines 662-820). | `DependencyProvenanceTests` | mcp/tests/test_memory_citation_change_detection.py:662-820 |
-| Defines the class `RegistrationAndLimitsTests` (lines 821-849). | `RegistrationAndLimitsTests` | mcp/tests/test_memory_citation_change_detection.py:853-879 |
-| Defines the class `ChangeRoutingTests` (lines 850-1180). | `ChangeRoutingTests` | mcp/tests/test_memory_citation_change_detection.py:850-1180 |
+| Defines the function `git` (lines 29-38). | `git` | mcp/tests/test_memory_citation_change_detection.py:24-33 |
+| Defines the class `ProvenanceTree` (lines 42-110). | `ProvenanceTree` | mcp/tests/test_memory_citation_change_detection.py:36-106 |
+| Defines the class `ChangeDetectionCase` (lines 111-124). | `ChangeDetectionCase` | mcp/tests/test_memory_citation_change_detection.py:109-121 |
+| Defines the class `CodeProvenanceTests` (lines 125-587). | `CodeProvenanceTests` | mcp/tests/test_memory_citation_change_detection.py:123-612 |
+| Defines the class `MemoryProvenanceTests` (lines 588-661). | `MemoryProvenanceTests` | mcp/tests/test_memory_citation_change_detection.py:614-686 |
+| Defines the class `DependencyProvenanceTests` (current history-suite range). | `DependencyProvenanceTests` | mcp/tests/test_memory_citation_change_detection.py:688-844 |
+| Defines the class `RegistrationAndLimitsTests` (lines 821-849). | `RegistrationAndLimitsTests` | mcp/tests/test_memory_citation_change_routing.py:20-47 |
+| Defines the class `ChangeRoutingTests` (lines 850-1180). | `ChangeRoutingTests` | mcp/tests/test_memory_citation_change_routing.py:49-380 |
 
 ## Update History
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: split registration/routing from provenance
+  history, retained one shared real-Git fixture owner, and refreshed all moved ranges.
 
 - 2026-08-10T08:20+02:00 — 260805-ARG-L1: added real-Git proofs that temporary leaf-base
   provenance applies only to dirty unstamped cards and never forgives committed unstamped debt.

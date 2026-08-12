@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/HighlightComposer.tsx`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`       |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -38,6 +38,14 @@ When the chosen target requires a new harness session, `send()` now branches on 
 create result. A failure renders `terminalOpenFailureMessage(result)` and returns before readiness,
 submission, route change, or selection clearing. Only `result.session.id` from an accepted server
 row reaches `waitForSubmissionReady` and the reliable submit path.
+
+### Stable Pre-Projection Store Snapshot
+
+The dashboard mounts this composer before the first analytics projection can arrive. Its
+`useDashboard` task-document selector therefore falls back to the module-level
+`EMPTY_TASK_DOCUMENTS` array, whose identity stays stable while the store is unchanged. Returning a
+fresh `[]` from the selector violates React's external-store snapshot contract and causes an empty
+dashboard to loop through forced store rerenders until React raises maximum-update-depth error 185.
 
 ### Logic
 
@@ -88,7 +96,9 @@ selected DOM was tagged with the same leaf the visible rail chat is serving, and
 "Add to chat" label. The composer persists until
 outside-click/Escape or Send in fallback mode (snapshot-driven, not live-selection-driven). Delivery
 uses the reliable native-control submission client, never PTY paste. With a selected lifecycle,
-unrelated open chats are not offered; the create target becomes the routeable chat.
+unrelated open chats are not offered; the create target becomes the routeable chat. Before analytics
+exists, selector fallbacks must remain referentially stable so this always-mounted surface cannot
+create a `useSyncExternalStore` update loop.
 
 ### Todos
 
@@ -112,6 +122,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | Harness discovery supplies detected create options. | `fetchHarnesses` | dashboard/src/data/terminal.ts:391-393 |
 | Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. | "leafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:687-687 |
 | The behavior tests cover direct leaf paste and fallback routing. | "direct leaf pill click submits through /submit; selection alone never acts"; "keeps a rejected direct submit visible with the verbatim detail" | dashboard/src/panels/HighlightComposer.test.tsx:380-420; dashboard/src/panels/HighlightComposer.test.tsx:422-457 |
+| The pre-projection task-document selector uses one stable empty snapshot, and its focused regression rejects React's uncached-snapshot warning. | `EMPTY_TASK_DOCUMENTS`; "keeps the pre-projection task-document snapshot stable" | dashboard/src/panels/HighlightComposer.tsx:52-55; dashboard/src/panels/HighlightComposer.test.tsx:140-153 |
 
 ## Cross-Repo References
 
@@ -141,6 +152,10 @@ The persistent highlight composer is now memoized. Unchanged shell props on a co
 skip its subtree while its own local and store-backed state still updates normally.
 
 ## Update History
+
+- 2026-08-12T04:04+02:00 — Documented the stable pre-projection task-document snapshot that prevents
+  the always-mounted composer from entering React's external-store update loop; added the focused
+  empty-analytics regression evidence. Verification metadata remains pinned until governed closeout.
 
 - 2026-08-11T23:40+02:00 — No content impact: `directLeafChatFor` now delegates the running-harness
   validation, but direct highlight submission still requires the current structurally selected

@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-08-11T22:28+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -25,9 +25,12 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
 - `git.py` owns this route's Git vocabulary — the typed helpers and small repository
   state checks every operation module speaks — but **since 260731-EFA-L3 it no longer
   owns a Git runner**. It imports the one owner (`from agents_remember.kernel.git_command
-  import run_git`, line 7), and its own `require_git` (line 18) is now just
-  raise-on-nonzero over it. See the 260731-EFA-L3 section below for why that
-  distinction is a correctness property and not bookkeeping. Its helpers include
+  import run_git`, line 7), and its own `require_git` is now raise-on-nonzero over
+  it. Raw results preserve the runner's surrogateescape contract, while only the
+  raised failure diagnostic passes through `_transport_safe_git_diagnostic` so
+  invalid Git bytes become literal escapes before MCP JSON serialization. See the
+  260731-EFA-L3 section below for why the runner/facade distinction is a correctness
+  property and not bookkeeping. Its helpers include
   `committed_changed_paths` (issue #83: the unverified committed
   range — tree-diff `base..HEAD` ∩ `verified..HEAD`) and the
   `commit_text_or_none` baseline reader behind the closeout body gates.
@@ -298,7 +301,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:392-400; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:777-883 |
+| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:350-456 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/models/worktree.py:81-81 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:562-671 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
@@ -615,6 +618,13 @@ and `worktrees/modules/contract_reader.py` implements the kernel resolver's `Con
 The closeout/integrate/guidance machinery is unchanged in behavior.
 
 ## Update History
+
+- 2026-08-12T03:31+02:00 — 260731-EFA-L22 route repair: recorded the Git facade's transport-safe
+  diagnostic boundary. Internal Git output remains surrogateescaped; only failure text crossing
+  MCP is escaped, so no alternate runner or compatibility path was introduced.
+
+- 2026-08-12T01:38+02:00 — No route impact: refreshed closeout staging citations after the test
+  responsibility split; the worktree module route model is unchanged.
 
 - 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: recorded deterministic transcript
   decoding and non-Windows ephemeral scratch normalization while preserving the enclosure-owned

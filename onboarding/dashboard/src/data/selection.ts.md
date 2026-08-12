@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/selection.ts`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`       |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The composer a selection raises. | "export const HighlightComposer" | dashboard/src/panels/HighlightComposer.tsx:1133-1133 |
+| The composer a selection raises. | "export const HighlightComposer" | dashboard/src/panels/HighlightComposer.tsx:1140-1140 |
 | The rules + capture tests. | "carries the task leaf key when the selected text belongs to a task reader" | dashboard/src/data/selection.test.ts:52-57 |
 | The task reader marker that supplies task leaf ownership. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
 
@@ -82,6 +82,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-12T04:04+02:00 — Rebound the composer export citation after the stable-snapshot repair
+  shifted its source line; the selection-capture contract is unchanged.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
   exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

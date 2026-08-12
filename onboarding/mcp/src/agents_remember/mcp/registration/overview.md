@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-08T02:00+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`       |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -129,7 +129,7 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
 | `PUBLIC_TOOLS` — the advertised name list this package must match. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
-| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:404-417 |
+| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:461-474 |
 | What each declaration hands its payload builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 | The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
@@ -145,11 +145,17 @@ bare-`*` keyword-only remediation is completed here: `worktree_cleanup` and `wor
 now carry the separator too, so every `@server.tool()` declaration in the module is
 keyword-only. The registered tool surface is unchanged.
 
+L22 applies the same Python-only keyword boundary to `message_child`'s content fields. FastMCP
+continues publishing the identical named JSON fields; no agent-visible address or payload changes.
+
 ## 260731-EFA-L9 Route Impact — Caller Re-Points
 
 The registration callers were rewritten by the L9 caller wave: conversation/evidence/control-wire models now import from `models/conversations/`, the runtime config record from `kernel/primitives/runtime_config.py`, and the terminal-catalog row vocabulary from `models/terminal_catalog.py`. Registration/tool wiring behavior is unchanged.
 
 ## Update History
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: recorded `message_child`'s keyword-only Python
+  boundary and unchanged named MCP schema; refreshed the shifted exemption-test citation.
 
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled registration with the structural
   `dispatch_agent`, parent/child messaging, gate, retire, and rename surface and the removal of

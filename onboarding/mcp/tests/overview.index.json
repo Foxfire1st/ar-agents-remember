@@ -227,6 +227,7 @@
     "mcp/tests/test_mcp_registration_wiring_tests_2.py",
     "mcp/tests/test_mcp_stdio_transport.py",
     "mcp/tests/test_memory_citation_change_detection.py",
+    "mcp/tests/test_memory_citation_change_routing.py",
     "mcp/tests/test_memory_citation_fix.py",
     "mcp/tests/test_memory_citation_fix_operations.py",
     "mcp/tests/test_memory_citation_fix_scopes.py",
@@ -345,6 +346,7 @@
     "mcp/tests/test_task_document_application_2.py",
     "mcp/tests/test_task_document_master.py",
     "mcp/tests/test_task_document_payload_cache.py",
+    "mcp/tests/test_task_document_structural_identity.py",
     "mcp/tests/test_task_reopen.py",
     "mcp/tests/test_terminal.py",
     "mcp/tests/test_terminal_catalog.py",
@@ -374,6 +376,7 @@
     "mcp/tests/test_worktree_lifecycle_attribution.py",
     "mcp/tests/test_worktree_longpath_preflight.py",
     "mcp/tests/test_worktree_mtime_sync.py",
+    "mcp/tests/test_worktree_quality_gate_runner.py",
     "mcp/tests/test_worktree_stale_base.py",
     "mcp/tests/test_worktree_support.py",
     "mcp/tests/test_worktree_support_benchmark.py",
@@ -383,8 +386,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 361,
-    "fileSidecars": 371,
+    "sourceFilesInScope": 364,
+    "fileSidecars": 374,
     "childRoutes": 0
   },
   "routingTerms": [

@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-12T00:08+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-12T04:15+02:00 |
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -27,9 +27,12 @@ retire, land, and completion-cleanup matrix; its turn-report fixture is `AgentRo
 worker/reviewer/curator cases preserve the wire vocabulary under full Pyright. Existing routing,
 inbox, catalog, serving-response, and wire-vocabulary suites cover the broader migration surface.
 
-`test_leaf_structural_coverage.py` now reaches the cross-package migration, topology, structural
-gate, identity-migration, and platform-quality-environment branches needed by the 100% changed-code
-floor. The separate `test_leaf_structural_refusal_coverage.py` concentrates the fail-closed matrix:
+`test_leaf_structural_coverage.py` retains the wrapper-adjacent cross-package seams, while
+`test_task_document_structural_identity.py` owns migration, topology, structural-gate,
+identity-migration, and platform-quality-environment branches. The quality-runner policy suite is
+separate from closeout mutation, and citation routing is separate from provenance history; all six
+resulting responsibility units stay below the hard 1,200-line gate. The separate
+`test_leaf_structural_refusal_coverage.py` concentrates the fail-closed matrix:
 ambiguous or missing seats/topology, invalid durable shapes, persistence-first dispatch rollback,
 structural mutation refusals, dead/live binding conflicts, and exact dispatch/launch boundaries.
 These are focused coverage companions; the targeted gate may conservatively expand to its derived
@@ -39,6 +42,10 @@ The three installed harness suites convert OS/subprocess failure of their versio
 explicit unavailable-runtime skip. `test_quality_scope_reporting.py` applies the same boundary only
 to its two live Node assertions. No skip records observed fixture evidence or weakens assertions
 when the external runtime is present.
+
+Codex app-server fakes use the current Desktop host-first user-agent product and exact
+`(agents_remember; 3.0.0)` client suffix. The retired client-first fixture shape is not retained as
+an unused compatibility contract.
 
 ## Leaf Memory Pre-Closeout Gate
 
@@ -58,6 +65,11 @@ configuration owner used by raw pytest and every wrapper.
 The session-level conftest assigns every xdist worker a private `XDG_CACHE_HOME` below its worker
 base temp directory, leaving the non-xdist master environment unchanged. Parameterized tests pass
 only serializable diagnostic values to `subTest`; those edits do not change the assertions.
+
+The basic Codex adapter suite exhausts the session settings-update transition through public
+notifications: already-effective and stale-effective echoes are inert, a desired echo promotes,
+and unrelated drift fails closed. This is branch coverage for the changed production session
+owner, not a CRAP exemption.
 
 ## Purpose
 
@@ -298,6 +310,12 @@ eight selectors (`GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`, `GIT_OBJECT_DIREC
 `GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`, `GIT_PREFIX`) at the decoy
 inside a `patch.dict`, and asserts **both** halves — the real branch advanced and the decoy did not
 move. Asserting only the real repository would still pass if the write were duplicated into both.
+
+The same suite now pins the runner/facade boundary for malformed Git diagnostics. A real failing
+pre-commit hook emits byte `0x81`; `run_git` must retain it through surrogateescape, while the
+worktree facade's raised text must render it as a literal escape that UTF-8 JSON serialization can
+carry. This keeps non-UTF-8 Git path identity intact without allowing a failed hook to tear down the
+MCP transport while reporting its error.
 
 **Those `patch.dict` blocks deliberately undo `conftest.py`.** The conftest strips the selectors at
 import, which meant no test anywhere could observe a call site that failed to strip them: the
@@ -811,7 +829,7 @@ request-id idempotency, retained-known reconciliation without native resend, raw
 serialization, and liveness-first 404/409 classification. Opener/app cases prove complete-pair
 pre-spawn validation, same-pair live reopen, changed launch conflict with actual retained truth,
 fresh dead replacement, and a cross-process diffe…13126 tokens truncated…_harness.py:35-107 |
-| The closeout gate suite covers all three statuses and spies on the real argument passed from unannotated closeout call sites. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:49-423; mcp/tests/test_worktree_closeout_quality_gate.py:424-550 |
+| The closeout gate suite covers all three statuses and spies on the real argument passed from unannotated closeout call sites. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:19-486; mcp/tests/test_worktree_closeout_quality_gate.py:55-257 |
 | The gate is shown the commit content: a created file reaches ruff through real `derive_scope`, a deleted one leaves it, and the lint-path set equals the Python paths in the resulting commit tree. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:642-748 |
 | Both staging refusals are asserted as damage that does not happen: the repository checkout preserves its `add -p` selection and untracked secret, and a conflicted worktree keeps `MERGE_HEAD` intact. | `TaskWorktreePreconditionTests`; `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:846-958; mcp/tests/test_worktree_closeout_quality_gate.py:961-1015 |
 | A retry commits the tree a first run would: two worktrees driven to the same end state, one through a refused gate, are asserted to produce the identical commit tree, so the ignored `.dmypy.json` a refused attempt staged is not carried into the retry (`RetryStagesWhatAFirstRunWouldTests`). | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:966-1025 |
@@ -936,6 +954,22 @@ proof of memory preflight → hook → wrapper → exact-index commit, including
 tree edit that must stay out of the commit.
 
 ## Update History
+
+- 2026-08-12T04:41+02:00 — 260731-EFA-L22 closeout repair: recorded the public settings-update
+  branch matrix added to clear the session owner's enforced CRAP finding without weakening the
+  threshold.
+
+- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: migrated the shared and composed
+  fake initialize responses to the clean-cut current Desktop grammar and recorded the exact client
+  suffix gate; no conversation or history behavior changed.
+
+- 2026-08-12T03:31+02:00 — 260731-EFA-L22 closeout repair: recorded the real invalid-byte hook
+  regression that distinguishes raw runner surrogateescape from transport-safe facade diagnostics.
+  The repair prevents MCP serialization failure without changing the one-runner boundary.
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: recorded the three responsibility splits for
+  structural identity, citation routing, and quality-runner policy; regenerated split-sensitive
+  route citations without reducing coverage.
 
 - 2026-08-12T00:20+02:00 — Corrected the xdist regression description after worker selection
   moved from wrapper argv to root pytest `addopts`. Verification metadata remains pinned until

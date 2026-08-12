@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/layering.py`           |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-08T14:38+02:00                                      |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`                  |
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `../../../../overview.md`                                    |
 
 ## Governing Overview
@@ -31,7 +31,7 @@ any package-pair cycle. There is no baseline and no allowlist.
 (cit:([`imports_of`], mcp/src/agents_remember/code_quality/layering.py:104-104)) extracts import statements; `undeclared_dirs`
 (cit:(["def undeclared_dirs(source_root: Path"], mcp/src/agents_remember/code_quality/layering.py:118-118)) fails closed on undeclared top-level directories (F-3 fix);
 `_collect_violations`/`_collect_cycles`/`_collect_stale_flags` produce the report; and
-`_package_import_statements` (cit:([`_package_import_statements`], mcp/src/agents_remember/code_quality/layering.py:147-147)) turns `from agents_remember import X`
+`_package_import_statements` (cit:([`_package_import_statements`], mcp/src/agents_remember/code_quality/layering.py:157-157)) turns `from agents_remember import X`
 into either a rank-checked edge (declared X) or an undeclared-import failure (unknown X).
 
 ### Conventions
@@ -44,8 +44,10 @@ into either a rank-checked edge (declared X) or an undeclared-import failure (un
 ### Invariants And Boundaries
 
 - Enforcement-universe completeness: a scanner enforcing a declared universe must fail closed on
-  entities outside it (candidate CS-7 — undeclared dirs and `from agents_remember import X`
-  forms fail; a stray root-level file is the recorded non-blocking residual).
+  real Python entities outside it (candidate CS-7 — undeclared dirs and
+  `from agents_remember import X` forms fail). A directory containing only ignored cache debris,
+  such as `__pycache__` left behind after a package deletion, is not a source package; recursive
+  `.py` discovery still catches undeclared namespace packages without `__init__.py`.
 - The step is wired unconditionally into the quality wrapper (`check.py` quality steps) and has
   no validate-then-mutate surface.
 
@@ -68,7 +70,7 @@ No external/domain documentation is configured.
 | --- | --- | --- |
 | The wrapper registers the layering step unconditionally. | `quality_steps` | mcp/src/agents_remember/code_quality/check.py:262-308 |
 | The unit suite pins rank violations, cycles, undeclared dirs/imports, and present-false rules. | `test_rank_violation_fails` | mcp/tests/test_layering.py:47-47 |
-| The structural-coverage suite pins CLI/edges/render/stale behavior. | `test_layering_cli_and_edges` | mcp/tests/test_leaf_structural_coverage.py:84-84 |
+| The structural-coverage suite pins CLI/edges/render/stale behavior. | `test_layering_cli_and_edges` | mcp/tests/test_leaf_structural_coverage.py:83-83 |
 
 ## Cross-Repo References
 
@@ -79,6 +81,9 @@ No cross-repository implementation participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: distinguished undeclared Python source from
+  cache-only deleted-package debris while preserving fail-closed recursive `.py` detection.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the armed layering rail; includes
   the F-3 fail-closed hardening and the delta residual. Verification metadata pinned until

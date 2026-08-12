@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_history_production_path.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-12T04:15+02:00               |
+| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,6 +73,10 @@ The fake Codex process is repository-local; no external repository is executed.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-12T04:15+02:00 — No content impact: 260731-EFA-L22 migrated the composed fake process's
+  initialize user agent to the current Desktop host-first form with exact client suffix; measured
+  history transport, containment, and continuity assertions are unchanged.
 
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): the Codex history production-path suite keeps its assertions; its impor...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

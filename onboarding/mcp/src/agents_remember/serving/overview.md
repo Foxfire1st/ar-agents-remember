@@ -8,9 +8,9 @@ Total output lines: 2259
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-11T20:28+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-12T04:15+02:00 |
+| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -578,7 +578,9 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `model/list` page (including hidden rows), retain the catalog at connect, and expose a cold
   initialize/list-only discovery path that starts neither a thread nor a turn. Initial model and
   model-local effort travel through `thread/start`/`thread/resume` config and are echoed before
-  readiness; later turns reuse the resolved effort.
+  readiness; later turns reuse the resolved effort. Initialize identity accepts only the current
+  Codex Desktop host-first product ending in the exact clientInfo name/version suffix, while the
+  primary product version must still agree with thread evidence.
 
 - `pi_rpc_protocol.py`, `pi_rpc_process.py`, `pi_rpc_events.py`, and
   `pi_rpc_adapter.py` — the Pi protocol/process/event/adapter chain: strict LF JSONL, bounded child
@@ -757,6 +759,10 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   holds its log's lock. No other route bullet changed: nothing else under `serving/` was touched by
   this leaf. Verification metadata untouched.
 ## Update History
+
+- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: recorded the clean-cut current
+  Desktop initialize grammar, exact Agents Remember client identity, and unchanged primary
+  host-version/thread agreement.
 
 - 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: recorded the notifier's
   protocol-typed hierarchy seam; structural routing behavior and production topology authority are

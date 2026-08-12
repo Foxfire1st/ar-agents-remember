@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_library_agents.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-12T04:15+02:00               |
+| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
+| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -107,6 +107,10 @@ experimental-gated on 0.145.0, which is why grouping is client-side.
 | The camelCase sub-agent `ThreadSourceKind` variant the agent fetch pins. | ["subAgentReview"] | mcp/src/agents_remember/serving/conversation/library/codex.py:85-85 |
 
 ## Update History
+
+- 2026-08-12T04:15+02:00 — No content impact: 260731-EFA-L22 migrated this suite's fake
+  initialize user agent from the retired client-first form to the current Desktop host-first form
+  with exact client suffix; conversation-library agent assertions and behavior are unchanged.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

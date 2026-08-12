@@ -78,7 +78,7 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "- `git.py` owns this route's Git vocabulary \u2014 the typed helpers and small repository state checks every operation module speaks \u2014 but **since 260731-EFA-L3 it no longer owns a Git runner**. It imports the one owner (`from agents_remember.kernel.git_command import run_git`, line 7), and its own `require_git` (line 18) is now just raise-on-nonzero over it. See the 260731-EFA-L3 section below for why that distinction is a correctness property and not bookkeeping. Its helpers include `committed_changed_paths` (issue #83: the unverified committed range \u2014 tree-diff `base..HEAD` \u2229 `verified..HEAD`...",
+    "summary": "- `git.py` owns this route's Git vocabulary \u2014 the typed helpers and small repository state checks every operation module speaks \u2014 but **since 260731-EFA-L3 it no longer owns a Git runner**. It imports the one owner (`from agents_remember.kernel.git_command import run_git`, line 7), and its own `require_git` is now raise-on-nonzero over it. Raw results preserve the runner's surrogateescape contract, while only the raised failure diagnostic passes through `_transport_safe_git_diagnostic` so invalid Git bytes become literal escapes before MCP JSON serialization. See the 260731-EFA-L3 section b...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/modules/__init__.py",
@@ -148,10 +148,10 @@
       "terminal_validation",
       "from agents_remember.kernel.git_command import run_git",
       "require_git",
-      "committed_changed_paths",
-      "base..HEAD",
-      "verified..HEAD",
-      "EFA"
+      "_transport_safe_git_diagnostic",
+      "EFA",
+      "agents_remember",
+      "git_command"
     ]
   },
   "fallback": {

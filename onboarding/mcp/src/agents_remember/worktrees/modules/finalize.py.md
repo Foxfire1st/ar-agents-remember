@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-23T22:50+02:00                     |
-| lastVerifiedCommitHash |                                            `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |                                            2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |                                            `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
+| lastVerifiedCommitDate |                                            2026-08-12T04:57:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -55,7 +55,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Cleanup behavior and branch/worktree removal are delegated here. | "def cleanup_result" | mcp/src/agents_remember/worktrees/modules/cleanup.py:424-424 |
 | Carryover completion is proven against the official memory ledger here. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:174-174 |
-| Git ancestry proof uses the worktree module Git adapter. | "def is_ancestor" | mcp/src/agents_remember/worktrees/modules/git.py:55-55 |
+| Git ancestry proof uses the worktree module Git adapter. | "def is_ancestor" | mcp/src/agents_remember/worktrees/modules/git.py:62-63 |
 | Task document JSON/markdown reconciliation uses the task document service. | "def write_task_doc(task_root: Path" | mcp/src/agents_remember/tasks/store.py:36-36 |
 | Focused tests pin readiness, dry-run, cleanup-blocked, and task-doc update behavior. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
 

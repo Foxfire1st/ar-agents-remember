@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/library/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-12T04:15+02:00 |
+| lastVerifiedCommitHash |  `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
+| lastVerifiedCommitDate |  2026-08-12T04:57:26+02:00|
 
 ## What This Area Is
 
@@ -26,7 +26,9 @@ This is deliberately a read-and-open route. It keeps no durable conversation ind
 active vendor events, never mutates a running process identity (`switch_session`), and never
 touches browser or Toad state. Codex reads are direct app-server connections; Claude and Pi
 reads run through the repository-owned locked helpers under
-`mcp/native_helpers/conversation_library/`.
+`mcp/native_helpers/conversation_library/`. Each Codex connection accepts only the current
+`Codex Desktop/<version>` initialize product whose diagnostics end in the exact client name and
+version sent by the library; that primary Desktop version remains the thread/runtime identity.
 
 ## Hot Path Summary
 
@@ -368,6 +370,10 @@ with a recorded reason.
 The library child routes now import the page/history wire contracts from `models/conversations/history.py` and the canonical library port from `serving/ports.py` after the L9 monolith split. Library behavior is unchanged.
 
 ## Update History
+
+- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: recorded current Desktop
+  host-first initialize identity and exact request client-name/version validation for the native
+  library connector.
 
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: updated the exact-open operating model for
   canonical `TaskDocumentRef` launch context; no leaf or caller-visible runtime address survives as
