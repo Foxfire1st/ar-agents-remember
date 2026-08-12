@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_terminal_leaf_assignment.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T12:15+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405` |
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,10 @@ explicit structural role, while spawn provenance can supply a compatible role to
 
 The HTTP case asserts the same seat-conflict behavior. Runtime session id remains private
 administrative correlation, never the structural task address.
+
+The suite also directly pins the legacy display-name suffix parser for the three supported
+separators, case normalization, missing leaf bases, and unknown roles. This is compatibility
+recognition at the serving boundary; it does not make the suffix an agent-facing identity.
 
 ## Invariants And Boundaries
 
@@ -56,6 +60,7 @@ No external domain source governs this repository-local test contract.
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — 260731-EFA-L20 added direct boundary coverage for `role_suffixed_leaf_base`, clearing the master CRAP finding without changing production behavior.
 - 2026-08-11T12:15+02:00 — Reconciled the historical sidecar with its current task-document/role
   assignment coverage. Verification remains pinned pending governed closeout.
 - 2026-07-02T17:04+02:00 — Through 2026-08-08, earlier coverage established reassignment, pair conflicts,

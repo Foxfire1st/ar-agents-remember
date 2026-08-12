@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastUpdated | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 
 > **Status:** active baseline
 
@@ -1079,6 +1079,7 @@ baseline). The move ledger and pre-change serialization baseline prove zero wire
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — No route impact: 260731-EFA-L20 changes only regression implementation and direct boundary coverage needed by the existing master quality contract; repository architecture and routing remain unchanged.
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24: changed the master full-
   gate resource default from an artificial ceiling to host-managed RAM/swap,
   kept pytest `-n=auto`, and retained the hard cap only as an explicit

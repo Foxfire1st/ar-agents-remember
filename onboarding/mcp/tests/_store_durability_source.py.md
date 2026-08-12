@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/_store_durability_source.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-09T21:54+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405` |
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ No external domain documentation governs this test helper.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The executable durability harness imports both source-pinning helpers from this bounded sibling. | "from _store_durability_source import extract_base_commit_tree, run_against_source" | mcp/tests/_store_durability.py:53-53 |
-| The harness preserves its public helper surface by listing both imported names in `__all__`. | "    \"extract_base_commit_tree\","; "    \"run_against_source\"," | mcp/tests/_store_durability.py:104-105 |
+| The harness preserves its public helper surface by listing both imported names in `__all__`. | "    \"extract_base_commit_tree\","; "    \"run_against_source\"," | mcp/tests/_store_durability.py:111-112 |
 | The executable harness retains the source-root guard and owns `main`; this sibling only prepares and launches that entry point. | `_require_source_root`; `main` | mcp/tests/_store_durability.py:1112-1120; mcp/tests/_store_durability.py:1123-1136 |
 | The control-plane contract imports both public helpers to prove the defect against the archived base tree. | "from _store_durability import (" | mcp/tests/test_controlplane_store_durability.py:42-52 |
 | The provider contract imports the same helpers so both store families use one pinned-source mechanism. | "from _store_durability import (" | mcp/tests/test_provider_store_durability.py:72-79 |
@@ -90,6 +90,7 @@ agents-remember repository and its test tree.
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored the shared durability exports after the compatibility-resolver insertion; ownership and behavior are unchanged.
 - 2026-08-09T21:54+02:00 — 260713-TES master integration repair: created this one-to-one card
   with the bounded source-pinning helper split. The split preserves the harness API and behavior
   while clearing the repository's 1,200-line source limit; closeout owns the first verification

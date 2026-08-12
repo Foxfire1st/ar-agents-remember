@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`|
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastUpdated | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`|
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -847,7 +847,7 @@ fresh dead replacement, and a cross-process diffe…13126 tokens truncated…_ha
 | A cold-cache child process with blocked sockets starts the real server and matches the warm parent count; the shipped vocabulary name and bytes are re-derived and the filename pin and re-entrant-load guard are covered. | `ColdStartTests`; `VendoredVocabularyTests` | mcp/tests/test_cold_start.py:199-218; mcp/tests/test_cold_start.py:221-331 |
 | A present but incorrect vendored vocabulary is refused and left on disk across CRLF, truncation, and flipped-byte cases. | `CorruptVendoredVocabularyTests` | mcp/tests/test_cold_start.py:334-417 |
 | The measurement instrument uses eight store adapters, three forked scenarios, raw on-disk loss accounting, and a dual-mode script path guarded by `_require_source_root`. | `StoreAdapter`; `ADAPTERS`; `SCENARIOS`; `surviving_ids`; `run_case`; `_require_source_root` | mcp/tests/_store_durability.py:120-177; mcp/tests/_store_durability.py:571-573; mcp/tests/_store_durability.py:588-613; mcp/tests/_store_durability.py:1069-1073; mcp/tests/_store_durability.py:1088-1092; mcp/tests/_store_durability.py:1101-1108 |
-| `harness_work_dir` derives each run bookkeeping directory as a sibling named from that run root, preventing sibling cases from sharing stop or error files. | `harness_work_dir` | mcp/tests/_store_durability.py:847-874 |
+| `harness_work_dir` derives each run bookkeeping directory as a sibling named from that run root, preventing sibling cases from sharing stop or error files. | `harness_work_dir` | mcp/tests/_store_durability.py:876-903 |
 | The shared non-vacuity gate refuses incomplete durability results or runs below `MIN_SUCCESSFUL_RECLAIMS` by raising `VacuousRunError`. | `MIN_SUCCESSFUL_RECLAIMS`; `VacuousRunError`; `require_stress_measurement` | mcp/tests/_durability_measurement.py:11-11; mcp/tests/_durability_measurement.py:14-15; mcp/tests/_durability_measurement.py:18-55 |
 | No record reported written is missing afterwards for the six record types; loss and raising are asserted separately, torn-line policy is held per consumer class, and the harness detects the defect against a git archive of the base commit. | `MultiProcessDurabilityTests`; `TornLinePolicyTests`; `HarnessVacuityGuardTests`; `HarnessSensitivityTests` | mcp/tests/test_controlplane_store_durability.py:123-205; mcp/tests/test_controlplane_store_durability.py:208-336; mcp/tests/test_controlplane_store_durability.py:339-386; mcp/tests/test_controlplane_store_durability.py:389-444 |
 | The provider durability suite is the second consumer covered by the instrument tick floor; its `case_root` docstring records the shared-stop-flag defect and source fix. | `ProviderStoreDurabilityTests`; `case_root` | mcp/tests/test_provider_store_durability.py:262-277; mcp/tests/test_provider_store_durability.py:280-351 |
@@ -955,6 +955,7 @@ tree edit that must stay out of the commit.
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — No route impact: 260731-EFA-L20 preserves the test route's ownership while deleting unreachable scaffolding, tightening opted-in installed-test failure honesty, and adding direct coverage for the two master CRAP findings.
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24: added host-managed
   full-gate and optional explicit-cap regression coverage; pytest remains
   literal `-n=auto`. Verification metadata remains pinned until closeout stamps

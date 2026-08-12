@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_quality_gate_runner.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T01:38+02:00 |
-| lastVerifiedCommitHash |  `61d2c6a225b2e107bb50d446f708002d58b03a75`|
-| lastVerifiedCommitDate |  2026-08-12T07:36:24+02:00|
+| lastUpdated | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash |  `df36127113619f4e85522eb615cc20c7eb637405`|
+| lastVerifiedCommitDate |  2026-08-12T08:57:17+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,6 +70,7 @@ The runner can certify a consuming repository's checkout when that checkout carr
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 replaced a platform branch in the test expectation with an equivalent lookup; host-managed and explicit-cap runtime behavior is unchanged.
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: added the
   host-managed full command/report proofs and resource-policy payload coverage;
   retained explicit-cap failure proofs. Verification metadata remains pinned

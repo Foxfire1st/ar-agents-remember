@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_spawn_agent_session_knobs_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`                                        |
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -48,6 +48,7 @@ No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 simplified the exhaustive three-role fixture branch; role-tier task-document selection and all launch-knob assertions remain unchanged.
 - 2026-08-11T19:58+02:00 — Reconciled `test_spawn_agent_session_knobs_1.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the split spawn-knobs test card against its current staged source; the documented coverage remains accurate. Verification metadata remains pinned until closeout.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

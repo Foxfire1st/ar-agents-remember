@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_liveness_simulations.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-10T13:03+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405` |
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -145,7 +145,7 @@ P-15 fixture-zoo mandate (leaf task doc R3) and the liveness report
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines the liveness-simulation scope under test; the leaf task doc and liveness report are authoritative. The harness builds the post-demolition `AgentNotifierContext` surface (signal cooldown store; no nudge store or escalation knobs, 260713-TES-L5). | "class _LivenessSimulationCase(unittest.TestCase):" | mcp/tests/test_liveness_simulations.py:155-155 |
+| No external/domain document defines the liveness-simulation scope under test; the leaf task doc and liveness report are authoritative. The harness builds the post-demolition `AgentNotifierContext` surface (signal cooldown store; no nudge store or escalation knobs, 260713-TES-L5). | "class _LivenessSimulationCase(unittest.TestCase):" | mcp/tests/test_liveness_simulations.py:152-152 |
 
 ## Repo-Internal References
 
@@ -157,7 +157,7 @@ P-15 fixture-zoo mandate (leaf task doc R3) and the liveness report
 | The self-liveness heartbeat store and staleness banner `KilledSupervisorDaemonTests` drives. | `AgentNotifierHeartbeatStore`; `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:141-157 |
 | The unit-level fixture `DeadManagerLiveWorkersTests` extends rather than duplicates. | `LadderWalkIntegrationTests` | mcp/tests/test_agent_notifier_ladder.py:143-633 |
 | The terminal state and compaction semantics the HFX2-L8 storm simulation proves at scale. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
-| The shared simulation context (`_ctx`) wires the agent-notifier signal cooldown store expected by `AgentNotifierContext`. | "signal_cooldown_store=" | mcp/tests/test_liveness_simulations.py:236-236 |
+| The shared simulation context (`_ctx`) wires the agent-notifier signal cooldown store expected by `AgentNotifierContext`. | "signal_cooldown_store=" | mcp/tests/test_liveness_simulations.py:233-233 |
 
 ## Cross-Repo References
 
@@ -183,6 +183,7 @@ never-acked seat still resolves `unresolved` at the attempt ceiling with no ladd
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 replaced exhaustive fixture-only role branches with an equivalent mapping; every liveness scenario and assertion remains unchanged.
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_liveness_simulations.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-10T10:40+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the nudge/expectation fixture

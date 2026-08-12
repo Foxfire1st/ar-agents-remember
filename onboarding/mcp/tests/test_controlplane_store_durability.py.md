@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_controlplane_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-11T14:29+02:00                             |
-| lastVerifiedCommitHash |                                                    `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |                                                    2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash |                                                    `df36127113619f4e85522eb615cc20c7eb637405`|
+| lastVerifiedCommitDate |                                                    2026-08-12T08:57:17+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -31,6 +31,11 @@ that decides whether a number is worth reporting sits in the instrument rather t
 ## Code Commentary
 
 ### Logic
+
+`GateStateCompatibilityTests` directly exercises the shared harness's current-model resolution,
+the precisely scoped historical-fixture fallback, and loud propagation of unrelated import
+failures. These tests protect the test harness boundary; the application exposes no compatibility
+module or fallback.
 
 **cit:([`MultiProcessDurabilityTests`], mcp/tests/test_controlplane_store_durability.py:123-205) — R10, four tests over real processes.**
 cit:([`test_no_record_is_lost_when_an_append_races_a_compaction`], mcp/tests/test_controlplane_store_durability.py:126-138) drives the deterministic
@@ -61,7 +66,7 @@ assertion is on the surviving *ids*, not on "did not raise": degrading to one mi
 dashboard degrading, degrading to no gates at all is the projection losing its content, and only
 the id list separates those. cit:([`test_correctness_bearing_reads_refuse_a_torn_line`], mcp/tests/test_controlplane_store_durability.py:275-282) and
 cit:([`test_display_only_reads_skip_a_torn_line`], mcp/tests/test_controlplane_store_durability.py:284-295) generalise the split across the other five
-stores through `STRICT_READ_CASES` / cit:([`TOLERANT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:75-75).
+stores through `STRICT_READ_CASES` / cit:([`TOLERANT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:78-78).
 cit:([`test_expectation_row_projection_degrades_instead_of_crashing`], mcp/tests/test_controlplane_store_durability.py:297-336) is the same argument
 one level up, and it now pins what the leaf actually shipped. It seeds two survivors, a torn line
 and a third survivor *after* it (`_tear_mid_log`), then asserts the projection returns all three
@@ -136,7 +141,7 @@ against the live tree and was passing over one tick per store.
 ### Conventions
 
 **The read-policy partition is derived from call sites, not from docstrings.** The comment block
-above cit:([`STRICT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:74-74) names, per store, the code that folds it and whether a dropped
+above cit:([`STRICT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:77-77) names, per store, the code that folds it and whether a dropped
 row changes a decision: gate → `worktrees/modules/closeout.py`, `worktrees/modules/integrate.py`,
 `serving/hosted_interactions.py`, none of them wrapping the read in a suppression;
 expectation → the L2 overdue sweep; operator inbox → a consume is the ack of record; against
@@ -148,11 +153,11 @@ passes on a loaded CI box and proves nothing. The stress case is kept alongside 
 it is the one that produces a *rate* and carries the number in its failure text through
 cit:([`_describe`], mcp/tests/test_controlplane_store_durability.py:78-91). **Tier 3 — the
 historical `reclaim_ticks` name is absent from the current instrument:** `run_stress` now returns
-`reclaim_attempts` and `successful_reclaims` (cit:([`reclaim_attempts`, `successful_reclaims`], mcp/tests/_store_durability.py:969-970)). The old name is preserved here for developer review rather than guessed into a replacement; the failure text still states how much racing the rate was measured over.
+`reclaim_attempts` and `successful_reclaims` (cit:([`reclaim_attempts`, `successful_reclaims`], mcp/tests/_store_durability.py:976-977)). The old name is preserved here for developer review rather than guessed into a replacement; the failure text still states how much racing the rate was measured over.
 
 **One seeded survivor plus one torn line, built by the adapters — and the torn line is not always
-last.** `_TempRootTest._tear` (cit:([`_tear`], mcp/tests/test_controlplane_store_durability.py:100-102)) is now a one-call wrapper over cit:([`_tear_mid_log`], mcp/tests/test_controlplane_store_durability.py:104-120),
-which writes the `before` records through the store's own `write`, appends cit:([`TORN_LINE`], mcp/tests/test_controlplane_store_durability.py:61-61)
+last.** `_TempRootTest._tear` (cit:([`_tear`], mcp/tests/test_controlplane_store_durability.py:103-105)) is now a one-call wrapper over cit:([`_tear_mid_log`], mcp/tests/test_controlplane_store_durability.py:104-120),
+which writes the `before` records through the store's own `write`, appends cit:([`TORN_LINE`], mcp/tests/test_controlplane_store_durability.py:64-64)
 directly — a line cut off mid-write, which is what a crash or an interleaved append actually
 leaves — and then writes the `after` records. Using the adapter for the good records means the
 fixture cannot drift from the store's real shape; a non-empty `after` puts the torn line *inside*
@@ -220,7 +225,7 @@ shared instrument; the rows below are the code each claim is about.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The measurement harness this file imports: adapters, case lists, the shared stress profile, and the scenario dispatch. | `ADAPTERS`; `CASES`; `APPEND_CASES`; `STRESS_PROFILE`; `run_case` | mcp/tests/_store_durability.py:582-590; mcp/tests/_store_durability.py:1088-1095; mcp/tests/_store_durability.py:1099-1109 |
+| The measurement harness this file imports: adapters, case lists, the shared stress profile, and the scenario dispatch. | `ADAPTERS`; `CASES`; `APPEND_CASES`; `STRESS_PROFILE`; `run_case` | mcp/tests/_store_durability.py:592-597; mcp/tests/_store_durability.py:1088-1095; mcp/tests/_store_durability.py:1099-1109 |
 | The bounded sibling helper owns the base-commit archive and pinned re-execution; both functions remain re-exported by the harness. | `extract_base_commit_tree`; `run_against_source` | mcp/tests/_store_durability_source.py:79-105; mcp/tests/_store_durability_source.py:108-132 |
 | The vacuity guard `HarnessVacuityGuardTests` exercises the sibling work directory holding each run's stop flag. | `harness_work_dir` | mcp/tests/_store_durability.py:853-880 |
 | The vacuity guard's evidence-based floor. | `MIN_SUCCESSFUL_RECLAIMS` | mcp/tests/_durability_measurement.py:11-11 |
@@ -248,6 +253,7 @@ inside `agents-remember`.
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — 260731-EFA-L20 added direct `GateState` resolver tests for current, historical-fixture-only, and unrelated-error paths as part of the master CRAP/diff-coverage repair.
 - 2026-08-11T14:29+02:00 — Re-read `rewrite_lines` and regenerated its citation around the
   current declaration while retaining the lock and record evidence; verification metadata remains
   unchanged for governed closeout.
@@ -324,13 +330,13 @@ inside `agents-remember`.
   opposite policies (strict `read`/`current`/`all_current` raise `ValidationError`; `read_gates`
   must still surface the intact gate *by id*, which is what separates "one row missing" from "no
   gates at all"), generalised across the other five stores through `STRICT_READ_CASES` /
-  `TOLERANT_READ_CASES` (cit:([`TOLERANT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:75-75)) whose membership the source derives from named call sites in the
-  comment block above them (cit:([`STRICT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:74-74)), not from docstrings. **R14** —
+  `TOLERANT_READ_CASES` (cit:([`TOLERANT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:78-78)) whose membership the source derives from named call sites in the
+  comment block above them (cit:([`STRICT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:77-77)), not from docstrings. **R14** —
   `HarnessSensitivityTests` (cit:([`HarnessSensitivityTests`], mcp/tests/test_controlplane_store_durability.py:389-444)) asserts both directions against the base-commit archive:
   the five unlocked stores each lose exactly one record, and `operator_inbox` — the one store that
   already held an `fcntl` lock at `e52edaf5` — loses zero, which is the guard that the harness is
-  measuring the defect. Also recorded `_TempRootTest._tear` (cit:([`_tear`], mcp/tests/test_controlplane_store_durability.py:100-102)) seeding through the store's
-  own `write` before appending `TORN_LINE` (cit:([`TORN_LINE`], mcp/tests/test_controlplane_store_durability.py:61-61)), and `_seed_gate` (cit:([`_seed_gate`], mcp/tests/test_controlplane_store_durability.py:218-228)) using state `open`
+  measuring the defect. Also recorded `_TempRootTest._tear` (cit:([`_tear`], mcp/tests/test_controlplane_store_durability.py:103-105)) seeding through the store's
+  own `write` before appending `TORN_LINE` (cit:([`TORN_LINE`], mcp/tests/test_controlplane_store_durability.py:64-64)), and `_seed_gate` (cit:([`_seed_gate`], mcp/tests/test_controlplane_store_durability.py:218-228)) using state `open`
   because the projection keep-filter prunes the terminal states. **Filed one Todo, found by
   reading the cited source rather than the test:**
   `test_expectation_row_projection_degrades_instead_of_crashing` (cit:([`test_expectation_row_projection_degrades_instead_of_crashing`], mcp/tests/test_controlplane_store_durability.py:297-336)) says in its docstring

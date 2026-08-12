@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/kernel/primitives/checkout_coordination.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-10T18:31+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash |  `df36127113619f4e85522eb615cc20c7eb637405`|
+| lastVerifiedCommitDate |  2026-08-12T08:57:17+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,10 +61,11 @@ manual runtime-config construction cannot bypass the normal synthetic config rou
 | --- | --- | --- |
 | Runtime config selects the synthetic leaf config before reading the supplied authority file. | `checkout_cli_location`; `_checkout_runtime_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:149-157; mcp/src/agents_remember/kernel/primitives/runtime_config.py:653-706 |
 | Durable-store lock, append, and rewrite paths all enforce this target policy. | "path = _checked_lock_path_for(log_path)"; "def _prepare_append_target(log_path: Path) -> None:"; "def _require_rewrite_access(log_path: Path, store: str) -> None:" | mcp/src/agents_remember/controlplane/durable_store.py:427-427; mcp/src/agents_remember/controlplane/durable_store.py:506-506; mcp/src/agents_remember/controlplane/durable_store.py:511-511 |
-| MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. | "server_startup.declare_mcp_process()"; "declare_test_process()" | mcp/src/agents_remember/mcp/server.py:60-65; mcp/tests/conftest.py:37-39 |
+| MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. | "server_startup.declare_mcp_process()"; "declare_test_process()" | mcp/src/agents_remember/mcp/server.py:60-65; mcp/tests/conftest.py:37-40 |
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored the pytest process-declaration evidence after `conftest.py` line movement; the checkout-coordination claim is unchanged.
 - 2026-08-10T19:57:55+02:00 — Closeout citation review: retained the three policy claims after
   re-reading the committed candidate and replaced ambiguous identifier anchors with exact,
   uniquely resolved call/signature anchors. Verification metadata remains pinned until closeout.

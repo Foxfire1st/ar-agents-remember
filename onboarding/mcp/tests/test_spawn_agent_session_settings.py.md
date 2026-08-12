@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_spawn_agent_session_settings.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`                                        |
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -48,6 +48,7 @@ No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 expressed the fixture's existing role-to-task-altitude mapping as one lookup table; the settings and refusal contract is unchanged.
 - 2026-08-11T19:58+02:00 — Reconciled `test_spawn_agent_session_settings.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_control_installed.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-11T22:28+02:00                  |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash |  `df36127113619f4e85522eb615cc20c7eb637405`|
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,9 +64,9 @@ carry `@pytest.mark.ar_run_control_installed` above their `skipUnless`, so the e
 suite can be selected or deselected by marker under `--strict-markers`; the marker is a selector
 only and the `AR_RUN_CONTROL_INSTALLED=1` skip guard remains the thing that decides whether a live
 runtime is touched. `ClaudeInstalledHonestyTests` is unmarked — it needs no installed runtime.
-The shared `_version_of` probe converts both process-start failures and subprocess failures into an
-exact `SkipTest`: an installed binary that cannot actually run is absent evidence, not a product
-failure and not permission to record a live observation.
+The shared `_version_of` probe skips when the executable is absent or the explicit opt-in is off.
+Once an executable is selected for an opted-in run, process-start or subprocess failure is a real
+test failure rather than an unavailable-evidence skip.
 
 ### Invariants And Boundaries
 
@@ -74,7 +74,8 @@ failure and not permission to record a live observation.
 - Interrupt acknowledgement and settlement are both proven live (codex `interrupted`, pi polled
   `interrupted` + stale-identity 422).
 - Claude honesty holds at the version mismatch (control gate stays `unverified`).
-- An unavailable or unrunnable installed harness skips before live evidence is claimed.
+- A missing installed harness skips before live evidence is claimed; a selected but unrunnable
+  executable fails the opted-in proof.
 - A settled live codex turn projects exactly once on the re-read conversation page (L5 F1): the
   installed regression asserts post-settlement page uniqueness (2/2 turns), which no prior installed
   suite did, and fails `2 != 1` on stashed `projector.py`.
@@ -100,7 +101,7 @@ The suite drives the registered routes against the live installed adapters.
 | The seventeen registered routes proven live. | "async def conversation_interrupt(" | mcp/src/agents_remember/serving/conversation/control/api.py:170-170 |
 | The interrupt ledger whose live settlement this proves. | "class InterruptRecord:" | mcp/src/agents_remember/serving/conversation/control/operations.py:79-79 |
 | The control capability gate whose Claude version-mismatch honesty this pins. | "def control_capabilities_for(" | mcp/src/agents_remember/serving/conversation/control/capabilities.py:320-320 |
-| The installed-version probe treats OS/process failures as an explicit unavailable-harness skip. | `_version_of` | mcp/tests/test_conversation_control_installed.py:79-91 |
+| The installed-version probe skips only absent or unselected harnesses and runs the selected executable strictly. | `_version_of` | mcp/tests/test_conversation_control_installed.py:79-88 |
 
 ## Cross-Repo References
 
@@ -112,6 +113,7 @@ No meaningful cross-repo references found.
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — 260731-EFA-L20 removed the broad process-error skip: opted-in installed tests still skip a missing executable, but a selected executable that cannot run now fails instead of being reported as unavailable evidence.
 - 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: recorded the exact skip boundary for
   an installed harness whose version process cannot start or complete. No live evidence or fixture
   authority is inferred from that skip; verification metadata remains pinned until closeout.

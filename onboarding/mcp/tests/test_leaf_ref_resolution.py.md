@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_leaf_ref_resolution.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-12T19:55+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405` |
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -38,6 +38,8 @@ The temp fixtures write real `TaskDocument` master and subtask JSON/Markdown pai
 - a missing optional master `task.json` is skipped, malformed non-task sibling JSON is ignored for boot
   safety, while a malformed schema-marked leaf JSON file raises;
 - standalone/light `task.json` docs resolve from their doc id, slug/folder, and enclosure aliases.
+- repository inference accepts exactly one active task-directory child while ignoring files and
+  the archive directory; zero or multiple active repository directories remain ambiguous.
 
 The 260712-PTS-L1 read/heal-split tests build on a shared `_persisted_legacy_contract` fixture (a leaf
 contract persisted with a legacy stem-shaped id — the pre-heal on-disk state) and prove:
@@ -73,6 +75,7 @@ contract persisted with a legacy stem-shaped id — the pre-heal on-disk state) 
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — 260731-EFA-L20 added direct empty/single/multiple repository-inference coverage, including file and archive exclusions, clearing `_single_repo_name` CRAP without changing production behavior.
 - 2026-08-04T18:51+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the three malformed rows whose
   links pointed at `.md` cards or an overview instead of code — `resolve_leaf_ref` (leaf_refs.py:
   94-149), `load_contract` + `heal_contract_leaf_ids` (worktree_contract.py:438-473; 480-557), and

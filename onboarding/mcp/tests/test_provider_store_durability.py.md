@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_provider_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |                                                `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash |                                                `df36127113619f4e85522eb615cc20c7eb637405`|
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -162,7 +162,7 @@ keeps it so.** The two provider adapters were added to the *shared* instrument
 cit:([`ProviderMetricsAdapter`, `ProviderDegradationAdapter`], mcp/tests/_store_durability.py:419-465; mcp/tests/_store_durability.py:468-527), which is what lets them reuse the scenarios, the raw on-disk
 accounting and the base-commit archive. But `CASES` still enumerates only the six control-plane
 adapters and `PROVIDER_CASES` only the two provider ones
-cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:585-585) — so widening the instrument
+cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:596-596) — so widening the instrument
 does not silently widen what `test_controlplane_store_durability.py` asserts. Each suite names the
 stores it speaks for, and `ProviderCaseRegistryTests` fails the moment that stops being true.
 
@@ -195,7 +195,7 @@ cit:([`_TempRootTest`, `case_root`], mcp/tests/test_provider_store_durability.py
 one flag and every case after the first left the tick loop after a single tick, reporting a green
 measured over almost nothing on the unfixed tree as readily as on the fixed one. Discovered here,
 worked around here, then fixed at the source: `harness_work_dir`
-cit:([`harness_work_dir`], mcp/tests/_store_durability.py:847-874) now derives the
+cit:([`harness_work_dir`], mcp/tests/_store_durability.py:876-903) now derives the
 scratch directory from `root` itself, and `MIN_SUCCESSFUL_RECLAIMS`
 cit:([`MIN_SUCCESSFUL_RECLAIMS`], mcp/tests/_durability_measurement.py:11-11) refuses a result whose
 reclaimer barely ran for any other reason. What remains in this file is the ordinary requirement
@@ -297,7 +297,7 @@ below are the code each claim is about.
 | The other half of that pairing: the MCP process's provider-setup thread appending index-lifecycle rows into the same log. | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
 | The consumer that makes the metrics log's tolerant read structurally safe: the whole state machine is re-derived from a rolling window of live samples and nothing is consumed. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
 | The control-plane suite over the same instrument, whose `CASES` this file's `PROVIDER_CASES` is asserted to be disjoint from, and whose base-commit class this file's mirrors. | `MultiProcessDurabilityTests`; `HarnessVacuityGuardTests`; `HarnessSensitivityTests` | mcp/tests/test_controlplane_store_durability.py:123-205; mcp/tests/test_controlplane_store_durability.py:339-386; mcp/tests/test_controlplane_store_durability.py:389-444 |
-| The `setUp` method on `ProviderOwnershipTests` explicitly contains its direct process-role declarations with `preserve_owned_mutable_state`; the autouse `reject_owned_global_state_leaks` guard is the suite-wide backstop. | "class ProviderOwnershipTests(_TempRootTest):"; "from _global_state import preserve_owned_mutable_state"; `reject_owned_global_state_leaks` | mcp/tests/conftest.py:123-134; mcp/tests/test_provider_store_durability.py:71-71; mcp/tests/test_provider_store_durability.py:638-638 |
+| The `setUp` method on `ProviderOwnershipTests` explicitly contains its direct process-role declarations with `preserve_owned_mutable_state`; the autouse `reject_owned_global_state_leaks` guard is the suite-wide backstop. | "class ProviderOwnershipTests(_TempRootTest):"; "from _global_state import preserve_owned_mutable_state"; `reject_owned_global_state_leaks` | mcp/tests/conftest.py:118-129; mcp/tests/test_provider_store_durability.py:71-71; mcp/tests/test_provider_store_durability.py:638-638 |
 
 ## Cross-Repo References
 
@@ -310,6 +310,7 @@ are inside `agents-remember`.
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored shared durability and global-state-fixture evidence after the focused test cleanup; provider durability claims are unchanged.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: deduplicated the metrics/degradation
@@ -391,7 +392,7 @@ are inside `agents-remember`.
   (`STRESS_PROFILE`'s 4 × 50) across four runs and 0 at four times the volume. **Recorded the
   case-list separation as a contract rather than as tidiness:** the provider adapters joined the
   shared instrument, but `CASES` stays the six control-plane stores and `PROVIDER_CASES` is its own
-  disjoint set cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:585-585), so widening the instrument cannot silently widen
+  disjoint set cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:596-596), so widening the instrument cannot silently widen
   what `test_controlplane_store_durability.py` asserts — and `ProviderCaseRegistryTests`
   cit:([`ProviderCaseRegistryTests`], mcp/tests/test_provider_store_durability.py:804-813)
   is the assertion that fails if that stops holding. **Recorded the tolerance argument
