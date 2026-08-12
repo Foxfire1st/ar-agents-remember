@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_route_index.py`                         |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-18T20:03+02:00                                 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`             |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`             |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ production code and real Git fixtures.
 | --- | --- | --- |
 | Source census validates the root and freezes tracked/untracked membership plus eligible paths. | "def route_index_source_snapshot" | mcp/src/agents_remember/kernel/route_index_census.py:41-41 |
 | Rendering consumes one snapshot and writes only changed index bytes. | "def build_route_indexes" | mcp/src/agents_remember/kernel/route_index.py:184-230 |
-| Shared Git execution scrubs selectors and uses surrogate-preserving decoding. | "def git_environment" | mcp/src/agents_remember/kernel/git_command.py:76-76 |
+| Shared Git execution scrubs selectors and uses surrogate-preserving decoding. | "def git_environment" | mcp/src/agents_remember/kernel/git_command.py:85-85 |
 | Matrix sections cover contamination, symlink/sparse/gitlink identity, selectors, failures, non-UTF-8 paths, and convergence. | `RouteIndexTests` | mcp/tests/test_route_index.py:82-907 |
 
 ## Cross-Repo References
@@ -89,6 +89,7 @@ No sibling repository evidence is required; linked-worktree fixtures are created
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 8 citation finding(s); scoped recheck clean.
 

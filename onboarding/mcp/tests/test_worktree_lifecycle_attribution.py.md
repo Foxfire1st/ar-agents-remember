@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_lifecycle_attribution.py`         |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                 |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                 |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -39,7 +39,7 @@ snake_case result payloads (no git/provider machinery).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The application entry point attribution helpers under test. | "def _attribute_start" | mcp/src/agents_remember/application/worktree_tools.py:180-180 |
+| The application entry point attribution helpers under test. | "def _attribute_start" | mcp/src/agents_remember/application/worktree_tools.py:195-195 |
 | The ambient lifecycle they drive (`promote`/`attach`). | "def promote"; "def attach" | mcp/src/agents_remember/observer/ambient.py:348-348; mcp/src/agents_remember/observer/ambient.py:364-364 |
 | The save-gate signal they assert (`SaveGateRequired`). | `SaveGateRequired` | mcp/src/agents_remember/observer/save_gate.py:34-48 |
 
@@ -48,6 +48,7 @@ snake_case result payloads (no git/provider machinery).
 Lifecycle-attribution tests verify that application entry point attribution can use `enclosure_path` while retaining fallback behavior for payloads that still expose `contract_path`.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 4 citation finding(s); scoped recheck clean.
 

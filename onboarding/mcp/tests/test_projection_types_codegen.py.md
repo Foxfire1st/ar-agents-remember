@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_projection_types_codegen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T00:08+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,10 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Defines the class `ProjectionSchemaGenerationTests` (lines 44-166). | `ProjectionSchemaGenerationTests` | mcp/tests/test_projection_types_codegen.py:44-166 |
-| Defines the class `ProjectionSchemaDriftTests` (lines 169-307). | `ProjectionSchemaDriftTests` | mcp/tests/test_projection_types_codegen.py:169-307 |
+| Defines the class `ProjectionSchemaDriftTests` (lines 169-307). | `ProjectionSchemaDriftTests` | mcp/tests/test_projection_types_codegen.py:169-296 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T00:08+02:00 — No content impact: schema-drift subtests report relative paths as
   serializable POSIX strings for xdist; generated-schema comparisons are unchanged. Verification

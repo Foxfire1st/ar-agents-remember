@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -38,10 +38,11 @@ register MCP tools or runtime behavior.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | CRAP-Calculator lives in this package. | `crap_score` | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92 |
-| The source quality suite wrapper lives in this package. | `quality_steps` | mcp/src/agents_remember/code_quality/check.py:262-308 |
+| The source quality suite wrapper lives in this package. | `quality_steps` | mcp/src/agents_remember/code_quality/check.py:320-366 |
 | The changed-lines coverage floor lives in this package. | `DEFAULT_DIFF_COVERAGE_FLOOR` | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 3 citation items; scoped citation check now passes.
 

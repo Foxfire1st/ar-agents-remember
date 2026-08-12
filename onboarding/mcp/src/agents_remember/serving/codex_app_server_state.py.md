@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,8 @@ terminal, transcript, and reconciliation parsing helpers used by the native adap
 260718-CHATS-L0E adds the `thread/read` → native-evidence-frame flatten helper.
 
 ## Code Commentary
+
+L23 accepts any reported server product token but still requires the exact Agents Remember client identity suffix and reported version; the observed product is retained as diagnostic evidence.
 
 ### Logic
 
@@ -95,6 +97,8 @@ No external repository boundary is implemented by this parser module.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: documented the clean-cut current
   Desktop initialize grammar, exact client suffix, and unchanged initialize/thread version

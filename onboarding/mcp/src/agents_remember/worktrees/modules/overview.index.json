@@ -13,6 +13,7 @@
     "mcp/src/agents_remember/worktrees/modules/__init__.py",
     "mcp/src/agents_remember/worktrees/modules/abandon.py",
     "mcp/src/agents_remember/worktrees/modules/args.py",
+    "mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py",
     "mcp/src/agents_remember/worktrees/modules/cleanup.py",
     "mcp/src/agents_remember/worktrees/modules/cli.py",
     "mcp/src/agents_remember/worktrees/modules/closeout.py",
@@ -33,8 +34,8 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 21,
-    "fileSidecars": 21,
+    "sourceFilesInScope": 22,
+    "fileSidecars": 22,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -42,6 +43,8 @@
     "agents",
     "agents_remember",
     "args",
+    "clean",
+    "clean_quality_executor",
     "cleanup",
     "cli",
     "closeout",
@@ -50,6 +53,7 @@
     "context",
     "contract",
     "contract_reader",
+    "executor",
     "finalize",
     "gate",
     "git",
@@ -78,12 +82,13 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "- `git.py` owns this route's Git vocabulary \u2014 the typed helpers and small repository state checks every operation module speaks \u2014 but **since 260731-EFA-L3 it no longer owns a Git runner**. It imports the one owner (`from agents_remember.kernel.git_command import run_git`, line 7), and its own `require_git` is now raise-on-nonzero over it. Raw results preserve the runner's surrogateescape contract, while only the raised failure diagnostic passes through `_transport_safe_git_diagnostic` so invalid Git bytes become literal escapes before MCP JSON serialization. See the 260731-EFA-L3 section b...",
+    "summary": "L23 makes quality execution an explicit `QualityGatePlan.executor` choice. `code_quality_gate.py` keeps local execution as one exact mode and delegates clean execution to `clean_quality_executor.py`, which materializes the immutable staged candidate into a pinned Dagger graph, streams progress, and replaces the enclosure's latest reports. `closeout.py` and `integrate.py` pass operation progress and candidate identity through the existing synchronous mutation path; they do not own detached process identity. `git.py` captures and later rechecks the candidate with an isolated Git index so asyn...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/modules/__init__.py",
       "mcp/src/agents_remember/worktrees/modules/abandon.py",
       "mcp/src/agents_remember/worktrees/modules/args.py",
+      "mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py",
       "mcp/src/agents_remember/worktrees/modules/cleanup.py",
       "mcp/src/agents_remember/worktrees/modules/cli.py",
       "mcp/src/agents_remember/worktrees/modules/closeout.py",
@@ -110,6 +115,8 @@
       "abandon",
       "args.py",
       "args",
+      "clean_quality_executor.py",
+      "clean_quality_executor",
       "cleanup.py",
       "cleanup",
       "cli.py",
@@ -146,12 +153,10 @@
       "sync",
       "terminal_validation.py",
       "terminal_validation",
-      "from agents_remember.kernel.git_command import run_git",
-      "require_git",
-      "_transport_safe_git_diagnostic",
-      "EFA",
-      "agents_remember",
-      "git_command"
+      "QualityGatePlan.executor",
+      "L23",
+      "QualityGatePlan",
+      "route-local-overview"
     ]
   },
   "fallback": {

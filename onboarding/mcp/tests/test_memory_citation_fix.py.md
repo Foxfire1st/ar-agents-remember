@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_fix.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -90,9 +90,10 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `SymbolIndexTests` (lines 1226-1319) — The one walk both halves share: what it reads, what it skips, what it counts.. | `SymbolIndexTests` | mcp/tests/test_memory_citation_fix_operations.py:36-129 |
 | Defines the class `ExtentTests` (lines 1322-1423) — The generator, on the shapes a whole-tree run meets.. | `ExtentTests` | mcp/tests/test_memory_citation_fix_operations.py:132-234 |
 | Defines the class `WriteGuardTests` (lines 1426-1709) — L6-R27: the fixer writes into a leaf's memory worktree or it does not write.. | `WriteGuardTests` | mcp/tests/test_memory_citation_fix.py:16-16 |
-| Defines the class `CommandLineTests` (lines 1712-2000) — Command-line scope and write-mode contract.. | "class CommandLineTests(unittest.TestCase):" | mcp/tests/test_memory_citation_fix_operations.py:523-523 |
+| Defines the class `CommandLineTests` (lines 1712-2000) — Command-line scope and write-mode contract.. | "class CommandLineTests(unittest.TestCase):" | mcp/tests/test_memory_citation_fix_operations.py:540-540 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

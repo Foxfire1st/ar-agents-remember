@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/filesystem.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ Same-repository closeout code and tests are the direct evidence for this helper.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` skill closeout planning uses the helper for changed-file filtering and onboarding metadata/catalog reads and writes. | "def changed_worktree_paths"; `onboarding_refresh_plan_for_context`; `refresh_entity_fingerprints_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/git.py:147-155; mcp/src/agents_remember/worktrees/modules/onboarding.py:76-117; mcp/src/agents_remember/worktrees/modules/onboarding.py:508-554; mcp/src/agents_remember/worktrees/modules/onboarding.py:752-793 |
+| `c-09-git-worktree-manager` skill closeout planning uses the helper for changed-file filtering and onboarding metadata/catalog reads and writes. | "def changed_worktree_paths"; `onboarding_refresh_plan_for_context`; `refresh_entity_fingerprints_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/git.py:173-173; mcp/src/agents_remember/worktrees/modules/onboarding.py:76-117; mcp/src/agents_remember/worktrees/modules/onboarding.py:508-554; mcp/src/agents_remember/worktrees/modules/onboarding.py:752-793 |
 | The missing-onboarding pre-commit check uses the helper for sidecar existence and inline source reads. | `_missing_sidecar_onboarding`; `_missing_inline_onboarding`; `filesystem.exists`; `filesystem.read_text` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:111-124; mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:127-150 |
 | Worktree support tests create and clean up deliberately long paths through this helper. | `test_changed_worktree_paths_includes_long_files`; `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support_tests_1.py:1068-1081; mcp/tests/test_worktree_support_tests_1.py:1100-1118 |
 | The `read_ar_files` application entry point calls `read_text` for full reads and `read_text_range` for line-range reads. | `_read_source`; "filesystem.read_text(source_path)"; "filesystem.read_text_range(" | mcp/src/agents_remember/application/read_files.py:188-206; mcp/src/agents_remember/application/read_files.py:207-207; mcp/src/agents_remember/application/read_files.py:209-209 |
@@ -76,6 +76,7 @@ No cross-repository evidence is needed for this local helper.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 4 table citations and replaced 4 stale source references with exact helper implementations/tests; no unresolved Tier-3 claims.
 

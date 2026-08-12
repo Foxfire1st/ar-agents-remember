@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/git.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-29T15:30+02:00                     |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -102,14 +102,15 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one `run_git` every helper here calls: the `GIT_DIR`-family scrub, the DEVNULL stdin guard, and the three timeout classes. | "def run_git" | mcp/src/agents_remember/kernel/git_command.py:85-85 |
+| The one `run_git` every helper here calls: the `GIT_DIR`-family scrub, the DEVNULL stdin guard, and the three timeout classes. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:94-145 |
 | Memory baseline code reuses these facade-exported Git helpers. | "def run_drift" | mcp/src/agents_remember/memory/baseline.py:74-74 |
 | The L3 serving change-set API consuming `changed_files_with_counts` + `commit_text_or_none`. | "def task_changeset" | mcp/src/agents_remember/serving/changeset.py:80-80 |
 | Worktree tests cover changed-path behavior for long filesystem paths. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support_tests_1.py:1068-1081 |
 | Closeout runs the configured hook before its strict wrapper and commits the certified index afterwards. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:820-889 |
-| The hook-failure regression proves the raw runner retains a surrogateescaped byte while the facade exception is UTF-8 JSON serializable. | `test_failed_hook_diagnostic_with_invalid_bytes_is_json_serializable` | mcp/tests/test_git_command.py:298-315 |
+| The hook-failure regression proves the raw runner retains a surrogateescaped byte while the facade exception is UTF-8 JSON serializable. | `test_failed_hook_diagnostic_with_invalid_bytes_is_json_serializable` | mcp/tests/test_git_command.py:337-354 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T03:31+02:00 — 260731-EFA-L22 closeout repair: preserved surrogateescape inside the
   shared Git runner but escaped invalid bytes at `require_git`'s diagnostic boundary, preventing a

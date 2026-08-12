@@ -9,8 +9,8 @@ Total output lines: 1813
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-12T09:20+02:00 |
-| lastVerifiedCommitHash | `284ddbcd879a0b1ea58c9997ff781fb471982c36`|
-| lastVerifiedCommitDate | 2026-08-12T09:23:37+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -58,9 +58,26 @@ cit:(["test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims"; "t
 
 ## Quality Command Construction
 
+L23 adds three forcing groups. `test_lifecycle_operations.py` owns task-addressed start/observe,
+immutable candidate/input identity, stale recovery, cancellation boundary, detached launch, worker
+progress, terminal state, and packaged worker service composition before dispatch.
+The same lifecycle group proves detached launch preserves the installed MCP `PYTHONPATH` and excludes
+the task checkout source root, so task code cannot silently replace the installed worker runtime.
+The clean-quality group (`test_agents_remember_quality.py`,
+`test_clean_quality_executor.py`, `test_clean_room.py`, and the Codex clean-room probe) separates
+Dagger graph semantics, host execution, CLI translation, and real-when-available harness proof.
+`test_platform_subprocess.py` owns the WSL/UNC/Windows-shim refusal matrix, while the small L23
+notifier batch suite keeps structural expiry-address edge coverage below the file-size rail.
+
 `test_code_quality_check_scope.py` proves root pytest `addopts` includes `-n=auto`, while the
 derived-scope command test separately retains its coverage targets. This pins the single
 configuration owner used by raw pytest and every wrapper.
+
+`test_code_quality_check.py` now exercises both sides of the L23 progress-report precedence seam in
+one targeted-configuration regression: an omitted CLI path derives from
+`AR_QUALITY_PROGRESS_REPORT`, while a subsequently supplied explicit path overrides the still-set
+environment value. The paired calls retain the repository file-size arm and close the final
+targeted Dagger diff-coverage edge without changing production configuration behavior.
 
 The session-level conftest assigns every xdist worker a private `XDG_CACHE_HOME` below its worker
 base temp directory, leaving the non-xdist master environment unchanged. Parameterized tests pass
@@ -954,6 +971,27 @@ proof of memory preflight → hook → wrapper → exact-index commit, including
 tree edit that must stay out of the commit.
 
 ## Update History
+
+- 2026-08-12T17:27+02:00 — 260731-EFA-L23 final Dagger test-route review: the existing targeted
+  code-quality regression now pins explicit progress-report precedence as the complement to its
+  environment-fallback assertion. Focused pytest is 1/1; verification provenance remains
+  closeout-owned.
+
+- 2026-08-12T16:54+02:00 — 260731-EFA-L23 installed-runtime test-route review: lifecycle tests now
+  pair packaged service binding with launcher proof that installed `PYTHONPATH` is preserved and the
+  task checkout source root is excluded. Verification provenance remains closeout-owned.
+
+- 2026-08-12T16:52+02:00 — 260731-EFA-L23 packaged-worker test-route review: the lifecycle forcing
+  suite now proves the installed CLI builds and binds default worktree services before dispatching
+  by task address. Focused proof is green under configuration-owned xdist auto; verification
+  provenance remains closeout-owned.
+
+- 2026-08-12T16:28+02:00 — 260731-EFA-L23 final test-route review: the code-quality wrapper suite
+  now pins environment-derived enclosure progress-report configuration in the existing targeted
+  file-size-arm regression, including explicit optional report arguments. This closes the staged
+  diff-coverage branch without changing the route's test ownership; verification provenance
+  remains closeout-owned.
+- 2026-08-12T15:19+02:00 — L23 curator: added durable lifecycle, Dagger clean-quality, Codex probe, native subprocess, and notifier-addressing forcing groups; verification provenance remains closeout-owned.
 
 - 2026-08-12T09:20+02:00 — No route impact: the 260731-EFA-L20 reopen replaces one unreachable context body with a direct raising-`__enter__` assertion; test-route ownership and safety coverage are unchanged.
 - 2026-08-12T08:41+02:00 — No route impact: 260731-EFA-L20 preserves the test route's ownership while deleting unreachable scaffolding, tightening opted-in installed-test failure honesty, and adding direct coverage for the two master CRAP findings.

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T11:06+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -174,7 +174,7 @@ negative — it is the assertion that would fail if a polarity field were reintr
 | The T9B/T9C refused-conduit describe block, including the `data-state=stale` / `data-refused-polarity` null pair. | "renders the big red fleeting-enclosure box (BLOCKED title + reason + recovery) for a pre-contract block" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:38-45 |
 | `refusedPolarityOf` — the derivation the test's amber expectation depends on. | `refusedPolarityOf` | dashboard/src/panels/engine-room/geometry.ts:124-134 |
 | `_seed_edge_state` — why `stale` is the honest reroute state to assert. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:634-634 |
-| The `ProviderNode` shape `WORKSPACE_ENGINES` builds. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:525-525 |
+| The `ProviderNode` shape `WORKSPACE_ENGINES` builds. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:542-542 |
 | The jsdom stubs + determinism freeze. | "window.matchMedia = ((query" | dashboard/src/test/setup.ts:66-66 |
 
 ## Current L5I Maintenance
@@ -190,6 +190,7 @@ targets and the sparse overlay owns surge and reindex targets. Existing effects-
 to pin the static scene.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

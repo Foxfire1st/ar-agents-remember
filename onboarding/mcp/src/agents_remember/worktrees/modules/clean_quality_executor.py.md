@@ -1,0 +1,67 @@
+# mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-08-12T15:19+02:00 |
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[worktrees/modules overview](overview.md)
+
+## Purpose
+
+This module runs one pinned Dagger quality graph in a clean Ubuntu/Playwright container and publishes its latest reports into the worktree enclosure. It replaces ad-hoc nested-Docker execution with one explicit, observable executor selected by settings.
+
+## Code Commentary
+
+### Logic
+
+`run_clean_quality` validates mode and candidate roots, prepares an isolated sandbox containing the exact staged candidate and required Git ancestry, invokes the pinned Dagger module while streaming progress, and publishes only recognized reports. It parses the exported result rather than trusting the Dagger CLI transport exit code alone.
+
+### Conventions
+
+The Dagger, Codex, and base image versions are constants. The scratch sandbox is self-overwriting inside the enclosure and is separate from durable reports.
+
+### Invariants And Boundaries
+
+- No Docker socket or nested Docker daemon is mounted into the test container.
+- Invalid/missing exported status fails closed; local quality is not a fallback.
+- Candidate Git identity must match before and after sandbox materialization.
+- Reports are atomically replaced, not accumulated per run.
+
+### Todos
+
+None.
+
+## Docs References
+
+The repository source pins the toolchain; no external Domain Documentation source is configured in memory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Tool and image versions are repository-owned pinned inputs. | `DAGGER_VERSION`; `CODEX_VERSION`; `PLAYWRIGHT_IMAGE` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:23-30 |
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The executor validates, materializes, streams, parses, and publishes one clean quality run. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:36-167 |
+| Helper boundaries preserve Git identity, atomic report publication, and native Dagger resolution. | `_publish_reports`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:169-235 |
+
+## Cross-Repo References
+
+The only external boundary is the pinned container/tool runtime, not a sibling repository.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:198-235 |
+
+## Update History
+
+- 2026-08-12T15:19+02:00 — Created for L23's pinned, observable Dagger quality executor; verification provenance remains closeout-owned.

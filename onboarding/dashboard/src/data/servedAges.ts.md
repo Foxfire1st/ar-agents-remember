@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/servedAges.ts`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,8 @@ set for the store's stable-equality merge and (2) anchors every applied node to 
 so staleness displays advance locally between real emissions ("server-anchored, client-advanced").
 
 ## Code Commentary
+
+L23 adds `elapsedSeconds` to `VOLATILE_AGE_FIELDS`. Lifecycle-operation elapsed time can therefore advance without making an otherwise stable served enclosure look structurally changed.
 
 `VOLATILE_AGE_FIELDS` — the five now-relative keys (`staleSeconds`, `snapshotStaleSeconds`,
 `ageSeconds`, `waitSeconds`, `heartbeatAgeSeconds`), a byte-for-byte mirror of
@@ -84,6 +86,8 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 3 citation rows: the server half (serving/delta.py L33-L56, `VOLATILE_AGE_FIELDS`), the consuming merge (data/store.ts L66-L67 + L88-L110, `mergeKeyed`), and the four display-site import lines (Hangar/AttentionQueue/MemoryMirror/LifecycleList, `servedAgeSeconds`). Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.

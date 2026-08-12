@@ -6,8 +6,8 @@
 | path                   | `pyproject.toml`                           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T00:20+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -207,7 +207,7 @@ off by default and there was nowhere to declare a marker.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The quality gate delegates `testpaths` lookup to `quality_scope.pytest_testpaths`. | `pytest_testpaths` | mcp/src/agents_remember/code_quality/check.py:69-70 |
+| The quality gate delegates `testpaths` lookup to `quality_scope.pytest_testpaths`. | `pytest_testpaths` | mcp/src/agents_remember/code_quality/check.py:73-74 |
 | Pytest configuration owns automatic xdist workers for raw and wrapped runs alike. | "-n=auto" | pyproject.toml:110-130 |
 | The repository enables branch measurement. | "branch = true" | pyproject.toml:70-70 |
 | The changed-lines coverage floor reuses the CRAP reader, which refuses reports without branch data. | "by_key = crap_calculator.load_coverage_by_path"; "require_branch_measurement(data"; "def require_branch_measurement("; "if branch is not True: raise RuntimeError("; "meta.branch_coverage is"; "CRAP is defined over branch coverage" | mcp/src/agents_remember/code_quality/crap_calculator.py:115-115; mcp/src/agents_remember/code_quality/crap_calculator.py:135-135; mcp/src/agents_remember/code_quality/crap_calculator.py:139-142; mcp/src/agents_remember/code_quality/diff_coverage.py:238-238 |
@@ -224,6 +224,7 @@ off by default and there was nowhere to declare a marker.
 | Source-checkout instructions state the gate command and that Radon reports rather than enforces. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-198 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T00:20+02:00 — Recorded root pytest `addopts` as the single owner of `-n=auto`, with
   `-n=0` reserved for explicit serial diagnosis. Verification metadata remains pinned until

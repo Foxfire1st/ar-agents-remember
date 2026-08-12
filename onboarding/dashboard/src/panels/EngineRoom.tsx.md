@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EngineRoom.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -100,7 +100,7 @@ must be kept for the legacy projection tests.
 | Official-strip regression tests pin seven same-state CGCs into one `7 CGC · nominal` chip, keep mixed CGC states separate, and assert hover-title repo lists. | "7 CGC · nominal" | dashboard/src/panels/EngineRoom.test.tsx:162-178; dashboard/src/panels/EngineRoom.test.tsx:180-204 |
 | The bounded-height panel variant the room uses. | `fill` | dashboard/src/grammar/Panel.tsx:59-59 |
 | `groupEngines` (fallback) + `engineState` + `selectQueue`. | `groupEngines` | dashboard/src/data/selectors.ts:37-46; dashboard/src/data/selectors.ts:123-127; dashboard/src/data/selectors.ts:147-165 |
-| The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`). | "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:236-236 |
+| The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`). | "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:238-238 |
 | The shared chat-routed gate responder rendered by diagnostics. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
 
 ## Current L5I Maintenance
@@ -112,6 +112,7 @@ The header pulse additionally stops while its observed element is hidden, so a m
 room does not keep a Motion frame loop alive.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the engine-room styles barrel import change. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 9 citation rows with exact anchors and ranges: buildEngineRoomModel.ts L26-L66, the roomShell/header/OfficialStrip extents in EngineRoom.tsx, the official-strip test cases, grammar/Panel.tsx fill variant, data/selectors.ts selector triple, observer/snapshots.py `read_engine_process_facts` L639-L700, and GateResponder.tsx L217-L236. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.

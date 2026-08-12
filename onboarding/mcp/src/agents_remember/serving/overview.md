@@ -9,8 +9,8 @@ Total output lines: 2259
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -18,6 +18,10 @@ Total output lines: 2259
 [mcp/overview.md](../../../../overview.md)
 
 ## Purpose
+
+### 260731-EFA-L23 Route Delta
+
+L23 adds batched notifier expiry writes, product-agnostic Codex initialize diagnostics, lifecycle-operation projection on enclosures, and volatile elapsed-time stripping. Durable task state remains the authority; no private operation identity crosses the serving boundary.
 
 ### Current Runtime-Truth Repair
 
@@ -759,6 +763,8 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   holds its log's lock. No other route bullet changed: nothing else under `serving/` was touched by
   this leaf. Verification metadata untouched.
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 adds batched notifier expiry writes, product-agnostic Codex initialize diagnostics, lifecycle-operation projection on enclosures, and volatile elapsed-time stripping. Durable task state remains the authority; no private operation identity crosses the serving boundary. Verification provenance remains closeout-owned.
 
 - 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: recorded the clean-cut current
   Desktop initialize grammar, exact Agents Remember client identity, and unchanged primary

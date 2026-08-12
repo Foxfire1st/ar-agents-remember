@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/_store_durability.py`      |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |                                       `df36127113619f4e85522eb615cc20c7eb637405`|
-| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
+| lastVerifiedCommitHash |                                       `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                         |
 
 ## Governing Overview
@@ -324,8 +324,8 @@ consume it.
 | The expectation-row reclaim the adapter calls with an explicit retention window. | `compact`; `_compact_locked` | mcp/src/agents_remember/controlplane/expectation_rows.py:296-307; mcp/src/agents_remember/controlplane/expectation_rows.py:309-335 |
 | The nudge store has no `compact`, so `replace_records` is the declared rewrite entry point and the read-filter half belongs to the caller — which is why the adapter holds the lock across all three steps. | `read`; `replace_records` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:50-60; mcp/src/agents_remember/controlplane/orchestration_nudges.py:143-153 |
 | The lock and ownership constant the nudge adapter imports locally so the harness still runs against a tree that predates them. | `exclusive_access`; `ORCHESTRATION_NUDGE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:200-210; mcp/src/agents_remember/controlplane/durable_store.py:350-405 |
-| The rewrite `parked_rewrite` parks inside: it commits through `os.replace` and never unlinks, and its temp name is pid-scoped — which is why the hook covers `os.replace` and not `Path.write_text` alone. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:491-498 |
-| The inbox reclaim the `OperatorInboxAdapter` drives — the one store of the six that already took a lock at the base commit, and therefore the lone survivor at 0.00%. | `compact`; `append` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:67-71; mcp/src/agents_remember/controlplane/operator_inbox_store.py:221-232 |
+| The rewrite `parked_rewrite` parks inside: it commits through `os.replace` and never unlinks, and its temp name is pid-scoped — which is why the hook covers `os.replace` and not `Path.write_text` alone. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
+| The inbox reclaim the `OperatorInboxAdapter` drives — the one store of the six that already took a lock at the base commit, and therefore the lone survivor at 0.00%. | `compact`; `append` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:68-72; mcp/src/agents_remember/controlplane/operator_inbox_store.py:257-268 |
 | The cooldown reclaim the `AgentNotifierSignalAdapter` drives with an explicit retention window. | "def append("; "def compact(" | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:108-119; mcp/src/agents_remember/controlplane/agent_notifier_signals.py:162-213 |
 | The first provider store measured by the same instrument. Its log sits under `<root>/logs/observer/providers`, not `<root>/workspace`, which is one half of why the harness work directory cannot be a child of `root`. | `record_index_state`; `record`; `compact`; `read_recent` | mcp/src/agents_remember/providers/metrics.py:254-267; mcp/src/agents_remember/providers/metrics.py:269-283; mcp/src/agents_remember/providers/metrics.py:302-341; mcp/src/agents_remember/providers/metrics.py:343-360 |
 | The second provider store. Its reclaim drops by row COUNT, which is why its adapter seeds a full backlog and writes no per-tick decoy. | `append_event`; `compact_events` | mcp/src/agents_remember/providers/degradation.py:217-231; mcp/src/agents_remember/providers/degradation.py:233-253 |
@@ -343,6 +343,7 @@ standard library, and pins itself to one `mcp/src` inside this repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 extracted and directly tested the cross-version `GateState` resolver: current structural models win, only the precisely absent structural package selects the historical sensitivity-fixture path, and unrelated import errors remain loud.
 - 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: documented the

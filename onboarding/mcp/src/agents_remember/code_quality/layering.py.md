@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/layering.py`           |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-08T14:38+02:00                                      |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`                  |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                  |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../../overview.md`                                    |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper registers the layering step unconditionally. | `quality_steps` | mcp/src/agents_remember/code_quality/check.py:262-308 |
+| The wrapper registers the layering step unconditionally. | `quality_steps` | mcp/src/agents_remember/code_quality/check.py:320-366 |
 | The unit suite pins rank violations, cycles, undeclared dirs/imports, and present-false rules. | `test_rank_violation_fails` | mcp/tests/test_layering.py:47-47 |
 | The structural-coverage suite pins CLI/edges/render/stale behavior. | `test_layering_cli_and_edges` | mcp/tests/test_leaf_structural_coverage.py:83-83 |
 
@@ -81,6 +81,7 @@ No cross-repository implementation participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: distinguished undeclared Python source from
   cache-only deleted-package debris while preserving fail-closed recursive `.py` detection.

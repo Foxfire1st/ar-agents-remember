@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_edge_paths.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -91,7 +91,7 @@ leaves `memory_mode` external, and a plain `{"state": "ready"}` returns the *ide
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The construction refusal rejects unknown workflow and memory values through `_task_vocabulary`. | `_task_vocabulary` | mcp/src/agents_remember/worktrees/worktree_contract.py:161-178 |
-| `WorkflowKind` limits workflow selection to `chat-task` and `light-task` (declared in models/worktree.py since L9). | "WorkflowKind = Literal[" | mcp/src/agents_remember/models/worktree.py:13-13 |
+| `WorkflowKind` limits workflow selection to `chat-task` and `light-task` (declared in models/worktree.py since L9). | "WorkflowKind = Literal[" | mcp/src/agents_remember/models/worktree.py:14-14 |
 | `build_start_contract` catches `ContractError` and `LeafRefResolutionError` so neither leaves the tool handler. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:192-211 |
 | `_contract_after_memory_start` is the memory-disabled/reconciled recovery. | `_contract_after_memory_start` | mcp/src/agents_remember/worktrees/modules/start.py:136-160 |
 | `invalid_contract_request_result` returns the `exit 2` / `state: invalid-request` payload for a refusal. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
@@ -99,6 +99,7 @@ leaves `memory_mode` external, and a plain `{"state": "ready"}` returns the *ide
 | Helper-level arms of the same lifecycle. | `InspectContainersTests`; `InspectContainersIndividuallyTests`; `DockerRemoveHelpersTests`; `RouteOverviewMetadataRefreshPlanTests` | mcp/tests/test_worktree_and_observer_helpers.py:93-180; mcp/tests/test_worktree_and_observer_helpers.py:183-231; mcp/tests/test_worktree_and_observer_helpers.py:234-348; mcp/tests/test_worktree_and_observer_helpers.py:421-526 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: split task-vocabulary and WorkflowKind ownership, extended the start-contract exception claim, and removed hidden line-number shorthand from result claims. Verification metadata unchanged.
 
 - 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 4 table citations and 1 prose citation; no unresolved Tier-3 claims.

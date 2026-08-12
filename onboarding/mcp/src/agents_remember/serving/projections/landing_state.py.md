@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/projections/landing_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-12T17:30+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ No external Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Projector owns startup and cancellation. | `run` | mcp/src/agents_remember/serving/projector.py:193-236 |
-| Landing facts are merged into projected status. | "def _safe_status_payload(  # pragma: no cover"; "def refresh_engine_process_landing(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:298-298; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:344-344 |
+| Landing facts are merged into projected status. | "def _safe_status_payload(  # pragma: no cover"; "def refresh_engine_process_landing(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:300-300; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:346-346 |
 
 ## Cross-Repo References
 
@@ -51,6 +51,7 @@ Completed contracts can freeze one fully observed landing result in `landing-fin
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T11:40:58+02:00 — 260731-EFA-L6 S18-B08 curator: bound startup/cancellation and landing-merge claims to the current projector and snapshot constructs.
 

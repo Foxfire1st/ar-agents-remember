@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/orchestration.py`      |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-04T12:31+02:00                                 |
-| lastVerifiedCommitHash |                                                        `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |                                                        2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |                                                        `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |                                                        2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -45,9 +45,10 @@ rate-limited nudge does not enqueue an inbox entry.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `orchestration_nudge_manager_payload` builder returns this response through `_tool_payload`. | "def orchestration_nudge_manager_payload(" | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
-| The response registry maps the administrative orchestration nudge operation to this model. | "\"orchestration_nudge_manager\": OrchestrationNudgeManagerResponse" | mcp/src/agents_remember/models/tool_registry.py:212-212 |
+| The response registry maps the administrative orchestration nudge operation to this model. | "\"orchestration_nudge_manager\": OrchestrationNudgeManagerResponse" | mcp/src/agents_remember/models/tool_registry.py:216-216 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-03T10:20+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 4 assigned citation findings (2 missing anchors and 2 malformed sources); final scoped check is clean.

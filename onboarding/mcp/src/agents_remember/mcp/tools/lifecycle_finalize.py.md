@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash |                                            `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |                                            2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |                                            `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |                                            2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -39,12 +39,13 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Application entry point validates coordination-contained paths, delegates to the worktree finalizer, and then performs configured completion cleanup. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:419-450 |
+| Application entry point validates coordination-contained paths, delegates to the worktree finalizer, and then performs configured completion cleanup. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:514-545 |
 | The shared payload helper is `_tool_payload`. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
 | The response boundary is `complete_tool_response`. | "def complete_tool_response" | mcp/src/agents_remember/application/tool_response.py:49-49 |
-| The response model is registered in the public tool registry. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tool_registry.py:197-197 |
+| The response model is registered in the public tool registry. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tool_registry.py:201-201 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 

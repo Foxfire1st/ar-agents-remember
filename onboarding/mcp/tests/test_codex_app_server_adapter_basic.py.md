@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_codex_app_server_adapter_basic.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-12T04:15+02:00                                            |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`                                        |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                                        |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -20,6 +20,8 @@ Exercises basic Codex app-server negotiation, startup identity, model discovery,
 settings, and fail-clean adapter teardown under the current Desktop user-agent contract.
 
 ## Code Commentary
+
+L23 broadens initialize coverage from one Desktop product token to product-agnostic server identity: the Agents Remember token and Codex Desktop token both pass only with the exact client suffix, while mismatched client identity still fails cleanly.
 
 The Desktop regression presents a host-first primary token (`Codex Desktop/<version>`) plus the
 exact initialize client suffix. Its positive case proves the host version feeds the adapter
@@ -42,10 +44,12 @@ exempting its CRAP score.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Desktop startup accepts the host-first product version only with the exact Agents Remember client suffix and rejects a version-mismatched suffix. | `test_desktop_user_agent_uses_host_version_and_exact_client_identity`; `test_host_first_user_agent_rejects_wrong_client_identity` | mcp/tests/test_codex_app_server_adapter_basic.py:200-234 |
+| Desktop startup accepts the host-first product version only with the exact Agents Remember client suffix and rejects a version-mismatched suffix. | `test_client_user_agent_uses_host_version_and_exact_client_identity`; `test_client_user_agent_rejects_wrong_client_identity` | mcp/tests/test_codex_app_server_adapter_basic.py:200-234 |
 | Public settings notifications cover matching, stale-effective, desired-promotion, and drift-refusal branches. | `test_settings_updates_cover_matching_stale_and_drift_branches` | mcp/tests/test_codex_app_server_adapter_basic.py:296-356 |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-12T04:41+02:00 — 260731-EFA-L22 closeout repair: added public adapter coverage for all
   `accept_settings_update` paths after the first targeted closeout run proved tests/diff coverage

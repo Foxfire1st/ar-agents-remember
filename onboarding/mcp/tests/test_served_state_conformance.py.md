@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_served_state_conformance.py`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T08:45+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -168,9 +168,10 @@ cockpit bundle, which lives in this same repository under `dashboard/`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:525-525 |
+| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:542-542 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T10:40+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

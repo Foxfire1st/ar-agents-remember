@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -86,9 +86,10 @@ No external documentation is needed for these standard-library unit tests.
 | Launcher and projections under test. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:59-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
 | `projected_status_payload` and the `NotRequired` `providers` key on `WorktreeStatusFacts` the new payload test pins. | `WorktreeStatusFacts`, `projected_status_payload`, `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:69-106; mcp/src/agents_remember/worktrees/modules/guidance.py:372-421; mcp/src/agents_remember/worktrees/modules/guidance.py:424-428 |
 | Start ordering and retry path under test. | `start_result`, `run_or_launch_provider_setup`, `_retry_provider_setup_result` | mcp/src/agents_remember/worktrees/modules/start.py:455-466; mcp/src/agents_remember/worktrees/modules/start.py:628-665; mcp/src/agents_remember/worktrees/modules/start.py:668-701 |
-| Application-layer ownership helper under test. | `worktree_start_tool`, `_settings_owned_by_background` | mcp/src/agents_remember/application/worktree_tools.py:77-156; mcp/src/agents_remember/application/worktree_tools.py:159-164 |
+| Application-layer ownership helper under test. | `worktree_start_tool`, `_settings_owned_by_background` | mcp/src/agents_remember/application/worktree_tools.py:92-171; mcp/src/agents_remember/application/worktree_tools.py:174-179 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T21:57:37+02:00 — W2-B03 curator ownership correction: resolved 9 citation findings on the manifest-owned test card (`mcp/tests/test_provider_async.py.md`); scoped recheck passed with 0 findings. Verification metadata unchanged.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/git_freshness.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`                         |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                         |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ carry the reasoning:
 
 `git_facts.py` classes its own probes the same way, and
 `test_git_command.py::TimeoutClassTests::test_branch_freshness_classes_each_of_its_commands_by_what_it_does`,
-cit:([`test_branch_freshness_classes_each_of_its_commands_by_what_it_does`], mcp/tests/test_git_command.py:630-652)
+cit:([`test_branch_freshness_classes_each_of_its_commands_by_what_it_does`], mcp/tests/test_git_command.py:669-691)
 asserts this table per command, so a call site that drops back to the
 default fails the suite rather than quietly loosening to 300s.
 
@@ -131,8 +131,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one git runner, used for every command here including the fetch: `run_git` takes a per-call `timeout` and defaults to `GIT_LOCAL_TIMEOUT_SECONDS = 300`. The three bands this file selects from — `GIT_LOCAL_TIMEOUT_SECONDS` / `GIT_REMOTE_TIMEOUT_SECONDS` / `GIT_METADATA_TIMEOUT_SECONDS` — and why the metadata band exists, are in the timeout-class block; the signature and body are in `run_git`. | `run_git`, `GIT_LOCAL_TIMEOUT_SECONDS`, `GIT_REMOTE_TIMEOUT_SECONDS`, `GIT_METADATA_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-72; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| The per-command bounds are pinned by test, not by convention: `test_branch_freshness_classes_each_of_its_commands_by_what_it_does` patches `run_git` with a recorder whose `timeout` is a **required** keyword, so a call site that omits it fails the recorder instead of silently recording the default. `TimeoutClassTests` owns the assertions. | `TimeoutClassTests`, `test_branch_freshness_classes_each_of_its_commands_by_what_it_does` | mcp/tests/test_git_command.py:550-660 |
+| The one git runner, used for every command here including the fetch: `run_git` takes a per-call `timeout` and defaults to `GIT_LOCAL_TIMEOUT_SECONDS = 300`. The three bands this file selects from — `GIT_LOCAL_TIMEOUT_SECONDS` / `GIT_REMOTE_TIMEOUT_SECONDS` / `GIT_METADATA_TIMEOUT_SECONDS` — and why the metadata band exists, are in the timeout-class block; the signature and body are in `run_git`. | `run_git`, `GIT_LOCAL_TIMEOUT_SECONDS`, `GIT_REMOTE_TIMEOUT_SECONDS`, `GIT_METADATA_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:71-73; mcp/src/agents_remember/kernel/git_command.py:94-145 |
+| The per-command bounds are pinned by test, not by convention: `test_branch_freshness_classes_each_of_its_commands_by_what_it_does` patches `run_git` with a recorder whose `timeout` is a **required** keyword, so a call site that omits it fails the recorder instead of silently recording the default. `TimeoutClassTests` owns the assertions. | `TimeoutClassTests`, `test_branch_freshness_classes_each_of_its_commands_by_what_it_does` | mcp/tests/test_git_command.py:613-723 |
 | Style precedent: read-only git facts with dataclass + packet projector, the sibling that classes its four probes the same way, and — since 260731-EFA-L4 — the sibling that declares its own `RepoState` / `VALID_REPO_STATES` for the same reason this file declares `FreshnessState`. | `RepoState`, `VALID_REPO_STATES`, `read_git_facts` | mcp/src/agents_remember/kernel/git_facts.py:22-22; mcp/src/agents_remember/kernel/git_facts.py:26-26; mcp/src/agents_remember/kernel/git_facts.py:40-45 |
 | The wire face that imports `FreshnessState` instead of retyping its eight members: `BranchFreshness.state`. | "state: FreshnessState" | mcp/src/agents_remember/models/context_packet.py:98-98 |
 | The context packet application entry point is the first consumer (`_freshness_packet`). | `_freshness_packet` | mcp/src/agents_remember/application/context_packet.py:105-132 |
@@ -148,6 +148,7 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-03T02:32:19+02:00 — Curator W3-B02 resolved all 31 manifest findings: converted 19 legacy prose line citations, repaired 12 Repo-Internal anchor/source findings, and normalized 4 explanatory timeout-table references. Preserved the source-freeze and verification metadata.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

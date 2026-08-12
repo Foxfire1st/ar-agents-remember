@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-12T10:08+02:00 |
-| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97`
-| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
+| lastUpdated | 2026-08-12T09:20+02:00 |
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -37,6 +37,18 @@ Full master integration keeps that literal `-n=auto` and uses host-managed RAM
 and swap by default. `orchestration.qualityGate.memoryCapBytes` is absent unless
 an operator deliberately configures a constrained-environment hard cap; an
 explicit systemd cap applies `MemoryMax` without disabling host swap.
+
+L23 adds a settings-selected Dagger executor beside the local executor, not as a fallback. It
+materializes the exact candidate tree and required Git ancestry into a pinned clean Ubuntu image,
+streams progress while the graph runs, and atomically replaces the enclosure's latest reports.
+Local/clean selection is explicit; a failed clean run never drops to host execution. The same
+slice adds durable asynchronous closeout/integration operations whose public address is the task
+contract plus operation kind. Private operation keys, worker PIDs, approval fingerprints, and
+candidate-tree identities remain plane-owned recovery state.
+
+Durable lifecycle subprocess bootstrap is an installed-runtime boundary: the launcher preserves
+the installed MCP environment instead of prepending task-checkout source, and the packaged worker
+then binds default worktree services before task-addressed dispatch.
 
 ## Purpose
 
@@ -765,6 +777,11 @@ The MCP package separates three surfaces:
   `mcp/tests/test_dashboard_daemon.py` + new `test_config.py` cases. Verification metadata pinned
   until closeout stamps the code commit.
 ## Update History
+- 2026-08-12T16:54+02:00 — 260731-EFA-L23 installed-runtime route review: detached lifecycle launch
+  now preserves installed MCP code selection and the packaged worker composes real services before
+  dispatch. Task checkout state remains input, never unpublished runtime code. Verification
+  provenance remains closeout-owned.
+- 2026-08-12T15:19+02:00 — L23 curator: added the explicit Dagger clean-quality executor and task-addressed durable lifecycle-operation boundary; verification provenance remains closeout-owned.
 
 - 2026-08-12T10:08+02:00 — No route impact: MCP 3.0.0rc7 advances the existing package and
   kernel fallback version authorities without changing package routes, dependencies, entry

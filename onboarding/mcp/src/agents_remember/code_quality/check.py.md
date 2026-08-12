@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-11T23:56+02:00               |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -261,28 +261,29 @@ the report to a temporary directory unless `--coverage-json` is given.
 | --- | --- | --- |
 | The changed-lines coverage floor this wrapper runs last, and the derivation of the 100% floor. | `DEFAULT_DIFF_COVERAGE_FLOOR` | mcp/src/agents_remember/code_quality/diff_coverage.py:1-5; mcp/src/agents_remember/code_quality/diff_coverage.py:30-30 |
 | CRAP-Calculator owns function-level CRAP scoring, and is where Radon stays load-bearing. | `crap_score` | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:232-239 |
-| Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | `RadonIsAReportNotAGateTests` | mcp/tests/test_code_quality_check.py:250-308; mcp/tests/test_code_quality_check.py:226-238; mcp/tests/test_code_quality_check.py:340-351; mcp/tests/test_code_quality_check.py:514-521 |
+| Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | `RadonIsAReportNotAGateTests` | mcp/tests/test_code_quality_check.py:315-373 |
 | An independent recomputation asserts the wrapper's real argument vectors reach every tracked Python file. | `test_every_tracked_python_file_is_linted_and_type_checked` | mcp/tests/test_gate_scope.py:152-173 |
 | `run_git` — the one runner `git_ls_files` calls — strips `GIT_REPOSITORY_SELECTOR_ENV` and bounds every call with the local/remote/metadata timeout classes. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-73; mcp/src/agents_remember/kernel/git_command.py:85-92 |
-| `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `git_ls_files` still lists the repository it was handed, and that a non-repository and an unrunnable git both surface as `ScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:328-390; mcp/tests/test_git_command.py:372-390 |
+| `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `git_ls_files` still lists the repository it was handed, and that a non-repository and an unrunnable git both surface as `ScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:391-453 |
 | The shared tiered hook body derives the same `git ls-files` scope; the pre-push tier delegates to the wrapper's targeted contract, while `full` stays the manual/master-gate tier. | "git ls-files -z -- '*.py'" | .githooks/_gate.sh:74-74 |
 | `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true"; "testpaths = [\"mcp/tests\"]" | pyproject.toml:6-18; pyproject.toml:67-70; pyproject.toml:110-124 |
 | Repo instructions state the gate command, that it takes no path arguments, and that Radon reports. | "python -m agents_remember.code_quality.check" | AGENTS.md:152-152 |
 | The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:793-851 |
 | The optional settings-owned memory cap an explicitly constrained full run may use (`--memory-cap-bytes`); host-managed full runs do not call this planner. | `plan_capped_command` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:92-130 |
 | The targeted contract proofs: rail scoping, real radon input, and no-change short-circuit. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:142-359; mcp/tests/test_code_quality_targeted.py:360-630 |
-| The command builder supplies derived test and coverage arguments; root pytest configuration owns automatic xdist workers. | "pytest_args = [sys.executable, \"-m\", \"pytest\", *test_args]"; "-n=auto" | mcp/src/agents_remember/code_quality/check.py:205-224; pyproject.toml:110-130 |
+| The command builder supplies derived test and coverage arguments; root pytest configuration owns automatic xdist workers. | "pytest_args = [sys.executable, \"-m\", \"pytest\", *test_args]"; "-n=auto" | mcp/src/agents_remember/code_quality/check.py:271-271; pyproject.toml:124-124 |
 
 ## 260731-EFA-L9 Change — Armed Layering Step
 
 The wrapper's `quality_steps` now registers the `layering` step unconditionally
-(cit:([`quality_steps`], mcp/src/agents_remember/code_quality/check.py:262-308)):
+(cit:([`quality_steps`], mcp/src/agents_remember/code_quality/check.py:320-366)):
 `code_quality/layering.py` reads `layers.toml [contract].order` and fails on rank violations,
 package-pair cycles, undeclared top-level directories, and `from agents_remember import X` forms
 resolving to no declared package. There is no baseline/allowlist; a green full wrapper now
 requires zero layering violations.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T07:15+02:00 — 260731-EFA-L24 curator: re-read the
   wrapper's optional self-cap path, corrected the moved planner range, and

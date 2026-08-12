@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_quality_retry_proof.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ No external Domain Documentation source is configured for this test contract.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Retry proof owns manifest compatibility, context filtering, and publication. | `RetryPlan`; `prepare`; `_filtered_coverage_data` | mcp/src/agents_remember/code_quality/retry_proof.py:63-134; mcp/src/agents_remember/code_quality/retry_proof.py:136-206; mcp/src/agents_remember/code_quality/retry_proof.py:393-444 |
-| The wrapper owns delta command selection, automatic full fallback, and stale-artifact deletion when a cheap rail prevents pytest. | `_pytest_step`; `complete_coverage_rails`; `run_fixed_checks` | mcp/src/agents_remember/code_quality/check.py:205-224; mcp/src/agents_remember/code_quality/check.py:431-473; mcp/src/agents_remember/code_quality/check.py:563-608 |
+| The wrapper owns delta command selection, automatic full fallback, and stale-artifact deletion when a cheap rail prevents pytest. | `_pytest_step`; `complete_coverage_rails`; `run_fixed_checks` | mcp/src/agents_remember/code_quality/check.py:261-282; mcp/src/agents_remember/code_quality/check.py:517-559; mcp/src/agents_remember/code_quality/check.py:659-713 |
 
 ## Cross-Repo References
 
@@ -78,6 +78,7 @@ No meaningful cross-repository boundary is exercised.
 | Temporary repositories and cache directories are isolated inside each test. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T12:20+02:00 — Added the real tracked-directory-symlink regression plus fail-closed
   inventory/artifact, cached-scope, and exact/delta fallback branch coverage after the first live

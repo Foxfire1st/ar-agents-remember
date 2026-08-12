@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -16,6 +16,8 @@
 application-to-service behavior.
 
 ## Code Commentary
+
+L23 adds `citation_fix` to the asserted public MCP tool set, preventing guarded citation repair from disappearing from registration.
 
 The test suite covers core server payloads, FastMCP server construction,
 context-packet delegation, runtime install payload authority, public tool
@@ -127,6 +129,8 @@ mandatory CRAP enforcement. Preview must say it runs before the code commit; app
 before any code mutation and that approval precedes apply.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_tools.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

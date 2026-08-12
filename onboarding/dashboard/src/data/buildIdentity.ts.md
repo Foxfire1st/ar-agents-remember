@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/buildIdentity.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,7 @@ proven by repository source and direct consumers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Declares the optional server fingerprint consumed by the comparator. | `ServingBuild` | dashboard/src/types/projection.ts:388-394 |
+| Declares the optional server fingerprint consumed by the comparator. | `ServingBuild` | dashboard/src/types/projection.ts:408-414 |
 | Renders the comparison and owns the explicit reload action. | `ServingBuildStamp` | dashboard/src/cockpit/Cockpit.tsx:923-953 |
 | Embeds the fingerprint into the compiled client. | `__AR_DASHBOARD_BUILD__` | dashboard/vite.config.ts:65-65 |
 
@@ -76,6 +76,7 @@ No meaningful cross-repository implementation source governs this repository-loc
 | The reviewed behavior is wholly repository-local. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 

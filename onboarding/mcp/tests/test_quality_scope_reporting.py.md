@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-11T22:28+02:00               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,8 @@ caller altitude describes the actual candidate tree, and generated/dashboard wor
 the shared reporting contract.
 
 ## Code Commentary
+
+L23 verifies closeout provenance with an enclosure reports root and runs live lint parity only when the dashboard-local ESLint executable is actually available.
 
 ### Logic
 
@@ -78,6 +80,8 @@ No cross-repository implementation participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: rewrote the generic symbol inventory
   as the current scope/provenance contract and recorded exact Node-unavailable skips for the two

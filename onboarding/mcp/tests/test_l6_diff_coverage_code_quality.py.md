@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l6_diff_coverage_code_quality.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,8 @@
 L6 closeout coverage tests for code-quality gate internals: application boundary checks, single-owner bindings, fixed-check rails, and scope-module branches.
 
 ## Code Commentary
+
+L23 supplies the new progress and coverage-data seams to fixed-check test configurations so the legacy rail assertions exercise the current runner shape.
 
 - `TestApplicationBoundary` covers contract reads, resolved imports, and required-module errors.
 - `TestSingleOwner` covers import-origin and task-writer bindings.
@@ -37,5 +39,7 @@ This module defines the test classes cited below; each row points at the exact s
 | Defines the class `TestScopeModuleBranches` (lines 342-497). | `TestScopeModuleBranches` | mcp/tests/test_l6_diff_coverage_code_quality.py:342-497 |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors derived from current worktree source. Verification metadata pinned until closeout stamps the code commit.

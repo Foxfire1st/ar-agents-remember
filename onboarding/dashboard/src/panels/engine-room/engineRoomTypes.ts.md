@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/engineRoomTypes.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-23T13:45+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -40,10 +40,11 @@ Two exported interfaces, both pure type declarations (no runtime code).
 | --- | --- | --- |
 | `EngineProcessView` joins a process node + lifecycle + `enclosureKey` | `EngineProcessView` | dashboard/src/panels/engine-room/engineRoomTypes.ts:15-25 |
 | `EngineRoomModel` fields: processes, workspaceEngines, fallbackStacks, usesFallback | `EngineRoomModel` | dashboard/src/panels/engine-room/engineRoomTypes.ts:28-37 |
-| `EngineProcessNode`, `LifecycleProjection`, `ProviderNode` source types | `EngineProcessNode`; `LifecycleProjection`; `ProviderNode` | dashboard/src/types/projection.ts:175-215; dashboard/src/types/projection.ts:271-289; dashboard/src/types/projection.ts:338-349 |
+| `EngineProcessNode`, `LifecycleProjection`, `ProviderNode` source types | `EngineProcessNode`; `LifecycleProjection`; `ProviderNode` | dashboard/src/types/projection.ts:176-216; dashboard/src/types/projection.ts:288-306; dashboard/src/types/projection.ts:355-366 |
 | `EngineStack` source type + `groupEngines` fallback producer | `EngineStack`; `groupEngines` | dashboard/src/data/selectors.ts:132-137; dashboard/src/data/selectors.ts:147-165 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 3 citation claims
   (Repo-Internal reference rows); scoped result 0 findings.

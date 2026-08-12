@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/__init__.py`    |
 | doc_type               | `file-level-onboarding`                               |
 | lastUpdated            | 2026-08-01T18:30+02:00                                |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`            |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`            |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                         |
 
 ## Purpose
@@ -69,11 +69,12 @@ directs anyone changing how these stores touch disk to read `durable_store.py` f
 | The gate delegation policy this package exports (moved to kernel primitives by L9). | "class GatePolicy:" | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54 |
 | The store this package exports. | "class GateStore:" | mcp/src/agents_remember/controlplane/store.py:105-105 |
 | The enforcement policy this package exports (slice 6b). | "class GateGuard" | mcp/src/agents_remember/controlplane/enforcement.py:42-42 |
-| The operator inbox records and store this package now exports. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:41-41; mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-53 |
+| The operator inbox records and store this package now exports. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:41-41; mcp/src/agents_remember/controlplane/operator_inbox_store.py:54-54 |
 | The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L71-L106. | `__all__` | mcp/src/agents_remember/controlplane/__init__.py:71-106 |
 | The module that defines every durable-store symbol re-exported here, and the six per-store ownership constants that are deliberately not re-exported. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:46-46 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current control-plane card for `__init__.py` with plane-owned seat identity, routing, and enforcement boundaries.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-23T22:50+02:00                     |
-| lastVerifiedCommitHash |                                            `65cb81f7de4db13c0627264fec1eb46f444e0ee3`|
-| lastVerifiedCommitDate |                                            2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash |                                            `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |                                            2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -55,7 +55,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Cleanup behavior and branch/worktree removal are delegated here. | "def cleanup_result" | mcp/src/agents_remember/worktrees/modules/cleanup.py:424-424 |
 | Carryover completion is proven against the official memory ledger here. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:174-174 |
-| Git ancestry proof uses the worktree module Git adapter. | "def is_ancestor" | mcp/src/agents_remember/worktrees/modules/git.py:62-63 |
+| Git ancestry proof uses the worktree module Git adapter. | "def is_ancestor" | mcp/src/agents_remember/worktrees/modules/git.py:88-88 |
 | Task document JSON/markdown reconciliation uses the task document service. | "def write_task_doc(task_root: Path" | mcp/src/agents_remember/tasks/store.py:36-36 |
 | Focused tests pin readiness, dry-run, cleanup-blocked, and task-doc update behavior. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
 
@@ -64,6 +64,7 @@ No external Domain Documentation source is configured for this memory repo.
 Finalization reports `enclosurePath` for the leaf being finalized and only archives completed root tasks when the finalized contract is a root `kind="series"` contract.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: rebound the cleanup-delegation
   citation to the actual `def cleanup_result` definition via the scoped fixer; exact non-fixing

@@ -127,8 +127,9 @@
       "GrepAI",
       "mcp/src/agents_remember/providers/lifecycle/",
       "route-local-overview",
-      "f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d",
+      "c9ae4dbd8adb650f116b9d4f86343b496c3e5f32",
       "/../../../overview.md",
+      "docker",
       "lifecycle/",
       "providers/cgc/lifecycle/",
       "providers/grepai/lifecycle/",
@@ -139,8 +140,7 @@
       "--from-settings",
       "require_lifecycle_settings_path",
       "providers/current_state.py",
-      "_EXPORT_MODULES",
-      "main"
+      "_EXPORT_MODULES"
     ]
   },
   "fallback": {

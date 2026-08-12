@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/buildEngineRoomModel.ts` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-02T01:42+02:00                                 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`             |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`             |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -40,9 +40,10 @@ Inputs are flat arrays (mirroring `buildTopology`) so the seam stays React-free 
 | `EngineProcessView` exposes the gate field. | `EngineProcessView` | dashboard/src/panels/engine-room/engineRoomTypes.ts:15-25 |
 | `groupEngines` + `EngineStack.scope` workspace/worktree split | `groupEngines` | dashboard/src/data/selectors.ts:147-165 |
 | `EngineProcessNode.worktreeGroup` and `lifecycleId` | `EngineProcessNode` | dashboard/src/types/projection.ts:162-202 |
-| `ProviderNode.scope` | `ProviderNode` | dashboard/src/types/projection.ts:338-349 |
+| `ProviderNode.scope` | `ProviderNode` | dashboard/src/types/projection.ts:355-366 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
 

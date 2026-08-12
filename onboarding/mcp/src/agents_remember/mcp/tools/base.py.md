@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-08-11T10:10+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -15,6 +15,8 @@
 Owns the exact advertised MCP tool-name tuple and the one shared response-finalization adapter.
 
 ## Code Commentary
+
+L23 makes `citation_fix` and `worktree_operation_cancel` public MCP tools so guarded memory repair and task-addressed cancellation use the tool plane.
 
 ### Logic
 
@@ -56,6 +58,8 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current MCP-tool card for `base.py` with structural tool exposure and control-plane ownership boundaries.
 - 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: split the base-tool ownership record across the payload entry point, response finalizer/lifecycle tail, envelope models, registrar loop/tuple, and supervisor-banner root; the scoped fixer will generate citation ranges.

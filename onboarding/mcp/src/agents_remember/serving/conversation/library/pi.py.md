@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/library/pi.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ open; the locked helper implements the native seam.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pi read maps roles, tools, and notices; resolve mints the session-file argv target on fake helper boundaries. | "def test_read_maps_roles_tools_and_notices(self) -> None:"; "def test_resolve_mints_session_file_argv(self) -> None:" | mcp/tests/test_conversation_library_ports.py:649-649; mcp/tests/test_conversation_library_ports.py:674-674 |
+| Pi read maps roles, tools, and notices; resolve mints the session-file argv target on fake helper boundaries. | "def test_read_maps_roles_tools_and_notices(self) -> None:"; "def test_resolve_mints_session_file_argv(self) -> None:" | mcp/tests/test_conversation_library_ports.py:684-684; mcp/tests/test_conversation_library_ports.py:709-709 |
 | The installed suite proves the live helper gate, list/read/resolve round-trip, and the real Pi open with exact identity and retirement. | "def test_live_helper_gate_supports_pi_history(self) -> None:"; "def test_live_list_read_resolve(self) -> None:"; "def test_open_real_pi_session_proves_exact_identity(self) -> None:" | mcp/tests/test_conversation_library_installed.py:237-237; mcp/tests/test_conversation_library_installed.py:254-254; mcp/tests/test_conversation_library_installed.py:394-394 |
 | The locked helper's SessionManager list/branch-read/session-file resolution implementations. | "export async function handlePi(request: HelperRequest): Promise<unknown> {"; "async function listPiSessions("; "async function readPiSession("; "async function resolvePiResumeTarget(" | mcp/native_helpers/conversation_library/src/pi.ts:54-54; mcp/native_helpers/conversation_library/src/pi.ts:69-69; mcp/native_helpers/conversation_library/src/pi.ts:101-101; mcp/native_helpers/conversation_library/src/pi.ts:133-133 |
 
@@ -90,6 +90,7 @@ No meaningful cross-repo boundary exists for this local port.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

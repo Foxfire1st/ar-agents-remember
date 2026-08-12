@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/code_quality/retry_proof.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -76,8 +76,8 @@ quality-proof policy.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper prepares, consumes, and finalizes retry plans around its fixed and coverage-derived rails. | `execute_quality_rails`; `prepare_retry_plan` | mcp/src/agents_remember/code_quality/check.py:392-429; mcp/src/agents_remember/code_quality/check.py:650-684 |
-| Retry pytest commands record per-test contexts and append only in delta mode. | `_pytest_step`; `quality_steps` | mcp/src/agents_remember/code_quality/check.py:205-224; mcp/src/agents_remember/code_quality/check.py:248-292 |
+| The wrapper prepares, consumes, and finalizes retry plans around its fixed and coverage-derived rails. | `execute_quality_rails`; `prepare_retry_plan` | mcp/src/agents_remember/code_quality/check.py:472-514; mcp/src/agents_remember/code_quality/check.py:759-792 |
+| Retry pytest commands record per-test contexts and append only in delta mode. | `_pytest_step`; `quality_steps` | mcp/src/agents_remember/code_quality/check.py:261-282; mcp/src/agents_remember/code_quality/check.py:320-366 |
 | Focused tests prove filtering, invalidation, exact reuse, changed-test selection, conclusive full fallback, cached-report deletion after a cheap-rail failure, and tracked directory-symlink snapshotting. | `test_changed_test_contexts_and_collection_context_are_removed`; `test_wrapper_retry_runs_only_changed_test_module`; `test_repository_snapshot_hashes_symlink_identity_without_following_it` | mcp/tests/test_quality_retry_proof.py:22-45; mcp/tests/test_quality_retry_proof.py:120-207; mcp/tests/test_quality_retry_proof.py:272-296 |
 | The compatibility key includes pytest-xdist alongside the other coverage/pytest tool versions, so executor changes invalidate reuse. | `_compatibility_key` | mcp/src/agents_remember/code_quality/retry_proof.py:292-313 |
 
@@ -90,6 +90,7 @@ No meaningful cross-repository boundary is owned by this module.
 | The proof remains local to the repository/worktree Git common directory. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T23:56+02:00 — Added pytest-xdist to the documented retry-proof compatibility
   fingerprint; changing the parallel executor version now invalidates cached proof reuse.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_longpath_preflight.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T00:40+02:00                     |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d`|
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -42,9 +42,10 @@ helper, so they run identically on Windows and Linux CI.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The preflight and pure payload function under test. | `long_path_block_payload`; `_long_path_preflight` | mcp/src/agents_remember/worktrees/modules/start.py:247-275; mcp/src/agents_remember/worktrees/modules/start.py:278-305 |
-| The longest-tracked-path git helper. | `longest_tracked_path_length` | mcp/src/agents_remember/worktrees/modules/git.py:117-126 |
+| The longest-tracked-path git helper. | `longest_tracked_path_length` | mcp/src/agents_remember/worktrees/modules/git.py:150-159 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T18:52+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the two malformed rows —
   `long_path_block_payload` + `_long_path_preflight` (start.py:248-308) and

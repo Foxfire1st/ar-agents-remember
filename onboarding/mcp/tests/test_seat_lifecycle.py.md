@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_seat_lifecycle.py`            |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-08-11T20:28+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -23,6 +23,8 @@ the integrate/finalize auto-close or opt-out landing paths. Runtime ids remain t
 task document plus role is the authority under test.
 
 ## Code Commentary
+
+L23 moves auto-land/auto-close proof to `integration_completion_payload`, establishing that detached integration completion—not the initiating MCP call—owns seat cleanup.
 
 ### Current Structural Seat Regressions
 
@@ -130,6 +132,8 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: replaced the stale leaf-key
   default body with the current task-topology retirement/landing/auto-close contract, corrected the

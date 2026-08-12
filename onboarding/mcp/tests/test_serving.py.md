@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -264,7 +264,7 @@ are proven by repository source and the test suite itself.
 | The gate write-path the `/api/actions` gate verbs drive (slice 6b). | `gate_create_payload`; `gate_decide_payload` | mcp/src/agents_remember/mcp/tools/gates.py:44-54; mcp/src/agents_remember/mcp/tools/gates.py:92-109 |
 | The operator inbox store asserted by the dashboard `/api/operator-inbox` endpoint tests. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
 | The compact attention acknowledgement store asserted by `ActionDismissTests`; `dismiss` is a whole-file read-modify-write and `prune_lifecycles` now empties the log through the contract's rewrite instead of unlinking it. | `dismiss`; `prune_lifecycles`; `_replace` | mcp/src/agents_remember/controlplane/attention_dismissals.py:58-77; mcp/src/agents_remember/controlplane/attention_dismissals.py:125-135; mcp/src/agents_remember/controlplane/attention_dismissals.py:102-111 |
-| The rewrite that makes "emptied" true for every control-plane log at once: an empty record set is written as an empty file, never removed. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:491-498 |
+| The rewrite that makes "emptied" true for every control-plane log at once: an empty record set is written as an empty file, never removed. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
 | The prune-to-emptiness assertion this leaf rewrote, and the loss it used to hide. | `test_attention_store_upserts_and_prunes_lifecycle_rows` | mcp/tests/test_serving_actions.py:355-388 |
 | Actionable-drift dismiss tests cover targetless pure evaluation, store retention, and API persistence. | `ActionDismissTests` | mcp/tests/test_serving_actions.py:271-513 |
 | The CLI dispatcher + dashboard adapter under test. | `main` | mcp/src/agents_remember/cli/__main__.py:31-33 |
@@ -301,6 +301,7 @@ point — both are 400s, and the code tells the caller which half of the address
 recorder's own gate-id-only arm lives in `test_serving_app_routes.py::GateDecisionHelperTests`.)
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.

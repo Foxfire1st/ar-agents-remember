@@ -6,8 +6,8 @@
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,8 @@
 Generated JSON Schema for the dashboard projection contract: typed projections, wire envelopes, and capability/status payloads consumed by the cockpit.
 
 ## Code Commentary
+
+L23 adds the closed `LifecycleOperationProjection` schema and the optional `EnclosureNode.lifecycleOperation` reference. Operation kind, status, and phase are closed vocabularies; process/resume identities remain absent from the public schema.
 
 ### Logic
 
@@ -49,6 +51,8 @@ None.
 | `AgentPickupNode` declares a pending unacked dashboard response. | "\"AgentPickupNode\": {" | dashboard/src/types/projection.schema.json:47-47 |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Recorded the generated `TaskDocumentRef` definition and the projection,
   subject, and owner fields that consume it after leaf-key removal.

@@ -85,7 +85,7 @@
     "transitions"
   ],
   "hotPath": {
-    "summary": "**260731-EFA-L21 \u2014 target containment precedes filesystem effects.** The shared durable-store lock, append, and rewrite primitives ask the kernel checkout policy to authorize the target before creating a parent directory, lock file, temporary file, or durable row. In undeclared linked worktree mode only the deterministic `provider-runtime/dev-ar-coordination` subtree is writable; trusted MCP/dashboard and explicit test modes retain their declared roots. TES-L6 keeps owner routing sprint-local. `signal_routing.py` resolves architect custody and rebind chains inside the row's exact repository...",
+    "summary": "L23 extends the validated store seam for batched operator-inbox transitions used by notifier expiry. Batch preparation resolves canonical task/owner addresses first and fails closed when a row is missing, mismatched, or structurally unaddressable; it never guesses a replacement runtime identity. The same durable-store containment and model-validation rules apply to these rewrites. **260731-EFA-L21 \u2014 target containment precedes filesystem effects.** The shared durable-store lock, append, and rewrite primitives ask the kernel checkout policy to authorize the target before creating a parent di...",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
@@ -147,16 +147,16 @@
       "stamps",
       "store.py",
       "store",
-      "provider-runtime/dev-ar-coordination",
+      "L23",
       "EFA",
       "L21",
-      "MCP",
-      "TES",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "d9a1eb82849baea6c0b86735e772a932f4bbdc7c",
+      "c9ae4dbd8adb650f116b9d4f86343b496c3e5f32",
       "/../../overview.md",
-      "controlplane/"
+      "controlplane/",
+      "escalation_ladder.py",
+      "rung_due"
     ]
   },
   "fallback": {

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -20,6 +20,17 @@
 plane-owned dispatch, messaging, seat management, and gate mutations. Runtime correlations remain
 inside the transaction. Ordinary messages are replacement-aware; the initial dispatch brief is the
 sole exact-pinned exception and failed briefing retires the unbriefed child.
+
+## Durable Lifecycle Application Boundary
+
+`lifecycle_operation_worker.py` is the detached application owner for closeout and integration.
+Its packaged CLI entry is also the operation process's composition root: it builds and binds the
+default `WorktreeServices` before dispatch, so installed workers use the real adapters without
+requiring an ambient MCP server binding.
+It loads the task contract and durable accepted input, reconstructs the captured gate policy and
+candidate identity, delegates to the existing synchronous lifecycle implementation, and publishes
+heartbeat/progress/terminal evidence. Recovery stays attached to the same accepted operation after
+agent or process replacement; callers never supply the private operation key or worker PID.
 
 ## Purpose
 
@@ -235,6 +246,11 @@ composition (`application/worktree_services.py`) binding the provider, memory-qu
 citation-guard adapters into the worktrees service ports.
 
 ## Update History
+- 2026-08-12T16:52+02:00 — 260731-EFA-L23 packaged-worker route review: the detached CLI now owns
+  default worktree-service composition before task-addressed dispatch, closing the installed-worker
+  unbound-service failure while preserving the application/worktree port split. Verification
+  provenance remains closeout-owned.
+- 2026-08-12T15:19+02:00 — L23 curator: added the detached durable lifecycle application owner and exact recovery boundary; verification provenance remains closeout-owned.
 
 - 2026-08-11T14:40+02:00 — Recorded the current pre-closeout memory-quality boundary: a leaf-scoped
   call compares unstamped cards from the contract's code base against the dirty worktree, while

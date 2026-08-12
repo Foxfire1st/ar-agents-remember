@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-11T14:29+02:00               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -230,10 +230,10 @@ themselves.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The six contract cells (declared in models/worktree.py), typed amendment, tolerant read, and refusing write. | "WorkflowKind = Literal["; "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract"; "def load_contract"; "def write_contract"; "VALID_MEMORY_MODES: frozenset[MemoryMode]" | mcp/src/agents_remember/models/worktree.py:13-13; mcp/src/agents_remember/models/worktree.py:18-18; mcp/src/agents_remember/worktrees/worktree_contract.py:71-71; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199; mcp/src/agents_remember/worktrees/worktree_contract.py:436-436; mcp/src/agents_remember/worktrees/worktree_contract.py:472-472 |
+| The six contract cells (declared in models/worktree.py), typed amendment, tolerant read, and refusing write. | "WorkflowKind = Literal["; "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract"; "def load_contract"; "def write_contract"; "VALID_MEMORY_MODES: frozenset[MemoryMode]" | mcp/src/agents_remember/models/worktree.py:14-14; mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:71-71; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199; mcp/src/agents_remember/worktrees/worktree_contract.py:436-436; mcp/src/agents_remember/worktrees/worktree_contract.py:472-472 |
 | The wire model every contract and guidance value must validate at. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:36-74 |
 | Guidance state machines and the separate recovery vocabulary. | "def lifecycle_guidance("; "def next_guidance("; "def recovery_guidance("; "from agents_remember.models.worktree import NextOperation" | mcp/src/agents_remember/worktrees/modules/guidance.py:200-200; mcp/src/agents_remember/worktrees/modules/guidance.py:113-113; mcp/src/agents_remember/worktrees/modules/guidance.py:130-130; mcp/src/agents_remember/worktrees/modules/guidance.py:10-10 |
-| Worktree status projects invalid-contract errors onto the payload. | `worktree_status_packet`; `status_payload` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
+| Worktree status projects invalid-contract errors onto the payload. | `worktree_status_packet`; `status_payload` | mcp/src/agents_remember/application/worktree_status.py:23-61 |
 | Published workflow kind and structural agent-session tool docstrings. | `worktree_start`; `dispatch_agent`; `retire_child`; `rename_child`; `rename_self` | mcp/src/agents_remember/mcp/registration/worktrees.py:29-86; mcp/src/agents_remember/mcp/registration/sessions.py:27-86 |
 | Session response vocabularies. | `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:78-120; mcp/src/agents_remember/models/terminal.py:160-176; mcp/src/agents_remember/models/terminal.py:186-197 |
 | Terminal refusal builders and payloads. | `_spawn_refusal`; `_knob_refusal`; `_retire_payload`; `_rename_payload` | mcp/src/agents_remember/application/terminal_tools.py:452-470; mcp/src/agents_remember/application/terminal_tools.py:928-953; mcp/src/agents_remember/application/terminal_tools.py:973-1008; mcp/src/agents_remember/application/terminal_tools.py:1145-1166 |
@@ -252,6 +252,7 @@ and docstring this suite reads lives in `mcp/src/agents_remember/`.
 | No meaningful cross-repo references found — the whole import surface is same-repository. | `ProducerWireCrossingTests` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:447-474 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T14:29+02:00 — Re-read the structural session tool declarations and widened the
   session-registration range to include the decorated `dispatch_agent` declaration; verification

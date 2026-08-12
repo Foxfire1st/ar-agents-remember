@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_file_size_detector.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466`                                        |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                                        |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -32,8 +32,9 @@ The File Size Budget rail suite: bands, exit codes, wrapper wiring, and scope. P
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The detector under test. | "agents_remember.code_quality.file_size" | mcp/src/agents_remember/code_quality/check.py:239-239 |
+| The detector under test. | "agents_remember.code_quality.file_size" | mcp/src/agents_remember/code_quality/check.py:297-297 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the detector suite. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

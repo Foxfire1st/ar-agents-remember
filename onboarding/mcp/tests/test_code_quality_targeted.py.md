@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_code_quality_targeted.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper contract the real-run class drives. | `quality_steps`, `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:262-308; mcp/src/agents_remember/code_quality/check.py:359-404 |
+| The wrapper contract the real-run class drives. | `quality_steps`, `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:320-366; mcp/src/agents_remember/code_quality/check.py:420-469 |
 | The printed derivation lines the suite asserts. | `targeted_scope_lines` | mcp/src/agents_remember/code_quality/scope_reporting.py:235-263 |
 
 ## Cross-Repo References
@@ -88,6 +88,7 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

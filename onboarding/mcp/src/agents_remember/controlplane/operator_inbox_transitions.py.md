@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/controlplane/operator_inbox_transitions.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,6 +20,8 @@ Owns pure next-snapshot policy for durable inbox rows, including accepted-at-bou
 redelivery scheduling, explicit terminal states, and structural owner rebinding.
 
 ## Code Commentary
+
+L23 extracts `expiry_transition` as a pure transition factory shared by single-row expiry and batch notifier writes; the transition still changes only pending rows.
 
 ### Logic
 
@@ -60,6 +62,8 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current control-plane card for `operator_inbox_transitions.py` with plane-owned seat identity, routing, and enforcement boundaries.
 - 2026-08-10T10:30+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n

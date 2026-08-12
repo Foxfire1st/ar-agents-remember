@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/providers/lifecycle/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -15,6 +15,10 @@
 [mcp/overview.md](../../../../overview.md)
 
 ## Purpose
+
+### 260731-EFA-L23 Route Delta
+
+L23 separates compose planning from executable discovery: dry-run plans render the symbolic `docker` command, while real provider execution still resolves the native executable at the execution boundary.
 
 `lifecycle/` contains the public provider-lifecycle package facade, CLI
 entrypoints, watcher aggregation, and shared lifecycle helper modules.
@@ -100,6 +104,8 @@ because that detail is what makes a failure debuggable). The success/failure asy
 of the module and is now readable at the call site.
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 separates compose planning from executable discovery: dry-run plans render the symbolic `docker` command, while real provider execution still resolves the native executable at the execution boundary. Verification provenance remains closeout-owned.
 
 - 2026-08-04T18:23+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 5 citation rows with exact anchors (`_EXPORT_MODULES`, `main`, the sibling-overview `## Purpose` headings, and the named provider-lifecycle tests) and ledger-verified ranges; the CGC/GrepAI overview citations now use the `onboarding/`-prefixed memory path form. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 

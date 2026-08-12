@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_code_quality_memory_cap.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,8 +67,8 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The planning functions under test. | `plan_capped_command`, `systemd_scope_available`, `with_self_cap` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:92-130; mcp/src/agents_remember/kernel/primitives/memory_cap.py:50-67; mcp/src/agents_remember/kernel/primitives/memory_cap.py:77-89 |
-| The wrapper main path that applies the rlimit and names the policy. | `main` | mcp/src/agents_remember/code_quality/check.py:861-903 |
-| The gate's cap-kill naming (returncode -9 / shell 137). | `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:346-372 |
+| The wrapper main path that applies the rlimit and names the policy. | `main` | mcp/src/agents_remember/code_quality/check.py:987-1042 |
+| The gate's cap-kill naming (returncode -9 / shell 137). | `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:507-533 |
 
 ## Cross-Repo References
 
@@ -79,6 +79,7 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: recorded that
   systemd explicit caps retain host swap and that uncapped full execution is a

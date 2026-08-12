@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/servedAges.test.ts`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,6 +20,8 @@ Pins the client half of the 260703-L15 volatile-age contract (`data/servedAges.t
 field-set lockstep with the server, stable equality's skip rules, and the anchor-advance math.
 
 ## Code Commentary
+
+L23 extends the mirror assertion with `elapsedSeconds`, proving lifecycle-operation wall-clock age is treated as volatile on the browser exactly like the server delta field.
 
 Three describes:
 
@@ -72,6 +74,8 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 2 citation claims; scoped recheck clean (0 findings).
 

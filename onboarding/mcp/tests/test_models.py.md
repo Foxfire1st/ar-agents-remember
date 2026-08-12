@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_models.py`                 |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-06T12:28+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -32,10 +32,11 @@ a response contract and catches model definitions that are not schema-safe.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public tool metadata lives in the `mcp/tools/` package. | "def _tool_payload" | mcp/src/agents_remember/mcp/tools/base.py:70-70 |
+| Public tool metadata lives in the `mcp/tools/` package. | "def _tool_payload" | mcp/src/agents_remember/mcp/tools/base.py:72-72 |
 | Response model registry lives in the models package. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tool_registry.py:113-134 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

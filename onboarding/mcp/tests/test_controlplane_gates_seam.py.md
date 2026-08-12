@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_gates_seam.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                                        |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -19,6 +19,8 @@
 Part of the 260731-EFA-L7 in-place split family for `test_controlplane_gates_seam.py`'s source module; covers the behaviours named by its test classes.
 
 ## Code Commentary
+
+L23 makes the handover integration seam test invoke dry-run, proving gate-policy forwarding without starting a detached lifecycle mutation.
 
 - `_handover_gate`
 - `MasterHandoverSeamTests`
@@ -37,6 +39,8 @@ Part of the 260731-EFA-L7 in-place split family for `test_controlplane_gates_sea
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

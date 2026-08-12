@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.tsx`  |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated | 2026-08-04T03:03+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ is `aria-hidden` pure atmosphere, never state. Shell hooks are `process-map` and
 | The focused regression asserts the canvas-owned `fleeting-enclosure` exposes both stale-base recovery choices. | "prunes the stale base node and raises a fleeting block with BOTH recovery choices" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:352-360 |
 | The bird's-eye scene (the render body, given `workspaceEngines`). | `workspaceEngines` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:50-50 |
 | The honest-motion gate. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
-| Projection types `EngineProcessNode` / `ProviderNode` / `GateNode`. | `EngineProcessNode`; `ProviderNode`; `GateNode` | dashboard/src/types/projection.ts:175-215; dashboard/src/types/projection.ts:230-240; dashboard/src/types/projection.ts:338-349 |
+| Projection types `EngineProcessNode` / `ProviderNode` / `GateNode`. | `EngineProcessNode`; `ProviderNode`; `GateNode` | dashboard/src/types/projection.ts:176-216; dashboard/src/types/projection.ts:231-241; dashboard/src/types/projection.ts:355-366 |
 
 ## Current L5I Maintenance
 
@@ -107,6 +107,7 @@ The process-map wrapper is observed for visibility. A hidden keep-alive room pau
 blueprint video, then resumes playback on re-show without unmounting the map.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the two whole-claim ranges (2 repairs, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.

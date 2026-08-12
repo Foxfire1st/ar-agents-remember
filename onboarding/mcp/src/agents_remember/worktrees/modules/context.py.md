@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/context.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -40,13 +40,14 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The kernel resolver facade and the coordination-context builder own topology, storage, path rules, and cross-repo resolution. | "def build_coordination_context(" | mcp/src/agents_remember/kernel/coordination_context/resolver.py:272-312 |
-| Closeout planning uses this module before refreshing onboarding metadata. | `_memory_refresh_preview`; "onboarding_refresh_plan(contract"; `_closeout_contract_context`; `_external_closeout_commits`; "refreshed_onboarding = refresh_onboarding_metadata(" | mcp/src/agents_remember/worktrees/modules/closeout.py:233-314; mcp/src/agents_remember/worktrees/modules/closeout.py:575-577; mcp/src/agents_remember/worktrees/modules/closeout.py:672-722 |
+| Closeout planning uses this module before refreshing onboarding metadata. | `_memory_refresh_preview`; "onboarding_refresh_plan(contract"; `_closeout_contract_context`; `_external_closeout_commits`; "refreshed_onboarding = refresh_onboarding_metadata(" | mcp/src/agents_remember/worktrees/modules/closeout.py:243-324; mcp/src/agents_remember/worktrees/modules/closeout.py:609-611; mcp/src/agents_remember/worktrees/modules/closeout.py:712-771 |
 
 ## Series-Contract Notes
 
 The context wrapper forwards `parent_task` and `leaf_id` from `WorktreeArgs` to the resolver before operation modules build or load contracts.
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-12T10:08+02:00 |
-| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97`
-| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
+| lastUpdated | 2026-08-12T09:20+02:00 |
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 
 > **Status:** active baseline
 
@@ -2078,6 +2078,13 @@ baseline). The move ledger and pre-change serialization baseline prove zero wire
 
 ## Build & Dev
 
+L23 makes the repository quality proof runnable as one observable Dagger operation in a pinned
+clean Ubuntu container. Leaf work can still select the focused targeted contract, while master
+altitude retains the full suite. Both paths publish self-overwriting progress and result artifacts
+under the worktree enclosure; the clean environment mounts neither a Docker socket nor WSL's
+Windows command paths. The GitHub workflow runs the same Dagger graph, so local and hosted clean
+proofs share one implementation rather than parallel shell pipelines.
+
 - Source-checkout Python implementation work should run `python -m agents_remember.code_quality.check` from the `agents-remember/` root — one command, no path arguments, scope derived from `git ls-files '*.py'`. (Superseded 2026-07-31 by 260731-EFA-L2: this line used to read "run Ruff", which named two tools that are not the gate and one that cannot fail it.) Exact command details belong in the resolved memory layer's `system/tools.md`.
 - The MCP package tests under `mcp/tests` cover `c-08-ar-coordination-context-resolver` skill, `c-02-memory-quality-control` skill, `c-09-git-worktree-manager` skill, ledger, contract, provider, benchmark, runtime install, and skills install behavior through package modules.
 - `system/sources.md` registers `docs/design/` as the Domain Documentation routing index (added when `docs/design/` was brought into onboarding scope, slice 05k); `system/tools.md` is unchanged.
@@ -2198,6 +2205,7 @@ Updated 2026-06-27T22:00+02:00 — task 28 (NOTIFY-AND-CONTINUE turn end): refre
 Updated 2026-06-17T22:45+02:00 after the Engine Room visual-parity pass enriched the dashboard-frontend Feature Inventory row (the 5g G6 atmospheric backdrop + Effects/Calm toggle, the restored HUD decal layer, and the fixed-height `Panel fill` layout); verification metadata stays pinned until closeout commits the source. (Prior: 2026-06-06T12:28+02:00 after adding the public `docs/features.md` tour, replacing README `## Core Model` with `## Core Features`, and documenting the Claude Code root `.mcp.json` detection caveat. Prior: 2026-06-04T10:29+02:00 — documented hidden harness starter packages as source-owned surfaces in the main overview and noted their `l-01` deep-research retrieval-strategy tally requirement. Prior: 2026-05-29T17:30+02:00 — re-spined the public docs and this overview's "What This Repo Is" framing around the three retrieval substrates (by path / by meaning / by relationship) and retired the sidecar-only anti-retrieval positioning. Prior: 2026-05-28T19:52+02:00 — added the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.)
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: documented the pinned observable Dagger quality path and its enclosure-owned reports at repository altitude; verification provenance remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section (ESLint rail, size splits, coverage/budget/knip/trap, Playwright, hooks, Python ripple). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T22:30+02:00 — No route impact: 260731-EFA-L16 (the cross-store lock-order repair, its forcing tests, and the coding-guidelines/spawn-doctrine skill chain) is recorded in the `mcp/` and `skills/l-01-agent-lifecycles/` route overviews and their children; this root inventory was reviewed and is unchanged. Verification metadata pinned until closeout stamps the L16 code commit.

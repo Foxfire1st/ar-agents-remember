@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_platform_edge_refusals.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -51,6 +51,10 @@ naming the field the caller left out. Not "it ran".
 | `BenchmarkRunCaseTests` | A real (non-preview) benchmark run picks its worker count and reports failures. |
 | `RuntimeInstallFailureTests` | What a runtime install does when the copy fails, and where it installs from. |
 
+## Code Commentary
+
+L23 injects the Docker executable seam in mismatch-removal tests so their refusal evidence is independent of host executable discovery.
+
 ## Invariants And Boundaries
 
 - No docker daemon, no second coordination root, no hosted session is ever required.
@@ -67,6 +71,8 @@ naming the field the caller left out. Not "it ran".
 | The sibling long-tail refusal collection. | "class RequestedHarnessTests(unittest.TestCase):"; "class OpenTerminalRefusalTests(unittest.TestCase):" | mcp/tests/test_platform_long_tail.py:380-380; mcp/tests/test_platform_long_tail.py:414-414 |
 
 ## Update History
+
+- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_platform_edge_refusals.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: regenerated the task-doc row

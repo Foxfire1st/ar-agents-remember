@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/worktrees.py`       |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-08-02T01:05+02:00                                        |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                    |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                    |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -70,12 +70,13 @@ and the sync-early doctrine.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The payload builders these forward to. | `worktree_start_payload`, `worktree_attach_payload`, `worktree_status_payload`, `worktree_sync_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:31-41; mcp/src/agents_remember/mcp/tools/worktree.py:44-59; mcp/src/agents_remember/mcp/tools/worktree.py:62-71; mcp/src/agents_remember/mcp/tools/worktree.py:74-75 |
-| `TaskIdentity`, `TaskBases`, `StartExecution`. | `TaskIdentity`, `TaskBases`, `StartExecution` | mcp/src/agents_remember/application/worktree_tools.py:25-39; mcp/src/agents_remember/application/worktree_tools.py:42-56; mcp/src/agents_remember/application/worktree_tools.py:59-67 |
+| The payload builders these forward to. | `worktree_start_payload`, `worktree_attach_payload`, `worktree_status_payload`, `worktree_sync_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:33-43; mcp/src/agents_remember/mcp/tools/worktree.py:46-61; mcp/src/agents_remember/mcp/tools/worktree.py:64-73; mcp/src/agents_remember/mcp/tools/worktree.py:76-77 |
+| `TaskIdentity`, `TaskBases`, `StartExecution`. | `TaskIdentity`, `TaskBases`, `StartExecution` | mcp/src/agents_remember/application/worktree_tools.py:40-54; mcp/src/agents_remember/application/worktree_tools.py:57-71; mcp/src/agents_remember/application/worktree_tools.py:74-82 |
 | `TaskRef` — the shared task locator attach and status pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
-| The three-way split and the light-task default proved through a live server. | `test_worktree_start_splits_identity_bases_and_execution`, `test_worktree_start_defaults_to_a_real_light_task_start` | mcp/tests/test_mcp_registration_wiring_tests_1.py:588-631; mcp/tests/test_mcp_registration_wiring_tests_2.py:7-24 |
+| The three-way split and the light-task default proved through a live server. | `test_worktree_start_splits_identity_bases_and_execution`, `test_worktree_start_defaults_to_a_real_light_task_start` | mcp/tests/test_mcp_registration_wiring_tests_1.py:608-651; mcp/tests/test_mcp_registration_wiring_tests_2.py:29-46 |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.

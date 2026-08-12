@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/git_command.py`           |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-18T20:03+02:00                                   |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`               |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`               |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ interpretation by its caller. Two keyword arguments carry the consolidation:
 - `input_text` cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:85-151) feeds git's stdin; when it is `None`, stdin is `subprocess.DEVNULL`.
   `patch_id()` cit:([`patch_id`], mcp/src/agents_remember/memory/carryover.py:200-207) — `git patch-id --stable` — is the only caller that passes
   it.
-- `timeout` cit:([`GIT_LOCAL_TIMEOUT_SECONDS`, `GIT_REMOTE_TIMEOUT_SECONDS`, `GIT_METADATA_TIMEOUT_SECONDS`], mcp/src/agents_remember/kernel/git_command.py:70-72) selects one of three module-level classes instead of the former hard-coded
+- `timeout` cit:([`GIT_LOCAL_TIMEOUT_SECONDS`, `GIT_REMOTE_TIMEOUT_SECONDS`, `GIT_METADATA_TIMEOUT_SECONDS`], mcp/src/agents_remember/kernel/git_command.py:71-73) selects one of three module-level classes instead of the former hard-coded
   five seconds: `GIT_LOCAL_TIMEOUT_SECONDS = 300` is the default and bounds work that can
   legitimately churn (`rebase`, `merge`, `worktree add`); `GIT_REMOTE_TIMEOUT_SECONDS = 120` bounds
   network calls, which are wedged rather than slow; `GIT_METADATA_TIMEOUT_SECONDS = 30` bounds the
@@ -93,7 +93,7 @@ package's production-path regression matrix.
 | `_run_git` calls this runner with `GIT_METADATA_TIMEOUT_SECONDS` and converts `TimeoutExpired`/`OSError` into `AuthorityError`/`RouteIndexCensusError`; `_nul_records` splits its NUL-delimited stdout. | "git diff-files deletion census failed", "git census returned an empty NUL-delimited record" | mcp/src/agents_remember/kernel/route_index_census.py:91-91; mcp/src/agents_remember/kernel/route_index_census.py:222-222 |
 | Carryover no longer defines its own input-bearing adapter: `require_git` delegates to `run_git`, and `patch_id` is the one caller that passes `input_text`. | `require_git`, `patch_id` | mcp/src/agents_remember/memory/carryover.py:92-96; mcp/src/agents_remember/memory/carryover.py:200-207 |
 | Tests import the production selector inventory and cover every selector. | `test_ambient_git_repository_selectors_cannot_redirect_the_census` | mcp/tests/test_route_index.py:592-640 |
-| `DecoyRepositoryTests` re-exports the selectors against a decoy repo inside its own scope; `RunnerContractTests` covers `input_text` vs `DEVNULL`, `surrogateescape`, and the per-call timeout; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` AST-sweeps the package and asserts `kernel/git_command.py` is the only module that spawns git. | `DecoyRepositoryTests`, `RunnerContractTests`, `test_only_the_kernel_module_defines_a_git_runner` | mcp/tests/test_git_command.py:160-216; mcp/tests/test_git_command.py:219-315; mcp/tests/test_git_command.py:472-489 |
+| `DecoyRepositoryTests` re-exports the selectors against a decoy repo inside its own scope; `RunnerContractTests` covers `input_text` vs `DEVNULL`, `surrogateescape`, and the per-call timeout; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` AST-sweeps the package and asserts `kernel/git_command.py` is the only module that spawns git. | `DecoyRepositoryTests`, `RunnerContractTests`, `test_only_the_kernel_module_defines_a_git_runner` | mcp/tests/test_git_command.py:162-218; mcp/tests/test_git_command.py:221-354; mcp/tests/test_git_command.py:511-528 |
 
 ## Cross-Repo References
 
@@ -105,13 +105,14 @@ repository defines this implementation.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 4 repository-internal reference rows and normalized 5 prose citation references for the single Git runner boundary; final scoped result 0 (checker-clean).
 
 - 2026-07-31T20:50+02:00 — 260731-EFA-L3 curator: this file became the single owner, so the body
   was rewritten. Corrected the false "enforces a five-second timeout" claim: `run_git` now takes
   `timeout` and defaults to `GIT_LOCAL_TIMEOUT_SECONDS = 300`, with `GIT_REMOTE_TIMEOUT_SECONDS =
-  120` and `GIT_METADATA_TIMEOUT_SECONDS = 30` as the other two classes cit:(["GIT_REMOTE_TIMEOUT_SECONDS = 120"], mcp/src/agents_remember/kernel/git_command.py:71-71), and callers pick
+  120` and `GIT_METADATA_TIMEOUT_SECONDS = 30` as the other two classes cit:(["GIT_REMOTE_TIMEOUT_SECONDS = 120"], mcp/src/agents_remember/kernel/git_command.py:72-72), and callers pick
   one. Corrected the unconditional `stdin=DEVNULL` claim: stdin is `DEVNULL` only when the new
   `input_text` keyword is `None` cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:85-151). Recorded the consolidation (six drifted `_run_git`
   copies removed, this the only module that may spawn git) in Purpose and as a new invariant.

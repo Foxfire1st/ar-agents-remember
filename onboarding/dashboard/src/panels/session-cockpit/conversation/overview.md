@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
 | lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`                  |
-| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                  |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -316,7 +316,17 @@ change: it prevents a delayed Virtualizer `onChange` from reaching React after j
 `window`, which previously made an otherwise 1,551-passing suite fail nondeterministically at
 process teardown.
 
+L23 extends that same helper-owned teardown contract to `intentLock.test.tsx`. Its ten intent-lock
+assertions no longer restore real timers per test; the shared fixture keeps timer ownership through
+RTL cleanup and clears the Virtualizer debounce before jsdom teardown. The `msg` builder stays local
+because streamed-row content is still suite-specific.
+
 ## Update History
+
+- 2026-08-12T17:04+02:00 — 260731-EFA-L23 dashboard-gate route review: moved the intent-lock suite
+  onto the existing hermetic scroll-memory geometry/timer helper, eliminating the post-jsdom
+  Virtualizer debounce race without changing timeline production behavior. Focused Vitest is 10/10
+  with no unhandled error; verification provenance remains closeout-owned.
 
 - 2026-08-09T22:22+02:00 — 260713-TES master integration route impact: the shared
   conversation-timeline scroll-memory fixture now owns fake timers and tears down renders plus

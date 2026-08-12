@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/series_tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T15:10+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
+| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -63,9 +63,9 @@ scope; this file implements an internal projection rollup.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The reducer returns an enriched `WorkspaceProjection` from the lifecycle projection path. | "class WorkspaceProjection(BaseModel):" | mcp/src/agents_remember/observer/projection.py:996-996 |
+| The reducer returns an enriched `WorkspaceProjection` from the lifecycle projection path. | "class WorkspaceProjection(BaseModel):" | mcp/src/agents_remember/observer/projection.py:998-998 |
 | The reducer module defines `build_analytics` for analytics enrichment. | "def build_analytics(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:129-129 |
-| `SeriesNode` exposes the served `seriesTokenTotal` field. | `seriesTokenTotal` | mcp/src/agents_remember/observer/projection.py:713-713 |
+| `SeriesNode` exposes the served `seriesTokenTotal` field. | `seriesTokenTotal` | mcp/src/agents_remember/observer/projection.py:715-715 |
 | The projection test module includes a `seriesTokenTotal` regression case. | `seriesTokenTotal` | mcp/tests/test_observer_projection.py:681-681 |
 
 ## Cross-Repo References
@@ -78,6 +78,7 @@ agents-remember workspace projection only.
 | No cross-repo dependency; aggregate tokens are computed from already-projected lifecycle and task-document nodes. | n/a | n/a |
 
 ## Update History
+- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: split the reducer return and analytics call/order claims onto their frozen-source owners; the landing provenance mismatch remains an explicit Tier-3 item.
 - 2026-08-02T16:20:23+02:00 — 260731-EFA-L6 curator: repaired the remaining history citation for the
