@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-08T02:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`                                        |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -36,13 +36,14 @@ escalation, spawn, and the quality gate (260731-EFA-L17).
 - `_parse_escalation_rung_seconds`
 - `_parse_respawn_after_rung`
 - `_parse_spawn`
-- `_parse_quality_gate` (260731-EFA-L17: `orchestration.qualityGate`, default 2 GiB,
-  fail-loud unknown keys, positive-int `memoryCapBytes`)
+- `_parse_quality_gate` (260731-EFA-L17/L24: `orchestration.qualityGate`,
+  absent/empty means host-managed, fail-loud unknown keys, positive-int
+  `memoryCapBytes` when present)
 
-## 260731-EFA-L17 Change
+## 260731-EFA-L17/L24 Quality-Gate Parser
 
-`_parse_quality_gate` (lines 476-494) parses `orchestration.qualityGate` into
-`QualityGateSettings`: absent family/key keeps the documented 2 GiB default, unknown keys
+`_parse_quality_gate` parses `orchestration.qualityGate` into
+`QualityGateSettings`: an absent family/key keeps `memory_cap_bytes=None`, unknown keys
 fail loud via `_refuse_unknown(block, KNOWN_QUALITY_GATE_FIELDS, ...)`, and
 `memoryCapBytes` must be a positive integer (`_require_positive_int`). A `null` at the
 family key is refused by `_refuse_null_families` before this parser runs.
@@ -58,6 +59,11 @@ family key is refused by `_refuse_null_families` before this parser runs.
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: recorded that absent or
+  empty quality-gate settings select host-managed memory and only an explicit
+  positive integer enables the cap. Verification metadata remains pinned until
+  closeout stamps the L24 code commit.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

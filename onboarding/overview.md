@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 
 > **Status:** active baseline
 
@@ -1057,13 +1057,16 @@ integration gate. Leaf-edge checks stay mandatory but are change-set-scoped:
 changed files + reverse-import closure, pytest over the derived test subset, coverage/CRAP/radon
 over changed production modules, changed-lines floor). The full wrapper (ruff, ruff-format,
 pyright, pytest+coverage, CRAP, diff-coverage) runs exactly once per master, invoked by
-`worktree_integrate` itself at master altitude, memory-capped
-(`orchestration.qualityGate.memoryCapBytes`; systemd MemoryMax scope or the RLIMIT_AS fallback).
+`worktree_integrate` itself at master altitude with host-managed RAM/swap by
+default. Constrained CI may explicitly configure
+`orchestration.qualityGate.memoryCapBytes` (systemd MemoryMax scope or the
+RLIMIT_AS mechanism); neither path rewrites pytest's literal `-n=auto`.
 `memory_quality_check` is explicitly carved out and stays a per-leaf closeout gate. The pre-push
 tier, leaf closeout, and leaf integration route to the targeted contract; CI keeps the full
 remote gate on leaf branches (recorded posture: no CI change this leaf). Refusal shapes are loud:
-an uncovered changed production module, a cap-less full run, a failed targeted run, or a missing
-wrapper all refuse rather than certify a narrower run.
+an uncovered changed production module, a failed targeted run, or a missing
+wrapper refuses rather than certifying a narrower run. A cap-less full run is
+the normal host-managed path after L24.
 
 ## 260731-EFA-L9 Change — First Structural Leaf
 
@@ -1075,6 +1078,12 @@ package-layering gate (rank violations, cycles, undeclared dirs/imports all fail
 baseline). The move ledger and pre-change serialization baseline prove zero wire drift.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24: changed the master full-
+  gate resource default from an artificial ceiling to host-managed RAM/swap,
+  kept pytest `-n=auto`, and retained the hard cap only as an explicit
+  constrained-environment setting. Verification metadata remains pinned until
+  closeout stamps L24.
 
 - 2026-08-12T01:38+02:00 — No route impact: 260731-EFA-L22 repairs master-quality enforcement,
   removes cache-only layering false positives, and splits three oversized test modules; the

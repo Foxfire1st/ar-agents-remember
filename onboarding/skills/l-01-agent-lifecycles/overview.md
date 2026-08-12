@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 
 ## Purpose
 
@@ -27,6 +27,11 @@ Role continuity is task-document and artifact based. Workers build and report, r
 independent verdict evidence, curators reconcile system intent and memory, managers decide
 delegated leaf gates and integrate a master, and orchestrators govern master handovers. Mechanical
 fact relay replaces role-local polling and inference.
+
+The quality altitude ladder keeps leaf checks targeted and runs the full
+wrapper once at master integration. That full run preserves pytest `-n=auto`
+and host-managed RAM/swap by default; a hard cap is an explicit constrained-CI
+setting rather than role-local judgment.
 
 A curator completes only after the current-additions missing-onboarding check and full leaf-scoped
 memory-quality worklist have been repaired and rerun. Dirty-source drift and future commit-derived
@@ -60,6 +65,11 @@ history, entity, or index finding remains.
 | Worker owns one real leaf's implementation and durable report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 route impact: manager,
+  orchestrator, worker, and their dispatch briefs now state that master full
+  gates use host-managed RAM/swap by default. Verification metadata remains
+  pinned until closeout stamps L24.
 
 - 2026-08-11T14:40+02:00 — Made the required missing-onboarding and full leaf-quality
   repair-and-rerun loop part of current curator completion doctrine; real-commit fields remain

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -74,13 +74,17 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 The orchestrator role file gains a **Quality altitude ladder (260731-EFA-L17)** paragraph
 (source lines 325-331): the full quality wrapper is owned by the master integration gate
 — `worktree_integrate` on a master/series contract runs it exactly once, inside the
-integration step, memory-capped (`orchestration.qualityGate.memoryCapBytes`, systemd scope
-or the rlimit fallback); leaf closeouts and leaf integrations run only the
+integration step with host-managed RAM/swap by default; constrained CI may opt
+into `orchestration.qualityGate.memoryCapBytes`; leaf closeouts and leaf integrations run only the
 change-set-scoped contract (`--targeted`); `memory_quality_check` stays a per-leaf closeout
 gate; and orchestrators must not run a separate full wrapper per leaf — that is the waste
 the ladder removes.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
+  canonical orchestrator quality-altitude rule with host-managed master memory
+  and an optional constrained-environment cap.
 
 - 2026-08-11T19:58+02:00 — Reconciled `orchestrator.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the orchestrator's

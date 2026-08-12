@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_integrate_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ Integration-seam suite for leaf-targeted versus master/full code-quality altitud
 
 ### Logic
 
-Leaf integration builds a `QualityGateTarget` from both the code worktree and enclosure worktree group, so the targeted gate can use enclosure-local evidence; series integration uses the full capped gate. Dry-run reports without executing and a refusal prevents merge.
+Leaf integration builds a `QualityGateTarget` from both the code worktree and enclosure worktree group, so the targeted gate can use enclosure-local evidence; series integration uses the full gate, host-managed when no explicit cap is configured. Dry-run reports without executing and a refusal prevents merge.
 
 ### Conventions
 
@@ -47,6 +47,11 @@ No Domain Documentation source is configured for this repository-local regressio
 No cross-repository implementation source governs this test module.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: added the
+  absent-cap/host-managed integration proof while retaining explicit settings-
+  cap and altitude-routing coverage. Verification metadata remains pinned
+  until closeout stamps L24.
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_worktree_integrate_quality_gate.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: created this file-level

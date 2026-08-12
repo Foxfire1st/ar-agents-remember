@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_core.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-08T02:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`                                        |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ Typed agentic settings models, constants, and validation primitives. The setting
 - `ExpectationSettings`
 - `SupervisorSettings`
 - `EscalationSettings`
-- `QualityGateSettings` (260731-EFA-L17: `orchestration.qualityGate.memoryCapBytes`, default 2 GiB)
+- `QualityGateSettings` (260731-EFA-L17/L24: optional `orchestration.qualityGate.memoryCapBytes`; absent means host-managed RAM and swap)
 - `AgenticSettings`
 - `agentic_settings_path`
 - `default_agentic_settings_seed`
@@ -44,15 +44,15 @@ Typed agentic settings models, constants, and validation primitives. The setting
 - `_require_string_list`
 - `_require_harness_id`
 
-## 260731-EFA-L17 Change
+## 260731-EFA-L17/L24 Quality-Gate Settings
 
-The module owns the new `orchestration.qualityGate` family: `KNOWN_QUALITY_GATE_FIELDS`
-(line 65, exactly `{"memoryCapBytes"}`), the frozen `QualityGateSettings` model
-(lines 317-330, defaulting to `DEFAULT_FULL_GATE_MEMORY_CAP_BYTES` = 2 GiB from
-`code_quality.memory_cap`), the `AgenticSettings.quality_gate` field (lines 331-389), and the
-seeded default (`default_agentic_settings_seed`, lines 395-425). Unknown keys in the family
-fail loud through the shared `_refuse_unknown` machinery exactly like every other
-orchestration family.
+The module owns the `orchestration.qualityGate` family:
+`KNOWN_QUALITY_GATE_FIELDS` contains only `memoryCapBytes`; the frozen
+`QualityGateSettings` model uses `None` for the host-managed default; and the
+generated settings seed deliberately omits the family. An explicit positive
+integer remains available for constrained CI. Unknown keys fail loud through
+the shared `_refuse_unknown` machinery exactly like every other orchestration
+family.
 
 ## Invariants And Boundaries
 
@@ -65,6 +65,11 @@ orchestration family.
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: replaced the seeded 2 GiB
+  ceiling with an absent/`None` host-managed default while retaining one
+  explicit positive-integer cap. Verification metadata remains pinned until
+  closeout stamps the L24 code commit.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

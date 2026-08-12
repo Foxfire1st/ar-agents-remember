@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                  |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`                                  |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 
 ## Purpose
 
@@ -55,10 +55,14 @@ The worker-brief template's Checks section now replaces the "Full:" line with th
 change-set-scoped contract (source lines 55-60): `PYTHONPATH=<code-worktree>/mcp/src
 <venv-python-path> -m agents_remember.code_quality.check --targeted` with
 `AR_GATE_DIFF_BASE=<leaf base>` — must exit 0. The FULL wrapper is NOT a leaf check (quality
-altitude ladder, 260731-EFA-L17): it runs once per master at the master integration gate,
-memory-capped; `memory_quality_check` stays a per-leaf closeout gate.
+altitude ladder, 260731-EFA-L17/L24): it runs once per master at the master integration gate
+with host-managed RAM/swap by default; `memory_quality_check` stays a per-leaf closeout gate.
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
+  worker brief's host-managed master-gate default while preserving literal
+  pytest `-n=auto` and targeted leaf checks.
 
 - 2026-08-11T19:58+02:00 — Reconciled `worker-brief.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the worker-brief

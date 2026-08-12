@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/memory_cap.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,36 +16,36 @@
 
 ## Purpose
 
-The settings-owned memory bound for full quality-gate runs (260731-EFA-L17-R3).
-Every full-wrapper run executes under a cap so an over-cap run dies inside its
-own scope instead of taking down the WSL VM, the dashboard, and live sessions.
-The policy name is part of every failure:
-`orchestration.qualityGate.memoryCapBytes`.
+The optional settings-owned hard bound for full quality-gate runs
+(260731-EFA-L17-R3, revised by 260731-EFA-L24). Full-wrapper runs are
+host-managed by default: pytest remains `-n=auto`, normal Linux/WSL RAM and swap
+remain available, and Agents Remember does not introduce a ceiling. An operator
+may explicitly configure `orchestration.qualityGate.memoryCapBytes` for a
+constrained CI runner or another deliberately bounded environment.
 
 ## Code Commentary
 
 ### Logic
 
-`MemoryCapPlan` (lines 43-51) is the frozen result of planning: the concrete
+`MemoryCapPlan` is the frozen result of explicit-cap planning: the concrete
 command, the mechanism, the cap bytes, and the policy key.
 
-`plan_capped_command` (lines 94-135) picks the mechanism:
+`plan_capped_command` picks the mechanism after a positive cap was explicitly
+configured:
 
 - **systemd scope** (primary when `systemd_scope_available()`, lines 52-71,
-  says yes): `systemd-run --scope -p MemoryMax=<bytes> -p MemorySwapMax=0`,
-  with `--user` added for non-root users (`_systemd_user_flag`, lines 72-78).
-  `MemorySwapMax=0` makes the cap real on WSL/host swap. An over-cap run is
-  OOM-killed inside its own scope (subprocess returncode -9, shell 137).
+  says yes): `systemd-run --scope -p MemoryMax=<bytes>`, with `--user` added
+  for non-root users. It deliberately does not set `MemorySwapMax=0`, so the
+  host's normal swap policy remains available. An over-cap run is OOM-killed
+  inside its own scope (subprocess returncode -9, shell 137).
 - **rlimit fallback**: the command runs the wrapper with
   `--memory-cap-bytes <bytes>` inserted after `-m <module>` by
   `with_self_cap` (lines 79-93); the wrapper applies `RLIMIT_AS` and an
   over-cap run dies with `MemoryError`.
 
-The default cap is 2 GiB (`DEFAULT_FULL_GATE_MEMORY_CAP_BYTES`, line 32) — the
-measured full-run plateau is ~0.5 GB RSS, and 2 GiB leaves headroom for the
-address space the rlimit fallback sees. `AR_QUALITY_MEMORY_CAP` (line 36) is
-the env var the wrapper sets after applying the rlimit so failure output names
-the cap without a second configuration source.
+There is no default cap. `AR_QUALITY_MEMORY_CAP` is the env var the wrapper sets
+after applying the explicit rlimit so failure output names the cap without a
+second configuration source.
 
 ### Conventions
 
@@ -55,11 +55,12 @@ omitted.
 
 ### Invariants And Boundaries
 
-- A full run without a cap is refused (the gate raises
-  "full quality gate requires a settings-owned memory cap") — fail-closed, no
-  uncapped full wrapper.
+- A full run without an explicit cap is the normal host-managed path; this
+  primitive is not called for that path.
 - Targeted leaf runs are NOT capped: the knob bounds full-wrapper runs at the
   master integration gate only.
+- This module never changes xdist auto-worker selection. `-n=auto` stays owned
+  by repository pytest configuration.
 - Availability probing is a hint, not enforcement: the integration runner still
   fails loudly if the scope cannot start.
 
@@ -80,9 +81,9 @@ No external Domain Documentation source is configured for this memory repo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The gate plans and runs the capped command, names the cap in refusals, and refuses a cap-less full run. | `QualityGatePlan`, `code_quality_gate_preview`, `run_strict_code_quality_gate`, `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:34-40; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-177; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:195-270; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:346-372 |
-| The settings model for `orchestration.qualityGate`. | `QualityGateSettings` | mcp/src/agents_remember/kernel/_agentic_settings_core.py:250-261 |
-| The fail-loud parser for `orchestration.qualityGate`. | `_parse_quality_gate` | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:383-401 |
+| The gate runs uncapped full commands directly, plans explicitly capped commands here, and reports both resource modes. | `QualityGatePlan`, `code_quality_gate_preview`, `run_strict_code_quality_gate`, `_memory_policy_payload` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:34-40; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-171; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:193-266; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:339-358 |
+| The settings model for `orchestration.qualityGate`, including the host-managed `None` default. | "class QualityGateSettings:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:248-257 |
+| The fail-loud parser for `orchestration.qualityGate`, including absent/empty host-managed behavior. | `_parse_quality_gate` | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:382-400 |
 | Proofs for availability branches, scope wrapping, the rlimit flag, and cap-kill naming. | `MemoryCapPlanningTests`, `WrapperMemoryCapTests` | mcp/tests/test_code_quality_memory_cap.py:70-150; mcp/tests/test_code_quality_memory_cap.py:151-275 |
 
 ## Cross-Repo References
@@ -94,6 +95,11 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: made the cap explicitly
+  opt-in, recorded the host-managed default and literal pytest `-n=auto`, and
+  removed the stale `MemorySwapMax=0`/mandatory-2-GiB doctrine. Verification
+  metadata remains pinned until closeout stamps the L24 code commit.
 
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: created this file-level
   onboarding card for the new memory-cap module; content derived from the

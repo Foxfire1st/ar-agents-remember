@@ -42,7 +42,7 @@
     "worker"
   ],
   "hotPath": {
-    "summary": "Architect owns sprint-level direction. Orchestrator owns the portfolio and manager topology. Manager occupies one canonical master and drives the leaf closeout chain. Worker occupies one leaf and produces code plus a turn report. Reviewer produces independent verdict evidence. Curator occupies one leaf coherence pass and reconciles existing intent, ruled intent, and implemented reality into onboarding. Other specialist roles retain their own documented altitude and artifact. The curator's terminal artifact is valid only after current-additions coverage and the full leaf-scoped memory-qualit...",
+    "summary": "Architect owns sprint-level direction. Orchestrator owns the portfolio and manager topology. Manager occupies one canonical master and drives the leaf closeout chain. Worker occupies one leaf and produces code plus a turn report. Reviewer produces independent verdict evidence. Curator occupies one leaf coherence pass and reconciles existing intent, ruled intent, and implemented reality into onboarding. Other specialist roles retain their own documented altitude and artifact. Manager, orchestrator, and worker doctrine shares one quality altitude rule: leaf checks remain targeted, while the o...",
     "candidateHints": [
       "skills/l-01-agent-lifecycles/roles",
       "skills/l-01-agent-lifecycles/roles/architect.md",
@@ -76,7 +76,8 @@
       "worker",
       "skills/l-01-agent-lifecycles/roles",
       "route-local-overview",
-      "d9a1eb82849baea6c0b86735e772a932f4bbdc7c",
+      "61d2c6a225b2e107bb50d446f708002d58b03a75",
+      "-n=auto",
       "SKILL.md",
       "skills/l-01-agent-lifecycles/roles/curator.md",
       "skills/l-01-agent-lifecycles/roles/manager.md",
@@ -87,10 +88,13 @@
       "lastUpdated",
       "T14",
       "lastVerifiedCommitHash",
+      "d2c6a225b2e107bb50d446f708002d58b03a75",
       "lastVerifiedCommitDate",
-      "T00",
-      "SKILL",
       "T07",
+      "RAM",
+      "SKILL",
+      "EFA",
+      "L24",
       "T12"
     ]
   },

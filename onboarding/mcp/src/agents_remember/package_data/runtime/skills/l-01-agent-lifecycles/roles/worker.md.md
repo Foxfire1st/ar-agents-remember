@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:25+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
+| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -26,6 +26,10 @@ The packaged source carries the canonical worker's brief/task-document intake, w
 guideline orientation, implementation loop, leaf-scoped checks, mandatory turn report, structural
 parent escalation, and separation from curator/closeout machinery. The complete tree is copied from
 canonical skills; package-only workflow additions are forbidden drift.
+
+The synchronized quality boundary leaves worker checks targeted. The full
+wrapper belongs to master integration, preserves pytest `-n=auto`, and uses
+host-managed RAM/swap unless constrained CI explicitly configures a hard cap.
 
 ## Conventions
 
@@ -50,6 +54,10 @@ canonical skills; package-only workflow additions are forbidden drift.
 | MCP package data is copied from canonical skills and checked for drift. | "mcp package data"; `sync_target`; `check_targets` | scripts/sync-skills.py:43-47; scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
 ## Update History
+
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
+  canonical worker boundary: leaf checks remain targeted and master full gates
+  use host-managed RAM/swap by default.
 
 - 2026-08-11T14:25+02:00 — Replaced accumulated copy-specific/task-delta prose with the exact
   synchronized worker-artifact contract and current source evidence.
