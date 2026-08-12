@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/tests/test_leaf_structural_coverage.py`                  |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-11T22:28+02:00                                       |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`                   |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastUpdated            | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`                   |
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ No external/domain documentation is configured.
 | --- | --- | --- |
 | The suite complements the layering unit tests with wrapper-adjacent seams. | `test_layering_cli_and_edges`; `test_layering_render_and_stale` | mcp/tests/test_leaf_structural_coverage.py:83-119; mcp/tests/test_leaf_structural_coverage.py:140-167 |
 | The L19 extension covers migration, task-topology, and structural-gate branches. | `test_terminal_catalog_migration_maps_every_legacy_identity`; `test_task_document_topology_children_and_refusals`; `test_structural_gate_authorization_decision_and_listing` | mcp/tests/test_task_document_structural_identity.py:20-159; mcp/tests/test_task_document_structural_identity.py:161-260; mcp/tests/test_task_document_structural_identity.py:262-390 |
-| The platform branch preserves inherited temp paths only on native Windows. | `test_quality_environment_has_a_windows_branch` | mcp/tests/test_task_document_structural_identity.py:492-497 |
+| The platform branch preserves inherited temp paths only on native Windows. | `test_quality_environment_has_a_windows_branch` | mcp/tests/test_task_document_structural_identity.py:491-496 |
 
 ## Cross-Repo References
 
@@ -73,6 +73,7 @@ No cross-repository implementation participates.
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored the split suite's native-Windows quality-environment test after dead-code removal; the assertion contract is unchanged.
 - 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: moved the task-document identity/topology half
   into its own one-to-one test card and refreshed all surviving citations; both files are below the
   hard size limit.

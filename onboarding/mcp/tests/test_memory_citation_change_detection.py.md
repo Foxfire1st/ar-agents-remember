@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_citation_change_detection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-07T14:30+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastUpdated | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405` |
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,10 +74,11 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `MemoryProvenanceTests` (lines 588-661). | `MemoryProvenanceTests` | mcp/tests/test_memory_citation_change_detection.py:614-686 |
 | Defines the class `DependencyProvenanceTests` (current history-suite range). | `DependencyProvenanceTests` | mcp/tests/test_memory_citation_change_detection.py:688-844 |
 | Defines the class `RegistrationAndLimitsTests` (lines 821-849). | `RegistrationAndLimitsTests` | mcp/tests/test_memory_citation_change_routing.py:20-47 |
-| Defines the class `ChangeRoutingTests` (lines 850-1180). | `ChangeRoutingTests` | mcp/tests/test_memory_citation_change_routing.py:49-380 |
+| Defines the class `ChangeRoutingTests` (lines 850-1180). | `ChangeRoutingTests` | mcp/tests/test_memory_citation_change_routing.py:49-364 |
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: bounded the companion routing-suite citation to its current file extent after unreachable test scaffolding was removed; responsibility remains unchanged.
 - 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: split registration/routing from provenance
   history, retained one shared real-Git fixture owner, and refreshed all moved ranges.
 

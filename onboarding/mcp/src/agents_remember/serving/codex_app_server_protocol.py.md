@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_protocol.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`|
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ protocol snapshot is recorded in the repository fixture instead.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture pins the CLI version, protocol, and stable method inventory. | "codex-app-server/0.144.3", "initialize", "model/list" | mcp/tests/fixtures/codex_app_server_0_144_3.json:4-16 |
+| Fixture pins the CLI version, protocol, and stable method inventory. | "codex-app-server/0.144.3", "generatedBy": "npx --yes @openai/codex@0.144.3 app-server generate-json-schema", "model/list" | mcp/tests/fixtures/codex_app_server_0_144_3.json:4-16 |
 | Adapter uses this transport for correlated fresh-turn settings application on the existing thread. | "class CodexAppServerSession:", "async def set_model(", "async def set_effort(" | mcp/src/agents_remember/serving/codex_app_server_session.py:102-458; mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224 |
 
 ## Cross-Repo References
@@ -98,6 +98,7 @@ stream because the JSONL transport cannot safely resynchronize after a partial o
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — 260731-EFA-L20 debt repair: replaced the historically ambiguous `initialize` fixture anchor with the unique schema-generator declaration; the protocol/version/method-inventory claim is unchanged and now has deterministic provenance.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 8 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=2, citation_source_malformed=3); final scoped citation check clean.

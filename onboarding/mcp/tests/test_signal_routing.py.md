@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_signal_routing.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`|
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -114,11 +114,11 @@ No meaningful external design-doc references found yet (created this leaf).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Worker-to-manager and manager-to-orchestrator one-hop routing resolves the current occupant from document-and-role identity without spawn ids. | `test_worker_signal_routes_to_current_manager_without_spawn_ids`; `test_manager_routes_to_current_orchestrator` | mcp/tests/test_signal_routing.py:67-85; mcp/tests/test_signal_routing.py:120-132 |
-| One-hop-only regression: a missing manager never causes a worker signal to fall through to the orchestrator. | `test_missing_manager_never_falls_through_to_orchestrator` | mcp/tests/test_signal_routing.py:107-118 |
-| `decision-item` routing resolves the current architect on the sender's sprint document. | `test_decision_item_routes_to_sprint_architect` | mcp/tests/test_signal_routing.py:153-165 |
-| Sprint-level roles follow the approved direct-parent ladder rather than skipping levels. | `test_sprint_roles_follow_the_approved_direct_parent_ladder` | mcp/tests/test_signal_routing.py:134-151 |
-| The shared liveness primitive the rebind/dead-target and dead-upstream machinery reads. | `IsSeatDeadTests` | mcp/tests/test_signal_routing.py:231-252 |
+| Worker-to-manager and manager-to-orchestrator one-hop routing resolves the current occupant from document-and-role identity without spawn ids. | `test_worker_signal_routes_to_current_manager_without_spawn_ids`; `test_manager_routes_to_current_orchestrator` | mcp/tests/test_signal_routing.py:66-84; mcp/tests/test_signal_routing.py:119-131 |
+| One-hop-only regression: a missing manager never causes a worker signal to fall through to the orchestrator. | `test_missing_manager_never_falls_through_to_orchestrator` | mcp/tests/test_signal_routing.py:106-117 |
+| `decision-item` routing resolves the current architect on the sender's sprint document. | `test_decision_item_routes_to_sprint_architect` | mcp/tests/test_signal_routing.py:152-164 |
+| Sprint-level roles follow the approved direct-parent ladder rather than skipping levels. | `test_sprint_roles_follow_the_approved_direct_parent_ladder` | mcp/tests/test_signal_routing.py:133-150 |
+| The shared liveness primitive the rebind/dead-target and dead-upstream machinery reads. | `IsSeatDeadTests` | mcp/tests/test_signal_routing.py:230-251 |
 
 ## Cross-Repo References
 
@@ -135,6 +135,7 @@ scoped owner-derivation family stay covered as before.
 
 ## Update History
 
+- 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 expressed the fixture's exact parent topology as a mapping instead of branches; the one-hop routing and refusal assertions remain unchanged.
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_signal_routing.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: the L9 citation re-anchoring was reviewed against the current staged routing tests; the existing route assertions remain accurate. Verification metadata remains pinned until closeout.
 - 2026-08-10T10:30+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n

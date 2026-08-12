@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastUpdated | 2026-08-12T08:41+02:00 |
+| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`
+| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -766,6 +766,7 @@ The MCP package separates three surfaces:
   until closeout stamps the code commit.
 ## Update History
 
+- 2026-08-12T08:41+02:00 — No route impact: 260731-EFA-L20 adds no package behavior or source route; it repairs master-gate proof through test simplification and direct boundary coverage.
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 route impact: settings,
   integration, closeout, packaged lifecycle doctrine, and regression tests now
   agree on host-managed full-gate RAM/swap with an optional explicit hard cap.
