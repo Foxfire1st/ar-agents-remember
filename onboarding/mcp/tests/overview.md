@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`|
-| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
+| lastUpdated | 2026-08-12T09:20+02:00 |
+| lastVerifiedCommitHash | `284ddbcd879a0b1ea58c9997ff781fb471982c36`|
+| lastVerifiedCommitDate | 2026-08-12T09:23:37+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -955,6 +955,7 @@ tree edit that must stay out of the commit.
 
 ## Update History
 
+- 2026-08-12T09:20+02:00 — No route impact: the 260731-EFA-L20 reopen replaces one unreachable context body with a direct raising-`__enter__` assertion; test-route ownership and safety coverage are unchanged.
 - 2026-08-12T08:41+02:00 — No route impact: 260731-EFA-L20 preserves the test route's ownership while deleting unreachable scaffolding, tightening opted-in installed-test failure honesty, and adding direct coverage for the two master CRAP findings.
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24: added host-managed
   full-gate and optional explicit-cap regression coverage; pytest remains
