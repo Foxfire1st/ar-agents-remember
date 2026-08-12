@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/build_info.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated            | 2026-08-01T08:30+02:00                          |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`      |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97`      |
+| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -166,7 +166,7 @@ is proven by repository source and tests.
 | --- | --- | --- |
 | The two merge points: the SSE snapshot and the `/api/state` body, both now via `served_state_tail` onto a copy of the memoized projection dump. |"payload.update(served_state_tail("; "served_state_tail(build=runtime.build"|mcp/src/agents_remember/code_quality/wire_contract.py:13-13; mcp/src/agents_remember/serving/_app_routes.py:97-97|
 | The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`. | `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:63-78 |
-| `SERVER_VERSION` supplies the wheel version in the daemon restart identity, read from installed package metadata with a source-checkout literal fallback (kernel-owned since L9). | "SERVER_VERSION = version(" | mcp/src/agents_remember/kernel/primitives/version.py:15-15 |
+| `SERVER_VERSION` supplies the wheel version in the daemon restart identity, read from installed package metadata with a source-checkout literal fallback (kernel-owned since L9). | `_resolve_server_version`; `SERVER_VERSION = _resolve_server_version()` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
 | The cockpit compares and renders the serving/client identity. | "function ServingBuildStamp()" | dashboard/src/cockpit/Cockpit.tsx:931-931 |
 | The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. | "if not bundle_is_current(fingerprint):"; "FINGERPRINT_FILE.write_text(" | scripts/sync-dashboard.py:147-147; scripts/sync-dashboard.py:157-157 |
 | The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. | "agents_remember/package_data/dashboard/index.html"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:93-94 |
@@ -189,6 +189,10 @@ Serving build identity now distinguishes a proven dirty checkout from an unprova
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-12T10:20+02:00 — Citation maintenance only: re-anchored the kernel version identity
+  after the release leaf named its existing metadata/fallback resolver; serving behavior is
+  unchanged. Verification metadata remains pinned until closeout.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
