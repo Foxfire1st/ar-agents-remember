@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-08T02:00+02:00                           |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T12:26+02:00                           |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -159,7 +159,28 @@ continues publishing the identical named JSON fields; no agent-visible address o
 
 The registration callers were rewritten by the L9 caller wave: conversation/evidence/control-wire models now import from `models/conversations/`, the runtime config record from `kernel/primitives/runtime_config.py`, and the terminal-catalog row vocabulary from `models/terminal_catalog.py`. Registration/tool wiring behavior is unchanged.
 
+## L23 Closeout Registration Composition
+
+`closeout.py` still owns one public closeout tool family, but its internal wiring is divided among
+`_register_closeout_command_tools`, `_register_integration_command_tools`, and
+`_register_reclamation_command_tools`. Their `_tools` suffix keeps the route's narrow structural
+exemption attributable exactly to tool declarations and registrar helpers. Published signatures
+and descriptions stay at the registration boundary while the public tool names, arguments, and
+model-visible authority remain unchanged.
+
 ## Update History
+
+- 2026-08-13T12:26+02:00 — L23 structural-rail repair: corrected the closeout registration
+  composition to the exact closeout/integration/reclamation helper names and recorded why every
+  registrar ends in `_tools`; no public tool or schema changed. Verification provenance remains
+  closeout-owned.
+
+- 2026-08-13T09:05+02:00 — L23 route review: closeout registration remains one public tool family
+  while its internal construction is split into cohesive preview, apply, and shared registration
+  helpers. Public names/signatures and registry authority remain unchanged; final provenance
+  remains closeout-owned.
+- 2026-08-13T08:47+02:00 — L23 integration-gate repair: recorded the closeout route's internal split into closeout, integration, and reclamation registration groups without changing the public tool surface. Verification metadata remains closeout-owned.
+
 - 2026-08-12T15:19+02:00 — L23 curator: recorded task-addressed lifecycle operation declarations and the guarded public citation-fix surface; verification provenance remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24: aligned registered

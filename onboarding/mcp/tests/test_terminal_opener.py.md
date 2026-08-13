@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`        |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T12:53+02:00               |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`        |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -169,6 +169,20 @@ host selection. Existing opener behavior is therefore tested after the same
 task-derived admission precondition production uses.
 
 ## Update History
+
+- 2026-08-13T12:53+02:00 — No content impact: the stabilized daemon-root derivation reads
+  `sys.modules["agents_remember"].__file__` after normal package submodule imports. Opener
+  fixtures/assertions are unchanged, and no Ruff config exception remains. This supersedes the
+  12:26 import-shape note; provenance stays closeout-owned.
+
+- 2026-08-13T12:26+02:00 — No content impact: the final Ruff-safe form imports
+  `agents_remember.__file__` directly as `agents_remember_file` when deriving the unchanged daemon
+  package root. Opener fixtures, adapter expectations, and assertions are unchanged; verification
+  provenance remains closeout-owned.
+
+- 2026-08-13T11:57+02:00 — No content impact: Ruff I001 moved the `agents_remember` import after
+  the opener/test-support imports. The imported module object, `_DAEMON_PACKAGE_ROOT` derivation,
+  fixtures, and opener assertions are unchanged; verification provenance remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented current-lineage setup for terminal opener coverage; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_terminal_opener.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.

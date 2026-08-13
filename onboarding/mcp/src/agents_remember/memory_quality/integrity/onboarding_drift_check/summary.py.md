@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:42+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -91,7 +91,7 @@ unified renderer publishes.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Tier 3 unresolved: context packets and skill-facing drift tools call this summary helper; `context_packet.py` calls `run_drift_summary`, while `skill_tools.py` exposes `skills_install_tool` and no drift-summary call. | "return run_drift_summary("; `skills_install_tool` | mcp/src/agents_remember/application/context_packet.py:184-184; mcp/src/agents_remember/application/skill_tools.py:13-30 |
+| Tier 3 unresolved: context packets and skill-facing drift tools call this summary helper; `context_packet.py` calls `run_drift_summary`, while `skill_tools.py` exposes `skills_install_tool` and no drift-summary call. | "return run_drift_summary("; `skills_install_tool` | mcp/src/agents_remember/application/context_packet.py:184-184; mcp/src/agents_remember/application/runtime/skills.py:13-30 |
 | The memory quality runner wraps actionable rows from this summary as integrity findings, reading the status-conditional keys with `.get`. | `run_drift_quality_check` | mcp/src/agents_remember/memory_quality/check.py:137-170 |
 | `ACTIONABLE_CLASSIFICATIONS` and, since 260731-EFA-L4, `DriftSummaryPacket`/`DriftStatus` are sourced from the shared models module (`DriftStatus` declared in `models/drift.py`). | "DriftStatus = Literal["; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19; mcp/src/agents_remember/models/drift.py:11-11 |
 | The context-packet wire model that validates this packet's `status` — the one that used to lack `error`. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |

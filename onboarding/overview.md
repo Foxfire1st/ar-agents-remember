@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-13T00:07+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-13T12:26+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 
 > **Status:** active baseline
 
@@ -1098,7 +1098,28 @@ does not acquire either daemon writer role; an ordinary unpublished checkout
 command remains confined to its leaf-local development coordinator and report
 root.
 
+## L23 Task-Derived Lineage Enforcement
+
+Canonical sprint/master/leaf documents and their enclosure contracts remain the sole identity for
+source-lineage enforcement. The same transitive code and external-memory ancestry proof now guards
+start/resume, the manager's final pre-curator boundary, closeout, and integration. Rechecks after
+long quality work and immediately before claim/merge prevent stale work from being documented,
+approved, or merged; no agent-supplied runtime or commit identifier becomes control-plane
+authority.
+
 ## Update History
+
+- 2026-08-13T12:26+02:00 — No route impact: final L23 stabilization extracted one internal
+  closeout helper, narrowed registrar naming, made five test package-root imports deterministic,
+  and rendered the already-durable lifecycle command in Hangar. Repository architecture and
+  authority boundaries remain unchanged; verification provenance remains closeout-owned.
+
+
+- 2026-08-13T09:05+02:00 — L23 integration-gate follow-up: source-lineage enforcement now spans
+  start/resume, the mandatory pre-curator boundary, closeout, and integration, including
+  post-quality and final pre-claim/pre-merge rechecks. Detailed package moves and proofs live in
+  the MCP, lifecycle-role, and test routes; the repository's task-derived identity and
+  code/external-memory architecture remain unchanged. Final provenance remains closeout-owned.
 - 2026-08-13T00:07+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: recorded the repository-level process-authority split. The detached lifecycle-operation worker may reach its plane-owned live operation without becoming an MCP/dashboard daemon, and undeclared checkout CLI isolation remains fail-closed. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
 - 2026-08-12T20:20+02:00 — L23 curator: added the repository-wide source-lineage admission and operator-visibility boundary; verification remains closeout-owned.
 

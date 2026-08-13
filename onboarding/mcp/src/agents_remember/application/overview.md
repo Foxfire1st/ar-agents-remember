@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-13T00:00+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T08:47+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -47,7 +47,7 @@ abandon now also ends the ambient lifecycle it anchors).
 
 ## Hot Path Summary
 
-For 260731-EFA-L21, `server_startup.py` is the trusted MCP declaration boundary: it declares MCP
+For 260731-EFA-L21, `runtime/startup.py` is the trusted MCP declaration boundary: it declares MCP
 execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker
 entry paths make the corresponding dashboard declaration in their CLI route. Undeclared linked
 worktree entry paths therefore cannot inherit the deployed coordination root.
@@ -56,9 +56,9 @@ The current operation surfaces include `context_packet.py` and `coordination_too
 assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline,
 and carryover; `gate_tools.py` and `hosted_readiness.py` for gate/readiness operations;
 `lifecycle_tools.py`, `operator_inbox_tools.py`, and `orchestration_tools.py` for lifecycle, inbox,
-and orchestration operations; `server_startup.py` and `terminal_tools.py` for startup and terminal
+and orchestration operations; `runtime/startup.py` and `terminal_tools.py` for startup and terminal
 operations; `provider_tools.py` for provider operations; `worktree_tools.py` for worktree operations;
-`benchmark_tools.py`, `runtime_install.py`, and `skill_tools.py` for benchmark, install, and skill
+`benchmark_tools.py`, `runtime/install.py`, and `runtime/skills.py` for benchmark, install, and skill
 surfaces; `task_doc_tools.py` for JSON-primary task-document authoring; `tool_response.py` for response
 completion; `worktree_status.py` for status packets; and `read_files.py` for paired source/onboarding
 reads. Route-index refresh still resolves context first and forwards repository/storage authority to
@@ -97,7 +97,7 @@ payload builder and the tool declaration:
 | `task_doc_tools.py` | `TaskDocTarget`, `TaskDocEdit` (+ `NO_EDIT`). |
 | `benchmark_tools.py` | `BenchmarkSelection`, `BenchmarkPreparation`, `CodexBenchmarkRun` (+ `ALL_CASES`, `DEFAULT_PREPARATION`, `DEFAULT_RUN`). |
 | `provider_tools.py` | `ProviderQueryScope`, `GrepaiRepoScope`, `GrepaiSearchQuery`, `GrepaiTraceQuery` (+ `WORKSPACE_QUERY_SCOPE`, `ALL_INDEXED_REPOS`). |
-| `runtime_install.py` | Re-exports `RuntimeInstallRequest`, whose definition moved to `install/runtime.py`. |
+| `runtime/` | Groups MCP startup, typed runtime-install delegation, and skill deployment without a package facade. |
 
 This is a selected, not exhaustive, inventory. Other direct application-level request/target objects
 are defined beside the gate, hosted-readiness, lifecycle, operator-inbox, orchestration, server-startup,
@@ -145,7 +145,7 @@ nested object for every client.
 - Provider, benchmark, and worktree application entry points should call package services
   directly rather than CLI `main(argv)` wrappers.
 - Keep each application entry point file scoped by domain; do not rebuild the former
-  `skill_tools.py` mega-facade.
+  `runtime/skills.py` focused entry point.
 - Launch-capable provider operations re-read the on-disk authority fail-closed
   (containment R1, 260707-HFX-L1); application entry points must never launch providers off
   the boot-snapshot config, while stop/status/cleanup stay ungated.
@@ -257,6 +257,8 @@ of retyping them, and ambient attach attribution occurs only after a real
 attachment, keeping blocked lineage out of successful lifecycle history.
 
 ## Update History
+- 2026-08-13T08:47+02:00 — L23 integration-gate repair: routed startup/runtime-install/skill-install through the new cohesive `application/runtime/` child overview and preserved direct domain imports instead of a facade. Verification metadata remains closeout-owned.
+
 - 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: documented the detached lifecycle-operation declaration before service/config loading and its deliberate non-daemon boundary. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
 - 2026-08-12T20:20+02:00 — L23 curator: documented application ownership of lineage refusal/status translation; verification remains closeout-owned.
 - 2026-08-12T16:52+02:00 — 260731-EFA-L23 packaged-worker route review: the detached CLI now owns

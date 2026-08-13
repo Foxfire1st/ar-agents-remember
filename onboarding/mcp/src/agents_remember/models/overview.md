@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-11T20:28+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T08:47+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -23,7 +23,7 @@ former flat gate model has moved, with its semantic history preserved in the suc
 `TaskDocumentRef` is a frozen value object whose explicit hash uses repository plus path; task
 altitude remains topology-owned rather than becoming a third identity field.
 
-`lifecycle_operation.py` adds strict closeout/integration input snapshots, an internal durable
+`lifecycles/operation.py` adds strict closeout/integration input snapshots, an internal durable
 record, and a deliberately smaller public projection. The record carries private fingerprint,
 candidate tree, PID, approval claim, and recovery details; the projection exposes only the task,
 kind, state, phase, heartbeat, current command, result/failure, and guidance required by agents
@@ -69,7 +69,7 @@ contract slices: `context_packet.py` for compact `ContextPacketV2`,
 `providers.py` for provider summaries and diagnostics, `worktree.py` for
 worktree context/status responses including `enclosurePath`, `leafId`, and `kind`, `memory.py` for memory/onboarding tools,
 `runtime.py` for runtime and resolver tools, `benchmarks.py` for Codex
-benchmark tools, `lifecycle.py` for the `lifecycle_*` signal responses
+benchmark tools, `lifecycles/responses.py` for the `lifecycle_*` signal responses
 (with `LifecycleStartResponse` also carrying an optional `frontHalfRundown`
 front-half roadmap, and the task-28 `LifecycleTurnEndNotificationResponse`
 adding a `summary` for the public NOTIFY-AND-CONTINUE turn-end tool),
@@ -80,7 +80,7 @@ compatibility gate responses (L4 adds delegated-decision `decidingRole` and
 `evidenceRefs` to the decide response), `operator_inbox.py` for the
 three `operator_inbox_*` external-chat response contracts (task 10),
 `orchestration.py` for the strict `orchestration_nudge_manager` response,
-`lifecycle_finalize.py` for the strict terminal task-finalizer response, `terminal.py` for the strict
+`lifecycles/finalize.py` for the strict terminal task-finalizer response, `terminal.py` for the strict
 `attach_terminal_session_to_leaf` hosted-chat/terminal reassignment response AND the L2
 `spawn_agent_session` dispatch response (`SpawnAgentSessionResponse` — spawned-by provenance +
 context-delivery outcome (since 260707-HFX-L3 incl. the failure-evidence `deliveryCapture` field) + the server-arbitrated `leaf-taken`/pre-spawn refusal statuses; since HFX-L4 the attach/spawn models also accept
@@ -95,7 +95,7 @@ spend env keys), and
 `unknown-actor`/`retire-refused` statuses, retirement provenance fields, `detail` naming the exact
 authority-policy clause on refusal) and `SessionRenameResponse` (`renamed`/`unknown-session`,
 `label`/`spawnedLabel` — identity text only, no `spawn_role` field on this response since a rename
-never changes it). `lifecycle_finalize.py`'s `LifecycleFinalizeTaskResponse` gains an additive
+never changes it). `lifecycles/finalize.py`'s `LifecycleFinalizeTaskResponse` carries additive
 `autoLandedSeats: list[str]` field for the master→super finalize edge's landed archive hook.
 
 ## Route Model
@@ -189,7 +189,7 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
 | Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:12-22 |
-| Lifecycle finalizer response model covers the terminal task finalization payload. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycle_finalize.py:13-33 |
+| Lifecycle finalizer response model covers the terminal task finalization payload. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:13-33 |
 | Terminal response models cover trusted task-seat assignment and internal hosted-session spawn. | `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:32-44; mcp/src/agents_remember/models/terminal.py:85-127 |
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
@@ -374,6 +374,8 @@ and dashboard consumers import or mirror this strict shape instead of accepting
 free strings or agent-supplied identity.
 
 ## Update History
+- 2026-08-13T08:47+02:00 — L23 integration-gate repair: routed lifecycle response, finalizer, and asynchronous-operation models through the cohesive `models/lifecycles/` child overview while preserving one vocabulary owner per wire set. Verification metadata remains closeout-owned.
+
 - 2026-08-12T20:20+02:00 — L23 curator: documented strict source-lineage model ownership; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: documented strict durable lifecycle records and the private-identity-free public projection; verification provenance remains closeout-owned.
 

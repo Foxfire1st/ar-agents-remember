@@ -8,14 +8,31 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-13T00:00+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-13T12:26+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [mcp overview](../overview.md)
+
+## Final Ruff-Safe Package-Root Resolution
+
+Five test modules that inspect the loaded package root now read
+`sys.modules["agents_remember"].__file__` after their normal package-submodule imports have loaded
+the package. The source-root checks and scan boundaries are unchanged; this removes the disputed
+bare/direct package import entirely without adding or retaining a Ruff configuration exception.
+
+## L23 Real-Lineage Fixture Boundary
+
+The shared external-memory integration fixtures now build a real super→master→leaf code and memory
+chain and bind leaf contracts to the parent series contract. Assertions read task-derived source
+branches rather than a literal `main`. A master source that moves after leaf closeout therefore
+refuses at integration admission as `source-lineage-stale` with `sync_source_lineage`, before
+replay/conflict logic or any branch movement. Dedicated integration-quality tests separately cover
+the two post-quality source-tip rechecks and the legacy replay helper's internal branch matrix;
+gate-only seams mock lineage where that independent boundary is not their subject.
 
 ## Structural Seat Regression Boundary
 
@@ -1016,7 +1033,58 @@ vocabulary ownership. Shared fixtures build real master/leaf contracts rather
 than bypassing the gate. The same wave makes SQLite connection ownership and
 short native quality scratch explicit.
 
+## L23 Lineage Gate Regression Surface
+
+The route now proves transitive lineage traversal, closeout refusal after quality and before an
+approval claim, integration refusal when a pinned source moves before memory/merge, and structural
+dispatch refusal before worker, reviewer, or curator host creation when super ancestry is stale.
+Import-only updates in existing suites follow the runtime and lifecycle-model package moves while
+retaining their prior assertions.
+
+The lineage suite additionally creates a real sibling linked checkout and points the parent
+contract at it while the leaf remains on the original checkout. A current projection proves the
+policy compares shared Git repository identity rather than literal checkout paths.
+
+## L23 Full-Dagger Coverage And Stability Follow-up
+
+The full-gate repair adds focused branch proof for static conversation-helper preflight, provider
+subprocess stdin/timeout handling, and Docker inspect command/JSON/shape handling. These are
+test-only additions over unchanged production helpers. The IPC duplicate-submit test keeps its
+strict ordering—duplicate refusal occurs while the first submit is held—but uses a five-second
+outer synchronization timeout so heavily parallel full-suite scheduling does not create a
+one-second false failure. Full change-set comparison must use the leaf's real `1580f927…` base,
+not the empty tree.
+
 ## Update History
+
+- 2026-08-13T13:08+02:00 — L23 full-Dagger follow-up: recorded exhaustive coverage for three
+  low-branch helpers, the IPC test-only wait-margin correction, and the requirement to run the full
+  comparison against the real leaf base. Verification remains closeout-owned.
+
+- 2026-08-13T12:53+02:00 — L23 lineage-fixture repair: recorded real parent series fixtures,
+  task-derived source assertions, pre-integration sync refusal after master movement, isolated
+  gate-only seams, both post-quality source-tip checks, and explicit replay-helper branch coverage.
+  Verification provenance remains closeout-owned.
+
+- 2026-08-13T12:53+02:00 — No route impact: updated the final five-test package-root shape from a
+  direct member import to the already-loaded `sys.modules` package record. Test ownership and
+  semantics remain unchanged and no Ruff exception exists; this supersedes the 12:26 route note.
+
+- 2026-08-13T12:26+02:00 — No route impact: recorded the direct `__file__` alias used by five
+  package-root-sensitive tests. Test ownership, scenarios, and assertions are unchanged and no Ruff
+  compatibility configuration was retained; verification provenance remains closeout-owned.
+
+
+- 2026-08-13T09:27+02:00 — L23 curator: added governing route coverage for the real sibling-
+  worktree repository-identity regression; final provenance remains closeout-owned.
+
+- 2026-08-13T09:05+02:00 — L23 integration-gate follow-up: the route now covers transitive lineage
+  traversal, post-quality closeout refusal before approval claim, integration refusal on source-tip
+  movement before memory/merge, and fail-before-host worker/reviewer/curator dispatch when super is
+  stale. Import-only test changes follow the runtime and lifecycle model package moves without
+  changing their assertions; final provenance remains closeout-owned.
+- 2026-08-13T08:47+02:00 — L23 integration-gate repair: reconciled direct transitive-lineage guard coverage, post-quality closeout/integration movement refusals, task-derived parent fixtures, and pre-host worker/reviewer/curator spawn refusal. Verification metadata remains closeout-owned.
+
 - 2026-08-13T00:00+02:00 — L23 post-closeout worker-authority curator repair: paired the worker-entry ordering proof with checkout-isolation proof that `lifecycle-operation` retains live authority but no daemon role. The owner reports 46 focused tests across the two affected files, Ruff clean, and diff-check clean. Verification remains closeout-owned.
 - 2026-08-12T23:27+02:00 — L23 Dagger diff-coverage curator follow-up: the route-overview helper suite now proves that source matching still requires an overview outside the supplied memory Git tree while body classification emits no false bucket without comparable memory revision evidence. The owner reports the focused test green, all four previously uncovered branches covered, and exact-file Ruff clean. Verification remains closeout-owned.
 - 2026-08-12T23:08+02:00 — L23 Dagger curator follow-up: the Claude late-replay regression now uses a 50ms test-only acceptance window, retaining forced expiry while removing a measured xdist scheduler race; production remains 30 seconds. Evidence improved from one local failure in 100 plus one Dagger gw16 failure to 100/100 one-process repetitions passing. Verification remains closeout-owned.

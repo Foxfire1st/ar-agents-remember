@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T12:15+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,17 @@ No external domain source governs this repository-local registry.
 | The advertised subset is derived rather than independently maintained. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:217-221 |
 | The choke point validates against this registry before emitting the envelope. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
 
+## L23 Lifecycle Model Package Review
+
+The public response registry now imports lifecycle turn/block/switch responses from
+`models.lifecycles.responses` and finalization responses from `models.lifecycles.finalize`. The
+registered model set and strict public response validation remain unchanged; only model ownership
+was separated.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: reviewed the split lifecycle response/finalize imports and
+  confirmed registry membership is unchanged; final provenance remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

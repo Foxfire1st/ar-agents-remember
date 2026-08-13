@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-13T00:07+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-13T12:26+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -795,7 +795,28 @@ share one evidence shape. Unavailable or stale ancestry fails closed and points
 to ordered contract-addressed `worktree_sync`; agent-carried ids are not part of
 the protocol.
 
+## L23 Current Lineage And Package Boundary
+
+The MCP package now groups runtime installation, startup, and skill installation under
+`application.runtime`, and lifecycle responses, finalization, and durable operation DTOs under
+`models.lifecycles`. Task-derived source lineage is enforced at start/resume, immediately before
+curator dispatch, and through closeout/integration preflight, post-quality, and final mutation
+boundaries. The MCP transport remains a thin registration/forwarding layer over those application,
+model, and worktree owners.
+
 ## Update History
+
+- 2026-08-13T12:26+02:00 — No route impact: L23 extracted closeout's existing external-memory
+  quality-phase mechanics into a sibling worktree module, renamed internal registrar helpers, and
+  adjusted test-only package-root imports. MCP package authority and public tool behavior remain
+  unchanged; verification provenance remains closeout-owned.
+
+
+- 2026-08-13T09:05+02:00 — L23 integration-gate follow-up: recorded the dedicated application
+  runtime and lifecycle-model packages, pre-curator task-derived lineage proof, and closeout/
+  integration transitive post-quality/final rechecks. Exact behavior remains in the application,
+  models, worktree-module, lifecycle-skill, and test child routes; final verification provenance
+  remains closeout-owned.
 - 2026-08-13T00:07+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: documented MCP-package ownership of the explicit lifecycle-operation execution mode. The detached task worker declares it before config/service loading, retains live durable-operation authority, and does not claim MCP/dashboard daemon ownership; undeclared checkout CLI isolation remains unchanged. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
 - 2026-08-12T21:18+02:00 — L23 curator follow-up: documented deterministic native `$HOME/.local/bin` admission after Windows-interoperability filtering; no shell/version-manager discovery or compatibility fallback was added. Verification remains closeout-owned.
 - 2026-08-12T20:20+02:00 — L23 curator: documented MCP-wide task-derived lineage admission and recovery ownership; verification remains closeout-owned.

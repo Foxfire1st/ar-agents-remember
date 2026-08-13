@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/skills.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -30,7 +30,7 @@ fields to pass through during service evolution.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The skills install application entry point delegates to package install services. | `skills_install_tool`; "return install_skills(" | mcp/src/agents_remember/application/skill_tools.py:11-28 |
+| The skills install application entry point delegates to package install services. | `skills_install_tool`; "return install_skills(" | mcp/src/agents_remember/application/runtime/skills.py:11-28 |
 
 ## Update History
 

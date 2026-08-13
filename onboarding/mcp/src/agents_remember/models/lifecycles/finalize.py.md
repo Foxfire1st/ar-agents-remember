@@ -1,14 +1,18 @@
-# mcp/src/agents_remember/models/lifecycle_finalize.py
+# mcp/src/agents_remember/models/lifecycles/finalize.py
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/models/lifecycle_finalize.py` |
+| path                   | `mcp/src/agents_remember/models/lifecycles/finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T08:40+02:00                     |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[lifecycles overview](overview.md)
 
 ## Purpose
 
@@ -27,16 +31,11 @@ finalizer response is a separate terminal contract: it reports only the edge
 proof, cleanup result, task-document reconciliation, and blockers relevant to
 finalization.
 
-**260707-HFX2-L11** replaces the former completion-edge retirement field with
-`autoLandedSeats: list[str] = Field(default_factory=list)` — the session ids marked `landed` at this
-master→super finalize completion edge (config-gated via
-`config.retirement.auto_land_on_finalize`, default ON, `mcp/config.py`). Empty when the gate is
-off, when nothing matched the finalizing master's own qualified leaf key
-(`repo/master/master-doc-id`), or when the call was a dry run. The
-landing sweep is best-effort and never fails this finalize call itself — any failure in the landing
-body (contract load or catalog I/O) is swallowed and reported as an empty list
-(`application/worktree_tools.py::_auto_land_completed_seats`), so this field can legitimately be
-empty even when spent seats existed, never a signal that finalization itself failed.
+Completion-seat cleanup is additive to finalization truth. Default-on auto-close reports
+`autoClosedSeats`, `autoCloseDeferredSeats`, and `autoCloseFailedSeats`; the explicit settings
+opt-out retains `autoLandedSeats` for the historical landed/archive path. All four lists remain
+empty for dry runs or disabled edges and do not replace the finalizer state, blocker, cleanup, or
+task-document evidence.
 
 ## Docs References
 
@@ -57,6 +56,8 @@ No external Domain Documentation source is configured for this memory repo.
 `LifecycleFinalizeTaskResponse` carries both the leaf `enclosurePath` and the root-level `taskArchive` result so finalization can report contract cleanup and root archival separately.
 
 ## Update History
+- 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved the preserved finalizer card into `models/lifecycles/`, rebound its governing overview, and reconciled the current auto-close/deferred/failure fields plus opt-out landing evidence. Verification metadata remains closeout-owned.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

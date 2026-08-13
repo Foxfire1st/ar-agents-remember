@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/lifecycle_operation_store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
-| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -61,6 +61,14 @@ No cross-repository boundary is owned here.
 | --- | --- | --- |
 | The store persists only one task enclosure's internal operation state. | `LifecycleOperationStore` | mcp/src/agents_remember/worktrees/lifecycle_operation_store.py:37-162 |
 
+## L23 Lifecycle Model Package Review
+
+Durable operation records and vocabularies now come from `models.lifecycles.operation`. Store
+ownership, validation, atomic persistence, and compare-and-swap behavior are unchanged.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: recorded the lifecycle-operation model import move and
+  confirmed the durable-store contract is unchanged; final provenance remains closeout-owned.
 
 - 2026-08-12T15:19+02:00 — Created for L23's validated durable lifecycle operation store; verification provenance remains closeout-owned.

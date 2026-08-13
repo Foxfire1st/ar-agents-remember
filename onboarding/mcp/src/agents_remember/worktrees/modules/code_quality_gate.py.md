@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T22:28+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-13T08:40+02:00 |
+| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -79,6 +79,10 @@ command and invocation label still come from `_gate_command_parts`; a full run w
 bytes. A tool emitting one non-UTF-8 byte therefore cannot abort the adapter before the stable
 report is written; the replacement is confined to diagnostic output and does not alter source or
 gate status.
+
+`_validated_quality_gate_plan` owns defaulting and the closed `targeted`/`full` plus
+`local`/`dagger` validation before command construction. Keeping that policy in one helper makes
+the execution coordinator smaller without adding a fallback executor.
 
 `test_results_report_path` fixes the location at `reports/test-results.md` under the supplied
 worktree group. `_write_test_results_report` renders status, invocation, mode, diff base, exit code,
@@ -234,9 +238,9 @@ coverage, and CRAP checks.
 | `run_strict_code_quality_gate` executes the planned contract, atomically publishes the complete latest transcript, exposes `reportPath` on success, and names it before raising on failure. | `QualityGateTarget`, `test_results_report_path`, `run_strict_code_quality_gate`, `_write_test_results_report`, `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:56-61; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:85-87; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:251-352; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:355-413; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:507-533 |
 | `run_subprocess` captures merged output as UTF-8 with replacement so an undecodable diagnostic byte cannot prevent report publication. | `run_subprocess` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:234-248 |
 | `quality_python` walks the interpreter chain through `_git_common_dir`, which uses `run_git`; `quality_environment` builds from `git_environment()`, puts this worktree's `mcp/src` first on `PYTHONPATH`, names the invoking altitude, and uses `/tmp` for non-Windows scratch. | `quality_python`; `quality_environment`; `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:536-551; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:554-584; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:587-594 |
-| Both closeout call sites pass `contract.code_worktree`, `diff_base=contract.code_base_commit`, and the leaf targeted plan — the preview path, and the apply path where `requires_strict_code_quality` guards `_gate_staged_code` and `commit_if_dirty` follows it. | `closeout_preview_payload`, `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:367-456; mcp/src/agents_remember/worktrees/modules/closeout.py:1036-1159 |
+| Both closeout call sites pass `contract.code_worktree`, `diff_base=contract.code_base_commit`, and the leaf targeted plan — the preview path, and the apply path where `requires_strict_code_quality` guards `_gate_staged_code` and `commit_if_dirty` follows it. | `closeout_preview_payload`, `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:372-461; mcp/src/agents_remember/worktrees/modules/closeout.py:1037-1131 |
 | Regressions cover all three statuses, targeted/full modes, host-managed and explicit-cap full runs, cap-kill naming, checkout-not-name arguments, exact leaf base forwarding, repository-selector scrubbing, source precedence, bounded failures, interpreter selection, and mutation ordering. | `CodeQualityGateTests`, `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:19-486; mcp/tests/test_worktree_closeout_quality_gate.py:55-257 |
-| The staging regressions added with `_gate_staged_code`: `_ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `_ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:312-347; mcp/tests/test_worktree_closeout_quality_gate.py:350-456; mcp/tests/test_worktree_closeout_quality_gate.py:536-659; mcp/tests/test_worktree_closeout_quality_gate.py:662-720; mcp/tests/test_worktree_closeout_quality_gate.py:726-789 |
+| The staging regressions added with `_gate_staged_code`: `_ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `_ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:360-395; mcp/tests/test_worktree_closeout_quality_gate.py:398-504; mcp/tests/test_worktree_closeout_quality_gate.py:658-781; mcp/tests/test_worktree_closeout_quality_gate.py:784-842; mcp/tests/test_worktree_closeout_quality_gate.py:848-911 |
 | The one git runner this module calls, and the scrubber `quality_environment` builds from: `run_git` and `git_environment` both drop `GIT_REPOSITORY_SELECTOR_ENV`, and `run_git` carries the local/remote/metadata timeout classes. | `run_git`, `git_environment` | mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | `test_the_closeout_gate_resolves_the_common_dir_of_the_worktree_it_was_given` points `GIT_DIR` at a decoy repository and proves `_git_common_dir` still answers for the worktree it was handed. | `test_the_closeout_gate_resolves_the_common_dir_of_the_worktree_it_was_given` | mcp/tests/test_git_command.py:410-433 |
 | `SingleRunnerTests` sweeps the package's AST and fails if any module spawns `git` itself or defines a second runner. | `SingleRunnerTests` | mcp/tests/test_git_command.py:393-465 |
@@ -260,6 +264,8 @@ operator-visible evidence and avoids the 103-byte Unix-socket address limit in
 deep worktree/report paths.
 
 ## Update History
+- 2026-08-13T08:40+02:00 — L23 integration-gate repair: documented the extracted strict plan validator and preserved the fail-closed no-fallback executor boundary. Verification metadata remains closeout-owned.
+
 - 2026-08-12T20:10+02:00 — L23 curator: documented durable-report versus short-scratch ownership; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

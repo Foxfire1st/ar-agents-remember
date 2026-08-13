@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/reopen.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -91,7 +91,7 @@ restores the leaf task-document state, and cit:(["def _plan_master_index_reset("
 | The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_doc_tools.py:867-884 |
 | The contract dataclass, amendment helper, and `CleanupStatus` vocabulary definitions (the vocabulary in models/worktree.py since L9). | "class ContractCells"; "def amend_contract"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
 | The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:96-136 |
-| `test_no_contract_cell_is_written_through_dataclasses.replace` and `test_every_writable_cleanup_value_validates_at_the_wire_boundary` pin both halves of this. | `test_no_contract_cell_is_written_through_dataclasses_replace`; `test_every_writable_cleanup_value_validates_at_the_wire_boundary` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:290-294; mcp/tests/test_wire_vocabulary_exhaustiveness.py:656-664 |
+| `test_no_contract_cell_is_written_through_dataclasses.replace` and `test_every_writable_cleanup_value_validates_at_the_wire_boundary` pin both halves of this. | `test_no_contract_cell_is_written_through_dataclasses_replace`; `test_every_writable_cleanup_value_validates_at_the_wire_boundary` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:289-293; mcp/tests/test_wire_vocabulary_exhaustiveness.py:656-664 |
 
 ## 260718-CHATS-L5I Current Delta
 

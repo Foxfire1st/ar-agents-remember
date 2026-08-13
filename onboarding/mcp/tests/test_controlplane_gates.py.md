@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -82,8 +82,8 @@ the gate reads `applied` immediately after the single permitting call.
 The two blocking cases **additionally** assert that the early refusal
 `_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:518-540)) raises for the same seeded gate. That
 is a second rung, not a duplicate: the claim sits one statement above the first irreversible act
-(`closeout_result`, cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:1036-1159)), while the early read sits before staging and the strict code-quality gate
-(`_gate_staged_code`, cit:([`_gate_staged_code`], mcp/src/agents_remember/worktrees/modules/closeout.py:789-845)), so without it an unapproved closeout would only be refused after a full quality run over a
+(`closeout_result`, cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:1037-1131)), while the early read sits before staging and the strict code-quality gate
+(`_gate_staged_code`, cit:([`_gate_staged_code`], mcp/src/agents_remember/worktrees/modules/closeout.py:774-869)), so without it an unapproved closeout would only be refused after a full quality run over a
 staged worktree. The early rung is safe precisely because it can only DENY — its read is unlocked
 and therefore already stale when it returns, but a stale refusal costs a rerun and consumes
 nothing, and a stale permit is re-evaluated under the lock by the claim.
@@ -140,7 +140,7 @@ approvals according to `GatePolicy`.
 | The operator inbox store polled by `gate_response_wait_payload`. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/gates.py:171-188 |
 | The enforcement policy under test (slice 6b): `evaluate_gate`, whose `applied` branch is the refusal a second consume meets and the reason the `applied` snapshot is an authority record. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |
 | Gate delegation policy under test. | `make_gate_policy`; `named_gate_policy`; `apply_seam_verdict_requirement`; `delegated_decision_failure_reason`; `approval_failure_reason` | mcp/src/agents_remember/controlplane/gate_policy.py:52-64; mcp/src/agents_remember/controlplane/gate_policy.py:67-83; mcp/src/agents_remember/kernel/primitives/gate_policy.py:75-107; mcp/src/agents_remember/kernel/primitives/gate_policy.py:110-127; mcp/src/agents_remember/kernel/primitives/gate_policy.py:130-149 |
-| The closeout helpers under test: the early deny-only read `_refuse_unsatisfied_closeout_gate` (called before staging and the strict gate) and the claim `_claim_closeout_gate` (one statement above the first irreversible act). `_mark_closeout_gate_applied` was deleted, not deprecated. | `_refuse_unsatisfied_closeout_gate`; `_claim_closeout_gate`; `_gate_staged_code`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:518-540; mcp/src/agents_remember/worktrees/modules/closeout.py:543-594; mcp/src/agents_remember/worktrees/modules/closeout.py:842-937; mcp/src/agents_remember/worktrees/modules/closeout.py:1036-1159 |
+| The closeout helpers under test: the early deny-only read `_refuse_unsatisfied_closeout_gate` (called before staging and the strict gate) and the claim `_claim_closeout_gate` (one statement above the first irreversible act). `_mark_closeout_gate_applied` was deleted, not deprecated. | `_refuse_unsatisfied_closeout_gate`; `_claim_closeout_gate`; `_gate_staged_code`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:529-551; mcp/src/agents_remember/worktrees/modules/closeout.py:554-605; mcp/src/agents_remember/worktrees/modules/closeout.py:774-869; mcp/src/agents_remember/worktrees/modules/closeout.py:1037-1131 |
 | Why an `applied` `closeout-approval` record can no longer be used as reclaimable fixture filler: `CONSUMED_APPROVAL_GATE_KINDS` retains it at any age, and `PRUNE_IMMEDIATE_GATE_STATES` is what the three relocated decoys now use instead. | `CONSUMED_APPROVAL_GATE_KINDS`; `PRUNE_IMMEDIATE_GATE_STATES` | mcp/src/agents_remember/controlplane/interaction_retention.py:52-54; mcp/src/agents_remember/controlplane/interaction_retention.py:85-85 |
 | The suite that pins the claim's position rather than its policy: the gate is already `applied` by the time `commit_if_dirty` runs, a failure upstream leaves it `approved`, and `_prunable_gate` is one of the three fixtures moved to `expired`. | `test_the_approval_is_already_consumed_when_the_first_commit_runs`; `_prunable_gate` | mcp/tests/test_gate_replay_window.py:116-130; mcp/tests/test_gate_replay_window.py:582-615 |
 | The second and third relocated decoys, beside the ownership and durability assertions they keep honest: `GateAdapter.write_decoy` and its enclosing adapter. | `GateAdapter` | mcp/tests/_store_durability.py:191-218 |
@@ -172,8 +172,8 @@ fake's unattached contract. Cycle 7 adds three layers on the enclosure address: 
   gate reads `applied` straight after the single permitting call, which is the point: permitting and
   marking applied are one step and there is no arrangement of two lines that leaves the approval
   spendable in between. Recorded the two rungs as distinct rather than redundant — the claim sits
-  one statement above the first irreversible act (cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:1036-1159)) while the early read sits
-  before staging and the strict code-quality gate (cit:([`_gate_staged_code`], mcp/src/agents_remember/worktrees/modules/closeout.py:789-845)), and the early rung is safe only because it
+  one statement above the first irreversible act (cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:1037-1131)) while the early read sits
+  before staging and the strict code-quality gate (cit:([`_gate_staged_code`], mcp/src/agents_remember/worktrees/modules/closeout.py:774-869)), and the early rung is safe only because it
   can exclusively DENY: its unlocked read is stale on return, but a stale refusal costs a rerun and
   consumes nothing while a stale permit is re-evaluated under the lock. Recorded the mechanism
   underneath: `GateStore.claim_approval` (cit:([`claim_approval`], mcp/src/agents_remember/controlplane/store.py:190-234)) folds, evaluates policy

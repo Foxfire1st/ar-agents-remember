@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -36,7 +36,7 @@ context dictionary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Runtime install application entry point produces the installer response payload. | `run_runtime_install` | mcp/src/agents_remember/application/runtime_install.py:13-17 |
+| Runtime install application entry point produces the installer response payload. | `run_runtime_install` | mcp/src/agents_remember/application/runtime/install.py:13-17 |
 | Coordination application entry point exposes resolver output through MCP. | `resolve_context_tool` | mcp/src/agents_remember/application/coordination_tools.py:20-50 |
 
 ## Update History

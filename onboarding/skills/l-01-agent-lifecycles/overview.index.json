@@ -17,22 +17,26 @@
   ],
   "coveredFiles": [
     "skills/l-01-agent-lifecycles/SKILL.md",
-    "skills/l-01-agent-lifecycles/criteria/code-seam.md"
+    "skills/l-01-agent-lifecycles/criteria/code-seam.md",
+    "skills/l-01-agent-lifecycles/templates/curator-brief.md"
   ],
   "coverageCounts": {
     "sourceFilesInScope": 0,
-    "fileSidecars": 2,
+    "fileSidecars": 3,
     "childRoutes": 1
   },
   "routingTerms": [
     "agent",
+    "brief",
     "code",
     "criteria",
+    "curator",
     "lifecycles",
     "roles",
     "seam",
     "skill",
-    "skills"
+    "skills",
+    "templates"
   ],
   "hotPath": {
     "summary": "Free chat launches work; architect owns sprint composition; orchestrator owns the portfolio and creates one manager per real master; each manager drives worker, reviewer, and curator seats on real leaves. Structural task document plus role is the durable address at every altitude. The control plane owns current occupancy, readiness, exact first-brief delivery, replacement, and terminal correlation. Role continuity is task-document and artifact based. Workers build and report, reviewers provide independent verdict evidence, curators reconcile system intent and memory, managers decide delegat...",
@@ -41,17 +45,21 @@
       "skills/l-01-agent-lifecycles/roles",
       "skills/l-01-agent-lifecycles/SKILL.md",
       "skills/l-01-agent-lifecycles/criteria",
-      "skills/l-01-agent-lifecycles/criteria/code-seam.md"
+      "skills/l-01-agent-lifecycles/criteria/code-seam.md",
+      "skills/l-01-agent-lifecycles/templates",
+      "skills/l-01-agent-lifecycles/templates/curator-brief.md"
     ],
     "anchorHints": [
       "SKILL.md",
       "SKILL",
       "code-seam.md",
       "code-seam",
+      "curator-brief.md",
+      "curator-brief",
       "roles",
       "skills/l-01-agent-lifecycles",
       "route-local-overview",
-      "1580f92715ff93c988f9a15439ad9bec60ef4c5d",
+      "a09b906bbf2855c3479b4d3199607ff8689b7d93",
       "-n=auto",
       "roles/",
       "skills/l-01-agent-lifecycles/SKILL.md",
@@ -61,17 +69,17 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T14",
+      "T08",
       "lastVerifiedCommitHash",
-      "f92715ff93c988f9a15439ad9bec60ef4c5d",
       "lastVerifiedCommitDate",
-      "T00",
+      "T13",
       "RAM",
       "L23",
       "T20",
       "T07",
       "EFA",
       "L24",
+      "T14",
       "T12",
       "T02"
     ]

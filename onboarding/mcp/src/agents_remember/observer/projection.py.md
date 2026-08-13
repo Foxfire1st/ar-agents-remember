@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -66,7 +66,16 @@ No cross-repository implementation dependency governs this file.
 The observer exposes resolved admission facts to operations; it does not compare
 branches or synthesize recovery locally.
 
+## L23 Lifecycle Model Package Review
+
+Observer projection now imports `LifecycleOperationProjection` from
+`models.lifecycles.operation`. Engine-process composition and the task-derived source-lineage
+projection remain unchanged; this is an ownership-only model move.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: reviewed the lifecycle projection import move and recorded
+  its no-impact boundary; final provenance remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: recorded source-lineage evidence on Engine Process nodes; verification remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.

@@ -1,18 +1,18 @@
-# mcp/src/agents_remember/models/lifecycle_operation.py
+# mcp/src/agents_remember/models/lifecycles/operation.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/models/lifecycle_operation.py` |
+| path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
-| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
+| lastUpdated | 2026-08-13T08:40+02:00 |
+| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[models overview](overview.md)
+[lifecycles overview](overview.md)
 
 ## Purpose
 
@@ -50,8 +50,8 @@ No external Domain Documentation source is configured for these internal wire mo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The input and record models capture immutable approval and recovery identity. | `CloseoutOperationInput`; `LifecycleOperationRecord` | mcp/src/agents_remember/models/lifecycle_operation.py:37-106 |
-| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycle_operation.py:108-123 |
+| The input and record models capture immutable approval and recovery identity. | `CloseoutOperationInput`; `LifecycleOperationRecord` | mcp/src/agents_remember/models/lifecycles/operation.py:37-106 |
+| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:108-123 |
 
 ## Cross-Repo References
 
@@ -59,8 +59,10 @@ No cross-repository vocabulary is defined here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycle_operation.py:45-123 |
+| Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:45-123 |
 
 ## Update History
+
+- 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved the preserved asynchronous-operation vocabulary card into the cohesive `models/lifecycles/` package and rebound its governing overview and citations; behavior is unchanged. Verification metadata remains closeout-owned.
 
 - 2026-08-12T15:19+02:00 — Created for L23 asynchronous lifecycle operation records and projections; verification provenance remains closeout-owned.

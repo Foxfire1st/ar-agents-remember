@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Hangar.test.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T02:30+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-13T12:26+02:00                           |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ A local `enclosure(partial)` factory builds a full `EnclosureNode` from a minima
 overrides, defaulting `cleanup: "pending"` **and** `codeWorktreeExists: true` / `memoryWorktreeExists:
 true` (a live worktree), so a case only overrides the existence flags (and cleanup label) to mark a row
 gone. `afterEach` runs `cleanup()` and `dashboardStore.getState().reset()` so cases don't leak state.
-Four cases:
+Five cases:
 
 1. **Existence-only filter** — seeds a live enclosure, a memory-only one (`codeWorktreeExists: false`,
    `memoryWorktreeExists: true` — either side admits), and completed + abandoned ones with both flags
@@ -43,6 +43,8 @@ Four cases:
    again: existence, not the cleanup label, re-admits the row.
 4. **Empty state** — every enclosure's worktrees physically gone → zero rows and the
    `/no live persistent worktrees/i` text.
+5. **Durable current command** — a running closeout operation renders its projected
+   `currentCommand` in the compact lifecycle badge and preserves that complete value in `title`.
 
 ### Invariants And Boundaries
 
@@ -50,6 +52,8 @@ Render + store state only; no backend, no gate posting, no WebSocket. The test t
 as display-only: it seeds enclosure contracts and asserts they are *hidden*, never that they are deleted.
 The existence flags themselves are server-stat'ed truth owned by the observer/projection layer
 (`snapshots._enclosure_from_contract`); the tests only assert the client filters on them.
+The command case is likewise projection/render coverage only: it seeds the already-durable
+operation field and proves visibility, not execution or operation-state mutation.
 
 ## Repo-Internal References
 
@@ -61,6 +65,10 @@ The existence flags themselves are server-stat'ed truth owned by the observer/pr
 | The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. | `EnclosureNode` | dashboard/src/types/projection.ts:133-150 |
 
 ## Update History
+
+- 2026-08-13T12:26+02:00 — L23 live-progress clarification: added the focused running-operation
+  regression that proves `currentCommand` appears in badge text and remains available as the full
+  title value. Verification provenance remains closeout-owned.
 
 - 2026-08-03T02:31:31+02:00 — W3-B05 curator: anchored 4 Tier-2 table citations with exact source paths; fixer generated all ranges.
 

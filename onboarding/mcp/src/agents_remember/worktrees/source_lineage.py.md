@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/source_lineage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T20:10+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-13T09:27+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -42,12 +42,23 @@ recoveries by contract path. Recovery arguments are dry-run by default, so the
 projection guides a deliberate parent-first repair rather than silently moving
 branches.
 
+Repository equality is Git identity, not checkout-path equality. `_repository_identity` asks each
+checkout for its absolute `--git-common-dir` through the guarded kernel Git runner and resolves that
+path before comparison. A parent contract may therefore point at one linked worktree while a leaf
+contract points at a sibling worktree of the same repository; a missing/non-directory checkout or
+failed/empty Git result remains unavailable rather than being guessed equal.
+
 `parent_source_lineage` is the narrower pre-mutation guard used by leaf reopen
 and start: it proves the master already contains the super before leaf state is
 rewritten. `lineage_refusal` maps blocked and unprovable projections to the
 published refusal vocabulary, and `lineage_block_payload` gives worktree entry
 points one consistent blocked payload with the projected evidence and first
 sync operation.
+
+`require_current_source_lineage` is the lifecycle-boundary guard for closeout and integration. It
+recomputes the full task-derived chain and raises a status-bearing refusal for stale or unavailable
+lineage. Its summary now says task-bound work cannot continue, because admission applies both when
+a seat begins and again before an irreversible lifecycle edge.
 
 ## Invariants And Boundaries
 
@@ -61,6 +72,8 @@ sync operation.
   memory is external; disabled/internal memory does not invent such an edge.
 - Recovery points at the contract whose descendant branch must be synchronized,
   and never performs the synchronization during admission.
+- Linked worktrees are the same repository only when Git reports the same resolved common
+  directory; their distinct checkout paths are not repository identities.
 
 ## Repo-Internal References
 
@@ -69,10 +82,18 @@ sync operation.
 | Canonical task altitude selects the correct contract and missing-edge relation. | `source_lineage_for_task` | mcp/src/agents_remember/worktrees/source_lineage.py:40-64 |
 | Leaf pre-mutation admission proves the parent series edge. | `parent_source_lineage` | mcp/src/agents_remember/worktrees/source_lineage.py:67-79 |
 | Contract admission composes the complete series or transitive leaf projection. | `source_lineage_for_contract` | mcp/src/agents_remember/worktrees/source_lineage.py:82-95 |
-| Refusal and blocked-payload helpers publish one recovery shape. | `lineage_refusal`; `lineage_block_payload` | mcp/src/agents_remember/worktrees/source_lineage.py:98-130 |
+| The generic lifecycle guard refuses a stale or unavailable transitive chain. | `require_current_source_lineage` | mcp/src/agents_remember/worktrees/source_lineage.py:113-126 |
+| Refusal and blocked-payload helpers publish one recovery shape. | `lineage_refusal`; `lineage_block_payload` | mcp/src/agents_remember/worktrees/source_lineage.py:98-140 |
 | Linked-edge validation prevents a leaf from naming an unrelated parent source. | `_linked_edge` | mcp/src/agents_remember/worktrees/source_lineage.py:220-237 |
+| Repository equality resolves Git's shared common directory so sibling worktrees compare as one repository. | `_same_repo`; `_repository_identity` | mcp/src/agents_remember/worktrees/source_lineage.py:255-269 |
 | Git facts become strict edge states and ordered sync recoveries. | `_edge`; `_projection` | mcp/src/agents_remember/worktrees/source_lineage.py:244-312 |
 
 ## Update History
+
+- 2026-08-13T09:27+02:00 — L23 curator: replaced checkout-path identity in the documented lineage
+  boundary with Git's resolved absolute common-directory identity, preserving fail-closed behavior
+  for absent or unresolvable repositories. Verification metadata remains closeout-owned.
+
+- 2026-08-13T08:40+02:00 — L23 integration-gate repair: generalized the lineage summary beyond seat admission and documented the reusable full-chain guard now enforced at closeout/integration preflight and their last reversible boundary. Verification metadata remains closeout-owned.
 
 - 2026-08-12T20:10+02:00 — 260731-EFA-L23 curator: created for task-derived, transitive code/external-memory source-lineage admission. Verification remains pinned to the leaf base until closeout assigns the dirty source a real commit identity.

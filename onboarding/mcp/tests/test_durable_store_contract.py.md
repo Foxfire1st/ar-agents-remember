@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_durable_store_contract.py`   |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-10T18:31+02:00                       |
-| lastVerifiedCommitHash |                                              `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |                                              2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |                                              `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate |                                              2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -222,7 +222,16 @@ the `fcntl` boundary rather than reached across a repository or system boundary.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## L23 Runtime Package Review
+
+The suite now imports startup through `application.runtime.startup`, matching the production
+composition-root move. Its durable-store ownership, fail-closed startup, and validation assertions
+are unchanged.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: recorded the startup import move and confirmed the tested
+  durable-store contract is unchanged; final provenance remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T19:57:55+02:00 — Closeout citation review: retained the shared-write-boundary claim

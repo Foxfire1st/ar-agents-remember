@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -140,7 +140,16 @@ classifies code/external-memory edges without asking agents to carry commit or
 runtime ids, and both status summaries and operation responses can expose the
 same ordered, contract-addressed `worktree_sync` recovery evidence.
 
+## L23 Lifecycle Model Package Review
+
+Worktree response models now import `LifecycleOperationProjection` from
+`models.lifecycles.operation`. The worktree vocabulary and strict source-lineage wire projection
+remain owned here and are unchanged by the import move.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: recorded the operation-projection package move and confirmed
+  the worktree wire contract is unchanged; final provenance remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented the strict transitive source-lineage projection and its contract-addressed recovery boundary; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

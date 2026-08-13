@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:54+02:00     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -170,14 +170,14 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:25-25 |
 | `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:181-181 |
-| Integration creates the scratch memory integration branch name that cleanup may remove. | "def integration_branch" | mcp/src/agents_remember/worktrees/modules/integrate.py:101-101 |
+| Integration creates the scratch memory integration branch name that cleanup may remove. | "def integration_branch" | mcp/src/agents_remember/worktrees/modules/integrate.py:106-106 |
 | Provider teardown is delegated to this module. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
 | `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:303-335 |
 | The carryover guard, work-branch cleanup, source-branch preservation, remote work-branch deletion, and dry-run directory-plan reporting are pinned here. | `CleanupCarryoverGuardTests` | mcp/tests/test_cleanup_carryover.py:181-197 |
 | Shared drift snapshot removal helper used by cleanup. | `remove_drift_snapshot` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:27-35 |
 | `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, the remote timeout class `_remote_git` passes. | `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:72-72 |
 | `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. | `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
-| Worktree tests cover cleanup preconditions and completed cleanup state. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |
+| Worktree tests cover cleanup preconditions and completed cleanup state. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:671-746 |
 | Cleanup tests prove both real and dry-run removal of the enclosure's exact curator reports directory. | `test_cleanup_removes_child_branches_and_preserves_parent_sources`; `test_worktree_group_would_remove_when_only_scheduled_paths_remain` | mcp/tests/test_cleanup_carryover.py:285-368; mcp/tests/test_cleanup_carryover.py:436-482 |
 
 ## Update History

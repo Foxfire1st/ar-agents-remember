@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/lifecycle.py`   |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`         |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`         |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -70,7 +70,7 @@ state before the next AR tool call resumes the lifecycle to `running`.
 | The `coerce_phase` boundary validator. | `coerce_phase` | mcp/src/agents_remember/observer/lifecycle_state.py:149-153 |
 | The choke point each builder returns through. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
 | Source of `FRONT_HALF_RUNDOWN`, emitted as `frontHalfRundown` on `lifecycle_start`. | `FRONT_HALF_RUNDOWN` | mcp/src/agents_remember/application/next_step.py:57-69; mcp/src/agents_remember/application/lifecycle_tools.py:41-41 |
-| The response models these payloads validate against. | `LifecycleResponse` | mcp/src/agents_remember/models/lifecycle.py:30-35 |
+| The response models these payloads validate against. | `LifecycleResponse` | mcp/src/agents_remember/models/lifecycles/responses.py:30-35 |
 | Where these lifecycle signal tools (now including `lifecycle_turn_end_notification`) are declared — `register_lifecycle_tools`, which takes the config unused because these payloads act on the ambient lifecycle. | `register_lifecycle_tools` | mcp/src/agents_remember/mcp/registration/lifecycle.py:18-59 |
 | The design's signal surface (§1.3). | `### 1.3 Signals (the complete model-facing surface)` | docs/design/observable-lifecycle.md:71-88 |
 

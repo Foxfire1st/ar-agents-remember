@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/lifecycle_operation_worker.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,16 @@ No meaningful cross-repository boundary is owned here.
 | --- | --- | --- |
 | The process operates only on the contract-resolved repository and memory worktrees. | `execute_operation` | mcp/src/agents_remember/application/lifecycle_operation_worker.py:216-249 |
 
+## L23 Lifecycle Model Package Review
+
+The worker now imports its operation inputs, projections, and policy snapshots from
+`models.lifecycles.operation`. This is the sole package owner after the model move; record lookup,
+service binding, execution, and recovery behavior are unchanged.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: reviewed the lifecycle-model package move and recorded its
+  exact import boundary; no worker behavior changed and final provenance remains closeout-owned.
 
 - 2026-08-12T16:52+02:00 — 260731-EFA-L23 packaged-worker repair: recorded that the detached CLI
   composition root builds and binds default worktree services before running the task-addressed

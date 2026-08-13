@@ -7,7 +7,7 @@
 | Code base | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
 | Committed code | `ec0e69f6` |
 | Memory base | `ea799e9b9b0c873b699b3f07e4d77d91c3deb382` |
-| Final checklist | `ready-for-closeout` at `2026-08-12T21:12:32+00:00` |
+| Final checklist | `ready-for-closeout` at `2026-08-13T11:12:52+00:00` |
 
 ## Source intake and coverage
 
@@ -509,3 +509,215 @@ indexes unchanged. The final full contract-scoped checklist returned
 zero missing onboarding, zero stale indexes, zero closeout-owned provenance
 findings, and zero noteworthy findings. Its only four rows are the explicitly
 dispositioned reconciliation candidates above.
+
+### Master integration-gate and pre-curator lineage follow-up
+
+The final L23 repair wave began from the contract-scoped deterministic
+checklist with 70 repairable findings, eight missing sidecars, four stale route
+indexes, and 41 dirty-source reconciliation candidates. The curator followed
+the source moves rather than preserving duplicate compatibility cards:
+
+- the three application runtime cards moved into
+  `application/runtime/{install,skills,startup}.py.md`, with a new package-init
+  card and governing runtime overview;
+- the three lifecycle model cards moved into
+  `models/lifecycles/{responses,finalize,operation}.py.md`, with a new
+  package-init card and governing lifecycles overview;
+- the new exact curator-brief source received its one-to-one card, and the
+  lifecycle, roles, application, models, registration, worktree-module, and
+  test route overviews were reconciled to their current children.
+
+The substantive body review records the final implementation boundaries:
+clean-quality report promotion uses the shared atomic-replace primitive;
+closeout registration and result construction are split into cohesive helpers;
+strict quality-plan validation is isolated; and lifecycle response, finalizer,
+and operation vocabularies now live under the dedicated models package. The
+original three Dagger failures are reported fixed. Owner-provided verification
+for the stable wave is 27 focused tests plus four subtests, with Pyright and
+Ruff clean; this memory-only follow-up did not rerun or reinterpret code gates.
+
+Source Lineage now records the complete enforcement boundary. Canonical task
+identity proves all transitive super-to-master and master-to-leaf ancestry at
+start/resume, immediately before manager curator dispatch, at closeout and
+integration preflight, after their potentially long quality work, and again
+immediately before approval claim or source merge. Integration pins the exact
+code and memory source tips across the gate and refuses a moved source with a
+retry and no ref movement. The canonical and mirrored manager doctrine,
+curator brief, source-lineage source/card, closeout/integration cards, focused
+tests, governing route overviews, and Source Lineage entity were reconciled to
+that single fail-closed model. The entity fingerprint deliberately remains a
+closeout-owned committed-source recomputation; no dirty-worktree fingerprint
+or future provenance was fabricated.
+
+The official/master memory root correctly refused the leaf-only automatic
+`citation_fix` mutation. The curator therefore re-read exact current anchors
+and applied the source-backed citation repairs manually, then used sanctioned
+non-mutating citation checks as the deterministic proof. Claim/provenance
+findings and range-resolution findings both reached zero. Sanctioned route
+index refresh first repaired the eight routes made stale by structural moves,
+then repaired the final two new-package indexes after the last overview edits.
+
+The authoritative full contract-scoped checklist returned
+`ready-for-closeout` at `2026-08-13T07:02:05+00:00`:
+
+| Class | Count | Disposition |
+| --- | ---: | --- |
+| Repairable memory findings | 0 | Cleared from 70 |
+| Missing onboarding | 0 | Cleared from 8 |
+| Stale route indexes | 0 | Cleared from 4 |
+| Real-commit provenance findings | 0 | None fabricated |
+| Noteworthy report-only findings | 0 | None |
+| Source-change reconciliation candidates | 55 | Exact cards, governing routes, tests, and material entity facts reviewed; final stamps remain closeout-owned |
+| Full quality finding count | 55 | Dirty-source context only |
+
+The increase from 41 to 55 reconciliation-only rows reflects the final stable
+code wave and its route/entity projections, not new repair debt. The generated
+checklist is the exhaustive path-level inventory. Every remaining row is a
+dirty-source candidate against code HEAD
+`1580f92715ff93c988f9a15439ad9bec60ef4c5d`; none contributes to
+`curatorActionableCount`, `memoryRepairCount`, missing onboarding, stale index,
+provenance, or noteworthy counts. Governed closeout owns the real verification
+hash/date, entity fingerprint, memory commit, and ledger mapping.
+
+#### Closeout body-review completion
+
+The subsequent non-mutating closeout preview applied its stricter transported-change classifier
+and named 18 stale sidecars, eight stale governing/ancestor routes, and three untraced routes. The
+curator re-read every exact source delta. Sixteen of the sidecars record import-only ownership moves
+into `application.runtime` or `models.lifecycles`; their behavior and regression assertions remain
+unchanged. The packaged manager and curator-brief sidecars substantively record the pre-curator
+current-lineage projection and fail-before-host dispatch recheck. All 18 now carry source-backed
+body review plus newest-first history.
+
+The eight stale routes received substantive current-contract sections rather than history-only
+markers: MCP root, registration, MCP tools, observer, worktree modules, MCP tests, repository root,
+and lifecycle roles. The three untraced routes were proven exact no-impact cases: the current code
+delta changes no source under dashboard panels, benchmark runner modules, or control plane. The
+sanctioned route refresh rewrote the one roles index made stale by that final body change.
+
+After this wave, the authoritative full checklist again returned `ready-for-closeout` at
+`2026-08-13T07:07:49+00:00`: actionable, memory-repair, missing-onboarding, stale-index,
+closeout-owned provenance, and noteworthy counts are zero; 55 dirty-source candidates remain for
+governed stamping. The final non-mutating closeout preview reports sidecar stale/untraced
+`0/0`, route stale/untraced/stamped-without-review `0/0/0`, `state=would-closeout`, current source
+lineage, and all 60 generated route indexes unchanged/current.
+
+### Fresh-leaf git-common-dir follow-up
+
+The previously curated L23 memory delta was replayed unchanged into the fresh leaf memory worktree
+on current master ancestry. The leaf-scoped deterministic checklist then reported exactly one
+curator-actionable row: the divergence test citation had shifted from `246-257` to `269-280` after
+the new sibling-worktree regression was inserted. Missing onboarding, stale indexes, provenance,
+and noteworthy counts were already zero.
+
+The final source-lineage repair replaces literal checkout-path equality with Git repository
+identity. `_repository_identity` calls the guarded Git runner for the resolved absolute
+`--git-common-dir`; `_same_repo` accepts two contract paths only when those identities exist and
+match. This preserves fail-closed behavior for absent/non-repository/failed Git evidence while
+allowing a parent contract and leaf contract to name sibling linked worktrees of the same
+repository. `test_parent_and_leaf_paths_may_be_sibling_worktrees_of_one_repository` proves that
+with a real detached worktree and a complete current projection. The exact source card, regression
+card, worktree/test route bodies, and Source Lineage entity now record that boundary. Ruff's import
+ordering change in `test_spawn_agent_session.py` has no semantic memory impact beyond the already
+curated stale-super all-leaf-role coverage.
+
+Sanctioned leaf-scoped citation preview scanned all 1,574 onboarding documents and returned zero
+failing, repaired, declined, or remaining claims on source snapshot
+`0bbbf12de8857be85bf3ade75dd50bba71a8962457ff2aa2e234d00355d48ae2`.
+Route-index preview found all 60 indexes current. The final authoritative checklist returned
+`ready-for-closeout` at `2026-08-13T07:31:20+00:00`: actionable, memory-repair,
+missing-onboarding, stale-index, closeout-owned provenance, and noteworthy counts are all zero.
+Its 47 remaining findings are reconciliation-only dirty-source candidates for governed closeout
+stamping.
+
+The final non-mutating closeout preview reports `state=would-closeout`, sidecar stale/untraced
+`0/0`, route stale/untraced/stamped-without-review `0/0/0`, missing/unsupported/unonboarded
+`0/0/0`, and all 60 route indexes unchanged/current. The live MCP still projects both
+master-to-leaf edges as unavailable because that deployed process runs the pre-repair literal-
+checkout-path implementation; those two sibling-worktree false negatives are the defect this
+candidate fixes. A read-only invocation through the candidate worktree code resolves the same
+contract to `state=current` across all four code/external-memory edges (super-to-master and
+master-to-leaf, each `ahead=0, behind=0` on the leaf edges). Closeout must therefore use the
+restarted candidate MCP, or repeat preview after that restart, rather than treating the old live
+projection as a contract-data failure.
+
+### Ruff fast-tier import-order follow-up
+
+The closeout fast tier safely refused before any commit when the repository-wide Ruff pass exposed
+inherited I001 import ordering in four tests. The implementation owner applied Ruff's mechanical
+import sorter to exactly `mcp/tests/_store_durability.py`,
+`mcp/tests/test_terminal_opener.py`,
+`mcp/tests/test_wire_vocabulary_exhaustiveness.py`, and
+`mcp/tests/test_judgment_demolition.py`; the resulting full 977-file Ruff run is owner-reported
+green. Source review confirmed that these deltas only reposition the `agents_remember` package
+import among existing imports. They do not change imported objects, executable statements,
+fixtures, adapters, scenarios, assertions, or the contracts those tests prove.
+
+The first deterministic leaf-scoped checklist found 32 repairable citation-range rows and no
+missing onboarding, stale indexes, provenance findings, or noteworthy findings. One duplicated
+worklist row meant those 32 rows represented 31 distinct claims. Sanctioned `citation_fix` repaired
+all 31 claims across six documents with zero declines and zero residual findings. Four exact source
+cards received newest-first no-content-impact history; no broad route or entity prose was changed
+for this formatting-only wave.
+
+The final authoritative checklist returned `ready-for-closeout` at
+`2026-08-13T10:01:20+00:00`: actionable, memory-repair, missing-onboarding, stale-index,
+closeout-owned provenance, and noteworthy counts are all zero. Its 61 remaining rows are
+reconciliation-only dirty-source candidates for governed closeout stamping. Route-index preview
+found all 60 indexes current. The non-mutating closeout preview reports `state=would-closeout`,
+current transitive source lineage, sidecar stale/untraced `0/0`, route
+stale/untraced/stamped-without-review `0/0/0`, and missing/unsupported/unonboarded `0/0/0`.
+
+### Final structural, lineage, and full-Dagger reconciliation
+
+The final stabilized source keeps the structural rail intact rather than exempting oversized
+modules. External-memory closeout quality lives in the new strict one-to-one
+`worktrees/modules/closeout_memory_quality.py` sidecar; `closeout.py` retains orchestration and the
+preflight position. Closeout registrations use `_tools` registrar names, lifecycle/runtime modules
+remain moved into their dedicated packages, and the Hangar renders the durable
+`currentCommand` through responsive single-line ellipsis plus a full-value title. The unimplemented
+future Chats terminal/split-view preference in the task document was deliberately excluded from
+current-state onboarding.
+
+The source-lineage cards and test route now agree on the final fail-closed model: repository
+identity is the resolved absolute Git common directory; real super-to-master fixtures are required;
+master-source movement after leaf closeout yields `source-lineage-stale` and
+`sync_source_lineage` for both non-overlapping and conflicting changes; and integration-time replay
+cannot bypass admission. Closeout and integration recheck transitive lineage around long-running
+quality work and pin source tips before approval claim or source merge. The extracted memory replay
+helper remains exhaustively unit-tested as an internal operation after successful admission.
+
+The final full-gate repair added test-only proof for the static helper preflight, provider command
+runner stdin/timeout branches, Docker inspect command/JSON/shape branches, and every relevant
+closeout/integration movement or memory-replay helper branch. The harness IPC duplicate-submit
+case retains strict single-flight ordering while increasing only its outer synchronization timeout
+from one to five seconds to tolerate loaded xdist scheduling. Five package-root-sensitive tests use
+the already-loaded `sys.modules["agents_remember"].__file__`; no Ruff classification exception or
+compatibility configuration was retained.
+
+The first full Dagger run surfaced one one-second IPC scheduling flake and three low-branch helper
+coverage gaps. The corrected run used the actual L23 base
+`1580f92715ff93c988f9a15439ad9bec60ef4c5d` instead of an empty-tree comparison and passed:
+5,815 tests passed, 32 skipped in 180.55 seconds; CRAP checked 14,550 functions and passed; diff
+coverage passed at 100% across 42 changed Python files and 415 measurable statements/branches; the
+full wrapper exited zero. The real read-only Codex probe also passed without mounting credentials
+or the container socket.
+
+The final sanctioned citation apply repaired seven mechanically shifted claims across three
+documents after the helper tests landed. A semantic follow-up replaced one ambiguous extracted
+helper citation with exact declaration anchors. The closing citation preview scanned 1,575
+documents with zero failing, declined, or remaining claims. All 60 route indexes are current.
+
+The authoritative checklist returned `ready-for-closeout` at
+`2026-08-13T11:12:52+00:00`: repairable memory, missing onboarding, stale indexes, real-commit
+provenance, and noteworthy counts are all zero. Its 73 remaining rows are reconciliation-only
+dirty-source candidates: the exact changed sidecars, governing routes, lifecycle doctrine mirrors,
+tests, and material entity facts were reviewed in this pass and the preceding transferred L23
+waves; governed closeout owns their committed verification stamps and entity fingerprint.
+
+The closing non-mutating closeout preview returned `state=would-closeout` with current transitive
+lineage across all four code/memory edges. It found 52 required sidecar refreshes with missing,
+unsupported, and unonboarded counts `0/0/0`; sidecar stale/untraced counts `0/0`; route
+stale/untraced/stamped-without-review counts `0/0/0`; six supported entity fingerprint refreshes;
+and all 60 route indexes unchanged/current. The preview did not stage, commit, claim approval, or
+change lifecycle state.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_seat_lifecycle.py`            |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-08-11T20:28+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -131,7 +131,16 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## L23 Lifecycle Model Package Review
+
+The suite imports `IntegrateOperationInput` from `models.lifecycles.operation`, its dedicated
+package owner. Structural-seat retirement, landing, and integration lifecycle assertions are
+unchanged.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: recorded the integration-input import move and confirmed the
+  seat-lifecycle regression contract is unchanged; final provenance remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

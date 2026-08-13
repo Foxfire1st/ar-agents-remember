@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_judgment_demolition.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-09T12:08+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastUpdated | 2026-08-13T12:53+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -98,6 +98,20 @@ No meaningful cross-repo references found.
 | Same-repository unit-test suite only. | — | — |
 
 ## Update History
+
+- 2026-08-13T12:53+02:00 — No content impact: the stabilized package-source scan reads
+  `sys.modules["agents_remember"].__file__` after existing submodule imports have loaded the
+  package. No bare/direct package import or Ruff configuration exception remains; demolition
+  behavior is unchanged. This supersedes the 12:26 import-shape note; provenance stays closeout-owned.
+
+- 2026-08-13T12:26+02:00 — No content impact: the final Ruff-safe form imports
+  `agents_remember.__file__` directly as `agents_remember_file` for the unchanged package-source
+  scan. Demolition scenarios, constants, fixtures, and assertions are unchanged; verification
+  provenance remains closeout-owned.
+
+- 2026-08-13T11:57+02:00 — No content impact: Ruff I001 moved the `agents_remember` import below
+  the control-plane, serving, task, and test-support imports. Constants, fixtures, demolition
+  scenarios, and assertions are unchanged; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_judgment_demolition.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: created this sidecar for the new forcing

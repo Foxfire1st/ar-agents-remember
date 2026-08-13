@@ -1,22 +1,22 @@
-# mcp/src/agents_remember/application/runtime_install.py
+# mcp/src/agents_remember/application/runtime/install.py
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/application/runtime_install.py` |
+| path                   | `mcp/src/agents_remember/application/runtime/install.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `../../../overview.md`                     |
+| lastUpdated            | 2026-08-13T08:40+02:00                     |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| governingOverview      | `overview.md`                              |
 
 ## Governing Overview
 
-[overview.md](../../../overview.md)
+[runtime overview](overview.md)
 
 ## Purpose
 
-`runtime_install.py` is the thin application layer for the MCP
+`runtime/install.py` is the thin application layer for the MCP
 `runtime_install` operation.
 
 ## Code Commentary
@@ -27,9 +27,9 @@
 `dry_run`, `include_benchmarks`, `install_provider_deps` (default `True`), and
 `no_cache` (default `False`). It does not accept host paths or provider path overrides.
 
-Since 260731-EFA-L2 the dataclass is **defined in `agents_remember.install.runtime`** and this
-module re-exports it (`__all__ = ["RuntimeInstallRequest", "run_runtime_install"]`) so existing
-imports from `application.runtime_install` keep working. `run_runtime_install(config, request)` is
+The dataclass is **defined in `agents_remember.install.runtime`** and this
+module re-exports it (`__all__ = ["RuntimeInstallRequest", "run_runtime_install"]`) for its
+runtime application surface. `run_runtime_install(config, request)` is
 now a one-line delegation — `install_runtime_from_config(config, request)` — because the service
 takes the request object itself rather than four unpacked keywords. The application entry point therefore no
 longer restates the flag list, which is what used to make the two definitions drift.
@@ -53,6 +53,8 @@ longer restates the flag list, which is what used to make the two definitions dr
 | The service layer defines `RuntimeInstallRequest` and performs the actual runtime install. | `RuntimeInstallRequest` | mcp/src/agents_remember/install/runtime.py:105-119 |
 
 ## Update History
+
+- 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved the preserved card with the pure source move into the cohesive `application/runtime/` package, rebound it to the new governing overview, and removed the obsolete flat-module import claim. Verification metadata remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

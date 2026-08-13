@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-08T02:00+02:00                                       |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                   |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T12:26+02:00                                       |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`                   |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -38,6 +38,14 @@ unchanged.
 `register_closeout_tools(server, config)` declares the **landing half** of a worktree-backed task:
 `worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`,
 `worktree_abandon`.
+
+The public registration entry delegates to three cohesive helpers:
+`_register_closeout_command_tools` for preview/apply,
+`_register_integration_command_tools` for integration/cancellation, and
+`_register_reclamation_command_tools` for cleanup/abandonment. The `_tools` suffix is deliberate:
+the structural exemption remains attributable only to tool declarations and registrar functions,
+not arbitrary helpers. The split changes registration structure only; tool names, signatures, and
+payload owners remain unchanged.
 
 ## Code Commentary
 
@@ -101,6 +109,8 @@ The three destructive tools forward flat:
   would over-claim for a wrapper-less checkout, which runs neither the gate nor its two refusals.
   Keep the wrapper condition, the staging/reset explanation and the two refusals in the text
   whenever the behaviour behind them changes.
+- Keep internal registrar helper names ending in `_tools`; the suffix is part of the narrow
+  structural-rule attribution for this declaration-only route.
 
 ## Repo-Internal References
 
@@ -115,6 +125,13 @@ The three destructive tools forward flat:
 | The staged-gate behaviour the rewritten descriptions promise. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:350-456 |
 
 ## Update History
+
+- 2026-08-13T12:26+02:00 — L23 structural-rail repair: recorded the exact three internal registrar
+  names and their `_tools` suffix, which keeps the registration exemption constrained to tool
+  declarations/registrars. Public tool names, schemas, descriptions, and payload owners are
+  unchanged; verification provenance remains closeout-owned.
+
+- 2026-08-13T08:40+02:00 — L23 integration-gate repair: recorded the three cohesive registration groups while preserving the one public registration entry point and tool contracts. Verification metadata remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: aligned the MCP

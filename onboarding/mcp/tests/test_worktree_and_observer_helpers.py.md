@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_and_observer_helpers.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-12T23:27+02:00                             |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`         |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`         |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -82,7 +82,7 @@ deciding anything.
 | The start-contract helper under test is `_parent_series_contract`. | "def _parent_series_contract" | mcp/src/agents_remember/worktrees/modules/start_contract.py:117-117 |
 | The task-resolver helpers under test are `archive_completed_root_task` and `series_contract_path`. | "def archive_completed_root_task"; "def series_contract_path" | mcp/src/agents_remember/worktrees/task_resolver.py:47-47; mcp/src/agents_remember/worktrees/task_resolver.py:147-147 |
 | The observer helpers under test: `_inspect_containers` and `_inspect_containers_individually`. Both modules import `run_command`/`docker_command` at module level, so the tests patch `snapshots.run_command` and `provider_teardown.run_command` separately — patching one does not cover the other. | `_inspect_containers`; `_inspect_containers_individually` | mcp/src/agents_remember/serving/projections/snapshots.py:353-375; mcp/src/agents_remember/serving/projections/snapshots.py:378-401 |
-| The lifecycle suites whose happy paths these arms complete. | `WorktreeSupportTests`; `ContractMemoryModeTests` | mcp/tests/test_worktree_edge_paths.py:95-164; mcp/tests/test_worktree_support.py:539-614 |
+| The lifecycle suites whose happy paths these arms complete. | `WorktreeSupportTests`; `ContractMemoryModeTests` | mcp/tests/test_worktree_edge_paths.py:120-189; mcp/tests/test_worktree_support.py:671-746 |
 
 ## Update History
 - 2026-08-12T23:27+02:00 — 260731-EFA-L23 Dagger diff-coverage follow-up: added the external-overview boundary case. A source-matched route outside the supplied memory Git tree remains required, while absence of comparable memory revision evidence yields no false body-review classification. The owner reports the focused test passing, exact four-branch coverage restored, and exact-file Ruff clean. Verification remains closeout-owned.

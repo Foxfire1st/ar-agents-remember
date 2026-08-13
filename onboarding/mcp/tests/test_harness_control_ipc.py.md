@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_harness_control_ipc.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`                                        |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -21,10 +21,16 @@ Part of the 260731-EFA-L7 in-place split family for `test_harness_control_ipc.py
 ## Code Commentary
 
 - `HarnessControlIpcTests`
+- The duplicate-submit synchronization case waits up to five seconds for both the first submit to
+  enter the adapter and the duplicate request to return. The adapter remains explicitly blocked
+  until the duplicate result is observed, so the larger test-only margin removes loaded-xdist
+  scheduling sensitivity without weakening the single-flight assertion.
 
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/tests/test_harness_control_ipc.py`.
+- IPC duplicate-submit semantics remain deterministic: the duplicate must be rejected before the
+  held first submit is released; the five-second value is only an outer failure timeout.
 
 ## Repo-Internal References
 
@@ -33,6 +39,10 @@ Part of the 260731-EFA-L7 in-place split family for `test_harness_control_ipc.py
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-13T13:08+02:00 — L23 full-Dagger stability repair: documented the duplicate-submit
+  test's five-second synchronization margin; ordering and production IPC behavior are unchanged.
+  Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

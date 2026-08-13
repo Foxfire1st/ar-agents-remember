@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -128,7 +128,15 @@ The closeout-description regression loads the real MCP server and asserts both p
 mandatory CRAP enforcement. Preview must say it runs before the code commit; apply must say it runs
 before any code mutation and that approval precedes apply.
 
+## L23 Runtime Package Review
+
+The suite imports `RuntimeInstallRequest` from `application.runtime.install`, matching the runtime
+package extraction. Runtime-install payload and tool-adapter assertions are unchanged.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: reviewed the runtime-install import move and confirmed the
+  tool regression contract is unchanged; final provenance remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -333,7 +333,19 @@ only who runs the pass.
 
 The MCP tool callers were rewritten by the L9 caller wave to import the responsibility-owning homes (`models/conversations/`, `kernel/primitives/`, `serving/ports.py`, `models/terminal_catalog.py`). Tool behavior and payloads are unchanged.
 
+## L23 Package-Following Payload Imports
+
+Core payload builders import runtime installation and skill installation from
+`application.runtime`, while worktree payload builders import integration strategy from
+`models.lifecycles.operation`. These are package-ownership moves only: payload validation,
+task-document addressing, and transport-thin forwarding remain the route contract.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 route review: `core.py` follows runtime install/skills into the
+  `application.runtime` package and `worktree.py` follows integration DTOs into
+  `models.lifecycles.operation`. Payload-builder behavior and the public tool surface are
+  unchanged; final provenance remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: added task-addressed lifecycle payload composition and the sanctioned citation-fix memory payload; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the tool layer with structural

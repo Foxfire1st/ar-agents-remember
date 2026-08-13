@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -211,9 +211,9 @@ No external Domain Documentation source is configured for this memory repo.
 | The six persisted contract vocabularies (declared in models/worktree.py / kernel) imported for `WorktreeStatusFacts`. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/worktree_contract.py:19-19 |
 | `unknown_cells` is the source of `unknown_contract_cells`. | `unknown_cells` | mcp/src/agents_remember/worktrees/worktree_contract.py:285-285 |
 | Three of the five `recovery_guidance` callers: the blocked memory, provider-setup and stale-base starts. | "choose_memory_recovery"; "choose_provider_setup_recovery"; "choose_stale_base_recovery" | mcp/src/agents_remember/worktrees/modules/start.py:138-138; mcp/src/agents_remember/worktrees/modules/start.py:194-194; mcp/src/agents_remember/worktrees/modules/start.py:373-373 |
-| The fourth: the closeout preview's `request_commit_approval` gate. | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/closeout.py:406-406 |
+| The fourth: the closeout preview's `request_commit_approval` gate. | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/closeout.py:411-411 |
 | The fifth: `_memory_sync_block`'s `choose_memory_sync_recovery`. | "def _memory_sync_block("; "choose_memory_sync_recovery" | mcp/src/agents_remember/worktrees/modules/sync.py:149-149; mcp/src/agents_remember/worktrees/modules/sync.py:165-165 |
-| The two named exhaustiveness tests are defined in this module. |"def test_every_contract_literal_validates_at_its_wire_field(self) -> None:"; "def test_a_live_contract_projects_onto_the_wire_model(self) -> None:"|mcp/tests/test_wire_vocabulary_exhaustiveness.py:636-636; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:422-422|
+| The two named exhaustiveness tests are defined in this module. |"def test_every_contract_literal_validates_at_its_wire_field(self) -> None:"; "def test_a_live_contract_projects_onto_the_wire_model(self) -> None:"|mcp/tests/test_wire_vocabulary_exhaustiveness.py:635-635; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:422-422|
 
 ## Invariants And Boundaries
 
