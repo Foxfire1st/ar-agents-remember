@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`                                  |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastUpdated            | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df`                                  |
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 
 ## Purpose
 
@@ -51,15 +51,16 @@ No sibling repository evidence is needed for this doctrine file.
 
 ### 260731-EFA-L17 — Change-Set-Scoped Leaf Checks
 
-The worker-brief template's Checks section now replaces the "Full:" line with the leaf
-change-set-scoped contract (source lines 55-60): `PYTHONPATH=<code-worktree>/mcp/src
-<venv-python-path> -m agents_remember.code_quality.check --targeted` with
-`AR_GATE_DIFF_BASE=<leaf base>` — must exit 0. The FULL wrapper is NOT a leaf check (quality
-altitude ladder, 260731-EFA-L17/L24): it runs once per master at the master integration gate
-with host-managed RAM/swap by default; `memory_quality_check` stays a per-leaf closeout gate.
+The worker brief's Checks section makes the pinned Dagger graph the Agents Remember acceptance
+boundary. Leaf work selects targeted mode and supplies its explicit leaf diff base; full mode is
+not a worker check and runs once at master integration. Direct host pytest/wrapper commands remain
+diagnostics, never acceptance or fallback. `memory_quality_check` stays a per-leaf closeout gate.
 
 ## Update History
 
+- 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized Dagger-only targeted leaf
+  acceptance, the required explicit diff base, master-owned full mode, and diagnostic-only host
+  commands. Verification remains closeout-owned.
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
   worker brief's host-managed master-gate default while preserving literal
   pytest `-n=auto` and targeted leaf checks.

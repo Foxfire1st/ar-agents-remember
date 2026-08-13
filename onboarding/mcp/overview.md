@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df`
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -38,10 +38,13 @@ and swap by default. `orchestration.qualityGate.memoryCapBytes` is absent unless
 an operator deliberately configures a constrained-environment hard cap; an
 explicit systemd cap applies `MemoryMax` without disabling host swap.
 
-L23 adds a settings-selected Dagger executor beside the local executor, not as a fallback. It
-materializes the exact candidate tree and required Git ancestry into a pinned clean Ubuntu image,
-streams progress while the graph runs, and atomically replaces the enclosure's latest reports.
-Local/clean selection is explicit; a failed clean run never drops to host execution. The same
+L23 makes the pinned Dagger graph the only Agents Remember acceptance environment. It materializes
+the exact candidate tree and required Git ancestry into a clean Ubuntu image, streams progress,
+and atomically replaces the enclosure's latest reports. Leaf/focused acceptance selects targeted
+mode; master integration selects full mode once. Both require an explicit nonblank diff base, and
+the Dagger function exposes source, bundle, base, mode, and cap through generated `Annotated`/`Doc`
+help. Host pytest and direct wrapper execution remain useful diagnostics, but never substitute for
+acceptance and never receive an automatic fallback from a failed Dagger run. The same
 slice adds durable asynchronous closeout/integration operations whose public address is the task
 contract plus operation kind. Private operation keys, worker PIDs, approval fingerprints, and
 candidate-tree identities remain plane-owned recovery state.
@@ -805,6 +808,11 @@ boundaries. The MCP transport remains a thin registration/forwarding layer over 
 model, and worktree owners.
 
 ## Update History
+
+- 2026-08-13T14:32+02:00 — L23 final quality-contract review: recorded Dagger-only Agents Remember
+  acceptance, targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff
+  base, generated function help, and host execution's diagnostic-only status. Verification remains
+  closeout-owned.
 
 - 2026-08-13T12:26+02:00 — No route impact: L23 extracted closeout's existing external-memory
   quality-phase mechanics into a sibling worktree module, renamed internal registrar helpers, and

@@ -7,7 +7,7 @@
 | Code base | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
 | Committed code | `ec0e69f6` |
 | Memory base | `ea799e9b9b0c873b699b3f07e4d77d91c3deb382` |
-| Final checklist | `ready-for-closeout` at `2026-08-13T11:12:52+00:00` |
+| Final checklist | `ready-for-closeout` at `2026-08-13T12:41:17+00:00` |
 
 ## Source intake and coverage
 
@@ -721,3 +721,43 @@ unsupported, and unonboarded counts `0/0/0`; sidecar stale/untraced counts `0/0`
 stale/untraced/stamped-without-review counts `0/0/0`; six supported entity fingerprint refreshes;
 and all 60 route indexes unchanged/current. The preview did not stage, commit, claim approval, or
 change lifecycle state.
+
+### Final Dagger function and acceptance-contract pass
+
+The final deterministic checklist opened with 12 curator-actionable findings: 11 shifted citation
+ranges plus one reopened `code_quality_gate.py.md` claim; missing onboarding and stale indexes were
+both zero. Seventeen dirty-source reconciliation candidates covered the public README, MCP and test
+routes, exact packaged lifecycle/brief/guideline cards, the two quality tests, root and canonical
+lifecycle overviews, and two entity candidates. The source registry remained empty, so current
+source, tests, task intent, and focused Dagger evidence were the direct evidence set.
+
+The sanctioned citation repair cleared all 12 actionable findings without a decline. Semantic
+reconciliation then recorded the final public contract: Agents Remember acceptance runs only in
+the pinned Dagger graph; leaf/focused work selects targeted mode, master integration selects full
+mode exactly once, both require the task-derived explicit diff base, and generated
+`Annotated`/`Doc` help is the executable source/bundle/base/mode/cap contract. Host pytest and
+direct wrapper commands remain diagnostics and never replace or receive fallback from Dagger
+acceptance. The pytest-inert `__main__`/`unittest.main()` footer removal in
+`test_source_lineage.py` was reviewed as no semantic test change. The focused clean proof reported
+26/26 tests using 20 workers, Ruff/format/layering/Pyright/CRAP PASS, 7/7 changed coverage lines,
+and generated-help verification.
+
+Seat Landing Archive and Source Lineage were explicitly reviewed as no-content-impact candidates:
+the quality-environment instructions change neither identity nor lineage semantics. Final
+verification stamps and entity fingerprints remain governed-closeout-owned; no dirty source was
+given fabricated commit provenance.
+
+The authoritative rerun returned `ready-for-closeout` at `2026-08-13T12:41:17+00:00` with
+repairable memory, missing onboarding, stale indexes, closeout-owned provenance, and noteworthy
+counts all `0`; the remaining 17 rows are fully dispositioned dirty-source candidates. Citation
+preview scanned 1,575 documents with zero failing, declined, repaired, or remaining claims.
+Route-index refresh changed only the two lifecycle indexes affected by this pass; the closing
+preview reports all 60 indexes current.
+
+The closing non-mutating closeout preview returned `state=would-closeout`, current lineage across
+all four code/external-memory edges, 10 required exact sidecar metadata refreshes with
+missing/unsupported/unonboarded `0/0/0`, sidecar stale/untraced `0/0`, route
+stale/untraced/stamped-without-review `0/0/0`, and two supported entity fingerprint refreshes. The
+preview selected Dagger targeted mode with explicit base
+`a09b906bbf2855c3479b4d3199607ff8689b7d93`. It did not stage, commit, claim approval, or mutate
+lifecycle state.

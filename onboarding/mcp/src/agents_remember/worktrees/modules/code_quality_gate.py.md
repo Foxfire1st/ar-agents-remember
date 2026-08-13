@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T08:40+02:00 |
-| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
+| lastUpdated | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash |  `b2de030c1b52f02a4543619d23ccd8e44ecac6df`|
+| lastVerifiedCommitDate |  2026-08-13T14:51:34+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -244,7 +244,7 @@ coverage, and CRAP checks.
 | The one git runner this module calls, and the scrubber `quality_environment` builds from: `run_git` and `git_environment` both drop `GIT_REPOSITORY_SELECTOR_ENV`, and `run_git` carries the local/remote/metadata timeout classes. | `run_git`, `git_environment` | mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | `test_the_closeout_gate_resolves_the_common_dir_of_the_worktree_it_was_given` points `GIT_DIR` at a decoy repository and proves `_git_common_dir` still answers for the worktree it was handed. | `test_the_closeout_gate_resolves_the_common_dir_of_the_worktree_it_was_given` | mcp/tests/test_git_command.py:410-433 |
 | `SingleRunnerTests` sweeps the package's AST and fails if any module spawns `git` itself or defines a second runner. | `SingleRunnerTests` | mcp/tests/test_git_command.py:393-465 |
-| The contributor documentation states the same three-state contract for consuming repositories. | `### Closeout` | CONTRIBUTING.md:238-245 |
+| The contributor documentation states the same three-state contract for consuming repositories. | `### Closeout` | CONTRIBUTING.md:264-273 |
 
 ## Cross-Repo References
 
@@ -263,7 +263,20 @@ routing ephemeral subprocess scratch to `/tmp/arq`. This separation preserves
 operator-visible evidence and avoids the 103-byte Unix-socket address limit in
 deep worktree/report paths.
 
+## L23 Acceptance Interpretation
+
+This module still owns the local wrapper plan and runner used for diagnostics and generic lifecycle
+plumbing, but Agents Remember acceptance selects the pinned Dagger executor. Leaf/focused gates run
+targeted mode and master integration runs full mode once; both require the exact task-derived diff
+base. Host pytest or direct wrapper output cannot be promoted to acceptance evidence, and a failed
+Dagger gate never falls back to this host path. Generated Dagger help is the executable public
+argument contract.
+
 ## Update History
+- 2026-08-13T14:32+02:00 — L23 final curator pass: re-read the reopened CONTRIBUTING claim and
+  recorded that this host runner remains diagnostic/generic plumbing while Agents Remember
+  acceptance is Dagger-only with explicit diff-base and no fallback. Verification remains
+  closeout-owned.
 - 2026-08-13T08:40+02:00 — L23 integration-gate repair: documented the extracted strict plan validator and preserved the fail-closed no-fallback executor boundary. Verification metadata remains closeout-owned.
 
 - 2026-08-12T20:10+02:00 — L23 curator: documented durable-report versus short-scratch ownership; verification remains closeout-owned.

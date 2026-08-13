@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T14:32+02:00                     |
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 
 ## Purpose
 
@@ -15,7 +15,11 @@ This file is the coding-guidelines starter for a memory layer.
 
 ## Code Commentary
 
-L23 adds clean-quality guidance for native POSIX subprocesses, enclosure-owned self-overwriting reports, configured pytest parallelism, and the single pinned Dagger Ubuntu graph with no local-container fallback.
+L23 adds clean-quality guidance for native POSIX subprocesses, enclosure-owned self-overwriting
+reports, configured pytest parallelism, and the single pinned Dagger Ubuntu graph. For Agents
+Remember, Dagger is the only acceptance environment: targeted leaf/focused runs and one full
+master-integration run both use an explicit diff base. Host pytest/wrapper runs are diagnostic
+only, and a failed Dagger run never falls back locally.
 
 ### Logic
 
@@ -58,6 +62,9 @@ No sibling repository evidence is needed.
 
 ## Update History
 
+- 2026-08-13T14:32+02:00 — L23 final curator pass: recorded the starter guideline's Dagger-only
+  acceptance, targeted/full altitude, mandatory explicit base, and diagnostic-only host boundary.
+  Verification remains closeout-owned.
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact

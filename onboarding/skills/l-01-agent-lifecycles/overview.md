@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 
 ## Purpose
 
@@ -28,9 +28,10 @@ independent verdict evidence, curators reconcile system intent and memory, manag
 delegated leaf gates and integrate a master, and orchestrators govern master handovers. Mechanical
 fact relay replaces role-local polling and inference.
 
-The quality altitude ladder keeps leaf checks targeted and runs the full
-wrapper once at master integration. That full run preserves pytest `-n=auto`
-and host-managed RAM/swap by default; a hard cap is an explicit constrained-CI
+The quality altitude ladder uses the pinned Dagger graph for Agents Remember acceptance. Leaf and
+focused work selects targeted mode; master integration selects full mode exactly once. Both
+require the task-derived explicit diff base. Host pytest/wrapper runs are diagnostics only and a
+failed Dagger graph never falls back to them; a hard cap remains an explicit constrained-CI
 setting rather than role-local judgment.
 
 A curator completes only after the current-additions missing-onboarding check and full leaf-scoped
@@ -76,6 +77,9 @@ full chain. Refusal creates no child and recovery is contract-addressed, keeping
 commit/session identity inside the control plane.
 
 ## Update History
+- 2026-08-13T14:32+02:00 — L23 final route review: synchronized Dagger-only acceptance,
+  targeted/full altitude, explicit diff-base ownership, and diagnostic-only host execution across
+  canonical lifecycle doctrine. Verification remains closeout-owned.
 - 2026-08-13T08:47+02:00 — L23 integration-gate repair: added the manager-owned pre-curator lineage gate, brief-carried projection, and pre-host dispatch recheck to canonical lifecycle doctrine. Verification metadata remains closeout-owned.
 
 - 2026-08-12T20:20+02:00 — L23 curator: documented canonical pre-dispatch lineage policy; verification remains closeout-owned.

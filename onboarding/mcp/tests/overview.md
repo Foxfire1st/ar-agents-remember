@@ -9,8 +9,8 @@ Total output lines: 1813
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df`|
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1055,8 +1055,21 @@ outer synchronization timeout so heavily parallel full-suite scheduling does not
 one-second false failure. Full change-set comparison must use the leaf's real `1580f927…` base,
 not the empty tree.
 
+The final public Dagger contract requires a nonblank explicit diff base for both `quality` and
+`verify`, forwards it on every targeted or full run, and publishes generated help for source,
+bundle, base, mode, and cap. Agents Remember acceptance is Dagger-only: leaf/focused work uses
+targeted mode and master integration runs full mode once; host pytest or wrapper runs are
+diagnostics. The source-lineage suite's pytest-inert script launcher was removed without changing
+collection or assertions, eliminating dead launcher lines from changed-coverage accounting. The
+focused proof ran 26 tests with 20 workers and passed Ruff, formatting, layering, Pyright, CRAP,
+and 7/7 changed-line coverage; generated help was verified.
+
 ## Update History
 
+- 2026-08-13T14:32+02:00 — L23 final test-route review: recorded mandatory explicit Dagger diff
+  base and generated help, Dagger-only acceptance altitude, diagnostic-only host execution, the
+  pytest-inert lineage-launcher deletion, and the focused 26-test/7-line green proof. Verification
+  remains closeout-owned.
 - 2026-08-13T13:08+02:00 — L23 full-Dagger follow-up: recorded exhaustive coverage for three
   low-branch helpers, the IPC test-only wait-margin correction, and the requirement to run the full
   comparison against the real leaf base. Verification remains closeout-owned.

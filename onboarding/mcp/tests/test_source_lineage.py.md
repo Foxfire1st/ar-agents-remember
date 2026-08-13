@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_source_lineage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T12:53+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,6 +58,9 @@ current transitive chain and raises operation-specific sync guidance after the s
   branch moves and names the parent-first `worktree_sync` recovery.
 - Parent and leaf contracts may name sibling worktrees of one repository without producing a false
   unavailable lineage edge.
+- The suite is collected by pytest only. It has no `__main__`/`unittest.main()` script launcher;
+  removing that pytest-inert footer changes no test semantics and prevents dead launcher lines
+  from appearing as uncovered acceptance delta.
 
 ## Repo-Internal References
 
@@ -74,6 +77,10 @@ current transitive chain and raises operation-specific sync guidance after the s
 
 ## Update History
 
+- 2026-08-13T14:32+02:00 — No content impact: removed the pytest-inert
+  `__main__`/`unittest.main()` footer. Pytest collection and every lineage assertion are unchanged;
+  the deletion only clears dead script-launcher lines from changed-coverage accounting. Final
+  provenance remains closeout-owned.
 - 2026-08-13T12:53+02:00 — L23 Dagger-rail coverage: added absent/non-Git repository-identity
   cases and direct lifecycle-boundary proof that the full transitive chain is required and a moved
   super raises sync guidance. Verification provenance remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastUpdated            | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -71,17 +71,17 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 
 ### 260731-EFA-L17 — Quality Altitude Ladder
 
-The orchestrator role file gains a **Quality altitude ladder (260731-EFA-L17)** paragraph
-(source lines 325-331): the full quality wrapper is owned by the master integration gate
-— `worktree_integrate` on a master/series contract runs it exactly once, inside the
-integration step with host-managed RAM/swap by default; constrained CI may opt
-into `orchestration.qualityGate.memoryCapBytes`; leaf closeouts and leaf integrations run only the
-change-set-scoped contract (`--targeted`); `memory_quality_check` stays a per-leaf closeout
-gate; and orchestrators must not run a separate full wrapper per leaf — that is the waste
-the ladder removes.
+The orchestrator's quality altitude uses the pinned Dagger graph for Agents Remember acceptance.
+Leaf/focused work selects targeted mode; `worktree_integrate` selects full mode exactly once at
+master altitude. Both require the explicit task-derived diff base, and host pytest/wrapper runs
+remain diagnostics rather than acceptance or fallback. `memory_quality_check` stays a per-leaf
+closeout gate; orchestrators do not run a separate full graph per leaf.
 
 ## Update History
 
+- 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized Dagger-only acceptance,
+  targeted/full altitude, explicit diff-base ownership, and diagnostic-only host execution.
+  Verification remains closeout-owned.
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
   canonical orchestrator quality-altitude rule with host-managed master memory
   and an optional constrained-environment cap.

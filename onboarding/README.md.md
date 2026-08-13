@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-12T22:04+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -124,9 +124,9 @@ The README routes readers into the split documentation tree and gives the curren
 | The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. | `## Documentation` | README.md:178-191 |
 | The `## Run The Dashboard` section: unpinned `uv tool install` first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, pinning as the debugging path, and the rc-period pre-release note. | `## Run The Dashboard`; "autoStart" | README.md:138-177 |
 | The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. | `## Repository Layout` | README.md:192-272 |
-| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | `## Status` | README.md:297-302 |
-| The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | `## Stability` | README.md:303-306 |
-| The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | `## Contributing` | README.md:307-311 |
+| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | `## Status` | README.md:303-308 |
+| The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | `## Stability` | README.md:309-312 |
+| The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | `## Contributing` | README.md:313-317 |
 | The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. | `# Agents Remember Documentation` | docs/README.md:1-65 |
 | `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. | `# Memory your coding agent can trust` | docs/features.md:1-478 |
 
@@ -149,9 +149,9 @@ states:
 - **pre-commit** runs the fast tier over the **staged** content: the generated-copy checks
   (`sync-skills.py --check`, `sync-runtime.py --check`, **`sync-harness.py --check`**), plus
   Ruff, **`ruff format --check`**, and Pyright.
-- **pre-push** runs the targeted tier: `python -m agents_remember.code_quality.check --targeted`
-  (260731-EFA-L17), scoped to the leaf's change set — changed files, reverse-import closure,
-  derived test subset — with the configured CRAP threshold over the changed modules.
+- **pre-push** runs the targeted tier, scoped to the leaf's change set — changed files,
+  reverse-import closure, derived test subset — with the configured CRAP threshold over the
+  changed modules.
 - **"No rail carries a baseline or exemption list"** — the README states this outright. The
   complexity baseline that existed for one day inside this leaf is deleted, and the README
   never shipped a description of it.
@@ -161,10 +161,14 @@ states:
 **Known gap in the source file:** the README's targeted-tier sentence does not name the
 changed-lines coverage floor, which is the wrapper's last and binding step. `CONTRIBUTING.md`
 carries it; the README does not.
-- **CI** runs that same wrapper on **every branch push and every pull request**, not only `main`.
-- **The full wrapper also runs exactly once per master at the master integration gate**,
-  invoked by `worktree_integrate` itself with host-managed RAM/swap by default
-  (`orchestration.qualityGate.memoryCapBytes`) — the L17 move that retired per-leaf full runs.
+- **Agents Remember acceptance runs through the pinned Dagger graph only.** Leaf and focused
+  work use its targeted mode; the master integration gate runs its full mode exactly once. Both
+  require the leaf/master's explicit Git diff base, and `dagger call quality --help` is the
+  executable public argument contract.
+- Host `pytest` and direct wrapper invocations are diagnostics, never substitute acceptance
+  evidence. A failed Dagger run never falls back to the host.
+- **CI** runs that same Dagger graph on **every branch push and every pull request**, not only
+  `main`.
 - **Closeout and leaf integration** run the targeted tier before creating a code commit even when
   hooks are not configured.
 - The tier table and the staged-content stash contract live in `CONTRIBUTING.md`; the README links
@@ -197,6 +201,10 @@ across the two hooks was retiered by 260731-EFA-L1, and the *step list* was corr
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-13T14:32+02:00 — L23 final curator pass: replaced the obsolete host-wrapper acceptance
+  wording with the public Dagger-only contract: targeted leaf/focused runs, one full master
+  integration run, mandatory explicit diff base, generated help as the argument contract, and
+  host pytest/wrapper execution as diagnostics only. Verification remains closeout-owned.
 - 2026-08-12T22:04+02:00 — 260731-EFA-L23 post-code curator: reconciled the committed `3.0.0rc7` reproducibility pins and Status identity. This is a release-identity update only; dashboard installation, daemon, auto-start, and prerelease guidance remain unchanged. Final verification stamping remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
