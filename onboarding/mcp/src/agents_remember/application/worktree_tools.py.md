@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -187,7 +187,16 @@ Ambient lifecycle attribution now occurs only when the worktree result is
 actually `attached`. A source-lineage refusal can therefore return its blocked
 evidence without being recorded as a successful attachment.
 
+## L23 Lifecycle Model Package Review
+
+The worktree application facade now imports lifecycle operation DTOs and policy snapshots from
+`models.lifecycles.operation`. The facade's task-addressed arguments, attribution guard, and calls
+into closeout/integration/finalization remain unchanged by that ownership move.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: reviewed and recorded the lifecycle-operation package import
+  move; application behavior is unchanged and final provenance remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented the state-qualified attach attribution boundary; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

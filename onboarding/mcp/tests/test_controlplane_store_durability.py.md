@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |                                                    `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |                                                    2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |                                                    `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate |                                                    2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -153,7 +153,7 @@ passes on a loaded CI box and proves nothing. The stress case is kept alongside 
 it is the one that produces a *rate* and carries the number in its failure text through
 cit:([`_describe`], mcp/tests/test_controlplane_store_durability.py:78-91). **Tier 3 — the
 historical `reclaim_ticks` name is absent from the current instrument:** `run_stress` now returns
-`reclaim_attempts` and `successful_reclaims` (cit:([`reclaim_attempts`, `successful_reclaims`], mcp/tests/_store_durability.py:976-977)). The old name is preserved here for developer review rather than guessed into a replacement; the failure text still states how much racing the rate was measured over.
+`reclaim_attempts` and `successful_reclaims` (cit:([`reclaim_attempts`, `successful_reclaims`], mcp/tests/_store_durability.py:975-976)). The old name is preserved here for developer review rather than guessed into a replacement; the failure text still states how much racing the rate was measured over.
 
 **One seeded survivor plus one torn line, built by the adapters — and the torn line is not always
 last.** `_TempRootTest._tear` (cit:([`_tear`], mcp/tests/test_controlplane_store_durability.py:103-105)) is now a one-call wrapper over cit:([`_tear_mid_log`], mcp/tests/test_controlplane_store_durability.py:104-120),
@@ -225,7 +225,7 @@ shared instrument; the rows below are the code each claim is about.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The measurement harness this file imports: adapters, case lists, the shared stress profile, and the scenario dispatch. | `ADAPTERS`; `CASES`; `APPEND_CASES`; `STRESS_PROFILE`; `run_case` | mcp/tests/_store_durability.py:592-597; mcp/tests/_store_durability.py:1088-1095; mcp/tests/_store_durability.py:1099-1109 |
+| The measurement harness this file imports: adapters, case lists, the shared stress profile, and the scenario dispatch. | `ADAPTERS`; `CASES`; `APPEND_CASES`; `STRESS_PROFILE`; `run_case` | mcp/tests/_store_durability.py:588-590; mcp/tests/_store_durability.py:594-594; mcp/tests/_store_durability.py:596-596; mcp/tests/_store_durability.py:1094-1101; mcp/tests/_store_durability.py:1105-1109 |
 | The bounded sibling helper owns the base-commit archive and pinned re-execution; both functions remain re-exported by the harness. | `extract_base_commit_tree`; `run_against_source` | mcp/tests/_store_durability_source.py:79-105; mcp/tests/_store_durability_source.py:108-132 |
 | The vacuity guard `HarnessVacuityGuardTests` exercises the sibling work directory holding each run's stop flag. | `harness_work_dir` | mcp/tests/_store_durability.py:853-880 |
 | The vacuity guard's evidence-based floor. | `MIN_SUCCESSFUL_RECLAIMS` | mcp/tests/_durability_measurement.py:11-11 |

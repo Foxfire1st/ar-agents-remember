@@ -10,6 +10,11 @@
   ],
   "childRoutes": [
     {
+      "route": "mcp/src/agents_remember/application/runtime",
+      "overview": "mcp/src/agents_remember/application/runtime/overview.md",
+      "index": "mcp/src/agents_remember/application/runtime/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/application/structural",
       "overview": "mcp/src/agents_remember/application/structural/overview.md",
       "index": "mcp/src/agents_remember/application/structural/overview.index.json"
@@ -32,9 +37,6 @@
     "mcp/src/agents_remember/application/provider_runtime.py",
     "mcp/src/agents_remember/application/provider_tools.py",
     "mcp/src/agents_remember/application/read_files.py",
-    "mcp/src/agents_remember/application/runtime_install.py",
-    "mcp/src/agents_remember/application/server_startup.py",
-    "mcp/src/agents_remember/application/skill_tools.py",
     "mcp/src/agents_remember/application/task_doc_tools.py",
     "mcp/src/agents_remember/application/task_ref.py",
     "mcp/src/agents_remember/application/terminal_spawn_results.py",
@@ -45,9 +47,9 @@
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 30,
-    "fileSidecars": 27,
-    "childRoutes": 1
+    "sourceFilesInScope": 31,
+    "fileSidecars": 24,
+    "childRoutes": 2
   },
   "routingTerms": [
     "agents",
@@ -71,7 +73,6 @@
     "inbox",
     "init",
     "init__",
-    "install",
     "lifecycle",
     "lifecycle_operation_worker",
     "lifecycle_tools",
@@ -97,15 +98,9 @@
     "response",
     "results",
     "runtime",
-    "runtime_install",
-    "server",
-    "server_startup",
     "services",
-    "skill",
-    "skill_tools",
     "spawn",
     "src",
-    "startup",
     "status",
     "step",
     "structural",
@@ -125,9 +120,10 @@
     "worktree_tools"
   ],
   "hotPath": {
-    "summary": "For 260731-EFA-L21, `server_startup.py` is the trusted MCP declaration boundary: it declares MCP execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker entry paths make the corresponding dashboard declaration in their CLI route. Undeclared linked worktree entry paths therefore cannot inherit the deployed coordination root. The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover; `gate_tools.py...",
+    "summary": "For 260731-EFA-L21, `runtime/startup.py` is the trusted MCP declaration boundary: it declares MCP execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker entry paths make the corresponding dashboard declaration in their CLI route. Undeclared linked worktree entry paths therefore cannot inherit the deployed coordination root. The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover; `gate_tools.p...",
     "candidateHints": [
       "mcp/src/agents_remember/application",
+      "mcp/src/agents_remember/application/runtime",
       "mcp/src/agents_remember/application/structural",
       "mcp/src/agents_remember/application/__init__.py",
       "mcp/src/agents_remember/application/benchmark_tools.py",
@@ -145,12 +141,11 @@
       "mcp/src/agents_remember/application/provider_runtime.py",
       "mcp/src/agents_remember/application/provider_tools.py",
       "mcp/src/agents_remember/application/read_files.py",
-      "mcp/src/agents_remember/application/runtime_install.py",
-      "mcp/src/agents_remember/application/server_startup.py",
-      "mcp/src/agents_remember/application/skill_tools.py",
       "mcp/src/agents_remember/application/task_doc_tools.py",
       "mcp/src/agents_remember/application/task_ref.py",
-      "mcp/src/agents_remember/application/terminal_spawn_results.py"
+      "mcp/src/agents_remember/application/terminal_spawn_results.py",
+      "mcp/src/agents_remember/application/terminal_tools.py",
+      "mcp/src/agents_remember/application/tool_response.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -185,12 +180,6 @@
       "provider_tools",
       "read_files.py",
       "read_files",
-      "runtime_install.py",
-      "runtime_install",
-      "server_startup.py",
-      "server_startup",
-      "skill_tools.py",
-      "skill_tools",
       "task_doc_tools.py",
       "task_doc_tools",
       "task_ref.py",
@@ -200,7 +189,13 @@
       "terminal_tools.py",
       "terminal_tools",
       "tool_response.py",
-      "tool_response"
+      "tool_response",
+      "worktree_services.py",
+      "worktree_services",
+      "worktree_status.py",
+      "worktree_status",
+      "worktree_tools.py",
+      "worktree_tools"
     ]
   },
   "fallback": {

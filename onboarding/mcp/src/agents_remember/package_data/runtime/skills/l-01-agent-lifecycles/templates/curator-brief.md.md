@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -50,6 +50,14 @@ remain closeout-owned.
 - Enforced citation/content/shape/history/entity/index findings cannot be reclassified as closeout debt.
 - Only real-commit-derived metadata and expected dirty-source drift remain for governed closeout.
 
+## L23 Dispatch Lineage Evidence
+
+The brief now carries the manager's immediately preceding `worktree_status.sourceLineage`
+projection and requires `state=current` for every applicable super-to-master and master-to-leaf
+code/external-memory edge. That projection is evidence, not caller-supplied commit authority;
+`dispatch_agent` repeats the task-derived proof and refuses before process creation if lineage
+moves between preflight and dispatch.
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
@@ -61,6 +69,9 @@ remain closeout-owned.
 | Synchronization replaces package targets and checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: recorded the current-lineage brief field and the independent
+  fail-before-host dispatch proof; final provenance remains closeout-owned.
 
 - 2026-08-11T16:54+02:00 — Synchronized the exact single-report intake and repeat-until-clean
   curator worklist contract.

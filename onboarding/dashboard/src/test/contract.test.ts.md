@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/contract.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T07:20+02:00                           |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -213,7 +213,7 @@ the Finding, where a pointer belongs.
 | The sanctioned narrowing the fixture enters through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
 | The hand-maintained oracle, composed to satisfy the coverage and vocabulary assertions above. | `lifecycles`; `metrics` | dashboard/src/fixtures/snapshot.json:4-4; dashboard/src/fixtures/snapshot.json:289-289 |
 | The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror. | `state_count_field`; `state_count_fields` | mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:257-279 |
-| The producer's typed lifecycle vocabularies. | "State = Literal[LiveState, TerminalState]"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycle.py:19-19; mcp/src/agents_remember/models/lifecycle.py:20-27 |
+| The producer's typed lifecycle vocabularies. | "State = Literal[LiveState, TerminalState]"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/models/lifecycles/responses.py:20-27 |
 | The producer's typed attention and process vocabularies. | `AttentionSeverity`; `AttentionLane`; `ProcessFactState`; `ProcessHealth` | mcp/src/agents_remember/observer/projection.py:38-45 |
 | The schema generator derives mirror tuples and rejects stale generated output. | `workspace_projection_schema`; `_vocabulary_block`; `stale_generated_files` | mcp/src/agents_remember/code_quality/projection_types.py:59-61; mcp/src/agents_remember/code_quality/projection_types.py:382-421; mcp/src/agents_remember/code_quality/projection_types.py:509-515 |
 | The two separate `extra="forbid"` sub-task models the inverted pins keep distinct, and the two section models that cannot be pinned. | `TaskSubTaskRefNode`; `TaskSectionNode`; `SeriesSubTaskNode`; `SeriesSectionNode` | mcp/src/agents_remember/observer/projection.py:583-600; mcp/src/agents_remember/observer/projection.py:603-613; mcp/src/agents_remember/observer/projection.py:665-680; mcp/src/agents_remember/observer/projection.py:683-690 |

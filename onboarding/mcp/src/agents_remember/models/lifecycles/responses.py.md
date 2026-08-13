@@ -1,14 +1,18 @@
-# mcp/src/agents_remember/models/lifecycle.py
+# mcp/src/agents_remember/models/lifecycles/responses.py
 
 | Field                  | Value                                          |
 | ---------------------- | ---------------------------------------------- |
 | repository             | agents-remember                                |
-| path                   | `mcp/src/agents_remember/models/lifecycle.py`  |
+| path                   | `mcp/src/agents_remember/models/lifecycles/responses.py`  |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`     |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T08:40+02:00                      |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`     |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                  |
+
+## Governing Overview
+
+[lifecycles overview](overview.md)
 
 ## Purpose
 
@@ -19,8 +23,9 @@ deliberately distinct from the persisted `observer.Event` record.
 ## Code Commentary
 
 `LifecycleResponse(ToolResponse)` is the shared shape: `lifecycleId`, `state`,
-and `phase`, where `state`/`phase` reuse the observer's `State`/`Phase` Literals
-so the response is as drift-proof as the event envelope. Subclasses:
+and `phase`. This module owns the shared `LiveState`, `EndOutcome`, `TerminalState`, `State`, and
+`Phase` vocabularies; observer lifecycle state imports them rather than redeclaring the wire sets.
+Subclasses:
 `LifecycleStartResponse` and `SwitchLifecycleResponse` add `fleeting`, and
 `LifecycleStartResponse` additionally carries an optional
 `frontHalfRundown: list[str] | None = None` (task 27) — the one-time, non-linear
@@ -49,21 +54,23 @@ registered in `TOOL_RESPONSE_MODELS` and inherit `extra="forbid"`.
   non-flexible registered model forbids extra fields.
 - Not an `observer.Event`: these carry the token envelope and are MCP responses;
   the `Event` record carries no token fields and is never returned by a tool.
-- `state`/`phase` import the observer Literals rather than redeclaring strings, so
-  the response and the lifecycle state cannot drift apart.
+- `state`/`phase` are declared once here and imported by observer lifecycle state, so
+  the response and persisted lifecycle projection cannot drift apart.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `ToolResponse` strict envelope base (`ok`/`operation`/`tokens`). | "class ToolResponse(ResponseModel):" | mcp/src/agents_remember/models/base.py:66-66 |
-| The `State`/`Phase` Literals reused as response field types (declared here since L9). | "State = Literal[LiveState"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycle.py:19-19; mcp/src/agents_remember/models/lifecycle.py:20-20 |
+| The `State`/`Phase` Literals reused as response field types (declared here since L9). | "State = Literal[LiveState"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/models/lifecycles/responses.py:20-20 |
 | Where these models are registered against tool names. | "\"ping\": PingResponse"; "PUBLIC_TOOL_RESPONSE_MODELS: dict[str" | mcp/src/agents_remember/models/tool_registry.py:145-145; mcp/src/agents_remember/models/tool_registry.py:221-221 |
 | The builders that assemble payloads validated against these models; `lifecycle_start_payload` fills `frontHalfRundown`. | "def lifecycle_start_payload() -> dict[str" | mcp/src/agents_remember/mcp/tools/lifecycle.py:20-20 |
 | Owner of the `FRONT_HALF_RUNDOWN` list content emitted as `frontHalfRundown`. | "FRONT_HALF_RUNDOWN: list[str] = [" | mcp/src/agents_remember/application/next_step.py:57-57 |
 | The persisted-record peer these are deliberately *not*. | "class Event(BaseModel):"; "OBSERVER_EVENT_SCHEMA =" | mcp/src/agents_remember/observer/events.py:23-23; mcp/src/agents_remember/observer/events.py:39-39 |
 
 ## Update History
+- 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved the preserved response-model card into `models/lifecycles/`, made the local vocabulary ownership explicit, and rebound the package-local governing overview and citations. Verification metadata remains closeout-owned.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

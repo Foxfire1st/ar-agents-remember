@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-08-11T22:28+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T12:26+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -29,7 +29,9 @@ Dagger graph, streams progress, and replaces the enclosure's latest reports. `cl
 `integrate.py` pass operation progress and candidate identity through the existing synchronous
 mutation path; they do not own detached process identity. `git.py` captures and later rechecks the
 candidate with an isolated Git index so asynchronous delay cannot change what accepted approval
-authorizes.
+authorizes. `closeout_memory_quality.py` owns the external-memory phase runner, bounded refusal
+formatting, and pre/post result composition extracted from the closeout coordinator; the extraction
+preserves the same gate and ordering while keeping `closeout.py` below the 1,200-line rail.
 
 - `git.py` owns this route's Git vocabulary — the typed helpers and small repository
   state checks every operation module speaks — but **since 260731-EFA-L3 it no longer
@@ -316,7 +318,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:106-187 |
-| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |
+| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:671-746 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:491-499; mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:350-456 |
@@ -642,7 +644,39 @@ resuming context or mutating task/contract state. Status publishes the same
 projection and ordered `worktree_sync` contract path. Remote stale-base choice
 is a later policy and cannot override super-to-master-to-leaf admission.
 
+## L23 Long-Gate Source-Lineage Enforcement
+
+Closeout and integration prove the complete transitive source-lineage chain at preflight, recheck
+it after potentially long quality work, and check again immediately before approval claim or
+source merge. Integration also pins exact code and external-memory source tips across the gate;
+movement yields a retry without ref movement. Supporting cohesion changes route clean-quality
+report promotion through the atomic-replace primitive and isolate strict-plan and closeout-result
+construction without changing their enforcement authority.
+
+Repository linkage within that proof follows Git's resolved absolute common directory. Parent and
+leaf contracts may address sibling linked worktrees of the same repository; distinct checkout
+paths do not create a false repository mismatch, while missing or unresolvable Git identity still
+fails closed.
+
 ## Update History
+
+- 2026-08-13T12:26+02:00 — L23 structural-rail repair: added the new
+  `closeout_memory_quality.py` child and recorded its behavior-preserving ownership of quality-phase
+  execution, bounded failure evidence, and two-phase result combination. Closeout retains commit,
+  ledger, approval, lineage, and refresh ordering; verification provenance remains closeout-owned.
+
+- 2026-08-13T09:27+02:00 — L23 curator: recorded git-common-dir repository identity for lineage
+  edges, including sibling-worktree acceptance and fail-closed resolution. Verification provenance
+  remains closeout-owned.
+
+- 2026-08-13T09:05+02:00 — L23 integration-gate follow-up: closeout and integration now require
+  complete transitive source lineage at preflight, recheck after their long quality work, and check
+  again immediately before approval claim or merge. Integration pins exact code/memory source tips
+  across the gate and retries without ref movement when they move. The route also records atomic
+  clean-quality report promotion and the extracted strict-plan/closeout helper boundaries; final
+  provenance remains closeout-owned.
+- 2026-08-13T08:47+02:00 — L23 integration-gate repair: reconciled closeout/integration lineage rechecks, source-tip pinning across quality, extracted quality/result helpers, strict plan validation, and shared atomic report promotion. Verification metadata remains closeout-owned.
+
 
 - 2026-08-12T22:45+02:00 — L23 curator follow-up: refined the baseline-relative route gate so sanctioned final-cell citation-coordinate shifts do not require fabricated history; the normalization is deliberately narrow and metadata-only, prose, anchor, path, table-shape, and other untraced changes still refuse. Verification remains closeout-owned.
 - 2026-08-12T22:36+02:00 — No route impact: the final L23 pre-commit repair corrects `_route_overview_bucket`'s docstring to name its already-implemented typed evidence and citation-only behavior; the worktree module operating model documented above is unchanged. Verification remains closeout-owned.

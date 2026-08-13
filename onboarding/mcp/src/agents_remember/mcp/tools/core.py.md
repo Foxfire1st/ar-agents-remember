@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/core.py`    |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                      |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`                                      |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -58,7 +58,17 @@ flat copy, so there is no layout argument). `context_packet_payload` forwards
 `parent_task` and `leaf_id` locators now travel inside the `TaskRef` rather than as their own
 keyword arguments, through the same response-model validation path as the rest of the core payload.
 
+## L23 Runtime Package Review
+
+Core tool adapters now import runtime installation from `application.runtime.install` and skill
+installation from `application.runtime.skills`. Payload validation and transport-thin forwarding
+remain unchanged; the move removes the former flat application-module ownership.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: reviewed the two runtime import moves and recorded their
+  package ownership without claiming a tool-contract change; final provenance remains
+  closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

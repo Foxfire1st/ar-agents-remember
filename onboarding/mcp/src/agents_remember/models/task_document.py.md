@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/task_document.py`               |
 | doc_type               | `file-level-onboarding`                                        |
 | lastUpdated            | 2026-08-08T14:38+02:00                                         |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                     |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`                     |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                                  |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Response and task modules import the vocabulary from this module. | "from agents_remember.models.task_document import CompletionBlocker" | mcp/src/agents_remember/models/lifecycle_finalize.py:10-10; mcp/src/agents_remember/tasks/document.py:23-23 |
+| Response and task modules import the vocabulary from this module. | "from agents_remember.models.task_document import CompletionBlocker" | mcp/src/agents_remember/models/lifecycles/finalize.py:10-10; mcp/src/agents_remember/tasks/document.py:23-23 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -775,7 +775,19 @@ The observer carries validated source-lineage status into Engine Process nodes
 and maps blocked start progress to preflight. It remains an observation layer:
 branch comparison and recovery selection stay in worktree policy.
 
+## L23 Operation And Lineage Projection
+
+Observer projection consumes durable operation DTOs from `models.lifecycles.operation` and exposes
+the strict task-derived source-lineage projection on engine-process facts. The observer does not
+derive authority or Git ancestry itself: worktree status owns that proof, and this route remains
+the read-side projection of its result.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 route review: observer lifecycle projection follows the operation
+  DTO into `models.lifecycles.operation`; its engine-process projection continues to expose the
+  task-derived source-lineage state. Read-side semantics are unchanged by the import move; final
+  provenance remains closeout-owned.
 - 2026-08-12T20:20+02:00 — L23 curator: documented observer projection, not derivation, of source lineage; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: added the private-identity-free task lifecycle-operation projection boundary; verification provenance remains closeout-owned.
 

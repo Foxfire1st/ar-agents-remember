@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -75,7 +75,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The public facade re-exports this package for existing callers. | "def prepare_repo" | mcp/src/agents_remember/benchmarks/runner.py:28-28 |
-| MCP application entry points call the benchmark service entry points through the facade. | `skills_install_tool` | mcp/src/agents_remember/application/skill_tools.py:11-28 |
+| MCP application entry points call the benchmark service entry points through the facade. | `skills_install_tool` | mcp/src/agents_remember/application/runtime/skills.py:11-28 |
 | The shared seed resolvers refuse a benchmark-scoped target as defense-in-depth for the hermetic boundary. | `GrepaiSeedOptions` | mcp/src/agents_remember/providers/grepai/seed.py:30-35 |
 | Focused benchmark tests exercise facade compatibility, provider setup, MCP registration, Codex execution policy, repository prep, and skill exposure behavior. | `BenchmarkRunnerPortabilityTests` | mcp/tests/test_worktree_support_benchmark.py:32-665 |
 
@@ -100,6 +100,10 @@ intact.
 The benchmark runner callers were rewritten by the L9 caller wave: `McpRuntimeConfig` imports now come from `kernel/primitives/runtime_config.py` (the former `mcp/config.py` home) and tool-report/command-capture helpers from `kernel/primitives/`. Runner behavior and benchmark case handling are unchanged.
 
 ## Update History
+
+- 2026-08-13T09:05+02:00 — No route impact: L23's current source delta does not change any
+  `benchmarks/runner_modules/` source. The benchmark runner's existing containment and execution
+  model remains unchanged; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 

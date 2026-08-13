@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,16 @@ No sibling-repository protocol is exercised.
 | --- | --- | --- |
 | Temporary worktree contracts isolate each operation proof. | `_contract`; `_input` | mcp/tests/test_lifecycle_operations.py:52-106 |
 
+## L23 Lifecycle Model Package Review
+
+The suite imports closeout/integration operation inputs from `models.lifecycles.operation`, the
+dedicated model owner. Durable operation, installed-runtime selection, service binding, and
+non-daemon authority coverage are unchanged.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: reviewed the operation-model import move and confirmed the
+  tested lifecycle contract is unchanged; final provenance remains closeout-owned.
 
 - 2026-08-12T16:54+02:00 — 260731-EFA-L23 installed-runtime repair: extended detached-launch proof
   to preserve the installed runtime `PYTHONPATH` and exclude unpublished task-checkout source, paired

@@ -1,13 +1,13 @@
-# mcp/src/agents_remember/application/server_startup.py
+# mcp/src/agents_remember/application/runtime/startup.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/application/server_startup.py` |
+| path | `mcp/src/agents_remember/application/runtime/startup.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T10:20+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-13T08:40+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,13 +50,15 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP startup migrates its owned logs before ambient installation. | `initialize_mcp_application` | mcp/src/agents_remember/application/server_startup.py:20-28 |
+| MCP startup migrates its owned logs before ambient installation. | `initialize_mcp_application` | mcp/src/agents_remember/application/runtime/startup.py:20-28 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved this preserved startup card with its source into the cohesive `application/runtime/` package and rebound all current citations; startup behavior is unchanged. Verification metadata remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current application-layer card for `server_startup.py` with qualified seat resolution and terminal/session orchestration boundaries.
 - 2026-08-10T18:31+02:00 — 260731-EFA-L21: split out the idempotent pre-config MCP trust

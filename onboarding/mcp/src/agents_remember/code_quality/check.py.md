@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-11T23:56+02:00               |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -268,7 +268,7 @@ the report to a temporary directory unless `--coverage-json` is given.
 | The shared tiered hook body derives the same `git ls-files` scope; the pre-push tier delegates to the wrapper's targeted contract, while `full` stays the manual/master-gate tier. | "git ls-files -z -- '*.py'" | .githooks/_gate.sh:74-74 |
 | `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true"; "testpaths = [\"mcp/tests\"]" | pyproject.toml:6-18; pyproject.toml:67-70; pyproject.toml:110-124 |
 | Repo instructions state the gate command, that it takes no path arguments, and that Radon reports. | "python -m agents_remember.code_quality.check" | AGENTS.md:152-152 |
-| The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:793-851 |
+| The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:774-869 |
 | The optional settings-owned memory cap an explicitly constrained full run may use (`--memory-cap-bytes`); host-managed full runs do not call this planner. | `plan_capped_command` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:92-130 |
 | The targeted contract proofs: rail scoping, real radon input, and no-change short-circuit. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:142-359; mcp/tests/test_code_quality_targeted.py:360-630 |
 | The command builder supplies derived test and coverage arguments; root pytest configuration owns automatic xdist workers. | "pytest_args = [sys.executable, \"-m\", \"pytest\", *test_args]"; "-n=auto" | mcp/src/agents_remember/code_quality/check.py:272-272; pyproject.toml:124-124 |

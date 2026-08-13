@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/worktree_status.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-04T01:24+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -101,7 +101,16 @@ Status packets mirror the leaf enclosure identity fields from `guidance.status_p
 `SourceLineageProjection`. Context packets therefore expose the same strict
 ancestry evidence as status rather than copying or re-deriving Git state.
 
+## L23 Lifecycle Model Package Review
+
+`LifecycleOperationProjection` now comes from `models.lifecycles.operation`, the dedicated owner
+created by the model package split. Status construction and source-lineage projection semantics are
+unchanged.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: recorded the operation-projection import move and confirmed
+  the status/result contract is otherwise unchanged; final provenance remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: recorded strict lineage projection into worktree summaries; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

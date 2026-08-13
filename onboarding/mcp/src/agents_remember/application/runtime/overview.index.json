@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "mcp/src/agents_remember/application/runtime",
+  "overview": "mcp/src/agents_remember/application/runtime/overview.md",
+  "index": "mcp/src/agents_remember/application/runtime/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/application/runtime/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/application/runtime/__init__.py",
+    "mcp/src/agents_remember/application/runtime/install.py",
+    "mcp/src/agents_remember/application/runtime/skills.py",
+    "mcp/src/agents_remember/application/runtime/startup.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 4,
+    "fileSidecars": 4,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "application",
+    "init",
+    "init__",
+    "install",
+    "mcp",
+    "remember",
+    "runtime",
+    "skills",
+    "src",
+    "startup"
+  ],
+  "hotPath": {
+    "summary": "Use `startup.py` for trusted MCP process preparation and application collaborators, `install.py` for the typed runtime-install delegation, and `skills.py` for packaged skill deployment.",
+    "candidateHints": [
+      "mcp/src/agents_remember/application/runtime",
+      "mcp/src/agents_remember/application/runtime/__init__.py",
+      "mcp/src/agents_remember/application/runtime/install.py",
+      "mcp/src/agents_remember/application/runtime/skills.py",
+      "mcp/src/agents_remember/application/runtime/startup.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "install.py",
+      "install",
+      "skills.py",
+      "skills",
+      "startup.py",
+      "startup",
+      "MCP",
+      "mcp/src/agents_remember/application/runtime/",
+      "route-local-overview",
+      "a09b906bbf2855c3479b4d3199607ff8689b7d93",
+      "/overview.md",
+      "__init__.py.md",
+      "install.py.md",
+      "skills.py.md",
+      "startup.py.md",
+      "declare_mcp_process",
+      "initialize_mcp_application",
+      "prepare_mcp_process",
+      "run_runtime_install",
+      "skills_install_tool",
+      "mcp/src/agents_remember/application/runtime/startup.py",
+      "mcp/src/agents_remember/application/runtime/install.py",
+      "mcp/src/agents_remember/application/runtime/skills.py",
+      "agents_remember",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T08",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T13",
+      "governingOverview",
+      "init__",
+      "L23"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/application/runtime/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

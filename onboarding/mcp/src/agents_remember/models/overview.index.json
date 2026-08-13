@@ -15,6 +15,11 @@
       "index": "mcp/src/agents_remember/models/conversations/overview.index.json"
     },
     {
+      "route": "mcp/src/agents_remember/models/lifecycles",
+      "overview": "mcp/src/agents_remember/models/lifecycles/overview.md",
+      "index": "mcp/src/agents_remember/models/lifecycles/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/models/structural",
       "overview": "mcp/src/agents_remember/models/structural/overview.md",
       "index": "mcp/src/agents_remember/models/structural/overview.index.json"
@@ -28,9 +33,6 @@
     "mcp/src/agents_remember/models/context_packet.py",
     "mcp/src/agents_remember/models/core.py",
     "mcp/src/agents_remember/models/drift.py",
-    "mcp/src/agents_remember/models/lifecycle.py",
-    "mcp/src/agents_remember/models/lifecycle_finalize.py",
-    "mcp/src/agents_remember/models/lifecycle_operation.py",
     "mcp/src/agents_remember/models/memory.py",
     "mcp/src/agents_remember/models/operator_inbox.py",
     "mcp/src/agents_remember/models/orchestration.py",
@@ -49,9 +51,9 @@
     "mcp/src/agents_remember/models/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 46,
-    "fileSidecars": 26,
-    "childRoutes": 2
+    "sourceFilesInScope": 47,
+    "fileSidecars": 23,
+    "childRoutes": 3
   },
   "routingTerms": [
     "agents",
@@ -69,17 +71,13 @@
     "document",
     "drift",
     "files",
-    "finalize",
     "inbox",
     "init",
     "init__",
-    "lifecycle",
-    "lifecycle_finalize",
-    "lifecycle_operation",
+    "lifecycles",
     "mcp",
     "memory",
     "models",
-    "operation",
     "operator",
     "operator_inbox",
     "orchestration",
@@ -113,6 +111,7 @@
     "candidateHints": [
       "mcp/src/agents_remember/models",
       "mcp/src/agents_remember/models/conversations",
+      "mcp/src/agents_remember/models/lifecycles",
       "mcp/src/agents_remember/models/structural",
       "mcp/src/agents_remember/models/__init__.py",
       "mcp/src/agents_remember/models/application_requests.py",
@@ -121,9 +120,6 @@
       "mcp/src/agents_remember/models/context_packet.py",
       "mcp/src/agents_remember/models/core.py",
       "mcp/src/agents_remember/models/drift.py",
-      "mcp/src/agents_remember/models/lifecycle.py",
-      "mcp/src/agents_remember/models/lifecycle_finalize.py",
-      "mcp/src/agents_remember/models/lifecycle_operation.py",
       "mcp/src/agents_remember/models/memory.py",
       "mcp/src/agents_remember/models/operator_inbox.py",
       "mcp/src/agents_remember/models/orchestration.py",
@@ -134,7 +130,9 @@
       "mcp/src/agents_remember/models/task_doc.py",
       "mcp/src/agents_remember/models/task_document.py",
       "mcp/src/agents_remember/models/task_document_ref.py",
-      "mcp/src/agents_remember/models/terminal.py"
+      "mcp/src/agents_remember/models/terminal.py",
+      "mcp/src/agents_remember/models/terminal_catalog.py",
+      "mcp/src/agents_remember/models/tokens.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -151,12 +149,6 @@
       "core",
       "drift.py",
       "drift",
-      "lifecycle.py",
-      "lifecycle",
-      "lifecycle_finalize.py",
-      "lifecycle_finalize",
-      "lifecycle_operation.py",
-      "lifecycle_operation",
       "memory.py",
       "memory",
       "operator_inbox.py",
@@ -184,7 +176,13 @@
       "tokens.py",
       "tokens",
       "tool_registry.py",
-      "tool_registry"
+      "tool_registry",
+      "tool_response.py",
+      "tool_response",
+      "worktree.py",
+      "worktree",
+      "conversations",
+      "lifecycles"
     ]
   },
   "fallback": {

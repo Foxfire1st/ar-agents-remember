@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_spawn_agent_session.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-13T12:53+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,11 +60,24 @@ No external domain source governs this repository-local test contract.
 ## L23 Pre-Host Spawn Refusal
 
 Spawn fixtures now use a current contract chain, and the dedicated stale-super
-case advances the real repository before requesting a worker. It proves the
-public `source-lineage-stale` projection is returned while host creation and
-catalog insertion remain untouched.
+case advances the real repository before requesting each leaf role: worker, reviewer, and curator.
+Every role receives the public `source-lineage-stale` projection while host creation and catalog
+insertion remain untouched. This is the control-plane race closure behind the manager's pre-curator
+status check: dispatch re-proves lineage rather than trusting a brief-carried snapshot.
 
 ## Update History
+
+- 2026-08-13T12:53+02:00 — No content impact: the stabilized daemon-root derivation reads
+  `sys.modules["agents_remember"].__file__` after normal package submodule imports. Spawn and
+  all-leaf-role lineage assertions are unchanged, and no Ruff config exception remains. This
+  supersedes the 12:26 import-shape note; provenance stays closeout-owned.
+
+- 2026-08-13T12:26+02:00 — No content impact: the final Ruff-safe form imports
+  `agents_remember.__file__` directly as `agents_remember_file` when deriving the same daemon
+  package root. The already-documented all-leaf-role lineage refusal and every spawn assertion are
+  unchanged; verification provenance remains closeout-owned.
+- 2026-08-13T08:47+02:00 — L23 integration-gate repair: expanded the pre-host stale-super refusal across worker, reviewer, and curator, proving curator dispatch cannot create a process after lineage moves. Verification metadata remains closeout-owned.
+
 - 2026-08-12T20:10+02:00 — L23 curator: documented real-Git pre-host lineage refusal coverage; verification remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 removed redundant task-reference inference from the helper whose callers already supply canonical references; spawn behavior and assertions are unchanged.

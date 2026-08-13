@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T14:20+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-13T08:47+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -25,8 +25,11 @@ completed master to the orchestrator.
 
 For each dependency-ready real leaf, the manager calls structural `dispatch_agent` with the leaf
 document, role, and complete brief. The control plane owns readiness and the exact-pinned initial
-brief; the manager never requests or stores an occupant id. The manager gathers builder code/report,
-reviewer verdict, and curator coherence report before closeout. It runs leaf-scoped quality at leaf
+brief; the manager never requests or stores an occupant id. The manager gathers builder code/report
+and reviewer verdict, then calls `worktree_status` for the canonical leaf and requires the complete
+task-derived `sourceLineage` projection to be current immediately before curator dispatch. It
+carries that projection in the curator brief; dispatch re-proves it before host creation. Only then
+does it gather the curator coherence report before closeout. It runs leaf-scoped quality at leaf
 altitude and the full wrapper once at master integration altitude.
 
 When all leaves land, an adversarial master-exit verdict becomes evidence on the handover seam; the
@@ -57,8 +60,8 @@ transparent.
 | One manager owns one canonical master and the complete leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. | "## Hosted Role Dispatch" | skills/l-01-agent-lifecycles/roles/manager.md:41-47 |
 | The leaf loop sequences builder, reviewer, curator, closeout, integration, and cleanup duties. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:94-182 |
-| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:192-192; skills/l-01-agent-lifecycles/roles/manager.md:213-213 |
-| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:219-232 |
+| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:202-202; skills/l-01-agent-lifecycles/roles/manager.md:223-223 |
+| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:237-237 |
 
 ## L23 Manager And Leaf Admission
 
@@ -67,7 +70,14 @@ each worker/reviewer/curator dispatch re-proves the complete parent chain.
 Recovery is contract-addressed and replacement-safe; no agent supplies branch
 commit or session identity.
 
+Pre-curator admission is manager-owned and ordered after builder/reviewer evidence but before any
+onboarding work. If super or master moved, the manager synchronizes and reconciles the code first;
+the curator is never asked to document a stale leaf. Closeout and integration independently repeat
+lineage after long quality gates to close their later time-of-check/time-of-use windows.
+
 ## Update History
+- 2026-08-13T08:47+02:00 — L23 integration-gate repair: made current `worktree_status.sourceLineage` an explicit input to curator dispatch and recorded the plane's second proof before host creation. Verification metadata remains closeout-owned.
+
 - 2026-08-12T20:10+02:00 — L23 curator: documented canonical manager/leaf lineage admission; verification remains closeout-owned.
 
 - 2026-08-11T14:20+02:00 — Rewrote the default body around real-master ownership, structural child

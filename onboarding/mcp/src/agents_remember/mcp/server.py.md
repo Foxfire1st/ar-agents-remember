@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-10T18:31+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -113,7 +113,17 @@ No sibling repository defines this process wiring.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## L23 Runtime Package Review
+
+The transport server now imports its composition boundary as
+`application.runtime.startup as server_startup`. Startup trust, configuration, registration, and
+durable-store ownership remain application concerns; only their package location changed.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: recorded the startup-module move into the runtime package
+  and confirmed the transport/application boundary is unchanged; final provenance remains
+  closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-10T18:31+02:00 — 260731-EFA-L21: MCP now establishes its trusted execution mode before
   loading authority settings, while the existing preparation operation remains before serving and

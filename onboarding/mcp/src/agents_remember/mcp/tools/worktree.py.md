@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`                                       |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Purpose
@@ -81,7 +81,15 @@ parameter would republish the tool as a nested object.
 
 Worktree payload builders keep closeout/integration path-explicit while start/attach/status can resolve a leaf enclosure from `task_name`, optional `parent_task`, and optional `leaf_id` — carried by `TaskIdentity` for start and by `TaskRef` for attach/status.
 
+## L23 Lifecycle Model Package Review
+
+The transport adapter now imports `IntegrateStrategy` from `models.lifecycles.operation`, its
+dedicated package owner. Tool payloads, task identity, and forwarding behavior are unchanged.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: recorded the integration-strategy import move and confirmed
+  the public tool contract is unchanged; final provenance remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

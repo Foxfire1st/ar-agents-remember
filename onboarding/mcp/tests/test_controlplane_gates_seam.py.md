@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_controlplane_gates_seam.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                        |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T12:53+02:00                                            |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`                                        |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -21,6 +21,9 @@ Part of the 260731-EFA-L7 in-place split family for `test_controlplane_gates_sea
 ## Code Commentary
 
 L23 makes the handover integration seam test invoke dry-run, proving gate-policy forwarding without starting a detached lifecycle mutation.
+Its gate-only unit explicitly mocks `_integration_lineage_block`: source-lineage behavior is proved
+by the dedicated integration/lineage suites, so this seam isolates gate forwarding rather than
+constructing a second incomplete topology fixture.
 
 - `_handover_gate`
 - `MasterHandoverSeamTests`
@@ -39,6 +42,10 @@ L23 makes the handover integration seam test invoke dry-run, proving gate-policy
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-13T12:53+02:00 — No content impact: the gate-only dry-run seam now mocks the independent
+  source-lineage boundary so it continues testing gate-policy forwarding only. Production behavior
+  and gate assertions are unchanged; verification provenance remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

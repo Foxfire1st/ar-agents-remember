@@ -1,18 +1,22 @@
-# mcp/src/agents_remember/application/skill_tools.py
+# mcp/src/agents_remember/application/runtime/skills.py
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/application/skill_tools.py` |
+| path                   | `mcp/src/agents_remember/application/runtime/skills.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-13T08:40+02:00                     |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[runtime overview](overview.md)
 
 ## Purpose
 
-`skill_tools.py` now contains only the `skills_install` application entry point for package
+`runtime/skills.py` contains only the `skills_install` application entry point for package
 skill installation.
 
 ## Code Commentary
@@ -25,7 +29,7 @@ is no layout option).
 
 ## Invariants And Boundaries
 
-- Do not rebuild `skill_tools.py` as a mass re-exporter or mega-entry-point.
+- Do not rebuild `runtime/skills.py` as a mass re-exporter or mega-entry-point.
 - New MCP operation application entry points should live in the domain module that owns the
   behavior, then be imported directly by the relevant `mcp/tools/` domain
   module.
@@ -43,6 +47,8 @@ is no layout option).
 | Skill install response model lives in the models package. | `SkillsInstallResponse` | mcp/src/agents_remember/models/skills.py:12-20 |
 
 ## Update History
+
+- 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved the preserved skill-install card with its source into the cohesive `application/runtime/` package and rebound it to the new governing overview; behavior is unchanged. Verification metadata remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_worktree_edge_paths.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-12T22:36+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T12:53+02:00                     |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ base, a half-integrated pair, a branch deleted while checked out — so each is 
 | `MoveMemoryBranchTests` | A merge that cannot be resolved automatically **leaves the worktree usable**. |
 | `FetchSourceUpstreamsTests` | The best-effort pre-sync fetch reports per side rather than failing the sync. |
 | `OverviewRevisionTests` | Which route overviews the closeout classifier can speak for at all, including its three-value revision result and typed evidence boundary. |
-| `IntegrationRefusalTests` | Integration refuses **before it moves any branch**. |
+| `IntegrationRefusalTests` | Integration refuses **before it moves any branch**; a master source tip that advanced after leaf closeout is `source-lineage-stale` and routes to `sync_source_lineage` before any replay/merge reasoning. |
 
 ## Two Refusals Worth Reading Together
 
@@ -99,7 +99,7 @@ leaves `memory_mode` external, and a plain `{"state": "ready"}` returns the *ide
 | `build_start_contract` catches `ContractError` and `LeafRefResolutionError` so neither leaves the tool handler. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:192-211 |
 | `_contract_after_memory_start` is the memory-disabled/reconciled recovery. | `_contract_after_memory_start` | mcp/src/agents_remember/worktrees/modules/start.py:136-160 |
 | `invalid_contract_request_result` returns the `exit 2` / `state: invalid-request` payload for a refusal. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
-| The happy-path lifecycle suites these guards sit beside. | `WorktreeSupportTests`; `WorktreeSyncTests`; `ContractLifecycleAnchorTests` | mcp/tests/test_worktree_contract_lifecycle.py:51-81; mcp/tests/test_worktree_support.py:539-614; mcp/tests/test_worktree_sync.py:111-244 |
+| The happy-path lifecycle suites these guards sit beside. | `WorktreeSupportTests`; `WorktreeSyncTests`; `ContractLifecycleAnchorTests` | mcp/tests/test_worktree_contract_lifecycle.py:51-81; mcp/tests/test_worktree_support.py:671-746; mcp/tests/test_worktree_sync.py:111-244 |
 | Helper-level arms of the same lifecycle. | `InspectContainersTests`; `InspectContainersIndividuallyTests`; `DockerRemoveHelpersTests`; `RouteOverviewMetadataRefreshPlanTests` | mcp/tests/test_worktree_and_observer_helpers.py:93-180; mcp/tests/test_worktree_and_observer_helpers.py:183-231; mcp/tests/test_worktree_and_observer_helpers.py:234-348; mcp/tests/test_worktree_and_observer_helpers.py:421-526 |
 
 ## L23 Status And Attach Edges
@@ -111,6 +111,12 @@ lineage non-applicable so their stale-base/rebuild branches retain isolated
 ownership.
 
 ## Update History
+
+- 2026-08-13T12:53+02:00 — L23 lineage-fixture repair: the source-moved integration refusal now
+  proves task-derived master source movement yields `source-lineage-stale` plus
+  `sync_source_lineage`, preserving both code and memory source tips. Verification provenance
+  remains closeout-owned.
+
 - 2026-08-12T22:36+02:00 — L23 pre-commit type-check curator follow-up: updated `OverviewRevisionTests` for the three-value revision result (`citation_only=False` on ordinary prose) and the typed `evidence="source"` bucket call. The owner reports 14/14 combined route/overview tests and repository-wide Pyright green. Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented lineage status/attach edge coverage, including no-applicable-edge omission; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

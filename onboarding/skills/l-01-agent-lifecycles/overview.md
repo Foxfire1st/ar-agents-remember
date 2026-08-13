@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-13T08:47+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 
 ## Purpose
 
@@ -37,6 +37,10 @@ A curator completes only after the current-additions missing-onboarding check an
 memory-quality worklist have been repaired and rerun. Dirty-source drift and future commit-derived
 verification can be classified as closeout-owned only after no repairable citation, claim, shape,
 history, entity, or index finding remains.
+
+Before that curator is created, the manager requires the leaf's task-derived source-lineage
+projection to be current and includes it in the complete brief. The structural dispatch transaction
+re-proves lineage before host creation, so a parent move between status and dispatch fails closed.
 
 ## Conventions
 
@@ -72,6 +76,8 @@ full chain. Refusal creates no child and recovery is contract-addressed, keeping
 commit/session identity inside the control plane.
 
 ## Update History
+- 2026-08-13T08:47+02:00 — L23 integration-gate repair: added the manager-owned pre-curator lineage gate, brief-carried projection, and pre-host dispatch recheck to canonical lifecycle doctrine. Verification metadata remains closeout-owned.
+
 - 2026-08-12T20:20+02:00 — L23 curator: documented canonical pre-dispatch lineage policy; verification remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 route impact: manager,

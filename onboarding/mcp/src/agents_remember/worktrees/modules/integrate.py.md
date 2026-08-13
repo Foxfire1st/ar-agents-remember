@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T08:40+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -66,6 +66,13 @@ branch has advanced, both branches are reset hard to their pre-merge heads
 before the failure re-raises, so integration never leaves a half-integrated
 state.
 
+**Lineage and source-tip gate.** `integrate_result` refuses stale or unavailable transitive
+super→master→leaf code/external-memory ancestry during preflight. `_apply_integration` then
+re-proves that lineage and the exact code/memory source tips after the potentially long quality
+gate, before replaying memory, and once more immediately before `source-merge`. Movement returns
+`source-moved-during-quality` with a retry preview and performs no source ref movement; the quality
+result therefore cannot certify a candidate assembled from older source tips.
+
 **Contract writes go through `ContractCells` (260731-EFA-L4).** This module moves two of the six
 persisted vocabulary cells, and both now take the typed path:
 
@@ -91,15 +98,17 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The wire model declares `IntegrationStatus` / `CleanupStatus`; worktree_contract imports them and exposes `ContractCells` / `amend_contract` as the typed amendment path. | "class ContractCells"; "def amend_contract"; "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:18-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
-| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:161-176; mcp/src/agents_remember/worktrees/modules/integrate.py:527-561 |
-| The altitude routing and the gate run inside the integration step itself; absent cap means host-managed full execution, while an explicit cap remains settings-owned. The run target carries `contract.worktree_group` for stable transcript publication. | `quality_gate_mode`, `_quality_gate_memory_cap`, `_quality_gate_preview`, `_run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/integrate.py:55-70; mcp/src/agents_remember/worktrees/modules/integrate.py:71-82; mcp/src/agents_remember/worktrees/modules/integrate.py:667-700 |
-| The planned gate is carried in the dry-run payload and the integrated result without running on the dry-run path. | `IntegratePreview`, `_dry_run_result`, `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:81-88; mcp/src/agents_remember/worktrees/modules/integrate.py:368-414; mcp/src/agents_remember/worktrees/modules/integrate.py:527-561 |
+| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:178-178; mcp/src/agents_remember/worktrees/modules/integrate.py:605-605 |
+| The altitude routing and the gate run inside the integration step itself; absent cap means host-managed full execution, while an explicit cap remains settings-owned. The run target carries `contract.worktree_group` for stable transcript publication. | `quality_gate_mode`, `_quality_gate_memory_cap`, `_quality_gate_preview`, `_run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/integrate.py:727-727; mcp/src/agents_remember/worktrees/modules/integrate.py:71-82; mcp/src/agents_remember/worktrees/modules/integrate.py:667-700 |
+| The planned gate is carried in the dry-run payload and the integrated result without running on the dry-run path. | `IntegratePreview`, `_dry_run_result`, `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:98-98; mcp/src/agents_remember/worktrees/modules/integrate.py:446-446; mcp/src/agents_remember/worktrees/modules/integrate.py:605-605 |
 | The altitude-routing proofs cover leaf targeted, series full, host-managed absence, explicit settings caps, refusal-before-merge, and dry-run preview. | `IntegrationQualityGateAltitudeTests` | mcp/tests/test_worktree_integrate_quality_gate.py:49-198 |
-| Worktree tests cover fast-forward integration, replay, and conflict blocking. | `test_integrate_ff_only_fast_forwards_code_and_memory_main`; `test_integrate_replay_handles_parallel_non_overlapping_changes`; `test_integrate_replay_blocks_code_conflicts_before_main_moves`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:582-637; mcp/tests/test_worktree_support_tests_2.py:647-692; mcp/tests/test_worktree_support_tests_2.py:694-725; mcp/tests/test_worktree_support_tests_3.py:715-750 |
+| Worktree tests cover fast-forward integration, fail-closed source-lineage refusal for both non-overlapping and conflicting source movement after closeout, and non-fast-forward refusal without mutation. The stale-source cases direct callers to synchronize before retrying instead of replaying during integration. | `test_integrate_ff_only_fast_forwards_code_and_memory_main`; `test_integrate_refuses_parallel_non_overlapping_source_changes_until_sync`; `test_integrate_refuses_parallel_conflicting_source_changes_until_sync`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:605-662; mcp/tests/test_worktree_support_tests_2.py:672-715; mcp/tests/test_worktree_support_tests_2.py:717-753; mcp/tests/test_worktree_support_tests_3.py:723-758 |
 
 As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the application entry point) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
 
 ## Update History
+- 2026-08-13T08:40+02:00 — L23 integration-gate repair: documented fail-closed transitive-lineage admission, exact source-tip pinning across quality, and the two post-quality checks that prevent memory replay or source merge after in-flight movement. Verification metadata remains closeout-owned.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: made the

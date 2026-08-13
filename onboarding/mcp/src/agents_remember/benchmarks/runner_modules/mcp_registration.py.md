@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The shared seed resolvers also refuse a benchmark-scoped target as defense-in-depth. | `_clone_inputs` | mcp/src/agents_remember/providers/grepai/seed.py:145-167 |
 | The service entry points open every prepare/run pass with the registration sweep. | `disarm_stale_benchmark_registrations` | mcp/src/agents_remember/benchmarks/runner_modules/services.py:39-92 |
 | Containment tests pin the sweep's narrow/idempotent/None behavior. | `test_stale_registration_sweep_narrows_to_authority` | mcp/tests/test_provider_containment.py:235-273 |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | `WorktreeSupportTests`, "test_benchmark_provider_ids_follow_selected_variants" | mcp/tests/test_worktree_support.py:539-614; mcp/tests/test_worktree_support_benchmark.py:114-114 |
+| Benchmark behavior is covered through the existing worktree/tool test slices. | `WorktreeSupportTests`, "test_benchmark_provider_ids_follow_selected_variants" | mcp/tests/test_worktree_support.py:671-746; mcp/tests/test_worktree_support_benchmark.py:114-114 |
 
 ## Cross-Repo References
 

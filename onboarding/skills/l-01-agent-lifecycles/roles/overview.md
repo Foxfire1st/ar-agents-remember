@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-13T08:47+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 
 ## Purpose
 
@@ -70,7 +70,21 @@ the same master, while manager guidance requires current master and leaf edges
 before reading or delegating work. Both rely on plane-owned task identity and
 never pass branch/commit/session ids between roles.
 
+## L23 Pre-Curator Admission Boundary
+
+The manager's last action before onboarding is a canonical-leaf `worktree_status` call whose full
+code and external-memory `sourceLineage` projection must be `current`. That projection enters the
+curator brief as evidence, and structural dispatch independently re-proves it before creating the
+curator host. This boundary prevents stale onboarding; the later closeout/integration checks remain
+separate because they guard ancestry movement during their own long quality phases.
+
 ## Update History
+- 2026-08-13T09:05+02:00 — L23 curator body review: clarified that the manager's immediately
+  pre-curator `worktree_status.sourceLineage=current` proof is carried into the brief and repeated
+  by dispatch before host creation, while closeout/integration independently close later races.
+  Final provenance remains closeout-owned.
+- 2026-08-13T08:47+02:00 — L23 integration-gate repair: recorded the manager-owned pre-curator current-lineage check and the structural dispatch recheck before curator host creation. Verification metadata remains closeout-owned.
+
 - 2026-08-12T20:20+02:00 — L23 curator: documented architect/manager lineage recovery and dispatch boundaries; verification remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 route impact: manager,

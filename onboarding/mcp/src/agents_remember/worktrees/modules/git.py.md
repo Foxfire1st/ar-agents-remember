@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/git.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-29T15:30+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -106,7 +106,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Memory baseline code reuses these facade-exported Git helpers. | "def run_drift" | mcp/src/agents_remember/memory/baseline.py:74-74 |
 | The L3 serving change-set API consuming `changed_files_with_counts` + `commit_text_or_none`. | "def task_changeset" | mcp/src/agents_remember/serving/changeset.py:80-80 |
 | Worktree tests cover changed-path behavior for long filesystem paths. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support_tests_1.py:1068-1081 |
-| Closeout runs the configured hook before its strict wrapper and commits the certified index afterwards. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:820-889 |
+| Closeout runs the configured hook before its strict wrapper and commits the certified index afterwards. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:774-869 |
 | The hook-failure regression proves the raw runner retains a surrogateescaped byte while the facade exception is UTF-8 JSON serializable. | `test_failed_hook_diagnostic_with_invalid_bytes_is_json_serializable` | mcp/tests/test_git_command.py:337-354 |
 
 ## Update History

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_lifecycle_finalize.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T00:08+02:00                     |
-| lastVerifiedCommitHash |                                            `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |                                            2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |                                            `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate |                                            2026-08-13T13:51:44+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -48,10 +48,18 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Finalizer behavior under test lives here. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:28-94 |
 | Task document read/write behavior used by the fixture lives here. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:109-173 |
-| Git fixture helpers come from the existing worktree support tests. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |
+| Git fixture helpers come from the existing worktree support tests. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:671-746 |
 | Public response model registry is checked for the finalizer entry. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:217-221 |
 
+## L23 Lifecycle Model Package Review
+
+The suite imports `LifecycleFinalizeTaskResponse` from `models.lifecycles.finalize`, its new package
+owner. Finalization payload, registry, task-document, and blocker assertions are unchanged.
+
 ## Update History
+
+- 2026-08-13T09:05+02:00 — L23 curator: recorded the finalize-response import move and confirmed the
+  regression contract is unchanged; final provenance remains closeout-owned.
 
 - 2026-08-12T00:08+02:00 — No content impact: the parameterized finalization subtest reports a
   serializable label under xdist; finalization setup, operation, and assertions are unchanged.

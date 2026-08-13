@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-13T07:53+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T12:26+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -26,7 +26,9 @@ diagnostic projection. Long live labels remain single-line CSS ellipsis.
 Operations now receives a task-addressed lifecycle-operation projection for closeout and
 integration. Hangar and enclosure rows show queued/running/input-required/completed/failed state,
 phase, bounded current command, heartbeat age, and guidance without learning a private operation
-key or worker PID. This is observation only: the dashboard does not become operation authority.
+key or worker PID. Hangar now renders the exact durable command in a one-line ellipsized badge and
+keeps the full value in `title`, so viewport pressure cannot create line breaks or require a brittle
+character-count cutoff. This is observation only: the dashboard does not become operation authority.
 
 ## Purpose
 
@@ -476,6 +478,11 @@ fixtures from the server contract. Engine Room shows the aggregate admission
 state and full summary; it does not compare branches or choose a sync locally.
 
 ## Update History
+
+- 2026-08-13T12:26+02:00 — L23 live-progress clarification: recorded the Hangar rendering of the
+  already-durable lifecycle command as a responsive one-line ellipsized projection with full title,
+  without adding operation authority or identity to the frontend. Verification provenance remains
+  closeout-owned.
 - 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
 - 2026-08-12T20:20+02:00 — L23 curator: documented dashboard ownership of read-only lineage visibility and contract parity; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: added the task-addressed lifecycle-operation status projection used by Hangar and enclosure rows; verification provenance remains closeout-owned.

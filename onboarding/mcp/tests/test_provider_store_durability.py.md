@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |                                                `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |                                                `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -162,7 +162,7 @@ keeps it so.** The two provider adapters were added to the *shared* instrument
 cit:([`ProviderMetricsAdapter`, `ProviderDegradationAdapter`], mcp/tests/_store_durability.py:419-465; mcp/tests/_store_durability.py:468-527), which is what lets them reuse the scenarios, the raw on-disk
 accounting and the base-commit archive. But `CASES` still enumerates only the six control-plane
 adapters and `PROVIDER_CASES` only the two provider ones
-cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:596-596) — so widening the instrument
+cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:595-595) — so widening the instrument
 does not silently widen what `test_controlplane_store_durability.py` asserts. Each suite names the
 stores it speaks for, and `ProviderCaseRegistryTests` fails the moment that stops being true.
 
@@ -195,7 +195,7 @@ cit:([`_TempRootTest`, `case_root`], mcp/tests/test_provider_store_durability.py
 one flag and every case after the first left the tick loop after a single tick, reporting a green
 measured over almost nothing on the unfixed tree as readily as on the fixed one. Discovered here,
 worked around here, then fixed at the source: `harness_work_dir`
-cit:([`harness_work_dir`], mcp/tests/_store_durability.py:876-903) now derives the
+cit:([`harness_work_dir`], mcp/tests/_store_durability.py:875-902) now derives the
 scratch directory from `root` itself, and `MIN_SUCCESSFUL_RECLAIMS`
 cit:([`MIN_SUCCESSFUL_RECLAIMS`], mcp/tests/_durability_measurement.py:11-11) refuses a result whose
 reclaimer barely ran for any other reason. What remains in this file is the ordinary requirement
@@ -393,7 +393,7 @@ are inside `agents-remember`.
   (`STRESS_PROFILE`'s 4 × 50) across four runs and 0 at four times the volume. **Recorded the
   case-list separation as a contract rather than as tidiness:** the provider adapters joined the
   shared instrument, but `CASES` stays the six control-plane stores and `PROVIDER_CASES` is its own
-  disjoint set cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:596-596), so widening the instrument cannot silently widen
+  disjoint set cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:595-595), so widening the instrument cannot silently widen
   what `test_controlplane_store_durability.py` asserts — and `ProviderCaseRegistryTests`
   cit:([`ProviderCaseRegistryTests`], mcp/tests/test_provider_store_durability.py:804-813)
   is the assertion that fails if that stops holding. **Recorded the tolerance argument

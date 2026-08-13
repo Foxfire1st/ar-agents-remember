@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Hangar.tsx`                |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T10:50+02:00                           |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-13T12:26+02:00                           |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,7 +27,11 @@ count reflects worktrees that physically exist / still need action, and a reopen
 
 ## Code Commentary
 
-L23 renders an enclosure's optional lifecycle operation as one compact badge containing its kind, status, and phase. Absent operation state still renders no placeholder.
+L23 renders an enclosure's optional lifecycle operation as one compact badge containing its kind,
+status, phase, and the durable `currentCommand`. The command is not inferred from a process or
+private job id: it is the plane-projected lifecycle-operation field. Badge text is forced onto one
+line and clipped with CSS ellipsis inside a shrinkable bounded flex item; the full command remains
+available through the badge's `title`. Absent operation state still renders no placeholder.
 
 ### Logic
 
@@ -56,6 +60,9 @@ it hides worktree-less enclosures from the list and count but never deletes thei
 (the durable record stays for memory lineage), and it never infers existence client-side — the flags are
 server-stat'ed. Non-gate affordances remain read-only. Gate responses are
 instructional chat injections through `GateResponder`, not enclosure status mutation.
+Long operation commands must remain single-line and bounded. Do not replace the ellipsis/title pair
+with a one-time string-length truncation because the available width changes with neighboring
+badges and viewport size.
 
 ## Repo-Internal References
 
@@ -65,8 +72,14 @@ instructional chat injections through `GateResponder`, not enclosure status muta
 | The shared `hasLiveWorktree` tasks-surface visibility rule. | `hasLiveWorktree` | dashboard/src/data/selectors.ts:24-28 |
 | The shared chat-routed gate responder. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
 | The render tests pinning existence-only visibility (reopened hidden, visible again after restart, completed/abandoned gone). | "renders a row ONLY while a worktree physically exists — never from a cleanup-state proxy"; "hides a reopened contract with no worktrees on disk (reset-awaiting-restart"; "shows a reopened leaf again once worktree_start recreates its worktrees"; "fully reduces to the empty state once every worktree is physically gone" | dashboard/src/panels/Hangar.test.tsx:37-71; dashboard/src/panels/Hangar.test.tsx:73-93; dashboard/src/panels/Hangar.test.tsx:95-113; dashboard/src/panels/Hangar.test.tsx:115-138 |
+| The running-operation regression proves the durable command is visible and preserved as the full badge title. | "shows the durable live command for a running lifecycle operation" | dashboard/src/panels/Hangar.test.tsx:140-165 |
 
 ## Update History
+
+- 2026-08-13T12:26+02:00 — L23 live-progress clarification: the lifecycle-operation badge now
+  renders the already-durable `currentCommand`, keeps it on one CSS-truncated line with ellipsis,
+  and exposes the full value through `title`. No task-local operation id or process inference was
+  added; verification provenance remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

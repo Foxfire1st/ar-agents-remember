@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_docker_runtime_parsers.py`     |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-05-31T12:30+02:00                         |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                             |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`                             |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../overview.md`                               |
 
 ## Purpose
@@ -21,6 +21,10 @@ tests; this suite pins each parser's edge-case behaviour in isolation so the
 inspect-to-state contract is proven once, without Docker, network, or a real
 container.
 
+The suite also isolates the `docker inspect` command/result adapter without running Docker. It
+proves nonzero command results, malformed JSON, non-list payloads, and empty lists return `None`,
+while a non-empty inspect list returns its first container record.
+
 ## Code Commentary
 
 ### Logic
@@ -29,6 +33,9 @@ The module imports the parser functions directly from
 `agents_remember.providers.lifecycle.docker_runtime` and drives them with inline
 fixture dicts that mirror real `docker inspect` shapes. One `unittest.TestCase`
 class covers each parser family.
+
+`DockerInspectContainerTests` mocks command and executable resolution to cover the adapter's
+fail-closed command/JSON/shape branches and its first-record success contract.
 
 `ParseDockerTimestampTests` pins `parse_docker_timestamp`: a nanosecond `Z`
 timestamp is truncated (not rounded) to six fractional digits and normalized to
@@ -98,9 +105,9 @@ tolerance band rather than exact equality.
   dict; the test asserts the whole dict, so its keys and defaults are load-bearing.
 - `docker_container_port` returns a `(str host_ip, int host_port)` tuple and defaults
   a blank host IP to `127.0.0.1`.
-- These tests exercise the pure parsers only; they do not invoke `docker`, run a
-  container, or cover the command-running helpers (`docker_inspect_container`,
-  `docker_wait_for_ping`, ping/digest/image helpers) in the same module.
+- These tests do not invoke Docker or run a container. They cover the pure parsers plus the mocked
+  `docker_inspect_container` adapter; wait, ping, digest, and image helpers remain outside this
+  module's scope.
 
 ## Repo-Internal References
 
@@ -110,8 +117,13 @@ tolerance band rather than exact equality.
 | The GrepAI watcher status exposes the Docker summary in its `containerState` field. | `containerState` | mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:97-97 |
 | The CGC backend status exposes the Docker summary in its `containerState` field. | `containerState` | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:212-212 |
 | The provider-current-state regression directly exercises the Docker summary. | `test_docker_container_state_summary_reports_uptime` | mcp/tests/test_provider_current_state.py:27-42 |
+| The focused inspect adapter tests cover command failure, malformed and wrong-shaped JSON, an empty list, and first-record success. | `DockerInspectContainerTests` | mcp/tests/test_docker_runtime_parsers.py:28-62 |
 
 ## Update History
+
+- 2026-08-13T13:08+02:00 — L23 full-Dagger coverage repair: expanded the card from pure parsers to
+  the mocked `docker_inspect_container` result adapter and its fail-closed branches; verification
+  remains closeout-owned.
 
 - 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.
 - 2026-08-04T01:28:33+02:00 — S18-SR2-B05 worker: replaced the untested `docker_container_running` entry with the directly tested networks parser while preserving the nine valid generated ranges; rebound the provider-current-state claim to real consumers and exact-name focused coverage provisionally.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
-| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
+| lastUpdated | 2026-08-13T08:40+02:00 |
+| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,6 +34,8 @@ The Dagger, Codex, and base image versions are constants. The scratch sandbox is
 - Invalid/missing exported status fails closed; local quality is not a fallback.
 - Candidate Git identity must match before and after sandbox materialization.
 - Reports are atomically replaced, not accumulated per run.
+- Report promotion uses the kernel-owned `atomic_replace` primitive after copying to the target's
+  sibling temporary file; this keeps replacement semantics on the shared platform boundary.
 
 ### Todos
 
@@ -63,5 +65,7 @@ The only external boundary is the pinned container/tool runtime, not a sibling r
 | Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:198-235 |
 
 ## Update History
+
+- 2026-08-13T08:40+02:00 — L23 integration-gate repair: recorded that report promotion now routes through `kernel.atomic_write.atomic_replace` instead of calling `os.replace` directly. Verification metadata remains closeout-owned.
 
 - 2026-08-12T15:19+02:00 — Created for L23's pinned, observable Dagger quality executor; verification provenance remains closeout-owned.

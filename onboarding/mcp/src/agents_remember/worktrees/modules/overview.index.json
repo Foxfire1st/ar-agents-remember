@@ -17,6 +17,7 @@
     "mcp/src/agents_remember/worktrees/modules/cleanup.py",
     "mcp/src/agents_remember/worktrees/modules/cli.py",
     "mcp/src/agents_remember/worktrees/modules/closeout.py",
+    "mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py",
     "mcp/src/agents_remember/worktrees/modules/code_quality_gate.py",
     "mcp/src/agents_remember/worktrees/modules/context.py",
     "mcp/src/agents_remember/worktrees/modules/contract_reader.py",
@@ -34,8 +35,8 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 22,
-    "fileSidecars": 22,
+    "sourceFilesInScope": 23,
+    "fileSidecars": 23,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -48,6 +49,7 @@
     "cleanup",
     "cli",
     "closeout",
+    "closeout_memory_quality",
     "code",
     "code_quality_gate",
     "context",
@@ -65,6 +67,7 @@
     "leaf",
     "leaf_ref_start",
     "mcp",
+    "memory",
     "models",
     "modules",
     "onboarding",
@@ -92,6 +95,7 @@
       "mcp/src/agents_remember/worktrees/modules/cleanup.py",
       "mcp/src/agents_remember/worktrees/modules/cli.py",
       "mcp/src/agents_remember/worktrees/modules/closeout.py",
+      "mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py",
       "mcp/src/agents_remember/worktrees/modules/code_quality_gate.py",
       "mcp/src/agents_remember/worktrees/modules/context.py",
       "mcp/src/agents_remember/worktrees/modules/contract_reader.py",
@@ -123,6 +127,8 @@
       "cli",
       "closeout.py",
       "closeout",
+      "closeout_memory_quality.py",
+      "closeout_memory_quality",
       "code_quality_gate.py",
       "code_quality_gate",
       "context.py",
@@ -154,9 +160,7 @@
       "terminal_validation.py",
       "terminal_validation",
       "QualityGatePlan.executor",
-      "L23",
-      "QualityGatePlan",
-      "route-local-overview"
+      "L23"
     ]
   },
   "fallback": {

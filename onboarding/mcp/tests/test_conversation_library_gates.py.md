@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_library_gates.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
+| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,6 +35,11 @@ informational evidence, no longer a demotion gate; a failed probe is `unverified
 with full completeness; helper failure and missing locked dependencies are `unverified`. The former
 "version mismatch demotes the whole surface" case is removed — version equality no longer gates a
 capability anywhere.
+
+`HelperPreflightTests` isolates the static helper-host admission path. It proves that a missing
+Node runtime, a missing harness-specific TypeScript entry, and missing `node_modules` each return
+their own diagnostic reason, while an existing runtime, entry, and dependency directory clear the
+preflight. The test uses temporary paths and mocks executable discovery; it never starts a helper.
 
 ### Conventions
 
@@ -69,6 +74,7 @@ No Domain Documentation source is configured. The repository sources are direct 
 | The gate registry, locked Codex version constant, and per-fingerprint cache under test. | `LibraryGateRegistry`; `LOCKED_CODEX_RUNTIME_VERSION` | mcp/src/agents_remember/serving/conversation/library/gates.py:50-50; mcp/src/agents_remember/serving/conversation/library/gates.py:173-326 |
 | Codex gate behavior is covered by the focused test class. | `CodexGateTests` | mcp/tests/test_conversation_library_gates.py:63-148 |
 | Helper-backed gate behavior is covered by the focused test class. | `HelperGateTests` | mcp/tests/test_conversation_library_gates.py:151-212 |
+| Static helper admission reports each missing prerequisite and succeeds only when runtime, entry, and dependencies are all present. | `HelperPreflightTests` | mcp/tests/test_conversation_library_gates.py:26-46 |
 
 ## Cross-Repo References
 
@@ -78,6 +84,10 @@ No neighboring repository participates in this gate suite.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-08-13T13:08+02:00 — L23 full-Dagger coverage repair: documented exhaustive static helper
+  preflight branches without changing production helper behavior; verification remains
+  closeout-owned.
 
 - 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: replaced unanchored gate references with exact local anchors and generated final ranges with the scoped fixer.
 

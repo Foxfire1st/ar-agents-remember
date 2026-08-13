@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/install/runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -127,7 +127,7 @@ clients reach it through the `runtime_install` tool.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point exposes only typed install booleans. | `run_runtime_install` | mcp/src/agents_remember/application/runtime_install.py:13-17 |
+| The MCP application entry point exposes only typed install booleans. | `run_runtime_install` | mcp/src/agents_remember/application/runtime/install.py:13-17 |
 | Provider settings generation derives lifecycle settings from MCP authority. | `lifecycle_settings_from_config` | mcp/src/agents_remember/providers/settings.py:25-39 |
 | `install_runtime` stores a provider watcher rebind report, stops watchers before provider refresh, starts/checks them afterward, and includes rebind/recovery details in the MCP payload. | `install_runtime` | mcp/src/agents_remember/install/runtime.py:462-553 |
 | Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper. | `complete_provider_watcher_rebind` | mcp/src/agents_remember/install/provider_watchers.py:144-166 |

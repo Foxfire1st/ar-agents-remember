@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/next_step.py`     |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-01T01:15+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`             |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`             |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -199,7 +199,7 @@ and the ambient lifecycle / phase definitions.
 | `lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:200-210 |
 | `load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`). | `load_contract`, `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285; mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
 | `amb.current` — the live `LifecycleState` resolved at the edge. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:90-594 |
-| `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …) and the `awaiting-developer` state the parked branch reads (state/phase vocabulary in `models/lifecycle.py` since L9). | `LifecycleState`; "LiveState = Literal["; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycle.py:16-16; mcp/src/agents_remember/models/lifecycle.py:20-20; mcp/src/agents_remember/observer/lifecycle_state.py:156-179 |
+| `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …) and the `awaiting-developer` state the parked branch reads (state/phase vocabulary in `models/lifecycle.py` since L9). | `LifecycleState`; "LiveState = Literal["; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:16-16; mcp/src/agents_remember/models/lifecycles/responses.py:20-20; mcp/src/agents_remember/observer/lifecycle_state.py:156-179 |
 | Engine tests. | `test_tool_payload_attaches_next_step_and_lifecycle_start_emits_rundown`, `test_advertised_token_count_covers_the_attached_next_step` | mcp/tests/test_next_step.py:298-303; mcp/tests/test_next_step.py:305-317 |
 
 As of HFX-L6, the FRONT_HALF_RUNDOWN reframe bullet names the architect lifecycle explicitly

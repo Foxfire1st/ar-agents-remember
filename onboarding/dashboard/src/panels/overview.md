@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-13T12:26+02:00 |
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -59,7 +59,10 @@ now a repository guideline. Behavior is preserved.
 
 ### 260731-EFA-L23 Route Delta
 
-L23 makes Hangar expose optional durable lifecycle-operation kind, status, and phase as a compact enclosure badge without inventing an operation when none is projected.
+L23 makes Hangar expose optional durable lifecycle-operation kind, status, phase, and
+`currentCommand` as one compact enclosure badge without inventing an operation when none is
+projected. The live command stays single-line and width-responsive through CSS ellipsis, with its
+complete value retained in `title`; it is not truncated once by character count.
 
 TES-L6 changes the command-seat panel boundary from one global spine to sprint-qualified groups.
 `FlowTab` consumes bound fixtures, while the session cockpit delegates group derivation to the data
@@ -192,7 +195,7 @@ inside agents-remember.
 | Contextual task-side chat builds a leaf context package and resolves the current occupant from structural task identity. | `buildLeafContextPackage`; `RailChatImpl`; `findSessionForTask` | dashboard/src/panels/RailChat.tsx:268-323; dashboard/src/panels/RailChat.tsx:545-643; dashboard/src/data/sessions.ts:561-574 |
 | `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. | "function LifecycleListImpl({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:294-294; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:224-224; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:307-307; dashboard/src/grammar/ModeBar.tsx:65-65; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:350-350; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:329-329 |
 | `DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content. | "function DetailPanelImpl({"; "export function displayedReaderDoc({"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:18-18; dashboard/src/panels/detail-panel/model.ts:89-89; dashboard/src/panels/detail-panel/taskReader.tsx:494-494 |
-| The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer. | "State = Literal[LiveState"; "LIVE_STATES: tuple[LiveState"; "TERMINAL_STATES: frozenset[str] = frozenset(vocabulary_names(TerminalState, label=\"TerminalState\"))"; "export const LifecycleList = memo(LifecycleListImpl);" | mcp/src/agents_remember/models/lifecycle.py:19-19; mcp/src/agents_remember/observer/lifecycle_state.py:105-105; mcp/src/agents_remember/observer/lifecycle_state.py:108-108; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
+| The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer. | "State = Literal[LiveState"; "LIVE_STATES: tuple[LiveState"; "TERMINAL_STATES: frozenset[str] = frozenset(vocabulary_names(TerminalState, label=\"TerminalState\"))"; "export const LifecycleList = memo(LifecycleListImpl);" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/observer/lifecycle_state.py:105-105; mcp/src/agents_remember/observer/lifecycle_state.py:108-108; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
 | The shared fixture builders seed lifecycle and projection nodes from served fixtures, with required lifecycle fields copied from the served lifecycle. | `SERVED_LIFECYCLE`; `BASE_LIFECYCLE`; `lifecycle`; `projection` | dashboard/src/test/fixtures/wire.ts:78-78; dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:329-345 |
 | The typed fixture factories provide lifecycle and projection nodes. | `lifecycle`; `projection` | dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:329-345 |
 | The hand-kept snapshot payload provides the generated timestamp. | "\"generatedAt\": \"2026-06-14T09:01:00+00:00\"" | dashboard/src/fixtures/snapshot.json:3-3 |
@@ -280,6 +283,15 @@ diagnostic fact. Rendering stays read-only and uses the projected summary for
 operator context; recovery remains a backend worktree operation.
 
 ## Update History
+
+- 2026-08-13T12:26+02:00 — L23 live-progress clarification: Hangar now displays the plane-owned
+  lifecycle `currentCommand` in the existing operation badge using responsive single-line ellipsis
+  plus a full-value title; focused render coverage pins the projection boundary. Verification
+  provenance remains closeout-owned.
+
+- 2026-08-13T09:05+02:00 — No route impact: L23's current source delta changes backend lifecycle,
+  lineage, runtime packaging, and tests only; `dashboard/src/panels/` has no changed source path and
+  its eight-panel UI model remains unchanged. Verification provenance remains closeout-owned.
 - 2026-08-12T20:20+02:00 — L23 curator: documented panel routing of source-lineage admission evidence; verification remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 makes Hangar expose optional durable lifecycle-operation kind, status, and phase as a compact enclosure badge without inventing an operation when none is projected. Verification provenance remains closeout-owned.

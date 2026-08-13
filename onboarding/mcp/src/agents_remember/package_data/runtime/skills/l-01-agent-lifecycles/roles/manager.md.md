@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:25+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
+| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,17 @@ contains super for code/external memory. Every subordinate dispatch re-proves
 the full chain before creating a child; refusal mutates no seat and carries the
 ordered contract-addressed sync needed before retrying the same leaf.
 
+## L23 Pre-Curator Lineage Boundary
+
+Immediately before curator dispatch, the packaged manager calls `worktree_status` for the canonical
+leaf and requires every task-derived code and external-memory lineage edge to be `current`. It
+synchronizes and reconciles stale ancestry before onboarding, carries the resulting projection in
+the curator brief, and relies on dispatch to repeat the proof before hosted-process creation. Later
+closeout/integration rechecks remain mandatory because they close a different, post-quality race.
+
 ## Update History
+- 2026-08-13T09:05+02:00 — L23 curator: recorded the mandatory pre-curator lineage check, projection
+  handoff, and fail-before-host dispatch recheck; final provenance remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented manager/leaf lineage admission without agent-held ids; verification remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the

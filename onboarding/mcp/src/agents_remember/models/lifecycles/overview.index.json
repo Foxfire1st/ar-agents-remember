@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "mcp/src/agents_remember/models/lifecycles",
+  "overview": "mcp/src/agents_remember/models/lifecycles/overview.md",
+  "index": "mcp/src/agents_remember/models/lifecycles/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/models/lifecycles/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/models/lifecycles/__init__.py",
+    "mcp/src/agents_remember/models/lifecycles/finalize.py",
+    "mcp/src/agents_remember/models/lifecycles/operation.py",
+    "mcp/src/agents_remember/models/lifecycles/responses.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 4,
+    "fileSidecars": 4,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "finalize",
+    "init",
+    "init__",
+    "lifecycles",
+    "mcp",
+    "models",
+    "operation",
+    "remember",
+    "responses",
+    "src"
+  ],
+  "hotPath": {
+    "summary": "Use `responses.py` for lifecycle signal vocabularies and tool responses, `finalize.py` for the terminal finalizer response, and `operation.py` for asynchronous closeout/integration inputs, durable records, and public projections.",
+    "candidateHints": [
+      "mcp/src/agents_remember/models/lifecycles",
+      "mcp/src/agents_remember/models/lifecycles/__init__.py",
+      "mcp/src/agents_remember/models/lifecycles/finalize.py",
+      "mcp/src/agents_remember/models/lifecycles/operation.py",
+      "mcp/src/agents_remember/models/lifecycles/responses.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "finalize.py",
+      "finalize",
+      "operation.py",
+      "operation",
+      "responses.py",
+      "responses",
+      "mcp/src/agents_remember/models/lifecycles/",
+      "route-local-overview",
+      "a09b906bbf2855c3479b4d3199607ff8689b7d93",
+      "/overview.md",
+      "__init__.py.md",
+      "responses.py.md",
+      "finalize.py.md",
+      "operation.py.md",
+      "LiveState",
+      "LifecycleResponse",
+      "LifecycleFinalizeTaskResponse",
+      "LifecycleOperationRecord",
+      "LifecycleOperationProjection",
+      "mcp/src/agents_remember/models/lifecycles/responses.py",
+      "mcp/src/agents_remember/models/lifecycles/finalize.py",
+      "mcp/src/agents_remember/models/lifecycles/operation.py",
+      "agents_remember",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T08",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T13",
+      "governingOverview",
+      "MCP",
+      "PIDs",
+      "init__",
+      "L23"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/models/lifecycles/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}
