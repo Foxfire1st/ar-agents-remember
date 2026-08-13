@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/seat_events.py`        |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`              |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`              |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ pattern; it is called by every retire/rename/turn-state mutation path.
 | `new_ulid` generates the event `id`. | `new_ulid` | mcp/src/agents_remember/observer/ulid.py:30-41 |
 | `orchestration_nudge_manager` is the existing event-logging pattern this module mirrors (same `EventStore(observer_root(config)).append(Event(...))` shape). | "def orchestration_nudge_manager_payload" | mcp/src/agents_remember/mcp/tools/orchestration.py:19-19 |
 | `session_retire_payload`/`session_rename_payload` call `log_retire_event`/`log_rename_event` after a successful mutation. | `session_retire_payload`; `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95 |
-| `api_terminal_retire`/`api_terminal_rename` call the same functions from the serving endpoints; `api_terminal_landed_cleanup` logs each cleanup retirement; `create_app` wires `on_turn_state_change=lambda observation: log_turn_state_change_event(config, observation.entry)` into the liveness sweeper. | `api_terminal_retire`; `api_terminal_landed_cleanup`; `api_terminal_rename`; `create_app` | mcp/src/agents_remember/serving/_app_terminal_routes.py:679-681; mcp/src/agents_remember/serving/_app_terminal_routes.py:741-753; mcp/src/agents_remember/serving/_app_terminal_routes.py:755-761; mcp/src/agents_remember/serving/app.py:230-290 |
+| `api_terminal_retire`/`api_terminal_rename` call the same functions from the serving endpoints; `api_terminal_landed_cleanup` logs each cleanup retirement; `create_app` wires `on_turn_state_change=lambda observation: log_turn_state_change_event(config, observation.entry)` into the liveness sweeper. | `api_terminal_retire`; `api_terminal_landed_cleanup`; `api_terminal_rename`; `create_app` | mcp/src/agents_remember/serving/_app_terminal_routes.py:707-709; mcp/src/agents_remember/serving/_app_terminal_routes.py:769-781; mcp/src/agents_remember/serving/_app_terminal_routes.py:783-789; mcp/src/agents_remember/serving/app.py:230-290 |
 | `auto_complete_seats` calls `log_retire_event` for default automatic closes and `log_landed_event` for the settings opt-out; both remain subordinate to edge success. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:27-108 |
 
 ## Cross-Repo References

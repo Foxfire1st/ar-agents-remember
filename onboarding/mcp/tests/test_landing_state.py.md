@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_landing_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T09:56+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,14 @@ stale or corrupt frozen files, and clearing the frozen result on reopen.
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
+## L23 Reopen Test Isolation
+
+The resurrection test explicitly treats parent lineage as non-applicable while
+testing landing freeze/reopen behavior. Source-lineage policy is covered by the
+dedicated reopen suite, so this mock preserves the test's existing ownership.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented bounded lineage isolation in landing-state reopen coverage; verification remains closeout-owned.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.

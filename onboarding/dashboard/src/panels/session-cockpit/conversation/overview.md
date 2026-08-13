@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
-| lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`                  |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastUpdated | 2026-08-13T07:53+02:00 |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -322,6 +322,7 @@ RTL cleanup and clears the Virtualizer debounce before jsdom teardown. The `msg`
 because streamed-row content is still suite-specific.
 
 ## Update History
+- 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
 
 - 2026-08-12T17:04+02:00 — 260731-EFA-L23 dashboard-gate route review: moved the intent-lock suite
   onto the existing hermetic scroll-memory geometry/timer helper, eliminating the post-jsdom

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -622,7 +622,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
 | The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:43-43; mcp/src/agents_remember/controlplane/durable_store.py:13-24 |
 | `StatesAreFiledOnce` is the TypeScript overlap-check type. | `StatesAreFiledOnce` | dashboard/src/types/projection.ts:25-25 |
-| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:220-220 |
+| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:221-221 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -769,7 +769,14 @@ governed by `serving/projections/overview.md`. This route remains the observable
 nodes) and its read-side orchestration; the reader implementations live in serving, and the
 shared observer store-root path conventions moved to `kernel/primitives/observer_paths.py`.
 
+## L23 Lineage Projection Boundary
+
+The observer carries validated source-lineage status into Engine Process nodes
+and maps blocked start progress to preflight. It remains an observation layer:
+branch comparison and recovery selection stay in worktree policy.
+
 ## Update History
+- 2026-08-12T20:20+02:00 — L23 curator: documented observer projection, not derivation, of source lineage; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: added the private-identity-free task lifecycle-operation projection boundary; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled observer state with structural

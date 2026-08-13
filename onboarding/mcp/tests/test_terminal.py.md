@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal.py`                     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-13T07:53+02:00 |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -47,7 +47,11 @@ collapses tmux-illegal chars (`.`/`:`) and falls back to `ar-session`.
 child): open records the tmux argv + registers + correlates `lifecycle_id`
 (`get`/`sessions`/`for_lifecycle`), open is idempotent for a live session and replaces a
 dead one, `close` unregisters, an unknown sid raises `KeyError` on write/resize, and a
-custom `name` overrides the derived one. Task 22 extends these registry tests with injectable tmux
+custom `name` overrides the derived one. The custom-name proof finds tmux's `-s`
+option and asserts its following token rather than assuming a fixed argv slot, so the
+same semantic assertion holds whether capability detection inserts the modern optional
+`-T sync` frame or produces the older/unavailable-capability command shape. Task 22
+extends these registry tests with injectable tmux
 probe/kill fakes: `has_session` delegates to the probe, `terminate` kills the resolved tmux name and
 unregisters the local session, terminating an unknown sid uses a supplied tmux name, and
 `attach` creates unregistered per-connection clients that can be `close_session`ed without removing the
@@ -95,6 +99,8 @@ failures where the binaries or required terminal capabilities are absent (the sl
 
 Unit subprocess fakes must inspect the exact environment, while the optional real-tmux case skips
 only for missing tmux and owns/cleans its attached client explicitly.
+Tmux command assertions locate owned flags and their operands; optional capability flags may shift
+positions without weakening the asserted session-name contract.
 
 ### Todos
 
@@ -135,7 +141,9 @@ Terminal regressions now pin capability-aware synchronized tmux frame setup and 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+- 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
 
+- 2026-08-12T22:50+02:00 — 260731-EFA-L23 Dagger follow-up: made the custom-session-name regression assert the operand following tmux `-s` instead of fixed argv slot 6, preserving coverage across optional `-T sync` and older/unavailable-capability shapes. The owner reports the exact focused pytest passing and Ruff clean. Verification remains closeout-owned.
 - 2026-08-02T18:15+02:00 — 260731-EFA-L6 curator W1-B06: anchored 2 Repo-Internal reference rows; scoped result 0 findings.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2: every fixture in this suite was rewritten onto two new

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -429,7 +429,7 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 | `_git_commit_meta` is this module's only git call, runs on the package's one runner, `kernel.git_command.run_git`, and guards it with `except (OSError, subprocess.SubprocessError)` so the runner's own `TimeoutExpired` cannot escape. | "def _git_commit_meta(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py:327-327 |
 | That runner strips the `GIT_DIR`-family selectors, adds `safe.directory`, DEVNULLs stdin, and bounds the call at `GIT_LOCAL_TIMEOUT_SECONDS` (300) by default — the bound whose `subprocess.TimeoutExpired` the widened guard above exists to absorb. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | A wedged `git log` degrades both ledger entry points to hash-only rows instead of failing the tick: a patched `run_git` raising `TimeoutExpired` is driven through `_ledger_window` **and** `read_ledger`. | `test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` | mcp/tests/test_observer_projection_ledger.py:171-197 |
-| Task 29 tests pin active-group provider admission, parked provider rejection, setup-progress filtering, and engine-process group filtering. | `WorktreeProviderAdmissionTests`; `test_rejects_parked_terminal_and_non_provider_phase_groups`; `test_read_providers_ignores_unadmitted_worktree_stacks`; `test_active_group_filter_skips_parked_progress`; `test_reader_skips_inactive_engine_process_groups_when_filtered` | mcp/tests/test_observer_projection.py:134-242; mcp/tests/test_observer_projection_engine.py:435-464; mcp/tests/test_observer_projection_readers.py:316-330; mcp/tests/test_observer_projection_snapshot.py:296-322 |
+| Task 29 tests pin active-group provider admission, parked provider rejection, setup-progress filtering, and engine-process group filtering. | `WorktreeProviderAdmissionTests`; `test_rejects_parked_terminal_and_non_provider_phase_groups`; `test_read_providers_ignores_unadmitted_worktree_stacks`; `test_active_group_filter_skips_parked_progress`; `test_reader_skips_inactive_engine_process_groups_when_filtered` | mcp/tests/test_observer_projection.py:134-242; mcp/tests/test_observer_projection_engine.py:469-498; mcp/tests/test_observer_projection_readers.py:316-330; mcp/tests/test_observer_projection_snapshot.py:303-329 |
 | The worktree contract loader + fields (surfaces 5/6). | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285 |
 | The setup-progress projection (`progress_status`) reused for surface 3. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
 | The memory ledger loader read for surface 8. | `load_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190 |

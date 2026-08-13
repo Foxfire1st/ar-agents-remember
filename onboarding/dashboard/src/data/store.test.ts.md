@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/store.test.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:16+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -129,7 +129,7 @@ the bounded buffer documented in the store sidecar.
 | The fixture narrowing and the fixture-derived lifecycle count. | "export function asServedProjection" | dashboard/src/test/servedProjection.ts:22-43 |
 | The parameter type that IS the check, and why the double cast was not one. | `AsJsonModule`; `asServedProjection` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/servedProjection.ts:41-43 |
 | `reparsed` (the `structuredClone` behind `volatileBump`) and the `agentNotifierHeartbeat` builder. | `reparsed`; `agentNotifierHeartbeat` | dashboard/src/test/fixtures/wire.ts:352-366; dashboard/src/test/fixtures/wire.ts:396-398 |
-| Projection / observer-event types the store maps over. | `WorkspaceProjection` | dashboard/src/types/projection.ts:542-554 |
+| Projection / observer-event types the store maps over. | `WorkspaceProjection` | dashboard/src/types/projection.ts:569-581 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_platform_long_tail.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -40,13 +40,20 @@ No Domain Documentation source is configured for this repository-local regressio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `DecisionRoleTests` | mcp/tests/test_platform_long_tail.py:73-73 |
+| Current suite declaration anchoring this card. | `DecisionRoleTests` | mcp/tests/test_platform_long_tail.py:71-81 |
 
 ## Cross-Repo References
 
 No cross-repository implementation source governs this test module.
 
+## L23 Extracted Spawn Refusals
+
+The long-tail opener tests now call the application-owned refusal translator
+with `OpenTerminalResult`, preserving their public payload assertions after the
+builder left `terminal_tools.py`.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: reconciled the extracted terminal refusal boundary in long-tail coverage; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_platform_long_tail.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.

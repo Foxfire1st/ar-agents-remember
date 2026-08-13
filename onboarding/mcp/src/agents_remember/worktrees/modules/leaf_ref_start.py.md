@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-01T09:14+02:00                                      |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                  |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ is quarantined, while a *caller asking for* one is refused before it can be writ
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared resolver and `LeafRefResolutionError` payload facts, plus the `LeafRefStatus` alias `error.status` is typed as. | "LeafRefStatus = Literal["; "class LeafRefResolutionError"; "def resolve_leaf_ref(" | mcp/src/agents_remember/models/terminal.py:18-18; mcp/src/agents_remember/worktrees/leaf_refs.py:39-39; mcp/src/agents_remember/worktrees/leaf_refs.py:88-88 |
+| Shared resolver and `LeafRefResolutionError` payload facts, plus the `LeafRefStatus` alias `error.status` is typed as. | "LeafRefStatus = Literal["; "class LeafRefResolutionError"; "def resolve_leaf_ref(" | mcp/src/agents_remember/models/terminal.py:19-19; mcp/src/agents_remember/worktrees/leaf_refs.py:39-39; mcp/src/agents_remember/worktrees/leaf_refs.py:88-88 |
 | Start contract builder that calls these helpers. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:187-206 |
 | `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. | `ContractError`, `_task_vocabulary`, `ContractCells` | mcp/src/agents_remember/worktrees/worktree_contract.py:91-92; mcp/src/agents_remember/worktrees/worktree_contract.py:161-178; mcp/src/agents_remember/worktrees/worktree_contract.py:181-196 |
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastUpdated            | 2026-08-12T22:04+02:00 |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -77,7 +77,9 @@ L1's discovery walks up from the working directory) — then daemon mode
 (`==X.Y.Z`, `uvx --from`) as the debugging/repro path, and closes with one pre-release
 note: until 3.0.0 final the dashboard ships in `3.0.0rcN` pre-releases that default
 resolution skips — `uv tool install --prerelease allow` or an explicit pin, including for
-the MCP registration instead of `@latest`. Every documented command was verified against
+the MCP registration instead of `@latest`. The committed reproducibility examples and Status
+line now name `3.0.0rc7`, while the surrounding guidance stays version-generic so later release
+bumps remain mechanical. Every documented command was verified against
 real PyPI resolution (unpinned resolves the latest stable; `--prerelease allow` resolves
 the rc).
 
@@ -195,6 +197,7 @@ across the two hooks was retiered by 260731-EFA-L1, and the *step list* was corr
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-08-12T22:04+02:00 — 260731-EFA-L23 post-code curator: reconciled the committed `3.0.0rc7` reproducibility pins and Status identity. This is a release-identity update only; dashboard installation, daemon, auto-start, and prerelease guidance remain unchanged. Final verification stamping remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T10:08+02:00 — No content impact: MCP 3.0.0rc7 refreshed the public dashboard pin and

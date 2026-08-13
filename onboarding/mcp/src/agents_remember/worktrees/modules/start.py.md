@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -222,14 +222,23 @@ No external Domain Documentation source is configured for this memory repo.
 | Index-lifecycle tests pin the divergence exclusion (real git worktree fixtures: divergent files stay fresh, equal heads sync everything). | `test_divergent_files_keep_fresh_mtimes`, `test_equal_heads_sync_everything` | mcp/tests/test_provider_index_lifecycle.py:365-399; mcp/tests/test_provider_index_lifecycle.py:401-417 |
 | Stale-base preflight and memory-branch auto-template coverage (block, both recoveries, diverged, offline, memory side). | `test_behind_code_source_branch_blocks_with_recovery_guidance`, `test_fast_forward_recovers_non_checked_out_branch`, `test_fast_forward_recovers_checked_out_branch`, `test_fast_forward_cannot_recover_diverged_branch`, `test_offline_fetch_reports_unknown_and_does_not_block`, `test_behind_memory_source_branch_blocks`, `test_missing_memory_source_branch_is_created_from_official_tip` | mcp/tests/test_worktree_stale_base.py:42-59; mcp/tests/test_worktree_stale_base.py:75-91; mcp/tests/test_worktree_stale_base.py:93-108; mcp/tests/test_worktree_stale_base.py:110-127; mcp/tests/test_worktree_stale_base.py:129-137; mcp/tests/test_worktree_stale_base.py:139-152; mcp/tests/test_worktree_stale_base.py:156-184 |
 | Branch freshness facts come from the shared kernel. | `read_branch_freshness`, `freshness_to_packet` | mcp/src/agents_remember/kernel/git_freshness.py:98-112; mcp/src/agents_remember/kernel/git_freshness.py:158-169 |
-| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:32-38; mcp/src/agents_remember/worktrees/modules/guidance.py:113-127; mcp/src/agents_remember/worktrees/modules/guidance.py:130-153; mcp/src/agents_remember/worktrees/modules/guidance.py:431-433 |
+| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:37-44; mcp/src/agents_remember/worktrees/modules/guidance.py:120-134; mcp/src/agents_remember/worktrees/modules/guidance.py:137-160; mcp/src/agents_remember/worktrees/modules/guidance.py:441-443 |
 | `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:181-196; mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
 
 ## Series-Contract Notes
 
 For master task starts, `start_contract.py` creates or loads the root series contract, creates the integration branch from the protected/source branch, and then builds the leaf contract from that integration branch with the canonical doc-id `leaf_id` recorded. Both the root and leaf `memory_base_commit` come from `memory_base_for_source` — the tip of the **memory source branch** the worktree is created off (mirroring the code base), **not** the memory repo's current HEAD, which may sit on an unrelated in-flight branch and would record a divergent base that breaks closeout's "memory source branch moved" preflight; it falls back to the repo HEAD only when external memory is off or the source branch is not present yet.
 
+## L23 Pre-Mutation Lineage Gate
+
+Attach, existing-contract reuse, and leaf start now prove applicable ancestry
+before stale context is resumed or start state is mutated. Parent lineage runs
+before the separate stale-base preflight, so `proceed-stale` cannot override a
+super-to-master structural gap; blocked progress is recorded as
+`source-lineage-blocked`.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented fail-closed ancestry admission before attach/start state changes; verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

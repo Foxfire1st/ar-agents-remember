@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/delta.py`  |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-07T05:06+02:00                      |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`  |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`  |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Purpose
@@ -64,8 +64,8 @@ deterministic (replay/sim fixtures compare byte-for-byte).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The projection schema diffed here (flat, id-keyed collections). | "class WorkspaceProjection(BaseModel):"; "lifecycles: list[LifecycleProjection]"; "enclosures: list[EnclosureNode]"; "providers: list[ProviderNode]"; "metrics: Metrics"; "analytics: Analytics" | mcp/src/agents_remember/observer/projection.py:998-998; mcp/src/agents_remember/observer/projection.py:1005-1007; mcp/src/agents_remember/observer/projection.py:1016-1017 |
-| The projector calls the stable-state and diff functions, publishes the projection, and broadcasts resulting items. | "class Projector:"; "def stable_projection_state("; "def diff_projection("; "def _publish_projection("; "def _broadcast(" | mcp/src/agents_remember/serving/projector.py:131-131; mcp/src/agents_remember/serving/delta.py:76-114; mcp/src/agents_remember/serving/projector.py:273-273; mcp/src/agents_remember/serving/projector.py:315-315 |
+| The projection schema diffed here (flat, id-keyed collections). | "class WorkspaceProjection(BaseModel):"; "lifecycles: list[LifecycleProjection]"; "enclosures: list[EnclosureNode]"; "providers: list[ProviderNode]"; "metrics: Metrics"; "analytics: Analytics" | mcp/src/agents_remember/observer/projection.py:1000-1000; mcp/src/agents_remember/observer/projection.py:1007-1009; mcp/src/agents_remember/observer/projection.py:1018-1019 |
+| The projector calls the stable-state and diff functions, publishes the projection, and broadcasts resulting items. | "class Projector:"; "def stable_projection_state("; "def diff_projection("; "def _publish_projection("; "def _broadcast(" | mcp/src/agents_remember/serving/delta.py:83-83; mcp/src/agents_remember/serving/delta.py:109-109; mcp/src/agents_remember/serving/projector.py:131-131; mcp/src/agents_remember/serving/projector.py:292-292; mcp/src/agents_remember/serving/projector.py:334-334 |
 | The client mirror of the volatile set + local age advancement. | `VOLATILE_AGE_FIELDS`; `stampServed`; `servedAgeSeconds` | dashboard/src/data/servedAges.ts:16-22; dashboard/src/data/servedAges.ts:59-61; dashboard/src/data/servedAges.ts:68-78 |
 
 ## Update History

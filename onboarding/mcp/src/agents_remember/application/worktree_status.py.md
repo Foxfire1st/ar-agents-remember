@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/worktree_status.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-04T01:24+02:00                     |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -83,19 +83,26 @@ able to touch.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Worktree lifecycle status and next hints are composed by the worktree manager. | "def lifecycle_guidance(", "def next_guidance(" | mcp/src/agents_remember/worktrees/modules/guidance.py:113-113; mcp/src/agents_remember/worktrees/modules/guidance.py:200-200 |
-| Worktree summary model constrains the context-facing shape. | "class WorktreeSummary" | mcp/src/agents_remember/models/worktree.py:59-59 |
+| Worktree lifecycle status and next hints are composed by the worktree manager. | "def lifecycle_guidance(", "def next_guidance(" | mcp/src/agents_remember/worktrees/modules/guidance.py:120-120; mcp/src/agents_remember/worktrees/modules/guidance.py:207-207 |
+| Worktree summary model constrains the context-facing shape. | "class WorktreeSummary" | mcp/src/agents_remember/models/worktree.py:96-96 |
 | Context packet assembly consumes this read-only worktree projection — assigned directly, no longer `model_validate`d. | "worktree=worktree_status_packet" | mcp/src/agents_remember/application/context_packet.py:96-96 |
-| `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). | "class WorktreeStatusPayload", "NextOperation = Literal[" | mcp/src/agents_remember/models/worktree.py:30-30; mcp/src/agents_remember/worktrees/modules/guidance.py:109-109 |
+| `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). | "class WorktreeStatusPayload", "NextOperation = Literal[" | mcp/src/agents_remember/models/worktree.py:30-30; mcp/src/agents_remember/worktrees/modules/guidance.py:116-116 |
 | `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. | "def _vocabulary_cell(", "unknown_cells: tuple[str" | mcp/src/agents_remember/worktrees/worktree_contract.py:106-106; mcp/src/agents_remember/worktrees/worktree_contract.py:285-285 |
-| `_summary_from_status_payload` maps the producer's `unknown_contract_cells` value onto `WorktreeSummary.unknownContractCells`. | "def _summary_from_status_payload"; "unknownContractCells=payload.get"; "unknown_contract_cells" | mcp/src/agents_remember/application/worktree_status.py:64-64; mcp/src/agents_remember/application/worktree_status.py:114-114 |
+| `_summary_from_status_payload` maps the producer's `unknown_contract_cells` value onto `WorktreeSummary.unknownContractCells`. | "def _summary_from_status_payload"; "unknownContractCells=payload.get"; "unknown_contract_cells" | mcp/src/agents_remember/application/worktree_status.py:64-64; mcp/src/agents_remember/application/worktree_status.py:115-115 |
 | `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:153-153 |
 
 ## Series-Contract Notes
 
 Status packets mirror the leaf enclosure identity fields from `guidance.status_payload`, including `enclosurePath`, `leafId`, and `kind`.
 
+## L23 Lineage In Context Packets
+
+`_summary_from_status_payload` validates optional snake-case lineage facts into
+`SourceLineageProjection`. Context packets therefore expose the same strict
+ancestry evidence as status rather than copying or re-deriving Git state.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: recorded strict lineage projection into worktree summaries; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.

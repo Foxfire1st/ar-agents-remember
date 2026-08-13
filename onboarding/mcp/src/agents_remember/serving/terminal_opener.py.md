@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,15 @@ No Domain Documentation source is configured.
 
 No cross-repository implementation dependency governs this file.
 
+## L23 Structural Spawn Admission
+
+After role/document validation and before any host process side effect, a
+structural open resolves ancestry from canonical task identity. Stale or
+unavailable lineage returns a typed `OpenTerminalResult` with detail and the
+strict projection; non-structural terminals retain their existing path.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: recorded task-derived lineage admission before structural process creation; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current serving card for `terminal_opener.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 
 ## Purpose
 
@@ -63,7 +63,15 @@ read/search helpers and never become AR role seats.
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Lifecycle — Worker" | skills/l-01-agent-lifecycles/roles/worker.md:1-33 |
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:95-111 |
 
+## L23 Role Recovery Semantics
+
+Architect guidance treats a resumed thematic master behind super as a sync of
+the same master, while manager guidance requires current master and leaf edges
+before reading or delegating work. Both rely on plane-owned task identity and
+never pass branch/commit/session ids between roles.
+
 ## Update History
+- 2026-08-12T20:20+02:00 — L23 curator: documented architect/manager lineage recovery and dispatch boundaries; verification remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 route impact: manager,
   orchestrator, and worker quality-altitude doctrine now uses host-managed

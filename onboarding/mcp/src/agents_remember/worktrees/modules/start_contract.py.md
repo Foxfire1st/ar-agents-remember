@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start_contract.py` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-01T10:45+02:00                                       |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                   |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                   |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -113,9 +113,9 @@ the shared resolver, which indexes non-master `task.json` docs as leaf candidate
 | --- | --- | --- |
 | Shared leaf-ref validation and candidate reporting. | `LeafRefResolutionError`; `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Start-side conversion from leaf-ref resolution errors and contract-construction errors into command results. | `invalid_leaf_ref_result`; `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:26-35; mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
-| The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:455-466 |
-| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:457-457; mcp/src/agents_remember/worktrees/modules/start.py:460-460; mcp/src/agents_remember/worktrees/modules/start.py:463-463; mcp/src/agents_remember/worktrees/modules/start.py:466-466 |
-| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:466-466; mcp/src/agents_remember/worktrees/modules/start.py:523-589 |
+| The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:473-484 |
+| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:475-475; mcp/src/agents_remember/worktrees/modules/start.py:478-478; mcp/src/agents_remember/worktrees/modules/start.py:481-481; mcp/src/agents_remember/worktrees/modules/start.py:484-484 |
+| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:484-484; mcp/src/agents_remember/worktrees/modules/start.py:561-627 |
 | `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. | `_task_vocabulary`; `validate_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:161-178; mcp/src/agents_remember/worktrees/worktree_contract.py:761-816 |
 
 ## Update History

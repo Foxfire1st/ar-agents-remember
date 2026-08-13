@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-04T03:03+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                  |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                  |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -62,8 +62,8 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The kernel module defines metadata-row rewriting plus Update History extraction and delta helpers. | `onboarding_metadata_row`; `update_history_section`; `new_history_lines` | mcp/src/agents_remember/kernel/onboarding_doc.py:24-30; mcp/src/agents_remember/kernel/onboarding_doc.py:115-126; mcp/src/agents_remember/kernel/onboarding_doc.py:129-132 |
 | The closeout onboarding module imports the body/history classifiers and metadata-row helper from this kernel module. | "from agents_remember.kernel.onboarding_doc import (" | mcp/src/agents_remember/worktrees/modules/onboarding.py:10-10 |
-| Route-overview and sidecar classification gates consume the meaningful-body, new-history, and no-impact-marker helpers. | `_overview_revision`; `_governing_overview_bucket`; `_route_overview_bucket`; `classify_sidecar_updates` | mcp/src/agents_remember/worktrees/modules/onboarding.py:218-239; mcp/src/agents_remember/worktrees/modules/onboarding.py:242-250; mcp/src/agents_remember/worktrees/modules/onboarding.py:253-278; mcp/src/agents_remember/worktrees/modules/onboarding.py:592-646 |
-| Route-overview and sidecar metadata refresh paths consume `onboarding_metadata_row`. | `refresh_route_overview_metadata_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:358-389; mcp/src/agents_remember/worktrees/modules/onboarding.py:751-783 |
+| Route-overview and sidecar classification gates consume the meaningful-body, new-history, and no-impact-marker helpers. | `_overview_revision`; `_governing_overview_bucket`; `_route_overview_bucket`; `classify_sidecar_updates` | mcp/src/agents_remember/worktrees/modules/onboarding.py:262-287; mcp/src/agents_remember/worktrees/modules/onboarding.py:323-339; mcp/src/agents_remember/worktrees/modules/onboarding.py:342-372; mcp/src/agents_remember/worktrees/modules/onboarding.py:694-748 |
+| Route-overview and sidecar metadata refresh paths consume `onboarding_metadata_row`. | `refresh_route_overview_metadata_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:457-488; mcp/src/agents_remember/worktrees/modules/onboarding.py:853-894 |
 | The public worktree-manager facade imports and re-exports `onboarding_metadata_row`. | "from agents_remember.worktrees.modules.onboarding import (" | mcp/src/agents_remember/worktrees/git_worktree_manager.py:76-84 |
 | Helper unit tests cover body stripping, history extraction, and marker detection. | `test_strips_metadata_rows_and_update_history`; `test_extracts_history_lines_without_heading`; `test_detects_content_marker` | mcp/tests/test_onboarding_doc.py:43-50; mcp/tests/test_onboarding_doc.py:76-78; mcp/tests/test_onboarding_doc.py:99-102 |
 

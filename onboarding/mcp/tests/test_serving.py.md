@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastUpdated            | 2026-08-12T21:39+02:00               |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -300,7 +300,19 @@ Two arms of `evaluate_action`: an action naming **neither a lifecycle nor a gate
 point — both are 400s, and the code tells the caller which half of the address is absent. (The
 recorder's own gate-id-only arm lives in `test_serving_app_routes.py::GateDecisionHelperTests`.)
 
+## L23 Projector Cancellation Regression
+
+The asynchronous serving suite blocks an in-flight thread tick, cancels the
+projector, and proves cancellation does not complete until the real tick has
+finished. A complementary case makes that released tick raise, requires the
+shutdown-drain error log, and still retains `CancelledError` as the
+caller-visible result. Together they pin both success and failure arms of the
+cleanup-race fix without converting late worker-thread failure into the public
+cancellation result.
+
 ## Update History
+- 2026-08-12T21:39+02:00 — L23 curator follow-up: documented the complementary drain-failure forcing case: a blocked `_tick_sync` raises after cancellation, the late failure is logged, and `CancelledError` remains public. The owner reports the drain-success, drain-failure, and crashed-watcher cases green 3/3. Verification remains closeout-owned.
+- 2026-08-12T20:10+02:00 — L23 curator: documented drain-before-cancellation coverage for projector threads; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

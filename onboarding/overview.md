@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-12T09:20+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastUpdated | 2026-08-13T00:07+02:00 |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 
 > **Status:** active baseline
 
@@ -1077,8 +1077,32 @@ the observer projection readers, and `code_quality/layering.py` was built and AR
 package-layering gate (rank violations, cycles, undeclared dirs/imports all fail closed with no
 baseline). The move ledger and pre-change serialization baseline prove zero wire drift.
 
-## Update History
+## L23 Source-Lineage Enforcement Slice
 
+Structural task admission now derives code and external-memory ancestry from
+canonical sprint/master/leaf documents and enclosure contracts. The control
+plane proves super-to-master and, for leaf roles, master-to-leaf before exposing
+a checkout or mutating lifecycle state. Operations projects the same strict
+evidence and contract-addressed recovery; no agent must remember a commit,
+branch, runtime, or occupant id.
+
+## L23 Detached Operation Authority Boundary
+
+Checkout isolation now distinguishes four explicit process classes without
+turning live coordination into a general CLI capability: long-lived MCP and
+dashboard daemons, the plane-owned detached lifecycle-operation worker, tests,
+and undeclared checkout execution. The detached worker alone declares
+`lifecycle-operation` before loading its services/config because it must claim
+and finalize the task's accepted durable closeout or integration operation. It
+does not acquire either daemon writer role; an ordinary unpublished checkout
+command remains confined to its leaf-local development coordinator and report
+root.
+
+## Update History
+- 2026-08-13T00:07+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: recorded the repository-level process-authority split. The detached lifecycle-operation worker may reach its plane-owned live operation without becoming an MCP/dashboard daemon, and undeclared checkout CLI isolation remains fail-closed. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
+- 2026-08-12T20:20+02:00 — L23 curator: added the repository-wide source-lineage admission and operator-visibility boundary; verification remains closeout-owned.
+
+- 2026-08-12T15:19+02:00 — L23 curator: documented the pinned observable Dagger quality path and its enclosure-owned reports at repository altitude; verification provenance remains closeout-owned.
 - 2026-08-12T10:08+02:00 — No route impact: the rc7 release leaf changes only the public
   README version pin and existing package-version authorities; repository routes and subsystem
   ownership are unchanged. Verification metadata remains pinned until closeout.
@@ -1125,6 +1149,7 @@ baseline). The move ledger and pre-change serialization baseline prove zero wire
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the armed file-size rail, the scope closure, and the in-place facade/test-family splits. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section (ESLint rail, size splits, coverage/budget/knip/trap, Playwright, hooks, Python ripple). Verification metadata stays pinned until closeout stamps the code commit.
 
+- 2026-08-05T22:30+02:00 — No route impact: 260731-EFA-L16 (the cross-store lock-order repair, its forcing tests, and the coding-guidelines/spawn-doctrine skill chain) is recorded in the `mcp/` and `skills/l-01-agent-lifecycles/` route overviews and their children; this root inventory was reviewed and is unchanged. Verification metadata pinned until closeout stamps the L16 code commit.
 - 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the code-quality and docs-index claims through their operative sections and regenerated the final ranges with the scoped fixer.
 
 - 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: superseded the deferred-codegen account.
@@ -2205,7 +2230,3 @@ Updated 2026-06-27T22:00+02:00 — task 28 (NOTIFY-AND-CONTINUE turn end): refre
 Updated 2026-06-17T22:45+02:00 after the Engine Room visual-parity pass enriched the dashboard-frontend Feature Inventory row (the 5g G6 atmospheric backdrop + Effects/Calm toggle, the restored HUD decal layer, and the fixed-height `Panel fill` layout); verification metadata stays pinned until closeout commits the source. (Prior: 2026-06-06T12:28+02:00 after adding the public `docs/features.md` tour, replacing README `## Core Model` with `## Core Features`, and documenting the Claude Code root `.mcp.json` detection caveat. Prior: 2026-06-04T10:29+02:00 — documented hidden harness starter packages as source-owned surfaces in the main overview and noted their `l-01` deep-research retrieval-strategy tally requirement. Prior: 2026-05-29T17:30+02:00 — re-spined the public docs and this overview's "What This Repo Is" framing around the three retrieval substrates (by path / by meaning / by relationship) and retired the sidecar-only anti-retrieval positioning. Prior: 2026-05-28T19:52+02:00 — added the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.)
 
 ## Update History
-- 2026-08-12T15:19+02:00 — L23 curator: documented the pinned observable Dagger quality path and its enclosure-owned reports at repository altitude; verification provenance remains closeout-owned.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section (ESLint rail, size splits, coverage/budget/knip/trap, Playwright, hooks, Python ripple). Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-05T22:30+02:00 — No route impact: 260731-EFA-L16 (the cross-store lock-order repair, its forcing tests, and the coding-guidelines/spawn-doctrine skill chain) is recorded in the `mcp/` and `skills/l-01-agent-lifecycles/` route overviews and their children; this root inventory was reviewed and is unchanged. Verification metadata pinned until closeout stamps the L16 code commit.

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/launchEvidence.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The echo predicate, tier machine, tier senses, and verbatim bridge-error reader. | `hasLaunchEcho`, `launchTier`, `TIER_SENSE`, `verbatimBridgeError` | dashboard/src/data/launchEvidence.ts:24-26; dashboard/src/data/launchEvidence.ts:29-41; dashboard/src/data/launchEvidence.ts:44-51; dashboard/src/data/launchEvidence.ts:57-66 |
 | The `EvidenceTier` vocabulary this returns (L2-seeded store type). | `EvidenceTier` | dashboard/src/data/sessionCockpitStore.ts:18-18 |
-| The requested-pair persistence this refuses to treat as proof. | `_resolved_pair` | mcp/src/agents_remember/serving/terminal_opener.py:424-427 |
+| The requested-pair persistence this refuses to treat as proof. | `_resolved_pair` | mcp/src/agents_remember/serving/terminal_opener.py:430-433 |
 | The badge rendering the tier word + glyph. | `EvidenceBadge` | dashboard/src/grammar/EvidenceBadge.tsx:46-69 |
 | Header derivation from row truth (`launchTier(session)`). | `HeaderStrip` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169 |
 | The failed-launch banner consuming `verbatimBridgeError` + the refused tier. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:69-143 |

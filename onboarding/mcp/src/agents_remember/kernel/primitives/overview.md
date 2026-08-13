@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/kernel/primitives/` |
 | onboardingRoute | `mcp/src/agents_remember/kernel/primitives/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../../../overview.md) |
-| lastUpdated | 2026-08-12T10:08+02:00 |
-| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97` |
-| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
+| lastUpdated | 2026-08-13T00:00+02:00 |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 
 ## What This Area Is
 
@@ -23,11 +23,15 @@ version identity. Every layer above kernel reads these without importing `mcp`, 
 ## Hot Path Summary
 
 `runtime_config.py::McpRuntimeConfig` is the trusted authority settings record;
-`checkout_coordination.py` keeps unpublished linked-checkout CLI/store writes inside the leaf's
-disposable coordinator and refuses undeclared primary-checkout access; `gate_policy.py`
+`checkout_coordination.py` keeps unpublished linked-checkout coordination writes inside the
+leaf's disposable coordinator, permits operational artifacts only inside the exact enclosure
+`reports/` root, admits the explicit plane-owned lifecycle-operation worker without granting a
+daemon role, and refuses undeclared primary-checkout access; `gate_policy.py`
 owns the human-first gate delegation policy; `provider_degradation_settings.py` parses the
 `providerDegradation` block; `inbox_backoff.py` owns redelivery backoff; `memory_cap.py` plans
-explicit opt-in hard caps while uncapped full gates stay host-managed; `identity.py` owns provider instance naming.
+explicit opt-in hard caps while uncapped full gates stay host-managed; `identity.py` owns provider instance naming;
+`version.py` resolves installed distribution metadata through a function seam and falls back to the
+committed source-checkout release identity when package metadata is unavailable.
 
 ## What Belongs Here
 
@@ -45,7 +49,7 @@ explicit opt-in hard caps while uncapped full gates stay host-managed; `identity
 | `observer_paths.py` | Observer store-root path conventions. |
 | `provider_degradation_settings.py` | Provider degradation settings parsing. |
 | `tool_reports.py` | Bulk tool-report retention/redaction. |
-| `version.py` | Installed package identity. |
+| `version.py` | Installed package identity with an explicit metadata-or-source fallback resolver. |
 
 ## What Does Not Belong Here
 
@@ -83,14 +87,17 @@ explicit opt-in hard caps while uncapped full gates stay host-managed; `identity
 - Single declaration per vocabulary (gate kinds, decision roles, provider ids); wire layers
   re-export, never retype.
 - Checkout execution mode is declared once in kernel. Undeclared linked worktrees own only
-  `<worktree-group>/provider-runtime/dev-ar-coordination`; undeclared primary checkout access is
+  `<worktree-group>/provider-runtime/dev-ar-coordination` for coordination rows and the exact
+  enclosure `reports/` root for operational artifacts; undeclared primary checkout access is
   refused and tests declare their mode explicitly.
+- The `lifecycle-operation` mode belongs only to the detached task worker. It admits live
+  operation authority but does not populate the MCP/dashboard daemon writer role.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Checkout policy derives from the loaded package path and centrally refuses durable targets outside the leaf-local root. | `resolve_checkout_location`; `require_durable_write_target` | mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:75-128 |
+| Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots. | `resolve_checkout_location`; `require_durable_write_target` | mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:90-108; mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:132-155 |
 | The layering rail enforces the total order this route anchors. | `load_contract` | mcp/src/agents_remember/code_quality/layering.py:62-62 |
 | Structural gate models import the producer-owned gate vocabulary from kernel. | "from agents_remember.kernel.primitives.gate_vocab import (" | mcp/src/agents_remember/models/structural/gates.py:15-20 |
 
@@ -141,6 +148,10 @@ When adding a primitive:
 3. Run the layering check and structural-coverage suite.
 
 ## Update History
+
+- 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: added the narrow lifecycle-operation execution mode for the plane-owned detached task worker while retaining an empty daemon role and ordinary checkout isolation. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
+- 2026-08-12T22:24+02:00 — 260731-EFA-L23 async-closeout follow-up: separated checkout-local coordination authority from the exact enclosure report-artifact target; reports do not become a coordinator and every other durable target remains refused. Verification remains closeout-owned.
+- 2026-08-12T22:04+02:00 — 260731-EFA-L23 post-code curator: documented the committed version resolver seam: installed package metadata is authoritative and a source checkout falls back to the `3.0.0rc7` release identity. Final verification stamping remains closeout-owned.
 
 - 2026-08-12T10:08+02:00 — No route impact: the rc7 leaf changes the existing version fallback
   literal and names its metadata/fallback resolver so targeted CRAP can score it; primitive

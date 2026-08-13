@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-11T14:29+02:00               |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -177,7 +177,7 @@ published output contract:
 `sys.path.insert(0, mcp/src)` **and** `mcp/tests` before package imports cit:(["MCP_SRC =", "MCP_TESTS ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:109-110). Vocabulary
 membership is asserted through `_accepts(model, base, field, value)` cit:([`_accepts`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:181-186) — a
 `model_validate` over a minimal base dict with only the field under test undecided
-(`REPO_BASE` cit:(["REPO_BASE ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:460-460) / `SESSION_BASE` cit:(["SESSION_BASE ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:461-461)) — rather than by reading the alias, so the assertion is
+(`REPO_BASE` cit:(["REPO_BASE ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:461-461) / `SESSION_BASE` cit:(["SESSION_BASE ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:462-462)) — rather than by reading the alias, so the assertion is
 about the wire model and not about the constant beside it. Every scan is source-reading, never
 import-time reflection: cit:([`_module_tree`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:451-453) re-parses one module by repo-relative
 path, `_module_trees()` walks the whole package. Contract fixtures go through
@@ -231,12 +231,12 @@ themselves.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The six contract cells (declared in models/worktree.py), typed amendment, tolerant read, and refusing write. | "WorkflowKind = Literal["; "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract"; "def load_contract"; "def write_contract"; "VALID_MEMORY_MODES: frozenset[MemoryMode]" | mcp/src/agents_remember/models/worktree.py:14-14; mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:71-71; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199; mcp/src/agents_remember/worktrees/worktree_contract.py:436-436; mcp/src/agents_remember/worktrees/worktree_contract.py:472-472 |
-| The wire model every contract and guidance value must validate at. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:36-74 |
-| Guidance state machines and the separate recovery vocabulary. | "def lifecycle_guidance("; "def next_guidance("; "def recovery_guidance("; "from agents_remember.models.worktree import NextOperation" | mcp/src/agents_remember/worktrees/modules/guidance.py:200-200; mcp/src/agents_remember/worktrees/modules/guidance.py:113-113; mcp/src/agents_remember/worktrees/modules/guidance.py:130-130; mcp/src/agents_remember/worktrees/modules/guidance.py:10-10 |
+| The wire model every contract and guidance value must validate at. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:96-136 |
+| Guidance state machines use the grouped wire-alias import and keep separate lifecycle, next-step, and recovery builders and recovery vocabulary. | "from agents_remember.models.worktree import ("; `RecoveryOperation`; `RecoveryTool`; `lifecycle_guidance`; `next_guidance`; `recovery_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14; mcp/src/agents_remember/worktrees/modules/guidance.py:37-45; mcp/src/agents_remember/worktrees/modules/guidance.py:120-150; mcp/src/agents_remember/worktrees/modules/guidance.py:207-217 |
 | Worktree status projects invalid-contract errors onto the payload. | `worktree_status_packet`; `status_payload` | mcp/src/agents_remember/application/worktree_status.py:23-61 |
 | Published workflow kind and structural agent-session tool docstrings. | `worktree_start`; `dispatch_agent`; `retire_child`; `rename_child`; `rename_self` | mcp/src/agents_remember/mcp/registration/worktrees.py:29-86; mcp/src/agents_remember/mcp/registration/sessions.py:27-86 |
-| Session response vocabularies. | `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:78-120; mcp/src/agents_remember/models/terminal.py:160-176; mcp/src/agents_remember/models/terminal.py:186-197 |
-| Terminal refusal builders and payloads. | `_spawn_refusal`; `_knob_refusal`; `_retire_payload`; `_rename_payload` | mcp/src/agents_remember/application/terminal_tools.py:452-470; mcp/src/agents_remember/application/terminal_tools.py:928-953; mcp/src/agents_remember/application/terminal_tools.py:973-1008; mcp/src/agents_remember/application/terminal_tools.py:1145-1166 |
+| Session response vocabularies. | `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:91-134; mcp/src/agents_remember/models/terminal.py:174-190; mcp/src/agents_remember/models/terminal.py:200-211 |
+| Terminal refusal/result production is split across the centralized spawn-refusal builder and the knob, retire, and rename result seams. | "def spawn_refusal("; "def _knob_refusal("; "def _retire_payload("; "def _rename_payload(" | mcp/src/agents_remember/application/terminal_spawn_results.py:13-31; mcp/src/agents_remember/application/terminal_tools.py:466-484; mcp/src/agents_remember/application/terminal_tools.py:917-952; mcp/src/agents_remember/application/terminal_tools.py:1090-1111 |
 | Leaf-reference refusal statuses. | `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66 |
 | Git facts, freshness, onboarding-read, and drift-status producers. | `git_facts_to_packet`; `freshness_to_packet`; `_resolve_onboarding`; `run_drift_summary` | mcp/src/agents_remember/application/read_files.py:209-238; mcp/src/agents_remember/kernel/git_facts.py:104-115; mcp/src/agents_remember/kernel/git_freshness.py:158-169; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
 | Invalid-contract start result. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
@@ -251,7 +251,14 @@ and docstring this suite reads lives in `mcp/src/agents_remember/`.
 | --- | --- | --- |
 | No meaningful cross-repo references found — the whole import surface is same-repository. | `ProducerWireCrossingTests` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:447-474 |
 
+## L23 Refusal Vocabulary Ownership
+
+Produced-literal analysis now includes `terminal_spawn_results.py` alongside the
+terminal facade, so moving the builder cannot hide a public status from the
+closed spawn response vocabulary.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented extracted refusal-builder vocabulary coverage; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T14:29+02:00 — Re-read the structural session tool declarations and widened the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_change_watcher.py`             |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-08-01T16:25+02:00 |
-| lastVerifiedCommitHash |                                                `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                                2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-12T21:27+02:00 |
+| lastVerifiedCommitHash |                                                `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
+| lastVerifiedCommitDate |                                                2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -75,6 +75,13 @@ rather than loose keywords; the no-watcher legacy case passes cadence alone.
 Instrumentation (`projection_count`, `last_wake_reason`) exists for exactly
 these assertions plus ops.
 
+The async projector fixture registers its temporary-directory cleanup through
+`addCleanup` during `setUp`, while each started projector registers its later
+`addAsyncCleanup` cancellation/await. Unittest's LIFO cleanup stack therefore
+drains the projector before removing the filesystem it may still touch. This
+is test-fixture ownership only; the production projector's shield-and-drain
+cancellation semantics are unchanged.
+
 **The lockfile exclusion is asserted as a derived rule, not as a name list, and the second case is
 what makes that visible.** The filter no longer carries a literal basename; it matches the suffix
 `_DURABLE_LOG_LOCK_SUFFIX`, which the module computes from
@@ -104,12 +111,19 @@ Domain Documentation entries.
 | Domain mapping and the pure pacer deadline are covered separately. | `ProjectionDomainMappingTests`; `ChangePacerDeadlineTests` | mcp/tests/test_change_watcher.py:142-170; mcp/tests/test_change_watcher.py:173-221 |
 | Adaptive projection and real watchfiles integration are covered separately. | `AdaptiveProjectorTests`; `RealWatchfilesIntegrationTests` | mcp/tests/test_change_watcher.py:252-441; mcp/tests/test_change_watcher.py:444-485 |
 | The module derives roots and filters lockfiles/events through named helpers and exposes the pacer and watcher. | `_DURABLE_LOG_LOCK_SUFFIX`; `projection_input_roots`; `is_projection_input_event`; `ChangePacer`; `ProjectionInputWatcher` | mcp/src/agents_remember/serving/change_watcher.py:156-156; mcp/src/agents_remember/serving/change_watcher.py:159-184; mcp/src/agents_remember/serving/change_watcher.py:187-205; mcp/src/agents_remember/serving/change_watcher.py:283-376; mcp/src/agents_remember/serving/change_watcher.py:379-487 |
-| The projector owns pacer wiring, watch-task lifecycle, fail-open completion, and wake instrumentation. | `ProjectionRefreshers`; `NO_PROJECTION_REFRESHERS`; `run`; `_on_watch_task_done` | mcp/src/agents_remember/serving/projector.py:112-123; mcp/src/agents_remember/serving/projector.py:128-128; mcp/src/agents_remember/serving/projector.py:198-241; mcp/src/agents_remember/serving/projector.py:243-254 |
+| The current projector run loop owns pacer wiring, watch-task lifecycle, fail-open completion, and wake instrumentation while finalization drains the watcher and landing refresher. | `ProjectionRefreshers`; `NO_PROJECTION_REFRESHERS`; "async def run(self) -> None:"; `_on_watch_task_done` | mcp/src/agents_remember/serving/projector.py:112-123; mcp/src/agents_remember/serving/projector.py:128-128; mcp/src/agents_remember/serving/projector.py:197-240; mcp/src/agents_remember/serving/projector.py:263-275 |
 | The lock exclusion is derived from the durable-store naming function and held by the access context. | `lock_path_for`; `exclusive_access` | mcp/src/agents_remember/controlplane/durable_store.py:291-298; mcp/src/agents_remember/controlplane/durable_store.py:348-394 |
 
 ## Cross-Repo References
 
 No meaningful cross-repo references found.
+
+## L23 Projector Cancellation Compatibility
+
+The adaptive watcher cases still exercise `Projector.run`; that loop now drains
+any in-flight shielded thread tick before cancellation returns. Watcher
+lifecycle, pacing, and fail-open recovery claims remain unchanged, while the
+serving suite owns the dedicated blocked-tick cancellation regression.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -122,6 +136,8 @@ fallback for an unknown accepted path, and the exact task-domain wake through bo
 worker and real watchfiles integration.
 
 ## Update History
+- 2026-08-12T21:27+02:00 — L23 curator follow-up: re-read the closeout-only cleanup race and documented the `AdaptiveProjectorTests` LIFO fixture boundary: later async projector cancellation/await runs before the earlier registered temporary-directory cleanup. Production projector behavior is unchanged; the owner reports the crashed-watcher case green in 20 consecutive sanitized runs. Verification remains closeout-owned.
+- 2026-08-12T20:24+02:00 — L23 curator: re-read the adaptive projector tests against shield-and-drain cancellation; existing watcher claims remain accurate and the focused cancellation arm lives in `test_serving.py`. Verification remains closeout-owned.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: split watcher, projector, test, and lock claims by source owner and generated final citation ranges with the scoped fixer.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_checkout_coordination_isolation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T09:18+02:00 |
-| lastVerifiedCommitHash |  `284ddbcd879a0b1ea58c9997ff781fb471982c36`|
-| lastVerifiedCommitDate |  2026-08-12T09:23:37+02:00|
+| lastUpdated | 2026-08-13T00:00+02:00 |
+| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
+| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,10 +36,16 @@ benchmarks, and automatic retirement; and an incident-shaped inbox row lands onl
 The escape regressions call the actual shared durable-store primitives. The lock-path
 case enters the returned context manager directly, asserts that entry raises, and proves
 refusal happens before either the target parent or sibling lockfile exists; the rewrite
-case proves a manually constructed live target cannot bypass config routing.
+case proves a manually constructed live target cannot bypass config routing. The
+operational-artifact case writes a real self-overwriting closeout report through those
+same primitives under the exact enclosure `reports/` root, then proves no sibling
+`operator-inbox.jsonl` appeared. The positive report target therefore does not widen
+coordination authority.
 Separate cases pin primary-checkout refusal, trusted MCP authority loading, and explicit
 test-mode temporary writes. Trusted-config cases retain fail-loud invalid/non-object JSON
 parsing while linked checkout mode deliberately ignores the supplied authority file.
+The lifecycle-operation case declares the detached-worker mode before config loading,
+then proves live authority is retained while the daemon-role slot remains empty.
 
 ### Invariants And Boundaries
 
@@ -47,10 +53,16 @@ parsing while linked checkout mode deliberately ignores the supplied authority f
   suite's owned-global preservation helper; no environment switch exists in production.
 - The incident-shaped row is intentionally candidate-only and lives in a temporary dummy
   coordinator. No test writes the real coordinator.
+- Enclosure reports are operational artifacts, not coordination rows; the positive
+  report-write regression is paired with an explicit absent sibling inbox assertion.
 - Trusted-mode coverage asserts preservation, not a compatibility fallback.
+- Lifecycle-operation coverage is deliberately narrower than daemon trust: it proves
+  live task-operation authority and simultaneously proves no MCP/dashboard writer role.
 
 ## Update History
 
+- 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: added the positive lifecycle-operation boundary, proving live coordination config is admitted only with the explicit worker mode while `declared_daemon_role()` remains empty. The owner reports 46 focused tests across both affected suites, Ruff clean, and diff-check clean. Verification remains closeout-owned.
+- 2026-08-12T22:24+02:00 — 260731-EFA-L23 async-closeout follow-up: added the exact enclosure report-write case and its negative sibling-coordination assertion. The owner reports 14/14 checkout-isolation tests green under xdist auto. Verification remains closeout-owned.
 - 2026-08-12T09:18+02:00 — 260731-EFA-L20 reopen: the lock-path refusal now asserts the context manager's raising `__enter__` directly, removing an intentionally unreachable body line while preserving the same pre-lock and pre-parent safety contract.
 - 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 removed an unreachable context body and the script-only main guard; every checkout-isolation assertion and refusal boundary documented above remains unchanged.
 - 2026-08-10T18:31+02:00 — 260731-EFA-L21 quality completion: added explicit incomplete-checkout, installed-package, and trusted malformed-config cases for every changed defensive branch.

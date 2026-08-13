@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/useEngineTimeline.ts`   |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash |                                                           `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |                                                           2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |                                                           `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
+| lastVerifiedCommitDate |                                                           2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -121,7 +121,7 @@ entries, so the GSAP/Motion library docs are not cited here — the split is pro
 | --- | --- | --- |
 | `phaseStage` / `fxSignature` / `buildFx` + the `useEngineTimeline` context (retract + draw-on + fx, gated). | `phaseStage`; `fxSignature`; `buildFx`; `useEngineTimeline` | dashboard/src/panels/engine-room/useEngineTimeline.ts:32-49; dashboard/src/panels/engine-room/useEngineTimeline.ts:54-76; dashboard/src/panels/engine-room/useEngineTimeline.ts:83-160; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247 |
 | `fxSignature`'s refused fold-in now filters `failed`/`stale` only. | `fxSignature` | dashboard/src/panels/engine-room/useEngineTimeline.ts:54-76 |
-| `_seed_edge_state` — the states a seed edge can actually carry; `refused` is not among them. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:634-634 |
+| `_seed_edge_state` — the states a seed edge can actually carry; `refused` is not among them. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638 |
 | `EngineProcessEdge`'s documented `state` vocabulary, which never listed `refused`. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:791-810 |
 | RETRACT phase (5o) — departing lanes erased tail-to-tip, stroke locked cyan via `gsap.set` before the tween, `clearProps` stroke/filter on complete. | `clearProps` | dashboard/src/panels/engine-room/useEngineTimeline.ts:194-212 |
 | Draw-on stamps `data-drawn` on `onComplete` (5o StrictMode fix); the `refuse` one-shot and the gentle ~1.7s sine `fault` breathe. | `buildFx`; `useEngineTimeline` | dashboard/src/panels/engine-room/useEngineTimeline.ts:83-160; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247 |

@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-12T09:20+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastUpdated | 2026-08-13T00:00+02:00 |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -61,12 +61,17 @@ cit:(["test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims"; "t
 L23 adds three forcing groups. `test_lifecycle_operations.py` owns task-addressed start/observe,
 immutable candidate/input identity, stale recovery, cancellation boundary, detached launch, worker
 progress, terminal state, and packaged worker service composition before dispatch.
+Its packaged-entry proof now pins the explicit lifecycle-operation declaration before service
+construction and contains the singleton during script-entry execution. The paired checkout-isolation
+case proves this mode retains live task-operation authority without claiming an MCP/dashboard daemon
+role.
 The same lifecycle group proves detached launch preserves the installed MCP `PYTHONPATH` and excludes
 the task checkout source root, so task code cannot silently replace the installed worker runtime.
 The clean-quality group (`test_agents_remember_quality.py`,
 `test_clean_quality_executor.py`, `test_clean_room.py`, and the Codex clean-room probe) separates
 Dagger graph semantics, host execution, CLI translation, and real-when-available harness proof.
-`test_platform_subprocess.py` owns the WSL/UNC/Windows-shim refusal matrix, while the small L23
+`test_platform_subprocess.py` owns the WSL/UNC/Windows-shim refusal matrix plus deterministic
+existing-native `$HOME/.local/bin` admission and executable resolution, while the small L23
 notifier batch suite keeps structural expiry-address edge coverage below the file-size rail.
 
 `test_code_quality_check_scope.py` proves root pytest `addopts` includes `-n=auto`, while the
@@ -95,7 +100,14 @@ Regression coverage proves exact-session readiness and dispatch, catalog writer 
 Checkout coordination isolation coverage (`test_checkout_coordination_isolation.py`) reproduces
 the L19 unpublished-writer failure shape without touching live state: loaded-source linked/primary
 classification, synthetic leaf config, incident-shaped inbox placement, pre-lock escape refusal,
-manual rewrite refusal, trusted MCP preservation, and explicit pytest temporary-root behavior.
+manual rewrite refusal, trusted MCP preservation, explicit pytest temporary-root behavior, and
+the task-local operational-report exception. The report case writes beneath the exact enclosure
+`reports/` root and simultaneously proves no sibling inbox row is created, keeping that artifact
+path distinct from coordination authority.
+
+Terminal host registry coverage treats tmux argv as an option grammar rather than a fixed
+slot layout: the custom-name regression finds `-s` and checks its operand, preserving the same
+name-override assertion whether optional synchronized-frame capability flags are present or absent.
 
 The stable structured-conversation contract gate: the contract suite uses
 hostile sibling-product matrices to pin purpose-bound cursors, exact provenance, canonical status,
@@ -230,8 +242,13 @@ fixture is the current test authority for separate control initialization, `syst
 zero-turn bootstrap result, and correlated `list_models`; its interaction and turn companions keep
 durable gates and acceptance-versus-completion covered in the same versioned cohort. The 2.1.207
 fixtures remain historical evidence and are no longer loaded by the active adapter suite.
+The late-replay clean-retry regression keeps production's 30-second acceptance bound
+compressed to a test-only 50ms: it still expires the first set, but gives a loaded xdist
+worker enough event-loop budget for the fake reader to consume replay plus result. This
+prevents scheduler load from masquerading as an adapter failure while retaining the
+tombstone, no-premature-promotion, and clean-retry assertions.
 
-The test route additionally proves the projection/landing boundary: slow or failed remote observations do not delay local publication; observer results remain exact-contract and freshness-labeled; stale landing rendering is visible but motion-inert; invalid snapshot reads preserve local status; and a failed refresher does not skip serving shutdown. These are focused regressions; the full repository gate runs above this route.
+The test route additionally proves the projection/landing boundary: slow or failed remote observations do not delay local publication; observer results remain exact-contract and freshness-labeled; stale landing rendering is visible but motion-inert; invalid snapshot reads preserve local status; and a failed refresher does not skip serving shutdown. Projector cancellation drains an in-flight thread tick in both its success and late-failure arms; the failure is logged while `CancelledError` remains caller-visible. These are focused regressions; the full repository gate runs above this route.
 
 `test_change_watcher.py` (plus touched `test_serving.py`/
 `test_dashboard_daemon.py` fixtures) proves change-driven projection pacing: the derived watch-root
@@ -240,6 +257,9 @@ interval-floor/max-delay/degraded), heartbeat-only quiet-world projection, debou
 latency, burst coalescing, LOUD fixed-interval degrade on missing `watchfiles`/crashed
 watcher/failed root derivation (with retry), watch-task lifecycle ownership, exact legacy pacing
 without a watcher, `--heartbeat` CLI/daemon argv plumbing, and one real-inotify end-to-end pass.
+The adaptive async fixture registers temporary-root cleanup before later projector cleanup, so
+unittest's LIFO stack cancels and awaits the projector before deleting its filesystem. This forces
+test teardown to respect the same ownership boundary it observes without changing production drain.
 The projection scaling suite proves the shared per-tick contract
 snapshot: one contract enumeration and at most one parse per contract per projection tick, zero
 re-parses while the `(mtime_ns, size, ctime_ns)` stat identity holds, reader-output parity with and
@@ -740,6 +760,16 @@ For closeout enforcement, begin at
 `test_worktree_closeout_quality_gate.py`, whose argument spy is the only thing standing between the
 mandatory gate and a silent no-op at an unannotated call site.
 
+For route-overview refresh planning, `test_worktree_and_observer_helpers.py`
+proves both sides of the verified-memory-baseline seam: a substantively
+task-edited overview is required even when the current leaf code range is
+unrelated and is stamped with the supplied verified commit during refresh,
+while a metadata-only edit is still classified stale. A third case
+permits only a generated final reference-cell citation-coordinate shift without
+invented history; the claim, anchor, path, and table shape stay fixed. This
+prevents older synced-source drift and sanctioned citation repair from
+deadlocking closeout without weakening the authored body/history gate.
+
 For route-index/carryover authority changes, begin with `test_route_index.py` for the frozen census
 and byte-convergence matrix, then `test_carryover.py` for full-apply zero-mutation refusals and
 parser-equivalent positive controls. Use `test_worktree_support.py` for closeout caller wiring.
@@ -970,7 +1000,35 @@ closeout-order repair extends existing suites with entity-alignment preflight ca
 proof of memory preflight → hook → wrapper → exact-index commit, including a post-wrapper working
 tree edit that must stay out of the commit.
 
+The route-overview refresh regressions also exercise the external-tree boundary:
+a source-matched overview outside the supplied memory Git tree remains required,
+but the body gate does not invent stale or untraced state when no comparable
+memory revision exists. This preserves source-route admission without treating
+absence of revision evidence as proof of a body defect.
+
+## L23 Source-Lineage Verification Wave
+
+The test route now covers real-Git task-derived lineage exhaustively: current
+code/external-memory chains, sprint/no-edge, stale/diverged/unavailable edges,
+missing/malformed contracts, no-mutation spawn/assignment/reopen/attach
+refusals, HTTP 409 transport, status/Engine Room projection, and refusal
+vocabulary ownership. Shared fixtures build real master/leaf contracts rather
+than bypassing the gate. The same wave makes SQLite connection ownership and
+short native quality scratch explicit.
+
 ## Update History
+- 2026-08-13T00:00+02:00 — L23 post-closeout worker-authority curator repair: paired the worker-entry ordering proof with checkout-isolation proof that `lifecycle-operation` retains live authority but no daemon role. The owner reports 46 focused tests across the two affected files, Ruff clean, and diff-check clean. Verification remains closeout-owned.
+- 2026-08-12T23:27+02:00 — L23 Dagger diff-coverage curator follow-up: the route-overview helper suite now proves that source matching still requires an overview outside the supplied memory Git tree while body classification emits no false bucket without comparable memory revision evidence. The owner reports the focused test green, all four previously uncovered branches covered, and exact-file Ruff clean. Verification remains closeout-owned.
+- 2026-08-12T23:08+02:00 — L23 Dagger curator follow-up: the Claude late-replay regression now uses a 50ms test-only acceptance window, retaining forced expiry while removing a measured xdist scheduler race; production remains 30 seconds. Evidence improved from one local failure in 100 plus one Dagger gw16 failure to 100/100 one-process repetitions passing. Verification remains closeout-owned.
+- 2026-08-12T22:50+02:00 — L23 Dagger curator follow-up: the terminal registry suite now locates tmux `-s` before asserting the custom session name, so optional `-T sync` capability arguments cannot invalidate a semantic name-override proof. The exact focused test passes and Ruff is clean. Verification remains closeout-owned.
+- 2026-08-12T22:45+02:00 — L23 curator follow-up: the helper suite now separates generated citation-coordinate-only edits from substantive authored changes: the former may pass without invented history, while metadata-only and untraced changes remain fail-closed. The owner reports 10/10 focused plan tests and 16/16 combined route-overview tests green. Verification remains closeout-owned.
+- 2026-08-12T22:36+02:00 — L23 pre-commit type-check curator follow-up: the worktree edge suite now consumes the route-overview helper's full three-value revision contract and typed source evidence, proving ordinary body prose is not citation-coordinate-only. The owner reports 14/14 combined tests and repository-wide Pyright green. Verification remains closeout-owned.
+- 2026-08-12T22:25+02:00 — L23 curator follow-up: the helper suite now proves baseline-relative task-edited route overviews enter closeout planning despite unrelated leaf code, while metadata-only overview edits remain stale and refuse. Verification remains closeout-owned.
+- 2026-08-12T22:24+02:00 — L23 async-closeout curator follow-up: checkout isolation now proves the exact enclosure report root accepts a self-overwriting operational artifact without opening a sibling coordination escape. The owner reports 14/14 focused tests green. Verification remains closeout-owned.
+- 2026-08-12T21:39+02:00 — L23 curator follow-up: added the serving suite's complementary projector drain-failure proof: late worker-thread failure is logged while public cancellation remains `CancelledError`. Verification remains closeout-owned.
+- 2026-08-12T21:27+02:00 — L23 curator follow-up: documented the adaptive projector fixture's LIFO cleanup ownership; later async cancellation/await now precedes temporary-root deletion. Production projector behavior is unchanged. Verification remains closeout-owned.
+- 2026-08-12T21:18+02:00 — L23 curator follow-up: the platform-subprocess suite now forces deterministic existing-native `$HOME/.local/bin` prepending and real `node` resolution after Windows interop filtering. Verification remains closeout-owned.
+- 2026-08-12T20:20+02:00 — L23 curator: documented the final lineage, SQLite ownership, projector, and quality-scratch regression wave; verification remains closeout-owned.
 
 - 2026-08-12T17:27+02:00 — 260731-EFA-L23 final Dagger test-route review: the existing targeted
   code-quality regression now pins explicit progress-report precedence as the complement to its

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_dispatch_expectation_rows.py`             |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-07-15T23:00+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -40,13 +40,21 @@ No Domain Documentation source is configured for this repository-local regressio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `SpawnExpectationRowTests` | mcp/tests/test_dispatch_expectation_rows.py:88-88 |
+| Current suite declaration anchoring this card. | `SpawnExpectationRowTests` | mcp/tests/test_dispatch_expectation_rows.py:89-142 |
 
 ## Cross-Repo References
 
 No cross-repository implementation source governs this test module.
 
+## L23 Structural Fixture Admission
+
+Expectation-row dispatch tests now seed a current task-derived master/leaf
+lineage chain before spawning structural seats. Their subject remains durable
+expectation-row semantics; the fixture prevents an unrelated fail-closed
+lineage gate from masking those assertions.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented current-lineage fixture setup for expectation-row tests; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_dispatch_expectation_rows.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.

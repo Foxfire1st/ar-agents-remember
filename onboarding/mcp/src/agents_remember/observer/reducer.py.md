@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/reducer.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -381,7 +381,7 @@ file I/O. Defaults empty, so prior structural/analytical callers remain unchange
 | The pre-contract `worktree_start` progress source (§5.4) the synthesized node reads. | `read_start_progress` | mcp/src/agents_remember/worktrees/start_progress.py:106-114 |
 | The durable gate set `_attach_gates` materializes onto lifecycles (slice 6c). | "def _attach_gates(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:227-227 |
 | Wires the engine facts + start-progress into `project_workspace`. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
-| Missing provider placeholders are created for expected code/memory roles when no matching worktree provider facts exist. | "def _provider_boot_nodes("; "def _missing_facts(  # pragma: no cover" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:439-439; mcp/src/agents_remember/observer/reducer_impl/_processes.py:654-654 |
+| Missing provider placeholders are created for expected code/memory roles when no matching worktree provider facts exist. | "def _provider_boot_nodes("; "def _missing_facts(  # pragma: no cover" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:443-443; mcp/src/agents_remember/observer/reducer_impl/_processes.py:658-658 |
 | Actionable drift queue rows carry repo/branch ids, provenance detail, and `checkedAt` signal timestamps. | "def _drift_attention(drift_snapshots: list[DriftSnapshotNode]) -> list[AttentionItem]:"; "def _drift_attention_detail(drift: DriftSnapshotNode) -> str:" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:284-284; mcp/src/agents_remember/observer/reducer_impl/_attention.py:303-303 |
 | `_is_dismissed` admits targetless suppression only for dismissible repo-level kinds. | "def _is_dismissed(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:79-79 |
 | The whole-vocabulary tuple `_STATES` is built from, the `coerce_end_outcome` `_ended_updates` routes through, and the partition that decides which states get a bucket. | `STATES`; `coerce_end_outcome` | mcp/src/agents_remember/observer/lifecycle_state.py:102-104; mcp/src/agents_remember/observer/lifecycle_state.py:118-127 |

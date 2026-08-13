@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-06T17:35+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 
 ## Purpose
 
@@ -200,11 +200,11 @@ No external documentation is needed for this repository-local skill.
 | --- | --- | --- |
 | `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-315 |
 | `c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout. | `# c-12-closeout Closeout` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-372 |
-| The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | "The recorded leaf" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:151-151 |
-| The Worktree Intent Gate must be explicitly approved before `worktree_start` and must name branch policy, source/work branches, memory mode, landing path, and risks. | `worktree_start` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:80-94 |
+| The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | "The recorded leaf" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:169-169 |
+| The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. | "The Worktree Intent Gate must name:" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:87-100 |
 | The Worktree Intent Gate runs the applicable dry-run/preflight first, reports in chat, then uses one `lifecycle_gate(kind="worktree-intent", ask=..., packet=...)` call; `worktree_start` runs only after a developer-resolved decision is cleared with `lifecycle_resume`. | "worktree-intent" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:122-122 |
-| Integration and cleanup/finalization run their dry-runs first, report previews in chat, then use `lifecycle_gate(kind="integration-approval", ...)` / `lifecycle_gate(kind="cleanup-approval", ...)` before `worktree_integrate` / `lifecycle_finalize_task`, with `lifecycle_resume` after the developer response is handled. | "lifecycle_gate(kind=\"integration-approval\", ask=…, packet={ ...the integration plan... })"; "lifecycle_gate(kind=\"cleanup-approval\", ask=…, packet={ ...what cleanup removes... })" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:225-225; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:261-261 |
-| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:229-229 |
+| Integration and cleanup/finalization run their dry-runs first, report previews in chat, then use `lifecycle_gate(kind="integration-approval", ...)` / `lifecycle_gate(kind="cleanup-approval", ...)` before `worktree_integrate` / `lifecycle_finalize_task`, with `lifecycle_resume` after the developer response is handled. | "lifecycle_gate(kind=\"integration-approval\", ask=…, packet={ ...the integration plan... })"; "lifecycle_gate(kind=\"cleanup-approval\", ask=…, packet={ ...what cleanup removes... })" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:243-243; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:279-279 |
+| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:247-247 |
 | Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | `## Integration` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:206-243 |
 | Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval. | `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:244-282 |
 
@@ -220,7 +220,17 @@ No sibling repository evidence is needed for the skill itself.
 
 The packaged worktree-manager skill defines the new operating model: master tasks own an integration branch via root `series-contract.md`, and each active leaf owns a distinct enclosure contract/worktree under `enclosures/<leaf-id>/`.
 
+## L23 Task Topology And Lineage Gate
+
+The packaged worktree skill now requires every build to live in a leaf beneath
+a thematic master; single-owner work changes orchestration depth, not topology.
+Before structural exposure it requires task-derived super-to-master-to-leaf
+code/external-memory lineage and distinguishes that gate from overridable remote
+stale-base policy. Recovery synchronizes the existing thematic master/leaf
+contracts rather than creating artificial follow-up masters.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: reconciled the packaged no-standalone-build topology and fail-closed lineage workflow; verification remains closeout-owned.
 
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 8 citation items; scoped citation check now passes.
 

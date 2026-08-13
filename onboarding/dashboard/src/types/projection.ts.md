@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-11T09:45+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -52,15 +52,23 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:485-488 |
-| Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:440-466 |
-| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:542-554 |
+| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:512-515 |
+| Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:484-510 |
+| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:569-581 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
+## L23 Source-Lineage Mirror
+
+The frontend projection declares strict edge, recovery, and aggregate lineage
+shapes and attaches the aggregate optionally to each Engine Process. Its closed
+relations, sides, states, and `worktree_sync` tool mirror the server model; the
+dashboard does not accept an open-ended string vocabulary here.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented the strict dashboard lineage mirror; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current data-contract card for `projection.ts` with task-document identity, qualified seat state, and terminal projections represented by this source.

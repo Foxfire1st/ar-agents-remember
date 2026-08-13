@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/_app_terminal_routes.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-11T10:28+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                        |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -59,7 +59,14 @@ No Domain Documentation source is configured.
 
 No cross-repository implementation dependency governs this file.
 
+## L23 Dashboard Refusal Transport
+
+Terminal open and task-attach routes map source-lineage refusals to HTTP 409 and
+preserve status, detail, and the strict projection. The dashboard receives
+operator-actionable evidence while the catalog remains unchanged.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented HTTP transport of lineage admission failures; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current serving card for `_app_terminal_routes.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
