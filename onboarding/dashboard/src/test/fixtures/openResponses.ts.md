@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/openResponses.ts`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ ASYNC. Failed rows are built with L2's shared `catalogRow` builder (extended, no
 | Every response-path fixture + the failed/pending rows. | `OPENED_STARTING`; `OPENED_VENDOR_DEFAULTS`; `INVALID_PARTIAL_PAIR`; `INVALID_NON_NATIVE`; `BAD_KIND`; `SEAT_TAKEN`; `LAUNCH_CONFLICT`; `FAILED_CLAUDE_ROW`; `FAILED_CODEX_ROW`; `FAILED_PI_ROW`; `FAILED_LAUNCH_ROWS`; `FAILED_CLAUDE_EFFORT_ROW`; `PENDING_INTERACTION_ROW` | dashboard/src/test/fixtures/openResponses.ts:17-33; dashboard/src/test/fixtures/openResponses.ts:36-43; dashboard/src/test/fixtures/openResponses.ts:46-49; dashboard/src/test/fixtures/openResponses.ts:52-55; dashboard/src/test/fixtures/openResponses.ts:58-61; dashboard/src/test/fixtures/openResponses.ts:64-71; dashboard/src/test/fixtures/openResponses.ts:72-86; dashboard/src/test/fixtures/openResponses.ts:93-106; dashboard/src/test/fixtures/openResponses.ts:108-122; dashboard/src/test/fixtures/openResponses.ts:124-138; dashboard/src/test/fixtures/openResponses.ts:140-144; dashboard/src/test/fixtures/openResponses.ts:147-160; dashboard/src/test/fixtures/openResponses.ts:164-178 |
 | The response-body mirrors these instantiate. | `TerminalOpenSuccessBody`; `TerminalOpenSelectionInvalidBody`; `TerminalOpenBadKindBody` | dashboard/src/types/terminalOpen.ts:10-26; dashboard/src/types/terminalOpen.ts:31-34; dashboard/src/types/terminalOpen.ts:37-40 |
 | The shared row builder the failed/pending rows extend. | `catalogRow` | dashboard/src/test/fixtures/catalogRows.ts:10-27 |
-| The route decorator exposes the terminal-open API. | `api_terminal_open` | mcp/src/agents_remember/serving/_app_terminal_routes.py:683-698 |
+| The route decorator exposes the terminal-open API. | `api_terminal_open` | mcp/src/agents_remember/serving/_app_terminal_routes.py:711-726 |
 | The terminal response body is assembled by `_terminal_entry_payload`. | "def _terminal_entry_payload(entry: TerminalCatalogEntry) -> dict[str" | mcp/src/agents_remember/serving/_app_terminal_routes.py:207-207 |
 | The shared opener returns the resolved terminal-open response. | "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:225-225 |
 | The `launchFlow` classifier is declared for the response-path cases. | `launchFlow` | dashboard/src/data/launchFlow.test.ts:29-29 |

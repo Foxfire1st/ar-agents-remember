@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/terminal_task_assignment.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T06:47+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
+| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,15 @@ None.
 ## Cross-Repo References
 
 
+## L23 Assignment Admission
+
+Assigning an existing terminal to a structural task now proves task-derived
+source lineage before catalog mutation or seat attachment. A stale/unavailable
+projection returns the prior binding, requested role, detail, and evidence so
+replacement-safe routing does not depend on agent-held ids.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented pre-mutation lineage refusal for terminal assignment; verification remains closeout-owned.
 
 - 2026-08-11T06:47+02:00 — 260731-EFA-L19: created; absorbs the behavior of removed `terminal_leaf_assignment.py` and `sprint_role_binding.py` under one generalized assignment contract.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: predecessor sprint-role binding card was created for immutable sprint provenance on named command seats.

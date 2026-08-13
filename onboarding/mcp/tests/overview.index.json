@@ -331,6 +331,7 @@
     "mcp/tests/test_signal_routing.py",
     "mcp/tests/test_sim_fixture_builder.py",
     "mcp/tests/test_single_owner_primitives.py",
+    "mcp/tests/test_source_lineage.py",
     "mcp/tests/test_spawn_agent_session.py",
     "mcp/tests/test_spawn_agent_session_knobs_1.py",
     "mcp/tests/test_spawn_agent_session_resolution.py",
@@ -393,8 +394,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 371,
-    "fileSidecars": 381,
+    "sourceFilesInScope": 372,
+    "fileSidecars": 382,
     "childRoutes": 0
   },
   "routingTerms": [

@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-08-11T22:28+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -249,6 +249,15 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   and is re-exported here. Closeout preview and apply also pass
   `context.storage` explicitly to route-index generation, preserving the same
   repository/path-rule authority used when the onboarding plan was resolved.
+  Route planning also includes overview documents changed since the task's
+  verified memory baseline, even when their source drift predates the current
+  leaf code range. Those directly edited overviews become domain-evident for the
+  existing body/history classifier: the expansion makes them stampable in the
+  transaction but never permits metadata-only or untraced refreshes. A narrow
+  generated-data exception recognizes a task-edited overview whose only body
+  delta is the final reference-cell `path:line[-line]` coordinate; sanctioned
+  citation repair can advance those ranges without fabricating history, while
+  prose, claim, anchor, path, table-shape, and other body changes still gate.
 - The closeout worklist (issue #83) is `closeout.py`'s
   `closeout_changed_paths`: working tree ∪ the unverified committed range, so
   transported history (merges, pre-committed slices) gates and stamps like
@@ -309,9 +318,9 @@ No external Domain Documentation source is configured for this memory repo.
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:106-187 |
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:539-614 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
-| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:392-400; mcp/src/agents_remember/kernel/route_index.py:182-230 |
+| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:491-499; mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:350-456 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:20-20; mcp/src/agents_remember/models/worktree.py:82-82 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:20-20; mcp/src/agents_remember/models/worktree.py:119-119 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:562-671 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
@@ -626,7 +635,19 @@ is deleted. The new `worktrees/services.py` declares the `ProviderLifecyclePort`
 and `worktrees/modules/contract_reader.py` implements the kernel resolver's `ContractReaderPort`.
 The closeout/integrate/guidance machinery is unchanged in behavior.
 
+## L23 Parent-First Lineage Gate
+
+Worktree start, attach, and reopen now consult task-derived ancestry before
+resuming context or mutating task/contract state. Status publishes the same
+projection and ordered `worktree_sync` contract path. Remote stale-base choice
+is a later policy and cannot override super-to-master-to-leaf admission.
+
 ## Update History
+
+- 2026-08-12T22:45+02:00 — L23 curator follow-up: refined the baseline-relative route gate so sanctioned final-cell citation-coordinate shifts do not require fabricated history; the normalization is deliberately narrow and metadata-only, prose, anchor, path, table-shape, and other untraced changes still refuse. Verification remains closeout-owned.
+- 2026-08-12T22:36+02:00 — No route impact: the final L23 pre-commit repair corrects `_route_overview_bucket`'s docstring to name its already-implemented typed evidence and citation-only behavior; the worktree module operating model documented above is unchanged. Verification remains closeout-owned.
+- 2026-08-12T22:25+02:00 — L23 curator follow-up: route-overview closeout planning now includes memory overviews edited since the task's verified baseline even when their source drift predates the current leaf range; directly edited candidates remain subject to substantive body/history classification, so metadata-only and untraced refreshes refuse. Verification remains closeout-owned.
+- 2026-08-12T20:20+02:00 — L23 curator: documented parent-first lineage admission and status recovery; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: documented explicit local/Dagger quality execution, immutable candidate capture, and lifecycle progress threading through closeout/integration; verification provenance remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24: made the master full-

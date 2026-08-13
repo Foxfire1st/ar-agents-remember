@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-23T13:45+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -50,7 +50,15 @@ Two exports, both presentational (no state, no effects, no mutation).
 | `fmtWait` formats `heartbeatAgeSeconds` into s/m/h/d | `fmtWait` | dashboard/src/data/selectors.ts:108-114 |
 | `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` recipes | `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` | dashboard/src/panels/engine-room/layout.styles.ts:526-526; dashboard/src/panels/engine-room/layout.styles.ts:260-260; dashboard/src/panels/engine-room/layout.styles.ts:536-536; dashboard/src/panels/engine-room/layout.styles.ts:543-543; dashboard/src/panels/engine-room/layout.styles.ts:544-544; dashboard/src/panels/engine-room/layout.styles.ts:546-546; dashboard/src/panels/engine-room/layout.styles.ts:556-556; dashboard/src/panels/engine-room/layout.styles.ts:563-563; dashboard/src/panels/engine-room/layout.styles.ts:579-579; dashboard/src/panels/EngineRoom.tsx:39-39 |
 
+## L23 Source-Lineage Diagnostic
+
+When `node.sourceLineage` is present the panel renders its aggregate state and
+uses the server summary as title text. The row is presentation-only: it neither
+compares branches nor chooses a recovery, and it disappears for processes with
+no applicable lineage projection.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented the optional read-only lineage diagnostic row; verification remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 6 citation rows; scoped citation fixing regenerated the source ranges.

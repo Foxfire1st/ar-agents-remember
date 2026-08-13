@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EngineRoom.test.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ do not assert or reshape the enclosure canvas' workspace-engine rendering.
 | --- | --- | --- |
 | The `EngineRoomHeader` + `LIFECYCLE_PHASES` under test. | `EngineRoomHeader`; `LIFECYCLE_PHASES` | dashboard/src/panels/EngineRoom.tsx:59-66; dashboard/src/panels/EngineRoom.tsx:137-171 |
 | `OfficialStrip` groups official workspace providers by label + runtime state and exposes grouped repo labels via hover/title. | `OfficialStrip` | dashboard/src/panels/EngineRoom.tsx:109-132 |
-| The local provider fixture helpers and official-strip assertions pin counted same-state CGCs, mixed-state separation, and GrepAI visibility. | `seedOfficialProviders`; "aggregates same-state official CGC engines into one strip chip"; "keeps official CGC aggregate chips separated by runtime state" | dashboard/src/panels/EngineRoom.test.tsx:93-97; dashboard/src/panels/EngineRoom.test.tsx:163-178; dashboard/src/panels/EngineRoom.test.tsx:180-204 |
+| The local provider fixture helpers and official-strip assertions pin counted same-state CGCs, mixed-state separation, and GrepAI visibility. | `seedOfficialProviders`; "aggregates same-state official CGC engines into one strip chip"; "keeps official CGC aggregate chips separated by runtime state" | dashboard/src/panels/EngineRoom.test.tsx:93-97; dashboard/src/panels/EngineRoom.test.tsx:198-213; dashboard/src/panels/EngineRoom.test.tsx:215-239 |
 | The `GALLERY` projection seed + the store `applySnapshot`. | `GALLERY`; `applySnapshot` | dashboard/src/data/store.ts:43-43; dashboard/src/dev/fixtures.ts:146-490 |
 | The honest-motion gate the pulse reads. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
 
@@ -70,7 +70,15 @@ The focused suite now delegates to the real model builder through a spy and prov
 boundary: unchanged render inputs and unrelated analytics deltas do not rebuild the room, while a
 real `engineProcesses` change does.
 
+## L23 Lineage Rendering Regression
+
+The suite seeds a blocked Engine Process projection and proves Diagnostics
+renders both the compact state and the full server summary. This is the
+operator-visible acceptance edge for refusing structural work before enclosure
+context is consumed.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented the blocked-lineage Engine Room rendering regression; verification remains closeout-owned.
 - 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 61; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
 - 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 4 citation claims; scoped result 0 findings.
 

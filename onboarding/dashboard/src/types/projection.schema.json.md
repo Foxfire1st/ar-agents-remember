@@ -6,8 +6,8 @@
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,15 @@ None.
 | `ActionAvailability` declares reducer-decided action safety for the cockpit. | "\"ActionAvailability\": {" | dashboard/src/types/projection.schema.json:3-3 |
 | `AgentPickupNode` declares a pending unacked dashboard response. | "\"AgentPickupNode\": {" | dashboard/src/types/projection.schema.json:47-47 |
 
+## L23 Source-Lineage Schema
+
+The generated schema publishes the optional Engine Process lineage field plus
+strict edge, recovery, and aggregate definitions. Relation/side/state/tool
+values remain closed, while recovery `args` is the deliberately open kwargs
+site checked by the contract suite.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented the generated lineage schema and its sole open recovery-args map; verification remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

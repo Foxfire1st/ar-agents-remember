@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastUpdated            | 2026-08-13T00:00+02:00 |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -27,6 +27,10 @@ sole exact-pinned exception and failed briefing retires the unbriefed child.
 Its packaged CLI entry is also the operation process's composition root: it builds and binds the
 default `WorktreeServices` before dispatch, so installed workers use the real adapters without
 requiring an ambient MCP server binding.
+Before that service/config load, the entry declares the explicit `lifecycle-operation`
+execution mode. This admits only the detached plane-owned task worker to live operation authority;
+it does not claim MCP or dashboard daemon ownership and does not weaken ordinary checkout CLI
+isolation.
 It loads the task contract and durable accepted input, reconstructs the captured gate policy and
 candidate identity, delegates to the existing synchronous lifecycle implementation, and publishes
 heartbeat/progress/terminal evidence. Recovery stays attached to the same accepted operation after
@@ -245,7 +249,16 @@ absorbing `provider_async.py`'s setup launcher/status) and the default `Worktree
 composition (`application/worktree_services.py`) binding the provider, memory-quality, and
 citation-guard adapters into the worktrees service ports.
 
+## L23 Structural Admission Translation
+
+Application facades now consume centralized terminal refusal translation and
+strict source-lineage projections. Context status validates those facts instead
+of retyping them, and ambient attach attribution occurs only after a real
+attachment, keeping blocked lineage out of successful lifecycle history.
+
 ## Update History
+- 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: documented the detached lifecycle-operation declaration before service/config loading and its deliberate non-daemon boundary. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
+- 2026-08-12T20:20+02:00 — L23 curator: documented application ownership of lineage refusal/status translation; verification remains closeout-owned.
 - 2026-08-12T16:52+02:00 — 260731-EFA-L23 packaged-worker route review: the detached CLI now owns
   default worktree-service composition before task-addressed dispatch, closing the installed-worker
   unbound-service failure while preserving the application/worktree port split. Verification

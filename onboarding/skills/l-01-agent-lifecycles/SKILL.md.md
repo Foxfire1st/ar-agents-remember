@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:10+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,15 @@ No external domain source governs this repository-owned lifecycle doctrine.
 | Shared continuity and authority invariants are explicit. | "## Shared Invariants (every role can count on these)" | skills/l-01-agent-lifecycles/SKILL.md:177-190 |
 | Hosted role dispatch is one structural transaction. | "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:286-301 |
 
+## L23 Dispatch Admission
+
+Canonical lifecycle dispatch now proves the task-derived ancestry applicable to
+the target role before process creation. Stale or unavailable edges create no
+child and carry ordered contract-addressed synchronization; agents do not retain
+commit ids, branch ids, or occupant ids to make routing work.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented canonical source-lineage dispatch admission; verification remains closeout-owned.
 
 - 2026-08-11T14:10+02:00 — Reconciled the sidecar directly to current structural lifecycle
   doctrine and removed duplicated task-delta/history blocks. Verification remains pinned pending

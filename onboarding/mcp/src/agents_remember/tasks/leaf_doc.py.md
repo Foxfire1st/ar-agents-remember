@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/leaf_doc.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-08-02T01:05+02:00                      |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`  |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`  |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ small `{docPath, lifecycleId, changed}` report, or `None` when the leaf has no d
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The reopen reset that clears the doc's stamp before the next start restamps it. | `_reset_leaf_doc` | mcp/src/agents_remember/worktrees/reopen.py:162-195 |
-| The post-contract-write restamp call site in worktree start. | "restamp_leaf_doc_lifecycle(" | mcp/src/agents_remember/worktrees/modules/start.py:583-583 |
+| The post-contract-write restamp call site in worktree start. | "restamp_leaf_doc_lifecycle(" | mcp/src/agents_remember/worktrees/modules/start.py:621-621 |
 | The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:48-48 |
 
 ## Update History

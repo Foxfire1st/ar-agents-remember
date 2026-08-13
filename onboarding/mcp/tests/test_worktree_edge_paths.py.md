@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_worktree_edge_paths.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastUpdated            | 2026-08-12T22:36+02:00                     |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ base, a half-integrated pair, a branch deleted while checked out — so each is 
 | `MemorySyncBlockTests` | The two memory-side sync refusals, and what each tells the caller to do next. |
 | `MoveMemoryBranchTests` | A merge that cannot be resolved automatically **leaves the worktree usable**. |
 | `FetchSourceUpstreamsTests` | The best-effort pre-sync fetch reports per side rather than failing the sync. |
-| `OverviewRevisionTests` | Which route overviews the closeout classifier can speak for at all. |
+| `OverviewRevisionTests` | Which route overviews the closeout classifier can speak for at all, including its three-value revision result and typed evidence boundary. |
 | `IntegrationRefusalTests` | Integration refuses **before it moves any branch**. |
 
 ## Two Refusals Worth Reading Together
@@ -46,7 +46,7 @@ base, a half-integrated pair, a branch deleted while checked out — so each is 
 `ContractMemoryModeTests` proves both halves of the vocabulary refusal, and the second half is
 the one that is easy to lose. `test_leaf_contract_refuses_an_unknown_memory_mode` and its series
 twin prove `default_contract` / `default_series_contract` **raise** `ContractError`;
-cit:([`test_a_refused_request_leaves_the_start_as_a_result_not_an_exception`], mcp/tests/test_worktree_edge_paths.py:143-164) then proves
+cit:([`test_a_refused_request_leaves_the_start_as_a_result_not_an_exception`], mcp/tests/test_worktree_edge_paths.py:168-189) then proves
 `build_start_contract` converts that raise into a `WorktreeCommandResult(2, {"state":
 "invalid-request", ...})` whose summary still carries the message. Its docstring states the reason
 the conversion is load-bearing: nothing on `worktree_start`'s path — not
@@ -85,6 +85,10 @@ leaves `memory_mode` external, and a plain `{"state": "ready"}` returns the *ide
 - Disabling memory mid-start clears the memory topology *whole* — mode, repo path, both branches,
   base commit, worktree and ledger — and touches nothing on the code side.
 - The fast-forward recovery rebuilds the contract when branch tips moved under it.
+- Overview revision exposes body-change, added-history, and citation-only facts
+  together; ordinary new prose is explicitly not citation-only. Bucket probes use
+  the typed `source` evidence value, while absent/outside-baseline overviews still
+  drop out rather than becoming false gates.
 
 ## Repo-Internal References
 
@@ -98,7 +102,17 @@ leaves `memory_mode` external, and a plain `{"state": "ready"}` returns the *ide
 | The happy-path lifecycle suites these guards sit beside. | `WorktreeSupportTests`; `WorktreeSyncTests`; `ContractLifecycleAnchorTests` | mcp/tests/test_worktree_contract_lifecycle.py:51-81; mcp/tests/test_worktree_support.py:539-614; mcp/tests/test_worktree_sync.py:111-244 |
 | Helper-level arms of the same lifecycle. | `InspectContainersTests`; `InspectContainersIndividuallyTests`; `DockerRemoveHelpersTests`; `RouteOverviewMetadataRefreshPlanTests` | mcp/tests/test_worktree_and_observer_helpers.py:93-180; mcp/tests/test_worktree_and_observer_helpers.py:183-231; mcp/tests/test_worktree_and_observer_helpers.py:234-348; mcp/tests/test_worktree_and_observer_helpers.py:421-526 |
 
+## L23 Status And Attach Edges
+
+Existing-contract coverage now pins stale-lineage refusal before reattach,
+attach refusal before stale context resumes, status projection of blocked
+lineage, and omission when no task edge applies. Older preflight tests mark
+lineage non-applicable so their stale-base/rebuild branches retain isolated
+ownership.
+
 ## Update History
+- 2026-08-12T22:36+02:00 — L23 pre-commit type-check curator follow-up: updated `OverviewRevisionTests` for the three-value revision result (`citation_only=False` on ordinary prose) and the typed `evidence="source"` bucket call. The owner reports 14/14 combined route/overview tests and repository-wide Pyright green. Verification remains closeout-owned.
+- 2026-08-12T20:10+02:00 — L23 curator: documented lineage status/attach edge coverage, including no-applicable-edge omission; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: split task-vocabulary and WorkflowKind ownership, extended the start-contract exception claim, and removed hidden line-number shorthand from result claims. Verification metadata unchanged.
 
@@ -111,7 +125,28 @@ leaves `memory_mode` external, and a plain `{"state": "ready"}` returns the *ide
   `MemoryDisabledStartTests` (L285-L353, three tests over
   `start_module._contract_after_memory_start`), and extended the `ContractMemoryModeTests` row for
   its fourth test, `test_a_refused_request_leaves_the_start_as_a_result_not_an_exception`
-  cit:([`test_a_refused_request_leaves_the_start_as_a_result_not_an_exception`], mcp/tests/test_worktree_edge_paths.py:143-164). Wrote both up in a new section, because between them they are the leaf's real
+  cit:([`test_a_refused_request_leaves_the_start_as_a_result_not_an_exception`], mcp/tests/test_worktree_edge_paths.py:168-189). Wrote both up in a new section, because between them they are the leaf's real
+  subject here: a vocabulary refusal that used to escape as a traceback now returns
+  `WorktreeCommandResult(2, {"state": "invalid-request", ...})`, and a memory-disabled recovery
+  has to clear the *whole* memory topology at once. Verified each production anchor rather than
+  taking the test docstrings on trust — `build_start_contract` L187-L200 with its
+  `except ContractError -> invalid_contract_request_result`, that helper at
+  `modules/leaf_ref_start.py` L38-L53 returning exactly exit 2 / `invalid-request`,
+  `_contract_after_memory_start` at `modules/start.py` L137-L161 (the disabled branch writes
+  `memory_mode` through `amend_contract(..., ContractCells(memory_mode="disabled"))` while the
+  free-text `memory_state` rides `replace`), and `_task_vocabulary` at
+  `worktrees/worktree_contract.py` L150-L167, whose message is the
+  `"workflow_kind must be one of ['chat-task', 'light-task']"` the fixture reproduces. Added two
+  invariants for those. Also repaired the lifecycle reference row, which pointed at
+  `agents_remember/worktree/` — a package that exists neither at the leaf base nor at HEAD; it is
+  `agents_remember/worktrees/`. File is now 708 lines, 31 tests across 12 classes.
+
+- 2026-08-01T09:46+02:00 — 260731-EFA-L4 curator: the suite grew by 95 lines and the card's
+  Classes table had gone from complete to eleven-of-twelve. Added the missing class,
+  `MemoryDisabledStartTests` (L285-L353, three tests over
+  `start_module._contract_after_memory_start`), and extended the `ContractMemoryModeTests` row for
+  its fourth test, `test_a_refused_request_leaves_the_start_as_a_result_not_an_exception`
+  cit:([`test_a_refused_request_leaves_the_start_as_a_result_not_an_exception`], mcp/tests/test_worktree_edge_paths.py:168-189). Wrote both up in a new section, because between them they are the leaf's real
   subject here: a vocabulary refusal that used to escape as a traceback now returns
   `WorktreeCommandResult(2, {"state": "invalid-request", ...})`, and a memory-disabled recovery
   has to clear the *whole* memory topology at once. Verified each production anchor rather than

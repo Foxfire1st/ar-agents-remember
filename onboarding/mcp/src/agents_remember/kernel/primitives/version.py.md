@@ -5,9 +5,9 @@
 | repository             | agents-remember                                               |
 | path                   | `mcp/src/agents_remember/kernel/primitives/version.py`         |
 | doc_type               | `file-level-onboarding`                                       |
-| lastUpdated            | 2026-08-12T10:08+02:00                                        |
-| lastVerifiedCommitHash | `7bfeb13a40b3149a5d25d4af65976a07515b3b97`                    |
-| lastVerifiedCommitDate | 2026-08-12T10:38:47+02:00|
+| lastUpdated            | 2026-08-12T22:04+02:00                                        |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                    |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -25,16 +25,15 @@ the `mcp` package.
 ### Logic
 
 Defines `SERVER_NAME = "agents-remember"` (cit:([`SERVER_NAME`], mcp/src/agents_remember/kernel/primitives/version.py:11-11)).
-`_resolve_server_version()` reads the installed `agents-remember-mcp` metadata and catches
-`PackageNotFoundError` only for a source checkout, where it returns the release fallback;
-`SERVER_VERSION` is assigned from that one resolver (cit:([`_resolve_server_version`],
-mcp/src/agents_remember/kernel/primitives/version.py:14-23)). Naming the resolver keeps the
-installed/source boundary measurable by the mandatory targeted CRAP gate even when a release
-changes only the fallback literal.
+`_resolve_server_version` reads the installed `agents-remember-mcp` distribution metadata and
+returns the committed `3.0.0rc7` identity only when that metadata is unavailable in a source
+checkout. `SERVER_VERSION` is computed through that function seam, which keeps reload-based
+fallback tests deterministic and gives every upper layer one kernel-owned value.
 
 ### Invariants And Boundaries
 
 - Kernel stays importable by every layer; version identity must not drag `mcp` into kernel.
+- Installed package metadata is authoritative; the literal fallback is only the matching source-release identity.
 
 ### Todos
 
@@ -52,8 +51,8 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Package metadata and source-checkout fallback are selected through the explicit resolver. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
 | Version fallback behavior is pinned by the structural-coverage suite. | `test_version_fallback` | mcp/tests/test_leaf_structural_coverage.py:189-189 |
-| Installed metadata and the source fallback are one named, measurable resolver. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
 
 ## Cross-Repo References
 
@@ -64,6 +63,8 @@ No cross-repository implementation participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-12T22:04+02:00 — 260731-EFA-L23 post-code curator: replaced the stale `__version__` description with the committed `_resolve_server_version` seam and its installed-metadata-first, `3.0.0rc7` source fallback. Final verification stamping remains closeout-owned.
 
 - 2026-08-12T10:08+02:00 — Advanced the source-checkout fallback to `3.0.0rc7` and extracted
   the existing installed-metadata/fallback branch into `_resolve_server_version()`. Behavior and

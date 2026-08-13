@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/kernel/primitives/checkout_coordination.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
-| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
+| lastUpdated | 2026-08-13T00:00+02:00 |
+| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
+| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,8 +17,9 @@
 ## Purpose
 
 Own the one fail-closed policy that distinguishes trusted MCP/dashboard execution,
-explicit pytest execution, unpublished linked-worktree CLI execution, and refused
-primary-checkout CLI execution. It derives the checkout from the imported package
+the plane-owned lifecycle-operation worker, explicit pytest execution, unpublished
+linked-worktree CLI execution, and refused primary-checkout CLI execution. It derives
+the checkout from the imported package
 path rather than `cwd` or caller-provided environment, so a one-shot command cannot
 select the deployed coordinator merely by changing directory or passing live settings.
 
@@ -32,17 +33,28 @@ worktree; a `.git` directory means the primary checkout. For a linked checkout,
 `CheckoutLocation.coordination_root` is exactly
 `<checkout-parent>/provider-runtime/dev-ar-coordination` and
 `synthetic_config_path` is its non-authoritative sibling marker.
+`CheckoutLocation.reports_root` is the enclosure's exact sibling `reports/`
+directory: operational and test artifacts live there, outside coordination
+authority state.
 
-`declare_execution_mode` owns the process-singleton mode (`mcp`, `dashboard`, or
-`test`). `checkout_cli_location` returns no special context for one of those declared
+`declare_execution_mode` owns the process-singleton mode (`mcp`, `dashboard`,
+`lifecycle-operation`, or `test`). `declare_lifecycle_operation_process` is the
+narrow declaration for the detached task worker: it admits live coordination authority
+needed to claim its durable operation and finalize the task edge without assigning the
+long-lived `mcp` or `dashboard` daemon writer role. `checkout_cli_location` returns no special context for one of those declared
 modes or for an installed wheel. An undeclared linked checkout receives its leaf
 location; an undeclared primary checkout raises `CheckoutCoordinationError` because it
 has no disposable leaf enclosure.
 
-`require_durable_write_target` resolves both the candidate target and the leaf-local
-root, then refuses a target outside that root. `exclusive_access`, `append_line`, and
-`rewrite_lines` call it, so an escape fails before parent or lockfile creation and a
-manual runtime-config construction cannot bypass the normal synthetic config route.
+`require_durable_write_target` resolves the candidate and permits exactly two
+task-local descendants: the disposable coordination root for inbox/gate/lifecycle
+rows, and the enclosure `reports/` root for operational artifacts. Everything else
+is refused. The exception text names those responsibilities separately rather than
+calling report files coordination rows. `exclusive_access`, `append_line`, and
+`rewrite_lines` call the guard, so an escape fails before parent or lockfile creation
+and a manual runtime-config construction cannot bypass the normal synthetic config
+route. This is not a second coordinator or a live-state fallback: no coordination
+authority is copied into or resolved from `reports/`.
 
 ### Invariants And Boundaries
 
@@ -50,8 +62,14 @@ manual runtime-config construction cannot bypass the normal synthetic config rou
   environment override.
 - The dummy root is created lazily by the operation that needs it; no live state is
   copied and the provider-runtime teardown already owns its enclosing directory.
+- Enclosure reports are the only non-coordination durable target allowed to
+  unpublished checkout code. They remain self-overwriting task artifacts and do not
+  contain inbox, gate, lifecycle, or observer authority rows.
 - Trusted daemon declaration precedes authority loading. Pytest declares `test`
   explicitly in `conftest.py`; it is not inferred from process names or environment.
+- Only the detached plane-owned lifecycle worker declares `lifecycle-operation`.
+  The mode does not claim MCP/dashboard daemon ownership and is not a general checkout
+  CLI escape hatch.
 - This protects supported Agents Remember paths from accidental writes. Arbitrary
   hostile Python or shell filesystem access remains outside an in-process policy.
 
@@ -64,6 +82,8 @@ manual runtime-config construction cannot bypass the normal synthetic config rou
 | MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. | "server_startup.declare_mcp_process()"; "declare_test_process()" | mcp/src/agents_remember/mcp/server.py:60-65; mcp/tests/conftest.py:37-40 |
 
 ## Update History
+- 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: added the explicit `lifecycle-operation` execution mode for the plane-owned detached task worker. It may use live coordination to claim/finalize its durable operation but receives no MCP/dashboard daemon writer role; ordinary checkout CLI isolation is unchanged. The owner reports 46 focused tests across the two affected suites, Ruff clean, and diff-check clean. Verification remains closeout-owned.
+- 2026-08-12T22:24+02:00 — 260731-EFA-L23 async-closeout follow-up: added the exact enclosure `reports/` target for operational artifacts while keeping coordination rows confined to leaf-local `provider-runtime/dev-ar-coordination`; sibling/live escapes remain refused. Verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored the pytest process-declaration evidence after `conftest.py` line movement; the checkout-coordination claim is unchanged.

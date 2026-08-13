@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_app_routes.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -79,7 +79,14 @@ shape, optionally protocol-backed). `_write_task_documents` writes a real master
 | The same app's background loops and lifespan wiring. | `AgentNotifierLoopTests` | mcp/tests/test_serving_app_background_loops.py:220-272 |
 | Helper-level arms of the same module. | `ImageSniffTests` | mcp/tests/test_serving_helper_behaviour.py:100-139 |
 
+## L23 Attach Route Fixture
+
+Structural attach-route tests now seed a current master/leaf contract chain so
+their existing HTTP and seat-binding assertions pass through the new admission
+gate for the intended reason.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented current-lineage setup for structural attach routes; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_serving_app_routes.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

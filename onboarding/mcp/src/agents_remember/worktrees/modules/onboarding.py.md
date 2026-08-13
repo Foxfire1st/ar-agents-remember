@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-12T22:25+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -73,7 +73,26 @@ not resolve under that tree rather than reporting false stale findings;
 `validate_onboarding_refresh_plan_for_context` wires it into the worktree
 closeout path before the code commit.
 
-Route overviews get the same body gate scoped by domain evidence.
+Route overviews get the same body gate scoped by domain evidence. The refresh
+plan includes both overviews whose `sourceRoute` contains a current-leaf code
+path and overview documents changed in the memory worktree since the task's
+verified memory baseline. The latter closes the synced-source deadlock: a
+curator may repair older route drift during this task even when the source
+change predates the leaf's current code range, and closeout will validate and
+stamp that authored overview in the same transaction.
+
+Direct task editing is itself domain evidence for those baseline-relative
+overview candidates. Their body/history gate therefore still rejects an
+unchanged or metadata-only document and requires substantive route prose plus
+history (or the existing specific no-route-impact disposition); it does not
+turn changed-memory membership into a blanket attestation. The one generated
+exception is a pure citation-coordinate refresh: `_citation_coordinates_only_changed`
+normalizes only complete final reference-table cells shaped as
+`path:line[-line]`, so a sanctioned citation-fixer range shift can be stamped
+without inventing an Update History claim. Any changed prose, anchor, path,
+table shape, non-reference cell, or other body content remains visible and
+therefore still needs truthful history.
+
 `_nearest_governing_route` picks the longest matched route per changed path
 (`.` loses to any deeper route); `classify_route_overview_updates` classifies
 only those nearest-governing overviews as stale / untraced / attested (marker
@@ -86,15 +105,17 @@ Since 260731-EFA-L2 that classification is three named steps, and
 `classify_route_overview_updates` is just the loop that appends each returned bucket name:
 
 - `_overview_revision(overview_path, *, memory_root, baseline_ref, changed_memory)` → `(body
-  meaningfully changed, history lines added) | None`. **`None` is not a verdict** — it means the
+  meaningfully changed, history lines added, citation-coordinates-only) | None`. **`None` is not a verdict** — it means the
   overview is outside the memory tree or absent from the baseline, neither of which is a stale
   signal, so those overviews drop out of the classification entirely.
-- `_governing_overview_bucket(body_changed, added_history)` → the gating bucket for a
-  nearest-governor overview: `None` once it is properly updated (body changed *and* history added),
-  else `untraced` / `attested_no_impact` / `stale`.
+- `_governing_overview_bucket(..., allow_citation_only, citation_only)` → the gating bucket for
+  a domain-evident overview: `None` once it is properly updated (body changed *and* history added),
+  or for an allowed task-edited citation-coordinate-only refresh; otherwise
+  `untraced` / `attested_no_impact` / `stale`.
 - `_route_overview_bucket(overview_path, *, memory_root, baseline_ref, changed_memory,
-  domain_evident)` → the bucket for one matched overview. Only a nearest governor
-  (`domain_evident`) is classified like a sidecar; an ancestor match returns
+  evidence)` → the bucket for one matched overview. Source and task-edited evidence
+  classify like a sidecar, with the citation-only exception restricted to the
+  latter; an ancestor match returns
   `stamped_without_body_review` when its body went unreviewed, and `None` otherwise.
 
 `refresh_onboarding_metadata(contract, change)`,
@@ -125,6 +146,13 @@ in `kernel/route_index_census.py`, and rendering stays in
 
 - Sidecar and nearest-governing overview body/history gates run before code
   commit; ancestor overviews are reported but do not become false blockers.
+- A route overview changed since the verified memory baseline is planned and
+  body-reviewed even when its source drift predates the current leaf code range.
+- Baseline-relative membership supplies domain evidence, not permission for a
+  metadata-only stamp; stale and untraced authored overviews still refuse.
+- Only task-edited overview changes confined to generated citation coordinates
+  may pass without invented history; substantive body and reference-identity
+  changes remain gate-visible.
 - Working-tree missing onboarding blocks, while transported committed-range
   gaps remain explicitly reported as `unonboarded`.
 - Route-index preview and apply must use the exact `context.storage` authority
@@ -163,6 +191,9 @@ implementation governs this module.
 
 ## Update History
 
+- 2026-08-12T22:45+02:00 — 260731-EFA-L23 curator follow-up: documented the final citation-only distinction for task-edited route overviews. Complete generated `path:line[-line]` coordinate shifts may pass without fabricated history, while prose, anchor, path, table-shape, metadata-only, and other untraced changes remain fail-closed. Verification remains closeout-owned.
+- 2026-08-12T22:36+02:00 — 260731-EFA-L23 pre-commit type-check follow-up: aligned `_route_overview_bucket`'s source docstring with its typed `ancestor` / `source` / `task-edited` evidence contract and the task-edited citation-coordinate-only exception. Runtime behavior is unchanged. Verification remains closeout-owned.
+- 2026-08-12T22:25+02:00 — 260731-EFA-L23 curator follow-up: documented baseline-relative task-edited route inclusion and its fail-closed body/history classification. This closes the synced-source closeout deadlock without allowing metadata-only or untraced overview refreshes. Verification remains closeout-owned.
 - 2026-08-05T23:20+02:00 — 260731-EFA-L16 curator: recorded `_refresh_regenerated_documents` — the metadata refresh now also stamps onboarding documents the task touched (memory worktree diff) that carry verification metadata, so citations the fixer regenerated against the working tree do not stay pinned to a commit whose constructs no longer exist; route overviews and entity catalogs keep their own refresh passes. Verification metadata stays pinned until closeout stamps the L16 commit.
 - 2026-08-04T18:47+02:00 — 260731-EFA-L6 S18-B17 curator: corrected the four drifted test ranges
   in the worktree-tests row (long-sidecar 1573-1592, metadata refresh 1631-1673, missing-sidecar

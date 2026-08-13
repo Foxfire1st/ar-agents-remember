@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`         |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`         |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -238,9 +238,17 @@ type is recorded separately below as an in-repo boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The in-repo workspace projection wire type. | `WorkspaceProjection` | dashboard/src/types/projection.ts:542-554 |
+| The in-repo workspace projection wire type. | `WorkspaceProjection` | dashboard/src/types/projection.ts:569-581 |
+
+## L23 Contract-Backed Conformance Fixture
+
+The response-conformance changeset now constructs a real series contract and a
+leaf whose source is the master's work branch. Public response checks therefore
+exercise the same task-derived ancestry topology as production instead of a
+standalone leaf branch.
 
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented super/master/leaf fixture lineage for response conformance; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_serving_response_conformance.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.

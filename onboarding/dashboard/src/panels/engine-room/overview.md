@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/engine-room/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -238,12 +238,12 @@ The process map keeps stale landing facts inspectable with explicit stale stylin
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The server composer of the process nodes the client renders. | "def build_analytics("; "def _start_process_node(entry: dict[str"; "def _process_edges(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:129-129; mcp/src/agents_remember/observer/reducer_impl/_processes.py:122-122; mcp/src/agents_remember/observer/reducer_impl/_processes.py:539-539 |
+| The server composer of the process nodes the client renders. | "def build_analytics("; "def _start_process_node(entry: dict[str"; "def _process_edges(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:129-129; mcp/src/agents_remember/observer/reducer_impl/_processes.py:124-124; mcp/src/agents_remember/observer/reducer_impl/_processes.py:543-543 |
 | The served `EngineProcessNode` / `Analytics.engineProcesses` contract. | `EngineProcessNode` | mcp/src/agents_remember/observer/projection.py:832-900 |
 | The honest-motion gate the GSAP/Motion read. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
 | The cockpit shell that hides the rails for the Engine Room view (§4.1). | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:446-446 |
 | `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:785-804 |
-| "def _seed_edge_state(" and "_DECISIVE_SETUP_EDGE_STATES: dict[str" — the only producers of a seed lane's state, including the "metrics=_metrics(lifecycles" reroute. | "def _seed_edge_state("; "_DECISIVE_SETUP_EDGE_STATES: dict[str" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:627-627; mcp/src/agents_remember/observer/reducer_impl/_processes.py:634-634; mcp/src/agents_remember/observer/reducer.py:73-73 |
+| "def _seed_edge_state(" and "_DECISIVE_SETUP_EDGE_STATES: dict[str" — the only producers of a seed lane's state, including the "metrics=_metrics(lifecycles" reroute. | "def _seed_edge_state("; "_DECISIVE_SETUP_EDGE_STATES: dict[str" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:631-631; mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638; mcp/src/agents_remember/observer/reducer.py:73-73 |
 | The client mirror of the edge, which no longer declares a polarity field. | `EngineProcessEdge` | dashboard/src/types/projection.ts:162-170 |
 
 ## Current L5I Route State
@@ -296,7 +296,15 @@ payload the server can actually send.
   nothing is scheduled to start emitting them. `integration-mem` is not itself in the documented list
   and lives or dies with `integration`. Delete the lane and its coverage together, or not at all.
 
+## L23 Source-Lineage Diagnostic
+
+Engine Room now receives a strict source-lineage projection on each applicable
+process node. Diagnostics renders the aggregate state/summary, and the route's
+test seeds a blocked projection to prove visibility before an agent consumes
+stale enclosure context.
+
 ## Update History
+- 2026-08-12T20:20+02:00 — L23 curator: documented lineage projection and blocked-state rendering in Engine Room; verification remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (style-domain split, canvas siblings, fixtures trim). Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped engine-room citation claims; final exact frozen-snapshot check is clean.
@@ -315,13 +323,13 @@ payload the server can actually send.
   comment (L778, above `state: str` at L779) lists
   nominal/running/blocked/failed/stale/skipped/complete/planned/unknown with no
   `refused`; `git log --all -S 'state="refused"'` returns 0 commits in all of history; and
-  cit:(["_DECISIVE_SETUP_EDGE_STATES: dict[str", "def _seed_edge_state("], mcp/src/agents_remember/observer/reducer_impl/_processes.py:634-634; mcp/src/agents_remember/observer/reducer_impl/_processes.py:627-627) is what makes `stale` a state the helper really returns. Recorded that the scenario ID
+  cit:(["_DECISIVE_SETUP_EDGE_STATES: dict[str", "def _seed_edge_state("], mcp/src/agents_remember/observer/reducer_impl/_processes.py:631-631; mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638) is what makes `stale` a state the helper really returns. Recorded that the scenario ID
   `engine-cgc-seed-refused` is unchanged on purpose because "refused" now names the beat, not a state,
   and that `EnclosureProcessMap.test.tsx`'s `data-refused-polarity` `toBeNull()` is the guard against
   reintroducing the field. Kept the `integration`/`integration-mem` arms documented with their ACTUAL
   justification (`integration` is in the model's own `kind` list at L765-L767 and the lane is
   fixture-authored/test-covered) rather than as forward-compatibility — I checked both reducer edge
-  builders, cit:(["def _process_edges(", "def _start_process_node(entry: dict[str"], mcp/src/agents_remember/observer/reducer_impl/_processes.py:539-539; mcp/src/agents_remember/observer/reducer_impl/_processes.py:122-122), and neither emits
+  builders, cit:(["def _process_edges(", "def _start_process_node(entry: dict[str"], mcp/src/agents_remember/observer/reducer_impl/_processes.py:124-124; mcp/src/agents_remember/observer/reducer_impl/_processes.py:543-543), and neither emits
   either kind. Added three two-cell `Repo-Internal References` rows in the existing two-column shape.
   Evidence: the engine-room suites run green. Verification metadata remains pinned until closeout.
 

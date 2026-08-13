@@ -74,7 +74,7 @@
     "vocab"
   ],
   "hotPath": {
-    "summary": "`runtime_config.py::McpRuntimeConfig` is the trusted authority settings record; `checkout_coordination.py` keeps unpublished linked-checkout CLI/store writes inside the leaf's disposable coordinator and refuses undeclared primary-checkout access; `gate_policy.py` owns the human-first gate delegation policy; `provider_degradation_settings.py` parses the `providerDegradation` block; `inbox_backoff.py` owns redelivery backoff; `memory_cap.py` plans explicit opt-in hard caps while uncapped full gates stay host-managed; `identity.py` owns provider instance naming.",
+    "summary": "`runtime_config.py::McpRuntimeConfig` is the trusted authority settings record; `checkout_coordination.py` keeps unpublished linked-checkout coordination writes inside the leaf's disposable coordinator, permits operational artifacts only inside the exact enclosure `reports/` root, admits the explicit plane-owned lifecycle-operation worker without granting a daemon role, and refuses undeclared primary-checkout access; `gate_policy.py` owns the human-first gate delegation policy; `provider_degradation_settings.py` parses the `providerDegradation` block; `inbox_backoff.py` owns redelivery back...",
     "candidateHints": [
       "mcp/src/agents_remember/kernel/primitives",
       "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py",
@@ -119,14 +119,14 @@
       "version.py",
       "version",
       "runtime_config.py::McpRuntimeConfig",
+      "reports/",
       "providerDegradation",
       "McpRuntimeConfig",
-      "CLI",
       "route-local-overview",
       "mcp/src/agents_remember/kernel/primitives/",
       "mcp/src/agents_remember/kernel/primitives/overview.md",
       "mcp/overview.md",
-      "7bfeb13a40b3149a5d25d4af65976a07515b3b97",
+      "1580f92715ff93c988f9a15439ad9bec60ef4c5d",
       "mcp/config.py",
       "mcp",
       "controlplane",
@@ -139,7 +139,7 @@
       "application/provider_runtime.py",
       "ConfigError",
       "rank(Q) < rank(P",
-      "resolve_checkout_location"
+      "lifecycle-operation"
     ]
   },
   "fallback": {

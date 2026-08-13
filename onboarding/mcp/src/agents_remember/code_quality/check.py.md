@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-11T23:56+02:00               |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -271,7 +271,7 @@ the report to a temporary directory unless `--coverage-json` is given.
 | The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:793-851 |
 | The optional settings-owned memory cap an explicitly constrained full run may use (`--memory-cap-bytes`); host-managed full runs do not call this planner. | `plan_capped_command` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:92-130 |
 | The targeted contract proofs: rail scoping, real radon input, and no-change short-circuit. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:142-359; mcp/tests/test_code_quality_targeted.py:360-630 |
-| The command builder supplies derived test and coverage arguments; root pytest configuration owns automatic xdist workers. | "pytest_args = [sys.executable, \"-m\", \"pytest\", *test_args]"; "-n=auto" | mcp/src/agents_remember/code_quality/check.py:271-271; pyproject.toml:124-124 |
+| The command builder supplies derived test and coverage arguments; root pytest configuration owns automatic xdist workers. | "pytest_args = [sys.executable, \"-m\", \"pytest\", *test_args]"; "-n=auto" | mcp/src/agents_remember/code_quality/check.py:272-272; pyproject.toml:124-124 |
 
 ## 260731-EFA-L9 Change — Armed Layering Step
 
@@ -282,7 +282,16 @@ package-pair cycles, undeclared top-level directories, and `from agents_remember
 resolving to no declared package. There is no baseline/allowlist; a green full wrapper now
 requires zero layering violations.
 
+## L23 Native Scratch Boundary
+
+The quality CLI now forces transient tool state through the short native
+`/tmp/arq` root and resets Python's process-wide `tempfile.tempdir` cache after
+environment sanitization. Durable progress/test reports remain enclosure-owned;
+the short scratch path prevents inherited WSL/UNC roots and Unix-socket length
+limits from breaking otherwise-valid checks.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented the short native scratch root and cached-temp reset; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T07:15+02:00 — 260731-EFA-L24 curator: re-read the

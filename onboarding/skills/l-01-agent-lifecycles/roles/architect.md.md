@@ -6,8 +6,8 @@
 | path | skills/l-01-agent-lifecycles/roles/architect.md |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`|
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -40,7 +40,15 @@ Worker source inventory, reviewer verdict, and governing route overview.
 
 No meaningful cross-repo references.
 
+## L23 Thematic Master Recovery
+
+The architect treats a resumed master that trails super as a synchronization
+condition on the existing thematic master, not a reason to fork a replacement
+master. The plane derives ancestry from task structure and returns the contract
+address needed for backend recovery.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented canonical thematic-master recovery semantics; verification remains closeout-owned.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the custody rewrite — rows whose
 ## 260713-TES-L5 Current Delta — Mailbox Custody, Not Ladder Rungs

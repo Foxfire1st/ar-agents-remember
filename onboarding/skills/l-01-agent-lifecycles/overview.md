@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 
 ## Purpose
 
@@ -64,7 +64,15 @@ history, entity, or index finding remains.
 | Manager owns one real master and its leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Worker owns one real leaf's implementation and durable report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
 
+## L23 Pre-Dispatch Lineage
+
+Canonical lifecycle guidance now places task-derived ancestry before process
+creation: managers require current master lineage and leaf roles require the
+full chain. Refusal creates no child and recovery is contract-addressed, keeping
+commit/session identity inside the control plane.
+
 ## Update History
+- 2026-08-12T20:20+02:00 — L23 curator: documented canonical pre-dispatch lineage policy; verification remains closeout-owned.
 
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 route impact: manager,
   orchestrator, worker, and their dispatch briefs now state that master full

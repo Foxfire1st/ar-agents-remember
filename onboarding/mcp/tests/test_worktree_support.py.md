@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -157,15 +157,15 @@ No external documentation is needed for this standard-library test.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The file-level onboarding helper creates minimal onboarding fixtures for adoption and carryover checks. | `write_file_onboarding` | mcp/tests/test_worktree_support.py:88-109 |
+| The file-level onboarding helper creates minimal onboarding fixtures for adoption and carryover checks. | `write_file_onboarding` | mcp/tests/test_worktree_support.py:134-155 |
 | The common integration fixture creates real code and memory worktrees, closes a contract with code, memory content, and ledger commits, then reuses that fixture across integration tests. | `closed_external_contract_fixture` | mcp/tests/test_worktree_support.py:435-504 |
 | The resolver regression test proves `c-08-ar-coordination-context-resolver` skill returns `ar-coordination/tasks/<repo>` when no task name is supplied. | `test_resolver_returns_repo_task_root_without_task_name` | mcp/tests/test_worktree_support_tests_1.py:384-401 |
 | External-memory start blocks dirty source memory repos before worktree creation. | `test_start_blocks_dirty_external_memory_source` | mcp/tests/test_worktree_support_tests_1.py:668-707 |
 | Worktree contract tests check wrapper task roots without `-ar`, worktree groups with `-ar`, current-plus-legacy task-root candidates, and direct contract-path status loading. | `test_worktree_contract_roundtrip` | mcp/tests/test_worktree_support_tests_1.py:843-913 |
-| Closeout tests cover dry-run preview without approval, metadata refresh plan output, real closeout blocking without an approval note, approval-note persistence, onboarding metadata refresh to the new code commit, and missing onboarding blocking; the closeout **preview** path still reports `commit-approval-pending` / "\"request_commit_approval\"," (closeout owns the commit gate). | "\"request_commit_approval\"," | mcp/src/agents_remember/worktrees/modules/guidance.py:33-33 |
+| Closeout tests cover dry-run preview without approval, metadata refresh plan output, real closeout blocking without an approval note, approval-note persistence, onboarding metadata refresh to the new code commit, and missing onboarding blocking; the closeout **preview** path still reports `commit-approval-pending` / "\"request_commit_approval\"," (closeout owns the commit gate). | "\"request_commit_approval\"," | mcp/src/agents_remember/worktrees/modules/guidance.py:38-38 |
 | `test_status_reports_integration_pending_for_dirty_closed_contract` (slice 09) pins the corrected `status_payload` behavior: a closed-out contract reports its honest lifecycle position (`integration-pending` / `request_integration_decision`) even when the worktree is dirty — `git status` no longer fabricates `commit-approval-pending`. | `test_status_reports_integration_pending_for_dirty_closed_contract` | mcp/tests/test_worktree_support_tests_2.py:568-580 |
 | New closeout regression tests cover memory-worktree settings during planning and long Windows paths in changed-file and sidecar probes. | `test_closeout_plan_uses_memory_worktree_settings`; `test_changed_worktree_paths_includes_long_files`; `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support_tests_1.py:1036-1066; mcp/tests/test_worktree_support_tests_1.py:1068-1081; mcp/tests/test_worktree_support_tests_1.py:1100-1118 |
-| The initialized-memory helper writes supported explicit storage settings so closeout/carryover success paths possess real write authority. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:242-270 |
+| The initialized-memory helper writes supported explicit storage settings so closeout/carryover success paths possess real write authority. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:288-316 |
 | `c-09-git-worktree-manager` integration and cleanup tests cover ff-only fast-forwarding, cleanup blocking, replay of parallel non-overlapping changes, code-conflict blocking, and non-fast-forward refusal without moving `HEAD`. | `test_integrate_ff_only_fast_forwards_code_and_memory_main`; `test_cleanup_blocks_before_integration_completed`; `test_integrate_replay_handles_parallel_non_overlapping_changes`; `test_integrate_replay_blocks_code_conflicts_before_main_moves`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:582-637; mcp/tests/test_worktree_support_tests_2.py:639-645; mcp/tests/test_worktree_support_tests_2.py:647-692; mcp/tests/test_worktree_support_tests_2.py:694-725; mcp/tests/test_worktree_support_tests_3.py:715-750 |
 | Resolver and drift-report path tests check `code_repository_name`, `temp_root`, default report placement under `temp/drift-reports`, relative report resolution, parent-directory escape fallback, absolute-path containment, and explicit memory-root report redirection back to temp. | `test_drift_report_paths_use_temp_root` | mcp/tests/test_worktree_support_tests_3.py:85-128 |
 | Deterministic `c-02-memory-quality-control` skill drift tests build route overview and entity catalog fixtures, then cover clean route scopes, changed route scopes, clean fingerprints, changed fingerprints, missing evidence paths, missing fingerprint tables, missing fingerprint rows, and orphaned fingerprint rows. | `test_drift_detects_clean_route_local_overview`; `test_drift_detects_changed_route_local_overview_scope`; `test_drift_detects_clean_entity_fingerprint`; `test_drift_detects_entity_fingerprint_change`; `test_drift_detects_missing_entity_evidence_path`; `test_drift_detects_entity_inventory_without_fingerprint_table`; `test_drift_detects_entity_inventory_entry_missing_fingerprint`; `test_drift_detects_orphaned_entity_fingerprint_row` | mcp/tests/test_worktree_support_tests_3.py:130-148; mcp/tests/test_worktree_support_tests_3.py:150-168; mcp/tests/test_worktree_support_tests_3.py:170-193; mcp/tests/test_worktree_support_tests_3.py:195-220; mcp/tests/test_worktree_support_tests_3.py:222-243; mcp/tests/test_worktree_support_tests_3.py:245-269; mcp/tests/test_worktree_support_tests_3.py:271-296; mcp/tests/test_worktree_support_tests_3.py:298-326 |
@@ -191,7 +191,15 @@ new contract persists the canonical doc id (`15`) under the canonical leaf enclo
 the L3 memory-base regression: `memory_base_for_source` records the memory base from the source-branch
 tip, not the repo HEAD when the memory repo is checked out on an unrelated branch.
 
+## L23 Shared Current-Lineage Fixture
+
+`write_current_task_lineage` creates a real Git repository, master series
+contract, and leaf enclosure whose branches form a current super-to-master-to-
+leaf chain. Structural suites reuse it so unrelated tests satisfy admission
+without mocking the source-lineage fact source.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented the reusable contract-backed lineage fixture; verification remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 - 2026-08-05T22:55+02:00 — 260731-EFA-L16 curator: recorded the two closeout citation-gate tests — a changed construct completes with the stamp advanced to the new code commit, and a deleted construct refuses in the citation gate BEFORE the code commit with `citation_anchor_absent_from_range` (no commit spent) — plus the phase-payload contract (citation pair before the refresh, sanity checks after). Follow-up: `_refresh_regenerated_documents` coverage (stamps only touched citation documents; skips planned/excluded/no-metadata/prose-only; empty without a memory tree). Verification metadata stays pinned until closeout stamps the L16 commit.

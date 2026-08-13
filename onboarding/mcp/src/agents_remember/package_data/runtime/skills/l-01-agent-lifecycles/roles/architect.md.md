@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -122,7 +122,15 @@ architect as a mailbox (the timed escalation ladder is retired), rows land at th
 turn boundary (the system acks), and `operator_inbox_consume` is an optional attribution
 marker. The developer remains an authority, not an address.
 
+## L23 Thematic Master Recovery
+
+The packaged architect role treats a resumed master falling behind super as a
+normal synchronization condition. It routes the contract-addressed recovery
+through the backend and retries the same canonical master seat; it does not
+invent a “part 2” master or burden agents with commit ancestry.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented replacement-safe thematic-master sync recovery; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Recorded `architect.md` as a synchronized runtime artifact of the current canonical lifecycle doctrine; it introduces no independent role contract.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: aligned the packaged architect lifecycle with

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_static.py`                 |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T04:28+02:00                     |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ repository-local serving contract is documented from source and this executable 
 | --- | --- | --- |
 | The resolver's `None`-vs-directory contract and the two mount branches under test. | `dashboard_static_dir`; `mount_static` | mcp/src/agents_remember/serving/static.py:104-109; mcp/src/agents_remember/serving/static.py:112-129 |
 | The 503 body, `no-store` header, and GET/HEAD-only method contract under test. | `MissingDashboardBundle`; `BUILD_COMMAND` | mcp/src/agents_remember/serving/static.py:35-38; mcp/src/agents_remember/serving/static.py:53-91 |
-| The app-level counterpart covering both states through `create_app`. | `test_root_serves_dashboard_bundle`; `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` | mcp/tests/test_serving.py:497-514; mcp/tests/test_serving.py:516-529 |
+| The app-level counterpart covering both states through `create_app`. | `test_root_serves_dashboard_bundle`; `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` | mcp/tests/test_serving.py:546-563; mcp/tests/test_serving.py:565-578 |
 | The release build step that produces the bundle these tests stand in for. | `sync`; `replace_tree` | scripts/sync-dashboard.py:120-135; scripts/sync-dashboard.py:138-159 |
 
 ## Cross-Repo References

@@ -9,8 +9,8 @@ Total output lines: 2259
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -762,7 +762,15 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   consequence — provider-log reclamation follows this loop's 30s cadence and every write on the path
   holds its log's lock. No other route bullet changed: nothing else under `serving/` was touched by
   this leaf. Verification metadata untouched.
+## L23 Structural Host Boundary
+
+Serving resolves lineage after task-role validation and before host creation or
+catalog mutation. Open/attach HTTP routes publish stale/unavailable refusals as
+409 with strict evidence, while projector shutdown now drains any in-flight
+filesystem tick before temporary worktree cleanup.
+
 ## Update History
+- 2026-08-12T20:20+02:00 — L23 curator: documented serving-side pre-host lineage admission and safe projector cancellation; verification remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 adds batched notifier expiry writes, product-agnostic Codex initialize diagnostics, lifecycle-operation projection on enclosures, and volatile elapsed-time stripping. Durable task state remains the authority; no private operation identity crosses the serving boundary. Verification provenance remains closeout-owned.
 

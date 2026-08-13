@@ -37,6 +37,7 @@
     "mcp/src/agents_remember/application/skill_tools.py",
     "mcp/src/agents_remember/application/task_doc_tools.py",
     "mcp/src/agents_remember/application/task_ref.py",
+    "mcp/src/agents_remember/application/terminal_spawn_results.py",
     "mcp/src/agents_remember/application/terminal_tools.py",
     "mcp/src/agents_remember/application/tool_response.py",
     "mcp/src/agents_remember/application/worktree_services.py",
@@ -44,8 +45,8 @@
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 29,
-    "fileSidecars": 26,
+    "sourceFilesInScope": 30,
+    "fileSidecars": 27,
     "childRoutes": 1
   },
   "routingTerms": [
@@ -94,6 +95,7 @@
     "ref",
     "remember",
     "response",
+    "results",
     "runtime",
     "runtime_install",
     "server",
@@ -101,6 +103,7 @@
     "services",
     "skill",
     "skill_tools",
+    "spawn",
     "src",
     "startup",
     "status",
@@ -110,6 +113,7 @@
     "task_doc_tools",
     "task_ref",
     "terminal",
+    "terminal_spawn_results",
     "terminal_tools",
     "tool",
     "tool_response",
@@ -146,7 +150,7 @@
       "mcp/src/agents_remember/application/skill_tools.py",
       "mcp/src/agents_remember/application/task_doc_tools.py",
       "mcp/src/agents_remember/application/task_ref.py",
-      "mcp/src/agents_remember/application/terminal_tools.py"
+      "mcp/src/agents_remember/application/terminal_spawn_results.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -191,12 +195,12 @@
       "task_doc_tools",
       "task_ref.py",
       "task_ref",
+      "terminal_spawn_results.py",
+      "terminal_spawn_results",
       "terminal_tools.py",
       "terminal_tools",
       "tool_response.py",
-      "tool_response",
-      "worktree_services.py",
-      "worktree_services"
+      "tool_response"
     ]
   },
   "fallback": {

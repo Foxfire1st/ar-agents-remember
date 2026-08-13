@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-13T07:53+02:00 |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -337,8 +337,8 @@ Same-repository source defines the contract format and `c-09-git-worktree-manage
 | Walk-free load tripwires, heal parity with the removed read-time normalization, idempotence, dry-run, error tolerance, and the CLI seam are pinned by the resolver test suite. | `LeafRefResolutionTests` | mcp/tests/test_leaf_ref_resolution.py:103-464 |
 | Load/write/render helpers: `load_contract` (which logs the quarantined cells and passes `path=` to validation), `write_contract`, the heal, and the section renderers through `contract_to_text`. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
 | The write gate and the read path: `_contract_vocabularies`, `validate_contract(contract, *, path)`, the path-naming `_extract_front_matter` / `_path`, limited YAML parsing, and `_contract_from_data` reading all six cells through `_vocabulary_cell` into `unknown_cells`. | `_contract_vocabularies`; `validate_contract`; `_extract_front_matter`; `_contract_from_data` | mcp/src/agents_remember/worktrees/worktree_contract.py:743-758; mcp/src/agents_remember/worktrees/worktree_contract.py:761-816; mcp/src/agents_remember/worktrees/worktree_contract.py:819-832; mcp/src/agents_remember/worktrees/worktree_contract.py:974-1045 |
-| `WorktreeSummary` imports `WorkflowKind`, `MemoryMode`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus` and `CleanupStatus` from here for the response boundary. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:36-74 |
-| `WorktreeStatusFacts` imports the same six and reports `unknown_cells` as `unknown_contract_cells`. | `WorktreeStatusFacts` | mcp/src/agents_remember/worktrees/modules/guidance.py:99-136 |
+| `WorktreeSummary` imports `WorkflowKind`, `MemoryMode`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus` and `CleanupStatus` from here for the response boundary. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:96-136 |
+| The current `WorktreeStatusFacts` shape imports the same six contract vocabularies, reports `unknown_cells` as `unknown_contract_cells`, and exposes derived source lineage without adding a persisted contract cell. | "class WorktreeStatusFacts(TypedDict):" | mcp/src/agents_remember/worktrees/modules/guidance.py:75-116 |
 | `build_start_contract` converts `_task_vocabulary`'s `ContractError` into a blocked start result. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:192-211 |
 | Vocabulary exhaustiveness, the `ContractCells` write path, and the no-`replace`-keyword rule are pinned here. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:153-153 |
 | The worktree lifecycle modules import contract helpers and record closeout/integration commit state through these contract objects. | `# mcp/src/agents_remember/worktrees/modules Overview` | onboarding/mcp/src/agents_remember/worktrees/modules/overview.md:1-762 |
@@ -348,11 +348,20 @@ Same-repository source defines the contract format and `c-09-git-worktree-manage
 No meaningful cross-repo boundary is documented here; the contract points at
 external memory paths, but the parser and renderer are same-repository code.
 
+## L23 Lineage Status Consumer
+
+The contract parser remains the durable source of repository and branch plans;
+`WorktreeStatusFacts` now adds an optional `source_lineage` projection computed
+from those facts. This does not add a persisted contract cell or change tolerant
+read/refusing-write behavior.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No sibling repository boundary is needed to explain this file. | n/a | n/a |
 
 ## Update History
+- 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
+- 2026-08-12T20:24+02:00 — L23 curator: re-read the changed `WorktreeStatusFacts` consumer and confirmed lineage is a derived optional status field, not persisted contract vocabulary; verification remains closeout-owned.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: rebased the `CONTRACT_SCHEMA_VERSION`
   citations to the assignment line, deduplicated the version-policy row, and regenerated ranges

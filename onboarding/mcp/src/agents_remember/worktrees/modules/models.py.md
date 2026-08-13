@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/models.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-12T22:25+02:00     |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -31,6 +31,12 @@ reported, never blocking, so transported history cannot force whole-repository
 onboarding. `PATH_SAMPLE_LIMIT` (30) caps the payload exposure of lists that
 scale with transported history; closeout exposes them as count + sample while
 the plans keep full lists internally.
+
+`RouteOverviewRefreshPlan` is the combined route transaction plan: `required`
+contains source-matched overviews and task-edited overviews discovered relative
+to the verified memory baseline, while `missing_metadata` retains the exact
+fail-closed verification-metadata worklist. The type carries plan membership;
+the onboarding module separately proves substantive body/history evidence.
 
 **`VerifiedChange` (frozen, 260731-EFA-L2)** is the landed code change that onboarding metadata is
 stamped against: `commit`, `commit_date`, `changed_paths`, and `working_paths` (the working-tree
@@ -58,6 +64,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-08-12T22:25+02:00 — 260731-EFA-L23 curator follow-up: clarified `RouteOverviewRefreshPlan` as the source-matched plus task-edited route transaction plan. Body/history evidence remains classification-owned rather than encoded as a permissive plan flag. Verification remains closeout-owned.
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 1 citation item; scoped citation check now passes.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-12T09:20+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastUpdated | 2026-08-13T00:07+02:00 |
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -48,7 +48,15 @@ candidate-tree identities remain plane-owned recovery state.
 
 Durable lifecycle subprocess bootstrap is an installed-runtime boundary: the launcher preserves
 the installed MCP environment instead of prepending task-checkout source, and the packaged worker
-then binds default worktree services before task-addressed dispatch.
+then declares the narrow `lifecycle-operation` execution mode before loading service/config
+authority and binds default worktree services before task-addressed dispatch. That mode exists for
+the plane-owned detached task worker only: it retains live operation authority without claiming
+the MCP or dashboard daemon role, while undeclared checkout CLI execution remains isolated.
+
+Native POSIX subprocess preparation rejects inherited Windows interop PATH entries, then prepends
+only an existing native `$HOME/.local/bin`. That deterministic user-local admission lets installed
+Linux harness commands and dashboard-local Node shebangs resolve without shell or version-manager
+probing; it is part of the same fail-closed platform boundary, not a fallback search.
 
 ## Purpose
 
@@ -374,8 +382,10 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 classified before runtime configuration is read: a linked worktree receives a synthetic
 provider-disabled configuration rooted at `provider-runtime/dev-ar-coordination`, while a primary
 checkout refuses live coordination access. Trusted MCP/dashboard declarations and installed
-package execution retain the configured coordinator. The kernel policy and durable-store guard
-carry the invariant; application startup and test bootstrap declare the trusted/test modes.
+package execution retain the configured coordinator. The detached task-operation worker uses the
+separate explicit `lifecycle-operation` mode because it must finalize one plane-owned durable
+operation but is not a store daemon. The kernel policy and durable-store guard carry the invariant;
+application startup, worker entry, and test bootstrap declare only their respective modes.
 
 **260731-EFA-L1: `package_data/dashboard/` is no longer in this package's version-controlled
 surface.** The bundle, its `dashboard.fingerprint` sidecar, and local `mcp/build/` / `mcp/dist/`
@@ -776,7 +786,19 @@ The MCP package separates three surfaces:
   `mcp/server.py` `main()` gains the threaded `maybe_autostart_dashboard` boot hook. Covered by
   `mcp/tests/test_dashboard_daemon.py` + new `test_config.py` cases. Verification metadata pinned
   until closeout stamps the code commit.
+## L23 Plane-Owned Source Lineage
+
+The MCP now resolves task identity to contract-backed super/master/leaf Git
+edges before structural spawn, assignment, attach, start, or reopen. Strict
+models, application translation, observer projection, and dashboard transport
+share one evidence shape. Unavailable or stale ancestry fails closed and points
+to ordered contract-addressed `worktree_sync`; agent-carried ids are not part of
+the protocol.
+
 ## Update History
+- 2026-08-13T00:07+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: documented MCP-package ownership of the explicit lifecycle-operation execution mode. The detached task worker declares it before config/service loading, retains live durable-operation authority, and does not claim MCP/dashboard daemon ownership; undeclared checkout CLI isolation remains unchanged. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
+- 2026-08-12T21:18+02:00 — L23 curator follow-up: documented deterministic native `$HOME/.local/bin` admission after Windows-interoperability filtering; no shell/version-manager discovery or compatibility fallback was added. Verification remains closeout-owned.
+- 2026-08-12T20:20+02:00 — L23 curator: documented MCP-wide task-derived lineage admission and recovery ownership; verification remains closeout-owned.
 - 2026-08-12T16:54+02:00 — 260731-EFA-L23 installed-runtime route review: detached lifecycle launch
   now preserves installed MCP code selection and the packaged worker composes real services before
   dispatch. Task checkout state remains input, never unpublished runtime code. Verification

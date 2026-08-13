@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/daemon.py`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T20:24+02:00                           |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -98,7 +98,7 @@ protocol.
 | CLI dispatch (`--daemon`/`--status`/`--stop`) and the `--no-access-log` child flag. | `add_arguments` | mcp/src/agents_remember/cli/dashboard.py:84-158 |
 | The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes. | `DashboardSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:90-95 |
 | The MCP boot seam calling `maybe_autostart_dashboard`. | `maybe_autostart_dashboard` | mcp/src/agents_remember/serving/daemon.py:336-356 |
-| The version comparator (`SERVER_VERSION`, kernel-owned since L9). | "agents-remember-mcp"; `SERVER_VERSION = _resolve_server_version()` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
+| The version comparator (`SERVER_VERSION`, kernel-owned since L9). | "agents-remember-mcp" | mcp/src/agents_remember/kernel/primitives/version.py:18-18 |
 | Unit tests: state round-trip, probes, stop escalation, ensure matrix, autostart, CLI dispatch. | `StateFileTests`; `ProbeTests`; `StopTests`; `EnsureTests`; `AutostartTests`; `CliDaemonDispatchTests` | mcp/tests/test_dashboard_daemon.py:53-90; mcp/tests/test_dashboard_daemon.py:93-125; mcp/tests/test_dashboard_daemon.py:141-181; mcp/tests/test_dashboard_daemon.py:241-364; mcp/tests/test_dashboard_daemon.py:367-404; mcp/tests/test_dashboard_daemon.py:421-503 |
 
 ## 260731-EFA-L2 Current Delta

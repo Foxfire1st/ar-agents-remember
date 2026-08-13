@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_leaf_assignment.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405` |
-| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,12 +53,19 @@ No external domain source governs this repository-local test contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Assignment moves between valid seats and preserves same-pair no-mutation. | `test_assignment_moves_one_session_between_valid_leaf_role_seats`; `test_same_document_and_role_is_seat_taken_without_mutation` | mcp/tests/test_terminal_leaf_assignment.py:132-151; mcp/tests/test_terminal_leaf_assignment.py:153-173 |
-| Role altitude is validated against real task topology. | `test_role_altitude_mismatch_fails_closed` | mcp/tests/test_terminal_leaf_assignment.py:196-225 |
-| The trusted payload carries canonical document identity and compatible role provenance. | `test_payload_uses_canonical_task_reference_and_spawn_role` | mcp/tests/test_terminal_leaf_assignment.py:227-245 |
+| Assignment moves between valid seats and preserves same-pair no-mutation. | `test_assignment_moves_one_session_between_valid_leaf_role_seats`; `test_same_document_and_role_is_seat_taken_without_mutation` | mcp/tests/test_terminal_leaf_assignment.py:140-159; mcp/tests/test_terminal_leaf_assignment.py:187-207 |
+| Role altitude is validated against real task topology. | `test_role_altitude_mismatch_fails_closed` | mcp/tests/test_terminal_leaf_assignment.py:230-259 |
+| The trusted payload carries canonical document identity and compatible role provenance. | `test_payload_uses_canonical_task_reference_and_spawn_role` | mcp/tests/test_terminal_leaf_assignment.py:261-279 |
 | The shared implementation performs topology validation and pair arbitration. | `assign_terminal_session_to_task` | mcp/src/agents_remember/serving/terminal_task_assignment.py:96-170 |
 
+## L23 Assignment No-Mutation Regression
+
+Task topology now includes current contracts, and a dedicated stale-super case
+advances the real repo before assignment. It proves the blocked projection is
+returned while the terminal retains its previous unbound task state.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented fail-closed assignment without seat mutation; verification remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 added direct boundary coverage for `role_suffixed_leaf_base`, clearing the master CRAP finding without changing production behavior.
 - 2026-08-11T12:15+02:00 — Reconciled the historical sidecar with its current task-document/role

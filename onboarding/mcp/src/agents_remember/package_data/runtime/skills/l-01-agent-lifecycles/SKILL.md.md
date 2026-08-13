@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -92,7 +92,16 @@ sweep evaluates seat-state facts on its mechanical tick and relays them to owner
 escalation ladder (renudge → skip-level → architect custody, then respawn) is retired, and no
 role watches or nudges on its own initiative.
 
+## L23 Dispatch Admission
+
+Packaged lifecycle dispatch now resolves task-derived source lineage before
+process creation. Managers require current super-to-master ancestry;
+worker/reviewer/curator seats require the full code/external-memory chain. A
+lineage refusal creates no child and is recovered by the ordered contract path,
+never by asking an agent for branch or occupant ids.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented lineage admission in the packaged dispatch sequence; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `SKILL.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint-qualified command-seat dispatch and the

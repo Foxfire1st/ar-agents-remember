@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`        |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`        |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 
 `test_terminal_opener.py` covers the shared hosted-session opener (`serving.terminal_opener`) — the
 ONE spawn path both the dashboard `POST /api/terminal/{session}` route and the agent-facing
-`spawn_agent_session` MCP tool compose over cit:([`open_terminal_session`], mcp/src/agents_remember/serving/terminal_opener.py:680-732) cit:(["def _open_terminal_response("], mcp/src/agents_remember/serving/_app_terminal_routes.py:225-225) cit:([`spawn_agent_session_tool`], mcp/src/agents_remember/application/terminal_tools.py:769-842). It drives `open_terminal_session` against a fake host
+`spawn_agent_session` MCP tool compose over cit:([`open_terminal_session`], mcp/src/agents_remember/serving/terminal_opener.py:738-791) cit:(["def _open_terminal_response("], mcp/src/agents_remember/serving/_app_terminal_routes.py:225-225) cit:([`spawn_agent_session_tool`], mcp/src/agents_remember/application/terminal_tools.py:769-842). It drives `open_terminal_session` against a fake host
 (records the `ensure` call, no real tmux) + a real JSON catalog, pinning the leaf-claim / provenance /
 env-seed behaviour both call paths inherit — and, since 260703-L16, the per-harness knob→argv
 application (`KnobApplicationTests`).
@@ -162,7 +162,14 @@ This entry supersedes conflicting earlier coverage notes while retaining their h
   harness still agree with the request.
 - A dead pre-bridge row is replaced by a **controlled spawn** rather than being reattached to.
 
+## L23 Opener Fixture Admission
+
+Structural opener fixtures now create a current master/leaf lineage chain before
+host selection. Existing opener behavior is therefore tested after the same
+task-derived admission precondition production uses.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented current-lineage setup for terminal opener coverage; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_terminal_opener.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

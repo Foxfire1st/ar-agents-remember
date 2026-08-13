@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/fixtures.ts`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:52+02:00                          |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`       |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -132,7 +132,7 @@ shape, so both sides of that delegation are cited.
 | `EMPTY_ANALYTICS` now lives in the shared wire fixtures and still carries `series: []` and `engineProcesses: []`. | `EMPTY_ANALYTICS` | dashboard/src/test/fixtures/wire.ts:223-237 |
 | `projection()` assigns `metrics` from `metricsFor(lifecycles)`. | `metrics` | dashboard/src/test/fixtures/wire.ts:333-333 |
 | The gallery consumes each `ENGINE_ROOM_SCENARIOS` entry by projecting its `processes` and `workspace` data. | "processes: EngineProcessNode[];"; "workspace: ProviderNode[];"; "ENGINE_ROOM_SCENARIOS.filter"; "projection: engineRoomProjection(scenario)" | dashboard/src/dev/fixtures.ts:484-484; dashboard/src/dev/fixtures.ts:487-487; dashboard/src/panels/engine-room/fixtures.ts:21-22 |
-| `series` and `engineProcesses` live on `WorkspaceProjection["analytics"]`. | `Analytics`; `engineProcesses`; `series`; `WorkspaceProjection` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:542-554 |
+| `series` and `engineProcesses` live on `WorkspaceProjection["analytics"]`. | `Analytics`; `engineProcesses`; `series`; `WorkspaceProjection` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:569-581 |
 
 ## Cross-Repo References
 
@@ -185,8 +185,8 @@ The dev projection fixture now includes `enclosureId`, `leafId`, and `taskRoot` 
   `engineRoomProjection(scenario)` helper, now shared by the `GALLERY` Engine Room entries and the new
   scenario-player frames (`dev/scenarios.ts`); the gallery spread calls it instead of an inline `project(...)`.
   Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T21:27 — Dev-bench tab trim (mirrors task 5's `b3f2491`): the `GALLERY` map now `.filter(s => !s.name.startsWith("engine-boot-"))` so the 6 boot-step frames drop out of the bench picker (kept in `ENGINE_ROOM_SCENARIOS` for the render tests + slice 5i). Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-18T21:27+02:00 — Dev-bench tab trim (mirrors task 5's `b3f2491`): the `GALLERY` map now `.filter(s => !s.name.startsWith("engine-boot-"))` so the 6 boot-step frames drop out of the bench picker (kept in `ENGINE_ROOM_SCENARIOS` for the render tests + slice 5i). Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-18T18:00+02:00 — slice 5h ledger popover: the gallery mapping sets `analytics.ledgers: [OFFICIAL_LEDGER]` (so the official coupler resolves its repo ledger) and the `full` scene's `LedgerNode`s gained `rows`. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T15:00 — Task 6 slice 6c Part B: added the `gate-review` gallery scene (a lifecycle with an open `closeout-approval` `gate` + a `gate-open` attention item) so the bench renders the Gate Review drawer. Verification metadata pinned until closeout stamps the 6c Part B code commit.
 - 2026-06-18T15:50+02:00 — slice 5h cleanup pass (feedback): the gallery spread now filters the `engine-boot-*` build-up frames out of the bench tab strip (they remain in `ENGINE_ROOM_SCENARIOS` for the component tests); refreshed the now-stale line-number citations. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-15T19:35 — Created for slice 5e: hand-authored bench gallery; slice 5e spreads ENGINE_ROOM_SCENARIOS into GALLERY and defaults engineProcesses in EMPTY_ANALYTICS. Verification metadata pinned until closeout stamps the 5e code commit.
+- 2026-06-18T15:00+02:00 — Task 6 slice 6c Part B: added the `gate-review` gallery scene (a lifecycle with an open `closeout-approval` `gate` + a `gate-open` attention item) so the bench renders the Gate Review drawer. Verification metadata pinned until closeout stamps the 6c Part B code commit.
+- 2026-06-15T19:35+02:00 — Created for slice 5e: hand-authored bench gallery; slice 5e spreads ENGINE_ROOM_SCENARIOS into GALLERY and defaults engineProcesses in EMPTY_ANALYTICS. Verification metadata pinned until closeout stamps the 5e code commit.

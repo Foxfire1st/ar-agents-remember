@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T00:08+02:00               |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32` |
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -234,7 +234,14 @@ for a wrapper reach and no CRAP opt-out, but the hook tier assertions now expect
 `_gate.sh` delegates to `code_quality.check --targeted` while `full` remains a
 manual tier only.
 
+## L23 Native Temp Regression
+
+The CLI boundary tests now assert both ordinary and memory-capped runs pass the
+constant short native scratch root to environment sanitization, independently
+of durable progress-report placement.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: documented `/tmp/arq` ownership at the quality CLI boundary; verification remains closeout-owned.
 
 - 2026-08-12T17:27+02:00 — 260731-EFA-L23 final Dagger diff-coverage repair: expanded the existing
   targeted-configuration test with the complementary explicit-progress-report call, proving the CLI

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_leaf_structural_refusal_coverage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T22:28+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
+| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -79,7 +79,15 @@ No cross-repository implementation participates.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## L23 Refusal Translator Shape
+
+Structural refusal coverage now exercises the extracted
+`open_terminal_refusal` translator and treats task-binding refusal as a typed
+result object. This keeps bad-kind/binding/seat behavior distinct from the new
+lineage refusal evidence while covering the shared application boundary.
+
 ## Update History
+- 2026-08-12T20:10+02:00 — L23 curator: reconciled extracted refusal translation and typed opener results; verification remains closeout-owned.
 
 - 2026-08-11T22:28+02:00 — 260731-EFA-L19 curator: created one-to-one onboarding for the focused
   structural refusal coverage module. Verification metadata is intentionally blank until governed
