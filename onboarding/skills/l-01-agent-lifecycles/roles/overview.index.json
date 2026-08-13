@@ -42,7 +42,7 @@
     "worker"
   ],
   "hotPath": {
-    "summary": "Architect owns sprint-level direction. Orchestrator owns the portfolio and manager topology. Manager occupies one canonical master and drives the leaf closeout chain. Worker occupies one leaf and produces code plus a turn report. Reviewer produces independent verdict evidence. Curator occupies one leaf coherence pass and reconciles existing intent, ruled intent, and implemented reality into onboarding. Other specialist roles retain their own documented altitude and artifact. Manager, orchestrator, and worker doctrine shares one quality altitude rule: leaf checks remain targeted, while the o...",
+    "summary": "Architect owns sprint-level direction. Orchestrator owns the portfolio and manager topology. Manager occupies one canonical master and drives the leaf closeout chain. Worker occupies one leaf and produces code plus a turn report. Reviewer produces independent verdict evidence. Curator occupies one leaf coherence pass and reconciles existing intent, ruled intent, and implemented reality into onboarding. Other specialist roles retain their own documented altitude and artifact. Manager, orchestrator, and worker doctrine shares one quality altitude rule: the pinned Dagger graph is the only Agen...",
     "candidateHints": [
       "skills/l-01-agent-lifecycles/roles",
       "skills/l-01-agent-lifecycles/roles/architect.md",
@@ -76,8 +76,7 @@
       "worker",
       "skills/l-01-agent-lifecycles/roles",
       "route-local-overview",
-      "a09b906bbf2855c3479b4d3199607ff8689b7d93",
-      "-n=auto",
+      "b2de030c1b52f02a4543619d23ccd8e44ecac6df",
       "SKILL.md",
       "worktree_status",
       "sourceLineage",
@@ -90,19 +89,17 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T08",
+      "T14",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "T13",
-      "RAM",
       "SKILL",
       "L23",
       "T09",
+      "T08",
       "T20",
       "T07",
       "EFA",
       "L24",
-      "T14",
       "T12"
     ]
   },

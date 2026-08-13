@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `61d2c6a225b2e107bb50d446f708002d58b03a75`|
-| lastVerifiedCommitDate |  2026-08-12T07:36:24+02:00|
+| lastUpdated            | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash |  `b2de030c1b52f02a4543619d23ccd8e44ecac6df`|
+| lastVerifiedCommitDate |  2026-08-13T14:51:34+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -58,10 +58,13 @@ authorship can be attributed").
 uses the worktree closeout preview/apply tools against the task contract,
 requires a non-mutating preview before real commits, requires applicable closeout
 authority with an intent note, runs the package-local missing-onboarding gate,
-and runs the leaf change-set-scoped quality contract (`--targeted`) before any code, memory, ledger,
-contract, or applied-gate **commit**. The full wrapper is NOT a leaf gate: it runs once per master
-at the master integration gate with host-managed RAM/swap by default, and `memory_quality_check` stays a per-leaf closeout
-gate. The wrapper's CRAP threshold is mandatory by default: a function scoring at or above the
+and runs the leaf change-set-scoped Dagger quality contract before any code, memory, ledger,
+contract, or applied-gate **commit**. The full Dagger graph is NOT a leaf gate: it runs once per
+master at the master integration gate. Every Agents Remember acceptance run requires the explicit
+task-derived diff base; generated Dagger help is the public argument contract. Host pytest and
+direct wrapper runs are diagnostic only and cannot replace or receive fallback from Dagger
+acceptance. `memory_quality_check` stays a per-leaf closeout gate. The wrapper's CRAP threshold is
+mandatory by default: a function scoring at or above the
 configured threshold fails closeout.
 Every completed strict wrapper run also atomically replaces the owning enclosure's
 `reports/test-results.md`: success returns `reportPath`, failure writes the complete transcript
@@ -275,9 +278,9 @@ preconditions — a checkout carrying no wrapper runs no gate and neither refusa
 | Server-Side Gate Enforcement, now explicitly headed **"(parked fallback)"**: run preview/dry-run first, report in chat, raise one `lifecycle_gate(kind="closeout-approval", ask=..., packet=...)`, then `lifecycle_resume` before apply once the developer response is handled; the developer-attributed gate is the security boundary and `closeout-approval` IS the commit gate. The active hand-off is the notify-and-continue `lifecycle_turn_end_notification` above it. | `## Server-Side Gate Enforcement (parked fallback)` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:123-187 |
 | `c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill. | `## Preconditions` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:188-248 |
 | `c-09-git-worktree-manager` skill routes worktree closeout to `c-12-closeout` skill and retains worktree lifecycle, integration, and cleanup ownership. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-328 |
-| Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover. | "Closeout does not mark the task `Completed`" | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:334-334 |
+| Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover. | "Closeout does not mark the task `Completed`" | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:341-341 |
 | The L4 staging contract in Approval Authority: when code would commit **and the checkout carries the wrapper**, closeout resets the index, stages the whole task worktree, and gates exactly that staged content before any commit; a refusal leaves it staged, and `wrapper-unavailable` is the reported state for a checkout with no wrapper. | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-122 |
-| The two staging refusals and why their order is load-bearing: not-a-task-worktree (`--git-dir` vs `--git-common-dir`) and unresolved merge conflicts both run **before** the reset, because `git reset` drops unmerged entries and `MERGE_HEAD` and would silently disarm the conflict check. | `MERGE_HEAD` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:386-386 |
+| The two staging refusals and why their order is load-bearing: not-a-task-worktree (`--git-dir` vs `--git-common-dir`) and unresolved merge conflicts both run **before** the reset, because `git reset` drops unmerged entries and `MERGE_HEAD` and would silently disarm the conflict check. | `MERGE_HEAD` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:393-393 |
 | Both memory-order lists restate step 4 as reset + stage + the leaf targeted contract over staged content before any commit, with the no-wrapper checkout committing as it always has. | `## External-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:249-284; mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:285-323 |
 | The caller-side implementation of that contract: `_gate_staged_code` runs both refusals, then `git reset --mixed --quiet HEAD`, then `git add -A`, then the wrapper — and `requires_strict_code_quality` is what makes the whole step conditional on the wrapper being present. | `## Internal-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:285-323 |
 | `DEFAULT_CRAP_THRESHOLD = 20.0` — the actual value behind every "the configured threshold" sentence in this skill, which names no number itself. | `DEFAULT_CRAP_THRESHOLD` | mcp/src/agents_remember/code_quality/crap_calculator.py:37-37 |
@@ -296,6 +299,9 @@ Closeout instructions now target the leaf enclosure `series-contract.md`; the ro
 
 ## Update History
 
+- 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized the Dagger-only acceptance rule,
+  targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff base,
+  generated help, and diagnostic-only host execution. Verification remains closeout-owned.
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
   host-managed full-gate default and explicit constrained-CI cap into the
   packaged closeout skill. Verification metadata remains pinned until closeout

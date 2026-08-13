@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-10T05:45+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`                                  |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastUpdated            | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df`                                  |
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 
 ## Purpose
 
@@ -51,17 +51,17 @@ No sibling repository evidence is needed for this doctrine file.
 
 ### 260731-EFA-L17 — Quality Altitude Ladder
 
-The manager-brief template's dispatch-defaults section gains a **Quality altitude ladder
-(260731-EFA-L17)** bullet (source lines 38-43): leaf closeout and leaf integration run the
-change-set-scoped contract (`agents_remember.code_quality.check --targeted`); the FULL
-wrapper runs exactly once per master inside `worktree_integrate` at master altitude with
-host-managed RAM/swap by default; constrained CI may set
-`orchestration.qualityGate.memoryCapBytes`; `memory_quality_check` stays a
-per-leaf closeout gate; a leaf closeout that skips its required checks is refused, not
-passed.
+The manager brief now assigns Agents Remember acceptance to the pinned Dagger graph. Leaf and
+focused gates select targeted mode; `worktree_integrate` selects full mode once at master
+altitude. Both use the task-derived explicit diff base. Host pytest and direct wrapper commands
+are diagnostics only, never acceptance or an automatic fallback. `memory_quality_check` remains a
+per-leaf closeout gate, and omitted required proof refuses the gate.
 
 ## Update History
 
+- 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized the brief's Dagger-only
+  acceptance, targeted/full altitude, explicit diff-base, and diagnostic-only host boundary.
+  Verification remains closeout-owned.
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
   manager brief's host-managed master-gate default and optional constrained-CI
   cap. Verification metadata remains pinned until closeout stamps L24.

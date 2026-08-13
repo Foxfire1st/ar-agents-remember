@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T14:25+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -27,9 +27,10 @@ builder/reviewer/curator closeout chain, delegated gate authority, leaf/master q
 subordinate cleanup, and durable master-handover contract unchanged. The sync process copies the
 complete canonical tree; package-local edits are drift, not customization.
 
-The synchronized quality altitude keeps leaf checks change-set scoped and runs
-the full wrapper once at master integration with host-managed RAM/swap. Only a
-constrained environment explicitly opts into `memoryCapBytes`.
+The synchronized quality altitude uses the pinned Dagger graph for Agents Remember acceptance:
+targeted for leaf/focused work and full exactly once at master integration. Both require the
+task-derived explicit diff base; host pytest/wrapper runs are diagnostics, never acceptance or a
+fallback. A constrained environment alone explicitly opts into `memoryCapBytes`.
 
 ## Conventions
 
@@ -69,6 +70,9 @@ the curator brief, and relies on dispatch to repeat the proof before hosted-proc
 closeout/integration rechecks remain mandatory because they close a different, post-quality race.
 
 ## Update History
+- 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized Dagger-only acceptance,
+  targeted/full altitude, required explicit diff base, and diagnostic-only host execution.
+  Verification remains closeout-owned.
 - 2026-08-13T09:05+02:00 — L23 curator: recorded the mandatory pre-curator lineage check, projection
   handoff, and fail-before-host dispatch recheck; final provenance remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented manager/leaf lineage admission without agent-held ids; verification remains closeout-owned.

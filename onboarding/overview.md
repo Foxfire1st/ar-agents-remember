@@ -5,19 +5,20 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df`
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 
 > **Status:** active baseline
 
 ## Python Quality Execution Boundary
 
-Root pytest `addopts` owns the repository-wide pytest-xdist `-n=auto` default, so raw pytest and
-derived full or targeted wrappers share one execution policy; `-n=0` is the explicit serial
+Root pytest `addopts` owns the repository-wide pytest-xdist `-n=auto` default, so host diagnostics
+and the wrapper inside Dagger share one parallel execution policy; `-n=0` is the explicit serial
 diagnostic override. The checkout requirements pin pytest-xdist 3.8.0 and the MCP package's
 development extra admits major version 3. Retry-proof compatibility includes the pytest-xdist
-version, so a changed parallel executor cannot reuse an earlier coverage proof.
+version, so a changed parallel executor cannot reuse an earlier coverage proof. Only the pinned
+Dagger graph produces Agents Remember acceptance evidence.
 
 ## 260731-EFA-L8 Frontend Rail
 
@@ -1051,14 +1052,16 @@ This master leaf armed the file-size detector (`code_quality/file_size.py`, hard
 
 ## 260731-EFA-L17 — The Quality Altitude Ladder
 
-The test-authority ladder (260731-EFA-L17) moved the full quality wrapper up to the master
-integration gate. Leaf-edge checks stay mandatory but are change-set-scoped:
-`agents_remember.code_quality.check --targeted` (ruff/format over changed files, pyright over
+The test-authority ladder (260731-EFA-L17/L23) assigns Agents Remember acceptance to the pinned
+Dagger graph. Leaf-edge checks stay mandatory but are change-set-scoped in targeted mode
+(ruff/format over changed files, pyright over
 changed files + reverse-import closure, pytest over the derived test subset, coverage/CRAP/radon
-over changed production modules, changed-lines floor). The full wrapper (ruff, ruff-format,
+over changed production modules, changed-lines floor). Full mode (ruff, ruff-format,
 pyright, pytest+coverage, CRAP, diff-coverage) runs exactly once per master, invoked by
-`worktree_integrate` itself at master altitude with host-managed RAM/swap by
-default. Constrained CI may explicitly configure
+`worktree_integrate` itself at master altitude. Targeted and full modes both require the exact
+task-derived diff base; generated Dagger help is the public function contract. Host pytest and
+direct wrapper execution remain diagnostics, never acceptance or fallback. Constrained CI may
+explicitly configure
 `orchestration.qualityGate.memoryCapBytes` (systemd MemoryMax scope or the
 RLIMIT_AS mechanism); neither path rewrites pytest's literal `-n=auto`.
 `memory_quality_check` is explicitly carved out and stays a per-leaf closeout gate. The pre-push
@@ -2124,14 +2127,17 @@ authority.
 
 ## Build & Dev
 
-L23 makes the repository quality proof runnable as one observable Dagger operation in a pinned
-clean Ubuntu container. Leaf work can still select the focused targeted contract, while master
-altitude retains the full suite. Both paths publish self-overwriting progress and result artifacts
+L23 makes the pinned clean-Ubuntu Dagger graph the repository's only acceptance environment. Leaf
+and focused work selects targeted mode, while master integration selects full mode once. Both
+require an explicit diff base, and generated help documents source, bundle, base, mode, and cap.
+Host pytest/direct-wrapper runs are diagnostic only. Both Dagger paths publish self-overwriting progress and result artifacts
 under the worktree enclosure; the clean environment mounts neither a Docker socket nor WSL's
 Windows command paths. The GitHub workflow runs the same Dagger graph, so local and hosted clean
 proofs share one implementation rather than parallel shell pipelines.
 
-- Source-checkout Python implementation work should run `python -m agents_remember.code_quality.check` from the `agents-remember/` root — one command, no path arguments, scope derived from `git ls-files '*.py'`. (Superseded 2026-07-31 by 260731-EFA-L2: this line used to read "run Ruff", which named two tools that are not the gate and one that cannot fail it.) Exact command details belong in the resolved memory layer's `system/tools.md`.
+- Source-checkout Python implementation may use host pytest or the wrapper for fast diagnostics,
+  but those commands do not certify Agents Remember acceptance; exact Dagger commands and required
+  diff-base selection belong in the resolved memory layer's `system/tools.md`.
 - The MCP package tests under `mcp/tests` cover `c-08-ar-coordination-context-resolver` skill, `c-02-memory-quality-control` skill, `c-09-git-worktree-manager` skill, ledger, contract, provider, benchmark, runtime install, and skills install behavior through package modules.
 - `system/sources.md` registers `docs/design/` as the Domain Documentation routing index (added when `docs/design/` was brought into onboarding scope, slice 05k); `system/tools.md` is unchanged.
 
@@ -2251,3 +2257,8 @@ Updated 2026-06-27T22:00+02:00 — task 28 (NOTIFY-AND-CONTINUE turn end): refre
 Updated 2026-06-17T22:45+02:00 after the Engine Room visual-parity pass enriched the dashboard-frontend Feature Inventory row (the 5g G6 atmospheric backdrop + Effects/Calm toggle, the restored HUD decal layer, and the fixed-height `Panel fill` layout); verification metadata stays pinned until closeout commits the source. (Prior: 2026-06-06T12:28+02:00 after adding the public `docs/features.md` tour, replacing README `## Core Model` with `## Core Features`, and documenting the Claude Code root `.mcp.json` detection caveat. Prior: 2026-06-04T10:29+02:00 — documented hidden harness starter packages as source-owned surfaces in the main overview and noted their `l-01` deep-research retrieval-strategy tally requirement. Prior: 2026-05-29T17:30+02:00 — re-spined the public docs and this overview's "What This Repo Is" framing around the three retrieval substrates (by path / by meaning / by relationship) and retired the sidecar-only anti-retrieval positioning. Prior: 2026-05-28T19:52+02:00 — added the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.)
 
 ## Update History
+
+- 2026-08-13T14:32+02:00 — L23 final repository-route review: recorded Dagger-only acceptance,
+  targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff base,
+  generated help, and diagnostic-only host pytest/wrapper execution. Verification remains
+  closeout-owned.

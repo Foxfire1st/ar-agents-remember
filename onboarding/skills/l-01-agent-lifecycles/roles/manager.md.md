@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -60,8 +60,8 @@ transparent.
 | One manager owns one canonical master and the complete leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. | "## Hosted Role Dispatch" | skills/l-01-agent-lifecycles/roles/manager.md:41-47 |
 | The leaf loop sequences builder, reviewer, curator, closeout, integration, and cleanup duties. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:94-182 |
-| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:202-202; skills/l-01-agent-lifecycles/roles/manager.md:223-223 |
-| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:237-237 |
+| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:207-207; skills/l-01-agent-lifecycles/roles/manager.md:228-228 |
+| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:242-242 |
 
 ## L23 Manager And Leaf Admission
 

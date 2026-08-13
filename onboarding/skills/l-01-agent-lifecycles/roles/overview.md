@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 
 ## Purpose
 
@@ -23,10 +23,11 @@ and produces code plus a turn report. Reviewer produces independent verdict evid
 occupies one leaf coherence pass and reconciles existing intent, ruled intent, and implemented
 reality into onboarding. Other specialist roles retain their own documented altitude and artifact.
 
-Manager, orchestrator, and worker doctrine shares one quality altitude rule:
-leaf checks remain targeted, while the once-per-master full wrapper keeps
-pytest `-n=auto` and host-managed RAM/swap unless constrained CI explicitly
-configures a hard cap.
+Manager, orchestrator, and worker doctrine shares one quality altitude rule: the pinned Dagger
+graph is the only Agents Remember acceptance environment. Leaf/focused checks select targeted
+mode; the master gate selects full mode once. Every run receives the explicit task-derived diff
+base. Host pytest/wrapper execution is diagnostic only, never acceptance or fallback; constrained
+CI alone explicitly configures a hard cap.
 
 The curator's terminal artifact is valid only after current-additions coverage and the full
 leaf-scoped memory-quality worklist have been repaired and rerun. Expected dirty-source drift and
@@ -79,6 +80,9 @@ curator host. This boundary prevents stale onboarding; the later closeout/integr
 separate because they guard ancestry movement during their own long quality phases.
 
 ## Update History
+- 2026-08-13T14:32+02:00 — L23 final roles-route review: synchronized Dagger-only acceptance,
+  targeted/full altitude, mandatory explicit diff base, and diagnostic-only host execution.
+  Verification remains closeout-owned.
 - 2026-08-13T09:05+02:00 — L23 curator body review: clarified that the manager's immediately
   pre-curator `worktree_status.sourceLineage=current` proof is carried into the brief and repeated
   by dispatch before host creation, while closeout/integration independently close later races.

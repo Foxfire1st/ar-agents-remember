@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T14:25+02:00 |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75` |
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastUpdated | 2026-08-13T14:32+02:00 |
+| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
+| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -27,9 +27,10 @@ guideline orientation, implementation loop, leaf-scoped checks, mandatory turn r
 parent escalation, and separation from curator/closeout machinery. The complete tree is copied from
 canonical skills; package-only workflow additions are forbidden drift.
 
-The synchronized quality boundary leaves worker checks targeted. The full
-wrapper belongs to master integration, preserves pytest `-n=auto`, and uses
-host-managed RAM/swap unless constrained CI explicitly configures a hard cap.
+The synchronized quality boundary uses the pinned Dagger graph for Agents Remember acceptance.
+Worker/leaf checks select targeted mode with the explicit leaf diff base; full mode belongs once
+to master integration. Host pytest/wrapper runs remain diagnostics rather than acceptance or a
+fallback, and constrained CI alone explicitly configures a hard cap.
 
 ## Conventions
 
@@ -55,6 +56,9 @@ host-managed RAM/swap unless constrained CI explicitly configures a hard cap.
 
 ## Update History
 
+- 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized Dagger-only leaf acceptance,
+  required explicit diff base, master-owned full mode, and diagnostic-only host execution.
+  Verification remains closeout-owned.
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
   canonical worker boundary: leaf checks remain targeted and master full gates
   use host-managed RAM/swap by default.
