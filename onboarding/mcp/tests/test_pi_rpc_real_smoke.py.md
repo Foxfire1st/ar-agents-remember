@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_pi_rpc_real_smoke.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ a live install driven by `_pi_rpc_capabilities.observe_capabilities`:
 | The recording this module re-verifies. | "0.80.7" | mcp/tests/fixtures/pi_rpc/0.80.7-capabilities.json:4-4 |
 | Produces the observation compared against the recording. | `observe_capabilities` | mcp/tests/_pi_rpc_capabilities.py:431-473 |
 | Imports `PI_RPC_VERSION` and enforces the one-recording rule offline. | `CAPABILITY_FIXTURE`, `PI_RPC_VERSION` | mcp/tests/test_pi_rpc_real_smoke.py:44-44; mcp/tests/test_pi_rpc_real_smoke.py:51-51 |
-| Proves this marker is applied and reachable from the gated runner. | "ar_run_pi_rpc_smoke" | scripts/run-gated-integration.py:79-79 |
+| Proves this marker is applied and reachable from the gated runner. | "ar_run_pi_rpc_smoke" | scripts/run-gated-integration.py:80-80 |
 
 ## Cross-Repo References
 

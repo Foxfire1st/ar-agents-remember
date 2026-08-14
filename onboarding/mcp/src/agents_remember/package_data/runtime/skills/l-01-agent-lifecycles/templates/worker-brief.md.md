@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                                  |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`                                  |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 
 ## Purpose
 
@@ -53,8 +53,8 @@ No sibling repository evidence is needed for this doctrine file.
 
 The worker brief's Checks section makes the pinned Dagger graph the Agents Remember acceptance
 boundary. Leaf work selects targeted mode and supplies its explicit leaf diff base; full mode is
-not a worker check and runs once at master integration. Direct host pytest/wrapper commands remain
-diagnostics, never acceptance or fallback. `memory_quality_check` stays a per-leaf closeout gate.
+not a worker check and runs once at master integration. Direct host pytest/wrapper commands are
+refused, never acceptance or fallback. `memory_quality_check` stays a per-leaf closeout gate.
 
 ## L23 Final Candidate Disposition
 
@@ -62,7 +62,16 @@ Worker briefs name the governing ownership route and required forcing evidence s
 independent review can bind its verdict to the exact candidate. Workers do not self-certify Dagger
 acceptance or carry durable-operation secrets.
 
+## R39 Generic Worker Brief Contract
+
+The template tells the dispatcher to copy repository-specific acceptance command, environment,
+and evidence requirements from resolved memory. It forbids an invented runner or fallback and
+keeps acceptance at leaf closeout and master integration only.
+
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: made worker acceptance instructions repository-resolved
+  and exact-once. Verification remains closeout-owned.
 - 2026-08-14T06:34+02:00 — L23 synchronized runtime template: worker briefs retain route ownership
   and candidate evidence needed for independent review without delegating acceptance authority.
 

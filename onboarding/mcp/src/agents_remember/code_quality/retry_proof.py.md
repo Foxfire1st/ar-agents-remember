@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/code_quality/retry_proof.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |  `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
+| lastVerifiedCommitDate |  2026-08-14T12:44:51+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -16,9 +16,10 @@
 
 ## Purpose
 
-`retry_proof.py` owns fail-closed reuse of a locally passed pytest/branch-coverage proof after a
-later coverage-derived rail refuses. It stores no proof in the worktree, never reuses proof in CI,
-and admits only an exact repository retry or a selected-test-only delta.
+`retry_proof.py` owns fail-closed reuse of a passed pytest/branch-coverage proof inside a
+nonce-attested Dagger retry after a later coverage-derived rail refuses. It stores no proof in the
+worktree and admits only an exact repository retry or a selected-test-only delta after the shared
+Dagger environment guard has authorized the wrapper process.
 
 ## Code Commentary
 
@@ -56,8 +57,9 @@ already-filtered aggregate.
 - The repository snapshot hashes tracked symlink identity without reading an external target tree.
 - Context filtering requires branch arcs and at least one pytest runtime context.
 - Delta eligibility is finite and structural: selected concrete test modules only; support or
-  production changes always run fresh.
-- `AR_QUALITY_INVOCATION=ci` and `AR_QUALITY_NO_RETRY` disable reuse.
+production changes always run fresh inside the same Dagger graph.
+- `AR_QUALITY_NO_RETRY` disables reuse. Environment authorization is upstream in
+  `code_quality.dagger_environment`; this module cannot turn host execution into an accepted retry.
 
 ### Todos
 
@@ -90,6 +92,11 @@ No meaningful cross-repository boundary is owned by this module.
 | The proof remains local to the repository/worktree Git common directory. | — | — |
 
 ## Update History
+
+- 2026-08-14T11:24+02:00 — R39 curator: removed the obsolete local/CI retry interpretation.
+  Proof reuse is now documented solely as a nonce-attested Dagger optimization behind the shared
+  before-planning guard. Verification remains closeout-owned.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T23:56+02:00 — Added pytest-xdist to the documented retry-proof compatibility

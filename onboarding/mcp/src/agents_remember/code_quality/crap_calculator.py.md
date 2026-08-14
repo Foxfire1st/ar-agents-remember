@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/crap_calculator.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-13T07:53+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -158,10 +158,10 @@ than an impossible percentage.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Unit tests cover the CRAP formula, function-span coverage intersection, branch-arc parsing, and missing coverage data behavior. | `CrapCalculatorTests` | mcp/tests/test_crap_calculator.py:17-235 |
-| The wrapper runs CRAP from pytest coverage JSON, lists every offender, and declares its two Radon steps reports. | "def derive_scope" | mcp/src/agents_remember/code_quality/check.py:77-77 |
+| The wrapper runs CRAP from pytest coverage JSON, lists every offender, and declares its two Radon steps reports. | "def derive_scope" | mcp/src/agents_remember/code_quality/check.py:79-79 |
 | The changed-lines coverage floor reuses this module's coverage reader and inherits its branch-data refusal. | "class DiffCoverage" | mcp/src/agents_remember/code_quality/diff_coverage.py:57-57 |
 | `[tool.coverage.run] branch = true` is set here, with the measured effect on the aggregate recorded beside it. | "[tool.coverage.run]" | pyproject.toml:67-67 |
-| Development tool guidance documents the source quality wrapper and CRAP-Calculator command flow. | `# Coding Tools & Repo Notes` | system/tools.md:1-349 |
+| Development tool guidance documents the source quality wrapper and CRAP-Calculator command flow. | `# Coding Tools & Repo Notes` | system/tools.md:1-296 |
 
 ## Update History
 - 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.

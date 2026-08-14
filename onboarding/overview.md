@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 
 > **Status:** active baseline
 
@@ -125,10 +125,10 @@ onboarding pass.
 | Branch memory carryover | Carry richer onboarding from a source branch into official memory only after the corresponding code has landed. Candidates cover file sidecars and route overviews (route-keyed, `kind`-tagged): overviews whose route covers a landed path auto-carry only when branch and official content are identical (metadata re-verification), otherwise they are always review-required; official-side `overview.index.json` files are regenerated after carry — never copied — guarded on a clean official-ref checkout. | `c-11-memory-carryover-from-branch` skill, `memory_carryover_*`, `memory/carryover.py` |
 | Branch-gated cross-repo context | Optional cross-repo context inclusion guarded by configured branch and memory-ledger checks. | `c-08-ar-coordination-context-resolver` skill, `crossRepo.allow` |
 | Benchmark harness | Package-owned Codex benchmark fixtures, workspace preparation, paired source-only versus memory-enabled runs, JSONL/result capture, and metric summaries. | `codex_benchmark_prepare`, `codex_benchmark_run`, `benchmarks/` |
-| Source quality tooling | Acceptance is owned by one pinned Dagger graph over an exact candidate bundle and task-derived diff base. Leaf closeout runs targeted mode over the staged candidate; master integration runs full mode once at master altitude. The exported `clean-quality-results.json` is the single authoritative result, and Python, Vitest, and Playwright refuse startup without the graph's matching nonce and in-container attestation. Direct host pytest, wrapper, Vitest, or Playwright execution is diagnostic-only and cannot satisfy acceptance. The Python wrapper still derives scope from the staged tree, enforces Ruff, format, Pyright, pytest/coverage, CRAP, and changed-line coverage, and keeps Radon report-only with no baseline, ratchet, allowlist, or grandfather file. | `dagger call quality`, `dagger/src/index.ts`, `code_quality/`, `worktrees/modules/code_quality_gate.py`, `worktrees/modules/closeout_staged_quality.py`, `mcp/tests/test_agents_remember_quality.py` |
+| Source quality tooling | Acceptance is owned by one pinned Dagger graph over an exact candidate bundle and task-derived diff base. Leaf closeout runs targeted mode exactly once over the staged candidate; leaf integration lands that exact commit without a rerun. Master integration runs full mode exactly once at master altitude. Series closeout, push, pull-request validation, tag, and publish do not run acceptance. GitHub keeps one pull-request-only deterministic non-test workflow; ordinary pushes do not duplicate it. The exported `clean-quality-results.json` is the single authoritative result, and Python, Vitest, and Playwright refuse startup without the graph's matching nonce and in-container attestation. | `dagger call quality`, `.github/workflows/quality-checks.yml`, `code_quality/`, `worktrees/modules/closeout.py`, `worktrees/modules/integrate.py` |
 | Self-hosted harness configuration | The nine dogfooded harness configuration trees (`.claude/`, `.codex/`, `.cursor/`, `.github-vscode/` + `.vscode/`, `.hermes/`, `.openclaw/`, `.pi/`, `.agents/`) are **generated from one source and checked**, not eight independent copies. `scripts/harness/` holds the fragment libraries and shared bodies; `scripts/sync-harness.py` fans out 45 files three ways (verbatim, composed body + per-harness framing, and programs assembled from named fragments with derived imports). `--check` runs in both hook tiers and in the test suite. `scripts/harness/README.md` is the ruled classification of genuine per-harness requirements versus drift. | `scripts/sync-harness.py`, `scripts/harness/`, `mcp/tests/test_sync_harness.py` |
 | Public docs and harness guides | User-facing setup, concepts, architecture, workflows, references, guides, and install notes for Codex, Claude Code, Cursor, Antigravity, VS Code Copilot, Hermes, Pi, and OpenClaw. | `docs/`, `README.md` |
-| Canonical runtime and skills asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are canonical editable assets synced into MCP package data by `scripts/sync-runtime.py`; root `skills/` is the canonical skill tree synced into MCP package data plus every harness starter skill folder by `scripts/sync-skills.py`. Both carry a `--check` mode and both run in **both** local hook tiers via `_gate.sh`'s `generated_copy_checks`. **Neither `--check` runs in CI** — no workflow invokes `_gate.sh` or any `scripts/sync-*.py`, and the quality wrapper does not either. Drift is caught outside the hooks anyway, because `mcp/tests/test_sync_scripts.py::RealTreeDriftTests` reads the **real** trees in this checkout: `test_every_skill_copy_matches_the_canonical_tree` walks all nine `sync-skills.TARGETS` and `test_every_runtime_package_asset_matches_its_source` walks all four `sync-runtime.TARGETS`, both through the shared module-level `drifted_files()` reader over each script's `diff_target`, and each failure names the drifted copy plus the command that repairs it. It is a plain `unittest` class under `mcp/tests/` (pytest's declared `testpaths`), so it runs in the quality wrapper's **pytest step** — at pre-push, at closeout, and in CI. **Two limits:** CI still never calls `--check` itself, so the guarantee arrives through pytest rather than a workflow step; and the tests are only as strong as `TARGETS` — nothing asserts that set is complete, so a tenth skill mirror added without registering it would go unnoticed (`test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data` does pin the runtime target set; `sync-skills.TARGETS` has no counterpart). The six temp-directory cases in `ReplaceTreeTests` are unchanged and still needed — they cover `replace_tree`'s crash-safe copy-then-swap contract, which real-tree drift does not test. `RealTreeDriftTests` is modelled on `mcp/tests/test_sync_harness.py::test_every_generated_harness_file_matches_its_source`, so all three sync scripts now behave alike. | `scripts/sync-runtime.py`, `scripts/sync-skills.py`, `mcp/tests/test_sync_scripts.py`, `mcp/tests/test_sync_runtime.py`, `.githooks/_gate.sh` |
+| Canonical runtime and skills asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are canonical editable assets synced into MCP package data by `scripts/sync-runtime.py`; root `skills/` is the canonical skill tree synced into package data plus every harness starter skill folder by `scripts/sync-skills.py`. Both carry `--check` and both local hook tiers run those deterministic checks. The pull-request-only GitHub workflow invokes `_gate.sh targeted`, so generated-copy drift is checked without running tests or Dagger. The accepting Dagger wrapper also retains the real-tree regression suite at its lifecycle-owned leaf/master boundaries. | `scripts/sync-runtime.py`, `scripts/sync-skills.py`, `mcp/tests/test_sync_scripts.py`, `.githooks/_gate.sh`, `.github/workflows/quality-checks.yml` |
 | Dashboard bundle release build | The built cockpit (`dashboard/dist/`) is placed into `package_data/dashboard/` by `scripts/sync-dashboard.py`. This is a **release build step, not a sync check**: the bundle is a generated artifact that is **not in version control** (master decision OQ6, 2026-07-31), so there is no `--check` mode and no hook runs it. The release job builds the frontend, runs the placement, packages, and asserts the wheel and sdist both carry the bundle plus its `dashboard.fingerprint` sidecar. Placement refuses an absent `dist` and refuses a `dist` that does not carry the current build-input fingerprint Vite compiled into it, so it cannot stamp over a stale artifact. | `scripts/sync-dashboard.py`, `mcp/tests/test_sync_dashboard.py`, `.github/workflows/publish-mcp-to-pypi.yml`, `dashboard/vite.config.ts` |
 
 Task 10 external-chat inbox current state spans three route families: the control-plane inbox
@@ -261,9 +261,9 @@ offenders at 20.0, diff-coverage 5498/5498 = 100.00%.
 Eight environment-gated integration markers were also registered-but-applied-to-nothing —
 `pytest -m ar_run_pi_rpc_smoke` selected 0 of 3402 tests, because `--strict-markers` rejects an
 *unknown* marker and says nothing about a registered one decorating nothing. All eight are applied
-now, selecting 15; two run in CI (`.github/workflows/integration-gated.yml`, with
-`--require-passed` so a self-skip cannot pass) and six run through
-`scripts/run-gated-integration.py` locally because they need a signed-in vendor CLI and four bill.
+now, selecting 15. The runner still records the two credential-free paths and six vendor-backed
+paths, but GitHub does not invoke this pytest runner outside Dagger; the suite-wide attestation
+guard would refuse it before collection. Four vendor-backed paths bill for real turns.
 Running them for the first time exposed two real bugs.
 
 **Enforcement topology (260731-EFA-L1, step list corrected by L2 — read this before touching a
@@ -279,24 +279,17 @@ out of the tree git is about to commit from). The fast tier derives its own scop
 `scripts/sync-skills.py` passed pre-commit and was rejected on push. Its steps are: the three
 generated-copy checks (skills, runtime assets, **harness trees**), Ruff — with **no
 `--extend-ignore`**, so the four complexity codes are enforced in the tier developers actually
-feel — **`ruff format --check`**, and Pyright. `pre-push` runs the
-`full` tier: the generated-copy checks plus the whole wrapper, which carries the changed-lines
-coverage floor; export `AR_GATE_DIFF_BASE` before pushing from a leaf branch cut from a series
-branch, because git cannot infer that fork point and the floor would otherwise ask you to cover the
-series' lines too. The fast tier is cheap on purpose, because
+feel — **`ruff format --check`**, and Pyright. `pre-push` runs the `targeted` hook tier, which repeats
+those deterministic non-test checks against current-checkout bytes and records pushed refs. The
+manual `full` host tier refuses. The fast tier is cheap on purpose, because
 `--no-verify` is all-or-nothing — a pre-commit expensive enough to be worth skipping costs Ruff and
 Pyright too, which is exactly how this repository ended up with a gate that never ran and 45
-commits landed behind it. `.github/workflows/quality-checks.yml` runs the wrapper on **every branch push and every
-pull request** across Python 3.11/3.12/3.13 alongside the `Dashboard frontend rail`, and both are
-required by the branch ruleset on `main`. It checks out with **`fetch-depth: 0`**, which is
-load-bearing rather than cosmetic: the changed-lines coverage floor diffs against a merge base, and
-a shallow clone has none to find — that would silently turn the strictest step of the gate into
-"compare against the empty tree". A second workflow, `.github/workflows/integration-gated.yml`,
-runs the two credential-free environment-gated integration paths on every push and pull request.
-`quality-checks.yml` is also `workflow_call`-able, and
-`publish-mcp-to-pypi.yml` calls it as `needs: [quality]` so a release tag pointing at a commit that
-never reached `main` is re-gated before anything is built or published. Worktree closeout runs the
-same wrapper before a code commit in **any** repository whose checkout carries it — the
+commits landed behind it. `.github/workflows/quality-checks.yml` runs only on pull requests and
+invokes the deterministic non-test hook once; ordinary branch pushes do not duplicate it. GitHub
+workflows invoke neither host pytest nor the Dagger acceptance graph. The publish workflow does not
+regate a tag: it proves the tag commit is reachable from `origin/main`, then builds and publishes.
+Worktree leaf closeout runs the targeted accepting wrapper before a code commit in **any**
+repository whose checkout carries it — the
 `repo_name == "agents-remember"` hard-code is gone. These files are pathRules-disabled onboarding
 subjects, so this overview is their durable contract; the eligible sidecars for
 `scripts/sync-dashboard.py`, `worktrees/modules/code_quality_gate.py`, and
@@ -687,7 +680,7 @@ Radon applies those patterns even to an explicitly named path and the entry was 
 and F-rank blocks in the tree. **Radon configuration shapes a report; it never decides what the gate
 certifies.**
 
-The wrapper is fail-closed and mandatory by default: a CRAP score at or above the configured threshold (**20.0** by default, scored against branch coverage) produces a failing result without a separate strict flag, and so does any changed line the tests never reach (the 100% diff-coverage floor). The same repository-owned command is enforced by the **full** hook tier on pre-push, by worktree closeout before any code/memory/ledger/contract/applied-gate **commit**, and by CI on every branch push and pull request. (260731-EFA-L4 corrected "before any mutation" to "before any commit": closeout now performs one mutation ahead of the gate — a `git reset --mixed` plus `git add -A` in the task worktree — precisely so the gate can see files the task created. See the L4 repository-impact section.) The **fast** pre-commit tier does not run it — it runs the generated-copy checks, Ruff, `ruff format --check`, and Pyright over the staged content, deliberately cheap so nobody buys back the minutes with `--no-verify`. Closeout applies the gate in any repository whose checkout carries the wrapper (a checkout without it is reported as `wrapper-unavailable`, not silently skipped), and resolves the active worktree package first, using the worktree, shared-clone, then active-Python interpreter order so a linked worktree without its own virtualenv still runs the exact candidate source.
+The wrapper is fail-closed and mandatory by default: a CRAP score at or above the configured threshold (**20.0** by default, scored against branch coverage) produces a failing result without a separate strict flag, and so does any changed line the tests never reach (the 100% diff-coverage floor). Acceptance runs exactly once at each owner: targeted when leaf closeout creates its commit, and full when a master integrates into super. Leaf integration, series closeout, pre-push, pull-request validation, tag, and publish do not rerun it. The pre-commit and pre-push hooks run generated-copy checks, Ruff, `ruff format --check`, Pyright, and deterministic dashboard checks only; the manual full host tier refuses. Closeout applies the leaf gate in any repository whose checkout carries the wrapper (a checkout without it is reported as `wrapper-unavailable`, not silently skipped), and resolves the active worktree package first, using the worktree, shared-clone, then active-Python interpreter order so a linked worktree without its own virtualenv still runs the exact candidate source.
 
 The last quality sweep passed Ruff, Ruff format check, compile checks, MCP unit tests, and diff whitespace checks after safe formatting and cleanup. It also found refactor pressure that should feed Phase 06 rather than be hidden by formatter churn: `parse_settings_block` in `coordination_context_resolver.py` was the highest-complexity function seen in the sweep, and provider lifecycle/setup plus worktree and benchmark modules remain large enough to need package-level analysis before code motion.
 
@@ -857,11 +850,11 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. | "ar-coordination/AGENTS.md"; "Implementation approval is not commit approval" | AGENTS.md:10-10; AGENTS.md:141-141 |
-| The source checkout defines Dagger-only acceptance, the single exported result, host-suite refusal, and the no-baseline/no-allowlist policy. | "Code Quality Instructions"; "dagger call quality --source=."; "single authoritative result"; "There is no host-test compatibility path"; "There is no baseline"; "a finding is fixed" | AGENTS.md:146-171 |
+| The source checkout defines Dagger-only acceptance, the single exported result, host-suite refusal, and the no-baseline/no-allowlist policy. | "Code Quality Instructions"; "dagger call quality --source=."; "single authoritative result"; "There is no host-test compatibility path"; "There is no baseline"; "a finding is fixed" | AGENTS.md:146-146; AGENTS.md:154-154; AGENTS.md:157-157; AGENTS.md:164-164; AGENTS.md:173-174 |
 | The docs index owns the start-here, install, operational, and reference map. | "Start Here"; "Install Guides"; "Getting Started"; "Onboard an Existing Repo"; "MCP Tool Reference"; "Release Checklist" | docs/README.md:23-23; docs/README.md:25-25; docs/README.md:33-33; docs/README.md:46-46; docs/README.md:56-56; docs/README.md:65-65 |
 | Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
 | The runtime sync contract is checked against every generated copy. | `RealTreeDriftTests` | mcp/tests/test_sync_scripts.py:159-207 |
-| CI exposes the quality workflow as a reusable call. | `workflow_call` | .github/workflows/quality-checks.yml:11-11 |
+| GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating. | "pull_request:"; "Refuse a tag whose commit has not landed on main" | .github/workflows/quality-checks.yml:3-7; .github/workflows/publish-mcp-to-pypi.yml:28-34 |
 | Closeout imports the staged-quality boundary, which refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:31-33 |
 | The extracted staged-quality owner contains both refusal helpers and the exact-candidate Dagger gate. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; "def gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:20-129 |
 | The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" | CONTRIBUTING.md:64-64 |
@@ -895,7 +888,14 @@ only. Dashboard and packaged projections remain additive and synchronized.
 
 The interactive Chats round strengthens the repository's runtime-truth contract across the cockpit and serving daemon. Persistent chat and terminal surfaces preserve local state across view changes; active conversation streams recover from server-minted cursors instead of retrying unusable coordinates; structured questions and native interrupts are exact-session operations with explicit evidence; and dashboard state serving avoids repeated whole-tree walks and repeated projection serialization. These changes retain the existing rule that optimistic browser activity, transport acknowledgement, and terminal settlement are different facts.
 
-The final commit-gate delta also makes the repository wrapper mandatory at worktree closeout before mutation, at the full pre-push tier, and in CI, with CRAP at or above 30 failing by default. (260731-EFA-L1 retiered pre-commit off the wrapper and onto the fast staged-content tier; see the enforcement topology in the Hot Path Summary, which is authoritative over this paragraph.) Canonical hooks, workflows, setup/public docs, root skill mirrors, and generated dashboard assets are pathRules-disabled onboarding subjects; their current contract is represented here and in eligible README, MCP package authorities, route cards, and memory-system guidance rather than by duplicate sidecars.
+The historical Chats commit-gate delta first made the wrapper mandatory at closeout, pre-push,
+and CI. L23 supersedes that cadence: targeted Dagger acceptance runs once at leaf closeout, full
+Dagger acceptance runs once at master integration, pre-push is deterministic non-test feedback,
+and GitHub validation is pull-request-only and non-test. The enforcement topology in the Hot Path
+Summary is authoritative. Canonical hooks, workflows, setup/public docs, root skill mirrors, and
+generated dashboard assets are pathRules-disabled onboarding subjects; their current contract is
+represented here and in eligible README, MCP package authorities, route cards, and memory-system
+guidance rather than by duplicate sidecars.
 
 ## 260731-EFA-L1 Repository Impact — The Gate Now Runs
 
@@ -908,17 +908,18 @@ wrong. The durable contracts:
    subject it compared against; it now refuses an absent `dist` and refuses a `dist` that does not
    carry the build-input fingerprint `vite.config.ts` compiled into it as `__AR_DASHBOARD_BUILD__`.
    The fingerprint sidecar is therefore a value read *out of* the bundle, never stamped over it.
-2. **The pre-commit hook gates staged content on a fast tier; pre-push runs the full wrapper.**
-   `.githooks/pre-commit` and `.githooks/pre-push` are thin wrappers over `.githooks/_gate.sh
-   <fast|full>`. The fast tier isolates the index with `git stash --keep-index --include-untracked`
+2. **The pre-commit hook gates staged content on a fast tier; pre-push repeats deterministic
+   non-test checks.** `.githooks/pre-commit` and `.githooks/pre-push` are thin wrappers over
+   `.githooks/_gate.sh <fast|targeted>`. The fast tier isolates the index with
+   `git stash --keep-index --include-untracked`
    under restore traps, and skips isolation when the tree already matches the index or a sequencer
    operation is in progress.
-3. **CI runs on every branch and every pull request**, not only `main`, across Python
-   3.11/3.12/3.13, with `Dashboard frontend rail` alongside it; the branch ruleset on `main`
-   requires all four.
-4. **The publish workflow gates on quality.** `publish-mcp-to-pypi.yml` calls `quality-checks.yml`
-   via `workflow_call` and declares `needs: [quality]` before it builds, and the build job asserts
-   the wheel and sdist each contain the bundle and the fingerprint sidecar.
+3. **GitHub validation is pull-request-only and deterministic.** It runs generated-copy,
+   formatting, lint, and type checks; ordinary pushes launch no duplicate and GitHub invokes
+   neither host tests nor Dagger acceptance.
+4. **The publish workflow verifies landed provenance instead of regating.** A tag must point to a
+   commit reachable from `origin/main`; the workflow then builds the dashboard and package and
+   asserts the wheel and sdist each contain the bundle and fingerprint sidecar.
 5. **The closeout quality gate is no longer hard-coded to one repository name.** Applicability is
    decided by whether the target checkout carries `mcp/src/agents_remember/code_quality/check.py`;
    a checkout without it is reported as `wrapper-unavailable` rather than silently skipped.
@@ -1062,7 +1063,7 @@ Full mode (ruff, ruff-format, pyright, pytest+coverage, CRAP, diff-coverage) run
 master at integration altitude. Both modes require the exact task-derived diff base and candidate
 bundle, and generated Dagger help is the public function contract. The exported
 `clean-quality-results.json` is the one acceptance result. Host pytest and direct wrapper execution
-remain diagnostics, never acceptance or fallback; the Python, Vitest, and Playwright harnesses
+are refused with no fallback; the Python, Vitest, and Playwright harnesses
 fail closed without the graph's matching nonce and in-container attestation. `memory_quality_check`
 is explicitly carved out and stays a per-leaf closeout gate.
 
@@ -1105,7 +1106,20 @@ long quality work and immediately before claim/merge prevent stale work from bei
 approved, or merged; no agent-supplied runtime or commit identifier becomes control-plane
 authority.
 
+## R39 Acceptance Topology
+
+The repository now has one test-capable environment and two lifecycle acceptance altitudes.
+Nonce-attested Dagger runs targeted once at leaf closeout and full once at master integration.
+Leaf integration, series/master closeout, hooks, push, pull-request, tag, and publish do not rerun
+acceptance. Pull requests keep deterministic non-test validation, and the tag workflow proves main
+reachability before publishing. Generic runtime doctrine resolves each repository's concrete
+acceptance policy from its own memory rather than embedding this repository's Dagger command.
+
 ## Update History
+
+- 2026-08-14T11:29+02:00 — R39 curator: reconciled the root route with exact-once lifecycle
+  acceptance, workflow de-duplication, and repository-generic runtime doctrine. Verification
+  remains closeout-owned.
 
 - 2026-08-14T06:10+02:00 — L23 curator: reconciled the repository inventory and authority map
   with exact-candidate, Dagger-only acceptance, fail-closed host suites, and the extracted staged
@@ -2127,16 +2141,17 @@ authority.
 ## Build & Dev
 
 L23 makes the pinned clean-Ubuntu Dagger graph the repository's only acceptance environment. Leaf
-and focused work selects targeted mode, while master integration selects full mode once. Both
-require an explicit diff base, and generated help documents source, bundle, base, mode, and cap.
-Host pytest/direct-wrapper runs are diagnostic only. Both Dagger paths publish self-overwriting progress and result artifacts
-under the worktree enclosure; the clean environment mounts neither a Docker socket nor WSL's
-Windows command paths. The GitHub workflow runs the same Dagger graph, so local and hosted clean
-proofs share one implementation rather than parallel shell pipelines.
+closeout selects targeted mode exactly once before creating the leaf commit; leaf integration and
+series closeout do not rerun it. Master integration selects full mode exactly once. Both require
+an explicit diff base, and generated help documents source, bundle, base, mode, and cap. Host
+pytest, Vitest, Playwright, and direct-wrapper acceptance refuse outside Dagger. Both Dagger paths
+publish self-overwriting progress and result artifacts under the worktree enclosure; the clean
+environment mounts neither a Docker socket nor WSL's Windows command paths. GitHub runs a separate
+pull-request-only deterministic non-test check; ordinary pushes launch no duplicate.
 
-- Source-checkout Python implementation may use host pytest or the wrapper for fast diagnostics,
-  but those commands do not certify Agents Remember acceptance; exact Dagger commands and required
-  diff-base selection belong in the resolved memory layer's `system/tools.md`.
+- Source-checkout implementation uses the deterministic local hooks for fast diagnostics. Test
+  suites refuse host execution; exact Dagger commands and required diff-base selection belong in
+  the resolved memory layer's `system/tools.md`.
 - The MCP package tests under `mcp/tests` cover `c-08-ar-coordination-context-resolver` skill, `c-02-memory-quality-control` skill, `c-09-git-worktree-manager` skill, ledger, contract, provider, benchmark, runtime install, and skills install behavior through package modules.
 - `system/sources.md` registers `docs/design/` as the Domain Documentation routing index (added when `docs/design/` was brought into onboarding scope, slice 05k); `system/tools.md` is unchanged.
 

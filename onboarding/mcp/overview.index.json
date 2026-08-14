@@ -123,6 +123,7 @@
     "mcp/src/agents_remember/code_quality/citations.py",
     "mcp/src/agents_remember/code_quality/clean_room.py",
     "mcp/src/agents_remember/code_quality/crap_calculator.py",
+    "mcp/src/agents_remember/code_quality/dagger_environment.py",
     "mcp/src/agents_remember/code_quality/diff_coverage.py",
     "mcp/src/agents_remember/code_quality/file_size.py",
     "mcp/src/agents_remember/code_quality/layering.py",
@@ -281,8 +282,8 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1060,
-    "fileSidecars": 173,
+    "sourceFilesInScope": 1063,
+    "fileSidecars": 174,
     "childRoutes": 19
   },
   "routingTerms": [
@@ -361,11 +362,11 @@
     "curator",
     "current",
     "current_state",
+    "dagger",
+    "dagger_environment",
     "dashboard",
     "data",
-    "deep",
-    "defaults",
-    "degradation"
+    "deep"
   ],
   "hotPath": {
     "summary": "**260731-EFA-L21 \u2014 checkout coordination isolation.** An undeclared source-checkout invocation is classified before runtime configuration is read: a linked worktree receives a synthetic provider-disabled configuration rooted at `provider-runtime/dev-ar-coordination`, while a primary checkout refuses live coordination access. Trusted MCP/dashboard declarations and installed package execution retain the configured coordinator. The detached task-operation worker uses the separate explicit `lifecycle-operation` mode because it must finalize one plane-owned durable operation but is not a store d...",
@@ -428,6 +429,8 @@
       "clean_room",
       "crap_calculator.py",
       "crap_calculator",
+      "dagger_environment.py",
+      "dagger_environment",
       "diff_coverage.py",
       "diff_coverage",
       "file_size.py",
@@ -441,9 +444,7 @@
       "retry_proof.py",
       "retry_proof",
       "scope.py",
-      "scope",
-      "scope_reporting.py",
-      "scope_reporting"
+      "scope"
     ]
   },
   "fallback": {

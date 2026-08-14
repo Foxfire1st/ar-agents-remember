@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
-| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
+| lastUpdated | 2026-08-14T12:13:26+02:00 |
+| lastVerifiedCommitHash |  `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
+| lastVerifiedCommitDate |  2026-08-14T12:44:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,12 +17,12 @@
 ## Purpose
 
 This module is the narrow policy and process adapter that makes the project-owned source-quality
-wrapper a mandatory, fail-closed gate before a worktree closeout or integration lands a code
-commit, and it owns the altitude routing: leaf edges run the change-set-scoped `--targeted`
-contract, and master integration runs the full wrapper once with host-managed
-RAM and swap by default inside `worktree_integrate` itself
-(260731-EFA-L17/L24). An explicit settings cap remains available for constrained
-CI; neither path changes pytest's literal `-n=auto` configuration.
+wrapper a mandatory, fail-closed lifecycle gate. Leaf closeout runs the change-set-scoped
+`--targeted` contract exactly once before creating its commit; leaf integration reuses that
+certified commit without invoking this runner again. Master integration runs the full wrapper once
+with container-runtime-managed RAM and swap by default inside `worktree_integrate` itself
+(260731-EFA-L17/L24). An explicit settings cap remains available for Dagger-owned lifecycle runs;
+neither path changes pytest's literal `-n=auto` configuration.
 
 It also owns the latest completed gate transcript. The caller supplies a `QualityGateTarget`
 containing both the checkout and its worktree enclosure; every completed run atomically replaces
@@ -30,10 +30,10 @@ containing both the checkout and its worktree enclosure; every completed run ato
 the same full output before raising. Because publication occurs only after the subprocess returns,
 an interrupted retry leaves the preceding completed report intact.
 
-**It is no longer scoped to one repository.** Until 260731-EFA-L1 the decider read
-`repo_name == "agents-remember"`, so for every consuming repository — the product's actual audience
-— the gate the product documents as mandatory was a no-op. Availability of the wrapper now decides,
-not the repository's name.
+Applicability has two explicit layers. A consumer repository opts in by carrying the integrated
+adapter. Agents Remember additionally owns a self-policy: `requires_integrated_acceptance` makes
+that adapter mandatory by repository identity, so deleting the wrapper cannot turn acceptance into
+the permitted consumer `wrapper-unavailable` state.
 
 ## Code Commentary
 
@@ -42,47 +42,41 @@ not the repository's name.
 `quality_wrapper_path(code_worktree)` is the single place the wrapper's location is spelled:
 `<checkout>/mcp/src/agents_remember/code_quality/check.py` (`QUALITY_WRAPPER`).
 
-`requires_strict_code_quality(code_worktree, *, code_would_commit)` returns
-`code_would_commit and quality_wrapper_path(code_worktree).is_file()`. Note the first parameter is
-a **checkout path**, not a repository name — see the boundary note below.
+`requires_integrated_acceptance(repo_name)` names the self-policy repositories; currently only
+`agents-remember` returns true. `requires_strict_code_quality(code_worktree, *,
+code_would_commit, required_when_missing=False)` then requires a run when code would commit and
+either policy marks the adapter mandatory or the checkout actually carries it. The checkout path
+still selects the adapter bytes; repository identity only decides whether absence is legal.
 
 `code_quality_gate_preview(code_worktree, *, code_would_commit, diff_base="", plan=QualityGatePlan())`
 reports which of three states this gate is in, via the `status` key; since 260731-EFA-L17
 the payload also carries `mode` (`targeted` or `full`). Full plans carry a
-`memoryPolicy` block (`mode`, `pytestProcesses=auto`, `swap=host-managed`), and
+`memoryPolicy` block (`mode`, `pytestProcesses=auto`, `swap=container-host-managed`), and
 an explicitly capped plan additionally carries `memoryCap` (`capBytes`, policy,
 mechanism):
 
 | `status` | Constant | Meaning |
 | --- | --- | --- |
 | `no-code-commit` | `GATE_NO_CODE_COMMIT` | Nothing would commit, so nothing to gate. |
-| `wrapper-unavailable` | `GATE_WRAPPER_UNAVAILABLE` | Code would commit, but this checkout carries no wrapper. The reason string names `QUALITY_WRAPPER` and states the commit **is not quality-checked**. |
-| `enforced` | `GATE_ENFORCED` | The wrapper runs before the commit; `command` is `_gate_command(diff_base, mode=..., memory_cap_bytes=...)` — for the leaf contract `python -m agents_remember.code_quality.check --targeted --diff-base <base>` — and `diffBase` carries the base on its own key. Since 260731-EFA-L4 the `reason` also names the staging step; since L17 it states that the leaf contract is `--targeted` and that the full wrapper runs once per master at the master integration gate, not at leaf closeout. |
+| `wrapper-unavailable` | `GATE_WRAPPER_UNAVAILABLE` | Code would commit in a consumer repository whose policy permits no adapter, and the checkout carries none. Agents Remember never reaches this state because its self-policy refuses missing-wrapper candidates. |
+| `enforced` | `GATE_ENFORCED` | The Dagger graph runs before the commit or master integration; `command` is the symbolic `dagger call quality` command with exact source/bundle placeholders, mode, diff base, and optional cap. `diffBase` carries the base on its own key. |
 
-`wrapper-unavailable` is a *reported* state, not a silent skip: closeout still proceeds, and the
-payload says plainly that the code commit was not quality-checked and why. That is the deliberate
-replacement for the old behavior, which returned the same `required: False` for a consuming
-repository as for "nothing to commit" and explained it with the misleading reason "no Agents
-Remember code commit would be created".
+`wrapper-unavailable` remains a reported consumer state, not a silent skip. When
+`required_when_missing=True`, preview raises before returning a payload, so the self repository's
+candidate cannot delete `QUALITY_WRAPPER` to disable its own required gate.
 
-`run_strict_code_quality_gate(QualityGateTarget(code_worktree, worktree_group), *, diff_base="", plan=QualityGatePlan(), invocation="closeout-staged", runner=run_subprocess)`
-requires the wrapper to exist (else `RuntimeError`), selects an interpreter, executes the
-current worktree's `agents_remember.code_quality.check` under the planned mode, writes the complete
-captured transcript through `_write_test_results_report`, and raises with both the stable report
+`run_strict_code_quality_gate(QualityGateTarget(code_worktree, worktree_group), *, diff_base="", plan=QualityGatePlan(), invocation="closeout-staged")`
+requires the wrapper to exist (else `RuntimeError`), validates Dagger as the only executor, and
+hands the exact candidate to `run_clean_quality`. It writes the complete exported transcript
+through `_write_test_results_report`, and raises with both the stable report
 path and a bounded output tail (`FAILURE_OUTPUT_LINES` = last 40 lines) on any non-zero result.
 Success returns `reportPath` beside the existing command/scope/memory-cap evidence. The concrete
 command and invocation label still come from `_gate_command_parts`. Dagger is the sole acceptance
-executor; when a cap is requested the refusal reports either the host scope's concrete cap plan or
-the Dagger inner-wrapper cap evidence.
+executor; when a cap is requested the refusal reports the Dagger inner-wrapper cap evidence.
 
-`run_subprocess` captures the merged quality transcript as UTF-8 with replacement for undecodable
-bytes. A tool emitting one non-UTF-8 byte therefore cannot abort the adapter before the stable
-report is written; the replacement is confined to diagnostic output and does not alter source or
-gate status.
-
-`_validated_quality_gate_plan` owns defaulting and the closed `targeted`/`full` plus
-`local`/`dagger` validation before command construction. Keeping that policy in one helper makes
-the execution coordinator smaller without adding a fallback executor.
+`_validated_quality_gate_plan` owns defaulting and the closed `targeted`/`full` plus mandatory
+`dagger` validation before command construction. `run_local_quality_diagnostic` refuses
+immediately; there is no host command planner or fallback executor.
 
 `test_results_report_path` fixes the location at `reports/test-results.md` under the supplied
 worktree group. `_write_test_results_report` renders status, invocation, mode, diff base, exit code,
@@ -97,9 +91,8 @@ diffs against the tracked tree — so **what is staged when this runs is what ge
 what makes the gate's scope and the commit's content one set; before that, a file the task *created*
 went into the commit with no rail of the gate having read it.
 
-This module deliberately does not do the staging and does not describe it. `runner` is a public
-parameter and closeout is not the only caller this signature admits, so the failure message states
-only what is true of every caller — "code" — and **does not
+This module deliberately does not do the staging and does not describe it. The failure message
+states only what is true of every caller — "code" — and **does not
 say the staging was undone, because closeout does not undo it**. This function certifies the index
 it is handed and says nothing about how it came to look that way. The refusals, the reset and the
 `add -A` all live in `closeout.py`, where the disposable-worktree precondition that makes staging
@@ -107,65 +100,32 @@ safe is actually established.
 
 ### `diff_base` Is What Makes The Coverage Floor Passable
 
-`diff_base` must be the leaf's recorded base commit, and both closeout paths pass
-`contract.code_base_commit`. When it is non-empty the gate appends `["--diff-base", diff_base]` to
-`python -m agents_remember.code_quality.check`; when it is empty the flag is omitted and the wrapper
-falls back through `diff_coverage.resolve_base` to `AR_GATE_DIFF_BASE` / the pull request base /
-`@{upstream}` / `origin/HEAD` / `main`.
+`diff_base` must be the task's recorded base commit. Leaf closeout passes
+`contract.code_base_commit`; master integration passes the recorded super base. The lifecycle
+executor materializes a separate ancestry bundle and the exact staged candidate, then the Dagger
+function refuses an empty or unprovable base.
 
-That fallback is the wrong measurement for a leaf. The wrapper's per-diff floor demands **100%**
+Using the wrong base is the wrong measurement for a leaf. The wrapper's per-diff floor demands **100%**
 coverage of the changed statements and branch arcs, so measuring against `main` charges a leaf for
 every change on the whole integration branch rather than for its own diff — a gate no leaf can pass,
-which is exactly as useless as a gate that cannot fail. CI keeps the `main` default on purpose: a
-pull request genuinely is measured against `main`, a leaf closeout is measured against the leaf.
+which is exactly as useless as a gate that cannot fail. GitHub PR validation does not invoke this
+acceptance path; the lifecycle always supplies the task-derived base.
 
-`_gate_command(diff_base, mode=..., memory_cap_bytes=...)` renders the same string
-into the payload's `command` key so a reader can rerun exactly what ran — targeted mode appends
-`--targeted`; full mode runs the plain wrapper when the cap is absent and otherwise wraps it via
-`memory_cap.plan_capped_command` — and `diffBase` reports the base on its own key. In the
+`_gate_command(diff_base, mode=..., memory_cap_bytes=...)` renders the symbolic Dagger call
+into the payload's `command` key, including exact-candidate and ancestry-bundle placeholders,
+mode, base, and optional cap. `diffBase` reports the base on its own key. In the
 `enforced` state both the preview and the successful run
 carry both keys; the two non-enforced preview states carry `command: ""` and no `diffBase`,
 because nothing would run.
 
-### Interpreter Selection And Import Precedence
+### Host Execution Refuses
 
-`quality_python` prefers the worktree virtualenv, then the linked primary clone's shared
-virtualenv, then the active server interpreter. `quality_environment` (lines 294-318) always puts
-the current worktree's `mcp/src` first on `PYTHONPATH`, so a shared interpreter cannot measure the
-primary clone by mistake, and it names the invoking altitude through `AR_QUALITY_INVOCATION`
-(`closeout-staged`, `leaf-integration`, `master-integration`).
-
-`quality_environment` builds that environment from `kernel.git_command.git_environment()`, **not**
-from `dict(os.environ)`, so the eight `GIT_DIR`-family repository selectors
-(`GIT_REPOSITORY_SELECTOR_ENV`) are dropped before the wrapper is spawned. The wrapper is not an
-inert subprocess: it derives its own scope from `git ls-files` and its diff base from `merge-base`,
-and closeout runs from paths where `GIT_DIR` can be exported. Passing the selectors straight
-through was safe only because every git call inside that child strips them itself — which makes
-this gate's correctness, *which repository gets certified before a code commit*, rest on the good
-behaviour of a process this one cannot see. Nothing else about the environment changes: this
-worktree's `mcp/src` still leads `PYTHONPATH`, any inherited `PYTHONPATH` still follows it, and
-`PATH` survives (without it the wrapper cannot start).
-
-On non-Windows hosts the same environment normalizes `TMPDIR`, `TMP`, and `TEMP` to `/tmp`. This
-keeps concurrent quality scratch process-local and Unix-domain harness-control socket paths short
-when a WSL process inherited Windows temp paths. The durable latest-run transcript remains under
-the enclosure's `reports/` directory; only ephemeral scratch moves. Native Windows retains the
-inherited temp variables.
-
-`_git_common_dir` — the middle step of that interpreter chain — runs
-`git rev-parse --path-format=absolute --git-common-dir` through
-`agents_remember.kernel.git_command.run_git`, the package's single git runner, rather than through
-its own `subprocess.run`. `run_git` strips the `GIT_DIR`-family repository selectors
-(`GIT_REPOSITORY_SELECTOR_ENV`) from the child environment; without that, an exported `GIT_DIR`
-answers with *its* common dir, and this value decides which repository's `.venv` the closeout
-quality gate then runs from. A directory that is not a repository still yields `None` (non-zero exit)
-rather than falling through to whatever `GIT_DIR` names.
+`run_local_quality_diagnostic` is now an explicit refusal surface. The local interpreter chain,
+host environment builder, systemd/rlimit command planning, and direct subprocess runner were
+removed. The only executable path is `run_clean_quality`, which reconstructs the accepted
+candidate inside the pinned Dagger graph.
 
 ### Conventions
-
-The interpreter search is necessary linked-worktree support: linked worktrees intentionally may not
-carry their own `.venv`. It is an ordered authority chain, not a command fallback or an escape from
-the project-owned wrapper.
 
 `status` is the machine-readable field; `reason` is prose for a human reading the closeout payload.
 Callers should branch on `status`, not on `required` alone — `required: False` now covers two very
@@ -173,19 +133,15 @@ different situations.
 
 ### Invariants And Boundaries
 
-- **The deciders take a checkout `Path`, never a repository name.** `contract.repo_name` is a
-  `str`, `contract` is unannotated in `closeout.py`, and `Path`-vs-`str` is not caught there by
-  Pyright. Handing a name in makes `quality_wrapper_path` build a relative path off the process
-  CWD, which is not a file, so the gate silently never runs. `test_worktree_closeout_quality_gate.py`
-  spies on the actual argument for exactly this reason.
-- The only deliberate skip is a closeout that would not create a code commit. A checkout without
-  the wrapper is *reported*, not skipped silently.
-- A missing wrapper, missing interpreter, or non-zero wrapper result refuses before closeout
-  mutation.
-- The leaf contract is the only sanctioned narrowing: targeted mode appends `--targeted` (and
-  `--diff-base` when the base is non-empty); full mode appends no narrowing flag and runs
-  host-managed when `memory_cap_bytes` is absent. No threshold-enforcement flag is required or
-  accepted, and no xdist worker override is introduced.
+- Adapter discovery takes a checkout `Path`; self-policy discovery deliberately takes the
+  repository name. These inputs are separate so policy cannot accidentally become a relative path.
+- No-code closeout is skipped. A no-adapter consumer is reported. An Agents Remember candidate
+  missing its self-owned wrapper is refused before memory quality, approval claim, or commit.
+- A required missing wrapper, non-Dagger executor, or non-zero Dagger result refuses before
+  irreversible closeout or integration mutation.
+- The leaf contract is the only sanctioned narrowing: targeted mode is explicit in the Dagger
+  command; full mode is explicit at master integration. No threshold-enforcement flag is required
+  or accepted, and no xdist worker override is introduced.
 - **A closeout must pass the leaf's own base commit.** Dropping `diff_base` at a call site does not
   weaken the gate, it makes it unpassable: the 100% changed-lines floor would then be measured
   against `main`. Both directions are failures of the same rule — the base the gate measures against
@@ -194,29 +150,18 @@ different situations.
 - The bounded exception is only a notification surface; `reports/test-results.md` retains the
   complete stdout/stderr transcript for both pass and fail and is replaced atomically only after a
   run completes.
-- Captured subprocess text is always decoded as UTF-8 with replacement so malformed diagnostic
-  bytes cannot suppress the completed-run report.
-- On non-Windows hosts, quality scratch uses `/tmp`; this must not redirect or weaken the
-  enclosure-owned `reports/test-results.md` durability contract.
 - **This module never stages, resets or restores.** The index it is handed is the scope it
   certifies; producing that index is the caller's job, and the failure message must stay true for a
   caller that did no staging at all. Do not add a "staging was reverted" claim here — closeout does
   not revert it.
-- Gate applicability must stay a property of the checkout, not of any repository identity. Do not
-  reintroduce a name-based branch.
-- Every git call this module makes goes through `kernel.git_command.run_git`. Spawning `git`
-  here again reintroduces the inherited-`GIT_DIR` defect this gate is most exposed to, and
-  `test_git_command.py::SingleRunnerTests` fails the build if a second runner appears.
-- **The environment handed to the wrapper carries no repository selectors.** `quality_environment`
-  must keep building from `git_environment()`; reverting it to `dict(os.environ)` re-exports
-  `GIT_DIR` and friends into a child that runs `git ls-files` and `merge-base` to decide what it
-  certifies. `test_worktree_closeout_quality_gate.py::CodeQualityGateTests::test_the_gate_hands_the_wrapper_no_repository_selectors`
-  asserts the selectors are absent and that `PYTHONPATH` ordering and `PATH` are untouched.
+- Consumer opt-in remains checkout-derived, while the explicit self-repository policy remains
+  identity-derived. Do not collapse either rule into the other.
+- This module never builds or launches a host wrapper command. `run_clean_quality` owns exact
+  candidate reconstruction and Dagger execution.
 
 ### Todos
 
-- `wrapper-unavailable` is currently reported and permitted. If a consuming repository should be
-  able to *require* a gate it cannot run, that is a policy decision this module does not make.
+None recorded.
 
 ## Docs References
 
@@ -234,17 +179,13 @@ coverage, and CRAP checks.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `quality_wrapper_path` / `requires_strict_code_quality` decide applicability from the checkout, and `code_quality_gate_preview` reports one of the three statuses plus planned mode, executor, and memory policy. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:37-41; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:100-107; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-177 |
-| `run_strict_code_quality_gate` executes the planned contract, atomically publishes the complete latest transcript, exposes `reportPath` on success, and names it before raising on failure. | `QualityGateTarget`; `test_results_report_path`; `run_strict_code_quality_gate`; `_write_test_results_report`; `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:56-61; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:85-87; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:267-360; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:363-421; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:551-591 |
-| `run_subprocess` captures merged output as UTF-8 with replacement so an undecodable diagnostic byte cannot prevent report publication. | `run_subprocess` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:234-248 |
-| `quality_python` walks the interpreter chain through `_git_common_dir`, which uses `run_git`; `quality_environment` builds from `git_environment()`, puts this worktree's `mcp/src` first on `PYTHONPATH`, names the invoking altitude, and uses `/tmp` for non-Windows scratch. | `quality_python`; `quality_environment`; `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:594-609; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:612-643; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:646-653 |
-| Both closeout call sites pass `contract.code_worktree`, `diff_base=contract.code_base_commit`, and the leaf targeted plan — the preview path, and the apply path where `requires_strict_code_quality` guards `_gate_staged_code` and `commit_if_dirty` follows it. | `closeout_preview_payload`, `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:372-461; mcp/src/agents_remember/worktrees/modules/closeout.py:1037-1131 |
-| Regressions cover all three statuses, targeted/full modes, host-managed and explicit-cap full runs, cap-kill naming, checkout-not-name arguments, exact leaf base forwarding, repository-selector scrubbing, source precedence, bounded failures, interpreter selection, and mutation ordering. | `CodeQualityGateTests`, `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:19-486; mcp/tests/test_worktree_closeout_quality_gate.py:55-257 |
-| The staging regressions added with `_gate_staged_code`: `_ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `_ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:538-573; mcp/tests/test_worktree_closeout_quality_gate.py:576-685; mcp/tests/test_worktree_closeout_quality_gate.py:902-1025; mcp/tests/test_worktree_closeout_quality_gate.py:1028-1086; mcp/tests/test_worktree_closeout_quality_gate.py:1092-1155 |
-| The one git runner this module calls, and the scrubber `quality_environment` builds from: `run_git` and `git_environment` both drop `GIT_REPOSITORY_SELECTOR_ENV`, and `run_git` carries the local/remote/metadata timeout classes. | `run_git`, `git_environment` | mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| `test_the_closeout_gate_resolves_the_common_dir_of_the_worktree_it_was_given` points `GIT_DIR` at a decoy repository and proves `_git_common_dir` still answers for the worktree it was handed. | `test_the_closeout_gate_resolves_the_common_dir_of_the_worktree_it_was_given` | mcp/tests/test_git_command.py:410-433 |
-| `SingleRunnerTests` sweeps the package's AST and fails if any module spawns `git` itself or defines a second runner. | `SingleRunnerTests` | mcp/tests/test_git_command.py:393-465 |
-| The contributor documentation states the same three-state contract for consuming repositories. | `### Closeout` | CONTRIBUTING.md:264-273 |
+| `quality_wrapper_path` / `requires_strict_code_quality` decide applicability from the checkout, and `code_quality_gate_preview` reports one of the three statuses plus planned mode, executor, and memory policy. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:63-65; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:97-104; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:107-169 |
+| `run_strict_code_quality_gate` executes the planned contract, atomically publishes the complete latest transcript, exposes `reportPath` on success, and names it before raising on failure. | `QualityGateTarget`; `test_results_report_path`; `run_strict_code_quality_gate`; `_write_test_results_report`; `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:40-45; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:68-70; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:184-265; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:281-330; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:387-411 |
+| The named local entry point refuses before resolving or executing a host wrapper. | `run_local_quality_diagnostic` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:286-296 |
+| Both closeout call sites pass `contract.code_worktree`, `diff_base=contract.code_base_commit`, and the leaf targeted plan — the preview path, and the apply path where `requires_strict_code_quality` guards `_gate_staged_code` and `commit_if_dirty` follows it. | `closeout_preview_payload`, `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:381-471; mcp/src/agents_remember/worktrees/modules/closeout.py:1083-1168 |
+| Regressions cover all three statuses, targeted/full Dagger modes, container-managed and explicit-cap full runs, cap-kill naming, immediate host refusal, checkout-not-name arguments, exact leaf base forwarding, bounded failures, and mutation ordering. | `CodeQualityGateTests`, `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:62-591; mcp/tests/test_worktree_quality_gate_runner.py:15-465 |
+| The staging regressions added with `_gate_staged_code`: `ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_gate_scope.py:99-208; mcp/tests/test_worktree_closeout_quality_gate.py:808-931; mcp/tests/test_worktree_closeout_quality_gate.py:934-992; mcp/tests/test_worktree_closeout_quality_gate.py:998-1061 |
+| The contributor documentation states the same three-state contract for consuming repositories. | `### Closeout` | CONTRIBUTING.md:248-258 |
 
 ## Cross-Repo References
 
@@ -253,26 +194,36 @@ that repository's checkout rather than this one.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Applicability is decided by the presence of the wrapper in the target checkout. | `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:149-156 |
-| The preview reports `wrapper-unavailable` when the target checkout lacks the wrapper. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-177 |
-
-## L23 Quality Environment Split
-
-`quality_environment` keeps durable reports under the task enclosure while
-routing ephemeral subprocess scratch to `/tmp/arq`. This separation preserves
-operator-visible evidence and avoids the 103-byte Unix-socket address limit in
-deep worktree/report paths.
+| Consumer opt-in is decided by the adapter in the target checkout; self-policy may separately require its presence. | `requires_integrated_acceptance`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:98-100; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:103-116 |
+| The preview reports `wrapper-unavailable` only when policy permits absence, and otherwise refuses. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:119-187 |
 
 ## L23 Acceptance Interpretation
 
-This module still owns the local wrapper plan and runner used for diagnostics and generic lifecycle
-plumbing, but Agents Remember acceptance selects the pinned Dagger executor. Leaf/focused gates run
-targeted mode and master integration runs full mode once; both require the exact task-derived diff
-base. Host pytest or direct wrapper output cannot be promoted to acceptance evidence, and a failed
-Dagger gate never falls back to this host path. Generated Dagger help is the executable public
-argument contract.
+This module owns only the pinned Dagger acceptance adapter. Leaf closeout runs targeted mode once;
+leaf integration reuses that certified commit; master integration runs full mode once. Both
+acceptance runs require the exact task-derived diff base. Host pytest and direct wrapper execution
+are refused, a missing self-owned wrapper refuses, and a failed Dagger gate has no fallback.
+Generated Dagger help is the executable public argument contract.
+
+## R43 Fail-Closed Wording And Executor Proof
+
+The runtime refusal now names a missing `self-owned wrapper`, matching repository-resolved policy.
+The forcing suite also calls both command and memory-policy builders with a non-Dagger executor and
+requires each to refuse with pinned-Dagger guidance; no local executor can be revived through a
+lower-level builder.
 
 ## Update History
+
+- 2026-08-14T12:13:26+02:00 — R43 curator: reconciled self-owned-wrapper refusal wording and the
+  new direct non-Dagger builder proof. Verification remains closeout-owned.
+
+- 2026-08-14T11:24+02:00 — R39 curator: replaced the obsolete checkout-only/name-forbidden
+  applicability claim with the two-layer policy: consumer adapter opt-in plus mandatory
+  Agents Remember self-wrapper presence. Also recorded immediate host refusal and the single
+  leaf-closeout/master-integration Dagger owners. Verification remains closeout-owned.
+
+- 2026-08-14T09:37+02:00 — Reopened L23 cadence: clarified this runner's two accepting owners —
+  targeted leaf closeout and full master integration — and the leaf-integration no-rerun boundary.
 - 2026-08-14T05:26Z — L23 final curator: made Dagger-only acceptance and its inner-wrapper cap
   evidence explicit, and re-anchored the final failure formatter. Verification remains
   closeout-owned.

@@ -41,52 +41,37 @@ opensrc fetch https://github.com/anomalyco/opentui        # GitHub
 
 ## Code Quality
 
-To improve quality when working on source code, the agent shall use `Ruff`, `Pyright`, `Radon`, `pytest`, `pytest-cov`, and CRAP-Calculator. For the `agents-remember` repo, install and run them from the source repository directory `agents-remember/`.
+Agents Remember acceptance runs only through the pinned Dagger Ubuntu graph. Direct host `pytest`,
+Vitest, Playwright, and `python -m agents_remember.code_quality.check` invocations must refuse; they
+are neither diagnostics nor fallback evidence. Deterministic non-test host checks may be used for
+fast feedback.
 
-The installation has to be done by activating the project's virtual environment (`source .venv/bin/activate` on Linux and macOS, or `.venv\Scripts\activate` on Windows) and installing the MCP package with development extras from the source repository root:
+The lifecycle owns the two accepted invocations:
 
-```text
-python -m pip install -e "mcp[dev]"
-```
+- leaf closeout: `dagger call quality ... --mode=targeted --diff-base=<recorded leaf base>` exactly
+  once, before the leaf commit;
+- master integration: `dagger call quality ... --mode=full --diff-base=<recorded super base>`
+  exactly once, before integrating the master into super.
 
-After activation, prefer the fixed source quality wrapper for full local checks:
+Leaf integration, series/master closeout, ordinary push, pull-request validation, tag, and publish
+do not rerun acceptance. Use `dagger call quality --help` for the live source/bundle/base/mode/cap
+argument contract; do not reconstruct omitted arguments from memory. The graph receives the exact
+candidate plus a separate Git ancestry bundle and must not mount the live coordination root,
+credentials, or container socket.
 
-```text
-git add -A          # see below: the wrapper is blind to unstaged new files
-python -m agents_remember.code_quality.check
-```
+The targeted graph covers changed files, reverse-import closure, the derived test subset,
+coverage/CRAP over changed production modules, changed-lines coverage, and the configured file-size
+rail. The full graph covers the repository suite. A missing graph, missing mandatory diff base,
+invalid Dagger attestation, absent self-owned wrapper, or non-zero result refuses with no host or
+direct-Docker fallback. An explicit lifecycle memory cap is passed to the graph's inner wrapper;
+otherwise the container runtime owns RAM and swap.
 
-**Stage before you run it by hand.** `derive_scope`
-(`mcp/src/agents_remember/code_quality/check.py:199-221`) builds the lint, type and
-coverage scope from `git ls-files`, which reads the *index*. A file you have created but
-not `git add`-ed is therefore invisible to ruff, to Pyright and to the per-diff coverage
-floor, and the wrapper will exit 0 without ever having looked at it. The index cuts the
-other way too: a file you have deleted but whose removal is unstaged is still handed to
-ruff, which fails with `E902 No such file or directory` against nothing real.
-
-That scoping is deliberate for the `pre-commit` hook, which certifies exactly the staged
-content (`.githooks/_gate.sh` stashes unstaged and untracked work with `--keep-index` so
-the gate cannot see it). `worktree_closeout_apply` handles this for you — it stages the
-whole worktree before gating and rolls that staging back if the gate refuses — but a
-hand-run has no such wrapper, so stage first.
-
-The wrapper runs `ruff check`, Pyright static type checking, Radon cyclomatic complexity and maintainability checks, `pytest` with coverage JSON, CRAP-Calculator, and the enforced **file-size rail** (`mcp/src/agents_remember/code_quality/file_size.py` — every file at or above the 1,200-line hard limit fails the run, with the 2,000+ architectural-failure and 4,000+ emergency-cleanup bands reported per finding). Radon CC/MI print their reports and exit 0: they report, they do not gate. Use the individual tool commands below for focused implementation checks.
-CRAP threshold enforcement is part of the default wrapper. Every function with
-a score at or above the configured threshold makes the wrapper exit non-zero; no
-additional threshold-enforcement flag is required. The default is
-`DEFAULT_CRAP_THRESHOLD = 20.0` (`mcp/src/agents_remember/code_quality/crap_calculator.py:83`),
-which both the wrapper's `--threshold` argument (`code_quality/check.py:524`) and the
-calculator's own CLI (`crap_calculator.py:496`) take as their default. This file
-previously said 30; that was never the configured value in this repository.
-
-For implementation work, focused commands are iteration aids, not the final
-test standard. A code implementation is not closeout-ready until the full
-quality wrapper has been run from the source repository root and its result has
-been recorded in the task notes or final response. Do not substitute a
-model-chosen subset of checks for the project-owned suite. If the wrapper
-cannot run, record the exact blocker and run the closest explicit equivalent:
-Ruff, Pyright, Radon CC/MI, pytest with coverage JSON, and CRAP-Calculator.
-Those focused diagnostics do not satisfy or bypass the repository commit gate.
+Every completed lifecycle acceptance run atomically replaces the enclosure's
+`reports/test-results.md` and exports `clean-quality-results.json` as the authoritative result.
+Content-addressed retry proof may be consumed only inside an attested Dagger run. An exact accepted
+tree may reuse its pytest proof; source, configuration, selected-suite, runtime, environment, or
+artifact drift forces the ordinary Dagger selection, and inconclusive coverage deltas fail closed
+to the graph's full pytest selection. `AR_QUALITY_NO_RETRY=1` disables proof reuse inside Dagger.
 
 When reporting implementation results, use
 [`code-quality-report-template.md`](code-quality-report-template.md) as the
@@ -98,42 +83,17 @@ passed" when the tools emitted complexity, coverage, or threshold findings.
 
 ### Commit-Gate Enforcement
 
-Wherever the wrapper runs it runs in full: Ruff, Pyright, the whole pytest
-suite, CRAP, and the file-size detector all fail the run; Radon CC/MI report
-but never gate. CRAP scores at or above the configured threshold fail unless
-the repository intentionally configures another threshold — the default is
-`DEFAULT_CRAP_THRESHOLD = 20.0`, as stated above.
+The local fast and targeted hook tiers run deterministic non-test checks only: generated-copy
+checks, Ruff, formatting, Pyright, dashboard code generation, lint, and typecheck. The manual full
+hook tier refuses and points to Dagger. Pull requests always run the deterministic non-test GitHub
+check; ordinary branch pushes do not launch a duplicate workflow. The tag-only publish workflow
+requires the tagged commit to be reachable from `origin/main`, then builds and publishes without
+rerunning acceptance.
 
-The local hooks are **tiered** (260731-EFA-L1). Both `.githooks/pre-commit` and
-`.githooks/pre-push` are thin wrappers over `.githooks/_gate.sh`, which takes
-the tier as its argument:
-
-- **Local pre-commit — `fast` tier.** Certifies the **staged content** (parked
-  with `git stash push --keep-index --include-untracked` under restore traps)
-  with the generated-copy checks, Ruff, and Pyright. About 20 seconds. It does
-  **not** run the wrapper. The tier is cheap on purpose: `--no-verify` is
-  all-or-nothing, so a pre-commit expensive enough to be worth skipping costs
-  Ruff and Pyright too.
-- **Local pre-push — `full` tier.** Certifies the working tree with the
-  generated-copy checks plus the whole wrapper, and blocks the push.
-- **Workflow closeout** — `worktree_closeout_apply` runs the wrapper before
-  creating a code commit and before any code, memory, ledger, contract, or
-  applied-gate mutation, even when Git hooks are not configured. This applies to
-  **any** repository whose checkout carries the wrapper, not only
-  `agents-remember`; a checkout without it is reported as `wrapper-unavailable`
-  in the closeout payload, which states that the commit was not quality-checked.
-- **CI** — `.github/workflows/quality-checks.yml` runs the wrapper on **every
-  branch push and every pull request** across a Python `3.11 / 3.12 / 3.13`
-  matrix, alongside the `Dashboard frontend rail`. The branch ruleset on `main`
-  requires all four. This is the non-bypassable backstop.
-- **Release** — `.github/workflows/publish-mcp-to-pypi.yml` calls
-  `quality-checks.yml` through `workflow_call` and declares `needs: [quality]`,
-  so a tag pointing at a commit that never reached `main` is re-gated before
-  anything is built or published.
-
-Keep every gate calling the project-owned wrapper, not a hand-picked subset.
-Enabling the local hooks (`./setup-hooks.sh`), the PR-gated landing flow, and
-the release/tag/publish flow live in [`git-workflow.md`](git-workflow.md).
+`worktree_closeout_apply` stages the exact leaf candidate and owns the single targeted Dagger run.
+Leaf integration reuses its certified commit. `worktree_integrate` on a master owns the single full
+Dagger run. The Agents Remember self repository treats removal of its acceptance wrapper as a
+refusal, not `wrapper-unavailable`.
 
 ---
 
@@ -171,7 +131,8 @@ python -m pyright --project . mcp/src/agents_remember      # Type-check package 
 python -m pyright --project . mcp/src/agents_remember/models mcp/tests/test_code_quality_check.py
 ```
 
-Pyright is part of the full quality wrapper and should not be scoped out of that wrapper. If the whole-repo baseline reports inherited errors, record the exact count and representative files, then fix in-scope errors in touched files before closeout.
+Pyright is part of both Dagger acceptance modes and must not be scoped out of them. Deterministic
+host Pyright remains permitted for fast feedback.
 
 ---
 
@@ -199,17 +160,9 @@ For more information on radon usage use the official documentation: [Radon Docum
 
 ### Pytest And Coverage
 
-Pytest runs the existing `unittest` tests and provides better test selection, failure output, fixtures, and coverage integration for new tests.
-
-Common commands:
-
-```text
-python -m pytest mcp/tests -q
-python -m pytest mcp/tests/test_crap_calculator.py -q
-python -m pytest mcp/tests --cov=mcp/src/agents_remember --cov-report=json:coverage.json --cov-report=term
-```
-
-Use focused pytest runs during implementation. Use coverage JSON when CRAP-Calculator needs risk scoring.
+Pytest and Coverage.py execute only inside the nonce-attested Dagger graph. Direct host pytest
+refuses before collection. Leaf closeout derives the targeted selection; master integration runs
+the full selection. Do not hand-pick a host subset for diagnosis or acceptance.
 
 ---
 
@@ -217,30 +170,22 @@ Use focused pytest runs during implementation. Use coverage JSON when CRAP-Calcu
 
 CRAP-Calculator combines Radon function-level cyclomatic complexity with Coverage.py JSON line coverage. It reports function-level CRAP scores and derives a per-file rollup from those function scores.
 
-Recommended flow:
-
-```text
-python -m agents_remember.code_quality.check
-python -m agents_remember.code_quality.check --coverage-json coverage.json
-python -m agents_remember.code_quality.crap_calculator mcp/src/agents_remember --coverage-json coverage.json --project-root . --format json
-```
-
-Use CRAP-Calculator for refactor scouting. It is more useful than raw complexity alone because it highlights complex functions with weak test coverage.
-The standalone calculator may be used for focused diagnosis, but the default
-wrapper is the repository gate: any score at or above 30 fails it.
-The plain wrapper command uses a temporary coverage JSON file. Use
-`--coverage-json coverage.json` only when the JSON artifact should be reused by
-the standalone CRAP-Calculator command.
+The Dagger graph runs CRAP-Calculator against the coverage artifact produced by its own pytest
+selection. The repository threshold is enforced inside both acceptance modes; no host wrapper or
+standalone calculator result can replace that gate. Exported CRAP rows may be inspected for
+refactor scouting after the run.
 
 ---
 
 ### Quality Working Rules
 
 - Run quality tools from the source repository root, not from the coordinator root.
-- Scope checks to touched files or directories first. Use whole-repo checks when the task changes shared behavior, module layout, imports, or public contracts.
-- Use the full quality wrapper before implementation closeout. Focused Ruff,
-  Pyright, Radon, or pytest runs may prove local edits during development, but they do
-  not replace the project-owned full suite for final validation.
+- Use deterministic non-test host checks such as Ruff, formatting, Pyright, Radon, dashboard
+  codegen, lint, and typecheck for implementation feedback. Do not run host test suites or the
+  direct wrapper.
+- Do not start an extra Dagger acceptance run during implementation. Leaf closeout owns targeted
+  acceptance once; master integration owns full acceptance once. A failed boundary is repaired and
+  retried through that same lifecycle operation.
 - Before refactoring complex Python, capture a baseline with Ruff, Pyright, Radon, and the relevant tests. After the change, compare against that baseline.
 - Do not fix unrelated Ruff or Radon findings during a narrow task unless the developer approves the cleanup scope.
 - Before applying `ruff check --fix` or `ruff format`, run the corresponding `--diff` command first and inspect the proposed changes.
@@ -251,8 +196,8 @@ the standalone CRAP-Calculator command.
 - Prefer facade refactors: keep the current entrypoint stable, move the implementation behind it, and prove behavior with focused tests.
 - If a change worsens complexity or maintainability in touched code, call that out explicitly and explain why it is acceptable or what follow-up is needed.
 - Do not add defensive wrappers, fallbacks, or compatibility layers just to satisfy tools. Defensive code needs a concrete reason.
-- Record the full quality wrapper result and any focused Ruff/Radon/test
-  commands in the final answer or task notes when code was changed.
+- Record the lifecycle-owned Dagger result and any deterministic Ruff/Pyright/Radon feedback in the
+  final answer or task notes when code was changed.
 
 ---
 
@@ -268,13 +213,17 @@ the standalone CRAP-Calculator command.
 
 ## Dashboard Checks
 
-Run these from `dashboard/`:
+The host-side deterministic hook and PR check may run these from `dashboard/`:
 
 ```text
 npm run lint         # eslint .
 npm run typecheck    # tsc -b
-npx vitest run
 ```
+
+Vitest, Playwright, coverage, and performance suites are test-capable and run only inside the
+nonce-attested Dagger acceptance graph. Do not invoke `npx vitest`, `npx playwright`, `npm run
+test*`, `npm run e2e`, or `npm run perf:cockpit` from a host seat. Leaf closeout and master
+integration own the accepted Dagger invocations described above.
 
 **Never type-check the dashboard with `tsc --noEmit`.** It exits 0 without checking
 anything. `dashboard/tsconfig.json` is solution-style — `"files": []`, no `include`, and
@@ -296,26 +245,28 @@ This workstation is WSL2 **with WSLg** (`DISPLAY=:0`, Wayland active), a full Li
 Chrome at `/usr/bin/google-chrome`, and Playwright Chromium builds cached under
 `~/.cache/ms-playwright`. Three distinct browser routes exist; they are not interchangeable.
 
-### Route 1 — Playwright (default for agent-driven verification)
+### Route 1 — Playwright (agent-driven inspection, not repository tests)
 
 The agent's own browser. Use for dashboard verification, e2e flows, screenshots, console/network
-inspection — anything where the agent must *drive and observe* a page. The dashboard repo already
-carries Playwright configs (`dashboard/playwright*.config.ts`); the `playwright-cli` skill covers
-ad-hoc driving outside the test suites. Headful runs render through WSLg as a visible window (with
+inspection — anything where the agent must *drive and observe* a page. Repository Playwright test
+configs (`dashboard/playwright*.config.ts`) are Dagger-only; an interactive browser tool does not
+authorize `playwright test` on the host. The `playwright-cli` skill covers ad-hoc driving outside
+those suites. Headful runs render through WSLg as a visible window (with
 the WSL border), so the developer can watch; headless works the same without the window.
 Deterministic, scriptable, available to every spawned CLI seat — no setup required.
 
 Two Playwright frontends are wired into the workspace and split by interaction shape:
 
-- **`playwright-cli` skill** — scripted runs, screenshots, and the dashboard e2e suites. Full
-  Playwright API via Bash; no standing context cost.
+- **`playwright-cli` skill** — ad-hoc scripted browser driving and screenshots. It is not the
+  repository's test executor; the dashboard e2e suites remain Dagger-owned.
 - **Playwright MCP (`@playwright/mcp`)** — long, exploratory sessions with many small
   interactive steps (click → look → click). One persistent browser session across the whole
   conversation, typed tools, accessibility-tree snapshots. Registered for both harnesses via
   `.codex/mcp-playwright.sh` (referenced from `Projects/.mcp.json` for Claude and
   `.codex/config.toml` for Codex); artifacts land in `Projects/.playwright-mcp/`.
 
-Rule: many small interactive steps → MCP; scripted runs and test suites → CLI skill.
+Rule: many small interactive steps → MCP; ad-hoc scripted inspection → CLI skill; repository test
+suites → lifecycle-owned Dagger only.
 
 ### Route 2 — Windows Chrome via WSL interop (show the developer something)
 

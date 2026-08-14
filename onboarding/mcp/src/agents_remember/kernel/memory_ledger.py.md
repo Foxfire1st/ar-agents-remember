@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T20:15+02:00|
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -118,8 +118,8 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing "require_git(contract.memory_worktree". | "existing_mapping = find_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/closeout.py:710-710 |
-| `c-09-git-worktree-manager` integration imports the same helpers and unconditionally prepends the integrated code->memory mapping. | "prepend_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/integrate.py:323-323 |
+| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing "require_git(contract.memory_worktree". | "existing_mapping = find_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/closeout.py:690-690 |
+| `c-09-git-worktree-manager` integration imports the same helpers and unconditionally prepends the integrated code->memory mapping. | "prepend_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/integrate.py:332-332 |
 
 ## Update History
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

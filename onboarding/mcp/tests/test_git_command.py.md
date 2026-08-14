@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_git_command.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated            | 2026-08-14T12:13:26+02:00 |
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -100,7 +100,7 @@ what makes it exercisable on synthetic sources rather than only on the real tree
   `arg is None` and is explicitly **not** proof — the sweep sees the splat, never its contents.
 
 cit:([`SingleRunnerTests`], mcp/tests/test_git_command.py:417-489) is the decay guard built on them. `_package_modules()`
-(cit:([`_package_modules`], mcp/tests/test_git_command.py:483-488))
+(cit:([`_package_modules`], mcp/tests/test_git_command.py:489-494))
 skips `package_data` because those are runtime assets executed outside this process.
 cit:([`test_no_module_spawns_git_with_the_ambient_environment`], mcp/tests/test_git_command.py:490-509) reports any spawn that
 `_spawns_git` and not `_passes_env`; cit:([`test_only_the_kernel_module_defines_a_git_runner`], mcp/tests/test_git_command.py:511-528)
@@ -208,7 +208,7 @@ possible because the four sweep helpers sit at module level
   means deleting that test; leaving it open means any module in that shape owes a direct suite.
 - The sweep matches argv heads named `git` only. A non-git spawn that nevertheless resolves a
   repository through git — currently just `landing.py`'s `gh pr list` — is outside it by design
-  (cit:([`test_a_program_that_merely_starts_with_git_is_not_git`], mcp/tests/test_git_command.py:591-593)) and carries its own assertion
+  (cit:([`test_a_program_that_merely_starts_with_git_is_not_git`], mcp/tests/test_git_command.py:597-599)) and carries its own assertion
   in `test_landing.py`.
 - Timeout bands are asserted per command, not per module. A command called from two kernel modules
   must get one bound cit:([`test_one_command_means_one_bound_across_the_kernel`], mcp/tests/test_git_command.py:693-717).
@@ -244,9 +244,8 @@ the call sites are the ones the consolidation moved onto it.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The runner under test: the eight-name `GIT_REPOSITORY_SELECTOR_ENV` tuple, the timeout constants, `git_environment()`, and `run_git()` with `env=`, `stdin=DEVNULL`, surrogateescape decoding and a per-call `timeout`. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| The conftest strip this suite deliberately defeats: it imports the production selector tuple and pops each name from `os.environ` at import. | "from agents_remember.kernel.git_command import GIT_REPOSITORY_SELECTOR_ENV" | mcp/tests/conftest.py:118-118 |
+| The conftest strip this suite deliberately defeats: it imports the production selector tuple and pops each name from `os.environ` at import. | "from agents_remember.kernel.git_command import GIT_REPOSITORY_SELECTOR_ENV" | mcp/tests/conftest.py:101-101 |
 | `commit_if_dirty` and `head_commit` — the closeout write path driven by the decoy commit test. | `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:126-131 |
-| `_git_common_dir` decides which repository the closeout quality gate certifies, and returns `None` rather than falling through to an inherited selector. | `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:646-653 |
 | The gate's own git wrappers route through the shared runner and convert failure into typed domain errors: `_git` (which owns the conversion for all three callers) and `run_git` raising `DiffScopeError`, and `git_ls_files` raising `ScopeError`. | `DiffScopeError` | mcp/src/agents_remember/code_quality/diff_coverage.py:39-40; mcp/src/agents_remember/code_quality/check.py:35-39; mcp/src/agents_remember/code_quality/scope.py:44-53 |
 | The per-command timeout bands `TimeoutClassTests` asserts: the three metadata-band ref reads plus the local-band `status --porcelain`. | `TimeoutClassTests` | mcp/tests/test_git_command.py:550-660 |
 | The freshness reads classed by what they do — metadata for the two ref lookups, local for the history walk. | `read_branch_freshness` | mcp/src/agents_remember/kernel/git_freshness.py:56-65; mcp/src/agents_remember/kernel/git_freshness.py:98-112 |
@@ -266,7 +265,25 @@ repositories. No sibling repository or external service participates.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## R39 Required Git Probe
+
+The linked-worktree repository probe now uses the shared required Git command boundary. A plain
+directory or failed probe raises instead of returning an optional common-directory value that a
+caller could silently treat as no policy.
+
+## R43 Repository-Identity Refusal
+
+The selector-isolation regression now requires the precise `not a git repository` refusal for a
+plain directory while hostile `GIT_DIR` selectors point at a decoy. This keeps the test bound to
+the repository-identity failure rather than a generic Git-command wrapper message.
+
 ## Update History
+
+- 2026-08-14T12:13:26+02:00 — R43 curator: recorded the precise non-repository refusal asserted by
+  the selector-isolation test. Verification remains closeout-owned.
+
+- 2026-08-14T11:27+02:00 — R39 curator: replaced the removed optional quality-gate Git helper with
+  the shared fail-closed probe. Verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored the shared Git selector import after `conftest.py` simplification; command behavior is unchanged.

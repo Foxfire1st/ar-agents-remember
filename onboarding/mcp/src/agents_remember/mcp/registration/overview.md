@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-13T12:26+02:00                           |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`       |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -135,7 +135,7 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
 | `PUBLIC_TOOLS` — the advertised name list this package must match. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
-| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:539-552 |
+| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:548-561 |
 | What each declaration hands its payload builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 | The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
@@ -168,7 +168,16 @@ exemption attributable exactly to tool declarations and registrar helpers. Publi
 and descriptions stay at the registration boundary while the public tool names, arguments, and
 model-visible authority remain unchanged.
 
+## R39 Registration Route
+
+The integration tool contract now reports leaf acceptance as certified at closeout rather than
+rerunning targeted mode. Master integration remains the sole full acceptance owner and always uses
+the pinned Dagger executor.
+
 ## Update History
+
+- 2026-08-14T11:29+02:00 — R39 curator: reconciled public integration wording with the final
+  altitude policy. Verification remains closeout-owned.
 
 - 2026-08-14T06:25+02:00 — No public route impact: L23's final registrar delta narrows internal
   closeout registration composition and preserves the same task-addressed tool schemas; route-review

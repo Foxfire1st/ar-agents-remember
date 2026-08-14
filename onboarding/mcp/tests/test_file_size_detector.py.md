@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_file_size_detector.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                        |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`                                        |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ The File Size Budget rail suite: bands, exit codes, wrapper wiring, and scope. P
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The detector under test. | "agents_remember.code_quality.file_size" | mcp/src/agents_remember/code_quality/check.py:298-298 |
+| The detector under test. | "agents_remember.code_quality.file_size" | mcp/src/agents_remember/code_quality/check.py:300-300 |
 
 ## Update History
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_diff_coverage.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -102,15 +102,17 @@ uncovered changed lines**.
   for a git that ran and said no). Both halves are asserted, because either one alone can be
   satisfied by a change that breaks the other.
 - The floor is per-diff, not per-file or per-project; it says nothing about total coverage.
-- The floor lives in the full (pre-push) tier and in CI, because it needs a diff base.
+- The floor lives in lifecycle-owned Dagger acceptance, where the closeout or integration
+  operation supplies the exact accepted candidate and diff base. Host hooks and GitHub PR
+  checks intentionally run deterministic non-test checks only.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module under test: base resolution, changed-line collection, and the measurement. | `resolve_base`; `changed_python_lines`; `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:145-173; mcp/src/agents_remember/code_quality/diff_coverage.py:176-197; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
-| The wrapper that runs the floor as a step and exposes its two flags. | `run_diff_coverage`; "--diff-base"; "--diff-floor" | mcp/src/agents_remember/code_quality/check.py:55-55; mcp/src/agents_remember/code_quality/check.py:919-919; mcp/src/agents_remember/code_quality/check.py:928-928 |
-| The tier that carries the floor, and why the fast tier cannot. | "The full tier carries the changed-lines coverage floor"; "The fast tier certifies the index" | .githooks/_gate.sh:199-199; .githooks/_gate.sh:219-219 |
+| The wrapper that runs the floor as a step and exposes its two flags. | `run_diff_coverage`; "--diff-base"; "--diff-floor" | mcp/src/agents_remember/code_quality/check.py:57-57; mcp/src/agents_remember/code_quality/check.py:921-921; mcp/src/agents_remember/code_quality/check.py:930-930 |
+| The lifecycle-owned Dagger executor that carries the accepted candidate and diff base into the quality graph. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:69-126 |
 | The runner `diff_coverage._git` delegates to, and the source of the 300s `GIT_LOCAL_TIMEOUT_SECONDS` bound and the `cwd=` the wrapper-agreement test exercises. | `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:71-71 |
 | The other side of the same seam: `QualityGateGitTests` proves a non-repository and an unrunnable git both reach `DiffScopeError` through `diff_coverage.run_git`, and points `GIT_DIR` at a decoy to prove the gate reads the repository it was handed. | `QualityGateGitTests` | mcp/tests/test_git_command.py:391-453 |
 

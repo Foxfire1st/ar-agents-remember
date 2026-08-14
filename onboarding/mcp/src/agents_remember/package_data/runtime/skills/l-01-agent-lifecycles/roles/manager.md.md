@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -29,8 +29,8 @@ complete canonical tree; package-local edits are drift, not customization.
 
 The synchronized quality altitude uses the pinned Dagger graph for Agents Remember acceptance:
 targeted for leaf/focused work and full exactly once at master integration. Both require the
-task-derived explicit diff base; host pytest/wrapper runs are diagnostics, never acceptance or a
-fallback. A constrained environment alone explicitly opts into `memoryCapBytes`.
+task-derived explicit diff base; host pytest/wrapper runs are refused, never acceptance or a
+fallback. A constrained lifecycle environment alone explicitly opts into `memoryCapBytes`.
 
 ## Conventions
 
@@ -75,7 +75,16 @@ The manager partitions independent review by material ownership route, returns r
 reviewer, and proves complete code plus external-memory lineage immediately before compiling the
 curator brief. A stale candidate is synchronized before curation rather than documented.
 
+## R39 Generic Quality Altitude
+
+The manager resolves each repository executor and evidence contract from its memory layer. Leaf
+closeout accepts once, leaf integration reuses the certified commit, and master integration
+accepts full once. Missing or failed required policy refuses; there is no inferred local fallback.
+
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: removed repository-specific commands from the generic
+  manager role and retained fixed cadence. Verification remains closeout-owned.
 - 2026-08-14T06:32+02:00 — L23 synchronized runtime doctrine: managers partition route review,
   require current task-derived lineage, and pass only stable candidate evidence into curator
   dispatch. Verification remains closeout-owned.
@@ -86,9 +95,8 @@ curator brief. A stale candidate is synchronized before curation rather than doc
   handoff, and fail-before-host dispatch recheck; final provenance remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented manager/leaf lineage admission without agent-held ids; verification remains closeout-owned.
 
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
-  canonical manager quality-altitude rule: full master gates use host-managed
-  RAM/swap by default and only constrained CI opts into a hard cap.
+- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the then-current
+  master-gate resource rule. L23 later moved execution exclusively into Dagger.
 
 - 2026-08-11T14:25+02:00 — Replaced duplicated history/task fragments with the exact synchronized
   manager-artifact contract and current source evidence.

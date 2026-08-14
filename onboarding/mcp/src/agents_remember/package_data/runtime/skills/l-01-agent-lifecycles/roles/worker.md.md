@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
-| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -29,8 +29,8 @@ canonical skills; package-only workflow additions are forbidden drift.
 
 The synchronized quality boundary uses the pinned Dagger graph for Agents Remember acceptance.
 Worker/leaf checks select targeted mode with the explicit leaf diff base; full mode belongs once
-to master integration. Host pytest/wrapper runs remain diagnostics rather than acceptance or a
-fallback, and constrained CI alone explicitly configures a hard cap.
+to master integration. Host pytest/wrapper runs are refused, and a constrained lifecycle
+environment alone explicitly configures a hard cap.
 
 ## Conventions
 
@@ -54,7 +54,16 @@ fallback, and constrained CI alone explicitly configures a hard cap.
 | The canonical source owns this doctrine. | "# Lifecycle — Worker" | skills/l-01-agent-lifecycles/roles/worker.md:1-33 |
 | MCP package data is copied from canonical skills and checked for drift. | "mcp package data"; `sync_target`; `check_targets` | scripts/sync-skills.py:43-47; scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
+## R39 Generic Worker Checks
+
+Workers copy repository-specific acceptance requirements from the resolved workflow, coding
+guidelines, and tools memory; they may not choose a familiar runner. Leaf closeout owns change-set
+acceptance, leaf integration does not rerun it, and full acceptance belongs to master integration.
+
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: replaced repository-specific worker commands with the
+  resolved contract and fixed cadence. Verification remains closeout-owned.
 
 - 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized Dagger-only leaf acceptance,
   required explicit diff base, master-owned full mode, and diagnostic-only host execution.

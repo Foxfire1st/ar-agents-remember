@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_document_structural_identity.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |  `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
+| lastVerifiedCommitDate |  2026-08-14T12:44:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,13 +22,11 @@ below the repository's 1,200-line hard limit.
 
 ## Code Commentary
 
-L23 supplies an enclosure reports root to the Windows quality-environment case while preserving inherited Windows temp-variable behavior.
-
 ### Logic
 
 The suite proves legacy terminal rows resolve to sprint/master/leaf task identities, task topology
-fails closed, structural gates authorize only canonical relations, lifecycle routing preserves the
-same identity, and the quality environment keeps the native-Windows temporary-directory branch.
+fails closed, structural gates authorize only canonical relations, and lifecycle routing preserves
+the same identity.
 
 ### Conventions
 
@@ -60,7 +58,6 @@ No Domain Documentation source is configured for this repository-local structura
 | --- | --- | --- |
 | Migration and topology use canonical task-document identity. | `test_terminal_catalog_migration_maps_every_legacy_identity`; `test_task_document_topology_children_and_refusals` | mcp/tests/test_task_document_structural_identity.py:20-103; mcp/tests/test_task_document_structural_identity.py:161-211 |
 | Structural gates and lifecycles fail closed around the same topology. | `test_structural_gate_authorization_decision_and_listing`; `test_structural_lifecycle_gate_and_context_refusals` | mcp/tests/test_task_document_structural_identity.py:262-353; mcp/tests/test_task_document_structural_identity.py:355-390 |
-| The native-Windows scratch branch remains explicit. | `test_quality_environment_has_a_windows_branch` | mcp/tests/test_task_document_structural_identity.py:491-496 |
 
 ## Cross-Repo References
 
@@ -70,7 +67,16 @@ No cross-repository implementation participates.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## R39 Removed Host-Environment Surface
+
+The obsolete Windows branch test for the deleted host quality-environment builder was removed.
+Structural-identity tests no longer imply that lifecycle acceptance may construct or inherit a
+host test environment.
+
 ## Update History
+
+- 2026-08-14T11:27+02:00 — R39 curator: removed the stale host-environment interpretation.
+  Verification remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

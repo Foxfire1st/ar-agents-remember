@@ -35,11 +35,9 @@ A job changes the checkout via these steps:
 3. **C-09 worktree on that branch — chat & task both** (task adds `task.md`; chat doesn't).
 4. Work in the worktree; **memory parks on the worktree memory branch.**
 5. **Commit gate (human + quality).** Nothing is committed before explicit developer commit
-   approval (`c-12-closeout` worktree preview first). After approval, closeout runs the default
-   strict project wrapper before any code, memory, ledger, contract, or applied-gate mutation.
-   The wrapper enforces Ruff, Pyright, pytest, CRAP (default threshold 20.0), diff coverage, and
-   the **armed file-size detector** (hard limit 1,200 lines, architectural-failure 2,000+,
-   emergency-cleanup 4,000+); Radon CC/MI report rather than gate.
+   approval (`c-12-closeout` worktree preview first). After approval, leaf closeout runs the single
+   targeted Dagger acceptance over the exact staged candidate before any commit. Series/master
+   closeout requires clean already-landed code and runs no acceptance.
 6. **Push gate (human — one question).** After commit approval, a single "push?" approval hands the
    tail to the agent. Merge is **no longer its own gate** — only timing.
 7. Agent owns the tail: **push the branch → `gh pr create` (target `main`) → checks green →
@@ -94,24 +92,27 @@ The full orchestration doctrine lives in
 
 ## Commit and push quality gates
 
-Every repository-owned quality gate runs the same default project wrapper.
-Ruff, Pyright, the full pytest suite, and CRAP all fail the run; every CRAP
-score at or above the configured threshold (30 by default) is mandatory failure.
+Agents Remember acceptance is Dagger-only and has one owner at each lifecycle altitude:
 
-- **Local pre-commit** — `.githooks/pre-commit` runs the wrapper before an
-  ordinary local commit.
-- **Workflow closeout** — `worktree_closeout_apply` runs the wrapper before its
-  code commit and before any code, memory, ledger, contract, or applied-gate
-  mutation, even when local hooks are not configured.
-- **Local pre-push** — `.githooks/pre-push` repeats the same wrapper and blocks
-  the push. **Enable the hooks once per clone** with `./setup-hooks.sh` (which
-  sets `git config core.hooksPath .githooks` after `pip install -e "mcp[dev]"`);
-  `git push --no-verify` bypasses the local push hook intentionally, not CI.
-- **CI** — `.github/workflows/quality-checks.yml` runs on every push and PR to `main` across a
-  Python `3.11 / 3.12 / 3.13` matrix. This is the non-bypassable backstop.
+- **Local pre-commit** — `.githooks/pre-commit` runs deterministic non-test checks against staged
+  content. It does not spend acceptance.
+- **Leaf closeout** — `worktree_closeout_apply` stages the exact candidate and runs Dagger
+  `mode=targeted` exactly once with the recorded leaf base before creating the leaf code commit.
+- **Leaf integration** — lands the certified leaf commit without rerunning acceptance.
+- **Series/master closeout** — requires clean already-landed code and runs no acceptance.
+- **Master integration** — `worktree_integrate` runs Dagger `mode=full` exactly once with the
+  recorded super base before integrating the master into super.
+- **Local pre-push** — `.githooks/pre-push` may repeat deterministic non-test checks and record ref
+  provenance. It never runs acceptance.
+- **Pull request** — `.github/workflows/quality-checks.yml` always runs its deterministic non-test
+  check for the PR. Ordinary branch pushes do not launch a duplicate GitHub workflow.
+- **Tag/publish** — the tag workflow proves the commit landed on `main`, builds, and publishes. It
+  does not rerun acceptance.
 
-Keep every gate calling the project-owned wrapper, not a hand-picked subset. See
-[`tools.md`](tools.md) for the quality wrapper itself.
+Host pytest, Vitest, Playwright, and direct wrapper invocations refuse. There is no host or
+direct-Docker fallback. Missing Dagger attestation, a missing mandatory diff base, removal of the
+self-owned wrapper, or a non-zero Dagger result refuses before commit or integration. See
+[`tools.md`](tools.md) for the exact executor, arguments, evidence, and retry contract.
 
 ---
 
@@ -148,8 +149,9 @@ Use `Release MCP X.Y.Z: <one-line summary>` (version-first), matching existing r
 
 ### End-to-end release flow (PR-gated)
 
-1. On a `feat/`|`fix/` branch in the worktree, bump the four version locations, run the full quality
-   wrapper, and close out the change (code, onboarding, ledger) per `C-12-closeout`.
+1. On a `feat/`|`fix/` branch in the worktree, bump the version locations and close out the change
+   per `C-12-closeout`; the leaf closeout owns the one targeted Dagger run. Do not add a release-only
+   acceptance run.
 2. **Land it on `main` via PR** (the landing flow above) — `main` is PR-gated, so a release reaches
    `main` through the merged PR, not a direct push.
 3. **Tag the merged commit:** push the `mcp-vX.Y.Z` tag pointing at the merge commit on `main`;

@@ -6,8 +6,8 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 
 ## Purpose
 
@@ -175,7 +175,16 @@ contract-scoped combined checklist at `<worktree-enclosure>/reports/curator-memo
 That enclosure-local operational artifact is atomically replaced, combines repairable onboarding
 and quality work with explicitly closeout-owned evidence, and is removed with the enclosure.
 
+## R39 Settings Reference Disposition
+
+The settings reference now names Dagger as the only accepted executor, places optional memory caps
+inside the container wrapper, and removes host systemd/RLIMIT semantics. It also records that leaf
+closeout and master integration are the only acceptance owners.
+
 ## Update History
+
+- 2026-08-14T11:29+02:00 — R39 curator: reconciled the documentation route with the final
+  settings and altitude contract. Verification remains closeout-owned.
 
 - 2026-08-14T06:25+02:00 — L23 final candidate review: corrected quality references to
   Dagger-only acceptance and fail-closed host test startup; removed the stale local-executor and

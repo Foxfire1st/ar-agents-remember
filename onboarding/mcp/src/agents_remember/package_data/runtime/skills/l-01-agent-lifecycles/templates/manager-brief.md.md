@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                                  |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`                                  |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 
 ## Purpose
 
@@ -54,7 +54,7 @@ No sibling repository evidence is needed for this doctrine file.
 The manager brief now assigns Agents Remember acceptance to the pinned Dagger graph. Leaf and
 focused gates select targeted mode; `worktree_integrate` selects full mode once at master
 altitude. Both use the task-derived explicit diff base. Host pytest and direct wrapper commands
-are diagnostics only, never acceptance or an automatic fallback. `memory_quality_check` remains a
+are refused, never acceptance or an automatic fallback. `memory_quality_check` remains a
 per-leaf closeout gate, and omitted required proof refuses the gate.
 
 ## L23 Final Candidate Disposition
@@ -62,7 +62,16 @@ per-leaf closeout gate, and omitted required proof refuses the gate.
 The manager brief makes route partitioning, exact candidate identity, same-reviewer delta checks,
 and the final pre-curator lineage proof explicit deliverables rather than conversational memory.
 
+## R39 Generic Manager Brief Contract
+
+The manager brief requires repository memory to supply executor, environment, arguments, resource
+policy, retry rules, and evidence. It preserves one leaf-closeout acceptance and one
+master-integration full acceptance, with no leaf-integration rerun or fallback.
+
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: made the quality section repository-generic without
+  weakening cadence. Verification remains closeout-owned.
 - 2026-08-14T06:34+02:00 — L23 synchronized runtime template: manager briefs make route
   partitioning, exact candidate review, and pre-curator lineage proof explicit handoff evidence.
 

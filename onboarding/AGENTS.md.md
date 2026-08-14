@@ -6,8 +6,8 @@
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 
 ## Purpose
 
@@ -95,11 +95,12 @@ command and what it does:
 python -m agents_remember.code_quality.check
 ```
 
-The file states that this command **is** the gate — what the pre-push hook, CI, and
-closeout run — and that it takes **no path arguments**, because its scope is
+The file states that this command is the accepting wrapper and takes **no path arguments**,
+because its scope is
 `git ls-files '*.py'` and narrowing what a gate certifies is how a gate stops meaning
-anything. It names four enforcing steps (Ruff lint, `ruff format --check`, Pyright, the
-full pytest suite) followed by mandatory CRAP threshold enforcement.
+anything. The pinned Dagger graph runs it exactly once at leaf closeout in targeted mode and
+exactly once at master integration in full mode. Host hooks and GitHub PR validation are
+deterministic non-test rails and cannot satisfy acceptance.
 
 **Known gap in the source file, not in this card:** the wrapper also enforces the
 changed-lines coverage floor (`diff_coverage.py`, the last and binding step), and this
@@ -207,9 +208,22 @@ delegates sibling-repository work to the installed runtime instructions.
 
 The source instructions now make the pinned Dagger graph the sole acceptance authority. Python,
 Vitest, and Playwright startup requires the graph's matching nonce and in-container attestation;
-direct host execution is diagnostic and cannot satisfy closeout or CI.
+direct host execution is diagnostic and cannot satisfy leaf closeout or master integration.
+
+## R39 Acceptance Cadence
+
+The source instructions now make lifecycle altitude the sole acceptance owner: targeted Dagger
+runs once at leaf closeout and full Dagger runs once at master integration. Leaf integration,
+push, pull request, tag, and publish do not rerun acceptance; pull requests retain deterministic
+non-test checks only. Python, Vitest, Playwright, and the direct wrapper refuse outside the matching
+nonce-attested Dagger graph.
 
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: reconciled the root instructions with the exact-once
+  leaf/master cadence and PR-only non-test validation. Verification remains closeout-owned.
+- 2026-08-14T09:37+02:00 — Reopened L23 cadence: recorded exact targeted-at-leaf-closeout and
+  full-at-master-integration ownership; leaf integration and GitHub PR validation do not rerun it.
 - 2026-08-14T06:30+02:00 — L23 final candidate review: source instructions now make the pinned
   Dagger graph the sole acceptance path and require Python, Vitest, and Playwright to refuse startup
   without its nonce and in-container attestation. Verification remains closeout-owned.

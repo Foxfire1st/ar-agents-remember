@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/seed.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -140,7 +140,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The post-watcher catch-up stage consuming the stashed divergence. | "def _seed_catchup_results(" | mcp/src/agents_remember/providers/provider_setup.py:250-250 |
 | Index-lifecycle tests pin relatable/unrelatable divergence and the proceed/stash/refuse mismatch paths. | "def test_relatable_heads_report_the_changed_files(self) -> None:"; "def test_unrelatable_heads_return_none(self) -> None:"; "def test_relatable_divergence_proceeds_and_stashes_the_delta(self) -> None:"; "def test_unrelatable_heads_still_refuse(self) -> None:" | mcp/tests/test_provider_index_lifecycle.py:62-62; mcp/tests/test_provider_index_lifecycle.py:75-75; mcp/tests/test_provider_index_lifecycle.py:92-92; mcp/tests/test_provider_index_lifecycle.py:121-121 |
 | `run_git`, the one runner both git calls here use: `GIT_REPOSITORY_SELECTOR_ENV` + `git_environment` strip the selectors, and `GIT_LOCAL_TIMEOUT_SECONDS` is the default bound `git_head_or_none` inherits. | "GIT_REPOSITORY_SELECTOR_ENV = ("; "GIT_LOCAL_TIMEOUT_SECONDS = 300"; "def git_environment() -> dict[str" | mcp/src/agents_remember/kernel/git_command.py:34-34; mcp/src/agents_remember/kernel/git_command.py:71-71; mcp/src/agents_remember/kernel/git_command.py:85-85 |
-| `DecoyRepositoryTests` proves a set `GIT_DIR` cannot make a runner call answer from another repository, and `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` stops a private copy from reappearing here. | "class DecoyRepositoryTests(unittest.TestCase):"; "class SingleRunnerTests(unittest.TestCase):"; "def test_only_the_kernel_module_defines_a_git_runner(self) -> None:" | mcp/tests/test_git_command.py:162-162; mcp/tests/test_git_command.py:456-456; mcp/tests/test_git_command.py:511-511 |
+| `DecoyRepositoryTests` proves a set `GIT_DIR` cannot make a runner call answer from another repository, and `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` stops a private copy from reappearing here. | "class DecoyRepositoryTests(unittest.TestCase):"; "class SingleRunnerTests(unittest.TestCase):"; "def test_only_the_kernel_module_defines_a_git_runner(self) -> None:" | mcp/tests/test_git_command.py:162-162; mcp/tests/test_git_command.py:462-462; mcp/tests/test_git_command.py:517-517 |
 
 ## Update History
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

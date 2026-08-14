@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T00:08+02:00               |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -47,22 +47,14 @@ set and proves that explicit path wins. Together the two calls pin both sides of
 boundary—CLI selection first, environment only when the CLI seam is absent—without adding a second
 configuration owner.
 
-### Repository-Gate Parity After The Hook Split (260731-EFA-L1)
+### Repository-Gate Ownership After The Dagger-Only Split
 
-Two tests hold the local gates to the wrapper, and the split between them matters.
-
-`test_repository_gates_use_default_strict_wrapper` scans the files that must literally contain
-`agents_remember.code_quality.check` and must not contain `fail-on-crap-threshold`. That list is
-now `.githooks/_gate.sh` and `.github/workflows/quality-checks.yml` — **not** the two hook files.
-The hooks no longer inline the wrapper command; both `exec` the shared tiered body, and the full
-tier is where the wrapper runs. The fix was to follow the indirection, not to drop the assertion.
-
-`test_git_hooks_delegate_to_the_shared_tiered_gate` closes the hole that indirection would
-otherwise open: `.githooks/pre-commit` must contain `exec "$hook_dir/_gate.sh" fast` and
-`.githooks/pre-push` must contain `exec "$hook_dir/_gate.sh" full`. Together the two tests still
-prove every repository gate reaches the wrapper with no threshold opt-out, while pinning the tier
-each hook is wired to — so a pre-commit silently promoted to the full tier (the cost that trained
-the `--no-verify` habit) or a pre-push silently demoted to the fast tier both fail here.
+The repository contract tests now prove that hooks and GitHub PR validation are deterministic
+non-test rails: neither contains the Python quality wrapper, host pytest, frontend tests, or the
+GitHub Dagger action. Pre-commit delegates to `fast`; pre-push delegates to `targeted`, whose body
+repeats deterministic checks and states that leaf closeout owns targeted Dagger acceptance. The
+manual `full` host tier refuses. The Dagger module remains the only file that invokes the accepting
+Python wrapper.
 
 ### Radon Is A Report, Not A Gate (260731-EFA-L2)
 
@@ -216,13 +208,13 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 | The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths` | mcp/src/agents_remember/code_quality/check.py:320-366; mcp/src/agents_remember/code_quality/scope.py:111-111 |
 | The changed-lines coverage floor the full tier carries, and its own behavioural suite. | "DEFAULT_DIFF_COVERAGE_FLOOR = 100.0"; "Score the changed lines, or report why there is nothing to score."; "def test_a_diff_below_the_floor_fails_the_wrapper(self) -> None:"; "def test_the_floor_runs_inside_the_wrapper_rather_than_beside_it(self) -> None:" | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317; mcp/tests/test_diff_coverage.py:570-585; mcp/tests/test_diff_coverage.py:629-659 |
 | CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | `complexity_blocks`, `calculate_scores` | mcp/src/agents_remember/code_quality/crap_calculator.py:232-239; mcp/src/agents_remember/code_quality/crap_calculator.py:294-305 |
-| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:539-552; pyproject.toml:34-38 |
+| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:548-561; pyproject.toml:34-38 |
 | The complexity-selection and branch-coverage settings this suite reads. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true" | pyproject.toml:17-17; pyproject.toml:67-70 |
 | The pytest configuration this suite reads. | `testpaths` | pyproject.toml:119-119 |
 | An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`, `test_python_coverage_and_test_rails_reach_their_trees` | mcp/tests/test_gate_scope.py:152-173; mcp/tests/test_gate_scope.py:175-194 |
 | The shared tiered hook body scanned by the parity test; the full tier invokes the wrapper. | "dashboard_checks() {" | .githooks/_gate.sh:120-291 |
-| CI defines a workflow for pull requests. | "pull_request" | .github/workflows/quality-checks.yml:3-58 |
-| The targeted configuration regression pins both environment fallback and explicit-argument precedence for the enclosure progress report. | `test_targeted_config_keeps_the_repository_file_size_arm`, "self.assertEqual(explicit_config.progress_report, explicit_progress_report)" | mcp/tests/test_code_quality_check.py:110-163 |
+| CI defines a workflow for pull requests. | "pull_request" | .github/workflows/quality-checks.yml:7-7 |
+| The targeted configuration regression pins both environment fallback and explicit-argument precedence for the enclosure progress report. | `test_targeted_config_keeps_the_repository_file_size_arm`, "self.assertEqual(explicit_config.progress_report, explicit_progress_report)" | mcp/tests/test_code_quality_check.py:76-129 |
 
 ### 260731-EFA-L17 — The Pre-Push Tier Is Targeted
 
@@ -240,7 +232,26 @@ The CLI boundary tests now assert both ordinary and memory-capped runs pass the
 constant short native scratch root to environment sanitization, independently
 of durable progress-report placement.
 
+## R39 Direct-Wrapper And Workflow Proofs
+
+Repository workflow assertions require exactly the pull-request deterministic check and the
+tag-only publish workflow, forbid pytest/wrapper/Dagger acceptance in GitHub Actions, and retain
+Dagger as the sole production acceptance owner. Accepted wrapper tests explicitly patch the guard.
+The missing/mismatched-attestation and native-temp entry-boundary tests moved intact in R42 to
+`test_code_quality_environment_guard.py`, whose sidecar now owns that behavior.
+
 ## Update History
+
+- 2026-08-14T11:48:55+02:00 — R42 curator: recorded the file-size extraction of direct wrapper
+  authorization and native-temp entry tests into `test_code_quality_environment_guard.py`; this
+  card retains suite composition and workflow ownership. Verification remains closeout-owned.
+
+- 2026-08-14T11:27+02:00 — R39 curator: documented before-planning refusal and the
+  PR-non-test/publish-no-rerun workflow invariants. Verification remains closeout-owned.
+
+- 2026-08-14T09:37+02:00 — Reopened L23 cadence: repository-policy assertions now require a
+  pull-request-only non-test workflow, no GitHub/host acceptance runner, and explicit leaf-closeout
+  ownership in the targeted hook.
 - 2026-08-14T06:38+02:00 — L23 final candidate review: wrapper regressions retain exact staged
   scope and short native scratch behavior as the Python rail inside Dagger; direct host execution
   is not acceptance. Verification remains closeout-owned.

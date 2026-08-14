@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-13T12:26+02:00                                       |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                   |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`                   |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -119,12 +119,21 @@ The three destructive tools forward flat:
 | The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:78-86 |
 | `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tools.py:309-316; mcp/src/agents_remember/application/worktree_tools.py:319-328 |
 | The two pre-staging refusals and reset-then-stage Dagger gate described by apply live in the extracted staged-quality owner. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; `gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:20-51; mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129 |
-| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:37-41; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:100-107; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-177 |
+| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:63-65; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:97-104; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:107-169 |
 | The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring_tests_2.py:99-119 |
 | The closeout descriptions are asserted to pin quality-before-commit. | `test_closeout_tool_descriptions_pin_strict_quality_before_mutation` | mcp/tests/test_tools.py:223-237 |
-| The staged-gate behaviour the rewritten descriptions promise. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:576-685 |
+| The staged-gate behaviour the rewritten descriptions promise. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:130-208 |
+
+## R39 Integration Tool Contract
+
+The public integration description states that leaf integration lands the acceptance already
+bound to its closeout commit without rerunning it. Only master integration owns a new acceptance
+run: full mode through the pinned Dagger executor.
 
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: aligned the registered tool description with the
+  leaf-no-rerun/master-full boundary. Verification remains closeout-owned.
 - 2026-08-14T05:26Z — L23 final curator: re-anchored the closeout tool descriptions to the
   extracted staged-quality owner and retained the same Dagger-before-commit promise. Verification
   remains closeout-owned.

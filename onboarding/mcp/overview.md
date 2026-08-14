@@ -9,8 +9,8 @@ Total output lines: 2603
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -36,10 +36,11 @@ parallel executor changes.
 L23 makes the pinned Dagger graph the only Agents Remember acceptance environment. It materializes
 the exact candidate tree and required Git ancestry into a clean Ubuntu image, streams progress,
 and atomically replaces the enclosure's latest reports. Leaf/focused acceptance selects targeted
-mode; master integration selects full mode once. Both require an explicit nonblank diff base, and
+mode exactly once at leaf closeout; leaf integration and series closeout do not rerun it. Master
+integration selects full mode once. Both require an explicit nonblank diff base, and
 the Dagger function exposes source, bundle, base, mode, and cap through generated `Annotated`/`Doc`
-help. Host pytest and direct wrapper execution remain useful diagnostics, but never substitute for
-acceptance and never receive an automatic fallback from a failed Dagger run. The same
+help. Host pytest and direct wrapper execution are refused; deterministic non-test checks remain
+available for host feedback. A failed Dagger run never receives a host fallback. The same
 slice adds durable asynchronous closeout/integration operations whose public address is the task
 contract plus operation kind. Private operation keys, worker PIDs, approval fingerprints, and
 candidate-tree identities remain plane-owned recovery state.
@@ -582,13 +583,12 @@ unguarded worktree copy sat behind `commit`, `merge --ff-only`, `reset --hard`,
 tree, and the count needs both import shapes to come out right: twenty-four take the symbol
 (`from agents_remember.kernel.git_command import ...`) and two take the module
 (`from agents_remember.kernel import git_command`, in `code_quality/check.py` and
-`code_quality/diff_coverage.py`). Three of the twenty-six want `git_environment()` rather than, or
+`code_quality/diff_coverage.py`). Two of the twenty-six want `git_environment()` rather than, or
 as well as, `run_git`: `benchmarks/runner_modules/commands.py` composes its own argv so the runner
 cannot carry it; `worktrees/modules/landing.py::_pr_for` spawns `gh pr list`, which is not git but
 resolves the repository *through* git, so an inherited `GIT_DIR` would list another repository's
-pull requests; and `worktrees/modules/code_quality_gate.py::quality_environment` builds the
-environment it hands the spawned quality wrapper, so the selectors are stripped before that child
-starts rather than relying on every git call inside it to strip them again.
+pull requests. The quality-gate adapter no longer launches a host wrapper or builds a host
+environment; it hands the reconstructed candidate and ancestry bundle to the pinned Dagger graph.
 
 The runner always scrubs the eight selectors, always declares its stdin — `DEVNULL`, or
 `input_text` for the `git patch-id` call in `memory/carryover.py` — and carries three
@@ -806,7 +806,33 @@ curator dispatch, and through closeout/integration preflight, post-quality, and 
 boundaries. The MCP transport remains a thin registration/forwarding layer over those application,
 model, and worktree owners.
 
+## R39 Dagger-Only Enforcement Route
+
+The package now owns a shared nonce/file Dagger environment validator used by pytest collection and
+the direct quality wrapper before planning. The lifecycle adapter has no host executor: Agents
+Remember requires its self-owned wrapper, leaf closeout runs targeted once, leaf integration
+reuses that commit, and master integration runs full once. Series/master closeout records clean
+landed code. Settings expose only Dagger and an optional container-inner cap.
+
+## R42 Recovery And Test Ownership
+
+The finalization proof and typed memory-closeout outcome now live with the other irreversible-cell
+recovery primitives in `worktrees/closeout_recovery.py`; `worktrees/modules/closeout.py` imports
+them and remains the coordinator. Two focused test modules split direct environment authorization
+and exact staged gate scope out of oversized suites without changing the production boundary.
+
 ## Update History
+
+- 2026-08-14T11:48:55+02:00 — R42 curator: recorded recovery-proof ownership and the two focused
+  test extractions. Verification remains closeout-owned.
+
+- 2026-08-14T11:29+02:00 — R39 curator: added the shared environment guard, self-wrapper policy,
+  and final altitude topology to the package route. Verification remains closeout-owned.
+
+- 2026-08-14T09:08+02:00 — No route impact: reopened L23 narrows candidate-bound route-review
+  admission to its already-documented leaf altitude so repeat series/master closeout can restamp
+  the final leaf tip. MCP package ownership and public tool shape are unchanged; verification
+  provenance remains closeout-owned.
 
 - 2026-08-14T06:25+02:00 — L23 final package review: reconciled the package authority map with
   Dagger-only acceptance, per-run suite attestation, exact-candidate recovery, route review, and

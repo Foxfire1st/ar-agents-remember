@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_sync_scripts.py`           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T10:45+02:00                     |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -72,8 +72,8 @@ would elide exactly the filenames the test exists to print.
 
 **The gap this closed, and it was real.** Nothing in CI checked that the ten
 copies were in step. Verified at this revision: no workflow under
-`.github/workflows/` (`quality-checks.yml`, `integration-gated.yml`,
-`publish-mcp-to-pypi.yml`) mentions `sync-skills.py`, `sync-runtime.py` or
+`.github/workflows/` (`quality-checks.yml`, `publish-mcp-to-pypi.yml`) mentions
+`sync-skills.py`, `sync-runtime.py` or
 `.githooks/_gate.sh`; `code_quality/check.py` mentions none of them either; and
 all six pre-existing tests run inside a `tempfile.TemporaryDirectory()` over
 synthetic trees, so a hand-edited `.claude/skills/.../SKILL.md` passed every one
@@ -119,7 +119,7 @@ L85 is the third script, `sync-harness.py`, already enforced by
 | `TARGETS` (4 runtime asset targets) and the matching `repo_relative` / `diff_target`. | `TARGETS`, `repo_relative`, `diff_target` | scripts/sync-runtime.py:44-53; scripts/sync-runtime.py:73-74; scripts/sync-runtime.py:111-123 |
 | The completeness assertion the runtime side has and the skill side does not — an exact `assertEqual` over the runtime target labels. | `test_default_targets_only_write_to_mcp_package_data` | mcp/tests/test_sync_runtime.py:72-84 |
 | The model for this class, including naming the repair command in the failure message. | `test_every_generated_harness_file_matches_its_source` | mcp/tests/test_sync_harness.py:40-51 |
-| The only pre-L4 drift check: the locally installed hook gate calling both scripts with `--check` (installed by `setup-hooks.sh` L36, which sets `core.hooksPath`). | "scripts/sync-skills.py", "scripts/sync-runtime.py" | .githooks/_gate.sh:77-78 |
+| The only pre-L4 drift check: the locally installed hook gate calling both scripts with `--check` (installed by `setup-hooks.sh` L36, which sets `core.hooksPath`). | "scripts/sync-skills.py", "scripts/sync-runtime.py" | .githooks/_gate.sh:79-80 |
 | Why CI reaches these tests: `testpaths` is the single declaration the quality wrapper reads to build its pytest step. | `testpaths` | pyproject.toml:119-119 |
 
 ## Update History

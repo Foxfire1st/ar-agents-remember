@@ -71,6 +71,7 @@
     "mcp/tests/test_cli_discovery.py",
     "mcp/tests/test_code_quality_check.py",
     "mcp/tests/test_code_quality_check_scope.py",
+    "mcp/tests/test_code_quality_environment_guard.py",
     "mcp/tests/test_code_quality_memory_cap.py",
     "mcp/tests/test_code_quality_targeted.py",
     "mcp/tests/test_codex_adapter_thread_demux.py",
@@ -377,6 +378,7 @@
     "mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py",
     "mcp/tests/test_worktree_abandon.py",
     "mcp/tests/test_worktree_and_observer_helpers.py",
+    "mcp/tests/test_worktree_closeout_gate_scope.py",
     "mcp/tests/test_worktree_closeout_quality_gate.py",
     "mcp/tests/test_worktree_closeout_recovery.py",
     "mcp/tests/test_worktree_contract_lifecycle.py",
@@ -395,8 +397,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 373,
-    "fileSidecars": 383,
+    "sourceFilesInScope": 375,
+    "fileSidecars": 385,
     "childRoutes": 0
   },
   "routingTerms": [

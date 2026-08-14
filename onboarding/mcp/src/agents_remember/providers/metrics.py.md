@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/metrics.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -231,7 +231,7 @@ each docker call.
 | --- | --- | --- |
 | The ownership labels every provider container carries (`provider_ownership_labels`). | `provider_ownership_labels` | mcp/src/agents_remember/kernel/primitives/identity.py:123-135 |
 | `run_command` / `docker_command` seams the sampler runs through. | `timeout_command_result` | mcp/src/agents_remember/providers/lifecycle/command_runner.py:58-74 |
-| The serving daemon's lifespan runs the 30s sampling loop into this store. | "async def _metrics_loop(config: McpRuntimeConfig" | mcp/src/agents_remember/serving/_app_lifespan.py:57-57 |
+| The serving daemon's lifespan runs the 30s sampling loop into this store. | "async def _metrics_loop(config: McpRuntimeConfig" | mcp/src/agents_remember/serving/_app_lifespan.py:76-76 |
 | `provider_status_packet` attaches `read_current()` to the status packet. | `provider_status_packet` | mcp/src/agents_remember/providers/status.py:53-87 |
 | Containment tests pin the parsers, the sampler paths (incl. dockerless), and the store's torn-line tolerance. | `MetricsTests` | mcp/tests/test_provider_containment.py:318-450 |
 | The seed catch-up stage records index-state rows through `_record_index_state`. | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
-| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash |  `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
+| lastVerifiedCommitDate |  2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -62,8 +62,8 @@ and runs the leaf change-set-scoped Dagger quality contract before any code, mem
 contract, or applied-gate **commit**. The full Dagger graph is NOT a leaf gate: it runs once per
 master at the master integration gate. Every Agents Remember acceptance run requires the explicit
 task-derived diff base; generated Dagger help is the public argument contract. Host pytest and
-direct wrapper runs are diagnostic only and cannot replace or receive fallback from Dagger
-acceptance. `memory_quality_check` stays a per-leaf closeout gate. The wrapper's CRAP threshold is
+direct wrapper runs are refused and cannot replace or receive fallback from Dagger acceptance.
+`memory_quality_check` stays a per-leaf closeout gate. The wrapper's CRAP threshold is
 mandatory by default: a function scoring at or above the
 configured threshold fails closeout.
 Every completed strict wrapper run also atomically replaces the owning enclosure's
@@ -92,7 +92,7 @@ carryover are complete.
 ### The Gate Stages What It Certifies (260731-EFA-L4)
 
 L4 changed *when* the wrapper runs relative to the index, and the skill body now says so in four
-places: Approval Authority cit:([`## Approval Authority`], mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-122), both memory-order lists cit:([`## External-Memory Order`, `## Internal-Memory Order`], mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:285-365), and Failure
+places: Approval Authority cit:([`## Approval Authority`], mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-122), both memory-order lists cit:([`## External-Memory Order`, `## Internal-Memory Order`], mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:268-348), and Failure
 Conditions cit:([`## Failure Conditions`], mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:324-390).
 
 Every rail of the wrapper reads the **index** — `derive_scope` lists ruff's and pyright's files with
@@ -126,16 +126,14 @@ worded "fails without any *commit*" rather than "without mutation".
   and reaches the ordinary commit step's own `git add -A` exactly as before. The preview reports that
   state as `wrapper-unavailable` rather than passing it off as checked. Neither refusal applies to it.
 
-### Quality Altitude Ladder (260731-EFA-L17)
+### Quality Altitude Ladder (260731-EFA-L17/L23)
 
-The skill body now states the ladder unambiguously (source lines 78-88, 265-268,
-292-295, 331-336, 399-405): leaf-edge checks stay mandatory but are change-set-scoped —
-the pre-push tier and the closeout staged gate run the wrapper with `--targeted` (ruff over
-changed files, pyright over changed files plus the reverse-import closure, pytest over the
-derived test subset, coverage/CRAP over changed production modules, changed-lines floor); the
-full wrapper runs exactly once per master, inside `worktree_integrate` itself, host-managed
-by default; constrained CI may opt into `orchestration.qualityGate.memoryCapBytes`;
-and `memory_quality_check` is carved out — it stays a per-leaf closeout gate. A leaf closeout
+The skill body states one accepting boundary per altitude: leaf closeout runs targeted Dagger
+acceptance exactly once before committing; leaf integration reuses that certified commit without
+rerunning acceptance; clean series/master closeout never creates a code commit or reruns
+acceptance; master integration runs full Dagger acceptance exactly once. Ordinary push hooks and
+pull-request checks remain deterministic non-test rails. Host pytest and direct-wrapper execution
+are refused. `memory_quality_check` stays a per-leaf closeout gate. A leaf closeout
 that tries to skip its required checks (an uncovered changed production module, a failed
 targeted run, or a missing wrapper) is refused loudly, never passed silently.
 
@@ -150,7 +148,7 @@ precede pytest. Only a fresh pytest pass followed by a coverage-derived refusal 
 content-addressed proof; exact retries skip pytest, and concrete selected-test-only deltas remove
 their prior Coverage.py contexts before rerunning just those modules. Source/config/suite/runtime/
 environment/artifact drift runs the ordinary derived suite, an inconclusive delta falls back to
-one full pytest selection, CI is always fresh, and `AR_QUALITY_NO_RETRY=1` forces fresh diagnosis.
+one full pytest selection, and `AR_QUALITY_NO_RETRY=1` forces fresh Dagger-owned diagnosis.
 
 ### Conventions
 
@@ -278,11 +276,11 @@ preconditions — a checkout carrying no wrapper runs no gate and neither refusa
 | Server-Side Gate Enforcement, now explicitly headed **"(parked fallback)"**: run preview/dry-run first, report in chat, raise one `lifecycle_gate(kind="closeout-approval", ask=..., packet=...)`, then `lifecycle_resume` before apply once the developer response is handled; the developer-attributed gate is the security boundary and `closeout-approval` IS the commit gate. The active hand-off is the notify-and-continue `lifecycle_turn_end_notification` above it. | `## Server-Side Gate Enforcement (parked fallback)` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:123-187 |
 | `c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill. | `## Preconditions` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:188-248 |
 | `c-09-git-worktree-manager` skill routes worktree closeout to `c-12-closeout` skill and retains worktree lifecycle, integration, and cleanup ownership. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-328 |
-| Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover. | "Closeout does not mark the task `Completed`" | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:360-360 |
+| Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover. | "Closeout does not mark the task `Completed`" | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:343-343 |
 | The L4 staging contract in Approval Authority: when code would commit **and the checkout carries the wrapper**, closeout resets the index, stages the whole task worktree, and gates exactly that staged content before any commit; a refusal leaves it staged, and `wrapper-unavailable` is the reported state for a checkout with no wrapper. | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-122 |
-| The two staging refusals and why their order is load-bearing: not-a-task-worktree (`--git-dir` vs `--git-common-dir`) and unresolved merge conflicts both run **before** the reset, because `git reset` drops unmerged entries and `MERGE_HEAD` and would silently disarm the conflict check. | `MERGE_HEAD` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:412-412 |
+| The two staging refusals and why their order is load-bearing: not-a-task-worktree (`--git-dir` vs `--git-common-dir`) and unresolved merge conflicts both run **before** the reset, because `git reset` drops unmerged entries and `MERGE_HEAD` and would silently disarm the conflict check. | `MERGE_HEAD` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:390-390 |
 | Both memory-order lists restate step 4 as reset + stage + the leaf targeted contract over staged content before any commit, with the no-wrapper checkout committing as it always has. | `## External-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:249-284; mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:285-323 |
-| The caller-side implementation of that contract: `_gate_staged_code` runs both refusals, then `git reset --mixed --quiet HEAD`, then `git add -A`, then the wrapper — and `requires_strict_code_quality` is what makes the whole step conditional on the wrapper being present. | `## Internal-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:325-365 |
+| The caller-side implementation of that contract: `_gate_staged_code` runs both refusals, then `git reset --mixed --quiet HEAD`, then `git add -A`, then the wrapper — and `requires_strict_code_quality` is what makes the whole step conditional on the wrapper being present. | `## Internal-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:308-348 |
 | `DEFAULT_CRAP_THRESHOLD = 20.0` — the actual value behind every "the configured threshold" sentence in this skill, which names no number itself. | `DEFAULT_CRAP_THRESHOLD` | mcp/src/agents_remember/code_quality/crap_calculator.py:37-37 |
 
 ## Cross-Repo References
@@ -297,7 +295,19 @@ No sibling repository evidence is needed for the skill itself.
 
 Closeout instructions now target the leaf enclosure `series-contract.md`; the root series contract is integration-branch state and is not the path used for leaf code/memory closeout.
 
+## R39 Repository-Resolved Acceptance Doctrine
+
+The packaged closeout skill is generic again: repository memory resolves the concrete executor,
+environment, arguments, resource policy, retry semantics, and evidence. The cadence is one
+change-set acceptance at leaf closeout, no leaf-integration rerun, and one full check at master
+integration. A repository whose policy requires its adapter fails closed when the candidate
+removes it. No seat may infer a runner or add a compatibility fallback.
+
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: replaced embedded Agents Remember commands and thresholds
+  with repository-resolved policy while preserving exact cadence and required-adapter refusal.
+  Verification remains closeout-owned.
 - 2026-08-14T06:32+02:00 — L23 synchronized runtime doctrine: closeout requires exact candidate
   route review, current lineage, Dagger-only quality, and task-addressed durable observation before
   irreversible commits. Verification remains closeout-owned.

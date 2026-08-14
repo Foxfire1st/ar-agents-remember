@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_gate_scope.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -98,7 +98,7 @@ None known for this leaf.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The derivation under test, and the `Step`/`GateScope`/`CheckConfig` types this module builds real commands from. | `derive_scope` | mcp/src/agents_remember/code_quality/check.py:77-78 |
+| The derivation under test, and the `Step`/`GateScope`/`CheckConfig` types this module builds real commands from. | `derive_scope` | mcp/src/agents_remember/code_quality/check.py:79-80 |
 | Complementary wrapper-side tests that scope is derived rather than written down, and that an out-of-package script reaches both rails. | `GateScopeDerivationTests` | mcp/tests/test_code_quality_check_scope.py:22-212 |
 | The frontend rails this module reads: eslint flat configs and tsconfig projects. | `tseslint` | dashboard/eslint.config.js:1-12; dashboard/tsconfig.json:1-8 |
 | The TypeScript rail added for the Pi harness extension so it needed no exemption. | `compilerOptions` | .pi/extensions/tsconfig.json:1-19 |

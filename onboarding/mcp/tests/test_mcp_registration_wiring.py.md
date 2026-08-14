@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_mcp_registration_wiring.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`  |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`  |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -89,7 +89,7 @@ the config only to keep one signature, and these six must be called without it.
 | --- | --- | --- |
 | The tool surface under test: one module per family of `@server.tool()` declarations. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:35-48 |
 | The advertised-surface companion (names, descriptions, response conformance). | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
-| The AST test that keeps the `PLR0913` exemption over `registration/` honest. | `ToolSignatureExemptionTests` | mcp/tests/test_code_quality_check.py:475-551 |
+| The AST test that keeps the `PLR0913` exemption over `registration/` honest. | `ToolSignatureExemptionTests` | mcp/tests/test_code_quality_check.py:512-588 |
 
 ## Update History
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/degradation.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -253,13 +253,13 @@ documentation, so it is cited as a repo-internal reference below rather than her
 | The provider-only detector/response entry point implemented by this module. | "def evaluate_provider_degradation" | mcp/src/agents_remember/providers/degradation.py:280-280 |
 | The central provider metrics store this detector reads (`PROVIDER_METRICS_SCHEMA`, `PROVIDER_INDEX_STATE_SCHEMA`, container/index-state row shapes). | "PROVIDER_METRICS_SCHEMA ="; "PROVIDER_INDEX_STATE_SCHEMA ="; "class ProviderMetricsStore" | mcp/src/agents_remember/providers/metrics.py:62-63; mcp/src/agents_remember/providers/metrics.py:231-231 |
 | The always-legal provider stop path the critical failsafe calls; never gated by provider launch authority (containment R1). | `run_configured_watchers` | mcp/src/agents_remember/providers/watcher_service.py:16-43 |
-| The critical-failsafe wiring supplies the stop action directly from the dashboard loop. | "stop_provider_stacks=partial(" | mcp/src/agents_remember/serving/_app_lifespan.py:68-68 |
+| The critical-failsafe wiring supplies the stop action directly from the dashboard loop. | "stop_provider_stacks=partial(" | mcp/src/agents_remember/serving/_app_lifespan.py:87-87 |
 | The inbox record schema (`system-specialist` in `AgentRole`, `degradation-alert` in `InboxMessageKind`) this module posts against — vocabulary in models/operator_inbox.py since L9. | "degradation-alert" | mcp/src/agents_remember/models/operator_inbox.py:42-42 |
 | The store this module appends/compacts durable inbox rows through. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
 | The hosted-session delivery helper the R2 fix now calls per alert row for parity with `operator_inbox_post_payload`. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
 | The terminal catalog this module reads to resolve running orchestrator/manager sessions by current binding role. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:48-386 |
 | `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). | `ProviderDegradationSettings` | mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py:36-55 |
-| `_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. |"async def _metrics_loop"|mcp/src/agents_remember/serving/_app_lifespan.py:57-57|
+| `_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. |"async def _metrics_loop"|mcp/src/agents_remember/serving/_app_lifespan.py:76-76|
 | Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. | `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`; `test_critical_transition_records_event_inbox_and_failsafe_once`; `test_critical_stop_failure_still_records_event_inbox_and_state` | mcp/tests/test_provider_degradation.py:99-159; mcp/tests/test_provider_degradation.py:239-330; mcp/tests/test_provider_degradation.py:332-363 |
 | `ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol so later additions do not change the claim. | `exclusive_access`; `append_line`; `rewrite_lines`; `read_log_text`; "SCHEMA_VERSION ="; `schema_version_supported`; `StoreOwnership` | mcp/src/agents_remember/controlplane/durable_store.py:46-46; mcp/src/agents_remember/controlplane/durable_store.py:93-133; mcp/src/agents_remember/controlplane/durable_store.py:227-248; mcp/src/agents_remember/controlplane/durable_store.py:391-446; mcp/src/agents_remember/controlplane/durable_store.py:470-474; mcp/src/agents_remember/controlplane/durable_store.py:477-488; mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
 | The sibling provider store put on the same contract in the same change. | "class ProviderMetricsStore" | mcp/src/agents_remember/providers/metrics.py:231-231 |

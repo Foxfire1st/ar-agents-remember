@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:20+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,16 @@ terminal/finalizer truth, not a runtime-addressed model post.
 | The mandatory turn report is the durable builder artifact. | "### 5 — The Turn Report (mandatory, your last act)" | skills/l-01-agent-lifecycles/roles/worker.md:81-90 |
 | Tool authority excludes lifecycle, gates, task state, and memory writes. | "## Tool Surface (positive statement — this is all of it)" | skills/l-01-agent-lifecycles/roles/worker.md:92-105 |
 
+## R39 Generic Worker Doctrine
+
+The canonical worker role requires the brief to carry the repository-resolved acceptance
+environment and evidence. Workers do not select a host runner or compatibility fallback; leaf
+closeout and master integration own the only acceptance runs.
+
 ## Update History
+
+- 2026-08-14T11:29+02:00 — R39 curator: reconciled canonical worker guidance with generic
+  repository-resolved policy. Verification remains closeout-owned.
 
 - 2026-08-11T14:20+02:00 — Rewrote the default body around real-leaf implementation, durable
   evidence, structural escalation, and separate curator ownership.

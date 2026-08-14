@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated            | 2026-08-14T12:13:26+02:00 |
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -322,7 +322,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:671-746 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:491-499; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:576-685 |
+| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:130-208 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:20-20; mcp/src/agents_remember/models/worktree.py:119-119 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:562-671 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
@@ -621,11 +621,11 @@ act.
 This route owns the quality altitude ladder's machinery half. `code_quality_gate.py` gained
 `QualityGatePlan` (mode `targeted`/`full` + optional cap), `GATE_TARGETED`/`GATE_FULL`, the
 `memoryPolicy`/optional `memoryCap` payloads, cap-kill naming (returncode -9 / shell 137), and altitude invocation labels
-(`AR_QUALITY_INVOCATION` = `closeout-staged` / `leaf-integration` / `master-integration`).
+(`AR_QUALITY_INVOCATION` = `closeout-staged` / `master-integration`).
 `closeout.py` passes the leaf targeted plan at both call sites and through `_gate_staged_code`;
-`memory_quality_check` stays a per-leaf closeout gate. `integrate.py` runs the gate inside the
-integration step itself before any merge: leaf contracts certify their change set (targeted),
-series/master contracts run the full wrapper once with host-managed RAM/swap by default;
+`memory_quality_check` stays a per-leaf closeout gate. Leaf integration lands the exact
+closeout-certified commit without rerunning acceptance. `integrate.py` runs a gate only for
+series/master contracts: the full wrapper once with host-managed RAM/swap by default;
 an optional explicit cap is read from `load_agentic_settings(...).quality_gate.memory_cap_bytes`. A refusal returns
 `blocked-quality-gate` and nothing merges.
 
@@ -654,12 +654,57 @@ movement yields a retry without ref movement. Supporting cohesion changes route 
 report promotion through the atomic-replace primitive and isolate strict-plan and closeout-result
 construction without changing their enforcement authority.
 
+Closeout separately pins the durable operation's full code candidate across quality at every
+altitude. The final reversible check recomputes that tree before approval claim; leaf closeout also
+revalidates its independent route-review record, while series/master closeout bypasses the
+inapplicable terminal-leaf evidence and targeted acceptance. Series/master closeout also requires
+a clean code checkout and records only its already-landed HEAD; it cannot create master code.
+
 Repository linkage within that proof follows Git's resolved absolute common directory. Parent and
 leaf contracts may address sibling linked worktrees of the same repository; distinct checkout
 paths do not create a false repository mismatch, while missing or unresolvable Git identity still
 fails closed.
 
+## R39 Lifecycle Acceptance Route
+
+Closeout and integration now split acceptance without duplication: a leaf is targeted-certified
+once during closeout and lands without a rerun; a master runs full once during integration.
+Series/master closeout requires clean landed code and runs no gate. The shared adapter refuses
+host execution, applies an explicit self-wrapper-required policy to Agents Remember, and
+revalidates the accepted candidate after long quality work before approval or merge.
+
+## R42 Recovery Ownership
+
+The route still coordinates closeout, but it no longer defines the typed memory outcome or proves
+already-committed recovery cells itself. Both moved to sibling owner
+`worktrees/closeout_recovery.py`; the coordinator imports them before amending the contract. The
+exact staged-scope regression also moved to its own test module to satisfy the file-size rail.
+
+## R43 Fail-Closed Repair
+
+The closeout coordinator now narrows candidate-tree typing only after mandatory admission, and the
+quality adapter consistently says `self-owned wrapper` while refusing non-Dagger executors in both
+command and memory-policy builders. Self-repository enforcement and consumer opt-in remain distinct.
+
 ## Update History
+
+- 2026-08-14T12:13:26+02:00 — R43 curator: recorded candidate typing and builder-level Dagger
+  refusal repairs. Verification remains closeout-owned.
+
+- 2026-08-14T11:48:55+02:00 — R42 curator: recorded the recovery-proof owner move and focused
+  staged-scope test extraction. Verification remains closeout-owned.
+
+- 2026-08-14T11:29+02:00 — R39 curator: reconciled the route with leaf reuse, master-only full
+  acceptance, clean series closeout, and self-wrapper refusal. Verification remains closeout-owned.
+
+- 2026-08-14T09:37+02:00 — Reopened L23 acceptance ownership: leaf closeout is the single targeted
+  owner, leaf integration performs no rerun, clean series closeout performs no acceptance, and
+  master integration retains the single full run. Verification remains closeout-owned.
+
+- 2026-08-14T09:08+02:00 — Reopened L23 repair: recorded all-altitude candidate-tree revalidation
+  after quality and the separate leaf-only route-review arm. Series closeout no longer needs a
+  terminal leaf id and still refuses candidate drift before irreversible work. Verification
+  remains closeout-owned.
 
 - 2026-08-14T06:25+02:00 — L23 final route review: removed the stale local-executor description and
   documented Dagger-only exact-candidate quality, extracted staging/result owners, failure-atomic
@@ -792,13 +837,10 @@ fails closed.
   **Moved:** `code_quality_gate.py::_git_common_dir` L168 → **L176** and its `run_git` call L171 →
   **L179** (`quality_environment` gained a docstring above them); `landing.py::_pr_for` was cited at
   L104, which is inside the `gh` argv rather than at the definition — now **L93**. **Two new
-  route-visible facts:** `quality_environment`
-  (cit:([`quality_environment`], mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:612-643))
-  now builds from `git_environment()`
-  (cit:(["def git_environment() -> dict[str"], mcp/src/agents_remember/kernel/git_command.py:85-85))
-  instead of `dict(os.environ)`, so the spawned quality wrapper no longer inherits the eight
-  repository selectors — the gate decides which repository gets certified and must not depend on a
-  child process behaving; and `_pr_for`'s `gh pr list` spawn now passes `env=git_environment()`
+  route-visible facts:** the then-current `quality_environment` built from `git_environment()`
+  instead of `dict(os.environ)`. L23 later removed that host-wrapper environment path entirely;
+  acceptance now reconstructs the candidate inside Dagger. `_pr_for`'s `gh pr list` spawn still
+  passes `env=git_environment()`
   (cit:([`_pr_for`], mcp/src/agents_remember/worktrees/modules/landing.py:93-150)), because `gh` resolves the repository through git and would otherwise list another
   repository's pull requests under this worktree's branch name. Corrected the import roll-call,
   which named six modules: all nine git-touching modules in this route import from the kernel runner

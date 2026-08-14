@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-08T02:00+02:00                                            |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                                        |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`                                        |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -65,7 +65,16 @@ family key is refused by `_refuse_null_families` before this parser runs.
 The orchestration quality section projects Dagger-only executor policy through strict settings
 models. Unknown or legacy executor values fail validation instead of activating compatibility code.
 
+## R39 Dagger-Only Settings Refusal
+
+The parser accepts only the Dagger executor and describes every other value as forbidden host test
+execution, not a lower-authority diagnostic option. The optional cap is a container resource
+policy.
+
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: recorded the host-test refusal and container-owned cap
+  semantics. Verification remains closeout-owned.
 - 2026-08-14T06:32+02:00 — L23 final candidate review: orchestration quality settings project the
   Dagger-only execution contract and exact policy fields without adding fallback selection.
   Verification remains closeout-owned.

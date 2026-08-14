@@ -6,8 +6,8 @@
 | path | skills/l-01-agent-lifecycles/roles/orchestrator.md |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `b537abe20cf2498ef38e86e29ca586b5eec38466`|
-| lastVerifiedCommitDate |  2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash |  `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
+| lastVerifiedCommitDate |  2026-08-14T12:44:51+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -28,6 +28,10 @@ present; the opt-out restores landed behavior for those three subordinate roles.
 altitude paragraph also makes cheap-first ordering and content-addressed retry a pipeline contract:
 exact reuse or selected-test-only delta is automatic, ambiguous deltas run fresh, conservative
 delta coverage falls back to one full selection, and CI never reuses local proof.
+
+The current altitude contract is stricter than that historical retry description: targeted Dagger
+runs exactly once when each leaf closes, leaf integration reruns nothing, and full Dagger runs once
+when the master integrates into super. GitHub PR validation is a separate non-test check.
 
 ### Logic
 
@@ -55,8 +59,19 @@ The orchestrator's idle-safety line now says silence is supervised by the agent-
 and the state-signal relay; the escalation ladder is no longer part of the supervision story.
 Ending a turn with nothing pending remains correct.
 
+## R39 Generic Orchestrator Doctrine
+
+The canonical orchestrator role resolves quality mechanics from the active repository memory and
+keeps acceptance at leaf closeout and master integration only. Repository-specific Dagger/retry
+instructions no longer leak into generic orchestration.
+
 ## Update History
 
+- 2026-08-14T11:29+02:00 — R39 curator: reconciled canonical orchestrator guidance with generic
+  repository-resolved policy. Verification remains closeout-owned.
+
+- 2026-08-14T09:37+02:00 — Reopened L23 cadence: recorded the exact leaf-closeout/master-integration
+  acceptance owners and the pull-request-only non-test GitHub boundary.
 - 2026-08-10T07:30+02:00 — 260805-ARG-L1: recorded exact-leaf subordinate completion cleanup and
   the cheap-first/content-addressed quality retry doctrine. Verification metadata remains blank
   until closeout stamps the code commit.
