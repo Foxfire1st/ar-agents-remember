@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-14T12:31:43+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-14T14:03:04+02:00 |
+| lastVerifiedCommitHash | `1cb69766bf7e023fb3d7021107da78dc5e53e994`|
+| lastVerifiedCommitDate | 2026-08-14T14:12:59+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1100,6 +1100,11 @@ cancellation and the committed sample. This is deterministic shutdown-race cover
 fallback or a second metrics owner.
 
 ## Update History
+
+- 2026-08-14T14:03:04+02:00 — No route impact: R46 removes only an intentionally untaken local
+  branch from the existing metrics-shutdown regression by expressing the same timeout assertion
+  through `self.assertTrue`. Production, timeout behavior, test authority, and route ownership are
+  unchanged; verification remains pinned to the last committed source until closeout.
 
 - 2026-08-14T12:31:43+02:00 — R44 curator: recorded the in-flight metrics-write shutdown race and
   its deterministic worker drain. Verification remains closeout-owned.
