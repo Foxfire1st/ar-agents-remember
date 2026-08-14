@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ agent or process replacement; callers never supply the private operation key or 
 `application/` owns operation-level MCP composition. Application entry points translate
 trusted MCP runtime config plus typed tool arguments into package service calls
 and JSON-compatible payload dictionaries. Domain placement follows what a tool
-operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_doc_tools.py:867-884) sits beside the task_doc application entry point because it
+operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_doc_tools.py:931-952) sits beside the task_doc application entry point because it
 reopens a task, while worktree_tools keeps only genuine worktree operations (its
 abandon now also ends the ambient lifecycle it anchors).
 
@@ -257,6 +257,10 @@ of retyping them, and ambient attach attribution occurs only after a real
 attachment, keeping blocked lineage out of successful lifecycle history.
 
 ## Update History
+- 2026-08-14T06:25+02:00 — L23 final candidate review: task/worktree entry points now enforce
+  candidate-bound route review and transitive source lineage at admission and exit while the
+  detached lifecycle worker remains the sole long-operation application composition root.
+  Verification provenance remains closeout-owned.
 - 2026-08-13T08:47+02:00 — L23 integration-gate repair: routed startup/runtime-install/skill-install through the new cohesive `application/runtime/` child overview and preserved direct domain imports instead of a facade. Verification metadata remains closeout-owned.
 
 - 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: documented the detached lifecycle-operation declaration before service/config loading and its deliberate non-daemon boundary. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.

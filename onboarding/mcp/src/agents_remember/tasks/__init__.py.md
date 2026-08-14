@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -39,13 +39,15 @@ the `DocKind`/`DocStatus`/`StepStatus` Literals, `TASK_DOCUMENT_SCHEMA`, and the
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument) -> str:"; "def write_task_docs(task_root: Path" | mcp/src/agents_remember/tasks/document.py:135-135; mcp/src/agents_remember/tasks/render.py:28-28; mcp/src/agents_remember/tasks/store.py:40-40 |
+| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument) -> str:"; "def write_task_docs(task_root: Path" | mcp/src/agents_remember/tasks/document.py:182-182; mcp/src/agents_remember/tasks/render.py:29-29; mcp/src/agents_remember/tasks/store.py:40-40 |
 
 ## Series-Contract Notes
 
 The package facade exports `TaskEnclosureRef` so task-document callers can construct `enclosures[]` references without importing the model internals directly.
 
 ## Update History
+- 2026-08-14T06:34+02:00 — L23 final candidate review: task exports expose the canonical document
+  and reopen-planning helpers used by lineage/start admission; no second task identity is added.
 
 - 2026-08-04T18:31+02:00 — 260731-EFA-L6 S18-B14 curator: re-derived 2 stale citation ranges (`class TaskDocument` document.py:141, `def render_markdown` render.py:28); scoped citation recheck is green. Verification metadata remains pinned until closeout.
 

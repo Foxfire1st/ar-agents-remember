@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.filesystem import *" | mcp/src/agents_remember/benchmarks/runner.py:18-18 |
 | The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support_tests_1.py:1068-1081 |
+| Benchmark behavior is covered through the existing worktree/tool test slices. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support_tests_1.py:1084-1097 |
 
 ## Cross-Repo References
 

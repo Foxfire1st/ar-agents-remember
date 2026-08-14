@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_quality_gate_runner.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ No Domain Documentation source is configured for this repository-local runner su
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The runner suite covers preview, execution, cap, report, interpreter, and failure contracts. | `CodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:19-486 |
-| Stable helpers remain in the closeout mutation suite. | `_checkout_with_wrapper`; `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:38-42; mcp/tests/test_worktree_closeout_quality_gate.py:45-52 |
+| Stable helpers remain in the closeout mutation suite. | `_checkout_with_wrapper`; `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:49-53; mcp/tests/test_worktree_closeout_quality_gate.py:56-62 |
 
 ## Cross-Repo References
 
@@ -75,6 +75,9 @@ directory and asserts every subprocess temp environment points at the short
 native `QUALITY_TEMP_ROOT`. This pins the durable-report/scratch separation.
 
 ## Update History
+- 2026-08-14T06:40+02:00 — L23 final candidate review: quality-runner tests require Dagger-only
+  execution, explicit mode/diff base, exact candidate materialization, fail-closed status, and no
+  host or direct-Docker compatibility path.
 - 2026-08-12T20:10+02:00 — L23 curator: documented short native temp-root propagation through the quality runner; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

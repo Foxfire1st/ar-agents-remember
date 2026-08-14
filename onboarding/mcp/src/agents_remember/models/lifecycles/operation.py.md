@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T08:40+02:00 |
-| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,16 @@ No cross-repository vocabulary is defined here.
 | --- | --- | --- |
 | Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:45-123 |
 
+## L23 Final Candidate Disposition
+
+Validated lifecycle-operation records carry accepted candidate identity and the monotonic recovery
+commit tuple needed after post-claim crashes. Public projections derive bounded phase/report facts
+from that record without exposing the private operation key or worker lease.
+
 ## Update History
+- 2026-08-14T06:32+02:00 — L23 final candidate review: operation records carry exact candidate and
+  recovery-commit evidence for validated monotonic reconciliation while public projections remain
+  free of operation ids and worker PIDs. Verification remains closeout-owned.
 
 - 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved the preserved asynchronous-operation vocabulary card into the cohesive `models/lifecycles/` package and rebound its governing overview and citations; behavior is unchanged. Verification metadata remains closeout-owned.
 

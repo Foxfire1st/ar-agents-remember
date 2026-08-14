@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
-| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 
 ## Purpose
 
@@ -79,7 +79,16 @@ curator brief as evidence, and structural dispatch independently re-proves it be
 curator host. This boundary prevents stale onboarding; the later closeout/integration checks remain
 separate because they guard ancestry movement during their own long quality phases.
 
+## L23 Final Candidate Route Disposition
+
+Manager, reviewer, curator, and orchestrator roles share one handoff: independent per-route review
+is bound to the exact candidate, current lineage is proven before curator creation, and acceptance
+uses targeted leaf or full master Dagger authority without model-carried operation ids.
+
 ## Update History
+- 2026-08-14T06:25+02:00 — L23 final candidate review: manager, reviewer, curator, and orchestrator
+  roles preserve one candidate-bound route-review handoff, current-lineage admission, and Dagger-only
+  acceptance without model-carried operation or commit ids. Verification remains closeout-owned.
 - 2026-08-13T14:32+02:00 — L23 final roles-route review: synchronized Dagger-only acceptance,
   targeted/full altitude, mandatory explicit diff base, and diagnostic-only host execution.
   Verification remains closeout-owned.

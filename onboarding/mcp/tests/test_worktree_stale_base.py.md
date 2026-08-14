@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_stale_base.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:30+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                         |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -57,7 +57,7 @@ with a `SimpleNamespace` context because it only reads
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The preflight and template under test. | `_stale_base_preflight`, `prepare_memory_for_start` | mcp/src/agents_remember/worktrees/modules/start.py:325-366; mcp/src/agents_remember/worktrees/modules/start.py:909-947 |
+| The preflight and template under test. | `_stale_base_preflight`, `prepare_memory_for_start` | mcp/src/agents_remember/worktrees/modules/start.py:310-351; mcp/src/agents_remember/worktrees/modules/start.py:928-966 |
 | Freshness states come from the shared kernel (unit-tested separately). | `GitFreshnessTests` | mcp/tests/test_git_freshness.py:20-104 |
 
 ## Update History

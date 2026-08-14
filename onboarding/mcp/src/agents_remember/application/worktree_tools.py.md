@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -169,7 +169,7 @@ the documented setup cap now actually governs the worktree flow.
 | Worktree response models define the public tool envelopes and context summary. | `WorktreeSummary`, `WorktreeCommandResponse` | mcp/src/agents_remember/models/worktree.py:96-136; mcp/src/agents_remember/models/worktree.py:139-160 |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo`, `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:16-24; mcp/src/agents_remember/kernel/authority.py:27-35 |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:28-94 |
-| The on-disk provider authority reload consumed before provider setup (containment R1). | "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:", "def worktree_start_tool(" | mcp/src/agents_remember/application/worktree_tools.py:92-92; mcp/src/agents_remember/kernel/primitives/runtime_config.py:183-183 |
+| The on-disk provider authority reload consumed before provider setup (containment R1). | "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:", "def worktree_start_tool(" | mcp/src/agents_remember/application/worktree_tools.py:93-93; mcp/src/agents_remember/kernel/primitives/runtime_config.py:183-183 |
 | Containment tests pin the worktree-start veto and the armed-path live-map launch. | "test_stale_armed_snapshot_is_vetoed_by_disk", "test_disk_armed_snapshot_launches_with_live_map" | mcp/tests/test_provider_containment.py:125-177 |
 | `land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls. | `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32 |
 | Manual retire eligibility/role policy remains owned by `retire_policy.py`. | `check_retire_authority` | mcp/src/agents_remember/serving/retire_policy.py:34-65 |
@@ -194,6 +194,9 @@ The worktree application facade now imports lifecycle operation DTOs and policy 
 into closeout/integration/finalization remain unchanged by that ownership move.
 
 ## Update History
+- 2026-08-14T06:30+02:00 — L23 final candidate review: worktree application calls start or observe
+  durable closeout/integration by canonical task identity and preserve candidate-bound route-review,
+  lineage, and landing boundaries. Verification remains closeout-owned.
 
 - 2026-08-13T09:05+02:00 — L23 curator: reviewed and recorded the lifecycle-operation package import
   move; application behavior is unchanged and final provenance remains closeout-owned.

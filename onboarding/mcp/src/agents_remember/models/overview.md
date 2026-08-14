@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -374,6 +374,9 @@ and dashboard consumers import or mirror this strict shape instead of accepting
 free strings or agent-supplied identity.
 
 ## Update History
+- 2026-08-14T06:25+02:00 — No route impact: L23 extends the existing lifecycle-operation model
+  family with exact candidate/recovery evidence; strict-model ownership and public/private identity
+  boundaries remain in the lifecycles child route. Verification remains closeout-owned.
 - 2026-08-13T08:47+02:00 — L23 integration-gate repair: routed lifecycle response, finalizer, and asynchronous-operation models through the cohesive `models/lifecycles/` child overview while preserving one vocabulary owner per wire set. Verification metadata remains closeout-owned.
 
 - 2026-08-12T20:20+02:00 — L23 curator: documented strict source-lineage model ownership; verification remains closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/git.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-29T15:30+02:00                     |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -105,11 +105,14 @@ No external Domain Documentation source is configured for this memory repo.
 | The one `run_git` every helper here calls: the `GIT_DIR`-family scrub, the DEVNULL stdin guard, and the three timeout classes. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:94-145 |
 | Memory baseline code reuses these facade-exported Git helpers. | "def run_drift" | mcp/src/agents_remember/memory/baseline.py:74-74 |
 | The L3 serving change-set API consuming `changed_files_with_counts` + `commit_text_or_none`. | "def task_changeset" | mcp/src/agents_remember/serving/changeset.py:80-80 |
-| Worktree tests cover changed-path behavior for long filesystem paths. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support_tests_1.py:1068-1081 |
-| Closeout runs the configured hook before its strict wrapper and commits the certified index afterwards. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:774-869 |
+| Worktree tests cover changed-path behavior for long filesystem paths. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support_tests_1.py:1084-1097 |
+| The extracted closeout staging owner runs the configured hook before its strict Dagger wrapper and later commits the certified index through this Git facade. | `gate_staged_code`; `commit_verified_staged` | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129; mcp/src/agents_remember/worktrees/modules/git.py:145-155 |
 | The hook-failure regression proves the raw runner retains a surrogateescaped byte while the facade exception is UTF-8 JSON serializable. | `test_failed_hook_diagnostic_with_invalid_bytes_is_json_serializable` | mcp/tests/test_git_command.py:337-354 |
 
 ## Update History
+- 2026-08-14T05:26Z — L23 final curator: re-anchored the configured-hook/certified-index contract
+  after staged quality moved to its cohesive module; Git ownership is unchanged. Verification
+  remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T03:31+02:00 — 260731-EFA-L22 closeout repair: preserved surrogateescape inside the

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/SessionRail.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:45+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ inspectable without being rendered as the owner or parent of a live bound sprint
   dots' `data-state`/color/pulse attributes (two surfaces, not one function twice).
 - **Zero state (R9)** — the empty rail explains itself; waiting(reason) renders steady
   muted-amber when supplied.
-- **L6 block (R5/R7, 6 cases)** — cit:(["End terminates the seat IMMEDIATELY — no armed inline confirm (F-g ruling)"], dashboard/src/panels/session-cockpit/SessionRail.test.tsx:726-758): End terminates the selected seat immediately; there is no armed inline-confirm state. The
+- **L6 block (R5/R7, 6 cases)** — cit:(["End terminates the seat IMMEDIATELY — no armed inline confirm (F-g ruling)"], dashboard/src/panels/session-cockpit/SessionRail.test.tsx:686-718): End terminates the selected seat immediately; there is no armed inline-confirm state. The
   selected session identity is carried by the control title, and the first click posts the exact
   terminate URL. A FAILED
   terminate POST (502 + body) renders `role="alert"` with the VERBATIM server words and retry
@@ -122,6 +122,9 @@ The rail suite now pins immediate single-seat termination, retained bulk confirm
 recovery, and the absence of the duplicate bus-footer presentation.
 
 ## Update History
+- 2026-08-14T06:30+02:00 — L23 final candidate review: rail grouping tests now consume the shared
+  fleet task-document fixture, keeping sprint/master/leaf assertions aligned with the scenario
+  catalog. Verification remains closeout-owned.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: added rendering coverage for concurrent sprint command
   groups and the isolated legacy bucket. Verification metadata remains pinned until closeout

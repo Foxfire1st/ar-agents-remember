@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_next_step.py`              |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:05+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -191,7 +191,7 @@ the `lifecycle_start` payload it asserts the rundown on.
 | The `EventStore` backing the ambient under test. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | `WorktreeContract` + `write_contract`/`load_contract` used by the gate + edge cases. | `WorktreeContract`; `write_contract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285; mcp/src/agents_remember/worktrees/worktree_contract.py:436-469; mcp/src/agents_remember/worktrees/worktree_contract.py:472-475 |
 | The `NextStep` shape the assertions read, and the `nextStep` / `supervisorBanner` fields now declared on both response envelopes. | `NextStep`; `ResponseModel`; `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:22-38; mcp/src/agents_remember/models/base.py:41-60; mcp/src/agents_remember/models/base.py:69-84 |
-| The `lifecycle_guidance` state machine the linear half delegates to. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:200-210 |
+| The `lifecycle_guidance` state machine the linear half delegates to. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:216-226 |
 | `count_response_tokens` / `finalize_payload_tokens` — the counter the fixed-point assertions call and the one the choke point runs over the dump. | `count_response_tokens`; `finalize_payload_tokens` | mcp/src/agents_remember/models/tokens.py:208-215; mcp/src/agents_remember/models/tokens.py:232-249 |
 | `agent_notifier_staleness_banner` — the probe the degrade test patches, and the store that makes it fire. | `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:135-151 |
 | `PingResponse`, the model the banner-carrying payload is validated against. | `PingResponse` | mcp/src/agents_remember/models/core.py:14-17 |

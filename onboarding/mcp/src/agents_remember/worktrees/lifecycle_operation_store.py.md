@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/lifecycle_operation_store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ No external Domain Documentation source is configured for this store.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Record and report locations are deterministic per enclosure and operation kind. | `operation_record_path`; `operation_report_path` | mcp/src/agents_remember/worktrees/lifecycle_operation_store.py:37-43 |
+| Record and report locations are deterministic per enclosure and operation kind. | `operation_record_path`; `operation_report_path` | mcp/src/agents_remember/worktrees/lifecycle_operation_store.py:53-54; mcp/src/agents_remember/worktrees/lifecycle_operation_store.py:57-58 |
 | Store mutation is locked, revalidated, transition-checked, and atomically published. | `LifecycleOperationStore` | mcp/src/agents_remember/worktrees/lifecycle_operation_store.py:45-162 |
 
 ## Cross-Repo References
@@ -67,6 +67,9 @@ Durable operation records and vocabularies now come from `models.lifecycles.oper
 ownership, validation, atomic persistence, and compare-and-swap behavior are unchanged.
 
 ## Update History
+- 2026-08-14T06:36+02:00 — L23 final candidate review: validated store transitions persist exact
+  candidate and recovery evidence monotonically, including restart-safe post-claim reconciliation.
+  Verification remains closeout-owned.
 
 - 2026-08-13T09:05+02:00 — L23 curator: recorded the lifecycle-operation model import move and
   confirmed the durable-store contract is unchanged; final provenance remains closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-13T12:53+02:00               |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -232,7 +232,7 @@ themselves.
 | --- | --- | --- |
 | The six contract cells (declared in models/worktree.py), typed amendment, tolerant read, and refusing write. | "WorkflowKind = Literal["; "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract"; "def load_contract"; "def write_contract"; "VALID_MEMORY_MODES: frozenset[MemoryMode]" | mcp/src/agents_remember/models/worktree.py:14-14; mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:71-71; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199; mcp/src/agents_remember/worktrees/worktree_contract.py:436-436; mcp/src/agents_remember/worktrees/worktree_contract.py:472-472 |
 | The wire model every contract and guidance value must validate at. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:96-136 |
-| Guidance state machines use the grouped wire-alias import and keep separate lifecycle, next-step, and recovery builders and recovery vocabulary. | "from agents_remember.models.worktree import ("; `RecoveryOperation`; `RecoveryTool`; `lifecycle_guidance`; `next_guidance`; `recovery_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14; mcp/src/agents_remember/worktrees/modules/guidance.py:37-45; mcp/src/agents_remember/worktrees/modules/guidance.py:120-150; mcp/src/agents_remember/worktrees/modules/guidance.py:207-217 |
+| Guidance state machines use the grouped wire-alias import and keep separate lifecycle, next-step, and recovery builders and recovery vocabulary. | "from agents_remember.models.worktree import ("; `RecoveryOperation`; `RecoveryTool`; `lifecycle_guidance`; `next_guidance`; `recovery_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14; mcp/src/agents_remember/worktrees/modules/guidance.py:37-54; mcp/src/agents_remember/worktrees/modules/guidance.py:129-160; mcp/src/agents_remember/worktrees/modules/guidance.py:216-226 |
 | Worktree status projects invalid-contract errors onto the payload. | `worktree_status_packet`; `status_payload` | mcp/src/agents_remember/application/worktree_status.py:23-61 |
 | Published workflow kind and structural agent-session tool docstrings. | `worktree_start`; `dispatch_agent`; `retire_child`; `rename_child`; `rename_self` | mcp/src/agents_remember/mcp/registration/worktrees.py:29-86; mcp/src/agents_remember/mcp/registration/sessions.py:27-86 |
 | Session response vocabularies. | `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:91-134; mcp/src/agents_remember/models/terminal.py:174-190; mcp/src/agents_remember/models/terminal.py:200-211 |
@@ -258,6 +258,9 @@ terminal facade, so moving the builder cannot hide a public status from the
 closed spawn response vocabulary.
 
 ## Update History
+- 2026-08-14T05:26Z — L23 final curator: re-anchored the expanded recovery vocabulary and the
+  lifecycle/next/recovery builders after their final structural edits. Verification remains
+  closeout-owned.
 
 - 2026-08-13T12:53+02:00 — No content impact: the stabilized package scan root reads
   `sys.modules["agents_remember"].__file__` after normal package submodule imports. Vocabulary

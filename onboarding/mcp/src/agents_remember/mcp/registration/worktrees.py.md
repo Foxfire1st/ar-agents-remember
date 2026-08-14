@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/worktrees.py`       |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-08-02T01:05+02:00                                        |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                    |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                    |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -75,7 +75,16 @@ and the sync-early doctrine.
 | `TaskRef` — the shared task locator attach and status pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
 | The three-way split and the light-task default proved through a live server. | `test_worktree_start_splits_identity_bases_and_execution`, `test_worktree_start_defaults_to_a_real_light_task_start` | mcp/tests/test_mcp_registration_wiring_tests_1.py:608-651; mcp/tests/test_mcp_registration_wiring_tests_2.py:29-46 |
 
+## L23 Final Candidate Disposition
+
+Public worktree registrations remain task-addressed and immediate-returning. Durable operation
+identity, candidate trees, worker processes, and recovery state stay behind the application/service
+boundary and are not added to the tool schema.
+
 ## Update History
+- 2026-08-14T06:32+02:00 — No public schema impact: L23 preserves the worktree registration surface
+  while closeout/integration run as task-addressed durable operations behind it. Verification
+  remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

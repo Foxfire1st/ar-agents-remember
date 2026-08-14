@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/scenarios.ts`                 |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:40+02:00                           |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -150,7 +150,16 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | — | — |
 
+## L23 Final Candidate Disposition
+
+The fleet-12 scenario injects `FLEET_TASK_DOCUMENTS` into the calm projection before any optional
+lifecycle overlay. The dev surface therefore exercises the same sprint/master/leaf hierarchy that
+the Session Rail groups in production rather than a flat session-only fixture.
+
 ## Update History
+- 2026-08-14T06:30+02:00 — L23 final candidate review: fleet-12 scenarios now inject the shared
+  sprint/master/leaf task-document fixture so scenario grouping matches production rail semantics.
+  Verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->

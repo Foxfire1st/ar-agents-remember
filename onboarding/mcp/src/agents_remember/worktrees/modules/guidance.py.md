@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -203,15 +203,15 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Context packet worktree status consumes the facade-exported status payload. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
-| `status_payload` composes the best-effort landing arc (remote/PR probe) via this module. | `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:441-443 |
-| `carryover_done` reads the official ledger via `load_ledger`/`find_mapping`. | "row = find_mapping(load_ledger(ledger_path)" | mcp/src/agents_remember/worktrees/modules/guidance.py:198-198 |
+| `status_payload` composes the best-effort landing arc (remote/PR probe) via this module. | `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:450-452 |
+| `carryover_done` reads the official ledger via `load_ledger`/`find_mapping`. | "row = find_mapping(load_ledger(ledger_path)" | mcp/src/agents_remember/worktrees/modules/guidance.py:207-207 |
 | Cleanup hard-guards on `carryover_done` before deleting the parked memory branch. | "carryover_done(contract)" | mcp/src/agents_remember/worktrees/modules/cleanup.py:434-434 |
 | The `carryover-pending`/`cleanup-pending` routing + `carryover_done` are pinned here. | "def test_routes_carryover_pending_when_not_carried(self"; "def test_routes_cleanup_pending_with_done_at_when_carried(self" | mcp/tests/test_cleanup_carryover.py:173-173; mcp/tests/test_cleanup_carryover.py:180-180 |
 | Guidance imports the `WorktreePhase` / `NextOperation` / `NextTool` aliases from the wire model in one grouped import rather than restating them. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
 | The six persisted contract vocabularies (declared in models/worktree.py / kernel) imported for `WorktreeStatusFacts`. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/worktree_contract.py:19-19 |
 | `unknown_cells` is the source of `unknown_contract_cells`. | `unknown_cells` | mcp/src/agents_remember/worktrees/worktree_contract.py:285-285 |
-| Three of the five `recovery_guidance` callers: the blocked memory, provider-setup and stale-base starts. | "choose_memory_recovery"; "choose_provider_setup_recovery"; "choose_stale_base_recovery" | mcp/src/agents_remember/worktrees/modules/start.py:138-138; mcp/src/agents_remember/worktrees/modules/start.py:194-194; mcp/src/agents_remember/worktrees/modules/start.py:373-373 |
-| The fourth: the closeout preview's `request_commit_approval` gate. | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/closeout.py:411-411 |
+| Three of the five `recovery_guidance` callers: the blocked memory, provider-setup and stale-base starts. | "choose_memory_recovery"; "choose_provider_setup_recovery"; "choose_stale_base_recovery" | mcp/src/agents_remember/worktrees/modules/start.py:139-139; mcp/src/agents_remember/worktrees/modules/start.py:195-195; mcp/src/agents_remember/worktrees/modules/start.py:340-340 |
+| The fourth: the closeout preview's `request_commit_approval` gate. | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/closeout.py:421-421 |
 | The fifth: `_memory_sync_block`'s `choose_memory_sync_recovery`. | "def _memory_sync_block("; "choose_memory_sync_recovery" | mcp/src/agents_remember/worktrees/modules/sync.py:149-149; mcp/src/agents_remember/worktrees/modules/sync.py:165-165 |
 | The two named exhaustiveness tests are defined in this module. |"def test_every_contract_literal_validates_at_its_wire_field(self) -> None:"; "def test_a_live_contract_projects_onto_the_wire_model(self) -> None:"|mcp/tests/test_wire_vocabulary_exhaustiveness.py:635-635; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:422-422|
 
@@ -242,6 +242,9 @@ operator guidance and Engine Room evidence aligned with the same structural
 gate rather than inventing recovery in the UI.
 
 ## Update History
+- 2026-08-14T06:36+02:00 — L23 final candidate review: status guidance exposes task-addressed
+  lifecycle-operation phase/report/failure recovery and current source-lineage relations without
+  private operation or commit ids. Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: recorded task-derived lineage status and sync guidance; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

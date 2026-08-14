@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_gate_replay_window.py`   |
 | doc_type               | `file-level-onboarding`                  |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |                                          `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |                                          2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |                                          `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate |                                          2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                            |
 
 ## Governing Overview
@@ -153,7 +153,16 @@ helpers are all inside `agents-remember`.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## L23 Final Candidate Disposition
+
+Replay-window coverage preserves approval claim as the irreversible boundary: cancellation may stop
+unclaimed work, while claimed attempts retain spend state and must reconcile or complete rather than
+reopen approval.
+
 ## Update History
+- 2026-08-14T06:38+02:00 — L23 final candidate review: replay-window coverage preserves the
+  approval claim as the cancellation/recovery boundary for durable closeout. Verification stays
+  closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored `parked_rewrite` after the shared durability harness insertion; the replay-window contract is unchanged.
@@ -171,7 +180,7 @@ helpers are all inside `agents-remember`.
   fold by `evaluate_gate`'s `applied` branch cit:([`evaluate_gate`], mcp/src/agents_remember/controlplane/enforcement.py:52-94); no flag, no marker file,
   no timestamp comparison — and recorded that the counterfactual test
   cit:([`test_the_applied_record_is_the_only_thing_closing_the_window`], mcp/tests/test_gate_replay_window.py:233-259) is what makes that falsifiable: it deletes **only** the line containing
-  `APPLIED_MARKER` cit:([`APPLIED_MARKER`], mcp/tests/test_gate_replay_window.py:71-71), asserts exactly the two remaining snapshots survive so the deletion
+  `APPLIED_MARKER` cit:([`APPLIED_MARKER`], mcp/tests/test_gate_replay_window.py:72-72), asserts exactly the two remaining snapshots survive so the deletion
   cannot have been indiscriminate, and then requires the guard to permit again. Recorded the
   concurrency regression cit:([`test_the_applied_record_survives_a_concurrent_gate_log_compaction`], mcp/tests/test_gate_replay_window.py:261-290) as two forked processes over `parked_rewrite`, with
   `_prunable_gate` cit:([`_prunable_gate`], mcp/tests/test_gate_replay_window.py:116-130) present so a compaction has something to drop and therefore actually

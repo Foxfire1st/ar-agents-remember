@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-11T23:56+02:00               |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -16,13 +16,13 @@
 
 ## Purpose
 
-`check.py` is the quality gate. It is the command the pre-push hook, CI, and worktree
-closeout run, and it is the single place that decides what the repository certifies and
-
-what it merely reports.
+`check.py` is the Python quality wrapper executed inside the repository's pinned Dagger
+quality graph. It decides what the Python rail certifies and what it merely reports, but it
+is not an independent host-side acceptance gate: closeout and CI consume the Dagger graph's
+single exported `clean-quality-results.json` result.
 
 ```text
-python -m agents_remember.code_quality.check
+dagger call quality --source=. --repository-bundle=<candidate.bundle> --mode=<targeted|full> --diff-base=<commit> reports export --path=<enclosure>/reports
 ```
 
 ## Code Commentary
@@ -132,7 +132,7 @@ The two tiers meet the obligation differently:
 - The **pre-commit tier** gets it for free. There the staged content *is* the commit, so the index
   already names exactly what that tier certifies.
 - The **closeout tier** does not, because it commits with `git add -A`. It therefore stages its
-  whole worktree first: `worktrees/modules/closeout.py:_gate_staged_code` runs
+  whole worktree first: `worktrees/modules/closeout_staged_quality.py:gate_staged_code` runs
   `git reset --mixed HEAD` and then `git add -A`, and only then calls this wrapper. Until it did,
   every file a task **created** rather than edited went into the commit without ruff, pyright or
   the changed-lines floor reading a line of it, and a file the task **deleted** stayed in
@@ -230,7 +230,8 @@ the report to a temporary directory unless `--coverage-json` is given.
   wrapper paths by hand.
 - Scope is the **index**, so the caller owns what gets certified. The wrapper cannot be pointed at
   unstaged or untracked work, and a caller that commits with `git add -A` must stage before
-  invoking it. Undo the `git reset --mixed` + `git add -A` in `closeout.py:_gate_staged_code` and
+  invoking it. Undo the `git reset --mixed` + `git add -A` in
+  `closeout_staged_quality.py:gate_staged_code` and
   closeout silently returns to certifying only the files a task edited, reporting green on files no
   rail ever read.
 - A step is enforcing unless it carries a `report_note`; only the two Radon steps carry one.
@@ -265,10 +266,10 @@ the report to a temporary directory unless `--coverage-json` is given.
 | An independent recomputation asserts the wrapper's real argument vectors reach every tracked Python file. | `test_every_tracked_python_file_is_linted_and_type_checked` | mcp/tests/test_gate_scope.py:152-173 |
 | `run_git` — the one runner `git_ls_files` calls — strips `GIT_REPOSITORY_SELECTOR_ENV` and bounds every call with the local/remote/metadata timeout classes. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-73; mcp/src/agents_remember/kernel/git_command.py:85-92 |
 | `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `git_ls_files` still lists the repository it was handed, and that a non-repository and an unrunnable git both surface as `ScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:391-453 |
-| The shared tiered hook body derives the same `git ls-files` scope; the pre-push tier delegates to the wrapper's targeted contract, while `full` stays the manual/master-gate tier. | "git ls-files -z -- '*.py'" | .githooks/_gate.sh:74-74 |
+| The shared tiered hook body derives the same `git ls-files` scope; the pre-push tier delegates to the wrapper's targeted contract, while `full` stays the manual/master-gate tier. | "git ls-files -z -- '*.py'" | .githooks/_gate.sh:72-72 |
 | `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true"; "testpaths = [\"mcp/tests\"]" | pyproject.toml:6-18; pyproject.toml:67-70; pyproject.toml:110-124 |
-| Repo instructions state the gate command, that it takes no path arguments, and that Radon reports. | "python -m agents_remember.code_quality.check" | AGENTS.md:152-152 |
-| The closeout caller that satisfies this module's index obligation: `_gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `_gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout.py:774-869 |
+| Repo instructions make the pinned Dagger graph the only acceptance environment, identify its exported result as authoritative, and explicitly refuse host test execution. | "dagger call quality --source=."; "single authoritative result"; "There is no host-test compatibility path" | AGENTS.md:148-161 |
+| The closeout caller that satisfies this module's index obligation: `gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129 |
 | The optional settings-owned memory cap an explicitly constrained full run may use (`--memory-cap-bytes`); host-managed full runs do not call this planner. | `plan_capped_command` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:92-130 |
 | The targeted contract proofs: rail scoping, real radon input, and no-change short-circuit. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:142-359; mcp/tests/test_code_quality_targeted.py:360-630 |
 | The command builder supplies derived test and coverage arguments; root pytest configuration owns automatic xdist workers. | "pytest_args = [sys.executable, \"-m\", \"pytest\", *test_args]"; "-n=auto" | mcp/src/agents_remember/code_quality/check.py:272-272; pyproject.toml:124-124 |
@@ -291,6 +292,10 @@ the short scratch path prevents inherited WSL/UNC roots and Unix-socket length
 limits from breaking otherwise-valid checks.
 
 ## Update History
+- 2026-08-14T06:00+02:00 — L23 curator: reconciled the wrapper with the accepted Dagger-only
+  quality boundary and the extracted staged-candidate gate owner; host invocation is diagnostic
+  implementation detail, never a second acceptance gate. Verification metadata remains
+  closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented the short native scratch root and cached-temp reset; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
@@ -333,7 +338,7 @@ limits from breaking otherwise-valid checks.
 - 2026-08-01T09:40+02:00 — 260731-EFA-L4 curator: recorded the caller obligation that follows from
   reading the index. **Only this file's `derive_scope` docstring changed in L4 — 13 added lines, no
   deletions, zero executable lines; the wrapper's own logic is untouched.** The behaviour change is
-  entirely in its caller: `worktrees/modules/closeout.py:_gate_staged_code` now runs
+  entirely in its caller: `worktrees/modules/closeout_staged_quality.py:gate_staged_code` now runs
   `git reset --mixed HEAD` + `git add -A` before invoking the wrapper, so files a task created (and
   deletions it made) are visible to ruff, pyright and the changed-lines floor where previously they
   were not. Added "Reading The Index Puts An Obligation On The Caller" under *Scope Is Derived From

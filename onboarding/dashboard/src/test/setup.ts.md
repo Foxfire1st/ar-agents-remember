@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/setup.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-31T22:05+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -86,7 +86,7 @@ calls without relying on browser playback that jsdom does not implement.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `matchMedia` stub consumed by the honest-motion gate. | "export function useShouldAnimate" | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-19 |
-| Wired as the vitest setup file. | `setupFiles` | dashboard/vitest.config.ts:32-32 |
+| Wired as the vitest setup file. | `setupFiles` | dashboard/vitest.config.ts:35-35 |
 | The render test that depends on these stubs. | "renders complete bodies for direct" | dashboard/src/cockpit/Cockpit.test.tsx:336-396 |
 
 ## Update History

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/sync.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:12+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                         |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -133,7 +133,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The sync module persists the result of each base-pair advance. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:36-119 |
 | Upstream fetch + ref helpers come from the freshness kernel through `upstream_ref` and `fetch_remote`. | `upstream_ref`; `fetch_remote` | mcp/src/agents_remember/kernel/git_freshness.py:55-64; mcp/src/agents_remember/kernel/git_freshness.py:67-77 |
 | The `run_git` every merge/ff/show in this module calls, and the `GIT_LOCAL_TIMEOUT_SECONDS` default that bounds them. | `run_git`; `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| `recovery_guidance` and the `RecoveryOperation` / `RecoveryTool` vocabularies this module's block belongs to, kept separate from the phase machine's `next_guidance`. | `recovery_guidance`; `RecoveryOperation`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:32-39; mcp/src/agents_remember/worktrees/modules/guidance.py:130-153 |
+| `recovery_guidance` and the `RecoveryOperation` / `RecoveryTool` vocabularies this module's block belongs to, kept separate from the phase machine's `next_guidance`. | `recovery_guidance`; `RecoveryOperation`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:37-54; mcp/src/agents_remember/worktrees/modules/guidance.py:146-160 |
 | Sync behavior coverage: ff pair, mid-cycle block, conflicts, choices, dry-run, in `WorktreeSyncTests`. | `WorktreeSyncTests` | mcp/tests/test_worktree_sync.py:111-244 |
 
 ## Cross-Repo References
@@ -144,6 +144,9 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 
 ## Update History
+- 2026-08-14T05:26Z — L23 final curator: re-read the expanded task-reopen/worktree-start recovery
+  vocabulary and retained sync's separate recovery-guidance ownership with current anchors.
+  Verification remains closeout-owned.
 - 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the sync-log contract claim through its defining comments and regenerated the final range with the scoped fixer.
 - 2026-08-03T02:57+02:00 — W3-B03 curator: curated 5 table citations for freshness, remote fetch, git timeout, recovery guidance, and sync tests; fixer-generated ranges verified.
 

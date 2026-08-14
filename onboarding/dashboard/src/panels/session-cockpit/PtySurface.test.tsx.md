@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/PtySurface.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-04T00:41+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The component under test. | `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
-| The L6 archetype fixtures every case hydrates. | `L6_CONTROLLED_WORKING`; `L6_LEGACY_RAW` | dashboard/src/test/fixtures/catalogRows.ts:198-210; dashboard/src/test/fixtures/catalogRows.ts:214-221 |
+| The L6 archetype fixtures every case hydrates. | `L6_CONTROLLED_WORKING`; `L6_LEGACY_RAW` | dashboard/src/test/fixtures/catalogRows.ts:245-257; dashboard/src/test/fixtures/catalogRows.ts:261-268 |
 | The harvest store the bell case drives. | `ptyHarvestStore` | dashboard/src/data/ptyHarvest.ts:51-73 |
 | The mocked-away real terminal (its own suite covers xterm wiring). | `Terminal` | dashboard/src/panels/Terminal.tsx:110-202 |
 

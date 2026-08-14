@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -55,13 +55,13 @@ task doc id when the task tree proves the mapping.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test. | `reopen_task` | mcp/src/agents_remember/worktrees/reopen.py:58-136 |
+| The module under test. | `reopen_task` | mcp/src/agents_remember/worktrees/reopen.py:169-265 |
 | The lookup helper under test. | `find_leaf_doc` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70 |
 | The lifecycle restamp helper under test. | `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
-| The recreate-fresh + restamp start path under test. | `start_result`, "restamp_leaf_doc_lifecycle(contract.task_root" | mcp/src/agents_remember/worktrees/modules/start.py:473-484; mcp/src/agents_remember/worktrees/modules/start.py:621-621 |
+| The recreate-fresh + restamp start path under test. | `start_result`, "restamp_leaf_doc_lifecycle(contract.task_root" | mcp/src/agents_remember/worktrees/modules/start.py:440-451; mcp/src/agents_remember/worktrees/modules/start.py:602-602 |
 | Contract loading preserves a legacy stem-shaped leaf id when the task tree proves the mapping. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
 | The canonical contract leaf-id normalization helper is `normalize_contract_leaf_id`. | `normalize_contract_leaf_id` | mcp/src/agents_remember/worktrees/worktree_contract.py:556-579 |
-| The abandon-side ambient end helper under test. | `_end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:491-497 |
+| The abandon-side ambient end helper under test. | `end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:512-519 |
 
 ## L23 Reopen Lineage Regression
 
@@ -71,6 +71,9 @@ the enclosure contract or leaf document; ordinary start-after-reopen coverage
 continues on the same thematic master topology.
 
 ## Update History
+- 2026-08-14T05:26Z — L23 final curator: re-anchored the ambient-end regression after the helper
+  became the public application-level owner; the single-writer lifecycle contract is unchanged.
+  Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented no-mutation reopen refusal on moved super ancestry; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -75,7 +75,16 @@ Lifecycle operation inputs, kinds, and records now come from `models.lifecycles.
 launch, status, cancellation, recovery, and native-environment behavior are unchanged by the model
 ownership move.
 
+## L23 Final Candidate Disposition
+
+Start-or-observe derives one durable closeout or integration operation from task plus kind and a
+validated input fingerprint. Retries observe the same work, conflicting inputs refuse, and recovery
+continues from monotonic phase evidence rather than replaying completed irreversible cells.
+
 ## Update History
+- 2026-08-14T06:36+02:00 — L23 final candidate review: task-addressed start/observe dispatch keeps
+  one durable operation per kind/fingerprint and recovers terminal evidence without replaying
+  completed irreversible phases. Verification remains closeout-owned.
 
 - 2026-08-13T09:05+02:00 — L23 curator: reviewed the operation-model package move and confirmed no
   lifecycle execution behavior changed; final provenance remains closeout-owned.

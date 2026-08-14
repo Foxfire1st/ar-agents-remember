@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_integrate_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T12:53+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,16 @@ No Domain Documentation source is configured for this repository-local regressio
 
 No cross-repository implementation source governs this test module.
 
+## L23 Final Candidate Disposition
+
+Integration forcing proves targeted leaf versus full master Dagger altitude, mandatory task-derived
+diff base, complete pre/post-quality lineage rechecks, pinned source tips, and failure atomicity
+before any source ref moves.
+
 ## Update History
+- 2026-08-14T06:40+02:00 — L23 final candidate review: integration tests prove targeted leaf versus
+  full master Dagger altitude, mandatory diff base, pre/post-quality lineage rechecks, pinned source
+  tips, and failure atomicity before refs move.
 
 - 2026-08-13T12:53+02:00 — L23 Dagger-rail coverage: recorded exact source-tip unchanged/moved
   behavior, both post-quality/pre-merge rechecks, and the complete memory replay helper branch

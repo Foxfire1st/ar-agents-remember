@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
-| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 
 ## Purpose
 
@@ -64,7 +64,7 @@ re-proves lineage before host creation, so a parent move between status and disp
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:13-51; skills/l-01-agent-lifecycles/SKILL.md:251-268; skills/l-01-agent-lifecycles/SKILL.md:286-301 |
+| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:272-272; skills/l-01-agent-lifecycles/SKILL.md:307-307 |
 | Curator owns conservative three-way memory reconciliation and the complete pre-closeout onboarding worklist. | "## What This Seat Is"; "### 4 — Iterate The Checklist, Then Report" | skills/l-01-agent-lifecycles/roles/curator.md:7-47; skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
 | Manager owns one real master and its leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Worker owns one real leaf's implementation and durable report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
@@ -77,6 +77,9 @@ full chain. Refusal creates no child and recovery is contract-addressed, keeping
 commit/session identity inside the control plane.
 
 ## Update History
+- 2026-08-14T06:25+02:00 — L23 final candidate review: lifecycle doctrine keeps Dagger as the sole
+  acceptance graph and makes manager lineage plus exact candidate-bound route review mandatory
+  before curator dispatch. Verification provenance remains closeout-owned.
 - 2026-08-13T14:32+02:00 — L23 final route review: synchronized Dagger-only acceptance,
   targeted/full altitude, explicit diff-base ownership, and diagnostic-only host execution across
   canonical lifecycle doctrine. Verification remains closeout-owned.

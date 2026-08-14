@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ No external Domain Documentation source is configured for this repository-local 
 | --- | --- | --- |
 | One phase builds the service-owned drift context, runs the exact check group, and refuses on a non-clean result with bounded evidence. | `run_memory_quality_phase`; `_failure_message` | mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py:17-53 |
 | The combined result preserves both phase check maps, findings, counts, bounded report-only evidence, and declared phase membership. | `combine_memory_quality` | mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py:56-80 |
-| Closeout calls the extracted adapter before the expensive code gate and again after metadata refresh, then returns the combined gate result. | `_memory_quality_before_refresh`; `_external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout.py:644-703; mcp/src/agents_remember/worktrees/modules/closeout.py:956-965 |
+| Closeout calls the extracted adapter before the expensive code gate and again after metadata refresh, then returns the combined gate result. | `_memory_quality_before_refresh`; `_external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout.py:677-771; mcp/src/agents_remember/worktrees/modules/closeout.py:858-867 |
 | The injected service bundle owns the `MemoryQualityPort` implementation and check-group vocabulary. | `MemoryQualityPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:68-95; mcp/src/agents_remember/worktrees/services.py:140-152 |
 
 ## Cross-Repo References

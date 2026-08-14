@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-08T14:38+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 
 ## What This Area Is
 
@@ -134,7 +134,17 @@ When changing a projection reader:
 2. Keep the domain input/refresh discipline in `projection_inputs.py`.
 3. Prove the change through the projection/observer suites and the structural-coverage suite.
 
+## L23 Final Candidate Route Disposition
+
+The projection route attaches the newest validated lifecycle operation to its owning enclosure and
+serves bounded phase, timing, command, report, and recovery guidance. Durable store state remains
+authority; projection never exposes worker or resume identity.
+
 ## Update History
+
+- 2026-08-14T06:25+02:00 — L23 final candidate review: runtime snapshots attach the newest
+  validated lifecycle operation and preserve bounded task-addressed phase/report evidence without
+  worker or recovery identifiers. Verification remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 makes the runtime enclosure reader attach the latest durable lifecycle-operation projection. The projection exposes task-addressed progress and report evidence while keeping worker/process resume identities private. Verification provenance remains closeout-owned.
 

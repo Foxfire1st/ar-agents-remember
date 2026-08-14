@@ -18,6 +18,7 @@
     "mcp/src/agents_remember/worktrees/modules/cli.py",
     "mcp/src/agents_remember/worktrees/modules/closeout.py",
     "mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py",
+    "mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py",
     "mcp/src/agents_remember/worktrees/modules/code_quality_gate.py",
     "mcp/src/agents_remember/worktrees/modules/context.py",
     "mcp/src/agents_remember/worktrees/modules/contract_reader.py",
@@ -31,12 +32,13 @@
     "mcp/src/agents_remember/worktrees/modules/onboarding.py",
     "mcp/src/agents_remember/worktrees/modules/start.py",
     "mcp/src/agents_remember/worktrees/modules/start_contract.py",
+    "mcp/src/agents_remember/worktrees/modules/start_result.py",
     "mcp/src/agents_remember/worktrees/modules/sync.py",
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 23,
-    "fileSidecars": 23,
+    "sourceFilesInScope": 25,
+    "fileSidecars": 25,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -50,6 +52,7 @@
     "cli",
     "closeout",
     "closeout_memory_quality",
+    "closeout_staged_quality",
     "code",
     "code_quality_gate",
     "context",
@@ -75,9 +78,12 @@
     "reader",
     "ref",
     "remember",
+    "result",
     "src",
+    "staged",
     "start",
     "start_contract",
+    "start_result",
     "sync",
     "terminal",
     "terminal_validation",
@@ -85,7 +91,7 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "L23 makes quality execution an explicit `QualityGatePlan.executor` choice. `code_quality_gate.py` keeps local execution as one exact mode and delegates clean execution to `clean_quality_executor.py`, which materializes the immutable staged candidate into a pinned Dagger graph, streams progress, and replaces the enclosure's latest reports. `closeout.py` and `integrate.py` pass operation progress and candidate identity through the existing synchronous mutation path; they do not own detached process identity. `git.py` captures and later rechecks the candidate with an isolated Git index so asyn...",
+    "summary": "L23 makes Dagger the sole acceptance executor. `clean_quality_executor.py` materializes the exact reviewed candidate and required ancestry into the pinned graph, starts a fresh attempt, bounds live output, and atomically replaces the enclosure's current reports; there is no local compatibility runner. `code_quality_gate.py` plans targeted or full Dagger authority with an explicit diff base. `closeout_staged_quality.py` owns the linked/conflict refusals, accepted-tree rechecks, complete staging, reviewed hook, and targeted gate. `closeout.py` and `integrate.py` preserve approval and merge or...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/modules/__init__.py",
@@ -96,6 +102,7 @@
       "mcp/src/agents_remember/worktrees/modules/cli.py",
       "mcp/src/agents_remember/worktrees/modules/closeout.py",
       "mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py",
+      "mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py",
       "mcp/src/agents_remember/worktrees/modules/code_quality_gate.py",
       "mcp/src/agents_remember/worktrees/modules/context.py",
       "mcp/src/agents_remember/worktrees/modules/contract_reader.py",
@@ -109,8 +116,7 @@
       "mcp/src/agents_remember/worktrees/modules/onboarding.py",
       "mcp/src/agents_remember/worktrees/modules/start.py",
       "mcp/src/agents_remember/worktrees/modules/start_contract.py",
-      "mcp/src/agents_remember/worktrees/modules/sync.py",
-      "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+      "mcp/src/agents_remember/worktrees/modules/start_result.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -129,6 +135,8 @@
       "closeout",
       "closeout_memory_quality.py",
       "closeout_memory_quality",
+      "closeout_staged_quality.py",
+      "closeout_staged_quality",
       "code_quality_gate.py",
       "code_quality_gate",
       "context.py",
@@ -155,12 +163,10 @@
       "start",
       "start_contract.py",
       "start_contract",
+      "start_result.py",
+      "start_result",
       "sync.py",
-      "sync",
-      "terminal_validation.py",
-      "terminal_validation",
-      "QualityGatePlan.executor",
-      "L23"
+      "sync"
     ]
   },
   "fallback": {

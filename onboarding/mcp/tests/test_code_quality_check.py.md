@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T00:08+02:00               |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -216,7 +216,7 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 | The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths` | mcp/src/agents_remember/code_quality/check.py:320-366; mcp/src/agents_remember/code_quality/scope.py:111-111 |
 | The changed-lines coverage floor the full tier carries, and its own behavioural suite. | "DEFAULT_DIFF_COVERAGE_FLOOR = 100.0"; "Score the changed lines, or report why there is nothing to score."; "def test_a_diff_below_the_floor_fails_the_wrapper(self) -> None:"; "def test_the_floor_runs_inside_the_wrapper_rather_than_beside_it(self) -> None:" | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317; mcp/tests/test_diff_coverage.py:570-585; mcp/tests/test_diff_coverage.py:629-659 |
 | CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | `complexity_blocks`, `calculate_scores` | mcp/src/agents_remember/code_quality/crap_calculator.py:232-239; mcp/src/agents_remember/code_quality/crap_calculator.py:294-305 |
-| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:540-553; pyproject.toml:34-38 |
+| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:539-552; pyproject.toml:34-38 |
 | The complexity-selection and branch-coverage settings this suite reads. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true" | pyproject.toml:17-17; pyproject.toml:67-70 |
 | The pytest configuration this suite reads. | `testpaths` | pyproject.toml:119-119 |
 | An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`, `test_python_coverage_and_test_rails_reach_their_trees` | mcp/tests/test_gate_scope.py:152-173; mcp/tests/test_gate_scope.py:175-194 |
@@ -241,6 +241,9 @@ constant short native scratch root to environment sanitization, independently
 of durable progress-report placement.
 
 ## Update History
+- 2026-08-14T06:38+02:00 — L23 final candidate review: wrapper regressions retain exact staged
+  scope and short native scratch behavior as the Python rail inside Dagger; direct host execution
+  is not acceptance. Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented `/tmp/arq` ownership at the quality CLI boundary; verification remains closeout-owned.
 
 - 2026-08-12T17:27+02:00 — 260731-EFA-L23 final Dagger diff-coverage repair: expanded the existing

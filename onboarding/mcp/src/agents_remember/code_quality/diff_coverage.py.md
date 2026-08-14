@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/diff_coverage.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -225,12 +225,15 @@ every ordinary negative into a gate crash, which is what
 | Unit tests for base resolution order, the four states, the malformed-diff guards, and the named-findings report. `BaseResolutionTests::test_the_three_git_wrappers_agree_on_which_failures_are_this_gate_s_error` drives all three wrappers against a missing root and against a patched `git_command.run_git` raising `TimeoutExpired`; `::test_a_git_that_ran_and_said_no_is_still_an_answer_not_an_error` keeps a missing revision and an absent merge base as `False` / `None`. | `BaseResolutionTests` | mcp/tests/test_diff_coverage.py:81-254; mcp/tests/test_diff_coverage.py:221-255 |
 | `[tool.coverage.run] branch = true`, without which this step refuses to score. | "branch = true" | pyproject.toml:68-70 |
 | The full hook tier that runs the wrapper, and the note telling leaf branches to export `AR_GATE_DIFF_BASE`. | `AR_GATE_DIFF_BASE` | mcp/src/agents_remember/code_quality/check.py:922-922 |
-| The clean-Linux CI job checks out full history so the changed-lines merge base is available; a shallow clone would silently degrade this step to the empty tree. | "Dagger Ubuntu install + Codex protocol + quality" | .github/workflows/quality-checks.yml:124-124 |
+| The clean-Linux CI job checks out full history before the pinned Dagger full-repository quality graph, so the changed-lines merge base is available. | "Dagger Ubuntu full-repository quality" | .github/workflows/quality-checks.yml:22-28 |
 | The contributor-facing statement of the floor and why it is 100%. | `### The coverage floor is on your diff, not on the tree` | CONTRIBUTING.md:95-131 |
 | `run_git` — the runner `_git` calls — strips `GIT_REPOSITORY_SELECTOR_ENV`, keeps stdin on `DEVNULL`, and bounds every call with the local/remote/metadata timeout classes. | `run_git`; `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `diff_coverage.run_git` still reads the repository it was handed, and that a non-repository and an unrunnable git both surface as `DiffScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:391-453 |
 
 ## Update History
+- 2026-08-14T05:26Z — L23 final curator: re-anchored changed-lines CI provenance to the current
+  full-history checkout and pinned Dagger job after the host-side matrix was removed. Verification
+  remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T18:07+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 8 citation rows with exact anchors (definition identifiers, quoted config literals, and the exact-level CONTRIBUTING heading) and ledger-verified ranges across crap_calculator, test_diff_coverage, pyproject, _gate.sh, quality-checks.yml, CONTRIBUTING, git_command, and test_git_command; the fixer normalized the CONTRIBUTING section extent. Scoped citation recheck is green. Verification metadata remains pinned until closeout.

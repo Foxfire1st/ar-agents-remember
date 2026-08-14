@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-10T02:39+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,14 @@ No sibling repository evidence is needed for this template.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## L23 Final Candidate Disposition
+
+Orchestration task packets identify review routes, candidate-bound evidence, and the targeted/full
+Dagger altitude. Durable operation observation remains task-addressed and excludes worker/job ids.
+
 ## Update History
+- 2026-08-14T06:34+02:00 — L23 synchronized runtime template: orchestration tasks record
+  candidate-bound route review and Dagger altitude without exposing private operation identity.
 
 - 2026-08-11T19:58+02:00 — Reconciled `orchestration-task.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 6 citation findings (3 rows); scoped recheck clean.

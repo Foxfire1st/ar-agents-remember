@@ -6,8 +6,8 @@
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 
 ## Purpose
 
@@ -203,7 +203,16 @@ delegates sibling-repository work to the installed runtime instructions.
 | --- | --- | --- |
 | No sibling repository citation is required; the cross-repo behavior is a handoff instruction in this file. | n/a | n/a |
 
+## L23 Final Candidate Disposition
+
+The source instructions now make the pinned Dagger graph the sole acceptance authority. Python,
+Vitest, and Playwright startup requires the graph's matching nonce and in-container attestation;
+direct host execution is diagnostic and cannot satisfy closeout or CI.
+
 ## Update History
+- 2026-08-14T06:30+02:00 — L23 final candidate review: source instructions now make the pinned
+  Dagger graph the sole acceptance path and require Python, Vitest, and Playwright to refuse startup
+  without its nonce and in-container attestation. Verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the free-chat launcher and sprint-qualified

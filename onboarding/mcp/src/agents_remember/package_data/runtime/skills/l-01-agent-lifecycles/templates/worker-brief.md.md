@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df`                                  |
-| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                                  |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 
 ## Purpose
 
@@ -56,7 +56,15 @@ boundary. Leaf work selects targeted mode and supplies its explicit leaf diff ba
 not a worker check and runs once at master integration. Direct host pytest/wrapper commands remain
 diagnostics, never acceptance or fallback. `memory_quality_check` stays a per-leaf closeout gate.
 
+## L23 Final Candidate Disposition
+
+Worker briefs name the governing ownership route and required forcing evidence so the later
+independent review can bind its verdict to the exact candidate. Workers do not self-certify Dagger
+acceptance or carry durable-operation secrets.
+
 ## Update History
+- 2026-08-14T06:34+02:00 — L23 synchronized runtime template: worker briefs retain route ownership
+  and candidate evidence needed for independent review without delegating acceptance authority.
 
 - 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized Dagger-only targeted leaf
   acceptance, the required explicit diff base, master-owned full mode, and diagnostic-only host

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ No external Domain Documentation source is configured for this project-owned ope
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Start, observe, retry, recovery, transition, cancellation, launch, worker, and integration edges are all forced. | `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_worker_parser_main_and_script_entry_use_task_addressing` | mcp/tests/test_lifecycle_operations.py:108-851 |
+| Start, observe, retry, recovery, transition, cancellation, launch, worker, and integration edges are all forced. | `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_worker_parser_main_and_script_entry_use_task_addressing` | mcp/tests/test_lifecycle_operations.py:111-126; mcp/tests/test_lifecycle_operations.py:867-924 |
 
 ## Cross-Repo References
 
@@ -78,6 +78,9 @@ dedicated model owner. Durable operation, installed-runtime selection, service b
 non-daemon authority coverage are unchanged.
 
 ## Update History
+- 2026-08-14T06:38+02:00 — L23 final candidate review: lifecycle-operation tests cover idempotent
+  start/observe, conflicting fingerprints, detached recovery, monotonic terminal evidence, and the
+  pre/post-claim boundary. Verification remains closeout-owned.
 
 - 2026-08-13T09:05+02:00 — L23 curator: reviewed the operation-model import move and confirmed the
   tested lifecycle contract is unchanged; final provenance remains closeout-owned.

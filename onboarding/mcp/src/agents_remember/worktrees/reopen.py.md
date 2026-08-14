@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/reopen.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-The `task_reopen` implementation cit:([`reopen_task`], mcp/src/agents_remember/worktrees/reopen.py:58-136): reopen a fully landed leaf task under its EXACT
+The `task_reopen` implementation cit:([`reopen_task`], mcp/src/agents_remember/worktrees/reopen.py:169-265): reopen a fully landed leaf task under its EXACT
 same leaf id. It reopens a task by REWRITING THE LEAF'S ENCLOSURE CONTRACT, which is why
 it lives in the worktrees package: it reads and amends the contract, emits a
 `WorktreeCommandResult`, and renders through the worktree status payload, while the
@@ -31,7 +31,7 @@ worktree lifecycle. Recreating worktrees stays `worktree_start`'s job.
 ### Logic
 
 `reopen_task(contract_path, dry_run=False)` loads the enclosure contract and first runs
-cit:([`_reopen_blockers`], mcp/src/agents_remember/worktrees/reopen.py:161-175): the contract must be `kind == "leaf"` with closeout, integration,
+cit:([`_reopen_blockers`], mcp/src/agents_remember/worktrees/reopen.py:317-331): the contract must be `kind == "leaf"` with closeout, integration,
 and cleanup all `completed`, and neither the code nor memory worktree may still exist
 on disk — anything else returns a `blocked` payload (returncode 2) listing every
 blocker.
@@ -58,8 +58,9 @@ not handed alone. `cleanup: "reopened"` remains the tombstone marker `worktree_s
 existing-contract branch treats like `abandoned` (recreate fresh, never attach) — and it is now a
 declared member of `CleanupStatus`, so the packet accepts it. cit:([`ContractCells`; `amend_contract`; "CleanupStatus = Literal["], mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:181-196; mcp/src/agents_remember/worktrees/worktree_contract.py:199-227)
 
-cit:([`_reset_leaf_doc`], mcp/src/agents_remember/worktrees/reopen.py:178-217)
-restores the leaf task-document state, and cit:(["def _plan_master_index_reset("; "_validate_reopen_row_path(master_path"; "updated = demote_completed_master_if_unresolved(TaskDocument.model_validate(data))"], mcp/src/agents_remember/worktrees/reopen.py:220-259; mcp/src/agents_remember/worktrees/reopen.py:262-275) plans and applies the master's
+`_plan_leaf_doc_reset` prepares the leaf task-document reset and publishes it only with the
+contract-side reopen transaction. cit:([`_plan_leaf_doc_reset`], mcp/src/agents_remember/worktrees/reopen.py:334-365)
+The paired cit:(["def _plan_master_index_reset("; "_validate_reopen_row_path(master_path"; "updated = demote_completed_master_if_unresolved(TaskDocument.model_validate(data))"], mcp/src/agents_remember/worktrees/reopen.py:419-419; mcp/src/agents_remember/worktrees/reopen.py:455-455; mcp/src/agents_remember/worktrees/reopen.py:457-457) plan applies the master's
 `subTasks` row for the doc back to `planning`.
 
 ### Invariants And Boundaries
@@ -77,7 +78,7 @@ restores the leaf task-document state, and cit:(["def _plan_master_index_reset("
   `replace` call that survives here is legitimate: it carries only free-form
   string/bool provenance fields, none of them a vocabulary cell.
 - The tool mutates only coordination state: the enclosure contract, task docs, and the frozen
-  landing-final observation it clears before reopening. cit:([`_clear_frozen_landing`], mcp/src/agents_remember/worktrees/reopen.py:139-158)
+  landing-final observation it clears before reopening. cit:([`_clear_frozen_landing`], mcp/src/agents_remember/worktrees/reopen.py:298-314)
 - `nextOperation` is always `worktree_start`: edit steps via `task_doc`, then start
   the same leaf id.
 
@@ -86,9 +87,9 @@ restores the leaf task-document state, and cit:(["def _plan_master_index_reset("
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The doc lookup and lifecycle restamp helpers this module shares with worktree start. | `find_leaf_doc`; `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70; mcp/src/agents_remember/tasks/leaf_doc.py:161-175; mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
-| The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:499-499 |
-| The recreate-fresh path restamps the leaf lifecycle document. | "restamp_leaf_doc_lifecycle(contract.task_root" | mcp/src/agents_remember/worktrees/modules/start.py:621-621 |
-| The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_doc_tools.py:867-884 |
+| The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:466-466 |
+| The recreate-fresh path restamps the leaf lifecycle document. | "restamp_leaf_doc_lifecycle(contract.task_root" | mcp/src/agents_remember/worktrees/modules/start.py:602-602 |
+| The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_doc_tools.py:931-952 |
 | The contract dataclass, amendment helper, and `CleanupStatus` vocabulary definitions (the vocabulary in models/worktree.py since L9). | "class ContractCells"; "def amend_contract"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
 | The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:96-136 |
 | `test_no_contract_cell_is_written_through_dataclasses.replace` and `test_every_writable_cleanup_value_validates_at_the_wire_boundary` pin both halves of this. | `test_no_contract_cell_is_written_through_dataclasses_replace`; `test_every_writable_cleanup_value_validates_at_the_wire_boundary` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:289-293; mcp/tests/test_wire_vocabulary_exhaustiveness.py:656-664 |
@@ -108,6 +109,8 @@ state, or the master index. The intended recovery is to synchronize the
 existing thematic master, not create a replacement master.
 
 ## Update History
+- 2026-08-14T05:26Z — L23 final curator: replaced the deleted `_reset_leaf_doc` account with the
+  atomic `_plan_leaf_doc_reset` planning boundary. Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented parent-lineage admission before reopen mutation and thematic-master recovery; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

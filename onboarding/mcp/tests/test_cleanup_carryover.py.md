@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cleanup_carryover.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                               |
-| lastVerifiedCommitDate |2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                                               |
+| lastVerifiedCommitDate |2026-08-14T08:23:37+02:00|
 | governingOverview      | `../overview.md`                                    |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ rule in `guidance.carryover_done`.
   and surfaces `carryoverDoneAt`. Note the asymmetry in how those keys are read: `phase`
   with `guidance["phase"]`, but `nextTool` and `carryoverDoneAt` with `guidance.get(...)`.
   That is the return type, not a style choice — `lifecycle_guidance` now returns a
-  `LifecycleGuidance` TypedDict (cit:([`LifecycleGuidance`], mcp/src/agents_remember/worktrees/modules/guidance.py:56-66)) on which
+  `LifecycleGuidance` TypedDict (cit:([`LifecycleGuidance`], mcp/src/agents_remember/worktrees/modules/guidance.py:71-81)) on which
   `phase`/`summary`/`nextOperation` are required and `nextTool`/`nextArgs`/`nextRequiredArgs`/
   `carryoverDoneAt` are `NotRequired`, and `next_guidance` sets `nextTool` only `if tool`.
   An absent next-move is an **omitted key**, never `""`, so subscripting it is a type error

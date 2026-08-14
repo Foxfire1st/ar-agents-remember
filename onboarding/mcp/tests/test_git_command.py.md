@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_git_command.py`            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -244,9 +244,9 @@ the call sites are the ones the consolidation moved onto it.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The runner under test: the eight-name `GIT_REPOSITORY_SELECTOR_ENV` tuple, the timeout constants, `git_environment()`, and `run_git()` with `env=`, `stdin=DEVNULL`, surrogateescape decoding and a per-call `timeout`. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| The conftest strip this suite deliberately defeats: it imports the production selector tuple and pops each name from `os.environ` at import. | "from agents_remember.kernel.git_command import GIT_REPOSITORY_SELECTOR_ENV" | mcp/tests/conftest.py:83-83 |
-| `commit_if_dirty` and `head_commit` — the closeout write path driven by the decoy commit test. | `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:114-119 |
-| `_git_common_dir` decides which repository the closeout quality gate certifies, and returns `None` rather than falling through to an inherited selector. | `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:587-594 |
+| The conftest strip this suite deliberately defeats: it imports the production selector tuple and pops each name from `os.environ` at import. | "from agents_remember.kernel.git_command import GIT_REPOSITORY_SELECTOR_ENV" | mcp/tests/conftest.py:118-118 |
+| `commit_if_dirty` and `head_commit` — the closeout write path driven by the decoy commit test. | `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:126-131 |
+| `_git_common_dir` decides which repository the closeout quality gate certifies, and returns `None` rather than falling through to an inherited selector. | `_git_common_dir` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:646-653 |
 | The gate's own git wrappers route through the shared runner and convert failure into typed domain errors: `_git` (which owns the conversion for all three callers) and `run_git` raising `DiffScopeError`, and `git_ls_files` raising `ScopeError`. | `DiffScopeError` | mcp/src/agents_remember/code_quality/diff_coverage.py:39-40; mcp/src/agents_remember/code_quality/check.py:35-39; mcp/src/agents_remember/code_quality/scope.py:44-53 |
 | The per-command timeout bands `TimeoutClassTests` asserts: the three metadata-band ref reads plus the local-band `status --porcelain`. | `TimeoutClassTests` | mcp/tests/test_git_command.py:550-660 |
 | The freshness reads classed by what they do — metadata for the two ref lookups, local for the history walk. | `read_branch_freshness` | mcp/src/agents_remember/kernel/git_freshness.py:56-65; mcp/src/agents_remember/kernel/git_freshness.py:98-112 |

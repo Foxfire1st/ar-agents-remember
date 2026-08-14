@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_lifecycle_attribution.py`         |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                 |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                 |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -39,7 +39,7 @@ snake_case result payloads (no git/provider machinery).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The application entry point attribution helpers under test. | "def _attribute_start" | mcp/src/agents_remember/application/worktree_tools.py:195-195 |
+| The application entry point attribution helpers under test. | "def _attribute_start" | mcp/src/agents_remember/application/worktree_tools.py:214-214 |
 | The ambient lifecycle they drive (`promote`/`attach`). | "def promote"; "def attach" | mcp/src/agents_remember/observer/ambient.py:348-348; mcp/src/agents_remember/observer/ambient.py:364-364 |
 | The save-gate signal they assert (`SaveGateRequired`). | `SaveGateRequired` | mcp/src/agents_remember/observer/save_gate.py:34-48 |
 
@@ -48,6 +48,8 @@ snake_case result payloads (no git/provider machinery).
 Lifecycle-attribution tests verify that application entry point attribution can use `enclosure_path` while retaining fallback behavior for payloads that still expose `contract_path`.
 
 ## Update History
+- 2026-08-14T06:40+02:00 — L23 final candidate review: lifecycle-attribution coverage includes the
+  non-attached completed-leaf reopen edge without inventing a replacement runtime identity.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 4 citation finding(s); scoped recheck clean.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:54+02:00     |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -168,9 +168,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:25-25 |
-| `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:181-181 |
-| Integration creates the scratch memory integration branch name that cleanup may remove. | "def integration_branch" | mcp/src/agents_remember/worktrees/modules/integrate.py:106-106 |
+| Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:26-26 |
+| `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:190-190 |
+| Integration creates the scratch memory integration branch name that cleanup may remove. | "def integration_branch" | mcp/src/agents_remember/worktrees/modules/integrate.py:107-107 |
 | Provider teardown is delegated to this module. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
 | `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:303-335 |
 | The carryover guard, work-branch cleanup, source-branch preservation, remote work-branch deletion, and dry-run directory-plan reporting are pinned here. | `CleanupCarryoverGuardTests` | mcp/tests/test_cleanup_carryover.py:181-197 |

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T08:40+02:00 |
-| lastVerifiedCommitHash |  `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate |  2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ The repository source pins the toolchain; no external Domain Documentation sourc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The executor validates, materializes, streams, parses, and publishes one clean quality run. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:36-167 |
-| Helper boundaries preserve Git identity, atomic report publication, and native Dagger resolution. | `_publish_reports`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:169-235 |
+| Helper boundaries preserve Git identity, atomic report publication, and native Dagger resolution. | `_publish_reports`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:202-261; mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:439-440 |
 
 ## Cross-Repo References
 
@@ -62,9 +62,12 @@ The only external boundary is the pinned container/tool runtime, not a sibling r
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:198-235 |
+| Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:335-392; mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:439-440 |
 
 ## Update History
+- 2026-08-14T06:36+02:00 — L23 final candidate review: the Dagger executor starts a fresh attempt,
+  makes two report projections share one authoritative result, bounds live output, prunes stale
+  predecessor reports, and fails closed on status reads; no local runner remains.
 
 - 2026-08-13T08:40+02:00 — L23 integration-gate repair: recorded that report promotion now routes through `kernel.atomic_write.atomic_replace` instead of calling `os.replace` directly. Verification metadata remains closeout-owned.
 

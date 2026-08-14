@@ -9,8 +9,8 @@ Total output lines: 2259
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -770,6 +770,9 @@ catalog mutation. Open/attach HTTP routes publish stale/unavailable refusals as
 filesystem tick before temporary worktree cleanup.
 
 ## Update History
+- 2026-08-14T06:25+02:00 — No route impact: L23's serving-side delta is confined to the projection
+  child route attaching the latest task-addressed durable operation; serving ownership and public
+  transport composition remain unchanged. Verification stays closeout-owned.
 - 2026-08-12T20:20+02:00 — L23 curator: documented serving-side pre-host lineage admission and safe projector cancellation; verification remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 adds batched notifier expiry writes, product-agnostic Codex initialize diagnostics, lifecycle-operation projection on enclosures, and volatile elapsed-time stripping. Durable task state remains the authority; no private operation identity crosses the serving boundary. Verification provenance remains closeout-owned.

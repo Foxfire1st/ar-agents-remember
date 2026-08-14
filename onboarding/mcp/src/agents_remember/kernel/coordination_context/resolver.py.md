@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/resolver.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -88,7 +88,7 @@ No external documentation is needed for this package-local resolver flow.
 | --- | --- | --- |
 | Data models and missing-memory errors are defined separately. | `CoordinationHints` | mcp/src/agents_remember/kernel/coordination_context/models.py:93-106 |
 | Settings parsing, contract loading (task-based + worktree-name fallback), and cross-repo resolution are delegated to focused modules. | `# mcp/src/agents_remember/kernel/coordination_context/ — Coordination Context Modules` | onboarding/mcp/src/agents_remember/kernel/coordination_context/overview.md:1-131 |
-| Resolver parity and worktree support tests cover the output contract and worktree-aware path behavior. | `test_parent_task_disambiguates_nested_task_roots`, `test_resolver_prefers_task_name_over_worktree_name` | mcp/tests/test_resolver_parity.py:155-210; mcp/tests/test_worktree_support_tests_1.py:454-476 |
+| Resolver parity and worktree support tests cover the output contract and worktree-aware path behavior. | `test_parent_task_disambiguates_nested_task_roots`, `test_resolver_prefers_task_name_over_worktree_name` | mcp/tests/test_resolver_parity.py:155-210; mcp/tests/test_worktree_support_tests_1.py:485-512 |
 
 ## Cross-Repo References
 

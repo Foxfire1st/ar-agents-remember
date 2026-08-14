@@ -6,8 +6,8 @@
 | path | `dashboard/src/dev/cockpitScenarios.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T10:12+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -144,7 +144,7 @@ construct those lines contain.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `HarnessInfo` type import and the `/api/harnesses` branch returning three-field rows pinned by `satisfies HarnessInfo[]`. | "import { announcerStore } from \"../data/announcer\";"; "import type { HarnessInfo } from " | dashboard/src/dev/cockpitScenarios.ts:7-7; dashboard/src/dev/cockpitScenarios.ts:456-468; dashboard/src/dev/cockpitScenarios.ts:1-1 |
+| The announcer and `HarnessInfo` imports plus the `/api/harnesses` branch returning three-field rows pinned by `satisfies HarnessInfo[]`. | "import { announcerStore } from '../data/announcer';"; "import type { HarnessInfo } from '../data/harnessCatalog';"; `satisfies HarnessInfo[]` | dashboard/src/dev/cockpitScenarios.ts:1-4; dashboard/src/dev/cockpitScenarios.ts:433-443 |
 | `HarnessInfo` declared inline (`id`, `name`, `detected`) in a module carrying no mirror marker, which is why nothing compared the old fixture against it. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
 | The server's `DetectedHarness` / `DetectedHarnessesResponse` for `GET /api/harnesses`: exactly three fields on a `WireResponse`. | `DetectedHarness` | mcp/src/agents_remember/serving/response_contract.py:366-371 |
 | The guard's own note that its wire vocabulary is discovered from a house marker, that discovery is fail-closed in one direction only, and the five unmarked modules still in the blind spot. | "A NEW UNMARKED MIRROR MODULE IS INVISIBLE" | dashboard/src/test/wireFixtureGuard.ts:55-63 |
@@ -156,6 +156,10 @@ construct those lines contain.
 
 ## Update History
 
+- 2026-08-14T05:26Z — L23 final curator: extended the scenario authority contract with exact
+  interaction-response consumption: accepted answers move the addressed row to working, clear the
+  pending capability, and preserve replay/refusal safety. Also re-anchored the harness imports after
+  formatting. Verification remains closeout-owned.
 - 2026-08-11T19:58+02:00 — Updated the scenario authority model from leaf-key fixture identity to
   structured task-document identity in both accepted responses and catalog rows.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the terminal-focus scenario addition. Verification metadata stays pinned until closeout stamps the code commit.

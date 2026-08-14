@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_source_lineage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
-| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,7 +75,15 @@ current transitive chain and raises operation-specific sync guidance after the s
 | Diverged master ancestry reports both ahead and behind counts. | `test_diverged_master_reports_divergence` | mcp/tests/test_source_lineage.py:269-280 |
 | The shared fixture writes task topology, contracts, and real Git branches. | `_fixture`; `_write_task_tree`; `_repo` | mcp/tests/test_source_lineage.py:276-367 |
 
+## L23 Final Candidate Disposition
+
+Lineage regressions compare Git common-directory identity across sibling worktrees and require
+current super-to-master-to-leaf ancestry for both code and external memory. Missing, behind,
+diverged, or foreign-repository evidence fails closed with task-addressed recovery.
+
 ## Update History
+- 2026-08-14T06:38+02:00 — L23 final candidate review: lineage tests compare Git common-directory
+  identity across sibling worktrees and fail closed on stale code or external-memory ancestry.
 
 - 2026-08-13T14:32+02:00 — No content impact: removed the pytest-inert
   `__main__`/`unittest.main()` footer. Pytest collection and every lineage assertion are unchanged;

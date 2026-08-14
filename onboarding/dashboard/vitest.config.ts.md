@@ -6,8 +6,8 @@
 | path                   | `dashboard/vitest.config.ts`                                |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                  |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../overview.md`                                         |
 
 ## Governing Overview
@@ -61,9 +61,9 @@ configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The coverage thresholds and provider. | "coverage: {"; "thresholds: {" | dashboard/vitest.config.ts:33-33; dashboard/vitest.config.ts:47-47 |
-| The test include that now collects the scripts contract suite. | "include: [\"src/**/*.{test,spec}.{ts,tsx}\"" | dashboard/vitest.config.ts:58-58 |
-| The worker ceiling and setup trap wiring. | `maxWorkers`; `setupFiles` | dashboard/vitest.config.ts:31-31; dashboard/vitest.config.ts:32-32 |
+| The coverage thresholds and provider. | "coverage: {"; "thresholds: {" | dashboard/vitest.config.ts:36-36; dashboard/vitest.config.ts:50-50 |
+| The test include that now collects the scripts contract suite. | "include: [\"src/**/*.{test,spec}.{ts,tsx}\"" | dashboard/vitest.config.ts:61-61 |
+| The worker ceiling and setup trap wiring. | `maxWorkers`; `setupFiles` | dashboard/vitest.config.ts:34-35 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/structural/agent_tools.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T06:47+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,12 +55,15 @@ No Domain Documentation source is configured; repository tests and the approved 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Dispatch performs contained-seat authorization and exact initial brief handling. | `dispatch_agent_tool` | mcp/src/agents_remember/application/structural/agent_tools.py:205-368 |
-| Relationship messaging and lifecycle operations expose structural intent. | `message_parent_tool` | mcp/src/agents_remember/application/structural/agent_tools.py:370-542 |
+| Relationship messaging and lifecycle operations expose structural intent. | `message_parent_tool` | mcp/src/agents_remember/application/structural/agent_tools.py:573-578 |
 | Focused tests exercise ambient routing, replacement, ambiguity, and exact-pin behavior. | `test_child_to_replacement_parent_is_resolved_by_task_containment` | mcp/tests/test_structural_agent_tools.py:134-241 |
 
 ## Cross-Repo References
 
 
 ## Update History
+- 2026-08-14T06:30+02:00 — L23 final candidate review: structural dispatch now fails closed on
+  stale task-derived lineage and requires a current candidate-bound route-review record before
+  curator host creation. Verification remains closeout-owned.
 
 - 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for structural agent operations; replaces public exact-id orchestration operations rather than wrapping them as compatibility APIs.

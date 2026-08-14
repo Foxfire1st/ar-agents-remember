@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -84,9 +84,9 @@ No external documentation is needed for these standard-library unit tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Launcher and projections under test. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:59-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
-| `projected_status_payload` and the `NotRequired` `providers` key on `WorktreeStatusFacts` the new payload test pins. | `WorktreeStatusFacts`, `projected_status_payload`, `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:75-113; mcp/src/agents_remember/worktrees/modules/guidance.py:379-431; mcp/src/agents_remember/worktrees/modules/guidance.py:434-438 |
-| Start ordering and retry path under test. | `start_result`, `run_or_launch_provider_setup`, `_retry_provider_setup_result` | mcp/src/agents_remember/worktrees/modules/start.py:473-484; mcp/src/agents_remember/worktrees/modules/start.py:666-703; mcp/src/agents_remember/worktrees/modules/start.py:706-739 |
-| Application-layer ownership helper under test. | `worktree_start_tool`, `_settings_owned_by_background` | mcp/src/agents_remember/application/worktree_tools.py:92-171; mcp/src/agents_remember/application/worktree_tools.py:174-179 |
+| `projected_status_payload` and the `NotRequired` `providers` key on `WorktreeStatusFacts` the new payload test pins. | `WorktreeStatusFacts`, `projected_status_payload`, `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:84-122; mcp/src/agents_remember/worktrees/modules/guidance.py:388-440; mcp/src/agents_remember/worktrees/modules/guidance.py:443-447 |
+| Start ordering and retry path under test. | `start_result`, `run_or_launch_provider_setup`, `_retry_provider_setup_result` | mcp/src/agents_remember/worktrees/modules/start.py:440-451; mcp/src/agents_remember/worktrees/modules/start.py:647-684; mcp/src/agents_remember/worktrees/modules/start.py:687-720 |
+| Application-layer ownership helper under test. | `worktree_start_tool`, `_settings_owned_by_background` | mcp/src/agents_remember/application/worktree_tools.py:93-190; mcp/src/agents_remember/application/worktree_tools.py:193-198 |
 
 ## L23 Start-Ordering Isolation
 

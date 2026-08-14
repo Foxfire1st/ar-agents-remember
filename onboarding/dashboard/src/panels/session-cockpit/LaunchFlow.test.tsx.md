@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:15+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -126,7 +126,7 @@ the reviewed task evidence for any current behavioral claim.
 | The dialog under test. | "export function LaunchFlow" | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:353-353 |
 | The envelope fixtures the routers serve. | "function capabilityEnvelope" | dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-160 |
 | The open-response fixtures (200/400/409×2). | "const OPENED_STARTING" | dashboard/src/test/fixtures/openResponses.ts:17-17 |
-| The shared row builder used for the F9 appeared-row rerenders. | "function catalogRow" | dashboard/src/test/fixtures/catalogRows.ts:10-10 |
+| The shared row builder used for the F9 appeared-row rerenders. | "function catalogRow" | dashboard/src/test/fixtures/catalogRows.ts:12-12 |
 | The store the 200-path evidence assertion reads. | "export const sessionCockpitStore" | dashboard/src/data/sessionCockpitStore.ts:588-588 |
 | `HarnessInfo` — the three-field type the `HARNESSES` const is annotated with, and its runtime `parseHarness` validator. | "export interface HarnessInfo"; "function parseHarness" | dashboard/src/data/harnessCatalog.ts:5-5; dashboard/src/data/harnessCatalog.ts:22-22 |
 | `DetectedHarness` — the server model that fixes the three fields; `WireResponse` is what makes it `extra="forbid"`. | `DetectedHarness`; `WireResponse` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:366-371 |

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l6_diff_coverage_reopen_unclaimed.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,6 +34,14 @@ This module defines the test classes cited below; each row points at the exact s
 | Defines the class `TestReopenBlockers` (lines 45-73). | `TestReopenBlockers` | mcp/tests/test_l6_diff_coverage_reopen_unclaimed.py:45-73 |
 | Defines the class `TestUnclaimedEntities` (lines 76-125). | `TestUnclaimedEntities` | mcp/tests/test_l6_diff_coverage_reopen_unclaimed.py:76-125 |
 
+## L23 Final Candidate Disposition
+
+This regression keeps the unclaimed reopen path inside canonical task-reopen planning and verifies
+that the Dagger changed-line contract still sees the reopened candidate without consuming approval.
+
 ## Update History
+- 2026-08-14T06:38+02:00 — L23 final candidate review: the reopened unclaimed path remains covered
+  under exact task-reopen planning and the Dagger-only changed-line contract. Verification remains
+  closeout-owned.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors derived from current worktree source. Verification metadata pinned until closeout stamps the code commit.

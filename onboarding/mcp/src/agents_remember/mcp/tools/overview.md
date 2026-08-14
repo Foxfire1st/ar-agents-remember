@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -240,7 +240,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | Conformance test validates every builder routes through `_tool_payload`. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:639-734 |
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
 | The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
-| The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:207-207 |
+| The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:216-216 |
 | The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | "class AgentNotifierHeartbeatStore" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-63 |
 | The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:10-10 |
 | The trusted terminal assignment response carries document-and-role binding plus private session correlation. | "class AttachTerminalSessionToTaskResponse" | mcp/src/agents_remember/models/terminal.py:32-44 |

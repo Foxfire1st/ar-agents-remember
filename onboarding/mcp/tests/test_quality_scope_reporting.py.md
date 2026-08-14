@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-11T22:28+02:00               |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -79,7 +79,15 @@ No cross-repository implementation participates.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## L23 Final Candidate Disposition
+
+Quality reporting proofs bind the staged candidate and task-derived diff base to one authoritative
+Dagger result and deterministic enclosure exports. A second host projection cannot satisfy the
+acceptance contract.
+
 ## Update History
+- 2026-08-14T06:38+02:00 — L23 final candidate review: quality reporting proofs retain exact
+  staged/diff-base scope and one authoritative Dagger result with deterministic enclosure exports.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

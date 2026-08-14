@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df`                                  |
-| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                                  |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 
 ## Purpose
 
@@ -57,7 +57,14 @@ altitude. Both use the task-derived explicit diff base. Host pytest and direct w
 are diagnostics only, never acceptance or an automatic fallback. `memory_quality_check` remains a
 per-leaf closeout gate, and omitted required proof refuses the gate.
 
+## L23 Final Candidate Disposition
+
+The manager brief makes route partitioning, exact candidate identity, same-reviewer delta checks,
+and the final pre-curator lineage proof explicit deliverables rather than conversational memory.
+
 ## Update History
+- 2026-08-14T06:34+02:00 — L23 synchronized runtime template: manager briefs make route
+  partitioning, exact candidate review, and pre-curator lineage proof explicit handoff evidence.
 
 - 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized the brief's Dagger-only
   acceptance, targeted/full altitude, explicit diff-base, and diagnostic-only host boundary.

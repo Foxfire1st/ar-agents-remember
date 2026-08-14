@@ -50,9 +50,7 @@
       "skills",
       "roles.<role>",
       "rolesPerLevel",
-      "1580f92715ff93c988f9a15439ad9bec60ef4c5d",
-      "local",
-      "dagger",
+      "100b40d6be4a7d03eedbb1164ce54e2e8a314038",
       "orchestration.agentNotifier",
       "orchestration.supervisor",
       "landed",
@@ -87,7 +85,9 @@
       "onboardingRoot",
       "--contract",
       "worktree_cleanup",
-      "lifecycle_finalize_task"
+      "lifecycle_finalize_task",
+      "task_doc",
+      "task_reopen"
     ]
   },
   "fallback": {

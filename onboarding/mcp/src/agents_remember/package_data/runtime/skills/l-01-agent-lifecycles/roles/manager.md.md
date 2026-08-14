@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
-| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,16 @@ synchronizes and reconciles stale ancestry before onboarding, carries the result
 the curator brief, and relies on dispatch to repeat the proof before hosted-process creation. Later
 closeout/integration rechecks remain mandatory because they close a different, post-quality race.
 
+## L23 Final Candidate Disposition
+
+The manager partitions independent review by material ownership route, returns repairs to the same
+reviewer, and proves complete code plus external-memory lineage immediately before compiling the
+curator brief. A stale candidate is synchronized before curation rather than documented.
+
 ## Update History
+- 2026-08-14T06:32+02:00 — L23 synchronized runtime doctrine: managers partition route review,
+  require current task-derived lineage, and pass only stable candidate evidence into curator
+  dispatch. Verification remains closeout-owned.
 - 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized Dagger-only acceptance,
   targeted/full altitude, required explicit diff base, and diagnostic-only host execution.
   Verification remains closeout-owned.

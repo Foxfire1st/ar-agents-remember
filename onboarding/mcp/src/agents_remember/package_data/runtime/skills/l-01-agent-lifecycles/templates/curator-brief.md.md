@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -68,7 +68,15 @@ moves between preflight and dispatch.
 | The canonical template is the doctrine owner. | "# Template — Curator Brief" | skills/l-01-agent-lifecycles/templates/curator-brief.md:1-155 |
 | Synchronization replaces package targets and checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
+## L23 Final Candidate Disposition
+
+The curator brief carries the exact frozen candidate, passing per-route verdict references, current
+source-lineage projection, contract-scoped memory root, and prohibited source/test actions. It does
+not delegate commit authority or require private operation identity.
+
 ## Update History
+- 2026-08-14T06:34+02:00 — L23 synchronized runtime template: curator briefs carry exact candidate,
+  passing route-review, and current-lineage evidence while leaving verification stamps to closeout.
 
 - 2026-08-13T09:05+02:00 — L23 curator: recorded the current-lineage brief field and the independent
   fail-before-host dispatch proof; final provenance remains closeout-owned.
