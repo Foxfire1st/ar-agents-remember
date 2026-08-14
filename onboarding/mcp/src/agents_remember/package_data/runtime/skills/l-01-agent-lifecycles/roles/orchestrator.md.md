@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
+| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
