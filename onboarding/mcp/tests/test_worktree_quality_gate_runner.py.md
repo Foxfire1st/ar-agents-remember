@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_quality_gate_runner.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
-| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
+| lastUpdated | 2026-08-14T12:13:26+02:00 |
+| lastVerifiedCommitHash |  `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
+| lastVerifiedCommitDate |  2026-08-14T12:44:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,16 +16,16 @@
 
 ## Purpose
 
-Owns the strict quality-runner command, preview, environment, memory-cap, report-replacement, and
-failure-transport regressions split from the closeout mutation suite.
+Owns the Dagger-only quality command, preview, host-refusal, container memory-cap,
+report-replacement, and failure-transport regressions split from the closeout mutation suite.
 
 ## Code Commentary
 
 ### Logic
 
 `CodeQualityGateTests` proves wrapper applicability and altitude, exact diff-base forwarding,
-host-managed and explicitly capped full gates, atomic replacement of the one enclosure test report, interpreter selection,
-repository-selector scrubbing, and bounded failure output.
+container-runtime-managed and explicitly capped full Dagger gates, immediate host-execution
+refusal, atomic replacement of the one enclosure test report, and bounded failure output.
 
 ### Conventions
 
@@ -34,10 +34,10 @@ imported here; runner policy and closeout mutation are separate test responsibil
 
 ### Invariants And Boundaries
 
-- A leaf runs the targeted wrapper; a master runs the full wrapper host-managed
-  by default while preserving literal pytest `-n=auto`.
-- Explicit caps report `mode=explicit-cap` and retain host swap; absent caps
-  report `mode=host-managed` and run the plain wrapper.
+- Leaf closeout runs targeted Dagger acceptance; master integration runs full Dagger acceptance.
+- Explicit caps report `mode=explicit-cap`; absent caps report
+  `mode=container-host-managed`. Both retain container-runtime-managed swap.
+- Host quality execution refuses before resolving an interpreter or invoking a wrapper.
 - The report path is stable and each completed run replaces its predecessor.
 - Missing wrappers and invalid modes fail loudly rather than weakening the gate.
 
@@ -57,8 +57,8 @@ No Domain Documentation source is configured for this repository-local runner su
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The runner suite covers preview, execution, cap, report, interpreter, and failure contracts. | `CodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:19-486 |
-| Stable helpers remain in the closeout mutation suite. | `_checkout_with_wrapper`; `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:49-53; mcp/tests/test_worktree_closeout_quality_gate.py:56-62 |
+| The runner suite covers preview, execution, cap, report, interpreter, and failure contracts. | `CodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:15-445 |
+| Stable helpers remain in the closeout mutation suite. | `_checkout_with_wrapper`; `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:46-50; mcp/tests/test_worktree_closeout_quality_gate.py:53-59 |
 
 ## Cross-Repo References
 
@@ -66,15 +66,34 @@ The runner can certify a consuming repository's checkout when that checkout carr
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Applicability is determined from the supplied checkout rather than a repository name. | `quality_wrapper_path`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:80-82; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:149-156 |
+| Applicability is determined from the supplied checkout rather than a repository name. | `quality_wrapper_path`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:63-65; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:97-104 |
 
-## L23 Quality Scratch Regression
+## L23 Host-Execution Removal
 
-Quality-gate coverage now expects only durable `test-results.md` in the reports
-directory and asserts every subprocess temp environment points at the short
-native `QUALITY_TEMP_ROOT`. This pins the durable-report/scratch separation.
+The former local diagnostic runner, interpreter selection, host environment construction,
+systemd/rlimit command planning, and their tests are removed from the acceptance adapter. The
+remaining named local entry point is a refusal surface and never resolves or starts a wrapper.
+
+## R39 Runner Policy Proofs
+
+The runner suite separates consumer adapter opt-in from the Agents Remember self-wrapper policy
+and requires the latter to refuse when missing. It proves local quality execution always raises
+before wrapper resolution, keeps Dagger as the only plan/executor, and removes tests for deleted
+host interpreter, environment, subprocess, and memory-cap machinery.
+
+## R43 Builder-Level Dagger Refusal
+
+The runner suite now calls `_gate_command_parts` and `_memory_policy_payload` with a local executor
+and requires both to reject it with pinned-Dagger guidance. The missing-wrapper assertion uses the
+same `self-owned wrapper` wording as production.
 
 ## Update History
+
+- 2026-08-14T12:13:26+02:00 — R43 curator: recorded builder-level non-Dagger refusal and aligned
+  missing-wrapper wording. Verification remains closeout-owned.
+
+- 2026-08-14T11:27+02:00 — R39 curator: reconciled the test card with self-policy, immediate host
+  refusal, and the simplified Dagger-only adapter. Verification remains closeout-owned.
 - 2026-08-14T06:40+02:00 — L23 final candidate review: quality-runner tests require Dagger-only
   execution, explicit mode/diff base, exact candidate materialization, fail-closed status, and no
   host or direct-Docker compatibility path.

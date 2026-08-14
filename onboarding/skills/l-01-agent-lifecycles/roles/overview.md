@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 
 ## Purpose
 
@@ -24,10 +24,10 @@ occupies one leaf coherence pass and reconciles existing intent, ruled intent, a
 reality into onboarding. Other specialist roles retain their own documented altitude and artifact.
 
 Manager, orchestrator, and worker doctrine shares one quality altitude rule: the pinned Dagger
-graph is the only Agents Remember acceptance environment. Leaf/focused checks select targeted
-mode; the master gate selects full mode once. Every run receives the explicit task-derived diff
-base. Host pytest/wrapper execution is diagnostic only, never acceptance or fallback; constrained
-CI alone explicitly configures a hard cap.
+graph is the only Agents Remember acceptance environment. Leaf closeout selects targeted mode
+exactly once; leaf integration and series closeout do not rerun it. The master gate selects full
+mode once. Every run receives the explicit task-derived diff base. Host pytest/wrapper execution
+is refused; a constrained lifecycle environment may explicitly configure a hard cap.
 
 The curator's terminal artifact is valid only after current-additions coverage and the full
 leaf-scoped memory-quality worklist have been repaired and rerun. Expected dirty-source drift and
@@ -85,7 +85,17 @@ Manager, reviewer, curator, and orchestrator roles share one handoff: independen
 is bound to the exact candidate, current lineage is proven before curator creation, and acceptance
 uses targeted leaf or full master Dagger authority without model-carried operation ids.
 
+## R39 Generic Role Boundary
+
+Manager, orchestrator, and worker roles now obtain concrete acceptance from repository memory
+instead of carrying Agents Remember-specific Dagger commands. They retain the one leaf-closeout,
+no leaf-integration rerun, one master-integration cadence and must fail closed rather than invent a
+runner or fallback.
+
 ## Update History
+
+- 2026-08-14T11:29+02:00 — R39 curator: reconciled the role route with repository-resolved
+  acceptance doctrine. Verification remains closeout-owned.
 - 2026-08-14T06:25+02:00 — L23 final candidate review: manager, reviewer, curator, and orchestrator
   roles preserve one candidate-bound route-review handoff, current-lineage admission, and Dagger-only
   acceptance without model-carried operation or commit ids. Verification remains closeout-owned.

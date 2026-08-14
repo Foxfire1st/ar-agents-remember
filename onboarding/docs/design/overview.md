@@ -6,8 +6,8 @@
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
 | lastUpdated            | 2026-07-18T07:43+02:00                      |
-| lastVerifiedCommitHash | `2dea095cd68454a7a68893e37c07dbd8daa86d32`  |
-| lastVerifiedCommitDate | 2026-08-09T18:00:39+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`  |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../overview.md`                         |
 
 ## Governing Overview
@@ -105,7 +105,16 @@ needed to establish the route model.
 | The explicit upstream gaps and one-Chats cutover ruling. | `# Session cockpit upstream register and Chats decision brief` | docs/design/dashboard/session-cockpit-upstream-register.md:1-66 |
 | The bounded series closeout evidence pack. | `# Session cockpit closeout evidence` | docs/design/dashboard/session-cockpit-closeout-evidence.md:1-154 |
 
+## R39 Design Evidence Disposition
+
+The cockpit performance/evidence design document now labels its test-capable measurement command as
+an internal nonce-attested Dagger invocation and explicitly refuses host execution. This is an
+evidence-location clarification; the dashboard architecture is unchanged.
+
 ## Update History
+
+- 2026-08-14T11:29+02:00 — R39 curator: recorded the Dagger-only measurement boundary in the
+  design route. Verification remains closeout-owned.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: `observable-lifecycle.md`'s recovery
 ## 260713-TES-L5 Route Impact — Fact-Relay Recovery Language

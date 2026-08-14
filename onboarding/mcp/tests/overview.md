@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated | 2026-08-14T12:31:43+02:00 |
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -707,10 +707,10 @@ and `.github/workflows/publish-mcp-to-pypi.yml` for the only production caller. 
 seam through generated asset file cards or a generic normalizer, and do not expect a committed
 bundle to compare against.
 
-For the local gate itself, begin at `test_code_quality_check.py`: one test scans
-`.githooks/_gate.sh` and the CI workflow for the wrapper command with no threshold opt-out, and a
-second pins each hook to its tier (`pre-commit` → `fast`, `pre-push` → `full`) so neither can be
-silently promoted or demoted. Since 260731-EFA-L2 the same module also holds the gate's honesty
+For repository gate ownership, begin at `test_code_quality_check.py`: it proves the accepting
+wrapper lives only behind Dagger, the host hook tiers are non-test (`pre-commit` → `fast`,
+`pre-push` → `targeted`, manual `full` refuses), and the pull-request-only GitHub workflow invokes
+the deterministic hook rather than a second Dagger/pytest rail. Since 260731-EFA-L2 the same module also holds the gate's honesty
 contracts: `RadonIsAReportNotAGateTests` (exactly the two Radon steps are declared reports; the
 section header and the help text say so; a report step that exits non-zero still fails, because a
 tool that exits 0 on every finding can only exit non-zero when broken),
@@ -753,9 +753,8 @@ a working-tree-only change.
 `AR_*` markers were registered and reconciled with the suite's skip decorators while **nothing
 applied or ran any of them** — a registered marker that decorates nothing selects zero tests, and
 pytest reports that as a successful run of an empty selection. This module reconciles registered
-markers, applied markers and `scripts/run-gated-integration.py` entries in both directions, and pins
-the two credential-free paths CI runs (`ar-run-pi-rpc-smoke`, `agents-remember-real-mcp-config`)
-against the six that stay behind the local runner.
+markers, applied markers and `scripts/run-gated-integration.py` entries in both directions. It also
+proves no GitHub workflow invokes that pytest runner outside the Dagger attestation boundary.
 
 **For the generated harness trees, begin at `test_sync_harness.py`.** Its first test is the
 enforcing one: any drift — content **or** file mode — between `scripts/harness/` and the nine
@@ -894,7 +893,7 @@ serialization, and liveness-first 404/409 classification. Opener/app cases prove
 pre-spawn validation, same-pair live reopen, changed launch conflict with actual retained truth,
 fresh dead replacement, and a cross-process diffe…13126 tokens truncated…_harness.py:35-107 |
 | The closeout gate suite covers all three statuses and spies on the real argument passed from unannotated closeout call sites. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:19-486; mcp/tests/test_worktree_closeout_quality_gate.py:55-257 |
-| The gate is shown the commit content: a created file reaches ruff through real `derive_scope`, a deleted one leaves it, and the lint-path set equals the Python paths in the resulting commit tree. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:642-748 |
+| The gate is shown the commit content: a created file reaches ruff through real `derive_scope`, a deleted one leaves it, and the lint-path set equals the Python paths in the resulting commit tree. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:130-208 |
 | Both staging refusals are asserted as damage that does not happen: the repository checkout preserves its `add -p` selection and untracked secret, and a conflicted worktree keeps `MERGE_HEAD` intact. | `TaskWorktreePreconditionTests`; `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:846-958; mcp/tests/test_worktree_closeout_quality_gate.py:961-1015 |
 | A retry commits the tree a first run would: two worktrees driven to the same end state, one through a refused gate, are asserted to produce the identical commit tree, so the ignored `.dmypy.json` a refused attempt staged is not carried into the retry (`RetryStagesWhatAFirstRunWouldTests`). | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:966-1025 |
 | The whole HTTP surface is driven and validated against the model declared for the returned status, alias-strict, with the inventory, walker coverage, two runtime-validated dict routes, and the exact 286-declared / 133-driven / 153-listed ledger. | `_grouped`; `_driven_pairs`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:443-447; mcp/tests/test_serving_response_conformance_live.py:460-483; mcp/tests/test_serving_response_conformance_live.py:486-486; mcp/tests/test_serving_response_conformance_cases_1.py:12-12 |
@@ -999,9 +998,9 @@ All 27 over-limit test modules were split in place into families (79 new modules
 The test tree gained three focused suites for the quality ladder: `test_code_quality_targeted.py`
 (derivation selectors, transitive reverse-import closure, uncovered-module refusal, real targeted
 wrapper runs with radon consuming the changed module files), `test_code_quality_memory_cap.py`
-(systemd/rlimit planning and the wrapper's cap enforcement and policy naming), and
+(the wrapper's inner-cap enforcement and policy naming), and
 `test_worktree_integrate_quality_gate.py` (leaf targeted / series full altitude routing,
-host-managed absence and explicit settings caps, refusal-before-merge, dry-run planned-gate payload). Existing families were
+container-runtime-managed absence and explicit settings caps, refusal-before-merge, dry-run planned-gate payload). Existing families were
 extended: closeout gate mode/cap/kill-shape assertions, hook-tier `pre-push → targeted`, settings
 `qualityGate` family, scope-reporting integration invocation labels, and the deterministic
 observer ticker-exit assertions (`ticker.join` replacing poll loops — test-only, kills a
@@ -1057,9 +1056,9 @@ not the empty tree.
 
 The final public Dagger contract requires a nonblank explicit diff base for both `quality` and
 `verify`, forwards it on every targeted or full run, and publishes generated help for source,
-bundle, base, mode, and cap. Agents Remember acceptance is Dagger-only: leaf/focused work uses
-targeted mode and master integration runs full mode once; host pytest or wrapper runs are
-diagnostics. The source-lineage suite's pytest-inert script launcher was removed without changing
+bundle, base, mode, and cap. Agents Remember acceptance is Dagger-only: leaf closeout uses targeted
+mode exactly once and master integration runs full mode exactly once; leaf integration does not
+rerun it. Host pytest or wrapper runs are refused. The source-lineage suite's pytest-inert script launcher was removed without changing
 collection or assertions, eliminating dead launcher lines from changed-coverage accounting. The
 focused proof ran 26 tests with 20 workers and passed Ruff, formatting, layering, Pyright, CRAP,
 and 7/7 changed-line coverage; generated help was verified.
@@ -1070,7 +1069,53 @@ The final forcing surface covers Dagger-only suite attestation, fresh attempts w
 result, bounded output and stale-report pruning, candidate-bound route review, transitive lineage
 rechecks, failure-atomic integration, and monotonic post-claim recovery.
 
+## R39 Acceptance Forcing Matrix
+
+The test route now proves all bypass seams: pytest and the direct wrapper share one before-planning
+nonce/file guard; Agents Remember cannot delete its wrapper; leaf integration cannot rerun
+acceptance; series closeout cannot create code or spend a gate; master integration alone runs
+full; GitHub workflows run deterministic PR checks without pytest/Dagger; publish proves main
+reachability without reaccepting. Obsolete host environment/runner tests were removed.
+
+## R42 File-Size Extraction
+
+Two focused suites now carry behavior that previously made the broad quality files exceed the
+structural file-size rail. `test_code_quality_environment_guard.py` owns direct entry refusal and
+native scratch-root selection. `test_worktree_closeout_gate_scope.py` owns created/deleted-file
+scope equality against the committed tree. The extraction changes ownership and citations only;
+it does not weaken the Dagger authorization or staged-candidate contracts.
+
+## R43 Failure-Repair Matrix
+
+The focused repair tests now force accepted candidate identity in recovery fixtures, clean series
+closeout reuse without commit, positive recovery outcome proof, self-versus-consumer wrapper
+policy at master altitude, builder-level non-Dagger refusal, and precise non-repository Git
+identity failure. These are boundary repairs, not another acceptance cadence.
+
+## R44 Metrics Shutdown Race
+
+`test_serving_app_background_loops.py` now blocks an in-flight metrics record call, cancels the
+loop, proves the task cannot finish early, releases the worker, and then observes both propagated
+cancellation and the committed sample. This is deterministic shutdown-race coverage, not a timing
+fallback or a second metrics owner.
+
 ## Update History
+
+- 2026-08-14T12:31:43+02:00 — R44 curator: recorded the in-flight metrics-write shutdown race and
+  its deterministic worker drain. Verification remains closeout-owned.
+
+- 2026-08-14T12:13:26+02:00 — R43 curator: summarized the candidate, recovery, self-policy,
+  executor, and Git-identity forcing repairs. Verification remains closeout-owned.
+
+- 2026-08-14T11:48:55+02:00 — R42 curator: added the two focused suite routes and repointed exact
+  scope ownership after the file-size extraction. Verification remains closeout-owned.
+
+- 2026-08-14T11:29+02:00 — R39 curator: summarized the direct-guard, self-policy, altitude, and
+  workflow forcing evidence. Verification remains closeout-owned.
+
+- 2026-08-14T09:08+02:00 — No route impact: reopened L23 adds one application regression for the
+  existing leaf-only route-review altitude boundary. Test-route ownership and suite structure are
+  unchanged; verification provenance remains closeout-owned.
 
 - 2026-08-14T06:25+02:00 — L23 final candidate review: forcing coverage now spans Dagger-only
   startup attestations, fresh-attempt/shared-result quality projection, bounded output/report prune,

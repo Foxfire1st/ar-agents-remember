@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-11T22:28+02:00               |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,8 +18,8 @@
 
 Contract tests for the code-quality wrapper's reported scope and provenance. The suite proves that
 each fixed rail names non-vacuous inputs and results, untracked exposure does not mutate Git state,
-caller altitude describes the actual candidate tree, and generated/dashboard workflow rails use
-the shared reporting contract.
+caller altitude describes the actual candidate tree, and the GitHub workflow stays on the
+deterministic non-test hook instead of invoking a second Dagger/test rail.
 
 ## Code Commentary
 
@@ -85,7 +85,18 @@ Quality reporting proofs bind the staged candidate and task-derived diff base to
 Dagger result and deterministic enclosure exports. A second host projection cannot satisfy the
 acceptance contract.
 
+## R39 Scope Authority
+
+Scope/provenance tests require Dagger to retain the accepting wrapper and dashboard test rails
+while GitHub PR validation calls only the deterministic targeted hook. Obsolete host
+quality-environment assertions were removed; no second host report path can satisfy acceptance.
+
 ## Update History
+
+- 2026-08-14T11:27+02:00 — R39 curator: aligned scope reporting with Dagger-only acceptance and
+  non-test CI. Verification remains closeout-owned.
+- 2026-08-14T09:37+02:00 — Reopened L23 cadence: the workflow assertion now requires the
+  pull-request-only deterministic hook and forbids the GitHub Dagger action.
 - 2026-08-14T06:38+02:00 — L23 final candidate review: quality reporting proofs retain exact
   staged/diff-base scope and one authoritative Dagger result with deterministic enclosure exports.
 

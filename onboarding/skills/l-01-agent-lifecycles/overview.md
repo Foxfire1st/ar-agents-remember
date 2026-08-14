@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 
 ## Purpose
 
@@ -28,10 +28,10 @@ independent verdict evidence, curators reconcile system intent and memory, manag
 delegated leaf gates and integrate a master, and orchestrators govern master handovers. Mechanical
 fact relay replaces role-local polling and inference.
 
-The quality altitude ladder uses the pinned Dagger graph for Agents Remember acceptance. Leaf and
-focused work selects targeted mode; master integration selects full mode exactly once. Both
-require the task-derived explicit diff base. Host pytest/wrapper runs are diagnostics only and a
-failed Dagger graph never falls back to them; a hard cap remains an explicit constrained-CI
+The quality altitude ladder uses the pinned Dagger graph for Agents Remember acceptance. Leaf
+closeout selects targeted mode exactly once; leaf integration and series closeout do not rerun it.
+Master integration selects full mode exactly once. Both require the task-derived explicit diff
+base. Host pytest/wrapper runs are refused; a hard cap remains an explicit constrained-lifecycle
 setting rather than role-local judgment.
 
 A curator completes only after the current-additions missing-onboarding check and full leaf-scoped
@@ -76,7 +76,17 @@ creation: managers require current master lineage and leaf roles require the
 full chain. Refusal creates no child and recovery is contract-addressed, keeping
 commit/session identity inside the control plane.
 
+## R39 Repository-Resolved Quality Doctrine
+
+The lifecycle skill is repository-generic: roles and briefs resolve executor, environment,
+arguments, retry, resources, and evidence from the active repository memory. The cross-repository
+cadence remains fixed at leaf closeout once and master integration once, with no leaf-integration
+rerun and no inferred fallback.
+
 ## Update History
+
+- 2026-08-14T11:29+02:00 — R39 curator: removed Agents Remember-specific quality commands from
+  generic lifecycle guidance while preserving exact cadence. Verification remains closeout-owned.
 - 2026-08-14T06:25+02:00 — L23 final candidate review: lifecycle doctrine keeps Dagger as the sole
   acceptance graph and makes manager lineage plus exact candidate-bound route review mandatory
   before curator dispatch. Verification provenance remains closeout-owned.

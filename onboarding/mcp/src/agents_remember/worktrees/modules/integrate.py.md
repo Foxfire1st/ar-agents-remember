@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-13T08:40+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -22,22 +22,15 @@ blocked non-fast-forward cases, optionally replays code and memory content for
 reviewed parallel changes, merges integrated commits, verifies the memory
 ledger mapping, and updates integration fields in the contract.
 
-**Quality altitude ladder (260731-EFA-L17/L24).** The integration step itself runs the
-altitude-routed gate before any merge: `quality_gate_mode` (lines 54-63) returns
-`GATE_TARGETED` for a leaf contract and `GATE_FULL` otherwise; `_quality_gate_memory_cap`
-(lines 67-69) reads optional `orchestration.qualityGate.memoryCapBytes` from
-`load_agentic_settings`; absence means host-managed RAM and swap. `_quality_gate_preview`
-builds the planned gate for
-the dry run and the result payload (`IntegratePreview`, lines 81-88); and
-`_run_integration_quality_gate` (lines 664-693), called from `_apply_integration`
-(lines 626-663) after the code commit is landed but before any merge, runs
-`run_strict_code_quality_gate` with the plan and the altitude invocation label
-(`leaf-integration` / `master-integration`) plus a `QualityGateTarget` carrying the checkout and
-owning worktree group. Every completed run therefore replaces the enclosure's
-`reports/test-results.md`; success exposes `reportPath`, while a refusal writes the full transcript
-before returning
-`blocked-quality-gate` and nothing merges. `memory_quality_check` is NOT part of
-this move: it stays a per-leaf closeout gate.
+**Quality altitude ladder (260731-EFA-L17/L24/L23 reopen).** Integration owns acceptance only at
+master altitude. A leaf integration returns `certified-at-leaf-closeout` and lands the exact
+closeout commit without calling the quality decider, settings loader, or Dagger executor again.
+`quality_gate_mode` refuses leaf use and returns `GATE_FULL` only for series/master contracts.
+`_run_integration_quality_gate` therefore runs `run_strict_code_quality_gate` once for master
+integration, with the optional settings-owned memory cap and `master-integration` invocation.
+Dry-run reports the same ownership without executing it. A full-gate refusal returns
+`blocked-quality-gate` before any source ref moves. `memory_quality_check` remains leaf-closeout
+owned and is not repeated here.
 
 **Two frozen parameter objects and one extracted phase (260731-EFA-L2):**
 
@@ -99,14 +92,27 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The wire model declares `IntegrationStatus` / `CleanupStatus`; worktree_contract imports them and exposes `ContractCells` / `amend_contract` as the typed amendment path. | "class ContractCells"; "def amend_contract"; "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:18-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
 | This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:179-197; mcp/src/agents_remember/worktrees/modules/integrate.py:611-643 |
-| The altitude routing and the gate run inside the integration step itself; absent cap means host-managed full execution, while an explicit cap remains settings-owned. The run target carries `contract.worktree_group` for stable transcript publication. | `quality_gate_mode`, `_quality_gate_memory_cap`, `_quality_gate_preview`, `_run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/integrate.py:63-70; mcp/src/agents_remember/worktrees/modules/integrate.py:78-79; mcp/src/agents_remember/worktrees/modules/integrate.py:82-95; mcp/src/agents_remember/worktrees/modules/integrate.py:1024-1059 |
+| Leaf integration reuses its closeout proof without calling a gate; series/master integration alone runs full Dagger, with an optional settings-owned cap and enclosure-owned reports. | `quality_gate_mode`, `_quality_gate_preview`, `_run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/integrate.py:60-98; mcp/src/agents_remember/worktrees/modules/integrate.py:1032-1067 |
 | The planned gate is carried in the dry-run payload and the integrated result without running on the dry-run path. | `IntegratePreview`, `_dry_run_result`, `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:98-104; mcp/src/agents_remember/worktrees/modules/integrate.py:452-496; mcp/src/agents_remember/worktrees/modules/integrate.py:611-643 |
-| The altitude-routing proofs cover leaf targeted, series full, host-managed absence, explicit settings caps, refusal-before-merge, and dry-run preview. | `IntegrationQualityGateAltitudeTests` | mcp/tests/test_worktree_integrate_quality_gate.py:49-198 |
+| The altitude proofs cover leaf no-rerun, series full, host-managed absence, explicit settings caps, refusal-before-merge, and dry-run preview. | `IntegrationQualityGateAltitudeTests` | mcp/tests/test_worktree_integrate_quality_gate.py:49-198 |
 | Worktree tests cover fast-forward integration, fail-closed source-lineage refusal for both non-overlapping and conflicting source movement after closeout, and non-fast-forward refusal without mutation. The stale-source cases direct callers to synchronize before retrying instead of replaying during integration. | `test_integrate_ff_only_fast_forwards_code_and_memory_main`; `test_integrate_refuses_parallel_non_overlapping_source_changes_until_sync`; `test_integrate_refuses_parallel_conflicting_source_changes_until_sync`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:605-662; mcp/tests/test_worktree_support_tests_2.py:672-715; mcp/tests/test_worktree_support_tests_2.py:717-753; mcp/tests/test_worktree_support_tests_3.py:723-758 |
 
 As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the application entry point) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
 
+## R39 Integration Altitude
+
+Leaf integration returns certified-at-leaf-closeout and never invokes the gate runner.
+Series/master integration owns the single full Dagger acceptance before merge, passes the
+self-repository required-wrapper policy, and revalidates lineage/source tips after the long run.
+A missing Agents Remember wrapper or failed full result blocks before merge.
+
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: replaced leaf targeted reruns with certified-commit reuse
+  and retained full acceptance solely at master integration. Verification remains closeout-owned.
+- 2026-08-14T09:37+02:00 — Reopened L23 acceptance ownership: leaf integration now lands the exact
+  closeout-certified commit without Dagger; master integration remains the only full accepting run.
+  PR, push, tag, and publish paths do not become alternate integration acceptance owners.
 - 2026-08-14T06:36+02:00 — L23 final candidate review: integration rechecks complete code and
   external-memory lineage before/after quality and before merge, pins source tips, runs targeted
   leaf or full master Dagger authority, and stays failure-atomic before refs move.

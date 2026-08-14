@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -29,8 +29,9 @@ brief; the manager never requests or stores an occupant id. The manager gathers 
 and reviewer verdict, then calls `worktree_status` for the canonical leaf and requires the complete
 task-derived `sourceLineage` projection to be current immediately before curator dispatch. It
 carries that projection in the curator brief; dispatch re-proves it before host creation. Only then
-does it gather the curator coherence report before closeout. It runs leaf-scoped quality at leaf
-altitude and the full wrapper once at master integration altitude.
+does it gather the curator coherence report before closeout. It runs leaf-scoped targeted quality
+exactly once when closeout creates the leaf commit. Leaf integration lands that exact certified
+commit without a rerun. The full wrapper runs once at master integration altitude.
 
 When all leaves land, an adversarial master-exit verdict becomes evidence on the handover seam; the
 manager writes the master-handover packet and remains reachable at `(master document, manager)`.
@@ -60,8 +61,8 @@ transparent.
 | One manager owns one canonical master and the complete leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. | "## Hosted Role Dispatch" | skills/l-01-agent-lifecycles/roles/manager.md:41-47 |
 | The leaf loop sequences builder, reviewer, curator, closeout, integration, and cleanup duties. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:94-182 |
-| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:219-219; skills/l-01-agent-lifecycles/roles/manager.md:240-240 |
-| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:254-254 |
+| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:216-216; skills/l-01-agent-lifecycles/roles/manager.md:237-237 |
+| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:251-251 |
 
 ## L23 Manager And Leaf Admission
 
@@ -75,7 +76,18 @@ onboarding work. If super or master moved, the manager synchronizes and reconcil
 the curator is never asked to document a stale leaf. Closeout and integration independently repeat
 lineage after long quality gates to close their later time-of-check/time-of-use windows.
 
+## R39 Generic Manager Doctrine
+
+The canonical manager role resolves executor, environment, arguments, resources, retry, and
+evidence from repository memory. Leaf closeout accepts once, leaf integration reuses that commit,
+and master integration accepts full once; no fallback is inferred.
+
 ## Update History
+
+- 2026-08-14T11:29+02:00 — R39 curator: reconciled canonical manager guidance with generic
+  repository-resolved policy. Verification remains closeout-owned.
+- 2026-08-14T09:37+02:00 — Reopened L23 cadence: clarified leaf-closeout-only targeted acceptance,
+  leaf-integration proof reuse, and the single full master-integration owner.
 - 2026-08-13T08:47+02:00 — L23 integration-gate repair: made current `worktree_status.sourceLineage` an explicit input to curator dispatch and recorded the plane's second proof before host creation. Verification metadata remains closeout-owned.
 
 - 2026-08-12T20:10+02:00 — L23 curator: documented canonical manager/leaf lineage admission; verification remains closeout-owned.

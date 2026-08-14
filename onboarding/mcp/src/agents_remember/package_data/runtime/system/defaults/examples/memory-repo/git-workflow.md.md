@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-24T14:31Z                           |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d` |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../../../../../../overview.md`       |
 
 ## Governing Overview
@@ -26,14 +26,14 @@ through a gated branch (e.g. a PR-gated `main`).
 The file tells users to copy the example to memory-layer `system/git-workflow.md` and fill in the
 `<placeholders>` for their repo. It states the spine (spear branch + whether it is gated; `feat/`|
 `fix/` work branches; whether work is worktree-backed), an issue/PR policy table, a generic landing
-flow (issue → branch → worktree → commit gate → push gate → agent owns push→PR→checks→merge→cleanup
+flow (issue → branch → worktree → leaf closeout gate → push→PR→checks→merge→cleanup
 → `c-11-memory-carryover-from-branch` skill carryover run against the merged spear, which maps the ledger to the actual spear HEAD
 including a PR merge commit even when nothing else needs carrying), a "prefer merge commit over
-squash" rule for branches that bundle distinct changes, and the mandatory repository quality
-wrapper at pre-commit, worktree closeout before mutation, pre-push, and CI. CRAP at or above the
-configured threshold (30 by default) fails each gate without a separate strict opt-in. The file
-also carries an optional release/changelog convention (tag scheme, version-bump locations, release
-commit subject, PR-gated end-to-end flow).
+squash" rule for branches that bundle distinct changes, and the altitude-owned quality cadence:
+deterministic local checks, targeted acceptance once at leaf closeout, no leaf-integration rerun,
+full acceptance once at master integration, and deterministic pull-request validation without an
+ordinary-push duplicate. The file also carries an optional release/changelog convention (tag
+scheme, version-bump locations, release commit subject, PR-gated end-to-end flow).
 
 ### Conventions
 
@@ -74,7 +74,17 @@ No sibling repository evidence is needed.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## R39 Generic Landing Example
+
+The default workflow separates deterministic hooks and PR checks from integrated acceptance:
+leaf closeout accepts once, leaf integration reuses the commit, master integration accepts full
+once, and pre-push never spends acceptance. Repositories point at their own adapter and make risk
+thresholds part of the default accepted invocation.
+
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: recorded generic exact-once landing cadence and adapter
+  ownership. Verification remains closeout-owned.
 
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: repaired 2 table rows and 7 prose citations (9 citation items); scoped citation check now passes.
 

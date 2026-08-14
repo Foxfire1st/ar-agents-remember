@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_gated_integration_runner.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-31T15:32+02:00                       |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`   |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`   |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -43,17 +43,17 @@ All eight were in that state until 260731-EFA-L2.
   directions: a path cannot be registered, documented and still unreachable, and the runner
   cannot claim a path the suite no longer has.
 - `test_every_path_states_what_it_requires` — each path carries a non-empty `requires` and
-  a category of `CI_SAFE` or `LOCAL_ONLY`.
-- `test_the_credential_free_paths_are_exactly_the_two_ci_runs` — the two that run in CI are
+  a category of `CREDENTIAL_FREE` or `VENDOR_CREDENTIALS`.
+- `test_the_credential_free_paths_are_exactly_the_two_dagger_safe_runs` — the two credential-free paths are
   `ar-run-pi-rpc-smoke` (installs its own Pi and drives it offline against 127.0.0.1) and
   `agents-remember-real-mcp-config` (spawns this repository's own server against a
   generated settings file). The other **six** need an installed, signed-in vendor CLI, and
   four of those bill for real turns — which is why they stay behind the local runner.
   Asserting it here rather than leaving it to a workflow file nobody reads is the point.
-- `test_the_workflow_runs_every_credential_free_path` — `.github/workflows/integration-gated.yml`
-  names each `CI_SAFE` path.
+- `test_github_pr_checks_do_not_bypass_dagger_for_gated_pytest_paths` — no GitHub workflow invokes
+  the gated runner or host pytest; the repository-wide Dagger attestation guard remains authoritative.
 - `test_the_dry_run_selection_names_a_test_that_exists` — a stale `DRY_RUN_NODE` would make
-  the CI job run nothing and still exit 0, so the node id is split and looked up in source.
+  an acceptance selection run nothing and still exit 0, so the node id is split and looked up in source.
 
 ### `RunnerBehaviourTests` — the runner itself
 
@@ -78,8 +78,7 @@ registers it in `sys.modules` before executing it.
 
 - Registered marker set, applied marker set, and runner path set are **one set**, asserted
   in both directions. Adding a marker without applying it, or without a runner entry, fails.
-- CI runs exactly the two credential-free paths; adding a third to CI requires changing an
-  assertion, not just a workflow.
+- GitHub PR workflows run none of these pytest selections outside Dagger.
 - The runner never reports success for a run that collected or passed nothing.
 
 ## Repo-Internal References
@@ -88,10 +87,22 @@ registers it in `sys.modules` before executing it.
 | --- | --- | --- |
 | The runner under test: `PATHS`, `BY_NAME`, `write_settings`, `child_environment`, `readiness`, `verify_passed`, `pytest_command`. | `PATHS`; `write_settings`; `verify_passed`; `readiness` | scripts/run-gated-integration.py:76-173; scripts/run-gated-integration.py:203-221; scripts/run-gated-integration.py:282-307; scripts/run-gated-integration.py:310-314 |
 | Where the eight markers are registered. | "ar_run_pi_rpc_smoke: opt in with AR_RUN_PI_RPC_SMOKE=1" | pyproject.toml:197-207 |
-| The CI job that must name every credential-free path. | "ar-run-pi-rpc-smoke"; "agents-remember-real-mcp-config" | .github/workflows/integration-gated.yml:75-112 |
+| The PR-workflow refusal proof scans all workflow YAML for the retired host runner and pytest spellings. | `test_github_pr_checks_do_not_bypass_dagger_for_gated_pytest_paths` | mcp/tests/test_gated_integration_runner.py:137-146 |
 | The complementary registry check: markers reconciled against the suite's real `AR_*` environment gates. | `test_registered_markers_and_the_suite_environment_gates_agree` | mcp/tests/test_code_quality_check_scope.py:253-261 |
 
+## R39 Credential And Environment Proofs
+
+The runner tests rename CI-safe/local-only categories to credential-free/vendor-credentials and
+prove the two credential-free selectors exactly. They also forbid GitHub workflows from invoking
+the gated pytest runner, preserving Dagger as the only test-capable environment.
+
 ## Update History
+
+- 2026-08-14T11:27+02:00 — R39 curator: reconciled category semantics and GitHub no-pytest
+  ownership. Verification remains closeout-owned.
+
+- 2026-08-14T09:37+02:00 — Reopened L23 Dagger-only PR repair: retired the stale host-pytest
+  workflow and added a repository-wide workflow assertion preventing that bypass from returning.
 
 - 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 4 citation rows: the runner under test (run-gated-integration.py PATHS/write_settings/verify_passed/readiness extents), the pyproject marker registry L194-L204, the CI job L75-L112, and the complementary registry check L741-L749. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 

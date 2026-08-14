@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_leaf_structural_coverage.py`                  |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`                   |
-| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`                   |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -18,8 +18,8 @@
 
 This focused coverage module reaches cross-package leaf seams that are intentionally smaller than
 the domain suites. It retains layering, context-resolution, provider, evidence, catalog, and
-worktree edge coverage. Task-document identity, topology, structural-gate, and Windows scratch
-branches now live in `test_task_document_structural_identity.py`.
+worktree edge coverage. Task-document identity, topology, and structural-gate branches now live in
+`test_task_document_structural_identity.py`.
 
 ## Code Commentary
 
@@ -61,7 +61,6 @@ No external/domain documentation is configured.
 | --- | --- | --- |
 | The suite complements the layering unit tests with wrapper-adjacent seams. | `test_layering_cli_and_edges`; `test_layering_render_and_stale` | mcp/tests/test_leaf_structural_coverage.py:83-119; mcp/tests/test_leaf_structural_coverage.py:140-167 |
 | The L19 extension covers migration, task-topology, and structural-gate branches. | `test_terminal_catalog_migration_maps_every_legacy_identity`; `test_task_document_topology_children_and_refusals`; `test_structural_gate_authorization_decision_and_listing` | mcp/tests/test_task_document_structural_identity.py:20-159; mcp/tests/test_task_document_structural_identity.py:161-260; mcp/tests/test_task_document_structural_identity.py:262-390 |
-| The platform branch preserves inherited temp paths only on native Windows. | `test_quality_environment_has_a_windows_branch` | mcp/tests/test_task_document_structural_identity.py:491-496 |
 
 ## Cross-Repo References
 

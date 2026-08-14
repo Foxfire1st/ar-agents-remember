@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_core.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-08T02:00+02:00                                            |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                                        |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`                                        |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -49,10 +49,10 @@ L23 adds the closed `QualityExecutor` choice and defaults `orchestration.quality
 ## 260731-EFA-L17/L24 Quality-Gate Settings
 
 The module owns the `orchestration.qualityGate` family:
-`KNOWN_QUALITY_GATE_FIELDS` contains only `memoryCapBytes`; the frozen
-`QualityGateSettings` model uses `None` for the host-managed default; and the
+`KNOWN_QUALITY_GATE_FIELDS` contains `memoryCapBytes` and the Dagger-only `executor`; the frozen
+`QualityGateSettings` model uses `None` for the container-runtime-managed default; and the
 generated settings seed deliberately omits the family. An explicit positive
-integer remains available for constrained CI. Unknown keys fail loud through
+integer remains available for a constrained Dagger lifecycle run. Unknown keys fail loud through
 the shared `_refuse_unknown` machinery exactly like every other orchestration
 family.
 
@@ -71,7 +71,16 @@ family.
 Quality settings accept the one Dagger executor contract and do not preserve `local` as a selectable
 acceptance mode. Optional resource policy configures the graph; it does not select a second runner.
 
+## R39 Dagger Resource Ownership
+
+The quality-gate executor remains closed to Dagger. An omitted memory cap means the Dagger
+container runtime owns RAM and swap; an explicit cap reaches the graph inner wrapper. No host
+systemd or address-space fallback is part of lifecycle acceptance.
+
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: reconciled resource prose with the container-only
+  executor. Verification remains closeout-owned.
 - 2026-08-14T06:32+02:00 — L23 final candidate review: quality settings preserve Dagger as the
   only accepted executor; parsing no longer implies a local compatibility runner. Verification
   remains closeout-owned.

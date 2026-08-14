@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-13T14:32+02:00                     |
-| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
-| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 
 ## Purpose
 
@@ -17,9 +17,9 @@ This file is the coding-guidelines starter for a memory layer.
 
 L23 adds clean-quality guidance for native POSIX subprocesses, enclosure-owned self-overwriting
 reports, configured pytest parallelism, and the single pinned Dagger Ubuntu graph. For Agents
-Remember, Dagger is the only acceptance environment: targeted leaf/focused runs and one full
-master-integration run both use an explicit diff base. Host pytest/wrapper runs are diagnostic
-only, and a failed Dagger run never falls back locally.
+Remember, Dagger is the only acceptance environment: one targeted leaf-closeout run and one full
+master-integration run both use an explicit diff base. Leaf integration and series closeout do not
+rerun acceptance. Host pytest/wrapper runs are refused, and a failed Dagger run never falls back.
 
 ### Logic
 
@@ -60,7 +60,17 @@ No sibling repository evidence is needed.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## R39 Generic Acceptance Example
+
+The default guidelines require onboarding to name the repository permitted executor/environment,
+scopes, bases, resource policy, retry rules, evidence, and refusal behavior. They fix cadence at
+leaf closeout and master integration while forbidding inherited runner assumptions, compatibility
+fallbacks, and self-disabling required gates.
+
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: replaced the repository-specific example with a concrete
+  policy placeholder and anti-fallback/self-disable rules. Verification remains closeout-owned.
 
 - 2026-08-13T14:32+02:00 — L23 final curator pass: recorded the starter guideline's Dagger-only
   acceptance, targeted/full altitude, mandatory explicit base, and diagnostic-only host boundary.

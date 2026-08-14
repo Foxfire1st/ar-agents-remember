@@ -8,9 +8,9 @@ Total output lines: 2259
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated | 2026-08-14T12:31:43+02:00 |
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -769,7 +769,16 @@ catalog mutation. Open/attach HTTP routes publish stale/unavailable refusals as
 409 with strict evidence, while projector shutdown now drains any in-flight
 filesystem tick before temporary worktree cleanup.
 
+## R44 Metrics Shutdown Drain
+
+The metrics background loop now shields and drains each blocking worker-thread operation before
+propagating lifespan cancellation. Shutdown therefore cannot finish while sampling, record,
+degradation evaluation, or compaction can still mutate provider metrics state.
+
 ## Update History
+
+- 2026-08-14T12:31:43+02:00 — R44 curator: recorded the metrics worker drain that closes the
+  lifespan-shutdown write race. Verification remains closeout-owned.
 - 2026-08-14T06:25+02:00 — No route impact: L23's serving-side delta is confined to the projection
   child route attaching the latest task-addressed durable operation; serving ownership and public
   transport composition remain unchanged. Verification stays closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_task_document_application_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                                        |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated            | 2026-08-14T09:08+02:00                                            |
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`                                        |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -20,7 +20,8 @@ Part of the 260731-EFA-L7 in-place split family for `test_task_document_applicat
 
 ## Code Commentary
 
-- `ApplicationTests2`
+- `ApplicationTests2`, including the master-altitude closeout regression that proves a series
+  contract with no leaf id bypasses leaf-only route-review resolution.
 
 ## Invariants And Boundaries
 
@@ -38,7 +39,19 @@ This application split covers completed-leaf reopen planning before removed desc
 candidate-bound route-review evidence, and fail-closed code/external-memory lineage at task
 admission. The tests preserve one task-domain path rather than a worktree fallback.
 
+## R39 Non-Leaf Review Boundary
+
+A new application regression proves series/master closeout returns
+not-required-master-altitude without probing candidate change or terminal leaf task-document
+identity. Leaf candidate-bound review behavior remains unchanged.
+
 ## Update History
+
+- 2026-08-14T11:27+02:00 — R39 curator: recorded the explicit master route-review bypass.
+  Verification remains closeout-owned.
+- 2026-08-14T09:08+02:00 — Reopened L23 repair: added the dirty master-series regression proving
+  route-review admission returns the explicit master-altitude exemption before leaf resolution.
+  Verification metadata remains closeout-owned.
 - 2026-08-14T06:40+02:00 — L23 final candidate review: application forcing covers completed-leaf
   task-reopen planning before removed descendant refs, route-review evidence, and fail-closed
   transitive lineage. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_app_background_loops.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`         |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-14T12:31:43+02:00               |
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`         |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -24,16 +24,17 @@ booting the app; what was never exercised is the part that matters operationally
 
 ## The Failure Mode This Suite Exists For
 
-Every loop's `except Exception` arm. **A background task that dies on one bad pass silently
+Every loop's `except Exception` arm and the metrics loop's cancellation boundary. **A background task that dies on one bad pass silently
 stops sampling / sweeping / compacting for the lifetime of the daemon, and nothing else in
-the process notices.** Each test proves both halves: the failing pass is logged, **and** the
-loop performs the next pass anyway.
+the process notices.** Each retry test proves both halves: the failing pass is logged, **and** the
+loop performs the next pass anyway. The cancellation regression separately proves shutdown waits
+for an already-entered metrics worker write before propagating cancellation.
 
 ## What Each Class Owns
 
 | Class | Loop |
 | --- | --- |
-| `MetricsLoopTests` | A failed provider sample must cost one interval, not the rest of the daemon's life. |
+| `MetricsLoopTests` | A failed provider sample costs one interval, and cancellation cannot return while an in-flight metrics write still runs. |
 | `SupervisorLoopTests` | `orchestration.supervisor.enabled` is re-read **on every pass**, so turning the sweep on takes effect without restarting the daemon. Settings state, not boot state. |
 | `MallocTrimLoopTests` | The opt-in arena reclaim: never runs unless `AR_MALLOC_TRIM` is set; the interval is resolved **once at task start** rather than per tick; one trim per tick; failures survivable. |
 | `WorkspaceRiverCompactionLoopTests` | The one event river nothing else reclaims — it must keep shrinking, and keep going on error. |
@@ -58,16 +59,24 @@ out anonymously.
   supervisor switch is intentional and asserted.
 - Opt-in tasks must not exist when their flag is unset, and every background task must be
   cancelled on shutdown.
+- Cancelling `_metrics_loop` during `ProviderMetricsStore.record` must leave the task pending until
+  that worker returns, then propagate `CancelledError` with the completed sample readable.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The loops and the lifespan under test. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:176-176 |
+| The metrics race regression blocks the worker write, cancels the loop, proves it remains pending, then releases and observes the written sample. | `test_cancellation_drains_an_inflight_metrics_write_before_returning` | mcp/tests/test_serving_app_background_loops.py:224-255 |
+| The drained worker-thread helper and metrics loop under test. | `_to_thread_drained_on_cancel`; `_metrics_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:60-98 |
+| The lifespan cancels and awaits all background tasks. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:195-243 |
 | The same app's failing route arms. | `PasteRouteTests` | mcp/tests/test_serving_app_routes.py:486-540 |
 | The opt-in heap diagnostic's own suite. | `HeapDiagLoopTests` | mcp/tests/test_heap_diag.py:103-264 |
 
 ## Update History
+
+- 2026-08-14T12:31:43+02:00 — R44 curator: recorded the deterministic in-flight metrics-write
+  cancellation race and the required post-drain cancellation propagation. Verification remains
+  closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

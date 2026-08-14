@@ -6,8 +6,8 @@
 | path                   | `pyproject.toml`                           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T00:20+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -26,7 +26,7 @@ every rule it enforces is selected here.
 ### `[tool.ruff]` — Target Version Reconciled With The Supported Floor
 
 `target-version` is `py311`, not `py313`. `mcp/pyproject.toml` declares
-`requires-python = ">=3.11"` and CI runs 3.11, 3.12 and 3.13, so a tool told to target
+`requires-python = ">=3.11"`, so a tool told to target
 py313 offers rewrites the floor cannot execute. That was not hypothetical: seven
 `# noqa: UP040 / UP046 / UP047` directives in `serving/conversation/` and
 `observer/projection_inputs.py` carried the reason "Python 3.11 support" — PEP 695
@@ -180,8 +180,9 @@ off by default and there was nowhere to declare a marker.
   `mcp/tests/test_gated_integration_runner.py` derives the gated inventory only from marker
   descriptions that name an environment variable and fails if any gated path selects zero tests.
   A separate assertion keeps `fitness` registered while excluding it from the gated runner.
-  `scripts/run-gated-integration.py` is the one command per path;
-  `.github/workflows/integration-gated.yml` runs the two that need no vendor account.
+  `scripts/run-gated-integration.py` is the one selector per path. The two credential-free
+  paths can participate in lifecycle-owned Dagger acceptance; GitHub workflows invoke
+  neither this pytest runner nor host pytest.
 
 ## Invariants And Boundaries
 
@@ -207,14 +208,14 @@ off by default and there was nowhere to declare a marker.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The quality gate delegates `testpaths` lookup to `quality_scope.pytest_testpaths`. | `pytest_testpaths` | mcp/src/agents_remember/code_quality/check.py:73-74 |
+| The quality gate delegates `testpaths` lookup to `quality_scope.pytest_testpaths`. | `pytest_testpaths` | mcp/src/agents_remember/code_quality/check.py:75-76 |
 | Pytest configuration owns automatic xdist workers for raw and wrapped runs alike. | "-n=auto" | pyproject.toml:110-130 |
 | The repository enables branch measurement. | "branch = true" | pyproject.toml:70-70 |
 | The changed-lines coverage floor reuses the CRAP reader, which refuses reports without branch data. | "by_key = crap_calculator.load_coverage_by_path"; "require_branch_measurement(data"; "def require_branch_measurement("; "if branch is not True: raise RuntimeError("; "meta.branch_coverage is"; "CRAP is defined over branch coverage" | mcp/src/agents_remember/code_quality/crap_calculator.py:115-115; mcp/src/agents_remember/code_quality/crap_calculator.py:135-135; mcp/src/agents_remember/code_quality/crap_calculator.py:139-142; mcp/src/agents_remember/code_quality/diff_coverage.py:238-238 |
 | The code-quality test asserts the `python_classes = ["Test*", "*Tests"]` naming pattern. | "python_classes = [\"Test*\", \"*Tests\"]" | pyproject.toml:136-136 |
-| The runner declares the `GatedPath` inventory type. | "class GatedPath" | scripts/run-gated-integration.py:65-65 |
-| The runner defines its environment-gated paths in `PATHS`. | "PATHS: tuple[GatedPath" | scripts/run-gated-integration.py:76-76 |
-| The runner declares the `pytest_command` helper. | "def pytest_command(" | scripts/run-gated-integration.py:233-233 |
+| The runner declares the `GatedPath` inventory type. | "class GatedPath" | scripts/run-gated-integration.py:66-66 |
+| The runner defines its environment-gated paths in `PATHS`. | "PATHS: tuple[GatedPath" | scripts/run-gated-integration.py:77-77 |
+| The runner declares the `pytest_command` helper. | "def pytest_command(" | scripts/run-gated-integration.py:234-234 |
 | The inventory test enumerates the registered gated markers. | "def test_the_runner_covers_every_registered_gated_marker_and_invents_none("; "set(registered_gated_markers())" | mcp/tests/test_gated_integration_runner.py:102-102; mcp/tests/test_gated_integration_runner.py:105-105 |
 | The inventory equality is asserted by `test_the_runner_covers_every_registered_gated_marker_and_invents_none`. | `test_the_runner_covers_every_registered_gated_marker_and_invents_none` | mcp/tests/test_gated_integration_runner.py:102-106 |
 | The inventory comes from `registered_gated_markers`. | `registered_gated_markers` | mcp/tests/test_gated_integration_runner.py:53-56 |
@@ -223,7 +224,16 @@ off by default and there was nowhere to declare a marker.
 | The supported Python floor and supported platforms are declared as package classifiers. | "requires-python = "; "Programming Language :: Python :: 3.11"; "Operating System :: POSIX :: Linux"; "Operating System :: MacOS" | mcp/pyproject.toml:10-10; mcp/pyproject.toml:17-17; mcp/pyproject.toml:20-21 |
 | Source-checkout instructions state the gate command and that Radon reports rather than enforces. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-198 |
 
+## R39 Gated Marker Policy
+
+The integration-marker comments now distinguish two credential-free Dagger-safe selections from
+six vendor-provisioned opt-ins. No marker is authorized for host pytest or GitHub execution; all
+test-capable selections remain behind the shared Dagger environment guard.
+
 ## Update History
+
+- 2026-08-14T11:29+02:00 — R39 curator: reconciled marker documentation with credential semantics
+  and Dagger-only execution. Verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T00:20+02:00 — Recorded root pytest `addopts` as the single owner of `-n=auto`, with

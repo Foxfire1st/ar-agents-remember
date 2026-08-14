@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/conftest.py`                    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -19,7 +19,7 @@
 `conftest.py` provides session-wide pytest bootstrap that pins imports to the candidate checkout,
 declares the explicit hermetic `test` execution mode,
 scrubs ambient Git repository selection before fixtures run, and supplies fallback commit identity
-for throwaway repositories. Its autouse cit:([`reject_owned_global_state_leaks`], mcp/tests/conftest.py:153-164) fixture snapshots the explicit owned-global register,
+for throwaway repositories. Its autouse cit:([`reject_owned_global_state_leaks`], mcp/tests/conftest.py:136-147) fixture snapshots the explicit owned-global register,
 restores every registered value after each test, and fails the leaking test with the complete list of
 changed globals.
 
@@ -45,7 +45,7 @@ production does not infer test mode from `pytest`, argv, or an environment flag.
 the process environment before a fixture can spawn Git. It then uses `setdefault` for test-only
 author/committer identity so an explicit caller identity remains authoritative.
 
-**cit:([`reject_owned_global_state_leaks`; `OWNED_MUTABLE_STATES`; "from _global_state import restore_owned_mutable_state"], mcp/tests/_global_state.py:33-39; mcp/tests/conftest.py:116-116; mcp/tests/conftest.py:153-164) — the autouse guard and its explicit ownership register.**
+**cit:([`reject_owned_global_state_leaks`; `OWNED_MUTABLE_STATES`; "from _global_state import restore_owned_mutable_state"], mcp/tests/_global_state.py:33-39; mcp/tests/conftest.py:99-99; mcp/tests/conftest.py:136-147) — the autouse guard and its explicit ownership register.**
 The register is deliberately not a repository scan: a row is added only after a mutable module
 global has been proved capable of carrying state between tests. The current row owns
 `kernel.primitives.checkout_coordination._declared`, whose session baseline is `mode=test`. Before
@@ -111,8 +111,8 @@ Git isolation directly.
 | Route-index tests independently contaminate each selector and require identical output. | "test_ambient_git_repository_selectors_cannot_redirect_the_census"; "test_regular_checkout_and_linked_worktree_produce_identical_indexes" | mcp/tests/test_route_index.py:592-620; mcp/tests/test_route_index.py:822-850 |
 | Worktree fixture tests. |"test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_plan_uses_memory_worktree_settings"|mcp/tests/test_worktree_support_tests_1.py:1052-1052; mcp/tests/test_worktree_support_tests_2.py:123-123|
 | The explicit ownership register, snapshot/restore operations, and scoped preservation helper used by the autouse guard. | `OWNED_MUTABLE_STATES`; `snapshot_owned_mutable_state`; `restore_owned_mutable_state`; `preserve_owned_mutable_state` | mcp/tests/_global_state.py:33-39; mcp/tests/_global_state.py:42-43; mcp/tests/_global_state.py:46-54; mcp/tests/_global_state.py:57-64 |
-| Every xdist worker receives a private XDG cache below its pytest base temp directory; the master process is unchanged. | `_isolate_xdist_worker_cache` | mcp/tests/conftest.py:83-94 |
-| The current autouse guard restores all registered state and fails the leaking test with the complete changed-owner list. | `reject_owned_global_state_leaks` | mcp/tests/conftest.py:153-164 |
+| Every xdist worker receives a private XDG cache below its pytest base temp directory; the master process is unchanged. | `_isolate_xdist_worker_cache` | mcp/tests/conftest.py:66-77 |
+| The current autouse guard restores all registered state and fails the leaking test with the complete changed-owner list. | `reject_owned_global_state_leaks` | mcp/tests/conftest.py:136-147 |
 | The currently registered process-global execution declaration, explicit test entry, and accessor. | "_declared: dict[str, ExecutionMode] = {}"; "def declare_test_process() -> None:"; `return _declared.get("mode")` | mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:27-66 |
 
 ## Cross-Repo References
@@ -123,7 +123,17 @@ No sibling repository defines the pytest bootstrap contract.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## R39 Shared Collection Guard
+
+Pytest collection now delegates to the production Dagger-environment validator after first placing
+the current checkout source root on the import path. This prevents a linked-worktree run from
+validating the main checkout guard and then collecting a different candidate. Guard failure is
+translated to pytest usage refusal before collection.
+
 ## Update History
+
+- 2026-08-14T11:27+02:00 — R39 curator: documented delegation to the shared nonce/file validator
+  and current-checkout import ownership. Verification remains closeout-owned.
 - 2026-08-14T06:38+02:00 — L23 final candidate review: test bootstrap isolates outer quality
   workflow variables and enforces the Dagger run nonce/attestation contract before collection.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

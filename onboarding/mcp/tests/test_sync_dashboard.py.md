@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_sync_dashboard.py`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T04:28+02:00                     |
-| lastVerifiedCommitHash | `c1dc5056ffa45cc7fe1af66a6d5c38497fbfa5f6` |
-| lastVerifiedCommitDate | 2026-07-31T04:58:22+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -113,7 +113,7 @@ repository-local build-step contract is documented from source and this executab
 | The path contract and the process-boundary proof that `--check` is gone. | `PlacementSurfaceTests` | mcp/tests/test_sync_dashboard.py:244-268 |
 | The script under test: refuse-absent, refuse-stale, place, then record. | `sync` | scripts/sync-dashboard.py:138-159 |
 | Vite compiles the fingerprint the fixtures embed. | `__AR_DASHBOARD_BUILD__` | dashboard/vite.config.ts:65-65 |
-| The release job is the only caller, and it runs the frontend build immediately before. | "npm run build" | .github/workflows/publish-mcp-to-pypi.yml:62-62 |
+| The release job is the only caller, and it runs the frontend build immediately before. | "npm run build" | .github/workflows/publish-mcp-to-pypi.yml:61-61 |
 
 ## Cross-Repo References
 

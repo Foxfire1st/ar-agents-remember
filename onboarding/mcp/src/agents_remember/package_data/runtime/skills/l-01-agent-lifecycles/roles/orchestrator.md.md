@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 The orchestrator's quality altitude uses the pinned Dagger graph for Agents Remember acceptance.
 Leaf/focused work selects targeted mode; `worktree_integrate` selects full mode exactly once at
 master altitude. Both require the explicit task-derived diff base, and host pytest/wrapper runs
-remain diagnostics rather than acceptance or fallback. `memory_quality_check` stays a per-leaf
+are refused rather than accepted or used as fallback. `memory_quality_check` stays a per-leaf
 closeout gate; orchestrators do not run a separate full graph per leaf.
 
 ## L23 Final Candidate Disposition
@@ -83,7 +83,16 @@ The orchestrator observes closeout and integration through canonical task status
 targeted Dagger; master acceptance is one full Dagger graph at master integration altitude, with no
 model-managed checklist or fallback runner.
 
+## R39 Generic Quality Altitude
+
+The orchestrator resolves executor, environment, retry, resource, and evidence contracts from
+repository memory rather than supplying Agents Remember-specific instructions. Leaf closeout and
+master integration remain the only acceptance owners.
+
 ## Update History
+
+- 2026-08-14T11:25+02:00 — R39 curator: reconciled the generic orchestrator with
+  repository-resolved acceptance and no fallback. Verification remains closeout-owned.
 - 2026-08-14T06:32+02:00 — L23 synchronized runtime doctrine: orchestration observes durable
   task-addressed operations and retains the targeted-leaf/full-master Dagger altitude without
   model-managed job ids. Verification remains closeout-owned.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_agents_remember_quality.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
-| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash |  `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
+| lastVerifiedCommitDate |  2026-08-14T12:44:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ No external Domain Documentation source is configured for this test contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The test contract is defined by the pinned repository module. | `DAGGER_MANIFEST`; `DAGGER_MODULE` | mcp/tests/test_agents_remember_quality.py:20-21 |
+| The test contract is defined by the pinned repository module. | `DAGGER_MANIFEST`; `DAGGER_MODULE` | mcp/tests/test_agents_remember_quality.py:21-22 |
 
 ## Repo-Internal References
 
@@ -65,7 +65,16 @@ No sibling-repository boundary is exercised.
 | --- | --- | --- |
 | Fake Dagger objects isolate graph verification from external transport. | `FakeContainer`; `FakeDag` | mcp/tests/test_agents_remember_quality.py:29-80 |
 
+## R39 Guard Wiring Proof
+
+The quality entry-point tests patch the shared production validator through conftest and require
+its Dagger refusal to become pytest usage failure. They no longer test a second local attestation
+implementation.
+
 ## Update History
+
+- 2026-08-14T11:27+02:00 — R39 curator: recorded one shared environment-authorization owner.
+  Verification remains closeout-owned.
 - 2026-08-14T05:26Z — L23 final curator: replaced the retired verify-method test reference with the
   current Dagger-attestation, single-authoritative-result, and graph-construction tests.
   Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_integrate_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T12:53+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated | 2026-08-14T12:13:26+02:00 |
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,16 +16,16 @@
 
 ## Purpose
 
-Integration-seam suite for leaf-targeted versus master/full code-quality altitude.
+Integration-seam suite for leaf closeout-proof reuse versus master/full code-quality altitude.
 
 ## Code Commentary
 
 ### Logic
 
-Leaf integration builds a `QualityGateTarget` from both the code worktree and enclosure worktree
-group, so the targeted gate can use enclosure-local evidence; series integration uses the full
+Leaf integration returns the explicit `certified-at-leaf-closeout` result without calling the
+quality decider or executor. Series integration builds the `QualityGateTarget` and uses the full
 gate, host-managed when no explicit cap is configured. Dry-run reports without executing and a
-refusal prevents merge. Source-tip cases distinguish unchanged from moved tips, prove a move after
+master refusal prevents merge. Source-tip cases distinguish unchanged from moved tips, prove a move after
 quality blocks before memory replay, and prove the second post-memory recheck blocks immediately
 before merge. The memory replay unit matrix pins existing scratch-branch refusal, checkout failure,
 rebase conflict, and successful content/ledger rewrite so those legacy helper branches remain
@@ -37,7 +37,8 @@ Test-only evidence uses deterministic fakes/fixtures and exercises the owning se
 
 ### Invariants And Boundaries
 
-Altitude routing is contract-kind based; the worktree group accompanies the code checkout; no
+Acceptance ownership is contract-kind based: leaf integration never reruns targeted acceptance,
+while master integration owns full acceptance and carries the worktree group. No
 integration mutation occurs after a failed quality gate or either post-quality source movement
 check. A stale leaf must sync before integration; replay helpers do not bypass that admission gate.
 
@@ -57,11 +58,32 @@ No cross-repository implementation source governs this test module.
 
 ## L23 Final Candidate Disposition
 
-Integration forcing proves targeted leaf versus full master Dagger altitude, mandatory task-derived
+Integration forcing proves leaf no-rerun versus full master Dagger altitude, mandatory task-derived
 diff base, complete pre/post-quality lineage rechecks, pinned source tips, and failure atomicity
 before any source ref moves.
 
+## R39 Integration Forcing Evidence
+
+The integration suite now proves leaf integration reuses closeout acceptance without invoking a
+gate, while master integration owns full acceptance and blocks before merge on a missing
+self-owned wrapper or failed Dagger result. Leaf mode cannot be requested from the integration
+gate selector.
+
+## R43 Self Versus Consumer Wrapper Policy
+
+The altitude suite now proves both arms at master integration: Agents Remember without its
+self-owned wrapper blocks before merge, while a consumer repository without an opted-in wrapper
+reports `wrapper-unavailable` and remains non-blocking. The full gate still runs once when present.
+
 ## Update History
+
+- 2026-08-14T12:13:26+02:00 — R43 curator: added the consumer-master non-blocking counterpart to
+  the self-repository missing-wrapper refusal. Verification remains closeout-owned.
+
+- 2026-08-14T11:27+02:00 — R39 curator: replaced leaf rerun expectations with certified-commit
+  reuse and master-only full enforcement. Verification remains closeout-owned.
+- 2026-08-14T09:37+02:00 — Reopened L23 cadence proof: the leaf seam asserts zero quality-decider
+  and executor calls, while the series seam retains the single full Dagger run and refusal boundary.
 - 2026-08-14T06:40+02:00 — L23 final candidate review: integration tests prove targeted leaf versus
   full master Dagger altitude, mandatory diff base, pre/post-quality lineage rechecks, pinned source
   tips, and failure atomicity before refs move.

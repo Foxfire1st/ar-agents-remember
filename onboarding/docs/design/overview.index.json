@@ -48,7 +48,7 @@
       "FEUI",
       "docs/design/",
       "route-local-overview",
-      "2dea095cd68454a7a68893e37c07dbd8daa86d32",
+      "a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd",
       "/../overview.md",
       "dashboard/src/panels/engine-room/",
       "dashboard/scenario-catalog.md",
@@ -76,9 +76,8 @@
       "lastUpdated",
       "T07",
       "lastVerifiedCommitHash",
-      "dea095cd68454a7a68893e37c07dbd8daa86d32",
       "lastVerifiedCommitDate",
-      "T18",
+      "T12",
       "governingOverview",
       "TES",
       "TTL",
@@ -86,7 +85,8 @@
       "HTML",
       "CSS",
       "GSAP",
-      "RailChat"
+      "RailChat",
+      "R39"
     ]
   },
   "fallback": {

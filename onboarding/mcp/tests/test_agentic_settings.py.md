@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -197,7 +197,16 @@ with the family.
 The settings regression now pins Dagger as the only accepted quality executor and rejects legacy
 local/fallback values. Optional resource policy remains graph configuration, not runner selection.
 
+## R39 Settings Policy Proof
+
+The settings tests now describe the optional cap as Dagger-inner/container policy and require all
+non-Dagger executors to refuse as forbidden host test execution. No host-managed quality executor
+remains configurable.
+
 ## Update History
+
+- 2026-08-14T11:27+02:00 — R39 curator: aligned settings assertions with container-only
+  acceptance. Verification remains closeout-owned.
 - 2026-08-14T06:38+02:00 — L23 final candidate review: settings regressions pin Dagger as the only
   accepted executor and reject stale local/fallback quality policy. Verification stays
   closeout-owned.

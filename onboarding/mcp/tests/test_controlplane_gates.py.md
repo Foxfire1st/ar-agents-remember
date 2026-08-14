@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`       |
+| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -80,9 +80,9 @@ approval spendable in between. `test_gateless_lifecycle_returns_none`,
 the gate reads `applied` immediately after the single permitting call.
 
 The two blocking cases **additionally** assert that the early refusal
-`_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:518-540)) raises for the same seeded gate. That
+`_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:538-560)) raises for the same seeded gate. That
 is a second rung, not a duplicate: the claim sits one statement above the first irreversible act
-(`closeout_result`, cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:1037-1131)), while the early read sits before staging and the strict code-quality gate
+(`closeout_result`, cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:1083-1168)), while the early read sits before staging and the strict code-quality gate
 (`gate_staged_code`, cit:([`gate_staged_code`], mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129)), so without it an unapproved closeout would only be refused after a full quality run over a
 staged worktree. The early rung is safe precisely because it can only DENY — its read is unlocked
 and therefore already stale when it returns, but a stale refusal costs a rerun and consumes
@@ -167,13 +167,13 @@ fake's unattached contract. Cycle 7 adds three layers on the enclosure address: 
 - 2026-08-01T16:30+02:00 — 260731-EFA-L5 curator: cit:([`CloseoutEnforcementHelperTests`], mcp/tests/test_controlplane_gates_closeout.py:191-262) now
   exercises `_claim_closeout_gate` (cit:([`_claim_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:510-560)) wherever it used to call
   `_enforce_closeout_gate`, and the two blocking cases **additionally** assert that
-  `_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:518-540)) raises for the same seeded gate.
+  `_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:538-560)) raises for the same seeded gate.
   `_mark_closeout_gate_applied` was **deleted rather than deprecated**, so
   `test_developer_approved_permits_and_marks_applied` no longer calls a second step — it asserts the
   gate reads `applied` straight after the single permitting call, which is the point: permitting and
   marking applied are one step and there is no arrangement of two lines that leaves the approval
   spendable in between. Recorded the two rungs as distinct rather than redundant — the claim sits
-  one statement above the first irreversible act (cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:1037-1131)) while the early read sits
+  one statement above the first irreversible act (cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:1083-1168)) while the early read sits
   before staging and the strict code-quality gate (cit:([`gate_staged_code`], mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129)), and the early rung is safe only because it
   can exclusively DENY: its unlocked read is stale on return, but a stale refusal costs a rerun and
   consumes nothing while a stale permit is re-evaluated under the lock. Recorded the mechanism
