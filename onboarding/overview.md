@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastUpdated | 2026-08-14T13:41:27+02:00 |
+| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
+| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
 
 > **Status:** active baseline
 
@@ -1116,6 +1116,11 @@ reachability before publishing. Generic runtime doctrine resolves each repositor
 acceptance policy from its own memory rather than embedding this repository's Dagger command.
 
 ## Update History
+
+- 2026-08-14T13:41:27+02:00 — No route impact: R45 removed only the tracked
+  `dashboard/node_modules` absolute symlink. That machine-local dependency link is excluded from
+  onboarding and route coverage, so the repository inventory, route model, and authority map are
+  unchanged; verification is pinned to the exact deletion commit `aeca9a2839c965218a61a3040e15cb84367ebeca`.
 
 - 2026-08-14T11:29+02:00 — R39 curator: reconciled the root route with exact-once lifecycle
   acceptance, workflow de-duplication, and repository-generic runtime doctrine. Verification
