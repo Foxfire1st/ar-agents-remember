@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-14T14:03:04+02:00 |
+| lastVerifiedCommitHash | `1cb69766bf7e023fb3d7021107da78dc5e53e994`
+| lastVerifiedCommitDate | 2026-08-14T14:12:59+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -822,6 +822,11 @@ them and remains the coordinator. Two focused test modules split direct environm
 and exact staged gate scope out of oversized suites without changing the production boundary.
 
 ## Update History
+
+- 2026-08-14T14:03:04+02:00 — No route impact: R46 changes only the assertion spelling for the
+  existing metrics-shutdown timeout in one test. MCP production, package authority, public
+  behavior, and package routing are unchanged; verification remains pinned to the last committed
+  source until closeout.
 
 - 2026-08-14T11:48:55+02:00 — R42 curator: recorded recovery-proof ownership and the two focused
   test extractions. Verification remains closeout-owned.

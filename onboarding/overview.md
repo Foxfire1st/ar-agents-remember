@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-14T13:41:27+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-14T14:03:04+02:00 |
+| lastVerifiedCommitHash | `1cb69766bf7e023fb3d7021107da78dc5e53e994` |
+| lastVerifiedCommitDate | 2026-08-14T14:12:59+02:00|
 
 > **Status:** active baseline
 
@@ -1116,6 +1116,11 @@ reachability before publishing. Generic runtime doctrine resolves each repositor
 acceptance policy from its own memory rather than embedding this repository's Dagger command.
 
 ## Update History
+
+- 2026-08-14T14:03:04+02:00 — No route impact: R46 changes only the assertion spelling for an
+  existing test timeout and removes its intentionally untaken local branch. Production,
+  repository inventory, route structure, and authority boundaries are unchanged; verification
+  remains pinned to the last committed source until closeout.
 
 - 2026-08-14T13:41:27+02:00 — No route impact: R45 removed only the tracked
   `dashboard/node_modules` absolute symlink. That machine-local dependency link is excluded from
