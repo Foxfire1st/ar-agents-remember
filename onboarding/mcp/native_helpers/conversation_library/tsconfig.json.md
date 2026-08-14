@@ -6,8 +6,8 @@
 | path | `mcp/native_helpers/conversation_library/tsconfig.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T10:55+02:00 |
-| lastVerifiedCommitHash |  `91e1f59b5eb7d9a88c8fd59dca1c996abcb2ed1b`|
-| lastVerifiedCommitDate |  2026-07-18T11:10:09+02:00|
+| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
+| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

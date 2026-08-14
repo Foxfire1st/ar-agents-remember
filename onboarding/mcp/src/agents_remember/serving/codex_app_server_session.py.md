@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_session.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

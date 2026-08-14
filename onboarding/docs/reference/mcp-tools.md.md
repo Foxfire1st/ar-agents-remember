@@ -6,8 +6,8 @@
 | path | docs/reference/mcp-tools.md |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview | docs/reference/overview.md |
 
 ## Governing Overview

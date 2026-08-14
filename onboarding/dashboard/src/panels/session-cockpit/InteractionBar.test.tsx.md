@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/InteractionBar.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T10:40+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview

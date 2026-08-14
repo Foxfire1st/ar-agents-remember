@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/reducer_impl/_metrics.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                                        |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                                        |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview

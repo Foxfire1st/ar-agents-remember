@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_app_background_loops.py`   |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-14T14:03:04+02:00               |
-| lastVerifiedCommitHash | `1cb69766bf7e023fb3d7021107da78dc5e53e994`         |
-| lastVerifiedCommitDate | 2026-08-14T14:12:59+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`         |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview

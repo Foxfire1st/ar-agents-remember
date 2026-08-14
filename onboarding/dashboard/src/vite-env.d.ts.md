@@ -6,8 +6,8 @@
 | path | `dashboard/src/vite-env.d.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `82f2de40a666ea00754f364cfe764cea9294235f`|
-| lastVerifiedCommitDate | 2026-07-18T13:07:00+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

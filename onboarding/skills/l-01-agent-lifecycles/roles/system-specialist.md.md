@@ -6,8 +6,8 @@
 | path | skills/l-01-agent-lifecycles/roles/system-specialist.md |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview

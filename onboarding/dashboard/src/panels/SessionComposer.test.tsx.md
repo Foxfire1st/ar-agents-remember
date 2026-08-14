@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/SessionComposer.test.tsx`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-09T20:25+02:00 |
-| lastVerifiedCommitHash | `fb0296562ceb29929a3675a1b0195700d23bc56a`       |
-| lastVerifiedCommitDate | 2026-08-09T20:35:49+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview

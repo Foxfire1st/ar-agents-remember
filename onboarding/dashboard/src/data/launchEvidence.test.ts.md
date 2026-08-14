@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/launchEvidence.test.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

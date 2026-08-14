@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/router.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
+| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

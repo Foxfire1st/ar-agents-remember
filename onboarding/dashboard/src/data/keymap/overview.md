@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/keymap/`                     |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview

@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/setAcceptance.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `4293c53b9d6ef2bf0fee7aca11c2677322c4e786` |
-| lastVerifiedCommitDate | 2026-07-17T10:26:02+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/lifecycles/responses.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-13T08:40+02:00                      |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`     |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`     |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview

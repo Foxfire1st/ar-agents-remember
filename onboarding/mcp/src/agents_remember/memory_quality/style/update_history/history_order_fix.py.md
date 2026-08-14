@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d` |
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose

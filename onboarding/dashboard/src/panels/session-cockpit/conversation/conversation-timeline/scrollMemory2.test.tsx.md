@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory2.test.tsx` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`                  |
-| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                  |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview

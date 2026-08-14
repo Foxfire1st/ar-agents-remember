@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-07T14:30+02:00 |
-| lastVerifiedCommitHash | `b537abe20cf2498ef38e86e29ca586b5eec38466` |
-| lastVerifiedCommitDate | 2026-08-10T08:37:35+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview

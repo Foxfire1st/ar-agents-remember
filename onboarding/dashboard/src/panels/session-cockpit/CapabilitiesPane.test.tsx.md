@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/CapabilitiesPane.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `882fed5806d5698f05c700e39ccae5da53c29176` |
-| lastVerifiedCommitDate | 2026-07-18T00:12:18+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation/format.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `9e6c15d2b2bb663fcd10e26d77d0e4d2795829bd` |
-| lastVerifiedCommitDate | 2026-07-20T22:32:02+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

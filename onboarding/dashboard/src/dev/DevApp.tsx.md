@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/DevApp.tsx`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview

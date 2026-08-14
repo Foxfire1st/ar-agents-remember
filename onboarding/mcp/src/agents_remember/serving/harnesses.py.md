@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harnesses.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-15T23:16+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

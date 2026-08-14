@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/mockTerminalSocket.ts`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview

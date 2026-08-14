@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/degradation.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview

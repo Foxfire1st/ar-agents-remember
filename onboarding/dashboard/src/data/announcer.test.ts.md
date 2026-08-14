@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/announcer.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-26T15:40+0200                           |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview | `overview.md`                                   |
 
 ## Governing Overview

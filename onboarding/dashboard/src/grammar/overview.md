@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/grammar/`                         |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-01T10:05+02:00                           |
-| lastVerifiedCommitHash | `cf5ef507f2542d6cd2f9d37a6b72148d3b91b340`       |
-| lastVerifiedCommitDate | 2026-08-06T13:55:47+02:00|
+| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
+| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
