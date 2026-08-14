@@ -6,8 +6,8 @@
 | path                   | `dashboard/e2e-production/cockpit.production.spec.ts`  |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-01T10:45+02:00                                 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`             |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`             |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../overview.md`                                    |
 
 ## Governing Overview
@@ -157,7 +157,7 @@ server routes those mirror — so both are cited, along with the config that dec
 | Nothing generates `snapshot.json`: every reference in the repository reads it. | "NOT generated" | dashboard/src/test/fixtures/wire.ts:22-22 |
 | `TerminalOpenSuccessBody` — every field required, including the two that were absent before the `satisfies` pin. | `TerminalOpenSuccessBody` | dashboard/src/types/terminalOpen.ts:10-26 |
 | `TerminalCatalogRow` — `harness`, `lifecycleId`, `leafKey` and `seatRole` are optional, which is why the row's conditional spreads stay valid. | `TerminalCatalogRow` | dashboard/src/types/terminalCatalog.ts:24-93 |
-| `testDir: "./e2e-production"` and the `npm run preview` web server on `127.0.0.1:4173` — the built bundle, no daemon. | "./e2e-production" | dashboard/playwright.production.config.ts:4-4 |
+| `testDir: "./e2e-production"` and the `npm run preview` web server on `127.0.0.1:4173` — the built bundle, no daemon. | "./e2e-production" | dashboard/playwright.production.config.ts:7-7 |
 | `dashboard.fingerprint` is gitignored, so the file this spec reads at import does not exist in a working tree. | "/mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:24-24 |
 | `source_fingerprint` — the release-path writer of that file, byte-for-byte the algorithm the bundle carries. | `FINGERPRINT_FILE`; `source_fingerprint` | scripts/sync-dashboard.py:45-45; scripts/sync-dashboard.py:91-104 |
 

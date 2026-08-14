@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -283,6 +283,11 @@ diagnostic fact. Rendering stays read-only and uses the projected summary for
 operator context; recovery remains a backend worktree operation.
 
 ## Update History
+
+- 2026-08-14T06:25+02:00 — No route impact: L23's final dashboard delta is confined to the
+  session-cockpit child route (shared sprint/master/leaf fixture coverage, rail width containment,
+  and deterministic fake-timer cleanup). The panels inventory and ownership remain unchanged;
+  verification stays closeout-owned.
 
 - 2026-08-13T12:26+02:00 — L23 live-progress clarification: Hangar now displays the plane-owned
   lifecycle `currentCommand` in the existing operation badge using responsive single-line ellipsis

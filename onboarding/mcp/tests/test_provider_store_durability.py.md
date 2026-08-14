@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |                                                `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash |                                                `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -297,7 +297,7 @@ below are the code each claim is about.
 | The other half of that pairing: the MCP process's provider-setup thread appending index-lifecycle rows into the same log. | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
 | The consumer that makes the metrics log's tolerant read structurally safe: the whole state machine is re-derived from a rolling window of live samples and nothing is consumed. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
 | The control-plane suite over the same instrument, whose `CASES` this file's `PROVIDER_CASES` is asserted to be disjoint from, and whose base-commit class this file's mirrors. | `MultiProcessDurabilityTests`; `HarnessVacuityGuardTests`; `HarnessSensitivityTests` | mcp/tests/test_controlplane_store_durability.py:123-205; mcp/tests/test_controlplane_store_durability.py:339-386; mcp/tests/test_controlplane_store_durability.py:389-444 |
-| The `setUp` method on `ProviderOwnershipTests` explicitly contains its direct process-role declarations with `preserve_owned_mutable_state`; the autouse `reject_owned_global_state_leaks` guard is the suite-wide backstop. | "class ProviderOwnershipTests(_TempRootTest):"; "from _global_state import preserve_owned_mutable_state"; `reject_owned_global_state_leaks` | mcp/tests/conftest.py:118-129; mcp/tests/test_provider_store_durability.py:71-71; mcp/tests/test_provider_store_durability.py:638-638 |
+| The `setUp` method on `ProviderOwnershipTests` explicitly contains its direct process-role declarations with `preserve_owned_mutable_state`; the autouse `reject_owned_global_state_leaks` guard is the suite-wide backstop. | "class ProviderOwnershipTests(_TempRootTest):"; "from _global_state import preserve_owned_mutable_state"; `reject_owned_global_state_leaks` | mcp/tests/conftest.py:153-164; mcp/tests/test_provider_store_durability.py:71-71; mcp/tests/test_provider_store_durability.py:638-638 |
 
 ## Cross-Repo References
 

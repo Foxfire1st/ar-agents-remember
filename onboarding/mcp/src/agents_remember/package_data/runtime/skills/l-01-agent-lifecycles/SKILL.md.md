@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -100,7 +100,16 @@ worker/reviewer/curator seats require the full code/external-memory chain. A
 lineage refusal creates no child and is recovered by the ordered contract path,
 never by asking an agent for branch or occupant ids.
 
+## L23 Final Candidate Disposition
+
+The packaged lifecycle roof now treats current task-derived lineage, exact-candidate independent
+route review, and Dagger-only acceptance as shared lifecycle signals. Roles observe task-addressed
+durable operations; they never carry private job or commit identifiers between turns.
+
 ## Update History
+- 2026-08-14T06:32+02:00 — L23 synchronized runtime doctrine: the lifecycle roof carries
+  Dagger-only acceptance, manager lineage preflight, and candidate-bound independent route review
+  before curation or lifecycle exit. Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented lineage admission in the packaged dispatch sequence; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `SKILL.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.

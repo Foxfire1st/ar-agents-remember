@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T23:57:48+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -63,10 +63,13 @@ blank-line normalization that would corrupt blank lines inside code fences.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The model it renders. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:109-173 |
+| The model it renders. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:182-267 |
 | The render-back precedent (model → markdown section helpers). | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
 
 ## Update History
+- 2026-08-14T06:34+02:00 — L23 final candidate review: rendered task documents project the
+  canonical relationships and operation/review evidence without leaking private runtime identity.
+  Verification remains closeout-owned.
 
 - 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 4 initial citation findings (2 anchor, 0 prose, 2 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 

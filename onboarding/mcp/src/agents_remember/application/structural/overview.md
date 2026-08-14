@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/application/structural/overview.md` |
 | parentOverview | [`application/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-11T06:47+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
 
 ## What This Area Is
 
@@ -23,6 +23,11 @@ from an agent.
 `agent_tools.py` resolves the caller and target structural seats before invoking the existing
 plane-owned spawn, inbox, retire, and rename machinery. `gate_tools.py` applies the same boundary to
 delegated gates. Public response models expose task-document and role outcomes only.
+
+For L23, dispatch additionally validates transitive task-derived code and external-memory lineage
+before host creation. Curator dispatch requires the manager's current-lineage preflight and a
+passing independent route-review record bound to the exact candidate tree; the structural boundary
+rechecks both rather than trusting brief prose or model-carried commit identities.
 
 ## What Belongs Here
 
@@ -117,5 +122,8 @@ card before changing a structural operation.
 None.
 
 ## Update History
+
+- 2026-08-14T06:20+02:00 — L23 curator: documented pre-host lineage and candidate-bound route-review
+  admission for curator dispatch. Verification provenance remains closeout-owned.
 
 - 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for the new structural application package.

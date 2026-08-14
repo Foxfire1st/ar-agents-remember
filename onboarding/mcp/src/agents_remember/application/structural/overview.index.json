@@ -36,7 +36,7 @@
     "tools"
   ],
   "hotPath": {
-    "summary": "`agent_tools.py` resolves the caller and target structural seats before invoking the existing plane-owned spawn, inbox, retire, and rename machinery. `gate_tools.py` applies the same boundary to delegated gates. Public response models expose task-document and role outcomes only.",
+    "summary": "`agent_tools.py` resolves the caller and target structural seats before invoking the existing plane-owned spawn, inbox, retire, and rename machinery. `gate_tools.py` applies the same boundary to delegated gates. Public response models expose task-document and role outcomes only. For L23, dispatch additionally validates transitive task-derived code and external-memory lineage before host creation. Curator dispatch requires the manager's current-lineage preflight and a passing independent route-review record bound to the exact candidate tree; the structural boundary rechecks both rather than...",
     "candidateHints": [
       "mcp/src/agents_remember/application/structural",
       "mcp/src/agents_remember/application/structural/__init__.py",
@@ -50,11 +50,12 @@
       "agent_tools",
       "gate_tools.py",
       "gate_tools",
+      "L23",
       "route-local-overview",
       "mcp/src/agents_remember/application/structural/",
       "mcp/src/agents_remember/application/structural/overview.md",
       "application/overview.md",
-      "d9a1eb82849baea6c0b86735e772a932f4bbdc7c",
+      "100b40d6be4a7d03eedbb1164ce54e2e8a314038",
       "serving/structural_seats.py",
       "serving/ambient_seat.py",
       "models/structural/",
@@ -78,8 +79,9 @@
       "lastUpdated",
       "T06",
       "lastVerifiedCommitHash",
+      "b40d6be4a7d03eedbb1164ce54e2e8a314038",
       "lastVerifiedCommitDate",
-      "T00",
+      "T08",
       "structural_seats",
       "ambient_seat",
       "structural_agent",

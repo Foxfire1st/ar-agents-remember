@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_gates_seam.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-13T12:53+02:00                                            |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`                                        |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                                        |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -41,7 +41,15 @@ constructing a second incomplete topology fixture.
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
+## L23 Final Candidate Disposition
+
+The seam tests prove that current lineage and an exact candidate-bound passing route review are
+checked before curator host creation and again at lifecycle exit. Neither brief prose nor a stale
+verdict can bypass control-plane admission.
+
 ## Update History
+- 2026-08-14T06:38+02:00 — L23 final candidate review: seam tests prove curator dispatch and
+  lifecycle exit cannot bypass current-lineage or candidate-bound route-review admission.
 
 - 2026-08-13T12:53+02:00 — No content impact: the gate-only dry-run seam now mocks the independent
   source-lineage boundary so it continues testing gate-policy forwarding only. Production behavior

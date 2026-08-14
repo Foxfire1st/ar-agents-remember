@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/memory_cap.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ No external Domain Documentation source is configured for this memory repo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The gate runs uncapped full commands directly, plans explicitly capped commands here, and reports both resource modes. | `code_quality_gate_preview`; `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:110-171; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:193-266 |
+| The gate runs uncapped full commands directly, plans explicitly capped commands here, and reports both resource modes. | `code_quality_gate_preview`; `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:160-235; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:267-360 |
 | The settings model for `orchestration.qualityGate`, including the host-managed `None` default. | "class QualityGateSettings:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:248-257 |
 | The fail-loud parser for `orchestration.qualityGate`, including absent/empty host-managed behavior. | `_parse_quality_gate` | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:382-400 |
 | Proofs for availability branches, scope wrapping, the rlimit flag, and cap-kill naming. | `MemoryCapPlanningTests`, `WrapperMemoryCapTests` | mcp/tests/test_code_quality_memory_cap.py:70-150; mcp/tests/test_code_quality_memory_cap.py:151-275 |

@@ -6,8 +6,8 @@
 | path | `dashboard/src/dev/cockpitScenarios.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T10:20+02:00 |
-| lastVerifiedCommitHash | `7af76249ff1aa728d34a6e81c5f09c8bcb797484` |
-| lastVerifiedCommitDate |  2026-08-09T02:17:45+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -105,8 +105,7 @@ The race suite exercises repository-local generation guards and stores; no cross
 
 ## Repo-Internal References
 
-This table is two columns; line ranges are carried inside the `Finding` cell so every row keeps the
-same arity.
+This table keeps exact findings, anchors, and source ranges in three columns.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -115,10 +114,14 @@ same arity.
 | L40-L46 — `WithdrawalResultWire`'s five declared fields; `bridgeEpoch` is not among them. | `WithdrawalResultWire` | dashboard/src/data/submissionLifecycleClient.ts:40-46 |
 | L4-L9 — `HarnessInfo`'s three fields, declared inline in a module with no mirror marker. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
 | L366-L377 — the server's `DetectedHarness` / `DetectedHarnessesResponse` declares exactly three fields, inheriting strict `WireResponse` whose `model_config` sets `extra="forbid"`. | "class WireResponse(BaseModel):"; `DetectedHarness`; `DetectedHarnessesResponse` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:366-372; mcp/src/agents_remember/serving/response_contract.py:374-377 |
-| L456-L468 — the `/api/harnesses` GET branch returns its `harnesses` fixture, type-pinned with `satisfies HarnessInfo[]`. | "return json({ status: "unavailable" }, 503);"; `harnesses: [`; `satisfies HarnessInfo[]` | dashboard/src/dev/cockpitScenarios.ts:456-456; dashboard/src/dev/cockpitScenarios.ts:477-481; dashboard/src/dev/cockpitScenarios.ts:418-418 |
+| The `/api/harnesses` GET branch returns its `harnesses` fixture, type-pinned with `satisfies HarnessInfo[]`. | "satisfies HarnessInfo[]" | dashboard/src/dev/cockpitScenarios.ts:433-443 |
 | L55-L64 — the guard documents the unmarked-mirror blind spot and names the removed `control` and `bridgeEpoch` fixtures. | "UNMARKED MIRROR"; `control`; `bridgeEpoch` | dashboard/src/test/wireFixtureGuard.ts:55-55; dashboard/src/test/wireFixtureGuard.ts:62-63 |
 
 ## Update History
+- 2026-08-14T05:26Z — L23 final curator: documented that accepted interaction responses are
+  observed through the catalog, shared working-state grammar, and attention rollup while replay and
+  refusal cases preserve exact-once authority; repaired the unrelated stale harness-route anchor.
+  Verification remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->

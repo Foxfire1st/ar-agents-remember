@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_sync_harness.py`           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `1b7f6f07c5ccc64627299b5d22463ef9c267e187` |
-| lastVerifiedCommitDate | 2026-08-08T02:42:36+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                           |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ verdict, including the exact `mode is 0755, expected 0644` message.
 | --- | --- | --- |
 | The generator under test, including `describe_drift`, `generated_files`, and the `HARNESSES` table. | `describe_drift` | scripts/sync-harness.py:647-666 |
 | The two fragment libraries whose declared names this suite validates. | `command_string`; `hook_specific_output` | scripts/harness/render_starter.py:46-49; scripts/harness/session_start_hook.py:28-34 |
-| Both hook tiers run the same `--check`. | "scripts/sync-harness.py" | .githooks/_gate.sh:81-81 |
+| Both hook tiers run the same `--check`. | "scripts/sync-harness.py" | .githooks/_gate.sh:79-79 |
 | The classification of shared versus per-harness content that the generator encodes. | `# Harness starter package source` | scripts/harness/README.md:1-94 |
 | The sibling generator suites this one sits beside. | `SyncRuntimeTests` | mcp/tests/test_sync_runtime.py:23-84 |
 

@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-13T08:40+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -69,6 +69,16 @@ No cross-repository implementation dependency governs this route.
 Read the focused model card first, then its producer/consumer references. Use the parent models
 overview for registry-wide response conventions.
 
+## L23 Final Candidate Route Disposition
+
+This route owns the validated durable-operation record, including accepted candidate and monotonic
+recovery-commit evidence. Agent-facing lifecycle responses remain task-addressed and deliberately
+exclude operation keys, PIDs, leases, and resume tokens.
+
 ## Update History
+
+- 2026-08-14T06:25+02:00 — L23 final candidate review: the validated operation record carries
+  exact candidate and recovery-commit evidence used by monotonic restart reconciliation; no private
+  operation identity entered agent-facing projections. Verification remains closeout-owned.
 
 - 2026-08-13T08:40+02:00 — Created for the L23 move that groups lifecycle response, finalizer, and asynchronous-operation models under one cohesive route. Verification metadata remains closeout-owned.

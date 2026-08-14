@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -149,7 +149,18 @@ Route indexes are intentionally not regenerated during this partitioned curator 
 
 The task-document vocabulary (`StepStatus`/`DocStatus`/`CompletionBlocker`) moved to `models/task_document.py` by L9; tasks modules now import it from there. Task-document behavior is unchanged.
 
+## L23 Final Candidate Route Disposition
+
+Task documents are the canonical sprint/master/leaf identity for source lineage, route review, and
+durable lifecycle addressing. A cleaned completed leaf is first converted into an exact task-reopen
+plan, before deliberately removed descendant branches can be mistaken for lineage failure.
+
 ## Update History
+
+- 2026-08-14T06:25+02:00 — L23 final candidate review: task documents expose canonical parent
+  series/leaf identity for lineage and route review, and completed-leaf start routes through an
+  exact task-reopen plan before removed descendant refs are inspected. Verification remains
+  closeout-owned.
 
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled task-document ownership with
   canonical structural addressing and current role-altitude rules; task documents remain the public

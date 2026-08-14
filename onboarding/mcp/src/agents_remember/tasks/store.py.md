@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/store.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The model written/read. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:109-173 |
+| The model written/read. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:182-267 |
 | The renderer invoked on every write. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:20-40 |
 | The application entry point uses batch writes when a leaf mutation also changes its parent master row. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:122-164 |
 

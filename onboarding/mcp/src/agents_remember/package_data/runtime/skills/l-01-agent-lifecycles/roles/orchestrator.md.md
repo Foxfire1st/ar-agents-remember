@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df` |
-| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -77,7 +77,16 @@ master altitude. Both require the explicit task-derived diff base, and host pyte
 remain diagnostics rather than acceptance or fallback. `memory_quality_check` stays a per-leaf
 closeout gate; orchestrators do not run a separate full graph per leaf.
 
+## L23 Final Candidate Disposition
+
+The orchestrator observes closeout and integration through canonical task status. Leaf acceptance is
+targeted Dagger; master acceptance is one full Dagger graph at master integration altitude, with no
+model-managed checklist or fallback runner.
+
 ## Update History
+- 2026-08-14T06:32+02:00 — L23 synchronized runtime doctrine: orchestration observes durable
+  task-addressed operations and retains the targeted-leaf/full-master Dagger altitude without
+  model-managed job ids. Verification remains closeout-owned.
 
 - 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized Dagger-only acceptance,
   targeted/full altitude, explicit diff-base ownership, and diagnostic-only host execution.

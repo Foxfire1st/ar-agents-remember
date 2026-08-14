@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -437,7 +437,7 @@ references informed product framing only; current code truth stays in agents-rem
 | State and authority architecture. | `# dashboard/src/data/ — Cockpit State And Authority Overview` | onboarding/dashboard/src/data/overview.md:1-405 |
 | Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-745 |
 | Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
-| Dev scenario authority and end-to-end states. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:113-207 |
+| Dev scenario authority and end-to-end states. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:108-205 |
 | Projection provenance: producer partition/bucket checks feed a schema-generated and stale-checked TypeScript mirror; fixture builders are type-checked against it; `contract.test.ts` measures the separate manual snapshot's coverage. | "The producer-to-TypeScript link is generated and checked"; "WHAT SCHEMA CODEGEN CLOSES"; "def check_state_partition("; "def state_count_fields("; "def workspace_projection_schema("; "def _state_partition("; "def _vocabulary_block("; "def stale_generated_files("; "def test_committed_generated_files_are_current" | dashboard/src/test/contract.test.ts:60-60; dashboard/src/test/fixtures/wire.ts:23-23; mcp/src/agents_remember/code_quality/projection_types.py:59-59; mcp/src/agents_remember/code_quality/projection_types.py:340-340; mcp/src/agents_remember/code_quality/projection_types.py:382-382; mcp/src/agents_remember/code_quality/projection_types.py:509-509; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:261-261; mcp/tests/test_projection_types_codegen.py:255-255; scripts/sync-projection-types.py:43-51 |
 | Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. | "five rules"; `SCANNED_ROOTS`; "no dashboard test asserts against a payload the server cannot produce" | dashboard/src/test/wireFixtureGuard.ts:1-63; dashboard/src/test/wireFixtureGuard.ts:136-136; dashboard/src/test/wireFixtureGuard.test.ts:266-467 |
 | State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:333-337 |
@@ -478,6 +478,10 @@ fixtures from the server contract. Engine Room shows the aggregate admission
 state and full summary; it does not compare branches or choose a sync locally.
 
 ## Update History
+
+- 2026-08-14T06:25+02:00 — L23 final candidate review: the dev scenario server now models accepted
+  interaction consumption/replay/attention behavior and uses the shared fleet task-document fixture;
+  cockpit route ownership is unchanged. Verification provenance remains closeout-owned.
 
 - 2026-08-13T12:26+02:00 — L23 live-progress clarification: recorded the Hangar rendering of the
   already-durable lifecycle command as a responsive one-line ellipsized projection with full title,

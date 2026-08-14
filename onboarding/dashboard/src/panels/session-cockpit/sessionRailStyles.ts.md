@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/sessionRailStyles.ts` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated | 2026-08-11T09:45+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                  |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -57,7 +57,16 @@ No Domain Documentation source is configured.
 
 No cross-repository implementation dependency governs this file.
 
+## L23 Final Candidate Disposition
+
+Master, leaf-group, and outer group boxes constrain their grid tracks with `minmax(0, 1fr)`,
+`minWidth: 0`, and `maxWidth: 100%`. Long labels or nested task rows can shrink inside the rail and
+cannot visually flatten or erase the sprint/master grouping.
+
 ## Update History
+- 2026-08-14T06:30+02:00 — L23 final candidate review: sprint/master/leaf rail containers now use
+  `minmax(0, 1fr)` and bounded widths so long grouped content cannot expand or visually erase its
+  grouping. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `sessionRailStyles.ts` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the rail

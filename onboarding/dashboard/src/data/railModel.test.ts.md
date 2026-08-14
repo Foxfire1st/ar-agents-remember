@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/railModel.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:32+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The rail-model functions under test. | `buildRailModel`, `railCycleOrder`, `buildSpawnTree` | dashboard/src/data/railModel.ts:361-403; dashboard/src/data/railModel.ts:414-436 |
-| The shared full-wire-shape catalog fixtures, including the multiplexed interaction row. | `catalogRow`, `FLEET`, `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:10-27; dashboard/src/test/fixtures/catalogRows.ts:32-172; dashboard/src/test/fixtures/catalogRows.ts:414-446 |
+| The shared full-wire-shape catalog fixtures, including the multiplexed interaction row. | `catalogRow`, `FLEET`, `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:12-29; dashboard/src/test/fixtures/catalogRows.ts:85-227; dashboard/src/test/fixtures/catalogRows.ts:480-512 |
 | The N1 agent-only-blocked triage pin. | "lists a seat blocked SOLELY on a multiplexed sub-agent approval" | dashboard/src/data/railModel.test.ts:415-431 |
 | The served builders used by the projection-join fixtures. | `taskDoc`, `gate`, `lifecycle`, `agentPickup` | dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:248-253; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:296-301 |
 | The held-gate join case. | "joins HELD gates by leafKey only while undecided (R13)" | dashboard/src/data/railModel.test.ts:332-339 |

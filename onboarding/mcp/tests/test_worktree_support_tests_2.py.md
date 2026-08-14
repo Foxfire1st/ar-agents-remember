@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_support_tests_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-13T12:53+02:00                                            |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`                                        |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                                        |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -36,7 +36,14 @@ Part of the 260731-EFA-L7 in-place split family for `test_worktree_support_tests
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
+## L23 Final Candidate Disposition
+
+This support split covers closeout, integration, lineage refusal, and recovery projections across
+transport or process replacement. Exact-once irreversible work remains plane-owned and task-addressed.
+
 ## Update History
+- 2026-08-14T06:40+02:00 — L23 final candidate review: this split support suite retains closeout,
+  integration, recovery, and lineage regressions without exposing private operation identity.
 
 - 2026-08-13T12:53+02:00 — L23 lineage-fixture repair: replaced literal-main assertions with the
   task-derived source branches and replaced both post-closeout replay expectations with the

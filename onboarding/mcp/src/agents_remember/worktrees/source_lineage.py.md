@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/source_lineage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T09:27+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,8 @@ recoveries by contract path. Recovery arguments are dry-run by default, so the
 projection guides a deliberate parent-first repair rather than silently moving
 branches.
 
-Repository equality is Git identity, not checkout-path equality. `_repository_identity` asks each
+Repository equality is Git identity, not checkout-path equality. The shared `repository_identity`
+Git helper asks each
 checkout for its absolute `--git-common-dir` through the guarded kernel Git runner and resolves that
 path before comparison. A parent contract may therefore point at one linked worktree while a leaf
 contract points at a sibling worktree of the same repository; a missing/non-directory checkout or
@@ -85,11 +86,15 @@ a seat begins and again before an irreversible lifecycle edge.
 | The generic lifecycle guard refuses a stale or unavailable transitive chain. | `require_current_source_lineage` | mcp/src/agents_remember/worktrees/source_lineage.py:113-126 |
 | Refusal and blocked-payload helpers publish one recovery shape. | `lineage_refusal`; `lineage_block_payload` | mcp/src/agents_remember/worktrees/source_lineage.py:98-140 |
 | Linked-edge validation prevents a leaf from naming an unrelated parent source. | `_linked_edge` | mcp/src/agents_remember/worktrees/source_lineage.py:220-237 |
-| Repository equality resolves Git's shared common directory so sibling worktrees compare as one repository. | `_same_repo`; `_repository_identity` | mcp/src/agents_remember/worktrees/source_lineage.py:255-269 |
+| Repository equality routes both paths through the shared Git-identity helper so sibling worktrees compare as one repository. | "def _same_repo(" | mcp/src/agents_remember/worktrees/source_lineage.py:254-257 |
+| The shared helper resolves Git's common directory as repository identity. | "def repository_identity(" | mcp/src/agents_remember/worktrees/modules/git.py:70-79 |
 | Git facts become strict edge states and ordered sync recoveries. | `_edge`; `_projection` | mcp/src/agents_remember/worktrees/source_lineage.py:244-312 |
 
 ## Update History
 
+- 2026-08-14T05:26Z — L23 final curator: corrected repository-identity ownership after the helper
+  moved into the shared worktree Git module; lineage still compares resolved common directories and
+  fails closed. Verification remains closeout-owned.
 - 2026-08-13T09:27+02:00 — L23 curator: replaced checkout-path identity in the documented lineage
   boundary with Git's resolved absolute common-directory identity, preserving fail-closed behavior
   for absent or unresolvable repositories. Verification metadata remains closeout-owned.

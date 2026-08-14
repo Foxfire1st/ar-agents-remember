@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/Bench.tsx`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ the reviewed task evidence for any current behavioral claim.
 | The `happy-build`→`build-up` legacy-deep-link alias (05k). | "?scenario=happy-build" | dashboard/src/dev/Bench.tsx:20-20 |
 | The grouped scenario picker is a compact selector. | `htmlFor` | dashboard/src/dev/Bench.tsx:51-51 |
 | The selected scenario mounts the real cockpit shell. | "chats" | dashboard/src/dev/Bench.tsx:41-41 |
-| The scenario model validates named engine-room scenarios before building frames. | "scenario player: unknown engine-room scenario" | dashboard/src/dev/scenarios.ts:35-35 |
+| The scenario model validates named engine-room scenarios before building frames. | "scenario player: unknown engine-room scenario" | dashboard/src/dev/scenarios.ts:36-36 |
 | The real cockpit shell it renders (also the shell rendered against fixtures). | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
 | The gallery fixtures hydrated by the legacy `?state=` path. | "calm" | dashboard/src/dev/fixtures.ts:148-148 |
 | The dev terminal mock provided via context (slice 6e-1). | `mockTerminalSocketFactory` | dashboard/src/dev/mockTerminalSocket.ts:65-65 |

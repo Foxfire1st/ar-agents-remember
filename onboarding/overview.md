@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df`
-| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 
 > **Status:** active baseline
 
@@ -125,7 +125,7 @@ onboarding pass.
 | Branch memory carryover | Carry richer onboarding from a source branch into official memory only after the corresponding code has landed. Candidates cover file sidecars and route overviews (route-keyed, `kind`-tagged): overviews whose route covers a landed path auto-carry only when branch and official content are identical (metadata re-verification), otherwise they are always review-required; official-side `overview.index.json` files are regenerated after carry — never copied — guarded on a clean official-ref checkout. | `c-11-memory-carryover-from-branch` skill, `memory_carryover_*`, `memory/carryover.py` |
 | Branch-gated cross-repo context | Optional cross-repo context inclusion guarded by configured branch and memory-ledger checks. | `c-08-ar-coordination-context-resolver` skill, `crossRepo.allow` |
 | Benchmark harness | Package-owned Codex benchmark fixtures, workspace preparation, paired source-only versus memory-enabled runs, JSONL/result capture, and metric summaries. | `codex_benchmark_prepare`, `codex_benchmark_run`, `benchmarks/` |
-| Source quality tooling | Repository-owned gate whose scope is **derived from `git ls-files '*.py'`** — it takes no path arguments, so nothing can narrow what it certifies. **Six steps enforce**: Ruff (lint, including `C901`/`PLR0911`/`PLR0912`/`PLR0915`/`PLR0913` armed at full strength), `ruff format --check`, Pyright, the full pytest suite under branch coverage, mandatory CRAP threshold enforcement (**20.0**, against branch coverage, with a report lacking branch data refused), and the **changed-lines coverage floor at 100%** (`diff_coverage.py`, the binding coverage gate — the aggregate is 87.16%, so any lower floor passes a merely average change). **Radon's `cc` and `mi` steps are declared reports and cannot fail anything** (they exit 0 whatever they find), while Radon stays load-bearing as CRAP's complexity engine. **There is no baseline, ratchet, allowlist or grandfather file anywhere in the gate** — one was built inside 260731-EFA-L2 and deleted. The gate runs at pre-push (full tier), worktree closeout before any **commit** (since 260731-EFA-L4 closeout resets the index and stages the whole task worktree first, so the gate's scope is the commit's content), and CI on every branch and pull request; pre-commit runs a cheap **fast tier** over the staged content (three generated-copy checks + Ruff + formatter + Pyright), deriving the same `git ls-files` scope — see the enforcement topology below. | `python -m agents_remember.code_quality.check`, `code_quality/`, `code_quality/diff_coverage.py`, `.githooks/_gate.sh`, `worktrees/modules/code_quality_gate.py`, `mcp/tests/test_gate_scope.py` |
+| Source quality tooling | Acceptance is owned by one pinned Dagger graph over an exact candidate bundle and task-derived diff base. Leaf closeout runs targeted mode over the staged candidate; master integration runs full mode once at master altitude. The exported `clean-quality-results.json` is the single authoritative result, and Python, Vitest, and Playwright refuse startup without the graph's matching nonce and in-container attestation. Direct host pytest, wrapper, Vitest, or Playwright execution is diagnostic-only and cannot satisfy acceptance. The Python wrapper still derives scope from the staged tree, enforces Ruff, format, Pyright, pytest/coverage, CRAP, and changed-line coverage, and keeps Radon report-only with no baseline, ratchet, allowlist, or grandfather file. | `dagger call quality`, `dagger/src/index.ts`, `code_quality/`, `worktrees/modules/code_quality_gate.py`, `worktrees/modules/closeout_staged_quality.py`, `mcp/tests/test_agents_remember_quality.py` |
 | Self-hosted harness configuration | The nine dogfooded harness configuration trees (`.claude/`, `.codex/`, `.cursor/`, `.github-vscode/` + `.vscode/`, `.hermes/`, `.openclaw/`, `.pi/`, `.agents/`) are **generated from one source and checked**, not eight independent copies. `scripts/harness/` holds the fragment libraries and shared bodies; `scripts/sync-harness.py` fans out 45 files three ways (verbatim, composed body + per-harness framing, and programs assembled from named fragments with derived imports). `--check` runs in both hook tiers and in the test suite. `scripts/harness/README.md` is the ruled classification of genuine per-harness requirements versus drift. | `scripts/sync-harness.py`, `scripts/harness/`, `mcp/tests/test_sync_harness.py` |
 | Public docs and harness guides | User-facing setup, concepts, architecture, workflows, references, guides, and install notes for Codex, Claude Code, Cursor, Antigravity, VS Code Copilot, Hermes, Pi, and OpenClaw. | `docs/`, `README.md` |
 | Canonical runtime and skills asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are canonical editable assets synced into MCP package data by `scripts/sync-runtime.py`; root `skills/` is the canonical skill tree synced into MCP package data plus every harness starter skill folder by `scripts/sync-skills.py`. Both carry a `--check` mode and both run in **both** local hook tiers via `_gate.sh`'s `generated_copy_checks`. **Neither `--check` runs in CI** — no workflow invokes `_gate.sh` or any `scripts/sync-*.py`, and the quality wrapper does not either. Drift is caught outside the hooks anyway, because `mcp/tests/test_sync_scripts.py::RealTreeDriftTests` reads the **real** trees in this checkout: `test_every_skill_copy_matches_the_canonical_tree` walks all nine `sync-skills.TARGETS` and `test_every_runtime_package_asset_matches_its_source` walks all four `sync-runtime.TARGETS`, both through the shared module-level `drifted_files()` reader over each script's `diff_target`, and each failure names the drifted copy plus the command that repairs it. It is a plain `unittest` class under `mcp/tests/` (pytest's declared `testpaths`), so it runs in the quality wrapper's **pytest step** — at pre-push, at closeout, and in CI. **Two limits:** CI still never calls `--check` itself, so the guarantee arrives through pytest rather than a workflow step; and the tests are only as strong as `TARGETS` — nothing asserts that set is complete, so a tenth skill mirror added without registering it would go unnoticed (`test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data` does pin the runtime target set; `sync-skills.TARGETS` has no counterpart). The six temp-directory cases in `ReplaceTreeTests` are unchanged and still needed — they cover `replace_tree`'s crash-safe copy-then-swap contract, which real-tree drift does not test. `RealTreeDriftTests` is modelled on `mcp/tests/test_sync_harness.py::test_every_generated_harness_file_matches_its_source`, so all three sync scripts now behave alike. | `scripts/sync-runtime.py`, `scripts/sync-skills.py`, `mcp/tests/test_sync_scripts.py`, `mcp/tests/test_sync_runtime.py`, `.githooks/_gate.sh` |
@@ -657,11 +657,12 @@ GrepAI runs in workspace mode with explicit `{ projectId, path }` roots generate
 
 ### Code Quality And Refactor Baseline
 
-The source checkout tells agents to run **one command** after Python implementation work —
-`python -m agents_remember.code_quality.check` — and states that it takes no path arguments because
-its scope is `git ls-files '*.py'`. (It previously said "run Ruff"; 260731-EFA-L2
-replaced that, because two of the three named tools were not the gate and the third could not fail
-it.) The resolved memory layer's `system/tools.md` still holds exact command details and
+The source checkout tells agents to run acceptance only through the pinned Dagger module. Its
+candidate bundle, mode, exact diff base, and exported reports bind one authoritative result;
+host-side Python, Vitest, and Playwright runs refuse unless the same graph supplies the per-run
+nonce and in-container attestation. The Python wrapper still accepts no caller-selected source
+paths because its scope derives from `git ls-files '*.py'`, but invoking that wrapper directly is
+diagnostic rather than acceptance. The resolved memory layer's `system/tools.md` still holds exact command details and
 `system/coding-guidelines.md` the repository-specific style rules. Coordinator-level tools examples keep global commands separate from repo-specific code quality tools, and the memory-repo tools example reserves a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. The packaged and live code-quality report templates no longer offer `passed` as a Radon result: a tool that cannot fail must not be given a verdict vocabulary that says it did not.
 
 The current `pyproject.toml` makes **Ruff responsible for complexity as well as hygiene**. `C901` is
@@ -856,12 +857,13 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. | "ar-coordination/AGENTS.md"; "Implementation approval is not commit approval" | AGENTS.md:10-10; AGENTS.md:141-141 |
-| The source checkout defines the repository code-quality gate and its no-baseline/no-allowlist policy. | "Code Quality Instructions"; "After implementing Python code in this source checkout"; "python -m agents_remember.code_quality.check"; "There is no baseline"; "a finding is fixed" | AGENTS.md:146-146; AGENTS.md:148-148; AGENTS.md:152-152; AGENTS.md:164-165 |
+| The source checkout defines Dagger-only acceptance, the single exported result, host-suite refusal, and the no-baseline/no-allowlist policy. | "Code Quality Instructions"; "dagger call quality --source=."; "single authoritative result"; "There is no host-test compatibility path"; "There is no baseline"; "a finding is fixed" | AGENTS.md:146-171 |
 | The docs index owns the start-here, install, operational, and reference map. | "Start Here"; "Install Guides"; "Getting Started"; "Onboard an Existing Repo"; "MCP Tool Reference"; "Release Checklist" | docs/README.md:23-23; docs/README.md:25-25; docs/README.md:33-33; docs/README.md:46-46; docs/README.md:56-56; docs/README.md:65-65 |
 | Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
 | The runtime sync contract is checked against every generated copy. | `RealTreeDriftTests` | mcp/tests/test_sync_scripts.py:159-207 |
 | CI exposes the quality workflow as a reusable call. | `workflow_call` | .github/workflows/quality-checks.yml:11-11 |
-| Closeout stages before it gates and refuses unsafe linked/conflicted worktrees. | `_gate_staged_code`; `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/modules/closeout.py:746-785; mcp/src/agents_remember/worktrees/modules/closeout.py:788-811; mcp/src/agents_remember/worktrees/modules/closeout.py:814-872 |
+| Closeout imports the staged-quality boundary, which refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:31-33 |
+| The extracted staged-quality owner contains both refusal helpers and the exact-candidate Dagger gate. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; "def gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:20-129 |
 | The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" | CONTRIBUTING.md:64-64 |
 | Provider guidance keeps provider runtime paths under configured provider roots. | "providers/runners/grepai" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:95-95 |
 | The MCP settings example declares repository and coordination authority. | `coordinationRoot` | examples/mcp/settings.example.json:3-3 |
@@ -1054,22 +1056,15 @@ This master leaf armed the file-size detector (`code_quality/file_size.py`, hard
 
 The test-authority ladder (260731-EFA-L17/L23) assigns Agents Remember acceptance to the pinned
 Dagger graph. Leaf-edge checks stay mandatory but are change-set-scoped in targeted mode
-(ruff/format over changed files, pyright over
-changed files + reverse-import closure, pytest over the derived test subset, coverage/CRAP/radon
-over changed production modules, changed-lines floor). Full mode (ruff, ruff-format,
-pyright, pytest+coverage, CRAP, diff-coverage) runs exactly once per master, invoked by
-`worktree_integrate` itself at master altitude. Targeted and full modes both require the exact
-task-derived diff base; generated Dagger help is the public function contract. Host pytest and
-direct wrapper execution remain diagnostics, never acceptance or fallback. Constrained CI may
-explicitly configure
-`orchestration.qualityGate.memoryCapBytes` (systemd MemoryMax scope or the
-RLIMIT_AS mechanism); neither path rewrites pytest's literal `-n=auto`.
-`memory_quality_check` is explicitly carved out and stays a per-leaf closeout gate. The pre-push
-tier, leaf closeout, and leaf integration route to the targeted contract; CI keeps the full
-remote gate on leaf branches (recorded posture: no CI change this leaf). Refusal shapes are loud:
-an uncovered changed production module, a failed targeted run, or a missing
-wrapper refuses rather than certifying a narrower run. A cap-less full run is
-the normal host-managed path after L24.
+(ruff/format over changed files, pyright over changed files + reverse-import closure, pytest over
+the derived test subset, coverage/CRAP/radon over changed production modules, changed-lines floor).
+Full mode (ruff, ruff-format, pyright, pytest+coverage, CRAP, diff-coverage) runs exactly once per
+master at integration altitude. Both modes require the exact task-derived diff base and candidate
+bundle, and generated Dagger help is the public function contract. The exported
+`clean-quality-results.json` is the one acceptance result. Host pytest and direct wrapper execution
+remain diagnostics, never acceptance or fallback; the Python, Vitest, and Playwright harnesses
+fail closed without the graph's matching nonce and in-container attestation. `memory_quality_check`
+is explicitly carved out and stays a per-leaf closeout gate.
 
 ## 260731-EFA-L9 Change — First Structural Leaf
 
@@ -1111,6 +1106,10 @@ approved, or merged; no agent-supplied runtime or commit identifier becomes cont
 authority.
 
 ## Update History
+
+- 2026-08-14T06:10+02:00 — L23 curator: reconciled the repository inventory and authority map
+  with exact-candidate, Dagger-only acceptance, fail-closed host suites, and the extracted staged
+  quality owner. Verification provenance remains closeout-owned.
 
 - 2026-08-13T12:26+02:00 — No route impact: final L23 stabilization extracted one internal
   closeout helper, narrowed registrar naming, made five test package-root imports deterministic,

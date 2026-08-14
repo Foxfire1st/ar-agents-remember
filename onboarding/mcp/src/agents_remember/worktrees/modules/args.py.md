@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                         |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                         |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -75,7 +75,15 @@ No external Domain Documentation source is configured for this memory repo.
 
 `WorktreeArgs` carries `parent_task` and `leaf_id` through CLI, MCP, and source API entrypoints, giving all operations the same active-task and leaf-selection inputs.
 
+## L23 Final Candidate Disposition
+
+The internal worktree argument DTO carries accepted candidate, task contract, and operation-progress
+facts between modules. Public callers still address the canonical task and never supply private
+operation, process, lease, or approval identifiers.
+
 ## Update History
+- 2026-08-14T06:36+02:00 — L23 final candidate review: internal worktree arguments carry operation
+  progress and accepted-candidate evidence while public tool inputs remain task-addressed.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

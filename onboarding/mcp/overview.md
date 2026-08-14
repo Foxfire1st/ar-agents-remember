@@ -9,8 +9,8 @@ Total output lines: 2603
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df`
-| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -33,11 +33,6 @@ coverage, and retry-proof arguments. The retry-proof compatibility key includes 
 version alongside pytest and coverage tooling; proof reuse therefore fails closed when the
 parallel executor changes.
 
-Full master integration keeps that literal `-n=auto` and uses host-managed RAM
-and swap by default. `orchestration.qualityGate.memoryCapBytes` is absent unless
-an operator deliberately configures a constrained-environment hard cap; an
-explicit systemd cap applies `MemoryMax` without disabling host swap.
-
 L23 makes the pinned Dagger graph the only Agents Remember acceptance environment. It materializes
 the exact candidate tree and required Git ancestry into a clean Ubuntu image, streams progress,
 and atomically replaces the enclosure's latest reports. Leaf/focused acceptance selects targeted
@@ -48,6 +43,10 @@ acceptance and never receive an automatic fallback from a failed Dagger run. The
 slice adds durable asynchronous closeout/integration operations whose public address is the task
 contract plus operation kind. Private operation keys, worker PIDs, approval fingerprints, and
 candidate-tree identities remain plane-owned recovery state.
+
+The current graph also supplies a matching per-run nonce and in-container attestation to every
+Python, Vitest, and Playwright harness. Those suites refuse startup outside that environment, so
+the old host-managed wrapper/test path cannot accidentally become a second acceptance result.
 
 Durable lifecycle subprocess bootstrap is an installed-runtime boundary: the launcher preserves
 the installed MCP environment instead of prepending task-checkout source, and the packaged worker
@@ -808,6 +807,10 @@ boundaries. The MCP transport remains a thin registration/forwarding layer over 
 model, and worktree owners.
 
 ## Update History
+
+- 2026-08-14T06:25+02:00 — L23 final package review: reconciled the package authority map with
+  Dagger-only acceptance, per-run suite attestation, exact-candidate recovery, route review, and
+  transitive lineage rechecks. Verification provenance remains closeout-owned.
 
 - 2026-08-13T14:32+02:00 — L23 final quality-contract review: recorded Dagger-only Agents Remember
   acceptance, targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff

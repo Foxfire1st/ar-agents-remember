@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T10:55+02:00 |
-| lastVerifiedCommitHash |  `7c56c11d651972515723b4090b8174087eb5236f`|
-| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash |  `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate |  2026-08-14T08:23:37+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,8 @@ No Domain Documentation entries are configured in `system/sources.md`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Harness setup preserves real stores while replacing network edges (`vi.mock` of the authority + conversation modules, `afterEach` store reset). | `vi`; `afterEach` | dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:1-109 |
+| Harness setup preserves real stores while replacing the authority and conversation network edges at their module boundaries. | "mocked at their module boundary" | dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:32-48 |
+| Teardown unmounts while timers are fake, discards the virtualizer's orphaned debounce, and only then restores real time. | "TanStack Virtualizer owns a 150 ms scroll-observer debounce" | dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:99-112 |
 | Boot, pool, epoch/freshness, scroll-restore, and persistent-layer matrices cover the stage seams (six describes). | "ChatsStageBody fresh-chat boot (260721 D1/D2)"; "ChatsStageBody keep-alive pool (F-j)"; "ChatsStageBody epoch attribution (M3)"; "ChatsStageBody authority freshness (M9)"; "ChatsStageBody view-switch scroll restore (F-ac)"; "ChatsStageBody B1: persistent conversation + PTY layers" | dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:111-234; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:282-404; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:411-514; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:516-565; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:590-756; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:767-976 |
 | Implementation under test (`ChatsStageBody`). | `ChatsStageBody` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:147-489 |
 | The typed page/item/status builders the warm seeds now use. | `conversationIdentity`; `conversationStatus`; `conversationItem`; `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:172-185; dashboard/src/test/fixtures/conversationWire.ts:187-207; dashboard/src/test/fixtures/conversationWire.ts:209-226; dashboard/src/test/fixtures/conversationWire.ts:228-243 |
@@ -85,6 +86,9 @@ No cross-repository boundary is owned here.
 | No cross-repository evidence applies. | — | — |
 
 ## Update History
+- 2026-08-14T06:30+02:00 — No production impact: L23 drains TanStack Virtualizer's fake-timer
+  callback before restoring real time, preserving the existing scroll-restore proof without jsdom
+  teardown leakage. Verification remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the keep-alive assertions added with the e2e repair. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-04T13:42:02+02:00 — 260731-EFA-L6 S18-B08 curator: regenerated the six describe bodies, restored builder owner order, and split the two capability cues so each whole claim retains its operative surface branch.

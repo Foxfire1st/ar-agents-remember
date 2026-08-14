@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/scripts/`                             |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-07T08:19Z                                |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ configured for this route.
 | --- | --- | --- |
 | The changed-lines floor and its base resolution. | `measureDiffCoverage`; `resolveBase` | dashboard/scripts/check-diff-coverage.mjs:43-43; dashboard/scripts/check-diff-coverage.mjs:108-108 |
 | The executable-statement contract suite. | "describe(\"check-diff-coverage executable-statement semantics\", () => {" | dashboard/scripts/check-diff-coverage.test.mjs:12-12 |
-| The Vitest include that collects this route's tests. | "include: ["; "setupFiles: [" | dashboard/vitest.config.ts:58-58; dashboard/vitest.config.ts:35-35; dashboard/vitest.config.ts:32-32 |
+| Vitest collects the route's script tests and loads the shared test setup. | "include: [\"src/**/*.{test,spec}.{ts,tsx}\", \"scripts/**/*.test.mjs\"]"; "setupFiles: [\"./src/test/setup.ts\"]" | dashboard/vitest.config.ts:61-61; dashboard/vitest.config.ts:35-35 |
 
 ## Cross-Repo References
 
@@ -78,6 +78,9 @@ No cross-repository implementation source governs this route.
 
 ## Update History
 
+- 2026-08-14T05:26Z — L23 final curator: re-read the Dagger-environment guard script and its
+  collection path; retained the route contract and repaired the exact Vitest anchors. Verification
+  remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator (round 8 delta): created this route
   overview for the dashboard quality scripts after the executable-statement
   diff-coverage unit and its contract test landed. Verification pinned to `cf5ef50`

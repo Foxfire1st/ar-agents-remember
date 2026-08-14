@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -67,16 +67,15 @@ own explicit entry; `**/*` does not match them.
 
 `classifiers` is not decoration here — it is the one place a consumer can read the supported
 interpreter floor and the supported platforms without cloning. It lists Python 3.11, 3.12, and 3.13
-(matching `requires-python = ">=3.11"` and the three interpreters
-`.github/workflows/quality-checks.yml` runs the gate on) and the two operating-system classifiers
+(matching `requires-python = ">=3.11"`) and the two operating-system classifiers
 `POSIX :: Linux` and `MacOS`. Windows is supported **through WSL**, which presents as Linux to the
 interpreter and therefore deliberately carries no separate classifier — the absence is a decision,
 not an omission, and the inline comment in the file records it.
 
-The floor is a three-way agreement: `requires-python` here, `[tool.ruff] target-version` in the
-repository-root `pyproject.toml` (pinned to `py311` by the same leaf, so `UP` rules can no longer
-push syntax the floor rejects), and the CI interpreter matrix. Moving one without the other two is
-the failure mode this block exists to make visible.
+The language floor is an agreement between `requires-python` here and `[tool.ruff] target-version`
+in the repository-root `pyproject.toml` (pinned to `py311`, so `UP` rules cannot push syntax the
+floor rejects). CI now certifies the exact staged candidate through the pinned Dagger Ubuntu graph;
+it is not a per-minor interpreter matrix and must not be described as one.
 
 ### The Dashboard Bundle Is Packaged But Not Committed (260731-EFA-L1)
 
@@ -128,9 +127,10 @@ the source rather than being repeated here; it is the same string
   state whose documented remedy is `npm --prefix dashboard run build`.
 - The wheel and the sdist must both carry the bundle. The release workflow, not this file, is where
   that is enforced.
-- The supported floor is stated in three places that must move together: `requires-python` and the
-  Python classifiers here, `[tool.ruff] target-version` in the repository-root `pyproject.toml`, and
-  the CI interpreter matrix. Raising or lowering one alone is a defect.
+- The supported floor is stated by `requires-python` and the Python classifiers here plus
+  `[tool.ruff] target-version` in the repository-root `pyproject.toml`. Raising or lowering only
+  one of those declarations is a defect; the Dagger acceptance image is separate execution
+  provenance, not a promise to test every classifier minor.
 - The absence of a Windows classifier is deliberate (Windows is supported through WSL). Do not add
   one to "fix" the list.
 
@@ -151,9 +151,12 @@ the source rather than being repeated here; it is the same string
 | Both generated dashboard paths are git-ignored, with the reason recorded inline. | "/mcp/src/agents_remember/package_data/dashboard/", "/mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:23-24 |
 | An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. | "no built cockpit bundle in this installation", "No dashboard bundle at %s; serving 503 on the static surface. Build it with: %s" | mcp/src/agents_remember/serving/static.py:73-73; mcp/src/agents_remember/serving/static.py:123-123 |
 | The Ruff `target-version` that must track the floor declared here lives in the repository-root project file. | "py311" | pyproject.toml:4-4 |
-| The interpreter matrix the classifiers claim support for is the one the gate workflow runs. | "3.11" | .github/workflows/quality-checks.yml:27-27 |
+| Package metadata directly declares the interpreter floor and supported Python classifiers. | "requires-python = \">=3.11\""; "Programming Language :: Python :: 3.11" | mcp/pyproject.toml:10-10; mcp/pyproject.toml:17-19 |
 
 ## Update History
+- 2026-08-14T05:26Z — L23 final curator: removed the stale CI-minor-matrix claim. Package metadata
+  still declares Python 3.11-3.13 and a 3.11 floor, while acceptance now runs once in the pinned
+  Dagger Ubuntu graph. Verification remains closeout-owned.
 - 2026-08-12T20:25+02:00 — L23 curator: re-read package identity after the kernel version helper split and re-anchored the claim to `_resolve_server_version` plus `SERVER_VERSION`; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -53,7 +53,16 @@ canonically and propagated; editing this artifact independently creates drift.
 | MCP package data is an explicit synchronization target. | "mcp package data" | scripts/sync-skills.py:43-47 |
 | Synchronization replaces each target from the canonical tree and then checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
+## L23 Final Candidate Disposition
+
+Curator admission repeats the manager's task-derived lineage proof and requires a passing route
+review bound to the current candidate tree. Curation documents that frozen candidate only and leaves
+commit stamps and lifecycle mutation to closeout.
+
 ## Update History
+- 2026-08-14T06:32+02:00 — L23 synchronized runtime doctrine: curator admission requires current
+  lineage and a passing exact-candidate route-review record before memory reconciliation starts.
+  Verification remains closeout-owned.
 
 - 2026-08-11T16:54+02:00 — Synchronized the single enclosure-checklist intake/repair loop and its
   zeroable curator gate without creating copy-specific doctrine.

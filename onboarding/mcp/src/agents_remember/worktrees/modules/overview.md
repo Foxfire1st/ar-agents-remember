@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -22,16 +22,17 @@ merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the lea
 
 ## Hot Path Summary
 
-L23 makes quality execution an explicit `QualityGatePlan.executor` choice. `code_quality_gate.py`
-keeps local execution as one exact mode and delegates clean execution to
-`clean_quality_executor.py`, which materializes the immutable staged candidate into a pinned
-Dagger graph, streams progress, and replaces the enclosure's latest reports. `closeout.py` and
-`integrate.py` pass operation progress and candidate identity through the existing synchronous
-mutation path; they do not own detached process identity. `git.py` captures and later rechecks the
-candidate with an isolated Git index so asynchronous delay cannot change what accepted approval
-authorizes. `closeout_memory_quality.py` owns the external-memory phase runner, bounded refusal
-formatting, and pre/post result composition extracted from the closeout coordinator; the extraction
-preserves the same gate and ordering while keeping `closeout.py` below the 1,200-line rail.
+L23 makes Dagger the sole acceptance executor. `clean_quality_executor.py` materializes the exact
+reviewed candidate and required ancestry into the pinned graph, starts a fresh attempt, bounds live
+output, and atomically replaces the enclosure's current reports; there is no local compatibility
+runner. `code_quality_gate.py` plans targeted or full Dagger authority with an explicit diff base.
+`closeout_staged_quality.py` owns the linked/conflict refusals, accepted-tree rechecks, complete
+staging, reviewed hook, and targeted gate. `closeout.py` and `integrate.py` preserve approval and
+merge ordering while rechecking lineage after long quality work; integration remains failure-atomic
+before source refs move. `git.py` owns exact candidate-tree and repository-identity helpers.
+`start_result.py` separates result projection from start coordination, and the external
+`worktrees/closeout_recovery.py` reconciles post-claim code, memory, and ledger commits without
+replaying completed irreversible steps.
 
 - `git.py` owns this route's Git vocabulary — the typed helpers and small repository
   state checks every operation module speaks — but **since 260731-EFA-L3 it no longer
@@ -321,7 +322,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:671-746 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:491-499; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:350-456 |
+| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_quality_gate.py:576-685 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:20-20; mcp/src/agents_remember/models/worktree.py:119-119 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:562-671 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
@@ -660,6 +661,11 @@ fails closed.
 
 ## Update History
 
+- 2026-08-14T06:25+02:00 — L23 final route review: removed the stale local-executor description and
+  documented Dagger-only exact-candidate quality, extracted staging/result owners, failure-atomic
+  integration, lineage rechecks, bounded fresh attempts, and monotonic recovery. Verification
+  remains closeout-owned.
+
 - 2026-08-13T12:26+02:00 — L23 structural-rail repair: added the new
   `closeout_memory_quality.py` child and recorded its behavior-preserving ownership of quality-phase
   execution, bounded failure evidence, and two-phase result combination. Closeout retains commit,
@@ -787,7 +793,7 @@ fails closed.
   **L179** (`quality_environment` gained a docstring above them); `landing.py::_pr_for` was cited at
   L104, which is inside the `gh` argv rather than at the definition — now **L93**. **Two new
   route-visible facts:** `quality_environment`
-  (cit:([`quality_environment`], mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:554-584))
+  (cit:([`quality_environment`], mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:612-643))
   now builds from `git_environment()`
   (cit:(["def git_environment() -> dict[str"], mcp/src/agents_remember/kernel/git_command.py:85-85))
   instead of `dict(os.environ)`, so the spawned quality wrapper no longer inherits the eight

@@ -6,14 +6,17 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 
 ## Purpose
 
 ### 260731-EFA-L23 Route Delta
 
-L23 documents guarded MCP citation repair, task-addressed asynchronous closeout/integration and cancellation, and exact `local`/`dagger` quality-executor policy with fail-closed selection.
+L23 documents guarded MCP citation repair, task-addressed asynchronous closeout/integration and
+cancellation, and Dagger as the sole acceptance executor. Host/unit invocations are diagnostic;
+Python, Vitest, and Playwright refuse direct execution without the Dagger run nonce and container
+attestation.
 
 ### 260713-TES-L1 Rename — Settings And Harness Reference
 
@@ -73,8 +76,8 @@ reference, `worktrees-c09.md` owns the quality-before-commit sequence, and
 pre-commit and pre-push. Two facts these docs predate (260731-EFA-L1, recorded on
 the root overview): the two hook tiers are not equivalent — pre-commit runs a
 fast staged-content tier without the wrapper, and pre-push runs the
-change-set-scoped targeted tier (260731-EFA-L17; the full wrapper runs once per
-master at the master integration gate with host-managed RAM/swap by default) — and the closeout gate
+change-set-scoped targeted Dagger tier (260731-EFA-L17; the full Dagger graph runs once per
+master at the master integration gate) — and the closeout gate
 applies to any repository whose checkout carries the wrapper rather than only to
 `agents-remember`. The skill-copy checks named here do run in both tiers and are
 unaffected.
@@ -173,6 +176,10 @@ That enclosure-local operational artifact is atomically replaced, combines repai
 and quality work with explicitly closeout-owned evidence, and is removed with the enclosure.
 
 ## Update History
+
+- 2026-08-14T06:25+02:00 — L23 final candidate review: corrected quality references to
+  Dagger-only acceptance and fail-closed host test startup; removed the stale local-executor and
+  host-managed-full descriptions. Verification remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 documents guarded MCP citation repair, task-addressed asynchronous closeout/integration and cancellation, and exact `local`/`dagger` quality-executor policy with fail-closed selection. Verification provenance remains closeout-owned.
 

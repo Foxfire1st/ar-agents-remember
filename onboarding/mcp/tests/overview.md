@@ -9,8 +9,8 @@ Total output lines: 1813
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `b2de030c1b52f02a4543619d23ccd8e44ecac6df`|
-| lastVerifiedCommitDate | 2026-08-13T14:51:34+02:00|
+| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
+| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1064,7 +1064,18 @@ collection or assertions, eliminating dead launcher lines from changed-coverage 
 focused proof ran 26 tests with 20 workers and passed Ruff, formatting, layering, Pyright, CRAP,
 and 7/7 changed-line coverage; generated help was verified.
 
+## L23 Final Candidate Route Disposition
+
+The final forcing surface covers Dagger-only suite attestation, fresh attempts with one shared
+result, bounded output and stale-report pruning, candidate-bound route review, transitive lineage
+rechecks, failure-atomic integration, and monotonic post-claim recovery.
+
 ## Update History
+
+- 2026-08-14T06:25+02:00 — L23 final candidate review: forcing coverage now spans Dagger-only
+  startup attestations, fresh-attempt/shared-result quality projection, bounded output/report prune,
+  candidate-bound route review, lineage rechecks, failure-atomic integration, and monotonic
+  post-claim recovery. Verification provenance remains closeout-owned.
 
 - 2026-08-13T14:32+02:00 — L23 final test-route review: recorded mandatory explicit Dagger diff
   base and generated help, Dagger-only acceptance altitude, diagnostic-only host execution, the
