@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/sync.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:12+02:00                     |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                         |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`                         |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -129,7 +129,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Detection surface: `worktree_status`'s fetch-free freshness block in `base_freshness` recommends this tool. | `base_freshness` | mcp/src/agents_remember/worktrees/modules/guidance.py:319-369 |
-| The contract declares `sync_log` as one entry per `worktree_sync` that advanced the recorded base pair. | `sync_log`; "one entry per worktree_sync"; "recorded base pair" | mcp/src/agents_remember/worktrees/worktree_contract.py:275-276; mcp/src/agents_remember/worktrees/worktree_contract.py:279-279 |
+| The contract declares `sync_log` as one entry per `worktree_sync` that advanced the recorded base pair. | `sync_log`; "one entry per worktree_sync"; "recorded base pair" | mcp/src/agents_remember/worktrees/worktree_contract.py:279-280; mcp/src/agents_remember/worktrees/worktree_contract.py:283-283 |
 | The sync module persists the result of each base-pair advance. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:36-119 |
 | Upstream fetch + ref helpers come from the freshness kernel through `upstream_ref` and `fetch_remote`. | `upstream_ref`; `fetch_remote` | mcp/src/agents_remember/kernel/git_freshness.py:55-64; mcp/src/agents_remember/kernel/git_freshness.py:67-77 |
 | The `run_git` every merge/ff/show in this module calls, and the `GIT_LOCAL_TIMEOUT_SECONDS` default that bounds them. | `run_git`; `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:85-151 |

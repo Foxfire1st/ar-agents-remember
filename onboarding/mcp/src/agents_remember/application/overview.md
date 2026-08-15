@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-15T11:25+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ agent or process replacement; callers never supply the private operation key or 
 `application/` owns operation-level MCP composition. Application entry points translate
 trusted MCP runtime config plus typed tool arguments into package service calls
 and JSON-compatible payload dictionaries. Domain placement follows what a tool
-operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_doc_tools.py:1006-1027) sits beside the task_doc application entry point because it
+operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_doc_tools.py:1098-1119) sits beside the task_doc application entry point because it
 reopens a task, while worktree_tools keeps only genuine worktree operations (its
 abandon now also ends the ambient lifecycle it anchors).
 
@@ -256,7 +256,26 @@ strict source-lineage projections. Context status validates those facts instead
 of retyping them, and ambient attach attribution occurs only after a real
 attachment, keeping blocked lineage out of successful lifecycle history.
 
+## 260815-DAG-L3 Ambient Queue Authority
+
+`application/closeout_queue.py` is the hosted authority adapter for the sprint closeout queue. It
+resolves the live seat from the terminal catalog, requires a canonical bound task document, and
+constructs the internal `QueueActor`; role/task identity is absent from the public request. The
+existing lifecycle worker and worktree application routes now carry the plane-owned operation key
+into queue claim/certify/release seams without exposing it through MCP responses or durable queue
+JSON.
+
 ## Update History
+
+- 2026-08-15T11:25+02:00 — L3 static-gate route impact: extracted task-doc queue-scope
+  classification into a focused application owner while retaining the dispatcher as the sole
+  locked publication entry point.
+- 2026-08-15T11:07+02:00 — L3 Dagger repair: task publication now derives queue governance from
+  commanded graph scope while leaving genuinely standalone/light documents ungoverned; lifecycle
+  diagnostics retain typed queue refusal status.
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: recorded ambient queue authorization and
+  lifecycle-operation correlation as application-owned translations. Verification remains
+  closeout-owned.
 
 - 2026-08-15T03:10:06+02:00 — 260815-DAG-L1 targeted-Dagger repair: the application owner keeps
   explicit migration fail-closed and now has forcing proof for invalid migration envelopes,

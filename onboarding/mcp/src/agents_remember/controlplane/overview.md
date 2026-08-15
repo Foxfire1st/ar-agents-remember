@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-01T19:10+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -492,7 +492,20 @@ The control plane is reduced to the fact-relay surface: `escalation_ladder.py` a
 parse-compat; the confirmed-gone reclamation fold still writes `ladder-resolved`
 (reviewer F4).
 
+## 260815-DAG-L3 Sprint Candidate Artifact
+
+The control plane now includes a bounded canonical `artifacts/closeout-candidates.json` per sprint
+and one adjacent pending transaction. `CloseoutQueueStore` uses the common durable-store lock,
+explicitly admits MCP and lifecycle-operation writers, retains at most 128 request receipts, and
+recovers an exact one-revision publication after a crash. The same store lock serializes task-fact
+publication, candidate lane ownership, atomic barriers, and sprint completion/reopen; the WAL is
+publication scratch and the JSON artifact remains the survival record.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: documented the canonical bounded queue
+  artifact, writer census, WAL recovery, and shared task-fact/sprint-status lock. Verification
+  remains closeout-owned.
 
 - 2026-08-13T09:05+02:00 — No route impact: L23's current source delta changes lifecycle model
   packaging and worktree-lineage enforcement without changing any `controlplane/` source. Existing

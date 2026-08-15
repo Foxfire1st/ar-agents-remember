@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/tool_registry.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T12:15+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,8 +53,8 @@ No external domain source governs this repository-local registry.
 | --- | --- | --- |
 | The exclusion set names trusted compatibility and administration operations. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tool_registry.py:113-134 |
 | The complete registry includes structural agent and gate responses alongside internal exact models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:142-215 |
-| The advertised subset is derived rather than independently maintained. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:217-221 |
-| The choke point validates against this registry before emitting the envelope. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
+| The advertised subset is derived rather than independently maintained. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:223-227 |
+| The choke point validates against this registry before emitting the envelope. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 
 ## L23 Lifecycle Model Package Review
 
@@ -63,7 +63,16 @@ The public response registry now imports lifecycle turn/block/switch responses f
 registered model set and strict public response validation remain unchanged; only model ownership
 was separated.
 
+## 260815-DAG-L3 Queue Response Contract
+
+The strict response registry maps `closeout_queue` to `CloseoutQueueResponse`, bringing the new
+public tool under the same success-payload validation and public/registered parity gates as the
+rest of the MCP surface.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: registered the strict closeout-queue response model;
+  verification remains closeout-owned.
 
 - 2026-08-13T09:05+02:00 — L23 curator: reviewed the split lifecycle response/finalize imports and
   confirmed registry membership is unchanged; final provenance remains closeout-owned.

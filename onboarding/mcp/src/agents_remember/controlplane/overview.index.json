@@ -13,6 +13,8 @@
     "mcp/src/agents_remember/controlplane/__init__.py",
     "mcp/src/agents_remember/controlplane/agent_notifier_signals.py",
     "mcp/src/agents_remember/controlplane/attention_dismissals.py",
+    "mcp/src/agents_remember/controlplane/closeout_queue_records.py",
+    "mcp/src/agents_remember/controlplane/closeout_queue_store.py",
     "mcp/src/agents_remember/controlplane/durable_store.py",
     "mcp/src/agents_remember/controlplane/enforcement.py",
     "mcp/src/agents_remember/controlplane/expectation_rows.py",
@@ -31,8 +33,8 @@
     "mcp/src/agents_remember/controlplane/store.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 19,
-    "fileSidecars": 19,
+    "sourceFilesInScope": 21,
+    "fileSidecars": 21,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -43,6 +45,9 @@
     "artifacts",
     "attention",
     "attention_dismissals",
+    "closeout",
+    "closeout_queue_records",
+    "closeout_queue_store",
     "controlplane",
     "decisions",
     "dismissals",
@@ -70,6 +75,7 @@
     "orchestration_artifacts",
     "orchestration_nudges",
     "policy",
+    "queue",
     "records",
     "remember",
     "retention",
@@ -91,6 +97,8 @@
       "mcp/src/agents_remember/controlplane/__init__.py",
       "mcp/src/agents_remember/controlplane/agent_notifier_signals.py",
       "mcp/src/agents_remember/controlplane/attention_dismissals.py",
+      "mcp/src/agents_remember/controlplane/closeout_queue_records.py",
+      "mcp/src/agents_remember/controlplane/closeout_queue_store.py",
       "mcp/src/agents_remember/controlplane/durable_store.py",
       "mcp/src/agents_remember/controlplane/enforcement.py",
       "mcp/src/agents_remember/controlplane/expectation_rows.py",
@@ -115,6 +123,10 @@
       "agent_notifier_signals",
       "attention_dismissals.py",
       "attention_dismissals",
+      "closeout_queue_records.py",
+      "closeout_queue_records",
+      "closeout_queue_store.py",
+      "closeout_queue_store",
       "durable_store.py",
       "durable_store",
       "enforcement.py",
@@ -152,11 +164,7 @@
       "L21",
       "mcp/src/agents_remember/controlplane",
       "route-local-overview",
-      "a09b906bbf2855c3479b4d3199607ff8689b7d93",
-      "/../../overview.md",
-      "controlplane/",
-      "escalation_ladder.py",
-      "rung_due"
+      "17987fa66a642306eb8d20fa9a4bff2b881550d2"
     ]
   },
   "fallback": {

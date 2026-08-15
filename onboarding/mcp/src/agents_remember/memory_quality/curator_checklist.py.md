@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/curator_checklist.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T16:54+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash |  `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
+| lastVerifiedCommitDate |  2026-08-15T14:36:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ complete checklist or the next complete checklist, never a partial report
 cit:([`write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:79-126).
 The renderer preserves the important distinction between a zeroable pre-closeout gate and dirty
 source/real-commit evidence that must remain visible until governed closeout supplies a real
-commit cit:([`_render`, `_append_drift`], mcp/src/agents_remember/memory_quality/curator_checklist.py:150-208; mcp/src/agents_remember/memory_quality/curator_checklist.py:261-291).
+commit cit:([`_render`, `_append_drift`], mcp/src/agents_remember/memory_quality/curator_checklist.py:182-240; mcp/src/agents_remember/memory_quality/curator_checklist.py:293-319).
 
 ### Conventions
 
@@ -89,7 +89,17 @@ No cross-repository implementation owns this package-local report contract.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260815-DAG-L3 Structured Readiness Artifact
+
+A full contract-scoped checklist write now atomically emits `curator-memory-quality.json` beside
+the Markdown report. The attestation binds schema, checklist status and counts, the exact
+source-change candidate rows, onboarding/report paths, and the SHA-256 of the rendered report;
+the response exposes `attestationPath`.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: documented the structured curator readiness
+  attestation and rendered-report digest; verification remains closeout-owned.
 
 - 2026-08-11T16:54+02:00 — Created for the enclosure-local, atomically overwritten curator
   memory-quality checklist and its repairable-versus-closeout-owned classification boundary.

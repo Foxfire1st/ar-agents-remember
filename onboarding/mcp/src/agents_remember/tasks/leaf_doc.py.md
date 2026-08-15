@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/tasks/leaf_doc.py` |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-08-02T01:05+02:00                      |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`  |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`  |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -50,10 +50,20 @@ small `{docPath, lifecycleId, changed}` report, or `None` when the leaf has no d
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The atomic reopen plan clears the doc's stamp before the next start restamps it. | `_plan_leaf_doc_reset` | mcp/src/agents_remember/worktrees/reopen.py:334-365 |
-| The post-contract-write restamp call site in worktree start. | "restamp_leaf_doc_lifecycle(" | mcp/src/agents_remember/worktrees/modules/start.py:602-602 |
+| The post-contract-write restamp call site in worktree start. | "restamp_leaf_doc_lifecycle(" | mcp/src/agents_remember/worktrees/modules/start.py:604-604 |
 | The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:49-49 |
 
+## 260815-DAG-L3 Governed Lifecycle Restamp
+
+`restamp_leaf_doc_lifecycle` now plans the same exact leaf-doc change but delegates publication to
+an injected writer. Worktree start supplies the queue-governed task-fact publisher, so lifecycle
+restamping cannot bypass an active sprint lane or atomic barrier; standalone tests can inject the
+ordinary task-doc writer without duplicating policy.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: documented publisher injection for queue-governed
+  leaf lifecycle restamping; verification remains closeout-owned.
 - 2026-08-14T05:26Z — L23 final curator: updated the reopen reference to the current atomic
   `_plan_leaf_doc_reset` owner; leaf lookup and restart stamping remain unchanged. Verification
   remains closeout-owned.

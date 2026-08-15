@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_mcp_registration_wiring_tests_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-09T06:48+02:00                                            |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                        |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-15T14:05+02:00                                            |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`                                        |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -24,7 +24,10 @@ L23 proves `worktree_operation_cancel` forwards only the task address, operation
 
 ### Logic
 
-The suite pins closeout message grouping, task-document edit/read shapes, ambient lifecycle signals, structural lifecycle-gate raise, and `gate_decide` by canonical document plus kind without a gate id.
+The suite pins closeout message grouping, task-document edit/read shapes, ambient lifecycle signals,
+structural lifecycle-gate raise, and `gate_decide` by canonical document plus kind without a gate
+id. Its closeout-queue case invokes the live registration, verifies the configuration identity,
+and proves the wire request is validated into the strict status action and canonical sprint ref.
 
 ### Conventions
 
@@ -43,12 +46,17 @@ No Domain Documentation source is configured for this repository-local regressio
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Current suite declaration anchoring this card. | `RegistrationWiringTests2` | mcp/tests/test_mcp_registration_wiring_tests_2.py:6-6 |
+| Closeout-queue registration validates and forwards the canonical request model. | `test_closeout_queue_registration_validates_and_forwards_the_request` | mcp/tests/test_mcp_registration_wiring_tests_2.py:7-26 |
 
 ## Cross-Repo References
 
 No cross-repository implementation source governs this test module.
 
 ## Update History
+
+- 2026-08-15T14:05+02:00 — L3 final targeted-gate repair: invokes the live FastMCP
+  `closeout_queue` registration, proves request validation into the strict model, and verifies
+  the unchanged handler sentinel and loaded configuration.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

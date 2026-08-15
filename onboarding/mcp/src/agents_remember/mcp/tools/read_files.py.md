@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/read_files.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T01:05+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`       |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Purpose
@@ -37,7 +37,7 @@ application entry point.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The application entry point that does the actual resolution. | `read_ar_files_tool` | mcp/src/agents_remember/application/read_files.py:77-133 |
-| The shared choke point that validates the response and stamps tokens. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
+| The shared choke point that validates the response and stamps tokens. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | The strict response model `read_ar_files` validates against. | `ReadArFilesResponse` | mcp/src/agents_remember/models/read_files.py:50-63 |
 
 ## Update History

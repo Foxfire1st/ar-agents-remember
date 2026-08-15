@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_sync.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`                         |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -42,7 +42,7 @@ representative `worktree_sync` payload).
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The sync module under test. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:36-119 |
-| Contract `sync_log` round-trip relies on the contract serializer. | `sync_log` | mcp/src/agents_remember/worktrees/worktree_contract.py:279-279 |
+| Contract `sync_log` round-trip relies on the contract serializer. | `sync_log` | mcp/src/agents_remember/worktrees/worktree_contract.py:283-283 |
 
 ## Update History
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-30T22:29+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -145,7 +145,7 @@ operation-less responses such as `ping`.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Shared response envelopes define the token metadata fields on the `ResponseModel` base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:41-60 |
-| `_tool_payload` finalizes token metadata on every public tool response via this module. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
+| `_tool_payload` finalizes token metadata on every public tool response via this module. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | Direct tests for the counters, serializers, and the fixpoint self-consistency guarantee. | `FinalizePayloadTokensTests` | mcp/tests/test_tokens.py:80-104 |
 | `TokenizerVocabularyError` — the typed refusal raised instead of downloading a vocabulary this package does not ship. | `TokenizerVocabularyError` | mcp/src/agents_remember/errors.py:40-48 |
 | The shipped vocabulary, why its name is `sha1(url)`, the SHA-256 this module checks before every load, and how to refresh it (including replacing `VENDORED_VOCABULARY_SHA256`). | `VENDORED_VOCABULARY_SHA256` | mcp/src/agents_remember/package_data/tiktoken/README.md:46-46 |

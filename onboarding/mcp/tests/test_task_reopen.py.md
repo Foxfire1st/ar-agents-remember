@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-15T10:24+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -17,9 +17,9 @@
 ## Purpose
 
 `test_task_reopen.py` covers the L11 reopen semantics in isolation: the `task_reopen`
-guard set and resets, the task-domain leaf-doc lookup/restamp helpers, the
+resets, the task-domain leaf-doc lookup/restamp helpers, the
 worktree-start recreate path for reopened contracts, and the abandon-side ambient
-lifecycle end.
+lifecycle end. The small refusal-only guard class is split into `test_task_reopen_guards.py`.
 
 ## Code Commentary
 
@@ -28,9 +28,8 @@ lifecycle end.
 `_completed_leaf_contract` hand-builds a fully landed leaf enclosure (closeout,
 integration, and cleanup all completed, worktrees absent) under a temp coordination
 root; `_leaf_doc`/`_master_doc` author the matching task documents through the real
-store. `ReopenGuardTests` prove refusal (returncode 2 with named blockers) for an
-in-flight leaf, a series contract, and a leaf whose worktree dir still exists.
-`ReopenResetTests` prove the happy path (contract fields reset, `cleanup: reopened`,
+store and are also reused by the split guard suite. `ReopenResetTests` prove the happy path
+(contract fields reset, `cleanup: reopened`,
 leaf id unchanged, doc back to `planning` with the audit decision, master index row
 flipped), the dry-run writes-nothing contract, and the doc-less leaf case.
 `LeafDocLookupTests` cover the case-insensitive id/enclosure-ref/stem joins and the
@@ -58,7 +57,7 @@ task doc id when the task tree proves the mapping.
 | The module under test. | `reopen_task` | mcp/src/agents_remember/worktrees/reopen.py:169-265 |
 | The lookup helper under test. | `find_leaf_doc` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70 |
 | The lifecycle restamp helper under test. | `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
-| The recreate-fresh + restamp start path under test. | `start_result`, "restamp_leaf_doc_lifecycle(contract.task_root" | mcp/src/agents_remember/worktrees/modules/start.py:440-451; mcp/src/agents_remember/worktrees/modules/start.py:602-602 |
+| The recreate-fresh + restamp start path under test publishes the restamp through queue governance. | "publish=lambda task_root, document: publish_queue_bound_task_facts(" | mcp/src/agents_remember/worktrees/modules/start.py:602-611 |
 | Contract loading preserves a legacy stem-shaped leaf id when the task tree proves the mapping. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
 | The canonical contract leaf-id normalization helper is `normalize_contract_leaf_id`. | `normalize_contract_leaf_id` | mcp/src/agents_remember/worktrees/worktree_contract.py:556-579 |
 | The abandon-side ambient end helper under test. | `end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:512-519 |
@@ -70,7 +69,18 @@ super proves reopen returns a blocked strict projection before changing either
 the enclosure contract or leaf document; ordinary start-after-reopen coverage
 continues on the same thematic master topology.
 
+## 260815-DAG-L3 Restamp Publisher Contract
+
+Leaf lifecycle restamp tests now inject the ordinary task-doc publisher explicitly. The assertions
+for changed, unchanged, blocked, same-lifecycle, missing-doc, and exact identity behavior remain,
+while the production start path can route the same planned write through queue governance.
+
 ## Update History
+
+- 2026-08-15T10:24+02:00 — L3 file-size repair: moved `ReopenGuardTests` into the focused
+  `test_task_reopen_guards.py` suite; helpers and all reset/restamp/start behavior stay here.
+- 2026-08-15T09:10+02:00 — L3 content update: reconciled the restamp tests with publisher injection
+  and removed the retired direct-call citation; verification remains closeout-owned.
 - 2026-08-14T05:26Z — L23 final curator: re-anchored the ambient-end regression after the helper
   became the public application-level owner; the single-writer lifecycle contract is unchanged.
   Verification remains closeout-owned.

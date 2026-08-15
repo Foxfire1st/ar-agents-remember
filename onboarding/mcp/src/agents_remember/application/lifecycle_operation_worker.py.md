@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/lifecycle_operation_worker.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate |  2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash |  `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
+| lastVerifiedCommitDate |  2026-08-15T14:36:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,7 +82,17 @@ The detached worker is the installed-runtime composition root for accepted close
 operations. It declares only `lifecycle-operation`, binds default services before dispatch, and
 publishes durable progress/recovery evidence without acquiring MCP or dashboard daemon authority.
 
+## 260815-DAG-L3 Reversible Queue Release
+
+Failed closeout/integration workers now release queue ownership only while the operation is still
+pre-boundary. A release failure is preserved in the terminal operation payload/error instead of
+being hidden, so retry keeps the original task-addressed operation and cannot silently schedule a
+different candidate.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: documented pre-boundary queue release and visible
+  release failure on worker failure; verification remains closeout-owned.
 - 2026-08-14T06:30+02:00 — L23 final candidate review: the detached worker binds default services
   under its narrow lifecycle-operation declaration and reports monotonic recovery evidence without
   borrowing daemon authority. Verification remains closeout-owned.

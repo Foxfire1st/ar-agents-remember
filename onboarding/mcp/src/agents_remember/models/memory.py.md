@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/memory.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-11T14:40+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -68,7 +68,15 @@ are present in the agent-facing response schema instead of relying only on the f
 | `DriftSummary.status` uses the same shared `DriftStatus` alias. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |
 | The context-packet wire face includes its matching `error` field. | `DriftSummary`; `error` | mcp/src/agents_remember/models/drift.py:13-23 |
 
+## 260815-DAG-L3 Attestation Response Field
+
+`MemoryQualityCheckResponse` now exposes optional `attestationPath`, pairing the structured curator
+readiness artifact with the existing rendered checklist path and zero/actionable counters.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: added the structured curator attestation path to
+  the memory-quality response model; verification remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

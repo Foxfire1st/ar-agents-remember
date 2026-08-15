@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/lifecycle_operation_store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate |  2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash |  `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
+| lastVerifiedCommitDate |  2026-08-15T14:36:30+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -66,7 +66,16 @@ No cross-repository boundary is owned here.
 Durable operation records and vocabularies now come from `models.lifecycles.operation`. Store
 ownership, validation, atomic persistence, and compare-and-swap behavior are unchanged.
 
+## 260815-DAG-L3 Explicit Detached Writer
+
+The lifecycle-operation store now declares both MCP and the detached lifecycle-operation process
+as writers and checks that declaration at its actual write choke point. The worker no longer
+depends on undeclared-process tolerance to advance its own durable record.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: enforced the explicit detached lifecycle writer
+  census at record publication; verification remains closeout-owned.
 - 2026-08-14T06:36+02:00 — L23 final candidate review: validated store transitions persist exact
   candidate and recovery evidence monotonically, including restart-safe post-claim reconciliation.
   Verification remains closeout-owned.

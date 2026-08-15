@@ -69,6 +69,17 @@
     "mcp/tests/test_cleanup_carryover_cache_2.py",
     "mcp/tests/test_cleanup_carryover_terminal.py",
     "mcp/tests/test_cli_discovery.py",
+    "mcp/tests/test_closeout_queue.py",
+    "mcp/tests/test_closeout_queue_actions.py",
+    "mcp/tests/test_closeout_queue_blockers.py",
+    "mcp/tests/test_closeout_queue_candidate_evidence.py",
+    "mcp/tests/test_closeout_queue_evidence.py",
+    "mcp/tests/test_closeout_queue_forcing.py",
+    "mcp/tests/test_closeout_queue_graph.py",
+    "mcp/tests/test_closeout_queue_integration.py",
+    "mcp/tests/test_closeout_queue_lifecycle.py",
+    "mcp/tests/test_closeout_queue_models.py",
+    "mcp/tests/test_closeout_queue_store.py",
     "mcp/tests/test_code_quality_check.py",
     "mcp/tests/test_code_quality_check_scope.py",
     "mcp/tests/test_code_quality_environment_guard.py",
@@ -358,6 +369,7 @@
     "mcp/tests/test_task_document_structural_identity.py",
     "mcp/tests/test_task_execution_topology.py",
     "mcp/tests/test_task_reopen.py",
+    "mcp/tests/test_task_reopen_guards.py",
     "mcp/tests/test_terminal.py",
     "mcp/tests/test_terminal_catalog.py",
     "mcp/tests/test_terminal_evidence_projection.py",
@@ -398,8 +410,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 376,
-    "fileSidecars": 386,
+    "sourceFilesInScope": 388,
+    "fileSidecars": 398,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -440,6 +452,7 @@
     "batch",
     "behaviour",
     "benchmark",
+    "blockers",
     "boundary",
     "brief",
     "budgets",
@@ -449,6 +462,7 @@
     "bundle",
     "cache",
     "calculator",
+    "candidate",
     "cap",
     "capabilities",
     "capture",
@@ -480,9 +494,7 @@
     "comms",
     "compact",
     "completion",
-    "composition",
-    "compound",
-    "concurrency"
+    "composition"
   ],
   "hotPath": {
     "summary": "The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrade-not-die, native-page thread demux \u2014 plus the remediation pins: concurrent parent pendings answered per id with the oldest in the singular slot, the method-first degrade split, the bounded per-thread pending map, and the load-shed event queue with its honest `ar/load-shed` notice), `test_conversatio...",

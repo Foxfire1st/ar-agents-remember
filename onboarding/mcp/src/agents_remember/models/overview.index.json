@@ -30,6 +30,7 @@
     "mcp/src/agents_remember/models/application_requests.py",
     "mcp/src/agents_remember/models/base.py",
     "mcp/src/agents_remember/models/benchmarks.py",
+    "mcp/src/agents_remember/models/closeout_queue.py",
     "mcp/src/agents_remember/models/context_packet.py",
     "mcp/src/agents_remember/models/core.py",
     "mcp/src/agents_remember/models/drift.py",
@@ -51,8 +52,8 @@
     "mcp/src/agents_remember/models/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 47,
-    "fileSidecars": 23,
+    "sourceFilesInScope": 48,
+    "fileSidecars": 24,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -63,6 +64,8 @@
     "base",
     "benchmarks",
     "catalog",
+    "closeout",
+    "closeout_queue",
     "context",
     "context_packet",
     "conversations",
@@ -83,6 +86,7 @@
     "orchestration",
     "packet",
     "providers",
+    "queue",
     "read",
     "read_files",
     "ref",
@@ -117,6 +121,7 @@
       "mcp/src/agents_remember/models/application_requests.py",
       "mcp/src/agents_remember/models/base.py",
       "mcp/src/agents_remember/models/benchmarks.py",
+      "mcp/src/agents_remember/models/closeout_queue.py",
       "mcp/src/agents_remember/models/context_packet.py",
       "mcp/src/agents_remember/models/core.py",
       "mcp/src/agents_remember/models/drift.py",
@@ -131,8 +136,7 @@
       "mcp/src/agents_remember/models/task_document.py",
       "mcp/src/agents_remember/models/task_document_ref.py",
       "mcp/src/agents_remember/models/terminal.py",
-      "mcp/src/agents_remember/models/terminal_catalog.py",
-      "mcp/src/agents_remember/models/tokens.py"
+      "mcp/src/agents_remember/models/terminal_catalog.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -143,6 +147,8 @@
       "base",
       "benchmarks.py",
       "benchmarks",
+      "closeout_queue.py",
+      "closeout_queue",
       "context_packet.py",
       "context_packet",
       "core.py",
@@ -180,9 +186,7 @@
       "tool_response.py",
       "tool_response",
       "worktree.py",
-      "worktree",
-      "conversations",
-      "lifecycles"
+      "worktree"
     ]
   },
   "fallback": {

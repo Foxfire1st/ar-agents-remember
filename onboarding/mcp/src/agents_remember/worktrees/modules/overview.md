@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-08-14T12:13:26+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -686,7 +686,22 @@ The closeout coordinator now narrows candidate-tree typing only after mandatory 
 quality adapter consistently says `self-owned wrapper` while refusing non-Dagger executors in both
 command and memory-policy builders. Self-repository enforcement and consumer opt-in remain distinct.
 
+## 260815-DAG-L3 Queue-Owned Irreversible Boundaries
+
+Leaf `closeout.py` now claims the orchestrator-selected queue candidate before quality/commit and
+certifies the exact resulting code, memory-content, and ledger commits after contract publication.
+`integrate.py` claims the certified candidate, recomputes graph/readiness/evidence and exact commit
+identity immediately before source refs move, then consumes the record after landing. Reversible
+failed or cancelled lifecycle operations release their internal ownership through the task-addressed
+operation path; cancellation still terminates the captured worker even when queue release itself
+fails. Finalize/start/reopen task-fact writers use the queue-governed publisher so no adjacent write
+can invalidate an in-flight candidate.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: recorded queue claim/certify/revalidate/
+  consume order, reversible terminal recovery, and governed lifecycle task writes. Verification
+  remains closeout-owned.
 
 - 2026-08-14T12:13:26+02:00 — R43 curator: recorded candidate typing and builder-level Dagger
   refusal repairs. Verification remains closeout-owned.

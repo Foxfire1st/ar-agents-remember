@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -110,8 +110,8 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
-| Public response model registry validates payload shapes. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:217-221 |
+| Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| Public response model registry validates payload shapes. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:223-227 |
 | Server registration lives in `server.py`. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
 | Application-layer modules convert public MCP payloads into service calls. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 | Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | `build_current_provider_state` | mcp/src/agents_remember/providers/current_state.py:16-36 |
@@ -133,7 +133,15 @@ before any code mutation and that approval precedes apply.
 The suite imports `RuntimeInstallRequest` from `application.runtime.install`, matching the runtime
 package extraction. Runtime-install payload and tool-adapter assertions are unchanged.
 
+## 260815-DAG-L3 Public Tool Presence
+
+The public tool census now requires `closeout_queue`, preventing registration/export drift from
+silently removing the scheduler surface while its implementation remains in the package.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: added closeout_queue to the public tool census;
+  verification remains closeout-owned.
 
 - 2026-08-13T09:05+02:00 — L23 curator: reviewed the runtime-install import move and confirmed the
   tool regression contract is unchanged; final provenance remains closeout-owned.

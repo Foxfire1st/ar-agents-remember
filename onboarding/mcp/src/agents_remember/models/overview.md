@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`|
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -189,8 +189,8 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
-| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:217-221 |
+| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:223-227 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
 | Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:12-22 |
@@ -378,7 +378,23 @@ state, recovery, and terminal refusal vocabularies. Worktree, terminal, observer
 and dashboard consumers import or mirror this strict shape instead of accepting
 free strings or agent-supplied identity.
 
+## 260815-DAG-L3 Queue Models
+
+`models/closeout_queue.py` adds the strict action-specific request, categorical scheduling grade,
+exact evidence facts, candidate state machine, atomic barrier, bounded canonical queue state, and
+ready/waiting/blocked/in-flight response projection. Every persisted/public text and collection is
+bounded, impossible state/owner/commit combinations fail validation, external memory requires exact
+evidence while internal/disabled use a typed not-applicable state, and only a one-way lifecycle
+owner fingerprint reaches durable state. Shared `TaskDocumentRef` values enforce their repository
+and path bounds after canonical normalization, avoiding JSON Schema constraints that the generated
+TypeScript projection could not express truthfully.
+
 ## Update History
+
+- 2026-08-15T09:36+02:00 — L3 fast-hook repair: clarified the validator-owned task-reference
+  bounds and why they do not become an unrenderable projection-schema keyword.
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: added the strict bounded queue request,
+  candidate/state, evidence, barrier, and projection vocabulary. Verification remains closeout-owned.
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: the shared task-document model vocabulary
   owns the closed organizational/atomic nature used by both persisted tasks and projection DTOs.

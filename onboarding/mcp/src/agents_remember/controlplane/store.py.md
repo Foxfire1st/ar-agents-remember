@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/store.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`       |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -204,7 +204,7 @@ into an inode with no remaining links.
 | --- | --- | --- |
 | The gate envelope serialized and validated here. | `GateRecord` | mcp/src/agents_remember/controlplane/records.py:45-77 |
 | Mirrors the observer event store (same append / read / JSONL shape). | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the dashboard a co-writer. Cited by symbol, not by line: this file grew ~100 lines mid-leaf and every earlier range into it was invalidated. | `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `GATE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:139-151; mcp/src/agents_remember/controlplane/durable_store.py:391-446; mcp/src/agents_remember/controlplane/durable_store.py:470-474; mcp/src/agents_remember/controlplane/durable_store.py:477-488; mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
+| The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the dashboard a co-writer. Cited by symbol, not by line: this file grew ~100 lines mid-leaf and every earlier range into it was invalidated. | `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `GATE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:144-156; mcp/src/agents_remember/controlplane/durable_store.py:396-451; mcp/src/agents_remember/controlplane/durable_store.py:475-479; mcp/src/agents_remember/controlplane/durable_store.py:482-493; mcp/src/agents_remember/controlplane/durable_store.py:512-519 |
 | `_reclaim_gate_log` at gate_decisions.py:74-80: the reclaim pass moved here from the projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly, and its suppression narrowed from `ValueError` to `ValidationError` — the widened-except shape this leaf closed. Called from `record_gate_decision` at gate_decisions.py:116. | `_reclaim_gate_log`, `record_gate_decision` | mcp/src/agents_remember/controlplane/gate_decisions.py:74-80; mcp/src/agents_remember/controlplane/gate_decisions.py:83-128 |
 | `CONSUMED_APPROVAL_GATE_KINDS` and `_keep_gate`'s authority branch: what stops `compact` from reclaiming the `applied` snapshot this store's atomicity exists to protect. | `CONSUMED_APPROVAL_GATE_KINDS`, `_keep_gate` | mcp/src/agents_remember/controlplane/interaction_retention.py:53-55; mcp/src/agents_remember/controlplane/interaction_retention.py:184-197 |
 | `evaluate_gate` — the pure verdict `claim_approval` takes under the lock, including the already-applied refusal that makes a second consume fail. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |

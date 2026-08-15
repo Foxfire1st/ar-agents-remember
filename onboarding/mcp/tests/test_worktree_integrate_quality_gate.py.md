@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_integrate_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-14T12:13:26+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-15T11:07+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,6 +77,8 @@ reports `wrapper-unavailable` and remains non-blocking. The full gate still runs
 
 ## Update History
 
+- 2026-08-15T11:07+02:00 — No content impact: corrected the synthetic task root to the canonical
+  coordination hierarchy required by queue scope resolution; quality-gate assertions are unchanged.
 - 2026-08-14T12:13:26+02:00 — R43 curator: added the consumer-master non-blocking counterpart to
   the self-repository missing-wrapper refusal. Verification remains closeout-owned.
 

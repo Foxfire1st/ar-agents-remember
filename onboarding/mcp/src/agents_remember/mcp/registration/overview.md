@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-13T12:26+02:00                           |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-15T09:32+02:00                           |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`       |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -74,18 +74,18 @@ developer ruled all four forbidden — and no `noqa` anywhere holds an argument-
 | `__init__.py`       | `TOOL_REGISTRARS` (the ordered tuple `create_server` loops over) and the `ToolRegistrar` alias. |
 | `core.py`           | `ping`, `server_info`, `context_packet`, `read_ar_files`, `resolve_context`, `runtime_install`, `skills_install`. |
 | `sessions.py`       | `dispatch_agent`, `retire_child`, `rename_child`, `rename_self`; caller identity and runtime allocation are plane-owned. |
-| `memory.py`         | `drift_check`, `memory_quality_check`, `route_index_refresh`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt`, `memory_carryover_plan`, `memory_carryover_apply`. |
+| `memory.py`         | `drift_check`, `memory_quality_check`, `route_index_refresh`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt`, `memory_carryover_plan`, `memory_carryover_apply`; full contract-scoped quality also publishes its digest-bound structured attestation. |
 | `providers.py`      | `provider_status`, `provider_diagnostics`, `provider_watchers`.            |
 | `code_search.py`    | `grepai_search`, `grepai_trace`, and the six `cgc_*` graph tools.          |
 | `worktrees.py`      | `worktree_start`, `worktree_attach`, `worktree_status`, `worktree_sync` — the working half of a task. |
 | `closeout.py`       | `worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`, `worktree_abandon` — the landing half. |
-| `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`; task-doc advertises the explicit multi-document execution-topology migration payload and its classification/wave preview. |
+| `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`, `closeout_queue`; task-doc advertises the explicit multi-document execution-topology migration payload and its classification/wave preview, while closeout-queue mutations use a strict action-specific request and plane-owned caller identity. |
 | `benchmarks.py`     | `codex_benchmark_prepare`, `codex_benchmark_run`.                          |
 | `lifecycle.py`      | The six session-lifecycle signals: `lifecycle_start`, `lifecycle_resume`, `lifecycle_turn_end_notification`, `lifecycle_end`, `switch_lifecycle`, `lifecycle_phase`. |
 | `gates.py`          | Structural `lifecycle_gate`, `gate_decide`, `gate_list`; public gate/lifecycle ids are absent. |
 | `orchestration.py`  | `message_parent`, `message_child`; ordinary whole-message traffic resolves current structural occupants. |
 
-Twelve registrars, 55 advertised tools — the same 55 names `mcp/tools/base.py::PUBLIC_TOOLS`
+Twelve registrars, 56 advertised tools — the same 56 names `mcp/tools/base.py::PUBLIC_TOOLS`
 lists, which `mcp/tests/test_tools.py` checks against a live server's `list_tools()`.
 
 ## Hot Path Summary
@@ -136,7 +136,7 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
-| The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
+| The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | `PUBLIC_TOOLS` — the advertised name list this package must match. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
 | The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:548-561 |
@@ -178,8 +178,27 @@ The integration tool contract now reports leaf acceptance as certified at closeo
 rerunning targeted mode. Master integration remains the sole full acceptance owner and always uses
 the pinned Dagger executor.
 
+## 260815-DAG-L3 Closeout Queue Route
+
+`tasks.py` now advertises `closeout_queue` beside the task-document and lifecycle-finalization
+surfaces. The published request is deliberately one strict action-discriminated model: status has
+no mutation fields; every mutation carries a stable request id and expected revision; manager
+declaration cannot smuggle a grade; and barrier, admission, grading, selection, and release fields
+are legal only for their owning action. The ambient structural seat supplies caller authority, so
+no actor, session, lifecycle, operation key, or arbitrary queue id enters the wire contract.
+
+The tool description makes the detection/judgment boundary explicit. It reports recomputed
+mechanical facts and deterministic order, while priority and barrier exceptions must resolve to
+exact canonical sprint register rows. The same route binds the structured memory-quality
+attestation, whose Markdown report digest and exact source-change dispositions are published only
+by a full contract-scoped `memory_quality_check`. Public registration remains packing plus one
+payload builder; queue logic stays in the application/worktree/control-plane owners.
+
 ## Update History
 
+- 2026-08-15T09:32+02:00 — 260815-DAG-L3 curator: documented the new strict `closeout_queue`
+  registration, plane-owned caller authority, and digest-bound memory-quality attestation. The
+  advertised surface is now 56 tools; registration remains a schema/forwarding boundary.
 - 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: registration now documents the exact
   nested migration graph and master-classification request/response cells rather than only naming
   the migration at a high level.

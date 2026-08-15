@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l6_diff_coverage_finalize.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,4 +38,7 @@ This module defines the test classes cited below; each row points at the exact s
 
 ## Update History
 
+- 2026-08-15T09:53+02:00 — No content impact: L3's Pyright repair supplies the newly required
+  contract fixture to finalization-helper calls and isolates queue publication in the write test;
+  the L6 helper assertions remain unchanged.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors derived from current worktree source. Verification metadata pinned until closeout stamps the code commit.

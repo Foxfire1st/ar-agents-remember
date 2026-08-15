@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -193,7 +193,17 @@ The worktree application facade now imports lifecycle operation DTOs and policy 
 `models.lifecycles.operation`. The facade's task-addressed arguments, attribution guard, and calls
 into closeout/integration/finalization remain unchanged by that ownership move.
 
+## 260815-DAG-L3 Generic Integration Boundary
+
+`worktree_integrate_tool` remains a task-addressed operation launcher, not a scheduler. Queue
+projection assigns the action to the owning manager after orchestrator selection; this generic
+boundary cannot select or substitute a candidate, and the detached worker revalidates the exact
+durable selected record immediately before moving source history.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: clarified the task-addressed integration launcher's
+  non-scheduling role and final worker revalidation; verification remains closeout-owned.
 - 2026-08-14T06:30+02:00 — L23 final candidate review: worktree application calls start or observe
   durable closeout/integration by canonical task identity and preserve candidate-bound route-review,
   lineage, and landing boundaries. Verification remains closeout-owned.
