@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T14:20+02:00 |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastUpdated | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,18 @@ The canonical worker role requires the brief to carry the repository-resolved ac
 environment and evidence. Workers do not select a host runner or compatibility fallback; leaf
 closeout and master integration own the only acceptance runs.
 
+## 260815-DAG-L2 Leaf Quality Altitude
+
+The worker brief now carries the leaf's execution nature and nature-appropriate source edge. A leaf
+receives one repository-defined change-set-scoped acceptance at closeout and no integration rerun.
+The repository's full suite belongs to master completion: against the exact proposed final
+organizational super candidate before it lands, or against the completed atomic block during its
+single landing.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: recorded execution-nature input and the leaf-targeted,
+  master-full acceptance boundary. Verification remains closeout-owned.
 
 - 2026-08-14T11:29+02:00 — R39 curator: reconciled canonical worker guidance with generic
   repository-resolved policy. Verification remains closeout-owned.

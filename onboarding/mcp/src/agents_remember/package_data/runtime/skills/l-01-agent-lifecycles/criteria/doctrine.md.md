@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/doctrine.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T15:35+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated            | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 
 ## Purpose
 
@@ -45,7 +45,7 @@ None recorded.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical source this bundle copy is sync-propagated from. | `# Criteria Catalog — Doctrine Review` | skills/l-01-agent-lifecycles/criteria/doctrine.md:1-58 |
-| The reviewer role that binds this catalog per review type. | "Criteria Catalogs (the review test bench — bound here)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:60-60 |
+| The reviewer role that binds this catalog per review type. | "Criteria Catalogs (the review test bench — bound here)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:62-62 |
 
 ## Cross-Repo References
 
@@ -55,7 +55,18 @@ No sibling repository evidence is needed for this catalog.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260815-DAG-L2 Topology Doctrine Criteria
+
+D-4 now sweeps every role, brief, handover, and verdict for the selected execution nature: an
+organizational master has no integration branch, an atomic master does, and neither main, super,
+nor an atomic integration ref is a feature/fix workbench. D-5 independently checks that mechanisms
+surface facts while named roles own and record dependency, priority, classification, barrier, and
+queue judgment.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: added the topology/authority and detection-versus-
+  judgment regression criteria. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `doctrine.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 4 initial citation findings (2 anchor, 0 prose, 2 source); scoped recheck PASS (0 findings). Verification metadata unchanged.

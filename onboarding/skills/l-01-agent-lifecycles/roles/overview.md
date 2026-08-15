@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 
 ## Purpose
 
@@ -17,11 +17,17 @@ and the work it must refuse or escalate.
 
 ## Hot Path Summary
 
-Architect owns sprint-level direction. Orchestrator owns the portfolio and manager topology.
-Manager occupies one canonical master and drives the leaf closeout chain. Worker occupies one leaf
-and produces code plus a turn report. Reviewer produces independent verdict evidence. Curator
-occupies one leaf coherence pass and reconciles existing intent, ruled intent, and implemented
-reality into onboarding. Other specialist roles retain their own documented altitude and artifact.
+Architect owns sprint-level direction, the initial plan loop, and strategist/reviewer lineage.
+Strategist authors the evidence-cited dependency graph when dispatched. Orchestrator adopts the
+ruled artifact, maintains the runtime frontier, and records bounded reprioritization judgments;
+substantial reshapes return through the architect-owned strategist loop. Manager owns readiness
+inside one organizational or atomic master. Worker owns one leaf, reviewer owns independent route
+or completion verdict evidence, and curator reconciles ruled intent with implementation.
+
+Organizational masters have no integration branch: their leaves are direct super descendants and
+the final leaf is reviewed and full-gated as part of the exact proposed super candidate before it
+lands. Atomic masters retain the branch-backed, no-partial-exposure block. A failed review routes
+repair to an owning, reopened, or new scoped leaf—never to a master or super workbench.
 
 Manager, orchestrator, and worker doctrine shares one quality altitude rule: the pinned Dagger
 graph is the only Agents Remember acceptance environment. Leaf closeout selects targeted mode
@@ -94,6 +100,9 @@ runner or fallback.
 
 ## Update History
 
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: reconciled initial-plan ownership, strategist and
+  orchestrator judgment boundaries, organizational/atomic manager duties, pre-landing completion
+  scope, and leaf-owned remediation. Verification remains closeout-owned.
 - 2026-08-14T11:29+02:00 — R39 curator: reconciled the role route with repository-resolved
   acceptance doctrine. Verification remains closeout-owned.
 - 2026-08-14T06:25+02:00 — L23 final candidate review: manager, reviewer, curator, and orchestrator

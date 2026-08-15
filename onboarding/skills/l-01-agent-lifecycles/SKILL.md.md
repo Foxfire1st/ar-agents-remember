@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T14:10+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ No external domain source governs this repository-owned lifecycle doctrine.
 | The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:95-111 |
 | The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. | "## The Minimal Frame (the only machinery every session shares)" | skills/l-01-agent-lifecycles/SKILL.md:140-175 |
 | Shared continuity and authority invariants are explicit. | "## Shared Invariants (every role can count on these)" | skills/l-01-agent-lifecycles/SKILL.md:177-190 |
-| Hosted role dispatch is one structural transaction. | "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:307-307 |
+| Hosted role dispatch is one structural transaction. | "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:308-308 |
 
 ## L23 Dispatch Admission
 
@@ -76,7 +76,22 @@ the target role before process creation. Stale or unavailable edges create no
 child and carry ordered contract-addressed synchronization; agents do not retain
 commit ids, branch ids, or occupant ids to make routing work.
 
+## 260815-DAG-L2 Dependency-Aware Execution Plane
+
+The shared lifecycle doctrine now separates tool-derived execution facts from role-owned
+judgment. Portfolio planning is an architect-owned loop: an approved strategist drafts the plan,
+or the orchestrator builds it only after a sanctioned strategist skip; the architect rules it and
+the orchestrator adopts it. Organizational masters are logical ownership groups whose leaves use
+the direct super edge, while atomic masters retain the isolated super → master → leaf edge.
+
+The quality altitude follows those two natures without duplication: each leaf receives one
+change-set-scoped acceptance at closeout, and each completed organizational or atomic master
+receives one full check against the exact candidate before its super ref moves.
+
 ## Update History
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented fact-versus-judgment ownership,
+  architect-owned plan review, organizational/atomic lineage, and the pre-landing full-master gate.
+  Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented canonical source-lineage dispatch admission; verification remains closeout-owned.
 
 - 2026-08-11T14:10+02:00 — Reconciled the sidecar directly to current structural lifecycle

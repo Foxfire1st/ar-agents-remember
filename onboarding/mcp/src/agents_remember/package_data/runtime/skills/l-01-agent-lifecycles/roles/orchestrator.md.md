@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -28,8 +28,9 @@ The orchestrator owns durable portfolio execution behind the architect. It dispa
 system specialists with `dispatch_agent` on canonical master or sprint documents, adopts
 architect-ruled plans, processes durable handovers, and decides the one open master handover gate by
 master document and kind. It never handles a child occupant id, exact readiness, raw inbox address,
-attachment id, or packet-carried gate id. Optional designer/strategist seats are architect children;
-reviewers are manager children.
+attachment id, or packet-carried gate id. Optional designer/strategist and plan-review reviewer
+seats are architect children; leaf/master-exit reviewers are manager children, and super-exit
+reviewers are orchestrator children.
 
 ### Conventions
 
@@ -89,7 +90,20 @@ The orchestrator resolves executor, environment, retry, resource, and evidence c
 repository memory rather than supplying Agents Remember-specific instructions. Leaf closeout and
 master integration remain the only acceptance owners.
 
+## 260815-DAG-L2 Ready-Frontier And Landing Authority
+
+The orchestrator recomputes the ready frontier after every material event and records rationale,
+evidence, author, confidence, and supersession before a priority/queue judgment changes selection.
+Organizational leaves land directly as released; the last one forms the exact proposed final
+candidate and receives the full master check before super moves. Atomic masters hold an exclusive
+barrier and land only as a completed block. Integration refs are never repair workbenches; fixes
+return to an owning/reopened or new scoped leaf.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized ready-frontier judgment records,
+  organizational/atomic landing, reviewer lineage, and no-workbench repair routing. Verification
+  remains closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: reconciled the generic orchestrator with
   repository-resolved acceptance and no fallback. Verification remains closeout-owned.

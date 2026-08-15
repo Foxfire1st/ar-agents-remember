@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastUpdated | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -61,8 +61,8 @@ transparent.
 | One manager owns one canonical master and the complete leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. | "## Hosted Role Dispatch" | skills/l-01-agent-lifecycles/roles/manager.md:41-47 |
 | The leaf loop sequences builder, reviewer, curator, closeout, integration, and cleanup duties. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:94-182 |
-| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:216-216; skills/l-01-agent-lifecycles/roles/manager.md:237-237 |
-| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:251-251 |
+| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:233-233; skills/l-01-agent-lifecycles/roles/manager.md:257-257 |
+| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:274-274 |
 
 ## L23 Manager And Leaf Admission
 
@@ -82,7 +82,23 @@ The canonical manager role resolves executor, environment, arguments, resources,
 evidence from repository memory. Leaf closeout accepts once, leaf integration reuses that commit,
 and master integration accepts full once; no fallback is inferred.
 
+## 260815-DAG-L2 Nature-Aware Manager Boundary
+
+The manager owns one organizational or atomic task group but does not rank the sprint. It reports
+only closeout-ready facts—canonical refs, routes, seams, blockers, and current acceptance—and waits
+for the orchestrator's recomputed-frontier release. Organizational leaves close against the current
+super source and land directly; atomic leaves close against the isolated master branch and expose
+nothing to super until the whole block is ready.
+
+At organizational master exit, review scope is the exact proposed final super candidate containing
+prior landed contributions plus the proposed final leaf. The full suite runs once against that
+candidate before the ref moves. Atomic master exit reviews and gates the isolated branch once.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented manager-local readiness reporting,
+  nature-aware leaf lineage, and exact pre-landing organizational completion scope. Verification
+  remains closeout-owned.
 
 - 2026-08-14T11:29+02:00 — R39 curator: reconciled canonical manager guidance with generic
   repository-resolved policy. Verification remains closeout-owned.

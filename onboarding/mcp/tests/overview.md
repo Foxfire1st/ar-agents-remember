@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-14T14:03:04+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`|
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`|
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1109,8 +1109,20 @@ loop, proves the task cannot finish early, releases the worker, and then observe
 cancellation and the committed sample. This is deterministic shutdown-race coverage, not a timing
 fallback or a second metrics owner.
 
+## 260815-DAG-L2 Doctrine-Plane Forcing
+
+`test_agent_doctrine_plane_identity.py` now forces the planning contract across canonical and all
+nine generated lifecycle planes. It covers architect-owned initial planning, strategist inputs,
+auditable fact-versus-judgment separation, organizational and atomic master classes, direct-super
+ordinary leaves, atomic barrier placement, ready-frontier reprioritization, exact pre-landing
+master-exit candidates, leaf-owned remediation, retired-topology wording, and rectangular changed
+templates. The suite also proves every generated mirror is byte-identical to canonical doctrine.
+
 ## Update History
 
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2 route impact: expanded doctrine-plane forcing over the
+  complete nature-aware topology, role authority, template shape, no-workbench, and synchronization
+  contracts. Verification remains closeout-owned.
 - 2026-08-15T03:33:21+02:00 — 260815-DAG-L1 second targeted-Dagger repair: the remaining pytest
   failure was one adjacent legacy expectation, not production or coverage. The application split
   now proves both `orchestrates` and sprint-only `integrationBranch` refuse as partial legacy-master

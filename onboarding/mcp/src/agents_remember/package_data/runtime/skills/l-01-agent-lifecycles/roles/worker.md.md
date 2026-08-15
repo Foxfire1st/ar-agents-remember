@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,17 @@ Workers copy repository-specific acceptance requirements from the resolved workf
 guidelines, and tools memory; they may not choose a familiar runner. Leaf closeout owns change-set
 acceptance, leaf integration does not rerun it, and full acceptance belongs to master integration.
 
+## 260815-DAG-L2 Leaf Quality Altitude
+
+Worker dispatch carries organizational or atomic execution nature and the corresponding source
+edge. Each leaf receives one targeted/change-set-scoped closeout acceptance and no integration
+rerun. The full suite runs only at master completion, before the final organizational super
+candidate lands or during the atomic block's single landing.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized execution-nature input and the exact
+  leaf-targeted/master-full quality boundary. Verification remains closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: replaced repository-specific worker commands with the
   resolved contract and fixed cadence. Verification remains closeout-owned.
