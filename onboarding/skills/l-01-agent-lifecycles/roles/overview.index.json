@@ -42,7 +42,7 @@
     "worker"
   ],
   "hotPath": {
-    "summary": "Architect owns sprint-level direction. Orchestrator owns the portfolio and manager topology. Manager occupies one canonical master and drives the leaf closeout chain. Worker occupies one leaf and produces code plus a turn report. Reviewer produces independent verdict evidence. Curator occupies one leaf coherence pass and reconciles existing intent, ruled intent, and implemented reality into onboarding. Other specialist roles retain their own documented altitude and artifact. Manager, orchestrator, and worker doctrine shares one quality altitude rule: the pinned Dagger graph is the only Agen...",
+    "summary": "Architect owns sprint-level direction, the initial plan loop, and strategist/reviewer lineage. Strategist authors the evidence-cited dependency graph when dispatched. Orchestrator adopts the ruled artifact, maintains the runtime frontier, and records bounded reprioritization judgments; substantial reshapes return through the architect-owned strategist loop. Manager owns readiness inside one organizational or atomic master. Worker owns one leaf, reviewer owns independent route or completion verdict evidence, and curator reconciles ruled intent with implementation. Organizational masters have...",
     "candidateHints": [
       "skills/l-01-agent-lifecycles/roles",
       "skills/l-01-agent-lifecycles/roles/architect.md",
@@ -76,7 +76,7 @@
       "worker",
       "skills/l-01-agent-lifecycles/roles",
       "route-local-overview",
-      "aeca9a2839c965218a61a3040e15cb84367ebeca",
+      "20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4",
       "SKILL.md",
       "worktree_status",
       "sourceLineage",
@@ -89,21 +89,21 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T14",
+      "T04",
       "lastVerifiedCommitHash",
+      "cfd54cb0a3d425424afdfbb6d8c97f669cdcc4",
       "lastVerifiedCommitDate",
-      "T13",
+      "T05",
       "SKILL",
       "L23",
       "R39",
+      "DAG",
       "T11",
       "T06",
+      "T14",
       "T09",
       "T08",
-      "T20",
-      "T07",
-      "EFA",
-      "L24"
+      "T20"
     ]
   },
   "fallback": {

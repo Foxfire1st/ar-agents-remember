@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agent_doctrine_plane_identity.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |  `df36127113619f4e85522eb615cc20c7eb637405`|
-| lastVerifiedCommitDate |  2026-08-12T08:57:17+02:00|
+| lastUpdated | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash |  `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`|
+| lastVerifiedCommitDate |  2026-08-15T05:12:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,20 @@ None.
 ## Cross-Repo References
 
 
+## 260815-DAG-L2 Doctrine Forcing
+
+The suite now forces the complete dependency-aware doctrine across the canonical lifecycle root,
+roles, criteria, and dispatch/handover/verdict templates. It asserts organizational/atomic lineage,
+architect plan ownership, explicit fact/judgment registers, ready-frontier authority, pre-landing
+master gates, leaf-only repair routing, and every installed/runtime copy's exact parity. A retired-
+phrase sweep rejects the fixed-master/workbench topology, and a delimiter check keeps the changed
+Markdown templates rectangular.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: expanded doctrine-plane forcing to cover topology,
+  authority, sync parity, retired phrases, and rectangular templates. Verification remains
+  closeout-owned.
 
 - 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 replaced the temporary findings accumulator with direct per-file assertions; the doctrine and canonical/package identity contract documented above is unchanged.
 - 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for the public doctrine/runtime-id machine guard.

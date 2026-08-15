@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T10:40+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 
 ## Purpose
 
@@ -83,7 +83,18 @@ No sibling repository evidence is needed for this catalog.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260815-DAG-L2 Plan Ownership And Traceability
+
+Plan review is architect-owned. The strategist is builder when approved; the orchestrator is
+builder only after a sanctioned strategist skip, and always adopts the architect-ruled artifact.
+The criteria now re-derive nature, blast radius, priority, graph order, and barriers; PR-6 requires
+mechanical facts to remain distinguishable from explicit judgment. Every graph-selected relation
+must carry evidence and the owning Judgment Register id.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: aligned plan-loop authority and added auditable
+  fact/judgment plus graph-edge traceability checks. Verification remains closeout-owned.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,17 @@ The manager resolves each repository executor and evidence contract from its mem
 closeout accepts once, leaf integration reuses the certified commit, and master integration
 accepts full once. Missing or failed required policy refuses; there is no inferred local fallback.
 
+## 260815-DAG-L2 Nature-Aware Completion
+
+Managers report master-local closeout facts and never rank the sprint. Organizational leaves use
+the direct super edge; atomic leaves use the isolated master edge and expose no intermediate state.
+The organizational master-exit reviewer receives the exact proposed final super candidate—prior
+landed contributions plus the proposed final leaf—before the one full check and ref movement.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized manager-local readiness, nature-aware
+  lineage, and exact pre-landing organizational review scope. Verification remains closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: removed repository-specific commands from the generic
   manager role and retained fixed cadence. Verification remains closeout-owned.

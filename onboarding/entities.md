@@ -7,7 +7,7 @@ Total output lines: 1510
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-08-13T14:32+02:00 |
+| lastUpdated | 2026-08-15T04:32+02:00 |
 | lastVerifiedCommitHash | `cf5ef507f2542d6cd2f9d37a6b72148d3b91b340`
 | lastVerifiedCommitDate | 2026-08-06T13:55:47+02:00 |
 | status      | active                 |
@@ -32,13 +32,13 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | External Memory Ledger              | `git-blob-set-v1` | `sha256:200da5a1444d5bdf46c47a1398cfea4c8bf21594cf9c96dc30f4db266ad794e7` | `mcp/src/agents_remember/kernel/memory_ledger.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                |
 | Memory Baseline Adoption            | `git-blob-set-v1` | `sha256:16537c18804c8bd246ec3ab8a654447dd99edf0c462171fe233e219f9e38c0c5` | `mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                                                                                                                  |
 | Worktree Contract                   | `git-blob-set-v1` | `sha256:10d96cc9a239ba20cc046f8092cc1fa3de91efb512f8079766bb75e6dcdda117` | `mcp/src/agents_remember/worktrees/worktree_contract.py`; `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/guidance.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`                                                                                                                                                                                                     |
-| Source Lineage                     | `git-blob-set-v1` | `sha256:1b1002659cd127188f0d7295571e135cad46298247b907ba0b44be83a75c9899` | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `mcp/src/agents_remember/serving/terminal_opener.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/source_lineage.py` |
+| Source Lineage                     | `git-blob-set-v1` | `sha256:72ec9baba0e98d0239f249675745f6c7b90563f60484ac98199acae6f3b3a8f6` | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `mcp/src/agents_remember/serving/terminal_opener.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/source_lineage.py` |
 | Worktree Integration                | `git-blob-set-v1` | `sha256:3b33be91a2d4230b5c42b2466fd90a3f33fb6d87634d2b2873741af7b10713b4` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`                                                                                                                                                                                                                                                                                     |
 | Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:8725cd636fe7a28a9cc46bc37f2ee1dd615c892c7e1733d10a9f865b8a042130` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
 | Provider Degradation Protocol       | `git-blob-set-v1` | `sha256:4ea471279c09fa98cc621c6dda34c56c7edfe765d94e12044148fd787c58d52c` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/system-specialist.md` |
 | Seat Binding Identity               | `git-blob-set-v1` | `sha256:164a5b128d7435c791e7c75d6d07fa700f1e76d316457ac9e65dbe69a2c66340` | `dashboard/src/data/railModel.ts`; `dashboard/src/data/sessions.ts`; `dashboard/src/data/taskHierarchy.ts`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/models/task_document_ref.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/ambient_seat.py`; `mcp/src/agents_remember/serving/structural_seats.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_task_assignment.py`; `mcp/src/agents_remember/tasks/document_refs.py` |
 | Seat Retirement                     | `git-blob-set-v1` | `sha256:4cf732f1e0c3dd303701ec0e9d44859e160ea062d6699fc3ba90b04b1f3bedd6` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/retire.py`; `mcp/src/agents_remember/serving/retire_policy.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
-| Seat Landing Archive                | `git-blob-set-v1` | `sha256:25a42f069de285cc28d8dcdccd413c7f21c5a0330b443ccb96ed72529efe9c19` | `dashboard/src/data/railModel.ts`; `dashboard/src/data/sessionLifecycle.ts`; `dashboard/src/panels/session-cockpit/SessionRail.tsx`; `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/landing.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
+| Seat Landing Archive                | `git-blob-set-v1` | `sha256:7408e724c9483b262d9033dc0628d67c87d3b158dfbb126ce879dfa6f487af56` | `dashboard/src/data/railModel.ts`; `dashboard/src/data/sessionLifecycle.ts`; `dashboard/src/panels/session-cockpit/SessionRail.tsx`; `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/landing.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
 | Supervisor Sweep                    | `git-blob-set-v1` | `sha256:44b054e166164219223a558e13ec66a5726bc8d01ba88a384dec30a39319db85` | `mcp/src/agents_remember/kernel/agentic_settings.py`; `mcp/src/agents_remember/mcp/tools/base.py`; `mcp/src/agents_remember/serving/pane_signals.py`; `mcp/src/agents_remember/serving/agent_notifier_heartbeat.py`; `mcp/src/agents_remember/kernel/primitives/inbox_backoff.py`; `mcp/src/agents_remember/controlplane/operator_inbox_store.py`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/controlplane/agent_notifier_signals.py` |
 | Task Document                       | `git-blob-set-v1` | `sha256:eebcf2de0458d04b179ac0031912eb671c5bba00cc5b3588c7ce0c63d9f3b4f9` | `dashboard/src/data/taskDocuments.ts`; `dashboard/src/data/taskHierarchy.ts`; `dashboard/src/data/taskIdentity.ts`; `dashboard/src/panels/detail-panel/DetailPanel.tsx`; `mcp/src/agents_remember/models/task_document_ref.py`; `mcp/src/agents_remember/observer/projection.py`; `mcp/src/agents_remember/serving/projections/snapshots.py`; `mcp/src/agents_remember/tasks/document_refs.py` |
 | Delivery Injector                   | `git-blob-set-v1` | `sha256:781a7c5e6d31ee3daf3490543f394f2a184c5692c3beef2ffce75a605a249783` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/harness_adapters.py`; `mcp/src/agents_remember/serving/harness_logs.py`; `mcp/src/agents_remember/serving/inbox_delivery.py`; `mcp/src/agents_remember/serving/injector.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_paste.py` |
@@ -213,6 +213,10 @@ provenance and a separate diagnostic projection, never the default Chats hierarc
 
 Entity inventory entry; current evidence and fingerprint are recorded above.
 
+`No content impact:` 260815-DAG-L2 changes planning and landing authority prose in shared role
+evidence, but it does not change the archive's landed status, cleanup outcome, dashboard identity,
+or retention semantics.
+
 ### Seat Retirement
 
 Entity inventory entry; current evidence and fingerprint are recorded above.
@@ -224,27 +228,28 @@ Entity inventory entry; current evidence and fingerprint are recorded above.
 ### Task Document
 
 The canonical sprint, master, and leaf JSON task documents are both planning artifacts and the
-stable work-domain topology for structural seats. `TaskDocumentRef` is a repository-qualified,
-coordination-root-relative reference to one real document; `TaskDocumentTopology` verifies its
-level and containment. The dashboard projects those same relationships in Operations and Chats.
-No role anchor leaf, synthetic logical seat id, parallel master key, or runtime-id selection state
-is permitted beside the real document. The same canonical document identity now selects the
-applicable source-lineage contract chain before structural work is admitted.
+stable work-domain topology for structural seats. Sprint documents carry the canonical
+`executionGraph`; master documents carry an explicit `executionNature` of `organizational` or
+`atomic`. Graph-selected dependency meaning is authored in the evidence-cited judgment register:
+architect owns the initial plan loop, an approved strategist may build it, and the orchestrator
+adopts it for runtime frontier decisions. Legacy topology requires explicit migration rather than
+implicit inference. `TaskDocumentRef` remains the repository-qualified durable address; no runtime
+id or synthetic parallel identity may compete with it.
 
 ### Source Lineage
 
 | Field | Value |
 | --- | --- |
 | Category | Structural admission entity |
-| Represents In Reality | The current Git ancestry relationship between a sprint super-integration line, a thematic master, and one of that master's leaves, for code and external memory where enabled. |
-| Description | The plane resolves a canonical task document to its series/leaf contracts, proves every applicable parent edge, and reduces the Git facts to a strict current/blocked/unavailable projection. Stale or unprovable ancestry fails closed before checkout exposure or lifecycle mutation. The same transitive proof is required immediately before curator dispatch, at closeout and integration preflight, after their potentially long quality work, and immediately before an approval claim or source merge. Closeout and integration also pin the exact source tips across the gate so movement during quality produces a retry instead of a stale approval or merge. Failures carry ordered contract-addressed `worktree_sync` recovery. |
+| Represents In Reality | The Git ancestry admitted for one sprint execution node. The ruled target is `super → leaf` for an organizational master and `super → master → leaf` for an atomic master; L2 leaves the existing universal `super → master → leaf` mechanical checker in place for later cutover leaves. |
+| Description | The plane resolves a canonical task document to its series/leaf contracts, proves every mechanically applicable parent edge, and reduces Git facts to a strict current/blocked/unavailable projection. Stale or unprovable ancestry fails closed before checkout exposure or lifecycle mutation. The L2 doctrine makes `executionNature` the future edge selector but does not claim that source-lineage mechanization has already changed. Current closeout/integration still recheck the existing chain after quality and before mutation; later leaves in this master own the nature-aware edge cutover. |
 | Canonical Source Of Truth | `worktrees/source_lineage.py` over canonical task documents, enclosure contracts, and repository branch facts. |
 | Current Naming Drift | Status payloads use `source_lineage`; strict public/dashboard projections use `sourceLineage`. Both represent the same entity. Remote stale-base freshness is a separate later policy. |
-| Key Identifiers | Canonical task document, relation (`super-to-master` / `master-to-leaf`), side (`code` / `memory`), Git repository identity (resolved absolute common directory), source/descendant branch, and owning contract path. Checkout paths, commits, and runtime ids are evidence/runtime details, not addresses an agent supplies. |
-| Parent / Child Relationships | A master has one super-to-master edge per applicable side; a leaf adds master-to-leaf edges and inherits the parent's required edges transitively. |
+| Key Identifiers | Canonical task document, `executionNature`, relation (currently `super-to-master` / `master-to-leaf`; target also `super-to-leaf`), side (`code` / `memory`), Git repository identity, source/descendant branch, and owning contract path. Checkout paths, commits, and runtime ids remain evidence rather than agent-supplied addresses. |
+| Parent / Child Relationships | Current enforcement gives every master a super-to-master edge and every leaf a master-to-leaf edge. The ruled target removes the branch edge for organizational masters and retains both edges only for atomic masters. |
 | Often Confused With | Remote tracking freshness, seat binding identity, a remembered base commit, or a new replacement master. |
 | Source References | `mcp/src/agents_remember/worktrees/source_lineage.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/serving/terminal_opener.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx` |
-| Migration Notes | Resuming a thematic master after another master lands should synchronize the existing master from super and retry the same task/role seat; it must not manufacture a “part 2” master or push branch identity into agent memory. |
+| Migration Notes | L2 changes planning doctrine and generated role/template assets only. Worktree creation, lineage projection, closeout, integration, and dashboard mechanization must switch together in later leaves; until then the existing chain remains the executable authority. |
 
 ### Worktree Contract
 
@@ -263,6 +268,11 @@ Entity inventory entry; current evidence and fingerprint are recorded above.
 
 ## Update History
 
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: Task Document now records the canonical execution graph,
+  explicit master nature, and attributed planning authority. Source Lineage now distinguishes the
+  ruled organizational/atomic target from the still-current universal mechanical chain so later
+  cutover leaves cannot mistake doctrine for enforcement. No content impact to Seat Landing
+  Archive; fingerprints remain closeout-owned.
 - 2026-08-13T14:32+02:00 — No content impact: the manager/orchestrator/brief quality-guidance
   changes assign acceptance to Dagger and do not change Seat Landing Archive or Source Lineage
   identity, evidence topology, or lifecycle semantics. Fingerprints remain closeout-owned.

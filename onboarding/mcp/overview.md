@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-14T14:03:04+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -825,8 +825,22 @@ recovery primitives in `worktrees/closeout_recovery.py`; `worktrees/modules/clos
 them and remains the coordinator. Two focused test modules split direct environment authorization
 and exact staged gate scope out of oversized suites without changing the production boundary.
 
+## 260815-DAG-L2 Packaged Planning Doctrine
+
+The packaged `l-01-agent-lifecycles` assets now mirror the canonical nature-aware planning
+contract. Architect owns the initial strategist and plan-review loop; orchestrator adopts the
+ruled graph, records queue judgment, and recomputes the ready frontier; managers distinguish
+organizational direct-super leaves from atomic branch-backed barriers. The package also carries the
+exact proposed-candidate master-exit handoff and leaf-owned remediation boundary. This leaf changes
+packaged doctrine and templates only—worktree/source-lineage mechanization remains owned by later
+leaves in the dependency-aware sprint master.
+
 ## Update History
 
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2 route impact: synchronized packaged lifecycle roles,
+  criteria, briefs, and verdict templates with the ruled organizational/atomic topology and
+  auditable planning authority. MCP tool routing and worktree enforcement are unchanged in this
+  leaf; verification remains closeout-owned.
 - 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: task-document identity mutations can
   no longer bypass sprint topology validation, and the new multi-root publisher is covered by the
   existing single-owner fitness census. Package routing and ownership remain unchanged.

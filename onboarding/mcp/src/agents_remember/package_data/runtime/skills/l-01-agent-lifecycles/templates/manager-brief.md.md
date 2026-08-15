@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`                                  |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`                                  |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 
 ## Purpose
 
@@ -68,7 +68,17 @@ The manager brief requires repository memory to supply executor, environment, ar
 policy, retry rules, and evidence. It preserves one leaf-closeout acceptance and one
 master-integration full acceptance, with no leaf-integration rerun or fallback.
 
+## 260815-DAG-L2 Dispatch And Exit Contract
+
+The brief now carries execution nature, graph reference, nature-appropriate parent edge, and the
+manager's fact-only closeout-ready report. Organizational exit review is explicitly scoped to the
+exact proposed final super candidate containing prior landed contributions plus the proposed final
+leaf. Build concurrency never grants landing order; only orchestrator release does.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized nature-aware dispatch, fact-only readiness,
+  and exact organizational completion candidate. Verification remains closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: made the quality section repository-generic without
   weakening cadence. Verification remains closeout-owned.

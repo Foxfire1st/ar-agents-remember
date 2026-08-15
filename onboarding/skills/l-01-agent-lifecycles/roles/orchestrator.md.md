@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/orchestrator.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
-| lastVerifiedCommitDate |  2026-08-14T12:44:51+02:00|
+| lastUpdated | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash |  `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`|
+| lastVerifiedCommitDate |  2026-08-15T05:12:01+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -65,7 +65,26 @@ The canonical orchestrator role resolves quality mechanics from the active repos
 keeps acceptance at leaf closeout and master integration only. Repository-specific Dagger/retry
 instructions no longer leak into generic orchestration.
 
+## 260815-DAG-L2 Ready-Frontier And Landing Authority
+
+The orchestrator mechanically recomputes the ready frontier after candidate, blocker, landing, or
+accepted-priority changes, then applies explicit priority judgment with canonical graph node order
+only as the deterministic equal-priority tie-break. Every queue judgment records rationale,
+evidence, author, confidence, and supersession before it changes selection; ordinary bounded
+reprioritization stays here, while a substantial graph/classification reshape is proposed through
+the architect-owned strategist loop.
+
+Organizational leaves land directly on super as released; the final leaf is combined with prior
+contributions into the exact proposed final candidate and receives the one full master gate before
+super moves. Atomic masters are exclusive barriers whose intermediate leaf state never reaches
+super. Integration refs are not feature/fix workbenches, and super-exit repairs return to an owning,
+reopened, or newly scoped leaf.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: recorded ready-frontier recomputation, auditable queue
+  judgment, organizational direct landing, atomic barriers, and no-workbench repair routing.
+  Verification remains closeout-owned.
 
 - 2026-08-14T11:29+02:00 — R39 curator: reconciled canonical orchestrator guidance with generic
   repository-resolved policy. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 
 ## Purpose
 
@@ -17,11 +17,18 @@ Generated package/harness trees mirror this route and never define independent b
 
 ## Hot Path Summary
 
-Free chat launches work; architect owns sprint composition; orchestrator owns the portfolio and
-creates one manager per real master; each manager drives worker, reviewer, and curator seats on
-real leaves. Structural task document plus role is the durable address at every altitude. The
-control plane owns current occupancy, readiness, exact first-brief delivery, replacement, and
-terminal correlation.
+Free chat launches work; the architect owns sprint composition and the initial ruled topology.
+When the graph is missing or materially stale, an approved strategist authors the evidence-cited
+plan before the orchestrator exists. The orchestrator adopts that plan, recomputes its ready
+frontier after material events, and records every queue or reprioritization judgment with rationale,
+evidence, author, confidence, and supersession. Structural task document plus role remains the
+durable address at every altitude.
+
+An organizational master is a logical grouping whose ordinary leaves branch directly from the
+current super line and may land independently. An atomic master keeps its own integration branch,
+forms an exclusive barrier, and exposes no partial result. Mechanisms publish facts and candidate
+sets; architect, strategist, orchestrator, and manager seats retain their explicit judgment
+boundaries. Integration lines are not repair workbenches.
 
 Role continuity is task-document and artifact based. Workers build and report, reviewers provide
 independent verdict evidence, curators reconcile system intent and memory, managers decide
@@ -64,7 +71,7 @@ re-proves lineage before host creation, so a parent move between status and disp
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:272-272; skills/l-01-agent-lifecycles/SKILL.md:307-307 |
+| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:272-272; skills/l-01-agent-lifecycles/SKILL.md:308-308 |
 | Curator owns conservative three-way memory reconciliation and the complete pre-closeout onboarding worklist. | "## What This Seat Is"; "### 4 — Iterate The Checklist, Then Report" | skills/l-01-agent-lifecycles/roles/curator.md:7-47; skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
 | Manager owns one real master and its leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Worker owns one real leaf's implementation and durable report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
@@ -85,6 +92,10 @@ rerun and no inferred fallback.
 
 ## Update History
 
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented architect-owned initial planning,
+  evidence-cited judgment, ready-frontier recomputation, organizational versus atomic master
+  topology, exact pre-landing organizational completion, and the no-workbench boundary.
+  Verification remains closeout-owned.
 - 2026-08-14T11:29+02:00 — R39 curator: removed Agents Remember-specific quality commands from
   generic lifecycle guidance while preserving exact cadence. Verification remains closeout-owned.
 - 2026-08-14T06:25+02:00 — L23 final candidate review: lifecycle doctrine keeps Dagger as the sole

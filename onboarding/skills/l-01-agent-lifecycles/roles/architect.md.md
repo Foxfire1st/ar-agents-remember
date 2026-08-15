@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/architect.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`|
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -47,10 +47,6 @@ condition on the existing thematic master, not a reason to fork a replacement
 master. The plane derives ancestry from task structure and returns the contract
 address needed for backend recovery.
 
-## Update History
-- 2026-08-12T20:10+02:00 — L23 curator: documented canonical thematic-master recovery semantics; verification remains closeout-owned.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the custody rewrite — rows whose
 ## 260713-TES-L5 Current Delta — Mailbox Custody, Not Ladder Rungs
 
 The terminal-custody section now says rows whose entire owner chain is dead surface to the
@@ -58,7 +54,22 @@ architect as a mailbox (the timed escalation ladder is retired), rows land at th
 turn boundary (the system acks), and `operator_inbox_consume` is an optional attribution
 marker. The developer remains an authority, not an address.
 
+## 260815-DAG-L2 Planning Authority
+
+The architect inspects `executionGraph` plus every commanded master's `executionNature` before
+spawning backend execution. A missing or materially stale topology produces a recommendation to
+run a strategist, never an automatic dispatch. The initial strategist and its plan-review reviewer
+are architect children and finish before the orchestrator exists; runtime reshapes still route
+through that architect-owned loop. A strategist skip authorizes the orchestrator to author the
+same explicit artifact, not an implicit default.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: recorded architect ownership of strategist planning,
+  explicit topology admission, and the complete/still-valid condition for recommending a skip.
+  Verification remains closeout-owned.
+- 2026-08-12T20:10+02:00 — L23 curator: documented canonical thematic-master recovery semantics;
+  verification remains closeout-owned.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the custody rewrite — rows whose
   entire owner chain is dead surface to the architect as a mailbox, not a ladder rung (the

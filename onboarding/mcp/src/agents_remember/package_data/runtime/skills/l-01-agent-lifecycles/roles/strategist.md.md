@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,19 @@ No sibling repository evidence is needed for this orchestration role file.
 
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
 
+## 260815-DAG-L2 Evidence-Cited Topology Planning
+
+Initial facts are architect-compiled; runtime-reshape facts arrive from the orchestrator through
+the architect. The strategist classifies organizational versus atomic execution, builds the exact
+activity-on-node graph, and records dependency meaning, blast radius, priority, barriers,
+reprioritization, and leaf moves in one canonical Judgment Register. Every selected graph relation
+cites evidence and its owning judgment id; large size alone never makes a master atomic.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized fact/judgment separation, graph-edge
+  traceability, and dependency/risk-driven master classification. Verification remains
+  closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `strategist.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 6 citation anchors across 5 reference claims; scoped recheck clean (0 findings).

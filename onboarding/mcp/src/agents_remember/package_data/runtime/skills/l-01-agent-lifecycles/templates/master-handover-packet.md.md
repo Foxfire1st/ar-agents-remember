@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T19:10+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 
 ## Purpose
 
@@ -60,7 +60,17 @@ No sibling repository evidence is needed for this report template.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260815-DAG-L2 Nature-Aware Handover
+
+The handover names `executionNature`, prior landed organizational leaf refs plus the proposed final
+leaf, and the exact proposed candidate tree/ref; an atomic handover names its isolated branch and
+tree. The one full gate boundary is before the final organizational ref movement or during atomic
+block landing. Carry-over remains a documented recovery fact, never the normal landing strategy.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: added nature-aware scope, exact proposed candidate, and
+  one-full-gate boundary fields. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `master-handover-packet.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 8 citation findings for the canonical handover template, manager role, verdict template, and lifecycle skill references.

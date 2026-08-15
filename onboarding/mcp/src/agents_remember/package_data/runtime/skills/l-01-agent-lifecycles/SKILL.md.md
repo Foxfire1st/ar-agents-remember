@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -106,7 +106,18 @@ The packaged lifecycle roof now treats current task-derived lineage, exact-candi
 route review, and Dagger-only acceptance as shared lifecycle signals. Roles observe task-addressed
 durable operations; they never carry private job or commit identifiers between turns.
 
+## 260815-DAG-L2 Synchronized Execution Topology
+
+This packaged copy carries the fact/judgment split, architect-owned portfolio-plan loop,
+organizational direct-super lineage, atomic isolated-block lineage, and one-full-check-per-master
+completion boundary. It remains byte-identical to the canonical skill across every installed
+target; the runtime package is distribution, not a parallel doctrine authority.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized dependency-aware execution topology and
+  its authority/quality-altitude rules into the packaged lifecycle root. Verification remains
+  closeout-owned.
 - 2026-08-14T06:32+02:00 — L23 synchronized runtime doctrine: the lifecycle roof carries
   Dagger-only acceptance, manager lineage preflight, and candidate-bound independent route review
   before curation or lifecycle exit. Verification remains closeout-owned.

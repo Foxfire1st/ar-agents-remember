@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -129,7 +129,18 @@ normal synchronization condition. It routes the contract-addressed recovery
 through the backend and retries the same canonical master seat; it does not
 invent a “part 2” master or burden agents with commit ancestry.
 
+## 260815-DAG-L2 Planning Authority
+
+The architect requires a complete current `executionGraph` and explicit `executionNature` for
+every commanded master before backend execution. It proposes—never auto-dispatches—the strategist,
+owns the initial and runtime plan-review loop, and rules the resulting artifact before orchestrator
+adoption. Recommending a skip requires a complete plan whose dependency, route, seam,
+classification, and priority assumptions remain valid; mere existence is insufficient.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized explicit topology admission and
+  architect-owned strategist/reviewer authority. Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented replacement-safe thematic-master sync recovery; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Recorded `architect.md` as a synchronized runtime artifact of the current canonical lifecycle doctrine; it introduces no independent role contract.

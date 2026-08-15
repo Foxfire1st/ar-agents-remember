@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`                                  |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-15T04:32+02:00 |
+| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`                                  |
+| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
 
 ## Purpose
 
@@ -68,7 +68,16 @@ The template tells the dispatcher to copy repository-specific acceptance command
 and evidence requirements from resolved memory. It forbids an invented runner or fallback and
 keeps acceptance at leaf closeout and master integration only.
 
+## 260815-DAG-L2 Nature-Aware Worker Input
+
+The brief carries the leaf's execution nature and nature-appropriate source edge. It makes the
+single-leaf closeout acceptance and no-integration-rerun contract explicit, while reserving the
+full suite for the exact proposed final organizational candidate or atomic block landing.
+
 ## Update History
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized execution-nature input and the
+  leaf-targeted/master-full acceptance boundary. Verification remains closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: made worker acceptance instructions repository-resolved
   and exact-once. Verification remains closeout-owned.
