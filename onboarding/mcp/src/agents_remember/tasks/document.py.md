@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                        |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-15T02:53:40+02:00                        |
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -47,6 +47,13 @@ master doc with a non-empty list **is** an orchestration task, and each entry na
 it commands (its task folder, doc id, or title — the dashboard matches forgivingly). Additive by
 design — `default_factory=list`, no new `DocKind`, no migration; docs without the field validate
 and serialize exactly as before, and masters named nowhere stay top-level.
+
+Execution topology is explicit and separate from containment. A commanded master declares the
+closed `executionNature` value `organizational` or `atomic`; an orchestration sprint instead owns a
+`SprintExecutionGraph` of canonical `TaskDocumentRef` nodes and reasoned predecessor/successor
+edges. The graph rejects duplicate nodes/edges, self edges, undeclared endpoints, blank reasons,
+and cycles, then derives deterministic topological waves without persisting positions. Legacy
+absence remains parseable only for the finite migration path; no validator infers a default.
 
 `step_total`/`step_done` count the progress-bearing leaves (`_leaf_statuses`: a step's
 substeps when it has any, else the step itself), and `current_step` returns the first
@@ -115,6 +122,10 @@ and route-review authority. Those document relationships, not branch names or ru
 an agent, select the task boundary.
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the JSON-primary task schema now distinguishes
+  commanded-master execution nature from sprint-only reasoned AON graphs, derives stable waves, and
+  rejects duplicate, unknown, self-referential, blank-reason, cyclic, or wrong-kind shapes.
 - 2026-08-14T06:34+02:00 — L23 final candidate review: task-document parsing derives canonical
   parent series/master/leaf relationships used by transitive lineage and route-review authority.
   Verification remains closeout-owned.

@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-08T14:38+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 
 ## What This Area Is
 
@@ -65,7 +65,9 @@ observer write side through `kernel/primitives/observer_paths.py`).
 1. The serving projection tick enumerates which domain changed (`projection_inputs.py`).
 2. Readers (`snapshots.py`, `snapshots_impl/`) read the producing subsystems' own parsers and project
    inbox entry/subject/owner and expectation task references as canonical `TaskDocumentRef` values;
-   they do not synthesize an agent-visible leaf-address field.
+   they do not synthesize an agent-visible leaf-address field. The task-document reader likewise
+   copies explicit master nature and sprint graph, derives waves from that validated graph, and
+   includes those cells in body-revision identity so topology changes invalidate the projection.
 3. `project_and_write` ties reading, pure reduction, and the atomic write together.
 
 ## Load-Bearing Files
@@ -141,6 +143,10 @@ serves bounded phase, timing, command, report, and recovery guidance. Durable st
 authority; projection never exposes worker or resume identity.
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: the task-document snapshot slice hydrates
+  master nature and sprint graph, derives waves from the validated graph, and incorporates both into
+  body-revision identity.
 
 - 2026-08-14T06:25+02:00 — L23 final candidate review: runtime snapshots attach the newest
   validated lifecycle operation and preserve bounded task-addressed phase/report evidence without

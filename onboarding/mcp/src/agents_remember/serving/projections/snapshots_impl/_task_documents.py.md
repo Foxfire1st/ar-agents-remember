@@ -6,13 +6,13 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                          |
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`                                        |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| governingOverview      | `../overview.md`                                       |
 
 ## Governing Overview
 
-[serving projections overview](overview.md)
+[serving projections overview](../overview.md)
 
 ## Purpose
 
@@ -44,5 +44,8 @@ Task-document and series readers: summaries, full bodies, lifecycle binding. Tas
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: task snapshot hydration now carries explicit master
+  nature and sprint graph, derives deterministic waves, and includes both fields in body revision identity.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

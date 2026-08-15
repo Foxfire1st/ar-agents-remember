@@ -9,8 +9,8 @@ Total output lines: 2259
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-14T12:31:43+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`|
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -464,6 +464,11 @@ served only through `GET /api/task-document`, and the supervisor is current-mana
 chain-progress-aware, and one-rung-per-row-per-sweep. The always-on state/SSE projection remains
 body-free for task documents.
 
+Task-document snapshot serving now carries the compact execution-topology facts needed by the
+dashboard: a commanded master's optional nature, a sprint's canonical graph, and deterministic
+derived waves. The serving route copies validated task authority; it does not choose priorities or
+invent graph positions.
+
 `agents-remember dashboard --config <settings.json>` → `cli/dashboard.py` →
 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks
 `project_and_write` — on change-or-heartbeat wakes when the live change
@@ -776,6 +781,9 @@ propagating lifespan cancellation. Shutdown therefore cannot finish while sampli
 degradation evaluation, or compaction can still mutate provider metrics state.
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: task snapshot serving now exposes the
+  execution-topology facts carried by TaskDocNode; HTTP/catalog authority remains otherwise unchanged.
 
 - 2026-08-14T12:31:43+02:00 — R44 curator: recorded the metrics worker drain that closes the
   lifespan-shutdown write race. Verification remains closeout-owned.

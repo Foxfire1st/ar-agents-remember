@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-21T05:30+02:00                     |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -134,7 +134,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:388-440; mcp/src/agents_remember/worktrees/modules/guidance.py:450-452 |
-| The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field. | `LandingRefNode` | mcp/src/agents_remember/observer/projection.py:807-829 |
+| The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field. | `LandingRefNode` | mcp/src/agents_remember/observer/projection.py:842-864 |
 | The reducer composer that reads `status["landing"]` into the node. | "landing=[LandingRefNode" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:304-304 |
 | The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | `test_the_gh_probe_does_not_inherit_the_repository_selectors` — the direct assertion for the one probe the AST sweep cannot see. | `test_the_gh_probe_does_not_inherit_the_repository_selectors` | mcp/tests/test_landing.py:171-195 |

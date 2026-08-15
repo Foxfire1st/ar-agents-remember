@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/DetailPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T08:19Z                                |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -292,8 +292,8 @@ view switches skip its subtree, while real selection and store changes still pas
 | `displayedLeafDoc` resolves the leaf actually on screen (mirroring the render branches; `undefined` for a master/series overview) and reports its `qualifiedLeafKey` up via effect (L5 fix 1). | "import { displayedLeafDoc, displayedReaderDoc } from './model';"; "export function displayedLeafDoc({"; "const viewedLeafDoc = displayedLeafDoc({"; "export function qualifiedLeafKey(" | dashboard/src/data/taskIdentity.ts:65-65; dashboard/src/panels/detail-panel/model.ts:123-123; dashboard/src/panels/detail-panel/state.ts:21-21; dashboard/src/panels/detail-panel/state.ts:147-155 |
 | The task reader wraps rendered leaf content in `data-task-leaf-key={qualifiedLeafKey(doc)}` so selection capture can attribute highlighted text to the displayed leaf. | "const TASK_LEAF_SELECTOR ="; "export function readSelection(selection: Selection"; "export function qualifiedLeafKey("; "export function TaskReader({" | dashboard/src/data/selection.ts:22-22; dashboard/src/data/selection.ts:39-49; dashboard/src/data/taskIdentity.ts:64-70; dashboard/src/panels/detail-panel/taskReader.tsx:494-528 |
 | `findParentTaskMatch`/`parentTaskLinkForDoc` resolve parent task links from projected series sub-task refs and typed selection keys; `orderedByCreation` is now exported from here rather than copied into this panel. | `findParentTaskMatch`; `parentTaskLinkForDoc`; `orderedByCreation`; `parentSelectionKey` | dashboard/src/data/taskHierarchy.ts:43-51; dashboard/src/data/taskHierarchy.ts:68-82; dashboard/src/data/taskHierarchy.ts:152-156; dashboard/src/data/taskHierarchy.ts:145-150 |
-| `SubTaskRow`; `TaskSubTaskRefNode`; `SeriesSubTaskNode`; `linkedLifecycleId` | `SubTaskRow`; `TaskSubTaskRefNode`; `linkedLifecycleId` | dashboard/src/types/projection.ts:546-553; dashboard/src/types/projection.ts:567-567 |
-| The two `extra="forbid"` server models the union mirrors. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | mcp/src/agents_remember/observer/projection.py:575-592; mcp/src/agents_remember/observer/projection.py:657-672 |
+| `SubTaskRow`; `TaskSubTaskRefNode`; `SeriesSubTaskNode`; `linkedLifecycleId` | `SubTaskRow`; `TaskSubTaskRefNode`; `linkedLifecycleId` | dashboard/src/types/projection.ts:560-567; dashboard/src/types/projection.ts:581-581 |
+| The two `extra="forbid"` server models the union mirrors. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | mcp/src/agents_remember/observer/projection.py:585-602; mcp/src/agents_remember/observer/projection.py:692-707 |
 | `_series_subtask_nodes`; `seriesAsMasterDoc`; `orderedByCreation`; `createdAt` | "export function orderedByCreation" | dashboard/src/data/taskHierarchy.ts:145-145 |
 | `MasterDocView`; `SubTaskRow`; `seriesAsMasterDoc`; `orderedByCreation` | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
 | `SubTaskIndex` renders in received order and reads the cross-link as `"linkedLifecycleId" in ref`, so the `→` branch is unreachable for a series. | `SubTaskIndex` | dashboard/src/panels/detail-panel/taskReader.tsx:323-358 |

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -39,13 +39,16 @@ the `DocKind`/`DocStatus`/`StepStatus` Literals, `TASK_DOCUMENT_SCHEMA`, and the
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument) -> str:"; "def write_task_docs(task_root: Path" | mcp/src/agents_remember/tasks/document.py:182-182; mcp/src/agents_remember/tasks/render.py:29-29; mcp/src/agents_remember/tasks/store.py:40-40 |
+| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument) -> str:"; "def write_task_docs(task_root: Path" | mcp/src/agents_remember/tasks/document.py:261-261; mcp/src/agents_remember/tasks/render.py:30-30; mcp/src/agents_remember/tasks/store.py:40-40 |
 
 ## Series-Contract Notes
 
 The package facade exports `TaskEnclosureRef` so task-document callers can construct `enclosures[]` references without importing the model internals directly.
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the task package facade exports execution nature,
+  sprint graph/edge models, and the cross-root atomic document batch writer.
 - 2026-08-14T06:34+02:00 — L23 final candidate review: task exports expose the canonical document
   and reopen-planning helpers used by lineage/start admission; no second task identity is added.
 

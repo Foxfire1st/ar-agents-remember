@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T11:50+02:00                           |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -80,9 +80,12 @@ No meaningful cross-repo references found.
 | The component under test. | "export const NotesReaderViewer = memo(NotesReaderViewerImpl)" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:274-274 |
 | The shell driven by the takeover-wiring test. | "export function CockpitShell(" | dashboard/src/cockpit/Cockpit.tsx:858-858 |
 | `masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`. | `masterDoc`; `seedMaster` | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:188-229 |
-| `TaskDocNode`, `Analytics` with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection`, and `metricsFor`. | `TaskDocNode`; `Analytics`; `WorkspaceProjection`; `metricsFor` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:340-347; dashboard/src/types/projection.ts:484-510; dashboard/src/types/projection.ts:569-581 |
+| `TaskDocNode`, `Analytics` with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection`, and `metricsFor`. | `TaskDocNode`; `Analytics`; `WorkspaceProjection`; `metricsFor` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:340-347; dashboard/src/types/projection.ts:484-513; dashboard/src/types/projection.ts:583-595 |
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the notes-reader TaskDocNode fixture now supplies
+  empty `executionWaves`; viewer behavior and assertions are unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 5 citation items; scoped citation check now passes.

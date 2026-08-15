@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EventRiver.test.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T11:15+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -95,6 +95,9 @@ exists; lifecycle-less workspace diagnostics still render their honest raw fallb
 | `qualifiedLeafKey`/`leafTitleForKey` — the task identity helpers used by the lifecycle-attached and lifecycle-only row tests. | `leafTitleForKey` | dashboard/src/data/taskIdentity.ts:118-123 |
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — No content impact: 260815-DAG-L1 only makes the local TaskDocNode fixture supply the new
+  mechanically derived `executionWaves` field; event-river behavior is otherwise unchanged.
 - 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 8 repository-reference citations and normalized 1 prose citation (8/8 anchored and sourced; scoped citation check clean).
 
 - 2026-08-01T11:15+02:00 — 260731-EFA-L4 curator: corrected the `ev(...)` description. It no longer

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/contract.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T07:20+02:00                           |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -205,9 +205,9 @@ the Finding, where a pointer belongs.
 | `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. | `MirrorOnlyPaths`; `KnownUnsampled`; `fixtureMustSample`; `allowlistMustStayEarned` | dashboard/src/test/contract.test.ts:146-160; dashboard/src/test/contract.test.ts:186-189; dashboard/src/test/contract.test.ts:192-194; dashboard/src/test/contract.test.ts:197-199 |
 | `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed, replacing a prose list of four that missed three. | `AbsorbingPaths`; `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:206-219; dashboard/src/test/contract.test.ts:221-229; dashboard/src/test/contract.test.ts:226-234 |
 | `ClosedUnionPaths` + `VOCABULARIES` — 15 paths bound to 10 array identities and 8 distinct value sets, replacing two hand-written checks. | `ClosedUnionPaths`; `VOCABULARIES` | dashboard/src/test/contract.test.ts:251-266; dashboard/src/test/contract.test.ts:268-293 |
-| Full-coverage assertion: each vocabulary identity is bound to its declared paths and compared with the fixture's sampled values. | "sampledByVocabulary.get(vocabulary)"; "sampledByVocabulary.set(vocabulary, seen)"; "for (const [vocabulary, seen] of sampledByVocabulary)"; "toEqual([...seen].sort())" | dashboard/src/test/contract.test.ts:430-430; dashboard/src/test/contract.test.ts:432-432; dashboard/src/test/contract.test.ts:434-435 |
+| Full-coverage assertion: each vocabulary identity is bound to its declared paths and compared with the fixture's sampled values. | "sampledByVocabulary.get(vocabulary)"; "sampledByVocabulary.set(vocabulary, seen)"; "for (const [vocabulary, seen] of sampledByVocabulary)"; "toEqual([...seen].sort())" | dashboard/src/test/contract.test.ts:431-431; dashboard/src/test/contract.test.ts:433-433; dashboard/src/test/contract.test.ts:435-436 |
 | Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | "the served payload carries a bucket per live state"; "counts a lifecycle in each live state into its own bucket"; "gives each live state a bucket of its own"; "spells a bucket field the way the server spells it" | dashboard/src/test/contract.test.ts:470-475; dashboard/src/test/contract.test.ts:477-500; dashboard/src/test/contract.test.ts:502-510; dashboard/src/test/contract.test.ts:512-530 |
-| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:563-566; dashboard/src/test/contract.test.ts:584-585 |
+| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:564-567; dashboard/src/test/contract.test.ts:585-586 |
 | The generated mirror's metric and analytics declarations. | `Metrics`; `Analytics` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:333-337 |
 | The generated mirror's gate and lifecycle projection declarations. | `GateNode`; `LifecycleProjection` | dashboard/src/types/projection.ts:231-241; dashboard/src/types/projection.ts:288-306 |
 | The sanctioned narrowing the fixture enters through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
@@ -216,7 +216,7 @@ the Finding, where a pointer belongs.
 | The producer's typed lifecycle vocabularies. | "State = Literal[LiveState, TerminalState]"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/models/lifecycles/responses.py:20-27 |
 | The producer's typed attention and process vocabularies. | `AttentionSeverity`; `AttentionLane`; `ProcessFactState`; `ProcessHealth` | mcp/src/agents_remember/observer/projection.py:38-45 |
 | The schema generator derives mirror tuples and rejects stale generated output. | `workspace_projection_schema`; `_vocabulary_block`; `stale_generated_files` | mcp/src/agents_remember/code_quality/projection_types.py:59-61; mcp/src/agents_remember/code_quality/projection_types.py:382-421; mcp/src/agents_remember/code_quality/projection_types.py:509-515 |
-| The two separate `extra="forbid"` sub-task models the inverted pins keep distinct, and the two section models that cannot be pinned. | `TaskSubTaskRefNode`; `TaskSectionNode`; `SeriesSubTaskNode`; `SeriesSectionNode` | mcp/src/agents_remember/observer/projection.py:583-600; mcp/src/agents_remember/observer/projection.py:603-613; mcp/src/agents_remember/observer/projection.py:665-680; mcp/src/agents_remember/observer/projection.py:683-690 |
+| The two separate `extra="forbid"` sub-task models the inverted pins keep distinct, and the two section models that cannot be pinned. | `TaskSubTaskRefNode`; `TaskSectionNode`; `SeriesSubTaskNode`; `SeriesSectionNode` | mcp/src/agents_remember/observer/projection.py:585-602; mcp/src/agents_remember/observer/projection.py:605-615; mcp/src/agents_remember/observer/projection.py:692-707; mcp/src/agents_remember/observer/projection.py:710-717 |
 | The registry entry sanctioning exactly three `@ts-expect-error` directives in this file, with its reason. | "src/test/contract.test.ts :: @ts-expect-error" | dashboard/src/test/wireFixtureGuard.test.ts:183-183 |
 | The other half of the claim: this file makes the MIRROR honest; the guard makes the FIXTURES honest. | "makes the MIRROR honest"; "This file makes the FIXTURES honest" | dashboard/src/test/wireFixtureGuard.test.ts:20-21 |
 
@@ -237,6 +237,9 @@ open index-signature site and checks every aggregate, edge, relation, side, and
 recovery-tool vocabulary against fixture samples and the server schema.
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the generated-contract registry now forces the exact
+  `organizational|atomic` execution-nature vocabulary exported by the server schema.
 - 2026-08-12T20:10+02:00 — L23 curator: documented complete server/dashboard lineage contract coverage; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: added the lifecycle result index-signature wall and exhaustive operation kind/status/phase vocabulary coverage; verification provenance remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

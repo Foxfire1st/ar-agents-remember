@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/notes-reader/`             |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T13:20+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -83,6 +83,9 @@ The current source-backed Notes Reader integration is recorded by the repository
 above.
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — No route impact: the notes-reader test fixture now supplies empty
+  `executionWaves`; notes-reader behavior and ownership are unchanged.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: NotesReaderViewer.tsx changed only by behavior-preserving lint remediation.
 
 - 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.

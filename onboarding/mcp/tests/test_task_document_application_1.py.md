@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_task_document_application_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`                                        |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-15T03:33:21+02:00                                            |
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`                                        |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -21,6 +21,9 @@ Part of the 260731-EFA-L7 in-place split family for `test_task_document_applicat
 ## Code Commentary
 
 - `ApplicationTests1`
+- The legacy master mutation regression now proves that adding `orchestrates` refuses with
+  migration-required until the sprint graph and commanded-master natures can be supplied together,
+  and that sprint-only `integrationBranch` cannot be placed on the unchanged legacy master.
 
 ## Invariants And Boundaries
 
@@ -39,6 +42,13 @@ Lineage and review authority are derived from the task hierarchy; runtime and co
 not accepted from the caller.
 
 ## Update History
+- 2026-08-15T03:33:21+02:00 — 260815-DAG-L1 second targeted-Dagger repair: the exact artifact
+  showed the adjacent legacy `integrationBranch` success expectation also contradicted the closed
+  sprint schema. The regression now proves both partial orchestration edits refuse and leave the
+  master unchanged.
+- 2026-08-15T03:10:06+02:00 — 260815-DAG-L1 targeted-Dagger repair: replaced the obsolete
+  implicit-orchestration success expectation with the explicit topology-migration refusal required
+  by the new contract, while retaining the adjacent integration-branch assertions.
 - 2026-08-14T06:40+02:00 — L23 final candidate review: application tests preserve strict
   task-addressed mutation and manager-lineage preflight without accepting runtime identifiers.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/store.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -22,20 +22,23 @@ Read and write one or more task documents: the JSON is the source, the markdown 
 
 ### Logic
 
-`write_task_doc(task_root, doc)` delegates to `write_task_docs(task_root, [doc])`.
-`write_task_docs` creates the task root, prepares every JSON payload
+`write_task_doc(task_root, doc)` delegates through `write_task_docs` to
+`write_task_doc_batch([(task_root, doc)])`. The batch form accepts documents under distinct task
+roots, creates each root, prepares every JSON payload
 (`model_dump_json(by_alias=True, exclude_none=True, indent=2)`) and rendered markdown
-string before any write, rejects duplicate JSON/markdown output targets, then writes
-each prepared path through `_atomic_write` (temp file + `os.replace`, the same idiom
-the observer drift snapshot uses). `read_task_doc(json_path)` loads via
+string before any write, rejects duplicate JSON/markdown output targets, snapshots every prior
+destination byte-for-byte, then publishes through the kernel's atomic-write primitive. If a write
+raises, it restores every prior file (including prior absence) before re-raising; this is
+exception-failure rollback across roots, not a claim of multi-file crash atomicity.
+`read_task_doc(json_path)` loads via
 `model_validate_json` — the markdown is never parsed back. `doc_stem(doc)` is `task`
 for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_for` /
 `markdown_path_for` derive the sibling `.json` / `.md` paths in the task folder.
 
 ### Invariants And Boundaries
 
-- Both files are written atomically; the JSON is authoritative and the markdown is
-  always a fresh render of it.
+- Each destination replacement is atomic; the JSON is authoritative and the markdown is always a
+  fresh render. A multi-document batch adds exact rollback for raised publication failures.
 - Batch writes prepare all payloads before replacing any file. The duplicate-target guard is necessary
   because leaf/master coupled writes would otherwise risk overwriting one prepared document with another.
 - Reads go through `model_validate_json`; never reconstruct a document from markdown.
@@ -49,6 +52,9 @@ for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_
 | The application entry point uses batch writes when a leaf mutation also changes its parent master row. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:122-164 |
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: `write_task_doc_batch` generalizes the existing
+  rollback-safe prepared write to documents across multiple task roots, enabling one atomic sprint migration.
 - 2026-08-02T21:40:21+02:00 — 260731-EFA-L6 curator W2-B10: repaired 6 citation findings (3 reference rows); scoped recheck clean.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

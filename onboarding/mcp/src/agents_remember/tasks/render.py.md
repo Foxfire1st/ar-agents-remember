@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T23:57:48+02:00                     |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -48,6 +48,11 @@ block (the `subTasks` index list — `_MARKER` maps `DocStatus` → ✅/🔨/⬜
 `decisions` table) after an optional `body` intro. The `light`/`subTask` path is
 unchanged.
 
+Execution topology renders without scheduler interpretation: a commanded master's closed nature
+appears in its header, while a sprint's `Execution Graph` section lists canonical nodes, every
+reasoned dependency edge, and the deterministic waves derived from that graph. No positional or
+priority field is introduced by the renderer.
+
 Output is **deterministic** by construction: section bodies carry no leading/trailing
 blank lines and join their blocks with single blanks, so there is no global
 blank-line normalization that would corrupt blank lines inside code fences.
@@ -67,6 +72,9 @@ blank-line normalization that would corrupt blank lines inside code fences.
 | The render-back precedent (model → markdown section helpers). | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: deterministic master Markdown now renders execution
+  nature in the header and sprint graph nodes, justified dependencies, and derived waves as a section.
 - 2026-08-14T06:34+02:00 — L23 final candidate review: rendered task documents project the
   canonical relationships and operation/review evidence without leaking private runtime identity.
   Verification remains closeout-owned.

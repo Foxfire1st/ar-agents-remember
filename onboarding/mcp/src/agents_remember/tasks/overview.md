@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`       |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -137,7 +137,7 @@ together.
 | Leaf writes keep same-root master rows synchronized through the dedicated planner. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
 | The task-document renderer regenerates markdown from the validated `TaskDocument`. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
 | The persisted worktree contract is the analogous model-to-text precedent. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
-| The persisted-contract peer this schema mirrors. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
+| The persisted-contract peer this schema mirrors. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1026-1045 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -156,6 +156,20 @@ durable lifecycle addressing. A cleaned completed leaf is first converted into a
 plan, before deliberately removed descendant branches can be mistaken for lineage failure.
 
 ## Update History
+
+- 2026-08-15T03:20:17+02:00 — 260815-DAG-L1 independent-review repair: graph-wave reads now bind
+  validation and derivation to one resolved sprint snapshot, preserving deterministic output if
+  the persisted sprint changes during the operation.
+- 2026-08-15T03:10:06+02:00 — 260815-DAG-L1 targeted-Dagger repair: topology forcing now covers
+  multi-parent wave release, non-sprint use, candidate root/repository confinement, and the exact
+  migration refusal matrix; the task route retains graph-derived ordering as its only ordering
+  mechanism.
+- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: topology lookup now exposes the
+  affected-sprint alias census, closing folder/id/title drift and collision paths while retaining
+  exact graph membership as the one mechanical authority.
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: the task route now owns the strict
+  execution-nature and reasoned AON graph schema, exact cross-document membership validation,
+  deterministic graph rendering/waves, and rollback-safe cross-root document publication.
 
 - 2026-08-14T06:25+02:00 — L23 final candidate review: task documents expose canonical parent
   series/leaf identity for lineage and route review, and completed-leaf start routes through an

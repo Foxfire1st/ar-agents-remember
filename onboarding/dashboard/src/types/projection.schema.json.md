@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-15T02:53:40+02:00 |
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,10 @@ L23 adds the closed `LifecycleOperationProjection` schema and the optional `Encl
 - `AgentPickupNode` (line 47) declares a pending dashboard response waiting for an agent to consume it.
 - `TaskDocumentRef` is the repository-qualified task identity reused by terminal, inbox, and
   projection fields; task ownership is not encoded as a leaf-key string.
+- `TaskDocNode` now carries the optional `executionNature` and `executionGraph` contract plus
+  required graph-derived `executionWaves`; `TaskExecutionGraphNode` and
+  `TaskExecutionEdgeNode` preserve canonical task references and dependency reasons without
+  adding scheduler priority or judgment to the generated wire schema.
 
 ### Conventions
 
@@ -58,6 +62,9 @@ values remain closed, while recovery `args` is the deliberately open kwargs
 site checked by the contract suite.
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: regenerated from the server projection with the closed
+  execution-nature enum, reasoned graph nodes/edges, and derived execution waves.
 - 2026-08-12T20:10+02:00 — L23 curator: documented the generated lineage schema and its sole open recovery-args map; verification remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.

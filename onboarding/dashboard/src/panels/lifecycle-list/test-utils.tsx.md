@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/lifecycle-list/test-utils.tsx`        |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`                  |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -67,6 +67,9 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — No content impact: 260815-DAG-L1 only makes lifecycle-list TaskDocNode fixtures carry the
+  required empty `executionWaves` projection field; lifecycle-list behavior is unchanged.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the shared
   test fixtures extracted from `LifecycleList.test.tsx`. Verification pinned to the

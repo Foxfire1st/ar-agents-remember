@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/test-utils.tsx`          |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`                  |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -67,6 +67,9 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — No content impact: 260815-DAG-L1 only makes shared detail-panel TaskDocNode fixtures carry
+  the required empty `executionWaves` projection field; rendered detail behavior is unchanged.
 
 - 2026-08-11T19:58+02:00 — Canonicalized DetailPanel fixture document paths under the
   repository-qualified `/tasks/<repository>/...` topology.

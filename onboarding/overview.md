@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-14T14:03:04+02:00 |
-| lastVerifiedCommitHash | `1cb69766bf7e023fb3d7021107da78dc5e53e994` |
-| lastVerifiedCommitDate | 2026-08-14T14:12:59+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 
 > **Status:** active baseline
 
@@ -772,8 +772,14 @@ observable):** the observer now also projects `master` docs **folder-keyed**
 whole-series progress — so clicking a series master on the dashboard shows its overall progress, not
 just per-lifecycle leaves. Task 17 extends that surface with master `objective` and structured leaf
 `createdAt` metadata; dashboard readers can therefore show authored master content and default leaf
-lists to creation order without interpreting filename or task-slug prefixes. It relates
-to — but does not build — the parked neutral-repo task/contract sharing substrate
+lists to creation order without interpreting filename or task-slug prefixes.
+
+The execution-topology extension separates that organizational task tree from Git scheduling
+facts. Each commanded master declares `organizational` or `atomic`, while the sprint document owns
+the canonical reasoned AON graph. Membership, cycles, and derived waves are mechanical and
+projected to the dashboard; priority and rescheduling judgment remain orchestrator concerns.
+
+This relates to — but does not build — the parked neutral-repo task/contract sharing substrate
 (issue #79). Detail lives in the `tasks/` route overview. (Slice 3c: commit 1 = engine +
 tool; commit 2 = the `w-02-light-task-workflow` JSON-primary adoption and the observer
 reader; commit 3 = master JSON support; reopened R1 = the folder-keyed series projection; reopened R2 = the heading-vs-outcome renderer fix (distinct `Step.outcome`); reopened R3 = the deferred-examples honesty field (`codeExamplesNote`); reopened R4 = leaf-doc fidelity (`statusNote`/`headerNotes`/freeform leaf sections) — all landed.)
@@ -1116,6 +1122,15 @@ reachability before publishing. Generic runtime doctrine resolves each repositor
 acceptance policy from its own memory rather than embedding this repository's Dagger command.
 
 ## Update History
+
+- 2026-08-15T02:42:41+02:00 — No route-model change: the L1 review repair closes task-document
+  identity and writer-census bypasses inside the already documented execution-topology route; the
+  repository inventory and the separation between mechanical topology and scheduling judgment stay
+  unchanged.
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: task documents now persist an explicit
+  organizational/atomic master nature and a sprint-owned reasoned AON graph. The server validates
+  exact commanded membership, derives waves mechanically, and projects the contract to generated
+  dashboard clients; scheduling judgment remains outside this foundation leaf.
 
 - 2026-08-14T14:03:04+02:00 — No route impact: R46 changes only the assertion spelling for an
   existing test timeout and removes its intentionally untaken local branch. Production,
