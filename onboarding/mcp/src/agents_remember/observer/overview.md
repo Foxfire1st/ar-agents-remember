@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -622,7 +622,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
 | The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:43-43; mcp/src/agents_remember/controlplane/durable_store.py:13-24 |
 | `StatesAreFiledOnce` is the TypeScript overlap-check type. | `StatesAreFiledOnce` | dashboard/src/types/projection.ts:25-25 |
-| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:221-221 |
+| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:222-222 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -783,6 +783,10 @@ derive authority or Git ancestry itself: worktree status owns that proof, and th
 the read-side projection of its result.
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: TaskDocNode projects declared execution
+  nature, persisted graph edges/reasons, and deterministic waves as facts. It performs no scheduling
+  judgment or priority assignment.
 
 - 2026-08-13T09:05+02:00 — L23 route review: observer lifecycle projection follows the operation
   DTO into `models.lifecycles.operation`; its engine-process projection continues to expose the

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ agent or process replacement; callers never supply the private operation key or 
 `application/` owns operation-level MCP composition. Application entry points translate
 trusted MCP runtime config plus typed tool arguments into package service calls
 and JSON-compatible payload dictionaries. Domain placement follows what a tool
-operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_doc_tools.py:931-952) sits beside the task_doc application entry point because it
+operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_doc_tools.py:1006-1027) sits beside the task_doc application entry point because it
 reopens a task, while worktree_tools keeps only genuine worktree operations (its
 abandon now also ends the ambient lifecycle it anchors).
 
@@ -257,6 +257,18 @@ of retyping them, and ambient attach attribution occurs only after a real
 attachment, keeping blocked lineage out of successful lifecycle history.
 
 ## Update History
+
+- 2026-08-15T03:10:06+02:00 — 260815-DAG-L1 targeted-Dagger repair: the application owner keeps
+  explicit migration fail-closed and now has forcing proof for invalid migration envelopes,
+  unresolved or wrong-kind targets, and out-of-repository authoring. An unreachable duplicate
+  validation translation was removed rather than exempted from coverage.
+- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: the application policy now treats
+  master aliases as cross-document authority, revalidating every affected sprint on supported
+  identity edits or master-kind replacement and returning structured migration classifications
+  through the same owner.
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: `task_execution_topology.py` is the new
+  application owner for exact cross-document topology validation and finite atomic migration;
+  `task_doc_tools.py` delegates rather than duplicating that policy.
 - 2026-08-14T06:25+02:00 — L23 final candidate review: task/worktree entry points now enforce
   candidate-bound route review and transitive source lineage at admission and exit while the
   detached lifecycle worker remains the sole long-operation application composition root.

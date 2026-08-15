@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/tasks/document_refs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T06:47+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-15T03:20:17+02:00 |
+| lastVerifiedCommitHash |  `28a66feae742bf02fe4b647388b220f921cc7007`|
+| lastVerifiedCommitDate |  2026-08-15T03:44:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,6 +27,16 @@ parsing as an identity model.
 `TaskDocumentTopology` indexes real task documents, normalizes repository-qualified references,
 checks level and containment, and walks leaf→master→sprint without synthesizing anchors. Typed
 `TaskDocumentRefError` failures distinguish malformed, missing, mismatched, and ambiguous topology.
+
+For execution topology, `validate_execution_topology` resolves every sprint `orchestrates` alias to
+exactly one commanded master, requires graph membership to equal that resolved set, and refuses a
+missing graph or nature as migration-required. Candidate overrides let task-doc authoring validate
+before publication. `execution_sprints_affected_by_master` inventories old and new folder/id/title
+aliases so identity edits and same-path kind replacement cannot silently detach or collide a
+commanded master; `execution_waves` exposes only the graph-derived order after validating the exact
+sprint snapshot it will dereference, so a concurrent migration cannot split validation from the
+returned graph. Override resolution retains independent root-confinement and repository-identity
+guards for pre-publication candidates.
 
 ### Conventions
 
@@ -60,6 +70,20 @@ inside agents-remember and has no sibling-repository code dependency.
 
 
 ## Update History
+
+- 2026-08-15T03:20:17+02:00 — 260815-DAG-L1 independent-review repair: `execution_waves` now pins
+  the first resolved sprint into topology validation before deriving its waves, closing the
+  double-read race in which validation and return could observe different graph generations.
+- 2026-08-15T03:10:06+02:00 — 260815-DAG-L1 targeted-Dagger repair: forcing coverage now reaches
+  non-sprint topology use plus override root-confinement and repository-identity refusals.
+  `execution_waves` relies on the immediately preceding durable topology validation instead of
+  carrying a second impossible missing-graph branch.
+- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: added the affected-sprint census
+  used to revalidate old and new folder/id/title aliases, preventing commanded-master identity
+  drift or a new alias collision from bypassing exact execution-graph membership.
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: canonical task topology now validates exact
+  `orchestrates`/graph membership, rejects aliases and unresolved masters, requires every commanded
+  nature explicitly, and exposes graph-derived waves without inference.
 
 - 2026-08-11T06:47+02:00 — 260731-EFA-L19: created as the real-document topology authority; absorbs canonical validation formerly described by `serving/leaf_ref_validation.py`.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: predecessor leaf-reference card was verified against the then-current worktree; stale moved-path references were repaired.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/single_owner.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-15T02:42:41+02:00 |
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,11 @@ Enforce single owners for git, atomic publish, and task-document publication.
 ### Logic
 
 Module-level surface:
+
+The task-document publication census recognizes all three canonical store calls:
+`write_task_doc`, `write_task_docs`, and cross-root `write_task_doc_batch`. Direct imports,
+renamed imports, module aliases, and relative imports resolve to the same API set, and only the
+reviewed writer-authority modules may call them.
 
 - `Offender` (class, lines 75-84) — One place the primitive is reached outside its owner.
 - `package_modules` (function, lines 91-93) — Every module the rules apply to, in a stable order.
@@ -98,5 +103,8 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 ## Update History
 
+- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: the task-document writer census
+  now recognizes `write_task_doc_batch` and admits the execution-topology application module as
+  the reviewed authority for its rollback-safe cross-root migration publication.
 - 2026-08-05T03:52+02:00 — 260731-EFA-L6 batch B curator: normalized decorator-inclusive citation ranges via scoped --fix against the frozen snapshot.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

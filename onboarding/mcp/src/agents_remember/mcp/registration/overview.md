@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-13T12:26+02:00                           |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`       |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -79,7 +79,7 @@ developer ruled all four forbidden — and no `noqa` anywhere holds an argument-
 | `code_search.py`    | `grepai_search`, `grepai_trace`, and the six `cgc_*` graph tools.          |
 | `worktrees.py`      | `worktree_start`, `worktree_attach`, `worktree_status`, `worktree_sync` — the working half of a task. |
 | `closeout.py`       | `worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`, `worktree_abandon` — the landing half. |
-| `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`.                      |
+| `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`; task-doc advertises the explicit multi-document execution-topology migration payload and its classification/wave preview. |
 | `benchmarks.py`     | `codex_benchmark_prepare`, `codex_benchmark_run`.                          |
 | `lifecycle.py`      | The six session-lifecycle signals: `lifecycle_start`, `lifecycle_resume`, `lifecycle_turn_end_notification`, `lifecycle_end`, `switch_lifecycle`, `lifecycle_phase`. |
 | `gates.py`          | Structural `lifecycle_gate`, `gate_decide`, `gate_list`; public gate/lifecycle ids are absent. |
@@ -101,6 +101,10 @@ the whole content — `TaskRef`, `SpawnSeat`, `GateVerdict`, `CarryoverSelection
 The published docstring is the model-visible description of the tool and is checked for presence by
 `test_tools.py`; it is the only place a caller learns the semantics, so it carries the refusal
 vocabulary and the act-by-default `dry_run` contract in prose.
+
+For `migrate_execution_topology`, that description names the exact nested master reference plus
+nature cells, graph nodes, predecessor/successor/reason edges, and the structured classifications
+and derived waves returned by preview; callers do not have to infer the shape from prose examples.
 
 Structural tool registration fixes attribution and caller identity in the plane. Gate decisions use
 the ambient seat for authority; message tools derive the sender from the same hosted context. No
@@ -175,6 +179,12 @@ rerunning targeted mode. Master integration remains the sole full acceptance own
 the pinned Dagger executor.
 
 ## Update History
+
+- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: registration now documents the exact
+  nested migration graph and master-classification request/response cells rather than only naming
+  the migration at a high level.
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: task registration advertises the exact
+  multi-document migration request and derived-wave preview returned by the task-doc application.
 
 - 2026-08-14T11:29+02:00 — R39 curator: reconciled public integration wording with the final
   altitude policy. Verification remains closeout-owned.

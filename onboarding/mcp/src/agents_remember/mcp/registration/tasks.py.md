@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-02T01:05+02:00                                    |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`                |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`                |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subta
 `remove_subtask` / `set_section`; `remove_subtask` also deletes the leaf doc (json+md) unless
 `subtask.keep_file`; `set_step` is leaf-only. `skip_step` takes an exact existing step and a nonblank
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
-        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:91-91; mcp/src/agents_remember/mcp/registration/tasks.py:99-101).
+        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:91-91; mcp/src/agents_remember/mcp/registration/tasks.py:100-102).
 
 The body splits that into two objects: `TaskDocTarget(repo_id, task_name, contract_path, slug)` —
 which document to edit — and `TaskDocEdit(fields, step, decision, subtask, section)` — what the edit
@@ -75,6 +75,12 @@ recreates everything.
 | Target/edit splitting and the unset-edit read proved through a live server. | `test_task_doc_splits_the_document_target_from_the_edit`, `test_task_doc_leaves_every_edit_slot_unset_for_a_read` | mcp/tests/test_mcp_registration_wiring_tests_2.py:182-217; mcp/tests/test_mcp_registration_wiring_tests_2.py:219-230 |
 
 ## Update History
+
+- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: the public migration description
+  now spells out the nested master reference/nature cells, graph node and reasoned-edge cells,
+  and the classification plus wave surfaces returned by preview.
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the public task-doc tool contract documents the
+  previewable multi-document execution-topology migration payload and derived-wave response.
 - 2026-08-14T06:32+02:00 — No public schema impact: L23 keeps task registrations task-addressed
   while the application layer owns reopen planning, lineage, and route-review admission.
   Verification remains closeout-owned.

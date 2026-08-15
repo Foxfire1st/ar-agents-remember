@@ -9,8 +9,8 @@ Total output lines: 1813
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-14T14:03:04+02:00 |
-| lastVerifiedCommitHash | `1cb69766bf7e023fb3d7021107da78dc5e53e994`|
-| lastVerifiedCommitDate | 2026-08-14T14:12:59+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`|
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -113,6 +113,16 @@ owner, not a CRAP exemption.
 ## Purpose
 
 Regression coverage proves exact-session readiness and dispatch, catalog writer composition, copy-mode safety, calibrated submit settling, recovery idempotence, expectation timing, and public tool/doctrine conformance.
+
+The L1 execution-topology forcing slice adds two focused seams. `test_task_execution_topology.py`
+drives strict graph validation, exact cross-document alias membership, production
+create/replace/set-field authoring (including master/sprint kind downgrade), finite migration
+preview/apply/rollback, deterministic rendering, and projection. The single-owner suite separately
+forces every supported import spelling of `write_task_doc_batch`, keeping publisher authority
+independent from topology behavior. The first targeted Dagger artifact then tightened this route:
+the legacy application split now expects migration-required rather than implicit sprint creation,
+and the focused suite forces every reported refusal branch plus multi-parent DAG release without a
+coverage exclusion.
 
 Checkout coordination isolation coverage (`test_checkout_coordination_isolation.py`) reproduces
 the L19 unpublished-writer failure shape without touching live state: loaded-source linked/primary
@@ -1100,6 +1110,25 @@ cancellation and the committed sample. This is deterministic shutdown-race cover
 fallback or a second metrics owner.
 
 ## Update History
+
+- 2026-08-15T03:33:21+02:00 — 260815-DAG-L1 second targeted-Dagger repair: the remaining pytest
+  failure was one adjacent legacy expectation, not production or coverage. The application split
+  now proves both `orchestrates` and sprint-only `integrationBranch` refuse as partial legacy-master
+  edits; the exact artifact already passed CRAP and 423/423 diff coverage.
+- 2026-08-15T03:20:17+02:00 — 260815-DAG-L1 independent-review repair: the focused suite now
+  verifies the real out-of-root publication targets and poisons a later sprint read to prove
+  graph-wave validation and dereference stay bound to one snapshot.
+- 2026-08-15T03:10:06+02:00 — 260815-DAG-L1 targeted-Dagger repair: reconciled the obsolete
+  implicit-orchestration regression with the explicit migration contract and added deterministic
+  malformed-input, confinement, target-kind, missing-target, and diamond-DAG forcing cells from the
+  exact failed artifact.
+- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: forcing coverage now reaches the
+  production create/replace/set-field authoring routes, exact render/projection cells, normalized
+  migration failures, master/sprint kind-downgrade refusals, and every supported import spelling
+  for the cross-root batch writer.
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: `test_task_execution_topology.py` forces
+  malformed-graph refusals, migration-required legacy visibility, exact command membership,
+  preview/apply parity, render/projection output, and rollback on cross-root publication failure.
 
 - 2026-08-14T14:03:04+02:00 — No route impact: R46 removes only an intentionally untaken local
   branch from the existing metrics-shutdown regression by expressing the same timeout assertion

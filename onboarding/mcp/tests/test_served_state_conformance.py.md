@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_served_state_conformance.py`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T08:45+02:00                           |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -155,7 +155,7 @@ served-state module plus the two producers of the tail.
 | The route and the SSE generator driven for real; the tail rides the `snapshot` only. |"def create_app("; "async def stream_events("|mcp/src/agents_remember/serving/_app_common.py:115-115; mcp/src/agents_remember/serving/app.py:230-230|
 | The build half of the tail, whose payload omits what it could not prove (`commit`, `dirty`, `dashboardBuild`). | `ServingBuildPayload` | mcp/src/agents_remember/serving/build_info.py:43-63 |
 | The heartbeat half, which reports a never-ticked agent-notifier as explicit nulls, plus the store the fixture ticks. | `AgentNotifierHeartbeatPayload` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:31-55 |
-| The base projection the served model extends, and the `LifecycleProjection` node a delta frame must validate as. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
+| The base projection the served model extends, and the `LifecycleProjection` node a delta frame must validate as. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1026-1045 |
 | The second consumer that must not gain serve-time fields. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:158-164 |
 | The contract writer the enclosure fixture uses, including the typed `ContractCells` amendment for the landed leaf. | `default_contract`; `amend_contract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:199-227; mcp/src/agents_remember/worktrees/worktree_contract.py:343-393; mcp/src/agents_remember/worktrees/worktree_contract.py:472-475 |
 | The route-wide sibling: the same job for the other 60 HTTP routes, against each route's own declaration. | "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:486-486 |
@@ -168,7 +168,7 @@ cockpit bundle, which lives in this same repository under `dashboard/`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:569-569 |
+| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:583-583 |
 
 ## Update History
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

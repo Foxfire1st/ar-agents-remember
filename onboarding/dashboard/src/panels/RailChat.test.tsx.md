@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/RailChat.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T20:25+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -128,8 +128,8 @@ No Domain Documentation source is configured for this repository; repository cod
 | The rejected attach case uses the 409 outcome. | "status: 409" | dashboard/src/panels/RailChat.test.tsx:405-405 |
 | `leafDoc` is the local mirror-typed fixture entry point. | `leafDoc` | dashboard/src/panels/RailChat.test.tsx:28-67 |
 | `leafProcess` explicitly supplies the packet's `worktreeGroup` fixture field. | `worktreeGroup` | dashboard/src/panels/RailChat.test.tsx:95-95 |
-| The shared `taskDoc` builder is defined here for the local fixture wrappers. | "function taskDoc" | dashboard/src/test/fixtures/wire.ts:282-282 |
-| The shared `engineProcess` builder is defined here for the local fixture wrappers. | "function engineProcess" | dashboard/src/test/fixtures/wire.ts:289-289 |
+| The shared `taskDoc` builder is defined here for the local fixture wrappers. | "function taskDoc" | dashboard/src/test/fixtures/wire.ts:283-283 |
+| The shared `engineProcess` builder is defined here for the local fixture wrappers. | "function engineProcess" | dashboard/src/test/fixtures/wire.ts:290-290 |
 | `findLeafProcess` is the leaf-identity lookup used by context construction. | "function findLeafProcess" | dashboard/src/panels/RailChat.tsx:255-255 |
 | `buildLeafContextPackage` is the context-package builder. | "function buildLeafContextPackage" | dashboard/src/panels/RailChat.tsx:268-268 |
 | The context package reads the process `worktreeGroup`. | `worktreeGroup` | dashboard/src/panels/RailChat.tsx:310-310 |

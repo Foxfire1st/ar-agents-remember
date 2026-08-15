@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/servedProjection.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-11T15:20+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -106,7 +106,7 @@ the same repository. No sibling repository or external system is involved.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local; the payload's producer is `observer/projection.py` in this repo. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
+| The reviewed behavior is wholly repository-local; the payload's producer is `observer/projection.py` in this repo. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1026-1045 |
 
 ## Update History
 

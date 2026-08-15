@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_single_owner_primitives.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-15T02:42:41+02:00 |
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,11 @@ Tests for git, atomic-publish, and task-document writer fitness functions.
 ### Logic
 
 Module-level surface:
+
+`TaskDocumentWriterCensusTests` plants every supported spelling of the new cross-root
+`write_task_doc_batch` call—direct/renamed import, module alias, and relative import—and requires
+the census to report the canonical API name. These join the existing writer cases without weakening
+the false-positive boundary for re-exports or unrelated local names.
 
 - `_git` (function, lines 26-31) — What the git rule reports for ``source``, as ``line [form]`` strings.
 - `_replace` (function, lines 34-39) — What the atomic-write rule reports for ``source``.
@@ -66,4 +71,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 ## Update History
 
+- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: added direct-import, module-alias,
+  and relative-import forcing cases for `write_task_doc_batch`, so an unreviewed batch publisher
+  cannot evade the task-document single-owner census.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

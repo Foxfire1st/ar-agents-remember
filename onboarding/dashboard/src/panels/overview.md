@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`       |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -283,6 +283,9 @@ diagnostic fact. Rendering stays read-only and uses the projected summary for
 operator context; recovery remains a backend worktree operation.
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — No route impact: panel test fixtures were extended with the required
+  empty `executionWaves` cell after TaskDocNode gained the field. No panel behavior changed in L1.
 
 - 2026-08-14T06:25+02:00 — No route impact: L23's final dashboard delta is confined to the
   session-cockpit child route (shared sprint/master/leaf fixture coverage, rail width containment,

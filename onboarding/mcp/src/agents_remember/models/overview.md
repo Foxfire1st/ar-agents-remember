@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`|
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -22,6 +22,11 @@ address fields; internal gate correlation models are isolated behind that public
 former flat gate model has moved, with its semantic history preserved in the successor card.
 `TaskDocumentRef` is a frozen value object whose explicit hash uses repository plus path; task
 altitude remains topology-owned rather than becoming a third identity field.
+
+`models/task_document.py` also owns the closed `MasterExecutionNature` wire vocabulary:
+`organizational|atomic`. Persisted task-document schema, observer projection, generated dashboard
+schema, and TypeScript all import or derive from that one enum rather than maintaining parallel
+strings.
 
 `lifecycles/operation.py` adds strict closeout/integration input snapshots, an internal durable
 record, and a deliberately smaller public projection. The record carries private fingerprint,
@@ -374,6 +379,9 @@ and dashboard consumers import or mirror this strict shape instead of accepting
 free strings or agent-supplied identity.
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: the shared task-document model vocabulary
+  owns the closed organizational/atomic nature used by both persisted tasks and projection DTOs.
 - 2026-08-14T06:25+02:00 — No route impact: L23 extends the existing lifecycle-operation model
   family with exact candidate/recovery evidence; strict-model ownership and public/private identity
   boundaries remain in the lifecycles child route. Verification remains closeout-owned.

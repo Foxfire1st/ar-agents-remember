@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-11T09:45+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:512-515 |
 | Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:484-510 |
-| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:569-581 |
+| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:583-595 |
 
 ## Cross-Repo References
 
@@ -68,6 +68,9 @@ relations, sides, states, and `worktree_sync` tool mirror the server model; the
 dashboard does not accept an open-ended string vocabulary here.
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: regenerated TaskDocNode types now expose optional
+  execution nature/graph and required mechanically derived waves without scheduler judgment.
 - 2026-08-12T20:10+02:00 — L23 curator: documented the strict dashboard lineage mirror; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

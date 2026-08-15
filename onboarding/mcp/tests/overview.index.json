@@ -356,6 +356,7 @@
     "mcp/tests/test_task_document_master.py",
     "mcp/tests/test_task_document_payload_cache.py",
     "mcp/tests/test_task_document_structural_identity.py",
+    "mcp/tests/test_task_execution_topology.py",
     "mcp/tests/test_task_reopen.py",
     "mcp/tests/test_terminal.py",
     "mcp/tests/test_terminal_catalog.py",
@@ -397,8 +398,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 375,
-    "fileSidecars": 385,
+    "sourceFilesInScope": 376,
+    "fileSidecars": 386,
     "childRoutes": 0
   },
   "routingTerms": [

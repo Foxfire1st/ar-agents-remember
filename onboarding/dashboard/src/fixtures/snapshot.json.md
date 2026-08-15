@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:30+02:00                           |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ Top-level keys in wire order: `version` (1), `generatedAt`, `lifecycles`, `enclo
   cit:([`stalestSidecars`], dashboard/src/fixtures/snapshot.json:312-312), cit:([`setupSummaries`], dashboard/src/fixtures/snapshot.json:320-320), cit:([`setupProgress`], dashboard/src/fixtures/snapshot.json:331-331), cit:([`routeCoverage`], dashboard/src/fixtures/snapshot.json:341-341),
   cit:([`toolReports`], dashboard/src/fixtures/snapshot.json:350-350), cit:([`agentPickups`], dashboard/src/fixtures/snapshot.json:358-358), cit:([`expectationRows`], dashboard/src/fixtures/snapshot.json:396-396), cit:([`ledgers`], dashboard/src/fixtures/snapshot.json:413-413),
   cit:([`taskDocuments`], dashboard/src/fixtures/snapshot.json:431-431), `attentionQueue` (L368, three rows), `engineProcesses` (L406, eight pods),
-  cit:(["\"series\": ["], dashboard/src/fixtures/snapshot.json:944-944).
+  cit:(["\"series\": ["], dashboard/src/fixtures/snapshot.json:1038-1038).
 
 **The payload is composed to satisfy specific checks, not sampled at random.** `contract.test.ts`
 requires that every closed vocabulary in the mirror is exercised in FULL, pooled per vocabulary rather
@@ -159,7 +159,7 @@ absent from the file rather than present as `null`.
 | `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:289-289 |
 | All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `analytics` | dashboard/src/fixtures/snapshot.json:169-763 |
 | The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:156-162 |
-| The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:53-53; mcp/src/agents_remember/observer/projection.py:990-1009 |
+| The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1026-1045 |
 | The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:367-381 |
 | The derived `VOCABULARIES` registry (11 paths, 6 vocabularies) and the full-coverage assertion this payload is composed to satisfy. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:268-293 |
 | `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:221-229 |
@@ -187,6 +187,10 @@ contract-addressed `worktree_sync` recovery. These are wire-contract examples,
 not frontend-derived Git facts.
 
 ## Update History
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the canonical dashboard snapshot now includes a
+  reasoned sprint execution graph, derived waves, and both organizational and atomic commanded
+  master examples; ordinary masters publish empty derived waves. Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: recorded complete lineage vocabulary samples in the canonical snapshot; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: documented the fixture's complete lifecycle-operation kind/status/phase sample and private-identity boundary; verification provenance remains closeout-owned.
 

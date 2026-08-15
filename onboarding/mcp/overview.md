@@ -9,8 +9,8 @@ Total output lines: 2603
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-14T14:03:04+02:00 |
-| lastVerifiedCommitHash | `1cb69766bf7e023fb3d7021107da78dc5e53e994`
-| lastVerifiedCommitDate | 2026-08-14T14:12:59+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -718,6 +718,10 @@ The MCP package separates three surfaces:
   and `runtime_install`.
 - `agents_remember.models` owns public MCP response contracts and the
   tool-to-response-model registry used by the `mcp/tools/` payload builders.
+- `agents_remember.tasks` owns JSON-primary task documents plus the strict persisted execution
+  vocabulary: commanded-master nature, sprint reasoned AON graph, exact cross-document membership,
+  deterministic derived waves, rendering, and rollback-safe publication. The application layer
+  owns the explicit finite migration and validates supported task-doc edits before publication.
 - First-class service domains such as `kernel`, `providers`, `memory_quality`,
   `worktrees`, and `install` own deterministic behavior.
 - `agents_remember.observer` owns the observable-lifecycle **event substrate +
@@ -822,6 +826,13 @@ them and remains the coordinator. Two focused test modules split direct environm
 and exact staged gate scope out of oversized suites without changing the production boundary.
 
 ## Update History
+
+- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: task-document identity mutations can
+  no longer bypass sprint topology validation, and the new multi-root publisher is covered by the
+  existing single-owner fitness census. Package routing and ownership remain unchanged.
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: the MCP task-document surface gains one
+  explicit, previewable execution-topology migration and projects the same canonical nature/graph
+  contract. There is no implicit legacy inference or compatibility reader.
 
 - 2026-08-14T14:03:04+02:00 — No route impact: R46 changes only the assertion spelling for the
   existing metrics-shutdown timeout in one test. MCP production, package authority, public

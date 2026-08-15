@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/reducer.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
+| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -370,13 +370,13 @@ file I/O. Defaults empty, so prior structural/analytical callers remain unchange
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The projection schema this produces. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
+| The projection schema this produces. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1026-1045 |
 | The series-token helper that enriches `SeriesNode.seriesTokenTotal` before analytics assembly. | `attach_series_token_totals` | mcp/src/agents_remember/observer/series_tokens.py:14-31 |
 | The event envelope + kinds it folds. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
 | The write-side dormancy sweep the abandoned-projection mirrors, and the `end` signal whose `outcome` `_ended_updates` reads. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:90-594 |
 | The shared stale/TTL thresholds + age helper. | `STALE_AFTER_SECONDS`; `TTL_SECONDS`; `age_seconds` | mcp/src/agents_remember/controlplane/stamps.py:22-35; mcp/src/agents_remember/observer/timeutil.py:11-11; mcp/src/agents_remember/observer/timeutil.py:30-31 |
 | The provider stale-projection idiom the paused-projection mirrors. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
-| The `EngineProcessNode`/`EngineProcessFacts`/`EngineProcessEdge`/`CommitRefNode`/`ProviderBootNode` schema the 5e map composes. | `EngineProcessNode`; `EngineProcessFacts`; `EngineProcessEdge`; `CommitRefNode`; `ProviderBootNode` | mcp/src/agents_remember/observer/projection.py:746-766; mcp/src/agents_remember/observer/projection.py:755-768; mcp/src/agents_remember/observer/projection.py:832-900; mcp/src/agents_remember/observer/projection.py:785-804; mcp/src/agents_remember/observer/projection.py:769-782; mcp/src/agents_remember/observer/projection.py:903-923 |
+| The `EngineProcessNode`/`EngineProcessFacts`/`EngineProcessEdge`/`CommitRefNode`/`ProviderBootNode` schema the 5e map composes. | `EngineProcessNode`; `EngineProcessFacts`; `EngineProcessEdge`; `CommitRefNode`; `ProviderBootNode` | mcp/src/agents_remember/observer/projection.py:781-801; mcp/src/agents_remember/observer/projection.py:804-817; mcp/src/agents_remember/observer/projection.py:820-839; mcp/src/agents_remember/observer/projection.py:867-936; mcp/src/agents_remember/observer/projection.py:939-959 |
 | Reads the engine-process facts + pre-contract start-progress entries at the call edge. | "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:238-238 |
 | The pre-contract `worktree_start` progress source (§5.4) the synthesized node reads. | `read_start_progress` | mcp/src/agents_remember/worktrees/start_progress.py:106-114 |
 | The durable gate set `_attach_gates` materializes onto lifecycles (slice 6c). | "def _attach_gates(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:227-227 |
