@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -340,7 +340,18 @@ Core payload builders import runtime installation and skill installation from
 `models.lifecycles.operation`. These are package-ownership moves only: payload validation,
 task-document addressing, and transport-thin forwarding remain the route contract.
 
+## 260815-DAG-L3 Queue Payload Route
+
+`mcp/tools/closeout_queue.py` is the thin public payload builder for the registered
+`closeout_queue` tool. It delegates the strict request to the ambient-authorized application
+service and then uses the common `_tool_payload` envelope. Registration and response conformance
+cover the public schema; scheduling, persistence, and lifecycle logic do not live on this route.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: added the closeout-queue payload adapter
+  and kept ambient identity plus mechanics out of the MCP tool surface. Verification remains
+  closeout-owned.
 
 - 2026-08-13T09:05+02:00 — L23 route review: `core.py` follows runtime install/skills into the
   `application.runtime` package and `worktree.py` follows integration DTOs into

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate |  2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash |  `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
+| lastVerifiedCommitDate |  2026-08-15T14:36:30+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,17 @@ Start-or-observe derives one durable closeout or integration operation from task
 validated input fingerprint. Retries observe the same work, conflicting inputs refuse, and recovery
 continues from monotonic phase evidence rather than replaying completed irreversible cells.
 
+## 260815-DAG-L3 Cancellation And Queue Ownership
+
+Pre-boundary cancellation releases the candidate's internal queue ownership through the same
+task-addressed operation key. Worker termination is in `finally`: even if queue release fails, the
+captured process group is still signalled after the store clears its PID, preventing a retry from
+launching beside an orphaned old worker.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: documented reversible queue release and guaranteed
+  worker termination on cancellation; verification remains closeout-owned.
 - 2026-08-14T06:36+02:00 — L23 final candidate review: task-addressed start/observe dispatch keeps
   one durable operation per kind/fingerprint and recovers terminal evidence without replaying
   completed irreversible phases. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-11T14:58+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -239,7 +239,20 @@ need the real code commit and refreshed metadata to clear.
 
 The memory-quality callers were rewritten by the L9 caller wave: `DriftStatus`/`DriftSummaryPacket` import from `models/drift.py` (declaration moved by L9), and runtime config from `kernel/primitives/runtime_config.py`. Check behavior is unchanged.
 
+## 260815-DAG-L3 Structured Curator Attestation
+
+The curator checklist now emits a machine-readable `ar-curator-memory-quality/v1` attestation beside
+the rendered report. It binds checklist status and zero/actionable counts, the exact onboarding
+root, the report path and digest, and the complete source-change candidate set. Queue declaration
+requires this structured zero gate; when candidates exist it also requires the canonical leaf
+curator report's five-column dispositions to match the set exactly. A free-text ready sentence or
+path mention is not readiness evidence.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: recorded the structured curator
+  attestation and exact source-change disposition contract consumed before queue declaration.
+  Verification remains closeout-owned.
 
 - 2026-08-11T16:54+02:00 — Added the enclosure-local curator checklist owner, combined the
   pre-closeout worklist behind one full scoped quality call, and preserved code/memory mutation and

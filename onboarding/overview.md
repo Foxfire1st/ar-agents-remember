@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastUpdated | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 
 > **Status:** active baseline
 
@@ -861,7 +861,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
 | The runtime sync contract is checked against every generated copy. | `RealTreeDriftTests` | mcp/tests/test_sync_scripts.py:159-207 |
 | GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating. | "pull_request:"; "Refuse a tag whose commit has not landed on main" | .github/workflows/quality-checks.yml:3-7; .github/workflows/publish-mcp-to-pypi.yml:28-34 |
-| Closeout imports the staged-quality boundary, which refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:31-33 |
+| Closeout imports the staged-quality boundary, which refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:37-37 |
 | The extracted staged-quality owner contains both refusal helpers and the exact-candidate Dagger gate. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; "def gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:20-129 |
 | The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" | CONTRIBUTING.md:64-64 |
 | Provider guidance keeps provider runtime paths under configured provider roots. | "providers/runners/grepai" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:95-95 |
@@ -1121,7 +1121,35 @@ acceptance. Pull requests keep deterministic non-test validation, and the tag wo
 reachability before publishing. Generic runtime doctrine resolves each repository's concrete
 acceptance policy from its own memory rather than embedding this repository's Dagger command.
 
+## 260815-DAG-L3 Dependency-Aware Closeout Queue
+
+The task topology now has a mechanistic pre-closeout execution surface rather than discovering
+competing landings after a ledger has already moved. A manager declares a reviewed, curator-ready
+leaf before closeout; the sprint orchestrator applies the canonical categorical grade, selects the
+deterministic first ready candidate, and owns any atomic-master barrier. The durable sprint-local
+artifact binds the exact graph revision, candidate trees, source lineage, route-review record and
+evidence bytes, curator attestation/dispositions, memory ledger edge, and canonical Judgment/Priority
+Register rows. Closeout and integration revalidate that same record under the queue lock at their
+irreversible boundaries, while task-document publication shares the lock so candidate facts cannot
+change underneath an in-flight landing. One-record WAL recovery, bounded receipts/candidates/graph
+size, explicit writer ownership, and task-addressed cancellation/failure recovery keep the queue
+durable without turning it into an unbounded event log or a second judgment authority.
+
 ## Update History
+
+- 2026-08-15T13:27+02:00 — No route impact: L3's Pyright repair adds one test narrowing and does
+  not alter repository behavior or execution topology.
+- 2026-08-15T13:18+02:00 — No route impact: L3's repository-format pass changed only Python
+  layout; the dependency-aware queue feature and execution topology are unchanged.
+- 2026-08-15T13:08+02:00 — No route impact: L3's fast-hook repair only normalizes imports and
+  private test bindings; repository features and execution topology are unchanged.
+- 2026-08-15T12:53+02:00 — 260815-DAG-L3 route impact: completed the exact evidence, atomic
+  landing, durable-state, and lifecycle-recovery forcing for the same pre-closeout queue design;
+  repository routing and the mechanical-versus-judgment boundary are unchanged.
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: documented the durable pre-closeout
+  candidate queue, the manager/orchestrator authority split, exact evidence binding, atomic barriers,
+  and lifecycle-owned closeout/integration seams. Verification remains pinned to the leaf base until
+  closeout stamps the candidate commit.
 
 - 2026-08-15T02:42:41+02:00 — No route-model change: the L1 review repair closes task-document
   identity and writer-census bypasses inside the already documented execution-topology route; the

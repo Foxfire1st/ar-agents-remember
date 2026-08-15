@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T03:20:17+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated | 2026-08-15T14:05+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,6 +32,10 @@ suite also forces multi-parent DAG release, malformed migration envelopes, missi
 migration targets, unresolved masters, non-sprint use, and override identity confinement. A
 poisoned second-read regression proves wave derivation validates and returns one pinned sprint
 snapshot, and the out-of-root case asserts the actual `task.json` and `task.md` publication targets.
+The rollback proof compares every canonical JSON/Markdown task publication, permits the persistent
+coordination lock, and separately proves that neither queue state nor a pending WAL was published.
+The suite also directly imports the extracted queue-scope owner so targeted gate derivation keeps
+the new application module attached to this existing behavioral topology suite.
 
 ### Invariants And Boundaries
 
@@ -47,10 +51,25 @@ snapshot, and the out-of-root case asserts the actual `task.json` and `task.md` 
 | --- | --- | --- |
 | Graph schema cases force the closed structural contract. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:53-104 |
 | Migration and cross-document cases force exact membership, projection, and rollback. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:107-317 |
+| Cross-root publication failure restores canonical task documents and leaves no queue state or pending WAL. | `test_migration_refuses_non_exact_membership_and_rolls_back_cross_root_failure` | mcp/tests/test_task_execution_topology.py:589-635 |
 | The production policy under test lives in the application topology module. | `migrate_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:67-129 |
 
 ## Update History
 
+- 2026-08-15T14:05+02:00 — L3 final targeted-gate repair: directly forces queue-scope and
+  completion-topology error translation plus task-document publisher refusal without bypassing
+  the canonical topology owners.
+- 2026-08-15T13:18+02:00 — No content impact: repository Ruff formatting changed only layout;
+  topology, queue-scope ownership, rollback, and persistent-lock assertions are identical.
+- 2026-08-15T13:08+02:00 — No content impact: accepted Ruff's module/name ordering for the direct
+  queue-scope and task-publication imports; ownership and rollback assertions are unchanged.
+- 2026-08-15T11:39+02:00 — No content impact: rewrote the direct queue-scope module import to
+  Ruff's package-import form; the imported module identity and ownership assertion are unchanged.
+- 2026-08-15T11:25+02:00 — L3 static-gate repair: directly bound the extracted queue-scope owner
+  to the topology suite; all existing behavioral assertions remain in place.
+- 2026-08-15T11:07+02:00 — L3 content update: rollback assertions now distinguish canonical task
+  document publication from the persistent coordination lock and separately prove no queue state
+  or pending WAL survives a failed graph migration.
 - 2026-08-15T03:20:17+02:00 — 260815-DAG-L1 independent-review repair: corrected the
   out-of-repository no-write assertion to the real task-doc filenames and added a poisoned
   second-read regression that distinguishes snapshot-safe wave derivation from the former

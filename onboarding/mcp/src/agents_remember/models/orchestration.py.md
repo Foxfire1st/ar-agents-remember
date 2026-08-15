@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/orchestration.py`      |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-04T12:31+02:00                                 |
-| lastVerifiedCommitHash |                                                        `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |                                                        2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |                                                        `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
+| lastVerifiedCommitDate |                                                        2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ rate-limited nudge does not enqueue an inbox entry.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `orchestration_nudge_manager_payload` builder returns this response through `_tool_payload`. | "def orchestration_nudge_manager_payload(" | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
-| The response registry maps the administrative orchestration nudge operation to this model. | "\"orchestration_nudge_manager\": OrchestrationNudgeManagerResponse" | mcp/src/agents_remember/models/tool_registry.py:216-216 |
+| The response registry maps the administrative orchestration nudge operation to this model. | "\"orchestration_nudge_manager\": OrchestrationNudgeManagerResponse" | mcp/src/agents_remember/models/tool_registry.py:218-218 |
 
 ## Update History
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

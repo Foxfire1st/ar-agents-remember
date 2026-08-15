@@ -8,14 +8,30 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`|
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastUpdated | 2026-08-15T14:24+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [mcp overview](../overview.md)
+
+## L3 Final Targeted-Gate Repair
+
+The final closeout-queue repair set turns the prior targeted Dagger artifact into exact owner
+coverage: scheduling registers are forced against the canonical orchestration template and reject
+missing outer pipes; lifecycle completion/release, task-publication error translation, partial
+artifact removal, initial sprint-status WAL recovery, finalize refusal, and live MCP registration
+each run through their production owner. Response-conformance worktree fixtures always retain a
+real commanding sprint while `executionGraph` alone distinguishes queue-managed from intentionally
+unmanaged payloads.
+
+The next targeted artifact was behaviorally one assertion short and reached 99.92% changed
+coverage. Its final bounded correction distinguishes a normal worker process that durably records
+a failed command from an actual worker exception, then proves the exception combines a failed
+reversible queue release into the durable reason. This owns the last changed line and branch
+without weakening production.
 
 ## Final Ruff-Safe Package-Root Resolution
 
@@ -1118,7 +1134,50 @@ ordinary leaves, atomic barrier placement, ready-frontier reprioritization, exac
 master-exit candidates, leaf-owned remediation, retired-topology wording, and rectangular changed
 templates. The suite also proves every generated mirror is byte-identical to canonical doctrine.
 
+## 260815-DAG-L3 Closeout Queue Verification
+
+Eleven focused suites cover the queue at complementary altitudes. `test_closeout_queue.py` exercises
+models, authority, deterministic ordering, evidence drift, barriers, bounded state/WAL recovery,
+scaling, and sprint publication. `test_closeout_queue_models.py` owns the small strict-model cases
+and directly imports both split evidence owners so targeted scope derivation selects queue tests for
+either module. The focused `actions`, `blockers`, `candidate_evidence`, `evidence`, `graph`,
+`lifecycle`, and `store` suites exhaust the corresponding production owners without pushing the
+primary behavior suite beyond the file-size rail. `test_closeout_queue_forcing.py` poisons route evidence, graph and
+task-publication race windows, durable states, actor projections, crash cuts, raw-key serialization,
+and writer census. `test_closeout_queue_integration.py` crosses the real closeout/integration,
+cancellation/failure, exact-commit certification, and post-contract crash-recovery seams. Existing
+tool/response/reopen/isolation tests extend public registration and the adjacent governed writers.
+The forcing suite also proves that oversized canonical task refs fail at runtime while their shared
+projection schema stays within constraints the TypeScript generator renders exactly.
+
 ## Update History
+
+- 2026-08-15T13:27+02:00 — No route impact: the closeout Pyright repair adds one test-only
+  optional-result narrowing before an unchanged failure assertion.
+- 2026-08-15T13:18+02:00 — No route impact: repository Ruff formatting touched the eleven paths
+  reported by the closeout hook; all assertions, test ownership, and acceptance altitude remain
+  identical.
+- 2026-08-15T13:08+02:00 — No route impact: the closeout fast hook requested import ordering,
+  a non-overwritten loop binding, and removal of one unused fixture parameter; no assertion,
+  production behavior, test owner, or test altitude changed.
+- 2026-08-15T12:53+02:00 — L3 targeted-gate route impact: added seven focused queue-owner suites
+  and exact atomic/evidence/model/recovery branch matrices after the first full targeted artifact;
+  production acceptance policy and test altitude remain unchanged.
+- 2026-08-15T11:25+02:00 — L3 static-gate route impact: bound the extracted task-doc queue-scope
+  owner to the existing topology suite; no production assertion or test altitude changed.
+- 2026-08-15T11:07+02:00 — L3 Dagger-failure route impact: repaired canonical task fixtures,
+  real lifecycle ownership, exact stale-evidence diagnostics, post-contract recovery projection,
+  structured curator artifacts, graph rollback, and response graph completeness without weakening
+  the production queue contract.
+- 2026-08-15T10:24+02:00 — L3 file-size route impact: split queue model/ownership checks and
+  reopen refusal guards into focused suites while preserving the same production-path assertions.
+- 2026-08-15T10:10+02:00 — L3 targeted-gate route impact: bound both split evidence owners
+  directly to the primary queue suite without changing production behavior.
+- 2026-08-15T09:36+02:00 — L3 fast-hook repair: added forcing for runtime task-reference bounds
+  without unsupported projection-schema `maxLength` keywords.
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: added the behavior, forcing, and
+  production-bound queue suites plus adjacent registration/reopen/isolation coverage. Verification
+  remains closeout-owned.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2 route impact: expanded doctrine-plane forcing over the
   complete nature-aware topology, role authority, template shape, no-workbench, and synchronization

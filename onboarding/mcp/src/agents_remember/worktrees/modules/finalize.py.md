@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-23T22:50+02:00                     |
-| lastVerifiedCommitHash |                                            `100b40d6be4a7d03eedbb1164ce54e2e8a314038`|
-| lastVerifiedCommitDate |                                            2026-08-14T08:23:37+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash |                                            `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
+| lastVerifiedCommitDate |                                            2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -63,7 +63,19 @@ No external Domain Documentation source is configured for this memory repo.
 
 Finalization reports `enclosurePath` for the leaf being finalized and only archives completed root tasks when the finalized contract is a root `kind="series"` contract.
 
+## 260815-DAG-L3 Governed Finalization Writes
+
+Leaf/master task-document reconciliation during finalization now publishes through the bound sprint
+queue. Queue refusal returns a structured `task-queue-blocked` result rather than partially updating
+task status beside an active landing lane or atomic barrier.
+
 ## Update History
+
+- 2026-08-15T09:53+02:00 — No content impact: L3's Pyright repair narrows the already-required
+  leaf task root before the queue-bound publication callback; finalization ordering and task writes
+  remain unchanged.
+- 2026-08-15T09:10+02:00 — L3 content update: documented queue-governed finalization task writes
+  and explicit refusal projection; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: rebound the cleanup-delegation

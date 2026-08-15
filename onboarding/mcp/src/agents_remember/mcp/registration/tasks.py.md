@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-08-02T01:05+02:00                                    |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`                |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`                |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subta
 `remove_subtask` / `set_section`; `remove_subtask` also deletes the leaf doc (json+md) unless
 `subtask.keep_file`; `set_step` is leaf-only. `skip_step` takes an exact existing step and a nonblank
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
-        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:91-91; mcp/src/agents_remember/mcp/registration/tasks.py:100-102).
+        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:117-117; mcp/src/agents_remember/mcp/registration/tasks.py:126-128).
 
 The body splits that into two objects: `TaskDocTarget(repo_id, task_name, contract_path, slug)` —
 which document to edit — and `TaskDocEdit(fields, step, decision, subtask, section)` — what the edit
@@ -71,10 +71,20 @@ recreates everything.
 | --- | --- | --- |
 | The `task_doc` / `task_reopen` payload builders. | `task_doc_payload`, `task_reopen_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:19-30; mcp/src/agents_remember/mcp/tools/task_doc.py:33-46 |
 | The finalize builder. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
-| `FinalizeTaskDocs`. | `FinalizeTaskDocs` | mcp/src/agents_remember/application/worktree_tools.py:522-529 |
-| Target/edit splitting and the unset-edit read proved through a live server. | `test_task_doc_splits_the_document_target_from_the_edit`, `test_task_doc_leaves_every_edit_slot_unset_for_a_read` | mcp/tests/test_mcp_registration_wiring_tests_2.py:182-217; mcp/tests/test_mcp_registration_wiring_tests_2.py:219-230 |
+| `FinalizeTaskDocs`. | `FinalizeTaskDocs` | mcp/src/agents_remember/application/worktree_tools.py:530-537 |
+| Target/edit splitting and the unset-edit read proved through a live server. | `test_task_doc_splits_the_document_target_from_the_edit`, `test_task_doc_leaves_every_edit_slot_unset_for_a_read` | mcp/tests/test_mcp_registration_wiring_tests_2.py:203-238; mcp/tests/test_mcp_registration_wiring_tests_2.py:240-251 |
+
+## 260815-DAG-L3 `closeout_queue` Registration
+
+This registration surface now exposes `closeout_queue` with the strict request model and describes
+the manager/orchestrator authority split, revision/idempotency protocol, exact curator and planning
+evidence, deterministic ordering, atomic barrier semantics, bounded durable artifact, and
+task-addressed lifecycle ownership.
 
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: registered and documented the public closeout-queue
+  tool contract; verification remains closeout-owned.
 
 - 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: the public migration description
   now spells out the nested master reference/nature cells, graph node and reasoned-edge cells,

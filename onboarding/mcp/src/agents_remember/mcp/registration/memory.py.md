@@ -5,9 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-08-11T14:40+02:00                                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                 |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`                 |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -76,7 +76,16 @@ ledger and commits memory and is gated on clean drift unless `accept_drift=true`
 | Carryover selection packing is proved by `test_memory_carryover_plan_packs_the_selection`. | `test_memory_carryover_plan_packs_the_selection` | mcp/tests/test_mcp_registration_wiring_tests_1.py:380-404 |
 | Apply intent and default-message packing is proved by `test_memory_carryover_apply_carries_the_intent_note_and_default_messages`. | `test_memory_carryover_apply_carries_the_intent_note_and_default_messages` | mcp/tests/test_mcp_registration_wiring_tests_1.py:406-427 |
 
+## 260815-DAG-L3 Curator Attestation Registration
+
+The `memory_quality_check` registration now states that a full contract-scoped run atomically
+replaces both the rendered curator checklist and its structured, report-digest-bound JSON
+attestation; subset and unscoped calls write neither artifact.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: documented the paired structured curator
+  attestation on the public memory-quality tool; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T16:54+02:00 — Documented the single enclosure-local checklist side effect and the

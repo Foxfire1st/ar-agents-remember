@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_checkout_coordination_isolation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T00:00+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash |  `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
+| lastVerifiedCommitDate |  2026-08-15T14:36:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,16 @@ then proves live authority is retained while the daemon-role slot remains empty.
 - Lifecycle-operation coverage is deliberately narrower than daemon trust: it proves
   live task-operation authority and simultaneously proves no MCP/dashboard writer role.
 
+## 260815-DAG-L3 Writer-Role Projection
+
+The lifecycle-operation isolation case now also proves `declared_process_role()` returns the
+explicit detached writer role while the daemon-role view remains empty, preserving the distinction
+between execution/store writer identity and MCP/dashboard daemon ownership.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: extended isolation coverage to the detached durable
+  writer role; verification remains closeout-owned.
 
 - 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: added the positive lifecycle-operation boundary, proving live coordination config is admitted only with the explicit worker mode while `declared_daemon_role()` remains empty. The owner reports 46 focused tests across both affected suites, Ruff clean, and diff-check clean. Verification remains closeout-owned.
 - 2026-08-12T22:24+02:00 — 260731-EFA-L23 async-closeout follow-up: added the exact enclosure report-write case and its negative sibling-coordination assertion. The owner reports 14/14 checkout-isolation tests green under xdist auto. Verification remains closeout-owned.

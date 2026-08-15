@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T08:40+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -106,7 +106,18 @@ Series/master integration owns the single full Dagger acceptance before merge, p
 self-repository required-wrapper policy, and revalidates lineage/source tips after the long run.
 A missing Agents Remember wrapper or failed full result blocks before merge.
 
+## 260815-DAG-L3 Certified Integration Seam
+
+Integration now claims the certified candidate, recomputes the full graph/readiness/evidence and
+exact commit identity immediately before `_merge_integrated_commits`, and consumes the queue row
+after the source move. Recovery of an already-completed integration consumes the same exact record
+idempotently; no generic integration request may select or substitute a different leaf.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: recorded the certified claim, final irreversible
+  revalidation, exact consume, and completed-integration recovery path; verification remains
+  closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: replaced leaf targeted reruns with certified-commit reuse
   and retained full acceptance solely at master integration. Verification remains closeout-owned.

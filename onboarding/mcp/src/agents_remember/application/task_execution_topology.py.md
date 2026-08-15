@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T03:10:06+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,10 +49,20 @@ translation branch.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The migration validates, previews, and atomically publishes the sprint and commanded masters. | `migrate_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:67-129 |
-| Ordinary execution-topology edits are validated against canonical cross-document topology. | `enforce_execution_topology_edit` | mcp/src/agents_remember/application/task_execution_topology.py:132-160 |
+| Ordinary execution-topology edits are validated against canonical cross-document topology. | `enforce_execution_topology_edit` | mcp/src/agents_remember/application/task_execution_topology.py:193-222 |
 | The forcing suite proves migration, rollback, render, projection, and refusal behavior. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:107-317 |
 
+## 260815-DAG-L3 Sprint Publication Boundary
+
+Execution-topology migration now publishes through the sprint queue's completion/reopen WAL rather
+than writing the task batch independently. `require_commanded_masters_completed` validates the
+exact canonical graph and refuses a sprint terminal status when any commanded master is not
+`Completed` or still has completion blockers.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: documented queue-serialized topology migration and
+  exact commanded-master completion proof; verification remains closeout-owned.
 
 - 2026-08-15T03:10:06+02:00 — 260815-DAG-L1 targeted-Dagger repair: retained strict explicit
   migration while extending forcing proof across malformed request shapes, missing and wrong-kind

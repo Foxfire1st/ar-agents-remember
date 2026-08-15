@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T07:53+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -359,7 +359,17 @@ read/refusing-write behavior.
 | --- | --- | --- |
 | No sibling repository boundary is needed to explain this file. | n/a | n/a |
 
+## 260815-DAG-L3 Durable Queue Binding
+
+An admitted leaf contract now persists the immutable canonical sprint and candidate
+task-document-reference keys. Empty fields mean the leaf never crossed the explicit queue boundary;
+once present, lifecycle code uses them to distinguish genuine legacy absence from damaged or
+deleted queue topology and fails closed instead of silently bypassing enforcement.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: documented the additive durable sprint/candidate
+  queue binding fields and their fail-closed meaning; verification remains closeout-owned.
 - 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
 - 2026-08-12T20:24+02:00 — L23 curator: re-read the changed `WorktreeStatusFacts` consumer and confirmed lineage is a derived optional status field, not persisted contract vocabulary; verification remains closeout-owned.
 

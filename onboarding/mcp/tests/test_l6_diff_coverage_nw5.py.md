@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l6_diff_coverage_nw5.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,6 +40,8 @@ This module defines the test classes cited below; each row points at the exact s
 
 ## Update History
 
+- 2026-08-15T09:53+02:00 — No content impact: L3's Pyright repair supplies the newly required
+  contract fixture to the existing missing-document-root branch proof; its assertion is unchanged.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors derived from current worktree source. Verification metadata pinned until closeout stamps the code commit.

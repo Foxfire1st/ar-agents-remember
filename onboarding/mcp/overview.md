@@ -8,14 +8,21 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastUpdated | 2026-08-15T14:05+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## L3 Canonical Scheduling-Register Boundary
+
+The closeout queue consumes sprint judgments only from the exact orchestration-task Judgment and
+Priority Register sections. Their template headings, headers, rectangular separator rows, and
+outer Markdown pipes are part of the authority grammar; width-shaped prose or malformed table
+rows fail closed before they can grade or order a candidate.
 
 ## Current Structural Agent Boundary
 
@@ -164,7 +171,7 @@ native-history service, control implementation, or renderer.
 `mcp/` is the package-managed Agents Remember MCP server. It turns coordinator
 startup and provider lifecycle behavior into typed, host-side operations backed
 by importable Python services instead of model-edited coordinator scripts or
-coordinator `system/settings.json`. The tool surface gained `task_reopen` cit:([`task_reopen`], mcp/src/agents_remember/mcp/registration/tasks.py:19-31):
+coordinator `system/settings.json`. The tool surface gained `task_reopen` cit:([`task_reopen`], mcp/src/agents_remember/mcp/registration/tasks.py:45-57):
 reopen a fully landed leaf task under its exact leaf id — a task-domain state reset
 whose worktree recreation stays with `worktree_start`. The agent-orchestration L2
 adds `spawn_agent_session` — the agent-facing **dispatch** tool that CREATES a
@@ -835,7 +842,37 @@ exact proposed-candidate master-exit handoff and leaf-owned remediation boundary
 packaged doctrine and templates only—worktree/source-lineage mechanization remains owned by later
 leaves in the dependency-aware sprint master.
 
+## 260815-DAG-L3 Closeout Queue Control Plane
+
+`closeout_queue` is the MCP route for declaring reviewed leaves before history moves, recomputing
+their current readiness, and exposing deterministic ready/waiting/blocked/in-flight projections.
+The application layer derives the structural caller from the ambient seat; the worktree service
+separates manager logistics from orchestrator grading/selection; the models hold strict bounded
+requests and durable state; the control plane owns the canonical sprint artifact plus one-record
+WAL; and lifecycle hooks claim, certify, revalidate, consume, or reversibly release the exact
+candidate around closeout and integration. The queue consumes canonical task-document judgment and
+priority rows but never authors them.
+
 ## Update History
+
+- 2026-08-15T13:27+02:00 — No route impact: the Pyright repair is an explicit test-only
+  optional-result narrowing; MCP source, routing, and behavior are unchanged.
+- 2026-08-15T13:18+02:00 — No route impact: Ruff reformatted one strict evidence predicate and
+  ten queue/topology test modules; MCP behavior, routing, and ownership are unchanged.
+- 2026-08-15T13:08+02:00 — No route impact: the closeout fast-hook repair is import grouping and
+  test-only binding cleanup; queue routing, public behavior, and ownership are unchanged.
+- 2026-08-15T12:53+02:00 — L3 targeted-gate route impact: tightened canonical judgment-table
+  parsing and atomic finalized-landing proof while splitting their exhaustive forcing by owner; no
+  second queue, evidence authority, or test altitude was added.
+- 2026-08-15T11:25+02:00 — L3 static-gate route impact: separated task-doc queue-scope
+  classification and exact evidence comparisons from their orchestration callers without adding a
+  second authority or compatibility path.
+- 2026-08-15T11:07+02:00 — L3 Dagger-failure route impact: refined graph-governed task
+  publication, exact queue refusal diagnostics, and worker-owned recovery of a committed but
+  uncertified leaf while preserving one mechanistic queue and lifecycle authority.
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: added the cross-layer closeout-queue route
+  and its exact evidence, persistence, task-fact locking, and lifecycle boundaries. Verification
+  remains closeout-owned.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2 route impact: synchronized packaged lifecycle roles,
   criteria, briefs, and verdict templates with the ruled organizational/atomic topology and

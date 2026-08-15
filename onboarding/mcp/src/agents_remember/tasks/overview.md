@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`       |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -155,7 +155,20 @@ Task documents are the canonical sprint/master/leaf identity for source lineage,
 durable lifecycle addressing. A cleaned completed leaf is first converted into an exact task-reopen
 plan, before deliberately removed descendant branches can be mistaken for lineage failure.
 
+## 260815-DAG-L3 Queue-Governed Task Facts
+
+Sprint, master, and leaf task-document writers now publish through the sprint queue lock whenever
+the topology is queue-managed. The short selected/in-flight lane freezes the whole sprint task-fact
+set because one addressed leaf write can synchronize its master row; an atomic barrier permits only
+topology-stable recovery inside its own master. Sprint completion additionally proves every exact
+graph master is `Completed` with no unresolved completion rows, then atomically closes the quiescent
+queue; reopening reverses that closed state through the same recoverable publication path.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: documented queue-governed task
+  publication, whole-lane freeze, atomic recovery scope, and exact sprint completion/reopen rules.
+  Verification remains closeout-owned.
 
 - 2026-08-15T03:20:17+02:00 — 260815-DAG-L1 independent-review repair: graph-wave reads now bind
   validation and derivation to one resolved sprint snapshot, preserving deterministic output if

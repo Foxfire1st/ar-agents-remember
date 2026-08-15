@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-15T09:10+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -237,7 +237,16 @@ before the separate stale-base preflight, so `proceed-stale` cannot override a
 super-to-master structural gap; blocked progress is recorded as
 `source-lineage-blocked`.
 
+## 260815-DAG-L3 Governed Start Restamp
+
+Leaf start still restamps the current lifecycle id, but publication now flows through
+`publish_queue_bound_task_facts`. An atomic master's own topology-stable recovery can proceed while
+its barrier is held; another master or an active selected/in-flight lane refuses the task write.
+
 ## Update History
+
+- 2026-08-15T09:10+02:00 — L3 content update: documented queue-governed lifecycle restamping at
+  worktree start; verification remains closeout-owned.
 - 2026-08-14T06:36+02:00 — L23 final candidate review: start admission proves transitive lineage
   before mutation, routes cleaned completed leaves through task-reopen planning, and delegates
   result projection to `start_result.py`. Verification remains closeout-owned.

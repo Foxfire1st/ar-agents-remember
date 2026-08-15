@@ -13,6 +13,7 @@
     "mcp/src/agents_remember/mcp/tools/__init__.py",
     "mcp/src/agents_remember/mcp/tools/base.py",
     "mcp/src/agents_remember/mcp/tools/benchmark.py",
+    "mcp/src/agents_remember/mcp/tools/closeout_queue.py",
     "mcp/src/agents_remember/mcp/tools/core.py",
     "mcp/src/agents_remember/mcp/tools/gates.py",
     "mcp/src/agents_remember/mcp/tools/hosted_readiness.py",
@@ -29,8 +30,8 @@
     "mcp/src/agents_remember/mcp/tools/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 17,
-    "fileSidecars": 17,
+    "sourceFilesInScope": 18,
+    "fileSidecars": 18,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -39,6 +40,8 @@
     "agents_remember",
     "base",
     "benchmark",
+    "closeout",
+    "closeout_queue",
     "core",
     "doc",
     "files",
@@ -57,6 +60,7 @@
     "operator_inbox",
     "orchestration",
     "providers",
+    "queue",
     "read",
     "read_files",
     "readiness",
@@ -77,6 +81,7 @@
       "mcp/src/agents_remember/mcp/tools/__init__.py",
       "mcp/src/agents_remember/mcp/tools/base.py",
       "mcp/src/agents_remember/mcp/tools/benchmark.py",
+      "mcp/src/agents_remember/mcp/tools/closeout_queue.py",
       "mcp/src/agents_remember/mcp/tools/core.py",
       "mcp/src/agents_remember/mcp/tools/gates.py",
       "mcp/src/agents_remember/mcp/tools/hosted_readiness.py",
@@ -99,6 +104,8 @@
       "base",
       "benchmark.py",
       "benchmark",
+      "closeout_queue.py",
+      "closeout_queue",
       "core.py",
       "core",
       "gates.py",
@@ -133,14 +140,12 @@
       "ACPUI",
       "mcp/src/agents_remember/mcp/tools",
       "route-local-overview",
-      "aeca9a2839c965218a61a3040e15cb84367ebeca",
+      "17987fa66a642306eb8d20fa9a4bff2b881550d2",
       "/../../../../overview.md",
       "mcp/tools/",
       "mcp/tools.py",
       "01f503d",
-      "task_reopen_payload",
-      "PUBLIC_TOOLS",
-      "task_reopen"
+      "task_reopen_payload"
     ]
   },
   "fallback": {

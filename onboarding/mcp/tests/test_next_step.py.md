@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_next_step.py`              |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:05+02:00                     |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -184,7 +184,7 @@ the `lifecycle_start` payload it asserts the rundown on.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The next-step engine under test. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
-| The choke point that attaches `nextStep` to every response. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
+| The choke point that attaches `nextStep` to every response. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | `lifecycle_start_payload` whose `frontHalfRundown` + `nextStep` are asserted. | `lifecycle_start_payload` | mcp/src/agents_remember/mcp/tools/lifecycle.py:20-21 |
 | The ambient lifecycle installed/started/promoted by the edge tests. | `AmbientLifecycle`; `install_ambient` | mcp/src/agents_remember/observer/ambient.py:112-635; mcp/src/agents_remember/observer/ambient.py:669-671 |
 | The projected `LifecycleState` the pure tests construct. | `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:156-179 |

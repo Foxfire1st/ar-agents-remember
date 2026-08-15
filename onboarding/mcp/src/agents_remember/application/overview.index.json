@@ -23,6 +23,7 @@
   "coveredFiles": [
     "mcp/src/agents_remember/application/__init__.py",
     "mcp/src/agents_remember/application/benchmark_tools.py",
+    "mcp/src/agents_remember/application/closeout_queue.py",
     "mcp/src/agents_remember/application/completion_cleanup.py",
     "mcp/src/agents_remember/application/context_packet.py",
     "mcp/src/agents_remember/application/coordination_tools.py",
@@ -37,6 +38,7 @@
     "mcp/src/agents_remember/application/provider_runtime.py",
     "mcp/src/agents_remember/application/provider_tools.py",
     "mcp/src/agents_remember/application/read_files.py",
+    "mcp/src/agents_remember/application/task_doc_queue_scope.py",
     "mcp/src/agents_remember/application/task_doc_tools.py",
     "mcp/src/agents_remember/application/task_execution_topology.py",
     "mcp/src/agents_remember/application/task_ref.py",
@@ -48,8 +50,8 @@
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 32,
-    "fileSidecars": 25,
+    "sourceFilesInScope": 34,
+    "fileSidecars": 27,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -59,6 +61,8 @@
     "benchmark",
     "benchmark_tools",
     "cleanup",
+    "closeout",
+    "closeout_queue",
     "completion",
     "completion_cleanup",
     "context",
@@ -92,6 +96,7 @@
     "provider",
     "provider_runtime",
     "provider_tools",
+    "queue",
     "read",
     "read_files",
     "readiness",
@@ -100,6 +105,7 @@
     "response",
     "results",
     "runtime",
+    "scope",
     "services",
     "spawn",
     "src",
@@ -107,6 +113,7 @@
     "step",
     "structural",
     "task",
+    "task_doc_queue_scope",
     "task_doc_tools",
     "task_execution_topology",
     "task_ref",
@@ -131,6 +138,7 @@
       "mcp/src/agents_remember/application/structural",
       "mcp/src/agents_remember/application/__init__.py",
       "mcp/src/agents_remember/application/benchmark_tools.py",
+      "mcp/src/agents_remember/application/closeout_queue.py",
       "mcp/src/agents_remember/application/completion_cleanup.py",
       "mcp/src/agents_remember/application/context_packet.py",
       "mcp/src/agents_remember/application/coordination_tools.py",
@@ -145,17 +153,18 @@
       "mcp/src/agents_remember/application/provider_runtime.py",
       "mcp/src/agents_remember/application/provider_tools.py",
       "mcp/src/agents_remember/application/read_files.py",
+      "mcp/src/agents_remember/application/task_doc_queue_scope.py",
       "mcp/src/agents_remember/application/task_doc_tools.py",
       "mcp/src/agents_remember/application/task_execution_topology.py",
-      "mcp/src/agents_remember/application/task_ref.py",
-      "mcp/src/agents_remember/application/terminal_spawn_results.py",
-      "mcp/src/agents_remember/application/terminal_tools.py"
+      "mcp/src/agents_remember/application/task_ref.py"
     ],
     "anchorHints": [
       "__init__.py",
       "__init__",
       "benchmark_tools.py",
       "benchmark_tools",
+      "closeout_queue.py",
+      "closeout_queue",
       "completion_cleanup.py",
       "completion_cleanup",
       "context_packet.py",
@@ -184,6 +193,8 @@
       "provider_tools",
       "read_files.py",
       "read_files",
+      "task_doc_queue_scope.py",
+      "task_doc_queue_scope",
       "task_doc_tools.py",
       "task_doc_tools",
       "task_execution_topology.py",
@@ -195,11 +206,7 @@
       "terminal_tools.py",
       "terminal_tools",
       "tool_response.py",
-      "tool_response",
-      "worktree_services.py",
-      "worktree_services",
-      "worktree_status.py",
-      "worktree_status"
+      "tool_response"
     ]
   },
   "fallback": {

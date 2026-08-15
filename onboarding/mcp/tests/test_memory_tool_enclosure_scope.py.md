@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_tool_enclosure_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-15T11:07+02:00 |
+| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
+| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,9 @@ The fixture creates official code/memory repositories plus linked leaf worktrees
 contract. Route-index tests prove writes and dry runs target only the requested tree. Quality and
 drift tests prove reads use both named leaf roots. Contract-scoped quality additionally asserts that
 the leaf base reaches `DriftCheckContext.unstamped_code_commit`, while the bare official call leaves
-that field `None`; this is temporary claim-comparison provenance, not metadata mutation.
+that field `None`; this is temporary claim-comparison provenance, not metadata mutation. A full
+contract check atomically replaces the human Markdown checklist and publishes its structured JSON
+attestation as the only two files in the enclosure-local report directory.
 
 Refusal tests cover foreign-repository contracts, missing memory worktrees, internal-memory leaves,
 out-of-root contract paths, and repositories without memory configuration. Every case fails closed.
@@ -66,7 +68,7 @@ application source plus this regression suite.
 | --- | --- | --- |
 | The fixture constructs distinct official and leaf repositories joined by one enclosure contract. | `_Enclosure`; `_enclosure` | mcp/tests/test_memory_tool_enclosure_scope.py:69-159 |
 | Route-index tests prove scoped writes/dry-runs leave the non-target tree untouched. | `RouteIndexRefreshWritesTheNamedTreeTests` | mcp/tests/test_memory_tool_enclosure_scope.py:176-215 |
-| Quality tests prove leaf selection, temporary base forwarding, and strict bare-call provenance. | `MemoryQualityCheckReadsTheNamedTreeTests` | mcp/tests/test_memory_tool_enclosure_scope.py:219-288; mcp/tests/test_memory_tool_enclosure_scope.py:290-322 |
+| Quality tests prove leaf selection, paired Markdown/JSON curator publication, temporary base forwarding, and strict bare-call provenance. | `MemoryQualityCheckReadsTheNamedTreeTests` | mcp/tests/test_memory_tool_enclosure_scope.py:219-289; mcp/tests/test_memory_tool_enclosure_scope.py:291-329 |
 | Drift tests measure the named leaf onboarding against the named leaf code. | `DriftCheckReadsTheNamedTreesTests` | mcp/tests/test_memory_tool_enclosure_scope.py:324-342 |
 | Invalid enclosures refuse and the helper constructors preserve typed contract/config shapes. | `RefusalTests`; `_replaced`; `_config_without_memory_root` | mcp/tests/test_memory_tool_enclosure_scope.py:345-425 |
 
@@ -80,6 +82,9 @@ No cross-repository implementation dependency governs this test.
 
 ## Update History
 
+- 2026-08-15T11:07+02:00 — L3 content update: the enclosure-local quality fixture now expects
+  both the human curator report and its structured JSON attestation, matching the queue evidence
+  contract without broadening write scope.
 - 2026-08-11T16:54+02:00 — Added full-check proof that one enclosure-local curator report is
   atomically replaced without siblings, plus subset-call non-interference and component-count
   arithmetic.
