@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_landing.py`                      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:52+02:00                           |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`       |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -92,7 +92,7 @@ index or a prefix match — a positional assertion here would have broken on the
 | The landing-arc observation under test (`landing_refs` + `_default_branch`), and the `_pr_for` `env=git_environment()` (L124) the selector test asserts. | `landing_refs`, `_default_branch`, `_pr_for` | mcp/src/agents_remember/worktrees/modules/landing.py:69-90; mcp/src/agents_remember/worktrees/modules/landing.py:93-150; mcp/src/agents_remember/worktrees/modules/landing.py:229-258 |
 | The `WorktreeContract` dataclass the fixture builds. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285 |
 | `GIT_REPOSITORY_SELECTOR_ENV` (imported, not restated — L21) and the `run_git` whose spawn the shared-module patch also intercepts. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42 |
-| The package-wide AST sweep that covers git spawns but deliberately not `gh`, which is why the `gh` property is asserted here instead. | `gh` | mcp/tests/test_git_command.py:598-598 |
+| The package-wide AST sweep that covers git spawns but deliberately not `gh`, which is why the `gh` property is asserted here instead. | `gh` | mcp/tests/test_git_command.py:646-646 |
 
 ## Series-Contract Notes
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_worktree_and_observer_helpers.py`  |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-12T23:27+02:00                             |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`         |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-16T04:06+02:00                             |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`         |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -77,14 +77,21 @@ deciding anything.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The application provider-runtime teardown helpers under test are `_docker_rm_f` / `_docker_network_rm` (moved from worktrees by L9). | "def _docker_rm_f"; "def _docker_network_rm" | mcp/src/agents_remember/application/provider_runtime.py:254-254; mcp/src/agents_remember/application/provider_runtime.py:269-269 |
-| The cleanup helper under test is `delete_branch_if_merged`. | "def delete_branch_if_merged(repo: Path" | mcp/src/agents_remember/worktrees/modules/cleanup.py:60-75 |
+| The cleanup helper under test is capability-bound `delete_branch_if_merged`. | "def delete_branch_if_merged(" | mcp/src/agents_remember/worktrees/modules/cleanup.py:188-210 |
 | The onboarding helper under test is `route_overview_metadata_refresh_plan_for_context`. | "def route_overview_metadata_refresh_plan_for_context" | mcp/src/agents_remember/worktrees/modules/onboarding.py:125-125 |
-| The start-contract helper under test is `_parent_series_contract`. | "def _parent_series_contract" | mcp/src/agents_remember/worktrees/modules/start_contract.py:444-444 |
+| The start-contract helper under test is `_parent_series_contract`. | "def _parent_series_contract" | mcp/src/agents_remember/worktrees/modules/start_contract.py:775-775 |
 | The task-resolver helpers under test are `archive_completed_root_task` and `series_contract_path`. | "def archive_completed_root_task"; "def series_contract_path" | mcp/src/agents_remember/worktrees/task_resolver.py:47-47; mcp/src/agents_remember/worktrees/task_resolver.py:147-147 |
 | The observer helpers under test: `_inspect_containers` and `_inspect_containers_individually`. Both modules import `run_command`/`docker_command` at module level, so the tests patch `snapshots.run_command` and `provider_teardown.run_command` separately — patching one does not cover the other. | `_inspect_containers`; `_inspect_containers_individually` | mcp/src/agents_remember/serving/projections/snapshots.py:353-375; mcp/src/agents_remember/serving/projections/snapshots.py:378-401 |
-| The lifecycle suites whose happy paths these arms complete. | `WorktreeSupportTests`; `ContractMemoryModeTests` | mcp/tests/test_worktree_edge_paths.py:120-189; mcp/tests/test_worktree_support.py:671-746 |
+| The lifecycle suites whose happy paths these arms complete. | `WorktreeSupportTests`; `ContractMemoryModeTests` | mcp/tests/test_worktree_edge_paths.py:123-192; mcp/tests/test_worktree_support.py:767-842 |
+
+## 260815-DAG-L4 Integration-Authority Forcing
+
+This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-16T04:06+02:00 — Dagger fixture repair: parent-series adoption cases use the task-derived sprint super as their source rather than repository default.
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 - 2026-08-14T06:40+02:00 — L23 final candidate review: helper tests pin task-addressed operation
   projection and lineage guidance while keeping recovery identity plane-private.
 - 2026-08-12T23:27+02:00 — 260731-EFA-L23 Dagger diff-coverage follow-up: added the external-overview boundary case. A source-matched route outside the supplied memory Git tree remains required, while absence of comparable memory revision evidence yields no false body-review classification. The owner reports the focused test passing, exact four-branch coverage restored, and exact-file Ruff clean. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_controlplane_gates_seam.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-13T12:53+02:00                                            |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`                                        |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-16T04:06+02:00                                            |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                                        |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -47,7 +47,16 @@ The seam tests prove that current lineage and an exact candidate-bound passing r
 checked before curator host creation and again at lifecycle exit. Neither brief prose nor a stale
 verdict can bypass control-plane admission.
 
+## 260815-DAG-L4 Integration-Authority Forcing
+
+This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+
 ## Update History
+
+- 2026-08-16T07:10+02:00 — L4 review repair: the apply-only handover seam models the real operation record's empty recovery tuple so completed-recovery admission remains type-faithful.
+- 2026-08-16T05:18+02:00 — Dagger fixture repair: the application plumbing case supplies a real absolute settings file and configured repository alias before asserting the selected gate policy reaches integration preview.
+- 2026-08-16T04:06+02:00 — Dagger fixture repair: dry-run integration gate tests provide configured-path and replay-source facts so they reach the intended handover guard rather than fail earlier authority construction.
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 - 2026-08-14T06:38+02:00 — L23 final candidate review: seam tests prove curator dispatch and
   lifecycle exit cannot bypass current-lineage or candidate-bound route-review admission.
 

@@ -6,8 +6,8 @@
 | path                   | `scripts/run-gated-integration.py`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -125,7 +125,7 @@ command before executing, so an operator sees what they are about to spend befor
 | GitHub workflows are forbidden from invoking this runner or host pytest; lifecycle acceptance owns these paths through Dagger. | `test_github_pr_checks_do_not_bypass_dagger_for_gated_pytest_paths` | mcp/tests/test_gated_integration_runner.py:139-146 |
 | The inventory test: every marker is applied, every marker has a runner entry, `CREDENTIAL_FREE` is exactly the two no-vendor-account paths, and the dry-run node exists. | `GatedPathInventoryTests` | mcp/tests/test_gated_integration_runner.py:86-157 |
 | The Pi RPC smoke suite this runner installs and drives offline. | `install_pinned_pi`; `PiRpcRealSmokeTests` | mcp/tests/test_pi_rpc_real_smoke.py:52-83; mcp/tests/test_pi_rpc_real_smoke.py:236-499 |
-| The real-MCP class whose planning test the generated settings file serves. | `RealMcpIntegrationTests`; `test_real_mcp_grepai_search_dry_run_uses_workspace_scope` | mcp/tests/test_tools.py:913-993 |
+| The real-MCP class whose planning test the generated settings file serves. | `RealMcpIntegrationTests`; `test_real_mcp_grepai_search_dry_run_uses_workspace_scope` | mcp/tests/test_tools.py:1020-1100 |
 
 ## R39 Gated-Path Selection
 

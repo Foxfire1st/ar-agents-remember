@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/controlplane/closeout_queue_store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,13 @@ No configured Domain Documentation source applies.
 
 No meaningful cross-repository reference applies.
 
+## 260815-DAG-L4 Authority Boundary
+
+L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 
 - 2026-08-15T09:53+02:00 — No content impact: L3's Pyright repair made the sprint-publication
   callback/result generic explicit; runtime publication, locking, WAL, and recovery behavior are

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/wireFixtureGuard.test.ts`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -187,8 +187,8 @@ an error.
 | The `ActivePageCursor` brand mint. | `pageCursor` | dashboard/src/test/fixtures/conversationWire.ts:53-55 |
 | The `ActiveEventCursor` brand mint. | `eventCursor` | dashboard/src/test/fixtures/conversationWire.ts:58-60 |
 | The `LibraryConversationKey` brand mint. | `libraryConversationKey` | dashboard/src/test/fixtures/conversationWire.ts:63-65 |
-| The contract test suppresses invalid master/series property access with `@ts-expect-error`. | "masterRow.createdAt"; "seriesRow.linkedLifecycleId" | dashboard/src/test/contract.test.ts:565-565; dashboard/src/test/contract.test.ts:567-567 |
-| The contract test suppresses the carried `refusedPolarity` property. | "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:586-586 |
+| The contract test suppresses invalid master/series property access with `@ts-expect-error`. | "masterRow.createdAt"; "seriesRow.linkedLifecycleId" | dashboard/src/test/contract.test.ts:566-566; dashboard/src/test/contract.test.ts:568-568 |
+| The contract test suppresses the carried `refusedPolarity` property. | "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:587-587 |
 | The deliberate widening in the topology suite. | `fromANewerServer` | dashboard/src/topology/model.test.ts:52-54 |
 | KNOWN GAP, live: the inline `HarnessInfo` response shape is outside the marker vocabulary. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
 | KNOWN GAP, live: `WithdrawalResultWire` is outside the marker vocabulary. | `WithdrawalResultWire` | dashboard/src/data/submissionLifecycleClient.ts:40-46 |

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_subprocess_hygiene.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -38,7 +38,7 @@ spread is accepted as a deliberate choice (e.g. `command_runner`).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The proving harness for the bug class this guards. | `StdioTransportTests` | mcp/tests/test_mcp_stdio_transport.py:99-136 |
+| The proving harness for the bug class this guards. | `StdioTransportTests` | mcp/tests/test_mcp_stdio_transport.py:142-179 |
 
 ## Update History
 

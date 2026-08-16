@@ -20,6 +20,7 @@
     "mcp/src/agents_remember/controlplane/expectation_rows.py",
     "mcp/src/agents_remember/controlplane/gate_decisions.py",
     "mcp/src/agents_remember/controlplane/gate_policy.py",
+    "mcp/src/agents_remember/controlplane/integration_authority_lock.py",
     "mcp/src/agents_remember/controlplane/interaction_retention.py",
     "mcp/src/agents_remember/controlplane/operator_inbox_records.py",
     "mcp/src/agents_remember/controlplane/operator_inbox_store.py",
@@ -33,8 +34,8 @@
     "mcp/src/agents_remember/controlplane/store.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 21,
-    "fileSidecars": 21,
+    "sourceFilesInScope": 22,
+    "fileSidecars": 22,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -45,6 +46,7 @@
     "artifacts",
     "attention",
     "attention_dismissals",
+    "authority",
     "closeout",
     "closeout_queue_records",
     "closeout_queue_store",
@@ -62,8 +64,11 @@
     "inbox",
     "init",
     "init__",
+    "integration",
+    "integration_authority_lock",
     "interaction",
     "interaction_retention",
+    "lock",
     "mcp",
     "notifier",
     "nudges",
@@ -104,6 +109,7 @@
       "mcp/src/agents_remember/controlplane/expectation_rows.py",
       "mcp/src/agents_remember/controlplane/gate_decisions.py",
       "mcp/src/agents_remember/controlplane/gate_policy.py",
+      "mcp/src/agents_remember/controlplane/integration_authority_lock.py",
       "mcp/src/agents_remember/controlplane/interaction_retention.py",
       "mcp/src/agents_remember/controlplane/operator_inbox_records.py",
       "mcp/src/agents_remember/controlplane/operator_inbox_store.py",
@@ -137,6 +143,8 @@
       "gate_decisions",
       "gate_policy.py",
       "gate_policy",
+      "integration_authority_lock.py",
+      "integration_authority_lock",
       "interaction_retention.py",
       "interaction_retention",
       "operator_inbox_records.py",
@@ -162,9 +170,7 @@
       "L23",
       "EFA",
       "L21",
-      "mcp/src/agents_remember/controlplane",
-      "route-local-overview",
-      "17987fa66a642306eb8d20fa9a4bff2b881550d2"
+      "mcp/src/agents_remember/controlplane"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/tasks/document_refs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T03:20:17+02:00 |
-| lastVerifiedCommitHash |  `28a66feae742bf02fe4b647388b220f921cc7007`|
-| lastVerifiedCommitDate |  2026-08-15T03:44:49+02:00|
+| lastUpdated | 2026-08-16T05:27+02:00 |
+| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,6 +37,9 @@ commanded master; `execution_waves` exposes only the graph-derived order after v
 sprint snapshot it will dereference, so a concurrent migration cannot split validation from the
 returned graph. Override resolution retains independent root-confinement and repository-identity
 guards for pre-publication candidates.
+`resolve_candidate` exposes that same canonical override resolver to other task-authority owners;
+callers do not duplicate the root and repository checks when inspecting a document that has not
+yet been written.
 
 ### Conventions
 
@@ -69,7 +72,16 @@ The task documents live in the configured coordination root, but the resolver co
 inside agents-remember and has no sibling-repository code dependency.
 
 
+## 260815-DAG-L4 Authority Boundary
+
+L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+
 ## Update History
+
+- 2026-08-16T05:27+02:00 — L4 exact-review repair: exposed the existing canonical override
+  resolver through `resolve_candidate`, preserving its root-confinement and repository-identity
+  checks for live-leaf publication authority without adding a second validation route.
+- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 
 - 2026-08-15T03:20:17+02:00 — 260815-DAG-L1 independent-review repair: `execution_waves` now pins
   the first resolved sprint into topology validation before deriving its waves, closing the

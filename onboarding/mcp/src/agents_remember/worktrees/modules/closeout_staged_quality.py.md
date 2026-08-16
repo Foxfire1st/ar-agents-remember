@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-14T05:26Z |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate |  2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ No configured Domain Documentation source applies to this repository-internal en
 | --- | --- | --- |
 | Linked-worktree and conflict refusals precede any index rewrite. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:20-51 |
 | The staged gate proves the accepted tree around reset, staging, hook execution, and the targeted Dagger call. | `gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129 |
-| Closeout imports this owner under the established private call name. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:37-37 |
+| Closeout imports this owner under the established private call name. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:47-47 |
 
 ## Cross-Repo References
 

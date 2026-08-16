@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle_service.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -59,7 +59,7 @@ structured `ok: false` payloads for MCP callers.
 | --- | --- | --- |
 | MCP provider tool application entry points call this service layer. | ["from agents_remember.providers import lifecycle_service"] | mcp/src/agents_remember/application/provider_tools.py:21-21 |
 | CLI/operator implementation functions remain behind the lifecycle facade. | `_EXPORT_MODULES`, `__getattr__` | mcp/src/agents_remember/providers/lifecycle/__init__.py:9-24; mcp/src/agents_remember/providers/lifecycle/__init__.py:27-34 |
-| Tests verify service calls do not route through `lifecycle.main()`. | `test_typed_cgc_payloads_build_fixed_native_commands` | mcp/tests/test_tools.py:662-742 |
+| Tests verify service calls do not route through `lifecycle.main()`. | `test_typed_cgc_payloads_build_fixed_native_commands` | mcp/tests/test_tools.py:767-847 |
 
 ## Update History
 

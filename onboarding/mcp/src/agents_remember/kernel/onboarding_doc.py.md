@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-04T03:03+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                  |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                                  |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -64,7 +64,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The closeout onboarding module imports the body/history classifiers and metadata-row helper from this kernel module. | "from agents_remember.kernel.onboarding_doc import (" | mcp/src/agents_remember/worktrees/modules/onboarding.py:10-10 |
 | Route-overview and sidecar classification gates consume the meaningful-body, new-history, and no-impact-marker helpers. | `_overview_revision`; `_governing_overview_bucket`; `_route_overview_bucket`; `classify_sidecar_updates` | mcp/src/agents_remember/worktrees/modules/onboarding.py:262-287; mcp/src/agents_remember/worktrees/modules/onboarding.py:323-339; mcp/src/agents_remember/worktrees/modules/onboarding.py:342-372; mcp/src/agents_remember/worktrees/modules/onboarding.py:694-748 |
 | Route-overview and sidecar metadata refresh paths consume `onboarding_metadata_row`. | `refresh_route_overview_metadata_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:457-488; mcp/src/agents_remember/worktrees/modules/onboarding.py:853-894 |
-| The public worktree-manager facade imports and re-exports `onboarding_metadata_row`. | "from agents_remember.worktrees.modules.onboarding import (" | mcp/src/agents_remember/worktrees/git_worktree_manager.py:76-84 |
+| The public worktree-manager facade imports and re-exports `onboarding_metadata_row`. | "from agents_remember.worktrees.modules.onboarding import (" | mcp/src/agents_remember/worktrees/git_worktree_manager.py:66-66 |
 | Helper unit tests cover body stripping, history extraction, and marker detection. | `test_strips_metadata_rows_and_update_history`; `test_extracts_history_lines_without_heading`; `test_detects_content_marker` | mcp/tests/test_onboarding_doc.py:43-50; mcp/tests/test_onboarding_doc.py:76-78; mcp/tests/test_onboarding_doc.py:99-102 |
 
 ## Update History

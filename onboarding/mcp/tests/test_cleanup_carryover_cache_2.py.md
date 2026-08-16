@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_cleanup_carryover_cache_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-16T02:51+02:00                                            |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                                        |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -21,6 +21,8 @@ Part of the 260731-EFA-L7 in-place split family for `test_cleanup_carryover_cach
 ## Code Commentary
 
 - `CitationCacheLifecycleTests2`
+- Cleanup and abandonment cache cases assert only the exact contract-owned code and memory branch
+  results; the retired synthesized `<memory-work-branch>-integration` result is absent.
 
 ## Invariants And Boundaries
 
@@ -33,6 +35,9 @@ Part of the 260731-EFA-L7 in-place split family for `test_cleanup_carryover_cach
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-16T02:51+02:00 — L4 terminal authority: reconciled cache lifecycle expectations with
+  the exact contract-owned terminal branch set after removal of the synthesized replay branch.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:54+02:00     |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -65,8 +65,8 @@ stale heartbeat and does not block (GitHub #53).
 **Carryover hard-guard.** `cleanup_result` now refuses (raises `RuntimeError`,
 message mentions "carryover") when integration is `completed` but
 `guidance.carryover_done(contract)` is false — because cleanup deletes the parked
-memory branch that `memory_carryover_apply` reads from, so cleaning up before the
-carry would silently discard it. The proof is the OFFICIAL ledger (`carryover_done`,
+memory branch before its exact landed mapping has been proven on the named source.
+The proof is the OFFICIAL ledger (`carryover_done`,
 imported from `guidance`), **not** a contract stamp; `internal`/`disabled` memory has
 nothing to carry and passes vacuously.
 
@@ -169,18 +169,27 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:26-26 |
-| `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:190-190 |
-| Integration creates the scratch memory integration branch name that cleanup may remove. | "def integration_branch" | mcp/src/agents_remember/worktrees/modules/integrate.py:121-121 |
+| `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:191-191 |
+| Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers. | `_terminal_mutation_authority` | mcp/src/agents_remember/worktrees/modules/cleanup.py:67-102 |
 | Provider teardown is delegated to this module. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
-| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:303-335 |
-| The carryover guard, work-branch cleanup, source-branch preservation, remote work-branch deletion, and dry-run directory-plan reporting are pinned here. | `CleanupCarryoverGuardTests` | mcp/tests/test_cleanup_carryover.py:181-197 |
+| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:392-392 |
+| The carryover guard, work-branch cleanup, source-branch preservation, remote work-branch deletion, and dry-run directory-plan reporting are pinned here. | `CleanupCarryoverGuardTests` | mcp/tests/test_cleanup_carryover.py:303-318 |
 | Shared drift snapshot removal helper used by cleanup. | `remove_drift_snapshot` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:27-35 |
 | `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, the remote timeout class `_remote_git` passes. | `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:72-72 |
 | `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. | `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
-| Worktree tests cover cleanup preconditions and completed cleanup state. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:671-746 |
-| Cleanup tests prove both real and dry-run removal of the enclosure's exact curator reports directory. | `test_cleanup_removes_child_branches_and_preserves_parent_sources`; `test_worktree_group_would_remove_when_only_scheduled_paths_remain` | mcp/tests/test_cleanup_carryover.py:285-368; mcp/tests/test_cleanup_carryover.py:436-482 |
+| Worktree tests cover cleanup preconditions and completed cleanup state. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:767-842 |
+| Cleanup tests prove both real and dry-run removal of the enclosure's exact curator reports directory. | `test_cleanup_removes_child_branches_and_preserves_parent_sources`; `test_worktree_group_would_remove_when_only_scheduled_paths_remain` | mcp/tests/test_cleanup_carryover.py:436-518; mcp/tests/test_cleanup_carryover.py:586-614 |
+
+## 260815-DAG-L4 Integration-Authority Impact
+
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+
+For an atomic series, `cleanup_result` performs queue-release and child-retirement admission before preflight. The mutating publication then holds queue followed by repository authority, rechecks child retirement, and supplies `_terminal_mutation_authority` an operation- and contract-bound permit that is invalidated immediately after publication. Leaf authority remains contract-derived under the repository lock.
 
 ## Update History
+
+- 2026-08-16T00:45+02:00 — Recorded the queue-owned atomic-series terminal permit and corrected cleanup guidance to the exact named-source ledger proof; verification remains closeout-owned.
+- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T16:54+02:00 — Added exact garbage collection for the reserved enclosure `reports/`

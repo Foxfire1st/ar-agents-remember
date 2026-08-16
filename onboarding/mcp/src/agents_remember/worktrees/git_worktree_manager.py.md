@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -90,11 +90,17 @@ documented by the `modules/overview.md` route overview.
 | Provider setup performs isolated provider seed and runtime preparation. | `ProviderSetupRequest`; `prepare_enabled_providers`; `write_isolated_provider_settings` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:219-233; mcp/src/agents_remember/providers/provider_setup.py:591-629 |
 | Worktree status packets project lifecycle payloads into context packets. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
 | Worktree contract serialization lives in the package worktree contract module. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
-| The facade declares its public worktree lifecycle result exports. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:106-187 |
+| The facade declares its public worktree lifecycle result exports. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:96-167 |
 | Terminal lifecycle finalization is implemented in the extracted module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:55-141 |
 | Long-path-safe filesystem wrappers live in the kernel filesystem helper. | `extended_path`; `exists`; `is_file` | mcp/src/agents_remember/kernel/filesystem.py:16-25; mcp/src/agents_remember/kernel/filesystem.py:28-29; mcp/src/agents_remember/kernel/filesystem.py:32-33 |
 
+## 260815-DAG-L4 Integration-Authority Impact
+
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

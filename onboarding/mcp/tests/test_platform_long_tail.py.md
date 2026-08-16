@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_platform_long_tail.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -52,7 +52,13 @@ The long-tail opener tests now call the application-owned refusal translator
 with `OpenTerminalResult`, preserving their public payload assertions after the
 builder left `terminal_tools.py`.
 
+## 260815-DAG-L4 Integration-Authority Forcing
+
+This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: reconciled the extracted terminal refusal boundary in long-tail coverage; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_platform_long_tail.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.

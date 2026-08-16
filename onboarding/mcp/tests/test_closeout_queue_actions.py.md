@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_queue_actions.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,13 @@ operation recovery, and legal projections for manager and orchestrator callers.
 | Barrier release and abort call their exact evidence seams. | `test_release_and_abort_barrier_require_exact_owner_and_empty_block` | mcp/tests/test_closeout_queue_actions.py:424-500 |
 | Lifecycle legal operations require the exact durable owner. | `test_owned_lifecycle_operation_requires_exact_kind_contract_and_fingerprint` | mcp/tests/test_closeout_queue_actions.py:592-626 |
 
+## 260815-DAG-L4 Integration-Authority Forcing
+
+This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-15T14:05+02:00 — L3 final targeted-gate repair: added the successful nondefault
   admission transition and missing terminal-leaf refusal, completing the real action/declaration

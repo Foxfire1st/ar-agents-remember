@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_abandon.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-21T04:10+02:00                     |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -56,11 +56,15 @@ providers.
 `AbandonBranchSafetyTests` uses real Git repos (via `test_worktree_support`
 helpers):
 
+- `setUp` creates canonical local default-ref authority and derives a real
+  `worktree_abandon` terminal capability from the exact leaf contract.
 - `test_no_force_refuses_unmerged_and_reports_commits`: `_abandon_branch` without
-  force refuses a branch with one unmerged commit and reports it in
+  force receives the exact branch target and capability, refuses a branch with one unmerged
+  commit, and reports it in
   `unmergedCommits`; branch is still present.
 - `test_force_discards_unmerged_branch`: `_abandon_branch` with `force=True`
-  deletes the branch regardless of unmerged commits.
+  uses the same contract-derived capability and deletes the branch regardless of unmerged
+  commits.
 
 `AbandonBlockerTests` calls `_abandon_blockers` with synthetic result dicts and
 asserts two blockers (dirty worktree + unmerged branch), or zero blockers for a
@@ -81,7 +85,8 @@ imports `lifecycle_guidance` from `worktrees.modules.guidance`.
 ### Conventions
 
 Tests that need Git use the `git`/`init_repo` helpers imported from
-`test_worktree_support`. Docker tests are purely structural (no containers
+`test_worktree_support`; destructive branch helpers also receive a real contract-derived
+terminal authority. Docker tests are purely structural (no containers
 started). Temp dirs are cleaned up in `tearDown` or by their context manager.
 The report-cleanup and `lifecycle_guidance` tests use `SimpleNamespace` contract
 stubs, so neither needs a real coordinator, Git worktree, or Docker runtime.
@@ -90,7 +95,8 @@ stubs, so neither needs a real coordinator, Git worktree, or Docker runtime.
 
 The tests protect: template container names are expanded per repo root; settings
 absence is non-fatal (graceful empty result); unmerged commits are surfaced to
-the caller before any destructive action; the force path actually deletes
+the caller before any destructive action; direct abandon helpers cannot bypass the
+contract-derived terminal capability; the force path actually deletes
 (`git branch --list` confirms deletion); blockers are only raised for real
 blocking conditions (not already-absent); and non-force abandon removes the
 enclosure report before reclaiming the now-empty worktree group.
@@ -109,10 +115,10 @@ No external documentation is needed for these standard-library unit tests.
 | --- | --- | --- |
 | `teardown_worktree_providers` loads worktree provider settings, removes the derived resources, and reclaims the provider-runtime tree. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
 | `_worktree_provider_docker_resources` derives the provider container/network resources used by teardown. | `_worktree_provider_docker_resources` | mcp/src/agents_remember/application/provider_runtime.py:194-208 |
-| `_abandon_branch` and `_abandon_blockers`. | `_abandon_branch`; `_abandon_blockers` | mcp/src/agents_remember/worktrees/modules/abandon.py:337-370; mcp/src/agents_remember/worktrees/modules/abandon.py:431-445 |
-| `_abandon_directories` removes the enclosure reports tree before attempting to reclaim the enclosing worktree group. | `_abandon_directories` | mcp/src/agents_remember/worktrees/modules/abandon.py:416-441 |
-| `lifecycle_guidance` delegates terminal cleanup states to `_reclaimed_phase`, including the `cleanup == "abandoned"` branch pinned by the 05l-P1 phase test. | `lifecycle_guidance`; `_reclaimed_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:200-210; mcp/src/agents_remember/worktrees/modules/guidance.py:213-227 |
-| `git`/`init_repo` test utilities from the worktree support test module. | "def git"; "def init_repo" | mcp/tests/test_worktree_support.py:58-58; mcp/tests/test_worktree_support.py:72-72 |
+| `_abandon_branch` and `_abandon_blockers`. | `_abandon_branch`; `_abandon_blockers` | mcp/src/agents_remember/worktrees/modules/abandon.py:429-469; mcp/src/agents_remember/worktrees/modules/abandon.py:558-572 |
+| `_abandon_directories` removes the enclosure reports tree before attempting to reclaim the enclosing worktree group. | `_abandon_directories` | mcp/src/agents_remember/worktrees/modules/abandon.py:493-534 |
+| `lifecycle_guidance` delegates terminal cleanup states to `_reclaimed_phase`, including the `cleanup == "abandoned"` branch pinned by the 05l-P1 phase test. | `lifecycle_guidance`; `_reclaimed_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:225-235; mcp/src/agents_remember/worktrees/modules/guidance.py:238-252 |
+| `git`/`init_repo` test utilities from the worktree support test module. | "def git"; "def init_repo" | mcp/tests/test_worktree_support.py:64-64; mcp/tests/test_worktree_support.py:78-78 |
 
 ## Cross-Repo References
 
@@ -123,6 +129,10 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-16T00:10+02:00 — 260815-DAG-L4 targeted-gate repair: migrated both real
+  `_abandon_branch` paths to exact `_AbandonBranchTarget` inputs and the production
+  contract-derived abandon authority. Verification metadata remains closeout-owned.
 
 - 2026-08-11T17:26+02:00 — L19 report-folder delta: added direct non-force abandon proof that the enclosure reports tree is removed before the empty worktree group; verification metadata remains pinned for governed closeout.
 

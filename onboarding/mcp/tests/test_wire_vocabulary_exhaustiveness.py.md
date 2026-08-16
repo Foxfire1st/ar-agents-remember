@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-13T12:53+02:00               |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`       |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -144,8 +144,8 @@ published output contract:
   order the machine tries them cit:([`_phases`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:248-274), and crosses each result through
   `WorktreeSummary` with cit:([`cross_the_wire`], mcp/tests/test_wire_vocabulary_exhaustiveness.py:211-226) — the same field-by-field projection
   production does, filtered to `GUIDANCE_WIRE_KEYS` cit:(["GUIDANCE_WIRE_KEYS ="], mcp/tests/test_wire_vocabulary_exhaustiveness.py:150-150). It pins the two gaps that were
-  measured writable-and-unrepresentable (`request_carryover_decision` /
-  `memory_carryover_apply`), the omission of `nextTool` on a done phase, and every writable
+  measured writable-and-unrepresentable (`request_carryover_decision`) and the current read-only
+  carryover guidance (`memory_carryover_plan`), the omission of `nextTool` on a done phase, and every writable
   `cleanup` value.
 - cit:([`RecoveryGuidanceTests`], mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:106-141) holds the *other* side of the vocabulary split so it cannot
   be undone by accident: `recovery_guidance` emits the same four keys in the same order, omits
@@ -258,6 +258,8 @@ terminal facade, so moving the builder cannot hide a public status from the
 closed spawn response vocabulary.
 
 ## Update History
+
+- 2026-08-16T00:45+02:00 — Re-read the exact NextTool producer set after protected-memory apply guidance was retired; the suite now pins `memory_carryover_plan` while preserving exact set equality. Verification remains closeout-owned.
 - 2026-08-14T05:26Z — L23 final curator: re-anchored the expanded recovery vocabulary and the
   lifecycle/next/recovery builders after their final structural edits. Verification remains
   closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-11T09:45+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -67,7 +67,13 @@ shapes and attaches the aggregate optionally to each Engine Process. Its closed
 relations, sides, states, and `worktree_sync` tool mirror the server model; the
 dashboard does not accept an open-ended string vocabulary here.
 
+## 260815-DAG-L4 Projection Contract
+
+The L4 delta keeps the generated dashboard contract aligned with the backend's organizational `super-to-leaf` lineage and lifecycle-operation guidance. The dashboard remains a projection consumer: it does not gain branch-mutation authority.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled projection parity for organizational direct-super lineage and lifecycle guidance. Verification metadata remains closeout-owned.
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: regenerated TaskDocNode types now expose optional
   execution nature/graph and required mechanically derived waves without scheduler judgment.

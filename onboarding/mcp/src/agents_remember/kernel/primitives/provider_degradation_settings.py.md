@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:42+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ No known follow-up in this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `mcp/config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:123-123 |
+| `mcp/config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:124-124 |
 | The degradation detector consumes every field of `ProviderDegradationSettings` as its threshold/behavior surface. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:171-171 |
 | The public settings example ships a representative `providerDegradation` block. | `coordinationRoot` | examples/mcp/settings.example.json:3-3 |
 | Settings-parsing tests cover defaults, explicit thresholds, unknown-key rejection, and per-field type rejection. | `ProviderDegradationSettingsTests` | mcp/tests/test_config.py:480-556 |

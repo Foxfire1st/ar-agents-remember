@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 
 > **Status:** active baseline
 
@@ -861,7 +861,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
 | The runtime sync contract is checked against every generated copy. | `RealTreeDriftTests` | mcp/tests/test_sync_scripts.py:159-207 |
 | GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating. | "pull_request:"; "Refuse a tag whose commit has not landed on main" | .github/workflows/quality-checks.yml:3-7; .github/workflows/publish-mcp-to-pypi.yml:28-34 |
-| Closeout imports the staged-quality boundary, which refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:37-37 |
+| Closeout imports the staged-quality boundary, which refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:47-47 |
 | The extracted staged-quality owner contains both refusal helpers and the exact-candidate Dagger gate. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; "def gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:20-129 |
 | The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" | CONTRIBUTING.md:64-64 |
 | Provider guidance keeps provider runtime paths under configured provider roots. | "providers/runners/grepai" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:95-95 |
@@ -1135,7 +1135,13 @@ change underneath an in-flight landing. One-record WAL recovery, bounded receipt
 size, explicit writer ownership, and task-addressed cancellation/failure recovery keep the queue
 durable without turning it into an unbounded event log or a second judgment authority.
 
+## 260815-DAG-L4 L4 Integration-Authority Repository Boundary
+
+L4 turns repository defaults, sprint supers, and active atomic-series refs into task-derived protected surfaces across code and external memory. The repository now treats integration as a journaled named-ref transaction, serializes task-topology publication with Git authority, seals atomic child admission at series closeout, and fences ordinary memory and terminal writers from those refs.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 
 - 2026-08-15T13:27+02:00 — No route impact: L3's Pyright repair adds one test narrowing and does
   not alter repository behavior or execution topology.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-01T09:48+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -155,7 +155,7 @@ No relevant external/domain documentation found; this is an internal response co
 | The MCP tool wrappers import the modeled spawn, retire, and rename payload aliases. | `spawn_agent_session_payload`; `session_retire_payload`; `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63; mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95 |
 | `LeafRefStatus` declares the two leaf-ref refusal members; `LeafRefResolutionError` produces those statuses, and `VALID_LEAF_REF_STATUSES` derives the runtime set from the alias. | "LeafRefStatus = Literal["; "class LeafRefResolutionError"; "VALID_LEAF_REF_STATUSES" | mcp/src/agents_remember/models/terminal.py:19-19; mcp/src/agents_remember/worktrees/leaf_refs.py:26-26; mcp/src/agents_remember/worktrees/leaf_refs.py:39-39 |
 | The response registry maps `attach_terminal_session_to_task` and `spawn_agent_session` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:140-212 |
-| Conformance coverage includes a representative missing-session (attach) and legacy-caller-harness (spawn) refusal payload for the models. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:639-734 |
+| Conformance coverage includes a representative missing-session (attach) and legacy-caller-harness (spawn) refusal payload for the models. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:751-846 |
 | `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:955-1025; mcp/src/agents_remember/application/terminal_tools.py:1114-1128 |
 | The response registry maps `session_retire`/`session_rename` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
 | `test_every_spawn_status_the_tool_can_return_validates` / `..._retire_status_...` / `..._rename_status_...` assert produced == declared for each of the three `VALID_*` sets. | `ProducedLiteralTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817 |

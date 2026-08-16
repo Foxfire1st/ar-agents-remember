@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-21T05:30+02:00                     |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,7 +19,7 @@ returns a list it becomes the status payload's `landing` block, and `reducer._en
 composes that onto `EngineProcessNode.landing`.
 
 Two callers reach the probe, and neither is the projection tick: the interactive `status_payload`
-cit:(["def status_payload", "landing_refs(contract)"], mcp/src/agents_remember/worktrees/modules/guidance.py:450-450; mcp/src/agents_remember/worktrees/modules/guidance.py:452-452), and `observer/landing_state.LandingStateRefresher`, which holds it as
+cit:(["def status_payload", "landing_refs(contract)"], mcp/src/agents_remember/worktrees/modules/guidance.py:461-461; mcp/src/agents_remember/worktrees/modules/guidance.py:463-463), and `observer/landing_state.LandingStateRefresher`, which holds it as
 `observe: LandingObserver = landing_refs` and sweeps landing-active contracts on its own
 `LANDING_REFRESH_INTERVAL_SECONDS = 30.0` cadence with `LANDING_REFRESH_CONCURRENCY = 4`. The
 recurring projection never spawns anything: it renders `unobserved_landing_refs` until the
@@ -133,12 +133,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:388-440; mcp/src/agents_remember/worktrees/modules/guidance.py:450-452 |
+| `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:399-451; mcp/src/agents_remember/worktrees/modules/guidance.py:461-463 |
 | The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field. | `LandingRefNode` | mcp/src/agents_remember/observer/projection.py:842-864 |
 | The reducer composer that reads `status["landing"]` into the node. | "landing=[LandingRefNode" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:304-304 |
 | The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | `test_the_gh_probe_does_not_inherit_the_repository_selectors` — the direct assertion for the one probe the AST sweep cannot see. | `test_the_gh_probe_does_not_inherit_the_repository_selectors` | mcp/tests/test_landing.py:171-195 |
-| The package-wide AST sweep that covers the git spawns but deliberately not `gh` (`_spawns_git`; `test_a_program_that_merely_starts_with_git_is_not_git`). | "def _spawns_git"; "test_a_program_that_merely_starts_with_git" | mcp/tests/test_git_command.py:126-126; mcp/tests/test_git_command.py:597-597 |
+| The package-wide AST sweep that covers the git spawns but deliberately not `gh` (`_spawns_git`; `test_a_program_that_merely_starts_with_git_is_not_git`). | "def _spawns_git"; "test_a_program_that_merely_starts_with_git" | mcp/tests/test_git_command.py:132-132; mcp/tests/test_git_command.py:645-645 |
 | The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead. | `LandingStateRefresher`; "observe: LandingObserver = landing_refs" | mcp/src/agents_remember/serving/projections/landing_state.py:146-350 |
 
 ## Update History
@@ -158,7 +158,7 @@ No external Domain Documentation source is configured for this memory repo.
   Added the matching invariant. Two further claims were false against current code and were fixed:
   the gate was named `_landing_active` but the function is `landing_active` (L34-L44, no underscore,
   callers L237/L268), and Purpose still said the probe "re-fires every projector tick (~1s)" — it
-  does not, `landing_refs` is reached only by the interactive `status_payload` cit:(["def status_payload"], mcp/src/agents_remember/worktrees/modules/guidance.py:450-450) and by `LandingStateRefresher(observe=landing_refs)` at
+  does not, `landing_refs` is reached only by the interactive `status_payload` cit:(["def status_payload"], mcp/src/agents_remember/worktrees/modules/guidance.py:461-461) and by `LandingStateRefresher(observe=landing_refs)` at
   `LANDING_REFRESH_INTERVAL_SECONDS = 30.0`, while the recurring projection renders
   `unobserved_landing_refs`. Corrected "the package's **first** `gh` use" to "only" (one occurrence
   in `src/`, L106). Verified `_PROBE_TIMEOUT_SECONDS = 8` and the DEVNULL/timeout claims still hold
@@ -176,7 +176,7 @@ No external Domain Documentation source is configured for this memory repo.
   Added the matching invariant. Two further claims were false against current code and were fixed:
   the gate was named `_landing_active` but the function is `landing_active` (L34-L44, no underscore,
   callers L237/L268), and Purpose still said the probe "re-fires every projector tick (~1s)" — it
-  does not, `landing_refs` is reached only by the interactive `status_payload` cit:(["def status_payload"], mcp/src/agents_remember/worktrees/modules/guidance.py:450-450) and by `LandingStateRefresher(observe=landing_refs)` at
+  does not, `landing_refs` is reached only by the interactive `status_payload` cit:(["def status_payload"], mcp/src/agents_remember/worktrees/modules/guidance.py:461-461) and by `LandingStateRefresher(observe=landing_refs)` at
   `LANDING_REFRESH_INTERVAL_SECONDS = 30.0`, while the recurring projection renders
   `unobserved_landing_refs`. Corrected "the package's **first** `gh` use" to "only" (one occurrence
   in `src/`, L106). Verified `_PROBE_TIMEOUT_SECONDS = 8` and the DEVNULL/timeout claims still hold

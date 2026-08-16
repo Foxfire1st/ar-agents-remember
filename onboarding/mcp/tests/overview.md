@@ -9,8 +9,8 @@ Total output lines: 1813
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-15T14:24+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1150,7 +1150,13 @@ tool/response/reopen/isolation tests extend public registration and the adjacent
 The forcing suite also proves that oversized canonical task refs fail at runtime while their shared
 projection schema stays within constraints the TypeScript generator renders exactly.
 
+## 260815-DAG-L4 L4 Integration-Authority Forcing
+
+The L4 suites force repository-global surface ownership, organizational versus atomic start, aliases/tags/linked worktrees, configured identity, lowest-writer refusal, bootstrap WAL, queue-lock ordering, task-topology races, exact code-memory CAS and recovery, atomic leaf-chain sealing, terminal child preservation, and preview/apply parity through production owners.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 
 - 2026-08-15T13:27+02:00 — No route impact: the closeout Pyright repair adds one test-only
   optional-result narrowing before an unchanged failure assertion.

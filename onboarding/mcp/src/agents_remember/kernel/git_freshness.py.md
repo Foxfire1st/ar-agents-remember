@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/git_freshness.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                         |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                         |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ carry the reasoning:
 
 `git_facts.py` classes its own probes the same way, and
 `test_git_command.py::TimeoutClassTests::test_branch_freshness_classes_each_of_its_commands_by_what_it_does`,
-cit:([`test_branch_freshness_classes_each_of_its_commands_by_what_it_does`], mcp/tests/test_git_command.py:669-691)
+cit:([`test_branch_freshness_classes_each_of_its_commands_by_what_it_does`], mcp/tests/test_git_command.py:723-745)
 asserts this table per command, so a call site that drops back to the
 default fails the suite rather than quietly loosening to 300s.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/closeout_recovery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-14T11:48:55+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate |  2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -71,9 +71,9 @@ The production helpers and focused recovery suite are the direct evidence for th
 | --- | --- | --- |
 | The typed outcome carries external-memory refresh and commit results across normal and recovered closeout. | `MemoryCloseoutOutcome` | mcp/src/agents_remember/worktrees/closeout_recovery.py:26-36 |
 | Finalization recovery proves exact clean heads, the ledger mapping, and memory ancestry without replaying mutation. | `prove_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/closeout_recovery.py:39-86 |
-| Code recovery proves clean HEAD and the accepted tree before journaling the code cell. | `accepted_code_commit` | mcp/src/agents_remember/worktrees/closeout_recovery.py:89-127 |
-| External recovery reconciles the exact memory and ledger edge before journaling the full tuple. | `resume_external_commits` | mcp/src/agents_remember/worktrees/closeout_recovery.py:130-171 |
-| The regression suite exercises the extracted proof owner directly for mismatch and reachability refusals. | `test_recovery_rejects_code_and_contract_memory_mismatches`; `test_recovery_rejects_unproven_memory_commits` | mcp/tests/test_worktree_closeout_recovery.py:180-247 |
+| Code recovery proves clean HEAD and the accepted tree before journaling the code cell. | `accepted_code_commit` | mcp/src/agents_remember/worktrees/closeout_recovery.py:151-191 |
+| External recovery reconciles the exact memory and ledger edge before journaling the full tuple. | `resume_external_commits` | mcp/src/agents_remember/worktrees/closeout_recovery.py:194-235 |
+| The regression suite exercises the extracted proof owner directly for mismatch and reachability refusals. | `test_recovery_rejects_code_and_contract_memory_mismatches`; `test_recovery_rejects_unproven_memory_commits` | mcp/tests/test_worktree_closeout_recovery.py:244-277; mcp/tests/test_worktree_closeout_recovery.py:279-318 |
 
 ## Cross-Repo References
 
@@ -85,7 +85,13 @@ Non-leaf closeout now records already-landed clean code: it requires a clean ser
 and takes current HEAD. Leaf recovery retains commit/retry reconciliation. Series closeout cannot
 become another code-commit or acceptance owner.
 
+## 260815-DAG-L4 Integration-Authority Impact
+
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-14T11:48:55+02:00 — R42 curator: recorded the move of `MemoryCloseoutOutcome` and
   `prove_closeout_recovery_commits` from the closeout coordinator into the recovery owner; updated

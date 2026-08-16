@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/application/structural/overview.md` |
 | parentOverview | [`application/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-11T06:47+02:00 |
-| lastVerifiedCommitHash |  `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate |  2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
 
 ## What This Area Is
 
@@ -121,7 +121,13 @@ card before changing a structural operation.
 
 None.
 
+## 260815-DAG-L4 L4 Organizational And Atomic Dispatch
+
+Structural dispatch distinguishes organizational masters, whose leaves start directly from the sprint super, from atomic masters, whose task-owned series refs are journaled before child admission. Dispatch never creates a universal master branch for organizational work.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 
 - 2026-08-14T06:20+02:00 — L23 curator: documented pre-host lineage and candidate-bound route-review
   admission for curator dispatch. Verification provenance remains closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start_contract.py` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-01T10:45+02:00                                       |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`                   |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                   |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -113,12 +113,19 @@ the shared resolver, which indexes non-master `task.json` docs as leaf candidate
 | --- | --- | --- |
 | Shared leaf-ref validation and candidate reporting. | `LeafRefResolutionError`; `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Start-side conversion from leaf-ref resolution errors and contract-construction errors into command results. | `invalid_leaf_ref_result`; `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:26-35; mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
-| The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:440-451 |
-| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:444-444; mcp/src/agents_remember/worktrees/modules/start.py:447-447; mcp/src/agents_remember/worktrees/modules/start.py:450-450; mcp/src/agents_remember/worktrees/modules/start.py:453-453 |
-| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:453-453; mcp/src/agents_remember/worktrees/modules/start.py:544-619 |
+| The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:414-425 |
+| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:417-417; mcp/src/agents_remember/worktrees/modules/start.py:420-420; mcp/src/agents_remember/worktrees/modules/start.py:423-423; mcp/src/agents_remember/worktrees/modules/start.py:426-426 |
+| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:426-426; mcp/src/agents_remember/worktrees/modules/start.py:511-593 |
 | `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. | `_task_vocabulary`; `validate_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:161-178; mcp/src/agents_remember/worktrees/worktree_contract.py:761-816 |
 
+## 260815-DAG-L4 Integration-Authority Impact
+
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+
 ## Update History
+
+- 2026-08-16T06:15+02:00 — No behavior change: split task-derived source selection and exact code/external-memory base reads out of `_build_start_contract`; the builder retains one canonical construction path and no compatibility fallback.
+- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 - 2026-08-14T06:36+02:00 — L23 final candidate review: contract preparation derives canonical
   sprint/master/leaf code and external-memory ancestry, compares Git common-directory identity, and
   fails closed with task-addressed sync guidance before process creation.

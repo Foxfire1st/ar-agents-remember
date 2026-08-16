@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_fix.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `SymbolIndexTests` (lines 1226-1319) — The one walk both halves share: what it reads, what it skips, what it counts.. | `SymbolIndexTests` | mcp/tests/test_memory_citation_fix_operations.py:36-129 |
 | Defines the class `ExtentTests` (lines 1322-1423) — The generator, on the shapes a whole-tree run meets.. | `ExtentTests` | mcp/tests/test_memory_citation_fix_operations.py:132-234 |
 | Defines the class `WriteGuardTests` (lines 1426-1709) — L6-R27: the fixer writes into a leaf's memory worktree or it does not write.. | `WriteGuardTests` | mcp/tests/test_memory_citation_fix.py:16-16 |
-| Defines the class `CommandLineTests` (lines 1712-2000) — Command-line scope and write-mode contract.. | "class CommandLineTests(unittest.TestCase):" | mcp/tests/test_memory_citation_fix_operations.py:540-540 |
+| Defines the class `CommandLineTests` (lines 1712-2000) — Command-line scope and write-mode contract.. | "class CommandLineTests(unittest.TestCase):" | mcp/tests/test_memory_citation_fix_operations.py:570-570 |
 
 ## Update History
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

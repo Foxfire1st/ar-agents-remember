@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/sync.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:12+02:00                     |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`                         |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                         |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -143,7 +143,13 @@ No meaningful cross-repo references found.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 
+## 260815-DAG-L4 Integration-Authority Impact
+
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 - 2026-08-14T05:26Z — L23 final curator: re-read the expanded task-reopen/worktree-start recovery
   vocabulary and retained sync's separate recovery-guidance ownership with current anchors.
   Verification remains closeout-owned.

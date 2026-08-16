@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/curator_checklist.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |  `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate |  2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ The application layer decides when the report exists, and worktree cleanup owns 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist. | `MemoryScope`; `memory_quality_check_tool` | mcp/src/agents_remember/application/memory_tools.py:55-71; mcp/src/agents_remember/application/memory_tools.py:176-193; mcp/src/agents_remember/application/memory_tools.py:217-297 |
-| Cleanup removes the reserved reports directory before it attempts to remove the enclosure. | `_removed_directories` | mcp/src/agents_remember/worktrees/modules/cleanup.py:356-372 |
+| Cleanup removes the reserved reports directory before it attempts to remove the enclosure. | `_removed_directories` | mcp/src/agents_remember/worktrees/modules/cleanup.py:532-559 |
 | The enclosure regression proves same-path overwrite, one-file cardinality, component-count arithmetic, and subset-call non-interference. | `test_full_contract_check_replaces_one_enclosure_local_curator_report`; `test_subset_contract_check_does_not_replace_the_curator_report` | mcp/tests/test_memory_tool_enclosure_scope.py:234-268 |
 
 ## Cross-Repo References

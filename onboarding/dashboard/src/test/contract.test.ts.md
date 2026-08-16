@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/contract.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-02T07:20+02:00                           |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -205,9 +205,9 @@ the Finding, where a pointer belongs.
 | `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. | `MirrorOnlyPaths`; `KnownUnsampled`; `fixtureMustSample`; `allowlistMustStayEarned` | dashboard/src/test/contract.test.ts:146-160; dashboard/src/test/contract.test.ts:186-189; dashboard/src/test/contract.test.ts:192-194; dashboard/src/test/contract.test.ts:197-199 |
 | `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed, replacing a prose list of four that missed three. | `AbsorbingPaths`; `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:206-219; dashboard/src/test/contract.test.ts:221-229; dashboard/src/test/contract.test.ts:226-234 |
 | `ClosedUnionPaths` + `VOCABULARIES` — 15 paths bound to 10 array identities and 8 distinct value sets, replacing two hand-written checks. | `ClosedUnionPaths`; `VOCABULARIES` | dashboard/src/test/contract.test.ts:251-266; dashboard/src/test/contract.test.ts:268-293 |
-| Full-coverage assertion: each vocabulary identity is bound to its declared paths and compared with the fixture's sampled values. | "sampledByVocabulary.get(vocabulary)"; "sampledByVocabulary.set(vocabulary, seen)"; "for (const [vocabulary, seen] of sampledByVocabulary)"; "toEqual([...seen].sort())" | dashboard/src/test/contract.test.ts:431-431; dashboard/src/test/contract.test.ts:433-433; dashboard/src/test/contract.test.ts:435-436 |
+| Full-coverage assertion: each vocabulary identity is bound to its declared paths and compared with the fixture's sampled values. | "sampledByVocabulary.get(vocabulary)"; "sampledByVocabulary.set(vocabulary, seen)"; "for (const [vocabulary, seen] of sampledByVocabulary)"; "toEqual([...seen].sort())" | dashboard/src/test/contract.test.ts:432-432; dashboard/src/test/contract.test.ts:434-434; dashboard/src/test/contract.test.ts:436-437 |
 | Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | "the served payload carries a bucket per live state"; "counts a lifecycle in each live state into its own bucket"; "gives each live state a bucket of its own"; "spells a bucket field the way the server spells it" | dashboard/src/test/contract.test.ts:470-475; dashboard/src/test/contract.test.ts:477-500; dashboard/src/test/contract.test.ts:502-510; dashboard/src/test/contract.test.ts:512-530 |
-| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:564-567; dashboard/src/test/contract.test.ts:585-586 |
+| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:565-568; dashboard/src/test/contract.test.ts:586-587 |
 | The generated mirror's metric and analytics declarations. | `Metrics`; `Analytics` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:333-337 |
 | The generated mirror's gate and lifecycle projection declarations. | `GateNode`; `LifecycleProjection` | dashboard/src/types/projection.ts:231-241; dashboard/src/types/projection.ts:288-306 |
 | The sanctioned narrowing the fixture enters through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
@@ -236,7 +236,13 @@ Contract parity now registers recovery `args` as the lineage projection's one
 open index-signature site and checks every aggregate, edge, relation, side, and
 recovery-tool vocabulary against fixture samples and the server schema.
 
+## 260815-DAG-L4 Projection Contract
+
+The L4 delta keeps the generated dashboard contract aligned with the backend's organizational `super-to-leaf` lineage and lifecycle-operation guidance. The dashboard remains a projection consumer: it does not gain branch-mutation authority.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled projection parity for organizational direct-super lineage and lifecycle guidance. Verification metadata remains closeout-owned.
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the generated-contract registry now forces the exact
   `organizational|atomic` execution-nature vocabulary exported by the server schema.

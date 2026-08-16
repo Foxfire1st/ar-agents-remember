@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_ws_websocket_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                        |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-16T04:06+02:00                                            |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                                        |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -48,11 +48,14 @@ No cross-repository implementation source governs this test module.
 
 ## L23 HTTP 409 Lineage Refusals
 
-The extension suite advances super and proves both terminal open and task attach
-return HTTP 409 with `source-lineage-stale` evidence. Neither a host process nor
-an existing catalog binding is mutated on refusal.
+The extension suite advances the exact task-derived `super` ref, restores the ambient checkout
+to `main`, and proves both terminal open and task attach return HTTP 409 with
+`source-lineage-stale` evidence. Neither a host process nor an existing catalog binding is
+mutated on refusal.
 
 ## Update History
+
+- 2026-08-16T04:06+02:00 — Dagger fixture repair: websocket stale-lineage setup advances the exact super ref and restores main before the public session boundary runs.
 - 2026-08-12T20:10+02:00 — L23 curator: documented dashboard-route fail-closed lineage responses; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_terminal_ws_websocket_2.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.

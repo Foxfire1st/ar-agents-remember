@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_landing_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T09:56+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-16T02:51+02:00 |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -63,6 +63,9 @@ testing landing freeze/reopen behavior. Source-lineage policy is covered by the
 dedicated reopen suite, so this mock preserves the test's existing ownership.
 
 ## Update History
+- 2026-08-16T02:51+02:00 — No content impact: the frozen-facts reopen fixture now patches the new
+  parent-series leaf-admission preflight alongside its existing lineage isolation; landing-state
+  behavior and assertions are unchanged.
 - 2026-08-14T06:38+02:00 — L23 final candidate review: landing-state tests preserve task-addressed
   completion/archive semantics around asynchronous integration without exposing operation ids.
 - 2026-08-12T20:10+02:00 — L23 curator: documented bounded lineage isolation in landing-state reopen coverage; verification remains closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                              |
 | lastUpdated            | 2026-06-10T10:26+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                           |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                           |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 
 ## Purpose
 
@@ -61,8 +61,8 @@ No external documentation is needed for this repository-local workflow skill.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The skill defines the source-branch-to-official memory carryover use case, command shape, evidence tiers, output states, and boundaries. | `# c-11-memory-carryover-from-branch Memory Carryover From Branch` | mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md:6-76 |
-| The package carryover service implements the plan/apply behavior described by this skill. | `build_plan_for_request`; `apply_carryover_for_request` | mcp/src/agents_remember/memory/carryover.py:541-614; mcp/src/agents_remember/memory/carryover.py:776-862 |
+| The skill defines the source-branch-to-official memory carryover use case, command shape, evidence tiers, output states, and boundaries. | `# c-11-memory-carryover-from-branch Memory Carryover From Branch` | mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md:6-73 |
+| The package service implements the public plan and the configured, leaf-contract-bound internal apply owner described by this skill. | `build_plan_for_request`; `_apply_carryover_for_request` | mcp/src/agents_remember/memory/carryover.py:524-598; mcp/src/agents_remember/memory/carryover.py:759-852 |
 
 ## Cross-Repo References
 
@@ -72,7 +72,13 @@ No sibling repository evidence is needed for the skill itself.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260815-DAG-L4 Carryover Boundary
+
+L4 narrows carryover to an explicitly task-owned recovery leaf. Official default, sprint-super, and atomic-memory refs are not writable workbenches, so planning and apply guidance must lead through ordinary leaf closeout and integration rather than a direct protected-ref fallback.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled carryover doctrine with the protected-memory-ref boundary and recovery-leaf route. Verification metadata remains closeout-owned.
 
 - 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-06-11T15:05+02:00 — The skill doc gained a Candidate Kinds section (file-sidecar, route-overview, memory-only-doc, entity-catalog with selection keys), memory-only evidence values, the `entity_fingerprint_validation` output field, and the corrected `exact-landed-commit` wording (EVERY touching commit must have landed, not at least one).

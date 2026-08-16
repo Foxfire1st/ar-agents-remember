@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -91,11 +91,11 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The wire model declares `IntegrationStatus` / `CleanupStatus`; worktree_contract imports them and exposes `ContractCells` / `amend_contract` as the typed amendment path. | "class ContractCells"; "def amend_contract"; "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:18-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
-| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:179-197; mcp/src/agents_remember/worktrees/modules/integrate.py:611-643 |
-| Leaf integration reuses its closeout proof without calling a gate; series/master integration alone runs full Dagger, with an optional settings-owned cap and enclosure-owned reports. | `quality_gate_mode`, `_quality_gate_preview`, `_run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/integrate.py:60-98; mcp/src/agents_remember/worktrees/modules/integrate.py:1032-1067 |
-| The planned gate is carried in the dry-run payload and the integrated result without running on the dry-run path. | `IntegratePreview`, `_dry_run_result`, `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:98-104; mcp/src/agents_remember/worktrees/modules/integrate.py:452-496; mcp/src/agents_remember/worktrees/modules/integrate.py:611-643 |
-| The altitude proofs cover leaf no-rerun, series full, host-managed absence, explicit settings caps, refusal-before-merge, and dry-run preview. | `IntegrationQualityGateAltitudeTests` | mcp/tests/test_worktree_integrate_quality_gate.py:49-198 |
-| Worktree tests cover fast-forward integration, fail-closed source-lineage refusal for both non-overlapping and conflicting source movement after closeout, and non-fast-forward refusal without mutation. The stale-source cases direct callers to synchronize before retrying instead of replaying during integration. | `test_integrate_ff_only_fast_forwards_code_and_memory_main`; `test_integrate_refuses_parallel_non_overlapping_source_changes_until_sync`; `test_integrate_refuses_parallel_conflicting_source_changes_until_sync`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:605-662; mcp/tests/test_worktree_support_tests_2.py:672-715; mcp/tests/test_worktree_support_tests_2.py:717-753; mcp/tests/test_worktree_support_tests_3.py:723-758 |
+| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:213-231; mcp/src/agents_remember/worktrees/modules/integrate.py:479-511 |
+| Leaf integration reuses its closeout proof without calling a gate; series/master integration alone runs full Dagger, with an optional settings-owned cap and enclosure-owned reports. | `quality_gate_mode`, `_quality_gate_preview`, `_run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/integrate.py:91-95; mcp/src/agents_remember/worktrees/modules/integrate.py:107-133; mcp/src/agents_remember/worktrees/modules/integrate.py:1116-1157 |
+| The planned gate is carried in the dry-run payload and the integrated result without running on the dry-run path. | `IntegratePreview`, `_dry_run_result`, `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:136-142; mcp/src/agents_remember/worktrees/modules/integrate.py:404-448; mcp/src/agents_remember/worktrees/modules/integrate.py:479-511 |
+| The altitude proofs cover leaf no-rerun, series full, host-managed absence, explicit settings caps, refusal-before-merge, and dry-run preview. | `IntegrationQualityGateAltitudeTests` | mcp/tests/test_worktree_integrate_quality_gate.py:203-718 |
+| Direct legacy integration tests now prove CLI callers cannot fast-forward or classify source movement without a plane-owned operation; the remaining non-fast-forward case proves no mutation. Journaled production-path suites own successful movement and recovery. | `test_direct_integrate_cannot_fast_forward_code_or_memory`; `test_direct_integrate_cannot_classify_parallel_non_overlapping_changes`; `test_direct_integrate_cannot_classify_parallel_conflicting_changes`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:624-659; mcp/tests/test_worktree_support_tests_2.py:669-712; mcp/tests/test_worktree_support_tests_2.py:714-749; mcp/tests/test_worktree_support_tests_3.py:955-1007 |
 
 As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the application entry point) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
 
@@ -113,7 +113,30 @@ exact commit identity immediately before `_merge_integrated_commits`, and consum
 after the source move. Recovery of an already-completed integration consumes the same exact record
 idempotently; no generic integration request may select or substitute a different leaf.
 
+## 260815-DAG-L4 Integration-Authority Impact
+
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+
+The final reversible preparation checks the accepted code/external-memory source-tip snapshot before
+the broader lineage diagnostic. A concurrent protected-ref move therefore returns the structured
+`source-moved-during-quality` refusal expected by the retry protocol, before irreversible progress;
+the lineage check still follows when the exact snapshot remains current.
+
+Fresh journaled integrations now enter the normal claim-and-publication path. Recovery publication
+is attempted only when the durable operation carries recovery commits that exactly match the worker
+input. A completed contract without that durable tuple may still be previewed read-only, but apply
+refuses before queue completion; immutable integration authority or self-asserted completed fields
+alone are not recovery evidence.
+
 ## Update History
+
+- 2026-08-16T08:12+02:00 — Dagger repair: reordered final source-state diagnostics so the exact accepted-tip race owns the structured pre-CAS refusal before persisted lineage diagnostics.
+
+- 2026-08-16T07:05+02:00 — L4 review repair: completed apply/recovery now requires the operation's exact durable recovery tuple before descendant, ledger, or queue-completion publication.
+
+- 2026-08-16T06:15+02:00 — Dagger repair: separated fresh integration from durable recovery admission so a newly queued graph candidate is claimed before queue-owned publication rather than being misclassified as torn recovery.
+
+- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — L3 content update: recorded the certified claim, final irreversible
   revalidation, exact consume, and completed-integration recovery path; verification remains

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_hosted_control_conformance.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-16T09:45+02:00 |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,6 +61,8 @@ the matrix protocol-focused and independent of vendor processes.
   reconciled without blind resend.
 - Restart must preserve exact identity and protocol compatibility; incompatible protocol requests
   fail loudly.
+- The malformed-response fixture accepts one complete request before replying, so the assertion
+  deterministically tests malformed JSON rather than a socket-close race.
 
 ### Todos
 
@@ -85,7 +87,7 @@ advertisement requirement.
 | The matrix enumerates the native harness ids and its fake adapter implements startup, snapshots, and advertisement. | `HARNESSES`; `_Adapter`; `advertise` | mcp/tests/test_hosted_control_conformance.py:49-49; mcp/tests/test_hosted_control_conformance.py:52-165 |
 | The fake provides model and effort setters at the adapter boundary. | `set_model`; `set_effort` | mcp/tests/test_hosted_control_conformance.py:101-109; mcp/tests/test_hosted_control_conformance.py:111-119 |
 | Every harness identity runs through ready state, delivery, blocked interaction, completion, ambiguity/reconciliation, and shutdown. | `test_ready_delivery_blocked_completion_ambiguity_and_shutdown` | mcp/tests/test_hosted_control_conformance.py:214-345 |
-| Restart recovery rebinds the same identity and validates protocol incompatibility through the private endpoint. | `test_restart_recovery_and_incompatible_protocol` | mcp/tests/test_hosted_control_conformance.py:347-414 |
+| Restart recovery rebinds the same identity and validates protocol incompatibility and malformed replies through the private endpoint. | `test_restart_recovery_and_incompatible_protocol` | mcp/tests/test_hosted_control_conformance.py:351-413 |
 | The shared adapter protocol defines normalized advertisement and setters alongside the hosted-control lifecycle. | `HarnessProtocolAdapter`; `LaunchableHarnessProtocolAdapter` | mcp/src/agents_remember/serving/harness_control_adapter.py:32-59; mcp/src/agents_remember/serving/harness_control_adapter.py:78-88 |
 
 ## Cross-Repo References
@@ -104,6 +106,7 @@ quietly retaining native queue or id-only release behavior.
 
 ## Update History
 
+- 2026-08-16T09:45+02:00 — Stabilized the malformed-response conformance seam by accepting the request before returning invalid JSON; production behavior and assertions are unchanged.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: split the conformance matrix into exact test/protocol owners, removed unsupported cached-claim wording, and generated final citation ranges with the scoped fixer.

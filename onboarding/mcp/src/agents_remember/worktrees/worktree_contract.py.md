@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -339,7 +339,7 @@ Same-repository source defines the contract format and `c-09-git-worktree-manage
 | The write gate and the read path: `_contract_vocabularies`, `validate_contract(contract, *, path)`, the path-naming `_extract_front_matter` / `_path`, limited YAML parsing, and `_contract_from_data` reading all six cells through `_vocabulary_cell` into `unknown_cells`. | `_contract_vocabularies`; `validate_contract`; `_extract_front_matter`; `_contract_from_data` | mcp/src/agents_remember/worktrees/worktree_contract.py:743-758; mcp/src/agents_remember/worktrees/worktree_contract.py:761-816; mcp/src/agents_remember/worktrees/worktree_contract.py:819-832; mcp/src/agents_remember/worktrees/worktree_contract.py:974-1045 |
 | `WorktreeSummary` imports `WorkflowKind`, `MemoryMode`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus` and `CleanupStatus` from here for the response boundary. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:96-136 |
 | The current `WorktreeStatusFacts` shape imports the same six contract vocabularies, reports `unknown_cells` as `unknown_contract_cells`, and exposes derived source lineage without adding a persisted contract cell. | "class WorktreeStatusFacts(TypedDict):" | mcp/src/agents_remember/worktrees/modules/guidance.py:75-116 |
-| `build_start_contract` converts `_task_vocabulary`'s `ContractError` into a blocked start result. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:488-507 |
+| `build_start_contract` converts `_task_vocabulary`'s `ContractError` into a blocked start result. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:826-845 |
 | Vocabulary exhaustiveness, the `ContractCells` write path, and the no-`replace`-keyword rule are pinned here. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:153-153 |
 | The worktree lifecycle modules import contract helpers and record closeout/integration commit state through these contract objects. | `# mcp/src/agents_remember/worktrees/modules Overview` | onboarding/mcp/src/agents_remember/worktrees/modules/overview.md:1-762 |
 
@@ -366,7 +366,13 @@ task-document-reference keys. Empty fields mean the leaf never crossed the expli
 once present, lifecycle code uses them to distinguish genuine legacy absence from damaged or
 deleted queue topology and fails closed instead of silently bypassing enforcement.
 
+## 260815-DAG-L4 Integration-Authority Impact
+
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — L3 content update: documented the additive durable sprint/candidate
   queue binding fields and their fail-closed meaning; verification remains closeout-owned.

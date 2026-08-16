@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -501,7 +501,13 @@ recovers an exact one-revision publication after a crash. The same store lock se
 publication, candidate lane ownership, atomic barriers, and sprint completion/reopen; the WAL is
 publication scratch and the JSON artifact remains the survival record.
 
+## 260815-DAG-L4 L4 Serialization Boundary
+
+Control-plane storage adds a repository-wide integration-authority lock and composes it after sprint queue authority. Task-fact publication, candidate declaration, series terminal publication, and Git mutation therefore share a fail-closed queue-to-repository order instead of racing check-then-act branch guards.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: documented the canonical bounded queue
   artifact, writer census, WAL recovery, and shared task-fact/sprint-status lock. Verification

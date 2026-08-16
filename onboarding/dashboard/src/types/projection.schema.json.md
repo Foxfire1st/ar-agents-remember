@@ -6,8 +6,8 @@
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T02:53:40+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -61,8 +61,18 @@ strict edge, recovery, and aggregate definitions. Relation/side/state/tool
 values remain closed, while recovery `args` is the deliberately open kwargs
 site checked by the contract suite.
 
+## 260815-DAG-L4 Projection Contract
+
+The generated projection now carries the organizational `super-to-leaf`
+lineage relation beside the atomic `super-to-master` and `master-to-leaf`
+relations. This keeps the dashboard schema byte-aligned with the server model
+after organizational leaves moved to direct sprint-super ownership.
+
 ## Update History
 
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: recorded the regenerated
+  organizational lineage literal and exact dashboard/server projection parity.
+  Verification remains closeout-owned.
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: regenerated from the server projection with the closed
   execution-nature enum, reasoned graph nodes/edges, and derived execution waves.
 - 2026-08-12T20:10+02:00 — L23 curator: documented the generated lineage schema and its sole open recovery-args map; verification remains closeout-owned.

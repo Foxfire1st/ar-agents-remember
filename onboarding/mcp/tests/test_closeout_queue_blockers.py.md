@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_blockers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T13:18+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-16T02:51+02:00 |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,6 +32,8 @@ drift classes, and waiting reasons for lanes, atomic barriers, predecessors, and
 - Projection compares every persisted candidate fact with the same current fact used by lifecycle
   admission.
 - Certified external candidates require exact code, memory-content, and ledger commits.
+- Source and ledger blocker tests read the exact named source refs through `branch_commit`; ambient
+  checkout `HEAD` is not scheduling authority.
 - Waiting facts remain distinct from malformed or stale blockers.
 
 ## Repo-Internal References
@@ -43,6 +45,9 @@ drift classes, and waiting reasons for lanes, atomic barriers, predecessors, and
 | Waiting reasons cover graph and barrier logistics. | `test_waiting_reasons_cover_lane_barrier_atomic_and_admission_facts` | mcp/tests/test_closeout_queue_blockers.py:350-416 |
 
 ## Update History
+
+- 2026-08-16T02:51+02:00 — L4 named-ref authority: moved source and ledger blocker forcing to the
+  exact branch-commit seam so an unrelated ambient checkout cannot satisfy queue evidence.
 
 - 2026-08-15T13:18+02:00 — No content impact: repository Ruff formatting changed only layout;
   every blocker input and expected result is unchanged.

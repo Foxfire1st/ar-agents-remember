@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_read_ar_files.py`                  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-02T01:05+02:00                             |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`         |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -89,7 +89,7 @@ stripped from the served body).
 | The net-new ranged reader unit-tested here. | `read_text_range` | mcp/src/agents_remember/kernel/filesystem.py:44-62 |
 | The served-ledger store asserted on disk. | "self._root / \"lifecycles\" / lifecycle_id / \"served.jsonl\"" | mcp/src/agents_remember/observer/served_store.py:90-90 |
 | The ambient lifecycle whose `emit_read_packet` + served set are exercised. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:426-453 |
-| Shared config/settings test helpers. | "\"coordinationRoot\": str(coordination_root)" | mcp/tests/test_config.py:36-36 |
+| Shared config/settings test helpers. | "\"coordinationRoot\": str(coordination_root)" | mcp/tests/test_config.py:37-37 |
 
 ## Update History
 

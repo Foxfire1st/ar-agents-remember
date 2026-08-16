@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/git_command.py`           |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-18T20:03+02:00                                   |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`               |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`               |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
@@ -36,7 +36,7 @@ variables named by cit:([`GIT_REPOSITORY_SELECTOR_ENV`], mcp/src/agents_remember
 interpretation by its caller. Two keyword arguments carry the consolidation:
 
 - `input_text` cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:85-151) feeds git's stdin; when it is `None`, stdin is `subprocess.DEVNULL`.
-  `patch_id()` cit:([`patch_id`], mcp/src/agents_remember/memory/carryover.py:200-207) — `git patch-id --stable` — is the only caller that passes
+  `patch_id()` cit:([`patch_id`], mcp/src/agents_remember/memory/carryover.py:181-188) — `git patch-id --stable` — is the only caller that passes
   it.
 - `timeout` cit:([`GIT_LOCAL_TIMEOUT_SECONDS`, `GIT_REMOTE_TIMEOUT_SECONDS`, `GIT_METADATA_TIMEOUT_SECONDS`], mcp/src/agents_remember/kernel/git_command.py:71-73) selects one of three module-level classes instead of the former hard-coded
   five seconds: `GIT_LOCAL_TIMEOUT_SECONDS = 300` is the default and bounds work that can
@@ -91,9 +91,9 @@ package's production-path regression matrix.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `_run_git` calls this runner with `GIT_METADATA_TIMEOUT_SECONDS` and converts `TimeoutExpired`/`OSError` into `AuthorityError`/`RouteIndexCensusError`; `_nul_records` splits its NUL-delimited stdout. | "git diff-files deletion census failed", "git census returned an empty NUL-delimited record" | mcp/src/agents_remember/kernel/route_index_census.py:91-91; mcp/src/agents_remember/kernel/route_index_census.py:222-222 |
-| Carryover no longer defines its own input-bearing adapter: `require_git` delegates to `run_git`, and `patch_id` is the one caller that passes `input_text`. | `require_git`, `patch_id` | mcp/src/agents_remember/memory/carryover.py:92-96; mcp/src/agents_remember/memory/carryover.py:200-207 |
+| Carryover no longer defines its own input-bearing adapter: `require_git` delegates to `run_git`, and `patch_id` is the one caller that passes `input_text`. | `require_git`, `patch_id` | mcp/src/agents_remember/memory/carryover.py:113-117; mcp/src/agents_remember/memory/carryover.py:181-188 |
 | Tests import the production selector inventory and cover every selector. | `test_ambient_git_repository_selectors_cannot_redirect_the_census` | mcp/tests/test_route_index.py:592-640 |
-| `DecoyRepositoryTests` re-exports the selectors against a decoy repo inside its own scope; `RunnerContractTests` covers `input_text` vs `DEVNULL`, `surrogateescape`, and the per-call timeout; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` AST-sweeps the package and asserts `kernel/git_command.py` is the only module that spawns git. | `DecoyRepositoryTests`, `RunnerContractTests`, `test_only_the_kernel_module_defines_a_git_runner` | mcp/tests/test_git_command.py:162-218; mcp/tests/test_git_command.py:221-354; mcp/tests/test_git_command.py:511-528 |
+| `DecoyRepositoryTests` re-exports the selectors against a decoy repo inside its own scope; `RunnerContractTests` covers `input_text` vs `DEVNULL`, `surrogateescape`, and the per-call timeout; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` AST-sweeps the package and asserts `kernel/git_command.py` is the only module that spawns git. | `DecoyRepositoryTests`, `RunnerContractTests`, `test_only_the_kernel_module_defines_a_git_runner` | mcp/tests/test_git_command.py:168-224; mcp/tests/test_git_command.py:227-360; mcp/tests/test_git_command.py:565-582 |
 
 ## Cross-Repo References
 

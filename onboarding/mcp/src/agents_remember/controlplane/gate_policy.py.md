@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/gate_policy.py` |
 | doc_type               | `file-level-onboarding`                             |
 | lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`          |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`          |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                       |
 
 ## Purpose
@@ -63,7 +63,7 @@ already proved it. Refusal messages and their order are identical to before the 
 | --- | --- | --- |
 | Gate records carry `decidedBy`/`decidedVia`/`decidingRole` and evidence refs checked here. | "class GateRecord" | mcp/src/agents_remember/controlplane/records.py:45-45 |
 | The pure resolver consumes this policy. | "class GateGuard" | mcp/src/agents_remember/controlplane/enforcement.py:42-42 |
-| MCP settings parse the named/custom policy into this model. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:123-123 |
+| MCP settings parse the named/custom policy into this model. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:124-124 |
 | Gate decision payloads reject invalid orchestration decisions before appending. | "def gate_create_payload" | mcp/src/agents_remember/mcp/tools/gates.py:44-44 |
 
 As of the 260703-L8 seam ruling: `master-handover-approval` joins DELEGABLE_GATE_KINDS; SEAM_GATE_KINDS names the seam set; `apply_seam_verdict_requirement(policy)` binds reviewer-verdict evidence to every DELEGATED seam rule (the requireReviewerVerdictAtSeams wiring — human-decided seam kinds are untouched since the human sees the attached verdict); the named policy manager-decides-leaf-gates now also routes the master-exit handover to the ORCHESTRATOR.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_seat_lifecycle.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-08-11T20:28+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated            | 2026-08-16T02:51+02:00 |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -138,6 +138,10 @@ package owner. Structural-seat retirement, landing, and integration lifecycle as
 unchanged.
 
 ## Update History
+
+- 2026-08-16T02:51+02:00 — No content impact: the integration hook fixture now supplies the
+  configured contract-path resolver required by the strengthened application boundary; seat
+  retirement, landing, and auto-close behavior are unchanged.
 
 - 2026-08-13T09:05+02:00 — L23 curator: recorded the integration-input import move and confirmed the
   seat-lifecycle regression contract is unchanged; final provenance remains closeout-owned.

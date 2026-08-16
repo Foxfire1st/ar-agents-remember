@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |  `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate |  2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -34,6 +34,11 @@ checkout-development mode and colliding with the official-root isolation guard.
 
 Public callers supply task plus operation kind, never worker PID, operation key, or record path. Fingerprints are canonical JSON hashes; projections deliberately omit private identity.
 
+The operation-state fingerprint includes both code and external-memory base commits. A successful
+sync that absorbs a conflict source delta therefore creates a new closeout generation even when the
+old closeout/candidate cells were reset to the same vocabulary values; the prior completed attempt
+cannot be mistaken for the required targeted re-closeout.
+
 ### Invariants And Boundaries
 
 - A candidate tree is captured before launch and reused by retries.
@@ -58,8 +63,8 @@ No external Domain Documentation source is configured for the internal lifecycle
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Start/observe converges duplicates and binds recovery to canonical task state. | `start_or_observe_operation` | mcp/src/agents_remember/worktrees/lifecycle_operations.py:48-132 |
-| Projection and cancellation expose task state without private operation identifiers. | `observe_operation`; `cancel_operation` | mcp/src/agents_remember/worktrees/lifecycle_operations.py:134-212 |
-| Detached launch and queued-record creation preserve the immutable candidate and native process boundary. | `launch_detached_worker`; `_queued_record` | mcp/src/agents_remember/worktrees/lifecycle_operations.py:214-297 |
+| Projection and cancellation expose task state without private operation identifiers. | `observe_operation`; `cancel_operation` | mcp/src/agents_remember/worktrees/lifecycle_operations.py:195-200; mcp/src/agents_remember/worktrees/lifecycle_operations.py:219-224 |
+| Detached launch and queued-record creation preserve the immutable candidate and native process boundary. | `launch_detached_worker`; `_queued_record` | mcp/src/agents_remember/worktrees/lifecycle_operations.py:323-359; mcp/src/agents_remember/worktrees/lifecycle_operations.py:362-388 |
 
 ## Cross-Repo References
 
@@ -88,7 +93,15 @@ task-addressed operation key. Worker termination is in `finally`: even if queue 
 captured process group is still signalled after the store clears its PID, preventing a retry from
 launching beside an orphaned old worker.
 
+## 260815-DAG-L4 Integration-Authority Impact
+
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+
 ## Update History
+
+- 2026-08-16T08:12+02:00 — Dagger repair: bound operation generations to code/memory base commits so conflict-resolution sync makes the next targeted closeout observably fresh.
+
+- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — L3 content update: documented reversible queue release and guaranteed
   worker termination on cancellation; verification remains closeout-owned.

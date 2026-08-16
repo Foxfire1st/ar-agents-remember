@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -389,7 +389,13 @@ owner fingerprint reaches durable state. Shared `TaskDocumentRef` values enforce
 and path bounds after canonical normalization, avoiding JSON Schema constraints that the generated
 TypeScript projection could not express truthfully.
 
+## 260815-DAG-L4 L4 Durable Authority Models
+
+Worktree, closeout-queue, and task projections now distinguish organizational direct-super lineage from atomic series lineage and carry exact configured repository, ref, candidate, recovery, and conflict-transaction facts required by the mutation plane.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 
 - 2026-08-15T09:36+02:00 — L3 fast-hook repair: clarified the validator-owned task-reference
   bounds and why they do not become an unrenderable projection-schema keyword.

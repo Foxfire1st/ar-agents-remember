@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -318,8 +318,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:106-187 |
-| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:671-746 |
+| The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:96-167 |
+| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:767-842 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:491-499; mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:130-208 |
@@ -697,7 +697,13 @@ operation path; cancellation still terminates the captured worker even when queu
 fails. Finalize/start/reopen task-fact writers use the queue-governed publisher so no adjacent write
 can invalidate an in-flight candidate.
 
+## 260815-DAG-L4 L4 Exact Worktree Lifecycle
+
+Start, closeout, integrate, sync, cleanup, abandon, and reopen now share task-derived branch authority. Integration uses exact named-ref CAS and crash recovery; atomic series closeout records a complete leaf landing chain; lowest Git/worktree/terminal writers require capabilities instead of trusting caller-supplied branch names.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: recorded queue claim/certify/revalidate/
   consume order, reversible terminal recovery, and governed lifecycle task writes. Verification

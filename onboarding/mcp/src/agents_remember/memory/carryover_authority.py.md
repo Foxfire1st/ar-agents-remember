@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory/carryover_authority.py`           |
 | doc_type               | `file-level-onboarding`                                          |
 | lastUpdated            | 2026-07-31T00:00+02:00                                           |
-| lastVerifiedCommitHash |                                                                  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                                                  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |                                                                  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate |                                                                  2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../overview.md`                                           |
 
 ## Governing Overview
@@ -74,9 +74,9 @@ grounded in the package settings parser, this raw preflight, and paired tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `apply_carryover_for_request` obtains `official_storage` from `required_official_storage` and passes it to `_refresh_official_route_indexes` after carried onboarding. | "official_storage = required_official_storage(official_memory)"; "if carried:"; "route_index_refresh = _refresh_official_route_indexes"; "official_storage" | mcp/src/agents_remember/memory/carryover.py:790-790; mcp/src/agents_remember/memory/carryover.py:825-826; mcp/src/agents_remember/memory/carryover.py:829-829 |
-| The raw preflight exposes the required official storage authority. | `required_official_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
-| Full-apply JSON/Markdown tests cover the missing, invalid, empty/reset, unsupported, retained, repopulated, fallback, and official-over-source cases. | `test_missing_official_settings_refuses_before_any_mutation`; `test_semantically_empty_json_authority_refuses_before_any_mutation`; `test_markdown_reset_lists_remove_final_rule_contribution_before_mutation`; `test_markdown_parser_retained_and_repopulated_contributions_remain_authoritative`; `test_unsupported_json_storage_labels_refuse_before_any_mutation`; `test_unsupported_markdown_storage_labels_refuse_before_any_mutation`; `test_official_settings_override_conflicting_source_settings` | mcp/tests/test_carryover_apply_1.py:100-113; mcp/tests/test_carryover_apply_1.py:150-176; mcp/tests/test_carryover_apply_2.py:88-179; mcp/tests/test_carryover_apply_2.py:216-332; mcp/tests/test_carryover_apply_2.py:496-535; mcp/tests/test_carryover_apply_2.py:569-603; mcp/tests/test_carryover_apply_2.py:605-630 |
+| The internal apply owner obtains target storage authority and passes it to route-index refresh only after configured contract and protected-checkout authority. | `_apply_carryover_for_request`, `_refresh_target_route_indexes` | mcp/src/agents_remember/memory/carryover.py:636-670; mcp/src/agents_remember/memory/carryover.py:759-852 |
+| The raw preflight exposes the required target storage authority. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
+| Full-apply JSON/Markdown tests cover missing, invalid, empty/reset, unsupported, retained, repopulated, fallback, and target-over-source cases. | `test_missing_official_settings_refuses_before_any_mutation`; `test_semantically_empty_json_authority_refuses_before_any_mutation`; `test_markdown_reset_lists_remove_final_rule_contribution_before_mutation`; `test_markdown_parser_retained_and_repopulated_contributions_remain_authoritative`; `test_unsupported_json_storage_labels_refuse_before_any_mutation`; `test_unsupported_markdown_storage_labels_refuse_before_any_mutation`; `test_target_settings_override_conflicting_source_settings` | mcp/tests/test_carryover_apply_1.py:98-175; mcp/tests/test_carryover_apply_2.py:88-179; mcp/tests/test_carryover_apply_2.py:216-332; mcp/tests/test_carryover_apply_2.py:496-535; mcp/tests/test_carryover_apply_2.py:569-630 |
 
 ## Cross-Repo References
 
@@ -87,7 +87,13 @@ sibling repository provides implementation authority.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260815-DAG-L4 Authority Boundary
+
+L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 
 - 2026-08-04T14:17+02:00 — 260731-EFA-L6 S18-B13 curator: closed D10 caller/call/storage dataflow evidence for the same-reviewer residual delta.
 

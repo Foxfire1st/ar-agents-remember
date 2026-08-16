@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/reopen.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -31,7 +31,7 @@ worktree lifecycle. Recreating worktrees stays `worktree_start`'s job.
 ### Logic
 
 `reopen_task(contract_path, dry_run=False)` loads the enclosure contract and first runs
-cit:([`_reopen_blockers`], mcp/src/agents_remember/worktrees/reopen.py:317-331): the contract must be `kind == "leaf"` with closeout, integration,
+cit:([`_reopen_blockers`], mcp/src/agents_remember/worktrees/reopen.py:376-390): the contract must be `kind == "leaf"` with closeout, integration,
 and cleanup all `completed`, and neither the code nor memory worktree may still exist
 on disk — anything else returns a `blocked` payload (returncode 2) listing every
 blocker.
@@ -59,8 +59,8 @@ existing-contract branch treats like `abandoned` (recreate fresh, never attach) 
 declared member of `CleanupStatus`, so the packet accepts it. cit:([`ContractCells`; `amend_contract`; "CleanupStatus = Literal["], mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:181-196; mcp/src/agents_remember/worktrees/worktree_contract.py:199-227)
 
 `_plan_leaf_doc_reset` prepares the leaf task-document reset and publishes it only with the
-contract-side reopen transaction. cit:([`_plan_leaf_doc_reset`], mcp/src/agents_remember/worktrees/reopen.py:334-365)
-The paired cit:(["def _plan_master_index_reset("; "_validate_reopen_row_path(master_path"; "updated = demote_completed_master_if_unresolved(TaskDocument.model_validate(data))"], mcp/src/agents_remember/worktrees/reopen.py:430-430; mcp/src/agents_remember/worktrees/reopen.py:466-466; mcp/src/agents_remember/worktrees/reopen.py:468-468) plan applies the master's
+contract-side reopen transaction. cit:([`_plan_leaf_doc_reset`], mcp/src/agents_remember/worktrees/reopen.py:393-436)
+The paired cit:(["def _plan_master_index_reset("; "_validate_reopen_row_path(master_path"; "updated = demote_completed_master_if_unresolved(TaskDocument.model_validate(data))"], mcp/src/agents_remember/worktrees/reopen.py:498-498; mcp/src/agents_remember/worktrees/reopen.py:534-534; mcp/src/agents_remember/worktrees/reopen.py:536-536) plan applies the master's
 `subTasks` row for the doc back to `planning`.
 
 ### Invariants And Boundaries
@@ -78,7 +78,7 @@ The paired cit:(["def _plan_master_index_reset("; "_validate_reopen_row_path(mas
   `replace` call that survives here is legitimate: it carries only free-form
   string/bool provenance fields, none of them a vocabulary cell.
 - The tool mutates only coordination state: the enclosure contract, task docs, and the frozen
-  landing-final observation it clears before reopening. cit:([`_clear_frozen_landing`], mcp/src/agents_remember/worktrees/reopen.py:298-314)
+  landing-final observation it clears before reopening. cit:([`_clear_frozen_landing`], mcp/src/agents_remember/worktrees/reopen.py:357-373)
 - `nextOperation` is always `worktree_start`: edit steps via `task_doc`, then start
   the same leaf id.
 
@@ -87,9 +87,9 @@ The paired cit:(["def _plan_master_index_reset("; "_validate_reopen_row_path(mas
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The doc lookup and lifecycle restamp helpers this module shares with worktree start. | `find_leaf_doc`; `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70; mcp/src/agents_remember/tasks/leaf_doc.py:161-175; mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
-| The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:468-468 |
-| The recreate-fresh path restamps the leaf lifecycle document through the queue-governed publisher. | "publish=lambda task_root, document: publish_queue_bound_task_facts(" | mcp/src/agents_remember/worktrees/modules/start.py:602-611 |
-| The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_doc_tools.py:1098-1119 |
+| The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:441-441 |
+| The recreate-fresh path restamps the leaf lifecycle document through the queue-governed publisher. | "publish=lambda task_root, document: publish_queue_bound_task_facts(" | mcp/src/agents_remember/worktrees/modules/start.py:594-594 |
+| The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_doc_tools.py:1147-1168 |
 | The contract dataclass, amendment helper, and `CleanupStatus` vocabulary definitions (the vocabulary in models/worktree.py since L9). | "class ContractCells"; "def amend_contract"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
 | The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:96-136 |
 | `test_no_contract_cell_is_written_through_dataclasses.replace` and `test_every_writable_cleanup_value_validates_at_the_wire_boundary` pin both halves of this. | `test_no_contract_cell_is_written_through_dataclasses_replace`; `test_every_writable_cleanup_value_validates_at_the_wire_boundary` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:289-293; mcp/tests/test_wire_vocabulary_exhaustiveness.py:656-664 |
@@ -115,7 +115,30 @@ unit, now executed inside the sprint queue's task-fact publisher. A topology-sta
 the active atomic master is allowed; another master or a selected/in-flight lane refuses before
 publication. Queue errors are returned as the existing blocked reopen result.
 
+## 260815-DAG-L4 Integration-Authority Impact
+
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+
+Reopen proves a terminal leaf against its exact recorded landing, not its necessarily older start
+base: code source must equal `integrated_code_commit`, and external-memory source must equal
+`integrated_ledger_commit`, before task facts are reset.
+
+The apply publication now repeats that whole proof under the queue-to-repository authority that
+owns the reset. It reloads and requires the exact preflighted terminal contract, rechecks the
+current protected source tips, and for external memory proves the recorded ledger maps the landed
+code commit to the landed memory-content commit and reaches that content. A contract or ref race
+therefore returns a blocked result without clearing the frozen landing or rewriting task facts.
+The leaf/master reset plan is also rebuilt inside that authority callback, so a governed task-doc
+edit completed after outer preflight is never overwritten by stale prepared models.
+
 ## Update History
+
+- 2026-08-16T07:15+02:00 — L4 review repair: moved leaf/master reset planning into the locked publication so concurrent task-doc edits cannot be overwritten by stale preflight models.
+- 2026-08-16T07:05+02:00 — L4 review repair: moved the exact terminal contract, source-tip, and external-ledger proof into the locked reopen publication boundary before any evidence is erased.
+
+- 2026-08-16T06:15+02:00 — Dagger repair: terminal reopen now validates the current source pair against the leaf's exact landed commits, preserving own-atomic reopen without admitting source drift.
+
+- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — L3 content update: replaced the retired direct restamp/publication
   claim with the queue-governed reopen transaction and preserved rollback semantics; verification

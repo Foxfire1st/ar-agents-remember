@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -146,7 +146,13 @@ Worktree response models now import `LifecycleOperationProjection` from
 `models.lifecycles.operation`. The worktree vocabulary and strict source-lineage wire projection
 remain owned here and are unchanged by the import move.
 
+## 260815-DAG-L4 Authority Boundary
+
+L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 
 - 2026-08-13T09:05+02:00 — L23 curator: recorded the operation-projection package move and confirmed
   the worktree wire contract is unchanged; final provenance remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_cleanup_carryover_terminal.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-16T04:06+02:00                                            |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                                        |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -20,7 +20,9 @@ Part of the 260731-EFA-L7 in-place split family for `test_cleanup_carryover_term
 
 ## Code Commentary
 
-- `TerminalPreflightFailureTests`
+- `TerminalPreflightFailureTests` constructs real code and external-memory repositories, checks
+  out the contract-recorded leaf memory branch, and proves terminal cleanup refuses dirty,
+  unmerged, missing, or otherwise unsafe worktree state before deleting refs or worktrees.
 
 ## Invariants And Boundaries
 
@@ -34,6 +36,7 @@ Part of the 260731-EFA-L7 in-place split family for `test_cleanup_carryover_term
 
 ## Update History
 
+- 2026-08-16T04:06+02:00 — Dagger fixture repair: the external-memory terminal preflight now checks out the exact recorded leaf memory branch before exercising cleanup refusal.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

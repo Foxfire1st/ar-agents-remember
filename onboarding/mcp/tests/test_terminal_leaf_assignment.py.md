@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_terminal_leaf_assignment.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-16T04:06+02:00 |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,10 +61,13 @@ No external domain source governs this repository-local test contract.
 ## L23 Assignment No-Mutation Regression
 
 Task topology now includes current contracts, and a dedicated stale-super case
-advances the real repo before assignment. It proves the blocked projection is
-returned while the terminal retains its previous unbound task state.
+advances the exact task-derived `super` ref before returning the ambient checkout to `main`.
+It proves the blocked projection is returned while the terminal retains its previous unbound
+task state.
 
 ## Update History
+
+- 2026-08-16T04:06+02:00 — Dagger fixture repair: terminal-assignment stale-lineage forcing advances the task-derived super ref and leaves the ambient checkout on main.
 - 2026-08-12T20:10+02:00 — L23 curator: documented fail-closed assignment without seat mutation; verification remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 added direct boundary coverage for `role_suffixed_leaf_base`, clearing the master CRAP finding without changing production behavior.

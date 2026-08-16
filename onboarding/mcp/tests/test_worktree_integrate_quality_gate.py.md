@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_integrate_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T11:07+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-16T04:06+02:00 |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ No Domain Documentation source is configured for this repository-local regressio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `integration_contract` | mcp/tests/test_worktree_integrate_quality_gate.py:28-48 |
+| Current suite declaration anchoring this card. | `integration_contract` | mcp/tests/test_worktree_integrate_quality_gate.py:52-170 |
 
 ## Cross-Repo References
 
@@ -75,7 +75,16 @@ The altitude suite now proves both arms at master integration: Agents Remember w
 self-owned wrapper blocks before merge, while a consumer repository without an opted-in wrapper
 reports `wrapper-unavailable` and remains non-blocking. The full gate still runs once when present.
 
+## 260815-DAG-L4 Integration-Authority Forcing
+
+This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+
 ## Update History
+
+- 2026-08-16T07:05+02:00 — L4 review repair: completed apply without a durable recovery tuple now refuses before queue completion; read-only completed preview remains non-mutating.
+- 2026-08-16T05:18+02:00 — Dagger fixture repair: the post-memory source-move unit case executes its publication callback through an isolated queue-owner seam with a valid operation key, retaining the real two-stage source recheck.
+- 2026-08-16T04:06+02:00 — Dagger fixture repair: series gates use a real approved closeout commit, queue-claim mocks isolate pre-merge memory blockers, and source movement patches exact named-ref reads.
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-15T11:07+02:00 — No content impact: corrected the synthetic task root to the canonical
   coordination hierarchy required by queue scope resolution; quality-gate assertions are unchanged.
