@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_worktree_edge_paths.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T12:53+02:00                     |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-16T04:06+02:00                     |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ catches `ContractError`, so an escaping raise would surface as a traceback inste
 result the agent can read and correct. It patches `start_contract_module._build_start_contract`
 with a `side_effect`, since the refusal is the subject and reaching it for real would mean standing
 up a git repository to test an argument check. The production half is `build_start_contract`'s
-`except ContractError -> invalid_contract_request_result` cit:([`build_start_contract`], mcp/src/agents_remember/worktrees/modules/start_contract.py:488-507) and cit:([`invalid_contract_request_result`], mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53).
+`except ContractError -> invalid_contract_request_result` cit:([`build_start_contract`], mcp/src/agents_remember/worktrees/modules/start_contract.py:826-845) and cit:([`invalid_contract_request_result`], mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53).
 
 The refusal now covers `workflow_kind` too — the message the fixture uses,
 `"workflow_kind must be one of ['chat-task', 'light-task']"`, is the shape `_task_vocabulary`
@@ -96,10 +96,10 @@ leaves `memory_mode` external, and a plain `{"state": "ready"}` returns the *ide
 | --- | --- | --- |
 | The construction refusal rejects unknown workflow and memory values through `_task_vocabulary`. | `_task_vocabulary` | mcp/src/agents_remember/worktrees/worktree_contract.py:161-178 |
 | `WorkflowKind` limits workflow selection to `chat-task` and `light-task` (declared in models/worktree.py since L9). | "WorkflowKind = Literal[" | mcp/src/agents_remember/models/worktree.py:14-14 |
-| `build_start_contract` catches `ContractError` and `LeafRefResolutionError` so neither leaves the tool handler. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:488-507 |
-| `_contract_after_memory_start` is the memory-disabled/reconciled recovery. | `_contract_after_memory_start` | mcp/src/agents_remember/worktrees/modules/start.py:136-160 |
+| `build_start_contract` catches `ContractError` and `LeafRefResolutionError` so neither leaves the tool handler. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:826-845 |
+| `_contract_after_memory_start` is the memory-disabled/reconciled recovery. | `_contract_after_memory_start` | mcp/src/agents_remember/worktrees/modules/start.py:161-183 |
 | `invalid_contract_request_result` returns the `exit 2` / `state: invalid-request` payload for a refusal. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
-| The happy-path lifecycle suites these guards sit beside. | `WorktreeSupportTests`; `WorktreeSyncTests`; `ContractLifecycleAnchorTests` | mcp/tests/test_worktree_contract_lifecycle.py:51-81; mcp/tests/test_worktree_support.py:671-746; mcp/tests/test_worktree_sync.py:111-244 |
+| The happy-path lifecycle suites these guards sit beside. | `WorktreeSupportTests`; `WorktreeSyncTests`; `ContractLifecycleAnchorTests` | mcp/tests/test_worktree_contract_lifecycle.py:51-81; mcp/tests/test_worktree_support.py:767-842; mcp/tests/test_worktree_sync.py:111-244 |
 | Helper-level arms of the same lifecycle. | `InspectContainersTests`; `InspectContainersIndividuallyTests`; `DockerRemoveHelpersTests`; `RouteOverviewMetadataRefreshPlanTests` | mcp/tests/test_worktree_and_observer_helpers.py:93-180; mcp/tests/test_worktree_and_observer_helpers.py:183-231; mcp/tests/test_worktree_and_observer_helpers.py:234-348; mcp/tests/test_worktree_and_observer_helpers.py:421-526 |
 
 ## L23 Status And Attach Edges
@@ -110,7 +110,14 @@ lineage, and omission when no task edge applies. Older preflight tests mark
 lineage non-applicable so their stale-base/rebuild branches retain isolated
 ownership.
 
+## 260815-DAG-L4 Integration-Authority Forcing
+
+This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+
 ## Update History
+
+- 2026-08-16T04:06+02:00 — Dagger fixture repair: direct integration refusal asserts the current plane-owned journaled-operation diagnostic without relaxing the guard.
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 - 2026-08-14T06:40+02:00 — L23 final candidate review: edge-path tests reject Windows/UNC shims and
   foreign temp roots, selecting only native lifecycle executables with exact remediation on refusal.
 

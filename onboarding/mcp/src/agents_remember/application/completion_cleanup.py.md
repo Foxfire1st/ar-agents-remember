@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/completion_cleanup.py`  |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-10T06:28+02:00                                       |
-| lastVerifiedCommitHash |                                                              `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |                                                              2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |                                                              `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate |                                                              2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ tests pin edge wiring separately from cleanup failure containment.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Integration and finalization call `auto_complete_seats` only after their underlying edge succeeds. | `worktree_integrate_tool`; `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:359-401; mcp/src/agents_remember/application/worktree_tools.py:514-545 |
+| Integration and finalization call `auto_complete_seats` only after their underlying edge succeeds. | `worktree_integrate_tool`; `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:382-434; mcp/src/agents_remember/application/worktree_tools.py:552-583 |
 | Normal retirement terminates the host and persists catalog retirement provenance without touching transcripts. | `retire_entry` | mcp/src/agents_remember/serving/retire.py:37-71 |
 | Durable inbox folding supplies the exact report rows used as the close barrier. | "def current(self) -> dict[str, OperatorInboxEntry]:" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:141-141 |
 | Integration tests prove all eligible roles, owner exclusions, report matching, provenance, transcript retention, and opt-out landing. | `AutoLandHookIntegrationTests` | mcp/tests/test_seat_lifecycle.py:645-869 |

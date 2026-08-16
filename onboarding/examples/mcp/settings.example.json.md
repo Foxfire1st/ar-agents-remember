@@ -6,8 +6,8 @@
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-09T14:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -92,7 +92,7 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:123-123 |
+| MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:124-124 |
 | Provider lifecycle settings are generated from MCP config instead of read from coordinator settings. | "def lifecycle_settings_from_config" | mcp/src/agents_remember/providers/settings.py:32-32 |
 | The `providerDegradation` shape shown here validates through the dedicated fail-loud parser (260707-HFX-L7). | "class ProviderDegradationSettings:" | mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py:37-37 |
 

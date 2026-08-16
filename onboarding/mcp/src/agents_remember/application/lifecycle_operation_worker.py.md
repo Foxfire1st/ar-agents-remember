@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/lifecycle_operation_worker.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |  `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate |  2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ The source records the lifecycle transition and recovery boundary directly.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `OperationRuntime` publishes claimed, heartbeat, progress, and terminal durable state. | `OperationRuntime` | mcp/src/agents_remember/application/lifecycle_operation_worker.py:64-213 |
-| Execution reconstructs captured policy and dispatches the exact closeout or integration input. | `execute_operation` | mcp/src/agents_remember/application/lifecycle_operation_worker.py:216-249 |
+| Execution reconstructs captured policy and dispatches the exact closeout or integration input. | `execute_operation` | mcp/src/agents_remember/application/lifecycle_operation_worker.py:252-301 |
 
 ## Cross-Repo References
 
@@ -68,7 +68,7 @@ No meaningful cross-repository boundary is owned here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The process operates only on the contract-resolved repository and memory worktrees. | `execute_operation` | mcp/src/agents_remember/application/lifecycle_operation_worker.py:216-249 |
+| The process operates only on the contract-resolved repository and memory worktrees. | `execute_operation` | mcp/src/agents_remember/application/lifecycle_operation_worker.py:252-301 |
 
 ## L23 Lifecycle Model Package Review
 
@@ -89,7 +89,13 @@ pre-boundary. A release failure is preserved in the terminal operation payload/e
 being hidden, so retry keeps the original task-addressed operation and cannot silently schedule a
 different candidate.
 
+## 260815-DAG-L4 Authority Boundary
+
+L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — L3 content update: documented pre-boundary queue release and visible
   release failure on worker failure; verification remains closeout-owned.

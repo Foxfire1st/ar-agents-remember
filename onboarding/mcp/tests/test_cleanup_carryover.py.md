@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cleanup_carryover.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                                               |
-| lastVerifiedCommitDate |2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                                               |
+| lastVerifiedCommitDate |2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                                    |
 
 ## Governing Overview
@@ -128,17 +128,17 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | `carryover_done` reads the official ledger mapping used as the carryover-complete signal. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:174-197 |
 | `_post_integration_phase` routes completed integrations through `carryover-pending` or `cleanup-pending` and selects the corresponding carryover or cleanup tool. | `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:230-276 |
-| `GuidanceCarryoverRoutingTests` proves both carryover-pending and cleanup-pending routes. | `GuidanceCarryoverRoutingTests` | mcp/tests/test_cleanup_carryover.py:155-178 |
-| The cleanup carryover guard and result contract under test. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:417-460 |
-| Source-branch work-branch deletion is proved by the cleanup helper. | `delete_branch_if_merged_into` | mcp/src/agents_remember/worktrees/modules/cleanup.py:77-107 |
-| Child-edge source preservation is tracked by the cleanup deletion set. | `_deleted_branches` | mcp/src/agents_remember/worktrees/modules/cleanup.py:297-337 |
-| Dry-run directory planning and empty-directory removal are owned by the cleanup state helpers. | `remove_empty_dir`; `_scheduled_removal_paths`; `_cleanup_state` | mcp/src/agents_remember/worktrees/modules/cleanup.py:262-277; mcp/src/agents_remember/worktrees/modules/cleanup.py:340-352; mcp/src/agents_remember/worktrees/modules/cleanup.py:368-387 |
-| Remote branch deletion is handled by the cleanup helper. | `delete_remote_branch_if_present` | mcp/src/agents_remember/worktrees/modules/cleanup.py:169-185 |
+| `GuidanceCarryoverRoutingTests` proves both carryover-pending and cleanup-pending routes. | `GuidanceCarryoverRoutingTests` | mcp/tests/test_cleanup_carryover.py:273-300 |
+| The cleanup carryover guard and result contract under test. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:611-656 |
+| Source-branch work-branch deletion is proved by the cleanup helper. | `delete_branch_if_merged_into` | mcp/src/agents_remember/worktrees/modules/cleanup.py:213-249 |
+| Child-edge source preservation is tracked by the cleanup deletion set. | `_deleted_branches` | mcp/src/agents_remember/worktrees/modules/cleanup.py:478-514 |
+| Dry-run directory planning and empty-directory removal are owned by the cleanup state helpers. | `remove_empty_dir`; `_scheduled_removal_paths`; `_cleanup_state` | mcp/src/agents_remember/worktrees/modules/cleanup.py:430-445; mcp/src/agents_remember/worktrees/modules/cleanup.py:517-529; mcp/src/agents_remember/worktrees/modules/cleanup.py:562-581 |
+| Remote branch deletion is handled by the cleanup helper. | `delete_remote_branch_if_present` | mcp/src/agents_remember/worktrees/modules/cleanup.py:312-335 |
 | Shared drift snapshot path/removal helper used by cleanup and the drift snapshot cleanup tests. | `remove_drift_snapshot` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:27-35 |
 | The official ledger reader and mapping lookup the carryover-done signal is built on. | `load_ledger`; `find_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:232-234 |
 | The shared `git` and `init_repo` helper definitions reused here. | `git`; `init_repo` | mcp/tests/test_worktree_support.py:54-64; mcp/tests/test_worktree_support.py:68-85 |
-| This cleanup suite's `_official_memory` helper exercises the shared `git` and `init_repo` helpers. | `_official_memory` | mcp/tests/test_cleanup_carryover.py:120-133 |
-| The typed "class WorktreeArgs:" DTO "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" consumes. | "class WorktreeArgs:"; "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" | mcp/src/agents_remember/worktrees/modules/args.py:23-85; mcp/src/agents_remember/worktrees/modules/cleanup.py:417-460; mcp/src/agents_remember/worktrees/modules/cleanup.py:464-464 |
+| This cleanup suite's `_official_memory` helper exercises the shared `git` and `init_repo` helpers. | `_official_memory` | mcp/tests/test_cleanup_carryover.py:193-206 |
+| The typed "class WorktreeArgs:" DTO "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" consumes. | "class WorktreeArgs:"; "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" | mcp/src/agents_remember/worktrees/modules/args.py:26-26; mcp/src/agents_remember/worktrees/modules/cleanup.py:618-618 |
 
 ## Cross-Repo References
 
@@ -148,7 +148,13 @@ No meaningful cross-repo references found.
 
 Cleanup/carryover tests keep the carryover-before-cleanup invariant while updating contract fixtures to the new series-contract schema.
 
+## 260815-DAG-L4 Integration-Authority Forcing
+
+This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-11T16:54+02:00 — Extended cleanup coverage to prove actual and prospective garbage
   collection of the enclosure-local curator checklist directory.

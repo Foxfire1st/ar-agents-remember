@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_reopen_guards.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T10:24+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-16T02:51+02:00 |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,6 +40,10 @@ the last case also proves the contract and leaf task document remain byte-identi
 | Moved super ancestry refuses before contract or task-document mutation. | `test_moved_super_refuses_before_reopen_mutates_task_state` | mcp/tests/test_task_reopen_guards.py:46-67 |
 
 ## Update History
+
+- 2026-08-16T02:51+02:00 — No content impact: the stale-lineage fixture explicitly checks out the
+  task-derived `super` ref before advancing it, so the existing refusal and byte-preservation
+  assertions reach the intended named-ref state.
 
 - 2026-08-15T10:24+02:00 — Created by the L3 file-size repair from `ReopenGuardTests`; behavior,
   fixtures, and assertions are unchanged.

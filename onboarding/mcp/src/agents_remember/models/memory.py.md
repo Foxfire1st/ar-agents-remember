@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/memory.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -62,7 +62,7 @@ are present in the agent-facing response schema instead of relying only on the f
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Memory MCP application entry points route these tools to drift, quality, citation, route-index, init, baseline, and carryover services. | `drift_check_tool`; `memory_quality_check_tool`; `citation_check_tool`; `citation_source_index_build_tool`; `citation_fix_tool`; `citation_migrate_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:196-292; mcp/src/agents_remember/application/memory_tools.py:320-435; mcp/src/agents_remember/application/memory_tools.py:438-475; mcp/src/agents_remember/application/memory_tools.py:523-575 |
+| Memory MCP application entry points route these tools to drift, quality, citation, route-index, init, baseline, and carryover services. | `drift_check_tool`; `memory_quality_check_tool`; `citation_check_tool`; `citation_source_index_build_tool`; `citation_fix_tool`; `citation_migrate_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:201-219; mcp/src/agents_remember/application/memory_tools.py:222-297; mcp/src/agents_remember/application/memory_tools.py:340-372; mcp/src/agents_remember/application/memory_tools.py:375-392; mcp/src/agents_remember/application/memory_tools.py:395-425; mcp/src/agents_remember/application/memory_tools.py:428-463; mcp/src/agents_remember/application/memory_tools.py:466-502; mcp/src/agents_remember/application/memory_tools.py:505-517; mcp/src/agents_remember/application/memory_tools.py:565-572; mcp/src/agents_remember/application/memory_tools.py:575-591; mcp/src/agents_remember/application/memory_tools.py:594-601; mcp/src/agents_remember/application/memory_tools.py:604-622 |
 | "status: DriftStatus" is the shared status declaration. | "status: DriftStatus" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14 |
 | `DriftCheckResponse.status` uses the shared `DriftStatus` alias. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:13-27 |
 | `DriftSummary.status` uses the same shared `DriftStatus` alias. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_tool_enclosure_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T11:07+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ application source plus this regression suite.
 | Route-index tests prove scoped writes/dry-runs leave the non-target tree untouched. | `RouteIndexRefreshWritesTheNamedTreeTests` | mcp/tests/test_memory_tool_enclosure_scope.py:176-215 |
 | Quality tests prove leaf selection, paired Markdown/JSON curator publication, temporary base forwarding, and strict bare-call provenance. | `MemoryQualityCheckReadsTheNamedTreeTests` | mcp/tests/test_memory_tool_enclosure_scope.py:219-289; mcp/tests/test_memory_tool_enclosure_scope.py:291-329 |
 | Drift tests measure the named leaf onboarding against the named leaf code. | `DriftCheckReadsTheNamedTreesTests` | mcp/tests/test_memory_tool_enclosure_scope.py:324-342 |
-| Invalid enclosures refuse and the helper constructors preserve typed contract/config shapes. | `RefusalTests`; `_replaced`; `_config_without_memory_root` | mcp/tests/test_memory_tool_enclosure_scope.py:345-425 |
+| Invalid enclosures refuse and the helper constructors preserve typed contract/config shapes. | `RefusalTests`; `_replaced`; `_config_without_memory_root` | mcp/tests/test_memory_tool_enclosure_scope.py:348-438; mcp/tests/test_memory_tool_enclosure_scope.py:441-443; mcp/tests/test_memory_tool_enclosure_scope.py:446-449 |
 
 ## Cross-Repo References
 
@@ -80,7 +80,13 @@ No cross-repository implementation dependency governs this test.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260815-DAG-L4 Integration-Authority Forcing
+
+This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-15T11:07+02:00 — L3 content update: the enclosure-local quality fixture now expects
   both the human curator report and its structured JSON attestation, matching the queue evidence

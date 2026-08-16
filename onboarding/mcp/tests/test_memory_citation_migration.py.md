@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_migration.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,8 +75,8 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `ParserSplitTests` (lines 901-948) — Which numbers are final and which move when the extent layer does.. | `ParserSplitTests` | mcp/tests/test_memory_citation_migration_forms.py:272-319 |
 | Defines the class `WalkTests` (lines 951-1010) — What the tree walk does and does not treat as a document.. | `WalkTests` | mcp/tests/test_memory_citation_migration_forms.py:322-381 |
 | Defines the class `OldFormTests` (lines 1013-1068) — The reader for the format being replaced, at the edges the tree actually holds.. | `OldFormTests` | mcp/tests/test_memory_citation_migration_guard.py:20-75 |
-| Defines the class `WriteGuardTests` (lines 1071-1133) — L6-R27: the migration writes into a leaf's memory worktree or it does not write.. | "class WriteGuardTests(unittest.TestCase):" | mcp/tests/test_memory_citation_fix_operations.py:238-238 |
-| Defines the class `CommandLineTests` (lines 1136-1202) — One command per mode, and no argument list that names the official memory repo.. | "class CommandLineTests(unittest.TestCase):" | mcp/tests/test_memory_citation_fix_operations.py:540-540 |
+| Defines the class `WriteGuardTests` (lines 1071-1133) — L6-R27: the migration writes into a leaf's memory worktree or it does not write.. | "class WriteGuardTests(unittest.TestCase):" | mcp/tests/test_memory_citation_fix_operations.py:273-273 |
+| Defines the class `CommandLineTests` (lines 1136-1202) — One command per mode, and no argument list that names the official memory repo.. | "class CommandLineTests(unittest.TestCase):" | mcp/tests/test_memory_citation_fix_operations.py:570-570 |
 
 ## Update History
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

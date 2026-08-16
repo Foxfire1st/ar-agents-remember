@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/primitives/checkout_coordination.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T00:00+02:00 |
-| lastVerifiedCommitHash |  `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate |  2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ authority is copied into or resolved from `reports/`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Runtime config selects the synthetic leaf config before reading the supplied authority file. | `checkout_cli_location`; `_checkout_runtime_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:149-157; mcp/src/agents_remember/kernel/primitives/runtime_config.py:653-706 |
+| Runtime config selects the synthetic leaf config before reading the supplied authority file. | `checkout_cli_location`; `_checkout_runtime_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:704-704; mcp/src/agents_remember/kernel/primitives/runtime_config.py:727-755 |
 | Durable-store lock, append, and rewrite paths all enforce this target policy. | "path = _checked_lock_path_for(log_path)"; "def _prepare_append_target(log_path: Path) -> None:"; "def _require_rewrite_access(log_path: Path, store: str) -> None:" | mcp/src/agents_remember/controlplane/durable_store.py:432-432; mcp/src/agents_remember/controlplane/durable_store.py:527-527; mcp/src/agents_remember/controlplane/durable_store.py:532-532 |
 | MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. | "server_startup.declare_mcp_process()"; "declare_test_process()" | mcp/src/agents_remember/mcp/server.py:63-63; mcp/tests/conftest.py:58-58 |
 

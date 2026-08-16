@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-15T11:25+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -104,9 +104,9 @@ validation failures, and invalid resolvable parent master docs.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_doc_tools.py:76-90 |
-| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_doc_tools.py:413-425 |
+| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_doc_tools.py:462-474 |
 | Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:375-418 |
-| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_doc_tools.py:244-244 |
+| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_doc_tools.py:249-249 |
 | The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
 | The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:261-364 |
 | The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
@@ -124,7 +124,13 @@ controls which own-atomic-block recovery edits may proceed while a barrier is ac
 scope resolution is delegated to `task_doc_queue_scope.py`; this dispatcher owns only error
 translation and the locked publication call.
 
+## 260815-DAG-L4 Authority Boundary
+
+L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 
 - 2026-08-15T11:25+02:00 — L3 static-gate repair: extracted queue-scope resolution into its
   application sibling; publication ordering, fail-closed errors, and queue locking are unchanged.

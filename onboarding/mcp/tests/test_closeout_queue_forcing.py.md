@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_forcing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T12:53+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-16T04:06+02:00 |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,6 +38,9 @@ subject of the assertion.
 
 - Evidence equality means byte and canonical-record equality, not summary equality.
 - Graph/task publication races are forced under the same lock used in production.
+- Own-barrier reopen forcing first advances the organizational super, then rebuilds the atomic
+  code and memory source/work pair from that exact tip; own-master success is therefore distinct
+  from stale-lineage refusal, while another master remains frozen.
 - State and WAL serialization never reveal raw lifecycle operation keys.
 
 ### Todos
@@ -57,7 +60,7 @@ No configured Domain Documentation source applies.
 | Graph recomputation and lane-owned task-tree freeze are forced under lock. | `test_claim_recomputes_graph_under_lock_and_lane_ownership_freezes_task_tree_writes` | mcp/tests/test_closeout_queue_forcing.py:115-176 |
 | Graph admission and predecessor indexing are bounded. | `test_predecessor_index_is_linear_and_node_edge_admission_is_bounded` | mcp/tests/test_closeout_queue_forcing.py:177-243 |
 | Projection names only operations legal for the current actor. | `test_projection_names_only_operations_the_candidate_can_take` | mcp/tests/test_closeout_queue_forcing.py:356-432 |
-| WAL recovery is idempotent and raw operation keys never persist. | `test_wal_recovery_after_publish_is_idempotent_and_private_keys_never_persist` | mcp/tests/test_closeout_queue_forcing.py:453-480 |
+| WAL recovery is idempotent and raw operation keys never persist. | `test_wal_recovery_after_publish_is_idempotent_and_private_keys_never_persist` | mcp/tests/test_closeout_queue_forcing.py:507-533 |
 | Sprint completion/reopen crash cuts recover through their WAL. | `test_sprint_status_wal_recovers_before_after_and_reopen_crash_cuts` | mcp/tests/test_closeout_queue_forcing.py:481-570 |
 
 ## Cross-Repo References
@@ -65,6 +68,12 @@ No configured Domain Documentation source applies.
 No meaningful cross-repository reference applies.
 
 ## Update History
+
+- 2026-08-16T05:18+02:00 — Dagger fixture repair: the legal-operation projection completes its certified closeout lifecycle before opening integration, preserving the per-contract lease while reaching the intended queue projection state.
+- 2026-08-16T04:06+02:00 — Dagger fixture repair: closeout and integration lifecycle inputs use the QueueFixture workspace configuration rather than a nonexistent coordination-local settings file.
+- 2026-08-16T02:51+02:00 — L4 barrier/lineage repair: rebuilt the owning atomic pair after the
+  super advance so the test isolates own-master reopen authority from stale source lineage while
+  retaining the other-master refusal.
 
 - 2026-08-15T12:53+02:00 — L3 targeted-gate repair: extended the ambient failure, unbound
   application-wrapper, exact actor projection, crash-cut, and writer-ownership forcing while the

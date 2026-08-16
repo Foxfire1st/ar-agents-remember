@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -477,7 +477,13 @@ The dashboard consumes strict source-lineage projection types, schema, and
 fixtures from the server contract. Engine Room shows the aggregate admission
 state and full summary; it does not compare branches or choose a sync locally.
 
+## 260815-DAG-L4 L4 Projection Contract
+
+The dashboard projection adds the organizational `super-to-leaf` lineage relation and remains generated from the server schema. Organizational direct-super and atomic super-to-master-to-leaf topology therefore use one closed, parity-tested wire vocabulary.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: generated dashboard projection types and
   fixtures now expose explicit master nature, the persisted reasoned sprint graph, and derived waves.

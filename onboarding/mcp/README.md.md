@@ -6,8 +6,8 @@
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T11:55+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -122,7 +122,7 @@ the workspace and never the user's home directory.
 | The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata. | "agents-remember-mcp =" | mcp/pyproject.toml:72-72 |
 | The Quickstart has the user copy a harness starter package, render it either with the local `render-starter` convenience script or by manual placeholder replacement, wire MCP, restart once, and then hand post-restart setup off to the copied `c-13-install-and-onboard` skill, which runs or verifies `runtime_install()` and does not call `skills_install()` in package-based first-run setup. | `# c-13-install-and-onboard Install And Onboard` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:6-273 |
 | The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference. | "def create_server(config: McpRuntimeConfig) -> Any:"; `# MCP Tool Reference` | docs/reference/mcp-tools.md:1-148; mcp/src/agents_remember/mcp/server.py:32-32 |
-| The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. | `parse_timeout_caps` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:573-592 |
+| The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. | `parse_timeout_caps` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:632-651 |
 | The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. | `RuntimeInstallRequest` | mcp/src/agents_remember/install/runtime.py:105-119 |
 
 ## Update History

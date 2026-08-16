@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/task_ref.py`         |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-02T01:05+02:00                                    |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ tools share.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `worktree_attach_tool` / `worktree_status_tool` take a `TaskRef` and resolve it through `_task_ref_namespace`. | `worktree_attach_tool`; `worktree_status_tool`; `_task_ref_namespace` | mcp/src/agents_remember/application/worktree_tools.py:236-245; mcp/src/agents_remember/application/worktree_tools.py:248-256; mcp/src/agents_remember/application/worktree_tools.py:259-272 |
+| `worktree_attach_tool` / `worktree_status_tool` take a `TaskRef` and resolve it through `_task_ref_namespace`. | `worktree_attach_tool`; `worktree_status_tool`; `_task_ref_namespace` | mcp/src/agents_remember/application/worktree_tools.py:258-267; mcp/src/agents_remember/application/worktree_tools.py:270-278; mcp/src/agents_remember/application/worktree_tools.py:281-294 |
 | `resolve_context_tool` takes a `TaskRef`. | `resolve_context_tool` | mcp/src/agents_remember/application/coordination_tools.py:20-50 |
 | The three tool declarations expose `TaskRef` arguments. | `resolve_context_tool`; `worktree_attach_tool`; `worktree_status_tool` | mcp/src/agents_remember/application/coordination_tools.py:24-59; mcp/src/agents_remember/application/worktree_tools.py:255-264; mcp/src/agents_remember/application/worktree_tools.py:267-275 |
 | The locator packing is asserted against a live server. | `test_resolve_context_packs_the_locators_into_a_task_ref` | mcp/tests/test_mcp_registration_wiring_tests_1.py:65-90 |

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -63,14 +63,20 @@ No configured Domain Documentation source applies; queue doctrine is repository-
 | Structural authorization separates manager logistics from orchestrator grade/selection authority. | `QueueActor` | mcp/src/agents_remember/worktrees/closeout_queue.py:100-154 |
 | Mutations re-read the graph under lock before returning a projection. | `closeout_queue_tool` | mcp/src/agents_remember/worktrees/closeout_queue.py:171-244 |
 | Selection takes only the deterministic first ready candidate. | `_apply_candidate_action` | mcp/src/agents_remember/worktrees/closeout_queue.py:277-331 |
-| Declaration binds exact code, memory, ledger, review, curator, and source-lineage facts before history moves. | `_declare_candidate` | mcp/src/agents_remember/worktrees/closeout_queue.py:344-397 |
-| Candidate projection separates ready, waiting, blocked, and in-flight facts. | `_projection` | mcp/src/agents_remember/worktrees/closeout_queue.py:578-607 |
+| Declaration binds exact code, memory, ledger, review, curator, and source-lineage facts before history moves. | `_declare_candidate` | mcp/src/agents_remember/worktrees/closeout_queue.py:343-350 |
+| Candidate projection separates ready, waiting, blocked, and in-flight facts. | `_projection` | mcp/src/agents_remember/worktrees/closeout_queue.py:620-649 |
 
 ## Cross-Repo References
 
 No external repository owns this queue.
 
+## 260815-DAG-L4 Integration-Authority Impact
+
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-15T14:05+02:00 — No content impact: the final targeted-gate repair expresses the
   post-authorization selection arm as the exhaustive remaining action; authorization still owns

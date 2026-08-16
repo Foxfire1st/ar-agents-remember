@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_stale_base.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:30+02:00                     |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                         |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                         |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -57,10 +57,16 @@ with a `SimpleNamespace` context because it only reads
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The preflight and template under test. | `_stale_base_preflight`, `prepare_memory_for_start` | mcp/src/agents_remember/worktrees/modules/start.py:310-351; mcp/src/agents_remember/worktrees/modules/start.py:928-966 |
+| The preflight and template under test. | `_stale_base_preflight`, `prepare_memory_for_start` | mcp/src/agents_remember/worktrees/modules/start.py:313-354; mcp/src/agents_remember/worktrees/modules/start.py:888-911 |
 | Freshness states come from the shared kernel (unit-tested separately). | `GitFreshnessTests` | mcp/tests/test_git_freshness.py:20-104 |
 
+## 260815-DAG-L4 Integration-Authority Forcing
+
+This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 4 citations (citation_anchor_missing=2, citation_prose_not_in_cit_form=0, citation_source_malformed=2); final scoped citation check clean.
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep. The `make_contract`

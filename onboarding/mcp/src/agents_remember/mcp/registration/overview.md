@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-15T09:32+02:00                           |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`       |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -194,7 +194,13 @@ attestation, whose Markdown report digest and exact source-change dispositions a
 by a full contract-scoped `memory_quality_check`. Public registration remains packing plus one
 payload builder; queue logic stays in the application/worktree/control-plane owners.
 
+## 260815-DAG-L4 L4 Public Lifecycle Surface
+
+Registered worktree and memory tools expose journaled closeout/integration and read-only conflict/carryover planning while keeping protected writes behind configured authority. Response schemas and next-tool literals match the executable registration surface.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 
 - 2026-08-15T09:32+02:00 — 260815-DAG-L3 curator: documented the new strict `closeout_queue`
   registration, plane-owned caller authority, and digest-bound memory-quality attestation. The

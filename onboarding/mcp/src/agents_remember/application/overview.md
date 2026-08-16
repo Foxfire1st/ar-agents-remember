@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-15T11:25+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ agent or process replacement; callers never supply the private operation key or 
 `application/` owns operation-level MCP composition. Application entry points translate
 trusted MCP runtime config plus typed tool arguments into package service calls
 and JSON-compatible payload dictionaries. Domain placement follows what a tool
-operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_doc_tools.py:1098-1119) sits beside the task_doc application entry point because it
+operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_doc_tools.py:1147-1168) sits beside the task_doc application entry point because it
 reopens a task, while worktree_tools keeps only genuine worktree operations (its
 abandon now also ends the ambient lifecycle it anchors).
 
@@ -161,7 +161,7 @@ L14: the task-doc application entry point accepts the additive `orchestrates` fi
 | `TOOL_RESPONSE_MODELS` is the registry of public response models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
 | Leaf memory scope carries the optional unstamped comparison base; the contract path supplies the leaf's real code base while bare official scope leaves it absent. | "class MemoryScope:"; "def _leaf_memory_scope(" | mcp/src/agents_remember/application/memory_tools.py:42-57; mcp/src/agents_remember/application/memory_tools.py:120-178 |
 | `memory_quality_check_tool` passes that comparison provenance into the full quality runner without changing verification metadata. | `memory_quality_check_tool` | mcp/src/agents_remember/application/memory_tools.py:217-292 |
-| `route_index_refresh_tool` resolves context and supplies repository/storage authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:438-460 |
+| `route_index_refresh_tool` resolves context and supplies repository/storage authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:466-502 |
 | `build_route_indexes` is the deterministic route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | `worktree_status_packet` returns the `WorktreeSummary` the context packet embeds directly, so the state machine's output is checked at the producer. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
 | `DriftSummaryPacket`, the typed drift seam `_drift_packet` returns. | "class DriftSummaryPacket(TypedDict):" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-11 |
@@ -265,7 +265,13 @@ existing lifecycle worker and worktree application routes now carry the plane-ow
 into queue claim/certify/release seams without exposing it through MCP responses or durable queue
 JSON.
 
+## 260815-DAG-L4 L4 Application Authority Boundary
+
+Application tools now bind lifecycle requests to configured coordination, task, code-repository, and memory-repository identity before dispatch. Worktree, task-document, topology, and memory entry points route protected mutations through the queue/repository authority plane and reject preview/apply drift.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 
 - 2026-08-15T11:25+02:00 — L3 static-gate route impact: extracted task-doc queue-scope
   classification into a focused application owner while retaining the dispatcher as the sole

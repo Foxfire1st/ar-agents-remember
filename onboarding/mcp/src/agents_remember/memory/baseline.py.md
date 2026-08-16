@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory/baseline.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -47,10 +47,16 @@ inside a `CoordinationHints(...)` (260731-EFA-L2) — the resolver no longer acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `memory_baseline_status` and `memory_baseline_adopt` call this module. | `memory_baseline_status_tool`; `memory_baseline_adopt_tool` | mcp/src/agents_remember/application/memory_tools.py:523-530; mcp/src/agents_remember/application/memory_tools.py:533-549 |
+| `memory_baseline_status` and `memory_baseline_adopt` call this module. | `memory_baseline_status_tool`; `memory_baseline_adopt_tool` | mcp/src/agents_remember/application/memory_tools.py:565-572; mcp/src/agents_remember/application/memory_tools.py:575-591 |
 | Ledger parsing and writing live in the kernel. | `load_ledger`; `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
 
+## 260815-DAG-L4 Authority Boundary
+
+L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

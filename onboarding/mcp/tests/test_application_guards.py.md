@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_application_guards.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                         |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -64,7 +64,7 @@ substring of each guard's message rather than the full string.
 | --- | --- | --- |
 | The two guards under test live in the application layer. | `require_repo`; `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:16-24; mcp/src/agents_remember/kernel/authority.py:27-35 |
 | `AuthorityError` is the rejection type and is a `ValueError` subclass via `AgentsRememberError`. | `AuthorityError`; `AgentsRememberError` | mcp/src/agents_remember/errors.py:13-14; mcp/src/agents_remember/errors.py:17-23 |
-| `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. | `McpRuntimeConfig`; `RepositoryScope`; `path_is_relative_to` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:75-80; mcp/src/agents_remember/kernel/primitives/runtime_config.py:122-146; mcp/src/agents_remember/kernel/primitives/runtime_config.py:645-650 |
+| `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. | `McpRuntimeConfig`; `RepositoryScope`; `path_is_relative_to` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:76-81; mcp/src/agents_remember/kernel/primitives/runtime_config.py:123-147; mcp/src/agents_remember/kernel/primitives/runtime_config.py:694-699 |
 
 ## Update History
 

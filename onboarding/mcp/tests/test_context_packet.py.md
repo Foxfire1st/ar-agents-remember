@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_context_packet.py`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -56,7 +56,7 @@ detail consumers at `provider_diagnostics`.
 | --- | --- | --- |
 | The context packet application entry point builds the tested payload. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 | `ContextPacketV2` defines the compact public response contract. | `ContextPacketV2` | mcp/src/agents_remember/models/context_packet.py:114-124 |
-| Shared MCP config fixture helpers provide the settings payload and JSON writer used by this suite. | `settings_payload`; `write_json` | mcp/tests/test_config.py:24-26; mcp/tests/test_config.py:29-46 |
+| Shared MCP config fixture helpers provide the settings payload and JSON writer used by this suite. | `settings_payload`; `write_json` | mcp/tests/test_config.py:27-29; mcp/tests/test_config.py:32-49 |
 
 ## Update History
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

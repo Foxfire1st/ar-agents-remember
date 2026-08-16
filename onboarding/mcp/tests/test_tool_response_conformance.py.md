@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -76,7 +76,7 @@ The former `_direct_closeout_payloads` fixture was removed with the
 `direct_closeout_*` tools (issue #62 worktree-only closeout).
 
 **260731-EFA-L4 — the fixtures now write a stale agent-notifier heartbeat.** `_stale_agent_notifier(root)`
-cit:([`_stale_agent_notifier`], mcp/tests/test_tool_response_conformance.py:479-488) does `AgentNotifierHeartbeatStore(observer_root).tick(now=datetime.now(UTC) -
+cit:([`_stale_agent_notifier`], mcp/tests/test_tool_response_conformance.py:578-587) does `AgentNotifierHeartbeatStore(observer_root).tick(now=datetime.now(UTC) -
 timedelta(hours=6))`, and both lifecycle-bearing collectors call it before installing their ambient
 (`_lifecycle_payloads` L356-L388, `_gate_payloads` L415-L483). This is not decoration. The two
 envelope-wide keys the choke point adds — `nextStep` and `agentNotifierBanner` — are set in
@@ -86,7 +86,7 @@ This suite therefore sat exactly at the mutation point and validated the one sha
 cannot break. A **ticked-then-quiet** row is the state in which the choke point adds the key, so it
 is the state the contract has to be checked in.
 
-cit:([`test_the_choke_point_injections_are_actually_exercised`], mcp/tests/test_tool_response_conformance.py:720-737) makes that self-verifying: it
+cit:([`test_the_choke_point_injections_are_actually_exercised`], mcp/tests/test_tool_response_conformance.py:828-845) makes that self-verifying: it
 asserts `lifecycle_start` is among the payloads carrying `nextStep`, and that both
 `lifecycle_start` and `lifecycle_gate` carry `agentNotifierBanner`. A fixture that quietly stops
 producing them is now a failure here rather than a silent hole under every conformance assertion
@@ -144,11 +144,11 @@ declared nor part of the input."
 | The registry maps each public tool to its response model. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
 | `_tool_payload()` is the production validation path mirrored here. | `_tool_payload`; "def complete_tool_response(" | mcp/src/agents_remember/application/tool_response.py:53-53; mcp/src/agents_remember/mcp/tools/base.py:72-74 |
 | The strict/flexible response-model taxonomy lives in the model base. | `StrictResponseModel`, `FlexibleResponseModel` | mcp/src/agents_remember/models/base.py:10-13; mcp/src/agents_remember/models/base.py:16-19 |
-| Worktree/carryover fixtures reuse worktree test helpers. | `init_repo`, `write_file_onboarding`, `initialized_memory_repo` | mcp/tests/test_worktree_support.py:69-86; mcp/tests/test_worktree_support.py:134-155; mcp/tests/test_worktree_support.py:288-316 |
+| Worktree/carryover fixtures reuse worktree test helpers. | `init_repo`, `write_file_onboarding`, `initialized_memory_repo` | mcp/tests/test_worktree_support.py:78-98; mcp/tests/test_worktree_support.py:169-190; mcp/tests/test_worktree_support.py:323-351 |
 | Schema-level registry coverage is asserted separately. | `test_every_public_tool_has_a_response_model` | mcp/tests/test_models.py:17-18 |
-| Inbox representative payloads call the real post, poll, consume, and supersede builders. | `_operator_inbox_payloads` | mcp/tests/test_tool_response_conformance.py:632-659 |
+| Inbox representative payloads call the real post, poll, consume, and supersede builders. | `_operator_inbox_payloads` | mcp/tests/test_tool_response_conformance.py:740-767 |
 | Lifecycle finalizer representative payload exercises the new terminal worktree tool. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
-| Terminal representative payloads exercise the strict `AttachTerminalSessionToTaskResponse` (unknown-session) and `SpawnAgentSessionResponse` (retired caller-harness input) models. | `_simple_payloads`; `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse`; "definitely-not-a-real-harness" | mcp/src/agents_remember/models/terminal.py:32-44; mcp/src/agents_remember/models/terminal.py:85-127; mcp/tests/test_tool_response_conformance.py:182-296 |
+| Terminal representative payloads exercise the strict `AttachTerminalSessionToTaskResponse` (unknown-session) and `SpawnAgentSessionResponse` (retired caller-harness input) models. | `_simple_payloads`; `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse`; "definitely-not-a-real-harness" | mcp/src/agents_remember/models/terminal.py:35-48; mcp/src/agents_remember/models/terminal.py:91-134; mcp/tests/test_tool_response_conformance.py:246-381 |
 | The choke point that sets both envelope-wide keys before the single dump — `_attach_lifecycle_tail` assigns `nextStep` and `agentNotifierBanner` (plus the legacy `supervisorBanner` alias), and `_agent_notifier_banner` is exception-safe and silent on a never-ticked agent-notifier, which is why the fixtures have to tick one into the past. | `_agent_notifier_banner`, `_attach_lifecycle_tail`, `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:22-31; mcp/src/agents_remember/application/tool_response.py:34-48; mcp/src/agents_remember/application/tool_response.py:49-61 |
 | `nextStep` and `agentNotifierBanner` (plus the legacy `supervisorBanner` alias) as declared envelope fields, which is what lets a banner-carrying payload validate at all. | "class ResponseModel(" | mcp/src/agents_remember/models/base.py:41-60 |
 | The heartbeat store the fixtures tick and the staleness banner they make fire. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
@@ -164,7 +164,13 @@ The representative payload set now constructs canonical organizational master/sp
 resolves an ambient orchestrator seat, calls the real `closeout_queue` status payload, and validates
 it against `CloseoutQueueResponse` with the rest of the public success surface.
 
+## 260815-DAG-L4 Integration-Authority Forcing
+
+This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-15T14:05+02:00 — L3 final targeted-gate repair: every representative leaf fixture now
   has its canonical commanding sprint and integration branch; only `executionGraph` remains
@@ -200,7 +206,7 @@ it against `CloseoutQueueResponse` with the rest of the public success surface.
 - 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:00+02:00 — 260731-EFA-L4 curator: the fixtures now write a **stale agent-notifier
   heartbeat**, and that is a real change to what this suite covers, so the card gained a paragraph
-  for it. cit:([`_stale_agent_notifier`], mcp/tests/test_tool_response_conformance.py:479-488) ticks
+  for it. cit:([`_stale_agent_notifier`], mcp/tests/test_tool_response_conformance.py:578-587) ticks
   `AgentNotifierHeartbeatStore(...).tick(now=datetime.now(UTC) - timedelta(hours=6))`, and both
   lifecycle-bearing collectors call it before installing their ambient (`_lifecycle_payloads`
   L356-L388, `_gate_payloads` L415-L483). Verified the reason against
@@ -208,7 +214,7 @@ it against `CloseoutQueueResponse` with the rest of the public success surface.
   `_supervisor_banner` is silent on a workspace whose supervisor has never ticked — so before this
   leaf the suite sat exactly at the mutation point and never reached it, validating the one
   envelope shape the choke point cannot break. Recorded the new
-  cit:([`test_the_choke_point_injections_are_actually_exercised`], mcp/tests/test_tool_response_conformance.py:720-737) and the invariant it exists
+  cit:([`test_the_choke_point_injections_are_actually_exercised`], mcp/tests/test_tool_response_conformance.py:828-845) and the invariant it exists
   to hold, plus four Repo-Internal rows for the choke point, the two now-declared envelope fields,
   the heartbeat store, and the sibling `test_next_step.py` coverage. The Repo-Internal table is a
   deliberate 2-column `| Finding | Source Path |`; the new rows were written with 2 cells so the

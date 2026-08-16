@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_mtime_sync.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ No external documentation is needed for these standard-library unit tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `_sync_worktree_memory_mtimes` lives in the worktree start module. | `_sync_worktree_memory_mtimes` | mcp/src/agents_remember/worktrees/modules/start.py:975-1026 |
+| `_sync_worktree_memory_mtimes` lives in the worktree start module. | `_sync_worktree_memory_mtimes` | mcp/src/agents_remember/worktrees/modules/start.py:925-976 |
 
 ## Cross-Repo References
 

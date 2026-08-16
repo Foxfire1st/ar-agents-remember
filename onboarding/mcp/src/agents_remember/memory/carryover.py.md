@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory/carryover.py`                |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-07-31T00:00+02:00                                      |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                  |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../overview.md`                                      |
 
 ## Governing Overview
@@ -115,9 +115,9 @@ matrix define the current write-authority contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Official JSON/Markdown settings are scanned for effective write authority with typed-parser equivalence. | `required_official_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
+| Target JSON/Markdown settings are scanned for effective write authority with typed-parser equivalence. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
 | Route-index rendering requires and reuses explicit repository/storage authority. | "Build route indexes using explicit Git and onboarding-storage authority", `RouteIndexBuildResult` | mcp/src/agents_remember/kernel/route_index.py:85-100; mcp/src/agents_remember/kernel/route_index.py:184-197 |
-| Full-apply tests pin empty/unsupported refusal, retention/repopulation acceptance, official-over-source selection, and exact zero mutation. | "def test_missing_official_settings_refuses_before_any_mutation(self) -> None:", "def test_markdown_parser_retained_and_repopulated_contributions_remain_authoritative(", "def test_markdown_unsupported_rule_lists_refuse_before_mutation(self) -> None:", "def test_official_settings_override_conflicting_source_settings(self) -> None:" | mcp/tests/test_carryover_apply_1.py:100-100; mcp/tests/test_carryover_apply_2.py:216-216; mcp/tests/test_carryover_apply_2.py:334-334; mcp/tests/test_carryover_apply_2.py:605-605 |
+| Full-apply tests pin missing/unsupported refusal, retention/repopulation acceptance, target-over-source selection, and exact zero mutation. | `test_missing_official_settings_refuses_before_any_mutation`; `test_markdown_parser_retained_and_repopulated_contributions_remain_authoritative`; `test_markdown_unsupported_rule_lists_refuse_before_mutation`; `test_target_settings_override_conflicting_source_settings` | mcp/tests/test_carryover_apply_1.py:113-126; mcp/tests/test_carryover_apply_2.py:216-332; mcp/tests/test_carryover_apply_2.py:334-389; mcp/tests/test_carryover_apply_2.py:605-630 |
 | Ledger updates remain delegated to the kernel memory-ledger service. | `load_ledger`, `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
 | The one git runner owns selector scrubbing (`GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`), the `input_text` stdin path used by `patch_id`, and the timeout classes (`GIT_LOCAL_TIMEOUT_SECONDS = 300`). | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git`, `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 
@@ -130,7 +130,13 @@ authorization implementation remains package-local.
 | --- | --- | --- |
 | No external implementation governs official-memory write authority. | — | — |
 
+## 260815-DAG-L4 Authority Boundary
+
+L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 
 - 2026-08-03T03:59:59+02:00 — Curated 10 citation claims (5 table rows, 5 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 

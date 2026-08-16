@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_dashboard_daemon.py`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T20:24+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ minimal real settings JSON for CLI dispatch tests.
 | --- | --- | --- |
 | The module under test. | `ensure` | mcp/src/agents_remember/serving/daemon.py:264-290 |
 | The CLI wiring under test. | `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:270-297 |
-| The `dashboard` settings key parsing (companion tests live in test_config.py). | `parse_dashboard_settings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:437-453 |
+| The `dashboard` settings key parsing (companion tests live in test_config.py). | `parse_dashboard_settings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:495-511 |
 
 ## Update History
 

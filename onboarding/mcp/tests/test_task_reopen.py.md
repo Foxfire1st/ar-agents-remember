@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T10:24+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated            | 2026-08-16T04:06+02:00 |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -57,17 +57,17 @@ task doc id when the task tree proves the mapping.
 | The module under test. | `reopen_task` | mcp/src/agents_remember/worktrees/reopen.py:169-265 |
 | The lookup helper under test. | `find_leaf_doc` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70 |
 | The lifecycle restamp helper under test. | `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
-| The recreate-fresh + restamp start path under test publishes the restamp through queue governance. | "publish=lambda task_root, document: publish_queue_bound_task_facts(" | mcp/src/agents_remember/worktrees/modules/start.py:602-611 |
+| The recreate-fresh + restamp start path under test publishes the restamp through queue governance. | "publish=lambda task_root, document: publish_queue_bound_task_facts(" | mcp/src/agents_remember/worktrees/modules/start.py:594-594 |
 | Contract loading preserves a legacy stem-shaped leaf id when the task tree proves the mapping. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
 | The canonical contract leaf-id normalization helper is `normalize_contract_leaf_id`. | `normalize_contract_leaf_id` | mcp/src/agents_remember/worktrees/worktree_contract.py:556-579 |
-| The abandon-side ambient end helper under test. | `end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:512-519 |
+| The abandon-side ambient end helper under test. | `end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:528-535 |
 
 ## L23 Reopen Lineage Regression
 
-The reopen fixture now builds a real super/master/leaf contract chain. Advancing
-super proves reopen returns a blocked strict projection before changing either
-the enclosure contract or leaf document; ordinary start-after-reopen coverage
-continues on the same thematic master topology.
+The reopen fixture now builds a real organizational sprint-super-to-leaf lineage with no
+series contract. Advancing super proves reopen returns a blocked strict projection before
+changing either the enclosure contract or leaf document; ordinary start-after-reopen coverage
+continues on the same organizational master topology.
 
 ## 260815-DAG-L3 Restamp Publisher Contract
 
@@ -75,7 +75,19 @@ Leaf lifecycle restamp tests now inject the ordinary task-doc publisher explicit
 for changed, unchanged, blocked, same-lifecycle, missing-doc, and exact identity behavior remain,
 while the production start path can route the same planned write through queue governance.
 
+## 260815-DAG-L4 Integration-Authority Forcing
+
+This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+
 ## Update History
+
+- 2026-08-16T05:18+02:00 — Dagger repair: reopen preview proves byte preservation now that dry-run start does not create an authority lock; a missing legacy `master` field still resets the exact canonical parent row derived from task topology.
+- 2026-08-16T04:06+02:00 — 260815-DAG-L4 Dagger repair: migrated the shared reopen and start-after-reopen fixtures from the retired universal master-series chain to the production organizational direct-super lineage; exact Git commits replace placeholder candidate ids, and successful restart asserts that no series contract is created.
+- 2026-08-16T03:12+02:00 — No content impact: the sprint execution-graph fixture now validates its
+  raw payload through `SprintExecutionGraph` before passing it to `TaskDocument`, satisfying the
+  typed constructor while preserving the same atomic graph and reopen assertions.
+
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-15T10:24+02:00 — L3 file-size repair: moved `ReopenGuardTests` into the focused
   `test_task_reopen_guards.py` suite; helpers and all reset/restamp/start behavior stay here.

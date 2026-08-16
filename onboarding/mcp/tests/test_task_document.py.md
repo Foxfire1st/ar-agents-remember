@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_document.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T07:53+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated            | 2026-08-16T02:51+02:00 |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -61,8 +61,10 @@ and tool registration.
   without mutating the parent file. Master/leaf-only authoring is covered too: `create`/`replace`
   refuse an explicit `kind="light"`, and a bare `create` defaults to `master` with no contract and to
   `subTask` under a leaf contract.
-  A `cast`-typed `SimpleNamespace` stands in for `McpRuntimeConfig` (only
-  `coordination_root` is read).
+  The shared `_config` fixture builds a real `McpRuntimeConfig` with a committed configured
+  repository, `refs/remotes/origin/main`, and symbolic `origin/HEAD`. Task-document publication
+  therefore exercises the same exact repository/default-branch authority as production rather
+  than bypassing it with a partial namespace.
 - `MasterApplicationTests` — master `create` (writes `task.json`, no `lifecycleId`
   even with a contract present), `set_subtask` insert-then-update by number,
   `set_section` upsert by heading, `set_step` rejected on a master,
@@ -88,14 +90,14 @@ and tool registration.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The test imports and exercises the task-document APIs used by this suite. | "from agents_remember.application.task_doc_tools import (" | mcp/tests/test_task_document.py:27-56 |
+| The test imports and exercises the task-document APIs used by this suite. | "from agents_remember.application.task_doc_tools import (" | mcp/tests/test_task_document.py:24-24 |
 | The application entry point under test. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:135-186 |
 | The path-change rejection test invokes the replace operation and expects TaskDocError. | `test_replace_rejects_document_path_change` | mcp/tests/test_task_document_application_1.py:465-479 |
 | Leaf creation inserts the parent master row. | "def create(cls" | mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py:156-156 |
 | Master sync preserves manually-authored scope. | "const { webtuiPrefixOptions } = require('./webtui-scope.config.cjs');" | dashboard/postcss.config.cjs:6-6 |
 | Master row status is derived from leaf state. | "export const status = css({" | dashboard/src/panels/sessionComposerStyles.ts:116-116 |
 | Dry-run returns the parent master sync preview. | "def _create_missing_dirs(paths: list[Path]" | mcp/src/agents_remember/kernel/memory_init.py:14-14 |
-| The conformance net that also covers `task_doc`. | `task_doc` | mcp/tests/test_tool_response_conformance.py:530-530 |
+| The conformance net that also covers `task_doc`. | `task_doc` | mcp/tests/test_tool_response_conformance.py:629-629 |
 
 ## Series-Contract Notes
 
@@ -108,6 +110,9 @@ Task-document tests cover the `seriesContractPath`/`enclosures[]` linkage fields
 - A master ref naming a **sibling leaf** is refused **by kind**, not by id shape.
 
 ## Update History
+- 2026-08-16T02:51+02:00 — L4 topology-publication authority: replaced the partial
+  `SimpleNamespace` fixture with a real configured Git repository and exact remote default
+  authority so application tests exercise the strengthened publication boundary.
 - 2026-08-14T06:40+02:00 — L23 final candidate review: task-document tests pin canonical
   sprint/master/leaf relationships used by lineage and route-review resolution. Verification
   remains closeout-owned.

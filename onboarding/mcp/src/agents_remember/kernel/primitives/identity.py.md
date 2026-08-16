@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/identity.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-04T23:15+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                         |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                         |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -36,7 +36,7 @@ The module normalizes arbitrary workspace, worktree, benchmark, provider, and re
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP config uses `provider_instance_id()` when provider settings omit an explicit `instanceId`. | `parse_provider_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:401-417 |
+| MCP config uses `provider_instance_id()` when provider settings omit an explicit `instanceId`. | `parse_provider_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:459-475 |
 | Generated lifecycle settings derive GrepAI and CGC runtime names and ownership labels through the settings builders. | `_grepai_names`; `_grepai_settings`; `_cgc_settings` | mcp/src/agents_remember/providers/settings.py:71-79; mcp/src/agents_remember/providers/settings.py:195-234; mcp/src/agents_remember/providers/settings.py:237-327 |
 | Worktree CGC isolated settings derive workflow-local instance ids through this helper. | `isolated_cgc_settings` | mcp/src/agents_remember/providers/cgc/setup.py:42-54 |
 | Worktree GrepAI isolated settings derive workflow-local instance ids through this helper. | `isolated_grepai_settings` | mcp/src/agents_remember/providers/grepai/isolated.py:36-74 |

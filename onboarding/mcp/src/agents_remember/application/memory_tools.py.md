@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-11T14:58+02:00                                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                 |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                 |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -25,11 +25,11 @@ refresh, memory initialization, baseline adoption, and memory carryover MCP oper
 
 The module defines three parameter objects for separate application contracts:
 `MemoryBranches` carries optional source/work branch overrides for baseline adoption
-cit:([`MemoryBranches`], mcp/src/agents_remember/application/memory_tools.py:478-484);
+cit:([`MemoryBranches`], mcp/src/agents_remember/application/memory_tools.py:520-526);
 `CarryoverSelection` carries the repository, memory/code refs, base, and replacement choice for
-carryover planning/apply cit:([`CarryoverSelection`], mcp/src/agents_remember/application/memory_tools.py:491-507);
+carryover planning/apply cit:([`CarryoverSelection`], mcp/src/agents_remember/application/memory_tools.py:533-550);
 and `CarryoverCommitMessages` carries the two commit subjects for apply
-cit:([`CarryoverCommitMessages`], mcp/src/agents_remember/application/memory_tools.py:510-516).
+cit:([`CarryoverCommitMessages`], mcp/src/agents_remember/application/memory_tools.py:553-558).
 `intent_note` remains a separate apply approval argument.
 
 The module resolves repository and leaf-memory authority through `McpRuntimeConfig` and the
@@ -45,7 +45,7 @@ official-memory call does not create it. A bare official-memory call leaves both
 absent.
 `route_index_refresh_tool` then forwards the resolver-owned code root, onboarding root, repository
 identity, and storage authority into `build_route_indexes`
-cit:([`route_index_refresh_tool`], mcp/src/agents_remember/application/memory_tools.py:438-460).
+cit:([`route_index_refresh_tool`], mcp/src/agents_remember/application/memory_tools.py:466-502).
 Ordinary drift artifacts stay under the coordination temp root. The curator checklist is the
 explicit enclosure-local exception and remains outside both Git worktrees. Baseline and carryover
 entry points preserve their separate service contracts.
@@ -88,7 +88,7 @@ package application entry point and resolver contracts.
 | --- | --- | --- |
 | The shared memory-scope resolver and its leaf confinement/temporary-provenance rules. | `MemoryScope`; `_memory_scope`; `_leaf_memory_scope` | mcp/src/agents_remember/application/memory_tools.py:42-57; mcp/src/agents_remember/application/memory_tools.py:88-117; mcp/src/agents_remember/application/memory_tools.py:120-178 |
 | Contract-scoped quality forwards the temporary base while official scope leaves it absent. | "def memory_quality_check_tool("; "def test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims("; "def test_the_bare_check_does_not_invent_unstamped_claim_provenance(" | mcp/src/agents_remember/application/memory_tools.py:217-292; mcp/tests/test_memory_tool_enclosure_scope.py:296-321 |
-| The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:438-460 |
+| The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:466-502 |
 | The route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | The route-index builder receives storage authority explicitly in its typed signature. | "def build_route_indexes(" | mcp/src/agents_remember/kernel/route_index.py:184-197 |
 
@@ -101,7 +101,13 @@ this package-local dispatch contract.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260815-DAG-L4 Authority Boundary
+
+L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 
 - 2026-08-11T16:54+02:00 — Added the full scoped curator checklist composition and stable
   enclosure report path while keeping subset/official calls and code/memory content unchanged.

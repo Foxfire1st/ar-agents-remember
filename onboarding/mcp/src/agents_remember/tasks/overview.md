@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`       |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -164,7 +164,13 @@ topology-stable recovery inside its own master. Sprint completion additionally p
 graph master is `Completed` with no unresolved completion rows, then atomically closes the quiescent
 queue; reopening reverses that closed state through the same recoverable publication path.
 
+## 260815-DAG-L4 L4 Topology Publication Authority
+
+Task-document execution-topology edits are validated under the same repository authority as Git mutation. Candidate graphs cannot promote live leaf work branches into protected supers/atomic refs, detach live owners, or contradict an existing atomic series edge.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: documented queue-governed task
   publication, whole-lane freeze, atomic recovery scope, and exact sprint completion/reopen rules.

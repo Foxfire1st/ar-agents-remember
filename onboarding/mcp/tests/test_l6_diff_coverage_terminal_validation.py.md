@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l6_diff_coverage_terminal_validation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,12 +32,13 @@ This module defines the test classes cited below; each row points at the exact s
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the class `TestWorktreePreflight` (lines 37-68). | `TestWorktreePreflight` | mcp/tests/test_l6_diff_coverage_terminal_validation.py:37-68 |
-| Defines the class `TestBranchRefusals` (lines 71-125). | `TestBranchRefusals` | mcp/tests/test_l6_diff_coverage_terminal_validation.py:71-125 |
-| Defines the class `TestCleanupAndAbandon` (lines 128-164). | `TestCleanupAndAbandon` | mcp/tests/test_l6_diff_coverage_terminal_validation.py:128-164 |
-| Defines the class `TestBranchPresenceAndCheckout` (lines 167-186). | `TestBranchPresenceAndCheckout` | mcp/tests/test_l6_diff_coverage_terminal_validation.py:167-186 |
-| Defines the class `TestProviderAndResultBlockers` (lines 189-218). | `TestProviderAndResultBlockers` | mcp/tests/test_l6_diff_coverage_terminal_validation.py:189-218 |
+| Defines the class `TestWorktreePreflight`. | `TestWorktreePreflight` | mcp/tests/test_l6_diff_coverage_terminal_validation.py:37-78 |
+| Defines the class `TestBranchRefusals`. | `TestBranchRefusals` | mcp/tests/test_l6_diff_coverage_terminal_validation.py:81-135 |
+| Defines the class `TestCleanupAndAbandon`. | `TestCleanupAndAbandon` | mcp/tests/test_l6_diff_coverage_terminal_validation.py:138-174 |
+| Defines the class `TestBranchPresenceAndCheckout`. | `TestBranchPresenceAndCheckout` | mcp/tests/test_l6_diff_coverage_terminal_validation.py:177-196 |
+| Defines the class `TestProviderAndResultBlockers`. | `TestProviderAndResultBlockers` | mcp/tests/test_l6_diff_coverage_terminal_validation.py:199-228 |
 
 ## Update History
 
+- 2026-08-16T00:45+02:00 — Re-read both worktree-preflight fixtures against the required leaf contract kind and refreshed class ranges. Verification remains closeout-owned.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors derived from current worktree source. Verification metadata pinned until closeout stamps the code commit.

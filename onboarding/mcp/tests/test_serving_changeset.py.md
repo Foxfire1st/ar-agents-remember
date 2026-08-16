@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_changeset.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-12T12:55+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -94,7 +94,7 @@ this checkout, `unittest.TestCase` with a `tempfile.TemporaryDirectory` per case
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The change-set API under test (`task_changeset`, `file_diff`, `master_changeset`). | `task_changeset`; `file_diff`; `master_changeset` | mcp/src/agents_remember/serving/changeset.py:78-97; mcp/src/agents_remember/serving/changeset.py:100-125; mcp/src/agents_remember/serving/changeset.py:225-269 |
-| The git primitive under test (`changed_files_with_counts`). | `changed_files_with_counts` | mcp/src/agents_remember/worktrees/modules/git.py:216-255 |
+| The git primitive under test (`changed_files_with_counts`). | `changed_files_with_counts` | mcp/src/agents_remember/worktrees/modules/git.py:271-310 |
 | The shared scope layer the extraction test checks (`resolve_scope`, `run_scoped`, `FileScope`). | `resolve_scope`; `run_scoped`; `FileScope` | mcp/src/agents_remember/serving/scope.py:96-107; mcp/src/agents_remember/serving/scope.py:147-193; mcp/src/agents_remember/serving/scope.py:207-227 |
 | The files module re-exporting "Scope resolution (``FileScope`` / ``resolve_scope`` / ``run_scoped``) + the language"/"reuses them" (asserted here). | "def list_dir(scope: FileScope"; "reuses them" | mcp/src/agents_remember/serving/files.py:20-20; mcp/src/agents_remember/serving/files.py:163-163 |
 | `WorktreeContract` / `write_contract` used to drive the change-set scope. | `WorktreeContract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-289; mcp/src/agents_remember/worktrees/worktree_contract.py:476-479 |

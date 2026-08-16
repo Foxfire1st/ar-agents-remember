@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_spawn_agent_session.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T12:53+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated | 2026-08-16T04:06+02:00 |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ No external domain source governs this repository-local test contract.
 | --- | --- | --- |
 | A successful spawn binds a seat without delivering a brief or claiming readiness. | `test_spawns_bound_seat_without_brief_or_readiness_claim` | mcp/tests/test_spawn_agent_session.py:318-339 |
 | Canonical task-document identity is persisted and missing documents refuse before spawn. | `test_spawn_persists_canonical_task_document_reference`; `test_spawn_rejects_missing_task_document_before_spawning` | mcp/tests/test_spawn_agent_session.py:376-382; mcp/tests/test_spawn_agent_session.py:395-402 |
-| Context and submit inputs are rejected at the spawn primitive. | `test_context_including_empty_string_refuses_before_every_spawn_side_effect`; `test_submit_true_refuses_before_spawn_even_without_context` | mcp/tests/test_spawn_agent_session.py:439-457; mcp/tests/test_spawn_agent_session.py:459-463 |
+| Context and submit inputs are rejected at the spawn primitive. | `test_context_including_empty_string_refuses_before_every_spawn_side_effect`; `test_submit_true_refuses_before_spawn_even_without_context` | mcp/tests/test_spawn_agent_session.py:445-463; mcp/tests/test_spawn_agent_session.py:465-469 |
 | Occupied structural seats refuse without takeover. | `test_seat_taken_is_surfaced_never_overridden` | mcp/tests/test_spawn_agent_session.py:484-518 |
 
 ## L23 Pre-Host Spawn Refusal
@@ -67,6 +67,7 @@ status check: dispatch re-proves lineage rather than trusting a brief-carried sn
 
 ## Update History
 
+- 2026-08-16T04:06+02:00 — Dagger fixture repair: stale-lineage session forcing advances the exact sprint-super ref, then restores the ambient main checkout before role launch.
 - 2026-08-13T12:53+02:00 — No content impact: the stabilized daemon-root derivation reads
   `sys.modules["agents_remember"].__file__` after normal package submodule imports. Spawn and
   all-leaf-role lineage assertions are unchanged, and no Ruff config exception remains. This

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated            | 2026-08-16T04:30+02:00                     |
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -20,7 +20,9 @@ settings ownership, and the teardown guards.
 
 ### Logic
 
-`make_contract` builds a disabled-memory `default_contract` under a temp root;
+`make_contract` builds a real committed Git repository under the temp root, installs
+`refs/remotes/origin/main` plus symbolic `origin/HEAD` as exact default-branch authority, and uses
+its real base commit in the disabled-memory `default_contract`;
 `CapturedThreads` is a `thread_factory` seam that records spawned threads so
 tests can join them deterministically.
 
@@ -84,8 +86,8 @@ No external documentation is needed for these standard-library unit tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Launcher and projections under test. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:59-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
-| `projected_status_payload` and the `NotRequired` `providers` key on `WorktreeStatusFacts` the new payload test pins. | `WorktreeStatusFacts`, `projected_status_payload`, `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:84-122; mcp/src/agents_remember/worktrees/modules/guidance.py:388-440; mcp/src/agents_remember/worktrees/modules/guidance.py:443-447 |
-| Start ordering and retry path under test. | `start_result`, `run_or_launch_provider_setup`, `_retry_provider_setup_result` | mcp/src/agents_remember/worktrees/modules/start.py:440-451; mcp/src/agents_remember/worktrees/modules/start.py:647-684; mcp/src/agents_remember/worktrees/modules/start.py:687-720 |
+| `projected_status_payload` and the `NotRequired` `providers` key on `WorktreeStatusFacts` the new payload test pins. | `WorktreeStatusFacts`, `projected_status_payload`, `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:85-123; mcp/src/agents_remember/worktrees/modules/guidance.py:399-451; mcp/src/agents_remember/worktrees/modules/guidance.py:454-458 |
+| Start ordering and retry path under test. | `start_result`, `run_or_launch_provider_setup`, `_retry_provider_setup_result` | mcp/src/agents_remember/worktrees/modules/start.py:414-425; mcp/src/agents_remember/worktrees/modules/start.py:622-659; mcp/src/agents_remember/worktrees/modules/start.py:662-695 |
 | Application-layer ownership helper under test. | `worktree_start_tool`, `_settings_owned_by_background` | mcp/src/agents_remember/application/worktree_tools.py:93-190; mcp/src/agents_remember/application/worktree_tools.py:193-198 |
 
 ## L23 Start-Ordering Isolation
@@ -95,6 +97,12 @@ continue measuring provider sequencing. Dedicated source-lineage suites own the
 new structural gate.
 
 ## Update History
+
+- 2026-08-16T04:30+02:00 — No content impact: accepted Ruff's one-line formatting for the typed sprint execution-graph node list; fixture facts and provider lifecycle assertions are unchanged.
+- 2026-08-16T04:06+02:00 — 260815-DAG-L4 Dagger repair: the provider lifecycle fixture now creates a real organizational master, sprint graph, direct-super leaf document, exact leaf id, and remote-default authority before exercising asynchronous start and terminal routes.
+- 2026-08-16T02:51+02:00 — L4 configured repository authority: upgraded the async provider fixture
+  from placeholder repository facts to a real committed repo with exact remote default authority,
+  preserving the provider launch/status assertions while reaching the strengthened boundary.
 - 2026-08-12T20:10+02:00 — L23 curator: documented bounded lineage isolation in provider-order coverage; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
@@ -102,7 +110,7 @@ new structural gate.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:24+02:00 — 260731-EFA-L4 curator: `ProviderSetupStatusTests` gained
-  cit:([`test_a_prepared_stack_reaches_the_status_payload`], mcp/tests/test_provider_async.py:170-183) and the suite gained a
+  cit:([`test_a_prepared_stack_reaches_the_status_payload`], mcp/tests/test_provider_async.py:234-247) and the suite gained a
   `from ...modules.guidance import projected_status_payload` import; the card listed the three
   older projection cases as the whole of that class, so it was incomplete. Documented what the new
   case adds — it is the only test here that drives the composed payload rather than

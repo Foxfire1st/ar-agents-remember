@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l6_diff_coverage_nw4.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,11 @@ Targeted branch-coverage suite for change routing, boundaries, abandon, nudges, 
 
 ### Logic
 
-Gate adapter cases now prove dashboard/internal routes finalize as `lifecycle_gate_internal` and `gate_decide_internal`, preserving a vocabulary boundary from agent-facing structural tools.
+Gate adapter cases now prove dashboard/internal routes finalize as `lifecycle_gate_internal` and
+`gate_decide_internal`, preserving a vocabulary boundary from agent-facing structural tools. The
+abandon terminal-output cases inject one already-validated mutation authority, then prove provider
+and worktree blockers stop the ordered destructive pipeline while the authority is threaded into
+the real removal owner.
 
 ### Conventions
 
@@ -40,7 +44,8 @@ No Domain Documentation source is configured for this repository-local regressio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `_completed` | mcp/tests/test_l6_diff_coverage_nw4.py:55-55 |
+| Current suite declaration anchoring this card. | `_completed` | mcp/tests/test_l6_diff_coverage_nw4.py:55-58 |
+| Abandon output forcing preserves blocker order and passes the validated terminal capability to worktree removal. | `TestAbandonTerminalOutputsNw4` | mcp/tests/test_l6_diff_coverage_nw4.py:196-248 |
 
 ## Cross-Repo References
 
@@ -48,6 +53,7 @@ No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-16T01:45+02:00 — Documented capability-bound abandon output and blocker-order forcing; verification remains closeout-owned.
 - 2026-08-11T19:58+02:00 — Reconciled `test_l6_diff_coverage_nw4.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

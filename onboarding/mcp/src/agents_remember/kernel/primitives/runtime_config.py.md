@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/runtime_config.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-10T18:31+02:00    |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -190,18 +190,24 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 | `config_from_mapping` calls that parser and translates `ProviderDegradationSettingsError` into `ConfigError`. | `config_from_mapping` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:241-290 |
 | `evaluate_provider_degradation` consumes `config.provider_degradation` for enablement, sample limits, and classification thresholds on every evaluation. | `evaluate_provider_degradation`; `provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
 | `load_agentic_settings` layers and merges agentic settings; `_parse_orchestration` applies the shared `parse_gate_delegation` parser to the resulting block. | `load_agentic_settings`; `_parse_orchestration`; "def parse_gate_delegation(" | mcp/src/agents_remember/kernel/_agentic_settings_policy.py:28-28; mcp/src/agents_remember/kernel/agentic_settings.py:209-244; mcp/src/agents_remember/kernel/agentic_settings.py:349-384 |
-| `parse_orchestration_settings` supplies the global boot snapshot to `McpRuntimeConfig.orchestration`; its authority-file legacy path delegates to `_parse_legacy_authority_gate_delegation`, which uses the same gate parser. | `parse_orchestration_settings`; `_parse_legacy_authority_gate_delegation` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:479-512; mcp/src/agents_remember/kernel/primitives/runtime_config.py:515-547 |
+| `parse_orchestration_settings` supplies the global boot snapshot to `McpRuntimeConfig.orchestration`; its authority-file legacy path delegates to `_parse_legacy_authority_gate_delegation`, which uses the same gate parser. | `parse_orchestration_settings`; `_parse_legacy_authority_gate_delegation` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:538-571; mcp/src/agents_remember/kernel/primitives/runtime_config.py:574-606 |
 | `provider_watchers_tool` reloads live launch authority for start, restart, and index invalidation while status, stop, and shutdown remain deliberately ungated. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
 | The provider query funnel reloads launch authority for operations with a required provider and rejects a query when that specific provider is absent. | `_provider_operation_result`; `ProviderOperation.required_provider` | mcp/src/agents_remember/application/provider_tools.py:736-783 |
 | Worktree start derives background provider setup from `reload_provider_authority`, skipping setup on disabled or unreadable live authority while still creating the worktree. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:77-156 |
 | Benchmark preparation and execution both pass provider ids from the live on-disk authority into their requests. | `codex_benchmark_prepare_tool`; `codex_benchmark_run_tool`; `_live_provider_ids` | mcp/src/agents_remember/application/benchmark_tools.py:64-84; mcp/src/agents_remember/application/benchmark_tools.py:137-144; mcp/src/agents_remember/application/benchmark_tools.py:87-134 |
 | Runtime install derives provider dependency and watcher-rebind settings from the live on-disk authority. | `install_runtime`; `install_runtime_from_config` | mcp/src/agents_remember/install/runtime.py:462-553; mcp/src/agents_remember/install/runtime.py:556-615 |
 | Containment tests pin the authority reload fail-closed semantics and the launch gate refusal/armed paths. | `ReloadProviderAuthorityTests`; `WorktreeStartVetoTests`; `QueryFunnelGateTests`; `RuntimeRebindDerivationTests`; `BenchmarkProviderFilterTests` | mcp/tests/test_provider_containment.py:78-121; mcp/tests/test_provider_containment.py:124-177; mcp/tests/test_provider_containment.py:180-196; mcp/tests/test_provider_containment.py:199-206; mcp/tests/test_provider_containment.py:209-273 |
-| `RetirementSettings` defines the two default-on toggles; worktree integration and lifecycle finalization each consult the corresponding `config.retirement` flag before calling `auto_complete_seats`. | "class RetirementSettings:"; "def worktree_integrate_tool("; "def lifecycle_finalize_task_tool("; "def auto_complete_seats(" | mcp/src/agents_remember/application/completion_cleanup.py:29-29; mcp/src/agents_remember/application/worktree_tools.py:378-378; mcp/src/agents_remember/application/worktree_tools.py:544-544; mcp/src/agents_remember/kernel/primitives/runtime_config.py:109-109 |
+| `RetirementSettings` defines the two default-on toggles; worktree integration and lifecycle finalization each consult the corresponding `config.retirement` flag before calling `auto_complete_seats`. | "class RetirementSettings:"; "def worktree_integrate_tool("; "def lifecycle_finalize_task_tool("; "def auto_complete_seats(" | mcp/src/agents_remember/application/completion_cleanup.py:29-29; mcp/src/agents_remember/application/worktree_tools.py:382-382; mcp/src/agents_remember/application/worktree_tools.py:552-552; mcp/src/agents_remember/kernel/primitives/runtime_config.py:110-110 |
 
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
 
+## 260815-DAG-L4 Authority Boundary
+
+L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T18:31+02:00 — 260731-EFA-L21: `load_config` now selects a deterministic synthetic

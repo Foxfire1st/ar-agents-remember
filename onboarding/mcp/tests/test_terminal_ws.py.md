@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_ws.py`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -159,9 +159,9 @@ live/dead reopen projection over the shared opener.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A complete native model/effort pair reaches the encoded runner exactly once and is returned as resolved launch truth. | "test_post_open_harness_carries_complete_model_effort_pair_once"; "/api/terminal/h-selected" | mcp/tests/test_terminal_ws_websocket_2.py:272-272; mcp/tests/test_terminal_ws_websocket_2.py:275-275 |
-| Same-pair live reopen preserves the original endpoint; changed-pair reopen conflicts with actual truth; dead replacement uses the new pair and a fresh endpoint. | "test_post_open_reopen_preserves_live_truth_conflicts_then_replaces_dead"; "launch-selection-conflict" | mcp/tests/test_terminal_ws_websocket_2.py:295-295; mcp/tests/test_terminal_ws_websocket_2.py:319-319 |
-| Partial, plain-terminal, and non-native selections all fail before host ensure. | "test_post_open_rejects_partial_or_non_harness_selection_before_spawn"; "launch-selection-invalid" | mcp/tests/test_terminal_ws_websocket_2.py:333-333; mcp/tests/test_terminal_ws_websocket_2.py:356-356 |
+| A complete native model/effort pair reaches the encoded runner exactly once and is returned as resolved launch truth. | "test_post_open_harness_carries_complete_model_effort_pair_once"; "/api/terminal/h-selected" | mcp/tests/test_terminal_ws_websocket_2.py:274-274; mcp/tests/test_terminal_ws_websocket_2.py:277-277 |
+| Same-pair live reopen preserves the original endpoint; changed-pair reopen conflicts with actual truth; dead replacement uses the new pair and a fresh endpoint. | "test_post_open_reopen_preserves_live_truth_conflicts_then_replaces_dead"; "launch-selection-conflict" | mcp/tests/test_terminal_ws_websocket_2.py:297-297; mcp/tests/test_terminal_ws_websocket_2.py:321-321 |
+| Partial, plain-terminal, and non-native selections all fail before host ensure. | "test_post_open_rejects_partial_or_non_harness_selection_before_spawn"; "launch-selection-invalid" | mcp/tests/test_terminal_ws_websocket_2.py:335-335; mcp/tests/test_terminal_ws_websocket_2.py:358-358 |
 | WebSocket and catalog cases continue to cover raw PTY framing, parallel attachments, liveness, leaf/role claims, and landed inspection. | "class ApplyTerminalInputTests(unittest.TestCase):"; "class TerminalWebSocketTests(unittest.TestCase):"; "def feed_all(self" | mcp/tests/test_terminal_ws.py:368-368; mcp/tests/test_terminal_ws.py:395-395; mcp/tests/test_terminal_ws.py:427-427 |
 | `TerminalOpenRequest` carries optional model/effort, and the HTTP route validates them into one resolved launch before calling the shared opener. | "class TerminalOpenRequest(BaseModel):"; "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_common.py:267-267; mcp/src/agents_remember/serving/_app_terminal_routes.py:225-225 |
 | A launch conflict returns 409 with the retained session's actual model, effort, control state, and endpoint. | "def _terminal_entry_payload(entry: TerminalCatalogEntry) -> dict[str"; "def _open_terminal_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:207-207; mcp/src/agents_remember/serving/_app_terminal_routes.py:225-225 |

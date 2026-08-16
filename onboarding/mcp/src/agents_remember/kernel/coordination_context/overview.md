@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ The package is intentionally split by responsibility:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package-local facade keeps existing callers pointed at the split implementation. | "_resolver.resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
-| Resolver behavior is covered by resolver parity and worktree support tests. | "def test_external_memory_resolution_reports_expected_context(self) -> None:", "def test_resolver_returns_repo_task_root_without_task_name(self) -> None:" | mcp/tests/test_resolver_parity.py:57-57; mcp/tests/test_worktree_support_tests_1.py:402-402 |
+| Resolver behavior is covered by resolver parity and worktree support tests. | "def test_external_memory_resolution_reports_expected_context(self) -> None:", "def test_resolver_returns_repo_task_root_without_task_name(self) -> None:" | mcp/tests/test_resolver_parity.py:57-57; mcp/tests/test_worktree_support_tests_1.py:414-414 |
 
 ## 260731-EFA-L2 Resolver API
 

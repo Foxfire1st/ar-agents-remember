@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/kernel/primitives/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../../../overview.md) |
 | lastUpdated | 2026-08-13T00:00+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 
 ## What This Area Is
 
@@ -147,7 +147,13 @@ When adding a primitive:
 2. Keep it import-free of higher packages; declare the vocabulary once.
 3. Run the layering check and structural-coverage suite.
 
+## 260815-DAG-L4 L4 Configured Repository Identity
+
+Runtime configuration is part of protected-ref authority: code and memory Git common directories, memory mode, coordination root, and canonical task tree must match the durable contract before lifecycle journaling or mutation.
+
 ## Update History
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 
 - 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: added the narrow lifecycle-operation execution mode for the plane-owned detached task worker while retaining an empty daemon role and ordinary checkout isolation. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
 - 2026-08-12T22:24+02:00 — 260731-EFA-L23 async-closeout follow-up: separated checkout-local coordination authority from the exact enclosure report-artifact target; reports do not become a coordinator and every other durable target remains refused. Verification remains closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -333,7 +333,7 @@ imported for exactly that. The `EngineProcessTests` contract fixtures ask for
 `workflow_kind="light-task"`; the bare `"light"` they used is no longer a member of `WorkflowKind`.
 
 Git is exercised for real, not mocked, everywhere except one case: the suite imports the module
-object cit:(["from agents_remember.serving.projections import snapshots"], mcp/tests/test_worktree_and_observer_helpers.py:28-28) purely so
+object cit:(["from agents_remember.serving.projections import snapshots"], mcp/tests/test_worktree_and_observer_helpers.py:29-29) purely so
 `LedgerCommitMetaTests.test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`
 can patch `snapshots.run_git` cit:(["test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick", "with mock.patch.object", "TimeoutExpired(cmd="], mcp/tests/test_observer_projection_ledger.py:179-179; mcp/tests/test_observer_projection_ledger.py:190-190; mcp/tests/test_observer_projection_ledger.py:192-192) — a wedged git cannot be produced with a real repository. Patching the
 module attribute rather than `kernel.git_command.run_git` is what makes the test see the binding
@@ -530,7 +530,7 @@ asserts the same projection output and uncached volatile-provider behavior.
 - 2026-07-31T21:55+02:00 — 260731-EFA-L3 curator: recorded the one test this leaf added and
   repaired every line range in the card. **New coverage:**
   `LedgerCommitMetaTests::test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`
-  cit:(["def test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick("], mcp/tests/test_observer_projection_ledger.py:179-179), plus the module-object import cit:(["from agents_remember.serving.projections import snapshots"], mcp/tests/test_worktree_and_observer_helpers.py:28-28) that exists only to give it a patch seam. It is the sole case in the suite that patches git
+  cit:(["def test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick("], mcp/tests/test_observer_projection_ledger.py:179-179), plus the module-object import cit:(["from agents_remember.serving.projections import snapshots"], mcp/tests/test_worktree_and_observer_helpers.py:29-29) that exists only to give it a patch seam. It is the sole case in the suite that patches git
   instead of running it: `mock.patch.object(snapshots, "run_git", side_effect=
   subprocess.TimeoutExpired(...))` proves that when `snapshots._git_commit_meta` moved onto a runner
   with a timeout, `TimeoutExpired` — a `SubprocessError`, which is **not** an `OSError` — no longer

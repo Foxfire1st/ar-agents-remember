@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T13:08+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -41,6 +41,10 @@ missing/damaged topology or state fails closed.
 - Reversible failure/cancellation releases to `declared` or `certified`; post-boundary state is not
   silently rewound.
 - Successful integration consumes the exact candidate idempotently.
+- Atomic-series terminal mutation receives an ephemeral permit only while the sprint queue and
+  repository authority are both held. The permit is bound to the exact operation, canonical
+  contract path, issuing thread, active `ContextVar`, and issuer-owned live registry; normal exit,
+  exceptional exit, copied contexts, and cross-thread replay all fail closed.
 
 ### Todos
 
@@ -54,18 +58,28 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closeout claim binds the plane-owned lifecycle operation to the selected candidate. | `claim_queue_candidate_for_closeout` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:215-229 |
-| Integration claim binds the same operation to the certified candidate. | `claim_queue_candidate_for_integration` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:251-267 |
-| Irreversible integration revalidates current graph, candidate, readiness, and exact commits under the queue lock. | `require_queue_candidate_for_integration` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:296-348 |
-| Landing consumes the exact lifecycle-owned candidate idempotently. | `complete_queue_candidate_integration` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:351-408 |
-| Reversible terminal operations release internal ownership safely. | `release_queue_candidate_after_reversible_operation` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:411-478 |
-| Closeout certification refreshes curator evidence and binds the exact committed result. | `_certify_closeout` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:550-587 |
+| Closeout claim binds the plane-owned lifecycle operation to the selected candidate. | `claim_queue_candidate_for_closeout` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:381-395 |
+| Atomic-series terminal publication mints and revokes the exact non-replayable permit under queue/repository authority. | `publish_atomic_series_terminal_under_authority` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:195-219 |
+| Terminal mutation verifies both context-local and issuer-owned permit liveness. | `require_atomic_series_terminal_permit` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:221-239 |
+| Integration claim binds the same operation to the certified candidate. | `claim_queue_candidate_for_integration` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:417-433 |
+| Irreversible integration revalidates current graph, candidate, readiness, and exact commits under the queue lock. | `require_queue_candidate_for_integration` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:462-487 |
+| Landing consumes the exact lifecycle-owned candidate idempotently. | `complete_queue_candidate_integration` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:572-629 |
+| Reversible terminal operations release internal ownership safely. | `release_queue_candidate_after_reversible_operation` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:632-699 |
+| Closeout certification refreshes curator evidence and binds the exact committed result. | `_certify_closeout` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:932-969 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
+## 260815-DAG-L4 Integration-Authority Impact
+
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+
 ## Update History
+
+- 2026-08-16T01:30+02:00 — Documented the exact, thread-bound, issuer-revoked atomic-series terminal permit and copied-context replay refusal; verification remains closeout-owned.
+
+- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-15T13:08+02:00 — No content impact: Ruff split the aliased lifecycle-owner import from
   the unaliased commit-tree import; both still resolve from one candidate-evidence owner.

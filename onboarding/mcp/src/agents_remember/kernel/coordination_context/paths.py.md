@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/paths.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ No external documentation is needed for this package-local path policy.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Resolver selection uses these path primitives for topology and settings discovery. | `resolve_coordination_context`, `_selection_roots`, `_selection_from_settings` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:74-83; mcp/src/agents_remember/kernel/coordination_context/resolver.py:86-101; mcp/src/agents_remember/kernel/coordination_context/resolver.py:148-164 |
-| Worktree support tests cover installed-runtime root detection and `.env` non-authority. | `test_resolver_uses_installed_runtime_root_as_coordination_root`, `test_resolver_ignores_dot_env_example_at_runtime` | mcp/tests/test_worktree_support_tests_2.py:837-858; mcp/tests/test_worktree_support_tests_2.py:860-882 |
+| Worktree support tests cover installed-runtime root detection and `.env` non-authority. | `test_resolver_uses_installed_runtime_root_as_coordination_root`, `test_resolver_ignores_dot_env_example_at_runtime` | mcp/tests/test_worktree_support_tests_2.py:833-854; mcp/tests/test_worktree_support_tests_2.py:856-878 |
 
 ## Cross-Repo References
 

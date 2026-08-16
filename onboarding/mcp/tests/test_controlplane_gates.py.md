@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_gates.py`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`       |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -80,9 +80,9 @@ approval spendable in between. `test_gateless_lifecycle_returns_none`,
 the gate reads `applied` immediately after the single permitting call.
 
 The two blocking cases **additionally** assert that the early refusal
-`_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:538-560)) raises for the same seeded gate. That
+`_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:500-522)) raises for the same seeded gate. That
 is a second rung, not a duplicate: the claim sits one statement above the first irreversible act
-(`closeout_result`, cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:1083-1168)), while the early read sits before staging and the strict code-quality gate
+(`closeout_result`, cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:1070-1172)), while the early read sits before staging and the strict code-quality gate
 (`gate_staged_code`, cit:([`gate_staged_code`], mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129)), so without it an unapproved closeout would only be refused after a full quality run over a
 staged worktree. The early rung is safe precisely because it can only DENY — its read is unlocked
 and therefore already stale when it returns, but a stale refusal costs a rerun and consumes
@@ -140,13 +140,13 @@ approvals according to `GatePolicy`.
 | The operator inbox store polled by `gate_response_wait_payload`. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/gates.py:171-188 |
 | The enforcement policy under test (slice 6b): `evaluate_gate`, whose `applied` branch is the refusal a second consume meets and the reason the `applied` snapshot is an authority record. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |
 | Gate delegation policy under test. | `make_gate_policy`; `named_gate_policy`; `apply_seam_verdict_requirement`; `delegated_decision_failure_reason`; `approval_failure_reason` | mcp/src/agents_remember/controlplane/gate_policy.py:52-64; mcp/src/agents_remember/controlplane/gate_policy.py:67-83; mcp/src/agents_remember/kernel/primitives/gate_policy.py:75-107; mcp/src/agents_remember/kernel/primitives/gate_policy.py:110-127; mcp/src/agents_remember/kernel/primitives/gate_policy.py:130-149 |
-| The closeout helpers under test: the early deny-only read `_refuse_unsatisfied_closeout_gate` (called before staging and the strict gate) and the claim `_claim_closeout_gate` (one statement above the first irreversible act). `_mark_closeout_gate_applied` was deleted, not deprecated. | `_refuse_unsatisfied_closeout_gate`; `_claim_closeout_gate`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:529-605; mcp/src/agents_remember/worktrees/modules/closeout.py:1031-1163 |
+| The closeout helpers under test: the early deny-only read `_refuse_unsatisfied_closeout_gate` (called before staging and the strict gate) and the claim `_claim_closeout_gate` (one statement above the first irreversible act). `_mark_closeout_gate_applied` was deleted, not deprecated. | `_refuse_unsatisfied_closeout_gate`; `_claim_closeout_gate`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:500-522; mcp/src/agents_remember/worktrees/modules/closeout.py:525-576; mcp/src/agents_remember/worktrees/modules/closeout.py:1070-1172 |
 | The staged-quality owner called between those boundaries binds and certifies the accepted candidate. | "def gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129 |
 | Why an `applied` `closeout-approval` record can no longer be used as reclaimable fixture filler: `CONSUMED_APPROVAL_GATE_KINDS` retains it at any age, and `PRUNE_IMMEDIATE_GATE_STATES` is what the three relocated decoys now use instead. | `CONSUMED_APPROVAL_GATE_KINDS`; `PRUNE_IMMEDIATE_GATE_STATES` | mcp/src/agents_remember/controlplane/interaction_retention.py:52-54; mcp/src/agents_remember/controlplane/interaction_retention.py:85-85 |
 | The suite that pins the claim's position rather than its policy: the gate is already `applied` by the time `commit_if_dirty` runs, a failure upstream leaves it `approved`, and `_prunable_gate` is one of the three fixtures moved to `expired`. | `test_the_approval_is_already_consumed_when_the_first_commit_runs`; `_prunable_gate` | mcp/tests/test_gate_replay_window.py:116-130; mcp/tests/test_gate_replay_window.py:582-615 |
 | The second and third relocated decoys, beside the ownership and durability assertions they keep honest: `GateAdapter.write_decoy` and its enclosing adapter. | `GateAdapter` | mcp/tests/_store_durability.py:191-218 |
 | The durable-store ownership fixture that also carries the relocated decoy. | `GateReclaimOwnershipTests` | mcp/tests/test_durable_store_contract.py:854-918 |
-| The conformance suite that also covers the gate tools. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:639-734 |
+| The conformance suite that also covers the gate tools. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:751-846 |
 
 As of the 260703-L8 seam ruling the suite carries MasterHandoverSeamTests: delegability to the orchestrator, the named-policy routing, human-pinned kinds staying pinned, apply_seam_verdict_requirement binding only delegated seam rules, verdict-evidence refusal/acceptance on a delegated handover decision, and owner-never-self-approves on the handover kind.
 
@@ -167,13 +167,13 @@ fake's unattached contract. Cycle 7 adds three layers on the enclosure address: 
 - 2026-08-01T16:30+02:00 — 260731-EFA-L5 curator: cit:([`CloseoutEnforcementHelperTests`], mcp/tests/test_controlplane_gates_closeout.py:191-262) now
   exercises `_claim_closeout_gate` (cit:([`_claim_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:510-560)) wherever it used to call
   `_enforce_closeout_gate`, and the two blocking cases **additionally** assert that
-  `_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:538-560)) raises for the same seeded gate.
+  `_refuse_unsatisfied_closeout_gate` (cit:([`_refuse_unsatisfied_closeout_gate`], mcp/src/agents_remember/worktrees/modules/closeout.py:500-522)) raises for the same seeded gate.
   `_mark_closeout_gate_applied` was **deleted rather than deprecated**, so
   `test_developer_approved_permits_and_marks_applied` no longer calls a second step — it asserts the
   gate reads `applied` straight after the single permitting call, which is the point: permitting and
   marking applied are one step and there is no arrangement of two lines that leaves the approval
   spendable in between. Recorded the two rungs as distinct rather than redundant — the claim sits
-  one statement above the first irreversible act (cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:1083-1168)) while the early read sits
+  one statement above the first irreversible act (cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:1070-1172)) while the early read sits
   before staging and the strict code-quality gate (cit:([`gate_staged_code`], mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129)), and the early rung is safe only because it
   can exclusively DENY: its unlocked read is stale on return, but a stale refusal costs a rerun and
   consumes nothing while a stale permit is re-evaluated under the lock. Recorded the mechanism

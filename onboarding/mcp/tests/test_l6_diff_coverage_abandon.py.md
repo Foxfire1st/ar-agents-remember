@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l6_diff_coverage_abandon.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,14 +16,20 @@
 
 ## Purpose
 
-L6 closeout coverage tests for the worktree abandon helpers: reserved-guard entry, guarded abandon flows, branch refusal and unmerged-commit checks, and external-memory branch handling.
+L6 closeout coverage tests for the worktree abandon helpers: reserved-guard entry, guarded
+abandon flows, contract-authorized branch refusal and unmerged-commit checks, and external-memory
+branch handling.
 
 ## Code Commentary
 
 - `TestAbandonReserved` covers guard-entry errors when the namespace is reserved.
 - `TestAbandonWithGuard` covers helper failure, blocked mutation, dry-run, and publish paths.
-- `TestAbandonBranch` covers branch refusals, branch-presence refusals, and unmerged commits.
-- `TestAbandonBranches` covers external-memory branch handling.
+- `_abandon_authority` creates a real Git repository and contract-derived abandon capability so
+  helper calls retain the production terminal-ownership boundary.
+- `TestAbandonBranch` covers branch refusals, branch-presence refusals, and unmerged commits while
+  passing that real capability to the target-bound helper.
+- `TestAbandonBranches` covers the current code-and-memory branch set; it does not preserve the
+  retired synthesized replay-integration branch.
 
 ## Repo-Internal References
 
@@ -31,12 +37,18 @@ This module defines the test classes cited below; each row points at the exact s
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the class `TestAbandonReserved` (lines 51-77). | `TestAbandonReserved` | mcp/tests/test_l6_diff_coverage_abandon.py:51-77 |
-| Defines the class `TestAbandonWithGuard` (lines 80-140). | `TestAbandonWithGuard` | mcp/tests/test_l6_diff_coverage_abandon.py:80-140 |
-| Defines the class `TestAbandonBranch` (lines 143-267). | `TestAbandonBranch` | mcp/tests/test_l6_diff_coverage_abandon.py:143-267 |
-| Defines the class `TestAbandonBranches` (lines 270-277). | `TestAbandonBranches` | mcp/tests/test_l6_diff_coverage_abandon.py:270-277 |
+| Builds a real contract-derived terminal authority for helper tests. | `_abandon_authority` | mcp/tests/test_l6_diff_coverage_abandon.py:58-85 |
+| Defines the class `TestAbandonReserved`. | `TestAbandonReserved` | mcp/tests/test_l6_diff_coverage_abandon.py:88-114 |
+| Defines the class `TestAbandonWithGuard`. | `TestAbandonWithGuard` | mcp/tests/test_l6_diff_coverage_abandon.py:117-177 |
+| Defines the class `TestAbandonBranch`. | `TestAbandonBranch` | mcp/tests/test_l6_diff_coverage_abandon.py:180-304 |
+| Defines the class `TestAbandonBranches`. | `TestAbandonBranches` | mcp/tests/test_l6_diff_coverage_abandon.py:329-336 |
 
 ## Update History
+
+- 2026-08-16T00:10+02:00 — 260815-DAG-L4 targeted-gate repair: migrated stale
+  `_abandon_branch` and `_abandon_branches` calls to the target object plus real
+  contract-derived terminal authority, and removed the retired memory-integration branch
+  expectation. Verification metadata remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

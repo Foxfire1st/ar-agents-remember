@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/services.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The public benchmark facade re-exports this module's public functions and classes for compatibility. | `services` | mcp/src/agents_remember/benchmarks/runner.py:24-24 |
 | The route-local overview summarizes how this module fits into the benchmark runner split. | `services` | mcp/src/agents_remember/benchmarks/runner.py:24-24 |
 | The stale-registration sweep both entry points open with lives in the registration module. | `disarm_stale_benchmark_registrations` | mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:39-81 |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:671-746 |
+| Benchmark behavior is covered through the existing worktree/tool test slices. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:767-842 |
 
 ## Cross-Repo References
 
