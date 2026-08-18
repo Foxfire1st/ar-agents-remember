@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastVerifiedCommitHash | `e460d4c000983d96a3ef6d105a1aeecbb73d5dc5`|
+| lastVerifiedCommitDate | 2026-08-18T13:41:53+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -506,6 +506,9 @@ publication scratch and the JSON artifact remains the survival record.
 Control-plane storage adds a repository-wide integration-authority lock and composes it after sprint queue authority. Task-fact publication, candidate declaration, series terminal publication, and Git mutation therefore share a fail-closed queue-to-repository order instead of racing check-then-act branch guards.
 
 ## Update History
+
+- 2026-08-18T10:30+02:00 — No route impact: 260815-DAG-L7 relocated the orchestrator portfolio module to worktrees; the controlplane route gained no lasting source.
+
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

@@ -291,6 +291,7 @@
     "mcp/src/agents_remember/worktrees/lifecycle_operation_store.py",
     "mcp/src/agents_remember/worktrees/lifecycle_operations.py",
     "mcp/src/agents_remember/worktrees/named_ref_memory.py",
+    "mcp/src/agents_remember/worktrees/orchestration_portfolio.py",
     "mcp/src/agents_remember/worktrees/organizational_completion.py",
     "mcp/src/agents_remember/worktrees/organizational_completion_integration.py",
     "mcp/src/agents_remember/worktrees/organizational_completion_repair.py",
@@ -304,8 +305,8 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1131,
-    "fileSidecars": 196,
+    "sourceFilesInScope": 1133,
+    "fileSidecars": 197,
     "childRoutes": 19
   },
   "routingTerms": [
