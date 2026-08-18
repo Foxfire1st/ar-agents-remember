@@ -300,6 +300,7 @@
     "mcp/tests/test_onboarding_integrity_edges.py",
     "mcp/tests/test_operator_inbox.py",
     "mcp/tests/test_orchestration_comms.py",
+    "mcp/tests/test_orchestration_portfolio.py",
     "mcp/tests/test_organizational_completion_branches.py",
     "mcp/tests/test_organizational_completion_integration.py",
     "mcp/tests/test_organizational_completion_recovery_edges.py",
@@ -434,8 +435,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 412,
-    "fileSidecars": 422,
+    "sourceFilesInScope": 413,
+    "fileSidecars": 423,
     "childRoutes": 0
   },
   "routingTerms": [
