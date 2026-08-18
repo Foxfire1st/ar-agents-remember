@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `74b3479b80bbf69c508fc3beff3718118baba9bb` |
-| lastVerifiedCommitDate | 2026-08-18T10:01:50+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 Owns the mechanistic sprint closeout queue: structural authorization, declaration, logistics,
-deterministic selection, atomic barriers, current-readiness recomputation, and actor-specific public
+deterministic selection, atomic blockers, current-readiness recomputation, and actor-specific public
 projection. It makes facts visible and enforces the ruled order; it does not invent scheduling
 judgment.
 
@@ -28,7 +28,7 @@ judgment.
 The service derives a bounded current graph, resolves the ambient `QueueActor`, applies one
 revision-checked/idempotent transition under the store lock, then recomputes projection. Managers
 declare and maintain admission facts; the orchestrator records canonical grades, selects the first
-ready candidate, and owns barriers. Candidate blockers revalidate task completion, graph revision,
+ready candidate, and owns blockers. Candidate blockers revalidate task completion, graph revision,
 source lineage, candidate trees, route review, curator evidence, grade rows, and ledger facts. Exact
 route and curator comparisons are delegated to their evidence owners; this service composes the
 returned blocker facts.
@@ -37,16 +37,16 @@ returned blocker facts.
 
 Judgment is consumed only from canonical sprint Judgment/Priority Registers. Equal categorical
 priority uses graph node order and then the leaf key. Ordinary and atomic masters share leaf
-candidate mechanics; atomic barriers add exclusivity and exact block-landing proof.
+candidate mechanics; atomic blockers add exclusivity and exact block-landing proof.
 
 ### Invariants And Boundaries
 
 - Actor role and task identity are plane-proven, never request data.
 - Only the deterministic first ready candidate may be selected.
 - In-flight records are lifecycle-owned and immutable through public actions.
-- Atomic-barrier acquisition requires atomic nature, drained predecessors and landing lane, a
+- Atomic-blocker acquisition requires atomic nature, drained predecessors and landing lane, a
   non-blank rationale, and the atomic series base to still match the current code+memory super tips.
-- A normal atomic-barrier release requires the completed atomic master to prove one exact landed
+- A normal atomic-blocker release requires the completed atomic master to prove one exact landed
   series; abort requires a canonical strategist/orchestrator judgment.
 - Projection reports only operations legal for the current structural caller.
 
@@ -78,7 +78,9 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 
 ## Update History
 
-- 2026-08-18T01:24+02:00 — 260815-DAG-L6: barrier acquisition now requires the atomic series base to still match the current code+memory super tips (`require_source_bases_current`), closing R2. Verification remains closeout-owned.
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
+- 2026-08-18T01:24+02:00 — 260815-DAG-L6: blocker acquisition now requires the atomic series base to still match the current code+memory super tips (`require_source_bases_current`), closing R2. Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 

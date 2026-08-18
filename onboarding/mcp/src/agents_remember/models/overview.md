@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -381,7 +381,7 @@ free strings or agent-supplied identity.
 ## 260815-DAG-L3 Queue Models
 
 `models/closeout_queue.py` adds the strict action-specific request, categorical scheduling grade,
-exact evidence facts, candidate state machine, atomic barrier, bounded canonical queue state, and
+exact evidence facts, candidate state machine, atomic blocker, bounded canonical queue state, and
 ready/waiting/blocked/in-flight response projection. Every persisted/public text and collection is
 bounded, impossible state/owner/commit combinations fail validation, external memory requires exact
 evidence while internal/disabled use a typed not-applicable state, and only a one-way lifecycle
@@ -395,6 +395,8 @@ Worktree, closeout-queue, and task projections now distinguish organizational di
 
 ## Update History
 
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
 - 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added three lifecycle-operation wire models; the models route purpose is unchanged.
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
@@ -402,7 +404,7 @@ Worktree, closeout-queue, and task projections now distinguish organizational di
 - 2026-08-15T09:36+02:00 — L3 fast-hook repair: clarified the validator-owned task-reference
   bounds and why they do not become an unrenderable projection-schema keyword.
 - 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: added the strict bounded queue request,
-  candidate/state, evidence, barrier, and projection vocabulary. Verification remains closeout-owned.
+  candidate/state, evidence, blocker, and projection vocabulary. Verification remains closeout-owned.
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: the shared task-document model vocabulary
   owns the closed organizational/atomic nature used by both persisted tasks and projection DTOs.

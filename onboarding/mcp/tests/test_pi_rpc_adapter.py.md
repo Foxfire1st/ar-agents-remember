@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ is reported as `echo-verified` with different requested and effective values aft
 
 One finite configurable budget covers the mutation response, state readback, and catalog refresh.
 Hanging at any of those three stages returns `unknown` without an effective value, and an unresolved
-mutation retains the authority barrier rather than allowing a later set to pass behind it. State or
+mutation retains the authority blocker rather than allowing a later set to pass behind it. State or
 refreshed-catalog evidence that reports an unadvertised clamp/model is incoherent: the result remains
 `unknown`, the prior coherent capability snapshot stays advertised, and no false promotion occurs.
 Switching to a non-reasoning model also re-gates thinking to `off` so an old model's effort token is
@@ -98,7 +98,7 @@ copied.
   model's refreshed dynamic menu; requested and effective values remain distinct.
 - Mutation, state readback, and catalog refresh share one finite transaction budget. Timeout or
   incoherent evidence returns `unknown` without promotion; an unresolved mutation holds the
-  authority barrier until explicitly resolved.
+  authority blocker until explicitly resolved.
 - Model identity remains exact `provider/model-id`, including model ids containing `/`; malformed or
   vendor-unknown values are unsupported rather than guessed.
 - `pi_rpc_launch` adds only `--mode rpc`, preserves existing model/thinking flags and environment,
@@ -139,11 +139,13 @@ No sibling repository or external transport implementation is required for these
 
 ## 260715-FEUI-L5 Submission Authority Delta
 
-Pi tests now cover guarded model/effort readback, timeout/unknown barrier resolution, zero candidate
+Pi tests now cover guarded model/effort readback, timeout/unknown blocker resolution, zero candidate
 bytes on stale idle, absence of a native queue/steer flag, activity-token settlement, exact
 interaction completion, certified disconnect before dispatch, and no resend after acknowledgement.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

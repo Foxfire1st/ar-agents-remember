@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/leaf_doc.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`  |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`  |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -57,10 +57,12 @@ small `{docPath, lifecycleId, changed}` report, or `None` when the leaf has no d
 
 `restamp_leaf_doc_lifecycle` now plans the same exact leaf-doc change but delegates publication to
 an injected writer. Worktree start supplies the queue-governed task-fact publisher, so lifecycle
-restamping cannot bypass an active sprint lane or atomic barrier; standalone tests can inject the
+restamping cannot bypass an active sprint lane or atomic blocker; standalone tests can inject the
 ordinary task-doc writer without duplicating policy.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — L3 content update: documented publisher injection for queue-governed
   leaf lifecycle restamping; verification remains closeout-owned.

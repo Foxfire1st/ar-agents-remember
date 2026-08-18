@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`                |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -78,10 +78,12 @@ recreates everything.
 
 This registration surface now exposes `closeout_queue` with the strict request model and describes
 the manager/orchestrator authority split, revision/idempotency protocol, exact curator and planning
-evidence, deterministic ordering, atomic barrier semantics, bounded durable artifact, and
+evidence, deterministic ordering, atomic blocker semantics, bounded durable artifact, and
 task-addressed lifecycle ownership.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — L3 content update: registered and documented the public closeout-queue
   tool contract; verification remains closeout-owned.

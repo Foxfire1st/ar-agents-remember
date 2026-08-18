@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`       |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -159,7 +159,7 @@ plan, before deliberately removed descendant branches can be mistaken for lineag
 
 Sprint, master, and leaf task-document writers now publish through the sprint queue lock whenever
 the topology is queue-managed. The short selected/in-flight lane freezes the whole sprint task-fact
-set because one addressed leaf write can synchronize its master row; an atomic barrier permits only
+set because one addressed leaf write can synchronize its master row; an atomic blocker permits only
 topology-stable recovery inside its own master. Sprint completion additionally proves every exact
 graph master is `Completed` with no unresolved completion rows, then atomically closes the quiescent
 queue; reopening reverses that closed state through the same recoverable publication path.
@@ -169,6 +169,8 @@ queue; reopening reverses that closed state through the same recoverable publica
 Task-document execution-topology edits are validated under the same repository authority as Git mutation. Candidate graphs cannot promote live leaf work branches into protected supers/atomic refs, detach live owners, or contradict an existing atomic series edge.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_queue_models.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ evidence modules to targeted scope.
 ### Logic
 
 The model tests validate required and forbidden fields for each action, bound and normalize grade,
-evidence, admission, and barrier metadata, exhaust reachable candidate lifecycle shapes across
+evidence, admission, and blocker metadata, exhaust reachable candidate lifecycle shapes across
 memory modes, reject inconsistent queue lanes and closed state, and bind pending revisions,
 fingerprints, sprint status, and receipts. The ownership test keeps both evidence modules attached
 to the targeted selection.
@@ -44,6 +44,8 @@ to the targeted selection.
 | Pending transactions bind exact revisions, status, and receipts. | `test_pending_transactions_bind_revision_status_and_receipt` | mcp/tests/test_closeout_queue_models.py:310-414 |
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T14:05+02:00 — No content impact: corrected two nested invalid-state assertions to
   the earlier closed-queue quiescence invariant that the real model evaluates first.

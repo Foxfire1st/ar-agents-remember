@@ -76,7 +76,7 @@
       "worker",
       "skills/l-01-agent-lifecycles/roles",
       "route-local-overview",
-      "20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4",
+      "25841d0ddc2d93c4950abf097168fa24b220c5ad",
       "SKILL.md",
       "worktree_status",
       "sourceLineage",
@@ -91,19 +91,19 @@
       "lastUpdated",
       "T04",
       "lastVerifiedCommitHash",
-      "cfd54cb0a3d425424afdfbb6d8c97f669cdcc4",
+      "d0ddc2d93c4950abf097168fa24b220c5ad",
       "lastVerifiedCommitDate",
-      "T05",
+      "T11",
       "SKILL",
       "L23",
       "R39",
+      "T09",
       "DAG",
-      "T11",
       "T06",
       "T14",
-      "T09",
       "T08",
-      "T20"
+      "T20",
+      "T07"
     ]
   },
   "fallback": {

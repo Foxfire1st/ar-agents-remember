@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/organizational_completion_integration.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-17T12:09+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -45,5 +45,7 @@ Publishes the final organizational leaf integration from the closeout queue into
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 
 - 2026-08-17T12:09+02:00 — 260815-DAG-L5: created onboarding for organizational completion queue-to-repository publication.

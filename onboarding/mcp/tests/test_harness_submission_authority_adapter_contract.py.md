@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_harness_submission_authority_adapter_contract.py` |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-07-31T15:32+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`                        |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -27,7 +27,7 @@ dispatch.
 None of those may be projected as a settled outcome — and **none may be projected as a
 rejection either**. The adapter method has already returned, so the authority cannot certify
 that nothing crossed the wire. Every case therefore ends in the same place: an `unknown`
-**barrier** that
+**blocker** that
 
 - pins the head,
 - keeps the successor undispatched, and
@@ -49,8 +49,8 @@ successor stayed undispatched" is asserted rather than assumed.
 
 - A malformed or mis-addressed adapter answer produces `unknown`, never `delivered` and
   never `rejected`.
-- The barrier is head-pinning: no successor may be dispatched past an unresolved one.
-- Resolution is an operator action; the authority never resolves a barrier itself.
+- The blocker is head-pinning: no successor may be dispatched past an unresolved one.
+- Resolution is an operator action; the authority never resolves a blocker itself.
 
 ## Repo-Internal References
 
@@ -61,6 +61,8 @@ successor stayed undispatched" is asserted rather than assumed.
 | Log-side acceptance evidence the authority reads. | `test_claude_non_submission_records_never_prove_delivery` | mcp/tests/test_harness_logs_user_message_readers.py:46-82 |
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

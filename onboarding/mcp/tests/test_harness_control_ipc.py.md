@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_harness_control_ipc.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`                                        |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`                                        |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -39,6 +39,8 @@ Part of the 260731-EFA-L7 in-place split family for `test_harness_control_ipc.py
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 
 - 2026-08-13T13:08+02:00 — L23 full-Dagger stability repair: documented the duplicate-submit
   test's five-second synchronization margin; ordering and production IPC behavior are unchanged.

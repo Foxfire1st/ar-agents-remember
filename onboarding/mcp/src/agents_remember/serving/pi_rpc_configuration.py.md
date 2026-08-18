@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_configuration.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
+| lastVerifiedCommitDate |  2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -104,10 +104,12 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
 - 2026-08-03T03:08:58+02:00 — W3-B04 curator: curated 3 table citations (3 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ConfigurationPorts` as the one atomic set-transaction surface.
 - 2026-07-17T21:39+02:00 — FEUI-L5: corrected timeout-release claims and documented guarded
-  configuration plus unknown-barrier behavior.
+  configuration plus unknown-blocker behavior.
 
 - 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: created the sidecar for serialized finite
   mutation/readback/catalog evidence, exact provider parsing, selected-model effort gating,

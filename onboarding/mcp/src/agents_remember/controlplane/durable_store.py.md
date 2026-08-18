@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/durable_store.py`   |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |                                                           `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate |                                                           2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash |                                                           `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
+| lastVerifiedCommitDate |                                                           2026-08-18T11:30:22+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -409,6 +409,8 @@ whose ownership record includes them; the gate and lifecycle-operation/queue pat
 longer rely on the earlier undeclared-process bypass.
 
 ## Update History
+
+- 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — L3 content update: added the lifecycle-operation writer role and
   separated writer identity from compaction ownership; verification remains closeout-owned.

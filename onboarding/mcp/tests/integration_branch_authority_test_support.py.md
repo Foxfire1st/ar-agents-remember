@@ -6,8 +6,8 @@
 | path | `mcp/tests/integration_branch_authority_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Builds real repository, contract, task-topology, atomic barrier, closed-leaf, and exact-series preview fixtures reused by the split authority test suites.
+Builds real repository, contract, task-topology, atomic blocker, closed-leaf, and exact-series preview fixtures reused by the split authority test suites.
 
 ## Code Commentary
 
@@ -32,13 +32,15 @@ Shared fixture construction uses production task documents, queue state, contrac
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, barrier, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:43-61; mcp/tests/integration_branch_authority_test_support.py:105-212; mcp/tests/integration_branch_authority_test_support.py:251-278; mcp/tests/integration_branch_authority_test_support.py:466-520 |
+| Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, blocker, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:43-61; mcp/tests/integration_branch_authority_test_support.py:105-212; mcp/tests/integration_branch_authority_test_support.py:251-278; mcp/tests/integration_branch_authority_test_support.py:466-520 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-17T12:30+02:00 — 260815-DAG-L5: extended the support surface for organizational-completion branch and recovery forcing. Verification remains closeout-owned.
 

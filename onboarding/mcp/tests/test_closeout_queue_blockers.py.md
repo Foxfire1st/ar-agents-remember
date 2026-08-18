@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_queue_blockers.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T02:51+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ dependency blocker vocabulary.
 
 The suite drives each blocker composer directly with canonical contracts and queue records. It
 proves exact early-return boundaries, external-memory commit and ledger requirements, evidence
-drift classes, and waiting reasons for lanes, atomic barriers, predecessors, and admission.
+drift classes, and waiting reasons for lanes, atomic blockers, predecessors, and admission.
 
 ### Invariants And Boundaries
 
@@ -42,9 +42,11 @@ drift classes, and waiting reasons for lanes, atomic barriers, predecessors, and
 | --- | --- | --- |
 | Pre- and post-closeout blocker sets are separately forced. | `test_pre_closeout_blockers_name_lifecycle_tree_memory_and_source_changes` | mcp/tests/test_closeout_queue_blockers.py:109-134 |
 | Closed external trees and commits are exact. | `test_closed_tree_and_certified_commit_blockers_are_exact` | mcp/tests/test_closeout_queue_blockers.py:161-202 |
-| Waiting reasons cover graph and barrier logistics. | `test_waiting_reasons_cover_lane_barrier_atomic_and_admission_facts` | mcp/tests/test_closeout_queue_blockers.py:350-416 |
+| Waiting reasons cover graph and blocker logistics. | `test_waiting_reasons_cover_lane_blocker_atomic_and_admission_facts` | mcp/tests/test_closeout_queue_blockers.py:350-416 |
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-16T02:51+02:00 — L4 named-ref authority: moved source and ledger blocker forcing to the
   exact branch-commit seam so an unrelated ambient checkout cannot satisfy queue evidence.

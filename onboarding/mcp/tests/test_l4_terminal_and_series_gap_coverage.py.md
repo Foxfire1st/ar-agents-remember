@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l4_terminal_and_series_gap_coverage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T08:12+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ concurrent, and exact named-ref facts.
 ## Code Commentary
 
 Terminal cases cover malformed/foreign child enclosures and residual worktree/ref ownership.
-Series cases cover standalone publication, graph/barrier/candidate races, exact leaf-chain tips,
+Series cases cover standalone publication, graph/blocker/candidate races, exact leaf-chain tips,
 atomic task completion, dirty integration checkouts, and external-memory ledger mapping/reachability.
 
 ## Invariants And Boundaries
@@ -42,5 +42,7 @@ atomic task completion, dirty integration checkouts, and external-memory ledger 
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-16T08:12+02:00 — Created focused terminal and atomic-series forcing during targeted Dagger coverage repair.

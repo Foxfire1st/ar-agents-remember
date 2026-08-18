@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_queue_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 Owns structural parsing and exact authority binding for curator readiness, source-candidate
-dispositions, grades, priorities, judgments, and atomic barrier aborts.
+dispositions, grades, priorities, judgments, and atomic blocker aborts.
 
 ## Code Commentary
 
@@ -32,7 +32,7 @@ the orchestration-task template.
 
 - Known table formats are schema-parsed; substring presence never proves a disposition or judgment.
 - Optional urgency/risk are absent unless the canonical decision records them; extra keys refuse.
-- Only strategist/orchestrator evidence can grade or authorize a barrier abort.
+- Only strategist/orchestrator evidence can grade or authorize a blocker abort.
 
 ## Repo-Internal References
 
@@ -43,6 +43,8 @@ the orchestration-task template.
 | Low-level Markdown and decision helpers fail closed. | `test_low_level_markdown_decision_and_evidence_helpers_are_fail_closed` | mcp/tests/test_closeout_queue_evidence.py:452-482 |
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T14:05+02:00 — L3 final targeted-gate repair: forces exact template-schema parity,
   optional urgency/risk authority, invalid provenance translation, unrelated-section skipping,

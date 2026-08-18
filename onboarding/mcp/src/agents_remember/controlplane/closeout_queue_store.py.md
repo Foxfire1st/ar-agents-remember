@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/controlplane/closeout_queue_store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ an explicit writer for internal claim/certify/consume transitions.
 
 - Request ids are stable idempotency keys and cannot be reused with different payloads.
 - At most the most recent 128 receipts survive.
-- Task facts freeze while a selected or in-flight candidate owns the lane; an atomic barrier also
+- Task facts freeze while a selected or in-flight candidate owns the lane; an atomic blocker also
   excludes topology-changing writes outside its block.
 - Completion/reopen publication is recovered against the canonical task status.
 
@@ -57,7 +57,7 @@ No configured Domain Documentation source applies.
 | Store ownership explicitly includes MCP and lifecycle-operation writers. | "QUEUE_OWNERSHIP = StoreOwnership(" | mcp/src/agents_remember/controlplane/closeout_queue_store.py:27-40 |
 | Mutation receipts and WAL publication make request retry idempotent. | `transact` | mcp/src/agents_remember/controlplane/closeout_queue_store.py:97-149 |
 | Sprint completion/reopen publication shares the queue lock and enforces quiescence. | `publish_sprint_update` | mcp/src/agents_remember/controlplane/closeout_queue_store.py:151-220 |
-| Task-fact publication shares the queue lock with lane and barrier ownership. | `publish_task_facts_update` | mcp/src/agents_remember/controlplane/closeout_queue_store.py:222-265 |
+| Task-fact publication shares the queue lock with lane and blocker ownership. | `publish_task_facts_update` | mcp/src/agents_remember/controlplane/closeout_queue_store.py:222-265 |
 | Recovery either publishes the exact next revision, recognizes it as already published, or refuses divergence. | `_recover` | mcp/src/agents_remember/controlplane/closeout_queue_store.py:267-296 |
 
 ## Cross-Repo References
@@ -69,6 +69,8 @@ No meaningful cross-repository reference applies.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 

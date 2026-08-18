@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -73,11 +73,13 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 Initial facts are architect-compiled; runtime-reshape facts arrive from the orchestrator through
 the architect. The strategist classifies organizational versus atomic execution, builds the exact
-activity-on-node graph, and records dependency meaning, blast radius, priority, barriers,
+activity-on-node graph, and records dependency meaning, blast radius, priority, blockers,
 reprioritization, and leaf moves in one canonical Judgment Register. Every selected graph relation
 cites evidence and its owning judgment id; large size alone never makes a master atomic.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized fact/judgment separation, graph-edge
   traceability, and dependency/risk-driven master classification. Verification remains

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -155,7 +155,7 @@ advertisement and setter methods it now satisfies.
 | --- | --- | --- |
 | The fake adapter implements startup, snapshots, an intentionally empty normalized advertisement, prompt submission, reconciliation observation, and explicit setter results. | `_FakeAdapter` | mcp/tests/test_harness_control.py:113-287 |
 | Shared ordering and cancellation coverage proves launch, setter, and following prompt execute in one FIFO queue that survives a cancelled waiter. | `test_capability_setters_share_launch_set_prompt_queue_order`; `test_cancelled_setter_late_completion_does_not_kill_command_queue` | mcp/tests/test_harness_control_conformance_1.py:65-90; mcp/tests/test_harness_control_conformance_1.py:92-123 |
-| The invalid-result matrix rejects dishonest evidence and arbitrary acceptance strings without poisoning the runner; unregistered adapters remain explicitly unsupported. | `test_bad_set_result_installs_resolvable_unknown_barrier_without_poisoning`; `test_unregistered_adapter_setters_remain_explicitly_unsupported` | mcp/tests/test_harness_control_conformance_1.py:125-166; mcp/tests/test_harness_control_conformance_1.py:168-173 |
+| The invalid-result matrix rejects dishonest evidence and arbitrary acceptance strings without poisoning the runner; unregistered adapters remain explicitly unsupported. | `test_bad_set_result_installs_resolvable_unknown_blocker_without_poisoning`; `test_unregistered_adapter_setters_remain_explicitly_unsupported` | mcp/tests/test_harness_control_conformance_1.py:125-166; mcp/tests/test_harness_control_conformance_1.py:168-173 |
 | Pending and retained duplicate ids return the first result and preserve the first payload with one adapter submission; known receipts reconcile locally without a native reconcile call. | `test_duplicate_request_id_returns_retained_result_without_resubmission`; `test_dispatching_duplicate_returns_unknown_without_resubmission`; `test_known_receipts_reconcile_without_native_reconciliation` | mcp/tests/test_harness_control_conformance_2.py:68-100; mcp/tests/test_harness_control_conformance_2.py:102-134; mcp/tests/test_harness_control_conformance_2.py:136-174 |
 | Exact-session IPC advertises and returns honest queued/unsupported setter acceptance through the blocking client. | `test_exact_session_ipc_advertises_and_returns_set_acceptance` | mcp/tests/test_harness_control_ipc.py:148-181 |
 | Outer response loss returns unknown, then retained reconciliation restores accepted state and vendor correlation with one adapter call. | `test_outer_socket_lost_receipt_reconciles_retained_known_truth` | mcp/tests/test_harness_control_ipc.py:183-222 |
@@ -177,7 +177,7 @@ No sibling repository is required to prove this protocol-neutral test suite.
 ## Submission Authority Delta
 
 The common control suite now treats one `HarnessSubmissionAuthority` as the prompt/setter timeline.
-It covers ordered terminal outcomes, unknown-setter barriers, no-resend idempotency/reconciliation,
+It covers ordered terminal outcomes, unknown-setter blockers, no-resend idempotency/reconciliation,
 bounded ambiguity, private status/withdraw, IPC and outer-response loss, durable-source interaction,
 and duplicate raw-free projection. Earlier second-runner queue semantics are historical only.
 
@@ -188,6 +188,8 @@ Harness-control coverage now includes the expanded structured interaction/contro
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — No content impact: removed an explicit `leaf_key=None` from the local
   catalog fixture after that retired model field disappeared; native harness control behavior and

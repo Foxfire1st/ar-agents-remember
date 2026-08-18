@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/doctrine.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 
 ## Purpose
 
@@ -60,10 +60,12 @@ No sibling repository evidence is needed for this catalog.
 D-4 now sweeps every role, brief, handover, and verdict for the selected execution nature: an
 organizational master has no integration branch, an atomic master does, and neither main, super,
 nor an atomic integration ref is a feature/fix workbench. D-5 independently checks that mechanisms
-surface facts while named roles own and record dependency, priority, classification, barrier, and
+surface facts while named roles own and record dependency, priority, classification, blocker, and
 queue judgment.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: added the topology/authority and detection-versus-
   judgment regression criteria. Verification remains closeout-owned.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l4_remaining_core_coverage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T10:43+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -44,6 +44,8 @@ conflict reset, bootstrap recovery, and completed-integration proof branches.
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 
 - 2026-08-17T13:20+02:00 — No content impact: L5 repair: re-pointed stale mock targets and return tuples to match the L5 integration API (publish_queue_candidate_integration_result_under_authority, branch_commit, 4-tuple _prepare_integration_commits, durable-removal-intent idempotency). The documented test intent and coverage surface are unchanged.
 

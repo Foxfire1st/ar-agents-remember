@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 
 ## Purpose
 
@@ -26,7 +26,7 @@ durable address at every altitude.
 
 An organizational master is a logical grouping whose ordinary leaves branch directly from the
 current super line and may land independently. An atomic master keeps its own integration branch,
-forms an exclusive barrier, and exposes no partial result. Mechanisms publish facts and candidate
+forms an exclusive blocker, and exposes no partial result. Mechanisms publish facts and candidate
 sets; architect, strategist, orchestrator, and manager seats retain their explicit judgment
 boundaries. Integration lines are not repair workbenches.
 
@@ -91,6 +91,10 @@ cadence remains fixed at leaf closeout once and master integration once, with no
 rerun and no inferred fallback.
 
 ## Update History
+
+- 2026-08-18T09:25+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented architect-owned initial planning,
   evidence-cited judgment, ready-frontier recomputation, organizational versus atomic master

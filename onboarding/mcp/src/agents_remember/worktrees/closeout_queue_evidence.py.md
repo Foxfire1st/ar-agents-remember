@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/closeout_queue_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,7 @@ exact five-column disposition table when source-change candidates exist. Grade r
 the canonical Markdown registers only under their exact section headings, headers, separators,
 and outer-pipe row grammar; it matches exact subjects and categorical values,
 restricts authors to strategist/orchestrator, hashes the exact rows, and digests every task-local
-evidence file. Atomic barrier aborts require their own exact canonical judgment. Current curator
+evidence file. Atomic blocker aborts require their own exact canonical judgment. Current curator
 evidence comparison stays with this parser and emits the single stable stale-readiness blocker.
 
 ### Conventions
@@ -43,7 +43,7 @@ grade assertion, while durable authority is resolved from the sprint artifact.
 - Priority is categorical; urgency/risk are optional only when the canonical judgment says so.
 - Markdown separators require one contiguous run of at least three hyphens with optional edge
   colons; exact decision maps refuse surplus scheduling signals.
-- Workers/managers cannot author scheduling grades or barrier-abort judgments.
+- Workers/managers cannot author scheduling grades or blocker-abort judgments.
 
 ### Todos
 
@@ -60,7 +60,7 @@ No configured Domain Documentation source applies; authority is the repository's
 | Curator readiness binds structured zero counts, rendered bytes, and exact dispositions. | `curator_evidence` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:123-193 |
 | Candidate-boundary comparison reuses the canonical curator parser and exact evidence list. | `curator_evidence_blockers` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:192-204 |
 | Grade resolution requires exact Priority and Judgment Register agreement plus evidence digests. | `canonical_grade` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:256-311 |
-| Only a canonical strategist/orchestrator judgment can abort an atomic barrier. | `canonical_barrier_abort` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:350-373 |
+| Only a canonical strategist/orchestrator judgment can abort an atomic blocker. | `canonical_blocker_abort` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:350-373 |
 | Register parsing starts from the canonical planning sections. | `planning_authorities` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:407-420 |
 | Scheduling registers require the exact canonical header, rectangular separator, outer pipes, and row width. | `_table_rows` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:485-533 |
 
@@ -69,6 +69,8 @@ No configured Domain Documentation source applies; authority is the repository's
 No meaningful cross-repository reference applies.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T14:05+02:00 — L3 final targeted-gate repair: scheduling authority now requires the
   canonical template headings and table headers, rectangular separators, and outer pipes on every

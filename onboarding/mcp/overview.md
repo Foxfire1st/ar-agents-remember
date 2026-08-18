@@ -9,8 +9,8 @@ Total output lines: 2603
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `74b3479b80bbf69c508fc3beff3718118baba9bb`
-| lastVerifiedCommitDate | 2026-08-18T10:01:50+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -837,7 +837,7 @@ and exact staged gate scope out of oversized suites without changing the product
 The packaged `l-01-agent-lifecycles` assets now mirror the canonical nature-aware planning
 contract. Architect owns the initial strategist and plan-review loop; orchestrator adopts the
 ruled graph, records queue judgment, and recomputes the ready frontier; managers distinguish
-organizational direct-super leaves from atomic branch-backed barriers. The package also carries the
+organizational direct-super leaves from atomic branch-backed blockers. The package also carries the
 exact proposed-candidate master-exit handoff and leaf-owned remediation boundary. This leaf changes
 packaged doctrine and templates only—worktree/source-lineage mechanization remains owned by later
 leaves in the dependency-aware sprint master.
@@ -859,7 +859,9 @@ The MCP runtime now owns repository-global protected-ref census, durable closeou
 
 ## Update History
 
-- 2026-08-18T01:24+02:00 — No route impact: 260815-DAG-L6 added the barrier-acquisition super-tip precondition (`_require_current_super_tips`) under mcp/src/agents_remember/worktrees; the route's purpose is unchanged.
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
+- 2026-08-18T01:24+02:00 — No route impact: 260815-DAG-L6 added the blocker-acquisition super-tip precondition (`_require_current_super_tips`) under mcp/src/agents_remember/worktrees; the route's purpose is unchanged.
 
 - 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added organizational-completion modules under mcp/src/agents_remember/worktrees; the route's purpose is unchanged.
 

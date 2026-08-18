@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-15T11:25+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ Every task-doc publication now resolves its governing sprint queue and publishes
 document batch under that queue's lock. Leaf writes include any synchronized master row; sprint
 completion validates every commanded graph master and atomically closes a quiescent queue;
 `remove_subtask` deletion is inside the same governed publication. Topology-stable classification
-controls which own-atomic-block recovery edits may proceed while a barrier is active. Structural
+controls which own-atomic-block recovery edits may proceed while a blocker is active. Structural
 scope resolution is delegated to `task_doc_queue_scope.py`; this dispatcher owns only error
 translation and the locked publication call.
 
@@ -129,6 +129,8 @@ translation and the locked publication call.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 

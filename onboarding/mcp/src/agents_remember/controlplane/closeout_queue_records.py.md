@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/controlplane/closeout_queue_records.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,7 +35,7 @@ The record inherits the repository durable-record schema and bounds every persis
 
 - A pending transaction advances exactly one revision.
 - Queue mutation state carries its exact request receipt.
-- Sprint-status WAL rows contain no candidate, barrier, or receipt state.
+- Sprint-status WAL rows contain no candidate, blocker, or receipt state.
 
 ### Todos
 
@@ -56,5 +56,7 @@ No configured Domain Documentation source applies.
 No meaningful cross-repository reference applies.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — Created for L3's bounded closeout-queue WAL contract; verification remains closeout-owned.

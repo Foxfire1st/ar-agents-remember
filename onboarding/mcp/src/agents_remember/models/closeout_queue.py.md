@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ grade projection, and public queue response for dependency-aware leaf closeout s
 
 The request validator enforces one exact action/payload matrix. Candidate records bind candidate
 trees, graph revision, source bases, route review, curator evidence, grade evidence, memory mode,
-and lifecycle state. State validation allows one active lane owner, enforces atomic-barrier
+and lifecycle state. State validation allows one active lane owner, enforces atomic-blocker
 exclusion, and requires closed queues to be empty. Public projections split candidates into ready,
 waiting, blocked, and in-flight lists with actor-legal next operations.
 
@@ -58,7 +58,7 @@ No configured Domain Documentation source applies.
 | --- | --- | --- |
 | The request schema enforces exact required and forbidden fields per action. | `CloseoutQueueRequest` | mcp/src/agents_remember/models/closeout_queue.py:63-118 |
 | Candidate validation binds serviceable lifecycle and memory states. | `CloseoutCandidateRecord` | mcp/src/agents_remember/models/closeout_queue.py:247-324 |
-| Queue state permits one lane owner, enforces barrier ownership, and makes closure quiescent. | `CloseoutQueueState` | mcp/src/agents_remember/models/closeout_queue.py:343-377 |
+| Queue state permits one lane owner, enforces blocker ownership, and makes closure quiescent. | `CloseoutQueueState` | mcp/src/agents_remember/models/closeout_queue.py:343-377 |
 | The response exposes deterministic classification buckets and legal operations. | `CloseoutQueueResponse` | mcp/src/agents_remember/models/closeout_queue.py:380-406 |
 
 ## Cross-Repo References
@@ -70,6 +70,8 @@ No meaningful cross-repository reference applies.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-17T12:30+02:00 — 260815-DAG-L5: added the `prepare-quality-repair` event to the closeout queue event vocabulary. Verification remains closeout-owned.
 

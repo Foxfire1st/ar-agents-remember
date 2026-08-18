@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -67,13 +67,15 @@ Dagger altitude. Durable operation observation remains task-addressed and exclud
 ## 260815-DAG-L2 Executable Plan Shape
 
 The artifact now separates a Mechanical Fact Inventory from one canonical Judgment Register. The
-nature, relation, blast-radius, priority, barrier, and leaf-move sections are projections that cite
+nature, relation, blast-radius, priority, blocker, and leaf-move sections are projections that cite
 their owning judgment rows. `executionGraph` carries exact `TaskDocumentRef` nodes and evidence-
-backed predecessor edges; deterministic waves and barrier positions are derived rather than
+backed predecessor edges; deterministic waves and blocker positions are derived rather than
 persisted. Runtime reprioritization records rationale, evidence, author, confidence, and
 supersession before queue selection changes.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized explicit fact/judgment authority,
   graph-edge traceability, derived waves, and auditable runtime reprioritization. Verification
