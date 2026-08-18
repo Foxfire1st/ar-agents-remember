@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash |  `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
+| lastVerifiedCommitDate |  2026-08-18T03:31:59+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,8 @@ This module is the task-addressed control surface for starting, observing, recov
 with the task worktree as its current directory and task contract as its address, but its executable
 code comes from the installed runtime. This prevents the detached subprocess from re-entering
 checkout-development mode and colliding with the official-root isolation guard.
+
+`operation_state_fingerprint` moved to `lifecycle_operation_identity.py`; the failed organizational-completion cancellation path now resolves the gate-bound repair evidence and routes through `prepare_organizational_completion_repair`.
 
 ### Conventions
 
@@ -63,7 +65,7 @@ No external Domain Documentation source is configured for the internal lifecycle
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Start/observe converges duplicates and binds recovery to canonical task state. | `start_or_observe_operation` | mcp/src/agents_remember/worktrees/lifecycle_operations.py:48-132 |
-| Projection and cancellation expose task state without private operation identifiers. | `observe_operation`; `cancel_operation` | mcp/src/agents_remember/worktrees/lifecycle_operations.py:195-200; mcp/src/agents_remember/worktrees/lifecycle_operations.py:219-224 |
+| Projection and cancellation expose task state without private operation identifiers. | `observe_operation`; `cancel_operation` | mcp/src/agents_remember/worktrees/lifecycle_operations.py:182-187; mcp/src/agents_remember/worktrees/lifecycle_operations.py:206-211 |
 | Detached launch and queued-record creation preserve the immutable candidate and native process boundary. | `launch_detached_worker`; `_queued_record` | mcp/src/agents_remember/worktrees/lifecycle_operations.py:323-359; mcp/src/agents_remember/worktrees/lifecycle_operations.py:362-388 |
 
 ## Cross-Repo References
@@ -98,6 +100,8 @@ launching beside an orphaned old worker.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: extracted `operation_state_fingerprint` to `lifecycle_operation_identity.py` and wired the failed final-leaf cancel/reset repair through `prepare_organizational_completion_repair`. Verification remains closeout-owned.
 
 - 2026-08-16T08:12+02:00 — Dagger repair: bound operation generations to code/memory base commits so conflict-resolution sync makes the next targeted closeout observably fresh.
 

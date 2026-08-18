@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T20:15+02:00|
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -27,6 +27,8 @@ The module reads a fenced JSON metadata block plus the first `Code commit |
 Memory commit` table, validates that the newest table row matches the metadata,
 serializes the canonical ledger format, prepends new mappings, finds existing
 mappings, and creates an initial ledger.
+
+Added `find_unique_mapping`, which returns one code mapping or refuses duplicate authority rows.
 
 ### 260731-EFA-L5 R12: `write_ledger` is a plain whole-file write, and that was decided, not missed
 
@@ -119,9 +121,11 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing "require_git(contract.memory_worktree". | "existing_mapping = find_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/closeout.py:655-655 |
-| The irreversible integration transaction loads the exact named-ref ledger and requires its existing code-to-memory row to match the accepted content commit before moving protected refs. | `require_integrated_ledger_mapping` | mcp/src/agents_remember/worktrees/integration_ref_transaction.py:211-226 |
+| The irreversible integration transaction loads the exact named-ref ledger and requires its existing code-to-memory row to match the accepted content commit before moving protected refs. | `require_integrated_ledger_mapping` | mcp/src/agents_remember/worktrees/integration_ref_transaction.py:229-278 |
 
 ## Update History
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: added `find_unique_mapping` for one-to-one code mapping with duplicate-authority refusal. Verification remains closeout-owned.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 moved the ledger reader (`observer/snapshots.py` → `serving/projections/snapshots.py`); the documented behavior is unchanged and the reader-path citation was re-pointed. Body re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
@@ -136,6 +140,7 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
   anchored on "ar-durable-store/1.0" at 1-25; not a Tier-3 remainder. Also extended
   `prepend_mapping`'s row range to its true end (218-231) and converted the two `(L…)` history
   prose cites to cit forms. No claim wording changed.
+
 - 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass): **the `durable_store.py` row
   pointed at the wrong docstring.** It cited "contract front matter L1-L116; the deployment-fact
   paragraph L190-L198". Neither range holds. `durable_store.py` grew 598 → 699 lines mid-pass: the
@@ -152,6 +157,7 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
   L23, "def parse_ledger_text(text: str) -> MemoryLedger:" L29, "class LedgerError(AgentsRememberError):" L40), "def parse_ledger_text(text: str) -> MemoryLedger:" L51-L104 cit:(["def parse_ledger_text(text: str) -> MemoryLedger:"], mcp/src/agents_remember/kernel/memory_ledger.py:52-52),
   `validate_ledger` L147 / `ledger_to_text` L159 / `prepend_mapping` L218, and `write_ledger`
   L193-L215 cit:(["def write_ledger(path: Path"], mcp/src/agents_remember/kernel/memory_ledger.py:193-193). Nothing on this card asserts a measured figure.
+
 - 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: the only source change here is a 20-line docstring
   on `write_ledger`, and it is a **ruling**, not a description — so the card now records the ruling,
   the evidence for it, and what would overturn it. Verified all six call sites myself rather than
@@ -162,7 +168,6 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
   Confirmed no writer under `observer/` or `serving/`; `serving/projections/snapshots.py` L42 imports
   `LedgerError`, `LedgerRow` and `load_ledger` and never `write_ledger`. Added the caller obligation
   as an invariant, because it is the property the whole exemption rests on.
-
   **Two docstring imprecisions carried into the card as the accurate version, and reported.**
   (1) It says snapshots.py "imports `load_ledger` and nothing else" — it imports three names; the
   load-bearing half (no writer) is true. (2) It says all five callers "are reached only through MCP
@@ -171,7 +176,6 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
   SystemExit(main())`) makes them runnable as a script. That is a short-lived process on the same
   commit-immediately path, so the ruling stands; the premise is "no concurrent daemon writes this",
   not "only the MCP process ever writes this".
-
   **Citations repaired.** The docstring inserts 20 lines at L194, so `prepend_mapping` moved:
   `L142-L179; L193-L204` → `validate_ledger` **L147-L156**, `ledger_to_text` **L159-L184**,
   `prepend_mapping` **L218-L229**. Note the old range was already defective in the shape the L4
@@ -180,6 +184,7 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
   the end of `prepend_mapping`; both symbols the claim names are now fully inside their ranges.
   Added a row for `write_ledger` itself and one for the contract it was measured against.
   Verification metadata pinned until closeout stamps the L5 code commit.
+
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the cross-repo citation that broke when
   the worktree manager was split into `worktrees/modules/`. `git_worktree_manager.py` is now a
   195-line pure re-export facade with no ledger call in it at all, so the old `L18-L24; L923-L929;
@@ -202,6 +207,9 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
   structure or responsibility change. The sidecar was re-read against the current source and
   every claim in it still holds, so it was deliberately not rewritten. Verification metadata
   pinned until closeout stamps the L2 commit.
+
 - 2026-05-31T12:30+02:00 — Removed `find_ledger_anchor_commit()` (and its `subprocess` use) from Logic and references; `LedgerError` now subclasses `AgentsRememberError` (1.0.0 review remediation).
+
 - 2026-05-29T18:35+02:00: Extracted `_ledger_rows_from` (inner row loop) from `parse_ledger_rows` to reduce complexity; behavior-preserving (commit `e3dab63`).
+
 - 2026-05-23T22:37+02:00: Created during quality-pass closeout after direct-closeout preview found the changed file lacked sidecar onboarding.

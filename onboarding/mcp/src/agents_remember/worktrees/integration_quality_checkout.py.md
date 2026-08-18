@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration_quality_checkout.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T23:38+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,8 @@
 Materializes a temporary detached checkout at the accepted candidate commit for the integration quality gate.
 
 ## Code Commentary
+
+`integration_quality_checkout` now accepts an optional `commit`; a leaf with no commit reuses the ordinary worktree, while a pinned commit yields a detached exact-candidate checkout.
 
 `integration_quality_checkout` creates an isolated temporary worktree from the exact journaled code candidate, yields it to the gate, and removes it afterward. Atomic series gates therefore test the candidate itself rather than whichever branch the repository-root checkout happens to own.
 
@@ -39,5 +41,7 @@ Materializes a temporary detached checkout at the accepted candidate commit for 
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: the detached checkout now accepts an explicit `commit` for the exact final candidate rather than only ambient branch state. Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: created exact integration quality checkout onboarding from the frozen integration-authority candidate. Verification remains closeout-owned.

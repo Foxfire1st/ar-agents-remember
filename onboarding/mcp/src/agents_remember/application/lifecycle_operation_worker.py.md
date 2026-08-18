@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/lifecycle_operation_worker.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash |  `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
+| lastVerifiedCommitDate |  2026-08-18T03:31:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,8 @@ record it builds and binds the default `WorktreeServices`, ensuring closeout/int
 real provider, memory-quality, citation, and worktree adapters instead of failing at the first
 service-port access. Library callers remain free to bind test services explicitly; this binding is
 owned by the CLI process boundary.
+
+The worker parses quality/queue/repair evidence from the progress payload and, on failure, finalizes the organizational gate-failed repair handoff instead of a bare error.
 
 ### Conventions
 
@@ -94,6 +96,8 @@ different candidate.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: the worker now parses and persists `quality_certification`, `queue_completion`, and `organizational_repair` evidence and finalizes the organizational gate-failed repair handoff. Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 

@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 
 > **Status:** active baseline
 
@@ -1140,6 +1140,8 @@ durable without turning it into an unbounded event log or a second judgment auth
 L4 turns repository defaults, sprint supers, and active atomic-series refs into task-derived protected surfaces across code and external memory. The repository now treats integration as a journaled named-ref transaction, serializes task-topology publication with Git authority, seals atomic child admission at series closeout, and fences ordinary memory and terminal writers from those refs.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added the organizational direct-super topology across the worktree integration path; the repository overview purpose is unchanged.
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 

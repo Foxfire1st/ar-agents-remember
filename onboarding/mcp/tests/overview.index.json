@@ -220,6 +220,7 @@
     "mcp/tests/test_l4_remaining_support_coverage.py",
     "mcp/tests/test_l4_start_authority_gap_coverage.py",
     "mcp/tests/test_l4_terminal_and_series_gap_coverage.py",
+    "mcp/tests/test_l5_quality_and_recovery_edges.py",
     "mcp/tests/test_l6_diff_coverage_abandon.py",
     "mcp/tests/test_l6_diff_coverage_citation_helpers.py",
     "mcp/tests/test_l6_diff_coverage_claim_reopen.py",
@@ -299,6 +300,11 @@
     "mcp/tests/test_onboarding_integrity_edges.py",
     "mcp/tests/test_operator_inbox.py",
     "mcp/tests/test_orchestration_comms.py",
+    "mcp/tests/test_organizational_completion_branches.py",
+    "mcp/tests/test_organizational_completion_integration.py",
+    "mcp/tests/test_organizational_completion_recovery_edges.py",
+    "mcp/tests/test_organizational_completion_repair_branches.py",
+    "mcp/tests/test_organizational_completion_validation.py",
     "mcp/tests/test_packaged_assets_and_context_values.py",
     "mcp/tests/test_pane_signals.py",
     "mcp/tests/test_pi_rpc_adapter.py",
@@ -428,8 +434,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 406,
-    "fileSidecars": 416,
+    "sourceFilesInScope": 412,
+    "fileSidecars": 422,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -474,6 +480,7 @@
     "bootstrap",
     "boundary",
     "branch",
+    "branches",
     "brief",
     "budgets",
     "build",
@@ -511,8 +518,7 @@
     "codex_app_server_0_144_3",
     "cold",
     "command",
-    "comms",
-    "compact"
+    "comms"
   ],
   "hotPath": {
     "summary": "The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrade-not-die, native-page thread demux \u2014 plus the remediation pins: concurrent parent pendings answered per id with the oldest in the singular slot, the method-first degrade split, the bounded per-thread pending map, and the load-shed event queue with its honest `ar/load-shed` notice), `test_conversatio...",

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,8 @@ trees, graph revision, source bases, route review, curator evidence, grade evide
 and lifecycle state. State validation allows one active lane owner, enforces atomic-barrier
 exclusion, and requires closed queues to be empty. Public projections split candidates into ready,
 waiting, blocked, and in-flight lists with actor-legal next operations.
+
+Added the `prepare-quality-repair` event for the failed organizational-completion reset.
 
 ### Conventions
 
@@ -68,6 +70,8 @@ No meaningful cross-repository reference applies.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: added the `prepare-quality-repair` event to the closeout queue event vocabulary. Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 

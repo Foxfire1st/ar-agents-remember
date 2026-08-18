@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/lifecycle_operation_store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash |  `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
+| lastVerifiedCommitDate |  2026-08-18T03:31:59+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,8 @@ This file owns the single durable JSON record and self-overwriting Markdown stat
 ### Logic
 
 `LifecycleOperationStore` reads strict Pydantic records, creates them exclusively, and updates them under a filesystem lock. Every update revalidates the full model, checks immutable fields and legal state transitions, then atomically writes both the machine record and human report.
+
+Added `_validate_quality_certification_transition`, `_validate_queue_completion_transition`, and `_validate_organizational_repair_transition`; these fields are write-once and integrate-only.
 
 ### Conventions
 
@@ -50,7 +52,7 @@ No external Domain Documentation source is configured for this store.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Record and report locations are deterministic per enclosure and operation kind. | `operation_record_path`; `operation_report_path` | mcp/src/agents_remember/worktrees/lifecycle_operation_store.py:53-54; mcp/src/agents_remember/worktrees/lifecycle_operation_store.py:57-58 |
+| Record and report locations are deterministic per enclosure and operation kind. | `operation_record_path`; `operation_report_path` | mcp/src/agents_remember/worktrees/lifecycle_operation_store.py:88-89; mcp/src/agents_remember/worktrees/lifecycle_operation_store.py:92-93 |
 | Store mutation is locked, revalidated, transition-checked, and atomically published. | `LifecycleOperationStore` | mcp/src/agents_remember/worktrees/lifecycle_operation_store.py:45-162 |
 
 ## Cross-Repo References
@@ -77,6 +79,8 @@ depends on undeclared-process tolerance to advance its own durable record.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: added immutable-transition validation for quality certification, queue completion, and organizational repair evidence. Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T08:40+02:00 |
-| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash |  `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
+| lastVerifiedCommitDate |  2026-08-18T03:31:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,8 @@ This module defines the strict input, durable-record, and public-projection voca
 ### Logic
 
 The closeout and integration inputs capture every accepted decision needed for retry. `LifecycleOperationRecord` persists the immutable operation fingerprint, candidate tree, gate snapshot, worker progress, boundary, terminal result, and failure evidence. `LifecycleOperationProjection` exposes task state without leaking the operation key or worker PID.
+
+Added the three L5 wire models: `IntegrationQualityCertification` (durable exact full-Dagger proof with result-hash revalidation), `IntegrationQueueCompletionEvidence` (durable queue-removal intent), and `OrganizationalCompletionRepairEvidence` (immutable reset-generation identity).
 
 ### Conventions
 
@@ -50,8 +52,8 @@ No external Domain Documentation source is configured for these internal wire mo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The input and record models capture immutable approval and recovery identity. | `CloseoutOperationInput`; `LifecycleOperationRecord` | mcp/src/agents_remember/models/lifecycles/operation.py:95-105; mcp/src/agents_remember/models/lifecycles/operation.py:125-165 |
-| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:168-183 |
+| The input and record models capture immutable approval and recovery identity. | `CloseoutOperationInput`; `LifecycleOperationRecord` | mcp/src/agents_remember/models/lifecycles/operation.py:213-223; mcp/src/agents_remember/models/lifecycles/operation.py:243-283 |
+| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:347-362 |
 
 ## Cross-Repo References
 
@@ -59,7 +61,7 @@ No cross-repository vocabulary is defined here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:95-105; mcp/src/agents_remember/models/lifecycles/operation.py:168-183 |
+| Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:213-223; mcp/src/agents_remember/models/lifecycles/operation.py:347-362 |
 
 ## L23 Final Candidate Disposition
 
@@ -72,6 +74,8 @@ from that record without exposing the private operation key or worker lease.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: added the immutable wire models `IntegrationQualityCertification`, `IntegrationQueueCompletionEvidence`, and `OrganizationalCompletionRepairEvidence` for the organizational-completion full gate, queue removal, and repair path. Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 - 2026-08-14T06:32+02:00 — L23 final candidate review: operation records carry exact candidate and

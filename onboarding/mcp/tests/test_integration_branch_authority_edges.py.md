@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_integration_branch_authority_edges.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T07:46+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,8 @@ crash/revalidation slice lives in `test_integration_branch_authority_bootstrap_e
 atomic source-drift/replay refusal lives in `test_integration_branch_authority_series_drift.py`.
 
 ## Code Commentary
+
+The suite now also covers the organizational-completion direct-super and final-leaf branch-authority edges.
 
 Tests bind real journal/queue/config facts and explicitly exercise no-ambient-checkout and contract-before-lane-release recovery edges. Its shared fixture imports now come directly from `integration_branch_authority_test_support.py`, eliminating the former test-module dependency.
 
@@ -42,6 +44,8 @@ Tests bind real journal/queue/config facts and explicitly exercise no-ambient-ch
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-17T12:35+02:00 — 260815-DAG-L5: extended the suite for the organizational-completion direct-super and final-leaf branch-authority edges. Verification remains closeout-owned.
 
 - 2026-08-16T08:12+02:00 — Dagger repair: configured-memory mismatch forcing now preserves an external contract while removing only runtime memory authority. Moved the final preparation race verbatim to the focused operation-authority suite so this file remains below the 1,200-line gate without duplication.
 - 2026-08-16T07:46+02:00 — Test-size split: moved the atomic source-drift/replay refusal verbatim into `test_integration_branch_authority_series_drift.py`; no test, assertion, or compatibility path is duplicated.

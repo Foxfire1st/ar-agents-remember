@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T13:08+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,8 @@ publications through the sprint store lock, claims selected candidates for close
 closeout commits, claims certified candidates for integration, revalidates the same graph/evidence
 immediately before source refs move, consumes the record after landing, and releases reversible
 failed/cancelled operations. Internal transitions use stable request ids and one-way owner proofs.
+
+Added durable queue-completion evidence (`integration_queue_completion_evidence`) persisted before a candidate is consumed, and centralized the completion event into `_integration_completion_event`.
 
 ### Conventions
 
@@ -64,8 +66,8 @@ No configured Domain Documentation source applies.
 | Integration claim binds the same operation to the certified candidate. | `claim_queue_candidate_for_integration` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:417-433 |
 | Irreversible integration revalidates current graph, candidate, readiness, and exact commits under the queue lock. | `require_queue_candidate_for_integration` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:462-487 |
 | Landing consumes the exact lifecycle-owned candidate idempotently. | `complete_queue_candidate_integration` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:572-629 |
-| Reversible terminal operations release internal ownership safely. | `release_queue_candidate_after_reversible_operation` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:632-699 |
-| Closeout certification refreshes curator evidence and binds the exact committed result. | `_certify_closeout` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:932-969 |
+| Reversible terminal operations release internal ownership safely. | `release_queue_candidate_after_reversible_operation` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:742-809 |
+| Closeout certification refreshes curator evidence and binds the exact committed result. | `_certify_closeout` | mcp/src/agents_remember/worktrees/closeout_queue_lifecycle.py:1042-1079 |
 
 ## Cross-Repo References
 
@@ -76,6 +78,8 @@ No meaningful cross-repository reference applies.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: integration completion now persists durable `integration_queue_completion_evidence` before consuming the candidate, and the completion event is emitted through `_integration_completion_event`. Verification remains closeout-owned.
 
 - 2026-08-16T01:30+02:00 — Documented the exact, thread-bound, issuer-revoked atomic-series terminal permit and copied-context replay refusal; verification remains closeout-owned.
 

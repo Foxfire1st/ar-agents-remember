@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/series_closeout.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T23:38+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,8 @@
 Seals an atomic block only after every canonical leaf forms one exact journaled code-and-memory landing chain, then records the named series refs without ambient workbench commits.
 
 ## Code Commentary
+
+`_exact_atomic_landing_chain` now returns the ordered landed leaf chain, and `atomic_series_ledger_prefix` derives the newest-first ledger rows that chain contributes.
 
 Closeout and series integration publication share queue-then-repository authority. The seal verifies canonical master membership, exact enclosure identity, queue binding, code and memory repository identity, each leaf's base-to-integrated edge, content/ledger ancestry, and final named-ref tips. Direct commits, missing leaves, foreign copied contracts, mismatched code/memory order, and concurrent child admission cannot be absorbed into a master candidate.
 
@@ -43,5 +45,7 @@ Closeout and series integration publication share queue-then-repository authorit
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: added `atomic_series_ledger_prefix` and made `_exact_atomic_landing_chain` return the ordered leaf chain. Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: created atomic series closeout authority onboarding from the frozen integration-authority candidate. Verification remains closeout-owned.

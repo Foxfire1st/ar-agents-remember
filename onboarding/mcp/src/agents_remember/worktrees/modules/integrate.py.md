@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -91,9 +91,9 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The wire model declares `IntegrationStatus` / `CleanupStatus`; worktree_contract imports them and exposes `ContractCells` / `amend_contract` as the typed amendment path. | "class ContractCells"; "def amend_contract"; "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:18-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
-| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:213-231; mcp/src/agents_remember/worktrees/modules/integrate.py:479-511 |
-| Leaf integration reuses its closeout proof without calling a gate; series/master integration alone runs full Dagger, with an optional settings-owned cap and enclosure-owned reports. | `quality_gate_mode`, `_quality_gate_preview`, `_run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/integrate.py:91-95; mcp/src/agents_remember/worktrees/modules/integrate.py:107-133; mcp/src/agents_remember/worktrees/modules/integrate.py:1116-1157 |
-| The planned gate is carried in the dry-run payload and the integrated result without running on the dry-run path. | `IntegratePreview`, `_dry_run_result`, `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:136-142; mcp/src/agents_remember/worktrees/modules/integrate.py:404-448; mcp/src/agents_remember/worktrees/modules/integrate.py:479-511 |
+| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:168-186; mcp/src/agents_remember/worktrees/modules/integrate.py:414-446 |
+| Leaf integration reuses its closeout proof without calling a gate; series/master integration alone runs full Dagger, with an optional settings-owned cap and enclosure-owned reports. | `quality_gate_mode`, `quality_gate_preview`, `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/integration_quality.py:46-51; mcp/src/agents_remember/worktrees/integration_quality.py:54-76; mcp/src/agents_remember/worktrees/integration_quality.py:79-171 |
+| The planned gate is carried in the dry-run payload and the integrated result without running on the dry-run path. | "class IntegratePreview"; `_dry_run_result`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integration_publication.py:16-22; mcp/src/agents_remember/worktrees/modules/integrate.py:339-383; mcp/src/agents_remember/worktrees/modules/integrate.py:414-446 |
 | The altitude proofs cover leaf no-rerun, series full, host-managed absence, explicit settings caps, refusal-before-merge, and dry-run preview. | `IntegrationQualityGateAltitudeTests` | mcp/tests/test_worktree_integrate_quality_gate.py:203-718 |
 | Direct legacy integration tests now prove CLI callers cannot fast-forward or classify source movement without a plane-owned operation; the remaining non-fast-forward case proves no mutation. Journaled production-path suites own successful movement and recovery. | `test_direct_integrate_cannot_fast_forward_code_or_memory`; `test_direct_integrate_cannot_classify_parallel_non_overlapping_changes`; `test_direct_integrate_cannot_classify_parallel_conflicting_changes`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:624-659; mcp/tests/test_worktree_support_tests_2.py:669-712; mcp/tests/test_worktree_support_tests_2.py:714-749; mcp/tests/test_worktree_support_tests_3.py:955-1007 |
 
@@ -129,6 +129,8 @@ refuses before queue completion; immutable integration authority or self-asserte
 alone are not recovery evidence.
 
 ## Update History
+
+- 2026-08-17T12:09+02:00 — 260815-DAG-L5: the quality altitude ladder (`quality_gate_mode`, `quality_gate_preview`, `run_integration_quality_gate`) moved to `integration_quality.py` and `IntegratePreview`/`IntegrationPublication` to `modules/integration_publication.py`; re-pointed the two cited rows to the new owners. Verification remains closeout-owned.
 
 - 2026-08-16T08:12+02:00 — Dagger repair: reordered final source-state diagnostics so the exact accepted-tip race owns the structured pre-CAS refusal before persisted lineage diagnostics.
 

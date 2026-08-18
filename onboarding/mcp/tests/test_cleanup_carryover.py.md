@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cleanup_carryover.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                                               |
-| lastVerifiedCommitDate |2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`                                               |
+| lastVerifiedCommitDate |2026-08-18T03:31:59+02:00|
 | governingOverview      | `../overview.md`                                    |
 
 ## Governing Overview
@@ -138,7 +138,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The official ledger reader and mapping lookup the carryover-done signal is built on. | `load_ledger`; `find_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:232-234 |
 | The shared `git` and `init_repo` helper definitions reused here. | `git`; `init_repo` | mcp/tests/test_worktree_support.py:54-64; mcp/tests/test_worktree_support.py:68-85 |
 | This cleanup suite's `_official_memory` helper exercises the shared `git` and `init_repo` helpers. | `_official_memory` | mcp/tests/test_cleanup_carryover.py:193-206 |
-| The typed "class WorktreeArgs:" DTO "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" consumes. | "class WorktreeArgs:"; "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" | mcp/src/agents_remember/worktrees/modules/args.py:26-26; mcp/src/agents_remember/worktrees/modules/cleanup.py:618-618 |
+| The typed "class WorktreeArgs:" DTO "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" consumes. | "class WorktreeArgs:"; "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" | mcp/src/agents_remember/worktrees/modules/args.py:29-29; mcp/src/agents_remember/worktrees/modules/cleanup.py:618-618 |
 
 ## Cross-Repo References
 
