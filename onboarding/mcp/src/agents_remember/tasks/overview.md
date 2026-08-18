@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`       |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -137,7 +137,7 @@ together.
 | Leaf writes keep same-root master rows synchronized through the dedicated planner. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
 | The task-document renderer regenerates markdown from the validated `TaskDocument`. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
 | The persisted worktree contract is the analogous model-to-text precedent. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
-| The persisted-contract peer this schema mirrors. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1026-1045 |
+| The persisted-contract peer this schema mirrors. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1065-1087 |
 
 ## 260718-CHATS-L5I Current Route Impact
 

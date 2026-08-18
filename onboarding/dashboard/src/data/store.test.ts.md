@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/store.test.ts`               |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T09:16+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -123,13 +123,13 @@ the bounded buffer documented in the store sidecar.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | System under test: the Zustand store these reducers belong to. | `dashboardStore` | dashboard/src/data/store.ts:225-347 |
-| Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. | `EVENT_WINDOW` | dashboard/src/data/store.ts:56-56 |
+| Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. | `EVENT_WINDOW` | dashboard/src/data/store.ts:62-62 |
 | Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. | "folds a snapshot into id-keyed maps and goes live" | dashboard/src/data/store.test.ts:51-82 |
 | `agentNotifierHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases. | "applies an idle re-snapshot with an unchanged agentNotifierHeartbeat (incl. null/null) with zero store writes"; "applies an idle re-snapshot with a genuinely changed agentNotifierHeartbeat" | dashboard/src/data/store.test.ts:121-159 |
 | The fixture narrowing and the fixture-derived lifecycle count. | "export function asServedProjection" | dashboard/src/test/servedProjection.ts:22-43 |
 | The parameter type that IS the check, and why the double cast was not one. | `AsJsonModule`; `asServedProjection` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/servedProjection.ts:41-43 |
 | `reparsed` (the `structuredClone` behind `volatileBump`) and the `agentNotifierHeartbeat` builder. | `reparsed`; `agentNotifierHeartbeat` | dashboard/src/test/fixtures/wire.ts:352-366; dashboard/src/test/fixtures/wire.ts:396-398 |
-| Projection / observer-event types the store maps over. | `WorkspaceProjection` | dashboard/src/types/projection.ts:583-595 |
+| Projection / observer-event types the store maps over. | `WorkspaceProjection` | dashboard/src/types/projection.ts:605-618 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/wireFixtureGuard.test.ts`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -180,9 +180,9 @@ an error.
 | The registry reconciliation unit cases. | "the registry cannot be quietly outgrown" | dashboard/src/test/wireFixtureGuard.test.ts:595-626 |
 | The five-rule mechanism and discovered vocabulary. | `wireTypeNames` | dashboard/src/test/wireFixtureGuard.ts:466-482 |
 | The guard's documented uncovered-evasions section names `ElementAccessExpression`. | "WHAT THIS DOES NOT COVER"; "ElementAccessExpression" | dashboard/src/test/wireFixtureGuard.ts:39-39; dashboard/src/test/wireFixtureGuard.ts:44-44 |
-| `SubTaskRow` is the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode`. | `SubTaskRow` | dashboard/src/types/projection.ts:581-581 |
-| The `StateCountField` mirror-internal cast. | `StateCountField` | dashboard/src/types/projection.ts:313-313 |
-| The `LifecycleStateCounts` mirror-internal cast. | `LifecycleStateCounts` | dashboard/src/types/projection.ts:315-315 |
+| `SubTaskRow` is the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode`. | `SubTaskRow` | dashboard/src/types/projection.ts:603-603 |
+| The `StateCountField` mirror-internal cast. | `StateCountField` | dashboard/src/types/projection.ts:335-335 |
+| The `LifecycleStateCounts` mirror-internal cast. | `LifecycleStateCounts` | dashboard/src/types/projection.ts:337-337 |
 | The sanctioned narrowing the registry names. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
 | The `ActivePageCursor` brand mint. | `pageCursor` | dashboard/src/test/fixtures/conversationWire.ts:53-55 |
 | The `ActiveEventCursor` brand mint. | `eventCursor` | dashboard/src/test/fixtures/conversationWire.ts:58-60 |

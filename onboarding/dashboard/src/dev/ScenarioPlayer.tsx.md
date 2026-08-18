@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/ScenarioPlayer.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-19T23:58+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ content (projections/captions/durations) lives in `scenarios.ts`.
 | --- | --- | --- |
 | `applyFrame` snapshots + replays a frame into the real store. | `applyFrame` | dashboard/src/dev/ScenarioPlayer.tsx:12-17 |
 | The `Scenario`/`ScenarioFrame` model it walks. | `ScenarioFrame`, `Scenario` | dashboard/src/dev/scenarios.ts:17-22; dashboard/src/dev/scenarios.ts:24-29 |
-| The real store it drives (`applySnapshot` / `pushEvent`). | `applySnapshot`, `pushEvent` | dashboard/src/data/store.ts:43-43; dashboard/src/data/store.ts:45-45 |
+| The real store it drives (`applySnapshot` / `pushEvent`). | `applySnapshot`, `pushEvent` | dashboard/src/data/store.ts:49-49; dashboard/src/data/store.ts:51-51 |
 | Mounted (keyed by scenario) beneath the cockpit by the bench. | `ScenarioPlayer` | dashboard/src/dev/Bench.tsx:39-43 |
 
 ## Update History

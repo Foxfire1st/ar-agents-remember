@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/GateResponder.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ the worktree-bound gate families: closeout, push, integration, and cleanup.
 | Canonical lifecycle detail surface that renders this only when a durable gate exists. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
 | Engine Room diagnostics secondary surface. | "export function DiagnosticsPanel" | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:40-40 |
 | Hangar secondary surface for worktree-bound gates. | "export function Hangar" | dashboard/src/panels/Hangar.tsx:76-76 |
-| Projection gate and lifecycle shapes. | "export interface GateNode" | dashboard/src/types/projection.ts:232-232 |
+| Projection gate and lifecycle shapes. | "export interface GateNode" | dashboard/src/types/projection.ts:254-254 |
 
 ### 260713-PHA-L5 Adapter Interaction Context
 

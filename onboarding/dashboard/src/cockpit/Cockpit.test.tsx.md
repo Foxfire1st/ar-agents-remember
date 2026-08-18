@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -158,7 +158,7 @@ the reviewed task evidence for any current behavioral claim.
 | The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. | `severityMark` | dashboard/src/panels/AttentionQueue.tsx:49-49 |
 | The `Task progress: …; phase: …` label on `data-testid="task-state"` that React Aria's `role="option"` absorbs. | "task-state" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:673-673 |
 | The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before). | `taskDoc` | dashboard/src/test/fixtures/wire.ts:282-287 |
-| `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. | `metricsFor` | dashboard/src/types/projection.ts:339-346 |
+| `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. | `metricsFor` | dashboard/src/types/projection.ts:362-369 |
 
 ## Historical FEUI-L8 Reviewed Candidate Delta
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce` |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -440,7 +440,7 @@ references informed product framing only; current code truth stays in agents-rem
 | Dev scenario authority and end-to-end states. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:108-205 |
 | Projection provenance: producer partition/bucket checks feed a schema-generated and stale-checked TypeScript mirror; fixture builders are type-checked against it; `contract.test.ts` measures the separate manual snapshot's coverage. | "The producer-to-TypeScript link is generated and checked"; "WHAT SCHEMA CODEGEN CLOSES"; "def check_state_partition("; "def state_count_fields("; "def workspace_projection_schema("; "def _state_partition("; "def _vocabulary_block("; "def stale_generated_files("; "def test_committed_generated_files_are_current" | dashboard/src/test/contract.test.ts:60-60; dashboard/src/test/fixtures/wire.ts:23-23; mcp/src/agents_remember/code_quality/projection_types.py:59-59; mcp/src/agents_remember/code_quality/projection_types.py:340-340; mcp/src/agents_remember/code_quality/projection_types.py:382-382; mcp/src/agents_remember/code_quality/projection_types.py:509-509; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:262-262; mcp/tests/test_projection_types_codegen.py:255-255; scripts/sync-projection-types.py:43-51 |
 | Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. | "five rules"; `SCANNED_ROOTS`; "no dashboard test asserts against a payload the server cannot produce" | dashboard/src/test/wireFixtureGuard.ts:1-63; dashboard/src/test/wireFixtureGuard.ts:136-136; dashboard/src/test/wireFixtureGuard.test.ts:266-467 |
-| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:333-337 |
+| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:356-360 |
 | Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | `UNCLASSIFIED_STATUS`; `constelColors` | dashboard/src/topology/model.ts:68-68; dashboard/src/topology/constel.ts:31-39 |
 | JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | `AsJsonModule`; `Overrides` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/fixtures/overrides.ts:60-66 |
 
@@ -482,6 +482,8 @@ state and full summary; it does not compare branches or choose a sync locally.
 The dashboard projection adds the organizational `super-to-leaf` lineage relation and remains generated from the server schema. Organizational direct-super and atomic super-to-master-to-leaf topology therefore use one closed, parity-tested wire vocabulary.
 
 ## Update History
+
+- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 

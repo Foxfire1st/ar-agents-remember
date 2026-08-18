@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/useEngineTimeline.ts`   |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash |                                                           `28a66feae742bf02fe4b647388b220f921cc7007`|
-| lastVerifiedCommitDate |                                                           2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash |                                                           `2597ff98306ba7c7963005092ac597c4972e63ce`|
+| lastVerifiedCommitDate |                                                           2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -122,7 +122,7 @@ entries, so the GSAP/Motion library docs are not cited here — the split is pro
 | `phaseStage` / `fxSignature` / `buildFx` + the `useEngineTimeline` context (retract + draw-on + fx, gated). | `phaseStage`; `fxSignature`; `buildFx`; `useEngineTimeline` | dashboard/src/panels/engine-room/useEngineTimeline.ts:32-49; dashboard/src/panels/engine-room/useEngineTimeline.ts:54-76; dashboard/src/panels/engine-room/useEngineTimeline.ts:83-160; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247 |
 | `fxSignature`'s refused fold-in now filters `failed`/`stale` only. | `fxSignature` | dashboard/src/panels/engine-room/useEngineTimeline.ts:54-76 |
 | `_seed_edge_state` — the states a seed edge can actually carry; `refused` is not among them. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638 |
-| `EngineProcessEdge`'s documented `state` vocabulary, which never listed `refused`. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:820-839 |
+| `EngineProcessEdge`'s documented `state` vocabulary, which never listed `refused`. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:859-878 |
 | RETRACT phase (5o) — departing lanes erased tail-to-tip, stroke locked cyan via `gsap.set` before the tween, `clearProps` stroke/filter on complete. | `clearProps` | dashboard/src/panels/engine-room/useEngineTimeline.ts:194-212 |
 | Draw-on stamps `data-drawn` on `onComplete` (5o StrictMode fix); the `refuse` one-shot and the gentle ~1.7s sine `fault` breathe. | `buildFx`; `useEngineTimeline` | dashboard/src/panels/engine-room/useEngineTimeline.ts:83-160; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247 |
 | The honest-motion gate that suppresses the whole hook under effects-off/reduced-motion. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
@@ -148,10 +148,10 @@ create a second ticker or alter choreography.
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 13 citation items; scoped citation check now passes.
 
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the
-  `observer/projection.py` citation after that module was restructured. cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:820-839),
-  read there: cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:820-839),
-  the nine-state comment directly above cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:820-839), and the class's last field
-  cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:820-839) — so the "no `refusedPolarity` field" half of the claim is provable at the range
+  `observer/projection.py` citation after that module was restructured. cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:859-878),
+  read there: cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:859-878),
+  the nine-state comment directly above cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:859-878), and the class's last field
+  cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:859-878) — so the "no `refusedPolarity` field" half of the claim is provable at the range
   end. No body claim changed.
 
 - 2026-08-01T10:18+02:00 — 260731-EFA-L4 curator: corrected the `fxSignature` description. The refused

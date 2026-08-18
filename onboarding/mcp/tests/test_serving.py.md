@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-12T21:39+02:00               |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -248,7 +248,7 @@ are proven by repository source and the test suite itself.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The pure diff under test. | `diff_projection` | mcp/src/agents_remember/serving/delta.py:102-145 |
-| The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1026-1045 |
+| The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1065-1087 |
 | The projector under test owns atomic subscribe/snapshot activation, first-recovery publication, publish-before-notify ordering, and cleanup. | `Projector` | mcp/src/agents_remember/serving/projector.py:126-330 |
 | The app consumes one projector iterator, decorates every snapshot with the serve-time tail, preserves SSE framing, and closes the subscription through `contextlib.aclosing`. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:115-115 |
 | The forced MX-FIX-1 regressions pin the handoff mutation, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | `StreamEventsTests` | mcp/tests/test_serving.py:379-477 |

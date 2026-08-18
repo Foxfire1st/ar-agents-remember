@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EngineRoom.test.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ do not assert or reshape the enclosure canvas' workspace-engine rendering.
 | The `EngineRoomHeader` + `LIFECYCLE_PHASES` under test. | `EngineRoomHeader`; `LIFECYCLE_PHASES` | dashboard/src/panels/EngineRoom.tsx:59-66; dashboard/src/panels/EngineRoom.tsx:137-171 |
 | `OfficialStrip` groups official workspace providers by label + runtime state and exposes grouped repo labels via hover/title. | `OfficialStrip` | dashboard/src/panels/EngineRoom.tsx:109-132 |
 | The local provider fixture helpers and official-strip assertions pin counted same-state CGCs, mixed-state separation, and GrepAI visibility. | `seedOfficialProviders`; "aggregates same-state official CGC engines into one strip chip"; "keeps official CGC aggregate chips separated by runtime state" | dashboard/src/panels/EngineRoom.test.tsx:93-97; dashboard/src/panels/EngineRoom.test.tsx:198-213; dashboard/src/panels/EngineRoom.test.tsx:215-239 |
-| The `GALLERY` projection seed + the store `applySnapshot`. | `GALLERY`; `applySnapshot` | dashboard/src/data/store.ts:43-43; dashboard/src/dev/fixtures.ts:146-490 |
+| The `GALLERY` projection seed + the store `applySnapshot`. | `GALLERY`; `applySnapshot` | dashboard/src/data/store.ts:49-49; dashboard/src/dev/fixtures.ts:146-490 |
 | The honest-motion gate the pulse reads. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
 
 ## Current L5I Maintenance

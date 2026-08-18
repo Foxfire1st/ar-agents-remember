@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/taskHierarchy.ts`     |
 | doc_type               | `file-level-onboarding`                   |
 | lastUpdated | 2026-08-01T09:05+02:00 |
-| lastVerifiedCommitHash |                                           `28a66feae742bf02fe4b647388b220f921cc7007`|
-| lastVerifiedCommitDate |                                           2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash |                                           `2597ff98306ba7c7963005092ac597c4972e63ce`|
+| lastVerifiedCommitDate |                                           2026-08-18T15:45:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -114,7 +114,7 @@ navigation aligned with the master task reader.
 | The helper finds a parent series ref, keeps the authored child task id as the display number, builds hierarchy labels, and returns parent navigation keys. | "export function findParentTaskMatch" | dashboard/src/data/taskHierarchy.ts:43-43 |
 | The L14 orchestration-command helpers are consumed by Operations `LifecycleList` for command tiers and parent rows. | "export function taskDocHierarchyLabel", "export const LifecycleList" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357; dashboard/src/data/taskHierarchy.ts:53-53 |
 | The current Chats session hierarchy is independently derived by `railModel`, not the retired `groupSessions` consumer. | "export function buildRailModel" | dashboard/src/data/railModel.ts:361-361 |
-| The `TaskDocNode.orchestrates?` mirror these helpers read, and the two distinct sub-task row models `ParentTaskMatch.ref` had to choose between. | `TaskDocNode`; `TaskSubTaskRefNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:400-407; dashboard/src/types/projection.ts:484-513; dashboard/src/types/projection.ts:560-567 |
+| The `TaskDocNode.orchestrates?` mirror these helpers read, and the two distinct sub-task row models `ParentTaskMatch.ref` had to choose between. | `TaskDocNode`; `TaskSubTaskRefNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:422-429; dashboard/src/types/projection.ts:506-535; dashboard/src/types/projection.ts:582-589 |
 | `orderedByCreation` is exported here and shared with `DetailPanel`'s `seriesAsMasterDoc`, which replaced the panel's byte-identical private copy. | "export function taskDocParentKey", "export const DetailPanel" | dashboard/src/data/taskHierarchy.ts:58-58; dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
 | Operations uses the helper for numbered task labels, parent row keys, and BY REPO hierarchy rendering. | "export const LifecycleList" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
 | DetailPanel uses the helper to render a parent link for directly opened leaf task documents and active leaf lifecycle documents. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
@@ -140,7 +140,7 @@ No meaningful cross-repo references found.
 
 - 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: recorded the two real changes in this file's diff
   against `abc7cbc`. (1) `ParentTaskMatch.ref` is now `SeriesSubTaskNode` — the mirror split the
-  once-collapsed `TaskSubTaskRefNode`/`SeriesSubTaskNode` pair cit:(["export interface TaskSubTaskRefNode"], dashboard/src/types/projection.ts:560-560),
+  once-collapsed `TaskSubTaskRefNode`/`SeriesSubTaskNode` pair cit:(["export interface TaskSubTaskRefNode"], dashboard/src/types/projection.ts:582-582),
   and `createdAt` was REMOVED from the master row model, so the match's row type is now the only one
   that declares the field the helper sorts on. (2) `orderedByCreation` is exported and shared:
   `DetailPanel.tsx` deleted its byte-identical private copy, and inside the panel the call moved
@@ -159,7 +159,7 @@ No meaningful cross-repo references found.
 
 - 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: recorded the two real changes in this file's diff
   against `abc7cbc`. (1) `ParentTaskMatch.ref` is now `SeriesSubTaskNode` — the mirror split the
-  once-collapsed `TaskSubTaskRefNode`/`SeriesSubTaskNode` pair cit:(["export interface TaskSubTaskRefNode"], dashboard/src/types/projection.ts:560-560),
+  once-collapsed `TaskSubTaskRefNode`/`SeriesSubTaskNode` pair cit:(["export interface TaskSubTaskRefNode"], dashboard/src/types/projection.ts:582-582),
   and `createdAt` was REMOVED from the master row model, so the match's row type is now the only one
   that declares the field the helper sorts on. (2) `orderedByCreation` is exported and shared:
   `DetailPanel.tsx` deleted its byte-identical private copy, and inside the panel the call moved

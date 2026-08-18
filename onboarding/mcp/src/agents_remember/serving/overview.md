@@ -9,8 +9,8 @@ Total output lines: 2259
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-14T12:31:43+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`|
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview

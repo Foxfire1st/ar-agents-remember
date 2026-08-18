@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Hangar.test.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-13T12:26+02:00                           |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`       |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ operation field and proves visibility, not execution or operation-state mutation
 | The component under test (filters rows through `hasLiveWorktree`). | `Hangar` | dashboard/src/panels/Hangar.tsx:72-138 |
 | The shared existence-truth visibility selector. | `hasLiveWorktree` | dashboard/src/data/selectors.ts:24-28 |
 | The dashboard store the test seeds `enclosures` / `lifecycles` into and resets between cases. | `dashboardStore` | dashboard/src/data/store.ts:225-347 |
-| The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. | `EnclosureNode` | dashboard/src/types/projection.ts:133-150 |
+| The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. | `EnclosureNode` | dashboard/src/types/projection.ts:168-186 |
 
 ## Update History
 

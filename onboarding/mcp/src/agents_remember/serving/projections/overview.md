@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-08T14:38+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce` |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 
 ## What This Area Is
 
@@ -143,6 +143,8 @@ serves bounded phase, timing, command, report, and recovery guidance. Durable st
 authority; projection never exposes worker or resume identity.
 
 ## Update History
+
+- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: the task-document snapshot slice hydrates
   master nature and sprint graph, derives waves from the validated graph, and incorporates both into

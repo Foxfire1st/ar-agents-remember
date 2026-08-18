@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:30+02:00                           |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -48,26 +48,26 @@ producer's private-plane boundary while making the generated dashboard contract 
 Top-level keys in wire order: `version` (1), `generatedAt`, `lifecycles`, `enclosures`, `providers`,
 `activeWorktreeGroups`, `metrics`, `analytics`.
 
-- **cit:([`lifecycles`], dashboard/src/fixtures/snapshot.json:4-112) — six rows, one per state.** `blocked-001`, `running-000`, `paused-002`,
+- **cit:([`lifecycles`], dashboard/src/fixtures/snapshot.json:1446-1446) — six rows, one per state.** `blocked-001`, `running-000`, `paused-002`,
   `awaiting-003`, `completed-004`, `abandoned-005`, and their phases spread across all six of `build`,
   `reframe-research`, `request`, `trust-checkpoint`, `decide`, `close`. Two rows carry a `gate`
   (`GATE-1` open with `decisions: ["approve","revise"]`, `GATE-0` decided), both with a non-empty
   `evidenceRefs`. Every row carries `stateEnteredAt`. The `awaiting-developer` row is the state the
   mirror had never declared, and it is here so the vocabulary check can bite.
-- **cit:(["\"enclosures\": ["], dashboard/src/fixtures/snapshot.json:113-135)** — one enclosure; **two providers** (a code provider and
-  a memory provider) are pinned by cit:(["\"snapshotStaleSeconds\": 3.5"], dashboard/src/fixtures/snapshot.json:282-282),
-  joined by `worktreeGroup: "sim-group"`; **cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:288-288)** —
+- **cit:(["\"enclosures\": ["], dashboard/src/fixtures/snapshot.json:965-965)** — one enclosure; **two providers** (a code provider and
+  a memory provider) are pinned by cit:(["\"snapshotStaleSeconds\": 3.5"], dashboard/src/fixtures/snapshot.json:1618-1618),
+  joined by `worktreeGroup: "sim-group"`; **cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:2-2)** —
   `["sim-group"]`.
-- **cit:([`metrics`], dashboard/src/fixtures/snapshot.json:289-289)** — `lifecycleCount: 6`, one bucket per LIVE state (`runningCount`,
+- **cit:([`metrics`], dashboard/src/fixtures/snapshot.json:1589-1589)** — `lifecycleCount: 6`, one bucket per LIVE state (`runningCount`,
   `blockedCount`, `pausedCount`, `awaitingDeveloperCount`, each 1), `totalTokens: 2800`, and a
   `stalenessHistogram` of `{ fresh, aging }`. The four buckets are exactly the keys `metricsFor([])`
   produces, which is what `contract.test.ts` asserts set-equality on — the terminal pair deliberately
   has no bucket.
-- **`analytics`** cit:([`analytics`], dashboard/src/fixtures/snapshot.json:169-763) — all thirteen keys present and none empty: cit:([`driftSnapshots`], dashboard/src/fixtures/snapshot.json:299-299),
-  cit:([`stalestSidecars`], dashboard/src/fixtures/snapshot.json:312-312), cit:([`setupSummaries`], dashboard/src/fixtures/snapshot.json:320-320), cit:([`setupProgress`], dashboard/src/fixtures/snapshot.json:331-331), cit:([`routeCoverage`], dashboard/src/fixtures/snapshot.json:341-341),
-  cit:([`toolReports`], dashboard/src/fixtures/snapshot.json:350-350), cit:([`agentPickups`], dashboard/src/fixtures/snapshot.json:358-358), cit:([`expectationRows`], dashboard/src/fixtures/snapshot.json:396-396), cit:([`ledgers`], dashboard/src/fixtures/snapshot.json:413-413),
-  cit:([`taskDocuments`], dashboard/src/fixtures/snapshot.json:431-431), `attentionQueue` (L368, three rows), `engineProcesses` (L406, eight pods),
-  cit:(["\"series\": ["], dashboard/src/fixtures/snapshot.json:1038-1038).
+- **`analytics`** cit:([`analytics`], dashboard/src/fixtures/snapshot.json:5-5) — all thirteen keys present and none empty: cit:([`driftSnapshots`], dashboard/src/fixtures/snapshot.json:82-82),
+  cit:([`stalestSidecars`], dashboard/src/fixtures/snapshot.json:690-690), cit:([`setupSummaries`], dashboard/src/fixtures/snapshot.json:676-676), cit:([`setupProgress`], dashboard/src/fixtures/snapshot.json:666-666), cit:([`routeCoverage`], dashboard/src/fixtures/snapshot.json:618-618),
+  cit:([`toolReports`], dashboard/src/fixtures/snapshot.json:909-909), cit:([`agentPickups`], dashboard/src/fixtures/snapshot.json:6-6), cit:([`expectationRows`], dashboard/src/fixtures/snapshot.json:583-583), cit:([`ledgers`], dashboard/src/fixtures/snapshot.json:600-600),
+  cit:([`taskDocuments`], dashboard/src/fixtures/snapshot.json:698-698), `attentionQueue` (L368, three rows), `engineProcesses` (L406, eight pods),
+  cit:(["\"series\": ["], dashboard/src/fixtures/snapshot.json:627-627).
 
 **The payload is composed to satisfy specific checks, not sampled at random.** `contract.test.ts`
 requires that every closed vocabulary in the mirror is exercised in FULL, pooled per vocabulary rather
@@ -154,12 +154,12 @@ absent from the file rather than present as `null`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:4-112 |
-| One enclosure, two providers, and the `activeWorktreeGroups` join value. | `activeWorktreeGroups` | dashboard/src/fixtures/snapshot.json:288-288 |
-| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:289-289 |
-| All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `analytics` | dashboard/src/fixtures/snapshot.json:169-763 |
+| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:1446-1446 |
+| One enclosure, two providers, and the `activeWorktreeGroups` join value. | `activeWorktreeGroups` | dashboard/src/fixtures/snapshot.json:2-2 |
+| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:1589-1589 |
+| All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `analytics` | dashboard/src/fixtures/snapshot.json:5-5 |
 | The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:156-162 |
-| The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1026-1045 |
+| The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1065-1087 |
 | The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:367-381 |
 | The derived `VOCABULARIES` registry (11 paths, 6 vocabularies) and the full-coverage assertion this payload is composed to satisfy. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:268-293 |
 | `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:221-229 |
@@ -187,6 +187,8 @@ contract-addressed `worktree_sync` recovery. These are wire-contract examples,
 not frontend-derived Git facts.
 
 ## Update History
+
+- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the canonical dashboard snapshot now includes a
   reasoned sprint execution graph, derived waves, and both organizational and atomic commanded

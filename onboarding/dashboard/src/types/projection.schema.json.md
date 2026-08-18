@@ -6,8 +6,8 @@
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T02:53:40+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce` |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -69,6 +69,8 @@ relations. This keeps the dashboard schema byte-aligned with the server model
 after organizational leaves moved to direct sprint-super ownership.
 
 ## Update History
+
+- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: recorded the regenerated
   organizational lineage literal and exact dashboard/server projection parity.

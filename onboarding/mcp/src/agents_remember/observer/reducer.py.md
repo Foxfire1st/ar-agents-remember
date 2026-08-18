@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/reducer.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -82,7 +82,7 @@ dropped as malformed, silently and forever. `STATES` is the already-flattened,
 
 ### Metrics buckets come from the vocabulary (260731-EFA-L4)
 
-cit:([`_metrics`], mcp/src/agents_remember/observer/reducer.py:527-550) is the workspace rollup: the
+cit:([`_metrics`], mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-66) is the workspace rollup: the
 all-states totals plus **one bucket per live state**. It counts once with a
 `Counter` over `lc.state` and then expands
 `**{bucket: counts[state] for state, bucket in STATE_COUNT_FIELDS.items()}` into
@@ -370,13 +370,13 @@ file I/O. Defaults empty, so prior structural/analytical callers remain unchange
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The projection schema this produces. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1026-1045 |
+| The projection schema this produces. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1065-1087 |
 | The series-token helper that enriches `SeriesNode.seriesTokenTotal` before analytics assembly. | `attach_series_token_totals` | mcp/src/agents_remember/observer/series_tokens.py:14-31 |
 | The event envelope + kinds it folds. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
 | The write-side dormancy sweep the abandoned-projection mirrors, and the `end` signal whose `outcome` `_ended_updates` reads. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:90-594 |
 | The shared stale/TTL thresholds + age helper. | `STALE_AFTER_SECONDS`; `TTL_SECONDS`; `age_seconds` | mcp/src/agents_remember/controlplane/stamps.py:22-35; mcp/src/agents_remember/observer/timeutil.py:11-11; mcp/src/agents_remember/observer/timeutil.py:30-31 |
 | The provider stale-projection idiom the paused-projection mirrors. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
-| The `EngineProcessNode`/`EngineProcessFacts`/`EngineProcessEdge`/`CommitRefNode`/`ProviderBootNode` schema the 5e map composes. | `EngineProcessNode`; `EngineProcessFacts`; `EngineProcessEdge`; `CommitRefNode`; `ProviderBootNode` | mcp/src/agents_remember/observer/projection.py:781-801; mcp/src/agents_remember/observer/projection.py:804-817; mcp/src/agents_remember/observer/projection.py:820-839; mcp/src/agents_remember/observer/projection.py:867-936; mcp/src/agents_remember/observer/projection.py:939-959 |
+| The `EngineProcessNode`/`EngineProcessFacts`/`EngineProcessEdge`/`CommitRefNode`/`ProviderBootNode` schema the 5e map composes. | `EngineProcessNode`; `EngineProcessFacts`; `EngineProcessEdge`; `CommitRefNode`; `ProviderBootNode` | mcp/src/agents_remember/observer/projection.py:820-840; mcp/src/agents_remember/observer/projection.py:843-856; mcp/src/agents_remember/observer/projection.py:859-878; mcp/src/agents_remember/observer/projection.py:906-975; mcp/src/agents_remember/observer/projection.py:978-998 |
 | Reads the engine-process facts + pre-contract start-progress entries at the call edge. | "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:238-238 |
 | The pre-contract `worktree_start` progress source (§5.4) the synthesized node reads. | `read_start_progress` | mcp/src/agents_remember/worktrees/start_progress.py:106-114 |
 | The durable gate set `_attach_gates` materializes onto lifecycles (slice 6c). | "def _attach_gates(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:227-227 |
@@ -392,6 +392,9 @@ file I/O. Defaults empty, so prior structural/analytical callers remain unchange
 As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks generic lifecycle vocabulary ("the lifecycle phase") rather than naming the retired session-job skill; the inference logic itself is unchanged.
 
 ## Update History
+
+- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over the `reducer_impl/` subpackage (`_types`, `_metrics`, `_attention`, `_processes`); full surface re-exported and pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
@@ -418,7 +421,7 @@ As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks ge
   `Counter` and expands `STATE_COUNT_FIELDS`, replacing three hand-written `sum(...)` lines that
   had left `awaiting-developer` counted into `lifecycleCount`/`totalTokens` and into no bucket,
   and `Metrics(extra="forbid")` now turns a future missing bucket into a raise rather than a
-  zero. Added two invariants. cit:([`_metrics`], mcp/src/agents_remember/observer/reducer.py:527-550) **Citation repairs** — all three self-citations pointed at the
+  zero. Added two invariants. cit:([`_metrics`], mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-66) **Citation repairs** — all three self-citations pointed at the
   wrong symbols and are corrected: the missing-provider row L980-L1079; L1240-L1265 →
   `_provider_boot_nodes` L1403-L1432; `_missing_facts` L1614-L1639; the actionable-drift row
   L770-L800 → `_drift_attention` L914-L930; `_drift_attention_detail` L933-L944; and

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-11T09:45+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -52,9 +52,9 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:512-515 |
+| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:537-540 |
 | Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:484-510 |
-| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:583-595 |
+| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:605-618 |
 
 ## Cross-Repo References
 
@@ -72,6 +72,8 @@ dashboard does not accept an open-ended string vocabulary here.
 The L4 delta keeps the generated dashboard contract aligned with the backend's organizational `super-to-leaf` lineage and lifecycle-operation guidance. The dashboard remains a projection consumer: it does not gain branch-mutation authority.
 
 ## Update History
+
+- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
 
 - 2026-08-15T23:38+02:00 — Reconciled projection parity for organizational direct-super lineage and lifecycle guidance. Verification metadata remains closeout-owned.
 

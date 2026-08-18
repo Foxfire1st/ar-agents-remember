@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/DetailPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T08:19Z                                |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -292,8 +292,8 @@ view switches skip its subtree, while real selection and store changes still pas
 | `displayedLeafDoc` resolves the leaf actually on screen (mirroring the render branches; `undefined` for a master/series overview) and reports its `qualifiedLeafKey` up via effect (L5 fix 1). | "import { displayedLeafDoc, displayedReaderDoc } from './model';"; "export function displayedLeafDoc({"; "const viewedLeafDoc = displayedLeafDoc({"; "export function qualifiedLeafKey(" | dashboard/src/data/taskIdentity.ts:65-65; dashboard/src/panels/detail-panel/model.ts:123-123; dashboard/src/panels/detail-panel/state.ts:21-21; dashboard/src/panels/detail-panel/state.ts:147-155 |
 | The task reader wraps rendered leaf content in `data-task-leaf-key={qualifiedLeafKey(doc)}` so selection capture can attribute highlighted text to the displayed leaf. | "const TASK_LEAF_SELECTOR ="; "export function readSelection(selection: Selection"; "export function qualifiedLeafKey("; "export function TaskReader({" | dashboard/src/data/selection.ts:22-22; dashboard/src/data/selection.ts:39-49; dashboard/src/data/taskIdentity.ts:64-70; dashboard/src/panels/detail-panel/taskReader.tsx:494-528 |
 | `findParentTaskMatch`/`parentTaskLinkForDoc` resolve parent task links from projected series sub-task refs and typed selection keys; `orderedByCreation` is now exported from here rather than copied into this panel. | `findParentTaskMatch`; `parentTaskLinkForDoc`; `orderedByCreation`; `parentSelectionKey` | dashboard/src/data/taskHierarchy.ts:43-51; dashboard/src/data/taskHierarchy.ts:68-82; dashboard/src/data/taskHierarchy.ts:152-156; dashboard/src/data/taskHierarchy.ts:145-150 |
-| `SubTaskRow`; `TaskSubTaskRefNode`; `SeriesSubTaskNode`; `linkedLifecycleId` | `SubTaskRow`; `TaskSubTaskRefNode`; `linkedLifecycleId` | dashboard/src/types/projection.ts:560-567; dashboard/src/types/projection.ts:581-581 |
-| The two `extra="forbid"` server models the union mirrors. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | mcp/src/agents_remember/observer/projection.py:585-602; mcp/src/agents_remember/observer/projection.py:692-707 |
+| `SubTaskRow`; `TaskSubTaskRefNode`; `SeriesSubTaskNode`; `linkedLifecycleId` | `SubTaskRow`; `TaskSubTaskRefNode`; `linkedLifecycleId` | dashboard/src/types/projection.ts:582-589; dashboard/src/types/projection.ts:603-603 |
+| The two `extra="forbid"` server models the union mirrors. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | mcp/src/agents_remember/observer/projection.py:585-602; mcp/src/agents_remember/observer/projection.py:731-746 |
 | `_series_subtask_nodes`; `seriesAsMasterDoc`; `orderedByCreation`; `createdAt` | "export function orderedByCreation" | dashboard/src/data/taskHierarchy.ts:145-145 |
 | `MasterDocView`; `SubTaskRow`; `seriesAsMasterDoc`; `orderedByCreation` | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
 | `SubTaskIndex` renders in received order and reads the cross-link as `"linkedLifecycleId" in ref`, so the `→` branch is unreachable for a series. | `SubTaskIndex` | dashboard/src/panels/detail-panel/taskReader.tsx:323-358 |
@@ -302,7 +302,7 @@ view switches skip its subtree, while real selection and store changes still pas
 | Master leaf rows render in received order and display the matched child task document `id`, with `position` kept separate purely for stable test ids; `SliceList` keeps the `createdAt` sort because it orders `TaskDocNode`s. | "export function SubTaskIndex({"; "export function SliceList({"; "export function subTaskKey(ref: SubTaskRow"; "import { orderedByCreation } from \"../../data/taskHierarchy\";" | dashboard/src/panels/detail-panel/taskReader.tsx:323-323; dashboard/src/panels/detail-panel/taskReader.tsx:361-361; dashboard/src/panels/detail-panel/model.ts:208-208; dashboard/src/panels/detail-panel/taskReader.tsx:12-12 |
 | `TaskReader` renders the top `ProgressFill` before the task body and keeps implementation-step copy later in the document. | "export function TaskReader({"; "export function ProgressFill({" | dashboard/src/panels/detail-panel/taskReader.tsx:494-494; dashboard/src/grammar/ProgressFill.tsx:27-27 |
 | `seriesAsMasterDoc`; `masterDocWithSeriesTokens`; `seriesTokenTotal`; `MasterTokenSummary` | `masterDocWithSeriesTokens` | dashboard/src/panels/detail-panel/model.ts:198-201 |
-| The `SeriesNode`, `TaskDocNode`, and `SeriesSubTaskNode.createdAt` contract fields consumed by this panel, mirrored in the dashboard projection types. | `SeriesNode`; `TaskDocNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:377-392; dashboard/src/types/projection.ts:400-407; dashboard/src/types/projection.ts:484-510 |
+| The `SeriesNode`, `TaskDocNode`, and `SeriesSubTaskNode.createdAt` contract fields consumed by this panel, mirrored in the dashboard projection types. | `SeriesNode`; `TaskDocNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:399-414; dashboard/src/types/projection.ts:422-429; dashboard/src/types/projection.ts:506-535 |
 | `taskLabel`/`taskDocsForLifecycle`/`taskDocumentLabel` — the lifecycle-visible identity helpers used to label promoted leaf lifecycles without changing task-document filtering. | `taskLabel`; `taskDocsForLifecycle`; `taskDocumentLabel`; `findLifecycleEnclosure` | dashboard/src/data/taskIdentity.ts:253-260; dashboard/src/data/taskIdentity.ts:262-279; dashboard/src/data/taskIdentity.ts:281-286; dashboard/src/data/taskIdentity.ts:288-293 |
 | The durable gate responder, now rendered only for real `activeLifecycle.gate` requests. | "testId=\"gate-review\""; "function DetailPanelImpl({"; "<GateResponder" | dashboard/src/panels/detail-panel/lifecycleBody.tsx:226-226; dashboard/src/panels/detail-panel/DetailPanel.tsx:18-18; dashboard/src/panels/detail-panel/lifecycleBody.tsx:222-222 |
 | `Markdown`; `Bullets`; `DecisionList`; `MasterSection` | `DecisionList` | dashboard/src/panels/detail-panel/taskReader.tsx:612-627 |
@@ -354,7 +354,7 @@ view switches skip its subtree, while real selection and store changes still pas
   `createdAt`). Repaired nine citations that had drifted off their symbols, including
   `topLevelStepProgress` L553-L556 → L932-L935, `displayedLeafDoc` L771-L818 → L884-L931,
   `MasterTokenSummary` L652-L705 → L1099-L1108, `TaskReader` L833-L866 → L1307-L1345, and the
-  projection-mirror row cit:([`TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:377-392; dashboard/src/types/projection.ts:400-407; dashboard/src/types/projection.ts:484-510),
+  projection-mirror row cit:([`TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:399-414; dashboard/src/types/projection.ts:422-429; dashboard/src/types/projection.ts:506-535),
   whose prior ranges contained none of the named types.
 
 - 2026-08-01T09:58+02:00 — 260731-EFA-L4 curator: corrected two false body claims. `SubTaskIndex` no
@@ -372,7 +372,7 @@ view switches skip its subtree, while real selection and store changes still pas
   `createdAt`). Repaired nine citations that had drifted off their symbols, including
   `topLevelStepProgress` L553-L556 → L932-L935, `displayedLeafDoc` L771-L818 → L884-L931,
   `MasterTokenSummary` L652-L705 → L1099-L1108, `TaskReader` L833-L866 → L1307-L1345, and the
-  projection-mirror row cit:([`TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:376-391; dashboard/src/types/projection.ts:399-406; dashboard/src/types/projection.ts:457-509),
+  projection-mirror row cit:([`TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:399-414; dashboard/src/types/projection.ts:422-429; dashboard/src/types/projection.ts:506-535),
   whose prior ranges contained none of the named types.
 
 - 2026-07-24T13:17:50Z — Added persistent DetailPanel memoization semantics. Verification hash/date

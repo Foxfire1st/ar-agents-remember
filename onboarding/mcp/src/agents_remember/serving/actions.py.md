@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/actions.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-02T01:05+02:00                       |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`   |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`   |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ repo-level one-shot signal. The UI is still never the gate *enforcement*.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The precomputed availability + node shapes validated against. | `ActionAvailability`, `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:49-62; mcp/src/agents_remember/observer/projection.py:1026-1045 |
+| The precomputed availability + node shapes validated against. | `ActionAvailability`, `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:49-62; mcp/src/agents_remember/observer/projection.py:1065-1087 |
 | The `Actor` provenance literal reused for attribution. | `Actor` | mcp/src/agents_remember/observer/events.py:31-31 |
 | The app that routes `POST /api/actions/{action}` to this and executes the gate write. | "def _action_response(runtime: _ServingRuntime", "def _register_action_routes(app: FastAPI" | mcp/src/agents_remember/serving/_app_routes.py:308-308; mcp/src/agents_remember/serving/_app_routes.py:388-388 |
 | The control-plane gate write path the router calls for a gate-decision verb (slice 6b). | `record_gate_decision`, `record_lifecycle_gate_decision` | mcp/src/agents_remember/controlplane/gate_decisions.py:83-128; mcp/src/agents_remember/controlplane/gate_decisions.py:131-156 |
