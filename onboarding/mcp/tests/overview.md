@@ -9,8 +9,8 @@ Total output lines: 1813
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-15T14:24+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastVerifiedCommitHash | `74b3479b80bbf69c508fc3beff3718118baba9bb`|
+| lastVerifiedCommitDate | 2026-08-18T10:01:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1155,6 +1155,8 @@ projection schema stays within constraints the TypeScript generator renders exac
 The L4 suites force repository-global surface ownership, organizational versus atomic start, aliases/tags/linked worktrees, configured identity, lowest-writer refusal, bootstrap WAL, queue-lock ordering, task-topology races, exact code-memory CAS and recovery, atomic leaf-chain sealing, terminal child preservation, and preview/apply parity through production owners.
 
 ## Update History
+
+- 2026-08-18T01:24+02:00 — No route impact: 260815-DAG-L6 added `test_acquire_barrier_refuses_stale_super_tips`; the tests route purpose is unchanged.
 
 - 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added five organizational-completion test modules; the tests route purpose is unchanged.
 

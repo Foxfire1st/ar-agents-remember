@@ -9,8 +9,8 @@ Total output lines: 2603
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastVerifiedCommitHash | `74b3479b80bbf69c508fc3beff3718118baba9bb`
+| lastVerifiedCommitDate | 2026-08-18T10:01:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -858,6 +858,8 @@ priority rows but never authors them.
 The MCP runtime now owns repository-global protected-ref census, durable closeout/integration operations, cross-operation leases, queue-before-repository lock ordering, exact named-ref compare-and-swap, atomic-series sealing, and guarded terminal/memory writers. Public tools preview the same authority they apply; direct CLI/helper paths cannot widen it.
 
 ## Update History
+
+- 2026-08-18T01:24+02:00 — No route impact: 260815-DAG-L6 added the barrier-acquisition super-tip precondition (`_require_current_super_tips`) under mcp/src/agents_remember/worktrees; the route's purpose is unchanged.
 
 - 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added organizational-completion modules under mcp/src/agents_remember/worktrees; the route's purpose is unchanged.
 
