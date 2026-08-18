@@ -9,8 +9,8 @@ Total output lines: 2603
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -859,6 +859,7 @@ The MCP runtime now owns repository-global protected-ref census, durable closeou
 
 ## Update History
 
+- 2026-08-18T12:00:00+00:00 — No route impact: 260815-DAG-L9 added `inventory_execution_topology` to `application/task_execution_topology.py`; the mcp-route purpose is unchanged.
 - 2026-08-18T10:30+02:00 — No route impact: 260815-DAG-L7 added the orchestrator portfolio loop under worktrees; route purpose unchanged.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.

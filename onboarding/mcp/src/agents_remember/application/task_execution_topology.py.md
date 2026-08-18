@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,8 +49,18 @@ translation branch.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The migration validates, previews, and atomically publishes the sprint and commanded masters. | `migrate_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:67-129 |
-| Ordinary execution-topology edits are validated against canonical cross-document topology. | `enforce_execution_topology_edit` | mcp/src/agents_remember/application/task_execution_topology.py:193-222 |
+| The read-only inventory previews every sprint and commanded master's proposed nature and blockers. | `inventory_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:333-396 |
+| Ordinary execution-topology edits are validated against canonical cross-document topology. | `enforce_execution_topology_edit` | mcp/src/agents_remember/application/task_execution_topology.py:224-253 |
 | The forcing suite proves migration, rollback, render, projection, and refusal behavior. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:107-317 |
+
+## 260815-DAG-L9 Inventory Boundary
+
+`inventory_execution_topology` enumerates every persistent orchestration sprint and commanded
+master before migration, without writing. It proposes the explicit nature (atomic when an
+`ar/<slug>` branch already backs the master, organizational otherwise) and reports the sprint
+graph state plus declared completion blockers. Proposed edges are always parallel and left for
+a strategist/orchestrator ruling; branch-backed detection runs through `run_git branch` and
+refuses on enumeration failure.
 
 ## 260815-DAG-L3 Sprint Publication Boundary
 
@@ -64,6 +74,9 @@ exact canonical graph and refuses a sprint terminal status when any commanded ma
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-18T12:00:00+00:00 — 260815-DAG-L9: added `inventory_execution_topology` (read-only pre-migration
+  enumeration with branch-backed atomic classification); verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 

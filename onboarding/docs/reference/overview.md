@@ -6,8 +6,8 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`|
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 
 ## Purpose
 
@@ -183,6 +183,7 @@ closeout and master integration are the only acceptance owners.
 
 ## Update History
 
+- 2026-08-18T12:00:00+00:00 — No route impact: L9 adds `execution-topology-migration.md` (operator migration/rollback reference); the reference-route model is unchanged.
 - 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
