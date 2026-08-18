@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `74b3479b80bbf69c508fc3beff3718118baba9bb` |
+| lastVerifiedCommitDate | 2026-08-18T10:01:50+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -44,6 +44,8 @@ candidate mechanics; atomic barriers add exclusivity and exact block-landing pro
 - Actor role and task identity are plane-proven, never request data.
 - Only the deterministic first ready candidate may be selected.
 - In-flight records are lifecycle-owned and immutable through public actions.
+- Atomic-barrier acquisition requires atomic nature, drained predecessors and landing lane, a
+  non-blank rationale, and the atomic series base to still match the current code+memory super tips.
 - A normal atomic-barrier release requires the completed atomic master to prove one exact landed
   series; abort requires a canonical strategist/orchestrator judgment.
 - Projection reports only operations legal for the current structural caller.
@@ -75,6 +77,8 @@ No external repository owns this queue.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-18T01:24+02:00 — 260815-DAG-L6: barrier acquisition now requires the atomic series base to still match the current code+memory super tips (`require_source_bases_current`), closing R2. Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 
