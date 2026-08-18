@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -169,6 +169,8 @@ it against `CloseoutQueueResponse` with the rest of the public success surface.
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-17T14:00+02:00 — No content impact: L5 repair; added a demo code change and a `load_contract` import to the conformance fixture so the demo leaf prepends a fresh ledger mapping. The documented tool-response conformance surface is unchanged.
 
 - 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_gates_seam.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-16T04:06+02:00                                            |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                                        |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`                                        |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -52,6 +52,8 @@ verdict can bypass control-plane admission.
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — No content impact: L5 coverage-pragma alignment only; the documented seam behavior is unchanged.
 
 - 2026-08-16T07:10+02:00 — L4 review repair: the apply-only handover seam models the real operation record's empty recovery tuple so completed-recovery admission remains type-faithful.
 - 2026-08-16T05:18+02:00 — Dagger fixture repair: the application plumbing case supplies a real absolute settings file and configured repository alias before asserting the selected gate policy reaches integration preview.

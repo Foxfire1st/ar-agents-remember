@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_sync.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-16T02:51+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                         |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`                         |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -46,6 +46,8 @@ the exact repository-default authority, then exercise `sync_result` via `Worktre
 | Contract `sync_log` round-trip relies on the contract serializer. | `sync_log` | mcp/src/agents_remember/worktrees/worktree_contract.py:283-283 |
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — No content impact: L5 coverage-pragma alignment only; the documented sync behavior is unchanged.
 
 - 2026-08-16T02:51+02:00 — L4 default-branch authority: the repository fixture now installs an
   exact remote default ref and symbolic `origin/HEAD`, allowing sync cases to reach their intended

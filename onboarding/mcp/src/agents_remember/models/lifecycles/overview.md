@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-13T08:40+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ None.
 | --- | --- | --- |
 | Lifecycle response vocabularies and models are owned together. | `LiveState`; `LifecycleResponse` | mcp/src/agents_remember/models/lifecycles/responses.py:16-35 |
 | Finalization exposes edge proof and completion-seat result sets. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:13-37 |
-| Asynchronous operation records keep private identity out of the public projection. | `LifecycleOperationRecord`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:125-165; mcp/src/agents_remember/models/lifecycles/operation.py:168-183 |
+| Asynchronous operation records keep private identity out of the public projection. | `LifecycleOperationRecord`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:243-283; mcp/src/agents_remember/models/lifecycles/operation.py:347-362 |
 
 ## Docs References
 
@@ -80,6 +80,8 @@ exclude operation keys, PIDs, leases, and resume tokens.
 Lifecycle operation records bind integration to canonical contract and repository identities, exact source and target refs, accepted commits, conflict provenance, irreversible recovery facts, and worker ownership. Legacy or incomplete integration authority fails closed rather than being synthesized.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added organizational-completion wire models to the lifecycles route; the route purpose is unchanged.
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 

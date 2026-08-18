@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-15T11:25+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -270,6 +270,8 @@ JSON.
 Application tools now bind lifecycle requests to configured coordination, task, code-repository, and memory-repository identity before dispatch. Worktree, task-document, topology, and memory entry points route protected mutations through the queue/repository authority plane and reject preview/apply drift.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 extended the lifecycle-operation worker with repair evidence; the application-layer purpose is unchanged.
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 

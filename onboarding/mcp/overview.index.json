@@ -282,13 +282,18 @@
     "mcp/src/agents_remember/worktrees/integration_branch_repository.py",
     "mcp/src/agents_remember/worktrees/integration_branch_types.py",
     "mcp/src/agents_remember/worktrees/integration_operation_authority.py",
+    "mcp/src/agents_remember/worktrees/integration_quality.py",
     "mcp/src/agents_remember/worktrees/integration_quality_checkout.py",
     "mcp/src/agents_remember/worktrees/integration_ref_transaction.py",
     "mcp/src/agents_remember/worktrees/leaf_refs.py",
+    "mcp/src/agents_remember/worktrees/lifecycle_operation_identity.py",
     "mcp/src/agents_remember/worktrees/lifecycle_operation_lease.py",
     "mcp/src/agents_remember/worktrees/lifecycle_operation_store.py",
     "mcp/src/agents_remember/worktrees/lifecycle_operations.py",
     "mcp/src/agents_remember/worktrees/named_ref_memory.py",
+    "mcp/src/agents_remember/worktrees/organizational_completion.py",
+    "mcp/src/agents_remember/worktrees/organizational_completion_integration.py",
+    "mcp/src/agents_remember/worktrees/organizational_completion_repair.py",
     "mcp/src/agents_remember/worktrees/reopen.py",
     "mcp/src/agents_remember/worktrees/route_review.py",
     "mcp/src/agents_remember/worktrees/series_closeout.py",
@@ -299,8 +304,8 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1119,
-    "fileSidecars": 191,
+    "sourceFilesInScope": 1131,
+    "fileSidecars": 196,
     "childRoutes": 19
   },
   "routingTerms": [
@@ -365,6 +370,7 @@
     "common",
     "compact",
     "compact_content",
+    "completion",
     "content",
     "context",
     "context_common",
@@ -382,8 +388,7 @@
     "core",
     "coverage",
     "crap",
-    "crap_calculator",
-    "create"
+    "crap_calculator"
   ],
   "hotPath": {
     "summary": "**260731-EFA-L21 \u2014 checkout coordination isolation.** An undeclared source-checkout invocation is classified before runtime configuration is read: a linked worktree receives a synthetic provider-disabled configuration rooted at `provider-runtime/dev-ar-coordination`, while a primary checkout refuses live coordination access. Trusted MCP/dashboard declarations and installed package execution retain the configured coordinator. The detached task-operation worker uses the separate explicit `lifecycle-operation` mode because it must finalize one plane-owned durable operation but is not a store d...",

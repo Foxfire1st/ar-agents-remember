@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-14T12:13:26+02:00 |
-| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash |  `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
+| lastVerifiedCommitDate |  2026-08-18T03:31:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,6 +82,8 @@ immediately; there is no host command planner or fallback executor.
 worktree group. `_write_test_results_report` renders status, invocation, mode, diff base, exit code,
 UTC start/finish, elapsed seconds, exact shell command, applicable cap facts, and the full output,
 then publishes with the shared `atomic_write_text` primitive. It creates no timestamped siblings.
+
+Added `recover_strict_code_quality_gate`, which recovers one exact passed Dagger generation from the published attestation and `clean-quality-results.json` after a caller crash.
 
 ### The Index Is The Scope, And This Function Does Not Own It (260731-EFA-L4)
 
@@ -181,7 +183,7 @@ coverage, and CRAP checks.
 | --- | --- | --- |
 | `quality_wrapper_path` / `requires_strict_code_quality` decide applicability from the checkout, and `code_quality_gate_preview` reports one of the three statuses plus planned mode, executor, and memory policy. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:63-65; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:97-104; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:107-169 |
 | `run_strict_code_quality_gate` executes the planned contract, atomically publishes the complete latest transcript, exposes `reportPath` on success, and names it before raising on failure. | `QualityGateTarget`; `test_results_report_path`; `run_strict_code_quality_gate`; `_write_test_results_report`; `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:40-45; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:68-70; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:184-265; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:281-330; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:387-411 |
-| The named local entry point refuses before resolving or executing a host wrapper. | `run_local_quality_diagnostic` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:286-296 |
+| The named local entry point refuses before resolving or executing a host wrapper. | `run_local_quality_diagnostic` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:338-348 |
 | Both closeout call sites pass `contract.code_worktree`, `diff_base=contract.code_base_commit`, and the leaf targeted plan — the preview path, and the apply path where `requires_strict_code_quality` guards `_gate_staged_code` and `commit_if_dirty` follows it. | `closeout_preview_payload`, `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:368-432; mcp/src/agents_remember/worktrees/modules/closeout.py:1070-1172 |
 | Regressions cover all three statuses, targeted/full Dagger modes, container-managed and explicit-cap full runs, cap-kill naming, immediate host refusal, checkout-not-name arguments, exact leaf base forwarding, bounded failures, and mutation ordering. | `CodeQualityGateTests`, `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:62-591; mcp/tests/test_worktree_quality_gate_runner.py:15-465 |
 | The staging regressions added with `_gate_staged_code`: `ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_gate_scope.py:99-208; mcp/tests/test_worktree_closeout_quality_gate.py:808-931; mcp/tests/test_worktree_closeout_quality_gate.py:934-992; mcp/tests/test_worktree_closeout_quality_gate.py:998-1061 |
@@ -213,6 +215,8 @@ requires each to refuse with pinned-Dagger guidance; no local executor can be re
 lower-level builder.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: added `recover_strict_code_quality_gate` and attestation-bound Dagger report recovery for crash-safe full-gate reuse. Verification remains closeout-owned.
 
 - 2026-08-14T12:13:26+02:00 — R43 curator: reconciled self-owned-wrapper refusal wording and the
   new direct non-Dagger builder proof. Verification remains closeout-owned.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/integration_branch_authority_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -32,13 +32,15 @@ Shared fixture construction uses production task documents, queue state, contrac
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, barrier, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:36-53; mcp/tests/integration_branch_authority_test_support.py:94-196; mcp/tests/integration_branch_authority_test_support.py:209-234; mcp/tests/integration_branch_authority_test_support.py:284-338 |
+| Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, barrier, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:43-61; mcp/tests/integration_branch_authority_test_support.py:105-212; mcp/tests/integration_branch_authority_test_support.py:251-278; mcp/tests/integration_branch_authority_test_support.py:466-520 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: extended the support surface for organizational-completion branch and recovery forcing. Verification remains closeout-owned.
 
 - 2026-08-16T05:18+02:00 — Dagger fixture repair: code-only authority fixtures now model configured internal memory explicitly, keeping code-only integration behavior while satisfying exact runtime memory-mode authority.
 - 2026-08-16T04:06+02:00 — 260815-DAG-L4 Dagger repair: shared closed-leaf helpers now materialize the exact contract-recorded code and external-memory worktrees, and the atomic-series helpers persist each child leaf's exact closeout, integration, queue-binding, and memory-ledger landing facts before series seal tests run.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l4_authority_branch_coverage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T09:45+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -48,6 +48,8 @@ leaf sets through the production helpers that own those checks.
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-17T13:20+02:00 — No content impact: L5 repair: re-pointed stale mock targets and return tuples to match the L5 integration API (publish_queue_candidate_integration_result_under_authority, branch_commit, 4-tuple _prepare_integration_commits, durable-removal-intent idempotency). The documented test intent and coverage surface are unchanged.
 
 - 2026-08-16T09:55+02:00 — Added a real exact-series positive case to the atomic surface probe, proving canonical task-tree resolution rather than only false cases.
 - 2026-08-16T09:45+02:00 — Added production-owner coverage for configured contract identity, lifecycle recovery, task publication, integration candidate/ref recovery, organizational lineage, and atomic-series completeness after the targeted Dagger diff-coverage report.

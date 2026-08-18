@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:54+02:00     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -168,7 +168,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:26-26 |
+| Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:29-29 |
 | `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:191-191 |
 | Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers. | `_terminal_mutation_authority` | mcp/src/agents_remember/worktrees/modules/cleanup.py:67-102 |
 | Provider teardown is delegated to this module. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_integration_ref_transaction.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-15T23:38+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -43,6 +43,8 @@ wrong-tip, untracked, unrelated-change, wrong-HEAD, and durable pre-crash eviden
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — No content impact: L5 extends the suite for the organizational-completion super-to-leaf ledger mapping; the documented transaction behavior is unchanged and the additions are covered by the new completion cards.
 
 - 2026-08-16T08:12+02:00 — Dagger coverage repair: expanded exact transaction forcing across preparation races, both recovery sides, checkout refusal branches, and the durable-before-crash external retry order.
 - 2026-08-16T05:18+02:00 — Dagger fixture repair: the checkout-refresh crash/retry case isolates queue publication/completion while retaining the real integration recovery and named-ref transaction owners under test.

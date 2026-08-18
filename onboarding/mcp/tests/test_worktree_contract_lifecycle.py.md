@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_contract_lifecycle.py`         |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-08-01T14:20+02:00                                  |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`              |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`              |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -88,6 +88,8 @@ silently becoming an unknown-major case.
 | The same policy asserted on the JSONL record side, through the same helper, so the two cannot drift. | `SchemaVersionMajorTests` | mcp/tests/test_durable_store_contract.py:431-517 |
 
 ## Update History
+- 2026-08-17T12:30+02:00 — No content impact: L5 coverage-pragma alignment only; the documented contract lifecycle is unchanged.
+
 - 2026-08-03T02:57+02:00 — W3-B03 curator: curated 5 table citations and 10 prose citation repairs for lifecycle round-trips, schema-version writing/refusal, shared policy, and record-side tests; fixer-generated ranges verified.
 
 - 2026-08-01T14:20+02:00 — 260731-EFA-L5 curator: this suite gained a class,
@@ -116,6 +118,7 @@ silently becoming an unknown-major case.
   route-local `overview.md`, which is the file that exists in this memory tree, and added the
   missing `## Governing Overview` section. The four pre-existing anchor assertions are unchanged.
   Verification metadata pinned until closeout stamps the L5 commit.
+
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator, code-quality hardening sweep. `default_contract`
   no longer takes a flat keyword list: the `_contract(...)` fixture now assembles
   `ContractTask(name/repo_name/coordination_root/workflow_kind/memory_mode)`,
@@ -125,6 +128,7 @@ silently becoming an unknown-major case.
   `LeafIdentity.lifecycle_id` instead of describing a `default_contract(..., lifecycle_id=...)`
   keyword that no longer exists. The four assertions and the backward-compatibility case are
   unchanged.
+
 - 2026-06-13T18:45+02:00: Created for slice 2c — contract lifecycle-anchor
   round-trip + backward-compatibility tests. Verification metadata is pinned until
   closeout stamps the 2c code commit.

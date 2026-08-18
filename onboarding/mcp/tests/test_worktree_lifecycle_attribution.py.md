@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_lifecycle_attribution.py`         |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                 |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`                 |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -48,21 +48,28 @@ snake_case result payloads (no git/provider machinery).
 Lifecycle-attribution tests verify that application entry point attribution can use `enclosure_path` while retaining fallback behavior for payloads that still expose `contract_path`.
 
 ## Update History
+- 2026-08-17T12:30+02:00 — No content impact: L5 coverage-pragma alignment only; the documented attribution behavior is unchanged.
+
 - 2026-08-14T06:40+02:00 — L23 final candidate review: lifecycle-attribution coverage includes the
   non-attached completed-leaf reopen edge without inventing a replacement runtime identity.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 4 citation finding(s); scoped recheck clean.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+
 - 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+
 - 2026-07-31T16:50+02:00 — No content impact: the only change is in `_AttributionCase.setUp`,
   which after the PLR0913 parameter-object pass builds the ambient as
   `AmbientLifecycle(self.store, timing=AmbientTiming(heartbeat_seconds=3600))` and imports
   `AmbientTiming` next to `AmbientLifecycle`. The long-heartbeat tempfile ambient, the
   `shutdown()` cleanup, and every promote / adopt / save-gate assertion described above are
   unchanged, so the Purpose, Logic, and Conventions claims still hold.
+
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: lifecycle attribution tests now use `series-contract.md` enclosure paths and cover the controller fallback from `enclosure_path` to legacy `contract_path`. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-13T18:45+02:00: Created for slice 2c — controller promote/adopt/save-gate
   attribution tests. Verification metadata is pinned until closeout stamps the 2c
   code commit.

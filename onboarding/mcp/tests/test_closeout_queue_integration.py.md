@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_queue_integration.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T09:45+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
+| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,6 +68,8 @@ No meaningful cross-repository reference applies.
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-17T12:30+02:00 — No content impact: L5 coverage-pragma/import alignment only; the documented integration behavior is unchanged.
 
 - 2026-08-16T09:45+02:00 — The graph-disappearance regression now bypasses only earlier source-state and lineage projections so the real queue claim/revalidation owner must reject the missing graph before merge.
 - 2026-08-16T08:12+02:00 — Dagger fixture repair: the missing-sprint-graph integration route now isolates both preview target resolution and durable-operation target authority so it reaches the queue refusal it owns.
