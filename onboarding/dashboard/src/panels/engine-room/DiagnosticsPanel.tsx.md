@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-23T13:45+02:00                           |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ Two exports, both presentational (no state, no effects, no mutation).
 | `CommitRow` formats branch/commit + absent/dirty/behind flags behind a `factChip` | `CommitRow` | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:19-38 |
 | `DiagnosticsPanel` derives `poweringDown`, builds `setupLine`, renders facts, phases, seed, actions, missing facts, sources | `DiagnosticsPanel` | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:40-146 |
 | `poweringDown` flag (`cleanup-pending`/`abandoned`) drives the "powering down" setup line and the muted `◦` completed-phase glyph (5k F3) | "const poweringDown = node.phase" | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:52-52 |
-| `EngineProcessNode` / `CommitRefNode` / `ProcessFactState` source shapes | `EngineProcessNode`, `CommitRefNode`, `ProcessFactState` | dashboard/src/types/projection.ts:41-41; dashboard/src/types/projection.ts:111-119; dashboard/src/types/projection.ts:162-202 |
+| `EngineProcessNode` / `CommitRefNode` / `ProcessFactState` source shapes | `EngineProcessNode`, `CommitRefNode`, `ProcessFactState` | dashboard/src/types/projection.ts:41-41; dashboard/src/types/projection.ts:146-154; dashboard/src/types/projection.ts:198-239 |
 | `Affordance` display-only action button (aria-disabled, no POST) | `Affordance` | dashboard/src/grammar/Affordance.tsx:27-42 |
 | `GateResponder` compact worktree-gate control. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
 | `fmtWait` formats `heartbeatAgeSeconds` into s/m/h/d | `fmtWait` | dashboard/src/data/selectors.ts:108-114 |

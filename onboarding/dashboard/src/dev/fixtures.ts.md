@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/fixtures.ts`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:52+02:00                          |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -132,7 +132,7 @@ shape, so both sides of that delegation are cited.
 | `EMPTY_ANALYTICS` now lives in the shared wire fixtures and still carries `series: []` and `engineProcesses: []`. | `EMPTY_ANALYTICS` | dashboard/src/test/fixtures/wire.ts:223-237 |
 | `projection()` assigns `metrics` from `metricsFor(lifecycles)`. | `metrics` | dashboard/src/test/fixtures/wire.ts:334-334 |
 | The gallery consumes each `ENGINE_ROOM_SCENARIOS` entry by projecting its `processes` and `workspace` data. | "processes: EngineProcessNode[];"; "workspace: ProviderNode[];"; "ENGINE_ROOM_SCENARIOS.filter"; "projection: engineRoomProjection(scenario)" | dashboard/src/dev/fixtures.ts:484-484; dashboard/src/dev/fixtures.ts:487-487; dashboard/src/panels/engine-room/fixtures.ts:21-22 |
-| `series` and `engineProcesses` live on `WorkspaceProjection["analytics"]`. | `Analytics`; `engineProcesses`; `series`; `WorkspaceProjection` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:583-595 |
+| `series` and `engineProcesses` live on `WorkspaceProjection["analytics"]`. | `Analytics`; `engineProcesses`; `series`; `WorkspaceProjection` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:605-618 |
 
 ## Cross-Repo References
 

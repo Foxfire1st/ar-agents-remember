@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/served_state.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T15:10+02:00                           |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -112,7 +112,7 @@ suite rather than per-request validation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The strict base this model extends: `WorkspaceProjection` with `extra="forbid"`, which is what made the two injected keys a contract violation. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1026-1045 |
+| The strict base this model extends: `WorkspaceProjection` with `extra="forbid"`, which is what made the two injected keys a contract violation. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1065-1087 |
 | The build half of the tail, and the `exclude_none` honest-unknown rule `served_state_tail` applies to it. | `ServingBuildPayload` | mcp/src/agents_remember/serving/build_info.py:43-63 |
 | The heartbeat half of the tail, serialized WITHOUT `exclude_none` so a never-ticked supervisor reports explicit nulls. | `AgentNotifierHeartbeatPayload` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:31-52 |
 | The two consumers: the SSE snapshot merge and the `/api/state` merge onto a copy of the memoized dump, plus the memo itself. | "async def stream_events("; "def _state_response(runtime: _ServingRuntime" | mcp/src/agents_remember/serving/_app_common.py:115-115; mcp/src/agents_remember/serving/_app_routes.py:74-74 |
@@ -132,7 +132,7 @@ No external repository boundary is involved; this is the serving app's own wire 
 
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
   `observer/projection.py` citations — the Purpose prose and the first reference row — after that
-  module was restructured. cit:([`WorkspaceProjection`], mcp/src/agents_remember/observer/projection.py:1026-1045)
+  module was restructured. cit:([`WorkspaceProjection`], mcp/src/agents_remember/observer/projection.py:1065-1087)
   points to the class and its `extra="forbid"` configuration. No body claim changed.
 
 - 2026-08-01T08:05+02:00 — 260731-EFA-L4 curator: created for the new

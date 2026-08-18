@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -415,7 +415,7 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 | `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | "def read_series_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:172-172 |
 | Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | "def _series_subtask_nodes(path: Path"; "def _series_subtask_created_at(base_dir: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:218-218; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:238-238 |
 | Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:293-293 |
-| The projection nodes these readers build, including optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode`; `SeriesSubTaskNode`; `SeriesNode` | mcp/src/agents_remember/observer/projection.py:637-689; mcp/src/agents_remember/observer/projection.py:692-707; mcp/src/agents_remember/observer/projection.py:720-746 |
+| The projection nodes these readers build, including optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode`; `SeriesSubTaskNode`; `SeriesNode` | mcp/src/agents_remember/observer/projection.py:676-728; mcp/src/agents_remember/observer/projection.py:731-746; mcp/src/agents_remember/observer/projection.py:759-785 |
 | The provider current-state path + snapshot shape (surface 1). | `current_state_path` | mcp/src/agents_remember/providers/current_state.py:52-62 |
 | The provider-node projection policy used by `read_providers`. | `read_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:163-181 |
 | Worktree provider readers derive isolated provider container names (`_worktree_providers` → `_worktree_runtime_specs`), inspect Docker (`_inspect_containers`), and convert observed runtime into ready/degraded/failed summaries (`_worktree_runtime_summary`). | `_worktree_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:199-259 |

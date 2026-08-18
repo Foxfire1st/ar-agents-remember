@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/MemoryMirror.tsx`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T10:50+02:00                           |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ ages are server-computed.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `driftSegments` + the `DRIFT_ORDER`. | `driftSegments` | dashboard/src/data/selectors.ts:178-186 |
-| The drift/ledger/stalest analytics nodes. | `Analytics` | mcp/src/agents_remember/observer/projection.py:992-1023 |
+| The drift/ledger/stalest analytics nodes. | `Analytics` | mcp/src/agents_remember/observer/projection.py:1031-1062 |
 
 ## Update History
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.

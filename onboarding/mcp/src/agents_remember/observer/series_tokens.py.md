@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/series_tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T15:10+02:00                     |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce` |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -63,9 +63,9 @@ scope; this file implements an internal projection rollup.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The reducer returns an enriched `WorkspaceProjection` from the lifecycle projection path. | "class WorkspaceProjection(BaseModel):" | mcp/src/agents_remember/observer/projection.py:1026-1026 |
+| The reducer returns an enriched `WorkspaceProjection` from the lifecycle projection path. | "class WorkspaceProjection(BaseModel):" | mcp/src/agents_remember/observer/projection.py:1065-1065 |
 | The reducer module defines `build_analytics` for analytics enrichment. | "def build_analytics(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:129-129 |
-| `SeriesNode` exposes the served `seriesTokenTotal` field. | `seriesTokenTotal` | mcp/src/agents_remember/observer/projection.py:742-742 |
+| `SeriesNode` exposes the served `seriesTokenTotal` field. | `seriesTokenTotal` | mcp/src/agents_remember/observer/projection.py:781-781 |
 | The projection test module includes a `seriesTokenTotal` regression case. | `seriesTokenTotal` | mcp/tests/test_observer_projection.py:681-681 |
 
 ## Cross-Repo References
@@ -87,7 +87,7 @@ agents-remember workspace projection only.
 
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the three reference
   citations after source movement; the reducer and observer-projection references were repaired.
-  The current `SeriesNode` and `seriesTokenTotal` projection source (cit:([`SeriesNode`, `seriesTokenTotal`], mcp/src/agents_remember/observer/projection.py:720-746)) was re-read and left unchanged.
+  The current `SeriesNode` and `seriesTokenTotal` projection source (cit:([`SeriesNode`, `seriesTokenTotal`], mcp/src/agents_remember/observer/projection.py:759-785)) was re-read and left unchanged.
   Every body claim was re-read against the source and still holds, so no prose changed.
   Squared two ragged frontmatter cells.
 - 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): the `projection.py` citation was

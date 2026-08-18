@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/store.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-08T21:20+02:00 |
-| lastVerifiedCommitHash |                                                  `28a66feae742bf02fe4b647388b220f921cc7007`|
-| lastVerifiedCommitDate |                                                  2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash |                                                  `2597ff98306ba7c7963005092ac597c4972e63ce`|
+| lastVerifiedCommitDate |                                                  2026-08-18T15:45:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -128,10 +128,10 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). | "export const VOLATILE_AGE_FIELDS" | dashboard/src/data/servedAges.ts:16-16 |
-| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:593-593 |
+| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:616-616 |
 | Observer event type for the Event River tail. | "export interface ObserverEvent" | dashboard/src/types/event.ts:9-9 |
-| Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | "export const dashboardStore" | dashboard/src/data/store.ts:318-318 |
-| `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:390-390 |
+| Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | "export const dashboardStore" | dashboard/src/data/store.ts:329-329 |
+| `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:402-402 |
 | `EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap. | `EventRiver` | dashboard/src/panels/EventRiver.tsx:122-122 |
 | `AgentNotifierHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors; the wire fallback accepts the legacy `supervisorHeartbeat` key during the rename window. | `AgentNotifierHeartbeat` | dashboard/src/types/projection.ts:54-65 |
 | `AgentNotifierHeartbeatBadge` reads `s.agentNotifierHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator. | `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:959-984 |
@@ -146,6 +146,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `agentNotifierHeartbeat` store

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`         |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`         |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -238,7 +238,7 @@ type is recorded separately below as an in-repo boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The in-repo workspace projection wire type. | `WorkspaceProjection` | dashboard/src/types/projection.ts:583-595 |
+| The in-repo workspace projection wire type. | `WorkspaceProjection` | dashboard/src/types/projection.ts:605-618 |
 
 ## L23 Contract-Backed Conformance Fixture
 

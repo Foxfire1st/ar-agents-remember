@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`       |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -610,7 +610,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | Engine activity is admitted by projection input state. | `ProjectionInputState` | mcp/src/agents_remember/serving/projections/projection_inputs.py:189-407 |
 | Series token totals are composed by a reducer-side helper from projected task docs and lifecycles. | `attach_series_token_totals` | mcp/src/agents_remember/observer/series_tokens.py:14-31 |
 | `drift_snapshot_path` is the shared drift-snapshot path helper. | `drift_snapshot_path` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:21-24 |
-| Projection input invokes the orphan-pruning helper. | "prune_orphaned_drift_snapshots(config" | mcp/src/agents_remember/serving/projections/projection_inputs.py:353-353 |
+| Projection input invokes the orphan-pruning helper. | "prune_orphaned_drift_snapshots(config" | mcp/src/agents_remember/serving/projections/projection_inputs.py:361-361 |
 | The shared helper implements orphan pruning for worktree drift snapshots. | `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-56 |
 | `ContractSnapshot` is declared here. | "class ContractSnapshot:" | mcp/src/agents_remember/serving/projections/contract_snapshot.py:38-38 |
 | `ContractSnapshotCache` is the associated snapshot-cache type. | `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
@@ -783,6 +783,8 @@ derive authority or Git ancestry itself: worktree status owns that proof, and th
 the read-side projection of its result.
 
 ## Update History
+
+- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
 
 - 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
 

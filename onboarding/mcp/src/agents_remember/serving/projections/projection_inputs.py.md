@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/projections/projection_inputs.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `2597ff98306ba7c7963005092ac597c4972e63ce`|
+| lastVerifiedCommitDate |  2026-08-18T15:45:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -94,6 +94,8 @@ No Domain Documentation source is configured.
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
 
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 3 citation items; scoped citation check now passes.
 

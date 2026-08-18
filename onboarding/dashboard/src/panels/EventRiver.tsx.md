@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EventRiver.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ visible window mounts; backend retention and the store reset/reload boundary own
 | The formatter layer that owns per-kind Event River copy. | `summarizeEvent` | dashboard/src/panels/eventSummary.ts:113-143 |
 | The emitter of `tool.completed` and `read.packet` facts this row renders. | `emit_tool`; `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:405-424; mcp/src/agents_remember/observer/ambient.py:426-453 |
 | Existing lifecycle/enclosure/task-document helpers used for task labels. | `taskLabel` | dashboard/src/data/taskIdentity.ts:262-279 |
-| The store's bounded sliding window this virtualizes over. | `EVENT_WINDOW` | dashboard/src/data/store.ts:56-56 |
+| The store's bounded sliding window this virtualizes over. | `EVENT_WINDOW` | dashboard/src/data/store.ts:62-62 |
 | The render tests pinning readable event rows (now over a virtualized list). | "EventRiver readable activity feed" | dashboard/src/panels/EventRiver.test.tsx:143-351 |
 | `EventRiver` memoizes the displayed list (reverse to newest-first, gate on `eventSummaryContextReady`, drop hidden rows). | `EventRiver` | dashboard/src/panels/EventRiver.tsx:122-122 |
 | `eventSummaryContextReady` requires lifecycle/enclosure/task-document context for bound events. | `eventSummaryContextReady` | dashboard/src/panels/eventSummary.ts:143-156 |

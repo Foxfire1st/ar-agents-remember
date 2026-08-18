@@ -81,6 +81,7 @@
     "mcp/tests/test_closeout_queue_integration.py",
     "mcp/tests/test_closeout_queue_lifecycle.py",
     "mcp/tests/test_closeout_queue_models.py",
+    "mcp/tests/test_closeout_queue_projection.py",
     "mcp/tests/test_closeout_queue_store.py",
     "mcp/tests/test_closeout_queue_task_doc_status.py",
     "mcp/tests/test_code_quality_check.py",
@@ -435,8 +436,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 413,
-    "fileSidecars": 423,
+    "sourceFilesInScope": 414,
+    "fileSidecars": 424,
     "childRoutes": 0
   },
   "routingTerms": [

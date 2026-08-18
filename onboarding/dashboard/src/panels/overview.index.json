@@ -42,6 +42,8 @@
     "dashboard/src/panels/AttentionQueue.tsx",
     "dashboard/src/panels/ChatActivityIndicator.test.tsx",
     "dashboard/src/panels/ChatActivityIndicator.tsx",
+    "dashboard/src/panels/CloseoutQueue.test.tsx",
+    "dashboard/src/panels/CloseoutQueue.tsx",
     "dashboard/src/panels/EmptyStateBackdrop.test.tsx",
     "dashboard/src/panels/EmptyStateBackdrop.tsx",
     "dashboard/src/panels/EngineRoom.test.tsx",
@@ -101,8 +103,8 @@
     "dashboard/src/panels/useCollapsedTaskGroups.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 237,
-    "fileSidecars": 63,
+    "sourceFilesInScope": 239,
+    "fileSidecars": 65,
     "childRoutes": 5
   },
   "routingTerms": [
@@ -112,6 +114,7 @@
     "changeset",
     "changesetbar",
     "chatactivityindicator",
+    "closeoutqueue",
     "cockpit",
     "dashboard",
     "detail",
@@ -186,6 +189,8 @@
       "dashboard/src/panels/AttentionQueue.tsx",
       "dashboard/src/panels/ChatActivityIndicator.test.tsx",
       "dashboard/src/panels/ChatActivityIndicator.tsx",
+      "dashboard/src/panels/CloseoutQueue.test.tsx",
+      "dashboard/src/panels/CloseoutQueue.tsx",
       "dashboard/src/panels/EmptyStateBackdrop.test.tsx",
       "dashboard/src/panels/EmptyStateBackdrop.tsx",
       "dashboard/src/panels/EngineRoom.test.tsx",
@@ -195,9 +200,7 @@
       "dashboard/src/panels/FlowTab.test.tsx",
       "dashboard/src/panels/FlowTab.tsx",
       "dashboard/src/panels/GateResponder.test.tsx",
-      "dashboard/src/panels/GateResponder.tsx",
-      "dashboard/src/panels/GateResponderText.ts",
-      "dashboard/src/panels/Hangar.test.tsx"
+      "dashboard/src/panels/GateResponder.tsx"
     ],
     "anchorHints": [
       "AgentPickupIndicator.test.tsx",
@@ -212,6 +215,10 @@
       "ChatActivityIndicator.test",
       "ChatActivityIndicator.tsx",
       "ChatActivityIndicator",
+      "CloseoutQueue.test.tsx",
+      "CloseoutQueue.test",
+      "CloseoutQueue.tsx",
+      "CloseoutQueue",
       "EmptyStateBackdrop.test.tsx",
       "EmptyStateBackdrop.test",
       "EmptyStateBackdrop.tsx",
@@ -243,11 +250,7 @@
       "HighlightComposer.tsx",
       "HighlightComposer",
       "LeafAttachPicker.test.tsx",
-      "LeafAttachPicker.test",
-      "LeafAttachPicker.tsx",
-      "LeafAttachPicker",
-      "MemoryMirror.tsx",
-      "MemoryMirror"
+      "LeafAttachPicker.test"
     ]
   },
   "fallback": {

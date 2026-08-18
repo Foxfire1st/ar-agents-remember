@@ -9,8 +9,8 @@ Total output lines: 1813
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-15T14:24+02:00 |
-| lastVerifiedCommitHash | `e460d4c000983d96a3ef6d105a1aeecbb73d5dc5`|
-| lastVerifiedCommitDate | 2026-08-18T13:41:53+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`|
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1155,6 +1155,8 @@ projection schema stays within constraints the TypeScript generator renders exac
 The L4 suites force repository-global surface ownership, organizational versus atomic start, aliases/tags/linked worktrees, configured identity, lowest-writer refusal, bootstrap WAL, queue-lock ordering, task-topology races, exact code-memory CAS and recovery, atomic leaf-chain sealing, terminal child preservation, and preview/apply parity through production owners.
 
 ## Update History
+
+- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
 
 - 2026-08-18T10:30+02:00 — No route impact: 260815-DAG-L7 added the orchestrator portfolio loop; route purpose unchanged.
 

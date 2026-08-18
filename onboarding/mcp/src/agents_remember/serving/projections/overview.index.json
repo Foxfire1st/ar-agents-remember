@@ -18,19 +18,22 @@
     "mcp/src/agents_remember/serving/projections/projection_store.py",
     "mcp/src/agents_remember/serving/projections/snapshots.py",
     "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py",
+    "mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py",
     "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py",
     "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py",
     "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 11,
-    "fileSidecars": 11,
+    "sourceFilesInScope": 12,
+    "fileSidecars": 12,
     "childRoutes": 0
   },
   "routingTerms": [
     "agents",
     "agents_remember",
     "analytics",
+    "closeout",
+    "closeout_queue",
     "common",
     "contract",
     "contract_snapshot",
@@ -47,6 +50,7 @@
     "projection_inputs",
     "projection_store",
     "projections",
+    "queue",
     "remember",
     "runtime",
     "serving",
@@ -72,6 +76,7 @@
       "mcp/src/agents_remember/serving/projections/snapshots.py",
       "mcp/src/agents_remember/serving/projections/snapshots_impl",
       "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py",
+      "mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py",
       "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py",
       "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py",
       "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
@@ -93,6 +98,8 @@
       "snapshots",
       "_analytics.py",
       "_analytics",
+      "_closeout_queue.py",
+      "_closeout_queue",
       "_common.py",
       "_common",
       "_runtime.py",
@@ -109,7 +116,7 @@
       "mcp/src/agents_remember/serving/projections/",
       "mcp/src/agents_remember/serving/projections/overview.md",
       "serving/overview.md",
-      "28a66feae742bf02fe4b647388b220f921cc7007",
+      "2597ff98306ba7c7963005092ac597c4972e63ce",
       "observer/",
       "snapshots_impl/",
       "models/conversations/",
@@ -122,9 +129,7 @@
       "paths.py.md",
       "contract_snapshot.py.md",
       "drift_snapshots.py.md",
-      "landing_state.py.md",
-      "projection_inputs.py.md",
-      "projection_store.py.md"
+      "landing_state.py.md"
     ]
   },
   "fallback": {

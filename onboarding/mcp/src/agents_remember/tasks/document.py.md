@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-15T02:53:40+02:00                        |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce` |
+| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -113,7 +113,7 @@ the escape hatch for bespoke prose; the standard template sections stay the back
 | --- | --- | --- |
 | The renderer consumes this model. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
 | The store reads/writes this model. | `read_task_doc`; `write_task_doc` | mcp/src/agents_remember/tasks/store.py:32-33; mcp/src/agents_remember/tasks/store.py:36-37 |
-| The persisted-contract peer this mirrors. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:608-654 |
+| The persisted-contract peer this mirrors. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:676-728 |
 
 ## L23 Final Candidate Disposition
 
