@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ record, against the one adapter the authority was constructed with (`self._adapt
 rebound — reconnect for Codex/pi replaces the transport under a fixed adapter, and no adapter in
 this tree binds or drops `submit_with_assets` at runtime), so its answer still holds at dispatch.
 A refusal here is clean and terminal — an `unsupported` receipt, the session untouched — whereas
-refusing at dispatch could only produce an `unknown` ambiguity barrier, because by then the
+refusing at dispatch could only produce an `unknown` ambiguity blocker, because by then the
 authority can no longer say whether bytes crossed the wire. Do not add a second capability check
 downstream; add to this one.
 
@@ -74,7 +74,7 @@ now reads as four named steps:
 - `_preflight_declined` — ask the adapter whether it can take the operation; `True` means stand
   down. A preflight sends no operation bytes, so busy/not-yet-connected simply leaves the record
   queued; an adapter that nonetheless claims it may have sent goes to
-  `_unknown_after_preflight_claim`, which installs the ambiguity barrier and flips the snapshot to
+  `_unknown_after_preflight_claim`, which installs the ambiguity blocker and flips the snapshot to
   disconnected/unknown/unknown.
 - `_claim_head_locked` — re-verify under the lock (timeline head, no active operation, still
   queued, same bridge epoch, snapshot still allows dispatch) and mark it `dispatching`. The
@@ -82,7 +82,7 @@ now reads as four named steps:
 - `_send_and_settle` — issue the claimed operation via `_invoke_adapter` and apply what came back.
   Every failure mode turns on what the adapter can certify: busy, or a disconnect proven pre-write,
   requeues safely; a disconnect that may have sent, any other exception, and an incoherent result
-  all install the ambiguity barrier instead of guessing which side of the wire the bytes are on.
+  all install the ambiguity blocker instead of guessing which side of the wire the bytes are on.
 
 Receipt/result application is likewise split into `_verified_prompt_receipt` (read the adapter's
 result as a receipt for exactly this operation, or a control error), `_accept_prompt_locked`,
@@ -237,6 +237,8 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

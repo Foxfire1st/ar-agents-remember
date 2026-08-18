@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -136,7 +136,7 @@ No external repository boundary is implemented by this adapter.
 Pi is dispatch-now under the shared authority and never sends `streamingBehavior` steer/follow-up.
 Fresh state preflight plus generation/activity/event tokens guard prompt and setter writes; the exact
 operation is bound before bytes. Completion requires settled plus fresh idle. Unknown remains the
-active barrier until exact resolution, so native queue state never becomes a second authority.
+active blocker until exact resolution, so native queue state never becomes a second authority.
 
 ## 260731-EFA-L2 Current Delta
 
@@ -149,6 +149,8 @@ alone just moves where the session first misbehaves under load. The default valu
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -96,10 +96,12 @@ The orchestrator recomputes the ready frontier after every material event and re
 evidence, author, confidence, and supersession before a priority/queue judgment changes selection.
 Organizational leaves land directly as released; the last one forms the exact proposed final
 candidate and receives the full master check before super moves. Atomic masters hold an exclusive
-barrier and land only as a completed block. Integration refs are never repair workbenches; fixes
+blocker and land only as a completed block. Integration refs are never repair workbenches; fixes
 return to an owning/reopened or new scoped leaf.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized ready-frontier judgment records,
   organizational/atomic landing, reviewer lineage, and no-workbench repair routing. Verification

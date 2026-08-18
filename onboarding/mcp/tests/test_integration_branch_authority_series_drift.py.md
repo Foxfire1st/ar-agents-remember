@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_integration_branch_authority_series_drift.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T07:46+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -21,7 +21,7 @@ replay/conflict path instead of treating the ambient repository checkout as a wr
 
 ## Code Commentary
 
-The focused regression uses the real configured atomic barrier, series contract, named atomic
+The focused regression uses the real configured atomic blocker, series contract, named atomic
 candidate ref, and lifecycle operation owner. It advances the sprint super after series closeout,
 requests replay, and proves operation creation refuses before a durable journal is written.
 
@@ -42,5 +42,7 @@ requests replay, and proves operation creation refuses before a durable journal 
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-16T07:46+02:00 — 260815-DAG-L4: created by moving the atomic source-drift/replay refusal from `test_integration_branch_authority_edges.py` to keep both discovered modules below the enforced file-size limit without duplication. Verification remains closeout-owned.

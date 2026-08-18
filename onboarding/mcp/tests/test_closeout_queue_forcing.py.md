@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_queue_forcing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ happy-path queue suite could otherwise appear to satisfy without exercising prod
 ### Logic
 
 Tests mutate full route records/evidence bytes, change graph revisions inside the lock window,
-exercise task-tree freeze and atomic-barrier scope, measure the bounded graph helper, reject
+exercise task-tree freeze and atomic-blocker scope, measure the bounded graph helper, reject
 malformed durable states, assert actor-exact legal operations, recover queue and sprint-status WAL
 crash cuts, prove actor provenance plus the writer census are plane-owned, and force the canonical
 task-document identity's runtime bounds without emitting unsupported projection-schema constraints.
@@ -38,7 +38,7 @@ subject of the assertion.
 
 - Evidence equality means byte and canonical-record equality, not summary equality.
 - Graph/task publication races are forced under the same lock used in production.
-- Own-barrier reopen forcing first advances the organizational super, then rebuilds the atomic
+- Own-blocker reopen forcing first advances the organizational super, then rebuilds the atomic
   code and memory source/work pair from that exact tip; own-master success is therefore distinct
   from stale-lineage refusal, while another master remains frozen.
 - State and WAL serialization never reveal raw lifecycle operation keys.
@@ -69,9 +69,11 @@ No meaningful cross-repository reference applies.
 
 ## Update History
 
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
 - 2026-08-16T05:18+02:00 — Dagger fixture repair: the legal-operation projection completes its certified closeout lifecycle before opening integration, preserving the per-contract lease while reaching the intended queue projection state.
 - 2026-08-16T04:06+02:00 — Dagger fixture repair: closeout and integration lifecycle inputs use the QueueFixture workspace configuration rather than a nonexistent coordination-local settings file.
-- 2026-08-16T02:51+02:00 — L4 barrier/lineage repair: rebuilt the owning atomic pair after the
+- 2026-08-16T02:51+02:00 — L4 blocker/lineage repair: rebuilt the owning atomic pair after the
   super advance so the test isolates own-master reopen authority from stale source lineage while
   retaining the other-master refusal.
 

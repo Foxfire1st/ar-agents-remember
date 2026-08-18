@@ -9,8 +9,8 @@ Total output lines: 1813
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-15T14:24+02:00 |
-| lastVerifiedCommitHash | `74b3479b80bbf69c508fc3beff3718118baba9bb`|
-| lastVerifiedCommitDate | 2026-08-18T10:01:50+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1130,14 +1130,14 @@ fallback or a second metrics owner.
 `test_agent_doctrine_plane_identity.py` now forces the planning contract across canonical and all
 nine generated lifecycle planes. It covers architect-owned initial planning, strategist inputs,
 auditable fact-versus-judgment separation, organizational and atomic master classes, direct-super
-ordinary leaves, atomic barrier placement, ready-frontier reprioritization, exact pre-landing
+ordinary leaves, atomic blocker placement, ready-frontier reprioritization, exact pre-landing
 master-exit candidates, leaf-owned remediation, retired-topology wording, and rectangular changed
 templates. The suite also proves every generated mirror is byte-identical to canonical doctrine.
 
 ## 260815-DAG-L3 Closeout Queue Verification
 
 Eleven focused suites cover the queue at complementary altitudes. `test_closeout_queue.py` exercises
-models, authority, deterministic ordering, evidence drift, barriers, bounded state/WAL recovery,
+models, authority, deterministic ordering, evidence drift, blockers, bounded state/WAL recovery,
 scaling, and sprint publication. `test_closeout_queue_models.py` owns the small strict-model cases
 and directly imports both split evidence owners so targeted scope derivation selects queue tests for
 either module. The focused `actions`, `blockers`, `candidate_evidence`, `evidence`, `graph`,
@@ -1156,7 +1156,9 @@ The L4 suites force repository-global surface ownership, organizational versus a
 
 ## Update History
 
-- 2026-08-18T01:24+02:00 — No route impact: 260815-DAG-L6 added `test_acquire_barrier_refuses_stale_super_tips`; the tests route purpose is unchanged.
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
+- 2026-08-18T01:24+02:00 — No route impact: 260815-DAG-L6 added `test_acquire_blocker_refuses_stale_super_tips`; the tests route purpose is unchanged.
 
 - 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added five organizational-completion test modules; the tests route purpose is unchanged.
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-15T09:32+02:00                           |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`       |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -183,12 +183,12 @@ the pinned Dagger executor.
 `tasks.py` now advertises `closeout_queue` beside the task-document and lifecycle-finalization
 surfaces. The published request is deliberately one strict action-discriminated model: status has
 no mutation fields; every mutation carries a stable request id and expected revision; manager
-declaration cannot smuggle a grade; and barrier, admission, grading, selection, and release fields
+declaration cannot smuggle a grade; and blocker, admission, grading, selection, and release fields
 are legal only for their owning action. The ambient structural seat supplies caller authority, so
 no actor, session, lifecycle, operation key, or arbitrary queue id enters the wire contract.
 
 The tool description makes the detection/judgment boundary explicit. It reports recomputed
-mechanical facts and deterministic order, while priority and barrier exceptions must resolve to
+mechanical facts and deterministic order, while priority and blocker exceptions must resolve to
 exact canonical sprint register rows. The same route binds the structured memory-quality
 attestation, whose Markdown report digest and exact source-change dispositions are published only
 by a full contract-scoped `memory_quality_check`. Public registration remains packing plus one
@@ -199,6 +199,8 @@ payload builder; queue logic stays in the application/worktree/control-plane own
 Registered worktree and memory tools expose journaled closeout/integration and read-only conflict/carryover planning while keeping protected writes behind configured authority. Response schemas and next-tool literals match the executable registration surface.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 

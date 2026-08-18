@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_harness_control_conformance_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`                                        |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -33,6 +33,8 @@ First half of the post-restructure harness-control conformance family (260731-EF
 | The shared fake adapter this family imports. | `_FakeAdapter` | mcp/tests/test_harness_control.py:113-287 |
 
 ## Update History
+
+- 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

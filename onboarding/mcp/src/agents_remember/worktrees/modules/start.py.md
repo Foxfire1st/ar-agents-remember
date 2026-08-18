@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-16T05:27+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -244,13 +244,15 @@ super-to-master structural gap; blocked progress is recorded as
 
 Leaf start still restamps the current lifecycle id, but publication now flows through
 `publish_queue_bound_task_facts`. An atomic master's own topology-stable recovery can proceed while
-its barrier is held; another master or an active selected/in-flight lane refuses the task write.
+its blocker is held; another master or an active selected/in-flight lane refuses the task write.
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-16T05:27+02:00 — L4 exact-review repair: factored one start-lineage refusal owner and
   reruns it inside apply's repository-authority lock before memory/worktree mutation, closing the

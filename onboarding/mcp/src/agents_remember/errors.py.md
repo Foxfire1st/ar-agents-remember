@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-08-11T15:20+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                    |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`                    |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `../../overview.md`                   |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ The blocking client uses the new stage evidence; the bridge/queue keep the nativ
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The socket exchange flips `may_have_sent` only after a successful first write and maps post-write response failures accordingly. | `_exchange_control` | mcp/src/agents_remember/serving/harness_control_client.py:534-568 |
-| The ordered dispatcher converts native disconnect evidence into requeued or `unknown` receipts without blind resend: a disconnect certified pre-send requeues the head, a `may_have_sent` disconnect installs the ambiguity barrier instead. `HarnessControlQueue` no longer exists — it was deleted in 260731-EFA-L6 as a pure forwarding facade, so `HarnessSubmissionAuthority` is the sole owner rather than the thing behind a facade. | `_preflight_declined`; `_send_and_settle` | mcp/src/agents_remember/serving/harness_submission_authority.py:637-657; mcp/src/agents_remember/serving/harness_submission_authority.py:700-727 |
+| The ordered dispatcher converts native disconnect evidence into requeued or `unknown` receipts without blind resend: a disconnect certified pre-send requeues the head, a `may_have_sent` disconnect installs the ambiguity blocker instead. `HarnessControlQueue` no longer exists — it was deleted in 260731-EFA-L6 as a pure forwarding facade, so `HarnessSubmissionAuthority` is the sole owner rather than the thing behind a facade. | `_preflight_declined`; `_send_and_settle` | mcp/src/agents_remember/serving/harness_submission_authority.py:637-657; mcp/src/agents_remember/serving/harness_submission_authority.py:700-727 |
 | The route-index census raises the dedicated type after root validation and preserves timeout/OS/path-classification causes: `_untracked_source_candidates` re-raises `lstat` failures, `_require_repository_root` raises `AuthorityError`, and `_run_git` converts `TimeoutExpired`/`OSError` with `from error`. | `_untracked_source_candidates`; `_require_repository_root`; `_run_git` | mcp/src/agents_remember/kernel/route_index_census.py:126-156; mcp/src/agents_remember/kernel/route_index_census.py:159-179; mcp/src/agents_remember/kernel/route_index_census.py:189-205 |
 | The conversation runtime raises `ConversationCompositionError` for missing/duplicate/foreign/missing-member bindings; the resolver raises `AuthorityError` for identity refusals. | "class ConversationRuntime:"; "class LocalOperatorAuthorizationResolver:" | mcp/src/agents_remember/serving/conversation/runtime.py:58-104; mcp/src/agents_remember/serving/conversation/authorization.py:71-107 |
 | `_verify_vendored_vocabulary` raises `TokenizerVocabularyError` for an unknown/absent vendored vocabulary and for a digest mismatch. `vendored_vocabulary_cache` calls that verifier before installing the scoped `TIKTOKEN_CACHE_DIR`, and `TiktokenTokenCounter` enters the cache on the import path. | "def _verify_vendored_vocabulary"; "def vendored_vocabulary_cache"; "class TiktokenTokenCounter" | mcp/src/agents_remember/models/tokens.py:70-70; mcp/src/agents_remember/models/tokens.py:110-110; mcp/src/agents_remember/models/tokens.py:184-184 |
@@ -131,6 +131,8 @@ cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`; "materialization
 outcomes from malformed shared protocol and bridge-fatal transport failure.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-11T15:20+02:00 — Replaced multiply occurring error-class anchors with the two unique
   runtime/resolver declarations whose bodies implement the stated refusals.

@@ -6,8 +6,8 @@
 | path | skills/l-01-agent-lifecycles/roles/strategist.md |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`|
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ No meaningful cross-repo references.
 The strategist is the architect-owned portfolio-plan builder. Initial trust facts come from the
 architect; runtime-reshape facts are supplied by the orchestrator through the architect. The plan
 separates mechanical facts from explicit judgments and classifies each master as organizational or
-atomic. Dependency meaning, blast radius, priority, barrier placement, reprioritization, and leaf
+atomic. Dependency meaning, blast radius, priority, blocker placement, reprioritization, and leaf
 moves enter one canonical Judgment Register with rationale, evidence, author, confidence, and
 supersession. Every relation selected into `executionGraph` cites its owning judgment.
 
@@ -54,6 +54,8 @@ an atomic foundation first, between waves, or last, while a disposable experimen
 the sprint graph.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented architect-owned strategist input,
   fact/judgment separation, auditable graph-edge judgment, and organizational/atomic classification.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-13T12:26+02:00                                       |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`                   |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`                   |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ in order. It states four things the previous text did not:
 - A checkout carrying **no wrapper** runs neither the gate nor those refusals and reaches the
   ordinary commit step's own `git add -A` exactly as it always has.
 
-The barrier wording also narrowed from "before any … mutation" to "before any … commit", which is
+The blocker wording also narrowed from "before any … mutation" to "before any … commit", which is
 the accurate claim now that staging is itself a mutation the gate performs. MUTATING and
 commit-gated: preview and approval precede apply; apply requires `intent_note`.
 
@@ -132,6 +132,8 @@ run: full mode through the pinned Dagger executor.
 
 ## Update History
 
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
 - 2026-08-14T11:25+02:00 — R39 curator: aligned the registered tool description with the
   leaf-no-rerun/master-full boundary. Verification remains closeout-owned.
 - 2026-08-14T05:26Z — L23 final curator: re-anchored the closeout tool descriptions to the
@@ -180,7 +182,7 @@ run: full mode through the pinned Dagger executor.
   (the checkout is the task's own disposable worktree), that the two refusals — code checkout is
   not a task worktree, or has unresolved merge conflicts — guard the staging step and so fire only
   where the gate runs, and that a wrapper-less checkout runs neither and reaches the ordinary
-  commit step's `git add -A` unchanged. The barrier wording also narrowed from "before any …
+  commit step's `git add -A` unchanged. The blocker wording also narrowed from "before any …
   mutation" to "before any … commit", which is the accurate claim now that staging is itself a
   mutation the gate performs; the two reference rows that echoed "quality-before-mutation" were
   reworded to match. Added the docstrings-are-published-contract invariant, line ranges for the

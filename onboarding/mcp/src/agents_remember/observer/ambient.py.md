@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/ambient.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T20:09+02:00                      |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`       |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -88,7 +88,7 @@ precisely so the parked gate stack keeps its strict "only blocked resumes" guard
 `block`/`resume` are unchanged. The `_tool_payload` choke point calls
 `resume_from_await` automatically when any tool other than the turn-end
 notification fires while awaiting (the auto-dismiss that makes the notification a
-*stop*, not a stall), so `awaiting-developer` is a notification, not a barrier.
+*stop*, not a stall), so `awaiting-developer` is a notification, not a blocker.
 The old `lifecycle_gate`/inbox stack is parked (kept, un-hinted).
 
 `emit_tool(tool_name, payload)` is the choke-point hook: under the lock it
@@ -245,6 +245,8 @@ existing seam rather than adding a second one.
 | The design: state machine (§1.2-1.6), v1 event set (§2.2), TTL prune (§1.5), config (§8). | `### 1.2 States and the state machine`; `### 2.2 The v1 kind families (four, plus heartbeat)`; `## 8. Deferred to Implementation Phases` | docs/design/observable-lifecycle.md:40-133; docs/design/observable-lifecycle.md:156-171; docs/design/observable-lifecycle.md:391-402 |
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded the round-13

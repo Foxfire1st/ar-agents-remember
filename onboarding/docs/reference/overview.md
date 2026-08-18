@@ -6,8 +6,8 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 
 ## Purpose
 
@@ -183,6 +183,10 @@ closeout and master integration are the only acceptance owners.
 
 ## Update History
 
+- 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
 - 2026-08-14T11:29+02:00 — R39 curator: reconciled the documentation route with the final
   settings and altitude contract. Verification remains closeout-owned.
 
@@ -202,7 +206,7 @@ closeout and master integration are the only acceptance owners.
   control or duplicate drift-report authority remains.
 
 - 2026-08-10T07:30+02:00 — 260805-ARG-L1: `settings-json.md` now documents default-on completion
-  close, the exact durable report barrier, owner exclusions, landed/archive opt-out, and the
+  close, the exact durable report blocker, owner exclusions, landed/archive opt-out, and the
   cheap-first quality/retry contract.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed the reference route for sprint-bound command

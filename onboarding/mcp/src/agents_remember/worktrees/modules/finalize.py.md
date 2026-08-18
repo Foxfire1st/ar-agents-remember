@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |                                            `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate |                                            2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash |                                            `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
+| lastVerifiedCommitDate |                                            2026-08-18T11:30:22+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -67,9 +67,11 @@ Finalization reports `enclosurePath` for the leaf being finalized and only archi
 
 Leaf/master task-document reconciliation during finalization now publishes through the bound sprint
 queue. Queue refusal returns a structured `task-queue-blocked` result rather than partially updating
-task status beside an active landing lane or atomic barrier.
+task status beside an active landing lane or atomic blocker.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T09:53+02:00 — No content impact: L3's Pyright repair narrows the already-required
   leaf task root before the queue-bound publication callback; finalization ordering and task writes

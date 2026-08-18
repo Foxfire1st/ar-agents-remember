@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -150,7 +150,7 @@ normalization.
 
 The Claude hosted adapter passes full operation refs through prompt, response, model, and effort
 methods and delegates sole-operation preflight to stream state. An unknown setter remains the common
-authority barrier until exact resolution; it is not released merely because a caller timed out.
+authority blocker until exact resolution; it is not released merely because a caller timed out.
 
 ## Native Interrupt Acceptance Delta
 
@@ -175,6 +175,8 @@ another command's echo. The accepted echoes themselves are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
@@ -209,7 +211,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   `verify_effective_launch` validates the natively-succeeding launch instead of refusing it. Verification
   metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented op-aware Claude control and the exact unknown-
-  setter barrier.
+  setter blocker.
 
 - 2026-07-16T07:25+02:00 — 260714-ACPUI-L5 curator: documented adapter wiring through a copied
   discovery launch, native MCP selector normalization, forced transient teardown, token/resource

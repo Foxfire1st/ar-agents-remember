@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -199,7 +199,7 @@ side-effect markers. Their five-row result is a captured install/auth observatio
 
 Claude hosted-control tests now prove sole-operation authority across prompt/interaction/setter
 traffic, exact terminal completion, late/cancel/duplicate immunity, and bounded retained history.
-Unknown setter evidence remains the shared barrier until exact resolution.
+Unknown setter evidence remains the shared blocker until exact resolution.
 
 ## Native Interrupt Acceptance Delta
 
@@ -214,6 +214,8 @@ more than once restores **one** turn, not one per replay. Replay is idempotent p
 duplicated late frame cannot inflate the transcript.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

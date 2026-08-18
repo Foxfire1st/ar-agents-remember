@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -498,7 +498,7 @@ The control plane now includes a bounded canonical `artifacts/closeout-candidate
 and one adjacent pending transaction. `CloseoutQueueStore` uses the common durable-store lock,
 explicitly admits MCP and lifecycle-operation writers, retains at most 128 request receipts, and
 recovers an exact one-revision publication after a crash. The same store lock serializes task-fact
-publication, candidate lane ownership, atomic barriers, and sprint completion/reopen; the WAL is
+publication, candidate lane ownership, atomic blockers, and sprint completion/reopen; the WAL is
 publication scratch and the JSON artifact remains the survival record.
 
 ## 260815-DAG-L4 L4 Serialization Boundary
@@ -506,6 +506,8 @@ publication scratch and the JSON artifact remains the survival record.
 Control-plane storage adds a repository-wide integration-authority lock and composes it after sprint queue authority. Task-fact publication, candidate declaration, series terminal publication, and Git mutation therefore share a fail-closed queue-to-repository order instead of racing check-then-act branch guards.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 

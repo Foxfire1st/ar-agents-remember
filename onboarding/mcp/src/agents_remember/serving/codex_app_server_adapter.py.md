@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ while a real pending change is `queued` for the next fresh `turn/start` on the e
 Each submitted prompt captures its model/effort selection when reserved, so later setters cannot
 rewrite earlier accepted queue work. A pending switch disables steer and queues behind an active
 turn. `turn/start` promotes only `inProgress` or `completed`; `failed`/`interrupted` reject the
-prompt and retain the prior effective selection plus pending fresh-turn barrier. Matching
+prompt and retain the prior effective selection plus pending fresh-turn blocker. Matching
 `thread/settings/updated` is supplementary evidence, while unrelated drift fails loudly.
 Launch-knob ownership, token-free discovery, interactions, events, and bounded reconciliation remain
 on their existing native paths.
@@ -317,6 +317,8 @@ outcomes are unchanged; what changed is that each notification class is now name
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

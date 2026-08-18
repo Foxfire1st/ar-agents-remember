@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -47,6 +47,8 @@ No Domain Documentation source is configured for this repository-local regressio
 No cross-repository implementation source governs this test module.
 
 ## Update History
+
+- 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_terminal_catalog.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

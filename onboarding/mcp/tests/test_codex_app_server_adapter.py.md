@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,7 +35,7 @@ setter keeps the old model/effort even if it starts later, while a prompt accept
 carries the new pair. Pending settings force a fresh turn instead of steering the active turn.
 `inProgress` and `completed` turn-start statuses promote the carried selection; `failed` and
 `interrupted` reject the prompt and leave desired state pending. Reversing desired model and effort
-back to their current effective values clears the fresh-turn barrier rather than manufacturing more
+back to their current effective values clears the fresh-turn blocker rather than manufacturing more
 queued work.
 
 Validation remains catalog-owned: unknown models and effort values outside the desired model's
@@ -106,7 +106,7 @@ kind while skipping the ones emitted on the way there.
 - Prompt selection is captured when the prompt enters the adapter; a later setter cannot
   retroactively change an already accepted busy-queue item.
 - Failed or interrupted turn starts preserve pending desired state, while reversing desired state
-  to the effective pair clears the fresh-turn barrier.
+  to the effective pair clears the fresh-turn blocker.
 - Mid-thread switching never reconnects, resumes, or pastes; it uses `turn/start` overrides on the
   same thread and transport.
 - Existing reconnect coverage requires `resend: false`, and the tests do not register a production
@@ -138,7 +138,7 @@ thread-free discovery contract.
 | Discovery retains a paginated hidden model, sends only initialize/model-list requests, opens no thread or turn, and rejects a repeated cursor while stopping the process. | `test_discover_retains_paginated_hidden_catalog_without_opening_a_thread`; `test_discover_rejects_repeated_model_cursor_without_opening_a_thread` | mcp/tests/test_codex_app_server_adapter_basic.py:113-159; mcp/tests/test_codex_app_server_adapter_basic.py:162-177 |
 | Model and effort changes remain queued until one same-thread turn accepts their exact override, with no reconnect or resume. | `test_set_model_and_effort_stay_pending_until_same_thread_turn_accepts` | mcp/tests/test_codex_app_server_adapter_turns.py:78-114 |
 | Turn statuses promote only `inProgress`/`completed`; failed/interrupted starts reject and retain the fresh-turn requirement. | `test_turn_start_promotes_only_successful_submission_status`; `test_turn_acceptance_blocking_and_terminal_mapping` | mcp/tests/test_codex_app_server_adapter_turns.py:23-57; mcp/tests/test_codex_app_server_adapter_turns.py:117-156 |
-| Busy-queue prompts preserve their acceptance-time selection epoch, and reversing pending settings back to effective clears the barrier. | `test_busy_second_submit_certifies_zero_bytes_without_steer_or_adapter_queue`; `test_reversing_pending_codex_settings_clears_fresh_turn_barrier` | mcp/tests/test_codex_app_server_adapter_correlation.py:231-257; mcp/tests/test_codex_app_server_adapter_turns.py:60-75 |
+| Busy-queue prompts preserve their acceptance-time selection epoch, and reversing pending settings back to effective clears the blocker. | `test_busy_second_submit_certifies_zero_bytes_without_steer_or_adapter_queue`; `test_reversing_pending_codex_settings_clears_fresh_turn_blocker` | mcp/tests/test_codex_app_server_adapter_correlation.py:231-257; mcp/tests/test_codex_app_server_adapter_turns.py:60-75 |
 | Unknown model/model-local effort values cause no RPC; pending settings force a fresh turn rather than steer; deliberate notification matching and external-drift rejection stay distinct. | `test_codex_set_rejects_unadvertised_model_and_model_local_effort_without_rpc`; `test_pending_codex_settings_force_fresh_turn_instead_of_steering_active_turn`; `test_settings_notification_promotes_only_deliberate_match_and_keeps_drift_guard` | mcp/tests/test_codex_app_server_adapter_correlation.py:260-282; mcp/tests/test_codex_app_server_adapter_correlation.py:285-306; mcp/tests/test_codex_app_server_adapter_correlation.py:309-360 |
 | Idempotent setters return immediate without falsely claiming an effective echo. | `test_idempotent_codex_set_is_immediate_without_invented_effective_evidence` | mcp/tests/test_codex_app_server_adapter_reconnect.py:27-40 |
 | The experimental-request case pins the decline-not-fail remediation contract. | `test_unknown_server_request_is_declined_while_experimental_history_stays_enabled` | mcp/tests/test_codex_app_server_adapter_reconnect.py:166-203 |
@@ -174,6 +174,8 @@ declined/degraded. It does not infer that any history method exists or that expe
 requests are accepted; the dedicated history-reader tests own runtime method probing.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
