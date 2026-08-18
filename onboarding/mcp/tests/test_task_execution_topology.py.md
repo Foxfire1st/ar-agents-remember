@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,8 +51,15 @@ the new application module attached to this existing behavioral topology suite.
 | --- | --- | --- |
 | Graph schema cases force the closed structural contract. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:53-104 |
 | Migration and cross-document cases force exact membership, projection, and rollback. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:107-317 |
-| Cross-root publication failure restores canonical task documents and leaves no queue state or pending WAL. | `test_migration_refuses_non_exact_membership_and_rolls_back_cross_root_failure` | mcp/tests/test_task_execution_topology.py:646-692 |
+| Inventory cases force branch-backed atomic classification, empty-tree counts, and branch-enumeration refusal. | `test_inventory_enumerates_sprints_and_proposes_branch_backed_nature` | mcp/tests/test_task_execution_topology.py:205-268 |
+| Cross-root publication failure restores canonical task documents and leaves no queue state or pending WAL. | `test_migration_refuses_non_exact_membership_and_rolls_back_cross_root_failure` | mcp/tests/test_task_execution_topology.py:702-748 |
 | The production policy under test lives in the application topology module. | `migrate_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:67-129 |
+
+## 260815-DAG-L9 Inventory Forcing
+
+Three new cases force `inventory_execution_topology`: the branch-backed atomic classification
+(`ar/<slug>` present → atomic, absent → organizational), the zero-count empty task tree, and
+the refusal when `run_git branch` enumeration fails.
 
 ## 260815-DAG-L4 Integration-Authority Forcing
 
@@ -60,6 +67,9 @@ This task extends this suite's production-bound fixtures or assertions for task-
 
 ## Update History
 
+- 2026-08-18T12:00:00+00:00 — 260815-DAG-L9: added three `inventory_execution_topology` forcing cases
+  (branch-backed atomic, empty tree, branch-enumeration refusal); verification remains
+  closeout-owned.
 - 2026-08-16T04:06+02:00 — Dagger fixture repair: topology downgrade explicitly clears the sprint integration branch together with orchestration and graph facts.
 - 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 

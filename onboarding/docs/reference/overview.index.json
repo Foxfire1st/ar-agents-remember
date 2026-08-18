@@ -10,6 +10,7 @@
   ],
   "childRoutes": [],
   "coveredFiles": [
+    "docs/reference/execution-topology-migration.md",
     "docs/reference/harnesses.md",
     "docs/reference/mcp-tools.md",
     "docs/reference/settings-json.md",
@@ -17,29 +18,35 @@
   ],
   "coverageCounts": {
     "sourceFilesInScope": 0,
-    "fileSidecars": 4,
+    "fileSidecars": 5,
     "childRoutes": 0
   },
   "routingTerms": [
     "docs",
+    "execution",
     "harnesses",
     "json",
     "mcp",
+    "migration",
     "reference",
     "settings",
     "skills",
-    "tools"
+    "tools",
+    "topology"
   ],
   "hotPath": {
     "summary": "The current orchestration references describe free chat as the launcher and architect/orchestrator/manager as sprint-bound command seats. Any unbound command-seat wording is limited to migration compatibility; runtime identity and custody come from persisted repository+sprint provenance. For native launch and control questions, read `harnesses.md` for the dynamic catalog, model-gated effort, duplicate-selector refusal, distinct Claude startup evidence sources, and the Claude/Codex/Pi launch/set matrix; read `settings-json.md` for the complete `roles.<role>` / `rolesPerLevel` model-and-effor...",
     "candidateHints": [
       "docs/reference",
+      "docs/reference/execution-topology-migration.md",
       "docs/reference/harnesses.md",
       "docs/reference/mcp-tools.md",
       "docs/reference/settings-json.md",
       "docs/reference/skills.md"
     ],
     "anchorHints": [
+      "execution-topology-migration.md",
+      "execution-topology-migration",
       "harnesses.md",
       "harnesses",
       "mcp-tools.md",
@@ -50,7 +57,7 @@
       "skills",
       "roles.<role>",
       "rolesPerLevel",
-      "25841d0ddc2d93c4950abf097168fa24b220c5ad",
+      "e41ea31d6df3e35a92f526edef8420ae9bd56c57",
       "orchestration.agentNotifier",
       "orchestration.supervisor",
       "landed",
@@ -85,9 +92,7 @@
       "onboardingRoot",
       "--contract",
       "worktree_cleanup",
-      "lifecycle_finalize_task",
-      "task_doc",
-      "task_reopen"
+      "lifecycle_finalize_task"
     ]
   },
   "fallback": {

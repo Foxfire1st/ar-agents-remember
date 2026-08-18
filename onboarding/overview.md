@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce` |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 
 > **Status:** active baseline
 
@@ -1141,6 +1141,7 @@ L4 turns repository defaults, sprint supers, and active atomic-series refs into 
 
 ## Update History
 
+- 2026-08-18T12:00:00+00:00 — No route impact: 260815-DAG-L9 added the read-only execution-topology migration inventory and the operator migration/rollback reference; the repository overview purpose is unchanged.
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added the organizational direct-super topology across the worktree integration path; the repository overview purpose is unchanged.

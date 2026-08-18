@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-15T11:25+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -271,6 +271,7 @@ Application tools now bind lifecycle requests to configured coordination, task, 
 
 ## Update History
 
+- 2026-08-18T12:00:00+00:00 — No route impact: L9 adds `inventory_execution_topology` (read-only pre-migration enumeration) to `task_execution_topology.py`; the application-route model is unchanged.
 - 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
 
 - 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 extended the lifecycle-operation worker with repair evidence; the application-layer purpose is unchanged.
