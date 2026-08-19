@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |  `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
-| lastVerifiedCommitDate |  2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-19T04:05+02:00 |
+| lastVerifiedCommitHash |  `e41ea31d6df3e35a92f526edef8420ae9bd56c57`|
+| lastVerifiedCommitDate |  2026-08-18T19:37:20+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -100,6 +100,12 @@ launching beside an orphaned old worker.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-19T04:05+02:00 — No content impact: 260815-DAG-L10 re-pointed the internal
+  `_require_configured_task_identity` series worktree-group equality check at
+  `worktree_group_for(...)`; this card never documented that internal predicate, and the
+  task-addressed start/observe/cancel behavior it describes is unchanged. Verification metadata
+  stamped at the landed code commit `e41ea31d`.
 
 - 2026-08-17T12:30+02:00 — 260815-DAG-L5: extracted `operation_state_fingerprint` to `lifecycle_operation_identity.py` and wired the failed final-leaf cancel/reset repair through `prepare_organizational_completion_repair`. Verification remains closeout-owned.
 

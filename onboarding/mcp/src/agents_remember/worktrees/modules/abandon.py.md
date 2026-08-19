@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:52+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated            | 2026-08-19T04:05+02:00 |
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`                |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -43,8 +43,13 @@ exist, the contract is not marked `cleanup="abandoned"` and the state is
 `"abandon-blocked"`. On a clean run the contract is stamped and state is
 `"abandoned"`. Dry-run yields `"would-abandon"`.
 
-Non-force abandon removes the reserved enclosure `reports/` tree before its empty-group check, so
-the operational curator checklist cannot keep an otherwise reclaimable enclosure alive. Force
+Non-force abandon removes the reserved `<worktree_group>/reports` tree before its empty-group check, so
+the operational curator checklist cannot keep an otherwise reclaimable enclosure alive. Since
+260815-DAG-L10 a series contract's reports tree is the master worktree group's `reports/`
+(holding the series operation record/log, citation source-index cache, and Dagger test sandbox),
+preserved only when `legacy_series_reports_is_child_enclosure` proves a legacy series contract
+(group still recorded as the task enclosure root) shares that path with a child leaf named
+`reports`. Force
 abandon already removes the complete worktree group and therefore reclaims the same report without
 a second deletion path.
 
@@ -65,8 +70,10 @@ is unchanged.
   the contract is stamped as abandoned only when no blockers remain.
 - Provider teardown runs before worktree/branch removal so the provider stack
   is reclaimed even when Git operations subsequently fail.
-- The only report tree this module removes independently is the exact current enclosure's
-  `reports/` child; force mode removes it only as part of that same enclosure group.
+- The only report tree this module removes independently is the contract's
+  `<worktree_group>/reports` tree — for a series contract since 260815-DAG-L10 that is the master
+  worktree group's reports (`worktrees/<repo>/<master>-ar/reports`), not a task-enclosure child;
+  force mode removes it only as part of that same group.
 - The contract `cleanup` field is set to `"abandoned"` on success; this value
   causes a subsequent `start` call to recreate rather than reattach. `"abandoned"` is a member of
   `worktree_contract.CleanupStatus`, and the write must go through `ContractCells` /
@@ -92,6 +99,7 @@ No external Domain Documentation source is configured for this memory repo.
 | `WorktreeArgs` types the abandon input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:20-82 |
 | The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:151-151 |
 | Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | `test_no_force_refuses_unmerged_and_reports_commits`; `test_force_discards_unmerged_branch`; `test_unmerged_branch_and_dirty_worktree_are_blockers`; `test_dry_run_lists_resources_without_touching_docker_or_disk` | mcp/tests/test_worktree_abandon.py:137-157; mcp/tests/test_worktree_abandon.py:201-236 |
+| Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
 | `CleanupStatus` (declared in models/worktree.py), `ContractCells`, and `amend_contract` are the vocabulary and typed write used by the `abandoned` stamp. | "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
 
 ## 260815-DAG-L4 Integration-Authority Impact
@@ -102,6 +110,11 @@ For an atomic series, `abandon_result` performs the read-only queue-release/chil
 
 ## Update History
 
+- 2026-08-19T04:05+02:00 — 260815-DAG-L10 curator: the independent reports sweep now targets the
+  contract's `<worktree_group>/reports` tree, which for a series contract is the master worktree
+  group's reports (not a task-enclosure child); preservation is narrowed to legacy series
+  contracts through the renamed `legacy_series_reports_is_child_enclosure` guard. Verification
+  metadata stamped at the landed code commit `e41ea31d`.
 - 2026-08-16T00:45+02:00 — Recorded the explicit atomic-series queue-release preflight and expiring publication permit after the Dagger import-cycle repair. Verification remains closeout-owned.
 - 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

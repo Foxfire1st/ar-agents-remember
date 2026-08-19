@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-15T09:10+02:00 |
+| lastUpdated | 2026-08-19T04:20+02:00 |
 | lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
 | lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 
@@ -1141,6 +1141,7 @@ L4 turns repository defaults, sprint supers, and active atomic-series refs into 
 
 ## Update History
 
+- 2026-08-19T04:20+02:00 — No route impact: 260815-DAG-L10 moved series closeout reports (operation log, citation source-index cache, Dagger test sandbox) from the task enclosures root to the master worktree group `worktrees/<repo>/<master>-ar`; the repository overview purpose is unchanged.
 - 2026-08-18T12:00:00+00:00 — No route impact: 260815-DAG-L9 added the read-only execution-topology migration inventory and the operator migration/rollback reference; the repository overview purpose is unchanged.
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

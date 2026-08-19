@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l4_terminal_and_series_gap_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T08:12+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T04:05+02:00 |
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -35,13 +35,20 @@ atomic task completion, dirty integration checkouts, and external-memory ledger 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite owns rare terminal and atomic-series refusal branches. | `TerminalChildCensusCoverageTests`; `AtomicSeriesAuthorityCoverageTests` | mcp/tests/test_l4_terminal_and_series_gap_coverage.py:21-135; mcp/tests/test_l4_terminal_and_series_gap_coverage.py:138-426 |
+| The suite owns rare terminal and atomic-series refusal branches. | `TerminalChildCensusCoverageTests`; `AtomicSeriesAuthorityCoverageTests` | mcp/tests/test_l4_terminal_and_series_gap_coverage.py:21-127; mcp/tests/test_l4_terminal_and_series_gap_coverage.py:130-418 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-19T04:05+02:00 — No content impact: 260815-DAG-L10 updated expectations to the new
+  series worktree-group check (the refusal now matches "worktree group"; the missing/empty
+  enclosure cases replace only `task_root` and keep the group valid). The documented terminal and
+  atomic-series coverage is unchanged; the class-range citation was re-pointed to the shifted
+  spans (`21-127`; `130-418`). Verification metadata stamped at the landed code commit
+  `e41ea31d`.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/fixtures/build_rich_sim.py`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T09:05+02:00                           |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-19T04:05+02:00                           |
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`       |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -106,6 +106,12 @@ emits a task-document `"kind": "master"`, which is the doc schema's vocabulary, 
 The rich simulator now fabricates root `kind="series"` contracts and leaf enclosure contracts separately, so generated dashboard data exercises the integration-branch/root-task split.
 
 ## Update History
+
+- 2026-08-19T04:05+02:00 — No content impact: 260815-DAG-L10 simplified
+  `ContractSite.worktree_group` to return `group_root` unconditionally, matching the production
+  series worktree-group location; this card lists the property without claiming the old series
+  `task_root/enclosures` mapping, so no prose change was needed. Verification metadata stamped at
+  the landed code commit `e41ea31d`.
 
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 11 citation findings and corrected
   five stale line refs. Re-anchored the four reference rows (`load_contract`, `TaskDocument`, `Event`,

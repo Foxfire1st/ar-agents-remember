@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start_contract.py` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-01T10:45+02:00                                       |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                   |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated            | 2026-08-19T04:05+02:00                                       |
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`                   |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -124,6 +124,10 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 
 ## Update History
 
+- 2026-08-19T04:05+02:00 — No content impact: 260815-DAG-L10 re-pointed the internal
+  `_same_master_task_edge` idempotence comparison at `worktree_group_for(...)`; the contract
+  construction and refusal-conversion behavior this card documents is unchanged. Verification
+  metadata stamped at the landed code commit `e41ea31d`.
 - 2026-08-16T06:15+02:00 — No behavior change: split task-derived source selection and exact code/external-memory base reads out of `_build_start_contract`; the builder retains one canonical construction path and no compatibility fallback.
 - 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 - 2026-08-14T06:36+02:00 — L23 final candidate review: contract preparation derives canonical
