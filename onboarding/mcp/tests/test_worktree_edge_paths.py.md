@@ -56,7 +56,7 @@ catches `ContractError`, so an escaping raise would surface as a traceback inste
 result the agent can read and correct. It patches `start_contract_module._build_start_contract`
 with a `side_effect`, since the refusal is the subject and reaching it for real would mean standing
 up a git repository to test an argument check. The production half is `build_start_contract`'s
-`except ContractError -> invalid_contract_request_result` cit:([`build_start_contract`], mcp/src/agents_remember/worktrees/modules/start_contract.py:826-845) and cit:([`invalid_contract_request_result`], mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53).
+`except ContractError -> invalid_contract_request_result` cit:([`build_start_contract`], mcp/src/agents_remember/worktrees/modules/start_contract.py:934-954) and cit:([`invalid_contract_request_result`], mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53).
 
 The refusal now covers `workflow_kind` too — the message the fixture uses,
 `"workflow_kind must be one of ['chat-task', 'light-task']"`, is the shape `_task_vocabulary`
@@ -97,7 +97,7 @@ leaves `memory_mode` external, and a plain `{"state": "ready"}` returns the *ide
 | --- | --- | --- |
 | The construction refusal rejects unknown workflow and memory values through `_task_vocabulary`. | `_task_vocabulary` | mcp/src/agents_remember/worktrees/worktree_contract.py:161-178 |
 | `WorkflowKind` limits workflow selection to `chat-task` and `light-task` (declared in models/worktree.py since L9). | "WorkflowKind = Literal[" | mcp/src/agents_remember/models/worktree.py:14-14 |
-| `build_start_contract` catches `ContractError` and `LeafRefResolutionError` so neither leaves the tool handler. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:826-845 |
+| `build_start_contract` catches `ContractError` and `LeafRefResolutionError` so neither leaves the tool handler. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/start_contract.py:934-954 |
 | `_contract_after_memory_start` is the memory-disabled/reconciled recovery. | `_contract_after_memory_start` | mcp/src/agents_remember/worktrees/modules/start.py:161-183 |
 | `invalid_contract_request_result` returns the `exit 2` / `state: invalid-request` payload for a refusal. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
 | The happy-path lifecycle suites these guards sit beside. | `WorktreeSupportTests`; `WorktreeSyncTests`; `ContractLifecycleAnchorTests` | mcp/tests/test_worktree_contract_lifecycle.py:51-81; mcp/tests/test_worktree_support.py:767-842; mcp/tests/test_worktree_sync.py:111-244 |
@@ -116,6 +116,8 @@ ownership.
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 moved `build_start_contract` within `start_contract.py`; re-pointed both citations to `start_contract.py:934-954`. Verification metadata unchanged.
 
 - 2026-08-19T04:05+02:00 — 260815-DAG-L10 curator: added the new `SeriesWorktreeGroupLocationTests`
   (mcp/tests/test_worktree_edge_paths.py:202-276) to the Classes table; it pins the series

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l4_terminal_and_series_gap_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T04:05+02:00 |
-| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
-| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,8 @@ atomic task completion, dirty integration checkouts, and external-memory ledger 
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 extended topology mocks with the resolve/parent seams the effective-nature resolution consumes; documented gap coverage is unchanged. Verification remains closeout-owned.
 
 - 2026-08-19T04:05+02:00 — No content impact: 260815-DAG-L10 updated expectations to the new
   series worktree-group check (the refusal now matches "worktree group"; the missing/empty

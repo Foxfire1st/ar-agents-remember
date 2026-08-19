@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/closeout_queue_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,8 @@
 ## Purpose
 
 Parses and binds the structured curator readiness artifacts and canonical sprint Judgment/Priority
-Registers consumed by the closeout queue.
+Registers consumed by the closeout queue, and — since 260815-DAG-L13 — owns the canonical register
+scaffold and write-time shape validation.
 
 ## Code Commentary
 
@@ -30,6 +31,14 @@ and outer-pipe row grammar; it matches exact subjects and categorical values,
 restricts authors to strategist/orchestrator, hashes the exact rows, and digests every task-local
 evidence file. Atomic blocker aborts require their own exact canonical judgment. Current curator
 evidence comparison stays with this parser and emits the single stable stale-readiness blocker.
+
+Since L13, `planning_authorities` takes a `strict` flag: mutations raise on a malformed register
+while the read path (L13-R4) parses tolerantly so the projection still reports.
+`register_section_facts` carries the per-register read fact — `absent`, `ok`, or
+`malformed: <detail>` — without ever raising. `register_scaffold_sections` plus
+`empty_register_table` produce the empty canonical Judgment/Priority Register sections that sprint
+creation scaffolds (L13-R6), and `require_register_sections_valid` is the write-time gate applied
+by `task_doc` create/replace/set_section so a malformed register can never persist.
 
 ### Conventions
 
@@ -44,6 +53,8 @@ grade assertion, while durable authority is resolved from the sprint artifact.
 - Markdown separators require one contiguous run of at least three hyphens with optional edge
   colons; exact decision maps refuse surplus scheduling signals.
 - Workers/managers cannot author scheduling grades or blocker-abort judgments.
+- Register reads are tolerant facts; register writes are strict — a malformed register-heading
+  section fails the task-document write.
 
 ### Todos
 
@@ -57,18 +68,25 @@ No configured Domain Documentation source applies; authority is the repository's
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Curator readiness binds structured zero counts, rendered bytes, and exact dispositions. | `curator_evidence` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:123-193 |
-| Candidate-boundary comparison reuses the canonical curator parser and exact evidence list. | `curator_evidence_blockers` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:192-204 |
-| Grade resolution requires exact Priority and Judgment Register agreement plus evidence digests. | `canonical_grade` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:256-311 |
-| Only a canonical strategist/orchestrator judgment can abort an atomic blocker. | `canonical_blocker_abort` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:350-373 |
-| Register parsing starts from the canonical planning sections. | `planning_authorities` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:407-420 |
-| Scheduling registers require the exact canonical header, rectangular separator, outer pipes, and row width. | `_table_rows` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:485-533 |
+| Curator readiness binds structured zero counts, rendered bytes, and exact dispositions. | `curator_evidence` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:149-195 |
+| Candidate-boundary comparison reuses the canonical curator parser and exact evidence list. | `curator_evidence_blockers` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:197-210 |
+| Grade resolution requires exact Priority and Judgment Register agreement plus evidence digests. | `canonical_grade` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:297-353 |
+| Only a canonical strategist/orchestrator judgment can abort an atomic blocker. | `canonical_blocker_abort` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:355-379 |
+| Register parsing splits strict mutation reads from tolerant read-path facts. | `planning_authorities`; `register_section_facts` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:412-466 |
+| The write-time register-shape gate and the sprint-creation scaffold. | `require_register_sections_valid`; `register_scaffold_sections` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:468-512 |
+| Scheduling registers require the exact canonical header, rectangular separator, outer pipes, and row width. | `_table_rows` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:576-625 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: `planning_authorities` gained the strict flag
+  (mutations strict, reads tolerant), `register_section_facts` reports absent/ok/malformed per
+  register without raising, and `register_scaffold_sections`/`require_register_sections_valid` own
+  the sprint-creation scaffold and the write-time register-shape gate (L13-R6). Verification
+  remains closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

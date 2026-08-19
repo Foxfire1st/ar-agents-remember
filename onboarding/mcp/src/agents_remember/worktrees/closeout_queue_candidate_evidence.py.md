@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/closeout_queue_candidate_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T04:05+02:00 |
-| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
-| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -56,11 +56,11 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Route review binds the full record plus every verdict/evidence file digest. | `route_review_fact` | mcp/src/agents_remember/worktrees/closeout_queue_candidate_evidence.py:90-111 |
-| Route-review comparison preserves malformed-record detail and distinguishes it from a stale exact fact. | `route_review_blockers` | mcp/src/agents_remember/worktrees/closeout_queue_candidate_evidence.py:114-129 |
-| Source bases are revalidated against transitive and immediate source lineage. | `require_source_bases_current` | mcp/src/agents_remember/worktrees/closeout_queue_candidate_evidence.py:132-157 |
-| External memory resolves the exact code-base ledger edge. | `ledger_mapping` | mcp/src/agents_remember/worktrees/closeout_queue_candidate_evidence.py:160-175 |
-| Atomic completion proves the finalized series commits and ledger edge landed on current source refs. | `require_atomic_master_landed` | mcp/src/agents_remember/worktrees/closeout_queue_candidate_evidence.py:207-246 |
+| Route review binds the full record plus every verdict/evidence file digest. | `route_review_fact` | mcp/src/agents_remember/worktrees/closeout_queue_candidate_evidence.py:94-116 |
+| Route-review comparison preserves malformed-record detail and distinguishes it from a stale exact fact. | `route_review_blockers` | mcp/src/agents_remember/worktrees/closeout_queue_candidate_evidence.py:118-134 |
+| Source bases are revalidated against transitive and immediate source lineage; a stale base refuses with `worktree_sync` named as the recovery (260815-DAG-L13-R2). | `require_source_bases_current` | mcp/src/agents_remember/worktrees/closeout_queue_candidate_evidence.py:136-169 |
+| External memory resolves the exact code-base ledger edge. | `ledger_mapping` | mcp/src/agents_remember/worktrees/closeout_queue_candidate_evidence.py:171-187 |
+| Atomic completion proves the finalized series commits and ledger edge landed on current source refs. | `require_atomic_master_landed` | mcp/src/agents_remember/worktrees/closeout_queue_candidate_evidence.py:218-258 |
 
 ## Cross-Repo References
 
@@ -71,6 +71,10 @@ No meaningful cross-repository reference applies.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: `require_source_bases_current` refusals now name
+  `worktree_sync` as the recovery (sync-first admission, L13-R2); the base-mismatch statuses and
+  lineage proof are unchanged. Verification remains closeout-owned.
 
 - 2026-08-19T04:05+02:00 — No content impact: 260815-DAG-L10 re-pointed the internal
   `_atomic_contract_matches_master` worktree-group equality check at `worktree_group_for(...)`;

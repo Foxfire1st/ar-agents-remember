@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start_contract.py` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-19T04:05+02:00                                       |
-| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`                   |
-| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
+| lastUpdated            | 2026-08-19T22:32+02:00                                       |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`                   |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -88,6 +88,21 @@ rather than the current memory checkout. Existing `task.json` master artifacts a
 Standalone/light tasks are accepted through the same start builder because `leaf_ref_start` delegates to
 the shared resolver, which indexes non-master `task.json` docs as leaf candidates.
 
+**Atomic-sequential lane (260815-DAG-L13).** Series bootstrap now gates on the *effective* execution
+nature: `_master_execution_nature` reads the declared cell without raising on a nature-less legacy
+master, and `effective_execution_nature` (from `worktrees/scheduling_mode.py`) resolves it — a
+nature-less master is atomic by default, and under a graph-less commanding sprint every commanded
+master executes atomically. When the sprint runs the atomic-sequential default and another commanded
+master's series contract still owns the landing lane (a stored, non-terminal cleanup fact),
+`ensure_master_series_contract` returns a blocked `WorktreeCommandResult` (state
+`sequential-lane-owned`) naming the lane owner and the legal next operations instead of starting; the
+block fails closed — an unresolvable commanding sprint propagates the typed refusal rather than
+guessing the lane is free. Organizational semantics exist only under an authored graph
+(`_is_graph_organizational`): an organizational-declared master on a graph-less sprint lands through
+the atomic series lane, and a terminal series artifact under it (cleanup completed/abandoned/reopened)
+is ignored and reported as a `staleSeriesArtifact` fact by the start result rather than refusing.
+A blocked bootstrap result propagates out of `_build_start_contract` unchanged.
+
 ### Invariants And Boundaries
 
 - `start.py` is now only the orchestration caller for contract construction; leaf-ref policy lives in
@@ -106,11 +121,15 @@ the shared resolver, which indexes non-master `task.json` docs as leaf candidate
   distinguishes the two paths.
 - Worktree-start contracts persist doc ids, not legacy file stems.
 - Malformed task documents fail loudly during parent-series detection.
+- Under the atomic-sequential default at most one commanded master is in flight; a second series
+  bootstrap returns the blocked `sequential-lane-owned` result (lane owner plus legal next
+  operations) instead of starting or hard-refusing.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| The atomic-sequential lane block names the owning master and legal next operations. | `_sequential_lane_block` | mcp/src/agents_remember/worktrees/modules/start_contract.py:269-312 |
 | Shared leaf-ref validation and candidate reporting. | `LeafRefResolutionError`; `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Start-side conversion from leaf-ref resolution errors and contract-construction errors into command results. | `invalid_leaf_ref_result`; `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:26-35; mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
 | The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:414-425 |
@@ -123,6 +142,13 @@ the shared resolver, which indexes non-master `task.json` docs as leaf candidate
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: series bootstrap gates on the effective execution
+  nature (nature-less legacy masters resolve atomic), the atomic-sequential lane block returns a
+  `sequential-lane-owned` blocked result naming the owner and legal next operations (fails closed
+  on resolution errors), organizational semantics apply only under an authored graph, and terminal
+  series artifacts are ignored with a `staleSeriesArtifact` fact. Verification remains
+  closeout-owned.
 
 - 2026-08-19T04:05+02:00 — No content impact: 260815-DAG-L10 re-pointed the internal
   `_same_master_task_edge` idempotence comparison at `worktree_group_for(...)`; the contract

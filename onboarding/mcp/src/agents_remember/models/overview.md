@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated            | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`|
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -385,7 +385,10 @@ exact evidence facts, candidate state machine, atomic blocker, bounded canonical
 ready/waiting/blocked/in-flight response projection. Every persisted/public text and collection is
 bounded, impossible state/owner/commit combinations fail validation, external memory requires exact
 evidence while internal/disabled use a typed not-applicable state, and only a one-way lifecycle
-owner fingerprint reaches durable state. Shared `TaskDocumentRef` values enforce their repository
+owner fingerprint reaches durable state. Since 260815-DAG-L13 `LANE_OCCUPYING_STATES` narrows the
+landing lane to selected/closeout-in-flight/integration-in-flight candidates (a certified candidate
+no longer occupies it), and the response carries the scheduling readout fields (`mode`,
+`registers`, `laneOwner`, `legalNextOperations`, `acquisitionFacts`). Shared `TaskDocumentRef` values enforce their repository
 and path bounds after canonical normalization, avoiding JSON Schema constraints that the generated
 TypeScript projection could not express truthfully.
 
@@ -394,6 +397,11 @@ TypeScript projection could not express truthfully.
 Worktree, closeout-queue, and task projections now distinguish organizational direct-super lineage from atomic series lineage and carry exact configured repository, ref, candidate, recovery, and conflict-transaction facts required by the mutation plane.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `models/closeout_queue.py` gained
+  `LANE_OCCUPYING_STATES` and the queue response readout fields (`mode`, `registers`, `laneOwner`,
+  `legalNextOperations`, `acquisitionFacts`); the models-route purpose is unchanged. Verification
+  remains closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

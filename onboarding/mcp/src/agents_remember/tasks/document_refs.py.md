@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/tasks/document_refs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T08:55+02:00 |
-| lastVerifiedCommitHash |  `f2e2f4b9c18d89cc0f5c901f43831e014701aae0`|
-| lastVerifiedCommitDate |  2026-08-19T11:32:36+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash |  `b523f53b193e9783e7c7e6410c772e7d64d8df17`|
+| lastVerifiedCommitDate |  2026-08-19T21:54:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,9 +30,15 @@ checks level and containment, and walks leaf→master→sprint without synthesiz
 
 For execution topology, `validate_execution_topology` resolves every sprint `orchestrates` alias to
 exactly one commanded master, requires graph *master* membership (`graph.master_refs()`) to equal
-that resolved set, refuses a missing graph or nature as migration-required, and — since
+that resolved set, refuses a missing graph or nature as migration-required — since 260815-DAG-L13
+the refusal names the `task_doc.author_execution_graph` bootstrap/`set_nature` seam rather than a
+removed migration operation — and — since
 260815-DAG-L11 — refuses a segment node on an `atomic`-nature master (atomic masters admit lump
-nodes only). Candidate overrides let task-doc authoring validate before publication.
+nodes only). Candidate overrides let task-doc authoring validate before publication. Since
+260815-DAG-L13 a nature-less standalone master resolves at master altitude by default
+(L13-R5e — only an explicit `organizational` standalone master stays a dead-end), and the public
+`commanded_masters` derives a sprint's exact alias-commanded masters without re-resolving the
+sprint from disk, so unpublished candidate sprints work.
 `execution_leaf_placement` returns each commanded master's live leaf-to-segment `LeafPlacement`
 (`MasterLeafPlacement`): computed against the master's live `subTasks` rows, so a leaf set that
 changed after graph authoring surfaces as unknown/unplaced facts on read paths; only the
@@ -69,7 +75,7 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Task document topology is centralized in one typed resolver. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:61-480 |
+| Task document topology is centralized in one typed resolver. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:62-558 |
 | Structural seats consume this topology to qualify parent and child relations. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:22-160 |
 
 ## Cross-Repo References
@@ -83,6 +89,12 @@ inside agents-remember and has no sibling-repository code dependency.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: a nature-less standalone master resolves at master
+  altitude by default (only an explicit `organizational` standalone stays a dead-end); migration
+  recovery strings re-point to `task_doc.author_execution_graph`; `commanded_masters` is public so
+  the atomic-sequential default derives membership from aliases without re-resolving the sprint.
+  Verification remains closeout-owned.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: topology validation compares resolved command membership
   against `graph.master_refs()`, refuses segment nodes on atomic masters, and gains

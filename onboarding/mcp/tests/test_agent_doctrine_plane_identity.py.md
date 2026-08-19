@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agent_doctrine_plane_identity.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash |  `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
-| lastVerifiedCommitDate |  2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash |  `b523f53b193e9783e7c7e6410c772e7d64d8df17`|
+| lastVerifiedCommitDate |  2026-08-19T21:54:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,6 +62,10 @@ phrase sweep rejects the fixed-master/workbench topology, and a delimiter check 
 Markdown templates rectangular.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 re-pointed one expected doctrine
+  string from `migrate_execution_topology` to `author_execution_graph`; the scan and parity
+  contract this card documents are unchanged. Verification remains closeout-owned.
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 

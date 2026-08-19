@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/series_closeout.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T23:38+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -24,27 +24,41 @@ Seals an atomic block only after every canonical leaf forms one exact journaled 
 
 Closeout and series integration publication share queue-then-repository authority. The seal verifies canonical master membership, exact enclosure identity, queue binding, code and memory repository identity, each leaf's base-to-integrated edge, content/ledger ancestry, and final named-ref tips. Direct commits, missing leaves, foreign copied contracts, mismatched code/memory order, and concurrent child admission cannot be absorbed into a master candidate.
 
+Since 260815-DAG-L13 the atomic-master completion proof (`_require_atomic_master_complete`) and
+the series-edge publication (`_publish_atomic_series_edge`) read the **effective** execution
+nature (`scheduling_mode.effective_execution_nature`): a nature-less legacy master executes
+atomically under the atomic-sequential default and closes out without migration (L13-R5a), and a
+graph-less sprint takes the queue-free series path — the master already owns the sequential lane
+through its live series contract, so no queue graph authority is consulted (L13-R1).
+
 ## Invariants And Boundaries
 
 - Atomic membership comes from exact master task rows and canonical parent relations, not sibling-file discovery.
 - The series history equals the ordered leaf landing chain from recorded bases to current named refs.
 - Every external memory pair proves base-to-content and content-to-ledger ancestry plus exact ledger mapping.
 - Series closeout records named refs and never commits ambient repository-root worktrees.
+- The effective nature, not the declared cell, gates the atomic closeout path; a graph-less sprint runs queue-free.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closeout and integration publish under queue-before-repository authority. | `publish_closeout_under_authority`, `publish_series_integration_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:43-122 |
-| The complete leaf set and exact pair chain are proved before sealing. | `_require_every_atomic_leaf_landed`, `_require_exact_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:125-202 |
-| Each leaf enclosure, code edge, and memory edge is bound exactly. | `_atomic_leaf_documents`, `_require_atomic_leaf_landed`, `_atomic_leaf_code_matches`, `_atomic_leaf_memory_matches` | mcp/src/agents_remember/worktrees/series_closeout.py:205-348 |
-| Exact series closeout rejects workbench changes and records the named memory pair. | `refuse_series_workbench_commit`, `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:376-427 |
+| Closeout and integration publish under queue-before-repository authority. | `publish_closeout_under_authority`, `publish_series_integration_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:48-76 |
+| The complete leaf set and exact pair chain are proved before sealing. | `_require_every_atomic_leaf_landed`, `_require_exact_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:135-199 |
+| Each leaf enclosure, code edge, and memory edge is bound exactly. | `_atomic_leaf_documents`, `_require_atomic_leaf_landed`, `_atomic_leaf_code_matches`, `_atomic_leaf_memory_matches` | mcp/src/agents_remember/worktrees/series_closeout.py:234-378 |
+| Atomic-master completion resolves the effective nature under the atomic-sequential default. | `_require_atomic_master_complete` | mcp/src/agents_remember/worktrees/series_closeout.py:386-415 |
+| Exact series closeout rejects workbench changes and records the named memory pair. | `refuse_series_workbench_commit`, `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:417-468 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: atomic closeout gates on the effective execution
+  nature (nature-less legacy masters close out atomically under the default, L13-R5a), and a
+  graph-less sprint's series edge publishes queue-free because the live series contract already
+  owns the sequential lane (L13-R1). Verification remains closeout-owned.
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 

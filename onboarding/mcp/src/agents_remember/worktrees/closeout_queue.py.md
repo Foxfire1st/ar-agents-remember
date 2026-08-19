@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T08:55+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 Owns the mechanistic sprint closeout queue: structural authorization, declaration, logistics,
-deterministic selection, atomic blockers, current-readiness recomputation, and actor-specific public
+deterministic selection, current-readiness recomputation, and actor-specific public
 projection. It makes facts visible and enforces the ruled order; it does not invent scheduling
 judgment.
 
@@ -37,6 +37,17 @@ with their derived segment placement, reported as facts — never silently auto-
 leaf-aware predecessor/waiting-reason/sort-key lookups are delegated to `closeout_queue_graph.py`,
 which owns the leaf-to-node index.
 
+Since 260815-DAG-L13 the `status` read never raises on an absent executionGraph or a
+missing/malformed canonical register (L13-R4): `_status_readout` projects a graph-less sprint as
+the atomic-sequential default through `_degraded_projection` (mode, register facts, the series
+lane owner, and legal next operations), and a graph sprint with malformed registers projects with
+`state: degraded` plus repair guidance while mutations stay guarded. The atomic-blocker
+transitions moved to `closeout_queue_blocker.py`; the projection now carries `mode`, `registers`,
+`laneOwner`, and (for acquire-blocker) `acquisitionFacts`. The lane owner is the one candidate in
+a lane-occupying state (`LANE_OCCUPYING_STATES` — selected, closeout-in-flight,
+integration-in-flight; a certified candidate no longer occupies the lane), a blocker-held waiting
+reason names the owner candidate, and stale-base blockers name `worktree_sync` as the recovery.
+
 ### Conventions
 
 Judgment is consumed only from canonical sprint Judgment/Priority Registers. Equal categorical
@@ -48,8 +59,11 @@ candidate mechanics; atomic blockers add exclusivity and exact block-landing pro
 - Actor role and task identity are plane-proven, never request data.
 - Only the deterministic first ready candidate may be selected.
 - In-flight records are lifecycle-owned and immutable through public actions.
-- Atomic-blocker acquisition requires atomic nature, drained predecessors and landing lane, a
-  non-blank rationale, and the atomic series base to still match the current code+memory super tips.
+- The `status` read degrades to a facts projection instead of failing on an absent graph or
+  malformed registers; only mutations stay guarded.
+- Atomic-blocker acquisition requires atomic nature, drained predecessors and landing lane
+  (lane-occupying states only), a non-blank rationale, and the atomic series base to still match
+  the current code+memory super tips; refusals carry structured owner/in-flight facts.
 - A normal atomic-blocker release requires the completed atomic master to prove one exact landed
   series; abort requires a canonical strategist/orchestrator judgment.
 - Projection reports only operations legal for the current structural caller.
@@ -66,11 +80,12 @@ No configured Domain Documentation source applies; queue doctrine is repository-
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Structural authorization separates manager logistics from orchestrator grade/selection authority. | `QueueActor` | mcp/src/agents_remember/worktrees/closeout_queue.py:112-120 |
-| Mutations re-read the graph under lock before returning a projection. | `closeout_queue_tool` | mcp/src/agents_remember/worktrees/closeout_queue.py:180-248 |
-| Selection takes only the deterministic first ready candidate. | `_apply_candidate_action` | mcp/src/agents_remember/worktrees/closeout_queue.py:281-335 |
-| Declaration binds exact code, memory, ledger, review, curator, and source-lineage facts before history moves. | `_declare_candidate` | mcp/src/agents_remember/worktrees/closeout_queue.py:347-355 |
-| Candidate projection separates ready, waiting, blocked, and in-flight facts and reports `leafPlacementFacts`. | `_projection` | mcp/src/agents_remember/worktrees/closeout_queue.py:624-655 |
+| Structural authorization separates manager logistics from orchestrator grade/selection authority. | `QueueActor` | mcp/src/agents_remember/worktrees/closeout_queue.py:117-123 |
+| Mutations re-read the graph under lock before returning a projection. | `closeout_queue_tool` | mcp/src/agents_remember/worktrees/closeout_queue.py:185-251 |
+| The status readout degrades graph-less or register-degraded sprints to a facts projection. | `_status_readout`; `_degraded_projection` | mcp/src/agents_remember/worktrees/closeout_queue.py:254-307; mcp/src/agents_remember/worktrees/closeout_queue.py:323-367 |
+| Selection takes only the deterministic first ready candidate. | `_apply_candidate_action` | mcp/src/agents_remember/worktrees/closeout_queue.py:400-464 |
+| Declaration binds exact code, memory, ledger, review, curator, and source-lineage facts before history moves. | `_declare_candidate` | mcp/src/agents_remember/worktrees/closeout_queue.py:466-474 |
+| Candidate projection separates ready, waiting, blocked, and in-flight facts and reports `leafPlacementFacts`. | `_projection` | mcp/src/agents_remember/worktrees/closeout_queue.py:608-646 |
 
 ## Cross-Repo References
 
@@ -81,6 +96,14 @@ No external repository owns this queue.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: the `status` read degrades instead of raising — a
+  graph-less sprint projects the atomic-sequential default with its series lane owner and legal
+  next operations, and malformed registers degrade the projection while mutations stay guarded.
+  Atomic-blocker transitions extracted to `closeout_queue_blocker.py`; the projection gains
+  `mode`/`registers`/`laneOwner`/`acquisitionFacts`; lane ownership narrows to lane-occupying
+  states; the blocker-held reason names the owner candidate; stale-base blockers name
+  `worktree_sync`. Verification remains closeout-owned.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: the queue is leaf-aware — segment-targeted edges block
   exactly that segment's leafs (completion stays master-granular), the projection reports

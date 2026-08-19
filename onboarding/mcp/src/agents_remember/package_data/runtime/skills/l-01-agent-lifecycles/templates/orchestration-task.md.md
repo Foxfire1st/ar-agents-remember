@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated            | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -47,7 +47,7 @@ None recorded.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# Orchestration-Task Template` | skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-91 |
+| Canonical source this bundle copy is sync-propagated from. | `# Orchestration-Task Template` | skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-145 |
 | The strategist role that fills this template as method phase 8. | `# Lifecycle — Strategist` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:1-204 |
 | The plan-review criteria catalog the reviewer runs against a filled orchestration task. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-84 |
 
@@ -73,7 +73,18 @@ backed predecessor edges; deterministic waves and blocker positions are derived 
 persisted. Runtime reprioritization records rationale, evidence, author, confidence, and
 supersession before queue selection changes.
 
+## 260815-DAG-L13 Scheduling Default Doctrine
+
+The template's adoption rule now treats a sprint adopted without an `executionGraph` as running the
+atomic-sequential default; `task_doc.author_execution_graph` bootstraps or edits the graph and is
+never a runtime fallback. The `migrate_execution_topology` legacy-cutover reference is gone.
+
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: synchronized the scheduling-default doctrine —
+  adoption without a graph runs atomic-sequentially and `author_execution_graph` owns bootstrap
+  and edits; the `migrate_execution_topology` reference is gone. Verification remains
+  closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

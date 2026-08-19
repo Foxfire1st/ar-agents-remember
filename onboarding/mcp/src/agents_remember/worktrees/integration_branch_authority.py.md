@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T09:55+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -33,11 +33,21 @@ Existing atomic-series recognition resolves the canonical owner beneath
 `tasks/<repository>/<owner-relative-path>`, so a task-owned series is recognized without dropping
 the repository segment while foreign owners and missing contracts remain refused.
 
+Since 260815-DAG-L13 every nature decision reads the **effective** execution nature
+(`scheduling_mode.effective_execution_nature`): commanded masters resolve through
+`commanded_sprint_masters` — graph sprints validate the authored graph while graph-less sprints
+derive membership from the canonical `orchestrates` aliases (the atomic-sequential default,
+L13-R1) — and a nature-less legacy master resolves atomic instead of failing as an unsupported
+nature. An organizational master retains its sprint-super surface only under an authored graph,
+and a terminal series artifact (cleanup completed/abandoned/reopened) no longer counts as a live
+series when surfaces are derived; a genuinely live organizational series still refuses with
+retirement guidance (`worktree_cleanup`/`worktree_abandon`).
+
 ## Invariants And Boundaries
 
 - Protected surfaces are repo-global for a Git common directory, not local to the current sprint.
 - Repository default code refs are PR/landing-plane targets and never generic local integration targets.
-- Organizational leaves source directly from the sprint super; atomic leaves source from the exact series ref.
+- Organizational leaves source directly from the sprint super; atomic leaves source from the exact series ref; the effective nature (not the declared cell) picks the lane.
 - Missing, stale, ambiguous, foreign, or colliding authority fails closed before mutation.
 - Series terminal writers require both the structural guard here and the live queue-owned terminal permit issued under queue-to-repository publication authority.
 
@@ -45,15 +55,21 @@ the repository segment while foreign owners and missing contracts remain refused
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public census and target projection derive exact protected surfaces. | `integration_surfaces`, `integration_targets` | mcp/src/agents_remember/worktrees/integration_branch_authority.py:51-119 |
-| Topology publication validates candidate ownership before task facts can create a protected collision. | `require_topology_publication_authority`, `require_topology_migration_authority` | mcp/src/agents_remember/worktrees/integration_branch_authority.py:372-417; mcp/src/agents_remember/worktrees/integration_branch_authority.py:420-437 |
-| New-surface validation recognizes only the exact canonical atomic series contract and branch. | `_atomic_surface_has_series` | mcp/src/agents_remember/worktrees/integration_branch_authority.py:491-508 |
+| Public census and target projection derive exact protected surfaces. | `integration_surfaces`, `integration_targets` | mcp/src/agents_remember/worktrees/integration_branch_authority.py:56-124 |
+| Topology publication validates candidate ownership before task facts can create a protected collision. | `require_topology_publication_authority`, `require_topology_migration_authority` | mcp/src/agents_remember/worktrees/integration_branch_authority.py:377-423; mcp/src/agents_remember/worktrees/integration_branch_authority.py:425-443 |
+| New-surface validation recognizes only the exact canonical atomic series contract and branch. | `_atomic_surface_has_series` | mcp/src/agents_remember/worktrees/integration_branch_authority.py:496-511 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: nature decisions now read the effective execution
+  nature — commanded membership derives from `orchestrates` aliases on graph-less sprints
+  (atomic-sequential default), nature-less legacy masters resolve atomic, terminal series
+  artifacts no longer count as live organizational series, and a live organizational series
+  refusal names `worktree_cleanup`/`worktree_abandon`. Verification remains closeout-owned.
 
 - 2026-08-16T09:55+02:00 — Corrected exact atomic-series owner resolution to retain the repository task-tree segment; real positive-series forcing accompanies the retained foreign/missing refusals.
 - 2026-08-16T07:02+02:00 — Moved the immutable authority data contracts once into `integration_branch_types.py`; policy, Git facts, and public imports remain single-owned while this resolver returns below the enforced file-size limit.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T08:55+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,8 +17,8 @@
 ## Purpose
 
 Force the persisted execution-nature and sprint activity-on-node graph contract through schema,
-cross-document topology, task-doc migration, deterministic rendering, observer projection, and
-atomic rollback behavior.
+cross-document topology, task-doc graph bootstrap/authoring, deterministic rendering, observer
+projection, and atomic rollback behavior.
 
 ## Code Commentary
 
@@ -26,10 +26,11 @@ atomic rollback behavior.
 
 The schema cases reject duplicate nodes and edges, unknown endpoints, self edges, blank reasons,
 cycles, and invalid master/sprint field placement. The topology cases build minimal synthetic task
-roots, prove legacy state remains migration-required, reject unknown, duplicate, and drifted command
+roots, prove legacy state remains migration-required (the refusal names the
+`author_execution_graph` bootstrap), reject unknown, duplicate, and drifted command
 membership, exercise preview and apply, and inject a mid-batch write failure to prove rollback. The
-suite also forces multi-parent DAG release, malformed migration envelopes, missing and wrong-kind
-migration targets, unresolved masters, non-sprint use, and override identity confinement. A
+suite also forces multi-parent DAG release, malformed bootstrap envelopes, missing and wrong-kind
+bootstrap targets, unresolved masters, non-sprint use, and override identity confinement. A
 poisoned second-read regression proves wave derivation validates and returns one pinned sprint
 snapshot, and the out-of-root case asserts the actual `task.json` and `task.md` publication targets.
 The rollback proof compares every canonical JSON/Markdown task publication, permits the persistent
@@ -43,19 +44,20 @@ the new application module attached to this existing behavioral topology suite.
   deployed coordinator.
 - The suite asserts behavior through public task-document and projection boundaries instead of
   duplicating the topology algorithm.
-- Migration must update the sprint and all commanded masters together or leave every file unchanged.
+- Graph bootstrap must update the sprint and all commanded masters together or leave every file
+  unchanged.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph schema cases force the closed structural contract. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:100-196 |
-| Migration and cross-document cases force exact membership, projection, and rollback. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:198-925 |
-| Inventory cases force branch-backed atomic classification, empty-tree counts, and branch-enumeration refusal. | `test_inventory_enumerates_sprints_and_proposes_branch_backed_nature` | mcp/tests/test_task_execution_topology.py:210-273 |
-| Cross-root publication failure restores canonical task documents and leaves no queue state or pending WAL. | `test_migration_refuses_non_exact_membership_and_rolls_back_cross_root_failure` | mcp/tests/test_task_execution_topology.py:741-787 |
-| The production policy under test lives in the application topology module. | `migrate_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:125-218 |
+| Graph schema cases force the closed structural contract. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:115-211 |
+| Bootstrap and cross-document cases force exact membership, projection, and rollback. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:213-938 |
+| Inventory cases force branch-backed atomic classification, empty-tree counts, and branch-enumeration refusal. | `test_inventory_enumerates_sprints_and_proposes_branch_backed_nature` | mcp/tests/test_task_execution_topology.py:225-249 |
+| Cross-root publication failure restores canonical task documents and leaves no queue state or pending WAL. | `test_bootstrap_refuses_non_exact_membership_and_rolls_back_cross_root_failure` | mcp/tests/test_task_execution_topology.py:783-832 |
+| The production policy under test lives in the application topology module. | `author_execution_graph` | mcp/src/agents_remember/application/task_execution_topology.py:182-247 |
 | The L11 segment-graph schema/projection/placement cases split out under the file-size rail. | `ExecutionGraphSegmentSchemaTests` | mcp/tests/test_task_execution_topology_segments.py:41-254 |
-| The L11 incremental authoring forcing suite. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:56-883 |
+| The L11 incremental authoring forcing suite (which also owns the graph-less bootstrap forcing). | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:56-983 |
 
 ## 260815-DAG-L9 Inventory Forcing
 
@@ -68,6 +70,11 @@ the refusal when `run_git branch` enumeration fails.
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: the finite migration operation is removed; the former
+  migration cases are now graph-bootstrap forcing through `author_execution_graph`
+  (`test_bootstrap_*`), including the cross-root rollback proof. Verification remains
+  closeout-owned.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: the L11 segment/authoring cases moved out to
   `test_task_execution_topology_segments.py` and `test_author_execution_graph.py` under the

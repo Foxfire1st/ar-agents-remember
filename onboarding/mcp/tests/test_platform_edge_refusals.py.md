@@ -67,10 +67,12 @@ L23 injects the Docker executable seam in mismatch-removal tests so their refusa
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Provider lifecycle, backends and watchers. | "def cgc_backend_start("; "def cgc_watcher_running("; "def watchers_run(" | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:390-390; mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:89-89; mcp/src/agents_remember/providers/lifecycle/watchers.py:186-186 |
-| Task-document edit operations and their required objects. | "def task_doc_tool("; "class TaskEnclosureRef(_Doc):" | mcp/src/agents_remember/application/task_doc_tools.py:182-182; mcp/src/agents_remember/tasks/document.py:155-155 |
+| Task-document edit operations and their required objects. | "def task_doc_tool("; "class TaskEnclosureRef(_Doc):" | mcp/src/agents_remember/application/task_doc_tools.py:190-190; mcp/src/agents_remember/tasks/document.py:155-155 |
 | The sibling long-tail refusal collection. | "class RequestedHarnessTests(unittest.TestCase):"; "class OpenTerminalRefusalTests(unittest.TestCase):" | mcp/tests/test_platform_long_tail.py:379-379; mcp/tests/test_platform_long_tail.py:413-413 |
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 moved `task_doc_tool` within `task_doc_tools.py`; re-pointed the citation to `task_doc_tools.py:190-190`. The adjacent `document.py:155-155` cell was already stale before this leaf and is left to the residual repair wave. Verification metadata unchanged.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

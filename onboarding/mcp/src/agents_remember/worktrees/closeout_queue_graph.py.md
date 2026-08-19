@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/closeout_queue_graph.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T08:55+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -18,7 +18,8 @@
 
 Builds the bounded immutable sprint-graph projection consumed by every queue decision, and — since
 260815-DAG-L11 — owns the leaf-aware lookups: the leaf-to-node index, candidate-node resolution,
-leaf-aware predecessor/waiting-reason/sort-key helpers.
+leaf-aware predecessor/waiting-reason/sort-key helpers. Since 260815-DAG-L13 it also owns the
+blocker `acquisition_facts` report and the strict/tolerant register-read split.
 
 ## Code Commentary
 
@@ -27,7 +28,13 @@ leaf-aware predecessor/waiting-reason/sort-key helpers.
 `graph_context` resolves and validates the canonical sprint graph, caps masters/edges/leaves,
 computes a revision over the graph plus execution natures, indexes node order (keyed on
 `SprintExecutionNode`), computes incomplete predecessors once, and parses the canonical planning
-authorities. `incomplete_predecessor_map` uses one adjacency construction and one traversal over
+authorities. A graph-less sprint refusal now names the atomic-sequential default and the
+`task_doc.author_execution_graph` bootstrap. `strict_registers` (default `True`) guards mutations:
+a malformed canonical planning register refuses with the `task_doc.set_section` repair named;
+the read path (L13-R4) passes `False` so a malformed register degrades the projection instead of
+failing it. `acquisition_facts` (L13-R3) reports the in-flight organizational leafs observed at
+blocker acquisition — facts only, so the start-anyway decision stays judgment.
+`incomplete_predecessor_map` uses one adjacency construction and one traversal over
 graph nodes and edges; completion stays master-granular — a node counts complete when its master
 document is `Completed`, so an edge into a segment blocks exactly that segment's leafs until the
 predecessor's whole master completes (L11-R3). `_leaf_node_index` folds authored and derived
@@ -45,9 +52,12 @@ topology validator remains the canonical reference-integrity authority.
 
 ### Invariants And Boundaries
 
-- Missing or over-capacity graphs refuse before queue admission.
+- Missing or over-capacity graphs refuse before queue admission; the refusal names the
+  atomic-sequential default and the graph-authoring bootstrap.
 - Graph revision changes when execution structure or a master's execution nature changes.
 - Predecessor completion is a mechanistic fact, not a priority judgment.
+- Register malformation is strict for mutations and tolerant for reads; the tolerant read carries
+  the malformed detail as register facts.
 
 ### Todos
 
@@ -61,16 +71,23 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph construction validates/caps topology and derives the exact queue revision and indexes. | `graph_context` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:53-115 |
-| Incomplete predecessors are built in one bounded adjacency pass with master-granular completion. | `incomplete_predecessor_map` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:233-259 |
-| Leaf-aware candidate lookups resolve a candidate to its lump or segment node. | `candidate_node`; `candidate_predecessors` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:158-181 |
-| The queue's sort key and waiting reasons consume the candidate's own node. | `ready_sort_key`; `predecessor_waiting_reasons` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:191-217 |
+| Graph construction validates/caps topology and derives the exact queue revision and indexes, with the strict/tolerant register split. | `graph_context` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:79-162 |
+| Blocker acquisition reports in-flight organizational leafs as facts only. | `acquisition_facts` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:36-58 |
+| Incomplete predecessors are built in one bounded adjacency pass with master-granular completion. | `incomplete_predecessor_map` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:279-305 |
+| Leaf-aware candidate lookups resolve a candidate to its lump or segment node. | `candidate_node`; `candidate_predecessors` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:204-228 |
+| The queue's sort key and waiting reasons consume the candidate's own node. | `ready_sort_key`; `predecessor_waiting_reasons` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:237-264 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: added `acquisition_facts` (in-flight organizational
+  leafs reported at blocker acquisition), the `strict_registers` parameter splitting mutation-strict
+  from read-tolerant register parsing, recovery-named register errors, and the graph-less refusal
+  now names the atomic-sequential default plus the `author_execution_graph` bootstrap. Verification
+  remains closeout-owned.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: the queue graph projection is leaf-aware — node-keyed
   order and incomplete-predecessor maps, the leaf→node index with derived-placement facts, and the

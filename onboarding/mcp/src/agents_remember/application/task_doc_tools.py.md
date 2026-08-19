@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/application/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-19T08:55+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -39,8 +39,9 @@ replacing the former single branching applier.
 
 It validates `operation` against `VALID_OPERATIONS`
 (`create`/`replace`/`set_status`/`set_step`/`skip_step`/`set_subtask`/`remove_subtask`/`set_section`/
-`append_decision`/`record_route_review`/`migrate_execution_topology`/`author_execution_graph`/
-`set_field`/`get`), then `_resolve()`s the task root + optional contract: a
+`append_decision`/`record_route_review`/`author_execution_graph`/
+`set_field`/`get` — `migrate_execution_topology` was removed in 260815-DAG-L13; a graph-less
+sprint runs the atomic-sequential default and `author_execution_graph` is the bootstrap seam), then `_resolve()`s the task root + optional contract: a
 `contract_path` can point at either a root `series-contract.md` or a leaf
 `enclosures/<leaf-id>/series-contract.md`; otherwise `task_name` is mapped through
 `worktrees.task_resolver.resolve_active_task_root`, with leaf lookup as the fallback. `get`
@@ -52,7 +53,11 @@ the contract when present; leaf contracts also seed `lifecycleId` for non-master
 context-aware `kind` default), validates it, refuses a slug/kind change that would move the JSON document
 path, and then rewrites the existing JSON plus rendered markdown;
 the mutating ops load the existing JSON, apply the edit on a `model_dump(by_alias=True)`
-dict, and re-validate. `set_step` upserts a top-level step or, with `parent`, a substep
+dict, and re-validate. Since 260815-DAG-L13, creating an orchestration sprint scaffolds the empty
+canonical Judgment and Priority Register sections (`_scaffold_register_sections`, L13-R6 — so
+set-grade never dead-ends on a missing register), and every applied edit passes
+`_enforce_register_section_shapes`: a section carrying a canonical register heading must keep the
+exact register table shape or the write fails with `TaskDocError`. `set_step` upserts a top-level step or, with `parent`, a substep
 (insert or in-place update by id) and rejects a master; `set_subtask` upserts a
 `SubTaskRef` by `number` (master-only); `remove_subtask` (master-only) drops the `SubTaskRef` by
 `number` AND deletes the referenced leaf doc (`<slug>.json` + `.md`) unless `subtask.keep_file`,
@@ -105,10 +110,10 @@ validation failures, and invalid resolvable parent master docs.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_doc_tools.py:83-101 |
-| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_doc_tools.py:482-494 |
-| Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:375-418 |
-| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_doc_tools.py:252-252 |
+| The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_doc_tools.py:87-102 |
+| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_doc_tools.py:491-503 |
+| Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:403-446 |
+| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_doc_tools.py:258-258 |
 | The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
 | The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:551-655 |
 | The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:31-53 |
@@ -131,6 +136,12 @@ translation and the locked publication call.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: `VALID_OPERATIONS` dropped `migrate_execution_topology`
+  (graph-less sprints run the atomic-sequential default; `author_execution_graph` bootstraps), new
+  orchestration sprints are scaffolded with empty canonical Judgment/Priority Register sections,
+  and every write passes register-shape validation (`closeout-grade-register-shape-invalid` on a
+  malformed register section). Verification remains closeout-owned.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: `VALID_OPERATIONS` gained `author_execution_graph`
   (dispatched to the topology module's incremental graph authoring with `ExecutionTopologyError` →

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`|
-| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`|
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 
 ## Purpose
 
@@ -183,6 +183,10 @@ closeout and master integration are the only acceptance owners.
 
 ## Update History
 
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `execution-topology-migration.md` was
+  retitled from the migration cutover to graph authoring — the atomic-sequential default covers
+  graph-less sprints and `author_execution_graph` bootstraps the graph; the reference-route model
+  is unchanged. Verification remains closeout-owned.
 - 2026-08-18T12:00:00+00:00 — No route impact: L9 adds `execution-topology-migration.md` (operator migration/rollback reference); the reference-route model is unchanged.
 - 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
 

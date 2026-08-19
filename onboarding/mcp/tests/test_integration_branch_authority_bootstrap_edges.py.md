@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_branch_authority_bootstrap_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T09:45+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -48,6 +48,8 @@ the lowest writer without inventing a test-only bypass.
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 reworded the expected bootstrap refusal to "effective atomic master nature"; the documented refusal boundary is unchanged. Verification remains closeout-owned.
 
 - 2026-08-16T09:45+02:00 — Added production-owner forcing for malformed/mismatched recovery records, partial rollback failure, exact-ref transaction refusal, and external-memory journal drift after the targeted Dagger coverage report.
 - 2026-08-16T04:43+02:00 — 260815-DAG-L4: created by moving the three contiguous bootstrap edge tests from `test_integration_branch_authority_edges.py` to keep both discovered modules below the enforced file-size limit without duplicating helpers or compatibility imports. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T08:55+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,49 +17,51 @@
 ## Purpose
 
 Own the application policy for an explicit sprint execution topology. It validates edits against
-the canonical task-document graph, provides the finite, previewable migration that writes one
-sprint graph plus every commanded master's declared execution nature as one atomic generation
-(lump nodes only — the bootstrap), and — since 260815-DAG-L11 — the incremental
-`author_execution_graph` operation that applies one validated, judgment-provenanced batch of
-structural mutations (add/remove node, add/remove edge, move leaf, set nature) to an already
-migrated sprint's graph.
+the canonical task-document graph and provides `author_execution_graph` — since 260815-DAG-L11 the
+incremental operation that applies one validated, judgment-provenanced batch of structural
+mutations (add/remove node, add/remove edge, move leaf, set nature), and since 260815-DAG-L13 also
+the bootstrap seam: the first `add_node` batch on a graph-less sprint creates the graph. The
+one-time `migrate_execution_topology` operation is removed (L13): a graph-less sprint is not an
+error — it runs the atomic-sequential default until a graph is authored.
 
 ## Code Commentary
 
 ### Logic
 
-`migrate_execution_topology` validates the closed migration payload, resolves every canonical
-master reference, constructs the sprint and master candidates, proves exact graph membership and
-acyclicity through `TaskDocumentTopology`, and either returns per-document render diffs or publishes
-all JSON/Markdown pairs through the cross-root batch writer. `enforce_execution_topology_edit`
-guards ordinary `create`, `replace`, and relevant `set_field` calls so partial graph/nature edits do
-not create an invalid topology. Migration validates the request envelope once and then constructs
-only schema-preserving task-document updates; it does not retain an unreachable second validation
-translation branch.
-
-`author_execution_graph` (L11-R5) requires a migrated sprint, then plays the typed
+`author_execution_graph` plays the typed
 `mutations` batch onto a `_GraphDraft` through the `_MUTATION_HANDLERS` dispatch: segments are
 addressed by a sampling `leafId`, never named; `remove_node` refuses while an edge still touches
 the node; `move_leaf` also places a leaf the master gained after authoring, and refuses to empty a
-segment; `set_nature` targets only commanded masters. Judgment-bearing mutations (edges,
+segment; `set_nature` targets only commanded masters. On a graph-less sprint the draft starts empty
+and commanded membership comes from the canonical `orchestrates` aliases; the result reports
+`bootstrapped: true`, and final validation requires exact membership plus an explicit nature for
+every commanded master (a `set_nature` mutation in the same batch covers a master document that
+lacks one). Judgment-bearing mutations (edges,
 segmentation, nature reclassification) must carry a `judgmentId` that `_verify_authoring_judgments`
 resolves against the sprint's canonical `Judgment Register (canonical judgment authority)` section —
-a missing register is a typed refusal naming the section, an unknown row or a non
+a missing register is a typed refusal naming the section (sprint creation scaffolds the empty
+canonical registers, and the write path validates their shape), an unknown row or a non
 strategist/orchestrator author fails closed; the mechanism never invents a judgment. The prepared
 candidate revalidates the whole graph, exact cross-document membership, and node-kind legality,
 refuses unknown or unplaced leaf partitions (`_require_complete_partitions`), and reports
 `leafPlacementFacts` plus `numberingHints` as facts. `dry_run` returns the rendered diff +
 `wouldLose` preview without writing; apply publishes sprint plus nature-changed masters atomically
-through the sprint queue's publication lane, exactly like migration.
+through the sprint queue's publication lane.
+
+`enforce_execution_topology_edit`
+guards ordinary `create`, `replace`, and relevant `set_field` calls so partial graph/nature edits do
+not create an invalid topology: a graph-less sprint has no topology contract to validate (the
+series lane serializes masters), and dropping an authored `executionGraph` through an ordinary
+write is refused — a graph is only ever retired through the graph-authoring seam.
 
 ### Invariants And Boundaries
 
-- Legacy documents stay readable only so the explicit migration can inspect them; this module does
-  not infer an execution nature or graph.
-- Migration membership must exactly match graph nodes and the sprint's canonical `orchestrates`
-  membership; migration authors lump nodes only.
-- Atomic-nature masters admit lump nodes only; the graph schema and topology validation both
-  refuse segment nodes on them.
+- Legacy documents stay readable so graph authoring can inspect them; this module does not infer an
+  execution nature or graph — a graph-less sprint runs the atomic-sequential default instead.
+- Graph membership must exactly match the sprint's canonical `orchestrates` membership; atomic-nature
+  masters admit lump nodes only, and the graph schema plus topology validation both refuse segment
+  nodes on them.
+- An authored `executionGraph` is never removed through ordinary document writes.
 - Preview is read-only. Apply prepares and publishes every affected document as one rollback-safe
   batch across task roots.
 - Errors use the shared `AgentsRememberError` family and are translated to `TaskDocError` at the
@@ -69,19 +71,18 @@ through the sprint queue's publication lane, exactly like migration.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The migration validates, previews, and atomically publishes the sprint and commanded masters. | `migrate_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:125-218 |
-| The incremental authoring operation applies one validated judgment-provenanced mutation batch. | `author_execution_graph` | mcp/src/agents_remember/application/task_execution_topology.py:319-383 |
-| Claimed judgment ids resolve against the sprint's canonical Judgment Register. | `_verify_authoring_judgments` | mcp/src/agents_remember/application/task_execution_topology.py:468-522 |
-| Writes refuse unknown-leaf or incomplete segment partitions against the live leaf sets. | `_require_complete_partitions` | mcp/src/agents_remember/application/task_execution_topology.py:706-734 |
-| The read-only inventory previews every sprint and commanded master's proposed nature and blockers. | `inventory_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:899-963 |
-| Ordinary execution-topology edits are validated against canonical cross-document topology. | `enforce_execution_topology_edit` | mcp/src/agents_remember/application/task_execution_topology.py:790-820 |
-| The forcing suite proves migration, rollback, render, projection, and refusal behavior. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:198-317 |
-| The authoring suite proves mutation dispatch, judgment provenance, partition refusal, and previews. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:56-391 |
+| The incremental authoring operation applies one validated judgment-provenanced mutation batch and bootstraps graph-less sprints. | `author_execution_graph` | mcp/src/agents_remember/application/task_execution_topology.py:182-247 |
+| Claimed judgment ids resolve against the sprint's canonical Judgment Register. | `_verify_authoring_judgments` | mcp/src/agents_remember/application/task_execution_topology.py:340-367 |
+| Writes refuse unknown-leaf or incomplete segment partitions against the live leaf sets. | `_require_complete_partitions` | mcp/src/agents_remember/application/task_execution_topology.py:594-623 |
+| The read-only inventory previews every sprint and commanded master's proposed nature and blockers. | `inventory_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:804-867 |
+| Ordinary execution-topology edits are validated against canonical cross-document topology; graph-less sprints skip graph validation and authored graphs cannot be dropped. | `enforce_execution_topology_edit` | mcp/src/agents_remember/application/task_execution_topology.py:678-725 |
+| The forcing suite proves authoring, bootstrap, rollback, render, projection, and refusal behavior. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:213-938 |
+| The authoring suite proves mutation dispatch, judgment provenance, partition refusal, and previews. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:56-983 |
 
 ## 260815-DAG-L9 Inventory Boundary
 
 `inventory_execution_topology` enumerates every persistent orchestration sprint and commanded
-master before migration, without writing. It proposes the explicit nature (atomic when an
+master before graph authoring, without writing. It proposes the explicit nature (atomic when an
 `ar/<slug>` branch already backs the master, organizational otherwise) and reports the sprint
 graph state plus declared completion blockers. Proposed edges are always parallel and left for
 a strategist/orchestrator ruling; branch-backed detection runs through `run_git branch` and
@@ -89,7 +90,7 @@ refuses on enumeration failure.
 
 ## 260815-DAG-L3 Sprint Publication Boundary
 
-Execution-topology migration now publishes through the sprint queue's completion/reopen WAL rather
+Execution-topology authoring publishes through the sprint queue's completion/reopen WAL rather
 than writing the task batch independently. `require_commanded_masters_completed` validates the
 exact canonical graph and refuses a sprint terminal status when any commanded master is not
 `Completed` or still has completion blockers.
@@ -99,6 +100,13 @@ exact canonical graph and refuses a sprint terminal status when any commanded ma
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: removed `migrate_execution_topology` — a graph-less
+  sprint runs the atomic-sequential default, and `author_execution_graph` is now the bootstrap
+  seam (empty draft, `bootstrapped: true`, exact membership plus explicit natures at final
+  validation). `enforce_execution_topology_edit` skips graph validation for graph-less sprints and
+  refuses to drop an authored `executionGraph` through ordinary writes; the missing-register
+  refusal names the scaffolded-register/`set_section` repair. Verification remains closeout-owned.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: added `author_execution_graph` — the incremental,
   judgment-provenanced structural mutation batch (add/remove node, add/remove edge, move_leaf,

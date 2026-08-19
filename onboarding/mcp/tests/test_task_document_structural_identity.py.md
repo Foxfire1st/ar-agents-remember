@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_document_structural_identity.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash |  `b523f53b193e9783e7c7e6410c772e7d64d8df17`|
+| lastVerifiedCommitDate |  2026-08-19T21:54:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,9 +26,9 @@ below the repository's 1,200-line hard limit.
 
 The suite proves legacy terminal rows resolve to sprint/master/leaf task identities, task topology
 fails closed, structural gates authorize only canonical relations, and lifecycle routing preserves
-the same identity. The parent-resolution refusal fixture explicitly declares a non-atomic execution
-nature, ensuring the test reaches missing-parent and ambiguous-parent topology behavior instead of
-accidentally entering the newer atomic-master classification path.
+the same identity. Since 260815-DAG-L13 the parent-resolution fixture proves the effective-nature
+split directly: a nature-less standalone master resolves at master altitude with no parent edge,
+and only an explicit `organizational` standalone master still reaches the missing-parent refusal.
 
 ### Conventions
 
@@ -58,9 +58,9 @@ No Domain Documentation source is configured for this repository-local structura
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Migration and topology use canonical task-document identity. | `test_terminal_catalog_migration_maps_every_legacy_identity`; `test_task_document_topology_children_and_refusals` | mcp/tests/test_task_document_structural_identity.py:20-102; mcp/tests/test_task_document_structural_identity.py:161-210 |
-| Parent-resolution refusals isolate non-atomic master topology explicitly. | `test_task_document_topology_parent_fail_closed_paths` | mcp/tests/test_task_document_structural_identity.py:213-259 |
-| Structural gates and lifecycles fail closed around the same topology. | `test_structural_gate_authorization_decision_and_listing`; `test_structural_lifecycle_gate_and_context_refusals` | mcp/tests/test_task_document_structural_identity.py:262-352; mcp/tests/test_task_document_structural_identity.py:355-389 |
+| Migration and topology use canonical task-document identity. | `test_terminal_catalog_migration_maps_every_legacy_identity`; `test_task_document_topology_children_and_refusals` | mcp/tests/test_task_document_structural_identity.py:20-103; mcp/tests/test_task_document_structural_identity.py:161-211 |
+| Parent-resolution refusals isolate non-atomic master topology explicitly. | `test_task_document_topology_parent_fail_closed_paths` | mcp/tests/test_task_document_structural_identity.py:213-269 |
+| Structural gates and lifecycles fail closed around the same topology. | `test_structural_gate_authorization_decision_and_listing`; `test_structural_lifecycle_gate_and_context_refusals` | mcp/tests/test_task_document_structural_identity.py:271-362; mcp/tests/test_task_document_structural_identity.py:364-399 |
 
 ## Cross-Repo References
 
@@ -77,6 +77,11 @@ Structural-identity tests no longer imply that lifecycle acceptance may construc
 host test environment.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: the parent-resolution fixture now proves the
+  effective-nature split — a nature-less standalone master resolves at master altitude, and only
+  an explicit `organizational` standalone still fails closed. Also re-ranged the reference rows to
+  the current test positions. Verification remains closeout-owned.
 
 - 2026-08-16T01:45+02:00 — Documented why the parent-refusal fixture explicitly declares non-atomic execution nature; verification remains closeout-owned.
 - 2026-08-16T00:45+02:00 — Kept the fail-closed topology proof current by making the master fixture state its non-atomic execution nature explicitly; behavior remains unchanged and verification remains closeout-owned.
