@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-19T04:20+02:00 |
-| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`|
-| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`|
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,12 @@ missing outer pipes; lifecycle completion/release, task-publication error transl
 artifact removal, initial sprint-status WAL recovery, finalize refusal, and live MCP registration
 each run through their production owner. Response-conformance worktree fixtures always retain a
 real commanding sprint while `executionGraph` alone distinguishes queue-managed from intentionally
-unmanaged payloads.
+unmanaged payloads. 260815-DAG-L13 adds five focused suites: `test_sequential_default_mode.py`
+(the atomic-sequential default and its series lane), `test_queue_read_degradation.py` (the
+degraded `status` readout), `test_register_scaffold.py` (sprint-creation register scaffolding and
+write-time shape validation), `test_legacy_nature_tolerance.py` (nature-less legacy masters
+resolving atomically), and `test_closeout_lane_sync_first.py` (sync-first recovery naming and
+lane-occupying exclusivity).
 
 The next targeted artifact was behaviorally one assertion short and reached 99.92% changed
 coverage. Its final bounded correction distinguishes a normal worker process that durably records
@@ -1156,6 +1161,12 @@ The L4 suites force repository-global surface ownership, organizational versus a
 
 ## Update History
 
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: five new forcing suites
+  (`test_sequential_default_mode.py`, `test_queue_read_degradation.py`, `test_register_scaffold.py`,
+  `test_legacy_nature_tolerance.py`, `test_closeout_lane_sync_first.py`) cover the
+  scheduling-semantics correction; existing queue/topology/integration suites were adapted to the
+  narrowed lane-occupying union, the removed `migrate_execution_topology`, and the
+  effective-nature contract. Route purpose unchanged. Verification remains closeout-owned.
 - 2026-08-19T04:20+02:00 — No route impact: 260815-DAG-L10 updated series worktree-group expectations in `test_worktree_edge_paths.py`, `test_atomic_series_seal.py`, `test_l4_terminal_and_series_gap_coverage.py`, and `fixtures/build_rich_sim.py`; route purpose unchanged.
 - 2026-08-18T12:00:00+00:00 — No route impact: 260815-DAG-L9 added `inventory_execution_topology` forcing cases to `test_task_execution_topology.py`; route purpose unchanged.
 - 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.

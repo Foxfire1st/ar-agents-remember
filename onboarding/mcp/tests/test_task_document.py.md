@@ -91,7 +91,7 @@ and tool registration.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The test imports and exercises the task-document APIs used by this suite. | "from agents_remember.application.task_doc_tools import (" | mcp/tests/test_task_document.py:24-24 |
-| The application entry point under test. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:135-186 |
+| The application entry point under test. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:190-275 |
 | The path-change rejection test invokes the replace operation and expects TaskDocError. | `test_replace_rejects_document_path_change` | mcp/tests/test_task_document_application_1.py:465-479 |
 | Leaf creation inserts the parent master row. | "def create(cls" | mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py:156-156 |
 | Master sync preserves manually-authored scope. | "const { webtuiPrefixOptions } = require('./webtui-scope.config.cjs');" | dashboard/postcss.config.cjs:6-6 |
@@ -110,6 +110,8 @@ Task-document tests cover the `seriesContractPath`/`enclosures[]` linkage fields
 - A master ref naming a **sibling leaf** is refused **by kind**, not by id shape.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 moved `task_doc_tool` within `task_doc_tools.py`; re-pointed the citation to `task_doc_tools.py:190-275`. Verification metadata unchanged.
 - 2026-08-16T02:51+02:00 — L4 topology-publication authority: replaced the partial
   `SimpleNamespace` fixture with a real configured Git repository and exact remote default
   authority so application tests exercise the strengthened publication boundary.

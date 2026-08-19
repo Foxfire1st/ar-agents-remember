@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_organizational_completion_integration.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-17T12:09+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -38,5 +38,7 @@ The suite runs the production completion path end to end against real queue and 
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 split blocker-reason assertions on `:` because stale-base reasons now carry the `worktree_sync` recovery suffix; the documented completion-integration behavior is unchanged. Verification remains closeout-owned.
 
 - 2026-08-17T12:09+02:00 — 260815-DAG-L5: created onboarding for the organizational completion integration suite.

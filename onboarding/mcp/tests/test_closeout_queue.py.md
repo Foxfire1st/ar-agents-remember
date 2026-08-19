@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T08:55+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,12 +54,12 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Core queue tests cover categorical ordering and graph/leaf ties. | `test_explicit_grades_order_ready_candidates_by_graph_then_leaf_tie` | mcp/tests/test_closeout_queue.py:620-642 |
-| Internal and disabled memory modes use explicit not-applicable readiness. | `test_internal_and_disabled_memory_modes_use_explicit_not_applicable_readiness` | mcp/tests/test_closeout_queue.py:650-664 |
-| Blocker and predecessor logistics remain separate from scheduling judgment. | `test_predecessors_and_atomic_blocker_control_logistics_not_judgment` | mcp/tests/test_closeout_queue.py:719-762 |
-| Candidate/evidence drift fails closed. | `test_candidate_and_evidence_drift_fail_closed` | mcp/tests/test_closeout_queue.py:799-810 |
-| WAL publication retry and request receipts are exercised behaviorally. | `test_mutations_require_stable_request_id_and_retry_after_wal_publish` | mcp/tests/test_closeout_queue.py:952-995 |
-| Sprint completion publication is serialized with queue quiescence. | `test_sprint_completion_publication_is_serialized_with_queue_quiescence` | mcp/tests/test_closeout_queue.py:1140-1169 |
+| Core queue tests cover categorical ordering and graph/leaf ties. | `test_explicit_grades_order_ready_candidates_by_graph_then_leaf_tie` | mcp/tests/test_closeout_queue.py:619-640 |
+| Internal and disabled memory modes use explicit not-applicable readiness. | `test_internal_and_disabled_memory_modes_use_explicit_not_applicable_readiness` | mcp/tests/test_closeout_queue.py:649-662 |
+| Blocker and predecessor logistics remain separate from scheduling judgment. | `test_predecessors_and_atomic_blocker_control_logistics_not_judgment` | mcp/tests/test_closeout_queue.py:718-761 |
+| Candidate/evidence drift fails closed. | `test_candidate_and_evidence_drift_fail_closed` | mcp/tests/test_closeout_queue.py:798-809 |
+| WAL publication retry and request receipts are exercised behaviorally. | `test_mutations_require_stable_request_id_and_retry_after_wal_publish` | mcp/tests/test_closeout_queue.py:950-992 |
+| Sprint completion publication is serialized with queue quiescence. | `test_sprint_completion_publication_is_serialized_with_queue_quiescence` | mcp/tests/test_closeout_queue.py:1138-1167 |
 | Segment-graph queue scheduling and leaf-placement fact reporting split out under the file-size rail. | `SegmentGraphQueueTests` | mcp/tests/test_closeout_queue_segments.py:17-110 |
 
 ## Cross-Repo References
@@ -71,6 +71,11 @@ No meaningful cross-repository reference applies.
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: the removed `require_queue_candidate_current` import and
+  its direct drift-test call are gone; the atomic-release mock re-points to
+  `closeout_queue_blocker.require_atomic_master_landed` after the blocker extraction. No scenario
+  changed. Verification remains closeout-owned.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: the segment-graph queue scenarios moved to
   `test_closeout_queue_segments.py` under the file-size rail (fixtures imported from here);

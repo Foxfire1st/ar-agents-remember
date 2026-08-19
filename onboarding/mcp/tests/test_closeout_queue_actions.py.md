@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_actions.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,10 @@ caller-specific legal-operation matrices.
 
 The suite drives exact request fields and revisions through the queue owner, then exercises
 declaration identity, immutable contract binding, atomic blocker acquire/release/abort, lifecycle
-operation recovery, and legal projections for manager and orchestrator callers.
+operation recovery, and legal projections for manager and orchestrator callers. Since
+260815-DAG-L13 the blocker transitions are imported from the extracted
+`worktrees/closeout_queue_blocker.py` owner (mock targets follow), and the request-reference
+validation cases exercise the shared `queue_task_ref` from `closeout_queue_errors.py`.
 
 ### Invariants And Boundaries
 
@@ -40,15 +43,20 @@ operation recovery, and legal projections for manager and orchestrator callers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public request and mutation authority is exact. | `test_status_scope_and_candidate_mutation_authority_is_exact` | mcp/tests/test_closeout_queue_actions.py:86-128 |
-| Blocker release and abort call their exact evidence seams. | `test_release_and_abort_blocker_require_exact_owner_and_empty_block` | mcp/tests/test_closeout_queue_actions.py:424-500 |
-| Lifecycle legal operations require the exact durable owner. | `test_owned_lifecycle_operation_requires_exact_kind_contract_and_fingerprint` | mcp/tests/test_closeout_queue_actions.py:628-662 |
+| Public request and mutation authority is exact. | `test_status_scope_and_candidate_mutation_authority_is_exact` | mcp/tests/test_closeout_queue_actions.py:89-133 |
+| Blocker release and abort call their exact evidence seams. | `test_release_and_abort_blocker_require_exact_owner_and_empty_block` | mcp/tests/test_closeout_queue_actions.py:460-534 |
+| Lifecycle legal operations require the exact durable owner. | `test_owned_lifecycle_operation_requires_exact_kind_contract_and_fingerprint` | mcp/tests/test_closeout_queue_actions.py:632-666 |
 
 ## 260815-DAG-L4 Integration-Authority Forcing
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: blocker transitions moved to
+  `worktrees/closeout_queue_blocker.py` (imports and mock targets follow), and the
+  request-reference cases exercise the extracted `queue_task_ref`. Assertions are unchanged.
+  Verification remains closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

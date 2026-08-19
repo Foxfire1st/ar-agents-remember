@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_task_document_application_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-15T03:33:21+02:00                                            |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`                                        |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-19T22:32+02:00                                            |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`                                        |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -21,9 +21,11 @@ Part of the 260731-EFA-L7 in-place split family for `test_task_document_applicat
 ## Code Commentary
 
 - `ApplicationTests1`
-- The legacy master mutation regression now proves that adding `orchestrates` refuses with
-  migration-required until the sprint graph and commanded-master natures can be supplied together,
-  and that sprint-only `integrationBranch` cannot be placed on the unchanged legacy master.
+- The legacy master mutation regression now proves that adding `orchestrates` to a plain master
+  refuses only on inexact declared facts — an undeclared super branch or a commanded alias that
+  resolves to no master — because a graph-less sprint is the legal atomic-sequential default
+  (260815-DAG-L13), and that sprint-only `integrationBranch` cannot be placed on the unchanged
+  legacy master.
 
 ## Invariants And Boundaries
 
@@ -42,6 +44,11 @@ Lineage and review authority are derived from the task hierarchy; runtime and co
 not accepted from the caller.
 
 ## Update History
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: the legacy-master orchestration regression became
+  `test_set_field_orchestration_fields_require_exact_commanded_masters` — a graph-less sprint is
+  the legal atomic-sequential default, so refusal now requires inexact declared facts (undeclared
+  super branch or unresolvable commanded alias); the sprint-only `integrationBranch` refusal is
+  unchanged. Verification remains closeout-owned.
 - 2026-08-15T03:33:21+02:00 — 260815-DAG-L1 second targeted-Dagger repair: the exact artifact
   showed the adjacent legacy `integrationBranch` success expectation also contradicted the closed
   sprint schema. The regression now proves both partial orchestration edits refuse and leave the

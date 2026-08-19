@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_structural_agent_tools.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash |  `b523f53b193e9783e7c7e6410c772e7d64d8df17`|
+| lastVerifiedCommitDate |  2026-08-19T21:54:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,6 +68,8 @@ canonical task/role seat, never to a model-supplied runtime id.
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 added isinstance narrowing to the series-bootstrap assertions after `ensure_master_series_contract` gained the lane-blocked result union; documented dispatch/bootstrap behavior is unchanged. Verification remains closeout-owned.
 
 - 2026-08-16T04:06+02:00 — Dagger fixture repair: the orphan organizational-master assertion now expects the exact missing commanding-sprint refusal emitted before atomic bootstrap authority.
 - 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.

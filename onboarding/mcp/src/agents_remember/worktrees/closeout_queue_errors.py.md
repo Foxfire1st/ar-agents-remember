@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/closeout_queue_errors.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T11:07+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 Defines the shared typed fail-closed error crossing the queue application, evidence, store-facing,
-and lifecycle services.
+and lifecycle services, plus the shared request-reference validator.
 
 ## Code Commentary
 
@@ -25,6 +25,9 @@ and lifecycle services.
 
 `CloseoutQueueError` retains a machine-readable status while the base exception carries the status
 and human detail together, preserving the mechanistic refusal in detached worker diagnostics.
+`queue_task_ref` (extracted from `closeout_queue.py` in 260815-DAG-L13) validates one
+request-carried task-document reference, failing closed with `closeout-queue-reference-required` /
+`closeout-queue-reference-invalid`.
 
 ### Conventions
 
@@ -33,7 +36,7 @@ Queue refusal sites use stable status strings rather than exposing internal exce
 ### Invariants And Boundaries
 
 - Every refusal has both a status and a detail.
-- This module contains no recovery or policy logic.
+- This module contains no recovery or policy logic beyond reference validation.
 
 ### Todos
 
@@ -47,13 +50,18 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared queue error stores the exact public status and detail. | `CloseoutQueueError` | mcp/src/agents_remember/worktrees/closeout_queue_errors.py:1-11 |
+| The shared queue error stores the exact public status and detail. | `CloseoutQueueError` | mcp/src/agents_remember/worktrees/closeout_queue_errors.py:13-18 |
+| Request-carried task references validate fail-closed in one place. | `queue_task_ref` | mcp/src/agents_remember/worktrees/closeout_queue_errors.py:21-34 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: added `queue_task_ref`, the shared request-reference
+  validator extracted from `closeout_queue.py` so the queue service and the extracted blocker
+  module validate refs identically. Verification remains closeout-owned.
 
 - 2026-08-15T11:07+02:00 — L3 Dagger repair: included the stable status in exception text while
   retaining the typed `status` field, so lifecycle failure records do not erase the refusal class.

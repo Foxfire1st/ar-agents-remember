@@ -91,7 +91,7 @@ The reopen ledger-mapping proof now supplies the exact memory source commit.
 | The doc lookup and lifecycle restamp helpers this module shares with worktree start. | `find_leaf_doc`; `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70; mcp/src/agents_remember/tasks/leaf_doc.py:161-175; mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
 | The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:441-441 |
 | The recreate-fresh path restamps the leaf lifecycle document through the queue-governed publisher. | "publish=lambda task_root, document: publish_queue_bound_task_facts(" | mcp/src/agents_remember/worktrees/modules/start.py:594-594 |
-| The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_doc_tools.py:1147-1168 |
+| The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_doc_tools.py:83-85 |
 | The contract dataclass, amendment helper, and `CleanupStatus` vocabulary definitions (the vocabulary in models/worktree.py since L9). | "class ContractCells"; "def amend_contract"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
 | The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:96-136 |
 | `test_no_contract_cell_is_written_through_dataclasses.replace` and `test_every_writable_cleanup_value_validates_at_the_wire_boundary` pin both halves of this. | `test_no_contract_cell_is_written_through_dataclasses_replace`; `test_every_writable_cleanup_value_validates_at_the_wire_boundary` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:289-293; mcp/tests/test_wire_vocabulary_exhaustiveness.py:656-664 |
@@ -134,6 +134,8 @@ The leaf/master reset plan is also rebuilt inside that authority callback, so a 
 edit completed after outer preflight is never overwritten by stale prepared models.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 moved the `task_reopen_tool` facade re-export within `task_doc_tools.py`; re-pointed the citation to `task_doc_tools.py:83-85`. Verification metadata unchanged.
 
 - 2026-08-17T12:30+02:00 — 260815-DAG-L5: reopen now passes `memory_source_commit` to the external-ledger mapping proof. Verification remains closeout-owned.
 

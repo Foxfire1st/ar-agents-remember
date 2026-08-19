@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`       |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -19,7 +19,11 @@
 `document_refs.py` indexes real sprint/master/leaf task documents, validates canonical
 repository-qualified references, and walks containment without synthesizing role anchors. This
 topology supplies structural authorization and dashboard hierarchy; it does not inspect liveness or
-select a runtime occupant.
+select a runtime occupant. Since 260815-DAG-L13 a nature-less standalone master resolves at master
+altitude by default (only an explicit `organizational` standalone stays a dead-end), migration
+recovery strings name the `author_execution_graph` bootstrap, and the public `commanded_masters`
+derives alias-commanded membership for the atomic-sequential default without re-resolving the
+sprint from disk.
 
 ## Purpose
 
@@ -133,7 +137,7 @@ together.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `task_doc` application entry point authors documents through this package. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:135-186 |
+| The `task_doc` application entry point authors documents through this package. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:190-275 |
 | Leaf writes keep same-root master rows synchronized through the dedicated planner. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
 | The task-document renderer regenerates markdown from the validated `TaskDocument`. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
 | The persisted worktree contract is the analogous model-to-text precedent. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
@@ -169,6 +173,12 @@ queue; reopening reverses that closed state through the same recoverable publica
 Task-document execution-topology edits are validated under the same repository authority as Git mutation. Candidate graphs cannot promote live leaf work branches into protected supers/atomic refs, detach live owners, or contradict an existing atomic series edge.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `document_refs.py` resolves a nature-less
+  standalone master at master altitude by default, names the `author_execution_graph` bootstrap in
+  migration-required refusals, and exposes `commanded_masters` for the atomic-sequential default's
+  alias-derived membership; the task-route purpose is unchanged. Verification remains
+  closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

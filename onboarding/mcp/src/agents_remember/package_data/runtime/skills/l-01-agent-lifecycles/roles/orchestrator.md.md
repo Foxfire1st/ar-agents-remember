@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated            | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -99,7 +99,18 @@ candidate and receives the full master check before super moves. Atomic masters 
 blocker and land only as a completed block. Integration refs are never repair workbenches; fixes
 return to an owning/reopened or new scoped leaf.
 
+## 260815-DAG-L13 Scheduling Default Doctrine
+
+Adoption doctrine now states that a sprint adopted without an `executionGraph` runs the
+atomic-sequential default (one master fully integrates before the next starts);
+`task_doc.author_execution_graph` bootstraps a graph onto it (first `add_node` batch) and edits
+one incrementally afterwards. The `migrate_execution_topology` legacy-cutover reference is gone.
+
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: synchronized the scheduling-default doctrine —
+  graph-less sprints run atomic-sequentially and `author_execution_graph` bootstraps/edits the
+  graph; the `migrate_execution_topology` reference is gone. Verification remains closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

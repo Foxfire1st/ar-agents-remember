@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-08-19T04:20+02:00 |
-| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`
-| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
+| lastUpdated            | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -701,7 +701,23 @@ can invalidate an in-flight candidate.
 
 Start, closeout, integrate, sync, cleanup, abandon, and reopen now share task-derived branch authority. Integration uses exact named-ref CAS and crash recovery; atomic series closeout records a complete leaf landing chain; lowest Git/worktree/terminal writers require capabilities instead of trusting caller-supplied branch names.
 
+## 260815-DAG-L13 Atomic-Sequential Lane
+
+`start_contract.py` gates master series bootstrap on the effective execution nature (a nature-less
+legacy master resolves atomic; organizational semantics exist only under an authored graph) and,
+under the atomic-sequential default, returns a blocked `sequential-lane-owned`
+`WorktreeCommandResult` naming the lane owner and legal next operations instead of starting a
+second in-flight master; the block fails closed when the commanding sprint cannot be resolved.
+Terminal series artifacts are ignored and reported through `start_result.py`'s
+`staleSeriesArtifact` fact. `integrate.py` surfaces the queue consume's stale-by-evidence siblings
+on the result payload (`staleByEvidence`, each naming `worktree_sync`).
+
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: recorded the atomic-sequential lane block
+  in `start_contract.py`, the `staleSeriesArtifact` fact in `start_result.py`, and the
+  `staleByEvidence` payload on `integrate.py` results; the modules route purpose is unchanged.
+  Verification remains closeout-owned.
 
 - 2026-08-19T04:20+02:00 — No route impact: 260815-DAG-L10 updated the series worktree-group equality checks in `start_contract.py`/`terminal_validation.py` and narrowed reports-tree preservation in `cleanup.py`/`abandon.py` to legacy series contracts via `legacy_series_reports_is_child_enclosure`; the modules route purpose is unchanged.
 

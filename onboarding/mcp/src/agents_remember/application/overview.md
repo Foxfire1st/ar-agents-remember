@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-19T08:55+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated            | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -271,6 +271,12 @@ Application tools now bind lifecycle requests to configured coordination, task, 
 
 ## Update History
 
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `task_doc` dropped the removed
+  `migrate_execution_topology` operation (`author_execution_graph` now bootstraps graph-less
+  sprints), sprint creation scaffolds the empty canonical planning registers with write-time shape
+  validation, and structural manager dispatch surfaces an atomic-sequential lane-blocked series
+  bootstrap as a `StructuralOutcome` payload; the application-route model is unchanged.
+  Verification remains closeout-owned.
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11 route impact: `task_reopen_tool` moved from
   `task_doc_tools.py` into the new `application/task_reopen.py` module (facade re-export keeps the
   surface stable), and `task_doc` gained the `author_execution_graph` operation dispatched to

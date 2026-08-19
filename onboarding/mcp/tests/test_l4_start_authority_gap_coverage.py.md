@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l4_start_authority_gap_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T09:55+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -43,5 +43,7 @@ organizational/atomic parent shapes, explicit source mismatch, and planned-paren
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: the nature refusal at `_master_execution_nature` became a legal `None` read (nature-less masters resolve atomically at the decision point); documented start-authority coverage is unchanged. Verification remains closeout-owned.
 
 - 2026-08-16T09:55+02:00 — Created focused L4 start-authority refusal forcing after the targeted Dagger diff-coverage report.

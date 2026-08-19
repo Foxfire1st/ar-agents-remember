@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_author_execution_graph.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T08:55+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,8 +17,10 @@
 ## Purpose
 
 Force the incremental `author_execution_graph` operation (260815-DAG-L11 R5/R6/R8): typed
-structural mutation batches over a migrated sprint's executionGraph with judgment provenance,
-partition refusals, dry-run preview, and atomic publication. Split from
+structural mutation batches over a sprint's executionGraph with judgment provenance,
+partition refusals, dry-run preview, and atomic publication — since 260815-DAG-L13 including the
+graph-less bootstrap seam (the first `add_node` batch creates the graph, reported as
+`bootstrapped: true`). Split from
 `test_task_execution_topology.py` under the file-size rail; fixtures and shared helpers are
 imported from it.
 
@@ -27,7 +29,9 @@ imported from it.
 ### Logic
 
 `ExecutionGraphAuthoringTests` builds a migrated segmented sprint, then forces: the
-unmigrated-sprint and non-orchestration refusals; judgment provenance (missing `judgmentId` on a
+non-orchestration refusal; the graph-less bootstrap (first `add_node` batch creates the graph,
+final validation requires exact `orchestrates` membership and an explicit nature for every
+commanded master, with `set_nature` in the same batch covering a nature-less document); judgment provenance (missing `judgmentId` on a
 judgment-bearing mutation, a missing Judgment Register section as a typed refusal naming the
 section, unknown register rows, non-strategist/orchestrator authors, malformed registers, and
 lump-only batches needing no register); dry-run previews that write nothing followed by apply
@@ -49,11 +53,15 @@ reported and never refusing; and registration/documentation of the operation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The authoring forcing suite. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:56-883 |
-| The production operation under test. | `author_execution_graph` | mcp/src/agents_remember/application/task_execution_topology.py:319-383 |
+| The authoring forcing suite. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:56-983 |
+| The production operation under test. | `author_execution_graph` | mcp/src/agents_remember/application/task_execution_topology.py:182-247 |
 | Fixtures and shared helpers are imported from the topology suite. | `_config`; `_master`; `_graph` | mcp/tests/test_task_execution_topology.py:51-99 |
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: the unmigrated-sprint refusal became the graph-less
+  bootstrap forcing (first `add_node` batch creates the graph with `bootstrapped: true`; final
+  validation requires exact membership and explicit natures). Verification remains closeout-owned.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: created for the incremental graph-authoring forcing
   suite (split from `test_task_execution_topology.py`). Verification remains closeout-owned.

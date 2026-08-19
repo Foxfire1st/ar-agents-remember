@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_blockers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T02:51+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,11 @@ dependency blocker vocabulary.
 
 The suite drives each blocker composer directly with canonical contracts and queue records. It
 proves exact early-return boundaries, external-memory commit and ledger requirements, evidence
-drift classes, and waiting reasons for lanes, atomic blockers, predecessors, and admission.
+drift classes, and waiting reasons for lanes, atomic blockers, predecessors, and admission. Since
+260815-DAG-L13 the source/ledger blocker strings carry the `run worktree_sync, then retry`
+recovery suffix, and `BlockerLifetimeExclusivityTests` forces the blocker lane contract: a second
+block is refused with structured owner facts, idempotent same-master re-acquisition, and a
+certified sibling reported as an acquisition fact rather than a hard drain.
 
 ### Invariants And Boundaries
 
@@ -35,16 +39,23 @@ drift classes, and waiting reasons for lanes, atomic blockers, predecessors, and
 - Source and ledger blocker tests read the exact named source refs through `branch_commit`; ambient
   checkout `HEAD` is not scheduling authority.
 - Waiting facts remain distinct from malformed or stale blockers.
+- The lane-drain refusal applies only to lane-occupying states; certified candidates are facts.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pre- and post-closeout blocker sets are separately forced. | `test_pre_closeout_blockers_name_lifecycle_tree_memory_and_source_changes` | mcp/tests/test_closeout_queue_blockers.py:109-134 |
-| Closed external trees and commits are exact. | `test_closed_tree_and_certified_commit_blockers_are_exact` | mcp/tests/test_closeout_queue_blockers.py:161-202 |
-| Waiting reasons cover graph and blocker logistics. | `test_waiting_reasons_cover_lane_blocker_atomic_and_admission_facts` | mcp/tests/test_closeout_queue_blockers.py:350-416 |
+| Pre- and post-closeout blocker sets are separately forced. | `test_pre_closeout_blockers_name_lifecycle_tree_memory_and_source_changes` | mcp/tests/test_closeout_queue_blockers.py:119-144 |
+| Closed external trees and commits are exact. | `test_closed_tree_and_certified_commit_blockers_are_exact` | mcp/tests/test_closeout_queue_blockers.py:171-212 |
+| Waiting reasons cover graph and blocker logistics. | `test_waiting_reasons_cover_lane_blocker_atomic_and_admission_facts` | mcp/tests/test_closeout_queue_blockers.py:367-437 |
+| Blocker lifetime exclusivity and structured refusal facts. | `BlockerLifetimeExclusivityTests` | mcp/tests/test_closeout_queue_blockers.py:440-583 |
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: source/ledger blocker expectations gained the
+  `worktree_sync` recovery suffix; added `BlockerLifetimeExclusivityTests` (structured refusal
+  facts, idempotent re-acquisition, certified-sibling drain narrowing). Verification remains
+  closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated            | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -98,7 +98,7 @@ owner-never-self-approves still holds.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical architect role is defined in the cited source file. | `# Lifecycle — Architect` | skills/l-01-agent-lifecycles/roles/architect.md:1-264 |
+| The canonical architect role is defined in the cited source file. | `# Lifecycle — Architect` | skills/l-01-agent-lifecycles/roles/architect.md:1-300 |
 | The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:99-99 |
 | The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:22-38; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:429-448 |
 | The design hat the architect wears inline when shaping intent or task docs. | `# Lifecycle — Designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-18 |
@@ -137,7 +137,19 @@ owns the initial and runtime plan-review loop, and rules the resulting artifact 
 adoption. Recommending a skip requires a complete plan whose dependency, route, seam,
 classification, and priority assumptions remain valid; mere existence is insufficient.
 
+## 260815-DAG-L13 Scheduling Default Doctrine
+
+The role now treats a graph-less sprint as the atomic-sequential default (one master fully
+integrates before the next starts), not as an error awaiting migration:
+`task_doc.author_execution_graph` owns graph edits, including the first bootstrap onto a
+graph-less sprint; the removed `migrate_execution_topology` is no longer named as the legacy
+cutover path.
+
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: synchronized the scheduling-default doctrine —
+  `author_execution_graph` owns graph edits including the graph-less bootstrap; the
+  `migrate_execution_topology` reference is gone. Verification remains closeout-owned.
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 

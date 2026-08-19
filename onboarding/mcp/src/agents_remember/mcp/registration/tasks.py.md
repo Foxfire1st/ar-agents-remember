@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-08-19T08:55+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0`                |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated            | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`                |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -32,8 +32,8 @@ task-state transitions: `task_reopen`, `lifecycle_finalize_task`, `task_doc`.
 `task_doc` is the JSON-primary authoring tool and carries the longest docstring on the surface,
 because the operation vocabulary is not in the types: `create` | `replace` | `set_status` |
 `set_step` | `skip_step` | `set_subtask` | `remove_subtask` | `set_section` | `append_decision` |
-`record_route_review` | `migrate_execution_topology` | `author_execution_graph` | `set_field` |
-`get`. The JSON document is the source of truth; `task.md` / `<slug>.md` is a generated render that
+`record_route_review` | `author_execution_graph` | `set_field` |
+`get` (`migrate_execution_topology` was removed in 260815-DAG-L13). The JSON document is the source of truth; `task.md` / `<slug>.md` is a generated render that
 is never parsed back. Everything mutates except `operation='get'`, and `dry_run=true` builds and
 validates and returns `rendered`/`diff`/`wouldLose` **without** writing — the preview before
 adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subtask` /
@@ -42,13 +42,17 @@ adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subta
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
         explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:117-117; mcp/src/agents_remember/mcp/registration/tasks.py:126-128).
 
-Since 260815-DAG-L11 the docstring also spells out the two graph operations:
-`migrate_execution_topology` is the lump-only bootstrap, while `author_execution_graph` applies one
+Since 260815-DAG-L11 the docstring also spells out the graph operation:
+`author_execution_graph` applies one
 validated atomic batch of typed mutations (`add_node`/`remove_node`/`add_edge`/`remove_edge`/
-`move_leaf`/`set_nature`) to a migrated sprint's `executionGraph` — segment-addressed by sampling
+`move_leaf`/`set_nature`) to a sprint's `executionGraph` — segment-addressed by sampling
 leaf ids, with judgment-bearing mutations requiring a `judgmentId` row in the sprint's Judgment
 Register (the mechanism never invents one), typed refusals for segment-on-atomic and incomplete
-partitions, and unplaced-leaf placements plus numbering inversions reported as facts.
+partitions, and unplaced-leaf placements plus numbering inversions reported as facts. Since
+260815-DAG-L13 the first `add_node` batch on a graph-less sprint bootstraps the graph (the result
+reports `bootstrapped: true`), sprint creation scaffolds the empty canonical Judgment and Priority
+Register sections, and a `set_section` carrying a canonical register heading must keep the exact
+register table shape (write-time validation).
 
 The body splits that into two objects: `TaskDocTarget(repo_id, task_name, contract_path, slug)` —
 which document to edit — and `TaskDocEdit(fields, step, decision, subtask, section)` — what the edit
@@ -88,9 +92,20 @@ recreates everything.
 This registration surface now exposes `closeout_queue` with the strict request model and describes
 the manager/orchestrator authority split, revision/idempotency protocol, exact curator and planning
 evidence, deterministic ordering, atomic blocker semantics, bounded durable artifact, and
-task-addressed lifecycle ownership.
+task-addressed lifecycle ownership. Since 260815-DAG-L13 the docstring also states the degraded
+read contract: `status` never fails on a missing executionGraph or malformed registers (it reports
+mode, registers, laneOwner, and legalNextOperations), stale-base closeout/integration refusals name
+`worktree_sync` as the recovery, a completed landing reports stale-by-evidence siblings, an
+in-flight atomic block owns the landing lane for its lifetime, acquisition reports in-flight
+organizational leafs as facts, and a certified candidate no longer occupies the lane.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: `task_doc` docstring drops the removed
+  `migrate_execution_topology` operation, documents the graph-less `author_execution_graph`
+  bootstrap, the scaffolded planning registers, and the register write-time shape validation; the
+  `closeout_queue` docstring documents the degraded status readout and the sync-first recovery
+  naming. Verification remains closeout-owned.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: the `task_doc` docstring gains the
   `author_execution_graph` operation (typed mutation batch, segment-sampling endpoints,

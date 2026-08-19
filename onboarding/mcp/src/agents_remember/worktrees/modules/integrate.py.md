@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastUpdated            | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -111,7 +111,11 @@ A missing Agents Remember wrapper or failed full result blocks before merge.
 Integration now claims the certified candidate, recomputes the full graph/readiness/evidence and
 exact commit identity immediately before `_merge_integrated_commits`, and consumes the queue row
 after the source move. Recovery of an already-completed integration consumes the same exact record
-idempotently; no generic integration request may select or substitute a different leaf.
+idempotently; no generic integration request may select or substitute a different leaf. Since
+260815-DAG-L13 the consume call returns the stale-by-evidence siblings (candidates whose recorded
+base pair no longer matches the new source tips), and both the fresh-apply and the
+completed-recovery result payloads carry them as `staleByEvidence` with `worktree_sync` named as
+each sibling's recovery (L13-R2).
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
@@ -129,6 +133,10 @@ refuses before queue completion; immutable integration authority or self-asserte
 alone are not recovery evidence.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: the queue-consume return (stale-by-evidence sibling
+  facts) now lands on the fresh and completed-recovery integration payloads as
+  `staleByEvidence`, each naming `worktree_sync` as recovery. Verification remains closeout-owned.
 
 - 2026-08-17T12:09+02:00 — 260815-DAG-L5: the quality altitude ladder (`quality_gate_mode`, `quality_gate_preview`, `run_integration_quality_gate`) moved to `integration_quality.py` and `IntegratePreview`/`IntegrationPublication` to `modules/integration_publication.py`; re-pointed the two cited rows to the new owners. Verification remains closeout-owned.
 

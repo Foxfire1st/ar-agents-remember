@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_branch_authority_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T07:46+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -44,6 +44,8 @@ Tests bind real journal/queue/config facts and explicitly exercise no-ambient-ch
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 added an isinstance narrowing to the recovered contract assertion after the bootstrap union; documented authority behavior is unchanged. Verification remains closeout-owned.
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 

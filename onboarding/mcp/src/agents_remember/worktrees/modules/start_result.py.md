@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/start_result.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-14T05:26Z |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate |  2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate |  2026-08-19T21:54:50+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,9 @@ different recovery guidance.
 summary when provider setup continues asynchronously. `_start_preview_result` builds the exact
 task-addressed apply call, omitting a source branch only for a not-yet-materialized parent and
 preserving caller-owned recovery inputs. `_start_result_facts` emits the common contract and
-enclosure identity fields.
+enclosure identity fields and, since 260815-DAG-L13, appends a `staleSeriesArtifact` fact when the
+start ignored a terminal series contract artifact under an organizational master (L13-R5b — the
+artifact no longer owns anything, so the start reports it instead of refusing).
 
 ### Conventions
 
@@ -62,6 +64,10 @@ No configured Domain Documentation source applies.
 No cross-repository boundary is owned here.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: `_start_result_facts` now reports an ignored terminal
+  series-contract artifact under an organizational master as a `staleSeriesArtifact` fact.
+  Verification remains closeout-owned.
 
 - 2026-08-14T05:26Z — Created for the L23 final candidate after start-result projection was
   extracted from the start coordinator. Verification remains closeout-owned.

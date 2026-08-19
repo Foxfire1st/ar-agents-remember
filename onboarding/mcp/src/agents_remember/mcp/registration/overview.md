@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-19T08:55+02:00                           |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0`       |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated            | 2026-08-19T22:32+02:00                           |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`       |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -79,7 +79,7 @@ developer ruled all four forbidden — and no `noqa` anywhere holds an argument-
 | `code_search.py`    | `grepai_search`, `grepai_trace`, and the six `cgc_*` graph tools.          |
 | `worktrees.py`      | `worktree_start`, `worktree_attach`, `worktree_status`, `worktree_sync` — the working half of a task. |
 | `closeout.py`       | `worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`, `worktree_abandon` — the landing half. |
-| `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`, `closeout_queue`; task-doc advertises the explicit multi-document execution-topology migration payload (lump-only bootstrap), the incremental judgment-provenanced `author_execution_graph` mutation batch, and the classification/wave previews, while closeout-queue mutations use a strict action-specific request and plane-owned caller identity. |
+| `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`, `closeout_queue`; task-doc advertises the judgment-provenanced `author_execution_graph` mutation batch (which also bootstraps a graph-less sprint — the first `add_node` batch creates the graph) and the classification/wave previews, while closeout-queue mutations use a strict action-specific request and plane-owned caller identity. |
 | `benchmarks.py`     | `codex_benchmark_prepare`, `codex_benchmark_run`.                          |
 | `lifecycle.py`      | The six session-lifecycle signals: `lifecycle_start`, `lifecycle_resume`, `lifecycle_turn_end_notification`, `lifecycle_end`, `switch_lifecycle`, `lifecycle_phase`. |
 | `gates.py`          | Structural `lifecycle_gate`, `gate_decide`, `gate_list`; public gate/lifecycle ids are absent. |
@@ -102,9 +102,12 @@ The published docstring is the model-visible description of the tool and is chec
 `test_tools.py`; it is the only place a caller learns the semantics, so it carries the refusal
 vocabulary and the act-by-default `dry_run` contract in prose.
 
-For `migrate_execution_topology`, that description names the exact nested master reference plus
-nature cells, graph nodes, predecessor/successor/reason edges, and the structured classifications
-and derived waves returned by preview; callers do not have to infer the shape from prose examples.
+For `author_execution_graph`, that description names the exact mutation cells (node, edge with
+predecessor/successor/reason, leaf move, nature set with its judgment row), the graph-less
+bootstrap, and the structured classifications and derived waves returned by preview; callers do not
+have to infer the shape from prose examples. The `closeout_queue` description likewise carries the
+degraded `status` readout (mode/registers/laneOwner/legalNextOperations) and the sync-first
+`worktree_sync` recovery naming for stale-base refusals.
 
 Structural tool registration fixes attribution and caller identity in the plane. Gate decisions use
 the ambient seat for authority; message tools derive the sender from the same hosted context. No
@@ -199,6 +202,12 @@ payload builder; queue logic stays in the application/worktree/control-plane own
 Registered worktree and memory tools expose journaled closeout/integration and read-only conflict/carryover planning while keeping protected writes behind configured authority. Response schemas and next-tool literals match the executable registration surface.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `tasks.py`'s `task_doc` declaration no
+  longer advertises the removed `migrate_execution_topology`; `author_execution_graph` is
+  documented as the bootstrap seam, and the `closeout_queue` declaration documents the degraded
+  `status` readout and sync-first recovery naming. The advertised surface stays 56 tools.
+  Verification remains closeout-owned.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11 route impact: `tasks.py`'s `task_doc` declaration now
   also advertises the `author_execution_graph` operation; the advertised surface stays 56 tools

@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-19T04:20+02:00 |
-| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`
-| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -22,7 +22,11 @@ Total output lines: 2603
 The closeout queue consumes sprint judgments only from the exact orchestration-task Judgment and
 Priority Register sections. Their template headings, headers, rectangular separator rows, and
 outer Markdown pipes are part of the authority grammar; width-shaped prose or malformed table
-rows fail closed before they can grade or order a candidate.
+rows fail closed before they can grade or order a candidate. Since 260815-DAG-L13 the fail-closed
+side is the write/mutation path: sprint creation scaffolds the empty canonical registers,
+`task_doc` writes validate register shape, and the queue's `status` read instead degrades to a
+facts projection (absent/ok/malformed per register) — graph-less sprints project the
+atomic-sequential default with the series lane owner and legal next operations.
 
 ## Current Structural Agent Boundary
 
@@ -859,6 +863,14 @@ The MCP runtime now owns repository-global protected-ref census, durable closeou
 
 ## Update History
 
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: the canonical scheduling-register boundary
+  now records the L13 split — mutations and document writes stay fail-closed (creation scaffolds
+  the empty registers, writes validate shape) while the queue `status` read degrades to a facts
+  projection, and graph-less sprints run the atomic-sequential default with a named series lane
+  owner; new modules `worktrees/scheduling_mode.py` (mode/nature/lane resolution) and
+  `worktrees/closeout_queue_blocker.py` (blocker transitions, extracted from `closeout_queue.py`)
+  joined the route, and `migrate_execution_topology` was removed. Verification remains
+  closeout-owned.
 - 2026-08-19T04:20+02:00 — No route impact: 260815-DAG-L10 re-rooted the series contract `worktree_group` at `worktrees/<repo>/<master>-ar` so series reports are swept with the group; leaf enclosures and the mcp-route purpose are unchanged.
 - 2026-08-18T12:00:00+00:00 — No route impact: 260815-DAG-L9 added `inventory_execution_topology` to `application/task_execution_topology.py`; the mcp-route purpose is unchanged.
 - 2026-08-18T10:30+02:00 — No route impact: 260815-DAG-L7 added the orchestrator portfolio loop under worktrees; route purpose unchanged.

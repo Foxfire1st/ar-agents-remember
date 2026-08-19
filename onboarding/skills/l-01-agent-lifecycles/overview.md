@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T22:32+02:00 |
+| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
+| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
 
 ## Purpose
 
@@ -91,6 +91,12 @@ cadence remains fixed at leaf closeout once and master integration once, with no
 rerun and no inferred fallback.
 
 ## Update History
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: the architect/orchestrator roles and the
+  orchestration-task template now teach the atomic-sequential default — a graph-less sprint runs
+  one master at a time, `task_doc.author_execution_graph` owns graph bootstrap and edits, and the
+  `migrate_execution_topology` cutover reference is gone; lifecycle routing doctrine is unchanged.
+  Verification remains closeout-owned.
 
 - 2026-08-18T09:25+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
 
