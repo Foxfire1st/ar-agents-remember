@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
-| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
+| lastUpdated | 2026-08-19T08:55+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,11 +49,13 @@ the new application module attached to this existing behavioral topology suite.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph schema cases force the closed structural contract. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:53-104 |
-| Migration and cross-document cases force exact membership, projection, and rollback. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:107-317 |
-| Inventory cases force branch-backed atomic classification, empty-tree counts, and branch-enumeration refusal. | `test_inventory_enumerates_sprints_and_proposes_branch_backed_nature` | mcp/tests/test_task_execution_topology.py:205-268 |
-| Cross-root publication failure restores canonical task documents and leaves no queue state or pending WAL. | `test_migration_refuses_non_exact_membership_and_rolls_back_cross_root_failure` | mcp/tests/test_task_execution_topology.py:702-748 |
-| The production policy under test lives in the application topology module. | `migrate_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:67-129 |
+| Graph schema cases force the closed structural contract. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:100-196 |
+| Migration and cross-document cases force exact membership, projection, and rollback. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:198-925 |
+| Inventory cases force branch-backed atomic classification, empty-tree counts, and branch-enumeration refusal. | `test_inventory_enumerates_sprints_and_proposes_branch_backed_nature` | mcp/tests/test_task_execution_topology.py:210-273 |
+| Cross-root publication failure restores canonical task documents and leaves no queue state or pending WAL. | `test_migration_refuses_non_exact_membership_and_rolls_back_cross_root_failure` | mcp/tests/test_task_execution_topology.py:741-787 |
+| The production policy under test lives in the application topology module. | `migrate_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:125-218 |
+| The L11 segment-graph schema/projection/placement cases split out under the file-size rail. | `ExecutionGraphSegmentSchemaTests` | mcp/tests/test_task_execution_topology_segments.py:41-254 |
+| The L11 incremental authoring forcing suite. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:56-883 |
 
 ## 260815-DAG-L9 Inventory Forcing
 
@@ -67,6 +69,10 @@ This task extends this suite's production-bound fixtures or assertions for task-
 
 ## Update History
 
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the L11 segment/authoring cases moved out to
+  `test_task_execution_topology_segments.py` and `test_author_execution_graph.py` under the
+  file-size rail (fixtures and helpers are imported from this suite); this file keeps the schema,
+  migration, inventory, and rollback forcing classes. Verification remains closeout-owned.
 - 2026-08-18T12:00:00+00:00 — 260815-DAG-L9: added three `inventory_execution_topology` forcing cases
   (branch-backed atomic, empty tree, branch-enumeration refusal); verification remains
   closeout-owned.

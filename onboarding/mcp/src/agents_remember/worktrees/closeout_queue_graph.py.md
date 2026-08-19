@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/closeout_queue_graph.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-19T08:55+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -16,16 +16,27 @@
 
 ## Purpose
 
-Builds the bounded immutable sprint-graph projection consumed by every queue decision.
+Builds the bounded immutable sprint-graph projection consumed by every queue decision, and — since
+260815-DAG-L11 — owns the leaf-aware lookups: the leaf-to-node index, candidate-node resolution,
+leaf-aware predecessor/waiting-reason/sort-key helpers.
 
 ## Code Commentary
 
 ### Logic
 
 `graph_context` resolves and validates the canonical sprint graph, caps masters/edges/leaves,
-computes a revision over the graph plus execution natures, indexes node order, computes incomplete
-predecessors once, and parses the canonical planning authorities. `incomplete_predecessor_map`
-uses one adjacency construction and one traversal over graph nodes and edges.
+computes a revision over the graph plus execution natures, indexes node order (keyed on
+`SprintExecutionNode`), computes incomplete predecessors once, and parses the canonical planning
+authorities. `incomplete_predecessor_map` uses one adjacency construction and one traversal over
+graph nodes and edges; completion stays master-granular — a node counts complete when its master
+document is `Completed`, so an edge into a segment blocks exactly that segment's leafs until the
+predecessor's whole master completes (L11-R3). `_leaf_node_index` folds authored and derived
+(L11-R2) leaf placements into one leaf→node index and collects the unplaced/unknown-leaf facts the
+queue response reports. `candidate_node` maps one candidate to the lump or its leaf's segment
+node; `candidate_predecessors`, `predecessor_waiting_reasons`, `predecessor_label`,
+`ready_sort_key` (priority rank, then candidate-node declaration order, then leaf identity), and
+`master_incomplete_predecessors` serve the queue and the portfolio loop, with an unmappable leaf
+falling back conservatively to the master's node union.
 
 ### Conventions
 
@@ -50,13 +61,21 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph construction validates/caps topology and derives the exact queue revision and indexes. | `graph_context` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:39-100 |
-| Incomplete predecessors are built in one bounded adjacency pass. | `incomplete_predecessor_map` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:103-119 |
+| Graph construction validates/caps topology and derives the exact queue revision and indexes. | `graph_context` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:53-115 |
+| Incomplete predecessors are built in one bounded adjacency pass with master-granular completion. | `incomplete_predecessor_map` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:233-259 |
+| Leaf-aware candidate lookups resolve a candidate to its lump or segment node. | `candidate_node`; `candidate_predecessors` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:158-181 |
+| The queue's sort key and waiting reasons consume the candidate's own node. | `ready_sort_key`; `predecessor_waiting_reasons` | mcp/src/agents_remember/worktrees/closeout_queue_graph.py:191-217 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
 ## Update History
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the queue graph projection is leaf-aware — node-keyed
+  order and incomplete-predecessor maps, the leaf→node index with derived-placement facts, and the
+  extracted `candidate_node`/`candidate_predecessors`/`predecessor_waiting_reasons`/
+  `ready_sort_key`/`master_incomplete_predecessors` helpers (moved here from `closeout_queue.py`
+  under the file-size rail). Verification remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — Created for L3's bounded immutable queue graph projection; verification remains closeout-owned.

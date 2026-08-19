@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T08:55+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -31,7 +31,11 @@ declare and maintain admission facts; the orchestrator records canonical grades,
 ready candidate, and owns blockers. Candidate blockers revalidate task completion, graph revision,
 source lineage, candidate trees, route review, curator evidence, grade rows, and ledger facts. Exact
 route and curator comparisons are delegated to their evidence owners; this service composes the
-returned blocker facts.
+returned blocker facts. Since 260815-DAG-L11 the queue is leaf-aware: segment-targeted edges block
+exactly that segment's leafs, the response carries `leafPlacementFacts` (unplaced/unknown leafs
+with their derived segment placement, reported as facts — never silently auto-written), and the
+leaf-aware predecessor/waiting-reason/sort-key lookups are delegated to `closeout_queue_graph.py`,
+which owns the leaf-to-node index.
 
 ### Conventions
 
@@ -62,11 +66,11 @@ No configured Domain Documentation source applies; queue doctrine is repository-
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Structural authorization separates manager logistics from orchestrator grade/selection authority. | `QueueActor` | mcp/src/agents_remember/worktrees/closeout_queue.py:100-154 |
-| Mutations re-read the graph under lock before returning a projection. | `closeout_queue_tool` | mcp/src/agents_remember/worktrees/closeout_queue.py:171-244 |
-| Selection takes only the deterministic first ready candidate. | `_apply_candidate_action` | mcp/src/agents_remember/worktrees/closeout_queue.py:277-331 |
-| Declaration binds exact code, memory, ledger, review, curator, and source-lineage facts before history moves. | `_declare_candidate` | mcp/src/agents_remember/worktrees/closeout_queue.py:343-350 |
-| Candidate projection separates ready, waiting, blocked, and in-flight facts. | `_projection` | mcp/src/agents_remember/worktrees/closeout_queue.py:620-649 |
+| Structural authorization separates manager logistics from orchestrator grade/selection authority. | `QueueActor` | mcp/src/agents_remember/worktrees/closeout_queue.py:112-120 |
+| Mutations re-read the graph under lock before returning a projection. | `closeout_queue_tool` | mcp/src/agents_remember/worktrees/closeout_queue.py:180-248 |
+| Selection takes only the deterministic first ready candidate. | `_apply_candidate_action` | mcp/src/agents_remember/worktrees/closeout_queue.py:281-335 |
+| Declaration binds exact code, memory, ledger, review, curator, and source-lineage facts before history moves. | `_declare_candidate` | mcp/src/agents_remember/worktrees/closeout_queue.py:347-355 |
+| Candidate projection separates ready, waiting, blocked, and in-flight facts and reports `leafPlacementFacts`. | `_projection` | mcp/src/agents_remember/worktrees/closeout_queue.py:624-655 |
 
 ## Cross-Repo References
 
@@ -77,6 +81,12 @@ No external repository owns this queue.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the queue is leaf-aware — segment-targeted edges block
+  exactly that segment's leafs (completion stays master-granular), the projection reports
+  `leafPlacementFacts`, and leaf-aware predecessor/waiting-reason/sort-key helpers moved to
+  `closeout_queue_graph.py` (file-size rail; public surface unchanged). Verification remains
+  closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

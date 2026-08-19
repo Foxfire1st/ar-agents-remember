@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-19T08:55+02:00                     |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,7 +25,10 @@ renderer, and the single/batch store helpers.
 
 Re-exports `document` (`TaskDocument` + the node models incl. `SubTaskRef`/`Section`/`HeaderNote`,
 the `DocKind`/`DocStatus`/`StepStatus` Literals, `TASK_DOCUMENT_SCHEMA`, and the
-`step_total`/`step_done`/`current_step` + R1 `series_total`/`series_done` helpers), `render`
+`step_total`/`step_done`/`current_step` + R1 `series_total`/`series_done` helpers), the
+260815-DAG-L11 graph surface (`SprintExecutionNode`/`SprintExecutionEndpoint`/`SprintExecutionEdge`/
+`SprintExecutionGraph`, `LeafPlacement`, `resolve_graph_endpoint`, `derived_leaf_placement`,
+`leaf_placement_facts`, `numbering_drift_hints`), `render`
 (`render_markdown`), and
 `store` (`read_task_doc`/`write_task_doc`/`write_task_docs`/`json_path_for`/`markdown_path_for`/
 `doc_stem`). `__all__` lists the full public set.
@@ -39,7 +42,7 @@ the `DocKind`/`DocStatus`/`StepStatus` Literals, `TASK_DOCUMENT_SCHEMA`, and the
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument) -> str:"; "def write_task_docs(task_root: Path" | mcp/src/agents_remember/tasks/document.py:261-261; mcp/src/agents_remember/tasks/render.py:30-30; mcp/src/agents_remember/tasks/store.py:40-40 |
+| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument) -> str:"; "def write_task_docs(task_root: Path" | mcp/src/agents_remember/tasks/document.py:551-551; mcp/src/agents_remember/tasks/render.py:31-31; mcp/src/agents_remember/tasks/store.py:40-40 |
 
 ## Series-Contract Notes
 
@@ -47,6 +50,10 @@ The package facade exports `TaskEnclosureRef` so task-document callers can const
 
 ## Update History
 
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the facade additionally exports the segment-graph
+  surface (`SprintExecutionNode`, `SprintExecutionEndpoint`, `LeafPlacement`,
+  `resolve_graph_endpoint`, `derived_leaf_placement`, `leaf_placement_facts`,
+  `numbering_drift_hints`). Verification remains closeout-owned.
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the task package facade exports execution nature,
   sprint graph/edge models, and the cross-root atomic document batch writer.
 - 2026-08-14T06:34+02:00 — L23 final candidate review: task exports expose the canonical document

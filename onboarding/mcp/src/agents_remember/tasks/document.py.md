@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T02:53:40+02:00                        |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce` |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-19T08:55+02:00                        |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -50,10 +50,26 @@ and serialize exactly as before, and masters named nowhere stay top-level.
 
 Execution topology is explicit and separate from containment. A commanded master declares the
 closed `executionNature` value `organizational` or `atomic`; an orchestration sprint instead owns a
-`SprintExecutionGraph` of canonical `TaskDocumentRef` nodes and reasoned predecessor/successor
-edges. The graph rejects duplicate nodes/edges, self edges, undeclared endpoints, blank reasons,
-and cycles, then derives deterministic topological waves without persisting positions. Legacy
-absence remains parseable only for the finite migration path; no validator infers a default.
+`SprintExecutionGraph` of `SprintExecutionNode` nodes and reasoned predecessor/successor edges.
+Since 260815-DAG-L11 a node is either a `master` lump (the whole master) or a `segment` (one master
+ref plus a non-empty, unique `leafIds` list); a legacy bare `{repository, path}` node lifts to a
+lump on parse and serializes back to the bare shape, so lump-only graphs round-trip
+byte-identically, and a lump compares equal to (and hashes like) its bare ref. Edges
+(`SprintExecutionEdge`) gain an optional `judgmentId`, and each endpoint is a bare ref or a
+`SprintExecutionEndpoint` (`ref` + `leafId`) addressing the segment that contains that leaf;
+resolution to exactly one node happens in graph validation, never at parse time. The graph rejects
+duplicate nodes/edges, self edges, undeclared or ambiguous endpoints, blank reasons/judgment ids,
+and cycles; it enforces sprint-wide leaf-ownership uniqueness plus lump/segment mutual exclusion
+per master, then derives deterministic topological waves over nodes without persisting positions.
+Legacy absence remains parseable only for the finite migration path; no validator infers a default.
+
+`derived_leaf_placement` maps one master's planned leaf ids onto its authored segments and derives
+a pure, never-persisted placement for unplaced leafs — a master's leaf set that grew after graph
+authoring — into the master's latest unblocked segment (latest by derived wave, then declaration
+order; `derived_all_blocked` flags the all-segments-blocked fallback). `leaf_placement_facts`
+shapes unknown/unplaced placements as reported facts (never silent, never auto-written), and
+`numbering_drift_hints` reports leaf-numbering inversions across derived waves as facts that never
+refuse.
 
 `step_total`/`step_done` count the progress-bearing leaves (`_leaf_statuses`: a step's
 substeps when it has any, else the step itself), and `current_step` returns the first
@@ -111,9 +127,9 @@ the escape hatch for bespoke prose; the standard template sections stay the back
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The renderer consumes this model. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
+| The renderer consumes this model. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:31-53 |
 | The store reads/writes this model. | `read_task_doc`; `write_task_doc` | mcp/src/agents_remember/tasks/store.py:32-33; mcp/src/agents_remember/tasks/store.py:36-37 |
-| The persisted-contract peer this mirrors. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:676-728 |
+| The persisted-contract peer this mirrors. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:718-771 |
 
 ## L23 Final Candidate Disposition
 
@@ -122,6 +138,13 @@ and route-review authority. Those document relationships, not branch names or ru
 an agent, select the task boundary.
 
 ## Update History
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the sprint graph model is now leaf-segmented —
+  `SprintExecutionNode` lumps or per-master segments with legacy bare-ref lifting and byte-identical
+  lump re-serialization, judgment-provenanced edges with segment-sampling endpoints, sprint-wide
+  leaf uniqueness and lump/segment mutual exclusion, node-derived waves, and the pure
+  `derived_leaf_placement` / `leaf_placement_facts` / `numbering_drift_hints` fact helpers.
+  Verification remains closeout-owned.
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the JSON-primary task schema now distinguishes
   commanded-master execution nature from sprint-only reasoned AON graphs, derives stable waves, and

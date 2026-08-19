@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/tasks/document_refs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T05:27+02:00 |
-| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-19T08:55+02:00 |
+| lastVerifiedCommitHash |  `f2e2f4b9c18d89cc0f5c901f43831e014701aae0`|
+| lastVerifiedCommitDate |  2026-08-19T11:32:36+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,12 +29,18 @@ checks level and containment, and walks leaf→master→sprint without synthesiz
 `TaskDocumentRefError` failures distinguish malformed, missing, mismatched, and ambiguous topology.
 
 For execution topology, `validate_execution_topology` resolves every sprint `orchestrates` alias to
-exactly one commanded master, requires graph membership to equal that resolved set, and refuses a
-missing graph or nature as migration-required. Candidate overrides let task-doc authoring validate
-before publication. `execution_sprints_affected_by_master` inventories old and new folder/id/title
+exactly one commanded master, requires graph *master* membership (`graph.master_refs()`) to equal
+that resolved set, refuses a missing graph or nature as migration-required, and — since
+260815-DAG-L11 — refuses a segment node on an `atomic`-nature master (atomic masters admit lump
+nodes only). Candidate overrides let task-doc authoring validate before publication.
+`execution_leaf_placement` returns each commanded master's live leaf-to-segment `LeafPlacement`
+(`MasterLeafPlacement`): computed against the master's live `subTasks` rows, so a leaf set that
+changed after graph authoring surfaces as unknown/unplaced facts on read paths; only the
+graph-authoring write path refuses an incomplete partition.
+`execution_sprints_affected_by_master` inventories old and new folder/id/title
 aliases so identity edits and same-path kind replacement cannot silently detach or collide a
-commanded master; `execution_waves` exposes only the graph-derived order after validating the exact
-sprint snapshot it will dereference, so a concurrent migration cannot split validation from the
+commanded master; `execution_waves` exposes only the graph-derived node order after validating the
+exact sprint snapshot it will dereference, so a concurrent migration cannot split validation from the
 returned graph. Override resolution retains independent root-confinement and repository-identity
 guards for pre-publication candidates.
 `resolve_candidate` exposes that same canonical override resolver to other task-authority owners;
@@ -63,7 +69,7 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Task document topology is centralized in one typed resolver. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:26-252 |
+| Task document topology is centralized in one typed resolver. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:61-480 |
 | Structural seats consume this topology to qualify parent and child relations. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:22-160 |
 
 ## Cross-Repo References
@@ -78,6 +84,10 @@ L4 routes this file's existing application, configuration, task, model, registra
 
 ## Update History
 
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: topology validation compares resolved command membership
+  against `graph.master_refs()`, refuses segment nodes on atomic masters, and gains
+  `execution_leaf_placement` / `MasterLeafPlacement` reporting live unknown/unplaced leaf facts;
+  `execution_waves` returns node waves. Verification remains closeout-owned.
 - 2026-08-16T05:27+02:00 — L4 exact-review repair: exposed the existing canonical override
   resolver through `resolve_candidate`, preserving its root-confinement and repository-identity
   checks for live-leaf publication authority without adding a second validation route.

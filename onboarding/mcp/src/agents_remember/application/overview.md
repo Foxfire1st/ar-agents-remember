@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-15T11:25+02:00 |
-| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
-| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
+| lastUpdated            | 2026-08-19T08:55+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ agent or process replacement; callers never supply the private operation key or 
 `application/` owns operation-level MCP composition. Application entry points translate
 trusted MCP runtime config plus typed tool arguments into package service calls
 and JSON-compatible payload dictionaries. Domain placement follows what a tool
-operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_doc_tools.py:1147-1168) sits beside the task_doc application entry point because it
+operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_reopen.py:20-41) sits beside the task_doc application entry point because it
 reopens a task, while worktree_tools keeps only genuine worktree operations (its
 abandon now also ends the ambient lifecycle it anchors).
 
@@ -271,6 +271,11 @@ Application tools now bind lifecycle requests to configured coordination, task, 
 
 ## Update History
 
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11 route impact: `task_reopen_tool` moved from
+  `task_doc_tools.py` into the new `application/task_reopen.py` module (facade re-export keeps the
+  surface stable), and `task_doc` gained the `author_execution_graph` operation dispatched to
+  `task_execution_topology.py`; the application-route model is unchanged. Verification remains
+  closeout-owned.
 - 2026-08-18T12:00:00+00:00 — No route impact: L9 adds `inventory_execution_topology` (read-only pre-migration enumeration) to `task_execution_topology.py`; the application-route model is unchanged.
 - 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
 

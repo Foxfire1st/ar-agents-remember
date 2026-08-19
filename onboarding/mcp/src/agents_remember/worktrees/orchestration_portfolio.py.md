@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/worktrees/orchestration_portfolio.py` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-18T00:00+02:00                                       |
-| lastVerifiedCommitHash | `e460d4c000983d96a3ef6d105a1aeecbb73d5dc5`                   |
-| lastVerifiedCommitDate | 2026-08-18T13:41:53+02:00|
+| lastUpdated            | 2026-08-19T08:55+02:00                                       |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0`                   |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview      | `../../../overview.md`                                       |
 
 ## Governing Overview
@@ -33,10 +33,13 @@ reprioritization, withdrawal, failure handling, or strategist escalation) with r
 large leaf move, and new common foundation — into `substantial`, otherwise `ordinary`.
 `recompute_frontier(graph, state)` returns the dependency-safe frontier of grade-current, unblocked
 candidates; `_frontier_ready` mirrors the queue's remaining waiting reasons (incomplete predecessors,
-missing grade, and an atomic master without an active blocker). `choose(frontier)` applies the canonical
-priority rank, then graph node order, then task key. `manager_slice(graph, state, master_ref)` builds
-the per-master graph/queue slice a manager needs (nature, incomplete predecessors, their own
-candidates with readiness).
+missing grade, and an atomic master without an active blocker) — since 260815-DAG-L11 through the
+leaf-aware `candidate_node` lookup, so a candidate is judged on its own lump or segment node, with
+an unmappable leaf falling back conservatively to the master's predecessor union; `_candidate_order`
+ranks by the candidate node's declaration order (or the master's earliest node). `choose(frontier)`
+applies the canonical priority rank, then graph node order, then task key. `manager_slice(graph,
+state, master_ref)` builds the per-master graph/queue slice a manager needs (nature, incomplete
+predecessors, their own candidates with readiness).
 
 ### Conventions
 
@@ -57,13 +60,18 @@ and selection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The durable decision record carries kind, reshape kind, subject, and rationale. | `OrchestratorDecision` | mcp/src/agents_remember/worktrees/orchestration_portfolio.py:44-56 |
-| Reshape classification folds four signals into ordinary/substantial. | `classify_reshape` | mcp/src/agents_remember/worktrees/orchestration_portfolio.py:92-105 |
-| Frontier recomputation mirrors the queue's waiting reasons. | `recompute_frontier` | mcp/src/agents_remember/worktrees/orchestration_portfolio.py:135-157 |
-| Deterministic selection by priority, node order, then key. | `choose` | mcp/src/agents_remember/worktrees/orchestration_portfolio.py:160-172 |
-| Manager slice scopes candidates to the owning master. | `manager_slice` | mcp/src/agents_remember/worktrees/orchestration_portfolio.py:175-208 |
+| The durable decision record carries kind, reshape kind, subject, and rationale. | `OrchestratorDecision` | mcp/src/agents_remember/worktrees/orchestration_portfolio.py:48-60 |
+| Reshape classification folds four signals into ordinary/substantial. | `classify_reshape` | mcp/src/agents_remember/worktrees/orchestration_portfolio.py:96-109 |
+| Frontier recomputation mirrors the queue's waiting reasons. | `recompute_frontier` | mcp/src/agents_remember/worktrees/orchestration_portfolio.py:145-168 |
+| Deterministic selection by priority, node order, then key. | `choose` | mcp/src/agents_remember/worktrees/orchestration_portfolio.py:180-192 |
+| Manager slice scopes candidates to the owning master. | `manager_slice` | mcp/src/agents_remember/worktrees/orchestration_portfolio.py:195-230 |
 
 ## Update History
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the frontier is leaf-aware — `_frontier_ready` and
+  `_candidate_order` resolve the candidate's own lump/segment node via `candidate_node` and fall
+  back conservatively to the master's node union/earliest node for an unmappable leaf. Verification
+  remains closeout-owned.
 
 - 2026-08-18T00:00+02:00 — 260815-DAG-L7: created the orchestrator portfolio loop (decision record,
   reshape classification, frontier recomputation, deterministic choice, manager slice). Verification

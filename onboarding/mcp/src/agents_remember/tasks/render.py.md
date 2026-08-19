@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T23:57:48+02:00                     |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-19T08:55+02:00                     |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -50,8 +50,11 @@ unchanged.
 
 Execution topology renders without scheduler interpretation: a commanded master's closed nature
 appears in its header, while a sprint's `Execution Graph` section lists canonical nodes, every
-reasoned dependency edge, and the deterministic waves derived from that graph. No positional or
-priority field is introduced by the renderer.
+reasoned dependency edge, and the deterministic waves derived from that graph. Since
+260815-DAG-L11 the node/edge/wave labels go through `_graph_node_label` over
+`SprintExecutionNode`: a segment node renders as `` `master.key` (leafs: `L1`, `L2`) `` with its
+leaf list as the qualifier, and edge endpoints resolve through `graph.resolve_endpoint` before
+labeling. No positional or priority field is introduced by the renderer.
 
 Output is **deterministic** by construction: section bodies carry no leading/trailing
 blank lines and join their blocks with single blanks, so there is no global
@@ -68,10 +71,14 @@ blank-line normalization that would corrupt blank lines inside code fences.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The model it renders. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:182-267 |
+| The model it renders. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:551-655 |
 | The render-back precedent (model → markdown section helpers). | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
 
 ## Update History
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the execution-graph section renders `SprintExecutionNode`
+  labels via `_graph_node_label` (segments carry their leaf list; edge endpoints resolve through the
+  graph first); render stays free of scheduler interpretation. Verification remains closeout-owned.
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: deterministic master Markdown now renders execution
   nature in the header and sprint graph nodes, justified dependencies, and derived waves as a section.
