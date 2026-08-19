@@ -8,7 +8,7 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-15T14:24+02:00 |
+| lastUpdated | 2026-08-19T04:20+02:00 |
 | lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`|
 | lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview | `../overview.md` |
@@ -1156,6 +1156,7 @@ The L4 suites force repository-global surface ownership, organizational versus a
 
 ## Update History
 
+- 2026-08-19T04:20+02:00 — No route impact: 260815-DAG-L10 updated series worktree-group expectations in `test_worktree_edge_paths.py`, `test_atomic_series_seal.py`, `test_l4_terminal_and_series_gap_coverage.py`, and `fixtures/build_rich_sim.py`; route purpose unchanged.
 - 2026-08-18T12:00:00+00:00 — No route impact: 260815-DAG-L9 added `inventory_execution_topology` forcing cases to `test_task_execution_topology.py`; route purpose unchanged.
 - 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
 

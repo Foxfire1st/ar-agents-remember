@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_atomic_series_seal.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T23:38+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T04:05+02:00 |
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -39,6 +39,13 @@ The suite uses real code and external-memory refs/contracts and asserts terminal
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-19T04:05+02:00 — No content impact: 260815-DAG-L10 strengthened the seal test to write
+  series reports under `worktrees/repo-a/master-b-ar/reports` (with an explicit absolute-path
+  assertion, both terminal removers deleting them) while the colliding child leaf stays at
+  `task_root/enclosures/reports/series-contract.md`; this card's refusal-preservation claims never
+  asserted a reports location and remain accurate. Verification metadata stamped at the landed
+  code commit `e41ea31d`.
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 

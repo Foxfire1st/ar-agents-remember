@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_worktree_edge_paths.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-16T04:06+02:00                     |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastUpdated            | 2026-08-19T04:05+02:00                     |
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,6 +29,7 @@ base, a half-integrated pair, a branch deleted while checked out — so each is 
 | Class | Guard |
 | --- | --- |
 | `ContractMemoryModeTests` | A contract is the durable record of a task; an unknown memory mode is refused **at construction**, rather than written out and discovered later — and the refusal reaches the caller as a payload, not a traceback. |
+| `SeriesWorktreeGroupLocationTests` | A series contract's reports (operation record/log, worker temp root, Dagger test sandbox) live under the master **worktree group** (`worktrees/<repo>/<master>-ar`), not the task enclosures — so terminal cleanup sweeps them — while the leaf enclosure stays at `tasks/<task>/enclosures/<leaf-id>/series-contract.md` (260815-DAG-L10). |
 | `DeclaredLeafCandidateTests` | Leaf ids come out of hand-editable task documents, so a blank one is **data, not a programming error**: it is skipped rather than minting a candidate nothing can address. |
 | `RetireWorkBranchTests` | `_retire_work_branch` deletes a task branch only when it is safe to — including stepping off the branch it is about to delete. |
 | `StartPipelineTests` | `start_result`'s composition: which stage's answer wins, and what start does **not** do once a stage refuses. |
@@ -115,6 +116,11 @@ ownership.
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-19T04:05+02:00 — 260815-DAG-L10 curator: added the new `SeriesWorktreeGroupLocationTests`
+  (mcp/tests/test_worktree_edge_paths.py:202-276) to the Classes table; it pins the series
+  worktree-group reports location and the unchanged leaf enclosure path. Verification metadata
+  stamped at the landed code commit `e41ea31d`.
 
 - 2026-08-17T12:30+02:00 — No content impact: L5 coverage-pragma alignment only; the documented edge-path behavior is unchanged.
 

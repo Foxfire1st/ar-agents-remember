@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T09:54+02:00     |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastUpdated            | 2026-08-19T04:05+02:00     |
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -155,7 +155,13 @@ exact to the contract's code worktree name and work branch; cleanup must not bro
 other snapshots from this path.
 
 **Enclosure report cleanup.** Before testing whether the worktree group is empty,
-`_removed_directories` removes the exact reserved `<worktree_group>/reports` tree. Dry-run adds
+`_removed_directories` removes the exact reserved `<worktree_group>/reports` tree. Since
+260815-DAG-L10 a series contract's group is the master worktree group
+(`worktrees/<repo>/<master>-ar`), so the series sweep reclaims the operation record/log, the
+citation source-index cache, and the Dagger test sandbox that land under it; the tree is
+preserved only when `legacy_series_reports_is_child_enclosure` proves a legacy series contract
+(group still recorded as the task enclosure root) shares that path with a child leaf enclosure
+named `reports`. Dry-run adds
 that prospective removal to the same planned-path model used for worktrees/provider runtime, so a
 group containing only scheduled paths and the curator checklist correctly reports
 `would_remove`. No other task or coordination report directory is pruned.
@@ -170,6 +176,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:29-29 |
 | `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:191-191 |
+| Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
 | Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers. | `_terminal_mutation_authority` | mcp/src/agents_remember/worktrees/modules/cleanup.py:67-102 |
 | Provider teardown is delegated to this module. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
 | `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:392-392 |
@@ -188,6 +195,11 @@ For an atomic series, `cleanup_result` performs queue-release and child-retireme
 
 ## Update History
 
+- 2026-08-19T04:05+02:00 — 260815-DAG-L10 curator: the series reports sweep now targets the
+  master worktree group's `reports/` tree (series operation log, citation source-index cache,
+  Dagger test sandbox), with preservation narrowed to legacy series contracts through the renamed
+  `legacy_series_reports_is_child_enclosure` guard; leaf enclosure behavior is unchanged.
+  Verification metadata stamped at the landed code commit `e41ea31d`.
 - 2026-08-16T00:45+02:00 — Recorded the queue-owned atomic-series terminal permit and corrected cleanup guidance to the exact named-source ledger proof; verification remains closeout-owned.
 - 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

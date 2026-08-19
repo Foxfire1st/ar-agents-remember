@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastUpdated            | 2026-08-19T04:20+02:00 |
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -702,6 +702,8 @@ can invalidate an in-flight candidate.
 Start, closeout, integrate, sync, cleanup, abandon, and reopen now share task-derived branch authority. Integration uses exact named-ref CAS and crash recovery; atomic series closeout records a complete leaf landing chain; lowest Git/worktree/terminal writers require capabilities instead of trusting caller-supplied branch names.
 
 ## Update History
+
+- 2026-08-19T04:20+02:00 — No route impact: 260815-DAG-L10 updated the series worktree-group equality checks in `start_contract.py`/`terminal_validation.py` and narrowed reports-tree preservation in `cleanup.py`/`abandon.py` to legacy series contracts via `legacy_series_reports_is_child_enclosure`; the modules route purpose is unchanged.
 
 - 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added integration_publication.py to the modules route; the route purpose is unchanged.
 

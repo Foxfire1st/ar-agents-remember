@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated            | 2026-08-19T04:05+02:00 |
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -223,6 +223,22 @@ ledger, so the constructors expand `None` to `memory_repo_path=None` and empty b
 strings rather than accepting a half-populated memory plan. `start_contract._memory_plan` is the
 helper that builds it or returns `None`. Every emitted `WorktreeContract` field is unchanged.
 
+**The series contract's `worktree_group` is the master worktree group (260815-DAG-L10).**
+`default_series_contract` records
+`worktree_group=worktree_group_for(task.coordination_root, task.repo_name, task.name)` —
+`worktrees/<repo>/<master>-ar`, the same folder helper a leaf's `default_contract` already used,
+keyed on the master task name instead of a leaf worktree name — where it previously recorded the
+task's `enclosures/` root. The series operation record/log, the detached worker's `TMPDIR` chain
+feeding the citation source-index cache, and the Dagger test sandbox all derive from
+`contract.worktree_group`, so rooting the group there lets `worktree_cleanup` / `worktree_abandon`
+sweep them with the group. Leaf enclosure contracts are untouched: they still resolve through
+`leaf_enclosure_path` to `tasks/<task>/enclosures/<leaf-id>/series-contract.md`. The matching
+contract-equality checks in `lifecycle_operations.py`,
+`closeout_queue_candidate_evidence.py`, `modules/terminal_validation.py`, and
+`modules/start_contract.py` compare against `worktree_group_for(...)`, so a legacy series contract
+still recording `task_root / "enclosures"` as its group is refused by every contract-addressed
+worktree tool until re-stamped.
+
 Since 260712-PTS-L1, `load_contract` is read + parse + validate ONLY: one file read, zero tasks-tree
 traversal — no leaf-ref resolution, no series-contract iteration, no glob. A legacy stem-shaped
 `coordination.leaf_id` is returned verbatim. Normalization is a write-time concern: `write_contract`
@@ -371,6 +387,13 @@ deleted queue topology and fails closed instead of silently bypassing enforcemen
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-19T04:05+02:00 — 260815-DAG-L10 curator: `default_series_contract` now records
+  `worktree_group` as `worktree_group_for(task.coordination_root, task.repo_name, task.name)`
+  (`worktrees/<repo>/<master>-ar`) instead of the task `enclosures/` root, so the series operation
+  log, the citation source-index cache (worker `TMPDIR` chain), and the Dagger test sandbox land
+  under the terminal-swept worktree group; leaf enclosure resolution via `leaf_enclosure_path` is
+  unchanged. Verification metadata stamped at the landed code commit `e41ea31d`.
 
 - 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 

@@ -7,9 +7,9 @@ Total output lines: 1510
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-08-15T23:38+02:00 |
-| lastVerifiedCommitHash | `cf5ef507f2542d6cd2f9d37a6b72148d3b91b340`
-| lastVerifiedCommitDate | 2026-08-06T13:55:47+02:00 |
+| lastUpdated | 2026-08-19T04:20+02:00 |
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00 |
 | status      | active                 |
 
 ## Purpose
@@ -332,6 +332,13 @@ replace ambient checkout merges and unowned helper mutation.
 - Legacy roadmap specs remain historical context where they disagree with the implemented memory/coordination split.
 
 ## Update History
+
+- 2026-08-19T04:20+02:00 — 260815-DAG-L10 curator: the leaf changed the **Worktree Contract** and
+  **Worktree Integration** evidence files (`worktrees/worktree_contract.py` and
+  `worktrees/modules/cleanup.py`); both `git-blob-set-v1` fingerprints remain stamped at the
+  pre-L10 base `e41ea31d` while the leaf code is uncommitted in the worktree, and the closeout
+  refresh owns restamping them at the new code commit. Entity prose and evidence path sets are
+  unchanged.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

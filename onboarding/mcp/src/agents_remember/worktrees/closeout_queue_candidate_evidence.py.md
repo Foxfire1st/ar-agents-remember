@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/closeout_queue_candidate_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T12:53+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T04:05+02:00 |
+| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
+| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -71,6 +71,11 @@ No meaningful cross-repository reference applies.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-19T04:05+02:00 — No content impact: 260815-DAG-L10 re-pointed the internal
+  `_atomic_contract_matches_master` worktree-group equality check at `worktree_group_for(...)`;
+  the evidence predicates and blocker vocabulary this card documents are unchanged. Verification
+  metadata stamped at the landed code commit `e41ea31d`.
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 
