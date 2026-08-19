@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/application/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-15T11:25+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T08:55+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -18,10 +18,11 @@
 
 The operation-dispatched application entry point behind the `task_doc` MCP tool: it loads or
 creates the `ar-task-document/v1` JSON for a task, applies one edit, and rewrites both
-the JSON (source of truth) and the rendered markdown. Since L11 it also hosts
-`task_reopen_tool`: the task-domain reset that reopens a fully landed leaf under its
-exact leaf id (delegating to `worktrees/reopen.py`); its response keeps the
-worktree-command contract shape because the payload carries the enclosure state.
+the JSON (source of truth) and the rendered markdown. `task_reopen_tool` — the task-domain reset
+that reopens a fully landed leaf under its exact leaf id (delegating to `worktrees/reopen.py`) —
+moved to the sibling `application/task_reopen.py` module in 260815-DAG-L11 and is re-exported
+here unchanged (facade); its response keeps the worktree-command contract shape because the
+payload carries the enclosure state.
 
 ## Code Commentary
 
@@ -38,7 +39,8 @@ replacing the former single branching applier.
 
 It validates `operation` against `VALID_OPERATIONS`
 (`create`/`replace`/`set_status`/`set_step`/`skip_step`/`set_subtask`/`remove_subtask`/`set_section`/
-`append_decision`/`set_field`/`get`), then `_resolve()`s the task root + optional contract: a
+`append_decision`/`record_route_review`/`migrate_execution_topology`/`author_execution_graph`/
+`set_field`/`get`), then `_resolve()`s the task root + optional contract: a
 `contract_path` can point at either a root `series-contract.md` or a leaf
 `enclosures/<leaf-id>/series-contract.md`; otherwise `task_name` is mapped through
 `worktrees.task_resolver.resolve_active_task_root`, with leaf lookup as the fallback. `get`
@@ -103,13 +105,13 @@ validation failures, and invalid resolvable parent master docs.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_doc_tools.py:76-90 |
-| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_doc_tools.py:462-474 |
+| The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_doc_tools.py:83-101 |
+| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_doc_tools.py:482-494 |
 | Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:375-418 |
-| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_doc_tools.py:249-249 |
+| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_doc_tools.py:252-252 |
 | The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
-| The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:261-364 |
-| The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
+| The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:551-655 |
+| The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:31-53 |
 | The JSON/markdown store this application entry point drives. | `write_task_docs` | mcp/src/agents_remember/tasks/store.py:40-73 |
 | The payload builder that wraps this application entry point. | `task_doc_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:19-30 |
 | The contract helpers used to resolve the task root + lifecycle key. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285 |
@@ -129,6 +131,12 @@ translation and the locked publication call.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: `VALID_OPERATIONS` gained `author_execution_graph`
+  (dispatched to the topology module's incremental graph authoring with `ExecutionTopologyError` →
+  `TaskDocError` translation), and `task_reopen_tool` moved to the new
+  `application/task_reopen.py` module, re-exported here unchanged (facade). Verification remains
+  closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

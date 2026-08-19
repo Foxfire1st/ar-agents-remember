@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-11T09:45+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated | 2026-08-19T08:55+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0`       |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -53,8 +53,9 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:537-540 |
-| Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:484-510 |
-| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:605-618 |
+| Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:506-536 |
+| The leaf-segmented sprint graph wire shape (nodes, endpoints, edges). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | dashboard/src/types/projection.ts:549-563 |
+| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:617-630 |
 
 ## Cross-Repo References
 
@@ -72,6 +73,10 @@ dashboard does not accept an open-ended string vocabulary here.
 The L4 delta keeps the generated dashboard contract aligned with the backend's organizational `super-to-leaf` lineage and lifecycle-operation guidance. The dashboard remains a projection consumer: it does not gain branch-mutation authority.
 
 ## Update History
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: regenerated types add `TaskExecutionNode` /
+  `TaskExecutionEndpointNode`, `TaskExecutionEdgeNode.judgmentId`, and node-typed
+  `executionWaves` — the leaf-segmented sprint graph surface. Verification remains closeout-owned.
 
 - 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
 

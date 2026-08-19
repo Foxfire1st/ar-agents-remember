@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-19T08:55+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,7 +27,10 @@ The request validator enforces one exact action/payload matrix. Candidate record
 trees, graph revision, source bases, route review, curator evidence, grade evidence, memory mode,
 and lifecycle state. State validation allows one active lane owner, enforces atomic-blocker
 exclusion, and requires closed queues to be empty. Public projections split candidates into ready,
-waiting, blocked, and in-flight lists with actor-legal next operations.
+waiting, blocked, and in-flight lists with actor-legal next operations. Since 260815-DAG-L11 the
+response also carries `leafPlacementFacts`: `LeafPlacementFact` rows (kind `unplaced-leaf` /
+`unknown-leaf`) reporting graph-vs-live-plan leaf drift with the derived segment placement, read
+from the queue graph context.
 
 Added the `prepare-quality-repair` event for the failed organizational-completion reset.
 
@@ -58,8 +61,9 @@ No configured Domain Documentation source applies.
 | --- | --- | --- |
 | The request schema enforces exact required and forbidden fields per action. | `CloseoutQueueRequest` | mcp/src/agents_remember/models/closeout_queue.py:63-118 |
 | Candidate validation binds serviceable lifecycle and memory states. | `CloseoutCandidateRecord` | mcp/src/agents_remember/models/closeout_queue.py:247-324 |
-| Queue state permits one lane owner, enforces blocker ownership, and makes closure quiescent. | `CloseoutQueueState` | mcp/src/agents_remember/models/closeout_queue.py:343-377 |
-| The response exposes deterministic classification buckets and legal operations. | `CloseoutQueueResponse` | mcp/src/agents_remember/models/closeout_queue.py:380-406 |
+| Queue state permits one lane owner, enforces blocker ownership, and makes closure quiescent. | `CloseoutQueueState` | mcp/src/agents_remember/models/closeout_queue.py:345-379 |
+| The response exposes deterministic classification buckets, legal operations, and leaf-placement facts. | `CloseoutQueueResponse` | mcp/src/agents_remember/models/closeout_queue.py:410-424 |
+| One unplaced/unknown leaf scheduling fact on the wire. | `LeafPlacementFact` | mcp/src/agents_remember/models/closeout_queue.py:395-407 |
 
 ## Cross-Repo References
 
@@ -70,6 +74,11 @@ No meaningful cross-repository reference applies.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: added `LeafPlacementFact` (strict `unplaced-leaf` /
+  `unknown-leaf` wire model with derived-segment fields) and the `leafPlacementFacts` field on
+  `CloseoutQueueResponse` — the projection had emitted the field without declaring it on the strict
+  wire model. Verification remains closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

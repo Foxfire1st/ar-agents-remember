@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T02:53:40+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce` |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated | 2026-08-19T08:55+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,11 @@ L23 adds the closed `LifecycleOperationProjection` schema and the optional `Encl
 - `TaskDocNode` now carries the optional `executionNature` and `executionGraph` contract plus
   required graph-derived `executionWaves`; `TaskExecutionGraphNode` and
   `TaskExecutionEdgeNode` preserve canonical task references and dependency reasons without
-  adding scheduler priority or judgment to the generated wire schema.
+  adding scheduler priority or judgment to the generated wire schema. Since 260815-DAG-L11 the
+  graph shape is leaf-segmented: `TaskExecutionNode` (`kind`, `ref`, `leafIds`) and
+  `TaskExecutionEndpointNode` (`ref` + optional `leafId`) mirror the served segment model,
+  `executionWaves` is typed over `TaskExecutionNode`, and the edge carries the optional
+  `judgmentId` provenance reference.
 
 ### Conventions
 
@@ -69,6 +73,10 @@ relations. This keeps the dashboard schema byte-aligned with the server model
 after organizational leaves moved to direct sprint-super ownership.
 
 ## Update History
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: regenerated from the server projection with the
+  leaf-segmented graph definitions (`TaskExecutionNode`, `TaskExecutionEndpointNode`,
+  edge `judgmentId`, node-typed `executionWaves`). Verification remains closeout-owned.
 
 - 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated | 2026-08-19T08:55+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0`       |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,8 +27,12 @@ L23 adds optional `lifecycleOperation` state to `EnclosureNode`; the browser rec
 
 Task, expectation, pickup, and attention projections can expose `TaskDocumentRef` so the dashboard
 joins the same real sprint/master/leaf hierarchy used by routing. `TaskDocNode` remains the
-JSON-primary task view; lifecycle attachment is optional. The observer does not choose current seat
-occupants or authorize relations.
+JSON-primary task view; lifecycle attachment is optional. Since 260815-DAG-L11 the sprint graph
+projection is leaf-segmented: `TaskExecutionNode` (kind `master` lump or `segment` + `leafIds`)
+and `TaskExecutionEndpointNode` (ref + optional segment-sampling `leafId`) mirror the persisted
+schema, with before-validators lifting legacy bare refs into the uniform served shape;
+`TaskExecutionEdgeNode` carries the optional `judgmentId`, and `TaskDocNode.executionWaves` derives
+over execution nodes. The observer does not choose current seat occupants or authorize relations.
 
 ### Conventions
 
@@ -52,9 +56,10 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pickup and expectation analytics carry structural references. | `AgentPickupNode` | mcp/src/agents_remember/observer/projection.py:388-446 |
-| Task documents remain the real projected hierarchy. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:676-728 |
-| Workspace projection is the schema authority consumed by generation. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1065-1087 |
+| Pickup and expectation analytics carry structural references. | `AgentPickupNode` | mcp/src/agents_remember/observer/projection.py:392-431 |
+| Task documents remain the real projected hierarchy. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:718-771 |
+| The leaf-segmented graph projection (lump/segment nodes and sampling endpoints). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | mcp/src/agents_remember/observer/projection.py:618-657 |
+| Workspace projection is the schema authority consumed by generation. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1107-1129 |
 
 ## Cross-Repo References
 
@@ -73,6 +78,12 @@ Observer projection now imports `LifecycleOperationProjection` from
 projection remain unchanged; this is an ownership-only model move.
 
 ## Update History
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: added `TaskExecutionNode` / `TaskExecutionEndpointNode`
+  (with bare-ref lifting before-validators); `TaskExecutionEdgeNode` endpoints are now endpoint
+  nodes with an optional `judgmentId`, `TaskExecutionGraphNode.nodes` carries execution nodes, and
+  `TaskDocNode.executionWaves` derives over them; dashboard types are regenerated from this schema.
+  Verification remains closeout-owned.
 
 - 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
 

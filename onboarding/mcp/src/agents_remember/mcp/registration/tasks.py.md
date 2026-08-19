@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`                |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated            | 2026-08-19T08:55+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0`                |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -31,7 +31,8 @@ task-state transitions: `task_reopen`, `lifecycle_finalize_task`, `task_doc`.
 
 `task_doc` is the JSON-primary authoring tool and carries the longest docstring on the surface,
 because the operation vocabulary is not in the types: `create` | `replace` | `set_status` |
-`set_step` | `skip_step` | `set_subtask` | `remove_subtask` | `set_section` | `append_decision` | `set_field` |
+`set_step` | `skip_step` | `set_subtask` | `remove_subtask` | `set_section` | `append_decision` |
+`record_route_review` | `migrate_execution_topology` | `author_execution_graph` | `set_field` |
 `get`. The JSON document is the source of truth; `task.md` / `<slug>.md` is a generated render that
 is never parsed back. Everything mutates except `operation='get'`, and `dry_run=true` builds and
 validates and returns `rendered`/`diff`/`wouldLose` **without** writing — the preview before
@@ -40,6 +41,14 @@ adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subta
 `subtask.keep_file`; `set_step` is leaf-only. `skip_step` takes an exact existing step and a nonblank
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
         explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:117-117; mcp/src/agents_remember/mcp/registration/tasks.py:126-128).
+
+Since 260815-DAG-L11 the docstring also spells out the two graph operations:
+`migrate_execution_topology` is the lump-only bootstrap, while `author_execution_graph` applies one
+validated atomic batch of typed mutations (`add_node`/`remove_node`/`add_edge`/`remove_edge`/
+`move_leaf`/`set_nature`) to a migrated sprint's `executionGraph` — segment-addressed by sampling
+leaf ids, with judgment-bearing mutations requiring a `judgmentId` row in the sprint's Judgment
+Register (the mechanism never invents one), typed refusals for segment-on-atomic and incomplete
+partitions, and unplaced-leaf placements plus numbering inversions reported as facts.
 
 The body splits that into two objects: `TaskDocTarget(repo_id, task_name, contract_path, slug)` —
 which document to edit — and `TaskDocEdit(fields, step, decision, subtask, section)` — what the edit
@@ -82,6 +91,12 @@ evidence, deterministic ordering, atomic blocker semantics, bounded durable arti
 task-addressed lifecycle ownership.
 
 ## Update History
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the `task_doc` docstring gains the
+  `author_execution_graph` operation (typed mutation batch, segment-sampling endpoints,
+  Judgment-Register provenance, partition refusals, fact-only placement/numbering reporting) and
+  now scopes `migrate_execution_topology` as the lump-only bootstrap. Verification remains
+  closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
