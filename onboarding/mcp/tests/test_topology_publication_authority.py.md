@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_topology_publication_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T05:27+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -41,6 +41,10 @@ escape, and foreign-repository candidate overrides.
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (task_doc_tool takes
+  `call: TaskDocCall`); suite purpose unchanged. Verified at code commit a9d50e08.
+
 
 - 2026-08-16T05:27+02:00 — L4 exact-review forcing: production task publication now proves
   sibling-master traversal, symlink escape, and a not-yet-written foreign-repository leaf override

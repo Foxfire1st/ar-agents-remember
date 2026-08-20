@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-20T05:04+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -156,7 +156,7 @@ L14: the task-doc application entry point accepts the additive `orchestrates` fi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two MCP payload builders are declared at these entry points. | "def skills_install_payload("; "def task_reopen_payload(" | mcp/src/agents_remember/mcp/tools/core.py:144-144; mcp/src/agents_remember/mcp/tools/task_doc.py:33-33 |
+| The two MCP payload builders are declared at these entry points. | "def skills_install_payload("; "def task_reopen_payload(" | mcp/src/agents_remember/mcp/tools/core.py:144-144; mcp/src/agents_remember/mcp/tools/task_doc.py:35-35 |
 | `ResponseModel` is the public response-model base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:41-60 |
 | `TOOL_RESPONSE_MODELS` is the registry of public response models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
 | Leaf memory scope carries the optional unstamped comparison base; the contract path supplies the leaf's real code base while bare official scope leaves it absent. | "class MemoryScope:"; "def _leaf_memory_scope(" | mcp/src/agents_remember/application/memory_tools.py:42-57; mcp/src/agents_remember/application/memory_tools.py:120-178 |
@@ -277,7 +277,21 @@ surface, and the moved `validate_completed_master_row` for typed rows. `task_doc
 the new operations and carries `linkageFacts` on sprint gets; `task_execution_topology` exposes
 the shared `verify_sprint_judgment_ids`.
 
+## 260815-DAG-L16 Seat-Independent Application Route
+
+`application/closeout_queue.py` gains the declared-caller fallback (L16-R2): on
+`ambient-seat-unavailable` the request-carried `caller` builds the identical `QueueActor` a seat
+would, and a contradicting declared caller refuses. The route-review binding machinery extracted
+from `task_doc_tools.py` into `application/task_doc_route_review.py` (L16-R6/R9, facade
+re-export), and `application/direct_landing.py` is the error-translating application boundary of
+the direct landing operation (L16-R8).
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: closeout-queue application boundary gains
+  the declared-caller fallback; route-review binding extracted to
+  `application/task_doc_route_review.py`; `application/direct_landing.py` added. Verified at code
+  commit a9d50e08.
+
 
 - 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: new `application/task_sprint_linkage.py`
   owns the atomic sprint↔master linkage operations; `task_doc_tools` routes them and carries

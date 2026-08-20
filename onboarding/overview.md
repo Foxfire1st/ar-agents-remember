@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-20T05:00+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 
 > **Status:** active baseline
 
@@ -1151,6 +1151,13 @@ membership slug, and graph node as one atomic validated batch (L14-R4). Consiste
 operations and the dashboard projection carries `seats` + `masterRef`.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: seat-independent task-execution fallback
+  (declared caller on the closeout-queue and structural gate tools when no plane seat exists;
+  hosted seat wins; conflict refuses), the branch-addressed `record_route_review` binding
+  (L16-R6), the `direct_landing` operation (L16-R8), and the recovery-naming refusal dialect
+  (L16-R9). Verified at code commit a9d50e08.
+
 
 - 2026-08-20T05:00+02:00 — 260815-DAG-L14 route impact: the sprint document gains first-class
   `seats`, typed `masterRef` links, and the atomic `attach_master`/`detach_master` operations;

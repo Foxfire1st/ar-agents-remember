@@ -54,12 +54,14 @@ persisted task document itself (`tasks.TaskDocument`) is deliberately not return
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tool_registry.py:188-188 |
+| The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tool_registry.py:189-189 |
 | The strict `ToolResponse` envelope base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:63-66 |
 | The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:602-716 |
 | The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:177-256 |
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-20T04:52+02:00 — 260815-DAG-L14 curator: re-read the `TaskDocument` claim — the
   persisted model gained sprint `seats` and typed `masterRef` rows; wording retained, citation
@@ -80,5 +82,5 @@ persisted task document itself (`tasks.TaskDocument`) is deliberately not return
 - 2026-06-26T20:18+02:00 — Task 21 task-doc master sync: added `TaskDocMasterSync` and optional
   `TaskDocResponse.masterSync` so leaf writes can report same-root master-row changes and dry-run master
   previews. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T07:23 — Slice 3c reopened (R5, dry-run/preview): added the additive optional `dryRun`/`rendered`/`diff`/`wouldLose` fields (set only on a `dry_run=true` preview; real-op responses unchanged). Verification metadata pinned until closeout stamps the R5 code commit.
-- 2026-06-13T22:34 — Created for slice 3c commit 1: the `task_doc` STRICT response model. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+- 2026-06-19T07:23+02:00 — Slice 3c reopened (R5, dry-run/preview): added the additive optional `dryRun`/`rendered`/`diff`/`wouldLose` fields (set only on a `dry_run=true` preview; real-op responses unchanged). Verification metadata pinned until closeout stamps the R5 code commit.
+- 2026-06-13T22:34+02:00 — Created for slice 3c commit 1: the `task_doc` STRICT response model. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.

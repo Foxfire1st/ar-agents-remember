@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-20T05:02+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af`
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -31,7 +31,9 @@ atomic-sequential default with the series lane owner and legal next operations.
 ## Current Structural Agent Boundary
 
 Agent-facing dispatch, messaging, seat management, and gates use canonical task documents and roles.
-Ambient hosted evidence proves the caller; runtime session/lifecycle/gate/inbox identities stay
+A plane-injected hosted seat proves the caller; an ambient caller with no plane seat declares its
+role + task document as request data and the same authorization validates it exactly like a seat
+(260815-DAG-L16, L16-R2/R3/F5). Runtime session/lifecycle/gate/inbox identities stay
 plane-only. The application resolves authorized parent/child seats and current occupants, with one
 internally exact-pinned initial brief and replacement-aware ordinary messages. Startup migration is
 one-way before strict current readers; there is no public exact-id compatibility surface.
@@ -869,6 +871,11 @@ carries `linkageFacts`, and the task-document writer census admits the linkage m
 `ar-task-document/v1` route carries first-class sprint `seats` and typed `masterRef` rows.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: seat-independent task-execution fallback
+  (declared caller on closeout-queue and structural gate tools), branch-addressed `record_route_review`
+  binding, and the `direct_landing` operation. Verified at code commit a9d50e08.
+
 
 - 2026-08-20T05:02+02:00 — 260815-DAG-L14 route impact: `task_doc` registers
   `attach_master`/`detach_master`/`linkage_report` and carries `linkageFacts` on sprint gets; the

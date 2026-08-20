@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/primitives/runtime_config.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-10T18:31+02:00    |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -59,7 +59,11 @@ directing callers to `providerSetupSeconds` (indexing and seed are now always
 uncapped; only `providerSetupSeconds` is consumed by the runtime, `toolSeconds`
 is a documented reserved cap). `parse_benchmarks_enabled` validates the optional
 `benchmarksEnabled` flag (must be a boolean) into the `benchmarks_enabled`
-field. The module defines the defaults `DEFAULT_PROVIDER_SETUP_SECONDS = 1800`
+field. 260815-DAG-L16 adds `parse_direct_execution_enabled` (must be a boolean;
+fail-loud `ConfigError` otherwise) into the new `McpRuntimeConfig.direct_execution_enabled`
+field — the policy gate for sanctioned direct execution (branch-addressed series-contract
+bindings and the direct landing operation); the default is `False` (fail-closed) and the
+`_checkout_runtime_config` synthetic record pins it `False`. The module defines the defaults `DEFAULT_PROVIDER_SETUP_SECONDS = 1800`
 and `DEFAULT_DOCKER_CONTROL_SECONDS = 120`. All failures raise `ConfigError`,
 now a member of the typed `AgentsRememberError` family (itself a `ValueError`
 subclass), so the server fails loudly at startup on unsafe settings.
@@ -206,6 +210,12 @@ As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewer
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `McpRuntimeConfig.direct_execution_enabled` —
+  fail-closed policy gate for sanctioned direct execution (`parse_direct_execution_enabled`,
+  bool-only; default `False`; `_checkout_runtime_config` pins it off). Verified at code commit
+  a9d50e08.
+
 
 - 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

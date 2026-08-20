@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -20,7 +20,8 @@ L23 makes `citation_fix` and `worktree_operation_cancel` public MCP tools so gua
 
 ### Logic
 
-`PUBLIC_TOOLS` is the 55-name registered surface. Structural agent operations are
+`PUBLIC_TOOLS` is the 59-name registered surface (260815-DAG-L16 added `direct_landing`).
+Structural agent operations are
 `dispatch_agent`, `retire_child`, `rename_child`, `rename_self`, `message_parent`, and
 `message_child`; structural gate names remain `lifecycle_gate`, `gate_decide`, and `gate_list`.
 Removed exact-id/leaf-address agent tools are absent. `_tool_payload` passes every application
@@ -49,8 +50,8 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The advertised tuple names the structural public surface. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:9-65 |
-| The shared adapter finalizes one application result. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| The advertised tuple names the structural public surface. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:9-66 |
+| The shared adapter finalizes one application result. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:74-76 |
 | Registrars are the only published declaration family. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:36-49 |
 
 ## Cross-Repo References
@@ -63,6 +64,10 @@ No cross-repository implementation dependency governs this file.
 envelope/next-step behavior treat it as a real public MCP surface rather than an internal helper.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `PUBLIC_TOOLS` advertises `direct_landing` (59 names);
+  `_tool_payload` behavior unchanged. Verified at code commit a9d50e08.
+
 
 - 2026-08-15T09:10+02:00 — L3 content update: added closeout_queue to the canonical public tool
   census; verification remains closeout-owned.

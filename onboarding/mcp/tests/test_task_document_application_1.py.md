@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_task_document_application_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-19T22:32+02:00                                            |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`                                        |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -44,6 +44,10 @@ Lineage and review authority are derived from the task hierarchy; runtime and co
 not accepted from the caller.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (task_doc_tool takes
+  `call: TaskDocCall`); suite purpose unchanged. Verified at code commit a9d50e08.
+
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: the legacy-master orchestration regression became
   `test_set_field_orchestration_fields_require_exact_commanded_masters` — a graph-less sprint is
   the legal atomic-sequential default, so refusal now requires inexact declared facts (undeclared

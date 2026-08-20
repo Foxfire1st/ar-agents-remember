@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,6 +48,9 @@ explicit bound. Priority is the canonical categorical `critical/high/normal/low`
 ### Invariants And Boundaries
 
 - Manager declaration cannot smuggle a grade; `set-grade` is a separate action.
+- `caller` (an optional `DeclaredCaller`) is honored only when no plane-injected seat exists; the
+  consuming mechanism validates the declared role/document against the same policy a hosted seat
+  would face (L16-R2). The request validator still enforces one exact action/payload matrix.
 - Raw lifecycle operation keys are never persisted; only a one-way owner fingerprint is modeled.
 - External memory requires exact evidence and commit fields; internal/disabled memory uses a typed
   `not-applicable` state with no memory artifacts.
@@ -80,6 +83,11 @@ No meaningful cross-repository reference applies.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `CloseoutQueueRequest` gains the optional `caller`
+  (`DeclaredCaller`) honored only when no plane-injected seat exists; the exact action/payload
+  matrix is unchanged. Verified at code commit a9d50e08.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: added `LANE_OCCUPYING_STATES` (the lane narrows to
   selected/closeout-in-flight/integration-in-flight; certified leaves the lane) and the response

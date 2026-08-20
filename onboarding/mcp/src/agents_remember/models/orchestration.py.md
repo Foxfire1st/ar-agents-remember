@@ -45,9 +45,11 @@ rate-limited nudge does not enqueue an inbox entry.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `orchestration_nudge_manager_payload` builder returns this response through `_tool_payload`. | "def orchestration_nudge_manager_payload(" | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
-| The response registry maps the administrative orchestration nudge operation to this model. | "\"orchestration_nudge_manager\": OrchestrationNudgeManagerResponse" | mcp/src/agents_remember/models/tool_registry.py:218-218 |
+| The response registry maps the administrative orchestration nudge operation to this model. | "\"orchestration_nudge_manager\": OrchestrationNudgeManagerResponse" | mcp/src/agents_remember/models/tool_registry.py:220-220 |
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n

@@ -103,7 +103,7 @@ that skips this line loses no records — it just stops being distinguishable fr
 | --- | --- | --- |
 | `create_server` builds the FastMCP instance and invokes the registered tool families. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
 | The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | "from .core import register_core_tools"; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:24-24; mcp/src/agents_remember/mcp/registration/__init__.py:36-49; mcp/src/agents_remember/mcp/registration/__init__.py:51-51 |
-| The stable `mcp.tools` package imports the payload builders and exports that builder surface for the registered tool families. | "Pure payload builders"; "from .worktree import ("; "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:1-1; mcp/src/agents_remember/mcp/tools/__init__.py:91-91; mcp/src/agents_remember/mcp/tools/__init__.py:108-108 |
+| The stable `mcp.tools` package imports the payload builders and exports that builder surface for the registered tool families. | "Pure payload builders"; "from .worktree import ("; "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:1-1; mcp/src/agents_remember/mcp/tools/__init__.py:92-92; mcp/src/agents_remember/mcp/tools/__init__.py:109-109 |
 
 ## Cross-Repo References
 
@@ -120,6 +120,8 @@ The transport server now imports its composition boundary as
 durable-store ownership remain application concerns; only their package location changed.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-13T09:05+02:00 — L23 curator: recorded the startup-module move into the runtime package
   and confirmed the transport/application boundary is unchanged; final provenance remains

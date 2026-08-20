@@ -77,7 +77,7 @@
     "dashboard/src/vite-env.d.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 415,
+    "sourceFilesInScope": 421,
     "fileSidecars": 49,
     "childRoutes": 3
   },

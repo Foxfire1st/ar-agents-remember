@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/tasks/leaf_doc.py` |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`  |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -44,7 +44,10 @@ small `{docPath, lifecycleId, changed}` report, or `None` when the leaf has no d
 - Restamp is idempotent (`changed: false` when the stamp already matches) and total
   (overwrites a stale finalized-lifecycle stamp — a reopened leaf's doc must follow
   the fresh lifecycle, not the old one).
-
+- Since 260815-DAG-L16 `resolve_terminal_leaf_doc` names the missing binding and the recovery
+  (L16-R9): a blank leaf id refuses with "the leaf has no stamped contract binding — re-stamp the
+  series contract (series-contract.md) or use branch-addressed mode for direct execution" instead
+  of the opaque "terminal leaf resolution requires a nonblank leaf id".
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
@@ -61,6 +64,11 @@ restamping cannot bypass an active sprint lane or atomic blocker; standalone tes
 ordinary task-doc writer without duplicating policy.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `resolve_terminal_leaf_doc` blank-id refusal now names
+  the missing binding and the recovery (L16-R9: re-stamp the series contract / use
+  branch-addressed mode). Verified at code commit a9d50e08.
+
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

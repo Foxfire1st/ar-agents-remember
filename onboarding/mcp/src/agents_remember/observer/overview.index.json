@@ -33,7 +33,7 @@
     "mcp/src/agents_remember/observer/worktree_provider_admission.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 21,
+    "sourceFilesInScope": 22,
     "fileSidecars": 21,
     "childRoutes": 0
   },

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-13T12:26+02:00                                       |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`                   |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -35,11 +35,13 @@ unchanged.
 
 ## Purpose
 
-`register_closeout_tools(server, config)` declares the **landing half** of a worktree-backed task:
-`worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`,
-`worktree_abandon`.
+`register_closeout_tools(server, config)` declares the **landing half** of a task:
+`direct_landing` (the branch-addressed direct-execution landing — L16-R8, policy-gated by
+`directExecutionEnabled`), `worktree_closeout_preview`, `worktree_closeout_apply`,
+`worktree_integrate`, `worktree_cleanup`, `worktree_abandon`.
 
-The public registration entry delegates to three cohesive helpers:
+The public registration entry delegates to four cohesive helpers:
+`_register_direct_landing_tool` for the branch-addressed direct landing (260815-DAG-L16),
 `_register_closeout_command_tools` for preview/apply,
 `_register_integration_command_tools` for integration/cancellation, and
 `_register_reclamation_command_tools` for cleanup/abandonment. The `_tools` suffix is deliberate:
@@ -132,6 +134,11 @@ run: full mode through the pinned Dagger executor.
 
 ## Update History
 
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: registers `direct_landing` (branch-addressed direct
+  landing, L16-R8) through the new `_register_direct_landing_tool` helper; preview/apply
+  citations re-anchored to their shifted lines. Verified at code commit a9d50e08.
+
+
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: aligned the registered tool description with the
@@ -173,8 +180,8 @@ run: full mode through the pinned Dagger executor.
 - 2026-08-01T01:28+02:00 — 260731-EFA-L4 curator: the card summarised both docstrings as
   "apply runs that quality before any code",
   which is now both under- and over-stated. Verified against the diff and the current source and
-  corrected it. Preview cit:([`worktree_closeout_preview`], mcp/src/agents_remember/mcp/registration/closeout.py:23-42) now says quality runs "over the staged task worktree" before the
-  code commit. Apply cit:([`worktree_closeout_apply`], mcp/src/agents_remember/mcp/registration/closeout.py:44-76) became conditional — the gate runs only when code would commit
+  corrected it. Preview cit:([`worktree_closeout_preview`], mcp/src/agents_remember/mcp/registration/closeout.py:75-96) now says quality runs "over the staged task worktree" before the
+  code commit. Apply cit:([`worktree_closeout_apply`], mcp/src/agents_remember/mcp/registration/closeout.py:99-135) became conditional — the gate runs only when code would commit
   **and** the checkout carries the project-owned quality wrapper — and now states the four facts
   the card was missing: the reset-then-stage-the-whole-worktree step (so the gate sees files the
   task created, not only those it edited, and a retry stages what a first run would rather than

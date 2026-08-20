@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_author_execution_graph.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,6 +58,10 @@ reported and never refusing; and registration/documentation of the operation.
 | Fixtures and shared helpers are imported from the topology suite. | `_config`; `_master`; `_graph` | mcp/tests/test_task_execution_topology.py:51-99 |
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (task_doc_tool takes
+  `call: TaskDocCall`); suite purpose unchanged. Verified at code commit a9d50e08.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: the unmigrated-sprint refusal became the graph-less
   bootstrap forcing (first `add_node` batch creates the graph with `bootstrapped: true`; final

@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/models/structural/` |
 | onboardingRoute | `mcp/src/agents_remember/models/structural/overview.md` |
 | parentOverview | [`models/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-11T14:29+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 
 ## What This Area Is
 
@@ -101,6 +101,11 @@ Read this overview and both file cards before modifying public structural wire v
 None.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: structural gate requests gain an optional
+  `caller` (`DeclaredCaller`) used only when no plane seat exists; public response models are
+  unchanged. Verified at code commit a9d50e08.
+
 
 - 2026-08-11T14:29+02:00 — Re-read the agent-doctrine boundary test and widened its citation to
   include the parametrized declaration; verification metadata remains pending for governed closeout.

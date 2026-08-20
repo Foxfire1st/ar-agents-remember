@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_task_document_master.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-16T04:24+02:00                                            |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                                        |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -36,6 +36,10 @@ Part of the 260731-EFA-L7 in-place split family for `test_task_document_master.p
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (task_doc_tool takes
+  `call: TaskDocCall`); suite purpose unchanged. Verified at code commit a9d50e08.
+
 
 - 2026-08-16T04:24+02:00 — No content impact: removed the now-unused `write_contract` import after the lifecycle-id fixture moved to the real document builder; assertions and production route are unchanged.
 - 2026-08-16T04:06+02:00 — Dagger fixture repair: lifecycle-id altitude is tested through the document builder with a master contract, avoiding an impossible persisted leaf topology while preserving the non-leaf assertion.

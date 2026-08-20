@@ -7,22 +7,27 @@
 | sourceRoute | `mcp/src/agents_remember/application/structural/` |
 | onboardingRoute | `mcp/src/agents_remember/application/structural/overview.md` |
 | parentOverview | [`application/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash |  `b523f53b193e9783e7c7e6410c772e7d64d8df17`|
-| lastVerifiedCommitDate |  2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 
 ## What This Area Is
 
-The structural application boundary translates an ambient hosted seat's intent into authorized
+The structural application boundary translates a caller's intent (a hosted seat, or — since
+260815-DAG-L16 — a declared role + task document when no plane seat exists) into authorized
 document-and-role operations. It owns dispatch, parent/child messaging, retirement, rename, and
 delegated gate operations without accepting runtime session, lifecycle, inbox, or gate identifiers
-from an agent.
+from an agent. The declared-caller fallback grants no authority beyond the same role/document pair
+a seat would have (L16 F5 trust model); hosted seats win and a contradicting declared caller
+refuses.
 
 ## Hot Path Summary
 
 `agent_tools.py` resolves the caller and target structural seats before invoking the existing
-plane-owned spawn, inbox, retire, and rename machinery. `gate_tools.py` applies the same boundary to
-delegated gates. Public response models expose task-document and role outcomes only.
+plane-owned spawn, inbox, retire, and rename machinery. `gate_tools.py` applies the same boundary to delegated gates; since 260815-DAG-L16 it also accepts an
+optional request-carried `caller` (role + task_document_ref) when no plane seat exists, refusing a
+declared caller that contradicts the seat (`structural-caller-conflict`). Public response models
+expose task-document and role outcomes only.
 
 For L23, dispatch additionally validates transitive task-derived code and external-memory lineage
 before host creation. Curator dispatch requires the manager's current-lineage preflight and a
@@ -47,7 +52,9 @@ rechecks both rather than trusting brief prose or model-carried commit identitie
 
 ## Operating Model
 
-1. Resolve the caller from trusted hosted-process context.
+1. Resolve the caller from trusted hosted-process context, or — when the process has no plane seat
+   (`ambient-seat-unavailable`) — from the request-carried declared caller, validated by the same
+   structural authorization a seat would face.
 2. Authorize the requested parent or child relationship from canonical task containment and role.
 3. Resolve exactly one current target occupant or return a typed structural failure.
 4. Invoke the existing plane-owned mutation using runtime ids internally.
@@ -126,6 +133,13 @@ None.
 Structural dispatch distinguishes organizational masters, whose leaves start directly from the sprint super, from atomic masters, whose task-owned series refs are journaled before child admission. Dispatch never creates a universal master branch for organizational work.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: the structural gate boundary gains the
+  declared-caller fallback (`caller` request data on `lifecycle_gate`/`gate_decide`/`gate_list` when
+  no plane seat exists; hosted seat wins; contradiction refuses). F3 sweep: the overview no longer
+  claims the boundary translates only "an ambient hosted seat's intent" or resolves callers only
+  from trusted hosted-process context. Verified at code commit a9d50e08.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: manager series bootstrap in
   `agent_tools.py` gates on the effective execution nature (nature-less masters default atomic;

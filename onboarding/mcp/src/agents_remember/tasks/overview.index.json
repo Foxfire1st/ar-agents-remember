@@ -20,7 +20,7 @@
     "mcp/src/agents_remember/tasks/store.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 8,
+    "sourceFilesInScope": 9,
     "fileSidecars": 8,
     "childRoutes": 0
   },
@@ -87,7 +87,7 @@
       "JSON",
       "mcp/src/agents_remember/tasks/",
       "route-local-overview",
-      "8071a64497ed88f8f423e853dc9440532fd573af",
+      "a9d50e08b830c4a34c14e495706c19fe697f47ab",
       "/../../../overview.md",
       "organizational",
       "author_execution_graph",

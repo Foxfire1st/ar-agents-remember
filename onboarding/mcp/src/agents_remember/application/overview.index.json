@@ -27,6 +27,7 @@
     "mcp/src/agents_remember/application/completion_cleanup.py",
     "mcp/src/agents_remember/application/context_packet.py",
     "mcp/src/agents_remember/application/coordination_tools.py",
+    "mcp/src/agents_remember/application/direct_landing.py",
     "mcp/src/agents_remember/application/gate_tools.py",
     "mcp/src/agents_remember/application/hosted_readiness.py",
     "mcp/src/agents_remember/application/lifecycle_operation_worker.py",
@@ -39,6 +40,7 @@
     "mcp/src/agents_remember/application/provider_tools.py",
     "mcp/src/agents_remember/application/read_files.py",
     "mcp/src/agents_remember/application/task_doc_queue_scope.py",
+    "mcp/src/agents_remember/application/task_doc_route_review.py",
     "mcp/src/agents_remember/application/task_doc_tools.py",
     "mcp/src/agents_remember/application/task_execution_topology.py",
     "mcp/src/agents_remember/application/task_ref.py",
@@ -52,8 +54,8 @@
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 36,
-    "fileSidecars": 29,
+    "sourceFilesInScope": 38,
+    "fileSidecars": 31,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -71,6 +73,8 @@
     "context_packet",
     "coordination",
     "coordination_tools",
+    "direct",
+    "direct_landing",
     "doc",
     "execution",
     "files",
@@ -81,6 +85,7 @@
     "inbox",
     "init",
     "init__",
+    "landing",
     "lifecycle",
     "lifecycle_operation_worker",
     "lifecycle_tools",
@@ -108,6 +113,8 @@
     "reopen",
     "response",
     "results",
+    "review",
+    "route",
     "runtime",
     "scope",
     "services",
@@ -119,6 +126,7 @@
     "structural",
     "task",
     "task_doc_queue_scope",
+    "task_doc_route_review",
     "task_doc_tools",
     "task_execution_topology",
     "task_ref",
@@ -130,12 +138,7 @@
     "tool",
     "tool_response",
     "tools",
-    "topology",
-    "worker",
-    "worktree",
-    "worktree_services",
-    "worktree_status",
-    "worktree_tools"
+    "topology"
   ],
   "hotPath": {
     "summary": "For 260731-EFA-L21, `runtime/startup.py` is the trusted MCP declaration boundary: it declares MCP execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker entry paths make the corresponding dashboard declaration in their CLI route. Undeclared linked worktree entry paths therefore cannot inherit the deployed coordination root. The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover; `gate_tools.p...",
@@ -149,6 +152,7 @@
       "mcp/src/agents_remember/application/completion_cleanup.py",
       "mcp/src/agents_remember/application/context_packet.py",
       "mcp/src/agents_remember/application/coordination_tools.py",
+      "mcp/src/agents_remember/application/direct_landing.py",
       "mcp/src/agents_remember/application/gate_tools.py",
       "mcp/src/agents_remember/application/hosted_readiness.py",
       "mcp/src/agents_remember/application/lifecycle_operation_worker.py",
@@ -161,9 +165,8 @@
       "mcp/src/agents_remember/application/provider_tools.py",
       "mcp/src/agents_remember/application/read_files.py",
       "mcp/src/agents_remember/application/task_doc_queue_scope.py",
-      "mcp/src/agents_remember/application/task_doc_tools.py",
-      "mcp/src/agents_remember/application/task_execution_topology.py",
-      "mcp/src/agents_remember/application/task_ref.py"
+      "mcp/src/agents_remember/application/task_doc_route_review.py",
+      "mcp/src/agents_remember/application/task_doc_tools.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -178,6 +181,8 @@
       "context_packet",
       "coordination_tools.py",
       "coordination_tools",
+      "direct_landing.py",
+      "direct_landing",
       "gate_tools.py",
       "gate_tools",
       "hosted_readiness.py",
@@ -202,6 +207,8 @@
       "read_files",
       "task_doc_queue_scope.py",
       "task_doc_queue_scope",
+      "task_doc_route_review.py",
+      "task_doc_route_review",
       "task_doc_tools.py",
       "task_doc_tools",
       "task_execution_topology.py",
@@ -209,11 +216,7 @@
       "task_ref.py",
       "task_ref",
       "task_reopen.py",
-      "task_reopen",
-      "task_sprint_linkage.py",
-      "task_sprint_linkage",
-      "terminal_spawn_results.py",
-      "terminal_spawn_results"
+      "task_reopen"
     ]
   },
   "fallback": {

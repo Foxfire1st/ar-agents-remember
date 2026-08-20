@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_mcp_registration_wiring_tests_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-15T14:05+02:00                                            |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`                                        |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -53,6 +53,10 @@ No Domain Documentation source is configured for this repository-local regressio
 No cross-repository implementation source governs this test module.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: wiring/conformance updates for the declared-caller
+  gate parameters and the `direct_landing` registration. Verified at code commit a9d50e08.
+
 
 - 2026-08-15T14:05+02:00 — L3 final targeted-gate repair: invokes the live FastMCP
   `closeout_queue` registration, proves request validation into the strict model, and verifies

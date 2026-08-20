@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/mcp/registration/gates.py`       |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-08-11T14:29+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -23,7 +23,8 @@ identifiers to agents.
 
 ### Logic
 
-Gate creation derives the caller's canonical task document from ambient state. Decision accepts an
+Gate creation derives the caller's canonical task document from ambient state — a hosted seat, or a
+request-carried declared caller when the process has no plane seat (L16-R3). Decision accepts an
 authorized child document, kind, and decision; the application finds exactly one open gate. Listing
 is scoped to the caller's structural document.
 
@@ -36,7 +37,9 @@ behind the application seam.
 
 - Gate/lifecycle ids are never agent inputs or outputs.
 - Zero or multiple matches fail closed.
-- Ambient caller role supplies attribution and policy authority.
+- Ambient caller role supplies attribution and policy authority; an ambient caller with no plane
+  seat declares `caller` (role + task_document_ref) instead, and the same authorization validates
+  it exactly like a seat.
 
 ### Todos
 
@@ -52,13 +55,19 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Gate creation uses ambient structural context. | `lifecycle_gate` | mcp/src/agents_remember/mcp/registration/gates.py:23-49 |
 | Decisions select an authorized document and kind, not a gate id. | `gate_decide` | mcp/src/agents_remember/mcp/registration/gates.py:51-74 |
-| Listing exposes only caller-scoped structural summaries. | `gate_list` | mcp/src/agents_remember/mcp/registration/gates.py:76-79 |
+| Listing exposes only caller-scoped structural summaries. | `gate_list` | mcp/src/agents_remember/mcp/registration/gates.py:85-87 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `lifecycle_gate`/`gate_decide`/`gate_list` accept an
+  optional request-carried `caller` (role + task_document_ref) for ambient callers with no plane
+  seat; hosted seats win and a contradicting declared caller refuses. Claim re-read and citation
+  range regenerated. Verified at code commit a9d50e08.
+
 
 - 2026-08-11T14:29+02:00 — Re-read the three public gate declarations and widened their
   citations to include the registered-tool decorators; verification metadata remains unchanged

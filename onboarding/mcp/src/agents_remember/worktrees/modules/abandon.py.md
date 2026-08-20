@@ -97,7 +97,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Provider teardown is delegated to the provider-runtime teardown function. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
 | `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_force`; `remove_empty_dir` | mcp/src/agents_remember/worktrees/modules/cleanup.py:164-185; mcp/src/agents_remember/worktrees/modules/cleanup.py:188-210; mcp/src/agents_remember/worktrees/modules/cleanup.py:252-278; mcp/src/agents_remember/worktrees/modules/cleanup.py:430-445 |
 | `WorktreeArgs` types the abandon input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:20-82 |
-| The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:151-151 |
+| The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:194-194 |
 | Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | `test_no_force_refuses_unmerged_and_reports_commits`; `test_force_discards_unmerged_branch`; `test_unmerged_branch_and_dirty_worktree_are_blockers`; `test_dry_run_lists_resources_without_touching_docker_or_disk` | mcp/tests/test_worktree_abandon.py:137-157; mcp/tests/test_worktree_abandon.py:201-236 |
 | Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
 | `CleanupStatus` (declared in models/worktree.py), `ContractCells`, and `amend_contract` are the vocabulary and typed write used by the `abandoned` stamp. | "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
@@ -109,6 +109,8 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 For an atomic series, `abandon_result` performs the read-only queue-release/child census before terminal preflight. The mutating publication then holds queue followed by repository authority, rechecks the child census, and hands `_terminal_mutation_authority` an operation- and contract-bound permit that expires when the publication returns. A direct series capability mint therefore cannot delete refs outside that publication.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-20T05:12+02:00 — L13 landed-wave refresh: the series closeout-report routing
   commit (0a746c9f) touched this source; card re-verified against the current file, verification
