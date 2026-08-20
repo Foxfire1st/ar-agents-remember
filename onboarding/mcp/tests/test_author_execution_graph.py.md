@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_author_execution_graph.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,17 @@ reported and never refusing; and registration/documentation of the operation.
 | The production operation under test. | `author_execution_graph` | mcp/src/agents_remember/application/task_execution_topology.py:182-247 |
 | Fixtures and shared helpers are imported from the topology suite. | `_config`; `_master`; `_graph` | mcp/tests/test_task_execution_topology.py:51-99 |
 
+## 260815-DAG-L15 Gate-Repair Judgment Provenance
+
+The gate-repair round updated `test_judgment_provenance_is_enforced`: a judgmentless `add_edge`
+now asserts the typed `task-execution-graph-judgment-required` refusal (the F5 behavior —
+judgmentId optional at parse, statically-required typed refusal) instead of the old raw pydantic
+wrap "invalid execution-graph authoring". The judgment-unknown and judgment-author-refused
+assertions are unchanged.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: judgment-provenance forcing now asserts the typed task-execution-graph-judgment-required refusal for a judgmentless add_edge (F5) instead of the old raw pydantic wrap. Verified at code commit de3a0fd9.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (task_doc_tool takes
   `call: TaskDocCall`); suite purpose unchanged. Verified at code commit a9d50e08.

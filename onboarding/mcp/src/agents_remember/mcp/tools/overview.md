@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -347,7 +347,14 @@ task-document addressing, and transport-thin forwarding remain the route contrac
 service and then uses the common `_tool_payload` envelope. Registration and response conformance
 cover the public schema; scheduling, persistence, and lifecycle logic do not live on this route.
 
+## 260815-DAG-L15 Route Impact
+
+The memory payload builders gained `memory_quality_check_start_payload` / `memory_quality_check_poll_payload` (L15-R7), re-exported by the tools facade in the import block and `__all__`.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: async memory-quality start/poll payload builders (L15-R7). Verified at code commit de3a0fd9.
+
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: `direct_landing_payload` joins the facade
   exports (`mcp/tools/direct_landing.py`), and `PUBLIC_TOOLS` advertises `direct_landing` (59

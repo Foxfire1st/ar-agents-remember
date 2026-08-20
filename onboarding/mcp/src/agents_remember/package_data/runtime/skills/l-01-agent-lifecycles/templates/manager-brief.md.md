@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`                                  |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df`                                  |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
 
 ## Purpose
 
@@ -75,7 +75,18 @@ manager's fact-only closeout-ready report. Organizational exit review is explici
 exact proposed final super candidate containing prior landed contributions plus the proposed final
 leaf. Build concurrency never grants landing order; only orchestrator release does.
 
+## 260815-DAG-L15 Review-Doctrine
+
+The route-review paragraph now states that the reviewer seat must be distinct from the leaf's
+builder seat, and every requirement verdict must cite evidence of the requirement's class —
+rendering → mounted-UI proof, scheduling → operation-level proof, data model → artifact-level
+proof.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: the route-review paragraph gains reviewer-seat
+  independence from the builder seat and requirement-evidence-class matching. Verified at code
+  commit de3a0fd9.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized nature-aware dispatch, fact-only readiness,
   and exact organizational completion candidate. Verification remains closeout-owned.

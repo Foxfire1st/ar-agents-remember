@@ -39,7 +39,7 @@ exit plus a written report.
 | --- | --- | --- |
 | The inline classifier under test. | `extract_inline_onboarding_block`; `compute_inline_source_digest`; `classify_inline_source` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:61-82; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:85-88; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:91-175 |
 | The CLI facade under test. | `main` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py:225-315 |
-| The CLI test and reused fixture. | "class DriftMainCliTests(unittest.TestCase):"; "def initialize_clean_memory_fixture(root: Path) -> None:" | mcp/tests/test_onboarding_drift.py:124-153; mcp/tests/test_memory_quality.py:364-382 |
+| The CLI test and reused fixture. | "class DriftMainCliTests(unittest.TestCase):"; "def initialize_clean_memory_fixture(root: Path) -> None:" | mcp/tests/test_memory_quality.py:394-394; mcp/tests/test_onboarding_drift.py:124-124 |
 
 ## Update History
 

@@ -18,11 +18,12 @@
     "mcp/src/agents_remember/tasks/master_sync.py",
     "mcp/src/agents_remember/tasks/readiness.py",
     "mcp/src/agents_remember/tasks/render.py",
+    "mcp/src/agents_remember/tasks/serving_preflight.py",
     "mcp/src/agents_remember/tasks/store.py"
   ],
   "coverageCounts": {
     "sourceFilesInScope": 10,
-    "fileSidecars": 9,
+    "fileSidecars": 10,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -41,10 +42,13 @@
     "master",
     "master_sync",
     "mcp",
+    "preflight",
     "readiness",
     "refs",
     "remember",
     "render",
+    "serving",
+    "serving_preflight",
     "src",
     "store",
     "sync",
@@ -63,6 +67,7 @@
       "mcp/src/agents_remember/tasks/master_sync.py",
       "mcp/src/agents_remember/tasks/readiness.py",
       "mcp/src/agents_remember/tasks/render.py",
+      "mcp/src/agents_remember/tasks/serving_preflight.py",
       "mcp/src/agents_remember/tasks/store.py"
     ],
     "anchorHints": [
@@ -82,6 +87,8 @@
       "readiness",
       "render.py",
       "render",
+      "serving_preflight.py",
+      "serving_preflight",
       "store.py",
       "store",
       "task_doc",
@@ -95,7 +102,7 @@
       "JSON",
       "mcp/src/agents_remember/tasks/",
       "route-local-overview",
-      "b7f2c8e2c7020642780e2c9b997ffb035a782e62",
+      "de3a0fd9204f2e64755032274fb4e741bfddf6df",
       "/../../../overview.md",
       "organizational",
       "author_execution_graph",
@@ -111,9 +118,7 @@
       "lifecycleId",
       "TaskDocument",
       "Step",
-      "SubStep",
-      "Decision",
-      "CodeExample"
+      "SubStep"
     ]
   },
   "fallback": {

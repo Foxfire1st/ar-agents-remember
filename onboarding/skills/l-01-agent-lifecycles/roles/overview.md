@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated            | 2026-08-20T05:06+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 
 ## Purpose
 
@@ -104,7 +104,14 @@ runner or fallback.
 `attach_master` adoption flow; `roles/strategist.md` and `roles/architect.md` adoption payloads
 updated.
 
+## 260815-DAG-L15 Roles Route
+
+`roles/reviewer.md` gained the Review Independence and Evidence-Type Matching section (no self-review; requirement-evidence-type table: rendering → mounted-UI proof, scheduling → operation-level proof, data model → artifact-level proof, doctrine → code anchor); `roles/orchestrator.md` gained the review-independence paragraph. All 9 generated copy trees are byte-identical via `scripts/sync-skills.py`.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: reviewer.md independence + evidence-type section; orchestrator.md independence paragraph. Verified at code commit de3a0fd9.
+
 
 - 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: orchestrator/strategist/architect role
   docs updated to the atomic attach flow and seats structure. Verified at code commit 8071a644.

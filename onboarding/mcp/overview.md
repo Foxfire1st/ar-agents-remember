@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -876,7 +876,14 @@ carries `linkageFacts`, and the task-document writer census admits the linkage m
 The MCP package renders and projects the sprint execution graph for humans: `tasks/render.py` emits the deterministic mermaid document diagram, `tasks/execution_graph_titles.py` owns the shared title join, `observer/projection_graph.py` builds the render-ready `executionGraphView`, and the serving task-documents readers wire it onto `TaskDocNode`. Application writers thread the joined titles through every publish/preview site.
 
 
+## 260815-DAG-L15 Route Impact
+
+New `tasks/serving_preflight.py` (served-build preflight, L15-R4) and `application/memory_quality_runs.py` (bounded async run registry, L15-R7); the `memory_quality_check` registration gained `wait`/`run_id`; topology/linkage authoring hardened (typed refusals, `create=False` dry-run locks); the L7 `worktrees/orchestration_portfolio.py` module + its test were deleted (recorded decision: doctrine + queue mechanism).
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: new serving_preflight + memory_quality_runs modules, async memory-quality wait/run_id surface, hardened authoring dialect, and the L7 orchestration_portfolio deletion. Verified at code commit de3a0fd9.
+
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready sprint graph: mermaid document diagram, shared title join, primitives-only projection builder, serving wiring, application title threading. Verified at code commit b7f2c8e2.

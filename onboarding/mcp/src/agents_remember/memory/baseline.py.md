@@ -47,7 +47,7 @@ inside a `CoordinationHints(...)` (260731-EFA-L2) — the resolver no longer acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `memory_baseline_status` and `memory_baseline_adopt` call this module. | `memory_baseline_status_tool`; `memory_baseline_adopt_tool` | mcp/src/agents_remember/application/memory_tools.py:565-572; mcp/src/agents_remember/application/memory_tools.py:575-591 |
+| `memory_baseline_status` and `memory_baseline_adopt` call this module. | `memory_baseline_status_tool`; `memory_baseline_adopt_tool` | mcp/src/agents_remember/application/memory_tools.py:649-656; mcp/src/agents_remember/application/memory_tools.py:659-675 |
 | Ledger parsing and writing live in the kernel. | `load_ledger`; `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
 
 ## 260815-DAG-L4 Authority Boundary

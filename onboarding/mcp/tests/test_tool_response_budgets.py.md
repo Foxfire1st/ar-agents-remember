@@ -48,7 +48,7 @@ enumerated, and that the report file retains all records round-trip.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The report helper under test. | `write_tool_report` | mcp/src/agents_remember/kernel/primitives/tool_reports.py:30-50 |
-| The compact builders under test. | `compact_runtime_install_payload`; `compact_diagnostics_payload`; `compact_carryover_payload` | mcp/src/agents_remember/mcp/tools/core.py:105-128; mcp/src/agents_remember/mcp/tools/memory.py:162-183; mcp/src/agents_remember/mcp/tools/providers.py:55-70 |
+| The compact builders under test. | `compact_runtime_install_payload`; `compact_diagnostics_payload`; `compact_carryover_payload` | mcp/src/agents_remember/mcp/tools/core.py:105-128; mcp/src/agents_remember/mcp/tools/memory.py:195-216; mcp/src/agents_remember/mcp/tools/providers.py:55-70 |
 
 ## 260815-DAG-L4 Integration-Authority Forcing
 

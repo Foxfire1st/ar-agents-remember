@@ -32,6 +32,7 @@
     "mcp/src/agents_remember/application/hosted_readiness.py",
     "mcp/src/agents_remember/application/lifecycle_operation_worker.py",
     "mcp/src/agents_remember/application/lifecycle_tools.py",
+    "mcp/src/agents_remember/application/memory_quality_runs.py",
     "mcp/src/agents_remember/application/memory_tools.py",
     "mcp/src/agents_remember/application/next_step.py",
     "mcp/src/agents_remember/application/operator_inbox_tools.py",
@@ -55,7 +56,7 @@
   ],
   "coverageCounts": {
     "sourceFilesInScope": 39,
-    "fileSidecars": 31,
+    "fileSidecars": 32,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -92,6 +93,7 @@
     "linkage",
     "mcp",
     "memory",
+    "memory_quality_runs",
     "memory_tools",
     "next",
     "next_step",
@@ -104,6 +106,7 @@
     "provider",
     "provider_runtime",
     "provider_tools",
+    "quality",
     "queue",
     "read",
     "read_files",
@@ -115,6 +118,7 @@
     "results",
     "review",
     "route",
+    "runs",
     "runtime",
     "scope",
     "services",
@@ -135,10 +139,7 @@
     "terminal",
     "terminal_spawn_results",
     "terminal_tools",
-    "tool",
-    "tool_response",
-    "tools",
-    "topology"
+    "tool"
   ],
   "hotPath": {
     "summary": "For 260731-EFA-L21, `runtime/startup.py` is the trusted MCP declaration boundary: it declares MCP execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker entry paths make the corresponding dashboard declaration in their CLI route. Undeclared linked worktree entry paths therefore cannot inherit the deployed coordination root. The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline, and carryover; `gate_tools.p...",
@@ -157,6 +158,7 @@
       "mcp/src/agents_remember/application/hosted_readiness.py",
       "mcp/src/agents_remember/application/lifecycle_operation_worker.py",
       "mcp/src/agents_remember/application/lifecycle_tools.py",
+      "mcp/src/agents_remember/application/memory_quality_runs.py",
       "mcp/src/agents_remember/application/memory_tools.py",
       "mcp/src/agents_remember/application/next_step.py",
       "mcp/src/agents_remember/application/operator_inbox_tools.py",
@@ -165,8 +167,7 @@
       "mcp/src/agents_remember/application/provider_tools.py",
       "mcp/src/agents_remember/application/read_files.py",
       "mcp/src/agents_remember/application/task_doc_queue_scope.py",
-      "mcp/src/agents_remember/application/task_doc_route_review.py",
-      "mcp/src/agents_remember/application/task_doc_tools.py"
+      "mcp/src/agents_remember/application/task_doc_route_review.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -191,6 +192,8 @@
       "lifecycle_operation_worker",
       "lifecycle_tools.py",
       "lifecycle_tools",
+      "memory_quality_runs.py",
+      "memory_quality_runs",
       "memory_tools.py",
       "memory_tools",
       "next_step.py",
@@ -214,9 +217,7 @@
       "task_execution_topology.py",
       "task_execution_topology",
       "task_ref.py",
-      "task_ref",
-      "task_reopen.py",
-      "task_reopen"
+      "task_ref"
     ]
   },
   "fallback": {

@@ -41,7 +41,7 @@ titles (from the master's `subTasks` rows) from the batch's own masters — and 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The authoring-batch title-join forcing suite. | `AuthoringBatchTitlesTests` | mcp/tests/test_authoring_batch_titles.py:58-85 |
-| The application seam under test. | `_authoring_batch_titles` | mcp/src/agents_remember/application/task_execution_topology.py:307-317 |
+| The application seam under test. | `_authoring_batch_titles` | mcp/src/agents_remember/application/task_execution_topology.py:320-329 |
 | The shared in-memory title join. | `build_graph_titles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:36-57 |
 
 ## Cross-Repo References

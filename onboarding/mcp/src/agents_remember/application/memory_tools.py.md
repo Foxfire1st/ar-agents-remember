@@ -5,9 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-08-11T14:58+02:00                                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                 |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00                                     |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df`                 |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -25,16 +25,16 @@ refresh, memory initialization, baseline adoption, and memory carryover MCP oper
 
 The module defines three parameter objects for separate application contracts:
 `MemoryBranches` carries optional source/work branch overrides for baseline adoption
-cit:([`MemoryBranches`], mcp/src/agents_remember/application/memory_tools.py:520-526);
+cit:([`MemoryBranches`], mcp/src/agents_remember/application/memory_tools.py:604-610);
 `CarryoverSelection` carries the repository, memory/code refs, base, and replacement choice for
-carryover planning/apply cit:([`CarryoverSelection`], mcp/src/agents_remember/application/memory_tools.py:533-550);
+carryover planning/apply cit:([`CarryoverSelection`], mcp/src/agents_remember/application/memory_tools.py:617-634);
 and `CarryoverCommitMessages` carries the two commit subjects for apply
-cit:([`CarryoverCommitMessages`], mcp/src/agents_remember/application/memory_tools.py:553-558).
+cit:([`CarryoverCommitMessages`], mcp/src/agents_remember/application/memory_tools.py:637-642).
 `intent_note` remains a separate apply approval argument.
 
 The module resolves repository and leaf-memory authority through `McpRuntimeConfig` and the
 coordination context; the leaf path is confined, the contract is loaded, and the leaf's own memory
-worktree is required cit:([`_memory_scope`, `_leaf_memory_scope`], mcp/src/agents_remember/application/memory_tools.py:88-117; mcp/src/agents_remember/application/memory_tools.py:120-178).
+worktree is required cit:([`_memory_scope`, `_leaf_memory_scope`], mcp/src/agents_remember/application/memory_tools.py:88-117; mcp/src/agents_remember/application/memory_tools.py:139-177).
 For a contract-scoped quality check, `MemoryScope.unstamped_code_commit` carries the leaf's real
 code-base commit as temporary comparison provenance. `memory_quality_check_tool` forwards it into
 `DriftCheckContext`, so unstamped dirty-tree claims are checked before closeout without writing a
@@ -43,9 +43,21 @@ contract's worktree group. A full scoped check gathers complete drift/report-onl
 addition coverage, and a route-index preview, then atomically replaces that checklist; a subset or
 official-memory call does not create it. A bare official-memory call leaves both leaf-only fields
 absent.
+
+Since 260815-DAG-L15 the quality path is also available asynchronously (R7): `memory_quality_check_tool`
+keeps its exact synchronous 5-argument contract (now delegating to the shared `_run_quality_check`),
+and `start_memory_quality_check_run` / `poll_memory_quality_check_run` drive the bounded background
+registry in `application/memory_quality_runs.py` (single-flight per key — two callers cannot race the
+same checklist write — MAX 8 runs, TTL 30 min, eviction; runtime store only per doctrine D4). The
+started envelope carries `ok: True` plus `status`/`runId`; a poll returns the identical full result
+when the run completed, `ok: True` with `status: running|failed` otherwise, and `ok: False` with
+`status: run-not-found` for an unknown/evicted run (rerun guidance). The `ok` header on the async
+envelopes was a real bug fixed during the L15 gate repair (the wait=false path would have crashed at
+response validation with a raw pydantic error).
+
 `route_index_refresh_tool` then forwards the resolver-owned code root, onboarding root, repository
 identity, and storage authority into `build_route_indexes`
-cit:([`route_index_refresh_tool`], mcp/src/agents_remember/application/memory_tools.py:466-502).
+cit:([`route_index_refresh_tool`], mcp/src/agents_remember/application/memory_tools.py:550-586).
 Ordinary drift artifacts stay under the coordination temp root. The curator checklist is the
 explicit enclosure-local exception and remains outside both Git worktrees. Baseline and carryover
 entry points preserve their separate service contracts.
@@ -68,6 +80,8 @@ filesystem checks.
 - Drift reports are temporary coordination artifacts, not durable onboarding content.
 - Effectful refresh/init/baseline operations act by default and expose `dry_run` for preview;
   carryover remains an explicit plan/apply operation.
+- The synchronous quality contract is preserved: `memory_quality_check_tool` keeps its 5-argument
+  signature and byte-identical payload; the async surface is additive (R7).
 
 ### Todos
 
@@ -86,9 +100,11 @@ package application entry point and resolver contracts.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared memory-scope resolver and its leaf confinement/temporary-provenance rules. | `MemoryScope`; `_memory_scope`; `_leaf_memory_scope` | mcp/src/agents_remember/application/memory_tools.py:42-57; mcp/src/agents_remember/application/memory_tools.py:88-117; mcp/src/agents_remember/application/memory_tools.py:120-178 |
-| Contract-scoped quality forwards the temporary base while official scope leaves it absent. | "def memory_quality_check_tool("; "def test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims("; "def test_the_bare_check_does_not_invent_unstamped_claim_provenance(" | mcp/src/agents_remember/application/memory_tools.py:217-292; mcp/tests/test_memory_tool_enclosure_scope.py:296-321 |
-| The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:466-502 |
+| The shared memory-scope resolver and its leaf confinement/temporary-provenance rules. | `MemoryScope`; `_memory_scope`; `_leaf_memory_scope` | mcp/src/agents_remember/application/memory_tools.py:61-61; mcp/src/agents_remember/application/memory_tools.py:107-137; mcp/src/agents_remember/application/memory_tools.py:139-177 |
+| Contract-scoped quality forwards the temporary base while official scope leaves it absent. | "def memory_quality_check_tool("; "def test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims("; "def test_the_bare_check_does_not_invent_unstamped_claim_provenance(" | mcp/src/agents_remember/application/memory_tools.py:226-247; mcp/tests/test_memory_tool_enclosure_scope.py:296-321 |
+| The async start/poll wrappers drive the bounded background registry (L15-R7). | `start_memory_quality_check_run`; `poll_memory_quality_check_run`; `_quality_run_key` | mcp/src/agents_remember/application/memory_tools.py:250-279; mcp/src/agents_remember/application/memory_tools.py:280-301; mcp/src/agents_remember/application/memory_tools.py:302-305 |
+| The bounded single-flight run registry the wrappers use. | `start_quality_run`; `poll_quality_run` | mcp/src/agents_remember/application/memory_quality_runs.py:37-71; mcp/src/agents_remember/application/memory_quality_runs.py:74-85 |
+| The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:550-586 |
 | The route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | The route-index builder receives storage authority explicitly in its typed signature. | "def build_route_indexes(" | mcp/src/agents_remember/kernel/route_index.py:184-197 |
 
@@ -105,7 +121,21 @@ this package-local dispatch contract.
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
+## 260815-DAG-L15 Async Memory-Quality Surface
+
+L15 (R7, the 2026-08-19 timeout class) made the long-running contract-scoped check pollable without
+changing the synchronous contract: `start_memory_quality_check_run` starts a single-flight background
+run keyed on repo/contract/checks and returns `{status, runId}`; `poll_memory_quality_check_run`
+returns the identical full result when completed, `ok: True` while running/failed, and
+`ok: False`/`run-not-found` for evicted or unknown runs. The gate-repair round also fixed the missing
+`ok` header on the started/polled envelopes (a real bug: the wait=false path would have failed
+response validation with a raw pydantic error).
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: added the async start/poll wrappers over the bounded
+  background run registry (R7) with the `ok`-header bug fixed at the gate-repair round; the
+  synchronous `memory_quality_check_tool` contract is unchanged. Verified at code commit de3a0fd9.
 
 - 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 

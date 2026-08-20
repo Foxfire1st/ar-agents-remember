@@ -121,7 +121,7 @@ validation failures, and invalid resolvable parent master docs.
 | Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:403-446 |
 | Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_doc_tools.py:269-269 |
 | The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
-| The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:551-655 |
+| The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:679-804 |
 | The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:31-53 |
 | The JSON/markdown store this application entry point drives. | `write_task_docs` | mcp/src/agents_remember/tasks/store.py:40-73 |
 | The payload builder that wraps this application entry point. | `task_doc_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:19-30 |

@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/src/agents_remember/mcp/tools/__init__.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -31,6 +31,8 @@ agent-facing gate junction. `__all__` lists the full builder import surface, not
 only the advertised MCP tools. 260713-TES-L4 adds `operator_inbox_supersede_payload` to the
 `operator_inbox` import block and `__all__`, exactly per the documented re-export pattern.
 260815-DAG-L16 adds `direct_landing_payload` to the import block and `__all__` per the same pattern.
+260815-DAG-L15 adds `memory_quality_check_start_payload` / `memory_quality_check_poll_payload` to
+the `memory` import block and `__all__` per the same pattern (the async quality surface, L15-R7).
 
 ### Invariants And Boundaries
 
@@ -48,18 +50,18 @@ only the advertised MCP tools. 260713-TES-L4 adds `operator_inbox_supersede_payl
 | --- | --- | --- |
 | Conformance test reaches `tools._tool_payload`. | "tools._tool_payload" | mcp/tests/test_tool_response_conformance.py:4-4 |
 | `gate_response_wait_payload` is imported from `gates`. | "from .gates import (" | mcp/src/agents_remember/mcp/tools/__init__.py:20-28 |
-| `gate_response_wait_payload` is listed in `__all__`. | "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:109-109 |
+| `gate_response_wait_payload` is listed in `__all__`. | "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:111-111 |
 | The gate response wait payload builder is owned by the `gates` submodule. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/gates.py:171-188 |
 | The post payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_post_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-36 |
 | The poll payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_poll_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:51-65 |
 | The consume payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_consume_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:71-83 |
-| The inbox payload builders (post/poll/consume/supersede since 260713-TES-L4) are re-exported by this facade. | "from .operator_inbox import (" | mcp/src/agents_remember/mcp/tools/__init__.py:56-56 |
+| The inbox payload builders (post/poll/consume/supersede since 260713-TES-L4) are re-exported by this facade. | "from .operator_inbox import (" | mcp/src/agents_remember/mcp/tools/__init__.py:58-58 |
 | The orchestration nudge payload builder is owned by the `orchestration` submodule. | `orchestration_nudge_manager_payload` | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
-| The orchestration nudge payload builder is re-exported by this facade. | "from .orchestration import orchestration_nudge_manager_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:62-62 |
+| The orchestration nudge payload builder is re-exported by this facade. | "from .orchestration import orchestration_nudge_manager_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:64-64 |
 | The lifecycle finalizer payload builder is owned by the `lifecycle_finalize` submodule. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
 | The lifecycle finalizer payload builder is re-exported by this facade. | "from .lifecycle_finalize import lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:44-44 |
 | The terminal payload builders (`attach_terminal_session_to_task_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`) are owned by the `terminal` submodule. | `attach_terminal_session_to_task_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:27-44; mcp/src/agents_remember/mcp/tools/terminal.py:47-64; mcp/src/agents_remember/mcp/tools/terminal.py:67-84; mcp/src/agents_remember/mcp/tools/terminal.py:87-96 |
-| The terminal payload builders are re-exported by this facade. | "from .terminal import (" | mcp/src/agents_remember/mcp/tools/__init__.py:86-86 |
+| The terminal payload builders are re-exported by this facade. | "from .terminal import (" | mcp/src/agents_remember/mcp/tools/__init__.py:88-88 |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -70,7 +72,17 @@ This sidecar was reviewed against the final uncommitted L4 candidate. The source
 The tool package now exports `closeout_queue_payload`, keeping the registered task-tool import on
 the same curated payload surface as the other public MCP tools.
 
+## 260815-DAG-L15 Async Memory-Quality Exports
+
+The facade re-exports `memory_quality_check_start_payload` and `memory_quality_check_poll_payload`
+(the async quality surface, L15-R7) from `.memory` in the import block and `__all__`, exactly per
+the documented re-export pattern.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: `memory_quality_check_start_payload` /
+  `memory_quality_check_poll_payload` join the `memory` import block and `__all__` per the
+  documented re-export pattern (L15-R7 async quality surface). Verified at code commit de3a0fd9.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: `direct_landing_payload` joins the facade imports and
   `__all__` per the documented re-export pattern; citation ranges regenerated for the L16 line

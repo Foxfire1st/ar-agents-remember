@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -191,7 +191,14 @@ re-export); the task route's model is unchanged.
 The execution graph is now rendered as a deterministic mermaid `flowchart TD` diagram (L12-R1): `render.py` `_execution_graph_lines` emits subgraph-per-master boxes (title-labeled, truncated leaf nodes, atomic lumps, labeled edges) ordered by derived wave then node order, with the machine lists alongside. The new `execution_graph_titles.py` owns the shared master/leaf title join (`SprintGraphTitles`, `build_graph_titles`, `read_graph_titles`), re-exported by the package facade and threaded through `store.py` batch writes and every application writer's publish/preview sites.
 
 
+## 260815-DAG-L15 Route Impact
+
+New `tasks/serving_preflight.py`: the served-build preflight gate (model self-probe + non-editable wheel floor 3.0.0rc8, fail-closed, L15-R4) wired before every topology-schema write. `document.py` acyclicity refusals now name the exact cycle members (F4); `document_refs.py` hosts the shared atomic node-kind rule with the L15-FIX-1 `KeyError` closure.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: new serving_preflight served-build gate (L15-R4); named cycle-member refusals (F4); shared atomic node-kind rule (F6/L15-FIX-1). Verified at code commit de3a0fd9.
+
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 mermaid document diagram + shared title join (`execution_graph_titles.py`). Verified at code commit b7f2c8e2.

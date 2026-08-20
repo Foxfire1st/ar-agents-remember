@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,11 +50,29 @@ refuses unknown or unplaced leaf partitions (`_require_complete_partitions`), an
 `wouldLose` preview without writing; apply publishes sprint plus nature-changed masters atomically
 through the sprint queue's publication lane.
 
+Since 260815-DAG-L15 every topology-schema write is preflighted against the serving runtime
+(`require_serving_topology_schema` from `tasks/serving_preflight.py`): `author_execution_graph`
+refuses with `ExecutionTopologyError` when the running build's `TaskDocument` model lacks the
+topology fields or the installed non-editable `agents-remember-mcp` distribution is below the
+`3.0.0rc8` serving floor (L15-R4, the rc7 `extra="forbid"` failure class). The authoring dialect
+hardened on the playthrough findings: `judgmentId` is optional at parse on the edge/move/nature
+mutations so a missing judgment surfaces the typed `task-execution-graph-judgment-required`
+refusal instead of a raw pydantic error (F5); `_require_move_does_not_retarget_edge` refuses a
+`move_leaf` whose leaf samples an edge endpoint with the named `task-execution-graph-move-retargets-edge`
+before any acyclicity check (F3); `_require_draft_node_kinds` runs before `SprintExecutionGraph`
+construction so the atomic segment-node-kind rule fires before the lump/segment mutual-exclusion
+mask (F6), and records an explicit `None` for unresolvable segment refs so the later membership
+validation names them instead of a raw `KeyError` (L15-FIX-1); the dry-run paths lock with
+`create=False` so a preview never writes the controlplane lock file (F2).
+
 `enforce_execution_topology_edit`
 guards ordinary `create`, `replace`, and relevant `set_field` calls so partial graph/nature edits do
 not create an invalid topology: a graph-less sprint has no topology contract to validate (the
 series lane serializes masters), and dropping an authored `executionGraph` through an ordinary
-write is refused — a graph is only ever retired through the graph-authoring seam.
+write is refused — a graph is only ever retired through the graph-authoring seam. Since 260815-DAG-L15
+the enforcement also runs the served-build preflight when `_edit_emits_topology_schema` detects the
+edit writes topology schema bytes (`orchestrates`/`executionGraph`/`executionNature` present, or a
+`set_field` touching them) — an edit that cannot change the schema's readability skips the gate (L15-R4).
 
 ### Invariants And Boundaries
 
@@ -62,8 +80,11 @@ write is refused — a graph is only ever retired through the graph-authoring se
   execution nature or graph — a graph-less sprint runs the atomic-sequential default instead.
 - Graph membership must exactly match the sprint's canonical `orchestrates` membership; atomic-nature
   masters admit lump nodes only, and the graph schema plus topology validation both refuse segment
-  nodes on them.
+  nodes on them (the node-kind rule lives once in `tasks/document_refs.py`).
 - An authored `executionGraph` is never removed through ordinary document writes.
+- Topology-schema writes are preflighted: a serving build that cannot parse the topology schema
+  refuses before any publication, and a dry-run preview never writes the integration-authority
+  lock file (L15-R4/F2).
 - Preview is read-only. Apply prepares and publishes every affected document as one rollback-safe
   batch across task roots.
 - Errors use the shared `AgentsRememberError` family and are translated to `TaskDocError` at the
@@ -74,10 +95,14 @@ write is refused — a graph is only ever retired through the graph-authoring se
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The incremental authoring operation applies one validated judgment-provenanced mutation batch and bootstraps graph-less sprints. | `author_execution_graph` | mcp/src/agents_remember/application/task_execution_topology.py:182-247 |
-| Claimed judgment ids resolve against the sprint's canonical Judgment Register (since 260815-DAG-L14 `_verify_authoring_judgments` delegates to the extracted shared `verify_sprint_judgment_ids`, also used by the sprint linkage operations). | `_verify_authoring_judgments`; `verify_sprint_judgment_ids` | mcp/src/agents_remember/application/task_execution_topology.py:340-367; mcp/src/agents_remember/application/task_execution_topology.py:369-398 |
-| Writes refuse unknown-leaf or incomplete segment partitions against the live leaf sets. | `_require_complete_partitions` | mcp/src/agents_remember/application/task_execution_topology.py:594-623 |
-| The read-only inventory previews every sprint and commanded master's proposed nature and blockers. | `inventory_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:804-867 |
-| Ordinary execution-topology edits are validated against canonical cross-document topology; graph-less sprints skip graph validation and authored graphs cannot be dropped. | `enforce_execution_topology_edit` | mcp/src/agents_remember/application/task_execution_topology.py:678-725 |
+| Claimed judgment ids resolve against the sprint's canonical Judgment Register (since 260815-DAG-L14 `_verify_authoring_judgments` delegates to the extracted shared `verify_sprint_judgment_ids`, also used by the sprint linkage operations). | `_verify_authoring_judgments`; `verify_sprint_judgment_ids` | mcp/src/agents_remember/application/task_execution_topology.py:369-395 |
+| Writes refuse unknown-leaf or incomplete segment partitions against the live leaf sets. | `_require_complete_partitions` | mcp/src/agents_remember/application/task_execution_topology.py:678-706 |
+| The read-only inventory previews every sprint and commanded master's proposed nature and blockers. | `inventory_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:917-979 |
+| Ordinary execution-topology edits are validated against canonical cross-document topology; graph-less sprints skip graph validation and authored graphs cannot be dropped. | `enforce_execution_topology_edit` | mcp/src/agents_remember/application/task_execution_topology.py:762-813 |
+| The served-build preflight refuses a topology write whose serving runtime cannot parse the schema (model self-probe + non-editable wheel floor). | `require_serving_topology_schema` | mcp/src/agents_remember/tasks/serving_preflight.py:55-89 |
+| A move whose leaf samples an edge endpoint refuses with the named retargets-edge cause before any acyclicity check (L15-R8 F3). | `_require_move_does_not_retarget_edge` | mcp/src/agents_remember/application/task_execution_topology.py:603-625 |
+| The draft node-kind scan runs before graph construction; unresolvable segment refs record an explicit `None` so membership validation names them (L15-R8 F6, L15-FIX-1). | `_require_draft_node_kinds` | mcp/src/agents_remember/application/task_execution_topology.py:648-676 |
+| The edit preflight fires only for edits that emit topology schema bytes (L15-R4). | `_edit_emits_topology_schema` | mcp/src/agents_remember/application/task_execution_topology.py:828-843 |
 | The forcing suite proves authoring, bootstrap, rollback, render, projection, and refusal behavior. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:213-938 |
 | The authoring suite proves mutation dispatch, judgment provenance, partition refusal, and previews. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:56-983 |
 
@@ -107,8 +132,27 @@ L4 routes this file's existing application, configuration, task, model, registra
 Graph authoring publication now labels the sprint's mermaid render from the authoring batch's own in-memory masters (L12-R1/R4): `_authoring_batch_titles` joins titles via `build_graph_titles` for the sprint document in the batch, and `_publish_authoring` passes `graph_titles=` to `write_task_doc_batch`; `_document_preview` renders with the disk-backed `read_graph_titles`. A batch without a graph produces no titles (fallback labels).
 
 
+## 260815-DAG-L15 Authoring Dialect and Served-Build Preflight
+
+L15 (hygiene sweep + playthrough dispositions) hardened the authoring seam: (1) served-build
+preflight before any topology-schema write (L15-R4 — model self-probe + non-editable wheel floor
+`3.0.0rc8`, wired into `author_execution_graph` and `enforce_execution_topology_edit` when
+`_edit_emits_topology_schema`); (2) optional-at-parse `judgmentId` with the typed
+`task-execution-graph-judgment-required` refusal (F5); (3) the named `move-retargets-edge` refusal
+before acyclicity (F3); (4) the draft node-kind check before graph construction (F6) with the
+`None`-recording unresolvable-ref branch (L15-FIX-1, closing the raw `KeyError`); (5) `create=False`
+locking on the dry-run paths (F2). Refusals stay typed and fail-closed; nothing here weakens the
+apply-path authority (apply re-locks).
+
+
 ## Update History
 
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: served-build preflight gate on every topology-schema
+  write (L15-R4); typed judgment-required dialect for judgmentless edge/move/nature mutations (F5);
+  named move-retargets-edge refusal (F3); draft node-kind check before graph construction with the
+  L15-FIX-1 `None`-recording unresolvable-ref branch; `create=False` on dry-run locks (F2).
+  Verified at code commit de3a0fd9.
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   graph-authoring publish/preview threads joined graph titles (`_authoring_batch_titles`, L12-R1/R4). Verified at code commit b7f2c8e2.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,6 +50,12 @@ typed-linkage cross-check (`validate_sprint_linkage`) on a graph-less one, and `
 the sprint (± nature-asserted master) through the sprint queue's `publish_sprint_update`
 publication lane under `integration_authority_lock`, exactly like graph authoring.
 
+Since 260815-DAG-L15 `attach_master`/`detach_master` begin with the served-build preflight
+(`_require_serving_topology_schema` — `require_serving_topology_schema` wrapped in
+`SprintLinkageError`), so no topology-schema write can land while the serving runtime cannot parse
+the schema (L15-R4), and their dry-run paths lock with `create=False` so a preview never writes
+the controlplane lock file (playthrough F2).
+
 `detach_master` is symmetric: it refuses a cross-repo target, tolerates a deleted master document
 (`_resolve_tolerantly`), removes the typed row plus every `orchestrates` alias for the master, and
 drops its graph node — refusing while any edge still touches the node (`_require_no_touching_edges`)
@@ -62,7 +68,12 @@ inconsistent shapes without hard errors (L14-R7): `orchestrates-entry-unresolved
 `seat-doc-row` (legacy rows correlated through the seat doc's references via `_correlate_seat_row`),
 `row-without-membership`, `membership-without-row`, `slug-only-membership`, and
 `uncommanded-master` (a master named in the sprint's decisions but never commanded — the
-260812_mcp-rc7-release and 260815_ias-memory-ledger-reconciliation witnesses).
+260812_mcp-rc7-release and 260815_ias-memory-ledger-reconciliation witnesses). Since 260815-DAG-L15
+(F8) the uncommanded-master scan excludes sprints themselves (orchestrates-bearing docs — a sprint
+named in another sprint's decisions is not an uncommanded master), and a seat-doc row whose master
+correlation fails (seat doc absent, or present with no `../<master>/task.json` reference) reports
+`seat-doc-row-unresolved` instead of a master-less `seat-doc-row`, so a paired
+`membership-without-row` reads as a correlation miss, not a genuinely missing row.
 
 `validate_completed_master_row` is the moved terminal check for a master row newly marked
 `Completed`: a typed `masterRef` row completes against the linked master document's own status and
@@ -85,8 +96,11 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
   nature refuses (reclassify via `author_execution_graph` instead).
 - Attach refuses over existing `orchestrates` membership (detach-first is the conversion path);
   detach refuses on touching edges and on emptying the graph.
+- Linkage-schema writes are served-build-preflighted (L15-R4); dry-run never writes the
+  integration-authority lock file (F2).
 - This module never deletes files and never hard-fails on legacy shapes — those are facts, not
-  errors (L14-R7 backward tolerance).
+  errors (L14-R7 backward tolerance). The F8 fact kinds keep facts-not-errors semantics:
+  `seat-doc-row-unresolved` and the sprint exclusion are facts, never judgment.
 
 ## Repo-Internal References
 
@@ -95,9 +109,12 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 | The typed row model (`masterRef`) and first-class `SprintSeat` schema this module writes. | `SubTaskRef`; `SprintSeat`; `TaskDocument` | mcp/src/agents_remember/tasks/document.py:537-573; mcp/src/agents_remember/tasks/document.py:602-716 |
 | The typed-linkage cross-check and altitude role sets this module relies on. | `validate_sprint_linkage` | mcp/src/agents_remember/tasks/document_refs.py:288-341 |
 | The tool-layer registration and operation routing. | `_register_task_document_tools`; `_special_task_doc_operation` | mcp/src/agents_remember/mcp/registration/tasks.py:102-199; mcp/src/agents_remember/application/task_doc_tools.py:377-404 |
-| The shared judgment verifier and completion gate. | `verify_sprint_judgment_ids`; `require_commanded_masters_completed` | mcp/src/agents_remember/application/task_execution_topology.py:369-398; mcp/src/agents_remember/application/task_execution_topology.py:655-675 |
+| The shared judgment verifier and completion gate. | `verify_sprint_judgment_ids`; `require_commanded_masters_completed` | mcp/src/agents_remember/application/task_execution_topology.py:398-439; mcp/src/agents_remember/application/task_execution_topology.py:739-759 |
 | The rollback-safe atomic batch writer and the queue publication lane. | `write_task_doc_batch`; `publish_sprint_update` | mcp/src/agents_remember/tasks/store.py:50-90; mcp/src/agents_remember/controlplane/closeout_queue_store.py:190-258 |
 | The single-owner authority gate admitting this module as a task-document writer. | `TASK_DOCUMENT_WRITER_AUTHORITIES` | mcp/src/agents_remember/code_quality/single_owner.py:38-50 |
+| The linkage preflight wraps the served-build check in the linkage error family (L15-R4). | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_sprint_linkage.py:85-95 |
+| The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. | `collect_linkage_facts`; `_row_facts` | mcp/src/agents_remember/application/task_sprint_linkage.py:323-347; mcp/src/agents_remember/application/task_sprint_linkage.py:753-799 |
+| The F8 behaviors are pinned by the forcing suite (sprint exclusion; seat-row edge shapes). | `test_report_does_not_flag_a_sprint_as_uncommanded_master`; `test_report_seat_row_edge_shapes` | mcp/tests/test_task_sprint_linkage.py:519-540; mcp/tests/test_task_sprint_linkage.py:988-1015 |
 
 ## 260815-DAG-L14 Linkage Boundary
 
@@ -113,8 +130,23 @@ new-shape drift; legacy shapes surface as facts (L14-R5/R7).
 Sprint linkage publication now labels the sprint's mermaid render from the linkage batch's in-memory masters (L12-R1/R4): `_batch_graph_titles` joins titles via `build_graph_titles` for the sprint in the batch, `_publish` passes `graph_titles=` to `write_task_doc_batch`, and `_document_preview` renders with the disk-backed `read_graph_titles`. A batch without a graph produces no titles.
 
 
+## 260815-DAG-L15 Preflight and Linkage-Fact Hygiene
+
+L15 added the served-build preflight to both linkage write operations (L15-R4) and the `create=False`
+dry-run locks (F2), and cleaned the linkage-fact vocabulary (F8): `collect_linkage_facts` no longer
+flags an orchestrates-bearing sprint as an uncommanded master, and a seat-doc row that cannot be
+correlated to a master reports `seat-doc-row-unresolved` so correlation misses read as facts, not
+missing rows. Both F8 behaviors are test-pinned (the sprint-exclusion test and the updated
+seat-row edge-shapes test).
+
+
 ## Update History
 
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: served-build preflight wraps both linkage write
+  operations (L15-R4); attach/detach dry-runs lock with `create=False` (F2); F8 linkage-fact
+  hygiene — sprints excluded from `uncommanded-master`, `seat-doc-row-unresolved` for uncorrelated
+  seat rows — with tests. Verified at code commit de3a0fd9.
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   sprint-linkage publish/preview threads joined graph titles (`_batch_graph_titles`, L12-R1/R4). Verified at code commit b7f2c8e2.
 

@@ -64,7 +64,7 @@ instead of guessing. Results expose `repairAttempted` when that bounded retry pa
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `memory_init` is wired through the Phase 04 application entry point. | `memory_init` | mcp/src/agents_remember/mcp/registration/memory.py:123-137 |
+| `memory_init` is wired through the Phase 04 application entry point. | `memory_init` | mcp/src/agents_remember/mcp/registration/memory.py:141-155 |
 | MCP config defines repository memory roots. | `McpRuntimeConfig` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:113-137 |
 | The one git runner this module's `git init` goes through: `run_git` scrubs `GIT_REPOSITORY_SELECTOR_ENV` (L24-L33) via `git_environment` and bounds the command at `GIT_LOCAL_TIMEOUT_SECONDS = 300` by default (L53-L55; L67-L96). | `run_git`, `git_environment`, `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 

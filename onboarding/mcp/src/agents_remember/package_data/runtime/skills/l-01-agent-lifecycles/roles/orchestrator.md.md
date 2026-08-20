@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T05:08+02:00 |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -113,7 +113,20 @@ atomic-sequential default (one master fully integrates before the next starts);
 `task_doc.author_execution_graph` bootstraps a graph onto it (first `add_node` batch) and edits
 one incrementally afterwards. The `migrate_execution_topology` legacy-cutover reference is gone.
 
+## 260815-DAG-L15 Review-Doctrine
+
+Job O gains a review-independence and evidence-type paragraph: this seat never reviews its own
+leaf or plan implementation as the "independent" route reviewer (260815-DAG L7/L8/L9 were
+orchestrator self-reviews), and never passes a requirement on evidence of the wrong class —
+rendering/visibility needs mounted-UI proof, scheduling needs operation-level proof, data-model
+needs artifact-level proof. Route reviews come from a distinct reviewer seat; this seat reviews
+only at super-exit, through a spawned reviewer.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: Job O now states review independence — never review
+  your own leaf/plan as the independent route reviewer, and match requirement verdicts to their
+  evidence class. Verified at code commit de3a0fd9.
 
 - 2026-08-20T05:08+02:00 — 260815-DAG-L14: the seat-row prescription is superseded by the sprint
   seats structure and the atomic `attach_master` adoption flow (canonical + generated copies kept

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -212,7 +212,14 @@ Registered worktree and memory tools expose journaled closeout/integration and r
 `mcp/registration/tasks.py` documents the sprint linkage operations (`attach_master`,
 `detach_master`, `linkage_report`) on the `task_doc` tool.
 
+## 260815-DAG-L15 Route Impact
+
+`memory_quality_check` registration gained keyword-only `wait` (default True) / `run_id`, dispatching to the start/poll payloads (L15-R7); the synchronous path and its payload are unchanged.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: memory_quality_check wait/run_id keyword-only async surface (L15-R7). Verified at code commit de3a0fd9.
+
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: `closeout.py` registers the
   `direct_landing` tool (L16-R8); `tasks.py`'s `task_doc` gains `branch_addressed`
