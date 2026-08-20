@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-19T22:32+02:00                           |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`       |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated            | 2026-08-20T05:04+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -201,7 +201,16 @@ payload builder; queue logic stays in the application/worktree/control-plane own
 
 Registered worktree and memory tools expose journaled closeout/integration and read-only conflict/carryover planning while keeping protected writes behind configured authority. Response schemas and next-tool literals match the executable registration surface.
 
+## 260815-DAG-L14 Task-Doc Registration
+
+`mcp/registration/tasks.py` documents the sprint linkage operations (`attach_master`,
+`detach_master`, `linkage_report`) on the `task_doc` tool.
+
 ## Update History
+
+- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: `task_doc` registration gains the sprint
+  linkage operations. Verified at code commit 8071a644.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `tasks.py`'s `task_doc` declaration no
   longer advertises the removed `migrate_execution_topology`; `author_execution_graph` is

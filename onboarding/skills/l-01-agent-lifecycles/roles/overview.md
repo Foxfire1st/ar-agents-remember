@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated            | 2026-08-20T05:06+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 
 ## Purpose
 
@@ -98,7 +98,17 @@ instead of carrying Agents Remember-specific Dagger commands. They retain the on
 no leaf-integration rerun, one master-integration cadence and must fail closed rather than invent a
 runner or fallback.
 
+## 260815-DAG-L14 Roles Route
+
+`roles/orchestrator.md` replaces the seat-row prescription with the seats-structure +
+`attach_master` adoption flow; `roles/strategist.md` and `roles/architect.md` adoption payloads
+updated.
+
 ## Update History
+
+- 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: orchestrator/strategist/architect role
+  docs updated to the atomic attach flow and seats structure. Verified at code commit 8071a644.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `architect.md` and `orchestrator.md` now
   name `task_doc.author_execution_graph` as the graph bootstrap/edit seam and teach the

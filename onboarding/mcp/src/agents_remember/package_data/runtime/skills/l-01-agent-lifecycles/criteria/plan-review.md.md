@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated            | 2026-08-20T05:10+02:00 |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 
 ## Purpose
 
@@ -91,7 +91,16 @@ The criteria now re-derive nature, blast radius, priority, graph order, and bloc
 mechanical facts to remain distinguishable from explicit judgment. Every graph-selected relation
 must carry evidence and the owning Judgment Register id.
 
+## 260815-DAG-L14 Doctrine Sync
+
+PR-4 (topology agreement) is extended to typed-row/graph agreement: a sprint row carrying a typed
+`masterRef` must agree with the execution graph and `orchestrates` membership.
+
 ## Update History
+
+- 2026-08-20T05:10+02:00 — 260815-DAG-L14: PR-4 extended to typed-row/graph agreement.
+  Verified at code commit 2f494982.
+
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

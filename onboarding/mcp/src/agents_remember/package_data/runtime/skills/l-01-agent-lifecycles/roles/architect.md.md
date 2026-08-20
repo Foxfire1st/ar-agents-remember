@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated            | 2026-08-20T05:10+02:00 |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -111,6 +111,12 @@ No sibling repository evidence is needed for this orchestration role file.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260815-DAG-L14 Doctrine Sync
+
+"Adding A Master" is rewritten to the atomic `task_doc.attach_master` flow: one validated batch
+writes the typed `masterRef` row, the `orchestrates` slug, the graph lump node (when the sprint
+has a graph), and the nature assertion.
+
 ## 260712-TRH-L4 Generated-Copy Doctrine
 
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
@@ -146,6 +152,10 @@ graph-less sprint; the removed `migrate_execution_topology` is no longer named a
 cutover path.
 
 ## Update History
+
+- 2026-08-20T05:10+02:00 — 260815-DAG-L14: "Adding A Master" rewritten to the atomic
+  `attach_master` flow. Verified at code commit 2f494982.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: synchronized the scheduling-default doctrine —
   `author_execution_graph` owns graph edits including the graph-less bootstrap; the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/AttentionQueue.test.tsx`   |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T07:32+02:00                           |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-20T04:44+02:00 |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7` |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -49,11 +49,15 @@ yet), so no "Open" or dismissal affordance is asserted.
 | --- | --- | --- |
 | The panel under test (generic severity-keyed rendering). | `item`; `AttentionQueueImpl` | dashboard/src/panels/AttentionQueue.tsx:21-40; dashboard/src/panels/AttentionQueue.tsx:271-323 |
 | The reducer source of the `blocked-start` item (§9). | "def _start_attention(start_progress: list[dict[str" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:335-335 |
-| The store `applySnapshot` path used by this fixture's projection seed. | `applySnapshot` | dashboard/src/panels/AttentionQueue.test.tsx:60-60 |
+| The store `applySnapshot` path used by this fixture's projection seed. | `applySnapshot` | dashboard/src/panels/AttentionQueue.test.tsx:61-61 |
 | Targetless actionable drift dismissal hides immediately and posts a nullable lifecycle target. | "dismisses actionable drift without a lifecycle target and hides it immediately" | dashboard/src/panels/AttentionQueue.test.tsx:129-145 |
 | Clear all includes gate, lifecycle, and actionable-drift rows but skips worktree alarms. | "Clear all dismisses dismissible listed items" | dashboard/src/panels/AttentionQueue.test.tsx:147-193 |
 
 ## Update History
+
+- 2026-08-20T04:44+02:00 — 260815-DAG-L14: `taskDoc` fixture defaults `seats: []`; the shifted
+  `applySnapshot` citation re-pinned. Verified at code commit 9c3180c1.
+
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the local TaskDocNode fixture supplies the new
   mechanically derived `executionWaves` field; attention-queue behavior is otherwise unchanged.

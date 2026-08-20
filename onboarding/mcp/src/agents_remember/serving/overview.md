@@ -8,9 +8,9 @@ Total output lines: 2259
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-14T12:31:43+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`|
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-20T05:04+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -780,7 +780,16 @@ The metrics background loop now shields and drains each blocking worker-thread o
 propagating lifespan cancellation. Shutdown therefore cannot finish while sampling, record,
 degradation evaluation, or compaction can still mutate provider metrics state.
 
+## 260815-DAG-L14 Serving Route
+
+The served task-document projection carries sprint `seats` and typed `masterRef` rows; the body
+revision covers `subTasks` + `seats` so an open sprint reader refetches on linkage/seat edits.
+
 ## Update History
+
+- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: served task docs project sprint
+  `seats` + `masterRef` rows. Verified at code commit 8071a644.
+
 
 - 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
 

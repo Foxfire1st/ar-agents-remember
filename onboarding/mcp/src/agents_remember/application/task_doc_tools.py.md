@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/application/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-20T04:20+02:00 |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -22,7 +22,12 @@ the JSON (source of truth) and the rendered markdown. `task_reopen_tool` — the
 that reopens a fully landed leaf under its exact leaf id (delegating to `worktrees/reopen.py`) —
 moved to the sibling `application/task_reopen.py` module in 260815-DAG-L11 and is re-exported
 here unchanged (facade); its response keeps the worktree-command contract shape because the
-payload carries the enclosure state.
+payload carries the enclosure state. Since 260815-DAG-L14 the dispatcher also routes the
+sprint linkage operations (`attach_master`/`detach_master`/`linkage_report`) to
+`application/task_sprint_linkage.py` through `SPRINT_LINKAGE_OPERATIONS`, wraps
+`SprintLinkageError` in `TaskDocError`, and a sprint `get` carries its `linkageFacts`; the
+Completed-row terminal check now delegates to `task_sprint_linkage.validate_completed_master_row`
+(typed rows complete against the linked master document).
 
 ## Code Commentary
 
@@ -136,6 +141,11 @@ translation and the locked publication call.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-20T04:20+02:00 — 260815-DAG-L14: the `task_doc` dispatcher routes
+  `attach_master`/`detach_master`/`linkage_report` to `application/task_sprint_linkage.py`, carries
+  `linkageFacts` on a sprint `get`, and delegates the Completed-row check to the linkage module
+  (typed rows complete against the linked master document). Verified at code commit 2f494982.
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: `VALID_OPERATIONS` dropped `migrate_execution_topology`
   (graph-less sprints run the atomic-sequential default; `author_execution_graph` bootstraps), new

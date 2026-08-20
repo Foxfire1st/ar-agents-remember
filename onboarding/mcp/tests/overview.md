@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`|
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated            | 2026-08-20T05:06+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1159,7 +1159,17 @@ projection schema stays within constraints the TypeScript generator renders exac
 
 The L4 suites force repository-global surface ownership, organizational versus atomic start, aliases/tags/linked worktrees, configured identity, lowest-writer refusal, bootstrap WAL, queue-lock ordering, task-topology races, exact code-memory CAS and recovery, atomic leaf-chain sealing, terminal child preservation, and preview/apply parity through production owners.
 
+## 260815-DAG-L14 Test Route
+
+`test_task_sprint_linkage.py` (1063 lines) forces the atomic attach/detach operations, judgment
+provenance, linkage facts, and backward tolerance; `test_observer_projection_taskdocs.py` asserts
+projected `masterRef`/`seats` and body-revision movement.
+
 ## Update History
+
+- 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: new `test_task_sprint_linkage.py` suite
+  plus projection tests for `masterRef`/`seats`. Verified at code commit 8071a644.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: five new forcing suites
   (`test_sequential_default_mode.py`, `test_queue_read_degradation.py`, `test_register_scaffold.py`,

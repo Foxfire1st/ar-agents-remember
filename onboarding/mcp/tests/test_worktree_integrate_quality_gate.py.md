@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_integrate_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastUpdated            | 2026-08-20T05:12+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36T+0200|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,6 +80,11 @@ reports `wrapper-unavailable` and remains non-blocking. The full gate still runs
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-20T05:12+02:00 — L11 landed-wave refresh: the leaf-segment graph-model commit
+  (f2e2f4b9) touched this source; card re-verified against the current file, verification stamp
+  advanced to f2e2f4b9. Body unchanged — the documented contract still holds.
+
 
 - 2026-08-17T12:30+02:00 — No content impact: L5 extends the suite for the altitude-routed organizational full gate; the documented quality-gate ownership is unchanged.
 

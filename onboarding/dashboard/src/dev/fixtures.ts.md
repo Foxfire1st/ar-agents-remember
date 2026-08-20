@@ -130,9 +130,9 @@ shape, so both sides of that delegation are cited.
 | `lifecycle()`, provider states, `enclosure()`, and `evt()` retain gallery defaults ahead of `...over`. | `lifecycle`; `providerRole`; `ok`; `down`; `indexing`; `enclosure`; `evt` | dashboard/src/dev/fixtures.ts:32-47; dashboard/src/dev/fixtures.ts:61-62; dashboard/src/dev/fixtures.ts:64-94; dashboard/src/dev/fixtures.ts:96-116; dashboard/src/dev/fixtures.ts:118-125 |
 | The gallery maps Engine Room scenarios through `engineRoomProjection`. | "export const GALLERY: GalleryEntry[] = ["; "ENGINE_ROOM_SCENARIOS.filter"; "projection: engineRoomProjection(scenario)" | dashboard/src/dev/fixtures.ts:146-146; dashboard/src/dev/fixtures.ts:484-484; dashboard/src/dev/fixtures.ts:487-487 |
 | `EMPTY_ANALYTICS` now lives in the shared wire fixtures and still carries `series: []` and `engineProcesses: []`. | `EMPTY_ANALYTICS` | dashboard/src/test/fixtures/wire.ts:223-237 |
-| `projection()` assigns `metrics` from `metricsFor(lifecycles)`. | `metrics` | dashboard/src/test/fixtures/wire.ts:334-334 |
+| `projection()` assigns `metrics` from `metricsFor(lifecycles)`. | `metrics` | dashboard/src/test/fixtures/wire.ts:335-344 |
 | The gallery consumes each `ENGINE_ROOM_SCENARIOS` entry by projecting its `processes` and `workspace` data. | "processes: EngineProcessNode[];"; "workspace: ProviderNode[];"; "ENGINE_ROOM_SCENARIOS.filter"; "projection: engineRoomProjection(scenario)" | dashboard/src/dev/fixtures.ts:484-484; dashboard/src/dev/fixtures.ts:487-487; dashboard/src/panels/engine-room/fixtures.ts:21-22 |
-| `series` and `engineProcesses` live on `WorkspaceProjection["analytics"]`. | `Analytics`; `engineProcesses`; `series`; `WorkspaceProjection` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:605-618 |
+| `series` and `engineProcesses` live on `WorkspaceProjection["analytics"]`. | `Analytics`; `engineProcesses`; `series`; `WorkspaceProjection` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:626-639 |
 
 ## Cross-Repo References
 

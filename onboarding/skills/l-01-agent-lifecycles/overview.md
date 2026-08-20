@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated            | 2026-08-20T05:06+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 
 ## Purpose
 
@@ -90,7 +90,18 @@ arguments, retry, resources, and evidence from the active repository memory. The
 cadence remains fixed at leaf closeout once and master integration once, with no leaf-integration
 rerun and no inferred fallback.
 
+## 260815-DAG-L14 Doctrine Route
+
+The `l-01-agent-lifecycles` doctrine was synced to the atomic `attach_master` flow and the
+first-class sprint seats structure: `roles/orchestrator.md`, `roles/strategist.md`,
+`roles/architect.md`, `criteria/plan-review.md`, and `templates/orchestration-task.md` all
+updated, with canonical and generated copies kept identical by `scripts/sync-skills.py`.
+
 ## Update History
+
+- 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: doctrine files updated to the
+  `attach_master` flow and seats structure. Verified at code commit 8071a644.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: the architect/orchestrator roles and the
   orchestration-task template now teach the atomic-sequential default — a graph-less sprint runs

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T08:55+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated | 2026-08-20T04:38+02:00 |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7` |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -74,6 +74,11 @@ after organizational leaves moved to direct sprint-super ownership.
 
 ## Update History
 
+- 2026-08-20T04:38+02:00 — 260815-DAG-L14: the projection schema gains the `TaskSeatNode` $defs
+  entry and `TaskDocNode.seats` / `TaskSubTaskRefNode.masterRef` properties (regenerated from the
+  Python schema by `scripts/sync-projection-types.py`). Verified at code commit 9c3180c1.
+
+
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: regenerated from the server projection with the
   leaf-segmented graph definitions (`TaskExecutionNode`, `TaskExecutionEndpointNode`,
   edge `judgmentId`, node-typed `executionWaves`). Verification remains closeout-owned.
@@ -102,6 +107,11 @@ from the `AgentPickupNode` docstring in `observer/projection.py`; codegen-curren
 report and reviewer verification.
 
 ## Update History
+
+- 2026-08-20T04:38+02:00 — 260815-DAG-L14: the projection schema gains the `TaskSeatNode` $defs
+  entry and `TaskDocNode.seats` / `TaskSubTaskRefNode.masterRef` properties (regenerated from the
+  Python schema by `scripts/sync-projection-types.py`). Verified at code commit 9c3180c1.
+
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the regenerated schema — the
   `AgentPickupNode.description` rides the Python docstring rewrite (turn-boundary landing,

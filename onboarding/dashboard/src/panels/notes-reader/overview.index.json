@@ -47,7 +47,7 @@
       "CodeSide",
       "dashboard/src/panels/notes-reader/",
       "route-local-overview",
-      "28a66feae742bf02fe4b647388b220f921cc7007",
+      "8071a64497ed88f8f423e853dc9440532fd573af",
       "/overview.md",
       "notes-reader/",
       "CockpitShell",
@@ -75,6 +75,7 @@
       "listNotes",
       "readNote",
       "resolveNoteReference",
+      "seats",
       "executionWaves",
       "masterDoc",
       "as unknown as TaskDocNode",
@@ -82,8 +83,7 @@
       "as unknown as WorkspaceProjection",
       "satisfies WorkspaceProjection",
       "metrics",
-      "metricsFor",
-      "it"
+      "metricsFor"
     ]
   },
   "fallback": {

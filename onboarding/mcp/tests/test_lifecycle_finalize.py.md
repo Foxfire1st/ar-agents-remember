@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_lifecycle_finalize.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T14:05+02:00                     |
-| lastVerifiedCommitHash |                                            `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate |                                            2026-08-16T10:54:02+02:00|
+| lastUpdated            | 2026-08-20T04:54+02:00 |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -47,7 +47,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Finalizer behavior under test lives here. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:28-94 |
-| Task document read/write behavior used by the fixture lives here. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:182-267 |
+| Task document read/write behavior used by the fixture lives here. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:602-716 |
 | Git fixture helpers come from the existing worktree support tests. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:767-842 |
 | Public response model registry is checked for the finalizer entry. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:223-227 |
 
@@ -57,6 +57,11 @@ The suite imports `LifecycleFinalizeTaskResponse` from `models.lifecycles.finali
 owner. Finalization payload, registry, task-document, and blocker assertions are unchanged.
 
 ## Update History
+
+- 2026-08-20T04:54+02:00 — 260815-DAG-L14 curator: re-read the `TaskDocument` claim — the persisted
+  model gained sprint `seats` and typed `masterRef` rows; wording retained, citation regenerated to
+  the current class lines, stamp advanced to code commit 2f494982.
+
 
 - 2026-08-15T14:05+02:00 — L3 final targeted-gate repair: a queue-governed task-document
   reconciliation refusal now returns the exact `task-queue-blocked` result without mutating task

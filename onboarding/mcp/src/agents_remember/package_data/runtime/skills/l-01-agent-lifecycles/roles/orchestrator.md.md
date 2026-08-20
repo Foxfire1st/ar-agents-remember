@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated            | 2026-08-20T05:08+02:00 |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -78,6 +78,13 @@ master altitude. Both require the explicit task-derived diff base, and host pyte
 are refused rather than accepted or used as fallback. `memory_quality_check` stays a per-leaf
 closeout gate; orchestrators do not run a separate full graph per leaf.
 
+## 260815-DAG-L14 Doctrine Sync
+
+The seat-row prescription is replaced by the first-class sprint seats structure plus the atomic
+`attach_master` adoption flow: sprint seats live on the sprint document (`SprintSeat` rows), and
+commanding a master is one validated `task_doc.attach_master` batch (typed `masterRef` row +
+membership slug + graph node + nature assertion) — never the three-write manual flow.
+
 ## L23 Final Candidate Disposition
 
 The orchestrator observes closeout and integration through canonical task status. Leaf acceptance is
@@ -107,6 +114,11 @@ atomic-sequential default (one master fully integrates before the next starts);
 one incrementally afterwards. The `migrate_execution_topology` legacy-cutover reference is gone.
 
 ## Update History
+
+- 2026-08-20T05:08+02:00 — 260815-DAG-L14: the seat-row prescription is superseded by the sprint
+  seats structure and the atomic `attach_master` adoption flow (canonical + generated copies kept
+  identical by `scripts/sync-skills.py`). Verified at code commit 2f494982.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: synchronized the scheduling-default doctrine —
   graph-less sprints run atomic-sequentially and `author_execution_graph` bootstraps/edits the

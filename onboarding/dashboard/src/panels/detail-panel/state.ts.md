@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/state.ts`                |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-11T23:40+02:00                                      |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-20T04:36+02:00                                      |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7`                  |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -22,6 +22,8 @@ the canonical viewed-task document reference, optional compatibility leaf key, a
 set from props.
 
 ## Code Commentary
+
+Since 260815-DAG-L14 `useDetailPanelState` exposes `docPathForRef` — resolves a sub-task row typed `masterRef` against the full projected task-document pool and dispatches it through `jump(taskDocSelectionKey(...))`, the same mechanism the parent-series crumb uses.
 
 ### Logic
 
@@ -67,6 +69,8 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-20T04:36+02:00 — 260815-DAG-L14: `useDetailPanelState` exposes `docPathForRef` for the sprint → master drill-down (typed `masterRef` rows jump to the commanded master document). Verified at code commit 9c3180c1.
 
 - 2026-08-11T23:40+02:00 — No content impact: task-notification derivation moved into a helper
   hook, while `useDetailPanelState` remains a pure projection of selected task/lifecycle/series and

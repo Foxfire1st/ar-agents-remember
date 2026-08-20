@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/notes-reader/`             |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-01T13:20+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-20T05:06+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -83,6 +83,10 @@ The current source-backed Notes Reader integration is recorded by the repository
 above.
 
 ## Update History
+
+- 2026-08-20T05:06+02:00 — No route impact: 260815-DAG-L14 only added `seats: []` to the
+  `NotesReaderViewer` test fixture factory; the notes-reader route purpose is unchanged.
+
 
 - 2026-08-15T02:16:50+02:00 — No route impact: the notes-reader test fixture now supplies empty
   `executionWaves`; notes-reader behavior and ownership are unchanged.

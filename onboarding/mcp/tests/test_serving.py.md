@@ -248,7 +248,7 @@ are proven by repository source and the test suite itself.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The pure diff under test. | `diff_projection` | mcp/src/agents_remember/serving/delta.py:102-145 |
-| The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1065-1087 |
+| The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 | The projector under test owns atomic subscribe/snapshot activation, first-recovery publication, publish-before-notify ordering, and cleanup. | `Projector` | mcp/src/agents_remember/serving/projector.py:126-330 |
 | The app consumes one projector iterator, decorates every snapshot with the serve-time tail, preserves SSE framing, and closes the subscription through `contextlib.aclosing`. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:115-115 |
 | The forced MX-FIX-1 regressions pin the handoff mutation, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | `StreamEventsTests` | mcp/tests/test_serving.py:379-477 |

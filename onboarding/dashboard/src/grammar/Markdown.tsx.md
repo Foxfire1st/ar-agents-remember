@@ -55,7 +55,7 @@ table scrolls **inside** its box; the panel layout is never widened by content.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `DetailPanel` renders task prose, master sections, bullets, and decisions through this primitive. | "export const DetailPanel = memo(DetailPanelImpl);"; "export function MasterOverview({"; "export function MasterSection({"; "export function Bullets({ items }: { items: string[] }) {"; "export function DecisionList({ items }: { items: TaskDecisionNode[] }) {"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75; dashboard/src/panels/detail-panel/taskReader.tsx:126-126; dashboard/src/panels/detail-panel/taskReader.tsx:206-206; dashboard/src/panels/detail-panel/taskReader.tsx:494-494; dashboard/src/panels/detail-panel/taskReader.tsx:555-555; dashboard/src/panels/detail-panel/taskReader.tsx:612-612 |
+| `DetailPanel` renders task prose, master sections, bullets, and decisions through this primitive. | "export const DetailPanel = memo(DetailPanelImpl);"; "export function MasterOverview({"; "export function MasterSection({"; "export function Bullets({ items }: { items: string[] }) {"; "export function DecisionList({ items }: { items: TaskDecisionNode[] }) {"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75; dashboard/src/panels/detail-panel/taskReader.tsx:130-130; dashboard/src/panels/detail-panel/taskReader.tsx:219-219; dashboard/src/panels/detail-panel/taskReader.tsx:569-569; dashboard/src/panels/detail-panel/taskReader.tsx:630-630; dashboard/src/panels/detail-panel/taskReader.tsx:687-687 |
 
 ## Update History
 

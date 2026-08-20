@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-19T08:55+02:00                        |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated            | 2026-08-20T04:14+02:00                        |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -47,6 +47,18 @@ master doc with a non-empty list **is** an orchestration task, and each entry na
 it commands (its task folder, doc id, or title — the dashboard matches forgivingly). Additive by
 design — `default_factory=list`, no new `DocKind`, no migration; docs without the field validate
 and serialize exactly as before, and masters named nowhere stay top-level.
+
+Since 260815-DAG-L14 the sprint document also carries first-class `seats` (`SprintSeat`:
+role/label/identity/state — the manager-seat precedent on master docs, so seat task documents leave
+the sprint task index while existing ones stay on disk as historical records) and a `subTasks` row
+may carry a typed `masterRef` (`TaskDocumentRef` — the exact commanded master document it tracks,
+rendered as a real markdown link). Both are sprint-only by validator
+(`_check_sprint_rows_and_seats`): a `masterRef` row or non-empty `seats` requires `kind == "master"`
+with non-empty `orchestrates`; seat roles are unique among planned/active seats (a retired → active
+succession of the same role is the only reading consistent with a `state` field). The role
+altitudes are declared here once — `SPRINT_ROLES` (architect/orchestrator/strategist/designer/
+system-specialist), `MASTER_ROLES` (manager), `LEAF_ROLES` (worker/reviewer/curator) — and
+`document_refs` re-exports them (importing from `document_refs` would cycle).
 
 Execution topology is explicit and separate from containment. A commanded master declares the
 closed `executionNature` value `organizational` or `atomic`; an orchestration sprint instead owns a
@@ -129,7 +141,7 @@ the escape hatch for bespoke prose; the standard template sections stay the back
 | --- | --- | --- |
 | The renderer consumes this model. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:31-53 |
 | The store reads/writes this model. | `read_task_doc`; `write_task_doc` | mcp/src/agents_remember/tasks/store.py:32-33; mcp/src/agents_remember/tasks/store.py:36-37 |
-| The persisted-contract peer this mirrors. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:718-771 |
+| The persisted-contract peer this mirrors. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:739-812 |
 
 ## L23 Final Candidate Disposition
 
@@ -138,6 +150,12 @@ and route-review authority. Those document relationships, not branch names or ru
 an agent, select the task boundary.
 
 ## Update History
+
+- 2026-08-20T04:14+02:00 — 260815-DAG-L14: `TaskDocument` gained first-class sprint `seats`
+  (`SprintSeat` — role/label/identity/state, sprint-only, unique among non-retired roles) and
+  `SubTaskRef` gained the optional typed `masterRef` (the commanded master document a row tracks).
+  `SPRINT_ROLES`/`MASTER_ROLES`/`LEAF_ROLES` moved here as the canonical altitude declaration.
+  Verified at code commit 2f494982.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: the sprint graph model is now leaf-segmented —
   `SprintExecutionNode` lumps or per-master segments with legacy bare-ref lifting and byte-identical

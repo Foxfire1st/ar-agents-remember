@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/tasks/document_refs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash |  `b523f53b193e9783e7c7e6410c772e7d64d8df17`|
-| lastVerifiedCommitDate |  2026-08-19T21:54:50+02:00|
+| lastUpdated            | 2026-08-20T04:16+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,6 +39,14 @@ nodes only). Candidate overrides let task-doc authoring validate before publicat
 (L13-R5e — only an explicit `organizational` standalone master stays a dead-end), and the public
 `commanded_masters` derives a sprint's exact alias-commanded masters without re-resolving the
 sprint from disk, so unpublished candidate sprints work.
+Since 260815-DAG-L14 `validate_sprint_linkage` hard-fails NEW-shape sprint↔master linkage
+drift on top of membership validation: every `subTasks` row carrying a typed `masterRef` must
+resolve to exactly one master the sprint commands (same-repository), no two rows may type the same
+master, and the target may not itself orchestrate. Legacy rows (seat-doc `file`, no `masterRef`)
+are not checked here — `linkage_report`/`linkageFacts` surface them as drift facts instead (L14-R7
+backward tolerance). The altitude role sets (`SPRINT_ROLES`/`MASTER_ROLES`/`LEAF_ROLES`) are
+re-exported from `tasks/document.py`, their canonical home.
+
 `execution_leaf_placement` returns each commanded master's live leaf-to-segment `LeafPlacement`
 (`MasterLeafPlacement`): computed against the master's live `subTasks` rows, so a leaf set that
 changed after graph authoring surfaces as unknown/unplaced facts on read paths; only the
@@ -75,7 +83,7 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Task document topology is centralized in one typed resolver. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:62-558 |
+| Task document topology is centralized in one typed resolver. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:62-555 |
 | Structural seats consume this topology to qualify parent and child relations. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:22-160 |
 
 ## Cross-Repo References
@@ -89,6 +97,11 @@ inside agents-remember and has no sibling-repository code dependency.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-20T04:16+02:00 — 260815-DAG-L14: `validate_sprint_linkage` hard-fails new-shape typed
+  sprint↔master linkage drift (typed row must resolve to a same-repository commanded non-orchestrating
+  master; no duplicate typed rows); legacy shapes stay facts. Altitude role sets now come from
+  `tasks/document.py`. Verified at code commit 8071a644.
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: a nature-less standalone master resolves at master
   altitude by default (only an explicit `organizational` standalone stays a dead-end); migration

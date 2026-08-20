@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_forcing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated            | 2026-08-20T05:14+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,8 +55,8 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical task-document identity is runtime-bounded without an unsupported `maxLength` schema. | `test_task_document_identity_is_runtime_bounded_without_unsupported_schema` | mcp/tests/test_closeout_queue_forcing.py:61-78 |
-| Full route records and in-place evidence-byte drift are bound. | `test_full_route_record_and_in_place_evidence_bytes_are_bound` | mcp/tests/test_closeout_queue_forcing.py:69-91 |
+| Canonical task-document identity is runtime-bounded without an unsupported `maxLength` schema. | `test_task_document_identity_is_runtime_bounded_without_unsupported_schema` | mcp/tests/test_closeout_queue_forcing.py:79-93 |
+| Full route records and in-place evidence-byte drift are bound. | `test_full_route_record_and_in_place_evidence_bytes_are_bound` | mcp/tests/test_closeout_queue_forcing.py:95-116 |
 | Graph recomputation and lane-owned task-tree freeze are forced under lock. | `test_claim_recomputes_graph_under_lock_and_lane_ownership_freezes_task_tree_writes` | mcp/tests/test_closeout_queue_forcing.py:115-176 |
 | Graph admission and predecessor indexing are bounded. | `test_predecessor_index_is_linear_and_node_edge_admission_is_bounded` | mcp/tests/test_closeout_queue_forcing.py:177-243 |
 | Projection names only operations legal for the current actor. | `test_projection_names_only_operations_the_candidate_can_take` | mcp/tests/test_closeout_queue_forcing.py:356-432 |
@@ -68,6 +68,11 @@ No configured Domain Documentation source applies.
 No meaningful cross-repository reference applies.
 
 ## Update History
+
+- 2026-08-20T05:14+02:00 — L11 landed-wave refresh: the leaf-segment graph-model commit (f2e2f4b9)
+  touched this source; card re-verified against the current file, verification stamp advanced to
+  f2e2f4b9, shifted test-name citation ranges re-pinned. Body unchanged.
+
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

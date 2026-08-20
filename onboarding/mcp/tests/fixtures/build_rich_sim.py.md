@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/fixtures/build_rich_sim.py`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-19T04:05+02:00                           |
-| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57`       |
-| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
+| lastUpdated            | 2026-08-20T05:18+02:00 |
+| lastVerifiedCommitHash | `0a746c9f157e3e536f2ac947e999559c74be9e73`       |
+| lastVerifiedCommitDate | 2026-08-19T11:22:41+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ emits a task-document `"kind": "master"`, which is the doc schema's vocabulary, 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The contract format + loader the contracts must satisfy. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
-| The task-document schema the docs are validated against. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:261-364 |
+| The task-document schema the docs are validated against. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:602-716 |
 | The event envelope the replayed logs use. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
 | The sim loader/materializer that consumes the fixture. | `_materialize_surfaces` | mcp/src/agents_remember/serving/sim.py:123-134 |
 
@@ -106,6 +106,11 @@ emits a task-document `"kind": "master"`, which is the doc schema's vocabulary, 
 The rich simulator now fabricates root `kind="series"` contracts and leaf enclosure contracts separately, so generated dashboard data exercises the integration-branch/root-task split.
 
 ## Update History
+
+- 2026-08-20T04:54+02:00 — 260815-DAG-L14 curator: re-read the `TaskDocument` claim — the persisted
+  model gained sprint `seats` and typed `masterRef` rows; wording retained, citation regenerated to
+  the current class lines, stamp advanced to code commit 9c3180c1.
+
 
 - 2026-08-19T04:05+02:00 — No content impact: 260815-DAG-L10 simplified
   `ContractSite.worktree_group` to return `group_root` unconditionally, matching the production

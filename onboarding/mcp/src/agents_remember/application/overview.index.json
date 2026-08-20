@@ -42,6 +42,8 @@
     "mcp/src/agents_remember/application/task_doc_tools.py",
     "mcp/src/agents_remember/application/task_execution_topology.py",
     "mcp/src/agents_remember/application/task_ref.py",
+    "mcp/src/agents_remember/application/task_reopen.py",
+    "mcp/src/agents_remember/application/task_sprint_linkage.py",
     "mcp/src/agents_remember/application/terminal_spawn_results.py",
     "mcp/src/agents_remember/application/terminal_tools.py",
     "mcp/src/agents_remember/application/tool_response.py",
@@ -50,8 +52,8 @@
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 34,
-    "fileSidecars": 27,
+    "sourceFilesInScope": 36,
+    "fileSidecars": 29,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -82,6 +84,7 @@
     "lifecycle",
     "lifecycle_operation_worker",
     "lifecycle_tools",
+    "linkage",
     "mcp",
     "memory",
     "memory_tools",
@@ -102,12 +105,14 @@
     "readiness",
     "ref",
     "remember",
+    "reopen",
     "response",
     "results",
     "runtime",
     "scope",
     "services",
     "spawn",
+    "sprint",
     "src",
     "status",
     "step",
@@ -117,6 +122,8 @@
     "task_doc_tools",
     "task_execution_topology",
     "task_ref",
+    "task_reopen",
+    "task_sprint_linkage",
     "terminal",
     "terminal_spawn_results",
     "terminal_tools",
@@ -201,12 +208,12 @@
       "task_execution_topology",
       "task_ref.py",
       "task_ref",
+      "task_reopen.py",
+      "task_reopen",
+      "task_sprint_linkage.py",
+      "task_sprint_linkage",
       "terminal_spawn_results.py",
-      "terminal_spawn_results",
-      "terminal_tools.py",
-      "terminal_tools",
-      "tool_response.py",
-      "tool_response"
+      "terminal_spawn_results"
     ]
   },
   "fallback": {

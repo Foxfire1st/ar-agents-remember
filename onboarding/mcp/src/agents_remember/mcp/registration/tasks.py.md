@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`                |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated            | 2026-08-20T04:28+02:00 |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5`                |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -32,7 +32,8 @@ task-state transitions: `task_reopen`, `lifecycle_finalize_task`, `task_doc`.
 `task_doc` is the JSON-primary authoring tool and carries the longest docstring on the surface,
 because the operation vocabulary is not in the types: `create` | `replace` | `set_status` |
 `set_step` | `skip_step` | `set_subtask` | `remove_subtask` | `set_section` | `append_decision` |
-`record_route_review` | `author_execution_graph` | `set_field` |
+`record_route_review` | `author_execution_graph` | `attach_master` | `detach_master` |
+`linkage_report` | `set_field` |
 `get` (`migrate_execution_topology` was removed in 260815-DAG-L13). The JSON document is the source of truth; `task.md` / `<slug>.md` is a generated render that
 is never parsed back. Everything mutates except `operation='get'`, and `dry_run=true` builds and
 validates and returns `rendered`/`diff`/`wouldLose` **without** writing — the preview before
@@ -40,7 +41,7 @@ adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subta
 `remove_subtask` / `set_section`; `remove_subtask` also deletes the leaf doc (json+md) unless
 `subtask.keep_file`; `set_step` is leaf-only. `skip_step` takes an exact existing step and a nonblank
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
-        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:117-117; mcp/src/agents_remember/mcp/registration/tasks.py:126-128).
+        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:124-124; mcp/src/agents_remember/mcp/registration/tasks.py:136-138).
 
 Since 260815-DAG-L11 the docstring also spells out the graph operation:
 `author_execution_graph` applies one
@@ -52,7 +53,15 @@ partitions, and unplaced-leaf placements plus numbering inversions reported as f
 260815-DAG-L13 the first `add_node` batch on a graph-less sprint bootstraps the graph (the result
 reports `bootstrapped: true`), sprint creation scaffolds the empty canonical Judgment and Priority
 Register sections, and a `set_section` carrying a canonical register heading must keep the exact
-register table shape (write-time validation).
+register table shape (write-time validation). Since 260815-DAG-L14 the docstring also spells
+out the sprint linkage operations: `attach_master` writes the typed `masterRef` row, the
+`orchestrates` slug, and — only on a graphed sprint — the lump graph node as one validated atomic
+batch (a nature-less master requires `executionNature` + a `judgmentId` from the sprint Judgment
+Register; graph-less sprints report `graphNode: deferred-no-graph-default`); `detach_master`
+removes the typed row, membership slug, and graph node, refusing while any edge touches the node
+and never deleting files; `linkage_report` surfaces seat-doc rows, slug-only membership,
+row/membership mismatches, and uncommanded masters as facts, and `get` on a sprint carries the
+same `linkageFacts`.
 
 The body splits that into two objects: `TaskDocTarget(repo_id, task_name, contract_path, slug)` —
 which document to edit — and `TaskDocEdit(fields, step, decision, subtask, section)` — what the edit
@@ -100,6 +109,11 @@ in-flight atomic block owns the landing lane for its lifetime, acquisition repor
 organizational leafs as facts, and a certified candidate no longer occupies the lane.
 
 ## Update History
+
+- 2026-08-20T04:28+02:00 — 260815-DAG-L14: the `task_doc` docstring and operation vocabulary add
+  `attach_master`/`detach_master`/`linkage_report` (typed masterRef batch, symmetric detach,
+  read-only linkage facts); a sprint `get` carries `linkageFacts`. Verified at code commit 2f494982.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: `task_doc` docstring drops the removed
   `migrate_execution_topology` operation, documents the graph-less `author_execution_graph`

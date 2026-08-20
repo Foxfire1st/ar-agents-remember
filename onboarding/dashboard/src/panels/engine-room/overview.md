@@ -239,10 +239,10 @@ The process map keeps stale landing facts inspectable with explicit stale stylin
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The server composer of the process nodes the client renders. | "def build_analytics("; "def _start_process_node(entry: dict[str"; "def _process_edges(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:129-129; mcp/src/agents_remember/observer/reducer_impl/_processes.py:124-124; mcp/src/agents_remember/observer/reducer_impl/_processes.py:543-543 |
-| The served `EngineProcessNode` / `Analytics.engineProcesses` contract. | `EngineProcessNode` | mcp/src/agents_remember/observer/projection.py:832-900 |
+| The served `EngineProcessNode` / `Analytics.engineProcesses` contract. | `EngineProcessNode` | mcp/src/agents_remember/observer/projection.py:913-972 |
 | The honest-motion gate the GSAP/Motion read. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
 | The cockpit shell that hides the rails for the Engine Room view (§4.1). | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:446-446 |
-| `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:859-878 |
+| `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:925-969 |
 | "def _seed_edge_state(" and "_DECISIVE_SETUP_EDGE_STATES: dict[str" — the only producers of a seed lane's state, including the "metrics=_metrics(lifecycles" reroute. | "def _seed_edge_state("; "_DECISIVE_SETUP_EDGE_STATES: dict[str" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:631-631; mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638; mcp/src/agents_remember/observer/reducer.py:73-73 |
 | The client mirror of the edge, which no longer declares a polarity field. | `EngineProcessEdge` | dashboard/src/types/projection.ts:188-196 |
 
@@ -319,7 +319,7 @@ stale enclosure context.
   the "Derived Refused-Conduit Polarity" section and the matching invariant, and corrected the Purpose
   paragraph's two stale mode descriptions — T9B's "refused clone lane" is the `failed` lane and T9C's
   amber flash rides the `stale` seed lane. Evidence for the whole change: `EngineProcessEdge`
-  cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:859-878) is `extra="forbid"`, declares no `refusedPolarity`, and its state
+  cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:925-969) is `extra="forbid"`, declares no `refusedPolarity`, and its state
   comment (L778, above `state: str` at L779) lists
   nominal/running/blocked/failed/stale/skipped/complete/planned/unknown with no
   `refused`; `git log --all -S 'state="refused"'` returns 0 commits in all of history; and

@@ -48,7 +48,7 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Response and task modules import the vocabulary from this module. | "from agents_remember.models.task_document import CompletionBlocker" | mcp/src/agents_remember/models/lifecycles/finalize.py:10-10; mcp/src/agents_remember/tasks/document.py:23-23 |
+| Response and task modules import the vocabulary from this module. | "from agents_remember.models.task_document import CompletionBlocker" | mcp/src/agents_remember/models/lifecycles/finalize.py:10-10; mcp/src/agents_remember/tasks/document.py:32-32 |
 
 ## Cross-Repo References
 

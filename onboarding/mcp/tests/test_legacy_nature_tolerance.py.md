@@ -44,7 +44,7 @@ unreadable or vanished masters, and master authority skips graph validation unde
 | --- | --- | --- |
 | Legacy nature tolerance and stale-artifact forcing. | `LegacyNatureToleranceTests` | mcp/tests/test_legacy_nature_tolerance.py:71-383 |
 | The effective-nature resolution and stale-artifact fact under test. | `effective_execution_nature`; `stale_series_artifact_fact` | mcp/src/agents_remember/worktrees/scheduling_mode.py:94-117; mcp/src/agents_remember/worktrees/scheduling_mode.py:159-193 |
-| The standalone-master altitude resolution under test. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:62-558 |
+| The standalone-master altitude resolution under test. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:62-555 |
 
 ## Update History
 

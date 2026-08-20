@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/taskReader.tsx`          |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-20T04:32+02:00                                        |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7`                  |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -25,6 +25,11 @@ primitives, skipped dispositions, code examples, and the on-demand task-body not
 ## Code Commentary
 
 ### Logic
+
+Since 260815-DAG-L14 `SubTaskIndex` also renders typed sprint rows: a row carrying a
+`masterRef` (with a projected target via `docPathForRef`) opens the commanded master document
+directly through `MasterRefIndexRow` (the `⇒` master link — the sprint → master leg of the
+drill-down); an unprojected `masterRef` target falls through to the older slice/static behaviors.
 
 `TaskReaderSections` walks the task document sections; `SubTaskIndex` renders rows and
 guards the `linkedLifecycleId` cross-series jump; `TaskBodyNotice` reflects the
@@ -56,8 +61,8 @@ configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The reader entry and master overview. | `TaskContent`; `MasterOverview`; `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:77-125; dashboard/src/panels/detail-panel/taskReader.tsx:494-529 |
-| The sub-task index and section primitives. | `SubTaskIndex`; `SliceList`; `StepList` | dashboard/src/panels/detail-panel/taskReader.tsx:323-358; dashboard/src/panels/detail-panel/taskReader.tsx:361-397; dashboard/src/panels/detail-panel/taskReader.tsx:567-591 |
+| The reader entry and master overview. | `TaskContent`; `MasterOverview`; `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:78-135; dashboard/src/panels/detail-panel/taskReader.tsx:569-603 |
+| The sub-task index and section primitives. | `SubTaskIndex`; `SliceList`; `StepList` | dashboard/src/panels/detail-panel/taskReader.tsx:395-433; dashboard/src/panels/detail-panel/taskReader.tsx:436-472; dashboard/src/panels/detail-panel/taskReader.tsx:642-666 |
 
 ## Cross-Repo References
 
@@ -68,6 +73,12 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-20T04:32+02:00 — 260815-DAG-L14: `SubTaskIndex` renders typed `masterRef` rows as
+  `MasterRefIndexRow` (opens the commanded master document directly; unprojected targets fall
+  through to older behaviors), and `docPathForRef` is threaded through `TaskContent`,
+  `MasterOverview`, `MasterSection`, and `SubTaskIndex`. Verified at code commit 9c3180c1.
+
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the reader
   grammar module extracted from `DetailPanel.tsx`. Verification pinned to the leaf
