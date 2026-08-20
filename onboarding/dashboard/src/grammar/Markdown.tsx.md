@@ -55,9 +55,12 @@ table scrolls **inside** its box; the panel layout is never widened by content.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `DetailPanel` renders task prose, master sections, bullets, and decisions through this primitive. | "export const DetailPanel = memo(DetailPanelImpl);"; "export function MasterOverview({"; "export function MasterSection({"; "export function Bullets({ items }: { items: string[] }) {"; "export function DecisionList({ items }: { items: TaskDecisionNode[] }) {"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75; dashboard/src/panels/detail-panel/taskReader.tsx:130-130; dashboard/src/panels/detail-panel/taskReader.tsx:219-219; dashboard/src/panels/detail-panel/taskReader.tsx:569-569; dashboard/src/panels/detail-panel/taskReader.tsx:630-630; dashboard/src/panels/detail-panel/taskReader.tsx:687-687 |
+| `DetailPanel` renders task prose, master sections, bullets, and decisions through this primitive. | "export const DetailPanel = memo(DetailPanelImpl);"; "export function MasterOverview({"; "export function MasterSection({"; "export function Bullets({ items }: { items: string[] }) {"; "export function DecisionList({ items }: { items: TaskDecisionNode[] }) {"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75; dashboard/src/panels/detail-panel/taskReader.tsx:136-136; dashboard/src/panels/detail-panel/taskReader.tsx:241-241; dashboard/src/panels/detail-panel/taskReader.tsx:591-591; dashboard/src/panels/detail-panel/taskReader.tsx:652-652; dashboard/src/panels/detail-panel/taskReader.tsx:709-709 |
 
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: bound task prose, master sections, bullets, and decisions to their operative `DetailPanel` consumers. Verification metadata unchanged.
 

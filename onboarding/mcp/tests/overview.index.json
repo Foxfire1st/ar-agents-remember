@@ -50,6 +50,7 @@
     "mcp/tests/test_atomic_series_seal.py",
     "mcp/tests/test_atomic_write.py",
     "mcp/tests/test_author_execution_graph.py",
+    "mcp/tests/test_authoring_batch_titles.py",
     "mcp/tests/test_benchmark_analysis.py",
     "mcp/tests/test_carryover.py",
     "mcp/tests/test_carryover_apply_1.py",
@@ -160,6 +161,8 @@
     "mcp/tests/test_docker_runtime_parsers.py",
     "mcp/tests/test_durability_measurement.py",
     "mcp/tests/test_durable_store_contract.py",
+    "mcp/tests/test_execution_graph_render.py",
+    "mcp/tests/test_execution_graph_view.py",
     "mcp/tests/test_expectation_rows.py",
     "mcp/tests/test_facade_surface.py",
     "mcp/tests/test_file_size_detector.py",
@@ -306,7 +309,6 @@
     "mcp/tests/test_onboarding_integrity_edges.py",
     "mcp/tests/test_operator_inbox.py",
     "mcp/tests/test_orchestration_comms.py",
-    "mcp/tests/test_orchestration_portfolio.py",
     "mcp/tests/test_organizational_completion_branches.py",
     "mcp/tests/test_organizational_completion_integration.py",
     "mcp/tests/test_organizational_completion_recovery_edges.py",
@@ -399,6 +401,7 @@
     "mcp/tests/test_task_document_master.py",
     "mcp/tests/test_task_document_payload_cache.py",
     "mcp/tests/test_task_document_structural_identity.py",
+    "mcp/tests/test_task_documents_graph_projection.py",
     "mcp/tests/test_task_execution_topology.py",
     "mcp/tests/test_task_execution_topology_segments.py",
     "mcp/tests/test_task_reopen.py",
@@ -447,8 +450,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 428,
-    "fileSidecars": 435,
+    "sourceFilesInScope": 430,
+    "fileSidecars": 438,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -480,6 +483,7 @@
     "attention",
     "attribution",
     "author",
+    "authoring",
     "authority",
     "authorization",
     "background",
@@ -530,8 +534,7 @@
     "codegen",
     "codex",
     "codex_app_server_0_144_3",
-    "cold",
-    "command"
+    "cold"
   ],
   "hotPath": {
     "summary": "The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrade-not-die, native-page thread demux \u2014 plus the remediation pins: concurrent parent pendings answered per id with the oldest in the singular slot, the method-first degrade split, the bounded per-thread pending map, and the load-shed event queue with its honest `ar/load-shed` notice), `test_conversatio...",

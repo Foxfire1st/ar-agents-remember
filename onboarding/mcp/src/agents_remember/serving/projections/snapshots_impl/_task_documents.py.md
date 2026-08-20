@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T04:26+02:00                                            |
-| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7`                                        |
-| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
+| lastUpdated            | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview      | `../overview.md`                                       |
 
 ## Governing Overview
@@ -46,7 +46,16 @@ Task-document and series readers: summaries, full bodies, lifecycle binding. Tas
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
+
+## 260815-DAG-L12 Render-Ready Graph View Wiring
+
+Both snapshot readers now project `TaskDocNode.executionGraphView` (L12-R4): `_task_doc_node` was split into the include-body-gated `_reader_fields` and the sprint-only `_execution_graph_fields` behind a bundled `_TaskDocProjectionOptions` (`include_body` + `master_docs`), and `_master_docs_by_ref` builds the title/status/nature join table from the bounded payload window (root `task.json` documents are never evicted, so a sprint's commanded masters are always present). `_execution_graph_view` does the tasks-domain walk — derived waves, resolved edge endpoints, joined titles, per-master facts — and feeds the primitives-only `build_execution_graph_view` builder (the observer package must not import tasks). Docs without a graph project `None`; `_task_doc_body_revision` is unchanged.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   both readers project the render-ready `executionGraphView`; `_task_doc_node` split into `_reader_fields` + `_execution_graph_fields` with `_TaskDocProjectionOptions`, `_master_docs_by_ref` join table, and the `_execution_graph_view` serving seam (L12-R4). Verified at code commit b7f2c8e2.
 
 - 2026-08-20T04:26+02:00 — 260815-DAG-L14: `_task_doc_node` passes the typed `masterRef` through
   and projects first-class `seats` (`TaskSeatNode`); `_task_doc_body_revision` now covers

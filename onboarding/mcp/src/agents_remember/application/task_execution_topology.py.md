@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T04:22+02:00 |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,7 +101,16 @@ exact canonical graph and refuses a sprint terminal status when any commanded ma
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
+
+## 260815-DAG-L12 Title Threading
+
+Graph authoring publication now labels the sprint's mermaid render from the authoring batch's own in-memory masters (L12-R1/R4): `_authoring_batch_titles` joins titles via `build_graph_titles` for the sprint document in the batch, and `_publish_authoring` passes `graph_titles=` to `write_task_doc_batch`; `_document_preview` renders with the disk-backed `read_graph_titles`. A batch without a graph produces no titles (fallback labels).
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   graph-authoring publish/preview threads joined graph titles (`_authoring_batch_titles`, L12-R1/R4). Verified at code commit b7f2c8e2.
 
 - 2026-08-20T04:22+02:00 — 260815-DAG-L14: extracted `verify_sprint_judgment_ids` as the shared
   judgment-register verifier, reused by the sprint linkage operations; `_verify_authoring_judgments`

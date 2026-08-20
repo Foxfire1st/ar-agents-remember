@@ -61,7 +61,7 @@ No Domain Documentation entries are configured in this memory worktree's source 
 | Tests define normalization, precedence, and identity-cache expectations. | "normalizes ..-relative ref files across folders"; "prefers the first series in list order when two series name the same doc"; "prefers the earliest ref by creation order within a series"; "caches per seriesList identity: a fresh array observes new refs" | dashboard/src/data/taskHierarchy.test.ts:43-52; dashboard/src/data/taskHierarchy.test.ts:54-60; dashboard/src/data/taskHierarchy.test.ts:62-74; dashboard/src/data/taskHierarchy.test.ts:97-105 |
 | The `ref` / `series` factories, typed against the mirror rather than asserted past it. | "function ref("; "function series(" | dashboard/src/data/taskHierarchy.test.ts:9-9; dashboard/src/data/taskHierarchy.test.ts:13-13 |
 | The production lookup owns the WeakMap index and calls `orderedByCreation` over `series.subTasks`. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
-| The two sub-task row models the `ref` factory had to choose between; only `SeriesSubTaskNode` declares `createdAt`. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:422-429; dashboard/src/types/projection.ts:602-610 |
+| The two sub-task row models the `ref` factory had to choose between; only `SeriesSubTaskNode` declares `createdAt`. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:422-429; dashboard/src/types/projection.ts:627-635 |
 
 ## Cross-Repo References
 
@@ -72,6 +72,9 @@ No meaningful cross-repository references found.
 | The hierarchy helper is repository-local projection logic. | "describe(\"findParentTaskMatch\", () => {" | dashboard/src/data/taskHierarchy.test.ts:31-31 |
 
 ## Update History
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-20T04:48+02:00 — 260815-DAG-L14 curator: re-read the `TaskSubTaskRefNode` claim — the row
   model gained the optional typed `masterRef`; wording retained and citation regenerated to the
   current interface lines. Verification stamp advanced to code commit 9c3180c1.

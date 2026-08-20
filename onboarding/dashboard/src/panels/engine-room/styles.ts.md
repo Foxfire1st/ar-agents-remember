@@ -175,7 +175,7 @@ The fact-state recipes include a visibly distinct stale variant used by landing 
 | `warpSurge` is plain `css` (GSAP `data-fx='surge'`); `warpCouplerG` removed (Motion owns coupler opacity). | `warpSurge` | dashboard/src/panels/engine-room/stage.styles.ts:240-246 |
 | `refusedConduit` — the `polarity` amber/red variants over an `opacity: 0` base; the recipe carries colour only, and the polarity it is keyed on is derived from `edge.state` by the canvas. | `refusedConduit` | dashboard/src/panels/engine-room/flow.styles.ts:65-75 |
 | `refusedPolarityOf` — the caller that derives that polarity (`failed`→red, `stale`→amber) with no polarity field read. | `refusedPolarityOf` | dashboard/src/panels/engine-room/geometry.ts:124-134 |
-| `EngineProcessEdge` declares no polarity field and never documented a `refused` state. | "class EngineProcessEdge" | mcp/src/agents_remember/observer/projection.py:925-925 |
+| `EngineProcessEdge` declares no polarity field and never documented a `refused` state. | "class EngineProcessEdge" | mcp/src/agents_remember/observer/projection.py:929-929 |
 | `attnBadge`/`stopBar`/`dissolveShell` lost their `animation`/`transition` — GSAP `data-fx='breath'`/`'stop'` + Motion own them. | `attnBadge` | dashboard/src/panels/engine-room/flow.styles.ts:127-131 |
 | `engineGaugeOut` — **FLAT** gold bezel (05o dropped the base amber glow; `down`/fault keeps the red bezel + red glow); `enginePetal` is constant gold (05o — amber on `base`, opacity-only variants). `engineCharge`/`warpCouplerBar`/`flowConduit running`/`flowPacket`/`gateBar` keep their state-coloured `drop-shadow` glows (settled lanes glow-less). | `engineGaugeOut` | dashboard/src/panels/engine-room/stage.styles.ts:81-102 |
 | `closeoutTrainLabel` — `ink` 10px (was `muted` 9px) for legibility as a bare caption on the textured backdrop; `cleanupRecord` is an absolute overlay (5k F6). | `closeoutTrainLabel` | dashboard/src/panels/engine-room/flow.styles.ts:207-207 |
@@ -190,6 +190,9 @@ size and view box. It introduces no new effect paint recipe; surge, reindex, and
 their established classes.
 
 ## Update History
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: re-mapped the engineRoomStyles.ts sidecar to the engine-room/styles.ts barrel and added the L8 Split Layout section; per-domain style sidecars carry the current recipe detail. Verification pinned to the leaf base until closeout stamps the code commit.
 
@@ -199,15 +202,15 @@ their established classes.
 
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
   `observer/projection.py` citations — the reference row and the restatement in the 10:44 entry
-  below. `L752-L771` → `L762-L781`; read there: `class EngineProcessEdge` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:925-925),
+  below. `L752-L771` → `L762-L781`; read there: `class EngineProcessEdge` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:929-929),
   `model_config = ConfigDict(extra="forbid")` (observer/projection.py L779), the nine-state comment (L778) above
-  the nine-state comment above `state: str`, and the last field `detail` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:925-925). No body claim changed.
+  the nine-state comment above `state: str`, and the last field `detail` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:929-929). No body claim changed.
 
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
   `observer/projection.py` citations — the reference row and the restatement in the 10:44 entry
-  below. `L752-L771` → `L762-L781`; read there: `class EngineProcessEdge` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:925-925),
+  below. `L752-L771` → `L762-L781`; read there: `class EngineProcessEdge` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:929-929),
   `model_config = ConfigDict(extra="forbid")` (observer/projection.py L779), the nine-state comment (L778) above
-  the nine-state comment above `state: str`, and the last field `detail` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:925-925). No body claim changed.
+  the nine-state comment above `state: str`, and the last field `detail` cit:(["class EngineProcessEdge"], mcp/src/agents_remember/observer/projection.py:929-929). No body claim changed.
 
 - 2026-08-01T10:44+02:00 — 260731-EFA-L4 curator: corrected the `refusedConduit` commentary. Polarity is
   no longer "read off the projection (`edge.state` failed→red / stale→amber"

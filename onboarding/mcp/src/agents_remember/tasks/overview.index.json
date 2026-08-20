@@ -13,6 +13,7 @@
     "mcp/src/agents_remember/tasks/__init__.py",
     "mcp/src/agents_remember/tasks/document.py",
     "mcp/src/agents_remember/tasks/document_refs.py",
+    "mcp/src/agents_remember/tasks/execution_graph_titles.py",
     "mcp/src/agents_remember/tasks/leaf_doc.py",
     "mcp/src/agents_remember/tasks/master_sync.py",
     "mcp/src/agents_remember/tasks/readiness.py",
@@ -20,8 +21,8 @@
     "mcp/src/agents_remember/tasks/store.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 9,
-    "fileSidecars": 8,
+    "sourceFilesInScope": 10,
+    "fileSidecars": 9,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -30,6 +31,9 @@
     "doc",
     "document",
     "document_refs",
+    "execution",
+    "execution_graph_titles",
+    "graph",
     "init",
     "init__",
     "leaf",
@@ -44,7 +48,8 @@
     "src",
     "store",
     "sync",
-    "tasks"
+    "tasks",
+    "titles"
   ],
   "hotPath": {
     "summary": "The `task_doc` MCP tool authors documents: its application entry point (`application/task_doc_tools.py`) loads or creates the JSON, applies one operation, and rewrites both the JSON and the rendered markdown through this package. Leaf writes can also plan a same-root master-row update through `master_sync.py`, so the parent master `subTasks[]` checklist follows deterministic leaf facts without overwriting manual `scope` prose. Start at `document.py` for the schema, `render.py` for the markdown shape (the `w-02-light-task-workflow` `template.md` is the spec), and `store.py` for the atomic JS...",
@@ -53,6 +58,7 @@
       "mcp/src/agents_remember/tasks/__init__.py",
       "mcp/src/agents_remember/tasks/document.py",
       "mcp/src/agents_remember/tasks/document_refs.py",
+      "mcp/src/agents_remember/tasks/execution_graph_titles.py",
       "mcp/src/agents_remember/tasks/leaf_doc.py",
       "mcp/src/agents_remember/tasks/master_sync.py",
       "mcp/src/agents_remember/tasks/readiness.py",
@@ -66,6 +72,8 @@
       "document",
       "document_refs.py",
       "document_refs",
+      "execution_graph_titles.py",
+      "execution_graph_titles",
       "leaf_doc.py",
       "leaf_doc",
       "master_sync.py",
@@ -87,7 +95,7 @@
       "JSON",
       "mcp/src/agents_remember/tasks/",
       "route-local-overview",
-      "a9d50e08b830c4a34c14e495706c19fe697f47ab",
+      "b7f2c8e2c7020642780e2c9b997ffb035a782e62",
       "/../../../overview.md",
       "organizational",
       "author_execution_graph",
@@ -105,9 +113,7 @@
       "Step",
       "SubStep",
       "Decision",
-      "CodeExample",
-      "SubTaskRef",
-      "Section"
+      "CodeExample"
     ]
   },
   "fallback": {

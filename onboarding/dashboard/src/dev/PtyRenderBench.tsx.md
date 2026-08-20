@@ -96,9 +96,11 @@ the file).
 | The line-log content + configurable-rate mock socket factory the panes consume. | `benchLineLogSocketFactory` | dashboard/src/dev/lineLogFixture.ts:22-22; dashboard/src/dev/lineLogFixture.ts:89-90 |
 | The real pane component under measurement (renderer prop, `onResizeCols`). | `onResizeCols` | dashboard/src/panels/Terminal.tsx:61-61 |
 | The decision record the numbers feed (`PTY_RENDERER = "dom"` + measured summary). | `PTY_RENDERER` | dashboard/src/panels/session-cockpit/PtySurface.tsx:39-39 |
-| The `/dev/pty-bench` route mount. | `PtyRenderBench` | dashboard/src/dev/DevApp.tsx:15-15 |
+| The `/dev/pty-bench` route mount. | "/dev/pty-bench" | dashboard/src/dev/DevApp.tsx:16-16 |
 
 ## Update History
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored the `/dev/pty-bench` route mount citation to the mount line after DevApp.tsx grew (import at line 4, mount at line 16); verification metadata unchanged.
+
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: converted the 4 superseded prose
   citations to cit form (query params `PtyRenderBench`, `measureFrames` 18-41, `runSerializeProbe`

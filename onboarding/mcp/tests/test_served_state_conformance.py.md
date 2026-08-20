@@ -168,9 +168,12 @@ cockpit bundle, which lives in this same repository under `dashboard/`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:626-626 |
+| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:651-651 |
 
 ## Update History
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T10:40+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n

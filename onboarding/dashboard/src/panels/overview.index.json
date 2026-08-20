@@ -33,6 +33,11 @@
       "route": "dashboard/src/panels/session-cockpit",
       "overview": "dashboard/src/panels/session-cockpit/overview.md",
       "index": "dashboard/src/panels/session-cockpit/overview.index.json"
+    },
+    {
+      "route": "dashboard/src/panels/sprint-graph",
+      "overview": "dashboard/src/panels/sprint-graph/overview.md",
+      "index": "dashboard/src/panels/sprint-graph/overview.index.json"
     }
   ],
   "coveredFiles": [
@@ -105,7 +110,7 @@
   "coverageCounts": {
     "sourceFilesInScope": 243,
     "fileSidecars": 65,
-    "childRoutes": 5
+    "childRoutes": 6
   },
   "routingTerms": [
     "admission",
@@ -131,6 +136,7 @@
     "gaterespond",
     "gateresponder",
     "gaterespondertext",
+    "graph",
     "hangar",
     "hierarchy",
     "highlightcomposer",
@@ -156,6 +162,7 @@
     "sessioncomposerparts",
     "sessioncomposerstyles",
     "signals",
+    "sprint",
     "src",
     "state",
     "styles",
@@ -183,6 +190,7 @@
       "dashboard/src/panels/file-viewer",
       "dashboard/src/panels/notes-reader",
       "dashboard/src/panels/session-cockpit",
+      "dashboard/src/panels/sprint-graph",
       "dashboard/src/panels/AgentPickupIndicator.test.tsx",
       "dashboard/src/panels/AgentPickupIndicator.tsx",
       "dashboard/src/panels/AttentionQueue.test.tsx",
@@ -199,8 +207,7 @@
       "dashboard/src/panels/EventRiver.tsx",
       "dashboard/src/panels/FlowTab.test.tsx",
       "dashboard/src/panels/FlowTab.tsx",
-      "dashboard/src/panels/GateResponder.test.tsx",
-      "dashboard/src/panels/GateResponder.tsx"
+      "dashboard/src/panels/GateResponder.test.tsx"
     ],
     "anchorHints": [
       "AgentPickupIndicator.test.tsx",

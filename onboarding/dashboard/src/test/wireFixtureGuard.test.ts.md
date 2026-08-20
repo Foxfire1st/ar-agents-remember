@@ -180,15 +180,15 @@ an error.
 | The registry reconciliation unit cases. | "the registry cannot be quietly outgrown" | dashboard/src/test/wireFixtureGuard.test.ts:595-626 |
 | The five-rule mechanism and discovered vocabulary. | `wireTypeNames` | dashboard/src/test/wireFixtureGuard.ts:466-482 |
 | The guard's documented uncovered-evasions section names `ElementAccessExpression`. | "WHAT THIS DOES NOT COVER"; "ElementAccessExpression" | dashboard/src/test/wireFixtureGuard.ts:39-39; dashboard/src/test/wireFixtureGuard.ts:44-44 |
-| `SubTaskRow` is the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode`. | `SubTaskRow` | dashboard/src/types/projection.ts:624-624 |
+| `SubTaskRow` is the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode`. | `SubTaskRow` | dashboard/src/types/projection.ts:649-649 |
 | The `StateCountField` mirror-internal cast. | `StateCountField` | dashboard/src/types/projection.ts:335-335 |
 | The `LifecycleStateCounts` mirror-internal cast. | `LifecycleStateCounts` | dashboard/src/types/projection.ts:337-337 |
 | The sanctioned narrowing the registry names. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
 | The `ActivePageCursor` brand mint. | `pageCursor` | dashboard/src/test/fixtures/conversationWire.ts:53-55 |
 | The `ActiveEventCursor` brand mint. | `eventCursor` | dashboard/src/test/fixtures/conversationWire.ts:58-60 |
 | The `LibraryConversationKey` brand mint. | `libraryConversationKey` | dashboard/src/test/fixtures/conversationWire.ts:63-65 |
-| The contract test suppresses invalid master/series property access with `@ts-expect-error`. | "masterRow.createdAt"; "seriesRow.linkedLifecycleId" | dashboard/src/test/contract.test.ts:566-566; dashboard/src/test/contract.test.ts:568-568 |
-| The contract test suppresses the carried `refusedPolarity` property. | "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:587-587 |
+| The contract test suppresses invalid master/series property access with `@ts-expect-error`. | "masterRow.createdAt"; "seriesRow.linkedLifecycleId" | dashboard/src/test/contract.test.ts:576-576; dashboard/src/test/contract.test.ts:578-578 |
+| The contract test suppresses the carried `refusedPolarity` property. | "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:597-597 |
 | The deliberate widening in the topology suite. | `fromANewerServer` | dashboard/src/topology/model.test.ts:52-54 |
 | KNOWN GAP, live: the inline `HarnessInfo` response shape is outside the marker vocabulary. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
 | KNOWN GAP, live: `WithdrawalResultWire` is outside the marker vocabulary. | `WithdrawalResultWire` | dashboard/src/data/submissionLifecycleClient.ts:40-46 |
@@ -203,6 +203,9 @@ No cross-repository boundary. Every scanned root, every registry key and every p
 | The sweep is built from the in-repo dashboard root and scanned source files; nothing outside this repository is read. | `dashboardRoot`, `dashboardSourceFiles` | dashboard/src/test/wireFixtureGuard.ts:171-173; dashboard/src/test/wireFixtureGuard.ts:175-177 |
 
 ## Update History
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 

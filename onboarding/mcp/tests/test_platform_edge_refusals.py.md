@@ -67,10 +67,13 @@ L23 injects the Docker executable seam in mismatch-removal tests so their refusa
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Provider lifecycle, backends and watchers. | "def cgc_backend_start("; "def cgc_watcher_running("; "def watchers_run(" | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:390-390; mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:89-89; mcp/src/agents_remember/providers/lifecycle/watchers.py:186-186 |
-| Task-document edit operations and their required objects. | "def task_doc_tool("; "class TaskEnclosureRef(_Doc):" | mcp/src/agents_remember/application/task_doc_tools.py:189-189; mcp/src/agents_remember/tasks/document.py:173-173 |
+| Task-document edit operations and their required objects. | "def task_doc_tool("; "class TaskEnclosureRef(_Doc):" | mcp/src/agents_remember/application/task_doc_tools.py:191-191; mcp/src/agents_remember/tasks/document.py:173-173 |
 | The sibling long-tail refusal collection. | "class RequestedHarnessTests(unittest.TestCase):"; "class OpenTerminalRefusalTests(unittest.TestCase):" | mcp/tests/test_platform_long_tail.py:379-379; mcp/tests/test_platform_long_tail.py:413-413 |
 
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T04:12+02:00                     |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated            | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -82,7 +82,16 @@ blank-line normalization that would corrupt blank lines inside code fences.
 | The model it renders. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:602-716 |
 | The render-back precedent (model → markdown section helpers). | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
 
+
+## 260815-DAG-L12 Mermaid Document Diagram
+
+The `## Execution Graph` section now leads with a deterministic fenced mermaid `flowchart TD` diagram (L12-R1): one subgraph per master box (title-labeled via the joined `graph_titles`), one node per leaf (truncated title, `leaf <id> — <title>`), atomic masters as single lump nodes, and labeled edges (`-->|reason|`) — emitted ordered by derived wave then node order so re-renders are byte-stable. The compact machine-readable Nodes / Dependencies / Derived Waves lists stay alongside the diagram. `render_markdown` and `_render_master` gained the optional `graph_titles` keyword; labels are whitespace-collapsed, truncated with an ellipsis, and pipe/quote-escaped (`&#124;`/`&#34;`) so a title or reason cannot break the diagram syntax. `_mermaid_master_order` emits a multi-wave master once at its first segment's wave so its subgraph reads as one box.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   `render_markdown(doc, *, graph_titles=...)` and `_render_master` now accept the joined `SprintGraphTitles`; `_execution_graph_lines` emits the mermaid flowchart-TD block before the machine lists (L12-R1). Verified at code commit b7f2c8e2.
 
 - 2026-08-20T04:12+02:00 — 260815-DAG-L14: the master renderer now emits typed `masterRef` rows as
   real relative links to commanded master documents, renders the generated `## Master Index`

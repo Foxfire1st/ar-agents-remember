@@ -54,7 +54,7 @@ small `{docPath, lifecycleId, changed}` report, or `None` when the leaf has no d
 | --- | --- | --- |
 | The atomic reopen plan clears the doc's stamp before the next start restamps it. | `_plan_leaf_doc_reset` | mcp/src/agents_remember/worktrees/reopen.py:393-436 |
 | The post-contract-write restamp call site in worktree start. | "restamp_leaf_doc_lifecycle(" | mcp/src/agents_remember/worktrees/modules/start.py:590-590 |
-| The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:51-51 |
+| The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:63-63 |
 
 ## 260815-DAG-L3 Governed Lifecycle Restamp
 
@@ -64,6 +64,9 @@ restamping cannot bypass an active sprint lane or atomic blocker; standalone tes
 ordinary task-doc writer without duplicating policy.
 
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: `resolve_terminal_leaf_doc` blank-id refusal now names
   the missing binding and the recovery (L16-R9: re-stamp the series contract / use

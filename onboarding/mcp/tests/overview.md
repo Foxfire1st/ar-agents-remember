@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1165,7 +1165,16 @@ The L4 suites force repository-global surface ownership, organizational versus a
 provenance, linkage facts, and backward tolerance; `test_observer_projection_taskdocs.py` asserts
 projected `masterRef`/`seats` and body-revision movement.
 
+
+## 260815-DAG-L12 Route Impact
+
+New forcing suites: `test_execution_graph_render.py` (mermaid render determinism, escaping, truncation, fallbacks, title join), `test_execution_graph_view.py` (primitives-only builder: zero-edge, segmented-master, missing-master fallback, node identity), `test_task_documents_graph_projection.py` (projection wiring: `executionGraphView` on sprint docs, `_master_docs_by_ref`), and `test_authoring_batch_titles.py` (authoring-batch title join). Dashboard-side `SprintGraphView.test.tsx` / `SprintGraphPage.test.tsx` are covered by the sprint-graph route overview.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 adds the graph-render, graph-view, projection-wiring, and title-join forcing suites. Verified at code commit b7f2c8e2.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: new `test_seat_independent_execution.py`
   and `test_direct_landing.py`; signature-compat updates across the task-document and

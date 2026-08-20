@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T04:18+02:00                     |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated            | 2026-08-20T10:45+02:00                     |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -42,13 +42,20 @@ the `DocKind`/`DocStatus`/`StepStatus` Literals, `TASK_DOCUMENT_SCHEMA`, and the
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument) -> str:"; "def write_task_docs(task_root: Path" | mcp/src/agents_remember/tasks/document.py:602-602; mcp/src/agents_remember/tasks/render.py:34-34; mcp/src/agents_remember/tasks/store.py:40-40 |
+| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument, *, graph_titles:"; "def write_task_docs(" | mcp/src/agents_remember/tasks/document.py:602-602; mcp/src/agents_remember/tasks/render.py:39-39; mcp/src/agents_remember/tasks/store.py:41-41 |
 
 ## Series-Contract Notes
 
 The package facade exports `TaskEnclosureRef` so task-document callers can construct `enclosures[]` references without importing the model internals directly.
 
+
+## 260815-DAG-L12 Title Join Exports
+
+The facade additionally exports the shared execution-graph title join (L12-R1/R4): `SprintGraphTitles`, `build_graph_titles` (in-memory join), and `read_graph_titles` (disk-backed join) from `execution_graph_titles.py` — the one source of truth the mermaid renderer and the dashboard projection both consume. `__all__` lists the new set.
+
 ## Update History
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12: the facade additionally exports `SprintGraphTitles`, `build_graph_titles`, and `read_graph_titles` (the shared execution-graph title join); claim re-read and citation ranges regenerated for the new `render_markdown(doc, *, graph_titles=...)` and multi-line `write_task_docs` signatures. Verified at code commit b7f2c8e2.
+
 
 - 2026-08-20T04:18+02:00 — 260815-DAG-L14: the facade additionally exports `SprintSeat` and
   `SprintSeatState` (the first-class sprint seat surface). Verified at code commit 2f494982.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-20T05:06+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated            | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -214,7 +214,7 @@ enum and already-validated `Metrics` bucket fields, rejects unmatched mappings, 
 emits the TypeScript partition and enumerable tuples from those schema enums.
 `stale_generated_files` compares both committed generated targets with fresh output, so the documented
 `scripts/sync-projection-types.py --check` command fails after either a producer-only change or a hand
-edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files(", "def test_committed_generated_files_are_current"], mcp/src/agents_remember/code_quality/projection_types.py:340-340; mcp/src/agents_remember/code_quality/projection_types.py:382-382; mcp/src/agents_remember/code_quality/projection_types.py:509-509; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:262-262; mcp/tests/test_projection_types_codegen.py:255-255).
+edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files(", "def test_committed_generated_files_are_current"], mcp/src/agents_remember/code_quality/projection_types.py:340-340; mcp/src/agents_remember/code_quality/projection_types.py:382-382; mcp/src/agents_remember/code_quality/projection_types.py:509-509; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:263-263; mcp/tests/test_projection_types_codegen.py:255-255).
 The separate `contract.test.ts` vocabulary suite still measures whether the manual `snapshot.json`
 sample covers every generated member/path and catches a duplicate within one TypeScript tuple; it is
 not the cross-language authority.
@@ -438,7 +438,7 @@ references informed product framing only; current code truth stays in agents-rem
 | Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-745 |
 | Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
 | Dev scenario authority and end-to-end states. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:108-205 |
-| Projection provenance: producer partition/bucket checks feed a schema-generated and stale-checked TypeScript mirror; fixture builders are type-checked against it; `contract.test.ts` measures the separate manual snapshot's coverage. | "The producer-to-TypeScript link is generated and checked"; "WHAT SCHEMA CODEGEN CLOSES"; "def check_state_partition("; "def state_count_fields("; "def workspace_projection_schema("; "def _state_partition("; "def _vocabulary_block("; "def stale_generated_files("; "def test_committed_generated_files_are_current" | dashboard/src/test/contract.test.ts:60-60; dashboard/src/test/fixtures/wire.ts:23-23; mcp/src/agents_remember/code_quality/projection_types.py:59-59; mcp/src/agents_remember/code_quality/projection_types.py:340-340; mcp/src/agents_remember/code_quality/projection_types.py:382-382; mcp/src/agents_remember/code_quality/projection_types.py:509-509; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:262-262; mcp/tests/test_projection_types_codegen.py:255-255; scripts/sync-projection-types.py:43-51 |
+| Projection provenance: producer partition/bucket checks feed a schema-generated and stale-checked TypeScript mirror; fixture builders are type-checked against it; `contract.test.ts` measures the separate manual snapshot's coverage. | "The producer-to-TypeScript link is generated and checked"; "WHAT SCHEMA CODEGEN CLOSES"; "def check_state_partition("; "def state_count_fields("; "def workspace_projection_schema("; "def _state_partition("; "def _vocabulary_block("; "def stale_generated_files("; "def test_committed_generated_files_are_current" | dashboard/src/test/contract.test.ts:60-60; dashboard/src/test/fixtures/wire.ts:23-23; mcp/src/agents_remember/code_quality/projection_types.py:59-59; mcp/src/agents_remember/code_quality/projection_types.py:340-340; mcp/src/agents_remember/code_quality/projection_types.py:382-382; mcp/src/agents_remember/code_quality/projection_types.py:509-509; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:263-263; mcp/tests/test_projection_types_codegen.py:255-255; scripts/sync-projection-types.py:43-51 |
 | Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. | "five rules"; `SCANNED_ROOTS`; "no dashboard test asserts against a payload the server cannot produce" | dashboard/src/test/wireFixtureGuard.ts:1-63; dashboard/src/test/wireFixtureGuard.ts:136-136; dashboard/src/test/wireFixtureGuard.test.ts:266-467 |
 | State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:356-360 |
 | Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | `UNCLASSIFIED_STATUS`; `constelColors` | dashboard/src/topology/model.ts:68-68; dashboard/src/topology/constel.ts:31-39 |
@@ -487,7 +487,16 @@ The task-document projection types carry sprint structure: `TaskDocNode.seats` (
 and optional `TaskSubTaskRefNode.masterRef`; the detail panel threads `docPathForRef` so sprint
 rows open their commanded master document.
 
+
+## 260815-DAG-L12 Route Impact
+
+The sprint execution graph is now viewable: `types/projection.ts` (+ schema) carry the render-ready `TaskExecutionGraphView`/`TaskExecutionNodeView`/`TaskExecutionPredecessorNode` wire shapes and `TaskDocNode.executionGraphView`; `panels/sprint-graph/` is the new wave-grid view route; `dev/DevApp.tsx` exposes `/dev/sprint-graph` for mounted-UI evidence; and `fixtures/snapshot.json` exercises the new node vocabularies (L12-R1/R2/R4-R7).
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready sprint graph view types, the new sprint-graph panel route, the dev evidence surface, and the fixture vocabulary. Verified at code commit b7f2c8e2.
 
 - 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: the dashboard task projection gains
   `seats` + typed `masterRef`; detail-panel rows open the commanded master directly. Verified at

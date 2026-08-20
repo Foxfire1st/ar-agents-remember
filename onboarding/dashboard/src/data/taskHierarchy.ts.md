@@ -130,6 +130,9 @@ No meaningful cross-repo references found.
 | No cross-repo boundary is involved. | — | — |
 
 ## Update History
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-20T04:48+02:00 — 260815-DAG-L14 curator: re-read the `TaskSubTaskRefNode` claim (row 117)
   against the current mirror — the row model gained the optional typed `masterRef`; the wording
   ("the two distinct sub-task row models") still holds and the citation ranges were regenerated to
@@ -145,7 +148,7 @@ No meaningful cross-repo references found.
 
 - 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: recorded the two real changes in this file's diff
   against `abc7cbc`. (1) `ParentTaskMatch.ref` is now `SeriesSubTaskNode` — the mirror split the
-  once-collapsed `TaskSubTaskRefNode`/`SeriesSubTaskNode` pair cit:(["export interface TaskSubTaskRefNode"], dashboard/src/types/projection.ts:602-602),
+  once-collapsed `TaskSubTaskRefNode`/`SeriesSubTaskNode` pair cit:(["export interface TaskSubTaskRefNode"], dashboard/src/types/projection.ts:627-627),
   and `createdAt` was REMOVED from the master row model, so the match's row type is now the only one
   that declares the field the helper sorts on. (2) `orderedByCreation` is exported and shared:
   `DetailPanel.tsx` deleted its byte-identical private copy, and inside the panel the call moved
@@ -164,7 +167,7 @@ No meaningful cross-repo references found.
 
 - 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: recorded the two real changes in this file's diff
   against `abc7cbc`. (1) `ParentTaskMatch.ref` is now `SeriesSubTaskNode` — the mirror split the
-  once-collapsed `TaskSubTaskRefNode`/`SeriesSubTaskNode` pair cit:(["export interface TaskSubTaskRefNode"], dashboard/src/types/projection.ts:602-602),
+  once-collapsed `TaskSubTaskRefNode`/`SeriesSubTaskNode` pair cit:(["export interface TaskSubTaskRefNode"], dashboard/src/types/projection.ts:627-627),
   and `createdAt` was REMOVED from the master row model, so the match's row type is now the only one
   that declares the field the helper sorts on. (2) `orderedByCreation` is exported and shared:
   `DetailPanel.tsx` deleted its byte-identical private copy, and inside the panel the call moved

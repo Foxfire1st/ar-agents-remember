@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 
 > **Status:** active baseline
 
@@ -1150,7 +1150,16 @@ membership slug, and graph node as one atomic validated batch (L14-R4). Consiste
 `linkage_report`/`linkageFacts` (L14-R5/R7). The MCP `task_doc` surface registers the new
 operations and the dashboard projection carries `seats` + `masterRef`.
 
+
+## 260815-DAG-L12 Route Impact
+
+The execution-graph render is now human-readable end to end: `tasks/render.py` emits a deterministic mermaid `flowchart TD` diagram (subgraph per master, lump nodes for atomic masters, labeled edges) joined with real titles via the new `tasks/execution_graph_titles.py`, and `observer/projection_graph.py` builds the render-ready per-node `executionGraphView` the dashboard's new sprint-graph wave-grid panel renders directly (pure CSS grid, no layout library — the documented L12-R3 fallback). New sprint-graph sidecars and test sidecars carry the detail.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready sprint graph: mermaid document diagram + dashboard wave-grid view with the primitives-only projection builder and shared title join. Verified at code commit b7f2c8e2.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: seat-independent task-execution fallback
   (declared caller on the closeout-queue and structural gate tools when no plane seat exists;

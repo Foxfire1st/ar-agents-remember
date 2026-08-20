@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/contract.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-02T07:20+02:00                           |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -116,7 +116,7 @@ health rather than the first.
   modelled rollup have the same fields", with no third copy to drift. A bucket only the server has fails;
   so does a bucket only the mirror has.
 - `the fixture samples everything the mirror declares`
-  cit:(["the fixture samples everything the mirror declares"], dashboard/src/test/contract.test.ts:364-386):
+  cit:(["the fixture samples everything the mirror declares"], dashboard/src/test/contract.test.ts:395-417):
   the two type-level assertions, plus a runtime pass over
   `INDEX_SIGNATURE_SITES` demanding a served value and a non-empty reason at each — the
   one thing types cannot say, because `MirrorOnlyPaths` deliberately stops at an index signature.
@@ -129,10 +129,10 @@ health rather than the first.
   to hold covered 2 of 6 states, 2 of 6 phases and 1 of 3 severities, so deleting `"close"` from `PHASES`
   produced zero failures from this file.
 - `projection contract fixture`
-  cit:(["projection contract fixture"], dashboard/src/test/contract.test.ts:421-444): top-level shape
+  cit:(["projection contract fixture"], dashboard/src/test/contract.test.ts:452-475): top-level shape
   and the per-row lifecycle fields a JSON import cannot state.
 - `metrics bucket every live lifecycle state`
-  cit:(["metrics bucket every live lifecycle state"], dashboard/src/test/contract.test.ts:417-479): a
+  cit:(["metrics bucket every live lifecycle state"], dashboard/src/test/contract.test.ts:481-543): a
   bucket per live state in the served payload;
   one lifecycle per live state counted into its own bucket; **bucket uniqueness** (`stateCountField` is
   not injective — `a-b` and `aB` both bucket into `aBCount`, and a collision silently overwrites because
@@ -205,13 +205,13 @@ the Finding, where a pointer belongs.
 | `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. | `MirrorOnlyPaths`; `KnownUnsampled`; `fixtureMustSample`; `allowlistMustStayEarned` | dashboard/src/test/contract.test.ts:146-160; dashboard/src/test/contract.test.ts:186-189; dashboard/src/test/contract.test.ts:192-194; dashboard/src/test/contract.test.ts:197-199 |
 | `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed, replacing a prose list of four that missed three. | `AbsorbingPaths`; `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:206-219; dashboard/src/test/contract.test.ts:221-229; dashboard/src/test/contract.test.ts:226-234 |
 | `ClosedUnionPaths` + `VOCABULARIES` — 15 paths bound to 10 array identities and 8 distinct value sets, replacing two hand-written checks. | `ClosedUnionPaths`; `VOCABULARIES` | dashboard/src/test/contract.test.ts:251-266; dashboard/src/test/contract.test.ts:268-293 |
-| Full-coverage assertion: each vocabulary identity is bound to its declared paths and compared with the fixture's sampled values. | "sampledByVocabulary.get(vocabulary)"; "sampledByVocabulary.set(vocabulary, seen)"; "for (const [vocabulary, seen] of sampledByVocabulary)"; "toEqual([...seen].sort())" | dashboard/src/test/contract.test.ts:432-432; dashboard/src/test/contract.test.ts:434-434; dashboard/src/test/contract.test.ts:436-437 |
+| Full-coverage assertion: each vocabulary identity is bound to its declared paths and compared with the fixture's sampled values. | "sampledByVocabulary.get(vocabulary)"; "sampledByVocabulary.set(vocabulary, seen)"; "for (const [vocabulary, seen] of sampledByVocabulary)"; "toEqual([...seen].sort())" | dashboard/src/test/contract.test.ts:442-442; dashboard/src/test/contract.test.ts:444-444; dashboard/src/test/contract.test.ts:446-447 |
 | Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | "the served payload carries a bucket per live state"; "counts a lifecycle in each live state into its own bucket"; "gives each live state a bucket of its own"; "spells a bucket field the way the server spells it" | dashboard/src/test/contract.test.ts:470-475; dashboard/src/test/contract.test.ts:477-500; dashboard/src/test/contract.test.ts:502-510; dashboard/src/test/contract.test.ts:512-530 |
-| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:565-568; dashboard/src/test/contract.test.ts:586-587 |
+| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:575-578; dashboard/src/test/contract.test.ts:596-597 |
 | The generated mirror's metric and analytics declarations. | `Metrics`; `Analytics` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:356-360 |
 | The generated mirror's gate and lifecycle projection declarations. | `GateNode`; `LifecycleProjection` | dashboard/src/types/projection.ts:254-264; dashboard/src/types/projection.ts:311-329 |
 | The sanctioned narrowing the fixture enters through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
-| The hand-maintained oracle, composed to satisfy the coverage and vocabulary assertions above. | `lifecycles`; `metrics` | dashboard/src/fixtures/snapshot.json:1516-1516; dashboard/src/fixtures/snapshot.json:1659-1659 |
+| The hand-maintained oracle, composed to satisfy the coverage and vocabulary assertions above. | `lifecycles`; `metrics` | dashboard/src/fixtures/snapshot.json:1568-1568; dashboard/src/fixtures/snapshot.json:1711-1711 |
 | The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror. | `state_count_field`; `state_count_fields` | mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:257-279 |
 | The producer's typed lifecycle vocabularies. | "State = Literal[LiveState, TerminalState]"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/models/lifecycles/responses.py:20-27 |
 | The producer's typed attention and process vocabularies. | `AttentionSeverity`; `AttentionLane`; `ProcessFactState`; `ProcessHealth` | mcp/src/agents_remember/observer/projection.py:38-45 |
@@ -240,7 +240,16 @@ recovery-tool vocabulary against fixture samples and the server schema.
 
 The L4 delta keeps the generated dashboard contract aligned with the backend's organizational `super-to-leaf` lineage and lifecycle-operation guidance. The dashboard remains a projection consumer: it does not gain branch-mutation authority.
 
+
+## 260815-DAG-L12 Vocabulary Additions
+
+The closed-vocabulary registry gains the two new `executionGraphView` node unions (L12-R4): `projection.analytics.taskDocuments[].executionGraphView.nodes[].kind` (`lump` | `segment`) and `...nodes[].frontierState` (`landed` | `ready` | `waiting` | `in-flight`) — so the fixture must exercise every member of both.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   closed-vocabulary registry adds the `executionGraphView` node kind and frontier state unions (L12-R4). Verified at code commit b7f2c8e2.
 
 - 2026-08-15T23:38+02:00 — Reconciled projection parity for organizational direct-super lineage and lifecycle guidance. Verification metadata remains closeout-owned.
 

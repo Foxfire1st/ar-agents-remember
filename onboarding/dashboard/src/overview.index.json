@@ -43,6 +43,8 @@
     "dashboard/src/dev/mockTerminalSocket.ts",
     "dashboard/src/dev/scenarios.test.ts",
     "dashboard/src/dev/scenarios.ts",
+    "dashboard/src/dev/sprintGraphFixture.ts",
+    "dashboard/src/dev/sprintGraphPage.tsx",
     "dashboard/src/fixtures/snapshot.json",
     "dashboard/src/index.css",
     "dashboard/src/main.tsx",
@@ -78,7 +80,7 @@
   ],
   "coverageCounts": {
     "sourceFilesInScope": 421,
-    "fileSidecars": 49,
+    "fileSidecars": 51,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -123,6 +125,8 @@
     "servedprojection",
     "setup",
     "snapshot",
+    "sprintgraphfixture",
+    "sprintgraphpage",
     "src",
     "styles",
     "submitscenarios",
@@ -165,7 +169,7 @@
       "dashboard/src/dev/mockTerminalSocket.ts",
       "dashboard/src/dev/scenarios.test.ts",
       "dashboard/src/dev/scenarios.ts",
-      "dashboard/src/fixtures"
+      "dashboard/src/dev/sprintGraphFixture.ts"
     ],
     "anchorHints": [
       "Cockpit.memo.test.tsx",
@@ -202,6 +206,10 @@
       "scenarios.test",
       "scenarios.ts",
       "scenarios",
+      "sprintGraphFixture.ts",
+      "sprintGraphFixture",
+      "sprintGraphPage.tsx",
+      "sprintGraphPage",
       "snapshot.json",
       "snapshot",
       "index.css",
@@ -211,11 +219,7 @@
       "tokens.css",
       "tokens",
       "webtui.css",
-      "webtui",
-      "contract.test.ts",
-      "contract.test",
-      "contractCapabilities.test.ts",
-      "contractCapabilities.test"
+      "webtui"
     ]
   },
   "fallback": {

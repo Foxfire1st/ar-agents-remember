@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/application/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -119,7 +119,7 @@ validation failures, and invalid resolvable parent master docs.
 | The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_doc_tools.py:87-102 |
 | `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_doc_tools.py:502-516 |
 | Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:403-446 |
-| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_doc_tools.py:267-267 |
+| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_doc_tools.py:269-269 |
 | The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
 | The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:551-655 |
 | The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:31-53 |
@@ -141,7 +141,16 @@ translation and the locked publication call.
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
+
+## 260815-DAG-L12 Title Threading
+
+The task-doc publication/preview sites thread the joined graph titles into the renderer (L12-R1): `_publish_task_doc_set` and `_remove_subtask` pass `graph_titles=` to `write_task_docs` via `_batch_graph_titles` / `_graph_titles_for`, and `_render_preview` renders with `_graph_titles_for` so previews show the same titled mermaid diagram the published `task.md` will. `_graph_titles_for` reads the commanded master documents under `tasks/` through `read_graph_titles`; documents without an `executionGraph` render without titles (fallback labels).
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   task-doc publish/preview sites thread the joined graph titles into the renderer (`_graph_titles_for` / `_batch_graph_titles`, L12-R1). Verified at code commit b7f2c8e2.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: `task_doc_tool` takes `call: TaskDocCall` (dry_run +
   branch_addressed) instead of the bare `dry_run` flag; the route-review binding machinery moved

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -285,7 +285,16 @@ would, and a contradicting declared caller refuses. The route-review binding mac
 from `task_doc_tools.py` into `application/task_doc_route_review.py` (L16-R6/R9, facade
 re-export), and `application/direct_landing.py` is the error-translating application boundary of
 the direct landing operation (L16-R8).
+
+## 260815-DAG-L12 Route Impact
+
+All three task-document writers thread the joined graph titles into the renderer (L12-R1/R4): `task_doc_tools.py` (`_graph_titles_for`/`_batch_graph_titles`), `task_execution_topology.py` (`_authoring_batch_titles`), and `task_sprint_linkage.py` (`_batch_graph_titles`) — publish and preview both label the sprint mermaid diagram with real master/leaf titles; batches without a graph fall back to ref-key labels.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 title threading across the task-doc, topology-authoring, and sprint-linkage writers (publish + preview). Verified at code commit b7f2c8e2.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: closeout-queue application boundary gains
   the declared-caller fallback; route-review binding extracted to

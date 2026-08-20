@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "dashboard/src/panels/sprint-graph",
+  "overview": "dashboard/src/panels/sprint-graph/overview.md",
+  "index": "dashboard/src/panels/sprint-graph/overview.index.json",
+  "sourceScope": [
+    "dashboard/src/panels/sprint-graph/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx",
+    "dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx",
+    "dashboard/src/panels/sprint-graph/SprintGraphView.tsx",
+    "dashboard/src/panels/sprint-graph/styles.ts"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 4,
+    "fileSidecars": 4,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "dashboard",
+    "graph",
+    "panels",
+    "sprint",
+    "sprintgraphpage",
+    "sprintgraphview",
+    "src",
+    "styles",
+    "test",
+    "tsx"
+  ],
+  "hotPath": {
+    "summary": "`SprintGraphSection` (in `detail-panel/taskReader.tsx`) mounts `SprintGraphView` plus the sprint-scoped `CloseoutQueue` on the sprint page; the view groups `graphView.nodes` by `waveIndex` into rows and renders one `GraphBox` per node \u2014 a segment box with leaf lines or an atomic lump, a frontier badge, and textual predecessor labels with reasons. Start at `SprintGraphView.tsx` for the component, `styles.ts` for the declarative grid/leaf-line contracts, and `SprintGraphPage.test.tsx` for the shell-level reachability proof.",
+    "candidateHints": [
+      "dashboard/src/panels/sprint-graph",
+      "dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx",
+      "dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx",
+      "dashboard/src/panels/sprint-graph/SprintGraphView.tsx",
+      "dashboard/src/panels/sprint-graph/styles.ts"
+    ],
+    "anchorHints": [
+      "SprintGraphPage.test.tsx",
+      "SprintGraphPage.test",
+      "SprintGraphView.test.tsx",
+      "SprintGraphView.test",
+      "SprintGraphView.tsx",
+      "SprintGraphView",
+      "styles.ts",
+      "styles",
+      "SprintGraphSection",
+      "detail-panel/taskReader.tsx",
+      "CloseoutQueue",
+      "graphView.nodes",
+      "waveIndex",
+      "GraphBox",
+      "taskReader",
+      "graphView",
+      "SprintGraphPage",
+      "dashboard/src/panels/sprint-graph/",
+      "route-local-overview",
+      "b7f2c8e2c7020642780e2c9b997ffb035a782e62",
+      "/overview.md",
+      "executionGraphView",
+      "SprintGraphViewImpl",
+      "waveGridStyles",
+      "leafLineStyles",
+      "@xyflow/react",
+      "TaskExecutionGraphView",
+      "_execution_graph_lines",
+      "dashboard/src/panels/sprint-graph/SprintGraphView.tsx",
+      "dashboard/src/panels/sprint-graph/styles.ts",
+      "dashboard/src/panels/detail-panel/taskReader.tsx",
+      "dashboard/src/types/projection.ts",
+      "mcp/src/agents_remember/tasks/render.py",
+      "dashboard/src/dev/sprintGraphPage.tsx",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T10",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "governingOverview",
+      "DAG",
+      "L12",
+      "CSS",
+      "DetailPanel",
+      "AND",
+      "NOT",
+      "execution_graph_lines"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "dashboard/src/panels/sprint-graph/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

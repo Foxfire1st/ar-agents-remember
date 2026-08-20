@@ -128,7 +128,7 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). | "export const VOLATILE_AGE_FIELDS" | dashboard/src/data/servedAges.ts:16-16 |
-| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:637-637 |
+| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:662-662 |
 | Observer event type for the Event River tail. | "export interface ObserverEvent" | dashboard/src/types/event.ts:9-9 |
 | Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | "export const dashboardStore" | dashboard/src/data/store.ts:329-329 |
 | `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:402-402 |
@@ -146,6 +146,9 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
 

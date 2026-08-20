@@ -8,9 +8,9 @@ Total output lines: 2259
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-20T05:04+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated            | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -785,7 +785,16 @@ degradation evaluation, or compaction can still mutate provider metrics state.
 The served task-document projection carries sprint `seats` and typed `masterRef` rows; the body
 revision covers `subTasks` + `seats` so an open sprint reader refetches on linkage/seat edits.
 
+
+## 260815-DAG-L12 Route Impact
+
+The task-documents projection readers now wire the render-ready sprint graph view (L12-R4): `_task_documents.py` builds the `executionGraphView` through the `_execution_graph_view` serving seam (tasks-domain walk feeding the primitives-only builder) with the `_master_docs_by_ref` join table, and splits `_task_doc_node` into `_reader_fields` + `_execution_graph_fields`. The dashboard renders projected facts verbatim.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready graph view wiring in the task-documents readers. Verified at code commit b7f2c8e2.
 
 - 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: served task docs project sprint
   `seats` + `masterRef` rows. Verified at code commit 8071a644.
