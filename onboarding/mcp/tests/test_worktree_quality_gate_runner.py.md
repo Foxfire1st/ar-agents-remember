@@ -58,7 +58,7 @@ No Domain Documentation source is configured for this repository-local runner su
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The runner suite covers preview, execution, cap, report, interpreter, and failure contracts. | `CodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:15-445 |
-| Stable helpers remain in the closeout mutation suite. | `_checkout_with_wrapper`; `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:46-50; mcp/tests/test_worktree_closeout_quality_gate.py:53-59 |
+| Stable helpers remain in the closeout mutation suite. | `_checkout_with_wrapper`; `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:45-49; mcp/tests/test_worktree_closeout_quality_gate.py:52-58 |
 
 ## Cross-Repo References
 

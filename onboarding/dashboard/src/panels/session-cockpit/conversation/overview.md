@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
 | doc_type               | `route-local-overview`                                       |
-| lastUpdated | 2026-08-13T07:53+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
@@ -321,7 +321,14 @@ assertions no longer restore real timers per test; the shared fixture keeps time
 RTL cleanup and clears the Virtualizer debounce before jsdom teardown. The `msg` builder stays local
 because streamed-row content is still suite-specific.
 
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+`ConversationSurface.test.tsx` gained an async `afterEach` that flushes the timeline virtualizer's scroll debounce before jsdom teardown.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: ConversationSurface.test.tsx flushes the timeline virtualizer debounce in an async `afterEach`. Verified at code commit e5cb139f.
+
 - 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
 
 - 2026-08-12T17:04+02:00 — 260731-EFA-L23 dashboard-gate route review: moved the intent-lock suite

@@ -20,6 +20,11 @@
       "index": "mcp/src/agents_remember/models/lifecycles/overview.index.json"
     },
     {
+      "route": "mcp/src/agents_remember/models/queue",
+      "overview": "mcp/src/agents_remember/models/queue/overview.md",
+      "index": "mcp/src/agents_remember/models/queue/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/models/structural",
       "overview": "mcp/src/agents_remember/models/structural/overview.md",
       "index": "mcp/src/agents_remember/models/structural/overview.index.json"
@@ -30,7 +35,6 @@
     "mcp/src/agents_remember/models/application_requests.py",
     "mcp/src/agents_remember/models/base.py",
     "mcp/src/agents_remember/models/benchmarks.py",
-    "mcp/src/agents_remember/models/closeout_queue.py",
     "mcp/src/agents_remember/models/context_packet.py",
     "mcp/src/agents_remember/models/core.py",
     "mcp/src/agents_remember/models/declared_caller.py",
@@ -54,9 +58,9 @@
     "mcp/src/agents_remember/models/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 50,
-    "fileSidecars": 26,
-    "childRoutes": 3
+    "sourceFilesInScope": 51,
+    "fileSidecars": 25,
+    "childRoutes": 4
   },
   "routingTerms": [
     "agents",
@@ -67,8 +71,6 @@
     "benchmarks",
     "caller",
     "catalog",
-    "closeout",
-    "closeout_queue",
     "context",
     "context_packet",
     "conversations",
@@ -124,12 +126,12 @@
       "mcp/src/agents_remember/models",
       "mcp/src/agents_remember/models/conversations",
       "mcp/src/agents_remember/models/lifecycles",
+      "mcp/src/agents_remember/models/queue",
       "mcp/src/agents_remember/models/structural",
       "mcp/src/agents_remember/models/__init__.py",
       "mcp/src/agents_remember/models/application_requests.py",
       "mcp/src/agents_remember/models/base.py",
       "mcp/src/agents_remember/models/benchmarks.py",
-      "mcp/src/agents_remember/models/closeout_queue.py",
       "mcp/src/agents_remember/models/context_packet.py",
       "mcp/src/agents_remember/models/core.py",
       "mcp/src/agents_remember/models/declared_caller.py",
@@ -155,8 +157,6 @@
       "base",
       "benchmarks.py",
       "benchmarks",
-      "closeout_queue.py",
-      "closeout_queue",
       "context_packet.py",
       "context_packet",
       "core.py",
@@ -194,7 +194,9 @@
       "tokens.py",
       "tokens",
       "tool_registry.py",
-      "tool_registry"
+      "tool_registry",
+      "tool_response.py",
+      "tool_response"
     ]
   },
   "fallback": {

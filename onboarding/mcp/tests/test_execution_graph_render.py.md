@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_execution_graph_render.py`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T10:45+02:00                           |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62`       |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00                        |
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ and missing/invalid masters degrade to fallbacks without raising.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The mermaid render forcing suite. | `ExecutionGraphMermaidRenderTests` | mcp/tests/test_execution_graph_render.py:50-223 |
-| The title-read forcing suite. | `ExecutionGraphTitlesReadTests` | mcp/tests/test_execution_graph_render.py:226-283 |
+| The title-read forcing suite. | `ExecutionGraphTitlesReadTests` | mcp/tests/test_execution_graph_render.py:226-280 |
 | The renderer under test. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:173-213 |
 | The shared title join. | `read_graph_titles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:60-75 |
 
@@ -54,6 +54,18 @@ and missing/invalid masters degrade to fallbacks without raising.
 No cross-repository implementation source governs this file.
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T10:45+02:00 — Created for 260815-DAG-L12 (R1): mermaid flowchart-TD render
 

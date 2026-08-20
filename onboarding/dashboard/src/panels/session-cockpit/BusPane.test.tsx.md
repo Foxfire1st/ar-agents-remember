@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/BusPane.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,14 @@ No meaningful cross-repo boundary is owned here.
 | --- | --- | --- |
 | No cross-repo evidence applies. | — | — |
 
+## 260815-DAG Master Full-Gate Repair
+
+`afterEach` is now async and flushes the virtualizer's 150 ms scroll-observer debounce (fake-timer clear + real-timer 200 ms settle) before jsdom teardown so orphaned callbacks cannot fire without a `window`.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: async `afterEach` flushes the virtualizer scroll-observer debounce before teardown. Verified at code commit e5cb139f.
+
 - 2026-08-12T00:28+02:00 — No content impact: the developer-reply case now waits for the
   already-required final acknowledgment status, avoiding a race with the legitimate intermediate
   `posting…` state; the POST shape and final-state contract documented above are unchanged.

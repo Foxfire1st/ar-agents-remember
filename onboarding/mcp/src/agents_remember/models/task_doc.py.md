@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/models/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T04:52+02:00                     |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated            | 2026-08-21T00:45+02:00                     |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -43,12 +43,26 @@ Every non-`remove_subtask` operation leaves them `None` (excluded by `exclude_no
 registered model for the `task_doc` row in `PUBLIC_TOOL_RESPONSE_MODELS`. The
 persisted task document itself (`tasks.TaskDocument`) is deliberately not returned.
 
+Since the master full-gate repair (260815-DAG, commit e5cb139f) `TaskDocResponse` also declares the
+**special-op wire fields** for the sprint-linkage and execution-graph authoring surfaces
+(`attach_master`, `detach_master`, `linkage_report`, `author_execution_graph`): `subtaskNumber`,
+`state`, `sprintTaskDocumentRef`, `masterRef`, `graphNode`, `executionNatureAsserted`, `documents`,
+`removedOrchestrates`, `removedGraphNodes`, `masterResolved`, `linkageFacts`, `bootstrapped`,
+`appliedMutations`, `executionWaves`, `leafPlacementFacts`, `numberingHints`. These ops publish
+inside their own functions and return raw operation payloads; without the declaration the
+`extra="forbid"` envelope REJECTED the real payloads after their writes — exactly the
+`remove_subtask` bug class. They are present only on those ops; every other operation leaves them
+`None` (excluded by `exclude_none`). The application entry point now merges the standard
+`task_doc` identity in via `_sprint_doc_identity` in `application/task_docs/task_doc_tools.py`.
+
 ### Invariants And Boundaries
 
 - STRICT AR-owned shape (`extra="forbid"`); register STRICT, not flexible.
 - `lifecycleId` is optional-null so it survives `exclude_none=True` when absent.
 - `masterSync` is optional because light docs, master docs, cross-series refs, and unchanged parent rows
   should not grow response data unnecessarily.
+- Every special-op wire field is optional and op-scoped: a real special op validates against the
+  declared shape, and every other operation stays byte-unchanged.
 
 ## Repo-Internal References
 
@@ -56,10 +70,24 @@ persisted task document itself (`tasks.TaskDocument`) is deliberately not return
 | --- | --- | --- |
 | The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tool_registry.py:189-189 |
 | The strict `ToolResponse` envelope base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:63-66 |
-| The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:602-716 |
-| The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:177-256 |
+| The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:679-804 |
+| The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
+| The special-op identity merge that pairs with the declared wire fields. | `_sprint_doc_identity` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:392-414 |
+
+## 260815-DAG Master Full-Gate Repair
+
+`TaskDocResponse` gained the ~16 optional special-op wire fields so the sprint-linkage and
+execution-graph authoring results validate against the strict `extra="forbid"` envelope after their
+writes (the same defect class as the L18 `remove_subtask` fix), and the application entry point
+merges the standard task-doc identity into those raw operation payloads via
+`_sprint_doc_identity`. The new wire-shape behavior is pinned by `mcp/tests/test_task_doc_wire_shape.py`.
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: `TaskDocResponse` declared the
+  optional special-op wire fields (sprint-linkage + execution-graph authoring results) so they
+  validate against `extra="forbid"` after their writes, pairing with the `_sprint_doc_identity`
+  merge in `application/task_docs/task_doc_tools.py`. Verified at code commit e5cb139f.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 

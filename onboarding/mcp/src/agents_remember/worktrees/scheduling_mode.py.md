@@ -76,7 +76,7 @@ repository-internal.
 | The single effective-nature resolution every consumer shares. | `effective_execution_nature` | mcp/src/agents_remember/worktrees/scheduling_mode.py:94-117 |
 | Lane ownership is a stored, non-terminal series-contract fact. | `sequential_lane_owner`; `series_lane_holders` | mcp/src/agents_remember/worktrees/scheduling_mode.py:120-156 |
 | Terminal series artifacts under organizational masters degrade to a reported fact. | `stale_series_artifact_fact` | mcp/src/agents_remember/worktrees/scheduling_mode.py:159-193 |
-| The degraded queue readout consumes the mode and lane owner. | `_degraded_projection` | mcp/src/agents_remember/worktrees/closeout_queue.py:323-367 |
+| The degraded queue readout consumes the mode and lane owner. | `_degraded_projection` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:323-367 |
 
 ## Cross-Repo References
 

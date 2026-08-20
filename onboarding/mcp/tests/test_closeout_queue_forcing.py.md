@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_forcing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,14 +60,28 @@ No configured Domain Documentation source applies.
 | Graph recomputation and lane-owned task-tree freeze are forced under lock. | `test_claim_recomputes_graph_under_lock_and_lane_ownership_freezes_task_tree_writes` | mcp/tests/test_closeout_queue_forcing.py:115-176 |
 | Graph admission and predecessor indexing are bounded. | `test_predecessor_index_is_linear_and_node_edge_admission_is_bounded` | mcp/tests/test_closeout_queue_forcing.py:177-243 |
 | Projection names only operations legal for the current actor. | `test_projection_names_only_operations_the_candidate_can_take` | mcp/tests/test_closeout_queue_forcing.py:356-432 |
-| WAL recovery is idempotent and raw operation keys never persist. | `test_wal_recovery_after_publish_is_idempotent_and_private_keys_never_persist` | mcp/tests/test_closeout_queue_forcing.py:507-533 |
+| WAL recovery is idempotent and raw operation keys never persist. | `test_wal_recovery_after_publish_is_idempotent_and_private_keys_never_persist` | mcp/tests/test_closeout_queue_forcing.py:534-560 |
 | Sprint completion/reopen crash cuts recover through their WAL. | `test_sprint_status_wal_recovers_before_after_and_reopen_crash_cuts` | mcp/tests/test_closeout_queue_forcing.py:481-570 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
+## 260815-DAG Master Full-Gate Repair
+
+The 260815-DAG master full-gate repair moved this suite's imports under the restructured packages
+(`application/task_docs/`, `models/queue/`, `worktrees/queue/`, `worktrees/integration/`) and
+removed the `__main__` runner. The queue WAL crash-cut recovery proof now wraps `fixture.status()`
+in a `CloseoutQueueStore._publish` patch with `fail_after_task_publication`, so the recovery
+republish resolves through the closure to `original_publish` rather than calling the patched method.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: imports follow the package moves
+  (`application/task_docs/`, `models/queue/`, `worktrees/queue/`, `worktrees/integration/`); the WAL
+  crash-cut proof patches `CloseoutQueueStore._publish` so recovery republishes through the closure
+  to `original_publish`; the `__main__` runner was removed. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: seat-path regressions preserved (renamed forcing
   suite); the ambient declared-caller path is covered by the new

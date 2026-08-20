@@ -57,7 +57,7 @@ None.
 | The persisted graph whose refs/leaf ids this joins. | `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:319-372 |
 | The mermaid renderer consumes the joined titles. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:173-213 |
 | The render-ready view builder consumes the same titles. | `build_execution_graph_view` | mcp/src/agents_remember/observer/projection_graph.py:228-260 |
-| The title-join unit tests. | `ExecutionGraphMermaidRenderTests`; `AuthoringBatchTitlesTests` | mcp/tests/test_execution_graph_render.py:50-283; mcp/tests/test_authoring_batch_titles.py:58-85 |
+| The title-join unit tests. | `ExecutionGraphMermaidRenderTests`; `AuthoringBatchTitlesTests` | mcp/tests/test_authoring_batch_titles.py:58-85; mcp/tests/test_execution_graph_render.py:50-223 |
 
 ## Cross-Repo References
 

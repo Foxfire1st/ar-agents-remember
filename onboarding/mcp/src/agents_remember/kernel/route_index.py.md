@@ -79,7 +79,7 @@ package source and deterministic production-path tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The census exposes Git source-snapshot, tracked-candidate, and untracked-candidate entry points. | "def route_index_source_snapshot(", "def _tracked_source_candidates(", "def _untracked_source_candidates(" | mcp/src/agents_remember/kernel/route_index_census.py:41-41; mcp/src/agents_remember/kernel/route_index_census.py:83-83; mcp/src/agents_remember/kernel/route_index_census.py:126-126 |
-| MCP refresh supplies resolved repository and storage authority. | "def route_index_refresh_tool(" | mcp/src/agents_remember/application/memory_tools.py:550-550 |
+| MCP refresh supplies resolved repository and storage authority. | "def route_index_refresh_tool(" | mcp/src/agents_remember/application/memory_tools.py:552-552 |
 | Closeout preview/apply expose route-index refresh planning entry points. | "def refresh_route_indexes_for_context(", "def route_index_refresh_plan_for_context(" | mcp/src/agents_remember/worktrees/modules/onboarding.py:492-492; mcp/src/agents_remember/worktrees/modules/onboarding.py:503-503 |
 | The regression matrix proves identity, exclusions, typed failures, and repeat convergence. | `RouteIndexTests`, `test_exact_paths_and_symlinks_are_target_independent`, `test_ignored_generated_and_path_rule_excluded_artifacts_do_not_change_bytes`, `test_git_census_failure_uses_typed_domain_error`, `test_regular_checkout_and_linked_worktree_produce_identical_indexes` | mcp/tests/test_route_index.py:82-907 |
 

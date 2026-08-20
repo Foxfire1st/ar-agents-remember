@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_task_document_master.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -21,7 +21,9 @@ Part of the 260731-EFA-L7 in-place split family for `test_task_document_master.p
 ## Code Commentary
 
 - `MasterApplicationTests`, including the master-altitude lifecycle-id regression that calls the
-  real document builder with a series contract and proves leaf lifecycle identity is not inherited.
+  real document builder with a series contract and proves leaf lifecycle identity is not inherited,
+  and the sprint-get regression proving `task_doc.get` on a sprint carries declared `linkageFacts`
+  in the identity payload.
 - `TerminalLeafResolutionTests`
 - `RegistrationTests`
 
@@ -35,8 +37,21 @@ Part of the 260731-EFA-L7 in-place split family for `test_task_document_master.p
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
+## 260815-DAG Master Full-Gate Repair
+
+The 260815-DAG master full-gate repair moved the task-doc imports under
+`application/task_docs/` (`task_doc_tools`, `task_doc_tools_module`) and added
+`test_get_on_a_sprint_carries_declared_linkage_facts` to `MasterApplicationTests`: the new
+regression proves `task_doc.get` on a sprint appends `linkageFacts` to the identity payload and
+that the `extra=forbid` `TaskDocResponse` envelope declares it (a `ValidationError` before the
+repair).
+
 ## Update History
 
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: task-doc imports moved under
+  `application/task_docs/`; `MasterApplicationTests` gained the sprint-get regression proving
+  `task_doc.get` on a sprint carries declared `linkageFacts` in the identity payload. Verified at
+  code commit e5cb139f.
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (task_doc_tool takes
   `call: TaskDocCall`); suite purpose unchanged. Verified at code commit a9d50e08.
 

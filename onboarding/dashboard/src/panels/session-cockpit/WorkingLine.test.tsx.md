@@ -59,7 +59,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | The ruled pulse constant the spinner case pins. | `PULSE_ANIMATION` | dashboard/src/data/stateGrammar.ts:14-14 |
 | The UA-7 reason asserted verbatim. | `STOP_TURN_DISABLED_REASON` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:65-66 |
 | The working fixture. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:245-257 |
-| The view-level cases (slot containment, `turn.stop` gate alignment). | "renders the WorkingLine in the reserved slot ONLY for a working focused seat" | dashboard/src/panels/session-cockpit/sessions-view/stageSurface.test.tsx:144-144 |
+| The view-level cases (slot containment, `turn.stop` gate alignment). | "renders the WorkingLine in the reserved slot ONLY for a working focused seat" | dashboard/src/panels/session-cockpit/sessions-view/stageSurface.test.tsx:152-184 |
 
 ## Cross-Repo References
 

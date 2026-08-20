@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,14 @@ No cross-repository boundary is owned here.
 | --- | --- | --- |
 | No cross-repository evidence applies. | — | — |
 
+## 260815-DAG Master Full-Gate Repair
+
+`afterEach` is now async and flushes the conversation timeline virtualizer's 150 ms scroll debounce (fake-timer clear + real-timer 200 ms settle) before jsdom teardown.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: async `afterEach` flushes the timeline virtualizer debounce before teardown. Verified at code commit e5cb139f.
+
 
 - 2026-08-03T02:38:40+02:00 — W3-B01 curator: curated 3 Repo-Internal table citations with exact test helper, regression-suite, and implementation anchors. Verification metadata remains unchanged for closeout.
 - 2026-07-24T13:17:17Z — Curator: created the conversation-surface regression-suite sidecar. It is

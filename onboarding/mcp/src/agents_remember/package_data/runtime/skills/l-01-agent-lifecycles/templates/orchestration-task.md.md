@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T05:10+02:00 |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -84,7 +84,14 @@ The template's adoption rule now treats a sprint adopted without an `executionGr
 atomic-sequential default; `task_doc.author_execution_graph` bootstraps or edits the graph and is
 never a runtime fallback. The `migrate_execution_topology` legacy-cutover reference is gone.
 
+## 260815-DAG Master Full-Gate Repair
+
+Restored the template heading to `## Canonical executionGraph Adoption Payload` (the `executionGraph` qualifier phrase restored); all 9 generated copy trees are byte-identical via `scripts/sync-skills.py`.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: restored the `executionGraph` qualifier in the canonical adoption-payload heading; copies re-synced. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T05:10+02:00 — 260815-DAG-L14: template updated to the atomic
   `attach_master` flow and seats structure. Verified at code commit 2f494982.

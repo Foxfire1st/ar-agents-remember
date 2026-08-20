@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_sequential_default_mode.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,12 +43,24 @@ outcome.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Mode resolution and the effective-nature matrix forcing. | `SchedulingModeTests` | mcp/tests/test_sequential_default_mode.py:118-189 |
-| The lane block, stale-artifact replacement, and dispatch surfacing forcing. | `SequentialLaneTests` | mcp/tests/test_sequential_default_mode.py:191-354 |
+| The lane block, stale-artifact replacement, and dispatch surfacing forcing. | `SequentialLaneTests` | mcp/tests/test_sequential_default_mode.py:191-350 |
 | The scheduling-mode resolver under test. | `resolve_scheduling_mode`; `effective_execution_nature`; `sequential_lane_owner` | mcp/src/agents_remember/worktrees/scheduling_mode.py:46-156 |
 | The lane-blocked bootstrap under test. | `_sequential_lane_block` | mcp/src/agents_remember/worktrees/modules/start_contract.py:269-312 |
 | The dispatch structural-outcome surfacing under test. | `_manager_series_bootstrap_refusal` | mcp/src/agents_remember/application/structural/agent_tools.py:419-484 |
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: created as the atomic-sequential default and series
   lane forcing suite. Verification remains closeout-owned.

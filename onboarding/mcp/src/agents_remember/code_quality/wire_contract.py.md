@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/wire_contract.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -100,7 +100,14 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `post_dump_mutation_offenders` (lines 422-432) — Every place the package changes a payload after its model stopped describing it.. | `post_dump_mutation_offenders` | mcp/src/agents_remember/code_quality/wire_contract.py:422-432 |
 | Defines the function `served_tail_merges` (lines 435-454) — Where the sanctioned serve-time tail owner is actually called.. | `served_tail_merges` | mcp/src/agents_remember/code_quality/wire_contract.py:435-454 |
 
+## 260815-DAG Master Full-Gate Repair
+
+The `validating_names` docstring path updated for the moved `application/task_docs/task_doc_tools.py` module; the conformance rule is unchanged.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: `validating_names` comment path updated for the moved task-doc module. Verified at code commit e5cb139f.
+
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-05T03:52+02:00 — 260731-EFA-L6 batch B curator: normalized decorator-inclusive citation ranges via scoped --fix against the frozen snapshot.

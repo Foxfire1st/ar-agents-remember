@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_quality_runs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,7 +62,19 @@ No cross-repo boundary applies to this forcing suite.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260815-DAG Master Full-Gate Repair
+
+`MemoryQualityRunRegistryTests` gained `test_poll_until_settled_raises_when_the_run_never_settles`,
+pinning that `_poll_until_settled` raises `AssertionError` ("did not settle") for a run stuck in
+`running`. `start_and_poll_wrappers_drive_a_background_run` now sleeps the mocked check so the
+first poll deterministically observes the `running` envelope, and the poll loop keeps polling
+while the envelope is `None` or still `running`.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: added the never-settles registry
+  regression and made the wrapper start/poll case deterministically observe the running envelope
+  before completion. Verified at code commit e5cb139f.
 
 - 2026-08-20T21:30+02:00 — Created for 260815-DAG-L15-R7: the run-registry forcing suite
   (start/poll/completed/failed/single-flight/boundedness/TTL eviction) plus the application-wrapper

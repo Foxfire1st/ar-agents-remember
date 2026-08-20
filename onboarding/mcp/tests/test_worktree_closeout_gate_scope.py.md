@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_closeout_gate_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-14T11:48:55+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ The staged-candidate and Dagger-only closeout contract is recorded in `system/gi
 | The fixture isolates a linked leaf whose base already carries every prerequisite for scope derivation. | `gate_scope_contract_fixture` | mcp/tests/test_worktree_closeout_gate_scope.py:38-96 |
 | The recording gate runs production scope derivation and Ruff over the selected lint paths. | `ScopeRecordingGate` | mcp/tests/test_worktree_closeout_gate_scope.py:99-127 |
 | Created-file failure, refused-gate staging, and commit-tree equality cover both sides of the exact-scope invariant. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:130-208 |
-| Production closeout stages the task worktree before invoking the strict gate. | `gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129 |
+| Production closeout stages the task worktree before invoking the strict gate. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
 
 ## Cross-Repo References
 
@@ -70,6 +70,18 @@ The temporary consumer fixture models the generic wrapper contract without depen
 product repository.
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-14T11:48:55+02:00 — Created for the R42 file-size extraction. Preserved the exact
   created/deleted-file scope regression formerly housed in `test_worktree_closeout_quality_gate.py`;

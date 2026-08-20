@@ -64,7 +64,7 @@ No configured Domain Documentation source applies; this is an internal authority
 | The strict bounded shape of a request-carried ambient identity. | `DeclaredCaller`; `_nonblank_role` | mcp/src/agents_remember/models/declared_caller.py:19-39 |
 | Consumed by the closeout-queue ambient fallback. | `_declared_queue_actor` | mcp/src/agents_remember/application/closeout_queue.py:61-71 |
 | Consumed by the structural gate-tools ambient fallback (duck-typed `DeclaredGateCaller`). | `_context`; `DeclaredGateCaller` | mcp/src/agents_remember/application/structural/gate_tools.py:36-51; mcp/src/agents_remember/application/structural/gate_tools.py:63-88 |
-| The request field that carries the declaration on the queue wire model. | "caller: DeclaredCaller" | mcp/src/agents_remember/models/closeout_queue.py:90-90 |
+| The request field that carries the declaration on the queue wire model. | "caller: DeclaredCaller" | mcp/src/agents_remember/models/queue/closeout_queue.py:90-90 |
 
 ## Cross-Repo References
 

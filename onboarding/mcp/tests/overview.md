@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1175,7 +1175,14 @@ New forcing suites: `test_execution_graph_render.py` (mermaid render determinism
 
 Three new forcing suites: `test_serving_preflight.py` (floor semantics + editable-detection branch matrix), `test_memory_quality_runs.py` (registry + application wrappers), `test_task_execution_topology_l15.py` (L15 tests split from the parent file for the file-size rail). `test_task_sprint_linkage.py` gained the F8 fact tests; `test_author_execution_graph.py` pinned the typed judgment-required refusal; `test_mcp_registration_wiring_tests_1.py` gained the wait/run_id registration tests; the L7 `test_orchestration_portfolio.py` was deleted.
 
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+The forcing suites tracked the package restructure: ~100 test files had import paths updated to the moved `queue`/`integration`/`task_docs` packages and their `unittest.main` tail guards removed; new `test_task_doc_wire_shape.py` locks the special-op response envelope; several suites gained coverage tests (lifecycle operations, closeout actions/forging/lifecycle, organizational completion, integration ref transaction, memory-quality runs, serving preflight, doctrine plane identity).
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: ~100 test files updated (import paths to the moved packages, `unittest.main` tail guards removed, new wire-shape suite + coverage tests added). Verified at code commit e5cb139f.
+
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: three new forcing suites (serving_preflight, memory_quality_runs, task_execution_topology_l15 split); F8/wait-run_id/judgment-required test additions; orchestration_portfolio test deleted. Verified at code commit de3a0fd9.
 

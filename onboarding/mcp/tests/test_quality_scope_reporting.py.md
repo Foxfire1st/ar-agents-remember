@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-11T22:28+02:00               |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-21T00:45+02:00               |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,7 +91,17 @@ Scope/provenance tests require Dagger to retain the accepting wrapper and dashbo
 while GitHub PR validation calls only the deterministic targeted hook. Obsolete host
 quality-environment assertions were removed; no second host report path can satisfy acceptance.
 
+## 260815-DAG Master Full-Gate Repair
+
+`CallerProvenanceTests` count-fix: the dashboard measurement assertion now pins the live
+`434 TypeScript inputs` (was 426), matching the current tsc input count. No other scope or
+provenance assertions changed.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: updated the dashboard
+  TypeScript-input count assertion to the live 434 measurement (was 426). Verified at code
+  commit e5cb139f.
 
 - 2026-08-14T11:27+02:00 — R39 curator: aligned scope reporting with Dagger-only acceptance and
   non-test CI. Verification remains closeout-owned.

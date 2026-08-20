@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -351,7 +351,14 @@ cover the public schema; scheduling, persistence, and lifecycle logic do not liv
 
 The memory payload builders gained `memory_quality_check_start_payload` / `memory_quality_check_poll_payload` (L15-R7), re-exported by the tools facade in the import block and `__all__`.
 
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+`tools/{core,task_doc,worktree}.py` import paths updated to the moved `application/task_docs/*`.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: tool payload modules import paths updated to the moved packages. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: async memory-quality start/poll payload builders (L15-R7). Verified at code commit de3a0fd9.
 

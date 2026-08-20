@@ -60,7 +60,7 @@
       "mcp/src/agents_remember/application/structural/",
       "mcp/src/agents_remember/application/structural/overview.md",
       "application/overview.md",
-      "a9d50e08b830c4a34c14e495706c19fe697f47ab",
+      "e5cb139f66abbd6502d4dcc4be883eb5f49770fe",
       "serving/structural_seats.py",
       "serving/ambient_seat.py",
       "models/structural/",
@@ -74,6 +74,7 @@
       "application/structural/gate_tools.py",
       "gate_tools.py.md",
       "serving/structural_seats.py.md",
+      "application/task_docs/task_ref",
       "lifecycle_gate",
       "gate_decide",
       "gate_list",
@@ -87,11 +88,10 @@
       "onboardingRoute",
       "parentOverview",
       "lastUpdated",
-      "T09",
+      "T00",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "structural_seats",
-      "ambient_seat"
+      "structural_seats"
     ]
   },
   "fallback": {

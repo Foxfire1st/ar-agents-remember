@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "mcp/src/agents_remember/models/queue",
+  "overview": "mcp/src/agents_remember/models/queue/overview.md",
+  "index": "mcp/src/agents_remember/models/queue/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/models/queue/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/models/queue/__init__.py",
+    "mcp/src/agents_remember/models/queue/closeout_queue.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 2,
+    "fileSidecars": 2,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "closeout",
+    "closeout_queue",
+    "init",
+    "init__",
+    "mcp",
+    "models",
+    "queue",
+    "remember",
+    "src"
+  ],
+  "hotPath": {
+    "summary": "The closeout queue application/tool surfaces read and write these typed models; the registered response models are consumed by the dashboard's CloseoutQueue panel projection.",
+    "candidateHints": [
+      "mcp/src/agents_remember/models/queue",
+      "mcp/src/agents_remember/models/queue/__init__.py",
+      "mcp/src/agents_remember/models/queue/closeout_queue.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "closeout_queue.py",
+      "closeout_queue",
+      "CloseoutQueue",
+      "mcp/src/agents_remember/models/queue",
+      "route-local-overview",
+      "e5cb139f66abbd6502d4dcc4be883eb5f49770fe",
+      "/overview.md",
+      "CloseoutQueueRequest",
+      "models/",
+      "worktrees/queue/",
+      "application/closeout_queue.py",
+      "models/queue",
+      "agents_remember",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T00",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "governingOverview",
+      "DAG",
+      "JSON",
+      "e5cb139f"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/models/queue/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

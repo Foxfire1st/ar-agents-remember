@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -168,7 +168,18 @@ it against `CloseoutQueueResponse` with the rest of the public success surface.
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
+## 260815-DAG Master Full-Gate Repair
+
+Import-only re-pointing: the task_doc imports move to `application/task_docs/`
+(`task_doc_tools`, `task_ref`), and the two `launch_detached_worker` patches in
+`_worktree_payloads` retarget `worktrees.integration.lifecycle_operations`. No payloads or
+conformance assertions changed.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: re-pointed the task_docs imports
+  and the lifecycle_operations worker patches to the restructured packages; conformance payloads
+  are unchanged. Verified at code commit e5cb139f.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: seat-path conformance preserved; citation range
   regenerated (`_stale_agent_notifier` at test_tool_response_conformance.py:591-600). Verified at

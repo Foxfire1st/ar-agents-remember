@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/single_owner.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T04:30+02:00 |
-| lastVerifiedCommitHash | `dec82579853a0a39f96b41a020cb3f8f1433bc76` |
-| lastVerifiedCommitDate | 2026-08-20T01:25:07+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -103,7 +103,14 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `task_document_writer_offenders` (lines 397-403) — Task-document writer sites outside the reviewed authority set.. | `task_document_writer_offenders` | mcp/src/agents_remember/code_quality/single_owner.py:397-403 |
 | Defines the function `report` (lines 406-415) — The whole offender list with the fix named -- never just the first failure.. | `report` | mcp/src/agents_remember/code_quality/single_owner.py:406-415 |
 
+## 260815-DAG Master Full-Gate Repair
+
+`TASK_DOCUMENT_WRITER_AUTHORITIES` paths updated to the moved package locations (`application/task_docs/{task_doc_tools,task_execution_topology,task_sprint_linkage}.py`, `worktrees/integration/organizational_completion.py`); the authority set is unchanged.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: task-document writer authority paths updated to the moved packages. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T04:30+02:00 — 260815-DAG-L14: `TASK_DOCUMENT_WRITER_AUTHORITIES` admits
   `application/task_sprint_linkage.py` (attach/detach publish through the locked, queue-guarded

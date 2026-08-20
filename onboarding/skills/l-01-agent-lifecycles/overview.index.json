@@ -59,7 +59,7 @@
       "roles",
       "skills/l-01-agent-lifecycles",
       "route-local-overview",
-      "de3a0fd9204f2e64755032274fb4e741bfddf6df",
+      "e5cb139f66abbd6502d4dcc4be883eb5f49770fe",
       "roles/",
       "l-01-agent-lifecycles",
       "attach_master",
@@ -77,6 +77,8 @@
       "S<n>",
       "templates/verdict.md",
       "templates/manager-brief.md",
+      "## Canonical executionGraph Adoption Payload",
+      "executionGraph",
       "task_doc.author_execution_graph",
       "migrate_execution_topology",
       "skills/l-01-agent-lifecycles/SKILL.md",
@@ -86,7 +88,7 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T21",
+      "T00",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
       "L23",
@@ -94,10 +96,8 @@
       "DAG",
       "L14",
       "L15",
-      "de3a0fd9",
-      "T05",
-      "a644",
-      "T22"
+      "e5cb139f",
+      "T21"
     ]
   },
   "fallback": {

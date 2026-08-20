@@ -83,9 +83,9 @@ installs and dev builds are unaffected (L15-R4).
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The preflight gate and its two legs. | `require_serving_topology_schema`; `_installed_distribution`; `_is_editable_install`; `_below_floor` | mcp/src/agents_remember/tasks/serving_preflight.py:55-89; mcp/src/agents_remember/tasks/serving_preflight.py:91-95; mcp/src/agents_remember/tasks/serving_preflight.py:98-132; mcp/src/agents_remember/tasks/serving_preflight.py:143-154 |
-| Wired before any write in graph authoring. | `author_execution_graph` | mcp/src/agents_remember/application/task_execution_topology.py:193-261 |
-| Wired into ordinary topology-emitting edits. | `enforce_execution_topology_edit`; `_edit_emits_topology_schema` | mcp/src/agents_remember/application/task_execution_topology.py:762-813; mcp/src/agents_remember/application/task_execution_topology.py:828-843 |
-| Wired into sprint attach/detach through the linkage wrapper. | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_sprint_linkage.py:85-95 |
+| Wired before any write in graph authoring. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:193-261 |
+| Wired into ordinary topology-emitting edits. | `enforce_execution_topology_edit`; `_edit_emits_topology_schema` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:762-813; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:828-842 |
+| Wired into sprint attach/detach through the linkage wrapper. | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:85-91 |
 | The forcing suite covers the model-field refusal, the below-floor refusal, the editable/source pass, and every `_is_editable_install` branch. | `ServingFloorTests`; `EditableInstallDetectionTests` | mcp/tests/test_serving_preflight.py:26-238 |
 
 ## Cross-Repo References

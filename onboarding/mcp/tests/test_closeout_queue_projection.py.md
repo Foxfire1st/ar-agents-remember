@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/tests/test_closeout_queue_projection.py`          |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-08-18T00:00+02:00                                 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`             |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -44,6 +44,18 @@ into the artifact directly and asserts it projects with its rationale.
 | Active blocker projection with rationale. | `test_projects_atomic_blocker` | mcp/tests/test_closeout_queue_projection.py:38-57 |
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-18T00:00+02:00 — 260815-DAG-L8: created the closeout-queue projection test suite.
   Verification metadata pinned until closeout stamps the L8 commit.

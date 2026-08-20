@@ -49,7 +49,7 @@ for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_
 | --- | --- | --- |
 | The model written/read. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:602-716 |
 | The renderer invoked on every write. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:20-40 |
-| The application entry point uses batch writes when a leaf mutation also changes its parent master row. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:177-256 |
+| The application entry point uses batch writes when a leaf mutation also changes its parent master row. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
 
 
 ## 260815-DAG-L12 Title Threading
