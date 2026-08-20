@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`|
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 
 ## Purpose
 
@@ -181,7 +181,14 @@ The settings reference now names Dagger as the only accepted executor, places op
 inside the container wrapper, and removes host systemd/RLIMIT semantics. It also records that leaf
 closeout and master integration are the only acceptance owners.
 
+## 260815-DAG-L15 Route Impact
+
+`execution-topology-migration.md` gained section 4 — the served-build preflight operator contract (run authoring through the deployed serving server; refresh the rc7 venv, L15-R4). The changed file is excluded by pathRules, so this route's onboardable surface is unchanged.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: execution-topology-migration.md gained the served-build preflight operator section (excluded file; onboardable surface unchanged). Verified at code commit de3a0fd9.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `execution-topology-migration.md` was
   retitled from the migration cutover to graph authoring — the atomic-sequential default covers

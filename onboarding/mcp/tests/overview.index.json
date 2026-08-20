@@ -288,6 +288,7 @@
     "mcp/tests/test_memory_citation_source_index_snapshot.py",
     "mcp/tests/test_memory_document_shape.py",
     "mcp/tests/test_memory_quality.py",
+    "mcp/tests/test_memory_quality_runs.py",
     "mcp/tests/test_memory_tool_enclosure_scope.py",
     "mcp/tests/test_missing_onboarding.py",
     "mcp/tests/test_model_split_baseline.py",
@@ -368,6 +369,7 @@
     "mcp/tests/test_serving_harness_control_api.py",
     "mcp/tests/test_serving_helper_behaviour.py",
     "mcp/tests/test_serving_notes.py",
+    "mcp/tests/test_serving_preflight.py",
     "mcp/tests/test_serving_raw_events.py",
     "mcp/tests/test_serving_response_conformance.py",
     "mcp/tests/test_serving_response_conformance_cases_1.py",
@@ -403,6 +405,7 @@
     "mcp/tests/test_task_document_structural_identity.py",
     "mcp/tests/test_task_documents_graph_projection.py",
     "mcp/tests/test_task_execution_topology.py",
+    "mcp/tests/test_task_execution_topology_l15.py",
     "mcp/tests/test_task_execution_topology_segments.py",
     "mcp/tests/test_task_reopen.py",
     "mcp/tests/test_task_reopen_authority.py",
@@ -450,8 +453,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 430,
-    "fileSidecars": 438,
+    "sourceFilesInScope": 431,
+    "fileSidecars": 441,
     "childRoutes": 0
   },
   "routingTerms": [

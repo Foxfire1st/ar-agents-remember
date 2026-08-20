@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `e460d4c000983d96a3ef6d105a1aeecbb73d5dc5`|
-| lastVerifiedCommitDate | 2026-08-18T13:41:53+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -505,7 +505,14 @@ publication scratch and the JSON artifact remains the survival record.
 
 Control-plane storage adds a repository-wide integration-authority lock and composes it after sprint queue authority. Task-fact publication, candidate declaration, series terminal publication, and Git mutation therefore share a fail-closed queue-to-repository order instead of racing check-then-act branch guards.
 
+## 260815-DAG-L15 Route Impact
+
+`integration_authority_lock` gained the keyword-only `create` flag: the three dry-run paths (graph authoring + sprint attach/detach) lock with `create=False` so a preview never writes the lock file (playthrough F2); apply paths keep `create=True` and re-lock before any mutation.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: integration_authority_lock create=False dry-run mode (F2). Verified at code commit de3a0fd9.
+
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 

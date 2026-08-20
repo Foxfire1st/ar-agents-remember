@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1171,7 +1171,14 @@ projected `masterRef`/`seats` and body-revision movement.
 New forcing suites: `test_execution_graph_render.py` (mermaid render determinism, escaping, truncation, fallbacks, title join), `test_execution_graph_view.py` (primitives-only builder: zero-edge, segmented-master, missing-master fallback, node identity), `test_task_documents_graph_projection.py` (projection wiring: `executionGraphView` on sprint docs, `_master_docs_by_ref`), and `test_authoring_batch_titles.py` (authoring-batch title join). Dashboard-side `SprintGraphView.test.tsx` / `SprintGraphPage.test.tsx` are covered by the sprint-graph route overview.
 
 
+## 260815-DAG-L15 Route Impact
+
+Three new forcing suites: `test_serving_preflight.py` (floor semantics + editable-detection branch matrix), `test_memory_quality_runs.py` (registry + application wrappers), `test_task_execution_topology_l15.py` (L15 tests split from the parent file for the file-size rail). `test_task_sprint_linkage.py` gained the F8 fact tests; `test_author_execution_graph.py` pinned the typed judgment-required refusal; `test_mcp_registration_wiring_tests_1.py` gained the wait/run_id registration tests; the L7 `test_orchestration_portfolio.py` was deleted.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: three new forcing suites (serving_preflight, memory_quality_runs, task_execution_topology_l15 split); F8/wait-run_id/judgment-required test additions; orchestration_portfolio test deleted. Verified at code commit de3a0fd9.
+
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 adds the graph-render, graph-view, projection-wiring, and title-join forcing suites. Verified at code commit b7f2c8e2.

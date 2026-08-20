@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/report-verification.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T17:35+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
 
 ## Purpose
 
@@ -75,7 +75,20 @@ No sibling repository evidence is needed for this catalog.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260815-DAG-L15 Review-Doctrine
+
+RV-1 is extended: the "tree contains only intended changes" claim is refuted against BOTH content
+and mode rows — `git status --short` plus `git diff HEAD --numstat` for content, and `git diff
+HEAD --summary` for mode-only changes (exec-bit drops on hooks/scripts are behaviorally meaningful
+and silent to content diffs). The extension records the 260815-DAG-L12 catch (L12-F1): 10 files
+carried mode-only changes (100755→100644, incl. `.githooks/pre-commit`) absent from the worker's
+file list.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: RV-1 extended — "the tree contains only intended
+  changes" is also refuted against `git diff HEAD --summary` mode rows (mode-only changes; the
+  L12-F1 catch). Verified at code commit de3a0fd9.
 
 - 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 2 table citations and added the exact canonical-to-package sync evidence; no unresolved Tier-3 claims.
 

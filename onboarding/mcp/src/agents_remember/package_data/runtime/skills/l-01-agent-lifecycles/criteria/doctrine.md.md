@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/doctrine.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
 
 ## Purpose
 
@@ -63,7 +63,19 @@ nor an atomic integration ref is a feature/fix workbench. D-5 independently chec
 surface facts while named roles own and record dependency, priority, classification, blocker, and
 queue judgment.
 
+## 260815-DAG-L15 Review-Doctrine
+
+D-6 now stands: bounded `L<leaf>-R<n>` / `L<leaf>-S<n>` requirement identifiers in source comments
+are allowed — the repo carries them at scale (83 comment lines across 22 modules at L15) — and are
+the preferred way to tie a comment to its contract, while task/chat/review/decision-item/report
+provenance and paths stay out. The criterion records the Source Comment Scope reconciliation
+(260815-DAG-L12 F3, 260815-DAG-L16 F4).
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: D-6 added — bounded `L<leaf>-R<n>` / `L<leaf>-S<n>`
+  requirement identifiers in source comments are allowed; provenance prose and paths stay out.
+  Verified at code commit de3a0fd9.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

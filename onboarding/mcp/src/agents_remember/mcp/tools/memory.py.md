@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/memory.py`  |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                      |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00|
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df`                                      |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -26,6 +26,13 @@ Holds `drift_check_payload`, `memory_quality_check_payload`,
 `memory_carryover_plan_payload`, and `memory_carryover_apply_payload`. Each
 forwards typed arguments to the matching `application.memory_tools` function and
 returns through `base._tool_payload`.
+
+Since 260815-DAG-L15 the module also holds the two async quality builders (L15-R7):
+`memory_quality_check_start_payload` wraps `start_memory_quality_check_run` — the response carries
+`{status, runId}` to poll — and `memory_quality_check_poll_payload` wraps
+`poll_memory_quality_check_run` — the identical full result when completed, `ok: True` while
+running/failed, `ok: False`/`run-not-found` for an unknown/evicted run. The sync
+`memory_quality_check_payload` is unchanged.
 
 Three of them take parameter objects (260731-EFA-L2): `memory_baseline_adopt_payload(config,
 repo_id, *, accept_drift=False, branches: MemoryBranches = DEFAULT_MEMORY_BRANCHES,
@@ -58,8 +65,14 @@ a 28-file apply response cost 7.7k tokens (GitHub #52).
 - The effectful builders (`route_index_refresh_payload`, `memory_init_payload`,
   `memory_baseline_adopt_payload`) default `dry_run=False` (act-by-default),
   matching the server registration; `dry_run=true` previews.
+- The async start/poll builders wrap the application envelopes verbatim (including the `ok`
+  header fixed in the L15 gate-repair round); the sync payload builder is unchanged.
 
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: added `memory_quality_check_start_payload` /
+  `memory_quality_check_poll_payload` wrapping the async application envelopes (L15-R7, incl. the
+  `ok`-header gate-repair fix). Verified at code commit de3a0fd9.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 
 > **Status:** active baseline
 
@@ -1156,7 +1156,14 @@ operations and the dashboard projection carries `seats` + `masterRef`.
 The execution-graph render is now human-readable end to end: `tasks/render.py` emits a deterministic mermaid `flowchart TD` diagram (subgraph per master, lump nodes for atomic masters, labeled edges) joined with real titles via the new `tasks/execution_graph_titles.py`, and `observer/projection_graph.py` builds the render-ready per-node `executionGraphView` the dashboard's new sprint-graph wave-grid panel renders directly (pure CSS grid, no layout library — the documented L12-R3 fallback). New sprint-graph sidecars and test sidecars carry the detail.
 
 
+## 260815-DAG-L15 Route Impact
+
+L15 (hygiene sweep and review-doctrine repair) landed across the mcp application/tasks/controlplane routes: the served-build preflight gate (`tasks/serving_preflight.py`), the async memory-quality surface (`application/memory_quality_runs.py` + `wait`/`run_id` registration), the typed authoring dialect (judgment-required, move-retargets-edge, node-kind order, named cycle members), `create=False` dry-run locks, and the L7 `worktrees/orchestration_portfolio.py` deletion (recorded decision: doctrine + queue mechanism). The review-doctrine repair (no self-review, evidence-type matching, PR-8, RV-1 extension, D-6 bounded requirement ids) was folded into the memory-repo canonical `system/coding-guidelines.md` Source Comment Scope rule at master level.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: served-build preflight, async memory-quality surface, typed authoring dialect, create=False dry-run locks, L7 orchestration_portfolio deletion, and the review-doctrine repair (D-6 folded into the canonical system/coding-guidelines.md at master level). Verified at code commit de3a0fd9.
+
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready sprint graph: mermaid document diagram + dashboard wave-grid view with the primitives-only projection builder and shared title join. Verified at code commit b7f2c8e2.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -113,8 +113,19 @@ organizational direct-super lineage, atomic isolated-block lineage, and one-full
 completion boundary. It remains byte-identical to the canonical skill across every installed
 target; the runtime package is distribution, not a parallel doctrine authority.
 
+## 260815-DAG-L15 Review-Doctrine
+
+The Three-Party Loop paragraph now makes review independence explicit: the reviewer seat is never
+the author/implementer seat itself (no self-review of one's own leaf), and every requirement
+verdict must cite evidence of the requirement's class — rendering/visibility needs mounted-UI
+proof, scheduling/ordering needs operation-level proof, data-model needs artifact-level proof.
+Evidence of the wrong class is verdict laundering, not a pass.
+
 ## Update History
 
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: the three-party-loop paragraph now states the reviewer
+  seat is never the author seat and requirement verdicts must cite their evidence class
+  (mounted-UI / operation-level / artifact-level proof). Verified at code commit de3a0fd9.
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized dependency-aware execution topology and
   its authority/quality-altitude rules into the packaged lifecycle root. Verification remains
   closeout-owned.

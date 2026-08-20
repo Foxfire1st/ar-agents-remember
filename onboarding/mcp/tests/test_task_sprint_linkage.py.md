@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,14 +59,26 @@ No configured Domain Documentation source applies.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The linkage forcing suite. | `SprintLinkageTests`; `SprintLinkageEdgeTests` | mcp/tests/test_task_sprint_linkage.py:101-706; mcp/tests/test_task_sprint_linkage.py:707-1064 |
-| The production module under test. | `SprintLinkageRequest`; `_AttachMasterPayload`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_sprint_linkage.py:86-160 |
+| The production module under test. | `SprintLinkageRequest`; `_AttachMasterPayload`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_sprint_linkage.py:102-111; mcp/src/agents_remember/application/task_sprint_linkage.py:130-154; mcp/src/agents_remember/application/task_sprint_linkage.py:164-173 |
 | The call-shape the suite now passes (L16). | `TaskDocCall` | mcp/src/agents_remember/application/task_doc_route_review.py:36-48 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
+## 260815-DAG-L15 F8 Fact Vocabulary And Serving-Build Preflight
+
+`test_report_does_not_flag_a_sprint_as_uncommanded_master` proves an orchestrates-bearing sprint
+doc is excluded from `uncommanded-master`, while a genuinely commanded-but-rowless master still
+surfaces as `membership-without-row`. `test_report_seat_row_edge_shapes` moved to the F8 vocabulary:
+rows whose seat doc is absent or carries no master reference now report `seat-doc-row-unresolved`
+(expected kinds ["seat-doc-row-unresolved", "seat-doc-row", "seat-doc-row-unresolved"]) instead of a
+master-less `seat-doc-row`. `test_attach_wraps_a_serving_build_preflight_refusal` proves attach wraps
+the `TopologyServingBuildError` as a `TaskDocError` (`serving-build-unsupported`) refusal.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: added test_report_does_not_flag_a_sprint_as_uncommanded_master and test_attach_wraps_a_serving_build_preflight_refusal; updated test_report_seat_row_edge_shapes to the F8 fact vocabulary (seat-doc-row-unresolved). Verified at code commit de3a0fd9.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: created (sidecar was missing since the file's L14
   creation) and recorded the L16 signature-compat update (`call=TaskDocCall(dry_run=...)`);

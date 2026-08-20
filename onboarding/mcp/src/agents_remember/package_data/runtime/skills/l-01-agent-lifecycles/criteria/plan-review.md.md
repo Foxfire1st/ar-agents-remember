@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T05:10+02:00 |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
 
 ## Purpose
 
@@ -96,7 +96,20 @@ must carry evidence and the owning Judgment Register id.
 PR-4 (topology agreement) is extended to typed-row/graph agreement: a sprint row carrying a typed
 `masterRef` must agree with the execution graph and `orchestrates` membership.
 
+## 260815-DAG-L15 Review-Doctrine
+
+PR-8 stands as a new criterion: the reviewer of a plan is never its author (a distinct reviewer
+seat runs the review; a self-signed requirement is a blocking finding), and every requirement
+verdict must cite evidence of the requirement's class — mounted-UI proof for rendering,
+operation-level proof for scheduling, artifact-level proof for the data model. Evidence of the
+wrong class is verdict-laundering, never a pass. Catching class: 260815-DAG L7/L8/L9 orchestrator
+self-reviews and the L8-R3 projection-only pass (review reports r2 F7, r4 F6, r6 F8/F9/F12).
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: PR-8 added — no plan self-review and requirement
+  verdicts must match their evidence class (mounted-UI / operation-level / artifact-level proof).
+  Verified at code commit de3a0fd9.
 
 - 2026-08-20T05:10+02:00 — 260815-DAG-L14: PR-4 extended to typed-row/graph agreement.
   Verified at code commit 2f494982.

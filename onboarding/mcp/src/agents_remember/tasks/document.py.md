@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T04:14+02:00                        |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00                        |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -73,6 +73,12 @@ resolution to exactly one node happens in graph validation, never at parse time.
 duplicate nodes/edges, self edges, undeclared or ambiguous endpoints, blank reasons/judgment ids,
 and cycles; it enforces sprint-wide leaf-ownership uniqueness plus lump/segment mutual exclusion
 per master, then derives deterministic topological waves over nodes without persisting positions.
+Since 260815-DAG-L15 the acyclicity refusal names the exact cycle members
+(`execution-graph must be acyclic; cycle members: A -> B`) — `derived_waves` leaves the residual
+(cycle members plus nodes downstream of a cycle) to `_find_cycle_members`, which extracts one
+deterministic cycle via the shared `_CycleSearch` DFS (`_residual_adjacency` + `_dfs_cycle_members`,
+split under the complexity target), so the error carries the cycle instead of a bare refusal
+(playthrough F4).
 Legacy absence remains parseable only for the finite migration path; no validator infers a default.
 
 `derived_leaf_placement` maps one master's planned leaf ids onto its authored segments and derives
@@ -134,6 +140,8 @@ the escape hatch for bespoke prose; the standard template sections stay the back
   ("a {kind} document has no orchestrates (master-only)") — an orchestration task is a `master`
   doc carrying the field, never a new kind; insignia/hierarchy consumers (observer projection →
   dashboard) treat an empty list as "not an orchestration task".
+- **Acyclicity refusals name the cycle (L15):** `derived_waves` raises with the exact cycle members,
+  never a bare "must be acyclic" — the member search is deterministic (declaration-order DFS).
 
 ## Repo-Internal References
 
@@ -142,6 +150,7 @@ the escape hatch for bespoke prose; the standard template sections stay the back
 | The renderer consumes this model. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:31-53 |
 | The store reads/writes this model. | `read_task_doc`; `write_task_doc` | mcp/src/agents_remember/tasks/store.py:32-33; mcp/src/agents_remember/tasks/store.py:36-37 |
 | The persisted-contract peer this mirrors. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:739-812 |
+| Acyclicity errors name the exact cycle members via the deterministic DFS helpers (L15-R8 F4). | `_find_cycle_members`; `_residual_adjacency`; `_dfs_cycle_members`; `_CycleSearch` | mcp/src/agents_remember/tasks/document.py:418-441; mcp/src/agents_remember/tasks/document.py:443-457; mcp/src/agents_remember/tasks/document.py:459-480; mcp/src/agents_remember/tasks/document.py:482-489 |
 
 ## L23 Final Candidate Disposition
 
@@ -149,7 +158,20 @@ Task-document readers derive canonical sprint, master, and leaf containment used
 and route-review authority. Those document relationships, not branch names or runtime ids supplied by
 an agent, select the task boundary.
 
+## 260815-DAG-L15 Named Cycle Refusals
+
+The playthrough F4 finding ("cycle errors never name the cycle members") is fixed in the graph model:
+`SprintExecutionGraph.derived_waves` now raises `execution-graph must be acyclic; cycle members: A -> B`
+using `_find_cycle_members` (Kahn residual → deterministic DFS slice between the repeated node), with
+the traversal split into `_residual_adjacency` + `_dfs_cycle_members` + the `_CycleSearch` dataclass to
+stay under the complexity target. The refusal dialect stays a `ValueError`-family shape that the
+application boundary translates to the typed `TaskDocError` family.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: `derived_waves` acyclicity refusals now name the exact
+  cycle members (`_find_cycle_members`/`_residual_adjacency`/`_dfs_cycle_members`/`_CycleSearch`,
+  playthrough F4). Verified at code commit de3a0fd9.
 
 - 2026-08-20T04:14+02:00 — 260815-DAG-L14: `TaskDocument` gained first-class sprint `seats`
   (`SprintSeat` — role/label/identity/state, sprint-only, unique among non-retired roles) and

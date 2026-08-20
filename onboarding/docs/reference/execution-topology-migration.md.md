@@ -51,7 +51,7 @@ restores the pre-authoring tree rather than re-enabling a compatibility path.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The read-only inventory the guide documents. | `inventory_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:804-867 |
+| The read-only inventory the guide documents. | `inventory_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:917-979 |
 | The graph-authoring batch (and graph-less bootstrap) the guide documents. | `author_execution_graph` | mcp/src/agents_remember/application/task_execution_topology.py:182-247 |
 | Fail-closed validation of a sprint's commanded membership and natures. | `validate_execution_topology` | mcp/src/agents_remember/tasks/document_refs.py:233-289 |
 

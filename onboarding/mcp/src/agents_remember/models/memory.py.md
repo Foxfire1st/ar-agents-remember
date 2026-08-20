@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/memory.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -42,6 +42,12 @@ contract-scoped call; subset and official-memory calls omit them.
 `RouteIndexRefreshResponse` likewise declares `staleIndexes`, so a dry-run's changed-index paths
 are present in the agent-facing response schema instead of relying only on the flexible envelope.
 
+Since 260815-DAG-L15 `MemoryQualityCheckResponse` also declares the optional async run envelope
+(L15-R7): `status` is the `Literal["started", "running", "completed", "failed", "run-not-found"]`
+and `runId` the poll handle. A `wait=false` call returns `{status: "started", runId}`; a poll
+returns `running`/`failed`/`completed` (the completed envelope carries the identical full result);
+`run-not-found` means evicted or restarted — rerun. Omission keeps the synchronous shape untouched.
+
 ## Invariants And Boundaries
 
 - Drift status is constrained to the producer's three tool states, spelled
@@ -57,12 +63,15 @@ are present in the agent-facing response schema instead of relying only on the f
   are non-negative and omission remains the unscoped/subset meaning.
 - `staleIndexes` is optional because older or non-preview route-index payloads may omit it; when
   present it is the list of index paths whose rendered bytes differ from the onboarding census.
+- The async `status`/`runId` fields are optional and additive: the synchronous quality response
+  omits them, so existing consumers are byte-unchanged (L15-R7).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Memory MCP application entry points route these tools to drift, quality, citation, route-index, init, baseline, and carryover services. | `drift_check_tool`; `memory_quality_check_tool`; `citation_check_tool`; `citation_source_index_build_tool`; `citation_fix_tool`; `citation_migrate_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:201-219; mcp/src/agents_remember/application/memory_tools.py:222-297; mcp/src/agents_remember/application/memory_tools.py:340-372; mcp/src/agents_remember/application/memory_tools.py:375-392; mcp/src/agents_remember/application/memory_tools.py:395-425; mcp/src/agents_remember/application/memory_tools.py:428-463; mcp/src/agents_remember/application/memory_tools.py:466-502; mcp/src/agents_remember/application/memory_tools.py:505-517; mcp/src/agents_remember/application/memory_tools.py:565-572; mcp/src/agents_remember/application/memory_tools.py:575-591; mcp/src/agents_remember/application/memory_tools.py:594-601; mcp/src/agents_remember/application/memory_tools.py:604-622 |
+| Memory MCP application entry points route these tools to drift, quality, citation, route-index, init, baseline, and carryover services. | `drift_check_tool`; `memory_quality_check_tool`; `citation_check_tool`; `citation_source_index_build_tool`; `citation_fix_tool`; `citation_migrate_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:205-223; mcp/src/agents_remember/application/memory_tools.py:226-247; mcp/src/agents_remember/application/memory_tools.py:424-456; mcp/src/agents_remember/application/memory_tools.py:459-476; mcp/src/agents_remember/application/memory_tools.py:479-509; mcp/src/agents_remember/application/memory_tools.py:512-547; mcp/src/agents_remember/application/memory_tools.py:550-586; mcp/src/agents_remember/application/memory_tools.py:589-601; mcp/src/agents_remember/application/memory_tools.py:649-656; mcp/src/agents_remember/application/memory_tools.py:659-675; mcp/src/agents_remember/application/memory_tools.py:678-685; mcp/src/agents_remember/application/memory_tools.py:688-706 |
+| The async start/poll application wrappers that fill the run envelope. | `start_memory_quality_check_run`; `poll_memory_quality_check_run` | mcp/src/agents_remember/application/memory_tools.py:250-279; mcp/src/agents_remember/application/memory_tools.py:280-301 |
 | "status: DriftStatus" is the shared status declaration. | "status: DriftStatus" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14 |
 | `DriftCheckResponse.status` uses the shared `DriftStatus` alias. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:13-27 |
 | `DriftSummary.status` uses the same shared `DriftStatus` alias. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |
@@ -73,7 +82,19 @@ are present in the agent-facing response schema instead of relying only on the f
 `MemoryQualityCheckResponse` now exposes optional `attestationPath`, pairing the structured curator
 readiness artifact with the existing rendered checklist path and zero/actionable counters.
 
+## 260815-DAG-L15 Async Run Envelope
+
+`MemoryQualityCheckResponse` declares the optional `status`/`runId` pair so the `wait=false` /
+poll flow (L15-R7) is present in the agent-facing schema: `started` carries the runId to poll,
+`running`/`failed`/`completed` come from polls (completed carries the identical full result), and
+`run-not-found` means evicted/restarted — rerun. The synchronous response omits both fields, so
+the existing contract is unchanged.
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: `MemoryQualityCheckResponse` gained the optional async
+  `status` (`started`/`running`/`completed`/`failed`/`run-not-found`) and `runId` fields (L15-R7);
+  the synchronous shape is unchanged. Verified at code commit de3a0fd9.
 
 - 2026-08-15T09:10+02:00 — L3 content update: added the structured curator attestation path to
   the memory-quality response model; verification remains closeout-owned.

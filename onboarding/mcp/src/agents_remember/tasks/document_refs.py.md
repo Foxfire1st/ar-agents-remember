@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/tasks/document_refs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-20T04:16+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated            | 2026-08-20T21:30+02:00 |
+| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
+| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,6 +47,14 @@ are not checked here — `linkage_report`/`linkageFacts` surface them as drift f
 backward tolerance). The altitude role sets (`SPRINT_ROLES`/`MASTER_ROLES`/`LEAF_ROLES`) are
 re-exported from `tasks/document.py`, their canonical home.
 
+Since 260815-DAG-L15 the atomic segment node-kind rule lives here once as the shared
+`refuse_segment_nodes_on_atomic_masters(nodes, nature_by_ref)`, consumed by both the final
+topology validator and the graph-authoring draft check (`_require_draft_node_kinds` in
+`application/task_execution_topology.py`) so the refusal dialect has one home (L15-R8 F6). The
+helper reads `nature_by_ref.get(node.ref)` — a missing key (an unresolvable draft ref) is never a
+raw `KeyError`; the draft scan records an explicit `None` and the later membership validation names
+the ref (L15-FIX-1).
+
 `execution_leaf_placement` returns each commanded master's live leaf-to-segment `LeafPlacement`
 (`MasterLeafPlacement`): computed against the master's live `subTasks` rows, so a leaf set that
 changed after graph authoring surfaces as unknown/unplaced facts on read paths; only the
@@ -71,6 +79,8 @@ Canonical paths are coordination-root-relative and remain tied to the actual tas
 - Every resolved reference names one real document at one verified level.
 - Ambiguity and scope loss fail closed.
 - This module does not inspect terminal liveness or choose occupants.
+- The atomic node-kind rule is centralized here (single source of truth); the shared helper must
+  never raise a raw `KeyError` on a missing nature mapping (L15-FIX-1).
 
 ### Todos
 
@@ -85,6 +95,7 @@ None.
 | --- | --- | --- |
 | Task document topology is centralized in one typed resolver. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:62-555 |
 | Structural seats consume this topology to qualify parent and child relations. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:22-160 |
+| The shared atomic segment-node-kind refusal used by the final validator and the authoring draft check (L15-R8 F6 / L15-FIX-1). | `refuse_segment_nodes_on_atomic_masters` | mcp/src/agents_remember/tasks/document_refs.py:42-60 |
 
 ## Cross-Repo References
 
@@ -96,7 +107,21 @@ inside agents-remember and has no sibling-repository code dependency.
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
+## 260815-DAG-L15 Shared Node-Kind Rule
+
+L15 extracted the atomic segment-node-kind refusal from `validate_execution_topology` into the
+module-level `refuse_segment_nodes_on_atomic_masters` shared with the authoring draft check
+(`_require_draft_node_kinds` in `application/task_execution_topology.py`), giving the node-kind
+rule one home and one refusal dialect (playthrough F6). The helper uses `nature_by_ref.get()`, so
+an unresolvable draft ref (typo'd `add_node` ref, or a master deleted after graph authoring)
+defers to membership validation instead of raising a raw `KeyError` (L15-FIX-1).
+
 ## Update History
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: extracted the shared atomic segment-node-kind refusal
+  (`refuse_segment_nodes_on_atomic_masters`) consumed by the final validator and the authoring
+  draft check; `nature_by_ref.get()` closes the L15-FIX-1 `KeyError` path. Verified at code commit
+  de3a0fd9.
 
 - 2026-08-20T04:16+02:00 — 260815-DAG-L14: `validate_sprint_linkage` hard-fails new-shape typed
   sprint↔master linkage drift (typed row must resolve to a same-repository commanded non-orchestrating
