@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_blockers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,9 +48,15 @@ certified sibling reported as an acquisition fact rather than a hard drain.
 | Pre- and post-closeout blocker sets are separately forced. | `test_pre_closeout_blockers_name_lifecycle_tree_memory_and_source_changes` | mcp/tests/test_closeout_queue_blockers.py:119-144 |
 | Closed external trees and commits are exact. | `test_closed_tree_and_certified_commit_blockers_are_exact` | mcp/tests/test_closeout_queue_blockers.py:171-212 |
 | Waiting reasons cover graph and blocker logistics. | `test_waiting_reasons_cover_lane_blocker_atomic_and_admission_facts` | mcp/tests/test_closeout_queue_blockers.py:367-437 |
-| Blocker lifetime exclusivity and structured refusal facts. | `BlockerLifetimeExclusivityTests` | mcp/tests/test_closeout_queue_blockers.py:440-583 |
+| Blocker lifetime exclusivity and structured refusal facts. | `BlockerLifetimeExclusivityTests` | mcp/tests/test_closeout_queue_blockers.py:436-579 |
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: source/ledger blocker expectations gained the
   `worktree_sync` recovery suffix; added `BlockerLifetimeExclusivityTests` (structured refusal

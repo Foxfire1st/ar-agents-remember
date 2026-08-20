@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/projections/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated            | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 
 ## What This Area Is
 
@@ -153,7 +153,14 @@ authority; projection never exposes worker or resume identity.
 The task-documents snapshot reader (`snapshots_impl/_task_documents.py`) now projects the render-ready `executionGraphView` on sprint documents (L12-R4): `_master_docs_by_ref` indexes valid master payloads from the bounded window, `_execution_graph_view` walks the persisted graph (waves, endpoints, titles, facts) and feeds the primitives-only builder, and `_task_doc_node` splits into the reader-body and execution-graph field groups. Docs without a graph project `None`.
 
 
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+`snapshots_impl/_closeout_queue.py` and `_runtime.py` import paths updated to the moved `worktrees/queue/*` / `models/queue/*`.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: snapshots_impl import paths updated to the moved queue packages. Verified at code commit e5cb139f.
+
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready graph view wiring in the task-documents snapshot reader. Verified at code commit b7f2c8e2.

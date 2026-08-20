@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l4_authority_branch_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -40,14 +40,20 @@ leaf sets through the production helpers that own those checks.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite owns focused negative forcing for repository and journal authority. | `IntegrationBranchRepositoryCoverageTests`; `IntegrationOperationAuthorityCoverageTests` | mcp/tests/test_l4_authority_branch_coverage.py:61-195; mcp/tests/test_l4_authority_branch_coverage.py:198-618 |
-| Configured topology, integration validation/recovery, lineage, and series completeness are forced at their production owners. | `IntegrationBranchAuthorityCoverageTests`; `IntegrationValidationCoverageTests`; `LineageAndSeriesCoverageTests` | mcp/tests/test_l4_authority_branch_coverage.py:621-763; mcp/tests/test_l4_authority_branch_coverage.py:766-899; mcp/tests/test_l4_authority_branch_coverage.py:902-1032 |
+| The suite owns focused negative forcing for repository and journal authority. | `IntegrationBranchRepositoryCoverageTests`; `IntegrationOperationAuthorityCoverageTests` | mcp/tests/test_l4_authority_branch_coverage.py:60-194; mcp/tests/test_l4_authority_branch_coverage.py:197-617 |
+| Configured topology, integration validation/recovery, lineage, and series completeness are forced at their production owners. | `IntegrationBranchAuthorityCoverageTests`; `IntegrationValidationCoverageTests`; `LineageAndSeriesCoverageTests` | mcp/tests/test_l4_authority_branch_coverage.py:620-765; mcp/tests/test_l4_authority_branch_coverage.py:768-901; mcp/tests/test_l4_authority_branch_coverage.py:904-1034 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 threaded the effective-nature argument into an internal surface-authority call; documented authority behavior is unchanged. Verification remains closeout-owned.
 

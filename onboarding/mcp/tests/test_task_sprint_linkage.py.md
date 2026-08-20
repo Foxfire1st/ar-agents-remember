@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,8 +59,8 @@ No configured Domain Documentation source applies.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The linkage forcing suite. | `SprintLinkageTests`; `SprintLinkageEdgeTests` | mcp/tests/test_task_sprint_linkage.py:101-706; mcp/tests/test_task_sprint_linkage.py:707-1064 |
-| The production module under test. | `SprintLinkageRequest`; `_AttachMasterPayload`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_sprint_linkage.py:102-111; mcp/src/agents_remember/application/task_sprint_linkage.py:130-154; mcp/src/agents_remember/application/task_sprint_linkage.py:164-173 |
-| The call-shape the suite now passes (L16). | `TaskDocCall` | mcp/src/agents_remember/application/task_doc_route_review.py:36-48 |
+| The production module under test. | `SprintLinkageRequest`; `_AttachMasterPayload`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:102-111; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:130-154; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:164-173 |
+| The call-shape the suite now passes (L16). | `TaskDocCall` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:36-45 |
 
 ## Cross-Repo References
 
@@ -77,6 +77,12 @@ master-less `seat-doc-row`. `test_attach_wraps_a_serving_build_preflight_refusal
 the `TopologyServingBuildError` as a `TaskDocError` (`serving-build-unsupported`) refusal.
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: added test_report_does_not_flag_a_sprint_as_uncommanded_master and test_attach_wraps_a_serving_build_preflight_refusal; updated test_report_seat_row_edge_shapes to the F8 fact vocabulary (seat-doc-row-unresolved). Verified at code commit de3a0fd9.
 

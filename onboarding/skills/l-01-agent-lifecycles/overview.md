@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated            | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 
 ## Purpose
 
@@ -101,7 +101,14 @@ updated, with canonical and generated copies kept identical by `scripts/sync-ski
 
 The review doctrine route was repaired: `roles/reviewer.md` gained the Review Independence and Evidence-Type Matching section (reviewer seat ≠ author seat; rendering → mounted-UI proof, scheduling → operation-level proof, data model → artifact-level proof, doctrine → code anchor); `roles/orchestrator.md` gained the independence paragraph; `criteria/plan-review.md` gained standing PR-8; `criteria/report-verification.md` extended RV-1 to `git diff --summary` mode rows; `criteria/doctrine.md` gained D-6 (bounded `L<leaf>-R<n>`/`S<n>` requirement ids allowed — reconciled with the memory canonical Source Comment Scope rule, folded at master level); `templates/verdict.md` gained rule 7 + the author-seat row; `templates/manager-brief.md` gained the independence/evidence line; `SKILL.md` extended the three-party-loop paragraph. All 9 generated copy trees stay byte-identical via `scripts/sync-skills.py`.
 
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+The `templates/orchestration-task.md` heading was restored to `## Canonical executionGraph Adoption Payload` (the `executionGraph` qualifier phrase restored); all 9 generated copy trees re-synced byte-identically via `scripts/sync-skills.py`.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: orchestration-task template heading restored to `## Canonical executionGraph Adoption Payload`; copies re-synced. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: review-doctrine repair — no-self-review + evidence-type matching (reviewer/orchestrator), PR-8, RV-1 extension, D-6 bounded requirement ids, verdict/manager-brief templates, SKILL.md three-party loop. Verified at code commit de3a0fd9.
 

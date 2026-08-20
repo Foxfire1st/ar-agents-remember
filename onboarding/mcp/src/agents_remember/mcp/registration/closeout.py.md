@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ The three destructive tools forward flat:
 | --- | --- | --- |
 | The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:78-86 |
 | `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tools.py:309-316; mcp/src/agents_remember/application/worktree_tools.py:319-328 |
-| The two pre-staging refusals and reset-then-stage Dagger gate described by apply live in the extracted staged-quality owner. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; `gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:20-51; mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129 |
+| The two pre-staging refusals and reset-then-stage Dagger gate described by apply live in the extracted staged-quality owner. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:20-36; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:39-51; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
 | The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:63-65; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:97-104; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:107-169 |
 | The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring_tests_2.py:120-140 |
 | The closeout descriptions are asserted to pin quality-before-commit. | `test_closeout_tool_descriptions_pin_strict_quality_before_mutation` | mcp/tests/test_tools.py:223-237 |
@@ -132,7 +132,14 @@ The public integration description states that leaf integration lands the accept
 bound to its closeout commit without rerunning it. Only master integration owns a new acceptance
 run: full mode through the pinned Dagger executor.
 
+## 260815-DAG Master Full-Gate Repair
+
+`_register_direct_landing_tool` was renamed to `_register_direct_landing_tools` (the direct-landing registration group); the registered tool surface is unchanged.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: renamed the direct-landing registration helper to `_register_direct_landing_tools`. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: registers `direct_landing` (branch-addressed direct
   landing, L16-R8) through the new `_register_direct_landing_tool` helper; preview/apply

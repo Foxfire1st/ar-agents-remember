@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_lifecycle_finalize.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T04:54+02:00 |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -57,6 +57,18 @@ The suite imports `LifecycleFinalizeTaskResponse` from `models.lifecycles.finali
 owner. Finalization payload, registry, task-document, and blocker assertions are unchanged.
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T04:54+02:00 — 260815-DAG-L14 curator: re-read the `TaskDocument` claim — the persisted
   model gained sprint `seats` and typed `masterRef` rows; wording retained, citation regenerated to

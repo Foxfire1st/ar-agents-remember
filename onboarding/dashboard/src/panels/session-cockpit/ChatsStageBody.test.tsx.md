@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T10:55+02:00 |
-| lastVerifiedCommitHash |  `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate |  2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,14 @@ No cross-repository boundary is owned here.
 | --- | --- | --- |
 | No cross-repository evidence applies. | — | — |
 
+## 260815-DAG Master Full-Gate Repair
+
+`afterEach` is now async and flushes the virtualizer's 150 ms scroll-observer debounce (fake-timer clear + real-timer 200 ms settle) before jsdom teardown.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: async `afterEach` flushes the virtualizer scroll-observer debounce before teardown. Verified at code commit e5cb139f.
+
 - 2026-08-14T06:30+02:00 — No production impact: L23 drains TanStack Virtualizer's fake-timer
   callback before restoring real time, preserving the existing scroll-restore proof without jsdom
   teardown leakage. Verification remains closeout-owned.

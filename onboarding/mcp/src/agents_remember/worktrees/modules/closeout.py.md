@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -374,12 +374,12 @@ No external Domain Documentation source is configured for this memory repo.
 | The strict source-quality adapter decides applicability, executes the current worktree wrapper under the selected mode/executor, and fails before mutation. | `code_quality_gate_preview`; `requires_strict_code_quality`; `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:97-104; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:107-169; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:184-265 |
 | Focused closeout regressions prove failure preserves code/memory/ledger/contract state and success runs the leaf targeted contract before code commit; `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests` pin the staging step, both refusals, the reset-after-the-conflict-check ordering, and that a refused gate leaves the worktree staged. | `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests`, `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_gate_scope.py:130-208; mcp/tests/test_worktree_closeout_quality_gate.py:808-931; mcp/tests/test_worktree_closeout_quality_gate.py:934-992; mcp/tests/test_worktree_closeout_quality_gate.py:998-1061 |
 | `require_git` is the fail-closed facade over the shared Git runner; it preserves raw runner decoding and makes only raised diagnostics transport-safe. | `require_git` | mcp/src/agents_remember/worktrees/modules/git.py:18-29 |
-| Closeout imports the extracted staged-quality owner, then invokes it with the accepted candidate before approval claim. | "gate_staged_code as _gate_staged_code"; "code_quality_gate = _gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout.py:47-47; mcp/src/agents_remember/worktrees/modules/closeout.py:941-941 |
-| The extracted owner binds and certifies the exact staged candidate. | "def gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129 |
-| The external-memory citation preflight remains immediately before strict code quality; the extracted helper module owns phase execution and combination without moving this coordinator boundary. | "def _memory_quality_before_refresh("; "def run_memory_quality_phase("; "def combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout.py:803-803; mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py:33-33; mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py:56-56 |
+| Closeout imports the extracted staged-quality owner, then invokes it with the accepted candidate before approval claim. | "gate_staged_code as _gate_staged_code"; "code_quality_gate = _gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout.py:95-95; mcp/src/agents_remember/worktrees/modules/closeout.py:936-936 |
+| The extracted owner binds and certifies the exact staged candidate. | "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
+| The external-memory citation preflight remains immediately before strict code quality; the extracted helper module owns phase execution and combination without moving this coordinator boundary. | "def _memory_quality_before_refresh("; "def run_memory_quality_phase("; "def combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout.py:798-798; mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py:33-33; mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py:56-56 |
 | `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | `recovery_guidance`, `RecoveryOperation`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:461-463 |
 | `ContractCells` and `amend_contract` define the contract-cell amendment API. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:181-196; mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
-| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:764-800 |
+| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:759-795 |
 
 ## 260731-EFA-L1 Current Commit-Gate Delta
 
@@ -435,7 +435,14 @@ certification, so a crash cannot leave a valid closeout permanently unintegratab
 
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
+## 260815-DAG Master Full-Gate Repair
+
+Imports updated to the moved queue/integration packages (`worktrees/queue/*`, `worktrees/integration/integration_branch_authority`); the closeout quality-facts composition was extracted into `_closeout_quality_facts` — the attestations, code-quality gate, memory-quality preflight, and strict-quality requirement for both the resuming and fresh paths.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: imports updated to the moved packages; closeout quality facts extracted into `_closeout_quality_facts`. Verified at code commit e5cb139f.
+
 
 - 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 

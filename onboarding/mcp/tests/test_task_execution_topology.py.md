@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,12 +52,12 @@ the new application module attached to this existing behavioral topology suite.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Graph schema cases force the closed structural contract. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:115-211 |
-| Bootstrap and cross-document cases force exact membership, projection, and rollback. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:213-938 |
+| Bootstrap and cross-document cases force exact membership, projection, and rollback. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:214-935 |
 | Inventory cases force branch-backed atomic classification, empty-tree counts, and branch-enumeration refusal. | `test_inventory_enumerates_sprints_and_proposes_branch_backed_nature` | mcp/tests/test_task_execution_topology.py:225-249 |
 | Cross-root publication failure restores canonical task documents and leaves no queue state or pending WAL. | `test_bootstrap_refuses_non_exact_membership_and_rolls_back_cross_root_failure` | mcp/tests/test_task_execution_topology.py:783-832 |
-| The production policy under test lives in the application topology module. | `author_execution_graph` | mcp/src/agents_remember/application/task_execution_topology.py:182-247 |
+| The production policy under test lives in the application topology module. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:193-261 |
 | The L11 segment-graph schema/projection/placement cases split out under the file-size rail. | `ExecutionGraphSegmentSchemaTests` | mcp/tests/test_task_execution_topology_segments.py:41-254 |
-| The L11 incremental authoring forcing suite (which also owns the graph-less bootstrap forcing). | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:56-983 |
+| The L11 incremental authoring forcing suite (which also owns the graph-less bootstrap forcing). | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:57-982 |
 
 ## 260815-DAG-L9 Inventory Forcing
 
@@ -70,6 +70,12 @@ the refusal when `run_git branch` enumeration fails.
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (task_doc_tool takes
   `call: TaskDocCall`); suite purpose unchanged. Verified at code commit a9d50e08.

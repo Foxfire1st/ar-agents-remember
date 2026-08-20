@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_organizational_completion_recovery_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-17T12:09+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -38,5 +38,8 @@ The suite starts real queue/lifecycle state, persists the real repair WAL, injec
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-17T12:09+02:00 — 260815-DAG-L5: created onboarding for the organizational completion recovery-edge suite.

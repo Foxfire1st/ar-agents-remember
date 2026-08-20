@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_execution_topology_l15.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,13 +27,14 @@ subclassed) so pytest cannot re-collect the parent's tests through `dir()` and d
 ### Logic
 
 Two classes carry the moved tests: `ExecutionGraphSchemaL15Tests` (the graph-model L15 behaviors:
-edge-judgmentId-None parse, cycle-member naming, the three cycle-search units, judgment-author-refused)
-and `ExecutionTopologyL15Tests` (the authoring-path behaviors: dry-run lock F2, node-kind order F6,
-missing-judgment typed refusal F5, unresolvable-segment-ref typed refusal L15-FIX-1,
-enforce-preflight L15-R4, plain-create, `_edit_emits_topology_schema`, serving-preflight-refusal,
-move-retargets-edge F3). It imports shared fixtures (`MASTER_A`/`MASTER_B`/`REPOSITORY`,
-`_config`, `_graph`, `_judgment_row`, `_master`, `_JUDGMENT_HEADER`) from the parent
-`test_task_execution_topology` module — the harness itself is replicated locally.
+edge-judgmentId-None parse, edge-blank-judgmentId refusal, cycle-member naming, the three
+cycle-search units, judgment-author-refused) and `ExecutionTopologyL15Tests` (the authoring-path
+behaviors: dry-run lock F2, node-kind order F6, missing-judgment typed refusal F5,
+unresolvable-segment-ref typed refusal L15-FIX-1, enforce-preflight L15-R4, plain-create,
+`_edit_emits_topology_schema`, serving-preflight-refusal, move-retargets-edge F3). It imports
+shared fixtures (`MASTER_A`/`MASTER_B`/`REPOSITORY`, `_config`, `_graph`, `_judgment_row`,
+`_master`, `_JUDGMENT_HEADER`) from the parent `test_task_execution_topology` module — the harness
+itself is replicated locally.
 
 Key behavioral pins: `test_authoring_refuses_an_unresolvable_segment_ref_with_a_typed_error` drives
 the production `task_doc_tool` `author_execution_graph` path with an `add_node` whose ref does not
@@ -57,7 +58,7 @@ retargets-edge and node-kind-order tests pin the F3/F6 refusal ordering.
 | The moved graph-model L15 tests. | `ExecutionGraphSchemaL15Tests` | mcp/tests/test_task_execution_topology_l15.py:60-210 |
 | The moved authoring-path L15 tests. | `ExecutionTopologyL15Tests` | mcp/tests/test_task_execution_topology_l15.py:118-416 |
 | The typed unresolvable-ref refusal under test (L15-FIX-1). | `test_authoring_refuses_an_unresolvable_segment_ref_with_a_typed_error` | mcp/tests/test_task_execution_topology_l15.py:268-291 |
-| The parent suite this module was split from (kept under the file-size limit). | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:213-939 |
+| The parent suite this module was split from (kept under the file-size limit). | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:214-935 |
 
 ## Cross-Repo References
 
@@ -67,8 +68,20 @@ No cross-repo boundary applies to this forcing suite.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260815-DAG Master Full-Gate Repair
+
+The 260815-DAG master full-gate repair moved the task-doc imports and mock targets under
+`application/task_docs/` (`task_doc_tools`, `task_execution_topology`, and the
+`require_serving_topology_schema` patches). In `ExecutionGraphSchemaL15Tests`,
+`test_edge_without_a_judgment_id_parses_to_none` now passes `judgmentId=None` explicitly (an
+omitted field never runs the validator, leaving the None branch uncovered), and a new
+`test_edge_blank_judgment_id_after_strip_is_refused` asserts the blank-id refusal.
+
 ## Update History
 
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: task-doc imports/mock targets moved
+  under `application/task_docs/`; the edge-judgment tests now pass `judgmentId=None` explicitly and
+  add the blank-id-after-strip refusal. Verified at code commit e5cb139f.
 - 2026-08-20T21:30+02:00 — Created for 260815-DAG-L15 (gate-repair round 2): the L15-era
   graph-authoring hygiene tests split from `test_task_execution_topology.py` (file-size rail),
   self-contained harness replicated to prevent pytest re-collection duplication. Verified at code

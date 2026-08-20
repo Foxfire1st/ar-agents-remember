@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_closeout_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash |  `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
-| lastVerifiedCommitDate |  2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash |  `e5cb139f66abbd6502d4dcc4be883eb5f49770fe`|
+| lastVerifiedCommitDate |  2026-08-21T00:28:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -177,9 +177,9 @@ The staging classes keep git real in both directions: cit:([`_task_worktree`], m
 repository **and** a linked worktree off it, because the precondition under test is git's own
 distinction between the two and a fixture that faked it would be testing the fixture;
 cit:([`_conflicted_task_worktree`], mcp/tests/test_worktree_closeout_quality_gate.py:840-851) produces a genuine unmerged index by running a real
-conflicting merge. cit:([`_refusing_gate`], mcp/tests/test_worktree_closeout_quality_gate.py:643-648) is the shared patch for "the gate raises",
-and cit:([`GATE_REFUSAL`], mcp/tests/test_worktree_closeout_quality_gate.py:644-644) is the message closeout really emits. The two module constants
-cit:([`DROPPED_TOOL_ARTEFACT`], mcp/tests/test_worktree_closeout_quality_gate.py:1045-1045) names the
+conflicting merge. cit:([`_refusing_gate`], mcp/tests/test_worktree_closeout_quality_gate.py:649-654) is the shared patch for "the gate raises",
+and cit:([`GATE_REFUSAL`], mcp/tests/test_worktree_closeout_quality_gate.py:646-646) is the message closeout really emits. The two module constants
+cit:([`DROPPED_TOOL_ARTEFACT`], mcp/tests/test_worktree_closeout_quality_gate.py:1047-1047) names the
 path the retry case turns on; the created-file fixture now lives in the companion scope suite.
 
 ### Invariants And Boundaries
@@ -248,9 +248,9 @@ The suite proves the adapter and its production closeout call sites together.
 | The retry tree-equality proof that staging is recomputed per attempt rather than accumulated. | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:998-1061 |
 | The adapter under test: the three status constants plus wrapper-presence applicability and the preview that reports them. | `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:76-177 |
 | The explicit local entry refuses host test execution without a fallback. | `run_local_quality_diagnostic` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:338-348 |
-| The closeout call site passes `contract.code_worktree`, the enclosure worktree group, `diff_base=contract.code_base_commit`, the configured Dagger executor, and the accepted candidate tree through the imported `_gate_staged_code` alias. | "code_quality_gate = _gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout.py:941-941 |
-| `gate_staged_code` under test: both refusals and candidate checks, then the mixed reset, `add -A`, the reviewed pre-commit hook, and the targeted Dagger gate. | `gate_staged_code` | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129 |
-| The two preconditions themselves: the linked-worktree check and the unmerged-index check. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:20-36; mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:39-51 |
+| The closeout call site passes `contract.code_worktree`, the enclosure worktree group, `diff_base=contract.code_base_commit`, the configured Dagger executor, and the accepted candidate tree through the imported `_gate_staged_code` alias. | "code_quality_gate = _gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout.py:936-936 |
+| `gate_staged_code` under test: both refusals and candidate checks, then the mixed reset, `add -A`, the reviewed pre-commit hook, and the targeted Dagger gate. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
+| The two preconditions themselves: the linked-worktree check and the unmerged-index check. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:20-36; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:39-51 |
 | The scope derivation the created-file cases exercise for real — `git ls-files` over the index is why staging changes what the gate sees. | `derive_scope`; `posix_args` | mcp/src/agents_remember/code_quality/check.py:79-80; mcp/src/agents_remember/code_quality/check.py:372-373 |
 
 ## Cross-Repo References
@@ -301,7 +301,19 @@ still proving both preview and apply receive the actual worktree path.
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
+## 260815-DAG Master Full-Gate Repair
+
+Imports re-point to the restructured `worktrees/queue/` package (`closeout_recovery`,
+`closeout_staged_quality`, the latter leaving `worktrees.modules`). In
+`test_series_workbench_is_rechecked_after_quality_before_approval_claim` the fixture now also
+lands the leaf's memory worktree before the master closeout, so the series closeout starts from
+clean leaf memory.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: re-pointed closeout_recovery and
+  closeout_staged_quality imports to worktrees/queue and made the series-workbench fixture land
+  leaf memory before master closeout. Verified at code commit e5cb139f.
 
 - 2026-08-16T04:06+02:00 — Dagger fixture repair: the series candidate-drift case isolates exact named-ref revalidation, while memory-only dirt expects the unified no-series-workbench refusal.
 - 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
@@ -366,7 +378,7 @@ This task extends this suite's production-bound fixtures or assertions for task-
 
 - 2026-08-01T08:55+02:00 — 260731-EFA-L4 curator: this suite gained the staging half — four new
   classes at L452-L835, added because closeout now runs the gate over a **staged** worktree via
-  cit:([`gate_staged_code`], mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py:77-129). Recorded all four with the property each actually
+  cit:([`gate_staged_code`], mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129). Recorded all four with the property each actually
   asserts: cit:([`CloseoutGateSeesCreatedFilesTests`], mcp/tests/test_worktree_closeout_gate_scope.py:130-208) — the original defect in **both**
   directions, a created file that must be linted and a deleted file that must stop being handed to
   ruff, closed by the equality `sorted(gate.lint_paths) == sorted(.py files in the commit tree)`,

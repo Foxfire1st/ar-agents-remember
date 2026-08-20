@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_seat_independent_execution.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,10 +27,12 @@ fallback branches are exercised at the `_context` level.
 
 `AmbientCloseoutQueueTests` drives the real `closeout_queue` boundary through
 `closeout_queue_tool` with an ambient (non-seat) caller: a full declare → set-grade → select →
-closeout lifecycle works (`test_ambient_declared_caller_runs_declare_grade_select_closeout`); the
-declared identity is validated like a seat (`test_ambient_declared_identity_is_validated_like_a_seat`);
-a missing declared caller refuses `closeout-queue-caller-required`; a hosted seat still wins over a
-matching declared caller; and a non-`ambient-seat-unavailable` seat error reraises wrapped.
+closeout lifecycle works (`test_ambient_declared_caller_runs_declare_grade_select_closeout`); an
+ambient declared orchestrator acquires an atomic blocker
+(`test_ambient_declared_caller_acquires_an_atomic_blocker`); the declared identity is validated
+like a seat (`test_ambient_declared_identity_is_validated_like_a_seat`); a missing declared caller
+refuses `closeout-queue-caller-required`; a hosted seat still wins over a matching declared caller;
+and a non-`ambient-seat-unavailable` seat error reraises wrapped.
 `DeclaredCallerModelTests` pin the blank-role refusal and role stripping.
 
 `AmbientStructuralGateFallbackTests` (the wave-2 F1 fix) drive the real `_context` fallback
@@ -68,7 +70,7 @@ No configured Domain Documentation source applies.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The ambient closeout lifecycle end-to-end. | `test_ambient_declared_caller_runs_declare_grade_select_closeout` | mcp/tests/test_seat_independent_execution.py:89-132 |
-| Declared identity is validated like a seat. | `test_ambient_declared_identity_is_validated_like_a_seat` | mcp/tests/test_seat_independent_execution.py:133-151 |
+| Declared identity is validated like a seat. | `test_ambient_declared_identity_is_validated_like_a_seat` | mcp/tests/test_seat_independent_execution.py:159-176 |
 | Gate fallback behavioral branches (required/conflict/authorize). | `AmbientStructuralGateFallbackTests` | mcp/tests/test_seat_independent_execution.py:222-343 |
 | The fallback under test. | `_context`; `_declared_queue_actor` | mcp/src/agents_remember/application/structural/gate_tools.py:48-71; mcp/src/agents_remember/application/closeout_queue.py:61-71 |
 
@@ -76,7 +78,18 @@ No configured Domain Documentation source applies.
 
 No meaningful cross-repository reference applies.
 
+## 260815-DAG Master Full-Gate Repair
+
+The 260815-DAG master full-gate repair moved the queue imports under `worktrees/queue/`
+(`closeout_queue`, `closeout_queue_lifecycle`). `AmbientCloseoutQueueTests` gained
+`test_ambient_declared_caller_acquires_an_atomic_blocker`, proving an ambient declared orchestrator
+can acquire an atomic blocker with a rationale after its predecessor master completes (the ready
+lane then carries the blocked leaf), and the `_ambient` payload builder now forwards `rationale`.
+
 ## Update History
 
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: queue imports moved under
+  `worktrees/queue/`; `AmbientCloseoutQueueTests` gained the ambient atomic-blocker acquisition test
+  and the payload builder forwards `rationale`. Verified at code commit e5cb139f.
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: created for L16-R5 (ambient end-to-end lifecycle)
   and the wave-2 F1 fold (real behavioral gate fallback tests). Verified at code commit a9d50e08.

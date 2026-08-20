@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_task_document_application_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -45,7 +45,19 @@ A new application regression proves series/master closeout returns
 not-required-master-altitude without probing candidate change or terminal leaf task-document
 identity. Leaf candidate-bound review behavior remains unchanged.
 
+## 260815-DAG Master Full-Gate Repair
+
+Imports and mock targets re-point to the `application/task_docs/` package
+(`task_doc_route_review`, `task_doc_tools`). `ApplicationTests2` gained two helper-branch
+regressions: `test_route_review_contract_initializes_a_fresh_coordination_tree` (git-init path
+on a fresh coordination tree) and `test_organizational_leaf_contract_reuses_an_existing_super_branch`
+(a second helper call on the same coord reuses the existing `super` source branch).
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: re-pointed task_doc imports and
+  mock targets to the application/task_docs package and added the fresh-coordination-tree
+  git-init and existing-super-branch helper regressions. Verified at code commit e5cb139f.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (task_doc_tool takes
   `call: TaskDocCall`); suite purpose unchanged. Verified at code commit a9d50e08.

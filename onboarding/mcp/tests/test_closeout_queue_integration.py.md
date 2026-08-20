@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_integration.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T09:45+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,8 +67,20 @@ No meaningful cross-repository reference applies.
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
+## 260815-DAG Master Full-Gate Repair
+
+The 260815-DAG master full-gate repair moved this suite's imports to the restructured packages:
+queue owners (`closeout_queue`, `closeout_queue_lifecycle`, `QueueActor`) now import from
+`worktrees/queue/`, lifecycle-operation store/dispatch and integration owners from
+`worktrees/integration/`, and the queue request model from `models/queue/`; the `__main__` runner
+was removed. No assertions changed.
+
 ## Update History
 
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: queue, lifecycle-operation,
+  integration-authority, and model imports follow the package moves (`worktrees/queue/`,
+  `worktrees/integration/`, `models/queue/`); the `__main__` runner was removed. Verified at code
+  commit e5cb139f.
 - 2026-08-17T12:30+02:00 — No content impact: L5 coverage-pragma/import alignment only; the documented integration behavior is unchanged.
 
 - 2026-08-16T09:45+02:00 — The graph-disappearance regression now bypasses only earlier source-state and lineage projections so the real queue claim/revalidation owner must reject the missing graph before merge.

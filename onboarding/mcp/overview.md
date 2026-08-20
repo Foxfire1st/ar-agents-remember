@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -880,7 +880,14 @@ The MCP package renders and projects the sprint execution graph for humans: `tas
 
 New `tasks/serving_preflight.py` (served-build preflight, L15-R4) and `application/memory_quality_runs.py` (bounded async run registry, L15-R7); the `memory_quality_check` registration gained `wait`/`run_id`; topology/linkage authoring hardened (typed refusals, `create=False` dry-run locks); the L7 `worktrees/orchestration_portfolio.py` module + its test were deleted (recorded decision: doctrine + queue mechanism).
 
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+New sub-package routes `application/task_docs/`, `models/queue/`, `worktrees/queue/`, `worktrees/integration/` (32 moved modules); the `task_doc` special-op wire-shape fix (`TaskDocResponse` fields + `_sprint_doc_identity`); closeout/reopen refactors; the package_data orchestration-task template copy re-synced.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: new package routes (`application/task_docs`, `models/queue`, `worktrees/queue`, `worktrees/integration`); `TaskDocResponse` wire-field fix; closeout/reopen refactors; sync-skills orchestration-task copy. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: new serving_preflight + memory_quality_runs modules, async memory-quality wait/run_id surface, hardened authoring dialect, and the L7 orchestration_portfolio deletion. Verified at code commit de3a0fd9.
 

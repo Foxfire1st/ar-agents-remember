@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_serving_preflight.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,7 +68,17 @@ No cross-repo boundary applies to this forcing suite.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260815-DAG Master Full-Gate Repair
+
+`EditableInstallDetectionTests` gained `test_callable_read_text_is_invoked_with_the_metadata_filename`,
+pinning that `_is_editable_install` invokes the injected `read_text` callable with the exact
+metadata filename (`direct_url.json`). No other editable-detection branches changed.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: added the callable read_text
+  filename-invocation regression to the editable-install detection branch matrix. Verified at
+  code commit e5cb139f.
 
 - 2026-08-20T21:30+02:00 — Created for 260815-DAG-L15-R4: the served-build preflight forcing suite
   (floor semantics, both refusal legs, editable/source pass), extended in the gate-repair round with

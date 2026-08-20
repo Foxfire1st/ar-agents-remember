@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agent_doctrine_plane_identity.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash |  `b523f53b193e9783e7c7e6410c772e7d64d8df17`|
-| lastVerifiedCommitDate |  2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash |  `e5cb139f66abbd6502d4dcc4be883eb5f49770fe`|
+| lastVerifiedCommitDate |  2026-08-21T00:28:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,20 @@ master gates, leaf-only repair routing, and every installed/runtime copy's exact
 phrase sweep rejects the fixed-master/workbench topology, and a delimiter check keeps the changed
 Markdown templates rectangular.
 
+## 260815-DAG Master Full-Gate Repair
+
+`test_execution_topology_doctrine_assigns_fact_judgment_and_queue_ownership` was restructured
+into per-doctrine-file assertion helpers (`_assert_architect_doctrine`,
+`_assert_strategist_doctrine`, `_assert_orchestrator_doctrine`, `_assert_manager_doctrine`,
+`_assert_reviewer_doctrine`, `_assert_orchestration_task_doctrine`,
+`_assert_manager_brief_doctrine`) that the test composes; the asserted term sets and the
+lifecycle/worker/handover/verdict/criteria checks are unchanged. Import paths are untouched.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: refactored the topology doctrine
+  test into per-file assertion helpers with identical asserted terms. Verified at code commit
+  e5cb139f.
 
 - 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 re-pointed one expected doctrine
   string from `migrate_execution_topology` to `author_execution_graph`; the scan and parity

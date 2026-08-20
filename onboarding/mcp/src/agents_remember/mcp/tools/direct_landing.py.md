@@ -52,7 +52,7 @@ No configured Domain Documentation source applies.
 | --- | --- | --- |
 | The payload envelope wrapping the application result. | `direct_landing_payload`; `_tool_payload` | mcp/src/agents_remember/mcp/tools/direct_landing.py:16-20; mcp/src/agents_remember/mcp/tools/base.py:74-76 |
 | Registered as a public tool. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-70 |
-| The registration declaration. | `_register_direct_landing_tool` | mcp/src/agents_remember/mcp/registration/closeout.py:33-79 |
+| The registration declaration. | `_register_direct_landing_tools` | mcp/src/agents_remember/mcp/registration/closeout.py:33-79 |
 
 ## Cross-Repo References
 

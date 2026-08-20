@@ -397,6 +397,7 @@
     "mcp/tests/test_sync_harness.py",
     "mcp/tests/test_sync_runtime.py",
     "mcp/tests/test_sync_scripts.py",
+    "mcp/tests/test_task_doc_wire_shape.py",
     "mcp/tests/test_task_document.py",
     "mcp/tests/test_task_document_application_1.py",
     "mcp/tests/test_task_document_application_2.py",
@@ -453,8 +454,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 431,
-    "fileSidecars": 441,
+    "sourceFilesInScope": 432,
+    "fileSidecars": 442,
     "childRoutes": 0
   },
   "routingTerms": [

@@ -18,7 +18,6 @@
     "mcp/src/agents_remember/worktrees/modules/cli.py",
     "mcp/src/agents_remember/worktrees/modules/closeout.py",
     "mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py",
-    "mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py",
     "mcp/src/agents_remember/worktrees/modules/code_quality_gate.py",
     "mcp/src/agents_remember/worktrees/modules/context.py",
     "mcp/src/agents_remember/worktrees/modules/contract_reader.py",
@@ -38,8 +37,8 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 26,
-    "fileSidecars": 26,
+    "sourceFilesInScope": 25,
+    "fileSidecars": 25,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -53,7 +52,6 @@
     "cli",
     "closeout",
     "closeout_memory_quality",
-    "closeout_staged_quality",
     "code",
     "code_quality_gate",
     "context",
@@ -84,7 +82,6 @@
     "remember",
     "result",
     "src",
-    "staged",
     "start",
     "start_contract",
     "start_result",
@@ -106,7 +103,6 @@
       "mcp/src/agents_remember/worktrees/modules/cli.py",
       "mcp/src/agents_remember/worktrees/modules/closeout.py",
       "mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py",
-      "mcp/src/agents_remember/worktrees/modules/closeout_staged_quality.py",
       "mcp/src/agents_remember/worktrees/modules/code_quality_gate.py",
       "mcp/src/agents_remember/worktrees/modules/context.py",
       "mcp/src/agents_remember/worktrees/modules/contract_reader.py",
@@ -120,7 +116,8 @@
       "mcp/src/agents_remember/worktrees/modules/models.py",
       "mcp/src/agents_remember/worktrees/modules/onboarding.py",
       "mcp/src/agents_remember/worktrees/modules/start.py",
-      "mcp/src/agents_remember/worktrees/modules/start_contract.py"
+      "mcp/src/agents_remember/worktrees/modules/start_contract.py",
+      "mcp/src/agents_remember/worktrees/modules/start_result.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -139,8 +136,6 @@
       "closeout",
       "closeout_memory_quality.py",
       "closeout_memory_quality",
-      "closeout_staged_quality.py",
-      "closeout_staged_quality",
       "code_quality_gate.py",
       "code_quality_gate",
       "context.py",
@@ -170,7 +165,9 @@
       "start_contract.py",
       "start_contract",
       "start_result.py",
-      "start_result"
+      "start_result",
+      "sync.py",
+      "sync"
     ]
   },
   "fallback": {

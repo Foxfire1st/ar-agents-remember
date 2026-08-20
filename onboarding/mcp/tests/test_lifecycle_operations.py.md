@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash |  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash |  `e5cb139f66abbd6502d4dcc4be883eb5f49770fe`|
+| lastVerifiedCommitDate |  2026-08-21T00:28:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ No external Domain Documentation source is configured for this project-owned ope
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Start, observe, retry, recovery, transition, cancellation, launch, worker, and integration edges are all forced. | `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_worker_parser_main_and_script_entry_use_task_addressing` | mcp/tests/test_lifecycle_operations.py:232-247; mcp/tests/test_lifecycle_operations.py:1018-1075 |
+| Start, observe, retry, recovery, transition, cancellation, launch, worker, and integration edges are all forced. | `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_worker_parser_main_and_script_entry_use_task_addressing` | mcp/tests/test_lifecycle_operations.py:232-247; mcp/tests/test_lifecycle_operations.py:1014-1071 |
 
 ## Cross-Repo References
 
@@ -81,8 +81,19 @@ non-daemon authority coverage are unchanged.
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
+## 260815-DAG Master Full-Gate Repair
+
+The 260815-DAG master full-gate repair moved the lifecycle-operation imports under
+`worktrees/integration/` and `TaskRef` under `application/task_docs/`; the cross-kind and terminal
+lease refusals now drive `lease.__enter__()` explicitly instead of opening the lease inside the
+raises context, and the `killpg` patch target follows the moved module.
+
 ## Update History
 
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: lifecycle-operation imports moved under
+  `worktrees/integration/` and `TaskRef` under `application/task_docs/`; the lease-refusal test now
+  drives `lease.__enter__()` explicitly and the `killpg` mock follows the moved module. Verified at code
+  commit e5cb139f.
 - 2026-08-16T07:05+02:00 — L4 Dagger repair: the closeout dispatch fixture now performs the real queued-to-running-to-completed journal transitions before starting integration, preserving cross-operation lease semantics.
 - 2026-08-16T05:18+02:00 — Dagger fixture repair: integration worker dispatch carries the real absolute runtime settings path created by the shared contract fixture.
 - 2026-08-16T04:06+02:00 — Dagger fixture repair: operation inputs reference a real workspace settings file and cancellation preview patches the canonical configured-contract resolver.

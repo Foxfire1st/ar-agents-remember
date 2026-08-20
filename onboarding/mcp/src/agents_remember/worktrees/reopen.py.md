@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/reopen.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00|
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ declared member of `CleanupStatus`, so the packet accepts it. cit:([`ContractCel
 
 `_plan_leaf_doc_reset` prepares the leaf task-document reset and publishes it only with the
 contract-side reopen transaction. cit:([`_plan_leaf_doc_reset`], mcp/src/agents_remember/worktrees/reopen.py:393-436)
-The paired cit:(["def _plan_master_index_reset("; "_validate_reopen_row_path(master_path"; "updated = demote_completed_master_if_unresolved(TaskDocument.model_validate(data))"], mcp/src/agents_remember/worktrees/reopen.py:499-499; mcp/src/agents_remember/worktrees/reopen.py:535-535; mcp/src/agents_remember/worktrees/reopen.py:537-537) plan applies the master's
+The paired cit:(["def _plan_master_index_reset("; "_validate_reopen_row_path(master_path"; "updated = demote_completed_master_if_unresolved(TaskDocument.model_validate(data))"], mcp/src/agents_remember/worktrees/reopen.py:508-508; mcp/src/agents_remember/worktrees/reopen.py:544-544; mcp/src/agents_remember/worktrees/reopen.py:546-546) plan applies the master's
 `subTasks` row for the doc back to `planning`.
 
 The reopen ledger-mapping proof now supplies the exact memory source commit.
@@ -91,7 +91,7 @@ The reopen ledger-mapping proof now supplies the exact memory source commit.
 | The doc lookup and lifecycle restamp helpers this module shares with worktree start. | `find_leaf_doc`; `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70; mcp/src/agents_remember/tasks/leaf_doc.py:161-175; mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
 | The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:441-441 |
 | The recreate-fresh path restamps the leaf lifecycle document through the queue-governed publisher. | "publish=lambda task_root, document: publish_queue_bound_task_facts(" | mcp/src/agents_remember/worktrees/modules/start.py:594-594 |
-| The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_doc_tools.py:89-89 |
+| The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41 |
 | The contract dataclass, amendment helper, and `CleanupStatus` vocabulary definitions (the vocabulary in models/worktree.py since L9). | "class ContractCells"; "def amend_contract"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
 | The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:96-136 |
 | `test_no_contract_cell_is_written_through_dataclasses.replace` and `test_every_writable_cleanup_value_validates_at_the_wire_boundary` pin both halves of this. | `test_no_contract_cell_is_written_through_dataclasses_replace`; `test_every_writable_cleanup_value_validates_at_the_wire_boundary` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:289-293; mcp/tests/test_wire_vocabulary_exhaustiveness.py:656-664 |
@@ -133,7 +133,14 @@ therefore returns a blocked result without clearing the frozen landing or rewrit
 The leaf/master reset plan is also rebuilt inside that authority callback, so a governed task-doc
 edit completed after outer preflight is never overwritten by stale prepared models.
 
+## 260815-DAG Master Full-Gate Repair
+
+Imports updated to the moved queue/integration packages; the contract review/closeout/integration reset was extracted into the `_reopened_contract` helper used by `reopen_task`.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: imports updated to the moved packages; contract reset extracted into `_reopened_contract`. Verified at code commit e5cb139f.
+
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.

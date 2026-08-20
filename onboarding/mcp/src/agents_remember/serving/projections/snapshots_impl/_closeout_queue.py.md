@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                              |
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py` |
 | doc_type               | `file-level-onboarding`                                                      |
-| lastUpdated            | 2026-08-18T00:00+02:00                                                       |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`                                   |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `../overview.md`                                                             |
 
 ## Governing Overview
@@ -47,6 +47,18 @@ reasons from the artifact alone).
 | Candidate reasons derived from grade and blocker state. | `_candidate_node` | mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py:83-95 |
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-18T00:00+02:00 — 260815-DAG-L8: created the read-only closeout-queue serving projection.
   Verification metadata pinned until closeout stamps the L8 commit.

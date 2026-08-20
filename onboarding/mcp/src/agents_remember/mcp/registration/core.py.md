@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/mcp/registration/core.py`       |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-02T01:05+02:00                                   |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`               |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -67,10 +67,22 @@ The docstrings are the model-visible contract and carry the semantics that are n
 | --- | --- | --- |
 | Six of the seven payload builders (all but `read_ar_files_payload`). | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
 | `read_ar_files_payload`, imported through the `mcp.tools` facade. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
-| `TaskRef` — the locator bundle `resolve_context` packs. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
+| `TaskRef` — the locator bundle `resolve_context` packs. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
 | What each declaration hands its builder, proved through a live server. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.

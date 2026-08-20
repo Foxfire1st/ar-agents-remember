@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/core.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93`                                      |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -65,6 +65,18 @@ installation from `application.runtime.skills`. Payload validation and transport
 remain unchanged; the move removes the former flat application-module ownership.
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-13T09:05+02:00 — L23 curator: reviewed the two runtime import moves and recorded their
   package ownership without claiming a tool-contract change; final provenance remains

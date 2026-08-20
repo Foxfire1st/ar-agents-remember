@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_closeout_recovery.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-14T12:13:26+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate |  2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ No configured Domain Documentation source applies to this repository-internal te
 | Direct proof tests cover code/contract mismatch, memory-head mismatch, ledger identity, and reachability. | `test_recovery_rejects_code_and_contract_memory_mismatches`; `test_recovery_rejects_unproven_memory_commits` | mcp/tests/test_worktree_closeout_recovery.py:244-277; mcp/tests/test_worktree_closeout_recovery.py:279-318 |
 | Production-shaped tests retain exact completion and unreachable-mapping refusal. | `test_completed_recovery_must_match_exactly`; `test_external_closeout_refuses_an_unreachable_existing_mapping` | mcp/tests/test_worktree_closeout_recovery.py:374-401; mcp/tests/test_worktree_closeout_recovery.py:403-426 |
 | The stale contract memory cell is rejected in favor of the clean current post-claim memory HEAD. | `test_external_closeout_uses_clean_memory_head_when_no_mapping_exists` | mcp/tests/test_worktree_closeout_recovery.py:428-455 |
-| Production recovery owns the finalization proof, typed outcome, code commit, and external tuple. | `prove_closeout_recovery_commits`; `MemoryCloseoutOutcome`; `accepted_code_commit`; `resume_external_commits` | mcp/src/agents_remember/worktrees/closeout_recovery.py:29-39; mcp/src/agents_remember/worktrees/closeout_recovery.py:42-57; mcp/src/agents_remember/worktrees/closeout_recovery.py:151-191; mcp/src/agents_remember/worktrees/closeout_recovery.py:194-235 |
+| Production recovery owns the finalization proof, typed outcome, code commit, and external tuple. | `prove_closeout_recovery_commits`; `MemoryCloseoutOutcome`; `accepted_code_commit`; `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:29-39; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:42-57; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:151-191; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:194-235 |
 
 ## Cross-Repo References
 
@@ -76,6 +76,18 @@ successful `MemoryCloseoutOutcome` before exercising mismatch and ancestry refus
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-17T12:30+02:00 — No content impact: L5 coverage-pragma alignment only; the documented recovery behavior is unchanged.
 

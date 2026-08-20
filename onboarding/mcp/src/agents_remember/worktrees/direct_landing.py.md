@@ -77,7 +77,7 @@ No configured Domain Documentation source applies.
 | The policy-gated, lock-guarded entry point with contract reload under the lock. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:74-126 |
 | Exact commit verification and the moved-candidate pre-commit refusal. | `_verify_code_commit` | mcp/src/agents_remember/worktrees/direct_landing.py:129-159 |
 | Ledger + memory commit with idempotent re-land and conflict refusal. | `_direct_landing_apply` | mcp/src/agents_remember/worktrees/direct_landing.py:206-266 |
-| The same ledger semantics the worktree path uses. | `resume_external_commits` | mcp/src/agents_remember/worktrees/closeout_recovery.py:194-235 |
+| The same ledger semantics the worktree path uses. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:194-235 |
 | The application boundary that translates operation errors. | `direct_landing_tool` | mcp/src/agents_remember/application/direct_landing.py:13-27 |
 
 ## Cross-Repo References

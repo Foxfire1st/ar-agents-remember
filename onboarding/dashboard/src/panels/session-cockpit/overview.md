@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`       |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -410,7 +410,14 @@ behavior change: it prevents a deferred Virtualizer callback from escaping jsdom
 otherwise-green dashboard run while preserving the same intent-lock, follow-on-growth, and
 latest-chip assertions.
 
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+The session-cockpit forcing suites hardened teardown: async `afterEach` clears fake timers / flushes the 150 ms virtualizer scroll-observer debounce before jsdom teardown so orphaned callbacks cannot fire without a `window`.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: test `afterEach` hooks now flush virtualizer debounces (fake-timer clear + real-timer 200 ms settle). Verified at code commit e5cb139f.
+
 
 - 2026-08-14T06:25+02:00 — L23 final candidate review: accepted interaction responses consume
   pending prompts and return the session to working/replay state; the fleet scenario now shares the

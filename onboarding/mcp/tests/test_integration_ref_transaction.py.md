@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_ref_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T23:38+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,19 @@ wrong-tip, untracked, unrelated-change, wrong-HEAD, and durable pre-crash eviden
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260815-DAG Master Full-Gate Repair
+
+Imports re-point to the restructured `worktrees/integration/` package (`integration_ref_transaction`,
+`lifecycle_operations`, `lifecycle_operation_store`). The suite gained two negative proofs for
+`require_integrated_ledger_mapping`: a foreign code commit with no landed ledger mapping refuses
+with the exact requirement, and a forged ledger commit whose ancestry excludes the landed memory
+content refuses as unreachable.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: re-pointed imports to the
+  worktrees/integration package and added the no-landed-mapping and unreachable-memory-content
+  refusal proofs for `require_integrated_ledger_mapping`. Verified at code commit e5cb139f.
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 

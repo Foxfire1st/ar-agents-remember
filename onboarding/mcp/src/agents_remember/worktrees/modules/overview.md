@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -712,7 +712,14 @@ Terminal series artifacts are ignored and reported through `start_result.py`'s
 `staleSeriesArtifact` fact. `integrate.py` surfaces the queue consume's stale-by-evidence siblings
 on the result payload (`staleByEvidence`, each naming `worktree_sync`).
 
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+`closeout_staged_quality.py` moved to the new `worktrees/queue/` sub-route; remaining module import paths updated to the moved `queue`/`integration` packages; `closeout.py` extracted `_closeout_quality_facts`.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: `closeout_staged_quality` moved to `worktrees/queue`; module imports updated; `closeout.py` extracted `_closeout_quality_facts`. Verified at code commit e5cb139f.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: recorded the atomic-sequential lane block
   in `start_contract.py`, the `staleSeriesArtifact` fact in `start_result.py`, and the

@@ -101,7 +101,7 @@ and report-only detail into the enclosure's one atomically replaced curator work
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | "def memory_quality_check_tool("; "unstamped_code_commit=scope.unstamped_code_commit" | mcp/src/agents_remember/application/memory_tools.py:226-226; mcp/src/agents_remember/application/memory_tools.py:323-323 |
+| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | "def memory_quality_check_tool("; "unstamped_code_commit=scope.unstamped_code_commit" | mcp/src/agents_remember/application/memory_tools.py:228-228; mcp/src/agents_remember/application/memory_tools.py:325-325 |
 | Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:32-44; mcp/src/agents_remember/mcp/tools/memory.py:46-63 |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
 | The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73 |

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_lifecycle.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,9 +39,21 @@ also checks commit mismatch blockers and bounded operation/event identity.
 | --- | --- | --- |
 | Binding damage cannot become legacy absence. | `test_live_parent_resolution_distinguishes_legacy_absence_from_bound_damage` | mcp/tests/test_closeout_queue_lifecycle.py:204-225 |
 | Closeout certification binds all exact commits. | `test_certify_closeout_is_idempotent_and_binds_exact_commits` | mcp/tests/test_closeout_queue_lifecycle.py:254-299 |
-| Integration claims refuse uncertified or stale candidates. | `test_claim_integration_is_idempotent_and_refuses_uncertified_or_stale` | mcp/tests/test_closeout_queue_lifecycle.py:301-320 |
+| Integration claims refuse uncertified or stale candidates. | `test_claim_integration_is_idempotent_and_refuses_uncertified_or_stale` | mcp/tests/test_closeout_queue_lifecycle.py:367-386 |
+
+## 260815-DAG Master Full-Gate Repair
+
+Imports re-point to the restructured `models/queue/` and `worktrees/queue/` packages. The suite
+gained three boundary proofs: a graph-less sprint with no stored binding resolves
+`contract_queue_binding` to None, an integration entry without a queue binding falls through to
+plain publication, and a blocked in-flight candidate refuses with
+`closeout-candidate-integration-blocked`. The trailing `unittest.main()` block was removed.
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: re-pointed queue imports and
+  added the graph-less-no-binding, plain-publication, and blocked-candidate integration boundary
+  proofs. Verified at code commit e5cb139f.
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: the public-revalidation case narrowed to
   `test_integration_revalidation_refuses_unclaimed_candidates` because the unused

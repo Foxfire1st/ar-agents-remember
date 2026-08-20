@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -509,7 +509,14 @@ Control-plane storage adds a repository-wide integration-authority lock and comp
 
 `integration_authority_lock` gained the keyword-only `create` flag: the three dry-run paths (graph authoring + sprint attach/detach) lock with `create=False` so a preview never writes the lock file (playthrough F2); apply paths keep `create=True` and re-lock before any mutation.
 
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+`closeout_queue_store.py` / `closeout_queue_records.py` import paths updated to the moved `worktrees/queue/*` / `models/queue/*` locations.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: closeout_queue store/records import paths updated to the moved queue packages. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: integration_authority_lock create=False dry-run mode (F2). Verified at code commit de3a0fd9.
 

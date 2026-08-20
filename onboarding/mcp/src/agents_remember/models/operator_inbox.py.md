@@ -67,7 +67,7 @@ listed as Domain Documentation.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The response models cover post, poll, and consume payloads and reuse the inbox state literal. | "class OperatorInboxPostResponse(ToolResponse):"; "class OperatorInboxPollResponse(ToolResponse):"; "class OperatorInboxConsumeResponse(ToolResponse):"; "OperatorInboxState = Literal[" | mcp/src/agents_remember/models/operator_inbox.py:10-10; mcp/src/agents_remember/models/operator_inbox.py:54-54; mcp/src/agents_remember/models/operator_inbox.py:82-82; mcp/src/agents_remember/models/operator_inbox.py:92-92 |
-| The registry maps the three `operator_inbox_*` tools to these response models. | "from agents_remember.models.operator_inbox import ("; "\"operator_inbox_post\": OperatorInboxPostResponse," | mcp/src/agents_remember/models/tool_registry.py:54-54; mcp/src/agents_remember/models/tool_registry.py:216-216 |
+| The registry maps the three `operator_inbox_*` tools to these response models. | "from agents_remember.models.operator_inbox import ("; "\"operator_inbox_post\": OperatorInboxPostResponse," | mcp/src/agents_remember/models/tool_registry.py:53-53; mcp/src/agents_remember/models/tool_registry.py:216-216 |
 
 ## Cross-Repo References
 

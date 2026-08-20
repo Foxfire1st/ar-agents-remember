@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/lifecycle_operation_worker.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |  `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
-| lastVerifiedCommitDate |  2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -96,6 +96,9 @@ different candidate.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-17T12:30+02:00 — 260815-DAG-L5: the worker now parses and persists `quality_certification`, `queue_completion`, and `organizational_repair` evidence and finalizes the organizational gate-failed repair handoff. Verification remains closeout-owned.
 

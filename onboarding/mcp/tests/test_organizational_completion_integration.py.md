@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_organizational_completion_integration.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -31,13 +31,26 @@ The suite runs the production completion path end to end against real queue and 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The focused suite owns the end-to-end completion integration surface. | `OrganizationalCompletionIntegrationTests` | mcp/tests/test_organizational_completion_integration.py:94-1199 |
+| The focused suite owns the end-to-end completion integration surface. | `OrganizationalCompletionIntegrationTests` | mcp/tests/test_organizational_completion_integration.py:95-1179 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260815-DAG Master Full-Gate Repair
+
+The 260815-DAG master full-gate repair moved this suite's imports under the restructured packages:
+queue owners (`closeout_queue`, `closeout_queue_lifecycle`) and the request model now come from
+`worktrees/queue/` and `models/queue/`, while `integration_quality`, `organizational_completion*`,
+and the lifecycle-operation store/dispatch imports come from `worktrees/integration/`. The
+remaining hunks are Ruff formatting-only line joins; no assertions changed.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: queue, model, and
+  integration/organizational-completion imports follow the package moves (`worktrees/queue/`,
+  `models/queue/`, `worktrees/integration/`); remaining hunks are Ruff formatting-only line joins.
+  Verified at code commit e5cb139f.
 
 - 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 split blocker-reason assertions on `:` because stale-base reasons now carry the `worktree_sync` recovery suffix; the documented completion-integration behavior is unchanged. Verification remains closeout-owned.
 

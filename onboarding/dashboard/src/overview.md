@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated            | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -493,7 +493,14 @@ rows open their commanded master document.
 The sprint execution graph is now viewable: `types/projection.ts` (+ schema) carry the render-ready `TaskExecutionGraphView`/`TaskExecutionNodeView`/`TaskExecutionPredecessorNode` wire shapes and `TaskDocNode.executionGraphView`; `panels/sprint-graph/` is the new wave-grid view route; `dev/DevApp.tsx` exposes `/dev/sprint-graph` for mounted-UI evidence; and `fixtures/snapshot.json` exercises the new node vocabularies (L12-R1/R2/R4-R7).
 
 
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+`fixtures/snapshot.json` extended with a super-to-leaf source-relation entry and two execution-graph view nodes (segment + lump with frontier states) for dashboard vocabulary coverage.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: the snapshot fixture gained a super-to-leaf relation entry and two execution-graph view nodes. Verified at code commit e5cb139f.
+
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready sprint graph view types, the new sprint-graph panel route, the dev evidence surface, and the fixture vocabulary. Verified at code commit b7f2c8e2.

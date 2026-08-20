@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -148,7 +148,7 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:548-561 |
 | What each declaration hands its payload builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 | The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
-| `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
+| `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
 
 ## 260731-EFA-L17 Change
 
@@ -216,7 +216,14 @@ Registered worktree and memory tools expose journaled closeout/integration and r
 
 `memory_quality_check` registration gained keyword-only `wait` (default True) / `run_id`, dispatching to the start/poll payloads (L15-R7); the synchronous path and its payload are unchanged.
 
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+Registration modules import the moved `application/task_docs/*`; `registration/tasks.py` extracts the `task_doc` description constant; `registration/closeout.py` renames the direct-landing helper.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: registration import paths updated; `task_doc` description constant extracted; direct-landing helper renamed. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: memory_quality_check wait/run_id keyword-only async surface (L15-R7). Verified at code commit de3a0fd9.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_actions.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,7 +27,7 @@ The suite drives exact request fields and revisions through the queue owner, the
 declaration identity, immutable contract binding, atomic blocker acquire/release/abort, lifecycle
 operation recovery, and legal projections for manager and orchestrator callers. Since
 260815-DAG-L13 the blocker transitions are imported from the extracted
-`worktrees/closeout_queue_blocker.py` owner (mock targets follow), and the request-reference
+`worktrees/queue/closeout_queue_blocker.py` owner (mock targets follow), and the request-reference
 validation cases exercise the shared `queue_task_ref` from `closeout_queue_errors.py`.
 
 ### Invariants And Boundaries
@@ -51,11 +51,19 @@ validation cases exercise the shared `queue_task_ref` from `closeout_queue_error
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
+## 260815-DAG Master Full-Gate Repair
+
+The 260815-DAG master full-gate repair moved the queue request model import to
+`models/queue/closeout_queue.py` and every queue-owner import and mock target under
+`worktrees/queue/` (the L13-era extracted blocker owner path is now
+`worktrees/queue/closeout_queue_blocker.py`); the `__main__` runner was removed. No assertions
+changed.
+
 ## Update History
 
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16: suite purpose unchanged; queue request model gains the
-  optional `caller` declared-identity field (covered by `test_seat_independent_execution.py`).
-  Verified at code commit a9d50e08.
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: the queue request model and all
+  queue-owner imports/mock targets follow the package moves (`models/queue/`,
+  `worktrees/queue/`); the `__main__` runner was removed. Verified at code commit e5cb139f.
 
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: blocker transitions moved to

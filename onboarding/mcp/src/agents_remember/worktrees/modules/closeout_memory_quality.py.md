@@ -64,7 +64,7 @@ No external Domain Documentation source is configured for this repository-local 
 | --- | --- | --- |
 | One phase builds the service-owned drift context, runs the exact check group, and refuses on a non-clean result with bounded evidence. | `run_memory_quality_phase`; `_failure_message` | mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py:17-53 |
 | The combined result preserves both phase check maps, findings, counts, bounded report-only evidence, and declared phase membership. | `combine_memory_quality` | mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py:56-80 |
-| Closeout calls the extracted adapter before the expensive code gate and again after metadata refresh, then returns the combined gate result. | `_memory_quality_before_refresh`; `_external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout.py:618-716; mcp/src/agents_remember/worktrees/modules/closeout.py:803-812 |
+| Closeout calls the extracted adapter before the expensive code gate and again after metadata refresh, then returns the combined gate result. | `_memory_quality_before_refresh`; `_external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout.py:615-711; mcp/src/agents_remember/worktrees/modules/closeout.py:798-807 |
 | The injected service bundle owns the `MemoryQualityPort` implementation and check-group vocabulary. | `MemoryQualityPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:68-95; mcp/src/agents_remember/worktrees/services.py:140-152 |
 
 ## Cross-Repo References

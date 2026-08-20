@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
+| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subta
 `remove_subtask` / `set_section`; `remove_subtask` also deletes the leaf doc (json+md) unless
 `subtask.keep_file`; `set_step` is leaf-only. `skip_step` takes an exact existing step and a nonblank
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
-        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:124-143).
+        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:111-111; mcp/src/agents_remember/mcp/registration/tasks.py:123-125).
 
 Since 260815-DAG-L11 the docstring also spells out the graph operation:
 `author_execution_graph` applies one
@@ -113,7 +113,14 @@ organizational leafs as facts, and a certified candidate no longer occupies the 
 hosted seat when one exists; an ambient caller with no plane seat declares `caller` (role +
 task_document_ref) instead, and the same queue authorization validates it identically.
 
+## 260815-DAG Master Full-Gate Repair
+
+The `task_doc` tool's long docstring moved to the module-level `_TASK_DOC_TOOL_DESCRIPTION` constant, passed through `@server.tool(description=...)` (wire-contract conformance); the import of `task_doc_tools` follows the move to `application/task_docs/`. The registered tool surface is unchanged.
+
 ## Update History
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: `task_doc` description extracted to a module constant; imports updated to `application/task_docs/task_doc_tools`. Verified at code commit e5cb139f.
+
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: the `task_doc` declaration gains `branch_addressed`
   (policy-gated direct-execution opt-in for `record_route_review`), and the `closeout_queue`

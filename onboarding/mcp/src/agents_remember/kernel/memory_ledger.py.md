@@ -120,8 +120,8 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing "require_git(contract.memory_worktree". | "existing_mapping = find_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/closeout.py:655-655 |
-| The irreversible integration transaction loads the exact named-ref ledger and requires its existing code-to-memory row to match the accepted content commit before moving protected refs. | `require_integrated_ledger_mapping` | mcp/src/agents_remember/worktrees/integration_ref_transaction.py:229-278 |
+| `c-09-git-worktree-manager` direct closeout imports these ledger helpers, then rewrites the code->memory mapping only when it actually changed before committing "require_git(contract.memory_worktree". | "existing_mapping = find_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/closeout.py:652-652 |
+| The irreversible integration transaction loads the exact named-ref ledger and requires its existing code-to-memory row to match the accepted content commit before moving protected refs. | `require_integrated_ledger_mapping` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:229-282 |
 
 ## Update History
 - 2026-08-17T12:30+02:00 — 260815-DAG-L5: added `find_unique_mapping` for one-to-one code mapping with duplicate-authority refusal. Verification remains closeout-owned.
