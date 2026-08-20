@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,6 +70,10 @@ the refusal when `run_git branch` enumeration fails.
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (task_doc_tool takes
+  `call: TaskDocCall`); suite purpose unchanged. Verified at code commit a9d50e08.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: the finite migration operation is removed; the former
   migration cases are now graph-bootstrap forcing through `author_execution_graph`

@@ -47,10 +47,12 @@ against a `WorktreeCommandResponse` subclass in the tool-response registry.
 | --- | --- | --- |
 | The reopen application entry point and its ambient-lifecycle handoff. | `task_reopen_tool` | mcp/src/agents_remember/application/task_reopen.py:20-41 |
 | The enclosure-contract reset this delegates to. | `reopen_task` | mcp/src/agents_remember/worktrees/reopen.py:178-178 |
-| The facade re-export keeping the old import path working. | `task_reopen_tool` | mcp/src/agents_remember/application/task_doc_tools.py:83-85 |
+| The facade re-export keeping the old import path working. | `task_reopen_tool` | mcp/src/agents_remember/application/task_doc_tools.py:87-87 |
 | The focused reopen application suites. | `ReopenResetTests`; `ReopenPublicationAuthorityTests`; `ReopenGuardTests` | mcp/tests/test_task_reopen.py:193-193; mcp/tests/test_task_reopen_authority.py:100-100; mcp/tests/test_task_reopen_guards.py:16-16 |
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 moved the facade re-export within `task_doc_tools.py`; re-pointed the citation to `task_doc_tools.py:83-85`. Verification metadata unchanged.
 

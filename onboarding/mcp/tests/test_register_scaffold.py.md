@@ -41,9 +41,11 @@ authored `executionGraph` through `replace`.
 | --- | --- | --- |
 | Register scaffolding and write-time shape validation forcing. | `RegisterScaffoldTests` | mcp/tests/test_register_scaffold.py:42-237 |
 | The scaffold and write-time gate under test. | `register_scaffold_sections`; `require_register_sections_valid` | mcp/src/agents_remember/worktrees/closeout_queue_evidence.py:468-512 |
-| The task-doc create/write integration under test. | `_scaffold_register_sections`; `_enforce_register_section_shapes` | mcp/src/agents_remember/application/task_doc_tools.py:573-595 |
+| The task-doc create/write integration under test. | `_scaffold_register_sections`; `_enforce_register_section_shapes` | mcp/src/agents_remember/application/task_doc_tools.py:550-595 |
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: created as the register scaffold/write-time validation
   forcing suite. Verification remains closeout-owned.

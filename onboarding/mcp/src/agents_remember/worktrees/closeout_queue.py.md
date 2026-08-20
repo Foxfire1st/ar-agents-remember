@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -48,6 +48,13 @@ a lane-occupying state (`LANE_OCCUPYING_STATES` — selected, closeout-in-flight
 integration-in-flight; a certified candidate no longer occupies the lane), a blocker-held waiting
 reason names the owner candidate, and stale-base blockers name `worktree_sync` as the recovery.
 
+Since 260815-DAG-L16 the declare path's contract-bound refusals name the missing binding and the
+recovery (L16-R9): `closeout-candidate-contract-required` says to bind the leaf worktree contract
+(`enclosures/<leaf>/series-contract.md`) or use the direct landing operation for sanctioned
+branch-addressed execution, `closeout-candidate-leaf-required` names the leaf contract requirement
+plus the same two recoveries, and a `ContractError` on load wraps as
+`closeout-candidate-contract-invalid` instead of leaking an opaque message.
+
 ### Conventions
 
 Judgment is consumed only from canonical sprint Judgment/Priority Registers. Equal categorical
@@ -56,7 +63,9 @@ candidate mechanics; atomic blockers add exclusivity and exact block-landing pro
 
 ### Invariants And Boundaries
 
-- Actor role and task identity are plane-proven, never request data.
+- Actor role and task identity are plane-proven when a hosted seat exists; a caller with no plane
+  seat declares them as request data (L16-R2) and the declaration is validated by the same queue
+  authorization — it grants no authority beyond the same role/document pair (L16 F5 trust model).
 - Only the deterministic first ready candidate may be selected.
 - In-flight records are lifecycle-owned and immutable through public actions.
 - The `status` read degrades to a facts projection instead of failing on an absent graph or
@@ -96,6 +105,13 @@ No external repository owns this queue.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: the declare path's contract-bound refusals now name
+  the missing binding and the recovery (L16-R9: leaf worktree contract or the direct landing
+  operation), and a `ContractError` on load wraps as `closeout-candidate-contract-invalid`. The
+  queue's identity invariant is updated to the declared-caller reality (L16-R2/F5). Verified at
+  code commit a9d50e08.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: the `status` read degrades instead of raising — a
   graph-less sprint projects the atomic-sequential default with its series lane owner and legal

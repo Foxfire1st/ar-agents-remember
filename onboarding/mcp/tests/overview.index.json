@@ -154,6 +154,7 @@
     "mcp/tests/test_cross_store_lock_order.py",
     "mcp/tests/test_dashboard_daemon.py",
     "mcp/tests/test_diff_coverage.py",
+    "mcp/tests/test_direct_landing.py",
     "mcp/tests/test_dispatch_brief.py",
     "mcp/tests/test_dispatch_expectation_rows.py",
     "mcp/tests/test_docker_runtime_parsers.py",
@@ -349,6 +350,7 @@
     "mcp/tests/test_register_scaffold.py",
     "mcp/tests/test_resolver_parity.py",
     "mcp/tests/test_route_index.py",
+    "mcp/tests/test_seat_independent_execution.py",
     "mcp/tests/test_seat_lifecycle.py",
     "mcp/tests/test_seed_timeouts.py",
     "mcp/tests/test_sequential_default_mode.py",
@@ -402,6 +404,7 @@
     "mcp/tests/test_task_reopen.py",
     "mcp/tests/test_task_reopen_authority.py",
     "mcp/tests/test_task_reopen_guards.py",
+    "mcp/tests/test_task_sprint_linkage.py",
     "mcp/tests/test_terminal.py",
     "mcp/tests/test_terminal_catalog.py",
     "mcp/tests/test_terminal_evidence_projection.py",
@@ -444,8 +447,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 424,
-    "fileSidecars": 432,
+    "sourceFilesInScope": 428,
+    "fileSidecars": 435,
     "childRoutes": 0
   },
   "routingTerms": [

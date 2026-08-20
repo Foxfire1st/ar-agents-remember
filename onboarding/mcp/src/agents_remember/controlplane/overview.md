@@ -423,7 +423,7 @@ operator-facing inbox administration remains a separate internal surface.
 | Gates mirror the observer event substrate (envelope + append-only JSONL store). | "class EventStore" | mcp/src/agents_remember/observer/store.py:103-103 |
 | Gate policy validation and delegated decision checks. | "class GatePolicy:" | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54 |
 | The `gate_*` payload builders that drive this substrate. | "def gate_create_payload" | mcp/src/agents_remember/mcp/tools/gates.py:44-44 |
-| Gate response models, including the structural public boundary and internal exact correlations. | "class GateCreateResponse"; "class StructuralGateResponse" | mcp/src/agents_remember/models/structural/gates.py:48-55; mcp/src/agents_remember/models/structural/gates.py:108-116 |
+| Gate response models, including the structural public boundary and internal exact correlations. | "class GateCreateResponse"; "class StructuralGateResponse" | mcp/src/agents_remember/models/structural/gates.py:61-61; mcp/src/agents_remember/models/structural/gates.py:121-121 |
 | The inbox record/store pair provides the external-chat pull return channel. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:41-41; mcp/src/agents_remember/controlplane/operator_inbox_store.py:54-54 |
 | The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | "class AttentionDismissalStore" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-45 |
 | The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:171-171 |
@@ -506,6 +506,8 @@ publication scratch and the JSON artifact remains the survival record.
 Control-plane storage adds a repository-wide integration-authority lock and composes it after sprint queue authority. Task-fact publication, candidate declaration, series terminal publication, and Git mutation therefore share a fail-closed queue-to-repository order instead of racing check-then-act branch guards.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-18T10:30+02:00 — No route impact: 260815-DAG-L7 relocated the orchestrator portfolio module to worktrees; the controlplane route gained no lasting source.
 

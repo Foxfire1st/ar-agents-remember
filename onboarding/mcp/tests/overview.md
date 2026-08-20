@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated            | 2026-08-20T05:06+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1166,6 +1166,12 @@ provenance, linkage facts, and backward tolerance; `test_observer_projection_tas
 projected `masterRef`/`seats` and body-revision movement.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: new `test_seat_independent_execution.py`
+  and `test_direct_landing.py`; signature-compat updates across the task-document and
+  registration-wiring suites; `test_config.py` covers `directExecutionEnabled`. Verified at code
+  commit a9d50e08.
+
 
 - 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: new `test_task_sprint_linkage.py` suite
   plus projection tests for `masterRef`/`seats`. Verified at code commit 8071a644.

@@ -53,10 +53,12 @@ No external domain source governs this repository-local boundary.
 | --- | --- | --- |
 | Structural gate adapters receive typed document-owned requests. | `structural_lifecycle_gate_payload`; `structural_gate_decide_payload`; `structural_gate_list_payload` | mcp/src/agents_remember/mcp/tools/gates.py:77-90; mcp/src/agents_remember/mcp/tools/gates.py:123-136; mcp/src/agents_remember/mcp/tools/gates.py:199-203 |
 | Exact-id gate adapters are separate internal composition seams. | `gate_create_payload`; `gate_decide_payload`; `gate_list_payload` | mcp/src/agents_remember/mcp/tools/gates.py:44-55; mcp/src/agents_remember/mcp/tools/gates.py:92-110; mcp/src/agents_remember/mcp/tools/gates.py:191-196 |
-| Structural response models omit private correlations. | `StructuralGateResponse`; `LifecycleGateResponse`; `GateDecideResponse`; `GateListResponse` | mcp/src/agents_remember/models/structural/gates.py:108-151 |
+| Structural response models omit private correlations. | `StructuralGateResponse`; `LifecycleGateResponse`; `GateDecideResponse`; `GateListResponse` | mcp/src/agents_remember/models/structural/gates.py:108-160 |
 | The response registry distinguishes advertised structural names from internal compatibility builders. | `INTERNAL_COMPAT_TOOL_NAMES`; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-137; mcp/src/agents_remember/models/tool_registry.py:223-227 |
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-11T12:15+02:00 — Reconciled the card with the structural public boundary: document-and-role
   gate operations are current; exact ids are internal correlations. Verification remains pinned

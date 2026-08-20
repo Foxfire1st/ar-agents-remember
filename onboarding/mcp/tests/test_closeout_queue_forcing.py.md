@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_forcing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-20T05:14+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,6 +68,11 @@ No configured Domain Documentation source applies.
 No meaningful cross-repository reference applies.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: seat-path regressions preserved (renamed forcing
+  suite); the ambient declared-caller path is covered by the new
+  `test_seat_independent_execution.py`. Verified at code commit a9d50e08.
+
 
 - 2026-08-20T05:14+02:00 — L11 landed-wave refresh: the leaf-segment graph-model commit (f2e2f4b9)
   touched this source; card re-verified against the current file, verification stamp advanced to

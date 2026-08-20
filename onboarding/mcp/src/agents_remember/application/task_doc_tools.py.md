@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/application/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-20T04:20+02:00 |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -34,7 +34,8 @@ Completed-row terminal check now delegates to `task_sprint_linkage.validate_comp
 ### Logic
 
 `task_doc_tool(config, target: TaskDocTarget, *, operation, edit: TaskDocEdit = NO_EDIT,
-dry_run=False)` — since 260731-EFA-L2 the arguments arrive as two objects that answer two different
+call: TaskDocCall = DEFAULT_TASK_DOC_CALL)` — since 260731-EFA-L2 the arguments arrive as two
+objects that answer two different
 questions. `TaskDocTarget(repo_id, task_name, contract_path, slug)` is **which document**;
 `TaskDocEdit(fields, step, decision, subtask, section)` is **what the edit is**, with `NO_EDIT` the
 shared empty value a `get` passes. Internally the operation table dispatches through one private
@@ -116,9 +117,9 @@ validation failures, and invalid resolvable parent master docs.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_doc_tools.py:87-102 |
-| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_doc_tools.py:491-503 |
+| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_doc_tools.py:502-516 |
 | Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:403-446 |
-| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_doc_tools.py:258-258 |
+| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_doc_tools.py:267-267 |
 | The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
 | The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:551-655 |
 | The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:31-53 |
@@ -141,6 +142,12 @@ translation and the locked publication call.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `task_doc_tool` takes `call: TaskDocCall` (dry_run +
+  branch_addressed) instead of the bare `dry_run` flag; the route-review binding machinery moved
+  to `application/task_doc_route_review.py` (facade re-export, L16-R6/R9). Verified at code commit
+  a9d50e08.
+
 
 - 2026-08-20T04:20+02:00 — 260815-DAG-L14: the `task_doc` dispatcher routes
   `attach_master`/`detach_master`/`linkage_report` to `application/task_sprint_linkage.py`, carries

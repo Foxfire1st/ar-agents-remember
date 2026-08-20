@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-08-20T04:28+02:00 |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5`                |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subta
 `remove_subtask` / `set_section`; `remove_subtask` also deletes the leaf doc (json+md) unless
 `subtask.keep_file`; `set_step` is leaf-only. `skip_step` takes an exact existing step and a nonblank
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
-        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:124-124; mcp/src/agents_remember/mcp/registration/tasks.py:136-138).
+        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:124-143).
 
 Since 260815-DAG-L11 the docstring also spells out the graph operation:
 `author_execution_graph` applies one
@@ -65,7 +65,9 @@ same `linkageFacts`.
 
 The body splits that into two objects: `TaskDocTarget(repo_id, task_name, contract_path, slug)` —
 which document to edit — and `TaskDocEdit(fields, step, decision, subtask, section)` — what the edit
-is. `operation` and `dry_run` stay separate arguments. A read (`operation='get'`) leaves every edit
+is. `operation` and `dry_run` stay separate arguments; since 260815-DAG-L16 the registered `task_doc`
+also exposes `branch_addressed` (policy-gated direct-execution opt-in for `record_route_review`,
+bound to the task-root series contract — L16-R6). A read (`operation='get'`) leaves every edit
 slot unset.
 
 `lifecycle_finalize_task` packs its three document arguments into `FinalizeTaskDocs(task_doc_path,
@@ -106,9 +108,18 @@ read contract: `status` never fails on a missing executionGraph or malformed reg
 mode, registers, laneOwner, and legalNextOperations), stale-base closeout/integration refusals name
 `worktree_sync` as the recovery, a completed landing reports stale-by-evidence siblings, an
 in-flight atomic block owns the landing lane for its lifetime, acquisition reports in-flight
-organizational leafs as facts, and a certified candidate no longer occupies the lane.
+organizational leafs as facts, and a certified candidate no longer occupies the lane. Since
+260815-DAG-L16 the docstring states the caller rule exactly: the caller is the plane-injected
+hosted seat when one exists; an ambient caller with no plane seat declares `caller` (role +
+task_document_ref) instead, and the same queue authorization validates it identically.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: the `task_doc` declaration gains `branch_addressed`
+  (policy-gated direct-execution opt-in for `record_route_review`), and the `closeout_queue`
+  docstring caller rule is updated to the declared-caller reality (L16-R2). Verified at code
+  commit a9d50e08.
+
 
 - 2026-08-20T04:28+02:00 — 260815-DAG-L14: the `task_doc` docstring and operation vocabulary add
   `attach_master`/`detach_master`/`linkage_report` (typed masterRef batch, symmetric detach,

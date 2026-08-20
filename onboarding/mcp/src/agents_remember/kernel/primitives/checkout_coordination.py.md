@@ -77,11 +77,13 @@ authority is copied into or resolved from `reports/`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Runtime config selects the synthetic leaf config before reading the supplied authority file. | `checkout_cli_location`; `_checkout_runtime_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:704-704; mcp/src/agents_remember/kernel/primitives/runtime_config.py:727-755 |
+| Runtime config selects the synthetic leaf config before reading the supplied authority file. | `checkout_cli_location`; `_checkout_runtime_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:718-718; mcp/src/agents_remember/kernel/primitives/runtime_config.py:727-755 |
 | Durable-store lock, append, and rewrite paths all enforce this target policy. | "path = _checked_lock_path_for(log_path)"; "def _prepare_append_target(log_path: Path) -> None:"; "def _require_rewrite_access(log_path: Path, store: str) -> None:" | mcp/src/agents_remember/controlplane/durable_store.py:432-432; mcp/src/agents_remember/controlplane/durable_store.py:527-527; mcp/src/agents_remember/controlplane/durable_store.py:532-532 |
 | MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. | "server_startup.declare_mcp_process()"; "declare_test_process()" | mcp/src/agents_remember/mcp/server.py:63-63; mcp/tests/conftest.py:58-58 |
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 - 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: added the explicit `lifecycle-operation` execution mode for the plane-owned detached task worker. It may use live coordination to claim/finalize its durable operation but receives no MCP/dashboard daemon writer role; ordinary checkout CLI isolation is unchanged. The owner reports 46 focused tests across the two affected suites, Ruff clean, and diff-check clean. Verification remains closeout-owned.
 - 2026-08-12T22:24+02:00 — 260731-EFA-L23 async-closeout follow-up: added the exact enclosure `reports/` target for operational artifacts while keeping coordination rows confined to leaf-local `provider-runtime/dev-ar-coordination`; sibling/live escapes remain refused. Verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

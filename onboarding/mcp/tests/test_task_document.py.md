@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_document.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-16T02:51+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -91,13 +91,13 @@ and tool registration.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The test imports and exercises the task-document APIs used by this suite. | "from agents_remember.application.task_doc_tools import (" | mcp/tests/test_task_document.py:24-24 |
-| The application entry point under test. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:190-275 |
+| The application entry point under test. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:189-282 |
 | The path-change rejection test invokes the replace operation and expects TaskDocError. | `test_replace_rejects_document_path_change` | mcp/tests/test_task_document_application_1.py:465-479 |
 | Leaf creation inserts the parent master row. | "def create(cls" | mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py:156-156 |
 | Master sync preserves manually-authored scope. | "const { webtuiPrefixOptions } = require('./webtui-scope.config.cjs');" | dashboard/postcss.config.cjs:6-6 |
 | Master row status is derived from leaf state. | "export const status = css({" | dashboard/src/panels/sessionComposerStyles.ts:116-116 |
 | Dry-run returns the parent master sync preview. | "def _create_missing_dirs(paths: list[Path]" | mcp/src/agents_remember/kernel/memory_init.py:14-14 |
-| The conformance net that also covers `task_doc`. | `task_doc` | mcp/tests/test_tool_response_conformance.py:629-629 |
+| The conformance net that also covers `task_doc`. | `task_doc` | mcp/tests/test_tool_response_conformance.py:642-642 |
 
 ## Series-Contract Notes
 
@@ -110,6 +110,11 @@ Task-document tests cover the `seriesContractPath`/`enclosures[]` linkage fields
 - A master ref naming a **sibling leaf** is refused **by kind**, not by id shape.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (task_doc_tool now takes
+  `call: TaskDocCall`); claim re-read and citation ranges regenerated. Verified at code commit
+  a9d50e08.
+
 
 - 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 moved `task_doc_tool` within `task_doc_tools.py`; re-pointed the citation to `task_doc_tools.py:190-275`. Verification metadata unchanged.
 - 2026-08-16T02:51+02:00 — L4 topology-publication authority: replaced the partial

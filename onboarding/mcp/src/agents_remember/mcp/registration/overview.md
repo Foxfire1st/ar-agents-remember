@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-20T05:04+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -79,14 +79,15 @@ developer ruled all four forbidden — and no `noqa` anywhere holds an argument-
 | `code_search.py`    | `grepai_search`, `grepai_trace`, and the six `cgc_*` graph tools.          |
 | `worktrees.py`      | `worktree_start`, `worktree_attach`, `worktree_status`, `worktree_sync` — the working half of a task. |
 | `closeout.py`       | `worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`, `worktree_abandon` — the landing half. |
-| `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`, `closeout_queue`; task-doc advertises the judgment-provenanced `author_execution_graph` mutation batch (which also bootstraps a graph-less sprint — the first `add_node` batch creates the graph) and the classification/wave previews, while closeout-queue mutations use a strict action-specific request and plane-owned caller identity. |
+| `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`, `closeout_queue`; task-doc advertises the judgment-provenanced `author_execution_graph` mutation batch (which also bootstraps a graph-less sprint — the first `add_node` batch creates the graph), the classification/wave previews, and the policy-gated `branch_addressed` direct-execution mode (L16-R6), while closeout-queue mutations use a strict action-specific request and the hosted seat or — when none exists — a request-carried declared caller (L16-R2). |
 | `benchmarks.py`     | `codex_benchmark_prepare`, `codex_benchmark_run`.                          |
 | `lifecycle.py`      | The six session-lifecycle signals: `lifecycle_start`, `lifecycle_resume`, `lifecycle_turn_end_notification`, `lifecycle_end`, `switch_lifecycle`, `lifecycle_phase`. |
-| `gates.py`          | Structural `lifecycle_gate`, `gate_decide`, `gate_list`; public gate/lifecycle ids are absent. |
+| `gates.py`          | Structural `lifecycle_gate`, `gate_decide`, `gate_list`; an ambient caller with no plane seat declares `caller` (role + task_document_ref) on each (L16-R3); public gate/lifecycle ids are absent. |
 | `orchestration.py`  | `message_parent`, `message_child`; ordinary whole-message traffic resolves current structural occupants. |
 
-Twelve registrars, 56 advertised tools — the same 56 names `mcp/tools/base.py::PUBLIC_TOOLS`
-lists, which `mcp/tests/test_tools.py` checks against a live server's `list_tools()`.
+Twelve registrars, 59 advertised tools (260815-DAG-L16 added `direct_landing`) — the same 59
+names `mcp/tools/base.py::PUBLIC_TOOLS` lists, which `mcp/tests/test_tools.py` checks against a
+live server's `list_tools()`.
 
 ## Hot Path Summary
 
@@ -109,8 +110,10 @@ have to infer the shape from prose examples. The `closeout_queue` description li
 degraded `status` readout (mode/registers/laneOwner/legalNextOperations) and the sync-first
 `worktree_sync` recovery naming for stale-base refusals.
 
-Structural tool registration fixes attribution and caller identity in the plane. Gate decisions use
-the ambient seat for authority; message tools derive the sender from the same hosted context. No
+Structural tool registration fixes attribution and caller identity in the plane: a hosted seat wins,
+an ambient caller with no plane seat declares `caller` (role + task_document_ref) and the same
+authorization validates it exactly like a seat (L16-R3). Gate decisions use the ambient or
+declared caller for authority; message tools derive the sender from the hosted context. No
 agent-facing signature accepts an actor/session/lifecycle/inbox/gate id.
 
 `register_lifecycle_tools` takes `_config` and does not use it: its six payloads act on the
@@ -187,8 +190,11 @@ the pinned Dagger executor.
 surfaces. The published request is deliberately one strict action-discriminated model: status has
 no mutation fields; every mutation carries a stable request id and expected revision; manager
 declaration cannot smuggle a grade; and blocker, admission, grading, selection, and release fields
-are legal only for their owning action. The ambient structural seat supplies caller authority, so
-no actor, session, lifecycle, operation key, or arbitrary queue id enters the wire contract.
+are legal only for their owning action. The caller is the plane-injected hosted seat when one
+exists; an ambient caller with no plane seat declares `caller` (role + task_document_ref) instead
+(260815-DAG-L16, L16-R2) — the declaration is validated like a seat and grants no authority beyond
+the same role/document pair. No actor, session, lifecycle, operation key, or arbitrary queue id
+enters the wire contract.
 
 The tool description makes the detection/judgment boundary explicit. It reports recomputed
 mechanical facts and deterministic order, while priority and blocker exceptions must resolve to
@@ -207,6 +213,12 @@ Registered worktree and memory tools expose journaled closeout/integration and r
 `detach_master`, `linkage_report`) on the `task_doc` tool.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: `closeout.py` registers the
+  `direct_landing` tool (L16-R8); `tasks.py`'s `task_doc` gains `branch_addressed`
+  (L16-R6); `gates.py`'s structural declarations accept an optional request-carried `caller`
+  (L16-R3). The advertised surface is now 59 tools. Verified at code commit a9d50e08.
+
 
 - 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: `task_doc` registration gains the sprint
   linkage operations. Verified at code commit 8071a644.

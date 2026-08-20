@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -348,6 +348,11 @@ service and then uses the common `_tool_payload` envelope. Registration and resp
 cover the public schema; scheduling, persistence, and lifecycle logic do not live on this route.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: `direct_landing_payload` joins the facade
+  exports (`mcp/tools/direct_landing.py`), and `PUBLIC_TOOLS` advertises `direct_landing` (59
+  names). Verified at code commit a9d50e08.
+
 
 - 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: added the closeout-queue payload adapter
   and kept ambient identity plus mechanics out of the MCP tool surface. Verification remains

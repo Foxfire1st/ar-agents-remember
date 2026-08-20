@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/kernel/primitives/` |
 | onboardingRoute | `mcp/src/agents_remember/kernel/primitives/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../../../overview.md) |
-| lastUpdated | 2026-08-13T00:00+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 
 ## What This Area Is
 
@@ -152,6 +152,11 @@ When adding a primitive:
 Runtime configuration is part of protected-ref authority: code and memory Git common directories, memory mode, coordination root, and canonical task tree must match the durable contract before lifecycle journaling or mutation.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: `runtime_config.py` gains the
+  fail-closed `directExecutionEnabled` policy gate (`parse_direct_execution_enabled`; default
+  `False`; `_checkout_runtime_config` pins it off). Verified at code commit a9d50e08.
+
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 

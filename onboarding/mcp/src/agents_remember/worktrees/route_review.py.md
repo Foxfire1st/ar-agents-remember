@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/route_review.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-14T09:08+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate |  2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -26,6 +26,10 @@ to a later code change.
 
 `build_route_review` accepts only reviewer-authored verdict, evidence, and route rows; the plane
 derives candidate tree and review time and verifies every evidence path stays inside the task root.
+Since 260815-DAG-L16 it takes a `branch_addressed` flag: a leaf contract stamps the worktree
+candidate tree as before, while `branch_addressed=true` (policy-gated direct execution) accepts a
+series contract and stamps the branch HEAD tree instead (L16-R6) — same evidence semantics, no
+worktree.
 `require_current_route_review` first excludes series/master altitude because route-review records
 are leaf-owned, then skips unchanged leaves. A changed leaf resolves its canonical task document,
 requires a passing record for the exact current tree, and rechecks its evidence files.
@@ -39,7 +43,9 @@ the contract with an isolated temporary Git index.
 
 - Agents never author `candidateTree` or `reviewedAt`.
 - Route review belongs only to leaf altitude and is required for code-changing leaves; series
-  closeout must not attempt candidate-tree or terminal-leaf resolution.
+  closeout must not attempt candidate-tree or terminal-leaf resolution. The sole exception is the
+  policy-gated `branch_addressed=true` direct-execution binding, which accepts a series contract
+  explicitly (L16-R6); no silent cross-mode exists.
 - Blocking, missing, stale, outside-task, and missing-file evidence all fail closed.
 - Evidence references are task-relative and may not escape the task root.
 - This module validates evidence; it does not perform review or mutate source.
@@ -74,6 +80,12 @@ closeout requirement; series/master closeout does not impersonate a terminal lea
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `build_route_review` takes `branch_addressed`
+  (policy-gated series-contract stamp from branch HEAD for sanctioned direct execution, L16-R6);
+  leaf-worktree stamping is unchanged and no silent cross-mode exists. Verified at code commit
+  a9d50e08.
+
 
 - 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 

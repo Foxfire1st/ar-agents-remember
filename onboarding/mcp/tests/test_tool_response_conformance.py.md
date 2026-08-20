@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-15T14:05+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -76,7 +76,7 @@ The former `_direct_closeout_payloads` fixture was removed with the
 `direct_closeout_*` tools (issue #62 worktree-only closeout).
 
 **260731-EFA-L4 — the fixtures now write a stale agent-notifier heartbeat.** `_stale_agent_notifier(root)`
-cit:([`_stale_agent_notifier`], mcp/tests/test_tool_response_conformance.py:578-587) does `AgentNotifierHeartbeatStore(observer_root).tick(now=datetime.now(UTC) -
+cit:([`_stale_agent_notifier`], mcp/tests/test_tool_response_conformance.py:591-600) does `AgentNotifierHeartbeatStore(observer_root).tick(now=datetime.now(UTC) -
 timedelta(hours=6))`, and both lifecycle-bearing collectors call it before installing their ambient
 (`_lifecycle_payloads` L356-L388, `_gate_payloads` L415-L483). This is not decoration. The two
 envelope-wide keys the choke point adds — `nextStep` and `agentNotifierBanner` — are set in
@@ -170,6 +170,13 @@ This task extends this suite's production-bound fixtures or assertions for task-
 
 ## Update History
 
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: seat-path conformance preserved; citation range
+  regenerated (`_stale_agent_notifier` at test_tool_response_conformance.py:591-600). Verified at
+  code commit a9d50e08.
+
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-17T14:00+02:00 — No content impact: L5 repair; added a demo code change and a `load_contract` import to the conformance fixture so the demo leaf prepends a fresh ledger mapping. The documented tool-response conformance surface is unchanged.
 
 - 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
@@ -208,7 +215,7 @@ This task extends this suite's production-bound fixtures or assertions for task-
 - 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:00+02:00 — 260731-EFA-L4 curator: the fixtures now write a **stale agent-notifier
   heartbeat**, and that is a real change to what this suite covers, so the card gained a paragraph
-  for it. cit:([`_stale_agent_notifier`], mcp/tests/test_tool_response_conformance.py:578-587) ticks
+  for it. cit:([`_stale_agent_notifier`], mcp/tests/test_tool_response_conformance.py:591-600) ticks
   `AgentNotifierHeartbeatStore(...).tick(now=datetime.now(UTC) - timedelta(hours=6))`, and both
   lifecycle-bearing collectors call it before installing their ambient (`_lifecycle_payloads`
   L356-L388, `_gate_payloads` L415-L483). Verified the reason against

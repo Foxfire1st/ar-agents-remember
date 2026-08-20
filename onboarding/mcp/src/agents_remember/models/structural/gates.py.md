@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/structural/gates.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T14:29+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,6 +36,9 @@ MCP results.
 ### Invariants And Boundaries
 
 - Agent-facing schemas never expose lifecycle or gate ids.
+- `StructuralLifecycleGateRequest`/`StructuralGateDecisionRequest` carry an optional `caller`
+  (`DeclaredCaller`) used only when the process has no plane-injected seat; the structural
+  authorization validates the declared role/document before any decision is recorded (L16-R3).
 - Internal correlation stays available for the application service to complete the transaction.
 - Strict response models reject accidental mixed public/internal payloads.
 
@@ -57,6 +60,11 @@ None.
 
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: structural gate requests gain an optional `caller`
+  (`DeclaredCaller`) used only when no plane seat exists; the strict response boundary is
+  unchanged. Verified at code commit a9d50e08.
+
 
 - 2026-08-11T14:29+02:00 — Re-read `StructuralLifecycleGateRequest` and widened its citation to
   include the dataclass declaration; verification metadata remains pending for governed closeout.

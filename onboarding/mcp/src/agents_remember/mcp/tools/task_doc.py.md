@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/mcp/tools/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,7 +24,8 @@ since L11, `task_reopen` (reopen a completed leaf task under its exact leaf id).
 ### Logic
 
 `task_doc_payload(config, target: TaskDocTarget, *, operation, edit: TaskDocEdit = NO_EDIT,
-dry_run=False)` calls `task_doc_tool(config, target, operation=..., edit=..., dry_run=...)` and
+call: TaskDocCall = DEFAULT_TASK_DOC_CALL)` calls `task_doc_tool(config, target, operation=...,
+edit=..., call=...)` and
 wraps the result through `base._tool_payload("task_doc", ...)`, so the response is validated against
 `TaskDocResponse` and (like every tool) attributed to the active lifecycle at the `_tool_payload`
 choke point.
@@ -49,11 +50,16 @@ two objects, because a model-typed tool parameter would republish `task_doc` as 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The application entry point this builder forwards to. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:177-256 |
+| The application entry point this builder forwards to. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:189-282 |
 | The shared validation/emission choke point. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | The response model the payload validates against. | `TaskDocResponse` | mcp/src/agents_remember/models/task_doc.py:33-59 |
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `task_doc_payload` takes `call: TaskDocCall` instead of
+  the bare `dry_run` flag (L16-R6); the builder stays transport-thin. Verified at code commit
+  a9d50e08.
+
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

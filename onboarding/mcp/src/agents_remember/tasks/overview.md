@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-20T05:04+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -137,7 +137,7 @@ together.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `task_doc` application entry point authors documents through this package. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:190-275 |
+| The `task_doc` application entry point authors documents through this package. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:189-282 |
 | Leaf writes keep same-root master rows synchronized through the dedicated planner. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
 | The task-document renderer regenerates markdown from the validated `TaskDocument`. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
 | The persisted worktree contract is the analogous model-to-text precedent. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
@@ -179,7 +179,18 @@ non-retired roles) and typed `SubTaskRef.masterRef` rows; the renderer emits rea
 master links, the generated Master Index for sprints, and the `**Seats:**` header block;
 `validate_sprint_linkage` hard-fails new-shape drift.
 
+## 260815-DAG-L16 Route Impact
+
+`tasks/leaf_doc.py` blank-id refusal now names the missing binding and the recovery (L16-R9:
+re-stamp the series contract / use branch-addressed mode for direct execution). The
+`record_route_review` binding machinery moved to `application/task_doc_route_review.py` (facade
+re-export); the task route's model is unchanged.
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: leaf-doc blank-id refusal names binding +
+  recovery (L16-R9); route-review binding machinery extracted to
+  `application/task_doc_route_review.py`. Verified at code commit a9d50e08.
+
 
 - 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: the task document schema gains sprint
   `seats` + typed `masterRef` rows, the renderer emits real links/seats, and linkage validation

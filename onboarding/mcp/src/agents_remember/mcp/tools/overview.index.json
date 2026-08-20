@@ -15,6 +15,7 @@
     "mcp/src/agents_remember/mcp/tools/benchmark.py",
     "mcp/src/agents_remember/mcp/tools/closeout_queue.py",
     "mcp/src/agents_remember/mcp/tools/core.py",
+    "mcp/src/agents_remember/mcp/tools/direct_landing.py",
     "mcp/src/agents_remember/mcp/tools/gates.py",
     "mcp/src/agents_remember/mcp/tools/hosted_readiness.py",
     "mcp/src/agents_remember/mcp/tools/lifecycle.py",
@@ -30,8 +31,8 @@
     "mcp/src/agents_remember/mcp/tools/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 18,
-    "fileSidecars": 18,
+    "sourceFilesInScope": 19,
+    "fileSidecars": 19,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -43,6 +44,8 @@
     "closeout",
     "closeout_queue",
     "core",
+    "direct",
+    "direct_landing",
     "doc",
     "files",
     "finalize",
@@ -52,6 +55,7 @@
     "inbox",
     "init",
     "init__",
+    "landing",
     "lifecycle",
     "lifecycle_finalize",
     "mcp",
@@ -83,6 +87,7 @@
       "mcp/src/agents_remember/mcp/tools/benchmark.py",
       "mcp/src/agents_remember/mcp/tools/closeout_queue.py",
       "mcp/src/agents_remember/mcp/tools/core.py",
+      "mcp/src/agents_remember/mcp/tools/direct_landing.py",
       "mcp/src/agents_remember/mcp/tools/gates.py",
       "mcp/src/agents_remember/mcp/tools/hosted_readiness.py",
       "mcp/src/agents_remember/mcp/tools/lifecycle.py",
@@ -108,6 +113,8 @@
       "closeout_queue",
       "core.py",
       "core",
+      "direct_landing.py",
+      "direct_landing",
       "gates.py",
       "gates",
       "hosted_readiness.py",
@@ -140,12 +147,10 @@
       "ACPUI",
       "mcp/src/agents_remember/mcp/tools",
       "route-local-overview",
-      "8bf6edad7e7e65e27cf735be0822f604531d0c8a",
+      "a9d50e08b830c4a34c14e495706c19fe697f47ab",
       "/../../../../overview.md",
       "mcp/tools/",
-      "mcp/tools.py",
-      "01f503d",
-      "task_reopen_payload"
+      "mcp/tools.py"
     ]
   },
   "fallback": {

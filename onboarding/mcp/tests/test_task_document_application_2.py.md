@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_task_document_application_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-16T04:06+02:00                                            |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                                        |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
+| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -46,6 +46,10 @@ not-required-master-altitude without probing candidate change or terminal leaf t
 identity. Leaf candidate-bound review behavior remains unchanged.
 
 ## Update History
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (task_doc_tool takes
+  `call: TaskDocCall`); suite purpose unchanged. Verified at code commit a9d50e08.
+
 
 - 2026-08-16T04:06+02:00 — 260815-DAG-L4 Dagger repair: lifecycle-id and route-review application tests now use real configured Git worktrees plus an organizational master and sprint-super topology, allowing the public task-document boundary to exercise exact contract authority instead of impossible placeholder repositories.
 - 2026-08-16T02:51+02:00 — No content impact: the route-review helper now reuses the real Git
