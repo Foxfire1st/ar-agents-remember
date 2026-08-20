@@ -16,6 +16,7 @@
     "mcp/src/agents_remember/observer/events.py",
     "mcp/src/agents_remember/observer/lifecycle_state.py",
     "mcp/src/agents_remember/observer/projection.py",
+    "mcp/src/agents_remember/observer/projection_graph.py",
     "mcp/src/agents_remember/observer/provider_nodes.py",
     "mcp/src/agents_remember/observer/reducer.py",
     "mcp/src/agents_remember/observer/reducer_impl/__init__.py",
@@ -34,7 +35,7 @@
   ],
   "coverageCounts": {
     "sourceFilesInScope": 22,
-    "fileSidecars": 21,
+    "fileSidecars": 22,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -49,6 +50,7 @@
     "event_retention",
     "events",
     "gate",
+    "graph",
     "impl",
     "init",
     "init__",
@@ -60,6 +62,7 @@
     "observer",
     "processes",
     "projection",
+    "projection_graph",
     "provider",
     "provider_nodes",
     "reducer",
@@ -94,6 +97,7 @@
       "mcp/src/agents_remember/observer/events.py",
       "mcp/src/agents_remember/observer/lifecycle_state.py",
       "mcp/src/agents_remember/observer/projection.py",
+      "mcp/src/agents_remember/observer/projection_graph.py",
       "mcp/src/agents_remember/observer/provider_nodes.py",
       "mcp/src/agents_remember/observer/reducer.py",
       "mcp/src/agents_remember/observer/reducer_impl",
@@ -124,6 +128,8 @@
       "lifecycle_state",
       "projection.py",
       "projection",
+      "projection_graph.py",
+      "projection_graph",
       "provider_nodes.py",
       "provider_nodes",
       "reducer.py",
@@ -157,9 +163,7 @@
       "contract_snapshot",
       "mcp/src/agents_remember/observer/",
       "route-local-overview",
-      "8071a64497ed88f8f423e853dc9440532fd573af",
-      "/../../../overview.md",
-      "observer/"
+      "b7f2c8e2c7020642780e2c9b997ffb035a782e62"
     ]
   },
   "fallback": {

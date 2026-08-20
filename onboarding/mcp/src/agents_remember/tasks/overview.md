@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -185,7 +185,16 @@ master links, the generated Master Index for sprints, and the `**Seats:**` heade
 re-stamp the series contract / use branch-addressed mode for direct execution). The
 `record_route_review` binding machinery moved to `application/task_doc_route_review.py` (facade
 re-export); the task route's model is unchanged.
+
+## 260815-DAG-L12 Route Impact
+
+The execution graph is now rendered as a deterministic mermaid `flowchart TD` diagram (L12-R1): `render.py` `_execution_graph_lines` emits subgraph-per-master boxes (title-labeled, truncated leaf nodes, atomic lumps, labeled edges) ordered by derived wave then node order, with the machine lists alongside. The new `execution_graph_titles.py` owns the shared master/leaf title join (`SprintGraphTitles`, `build_graph_titles`, `read_graph_titles`), re-exported by the package facade and threaded through `store.py` batch writes and every application writer's publish/preview sites.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 mermaid document diagram + shared title join (`execution_graph_titles.py`). Verified at code commit b7f2c8e2.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: leaf-doc blank-id refusal names binding +
   recovery (L16-R9); route-review binding machinery extracted to

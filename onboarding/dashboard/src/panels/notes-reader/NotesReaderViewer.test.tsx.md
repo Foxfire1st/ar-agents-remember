@@ -80,9 +80,12 @@ No meaningful cross-repo references found.
 | The component under test. | "export const NotesReaderViewer = memo(NotesReaderViewerImpl)" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:274-274 |
 | The shell driven by the takeover-wiring test. | "export function CockpitShell(" | dashboard/src/cockpit/Cockpit.tsx:858-858 |
 | `masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`. | `masterDoc`; `seedMaster` | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:188-229 |
-| `TaskDocNode`, `Analytics` with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection`, and `metricsFor`. | `TaskDocNode`; `Analytics`; `WorkspaceProjection`; `metricsFor` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:362-369; dashboard/src/types/projection.ts:506-535; dashboard/src/types/projection.ts:626-639 |
+| `TaskDocNode`, `Analytics` with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection`, and `metricsFor`. | `TaskDocNode`; `Analytics`; `WorkspaceProjection`; `metricsFor` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:362-369; dashboard/src/types/projection.ts:506-537; dashboard/src/types/projection.ts:651-664 |
 
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-20T04:44+02:00 — 260815-DAG-L14: `masterDoc` fixture defaults `seats: []`; the
   `WorkspaceProjection` citation re-pinned to the current interface range. Verified at code commit

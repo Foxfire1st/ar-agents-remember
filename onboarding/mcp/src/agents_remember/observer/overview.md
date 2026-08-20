@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-20T05:04+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated            | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -622,7 +622,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
 | The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:43-43; mcp/src/agents_remember/controlplane/durable_store.py:13-24 |
 | `StatesAreFiledOnce` is the TypeScript overlap-check type. | `StatesAreFiledOnce` | dashboard/src/types/projection.ts:25-25 |
-| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:222-222 |
+| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:223-223 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -787,7 +787,16 @@ the read-side projection of its result.
 The task-document projection carries first-class sprint structure: `TaskSubTaskRefNode.masterRef`
 and `TaskDocNode.seats` (`TaskSeatNode`), served on sprint docs and defaulted empty elsewhere.
 
+
+## 260815-DAG-L12 Route Impact
+
+New module `projection_graph.py`: the primitives-only render-ready sprint graph view builder (`TaskExecutionGraphView`/`TaskExecutionNodeView`/`TaskExecutionPredecessorNode`, `build_execution_graph_view`) — the observer package must not import `tasks`, so the serving layer feeds it plain data. `projection.py` `TaskDocNode` gains the optional `executionGraphView` field (L12-R4); the dashboard renders this view directly and never re-derives waves or frontier state.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 adds the primitives-only graph-view projection builder and the `TaskDocNode.executionGraphView` field. Verified at code commit b7f2c8e2.
 
 - 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: the task projection gains typed
   `masterRef` rows and first-class `seats`. Verified at code commit 8071a644.

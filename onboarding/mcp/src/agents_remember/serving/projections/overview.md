@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/projections/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated            | 2026-08-20T05:04+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated            | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 
 ## What This Area Is
 
@@ -147,7 +147,16 @@ authority; projection never exposes worker or resume identity.
 `snapshots_impl/_task_documents.py` passes `SubTaskRef.masterRef` through and projects
 `doc.seats` as `TaskSeatNode`; the body revision covers sprint structure.
 
+
+## 260815-DAG-L12 Route Impact
+
+The task-documents snapshot reader (`snapshots_impl/_task_documents.py`) now projects the render-ready `executionGraphView` on sprint documents (L12-R4): `_master_docs_by_ref` indexes valid master payloads from the bounded window, `_execution_graph_view` walks the persisted graph (waves, endpoints, titles, facts) and feeds the primitives-only builder, and `_task_doc_node` splits into the reader-body and execution-graph field groups. Docs without a graph project `None`.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready graph view wiring in the task-documents snapshot reader. Verified at code commit b7f2c8e2.
 
 - 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: `_task_documents.py` projects
   `masterRef` + `seats` and covers them in the body revision. Verified at code commit 8071a644.

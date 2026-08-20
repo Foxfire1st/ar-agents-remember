@@ -37,9 +37,12 @@ uPlot-deferral). Cyan = the progress/charge grammar.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `TokenSample` shape (ts + cumulative) it plots. | `TokenSample` | dashboard/src/types/projection.ts:612-615 |
+| The `TokenSample` shape (ts + cumulative) it plots. | `TokenSample` | dashboard/src/types/projection.ts:637-640 |
 
 ## Update History
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: reconciled the frozen-source ledger and generated final citation ranges with the scoped fixer.

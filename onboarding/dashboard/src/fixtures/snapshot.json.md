@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T04:40+02:00                           |
-| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7`       |
-| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
+| lastUpdated            | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -54,24 +54,24 @@ producer's private-plane boundary while making the generated dashboard contract 
 Top-level keys in wire order: `version` (1), `generatedAt`, `lifecycles`, `enclosures`, `providers`,
 `activeWorktreeGroups`, `metrics`, `analytics`.
 
-- **cit:([`lifecycles`], dashboard/src/fixtures/snapshot.json:1516-1516) — six rows, one per state.** `blocked-001`, `running-000`, `paused-002`,
+- **cit:([`lifecycles`], dashboard/src/fixtures/snapshot.json:1568-1568) — six rows, one per state.** `blocked-001`, `running-000`, `paused-002`,
   `awaiting-003`, `completed-004`, `abandoned-005`, and their phases spread across all six of `build`,
   `reframe-research`, `request`, `trust-checkpoint`, `decide`, `close`. Two rows carry a `gate`
   (`GATE-1` open with `decisions: ["approve","revise"]`, `GATE-0` decided), both with a non-empty
   `evidenceRefs`. Every row carries `stateEnteredAt`. The `awaiting-developer` row is the state the
   mirror had never declared, and it is here so the vocabulary check can bite.
-- **cit:(["\"enclosures\": ["], dashboard/src/fixtures/snapshot.json:1035-1035)** — one enclosure; **two providers** (a code provider and
-  a memory provider) are pinned by cit:(["\"snapshotStaleSeconds\": 3.5"], dashboard/src/fixtures/snapshot.json:1688-1688),
+- **cit:(["\"enclosures\": ["], dashboard/src/fixtures/snapshot.json:1087-1087)** — one enclosure; **two providers** (a code provider and
+  a memory provider) are pinned by cit:(["\"snapshotStaleSeconds\": 3.5"], dashboard/src/fixtures/snapshot.json:1740-1740),
   joined by `worktreeGroup: "sim-group"`; **cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:2-2)** —
   `["sim-group"]`.
-- **cit:([`metrics`], dashboard/src/fixtures/snapshot.json:1659-1659)** — `lifecycleCount: 6`, one bucket per LIVE state (`runningCount`,
+- **cit:([`metrics`], dashboard/src/fixtures/snapshot.json:1711-1711)** — `lifecycleCount: 6`, one bucket per LIVE state (`runningCount`,
   `blockedCount`, `pausedCount`, `awaitingDeveloperCount`, each 1), `totalTokens: 2800`, and a
   `stalenessHistogram` of `{ fresh, aging }`. The four buckets are exactly the keys `metricsFor([])`
   produces, which is what `contract.test.ts` asserts set-equality on — the terminal pair deliberately
   has no bucket.
 - **`analytics`** cit:([`analytics`], dashboard/src/fixtures/snapshot.json:5-5) — all thirteen keys present and none empty: cit:([`driftSnapshots`], dashboard/src/fixtures/snapshot.json:82-82),
   cit:([`stalestSidecars`], dashboard/src/fixtures/snapshot.json:690-690), cit:([`setupSummaries`], dashboard/src/fixtures/snapshot.json:676-676), cit:([`setupProgress`], dashboard/src/fixtures/snapshot.json:666-666), cit:([`routeCoverage`], dashboard/src/fixtures/snapshot.json:618-618),
-  cit:([`toolReports`], dashboard/src/fixtures/snapshot.json:979-979), cit:([`agentPickups`], dashboard/src/fixtures/snapshot.json:6-6), cit:([`expectationRows`], dashboard/src/fixtures/snapshot.json:583-583), cit:([`ledgers`], dashboard/src/fixtures/snapshot.json:600-600),
+  cit:([`toolReports`], dashboard/src/fixtures/snapshot.json:1031-1031), cit:([`agentPickups`], dashboard/src/fixtures/snapshot.json:6-6), cit:([`expectationRows`], dashboard/src/fixtures/snapshot.json:583-583), cit:([`ledgers`], dashboard/src/fixtures/snapshot.json:600-600),
   cit:([`taskDocuments`], dashboard/src/fixtures/snapshot.json:698-698), `attentionQueue` (L368, three rows), `engineProcesses` (L406, eight pods),
   cit:(["\"series\": ["], dashboard/src/fixtures/snapshot.json:627-627).
 
@@ -160,9 +160,9 @@ absent from the file rather than present as `null`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:1516-1516 |
+| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:1568-1568 |
 | One enclosure, two providers, and the `activeWorktreeGroups` join value. | `activeWorktreeGroups` | dashboard/src/fixtures/snapshot.json:2-2 |
-| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:1659-1659 |
+| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:1711-1711 |
 | All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `analytics` | dashboard/src/fixtures/snapshot.json:5-5 |
 | The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:156-162 |
 | The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
@@ -192,7 +192,16 @@ Engine Process fixtures now sample aggregate `current`, `blocked`, and
 contract-addressed `worktree_sync` recovery. These are wire-contract examples,
 not frontend-derived Git facts.
 
+
+## 260815-DAG-L12 Fixture Graph View
+
+The sprint fixture (`sim-master` / `sim-master-b` scenario) now carries the render-ready `executionGraphView` (L12-R4): a segmented master with a joined title and an early leaf, a dependent second master waiting on it with a recorded predecessor reason and judgment id, and per-node frontier states — so the fixture-coverage guard exercises the new `kind`/`frontierState` vocabularies.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   the sprint fixture carries the render-ready `executionGraphView` scenario (L12-R4). Verified at code commit b7f2c8e2.
 
 - 2026-08-20T04:40+02:00 — 260815-DAG-L14: the sprint fixture carries non-empty `seats` (both
   identity-present and identity-absent members) and two typed `masterRef` rows whose master targets

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T04:10+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00 |
+| lastUpdated | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -107,7 +107,16 @@ batches, `linkage_report`/`linkageFacts` are the read-only drift surface, and
 consistency cross-check (`validate_sprint_linkage` in `tasks/document_refs.py`) hard-fails only
 new-shape drift; legacy shapes surface as facts (L14-R5/R7).
 
+
+## 260815-DAG-L12 Title Threading
+
+Sprint linkage publication now labels the sprint's mermaid render from the linkage batch's in-memory masters (L12-R1/R4): `_batch_graph_titles` joins titles via `build_graph_titles` for the sprint in the batch, `_publish` passes `graph_titles=` to `write_task_doc_batch`, and `_document_preview` renders with the disk-backed `read_graph_titles`. A batch without a graph produces no titles.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   sprint-linkage publish/preview threads joined graph titles (`_batch_graph_titles`, L12-R1/R4). Verified at code commit b7f2c8e2.
 
 - 2026-08-20T04:10+02:00 — 260815-DAG-L14: created — one atomic `attach_master`/`detach_master`
   operation pair (typed row + `orchestrates` slug + graph lump node + nature assertion as one

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/dev/DevApp.tsx`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `7b62338310aff67ae8b66a450a52a1f1052137c4`       |
-| lastVerifiedCommitDate | 2026-07-17T04:36:24+02:00|
+| lastUpdated            | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -31,7 +31,7 @@ renders the L6 `PtyRenderBench` measurement harness. The `/dev/flows` branch ren
 `FlowTab` inside a `.cockpit` wrapper, passing `initialModel` from the `?model=` query param
 (`new URLSearchParams(window.location.search).get("model") ?? undefined`) — a deep link into a
 specific drawn model. The index list carries a `/dev/flows` entry alongside `/dev/bench` and
-`/dev/reference`. cit:(["return <PtyRenderBench />", "FlowTab initialModel"], dashboard/src/dev/DevApp.tsx:15-15; dashboard/src/dev/DevApp.tsx:20-20)
+`/dev/reference`. cit:(["return <PtyRenderBench />", "FlowTab initialModel"], dashboard/src/dev/DevApp.tsx:16-16; dashboard/src/dev/DevApp.tsx:22-22)
 
 ### Invariants And Boundaries
 
@@ -43,13 +43,22 @@ chunk). Its CSS is co-located in `dev.css`, loaded only here.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The DEV-only route gate that drops this chunk in prod. | "const DevApp = import.meta.env.DEV" | dashboard/src/App.tsx:8-8 |
-| The co-located dev-gallery styles it imports. | "./dev.css" | dashboard/src/dev/DevApp.tsx:6-6 |
-| The L6 renderer measurement harness mounted at `/dev/pty-bench`. | "return <PtyRenderBench />" | dashboard/src/dev/DevApp.tsx:15-15 |
+| The co-located dev-gallery styles it imports. | "./dev.css" | dashboard/src/dev/DevApp.tsx:7-7 |
+| The L6 renderer measurement harness mounted at `/dev/pty-bench`. | "return <PtyRenderBench />" | dashboard/src/dev/DevApp.tsx:16-16 |
 | The lifecycle-design canvas mounted at `/dev/flows` (`initialModel` from `?model=`). | `initialModel` | dashboard/src/panels/FlowTab.tsx:111-111 |
 
 As of cycle 5 the /dev/flows index label lists the converged model set (router first; build job and frame gone).
 
+
+## 260815-DAG-L12 Sprint-Graph Dev Route
+
+The DEV harness router gains the `/dev/sprint-graph` branch (L12-R7): it renders `SprintGraphPage` — the real sprint page (Operations DetailPanel) seeded with the deterministic sprint-graph fixture, the one-shot mounted-UI evidence surface. The index list carries a matching entry.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   DEV router adds `/dev/sprint-graph` -> `SprintGraphPage` (L12-R7). Verified at code commit b7f2c8e2.
 
 - 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 7 initial citation findings (3 anchor, 1 prose, 3 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
 

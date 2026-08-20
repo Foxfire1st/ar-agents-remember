@@ -238,7 +238,7 @@ type is recorded separately below as an in-repo boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The in-repo workspace projection wire type. | `WorkspaceProjection` | dashboard/src/types/projection.ts:626-639 |
+| The in-repo workspace projection wire type. | `WorkspaceProjection` | dashboard/src/types/projection.ts:651-664 |
 
 ## L23 Contract-Backed Conformance Fixture
 
@@ -248,6 +248,9 @@ exercise the same task-derived ancestry topology as production instead of a
 standalone leaf branch.
 
 ## Update History
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-12T20:10+02:00 — L23 curator: documented super/master/leaf fixture lineage for response conformance; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 

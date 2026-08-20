@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/store.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T04:52+02:00                     |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated            | 2026-08-20T10:45+02:00 |
+| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
+| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -51,7 +51,16 @@ for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_
 | The renderer invoked on every write. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:20-40 |
 | The application entry point uses batch writes when a leaf mutation also changes its parent master row. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:177-256 |
 
+
+## 260815-DAG-L12 Title Threading
+
+`write_task_docs` and `write_task_doc_batch` gained the optional `graph_titles` keyword (L12-R1/R4): the batch passes it to `render_markdown` for every document that carries an `executionGraph`, so a sprint's `task.md` mermaid boxes are labeled with real master/leaf titles at publish time. `write_task_doc` delegates through unchanged; the atomic prepare/publish/rollback contract is untouched.
+
+
 ## Update History
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   `write_task_docs`/`write_task_doc_batch` thread the optional `graph_titles` join into the renderer (L12-R1/R4). Verified at code commit b7f2c8e2.
 
 - 2026-08-20T04:52+02:00 — 260815-DAG-L14 curator: re-read the `TaskDocument` claim — the persisted
   model gained sprint `seats` and typed `masterRef` rows; wording retained, citation regenerated to

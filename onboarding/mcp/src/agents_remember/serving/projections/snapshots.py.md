@@ -411,10 +411,10 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`). | "def _task_document_lifecycle_maps(enclosures: list[EnclosureNode]) -> _TaskDocumentLifecycleMaps:"; "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:115-115; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:295-295 |
-| `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | "def read_series_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:174-174 |
-| Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | "def _series_subtask_nodes(path: Path"; "def _series_subtask_created_at(base_dir: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:220-220; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:240-240 |
-| Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:295-295 |
+| `read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`). | "def _task_document_lifecycle_maps(enclosures: list[EnclosureNode]) -> _TaskDocumentLifecycleMaps:"; "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:147-147; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:492-492 |
+| `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | "def read_series_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:206-206 |
+| Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | "def _series_subtask_nodes(path: Path"; "def _series_subtask_created_at(base_dir: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:252-252; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:272-272 |
+| Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:492-492 |
 | The projection nodes these readers build, including optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode`; `SeriesSubTaskNode`; `SeriesNode` | mcp/src/agents_remember/observer/projection.py:739-812; mcp/src/agents_remember/observer/projection.py:797-812; mcp/src/agents_remember/observer/projection.py:825-851 |
 | The provider current-state path + snapshot shape (surface 1). | `current_state_path` | mcp/src/agents_remember/providers/current_state.py:52-62 |
 | The provider-node projection policy used by `read_providers`. | `read_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:163-181 |
@@ -446,6 +446,9 @@ reparses only changed/new stat identities and removes deleted entries. The new
 facts on heartbeat ticks.
 
 ## Update History
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over the `snapshots_impl/` subpackage (`_common`, `_analytics`, `_runtime`, `_task_documents`); full public+private surface re-exported and pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.

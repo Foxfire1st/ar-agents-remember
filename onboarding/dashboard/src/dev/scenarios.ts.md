@@ -132,7 +132,7 @@ the reviewed task evidence for any current behavioral claim.
 | `EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra="forbid"` model. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:925-969 |
 | `engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states). | `engineRoomProjection`, `GALLERY` | dashboard/src/dev/fixtures.ts:135-144; dashboard/src/dev/fixtures.ts:146-490 |
 | Consumed by the player transport + the bench picker. | `Bench`, `applyFrame` | dashboard/src/dev/Bench.tsx:18-83; dashboard/src/dev/ScenarioPlayer.tsx:12-17; dashboard/src/dev/ScenarioPlayer.tsx:27-27 |
-| `WorkspaceProjection` / `ObserverEvent` types each frame carries. | `WorkspaceProjection`, `ObserverEvent` | dashboard/src/types/event.ts:9-22; dashboard/src/types/projection.ts:626-639 |
+| `WorkspaceProjection` / `ObserverEvent` types each frame carries. | `WorkspaceProjection`, `ObserverEvent` | dashboard/src/types/event.ts:9-22; dashboard/src/types/projection.ts:651-664 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -157,6 +157,9 @@ lifecycle overlay. The dev surface therefore exercises the same sprint/master/le
 the Session Rail groups in production rather than a flat session-only fixture.
 
 ## Update History
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-14T06:30+02:00 — L23 final candidate review: fleet-12 scenarios now inject the shared
   sprint/master/leaf task-document fixture so scenario grouping matches production rail semantics.
   Verification remains closeout-owned.
