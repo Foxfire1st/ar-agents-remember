@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated            | 2026-08-20T05:10+02:00 |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -59,6 +59,11 @@ No sibling repository evidence is needed for this template.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260815-DAG-L14 Doctrine Sync
+
+The orchestration task template documents the atomic `attach_master` adoption flow and the
+first-class sprint seats structure.
+
 ## L23 Final Candidate Disposition
 
 Orchestration task packets identify review routes, candidate-bound evidence, and the targeted/full
@@ -80,6 +85,10 @@ atomic-sequential default; `task_doc.author_execution_graph` bootstraps or edits
 never a runtime fallback. The `migrate_execution_topology` legacy-cutover reference is gone.
 
 ## Update History
+
+- 2026-08-20T05:10+02:00 — 260815-DAG-L14: template updated to the atomic
+  `attach_master` flow and seats structure. Verified at code commit 2f494982.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: synchronized the scheduling-default doctrine —
   adoption without a graph runs atomic-sequentially and `author_execution_graph` owns bootstrap

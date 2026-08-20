@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-19T08:55+02:00                                            |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0`                                        |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated            | 2026-08-20T04:26+02:00                                            |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7`                                        |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `../overview.md`                                       |
 
 ## Governing Overview
@@ -31,7 +31,10 @@ Task-document and series readers: summaries, full bodies, lifecycle binding. Tas
 - `_ref_lifecycle`
 - `_task_step_nodes`
 - `_task_doc_node`
-- `_task_doc_body_revision`
+- `_task_doc_body_revision` (since 260815-DAG-L14 the revision covers `subTasks` + `seats` so
+  an open reader refetches when sprint linkage/seat edits land)
+- `_task_doc_node` since 260815-DAG-L14 passes `SubTaskRef.masterRef` through to
+  `TaskSubTaskRefNode.masterRef` and projects `doc.seats` as `TaskSeatNode` rows
 
 ## Invariants And Boundaries
 
@@ -44,6 +47,11 @@ Task-document and series readers: summaries, full bodies, lifecycle binding. Tas
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-20T04:26+02:00 — 260815-DAG-L14: `_task_doc_node` passes the typed `masterRef` through
+  and projects first-class `seats` (`TaskSeatNode`); `_task_doc_body_revision` now covers
+  `subTasks` + `seats` so an open sprint reader refetches on linkage/seat edits. Verified at code
+  commit 9c3180c1.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: `_task_doc_node` now projects `executionWaves` as
   `TaskExecutionNode` rows (each persisted `SprintExecutionNode` re-validated into the served

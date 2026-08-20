@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/masterSeries.test.tsx`   |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-20T04:36+02:00                                        |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7`                  |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -21,6 +21,8 @@ The master/series navigation suite split from `DetailPanel.test.tsx` by the
 cross-series navigation behavior of the detail reader.
 
 ## Code Commentary
+
+Since 260815-DAG-L14 the suite proves the sprint → master → leaf click path: a typed `masterRef` row renders as the `⇒` master link, opens the commanded master document, then drills to its leaf; an unprojected `masterRef` target degrades to the static index row.
 
 ### Logic
 
@@ -60,6 +62,8 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-20T04:36+02:00 — 260815-DAG-L14: added the mounted-UI proofs for the sprint → master → leaf navigation (typed `masterRef` row opens the commanded master) and the unprojected-target fallback. Verified at code commit 9c3180c1.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
   master-series suite split from `DetailPanel.test.tsx`. Verification pinned to the

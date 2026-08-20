@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-19T08:55+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0`       |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated | 2026-08-20T04:24+02:00 |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7`       |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -32,7 +32,12 @@ projection is leaf-segmented: `TaskExecutionNode` (kind `master` lump or `segmen
 and `TaskExecutionEndpointNode` (ref + optional segment-sampling `leafId`) mirror the persisted
 schema, with before-validators lifting legacy bare refs into the uniform served shape;
 `TaskExecutionEdgeNode` carries the optional `judgmentId`, and `TaskDocNode.executionWaves` derives
-over execution nodes. The observer does not choose current seat occupants or authorize relations.
+over execution nodes. The observer does not choose current seat occupants or authorize relations. Since
+260815-DAG-L14 the task projection also carries first-class sprint structure:
+`TaskSubTaskRefNode.masterRef` (the typed commanded-master link — the dashboard opens that
+document directly; `None` for ordinary leaf rows and legacy slug-only rows) and `TaskSeatNode`
+(role/label/identity/state, `extra="forbid"`, mirroring `tasks.document.SprintSeat`), projected
+from `TaskDocument.seats`; `TaskDocNode.seats` defaults to empty so non-sprint docs are untouched.
 
 ### Conventions
 
@@ -57,9 +62,9 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Pickup and expectation analytics carry structural references. | `AgentPickupNode` | mcp/src/agents_remember/observer/projection.py:392-431 |
-| Task documents remain the real projected hierarchy. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:718-771 |
-| The leaf-segmented graph projection (lump/segment nodes and sampling endpoints). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | mcp/src/agents_remember/observer/projection.py:618-657 |
-| Workspace projection is the schema authority consumed by generation. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1107-1129 |
+| Task documents remain the real projected hierarchy. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:739-812 |
+| The leaf-segmented graph projection (lump/segment nodes and sampling endpoints). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | mcp/src/agents_remember/observer/projection.py:639-658; mcp/src/agents_remember/observer/projection.py:661-677 |
+| Workspace projection is the schema authority consumed by generation. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 
 ## Cross-Repo References
 
@@ -78,6 +83,11 @@ Observer projection now imports `LifecycleOperationProjection` from
 projection remain unchanged; this is an ownership-only model move.
 
 ## Update History
+
+- 2026-08-20T04:24+02:00 — 260815-DAG-L14: `TaskSubTaskRefNode` gains the typed `masterRef`
+  (commanded-master link), `TaskDocNode` gains `seats` (`TaskSeatNode`, `extra="forbid"`), and the
+  served shape mirrors `tasks.document.SprintSeat`. Verified at code commit 9c3180c1.
+
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: added `TaskExecutionNode` / `TaskExecutionEndpointNode`
   (with bare-ref lifting before-validators); `TaskExecutionEdgeNode` endpoints are now endpoint

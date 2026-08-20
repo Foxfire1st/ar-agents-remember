@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-20T04:22+02:00 |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,9 @@ and commanded membership comes from the canonical `orchestrates` aliases; the re
 `bootstrapped: true`, and final validation requires exact membership plus an explicit nature for
 every commanded master (a `set_nature` mutation in the same batch covers a master document that
 lacks one). Judgment-bearing mutations (edges,
-segmentation, nature reclassification) must carry a `judgmentId` that `_verify_authoring_judgments`
+segmentation, nature reclassification) must carry a `judgmentId` that `_verify_authoring_judgments` (which since 260815-DAG-L14 delegates to the extracted shared
+`verify_sprint_judgment_ids` — also used by the sprint linkage operations — so the graph-authoring
+and attach paths verify judgment provenance through one function)
 resolves against the sprint's canonical `Judgment Register (canonical judgment authority)` section —
 a missing register is a typed refusal naming the section (sprint creation scaffolds the empty
 canonical registers, and the write path validates their shape), an unknown row or a non
@@ -72,7 +74,7 @@ write is refused — a graph is only ever retired through the graph-authoring se
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The incremental authoring operation applies one validated judgment-provenanced mutation batch and bootstraps graph-less sprints. | `author_execution_graph` | mcp/src/agents_remember/application/task_execution_topology.py:182-247 |
-| Claimed judgment ids resolve against the sprint's canonical Judgment Register. | `_verify_authoring_judgments` | mcp/src/agents_remember/application/task_execution_topology.py:340-367 |
+| Claimed judgment ids resolve against the sprint's canonical Judgment Register (since 260815-DAG-L14 `_verify_authoring_judgments` delegates to the extracted shared `verify_sprint_judgment_ids`, also used by the sprint linkage operations). | `_verify_authoring_judgments`; `verify_sprint_judgment_ids` | mcp/src/agents_remember/application/task_execution_topology.py:340-367; mcp/src/agents_remember/application/task_execution_topology.py:369-398 |
 | Writes refuse unknown-leaf or incomplete segment partitions against the live leaf sets. | `_require_complete_partitions` | mcp/src/agents_remember/application/task_execution_topology.py:594-623 |
 | The read-only inventory previews every sprint and commanded master's proposed nature and blockers. | `inventory_execution_topology` | mcp/src/agents_remember/application/task_execution_topology.py:804-867 |
 | Ordinary execution-topology edits are validated against canonical cross-document topology; graph-less sprints skip graph validation and authored graphs cannot be dropped. | `enforce_execution_topology_edit` | mcp/src/agents_remember/application/task_execution_topology.py:678-725 |
@@ -100,6 +102,10 @@ exact canonical graph and refuses a sprint terminal status when any commanded ma
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-20T04:22+02:00 — 260815-DAG-L14: extracted `verify_sprint_judgment_ids` as the shared
+  judgment-register verifier, reused by the sprint linkage operations; `_verify_authoring_judgments`
+  delegates to it. Verified at code commit 2f494982.
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: removed `migrate_execution_topology` — a graph-less
   sprint runs the atomic-sequential default, and `author_execution_graph` is now the bootstrap

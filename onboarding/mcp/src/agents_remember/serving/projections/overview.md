@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/projections/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-08T14:38+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce` |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-20T05:04+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 
 ## What This Area Is
 
@@ -142,7 +142,16 @@ The projection route attaches the newest validated lifecycle operation to its ow
 serves bounded phase, timing, command, report, and recovery guidance. Durable store state remains
 authority; projection never exposes worker or resume identity.
 
+## 260815-DAG-L14 Projection Route
+
+`snapshots_impl/_task_documents.py` passes `SubTaskRef.masterRef` through and projects
+`doc.seats` as `TaskSeatNode`; the body revision covers sprint structure.
+
 ## Update History
+
+- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: `_task_documents.py` projects
+  `masterRef` + `seats` and covers them in the body revision. Verified at code commit 8071a644.
+
 
 - 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
 

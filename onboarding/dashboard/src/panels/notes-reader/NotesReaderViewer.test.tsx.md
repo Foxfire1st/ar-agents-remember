@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T11:50+02:00                           |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-20T04:44+02:00 |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7` |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -80,9 +80,14 @@ No meaningful cross-repo references found.
 | The component under test. | "export const NotesReaderViewer = memo(NotesReaderViewerImpl)" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:274-274 |
 | The shell driven by the takeover-wiring test. | "export function CockpitShell(" | dashboard/src/cockpit/Cockpit.tsx:858-858 |
 | `masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`. | `masterDoc`; `seedMaster` | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:188-229 |
-| `TaskDocNode`, `Analytics` with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection`, and `metricsFor`. | `TaskDocNode`; `Analytics`; `WorkspaceProjection`; `metricsFor` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:362-369; dashboard/src/types/projection.ts:506-535; dashboard/src/types/projection.ts:605-618 |
+| `TaskDocNode`, `Analytics` with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection`, and `metricsFor`. | `TaskDocNode`; `Analytics`; `WorkspaceProjection`; `metricsFor` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:362-369; dashboard/src/types/projection.ts:506-535; dashboard/src/types/projection.ts:626-639 |
 
 ## Update History
+
+- 2026-08-20T04:44+02:00 — 260815-DAG-L14: `masterDoc` fixture defaults `seats: []`; the
+  `WorkspaceProjection` citation re-pinned to the current interface range. Verified at code commit
+  9c3180c1.
+
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the notes-reader TaskDocNode fixture now supplies
   empty `executionWaves`; viewer behavior and assertions are unchanged.

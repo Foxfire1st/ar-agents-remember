@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_worktree_edge_paths.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-19T04:05+02:00                     |
-| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
-| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
+| lastUpdated            | 2026-08-20T05:12+02:00 |
+| lastVerifiedCommitHash | `0a746c9f157e3e536f2ac947e999559c74be9e73` |
+| lastVerifiedCommitDate | 2026-08-19T11:22:41T+0200|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -116,6 +116,11 @@ ownership.
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-20T05:12+02:00 — L13 landed-wave refresh: the series closeout-report routing
+  commit (0a746c9f) touched this source; card re-verified against the current file, verification
+  stamp advanced to 0a746c9f. Body unchanged — the documented contract still holds.
+
 
 - 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 moved `build_start_contract` within `start_contract.py`; re-pointed both citations to `start_contract.py:934-954`. Verification metadata unchanged.
 

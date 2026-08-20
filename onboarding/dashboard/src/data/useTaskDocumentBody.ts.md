@@ -81,7 +81,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The hook keys requests and body-payload storage by path/revision, merges into the current summary, records terminal availability, and discards late results. | `useTaskDocumentBody` | dashboard/src/data/useTaskDocumentBody.ts:29-74 |
 | `DetailPanelImpl` resolves the displayed reader document and passes it through the body hook. | "function DetailPanelImpl({"; "export function useTaskDocumentBody(" | dashboard/src/data/useTaskDocumentBody.ts:29-74; dashboard/src/panels/detail-panel/DetailPanel.tsx:18-71 |
-| The enclosure change-set controls wait until the body reader is no longer loading. | "import { ChangeSetButton } from \"./changeSetBar\";"; "const { documentFor: fullTaskDoc" | dashboard/src/panels/detail-panel/lifecycleBody.tsx:19-19; dashboard/src/panels/detail-panel/state.ts:145-146 |
+| The enclosure change-set controls wait until the body reader is no longer loading. | "import { ChangeSetButton } from \"./changeSetBar\";"; "const { documentFor: fullTaskDoc" | dashboard/src/panels/detail-panel/lifecycleBody.tsx:19-19; dashboard/src/panels/detail-panel/state.ts:150-150 |
 | The task-document reader delays its notes until the body reader is no longer loading. | `TaskNotes` | dashboard/src/panels/TaskNotes.tsx:146-189 |
 | The transport adapter owns the same-origin endpoint and non-OK rejection. | `fetchTaskDocument` | dashboard/src/data/taskDocuments.ts:3-9 |
 | Component regressions hold the body request open, assert body-first ordering, cover full fields and fallback, and pin revision caching. | "DetailPanel doc-reader change-set bar (L4a)" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:13-13 |

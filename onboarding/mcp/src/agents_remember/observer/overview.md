@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-20T05:04+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -782,7 +782,16 @@ the strict task-derived source-lineage projection on engine-process facts. The o
 derive authority or Git ancestry itself: worktree status owns that proof, and this route remains
 the read-side projection of its result.
 
+## 260815-DAG-L14 Projection Route
+
+The task-document projection carries first-class sprint structure: `TaskSubTaskRefNode.masterRef`
+and `TaskDocNode.seats` (`TaskSeatNode`), served on sprint docs and defaulted empty elsewhere.
+
 ## Update History
+
+- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: the task projection gains typed
+  `masterRef` rows and first-class `seats`. Verified at code commit 8071a644.
+
 
 - 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
 

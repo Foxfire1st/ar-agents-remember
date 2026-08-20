@@ -106,7 +106,7 @@ the same repository. No sibling repository or external system is involved.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local; the payload's producer is `observer/projection.py` in this repo. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1065-1087 |
+| The reviewed behavior is wholly repository-local; the payload's producer is `observer/projection.py` in this repo. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 
 ## Update History
 

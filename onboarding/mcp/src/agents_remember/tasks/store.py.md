@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/store.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated            | 2026-08-20T04:52+02:00                     |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -47,11 +47,16 @@ for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The model written/read. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:182-267 |
+| The model written/read. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:602-716 |
 | The renderer invoked on every write. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:20-40 |
 | The application entry point uses batch writes when a leaf mutation also changes its parent master row. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:177-256 |
 
 ## Update History
+
+- 2026-08-20T04:52+02:00 — 260815-DAG-L14 curator: re-read the `TaskDocument` claim — the persisted
+  model gained sprint `seats` and typed `masterRef` rows; wording retained, citation regenerated to
+  the current class lines, stamp advanced to code commit 2f494982.
+
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: `write_task_doc_batch` generalizes the existing
   rollback-safe prepared write to documents across multiple task roots, enabling one atomic sprint migration.

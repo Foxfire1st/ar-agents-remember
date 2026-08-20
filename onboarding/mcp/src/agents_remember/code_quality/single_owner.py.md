@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/single_owner.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T02:42:41+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-20T04:30+02:00 |
+| lastVerifiedCommitHash | `dec82579853a0a39f96b41a020cb3f8f1433bc76` |
+| lastVerifiedCommitDate | 2026-08-20T01:25:07+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ reviewed writer-authority modules may call them.
 - `task_document_writer_offenders` (function, lines 397-403) — Task-document writer sites outside the reviewed authority set.
 - `report` (function, lines 406-415) — The whole offender list with the fix named -- never just the first failure.
 
-The single-owner registry now names `worktrees/modules/start.py` and `worktrees/organizational_completion.py` instead of the retired `tasks/leaf_doc.py`.
+The single-owner registry now names `worktrees/modules/start.py` and `worktrees/organizational_completion.py` instead of the retired `tasks/leaf_doc.py`. Since 260815-DAG-L14 it also admits `application/task_sprint_linkage.py` as a reviewed task-document writer authority — attach/detach publish through the same locked, queue-guarded `write_task_doc_batch` boundary as graph authoring.
 
 ### Conventions
 
@@ -77,33 +77,37 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Defines the class `Offender` (lines 75-84) — One place the primitive is reached outside its owner.. | `Offender` | mcp/src/agents_remember/code_quality/single_owner.py:74-84 |
-| Defines the function `package_modules` (lines 91-93) — Every module the rules apply to, in a stable order.. | `package_modules` | mcp/src/agents_remember/code_quality/single_owner.py:94-96 |
+| Defines the function `package_modules` (lines 91-93) — Every module the rules apply to, in a stable order.. | `package_modules` | mcp/src/agents_remember/code_quality/single_owner.py:97-99 |
 | Defines the function `names_git` (lines 96-102) — Whether a program token names the git binary.. | `names_git` | mcp/src/agents_remember/code_quality/single_owner.py:96-102 |
 | Defines the function `string_constants` (lines 105-128) — Names bound to a string literal, so ``BINARY = "git"`` cannot launder the program word.. | `string_constants` | mcp/src/agents_remember/code_quality/single_owner.py:105-128 |
 | Defines the function `imported_names` (lines 131-142) — Bare names this module bound via ``from <module_name> import <wanted>``.. | `imported_names` | mcp/src/agents_remember/code_quality/single_owner.py:131-142 |
-| Defines the function `_module_package` (lines 145-148) — The dotted package containing a module path relative to ``agents_remember``.. | `_module_package` | mcp/src/agents_remember/code_quality/single_owner.py:145-148 |
+| Defines the function `_module_package` (lines 145-148) — The dotted package containing a module path relative to ``agents_remember``.. | `_module_package` | mcp/src/agents_remember/code_quality/single_owner.py:151-154 |
 | Defines the function `_import_from_origin` (lines 151-160) — Resolve one absolute or relative ``from`` import to its dotted module.. | `_import_from_origin` | mcp/src/agents_remember/code_quality/single_owner.py:151-160 |
 | Defines the function `_task_writer_bindings` (lines 163-187) — Return bare writer aliases and module aliases bound by imports.. | `_task_writer_bindings` | mcp/src/agents_remember/code_quality/single_owner.py:163-187 |
 | Defines the function `_dotted_name` (lines 190-196). | `_dotted_name` | mcp/src/agents_remember/code_quality/single_owner.py:190-196 |
 | Defines the function `_task_writer_call` (lines 199-213). | `_task_writer_call` | mcp/src/agents_remember/code_quality/single_owner.py:199-213 |
 | Defines the function `module_task_document_writer_sites` (lines 216-233) — Every canonical task-document writer definition/call in one production module.. | `module_task_document_writer_sites` | mcp/src/agents_remember/code_quality/single_owner.py:216-233 |
 | Defines the function `_token` (lines 236-242) — The string this expression is statically known to be, or ``None``.. | `_token` | mcp/src/agents_remember/code_quality/single_owner.py:236-242 |
-| Defines the function `_argv_head` (lines 245-249) — The program word of an argv display, or ``None`` when this is not one.. | `_argv_head` | mcp/src/agents_remember/code_quality/single_owner.py:245-249 |
+| Defines the function `_argv_head` (lines 245-249) — The program word of an argv display, or ``None`` when this is not one.. | `_argv_head` | mcp/src/agents_remember/code_quality/single_owner.py:251-255 |
 | Defines the function `_spawn_kind` (lines 252-265) — ``"program"``, ``"shell"``, ``"argv"`` -- how this spawn names what it runs.. | `_spawn_kind` | mcp/src/agents_remember/code_quality/single_owner.py:252-265 |
 | Defines the function `_program_token` (lines 268-283) — What this spawn will execute, when that can be read off the syntax tree.. | `_program_token` | mcp/src/agents_remember/code_quality/single_owner.py:268-283 |
 | Defines the function `_git_spawn_offenders` (lines 286-306) — Spawns of git, plus the argv nodes those spawns already account for.. | `_git_spawn_offenders` | mcp/src/agents_remember/code_quality/single_owner.py:286-306 |
 | Defines the function `_git_argv_offenders` (lines 309-322) — Git argv under construction, wherever it is later spawned.. | `_git_argv_offenders` | mcp/src/agents_remember/code_quality/single_owner.py:309-322 |
-| Defines the function `module_git_offenders` (lines 325-330) — Every git-program reference in one parsed module, ordered by line.. | `module_git_offenders` | mcp/src/agents_remember/code_quality/single_owner.py:325-330 |
+| Defines the function `module_git_offenders` (lines 325-330) — Every git-program reference in one parsed module, ordered by line.. | `module_git_offenders` | mcp/src/agents_remember/code_quality/single_owner.py:331-336 |
 | Defines the function `module_replace_offenders` (lines 333-342) — Every reach for the replace syscall in one parsed module, ordered by line.. | `module_replace_offenders` | mcp/src/agents_remember/code_quality/single_owner.py:333-342 |
 | Defines the function `_replace_offender` (lines 345-362). | `_replace_offender` | mcp/src/agents_remember/code_quality/single_owner.py:345-362 |
 | Defines the function `_sweep` (lines 365-374) — Apply one per-module rule to every module except the primitive's owner.. | `_sweep` | mcp/src/agents_remember/code_quality/single_owner.py:365-374 |
-| Defines the function `git_program_offenders` (lines 377-379) — Every place outside :data:`GIT_RUNNER_OWNER` that names the git program.. | `git_program_offenders` | mcp/src/agents_remember/code_quality/single_owner.py:380-382 |
-| Defines the function `os_replace_offenders` (lines 382-384) — Every place outside :data:`ATOMIC_WRITE_OWNER` that reaches the replace syscall.. | `os_replace_offenders` | mcp/src/agents_remember/code_quality/single_owner.py:385-387 |
+| Defines the function `git_program_offenders` (lines 377-379) — Every place outside :data:`GIT_RUNNER_OWNER` that names the git program.. | `git_program_offenders` | mcp/src/agents_remember/code_quality/single_owner.py:383-385 |
+| Defines the function `os_replace_offenders` (lines 382-384) — Every place outside :data:`ATOMIC_WRITE_OWNER` that reaches the replace syscall.. | `os_replace_offenders` | mcp/src/agents_remember/code_quality/single_owner.py:388-390 |
 | Defines the function `task_document_writer_sites` (lines 387-394) — The executable census of production task-document publication authorities.. | `task_document_writer_sites` | mcp/src/agents_remember/code_quality/single_owner.py:387-394 |
 | Defines the function `task_document_writer_offenders` (lines 397-403) — Task-document writer sites outside the reviewed authority set.. | `task_document_writer_offenders` | mcp/src/agents_remember/code_quality/single_owner.py:397-403 |
 | Defines the function `report` (lines 406-415) — The whole offender list with the fix named -- never just the first failure.. | `report` | mcp/src/agents_remember/code_quality/single_owner.py:406-415 |
 
 ## Update History
+
+- 2026-08-20T04:30+02:00 — 260815-DAG-L14: `TASK_DOCUMENT_WRITER_AUTHORITIES` admits
+  `application/task_sprint_linkage.py` (attach/detach publish through the locked, queue-guarded
+  `write_task_doc_batch` boundary). Verified at code commit dec82579.
 
 - 2026-08-17T12:30+02:00 — 260815-DAG-L5: registered `worktrees/modules/start.py` and `worktrees/organizational_completion.py` in place of the retired `tasks/leaf_doc.py` owner. Verification remains closeout-owned.
 

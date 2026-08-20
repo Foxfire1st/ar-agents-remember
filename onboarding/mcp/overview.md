@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-20T05:02+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af`
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -861,7 +861,19 @@ priority rows but never authors them.
 
 The MCP runtime now owns repository-global protected-ref census, durable closeout/integration operations, cross-operation leases, queue-before-repository lock ordering, exact named-ref compare-and-swap, atomic-series sealing, and guarded terminal/memory writers. Public tools preview the same authority they apply; direct CLI/helper paths cannot widen it.
 
+## 260815-DAG-L14 Sprint-Structure Plane
+
+The MCP `task_doc` surface now registers the sprint-structure operations — `attach_master`,
+`detach_master`, `linkage_report` — routed to `application/task_sprint_linkage.py`; a sprint `get`
+carries `linkageFacts`, and the task-document writer census admits the linkage module. The
+`ar-task-document/v1` route carries first-class sprint `seats` and typed `masterRef` rows.
+
 ## Update History
+
+- 2026-08-20T05:02+02:00 — 260815-DAG-L14 route impact: `task_doc` registers
+  `attach_master`/`detach_master`/`linkage_report` and carries `linkageFacts` on sprint gets; the
+  sprint document route gains first-class `seats` and typed `masterRef` rows. Verified at code
+  commit 8071a644.
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: the canonical scheduling-register boundary
   now records the L13 split — mutations and document writes stay fail-closed (creation scaffolds

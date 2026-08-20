@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/models/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated            | 2026-08-20T04:52+02:00                     |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -56,10 +56,15 @@ persisted task document itself (`tasks.TaskDocument`) is deliberately not return
 | --- | --- | --- |
 | The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tool_registry.py:188-188 |
 | The strict `ToolResponse` envelope base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:63-66 |
-| The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:182-267 |
+| The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:602-716 |
 | The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:177-256 |
 
 ## Update History
+
+- 2026-08-20T04:52+02:00 — 260815-DAG-L14 curator: re-read the `TaskDocument` claim — the
+  persisted model gained sprint `seats` and typed `masterRef` rows; wording retained, citation
+  regenerated to the current class lines, stamp advanced to code commit 2f494982.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-03T02:58:43+02:00 — W3-B05 curator: resolved 3 Tier-2 table findings with exact source paths; fixer generated all final ranges.
 

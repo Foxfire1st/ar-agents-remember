@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-19T08:55+02:00                     |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated            | 2026-08-20T04:18+02:00                     |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -28,7 +28,7 @@ the `DocKind`/`DocStatus`/`StepStatus` Literals, `TASK_DOCUMENT_SCHEMA`, and the
 `step_total`/`step_done`/`current_step` + R1 `series_total`/`series_done` helpers), the
 260815-DAG-L11 graph surface (`SprintExecutionNode`/`SprintExecutionEndpoint`/`SprintExecutionEdge`/
 `SprintExecutionGraph`, `LeafPlacement`, `resolve_graph_endpoint`, `derived_leaf_placement`,
-`leaf_placement_facts`, `numbering_drift_hints`), `render`
+`leaf_placement_facts`, `numbering_drift_hints`), the 260815-DAG-L14 `SprintSeat`/`SprintSeatState` first-class seat surface, `render`
 (`render_markdown`), and
 `store` (`read_task_doc`/`write_task_doc`/`write_task_docs`/`json_path_for`/`markdown_path_for`/
 `doc_stem`). `__all__` lists the full public set.
@@ -42,13 +42,16 @@ the `DocKind`/`DocStatus`/`StepStatus` Literals, `TASK_DOCUMENT_SCHEMA`, and the
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument) -> str:"; "def write_task_docs(task_root: Path" | mcp/src/agents_remember/tasks/document.py:551-551; mcp/src/agents_remember/tasks/render.py:31-31; mcp/src/agents_remember/tasks/store.py:40-40 |
+| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument) -> str:"; "def write_task_docs(task_root: Path" | mcp/src/agents_remember/tasks/document.py:602-602; mcp/src/agents_remember/tasks/render.py:34-34; mcp/src/agents_remember/tasks/store.py:40-40 |
 
 ## Series-Contract Notes
 
 The package facade exports `TaskEnclosureRef` so task-document callers can construct `enclosures[]` references without importing the model internals directly.
 
 ## Update History
+
+- 2026-08-20T04:18+02:00 — 260815-DAG-L14: the facade additionally exports `SprintSeat` and
+  `SprintSeatState` (the first-class sprint seat surface). Verified at code commit 2f494982.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: the facade additionally exports the segment-graph
   surface (`SprintExecutionNode`, `SprintExecutionEndpoint`, `LeafPlacement`,

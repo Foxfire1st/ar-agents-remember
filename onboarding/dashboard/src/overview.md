@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce` |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-20T05:06+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -481,7 +481,18 @@ state and full summary; it does not compare branches or choose a sync locally.
 
 The dashboard projection adds the organizational `super-to-leaf` lineage relation and remains generated from the server schema. Organizational direct-super and atomic super-to-master-to-leaf topology therefore use one closed, parity-tested wire vocabulary.
 
+## 260815-DAG-L14 Dashboard Route
+
+The task-document projection types carry sprint structure: `TaskDocNode.seats` (`TaskSeatNode`)
+and optional `TaskSubTaskRefNode.masterRef`; the detail panel threads `docPathForRef` so sprint
+rows open their commanded master document.
+
 ## Update History
+
+- 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: the dashboard task projection gains
+  `seats` + typed `masterRef`; detail-panel rows open the commanded master directly. Verified at
+  code commit 8071a644.
+
 
 - 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
 

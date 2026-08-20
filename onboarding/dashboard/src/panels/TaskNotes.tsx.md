@@ -72,7 +72,7 @@ No meaningful cross-repo references found.
 | The data client + the pure reference resolver. | `listNotes`, `resolveNoteReference` | dashboard/src/data/notes.ts:32-33; dashboard/src/data/notes.ts:52-65 |
 | The L17 reader this surface opens (and the `NotesReaderTarget` type it passes). | `NotesReaderTarget` | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:22-26 |
 | The shared markdown renderer (inline reference rendering). | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
-| The task reader + master overview that mount this component and thread `onOpenNotes`. | `MasterOverview`, `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:126-194; dashboard/src/panels/detail-panel/taskReader.tsx:494-528 |
+| The task reader + master overview that mount this component and thread `onOpenNotes`. | `MasterOverview`, `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:126-194; dashboard/src/panels/detail-panel/taskReader.tsx:569-603 |
 | The serving endpoints behind the client. | `register_notes_routes` | mcp/src/agents_remember/serving/notes.py:168-177 |
 | The component test suite. | "TaskNotes entry surface" | dashboard/src/panels/TaskNotes.test.tsx:38-76 |
 

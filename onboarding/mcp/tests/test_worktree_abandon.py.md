@@ -118,7 +118,7 @@ No external documentation is needed for these standard-library unit tests.
 | `_abandon_branch` and `_abandon_blockers`. | `_abandon_branch`; `_abandon_blockers` | mcp/src/agents_remember/worktrees/modules/abandon.py:429-469; mcp/src/agents_remember/worktrees/modules/abandon.py:558-572 |
 | `_abandon_directories` removes the enclosure reports tree before attempting to reclaim the enclosing worktree group. | `_abandon_directories` | mcp/src/agents_remember/worktrees/modules/abandon.py:493-534 |
 | `lifecycle_guidance` delegates terminal cleanup states to `_reclaimed_phase`, including the `cleanup == "abandoned"` branch pinned by the 05l-P1 phase test. | `lifecycle_guidance`; `_reclaimed_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:225-235; mcp/src/agents_remember/worktrees/modules/guidance.py:238-252 |
-| `git`/`init_repo` test utilities from the worktree support test module. | "def git"; "def init_repo" | mcp/tests/test_worktree_support.py:64-64; mcp/tests/test_worktree_support.py:78-78 |
+| `git`/`init_repo` test utilities from the worktree support test module. | "def git"; "def init_repo" | mcp/tests/test_worktree_support.py:65-65; mcp/tests/test_worktree_support.py:79-79 |
 
 ## Cross-Repo References
 

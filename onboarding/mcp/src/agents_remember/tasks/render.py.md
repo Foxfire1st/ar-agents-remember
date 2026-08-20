@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-19T08:55+02:00                     |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36+02:00|
+| lastUpdated            | 2026-08-20T04:12+02:00                     |
+| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
+| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -48,6 +48,14 @@ block (the `subTasks` index list — `_MARKER` maps `DocStatus` → ✅/🔨/⬜
 `decisions` table) after an optional `body` intro. The `light`/`subTask` path is
 unchanged.
 
+Since 260815-DAG-L14 the master renderer also emits real sprint structure: a typed `masterRef`
+row renders as a relative markdown link to the commanded master document (`_master_ref_link` —
+`../<folder>/task.md` under `tasks/<repo>/`), while a row without one keeps the plain bold name +
+file code span; a sprint with `orchestrates` + rows but no `subTasks` section still gets its
+`## Master Index` section rendered (the durable markdown must show the sprint → master list); and
+the header block gains a `**Seats:**` banner (`_seat_lines`) — one line per first-class `SprintSeat`
+(role, state, optional label/identity) when `doc.seats` is non-empty.
+
 Execution topology renders without scheduler interpretation: a commanded master's closed nature
 appears in its header, while a sprint's `Execution Graph` section lists canonical nodes, every
 reasoned dependency edge, and the deterministic waves derived from that graph. Since
@@ -71,10 +79,15 @@ blank-line normalization that would corrupt blank lines inside code fences.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The model it renders. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:551-655 |
+| The model it renders. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:602-716 |
 | The render-back precedent (model → markdown section helpers). | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
 
 ## Update History
+
+- 2026-08-20T04:12+02:00 — 260815-DAG-L14: the master renderer now emits typed `masterRef` rows as
+  real relative links to commanded master documents, renders the generated `## Master Index`
+  section for sprints with `orchestrates` + rows but no `subTasks` section, and renders the
+  `**Seats:**` header block for first-class sprint seats. Verified at code commit 2f494982.
 
 - 2026-08-19T08:55+02:00 — 260815-DAG-L11: the execution-graph section renders `SprintExecutionNode`
   labels via `_graph_node_label` (segments carry their leaf list; edge endpoints resolve through the

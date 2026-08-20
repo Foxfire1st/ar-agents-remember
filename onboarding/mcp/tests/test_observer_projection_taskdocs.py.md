@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection_taskdocs.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`                                        |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-20T05:14+02:00 |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7` |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -39,6 +39,13 @@ expose bounded phase/report evidence. Private worker, lease, recovery, and resum
 enter the observer packet.
 
 ## Update History
+
+- 2026-08-20T05:14+02:00 — 260815-DAG-L14: the suite gains
+  `test_projects_sprint_master_ref_rows_and_seats` and
+  `test_body_revision_covers_sprint_structure` (projected `masterRef`/`seats` with defaults filled,
+  non-sprint docs staying empty, and bodyRevision movement across seats-only and masterRef-row
+  edits). Verified at code commit 9c3180c1.
+
 - 2026-08-14T06:38+02:00 — L23 final candidate review: projection tests attach the latest validated
   task-addressed operation and canonical task hierarchy while excluding private worker/recovery
   identity. Verification remains closeout-owned.

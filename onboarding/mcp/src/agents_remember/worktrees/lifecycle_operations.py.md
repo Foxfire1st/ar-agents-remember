@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T04:05+02:00 |
-| lastVerifiedCommitHash |  `e41ea31d6df3e35a92f526edef8420ae9bd56c57`|
-| lastVerifiedCommitDate |  2026-08-18T19:37:20+02:00|
+| lastUpdated            | 2026-08-20T05:12+02:00 |
+| lastVerifiedCommitHash | `0a746c9f157e3e536f2ac947e999559c74be9e73` |
+| lastVerifiedCommitDate | 2026-08-19T11:22:41T+0200|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -100,6 +100,11 @@ launching beside an orphaned old worker.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-20T05:12+02:00 — L13 landed-wave refresh: the series closeout-report routing
+  commit (0a746c9f) touched this source; card re-verified against the current file, verification
+  stamp advanced to 0a746c9f. Body unchanged — the documented contract still holds.
+
 
 - 2026-08-19T04:05+02:00 — No content impact: 260815-DAG-L10 re-pointed the internal
   `_require_configured_task_identity` series worktree-group equality check at

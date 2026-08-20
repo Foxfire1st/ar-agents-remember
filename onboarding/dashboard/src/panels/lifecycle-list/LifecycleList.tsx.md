@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/lifecycle-list/LifecycleList.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-07T08:19Z |
+| lastUpdated | 2026-08-20T04:50+02:00 |
 | lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -245,7 +245,7 @@ role of its own for the same reason.
 | Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`. | "const sizing = css({ flex: \"1 1 0\", minWidth: \"0\", overflowX: \"hidden\" });"; "const listBox = css({"; "const section = css({"; "const row = cva({"; "const rowId = css({"; "const rowSec = css({"; "const rowGate = css({"; "const rowMeta = css({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:61-61; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:87-87; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:98-98; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:116-116; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:180-180; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:188-188; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:198-198; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:214-214 |
 | `rowId` is the shrinkable title span; `taskTitle` assembles the native hover text from label, lifecycle, repo, gate, and current-step context. | `rowId`; `taskTitle` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:180-187; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1017-1034 |
 | `docRow`/`seriesRow` build the `Dot` variant as `lifecycle?.state ?? statusVariant(...)`, and `statusVariant` maps `DocStatus` alone. | `docRow`; `seriesRow` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:738-786; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:788-830 |
-| "from agents_remember.models.task_document import DocStatus" — `statusVariant`'s entire input vocabulary (imported from "from agents_remember.models.task_document import DocStatus, StepStatus"). | "from agents_remember.models.task_document import DocStatus" | mcp/src/agents_remember/tasks/document.py:23-23 |
+| "from agents_remember.models.task_document import DocStatus" — `statusVariant`'s entire input vocabulary (imported from "from agents_remember.models.task_document import DocStatus, StepStatus"). | "from agents_remember.models.task_document import DocStatus" | mcp/src/agents_remember/tasks/document.py:32-32 |
 | `Dot` owns the lifecycle-state treatments (`awaiting-developer`, `paused`, `abandoned`) this list passes through, and is `aria-hidden`. | `Dot`; `DOT_GLYPHS` | dashboard/src/grammar/Dot.tsx:105-115; dashboard/src/grammar/Dot.tsx:104-114; dashboard/src/grammar/Dot.tsx:119-129 |
 | The `task-state` span carries `aria-label` with no role, inside the React Aria `ListBoxItem` whose `role="option"` names it. | "<ListBoxItem" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:647-689 |
 | The shared hierarchy helper computes parent matches, child-id hierarchy labels, parent selection keys, and the exported `orderedByCreation`. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
@@ -266,6 +266,10 @@ kept-alive rail is hidden, while the render-heavy row/group derivation lives in 
 clock and parent renders do not reconstruct the React Aria list unnecessarily.
 
 ## Update History
+- 2026-08-20T04:50+02:00 — 260815-DAG-L14 curator: re-read the `DocStatus` import claim against
+  `tasks/document.py` — the import moved to the new top-of-file role-constant block; wording
+  retained, range regenerated, stamp advanced to code commit 9c3180c1.
+
 
 - 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `LifecycleList.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: moved this sidecar from dashboard/src/panels/LifecycleList.tsx to lifecycle-list/LifecycleList.tsx after the frontend-rail naming move; added the L8 Move section. Verification pinned to the leaf base until closeout stamps the code commit.

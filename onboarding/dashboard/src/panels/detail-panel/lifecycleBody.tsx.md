@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/lifecycleBody.tsx`       |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-20T04:36+02:00                                        |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7`                  |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -22,6 +22,8 @@ phase stepper, gate section, worktree spine, token row, and the exported
 `LifecycleDetailBody`.
 
 ## Code Commentary
+
+Since 260815-DAG-L14 `DetailBody` passes `docPathForRef={state.docPathForRef}` into the series-doc, master, and TaskContent render branches so typed sprint rows can open their commanded master document.
 
 ### Logic
 
@@ -67,6 +69,8 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-20T04:36+02:00 — 260815-DAG-L14: `DetailBody` threads `docPathForRef` into all three lifecycle-path render branches (seriesDoc, master, TaskContent). Verified at code commit 9c3180c1.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
   lifecycle body extracted from `DetailPanel.tsx`. Verification pinned to the leaf

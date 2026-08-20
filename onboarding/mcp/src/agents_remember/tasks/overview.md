@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`       |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated            | 2026-08-20T05:04+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -141,7 +141,7 @@ together.
 | Leaf writes keep same-root master rows synchronized through the dedicated planner. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
 | The task-document renderer regenerates markdown from the validated `TaskDocument`. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
 | The persisted worktree contract is the analogous model-to-text precedent. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
-| The persisted-contract peer this schema mirrors. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1065-1087 |
+| The persisted-contract peer this schema mirrors. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -172,7 +172,19 @@ queue; reopening reverses that closed state through the same recoverable publica
 
 Task-document execution-topology edits are validated under the same repository authority as Git mutation. Candidate graphs cannot promote live leaf work branches into protected supers/atomic refs, detach live owners, or contradict an existing atomic series edge.
 
+## 260815-DAG-L14 Task-Document Route
+
+The `ar-task-document/v1` schema gains `SprintSeat`/`seats` (sprint-only, unique among
+non-retired roles) and typed `SubTaskRef.masterRef` rows; the renderer emits real relative
+master links, the generated Master Index for sprints, and the `**Seats:**` header block;
+`validate_sprint_linkage` hard-fails new-shape drift.
+
 ## Update History
+
+- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: the task document schema gains sprint
+  `seats` + typed `masterRef` rows, the renderer emits real links/seats, and linkage validation
+  is wired. Verified at code commit 8071a644.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `document_refs.py` resolves a nature-less
   standalone master at master altitude by default, names the `author_execution_graph` bootstrap in

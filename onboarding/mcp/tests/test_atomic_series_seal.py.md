@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_atomic_series_seal.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T04:05+02:00 |
-| lastVerifiedCommitHash | `e41ea31d6df3e35a92f526edef8420ae9bd56c57` |
-| lastVerifiedCommitDate | 2026-08-18T19:37:20+02:00|
+| lastUpdated            | 2026-08-20T05:12+02:00 |
+| lastVerifiedCommitHash | `0a746c9f157e3e536f2ac947e999559c74be9e73` |
+| lastVerifiedCommitDate | 2026-08-19T11:22:41T+0200|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -39,6 +39,11 @@ The suite uses real code and external-memory refs/contracts and asserts terminal
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-20T05:12+02:00 — L13 landed-wave refresh: the series closeout-report routing
+  commit (0a746c9f) touched this source; card re-verified against the current file, verification
+  stamp advanced to 0a746c9f. Body unchanged — the documented contract still holds.
+
 
 - 2026-08-19T04:05+02:00 — No content impact: 260815-DAG-L10 strengthened the seal test to write
   series reports under `worktrees/repo-a/master-b-ar/reports` (with an explicit absolute-path

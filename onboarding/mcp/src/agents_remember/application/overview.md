@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated            | 2026-08-20T05:04+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -269,7 +269,21 @@ JSON.
 
 Application tools now bind lifecycle requests to configured coordination, task, code-repository, and memory-repository identity before dispatch. Worktree, task-document, topology, and memory entry points route protected mutations through the queue/repository authority plane and reject preview/apply drift.
 
+## 260815-DAG-L14 Sprint-Linkage Route
+
+`application/task_sprint_linkage.py` is the new application owner of the sprint↔master linkage
+contract: one atomic `attach_master`/`detach_master` pair, the read-only `linkage_report`
+surface, and the moved `validate_completed_master_row` for typed rows. `task_doc_tools` routes
+the new operations and carries `linkageFacts` on sprint gets; `task_execution_topology` exposes
+the shared `verify_sprint_judgment_ids`.
+
 ## Update History
+
+- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: new `application/task_sprint_linkage.py`
+  owns the atomic sprint↔master linkage operations; `task_doc_tools` routes them and carries
+  `linkageFacts`; `task_execution_topology` shares the judgment verifier. Verified at code commit
+  8071a644.
+
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `task_doc` dropped the removed
   `migrate_execution_topology` operation (`author_execution_graph` now bootstraps graph-less

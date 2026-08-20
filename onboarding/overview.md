@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-20T05:00+02:00 |
+| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
+| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
 
 > **Status:** active baseline
 
@@ -1139,7 +1139,23 @@ durable without turning it into an unbounded event log or a second judgment auth
 
 L4 turns repository defaults, sprint supers, and active atomic-series refs into task-derived protected surfaces across code and external memory. The repository now treats integration as a journaled named-ref transaction, serializes task-topology publication with Git authority, seals atomic child admission at series closeout, and fences ordinary memory and terminal writers from those refs.
 
+## 260815-DAG-L14 Sprint Structure Route Impact
+
+The sprint document now carries first-class seats and typed master links: `SubTaskRef.masterRef`
+rows point at the commanded master document and render as real relative links (sprint → master →
+leaf click path in markdown and dashboard), `TaskDocument.seats`/`SprintSeat` make sprint seats
+structure rather than seat task documents, and `attach_master`/`detach_master` write the typed row,
+membership slug, and graph node as one atomic validated batch (L14-R4). Consistency validation
+(`validate_sprint_linkage`) hard-fails new-shape drift while legacy shapes surface as facts through
+`linkage_report`/`linkageFacts` (L14-R5/R7). The MCP `task_doc` surface registers the new
+operations and the dashboard projection carries `seats` + `masterRef`.
+
 ## Update History
+
+- 2026-08-20T05:00+02:00 — 260815-DAG-L14 route impact: the sprint document gains first-class
+  `seats`, typed `masterRef` links, and the atomic `attach_master`/`detach_master` operations;
+  consistency validation and the read-only `linkage_report` surface are wired; doctrine files
+  updated to the new flow. Verified at code commit 8071a644.
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: the JSON-primary task documents row now
   records the atomic-sequential default for graph-less sprints and the

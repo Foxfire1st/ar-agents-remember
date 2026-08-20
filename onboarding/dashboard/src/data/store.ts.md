@@ -128,7 +128,7 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). | "export const VOLATILE_AGE_FIELDS" | dashboard/src/data/servedAges.ts:16-16 |
-| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:616-616 |
+| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:637-637 |
 | Observer event type for the Event River tail. | "export interface ObserverEvent" | dashboard/src/types/event.ts:9-9 |
 | Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | "export const dashboardStore" | dashboard/src/data/store.ts:329-329 |
 | `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:402-402 |

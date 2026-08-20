@@ -42,7 +42,7 @@ ages are server-computed.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `driftSegments` + the `DRIFT_ORDER`. | `driftSegments` | dashboard/src/data/selectors.ts:178-186 |
-| The drift/ledger/stalest analytics nodes. | `Analytics` | mcp/src/agents_remember/observer/projection.py:1031-1062 |
+| The drift/ledger/stalest analytics nodes. | `Analytics` | mcp/src/agents_remember/observer/projection.py:1097-1153 |
 
 ## Update History
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/integration_branch_authority_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated            | 2026-08-20T05:12+02:00 |
+| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
+| lastVerifiedCommitDate | 2026-08-19T11:32:36T+0200|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -39,6 +39,11 @@ Shared fixture construction uses production task documents, queue state, contrac
 No configured domain-documentation or cross-repository source applies to this file.
 
 ## Update History
+
+- 2026-08-20T05:12+02:00 — L11 landed-wave refresh: the leaf-segment graph-model commit
+  (f2e2f4b9) touched this source; card re-verified against the current file, verification stamp
+  advanced to f2e2f4b9. Body unchanged — the documented contract still holds.
+
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

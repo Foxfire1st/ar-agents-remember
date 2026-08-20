@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/fixtures/wire.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T14:05+02:00                           |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-20T04:42+02:00 |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7` |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -68,7 +68,8 @@ shapes and vocabularies the fixture contract explicitly measures.
   entry.gate !== undefined)?.gate`. A snapshot that stops sampling one of them fails loudly here instead
   of producing a base quietly missing every field.
 - **The bases** cit:([`BASE_LIFECYCLE`, `BASE_GATE`, `BASE_ENCLOSURE`, `BASE_PROVIDER`, `BASE_TASK_DOC`, `BASE_ENGINE_PROCESS`, `BASE_PICKUP`, `BASE_ATTENTION`], dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216) — `BASE_LIFECYCLE`, `BASE_GATE`, `BASE_ENCLOSURE`, `BASE_PROVIDER`,
-  `BASE_TASK_DOC`, `BASE_ENGINE_PROCESS`, `BASE_PICKUP`, `BASE_ATTENTION`. Each is annotated with the
+  `BASE_TASK_DOC`, `BASE_ENGINE_PROCESS`, `BASE_PICKUP`, `BASE_ATTENTION`. Since 260815-DAG-L14 `BASE_TASK_DOC` also defaults `seats: []` (the new required
+`TaskDocNode` field). Each is annotated with the
   mirror type AND assembled from a served row, so it is pinned from both sides at once: a required field
   the server adds fails to compile until it is filled, and it can only be filled from a served row.
   **Only REQUIRED fields are carried.** Optionals (`gate`, `ask`, `staleSeconds`, `carryoverDoneAt`, …) are left
@@ -86,12 +87,12 @@ shapes and vocabularies the fixture contract explicitly measures.
   override, then sets `metrics: metrics ?? metricsFor(lifecycles)`. **`metrics` is DERIVED from the
   lifecycles by the mirror's own rollup rather than restated beside them** — the hand-kept bucket lists
   are where the `awaiting-developer` gap kept reappearing, on both sides of the wire.
-- **`agentNotifierHeartbeat`** cit:(["The app-injected agent-notifier tick", "absent from the snapshot", "base is a typed literal", `agentNotifierHeartbeat`], dashboard/src/test/fixtures/wire.ts:349-350; dashboard/src/test/fixtures/wire.ts:353-367) — a typed literal, not a served row, because the field is
+- **`agentNotifierHeartbeat`** cit:(["The app-injected agent-notifier tick", "absent from the snapshot", "base is a typed literal", `agentNotifierHeartbeat`], dashboard/src/test/fixtures/wire.ts:349-354) — a typed literal, not a served row, because the field is
   app-injected and therefore absent from the snapshot (`contract.test.ts::KnownUnsampled` names it).
-- **`observerEvent`** cit:(["An observer-event envelope", "separate contract from the projection", "base cannot come from", `observerEvent`], dashboard/src/test/fixtures/wire.ts:370-371; dashboard/src/test/fixtures/wire.ts:374-386) — same reasoning: the event channel (`types/event.ts` ←
+- **`observerEvent`** cit:(["An observer-event envelope", "separate contract from the projection", "base cannot come from", `observerEvent`], dashboard/src/test/fixtures/wire.ts:370-375) — same reasoning: the event channel (`types/event.ts` ←
   `observer/events.py`) is a separate contract from the projection, so its base cannot come from
   `snapshot.json`.
-- **`reparsed(source)`** cit:(["A byte-fresh copy of a projection", "tests need in order to prove", "on purpose. The round-trip answers", "routing it through", "parameter type cannot narrow", "clone keeps the source's type honestly", `reparsed`], dashboard/src/test/fixtures/wire.ts:389-390; dashboard/src/test/fixtures/wire.ts:392-395; dashboard/src/test/fixtures/wire.ts:397-399) — `structuredClone`, deliberately not `JSON.parse(JSON.stringify(…))`.
+- **`reparsed(source)`** cit:(["A byte-fresh copy of a projection", "tests need in order to prove", "on purpose. The round-trip answers", "routing it through", "parameter type cannot narrow", "clone keeps the source's type honestly", `reparsed`], dashboard/src/test/fixtures/wire.ts:389-398) — `structuredClone`, deliberately not `JSON.parse(JSON.stringify(…))`.
   The round-trip answers `any`, and `any` assigns to anything, so routing it through
   `asServedProjection` LOOKS like a check and is vacuous — a parameter type cannot narrow an argument
   that is already `any`. This exact function was making that mistake before rule 3 was written, and
@@ -133,8 +134,8 @@ shapes and vocabularies the fixture contract explicitly measures.
 No stale "generated snapshot" wording remains: the source now explicitly pairs the hand-maintained
 sample with the generated producer-to-TypeScript contract
 cit:(["is NOT generated; it remains a hand-maintained", "producer-to-TypeScript link is generated and checked"], dashboard/src/test/fixtures/wire.ts:22-23). The two `generatedAt` field
-references remain ordinary projection data cit:(["generatedAt: SERVED.generatedAt", "ts: SERVED.generatedAt"], dashboard/src/test/fixtures/wire.ts:337-337; dashboard/src/test/fixtures/wire.ts:381-381). The three docstrings that used to contradict the header now read "the sampled
-payload" cit:(["The sampled payload"], dashboard/src/test/fixtures/wire.ts:65-65), "A row the snapshot is expected to carry" cit:(["A row the snapshot is expected to carry"], dashboard/src/test/fixtures/wire.ts:69-69) and "absent from the snapshot" cit:(["absent from the snapshot"], dashboard/src/test/fixtures/wire.ts:349-349).
+references remain ordinary projection data cit:(["generatedAt: SERVED.generatedAt", "ts: SERVED.generatedAt"], dashboard/src/test/fixtures/wire.ts:338-338; dashboard/src/test/fixtures/wire.ts:382-382). The three docstrings that used to contradict the header now read "the sampled
+payload" cit:(["The sampled payload"], dashboard/src/test/fixtures/wire.ts:65-65), "A row the snapshot is expected to carry" cit:(["A row the snapshot is expected to carry"], dashboard/src/test/fixtures/wire.ts:69-69) and "absent from the snapshot" cit:(["absent from the snapshot"], dashboard/src/test/fixtures/wire.ts:350-350).
 
 ## Docs References
 
@@ -163,10 +164,10 @@ does not.
 | `demandServed` and the eight served anchors it demands the snapshot keep. | `demandServed`; `SERVED_LIFECYCLE`; `SERVED_ENCLOSURE`; `SERVED_PROVIDER`; `SERVED_TASK_DOC`; `SERVED_ENGINE_PROCESS`; `SERVED_PICKUP`; `SERVED_ATTENTION`; `SERVED_GATE` | dashboard/src/test/fixtures/wire.ts:73-76; dashboard/src/test/fixtures/wire.ts:78-91 |
 | The eight bases, each annotated with a generated mirror type and filled from `SERVED`. | `BASE_LIFECYCLE`; `BASE_GATE`; `BASE_ENCLOSURE`; `BASE_PROVIDER`; `BASE_TASK_DOC`; `BASE_ENGINE_PROCESS`; `BASE_PICKUP`; `BASE_ATTENTION` | dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216 |
 | `EMPTY_ANALYTICS` — every key present and empty, which is a shape the reducer produces. | `EMPTY_ANALYTICS` | dashboard/src/test/fixtures/wire.ts:223-237 |
-| `projection()` deriving `metrics` from the lifecycles via `metricsFor` rather than restating buckets. | "metrics: metrics ?? metricsFor(lifecycles)" | dashboard/src/test/fixtures/wire.ts:343-343 |
+| `projection()` deriving `metrics` from the lifecycles via `metricsFor` rather than restating buckets. | "metrics: metrics ?? metricsFor(lifecycles)" | dashboard/src/test/fixtures/wire.ts:344-344 |
 | `reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check. | `reparsed` | dashboard/src/test/fixtures/wire.ts:396-398 |
 | `asServedProjection` — the sanctioned narrowing this module's `SERVED` constant is read through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
-| The hand-maintained oracle the bases are assembled from — `lifecycles`, `enclosures`, `providers` and the four `analytics` rows the anchors pull (`agentPickups`, `taskDocuments`, `attentionQueue`, `engineProcesses`). | "\"lifecycles\": ["; "\"enclosures\": ["; "\"analytics\": {"; "\"agentPickups\": ["; "\"taskDocuments\": ["; "\"attentionQueue\": ["; "\"engineProcesses\": [" | dashboard/src/fixtures/snapshot.json:5-6; dashboard/src/fixtures/snapshot.json:44-44; dashboard/src/fixtures/snapshot.json:98-98; dashboard/src/fixtures/snapshot.json:698-698; dashboard/src/fixtures/snapshot.json:965-965; dashboard/src/fixtures/snapshot.json:1446-1446 |
+| The hand-maintained oracle the bases are assembled from — `lifecycles`, `enclosures`, `providers` and the four `analytics` rows the anchors pull (`agentPickups`, `taskDocuments`, `attentionQueue`, `engineProcesses`). | "\"lifecycles\": ["; "\"enclosures\": ["; "\"analytics\": {"; "\"agentPickups\": ["; "\"taskDocuments\": ["; "\"attentionQueue\": ["; "\"engineProcesses\": [" | dashboard/src/fixtures/snapshot.json:5-6; dashboard/src/fixtures/snapshot.json:44-44; dashboard/src/fixtures/snapshot.json:98-98; dashboard/src/fixtures/snapshot.json:698-698; dashboard/src/fixtures/snapshot.json:1035-1035; dashboard/src/fixtures/snapshot.json:1516-1516 |
 | The override constraint every builder takes, and the three limits it documents. | `Overrides` | dashboard/src/test/fixtures/overrides.ts:60-66 |
 | The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake. | "catches a smuggled field where there is no assertion to ban"; "fixtures/wire.ts::reparsed" | dashboard/src/test/wireFixtureGuard.test.ts:512-534 |
 | `KnownUnsampled`, which names `agentNotifierHeartbeat` as absent from the snapshot and therefore a typed literal here. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:186-186 |
@@ -180,9 +181,14 @@ No cross-repository boundary. The wire this file builds against is a Python↔Ty
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The in-repo `WorkspaceProjection` producer model uses `extra="forbid"` and declares the complete projection boundary. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1065-1087 |
+| The in-repo `WorkspaceProjection` producer model uses `extra="forbid"` and declares the complete projection boundary. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 
 ## Update History
+
+- 2026-08-20T04:42+02:00 — 260815-DAG-L14: `BASE_TASK_DOC` defaults `seats: []` (new required
+  `TaskDocNode` field); all shifted citation ranges re-pinned to the current source. Verified at
+  code commit 9c3180c1.
+
 
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the wire TaskDocNode fixture now includes the required
   empty `executionWaves` field; its existing transport scenario is unchanged.

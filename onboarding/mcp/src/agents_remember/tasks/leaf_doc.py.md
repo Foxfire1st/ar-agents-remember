@@ -51,7 +51,7 @@ small `{docPath, lifecycleId, changed}` report, or `None` when the leaf has no d
 | --- | --- | --- |
 | The atomic reopen plan clears the doc's stamp before the next start restamps it. | `_plan_leaf_doc_reset` | mcp/src/agents_remember/worktrees/reopen.py:393-436 |
 | The post-contract-write restamp call site in worktree start. | "restamp_leaf_doc_lifecycle(" | mcp/src/agents_remember/worktrees/modules/start.py:590-590 |
-| The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:49-49 |
+| The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:51-51 |
 
 ## 260815-DAG-L3 Governed Lifecycle Restamp
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/test-utils.tsx`          |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`                  |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated            | 2026-08-20T04:36+02:00                                        |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7`                  |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -21,6 +21,8 @@ Shared fixture builders for the split DetailPanel test files, extracted from
 enclosures, projections, promoted-lifecycle scenarios, and counter stubs.
 
 ## Code Commentary
+
+Since 260815-DAG-L14 the `taskDoc` fixture factory defaults `seats: []` (the new required `TaskDocNode` field).
 
 ### Logic
 
@@ -67,6 +69,8 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-20T04:36+02:00 — 260815-DAG-L14: `taskDoc` fixture factory defaults `seats: []`. Verified at code commit 9c3180c1.
 
 - 2026-08-15T02:16:50+02:00 — No content impact: 260815-DAG-L1 only makes shared detail-panel TaskDocNode fixtures carry
   the required empty `executionWaves` projection field; rendered detail behavior is unchanged.
