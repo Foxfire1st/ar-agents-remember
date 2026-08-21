@@ -9,8 +9,8 @@ Total output lines: 2259
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -126,8 +126,12 @@ history, not current authority.
 
 Hosted-seat identity is the real task document plus role: sprint roles bind the sprint document,
 manager binds the master, and worker/reviewer/curator bind leaves. `ambient_seat.py` proves callers
-from plane-seeded hosted context; `structural_seats.py` qualifies parent/child relations and singular
-current occupants. `terminal_task_assignment.py` is the one level-neutral binding primitive. Ordinary
+from plane-seeded hosted context and — since 260821-ARSPAWN-L1 — resolves the ambient launcher (a
+process with no `AR_HOSTED_SESSION_ID`) as a typed `AmbientCaller` for `dispatch_agent`;
+`structural_seats.py` qualifies parent/child relations and singular current occupants. Spawn
+provenance now includes caller kind (`spawned_by_kind`, written when set), mapped write-once onto
+the catalog row by `terminal_opener._opened_catalog_entry` via `_preserved` and surfaced on the
+spawn wire as `spawnedByKind`. `terminal_task_assignment.py` is the one level-neutral binding primitive. Ordinary
 inbox traffic is persisted, then re-resolved at post and delivery time so replacement is transparent;
 the initial dispatch brief alone stays exact-pinned internally. One-way startup migrations run before
 strict catalog/control-plane readers; no dual-schema compatibility reader remains. Agent-notifier
@@ -796,6 +800,8 @@ The task-documents projection readers now wire the render-ready sprint graph vie
 Serving projection/snapshot modules updated their imports to the moved `worktrees/queue/*` and `models/queue/*` locations.
 
 ## Update History
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `serving/ambient_seat.py` now owns BOTH dispatch caller resolutions (plane seat + ambient launcher resolved from the process environment); spawn provenance gains caller kind (`spawned_by_kind` write-once via `_preserved`, wire `spawnedByKind`). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: projection/snapshot import paths updated to the moved queue packages. Verified at code commit e5cb139f.
 

@@ -9,8 +9,8 @@ Total output lines: 1813
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,11 @@ gate-only seams mock lineage where that independent boundary is not their subjec
 ## Structural Seat Regression Boundary
 
 `test_structural_agent_tools.py` pins both directions of replacement-aware messaging, ambiguity
-refusal, and exact-pinned dispatch rollback. `test_agent_doctrine_plane_identity.py` rejects
+refusal, and exact-pinned dispatch rollback; `test_dispatch_agent_ambient.py` (extracted by the
+260821-ARSPAWN-L1 file-size fix) owns the ambient dispatch cohort — spawn without hosted env,
+unknown-ref/altitude-mismatch refusals, plane provenance, ambient rollback, sender-less brief post.
+`test_spawn_agent_session.py` asserts the real primitive's caller-kind provenance (`spawnedByKind`
+on the payload and the catalog row). `test_agent_doctrine_plane_identity.py` rejects
 agent-instruction regressions to control-plane id cognition and proves packaged lifecycle doctrine
 is byte-identical to canonical source. `test_seat_lifecycle.py` exercises the task-document-owned
 retire, land, and completion-cleanup matrix; its turn-report fixture is `AgentRole`-typed so the
@@ -1180,6 +1184,10 @@ Three new forcing suites: `test_serving_preflight.py` (floor semantics + editabl
 The forcing suites tracked the package restructure: ~100 test files had import paths updated to the moved `queue`/`integration`/`task_docs` packages and their `unittest.main` tail guards removed; new `test_task_doc_wire_shape.py` locks the special-op response envelope; several suites gained coverage tests (lifecycle operations, closeout actions/forging/lifecycle, organizational completion, integration ref transaction, memory-quality runs, serving preflight, doctrine plane identity).
 
 ## Update History
+
+- 2026-08-21T03:15+02:00 — 260821-ARSPAWN-L1 fix round 1 route impact: the ambient dispatch cohort now lives in `test_dispatch_agent_ambient.py` (extracted from `test_structural_agent_tools.py` by the file-size fix); the structural-seat regression boundary names the new suite. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `test_structural_agent_tools.py` gained the 6-test ambient dispatch cohort and `test_spawn_agent_session.py` the caller-kind provenance test. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: ~100 test files updated (import paths to the moved packages, `unittest.main` tail guards removed, new wire-shape suite + coverage tests added). Verified at code commit e5cb139f.
 

@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/application/structural/overview.md` |
 | parentOverview | [`application/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 
 ## What This Area Is
 
@@ -33,6 +33,15 @@ For L23, dispatch additionally validates transitive task-derived code and extern
 before host creation. Curator dispatch requires the manager's current-lineage preflight and a
 passing independent route-review record bound to the exact candidate tree; the structural boundary
 rechecks both rather than trusting brief prose or model-carried commit identities.
+
+Since 260821-ARSPAWN-L1, `dispatch_agent` is the ONE public spawn tool for both caller kinds. A
+plane-hosted seat keeps the structural path (identity proof + `authorize_child` child-scope). An
+ambient launcher (no `AR_HOSTED_SESSION_ID`) is resolved from the PROCESS ENVIRONMENT by
+`serving/ambient_seat.py` — distinct from the L16 request-carried declared-caller path used by gate
+tools — and spawns in ambient mode with the pinned dispatch brief and the same rollback, no parent
+seat (so seat-authority and child-scope checks do not apply), role altitude still validated, and
+`spawnedByKind="ambient"` recorded in spawn provenance. Stale/invalid/mismatched/unbound plane
+identity refuses; it never silently downgrades to ambient.
 
 ## What Belongs Here
 
@@ -137,6 +146,8 @@ Structural dispatch distinguishes organizational masters, whose leaves start dir
 `agent_tools.py` imports updated to the moved `application/task_docs/task_ref` location.
 
 ## Update History
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `dispatch_agent` is the one public spawn tool for both caller kinds — plane seats keep the structural path; ambient launchers (no `AR_HOSTED_SESSION_ID`) are resolved from the process environment (distinct from the L16 gate-tools declared caller) and spawn with the pinned brief + same rollback, no parent seat, role altitude still validated, provenance `spawnedByKind="ambient"`. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: import-path updates to the moved task_docs package. Verified at code commit e5cb139f.
 

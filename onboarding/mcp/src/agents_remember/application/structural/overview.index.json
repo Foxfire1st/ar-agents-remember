@@ -60,9 +60,13 @@
       "mcp/src/agents_remember/application/structural/",
       "mcp/src/agents_remember/application/structural/overview.md",
       "application/overview.md",
-      "e5cb139f66abbd6502d4dcc4be883eb5f49770fe",
-      "serving/structural_seats.py",
+      "3eafc555c848ac45a07a07720641f1735f8df0eb",
+      "dispatch_agent",
+      "authorize_child",
+      "AR_HOSTED_SESSION_ID",
       "serving/ambient_seat.py",
+      "spawnedByKind=\"ambient",
+      "serving/structural_seats.py",
       "models/structural/",
       "ambient-seat-unavailable",
       "dispatch_agent_payload",
@@ -87,11 +91,7 @@
       "agents_remember",
       "onboardingRoute",
       "parentOverview",
-      "lastUpdated",
-      "T00",
-      "lastVerifiedCommitHash",
-      "lastVerifiedCommitDate",
-      "structural_seats"
+      "lastUpdated"
     ]
   },
   "fallback": {

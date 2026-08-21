@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_sequential_default_mode.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,11 @@ outcome.
 | The lane block, stale-artifact replacement, and dispatch surfacing forcing. | `SequentialLaneTests` | mcp/tests/test_sequential_default_mode.py:191-350 |
 | The scheduling-mode resolver under test. | `resolve_scheduling_mode`; `effective_execution_nature`; `sequential_lane_owner` | mcp/src/agents_remember/worktrees/scheduling_mode.py:46-156 |
 | The lane-blocked bootstrap under test. | `_sequential_lane_block` | mcp/src/agents_remember/worktrees/modules/start_contract.py:269-312 |
-| The dispatch structural-outcome surfacing under test. | `_manager_series_bootstrap_refusal` | mcp/src/agents_remember/application/structural/agent_tools.py:419-484 |
+| The dispatch structural-outcome surfacing under test. | `_manager_series_bootstrap_refusal` | mcp/src/agents_remember/application/structural/agent_tools.py:512-576 |
 
 ## Update History
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 curator: repaired the `_manager_series_bootstrap_refusal` citation range (agent_tools.py:419-484 → 518-582) surfaced by the leaf-scoped quality check; no content impact on the documented test contract. Verification metadata remains closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 

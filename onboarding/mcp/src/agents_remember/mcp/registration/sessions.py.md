@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/sessions.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated | 2026-08-11T14:29+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                   |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb`                   |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -16,8 +16,10 @@
 
 ## Purpose
 
-Registers agent dispatch and structural child/self seat-management operations whose caller identity
-is plane-resolved.
+Registers agent dispatch and structural child/self seat-management operations. `dispatch_agent`
+accepts BOTH caller kinds: plane-hosted seats (identity proven from plane-injected process context)
+and ambient launchers (no `AR_HOSTED_SESSION_ID`, caller kind resolved from the process environment);
+the published description documents the caller-kind matrix so agents never guess which mode applies.
 
 ## Code Commentary
 
@@ -25,7 +27,12 @@ is plane-resolved.
 
 `dispatch_agent` accepts child document, role, brief, and optional label. Retire/rename child use
 the same structural address; rename-self has no identity argument. Application services own
-authorization, runtime allocation, exact initial brief delivery, and cleanup.
+authorization, runtime allocation, exact initial brief delivery, and cleanup. The `dispatch_agent`
+description documents the caller-kind matrix: a plane-hosted seat (this process carries
+`AR_HOSTED_SESSION_ID`) uses the structural path — caller proven from plane-injected identity,
+direct-child scope authorized; an ambient caller (no `AR_HOSTED_SESSION_ID` — a launcher chat) spawns
+in ambient mode with the pinned dispatch brief and the same rollback, with no parent seat (so
+seat-authority and child-scope checks do not apply) but role-altitude validation still enforced.
 
 ### Conventions
 
@@ -34,6 +41,8 @@ The public operation family speaks task documents and roles only.
 ### Invariants And Boundaries
 
 - Models never submit a session/lifecycle/terminal id.
+- Ambient dispatch callers have no parent seat; seat-authority and child-scope checks do not apply,
+  but the role is still validated against the document's altitude.
 - The initial brief is internally exact-pinned and persisted before delivery.
 - Failed initial briefing retires the unbriefed child.
 - Replacement does not change the public child address.
@@ -52,13 +61,15 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Dispatch accepts only structural identity and the brief. | `dispatch_agent` | mcp/src/agents_remember/mcp/registration/sessions.py:27-49 |
 | Child retire and rename use document plus role. | `retire_child`; `rename_child` | mcp/src/agents_remember/mcp/registration/sessions.py:51-81 |
-| Self rename derives the caller ambiently. | `rename_self` | mcp/src/agents_remember/mcp/registration/sessions.py:83-86 |
+| Self rename derives the caller ambiently. | `rename_self` | mcp/src/agents_remember/mcp/registration/sessions.py:91-94 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `dispatch_agent`'s published description documents the caller-kind matrix (plane seat → structural path with identity proof + child-scope; ambient launcher → ambient mode with pinned brief + same rollback, no parent seat, role-altitude validation still applies); `spawn_agent_session` stays internal-only. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-11T14:29+02:00 — Re-read dispatch, child retirement/rename, and self-rename and
   widened their citations to include the registered-tool decorators; verification metadata

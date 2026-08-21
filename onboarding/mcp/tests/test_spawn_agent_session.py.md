@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_spawn_agent_session.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,6 +31,10 @@ exact-pinned control-plane operation.
 The suite also covers seat conflict without takeover, missing/invalid task documents before spawn,
 settings-owned harness/model/effort resolution, plain-terminal separation, log-confirmed session
 commands, and stored private provenance. No test turns the primitive into an advertised agent tool.
+260821-ARSPAWN-L1 extends `_SPAWNED_BY_FIELDS` with the caller-kind field and adds
+`test_spawn_records_caller_kind_provenance`, which runs the REAL primitive with a substituted host
+and asserts the payload carries `spawnedByKind` ("ambient") plus the catalog caller-kind row — the
+provenance the public `dispatch_agent` sets by caller kind.
 
 ## Invariants And Boundaries
 
@@ -53,6 +57,7 @@ No external domain source governs this repository-local test contract.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | A successful spawn binds a seat without delivering a brief or claiming readiness. | `test_spawns_bound_seat_without_brief_or_readiness_claim` | mcp/tests/test_spawn_agent_session.py:318-339 |
+| The spawn payload and catalog row carry caller-kind provenance. | `test_spawn_records_caller_kind_provenance` | mcp/tests/test_spawn_agent_session.py:555-561 |
 | Canonical task-document identity is persisted and missing documents refuse before spawn. | `test_spawn_persists_canonical_task_document_reference`; `test_spawn_rejects_missing_task_document_before_spawning` | mcp/tests/test_spawn_agent_session.py:376-382; mcp/tests/test_spawn_agent_session.py:395-402 |
 | Context and submit inputs are rejected at the spawn primitive. | `test_context_including_empty_string_refuses_before_every_spawn_side_effect`; `test_submit_true_refuses_before_spawn_even_without_context` | mcp/tests/test_spawn_agent_session.py:445-463; mcp/tests/test_spawn_agent_session.py:465-469 |
 | Occupied structural seats refuse without takeover. | `test_seat_taken_is_surfaced_never_overridden` | mcp/tests/test_spawn_agent_session.py:484-518 |
@@ -66,6 +71,8 @@ insertion remain untouched. This is the control-plane race closure behind the ma
 status check: dispatch re-proves lineage rather than trusting a brief-carried snapshot.
 
 ## Update History
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `_SPAWNED_BY_FIELDS` + `test_spawn_records_caller_kind_provenance` prove the real primitive writes the `spawnedByKind` payload and the catalog caller-kind row. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-16T04:06+02:00 — Dagger fixture repair: stale-lineage session forcing advances the exact sprint-super ref, then restores the ambient main checkout before role launch.
 - 2026-08-13T12:53+02:00 — No content impact: the stabilized daemon-root derivation reads

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/terminal_tools.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T10:10+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,12 @@ targets and keeps runtime correlations private.
 generalized assignment primitive. `spawn_agent_session_tool` remains the low-level settings-owned
 occupant allocator used by structural dispatch; it resolves harness/launch facts and opens the
 terminal without owning the public dispatch brief contract. Retire and rename operate on exact ids
-only after a trusted caller has resolved the current occupant.
+only after a trusted caller has resolved the current occupant. Since 260821-ARSPAWN-L1 the spawn
+primitive carries caller-kind provenance end to end: `CallerKind` (`plane|ambient|unattributed`)
+rides `SpawnedBy.caller_kind` into `SpawnProvenance.spawned_by_kind`, the catalog row
+(`spawned_by_kind`), and the `spawnedByKind` payload — set by the public `dispatch_agent` tool by
+caller kind (plane seats pass `plane`, ambient callers `ambient`; `None` stays unattributed,
+backward compatible).
 
 ### Conventions
 
@@ -55,7 +60,8 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Internal task assignment accepts canonical document and role. | `attach_terminal_session_to_task_tool` | mcp/src/agents_remember/application/terminal_tools.py:171-205 |
-| The low-level spawn primitive remains plane-owned composition. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:783-867 |
+| The low-level spawn primitive remains plane-owned composition. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:787-871 |
+| Caller-kind provenance rides the spawn into the catalog row and payload. | `CallerKind`; `SpawnedBy` | mcp/src/agents_remember/application/terminal_tools.py:522-534 |
 | Exact retire/rename operations remain behind structural resolution. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:955-1025; mcp/src/agents_remember/application/terminal_tools.py:1114-1128 |
 
 ## Cross-Repo References
@@ -70,6 +76,8 @@ detail/projection on attach and spawn, rather than duplicating the terminal
 opener's structural policy.
 
 ## Update History
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `CallerKind` (`plane|ambient|unattributed`) rides `SpawnedBy.caller_kind` through the spawn primitive into `SpawnProvenance.spawned_by_kind`, the catalog row, and the `spawnedByKind` payload; `None` stays unattributed (backward compatible). The primitive remains internal composition for the public `dispatch_agent`. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
+
 - 2026-08-12T20:10+02:00 — L23 curator: reconciled centralized spawn refusal translation and lineage evidence propagation; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current application-layer card for `terminal_tools.py` with qualified seat resolution and terminal/session orchestration boundaries.

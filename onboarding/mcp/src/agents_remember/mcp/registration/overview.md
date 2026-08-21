@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -73,7 +73,7 @@ developer ruled all four forbidden — and no `noqa` anywhere holds an argument-
 | ------------------- | ------------------------------------------------------------------------- |
 | `__init__.py`       | `TOOL_REGISTRARS` (the ordered tuple `create_server` loops over) and the `ToolRegistrar` alias. |
 | `core.py`           | `ping`, `server_info`, `context_packet`, `read_ar_files`, `resolve_context`, `runtime_install`, `skills_install`. |
-| `sessions.py`       | `dispatch_agent`, `retire_child`, `rename_child`, `rename_self`; caller identity and runtime allocation are plane-owned. |
+| `sessions.py`       | `dispatch_agent`, `retire_child`, `rename_child`, `rename_self`; `dispatch_agent` accepts both plane-hosted and ambient (no plane identity) callers, with the caller-kind matrix documented in its published description; runtime allocation stays plane-owned. |
 | `memory.py`         | `drift_check`, `memory_quality_check`, `route_index_refresh`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt`, `memory_carryover_plan`, `memory_carryover_apply`; full contract-scoped quality also publishes its digest-bound structured attestation. |
 | `providers.py`      | `provider_status`, `provider_diagnostics`, `provider_watchers`.            |
 | `code_search.py`    | `grepai_search`, `grepai_trace`, and the six `cgc_*` graph tools.          |
@@ -112,9 +112,13 @@ degraded `status` readout (mode/registers/laneOwner/legalNextOperations) and the
 
 Structural tool registration fixes attribution and caller identity in the plane: a hosted seat wins,
 an ambient caller with no plane seat declares `caller` (role + task_document_ref) and the same
-authorization validates it exactly like a seat (L16-R3). Gate decisions use the ambient or
-declared caller for authority; message tools derive the sender from the hosted context. No
-agent-facing signature accepts an actor/session/lifecycle/inbox/gate id.
+authorization validates it exactly like a seat (L16-R3). `dispatch_agent` is the one public spawn
+tool for both caller kinds: since 260821-ARSPAWN-L1 an ambient caller (no `AR_HOSTED_SESSION_ID`) is
+resolved from the process environment rather than request data, spawns with the pinned brief + the
+same rollback, has no parent seat (so seat-authority and child-scope checks do not apply), and still
+gets role-altitude validation — the published description documents the caller-kind matrix. Gate
+decisions use the ambient or declared caller for authority; message tools derive the sender from the
+hosted context. No agent-facing signature accepts an actor/session/lifecycle/inbox/gate id.
 
 `register_lifecycle_tools` takes `_config` and does not use it: its six payloads act on the
 process-wide ambient lifecycle rather than on resolved settings. The parameter stays so every
@@ -221,6 +225,8 @@ Registered worktree and memory tools expose journaled closeout/integration and r
 Registration modules import the moved `application/task_docs/*`; `registration/tasks.py` extracts the `task_doc` description constant; `registration/closeout.py` renames the direct-landing helper.
 
 ## Update History
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `dispatch_agent` documents the caller-kind matrix (plane seat vs ambient launcher resolved from the process environment); one public spawn tool, `spawn_agent_session` stays internal. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: registration import paths updated; `task_doc` description constant extracted; direct-landing helper renamed. Verified at code commit e5cb139f.
 

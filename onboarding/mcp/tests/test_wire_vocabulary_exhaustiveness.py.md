@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-13T12:53+02:00               |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`       |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb`       |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -234,7 +234,7 @@ themselves.
 | The wire model every contract and guidance value must validate at. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:96-136 |
 | Guidance state machines use the grouped wire-alias import and keep separate lifecycle, next-step, and recovery builders and recovery vocabulary. | "from agents_remember.models.worktree import ("; `RecoveryOperation`; `RecoveryTool`; `lifecycle_guidance`; `next_guidance`; `recovery_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14; mcp/src/agents_remember/worktrees/modules/guidance.py:37-54; mcp/src/agents_remember/worktrees/modules/guidance.py:129-160; mcp/src/agents_remember/worktrees/modules/guidance.py:216-226 |
 | Worktree status projects invalid-contract errors onto the payload. | `worktree_status_packet`; `status_payload` | mcp/src/agents_remember/application/worktree_status.py:23-61 |
-| Published workflow kind and structural agent-session tool docstrings. | `worktree_start`; `dispatch_agent`; `retire_child`; `rename_child`; `rename_self` | mcp/src/agents_remember/mcp/registration/worktrees.py:29-86; mcp/src/agents_remember/mcp/registration/sessions.py:27-86 |
+| Published workflow kind and structural agent-session tool docstrings. | `worktree_start`; `dispatch_agent`; `retire_child`; `rename_child`; `rename_self` | mcp/src/agents_remember/mcp/registration/worktrees.py:29-86; mcp/src/agents_remember/mcp/registration/sessions.py:27-94 |
 | Session response vocabularies. | `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:91-134; mcp/src/agents_remember/models/terminal.py:174-190; mcp/src/agents_remember/models/terminal.py:200-211 |
 | Terminal refusal/result production is split across the centralized spawn-refusal builder and the knob, retire, and rename result seams. | "def spawn_refusal("; "def _knob_refusal("; "def _retire_payload("; "def _rename_payload(" | mcp/src/agents_remember/application/terminal_spawn_results.py:13-31; mcp/src/agents_remember/application/terminal_tools.py:466-484; mcp/src/agents_remember/application/terminal_tools.py:917-952; mcp/src/agents_remember/application/terminal_tools.py:1090-1111 |
 | Leaf-reference refusal statuses. | `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66 |
@@ -258,6 +258,8 @@ terminal facade, so moving the builder cannot hide a public status from the
 closed spawn response vocabulary.
 
 ## Update History
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 curator: repaired the `rename_self` citation range (sessions.py:27-86 → 27-94) surfaced by the leaf-scoped quality check; no content impact. Verification metadata remains closeout-owned.
 
 - 2026-08-16T00:45+02:00 — Re-read the exact NextTool producer set after protected-memory apply guidance was retired; the suite now pins `memory_carryover_plan` while preserving exact set equality. Verification remains closeout-owned.
 - 2026-08-14T05:26Z — L23 final curator: re-anchored the expanded recovery vocabulary and the

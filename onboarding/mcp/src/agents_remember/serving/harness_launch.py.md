@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_launch.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |  `3eafc555c848ac45a07a07720641f1735f8df0eb`|
+| lastVerifiedCommitDate |  2026-08-21T05:15:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,7 +91,7 @@ The launch policy is carried by the shared opener/runner and consumed by each ow
 | Claude produces native model/effort flags and verifies the model echo without fabricating effort echo. | `claude_launch_knobs` | mcp/src/agents_remember/serving/harness_control_claude.py:128-142 |
 | Codex produces thread config plus owned model/config selectors. | `codex_launch_knobs` | mcp/src/agents_remember/serving/codex_app_server_session.py:35-54 |
 | Pi produces native provider-qualified model/thinking flags and requires both effective echoes. | `pi_launch_knobs` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:118-132 |
-| The opener serializes this typed object into the runner and persists its selected values as catalog provenance. | "The durable row for the process this open just spawned" | mcp/src/agents_remember/serving/terminal_opener.py:525-525 |
+| The opener serializes this typed object into the runner and persists its selected values as catalog provenance. | "The durable row for the process this open just spawned" | mcp/src/agents_remember/serving/terminal_opener.py:526-526 |
 
 ## Cross-Repo References
 
@@ -103,6 +103,8 @@ their in-repository own adapters.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 curator: repaired the terminal_opener.py citation range (525→526, the durable-row docstring) surfaced by the leaf-scoped quality check; no content impact. Verification metadata remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

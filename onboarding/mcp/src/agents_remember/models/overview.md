@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -94,7 +94,9 @@ context-delivery outcome (since 260707-HFX-L3 incl. the failure-evidence `delive
 provenance `launchArgs`/`promptKeywords`/`sessionCommands` + `sessionCommandsDelivered`, and the
 level provenance `spawnLevel`/`spawnLevelSource`; HFX2-L10 adds the
 `spend-override-unsupported` refusal for legacy caller spend fields and maintained harness-native
-spend env keys), and
+spend env keys; since 260821-ARSPAWN-L1 also the caller-kind provenance `spawnedByKind`
+(`plane|ambient|unattributed`) mirroring the catalog row — the provenance the public `dispatch_agent`
+sets by caller kind), and
 `tokens.py` for response token accounting. **260707-HFX-L8** adds two more strict models to
 `terminal.py`: `SessionRetireResponse` (`retired`/`already-retired`/`unknown-session`/
 `unknown-actor`/`retire-refused` statuses, retirement provenance fields, `detail` naming the exact
@@ -405,6 +407,8 @@ Worktree, closeout-queue, and task projections now distinguish organizational di
 `models/closeout_queue.py` moved to the new `models/queue/` sub-route; `models/task_doc.py` `TaskDocResponse` gained the special-op wire fields (the strict-envelope rejection fix).
 
 ## Update History
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `SpawnAgentSessionResponse` gains the caller-kind provenance `spawnedByKind` (`plane|ambient|unattributed`) mirroring the catalog row; response-model route model unchanged. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: `closeout_queue` moved to the new `models/queue` sub-route; `task_doc.py` gained the special-op wire fields. Verified at code commit e5cb139f.
 
