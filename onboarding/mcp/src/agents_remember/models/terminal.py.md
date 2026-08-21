@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-01T09:48+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb`|
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -63,7 +63,9 @@ catalog mutation — and, like `LeafAssignmentStatus`, they arrive as the import
 alias rather than as two more hand-typed strings.
 cit:([`SpawnAgentSessionResponse`], mcp/src/agents_remember/models/terminal.py:78-120) is a strict
 `ToolResponse` with operation `spawn_agent_session`, the `session`, optional `harness`/`kind`/`leafKey`/
-`label`/`cwd`/`tmuxName`, the spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`) recorded
+`label`/`cwd`/`tmuxName`, the spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`, and — since
+260821-ARSPAWN-L1 — `spawnedByKind`: `Literal["plane","ambient","unattributed"] | None`, the
+caller-kind provenance the public `dispatch_agent` sets by caller kind) recorded
 on the catalog row for the dashboard orchestration tree, the optional `spawnRole` (under L14, the
 `AR_SPAWN_ROLE` persisted on the row, the Chats command-tree grouping key), the L16 level provenance
 (`spawnLevel` + `spawnLevelSource` — the resolved dispatch level and whether it was explicit or
@@ -85,8 +87,8 @@ cit:([`SessionRetireResponse`], mcp/src/agents_remember/models/terminal.py:160-1
 success/already-retired), plus `detail` (populated on `retire-refused`, naming the exact
 authority-policy clause `check_retire_authority` raised). `ok` is true for `retired`/
 `already-retired` (idempotent), false for every refusal status — and that rule lives in ONE place,
-cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:914-914), so a refusal status added later cannot
-arrive as `ok=True` from a call site that forgot it. cit:([`SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:193-193) `=
+cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:921-921), so a refusal status added later cannot
+arrive as `ok=True` from a call site that forgot it. cit:([`SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:194-194) `=
 Literal["renamed","unknown-session"]`; `SessionRenameResponse` models `session_rename` (issue #4):
 cit:([`SessionRenameResponse`], mcp/src/agents_remember/models/terminal.py:200-211)
 `operation: Literal["session_rename"]`, `status`, `session`, `label`/`spawnedLabel` (`None`-default).
@@ -187,6 +189,8 @@ optional because ordinary task-binding, launch-selection, and seat outcomes do
 not manufacture ancestry evidence.
 
 ## Update History
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `SpawnAgentSessionResponse` gains `spawnedByKind` (`Literal["plane","ambient","unattributed"] | None`), the caller-kind provenance `dispatch_agent` sets by caller kind; two stale citation ranges repaired to current source (`_RETIRE_OK_STATUSES` 914→921, `SessionRenameStatus` 193→194). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
+
 - 2026-08-12T20:10+02:00 — L23 curator: recorded `source-lineage-stale` / `source-lineage-unavailable` and their typed evidence boundary; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: bound the leaf-ref alias, producer, and derived runtime set to their owning source under the adversarial verdict, then the exact scoped fixer/check passed.

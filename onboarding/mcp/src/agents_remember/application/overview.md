@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -19,7 +19,11 @@
 `application/structural/` translates ambient caller intent and document+role targets into authorized
 plane-owned dispatch, messaging, seat management, and gate mutations. Runtime correlations remain
 inside the transaction. Ordinary messages are replacement-aware; the initial dispatch brief is the
-sole exact-pinned exception and failed briefing retires the unbriefed child.
+sole exact-pinned exception and failed briefing retires the unbriefed child. Since 260821-ARSPAWN-L1
+`dispatch_agent` resolves the caller by kind (plane seat vs ambient launcher resolved from the
+process environment), keeps the plane structural path unchanged, and records caller-kind provenance
+(`caller_kind` `plane`/`ambient`) through the `application/terminal_tools.py` spawn primitive onto
+the catalog row and the `spawnedByKind` wire field.
 
 ## Durable Lifecycle Application Boundary
 
@@ -300,6 +304,8 @@ New `application/memory_quality_runs.py` (bounded single-flight background run r
 Seven application modules moved into the new `application/task_docs/` sub-route (task_doc_tools, task_execution_topology, task_sprint_linkage, task_ref, task_reopen, task_doc_queue_scope, task_doc_route_review); importers updated.
 
 ## Update History
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `application/structural/agent_tools.py` resolves the dispatch caller by kind (plane vs ambient launcher from the process environment) and records caller-kind provenance through the `application/terminal_tools.py` spawn primitive (`spawnedByKind` wire field + catalog row); the plane structural path is unchanged. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: the task-doc authoring modules moved to the new `application/task_docs` sub-route. Verified at code commit e5cb139f.
 

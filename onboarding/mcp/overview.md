@@ -9,8 +9,8 @@ Total output lines: 2603
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -33,7 +33,11 @@ atomic-sequential default with the series lane owner and legal next operations.
 Agent-facing dispatch, messaging, seat management, and gates use canonical task documents and roles.
 A plane-injected hosted seat proves the caller; an ambient caller with no plane seat declares its
 role + task document as request data and the same authorization validates it exactly like a seat
-(260815-DAG-L16, L16-R2/R3/F5). Runtime session/lifecycle/gate/inbox identities stay
+(260815-DAG-L16, L16-R2/R3/F5). `dispatch_agent` is the one public spawn tool for both caller kinds:
+since 260821-ARSPAWN-L1 an ambient launcher (no `AR_HOSTED_SESSION_ID`) is resolved from the process
+environment — not request data — spawns with the pinned brief and the same rollback, has no parent
+seat (no child-scope), and still gets role-altitude validation; `spawn_agent_session` remains an
+internal primitive only. Runtime session/lifecycle/gate/inbox identities stay
 plane-only. The application resolves authorized parent/child seats and current occupants, with one
 internally exact-pinned initial brief and replacement-aware ordinary messages. Startup migration is
 one-way before strict current readers; there is no public exact-id compatibility surface.
@@ -885,6 +889,8 @@ New `tasks/serving_preflight.py` (served-build preflight, L15-R4) and `applicati
 New sub-package routes `application/task_docs/`, `models/queue/`, `worktrees/queue/`, `worktrees/integration/` (32 moved modules); the `task_doc` special-op wire-shape fix (`TaskDocResponse` fields + `_sprint_doc_identity`); closeout/reopen refactors; the package_data orchestration-task template copy re-synced.
 
 ## Update History
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `dispatch_agent` becomes the one public spawn tool for both caller kinds; ambient launchers are resolved from the process environment (no `AR_HOSTED_SESSION_ID`) with role-altitude validation, and `spawn_agent_session` stays internal. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: new package routes (`application/task_docs`, `models/queue`, `worktrees/queue`, `worktrees/integration`); `TaskDocResponse` wire-field fix; closeout/reopen refactors; sync-skills orchestration-task copy. Verified at code commit e5cb139f.
 

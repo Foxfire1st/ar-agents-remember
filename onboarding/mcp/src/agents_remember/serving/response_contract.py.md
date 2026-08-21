@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`              |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb`              |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -23,7 +23,12 @@ responses now expose canonical task-document binding rather than leaf-key identi
 
 ### Logic
 
-`TerminalCatalogEntryWire` mirrors the conditional catalog serializer. Open and seat-conflict models
+`TerminalCatalogEntryWire` mirrors the conditional catalog serializer — since 260821-ARSPAWN-L1 it
+also carries the caller-kind provenance field `spawned_by_kind` (`spawnedByKind` on the wire,
+`str | None`, None default) beside the spawned-by session/lifecycle pair, so `/api/terminal/sessions`
+rows expose caller kind only when set and old rows are unaffected; the module's key-set equality
+test against `TerminalCatalogEntry.to_json` keeps the wire and the hand-rolled serializer in
+lockstep. Open and seat-conflict models
 carry structural identity; task assignment responses return the accepted or refused document and
 role. Other serving response families remain strict and unchanged in responsibility.
 
@@ -59,6 +64,8 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-21T03:30+02:00 — 260821-ARSPAWN-L1 fix round 2: `TerminalCatalogEntryWire` gained `spawned_by_kind` (`spawnedByKind` on the wire, `str | None`, None default) beside the spawned-by pair, mirroring the catalog row's conditional `to_json` emission; old `/api/terminal/sessions` rows unaffected; the key-set equality test keeps wire and serializer in lockstep. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-11T19:58+02:00 — Aligned the current serving card for `response_contract.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
+| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,7 +26,11 @@ launch mechanics remain plane-owned behind structural dispatch.
 `open_terminal_session` validates launch and task binding, refuses an occupied singular seat, creates
 the catalog row, and starts the hosted process. The opener scrubs inherited daemon identity before
 seeding the new hosted environment; the structural application subsequently exact-pins the initial
-brief. Existing live launch identity is never silently rewritten.
+brief. Existing live launch identity is never silently rewritten. Since 260821-ARSPAWN-L1
+`SpawnProvenance` carries `spawned_by_kind` (`plane|ambient|unattributed`), the caller-kind half of
+spawn provenance; `_opened_catalog_entry` maps it onto the catalog row write-once via `_preserved`,
+and the sibling provenance writers (`conversation/library/open_service.py`,
+`serving/_app_terminal_routes.py`) keep the `None` default.
 
 ### Conventions
 
@@ -55,6 +59,8 @@ No Domain Documentation source is configured.
 | Hosted launch strips inherited daemon identity. | `_scrub_daemon_identity_env` | mcp/src/agents_remember/serving/terminal_opener.py:437-475 |
 | Binding conflict is checked before the transaction commits. | `_binding_conflict_owner` | mcp/src/agents_remember/serving/terminal_opener.py:578-602 |
 | Open coordinates launch, binding refusal, and persistence. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:722-775 |
+| Spawn provenance records caller kind write-once onto the catalog row. | `SpawnProvenance` | mcp/src/agents_remember/serving/terminal_opener.py:160-179 |
+| The opener maps spawn provenance onto the durable row write-once. | `_opened_catalog_entry` | mcp/src/agents_remember/serving/terminal_opener.py:519-575 |
 
 ## Cross-Repo References
 
@@ -68,6 +74,8 @@ unavailable lineage returns a typed `OpenTerminalResult` with detail and the
 strict projection; non-structural terminals retain their existing path.
 
 ## Update History
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `SpawnProvenance.spawned_by_kind` (`plane|ambient|unattributed`) mapped onto the catalog row by `_opened_catalog_entry` write-once via `_preserved`; sibling provenance writers keep the `None` default. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
+
 - 2026-08-12T20:10+02:00 — L23 curator: recorded task-derived lineage admission before structural process creation; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current serving card for `terminal_opener.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.

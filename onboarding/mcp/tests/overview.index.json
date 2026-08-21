@@ -156,6 +156,7 @@
     "mcp/tests/test_dashboard_daemon.py",
     "mcp/tests/test_diff_coverage.py",
     "mcp/tests/test_direct_landing.py",
+    "mcp/tests/test_dispatch_agent_ambient.py",
     "mcp/tests/test_dispatch_brief.py",
     "mcp/tests/test_dispatch_expectation_rows.py",
     "mcp/tests/test_docker_runtime_parsers.py",
@@ -454,8 +455,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 432,
-    "fileSidecars": 442,
+    "sourceFilesInScope": 433,
+    "fileSidecars": 443,
     "childRoutes": 0
   },
   "routingTerms": [
