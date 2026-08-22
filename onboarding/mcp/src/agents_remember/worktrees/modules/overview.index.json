@@ -17,6 +17,7 @@
     "mcp/src/agents_remember/worktrees/modules/cleanup.py",
     "mcp/src/agents_remember/worktrees/modules/cli.py",
     "mcp/src/agents_remember/worktrees/modules/closeout.py",
+    "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
     "mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py",
     "mcp/src/agents_remember/worktrees/modules/code_quality_gate.py",
     "mcp/src/agents_remember/worktrees/modules/context.py",
@@ -37,8 +38,8 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 25,
-    "fileSidecars": 25,
+    "sourceFilesInScope": 26,
+    "fileSidecars": 26,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -51,6 +52,7 @@
     "cleanup",
     "cli",
     "closeout",
+    "closeout_external",
     "closeout_memory_quality",
     "code",
     "code_quality_gate",
@@ -58,6 +60,7 @@
     "contract",
     "contract_reader",
     "executor",
+    "external",
     "finalize",
     "gate",
     "git",
@@ -102,6 +105,7 @@
       "mcp/src/agents_remember/worktrees/modules/cleanup.py",
       "mcp/src/agents_remember/worktrees/modules/cli.py",
       "mcp/src/agents_remember/worktrees/modules/closeout.py",
+      "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
       "mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py",
       "mcp/src/agents_remember/worktrees/modules/code_quality_gate.py",
       "mcp/src/agents_remember/worktrees/modules/context.py",
@@ -116,8 +120,7 @@
       "mcp/src/agents_remember/worktrees/modules/models.py",
       "mcp/src/agents_remember/worktrees/modules/onboarding.py",
       "mcp/src/agents_remember/worktrees/modules/start.py",
-      "mcp/src/agents_remember/worktrees/modules/start_contract.py",
-      "mcp/src/agents_remember/worktrees/modules/start_result.py"
+      "mcp/src/agents_remember/worktrees/modules/start_contract.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -134,6 +137,8 @@
       "cli",
       "closeout.py",
       "closeout",
+      "closeout_external.py",
+      "closeout_external",
       "closeout_memory_quality.py",
       "closeout_memory_quality",
       "code_quality_gate.py",
@@ -165,9 +170,7 @@
       "start_contract.py",
       "start_contract",
       "start_result.py",
-      "start_result",
-      "sync.py",
-      "sync"
+      "start_result"
     ]
   },
   "fallback": {

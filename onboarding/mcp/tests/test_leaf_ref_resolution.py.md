@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_leaf_ref_resolution.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405` |
-| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
+| lastUpdated            | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -70,10 +70,12 @@ contract persisted with a legacy stem-shaped id — the pre-heal on-disk state) 
 | --- | --- | --- |
 | Resolver under test. | `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Walk-free `load_contract` and the `heal_contract_leaf_ids` sweep under test. | `load_contract`; `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:438-471; mcp/src/agents_remember/worktrees/worktree_contract.py:480-555 |
-| The `heal-leaf-ids` CLI seam driven end to end via `main`. | `main` | mcp/src/agents_remember/worktrees/modules/cli.py:159-166 |
+| The `heal-leaf-ids` CLI seam driven end to end via `main`. | `main` | mcp/src/agents_remember/worktrees/modules/cli.py:192-199 |
 | Task document writer used to create representative task trees. | `write_task_doc` | mcp/src/agents_remember/tasks/store.py:36-37 |
 
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 added direct empty/single/multiple repository-inference coverage, including file and archive exclusions, clearing `_single_repo_name` CRAP without changing production behavior.
 - 2026-08-04T18:51+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the three malformed rows whose

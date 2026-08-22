@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_and_observer_helpers.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-19T22:32+02:00                             |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17`         |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`         |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -108,7 +108,7 @@ This task extends this suite's production-bound fixtures or assertions for task-
 - 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:38+02:00 — 260731-EFA-L4 curator: `ParentSeriesContractTests` moved both its
   fixtures from `workflow_kind="master-task"` to `"light-task"`, because `WorkflowKind` is now
-  `Literal["chat-task", "light-task"]` (cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:14-14)). The Classes-table
+  `Literal["chat-task", "light-task"]` (cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:19-19)). The Classes-table
   claim "mint one for a master task" survives, and the note added under the table says why it is
   now a demonstration rather than a coincidence: `_parent_series_contract` reads `**Type:** Master`
   off the `task.md` the fixture writes, so with the workflow kind no longer able to say "master",

@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -803,7 +803,7 @@ time, so a path-imported script must be registered before `exec_module`.
 step were all built during 260731-EFA-L2 and then **deleted** when the developer ruled that
 ratchets, baselines, grandfather lists and burn-down schedules are all forbidden. All 67 complexity
 offenders were fixed by extraction instead, and 274 of 293 long signatures were fixed by
-introducing 163 parameter objects. Do not reintroduce any of them — 
+introducing 163 parameter objects. Do not reintroduce any of them —
 `test_code_quality_check.py::EveryEnforcingStepCanFailTests::test_the_complexity_baseline_and_its_gate_step_are_gone`
 fails if you do.
 
@@ -927,7 +927,7 @@ request-id idempotency, retained-known reconciliation without native resend, raw
 serialization, and liveness-first 404/409 classification. Opener/app cases prove complete-pair
 pre-spawn validation, same-pair live reopen, changed launch conflict with actual retained truth,
 fresh dead replacement, and a cross-process diffe…13126 tokens truncated…_harness.py:35-107 |
-| The closeout gate suite covers all three statuses and spies on the real argument passed from unannotated closeout call sites. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:19-486; mcp/tests/test_worktree_closeout_quality_gate.py:55-257 |
+| The closeout gate suite covers all three statuses and spies on the real argument passed from unannotated closeout call sites. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:15-473; mcp/tests/test_worktree_closeout_quality_gate.py:55-257 |
 | The gate is shown the commit content: a created file reaches ruff through real `derive_scope`, a deleted one leaves it, and the lint-path set equals the Python paths in the resulting commit tree. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:130-208 |
 | Both staging refusals are asserted as damage that does not happen: the repository checkout preserves its `add -p` selection and untracked secret, and a conflicted worktree keeps `MERGE_HEAD` intact. | `TaskWorktreePreconditionTests`; `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:846-958; mcp/tests/test_worktree_closeout_quality_gate.py:961-1015 |
 | A retry commits the tree a first run would: two worktrees driven to the same end state, one through a refused gate, are asserted to produce the identical commit tree, so the ignored `.dmypy.json` a refused attempt staged is not carried into the retry (`RetryStagesWhatAFirstRunWouldTests`). | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:966-1025 |
@@ -1183,7 +1183,25 @@ Three new forcing suites: `test_serving_preflight.py` (floor semantics + editabl
 
 The forcing suites tracked the package restructure: ~100 test files had import paths updated to the moved `queue`/`integration`/`task_docs` packages and their `unittest.main` tail guards removed; new `test_task_doc_wire_shape.py` locks the special-op response envelope; several suites gained coverage tests (lifecycle operations, closeout actions/forging/lifecycle, organizational completion, integration ref transaction, memory-quality runs, serving preflight, doctrine plane identity).
 
+## 260821-CLIVE-L1 Forcing Matrix
+
+Fifteen new test/support owners force the explicit-input and evidence boundary. The initial six own
+selected-queue fixtures, canonical closeout/evidence fixtures, generation admission, worktree
+input, mutation evidence, and direct-landing input. Nine additional focused suites own candidate
+publication reload, executable input guards, strict input/evidence model states, ledger evidence
+ordering, queue generation transition, recovery projection, lifecycle-store transitions, detached
+worker entry, and irreversible release guards. They cover omitted/empty/whitespace observations;
+enabled/not-applicable and internal/external plans; preview/apply parity; duplicate/retry identity;
+candidate and contract drift; no-authority/no-Git refusal; evidence ordering; exact finalization;
+and direct landing before-lock refusal. Large legacy suites retain their production-route behavior
+while focused owners absorb model/store/bootstrap cases. These migrations preserve the queue/task
+boundary: task truth and accepted lifecycle evidence do not derive from queue rows. Candidate-11
+retains those owners and adds full-record plus journal-byte invariance when public runtime progress
+attempts an illegal phase after valid closeout finalization; it does not add another test owner.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11: no route impact; one existing store-invariant owner gained post-finalization record/journal no-effect forcing without changing the route inventory, against accepted tree `4241908c`. Verification metadata remains closeout-owned.
 
 - 2026-08-21T03:15+02:00 — 260821-ARSPAWN-L1 fix round 1 route impact: the ambient dispatch cohort now lives in `test_dispatch_agent_ambient.py` (extracted from `test_structural_agent_tools.py` by the file-size fix); the structural-seat regression boundary names the new suite. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 

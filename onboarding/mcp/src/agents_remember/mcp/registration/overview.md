@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -224,7 +224,13 @@ Registered worktree and memory tools expose journaled closeout/integration and r
 
 Registration modules import the moved `application/task_docs/*`; `registration/tasks.py` extracts the `task_doc` description constant; `registration/closeout.py` renames the direct-landing helper.
 
+## 260821-CLIVE-L1 Tool Contract
+
+The advertised closeout surface exposes code, memory, and ledger message observations where the route can require them, then reports `effectiveInput` or structured refusal. Optional schema fields are not defaults: enabled legs require explicit stripped nonblank messages at runtime. Direct landing exposes only memory and ledger intent because code is verified-existing/not-applicable. Validation precedes integration authority, the landing lock, and Git.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
 
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `dispatch_agent` documents the caller-kind matrix (plane seat vs ambient launcher resolved from the process environment); one public spawn tool, `spawn_agent_session` stays internal. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 

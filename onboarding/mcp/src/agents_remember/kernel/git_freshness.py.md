@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/git_freshness.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                         |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`                         |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -136,7 +136,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Style precedent: read-only git facts with dataclass + packet projector, the sibling that classes its four probes the same way, and — since 260731-EFA-L4 — the sibling that declares its own `RepoState` / `VALID_REPO_STATES` for the same reason this file declares `FreshnessState`. | `RepoState`, `VALID_REPO_STATES`, `read_git_facts` | mcp/src/agents_remember/kernel/git_facts.py:22-22; mcp/src/agents_remember/kernel/git_facts.py:26-26; mcp/src/agents_remember/kernel/git_facts.py:40-45 |
 | The wire face that imports `FreshnessState` instead of retyping its eight members: `BranchFreshness.state`. | "state: FreshnessState" | mcp/src/agents_remember/models/context_packet.py:98-98 |
 | The context packet application entry point is the first consumer (`_freshness_packet`). | `_freshness_packet` | mcp/src/agents_remember/application/context_packet.py:105-132 |
-| `test_every_freshness_state_the_git_reader_writes_validates` asserts produced == `VALID_FRESHNESS_STATES`; `test_a_directory_that_is_not_a_repo_crosses_the_freshness_wire` walks a real degrade across the boundary. | `test_every_freshness_state_the_git_reader_writes_validates`, `test_a_directory_that_is_not_a_repo_crosses_the_freshness_wire` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:753-762; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:478-483 |
+| `test_every_freshness_state_the_git_reader_writes_validates` asserts produced == `VALID_FRESHNESS_STATES`; `test_a_directory_that_is_not_a_repo_crosses_the_freshness_wire` walks a real degrade across the boundary. | `test_every_freshness_state_the_git_reader_writes_validates`, `test_a_directory_that_is_not_a_repo_crosses_the_freshness_wire` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:766-775; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:478-483 |
 | Kernel unit tests cover all states against local bare-origin fixtures. | `GitFreshnessTests` | mcp/tests/test_git_freshness.py:20-104 |
 
 ## Cross-Repo References

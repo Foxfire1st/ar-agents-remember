@@ -5,9 +5,9 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-20T05:12+02:00 |
-| lastVerifiedCommitHash | `f2e2f4b9c18d89cc0f5c901f43831e014701aae0` |
-| lastVerifiedCommitDate | 2026-08-19T11:32:36T+0200|
+| lastUpdated            | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -166,12 +166,12 @@ No external documentation is needed for this standard-library test.
 | --- | --- | --- |
 | The file-level onboarding helper creates minimal onboarding fixtures for adoption and carryover checks. | `write_file_onboarding` | mcp/tests/test_worktree_support.py:169-190 |
 | The common integration fixture creates real code and memory worktrees, closes a contract with code, memory content, and ledger commits, then reuses that fixture across integration tests. | `closed_external_contract_fixture` | mcp/tests/test_worktree_support.py:638-715 |
-| The resolver regression test proves `c-08-ar-coordination-context-resolver` skill returns `ar-coordination/tasks/<repo>` when no task name is supplied. | `test_resolver_returns_repo_task_root_without_task_name` | mcp/tests/test_worktree_support_tests_1.py:402-422 |
-| External-memory start blocks dirty source memory repos before worktree creation. | `test_start_blocks_dirty_external_memory_source` | mcp/tests/test_worktree_support_tests_1.py:708-747 |
-| Worktree contract tests check wrapper task roots without `-ar`, worktree groups with `-ar`, current-plus-legacy task-root candidates, and direct contract-path status loading. | `test_worktree_contract_roundtrip` | mcp/tests/test_worktree_support_tests_1.py:914-984 |
+| The resolver regression test proves `c-08-ar-coordination-context-resolver` skill returns `ar-coordination/tasks/<repo>` when no task name is supplied. | `test_resolver_returns_repo_task_root_without_task_name` | mcp/tests/test_worktree_support_tests_1.py:415-435 |
+| External-memory start blocks dirty source memory repos before worktree creation. | `test_start_blocks_dirty_external_memory_source` | mcp/tests/test_worktree_support_tests_1.py:724-763 |
+| Worktree contract tests check wrapper task roots without `-ar`, worktree groups with `-ar`, current-plus-legacy task-root candidates, and direct contract-path status loading. | `test_worktree_contract_roundtrip` | mcp/tests/test_worktree_support_tests_1.py:925-995 |
 | Closeout tests cover dry-run preview without approval, metadata refresh plan output, real closeout blocking without an approval note, approval-note persistence, onboarding metadata refresh to the new code commit, and missing onboarding blocking; the closeout **preview** path still reports `commit-approval-pending` / "\"request_commit_approval\"," (closeout owns the commit gate). | "\"request_commit_approval\"," | mcp/src/agents_remember/worktrees/modules/guidance.py:39-39 |
 | `test_status_reports_integration_pending_for_dirty_closed_contract` (slice 09) pins the corrected `status_payload` behavior: a closed-out contract reports its honest lifecycle position (`integration-pending` / `request_integration_decision`) even when the worktree is dirty — `git status` no longer fabricates `commit-approval-pending`. | `test_status_reports_integration_pending_for_dirty_closed_contract` | mcp/tests/test_worktree_support_tests_2.py:610-622 |
-| New closeout regression tests cover memory-worktree settings during planning and long Windows paths in changed-file and sidecar probes. | `test_closeout_plan_uses_memory_worktree_settings`; `test_changed_worktree_paths_includes_long_files`; `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support_tests_1.py:1093-1123; mcp/tests/test_worktree_support_tests_1.py:1125-1138; mcp/tests/test_worktree_support_tests_1.py:1157-1175 |
+| New closeout regression tests cover memory-worktree settings during planning and long Windows paths in changed-file and sidecar probes. | `test_closeout_plan_uses_memory_worktree_settings`; `test_changed_worktree_paths_includes_long_files`; `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support_tests_1.py:1097-1127; mcp/tests/test_worktree_support_tests_1.py:1129-1142; mcp/tests/test_worktree_support_tests_1.py:1161-1179 |
 | The initialized-memory helper writes supported explicit storage settings so closeout/carryover success paths possess real write authority. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:323-351 |
 | Legacy direct integration tests prove callers cannot fast-forward or classify source movement without a plane-owned operation; cleanup still blocks before completed integration, and the non-fast-forward case leaves refs unchanged. Successful journaled movement is owned by the integration-authority suites. | `test_direct_integrate_cannot_fast_forward_code_or_memory`; `test_cleanup_blocks_before_integration_completed`; `test_direct_integrate_cannot_classify_parallel_non_overlapping_changes`; `test_direct_integrate_cannot_classify_parallel_conflicting_changes`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:624-659; mcp/tests/test_worktree_support_tests_2.py:661-667; mcp/tests/test_worktree_support_tests_2.py:669-712; mcp/tests/test_worktree_support_tests_2.py:714-749; mcp/tests/test_worktree_support_tests_3.py:955-1007 |
 | Resolver and drift-report path tests check `code_repository_name`, `temp_root`, default report placement under `temp/drift-reports`, relative report resolution, parent-directory escape fallback, absolute-path containment, and explicit memory-root report redirection back to temp. | `test_drift_report_paths_use_temp_root` | mcp/tests/test_worktree_support_tests_3.py:198-241 |
@@ -213,7 +213,13 @@ transitive admission shape as production rather than passing through an identity
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
+## 260821-CLIVE-L1 Canonical Test Inputs
+
+Shared `closeout_args` now builds normalized effective input and journal progress support for tests that legitimately enter apply. Contract fixtures publish through the canonical serializer. This helper does not create a raw-input bypass; boundary tests use dedicated invalid-input fixtures.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 
 - 2026-08-20T05:12+02:00 — L11 landed-wave refresh: the leaf-segment graph-model commit
   (f2e2f4b9) touched this source; card re-verified against the current file, verification stamp

@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -888,7 +888,13 @@ New `tasks/serving_preflight.py` (served-build preflight, L15-R4) and `applicati
 
 New sub-package routes `application/task_docs/`, `models/queue/`, `worktrees/queue/`, `worktrees/integration/` (32 moved modules); the `task_doc` special-op wire-shape fix (`TaskDocResponse` fields + `_sprint_doc_identity`); closeout/reopen refactors; the package_data orchestration-task template copy re-synced.
 
+## 260821-CLIVE-L1 Closeout Architecture
+
+Closeout now crosses one explicit input boundary before lifecycle authority or Git. `worktrees/closeout_input.py` derives typed enabled/not-applicable legs and emits one stripped `EffectiveCloseoutInput`; worktree closeout journals that value and per-repository mutation evidence, while direct landing shares the input contract but remains synchronous, lock-serialized, and intentionally not crash durable in L1. Lifecycle records—not queue rows—own accepted input, mutation proof, recovery projection, and exact contract-finalization identity. The queue remains a scheduling projection outside this leaf. Strict schema 3.0 replaces compatibility readers, and `contract_publication_text` is the one serializer used by publication and hashes.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
 
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `dispatch_agent` becomes the one public spawn tool for both caller kinds; ambient launchers are resolved from the process environment (no `AR_HOSTED_SESSION_ID`) with role-altitude validation, and `spawn_agent_session` stays internal. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 

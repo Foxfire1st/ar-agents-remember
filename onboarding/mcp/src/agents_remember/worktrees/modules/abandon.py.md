@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -95,12 +95,12 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Provider teardown is delegated to the provider-runtime teardown function. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
-| `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_force`; `remove_empty_dir` | mcp/src/agents_remember/worktrees/modules/cleanup.py:164-185; mcp/src/agents_remember/worktrees/modules/cleanup.py:188-210; mcp/src/agents_remember/worktrees/modules/cleanup.py:252-278; mcp/src/agents_remember/worktrees/modules/cleanup.py:430-445 |
-| `WorktreeArgs` types the abandon input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:20-82 |
-| The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:194-194 |
-| Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | `test_no_force_refuses_unmerged_and_reports_commits`; `test_force_discards_unmerged_branch`; `test_unmerged_branch_and_dirty_worktree_are_blockers`; `test_dry_run_lists_resources_without_touching_docker_or_disk` | mcp/tests/test_worktree_abandon.py:137-157; mcp/tests/test_worktree_abandon.py:201-236 |
+| `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_force`; `remove_empty_dir` | mcp/src/agents_remember/worktrees/modules/cleanup.py:174-195; mcp/src/agents_remember/worktrees/modules/cleanup.py:198-220; mcp/src/agents_remember/worktrees/modules/cleanup.py:262-288; mcp/src/agents_remember/worktrees/modules/cleanup.py:440-455 |
+| `WorktreeArgs` types the abandon input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:29-100 |
+| The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:204-204 |
+| Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | `test_no_force_refuses_unmerged_and_reports_commits`; `test_force_discards_unmerged_branch`; `test_unmerged_branch_and_dirty_worktree_are_blockers`; `test_dry_run_lists_resources_without_touching_docker_or_disk` | mcp/tests/test_worktree_abandon.py:137-157; mcp/tests/test_worktree_abandon.py:201-212; mcp/tests/test_worktree_abandon.py:214-222; mcp/tests/test_worktree_abandon.py:226-236 |
 | Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
-| `CleanupStatus` (declared in models/worktree.py), `ContractCells`, and `amend_contract` are the vocabulary and typed write used by the `abandoned` stamp. | "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract" | mcp/src/agents_remember/models/worktree.py:19-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
+| `CleanupStatus` (declared in models/worktree.py), `ContractCells`, and `amend_contract` are the vocabulary and typed write used by the `abandoned` stamp. | "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract" | mcp/src/agents_remember/models/worktree.py:24-24; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
@@ -108,7 +108,13 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 
 For an atomic series, `abandon_result` performs the read-only queue-release/child census before terminal preflight. The mutating publication then holds queue followed by repository authority, rechecks the child census, and hands `_terminal_mutation_authority` an operation- and contract-bound permit that expires when the publication returns. A direct series capability mint therefore cannot delete refs outside that publication.
 
+## 260821-CLIVE-L1 Lease API Migration
+
+Abandon now acquires the pure contract lifecycle lease and separately calls `require_lifecycle_operation_compatible` while held before terminal publication. Its abandonment behavior is otherwise unchanged; the migration removes reliance on the lease performing an active-operation census.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 
@@ -166,3 +172,10 @@ For an atomic series, `abandon_result` performs the read-only queue-release/chil
 - 2026-06-10T07:30+02:00 — `abandon_result` blocks (exit 2) without `force` while a live background provider setup owns the worktree (fresh heartbeat); `force=true` overrides, and a stale heartbeat does not block (GitHub #53).
 - 2026-06-02T16:24+02:00: Docstring now references the `l-01-agent-lifecycles` skill in full for the read-only/abandon exit (was "L-01"). Reference-style normalization; behavior unchanged.
 - 2026-06-01T00:00+02:00 — Created onboarding for the new abandon module.
+
+## Governing Overview
+
+[governing overview](overview.md)
+## Cross-Repo References
+
+This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l4_remaining_support_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00|
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -35,9 +35,9 @@ and evidence checks, series leaf-set validation, terminal capabilities, and clos
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Application, bootstrap-memory, operation-model, and lineage refusal branches use their real owners. | `ApplicationAuthorityRemainderTests`; `BootstrapAndMemoryRemainderTests`; `ModelAndIdentityRemainderTests` | mcp/tests/test_l4_remaining_support_coverage.py:53-197; mcp/tests/test_l4_remaining_support_coverage.py:200-409; mcp/tests/test_l4_remaining_support_coverage.py:412-459 |
-| Atomic seal, landing evidence, recovery, and exact leaf-set proofs are forced fail closed. | `SealEvidenceAndRecoveryRemainderTests` | mcp/tests/test_l4_remaining_support_coverage.py:457-735 |
-| Terminal capability, closeout race, Git worktree, guidance, sync, queue-store, and final integration publication branches are forced. | `TerminalAndCloseoutRemainderTests` | mcp/tests/test_l4_remaining_support_coverage.py:732-1105 |
+| Application, bootstrap-memory, operation-model, and lineage refusal branches use their real owners. | `ApplicationAuthorityRemainderTests`; `BootstrapAndMemoryRemainderTests`; `ModelAndIdentityRemainderTests` | mcp/tests/test_l4_remaining_support_coverage.py:50-196; mcp/tests/test_l4_remaining_support_coverage.py:197-408; mcp/tests/test_l4_remaining_support_coverage.py:409-445 |
+| Atomic seal, landing evidence, recovery, and exact leaf-set proofs are forced fail closed. | `SealEvidenceAndRecoveryRemainderTests` | mcp/tests/test_l4_remaining_support_coverage.py:446-703 |
+| Terminal capability, changed-contract publication, Git worktree, guidance, sync, queue-store, and final integration publication branches are forced. | `TerminalAndCloseoutRemainderTests` | mcp/tests/test_l4_remaining_support_coverage.py:704-1002 |
 
 ## Documentation References
 
@@ -51,7 +51,13 @@ integration owners under `worktrees/integration/`, and queue owners under `workt
 `integration_branch_authority` patch targets gained the `worktrees.integration.` prefix, and the
 `__main__` runner was removed.
 
+## 260821-CLIVE-L1 Support Migration
+
+Terminal and closeout remainder fixtures now route through canonical normalized args and evidence-aware recovery helpers. Altitude-specific operation-model and candidate-publication checks moved into the focused model/publication suites; the remaining publication case still forces changed contract facts at the original support seam. Active-operation compatibility remains separated from lease acquisition and closeout mutation authority is supplied by the journal.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import and mock targets follow the
   package moves (`application/task_docs/`, `worktrees/integration/`, `worktrees/queue/`), the
@@ -64,3 +70,10 @@ integration owners under `worktrees/integration/`, and queue owners under `workt
 - 2026-08-16T10:43+02:00 — Added the last Dagger-reported branch decisions and regenerated the terminal/support citation range.
 - 2026-08-16T10:26+02:00 — Re-read the terminal and closeout remainder construct after fixture repairs and regenerated its exact source range.
 - 2026-08-16T10:10+02:00 — Created focused L4 support-authority forcing for the final targeted Dagger coverage gate.
+## Docs References
+
+No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
+
+## Cross-Repo References
+
+This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.

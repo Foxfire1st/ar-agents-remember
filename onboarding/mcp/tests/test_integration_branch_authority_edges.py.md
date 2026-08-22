@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_branch_authority_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -43,7 +43,13 @@ Tests bind real journal/queue/config facts and explicitly exercise no-ambient-ch
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260821-CLIVE-L1 Admission Migration
+
+Affected edge cases use canonical effective closeout input and contract publication rather than the retired raw operation-input fields. The suite continues to force integration branch authority and terminal edges; lifecycle compatibility is now called explicitly under the pure serialization lease.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 
@@ -61,3 +67,11 @@ No configured domain-documentation or cross-repository source applies to this fi
 - 2026-08-16T04:06+02:00 — Dagger fixture repair: edge forcing now supplies real runtime config, exact atomic child landing facts, canonical task-doc reads, and a structurally external carryover contract whose memory side aliases the code Git common-dir.
 - 2026-08-16T03:24+02:00 — 260815-DAG-L4: redirected shared fixture imports to the dedicated support owner; test behavior and assertions are unchanged. Verification remains closeout-owned.
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: created integration authority edge forcing onboarding from the frozen integration-authority candidate. Verification remains closeout-owned.
+## Docs References
+
+No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
+
+
+## Cross-Repo References
+
+This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.

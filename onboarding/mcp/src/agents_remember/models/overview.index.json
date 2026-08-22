@@ -35,6 +35,7 @@
     "mcp/src/agents_remember/models/application_requests.py",
     "mcp/src/agents_remember/models/base.py",
     "mcp/src/agents_remember/models/benchmarks.py",
+    "mcp/src/agents_remember/models/closeout_input.py",
     "mcp/src/agents_remember/models/context_packet.py",
     "mcp/src/agents_remember/models/core.py",
     "mcp/src/agents_remember/models/declared_caller.py",
@@ -58,8 +59,8 @@
     "mcp/src/agents_remember/models/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 51,
-    "fileSidecars": 25,
+    "sourceFilesInScope": 53,
+    "fileSidecars": 26,
     "childRoutes": 4
   },
   "routingTerms": [
@@ -71,6 +72,8 @@
     "benchmarks",
     "caller",
     "catalog",
+    "closeout",
+    "closeout_input",
     "context",
     "context_packet",
     "conversations",
@@ -86,6 +89,7 @@
     "inbox",
     "init",
     "init__",
+    "input",
     "landing",
     "lifecycles",
     "mcp",
@@ -132,6 +136,7 @@
       "mcp/src/agents_remember/models/application_requests.py",
       "mcp/src/agents_remember/models/base.py",
       "mcp/src/agents_remember/models/benchmarks.py",
+      "mcp/src/agents_remember/models/closeout_input.py",
       "mcp/src/agents_remember/models/context_packet.py",
       "mcp/src/agents_remember/models/core.py",
       "mcp/src/agents_remember/models/declared_caller.py",
@@ -145,8 +150,7 @@
       "mcp/src/agents_remember/models/runtime.py",
       "mcp/src/agents_remember/models/skills.py",
       "mcp/src/agents_remember/models/task_doc.py",
-      "mcp/src/agents_remember/models/task_document.py",
-      "mcp/src/agents_remember/models/task_document_ref.py"
+      "mcp/src/agents_remember/models/task_document.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -157,6 +161,8 @@
       "base",
       "benchmarks.py",
       "benchmarks",
+      "closeout_input.py",
+      "closeout_input",
       "context_packet.py",
       "context_packet",
       "core.py",
@@ -194,9 +200,7 @@
       "tokens.py",
       "tokens",
       "tool_registry.py",
-      "tool_registry",
-      "tool_response.py",
-      "tool_response"
+      "tool_registry"
     ]
   },
   "fallback": {

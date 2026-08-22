@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated            | 2026-08-22T10:39+02:00                     |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ The package is intentionally split by responsibility:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package-local facade keeps existing callers pointed at the split implementation. | "_resolver.resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
-| Resolver behavior is covered by resolver parity and worktree support tests. | "def test_external_memory_resolution_reports_expected_context(self) -> None:", "def test_resolver_returns_repo_task_root_without_task_name(self) -> None:" | mcp/tests/test_resolver_parity.py:57-57; mcp/tests/test_worktree_support_tests_1.py:414-414 |
+| Resolver behavior is covered by resolver parity and worktree support tests. | "def test_external_memory_resolution_reports_expected_context(self) -> None:", "def test_resolver_returns_repo_task_root_without_task_name(self) -> None:" | mcp/tests/test_resolver_parity.py:57-57; mcp/tests/test_worktree_support_tests_1.py:415-435 |
 
 ## 260731-EFA-L2 Resolver API
 
@@ -98,6 +98,10 @@ and the resolver now consumes a `ContractReaderPort` bound to
 directly. The coordination-context detection/assembly behavior is unchanged.
 
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed the
+  formatter-moved worktree-support test coordinate against accepted tree `4241908c`.
+  Verification metadata remains pinned until governed closeout.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the CLI move and the
   contract-reader port seam. Verification metadata pinned until closeout stamps the L9 code

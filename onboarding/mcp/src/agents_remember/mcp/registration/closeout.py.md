@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-22T11:29+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ unchanged.
 `worktree_integrate`, `worktree_cleanup`, `worktree_abandon`.
 
 The public registration entry delegates to four cohesive helpers:
-`_register_direct_landing_tool` for the branch-addressed direct landing (260815-DAG-L16),
+`_register_direct_landing_tools` for the branch-addressed direct landing (260815-DAG-L16),
 `_register_closeout_command_tools` for preview/apply,
 `_register_integration_command_tools` for integration/cancellation, and
 `_register_reclamation_command_tools` for cleanup/abandonment. The `_tools` suffix is deliberate:
@@ -83,8 +83,9 @@ in order. It states four things the previous text did not:
   ordinary commit step's own `git add -A` exactly as it always has.
 
 The blocker wording also narrowed from "before any … mutation" to "before any … commit", which is
-the accurate claim now that staging is itself a mutation the gate performs. MUTATING and
-commit-gated: preview and approval precede apply; apply requires `intent_note`.
+the accurate claim now that staging is itself a mutation the gate performs. The published process
+recommends preview before approval/apply, but apply independently validates the same effective
+input and does not treat a prior preview as authority; apply requires `intent_note`.
 
 The three destructive tools forward flat:
 
@@ -101,8 +102,10 @@ The three destructive tools forward flat:
 ### Invariants And Boundaries
 
 - Keep `CloseoutApproval` separate from `CloseoutCommitMessages`.
-- Apply registers `dry_run=False` and is paired with the explicit preview tool — that pairing is the
-  gate, so do not add an apply path that skips preview.
+- Preview is the non-mutating inspection surface, but it is not durable authority that apply may
+  trust. Preview and direct apply each normalize the same effective input independently; apply
+  additionally carries `CloseoutApproval`. A direct apply must therefore remain safe without a
+  preceding preview.
 - Closeout is worktree-only; the retired `direct_closeout_*` tools are not registered anywhere.
 - All ordering, quality-gate execution and git mechanics live in `application/worktree_tools.py`.
 - **These docstrings are the published MCP tool descriptions**, so they are contract, not comment:
@@ -118,13 +121,13 @@ The three destructive tools forward flat:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:78-86 |
-| `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tools.py:309-316; mcp/src/agents_remember/application/worktree_tools.py:319-328 |
+| The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:80-88 |
+| `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tools.py:325-331; mcp/src/agents_remember/application/worktree_tools.py:334-343 |
 | The two pre-staging refusals and reset-then-stage Dagger gate described by apply live in the extracted staged-quality owner. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:20-36; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:39-51; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
-| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:63-65; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:97-104; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:107-169 |
-| The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring_tests_2.py:120-140 |
-| The closeout descriptions are asserted to pin quality-before-commit. | `test_closeout_tool_descriptions_pin_strict_quality_before_mutation` | mcp/tests/test_tools.py:223-237 |
-| The staged-gate behaviour the rewritten descriptions promise. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:130-208 |
+| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:63-65; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:97-104; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:69-71; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:108-121; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:124-192 |
+| The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring_tests_2.py:120-142 |
+| The closeout descriptions are asserted to pin quality-before-commit. | `test_closeout_tool_descriptions_pin_strict_quality_before_mutation` | mcp/tests/test_tools.py:225-239 |
+| The staged-gate behaviour the rewritten descriptions promise. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:131-209 |
 
 ## R39 Integration Tool Contract
 
@@ -136,7 +139,20 @@ run: full mode through the pinned Dagger executor.
 
 `_register_direct_landing_tool` was renamed to `_register_direct_landing_tools` (the direct-landing registration group); the registered tool surface is unchanged.
 
+## 260821-CLIVE-L1 Public Surface
+
+Worktree closeout and direct landing expose optional message fields syntactically because enabledness is route/contract/candidate-dependent; runtime validation requires each enabled field to be stripped and nonblank. Worktree preview/apply accepts code, memory, and ledger fields and returns `effectiveInput` or field-specific `invalidFields` with `resolvedPlan` and `correctedCall`. Direct landing accepts memory and ledger intent only: verified-existing code is not applicable. Each memory or ledger message is required only when its contract-derived leg is enabled; a typed not-applicable leg may omit it. Invalid input is refused before authority or Git.
+
 ## Update History
+
+- 2026-08-22T11:29+02:00 — 260821-CLIVE-L1 candidate12 rebind: aligned the published
+  direct-landing description with enabled-leg-dependent messages and typed not-applicable omission;
+  corrected the already-impacted card's stale registrar name and preview-as-authority wording from
+  exact source. Bound to reviewed candidate tree `8f03b256fe24aa77262da805f1538ee39ccb4dd6`,
+  full diff SHA `ccb36a898b455cd67ca00c378e5ba0f18851be01faf3d26eced3b9af062f429e`,
+  same-reviewer PASS; commit-derived verification metadata remains unchanged until governed closeout.
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: renamed the direct-landing registration helper to `_register_direct_landing_tools`. Verified at code commit e5cb139f.
 
@@ -187,8 +203,8 @@ run: full mode through the pinned Dagger executor.
 - 2026-08-01T01:28+02:00 — 260731-EFA-L4 curator: the card summarised both docstrings as
   "apply runs that quality before any code",
   which is now both under- and over-stated. Verified against the diff and the current source and
-  corrected it. Preview cit:([`worktree_closeout_preview`], mcp/src/agents_remember/mcp/registration/closeout.py:75-96) now says quality runs "over the staged task worktree" before the
-  code commit. Apply cit:([`worktree_closeout_apply`], mcp/src/agents_remember/mcp/registration/closeout.py:99-135) became conditional — the gate runs only when code would commit
+  corrected it. Preview cit:([`worktree_closeout_preview`], mcp/src/agents_remember/mcp/registration/closeout.py:82-104) now says quality runs "over the staged task worktree" before the
+  code commit. Apply cit:([`worktree_closeout_apply`], mcp/src/agents_remember/mcp/registration/closeout.py:106-141) became conditional — the gate runs only when code would commit
   **and** the checkout carries the project-owned quality wrapper — and now states the four facts
   the card was missing: the reset-then-stage-the-whole-worktree step (so the gate sees files the
   task created, not only those it edited, and a retry stages what a first run would rather than
@@ -206,3 +222,11 @@ run: full mode through the pinned Dagger executor.
   declarations moved out of `server.py`; preview/apply now pack `CloseoutCommitMessages` and apply
   additionally packs `CloseoutApproval`. Verification metadata pinned to the pre-change commit until
   closeout stamps the L2 code commit.
+## Docs References
+
+No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
+
+
+## Cross-Repo References
+
+This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.

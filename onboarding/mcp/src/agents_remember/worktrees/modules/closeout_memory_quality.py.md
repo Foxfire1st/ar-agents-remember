@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ No external Domain Documentation source is configured for this repository-local 
 | --- | --- | --- |
 | One phase builds the service-owned drift context, runs the exact check group, and refuses on a non-clean result with bounded evidence. | `run_memory_quality_phase`; `_failure_message` | mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py:17-53 |
 | The combined result preserves both phase check maps, findings, counts, bounded report-only evidence, and declared phase membership. | `combine_memory_quality` | mcp/src/agents_remember/worktrees/modules/closeout_memory_quality.py:56-80 |
-| Closeout calls the extracted adapter before the expensive code gate and again after metadata refresh, then returns the combined gate result. | `_memory_quality_before_refresh`; `_external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout.py:615-711; mcp/src/agents_remember/worktrees/modules/closeout.py:798-807 |
+| Closeout calls the extracted adapter before the expensive code gate; the sole external-phase owner runs the post-refresh pass and returns the combined gate result. | `_memory_quality_before_refresh`; `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout.py:669-678; mcp/src/agents_remember/worktrees/modules/closeout_external.py:49-94 |
 | The injected service bundle owns the `MemoryQualityPort` implementation and check-group vocabulary. | `MemoryQualityPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:68-95; mcp/src/agents_remember/worktrees/services.py:140-152 |
 
 ## Cross-Repo References
@@ -76,6 +76,8 @@ No cross-repository interface is owned by this internal closeout helper.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
 
 - 2026-08-13T12:26+02:00 — L23 closeout-gate repair: created from the behavior-preserving
   extraction of external-memory phase execution, bounded failure formatting, and two-phase result
