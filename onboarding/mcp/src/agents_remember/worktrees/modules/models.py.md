@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/models.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-12T22:25+02:00     |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated            | 2026-08-22T10:39+02:00     |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -42,7 +42,8 @@ the onboarding module separately proves substantive body/history evidence.
 stamped against: `commit`, `commit_date`, `changed_paths`, and `working_paths` (the working-tree
 subset that gates closeout; `None` when the caller has no separate working set). Every refresher
 needs the same four facts together, and splitting them let a caller stamp one commit's hash beside
-another's path list. `closeout._external_closeout_commits` builds it once and
+another's path list. The closeout coordinator builds it once, then
+`closeout_external.external_closeout_commits` and
 `onboarding.refresh_onboarding_metadata` / `refresh_onboarding_metadata_for_context` /
 `refresh_route_overview_metadata_for_context` all take it. `refresh_entity_fingerprints_for_context`
 deliberately still takes `change.changed_paths` alone — it stamps no commit.
@@ -64,6 +65,11 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Update History
 
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: replaced the deleted
+  `_external_closeout_commits` ownership claim with the current split: `closeout.py` constructs the
+  frozen `VerifiedChange`, and `closeout_external.external_closeout_commits` consumes it for the
+  external-memory path. Candidate tree `4241908c`; verification metadata remains pinned until
+  governed closeout.
 - 2026-08-12T22:25+02:00 — 260731-EFA-L23 curator follow-up: clarified `RouteOverviewRefreshPlan` as the source-matched plus task-edited route transaction plan. Body/history evidence remains classification-owned rather than encoded as a permissive plan flag. Verification remains closeout-owned.
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 1 citation item; scoped citation check now passes.
 

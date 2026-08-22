@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_lane_sync_first.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00|
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,10 +55,23 @@ queue owners (including `closeout_queue_blocker`, `closeout_queue_candidate_evid
 the lifecycle-operation store and dispatch imports come from `worktrees/integration/`; the
 `__main__` runner was removed. No assertions changed.
 
+## 260821-CLIVE-L1 Fixture Migration
+
+The close-and-certify fixture now creates closeout through canonical validated admission rather than constructing the retired raw durable input. The suite continues to own sync-first lane behavior; it does not make queue state the owner of closeout messages or mutation evidence.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: queue imports moved under
   `worktrees/queue/` and lifecycle-operation imports under `worktrees/integration/`; the `__main__`
   runner was removed. Verified at code commit e5cb139f.
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: created as the sync-first recovery and lane
   serialization forcing suite. Verification remains closeout-owned.
+## Docs References
+
+No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
+
+## Cross-Repo References
+
+This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_organizational_completion_integration.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00|
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -45,7 +45,13 @@ queue owners (`closeout_queue`, `closeout_queue_lifecycle`) and the request mode
 and the lifecycle-operation store/dispatch imports come from `worktrees/integration/`. The
 remaining hunks are Ruff formatting-only line joins; no assertions changed.
 
+## 260821-CLIVE-L1 Contract Hash Migration
+
+Organizational completion fixtures now publish contracts with the canonical serializer used by reset and closeout-finalization hashes. Completion behavior is unchanged; the migration prevents the test from constructing a representation that production identity would reject.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: queue, model, and
   integration/organizational-completion imports follow the package moves (`worktrees/queue/`,
@@ -55,3 +61,10 @@ remaining hunks are Ruff formatting-only line joins; no assertions changed.
 - 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 split blocker-reason assertions on `:` because stale-base reasons now carry the `worktree_sync` recovery suffix; the documented completion-integration behavior is unchanged. Verification remains closeout-owned.
 
 - 2026-08-17T12:09+02:00 — 260815-DAG-L5: created onboarding for the organizational completion integration suite.
+## Docs References
+
+No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
+
+## Cross-Repo References
+
+This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.

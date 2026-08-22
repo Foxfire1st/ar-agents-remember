@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_mcp_registration_wiring_tests_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -52,7 +52,13 @@ No Domain Documentation source is configured for this repository-local regressio
 
 No cross-repository implementation source governs this test module.
 
+## 260821-CLIVE-L1 Public Wiring Coverage
+
+Registration assertions now include worktree and direct-landing message fields plus structured refusal/effective-input response fields. Optional JSON-schema fields remain runtime-required when their resolved legs are enabled; the suite does not imply blank-message compatibility.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: wiring/conformance updates for the declared-caller
   gate parameters and the `direct_landing` registration. Verified at code commit a9d50e08.

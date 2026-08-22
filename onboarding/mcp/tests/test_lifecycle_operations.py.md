@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash |  `e5cb139f66abbd6502d4dcc4be883eb5f49770fe`|
-| lastVerifiedCommitDate |  2026-08-21T00:28:23+02:00|
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash |  `eb7ea60ab9919f009fef58f81afe5861aa1709da`|
+| lastVerifiedCommitDate |  2026-08-22T11:44:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,12 +22,7 @@ This is the forcing suite for durable asynchronous closeout/integration operatio
 
 ### Logic
 
-Tests create real task contracts and durable operation records, then exercise duplicate convergence, conflicting input refusal, changed candidate identity, stale recovery, exact approval reuse, store corruption and transition guards, cancellation, detached launch, progress, terminal outcomes, closeout/integration dispatch, completion cleanup, and script entry.
-
-The packaged-entry regression now also doubles the service builder and binder, proving `main`
-creates the default `WorktreeServices`, binds that exact instance, and only then calls `run_worker`
-with the parsed contract path and operation kind. This covers the installed-process composition
-boundary rather than merely proving argument parsing and `__main__` exit propagation.
+Tests create real task contracts and durable operation records, then exercise duplicate convergence, conflicting input refusal, changed candidate identity, stale recovery, exact approval reuse, cancellation, detached launch, progress, terminal outcomes, closeout/integration dispatch, and completion cleanup. Failed integration dispatch now preserves the truthful queue-release failure and reports `safeToReplace: false`; it does not collapse a failed release into a replaceable operation. Strict store-transition forcing—including public refusal to cancel an irreversible integrate operation—and parser/script bootstrap forcing live in `test_lifecycle_operation_store_invariants.py` and `test_lifecycle_operation_worker_entrypoint.py`, keeping this suite focused on public lifecycle behavior.
 
 The detached-launch regression separately proves the native environment keeps its installed
 `PYTHONPATH` byte-for-byte and does not inject the task worktree's `mcp/src`, while retaining the
@@ -44,6 +39,7 @@ Filesystem and model transitions are real; subprocess and lifecycle mutation end
 - Input, candidate, state fingerprint, and approval claim cannot change across recovery.
 - Cancellation cannot reclaim a consumed approval.
 - A post-boundary failure remains recoverable as the same operation.
+- An integration result is safe to replace only when its literal returned payload proves that boundary; queue-release failure remains visible.
 
 ### Todos
 
@@ -61,7 +57,9 @@ No external Domain Documentation source is configured for this project-owned ope
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Start, observe, retry, recovery, transition, cancellation, launch, worker, and integration edges are all forced. | `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_worker_parser_main_and_script_entry_use_task_addressing` | mcp/tests/test_lifecycle_operations.py:232-247; mcp/tests/test_lifecycle_operations.py:1014-1071 |
+| Start, observe, retry, cancellation, launch, worker, and integration edges are forced on the public controller/runtime. | `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_run_worker_refuses_missing_or_non_startable_durable_state` | mcp/tests/test_lifecycle_operations.py:233-252; mcp/tests/test_lifecycle_operations.py:848-867 |
+| Failed integration dispatch preserves the exact queue-release failure and a truthful false replacement signal. | `test_execute_operation_dispatches_closeout_and_integration_payloads` | mcp/tests/test_lifecycle_operations.py:737-794 |
+| Irreversible integrate cancellation is forced through the public controller in the focused store suite. | `test_integrate_boundary_cannot_be_cleared_or_cancelled` | mcp/tests/test_lifecycle_operation_store_invariants.py:193-210 |
 
 ## Cross-Repo References
 
@@ -69,7 +67,7 @@ No sibling-repository protocol is exercised.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Temporary worktree contracts isolate each operation proof. | `_contract`; `_input` | mcp/tests/test_lifecycle_operations.py:61-141; mcp/tests/test_lifecycle_operations.py:144-150 |
+| Temporary worktree contracts isolate each operation proof. | `_contract`; `_input` | mcp/tests/test_lifecycle_operations.py:67-149; mcp/tests/test_lifecycle_operations.py:150-152 |
 
 ## L23 Lifecycle Model Package Review
 
@@ -88,7 +86,13 @@ The 260815-DAG master full-gate repair moved the lifecycle-operation imports und
 lease refusals now drive `lease.__enter__()` explicitly instead of opening the lease inside the
 raises context, and the `killpg` patch target follows the moved module.
 
+## 260821-CLIVE-L1 Lifecycle Journal Coverage
+
+This suite now constructs closeout admission from normalized effective input and exercises strict schema 3.0, immutable duplicate plans, stable candidate identity, explicit cross-kind compatibility under the lease, evidence-derived cancellation/retention, worker rehydration, and recovery projection. Raw closeout input through the generic starter and legacy/extra store shapes fail closed; queue projection is not used as journal evidence.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11: rebound truthful `queueReleaseFailure`/`safeToReplace` dispatch forcing and the public irreversible-integrate cancellation relationship against accepted tree `4241908c`; verification metadata remains pinned until governed closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: lifecycle-operation imports moved under
   `worktrees/integration/` and `TaskRef` under `application/task_docs/`; the lease-refusal test now

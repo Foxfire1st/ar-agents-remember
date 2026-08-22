@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/lifecycle_operation_worker.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,12 @@ This module is the detached process entry point for one durable closeout or inte
 
 ### Logic
 
-`OperationRuntime` claims a queued record, follows the quality progress artifacts while work runs, and makes terminal state depend on whether the operation crossed its irreversible boundary. `execute_operation` reconstructs the captured gate policy and immutable candidate identity before dispatching to closeout or integration. `run_worker` loads the task contract and operation record by task plus operation kind, never by an agent-retained runtime identifier.
+`OperationRuntime` claims a queued record and follows bounded progress artifacts while work runs.
+For closeout, terminal/recovery behavior depends on durable mutation evidence or exact contract
+finalization proof, not on a phase or caller-supplied boundary boolean. `execute_operation`
+reconstructs the captured gate policy, immutable candidate identity, and accepted effective input
+before dispatching. `run_worker` loads the task contract and operation record by task plus operation
+kind, never by an agent-retained runtime identifier.
 
 `main` is the packaged detached worker's composition root. Before dispatching the task-addressed
 record it builds and binds the default `WorktreeServices`, ensuring closeout/integration reach the
@@ -39,8 +44,10 @@ The worker is launched as a private process group and communicates through atomi
 ### Invariants And Boundaries
 
 - A consumed approval remains bound to the same operation fingerprint and candidate tree.
-- Cancellation is effective only before the irreversible boundary.
-- A post-boundary failure becomes `input-required` so recovery reconciles the same mutation instead of replaying a new one.
+- Closeout cancellation is effective only before mutation intent/proof or exact finalization retains
+  the generation; integration retains its own operation-specific boundary.
+- A retained closeout failure becomes `input-required` so recovery reconciles the same accepted
+  mutation instead of replaying a new one.
 - The worker never invents a task, role, runtime, or inbox identity.
 
 ### Todos
@@ -61,8 +68,8 @@ The source records the lifecycle transition and recovery boundary directly.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `OperationRuntime` publishes claimed, heartbeat, progress, and terminal durable state. | `OperationRuntime` | mcp/src/agents_remember/application/lifecycle_operation_worker.py:64-213 |
-| Execution reconstructs captured policy and dispatches the exact closeout or integration input. | `execute_operation` | mcp/src/agents_remember/application/lifecycle_operation_worker.py:252-301 |
+| `OperationRuntime` publishes claimed, heartbeat, progress, and terminal durable state. | `OperationRuntime` | mcp/src/agents_remember/application/lifecycle_operation_worker.py:83-324 |
+| Execution reconstructs captured policy and dispatches the exact closeout or integration input. | `execute_operation` | mcp/src/agents_remember/application/lifecycle_operation_worker.py:327-383 |
 
 ## Cross-Repo References
 
@@ -70,7 +77,7 @@ No meaningful cross-repository boundary is owned here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The process operates only on the contract-resolved repository and memory worktrees. | `execute_operation` | mcp/src/agents_remember/application/lifecycle_operation_worker.py:252-301 |
+| The process operates only on the contract-resolved repository and memory worktrees. | `execute_operation` | mcp/src/agents_remember/application/lifecycle_operation_worker.py:327-383 |
 
 ## L23 Lifecycle Model Package Review
 
@@ -95,7 +102,13 @@ different candidate.
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
+## 260821-CLIVE-L1 Closeout Worker Contract
+
+The worker rehydrates closeout execution exclusively from durable `effectiveInput`; raw request messages and blank sentinels never re-enter the apply path. It parses mutation evidence and the exact finalized-contract publication hash, derives the compatibility recovery tuple from commit-proven evidence, and retains or releases a closeout generation from those facts. Restart repairs a stale recovery projection from journal evidence. A phase name, approval boolean, or queue row is not lifecycle evidence.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

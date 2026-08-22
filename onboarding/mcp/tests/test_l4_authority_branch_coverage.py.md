@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l4_authority_branch_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -40,14 +40,20 @@ leaf sets through the production helpers that own those checks.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite owns focused negative forcing for repository and journal authority. | `IntegrationBranchRepositoryCoverageTests`; `IntegrationOperationAuthorityCoverageTests` | mcp/tests/test_l4_authority_branch_coverage.py:60-194; mcp/tests/test_l4_authority_branch_coverage.py:197-617 |
-| Configured topology, integration validation/recovery, lineage, and series completeness are forced at their production owners. | `IntegrationBranchAuthorityCoverageTests`; `IntegrationValidationCoverageTests`; `LineageAndSeriesCoverageTests` | mcp/tests/test_l4_authority_branch_coverage.py:620-765; mcp/tests/test_l4_authority_branch_coverage.py:768-901; mcp/tests/test_l4_authority_branch_coverage.py:904-1034 |
+| The suite owns focused negative forcing for repository and journal authority. | `IntegrationBranchRepositoryCoverageTests`; `IntegrationOperationAuthorityCoverageTests` | mcp/tests/test_l4_authority_branch_coverage.py:59-194; mcp/tests/test_l4_authority_branch_coverage.py:196-603 |
+| Configured topology, integration validation/recovery, lineage, and series completeness are forced at their production owners. | `IntegrationBranchAuthorityCoverageTests`; `IntegrationValidationCoverageTests`; `LineageAndSeriesCoverageTests` | mcp/tests/test_l4_authority_branch_coverage.py:606-752; mcp/tests/test_l4_authority_branch_coverage.py:754-889; mcp/tests/test_l4_authority_branch_coverage.py:890-1020 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260821-CLIVE-L1 Admission Migration
+
+The closeout fixture now supplies the accepted normalized plan required by L1 while retaining the suite's branch-authority coverage. The redundant wrong-runtime-input authority case moved to the focused closeout model/admission matrix, so this suite remains about protected integration branches rather than duplicating input ownership. No queue ownership or compatibility fallback is introduced.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 
@@ -62,3 +68,11 @@ No configured domain-documentation or cross-repository source applies to this fi
 - 2026-08-16T09:55+02:00 — Added a real exact-series positive case to the atomic surface probe, proving canonical task-tree resolution rather than only false cases.
 - 2026-08-16T09:45+02:00 — Added production-owner coverage for configured contract identity, lifecycle recovery, task publication, integration candidate/ref recovery, organizational lineage, and atomic-series completeness after the targeted Dagger diff-coverage report.
 - 2026-08-16T08:12+02:00 — Created focused L4 negative-branch forcing during targeted Dagger coverage repair.
+## Docs References
+
+No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
+
+
+## Cross-Repo References
+
+This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-12T22:25+02:00|
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated            | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -178,7 +178,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. | `classify_sidecar_onboarding_units`; `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:222-280 |
 | Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. | "def build_route_indexes("; "def route_index_source_snapshot(" | mcp/src/agents_remember/kernel/route_index.py:184-230; mcp/src/agents_remember/kernel/route_index_census.py:41-63 |
-| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, and entity fingerprints. |"test_onboarding_refresh_plan_detects_long_sidecar_paths"; "test_closeout_refreshes_onboarding_metadata_to_new_code_commit"; "test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_refreshes_entity_fingerprint_after_code_commit"|mcp/tests/test_worktree_support_tests_1.py:1157-1157; mcp/tests/test_worktree_support_tests_2.py:82-82; mcp/tests/test_worktree_support_tests_2.py:125-125; mcp/tests/test_worktree_support_tests_2.py:555-555|
+| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, and entity fingerprints. |"test_onboarding_refresh_plan_detects_long_sidecar_paths"; "test_closeout_refreshes_onboarding_metadata_to_new_code_commit"; "test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_refreshes_entity_fingerprint_after_code_commit"|mcp/tests/test_worktree_support_tests_1.py:1161-1161; mcp/tests/test_worktree_support_tests_2.py:86-86; mcp/tests/test_worktree_support_tests_2.py:130-130; mcp/tests/test_worktree_support_tests_2.py:564-564|
 
 ## Cross-Repo References
 
@@ -190,6 +190,8 @@ implementation governs this module.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
 
 - 2026-08-12T22:45+02:00 — 260731-EFA-L23 curator follow-up: documented the final citation-only distinction for task-edited route overviews. Complete generated `path:line[-line]` coordinate shifts may pass without fabricated history, while prose, anchor, path, table-shape, metadata-only, and other untraced changes remain fail-closed. Verification remains closeout-owned.
 - 2026-08-12T22:36+02:00 — 260731-EFA-L23 pre-commit type-check follow-up: aligned `_route_overview_bucket`'s source docstring with its typed `ancestor` / `source` / `task-edited` evidence contract and the task-edited citation-coordinate-only exception. Runtime behavior is unchanged. Verification remains closeout-owned.

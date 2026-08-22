@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,9 +16,10 @@
 
 ## Purpose
 
-The application boundary for the direct landing operation (L16-R8): a thin wrapper that runs one
-branch-addressed direct landing (policy-gated, atomic) and translates `DirectLandingError` into a
-typed refused response envelope. No queue, gate, or lifecycle logic lives here.
+The application boundary for the direct landing operation: a thin wrapper that runs one
+branch-addressed, policy-gated, lock-serialized landing sequence and translates
+`DirectLandingError` or `CloseoutInputError` into a typed refused response envelope. No queue,
+gate, lifecycle journal, or recovery logic lives here.
 
 ## Code Commentary
 
@@ -60,7 +61,13 @@ No configured Domain Documentation source applies.
 
 No meaningful cross-repository reference applies.
 
+## 260821-CLIVE-L1 Input Boundary
+
+This wrapper now returns the full typed refusal payload—status/detail plus `invalidFields`, `resolvedPlan`, and `correctedCall`—and passes successful `effectiveInput` through unchanged. It remains only an error-translation boundary. The wrapped operation is policy-gated and lock-serialized, but it is **not atomic**: memory content and ledger are sequential Git commits with neither rollback nor durable crash recovery. Input validation precedes the landing lock and Git; L2-R11/L5-R15 own the memory-before-ledger durability gap.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: created for the direct landing operation (L16-R8):
   the error-translating application boundary over the worktree operation. Verified at code

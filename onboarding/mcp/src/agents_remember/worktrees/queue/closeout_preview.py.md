@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_preview.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing overview](../../../overview.md)
+[governing overview](overview.md)
 
 ## Purpose
 
@@ -39,9 +39,22 @@ Builds response-only proposed commits, summaries, and ordering without mutating 
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260821-CLIVE-L1 Preview Parity
+
+Preview now requires normalized `effectiveInput` and renders each leg's typed intent. It includes a `message` only for enabled legs and never generates a ledger subject. The same value is fingerprinted, journaled, rehydrated, recovered, and consumed by apply. This module describes proposed writes; it neither selects candidates nor owns lifecycle evidence.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/queue/closeout_preview.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: created closeout preview projection onboarding from the frozen integration-authority candidate. Verification remains closeout-owned.
+## Docs References
+
+No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
+
+## Cross-Repo References
+
+This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.

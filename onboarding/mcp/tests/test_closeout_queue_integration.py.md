@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_integration.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00|
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,9 @@ around the source merge; closeout/integration refuse missing bound topology; can
 reversible worker failure release internal ownership; release failure stays observable while the
 worker is still terminated; and real closeout success commits the exact tree, writes the contract,
 certifies the queue, and recovers idempotently after a post-contract/pre-certification crash.
+The former conflict-reset generation scenario is now isolated in
+`test_closeout_queue_generation_transition.py`; irreversible worker-release retention is isolated
+in `test_lifecycle_worker_release_guards.py`.
 
 ### Conventions
 
@@ -53,11 +56,11 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Production integration claims, revalidates, and consumes the exact candidate. | `test_production_integrate_claims_revalidates_and_consumes_exact_candidate` | mcp/tests/test_closeout_queue_integration.py:115-132 |
-| Evidence drift at the pre-merge boundary refuses with the exact mechanistic status and reason. | `test_boundary_rechecks_evidence_after_claim_before_source_merge` | mcp/tests/test_closeout_queue_integration.py:294-328 |
-| Cancellation release failure still terminates the captured worker and requeues the same operation. | `test_cancel_release_failure_still_terminates_worker_and_requeues_same_operation` | mcp/tests/test_closeout_queue_integration.py:475-514 |
-| Real closeout success commits the exact tree and certifies the queue candidate. | `test_production_closeout_commits_exact_tree_and_certifies_queue_candidate` | mcp/tests/test_closeout_queue_integration.py:622-666 |
-| Post-contract/pre-certification crash retry preserves worker-owned irreversible progress, projects apply-only recovery, and is idempotent. | `test_post_contract_write_pre_certification_crash_recovers_idempotently` | mcp/tests/test_closeout_queue_integration.py:668-736 |
+| Production integration claims, revalidates, and consumes the exact candidate. | `test_production_integrate_claims_revalidates_and_consumes_exact_candidate` | mcp/tests/test_closeout_queue_integration.py:117-135 |
+| Evidence drift at the pre-merge boundary refuses with the exact mechanistic status and reason. | `test_boundary_rechecks_evidence_after_claim_before_source_merge` | mcp/tests/test_closeout_queue_integration.py:296-331 |
+| Cancellation release failure still terminates the captured worker and requeues the same operation. | `test_cancel_release_failure_still_terminates_worker_and_requeues_same_operation` | mcp/tests/test_closeout_queue_integration.py:473-510 |
+| Real closeout success commits the exact tree and certifies the queue candidate. | `test_production_closeout_commits_exact_tree_and_certifies_queue_candidate` | mcp/tests/test_closeout_queue_integration.py:602-648 |
+| Post-contract/pre-certification crash retry preserves worker-owned mutation evidence, projects apply-only recovery, and is idempotent. | `test_post_contract_write_pre_certification_crash_recovers_idempotently` | mcp/tests/test_closeout_queue_integration.py:650-720 |
 
 ## Cross-Repo References
 
@@ -75,7 +78,13 @@ queue owners (`closeout_queue`, `closeout_queue_lifecycle`, `QueueActor`) now im
 `worktrees/integration/`, and the queue request model from `models/queue/`; the `__main__` runner
 was removed. No assertions changed.
 
+## 260821-CLIVE-L1 Fixture Migration
+
+Queue integration fixtures now use canonical contract publication and accepted closeout admission/effective input. Assertions continue to cover candidate selection, lifecycle correlation, certification, and integration; they do not treat queue rows as closeout lifecycle or Git evidence.
+
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: queue, lifecycle-operation,
   integration-authority, and model imports follow the package moves (`worktrees/queue/`,

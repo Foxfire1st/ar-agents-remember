@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastUpdated | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
+| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
 
 > **Status:** active baseline
 
@@ -728,7 +728,7 @@ completes the observable-lifecycle gate story end-to-end. Detailed per-file rout
 lives in the `observer/` route overview; the full design (lifecycle entity, event
 schema, enforced gates, the cockpit) is `docs/design/observable-lifecycle.md`. The
 serving layer and the cockpit UI are later slices of the same series. **Task 27** adds
-the **lifecycle next-step hint engine** ([next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py)):
+the **lifecycle next-step hint engine** ([next_step.py](agents-remember/mcp/src/agents_remember/application/next_step.py)):
 every MCP tool response now carries a `nextStep` computed from the projected lifecycle
 state at the `_tool_payload` choke point — a one-time front-half prose rundown from
 `lifecycle_start`, then a linear per-tool chain that delegates to the worktree
@@ -861,7 +861,7 @@ This repository is currently selected into the workspace `/home/foxfire/Projects
 | Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
 | The runtime sync contract is checked against every generated copy. | `RealTreeDriftTests` | mcp/tests/test_sync_scripts.py:159-207 |
 | GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating. | "pull_request:"; "Refuse a tag whose commit has not landed on main" | .github/workflows/quality-checks.yml:3-7; .github/workflows/publish-mcp-to-pypi.yml:28-34 |
-| Closeout imports the staged-quality boundary, which refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:95-95 |
+| Closeout imports the staged-quality boundary, which refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:91-91 |
 | The extracted staged-quality owner contains both refusal helpers and the exact-candidate Dagger gate. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:20-129 |
 | The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" | CONTRIBUTING.md:64-64 |
 | Provider guidance keeps provider runtime paths under configured provider roots. | "providers/runners/grepai" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:95-95 |
@@ -1165,6 +1165,10 @@ L15 (hygiene sweep and review-doctrine repair) landed across the mcp application
 Thirty-two modules moved into four new packages (`application/task_docs/`, `models/queue/`, `worktrees/queue/`, `worktrees/integration/`); the `task_doc` special ops gained declared `TaskDocResponse` wire fields with the `_sprint_doc_identity` merge (the strict-envelope rejection bug class); `worktrees/modules/closeout.py` and `worktrees/reopen.py` refactored (`_closeout_quality_facts`, `_reopened_contract`); the orchestration-task template heading restored; the dashboard snapshot gained execution-graph/super-to-leaf fixture coverage.
 
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed the
+  formatter-moved `gate_staged_code` source coordinate against accepted tree `4241908c`.
+  Verification metadata remains pinned until governed closeout.
 
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 root route impact: the Agent-facing session dispatch inventory row now names `dispatch_agent` as the one public spawn tool (plane + ambient caller kinds) with `spawn_agent_session` the internal primitive; full vocabulary adoption across skills/docs is the L3 leaf scope. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
@@ -2043,13 +2047,13 @@ Thirty-two modules moved into four new packages (`application/task_docs/`, `mode
   `scripts/sync-skills.py`. Acknowledged in the root overview body; junction-level detail lives in the
   l-01/c-09/c-12 skill sidecars. Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-27T20:16+02:00 — No route impact: the task-27 follow-up adds a gate-await branch to the
-  lifecycle next-step engine ([next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py)) —
+  lifecycle next-step engine ([next_step.py](agents-remember/mcp/src/agents_remember/application/next_step.py)) —
   a `blocked` lifecycle now hints `lifecycle_resume`, carrying the chain through the open gate. The
   feature is already in this root inventory and the repo route model is unchanged (detail in the file
   sidecar). Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-27T18:43+02:00 — Tasks 26+27 root route impact: surfaced two new features in the feature
   inventory. **Task 27** adds the **lifecycle next-step hint engine**
-  ([next_step.py](agents-remember/mcp/src/agents_remember/mcp/tools/next_step.py)) — every MCP tool
+  ([next_step.py](agents-remember/mcp/src/agents_remember/application/next_step.py)) — every MCP tool
   response now carries a `nextStep` computed from the projected lifecycle state at the `_tool_payload`
   choke point (a one-time front-half prose rundown from `lifecycle_start`, then a linear per-tool chain
   that delegates to the worktree `guidance.lifecycle_guidance` state machine and points at the existing
