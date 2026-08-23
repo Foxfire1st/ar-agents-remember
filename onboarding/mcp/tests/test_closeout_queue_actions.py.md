@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_actions.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,9 +43,9 @@ validation cases exercise the shared `queue_task_ref` from `closeout_queue_error
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public request and mutation authority is exact. | `test_status_scope_and_candidate_mutation_authority_is_exact` | mcp/tests/test_closeout_queue_actions.py:89-133 |
-| Blocker release and abort call their exact evidence seams. | `test_release_and_abort_blocker_require_exact_owner_and_empty_block` | mcp/tests/test_closeout_queue_actions.py:460-534 |
-| Lifecycle legal operations require the exact durable owner. | `test_owned_lifecycle_operation_requires_exact_kind_contract_and_fingerprint` | mcp/tests/test_closeout_queue_actions.py:632-666 |
+| Public request and mutation authority is exact. | `test_status_scope_and_candidate_mutation_authority_is_exact` | mcp/tests/test_closeout_queue_actions.py:99-143 |
+| Blocker release and abort call their exact evidence seams. | `test_release_and_abort_blocker_require_exact_owner_and_empty_block` | mcp/tests/test_closeout_queue_actions.py:478-552 |
+| Lifecycle legal operations require the exact durable owner. | `test_owned_lifecycle_operation_requires_exact_kind_contract_and_fingerprint` | mcp/tests/test_closeout_queue_actions.py:686-721 |
 
 ## 260815-DAG-L4 Integration-Authority Forcing
 
@@ -59,7 +59,19 @@ The 260815-DAG master full-gate repair moved the queue request model import to
 `worktrees/queue/closeout_queue_blocker.py`); the `__main__` runner was removed. No assertions
 changed.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_status_scope_and_candidate_mutation_authority_is_exact`, `test_public_tool_refuses_blank_time_missing_id_stale_revision_and_completed_mutation`, `test_mutation_rechecks_sprint_completion_inside_the_store_lock`, `test_candidate_action_missing_noop_immutable_and_release_matrix`. These tests cover current queue actions, including transitional pre-L3 states. They do not establish the final waiting-only schema or task-change invalidation contract; L3 owns those proofs.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_status_scope_and_candidate_mutation_authority_is_exact`, `test_public_tool_refuses_blank_time_missing_id_stale_revision_and_completed_mutation`, `test_mutation_rechecks_sprint_completion_inside_the_store_lock`, `test_candidate_action_missing_noop_immutable_and_release_matrix`. | L99-L143; L145-L198; L200-L233; L235-L299 | `mcp/tests/test_closeout_queue_actions.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: the queue request model and all
   queue-owner imports/mock targets follow the package moves (`models/queue/`,

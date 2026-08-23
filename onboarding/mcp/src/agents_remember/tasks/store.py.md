@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/store.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -47,9 +47,9 @@ for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The model written/read. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:602-716 |
-| The renderer invoked on every write. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:20-40 |
-| The application entry point uses batch writes when a leaf mutation also changes its parent master row. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
+| The model written/read. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:679-804 |
+| The renderer invoked on every write. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:39-60 |
+| The application entry point uses batch writes when a leaf mutation also changes its parent master row. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:198-301 |
 
 
 ## 260815-DAG-L12 Title Threading
@@ -57,7 +57,19 @@ for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_
 `write_task_docs` and `write_task_doc_batch` gained the optional `graph_titles` keyword (L12-R1/R4): the batch passes it to `render_markdown` for every document that carries an `executionGraph`, so a sprint's `task.md` mermaid boxes are labeled with real master/leaf titles at publish time. `write_task_doc` delegates through unchanged; the atomic prepare/publish/rollback contract is untouched.
 
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `TaskDocSourceSnapshot`, `TaskDocSourceReadError`, `doc_stem`. L2 makes exact task-document bytes and absence explicit publication inputs so stale before-state fails precisely. This primitive does not own the later L3 task-change blast-radius invalidation or queue rebuild.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `TaskDocSourceSnapshot`, `TaskDocSourceReadError`, `doc_stem` at this ownership boundary. | L23-L35; L38-L52; L55-L57 | `mcp/src/agents_remember/tasks/store.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   `write_task_docs`/`write_task_doc_batch` thread the optional `graph_titles` join into the renderer (L12-R1/R4). Verified at code commit b7f2c8e2.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_served_state_conformance.py`     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T08:45+02:00                           |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`       |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -170,7 +170,19 @@ cockpit bundle, which lives in this same repository under `dashboard/`.
 | --- | --- | --- |
 | No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:651-651 |
 
+## 260821-CLIVE-L2 Addressable Served-State Fixture
+
+Served-state enclosure fixtures now publish lifecycle locators and immutable manifests after their
+contracts. Model conformance is therefore checked against operations discoverable through the
+normal root-journal address chain.
+
+| Finding | Source |
+| --- | --- |
+| Each populated enclosure becomes lifecycle-addressable before served-state projection. | mcp/tests/test_served_state_conformance.py:125-143 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 
 - 2026-08-22T12:15+02:00 — 260821-CLIVE-L1: re-read the C2 served-state fixture claim after `write_contract` extracted canonical publication text into `contract_publication_text`; retained the wording because defaulting, amendment, and persistence authority are unchanged, and rebound only the `write_contract` declaration range. Verification is stamped to C2 by closeout.
 

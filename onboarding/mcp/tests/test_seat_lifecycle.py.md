@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_seat_lifecycle.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-08-16T02:51+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -106,11 +106,11 @@ completion-cleanup, and internal administrative payload seams.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The pure authority matrix uses real task topology. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:193-260 |
-| Task-scoped landing is exercised directly. | `LandSeatsForTaskTests` | mcp/tests/test_seat_lifecycle.py:667-712 |
-| Turn-state classification and liveness wiring remain diagnostic. | `TurnStateClassificationTests`; `TurnStateSweepWiringTests` | mcp/tests/test_seat_lifecycle.py:457-547; mcp/tests/test_seat_lifecycle.py:550-617 |
-| Completion cleanup uses `AgentRole`-typed task-owned reports. | `AutoLandHookIntegrationTests`; `_post_report` | mcp/tests/test_seat_lifecycle.py:715-948 |
-| Internal retire/rename payloads are exercised end to end. | `SessionRetireToolTests`; `SessionRenameToolTests` | mcp/tests/test_seat_lifecycle.py:263-399; mcp/tests/test_seat_lifecycle.py:402-454 |
+| The pure authority matrix uses real task topology. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:200-264 |
+| Task-scoped landing is exercised directly. | `LandSeatsForTaskTests` | mcp/tests/test_seat_lifecycle.py:674-719 |
+| Turn-state classification and liveness wiring remain diagnostic. | `TurnStateClassificationTests`; `TurnStateSweepWiringTests` | mcp/tests/test_seat_lifecycle.py:464-554; mcp/tests/test_seat_lifecycle.py:557-622 |
+| Completion cleanup uses `AgentRole`-typed task-owned reports. | `AutoLandHookIntegrationTests`; `_post_report` | mcp/tests/test_seat_lifecycle.py:722-954; mcp/tests/test_seat_lifecycle.py:769-799 |
+| Internal retire/rename payloads are exercised end to end. | `SessionRetireToolTests`; `SessionRenameToolTests` | mcp/tests/test_seat_lifecycle.py:270-403; mcp/tests/test_seat_lifecycle.py:409-458 |
 
 ## Cross-Repo References
 
@@ -137,7 +137,19 @@ The suite imports `IntegrateOperationInput` from `models.lifecycles.operation`, 
 package owner. Structural-seat retirement, landing, and integration lifecycle assertions are
 unchanged.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_manager_retires_own_worker`, `test_manager_retires_own_reviewer`, `test_manager_refused_against_other_masters_worker`, `test_manager_refused_against_a_manager_seat`. The L2 additions force locator-rooted journal access, legal task-addressed controls, write-ahead successors, exact worker termination, total expected-failure projection, and same-generation convergence.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_manager_retires_own_worker`, `test_manager_retires_own_reviewer`, `test_manager_refused_against_other_masters_worker`, `test_manager_refused_against_a_manager_seat`. | L210-L213; L215-L218; L220-L224; L226-L230 | `mcp/tests/test_seat_lifecycle.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-16T02:51+02:00 — No content impact: the integration hook fixture now supplies the
   configured contract-path resolver required by the strengthened application boundary; seat

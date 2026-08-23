@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/mcp/tools/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ wire shape as every other public tool.
 ### Logic
 
 `direct_landing_payload(config, request)` calls
-`application.direct_landing.direct_landing_tool(config, request)` and wraps the result with
+`application.lifecycle.direct_landing.direct_landing_tool(config, request)` and wraps the result with
 `_tool_payload("direct_landing", ...)`.
 
 ### Conventions
@@ -59,6 +59,8 @@ No configured Domain Documentation source applies.
 No meaningful cross-repository reference applies.
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed the application adapter to its canonical `application.lifecycle.direct_landing` import path; this payload builder's behavior is unchanged.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: created for the direct landing operation (L16-R8):
   the payload builder registered through the closeout registration group. Verified at code commit

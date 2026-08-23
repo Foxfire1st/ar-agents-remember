@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_candidate_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,6 +56,8 @@ Imports re-point to the restructured `worktrees/queue/` and `worktrees/integrati
 `CloseoutQueueError("no valid exact landing")`; the trailing `unittest.main()` block was removed.
 
 ## Update History
+
+- 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the test only repoints `LifecycleOperationStore` to its moved integration lifecycle package. Verified at code commit `1d446724`.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: re-pointed imports to the
   worktrees/queue and worktrees/integration packages and added the landed-probe failure

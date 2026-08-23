@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/models/lifecycles/responses.py`  |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-13T08:40+02:00                      |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`     |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -63,12 +63,14 @@ registered in `TOOL_RESPONSE_MODELS` and inherit `extra="forbid"`.
 | --- | --- | --- |
 | The `ToolResponse` strict envelope base (`ok`/`operation`/`tokens`). | "class ToolResponse(ResponseModel):" | mcp/src/agents_remember/models/base.py:66-66 |
 | The `State`/`Phase` Literals reused as response field types (declared here since L9). | "State = Literal[LiveState"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/models/lifecycles/responses.py:20-20 |
-| Where these models are registered against tool names. | "\"ping\": PingResponse"; "PUBLIC_TOOL_RESPONSE_MODELS: dict[str" | mcp/src/agents_remember/models/tool_registry.py:147-147; mcp/src/agents_remember/models/tool_registry.py:225-225 |
+| Where these models are registered against tool names. | "\"ping\": PingResponse"; "PUBLIC_TOOL_RESPONSE_MODELS: dict[str" | mcp/src/agents_remember/models/tools/tool_registry.py:147-147; mcp/src/agents_remember/models/tools/tool_registry.py:225-225 |
 | The builders that assemble payloads validated against these models; `lifecycle_start_payload` fills `frontHalfRundown`. | "def lifecycle_start_payload() -> dict[str" | mcp/src/agents_remember/mcp/tools/lifecycle.py:20-20 |
 | Owner of the `FRONT_HALF_RUNDOWN` list content emitted as `frontHalfRundown`. | "FRONT_HALF_RUNDOWN: list[str] = [" | mcp/src/agents_remember/application/next_step.py:57-57 |
 | The persisted-record peer these are deliberately *not*. | "class Event(BaseModel):"; "OBSERVER_EVENT_SCHEMA =" | mcp/src/agents_remember/observer/events.py:23-23; mcp/src/agents_remember/observer/events.py:39-39 |
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 - 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved the preserved response-model card into `models/lifecycles/`, made the local vocabulary ownership explicit, and rebound the package-local governing overview and citations. Verification metadata remains closeout-owned.

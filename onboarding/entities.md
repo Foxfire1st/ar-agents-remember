@@ -7,9 +7,9 @@ Total output lines: 1510
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab`
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | status      | active                 |
 
 ## Purpose
@@ -31,8 +31,8 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Light Task Artifact                 | `git-blob-set-v1` | `sha256:2670e6700fad52cb381a310a5e97b85d5979debccc59e86aadaef96cd6908f74` | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md`                                                                                                                                                                                                                                                                                      |
 | External Memory Ledger              | `git-blob-set-v1` | `sha256:ea59b46018577bb5225fd2422ffbb877ac816a6af84af4bd6e7935cb1054cb3e` | `mcp/src/agents_remember/kernel/memory_ledger.py`; `mcp/src/agents_remember/memory/baseline.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/closeout_external.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | Sprint Closeout Queue               | `git-blob-set-v1` | `sha256:6d356bdcb8a0fb720b52783f5b513b298d1edc3fb904c16c2b40b4c859eebe1d` | `mcp/src/agents_remember/controlplane/closeout_queue_store.py`; `mcp/src/agents_remember/models/queue/closeout_queue.py`; `mcp/src/agents_remember/worktrees/queue/closeout_queue.py`; `mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py` |
-| Closeout Effective Input            | `git-blob-set-v1` | `sha256:29f55cdb09ab4cde43a88fc6b73cfa8dcbe32c9dc71b3954e8e945ed5bafc005` | `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/mcp/registration/closeout.py`; `mcp/src/agents_remember/models/closeout_input.py`; `mcp/src/agents_remember/worktrees/closeout_input.py`; `mcp/src/agents_remember/worktrees/direct_landing.py`; `mcp/src/agents_remember/worktrees/integration/closeout_operation_admission.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle_operation_candidate.py` |
-| Closeout Mutation Evidence          | `git-blob-set-v1` | `sha256:220c7a86bcb5e0ff5fab6083692d07de702b3a03d35da1749161d49d957105d2` | `mcp/src/agents_remember/application/lifecycle_operation_worker.py`; `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py`; `mcp/src/agents_remember/models/lifecycles/operation.py`; `mcp/src/agents_remember/worktrees/integration/closeout_recovery_projection.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle_operation_store.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle_operations.py`; `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py`; `mcp/src/agents_remember/worktrees/modules/closeout_external.py`; `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
+| Closeout Effective Input            | `git-blob-set-v1` | `sha256:38dc32e13d58167060a903a74ca0316502ef82f000e7331b5ebe3b22a4417325` | `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/mcp/registration/closeout.py`; `mcp/src/agents_remember/models/closeout_input.py`; `mcp/src/agents_remember/worktrees/closeout_input.py`; `mcp/src/agents_remember/worktrees/direct_landing.py`; `mcp/src/agents_remember/worktrees/integration/closeout_operation_admission.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py` |
+| Closeout Mutation Evidence          | `git-blob-set-v1` | `sha256:cdf5656fdb22ff9d3ef86fb42c59e452da6434af8cb28457542cd9513ca3a3e9` | `mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py`; `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py`; `mcp/src/agents_remember/models/lifecycles/operation.py`; `mcp/src/agents_remember/worktrees/integration/closeout_recovery_projection.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py`; `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py`; `mcp/src/agents_remember/worktrees/modules/closeout_external.py`; `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
 | Memory Baseline Adoption            | `git-blob-set-v1` | `sha256:f7f1696e0c096898ca582e056d9130b8036a2e39a4c6360d524391ce01f91e63` | `mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                                                                                                                  |
 | Worktree Contract                   | `git-blob-set-v1` | `sha256:99a15991190476d136945e9a00c93baf384e5336df086331586eff81df7de2e5` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/guidance.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | Source Lineage                      | `git-blob-set-v1` | `sha256:1052326478c2bc7ab89503c542c176f5d14598484463cf32a05e22342bbf131c` | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `mcp/src/agents_remember/serving/terminal_opener.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/source_lineage.py` |
@@ -168,7 +168,7 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Parent / Child Relationships | Belongs to one external memory repo and is consumed by `c-09-git-worktree-manager` skill worktree lifecycle, baseline adoption, and cross-repo resolution.                                                                                  |
 | Often Confused With          | Drift report or task contract.                                                                                                                                          |
 | Source References            | [memory_ledger.py](agents-remember/mcp/src/agents_remember/kernel/memory_ledger.py); [closeout_external.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout_external.py); [closeout.py](agents-remember/mcp/src/agents_remember/worktrees/modules/closeout.py); [integrate.py](agents-remember/mcp/src/agents_remember/worktrees/modules/integrate.py); [baseline.py](agents-remember/mcp/src/agents_remember/memory/baseline.py) |
-| Migration Notes              | 260821-CLIVE-L1 moved worktree-closeout ledger mutation from `closeout.py` to `closeout_external.py` rather than keeping a compatibility path. Worktree closeout now brackets a new ledger commit with journal intent/proof and consumes only normalized explicit input. An existing exact mapping is verified/reused; a conflicting row refuses. Direct landing also requires explicit memory/ledger messages, but its two-commit crash durability is deliberately deferred to L2-R11/L5-R15. |
+| Migration Notes              | 260821-CLIVE-L1 moved worktree-closeout ledger mutation from `closeout.py` to `closeout_external.py` rather than keeping a compatibility path. Worktree closeout brackets a new ledger commit with journal intent/proof and consumes only normalized explicit input. CLIVE L2 gives direct landing its own journaled memory/ledger intent and same-generation crash recovery; terminal archive/readback proof remains L5 scope. |
 
 `260815-DAG-L3 route impact:` queue declaration and every later lifecycle transition bind the
 exact external-memory base, candidate tree, and ledger mapping as candidate evidence. The queue
@@ -181,14 +181,14 @@ reconciled through the existing closeout/integration ledger owner.
 | --- | --- |
 | Category | Durable sprint scheduling and closeout-admission entity |
 | Represents In Reality | The one bounded, recoverable materialized view of reviewed and curated leaf candidates that are asking to close out inside a sprint. |
-| Description | Each sprint owns a bounded materialized scheduling view of candidates and one adjacent recovery record. It projects readiness, waiting, blockers, selection, certification, and landing-lane occupancy from canonical task/graph judgments and current evidence. It does not own closeout message intent, operation generations, mutation evidence, Git commits, recovery projection, or contract-finalization proof: those facts live in the task-addressed lifecycle journal after claim. 260821-CLIVE-L1 does not change queue source or make task authoring subordinate to queue state; queue invalidation/rebuild for task changes remains the L3 redesign. |
-| Canonical Source Of Truth | The sprint task document remains authoritative for graph and judgment facts; `models/closeout_queue.py` defines the persisted/wire vocabulary, `controlplane/closeout_queue_store.py` owns bounded crash-safe publication, and `worktrees/closeout_queue.py` plus `worktrees/closeout_queue_lifecycle.py` derive and enforce the materialized scheduling state. |
-| Current Naming Drift | Source uses closeout queue, candidate artifact, landing lane, selection, and atomic blocker for scheduling projections. The lifecycle operation journal—not the queue—is the owner of accepted input and closeout/integration lifecycle evidence. |
+| Description | Each sprint currently owns the transitional pre-L3 materialized queue: readiness/waiting facts plus selected, closeout-in-flight, certified, and integration-in-flight rows with owner fingerprints and commit-shaped evidence. CLIVE L2 makes the root journal authoritative for retry/recover/cancel/revise, worker termination, direct landing, and integration recovery, and removes later integration queue reads after claim transfer. The remaining lifecycle-shaped queue rows and authoring-time queue refusal are current source facts, not the target architecture; L3 removes them and rebuilds a waiting-only projection from task/door truth. |
+| Canonical Source Of Truth | The sprint task document remains authoritative for graph and judgment facts; `models/queue/closeout_queue.py` defines the transitional persisted/wire vocabulary, `controlplane/closeout_queue_store.py` owns bounded publication, and `worktrees/queue/closeout_queue.py` plus `worktrees/queue/closeout_queue_lifecycle.py` derive and enforce the current materialized state. Root-journal operation evidence is separate. |
+| Current Naming Drift | Source still uses closeout queue, candidate artifact, landing lane, selection, certification, and lifecycle-shaped row states. These names describe transitional L2 source, while the approved L3 target reserves queue for waiting-door scheduling only. |
 | Key Identifiers | Sprint `TaskDocumentRef`, candidate leaf and owning-master refs, contract path, graph revision, queue revision, stable request id, exact candidate/evidence digests, selected state, and one-way lifecycle owner fingerprint. |
-| Parent / Child Relationships | Belongs to one sprint; materializes its execution graph; references organizational or atomic masters and their leaves; and hands a selected candidate to the task-addressed lifecycle. Task-document authority remains upstream. L1 performs no global task lock or queue-owned commit transition. |
+| Parent / Child Relationships | Belongs to one sprint; materializes its execution graph; references organizational or atomic masters and their leaves; and hands a selected candidate to the task-addressed journal. Task-document truth remains upstream, although the pre-L3 queue publisher can still refuse governed task writes until L3 replaces that coupling with invalidation/rebuild. |
 | Often Confused With | The sprint task document, Judgment/Priority Registers, a generic job queue, lifecycle-operation storage, the external-memory ledger, or the landing archive. |
 | Source References | `mcp/src/agents_remember/models/queue/closeout_queue.py`; `mcp/src/agents_remember/controlplane/closeout_queue_store.py`; `mcp/src/agents_remember/worktrees/queue/closeout_queue.py`; `mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py` |
-| Migration Notes | Introduced by 260815-DAG. 260821-CLIVE-L1 is explicitly a no-source-impact boundary clarification: queue projection remains schedulability state and cannot become a compatibility reader for lifecycle evidence. Task-change invalidation and deterministic rebuild are owned by L3, not silently implemented here. |
+| Migration Notes | Introduced by 260815-DAG. CLIVE L2 removes integration claim/consume recovery authority from the queue and transfers new operation controls to the root journal, but deliberately leaves selected/in-flight/certified schema and closeout claim/certification transitional. Task-first publication, affected-candidate invalidation, and deterministic waiting-only rebuild are L3 work. |
 
 ### Closeout Effective Input
 
@@ -202,8 +202,8 @@ reconciled through the existing closeout/integration ledger owner.
 | Key Identifiers | Route, resolved plan, code/memory/ledger leg state, explicit message, reason, candidate tree/HEAD/tree, invalid field observation, corrected call, candidate fingerprint. |
 | Parent / Child Relationships | Created from a worktree contract and stable Git candidate; embedded in one closeout lifecycle generation; consumed by mutation evidence owners. Queue selection is neither parent nor authority. |
 | Often Confused With | Optional public JSON-schema fields, blank-message defaults, generated commit subjects, queue candidate declarations, or the legacy raw `WorktreeArgs` message fields. |
-| Source References | `mcp/src/agents_remember/models/closeout_input.py`; `mcp/src/agents_remember/worktrees/closeout_input.py`; `mcp/src/agents_remember/worktrees/integration/closeout_operation_admission.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle_operation_candidate.py`; `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/worktrees/direct_landing.py` |
-| Migration Notes | Introduced by 260821-CLIVE-L1 as a replacement, not a compatibility layer. Raw strings stop at admission; there is no generated ledger subject or empty enabled sentinel. Public retry/recover/revise controls remain L2. |
+| Source References | `mcp/src/agents_remember/models/closeout_input.py`; `mcp/src/agents_remember/worktrees/closeout_input.py`; `mcp/src/agents_remember/worktrees/integration/closeout_operation_admission.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py`; `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/worktrees/direct_landing.py` |
+| Migration Notes | Introduced by 260821-CLIVE-L1 as a replacement, not a compatibility layer. Raw strings stop at admission; there is no generated ledger subject or empty enabled sentinel. CLIVE L2 implements the public task-addressed retry/recover/cancel/revise controls while preserving this input unchanged within one generation. |
 
 ### Closeout Mutation Evidence
 
@@ -217,8 +217,8 @@ reconciled through the existing closeout/integration ledger owner.
 | Key Identifiers | Leg, repository, state, before/observed snapshot, expected output tree, commit proof, operation key/generation, recovery projection, finalized contract SHA-256. |
 | Parent / Child Relationships | Belongs to one journaled closeout operation generation and its accepted effective input. It owns recovery projection; the queue consumes only downstream lifecycle outcomes. |
 | Often Confused With | Progress phase, approval claim, irreversible boolean, queue row state, a nonblank recovery cell, or direct-landing lock ownership. |
-| Source References | `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py`; `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py`; `mcp/src/agents_remember/worktrees/integration/closeout_recovery_projection.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle_operation_store.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle_operations.py`; `mcp/src/agents_remember/application/lifecycle_operation_worker.py` |
-| Migration Notes | Introduced by 260821-CLIVE-L1 for journaled worktree closeout. Legacy synchronous apply and generic raw closeout start fail closed. Direct landing remains synchronous and intentionally unjournaled; L2-R11/L5-R15 own its memory-before-ledger crash durability. |
+| Source References | `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py`; `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py`; `mcp/src/agents_remember/worktrees/integration/closeout_recovery_projection.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py`; `mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py` |
+| Migration Notes | Introduced by 260821-CLIVE-L1 for journaled worktree closeout. Legacy synchronous apply and generic raw closeout start fail closed. CLIVE L2 makes direct landing journaled and crash-recoverable through its own accepted-input and ledger-intent models; that sibling operation does not reuse closeout mutation evidence as a compatibility shortcut. |
 
 ### Memory Baseline Adoption
 
@@ -334,6 +334,12 @@ both render this projection; the frontend never joins raw refs or re-derives wav
 mutation, so execution-nature, sprint ownership, and protected-surface edits cannot strand a live
 leaf or contradict an active atomic series.
 
+`260821-CLIVE-L2 route impact:` task writers capture exact JSON/Markdown source snapshots and
+recheck the entire selected/affected set under the short integration-authority lock before one
+atomic publication. The pre-L3 queue wrapper still surrounds governed writes and can still refuse
+them; L3 owns removing that subordination and publishing task truth before affected-candidate
+invalidation/rebuild.
+
 ### Source Lineage
 
 | Field | Value |
@@ -378,6 +384,12 @@ completion reset identity. Exact publication proof may retain a verified-existin
 generation; it does not fabricate Git mutation evidence. Candidate/plan enabledness is derived
 from the contract plus stable Git facts before lifecycle compatibility.
 
+`260821-CLIVE-L2 route impact:` new enclosures publish an immutable root manifest and locked
+address-only locator before normal lifecycle admission. Normal lookup is strictly locator → root
+manifest → canonical root journal, so task/contract loss cannot erase operation controls. Existing
+readable pre-locator enclosures use one explicit audited adoption route; schema-1 record repair is
+a separate bounded bridge, not a fallback reader.
+
 ### Worktree Integration
 
 Entity inventory entry; current evidence and fingerprint are recorded above.
@@ -397,6 +409,12 @@ lease-with-census API to a pure serialization lease plus explicit compatibility 
 transaction semantics are otherwise unchanged; closeout mutation evidence is a separate journal
 entity and no queue lifecycle compatibility fallback is added.
 
+`260821-CLIVE-L2 route impact:` integration claim transfer snapshots and consumes the exact
+transitional certified candidate once, publishes claim evidence in the root journal, and never
+depends on a surviving queue row for later protected-ref publication or recovery. Moved/missing/
+unreadable refs remain same-generation journal decisions. The remaining queue lifecycle schema is
+transitional until L3; terminal archive/readback ordering before destructive cleanup remains L5.
+
 ## Ownership Notes
 
 - This catalog intentionally excludes the eight worktree task files as onboarding subjects.
@@ -405,6 +423,17 @@ entity and no queue lifecycle compatibility fallback is added.
 - Legacy roadmap specs remain historical context where they disagree with the implemented memory/coordination split.
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: repointed the Closeout Effective Input and Closeout Mutation Evidence inventory/fingerprint evidence to canonical nested source routes and recomputed both `git-blob-set-v1` values against code commit `1d446724d099517f6f52d596b47827ae2391a2a4`; entity ownership is unchanged.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2 curator: reconciled External Memory Ledger, Sprint
+  Closeout Queue, Closeout Effective Input, Closeout Mutation Evidence, Task Document, Worktree
+  Contract, and Worktree Integration. The catalog now distinguishes landed L2 root-journal,
+  locator/manifest, worker/direct-landing, claim-transfer, and exact task-source transaction facts
+  from the still-present pre-L3 queue lifecycle/task-publication schema. No new catalog entity was
+  invented: these changes extend existing reusable entities. Evidence paths are unchanged; their
+  deterministic fingerprints and catalog verification stamp remain pinned until architect-owned
+  closeout can recompute them from the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 curator: added `Closeout Effective Input` and
   `Closeout Mutation Evidence`; reconciled External Memory Ledger, Sprint Closeout Queue,

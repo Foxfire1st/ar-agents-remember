@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_forcing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,13 +55,13 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical task-document identity is runtime-bounded without an unsupported `maxLength` schema. | `test_task_document_identity_is_runtime_bounded_without_unsupported_schema` | mcp/tests/test_closeout_queue_forcing.py:89-103 |
-| Full route records and in-place evidence-byte drift are bound. | `test_full_route_record_and_in_place_evidence_bytes_are_bound` | mcp/tests/test_closeout_queue_forcing.py:105-126 |
-| Graph recomputation and lane-owned task-tree freeze are forced under lock. | `test_claim_recomputes_graph_under_lock_and_lane_ownership_freezes_task_tree_writes` | mcp/tests/test_closeout_queue_forcing.py:152-212 |
-| Graph admission and predecessor indexing are bounded. | `test_predecessor_index_is_linear_and_node_edge_admission_is_bounded` | mcp/tests/test_closeout_queue_forcing.py:214-285 |
-| Projection names only operations legal for the current actor. | `test_projection_names_only_operations_the_candidate_can_take` | mcp/tests/test_closeout_queue_forcing.py:428-511 |
-| WAL recovery is idempotent and raw operation keys never persist. | `test_wal_recovery_after_publish_is_idempotent_and_private_keys_never_persist` | mcp/tests/test_closeout_queue_forcing.py:533-559 |
-| Sprint completion/reopen crash cuts recover through their WAL. | `test_sprint_status_wal_recovers_before_after_and_reopen_crash_cuts` | mcp/tests/test_closeout_queue_forcing.py:561-654 |
+| Canonical task-document identity is runtime-bounded without an unsupported `maxLength` schema. | `test_task_document_identity_is_runtime_bounded_without_unsupported_schema` | mcp/tests/test_closeout_queue_forcing.py:94-108 |
+| Full route records and in-place evidence-byte drift are bound. | `test_full_route_record_and_in_place_evidence_bytes_are_bound` | mcp/tests/test_closeout_queue_forcing.py:110-131 |
+| Graph recomputation and lane-owned task-tree freeze are forced under lock. | `test_claim_recomputes_graph_under_lock_and_lane_ownership_freezes_task_tree_writes` | mcp/tests/test_closeout_queue_forcing.py:157-217 |
+| Graph admission and predecessor indexing are bounded. | `test_predecessor_index_is_linear_and_node_edge_admission_is_bounded` | mcp/tests/test_closeout_queue_forcing.py:219-290 |
+| Projection names only operations legal for the current actor. | `test_projection_names_only_operations_the_candidate_can_take` | mcp/tests/test_closeout_queue_forcing.py:433-531 |
+| WAL recovery is idempotent and raw operation keys never persist. | `test_wal_recovery_after_publish_is_idempotent_and_private_keys_never_persist` | mcp/tests/test_closeout_queue_forcing.py:553-579 |
+| Sprint completion/reopen crash cuts recover through their WAL. | `test_sprint_status_wal_recovers_before_after_and_reopen_crash_cuts` | mcp/tests/test_closeout_queue_forcing.py:581-674 |
 
 ## Cross-Repo References
 
@@ -79,7 +79,19 @@ republish resolves through the closure to `original_publish` rather than calling
 
 Queue-forcing cases now publish contracts and closeouts through the canonical typed input/admission support. The tested task-tree and blocker behavior is otherwise unchanged. This migration preserves the boundary that scheduler projection consumes completed lifecycle facts but never validates or retains commit-message intent.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_task_document_identity_is_runtime_bounded_without_unsupported_schema`, `test_full_route_record_and_in_place_evidence_bytes_are_bound`, `test_graph_revision_and_transitive_source_lineage_recompute_before_closeout`, `test_claim_recomputes_graph_under_lock_and_lane_ownership_freezes_task_tree_writes`. The historical test names expose the pre-L3 freeze/queue contract still present in this candidate. L2 moves operation recovery to the journal; L3 must replace the queue/task freeze semantics and their tests.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_task_document_identity_is_runtime_bounded_without_unsupported_schema`, `test_full_route_record_and_in_place_evidence_bytes_are_bound`, `test_graph_revision_and_transitive_source_lineage_recompute_before_closeout`, `test_claim_recomputes_graph_under_lock_and_lane_ownership_freezes_task_tree_writes`. | L94-L108; L110-L131; L133-L155; L157-L217 | `mcp/tests/test_closeout_queue_forcing.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 

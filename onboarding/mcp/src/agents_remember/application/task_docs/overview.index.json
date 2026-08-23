@@ -11,6 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/application/task_docs/__init__.py",
+    "mcp/src/agents_remember/application/task_docs/task_doc_publication.py",
     "mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py",
     "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py",
     "mcp/src/agents_remember/application/task_docs/task_doc_tools.py",
@@ -20,8 +21,8 @@
     "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 8,
-    "fileSidecars": 8,
+    "sourceFilesInScope": 9,
+    "fileSidecars": 9,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -35,6 +36,7 @@
     "init__",
     "linkage",
     "mcp",
+    "publication",
     "queue",
     "ref",
     "remember",
@@ -45,6 +47,7 @@
     "sprint",
     "src",
     "task",
+    "task_doc_publication",
     "task_doc_queue_scope",
     "task_doc_route_review",
     "task_doc_tools",
@@ -57,10 +60,11 @@
     "topology"
   ],
   "hotPath": {
-    "summary": "`task_doc` MCP calls dispatch through `task_doc_tool` to one operation (create/replace/edits/special ops); the special ops (sprint linkage + execution graph authoring) publish inside their own functions and return raw operation payloads merged with the standard identity via `_sprint_doc_identity`. Route review, queue scope, topology enforcement, and master-row completion checks run before any publication; everything validates against the strict `TaskDocResponse` wire shape (the special-op fields declared in `models/task_doc.py`).",
+    "summary": "Task-document authoring remains the source-of-truth publication plane. L2 adds exact source snapshots and short integration serialization where task structure intersects landing. The pre-L3 queue-governed publisher and its sprint-wide refusal behavior are still present; L3 owns removing that authoring dependency and replacing it with affected-candidate invalidation/rebuild. `task_doc` MCP calls dispatch through `task_doc_tool` to one operation (create/replace/edits/special ops); the special ops (sprint linkage + execution graph authoring) publish inside their own functions and return raw op...",
     "candidateHints": [
       "mcp/src/agents_remember/application/task_docs",
       "mcp/src/agents_remember/application/task_docs/__init__.py",
+      "mcp/src/agents_remember/application/task_docs/task_doc_publication.py",
       "mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py",
       "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py",
       "mcp/src/agents_remember/application/task_docs/task_doc_tools.py",
@@ -72,6 +76,8 @@
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "task_doc_publication.py",
+      "task_doc_publication",
       "task_doc_queue_scope.py",
       "task_doc_queue_scope",
       "task_doc_route_review.py",
@@ -88,32 +94,34 @@
       "task_sprint_linkage",
       "task_doc",
       "task_doc_tool",
-      "_sprint_doc_identity",
-      "TaskDocResponse",
-      "models/task_doc.py",
       "MCP",
-      "sprint_doc_identity",
       "mcp/src/agents_remember/application/task_docs",
       "route-local-overview",
       "e5cb139f66abbd6502d4dcc4be883eb5f49770fe",
       "/overview.md",
       "application/",
+      "_sprint_doc_identity",
+      "TaskDocResponse",
+      "models/task_doc.py",
       "from . import task_sprint_linkage",
       "code_quality/single_owner.py",
+      "mcp/src/agents_remember/application/task_docs/task_doc_publication.py",
       "application/task_docs",
       "agents_remember",
       "task_docs",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T00",
+      "T16",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
+      "T00",
       "governingOverview",
       "DAG",
+      "sprint_doc_identity",
       "code_quality",
       "single_owner",
-      "e5cb139f"
+      "CLIVE"
     ]
   },
   "fallback": {

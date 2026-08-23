@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T10:45+02:00                     |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -53,7 +53,19 @@ The package facade exports `TaskEnclosureRef` so task-document callers can const
 
 The facade additionally exports the shared execution-graph title join (L12-R1/R4): `SprintGraphTitles`, `build_graph_titles` (in-memory join), and `read_graph_titles` (disk-backed join) from `execution_graph_titles.py` — the one source of truth the mermaid renderer and the dashboard projection both consume. `__all__` lists the new set.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include the module-level vocabulary. L2 exports the source-snapshot and transactional-publication primitives used to decouple touched task writes from the old queue-store wrapper. It does not yet implement L3's affected-candidate invalidation and waiting-projection rebuild.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes the module-level vocabulary at this ownership boundary. | L1-L124 | `mcp/src/agents_remember/tasks/__init__.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12: the facade additionally exports `SprintGraphTitles`, `build_graph_titles`, and `read_graph_titles` (the shared execution-graph title join); claim re-read and citation ranges regenerated for the new `render_markdown(doc, *, graph_titles=...)` and multi-line `write_task_docs` signatures. Verified at code commit b7f2c8e2.
 
 

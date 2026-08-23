@@ -5,10 +5,14 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                  |
+
+## Governing Overview
+
+[MCP tools overview](overview.md)
 
 ## Purpose
 
@@ -50,8 +54,8 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The advertised tuple names the structural public surface. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:9-66 |
-| The shared adapter finalizes one application result. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:74-76 |
+| The advertised tuple names the structural public surface. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-72 |
+| The shared adapter finalizes one application result. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:76-78 |
 | Registrars are the only published declaration family. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:36-49 |
 
 ## Cross-Repo References
@@ -63,7 +67,19 @@ No cross-repository implementation dependency governs this file.
 `closeout_queue` is now part of `PUBLIC_TOOLS`, so registry parity, response conformance, and common
 envelope/next-step behavior treat it as a real public MCP surface rather than an internal helper.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include the module-level vocabulary. The public schema/composition layer exposes task-addressed controls plus explicit legacy and enclosure-adoption routes without private operation ids. Registration and payload building do not own journal state or compatibility decisions.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes the module-level vocabulary at this ownership boundary. | L1-L78 | `mcp/src/agents_remember/mcp/tools/base.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: `PUBLIC_TOOLS` advertises `direct_landing` (59 names);
   `_tool_payload` behavior unchanged. Verified at code commit a9d50e08.

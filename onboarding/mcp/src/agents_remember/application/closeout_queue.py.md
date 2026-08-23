@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,19 @@ No configured Domain Documentation source applies; this is an internal authority
 
 No meaningful cross-repository reference applies.
 
+## 260821-CLIVE-L2 Public Failure Boundary
+
+Non-availability still permits the existing declared ambient caller path, but every other hosted
+seat-resolution failure now preserves only its typed status and returns a bounded public detail.
+Backend exception text and caller-sensitive internals no longer cross this application boundary.
+
+| Finding | Source |
+| --- | --- |
+| Non-availability and other ambient-seat failures have separate public handling. | mcp/src/agents_remember/application/closeout_queue.py:43-51 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled bounded ambient-seat failure translation at the application boundary. Verified at code commit `1d446724`.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

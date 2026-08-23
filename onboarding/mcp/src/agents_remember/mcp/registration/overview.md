@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -90,6 +90,8 @@ names `mcp/tools/base.py::PUBLIC_TOOLS` lists, which `mcp/tests/test_tools.py` c
 live server's `list_tools()`.
 
 ## Hot Path Summary
+
+Registration publishes the task-addressed lifecycle-control, explicit enclosure-adoption, and bounded legacy-operation schemas while keeping operation identity private.
 
 A tool body does exactly two things: pack the flat MCP arguments into the parameter objects the
 payload builder and its application entry point take, and return the builder's result unchanged. The packing is
@@ -228,7 +230,20 @@ Registration modules import the moved `application/task_docs/*`; `registration/t
 
 The advertised closeout surface exposes code, memory, and ledger message observations where the route can require them, then reports `effectiveInput` or structured refusal. Optional schema fields are not defaults: enabled legs require explicit stripped nonblank messages at runtime. Direct landing exposes only memory and ledger intent because code is verified-existing/not-applicable. Validation precedes integration authority, the landing lock, and Git.
 
+## 260821-CLIVE-L2 Current Architecture
+
+This route composes public signatures only. It exposes the one closed application boundary and never owns configured-contract exception families, journal state, queue lifecycle, or compatibility policy.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Worktree registration composition. | L26-L29 | `mcp/src/agents_remember/mcp/registration/worktrees.py` |
+| Public payload builders. | L98-L105; L151-L169 | `mcp/src/agents_remember/mcp/tools/worktree.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
 

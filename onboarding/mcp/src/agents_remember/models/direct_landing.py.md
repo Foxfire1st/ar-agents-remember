@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,9 +52,10 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The response model shape for the direct landing operation. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:12-30 |
-| Registered as the `direct_landing` tool response model. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:146-223 |
-| Produced by the worktree operation. | `_direct_landing_preview`; `_direct_landing_apply` | mcp/src/agents_remember/worktrees/direct_landing.py:186-203; mcp/src/agents_remember/worktrees/direct_landing.py:206-283 |
+| The response model shape for the direct landing operation. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:19-49 |
+| Registered as the `direct_landing` tool response model. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:148-227 |
+| Produced by the admitted direct-landing coordinator. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:111-123 |
+| Memory/ledger execution and same-generation recovery are journaled below the coordinator. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:68-105; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:108-165 |
 
 ## Cross-Repo References
 
@@ -62,9 +63,26 @@ No meaningful cross-repository reference applies.
 
 ## 260821-CLIVE-L1 Response Contract
 
-The direct-landing response now carries normalized `effectiveInput` on success/preview and typed `invalidFields`, `resolvedPlan`, and `correctedCall` on refusal. This is a shape change only; durable recovery is not implied. Direct landing remains a synchronous, lock-serialized sequence rather than an atomic transaction.
+The direct-landing response carries normalized `effectiveInput` on success/preview and typed
+`invalidFields`, `resolvedPlan`, and `correctedCall` on refusal. L2 adds journal generation and
+recovery evidence to that public contract: synchronous invocation and lock serialization remain,
+but partial memory/ledger publication is reconciled and resumed through the canonical root journal.
+
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `DirectLandingResponse`. The response vocabulary now describes a journaled direct-landing generation, including effective accepted input and typed recovery/refusal evidence. Synchronous invocation and transient locking do not imply absence of durable recovery.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `DirectLandingResponse` at this ownership boundary. | L19-L49 | `mcp/src/agents_remember/models/direct_landing.py` |
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
 

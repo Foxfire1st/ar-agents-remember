@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/single_owner.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -107,7 +107,19 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 `TASK_DOCUMENT_WRITER_AUTHORITIES` paths updated to the moved package locations (`application/task_docs/{task_doc_tools,task_execution_topology,task_sprint_linkage}.py`, `worktrees/integration/organizational_completion.py`); the authority set is unchanged.
 
+## 260821-CLIVE-L2 Task-Document Writer Census
+
+The static single-owner census now recognizes `task_doc_publication.py` as the publication owner and
+removes the superseded organizational-completion writer entry. This is an authority-list correction,
+not a compatibility alias: current writes must route through the owners named by the census.
+
+| Finding | Source |
+| --- | --- |
+| The task-document writer allowlist names the extracted publication owner and no longer names organizational completion. | mcp/src/agents_remember/code_quality/single_owner.py:40-53 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the extracted task-document publication writer census. Verified at code commit `1d446724`.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: task-document writer authority paths updated to the moved packages. Verified at code commit e5cb139f.
 

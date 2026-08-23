@@ -19,7 +19,7 @@
     "dev-skills/dashboard-experience-review/templates/scenario-catalog-template.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 0,
+    "sourceFilesInScope": 7,
     "fileSidecars": 7,
     "childRoutes": 0
   },

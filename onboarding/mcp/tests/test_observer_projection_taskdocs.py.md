@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection_taskdocs.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T05:14+02:00 |
-| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7` |
-| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -38,7 +38,20 @@ Projection tests bind the latest validated lifecycle operation to canonical task
 expose bounded phase/report evidence. Private worker, lease, recovery, and resume coordinates never
 enter the observer packet.
 
+## 260821-CLIVE-L2 Addressable Task-Document Projection Fixtures
+
+Task-document projection tests now write addressable contracts through one helper that publishes
+the locator and immutable manifest. Planning/task truth remains task-document-owned, while optional
+lifecycle attachment is discovered through the enclosure-root address chain.
+
+| Finding | Source |
+| --- | --- |
+| The helper publishes the normal lifecycle location after contract publication. | mcp/tests/test_observer_projection_taskdocs.py:48-58 |
+| Lifecycle-attached task-document cases all use the addressable helper. | mcp/tests/test_observer_projection_taskdocs.py:294-364 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 
 - 2026-08-20T05:14+02:00 — 260815-DAG-L14: the suite gains
   `test_projects_sprint_master_ref_rows_and_seats` and

@@ -79,7 +79,7 @@
     "worktree"
   ],
   "hotPath": {
-    "summary": "ACPUI-L2/L4 keep `terminal.py` as the settings-owned role dispatch builder while the daemon request layer owns optional roleless selection. Complete role settings become `ResolvedLaunch`; missing model/effort refuses before tmux, and complete values travel through the same opener to runner-side dynamic model-gated validation. Spawn env and response fields preserve provenance, while normalized model/effort never joins `sessionCommands`. If the selected session id already names a live process with different launch identity, the opener returns `launch-conflict`; this builder maps it to `launch...",
+    "summary": "Payload builders now cover task-addressed operation controls, enclosure adoption, legacy inspect/migrate/archive, and fail-closed cleanup/abandon responses without private ids. ACPUI-L2/L4 keep `terminal.py` as the settings-owned role dispatch builder while the daemon request layer owns optional roleless selection. Complete role settings become `ResolvedLaunch`; missing model/effort refuses before tmux, and complete values travel through the same opener to runner-side dynamic model-gated validation. Spawn env and response fields preserve provenance, while normalized model/effort never joins...",
     "candidateHints": [
       "mcp/src/agents_remember/mcp/tools",
       "mcp/src/agents_remember/mcp/tools/__init__.py",
@@ -142,15 +142,15 @@
       "worktree.py",
       "worktree",
       "ResolvedLaunch",
-      "sessionCommands",
-      "launch-conflict",
       "ACPUI",
       "mcp/src/agents_remember/mcp/tools",
       "route-local-overview",
       "e5cb139f66abbd6502d4dcc4be883eb5f49770fe",
       "/../../../../overview.md",
       "mcp/tools/",
-      "mcp/tools.py"
+      "mcp/tools.py",
+      "01f503d",
+      "task_reopen_payload"
     ]
   },
   "fallback": {

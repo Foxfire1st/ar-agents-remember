@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/closeout_input_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash |  `eb7ea60ab9919f009fef58f81afe5861aa1709da`|
-| lastVerifiedCommitDate |  2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,13 +38,25 @@ See task `260821-CLIVE-L1` L1-R1 through L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical admissions bind accepted input and candidate. | `start_closeout_operation`, `closeout_operation_input` | mcp/tests/closeout_input_test_support.py:63-89; mcp/tests/closeout_input_test_support.py:96-121 |
-| Evidence fixtures cover all durable states. | `MutationEvidenceRecorder`, `with_mutation_intent`, `with_commit_proven`, `with_reconciled_unchanged` | mcp/tests/closeout_input_test_support.py:30-60; mcp/tests/closeout_input_test_support.py:148-213 |
+| Canonical admissions bind accepted input and candidate. | `start_closeout_operation`, `closeout_operation_input` | mcp/tests/closeout_input_test_support.py:64-91; mcp/tests/closeout_input_test_support.py:98-123 |
+| Evidence fixtures cover all durable states. | `MutationEvidenceRecorder`, `with_mutation_intent`, `with_commit_proven`, `with_reconciled_unchanged` | mcp/tests/closeout_input_test_support.py:31-61; mcp/tests/closeout_input_test_support.py:150-172; mcp/tests/closeout_input_test_support.py:175-200; mcp/tests/closeout_input_test_support.py:203-215 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `MutationEvidenceRecorder`. The L2 additions force immutable normalized input, exact generation retention, evidence-derived cancellation/recovery, and pre-authority refusal of invalid calls. A failed first call remains task-addressably recoverable without amending accepted intent.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `MutationEvidenceRecorder`. | L31-L61 | `mcp/tests/closeout_input_test_support.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from candidate tree `4241908c`; verification metadata remains blank pending closeout.

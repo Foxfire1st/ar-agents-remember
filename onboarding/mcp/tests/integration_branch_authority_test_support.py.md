@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/integration_branch_authority_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -32,13 +32,25 @@ Shared fixture construction uses production task documents, queue state, contrac
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, blocker, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:43-61; mcp/tests/integration_branch_authority_test_support.py:105-212; mcp/tests/integration_branch_authority_test_support.py:251-278; mcp/tests/integration_branch_authority_test_support.py:466-520 |
+| Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, blocker, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:115-267; mcp/tests/integration_branch_authority_test_support.py:49-67; mcp/tests/integration_branch_authority_test_support.py:280-307; mcp/tests/integration_branch_authority_test_support.py:527-581 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include the module forcing surface. The L2 additions force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, and organizational disposition/repair without queue-owned lifecycle evidence.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises the module forcing surface. | L1-L581 | `mcp/tests/integration_branch_authority_test_support.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 

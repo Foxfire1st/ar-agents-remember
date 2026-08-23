@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_models.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-06T12:28+02:00                     |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -33,9 +33,11 @@ a response contract and catches model definitions that are not schema-safe.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Public tool metadata lives in the `mcp/tools/` package. | "def _tool_payload" | mcp/src/agents_remember/mcp/tools/base.py:74-74 |
-| Response model registry lives in the models package. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tool_registry.py:113-134 |
+| Response model registry lives in the models package. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:113-134 |
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

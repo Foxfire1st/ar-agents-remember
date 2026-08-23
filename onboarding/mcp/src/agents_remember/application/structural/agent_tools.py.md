@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/structural/agent_tools.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,6 +97,8 @@ No Domain Documentation source is configured; repository tests and the approved 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the source only repoints the startup import and extracts the existing post-spawn briefing statements into `_brief_spawned_child`; dispatch ordering and documented child-briefing behavior are unchanged. Verified at code commit `1d446724`.
 
 - 2026-08-21T03:45+02:00 — 260821-ARSPAWN-L1 fix round 3: `_resolve_dispatch_caller` restructured ambient-first — `resolve_ambient_caller` decides the branch directly (no plane identity → ambient with role-altitude validation; plane identity → `resolve_ambient_seat` + `authorize_child`, any refusal never downgrades); the both-fail defensive guard was removed as dead code (same environ). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 

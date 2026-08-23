@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -19,8 +19,12 @@ cleanup, lifecycle finalization, abandon, provider teardown, start-contract leaf
 argument wiring while preserving the public facade import path. Reopen is deliberately NOT here:
 `task_reopen` lives in the tasks package (leaf L11) because it reopens a task, and this route's start path
 merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the leaf doc's lifecycle).
+The committed L2 layout groups the start-contract, provider-preflight, leaf-ref, and result helpers
+under `startup/`; `start.py` remains the coordinating mutation entrypoint.
 
 ## Hot Path Summary
+
+Public worktree modules consume closed configured-contract admission and preserve their existing mutation locks/rereads. Cleanup and abandon remain fail closed before destructive seams until external terminal archive proof exists.
 
 L23 makes Dagger the sole acceptance executor. `clean_quality_executor.py` materializes the exact
 reviewed candidate and required ancestry into the pinned graph, starts a fresh attempt, bounds live
@@ -30,7 +34,7 @@ runner. `code_quality_gate.py` plans targeted or full Dagger authority with an e
 staging, reviewed hook, and targeted gate. `closeout.py` and `integrate.py` preserve approval and
 merge ordering while rechecking lineage after long quality work; integration remains failure-atomic
 before source refs move. `git.py` owns exact candidate-tree and repository-identity helpers.
-`start_result.py` separates result projection from start coordination, and the external
+`startup/start_result.py` separates result projection from start coordination, and the external
 `worktrees/closeout_recovery.py` reconciles post-claim code, memory, and ledger commits without
 replaying completed irreversible steps.
 
@@ -164,10 +168,10 @@ needed for cadence.
 interactive fresh-probe surface, while `projected_status_payload` consumes only a pre-observed
 immutable landing snapshot. The recurring projector therefore never invokes `git ls-remote` or
 `gh` through guidance; missing and stale observations remain explicit.
-- `start.py`, `start_contract.py`, `leaf_ref_start.py`, `closeout.py`, `integrate.py`, `cleanup.py`,
+- `start.py`, `startup/start_contract.py`, `startup/leaf_ref_start.py`, `closeout.py`, `integrate.py`, `cleanup.py`,
   `finalize.py`, and `abandon.py`
   own the named `c-09-git-worktree-manager` skill lifecycle operations.
-  `start.py` calls `start_contract.build_start_contract` to resolve the requested leaf ref through the
+  `start.py` calls `startup.start_contract.build_start_contract` to resolve the requested leaf ref through the
   `worktrees/leaf_refs.py` task-tree resolver before any start write; accepted refs persist the canonical
   task doc id in the leaf contract, while no-match/ambiguous refs return a `WorktreeCommandResult`
   refusal naming the expected `<repo>/<master-folder>/<doc-id>` form and candidates. Standalone/light
@@ -183,7 +187,7 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   block the start with `stale_base_choice` recoveries (`fast-forward` /
   `proceed-stale`), and a missing external memory source branch is
   auto-created at the official memory tip using the code branch name as
-  template. For master tasks, `start_contract.py` creates or loads the root
+  template. For master tasks, `startup/start_contract.py` creates or loads the root
   `series-contract.md` integration contract first, creates the integration branch from the protected/source
   branch, and then starts each leaf from that integration branch with its own
   `enclosures/<leaf-id>/series-contract.md`. `cleanup.py`/`abandon.py` refuse to tear down while a live
@@ -462,13 +466,13 @@ raised inside an MCP tool handler that has no `except` for one. The rule that ke
 "no `replace` call anywhere may carry one of these six keywords", enforced together with
 `mcp/tests/test_wire_vocabulary_exhaustiveness.py`.
 
-`start_contract.build_start_contract` (line 187) gained a second `except` for the same reason.
+`startup.start_contract.build_start_contract` (line 187) gained a second `except` for the same reason.
 `worktree_start`'s `workflow_kind` and `memory_mode` reach the MCP signature as free `str`
 (the tool declares `workflow_kind: str = "light-task"` and documents `'light-task'` or
 `'chat-task'`), and `worktree_contract._task_vocabulary` now *refuses* an unknown one at both
 contract factories. Nothing between there and the `@server.tool()` handler catches a
 `ContractError`, so line 198 converts it through the new
-`leaf_ref_start.invalid_contract_request_result` (line 38) into the same
+`startup.leaf_ref_start.invalid_contract_request_result` (line 38) into the same
 `WorktreeCommandResult(2, {"state": "invalid-request", …})` shape every other blocked start
 already used, naming the legal set instead of producing a traceback. Note that this `except`
 is broader than its docstring says: it also catches a `ContractError` raised by the
@@ -686,16 +690,15 @@ The closeout coordinator now narrows candidate-tree typing only after mandatory 
 quality adapter consistently says `self-owned wrapper` while refusing non-Dagger executors in both
 command and memory-policy builders. Self-repository enforcement and consumer opt-in remain distinct.
 
-## 260815-DAG-L3 Queue-Owned Irreversible Boundaries
+## 260815-DAG-L3 Queue-Owned Irreversible Boundaries (Superseded In Part By CLIVE L2)
 
-Leaf `closeout.py` now claims the orchestrator-selected queue candidate before quality/commit and
-certifies the exact resulting code, memory-content, and ledger commits after contract publication.
-`integrate.py` claims the certified candidate, recomputes graph/readiness/evidence and exact commit
-identity immediately before source refs move, then consumes the record after landing. Reversible
-failed or cancelled lifecycle operations release their internal ownership through the task-addressed
-operation path; cancellation still terminates the captured worker even when queue release itself
-fails. Finalize/start/reopen task-fact writers use the queue-governed publisher so no adjacent write
-can invalidate an in-flight candidate.
+This section records the earlier DAG queue design: leaf closeout claimed and certified queue rows,
+integration claimed/consumed them, and task-fact writers published through queue governance. CLIVE
+L2 moves operation recovery, generation controls, worker termination, direct landing, and durable
+mutation evidence to the root journal, and its touched task-document publisher no longer uses the
+former queue-store wrapper. Some selected/in-flight/certified queue schema and closeout
+claim/certification transitions still exist in the L2 source. Their removal, along with task-change
+invalidation and waiting-only rebuild, belongs to L3.
 
 ## 260815-DAG-L4 L4 Exact Worktree Lifecycle
 
@@ -703,12 +706,12 @@ Start, closeout, integrate, sync, cleanup, abandon, and reopen now share task-de
 
 ## 260815-DAG-L13 Atomic-Sequential Lane
 
-`start_contract.py` gates master series bootstrap on the effective execution nature (a nature-less
+`startup/start_contract.py` gates master series bootstrap on the effective execution nature (a nature-less
 legacy master resolves atomic; organizational semantics exist only under an authored graph) and,
 under the atomic-sequential default, returns a blocked `sequential-lane-owned`
 `WorktreeCommandResult` naming the lane owner and legal next operations instead of starting a
 second in-flight master; the block fails closed when the commanding sprint cannot be resolved.
-Terminal series artifacts are ignored and reported through `start_result.py`'s
+Terminal series artifacts are ignored and reported through `startup/start_result.py`'s
 `staleSeriesArtifact` fact. `integrate.py` surfaces the queue consume's stale-by-evidence siblings
 on the result payload (`staleByEvidence`, each naming `worktree_sync`).
 
@@ -720,7 +723,26 @@ on the result payload (`staleByEvidence`, each naming `worktree_sync`).
 
 `args.py` transports one normalized effective closeout input, while legacy synchronous CLI apply fails closed. `closeout.py` coordinates journal-authorized execution and exact contract finalization and threads that effective value explicitly through every code/external/recovery consumer; external-memory refresh, memory commit, and ledger commit have moved to the new single owner `closeout_external.py`. That owner uses explicit accepted messages and mutation evidence with no generated ledger subject or fallback. Guidance remains contract-pure: it publishes only static `intent_note` and routes exact candidate-derived requirements to preview/apply. Abandon and cleanup call lifecycle compatibility explicitly under the pure serialization lease.
 
+## 260821-CLIVE-L2 Current Architecture
+
+Closeout and integrate start or resume journal generations; sync/cleanup/abandon use the same admission projector but retain their own serialization. No module enumerates lower configured-reader failures or adds a fallback reader. Terminal retirement preserves canonical evidence; deletion is a later archive-proven operation.
+
+`integration_recovery.py` proves exact ref convergence and the external-memory head before finalization recovery. The `startup/` package split keeps start derivation/result collaborators separate from `start.py` without retaining the old flattened import paths.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Closeout public execution boundary. | L363-L425; L1002-L1091 | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
+| Fail-closed cleanup result. | L624-L678 | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
+| Integration recovery requires exact authority-ref convergence and exact journaled ledger-head proof. | L18-L25; L28-L45 | `mcp/src/agents_remember/worktrees/modules/integration_recovery.py` |
+| Start helpers now live below the dedicated startup package marker. | L1 | `mcp/src/agents_remember/worktrees/modules/startup/__init__.py` |
+
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the `startup/` package move and new integration-recovery owner, repaired current route references, and verified the governed route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
 

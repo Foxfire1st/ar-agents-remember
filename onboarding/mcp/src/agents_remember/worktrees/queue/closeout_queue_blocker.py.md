@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_blocker.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,7 +80,19 @@ No configured Domain Documentation source applies; blocker doctrine is repositor
 
 No meaningful cross-repository reference applies.
 
+## 260821-CLIVE-L2 Bounded Blocker Authority Failure
+
+The transitional queue blocker still enforces unsealed series authority, but a configured-contract
+failure is now translated through the shared bounded evidence API. The public refusal identifies
+the contract-side stage without echoing reader or backend exception text.
+
+| Finding | Source |
+| --- | --- |
+| Series-authority failure is emitted as bounded structured queue evidence. | mcp/src/agents_remember/worktrees/queue/closeout_queue_blocker.py:75-88 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled bounded series-authority blocker evidence. Verified at code commit `1d446724`.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/queue/closeout_queue_blocker.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 

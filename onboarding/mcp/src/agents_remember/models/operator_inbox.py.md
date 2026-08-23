@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/models/operator_inbox.py`      |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-08T14:35+02:00 |
-| lastVerifiedCommitHash |                                                         `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate |                                                         2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ listed as Domain Documentation.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The response models cover post, poll, and consume payloads and reuse the inbox state literal. | "class OperatorInboxPostResponse(ToolResponse):"; "class OperatorInboxPollResponse(ToolResponse):"; "class OperatorInboxConsumeResponse(ToolResponse):"; "OperatorInboxState = Literal[" | mcp/src/agents_remember/models/operator_inbox.py:10-10; mcp/src/agents_remember/models/operator_inbox.py:54-54; mcp/src/agents_remember/models/operator_inbox.py:82-82; mcp/src/agents_remember/models/operator_inbox.py:92-92 |
-| The registry maps the three `operator_inbox_*` tools to these response models. | "from agents_remember.models.operator_inbox import ("; "\"operator_inbox_post\": OperatorInboxPostResponse," | mcp/src/agents_remember/models/tool_registry.py:53-53; mcp/src/agents_remember/models/tool_registry.py:216-216 |
+| The registry maps the three `operator_inbox_*` tools to these response models. | "from agents_remember.models.operator_inbox import ("; "\"operator_inbox_post\": OperatorInboxPostResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:53-53; mcp/src/agents_remember/models/tools/tool_registry.py:216-216 |
 
 ## Cross-Repo References
 
@@ -85,6 +85,8 @@ legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-onl
 inbox acceptance remains distinct from explicit consumption where applicable.
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

@@ -14,7 +14,7 @@
     "docs/design/engine-room/podstage.html"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 0,
+    "sourceFilesInScope": 2,
     "fileSidecars": 2,
     "childRoutes": 0
   },

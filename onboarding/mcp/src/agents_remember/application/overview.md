@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -27,7 +27,7 @@ the catalog row and the `spawnedByKind` wire field.
 
 ## Durable Lifecycle Application Boundary
 
-`lifecycle_operation_worker.py` is the detached application owner for closeout and integration.
+`lifecycle/lifecycle_operation_worker.py` is the detached application owner for closeout and integration.
 Its packaged CLI entry is also the operation process's composition root: it builds and binds the
 default `WorktreeServices` before dispatch, so installed workers use the real adapters without
 requiring an ambient MCP server binding.
@@ -51,6 +51,8 @@ abandon now also ends the ambient lifecycle it anchors).
 
 ## Hot Path Summary
 
+This route owns the single closed configured-contract admission result/projector and the task-addressed application adapters over lifecycle location, controls, adoption, legacy repair, direct landing, and degraded status.
+
 For 260731-EFA-L21, `runtime/startup.py` is the trusted MCP declaration boundary: it declares MCP
 execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker
 entry paths make the corresponding dashboard declaration in their CLI route. Undeclared linked
@@ -59,7 +61,7 @@ worktree entry paths therefore cannot inherit the deployed coordination root.
 The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context
 assembly and resolver calls; `memory_tools.py` for drift, memory quality, route-index, init, baseline,
 and carryover; `gate_tools.py` and `hosted_readiness.py` for gate/readiness operations;
-`lifecycle_tools.py`, `operator_inbox_tools.py`, and `orchestration_tools.py` for lifecycle, inbox,
+`lifecycle/lifecycle_tools.py`, `operator_inbox_tools.py`, and `orchestration_tools.py` for lifecycle, inbox,
 and orchestration operations; `runtime/startup.py` and `terminal_tools.py` for startup and terminal
 operations; `provider_tools.py` for provider operations; `worktree_tools.py` for worktree operations;
 `benchmark_tools.py`, `runtime/install.py`, and `runtime/skills.py` for benchmark, install, and skill
@@ -126,7 +128,7 @@ nested object for every client.
 - Domain behavior belongs in service modules such as `providers`,
   `worktrees`, `memory_quality`, `memory`, `benchmarks`, and `install`.
 - Response shape validation happens after application entry point return through the model
-  registry (`models/tool_registry.py`), applied by the `mcp/tools/` payload
+  registry (`models/tools/tool_registry.py`), applied by the `mcp/tools/` payload
   builders. That is the LAST line of defence, not the only one: when a collaborator
   already returns a model or a `TypedDict`, an application entry point passes it through rather than
   re-validating an untyped dump (260731-EFA-L4) — a `ValidationError` raised at
@@ -162,7 +164,7 @@ L14: the task-doc application entry point accepts the additive `orchestrates` fi
 | --- | --- | --- |
 | The two MCP payload builders are declared at these entry points. | "def skills_install_payload("; "def task_reopen_payload(" | mcp/src/agents_remember/mcp/tools/core.py:144-144; mcp/src/agents_remember/mcp/tools/task_doc.py:35-35 |
 | `ResponseModel` is the public response-model base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:41-60 |
-| `TOOL_RESPONSE_MODELS` is the registry of public response models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
+| `TOOL_RESPONSE_MODELS` is the registry of public response models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
 | Leaf memory scope carries the optional unstamped comparison base; the contract path supplies the leaf's real code base while bare official scope leaves it absent. | "class MemoryScope:"; "def _leaf_memory_scope(" | mcp/src/agents_remember/application/memory_tools.py:63-63; mcp/src/agents_remember/application/memory_tools.py:141-141 |
 | `memory_quality_check_tool` passes that comparison provenance into the full quality runner without changing verification metadata. | `memory_quality_check_tool` | mcp/src/agents_remember/application/memory_tools.py:217-292 |
 | `route_index_refresh_tool` resolves context and supplies repository/storage authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:550-586 |
@@ -260,14 +262,14 @@ strict source-lineage projections. Context status validates those facts instead
 of retyping them, and ambient attach attribution occurs only after a real
 attachment, keeping blocked lineage out of successful lifecycle history.
 
-## 260815-DAG-L3 Ambient Queue Authority
+## 260815-DAG-L3 Ambient Queue Authority (Transitional After CLIVE L2)
 
-`application/closeout_queue.py` is the hosted authority adapter for the sprint closeout queue. It
-resolves the live seat from the terminal catalog, requires a canonical bound task document, and
-constructs the internal `QueueActor`; role/task identity is absent from the public request. The
-existing lifecycle worker and worktree application routes now carry the plane-owned operation key
-into queue claim/certify/release seams without exposing it through MCP responses or durable queue
-JSON.
+`application/closeout_queue.py` remains the hosted authority adapter for the sprint closeout queue.
+It resolves the live seat from the terminal catalog, requires a canonical bound task document, and
+constructs the internal `QueueActor`; role/task identity is absent from the public request. This
+section records the pre-CLIVE queue design. In the L2 candidate, lifecycle recovery and controls
+use the root journal, while some selected/in-flight/certified queue states remain transitional.
+L3 owns removing that lifecycle-shaped queue schema and completing waiting-only projection.
 
 ## 260815-DAG-L4 L4 Application Authority Boundary
 
@@ -307,7 +309,24 @@ Seven application modules moved into the new `application/task_docs/` sub-route 
 
 Application closeout adapters now preserve raw public observations only until the shared route-aware normalizer returns typed `effectiveInput`. Worktree apply submits validated admission to the lifecycle owner; preview and direct landing return the same effective plan. Typed refusals carry invalid fields, resolved leg state, and a corrected call. The worker rehydrates only accepted effective input and repairs derived recovery projection from operation-journal evidence. Application code neither derives queue selection nor treats queue state as lifecycle evidence.
 
+## 260821-CLIVE-L2 Current Architecture
+
+Current-contract mutation consumers branch only on accepted versus refused admission and reuse the exact accepted contract/location observation. Expected path/read/authority failures are translated once. Degraded status and the explicit legacy bridge are separate because they intentionally inspect unreadable or pre-adoption state; they are not mutation fallbacks.
+
+The committed route now groups these application owners under `application/lifecycle/`. This is a package move, not a second API: configured-contract admission remains the one total mutation boundary, and durable journal authority remains below it in `worktrees/integration/lifecycle/`.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Closed application admission. | L49-L67; L74-L147; L194-L244 | `mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py` |
+| Configured degraded location projection. | L27-L55; L58-L105; L108-L186 | `mcp/src/agents_remember/application/lifecycle/lifecycle_operation_location.py` |
+
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the `application/lifecycle/` package layout, repointed current source evidence, and verified the governed L2 route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-22T11:29+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -121,11 +121,11 @@ The three destructive tools forward flat:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:80-88 |
-| `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tools.py:325-331; mcp/src/agents_remember/application/worktree_tools.py:334-343 |
+| The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:108-116 |
+| `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tools.py:454-459; mcp/src/agents_remember/application/worktree_tools.py:463-471 |
 | The two pre-staging refusals and reset-then-stage Dagger gate described by apply live in the extracted staged-quality owner. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:20-36; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:39-51; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
-| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:63-65; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:97-104; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:69-71; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:108-121; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:124-192 |
-| The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring_tests_2.py:120-142 |
+| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:69-71; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:108-121; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:124-192 |
+| The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring_tests_2.py:165-187 |
 | The closeout descriptions are asserted to pin quality-before-commit. | `test_closeout_tool_descriptions_pin_strict_quality_before_mutation` | mcp/tests/test_tools.py:225-239 |
 | The staged-gate behaviour the rewritten descriptions promise. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:131-209 |
 
@@ -143,7 +143,19 @@ run: full mode through the pinned Dagger executor.
 
 Worktree closeout and direct landing expose optional message fields syntactically because enabledness is route/contract/candidate-dependent; runtime validation requires each enabled field to be stripped and nonblank. Worktree preview/apply accepts code, memory, and ledger fields and returns `effectiveInput` or field-specific `invalidFields` with `resolvedPlan` and `correctedCall`. Direct landing accepts memory and ledger intent only: verified-existing code is not applicable. Each memory or ledger message is required only when its contract-derived leg is enabled; a typed not-applicable leg may omit it. Invalid input is refused before authority or Git.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `register_closeout_tools`. The public schema/composition layer exposes task-addressed controls plus explicit legacy and enclosure-adoption routes without private operation ids. Registration and payload building do not own journal state or compatibility decisions.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `register_closeout_tools` at this ownership boundary. | L37-L42 | `mcp/src/agents_remember/mcp/registration/closeout.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T11:29+02:00 — 260821-CLIVE-L1 candidate12 rebind: aligned the published
   direct-landing description with enabled-leg-dependent messages and typed not-applicable omission;

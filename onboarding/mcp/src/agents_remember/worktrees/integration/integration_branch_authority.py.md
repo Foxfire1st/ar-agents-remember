@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,19 @@ retirement guidance (`worktree_cleanup`/`worktree_abandon`).
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260821-CLIVE-L2 Unified Topology Resolution
+
+Live leaf identity validation now calls the topology's single `resolve` API with the accepted
+override set. Integration authority no longer depends on a second candidate-resolution vocabulary;
+the exact accepted task generation remains the input to one resolver boundary.
+
+| Finding | Source |
+| --- | --- |
+| Live leaf publication resolves the candidate through the unified topology API with accepted overrides. | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:788-801 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled unified topology resolution for accepted leaf overrides. Verified at code commit `1d446724`.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 

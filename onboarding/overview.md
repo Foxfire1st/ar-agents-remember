@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 
 > **Status:** active baseline
 
@@ -186,6 +186,8 @@ once for the successful bind. That context package is not addressing authority. 
 `observer/`, `serving/`, and `dashboard/src/` route overviews.
 
 ## Hot Path Summary
+
+CLIVE L2 separates current-contract admission and durable lifecycle recovery from the older queue mechanism. Public mutation consumers use one closed admission result, and normal operations are addressed by locator -> immutable enclosure manifest -> canonical root journal. The pre-L3 queue schema and its lifecycle-shaped rows are still present as transitional source state; L3 owns reducing that queue to a disposable waiting-door projection and completing task-change invalidation/rebuild. Destructive cleanup remains closed pending external terminal archive proof.
 
 **Gate honesty (260731-EFA-L2 — the seven durable contracts).** The wrapper used to list six steps of
 which three could not fail, enforce two complexity limits it had switched off, feed CRAP the wrong
@@ -851,7 +853,7 @@ lives in the `serving/` + `observer/` + `dashboard/src/` route overviews.
 
 ## Cross-Repo References
 
-This repository is currently selected into the workspace `/home/foxfire/Projects/ar-coordination` coordinator by path rules in the coordinator settings, but onboarding content should cite same-repo files for repository behavior and task files only as planning references.
+This repository is selected into an external coordination workspace by configured path rules, but onboarding content should cite same-repo files for repository behavior and task files only as planning references.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -1164,7 +1166,26 @@ L15 (hygiene sweep and review-doctrine repair) landed across the mcp application
 
 Thirty-two modules moved into four new packages (`application/task_docs/`, `models/queue/`, `worktrees/queue/`, `worktrees/integration/`); the `task_doc` special ops gained declared `TaskDocResponse` wire fields with the `_sprint_doc_identity` merge (the strict-envelope rejection bug class); `worktrees/modules/closeout.py` and `worktrees/reopen.py` refactored (`_closeout_quality_facts`, `_reopened_contract`); the orchestration-task template heading restored; the dashboard snapshot gained execution-graph/super-to-leaf fixture coverage.
 
+## 260821-CLIVE-L2 Current Architecture
+
+At repository level, L2 establishes one total configured-contract admission API and one root-local journal that owns generations, mutation/termination/legacy/direct-landing evidence. Retry/recover/cancel/revise are task-addressed and evidence-derived. Bounded schema-1 migration and pre-locator enclosure adoption are explicit, removable tools, never fallback readers. The older queue still carries transitional selected/in-flight/certified states and evidence fields in this candidate; L3, not L2, removes those rows and completes the waiting-only projection rewrite.
+
+The committed package layout mirrors those owners: public adapters are under `application/lifecycle/`; durable operation authority is under `worktrees/integration/lifecycle/`; direct landing and bounded legacy repair have isolated sibling packages; tool response models live under `models/tools/`; and start collaborators live under `worktrees/modules/startup/`. No former flattened path is retained as a compatibility surface.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Closed admission and one public projector. | L49-L67; L74-L147; L206-L244 | `mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py` |
+| Root manifest/journal location authority. | L117-L130; L133-L212; L290-L357 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py` |
+| Task-addressed lifecycle controls. | L125-L136; L149-L254 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py` |
+| Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. | L54-L132; L135-L227 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py` |
+
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the final package ownership map, repaired root evidence paths, and verified the L2 repository overview at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed the
   formatter-moved `gate_staged_code` source coordinate against accepted tree `4241908c`.

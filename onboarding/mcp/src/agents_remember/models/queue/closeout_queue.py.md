@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/queue/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,9 +70,9 @@ No configured Domain Documentation source applies.
 | --- | --- | --- |
 | The request schema enforces exact required and forbidden fields per action. | `CloseoutQueueRequest` | mcp/src/agents_remember/models/queue/closeout_queue.py:71-130 |
 | Candidate validation binds serviceable lifecycle and memory states. | `CloseoutCandidateRecord` | mcp/src/agents_remember/models/queue/closeout_queue.py:259-336 |
-| Queue state permits one lane owner (lane-occupying states), enforces blocker ownership, and makes closure quiescent. | `CloseoutQueueState`; `LANE_OCCUPYING_STATES` | mcp/src/agents_remember/models/queue/closeout_queue.py:57-57; mcp/src/agents_remember/models/queue/closeout_queue.py:355-391 |
-| The response exposes deterministic classification buckets, legal operations, leaf-placement facts, and the L13 scheduling readout fields. | `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:422-449 |
-| One unplaced/unknown leaf scheduling fact on the wire. | `LeafPlacementFact` | mcp/src/agents_remember/models/queue/closeout_queue.py:407-419 |
+| Queue state permits one lane owner (lane-occupying states), enforces blocker ownership, and makes closure quiescent. | `CloseoutQueueState`; `LANE_OCCUPYING_STATES` | mcp/src/agents_remember/models/queue/closeout_queue.py:355-391; mcp/src/agents_remember/models/queue/closeout_queue.py:57-57 |
+| The response exposes deterministic classification buckets, legal operations, leaf-placement facts, and the L13 scheduling readout fields. | `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:423-450 |
+| One unplaced/unknown leaf scheduling fact on the wire. | `LeafPlacementFact` | mcp/src/agents_remember/models/queue/closeout_queue.py:408-420 |
 
 ## Cross-Repo References
 
@@ -82,7 +82,19 @@ No meaningful cross-repository reference applies.
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `CloseoutQueueRequest`, `SchedulingGradeInput`, `SchedulingGrade`. This L2 candidate still contains the pre-L3 selected/in-flight/certified states, owner fingerprints, and closeout commit fields. The canonical journal, not those rows, owns L2 operation recovery, cancellation, worker state, direct landing, and legacy repair. L3 owns deleting the remaining lifecycle-shaped queue vocabulary and producing the final waiting-only projection.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `CloseoutQueueRequest`, `SchedulingGradeInput`, `SchedulingGrade` at this ownership boundary. | L71-L130; L133-L157; L160-L192 | `mcp/src/agents_remember/models/queue/closeout_queue.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/models/queue/closeout_queue.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 

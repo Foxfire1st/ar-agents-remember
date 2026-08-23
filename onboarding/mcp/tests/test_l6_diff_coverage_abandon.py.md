@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l6_diff_coverage_abandon.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,7 +43,19 @@ This module defines the test classes cited below; each row points at the exact s
 | Defines the class `TestAbandonBranch`. | `TestAbandonBranch` | mcp/tests/test_l6_diff_coverage_abandon.py:180-304 |
 | Defines the class `TestAbandonBranches`. | `TestAbandonBranches` | mcp/tests/test_l6_diff_coverage_abandon.py:329-336 |
 
+## 260821-CLIVE-L2 Addressable Abandon Fixture
+
+The abandon authority fixture now publishes the lifecycle-operation locator and immutable manifest
+before constructing terminal mutation authority. This keeps coverage on the normal root-journal
+address path and avoids a test-only contract-path reader.
+
+| Finding | Source |
+| --- | --- |
+| The fixture publishes lifecycle location immediately after contract publication. | mcp/tests/test_l6_diff_coverage_abandon.py:84-94 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 
 - 2026-08-16T00:10+02:00 — 260815-DAG-L4 targeted-gate repair: migrated stale
   `_abandon_branch` and `_abandon_branches` calls to the target object plus real

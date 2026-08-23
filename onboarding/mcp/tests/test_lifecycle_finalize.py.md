@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_lifecycle_finalize.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -49,7 +49,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finalizer behavior under test lives here. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:28-94 |
 | Task document read/write behavior used by the fixture lives here. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:602-716 |
 | Git fixture helpers come from the existing worktree support tests. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:767-842 |
-| Public response model registry is checked for the finalizer entry. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:223-227 |
+| Public response model registry is checked for the finalizer entry. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:223-227 |
 
 ## L23 Lifecycle Model Package Review
 
@@ -57,6 +57,8 @@ The suite imports `LifecycleFinalizeTaskResponse` from `models.lifecycles.finali
 owner. Finalization payload, registry, task-document, and blocker assertions are unchanged.
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 

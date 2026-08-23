@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -95,10 +95,10 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Provider teardown is delegated to the provider-runtime teardown function. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
-| `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_force`; `remove_empty_dir` | mcp/src/agents_remember/worktrees/modules/cleanup.py:174-195; mcp/src/agents_remember/worktrees/modules/cleanup.py:198-220; mcp/src/agents_remember/worktrees/modules/cleanup.py:262-288; mcp/src/agents_remember/worktrees/modules/cleanup.py:440-455 |
-| `WorktreeArgs` types the abandon input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:29-100 |
+| `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_force`; `remove_empty_dir` | mcp/src/agents_remember/worktrees/modules/cleanup.py:177-198; mcp/src/agents_remember/worktrees/modules/cleanup.py:201-223; mcp/src/agents_remember/worktrees/modules/cleanup.py:265-291; mcp/src/agents_remember/worktrees/modules/cleanup.py:443-458 |
+| `WorktreeArgs` types the abandon input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:31-103 |
 | The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:204-204 |
-| Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | `test_no_force_refuses_unmerged_and_reports_commits`; `test_force_discards_unmerged_branch`; `test_unmerged_branch_and_dirty_worktree_are_blockers`; `test_dry_run_lists_resources_without_touching_docker_or_disk` | mcp/tests/test_worktree_abandon.py:137-157; mcp/tests/test_worktree_abandon.py:201-212; mcp/tests/test_worktree_abandon.py:214-222; mcp/tests/test_worktree_abandon.py:226-236 |
+| Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | `test_no_force_refuses_unmerged_and_reports_commits`; `test_force_discards_unmerged_branch`; `test_unmerged_branch_and_dirty_worktree_are_blockers`; `test_dry_run_lists_resources_without_touching_docker_or_disk` | mcp/tests/test_worktree_abandon.py:201-212; mcp/tests/test_worktree_abandon.py:214-222; mcp/tests/test_worktree_abandon.py:226-236; mcp/tests/test_worktree_abandon.py:137-157 |
 | Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
 | `CleanupStatus` (declared in models/worktree.py), `ContractCells`, and `amend_contract` are the vocabulary and typed write used by the `abandoned` stamp. | "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract" | mcp/src/agents_remember/models/worktree.py:24-24; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
 
@@ -112,7 +112,19 @@ For an atomic series, `abandon_result` performs the read-only queue-release/chil
 
 Abandon now acquires the pure contract lifecycle lease and separately calls `require_lifecycle_operation_compatible` while held before terminal publication. Its abandonment behavior is otherwise unchanged; the migration removes reliance on the lease performing an active-operation census.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `abandon_result`. The public module consumes closed configured-contract admission and performs its authoritative reread at the existing mutation seam. Destructive terminal cleanup/abandon remains fail closed until external archive proof exists; no inferred locator, raw scan, or compatibility reader is permitted.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `abandon_result` at this ownership boundary. | L84-L130 | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
 

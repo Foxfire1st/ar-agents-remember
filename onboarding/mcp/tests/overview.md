@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -716,6 +716,8 @@ and `GateStore.compact`, in the owning process, is what empties it.
 
 ## Hot Path Summary
 
+L2 forcing covers every configured-contract semantic refusal across public consumers, exact admitted-object reuse, task-addressed controls, crash cuts, locator/manifest/journal contradictions, worker termination, direct landing, bounded legacy repair, task publication races, and fail-closed cleanup.
+
 The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared
 codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24
 bridge-death incident regression — three sub-agents mid-turn, multiplexed approvals answered by
@@ -1199,7 +1201,21 @@ boundary: task truth and accepted lifecycle evidence do not derive from queue ro
 retains those owners and adds full-record plus journal-byte invariance when public runtime progress
 attempts an illegal phase after valid closeout finalization; it does not add another test owner.
 
+## 260821-CLIVE-L2 Current Architecture
+
+The test route now proves advertised controls execute or safely terminate, not merely that payloads name them. It checks exact state across same-generation retry/recover/revise/cancel, direct memory-before-ledger cuts, schema/adoption separation, source-ref movement, concurrency, and destructive archive boundaries. Product execution of these tests remains the architect's Dagger gate, not part of curation.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Admission exhaustive forcing. | L197-L322; L496-L640 | `mcp/tests/test_configured_contract_admission_l2.py` |
+| Operation-control forcing. | L130-L221; L355-L741 | `mcp/tests/test_lifecycle_operation_controls_l2.py` |
+| Terminal archive boundary. | L22-L71 | `mcp/tests/test_terminal_enclosure_archive_boundary_l2.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11: no route impact; one existing store-invariant owner gained post-finalization record/journal no-effect forcing without changing the route inventory, against accepted tree `4241908c`. Verification metadata remains closeout-owned.
 

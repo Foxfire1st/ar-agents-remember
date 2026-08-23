@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l4_remaining_core_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -35,15 +35,27 @@ conflict reset, bootstrap recovery, and completed-integration proof branches.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Repository-global topology and series authority branches are forced at the production census. | `IntegrationBranchAuthorityRemainderTests` | mcp/tests/test_l4_remaining_core_coverage.py:83-401 |
-| Queue terminal and conflict-reset publication branches are forced without bypassing the queue owner. | `QueueLifecycleRemainderTests` | mcp/tests/test_l4_remaining_core_coverage.py:396-691 |
-| Bootstrap WAL and integration recovery branches preserve exact authority and durable evidence. | `BootstrapRemainderTests`; `IntegrationRecoveryRemainderTests` | mcp/tests/test_l4_remaining_core_coverage.py:694-1184 |
+| Repository-global topology and series authority branches are forced at the production census. | `IntegrationBranchAuthorityRemainderTests` | mcp/tests/test_l4_remaining_core_coverage.py:82-400 |
+| Queue terminal and conflict-reset publication branches are forced without bypassing the queue owner. | `QueueLifecycleRemainderTests` | mcp/tests/test_l4_remaining_core_coverage.py:403-698 |
+| Bootstrap WAL and integration recovery branches preserve exact authority and durable evidence. | `BootstrapRemainderTests`; `IntegrationRecoveryRemainderTests` | mcp/tests/test_l4_remaining_core_coverage.py:701-924; mcp/tests/test_l4_remaining_core_coverage.py:927-1066 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_publication_rethrows_unrelated_and_incomplete_repair_errors`, `test_surface_resolution_wraps_master_error_and_requires_super_branch`, `test_foreign_override_is_ignored`, `test_live_leaf_census_keeps_cleaned_atomic_and_refuses_sprint_reassignment`. The L2 additions force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, and organizational disposition/repair without queue-owned lifecycle evidence.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_publication_rethrows_unrelated_and_incomplete_repair_errors`, `test_surface_resolution_wraps_master_error_and_requires_super_branch`, `test_foreign_override_is_ignored`, `test_live_leaf_census_keeps_cleaned_atomic_and_refuses_sprint_reassignment`. | L83-L115; L117-L141; L143-L154; L156-L207 | `mcp/tests/test_l4_remaining_core_coverage.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 

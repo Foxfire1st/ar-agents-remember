@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/src/agents_remember/mcp/tools/lifecycle.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-06-27T22:00+02:00                      |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`         |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -66,15 +66,17 @@ state before the next AR tool call resumes the lifecycle to `running`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The singleton these builders drive through `application/lifecycle_tools`, plus the ambient requirement and the ask builder. | "def require_ambient("; "def build_ask(" | mcp/src/agents_remember/observer/ambient.py:638-638; mcp/src/agents_remember/observer/ambient.py:674-674; mcp/src/agents_remember/application/lifecycle_tools.py:3-16 |
+| The singleton these builders drive through `application/lifecycle_tools`, plus the ambient requirement and the ask builder. | "def require_ambient("; "def build_ask(" | mcp/src/agents_remember/observer/ambient.py:638-638; mcp/src/agents_remember/observer/ambient.py:674-674; mcp/src/agents_remember/application/lifecycle/lifecycle_tools.py:3-16 |
 | The `coerce_phase` boundary validator. | `coerce_phase` | mcp/src/agents_remember/observer/lifecycle_state.py:149-153 |
 | The choke point each builder returns through. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
-| Source of `FRONT_HALF_RUNDOWN`, emitted as `frontHalfRundown` on `lifecycle_start`. | `FRONT_HALF_RUNDOWN` | mcp/src/agents_remember/application/next_step.py:57-69; mcp/src/agents_remember/application/lifecycle_tools.py:41-41 |
+| Source of `FRONT_HALF_RUNDOWN`, emitted as `frontHalfRundown` on `lifecycle_start`. | `FRONT_HALF_RUNDOWN` | mcp/src/agents_remember/application/next_step.py:57-69; mcp/src/agents_remember/application/lifecycle/lifecycle_tools.py:41-41 |
 | The response models these payloads validate against. | `LifecycleResponse` | mcp/src/agents_remember/models/lifecycles/responses.py:30-35 |
 | Where these lifecycle signal tools (now including `lifecycle_turn_end_notification`) are declared — `register_lifecycle_tools`, which takes the config unused because these payloads act on the ambient lifecycle. | `register_lifecycle_tools` | mcp/src/agents_remember/mcp/registration/lifecycle.py:18-59 |
 | The design's signal surface (§1.3). | `### 1.3 Signals (the complete model-facing surface)` | docs/design/observable-lifecycle.md:71-88 |
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
 - 2026-08-04T18:13+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 6 citation rows with exact anchors and ledger-verified ranges; re-pointed the FRONT_HALF_RUNDOWN citation from the removed `mcp/tools/next_step.py` to `application/next_step.py` plus its emission site in `application/lifecycle_tools.py`, narrowed the singleton claim to the application-layer delegation, and cited the §1.3 design heading at its exact level. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 

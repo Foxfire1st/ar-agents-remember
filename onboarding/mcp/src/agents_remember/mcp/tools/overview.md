@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -68,6 +68,8 @@ Behaviour, refusal vocabularies and response shapes are unchanged throughout; on
 shape on the application-facing side moved.
 
 ## Hot Path Summary
+
+Payload builders now cover task-addressed operation controls, enclosure adoption, legacy inspect/migrate/archive, and fail-closed cleanup/abandon responses without private ids.
 
 ACPUI-L2/L4 keep `terminal.py` as the settings-owned role dispatch builder while the daemon request
 layer owns optional roleless selection. Complete role settings become `ResolvedLaunch`; missing
@@ -235,7 +237,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | What each declaration hands its builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
-| Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tool_registry.py:113-134 |
+| Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:113-134 |
 | Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests` | mcp/tests/test_models.py:16-26 |
 | Conformance test validates every builder routes through `_tool_payload`. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:751-846 |
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
@@ -355,7 +357,21 @@ The memory payload builders gained `memory_quality_check_start_payload` / `memor
 
 `tools/{core,task_doc,worktree}.py` import paths updated to the moved `application/task_docs/*`.
 
+## 260821-CLIVE-L2 Current Architecture
+
+Tool payload composition preserves the closed application result vocabulary. The layer does not catch lower reader exceptions or reconstruct lifecycle facts; it serializes already projected public evidence and executable next actions.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Lifecycle/adoption/legacy payloads. | L98-L105; L151-L169; L172-L205 | `mcp/src/agents_remember/mcp/tools/worktree.py` |
+
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: tool payload modules import paths updated to the moved packages. Verified at code commit e5cb139f.
 

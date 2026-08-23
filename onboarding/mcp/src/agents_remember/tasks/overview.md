@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -40,6 +40,8 @@ task documents, with lifecycle/enclosure bindings attached when available, so th
 planned and running work from the same JSON source (slice 3c; closes note-03 gap #8).
 
 ## Hot Path Summary
+
+Task JSON remains planning/source truth. L2 adds exact source snapshots and structural publication serialization. The application publisher still routes governed writes through the pre-L3 queue lock, so the old authoring dependency has not yet been removed; L3 owns invalidation/rebuild and the final non-subordination rule.
 
 The `task_doc` MCP tool authors documents: its application entry point
 (`application/task_doc_tools.py`) loads or creates the JSON, applies one operation,
@@ -159,14 +161,13 @@ Task documents are the canonical sprint/master/leaf identity for source lineage,
 durable lifecycle addressing. A cleaned completed leaf is first converted into an exact task-reopen
 plan, before deliberately removed descendant branches can be mistaken for lineage failure.
 
-## 260815-DAG-L3 Queue-Governed Task Facts
+## 260815-DAG-L3 Queue-Governed Task Facts (Still Transitional In CLIVE L2)
 
-Sprint, master, and leaf task-document writers now publish through the sprint queue lock whenever
-the topology is queue-managed. The short selected/in-flight lane freezes the whole sprint task-fact
-set because one addressed leaf write can synchronize its master row; an atomic blocker permits only
-topology-stable recovery inside its own master. Sprint completion additionally proves every exact
-graph master is `Completed` with no unresolved completion rows, then atomically closes the quiescent
-queue; reopening reverses that closed state through the same recoverable publication path.
+Sprint, master, and leaf task-document writers still publish through the sprint queue lock whenever
+the topology is queue-managed. The selected/in-flight lane can therefore still freeze the sprint
+task-fact set in this L2 candidate. L2 adds exact source-CAS and short integration serialization but
+does not remove this behavior. L3 owns replacing it with task-first publication followed by
+affected-candidate invalidation and waiting-only rebuild.
 
 ## 260815-DAG-L4 L4 Topology Publication Authority
 
@@ -195,7 +196,20 @@ The execution graph is now rendered as a deterministic mermaid `flowchart TD` di
 
 New `tasks/serving_preflight.py`: the served-build preflight gate (model self-probe + non-editable wheel floor 3.0.0rc8, fail-closed, L15-R4) wired before every topology-schema write. `document.py` acyclicity refusals now name the exact cycle members (F4); `document_refs.py` hosts the shared atomic node-kind rule with the L15-FIX-1 `KeyError` closure.
 
+## 260821-CLIVE-L2 Current Architecture
+
+Task writes now capture and validate their before-state and publish atomically under the short authority needed for structural/integration races. The application layer still wraps governed writes in the pre-L3 queue publisher. Full removal of authoring-time queue refusal plus task-change blast-radius invalidation and waiting-projection rebuild remain L3 work.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Task source snapshots and publication. | L23-L52; L72-L123 | `mcp/src/agents_remember/tasks/store.py` |
+| Application publication transaction. | L67-L74; L77-L197 | `mcp/src/agents_remember/application/task_docs/task_doc_publication.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: new serving_preflight served-build gate (L15-R4); named cycle-member refusals (F4); shared atomic node-kind rule (F6/L15-FIX-1). Verified at code commit de3a0fd9.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ The broad production-bound matrix covers code and external memory, linked worktr
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The focused suite owns this L4 authority boundary. | `IntegrationBranchAuthorityTests` | mcp/tests/test_integration_branch_authority.py:77-1029 |
+| The focused suite owns this L4 authority boundary. | `IntegrationBranchAuthorityTests` | mcp/tests/test_integration_branch_authority.py:86-1157 |
 
 ## Documentation References
 
@@ -42,7 +42,19 @@ No configured domain-documentation or cross-repository source applies to this fi
 
 The affected authority case now writes its contract through the canonical publication helper used by closeout identity. Branch-authority semantics are unchanged; the relationship update ensures the fixture hashes and publishes the same normalized contract representation.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_source_write_and_operation_authority_cover_exact_refusal_edges`, `test_live_leaf_collision_census_covers_terminal_and_removed_source_edges`, `test_resolves_default_super_and_every_active_series_on_both_repositories`, `test_active_atomic_task_stays_protected_without_or_after_its_series_contract`. The L2 additions force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, and organizational disposition/repair without queue-owned lifecycle evidence.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_source_write_and_operation_authority_cover_exact_refusal_edges`, `test_live_leaf_collision_census_covers_terminal_and_removed_source_edges`, `test_resolves_default_super_and_every_active_series_on_both_repositories`, `test_active_atomic_task_stays_protected_without_or_after_its_series_contract`. | L87-L144; L146-L203; L205-L223; L225-L238 | `mcp/tests/test_integration_branch_authority.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 

@@ -56,7 +56,7 @@
     "titles"
   ],
   "hotPath": {
-    "summary": "The `task_doc` MCP tool authors documents: its application entry point (`application/task_doc_tools.py`) loads or creates the JSON, applies one operation, and rewrites both the JSON and the rendered markdown through this package. Leaf writes can also plan a same-root master-row update through `master_sync.py`, so the parent master `subTasks[]` checklist follows deterministic leaf facts without overwriting manual `scope` prose. Start at `document.py` for the schema, `render.py` for the markdown shape (the `w-02-light-task-workflow` `template.md` is the spec), and `store.py` for the atomic JS...",
+    "summary": "Task JSON remains planning/source truth. L2 adds exact source snapshots and structural publication serialization. The application publisher still routes governed writes through the pre-L3 queue lock, so the old authoring dependency has not yet been removed; L3 owns invalidation/rebuild and the final non-subordination rule. The `task_doc` MCP tool authors documents: its application entry point (`application/task_doc_tools.py`) loads or creates the JSON, applies one operation, and rewrites both the JSON and the rendered markdown through this package. Leaf writes can also plan a same-root mast...",
     "candidateHints": [
       "mcp/src/agents_remember/tasks",
       "mcp/src/agents_remember/tasks/__init__.py",
@@ -93,13 +93,9 @@
       "store",
       "task_doc",
       "application/task_doc_tools.py",
-      "subTasks",
-      "scope",
-      "w-02-light-task-workflow",
-      "template.md",
+      "JSON",
       "MCP",
       "task_doc_tools",
-      "JSON",
       "mcp/src/agents_remember/tasks/",
       "route-local-overview",
       "de3a0fd9204f2e64755032274fb4e741bfddf6df",
@@ -116,6 +112,10 @@
       "worktrees",
       "layers.toml",
       "lifecycleId",
+      "subTasks",
+      "scope",
+      "w-02-light-task-workflow",
+      "template.md",
       "TaskDocument",
       "Step",
       "SubStep"

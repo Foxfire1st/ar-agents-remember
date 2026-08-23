@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/closeout_external.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash |  `eb7ea60ab9919f009fef58f81afe5861aa1709da`|
-| lastVerifiedCommitDate |  2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,14 +45,26 @@ See task `260821-CLIVE-L1` L1-R3, L1-R4, and L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| External refresh and every external commit consumer receive one effective input explicitly. | `external_closeout_commits`; `_commit_memory_content` | `mcp/src/agents_remember/worktrees/modules/closeout_external.py:49-97`; `mcp/src/agents_remember/worktrees/modules/closeout_external.py:148-187` |
-| Proven recovery consumes that same input rather than rereading transport or overwriting evidence. | `_resumed_external_outcome` | `mcp/src/agents_remember/worktrees/modules/closeout_external.py:268-286` |
-| Ledger commit intent and proof bracket its Git mutation using the explicit ledger message. | `_commit_ledger_mapping` | `mcp/src/agents_remember/worktrees/modules/closeout_external.py:209-247` |
+| External refresh and every external commit consumer receive one effective input explicitly. | `external_closeout_commits`; `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:50-96; mcp/src/agents_remember/worktrees/modules/closeout_external.py:149-194 |
+| Proven recovery consumes that same input rather than rereading transport or overwriting evidence. | `_resumed_external_outcome` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:267-285 |
+| Ledger commit intent and proof bracket its Git mutation using the explicit ledger message. | `_commit_ledger_mapping` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:210-246 |
 
 ## Cross-Repo References
 
 The external-memory worktree is another repository governed by the same closeout contract.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `external_closeout_commits`. Closeout uses closed admission, immutable generation input, root-journal mutation evidence, and same-generation recovery. Missing commit-message or other input errors are refused before authority; retries cannot amend accepted intent or strand work behind queue state.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `external_closeout_commits` at this ownership boundary. | L50-L96 | `mcp/src/agents_remember/worktrees/modules/closeout_external.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from accepted candidate tree `4241908c`; first verification stamp remains governed-closeout-owned.

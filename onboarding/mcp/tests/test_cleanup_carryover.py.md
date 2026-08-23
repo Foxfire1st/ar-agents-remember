@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_cleanup_carryover.py`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`                                               |
-| lastVerifiedCommitDate |2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../overview.md`                                    |
 
 ## Governing Overview
@@ -152,7 +152,21 @@ Cleanup/carryover tests keep the carryover-before-cleanup invariant while updati
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
+## 260821-CLIVE-L2 Pre-L5 Terminal-Gate Isolation
+
+The suite defines one test-only helper that permits cleanup and abandon past the fail-closed
+terminal archive gate. Only downstream owner tests install it; production remains blocked until L5
+provides external archive/readback proof. This keeps the candidate's recovery and cache assertions
+separate from a future master requirement.
+
+| Finding | Source |
+| --- | --- |
+| The helper patches both terminal owners to an explicit successful test result and registers cleanup. | mcp/tests/test_cleanup_carryover.py:100-116 |
+| Downstream cleanup/cache suites opt in deliberately rather than weakening production defaults. | mcp/tests/test_cleanup_carryover.py:323-943 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 
 - 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 

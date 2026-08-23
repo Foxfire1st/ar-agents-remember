@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-22T11:29+02:00               |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`       |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -239,7 +239,7 @@ themselves.
 | Terminal refusal/result production is split across the centralized spawn-refusal builder and the knob, retire, and rename result seams. | "def spawn_refusal("; "def _knob_refusal("; "def _retire_payload("; "def _rename_payload(" | mcp/src/agents_remember/application/terminal_spawn_results.py:13-31; mcp/src/agents_remember/application/terminal_tools.py:466-484; mcp/src/agents_remember/application/terminal_tools.py:917-952; mcp/src/agents_remember/application/terminal_tools.py:1090-1111 |
 | Leaf-reference refusal statuses. | `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66 |
 | Git facts, freshness, onboarding-read, and drift-status producers. | `git_facts_to_packet`; `freshness_to_packet`; `_resolve_onboarding`; `run_drift_summary` | mcp/src/agents_remember/application/read_files.py:218-247; mcp/src/agents_remember/kernel/git_facts.py:104-115; mcp/src/agents_remember/kernel/git_freshness.py:158-169; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:35-90 |
-| Invalid-contract start result. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:38-53 |
+| Invalid-contract start result. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:38-53 |
 | The suite's own producer scan and behavioural test classes. | "class GuidanceWalkTests(unittest.TestCase):"; "class ProducedLiteralTests(unittest.TestCase):"; "class AdvertisedVocabularyTests(unittest.TestCase):"; "class RecoveryGuidanceTests(unittest.TestCase):"; "class ContractBoundaryTests(unittest.TestCase):"; "class ProducerWireCrossingTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:229-229; mcp/tests/test_wire_vocabulary_exhaustiveness.py:645-645; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:43-43; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:115-115; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:153-153; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:456-456 |
 
 ## Cross-Repo References
@@ -266,6 +266,8 @@ caller to closeout preview/apply for the exact candidate-derived message plan. T
 projection contract-pure and prevents guidance from becoming a second applicability owner.
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
 - 2026-08-22T11:29+02:00 — No content impact: candidate12 adds explicit absence
   assertions after both `cross_the_wire` and `lifecycle_guidance`, strengthening the already

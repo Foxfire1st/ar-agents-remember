@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-08-01T09:48+02:00 |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb`|
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -100,7 +100,7 @@ response because a rename never touches it.
 **The status vocabularies are declared HERE, and the tool imports them — the ownership direction
 is inverted on purpose**. Everywhere else in the
 package a wire model imports its producer's alias; here that would close an import cycle,
-because `mcp.tools.base` → `models.tool_registry` → `models.terminal` is an existing edge and a
+because `mcp.tools.base` → `models.tools.tool_registry` → `models.terminal` is an existing edge and a
 `models.terminal` → `mcp.tools.terminal` import would complete the loop. The invariant the fix is
 actually for is ONE declaration, not a particular module owning it, so the aliases stay in this
 file and application producers annotate their status seams with them: `spawn_refusal(status:
@@ -127,7 +127,7 @@ of serving implementation code.
 - **One declaration per status vocabulary.** These aliases live here and
   `mcp/tools/terminal.py` imports them; do not re-type a status literal at the payload builder,
   and do not "fix" the direction by importing the tool from this module — that closes the
-  `mcp.tools.base` → `models.tool_registry` → `models.terminal` cycle.
+`mcp.tools.base` → `models.tools.tool_registry` → `models.terminal` cycle.
 - `LeafRefStatus` belongs to `worktrees.leaf_refs`; its two members are folded in by reference,
   never copied. `Literal` flattens nested aliases, so folding changes nothing on the wire.
 - The `VALID_*` frozensets must stay derived by `get_args` from their alias, never listed
@@ -156,10 +156,10 @@ No relevant external/domain documentation found; this is an internal response co
 | Application producers import and annotate the terminal aliases across the centralized spawn-refusal builder, knob-refusal check, retire result, and rename result seams. | "def spawn_refusal("; "def _knob_refusal("; "_RETIRE_OK_STATUSES: frozenset[SessionRetireStatus] ="; "def _retire_payload("; "def _rename_payload(" | mcp/src/agents_remember/application/terminal_spawn_results.py:13-31; mcp/src/agents_remember/application/terminal_tools.py:466-484; mcp/src/agents_remember/application/terminal_tools.py:911-952; mcp/src/agents_remember/application/terminal_tools.py:1090-1111 |
 | The MCP tool wrappers import the modeled spawn, retire, and rename payload aliases. | `spawn_agent_session_payload`; `session_retire_payload`; `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63; mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95 |
 | `LeafRefStatus` declares the two leaf-ref refusal members; `LeafRefResolutionError` produces those statuses, and `VALID_LEAF_REF_STATUSES` derives the runtime set from the alias. | "LeafRefStatus = Literal["; "class LeafRefResolutionError"; "VALID_LEAF_REF_STATUSES" | mcp/src/agents_remember/models/terminal.py:19-19; mcp/src/agents_remember/worktrees/leaf_refs.py:26-26; mcp/src/agents_remember/worktrees/leaf_refs.py:39-39 |
-| The response registry maps `attach_terminal_session_to_task` and `spawn_agent_session` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:140-212 |
+| The response registry maps `attach_terminal_session_to_task` and `spawn_agent_session` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:140-212 |
 | Conformance coverage includes a representative missing-session (attach) and legacy-caller-harness (spawn) refusal payload for the models. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:751-846 |
 | `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:955-1025; mcp/src/agents_remember/application/terminal_tools.py:1114-1128 |
-| The response registry maps `session_retire`/`session_rename` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
+| The response registry maps `session_retire`/`session_rename` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
 | `test_every_spawn_status_the_tool_can_return_validates` / `..._retire_status_...` / `..._rename_status_...` assert produced == declared for each of the three `VALID_*` sets. | `ProducedLiteralTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817 |
 
 ## Cross-Repo References
@@ -189,6 +189,8 @@ optional because ordinary task-binding, launch-selection, and seat outcomes do
 not manufacture ancestry evidence.
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `SpawnAgentSessionResponse` gains `spawnedByKind` (`Literal["plane","ambient","unattributed"] | None`), the caller-kind provenance `dispatch_agent` sets by caller kind; two stale citation ranges repaired to current source (`_RETIRE_OK_STATUSES` 914→921, `SessionRenameStatus` 193→194). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-12T20:10+02:00 — L23 curator: recorded `source-lineage-stale` / `source-lineage-unavailable` and their typed evidence boundary; verification remains closeout-owned.

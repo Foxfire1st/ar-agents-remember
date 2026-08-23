@@ -5,10 +5,14 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                   |
+
+## Governing Overview
+
+[MCP tools overview](overview.md)
 
 ## Purpose
 
@@ -86,7 +90,19 @@ Worktree payload builders keep closeout/integration path-explicit while start/at
 The transport adapter now imports `IntegrateStrategy` from `models.lifecycles.operation`, its
 dedicated package owner. Tool payloads, task identity, and forwarding behavior are unchanged.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload`. The public schema/composition layer exposes task-addressed controls plus explicit legacy and enclosure-adoption routes without private operation ids. Registration and payload building do not own journal state or compatibility decisions.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | L43-L53; L56-L71; L74-L83 | `mcp/src/agents_remember/mcp/tools/worktree.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

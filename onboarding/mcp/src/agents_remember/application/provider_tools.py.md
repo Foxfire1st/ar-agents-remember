@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/provider_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -133,8 +133,8 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
 | Provider status and diagnostics payload builders produce the application-facing model inputs. | `provider_status_payload`; `provider_diagnostics_payload` | mcp/src/agents_remember/mcp/tools/providers.py:33-37; mcp/src/agents_remember/mcp/tools/providers.py:40-52 |
 | The base tool payload delegates the builder output to completion without normalizing it itself. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
 | Complete tool responses validate the normalized payload. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:47-61 |
-| Finalization converts the completed response into the model-facing result. | `finalize_tool_response` | mcp/src/agents_remember/models/tool_response.py:15-26 |
-| The registry selects the response model for each provider tool. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
+| Finalization converts the completed response into the model-facing result. | `finalize_tool_response` | mcp/src/agents_remember/models/tools/tool_response.py:15-26 |
+| The registry selects the response model for each provider tool. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
 | Unit tests guard action naming (refresh rejected), the disk-disabled invalidate-indexes refusal, the always-legal stop, and worktree routing resolution. | `WatcherActionNamingTests`; `WorktreeTargetResolutionTests` | mcp/tests/test_provider_watcher_actions.py:43-77; mcp/tests/test_provider_worktree_routing.py:66-125 |
 | The launch-authority configuration exposes reload and requirement gates. | `ProviderAuthority`; `reload_provider_authority`; `require_provider_launch_authority` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:151-171; mcp/src/agents_remember/kernel/primitives/runtime_config.py:174-199; mcp/src/agents_remember/kernel/primitives/runtime_config.py:202-221 |
 | The watcher application entry point calls the launch gate. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
@@ -142,6 +142,8 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
 | Containment tests pin the launch gate's refusal and armed-path semantics. | `ReloadProviderAuthorityTests`; `QueryFunnelGateTests` | mcp/tests/test_provider_containment.py:78-121; mcp/tests/test_provider_containment.py:180-196 |
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

@@ -5,10 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[worktree modules overview](overview.md)
 
 ## Purpose
 
@@ -91,11 +95,12 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The wire model declares `IntegrationStatus` / `CleanupStatus`; worktree_contract imports them and exposes `ContractCells` / `amend_contract` as the typed amendment path. | "class ContractCells"; "def amend_contract"; "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:23-24; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
-| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:168-186; mcp/src/agents_remember/worktrees/modules/integrate.py:414-446 |
-| Leaf integration reuses its closeout proof without calling a gate; series/master integration alone runs full Dagger, with an optional settings-owned cap and enclosure-owned reports. | `quality_gate_mode`, `quality_gate_preview`, `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:48-53; mcp/src/agents_remember/worktrees/integration/integration_quality.py:56-78; mcp/src/agents_remember/worktrees/integration/integration_quality.py:81-173 |
-| The planned gate is carried in the dry-run payload and the integrated result without running on the dry-run path. | "class IntegratePreview"; `_dry_run_result`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integration_publication.py:16-22; mcp/src/agents_remember/worktrees/modules/integrate.py:339-383; mcp/src/agents_remember/worktrees/modules/integrate.py:414-446 |
-| The altitude proofs cover leaf no-rerun, series full, host-managed absence, explicit settings caps, refusal-before-merge, and dry-run preview. | `IntegrationQualityGateAltitudeTests` | mcp/tests/test_worktree_integrate_quality_gate.py:203-718 |
-| Direct legacy integration tests now prove CLI callers cannot fast-forward or classify source movement without a plane-owned operation; the remaining non-fast-forward case proves no mutation. Journaled production-path suites own successful movement and recovery. | `test_direct_integrate_cannot_fast_forward_code_or_memory`; `test_direct_integrate_cannot_classify_parallel_non_overlapping_changes`; `test_direct_integrate_cannot_classify_parallel_conflicting_changes`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:624-659; mcp/tests/test_worktree_support_tests_2.py:669-712; mcp/tests/test_worktree_support_tests_2.py:714-749; mcp/tests/test_worktree_support_tests_3.py:955-1007 |
+| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:183-206; mcp/src/agents_remember/worktrees/modules/integrate.py:434-466 |
+| Leaf integration reuses its closeout proof without calling a gate; series/master integration alone runs full Dagger, with an optional settings-owned cap and enclosure-owned reports. | `quality_gate_mode`, `quality_gate_preview`, `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:84-89; mcp/src/agents_remember/worktrees/integration/integration_quality.py:92-114; mcp/src/agents_remember/worktrees/integration/integration_quality.py:117-211 |
+| The planned gate is carried in the typed dry-run payload without executing publication. | `IntegratePreview`; `_dry_run_result` | mcp/src/agents_remember/worktrees/modules/integration_publication.py:30-35; mcp/src/agents_remember/worktrees/modules/integrate.py:359-403 |
+| The integrated result records the completed publication outcome. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:434-466 |
+| The altitude proofs cover leaf no-rerun, series full, host-managed absence, explicit settings caps, refusal-before-merge, and dry-run preview. | `IntegrationQualityGateAltitudeTests` | mcp/tests/test_worktree_integrate_quality_gate.py:212-743 |
+| Direct legacy integration tests now prove CLI callers cannot fast-forward or classify source movement without a plane-owned operation; the remaining non-fast-forward case proves no mutation. Journaled production-path suites own successful movement and recovery. | `test_direct_integrate_cannot_fast_forward_code_or_memory`; `test_direct_integrate_cannot_classify_parallel_non_overlapping_changes`; `test_direct_integrate_cannot_classify_parallel_conflicting_changes`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:634-669; mcp/tests/test_worktree_support_tests_2.py:679-722; mcp/tests/test_worktree_support_tests_2.py:724-759; mcp/tests/test_worktree_support_tests_3.py:955-1007 |
 
 As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the application entry point) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
 
@@ -132,7 +137,19 @@ input. A completed contract without that durable tuple may still be previewed re
 refuses before queue completion; immutable integration authority or self-asserted completed fields
 alone are not recovery evidence.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `handover_gate_guard`, `unmatched_handover_gate_warning`, `blocked_integration_payload`. Integration transfers authority from the waiting-door projection into the journal, revalidates configured contract and protected refs at the mutation boundary, and records publication evidence. Source-ref movement must reconcile or complete the same generation.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `handover_gate_guard`, `unmatched_handover_gate_warning`, `blocked_integration_payload` at this ownership boundary. | L115-L141; L144-L180; L183-L206 | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

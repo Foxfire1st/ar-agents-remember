@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_branch_authority_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ Tests bind real journal/queue/config facts and explicitly exercise no-ambient-ch
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The focused suite owns this L4 authority boundary. | `IntegrationBranchAuthorityEdgeTests` | mcp/tests/test_integration_branch_authority_edges.py:74-1149 |
+| The focused suite owns this L4 authority boundary. | `IntegrationBranchAuthorityEdgeTests` | mcp/tests/test_integration_branch_authority_edges.py:79-1087 |
 
 ## Documentation References
 
@@ -47,7 +47,19 @@ No configured domain-documentation or cross-repository source applies to this fi
 
 Affected edge cases use canonical effective closeout input and contract publication rather than the retired raw operation-input fields. The suite continues to force integration branch authority and terminal edges; lifecycle compatibility is now called explicitly under the pure serialization lease.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_carryover_authority_refuses_each_configured_repository_mismatch`, `test_series_attach_is_not_an_integration_branch_workbench`, `test_lowest_worktree_creator_refuses_series_code_and_memory`, `test_terminal_series_cleanup_refuses_symbolic_branch_aliases`. The L2 additions force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, and organizational disposition/repair without queue-owned lifecycle evidence.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_carryover_authority_refuses_each_configured_repository_mismatch`, `test_series_attach_is_not_an_integration_branch_workbench`, `test_lowest_worktree_creator_refuses_series_code_and_memory`, `test_terminal_series_cleanup_refuses_symbolic_branch_aliases`. | L80-L140; L142-L149; L151-L168; L170-L212 | `mcp/tests/test_integration_branch_authority_edges.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 

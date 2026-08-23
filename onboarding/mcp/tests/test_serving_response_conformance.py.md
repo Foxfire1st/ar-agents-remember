@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb`         |
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -247,7 +247,21 @@ leaf whose source is the master's work branch. Public response checks therefore
 exercise the same task-derived ancestry topology as production instead of a
 standalone leaf branch.
 
+## 260821-CLIVE-L2 Addressable Fixtures and Readiness Boundary
+
+Series and leaf fixtures now place their worktree-group enclosure roots independently of task-side
+contract paths, then publish locators/manifests for both. The request client also crosses one
+bounded projector-readiness boundary before checking route models, preventing startup timing from
+being mistaken for response-contract failure.
+
+| Finding | Source |
+| --- | --- |
+| Series and leaf fixtures publish the normal lifecycle address chain from their enclosure roots. | mcp/tests/test_serving_response_conformance.py:427-479 |
+| The shared client waits only through the bounded 503 readiness window and then requires 200. | mcp/tests/test_serving_response_conformance.py:829-909 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 curator: repaired the `_present_fields` citation range (terminal_catalog.py:597 → 600) surfaced by the leaf-scoped quality check; no content impact. Verification metadata remains closeout-owned.
 

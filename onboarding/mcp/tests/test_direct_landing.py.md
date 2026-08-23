@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T11:29+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,13 +65,13 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The direct landing policy gate and leaf refusal. | `test_direct_landing_is_policy_gated`; `test_direct_landing_refuses_leaf_contracts` | mcp/tests/test_direct_landing.py:138-153; mcp/tests/test_direct_landing.py:155-168 |
-| Code-commit verification then ledger/memory commit. | `test_direct_landing_verifies_code_commit_then_ledger` | mcp/tests/test_direct_landing.py:170-232 |
-| Pre-commit gate refuses a moved candidate tree. | `test_direct_landing_precommit_gate_refuses_moved_candidate` | mcp/tests/test_direct_landing.py:234-257 |
-| Internal-memory preview accepts omitted N/A messages; apply refuses the unsupported mutation boundary. | `test_preview_with_internal_memory_reports_mode`; `test_apply_with_internal_memory_is_refused` | mcp/tests/test_direct_landing.py:392-413; mcp/tests/test_direct_landing.py:463-482 |
-| Idempotent re-land and conflicting-mapping refusal. | `test_reland_with_matching_memory_commit_is_idempotent`; `test_reland_with_conflicting_ledger_mapping_is_refused` | mcp/tests/test_direct_landing.py:526-559; mcp/tests/test_direct_landing.py:561-590 |
-| Branch-addressed route-review stamp equals branch HEAD tree. | `test_record_route_review_branch_addressed_stamps_branch_head` | mcp/tests/test_direct_landing.py:649-687 |
-| The operation under test. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:82-152 |
+| The direct landing policy gate and leaf refusal. | `test_direct_landing_is_policy_gated`; `test_direct_landing_refuses_leaf_contracts` | mcp/tests/test_direct_landing.py:154-171; mcp/tests/test_direct_landing.py:173-193 |
+| Code-commit verification then ledger/memory commit. | `test_direct_landing_verifies_code_commit_then_ledger` | mcp/tests/test_direct_landing.py:195-265 |
+| Pre-commit gate refuses a moved candidate tree. | `test_direct_landing_precommit_gate_refuses_moved_candidate` | mcp/tests/test_direct_landing.py:267-291 |
+| Internal-memory preview accepts omitted N/A messages; apply refuses the unsupported mutation boundary. | `test_preview_with_internal_memory_reports_mode`; `test_apply_with_internal_memory_is_refused` | mcp/tests/test_direct_landing.py:434-456; mcp/tests/test_direct_landing.py:525-545 |
+| Idempotent re-land and conflicting-mapping refusal. | `test_reland_with_matching_memory_commit_is_idempotent`; `test_reland_with_conflicting_ledger_mapping_is_refused` | mcp/tests/test_direct_landing.py:593-625; mcp/tests/test_direct_landing.py:627-664 |
+| Branch-addressed route-review stamp equals branch HEAD tree. | `test_record_route_review_branch_addressed_stamps_branch_head` | mcp/tests/test_direct_landing.py:725-763 |
+| The operation under test. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:111-123 |
 
 ## Cross-Repo References
 
@@ -86,7 +86,19 @@ the unsupported mutation boundary before Git. The suite's route-review and landi
 remains, but any former “atomic” characterization is retired: the lock serializes the two
 sequential external-memory commits and does not supply rollback or crash recovery.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_direct_landing_is_policy_gated`, `test_direct_landing_refuses_leaf_contracts`, `test_direct_landing_verifies_code_commit_then_ledger`, `test_direct_landing_precommit_gate_refuses_moved_candidate`. The L2 additions force the root-journal generation, ordered memory/ledger mutation evidence, configured-contract reread, crash reconciliation, and same-generation recovery. Older statements that durable recovery is absent are superseded.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_direct_landing_is_policy_gated`, `test_direct_landing_refuses_leaf_contracts`, `test_direct_landing_verifies_code_commit_then_ledger`, `test_direct_landing_precommit_gate_refuses_moved_candidate`. | L154-L171; L173-L193; L195-L265; L267-L291 | `mcp/tests/test_direct_landing.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T11:29+02:00 — 260821-CLIVE-L1 candidate12 rebind: corrected the
   overbroad explicit-message claim and recorded internal-memory omission as typed not-applicable,

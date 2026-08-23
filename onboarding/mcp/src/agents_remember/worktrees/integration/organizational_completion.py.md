@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing overview](../../../overview.md)
+[governing route overview](overview.md)
 
 ## Purpose
 
@@ -35,17 +35,29 @@ Computes and publishes the exact completion proof for a branchless organizationa
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Exact final-leaf plan requires sibling code/memory/ledger proof and sprint integrationBranch. | `organizational_completion_plan` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:87-144 |
-| Scope validation pins executionNature, owning master, and canonical child. | `_completion_scope` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:147-183 |
-| Sibling code ancestry is re-proved against the sprint super. | `_require_landed_sibling` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:307-343 |
-| Sibling memory ancestry and unique ledger mapping are enforced. | `_require_landed_sibling_memory`, `_sibling_memory_mappings` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:376-385; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:413-443 |
-| Master completion is published only with the exact certified fingerprint. | `publish_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:229-264 |
+| Exact final-leaf plan requires sibling code/memory/ledger proof and sprint integrationBranch. | `organizational_completion_plan` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:134-191 |
+| Scope validation pins executionNature, owning master, and canonical child. | `_completion_scope` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:194-230 |
+| Sibling code ancestry is re-proved against the sprint super. | `_require_landed_sibling` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:486-522 |
+| Sibling memory ancestry and unique ledger mapping are enforced. | `_require_landed_sibling_memory`, `_sibling_memory_mappings` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:555-564; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:592-622 |
+| Master completion is published only with the exact certified fingerprint. | `publish_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:336-370 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `OrganizationalCompletionError`, `OrganizationalCompletionPublicationError`, `OrganizationalCompletionPublicationState`. Organizational completion and repair are canonical integration-journal transitions with exact candidate, ref, quality, and cancellation evidence. The queue may schedule a door candidate but does not own failure repair or reopening lifecycle state.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `OrganizationalCompletionError`, `OrganizationalCompletionPublicationError`, `OrganizationalCompletionPublicationState` at this ownership boundary. | L38-L39; L42-L55; L59-L81 | `mcp/src/agents_remember/worktrees/integration/organizational_completion.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/integration/organizational_completion.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_projection_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |                                                `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -92,7 +92,19 @@ No meaningful cross-repo references found.
 `LandingProjectionHotPathTests` now proves a heartbeat replaces only landing rows from published
 landing authority while contract, guidance, and other status facts retain identity and value.
 
+## 260821-CLIVE-L2 Shared-Pass Addressability
+
+The scaling fixture publishes a locator and immutable manifest for every generated contract before
+the shared projection pass. Scaling assertions therefore measure normal root-journal discovery
+rather than direct task-side contract scanning.
+
+| Finding | Source |
+| --- | --- |
+| Every scaling contract is made lifecycle-addressable during fixture construction. | mcp/tests/test_projection_scaling_cs6.py:630-644 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -106,15 +106,15 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The typed row model (`masterRef`) and first-class `SprintSeat` schema this module writes. | `SubTaskRef`; `SprintSeat`; `TaskDocument` | mcp/src/agents_remember/tasks/document.py:537-573; mcp/src/agents_remember/tasks/document.py:602-716 |
-| The typed-linkage cross-check and altitude role sets this module relies on. | `validate_sprint_linkage` | mcp/src/agents_remember/tasks/document_refs.py:288-341 |
-| The tool-layer registration and operation routing. | `_register_task_document_tools`; `_special_task_doc_operation` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:417-473; mcp/src/agents_remember/mcp/registration/tasks.py:173-209 |
-| The shared judgment verifier and completion gate. | `verify_sprint_judgment_ids`; `require_commanded_masters_completed` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:398-439; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:739-759 |
-| The rollback-safe atomic batch writer and the queue publication lane. | `write_task_doc_batch`; `publish_sprint_update` | mcp/src/agents_remember/tasks/store.py:50-90; mcp/src/agents_remember/controlplane/closeout_queue_store.py:190-258 |
-| The single-owner authority gate admitting this module as a task-document writer. | `TASK_DOCUMENT_WRITER_AUTHORITIES` | mcp/src/agents_remember/code_quality/single_owner.py:38-50 |
-| The linkage preflight wraps the served-build check in the linkage error family (L15-R4). | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:85-91 |
-| The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. | `collect_linkage_facts`; `_row_facts` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:323-346; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:753-798 |
-| The F8 behaviors are pinned by the forcing suite (sprint exclusion; seat-row edge shapes). | `test_report_does_not_flag_a_sprint_as_uncommanded_master`; `test_report_seat_row_edge_shapes` | mcp/tests/test_task_sprint_linkage.py:519-540; mcp/tests/test_task_sprint_linkage.py:988-1015 |
+| The typed row model (`masterRef`) and first-class `SprintSeat` schema this module writes. | `SubTaskRef`; `SprintSeat`; `TaskDocument` | mcp/src/agents_remember/tasks/document.py:614-627; mcp/src/agents_remember/tasks/document.py:633-663; mcp/src/agents_remember/tasks/document.py:679-804 |
+| The typed-linkage cross-check and altitude role sets this module relies on. | `validate_sprint_linkage` | mcp/src/agents_remember/tasks/document_refs.py:311-361 |
+| The public tool-layer operation routing. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:198-301 |
+| The shared judgment verifier and completion gate. | `verify_sprint_judgment_ids`; `require_commanded_masters_completed` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:434-475; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:775-795 |
+| The rollback-safe batch writer and exact task publication transaction. | `write_task_doc_batch`; `publish_task_doc_set` | mcp/src/agents_remember/tasks/store.py:126-167; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:77-116 |
+| The single-owner authority gate admitting this module as a task-document writer. | `TASK_DOCUMENT_WRITER_AUTHORITIES` | mcp/src/agents_remember/code_quality/single_owner.py:40-53 |
+| The linkage preflight wraps the served-build check in the linkage error family (L15-R4). | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:93-99 |
+| The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. | `collect_linkage_facts`; `_row_facts` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:357-380; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:820-865 |
+| The F8 behaviors are pinned by the forcing suite (sprint exclusion; seat-row edge shapes). | `test_report_does_not_flag_a_sprint_as_uncommanded_master`; `test_report_seat_row_edge_shapes` | mcp/tests/test_task_sprint_linkage.py:540-562; mcp/tests/test_task_sprint_linkage.py:1010-1043 |
 
 ## 260815-DAG-L14 Linkage Boundary
 
@@ -140,7 +140,19 @@ missing rows. Both F8 behaviors are test-pinned (the sprint-exclusion test and t
 seat-row edge-shapes test).
 
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall`. L2 adds exact accepted-source transaction validation beneath the existing queue-governed linkage publisher. The queue refusal remains current transitional behavior; the task-change-to-queue invalidation/rebuild transaction is L3 scope.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall` at this ownership boundary. | L106-L107; L111-L119; L173-L181 | `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 

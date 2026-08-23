@@ -5,43 +5,42 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP overview](../../../overview.md)
+[governing route overview](overview.md)
 
 ## Purpose
 
-Connects the durable queue to task-fact publication and the closeout/integration lifecycle without
-making domain modules depend on the public MCP application handler.
+Owns the transitional pre-L3 queue transitions that bind a selected candidate to closeout
+claim/certification, plus short queue/repository serialization used by atomic-series terminal
+guards. L2 removed the former integration claim/consume and broad task-publication lifecycle
+surface, but the remaining candidate states, owner fingerprint, and exact closeout commit fields
+are still lifecycle-shaped queue data pending L3 removal.
 
 ## Code Commentary
 
 ### Logic
 
-The service resolves durable queue bindings from the leaf contract, routes governed task
-publications through the sprint store lock, claims selected candidates for closeout, certifies exact
-closeout commits, claims certified candidates for integration, revalidates the same graph/evidence
-immediately before source refs move, consumes the record after landing, and releases reversible
-failed/cancelled operations. Internal transitions use stable request ids and one-way owner proofs.
+The service resolves the sprint/candidate queue binding from current topology, claims a selected
+candidate for closeout, and certifies it only when exact commits and the contract-owned claimed
+door agree. Conflict resolution retires one stale certified projection and publishes the exact
+reset contract. The transitional row persists a one-way owner fingerprint and exact contract
+closeout commits; L2 no longer treats those duplicated facts as authority for operation recovery,
+worker state, cancellation, revision, or integration publication. Atomic-series terminal guards
+still use short queue/repository serialization.
 
-Durable queue-completion evidence (`integration_queue_completion_evidence`) is persisted before a
-candidate is consumed, and the completion event is centralized in `_integration_completion_event`.
-
-Since 260815-DAG-L13 the atomic-series terminal publication and master completion gates resolve the
-**effective** execution nature (`scheduling_mode.effective_execution_nature`) instead of the
-declared cell — a nature-less legacy master executes atomically under the atomic-sequential default
-and retires without migration (L13-R5a), and a graph-less sprint has no queue authority to release
-(L13-R1), so publication returns directly. The irreversible integration boundary names
-`recovery: worktree_sync` when refusal blockers are stale bases (L13-R2), and claiming integration
-while another candidate owns the lane adds an `integration-lane-owned-by` blocker (a certified
-candidate no longer occupies the lane). `complete_queue_candidate_integration` now returns the
-stale-by-evidence sibling facts for the integrate result payload. The never-used
-`require_queue_candidate_current` diagnostic helper was removed.
+The atomic-series terminal publication gate resolves the **effective** execution nature
+(`scheduling_mode.effective_execution_nature`) instead of the declared cell: a nature-less legacy
+master executes atomically under the atomic-sequential default, while a graph-less sprint has no
+queue authority to release. CLIVE L2 removes the former queue-owned integration claim/completion
+and stale-sibling return seams from this module; integration now transfers once into the root
+journal. Closeout claim/certification and atomic terminal serialization remain transitional until
+L3.
 
 ### Conventions
 
@@ -51,11 +50,12 @@ missing/damaged topology or state fails closed.
 ### Invariants And Boundaries
 
 - The graph is recomputed while the queue lock is held for every claim/certify/final transition.
-- Integration moves only the commits certified by the same candidate record.
-- Reversible failure/cancellation releases to `declared` or `certified`; post-boundary state is not
-  silently rewound.
-- Successful integration consumes the exact candidate idempotently and reports stale-by-evidence
-  siblings as facts with `worktree_sync` as their recovery.
+- Closeout certification requires the exact candidate commits and claimed door generation.
+- Operation cancellation/recovery/revision, worker termination, and integration publication are
+  journal-owned L2 seams outside this module. The remaining owner/commit fields here are
+  transitional pre-L3 duplicates, not recovery authority.
+- A stale certified projection is retired only through the explicit conflict-resolution
+  transaction and exact reset-contract evidence.
 - Atomic-nature gates read the effective nature: the atomic-sequential default resolves a
   nature-less master to atomic, and a graph-less sprint carries no queue authority to release.
 - Atomic-series terminal mutation receives an ephemeral permit only while the sprint queue and
@@ -75,14 +75,11 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closeout claim binds the plane-owned lifecycle operation to the selected candidate. | `claim_queue_candidate_for_closeout` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:406-420 |
-| Atomic-series terminal publication mints and revokes the exact non-replayable permit under queue/repository authority. | `publish_atomic_series_terminal_under_authority` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:205-228 |
-| Terminal mutation verifies both context-local and issuer-owned permit liveness. | `require_atomic_series_terminal_permit` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:231-248 |
-| Integration claim binds the same operation to the certified candidate. | `claim_queue_candidate_for_integration` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:442-458 |
-| Irreversible integration revalidates current graph, candidate, readiness, and exact commits under the queue lock. | `require_queue_candidate_for_integration` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:461-486 |
-| Landing consumes the exact lifecycle-owned candidate idempotently and returns stale-by-evidence sibling facts. | `complete_queue_candidate_integration` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:576-643 |
-| Reversible terminal operations release internal ownership safely. | `release_queue_candidate_after_reversible_operation` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:740-807 |
-| Closeout certification refreshes curator evidence and binds the exact committed result. | `_certify_closeout` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:1040-1077 |
+| Closeout claim correlates the selected projection with the journal owner without copying lifecycle evidence. | `claim_queue_candidate_for_closeout` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:389-403 |
+| Closeout certification is one explicit projection transition. | `certify_queue_candidate_closeout` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:406-422 |
+| Conflict resolution retires one stale certified projection and binds the exact reset contract. | `prepare_queue_candidate_conflict_resolution` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:425-507 |
+| Atomic-series terminal publication mints and revokes the exact non-replayable permit under queue/repository authority. | `publish_atomic_series_terminal_under_authority` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:188-211 |
+| Terminal mutation verifies both context-local and issuer-owned permit liveness. | `require_atomic_series_terminal_permit` | mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py:214-231 |
 
 ## Cross-Repo References
 
@@ -92,7 +89,19 @@ No meaningful cross-repository reference applies.
 
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `AtomicSeriesTerminalPermit`, `QueueBinding`, `contract_queue_binding`. The module still implements pre-L3 closeout claim/certification and atomic-series queue serialization. L2 removes integration claim/consume and keeps recovery/generation/worker evidence in the root journal; L3 owns deletion of the remaining lifecycle-shaped queue transitions and waiting-only rebuild.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `AtomicSeriesTerminalPermit`, `QueueBinding`, `contract_queue_binding` at this ownership boundary. | L69-L74; L103-L105; L131-L178 | `mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 

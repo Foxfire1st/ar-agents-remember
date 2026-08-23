@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -79,7 +79,20 @@ while the production start path can route the same planned write through queue g
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
+## 260821-CLIVE-L2 Start Publication Seam
+
+The reopened-start test now patches `publish_new_lifecycle_operation_location` on the start owner,
+not the lower contract writer. The assertion boundary therefore follows the canonical bootstrap
+sequence: task/contract preparation may occur, but lifecycle state becomes discoverable only when
+the enclosure-root locator and immutable manifest are published.
+
+| Finding | Source |
+| --- | --- |
+| Start-after-reopen forcing intercepts the lifecycle-location publication owner. | mcp/tests/test_task_reopen.py:870-892 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 

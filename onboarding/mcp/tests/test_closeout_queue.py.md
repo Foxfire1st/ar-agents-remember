@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,12 +54,12 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Core queue tests cover categorical ordering and graph/leaf ties. | `test_explicit_grades_order_ready_candidates_by_graph_then_leaf_tie` | mcp/tests/test_closeout_queue.py:619-640 |
-| Internal and disabled memory modes use explicit not-applicable readiness. | `test_internal_and_disabled_memory_modes_use_explicit_not_applicable_readiness` | mcp/tests/test_closeout_queue.py:649-662 |
-| Blocker and predecessor logistics remain separate from scheduling judgment. | `test_predecessors_and_atomic_blocker_control_logistics_not_judgment` | mcp/tests/test_closeout_queue.py:718-761 |
-| Candidate/evidence drift fails closed. | `test_candidate_and_evidence_drift_fail_closed` | mcp/tests/test_closeout_queue.py:798-809 |
-| WAL publication retry and request receipts are exercised behaviorally. | `test_mutations_require_stable_request_id_and_retry_after_wal_publish` | mcp/tests/test_closeout_queue.py:950-992 |
-| Sprint completion publication is serialized with queue quiescence. | `test_sprint_completion_publication_is_serialized_with_queue_quiescence` | mcp/tests/test_closeout_queue.py:1138-1167 |
+| Core queue tests cover categorical ordering and graph/leaf ties. | `test_explicit_grades_order_ready_candidates_by_graph_then_leaf_tie` | mcp/tests/test_closeout_queue.py:618-639 |
+| Internal and disabled memory modes use explicit not-applicable readiness. | `test_internal_and_disabled_memory_modes_use_explicit_not_applicable_readiness` | mcp/tests/test_closeout_queue.py:648-661 |
+| Blocker and predecessor logistics remain separate from scheduling judgment. | `test_predecessors_and_atomic_blocker_control_logistics_not_judgment` | mcp/tests/test_closeout_queue.py:717-759 |
+| Candidate/evidence drift fails closed. | `test_candidate_and_evidence_drift_fail_closed` | mcp/tests/test_closeout_queue.py:797-806 |
+| WAL publication retry and request receipts are exercised behaviorally. | `test_mutations_require_stable_request_id_and_retry_after_wal_publish` | mcp/tests/test_closeout_queue.py:925-967 |
+| Sprint completion publication is serialized with queue quiescence. | `test_sprint_completion_publication_is_serialized_with_queue_quiescence` | mcp/tests/test_closeout_queue.py:1113-1142 |
 | Segment-graph queue scheduling and leaf-placement fact reporting split out under the file-size rail. | `SegmentGraphQueueTests` | mcp/tests/test_closeout_queue_segments.py:17-106 |
 
 ## Cross-Repo References
@@ -70,7 +70,19 @@ No meaningful cross-repository reference applies.
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_explicit_grades_order_ready_candidates_by_graph_then_leaf_tie`, `test_ungraded_candidates_are_visible_but_cannot_be_selected`, `test_internal_and_disabled_memory_modes_use_explicit_not_applicable_readiness`, `test_request_shape_and_persisted_text_are_bounded`. This suite still exercises the transitional pre-L3 queue schema. L2's root journal owns the new recovery controls, but the tests do not prove a waiting-only queue; L3 owns that schema reduction.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_explicit_grades_order_ready_candidates_by_graph_then_leaf_tie`, `test_ungraded_candidates_are_visible_but_cannot_be_selected`, `test_internal_and_disabled_memory_modes_use_explicit_not_applicable_readiness`, `test_request_shape_and_persisted_text_are_bounded`. | L618-L639; L641-L646; L648-L661; L663-L698 | `mcp/tests/test_closeout_queue.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 

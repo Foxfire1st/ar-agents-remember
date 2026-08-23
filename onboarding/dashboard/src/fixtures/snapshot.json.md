@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-24T00:21+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-The dashboard's stand-in for the server: one `WorkspaceProjection` payload, 764 lines, shaped like the
+The dashboard's stand-in for the server: one hand-maintained `WorkspaceProjection` payload shaped like the
 persisted `latest-state.json`. Three things read it — `test/contract.test.ts` (which measures the
 TypeScript mirror against it in three directions), `test/fixtures/wire.ts` (which takes every builder
 base from it), and `data/store.test.ts`; `e2e-production/cockpit.production.spec.ts` reads it off disk.
@@ -43,9 +43,12 @@ fixture, so the dev-server exercises the sprint → master navigation for real);
 document defaults `seats: []`.
 
 L23 extends the manual sample with lifecycle-operation rows covering both operation kinds and every
-closed status and phase member. The sample carries public progress/result/failure/guidance fields
-but no operation key, candidate fingerprint, approval claim, or worker PID, preserving the
-producer's private-plane boundary while making the generated dashboard contract measurable.
+closed status and phase member. L2 keeps every sampled operation aligned with the generated
+contract's required `legalControls` array; one failed closeout also samples optional `generation`
+and a `recover` control so the opaque control-object site is non-vacuous. The sample carries public
+progress/result/failure/guidance fields but no operation key, candidate fingerprint, approval claim,
+or worker PID, preserving the producer's private-plane boundary while making the generated
+dashboard contract measurable.
 
 ## Code Commentary
 
@@ -54,17 +57,19 @@ producer's private-plane boundary while making the generated dashboard contract 
 Top-level keys in wire order: `version` (1), `generatedAt`, `lifecycles`, `enclosures`, `providers`,
 `activeWorktreeGroups`, `metrics`, `analytics`.
 
-- **cit:([`lifecycles`], dashboard/src/fixtures/snapshot.json:1618-1618) — six rows, one per state.** `blocked-001`, `running-000`, `paused-002`,
+- **cit:([`lifecycles`], dashboard/src/fixtures/snapshot.json:1640-1640) — six rows, one per state.** `blocked-001`, `running-000`, `paused-002`,
   `awaiting-003`, `completed-004`, `abandoned-005`, and their phases spread across all six of `build`,
   `reframe-research`, `request`, `trust-checkpoint`, `decide`, `close`. Two rows carry a `gate`
   (`GATE-1` open with `decisions: ["approve","revise"]`, `GATE-0` decided), both with a non-empty
   `evidenceRefs`. Every row carries `stateEnteredAt`. The `awaiting-developer` row is the state the
   mirror had never declared, and it is here so the vocabulary check can bite.
-- **cit:(["\"enclosures\": ["], dashboard/src/fixtures/snapshot.json:1137-1137)** — one enclosure; **two providers** (a code provider and
-  a memory provider) are pinned by cit:(["\"snapshotStaleSeconds\": 3.5"], dashboard/src/fixtures/snapshot.json:1790-1790),
+- **cit:(["\"enclosures\": ["], dashboard/src/fixtures/snapshot.json:1137-1137)** — seventeen
+  enclosures spanning the base failure sample plus every lifecycle-operation status/phase fixture;
+  **two providers** (a code provider and a memory provider) are pinned by
+  cit:(["\"snapshotStaleSeconds\": 3.5"], dashboard/src/fixtures/snapshot.json:1812-1812),
   joined by `worktreeGroup: "sim-group"`; **cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:2-2)** —
   `["sim-group"]`.
-- **cit:([`metrics`], dashboard/src/fixtures/snapshot.json:1761-1761)** — `lifecycleCount: 6`, one bucket per LIVE state (`runningCount`,
+- **cit:([`metrics`], dashboard/src/fixtures/snapshot.json:1783-1783)** — `lifecycleCount: 6`, one bucket per LIVE state (`runningCount`,
   `blockedCount`, `pausedCount`, `awaitingDeveloperCount`, each 1), `totalTokens: 2800`, and a
   `stalenessHistogram` of `{ fresh, aging }`. The four buckets are exactly the keys `metricsFor([])`
   produces, which is what `contract.test.ts` asserts set-equality on — the terminal pair deliberately
@@ -88,11 +93,11 @@ than per path, and this file is built to that requirement:
 | `PROCESS_HEALTHS` | 8 | one health per `engineProcesses` pod |
 | `PROCESS_FACT_STATES` | 6 | pooled across six registered paths — the four commit refs, `providers[].factState`, `landing[].factState` |
 
-Likewise the seven absorbing nodes named in `INDEX_SIGNATURE_SITES` each carry at least one served
-value here (`lifecycles[].ask`, `gate.packet`, `gate.evidenceRefs[]`, `metrics.stalenessHistogram`,
-`driftSnapshots[].counts`, `setupSummaries[].resultCounts`, `engineProcesses[].retryArgs`) — a wall in
-the type-level walk that the payload omitted would be an unreportable gap, so the assertion demands the
-node be present.
+Likewise the ten absorbing nodes named in `INDEX_SIGNATURE_SITES` each carry at least one served
+value here. In addition to the original lifecycle, gate, metrics, drift, setup, and retry payloads,
+the current sample reaches lineage-recovery `args`, lifecycle-operation `result`, and a non-empty
+`legalControls[]` object. A wall in the type-level walk that the payload omitted would be an
+unreportable gap, so the assertion demands every named node be present.
 
 ### Conventions
 
@@ -104,6 +109,8 @@ node be present.
 - Non-uniform on purpose. Arrays are keyed by TYPE in the mirror walk, so one lifecycle carrying
   `staleSeconds` samples it for all of them. The payload does not have to be uniform; it has to be
   COMPLETE between its rows.
+- Every sampled `lifecycleOperation` carries `legalControls`; empty lists express no advertised
+  control for that row, while the failed closeout's `recover` object samples the opaque element type.
 - Timestamps sit in a single fabricated window around `2026-06-14T09:00`, and identifiers are
   `sim-`/`SIM`-prefixed, so nothing in it reads as a captured production workspace.
 
@@ -120,6 +127,9 @@ node be present.
   states, 2 of 6 phases and 1 of 3 severities, so deleting `"close"` from `PHASES` produced zero
   failures. `contract.test.ts` now asserts set-equality between each vocabulary and what the fixture
   samples, so both dropping a member from the mirror and dropping its sample from here fail.
+- **Required fields and optional branches are separate coverage duties.** All 17 operation rows carry
+  `legalControls`; at least one row carries optional `generation`, and at least one control object is
+  non-empty so the open payload boundary is actually reached.
 - **The rows the builders anchor on must keep existing.** `fixtures/wire.ts` calls `demandServed(…)` on
   `lifecycles[0]`, `enclosures[0]`, `providers[0]`, `analytics.taskDocuments[0]`,
   `analytics.engineProcesses[0]`, `analytics.agentPickups[0]`, `analytics.attentionQueue[0]`, and a
@@ -160,15 +170,16 @@ absent from the file rather than present as `null`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:1618-1618 |
+| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:1640-1640 |
 | One enclosure, two providers, and the `activeWorktreeGroups` join value. | `activeWorktreeGroups` | dashboard/src/fixtures/snapshot.json:2-2 |
-| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:1761-1761 |
+| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:1783-1783 |
 | All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `analytics` | dashboard/src/fixtures/snapshot.json:5-5 |
 | The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:156-162 |
 | The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 | The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:367-381 |
 | The derived `VOCABULARIES` registry (11 paths, 6 vocabularies) and the full-coverage assertion this payload is composed to satisfy. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:268-293 |
-| `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:221-229 |
+| All 17 sampled lifecycle operations carry `legalControls`; the failed closeout also samples optional `generation` and a non-empty `recover` control. | `lifecycleOperation`; `legalControls`; `generation` | dashboard/src/fixtures/snapshot.json:1160-1182; dashboard/src/fixtures/snapshot.json:1201-1629 |
+| `INDEX_SIGNATURE_SITES` — the ten absorbing nodes this payload must carry a value at, including lifecycle result and opaque legal-control payloads. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:224-238 |
 | `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:186-186 |
 | The provenance boundary: this snapshot is manual, while the TypeScript contract is generated and stale-checked from the Pydantic schema. | "is NOT generated" | dashboard/src/test/fixtures/wire.ts:22-35; scripts/sync-projection-types.py:43-65 |
 | `demandServed` and the eight anchor rows the builders require this payload to keep. | `demandServed` | dashboard/src/test/fixtures/wire.ts:73-76 |
@@ -204,6 +215,9 @@ The snapshot fixture gained a super-to-leaf source-relation entry (`relation: "s
 
 ## Update History
 
+- 2026-08-24T00:21+02:00 — 260821-CLIVE-L2: aligned every lifecycle-operation sample with the
+  generated contract's required `legalControls` array; the failed closeout now samples optional
+  `generation` and a non-empty `recover` control. Verification metadata remains closeout-owned.
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: snapshot fixture extended with the super-to-leaf relation and two execution-graph view nodes. Verified at code commit e5cb139f.
 
 
