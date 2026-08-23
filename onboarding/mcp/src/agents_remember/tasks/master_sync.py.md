@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/master_sync.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`                                         |
-| lastVerifiedCommitDate |                                            2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -70,11 +70,11 @@ scope; this file implements an internal coordination contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Same-root parent resolution and master-plan construction. | `plan_master_sync`; `_master_json_path`; `_json_path_from_master_ref` | mcp/src/agents_remember/tasks/master_sync.py:34-83; mcp/src/agents_remember/tasks/master_sync.py:138-142; mcp/src/agents_remember/tasks/master_sync.py:145-155 |
-| Deterministic leaf-to-row mapping with manual scope preservation. | `subtask_ref_from_leaf` | mcp/src/agents_remember/tasks/master_sync.py:86-96 |
-| Strict master-row status derivation and unresolved-master demotion. | `derived_master_status`; `demote_completed_master_if_unresolved` | mcp/src/agents_remember/tasks/master_sync.py:99-110; mcp/src/agents_remember/tasks/master_sync.py:113-119 |
-| Existing-row path validation. | `_validate_existing_row_path` | mcp/src/agents_remember/tasks/master_sync.py:122-135 |
-| Parent document loading. | "master = read_task_doc" | mcp/src/agents_remember/tasks/master_sync.py:42-42 |
+| Same-root parent resolution and master-plan construction. | `plan_master_sync`; `_master_json_path`; `_json_path_from_master_ref` | mcp/src/agents_remember/tasks/master_sync.py:35-89; mcp/src/agents_remember/tasks/master_sync.py:144-148; mcp/src/agents_remember/tasks/master_sync.py:151-161 |
+| Deterministic leaf-to-row mapping with manual scope preservation. | `subtask_ref_from_leaf` | mcp/src/agents_remember/tasks/master_sync.py:92-102 |
+| Strict master-row status derivation and unresolved-master demotion. | `derived_master_status`; `demote_completed_master_if_unresolved` | mcp/src/agents_remember/tasks/master_sync.py:105-116; mcp/src/agents_remember/tasks/master_sync.py:119-125 |
+| Existing-row path validation. | `_validate_existing_row_path` | mcp/src/agents_remember/tasks/master_sync.py:128-141 |
+| Parent document loading uses the exact accepted JSON snapshot. | `TaskDocument.model_validate_json` | mcp/src/agents_remember/tasks/master_sync.py:46-46 |
 
 ## Cross-Repo References
 
@@ -85,7 +85,19 @@ resolved agents-remember coordination task root.
 | --- | --- | --- |
 | No cross-repo dependency; external-memory alignment is handled by the worktree lifecycle outside this file. | n/a | n/a |
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `MasterSyncError`, `MasterSyncPlan`, `plan_master_sync`. L2 adds the accepted master source snapshot to the synchronization plan so publication can compare exact before-state. Queue invalidation/rebuild after affected task changes remains L3 scope.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `MasterSyncError`, `MasterSyncPlan`, `plan_master_sync` at this ownership boundary. | L18-L19; L23-L32; L35-L89 | `mcp/src/agents_remember/tasks/master_sync.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 - 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

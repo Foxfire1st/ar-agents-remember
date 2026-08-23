@@ -5,46 +5,65 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing overview](../../../overview.md)
+[governing route overview](overview.md)
 
 ## Purpose
 
-Publishes the final organizational leaf integration from the closeout queue into the sprint super under one integration authority, pinning final-versus-nonfinal scope.
+Transfers the exact transitional certified candidate into journal-owned integration authority and
+pins final-versus-nonfinal organizational scope before sprint-super publication.
 
 ## Code Commentary
 
 ### Logic
 
-`preview_organizational_completion` reads the exact final-leaf decision for the integration dry-run. `publish_queue_candidate_integration_result_under_authority` runs the publication under the integration authority lock; when a completion plan exists it re-validates the durable full-gate certification and publishes the master completion marker only after the certified ref movement succeeded (`returncode == 0`). `organizational_completion_scope_block` refuses a final/non-final classification change between preflight and protected publication. `_require_completed_integration_recovery` proves the finalized contract, durable operation record, and queue-completion intent before re-consuming a completed integration.
+`preview_integration_boundary` captures exact task-source bytes and final/non-final scope before
+claim. `prepare_integration_publication_intent` chooses the complete post-claim publication identity
+and snapshots the transitional certified candidate into journal input. `transfer_integration_claim`
+then consumes or proves that exact candidate under queue serialization and records claim proof in
+the journal. Quality certification is reread from the integration operation; later protected-ref
+publication and recovery no longer depend on a surviving queue row.
 
 ### Invariants And Boundaries
 
 - Every irreversible publication re-verifies the exact candidate, commits, and completion scope.
-- The queue candidate's immutable claim is retained through Git recovery of torn ref state.
+- The journaled claim snapshot, not the queue row, is retained through Git recovery of torn ref
+  state.
 - A completed organizational master must carry its durable full-gate certification.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Final/non-final scope drift is refused before protected publication. | `organizational_completion_scope_block` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:58-78 |
-| Dry-run reads the exact final-leaf decision. | `preview_organizational_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:81-121 |
-| Leaf landing publication pins scope and publishes the master marker. | `publish_queue_candidate_integration_result_under_authority` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:124-188 |
-| Completed-integration recovery re-proves the finalized contract and durable removal intent. | `_require_completed_integration_recovery` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:191-256 |
-| Recovery candidate keeps its immutable queue claim. | `_require_integration_recovery_candidate` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:307-338 |
+| Boundary preview refuses final/non-final task-source drift before protected publication. | `preview_integration_boundary` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:52-101 |
+| Dry-run reads the exact final-leaf decision. | `preview_organizational_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:104-109 |
+| Publication intent pins the exact organizational scope before claim transfer. | `prepare_integration_publication_intent` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:112-166 |
+| Durable quality certification is reread from the integration journal. | `recorded_organizational_quality_certification` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:230-247 |
+| Claim transfer records the exact candidate and integration publication intent before protected publication. | `transfer_integration_claim` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:169-227 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `IntegrationBoundaryFacts`, `preview_integration_boundary`, `preview_organizational_completion`. Organizational completion and repair are canonical integration-journal transitions with exact candidate, ref, quality, and cancellation evidence. The queue may schedule a door candidate but does not own failure repair or reopening lifecycle state.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `IntegrationBoundaryFacts`, `preview_integration_boundary`, `preview_organizational_completion` at this ownership boundary. | L45-L49; L52-L101; L104-L109 | `mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 

@@ -21,7 +21,7 @@
     "skills/l-01-agent-lifecycles/templates/curator-brief.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 0,
+    "sourceFilesInScope": 27,
     "fileSidecars": 3,
     "childRoutes": 1
   },

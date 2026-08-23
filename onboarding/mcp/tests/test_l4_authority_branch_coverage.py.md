@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l4_authority_branch_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -40,8 +40,8 @@ leaf sets through the production helpers that own those checks.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite owns focused negative forcing for repository and journal authority. | `IntegrationBranchRepositoryCoverageTests`; `IntegrationOperationAuthorityCoverageTests` | mcp/tests/test_l4_authority_branch_coverage.py:59-194; mcp/tests/test_l4_authority_branch_coverage.py:196-603 |
-| Configured topology, integration validation/recovery, lineage, and series completeness are forced at their production owners. | `IntegrationBranchAuthorityCoverageTests`; `IntegrationValidationCoverageTests`; `LineageAndSeriesCoverageTests` | mcp/tests/test_l4_authority_branch_coverage.py:606-752; mcp/tests/test_l4_authority_branch_coverage.py:754-889; mcp/tests/test_l4_authority_branch_coverage.py:890-1020 |
+| The suite owns focused negative forcing for repository and journal authority. | `IntegrationBranchRepositoryCoverageTests`; `IntegrationOperationAuthorityCoverageTests` | mcp/tests/test_l4_authority_branch_coverage.py:65-199; mcp/tests/test_l4_authority_branch_coverage.py:202-603 |
+| Configured topology, integration validation/recovery, lineage, and series completeness are forced at their production owners. | `IntegrationBranchAuthorityCoverageTests`; `IntegrationValidationCoverageTests`; `LineageAndSeriesCoverageTests` | mcp/tests/test_l4_authority_branch_coverage.py:606-751; mcp/tests/test_l4_authority_branch_coverage.py:754-909; mcp/tests/test_l4_authority_branch_coverage.py:912-1042 |
 
 ## Documentation References
 
@@ -51,7 +51,19 @@ No configured domain-documentation or cross-repository source applies to this fi
 
 The closeout fixture now supplies the accepted normalized plan required by L1 while retaining the suite's branch-authority coverage. The redundant wrong-runtime-input authority case moved to the focused closeout model/admission matrix, so this suite remains about protected integration branches rather than duplicating input ownership. No queue ownership or compatibility fallback is introduced.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_canonical_local_branch_refuses_every_invalid_alias_shape`, `test_default_branch_authority_refuses_missing_and_malformed_facts`, `test_memory_default_branch_refuses_invalid_local_authority`, `test_branch_owner_enumeration_refuses_git_failure_and_skips_detached_rows`. The L2 additions force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, and organizational disposition/repair without queue-owned lifecycle evidence.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_canonical_local_branch_refuses_every_invalid_alias_shape`, `test_default_branch_authority_refuses_missing_and_malformed_facts`, `test_memory_default_branch_refuses_invalid_local_authority`, `test_branch_owner_enumeration_refuses_git_failure_and_skips_detached_rows`. | L66-L98; L100-L136; L138-L174; L176-L199 | `mcp/tests/test_l4_authority_branch_coverage.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 

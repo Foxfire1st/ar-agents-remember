@@ -5,10 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[application overview](overview.md)
 
 ## Purpose
 
@@ -107,7 +111,19 @@ ancestry evidence as status rather than copying or re-deriving Git state.
 created by the model package split. Status construction and source-lineage projection semantics are
 unchanged.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `worktree_status_packet`. Status locates normal lifecycle state through locator -> immutable root manifest -> journal and projects legal controls. Its degraded unreadable/pre-adoption decisions are explicit read-only behavior, not a fallback mutation reader.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `worktree_status_packet` at this ownership boundary. | L42-L117 | `mcp/src/agents_remember/application/worktree_status.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_integration.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T00:18+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,11 @@ around the source merge; closeout/integration refuse missing bound topology; can
 reversible worker failure release internal ownership; release failure stays observable while the
 worker is still terminated; and real closeout success commits the exact tree, writes the contract,
 certifies the queue, and recovers idempotently after a post-contract/pre-certification crash.
+Task-addressed cancellation snapshots canonical task JSON, its rendered Markdown, and protected
+code/memory refs separately from the mutable enclosure contract and root journal. It forbids every
+queue inspect/write/recreate route, proves the projection stays absent or byte-identical, then
+requires the exact same door generation to move from claimed to cancelled while the journal records
+terminal cancellation evidence.
 The former conflict-reset generation scenario is now isolated in
 `test_closeout_queue_generation_transition.py`; irreversible worker-release retention is isolated
 in `test_lifecycle_worker_release_guards.py`.
@@ -35,7 +40,9 @@ in `test_lifecycle_worker_release_guards.py`.
 ### Conventions
 
 Only unrelated expensive gates are mocked in the production closeout success fixture. Queue,
-contract, Git, and lifecycle state transitions remain real.
+contract, Git, and lifecycle state transitions remain real. Cancellation forcing patches queue
+store methods to fail loudly if any post-claim projection access occurs; task-document bytes and
+protected refs are compared independently from the expected door/journal mutation.
 
 ### Invariants And Boundaries
 
@@ -43,6 +50,10 @@ contract, Git, and lifecycle state transitions remain real.
 - Closeout certification is based on the actual committed tree and contract.
 - Reversible terminal retry preserves one task-addressed operation and cannot leave an old worker
   running after queue-release failure.
+- Cancellation preserves canonical task JSON/Markdown and protected source refs, but must not
+  freeze the enclosure contract or journal that own the same-generation claimed-to-cancelled
+  transition.
+- After journal claim transfer, cancellation may not inspect, mutate, or recreate queue projection.
 
 ### Todos
 
@@ -54,13 +65,15 @@ No configured Domain Documentation source applies.
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+The test source is direct evidence for the production queue/door/journal boundary forced here.
+
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| Production integration claims, revalidates, and consumes the exact candidate. | `test_production_integrate_claims_revalidates_and_consumes_exact_candidate` | mcp/tests/test_closeout_queue_integration.py:117-135 |
-| Evidence drift at the pre-merge boundary refuses with the exact mechanistic status and reason. | `test_boundary_rechecks_evidence_after_claim_before_source_merge` | mcp/tests/test_closeout_queue_integration.py:296-331 |
-| Cancellation release failure still terminates the captured worker and requeues the same operation. | `test_cancel_release_failure_still_terminates_worker_and_requeues_same_operation` | mcp/tests/test_closeout_queue_integration.py:473-510 |
-| Real closeout success commits the exact tree and certifies the queue candidate. | `test_production_closeout_commits_exact_tree_and_certifies_queue_candidate` | mcp/tests/test_closeout_queue_integration.py:602-648 |
-| Post-contract/pre-certification crash retry preserves worker-owned mutation evidence, projects apply-only recovery, and is idempotent. | `test_post_contract_write_pre_certification_crash_recovers_idempotently` | mcp/tests/test_closeout_queue_integration.py:650-720 |
+| Production integration claims, revalidates, and consumes the exact candidate. | L254-L274 | `mcp/tests/test_closeout_queue_integration.py` |
+| Journal claim transfer consumes the queue once, deletes the projection, and forbids later reads. | L300-L345 | `mcp/tests/test_closeout_queue_integration.py` |
+| Task-addressed cancellation preserves canonical task JSON/Markdown and protected refs, forbids queue access/recreation, publishes the exact same-generation cancelled door, and records durable cancellation evidence. | L139-L207; L570-L627 | `mcp/tests/test_closeout_queue_integration.py` |
+| Real closeout success commits the exact tree and certifies the queue candidate. | L674-L722 | `mcp/tests/test_closeout_queue_integration.py` |
+| Post-contract/pre-certification recovery is same-generation and idempotent. | L724-L796 | `mcp/tests/test_closeout_queue_integration.py` |
 
 ## Cross-Repo References
 
@@ -82,7 +95,38 @@ was removed. No assertions changed.
 
 Queue integration fixtures now use canonical contract publication and accepted closeout admission/effective input. Assertions continue to cover candidate selection, lifecycle correlation, certification, and integration; they do not treat queue rows as closeout lifecycle or Git evidence.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include
+`test_production_integrate_claims_revalidates_and_consumes_exact_candidate`,
+`test_closeout_certification_and_integration_claim_bind_exact_commits`,
+`test_journal_claim_transfer_consumes_queue_once_then_never_reads_it`,
+`test_retired_door_fences_preserved_stale_candidate_at_every_boundary`, and
+`test_task_addressed_cancellation_does_not_require_or_recreate_queue_projection`. L2 proves that
+the integration operation consumes the queue once at claim transfer and then uses journal
+evidence, and that cancellation after claim changes only its owning door/journal lifecycle plane
+while task truth, protected refs, and the absent projection remain unchanged. Legacy-named
+closeout certification coverage remains transitional; this suite does not prove the final
+waiting-only queue schema, whose removal belongs to L3.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current source forces exact integration claim/commit binding, one-time queue-to-journal transfer, stale-door fencing, and queue-independent cancellation. | L254-L345; L346-L419; L570-L627 | `mcp/tests/test_closeout_queue_integration.py` |
+
 ## Update History
+
+- 2026-08-24T00:18+02:00 — No content impact: the architect extracted the unchanged cancellation
+  door/journal assertions into `_assert_cancelled_door` and `_assert_cancelled_operation` to satisfy
+  deterministic Ruff statement limits, then applied formatter-only line collapses. Current source
+  citations now include the helpers and shifted test ranges; no assertion or behavior changed.
+- 2026-08-24T00:10+02:00 — 260821-CLIVE-L2: reconciled cancellation forcing by authority plane:
+  canonical task JSON/rendered Markdown and protected refs remain unchanged, queue access and
+  recreation are forbidden, and the same door generation plus root journal perform the exact
+  claimed-to-cancelled transition. The architect supplied the accepted exact Dagger result;
+  verification metadata remains closeout-owned.
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 

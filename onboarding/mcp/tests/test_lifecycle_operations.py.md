@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash |  `eb7ea60ab9919f009fef58f81afe5861aa1709da`|
-| lastVerifiedCommitDate |  2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,9 +57,9 @@ No external Domain Documentation source is configured for this project-owned ope
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Start, observe, retry, cancellation, launch, worker, and integration edges are forced on the public controller/runtime. | `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_run_worker_refuses_missing_or_non_startable_durable_state` | mcp/tests/test_lifecycle_operations.py:233-252; mcp/tests/test_lifecycle_operations.py:848-867 |
-| Failed integration dispatch preserves the exact queue-release failure and a truthful false replacement signal. | `test_execute_operation_dispatches_closeout_and_integration_payloads` | mcp/tests/test_lifecycle_operations.py:737-794 |
-| Irreversible integrate cancellation is forced through the public controller in the focused store suite. | `test_integrate_boundary_cannot_be_cleared_or_cancelled` | mcp/tests/test_lifecycle_operation_store_invariants.py:193-210 |
+| Start, observe, retry, cancellation, launch, worker, and integration edges are forced on the public controller/runtime. | `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_run_worker_refuses_missing_or_non_startable_durable_state` | mcp/tests/test_lifecycle_operations.py:258-276; mcp/tests/test_lifecycle_operations.py:884-911 |
+| Failed integration dispatch preserves the exact queue-release failure and a truthful false replacement signal. | `test_execute_operation_dispatches_closeout_and_integration_payloads` | mcp/tests/test_lifecycle_operations.py:771-823 |
+| Irreversible integrate cancellation is forced through the public controller in the focused store suite. | `test_integrate_boundary_cannot_be_cleared_or_cancelled` | mcp/tests/test_lifecycle_operation_store_invariants.py:218-244 |
 
 ## Cross-Repo References
 
@@ -67,7 +67,7 @@ No sibling-repository protocol is exercised.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Temporary worktree contracts isolate each operation proof. | `_contract`; `_input` | mcp/tests/test_lifecycle_operations.py:67-149; mcp/tests/test_lifecycle_operations.py:150-152 |
+| Temporary worktree contracts isolate each operation proof. | `_contract`; `_input` | mcp/tests/test_lifecycle_operations.py:88-172; mcp/tests/test_lifecycle_operations.py:175-176 |
 
 ## L23 Lifecycle Model Package Review
 
@@ -90,7 +90,19 @@ raises context, and the `killpg` patch target follows the moved module.
 
 This suite now constructs closeout admission from normalized effective input and exercises strict schema 3.0, immutable duplicate plans, stable candidate identity, explicit cross-kind compatibility under the lease, evidence-derived cancellation/retention, worker rehydration, and recovery projection. Raw closeout input through the generic starter and legacy/extra store shapes fail closed; queue projection is not used as journal evidence.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_integration_authority_refuses_incomplete_closeout_edges`, `test_start_returns_immediately_and_duplicate_observes_one_launch`, `test_conflicting_commit_message_refuses_while_task_operation_exists`, `test_contract_lifecycle_lease_excludes_cross_kind_and_terminal_mutation`. The L2 additions force locator-rooted journal access, legal task-addressed controls, write-ahead successors, exact worker termination, total expected-failure projection, and same-generation convergence.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_integration_authority_refuses_incomplete_closeout_edges`, `test_start_returns_immediately_and_duplicate_observes_one_launch`, `test_conflicting_commit_message_refuses_while_task_operation_exists`, `test_contract_lifecycle_lease_excludes_cross_kind_and_terminal_mutation`. | L234-L255; L258-L276; L279-L289; L292-L303 | `mcp/tests/test_lifecycle_operations.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11: rebound truthful `queueReleaseFailure`/`safeToReplace` dispatch forcing and the public irreversible-integrate cancellation relationship against accepted tree `4241908c`; verification metadata remains pinned until governed closeout.
 

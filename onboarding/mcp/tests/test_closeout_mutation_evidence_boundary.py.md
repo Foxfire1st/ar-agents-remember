@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_mutation_evidence_boundary.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T11:29+02:00 |
-| lastVerifiedCommitHash |  `eb7ea60ab9919f009fef58f81afe5861aa1709da`|
-| lastVerifiedCommitDate |  2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,18 +51,30 @@ See task `260821-CLIVE-L1` L1-R4 through L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Ungoverned entrances fail closed while the public lease-bound closeout route persists its admitted candidate. | `test_direct_closeout_apply_without_journal_authority_refuses_before_route_or_git`, `test_lease_bound_closeout_start_supplies_its_resolved_candidate`, `test_legacy_cli_apply_cannot_bypass_the_journaled_operation` | mcp/tests/test_closeout_mutation_evidence_boundary.py:44-96; mcp/tests/test_closeout_mutation_evidence_boundary.py:194-213 |
-| A stale unchanged-intent retry remains attempt one, does not launch, and stays cancellable. | `test_stale_unchanged_intent_observes_attempt_one_without_relaunch` | `mcp/tests/test_closeout_mutation_evidence_boundary.py:97-128` |
-| Real Git status and removed-reflog failures leave journal bytes and pre-mutation evidence unchanged. | `test_git_mutation_status_failure_has_no_durable_progress`, `test_git_mutation_ref_log_failure_has_no_durable_progress` | mcp/tests/test_closeout_mutation_evidence_boundary.py:131-193 |
-| Authority, binding, and proof reject changed or incomplete intent before mutation evidence can advance. | `test_git_mutation_helper_cannot_silently_run_without_evidence_authority`, `test_bind_and_proof_refuse_changed_or_incomplete_intent` | mcp/tests/test_closeout_mutation_evidence_boundary.py:214-311 |
-| Snapshot reconciliation distinguishes exact, ambiguous, escaped, unreadable, and multi-leg outcomes. | `test_reconciliation_distinguishes_unchanged_ambiguous_and_proven_output`, `test_one_unchanged_leg_cannot_hide_another_legs_proven_commit` | mcp/tests/test_closeout_mutation_evidence_boundary.py:312-488 |
-| Exact restore preserves the differing bound output tree while producing cancellable reconciled-unchanged evidence. | `test_reconciliation_preserves_bound_output_after_exact_restore` | `mcp/tests/test_closeout_mutation_evidence_boundary.py:345-396` |
+| Ungoverned entrances fail closed while the public lease-bound closeout route persists its admitted candidate. | `test_direct_closeout_apply_without_journal_authority_refuses_before_route_or_git`, `test_lease_bound_closeout_start_supplies_its_resolved_candidate`, `test_legacy_cli_apply_cannot_bypass_the_journaled_operation` | mcp/tests/test_closeout_mutation_evidence_boundary.py:64-82; mcp/tests/test_closeout_mutation_evidence_boundary.py:102-115; mcp/tests/test_closeout_mutation_evidence_boundary.py:215-232 |
+| A stale unchanged-intent retry remains attempt one, does not launch, and stays cancellable. | `test_stale_unchanged_intent_observes_attempt_one_without_relaunch` | mcp/tests/test_closeout_mutation_evidence_boundary.py:118-149 |
+| Real Git status and removed-reflog failures leave journal bytes and pre-mutation evidence unchanged. | `test_git_mutation_status_failure_has_no_durable_progress`, `test_git_mutation_ref_log_failure_has_no_durable_progress` | mcp/tests/test_closeout_mutation_evidence_boundary.py:152-177; mcp/tests/test_closeout_mutation_evidence_boundary.py:180-212 |
+| Authority, binding, and proof reject changed or incomplete intent before mutation evidence can advance. | `test_git_mutation_helper_cannot_silently_run_without_evidence_authority`, `test_bind_and_proof_refuse_changed_or_incomplete_intent` | mcp/tests/test_closeout_mutation_evidence_boundary.py:235-244; mcp/tests/test_closeout_mutation_evidence_boundary.py:289-329 |
+| Snapshot reconciliation distinguishes exact, ambiguous, escaped, unreadable, and multi-leg outcomes. | `test_reconciliation_distinguishes_unchanged_ambiguous_and_proven_output`, `test_one_unchanged_leg_cannot_hide_another_legs_proven_commit` | mcp/tests/test_closeout_mutation_evidence_boundary.py:333-363; mcp/tests/test_closeout_mutation_evidence_boundary.py:881-924 |
+| Exact restore preserves the differing bound output tree while producing cancellable reconciled-unchanged evidence. | `test_reconciliation_preserves_bound_output_after_exact_restore` | mcp/tests/test_closeout_mutation_evidence_boundary.py:366-417 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_direct_closeout_apply_without_journal_authority_refuses_before_route_or_git`, `test_generic_lifecycle_start_cannot_bypass_raw_closeout_admission`, `test_lease_bound_closeout_start_supplies_its_resolved_candidate`, `test_stale_unchanged_intent_observes_attempt_one_without_relaunch`. The L2 additions force immutable normalized input, exact generation retention, evidence-derived cancellation/recovery, and pre-authority refusal of invalid calls. A failed first call remains task-addressably recoverable without amending accepted intent.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_direct_closeout_apply_without_journal_authority_refuses_before_route_or_git`, `test_generic_lifecycle_start_cannot_bypass_raw_closeout_admission`, `test_lease_bound_closeout_start_supplies_its_resolved_candidate`, `test_stale_unchanged_intent_observes_attempt_one_without_relaunch`. | L64-L82; L85-L99; L102-L115; L118-L149 | `mcp/tests/test_closeout_mutation_evidence_boundary.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T11:29+02:00 — 260821-CLIVE-L1 candidate12 rebind: added the real
   begin/bind/restore/reconcile proof that a differing expected tree survives exact restoration

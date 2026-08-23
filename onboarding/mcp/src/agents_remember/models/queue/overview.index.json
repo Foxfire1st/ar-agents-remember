@@ -32,7 +32,7 @@
     "src"
   ],
   "hotPath": {
-    "summary": "The closeout queue application/tool surfaces read and write these typed models; the registered response models are consumed by the dashboard's CloseoutQueue panel projection.",
+    "summary": "This route still models the transitional pre-L3 queue: waiting/scheduling facts plus selected, closeout-in-flight, certified, and integration-in-flight candidate states and commit-shaped evidence. L2 makes the root journal authoritative for the new operation controls; L3 owns removing these lifecycle-shaped queue fields and reducing this route to a disposable waiting-door projection. The closeout queue application/tool surfaces read and write these typed models; the registered response models are consumed by the dashboard's CloseoutQueue panel projection.",
     "candidateHints": [
       "mcp/src/agents_remember/models/queue",
       "mcp/src/agents_remember/models/queue/__init__.py",
@@ -52,17 +52,26 @@
       "models/",
       "worktrees/queue/",
       "application/closeout_queue.py",
+      "mcp/src/agents_remember/models/queue/closeout_queue.py",
       "models/queue",
       "agents_remember",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T00",
+      "T16",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
+      "T00",
       "governingOverview",
       "DAG",
       "JSON",
+      "CLIVE",
+      "L71",
+      "L130",
+      "L259",
+      "L336",
+      "L355",
+      "L405",
       "e5cb139f"
     ]
   },

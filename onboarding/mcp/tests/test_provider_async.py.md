@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-16T04:30+02:00                     |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -96,7 +96,19 @@ The provider-start ordering case marks parent lineage non-applicable so it can
 continue measuring provider sequencing. Dedicated source-lineage suites own the
 new structural gate.
 
+## 260821-CLIVE-L2 Terminal Gate Ordering
+
+Cleanup and abandon provider-running tests explicitly permit the future L5 archive gate so their
+assertions still isolate the provider teardown guard beneath it. The production terminal owners
+remain fail-closed when archive proof is unavailable.
+
+| Finding | Source |
+| --- | --- |
+| Cleanup and abandon each patch only their terminal archive gate while testing the provider-running refusal. | mcp/tests/test_provider_async.py:437-470 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 
 - 2026-08-16T04:30+02:00 — No content impact: accepted Ruff's one-line formatting for the typed sprint execution-graph node list; fixture facts and provider lifecycle assertions are unchanged.
 - 2026-08-16T04:06+02:00 — 260815-DAG-L4 Dagger repair: the provider lifecycle fixture now creates a real organizational master, sprint graph, direct-super leaf document, exact leaf id, and remote-default authority before exercising asynchronous start and terminal routes.

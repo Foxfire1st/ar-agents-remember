@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l4_remaining_support_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -35,9 +35,9 @@ and evidence checks, series leaf-set validation, terminal capabilities, and clos
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Application, bootstrap-memory, operation-model, and lineage refusal branches use their real owners. | `ApplicationAuthorityRemainderTests`; `BootstrapAndMemoryRemainderTests`; `ModelAndIdentityRemainderTests` | mcp/tests/test_l4_remaining_support_coverage.py:50-196; mcp/tests/test_l4_remaining_support_coverage.py:197-408; mcp/tests/test_l4_remaining_support_coverage.py:409-445 |
-| Atomic seal, landing evidence, recovery, and exact leaf-set proofs are forced fail closed. | `SealEvidenceAndRecoveryRemainderTests` | mcp/tests/test_l4_remaining_support_coverage.py:446-703 |
-| Terminal capability, changed-contract publication, Git worktree, guidance, sync, queue-store, and final integration publication branches are forced. | `TerminalAndCloseoutRemainderTests` | mcp/tests/test_l4_remaining_support_coverage.py:704-1002 |
+| Application, bootstrap-memory, operation-model, and lineage refusal branches use their real owners. | `ApplicationAuthorityRemainderTests`; `BootstrapAndMemoryRemainderTests`; `ModelAndIdentityRemainderTests` | mcp/tests/test_l4_remaining_support_coverage.py:56-204; mcp/tests/test_l4_remaining_support_coverage.py:207-416; mcp/tests/test_l4_remaining_support_coverage.py:419-453 |
+| Atomic seal, landing evidence, recovery, and exact leaf-set proofs are forced fail closed. | `SealEvidenceAndRecoveryRemainderTests` | mcp/tests/test_l4_remaining_support_coverage.py:456-716 |
+| Terminal capability, changed-contract publication, Git worktree, guidance, sync, queue-store, and final integration publication branches are forced. | `TerminalAndCloseoutRemainderTests` | mcp/tests/test_l4_remaining_support_coverage.py:719-1026 |
 
 ## Documentation References
 
@@ -55,7 +55,19 @@ integration owners under `worktrees/integration/`, and queue owners under `workt
 
 Terminal and closeout remainder fixtures now route through canonical normalized args and evidence-aware recovery helpers. Altitude-specific operation-model and candidate-publication checks moved into the focused model/publication suites; the remaining publication case still forces changed contract facts at the original support seam. Active-operation compatibility remains separated from lease acquisition and closeout mutation authority is supplied by the journal.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_worker_refuses_a_queued_record_reserved_for_another_process`, `test_memory_scope_and_carryover_shape_refusals`, `test_manager_dispatch_covers_invalid_nature_and_standalone_default`, `test_task_document_publication_rejects_escape_and_wraps_authority_error`. The L2 additions force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, and organizational disposition/repair without queue-owned lifecycle evidence.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_worker_refuses_a_queued_record_reserved_for_another_process`, `test_memory_scope_and_carryover_shape_refusals`, `test_manager_dispatch_covers_invalid_nature_and_standalone_default`, `test_task_document_publication_rejects_escape_and_wraps_authority_error`. | L57-L61; L63-L126; L128-L168; L170-L204 | `mcp/tests/test_l4_remaining_support_coverage.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 

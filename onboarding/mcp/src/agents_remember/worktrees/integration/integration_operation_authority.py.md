@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing overview](../../../overview.md)
+[governing route overview](overview.md)
 
 ## Purpose
 
@@ -33,14 +33,26 @@ Revalidates the immutable lifecycle journal against the current contract, reposi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Operation admission binds the requested key to one durable authority record. | `require_plane_integration_operation` | mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:20-50 |
-| Source tips and candidate commits are revalidated immediately before movement. | `require_current_integration_sources`, `require_authorized_integration_commits` | mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:53-71; mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:74-98 |
+| Operation admission binds the requested key to one durable authority record. | `require_plane_integration_operation` | mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:19-47 |
+| Source tips and candidate commits are revalidated immediately before movement. | `require_current_integration_sources`, `require_authorized_integration_commits` | mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:50-68; mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:71-95 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `require_plane_integration_operation`, `require_current_integration_sources`, `require_authorized_integration_commits`. Integration authority is journal- and lease-bound. Claim transfer crosses from disposable scheduling projection into the operation journal before irreversible publication; queue state cannot retain or reconstruct the lifecycle.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `require_plane_integration_operation`, `require_current_integration_sources`, `require_authorized_integration_commits` at this ownership boundary. | L19-L47; L50-L68; L71-L95 | `mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 

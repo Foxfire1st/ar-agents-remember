@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash |  `eb7ea60ab9919f009fef58f81afe5861aa1709da`|
-| lastVerifiedCommitDate |  2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,11 @@ This module defines the strict input, durable-record, and public-projection voca
 
 The closeout and integration inputs capture every accepted decision needed for retry. `LifecycleOperationRecord` persists the immutable operation fingerprint, candidate tree, gate snapshot, worker progress, boundary, terminal result, and failure evidence. `LifecycleOperationProjection` exposes task state without leaking the operation key or worker PID.
 
-Added the three L5 wire models: `IntegrationQualityCertification` (durable exact full-Dagger proof with result-hash revalidation), `IntegrationQueueCompletionEvidence` (durable queue-removal intent), and `OrganizationalCompletionRepairEvidence` (immutable reset-generation identity).
+The integration evidence vocabulary includes `IntegrationQualityCertification` (durable exact
+full-Dagger proof with result-hash revalidation) and
+`OrganizationalCompletionRepairEvidence` (immutable reset-generation identity). CLIVE L2 removes
+the former queue-completion evidence model; integration claim/publication evidence now lives in the
+journal-owned operation fields rather than a queue-removal lifecycle cell.
 
 ### Conventions
 
@@ -52,8 +56,8 @@ No external Domain Documentation source is configured for these internal wire mo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The input and record models capture immutable approval and recovery identity. | `CloseoutOperationInput`; `LifecycleOperationRecord` | mcp/src/agents_remember/models/lifecycles/operation.py:218-226; mcp/src/agents_remember/models/lifecycles/operation.py:246-291 |
-| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:394-409 |
+| The input and record models capture immutable approval and recovery identity. | `CloseoutOperationInput`; `LifecycleOperationRecord` | mcp/src/agents_remember/models/lifecycles/operation.py:295-303; mcp/src/agents_remember/models/lifecycles/operation.py:324-389 |
+| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:652-669 |
 
 ## Cross-Repo References
 
@@ -61,7 +65,7 @@ No cross-repository vocabulary is defined here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:218-226; mcp/src/agents_remember/models/lifecycles/operation.py:394-409 |
+| Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:295-303; mcp/src/agents_remember/models/lifecycles/operation.py:652-669 |
 
 ## L23 Final Candidate Disposition
 
@@ -77,7 +81,19 @@ L4 routes this file's existing application, configuration, task, model, registra
 
 Closeout durable input contains only typed `effectiveInput`; schema reading is strict `3.0` with no compatibility reader, fallback, or runtime bypass. Closeout progress carries per-leg mutation evidence and an optional exact finalized-contract publication hash. Model validators keep enabled legs, evidence repositories, derived recovery commits, and generation retention consistent, so recovery cells cannot contradict authoritative proof.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `LifecycleOperationRecoveryCommits`, `OrganizationalTaskPublicationIntent`, `IntegrationPublicationIntent`. The lifecycle record now owns operation generation, legal controls, root-journal publication, door/successor state, worker termination, direct landing, and bounded legacy proof. Queue projection is absent from the authoritative lifecycle union.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `LifecycleOperationRecoveryCommits`, `OrganizationalTaskPublicationIntent`, `IntegrationPublicationIntent` at this ownership boundary. | L67-L74; L77-L107; L110-L144 | `mcp/src/agents_remember/models/lifecycles/operation.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
 

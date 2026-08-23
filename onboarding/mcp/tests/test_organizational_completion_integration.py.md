@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_organizational_completion_integration.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -31,7 +31,7 @@ The suite runs the production completion path end to end against real queue and 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The focused suite owns the end-to-end completion integration surface. | `OrganizationalCompletionIntegrationTests` | mcp/tests/test_organizational_completion_integration.py:95-1179 |
+| The focused suite owns the end-to-end completion integration surface. | `OrganizationalCompletionIntegrationTests` | mcp/tests/test_organizational_completion_integration.py:94-1018 |
 
 ## Documentation References
 
@@ -49,7 +49,19 @@ remaining hunks are Ruff formatting-only line joins; no assertions changed.
 
 Organizational completion fixtures now publish contracts with the canonical serializer used by reset and closeout-finalization hashes. Completion behavior is unchanged; the migration prevents the test from constructing a representation that production identity would reject.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_nonfinal_leaf_reuses_targeted_closeout_without_full_gate`, `test_parallel_master_sibling_syncs_the_exact_code_memory_pair_and_redeclares`, `test_final_leaf_runs_one_exact_full_gate_then_completes_master_and_pair`, `test_two_leaf_master_proves_landed_sibling_and_runs_one_exact_full_gate`. The L2 additions force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, and organizational disposition/repair without queue-owned lifecycle evidence.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_nonfinal_leaf_reuses_targeted_closeout_without_full_gate`, `test_parallel_master_sibling_syncs_the_exact_code_memory_pair_and_redeclares`, `test_final_leaf_runs_one_exact_full_gate_then_completes_master_and_pair`, `test_two_leaf_master_proves_landed_sibling_and_runs_one_exact_full_gate`. | L321-L336; L338-L377; L379-L442; L444-L491 | `mcp/tests/test_organizational_completion_integration.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 

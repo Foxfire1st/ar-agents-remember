@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -24,7 +24,7 @@ drift is caught at dev time instead of in a live tool call.
 ### Logic
 
 Production already validates each tool payload through
-`tools._tool_payload()` against `models.tool_registry.TOOL_RESPONSE_MODELS`
+`tools._tool_payload()` against `models.tools.tool_registry.TOOL_RESPONSE_MODELS`
 (strict models use `extra="forbid"`). These tests reproduce that guarantee by
 obtaining a *representative* payload for every modeled builder from the real
 `*_payload` builder, then asserting conformance.
@@ -141,14 +141,16 @@ declared nor part of the input."
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The registry maps each public tool to its response model. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:146-223 |
-| `_tool_payload()` is the production validation path mirrored here. | `_tool_payload`; "def complete_tool_response(" | mcp/src/agents_remember/application/tool_response.py:53-53; mcp/src/agents_remember/mcp/tools/base.py:74-76 |
-| The strict/flexible response-model taxonomy lives in the model base. | `StrictResponseModel`, `FlexibleResponseModel` | mcp/src/agents_remember/models/base.py:10-13; mcp/src/agents_remember/models/base.py:16-19 |
+| The registry maps each public tool to its response model. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:148-227 |
+| `_tool_payload()` is the production validation path mirrored here. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:76-78 |
+| `complete_tool_response()` attaches the shared public envelope. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:53-67 |
+| The strict/flexible response-model taxonomy lives in the model base. | `StrictResponseModel`, `FlexibleResponseModel` | mcp/src/agents_remember/models/base.py:15-18; mcp/src/agents_remember/models/base.py:21-32 |
 | Worktree/carryover fixtures reuse worktree test helpers. | `init_repo`, `write_file_onboarding`, `initialized_memory_repo` | mcp/tests/test_worktree_support.py:85-105; mcp/tests/test_worktree_support.py:178-199; mcp/tests/test_worktree_support.py:332-360 |
 | Schema-level registry coverage is asserted separately. | `test_every_public_tool_has_a_response_model` | mcp/tests/test_models.py:17-18 |
-| Inbox representative payloads call the real post, poll, consume, and supersede builders. | `_operator_inbox_payloads` | mcp/tests/test_tool_response_conformance.py:759-786 |
+| Inbox representative payloads call the real post, poll, consume, and supersede builders. | `_operator_inbox_payloads` | mcp/tests/test_tool_response_conformance.py:819-846 |
 | Lifecycle finalizer representative payload exercises the new terminal worktree tool. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
-| Terminal representative payloads exercise the strict `AttachTerminalSessionToTaskResponse` (unknown-session) and `SpawnAgentSessionResponse` (retired caller-harness input) models. | `_simple_payloads`; `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse`; "definitely-not-a-real-harness" | mcp/src/agents_remember/models/terminal.py:35-48; mcp/src/agents_remember/models/terminal.py:91-135; mcp/tests/test_tool_response_conformance.py:247-382 |
+| Terminal representative payloads are built by the conformance fixture. | `_simple_payloads` | mcp/tests/test_tool_response_conformance.py:276-411 |
+| The strict attach/spawn terminal response models validate those payloads. | `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:35-48; mcp/src/agents_remember/models/terminal.py:91-135 |
 | The choke point that sets both envelope-wide keys before the single dump — `_attach_lifecycle_tail` assigns `nextStep` and `agentNotifierBanner` (plus the legacy `supervisorBanner` alias), and `_agent_notifier_banner` is exception-safe and silent on a never-ticked agent-notifier, which is why the fixtures have to tick one into the past. | `_agent_notifier_banner`, `_attach_lifecycle_tail`, `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:22-31; mcp/src/agents_remember/application/tool_response.py:34-50; mcp/src/agents_remember/application/tool_response.py:53-67 |
 | `nextStep` and `agentNotifierBanner` (plus the legacy `supervisorBanner` alias) as declared envelope fields, which is what lets a banner-carrying payload validate at all. | "class ResponseModel(" | mcp/src/agents_remember/models/base.py:41-60 |
 | The heartbeat store the fixtures tick and the staleness banner they make fire. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-125 |
@@ -179,7 +181,21 @@ conformance assertions changed.
 
 The worktree response corpus now includes typed closeout refusal and normalized `effectiveInput` fields. Conformance therefore covers the new public contract rather than allowing application handlers to return unmodelled validation details.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_every_modeled_tool_has_a_representative_payload`, `test_the_choke_point_injections_are_actually_exercised`, `test_representative_payloads_conform_to_registered_models`, `test_no_public_response_serializes_private_operation_identity_keys`. The L2 additions pin the closed public response/control vocabulary, exhaustive registration, and the absence of private operation ids or ad hoc lower-layer exception projection.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_every_modeled_tool_has_a_representative_payload`, `test_the_choke_point_injections_are_actually_exercised`, `test_representative_payloads_conform_to_registered_models`, `test_no_public_response_serializes_private_operation_identity_keys`. | L916-L917; L919-L936; L938-L960; L962-L966 | `mcp/tests/test_tool_response_conformance.py` |
+
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 

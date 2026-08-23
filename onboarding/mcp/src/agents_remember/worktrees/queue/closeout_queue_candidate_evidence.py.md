@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP overview](../../../overview.md)
+[governing route overview](overview.md)
 
 ## Purpose
 
@@ -56,11 +56,11 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Route review binds the full record plus every verdict/evidence file digest. | `route_review_fact` | mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py:94-115 |
-| Route-review comparison preserves malformed-record detail and distinguishes it from a stale exact fact. | `route_review_blockers` | mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py:118-133 |
-| Source bases are revalidated against transitive and immediate source lineage; a stale base refuses with `worktree_sync` named as the recovery (260815-DAG-L13-R2). | `require_source_bases_current` | mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py:136-168 |
-| External memory resolves the exact code-base ledger edge. | `ledger_mapping` | mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py:171-186 |
-| Atomic completion proves the finalized series commits and ledger edge landed on current source refs. | `require_atomic_master_landed` | mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py:218-257 |
+| Route review binds the full record plus every verdict/evidence file digest. | `route_review_fact` | mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py:108-129 |
+| Route-review comparison preserves malformed-record detail and distinguishes it from a stale exact fact. | `route_review_blockers` | mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py:132-147 |
+| Source bases are revalidated against transitive and immediate source lineage; a stale base refuses with `worktree_sync` named as the recovery (260815-DAG-L13-R2). | `require_source_bases_current` | mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py:150-182 |
+| External memory resolves the exact code-base ledger edge. | `ledger_mapping` | mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py:185-200 |
+| Atomic completion proves the finalized series commits and ledger edge landed on current source refs. | `require_atomic_master_landed` | mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py:232-271 |
 
 ## Cross-Repo References
 
@@ -70,7 +70,19 @@ No meaningful cross-repository reference applies.
 
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `AtomicMasterLandingAuthority`, `queue_candidate_failure_evidence`, `atomic_master_landing_authority`. These helpers still build exact candidate, source, route-review, and landing facts for the transitional pre-L3 queue. They do not authorize L2 operation retry/recover/cancel/revise; that evidence is root-journal-owned. L3 decides which queue evidence survives in the waiting-only projection.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `AtomicMasterLandingAuthority`, `queue_candidate_failure_evidence`, `atomic_master_landing_authority` at this ownership boundary. | L51-L60; L63-L72; L75-L105 | `mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/queue/closeout_queue_candidate_evidence.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 

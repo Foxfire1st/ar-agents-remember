@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Hangar.test.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-13T12:26+02:00                           |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-24T00:21+02:00                           |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -45,6 +45,8 @@ Five cases:
    `/no live persistent worktrees/i` text.
 5. **Durable current command** — a running closeout operation renders its projected
    `currentCommand` in the compact lifecycle badge and preserves that complete value in `title`.
+   Its inline projection fixture carries the generated contract's required `legalControls: []`;
+   the test does not invent an advertised operation control merely to exercise command rendering.
 
 ### Invariants And Boundaries
 
@@ -53,7 +55,9 @@ as display-only: it seeds enclosure contracts and asserts they are *hidden*, nev
 The existence flags themselves are server-stat'ed truth owned by the observer/projection layer
 (`snapshots._enclosure_from_contract`); the tests only assert the client filters on them.
 The command case is likewise projection/render coverage only: it seeds the already-durable
-operation field and proves visibility, not execution or operation-state mutation.
+operation field and proves visibility, not execution or operation-state mutation. Its empty
+`legalControls` list is fixture-contract conformance, not a claim that live operations never expose
+controls.
 
 ## Repo-Internal References
 
@@ -63,9 +67,13 @@ operation field and proves visibility, not execution or operation-state mutation
 | The shared existence-truth visibility selector. | `hasLiveWorktree` | dashboard/src/data/selectors.ts:24-28 |
 | The dashboard store the test seeds `enclosures` / `lifecycles` into and resets between cases. | `dashboardStore` | dashboard/src/data/store.ts:225-347 |
 | The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. | `EnclosureNode` | dashboard/src/types/projection.ts:168-186 |
+| The running-operation fixture supplies required `legalControls: []` while the assertion remains scoped to durable `currentCommand` rendering. | `legalControls`; "shows the durable live command" | dashboard/src/panels/Hangar.test.tsx:140-166 |
 
 ## Update History
 
+- 2026-08-24T00:21+02:00 — 260821-CLIVE-L2: added the required empty `legalControls` list to the
+  inline running-operation projection fixture; command-rendering behavior is unchanged and
+  verification metadata remains closeout-owned.
 - 2026-08-13T12:26+02:00 — L23 live-progress clarification: added the focused running-operation
   regression that proves `currentCommand` appears in badge text and remains available as the full
   title value. Verification provenance remains closeout-owned.

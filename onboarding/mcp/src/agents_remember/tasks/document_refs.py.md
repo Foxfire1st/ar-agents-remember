@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/tasks/document_refs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -93,9 +93,9 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Task document topology is centralized in one typed resolver. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:62-555 |
-| Structural seats consume this topology to qualify parent and child relations. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:22-160 |
-| The shared atomic segment-node-kind refusal used by the final validator and the authoring draft check (L15-R8 F6 / L15-FIX-1). | `refuse_segment_nodes_on_atomic_masters` | mcp/src/agents_remember/tasks/document_refs.py:42-60 |
+| Task document topology is centralized in one typed resolver. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:82-575 |
+| Structural seats consume this topology to qualify parent and child relations. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:22-161 |
+| The shared atomic segment-node-kind refusal used by the final validator and the authoring draft check (L15-R8 F6 / L15-FIX-1). | `refuse_segment_nodes_on_atomic_masters` | mcp/src/agents_remember/tasks/document_refs.py:42-59 |
 
 ## Cross-Repo References
 
@@ -116,7 +116,19 @@ rule one home and one refusal dialect (playthrough F6). The helper uses `nature_
 an unresolvable draft ref (typo'd `add_node` ref, or a master deleted after graph authoring)
 defers to membership validation instead of raising a raw `KeyError` (L15-FIX-1).
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `TaskDocumentRefError`, `refuse_segment_nodes_on_atomic_masters`, `ResolvedTaskDocument`. These reference/topology helpers support L2's exact source validation; they do not themselves authorize queue invalidation or implement the L3 waiting-projection rebuild.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `TaskDocumentRefError`, `refuse_segment_nodes_on_atomic_masters`, `ResolvedTaskDocument` at this ownership boundary. | L34-L39; L42-L59; L63-L66 | `mcp/src/agents_remember/tasks/document_refs.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: extracted the shared atomic segment-node-kind refusal
   (`refuse_segment_nodes_on_atomic_masters`) consumed by the final validator and the authoring

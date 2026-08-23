@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash |  `eb7ea60ab9919f009fef58f81afe5861aa1709da`|
-| lastVerifiedCommitDate |  2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,7 +31,8 @@ Reconciliation compares the current repository with the durable before/expected 
 - Non-preview worktree closeout requires journal-backed `operation_progress`; legacy synchronous CLI apply and generic-operation bypass fail closed.
 - Only repositories and legs enabled by the accepted effective input may mutate.
 - Evidence publication, not phase names or recovery cells, defines the mutation boundary.
-- This does not journal direct landing; L1 leaves that path lock-serialized and synchronous.
+- Direct landing uses its own typed operation/ledger-intent evidence in the canonical root journal;
+  this file remains the closeout Git-leg evidence owner.
 
 ### Todos
 
@@ -45,15 +46,27 @@ See task `260821-CLIVE-L1` L1-R4 through L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Journal authority is mandatory for non-preview closeout. | `require_closeout_mutation_authority` | `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:31-34` |
-| Intent precedes Git and is repository-bound. | `begin_git_mutation` | `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:52-72` |
-| Commit proof verifies the exact transition. | `prove_git_commit` | `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:98-128` |
-| Restart classifies exact unchanged, exact output, and ambiguity separately. | `reconcile_closeout_mutations` | `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:131-175` |
+| Journal authority is mandatory for non-preview closeout. | `require_closeout_mutation_authority` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:40-43 |
+| Intent precedes Git and is repository-bound. | `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:69-89 |
+| Commit proof verifies the exact transition. | `prove_git_commit` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:255-285 |
+| Restart classifies exact unchanged, exact output, and ambiguity separately. | `reconcile_closeout_mutations` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:288-357 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `require_closeout_mutation_authority`, `initial_closeout_mutation_evidence`, `begin_git_mutation`. This closeout evidence owner remains intent-before-Git and exact-state reconciled. Direct landing is no longer excluded as “unjournaled”; it uses its own operation input and ledger intent while sharing the root-journal recovery architecture.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `require_closeout_mutation_authority`, `initial_closeout_mutation_evidence`, `begin_git_mutation` at this ownership boundary. | L40-L43; L46-L66; L69-L89 | `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from candidate tree `4241908c`; verification metadata remains blank pending landed commit.

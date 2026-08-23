@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_context_packet.py`         |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -58,7 +58,19 @@ detail consumers at `provider_diagnostics`.
 | `ContextPacketV2` defines the compact public response contract. | `ContextPacketV2` | mcp/src/agents_remember/models/context_packet.py:114-124 |
 | Shared MCP config fixture helpers provide the settings payload and JSON writer used by this suite. | `settings_payload`; `write_json` | mcp/tests/test_config.py:27-29; mcp/tests/test_config.py:32-49 |
 
+## 260821-CLIVE-L2 Addressable Contract Fixture
+
+The context-packet fixture now publishes the lifecycle-operation locator and immutable manifest
+after writing the contract. Status lookup is therefore tested through the normal enclosure-root
+address chain rather than by treating the task-side contract path as durable lifecycle state.
+
+| Finding | Source |
+| --- | --- |
+| The configured contract is made addressable before the context packet reads status. | mcp/tests/test_context_packet.py:168-179 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T12:19:51+02:00 — 260731-EFA-L6 S18-B01 curator: reconciled the bounded worker ledger; source-clear citations were repaired, split, rewritten, or deleted as applicable, then the exact scoped fixer/check passed.

@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP overview](../../../overview.md)
+[governing route overview](overview.md)
 
 ## Purpose
 
@@ -89,7 +89,7 @@ No configured Domain Documentation source applies; queue doctrine is repository-
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Structural authorization separates manager logistics from orchestrator grade/selection authority. | `QueueActor` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:116-123 |
+| Structural authorization separates manager logistics from orchestrator grade/selection authority. | `QueueActor` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:117-123 |
 | Mutations re-read the graph under lock before returning a projection. | `closeout_queue_tool` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:185-251 |
 | The status readout degrades graph-less or register-degraded sprints to a facts projection. | `_status_readout`; `_degraded_projection` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:254-306; mcp/src/agents_remember/worktrees/queue/closeout_queue.py:323-367 |
 | Selection takes only the deterministic first ready candidate. | `_apply_candidate_action` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:400-452 |
@@ -104,7 +104,19 @@ No external repository owns this queue.
 
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `QueueActor`, `now_iso`, `closeout_queue_tool`. This L2 source still projects selected/in-flight/certified rows and commit-shaped candidate evidence inherited from the DAG queue. Root-journal controls, not these rows, own retry/recover/cancel/revise and worker recovery. L3 owns removing the remaining lifecycle-shaped rows and rebuilding this service as a waiting-only projection.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `QueueActor`, `now_iso`, `closeout_queue_tool` at this ownership boundary. | L117-L123; L181-L182; L185-L251 | `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 

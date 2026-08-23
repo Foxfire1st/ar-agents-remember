@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/leaf_refs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T12:25+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -54,10 +54,12 @@ No external domain source governs this repository-local compatibility resolver.
 | --- | --- | --- |
 | Resolution returns canonical document identity or a typed not-found/ambiguous error. | `resolve_leaf_ref`; `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-68; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Contract healing uses the bounded canonical-id index. | `canonical_leaf_doc_ids`; `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/leaf_refs.py:144-154; mcp/src/agents_remember/worktrees/worktree_contract.py:478-526 |
-| Worktree start is the live caller of leaf-document resolution. | `resolve_start_leaf_doc_id` | mcp/src/agents_remember/worktrees/modules/leaf_ref_start.py:15-32 |
+| Worktree start is the live caller of leaf-document resolution. | `resolve_start_leaf_doc_id` | mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:15-32 |
 | Existing enclosure contracts can still be found through proven aliases or the explicit raw legacy path. | `resolve_leaf_enclosure_contract_for_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:175-222 |
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
 - 2026-08-11T12:25+02:00 — Removed obsolete hosted-seat references and clarified the surviving
   worktree compatibility scope. Verification remains pinned pending governed closeout.

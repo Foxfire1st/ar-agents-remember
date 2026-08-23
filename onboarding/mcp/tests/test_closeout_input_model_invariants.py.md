@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_input_model_invariants.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T11:29+02:00 |
-| lastVerifiedCommitHash |  `eb7ea60ab9919f009fef58f81afe5861aa1709da`|
-| lastVerifiedCommitDate |  2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,15 +41,27 @@ See task `260821-CLIVE-L1` L1-R1 through L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed message-leg and exact-plan invariants are forced. | `test_enabled_message_model_refuses_blank_or_unstripped_text`, `test_normalizer_and_consumer_share_exact_plan_identity` | mcp/tests/test_closeout_input_model_invariants.py:66-120 |
-| Mutation evidence refuses incomplete state facts and a commit on reconciled-unchanged evidence. | `test_mutation_evidence_refuses_incomplete_state_facts`, `test_reconciled_unchanged_evidence_cannot_name_a_commit` | mcp/tests/test_closeout_input_model_invariants.py:121-145 |
-| Impossible commit proof plus cross-kind and input/evidence contradictions fail closed. | `test_mutation_evidence_refuses_impossible_prestate_and_commit_proof`, `test_operation_model_refuses_cross_kind_authority_and_results`, `test_operation_model_refuses_closeout_input_and_evidence_mismatches`, `test_public_closeout_admission_refuses_a_non_closeout_journal` | mcp/tests/test_closeout_input_model_invariants.py:146-254 |
+| Typed message-leg and exact-plan invariants are forced. | `test_enabled_message_model_refuses_blank_or_unstripped_text`, `test_normalizer_and_consumer_share_exact_plan_identity` | mcp/tests/test_closeout_input_model_invariants.py:66-68; mcp/tests/test_closeout_input_model_invariants.py:84-104 |
+| Mutation evidence refuses incomplete state facts and a commit on reconciled-unchanged evidence. | `test_mutation_evidence_refuses_incomplete_state_facts`, `test_reconciled_unchanged_evidence_cannot_name_a_commit` | mcp/tests/test_closeout_input_model_invariants.py:121-123; mcp/tests/test_closeout_input_model_invariants.py:126-143 |
+| Impossible commit proof plus cross-kind and input/evidence contradictions fail closed. | `test_mutation_evidence_refuses_impossible_prestate_and_commit_proof`, `test_operation_model_refuses_cross_kind_authority_and_results`, `test_operation_model_refuses_closeout_input_and_evidence_mismatches`, `test_public_closeout_admission_refuses_a_non_closeout_journal` | mcp/tests/test_closeout_input_model_invariants.py:146-171; mcp/tests/test_closeout_input_model_invariants.py:174-208; mcp/tests/test_closeout_input_model_invariants.py:211-230; mcp/tests/test_closeout_input_model_invariants.py:233-254 |
 
 ## Cross-Repo References
 
 The external-memory fixture provides distinct repository identities only to prove repository-bound model facts.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_enabled_message_model_refuses_blank_or_unstripped_text`, `test_not_applicable_leg_has_no_message_authority`, `test_normalizer_and_consumer_share_exact_plan_identity`, `test_mutation_evidence_refuses_incomplete_state_facts`. The L2 additions force immutable normalized input, exact generation retention, evidence-derived cancellation/recovery, and pre-authority refusal of invalid calls. A failed first call remains task-addressably recoverable without amending accepted intent.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_enabled_message_model_refuses_blank_or_unstripped_text`, `test_not_applicable_leg_has_no_message_authority`, `test_normalizer_and_consumer_share_exact_plan_identity`, `test_mutation_evidence_refuses_incomplete_state_facts`. | L66-L68; L71-L81; L84-L104; L121-L123 | `mcp/tests/test_closeout_input_model_invariants.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T11:29+02:00 — 260821-CLIVE-L1 candidate12 rebind: added the
   model-level proof that reconciled-unchanged evidence may retain expected intent but cannot name a

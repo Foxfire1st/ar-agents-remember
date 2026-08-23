@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/tool_response.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,6 +57,8 @@ operation phase and report evidence can pass through the existing response contr
 operation keys, worker PIDs, leases, and resume tokens remain absent.
 
 ## Update History
+
+- 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the source only repoints `finalize_tool_response` to its moved `models.tools` package. Verified at code commit `1d446724`.
 - 2026-08-14T06:30+02:00 — No contract expansion: L23 keeps tool-response completion bounded while
   carrying the existing task-addressed lifecycle-operation projection; private recovery identity
   remains excluded. Verification stays closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,11 +69,11 @@ The production helpers and focused recovery suite are the direct evidence for th
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The typed outcome carries external-memory refresh and commit results across normal and recovered closeout. | `MemoryCloseoutOutcome` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:36-45 |
-| Finalization recovery proves exact clean heads, the ledger mapping, and memory ancestry without replaying mutation. | `prove_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:48-63 |
-| Code recovery receives typed intent, proves clean HEAD and the accepted tree, then journals the code cell. | `accepted_code_commit` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:157-213 |
-| External recovery receives the same intent, reconciles the exact memory and ledger edge, then journals the full tuple. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:216-276 |
-| The regression suite exercises the extracted proof owner directly for mismatch and reachability refusals. | `test_recovery_rejects_code_and_contract_memory_mismatches`; `test_recovery_rejects_unproven_memory_commits` | mcp/tests/test_worktree_closeout_recovery.py:314-347; mcp/tests/test_worktree_closeout_recovery.py:349-388 |
+| The typed outcome carries external-memory refresh and commit results across normal and recovered closeout. | `MemoryCloseoutOutcome` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:49-58 |
+| Finalization recovery proves exact clean heads, the ledger mapping, and memory ancestry without replaying mutation. | `prove_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:61-76 |
+| Code recovery receives typed intent, proves clean HEAD and the accepted tree, then journals the code cell. | `accepted_code_commit` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:170-226 |
+| External recovery receives the same intent, reconciles the exact memory and ledger edge, then journals the full tuple. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:229-296 |
+| The regression suite exercises the extracted proof owner directly for mismatch and reachability refusals. | `test_recovery_rejects_code_and_contract_memory_mismatches`; `test_recovery_rejects_unproven_memory_commits` | mcp/tests/test_worktree_closeout_recovery.py:315-348; mcp/tests/test_worktree_closeout_recovery.py:350-389 |
 
 ## Cross-Repo References
 
@@ -93,7 +93,19 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 
 Code and ledger commits use messages only from accepted `EffectiveCloseoutInput`. Before a new Git commit the module publishes mutation intent; after the exact commit it publishes proof. Verified-existing commits report recovery projection without inventing mutation evidence. Ledger recovery has no generated-message fallback, and any recorded cell is evidence to prove rather than authority to overwrite. Memory-before-ledger direct-landing recovery is outside this worktree journal owner.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `MemoryCloseoutOutcome`, `prove_closeout_recovery_commits`, `accepted_code_commit`. Despite its transitional package location under `worktrees/queue`, this module proves and publishes root-journal mutation evidence for the accepted closeout generation. It does not make the queue row recovery authority. Moving or deleting residual queue lifecycle structure is L3 scope.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `MemoryCloseoutOutcome`, `prove_closeout_recovery_commits`, `accepted_code_commit` at this ownership boundary. | L49-L58; L61-L76; L170-L226 | `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
 

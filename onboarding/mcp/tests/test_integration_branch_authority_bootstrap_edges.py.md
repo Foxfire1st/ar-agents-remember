@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_branch_authority_bootstrap_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -41,13 +41,25 @@ the lowest writer without inventing a test-only bypass.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite owns bootstrap journal, recovery, rollback, ref-transaction, and external-memory authority edge cases. | `IntegrationBranchAuthorityBootstrapEdgeTests` | mcp/tests/test_integration_branch_authority_bootstrap_edges.py:21-284 |
+| The suite owns bootstrap journal, recovery, rollback, ref-transaction, and external-memory authority edge cases. | `IntegrationBranchAuthorityBootstrapEdgeTests` | mcp/tests/test_integration_branch_authority_bootstrap_edges.py:23-284 |
 
 ## Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_bootstrap_record_revalidates_repository_path_and_memory_edge`, `test_bootstrap_journal_refuses_changed_sprint_branch_without_mutation`, `test_bootstrap_revalidates_source_tip_before_first_ref_creation`, `test_bootstrap_revalidates_atomic_topology_before_first_ref_creation`. The L2 additions force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, and organizational disposition/repair without queue-owned lifecycle evidence.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_bootstrap_record_revalidates_repository_path_and_memory_edge`, `test_bootstrap_journal_refuses_changed_sprint_branch_without_mutation`, `test_bootstrap_revalidates_source_tip_before_first_ref_creation`, `test_bootstrap_revalidates_atomic_topology_before_first_ref_creation`. | L24-L48; L50-L90; L92-L116; L118-L146 | `mcp/tests/test_integration_branch_authority_bootstrap_edges.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-19T22:32+02:00 — No content impact: 260815-DAG-L13 reworded the expected bootstrap refusal to "effective atomic master nature"; the documented refusal boundary is unchanged. Verification remains closeout-owned.
 

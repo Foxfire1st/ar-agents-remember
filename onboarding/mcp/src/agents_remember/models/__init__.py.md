@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -41,6 +41,8 @@ primitives/identity/cursors/content/capabilities/status/stream/history/operation
 telemetry — keeping the package initializer exports-only.
 
 ## Update History
+
+- 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the package export only repoints the public tool registry to its moved `models.tools` package. Verified at code commit `1d446724`.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the conversation-model export
   additions; the L9 change section above documents them. Verification metadata pinned until

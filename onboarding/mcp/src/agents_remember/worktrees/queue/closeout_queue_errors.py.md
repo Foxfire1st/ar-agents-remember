@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,21 @@ No configured Domain Documentation source applies.
 
 No meaningful cross-repository reference applies.
 
+## 260821-CLIVE-L2 Shared Queue Failure Evidence API
+
+`bounded_queue_failure_detail` is the one queue-facing adapter from lower-level exceptions to
+stable public evidence. It delegates redaction to `public_failure_evidence`, serializes the bounded
+record deterministically, and prevents backend text or offending input from leaking through each
+queue consumer's local exception formatting.
+
+| Finding | Source |
+| --- | --- |
+| Queue consumers share one bounded, stable failure-detail constructor. | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:25-45 |
+| Task-reference validation also uses that constructor instead of echoing the supplied value. | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:48-67 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: documented the shared bounded queue failure-evidence API. Verified at code commit `1d446724`.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_mcp_registration_wiring_tests_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -45,8 +45,8 @@ No Domain Documentation source is configured for this repository-local regressio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `RegistrationWiringTests2` | mcp/tests/test_mcp_registration_wiring_tests_2.py:6-6 |
-| Closeout-queue registration validates and forwards the canonical request model. | `test_closeout_queue_registration_validates_and_forwards_the_request` | mcp/tests/test_mcp_registration_wiring_tests_2.py:7-26 |
+| Current suite declaration anchoring this card. | `RegistrationWiringTests2` | mcp/tests/test_mcp_registration_wiring_tests_2.py:6-591 |
+| Closeout-queue registration validates and forwards the canonical request model. | `test_closeout_queue_registration_validates_and_forwards_the_request` | mcp/tests/test_mcp_registration_wiring_tests_2.py:30-49 |
 
 ## Cross-Repo References
 
@@ -56,7 +56,19 @@ No cross-repository implementation source governs this test module.
 
 Registration assertions now include worktree and direct-landing message fields plus structured refusal/effective-input response fields. Optional JSON-schema fields remain runtime-required when their resolved legs are enabled; the suite does not imply blank-message compatibility.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_worktree_enclosure_adopt_forwards_exact_preview_binding`, `test_closeout_queue_registration_validates_and_forwards_the_request`, `test_worktree_operation_control_forwards_exact_generation_request`, `test_worktree_start_defaults_to_a_real_light_task_start`. The L2 additions pin the closed public response/control vocabulary, exhaustive registration, and the absence of private operation ids or ad hoc lower-layer exception projection.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_worktree_enclosure_adopt_forwards_exact_preview_binding`, `test_closeout_queue_registration_validates_and_forwards_the_request`, `test_worktree_operation_control_forwards_exact_generation_request`, `test_worktree_start_defaults_to_a_real_light_task_start`. | L7-L28; L30-L49; L51-L82; L84-L101 | `mcp/tests/test_mcp_registration_wiring_tests_2.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 

@@ -19,7 +19,7 @@
     "docs/design/observable-lifecycle.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 0,
+    "sourceFilesInScope": 8,
     "fileSidecars": 1,
     "childRoutes": 1
   },

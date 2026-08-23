@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection_snapshot.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -33,7 +33,20 @@ Part of the 260731-EFA-L7 in-place split family for `test_observer_projection_sn
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
+## 260821-CLIVE-L2 Root-Journal Snapshot Addressing
+
+Snapshot tests now share `_write_addressable_contract`, which writes the contract and then publishes
+the enclosure-root locator/manifest. Reopened contracts retain their lifecycle identity; a cleanup
+field change no longer erases the address required to rediscover the same operation.
+
+| Finding | Source |
+| --- | --- |
+| The fixture helper makes every relevant contract addressable through the lifecycle location chain. | mcp/tests/test_observer_projection_snapshot.py:68-78 |
+| Enclosure reads use the helper and preserve lifecycle identity across reopen. | mcp/tests/test_observer_projection_snapshot.py:432-506 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_task_document_master.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -47,6 +47,8 @@ that the `extra=forbid` `TaskDocResponse` envelope declares it (a `ValidationErr
 repair).
 
 ## Update History
+
+- 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the test only repoints the public tool response registry to its moved `models.tools` package. Verified at code commit `1d446724`.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: task-doc imports moved under
   `application/task_docs/`; `MasterApplicationTests` gained the sprint-get regression proving

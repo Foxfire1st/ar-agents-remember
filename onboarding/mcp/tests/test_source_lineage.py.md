@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_source_lineage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T05:27+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -88,7 +88,21 @@ diverged, or foreign-repository evidence fails closed with task-addressed recove
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
+## 260821-CLIVE-L2 Lifecycle Location Fixture Sequencing
+
+Source-lineage fixtures normally publish master and leaf locators/manifests with their contracts.
+The organizational fixture deliberately delays publication until task structure is rewritten, then
+publishes only the final accepted leaf identity. This prevents stale pre-rewrite lifecycle
+addresses from becoming test authority.
+
+| Finding | Source |
+| --- | --- |
+| Standard fixtures publish addressable master and leaf contracts from canonical publication text. | mcp/tests/test_source_lineage.py:472-551 |
+| Organizational setup delays publication and emits the final leaf location after its task rewrite. | mcp/tests/test_source_lineage.py:555-586 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 
 - 2026-08-16T05:27+02:00 — L4 exact-review forcing: added real-Git organizational and atomic
   code-forward/external-memory-rewind cases plus an under-lock race for exact pre-start source

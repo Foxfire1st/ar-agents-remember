@@ -14,7 +14,7 @@
     "dashboard/scripts/check-diff-coverage.test.mjs"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 0,
+    "sourceFilesInScope": 6,
     "fileSidecars": 2,
     "childRoutes": 0
   },

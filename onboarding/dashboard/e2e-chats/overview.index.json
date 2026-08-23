@@ -11,7 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [],
   "coverageCounts": {
-    "sourceFilesInScope": 0,
+    "sourceFilesInScope": 10,
     "fileSidecars": 0,
     "childRoutes": 0
   },

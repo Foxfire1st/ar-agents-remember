@@ -21,7 +21,7 @@
     "skills/l-01-agent-lifecycles/roles/worker.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 0,
+    "sourceFilesInScope": 9,
     "fileSidecars": 9,
     "childRoutes": 0
   },

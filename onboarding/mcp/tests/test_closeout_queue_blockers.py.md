@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_blockers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,12 +45,24 @@ certified sibling reported as an acquisition fact rather than a hard drain.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pre- and post-closeout blocker sets are separately forced. | `test_pre_closeout_blockers_name_lifecycle_tree_memory_and_source_changes` | mcp/tests/test_closeout_queue_blockers.py:119-144 |
-| Closed external trees and commits are exact. | `test_closed_tree_and_certified_commit_blockers_are_exact` | mcp/tests/test_closeout_queue_blockers.py:171-212 |
-| Waiting reasons cover graph and blocker logistics. | `test_waiting_reasons_cover_lane_blocker_atomic_and_admission_facts` | mcp/tests/test_closeout_queue_blockers.py:367-437 |
-| Blocker lifetime exclusivity and structured refusal facts. | `BlockerLifetimeExclusivityTests` | mcp/tests/test_closeout_queue_blockers.py:436-579 |
+| Pre- and post-closeout blocker sets are separately forced. | `test_pre_closeout_blockers_name_lifecycle_tree_memory_and_source_changes` | mcp/tests/test_closeout_queue_blockers.py:144-169 |
+| Closed external trees and commits are exact. | `test_closed_tree_and_certified_commit_blockers_are_exact` | mcp/tests/test_closeout_queue_blockers.py:196-237 |
+| Waiting reasons cover graph and blocker logistics. | `test_waiting_reasons_cover_lane_blocker_atomic_and_admission_facts` | mcp/tests/test_closeout_queue_blockers.py:392-458 |
+| Blocker lifetime exclusivity and structured refusal facts. | `BlockerLifetimeExclusivityTests` | mcp/tests/test_closeout_queue_blockers.py:461-604 |
+
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_candidate_blockers_include_graph_owner_operation_and_revalidation_failures`, `test_candidate_blockers_choose_post_closeout_and_refresh_curator_evidence`, `test_pre_closeout_blockers_name_lifecycle_tree_memory_and_source_changes`, `test_post_closeout_blockers_return_early_or_collect_every_exact_owner`. These blocker tests cover current transitional queue behavior. Root-journal operation recovery is authoritative in L2; removal of lifecycle-shaped queue blockers/rows remains L3 scope.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_candidate_blockers_include_graph_owner_operation_and_revalidation_failures`, `test_candidate_blockers_choose_post_closeout_and_refresh_curator_evidence`, `test_pre_closeout_blockers_name_lifecycle_tree_memory_and_source_changes`, `test_post_closeout_blockers_return_early_or_collect_every_exact_owner`. | L45-L106; L108-L142; L144-L169; L171-L194 | `mcp/tests/test_closeout_queue_blockers.py` |
 
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 

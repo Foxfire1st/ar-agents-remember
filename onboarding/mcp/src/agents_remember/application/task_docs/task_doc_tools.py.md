@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/application/task_docs/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -117,25 +117,23 @@ validation failures, and invalid resolvable parent master docs.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:92-108 |
-| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:535-547 |
-| Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:403-446 |
+| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:482-494 |
+| Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:404-447 |
 | Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:269-269 |
-| The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
+| The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:35-89 |
 | The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:679-804 |
-| The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:31-53 |
-| The JSON/markdown store this application entry point drives. | `write_task_docs` | mcp/src/agents_remember/tasks/store.py:40-73 |
-| The payload builder that wraps this application entry point. | `task_doc_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:19-30 |
-| The contract helpers used to resolve the task root + lifecycle key. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285 |
+| The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:39-60 |
+| The JSON/markdown store this application entry point drives. | `write_task_docs` | mcp/src/agents_remember/tasks/store.py:111-123 |
+| The payload builder that wraps this application entry point. | `task_doc_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:21-32 |
+| The contract helpers used to resolve the task root + lifecycle key. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:232-292 |
 
-## 260815-DAG-L3 Queue-Governed Publication
+## 260815-DAG-L3 Queue-Governed Publication (Still Transitional In CLIVE L2)
 
-Every task-doc publication now resolves its governing sprint queue and publishes the complete
-document batch under that queue's lock. Leaf writes include any synchronized master row; sprint
-completion validates every commanded graph master and atomically closes a quiescent queue;
-`remove_subtask` deletion is inside the same governed publication. Topology-stable classification
-controls which own-atomic-block recovery edits may proceed while a blocker is active. Structural
-scope resolution is delegated to `task_doc_queue_scope.py`; this dispatcher owns only error
-translation and the locked publication call.
+Governed task-doc publication still resolves the sprint queue and wraps the complete document
+batch in the pre-L3 queue publisher. L2 extracts exact source-CAS and integration serialization to
+`task_doc_publication.py`; this dispatcher prepares snapshots and delegates the transaction. Leaf
+writes still include any synchronized master row, and queue refusal remains possible until L3
+replaces authoring-time queue gating with post-write affected-candidate invalidation/rebuild.
 
 ## 260815-DAG-L4 Authority Boundary
 
@@ -144,14 +142,29 @@ L4 routes this file's existing application, configuration, task, model, registra
 
 ## 260815-DAG-L12 Title Threading
 
-The task-doc publication/preview sites thread the joined graph titles into the renderer (L12-R1): `_publish_task_doc_set` and `_remove_subtask` pass `graph_titles=` to `write_task_docs` via `_batch_graph_titles` / `_graph_titles_for`, and `_render_preview` renders with `_graph_titles_for` so previews show the same titled mermaid diagram the published `task.md` will. `_graph_titles_for` reads the commanded master documents under `tasks/` through `read_graph_titles`; documents without an `executionGraph` render without titles (fallback labels).
+The task-doc publication/preview sites thread joined graph titles into the renderer (L12-R1). In
+CLIVE L2 the ordinary publication and batch-title helpers moved to `task_doc_publication.py`;
+`_remove_subtask` now delegates through that shared publisher, while `_render_preview` retains the
+local preview title lookup. Documents without an `executionGraph` render without titles.
 
 
 ## 260815-DAG Master Full-Gate Repair
 
 The module moved to `application/task_docs/` (relative imports within the package) and gained `_sprint_doc_identity`, which merges the standard task-doc identity (taskId/slug/kind/status/lifecycleId/docPath/renderedPath/stepsDone/stepsTotal) into the special-op results (sprint linkage ops + `author_execution_graph`) — pairing with the `TaskDocResponse` special-op wire fields in `models/task_doc.py`.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool`. L2 moves exact source-CAS and integration serialization into the shared transactional publisher, but governed writes still pass through the pre-L3 queue-store wrapper. L3 owns removing that refusal dependency and implementing blast-radius invalidation, empty projection, and rebuild from current door facts.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool` at this ownership boundary. | L135-L146; L150-L162; L198-L301 | `mcp/src/agents_remember/application/task_docs/task_doc_tools.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: module moved to `application/task_docs/`; gained `_sprint_doc_identity` for the special-op results. Verified at code commit e5cb139f.
 

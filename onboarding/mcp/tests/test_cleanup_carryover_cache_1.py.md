@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_cleanup_carryover_cache_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-16T04:06+02:00                                            |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                                        |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -35,7 +35,19 @@ Part of the 260731-EFA-L7 in-place split family for `test_cleanup_carryover_cach
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
+## 260821-CLIVE-L2 Pre-L5 Cache Test Setup
+
+This split cache suite installs the shared test-only terminal archive permit after the base setup.
+The tests therefore continue to cover downstream cleanup cache semantics while production cleanup
+remains fail-closed pending L5 archive evidence.
+
+| Finding | Source |
+| --- | --- |
+| Subclass setup explicitly installs the downstream-unit archive permit. | mcp/tests/test_cleanup_carryover_cache_1.py:20-28 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 
 - 2026-08-16T04:06+02:00 — Dagger fixture repair: reused the real repositories already created by the citation-cache contract helper so the intended post-preflight ref-query failure remains production-bound.
 - 2026-08-16T02:51+02:00 — L4 terminal authority: documented the real contract-derived cleanup

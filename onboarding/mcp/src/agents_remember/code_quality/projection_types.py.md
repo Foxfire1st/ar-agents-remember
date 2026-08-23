@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/projection_types.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -112,7 +112,21 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `_vocabulary` (lines 364-374). | `_vocabulary` | mcp/src/agents_remember/code_quality/projection_types.py:364-374 |
 | Defines the function `_tuple_constant` (lines 377-379). | `_tuple_constant` | mcp/src/agents_remember/code_quality/projection_types.py:377-379 |
 
+## 260821-CLIVE-L2 Nullable Union Preservation
+
+Nullable-field normalization now removes only null variants. A non-null union is returned intact,
+a nullable single variant keeps outer annotations, and a nullable multi-variant union keeps both
+its annotations and remaining `anyOf` alternatives. An all-null field still refuses generation.
+This lets the lifecycle-operation status schema remain a closed multi-variant union instead of
+being flattened or rejected.
+
+| Finding | Source |
+| --- | --- |
+| `_without_null` distinguishes non-null unions, one surviving variant, multiple surviving variants, and the invalid all-null case. | mcp/src/agents_remember/code_quality/projection_types.py:293-304 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled nullable multi-variant union preservation. Verified at code commit `1d446724`.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

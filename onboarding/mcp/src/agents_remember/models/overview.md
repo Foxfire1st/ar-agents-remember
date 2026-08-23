@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -45,6 +45,8 @@ the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
 
+The model layer now carries closed lifecycle generation, legal-control, enclosure, door, successor, termination, direct-landing, and bounded legacy vocabularies while keeping scheduling projection separate.
+
 ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete
 role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to
 carry settings provenance, while `sessionCommands` is now explicitly user-authored launch
@@ -59,7 +61,7 @@ HFX2-L15 extends the terminal spawn response with `replacementForLeaf`, resolved
 bound session-log entry/path provenance. Delivery booleans are evidence-specific: context is true
 only for the id-bearing user record, and commands require command plus non-error stdout evidence.
 
-Start with `tool_registry.py`: `TOOL_RESPONSE_MODELS` maps every modeled builder
+Start with `tools/tool_registry.py`: `TOOL_RESPONSE_MODELS` maps every modeled builder
 to one response model, while `PUBLIC_TOOL_RESPONSE_MODELS` filters out retained
 compatibility builders so it matches `mcp.tools.PUBLIC_TOOLS`. Both are typed
 `dict[str, type[ResponseEnvelope]]` (260731-EFA-L4), not `type[BaseModel]`.
@@ -192,7 +194,7 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:74-76 |
-| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:225-229 |
+| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:225-229 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
 | Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:14-24 |
@@ -341,7 +343,7 @@ is the single writer and it puts the value into an untyped payload dict. It crea
 `leaf-ref-not-found`/`leaf-ref-ambiguous`) instead of respelling it; `Literal` flattening means
 the published enums are unchanged (`get_args(LeafAssignmentStatus)` is still the same six
 members). The three terminal vocabularies stay declared HERE rather than beside the payload
-builders that write them, and the module says why: `mcp.tools.base` → `models.tool_registry` →
+builders that write them, and the module says why: `mcp.tools.base` → `models.tools.tool_registry` →
 `models.terminal` is an existing import edge, so a `models.terminal` → `mcp.tools.terminal`
 import would close a cycle. The invariant is one declaration, not a particular owner —
 `mcp.tools.terminal` imports these aliases and annotates its status seams with them.
@@ -349,7 +351,7 @@ import would close a cycle. The invariant is one declaration, not a particular o
 `VALID_SESSION_RENAME_STATUSES` are `frozenset(get_args(...))` of their aliases — the runtime
 half derived from the type rather than typed beside it.
 
-**`tool_registry.py` — the loose type that made the token count wrong.** Both registries are
+**`tools/tool_registry.py` — the loose type that made the token count wrong.** Both registries are
 `dict[str, type[ResponseEnvelope]]`. Under the previous `dict[str, type[BaseModel]]`,
 `TOOL_RESPONSE_MODELS[tool].model_validate(payload)` was typed as a bare `BaseModel`, on which
 `nextStep` and `supervisorBanner` are not attributes a checker knows — so the choke point had
@@ -410,7 +412,24 @@ Worktree, closeout-queue, and task projections now distinguish organizational di
 
 `closeout_input.py` adds the raw-message, resolved-plan, enabled/not-applicable leg, structured-refusal, and effective-input vocabulary shared by both closeout routes. Public worktree and direct-landing responses expose that vocabulary. Lifecycle operation records use only the normalized form; no generated subject, blank sentinel, or fallback input remains below validation.
 
+## 260821-CLIVE-L2 Current Architecture
+
+Models validate immutable identity and contradictory evidence but perform no I/O or recovery. `models.lifecycles` now owns the canonical root-journal vocabulary. `models.queue` still exposes the transitional pre-L3 selected/in-flight/certified schema and commit-shaped fields; those fields are not authority for L2 retry/recover/cancel/revise, and L3 owns replacing them with the waiting-only projection model.
+
+Registered tool request/response contracts now live under `models/tools/`; the move removes the former flat paths without changing the registry's ownership or creating compatibility exports.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Strict lifecycle operation record/projection. | L295-L315; L324-L389; L652-L669 | `mcp/src/agents_remember/models/lifecycles/operation.py` |
+| Queue candidate projection. | L259-L336; L355-L405 | `mcp/src/agents_remember/models/queue/closeout_queue.py` |
+
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the `models/tools/` package layout, repaired current registry evidence paths, and verified the governed L2 route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
 

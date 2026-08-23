@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T11:29+02:00 |
-| lastVerifiedCommitHash |  `eb7ea60ab9919f009fef58f81afe5861aa1709da`|
-| lastVerifiedCommitDate |  2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,7 +44,8 @@ These records are the durable facts from which closeout recovery projection is d
 
 ### Todos
 
-Direct landing remains synchronous and unjournaled in L1; durable memory-before-ledger recovery is L2-R11 and its forcing is L5-R15.
+No open todo is owned here. Direct landing uses the sibling lifecycle direct-landing input and
+ledger-intent models; closeout mutation evidence remains deliberately repository-leg-specific.
 
 ## Docs References
 
@@ -54,15 +55,27 @@ See task `260821-CLIVE-L1` L1-R4 and L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The four-state vocabulary is closed and explicit. | `MutationEvidenceState` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:9-15 |
+| The four-state vocabulary is closed and explicit. | `MutationEvidenceState` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:10-15 |
 | Snapshot identity includes reflog, index, candidate, and status facts. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-29 |
-| State-specific proof is model validated. | `GitMutationEvidence` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:32-61 |
+| State-specific proof is model validated. | `GitMutationEvidence` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:32-62 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `GitMutationSnapshot`, `GitMutationEvidence`. Closeout Git evidence remains strict and repository-bound. Direct landing now has its own accepted-input and ledger-intent models in the same lifecycle package, so the former “direct landing is unjournaled” boundary is obsolete.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current module exposes `GitMutationSnapshot`, `GitMutationEvidence` at this ownership boundary. | L18-L29; L32-L62 | `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T11:29+02:00 — 260821-CLIVE-L1 candidate12 rebind: recorded the
   all-non-commit-proven commit prohibition and the legitimate preservation of a differing bound

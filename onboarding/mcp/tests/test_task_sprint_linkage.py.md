@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,9 +58,9 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The linkage forcing suite. | `SprintLinkageTests`; `SprintLinkageEdgeTests` | mcp/tests/test_task_sprint_linkage.py:101-706; mcp/tests/test_task_sprint_linkage.py:707-1064 |
-| The production module under test. | `SprintLinkageRequest`; `_AttachMasterPayload`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:102-111; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:130-154; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:164-173 |
-| The call-shape the suite now passes (L16). | `TaskDocCall` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:36-45 |
+| The linkage forcing suite. | `SprintLinkageTests`; `SprintLinkageEdgeTests` | mcp/tests/test_task_sprint_linkage.py:102-749; mcp/tests/test_task_sprint_linkage.py:752-1113 |
+| The production module under test. | `SprintLinkageRequest`; `_AttachMasterPayload`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:111-119; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:138-162; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:173-181 |
+| The call-shape the suite now passes (L16). | `TaskDocCall` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:37-45 |
 
 ## Cross-Repo References
 
@@ -76,7 +76,19 @@ rows whose seat doc is absent or carries no master reference now report `seat-do
 master-less `seat-doc-row`. `test_attach_wraps_a_serving_build_preflight_refusal` proves attach wraps
 the `TopologyServingBuildError` as a `TaskDocError` (`serving-build-unsupported`) refusal.
 
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include `test_attach_writes_all_four_artifacts_atomically`, `test_attach_judgment_refusals_write_nothing`, `test_attach_existing_nature_needs_no_nature_payload`, `test_attach_target_and_uniqueness_refusals`. The L2 additions prove structural/task publication serialization without a global queue/lifecycle authoring lock and keep public control/gate identity task-addressed.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The current test source exercises `test_attach_writes_all_four_artifacts_atomically`, `test_attach_judgment_refusals_write_nothing`, `test_attach_existing_nature_needs_no_nature_payload`, `test_attach_target_and_uniqueness_refusals`. | L197-L225; L227-L248; L250-L255; L257-L289 | `mcp/tests/test_task_sprint_linkage.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -111,7 +111,7 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
-| Public response model registry validates payload shapes. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:223-227 |
+| Public response model registry validates payload shapes. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:223-227 |
 | Server registration lives in `server.py`. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
 | Application-layer modules convert public MCP payloads into service calls. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 | Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | `build_current_provider_state` | mcp/src/agents_remember/providers/current_state.py:16-36 |
@@ -143,6 +143,8 @@ silently removing the scheduler surface while its implementation remains in the 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
 - 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 

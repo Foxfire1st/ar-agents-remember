@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-23T16:08+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -397,6 +397,8 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 (including on consumer-side drain and before the close sentinel).
 
 ## Hot Path Summary
+
+The MCP package routes mutation tools through closed configured-contract admission, journal-rooted lifecycle controls, explicit enclosure adoption/legacy repair, and disposable door-based scheduling.
 
 **260731-EFA-L21 — checkout coordination isolation.** An undeclared source-checkout invocation is
 classified before runtime configuration is read: a linked worktree receives a synthetic
@@ -892,7 +894,20 @@ New sub-package routes `application/task_docs/`, `models/queue/`, `worktrees/que
 
 Closeout now crosses one explicit input boundary before lifecycle authority or Git. `worktrees/closeout_input.py` derives typed enabled/not-applicable legs and emits one stripped `EffectiveCloseoutInput`; worktree closeout journals that value and per-repository mutation evidence, while direct landing shares the input contract but remains synchronous, lock-serialized, and intentionally not crash durable in L1. Lifecycle records—not queue rows—own accepted input, mutation proof, recovery projection, and exact contract-finalization identity. The queue remains a scheduling projection outside this leaf. Strict schema 3.0 replaces compatibility readers, and `contract_publication_text` is the one serializer used by publication and hashes.
 
+## 260821-CLIVE-L2 Current Architecture
+
+The package surface now exposes retry, recover, cancel, revise, integrate, retire/supersede, bounded legacy handling, and enclosure adoption without private operation ids. Read-only degraded status remains separate from mutation admission. Expected lower reader/authority failures have one public projection; unexpected faults stay loud.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Public worktree payload surface. | L43-L53; L98-L105; L151-L169; L172-L205 | `mcp/src/agents_remember/mcp/tools/worktree.py` |
+| Admission forcing across every consumer. | L197-L322; L496-L640 | `mcp/tests/test_configured_contract_admission_l2.py` |
+
 ## Update History
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
 

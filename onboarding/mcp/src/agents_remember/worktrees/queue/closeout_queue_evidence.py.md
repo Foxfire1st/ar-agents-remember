@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
+| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,7 +80,21 @@ No configured Domain Documentation source applies; authority is the repository's
 
 No meaningful cross-repository reference applies.
 
+## 260821-CLIVE-L2 Evidence-Surface Redaction
+
+Curator evidence, disposition and grade validation, missing judgment lookup, and register parsing
+now emit bounded stage/side/name evidence. Machine-readable queue statuses remain intact while raw
+validation payloads, task contents, paths, and lower-level exception strings are withheld. This is
+failure-surface hardening for the transitional queue, not durable lifecycle ownership.
+
+| Finding | Source |
+| --- | --- |
+| Curator and grade evidence failures use the shared bounded constructor. | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:156-374 |
+| Register read and shape failures publish bounded task-document evidence. | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:480-523 |
+
 ## Update History
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled bounded curator, grade, and register evidence failures. Verified at code commit `1d446724`.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 

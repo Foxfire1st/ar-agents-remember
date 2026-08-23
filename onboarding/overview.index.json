@@ -80,7 +80,7 @@
     "scripts/sync-skills.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1632,
+    "sourceFilesInScope": 1720,
     "fileSidecars": 22,
     "childRoutes": 9
   },
@@ -138,7 +138,7 @@
     "workspace"
   ],
   "hotPath": {
-    "summary": "**Gate honesty (260731-EFA-L2 \u2014 the seven durable contracts).** The wrapper used to list six steps of which three could not fail, enforce two complexity limits it had switched off, feed CRAP the wrong metric, and certify a scope written by hand. Seven facts are now true and enforced, not documented: 1. **`C901`, `PLR0911`, `PLR0912`, `PLR0915` and `PLR0913` are armed at full strength with zero exemptions.** The limits existed and were dead \u2014 `max-complexity = 10` was configured while `C901` was unselected, and the three `PLR09xx` codes were ignored \"because Radon reports complexity pressure...",
+    "summary": "CLIVE L2 separates current-contract admission and durable lifecycle recovery from the older queue mechanism. Public mutation consumers use one closed admission result, and normal operations are addressed by locator -> immutable enclosure manifest -> canonical root journal. The pre-L3 queue schema and its lifecycle-shaped rows are still present as transitional source state; L3 owns reducing that queue to a disposable waiting-door projection and completing task-change invalidation/rebuild. Destructive cleanup remains closed pending external terminal archive proof. **Gate honesty (260731-EFA-L...",
     "candidateHints": [
       "dev-skills",
       "mcp",
