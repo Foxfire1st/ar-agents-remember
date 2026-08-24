@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_code_quality_environment_guard.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ missing or mismatched facts.
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — Updated the sole admission owner and pre-planning guard proof.
+- 2026-08-24T21:23+02:00 — Updated the sole admission owner and pre-planning guard proof.
 
 - 2026-08-14T11:48:55+02:00 — Created for the R42 file-size extraction. Preserved the direct
   refusal and native-temp regressions formerly housed in `test_code_quality_check.py`; final source

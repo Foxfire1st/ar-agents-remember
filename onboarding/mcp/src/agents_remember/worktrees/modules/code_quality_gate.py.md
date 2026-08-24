@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -251,7 +251,7 @@ cannot satisfy closeout or integration even when their selected nodes pass.
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — 260824-PDLS made lifecycle quality consume only verified Dagger
+- 2026-08-24T21:23+02:00 — 260824-PDLS made lifecycle quality consume only verified Dagger
   evidence.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: made recovery single-snapshot and strict-manifest-owned, retained stable `reportPath`, and added optional immutable `publishedResultPath` without disturbing the concurrent L4 diagnostic-wording contract. Verification metadata remains pinned until architect-owned closeout.

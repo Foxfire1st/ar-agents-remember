@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agents_remember_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ refuses before collection; phase output remains observation rather than authorit
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — Updated admission ownership and added Dagger phase/timestamp wiring proof.
+- 2026-08-24T21:23+02:00 — Updated admission ownership and added Dagger phase/timestamp wiring proof.
 
 - 2026-08-14T11:27+02:00 — R39 curator: recorded one shared environment-authorization owner.
   Verification remains closeout-owned.

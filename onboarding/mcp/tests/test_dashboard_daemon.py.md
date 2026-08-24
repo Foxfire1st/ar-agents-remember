@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_dashboard_daemon.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ minimal real settings JSON for CLI dispatch tests.
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — No content impact: the owned-state context manager moved from the test
+- 2026-08-24T21:23+02:00 — No content impact: the owned-state context manager moved from the test
   tree to `agents_remember.testing.global_state`; dashboard-daemon behavior is unchanged.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

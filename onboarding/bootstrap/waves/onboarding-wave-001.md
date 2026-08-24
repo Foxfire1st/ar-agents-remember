@@ -4,7 +4,7 @@
 | --- | --- |
 | task | 260824-PDLS |
 | status | accepted by curator |
-| source commit | `77bc614506b8b50937aed6846523547d36045947` |
+| source commit | `b99501852bcfa5f499a25e7183063751f6133a28` |
 | new or relocated cards | 26 |
 | refreshed existing cards | 40 |
 | stale cards removed | 3 |

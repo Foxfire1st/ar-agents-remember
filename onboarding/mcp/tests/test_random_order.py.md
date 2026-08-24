@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_random_order.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,6 +54,6 @@ test tree. Existing seed/order behavior remains unchanged.
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — Updated the production-owner reference after the shared-route move.
+- 2026-08-24T21:23+02:00 — Updated the production-owner reference after the shared-route move.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

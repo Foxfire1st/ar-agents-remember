@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 
 ## Purpose
 
@@ -53,7 +53,7 @@ this module.
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — Moved two pure route-normalization assertions to the direct cohort.
+- 2026-08-24T21:23+02:00 — Moved two pure route-normalization assertions to the direct cohort.
 
 - 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 4 citation findings (2 rows); scoped recheck clean.
 

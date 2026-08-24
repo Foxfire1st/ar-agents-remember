@@ -5,7 +5,7 @@
 | workflow | c-03 existing-memory-slice-maintenance |
 | state | ready for memory commit and master Dagger evidence |
 | wave | onboarding-wave-001 |
-| source commit | `77bc614506b8b50937aed6846523547d36045947` |
+| source commit | `b99501852bcfa5f499a25e7183063751f6133a28` |
 | source tree | `f36f12b1e175c23fb3c0729187ae8eac5da66f46` |
 | new or relocated file cards | 26 |
 | refreshed existing source cards | 40 |

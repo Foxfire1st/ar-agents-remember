@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/tests/test_leaf_structural_coverage.py`                  |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ structural-coverage vocabulary tests retain their existing ownership.
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — Moved one gate-kind assertion to the bounded direct cohort.
+- 2026-08-24T21:23+02:00 — Moved one gate-kind assertion to the bounded direct cohort.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored the split suite's native-Windows quality-environment test after dead-code removal; the assertion contract is unchanged.
 - 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: moved the task-document identity/topology half

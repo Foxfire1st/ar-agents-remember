@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l5_quality_and_recovery_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ reader refusal, not a compatibility route.
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — Updated quality recovery for candidate-bound certifying evidence.
+- 2026-08-24T21:23+02:00 — Updated quality recovery for candidate-bound certifying evidence.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: extended focused recovery edges for strict manifest authority and distinct stable/published result paths. Verification metadata remains pinned until architect-owned closeout.
 
