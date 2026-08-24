@@ -11,6 +11,8 @@
 | `mcp/src/agents_remember/worktrees` | Immutable schema-2 Dagger publication is the certifying evidence factory for lifecycle consumers. |
 | `mcp/tests` | New forcing/cohort cards exist; moved helpers and relocated assertions preserve their history. |
 | `scripts/test-python` | The one direct command is documented with its fixed execution boundary. |
+| `mcp/src/agents_remember/application` | The worktree facade and extracted request-model owner retain one typed application contract. |
+| `mcp/src/agents_remember/worktrees/integration/lifecycle` | Locator/manifest I/O authority remains separate from pure binding/digest construction. |
 
 ## Validation
 
@@ -20,3 +22,4 @@
 3. Deleted/moved predecessor cards are absent and their useful knowledge is preserved at successors.
 4. Governing overviews and `system/tools.md` agree on one command/evidence truth.
 5. Route indexes are regenerated only after the content tree is final.
+6. Armed file-size proof reports zero Python/dashboard TypeScript files at or above 1,200 lines.

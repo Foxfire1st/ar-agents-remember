@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T21:43+02:00 |
+| lastVerifiedCommitHash | `23d35f7799153e0c7f3d126291fe2da1662fb87b` |
+| lastVerifiedCommitDate | 2026-08-24T21:41:52+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,11 @@ Canonical locator -> enclosure manifest -> lifecycle journal authority.
 ### Logic
 
 The public surface is `LifecycleOperationLocation`, `EnclosurePublicationArtifacts`, `LifecycleOperationLocationError`, `lifecycle_operation_locator_path`, `lifecycle_enclosure_manifest_path`, `prepare_enclosure_publication`. This is the sole normal location authority: address-only locator to immutable root manifest to canonical root journal, with confinement, repository, identity, and digest cross-checks. Mutable task documents, names, caller-supplied worktree paths, and fallback readers cannot locate normal lifecycle state.
+
+The hard-limit repair extracted pure binding identity, canonical JSON/digest, and bounded-conflict
+construction to sibling `lifecycle_operation_binding.py`. This file still owns all path confinement,
+locking, exact publication/readback, state transitions, terminal proof, and journal location. The
+split creates no second locator or compatibility route.
 
 ### Conventions
 
@@ -46,9 +51,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `LifecycleOperationLocation`; `EnclosurePublicationArtifacts`; `LifecycleOperationLocationError` as its public seam. | L45-L79; L83-L96; L99-L114 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py` |
+| The module defines the location and publication artifacts at its public seam while re-exporting the canonical error. | `LifecycleOperationLocationError`; `LifecycleOperationLocation`; `EnclosurePublicationArtifacts` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:42-43; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:78-125 |
 
 ## Cross-Repo References
 
@@ -63,6 +68,10 @@ restartable predecessor, collected prior root, and exact-byte contract replaceme
 state fails closed; scans, inference, and missing-root recovery are forbidden.
 
 ## Update History
+
+- 2026-08-24T21:43+02:00 — File-size repair: extracted pure enclosure binding/serialization helpers
+  to `lifecycle_operation_binding.py`; retained the complete locator-manifest publication state
+  machine here. Verified at source commit `23d35f77`.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented the complete reserve/resume/terminal/successor location state machine. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

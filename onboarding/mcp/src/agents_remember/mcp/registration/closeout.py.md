@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T21:43+02:00 |
+| lastVerifiedCommitHash | `23d35f7799153e0c7f3d126291fe2da1662fb87b` |
+| lastVerifiedCommitDate | 2026-08-24T21:41:52+02:00 |
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -122,7 +122,7 @@ The three destructive tools forward flat:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:108-116 |
-| `CloseoutCommitMessages`, `CloseoutApproval`, and the quality-before-commit ordering. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tools.py:454-459; mcp/src/agents_remember/application/worktree_tools.py:463-471 |
+| `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tool_requests.py:98-115 |
 | The two pre-staging refusals and reset-then-stage Dagger gate described by apply live in the extracted staged-quality owner. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:20-36; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:39-51; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
 | The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:69-71; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:108-121; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:124-192 |
 | The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring_tests_2.py:165-187 |
@@ -149,9 +149,9 @@ The current source seams include `register_closeout_tools`. The public schema/co
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `register_closeout_tools` at this ownership boundary. | L37-L42 | `mcp/src/agents_remember/mcp/registration/closeout.py` |
+| The current module exposes `register_closeout_tools` at this ownership boundary. | `register_closeout_tools` | mcp/src/agents_remember/mcp/registration/closeout.py:38-43 |
 
 ## 260821-CLIVE Final Closeout Tool Descriptions
 
@@ -164,6 +164,11 @@ mismatched evidence refuses deletion. Shared grade/admission request types come 
 closeout-source model.
 
 ## Update History
+
+- 2026-08-24T21:43+02:00 — No content impact: the file-size repair repointed
+  `LifecycleControlAction` to its canonical integration owner; registered tools, schemas, and
+  behavior are unchanged. The closeout request-concept reference now targets their extracted
+  single owner. Verified at source commit `23d35f77`.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged final journal recovery and terminal archive/destruction semantics into the registered public tools. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

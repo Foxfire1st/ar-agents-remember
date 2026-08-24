@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T21:43+02:00 |
+| lastVerifiedCommitHash | `23d35f7799153e0c7f3d126291fe2da1662fb87b` |
+| lastVerifiedCommitDate | 2026-08-24T21:41:52+02:00 |
 | governingOverview | `../../../../overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ not compatibility copies of the former flattened modules.
 
 ## Hot Path Summary
 
-Normal operation authority is locator -> immutable enclosure-root manifest -> canonical root journal. This route owns admission-time authoritative reread, generations and controls, exact Git/ref/process evidence, door/successor publication, direct landing, bounded legacy repair, and integration reconciliation.
+Normal operation authority is locator -> immutable enclosure-root manifest -> canonical root journal. `lifecycle_operation_location.py` owns path confinement and publication state; `lifecycle_operation_binding.py` owns only the pure canonical identity/digest bytes that publication proves. This route also owns admission-time authoritative reread, generations and controls, exact Git/ref/process evidence, door/successor publication, direct landing, bounded legacy repair, and integration reconciliation.
 
 Master integration, series closeout, closeout/reopen, and the memory carryover paths consume this
 package: branch-backed authority checks (`require_*`), durable lifecycle operation leases, the
@@ -55,13 +55,14 @@ The route decomposition mirrors those boundaries without adding new authority: n
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Locator-manifest-journal authority. | L117-L130; L133-L287; L290-L375 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py` |
-| Task-addressed controls. | L125-L136; L149-L254 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py` |
-| Direct landing recovery. | L68-L165 | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py` |
-| Bounded legacy bridge. | L80-L87; L107-L188 | `mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py` |
-| Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | L54-L132; L135-L227 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py` |
+| Locator-manifest-journal authority and all publication I/O/state transitions. | `LifecycleOperationLocation`; `prepare_enclosure_publication` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:78-125; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:180-265 |
+| Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. | `EnclosureBindingIdentity`; `enclosure_binding_payload`; `sha256_payload`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:24-165 |
+| Task-addressed controls. | `LifecycleControlAction`; `LifecycleControlCommand`; `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:130-248 |
+| Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:70-167 |
+| Bounded legacy bridge. | `LegacyOperationCommand`; `legacy_operation_action`; `legacy_bridge_removal_guard` | mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:79-191 |
+| Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:54-227 |
 
 ## 260821-CLIVE Final Door-To-Journal Architecture
 
@@ -90,6 +91,10 @@ standalone successor-intent WAL, or permanent compatibility reader. The deleted
 journal-door control, atomic terminal replacement, and the terminal enclosure/location transaction.
 
 ## Update History
+
+- 2026-08-24T21:43+02:00 — File-size route refresh: separated pure enclosure binding and digest
+  construction from the locator/manifest I/O state machine. No location authority, fallback, or
+  compatibility reader moved into the new helper. Verified at source commit `23d35f77`.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled immutable doors, atomic journal claim transfer, strict terminal archive/successor authority, and removal of successor-intent WAL ownership. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
