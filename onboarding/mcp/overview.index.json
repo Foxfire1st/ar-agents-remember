@@ -55,6 +55,11 @@
       "index": "mcp/src/agents_remember/tasks/overview.index.json"
     },
     {
+      "route": "mcp/src/agents_remember/testing",
+      "overview": "mcp/src/agents_remember/testing/overview.md",
+      "index": "mcp/src/agents_remember/testing/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/benchmarks/runner_modules",
       "overview": "mcp/src/agents_remember/benchmarks/runner_modules/overview.md",
       "index": "mcp/src/agents_remember/benchmarks/runner_modules/overview.index.json"
@@ -133,7 +138,6 @@
     "mcp/src/agents_remember/code_quality/citations.py",
     "mcp/src/agents_remember/code_quality/clean_room.py",
     "mcp/src/agents_remember/code_quality/crap_calculator.py",
-    "mcp/src/agents_remember/code_quality/dagger_environment.py",
     "mcp/src/agents_remember/code_quality/diff_coverage.py",
     "mcp/src/agents_remember/code_quality/file_size.py",
     "mcp/src/agents_remember/code_quality/layering.py",
@@ -297,9 +301,9 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1293,
-    "fileSidecars": 179,
-    "childRoutes": 21
+    "sourceFilesInScope": 1315,
+    "fileSidecars": 178,
+    "childRoutes": 22
   },
   "routingTerms": [
     "adopt",
@@ -379,9 +383,9 @@
     "curator",
     "current",
     "current_state",
-    "dagger",
-    "dagger_environment",
-    "dashboard"
+    "dashboard",
+    "data",
+    "deep"
   ],
   "hotPath": {
     "summary": "The MCP package routes mutation tools through closed configured-contract admission, journal-rooted lifecycle controls, explicit enclosure adoption/legacy repair, and disposable door-based scheduling. **260731-EFA-L21 \u2014 checkout coordination isolation.** An undeclared source-checkout invocation is classified before runtime configuration is read: a linked worktree receives a synthetic provider-disabled configuration rooted at `provider-runtime/dev-ar-coordination`, while a primary checkout refuses live coordination access. Trusted MCP/dashboard declarations and installed package execution ret...",
@@ -396,6 +400,7 @@
       "mcp/src/agents_remember/observer",
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/tasks",
+      "mcp/src/agents_remember/testing",
       "mcp/src/agents_remember/benchmarks/runner_modules",
       "mcp/src/agents_remember/kernel/coordination_context",
       "mcp/src/agents_remember/kernel/primitives",
@@ -408,8 +413,7 @@
       "mcp/src/agents_remember/worktrees/integration",
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/queue",
-      "mcp/README.md",
-      "mcp/pyproject.toml"
+      "mcp/README.md"
     ],
     "anchorHints": [
       "README.md",
@@ -444,8 +448,6 @@
       "clean_room",
       "crap_calculator.py",
       "crap_calculator",
-      "dagger_environment.py",
-      "dagger_environment",
       "diff_coverage.py",
       "diff_coverage",
       "file_size.py",
@@ -459,7 +461,9 @@
       "retry_proof.py",
       "retry_proof",
       "scope.py",
-      "scope"
+      "scope",
+      "scope_reporting.py",
+      "scope_reporting"
     ]
   },
   "fallback": {

@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -184,7 +184,7 @@ native-history service, control implementation, or renderer.
 `mcp/` is the package-managed Agents Remember MCP server. It turns coordinator
 startup and provider lifecycle behavior into typed, host-side operations backed
 by importable Python services instead of model-edited coordinator scripts or
-coordinator `system/settings.json`. The tool surface gained `task_reopen` cit:([`task_reopen`], mcp/src/agents_remember/mcp/registration/tasks.py:45-57):
+coordinator `system/settings.json`. The tool surface gained `task_reopen` cit:([`task_reopen`], mcp/src/agents_remember/mcp/registration/tasks.py:53-65):
 reopen a fully landed leaf task under its exact leaf id — a task-domain state reset
 whose worktree recreation stays with `worktree_start`. The agent-orchestration L2
 adds `spawn_agent_session` — the agent-facing **dispatch** tool that CREATES a
@@ -920,10 +920,10 @@ The package surface now exposes retry, recover, cancel, revise, integrate, retir
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Public worktree payload surface. | L43-L53; L98-L105; L151-L169; L172-L205 | `mcp/src/agents_remember/mcp/tools/worktree.py` |
-| Admission forcing across every consumer. | L197-L322; L496-L640 | `mcp/tests/test_configured_contract_admission_l2.py` |
+| Public worktree payload surface. | `worktree_closeout_apply_payload`; `worktree_operation_control_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:119-128; mcp/src/agents_remember/mcp/tools/worktree.py:151-158 |
+| Admission forcing across every consumer. | `test_every_public_consumer_exhaustively_refuses_each_semantic_category`; `test_public_consumers_do_not_enumerate_configured_reread_lower_families` | mcp/tests/test_configured_contract_admission_l2.py:184-274; mcp/tests/test_configured_contract_admission_l2.py:632-650 |
 
 ## 260821-DAGQC-L2 Packaged Doctrine Synchronization
 
@@ -931,7 +931,19 @@ No root-route responsibility changed. Packaged c-02 and curator doctrine mirrors
 strict memory-quality request grammar as canonical sources; the package remains a synchronized
 distribution target rather than a compatibility owner.
 
+## 260824-PDLS — Python Testing Route
+
+`agents_remember.testing` is now the sole package route for structural direct-test eligibility,
+shared hermetic pytest bootstrap, Dagger admission composition, the canonical direct runner, and
+route-neutral phase reporting. `models/test_evidence.py` separates diagnostic and certifying
+altitudes. The code-quality and worktree planes consume typed Dagger admission/evidence instead of
+reimplementing test-route failure families. The old `code_quality.dagger_environment` and test-tree
+global/random helper owners were removed; no compatibility facade remains.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS introduced the testing route and explicit evidence
+  altitude boundary.
 
 - 2026-08-24T14:19+02:00 — No route impact: 260821-DAGQC-L2 synchronized packaged memory-quality and curator examples to the canonical discriminated request while preserving concurrent L4 route material. Verification metadata remains pinned until architect-owned closeout.
 

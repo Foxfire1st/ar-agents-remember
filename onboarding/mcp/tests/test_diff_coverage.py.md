@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_diff_coverage.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -111,12 +111,19 @@ uncovered changed lines**.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module under test: base resolution, changed-line collection, and the measurement. | `resolve_base`; `changed_python_lines`; `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:145-173; mcp/src/agents_remember/code_quality/diff_coverage.py:176-197; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
-| The wrapper that runs the floor as a step and exposes its two flags. | `run_diff_coverage`; "--diff-base"; "--diff-floor" | mcp/src/agents_remember/code_quality/check.py:57-57; mcp/src/agents_remember/code_quality/check.py:921-921; mcp/src/agents_remember/code_quality/check.py:930-930 |
-| The lifecycle-owned Dagger executor that carries the accepted candidate and diff base into the quality graph. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:69-126 |
+| The wrapper that runs the floor as a step and exposes its two flags. | `run_diff_coverage`; "--diff-base"; "--diff-floor" | mcp/src/agents_remember/code_quality/check.py:59-59; mcp/src/agents_remember/code_quality/check.py:945-945; mcp/src/agents_remember/code_quality/check.py:954-954 |
+| The lifecycle-owned Dagger executor that carries the accepted candidate and diff base into the quality graph. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:112-193 |
 | The runner `diff_coverage._git` delegates to, and the source of the 300s `GIT_LOCAL_TIMEOUT_SECONDS` bound and the `cwd=` the wrapper-agreement test exercises. | `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:71-71 |
-| The other side of the same seam: `QualityGateGitTests` proves a non-repository and an unrunnable git both reach `DiffScopeError` through `diff_coverage.run_git`, and points `GIT_DIR` at a decoy to prove the gate reads the repository it was handed. | `QualityGateGitTests` | mcp/tests/test_git_command.py:391-453 |
+| The other side of the same seam: `QualityGateGitTests` proves a non-repository and an unrunnable git both reach `DiffScopeError` through `diff_coverage.run_git`, and points `GIT_DIR` at a decoy to prove the gate reads the repository it was handed. | `QualityGateGitTests` | mcp/tests/test_git_command.py:439-507 |
+
+## 260824-PDLS Admission Boundary
+
+Wrapper-integration configurations now receive the real test-session admission capability. Diff
+coverage scoring is unchanged; diagnostic evidence cannot reach its measurement input.
 
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Added the typed admission precondition to wrapper fixtures.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 111; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.

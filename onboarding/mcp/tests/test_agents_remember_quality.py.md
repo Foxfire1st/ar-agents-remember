@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agents_remember_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash |  `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate |  2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,16 @@ The quality entry-point tests patch the shared production validator through conf
 its Dagger refusal to become pytest usage failure. They no longer test a second local attestation
 implementation.
 
+## 260824-PDLS Certifying Graph Proof
+
+The suite now exercises `testing.dagger_admission` and the conftest certifying composition instead
+of the deleted code-quality validator. Dagger command construction must export
+`/reports/pytest-phases.json`, and result timestamps must be ordered. Invalid admission still
+refuses before collection; phase output remains observation rather than authority.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Updated admission ownership and added Dagger phase/timestamp wiring proof.
 
 - 2026-08-14T11:27+02:00 — R39 curator: recorded one shared environment-authorization owner.
   Verification remains closeout-owned.

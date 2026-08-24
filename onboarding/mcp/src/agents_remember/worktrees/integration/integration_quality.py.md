@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,11 +35,11 @@ Runs altitude-aware acceptance for integration: ordinary leaves reuse their targ
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Mode is full for branch-owning integration; leaves reuse closeout. | `quality_gate_mode` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:84-89 |
-| Dry-run preview carries the organizational completion scope and fingerprint. | `quality_gate_preview` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:92-114 |
-| One exact full gate runs or reuses a matching certification. | `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:117-211 |
-| Failed final-leaf gate returns the cancel-repair handoff. | `organizational_quality_failure_payload` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:235-290 |
-| Certification binds completion fingerprint, commit, tree, and attestation. | `_certification`, `_require_matching_certification` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:293-307; mcp/src/agents_remember/worktrees/integration/integration_quality.py:327-352 |
+| Mode is full for branch-owning integration; leaves reuse closeout. | `quality_gate_mode` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:89-94 |
+| Dry-run preview carries the organizational completion scope and fingerprint. | `quality_gate_preview` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:97-119 |
+| One exact full gate runs or reuses a matching certification. | `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:122-222 |
+| Failed final-leaf gate returns the cancel-repair handoff. | `organizational_quality_failure_payload` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:246-301 |
+| Certification binds completion fingerprint, commit, tree, and attestation. | `_certification`, `_require_matching_certification` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:304-318; mcp/src/agents_remember/worktrees/integration/integration_quality.py:338-363 |
 
 ## Documentation References
 
@@ -51,9 +51,9 @@ The current source seams include `IntegrationQualityFailure`, `integration_quali
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `IntegrationQualityFailure`, `integration_quality_failure`, `IntegrationQualityOutcome` at this ownership boundary. | L41-L60; L63-L75; L79-L81 | `mcp/src/agents_remember/worktrees/integration/integration_quality.py` |
+| The current module exposes failure, projection, and outcome types at this ownership boundary. | `IntegrationQualityFailure`; `integration_quality_failure`; `IntegrationQualityOutcome` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:46-65; mcp/src/agents_remember/worktrees/integration/integration_quality.py:68-80; mcp/src/agents_remember/worktrees/integration/integration_quality.py:83-86 |
 
 ## 260821-CLIVE No Local Behavior Delta
 
@@ -61,7 +61,15 @@ The CLIVE diff updates documentation terminology from a queue-owned organization
 the journal-owned transaction. Quality execution behavior is unchanged in this file; no new gate,
 fallback, or authority seam was introduced.
 
+## 260824-PDLS — Integration Accepts Certifying Evidence Only
+
+Organizational integration quality requires the Dagger result's typed certifying evidence for the
+integration consumer. Diagnostic evidence has no path into reusable organizational certification
+or protected-ref integration.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS applied the evidence-altitude firewall at integration.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: verified the local diff as documentation-only and corrected the transaction owner. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

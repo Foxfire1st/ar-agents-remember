@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l6_diff_coverage_code_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,14 @@ This module defines the test classes cited below; each row points at the exact s
 | Defines the class `TestCheckRails` (lines 174-339). | `TestCheckRails` | mcp/tests/test_l6_diff_coverage_code_quality.py:174-339 |
 | Defines the class `TestScopeModuleBranches` (lines 342-497). | `TestScopeModuleBranches` | mcp/tests/test_l6_diff_coverage_code_quality.py:342-497 |
 
+## 260824-PDLS Admission Boundary
+
+Argument-to-config forcing now supplies the already-validated Dagger admission capability.
+Diff-coverage and wrapper failure semantics remain unchanged.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Added the typed admission precondition.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

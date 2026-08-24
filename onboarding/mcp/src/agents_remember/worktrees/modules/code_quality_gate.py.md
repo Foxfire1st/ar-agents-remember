@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -195,13 +195,13 @@ coverage, and CRAP checks.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `quality_wrapper_path` / `requires_strict_code_quality` decide applicability from the checkout, and `code_quality_gate_preview` reports one of the three statuses plus planned mode, executor, and memory policy. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:63-65; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:97-104; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:69-71; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:108-121; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:124-192 |
-| `run_strict_code_quality_gate` executes the planned contract, atomically publishes the complete latest transcript, exposes `reportPath` on success, and names it before raising on failure. | `QualityGateTarget`; `test_results_report_path`; `run_strict_code_quality_gate`; `_write_test_results_report`; `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:40-45; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:68-70; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:46-51; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:74-76; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:207-272; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:351-400; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:457-481; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:387-411 |
-| The named local entry point refuses before resolving or executing a host wrapper. | `run_local_quality_diagnostic` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:338-348 |
-| Both closeout call sites pass `contract.code_worktree`, `diff_base=contract.code_base_commit`, and the leaf targeted plan — the preview path, and the apply commit phase where `requires_strict_code_quality` guards `_gate_staged_code`. | `closeout_preview_payload`, `_closeout_commit_phase` | mcp/src/agents_remember/worktrees/modules/closeout.py:363-425; mcp/src/agents_remember/worktrees/modules/closeout.py:878-933 |
-| Regressions cover all three statuses, targeted/full Dagger modes, container-managed and explicit-cap full runs, cap-kill naming, immediate host refusal, checkout-not-name arguments, exact leaf base forwarding, bounded failures, and mutation ordering. | `CodeQualityGateTests`, `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:89-680; mcp/tests/test_worktree_quality_gate_runner.py:15-473 |
-| The staging regressions added with `_gate_staged_code`: `ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_gate_scope.py:100-128; mcp/tests/test_worktree_closeout_gate_scope.py:131-209; mcp/tests/test_worktree_closeout_quality_gate.py:897-1020; mcp/tests/test_worktree_closeout_quality_gate.py:1023-1081; mcp/tests/test_worktree_closeout_quality_gate.py:1087-1150 |
-| The contributor documentation states the same three-state contract for consuming repositories. | `### Closeout` | CONTRIBUTING.md:248-258 |
+| `quality_wrapper_path` / `requires_strict_code_quality` decide applicability from the checkout, and `code_quality_gate_preview` reports one of the three statuses plus planned mode, executor, and memory policy. | `quality_wrapper_path`; `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:63-65; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:97-104; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:69-71; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:119-132; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:80-82; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:135-203 |
+| `run_strict_code_quality_gate` executes the planned contract, atomically publishes the complete latest transcript, exposes `reportPath` on success, and names it before raising on failure. | `QualityGateTarget`; `test_results_report_path`; `run_strict_code_quality_gate`; `_write_test_results_report`; `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:57-62; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:85-87; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:218-294; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:400-449; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:506-530 |
+| The named local entry point refuses before resolving or executing a host wrapper. | `run_local_quality_diagnostic` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:387-397 |
+| Both closeout call sites pass `contract.code_worktree`, `diff_base=contract.code_base_commit`, and the leaf targeted plan — the preview path, and the apply commit phase where `requires_strict_code_quality` guards `_gate_staged_code`. | `closeout_preview_payload`, `_closeout_commit_phase` | mcp/src/agents_remember/worktrees/modules/closeout.py:359-421; mcp/src/agents_remember/worktrees/modules/closeout.py:874-929 |
+| Regressions cover all three statuses, targeted/full Dagger modes, container-managed and explicit-cap full runs, cap-kill naming, immediate host refusal, checkout-not-name arguments, exact leaf base forwarding, bounded failures, and mutation ordering. | `CodeQualityGateTests`, `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:99-691; mcp/tests/test_worktree_quality_gate_runner.py:35-498 |
+| The staging regressions added with `_gate_staged_code`: `ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_gate_scope.py:100-128; mcp/tests/test_worktree_closeout_gate_scope.py:131-209; mcp/tests/test_worktree_closeout_quality_gate.py:908-1031; mcp/tests/test_worktree_closeout_quality_gate.py:1034-1092; mcp/tests/test_worktree_closeout_quality_gate.py:1098-1161 |
+| The contributor documentation states the same three-state contract for consuming repositories. | `### Closeout` | CONTRIBUTING.md:263-273 |
 
 ## Cross-Repo References
 
@@ -210,8 +210,8 @@ that repository's checkout rather than this one.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Consumer opt-in is decided by the adapter in the target checkout; self-policy may separately require its presence. | `requires_integrated_acceptance`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:98-100; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:103-105; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:108-121 |
-| The preview reports `wrapper-unavailable` only when policy permits absence, and otherwise refuses. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:124-192 |
+| Consumer opt-in is decided by the adapter in the target checkout; self-policy may separately require its presence. | `requires_integrated_acceptance`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:98-100; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:103-105; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:114-116; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:119-132 |
+| The preview reports `wrapper-unavailable` only when policy permits absence, and otherwise refuses. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:135-203 |
 
 ## L23 Acceptance Interpretation
 
@@ -242,7 +242,17 @@ enclosure wrapper report a developer can open across attempts. A successfully re
 generation may additionally carry `publishedResultPath`. Recovery captures the canonical manifest
 once and cannot combine a later pointer generation with the earlier attestation or file facts.
 
+## 260824-PDLS — Lifecycle Evidence Firewall
+
+Fresh and recovered quality success now require `CertifyingTestEvidence` for the lifecycle
+consumer. Recovery loads one strict schema-2 manifest snapshot, verifies the candidate tree and
+passed result digest, then mints evidence through the clean-executor adapter. Direct diagnostics
+cannot satisfy closeout or integration even when their selected nodes pass.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS made lifecycle quality consume only verified Dagger
+  evidence.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: made recovery single-snapshot and strict-manifest-owned, retained stable `reportPath`, and added optional immutable `publishedResultPath` without disturbing the concurrent L4 diagnostic-wording contract. Verification metadata remains pinned until architect-owned closeout.
 

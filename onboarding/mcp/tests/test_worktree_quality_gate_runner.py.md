@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_quality_gate_runner.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-14T12:13:26+02:00 |
-| lastVerifiedCommitHash |  `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
-| lastVerifiedCommitDate |  2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,8 +57,8 @@ No Domain Documentation source is configured for this repository-local runner su
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The runner suite covers preview, execution, cap, report, interpreter, and failure contracts. | `CodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:15-445 |
-| Stable helpers remain in the closeout mutation suite. | `_checkout_with_wrapper`; `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:45-49; mcp/tests/test_worktree_closeout_quality_gate.py:52-58 |
+| The runner suite covers preview, execution, cap, report, interpreter, and failure contracts. | `CodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:35-498 |
+| Stable helpers remain in the closeout mutation suite. | `_checkout_with_wrapper`; `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:47-61; mcp/tests/test_worktree_closeout_quality_gate.py:64-70 |
 
 ## Cross-Repo References
 
@@ -66,7 +66,7 @@ The runner can certify a consuming repository's checkout when that checkout carr
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Applicability is determined from the supplied checkout rather than a repository name. | `quality_wrapper_path`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:69-71; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:108-121 |
+| Applicability is determined from the supplied checkout rather than a repository name. | `quality_wrapper_path`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:80-82; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:119-132 |
 
 ## L23 Host-Execution Removal
 
@@ -87,7 +87,15 @@ The runner suite now calls `_gate_command_parts` and `_memory_policy_payload` wi
 and requires both to reject it with pinned-Dagger guidance. The missing-wrapper assertion uses the
 same `self-owned wrapper` wording as production.
 
+## 260824-PDLS Lifecycle Evidence Proof
+
+Successful clean-quality fakes now return `CleanQualityOutcome` with certifying evidence bound to
+the checkout's current `git write-tree`. Gate tests therefore exercise the same typed lifecycle
+consumer boundary as production instead of treating any zero-exit subprocess as acceptance.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Replaced zero-exit-only fakes with candidate-bound certifying outcomes.
 
 - 2026-08-14T12:13:26+02:00 — R43 curator: recorded builder-level non-Dagger refusal and aligned
   missing-wrapper wording. Verification remains closeout-owned.

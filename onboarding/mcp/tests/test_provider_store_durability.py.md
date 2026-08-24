@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_provider_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |                                                `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -297,7 +297,7 @@ below are the code each claim is about.
 | The other half of that pairing: the MCP process's provider-setup thread appending index-lifecycle rows into the same log. | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
 | The consumer that makes the metrics log's tolerant read structurally safe: the whole state machine is re-derived from a rolling window of live samples and nothing is consumed. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
 | The control-plane suite over the same instrument, whose `CASES` this file's `PROVIDER_CASES` is asserted to be disjoint from, and whose base-commit class this file's mirrors. | `MultiProcessDurabilityTests`; `HarnessVacuityGuardTests`; `HarnessSensitivityTests` | mcp/tests/test_controlplane_store_durability.py:123-205; mcp/tests/test_controlplane_store_durability.py:339-386; mcp/tests/test_controlplane_store_durability.py:389-444 |
-| The `setUp` method on `ProviderOwnershipTests` explicitly contains its direct process-role declarations with `preserve_owned_mutable_state`; the autouse `reject_owned_global_state_leaks` guard is the suite-wide backstop. | "class ProviderOwnershipTests(_TempRootTest):"; "from _global_state import preserve_owned_mutable_state"; `reject_owned_global_state_leaks` | mcp/tests/conftest.py:136-147; mcp/tests/test_provider_store_durability.py:71-71; mcp/tests/test_provider_store_durability.py:638-638 |
+| The `setUp` method on `ProviderOwnershipTests` explicitly contains its direct process-role declarations with `preserve_owned_mutable_state`; the shared autouse `reject_owned_global_state_leaks` guard is the suite-wide backstop. | `preserve_owned_mutable_state`; `ProviderOwnershipTests.setUp`; `reject_owned_global_state_leaks` | mcp/tests/test_provider_store_durability.py:104-104; mcp/tests/test_provider_store_durability.py:647-651; mcp/src/agents_remember/testing/pytest_bootstrap.py:60-69 |
 
 ## Cross-Repo References
 
@@ -309,6 +309,9 @@ are inside `agents-remember`.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-24T20:55+02:00 — No content impact: the owned-state context manager moved from the test
+  tree to `agents_remember.testing.global_state`; provider durability behavior is unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored shared durability and global-state-fixture evidence after the focused test cleanup; provider durability claims are unchanged.

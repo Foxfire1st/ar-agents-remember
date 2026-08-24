@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving_cli.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                                        |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -39,6 +39,9 @@ Part of the 260731-EFA-L7 in-place split family for `test_serving_cli.py`'s sour
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-24T20:55+02:00 — No content impact: the owned-state context manager moved from the test
+  tree to `agents_remember.testing.global_state`; serving CLI behavior is unchanged.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

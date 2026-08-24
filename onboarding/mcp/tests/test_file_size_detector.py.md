@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_file_size_detector.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`                                        |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -32,9 +32,16 @@ The File Size Budget rail suite: bands, exit codes, wrapper wiring, and scope. P
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The detector under test. | "agents_remember.code_quality.file_size" | mcp/src/agents_remember/code_quality/check.py:300-300 |
+| The detector under test. | "agents_remember.code_quality.file_size" | mcp/src/agents_remember/code_quality/check.py:312-312 |
+
+## 260824-PDLS Admission Boundary
+
+The wrapper-wiring fixture now passes `QUALITY_TEST_ADMISSION`. File-size policy itself is unchanged;
+the shared quality configuration no longer has an authority-free construction path.
 
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Added the typed admission precondition to quality wiring.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the detector suite. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

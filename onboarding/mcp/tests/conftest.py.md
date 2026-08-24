@@ -1,185 +1,103 @@
 # mcp/tests/conftest.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/tests/conftest.py`                    |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
-| governingOverview      | `overview.md`                              |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/tests/conftest.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[MCP test overview](overview.md)
 
 ## Purpose
 
-`conftest.py` provides session-wide pytest bootstrap that pins imports to the candidate checkout,
-declares the explicit hermetic `test` execution mode,
-scrubs ambient Git repository selection before fixtures run, and supplies fallback commit identity
-for throwaway repositories. Its autouse cit:([`reject_owned_global_state_leaks`], mcp/tests/conftest.py:136-147) fixture snapshots the explicit owned-global register,
-restores every registered value after each test, and fails the leaking test with the complete list of
-changed globals.
-
-The session-autouse `_isolate_xdist_worker_cache` fixture gives every xdist worker its own
-`XDG_CACHE_HOME` below that worker's pytest base temp directory and restores the inherited value on
-teardown. The non-xdist `master` process keeps its existing environment. This isolates application
-caches that are process-global by design without changing production cache resolution.
+Defines only the certifying pytest composition: pin the candidate checkout, require Dagger
+admission, activate the reusable hermetic environment, declare the test process, then load the
+certifying-only plugin, which in turn loads the shared route-neutral plugin. Ordinary raw host
+pytest refuses while the separate direct diagnostic entrypoint avoids this file entirely.
 
 ## Code Commentary
 
 ### Logic
 
-The xdist autouse fixture uses `mock.patch.dict` around each worker's private `XDG_CACHE_HOME`, so
-the environment is restored by the context manager without a duplicated manual save/restore
-branch. The fixture remains active under serial invocation as well as xdist workers.
+Before the first production import, the module derives `REPOSITORY_ROOT` and puts that candidate's
+`mcp/src` first on `sys.path`. Because this happens before any `agents_remember` import, an
+editable-install path cannot make the certifying process validate one checkout and collect another.
 
-At collection time the bootstrap removes previously imported `agents_remember` modules and places
-the current worktree's `mcp/src` first on `sys.path`. Immediately after that pin, it calls
-`declare_test_process()` before importing application services. This is the explicit bypass for
-temporary fixture configs and stores: tests do not masquerade as MCP/dashboard daemons, and
-production does not infer test mode from `pytest`, argv, or an environment flag. It imports
-`GIT_REPOSITORY_SELECTOR_ENV` from production `kernel.git_command` and removes every selector from
-the process environment before a fixture can spawn Git. It then uses `setdefault` for test-only
-author/committer identity so an explicit caller identity remains authoritative.
+`prepare_certifying_pytest_bootstrap` translates admission/bootstrap failures into
+`pytest.UsageError` before plugin loading or collection. The resulting `CERTIFYING_BOOTSTRAP`
+contains the private admission capability and candidate process. `activate_current_pytest_environment`
+scrubs Git repository selectors and installs the disposable Git identity plus candidate
+`PYTHONPATH` in the current process; its lease records the prior values for exact restoration.
+`begin_pytest_process` declares test mode before the plugins are imported.
 
-**cit:([`reject_owned_global_state_leaks`; `OWNED_MUTABLE_STATES`; "from _global_state import restore_owned_mutable_state"], mcp/tests/_global_state.py:33-39; mcp/tests/conftest.py:99-99; mcp/tests/conftest.py:136-147) — the autouse guard and its explicit ownership register.**
-The register is deliberately not a repository scan: a row is added only after a mutable module
-global has been proved capable of carrying state between tests. The current row owns
-`kernel.primitives.checkout_coordination._declared`, whose session baseline is `mode=test`. Before
-each test the fixture snapshots all registered state; afterward it
-restores every value, collects every changed owner, and then fails the test that leaked it. Restore
-happens before failure so one defect cannot contaminate later tests.
+The root `pytest_plugins` tuple loads
+`agents_remember.testing.pytest_certifying_bootstrap`. That certifying-only plugin binds worktree
+services and declares `agents_remember.testing.pytest_bootstrap` as its own plugin. The shared
+plugin then owns:
 
-`preserve_owned_mutable_state()` is the scoped escape hatch for a test that intentionally calls a
-production entry point whose contract mutates registered process state. It snapshots and restores
-the same register around that bounded call. It suppresses cross-test leakage, not the global-state
-gate: a test that leaves a registered value changed without that explicit scope still fails.
+- route-neutral cache isolation;
+- deterministic random-order hooks;
+- per-test owned-state restoration and leak failure; and
+- test-process cleanup.
+
+At unconfigure, root composition closes the environment lease and restores the caller's exact
+prior values. Shared-plugin cleanup ends test-process state; certifying fixtures reset bound
+worktree services.
 
 ### Conventions
 
-The production selector tuple is the sole inventory. Tests must import it rather than maintaining a
-parallel list that could omit a newly supported selector.
-
-Owned-global hygiene is suite-wide and lives in the autouse guard, while the enumeration and scoped
-preservation helper live in `_global_state.py`. Do not add a broad reflective scan: ownership is an
-explicit, reviewable contract, and diagnostics must name the exact global that changed.
+Root conftest is composition, not an implementation bucket. Admission lives in
+`testing.dagger_admission`; candidate isolation in `testing.hermetic_bootstrap`; shared hooks in
+`testing.pytest_bootstrap`; service fixtures in `testing.pytest_certifying_bootstrap`; and owned
+state/randomization in their own testing modules.
 
 ### Invariants And Boundaries
 
-- Selector cleanup runs at module import before fixture construction or test collection can execute
-  repository commands.
-- Fixture Git calls use explicit temporary `cwd`; ambient selectors may not redirect them into a
-  real repository.
-- Checkout-source pinning ensures verification exercises the candidate, not a sibling editable
-  installation.
-- Explicit test-mode declaration occurs after checkout pinning and before application imports, so
-  linked-worktree tests retain their existing temporary-root contracts without gaining production
-  authority.
-- Fallback identity applies only to temporary fixture commits and never overwrites an exported
-  identity.
-- The guard restores every registered value before it reports a leak, keeping failure attribution
-  on the offending test without poisoning later tests.
-- `OWNED_MUTABLE_STATES` is an ownership register, not a claim that every mutable global has been
-  discovered. Add a row only with evidence of cross-test persistence and an exact restore operation.
-- Intentional entry-point mutation must use `preserve_owned_mutable_state()` around the smallest
-  scope that owns it; the autouse guard remains the backstop.
-- Coverage of ownership-guard branches must not be re-derived from ambient role state. Any future
-  guard on `is_compaction_owner` or `check_declared_writer` needs its own test that declares both
-  roles and asserts the contrast; with this fixture in place, nothing else will reach the skip arm.
+- Candidate path pinning precedes every production import.
+- Dagger admission precedes candidate planning, plugin loading, collection, execution, and artifact
+  publication.
+- Missing/malformed/mismatched admission is a certifying refusal, never a diagnostic route selector.
+- The direct diagnostic route never imports this conftest and receives no certifying service bundle.
+- Git repository selectors and developer identity do not leak into fixture subprocesses.
+- Environment and owned globals restore on every pytest exit path.
+- No compatibility import of `code_quality.dagger_environment`, `_global_state`, or `_random_order`
+  remains.
 
 ### Todos
 
-No task-independent follow-up is recorded for the current guard.
+None.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository; the bootstrap mirrors production
-Git isolation directly.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+Repository-local design is explained in `docs/design/python-pytest-bootstrap.md`; no external domain
+documentation defines this boundary.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Production owns the eight-selector inventory and the scrubbed Git environment built from it. | `GIT_REPOSITORY_SELECTOR_ENV`; `git_environment` | mcp/src/agents_remember/kernel/git_command.py:34-43; mcp/src/agents_remember/kernel/git_command.py:85-91 |
-| Route-index tests independently contaminate each selector and require identical output. | "test_ambient_git_repository_selectors_cannot_redirect_the_census"; "test_regular_checkout_and_linked_worktree_produce_identical_indexes" | mcp/tests/test_route_index.py:592-620; mcp/tests/test_route_index.py:822-850 |
-| Worktree fixture tests. |"test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_plan_uses_memory_worktree_settings"|mcp/tests/test_worktree_support_tests_1.py:1097-1097; mcp/tests/test_worktree_support_tests_2.py:130-130|
-| The explicit ownership register, snapshot/restore operations, and scoped preservation helper used by the autouse guard. | `OWNED_MUTABLE_STATES`; `snapshot_owned_mutable_state`; `restore_owned_mutable_state`; `preserve_owned_mutable_state` | mcp/tests/_global_state.py:33-39; mcp/tests/_global_state.py:42-43; mcp/tests/_global_state.py:46-54; mcp/tests/_global_state.py:57-64 |
-| Every xdist worker receives a private XDG cache below its pytest base temp directory; the master process is unchanged. | `_isolate_xdist_worker_cache` | mcp/tests/conftest.py:66-77 |
-| The current autouse guard restores all registered state and fails the leaking test with the complete changed-owner list. | `reject_owned_global_state_leaks` | mcp/tests/conftest.py:136-147 |
-| The currently registered process-global execution declaration, explicit test entry, and accessor. | "_declared: dict[str, ExecutionMode] = {}"; "def declare_test_process() -> None:"; `return _declared.get("mode")` | mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:27-66 |
+| Candidate pinning precedes the first production import. | `REPOSITORY_ROOT`; `MCP_SRC` | mcp/tests/conftest.py:13-14 |
+| Certifying composition translates failures before plugin loading. | `prepare_certifying_pytest_bootstrap`; `CERTIFYING_BOOTSTRAP` | mcp/tests/conftest.py:32-38; mcp/tests/conftest.py:41-41 |
+| Only the certifying service plugin is loaded from root composition. | `pytest_plugins` | mcp/tests/conftest.py:51-51 |
+| Current-process environment is restored at unconfigure. | `pytest_unconfigure` | mcp/tests/conftest.py:54-56 |
+| Shared hooks own order, cache, state restoration, and process cleanup. | `reject_owned_global_state_leaks`; `pytest_collection_modifyitems`; `pytest_unconfigure` | mcp/src/agents_remember/testing/pytest_bootstrap.py:22-24; mcp/src/agents_remember/testing/pytest_bootstrap.py:41-44; mcp/src/agents_remember/testing/pytest_bootstrap.py:60-70 |
 
 ## Cross-Repo References
 
-No sibling repository defines the pytest bootstrap contract.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## R39 Shared Collection Guard
-
-Pytest collection now delegates to the production Dagger-environment validator after first placing
-the current checkout source root on the import path. This prevents a linked-worktree run from
-validating the main checkout guard and then collecting a different candidate. Guard failure is
-translated to pytest usage refusal before collection.
+No sibling repository supplies or overrides pytest admission/bootstrap.
 
 ## Update History
 
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
-
-- 2026-08-14T11:27+02:00 — R39 curator: documented delegation to the shared nonce/file validator
-  and current-checkout import ownership. Verification remains closeout-owned.
-- 2026-08-14T06:38+02:00 — L23 final candidate review: test bootstrap isolates outer quality
-  workflow variables and enforces the Dagger run nonce/attestation contract before collection.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-12T08:41+02:00 — 260731-EFA-L20 replaced manual `XDG_CACHE_HOME` save/restore branches with `mock.patch.dict`; isolation semantics remain the same while unreachable test-only coverage branches are gone.
-- 2026-08-12T00:08+02:00 — Recorded worker-private XDG cache isolation for pytest-xdist and
-  re-resolved citations shifted by the new session fixture. Verification metadata remains pinned
-  until closeout.
-
-- 2026-08-10T19:57:55+02:00 — Closeout citation review: retained the execution-declaration claim
-  after re-reading the candidate and replaced the reopened broad identifiers with exact unique
-  declaration/signature anchors. Verification metadata remains pinned until closeout.
-
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: pytest now declares explicit hermetic test mode after
-  pinning candidate source; owned-global documentation follows the kernel execution declaration.
-  Verification metadata remains pinned until approved closeout.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: superseded the removed single-purpose
-  `restore_declared_process_role` fixture with the current explicit owned-global register,
-  restore-before-fail autouse guard, and scoped `preserve_owned_mutable_state` escape hatch. New
-  ranges are explicit provisional curator input.
-
-- 2026-08-03T11:05+02:00 — 260731-EFA-L6 W3-B07 curator: repaired 13 live findings (2 missing anchors, 2 malformed sources, 7 prose citations, and 2 live-only duplicate sources); 3 Tier-3 citations naming the removed `restore_declared_process_role` fixture remain unresolved.
-
-- 2026-08-01T16:20+02:00 — 260731-EFA-L5 curator: the older single-purpose fixture narrative is superseded by
-  the current explicit owned-global register and restore-before-fail autouse guard. The current rows
-  bind the surviving register and guard symbols; the removed `restore_declared_process_role` fixture is
-  not cited.
-<!-- S18-B09 removed the superseded historical paragraph that attributed current behavior to the deleted fixture. -->
-- 2026-07-31T21:45+02:00 — 260731-EFA-L2 curator: re-derived the `test_route_index.py` citation
-  after the leaf's whole-tree `ruff format` moved it, verified by reading both ends back. The leaf
-  also deleted a stray `# Reopen drill marker` comment left in
-  this conftest by earlier drill scaffolding; it was referenced nowhere and carried no behaviour,
-  so no claim in this sidecar changes. Every other citation here was re-checked and is correct.
-- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: replaced the duplicated Git selector list with the
-  production `GIT_REPOSITORY_SELECTOR_ENV` inventory and corrected the nearest governing overview.
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added the worktree-local source/import pin so pytest
-  cannot silently exercise a sibling editable install. Verification remains pinned until closeout.
-- 2026-07-03T02:58+02:00 — No content impact: the reopen drill's second cycle extended the marker
-  comment; the reopened leaf ran under its original id with a fresh lifecycle.
-- 2026-07-03T02:40+02:00 — No content impact: the reopen drill appended a marker comment; the drill
-  exercised task-reopen mechanics, not fixture behavior.
-- 2026-05-30T23:59+02:00 — Created after inherited `GIT_DIR` redirected temporary fixture commands;
-  the import-time guard strips repository selectors and supplies fallback identity.
+- 2026-08-24T20:55+02:00 — 260824-PDLS replaced the monolithic root guard/fixture implementation
+  with explicit admission, hermetic bootstrap, shared hooks, and certifying-only service composition.
+- 2026-08-10T18:31+02:00 — The predecessor established explicit checkout test mode and owned-global
+  restoration; that still-valid behavior moved to production testing modules.
+- 2026-08-05T00:00+02:00 — The predecessor established Dagger-only collection, candidate path/Git
+  isolation, disposable identity, cache isolation, deterministic order, and service binding; PDLS
+  preserves those contracts behind separate owners.

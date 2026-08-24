@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operation_worker_entrypoint.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,6 +46,9 @@ See task `260821-CLIVE-L1` L1-R4 and L1-R5.
 No cross-repository boundary applies.
 
 ## Update History
+
+- 2026-08-24T20:55+02:00 — No content impact: the owned-state context manager moved from the test
+  tree to `agents_remember.testing.global_state`; worker-entrypoint behavior is unchanged.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

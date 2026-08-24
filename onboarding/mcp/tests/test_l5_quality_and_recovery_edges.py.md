@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l5_quality_and_recovery_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -43,7 +43,16 @@ The quality edge cases now reject hostile/non-object/extra-root manifest shapes 
 error, verify declared artifact integrity from one snapshot, and assert recovered responses retain
 the stable wrapper report separately from the immutable published result.
 
+## 260824-PDLS Recovery Evidence Proof
+
+Recovery fixtures now publish schema-2 generations with candidate trees and require typed
+certifying evidence in fresh success payloads. Invalid/unreadable result exports refuse publication,
+and recovered evidence must match the current Git tree. Schema `1.0` remains a deliberate public
+reader refusal, not a compatibility route.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Updated quality recovery for candidate-bound certifying evidence.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: extended focused recovery edges for strict manifest authority and distinct stable/published result paths. Verification metadata remains pinned until architect-owned closeout.
 

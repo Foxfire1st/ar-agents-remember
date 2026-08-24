@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,6 +55,16 @@ No configured Domain Documentation source applies; this is a repository-owned pu
 
 No meaningful cross-repository implementation reference applies.
 
+## 260824-PDLS — Quality Carries Certifying Capability
+
+`CheckConfig` now carries the opaque Dagger admission required by pytest and retry-proof planning,
+plus an optional route-neutral pytest phase-report destination. `QualityGateResult` carries the
+certifying evidence minted from the verified Dagger publication path. These are typed fields, not
+`dict[str, unknown]` flags that a direct caller can elevate.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS added typed admission, phase reporting, and certifying
+  evidence fields.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: created for the strict shared quality-result wire model. Verification remains blank until architect-owned closeout stamps the code commit.

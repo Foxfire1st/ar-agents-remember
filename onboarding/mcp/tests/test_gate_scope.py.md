@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_gate_scope.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -98,12 +98,19 @@ None known for this leaf.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The derivation under test, and the `Step`/`GateScope`/`CheckConfig` types this module builds real commands from. | `derive_scope` | mcp/src/agents_remember/code_quality/check.py:79-80 |
-| Complementary wrapper-side tests that scope is derived rather than written down, and that an out-of-package script reaches both rails. | `GateScopeDerivationTests` | mcp/tests/test_code_quality_check_scope.py:22-212 |
+| The derivation under test, and the `Step`/`GateScope`/`CheckConfig` types this module builds real commands from. | `derive_scope` | mcp/src/agents_remember/code_quality/check.py:81-82 |
+| Complementary wrapper-side tests that scope is derived rather than written down, and that an out-of-package script reaches both rails. | `GateScopeDerivationTests` | mcp/tests/test_code_quality_check_scope.py:23-215 |
 | The frontend rails this module reads: eslint flat configs and tsconfig projects. | `tseslint` | dashboard/eslint.config.js:1-12; dashboard/tsconfig.json:1-8 |
 | The TypeScript rail added for the Pi harness extension so it needed no exemption. | `compilerOptions` | .pi/extensions/tsconfig.json:1-19 |
 
+## 260824-PDLS Admission Boundary
+
+The helper that enumerates wrapper steps now carries `QUALITY_TEST_ADMISSION`. Gate-scope
+expectations are unchanged; pytest-capable planning remains certifying-only.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Added typed admission to the wrapper-step fixture.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.

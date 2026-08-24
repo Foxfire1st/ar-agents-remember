@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -182,16 +182,16 @@ file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-198 |
+| The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-219 |
 | The repo routes sessions by role through the `l-01-agent-lifecycles` skill: spawned agents follow their briefs, a developer session runs the architect lifecycle, and the build decision at `decide` is a research-only exit or a durable `w-02-light-task-workflow` skill task (chat is never a build route); the standalone chat workflow and the chat build are retired. | `## Start Here — Route By Role` | AGENTS.md:16-50 |
 | Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | `## Memory And Onboarding` | AGENTS.md:49-98 |
 | Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | `## Boundaries` | AGENTS.md:125-145 |
 | Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | `## Source Layout` | AGENTS.md:99-124 |
 | Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | `## Source Layout` | AGENTS.md:99-124 |
-| Code-quality routing reserves acceptance for the pinned Dagger module, names the one targeted/full cadence, guards Python/Playwright/changed-lines/direct-wrapper execution, and permits direct targeted Vitest only as non-certifying diagnostic feedback. | `## Code Quality Instructions` | AGENTS.md:146-166 |
-| The same section derives Python scope from the index, names enforcing/reporting rails, forbids baselines and exemptions, and routes exact commands plus stability doctrine through the resolved memory layer. | `## Code Quality Instructions` | AGENTS.md:167-209 |
+| Code-quality routing reserves acceptance for the pinned Dagger module, names the one targeted/full cadence, guards Python/Playwright/changed-lines/direct-wrapper execution, and permits direct targeted Vitest only as non-certifying diagnostic feedback. | `## Code Quality Instructions` | AGENTS.md:146-219 |
+| The same section derives Python scope from the index, names enforcing/reporting rails, forbids baselines and exemptions, and routes exact commands plus stability doctrine through the resolved memory layer. | `## Code Quality Instructions` | AGENTS.md:146-219 |
 | Source-layout and boundary notes make `scripts/harness/` the single source for the eight self-hosted harness starter packages, route their refresh through `scripts/sync-harness.py`, and separate generated starter files from the per-harness files a starter package owns alone. | `## Source Layout` | AGENTS.md:99-124 |
-| The gate command this file names, with the enforcing/report split it describes. | `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:420-469 |
+| The gate command this file names, with the enforcing/report split it describes. | `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:435-485 |
 | The changed-lines step named by the current acceptance boundary. | `run_diff_coverage` | mcp/src/agents_remember/code_quality/post_coverage.py:121-170 |
 | The report template this file says must record Radon rows as `reported`. | `## Tool Results` | system/defaults/examples/memory-repo/code-quality-report-template.md:18-39 |
 
@@ -219,7 +219,17 @@ push, pull request, tag, and publish do not rerun acceptance; pull requests reta
 non-test checks only. Python, Playwright, changed-lines coverage, and the direct wrapper refuse
 outside the matching nonce-attested Dagger graph; targeted direct Vitest remains diagnostic-only.
 
+## 260824-PDLS — Python Diagnostic Rule
+
+The root operating contract now distinguishes raw host pytest from the one supported bounded
+diagnostic wrapper. Agents may run `./scripts/test-python` only with exact structurally eligible
+nodes; the result is explicitly non-certifying and cannot replace the lifecycle-owned Dagger gate.
+The file also points at the new testing architecture and retains direct targeted Vitest behavior.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS aligned the agent contract with the exact-node diagnostic
+  and Dagger evidence firewall.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled the deliberate
   direct-targeted Vitest diagnostic route with the guarded Python, Playwright, changed-lines,

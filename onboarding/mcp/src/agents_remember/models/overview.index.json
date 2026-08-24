@@ -56,6 +56,7 @@
     "mcp/src/agents_remember/models/task_document_ref.py",
     "mcp/src/agents_remember/models/terminal.py",
     "mcp/src/agents_remember/models/terminal_catalog.py",
+    "mcp/src/agents_remember/models/test_evidence.py",
     "mcp/src/agents_remember/models/tokens.py",
     "mcp/src/agents_remember/models/tools/__init__.py",
     "mcp/src/agents_remember/models/tools/tool_registry.py",
@@ -63,8 +64,8 @@
     "mcp/src/agents_remember/models/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 65,
-    "fileSidecars": 30,
+    "sourceFilesInScope": 66,
+    "fileSidecars": 31,
     "childRoutes": 4
   },
   "routingTerms": [
@@ -91,6 +92,7 @@
     "doc",
     "document",
     "drift",
+    "evidence",
     "files",
     "inbox",
     "init",
@@ -127,6 +129,8 @@
     "task_document_ref",
     "terminal",
     "terminal_catalog",
+    "test",
+    "test_evidence",
     "tokens",
     "tool",
     "tool_registry",

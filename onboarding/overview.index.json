@@ -77,11 +77,12 @@
     "scripts/sync-harness.py",
     "scripts/sync-projection-types.py",
     "scripts/sync-runtime.py",
-    "scripts/sync-skills.py"
+    "scripts/sync-skills.py",
+    "scripts/test-python"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1731,
-    "fileSidecars": 22,
+    "sourceFilesInScope": 1753,
+    "fileSidecars": 23,
     "childRoutes": 9
   },
   "routingTerms": [
@@ -111,6 +112,7 @@
     "projection",
     "ps1",
     "pyproject",
+    "python",
     "readme",
     "reference",
     "remember",
@@ -131,6 +133,7 @@
     "start",
     "starter",
     "sync",
+    "test",
     "toml",
     "txt",
     "types",
@@ -206,14 +209,14 @@
       "sync-runtime",
       "sync-skills.py",
       "sync-skills",
+      "test-python",
       "dev-skills",
       "mcp",
       "e2e-chats",
       "scripts",
       "src",
       "design",
-      "reference",
-      "l-01-agent-lifecycles"
+      "reference"
     ]
   },
   "fallback": {

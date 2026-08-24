@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 
 > **Status:** active baseline
 
@@ -868,13 +868,13 @@ This repository is selected into an external coordination workspace by configure
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. | "ar-coordination/AGENTS.md"; "Implementation approval is not commit approval" | AGENTS.md:10-10; AGENTS.md:141-141 |
-| The source checkout defines Dagger-only acceptance, the single exported result, host-suite refusal, and the no-baseline/no-allowlist policy. | "Code Quality Instructions"; "dagger call quality --source=."; "single authoritative result"; "There is no host-test compatibility path"; "There is no baseline"; "a finding is fixed" | AGENTS.md:146-146; AGENTS.md:154-154; AGENTS.md:157-157; AGENTS.md:164-164; AGENTS.md:173-174 |
+| The source checkout defines Dagger-only acceptance, the single exported result, refusal of a second host acceptance projection, and the no-baseline/no-allowlist policy. | "Code Quality Instructions"; "dagger call quality --source=."; "single authoritative result"; "No host-wrapper or second Dagger projection is an acceptance gate."; "There is no baseline"; "a finding is fixed" | AGENTS.md:146-146; AGENTS.md:154-154; AGENTS.md:157-157; AGENTS.md:161-161; AGENTS.md:185-186 |
 | The docs index owns the start-here, install, operational, and reference map. | "Start Here"; "Install Guides"; "Getting Started"; "Onboard an Existing Repo"; "MCP Tool Reference"; "Release Checklist" | docs/README.md:23-23; docs/README.md:25-25; docs/README.md:33-33; docs/README.md:46-46; docs/README.md:56-56; docs/README.md:65-65 |
 | Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
 | The runtime sync contract is checked against every generated copy. | `RealTreeDriftTests` | mcp/tests/test_sync_scripts.py:159-207 |
 | GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating. | "pull_request:"; "Refuse a tag whose commit has not landed on main" | .github/workflows/quality-checks.yml:3-7; .github/workflows/publish-mcp-to-pypi.yml:28-34 |
-| Closeout imports the staged-quality boundary, which refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:91-91 |
-| The extracted staged-quality owner contains both refusal helpers and the exact-candidate Dagger gate. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:20-129 |
+| Closeout imports the staged-quality boundary, which refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:87-87 |
+| The extracted staged-quality owner contains both refusal helpers and the exact-candidate Dagger gate. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:24-40; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:43-55; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:81-81 |
 | The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" | CONTRIBUTING.md:64-64 |
 | Provider guidance keeps provider runtime paths under configured provider roots. | "providers/runners/grepai" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:95-95 |
 | The MCP settings example declares repository and coordination authority. | `coordinationRoot` | examples/mcp/settings.example.json:3-3 |
@@ -1191,14 +1191,26 @@ The committed package layout mirrors those owners: public adapters are under `ap
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Closed admission and one public projector. | L49-L67; L74-L147; L206-L244 | `mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py` |
-| Root manifest/journal location authority. | L117-L130; L133-L212; L290-L357 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py` |
-| Task-addressed lifecycle controls. | L125-L136; L149-L254 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py` |
-| Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. | L54-L132; L135-L227 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py` |
+| Closed admission and one public projector. | `admit_configured_contract`; `project_configured_contract_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:97-170; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:327-365 |
+| Root manifest/journal location authority. | `LifecycleOperationLocation`; `resolve_lifecycle_operation_location` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:66-101; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:488-532 |
+| Task-addressed lifecycle controls. | `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:178-248 |
+| Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. | `operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:54-132 |
+
+## 260824-PDLS — Two Python Test Altitudes
+
+The repository now exposes one bounded direct Python diagnostic command,
+`./scripts/test-python <exact-node>...`, alongside the unchanged lifecycle-owned Dagger acceptance
+graph. The direct route is structural, fail-closed, serial, limited to eight exact nodes, and
+permanently non-certifying. Its new package route is documented at
+`onboarding/mcp/src/agents_remember/testing/overview.md`; durable workflow guidance is in
+`system/tools.md`. Raw host pytest, direct coverage, and the quality wrapper remain prohibited.
 
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS added the bounded Python diagnostic route and preserved
+  Dagger as sole acceptance authority.
 
 - 2026-08-24T16:00+02:00 — Final cumulative closeout audit: replaced the last live
   pre-L3 queue wording with the implemented disposable scheduling projection and preserved the L2

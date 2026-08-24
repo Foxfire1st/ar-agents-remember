@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_checkout_coordination_isolation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |  `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate |  2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,6 +66,9 @@ explicit detached writer role while the daemon-role view remains empty, preservi
 between execution/store writer identity and MCP/dashboard daemon ownership.
 
 ## Update History
+
+- 2026-08-24T20:55+02:00 — No content impact: the owned-state context manager moved from the test
+  tree to `agents_remember.testing.global_state`; checkout-isolation behavior is unchanged.
 
 - 2026-08-15T09:10+02:00 — L3 content update: extended isolation coverage to the detached durable
   writer role; verification remains closeout-owned.

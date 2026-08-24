@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-11T23:56+02:00               |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -262,22 +262,22 @@ the report to a temporary directory unless `--coverage-json` is given.
 | --- | --- | --- |
 | The changed-lines coverage floor this wrapper runs last, and the derivation of the 100% floor. | `DEFAULT_DIFF_COVERAGE_FLOOR` | mcp/src/agents_remember/code_quality/diff_coverage.py:1-5; mcp/src/agents_remember/code_quality/diff_coverage.py:30-30 |
 | CRAP-Calculator owns function-level CRAP scoring, and is where Radon stays load-bearing. | `crap_score` | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:232-239 |
-| Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | `RadonIsAReportNotAGateTests` | mcp/tests/test_code_quality_check.py:337-395 |
-| An independent recomputation asserts the wrapper's real argument vectors reach every tracked Python file. | `test_every_tracked_python_file_is_linted_and_type_checked` | mcp/tests/test_gate_scope.py:152-173 |
-| `run_git` — the one runner `git_ls_files` calls — strips `GIT_REPOSITORY_SELECTOR_ENV` and bounds every call with the local/remote/metadata timeout classes. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-73; mcp/src/agents_remember/kernel/git_command.py:85-92 |
-| `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `git_ls_files` still lists the repository it was handed, and that a non-repository and an unrunnable git both surface as `ScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:391-453 |
+| Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | `RadonIsAReportNotAGateTests` | mcp/tests/test_code_quality_check.py:345-403 |
+| An independent recomputation asserts the wrapper's real argument vectors reach every tracked Python file. | `test_every_tracked_python_file_is_linted_and_type_checked` | mcp/tests/test_gate_scope.py:157-178 |
+| `run_git` — the one runner `git_ls_files` calls — strips `GIT_REPOSITORY_SELECTOR_ENV` and bounds every call with the local/remote/metadata timeout classes. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:34-43; mcp/src/agents_remember/kernel/git_command.py:70-73; mcp/src/agents_remember/kernel/git_command.py:85-92 |
+| `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `git_ls_files` still lists the repository it was handed, and that a non-repository and an unrunnable git both surface as `ScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:439-507 |
 | The shared tiered hook body derives the same `git ls-files` scope; the pre-push tier delegates to the wrapper's targeted contract, while `full` stays the manual/master-gate tier. | "git ls-files -z -- '*.py'" | .githooks/_gate.sh:74-74 |
 | `[tool.pytest.ini_options] testpaths`, the selected complexity rules, and branch coverage are configured here. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true"; "testpaths = [\"mcp/tests\"]" | pyproject.toml:6-18; pyproject.toml:67-70; pyproject.toml:110-124 |
-| Repo instructions make the pinned Dagger graph the only acceptance environment, identify its exported result as authoritative, and explicitly refuse host test execution. | "dagger call quality --source=."; "single authoritative result"; "There is no host-test compatibility path" | AGENTS.md:154-154; AGENTS.md:157-157; AGENTS.md:164-164 |
-| The closeout caller that satisfies this module's index obligation: `gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
+| Repo instructions make the pinned Dagger graph the only acceptance environment, identify its exported result as authoritative, and explicitly refuse a second host acceptance projection. | "dagger call quality --source=."; "single authoritative result"; "No host-wrapper or second Dagger projection is an acceptance gate." | AGENTS.md:154-154; AGENTS.md:157-157; AGENTS.md:161-161 |
+| The closeout caller that satisfies this module's index obligation: `gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:81-141 |
 | The optional settings-owned memory cap an explicitly constrained full run may use (`--memory-cap-bytes`); host-managed full runs do not call this planner. | `plan_capped_command` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:92-130 |
-| The targeted contract proofs: rail scoping, real radon input, and no-change short-circuit. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:142-359; mcp/tests/test_code_quality_targeted.py:360-630 |
-| The command builder supplies derived test and coverage arguments; root pytest configuration owns automatic xdist workers. | "pytest_args = [sys.executable, \"-m\", \"pytest\", *test_args]"; "-n=auto" | mcp/src/agents_remember/code_quality/check.py:274-274; pyproject.toml:124-124 |
+| The targeted contract proofs: rail scoping, real radon input, and no-change short-circuit. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:143-358; mcp/tests/test_code_quality_targeted.py:361-646 |
+| The command builder supplies derived test and coverage arguments; root pytest configuration owns automatic xdist workers. | "pytest_args = [sys.executable, \"-m\", \"pytest\", *test_args]"; "-n=auto" | mcp/src/agents_remember/code_quality/check.py:279-279; pyproject.toml:124-124 |
 
 ## 260731-EFA-L9 Change — Armed Layering Step
 
 The wrapper's `quality_steps` now registers the `layering` step unconditionally
-(cit:([`quality_steps`], mcp/src/agents_remember/code_quality/check.py:320-366)):
+(cit:([`quality_steps`], mcp/src/agents_remember/code_quality/check.py:335-381)):
 `code_quality/layering.py` reads `layers.toml [contract].order` and fails on rank violations,
 package-pair cycles, undeclared top-level directories, and `from agents_remember import X` forms
 resolving to no declared package. There is no baseline/allowlist; a green full wrapper now
@@ -298,7 +298,19 @@ malformed, unreadable, or mismatched nonce/file evidence fails before targeted s
 selection, or retry-proof planning can run. Accepted retry behavior is confined to the pinned
 graph.
 
+## 260824-PDLS — Certifying Consumer Of The Testing Boundary
+
+The wrapper no longer owns or imports a Dagger-environment validator. `CheckConfig` carries a typed
+`DaggerAdmission`, and quality planning requires that private capability before pytest, coverage,
+or retry-proof work is constructed. The pytest step loads the route-neutral phase reporter and
+writes `pytest-phases.json`, but the report is observational; successful quality returns
+`CertifyingTestEvidence` only through the Dagger publication boundary. Direct diagnostic evidence
+cannot enter the wrapper, coverage, CRAP, or changed-lines decisions.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS moved admission/bootstrap ownership to the testing route,
+  added route-neutral phase export, and made certifying evidence explicit.
 
 - 2026-08-14T11:25+02:00 — R39 curator: documented the shared before-parser Dagger guard and
   removed host/direct-wrapper diagnostic authority. Verification remains closeout-owned.

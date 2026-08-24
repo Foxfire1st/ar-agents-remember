@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,14 +56,14 @@ The repository source pins the toolchain; no external Domain Documentation sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Tool and image versions are repository-owned pinned inputs. | `DAGGER_VERSION`; `CODEX_VERSION`; `PLAYWRIGHT_IMAGE` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:23-30 |
+| Tool and image versions are repository-owned pinned inputs. | `DAGGER_VERSION`; `CODEX_VERSION`; `PLAYWRIGHT_IMAGE` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:40-45 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The executor validates, materializes, streams, parses, and publishes one clean quality run. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:36-167 |
-| Helper boundaries preserve Git identity, atomic report publication, and native Dagger resolution. | `_publish_reports`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:207-273; mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:468-469 |
+| The executor validates, materializes, streams, parses, and publishes one clean quality run. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:112-193 |
+| Helper boundaries preserve Git identity, atomic report publication, and native Dagger resolution. | `_publish_reports`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:276-351; mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:595-596 |
 
 ## Cross-Repo References
 
@@ -71,7 +71,7 @@ The only external boundary is the pinned container/tool runtime, not a sibling r
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:364-421; mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:468-469 |
+| Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:491-548; mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:595-596 |
 
 ## 260821-DAGQC-L2 Canonical Publication Manifest
 
@@ -79,7 +79,17 @@ Report publication and crash recovery now share the strict schema-1.0 manifest m
 publishes exactly the vocabulary the reader accepts, while recovery resolves attestation and result
 paths from one captured snapshot. There is no compatibility reader or root-shape fallback.
 
+## 260824-PDLS — Immutable Certifying Publication
+
+The clean executor passes the Dagger admission facts into the graph, exports the route-neutral
+`pytest-phases.json` beside the ordinary quality artifacts, and publishes one immutable schema-2
+generation bound to the candidate tree. Only a digest-verified passed generation can mint
+`CertifyingTestEvidence`. Diagnostic payloads and phase reports cannot be supplied as substitutes.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS added phase export and the sole certifying evidence factory
+  at verified publication altitude.
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: unified report publication and recovery on the strict schema-1.0 manifest and one-snapshot artifact lookup. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-17T12:30+02:00 — 260815-DAG-L5: report publication now carries an attestation; added `published_quality_attestation`. Verification remains closeout-owned.

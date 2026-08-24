@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_code_quality_check_scope.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-11T23:56+02:00                                            |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                        |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -39,7 +39,15 @@ L23 lets whole-tree scope expectations include the Dagger package when present, 
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 | The configuration regression pins automatic xdist worker selection at the root pytest owner. | "self.assertIn(\"-n=auto\", ini_strings(\"addopts\"))" | mcp/tests/test_code_quality_check_scope.py:215-223 |
 
+## 260824-PDLS Admission Boundary
+
+Constructed quality configurations now carry the already-validated `QUALITY_TEST_ADMISSION`.
+Scope derivation semantics are unchanged; the new field proves even direct unit construction cannot
+reach pytest planning without certifying admission.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Added the typed admission precondition; scope behavior is unchanged.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

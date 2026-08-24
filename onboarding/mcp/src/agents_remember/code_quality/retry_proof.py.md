@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/retry_proof.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash |  `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate |  2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -58,8 +58,9 @@ already-filtered aggregate.
 - Context filtering requires branch arcs and at least one pytest runtime context.
 - Delta eligibility is finite and structural: selected concrete test modules only; support or
 production changes always run fresh inside the same Dagger graph.
-- `AR_QUALITY_NO_RETRY` disables reuse. Environment authorization is upstream in
-  `code_quality.dagger_environment`; this module cannot turn host execution into an accepted retry.
+- `AR_QUALITY_NO_RETRY` disables reuse. `prepare` requires a typed capability minted only by
+  `testing.dagger_admission`; this module cannot turn host or diagnostic execution into an accepted
+  retry.
 
 ### Todos
 
@@ -78,10 +79,11 @@ quality-proof policy.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper prepares, consumes, and finalizes retry plans around its fixed and coverage-derived rails. | `execute_quality_rails`; `prepare_retry_plan` | mcp/src/agents_remember/code_quality/check.py:472-514; mcp/src/agents_remember/code_quality/check.py:759-792 |
-| Retry pytest commands record per-test contexts and append only in delta mode. | `_pytest_step`; `quality_steps` | mcp/src/agents_remember/code_quality/check.py:261-282; mcp/src/agents_remember/code_quality/check.py:320-366 |
-| Focused tests prove filtering, invalidation, exact reuse, changed-test selection, conclusive full fallback, cached-report deletion after a cheap-rail failure, and tracked directory-symlink snapshotting. | `test_changed_test_contexts_and_collection_context_are_removed`; `test_wrapper_retry_runs_only_changed_test_module`; `test_repository_snapshot_hashes_symlink_identity_without_following_it` | mcp/tests/test_quality_retry_proof.py:22-45; mcp/tests/test_quality_retry_proof.py:120-207; mcp/tests/test_quality_retry_proof.py:272-296 |
-| The compatibility key includes pytest-xdist alongside the other coverage/pytest tool versions, so executor changes invalidate reuse. | `_compatibility_key` | mcp/src/agents_remember/code_quality/retry_proof.py:292-313 |
+| The wrapper prepares, consumes, and finalizes retry plans around its fixed and coverage-derived rails. | `execute_quality_rails`; `prepare_retry_plan` | mcp/src/agents_remember/code_quality/check.py:488-533; mcp/src/agents_remember/code_quality/check.py:778-812 |
+| Retry pytest commands record per-test contexts and append only in delta mode. | `_pytest_step`; `quality_steps` | mcp/src/agents_remember/code_quality/check.py:268-297; mcp/src/agents_remember/code_quality/check.py:335-381 |
+| Focused tests prove filtering, invalidation, exact reuse, changed-test selection, conclusive full fallback, cached-report deletion after a cheap-rail failure, and tracked directory-symlink snapshotting. | `test_changed_test_contexts_and_collection_context_are_removed`; `test_wrapper_retry_runs_only_changed_test_module`; `test_repository_snapshot_hashes_symlink_identity_without_following_it` | mcp/tests/test_quality_retry_proof.py:31-54; mcp/tests/test_quality_retry_proof.py:145-233; mcp/tests/test_quality_retry_proof.py:303-327 |
+| The compatibility key includes pytest-xdist alongside the other coverage/pytest tool versions, so executor changes invalidate reuse. | `_compatibility_key` | mcp/src/agents_remember/code_quality/retry_proof.py:303-324 |
+| Retry planning validates the certifying capability before reading or publishing any cached proof. | `prepare`; `require_dagger_admission_capability` | mcp/src/agents_remember/code_quality/retry_proof.py:142-166; mcp/src/agents_remember/testing/dagger_admission.py:93-101 |
 
 ## Cross-Repo References
 
@@ -91,7 +93,17 @@ No meaningful cross-repository boundary is owned by this module.
 | --- | --- | --- |
 | The proof remains local to the repository/worktree Git common directory. | — | — |
 
+## 260824-PDLS — Admission-Gated Retry Proof
+
+Retry-proof preparation now requires a verified `DaggerAdmission` capability. A diagnostic runner
+cannot publish or restore retry proof, and a matching diagnostic candidate digest is not a
+certifying reuse key. Existing content-addressed compatibility checks remain inside the Dagger
+quality route.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS added the typed admission boundary and closed diagnostic
+  reachability.
 
 - 2026-08-14T11:24+02:00 — R39 curator: removed the obsolete local/CI retry interpretation.
   Proof reuse is now documented solely as a nonce-attested Dagger optimization behind the shared

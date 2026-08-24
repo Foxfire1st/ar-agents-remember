@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ Its quality checks pin the additional provenance rule: a contract-scoped call fe
 contract's code-base commit to claim comparison, while a bare official-memory call leaves unstamped
 provenance absent. That makes dirty-worktree claim repair available before closeout without
 fabricating a future verification stamp.
-cit:(["test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims"; "test_the_bare_check_does_not_invent_unstamped_claim_provenance"], mcp/tests/test_memory_tool_enclosure_scope.py:296-321)
+cit:(["test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims"; "test_the_bare_check_does_not_invent_unstamped_claim_provenance"], mcp/tests/test_memory_tool_enclosure_scope.py:321-321; mcp/tests/test_memory_tool_enclosure_scope.py:341-341)
 
 ## Quality Command Construction
 
@@ -1203,12 +1203,12 @@ suggestion and no direct `unittest.main` entry point; those proposed scope exten
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Central graph-publication cardinality, lock placement, and shared-caller forcing. | L93-L160 | `mcp/tests/test_task_doc_graph_publication.py` |
-| Raw-section shape, preservation, typed failure, and atomicity forcing. | L38-L128 | `mcp/tests/test_task_doc_section_scaffolding.py` |
-| Qualified title and ordinal Mermaid identity forcing. | L164-L225; L303-L348 | `mcp/tests/test_execution_graph_render.py` |
-| Structural node-only equality/hash forcing. | L237-L265 | `mcp/tests/test_task_execution_topology_segments.py` |
+| Central graph-publication cardinality, lock placement, and shared-caller forcing. | `TaskDocGraphPublicationTests` | mcp/tests/test_task_doc_graph_publication.py:93-160 |
+| Raw-section shape, preservation, typed failure, and atomicity forcing. | `TaskDocSectionScaffoldingTests` | mcp/tests/test_task_doc_section_scaffolding.py:38-127 |
+| Qualified title and ordinal Mermaid identity forcing. | `ExecutionGraphMermaidRenderTests` | mcp/tests/test_execution_graph_render.py:57-291 |
+| Structural node-only equality/hash forcing. | `ExecutionGraphSegmentSchemaTests` | mcp/tests/test_task_execution_topology_segments.py:41-281 |
 
 
 ## 260815-DAG-L15 Route Impact
@@ -1241,11 +1241,11 @@ The test route now proves advertised controls execute or safely terminate, not m
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Admission exhaustive forcing. | L197-L322; L496-L640 | `mcp/tests/test_configured_contract_admission_l2.py` |
-| Operation-control forcing. | L130-L221; L355-L741 | `mcp/tests/test_lifecycle_operation_controls_l2.py` |
-| Terminal archive boundary. | L22-L71 | `mcp/tests/test_terminal_enclosure_archive_boundary_l2.py` |
+| Admission exhaustive forcing. | `test_every_public_consumer_exhaustively_refuses_each_semantic_category` | mcp/tests/test_configured_contract_admission_l2.py:184-274 |
+| Operation-control forcing. | `test_retry_preserves_generation_input_candidate_and_approval` | mcp/tests/test_lifecycle_operation_controls_l2.py:149-180 |
+| Terminal archive boundary. | `test_public_terminal_operation_retries_same_disposition_after_destructive_cut` | mcp/tests/test_terminal_enclosure_archive_boundary_l2.py:147-244 |
 
 ## 260821-DAGQC-L4 No Route Impact
 
@@ -1262,7 +1262,21 @@ explicit serving-preflight failure matrix; and closed direct-landing outcome/rec
 The new `test_quality_gate_public_contract.py` is the focused pointer-rotation/public-model owner.
 No omnibus or broad gate was added by curation.
 
+## 260824-PDLS — Structural Diagnostics And Evidence Proof
+
+The route gains six focused owners: `_quality_admission.py` exposes the already-validated Dagger
+capability to certifying tests; `test_direct_test_eligibility.py` proves the closed static model;
+`test_direct_test_runner.py` proves exact serial non-certifying execution;
+`test_pytest_bootstrap_boundaries.py` proves the four authority states;
+`test_python_direct_cohort.py` holds the closed seven-node real cohort; and
+`test_python_test_evidence_firewall.py` proves every acceptance edge rejects diagnostics. The old
+`_global_state.py` and `_random_order.py` helpers moved to production testing and their stale cards
+were removed.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS added the classifier/runner/bootstrap/firewall/cohort proof
+  and moved shared helpers out of the test tree.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: indexed the focused memory-quality, publication/recovery, serving-preflight, and direct-landing forcing sets while preserving concurrent L4 test-route material. Verification metadata remains pinned until architect-owned closeout.
 
@@ -1708,7 +1722,7 @@ No omnibus or broad gate was added by curation.
   `CorruptVendoredVocabularyTests` L334-L417. **Corrected the `.gitattributes` row**, which said the
   file's rule was inert and its regression removed — true of the `blank-at-eol` rule (still L1-L3)
   but no longer of the file: L13's `-text` entry names the shipped vocabulary by filename and
-  cit:([`test_the_gitattributes_entry_names_the_shipped_file`], mcp/tests/test_cold_start.py:246-259) is its live regression. Wrote up the
+  cit:([`test_the_gitattributes_entry_names_the_shipped_file`], mcp/tests/test_cold_start.py:248-261) is its live regression. Wrote up the
   guard-on-the-guard reasoning (an AST sweep reports a hole and a clean tree identically, so each
   bypass form is planted: `from subprocess import run`, `/usr/bin/git`, `**kwargs` mistaken for
   `env=`), the per-command timeout assertions and their required-keyword recorder, the
