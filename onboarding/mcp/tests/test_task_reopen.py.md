@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -90,7 +90,21 @@ the enclosure-root locator and immutable manifest are published.
 | --- | --- |
 | Start-after-reopen forcing intercepts the lifecycle-location publication owner. | mcp/tests/test_task_reopen.py:870-892 |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces completed-leaf reopen, exact task reset, predecessor transition, ambient lifecycle retirement, and subsequent start behavior.
+
+### Current Invariants
+
+- Reopen is an explicit task/contract transition and preserves historical evidence.
+- Projection effects follow task publication; queue state never freezes the reopen write.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 

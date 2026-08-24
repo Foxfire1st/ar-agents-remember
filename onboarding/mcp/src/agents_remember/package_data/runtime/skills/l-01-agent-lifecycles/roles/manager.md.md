@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -88,7 +88,19 @@ the direct super edge; atomic leaves use the isolated master edge and expose no 
 The organizational master-exit reviewer receives the exact proposed final super candidate—prior
 landed contributions plus the proposed final leaf—before the one full check and ref movement.
 
+## 260821-CLIVE Manager Door And Task Duties
+
+The manager now publishes complete canonical closeout-door truth after builder, current route
+review, curator reconciliation, lineage, and task/source/memory/ledger provenance. The waiting door
+is source truth; portfolio comparison and first-ready release remain orchestrator duties, while the
+queue is only their current projection. Managers continue every intrinsically valid task edit and
+relay incomplete `projectionEffects`; evidence-changing edits are re-proven through the door owner,
+never delayed or patched into a row. After claim, status and operation controls address the stable
+root journal, so queue absence or invalidation cannot strand the leaf.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged manager-owned door publication, task-authoring primacy, and journal-only post-claim recovery. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized manager-local readiness, nature-aware
   lineage, and exact pre-landing organizational review scope. Verification remains closeout-owned.

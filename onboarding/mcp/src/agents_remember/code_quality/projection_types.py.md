@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/projection_types.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -124,7 +124,26 @@ being flattened or rejected.
 | --- | --- |
 | `_without_null` distinguishes non-null unions, one surviving variant, multiple surviving variants, and the invalid all-null case. | mcp/src/agents_remember/code_quality/projection_types.py:293-304 |
 
+## 260821-CLIVE Exact Runtime Refinements
+
+The generator has one explicit vocabulary for runtime-only JSON Schema refinements:
+`maxItems`, `minimum`, `pattern`, `minLength`, and `maxLength`. Every supported refinement remains
+byte-exact in the generated schema and is emitted beside its TypeScript property as deterministic
+`JSON Schema refinements` documentation because TypeScript cannot enforce those constraints
+structurally. Nested item refinements are preserved recursively.
+
+`_schema_allowed_keywords()` admits a refinement only for the schema shape that can own it;
+`_refinement_schema()` and `_refinement_comment()` select and deterministically serialize it.
+Unknown or shape-inapplicable keywords still fail closed with the exact model/property path and
+remediation. The generator never silently drops schema truth, and this is not a compatibility reader
+or fallback around canonical schema validation.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE/DAGQC reconciliation: expanded the earlier
+  `maxItems` account to the exact supported refinement vocabulary and its fail-closed rendering
+  boundary. Timestamp is the curator host's Europe/Berlin system time; verification remains
+  closeout-owned.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled nullable multi-variant union preservation. Verified at code commit `1d446724`.
 

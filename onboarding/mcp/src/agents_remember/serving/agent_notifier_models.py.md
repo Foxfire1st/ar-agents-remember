@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | mcp/src/agents_remember/serving/agent_notifier_models.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-24T14:43+02:00|
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | mcp/src/agents_remember/serving/overview.md |
 
 ## Governing Overview
@@ -94,7 +94,15 @@ and keeps the expectation snapshot only for the compaction read. This entry supe
 earlier description in this sidecar that conflicts with the current source behavior above;
 verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260821-CLIVE Execution Registrar Seam
+
+`AgentNotifierContext.register_execution_evidence` accepts the current inbox snapshot and returns
+the exact ids whose first-execution evidence is now durable in task truth. `None` authorizes no
+deletion of task-bound leaf reports; it is a fail-closed injection state, not a compatibility reader.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented the notifier's typed task-registration seam. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Replaced generic lifecycle prose and the leaf-key finding field with the
   notifier model's actual task-document identity and evaluation/action boundary.

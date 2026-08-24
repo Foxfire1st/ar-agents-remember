@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/application/task_docs/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T13:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -59,9 +59,12 @@ the contract when present; leaf contracts also seed `lifecycleId` for non-master
 context-aware `kind` default), validates it, refuses a slug/kind change that would move the JSON document
 path, and then rewrites the existing JSON plus rendered markdown;
 the mutating ops load the existing JSON, apply the edit on a `model_dump(by_alias=True)`
-dict, and re-validate. Since 260815-DAG-L13, creating an orchestration sprint scaffolds the empty
-canonical Judgment and Priority Register sections (`_scaffold_register_sections`, L13-R6 — so
-set-grade never dead-ends on a missing register), and every applied edit passes
+dict, and re-validate. `_build_doc` sends raw create/replace input through the extracted
+`scaffold_register_sections` boundary before model construction. That helper first proves
+`sections` is a list and every member is a mapping, then appends only missing canonical Judgment
+and Priority Register scaffolds for an orchestration master. Wrong container/member shapes fail as
+typed `TaskDocError`s before any partial scaffolding; the `TaskDocument` model and
+`require_register_sections_valid` remain the semantic owners. Every applied edit also passes
 `_enforce_register_section_shapes`: a section carrying a canonical register heading must keep the
 exact register table shape or the write fails with `TaskDocError`. `set_step` upserts a top-level step or, with `parent`, a substep
 (insert or in-place update by id) and rejects a master; `set_subtask` upserts a
@@ -111,6 +114,9 @@ validation failures, and invalid resolvable parent master docs.
 - Master sync is an additive leaf-write side effect only when the parent master resolves inside the
   same task root. It deliberately preserves manually-authored master `scope` and does not follow
   cross-series master refs.
+- Register scaffolding performs no coercion, catch-and-continue, or partial mutation on malformed
+  raw sections. It validates the raw container and all members first, appends only missing
+  scaffolds, and leaves semantic register validation to the existing model/validator owners.
 
 ## Repo-Internal References
 
@@ -126,14 +132,18 @@ validation failures, and invalid resolvable parent master docs.
 | The JSON/markdown store this application entry point drives. | `write_task_docs` | mcp/src/agents_remember/tasks/store.py:111-123 |
 | The payload builder that wraps this application entry point. | `task_doc_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:21-32 |
 | The contract helpers used to resolve the task root + lifecycle key. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:232-292 |
+| The public dispatcher prepares and validates a complete candidate before delegating preview/apply to the publication boundary. | `task_doc_tool`; `_publish_task_doc_candidate` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:211-269; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:303-358 |
+| Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:554-584 |
+| The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds. | `scaffold_register_sections`; `_validated_section_list` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-55 |
+| Focused tests pin missing-section scaffolding, preservation, malformed container/member refusals, and no partial mutation. | `TaskDocSectionScaffoldingTests` | mcp/tests/test_task_doc_section_scaffolding.py:38-128 |
 
-## 260815-DAG-L3 Queue-Governed Publication (Still Transitional In CLIVE L2)
+## Current Task-First Publication Boundary
 
-Governed task-doc publication still resolves the sprint queue and wraps the complete document
-batch in the pre-L3 queue publisher. L2 extracts exact source-CAS and integration serialization to
-`task_doc_publication.py`; this dispatcher prepares snapshots and delegates the transaction. Leaf
-writes still include any synchronized master row, and queue refusal remains possible until L3
-replaces authoring-time queue gating with post-write affected-candidate invalidation/rebuild.
+This dispatcher prepares candidate task truth and exact accepted-source snapshots, then delegates
+preview/apply to `task_doc_publication.py`. A valid mutation is not subordinate to current queue
+state. The publication transaction validates source bytes, commits the task document batch,
+invalidates every affected waiting projection to an empty state, and independently rebuilds each
+projection from current closeout-door facts. Leaf writes still include any synchronized master row.
 
 ## 260815-DAG-L4 Authority Boundary
 
@@ -142,19 +152,23 @@ L4 routes this file's existing application, configuration, task, model, registra
 
 ## 260815-DAG-L12 Title Threading
 
-The task-doc publication/preview sites thread joined graph titles into the renderer (L12-R1). In
-CLIVE L2 the ordinary publication and batch-title helpers moved to `task_doc_publication.py`;
-`_remove_subtask` now delegates through that shared publisher, while `_render_preview` retains the
-local preview title lookup. Documents without an `executionGraph` render without titles.
+The task-doc publication/preview sites thread joined graph titles into the renderer (L12-R1).
+Ordinary and remove publication route through `task_doc_publication.py`, where the shared
+zero-or-one graph-document owner validates batch cardinality before the transaction; the actual
+on-disk title read remains inside the publisher callback and therefore inside its task-publication
+lock. Documents without an `executionGraph` render without a title context.
 
 
 ## 260815-DAG Master Full-Gate Repair
 
 The module moved to `application/task_docs/` (relative imports within the package) and gained `_sprint_doc_identity`, which merges the standard task-doc identity (taskId/slug/kind/status/lifecycleId/docPath/renderedPath/stepsDone/stepsTotal) into the special-op results (sprint linkage ops + `author_execution_graph`) — pairing with the `TaskDocResponse` special-op wire fields in `models/task_doc.py`.
 
-## 260821-CLIVE-L2 Current Contract
+## Current Contract After CLIVE
 
-The current source seams include `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool`. L2 moves exact source-CAS and integration serialization into the shared transactional publisher, but governed writes still pass through the pre-L3 queue-store wrapper. L3 owns removing that refusal dependency and implementing blast-radius invalidation, empty projection, and rebuild from current door facts.
+The current source seams include `TaskDocTarget`, `TaskDocEdit`, and `task_doc_tool`. Exact
+source-CAS, task-first publication, affected-scope invalidation, and rebuild live behind the shared
+transactional publisher. The queue is a disposable projection of waiting closeout candidates, not
+an authoring lock and not an owner of claimed-operation lifecycle evidence.
 
 ### Reconciled Source Evidence
 
@@ -163,6 +177,11 @@ The current source seams include `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool`
 | The current module exposes `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool` at this ownership boundary. | L135-L146; L150-L162; L198-L301 | `mcp/src/agents_remember/application/task_docs/task_doc_tools.py` |
 
 ## Update History
+
+- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: documented the extracted atomic raw-section
+  scaffolding boundary and reconciled the dispatcher with the landed task-first publication and
+  central graph-cardinality contracts. Verification metadata remains pinned until architect-owned
+  closeout stamps the real code commit.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

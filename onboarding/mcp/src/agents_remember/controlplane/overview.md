@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -513,7 +513,33 @@ Control-plane storage adds a repository-wide integration-authority lock and comp
 
 `closeout_queue_store.py` / `closeout_queue_records.py` import paths updated to the moved `worktrees/queue/*` / `models/queue/*` locations.
 
+## 260821-CLIVE Final Task-Publication And Projection Boundary
+
+Task and door truth is published under `task_publication_lock.py`, a short repository-scoped CAS
+mutex. The canonical mutation is never blocked by the state of a closeout projection. The complete
+transaction is:
+
+```text
+task or door change
+  -> publish canonical bytes
+  -> invalidate each affected projection to durable invalid-empty
+  -> build a complete candidate off-side from current task + waiting-door truth
+  -> publish valid-built only if the source identity is still exact-current
+```
+
+`closeout_queue_records.py` and `closeout_queue_store.py` therefore own only disposable projection
+builds and invalid-empty/valid-built persistence. They do not own claims, commits, certification,
+integration, blockers, receipts, lifecycle state, or task freezes. A failed refresh is an explicit
+bounded effect and cannot undo the accepted canonical mutation.
+
+Task-execution retention follows the same ownership rule. `operator_inbox_store.py` and
+`interaction_retention.py` protect task-bound worker/reviewer/curator reports until exact first
+evidence is registered in task truth. Missing registration fails closed for deletion; no heuristic
+reader or compatibility path may erase the only proof that execution started.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced the historical queue-WAL/freeze model with short task CAS, disposable projection publication, and task-first execution retention. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: closeout_queue store/records import paths updated to the moved queue packages. Verified at code commit e5cb139f.
 

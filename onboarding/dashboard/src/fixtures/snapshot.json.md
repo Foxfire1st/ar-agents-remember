@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-24T00:21+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated            | 2026-08-24T15:28+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -42,20 +42,24 @@ planned strategist) and two typed `masterRef` sub-task rows (both master targets
 fixture, so the dev-server exercises the sprint → master navigation for real); every other task
 document defaults `seats: []`.
 
-L23 extends the manual sample with lifecycle-operation rows covering both operation kinds and every
+L23 extends the manual sample with lifecycle-operation rows covering every operation kind and every
 closed status and phase member. L2 keeps every sampled operation aligned with the generated
 contract's required `legalControls` array; one failed closeout also samples optional `generation`
-and a `recover` control so the opaque control-object site is non-vacuous. The sample carries public
-progress/result/failure/guidance fields but no operation key, candidate fingerprint, approval claim,
-or worker PID, preserving the producer's private-plane boundary while making the generated
-dashboard contract measurable.
+and a `recover` control so the opaque control-object site is non-vacuous. CLIVE-final keeps every
+operation aligned with the required `projectionEffects` array, then makes the effect vocabulary
+non-vacuous on the failed closeout by sampling both a successful invalidation/rebuild and a
+malformed/unreadable-source diagnostic. The same payload now carries disposable closeout-queue
+members/problems and proof-bound discarded rows in both series and task-document views. The sample
+carries public progress/result/failure/guidance fields but no operation key, candidate fingerprint,
+approval claim, or worker PID, preserving the producer's private-plane boundary while making the
+generated dashboard contract measurable.
 
 ## Code Commentary
 
 ### Logic
 
-Top-level keys in wire order: `version` (1), `generatedAt`, `lifecycles`, `enclosures`, `providers`,
-`activeWorktreeGroups`, `metrics`, `analytics`.
+Top-level keys include `version` (1), `generatedAt`, `analytics`, `closeoutQueues`, `enclosures`,
+`lifecycles`, `providers`, `activeWorktreeGroups`, and `metrics`.
 
 - **cit:([`lifecycles`], dashboard/src/fixtures/snapshot.json:1640-1640) — six rows, one per state.** `blocked-001`, `running-000`, `paused-002`,
   `awaiting-003`, `completed-004`, `abandoned-005`, and their phases spread across all six of `build`,
@@ -93,11 +97,12 @@ than per path, and this file is built to that requirement:
 | `PROCESS_HEALTHS` | 8 | one health per `engineProcesses` pod |
 | `PROCESS_FACT_STATES` | 6 | pooled across six registered paths — the four commit refs, `providers[].factState`, `landing[].factState` |
 
-Likewise the ten absorbing nodes named in `INDEX_SIGNATURE_SITES` each carry at least one served
-value here. In addition to the original lifecycle, gate, metrics, drift, setup, and retry payloads,
-the current sample reaches lineage-recovery `args`, lifecycle-operation `result`, and a non-empty
-`legalControls[]` object. A wall in the type-level walk that the payload omitted would be an
-unreportable gap, so the assertion demands every named node be present.
+Likewise the fourteen absorbing nodes named in `INDEX_SIGNATURE_SITES` each carry at least one
+served value here. In addition to the original lifecycle, gate, metrics, drift, setup, and retry
+payloads, the current sample reaches lineage-recovery `args`, lifecycle-operation `result`, a
+non-empty `legalControls[]` object, and the four opaque `childJson` / `childMarkdown` proof records
+under series and task-document discarded rows. A wall in the type-level walk that the payload
+omitted would be an unreportable gap, so the assertion demands every named node be present.
 
 ### Conventions
 
@@ -109,8 +114,9 @@ unreportable gap, so the assertion demands every named node be present.
 - Non-uniform on purpose. Arrays are keyed by TYPE in the mirror walk, so one lifecycle carrying
   `staleSeconds` samples it for all of them. The payload does not have to be uniform; it has to be
   COMPLETE between its rows.
-- Every sampled `lifecycleOperation` carries `legalControls`; empty lists express no advertised
-  control for that row, while the failed closeout's `recover` object samples the opaque element type.
+- Every sampled `lifecycleOperation` carries both `legalControls` and `projectionEffects`; empty
+  lists express no advertised control and no projection refresh effect for that row, while the
+  failed closeout samples the non-empty control and projection-effect element types.
 - Timestamps sit in a single fabricated window around `2026-06-14T09:00`, and identifiers are
   `sim-`/`SIM`-prefixed, so nothing in it reads as a captured production workspace.
 
@@ -128,8 +134,9 @@ unreportable gap, so the assertion demands every named node be present.
   failures. `contract.test.ts` now asserts set-equality between each vocabulary and what the fixture
   samples, so both dropping a member from the mirror and dropping its sample from here fail.
 - **Required fields and optional branches are separate coverage duties.** All 17 operation rows carry
-  `legalControls`; at least one row carries optional `generation`, and at least one control object is
-  non-empty so the open payload boundary is actually reached.
+  `legalControls` and `projectionEffects`; at least one row carries optional `generation`, at least
+  one control object is non-empty, and the failed closeout samples both successful and diagnostic
+  projection effects so those closed vocabularies are actually reached.
 - **The rows the builders anchor on must keep existing.** `fixtures/wire.ts` calls `demandServed(…)` on
   `lifecycles[0]`, `enclosures[0]`, `providers[0]`, `analytics.taskDocuments[0]`,
   `analytics.engineProcesses[0]`, `analytics.agentPickups[0]`, `analytics.attentionQueue[0]`, and a
@@ -177,9 +184,11 @@ absent from the file rather than present as `null`.
 | The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:156-162 |
 | The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 | The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:367-381 |
-| The derived `VOCABULARIES` registry (11 paths, 6 vocabularies) and the full-coverage assertion this payload is composed to satisfy. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:268-293 |
-| All 17 sampled lifecycle operations carry `legalControls`; the failed closeout also samples optional `generation` and a non-empty `recover` control. | `lifecycleOperation`; `legalControls`; `generation` | dashboard/src/fixtures/snapshot.json:1160-1182; dashboard/src/fixtures/snapshot.json:1201-1629 |
-| `INDEX_SIGNATURE_SITES` — the ten absorbing nodes this payload must carry a value at, including lifecycle result and opaque legal-control payloads. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:224-238 |
+| The derived `VOCABULARIES` registry (33 exact closed-union paths) and the full-coverage assertion this payload is composed to satisfy. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:285-424 |
+| All 17 sampled lifecycle operations carry `legalControls` and `projectionEffects`; the failed closeout also samples optional `generation`, a non-empty `recover` control, and both successful and malformed/unreadable projection-effect outcomes. | `lifecycleOperation`; `legalControls`; `projectionEffects`; `generation` | dashboard/src/fixtures/snapshot.json:1246-1788 |
+| `INDEX_SIGNATURE_SITES` — the fourteen absorbing nodes this payload must carry a value at, including lifecycle result, opaque legal-control payloads, and four discarded-child proof maps. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:224-242 |
+| The disposable closeout projection samples ready/blocked members plus bounded source problems; the rows are scheduling views, not durable lifecycle authority. | `closeoutQueues` | dashboard/src/fixtures/snapshot.json:1166-1244 |
+| Series and task-document discard rows carry exact `childJson` / `childMarkdown` proof records without turning discard into completion. | `discardedSubTasks`; `childJson`; `childMarkdown` | dashboard/src/fixtures/snapshot.json:651-670; dashboard/src/fixtures/snapshot.json:773-792 |
 | `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:186-186 |
 | The provenance boundary: this snapshot is manual, while the TypeScript contract is generated and stale-checked from the Pydantic schema. | "is NOT generated" | dashboard/src/test/fixtures/wire.ts:22-35; scripts/sync-projection-types.py:43-65 |
 | `demandServed` and the eight anchor rows the builders require this payload to keep. | `demandServed` | dashboard/src/test/fixtures/wire.ts:73-76 |
@@ -213,7 +222,23 @@ The sprint fixture (`sim-master` / `sim-master-b` scenario) now carries the rend
 
 The snapshot fixture gained a super-to-leaf source-relation entry (`relation: "super-to-leaf"`, state `current`) and two execution-graph view nodes (a `segment` with `frontierState: "landed"` and a `lump` with `frontierState: "ready"`) for dashboard vocabulary coverage.
 
+## 260821-CLIVE Final Projection Fixture Coverage
+
+The manual sample now exercises CLIVE-final's exact generated projection contract at all three new
+seams. `closeoutQueues` is represented as a disposable scheduling projection with current members
+and bounded source problems; it is not claim, commit, certification, recovery, or terminal evidence.
+Discarded series/task-document rows carry opaque child JSON and Markdown proof records, preserving
+discard-before-start as audited removal rather than synthetic completion. Every lifecycle operation
+has a `projectionEffects` array: empty means no refresh effect, while one failed closeout samples the
+successful invalidation/rebuild path and the malformed/unreadable-source diagnostic path. These are
+observable projection effects downstream of canonical task/door/journal truth, never authority over
+that truth.
+
 ## Update History
+
+- 2026-08-24T15:28+02:00 — Reconciled the manual fixture with CLIVE-final disposable queue members
+  and problems, discarded child-proof records, and required lifecycle projection effects. Verification
+  metadata remains closeout-owned.
 
 - 2026-08-24T00:21+02:00 — 260821-CLIVE-L2: aligned every lifecycle-operation sample with the
   generated contract's required `legalControls` array; the failed closeout now samples optional

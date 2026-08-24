@@ -54,7 +54,7 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "Registration publishes the task-addressed lifecycle-control, explicit enclosure-adoption, and bounded legacy-operation schemas while keeping operation identity private. A tool body does exactly two things: pack the flat MCP arguments into the parameter objects the payload builder and its application entry point take, and return the builder's result unchanged. The packing is the whole content \u2014 `TaskRef`, `SpawnSeat`, `GateVerdict`, `CarryoverSelection`, `CloseoutCommitMessages`, `TaskIdentity`/`TaskBases`/`StartExecution`, `BenchmarkSelection`/ `BenchmarkPreparation`/`CodexBenchmarkRun`, `T...",
+    "summary": "Registration publishes the task-addressed lifecycle-control, explicit enclosure-adoption, and bounded legacy-operation schemas while keeping operation identity private. A tool body usually packs flat MCP arguments into the parameter objects the payload builder and its application entry point take, then returns the builder's result unchanged. Memory quality instead dispatches its already validated request DTO by mode and returns the matching builder result. Packing is the whole content \u2014 `TaskRef`, `SpawnSeat`, `GateVerdict`, `CarryoverSelection`, `CloseoutCommitMessages`, `TaskIdentity`/`Ta...",
     "candidateHints": [
       "mcp/src/agents_remember/mcp/registration",
       "mcp/src/agents_remember/mcp/registration/__init__.py",
@@ -104,22 +104,22 @@
       "CarryoverSelection",
       "CloseoutCommitMessages",
       "TaskIdentity",
-      "TaskBases",
-      "StartExecution",
-      "BenchmarkSelection",
-      "BenchmarkPreparation",
-      "CodexBenchmarkRun",
       "MCP",
+      "DTO",
       "mcp/src/agents_remember/mcp/registration",
       "route-local-overview",
-      "eb7ea60ab9919f009fef58f81afe5861aa1709da",
+      "f95487ec993b58d34911bba0206a7fa6ef9684eb",
       "/../../../../overview.md",
       "mcp/registration/",
       "@server.tool",
       "mcp/server.py",
       "server.py",
       "FastMCP",
-      "TOOL_REGISTRARS"
+      "TOOL_REGISTRARS",
+      "memory_quality_check(request=",
+      "register_<family>_tools(server, config) -> None",
+      "mcp/tools/",
+      "pyproject.toml"
     ]
   },
   "fallback": {

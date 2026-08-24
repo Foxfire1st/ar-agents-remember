@@ -56,7 +56,7 @@
     "titles"
   ],
   "hotPath": {
-    "summary": "Task JSON remains planning/source truth. L2 adds exact source snapshots and structural publication serialization. The application publisher still routes governed writes through the pre-L3 queue lock, so the old authoring dependency has not yet been removed; L3 owns invalidation/rebuild and the final non-subordination rule. The `task_doc` MCP tool authors documents: its application entry point (`application/task_doc_tools.py`) loads or creates the JSON, applies one operation, and rewrites both the JSON and the rendered markdown through this package. Leaf writes can also plan a same-root mast...",
+    "summary": "Task JSON remains planning/source truth. The application publisher captures exact source snapshots, serializes structural publication, commits task truth plus affected-scope invalidation, and then rebuilds each waiting projection from current closeout-door facts. Queue state is derived scheduling output, so it cannot make an otherwise-valid task mutation unavailable. The `task_doc` MCP tool authors documents: its application entry point (`application/task_doc_tools.py`) loads or creates the JSON, applies one operation, and rewrites both the JSON and the rendered markdown through this packag...",
     "candidateHints": [
       "mcp/src/agents_remember/tasks",
       "mcp/src/agents_remember/tasks/__init__.py",
@@ -98,7 +98,7 @@
       "task_doc_tools",
       "mcp/src/agents_remember/tasks/",
       "route-local-overview",
-      "de3a0fd9204f2e64755032274fb4e741bfddf6df",
+      "f95487ec993b58d34911bba0206a7fa6ef9684eb",
       "/../../../overview.md",
       "organizational",
       "author_execution_graph",

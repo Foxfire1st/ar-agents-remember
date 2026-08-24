@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -86,7 +86,21 @@ The current forcing seams include `test_attach_writes_all_four_artifacts_atomica
 | --- | --- | --- |
 | The current test source exercises `test_attach_writes_all_four_artifacts_atomically`, `test_attach_judgment_refusals_write_nothing`, `test_attach_existing_nature_needs_no_nature_payload`, `test_attach_target_and_uniqueness_refusals`. | L197-L225; L227-L248; L250-L255; L257-L289 | `mcp/tests/test_task_sprint_linkage.py` |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces typed sprint-to-master attach, detach, reparent, judgment, route review, graph, and multi-artifact publication behavior.
+
+### Current Invariants
+
+- Linkage writes are task-authoring operations and publish when intrinsically valid.
+- The before/after sprint-scope union drives projection invalidation and rebuild after task truth.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

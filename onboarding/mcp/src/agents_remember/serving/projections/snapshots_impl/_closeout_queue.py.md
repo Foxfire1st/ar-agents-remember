@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                              |
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py` |
 | doc_type               | `file-level-onboarding`                                                      |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                                             |
 
 ## Governing Overview
@@ -16,37 +16,47 @@
 
 ## Purpose
 
-Read-only serving-projection reader (L8 surface 14) that exposes the authoritative closeout queue to
-the dashboard. It reads each sprint master's durable `closeout-candidates.json` artifact and projects
-candidate states, grades, waiting reasons, the active atomic blocker, and the graph revision — never
-re-deriving scheduling facts from task titles, numbering, labels, or open terminals. It does not re-run
-the queue's contract/source/ledger revalidation; that is the queue tool's declaration-time job.
+Read-only serving reader that exposes each orchestrating sprint's effective disposable closeout
+projection to the dashboard.
 
 ## Code Commentary
 
 ### Logic
 
-`read_closeout_queues(coordination_root, now)` iterates task-document payloads, keeps masters with an
-`executionGraph`, and projects each one's queue artifact. `_project_queue` parses the `CloseoutQueueState`
-JSON, builds an `AtomicBlockerNode` when an active blocker is held, and maps each candidate via
-`_candidate_node` (which derives the recorded `explicit-grade-required` and `atomic-blocker-held-by`
-reasons from the artifact alone).
+`read_closeout_queues(coordination_root, now)` keeps every valid orchestrating master, including a
+graph-less atomic-sequential sprint. `_project_queue` captures the exact current source identity and
+uses `CloseoutQueueStore.read_effective`; it maps service condition, source
+classification/fingerprint/problems, and waiting-generation members into observer nodes.
 
 ### Invariants And Boundaries
 
-- Strictly read-only: it never mutates the queue, contracts, or task documents.
-- Candidate facts are projected verbatim; the dashboard never infers readiness from labels.
-- A missing or invalid queue artifact yields no queue node (the sprint is simply not projected).
+- Strictly read-only: it never mutates projections, contracts, doors, or task documents.
+- Missing, invalid, unreadable, stale, or source-mismatched projection bytes surface as invalid-empty.
+- It exposes no claim, blocker, grade mutation, commit, certification, integration, or lifecycle state.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Top-level reader keeps sprint masters with an execution graph. | `read_closeout_queues` | mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py:31-51 |
-| Queue artifact parsed into candidate and blocker nodes. | `_project_queue` | mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py:52-80 |
-| Candidate reasons derived from grade and blocker state. | `_candidate_node` | mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py:83-95 |
+| Top-level reader covers every orchestrating sprint. | `read_closeout_queues` | `mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py` |
+| Effective state is joined against the exact current source. | `_project_queue` | `mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py` |
+| Waiting-generation members project classification, priority, order, and reasons. | `_candidate_node` | `mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py` |
+
+## 260821-CLIVE Effective Projection Reader
+
+The reader now emits one node for every orchestrating sprint, including graph-less
+atomic-sequential sprints. It captures the current canonical source identity and asks
+`CloseoutQueueStore.read_effective` for the disposable result. The dashboard receives service
+condition, source classification/fingerprint/problems, and waiting-generation members with
+classification, priority, order, and reasons. Missing, stale, malformed, or source-mismatched bytes
+surface as invalid-empty; candidate lifecycle states, grades, blockers, commits, and certification
+are not projected here.
+
+This section supersedes the earlier authoritative-queue and active-blocker description.
 
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: rewrote the card for the effective disposable projection reader. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

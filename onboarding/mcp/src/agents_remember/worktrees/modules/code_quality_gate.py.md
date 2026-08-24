@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/code_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash |  `eb7ea60ab9919f009fef58f81afe5861aa1709da`|
-| lastVerifiedCommitDate |  2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
+| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,7 +83,11 @@ worktree group. `_write_test_results_report` renders status, invocation, mode, d
 UTC start/finish, elapsed seconds, exact shell command, applicable cap facts, and the full output,
 then publishes with the shared `atomic_write_text` primitive. It creates no timestamped siblings.
 
-Added `recover_strict_code_quality_gate`, which recovers one exact passed Dagger generation from the published attestation and `clean-quality-results.json` after a caller crash.
+`recover_strict_code_quality_gate` loads the strict published manifest once, checks the caller-bound
+attestation and declared result from that same immutable snapshot, and recovers one exact passed
+Dagger generation after a caller crash. Its public `reportPath` remains the stable developer-facing
+`reports/test-results.md`; recovery additionally exposes `publishedResultPath` for the immutable
+generation artifact.
 
 ### The Index Is The Scope, And This Function Does Not Own It (260731-EFA-L4)
 
@@ -127,6 +131,12 @@ host environment builder, systemd/rlimit command planning, and direct subprocess
 removed. The only executable path is `run_clean_quality`, which reconstructs the accepted
 candidate inside the pinned Dagger graph.
 
+This refusal is scoped to the Python quality/acceptance wrapper. Its wording says only the
+Dagger graph certifies acceptance; it does not overclaim that every direct diagnostic in the
+repository is forbidden. Direct targeted Vitest unit/component diagnostics are governed by the
+dashboard configuration and never enter this adapter, while pytest, Playwright, changed-lines
+CLI execution, the Python wrapper, and acceptance remain Dagger-attested.
+
 ### Conventions
 
 `status` is the machine-readable field; `reason` is prose for a human reading the closeout payload.
@@ -160,6 +170,10 @@ different situations.
   identity-derived. Do not collapse either rule into the other.
 - This module never builds or launches a host wrapper command. `run_clean_quality` owns exact
   candidate reconstruction and Dagger execution.
+- `reportPath` always names the stable enclosure wrapper report. `publishedResultPath` is optional,
+  recovery-only evidence and must never replace the stable path.
+- Recovery loads one strict manifest snapshot and uses it for attestation, digest/size verification,
+  and artifact-path resolution; no second pointer read or compatibility reader is permitted.
 
 ### Todos
 
@@ -214,8 +228,27 @@ The forcing suite also calls both command and memory-policy builders with a non-
 requires each to refuse with pinned-Dagger guidance; no local executor can be revived through a
 lower-level builder.
 
+## 260821-DAGQC-L4 Diagnostic-Wording Boundary
+
+`run_local_quality_diagnostic` now refuses host quality execution with the precise acceptance
+claim: the pinned Dagger graph is the certifying owner. The module still exposes no host command
+planner or fallback. This wording deliberately leaves the separately ruled direct targeted
+Vitest diagnostic loop outside the Python quality adapter; it creates no acceptance evidence.
+
+## 260821-DAGQC-L2 Stable And Published Quality Paths
+
+The public gate result now distinguishes two paths. `reportPath` always points to the stable
+enclosure wrapper report a developer can open across attempts. A successfully recovered immutable
+generation may additionally carry `publishedResultPath`. Recovery captures the canonical manifest
+once and cannot combine a later pointer generation with the earlier attestation or file facts.
+
 ## Update History
 
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: made recovery single-snapshot and strict-manifest-owned, retained stable `reportPath`, and added optional immutable `publishedResultPath` without disturbing the concurrent L4 diagnostic-wording contract. Verification metadata remains pinned until architect-owned closeout.
+
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: recorded the narrowed Python
+  quality refusal wording. Direct targeted Vitest remains a separate diagnostic-only route;
+  the adapter still has no host executor or acceptance fallback. Dagger acceptance is pending.
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
 
 - 2026-08-17T12:30+02:00 — 260815-DAG-L5: added `recover_strict_code_quality_gate` and attestation-bound Dagger report recovery for crash-safe full-gate reuse. Verification remains closeout-owned.

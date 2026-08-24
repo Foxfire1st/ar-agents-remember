@@ -36,6 +36,8 @@
     "mcp/src/agents_remember/models/base.py",
     "mcp/src/agents_remember/models/benchmarks.py",
     "mcp/src/agents_remember/models/closeout_input.py",
+    "mcp/src/agents_remember/models/closeout_projection.py",
+    "mcp/src/agents_remember/models/closeout_source.py",
     "mcp/src/agents_remember/models/context_packet.py",
     "mcp/src/agents_remember/models/core.py",
     "mcp/src/agents_remember/models/declared_caller.py",
@@ -45,6 +47,7 @@
     "mcp/src/agents_remember/models/operator_inbox.py",
     "mcp/src/agents_remember/models/orchestration.py",
     "mcp/src/agents_remember/models/providers.py",
+    "mcp/src/agents_remember/models/quality.py",
     "mcp/src/agents_remember/models/read_files.py",
     "mcp/src/agents_remember/models/runtime.py",
     "mcp/src/agents_remember/models/skills.py",
@@ -60,8 +63,8 @@
     "mcp/src/agents_remember/models/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 62,
-    "fileSidecars": 27,
+    "sourceFilesInScope": 65,
+    "fileSidecars": 30,
     "childRoutes": 4
   },
   "routingTerms": [
@@ -75,6 +78,8 @@
     "catalog",
     "closeout",
     "closeout_input",
+    "closeout_projection",
+    "closeout_source",
     "context",
     "context_packet",
     "conversations",
@@ -100,7 +105,9 @@
     "operator_inbox",
     "orchestration",
     "packet",
+    "projection",
     "providers",
+    "quality",
     "queue",
     "read",
     "read_files",
@@ -111,6 +118,7 @@
     "response",
     "runtime",
     "skills",
+    "source",
     "src",
     "structural",
     "task",
@@ -139,6 +147,8 @@
       "mcp/src/agents_remember/models/base.py",
       "mcp/src/agents_remember/models/benchmarks.py",
       "mcp/src/agents_remember/models/closeout_input.py",
+      "mcp/src/agents_remember/models/closeout_projection.py",
+      "mcp/src/agents_remember/models/closeout_source.py",
       "mcp/src/agents_remember/models/context_packet.py",
       "mcp/src/agents_remember/models/core.py",
       "mcp/src/agents_remember/models/declared_caller.py",
@@ -148,11 +158,9 @@
       "mcp/src/agents_remember/models/operator_inbox.py",
       "mcp/src/agents_remember/models/orchestration.py",
       "mcp/src/agents_remember/models/providers.py",
+      "mcp/src/agents_remember/models/quality.py",
       "mcp/src/agents_remember/models/read_files.py",
-      "mcp/src/agents_remember/models/runtime.py",
-      "mcp/src/agents_remember/models/skills.py",
-      "mcp/src/agents_remember/models/task_doc.py",
-      "mcp/src/agents_remember/models/task_document.py"
+      "mcp/src/agents_remember/models/runtime.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -165,6 +173,10 @@
       "benchmarks",
       "closeout_input.py",
       "closeout_input",
+      "closeout_projection.py",
+      "closeout_projection",
+      "closeout_source.py",
+      "closeout_source",
       "context_packet.py",
       "context_packet",
       "core.py",
@@ -183,6 +195,8 @@
       "orchestration",
       "providers.py",
       "providers",
+      "quality.py",
+      "quality",
       "read_files.py",
       "read_files",
       "runtime.py",
@@ -196,13 +210,7 @@
       "task_document_ref.py",
       "task_document_ref",
       "terminal.py",
-      "terminal",
-      "terminal_catalog.py",
-      "terminal_catalog",
-      "tokens.py",
-      "tokens",
-      "tool_registry.py",
-      "tool_registry"
+      "terminal"
     ]
   },
   "fallback": {

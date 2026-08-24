@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -245,15 +245,18 @@ before the separate stale-base preflight, so `proceed-stale` cannot override a
 super-to-master structural gap; blocked progress is recorded as
 `source-lineage-blocked`.
 
-## 260815-DAG-L3 Governed Start Restamp
+## 260815-DAG-L3 Start Publication, Replaced By Task CAS
 
-Leaf start still restamps the current lifecycle id, but publication now flows through
-`publish_queue_bound_task_facts`. An atomic master's own topology-stable recovery can proceed while
-its blocker is held; another master or an active selected/in-flight lane refuses the task write.
+Leaf start still restamps the current lifecycle id, but CLIVE removed the queue-bound publisher.
+Start now competes only with task-plane mutations such as discard-unstarted under the short task CAS;
+after accepted task truth publishes, affected projections are refreshed independently.
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
-L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+Task-derived integration refs remain mechanically non-ordinary: repository defaults, sprint supers,
+and active atomic-series refs are censused across code and external memory. For start, the exact
+configured locator reservation and task CAS are the mutation boundary; the protected-ref landing
+lock and mutable queue lane are intentionally absent.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -265,7 +268,19 @@ The current source seams include `ProviderStartPaths`, `load_contract_from_args`
 | --- | --- | --- |
 | The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | L83-L91; L94-L95; L98-L123 | `mcp/src/agents_remember/worktrees/modules/start.py` |
 
+## 260821-CLIVE Start Reservation And Task-CAS Boundary
+
+Start now competes with discard-unstarted under the short task-publication CAS. It proves the exact
+current parent/leaf binding and reserves the configured contract locator before code, memory,
+provider, or lifecycle task mutation; the repository landing lock is intentionally absent.
+Memory preparation must reproduce the reserved contract bytes or refuse. Lifecycle task restamping
+uses the shared task-fact publisher and returns independent projection effects. Retry converges on
+the same reservation; conflicts name task-authority or recovery actions. A successor start requires
+the exact restartable terminal predecessor, never an inferred missing root.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged start-versus-discard CAS, exact locator reservation, memory convergence, and task projection effects. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

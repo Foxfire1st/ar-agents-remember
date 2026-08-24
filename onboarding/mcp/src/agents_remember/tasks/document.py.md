@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T21:30+02:00                        |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
+| lastUpdated            | 2026-08-24T13:43+02:00                        |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -66,7 +66,9 @@ closed `executionNature` value `organizational` or `atomic`; an orchestration sp
 Since 260815-DAG-L11 a node is either a `master` lump (the whole master) or a `segment` (one master
 ref plus a non-empty, unique `leafIds` list); a legacy bare `{repository, path}` node lifts to a
 lump on parse and serializes back to the bare shape, so lump-only graphs round-trip
-byte-identically, and a lump compares equal to (and hashes like) its bare ref. Edges
+byte-identically. Python equality and hashing are structural node identity only: kind, ref, and
+leaf list. A caller asking which master owns a node compares `node.ref`; a caller selecting a leaf
+uses endpoint resolution. Edges
 (`SprintExecutionEdge`) gain an optional `judgmentId`, and each endpoint is a bare ref or a
 `SprintExecutionEndpoint` (`ref` + `leafId`) addressing the segment that contains that leaf;
 resolution to exactly one node happens in graph validation, never at parse time. The graph rejects
@@ -142,15 +144,30 @@ the escape hatch for bespoke prose; the standard template sections stay the back
   dashboard) treat an empty list as "not an orchestration task".
 - **Acyclicity refusals name the cycle (L15):** `derived_waves` raises with the exact cycle members,
   never a bare "must be acyclic" — the member search is deterministic (declaration-order DFS).
+- **Node identity is structural:** `SprintExecutionNode` compares only with another node and hashes
+  `(kind, ref, leafIds)`. It never aliases `TaskDocumentRef`; legacy bare-ref lifting and wire
+  serialization are independent and remain unchanged.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation sources are configured for this repository-internal persisted model.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external documentation was available after checking the configured source registry. | _None._ | _No external source._ |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The renderer consumes this model. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:31-53 |
-| The store reads/writes this model. | `read_task_doc`; `write_task_doc` | mcp/src/agents_remember/tasks/store.py:32-33; mcp/src/agents_remember/tasks/store.py:36-37 |
-| The persisted-contract peer this mirrors. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:739-812 |
-| Acyclicity errors name the exact cycle members via the deterministic DFS helpers (L15-R8 F4). | `_find_cycle_members`; `_residual_adjacency`; `_dfs_cycle_members`; `_CycleSearch` | mcp/src/agents_remember/tasks/document.py:418-441; mcp/src/agents_remember/tasks/document.py:443-457; mcp/src/agents_remember/tasks/document.py:459-480; mcp/src/agents_remember/tasks/document.py:482-489 |
+| Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | L218-L275 | [document.py](mcp/src/agents_remember/tasks/document.py) |
+| Graph validation relies on structural node uniqueness and resolves ownership/endpoints explicitly. | L311-L370 | [document.py](mcp/src/agents_remember/tasks/document.py) |
+| Focused proof covers both comparison directions, set/dict insertion directions, and equal/unequal node identities. | L237-L265 | [test_task_execution_topology_segments.py](mcp/tests/test_task_execution_topology_segments.py) |
+| Topology callers now project `node.ref` explicitly when they mean master ownership. | L116-L151; L748-L759 | [test_task_execution_topology.py](mcp/tests/test_task_execution_topology.py) |
 
 ## L23 Final Candidate Disposition
 
@@ -168,6 +185,11 @@ stay under the complexity target. The refusal dialect stays a `ValueError`-famil
 application boundary translates to the typed `TaskDocError` family.
 
 ## Update History
+
+- 2026-08-24T13:43+02:00 — DAGQC L1: removed `SprintExecutionNode` cross-type equality/hash
+  aliasing with `TaskDocumentRef`; node identity is structural and ownership comparisons are
+  explicit through `node.ref`. Legacy lump parse/serialization remains unchanged. Verification
+  metadata remains pinned until closeout.
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: `derived_waves` acyclicity refusals now name the exact
   cycle members (`_find_cycle_members`/`_residual_adjacency`/`_dfs_cycle_members`/`_CycleSearch`,

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,16 @@ they never excuse an underlying content, citation, shape, history, entity, or in
 | Current intent, evidence, and semantic history are separate information planes. | "### 3 — Write Onboarding Only" | skills/l-01-agent-lifecycles/roles/curator.md:87-127 |
 | Checks require complete missing-onboarding/quality repair before report and distinguish it from closeout-owned commit provenance. | "### 4 — Iterate The Checklist, Then Report" | skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
 
+## 260821-DAGQC-L2 Quality Invocation
+
+Curator doctrine now issues the memory-quality operation through the exact discriminated request
+object. A synchronous repair loop uses `mode: sync`; if async work is selected, `mode: start` is
+followed by `mode: poll` carrying only repository and run id. Capacity refusal means poll/wait and
+retry; it does not authorize an alternate runner or compatibility call.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: aligned curator doctrine with the canonical strict memory-quality request and retry guidance. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-11T14:40+02:00 — Made current-additions coverage and the full enforced memory-quality
   worklist curator-owned completion conditions while preserving closeout ownership of real-commit metadata.

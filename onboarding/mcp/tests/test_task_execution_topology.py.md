@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T13:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,6 +37,10 @@ The rollback proof compares every canonical JSON/Markdown task publication, perm
 coordination lock, and separately proves that neither queue state nor a pending WAL was published.
 The suite also directly imports the extracted queue-scope owner so targeted gate derivation keeps
 the new application module attached to this existing behavioral topology suite.
+After `SprintExecutionNode` equality became structural and node-to-node only, topology assertions
+that mean “which master does this node address?” compare explicit `node.ref` values. This is a
+mechanical consumer migration: wave derivation, validation, publication, and projection behavior
+are unchanged.
 
 ### Invariants And Boundaries
 
@@ -46,6 +50,8 @@ the new application module attached to this existing behavioral topology suite.
   duplicating the topology algorithm.
 - Graph bootstrap must update the sprint and all commanded masters together or leave every file
   unchanged.
+- Node identity and master-reference identity are distinct: this suite uses `.ref` explicitly for
+  master-facing comparisons and does not depend on node-to-`TaskDocumentRef` equality aliases.
 
 ## Repo-Internal References
 
@@ -58,6 +64,9 @@ the new application module attached to this existing behavioral topology suite.
 | The production policy under test lives in the application topology module. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:194-266 |
 | The L11 segment-graph schema/projection/placement cases split out under the file-size rail. | `ExecutionGraphSegmentSchemaTests` | mcp/tests/test_task_execution_topology_segments.py:41-253 |
 | The L11 incremental authoring forcing suite (which also owns the graph-less bootstrap forcing). | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:57-982 |
+| Schema-wave assertions compare explicit node references after graph construction. | `test_graph_derives_stable_waves_without_persisting_positions` | mcp/tests/test_task_execution_topology.py:116-151 |
+| Bootstrap, topology, projection, and pinned-read wave assertions project `node.ref` before comparison. | `test_bootstrap_previews_then_atomically_publishes_graph_natures_render_and_projection`; `test_execution_waves_validates_and_returns_one_pinned_sprint_snapshot` | mcp/tests/test_task_execution_topology.py:721-803; mcp/tests/test_task_execution_topology.py:838-862 |
+| The production node model defines structural node equality/hash and exposes the addressed document explicitly as `.ref`. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:218-275 |
 
 ## 260815-DAG-L9 Inventory Forcing
 
@@ -80,6 +89,11 @@ The current forcing seams include `test_graph_derives_stable_waves_without_persi
 | The current test source exercises `test_graph_derives_stable_waves_without_persisting_positions`, `test_graph_releases_a_multi_parent_successor_only_after_every_predecessor`, `test_graph_refuses_duplicates_unknown_endpoints_self_edges_blank_reasons_and_cycles`, `test_execution_fields_are_master_only_and_split_sprint_from_commanded_master`. | L120-L124; L126-L148; L150-L196; L198-L214 | `mcp/tests/test_task_execution_topology.py` |
 
 ## Update History
+
+- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: reconciled master-facing wave assertions to explicit
+  `node.ref` projection after structural node-only equality; this is a mechanical consumer change,
+  not a topology-behavior expansion. Verification metadata remains pinned until architect-owned
+  closeout stamps the real code commit.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

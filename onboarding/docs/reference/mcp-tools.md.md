@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | docs/reference/mcp-tools.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
-| lastVerifiedCommitDate | 2026-08-12T17:53:40+02:00|
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | docs/reference/overview.md |
 
 ## Governing Overview
@@ -55,7 +55,16 @@ Worker source inventory, reviewer verdict, and governing route overview.
 
 No meaningful cross-repo references.
 
+## 260821-DAGQC-L2 Memory-Quality Contract
+
+The reference now publishes one `request` object discriminated by `mode`: `sync` and `start` carry
+execution scope/check/detail inputs, while `poll` carries only repository and run id. It documents
+the hard live-work cap, same-identity reuse, typed `capacity-reached` guidance, and nondisclosing
+`run-not-found` result. Flat `wait` and top-level `run_id` calls are no longer valid.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced the legacy quality call grammar with strict sync/start/poll requests and documented capacity/nondisclosure outcomes. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-11T16:54+02:00 — Documented the one enclosure-local, atomically replaced curator
   checklist, its scoped-only response fields, and cleanup/abandon garbage collection.

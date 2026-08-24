@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,16 @@ The current source seams include `contract_lifecycle_lease`, `require_lifecycle_
 | --- | --- | --- |
 | The current module exposes `contract_lifecycle_lease`, `require_lifecycle_operation_compatible`, `require_legacy_operation_compatible` at this ownership boundary. | L57-L69; L72-L96; L99-L115 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py` |
 
+## 260821-CLIVE Stable External Lease
+
+The operation lease now lives outside the deletable enclosure at the stable locator sibling
+`locks/<full-contract-hash>.lock`. A supplied location must name that same stable locator, and active
+operation inspection uses strict record reads plus projected exits. Terminal cleanup therefore
+cannot delete the lock that serializes its own final transaction.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded the stable external lease and strict location match. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

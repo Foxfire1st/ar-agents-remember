@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/reopen.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated            | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ The reopen ledger-mapping proof now supplies the exact memory source commit.
 | --- | --- | --- |
 | The doc lookup and lifecycle restamp helpers this module shares with worktree start. | `find_leaf_doc`; `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70; mcp/src/agents_remember/tasks/leaf_doc.py:161-175; mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
 | The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:441-441 |
-| The recreate-fresh path restamps the leaf lifecycle document through the queue-governed publisher. | "publish=lambda task_root, document: publish_queue_bound_task_facts(" | mcp/src/agents_remember/worktrees/modules/start.py:594-594 |
+| Reopen publishes the frozen-landing clear, task resets, and contract rewrite under one task-fact CAS and reports projection refresh separately. | `publish_task_fact_mutation`; `_publish_reopen_transition` | mcp/src/agents_remember/worktrees/reopen.py:471-493 |
 | The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41 |
 | The contract dataclass, amendment helper, and `CleanupStatus` vocabulary definitions (the vocabulary in models/worktree.py since L9). | "class ContractCells"; "def amend_contract"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:24-24; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
 | The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:96-136 |
@@ -110,34 +110,46 @@ shared lineage block/recovery payload before rewriting contract cells, leaf
 state, or the master index. The intended recovery is to synchronize the
 existing thematic master, not create a replacement master.
 
-## 260815-DAG-L3 Governed Reopen Publication
+## 260815-DAG-L3 Publication History, Superseded By CLIVE
 
-Reopen's frozen-landing clear, leaf/master task writes, and contract rewrite remain one rollback
-unit, now executed inside the sprint queue's task-fact publisher. A topology-stable reopen inside
-the active atomic master is allowed; another master or a selected/in-flight lane refuses before
-publication. Queue errors are returned as the existing blocked reopen result.
+The earlier sprint-queue publisher no longer governs reopen. The current operation keeps frozen
+landing clear, leaf/master task writes, and contract rewrite in one rollback-safe task-CAS batch;
+projection invalidation/rebuild happens afterward and cannot roll that batch back.
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
-L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers,
+and active atomic-series refs are censused across code and external memory. CLIVE retains the exact
+terminal predecessor, source-tip, ledger, and lineage proofs but removes queue state from the reopen
+publication boundary.
 
 Reopen proves a terminal leaf against its exact recorded landing, not its necessarily older start
 base: code source must equal `integrated_code_commit`, and external-memory source must equal
 `integrated_ledger_commit`, before task facts are reset.
 
-The apply publication now repeats that whole proof under the queue-to-repository authority that
-owns the reset. It reloads and requires the exact preflighted terminal contract, rechecks the
-current protected source tips, and for external memory proves the recorded ledger maps the landed
-code commit to the landed memory-content commit and reaches that content. A contract or ref race
-therefore returns a blocked result without clearing the frozen landing or rewriting task facts.
-The leaf/master reset plan is also rebuilt inside that authority callback, so a governed task-doc
-edit completed after outer preflight is never overwritten by stale prepared models.
+The apply publication repeats that whole proof inside the task-CAS publication it uses for the
+reset. It reloads and requires the exact preflighted terminal contract, rechecks current protected
+source tips, and for external memory proves the recorded ledger maps the landed code commit to the
+landed memory-content commit and reaches that content. A contract or ref race therefore returns a
+blocked result without clearing frozen landing or rewriting task facts. The leaf/master reset plan
+is rebuilt inside the same callback, so a concurrent task-doc edit is never overwritten by stale
+prepared models.
 
 ## 260815-DAG Master Full-Gate Repair
 
 Imports updated to the moved queue/integration packages; the contract review/closeout/integration reset was extracted into the `_reopened_contract` helper used by `reopen_task`.
 
+## 260821-CLIVE Terminal Predecessor And Task Publication
+
+Reopen requires the exact terminal lifecycle predecessor rather than inferring authority from a
+missing or deleted enclosure. Its prepared contract/task reset publishes under the task CAS, with
+exact original-source validation and rollback-safe document writes. Accepted task truth remains
+authoritative; dry-run and apply report the same affected projection scopes/effects, and a rebuild
+failure does not undo the reopen batch.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged exact terminal-predecessor proof, task-CAS publication, and independent projection refresh into reopen. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: imports updated to the moved packages; contract reset extracted into `_reopened_contract`. Verified at code commit e5cb139f.
 

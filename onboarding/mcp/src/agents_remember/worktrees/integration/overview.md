@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../../../../overview.md` |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ Dagger quality gate checkout, and organizational-completion integration/repair.
 
 ## 260821-CLIVE-L1 Admission, Identity, And Recovery
 
-Closeout integration separates four owners: the contract lifecycle lease serializes filesystem writers; closeout admission stabilizes and normalizes candidate/plan before lifecycle compatibility; candidate identity binds accepted effective input and Git provenance; mutation evidence and recovery projection own crash classification. The typed integrate caller owns integrate retention, authority, and candidate derivation, while lease-bound closeout admission is the sole closeout candidate owner. The shared controller requires the supplied candidate and explicit authority, then separates generation creation/conflict/terminal replacement from recovery/launch/projection; it cannot recapture closeout provenance or infer kind-specific authority from ambient state. For closeout, reconciliation precedes queued-record publication. Worker authority now survives every non-terminal phase and may be cleared only after exact termination proof; a failed or denied termination retains the PID and blocks replacement. The store is strict schema 3.0 and relies on model/public fill-only boundaries for impossible leg-set or proven-commit rewrites while retaining transition-specific identity/state/pre-state checks. Duplicates validate against the immutable accepted plan, and generation retention requires commit-proven mutation or exact canonical contract-finalization publication. The remaining pre-L3 queue rows are transitional and do not own L2 retry/recover/cancel/revise evidence.
+Closeout integration separates four owners: the contract lifecycle lease serializes filesystem writers; closeout admission stabilizes and normalizes candidate/plan before lifecycle compatibility; candidate identity binds accepted effective input and Git provenance; mutation evidence and recovery projection own crash classification. The typed integrate caller owns integrate retention, authority, and candidate derivation, while lease-bound closeout admission is the sole closeout candidate owner. The shared controller requires the supplied candidate and explicit authority, then separates generation creation/conflict/terminal replacement from recovery/launch/projection; it cannot recapture closeout provenance or infer kind-specific authority from ambient state. For closeout, reconciliation precedes durable journal publication. Worker authority survives every non-terminal phase and may be cleared only after exact termination proof; a failed or denied termination retains the PID and blocks replacement. The store is strict schema 3.0 and relies on model/public fill-only boundaries for impossible leg-set or proven-commit rewrites while retaining transition-specific identity/state/pre-state checks. Duplicates validate against the immutable accepted plan, and generation retention requires commit-proven mutation or exact canonical contract-finalization publication. The disposable queue projection owns no retry, recover, cancel, revise, claim, or commit evidence.
 
 ## 260821-CLIVE-L2 Current Architecture
 
@@ -63,7 +63,35 @@ The route decomposition mirrors those boundaries without adding new authority: n
 | Bounded legacy bridge. | L80-L87; L107-L188 | `mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py` |
 | Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | L54-L132; L135-L227 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py` |
 
+## 260821-CLIVE Final Door-To-Journal Architecture
+
+Closeout scheduling intent begins as an immutable contract-owned door generation. Public door
+commands publish exact task/contract bytes under the short repository-scoped task CAS, then refresh
+the disposable projection as a downstream effect. Starting closeout atomically transfers the exact
+first-ready waiting door into the stable root operation journal; claim intent is durable before
+worker launch. From that point, lifecycle, source-journal identity, commits, memory, ledger,
+certification, integration, cancel, retire, supersede, and recovery evidence remain journal-owned
+even if task changes invalidate the projection.
+
+The landing and terminal lanes are also source-owned, not queue-owned. `atomic_series_landing.py`
+checks current protected-ref collisions across active canonical series without persisting a blocker.
+`atomic_series_terminal.py` issues only an ephemeral transaction-bound cleanup/abandon capability.
+`terminal_enclosure_archive.py`, `lifecycle_enclosure_terminal.py`, and
+`lifecycle_operation_location.py` require an exact bounded external archive, receipt, terminal
+locator, and predecessor before the old enclosure root may be removed or a successor published.
+Stable operation leases live outside the deletable root.
+
+Recovery is deliberately narrow: an existing claimed generation resumes itself; direct-landing
+outputs may be reconstructed only from exact lineage and deterministic bytes. Missing create-time
+door intent, present-invalid location state, ambiguous mutation, or guessed successor state requires
+developer decision. There is no raw-Git fallback, scan-based recovery, synthetic initial door,
+standalone successor-intent WAL, or permanent compatibility reader. The deleted
+`lifecycle_successor_control.py` responsibilities now live in task-addressed controls,
+journal-door control, atomic terminal replacement, and the terminal enclosure/location transaction.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled immutable doors, atomic journal claim transfer, strict terminal archive/successor authority, and removal of successor-intent WAL ownership. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the `lifecycle/`, `direct_landing/`, and `legacy/` package boundaries, repointed current evidence, and verified the governed route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

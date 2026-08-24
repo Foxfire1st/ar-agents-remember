@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated            | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -63,13 +63,25 @@ No external Domain Documentation source is configured for this memory repo.
 
 Finalization reports `enclosurePath` for the leaf being finalized and only archives completed root tasks when the finalized contract is a root `kind="series"` contract.
 
-## 260815-DAG-L3 Governed Finalization Writes
+## 260815-DAG-L3 Finalization Publication, Replaced By Task CAS
 
-Leaf/master task-document reconciliation during finalization now publishes through the bound sprint
-queue. Queue refusal returns a structured `task-queue-blocked` result rather than partially updating
-task status beside an active landing lane or atomic blocker.
+Leaf/master task-document reconciliation no longer publishes through a bound sprint queue.
+Finalization validates and writes the exact leaf/parent batch under task CAS; only task-source conflict
+can refuse that canonical publication. Projection invalidation/rebuild is a reported downstream
+effect and cannot partially govern or roll back task status.
+
+## 260821-CLIVE Finalization Task Publication
+
+Finalization captures exact leaf and parent task-source snapshots during preflight, then validates
+them again under the task-publication CAS before publishing the task batch. Accepted task truth is
+independent of projection state; the result reports per-sprint `projectionEffects`, and dry-run
+previews the same scope without writing. A changed or unreadable source blocks task publication
+before bytes move. Projection refresh failure is reported separately and never rolls back an
+accepted finalization write.
 
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged exact source CAS and independent projection effects into finalization task publication. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df`                 |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
+| lastUpdated            | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                 |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -40,12 +40,11 @@ one operational checklist under the enclosure `reports/` directory and returns t
 curator count/status; subset and unscoped calls write no checklist. The application layer supplies
 the leaf base only as temporary comparison provenance for unstamped cards.
 
-Since 260815-DAG-L15 the `memory_quality_check` registration takes keyword-only `wait: bool = True`
-and `run_id: str | None = None` (L15-R7, the 2026-08-19 timeout class). `run_id` dispatches to the
-poll payload (the identical full result when completed; `run-not-found` means the run was evicted or
-the server restarted — rerun). `wait=false` dispatches to the start payload and returns
-`{status, runId}` to poll. The synchronous path and its 5-argument payload are byte-unchanged, so
-existing callers and tests are unaffected.
+For 260821-DAGQC-L2 `memory_quality_check` publishes one `request` parameter whose discriminator is
+`mode`. `sync` and `start` accept execution inputs; `poll` accepts only configured repository and
+run id. Registration dispatches by the validated DTO type and makes no lower-level failure
+decision. Saturated unique start and nondisclosing missing/wrong-repository poll outcomes are
+controller-owned public results.
 
 Three declarations pack:
 
@@ -63,29 +62,30 @@ ledger and commits memory and is gated on clean drift unless `accept_drift=true`
 
 ### Invariants And Boundaries
 
-- The signature stays flat; the parameter objects are built in the body.
+- Carryover and baseline signatures stay flat and build their parameter objects in the body;
+  memory quality deliberately publishes the one nested discriminated request object.
 - `drift_check` identifies update work; contract-scoped `memory_quality_check` must be repaired and
   rerun by the curator before handoff, then repeated by closeout after real-commit metadata refresh.
 - Registration documents the checklist as the only write of a full scoped quality call: code and
   memory remain unchanged, and dirty-source/full-quality `ok` is not the curator's zeroable gate.
-- The async `wait`/`run_id` surface is keyword-only and additive: `wait=True` (the default) keeps
-  the exact synchronous behavior and payload.
-- Everything these tools do lives in `application/memory_tools.py` and the memory-quality package;
-  this module chooses nothing.
+- Memory-quality request modes are mutually exclusive and extra-forbid; no legacy `wait`/`run_id`
+  overload or silent branch inference remains.
+- Quality execution lives in `application/memory_quality_controller.py`; other memory tools remain
+  in `application/memory_tools.py`. Registration chooses only the validated request variant.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The payload builders for the carryover plan and report-filing apply pair. | `memory_carryover_plan_payload`; `memory_carryover_apply_payload` | mcp/src/agents_remember/mcp/tools/memory.py:219-230; mcp/src/agents_remember/mcp/tools/memory.py:233-254 |
-| The start/poll payload builders behind the `wait=false`/`run_id` branches (L15-R7). | `memory_quality_check_start_payload`; `memory_quality_check_poll_payload` | mcp/src/agents_remember/mcp/tools/memory.py:71-91; mcp/src/agents_remember/mcp/tools/memory.py:93-100 |
+| The typed sync/start/poll payload builders. | `memory_quality_check_payload`; `memory_quality_check_start_payload`; `memory_quality_check_poll_payload` | mcp/src/agents_remember/mcp/tools/memory.py:58-89 |
 | The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:604-610 |
 | The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:617-634 |
 | The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:637-642 |
 | Baseline branch packing and drift gating are proved by `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift`. | `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift` | mcp/tests/test_mcp_registration_wiring_tests_1.py:402-418 |
 | Carryover selection packing is proved by `test_memory_carryover_plan_packs_the_selection`. | `test_memory_carryover_plan_packs_the_selection` | mcp/tests/test_mcp_registration_wiring_tests_1.py:420-446 |
 | Apply intent and default-message packing is proved by `test_memory_carryover_apply_carries_the_intent_note_and_default_messages`. | `test_memory_carryover_apply_carries_the_intent_note_and_default_messages` | mcp/tests/test_mcp_registration_wiring_tests_1.py:428-450 |
-| The async registration branches are proved through the live FastMCP schema. | `test_memory_quality_check_wait_false_starts_a_background_run`; `test_memory_quality_check_run_id_polls_the_run` | mcp/tests/test_mcp_registration_wiring_tests_1.py:316-325; mcp/tests/test_mcp_registration_wiring_tests_1.py:327-334 |
+| Registration dispatch and schema are forced through the live FastMCP boundary. | `test_memory_quality_check_runs_every_check_when_none_are_named`; `test_memory_quality_check_start_mode_starts_a_background_run`; `test_memory_quality_check_run_id_polls_the_run`; `test_memory_quality_poll_rejects_explicit_start_fields_before_dispatch`; `test_memory_quality_tool_schema_exposes_the_three_request_modes` | mcp/tests/test_mcp_registration_wiring_tests_1.py:316-430 |
 
 ## 260815-DAG-L3 Curator Attestation Registration
 
@@ -97,15 +97,16 @@ attestation; subset and unscoped calls write neither artifact.
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
-## 260815-DAG-L15 Async Quality Registration
+## 260821-DAGQC-L2 Canonical Quality Registration
 
-The public `memory_quality_check` tool gained keyword-only `wait` (default True) and `run_id`
-(L15-R7): `wait=false` starts the check as a background run and returns `{status, runId}`; a poll
-with `run_id` returns the identical full result, and `run-not-found` means evicted/restarted —
-rerun. The docstring documents the flow for the curator attestation path. The sync path is
-byte-unchanged, preserving the existing contract and tests.
+The public tool now accepts exactly `request={mode: ...}`. Pydantic's discriminated union rejects
+mixed or extra mode fields before authority or execution. Registration then forwards the already
+typed sync, start, or poll object to the matching thin payload adapter; compatibility readers and
+local failure-family translations are intentionally absent.
 
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced flat wait/run-id branching with one strict discriminated request and typed adapter dispatch. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: `memory_quality_check` registration gained keyword-only
   `wait`/`run_id` with start/poll dispatch (L15-R7); the synchronous path is unchanged. Verified at

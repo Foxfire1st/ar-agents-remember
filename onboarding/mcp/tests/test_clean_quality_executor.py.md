@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate |  2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
+| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,7 +66,16 @@ The executor suite proves every quality attempt is fresh, both report projection
 status failures refuse, output remains bounded without rewrite amplification, stale predecessor
 reports are pruned, and no local/direct-Docker fallback exists.
 
+## 260821-DAGQC-L2 Strict Manifest Writer/Reader Proof
+
+The focused publication cases pin the exact schema-1.0 object root, immutable generation/file facts,
+attestation handling, and one stable error family for malformed, legacy, or alternate shapes. They
+also prove artifact lookup consumes the parsed manifest instead of rereading the pointer.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: added strict manifest schema/error and parsed-snapshot artifact lookup coverage. Verification metadata remains pinned until architect-owned closeout.
+
 - 2026-08-14T06:38+02:00 — L23 final candidate review: executor forcing cases cover fresh attempts,
   shared authoritative projections, fail-closed status, bounded live output, stale-report pruning,
   exact candidate bundles, and no direct-Docker/local fallback.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_app_lifespan.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-14T12:31:43+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`                                        |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                                        |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -67,7 +67,16 @@ No Domain Documentation source is configured.
 
 No cross-repository implementation dependency governs this file.
 
+## 260821-CLIVE Notifier Registration Wiring
+
+`_agent_notifier_context` binds the serving runtime's inbox execution registrar to the configured
+coordination root and passes it into each notifier sweep. The existing startup, cancellation, and
+background-loop ordering remains intact; the new seam ensures registration happens before inbox
+reconciliation/compaction rather than adding a parallel cleanup loop.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded lifespan wiring for task-owned inbox execution evidence. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-14T12:31:43+02:00 — R44 curator: documented the shield-and-drain boundary for all
   blocking metrics operations and corrected the governing overview link. Verification remains

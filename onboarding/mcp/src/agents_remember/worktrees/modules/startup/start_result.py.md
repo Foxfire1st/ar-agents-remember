@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/startup/start_result.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,16 @@ No configured Domain Documentation source applies.
 
 No cross-repository boundary is owned here.
 
+## 260821-CLIVE Start Result Evidence
+
+`StartedWorktreeState` now carries the prepared memory-state facts alongside code and provider
+state. Successful and converged start responses also expose bounded `projectionEffects` from any
+authoritative lifecycle task restamp. These effects are follow-up scheduling results, not part of
+whether the start contract/worktrees were accepted.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: documented memory state and post-task-publication projection effects in start results. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/modules/startup/start_result.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

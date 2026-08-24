@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash |  `aeca9a2839c965218a61a3040e15cb84367ebeca`|
-| lastVerifiedCommitDate |  2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
+| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -303,7 +303,20 @@ change-set acceptance at leaf closeout, no leaf-integration rerun, and one full 
 integration. A repository whose policy requires its adapter fails closed when the candidate
 removes it. No seat may infer a runner or add a compatibility fallback.
 
+## 260821-CLIVE Closeout Admission And Recovery Doctrine
+
+Every enabled code, memory, and ledger leg requires its own explicit nonblank immutable commit
+message before claim, journal, worker, or Git authority. Blank required input is a typed no-effect
+refusal, never a half-created generation or synthesized default. Apply starts or observes the
+task-bound generation and returns; later status/control uses the exact journal generation and only
+advertised retry/recover/cancel/revise/retire/supersede actions. A closeout gate, when explicitly
+present, gates only admission and never task authoring or another sprint. Direct landing has the
+same journal-first recovery discipline. Raw Git, repeat-from-scratch, reports, stale queue rows, and
+permanent compatibility readers are prohibited; legacy repair is an explicit bounded tool.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged input-total admission, journal controls, gate scope, direct landing, and explicit legacy-repair doctrine. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: replaced embedded Agents Remember commands and thresholds
   with repository-resolved policy while preserving exact cadence and required-adapter refusal.

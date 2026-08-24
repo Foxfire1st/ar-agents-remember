@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_app_background_loops.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-14T14:03:04+02:00               |
-| lastVerifiedCommitHash | `1cb69766bf7e023fb3d7021107da78dc5e53e994`         |
-| lastVerifiedCommitDate | 2026-08-14T14:12:59+02:00|
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`         |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -72,7 +72,21 @@ out anonymously.
 | The same app's failing route arms. | `PasteRouteTests` | mcp/tests/test_serving_app_routes.py:486-540 |
 | The opt-in heap diagnostic's own suite. | `HeapDiagLoopTests` | mcp/tests/test_heap_diag.py:103-264 |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces dashboard lifespan wiring for projection, provider metrics, notifier, allocator trim, workspace-river compaction, and optional loop startup/shutdown.
+
+### Current Invariants
+
+- Typed terminal-seat and operator-inbox evidence is registered to task history before routine reclamation.
+- Background-loop failure or disablement remains isolated and observable.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-14T14:03:04+02:00 — No content impact: R46 replaces the timeout helper's local
   `if`/`AssertionError` branch with `self.assertTrue` using the same five-second wait and failure

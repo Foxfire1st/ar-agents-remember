@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/tasks/serving_preflight.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,6 +54,12 @@ version floor decides. `_below_floor` refuses only **proven** pre-floor releases
 builds and unparseable versions pass (they are not provably the stale rc7 build), so CI editable
 installs and dev builds are unaffected (L15-R4).
 
+For DAGQC L2 every observable metadata boundary is explicit: distribution discovery, metadata-path
+iteration, path stat, `direct_url.json` read, and version metadata read each translate expected
+environment failures into a chained `TopologyServingBuildError`. The distribution version is read
+once and that snapshot is used for the policy decision. Programmer errors outside the declared
+read/stat/metadata failure families still escape.
+
 ### Conventions
 
 - The refusal is a typed `AgentsRememberError` subclass (`TopologyServingBuildError`) with the
@@ -71,6 +77,9 @@ installs and dev builds are unaffected (L15-R4).
   wheels refuse.
 - This module is pure policy plus importlib.metadata inspection — it never writes, never mutates,
   and never touches the coordination root.
+- Expected read/stat/iteration/version failures are total at the public preflight boundary and keep
+  their original cause through exception chaining; broad catch-all translation is forbidden.
+- One preflight uses one distribution-version snapshot.
 
 ## Docs References
 
@@ -98,7 +107,16 @@ document.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260821-DAGQC-L2 Explicit Serving-Build Failure Boundary
+
+The preflight no longer depends on callers remembering every lower-level metadata failure class.
+Each observable operation has one explicit translation seam, while semantic policy—model probe,
+editable/source-tree handling, release floor, and dev/post/local treatment—remains unchanged. This
+makes the public check total for expected environment failures without hiding programmer defects.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: centralized explicit distribution read/stat/iteration/version translations and single-snapshot version policy under the typed serving-build error. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-20T21:30+02:00 — Created for 260815-DAG-L15-R4: the served-build preflight module
   (model self-probe + non-editable wheel version floor 3.0.0rc8, fail-closed), wired before every

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated            | 2026-08-24T13:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -790,11 +790,29 @@ and `TaskDocNode.seats` (`TaskSeatNode`), served on sprint docs and defaulted em
 
 ## 260815-DAG-L12 Route Impact
 
-New module `projection_graph.py`: the primitives-only render-ready sprint graph view builder (`TaskExecutionGraphView`/`TaskExecutionNodeView`/`TaskExecutionPredecessorNode`, `build_execution_graph_view`) — the observer package must not import `tasks`, so the serving layer feeds it plain data. `projection.py` `TaskDocNode` gains the optional `executionGraphView` field (L12-R4); the dashboard renders this view directly and never re-derives waves or frontier state.
+New module `projection_graph.py`: the primitives-only render-ready sprint graph view builder
+(`TaskExecutionGraphView`/`TaskExecutionNodeView`/`TaskExecutionPredecessorNode`,
+`build_execution_graph_view`) — the observer package must not import `tasks`, so the serving layer
+feeds it plain data. `projection.py` `TaskDocNode` gains the optional `executionGraphView` field
+(L12-R4); the dashboard renders this view directly and never re-derives waves or frontier state.
+DAGQC L1 makes the title input contract master-qualified: `GraphTitlesLike.leaf_titles` is keyed by
+`(TaskDocumentRef, leaf id)`, and every leaf-title lookup includes the node's owning ref. Equal local
+leaf numbers under separate masters therefore remain distinct through projection; there is no flat
+title-key compatibility reader.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The primitives-only title protocol and projection lookup preserve owning-master identity. | L35-L55; L188-L209 | `mcp/src/agents_remember/observer/projection_graph.py` |
+| Public-reader regression proves duplicate local leaf numbers retain their owner's title. | L195-L246 | `mcp/tests/test_task_documents_graph_projection.py` |
 
 
 ## Update History
 
+- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: reconciled the graph-view projection with
+  `(TaskDocumentRef, leaf id)` title identity and the no-flat-reader boundary. Verification
+  metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 adds the primitives-only graph-view projection builder and the `TaskDocNode.executionGraphView` field. Verified at code commit b7f2c8e2.
 

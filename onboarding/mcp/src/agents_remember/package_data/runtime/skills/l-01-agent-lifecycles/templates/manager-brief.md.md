@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df`                                  |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
+| lastUpdated            | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                                  |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 
 ## Purpose
 
@@ -82,7 +82,18 @@ builder seat, and every requirement verdict must cite evidence of the requiremen
 rendering → mounted-UI proof, scheduling → operation-level proof, data model → artifact-level
 proof.
 
+## 260821-CLIVE Brief Contract
+
+The brief now requires the manager to declare a complete waiting closeout-door generation rather
+than send an informal queue-readiness row, and to wait for orchestrator release of the current
+first-ready generation. It explicitly keeps task edits live, requires inspection/relay of
+`projectionEffects`, and routes changed waiting evidence through door provenance/disposition.
+Post-claim lifecycle, worker, commit, and recovery evidence is read only from the enclosure-root
+journal via status and advertised controls; projection invalidation is never a lifecycle loss.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: aligned the manager brief with door declaration, task-authoring primacy, and journal-owned post-claim recovery. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: the route-review paragraph gains reviewer-seat
   independence from the builder seat and requirement-evidence-class matching. Verified at code

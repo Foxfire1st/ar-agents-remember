@@ -5,9 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -16,8 +16,9 @@
 
 ## Purpose
 
-`memory_tools.py` is the typed application entry point surface for onboarding drift, memory quality, route-index
-refresh, memory initialization, baseline adoption, and memory carryover MCP operations.
+`memory_tools.py` is the typed application entry point surface for onboarding drift, citation work,
+route-index refresh, memory initialization, baseline adoption, and memory carryover. Memory-quality
+scope, execution, and async control now belong to the dedicated typed controller.
 
 ## Code Commentary
 
@@ -32,28 +33,10 @@ and `CarryoverCommitMessages` carries the two commit subjects for apply
 cit:([`CarryoverCommitMessages`], mcp/src/agents_remember/application/memory_tools.py:637-642).
 `intent_note` remains a separate apply approval argument.
 
-The module resolves repository and leaf-memory authority through `McpRuntimeConfig` and the
-coordination context; the leaf path is confined, the contract is loaded, and the leaf's own memory
-worktree is required cit:([`_memory_scope`, `_leaf_memory_scope`], mcp/src/agents_remember/application/memory_tools.py:88-117; mcp/src/agents_remember/application/memory_tools.py:139-177).
-For a contract-scoped quality check, `MemoryScope.unstamped_code_commit` carries the leaf's real
-code-base commit as temporary comparison provenance. `memory_quality_check_tool` forwards it into
-`DriftCheckContext`, so unstamped dirty-tree claims are checked before closeout without writing a
-future verification stamp. The same leaf scope derives the one operational checklist path from the
-contract's worktree group. A full scoped check gathers complete drift/report-only detail, current-
-addition coverage, and a route-index preview, then atomically replaces that checklist; a subset or
-official-memory call does not create it. A bare official-memory call leaves both leaf-only fields
-absent.
-
-Since 260815-DAG-L15 the quality path is also available asynchronously (R7): `memory_quality_check_tool`
-keeps its exact synchronous 5-argument contract (now delegating to the shared `_run_quality_check`),
-and `start_memory_quality_check_run` / `poll_memory_quality_check_run` drive the bounded background
-registry in `application/memory_quality_runs.py` (single-flight per key — two callers cannot race the
-same checklist write — MAX 8 runs, TTL 30 min, eviction; runtime store only per doctrine D4). The
-started envelope carries `ok: True` plus `status`/`runId`; a poll returns the identical full result
-when the run completed, `ok: True` with `status: running|failed` otherwise, and `ok: False` with
-`status: run-not-found` for an unknown/evicted run (rerun guidance). The `ok` header on the async
-envelopes was a real bug fixed during the L15 gate repair (the wait=false path would have crashed at
-response validation with a raw pydantic error).
+Memory-quality resolution, checklist composition, sync/start/poll control, and public run outcomes
+were extracted to `application/memory_scope.py` and `application/memory_quality_controller.py`.
+This module no longer implements or wraps that failure family. Its remaining operations retain
+their existing configured-authority and typed parameter-object boundaries.
 
 `route_index_refresh_tool` then forwards the resolver-owned code root, onboarding root, repository
 identity, and storage authority into `build_route_indexes`
@@ -71,17 +54,13 @@ filesystem checks.
 ### Invariants And Boundaries
 
 - Tool callers cannot supply arbitrary source, onboarding, coordination, or storage roots.
-- The leaf base is comparison provenance only: this module never writes it into onboarding
-  verification metadata, and official-memory calls never invent an unstamped fallback.
-- The full scoped checklist is an atomic operational report only. This module does not write
-  onboarding, apply route indexes, or fabricate closeout provenance while producing it.
+- Memory quality must route through the dedicated scope/controller API; this general memory module
+  must not re-grow quality scope, registry, or checklist implementations.
 - Route-index refresh must forward resolver-owned repository and storage authority explicitly; it
   must not reconstruct path rules from directory layout or parser defaults.
 - Drift reports are temporary coordination artifacts, not durable onboarding content.
 - Effectful refresh/init/baseline operations act by default and expose `dry_run` for preview;
   carryover remains an explicit plan/apply operation.
-- The synchronous quality contract is preserved: `memory_quality_check_tool` keeps its 5-argument
-  signature and byte-identical payload; the async surface is additive (R7).
 
 ### Todos
 
@@ -100,10 +79,8 @@ package application entry point and resolver contracts.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared memory-scope resolver and its leaf confinement/temporary-provenance rules. | `MemoryScope`; `_memory_scope`; `_leaf_memory_scope` | mcp/src/agents_remember/application/memory_tools.py:61-61; mcp/src/agents_remember/application/memory_tools.py:107-137; mcp/src/agents_remember/application/memory_tools.py:139-177 |
-| Contract-scoped quality forwards the temporary base while official scope leaves it absent. | "def memory_quality_check_tool("; "def test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims("; "def test_the_bare_check_does_not_invent_unstamped_claim_provenance(" | mcp/src/agents_remember/application/memory_tools.py:226-247; mcp/tests/test_memory_tool_enclosure_scope.py:296-321 |
-| The async start/poll wrappers drive the bounded background registry (L15-R7). | `start_memory_quality_check_run`; `poll_memory_quality_check_run`; `_quality_run_key` | mcp/src/agents_remember/application/memory_tools.py:250-279; mcp/src/agents_remember/application/memory_tools.py:280-301; mcp/src/agents_remember/application/memory_tools.py:302-305 |
-| The bounded single-flight run registry the wrappers use. | `start_quality_run`; `poll_quality_run` | mcp/src/agents_remember/application/memory_quality_runs.py:37-71; mcp/src/agents_remember/application/memory_quality_runs.py:74-85 |
+| Canonical quality scope is owned by the focused scope module. | `resolve_memory_scope`; `resolve_leaf_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:51-143 |
+| Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality_controller.py:67-144 |
 | The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:550-586 |
 | The route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | The route-index builder receives storage authority explicitly in its typed signature. | "def build_route_indexes(" | mcp/src/agents_remember/kernel/route_index.py:184-197 |
@@ -121,17 +98,16 @@ this package-local dispatch contract.
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
-## 260815-DAG-L15 Async Memory-Quality Surface
+## 260821-DAGQC-L2 Quality Ownership Extraction
 
-L15 (R7, the 2026-08-19 timeout class) made the long-running contract-scoped check pollable without
-changing the synchronous contract: `start_memory_quality_check_run` starts a single-flight background
-run keyed on repo/contract/checks and returns `{status, runId}`; `poll_memory_quality_check_run`
-returns the identical full result when completed, `ok: True` while running/failed, and
-`ok: False`/`run-not-found` for evicted or unknown runs. The gate-repair round also fixed the missing
-`ok` header on the started/polled envelopes (a real bug: the wait=false path would have failed
-response validation with a raw pydantic error).
+The quality-specific authority, complete execution identity, bounded registry orchestration, and
+checklist publication moved to `memory_scope.py` and `memory_quality_controller.py`. This leaves
+`memory_tools.py` focused on the other memory operations and prevents each transport/application
+caller from reimplementing the controller's failure vocabulary.
 
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: removed memory-quality scope/controller/registry ownership from this general application module and routed that contract through focused typed APIs. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

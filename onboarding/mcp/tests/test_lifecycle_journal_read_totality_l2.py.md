@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_journal_read_totality_l2.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,20 @@ The test source is the direct evidence for the regression contract.
 
 No meaningful cross-repository boundary is owned by this test file.
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces total public behavior for malformed current journals, successor journals, locator/manifest failures, and missing or unreadable live contracts.
+
+### Current Invariants
+
+- Locator-to-manifest-to-journal addressability survives task-side contract loss.
+- Expected failures become one typed public decision; present-unreadable evidence is never absence.
+
 ## Update History
 
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

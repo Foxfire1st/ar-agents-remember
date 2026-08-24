@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/taskReader.tsx`          |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-20T10:45+02:00                                        |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62`                  |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00|
+| lastUpdated            | 2026-08-24T15:04+02:00                                        |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                  |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The reader entry and master overview (since 260815-DAG-L12 the master overview also mounts the sprint execution graph section). | `TaskContent`; `MasterOverview`; `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:84-136; dashboard/src/panels/detail-panel/taskReader.tsx:591-603 |
+| The reader entry and master overview mount optional graph content and the independently scoped queue. | `TaskContent`; `MasterOverview`; `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx |
 | The sub-task index and section primitives. | `SubTaskIndex`; `SliceList`; `StepList` | dashboard/src/panels/detail-panel/taskReader.tsx:395-433; dashboard/src/panels/detail-panel/taskReader.tsx:436-472; dashboard/src/panels/detail-panel/taskReader.tsx:642-666 |
 
 ## Cross-Repo References
@@ -75,9 +75,25 @@ No cross-repository implementation source governs this file.
 
 ## 260815-DAG-L12 Sprint Graph Section
 
-`MasterOverview` now mounts `SprintGraphSection` (L12-R5): for a doc carrying the render-ready `executionGraphView`, the sprint page shows the `Execution graph` section (`SprintGraphView` wave-grid) plus this sprint's scoped `CloseoutQueue` (`sprintRef` = the viewed doc's ref). A non-sprint master returns nothing, so ordinary master reading is unchanged.
+`MasterOverview` mounts optional `SprintGraphSection` graph content and, independently, this sprint's
+scoped `CloseoutQueue` (`sprintRef` = the viewed doc's ref). Graph absence is valid for a reviewed
+atomic-sequential sprint and does not hide scheduling state. A non-sprint master still omits both
+sprint-only surfaces.
+
+## 260821-CLIVE Discard Audit And Graph-Less Scheduling
+
+`DiscardedSubTaskHistory` renders discarded number/name, reason, `discardedAt`, and proof fingerprint
+in a separate `Discarded before start` section. It is audit history, not part of the live sub-task list
+or completion count. The queue mount is outside the optional graph branch so a graph-less sprint can
+still show exact-current scheduling projection state. `MasterOverviewHeader` is a behavior-preserving
+extraction of the existing kind/title/status header, body notice, change-set bar, and token summary;
+it keeps `MasterOverview` within the function-size gate without changing render order or conditions.
 
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Added separate discard-before-start audit rendering, corrected the
+  sprint surface contract (optional graph, independent scoped projection), and recorded the
+  behavior-preserving `MasterOverviewHeader` extraction made during commit-hook closure.
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12: `MasterOverview` now mounts `SprintGraphSection` (the sprint execution graph wave-grid view plus this sprint's CloseoutQueue — L12-R5); claim re-read, citation ranges regenerated, stamp advanced to code commit b7f2c8e2.
 
 

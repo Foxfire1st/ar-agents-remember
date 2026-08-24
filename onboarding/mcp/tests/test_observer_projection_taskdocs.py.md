@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection_taskdocs.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -49,7 +49,21 @@ lifecycle attachment is discovered through the enclosure-root address chain.
 | The helper publishes the normal lifecycle location after contract publication. | mcp/tests/test_observer_projection_taskdocs.py:48-58 |
 | Lifecycle-attached task-document cases all use the addressable helper. | mcp/tests/test_observer_projection_taskdocs.py:294-364 |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces task-document observer projection for hierarchy, graph, route reviews, closeout projection problems, execution registrations, and discarded-subtask history.
+
+### Current Invariants
+
+- Observer output is a read-only projection of canonical task and projection facts.
+- Discard audit/proof remains visible after the live child files are removed.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 

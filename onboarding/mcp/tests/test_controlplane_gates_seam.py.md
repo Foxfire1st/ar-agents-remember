@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_controlplane_gates_seam.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -61,7 +61,21 @@ The current forcing seams include `test_master_handover_is_delegable_to_orchestr
 | --- | --- | --- |
 | The current test source exercises `test_master_handover_is_delegable_to_orchestrator`, `test_named_policy_routes_handover_to_orchestrator`, `test_human_pinned_kinds_stay_pinned`, `test_seam_requirement_binds_delegated_seam_rules_only`. | L175-L179; L181-L184; L186-L190; L192-L197 | `mcp/tests/test_controlplane_gates_seam.py` |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces master handover and integration gate seams, dry-run purity, and channel behavior without extending gate authority into task authoring.
+
+### Current Invariants
+
+- Landing gates serialize their protected transition only.
+- Task-document mutation is not refused because a queue, operation, or landing gate is active.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

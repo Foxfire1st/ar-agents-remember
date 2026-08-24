@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/door.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,18 @@ The source file itself is the current evidence for this file-specific contract.
 
 No meaningful cross-repository boundary is owned by this file.
 
+## 260821-CLIVE Canonical Door Contract
+
+The canonical source has exactly four dispositions: `waiting`, `deferred`, `withdrawn`, and
+`claimed`. Its immutable generation identity includes candidate, master, sprint, contract and tree
+facts, task-topology fingerprint, code/memory/ledger/review/admission/scheduling provenance, and
+predecessor edges. `claimed` additionally requires the exact operation identity. Cancel, retire,
+supersede, commit, certification, and integration outcomes belong to the lifecycle journal, not the
+door vocabulary. Public actions are limited to status, declare, defer, resume, withdraw, and
+provenance update with an exact action-specific payload matrix.
+
 ## Update History
 
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled the full door-generation and request vocabulary. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

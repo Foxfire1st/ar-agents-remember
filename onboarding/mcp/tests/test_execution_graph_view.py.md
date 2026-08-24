@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_execution_graph_view.py`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-24T13:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ waves, resolved edge endpoints, facts, and titles — then feed the builder plai
 walk (`_walk` mirrors `_task_documents._execution_graph_view`): a zero-edge graph projects
 one wave of independent lump nodes with mechanical frontier states (`in-flight` for an
 in-progress master, `landed` for a completed one); a segmented master projects
-wave-ordered segment nodes (`seg1`/`seg2` node identities) with joined titles and
+wave-ordered segment nodes (`seg1`/`seg2` node identities) with master-qualified leaf titles and
 predecessor reasons plus judgment ids; a missing master falls back to the ref key and a
 conservative `ready` state (never landed, never in-flight — reviewer finding F6); and
 `node_identity` stays stable for lumps and segments (the segment ordinal is
@@ -40,21 +40,27 @@ declaration-ordered so appended segments keep earlier identities).
 - Tests exercise the public builder through the same walk the serving layer performs, not
   through an internal re-derivation.
 - Frontier state is asserted as mechanical (statuses + edges only).
+- The consumer fixture supplies leaf titles under `(TaskDocumentRef, leaf id)`; the projection
+  never flattens the owning master out of title identity.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The builder forcing suite. | `ExecutionGraphViewBuilderTests` | mcp/tests/test_execution_graph_view.py:129-265 |
-| The primitives-only builder under test. | `build_execution_graph_view` | mcp/src/agents_remember/observer/projection_graph.py:228-260 |
+| The builder forcing suite supplies qualified leaf-title keys through the serving-style walk. | `ExecutionGraphViewBuilderTests` | mcp/tests/test_execution_graph_view.py:129-268 |
+| The primitives-only builder consumes qualified graph titles without importing the task layer. | `build_execution_graph_view` | mcp/src/agents_remember/observer/projection_graph.py:188-209; mcp/src/agents_remember/observer/projection_graph.py:228-260 |
 | The serving-layer walk the tests mirror. | `_execution_graph_view` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:327-367 |
-| The joined-titles input type. | `SprintGraphTitles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:22-33 |
+| The joined-titles input type qualifies a leaf id with its owning `TaskDocumentRef`. | `SprintGraphTitles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:15-21 |
 
 ## Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
 ## Update History
+
+- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: reconciled the projection-consumer fixture with
+  `(TaskDocumentRef, leaf id)` title identity; no flattened title compatibility reader was added.
+  Verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -490,7 +490,20 @@ rows open their commanded master document.
 
 ## 260815-DAG-L12 Route Impact
 
-The sprint execution graph is now viewable: `types/projection.ts` (+ schema) carry the render-ready `TaskExecutionGraphView`/`TaskExecutionNodeView`/`TaskExecutionPredecessorNode` wire shapes and `TaskDocNode.executionGraphView`; `panels/sprint-graph/` is the new wave-grid view route; `dev/DevApp.tsx` exposes `/dev/sprint-graph` for mounted-UI evidence; and `fixtures/snapshot.json` exercises the new node vocabularies (L12-R1/R2/R4-R7).
+The sprint execution graph is viewable when present: `types/projection.ts` (+ schema) carry the render-ready `TaskExecutionGraphView`/`TaskExecutionNodeView`/`TaskExecutionPredecessorNode` wire shapes and optional `TaskDocNode.executionGraphView`; `panels/sprint-graph/` is the wave-grid view route; `dev/DevApp.tsx` exposes `/dev/sprint-graph` for mounted-UI evidence; and `fixtures/snapshot.json` exercises the node vocabularies (L12-R1/R2/R4-R7). The sprint-scoped closeout projection is mounted independently, so a valid graph-less atomic-sequential sprint retains scheduling visibility.
+
+## 260821-CLIVE Disposable Scheduling And Discard Audit
+
+The generated projection now exposes closeout scheduling as disposable exact-current state:
+service/source condition, bounded source problems with repair actions, and generation-keyed members
+with producer-owned classification, priority, order, and reasons. The dashboard renders this view
+without owning claims, lifecycle, commit, certification, recovery, or terminal evidence.
+
+Task projections also retain audited discard-before-start history. Detail surfaces show the discarded
+identity, reason, timestamp, and proof separately; Operations appends a distinct discarded count to
+live progress. A discarded item never increments completion. The JSON Schema remains runtime
+authority for numeric, string, fingerprint, and collection refinements; generated TypeScript carries
+deterministic refinement documentation rather than pretending those constraints are structural types.
 
 
 ## 260815-DAG Master Full-Gate Repair Route Impact
@@ -498,6 +511,10 @@ The sprint execution graph is now viewable: `types/projection.ts` (+ schema) car
 `fixtures/snapshot.json` extended with a super-to-leaf source-relation entry and two execution-graph view nodes (segment + lump with frontier states) for dashboard vocabulary coverage.
 
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Added the final CLIVE disposable scheduling and discard-audit route
+  contract, corrected graph-less queue visibility, and retained the newer root-journal lifecycle
+  operation projection boundary.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: the snapshot fixture gained a super-to-leaf relation entry and two execution-graph view nodes. Verified at code commit e5cb139f.
 

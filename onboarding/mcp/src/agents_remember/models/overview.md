@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -412,9 +412,13 @@ Worktree, closeout-queue, and task projections now distinguish organizational di
 
 `closeout_input.py` adds the raw-message, resolved-plan, enabled/not-applicable leg, structured-refusal, and effective-input vocabulary shared by both closeout routes. Public worktree and direct-landing responses expose that vocabulary. Lifecycle operation records use only the normalized form; no generated subject, blank sentinel, or fallback input remains below validation.
 
-## 260821-CLIVE-L2 Current Architecture
+## 260821-CLIVE-L2 Historical Intermediate Architecture
 
-Models validate immutable identity and contradictory evidence but perform no I/O or recovery. `models.lifecycles` now owns the canonical root-journal vocabulary. `models.queue` still exposes the transitional pre-L3 selected/in-flight/certified schema and commit-shaped fields; those fields are not authority for L2 retry/recover/cancel/revise, and L3 owns replacing them with the waiting-only projection model.
+Models validate immutable identity and contradictory evidence but perform no I/O or recovery.
+`models.lifecycles` owns the canonical root-journal vocabulary. The transitional L2
+selected/in-flight/certified queue schema was removed by L3; `models.queue` now exposes only the
+disposable waiting-door projection request/response contract, while
+`models.closeout_projection` owns its strict projection vocabulary.
 
 Registered tool request/response contracts now live under `models/tools/`; the move removes the former flat paths without changing the registry's ownership or creating compatibility exports.
 
@@ -425,7 +429,20 @@ Registered tool request/response contracts now live under `models/tools/`; the m
 | Strict lifecycle operation record/projection. | L295-L315; L324-L389; L652-L669 | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | Queue candidate projection. | L259-L336; L355-L405 | `mcp/src/agents_remember/models/queue/closeout_queue.py` |
 
+## 260821-DAGQC-L2 Closed Quality And Landing Models
+
+The route adds strict discriminated memory-quality request DTOs and the shared
+`QualityGateResult`/memory-policy models. Closeout and integration no longer expose open quality
+mappings, and stable versus immutable result paths remain distinct. Direct landing keeps exactly
+three top-level outcomes; journal lifecycle evidence is nested.
+
 ## Update History
+
+- 2026-08-24T16:00+02:00 — Final cumulative closeout audit: marked the L2
+  lifecycle-shaped queue model as historical and named the final projection-only model owners.
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: added strict quality request/result types and closed direct-landing outcome vocabulary. Verification metadata remains pinned until architect-owned closeout.
+
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the `models/tools/` package layout, repaired current registry evidence paths, and verified the governed L2 route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

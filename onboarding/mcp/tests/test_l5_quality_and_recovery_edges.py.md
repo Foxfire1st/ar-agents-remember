@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l5_quality_and_recovery_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,16 @@ The suite pins the narrow seams where the completion quality and recovery paths 
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 260821-DAGQC-L2 Quality Recovery Edges
+
+The quality edge cases now reject hostile/non-object/extra-root manifest shapes through the shared
+error, verify declared artifact integrity from one snapshot, and assert recovered responses retain
+the stable wrapper report separately from the immutable published result.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: extended focused recovery edges for strict manifest authority and distinct stable/published result paths. Verification metadata remains pinned until architect-owned closeout.
+
 
 - 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the test only repoints `LifecycleOperationStore` to its moved integration lifecycle package. Verified at code commit `1d446724`.
 

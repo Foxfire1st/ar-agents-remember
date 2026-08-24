@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/lifecycle-list/LifecycleList.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-20T04:50+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -259,6 +259,14 @@ role of its own for the same reason.
 | Task-row pickup spinner/check-chat notice. | `AgentPickupIndicator` | dashboard/src/panels/AgentPickupIndicator.tsx:42-83 |
 | Native disclosure control and stable persisted collapse hook used by the hierarchy renderer. | `TaskGroupDisclosure`; `useCollapsedTaskGroups` | dashboard/src/panels/TaskGroupDisclosure.tsx:21-46; dashboard/src/panels/useCollapsedTaskGroups.ts:5-28 |
 
+## 260821-CLIVE Discarded Progress Boundary
+
+Document and series rows pass producer-owned `discardedCount` into `progressHint()`. The visible hint
+keeps normal `done/total` progress and appends a distinct `N discarded` segment. A discarded-before-start
+task therefore remains auditable without incrementing completion or changing active row admission.
+Existing worktree-existence, identity, hierarchy, lifecycle-vs-document state, accessibility, and
+keep-alive boundaries remain unchanged.
+
 ## Current L5I Maintenance
 
 The lifecycle rail accepts an `active` signal. Its locally advancing staleness clock stops while a
@@ -266,6 +274,9 @@ kept-alive rail is hidden, while the render-heavy row/group derivation lives in 
 clock and parent renders do not reconstruct the React Aria list unnecessarily.
 
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Added the separate discarded-count progress segment; discarded work is
+  never counted as completed work.
 - 2026-08-20T04:50+02:00 — 260815-DAG-L14 curator: re-read the `DocStatus` import claim against
   `tasks/document.py` — the import moved to the new top-of-file role-constant block; wording
   retained, range regenerated, stamp advanced to code commit 9c3180c1.

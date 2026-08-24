@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T11:55+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated            | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -125,7 +125,15 @@ the workspace and never the user's home directory.
 | The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. | `parse_timeout_caps` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:632-651 |
 | The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. | `RuntimeInstallRequest` | mcp/src/agents_remember/install/runtime.py:105-119 |
 
+## 260821-DAGQC-L2 Memory-Quality Call Grammar
+
+The package quickstart now demonstrates the canonical `memory_quality_check` request object with an
+explicit mode instead of the removed flat wait/run-id surface. This is a contract replacement, not
+a compatibility example: sync/start execution fields and poll identity are separate strict shapes.
+
 ## Update History
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: updated the package-facing quality example to the canonical discriminated request grammar. Verification metadata remains pinned until architect-owned closeout.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 6 citation items; scoped citation check now passes.

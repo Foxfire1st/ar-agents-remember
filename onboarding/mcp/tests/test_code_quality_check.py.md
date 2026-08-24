@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-12T00:08+02:00               |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-24T13:51:26+02:00            |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -240,8 +240,19 @@ Dagger as the sole production acceptance owner. Accepted wrapper tests explicitl
 The missing/mismatched-attestation and native-temp entry-boundary tests moved intact in R42 to
 `test_code_quality_environment_guard.py`, whose sidecar now owns that behavior.
 
+## 260821-DAGQC-L4 Repository-Policy Wording
+
+The repository-policy and pre-push assertions now require the hook to say that acceptance is
+Dagger-only, while retaining the explicit host full-suite refusal and the absence of wrapper,
+pytest, or frontend-test execution in hooks and GitHub workflows. This does not expand the suite's
+ownership into direct targeted Vitest diagnostics: those are supported unit/component feedback
+only and never acceptance, changed-lines coverage, or lifecycle evidence.
+
 ## Update History
 
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled hook assertions to the
+  precise Dagger-only acceptance statement while preserving direct targeted Vitest as a separate
+  non-certifying diagnostic route. No acceptance run was performed during curation.
 - 2026-08-14T11:48:55+02:00 — R42 curator: recorded the file-size extraction of direct wrapper
   authorization and native-temp entry tests into `test_code_quality_environment_guard.py`; this
   card retains suite composition and workflow ownership. Verification remains closeout-owned.

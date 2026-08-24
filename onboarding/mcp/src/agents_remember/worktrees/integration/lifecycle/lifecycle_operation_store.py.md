@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -95,7 +95,16 @@ The current source seams include `operation_record_path`, `operation_report_path
 | --- | --- | --- |
 | The current module exposes `operation_record_path`, `operation_report_path`, `successor_publication_path` at this ownership boundary. | L332-L333; L336-L337; L340-L343 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py` |
 
+## 260821-CLIVE Journal-Only Store
+
+Standalone successor-intent WAL and effective-read projection machinery are removed. The store
+strictly reads the current canonical journal; `replace_terminal` archives the exact predecessor and
+atomically writes generation N+1 under one lock. Resume respects a retained closeout claim. There is
+no projected effective generation, shadow WAL, or compatibility reader.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: removed successor-intent WAL authority and documented atomic terminal replacement. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/lifecycle-list/hierarchy.test.tsx`    |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-08-24T15:04+02:00                                      |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                  |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -59,7 +59,17 @@ No cross-repository implementation source governs this file.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | — | — |
 
+## 260821-CLIVE Discarded Progress Proof
+
+The suite now proves that a planning master with one live leaf and one discarded-before-start entry
+renders `0/1 · 1 discarded`, explicitly not `1/1`. This preserves the distinction between audited
+removal and completed execution while leaving hierarchy, phase grouping, collapse behavior, and
+long-title coverage unchanged.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Added the regression that discarded work is shown separately and does
+  not increase completion.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
   hierarchy suite split from `LifecycleList.test.tsx`. Verification pinned to the

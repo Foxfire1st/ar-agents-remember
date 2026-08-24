@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,18 @@ The source file itself is the current evidence for this file-specific contract.
 
 No meaningful cross-repository boundary is owned by this file.
 
+## 260821-CLIVE Final Terminal Admission Route
+
+`admit_configured_terminal_contract` keeps live mutation admission strict, but recognizes one
+state-disjoint terminal route when the exact locator is `terminal-archived`. That route requires
+readable surviving contract truth, the exact external archive and receipt, and configured
+repository identity for the archived contract without requiring worktrees cleanup already removed.
+Present-invalid archive or authority evidence becomes a bounded refusal. Terminal admission is
+only for status and exact cleanup retry; it is never a generic fallback for live mutations.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged the final live-versus-terminal admission contract into the current DAGQC card. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

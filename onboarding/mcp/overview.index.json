@@ -291,12 +291,14 @@
     "mcp/src/agents_remember/worktrees/services.py",
     "mcp/src/agents_remember/worktrees/source_lineage.py",
     "mcp/src/agents_remember/worktrees/start_progress.py",
+    "mcp/src/agents_remember/worktrees/task_fact_publication.py",
+    "mcp/src/agents_remember/worktrees/task_leaf_binding.py",
     "mcp/src/agents_remember/worktrees/task_resolver.py",
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1339,
-    "fileSidecars": 177,
+    "sourceFilesInScope": 1293,
+    "fileSidecars": 179,
     "childRoutes": 21
   },
   "routingTerms": [
@@ -322,6 +324,7 @@
     "authority",
     "baseline",
     "benchmarks",
+    "binding",
     "block",
     "bootstrap",
     "boundary",
@@ -378,8 +381,7 @@
     "current_state",
     "dagger",
     "dagger_environment",
-    "dashboard",
-    "data"
+    "dashboard"
   ],
   "hotPath": {
     "summary": "The MCP package routes mutation tools through closed configured-contract admission, journal-rooted lifecycle controls, explicit enclosure adoption/legacy repair, and disposable door-based scheduling. **260731-EFA-L21 \u2014 checkout coordination isolation.** An undeclared source-checkout invocation is classified before runtime configuration is read: a linked worktree receives a synthetic provider-disabled configuration rooted at `provider-runtime/dev-ar-coordination`, while a primary checkout refuses live coordination access. Trusted MCP/dashboard declarations and installed package execution ret...",

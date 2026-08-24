@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/controlplane/closeout_queue_store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,31 +16,30 @@
 
 ## Purpose
 
-Owns bounded, lock-protected persistence for one sprint's canonical closeout-candidate artifact and
-its adjacent one-record recovery scratch file.
+Owns bounded persistence and exact-current publication for one sprint's disposable closeout
+projection.
 
 ## Code Commentary
 
 ### Logic
 
-The store derives contained task-local artifact paths, serializes public and lifecycle-worker
-writers under the durable-store lock, records bounded idempotency receipts, publishes mutations
-through a WAL, and recovers before every read or write. The same lock serializes task-fact changes
-with lane ownership and atomically coordinates sprint completion/reopen with queue closure.
+The store derives the contained projection path. Reads degrade malformed, unreadable, or
+source-mismatched bytes to invalid-empty. Invalidation publishes durable empty state immediately.
+Rebuild writes a complete candidate off-side and takes the short task-publication mutex only to
+recheck the exact current source before publishing valid-built.
 
 ### Conventions
 
-The canonical JSON state is the survival record; `.closeout-candidates.pending` is recoverable
-publication scratch. MCP owns public writes and compaction, while the lifecycle-operation worker is
-an explicit writer for internal claim/certify/consume transitions.
+Canonical task, door, and operation-journal records are the survival evidence. Projection JSON is
+disposable and may be invalidated/rebuilt; off-side scratch never becomes a compatibility reader or
+secondary authority.
 
 ### Invariants And Boundaries
 
-- Request ids are stable idempotency keys and cannot be reused with different payloads.
-- At most the most recent 128 receipts survive.
-- Task facts freeze while a selected or in-flight candidate owns the lane; an atomic blocker also
-  excludes topology-changing writes outside its block.
-- Completion/reopen publication is recovered against the canonical task status.
+- Task mutation is never blocked by projection state.
+- Publication produces only invalid-empty or valid-built state.
+- A source change between build and publish leaves the projection invalid-empty.
+- No stale member, task freeze, blocker, receipt, claim, commit, or lifecycle fallback survives.
 
 ### Todos
 
@@ -54,11 +53,8 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Store ownership explicitly includes MCP and lifecycle-operation writers. | "QUEUE_OWNERSHIP = StoreOwnership(" | mcp/src/agents_remember/controlplane/closeout_queue_store.py:27-40 |
-| Mutation receipts and WAL publication make request retry idempotent. | `transact` | mcp/src/agents_remember/controlplane/closeout_queue_store.py:97-149 |
-| Sprint completion/reopen publication shares the queue lock and enforces quiescence. | `publish_sprint_update` | mcp/src/agents_remember/controlplane/closeout_queue_store.py:151-220 |
-| Task-fact publication shares the queue lock with lane and blocker ownership. | `publish_task_facts_update` | mcp/src/agents_remember/controlplane/closeout_queue_store.py:222-265 |
-| Recovery either publishes the exact next revision, recognizes it as already published, or refuses divergence. | `_recover` | mcp/src/agents_remember/controlplane/closeout_queue_store.py:267-296 |
+| Effective reads fail closed to invalid-empty on bad or stale projection bytes. | `read_effective` | `mcp/src/agents_remember/controlplane/closeout_queue_store.py` |
+| Rebuild publishes only after an exact-current source recheck. | `rebuild` | `mcp/src/agents_remember/controlplane/closeout_queue_store.py` |
 
 ## Cross-Repo References
 
@@ -68,7 +64,18 @@ No meaningful cross-repository reference applies.
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
+## 260821-CLIVE Final Projection Store
+
+The store is now deliberately disposable. `read_raw` degrades malformed projection bytes to
+invalid-empty, and `read_effective` also treats unreadable or source-mismatched state as
+invalid-empty. Invalidation durably publishes an empty projection. Rebuild creates the complete
+candidate off-side, then takes the short task-publication mutex only to recheck the exact current
+source and publish valid-built; otherwise it remains invalid-empty. There is no candidate lifecycle,
+receipt, blocker, task-freeze, or stale-row fallback in this store.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: rewrote the authority boundary from mutable queue state to invalid-empty/valid-built disposable projection storage. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

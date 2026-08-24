@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_projection_types_codegen.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T00:08+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,23 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `ProjectionSchemaGenerationTests` (lines 44-166). | `ProjectionSchemaGenerationTests` | mcp/tests/test_projection_types_codegen.py:44-166 |
 | Defines the class `ProjectionSchemaDriftTests` (lines 169-307). | `ProjectionSchemaDriftTests` | mcp/tests/test_projection_types_codegen.py:169-296 |
 
+## 260821-DAGQC Runtime Refinement Coverage
+
+The focused generator suite now proves both sides of the refinement boundary. A supported `pattern`
+and a nested `items.minLength` survive as deterministic TypeScript `JSON Schema refinements`
+documentation beside the affected properties. An unknown `format` keyword still raises
+`ProjectionTypeGenerationError` with the exact `GateNode.state` path, preservation remediation,
+and the explicit no-silent-drop contract.
+
+The existing schema identity, deterministic/idempotent generation, required-field parity, literal
+rendering, drift detection, provenance guard, and mirror guard remain unchanged. This test module is
+the focused proof for the generator contract; it does not make TypeScript comments a runtime
+validator.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Added focused supported-refinement preservation and unknown-keyword
+  fail-closed coverage. Verification metadata remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T00:08+02:00 — No content impact: schema-drift subtests report relative paths as

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection_graph.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T10:45+02:00                           |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62`       |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00                        |
+| lastUpdated            | 2026-08-24T13:43+02:00                           |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -43,6 +43,10 @@ live in `agents_remember.tasks`.
   conservative frontier state (never landed, never in-flight).
 - `GraphPredecessorFacts`: one resolved predecessor edge — the predecessor node plus its
   recorded reason and optional judgment id.
+- `GraphTitlesLike` keeps leaf-title identity as `(TaskDocumentRef, leaf id)`. `_node_view`
+  performs that qualified lookup for every segment leaf, so a same-numbered row in another master
+  cannot overwrite the projected title; an absent qualified key falls back only to the local raw
+  leaf id.
 - `_frontier_state`: mechanical precedence — landed (master `Completed`, or every sampled
   leaf `Completed`) → waiting (any predecessor not landed) → in-flight (master or any
   sampled leaf `inProgress`/`blocked`) → ready. Reads statuses and edges only; never
@@ -63,28 +67,39 @@ live in `agents_remember.tasks`.
 - The observer package never imports `tasks`; the serving seam does the tasks-domain walk.
 - The builder is pure: no writes, no scheduler interpretation, no judgment synthesis.
 - The dashboard renders projected facts verbatim and never joins raw refs.
+- Projection never performs a flat leaf-number title lookup; owning-master identity is retained
+  through the structural protocol.
 
 ### Todos
 
 None.
 
+## Docs References
+
+No Domain Documentation sources are configured for this repository-internal projection seam.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external documentation was available after checking the configured source registry. | _None._ | _No external source._ |
+
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The render-ready per-node graph view model. | `TaskExecutionGraphView` | mcp/src/agents_remember/observer/projection_graph.py:114-123 |
-| The per-node view with derived wave and frontier. | `TaskExecutionNodeView` | mcp/src/agents_remember/observer/projection_graph.py:91-111 |
-| The primitives-only builder fed by the serving seam. | `build_execution_graph_view` | mcp/src/agents_remember/observer/projection_graph.py:228-260 |
-| Stable lump/segment node identity. | `node_identity` | mcp/src/agents_remember/observer/projection_graph.py:126-136 |
-| The serving layer's tasks-domain walk that feeds this builder. | `_execution_graph_view` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:327-367 |
-| The wire schema (generated TS mirrors the served models). | `TaskExecutionGraphView` | dashboard/src/types/projection.ts:561-565 |
-| The graph-view builder forcing suite. | `ExecutionGraphViewBuilderTests` | mcp/tests/test_execution_graph_view.py:129-265 |
+| The structural title protocol requires master-qualified leaf keys. | L35-L55 | [projection_graph.py](mcp/src/agents_remember/observer/projection_graph.py) |
+| `_node_view` projects titles only through `(node.ref, leaf_id)` and retains local raw-id fallback. | L188-L209 | [projection_graph.py](mcp/src/agents_remember/observer/projection_graph.py) |
+| Public projection forcing proves duplicate local numbers retain the owning master's title. | L194-L246 | [test_task_documents_graph_projection.py](mcp/tests/test_task_documents_graph_projection.py) |
+| Builder tests consume the qualified title mapping through the same serving-style walk. | L187-L230 | [test_execution_graph_view.py](mcp/tests/test_execution_graph_view.py) |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-24T13:43+02:00 — DAGQC L1: the primitives-only title protocol and `_node_view`
+  now retain `(owning master ref, local leaf id)` through projection, preventing cross-master
+  same-number title overwrite. Verification metadata remains pinned until closeout.
 
 - 2026-08-20T10:45+02:00 — Created for 260815-DAG-L12 (R4): the primitives-only render-ready
 

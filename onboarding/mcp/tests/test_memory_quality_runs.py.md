@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_quality_runs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,43 +16,37 @@
 
 ## Purpose
 
-Forcing suite for the bounded background run registry (`application/memory_quality_runs.py`) and
-the async start/poll application wrappers (`application/memory_tools.py`), 260815-DAG-L15-R7.
+Focused forcing suite for the bounded typed run registry and the single memory-quality controller.
 
 ## Code Commentary
 
 ### Logic
 
-`MemoryQualityRunRegistryTests` drives the registry directly (module `_registry` cleared per test):
-start → poll → completed with the identical result; a failed run reports the error text; single-flight
-returns the active run's id/status for a concurrent same-key start; boundedness evicts completed runs
-past the patched `MAX_QUALITY_RUNS`; TTL eviction drops stale completed runs and keeps fresh ones;
-eviction with no completed runs is a no-op (running entries are never evicted).
-
-`MemoryQualityApplicationWrapperTests` drives the application wrappers: `start_and_poll_wrappers_drive_a_background_run`
-runs the real single-flight path with `_run_quality_check` mocked, asserting the started envelope
-(`ok`, `status: started`, `runId`) and the completed poll carrying `ok: True` with the exact kwargs
-forwarded; `poll_reports_an_unknown_run_as_run_not_found` pins the `ok: False`/`run-not-found`
-envelope; `test_poll_wraps_running_and_failed_envelopes_with_ok` deterministically fills the registry
-(direct `_QualityRun` entries, no threads) to cover the running/failed `ok=True` wrapper branches
-(the gate-repair `ok`-header fix); `test_start_key_scopes_contract_path_and_checks` covers both
-`_quality_run_key` branches (contract_path vs official, checks set vs empty).
+`MemoryQualityRunRegistryTests` proves completed/failed/unknown snapshots, same-identity reuse before
+capacity refusal, unique-work refusal without thread launch, expired/oldest terminal pruning,
+launch-failure rollback, wrong-repository nondisclosure, and concurrent hard-cap admission at
+multiple patched capacities. `MemoryQualityControllerTests` proves check and path normalization,
+every result-affecting identity field, leaf curator-publication identity, typed capacity guidance,
+identical wrong-repository/unknown poll shape, and unknown-check refusal before scope or registry
+work.
 
 ### Invariants And Boundaries
 
-- Registry tests manipulate the module `_registry` directly with `addCleanup` clearing — they never
-  depend on thread timing for assertions.
-- The wrapper tests mock only `_run_quality_check` (the slow real check), not the registry or the
-  single-flight logic, so the concurrency contract is exercised for real.
+- Each test clears the process-local registry; retained state never crosses a case.
+- Capacity assertions inspect admitted live records and launched callables, not timing-based peak
+  guesses.
+- Controller tests mock the slow execution/scope seams narrowly while exercising real identity and
+  admission logic.
+- Wrong-repository polling is compared structurally with unknown polling to prevent disclosure.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The registry forcing tests. | `MemoryQualityRunRegistryTests` | mcp/tests/test_memory_quality_runs.py:13-97 |
-| The application-wrapper forcing tests. | `MemoryQualityApplicationWrapperTests` | mcp/tests/test_memory_quality_runs.py:100-174 |
-| The registry under test. | `start_quality_run`; `poll_quality_run`; `_evict_locked` | mcp/src/agents_remember/application/memory_quality_runs.py:37-71; mcp/src/agents_remember/application/memory_quality_runs.py:74-85; mcp/src/agents_remember/application/memory_quality_runs.py:88-99 |
-| The wrappers under test. | `start_memory_quality_check_run`; `poll_memory_quality_check_run` | mcp/src/agents_remember/application/memory_tools.py:250-279; mcp/src/agents_remember/application/memory_tools.py:280-301 |
+| Direct registry forcing set. | `MemoryQualityRunRegistryTests` | mcp/tests/test_memory_quality_runs.py:42-192 |
+| Canonical controller/identity forcing set. | `MemoryQualityControllerTests` | mcp/tests/test_memory_quality_runs.py:195-405 |
+| Registry contract under test. | `QualityRunIdentity`; `start_quality_run`; `poll_quality_run`; `_prune_terminal_locked` | mcp/src/agents_remember/application/memory_quality_runs.py:27-161 |
+| Controller contract under test. | `MemoryQualityExecution`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality_controller.py:48-144 |
 
 ## Cross-Repo References
 
@@ -62,15 +56,16 @@ No cross-repo boundary applies to this forcing suite.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
-## 260815-DAG Master Full-Gate Repair
+## 260821-DAGQC-L2 Registry And Controller Forcing Set
 
-`MemoryQualityRunRegistryTests` gained `test_poll_until_settled_raises_when_the_run_never_settles`,
-pinning that `_poll_until_settled` raises `AssertionError` ("did not settle") for a run stuck in
-`running`. `start_and_poll_wrappers_drive_a_background_run` now sleeps the mocked check so the
-first poll deterministically observes the `running` envelope, and the poll loop keeps polling
-while the envelope is `None` or still `running`.
+The suite now forces complete typed identity, same-identity reuse before capacity checks, hard live
+capacity, terminal-only pruning, thread-launch rollback, detached snapshots, wrong-repository
+nondisclosure, explicit capacity guidance, and canonical resolved-scope/check/detail/publication
+identity. These tests replace the former string-key/advisory-bounded assertions.
 
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: rebuilt the focused registry/controller tests around typed identity, hard live capacity, terminal-only pruning, and nondisclosing poll ownership. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: added the never-settles registry
   regression and made the wrapper start/poll case deterministically observe the running envelope

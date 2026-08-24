@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,7 +91,18 @@ The current source seams include `LifecycleOperationRecoveryCommits`, `Organizat
 | --- | --- | --- |
 | The current module exposes `LifecycleOperationRecoveryCommits`, `OrganizationalTaskPublicationIntent`, `IntegrationPublicationIntent` at this ownership boundary. | L67-L74; L77-L107; L110-L144 | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 
+## 260821-CLIVE Journal-Owned Source And Door Evidence
+
+Integration publication now transfers the exact claimed door plus source operation kind,
+generation, fingerprint, key, and source-journal digest; queue candidate identity is absent.
+Operation generations retain bounded door history and per-scope projection effects. Supersede
+declarations have their own immutable fingerprint, and direct landing may carry the same proven door
+publication. The operation journal is the durable owner of running, commit, certification,
+integration, cancellation, retirement, and supersession evidence even when a projection is emptied.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced residual queue bindings with exact door/source-journal evidence and supersede identity. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

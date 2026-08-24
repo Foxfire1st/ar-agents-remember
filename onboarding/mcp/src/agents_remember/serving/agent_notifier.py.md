@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/src/agents_remember/serving/agent_notifier.py`  |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastUpdated            | 2026-08-24T14:43+02:00               |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -450,7 +450,16 @@ ONE ORDER ACROSS STORES, TOO); forcing regressions live in `mcp/tests/test_cross
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260821-CLIVE Registration Before Reclamation
+
+Each sweep snapshots the inbox, asks the injected task-plane registrar to durably register eligible
+leaf execution reports, and supplies the exact registered ids to `reconcile_and_compact`. This
+occurs before any TTL/cap or confirmed-gone reclamation. With no registrar the set is empty, so
+task-bound execution rows remain protected rather than being guessed safe to delete.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: added the register-before-reconcile retention boundary. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-10T09:45+02:00 — 260731-EFA-L9 curator repair: refreshed the renamed sweep card and its current facade/action citations.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -187,11 +187,14 @@ No external Domain Documentation source is configured for this memory repo.
 | Worktree tests cover cleanup preconditions and completed cleanup state. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:807-882 |
 | Cleanup tests prove both real and dry-run removal of the enclosure's exact curator reports directory. | `test_cleanup_removes_child_branches_and_preserves_parent_sources`; `test_worktree_group_would_remove_when_only_scheduled_paths_remain` | mcp/tests/test_cleanup_carryover.py:437-518; mcp/tests/test_cleanup_carryover.py:588-614 |
 
-## 260815-DAG-L4 Integration-Authority Impact
+## 260815-DAG-L4 Authority History, Reconciled By CLIVE
 
-L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
-
-For an atomic series, `cleanup_result` performs queue-release and child-retirement admission before preflight. The mutating publication then holds queue followed by repository authority, rechecks child retirement, and supplies `_terminal_mutation_authority` an operation- and contract-bound permit that is invalidated immediately after publication. Leaf authority remains contract-derived under the repository lock.
+Task-derived integration refs remain mechanically non-ordinary, but final terminal admission is not
+a queue-release transaction. For an atomic series, `cleanup_result` proves current child retirement,
+operation compatibility, and the exact archived terminal predecessor, then receives an ephemeral
+operation-, contract-, thread-, and context-bound terminal permit. The permit expires with the
+publication; no mutable queue blocker supplies cleanup authority. Leaf deletion targets remain
+strictly contract-derived.
 
 ## 260821-CLIVE-L1 Lease API Migration
 
@@ -207,7 +210,18 @@ The current source seams include `remove_registered_worktree`, `delete_branch_if
 | --- | --- | --- |
 | The current module exposes `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into` at this ownership boundary. | L177-L198; L201-L223; L226-L262 | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 
+## 260821-CLIVE Archive-Before-Cleanup
+
+Cleanup requires completed integration and any required landed-memory carryover before deleting the
+parked branch. It proves terminal/no-ambiguous-operation state, publishes and reads back the exact
+external archive/receipt, then performs the destructive tail under terminal authority. The archive
+binds `teardown_providers`; only identical retries converge after root deletion. Atomic series use
+the ephemeral terminal permit/release seam. Already-completed status returns the retained archive
+proof and never reconstructs deleted live state.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged terminal archival, exact teardown replay, carryover ordering, and atomic terminal authority into cleanup. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

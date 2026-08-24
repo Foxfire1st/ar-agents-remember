@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-21T00:45+02:00               |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00|
+| lastUpdated            | 2026-08-24T13:51:26+02:00            |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,8 +97,18 @@ quality-environment assertions were removed; no second host report path can sati
 `434 TypeScript inputs` (was 426), matching the current tsc input count. No other scope or
 provenance assertions changed.
 
+## 260821-DAGQC-L4 Route Impact
+
+The repository-policy assertion now checks the hook's precise statement that acceptance is
+Dagger-only. This is wording ownership, not a new test route or a ban on all host diagnostics:
+direct targeted Vitest unit/component loops remain non-certifying, while pytest, Playwright,
+changed-lines CLI execution, the direct Python wrapper, and acceptance remain Dagger-attested.
+
 ## Update History
 
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: recorded the hook assertion's
+  precise acceptance-only wording and the separate diagnostic-only Vitest boundary. No route
+  topology changed; Dagger acceptance remains pending.
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: updated the dashboard
   TypeScript-input count assertion to the live 434 measurement (was 426). Verified at code
   commit e5cb139f.

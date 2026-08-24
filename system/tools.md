@@ -42,9 +42,10 @@ opensrc fetch https://github.com/anomalyco/opentui        # GitHub
 ## Code Quality
 
 Agents Remember acceptance runs only through the pinned Dagger Ubuntu graph. Direct host `pytest`,
-Vitest, Playwright, and `python -m agents_remember.code_quality.check` invocations must refuse; they
-are neither diagnostics nor fallback evidence. Deterministic non-test host checks may be used for
-fast feedback.
+Playwright, changed-lines coverage, and `python -m agents_remember.code_quality.check` invocations
+must refuse. Direct targeted Vitest unit/component loops are supported for fast diagnostic feedback
+only; they are not acceptance, browser/integration, changed-lines coverage, or immutable-candidate
+evidence. Deterministic non-test host checks may also be used for fast feedback.
 
 The lifecycle owns the two accepted invocations:
 
@@ -181,8 +182,9 @@ refactor scouting after the run.
 
 - Run quality tools from the source repository root, not from the coordinator root.
 - Use deterministic non-test host checks such as Ruff, formatting, Pyright, Radon, dashboard
-  codegen, lint, and typecheck for implementation feedback. Do not run host test suites or the
-  direct wrapper.
+  codegen, lint, and typecheck for implementation feedback. Direct targeted Vitest unit/component
+  loops are also allowed as non-certifying diagnostics. Do not run host pytest, Playwright,
+  changed-lines coverage, broad acceptance suites, or the direct quality wrapper.
 - Do not start an extra Dagger acceptance run during implementation. Leaf closeout owns targeted
   acceptance once; master integration owns full acceptance once. A failed boundary is repaired and
   retried through that same lifecycle operation.
@@ -220,10 +222,11 @@ npm run lint         # eslint .
 npm run typecheck    # tsc -b
 ```
 
-Vitest, Playwright, coverage, and performance suites are test-capable and run only inside the
-nonce-attested Dagger acceptance graph. Do not invoke `npx vitest`, `npx playwright`, `npm run
-test*`, `npm run e2e`, or `npm run perf:cockpit` from a host seat. Leaf closeout and master
-integration own the accepted Dagger invocations described above.
+Direct targeted Vitest unit/component invocations are allowed from a host seat as diagnostic-only
+feedback. They do not certify the immutable candidate and do not authorize direct coverage or
+changed-lines scoring. Playwright, browser/integration, coverage, performance, broad `npm run test*`,
+`npm run e2e`, and `npm run perf:cockpit` suites remain inside the nonce-attested Dagger acceptance
+graph. Leaf closeout and master integration own the accepted Dagger invocations described above.
 
 **Never type-check the dashboard with `tsc --noEmit`.** It exits 0 without checking
 anything. `dashboard/tsconfig.json` is solution-style — `"files": []`, no `include`, and

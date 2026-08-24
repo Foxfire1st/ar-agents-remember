@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -232,12 +232,12 @@ task's `enclosures/` root. The series operation record/log, the detached worker'
 feeding the citation source-index cache, and the Dagger test sandbox all derive from
 `contract.worktree_group`, so rooting the group there lets `worktree_cleanup` / `worktree_abandon`
 sweep them with the group. Leaf enclosure contracts are untouched: they still resolve through
-`leaf_enclosure_path` to `tasks/<task>/enclosures/<leaf-id>/series-contract.md`. The matching
-contract-equality checks in `lifecycle_operations.py`,
-`closeout_queue_candidate_evidence.py`, `modules/terminal_validation.py`, and
-`modules/start_contract.py` compare against `worktree_group_for(...)`, so a legacy series contract
-still recording `task_root / "enclosures"` as its group is refused by every contract-addressed
-worktree tool until re-stamped.
+`leaf_enclosure_path` to `tasks/<task>/enclosures/<leaf-id>/series-contract.md`. Current
+lifecycle-location, closeout-door evidence, terminal-validation, and start-contract owners all
+compare against `worktree_group_for(...)`, so a legacy series contract still recording
+`task_root / "enclosures"` as its group is refused by contract-addressed worktree tools until an
+explicit adoption/re-stamp route proves it. No deleted queue-evidence reader is retained as a
+compatibility fallback.
 
 Since 260712-PTS-L1, `load_contract` is read + parse + validate ONLY: one file read, zero tasks-tree
 traversal — no leaf-ref resolution, no series-contract iteration, no glob. A legacy stem-shaped
@@ -375,16 +375,18 @@ read/refusing-write behavior.
 | --- | --- | --- |
 | No sibling repository boundary is needed to explain this file. | n/a | n/a |
 
-## 260815-DAG-L3 Durable Queue Binding
+## Historical 260815-DAG-L3 Queue Binding (Removed)
 
-An admitted leaf contract now persists the immutable canonical sprint and candidate
-task-document-reference keys. Empty fields mean the leaf never crossed the explicit queue boundary;
-once present, lifecycle code uses them to distinguish genuine legacy absence from damaged or
-deleted queue topology and fails closed instead of silently bypassing enforcement.
+The intermediate contract persisted sprint/candidate queue binding cells. CLIVE final deletes those
+cells rather than keeping a compatibility reader. The typed `closeout_door` is the sole canonical
+scheduling generation on the contract; projection membership is recomputed, and claimed lifecycle
+evidence transfers to the stable journal.
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
-L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+Task-derived integration refs remain mechanically non-ordinary: repository defaults, sprint supers,
+and active atomic-series refs are censused across code and external memory. The contract contributes
+exact repository/task/door facts to those owners; it no longer carries mutable queue binding state.
 
 ## 260821-CLIVE-L1 Canonical Contract Publication
 
@@ -400,7 +402,17 @@ The current source seams include `ContractError`, `ContractCells`, `amend_contra
 | --- | --- | --- |
 | The current module exposes `ContractError`, `ContractCells`, `amend_contract` at this ownership boundary. | L92-L93; L183-L197; L200-L228 | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 
+## 260821-CLIVE Door-Only Scheduling Authority
+
+The contract no longer persists `queue_sprint_task_document` or
+`queue_candidate_task_document`. Canonical scheduling intent is the typed `closeout_door`; queue
+membership is derived elsewhere and cannot be reconstructed as durable binding. `parse_contract_text`
+parses exact retained/archive bytes using the same validation as `load_contract`, without creating a
+temporary-file authority. Existing strict writer, normalization, and unknown-cell behavior remain.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: removed queue binding cells, retained closeout-door authority, and documented exact retained-byte parsing. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

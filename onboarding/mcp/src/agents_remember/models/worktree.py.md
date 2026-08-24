@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -116,6 +116,8 @@ all-snake payload shape.
   `state="active"` and with fully populated sibling fields.
 - Worktree command payloads may remain flexible while the service API is still
   carrying operation-specific result blocks.
+- Closeout and integration quality result blocks are a deliberate strict exception: both read the
+  shared `QualityGateResult`, preserving stable/published path meanings and rejecting extra fields.
 - Do not reintroduce raw shell command strings into context-packet next hints.
 
 ## Repo-Internal References
@@ -164,7 +166,16 @@ The current source seams include `SourceLineageEdge`, `SourceLineageRecovery`, `
 | --- | --- | --- |
 | The current module exposes `SourceLineageEdge`, `SourceLineageRecovery`, `SourceLineageProjection` at this ownership boundary. | L57-L69; L72-L77; L80-L86 | `mcp/src/agents_remember/models/worktree.py` |
 
+## 260821-DAGQC-L2 Typed Quality Result
+
+`WorktreeCloseoutResponse.code_quality_gate` and `WorktreeIntegrateResponse.quality_gate` now share
+the strict `QualityGateResult`. This closes the former open mapping, retains both the stable wrapper
+`reportPath` and optional immutable `publishedResultPath`, and gives memory policy/cap their exact
+public types. The surrounding command envelopes remain flexible for unrelated operation data.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: typed both lifecycle quality result blocks with the shared strict public model while preserving prior CLIVE curation. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

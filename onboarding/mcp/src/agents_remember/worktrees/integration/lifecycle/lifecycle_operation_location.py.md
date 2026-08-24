@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,17 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 No meaningful cross-repository boundary is owned by this file.
 
+## 260821-CLIVE Locator-To-Terminal State Machine
+
+Canonical location authority is the exact locator→manifest→journal chain. First publication
+reserves the address before manifest/contract proof makes it usable. A terminal locator advances
+only through verified external archive and receipt. Successor reservation requires the exact
+restartable predecessor, collected prior root, and exact-byte contract replacement. Present-invalid
+state fails closed; scans, inference, and missing-root recovery are forbidden.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented the complete reserve/resume/terminal/successor location state machine. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

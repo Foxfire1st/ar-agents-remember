@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                        |
 | path                   | `mcp/src/agents_remember/controlplane/interaction_retention.py`        |
 | doc_type               | `file-level-onboarding`                                                |
-| lastUpdated            | 2026-08-01T19:45+02:00                                                 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-24T14:43+02:00                                                 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                                          |
 
 ## Governing Overview
@@ -155,7 +155,17 @@ HFX2-L1 immortal-pending rule that contributed to the 2026-07-09 escalation stor
   inbox is hard-capped at 500 current ids, newest-first.
 - A `ladder-resolved` inbox row is neither pending nor acked; compaction drops it immediately.
 
+## 260821-CLIVE Task-Execution Retention
+
+`inbox_keep_ids` now accepts an explicit protected-id set. Task-bound worker, reviewer, and curator
+execution reports remain protected from TTL and capacity reclamation until task-owned first-evidence
+registration is durable. Protected rows reserve capacity and are never displaced by ordinary
+retention pressure; registration, rather than heuristic text inspection at deletion time, releases
+them to the normal bounded policy.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded the fail-closed execution-evidence retention boundary. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — No content impact: reviewed the gate-model import move into the
   structural package; retention sets, authority preservation, and TTL behavior are unchanged.

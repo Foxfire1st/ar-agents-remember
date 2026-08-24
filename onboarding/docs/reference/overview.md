@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 
 ## Purpose
 
@@ -70,17 +70,18 @@ switching supersedes the earlier launch-only assumption without creating a Fable
 Structured hosted dispatch, complete serving reload, and the bounded R9 compatibility exception
 remain separate contracts.
 
-For commit-gate and closeout questions, `mcp-tools.md` is the public tool-surface
-reference, `worktrees-c09.md` owns the quality-before-commit sequence, and
-`skills.md` records that synchronized skill copies are checked at both
-pre-commit and pre-push. Two facts these docs predate (260731-EFA-L1, recorded on
-the root overview): the two hook tiers are not equivalent — pre-commit runs a
-fast staged-content tier without the wrapper, and pre-push runs the
-change-set-scoped targeted Dagger tier (260731-EFA-L17; the full Dagger graph runs once per
-master at the master integration gate) — and the closeout gate
-applies to any repository whose checkout carries the wrapper rather than only to
-`agents-remember`. The skill-copy checks named here do run in both tiers and are
-unaffected.
+For task, closeout, and recovery questions, `mcp-tools.md` is the public tool-surface reference and
+`worktrees-c09.md` explains the operational sequence. Task documents and closeout doors are canonical
+publication authorities; closeout queue state is a disposable projection; the enclosure-external
+journal owns claimed operation/evidence/recovery state; and the stable locator plus external archive
+own terminal cleanup proof. Queue invalidation never blocks task authoring or erases a claimed
+operation.
+
+The quality boundary remains separate. `skills.md` records synchronized skill-copy checks at both
+pre-commit and pre-push. The hook tiers are not equivalent: pre-commit runs a fast staged-content
+tier without the wrapper, pre-push runs the change-set-scoped targeted Dagger tier, and the full
+Dagger graph runs once per master at the master integration gate. The closeout gate applies to any
+repository whose checkout carries the wrapper, not only `agents-remember`.
 
 ## 260718-CHATS-L5I Commit-Gate Reference Impact
 
@@ -181,11 +182,44 @@ The settings reference now names Dagger as the only accepted executor, places op
 inside the container wrapper, and removes host systemd/RLIMIT semantics. It also records that leaf
 closeout and master integration are the only acceptance owners.
 
+## 260821-CLIVE Canonical Lifecycle Reference
+
+The public reference route now assigns each mutable fact one owner. Task mutation publishes first,
+then invalidates/rebuilds the affected disposable queue projections and reports bounded effects;
+projection failure cannot roll back task truth. A manager publishes an immutable closeout-door
+generation, and the lifecycle journal atomically claims that exact waiting generation. Commit,
+memory, ledger, review, cancellation, supersession, and recovery evidence live in the journal—not in
+queue rows.
+
+Closeout validates every enabled nonblank commit-message/input field before any claim. Retry and
+repair are task-addressed through advertised controls and exact retained evidence; normal recovery
+does not synthesize a missing initial door or guess a successor. Terminal cleanup/abandon publishes
+and reads back a bounded external archive, receipt, and stable locator before removing the enclosure;
+successor publication proves the exact archived predecessor. Discard-before-start is an audited
+task-document transaction and cannot be used once work has begun.
+
+The tool inventory documents `closeout_door`, status/rebuild-only `closeout_queue`, lifecycle
+operation control, direct landing, adopt, cleanup/abandon, legacy-incident repair, and
+discard-unstarted. These are routed authorities, not compatibility duplicates or raw-Git escape
+hatches.
+
+## 260821-DAGQC Memory-Quality Request Contract
+
+The current `mcp-tools.md` reference uses one `memory_quality_check.request` discriminated by
+`sync | start | poll`. Only sync/start carry contract path and execution/detail scope; poll carries
+repository plus run id. Full leaf sync/start may publish the combined checklist; fresh success uses
+`reportPath`, while `publishedResultPath` is recovery-only. Capacity refusal has no run id, and poll
+cannot smuggle start-only fields. These newer DAGQC facts are additive to the CLIVE lifecycle split.
+
 ## 260815-DAG-L15 Route Impact
 
 `execution-topology-migration.md` gained section 4 — the served-build preflight operator contract (run authoring through the deployed serving server; refresh the rc7 venv, L15-R4). The changed file is excluded by pathRules, so this route's onboardable surface is unchanged.
 
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Reframed the reference hot path around canonical task/door/journal/
+  locator ownership, disposable queue rebuilds, exact retry/terminal/discard contracts, and preserved
+  the concurrent DAGQC discriminated memory-quality request contract.
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: execution-topology-migration.md gained the served-build preflight operator section (excluded file; onboardable surface unchanged). Verified at code commit de3a0fd9.
 

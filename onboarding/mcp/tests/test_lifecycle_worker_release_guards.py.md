@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_worker_release_guards.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,21 @@ The current forcing seams include `test_failed_closeout_with_commit_proof_keeps_
 | --- | --- | --- |
 | The current test source exercises `test_failed_closeout_with_commit_proof_keeps_queue_ownership`, `test_failed_irreversible_integration_keeps_queue_ownership`. | L27-L47; L50-L74 | `mcp/tests/test_lifecycle_worker_release_guards.py` |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces journal retention after a worker reports failure beyond mutation intent, commit proof, or the integration irreversible boundary.
+
+### Current Invariants
+
+- The operation remains input-required with its irreversible evidence intact.
+- The source intentionally asserts that no queue-release side channel is recorded; lifecycle authority is journal-owned despite legacy test names.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

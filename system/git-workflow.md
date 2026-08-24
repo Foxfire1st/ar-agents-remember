@@ -109,10 +109,12 @@ Agents Remember acceptance is Dagger-only and has one owner at each lifecycle al
 - **Tag/publish** — the tag workflow proves the commit landed on `main`, builds, and publishes. It
   does not rerun acceptance.
 
-Host pytest, Vitest, Playwright, and direct wrapper invocations refuse. There is no host or
-direct-Docker fallback. Missing Dagger attestation, a missing mandatory diff base, removal of the
-self-owned wrapper, or a non-zero Dagger result refuses before commit or integration. See
-[`tools.md`](tools.md) for the exact executor, arguments, evidence, and retry contract.
+Host pytest, Playwright, changed-lines acceptance, and direct wrapper invocations refuse. Direct
+targeted Vitest unit/component loops are allowed as non-certifying diagnostics; they do not spend or
+replace acceptance. There is no host or direct-Docker acceptance fallback. Missing Dagger
+attestation, a missing mandatory diff base, removal of the self-owned wrapper, or a non-zero Dagger
+result refuses before commit or integration. See [`tools.md`](tools.md) for the exact executor,
+arguments, evidence, retry contract, and Vitest diagnostic boundary.
 
 ---
 

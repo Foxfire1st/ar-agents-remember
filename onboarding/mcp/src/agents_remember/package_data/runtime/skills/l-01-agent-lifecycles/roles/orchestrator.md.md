@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
+| lastUpdated            | 2026-08-24T13:51:26+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -25,12 +25,14 @@ exact artifact.
 ### Logic
 
 The orchestrator owns durable portfolio execution behind the architect. It dispatches managers and
-system specialists with `dispatch_agent` on canonical master or sprint documents, adopts
-architect-ruled plans, processes durable handovers, and decides the one open master handover gate by
-master document and kind. It never handles a child occupant id, exact readiness, raw inbox address,
-attachment id, or packet-carried gate id. Optional designer/strategist and plan-review reviewer
-seats are architect children; leaf/master-exit reviewers are manager children, and super-exit
-reviewers are orchestrator children.
+system specialists with `dispatch_agent` on canonical master or sprint documents, adopts the
+architect-ruled topology choice and its graph only when present, processes durable handovers, and
+decides the one open master handover gate by master document and kind. A developer-sanctioned
+strategist skip transfers the same complete planning duty to this seat; it does not waive
+classification, priority, dependency, coherence, or topology reasoning. It never handles a child
+occupant id, exact readiness, raw inbox address, attachment id, or packet-carried gate id. Optional
+designer/strategist and plan-review reviewer seats are architect children; leaf/master-exit
+reviewers are manager children, and super-exit reviewers are orchestrator children.
 
 ### Conventions
 
@@ -44,11 +46,21 @@ role, then synchronize.
 - Structural dispatch and structural gate decision fail closed on missing or ambiguous authority.
 - The orchestrator is backend-only and does not become manager, worker, reviewer, curator, or
   developer-facing architect.
+- A persisted `executionGraph` is optional; the explicit graph-less choice runs the
+  atomic-sequential default and retains all planning judgments.
 - This packaged artifact must remain byte-identical to the canonical role.
 
 ### Todos
 
 None recorded.
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The synchronized role makes topology choice mandatory but persists an execution graph only when that topology is selected. | `The strategist pass`; `Output: the planner master task`; `Execution loop` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:202-252; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:277-296 |
+| The orchestration-task template defines one effective priority, graph-less adoption, and the full nodes-plus-evidence-edges bootstrap. | `## Rules`; `## Topology Choice And Canonical executionGraph Adoption Payload` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:14-57; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:104-151 |
+| Root skills are canonical and the sync script publishes byte-identical package and harness copies. | `SkillTarget`; `TARGETS` | scripts/sync-skills.py:26-29; scripts/sync-skills.py:43-56 |
 
 ## Cross-Repo Evidence
 
@@ -83,7 +95,8 @@ closeout gate; orchestrators do not run a separate full graph per leaf.
 The seat-row prescription is replaced by the first-class sprint seats structure plus the atomic
 `attach_master` adoption flow: sprint seats live on the sprint document (`SprintSeat` rows), and
 commanding a master is one validated `task_doc.attach_master` batch (typed `masterRef` row +
-membership slug + graph node + nature assertion) — never the three-write manual flow.
+membership slug + nature assertion when needed + graph node only when a graph already exists) —
+never the three-write manual flow.
 
 ## L23 Final Candidate Disposition
 
@@ -108,10 +121,12 @@ return to an owning/reopened or new scoped leaf.
 
 ## 260815-DAG-L13 Scheduling Default Doctrine
 
-Adoption doctrine now states that a sprint adopted without an `executionGraph` runs the
-atomic-sequential default (one master fully integrates before the next starts);
-`task_doc.author_execution_graph` bootstraps a graph onto it (first `add_node` batch) and edits
-one incrementally afterwards. The `migrate_execution_topology` legacy-cutover reference is gone.
+Adoption doctrine states that a sprint adopted without an `executionGraph` runs the
+atomic-sequential default (one master fully integrates before the next starts). If the ruled plan
+later selects an explicit graph, attach every commanded master first, then bootstrap the graph in
+one complete `task_doc.author_execution_graph` batch containing every node and evidence-backed
+edge; only an established graph is edited incrementally. The `migrate_execution_topology`
+legacy-cutover reference is gone.
 
 ## 260815-DAG-L15 Review-Doctrine
 
@@ -122,7 +137,26 @@ rendering/visibility needs mounted-UI proof, scheduling needs operation-level pr
 needs artifact-level proof. Route reviews come from a distinct reviewer seat; this seat reviews
 only at super-exit, through a spawned reviewer.
 
+## 260821-DAGQC-L4 Planning And Scheduling Closure
+
+Every ready candidate resolves to one effective priority before comparison: its candidate-specific
+row overrides the owning-master default; otherwise the default is inherited. The orchestrator owns
+portfolio-wide comparison of those effective grades, while graph or commanded-master order is only
+an equal-grade tie-break. A missing graph is not a stale-plan signal by itself. The signal is a
+missing/invalid topology choice, missing execution nature, or materially stale dependency,
+classification, or priority model.
+
+Graph-less adoption attaches all masters and stops, selecting atomic-sequential execution. Explicit
+graph adoption from that state attaches all masters first and then publishes one complete
+nodes-plus-evidence-edges batch. No fake graph, partial bootstrap, runtime fallback, or mandatory-
+graph compatibility path exists.
+
 ## Update History
+
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: made strategist-skip reasoning complete, graph
+  persistence and attachment-node creation conditional, priority override/default resolution
+  explicit, and first graph adoption one complete nodes-plus-edges batch. Canonical/generated sync
+  is complete; Dagger acceptance remains closeout-owned and pending.
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: Job O now states review independence — never review
   your own leaf/plan as the independent route reviewer, and match requirement verdicts to their

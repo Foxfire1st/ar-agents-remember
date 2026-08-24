@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -88,7 +88,18 @@ projection remain unchanged; this is an ownership-only model move.
 `TaskDocNode` gains the optional `executionGraphView` field (L12-R4): the render-ready per-node sprint graph (`observer/projection_graph.TaskExecutionGraphView`) the dashboard renders directly — node kind, master ref + title, leaf ids + titles, derived wave index, mechanically derived frontier state, execution nature, and predecessors with reasons. The field is `None` for documents without a graph (backward compatible); the dashboard never joins raw refs or re-derives waves.
 
 
+## 260821-CLIVE Disposable Queue And Discard History Projection
+
+Closeout nodes now expose service condition, source classification/fingerprint/problems, and exact
+waiting-generation members with classification, effective priority, order, and reasons. Candidate
+lifecycle state, active blocker, grade mutation, and commit/certification fields are removed.
+Task/master and series nodes also expose typed discarded-unstarted history and counts; `None`
+distinguishes a non-master from a master with an empty audit. The shared discard node/proof models
+come from the dedicated closeout projection module.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: reconciled projection models with waiting-only closeout state and audited discarded task history. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   `TaskDocNode` gains the optional render-ready `executionGraphView` field (L12-R4). Verified at code commit b7f2c8e2.

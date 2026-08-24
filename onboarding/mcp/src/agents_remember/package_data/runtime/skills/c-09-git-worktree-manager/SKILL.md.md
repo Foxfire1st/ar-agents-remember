@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-06T17:35+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-24T15:04+02:00                     |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 
 ## Purpose
 
@@ -229,7 +229,20 @@ code/external-memory lineage and distinguishes that gate from overridable remote
 stale-base policy. Recovery synchronizes the existing thematic master/leaf
 contracts rather than creating artificial follow-up masters.
 
+## 260821-CLIVE Stable Lifecycle And Terminal Doctrine
+
+The installed skill now distinguishes the configured contract address from the live enclosure root.
+Start reserves an exact independent locator and immutable root manifest; live status follows that
+address to root-local journal/history, while terminal status follows a state-disjoint locator to
+the exact external archive/receipt plus surviving contract truth. Normal readers never scan or
+adopt legacy state implicitly. `closeout_door` owns waiting intent, `closeout_queue` owns only
+status/rebuild, and `worktree_operation_control` owns advertised journal recovery. Cleanup/abandon
+archive before deletion and replay only their exact accepted typed arguments. Queue invalidation,
+task edits, or enclosure deletion cannot erase a claimed journal or authorize guessed recovery.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged stable locator/journal authority, disposable scheduling, and exact terminal archive retry into the installed worktree skill card. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: reconciled the packaged no-standalone-build topology and fail-closed lineage workflow; verification remains closeout-owned.
 
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 8 citation items; scoped citation check now passes.

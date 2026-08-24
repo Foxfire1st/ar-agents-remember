@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T08:40+02:00 |
-| lastVerifiedCommitHash |  `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`|
-| lastVerifiedCommitDate |  2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
+| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,10 @@ This module runs one pinned Dagger quality graph in a clean Ubuntu/Playwright co
 
 `run_clean_quality` validates mode and candidate roots, prepares an isolated sandbox containing the exact staged candidate and required Git ancestry, invokes the pinned Dagger module while streaming progress, and publishes only recognized reports. It parses the exported result rather than trusting the Dagger CLI transport exit code alone.
 
-`_publish_reports` now records a caller-bound attestation in the report manifest; `published_quality_attestation` reads it back for crash-safe recovery.
+`_publish_reports` writes immutable generation artifacts and atomically publishes the schema-1.0
+manifest pointer. Publication and recovery share `published_quality_manifest.py`; this module no
+longer carries an alternate attestation-only reader. `published_quality_attestation` and
+`published_report_path_from_manifest` both consume the already parsed strict snapshot.
 
 ### Conventions
 
@@ -36,6 +39,10 @@ The Dagger, Codex, and base image versions are constants. The scratch sandbox is
 - Invalid/missing exported status fails closed; local quality is not a fallback.
 - Candidate Git identity must match before and after sandbox materialization.
 - Reports are atomically replaced, not accumulated per run.
+- `quality-report-set.json` has one strict object-root schema and one shared reader. Unknown fields,
+  legacy shapes, malformed digest/size records, and partial manifests fail closed.
+- Recovery callers pass one immutable manifest snapshot through every artifact lookup; a pointer
+  rotation cannot mix generations.
 - Report promotion uses the kernel-owned `atomic_replace` primitive after copying to the target's
   sibling temporary file; this keeps replacement semantics on the shared platform boundary.
 
@@ -66,7 +73,15 @@ The only external boundary is the pinned container/tool runtime, not a sibling r
 | --- | --- | --- |
 | Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:364-421; mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:468-469 |
 
+## 260821-DAGQC-L2 Canonical Publication Manifest
+
+Report publication and crash recovery now share the strict schema-1.0 manifest model. The writer
+publishes exactly the vocabulary the reader accepts, while recovery resolves attestation and result
+paths from one captured snapshot. There is no compatibility reader or root-shape fallback.
+
 ## Update History
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: unified report publication and recovery on the strict schema-1.0 manifest and one-snapshot artifact lookup. Verification metadata remains pinned until architect-owned closeout.
+
 - 2026-08-17T12:30+02:00 — 260815-DAG-L5: report publication now carries an attestation; added `published_quality_attestation`. Verification remains closeout-owned.
 
 - 2026-08-14T06:36+02:00 — L23 final candidate review: the Dagger executor starts a fresh attempt,

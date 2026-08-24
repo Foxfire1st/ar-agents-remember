@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_direct_landing_input_boundary.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,16 @@ The current forcing seams include `test_enabled_message_matrix_refuses_before_la
 | --- | --- | --- |
 | The current test source exercises `test_enabled_message_matrix_refuses_before_lane_authority_or_git`, `test_preview_and_apply_receive_the_same_stripped_effective_input`, `test_domain_uses_admitted_contract_not_the_raw_request_address`, `test_public_boundary_returns_the_structured_input_refusal`. | L30-L73; L75-L112; L114-L155; L157-L184 | `mcp/tests/test_direct_landing_input_boundary.py` |
 
+## 260821-DAGQC-L2 Outcome/Recovery Separation
+
+The input-boundary suite pins the exact three-member outcome enum, configured-contract refusals at
+initial and mutation reads, and nested recovery evidence that cannot overwrite the public refused
+state or status.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: added exact outcome-vocabulary and authoritative-refusal merge regressions. Verification metadata remains pinned until architect-owned closeout.
+
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

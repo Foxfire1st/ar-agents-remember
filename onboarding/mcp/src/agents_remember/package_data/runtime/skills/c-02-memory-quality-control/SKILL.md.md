@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                 |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-24T14:19+02:00                     |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 
 ## Purpose
 
@@ -85,7 +85,16 @@ No cross-repo evidence is needed for the current skill contract.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260821-DAGQC-L2 Canonical Quality Calls
+
+The packaged skill now uses the same strict `request={mode: ...}` grammar as the public tool. Sync,
+start, and poll examples keep their field sets separate; capacity refusal directs the caller to
+poll/wait and retry rather than bypassing the controller. This packaged copy remains synchronized
+from canonical doctrine and introduces no compatibility path.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: synchronized the memory-quality workflow to the canonical discriminated request and capacity retry guidance. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-11T16:54+02:00 — Documented the full scoped curator checklist, its stable enclosure
   path, overwrite/cleanup lifetime, and repeat-until-zero repair loop.

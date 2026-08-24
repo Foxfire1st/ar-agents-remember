@@ -5,9 +5,14 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/report-verification.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
+| lastUpdated            | 2026-08-24T13:51:26+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| governingOverview      | `../../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
@@ -21,21 +26,19 @@ It binds for the adversarial reviewer AND for the loop owner verifying a builder
 ### Logic
 
 Sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical
-`skills/l-01-agent-lifecycles/criteria/report-verification.md`. THREE standing criteria with
-cited catching evidence: **RV-1 report-vs-artifact on EVERY claim** (open the artifact behind
+`skills/l-01-agent-lifecycles/criteria/report-verification.md`. The standing catalog carries
+**RV-1 report-vs-artifact on EVERY claim** (open the artifact behind
 each claim — three L8 catches: the round-3 hand-aligned test, the cycle-6 history-only
 "refreshed" overviews, the review-4 owner's own canvas overclaim), **RV-2 CLASS-completeness**
 (promoted to standing at 260703-L18 — catches: L10's six-of-ten first-action surfaces; L18R-3's
 sibling LedgerError block still advertising an inert recovery choice after the named instance
 was fixed), and **RV-4 decision-log completeness for scope-expanding disclosures** (promoted to
 standing at 260703-L18 — catches: L17R-1's report-only owner supplement; L18R-4's report-only
-environment finding). The **Candidate Criteria** section carries **RV-3
+environment finding), plus **RV-5 canonical invocation target provenance**. The **Candidate
+Criteria** section carries **RV-3
 partial-fix-creates-falsehoods** (single catch: L10's two install-doc claims made false by the
-partial hook flip) and **RV-5 worktree-shadowed regression pins** (single catch: L18R-1 — a
-mutation-tested pin biting only under a hand-set `PYTHONPATH` because the editable install
-shadows the worktree; pins must bite under the canonical invocation) — each promotes at ≥2
-catching engagements. Plus the exploratory mandate (default 2 novel lenses) and the promotion
-ratchet (RV-1 is the ratchet's own precedent — promoted on three catches).
+partial hook flip). Plus the exploratory mandate (default 2 novel lenses) and the promotion
+ratchet.
 
 ### Conventions
 
@@ -64,8 +67,8 @@ No external domain documentation applies to this repository-local catalog.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# Criteria Catalog — Report Verification`; `SkillTarget`; `TARGETS`; "mcp package data" | skills/l-01-agent-lifecycles/criteria/report-verification.md:1-99; scripts/sync-skills.py:26-29; scripts/sync-skills.py:43-56 |
-| The reviewer role that binds this catalog in every review type. | `## Criteria Catalogs (the review test bench — bound here)`; `report-verification` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:56-75 |
+| Canonical source this bundle copy is sync-propagated from. | `# Criteria Catalog — Report Verification`; `SkillTarget`; `TARGETS`; "mcp package data" | skills/l-01-agent-lifecycles/criteria/report-verification.md:1-130; scripts/sync-skills.py:26-29; scripts/sync-skills.py:43-56 |
+| The reviewer role that binds this catalog in every review type. | `## Criteria Catalogs (the review test bench — bound here)`; `report-verification` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:56-82 |
 
 ## Cross-Repo References
 
@@ -84,7 +87,22 @@ and silent to content diffs). The extension records the 260815-DAG-L12 catch (L1
 carried mode-only changes (100755→100644, incl. `.githooks/pre-commit`) absent from the worker's
 file list.
 
+## 260821-DAGQC-L4 Untracked Candidate Evidence
+
+RV-1's complete-tree claim now includes every nonignored untracked path, enumerated with a
+NUL-delimited Git inventory or an equivalently path-safe API. Each exact path is inspected with
+no-follow (`lstat`-equivalent) semantics: record type and numeric mode; bounded text bytes or a
+binary/sensitive classification plus hash for regular files; link text without dereference for
+symlinks; and an explicit disposition for directories or special objects. Every object is marked
+intended or unintended. A disappearing or identity-changing path is reported as a race/limitation
+and the view is re-established; it is never silently skipped. This remains semantic review work,
+not a new verifier and not authority to dump unlimited or sensitive bytes.
+
 ## Update History
+
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: added NUL-safe, no-follow untracked candidate
+  evidence covering type, mode, bounded content, disposition, and race limitations. Canonical and
+  generated copies are synchronized; Dagger acceptance remains closeout-owned and pending.
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: RV-1 extended — "the tree contains only intended
   changes" is also refuted against `git diff HEAD --summary` mode rows (mode-only changes; the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-24T13:51:26+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -157,15 +157,15 @@ states:
 - **Radon is printed as a report and cannot fail either tier — it exits 0 whatever it
   finds.** The README says so explicitly rather than listing it beside the enforcing steps.
 
-**Known gap in the source file:** the README's targeted-tier sentence does not name the
-changed-lines coverage floor, which is the wrapper's last and binding step. `CONTRIBUTING.md`
-carries it; the README does not.
 - **Agents Remember acceptance runs through the pinned Dagger graph only.** Leaf and focused
   work use its targeted mode; the master integration gate runs its full mode exactly once. Both
   require the leaf/master's explicit Git diff base, and `dagger call quality --help` is the
   executable public argument contract.
 - Host `pytest` and direct wrapper invocations are refused. Deterministic non-test host checks are
   feedback only, and a failed Dagger run never falls back to the host.
+- Direct targeted Vitest unit/component runs are supported as fast diagnostic loops only. They do
+  not provide acceptance, changed-lines coverage, or lifecycle evidence. Playwright, pytest,
+  changed-lines CLI execution, and the direct Python wrapper remain Dagger-attested.
 - **GitHub PR validation** runs deterministic non-test checks once per pull request; ordinary
   pushes do not duplicate it and GitHub does not run acceptance.
 - **Leaf closeout** runs targeted Dagger exactly once before creating the commit. Leaf integration
@@ -204,11 +204,16 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 The README now distinguishes deterministic hooks and pull-request checks from lifecycle
 acceptance. Pre-commit/pre-push and GitHub PR validation are non-test checks; leaf closeout owns
 targeted Dagger once, leaf integration reuses the certified commit, and master integration owns
-full Dagger once. Direct wrapper and host test execution refuse. Retry proof is an internal,
-attested-Dagger optimization rather than a host diagnostic path.
+full Dagger once. Direct pytest, Playwright, changed-lines CLI, and Python-wrapper execution
+refuse. Direct targeted Vitest is supported diagnostic feedback only. Retry proof is an internal,
+attested-Dagger optimization rather than a host acceptance path.
 
 ## Update History
 
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: recorded direct targeted Vitest
+  as supported diagnostic-only feedback while preserving Dagger-only pytest, Playwright,
+  changed-lines, direct-wrapper, and acceptance evidence. Removed the now-resolved
+  changed-lines documentation-gap claim. Dagger acceptance remains closeout-owned.
 - 2026-08-14T11:25+02:00 — R39 curator: recorded the no-duplicate workflow topology, direct-host
   refusal, and Dagger-only retry boundary. Verification remains closeout-owned.
 - 2026-08-14T09:37+02:00 — Reopened L23 cadence: public guidance now distinguishes the

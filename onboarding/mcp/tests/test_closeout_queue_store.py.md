@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,7 +41,21 @@ requirements, no-op receipt persistence, and deterministic Completed/reopened re
 | Sprint status recovers on both sides of state publication. | `test_pending_status_recovers_before_and_after_state_publication` | mcp/tests/test_closeout_queue_store.py:183-194 |
 | No-op receipts retain exact replay semantics. | `test_retry_receipt_is_persisted_for_noop_and_reuse_is_exact` | mcp/tests/test_closeout_queue_store.py:217-244 |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces the two-state disposable projection store, invalidation receipts, atomic replacement, source-fingerprint checks, and strict-read degradation.
+
+### Current Invariants
+
+- Invalidation durably publishes invalid-empty with no candidates.
+- Only a complete current-source build can publish valid-built.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 

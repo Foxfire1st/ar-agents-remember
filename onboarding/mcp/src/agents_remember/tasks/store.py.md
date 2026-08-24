@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/store.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -57,9 +57,13 @@ for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_
 `write_task_docs` and `write_task_doc_batch` gained the optional `graph_titles` keyword (L12-R1/R4): the batch passes it to `render_markdown` for every document that carries an `executionGraph`, so a sprint's `task.md` mermaid boxes are labeled with real master/leaf titles at publish time. `write_task_doc` delegates through unchanged; the atomic prepare/publish/rollback contract is untouched.
 
 
-## 260821-CLIVE-L2 Current Contract
+## 260821-CLIVE Final Store Contract
 
-The current source seams include `TaskDocSourceSnapshot`, `TaskDocSourceReadError`, `doc_stem`. L2 makes exact task-document bytes and absence explicit publication inputs so stale before-state fails precisely. This primitive does not own the later L3 task-change blast-radius invalidation or queue rebuild.
+The current source seams include `TaskDocSourceSnapshot`, `TaskDocSourceReadError`, and `doc_stem`.
+Exact task-document bytes and absence are explicit publication inputs so stale before-state fails
+precisely. The store now also owns rollback-safe write-plus-remove mechanics, but it still does not
+compute projection blast radius or publish refresh effects; those remain application concerns after
+canonical task publication.
 
 ### Reconciled Source Evidence
 
@@ -67,7 +71,17 @@ The current source seams include `TaskDocSourceSnapshot`, `TaskDocSourceReadErro
 | --- | --- | --- |
 | The current module exposes `TaskDocSourceSnapshot`, `TaskDocSourceReadError`, `doc_stem` at this ownership boundary. | L23-L35; L38-L52; L55-L57 | `mcp/src/agents_remember/tasks/store.py` |
 
+## 260821-CLIVE Atomic Parent-Write And Child-Removal
+
+`write_task_docs_and_remove` publishes prepared task documents and removes exact sibling source
+paths as one rollback-safe file set. It forbids write/removal overlap, snapshots every touched path,
+and restores exact prior bytes if any replacement or unlink fails; a rollback failure is loud.
+The surrounding task-publication CAS provides serialization. This prevents discard-unstarted from
+exposing a parent audit without removal or deleting the child without the audit.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: documented rollback-safe task-document publication plus exact source removal. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

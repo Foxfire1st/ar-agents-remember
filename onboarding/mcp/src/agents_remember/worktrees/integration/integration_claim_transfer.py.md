@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_claim_transfer.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,9 @@ Lease-serialized transfer from scheduling projection to integration journal.
 
 ### Logic
 
-The public surface is `transfer_and_publish_integration_claim`. Claim transfer is serialized under the lifecycle lease: the transitional pre-L3 queue candidate is consumed once into the journal and contract-owned door publication. After that transfer, the integration operation does not reread the queue for lifecycle recovery; the queue's remaining selected/in-flight/certified schema is removed later by L3.
+The public surface is `transfer_and_publish_integration_claim`. Claim transfer is serialized under
+the lifecycle lease and proves the exact claimed source journal before publication. Later recovery
+uses the retained door/source-journal evidence and never depends on a projection row.
 
 ### Conventions
 
@@ -54,6 +56,15 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 No meaningful cross-repository boundary is owned by this file.
 
+## 260821-CLIVE Terminology-Only Delta
+
+CLIVE changes only the local description/progress wording from consuming a certified queue row to
+proving the claimed source journal. The transfer flow owned by this file is otherwise unchanged;
+door/source-journal policy lives at the integration publication fence and organizational-completion
+owners.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: verified the local change as terminology-only while correcting the authority noun. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

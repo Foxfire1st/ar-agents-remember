@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -41,7 +41,10 @@ planned and running work from the same JSON source (slice 3c; closes note-03 gap
 
 ## Hot Path Summary
 
-Task JSON remains planning/source truth. L2 adds exact source snapshots and structural publication serialization. The application publisher still routes governed writes through the pre-L3 queue lock, so the old authoring dependency has not yet been removed; L3 owns invalidation/rebuild and the final non-subordination rule.
+Task JSON remains planning/source truth. The application publisher captures exact source snapshots,
+serializes structural publication, commits task truth plus affected-scope invalidation, and then
+rebuilds each waiting projection from current closeout-door facts. Queue state is derived scheduling
+output, so it cannot make an otherwise-valid task mutation unavailable.
 
 The `task_doc` MCP tool authors documents: its application entry point
 (`application/task_doc_tools.py`) loads or creates the JSON, applies one operation,
@@ -70,7 +73,10 @@ together.
   `orchestrates`, freeform-only
   `sections` (R4), and no `codeExamplesNote` alongside non-empty `codeExamples`). A persisted/served
   contract, **not** an MCP response model (peer of `observer.projection`). Leaf docs can name their root
-  `seriesContractPath` and one or more `enclosures[]` leaf enclosure contracts.
+  `seriesContractPath` and one or more `enclosures[]` leaf enclosure contracts. Its
+  `SprintExecutionNode` equality/hash contract is structural node-to-node only; callers use the
+  explicit `.ref` field when they mean the addressed task document. Legacy bare-reference JSON
+  lifting/roundtrip is an independent wire contract.
 - `render.py` — `render_markdown(doc)`: the only writer of the rendered markdown.
   Section helpers assemble lines from the model (mirroring
   `worktrees.worktree_contract.contract_to_text`); output is deterministic. A step renders a `### {id} — {title}`
@@ -81,7 +87,12 @@ together.
   (and, on an orchestration master, an `**Orchestrates:**` line listing the commanded names — L14),
   and a leaf appends its freeform `sections` after References (R4). A `master`
   dispatches to `_render_master`: an ordered `sections` walk where `freeform` bodies
-  render verbatim and `subTasks`/`sharedDecisions` render the generated list/table.
+  render verbatim and `subTasks`/`sharedDecisions` render the generated list/table. Execution-graph
+  Mermaid declarations and endpoints use one declaration-order ordinal identity map; ref/leaf
+  strings remain human labels and never become private ids.
+- `execution_graph_titles.py` — owns the title join. Master titles use `ref.key`; leaf titles use
+  `(owning TaskDocumentRef, leaf id)`, so equal local row numbers under different masters cannot
+  overwrite or borrow from one another.
 - `store.py` — `read_task_doc` / `write_task_doc` (atomic JSON source + rendered
   `.md`), `write_task_docs` (batch prepare-all-then-write persistence for coupled
   leaf/master edits), and `doc_stem` (`task` for a light **or master** doc, `<slug>` for a sub-task).
@@ -113,6 +124,9 @@ together.
 - Coupled leaf/master writes prepare every JSON and rendered markdown payload before replacing files,
   and reject duplicate output targets up front; that guard is necessary because a coupled operation
   would otherwise silently let one document target overwrite another.
+- Graph node identity, addressed document identity, Mermaid private identity, and human labels are
+  separate contracts: structural nodes compare to nodes, callers project `.ref`, Mermaid ids are
+  ordinal, and leaf titles are master-qualified.
 - **`cleanup: reopened` is no longer written in this route.** Its sole producer, `reopen.py`, moved
   to `worktrees/reopen.py` in 260731-EFA-L6 — see that file's sidecar for the current account. The
   history below is kept because the failure it describes was this route's, and because the reader
@@ -161,13 +175,13 @@ Task documents are the canonical sprint/master/leaf identity for source lineage,
 durable lifecycle addressing. A cleaned completed leaf is first converted into an exact task-reopen
 plan, before deliberately removed descendant branches can be mistaken for lineage failure.
 
-## 260815-DAG-L3 Queue-Governed Task Facts (Still Transitional In CLIVE L2)
+## Current Task-First Task-Fact Publication
 
-Sprint, master, and leaf task-document writers still publish through the sprint queue lock whenever
-the topology is queue-managed. The selected/in-flight lane can therefore still freeze the sprint
-task-fact set in this L2 candidate. L2 adds exact source-CAS and short integration serialization but
-does not remove this behavior. L3 owns replacing it with task-first publication followed by
-affected-candidate invalidation and waiting-only rebuild.
+Sprint, master, and leaf documents are planning truth, not queue-owned records. Publication rechecks
+the accepted source bytes, writes the task batch and invalidates every affected waiting projection
+under one short task-publication lock, then rebuilds each projection independently from current
+door facts. Claimed/running lifecycle and commit evidence remains outside that disposable queue
+projection, so invalidation cannot erase an operation already underway.
 
 ## 260815-DAG-L4 L4 Topology Publication Authority
 
@@ -189,16 +203,26 @@ re-export); the task route's model is unchanged.
 
 ## 260815-DAG-L12 Route Impact
 
-The execution graph is now rendered as a deterministic mermaid `flowchart TD` diagram (L12-R1): `render.py` `_execution_graph_lines` emits subgraph-per-master boxes (title-labeled, truncated leaf nodes, atomic lumps, labeled edges) ordered by derived wave then node order, with the machine lists alongside. The new `execution_graph_titles.py` owns the shared master/leaf title join (`SprintGraphTitles`, `build_graph_titles`, `read_graph_titles`), re-exported by the package facade and threaded through `store.py` batch writes and every application writer's publish/preview sites.
+The execution graph renders as a deterministic Mermaid `flowchart TD` diagram (L12-R1):
+`render.py` emits subgraph-per-master boxes (title-labeled, truncated leaf nodes, atomic lumps,
+labeled edges) ordered by derived wave then declaration order, with the machine lists alongside.
+DAGQC L1 hardens private identity to collision-free ordinal ids shared by declarations and edge
+endpoints; no sanitizer-derived id remains. `execution_graph_titles.py` owns the shared title join
+(`SprintGraphTitles`, `build_graph_titles`, `read_graph_titles`), with leaf keys qualified by the
+owning `TaskDocumentRef`, and is threaded through `store.py` batch writes and application writers.
 
 
 ## 260815-DAG-L15 Route Impact
 
 New `tasks/serving_preflight.py`: the served-build preflight gate (model self-probe + non-editable wheel floor 3.0.0rc8, fail-closed, L15-R4) wired before every topology-schema write. `document.py` acyclicity refusals now name the exact cycle members (F4); `document_refs.py` hosts the shared atomic node-kind rule with the L15-FIX-1 `KeyError` closure.
 
-## 260821-CLIVE-L2 Current Architecture
+## Current Architecture After CLIVE And DAGQC L1
 
-Task writes now capture and validate their before-state and publish atomically under the short authority needed for structural/integration races. The application layer still wraps governed writes in the pre-L3 queue publisher. Full removal of authoring-time queue refusal plus task-change blast-radius invalidation and waiting-projection rebuild remain L3 work.
+Task writes capture and validate their before-state and publish task truth plus projection
+invalidation atomically under the short authority needed for structural/integration races. Waiting
+projection rebuild follows independently. DAGQC L1 makes execution-graph identities explicit:
+structural node equality/hash, `.ref` for document ownership, ordinal Mermaid ids, and
+master-qualified leaf-title keys.
 
 ### Reconciled Source Evidence
 
@@ -206,8 +230,26 @@ Task writes now capture and validate their before-state and publish atomically u
 | --- | --- | --- |
 | Task source snapshots and publication. | L23-L52; L72-L123 | `mcp/src/agents_remember/tasks/store.py` |
 | Application publication transaction. | L67-L74; L77-L197 | `mcp/src/agents_remember/application/task_docs/task_doc_publication.py` |
+| Structural execution-node equality/hash and explicit reference ownership. | L218-L275 | `mcp/src/agents_remember/tasks/document.py` |
+| Qualified leaf-title join. | L15-L79 | `mcp/src/agents_remember/tasks/execution_graph_titles.py` |
+| Ordinal Mermaid identity allocation and rendering. | L204-L245; L283-L384 | `mcp/src/agents_remember/tasks/render.py` |
+
+## 260821-DAGQC-L2 Total Serving-Preflight Boundary
+
+`serving_preflight.py` now translates each expected distribution discovery, metadata iteration,
+read, stat, and version failure at one explicit typed boundary, reads version once, and preserves
+the existing topology floor/editable-install policy. Programmer defects are not swallowed by a
+broad fallback.
 
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: made serving-build inspection total for expected observable failures with one version snapshot. Preserved concurrent CLIVE route curation and verification ownership.
+
+
+- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: reconciled task-first publication and the four
+  execution-graph identity planes: structural nodes, explicit refs, ordinal Mermaid ids, and
+  master-qualified leaf titles. Verification metadata remains pinned until architect-owned
+  closeout stamps the real code commit.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 

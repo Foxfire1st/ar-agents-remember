@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1174,7 +1174,41 @@ projected `masterRef`/`seats` and body-revision movement.
 
 ## 260815-DAG-L12 Route Impact
 
-New forcing suites: `test_execution_graph_render.py` (mermaid render determinism, escaping, truncation, fallbacks, title join), `test_execution_graph_view.py` (primitives-only builder: zero-edge, segmented-master, missing-master fallback, node identity), `test_task_documents_graph_projection.py` (projection wiring: `executionGraphView` on sprint docs, `_master_docs_by_ref`), and `test_authoring_batch_titles.py` (authoring-batch title join). Dashboard-side `SprintGraphView.test.tsx` / `SprintGraphPage.test.tsx` are covered by the sprint-graph route overview.
+New forcing suites: `test_execution_graph_render.py` (Mermaid render determinism, escaping,
+truncation, fallbacks, title join), `test_execution_graph_view.py` (primitives-only builder:
+zero-edge, segmented-master, missing-master fallback, node identity),
+`test_task_documents_graph_projection.py` (projection wiring: `executionGraphView` on sprint docs,
+`_master_docs_by_ref`), and `test_authoring_batch_titles.py` (publication-batch title join).
+Dashboard-side `SprintGraphView.test.tsx` / `SprintGraphPage.test.tsx` are covered by the
+sprint-graph route overview.
+
+## 260821-DAGQC-L1 Graph And Raw-Section Forcing
+
+Two focused owners are new. `test_task_doc_graph_publication.py` proves the central publication
+batch accepts zero or one graph-bearing document and refuses two before task bytes, the supplied
+publisher, or projection publication can change. Source reconciliation separately confirms that
+on-disk title reads remain inside the publisher callback and topology/linkage preview and apply use
+the same owner. `test_task_doc_section_scaffolding.py` proves missing canonical-register
+scaffolding, preservation of existing sections, typed refusals for malformed list/member shapes,
+and no partial mutation on failure.
+
+Existing suites carry the rest of the L1 delta: `test_execution_graph_render.py` proves ordinal
+Mermaid ids survive sanitizer-equivalent labels and master-qualified same-number leaf titles;
+`test_task_documents_graph_projection.py` proves ownership survives the public reader;
+`test_authoring_batch_titles.py` pins the shared batch owner;
+`test_task_execution_topology.py` projects explicit `.ref`; and
+`test_task_execution_topology_segments.py` proves structural node-only equality/hash in both
+operand directions plus mixed set/dict behavior. This leaf deliberately adds no new zero-edge
+suggestion and no direct `unittest.main` entry point; those proposed scope extensions were removed.
+
+### Reconciled Source Evidence
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| Central graph-publication cardinality, lock placement, and shared-caller forcing. | L93-L160 | `mcp/tests/test_task_doc_graph_publication.py` |
+| Raw-section shape, preservation, typed failure, and atomicity forcing. | L38-L128 | `mcp/tests/test_task_doc_section_scaffolding.py` |
+| Qualified title and ordinal Mermaid identity forcing. | L164-L225; L303-L348 | `mcp/tests/test_execution_graph_render.py` |
+| Structural node-only equality/hash forcing. | L237-L265 | `mcp/tests/test_task_execution_topology_segments.py` |
 
 
 ## 260815-DAG-L15 Route Impact
@@ -1213,7 +1247,33 @@ The test route now proves advertised controls execute or safely terminate, not m
 | Operation-control forcing. | L130-L221; L355-L741 | `mcp/tests/test_lifecycle_operation_controls_l2.py` |
 | Terminal archive boundary. | L22-L71 | `mcp/tests/test_terminal_enclosure_archive_boundary_l2.py` |
 
+## 260821-DAGQC-L4 No Route Impact
+
+Existing quality-policy assertions now pin the hook's precise Dagger-only acceptance wording.
+The test inventory and ownership topology are unchanged. Direct targeted Vitest remains supported
+diagnostic-only feedback; pytest, Playwright, changed-lines CLI execution, the direct Python
+wrapper, and acceptance stay Dagger-attested. Curation performed no acceptance run.
+
+## 260821-DAGQC-L2 Focused Forcing Coverage
+
+The route covers the typed memory-quality identity/capacity/controller and public schema seams;
+strict immutable quality-manifest publication, one-snapshot recovery, and public result model; the
+explicit serving-preflight failure matrix; and closed direct-landing outcome/recovery projection.
+The new `test_quality_gate_public_contract.py` is the focused pointer-rotation/public-model owner.
+No omnibus or broad gate was added by curation.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: indexed the focused memory-quality, publication/recovery, serving-preflight, and direct-landing forcing sets while preserving concurrent L4 test-route material. Verification metadata remains pinned until architect-owned closeout.
+
+
+- 2026-08-24T13:51:26+02:00 — No route impact: 260821-DAGQC-L4 reconciled
+  existing quality-policy assertions to the diagnostic-versus-acceptance boundary. Preserved the
+  concurrent DAGQC-L1 route additions; Dagger acceptance remains architect-closeout-owned.
+- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: added the two focused graph-publication/raw-section
+  suites and reconciled existing graph identity consumers; recorded that the proposed new
+  zero-edge and direct-entry tests are out of scope. Verification metadata remains pinned until
+  architect-owned closeout stamps the real code commit.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../../../../overview.md` |
 
 ## Governing Overview
@@ -16,54 +16,62 @@
 
 ## Purpose
 
-The closeout-queue mechanism package (260815-DAG master full-gate repair): `closeout_queue.py` and
-its helpers moved here from `worktrees/` (flat) / `worktrees/modules/`. In the L2 candidate this
-route is transitional: scheduling and remaining closeout claim/certification code still live here,
-while canonical operation recovery and durable lifecycle evidence have moved to the root journal.
-`closeout_queue_state.py` now isolates the pure current action vocabulary, initial-state constructor,
-and actor-bound request fingerprint from persistence and transition code.
+Builds, invalidates, publishes, and serves the disposable sprint closeout scheduling projection.
+Canonical task documents and closeout doors are its inputs; the root operation journal owns every
+claimed lifecycle after admission.
 
 ## Hot Path Summary
 
-This route still owns the pre-L3 queue projection, including selected/in-flight/certified states,
-closeout claim/certification, exact commit comparisons, and narrow scheduling serialization. L2
-removes queue authority from the new retry/recover/cancel/revise and worker/direct-landing paths,
-but it does not yet make this package waiting-only.
-
-Closeout operations claim/publish queue candidates through the queue store; the lifecycle module
-certifies and claims candidates for closeout; `closeout_staged_quality` gates staged code. The
-application `closeout_queue.py` and the `worktrees/modules/*` operations consume this package.
+Canonical changes invalidate affected sprint projections to invalid-empty. A complete rebuild is
+computed off-side from current task topology, canonical waiting doors, and active series authority;
+publication occurs only after an exact-current source recheck. `closeout_queue.py` exposes status,
+rebuild, and the short first-ready claim-admission fence. Projection member and graph helpers own
+only deterministic readiness and order.
 
 ## Conventions
 
-- Queue errors carry `task-closeout-queue-*` / `task-sprint-linkage-*` typed statuses.
-- The queue remains a bounded, evictable mechanism; the closeout register/sections stay canonical.
+- Projection errors and source problems are bounded and typed.
+- The projection is evictable; canonical task, door, register, and journal sources are not copied
+  into permanent queue authority.
 
 ## Invariants And Boundaries
 
-- Only the queue mechanism lives here; application entry points (`application/closeout_queue.py`)
-  and models (`models/queue/`) are separate.
-- The staged-quality gate refuses without a Dagger-certified candidate; no host fallback.
+- Only waiting door generations may be projection members.
+- Task authoring never waits on or seeks permission from projection state.
+- Claim, certification, commit, blocker, integration, and lifecycle evidence never live here.
+- Graph-less atomic-sequential topology is valid; a graph, when present, contributes bounded order.
 
-## 260821-CLIVE-L1 Preview And Recovery Boundary
+## 260821-CLIVE Final Disposable Projection Route
 
-This route's closeout preview renders the already-normalized effective plan and includes messages only for enabled legs. Its recovery helper brackets code and ledger Git mutations with journal intent/proof and treats verified-existing commits as projection facts, not fabricated mutations. These helpers do not make the scheduling queue an owner of input, commit evidence, operation generations, or lifecycle state; the queue redesign remains L3.
+This route is a current scheduling projection, not a lifecycle subsystem. The canonical transaction
+is intentionally simple:
 
-## 260821-CLIVE-L2 Current Architecture
+```text
+task or door mutation
+  -> invalidate affected sprint projections to invalid-empty
+  -> rebuild from current task topology + canonical waiting doors
+  -> recheck the exact source fingerprint under the short task CAS
+  -> publish valid-built, or remain invalid-empty
+```
 
-Queue state may still select and certify a candidate whose exact door and commits agree. Operation recovery, cancellation, worker termination, direct landing, and legacy repair now live in the root journal/integration route, and journal claim transfer removes the new integration operation's dependence on later queue reads. The remaining lifecycle-shaped queue schema is transitional current source, not the target architecture; L3 removes it and owns task-change invalidation plus waiting-only rebuild.
+`closeout_projection.py` captures the bounded canonical census;
+`closeout_projection_members.py` recomputes readiness and deterministic priority/graph order; and
+`closeout_projection_publication.py` owns invalidation, preview, off-side rebuild, and exact-current
+publication. `closeout_queue.py` exposes status/rebuild and the short first-ready claim admission
+check. `closeout_queue_graph.py` owns only bounded DAG/order facts, while
+`closeout_queue_evidence.py` retains canonical grade/admission source parsing.
 
-The extracted pure state helper still names selection, grading/admission, and blocker actions because those are present L2 facts. Its existence must not be read as approval of those actions for the L3 queue; task authoring remains upstream of the planned invalidation/rebuild projection.
-
-### Reconciled Source Evidence
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Door-gated candidate evidence. | L35-L43; L46-L137 | `mcp/src/agents_remember/worktrees/queue/closeout_queue_door.py` |
-| Scheduling-only lifecycle correlation. | L389-L422; L425-L507 | `mcp/src/agents_remember/worktrees/queue/closeout_queue_lifecycle.py` |
-| Pure current action validation, revision-zero construction, and actor-bound request fingerprinting. | L18-L40; L43-L66 | `mcp/src/agents_remember/worktrees/queue/closeout_queue_state.py` |
+Prior projection rows are never rebuild input. Only waiting door generations may be members.
+Projection state cannot claim, certify, consume, block, release, abort, carry commits, or own
+integration/lifecycle evidence. Task authoring is never subordinate to projection state. The five
+deleted mutable-queue modules have no tombstones: still-current evidence moved to door source and
+evidence owners; claim/cancel/supersede moved to the root operation journal; protected-ref exclusion
+moved to atomic landing authority; and mutable blocker, `QueueBinding`, certification, consumption,
+and action-driven initial-state contracts were retired rather than preserved as compatibility code.
 
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced the transitional mutable queue route with invalidation/rebuild-only disposable projection ownership and removed obsolete queue cards. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: documented `closeout_queue_state.py` while preserving the explicit current-L2 versus waiting-only-L3 boundary, and verified the governed route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

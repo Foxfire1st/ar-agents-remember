@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/memory_quality_runs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,58 +16,54 @@
 
 ## Purpose
 
-Bounded background registry for long-running memory-quality checks (260815-DAG-L15-R7). The full
-contract-scoped check exceeds the MCP client's request window; this registry runs it on a daemon
-thread and lets the caller poll a bounded, evictable result. Runtime store only (doctrine D4): a
-dropped or evicted run simply needs a rerun — the check is read-only plus one atomic checklist
-write.
+Bounded single-flight registry for asynchronous memory-quality checks. It is a process-local working
+surface, not recovery evidence: live work is retained for polling, terminal history is evictable,
+and a new unique request is refused when live work occupies the configured capacity.
 
 ## Code Commentary
 
 ### Logic
 
-`MAX_QUALITY_RUNS = 8` and `QUALITY_RUN_TTL_SECONDS = 1800` bound the registry. `start_quality_run`
-is single-flight per key: a caller whose key already has a `running` run receives that run's
-`(run_id, "running")` instead of starting a second worker, so two callers cannot race the same
-checklist write. A new run records a `_QualityRun` (`run_id` = uuid hex[:16], `status: running`)
-under the module lock, then a daemon thread (`quality-run-<run_id>`) executes the callable and
-settles the record to `completed` (with the result) or `failed` (with the error text) — the run
-record carries the failure, never an unhandled thread exception.
+`QualityRunIdentity` contains every result-affecting fact: configured repository, frozen resolved
+scope, normalized checks, detail limit, and curator-report publication semantics. Under the module
+lock, `start_quality_run` first reuses equivalent live work. It then prunes expired terminal rows and
+only enough oldest terminal rows to admit one request. If the registry is still at
+`MAX_QUALITY_RUNS`, every retained row is live and the function returns the typed
+`capacity-reached` admission without creating a record or thread.
 
-`poll_quality_run` returns the run envelope: `{"status": "running", "runId"}` while active,
-`{"status": "failed", "runId", "error"}` on failure, and `{"status": "completed", "runId", **result}`
-when done; `None` for an unknown/evicted run id. `_evict_locked` drops completed runs older than the
-TTL, and when the registry is at capacity evicts the oldest completed run; running entries are never
-evicted (peak = active runs + MAX, bounded in practice by single-flight per key × portfolio scale —
-reviewer F6 observation).
+An admitted daemon worker settles its retained row to `completed` or `failed`; launch failure rolls
+the row back. `poll_quality_run` requires both configured repository and run id, returns an immutable
+snapshot copy, and maps wrong-repository lookup to the same absence as an unknown id.
 
 ### Conventions
 
-- Module-level `_registry` dict + `threading.Lock`; all mutations happen under the lock.
-- Runtime store only (D4): nothing here survives a process restart; an evicted run is `run-not-found`
-  at the registration boundary and the caller reruns.
-- The application wrappers in `application/memory_tools.py` own the envelope shape (`ok` header,
-  `runId`, `run-not-found` semantics); this module returns the raw run state.
+- Module-level `_registry` plus one `threading.Lock`; admission, pruning, lookup, and settlement
+  mutate or inspect shared state under that lock.
+- Runtime store only: nothing here survives a process restart. The typed controller translates an
+  absent snapshot into nondisclosing `run-not-found` guidance.
+- The registry returns `QualityRunAdmission` and `QualityRunSnapshot`; public dictionaries belong to
+  `application/memory_quality_controller.py`.
 
 ### Invariants And Boundaries
 
-- Bounded by construction: MAX runs + TTL eviction, and the eviction policy never drops a running
-  run.
-- Single-flight per key is the concurrency contract — duplicate concurrent starts for the same key
-  return the active run.
-- This module holds no reference to the memory-quality checker itself; the caller supplies the
-  callable (a lambda over `_run_quality_check` in `application/memory_tools.py`).
-- Never the survival layer: dropped runs are expected behavior, not data loss (D4).
+- The cap applies to all retained rows and therefore to live work; terminal pruning never deletes a
+  running row.
+- Same-identity lookup precedes capacity refusal, so an equivalent start can recover its live run id
+  even while capacity is full.
+- This module holds no checker reference; the controller supplies one closed callable after scope
+  and identity have been resolved.
+- Polling is repository-owned and nondisclosing; a run id alone is insufficient.
+- Never the survival layer: terminal eviction or restart requires a new request.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The single-flight start and the daemon worker. | `start_quality_run` | mcp/src/agents_remember/application/memory_quality_runs.py:37-71 |
-| The poll envelope and unknown-run `None`. | `poll_quality_run` | mcp/src/agents_remember/application/memory_quality_runs.py:74-85 |
-| The TTL + capacity eviction (completed only). | `_evict_locked` | mcp/src/agents_remember/application/memory_quality_runs.py:88-99 |
-| The application wrappers that own the wire envelope. | `start_memory_quality_check_run`; `poll_memory_quality_check_run` | mcp/src/agents_remember/application/memory_tools.py:250-279; mcp/src/agents_remember/application/memory_tools.py:280-301 |
-| The forcing suite covers start/poll/completed/failed, single-flight, boundedness, and TTL eviction. | `MemoryQualityRunRegistryTests` | mcp/tests/test_memory_quality_runs.py:13-174 |
+| The canonical identity and typed registry values. | `QualityRunIdentity`; `QualityRunAdmission`; `QualityRunSnapshot` | mcp/src/agents_remember/application/memory_quality_runs.py:27-53 |
+| Admission reuses equivalent live work before terminal pruning and hard live-cap refusal. | `start_quality_run` | mcp/src/agents_remember/application/memory_quality_runs.py:70-104 |
+| Polling requires repository ownership and returns a detached snapshot. | `poll_quality_run` | mcp/src/agents_remember/application/memory_quality_runs.py:107-119 |
+| Pruning removes terminal rows only. | `_prune_terminal_locked` | mcp/src/agents_remember/application/memory_quality_runs.py:140-161 |
+| The typed controller owns public capacity and nondisclosure translations. | `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality_controller.py:76-144 |
 
 ## Cross-Repo References
 
@@ -78,6 +74,8 @@ No cross-repo boundary applies to this runtime registry.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced the advisory-cap/string-key contract with complete typed identity, same-identity-first admission, terminal-only pruning, a hard live-work cap, launch rollback, and repository-owned poll snapshots. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-20T21:30+02:00 — Created for 260815-DAG-L15-R7: the bounded single-flight background run
   registry (MAX 8, TTL 30 min, completed-only eviction, runtime store per D4) behind the async
